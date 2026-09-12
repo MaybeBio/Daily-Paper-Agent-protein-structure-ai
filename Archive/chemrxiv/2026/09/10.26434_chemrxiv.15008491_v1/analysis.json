@@ -1,0 +1,24 @@
+{
+  "source": "chemrxiv",
+  "id": "10.26434/chemrxiv.15008491/v1",
+  "title": "PARAM-DOCK: An Integrated Framework for Parallel Multi-Protein–Multi-Ligand Docking and Scoring for Scalable Structure-Based Drug Discovery",
+  "authors": "Samarth Kittad; Mallikarjunachari Uppuladinne; Aneesh Kotipalli; Shruti Koulgi; Vinod Jani; Uddhavesh Sonavane",
+  "journal": "ChemRxiv",
+  "published_date": "2026-09-08",
+  "window": {
+    "start": "2026-09-05",
+    "end": "2026-09-11"
+  },
+  "score": 7,
+  "one_liner_zh": "提出一个集成多蛋白-多配体并行对接与评分的开源框架PARAM-DOCK，结合经验打分函数与迭代局部搜索，在蛋白质-配体对接问题上表现竞争性，属于蛋白质结构计算中的分子对接方法，但方法创新性有限，主要为工程化集成。",
+  "abstract": "Molecular docking is a central component of structure-based drug discovery, but practical docking studies often require several independent programs for receptor and ligand preparation, binding-site definition, docking, visualisation, interaction analysis, and downstream compound assessment. This fragmentation becomes particularly limiting when multiple protein targets and multiple ligands must be evaluated in the same study. Here, we present PARAM-DOCK, an open-source molecular docking engine and integrated web workflow implemented in Python with Numba-compiled numerical kernels. PARAM-DOCK supports parallel multi-protein-multi-ligand docking and automates major pre-processing and post-processing steps within a single platform. The docking engine combines a seven-term empirical scoring function with an iterated local search strategy in which Monte Carlo perturbations are followed by bounded quasi-Newton minimisation using analytical gradients. Final pose selection can additionally incorporate binding-basin population and pocket-complementarity descriptors when they are informative. The web platform integrates molecular preparation, docking setup, pose ranking, 2D and 3D protein-ligand interaction analysis, comparative score and interaction heatmaps, molecular visualisation, and ADMET prediction. PARAM-DOCK was benchmarked against Vina using matched receptor and ligand PDBQT files, identical search boxes, symmetry-corrected RMSD evaluation, and identical hardware. On the 285-complex CASF-2016 core set, PARAM-DOCK achieved a Pearson correlation of 0.631 for scoring power and a mean within-target Spearman correlation of 0.579, compared with 0.604 and 0.528 for Vina. In de novo redocking of 255 complexes, PARAM-DOCK placed the top-ranked pose within 2.0 Å in 68.6% of cases and recovered a near-native pose among nine outputs in 84.3%, compared with 74.1% and 93.7% for Vina. Conditional on generating a near-native pose, PARAM-DOCK ranked it first in 81.4% of complexes versus 79.1% for Vina. These results indicate competitive scoring and ranking performance, while conformational sampling remains the main area for further improvement.",
+  "abstract_zh": "分子对接是基于结构的药物发现的核心组成部分，但实际对接研究通常需要多个独立程序用于受体和配体准备、结合位点定义、对接、可视化、相互作用分析以及下游化合物评估。当同一研究中必须评估多个蛋白质靶点和多个配体时，这种碎片化变得尤为受限。在此，我们介绍PARAM-DOCK，这是一个开源分子对接引擎和集成网络工作流程，采用Python实现并包含Numba编译的数值内核。PARAM-DOCK支持并行多蛋白质-多配体对接，并在单一平台内自动化主要的预处理和后处理步骤。该对接引擎将七项经验评分函数与迭代局部搜索策略相结合，其中蒙特卡洛扰动后接使用解析梯度的有界拟牛顿最小化。当信息丰富时，最终构象选择还可额外结合结合盆地群体和口袋互补性描述符。该网络平台整合了分子准备、对接设置、构象排序、2D和3D蛋白质-配体相互作用分析、比较评分和相互作用热图、分子可视化以及ADMET预测。PARAM-DOCK使用匹配的受体和配体PDBQT文件、相同的搜索框、对称校正的RMSD评估以及相同的硬件，与Vina进行了基准测试。在包含285个复合物的CASF-2016核心集上，PARAM-DOCK的评分能力Pearson相关系数为0.631，靶内平均Spearman相关系数为0.579，而Vina分别为0.604和0.528。在对255个复合物进行从头重新对接时，PARAM-DOCK在68.6%的案例中将排名第一的构象置于2.0 Å以内，并在84.3%的案例中从九个输出中恢复出近天然构象，而Vina分别为74.1%和93.7%。在生成近天然构象的条件下，PARAM-DOCK在81.4%的复合物中将其排在第一，而Vina为79.1%。这些结果表明其具有竞争力的评分和排序性能，而构象采样仍是进一步改进的主要领域。",
+  "has_fulltext": false,
+  "fulltext_source": "abstract",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://doi.org/10.26434/chemrxiv.15008491/v1",
+  "source_url": "https://doi.org/10.26434/chemrxiv.15008491/v1",
+  "paper_page_path": "papers/chemrxiv/10.26434_chemrxiv.15008491_v1/index.html"
+}

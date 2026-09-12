@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to methods, figures, tables, or supporting information
+- **Shared manuscript claim summary** The authors combine AI-based structural modeling, MD simulations, and hybrid QM/MM free energy calculations to investigate ATP hydrolysis in the ZIKV NS3 helicase. They argue that the available ternary crystal structure is noncanonical and catalytically unrepresentative, that an AlphaFold-predicted ternary complex provides a catalytically competent model, and that RNA binding stimulates ATPase activity via an allosteric conformational selection mechanism that stabilizes a closed, catalytically aligned active site.
+- **Visible evidence base** Abstract text only; no quantitative data, simulation details, or structural validation metrics are provided
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, simulation parameters, QM/MM setup details, convergence criteria, error estimates, and any experimental validation data
+
+## Reviewer
+- **Overall assessment** The abstract presents a mechanistically appealing hypothesis for RNA-stimulated ATPase activity in ZIKV NS3h, grounded in a plausible structural argument about the limitations of the available crystal structure. The conceptual framework, particularly the idea of conformational selection as the origin of RNA-stimulated activity, is interesting and potentially significant. However, the evidence base visible in the abstract is insufficient to evaluate the technical soundness of the simulations, the robustness of the QM/MM free energy results, or the validity of the structural claims. The central conclusion rests on the reliability of an AlphaFold-predicted complex, which requires careful validation that is not described in the abstract. The work is potentially publishable in a strong journal if the technical details hold up, but the case is not established from the provided material alone.
+- **Who would be interested in the results, and why** Enzymologists and biophysicists studying helicase mechanisms, particularly those interested in the coupling of ATP hydrolysis to nucleic acid translocation. Computational chemists working on QM/MM methods for enzyme catalysis would also find the methodological application relevant. The Zika virus context adds interest for the virology community, though the work appears to be primarily mechanistic rather than antiviral in focus.
+- **Major strengths** The authors identify a genuine structural problem with the available ternary crystal structure and propose a sensible resolution using AlphaFold modeling. The conceptual framing of RNA-stimulated ATPase activity as an allosteric conformational selection mechanism is elegant and testable. The combination of AI-based structural prediction with QM/MM free energy calculations represents a modern and potentially powerful approach to enzyme mechanism.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that the AlphaFold-predicted ternary complex provides a "catalytically competent model" with canonical coordination and correct pincer residue separation.
+  - **Evidence pointer** Abstract only; no validation data provided
+  - **Concern** The entire mechanistic analysis rests on the reliability of an AlphaFold-predicted ternary complex. AlphaFold is not designed for predicting conformational states, ligand binding modes, or metal coordination geometries. The abstract provides no information on how the complex was constructed, whether the RNA and ATP-Mg2+ were docked or co-folded, how the coordination mode was validated, or whether the predicted structure was tested against any experimental data beyond the crystallographic structure the authors deem inadequate.
+  - **Why it matters** If the AlphaFold model is incorrect in its active site organization, all downstream QM/MM calculations and the resulting mechanistic conclusions are built on an unsound foundation. The claim of "canonical coordination" is particularly concerning because metal coordination geometry is not something AlphaFold predicts reliably.
+  - **Resolution test** The manuscript must provide detailed validation of the AlphaFold-derived complex, including comparison with known NS3 helicase structures from other viruses, assessment of active site residue conservation, and ideally experimental validation such as mutational analysis or cross-linking data. The authors should also demonstrate that the predicted coordination mode is energetically and geometrically plausible using QM-level calculations on model systems.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that QM/MM free energy profiles show the open state is "effectively inactive" while the closed state lowers the activation barrier for ATP hydrolysis.
+  - **Evidence pointer** Abstract only; no free energy values, error bars, or methodological details provided
+  - **Concern** No quantitative information is provided about the calculated activation barriers, the magnitude of the barrier reduction upon RNA binding, or the uncertainty in these values. QM/MM free energy calculations are notoriously sensitive to methodology, including the choice of QM region, level of theory, sampling protocol, and reaction coordinate definition. Without this information, the claim that the open state is "effectively inactive" cannot be evaluated.
+  - **Why it matters** The central mechanistic conclusion, that RNA binding activates the ATPase through conformational selection, depends entirely on the demonstration that the open state has a prohibitively high barrier and the closed state a catalytically accessible one. If the barrier difference is small or within error, the conclusion is unsupported.
+  - **Resolution test** The manuscript must report activation free energies for both states with associated uncertainties, describe the QM region and level of theory, and demonstrate convergence of the free energy calculations. Ideally, the calculated barriers should be compared with experimental kinetic data for ZIKV NS3h ATPase activity.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** The claim that the alternative ATP-Mg2+ coordination modes are "potentially associated with the secondary pyrophosphatase activity reported for this enzyme."
+  - **Evidence pointer** Abstract only; no experimental data on pyrophosphatase activity referenced
+  - **Concern** This is a speculative connection presented without supporting evidence. The abstract does not describe any experiments or calculations linking the alternative coordination modes to pyrophosphatase activity, nor does it provide kinetic or structural data on this secondary activity.
+  - **Why it matters** This claim extends the work beyond the primary ATPase mechanism into a secondary enzymatic function. If presented as a hypothesis, it is fine, but the phrasing suggests a mechanistic connection that is not established.
+  - **Resolution test** The authors should either present experimental data on pyrophosphatase activity with relevant mutants or clearly frame this as a speculative hypothesis requiring future testing.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The phrase "directional motion along nucleic acids" implies processive translocation, but the abstract only addresses ATP hydrolysis and conformational changes, not directional motion or unwinding.
+  - **Required correction** Clarify that the work addresses the chemical step of ATP hydrolysis and its coupling to RNA binding, not the full translocation mechanism.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods description
+  - **Evidence pointer** Abstract, methods description
+  - **Issue** The abstract mentions "AI-based structural modeling" without specifying which AI method beyond the later mention of AlphaFold. It is unclear whether other AI tools were used.
+  - **Required correction** Specify the AI methods used in the abstract or remove the generic phrasing.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Experimental context
+  - **Evidence pointer** Abstract, final claim
+  - **Issue** The abstract concludes with a mechanistic model but provides no experimental validation or comparison with experimental kinetic data on ZIKV NS3h ATPase activity.
+  - **Required correction** Add a sentence noting whether the calculated effects are consistent with known experimental rates or kinetic parameters for ZIKV NS3h.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The structural validity of the AlphaFold model and the quantitative reliability of the QM/MM free energy calculations must be established before the mechanistic conclusions can be accepted.
+- **Assessment against Nature-style criteria** 
+  - Originality: The conformational selection model for RNA-stimulated ATPase activity is not entirely new in the helicase field, but the specific application to ZIKV NS3h and the use of AlphaFold to resolve a problematic crystal structure is a fresh approach. The work is original in its specific claims but not conceptually groundbreaking.
+  - Scientific importance: The mechanism of ATP hydrolysis coupling to RNA binding in helicases is of broad interest. If the conclusions are correct, the work would contribute meaningfully to understanding helicase regulation. However, the importance is incremental rather than transformative.
+  - Interdisciplinary readership: The work bridges structural biology, computational chemistry, and virology. It would appeal to a specialized but not broad interdisciplinary audience. The abstract is written in a way that is accessible to nonspecialists in each field.
+  - Technical soundness: Cannot be evaluated from the abstract. The reliance on AlphaFold for a ternary complex with metal coordination is a significant technical risk that requires careful validation.
+  - Readability for nonspecialists: The abstract is well-written and conceptually clear. The logic from structural problem to computational solution to mechanistic conclusion is easy to follow.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising and the work could be publishable in a strong journal, but the technical validity of the central structural model and the quantitative reliability of the free energy calculations must be demonstrated in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that the AlphaFold-predicted ternary complex is "catalytically competent" is unsupported without validation data.
+- The claim that alternative ATP-Mg2+ coordination modes are associated with pyrophosphatase activity is speculative and unsupported.
+- The claim that the open state is "effectively inactive" is unquantified and cannot be evaluated.
+- The claim that RNA binding "restricts" the conformational landscape is presented without supporting sampling or ensemble data.
+- The overall mechanistic conclusion of conformational selection as the origin of RNA-stimulated ATPase activity is plausible but not established from the abstract alone.

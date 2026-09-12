@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bioq: a unified, agent-native command-line interface to a fleet of AI drug-discovery methods · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">5</span>
+    <div>
+      <h1>bioq: a unified, agent-native command-line interface to a fleet of AI drug-discovery methods</h1>
+      <div class="meta">Liu Z; Wang Y</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-08
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.03.749148">原文</a>
+      </div>
+      <p class="one-liner">该文介绍了一个统一命令行接口bioq，用于调用多种AI药物发现工具（包括结构预测、对接等），但主要贡献在工程集成而非方法创新，对蛋白质结构计算课题有工具层面的参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Artificial intelligence methods now span the drug-discovery pipeline—structure prediction, de novo design, docking, affinity estimation, and ADMET—yet each tool ships with its own, often incompatible, GPU software stack, so chaining several into a workflow requires reproducing conflicting software environments and access to datacenter-class hardware that most labs do not have. bioq is a dependency-light command-line client backed by bioq-services (a control-plane gateway plus a growing fleet of 38+ containerized drug-discovery tools spanning 7 discovery stages and 6 molecular modalities). The bioq CLI is self-describing and consistent across the fleet of computational tools, giving researchers and coding agents uniform access to any tool from a laptop, with no local model code, CUDA setup, or cloud configuration, running on serverless GPUs billed per job. The interface–gateway–services architecture makes bioq an execution substrate for automated, agent-driven discovery. bioq and bioq-services are open source under the MIT License and available at https://github.com/wolfsonliu/bioq and https://github.com/wolfsonliu/bioq-services . bioq runs on Python ≥ 3.10 with httpx as its only runtime dependency; services run as Linux containers and are self-hostable via the provided local deployment scripts (alongside scripts for Alibaba Cloud Function Compute). Install, quickstart, test data, and self-hosting instructions are in the repository. The project is actively maintained and will continue to receive updates to both features and services.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">人工智能方法现已覆盖药物发现流程——结构预测、从头设计、分子对接、亲和力估算及ADMET——然而每种工具都自带其通常互不兼容的GPU软件栈，因此将多个工具串联成工作流需要复现相互冲突的软件环境，并访问大多数实验室不具备的数据中心级硬件。bioq是一个轻依赖的命令行客户端，由bioq-services（一个控制平面网关，外加覆盖7个发现阶段和6种分子模态的38+个容器化药物发现工具且不断增长的集群）提供支持。bioq CLI具有自描述性，并在整个计算工具集群中保持一致，使研究人员和编码代理能从笔记本电脑上统一访问任何工具，无需本地模型代码、CUDA设置或云配置，在按作业计费的无服务器GPU上运行。接口-网关-服务架构使bioq成为自动化、代理驱动发现的执行基底。bioq和bioq-services在MIT许可证下开源，可从https://github.com/wolfsonliu/bioq 和 https://github.com/wolfsonliu/bioq-services 获取。bioq运行于Python ≥ 3.10，仅以httpx作为运行时依赖；服务以Linux容器形式运行，并可通过提供的本地部署脚本（以及阿里云函数计算脚本）自行托管。安装、快速入门、测试数据和自托管说明均位于仓库中。该项目正在积极维护，并将持续接收功能和服务的更新。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：bioq: a unified, agent-native command-line interface to a fleet of AI drug-discovery methods</li>
+<li><strong>作者与单位</strong>：Liu Z; Wang Y（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（系统/工具描述）</li>
+<li><strong>领域</strong>：AI 药物发现基础设施；计算工作流编排</li>
+<li><strong>关键词</strong>：CLI、agent-native、containerized tools、serverless GPU、drug-discovery pipeline</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.03.749148</li>
+<li><strong>代码</strong>：https://github.com/wolfsonliu/bioq ；https://github.com/wolfsonliu/bioq-services</li>
+<li><strong>数据</strong>：未提供（仓库含 test data）</li>
+<li><strong>阅读日期</strong>：2026-09-08</li>
+<li><strong>该文在课题方向中的位置</strong>：本文不提出新的蛋白质结构预测/构象采样/对接算法，而是提供一个统一 CLI 与容器化服务网关，将 38+ 个现有 AI 药物发现工具（含结构预测、对接、ADMET 等）封装为一致接口，面向「AI × 蛋白质结构计算」课题，其价值在于工作流编排与 agent 可执行性，而非方法学创新。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>为解决多工具软件栈冲突与算力门槛问题，本文提出 bioq——一个仅依赖 httpx 的 CLI 客户端，通过 bioq-services 网关将 38+ 个容器化药物发现工具统一暴露为自描述接口，在 serverless GPU 上按任务计费运行，使研究者与 coding agents 可从笔记本端一致访问全部工具。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：AI 药物发现工具各自携带不兼容的 GPU 软件栈，链式工作流需复现冲突环境并依赖数据中心级硬件，多数实验室无法承担。</li>
+<li><strong>为什么重要</strong>：工具碎片化阻碍端到端自动化发现流程；算力门槛限制可及性。</li>
+<li><strong>现有方法为何不足</strong>：现有工具无统一接口标准；本地部署需 CUDA/环境配置；云配置复杂；缺乏 agent 友好的自描述协议。</li>
+<li><strong>精确研究问题</strong>：Can a dependency-light, self-describing CLI backed by a containerized service gateway provide uniform, agent-native access to a fleet of drug-discovery tools from a laptop without local model code or cloud configuration?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>阶段一</strong>：单体工具时代——各工具独立发布，接口各异，需本地 GPU 环境。</li>
+<li><strong>阶段二</strong>：工作流框架（如 Snakemake、Nextflow）——解决编排但未解决环境冲突与算力门槛。</li>
+<li><strong>阶段三</strong>：云 API 服务（如某些商业平台）——统一接口但封闭、非自托管、成本不透明。</li>
+<li><strong>阶段四（本文）</strong>：bioq——开源、自托管、serverless GPU 按任务计费、agent-native 自描述 CLI。</li>
+<li><strong>本文主张的位置</strong>：介于「本地单体工具」与「封闭云平台」之间，提供开放、轻量、可自托管的统一执行基座。</li>
+<li><strong>脉络核验状态</strong>：仅本文框架（未提供外部综述或对比实验）。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>软件栈冲突</td>
+<td>每个工具需复现不兼容的 GPU 环境</td>
+<td>各工具独立发布，依赖不同 CUDA/库版本</td>
+<td>摘要第 1 句</td>
+</tr>
+<tr>
+<td>算力门槛</td>
+<td>需数据中心级硬件</td>
+<td>多数实验室无此资源</td>
+<td>摘要第 1 句</td>
+</tr>
+<tr>
+<td>接口不一致</td>
+<td>各工具 CLI/API 各异，难以链式调用</td>
+<td>无统一标准</td>
+<td>摘要第 2 句「self-describing and consistent」</td>
+</tr>
+<tr>
+<td>配置复杂</td>
+<td>需本地模型代码、CUDA 设置、云配置</td>
+<td>工具部署与使用耦合</td>
+<td>摘要第 3 句</td>
+</tr>
+<tr>
+<td>Agent 不友好</td>
+<td>编码代理难以自动调用多工具</td>
+<td>缺乏自描述协议与统一执行基座</td>
+<td>摘要第 4 句「execution substrate for automated, agent-driven discovery」</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：一个依赖极轻的 CLI（仅 httpx），通过网关（bioq-services）调用 38+ 个容器化工具，在 serverless GPU 上按任务计费。</li>
+<li><strong>核心洞察</strong>：将「工具能力」与「执行环境」解耦——工具封装为容器，网关统一调度，CLI 自描述接口使 agent 可自动发现与调用；serverless 计费模式将算力成本从「持有」转为「按用付费」。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：在计算科学中，工具链的「接口一致性」与「环境可移植性」往往比单个算法精度更能决定实际采用率；面向 agent 的自描述协议是自动化科研的基础设施前提。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：用户或 agent 通过 CLI 提交任务（工具名 + 参数 + 输入数据）。</li>
+<li><strong>输出</strong>：任务结果（文件或结构化输出）返回 CLI。</li>
+<li><strong>模块</strong>：bioq CLI（客户端）、bioq-services（控制面网关）、38+ 容器化工具（执行面）、serverless GPU（算力层）。</li>
+<li><strong>训练</strong>：不适用（无模型训练）。</li>
+<li><strong>工具</strong>：Python ≥ 3.10、httpx（唯一运行时依赖）、Linux 容器、Alibaba Cloud Function Compute 或本地部署脚本。</li>
+<li><strong>反馈回路</strong>：CLI 自描述接口使 agent 可查询工具能力并调整调用策略。</li>
+<li><strong>假设</strong>：用户有网络访问网关；容器镜像可拉取；serverless 平台可用。</li>
+<li><strong>文字流程</strong>：用户/agent 在笔记本上执行 <code>bioq &lt;tool&gt; &lt;args&gt;</code> → CLI 通过 httpx 向网关发送请求 → 网关解析任务并调度对应容器 → 容器在 serverless GPU 上运行 → 结果返回 CLI → 用户/agent 获取输出。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bioq CLI</td>
+<td>统一命令入口，自描述接口</td>
+<td>提供一致用户体验与 agent 可调用性</td>
+<td>输入：命令+参数；输出：结果</td>
+<td>摘要第 2-3 句</td>
+<td>预期：用户需直接与各工具交互，失去一致性 [预期效应]</td>
+</tr>
+<tr>
+<td>bioq-services 网关</td>
+<td>控制面调度，管理容器舰队</td>
+<td>解耦客户端与执行环境</td>
+<td>输入：CLI 请求；输出：调度指令</td>
+<td>摘要第 2 句</td>
+<td>预期：CLI 无法路由任务，架构失效 [预期效应]</td>
+</tr>
+<tr>
+<td>38+ 容器化工具</td>
+<td>实际执行计算</td>
+<td>封装各工具环境，避免冲突</td>
+<td>输入：任务数据；输出：计算结果</td>
+<td>摘要第 2 句</td>
+<td>预期：无工具可调用，系统空壳 [预期效应]</td>
+</tr>
+<tr>
+<td>serverless GPU</td>
+<td>按任务计费的算力</td>
+<td>降低算力门槛</td>
+<td>输入：容器任务；输出：计算结果</td>
+<td>摘要第 3 句</td>
+<td>预期：用户需自备 GPU，门槛回升 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（本文为系统描述，无数学公式）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：未提供（无实验评估）。</li>
+<li><strong>规模</strong>：38+ 工具、7 个发现阶段、6 种分子模态。</li>
+<li><strong>指标</strong>：未提供。</li>
+<li><strong>基线</strong>：未提供。</li>
+<li><strong>预算</strong>：未提供。</li>
+<li><strong>骨干/仪器</strong>：未提供。</li>
+<li><strong>oracle 输入</strong>：不适用。</li>
+<li><strong>评测协议</strong>：未提供。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无实验评估</td>
+<td>系统可用性、性能、成本</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>仅架构可行性主张</td>
+<td>无法验证端到端效率或工具覆盖质量</td>
+<td>全文未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖工具访问层，不涉及工具内部算法精度。</li>
+<li><strong>oracle/真值输入</strong>：不适用。</li>
+<li><strong>端到端状态</strong>：系统已实现并开源，但无基准测试。</li>
+<li><strong>算力成本</strong>：按任务计费，但具体价格未提供。</li>
+<li><strong>历史数据依赖</strong>：无。</li>
+<li><strong>模型依赖</strong>：依赖各容器化工具自身的模型。</li>
+<li><strong>最难情形</strong>：未提供（如大规模并行任务、复杂工作流依赖）。</li>
+<li><strong>群体/领域边界</strong>：面向药物发现计算，但未限定具体靶点或分子类型。</li>
+<li><strong>不确定性</strong>：工具覆盖质量、网关稳定性、serverless 平台可用性均未评估。</li>
+<li><strong>有边界复述</strong>：bioq 提供了一个统一 CLI 与容器化网关架构，使 38+ 个药物发现工具可从笔记本端通过 serverless GPU 访问，但未提供性能或成本数据，其实际效用需进一步验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 服务需网络访问网关（隐含）。
+- 工具覆盖为「growing fleet」，即仍在扩展中。
+- 依赖 Alibaba Cloud Function Compute 或自托管脚本，平台绑定可能限制可移植性。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无实验评估</td>
+<td>系统可能未经过真实工作负载测试</td>
+<td>无法判断实际可用性</td>
+<td>运行标准药物发现工作流并测延迟/成本</td>
+<td>全文未提供实验</td>
+</tr>
+<tr>
+<td>38+ 工具覆盖未列明细</td>
+<td>可能包含低质量或过时工具</td>
+<td>工具质量直接影响结果可靠性</td>
+<td>审查工具清单与版本</td>
+<td>摘要仅提数量</td>
+</tr>
+<tr>
+<td>serverless GPU 计费模式</td>
+<td>成本可能随任务量非线性增长</td>
+<td>影响长期使用可行性</td>
+<td>提供典型任务成本基准</td>
+<td>未提供价格</td>
+</tr>
+<tr>
+<td>自描述接口标准未定义</td>
+<td>「self-describing」可能仅指 CLI help</td>
+<td>agent 互操作性存疑</td>
+<td>检查 CLI 是否输出机器可读 schema</td>
+<td>摘要未详述</td>
+</tr>
+<tr>
+<td>网关为单点</td>
+<td>网关故障则全部工具不可用</td>
+<td>影响系统鲁棒性</td>
+<td>测试网关高可用性</td>
+<td>架构描述未提冗余</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>接口一致性设计</strong>：为多工具系统设计统一 CLI 时，自描述协议（如输出 schema）可显著提升 agent 可调用性——可迁移到蛋白质结构预测/对接工具链的封装。
+2. <strong>环境解耦模式</strong>：将工具封装为容器 + 网关调度，可避免本地环境冲突——适用于 MD 模拟、对接等需不同 GPU 栈的工具组合。
+3. <strong>按用付费算力</strong>：serverless GPU 模式可降低中小实验室的算力门槛——可迁移到大规模构象采样或 MD 模拟的云端执行。
+4. <strong>Agent-native 设计</strong>：面向编码代理的接口设计（自描述、无状态、可查询）是自动化科研工作流的关键——可迁移到 AlphaFold 批量预测或虚拟筛选的自动化。
+5. <strong>开源 + 自托管</strong>：提供本地部署脚本可增强社区采用——适用于需要数据隐私的蛋白质设计项目。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：与 Galaxy、DNAnexus 等平台类似，但更轻量、agent 导向；与 Snakemake/Nextflow 相比，更强调接口一致性而非工作流 DAG。</li>
+<li><strong>组合</strong>：可与 AlphaFold、DiffDock、AutoDock Vina 等工具组合，作为统一前端；与 LLM-based agents（如 ChemCrow）结合，提供工具调用层。</li>
+<li><strong>冲突</strong>：与「本地全栈部署」理念相悖，依赖云服务；与「单工具深度优化」相比，牺牲了工具特定功能。</li>
+<li><strong>可迁移领域</strong>：蛋白质结构预测的批量推理、分子对接的虚拟筛选、MD 模拟的轨迹分析、序列设计的评估流水线。</li>
+<li><strong>候选方向</strong>：将 bioq 模式扩展到蛋白质专用工具（如 AlphaFold3、Rosetta）的封装；或为 MD 模拟工具（GROMACS、OpenMM）提供统一 CLI。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：ProteinQ——面向蛋白质结构计算工具的 agent-native CLI 封装
+   - <strong>来源局限/观察</strong>：bioq 覆盖药物发现全流程，但未专门优化蛋白质结构预测/采样工具链。
+   - <strong>核心假设</strong>：统一 CLI 可提升 AlphaFold、Rosetta、OpenMM 等工具的可组合性与 agent 可调用性。
+   - <strong>相对本文的增量</strong>：聚焦蛋白质专用工具，增加结构比对、构象聚类等后处理模块。
+   - <strong>初步方法</strong>：基于 bioq 架构，扩展容器舰队至蛋白质工具，定义统一输入/输出 schema。
+   - <strong>验证方式</strong>：运行标准蛋白质结构预测任务，对比本地部署与 bioq 模式的延迟/成本。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：AgentBench-Drug——药物发现 agent 工具调用基准
+   - <strong>来源局限/观察</strong>：bioq 无实验评估，缺乏 agent 调用效率的量化指标。
+   - <strong>核心假设</strong>：自描述接口可显著减少 agent 工具调用错误率与调试时间。
+   - <strong>相对本文的增量</strong>：提供可复现的基准测试协议。
+   - <strong>初步方法</strong>：设计一组药物发现任务（如「预测蛋白-配体亲和力」），让 agent 通过 bioq 与原生 CLI 分别执行，对比成功率。
+   - <strong>验证方式</strong>：多 agent 模型（GPT-4、Claude）对比测试。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：ServerlessMD——基于 serverless GPU 的 MD 模拟执行框架
+   - <strong>来源局限/观察</strong>：bioq 的 serverless 模式未覆盖 MD 模拟（长时程、高算力需求）。
+   - <strong>核心假设</strong>：serverless GPU 可降低 MD 模拟的入门门槛，但需优化任务切分与状态管理。
+   - <strong>相对本文的增量</strong>：扩展至 MD 模拟的断点续跑与轨迹流式处理。
+   - <strong>初步方法</strong>：将 GROMACS 封装为容器，设计任务分片与结果聚合协议。
+   - <strong>验证方式</strong>：对比本地集群与 serverless 模式的模拟速度与成本。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：BioQ-Schema——药物发现工具互操作数据标准
+   - <strong>来源局限/观察</strong>：bioq 的「self-describing」未定义具体 schema 标准。
+   - <strong>核心假设</strong>：标准化输入/输出 schema 可提升跨工具工作流的可组合性。
+   - <strong>相对本文的增量</strong>：提出分子、结构、亲和力等数据类型的统一表示。
+   - <strong>初步方法</strong>：基于 PDB、SMILES、SDF 等格式，定义 JSON schema 与转换工具。
+   - <strong>验证方式</strong>：实现 3 个以上工具间的数据流转测试。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims made in the abstract; no code, benchmarks, or usage documentation were provided for independent verification</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present bioq, a lightweight command-line client that provides uniform access to a fleet of 38+ containerized AI drug-discovery tools across 7 discovery stages and 6 molecular modalities, via a gateway architecture, with serverless GPU execution billed per job, requiring no local model code, CUDA setup, or cloud configuration</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, benchmarks, or repository contents were supplied</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, code repository contents, performance benchmarks, tool inventory, API documentation, deployment scripts, and any comparative evaluation against existing workflow tools</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially useful software infrastructure project addressing a real pain point in computational drug discovery, namely the fragmentation of AI tooling across incompatible software stacks. However, as presented, the claims are entirely descriptive and lack any quantitative or qualitative evidence of performance, reliability, or usability. The scientific contribution is not yet established from the provided material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists, cheminformaticians, and AI researchers in drug discovery who routinely chain multiple prediction tools and face environment reproducibility issues. Also relevant to bioinformatics software engineers and groups developing agent-driven scientific workflows, as the interface–gateway–services architecture is positioned as an execution substrate for automated discovery.</li>
+<li><strong>Major strengths</strong> The problem being addressed is genuine and widely felt. The design goals are sensible: dependency-light client, uniform interface, serverless execution, and self-hosting options. The MIT open-source licensing and active maintenance commitment are commendable for community adoption.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The abstract claims bioq provides "uniform access to any tool from a laptop, with no local model code, CUDA setup, or cloud configuration"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> No evidence is presented that the claimed uniform access works reliably across the 38+ tools. There is no benchmark, no latency data, no success rate, no comparison with running tools natively, and no demonstration of a representative end-to-end workflow.</li>
+<li><strong>Why it matters</strong> The central value proposition is that bioq removes friction from multi-tool workflows. Without any performance or reliability data, the reader cannot assess whether the system actually delivers this benefit or whether it introduces new bottlenecks or failure modes.</li>
+<li><strong>Resolution test</strong> Provide a benchmark section with quantitative results, e.g., end-to-end runtime for a representative multi-step workflow, success rates across tools, and comparison with local execution. Include at least one reproducible example with output.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scope verification</li>
+<li><strong>Claim pointer</strong> The abstract claims a fleet of "38+ containerized drug-discovery tools spanning 7 discovery stages and 6 molecular modalities"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The tool inventory is not enumerated. The reader cannot verify which tools are included, whether they are the standard community tools (e.g., AlphaFold, DiffDock, etc.), or whether the "7 stages" and "6 modalities" categorization is meaningful or arbitrary.</li>
+<li><strong>Why it matters</strong> The breadth of the fleet is a key differentiator. Without a list, the claim is unverifiable and the practical utility cannot be assessed. It also matters for reproducibility, since users need to know exactly what is available.</li>
+<li><strong>Resolution test</strong> Provide a table listing all tools, their versions, the stage and modality they map to, and the containerization approach. State the inclusion criteria and update policy.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Architecture validation</li>
+<li><strong>Claim pointer</strong> The abstract claims the "interface–gateway–services architecture makes bioq an execution substrate for automated, agent-driven discovery"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> No evidence is provided that the architecture is suitable for agent-driven workflows. There is no discussion of API stability, rate limiting, error handling, retry logic, or how concurrent agent requests are managed. The claim is aspirational rather than demonstrated.</li>
+<li><strong>Why it matters</strong> Agent-driven discovery is a rapidly growing area, and the claim positions bioq as a platform for it. Without architectural details or a demonstration of an agent using bioq, this claim is unsupported.</li>
+<li><strong>Resolution test</strong> Provide an example of an autonomous agent successfully completing a multi-step discovery task via bioq, with discussion of failure modes and recovery. Document the API contract and concurrency model.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Terminology</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The term "agent-native" in the title is not defined in the abstract. It is unclear whether this means the CLI is designed for use by software agents, or that agents are first-class users, or something else.</li>
+<li><strong>Required correction</strong> Define "agent-native" explicitly in the abstract or introduction, and clarify the intended user base (human researchers, coding agents, or both).</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Versioning</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract states the project "will continue to receive updates to both features and services" but does not mention version pinning or reproducibility guarantees for users who depend on specific tool versions.</li>
+<li><strong>Required correction</strong> State the versioning policy for both the CLI and the services fleet, and whether users can pin to specific versions for reproducible workflows.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Cost transparency</li>
+<li><strong>Affected element</strong> Pricing model</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract mentions "serverless GPUs billed per job" but provides no indication of cost magnitude or comparison with alternatives (e.g., self-hosted GPUs, cloud VMs).</li>
+<li><strong>Required correction</strong> Provide indicative pricing or a cost model discussion, even if approximate, to help users assess economic feasibility.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The abstract makes broad functional claims without any supporting data, tool inventory, or architectural validation. The case for bioq as a useful and reliable platform is not established from the provided evidence.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: Moderate. The idea of a unified CLI for drug-discovery tools is not entirely new, but the specific combination of a dependency-light client, gateway architecture, and serverless execution is a reasonable contribution. However, originality alone does not carry the paper without evidence.</li>
+<li>Scientific importance: Potentially high if the system works as claimed, since it addresses a real bottleneck in computational drug discovery. But importance is contingent on demonstrated utility.</li>
+<li>Interdisciplinary readership: The work sits at the intersection of computational biology, software engineering, and AI. It could appeal to a broad audience, but the abstract is written at a level that assumes familiarity with both drug-discovery pipelines and cloud infrastructure.</li>
+<li>Technical soundness: Cannot be assessed from the abstract. No benchmarks, no architecture diagrams, no code review. The technical claims are plausible but unverified.</li>
+<li>Readability for nonspecialists: The abstract is reasonably clear for a technical audience but uses jargon ("agent-native", "control-plane gateway", "serverless GPUs") without sufficient explanation for a general scientific reader.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract describes a promising tool, but the scientific and technical case requires the full manuscript, code, and benchmarks to be evaluated. I would be supportive of the concept if the technical concerns are resolved with concrete evidence.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "uniform access to any tool from a laptop" is unsupported without performance or reliability data.</li>
+<li>The claim of "38+ containerized tools spanning 7 discovery stages and 6 molecular modalities" is unverifiable without a tool inventory.</li>
+<li>The claim that the architecture is an "execution substrate for automated, agent-driven discovery" is aspirational and not demonstrated.</li>
+<li>The claim that bioq requires "no local model code, CUDA setup, or cloud configuration" is plausible but not verified; the abstract does not specify what the user must install or configure beyond the CLI itself.</li>
+<li>The statement that the project is "actively maintained" is a forward-looking claim that cannot be verified from the abstract alone.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

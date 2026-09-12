@@ -1,0 +1,67 @@
+## Review setup
+- **Input scope** Full manuscript (abstract only provided)
+- **Assessment boundary** Abstract only
+- **Shared manuscript claim summary** The authors identify four conserved nonactive-site residues (S118, V120, L158, D159) in OXA-232 beta-lactamase and show through alanine scanning, kinetic analysis, spectroscopy, and MD simulations that these residues are critical for maintaining activity, substrate specificity, and structural integrity, with S118 and D159 being essential for core catalysis and V120/L158 modulating substrate-specific turnover.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or full results are available.
+- **Missing materials affecting confidence** Full manuscript, including Methods, Results, Figures, Tables, Supplementary Information, and detailed experimental protocols.
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable study on the role of nonactive-site residues in OXA-232, a clinically relevant carbapenemase. The findings are interesting and could inform future drug design. However, the abstract alone is insufficient to evaluate the rigor of the experimental design, data quality, or the strength of the conclusions. Several claims require detailed evidence that is not visible here.
+- **Who would be interested in the results, and why** Researchers in antimicrobial resistance, beta-lactamase enzymology, and structural biology. The work provides mechanistic insights into OXA-48-like carbapenemases, which are of growing clinical concern, and could guide the rational design of inhibitors.
+- **Major strengths** 1. Addresses an underexplored area (nonactive-site residues) in a clinically important enzyme. 2. Combines multiple experimental approaches (mutagenesis, kinetics, spectroscopy, MD simulations). 3. Identifies specific residues with distinct functional roles (catalytic vs. modulatory).
+- **Major Concerns**
+    - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency
+    - **Claim pointer** "Substitutions of S118A and D159A rendered the expressing cells susceptible to penicillins, cephalosporins, and carbapenems, whereas the cells harboring OXA-232V120A and OXA-232L158A exhibited substrate-selective susceptibility changes."
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract reports susceptibility changes but provides no quantitative data (e.g., MIC values, fold changes, or statistical comparisons). The claim of "substrate-selective" changes for V120A and L158A is vague without specifying which substrates are affected and to what degree.
+    - **Why it matters** Without quantitative susceptibility data, the functional impact of each mutation cannot be assessed, and the distinction between "essential" and "modulatory" roles is not supported.
+    - **Resolution test** Provide MIC values (or equivalent) for all mutants against a panel of beta-lactams, with appropriate controls and statistical analysis.
+    - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency
+    - **Claim pointer** "Kinetic analysis with purified proteins revealed the reduction in catalytic efficiency of all the mutants compared to wild-type protein."
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract states a reduction in catalytic efficiency but does not report any kinetic parameters (kcat, Km, kcat/Km) or the magnitude of the reduction. The claim that L158A and D159A are "deacylation-deficient" while S118A and V120A exhibit "selective acylation defects" is a critical mechanistic distinction that requires detailed kinetic evidence (e.g., pre-steady-state kinetics, burst phase analysis, or intermediate trapping data).
+    - **Why it matters** The central mechanistic conclusions of the paper hinge on these kinetic distinctions. Without the data, the claims are unsubstantiated.
+    - **Resolution test** Provide full steady-state and, if claimed, pre-steady-state kinetic parameters for all mutants, including evidence for acylation vs. deacylation defects (e.g., stopped-flow data, mass spectrometry of trapped intermediates).
+    - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency
+    - **Claim pointer** "Bicarbonate supplementation partially rescued the lost activities in soluble mutants, underscoring the carbamylation dependence."
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract mentions "soluble mutants" but does not specify which mutants were rescued, to what extent, or how rescue was measured (e.g., growth, activity). The link to carbamylation is inferred but not directly demonstrated (e.g., by mass spectrometry or chemical labeling).
+    - **Why it matters** Carbamylation of the active-site lysine is essential for OXA-48-like enzymes. The claim that nonactive-site mutations affect carbamylation is novel but requires direct evidence.
+    - **Resolution test** Specify which mutants were rescued, provide quantitative rescue data, and include direct evidence of carbamylation status (e.g., MS analysis of the carbamylated lysine).
+- **Minor Comments**
+    - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Abstract text
+    - **Evidence pointer** Abstract
+    - **Issue** The phrase "causes of the extensive of beta-lactam resistance" is grammatically unclear.
+    - **Required correction** Revise to "causes extensive beta-lactam resistance" or similar.
+    - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Completeness
+    - **Affected element** Abstract text
+    - **Evidence pointer** Abstract
+    - **Issue** The abstract does not mention the specific MD simulation results (e.g., RMSD, residue interactions, or substrate binding poses) that support the claim about V120 and L158 modulating "substrate-specific turnover and orientation."
+    - **Required correction** Briefly summarize the key MD findings that support the functional conclusions.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The core claims of the paper (functional impact of mutations, mechanistic distinction between acylation/deacylation defects, and carbamylation dependence) are not supported by the data presented in the abstract.
+- **Assessment against Nature-style criteria** 
+    - **Originality**: High. The focus on nonactive-site residues in OXA-232 is novel and addresses a gap in the field.
+    - **Scientific importance**: High. Understanding the role of these residues could inform inhibitor design against carbapenemases.
+    - **Interdisciplinary readership**: Moderate. The work is primarily of interest to the antimicrobial resistance and enzymology communities.
+    - **Technical soundness**: Cannot be assessed from the abstract alone. The claims require detailed kinetic, structural, and biophysical data that are not visible.
+    - **Readability for nonspecialists**: The abstract is reasonably clear but uses specialized terminology (e.g., "deacylation-deficient," "carbamylation dependence") that may not be accessible to a broad audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting hypothesis, but the key experimental data (quantitative susceptibility, detailed kinetics, direct evidence for carbamylation) are missing. A full manuscript review is needed to assess technical soundness.
+
+## Risk / unsupported claims
+- The claim that S118 and D159 are "essential for core catalysis and structural integrity" is not supported by quantitative data.
+- The claim that V120 and L158 "modulate substrate-specific turnover and orientation" is not supported by kinetic or structural data.
+- The claim that bicarbonate rescue "underscores the carbamylation dependence" is not supported by direct evidence of carbamylation status.

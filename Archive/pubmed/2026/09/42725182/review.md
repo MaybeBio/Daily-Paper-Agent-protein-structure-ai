@@ -1,0 +1,82 @@
+## Review setup
+- **Input scope** Full manuscript (Introduction, Methods, Results, Discussion)
+- **Assessment boundary** Only the content provided in the manuscript text
+- **Shared manuscript claim summary** The authors propose that salt-dependent activation of halophilic methionine sulfoxide reductase A from *Halobacterium hubeiense* (HhMsrA) is mediated by a small set of salt-bridge nodes, primarily involving Arg106 and Lys76, which maintain a high-salt structural state required for catalytic function.
+- **Visible evidence base** MD simulations, mutagenesis data, enzyme activity assays, CD spectroscopy
+- **Missing materials affecting confidence** No structural coordinates (PDB or AlphaFold model) provided; no raw MD trajectory analysis files; no raw CD spectra; no statistical details for activity assays (e.g., error bars, replicates); no sequence alignment or phylogenetic context for HhMsrA
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a relevant question in halophilic enzyme adaptation, but the evidence provided is insufficient to establish the claimed mechanism. The study identifies Arg106 and Lys76 as important residues, but the link between salt-bridge interactions and the "salt-adapted structural state" is inferred rather than directly demonstrated. The lack of structural data, quantitative analysis of salt-bridge occupancy, and rigorous statistical treatment of activity data weakens the central claim. The work is preliminary and would benefit from additional experimental and computational validation before it can be considered for a high-impact venue.
+- **Who would be interested in the results, and why** Researchers studying halophilic enzymes, protein adaptation to extreme environments, and salt-bridge dynamics in protein stability. The work may also interest those working on methionine sulfoxide reductases and oxidative stress repair in extremophiles.
+- **Major strengths** 1. The study addresses a specific and mechanistically interesting question about how salt-bridge networks support salt-dependent activation in a halophilic enzyme. 2. The combination of MD simulations, mutagenesis, activity assays, and CD spectroscopy provides a multi-pronged approach. 3. The identification of Arg106 and Lys76 as key residues is a clear and testable hypothesis.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence strength
+  - **Claim pointer** "MD simulations and mutagenesis analyses identified Arg106 and Lys76 as prominent salt-bridge nodes, and charge-conservative substitutions at these positions largely preserved the high-salt activity profile."
+  - **Evidence pointer** Results section, Figure 2 (activity data), Figure 3 (MD data)
+  - **Concern** The manuscript does not provide quantitative metrics for salt-bridge occupancy or stability from MD simulations. The claim that Arg106 and Lys76 are "prominent salt-bridge nodes" is not supported by any numerical data (e.g., occupancy percentages, distance distributions, or free energy calculations). The activity data for charge-conservative substitutions (e.g., R106K, K76R) are described as "largely preserved," but no statistical comparison (e.g., p-values, confidence intervals) is provided to support this claim. Without these data, the reader cannot assess whether the observed differences are significant or within experimental noise.
+  - **Why it matters** The central mechanistic claim rests on the identification of specific salt-bridge interactions and their functional importance. Without quantitative evidence from MD simulations and rigorous statistical analysis of activity data, the claim is not substantiated.
+  - **Resolution test** Provide salt-bridge occupancy percentages, distance histograms, and/or interaction energies from MD simulations for wild-type and key mutants. Include statistical analysis (e.g., ANOVA or t-tests) for activity data, with error bars and replicate numbers clearly stated.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Structural evidence
+  - **Claim pointer** "CD measurements further showed a strong KCl-dependent helical response in HhMsrA that was attenuated to varying degrees across mutants targeting salt-bridge-forming residues."
+  - **Evidence pointer** Results section, Figure 4 (CD data)
+  - **Concern** The CD data are presented only as qualitative descriptions. No raw CD spectra, deconvolution results (e.g., percentage helicity), or quantitative comparison of helical content between wild-type and mutants under different KCl concentrations are provided. The claim of a "strong KCl-dependent helical response" is not supported by numerical data. Additionally, the relationship between CD signal changes and the "salt-adapted structural state" is not explained or validated.
+  - **Why it matters** CD spectroscopy is a key piece of evidence linking salt-bridge mutations to structural changes. Without quantitative analysis, the structural interpretation remains speculative.
+  - **Resolution test** Provide deconvoluted secondary structure percentages for wild-type and mutants at multiple KCl concentrations. Include statistical comparisons (e.g., mean ± SD, n ≥ 3) and show representative raw spectra in a supplementary figure.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic link
+  - **Claim pointer** "These findings demonstrate that salt-dependent activity of HhMsrA is supported by a small set of salt-bridge nodes that contribute to maintaining a high-salt structural state compatible with HhMsrA catalytic function."
+  - **Evidence pointer** Discussion section
+  - **Concern** The manuscript does not establish a direct causal link between salt-bridge interactions and the "high-salt structural state." The MD simulations are not analyzed to show how salt-bridge occupancy changes with salt concentration, nor is there any direct structural evidence (e.g., X-ray crystallography, cryo-EM, or NMR) for the proposed structural state. The claim that the structural state is "compatible with catalytic function" is inferred from activity data but not tested (e.g., by measuring substrate binding or catalytic efficiency under different salt conditions).
+  - **Why it matters** The central conclusion of the paper is that salt-bridge nodes maintain a specific structural state required for activity. Without direct structural evidence or a clear mechanistic model, this conclusion is not supported.
+  - **Resolution test** Perform MD simulations at multiple salt concentrations (e.g., 0 M, 1 M, 3 M KCl) and analyze salt-bridge occupancy as a function of salt concentration. Alternatively, obtain a high-resolution structure of HhMsrA (e.g., by X-ray crystallography or cryo-EM) to directly visualize the salt-bridge network. Measure catalytic parameters (kcat, Km) under different salt conditions to link structural state to function.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Methods section
+  - **Evidence pointer** Methods section
+  - **Issue** The MD simulation parameters (force field, water model, salt concentration, simulation length, number of replicates) are not described in sufficient detail. The manuscript states "MD simulations" but does not specify the software, protocol, or analysis methods.
+  - **Required correction** Provide a detailed description of MD simulation setup, including force field (e.g., AMBER, CHARMM), water model (e.g., TIP3P), salt concentration, simulation time, and number of independent runs. Include information on how salt-bridge interactions were defined and analyzed.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods section
+  - **Evidence pointer** Methods section
+  - **Issue** The enzyme activity assay conditions (e.g., substrate concentration, enzyme concentration, temperature, buffer composition, number of replicates) are not fully described. The manuscript mentions "enzyme activity assays" but does not provide enough detail for reproducibility.
+  - **Required correction** Provide a complete description of assay conditions, including substrate (e.g., methionine sulfoxide concentration), enzyme concentration, temperature, pH, buffer composition, and number of independent experiments. Include error bars and statistical tests in the results.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Presentation
+  - **Affected element** Figures
+  - **Evidence pointer** Figures 2-4
+  - **Issue** The figures are not described in sufficient detail in the figure legends. For example, Figure 2 (activity data) does not indicate what the error bars represent (e.g., SD, SEM) or the number of replicates. Figure 3 (MD data) does not specify what is plotted (e.g., distances, energies, occupancies).
+  - **Required correction** Revise figure legends to include: (1) what each axis represents, (2) what error bars indicate, (3) number of replicates or independent simulations, (4) statistical significance markers if applicable.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Context
+  - **Affected element** Introduction
+  - **Evidence pointer** Introduction
+  - **Issue** The manuscript does not provide a sequence alignment or phylogenetic context for HhMsrA relative to other halophilic or non-halophilic MsrA enzymes. This would help readers understand whether the identified salt-bridge residues are conserved or unique.
+  - **Required correction** Add a supplementary figure showing a multiple sequence alignment of HhMsrA with related MsrA sequences from halophilic and non-halophilic organisms. Highlight the positions of Arg106 and Lys76.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (lack of quantitative MD and activity data), R1-M2 (lack of quantitative CD analysis), R1-M3 (lack of direct structural evidence and mechanistic link)
+- **Assessment against Nature-style criteria** 
+  - **Originality**: Moderate. The concept of salt-bridge-mediated activation in halophilic enzymes is not entirely novel, but the specific focus on MsrA and the identification of Arg106 and Lys76 as key nodes provides some originality.
+  - **Scientific importance**: Moderate. Understanding salt adaptation mechanisms is important for extremophile biology and potential biotechnological applications, but the current evidence does not establish a generalizable principle.
+  - **Interdisciplinary readership**: Limited. The work is primarily of interest to structural biologists and enzymologists studying halophiles. The lack of quantitative data and clear mechanistic model reduces broader appeal.
+  - **Technical soundness**: Weak. The study lacks quantitative analysis of MD simulations, statistical treatment of activity data, and direct structural evidence. The technical approach is appropriate but the execution and reporting are insufficient.
+  - **Readability for nonspecialists**: Adequate. The manuscript is written in clear language, but the lack of quantitative data and detailed methods makes it difficult for nonspecialists to evaluate the claims.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript requires substantial additional data (quantitative MD analysis, statistical treatment of activity and CD data, and direct structural evidence) before the central claim can be considered supported. A major revision with new experiments and analyses is needed.
+
+## Risk / unsupported claims
+- The claim that Arg106 and Lys76 are "prominent salt-bridge nodes" is unsupported without quantitative MD data (occupancy, distances).
+- The claim that salt-bridge interactions maintain a "high-salt structural state" is unsupported without direct structural evidence or MD analysis at multiple salt concentrations.
+- The claim that the structural state is "compatible with catalytic function" is inferred but not directly tested.
+- The claim that "combined proline substitutions produced a pronounced cumulative effect" is not supported by statistical analysis or comparison to individual mutations.

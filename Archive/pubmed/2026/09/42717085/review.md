@@ -1,0 +1,67 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract
+- **Shared manuscript claim summary** The authors introduce Gen-COMPAS, a generative committor-guided path-sampling framework that reconstructs conformational transition pathways without predefined collective variables, using a denoising diffusion probabilistic model combined with committor-based filtering. They claim that this method achieves nanosecond-to-submicrosecond aggregate sampling scales for transition-region ensembles, whereas conventional approaches require orders of magnitude more sampling. The method is applied to systems from a miniprotein to a pentameric ligand-gated ion channel, recovering committors, transition states and free-energy landscapes from known end-point structures alone.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided.
+- **Missing materials affecting confidence** Full manuscript, including Methods, Results, Figures, Tables, Supplementary Information, and code/data availability statements. Without these, the core claims cannot be independently evaluated.
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually appealing approach to a long-standing problem in computational biophysics: sampling rare conformational transitions without predefined collective variables. The combination of generative diffusion models with committor-based filtering is novel and potentially impactful. However, the abstract alone provides insufficient evidence to assess the validity, reproducibility, or generalizability of the claimed results. Critical details—such as the training data for the diffusion model, the committor estimation procedure, the computational cost comparison, and the quantitative accuracy of the recovered free-energy landscapes—are absent. The claim of “nanosecond-to-submicrosecond aggregate sampling scales” for systems as large as a pentameric ion channel is extraordinary and would require rigorous benchmarking against established methods (e.g., metadynamics, adaptive sampling, or Markov state models) to be credible. The abstract does not report any error bars, convergence metrics, or comparisons to experimental or long-timescale simulation references. Therefore, while the idea is promising, the case is not established from the provided evidence.
+- **Who would be interested in the results, and why** Computational biophysicists, structural biologists, and researchers in drug discovery would be interested, as the method promises to accelerate mechanistic studies of protein folding, allostery, and membrane transport without requiring expert knowledge of reaction coordinates. Method developers in machine learning for molecular simulation would also find the generative-sampling hybrid approach of interest.
+- **Major strengths** 1. The core idea—using a generative diffusion model to propose intermediate structures and then filtering them with committor analysis—is conceptually elegant and addresses a genuine bottleneck in enhanced sampling. 2. The claim of not requiring predefined collective variables or prior mechanistic knowledge is a significant potential advantage over many existing methods. 3. The range of test systems (miniprotein to pentameric ion channel) suggests an attempt to demonstrate generalizability.
+- **Major Concerns**
+    - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Methodological validity and reproducibility
+    - **Claim pointer** “Gen-COMPAS reconstructs transition pathways without predefined collective variables and at acceptable computational cost.”
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract does not describe how the denoising diffusion probabilistic model is trained. Specifically, what data are used for training? If the model is trained on the same system for which transitions are being sampled, this could introduce circularity or overfitting. If it is trained on a different dataset, the transferability is unclear. The committor-based filtering step also requires a definition of the reactant and product states; how these are defined from “known end-point structures alone” without additional information (e.g., energy thresholds or structural alignment criteria) is not explained.
+    - **Why it matters** Without a clear description of the training data and the committor estimation procedure, the method cannot be reproduced or assessed for potential biases. The claim of “no predefined collective variables” may be misleading if the end-point structures themselves implicitly define a reaction coordinate.
+    - **Resolution test** The full manuscript must provide a detailed description of the diffusion model architecture, training data (including whether it is system-specific or general), and the exact algorithm for committor estimation. A reproducibility statement or code availability would be expected.
+    - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Quantitative validation and benchmarking
+    - **Claim pointer** “Short unbiased simulations from these intermediates yield transition-region ensembles at nanosecond-to-submicrosecond aggregate sampling scales for which conventional approaches require orders of magnitude more sampling.”
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract provides no quantitative comparison to any specific conventional method (e.g., standard MD, metadynamics, umbrella sampling, or adaptive sampling). The phrase “orders of magnitude more sampling” is vague. For the pentameric ion channel system, what is the actual aggregate simulation time used by Gen-COMPAS, and what is the reference time for a conventional approach? No error bars, convergence diagnostics, or statistical uncertainties are reported for the recovered committors, transition states, or free-energy landscapes.
+    - **Why it matters** Extraordinary claims of computational speedup require rigorous, quantitative benchmarking against state-of-the-art methods on the same systems. Without such comparisons, the reader cannot judge whether the claimed efficiency is real or an artifact of the test systems or the evaluation metrics.
+    - **Resolution test** The full manuscript must include a table or figure comparing the computational cost (e.g., total simulation time, number of trajectories, wall-clock time) of Gen-COMPAS against at least one established enhanced-sampling method for each test system. Convergence metrics (e.g., committor histograms, free-energy profile error bars) must be provided.
+    - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Generalizability and system-specific assumptions
+    - **Claim pointer** “Applied to systems ranging from a miniprotein to a pentameric, ligand-gated ion channel, Gen-COMPAS recovers committors, transition states and free-energy landscapes from known end-point structures alone.”
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract does not specify which systems were tested, what the known end-point structures are (e.g., crystal structures, NMR models, or homology models), or whether the method succeeded for all systems. For the pentameric ion channel, the number of atoms, the nature of the transition (e.g., channel opening/closing, ligand binding), and the dimensionality of the conformational space are not mentioned. The claim of “recovering” committors and free-energy landscapes implies a ground truth for comparison, but no reference values are provided.
+    - **Why it matters** The method’s utility depends on its ability to handle complex, high-dimensional systems with many degrees of freedom. If the test systems are small or have simple transitions, the results may not generalize. Without a clear definition of “success” (e.g., agreement with long MD simulations, experimental data, or analytical models), the claim is unverifiable.
+    - **Resolution test** The full manuscript must list all test systems with their size (number of atoms), transition type, and source of end-point structures. For each system, a quantitative comparison to a reference (e.g., long unbiased MD, experimental kinetics, or a well-established enhanced-sampling method) must be provided. Failure cases or limitations should be discussed.
+- **Minor Comments**
+    - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity and terminology
+    - **Affected element** Abstract text
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The phrase “nanosecond-to-submicrosecond aggregate sampling scales” is ambiguous. Does “aggregate” refer to the total simulation time across all trajectories, or the effective timescale of the transition? The term “submicrosecond” (i.e., <1 μs) is broad and could include timescales from 1 ns to 999 ns.
+    - **Required correction** Clarify the meaning of “aggregate sampling scales” and provide specific numbers (e.g., “total of 500 ns of simulation across 100 trajectories”) for at least one test system.
+    - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Citation and context
+    - **Affected element** Abstract text
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The abstract cites references 1-3 for the limitations of standard MD and enhanced-sampling methods, and references 4-5 for committor analysis and diffusion models. However, the abstract does not cite any specific work on generative models for molecular simulation (e.g., diffusion models for protein structure prediction or conformation generation), which would help contextualize the novelty of Gen-COMPAS.
+    - **Required correction** Add a brief citation to relevant prior work on generative models in molecular simulation (e.g., diffusion models for protein backbone generation or conformation sampling) to clarify the specific advance claimed.
+    - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Readability for nonspecialists
+    - **Affected element** Abstract text
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The term “committor-guided path-sampling” and “committor-based filtering” are used without definition. While specialists may understand, a broader Nature readership would benefit from a brief explanation of what a committor is (e.g., “the probability that a trajectory starting from a given configuration will reach the product state before the reactant state”).
+    - **Required correction** Add a one-sentence definition of “committor” in the abstract or the main text introduction.
+
+## Risk / unsupported claims
+- The claim that Gen-COMPAS achieves “nanosecond-to-submicrosecond aggregate sampling scales” for transitions that “conventional approaches require orders of magnitude more sampling” is unsupported by any quantitative data in the abstract.
+- The claim that the method “recovers committors, transition states and free-energy landscapes from known end-point structures alone” is unsupported without evidence of accuracy (e.g., comparison to reference calculations or experimental data).
+- The claim that the method works “without predefined reaction coordinates or prior mechanistic knowledge” is plausible but cannot be verified without details on how the end-point structures are used and whether any implicit assumptions (e.g., about the transition path ensemble) are made.
+- The generalizability to “systems ranging from a miniprotein to a pentameric, ligand-gated ion channel” is unsubstantiated without specific results for each system, including success metrics and failure modes.

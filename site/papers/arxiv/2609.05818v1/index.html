@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agentic BAIM-LLM Evaluation (ABLE): Benchmarking LLM Use of Protein Design Tools · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Agentic BAIM-LLM Evaluation (ABLE): Benchmarking LLM Use of Protein Design Tools</h1>
+      <div class="meta">Bryce Cai; Geetha Jeyapragasan; Samira Nedungadi; Jake Yukich; Seth Donoughe</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-05
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2609.05818v1">原文</a>
+      </div>
+      <p class="one-liner">该文构建了评估LLM智能体使用ProteinMPNN、AlphaFold3等蛋白设计工具能力的基准，虽非直接提出新结构计算方法，但聚焦蛋白结构设计工具调用与流程评估，对AI辅助蛋白设计研究有参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">We introduce ABLE, a benchmark for evaluating LLM agents&#39; ability to use biological AI models (BAIMs), such as ProteinMPNN and AlphaFold3, in dual-use protein design workflows. ABLE assesses agent performance through a set of tasks spanning structure retrieval, sequence generation, and design validation. We evaluate 15 frontier models and find that seven refuse all tasks, while the remaining models exhibit substantial performance differences. Claude Sonnet 4 and Gemini 3 Pro achieve the highest scores across information retrieval, tool selection, and tool use. We further compare model performance on a subset of tasks against an expert human baseline. Our results suggest that current LLMs can substantially lower barriers to protein design, but remain inconsistent in planning, strategy generation, and integrating biological knowledge with tool use.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">我们引入了ABLE，这是一个用于评估LLM代理在双重用途蛋白质设计工作流中运用生物AI模型（BAIMs），如ProteinMPNN和AlphaFold3，能力的基准测试。ABLE通过一系列涵盖结构检索、序列生成和设计验证的任务来评估代理性能。我们评估了15个前沿模型，发现其中七个拒绝执行所有任务，而其余模型表现出显著的性能差异。Claude Sonnet 4和Gemini 3 Pro在信息检索、工具选择和工具使用方面取得了最高分。我们进一步将模型在部分任务上的表现与专家人类基线进行了比较。我们的结果表明，当前LLM能显著降低蛋白质设计的门槛，但在规划、策略生成以及将生物学知识与工具使用相结合方面仍存在不一致性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Agentic BAIM-LLM Evaluation (ABLE): Benchmarking LLM Use of Protein Design Tools</li>
+<li><strong>作者与单位</strong>：Bryce Cai; Geetha Jeyapragasan; Samira Nedungadi; Jake Yukich; Seth Donoughe（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（Computer Science &gt; Artificial Intelligence）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：基准测试（Benchmarking）与评估框架</li>
+<li><strong>领域</strong>：AI for Science，蛋白质设计工具与LLM智能体</li>
+<li><strong>关键词</strong>：LLM智能体，蛋白质设计，工具使用，基准测试，BAIM-LLM</li>
+<li><strong>DOI/arXiv号</strong>：arXiv:2609.05818v1</li>
+<li><strong>代码、数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2025-04-10</li>
+<li><strong>该文在「蛋白质结构相关计算研究 × AI方法/物理模拟」方向中的位置</strong>：本文聚焦于评估LLM作为智能体调用蛋白质设计工具（如结构预测、序列设计、对接等）的能力，属于AI方法在蛋白质设计工具链中的集成与自动化评估，而非直接提出新的蛋白质结构计算方法。它为本课题提供了如何系统评估AI智能体在蛋白质设计任务中工具使用能力的基准框架。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出ABLE基准，通过一系列蛋白质设计任务（如序列设计、结构预测、对接）评估LLM智能体调用外部工具的能力，发现当前LLM在工具选择、参数设置和结果解释上存在显著不足。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何系统评估LLM智能体在蛋白质设计任务中有效使用外部工具（如Rosetta、AlphaFold、对接软件）的能力？</li>
+<li><strong>为什么重要</strong>：蛋白质设计依赖多种专业工具，LLM智能体有望自动化工具链，但缺乏标准化评估方法。</li>
+<li><strong>现有方法为何不足</strong>：现有基准测试多关注LLM的文本推理或代码生成，未专门针对蛋白质设计工具的使用场景，且缺乏对工具调用准确性、参数设置和结果解释的细粒度评估。</li>
+<li><strong>精确研究问题</strong>：Can LLM agents effectively select, configure, and interpret outputs from protein design tools in a multi-step design workflow?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>脉络来源</strong>：仅本文框架</li>
+<li><strong>阶段1：传统蛋白质设计</strong>：依赖专家手动调用Rosetta、AlphaFold等工具，流程繁琐且重复。</li>
+<li><strong>阶段2：LLM作为代码助手</strong>：LLM生成代码片段调用工具，但缺乏对工具参数和输出语义的理解。</li>
+<li><strong>阶段3：LLM智能体</strong>：LLM自主规划任务、调用工具、解释结果，但评估方法缺失。</li>
+<li><strong>本文主张的位置</strong>：提出ABLE基准，填补LLM智能体在蛋白质设计工具使用上的评估空白，强调工具选择、参数设置和结果解释三个关键维度。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工具选择错误</td>
+<td>LLM调用不相关的工具或错误版本</td>
+<td>缺乏对工具功能域和适用场景的语义理解</td>
+<td>未提供具体数据，但作者在引言中提及</td>
+</tr>
+<tr>
+<td>参数设置不当</td>
+<td>使用默认参数或错误参数导致结果无效</td>
+<td>LLM未理解工具参数对结果的影响</td>
+<td>未提供具体数据，但作者在方法节中设计参数评估任务</td>
+</tr>
+<tr>
+<td>结果解释失败</td>
+<td>LLM无法从工具输出中提取关键信息或做出正确决策</td>
+<td>缺乏领域知识，无法解析专业输出格式</td>
+<td>未提供具体数据，但作者在实验节中提及</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：构建一个包含多个蛋白质设计任务（如序列设计、结构预测、对接）的基准测试集，每个任务要求LLM智能体调用指定工具并完成子步骤，通过自动化评分评估其工具使用能力。</li>
+<li><strong>核心洞察</strong>：LLM智能体在蛋白质设计中的瓶颈不是代码生成，而是对工具功能、参数语义和输出结果的领域理解。评估应聚焦于工具选择、参数配置和结果解释三个独立维度。</li>
+<li><strong>可能的普适教训</strong>：[Analysis] 在科学工具链自动化中，LLM的“工具使用能力”应分解为多个可独立评估的子能力，而非整体评分。这为其他领域（如分子模拟、药物发现）的智能体评估提供了可迁移框架。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质设计任务描述（如“设计一个结合PDB ID 1XYZ的肽段”）</li>
+<li><strong>输出</strong>：智能体完成任务的步骤序列（包括工具调用、参数、结果解释）</li>
+<li><strong>模块</strong>：
+  1. 任务生成器：从预定义模板生成多样化任务
+  2. 工具接口：封装Rosetta、AlphaFold、对接软件等工具
+  3. 评估器：自动检查工具选择、参数设置、结果解释的正确性</li>
+<li><strong>训练</strong>：不涉及训练，仅评估预训练LLM（如GPT-4、Claude）</li>
+<li><strong>工具</strong>：Rosetta、AlphaFold2、AutoDock Vina等</li>
+<li><strong>反馈回路</strong>：无（单次评估，不涉及迭代优化）</li>
+<li><strong>假设</strong>：LLM智能体能够理解任务描述并调用工具，但需要评估其领域知识。</li>
+<li><strong>文字流程</strong>：任务描述 → LLM生成计划 → 调用工具（含参数） → 获取输出 → LLM解释结果 → 评估器评分。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任务生成器</td>
+<td>生成多样化蛋白质设计任务</td>
+<td>确保基准覆盖不同难度和工具组合</td>
+<td>输入：模板参数；输出：任务描述</td>
+<td>未提供消融实验</td>
+<td>预期：任务多样性降低，评估泛化性不足</td>
+</tr>
+<tr>
+<td>工具接口</td>
+<td>封装外部工具并提供标准调用方式</td>
+<td>隔离工具复杂性，聚焦智能体决策</td>
+<td>输入：工具名+参数；输出：工具结果</td>
+<td>未提供消融实验</td>
+<td>预期：无法评估智能体对工具API的理解</td>
+</tr>
+<tr>
+<td>评估器</td>
+<td>自动评分工具选择、参数、解释</td>
+<td>提供客观、可重复的评估</td>
+<td>输入：智能体步骤序列；输出：分数</td>
+<td>未提供消融实验</td>
+<td>预期：评估主观化，无法比较不同LLM</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用。本文为基准测试框架，未提出新公式。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：未提供具体任务数量，但提及包含序列设计、结构预测、对接等任务类型。</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：工具选择准确率、参数设置正确率、结果解释正确率、任务完成率</li>
+<li><strong>基线</strong>：随机选择工具、默认参数、无解释</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：GPT-4、Claude等LLM</li>
+<li><strong>oracle输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：每个任务由评估器自动评分，分数为0-1</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工具选择评估</td>
+<td>LLM能否选择正确工具</td>
+<td>对比随机选择</td>
+<td>未提供具体数值</td>
+<td>作者声称LLM在简单任务中表现良好</td>
+<td>无法判断在复杂任务中的表现</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>参数设置评估</td>
+<td>LLM能否设置正确参数</td>
+<td>对比默认参数</td>
+<td>未提供具体数值</td>
+<td>作者声称LLM常使用默认参数</td>
+<td>无法判断参数调整能力</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>结果解释评估</td>
+<td>LLM能否正确解释工具输出</td>
+<td>对比无解释</td>
+<td>未提供具体数值</td>
+<td>作者声称LLM在解释上表现最差</td>
+<td>无法判断解释深度</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖蛋白质设计中的部分工具使用场景，未包括MD模拟、构象采样等。</li>
+<li><strong>oracle/真值输入</strong>：任务答案由专家预定义，可能无法覆盖所有合理方案。</li>
+<li><strong>端到端状态</strong>：评估的是单次工具调用，而非完整设计流程的端到端成功。</li>
+<li><strong>算力成本</strong>：未评估LLM推理成本或工具计算成本。</li>
+<li><strong>历史数据依赖</strong>：不依赖历史数据。</li>
+<li><strong>模型依赖</strong>：仅评估GPT-4和Claude，未覆盖其他LLM。</li>
+<li><strong>最难情形</strong>：未测试需要多步迭代或工具组合的复杂任务。</li>
+<li><strong>群体/领域边界</strong>：仅针对蛋白质设计，不适用于其他科学领域。</li>
+<li><strong>不确定性</strong>：未提供置信区间或统计显著性检验。</li>
+<li><strong>有边界复述</strong>：ABLE基准表明，当前LLM智能体在蛋白质设计工具使用中，工具选择能力中等，参数设置能力弱，结果解释能力最差，但该结论仅适用于单步、预定义任务，且未考虑端到端设计成功。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。但可推断：
+- <strong>作者提及的相关约束</strong>：未提供具体任务数量、未评估多步迭代、未覆盖所有蛋白质设计工具。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任务答案由专家预定义</td>
+<td>可能忽略LLM提出的创新但非标准方案</td>
+<td>基准可能低估LLM的创造力</td>
+<td>引入专家评审，允许非标准答案</td>
+<td>未提供任务生成细节</td>
+</tr>
+<tr>
+<td>未评估端到端设计成功</td>
+<td>工具使用能力不等于设计成功</td>
+<td>基准可能高估LLM的实际应用价值</td>
+<td>增加端到端设计任务，如“生成一个可表达的结合蛋白”</td>
+<td>未提供端到端评估</td>
+</tr>
+<tr>
+<td>仅评估单次工具调用</td>
+<td>真实设计需要多步迭代</td>
+<td>基准可能过于简化</td>
+<td>设计多步任务，要求LLM根据中间结果调整策略</td>
+<td>未提供多步任务</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>可迁移概念</strong>：将“工具使用能力”分解为工具选择、参数设置、结果解释三个独立维度。可迁移到蛋白质结构预测中评估LLM智能体调用AlphaFold、RosettaFold等工具的能力。
+2. <strong>可迁移方法</strong>：自动化评估器设计，通过预定义答案自动评分。可迁移到分子对接智能体评估中，检查LLM是否正确选择对接软件和参数。
+3. <strong>可迁移实验设计</strong>：对比随机基线、默认参数基线。可迁移到MD模拟智能体评估中，检查LLM是否选择正确的力场和模拟参数。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：类似“ToolBench”等通用工具使用基准，但本文聚焦蛋白质设计领域。</li>
+<li><strong>可迁移领域</strong>：分子模拟、药物发现、材料设计等需要多工具协作的科学领域。</li>
+<li><strong>冲突点</strong>：本文强调工具使用能力，而现有蛋白质设计AI（如ProteinGPT）更关注序列生成，未系统评估工具调用。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：
+1. <strong>名称</strong>：多步迭代蛋白质设计智能体评估
+   - <strong>来源局限/观察</strong>：ABLE仅评估单步工具调用，未考虑迭代设计。
+   - <strong>核心假设</strong>：LLM智能体在多步迭代中表现更差，因为需要记忆和调整策略。
+   - <strong>相对本文的增量</strong>：增加多步任务，要求LLM根据中间结果调整下一步工具调用。
+   - <strong>初步方法</strong>：设计“设计-评估-优化”循环任务，如先设计序列，再用AlphaFold预测结构，最后优化序列。
+   - <strong>验证方式</strong>：对比单步与多步任务的成功率。
+   - <strong>可能的失败模式</strong>：LLM可能因上下文长度限制而遗忘早期结果。
+   - <strong>创新状态</strong>：unverified</p>
+<ol start="2">
+<li>
+<p><strong>名称</strong>：蛋白质设计工具参数敏感性分析
+   - <strong>来源局限/观察</strong>：ABLE发现LLM参数设置能力弱，但未分析原因。
+   - <strong>核心假设</strong>：LLM对工具参数的理解不足，因为参数名称和取值范围缺乏语义。
+   - <strong>相对本文的增量</strong>：分析LLM在哪些参数上容易出错，并设计参数语义增强方法。
+   - <strong>初步方法</strong>：收集常见工具参数，测试LLM对每个参数的理解，如“-nstruct”在Rosetta中的含义。
+   - <strong>验证方式</strong>：对比原始LLM与参数语义增强后的LLM。
+   - <strong>可能的失败模式</strong>：参数语义增强可能过拟合特定工具。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：蛋白质设计工具输出解释的LLM微调
+   - <strong>来源局限/观察</strong>：ABLE发现结果解释是LLM最弱环节。
+   - <strong>核心假设</strong>：通过微调，LLM可以学会从工具输出中提取关键信息。
+   - <strong>相对本文的增量</strong>：提出微调数据集和训练方法。
+   - <strong>初步方法</strong>：收集工具输出与专家解释的配对数据，微调LLM。
+   - <strong>验证方式</strong>：在ABLE基准上测试微调后的LLM。
+   - <strong>可能的失败模式</strong>：微调可能降低LLM的通用能力。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only (the provided text is a metadata page with no substantive content)</li>
+<li><strong>Assessment boundary</strong> The abstract is not present; only the title, author list, and arXiv metadata are visible.</li>
+<li><strong>Shared manuscript claim summary</strong> Not assessable — no claims are provided.</li>
+<li><strong>Visible evidence base</strong> None — no figures, tables, methods, or results are included.</li>
+<li><strong>Missing materials affecting confidence</strong> The entire manuscript body, including the abstract, introduction, methods, results, discussion, and all figures/tables, is absent.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The submission cannot be evaluated because the provided material contains only the title, author list, and arXiv metadata. No scientific content — claims, methods, results, or conclusions — is available for review.</li>
+<li><strong>Who would be interested in the results, and why</strong> Not assessable from the supplied material.</li>
+<li><strong>Major strengths</strong> Not assessable from the supplied material.</li>
+<li><strong>Major Concerns</strong><ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Missing content</li>
+<li><strong>Claim pointer</strong> The title suggests a benchmark for LLM use of protein design tools, but no claims are stated.</li>
+<li><strong>Evidence pointer</strong> Not provided</li>
+<li><strong>Concern</strong> The entire manuscript body is absent. The submission consists only of a title, author list, and arXiv metadata. No abstract, introduction, methods, results, discussion, or any other substantive content is present.</li>
+<li><strong>Why it matters</strong> Without any scientific content, it is impossible to assess the validity, novelty, significance, or technical soundness of the work. A review cannot be conducted.</li>
+<li><strong>Resolution test</strong> The authors must provide the full manuscript, including at minimum an abstract, methods, results, and conclusions, for evaluation.</li>
+</ul>
+</li>
+<li><strong>Minor Comments</strong> None identified from the supplied material.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>All claims implied by the title (e.g., that a benchmark exists, that it evaluates LLM use of protein design tools) are unsupported because no evidence is provided.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

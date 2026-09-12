@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep DNA and protein level feature integration for robust clinical variant interpretation using probabilistic gradient boosting. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">5</span>
+    <div>
+      <h1>Deep DNA and protein level feature integration for robust clinical variant interpretation using probabilistic gradient boosting.</h1>
+      <div class="meta">Karthik, V; Prejesh, S; Kudale, Sumedh Deepak; OmKumar, Chandra Umakanthan</div>
+      <div class="meta muted">
+        
+        <span class="journal">Frontiers in digital health</span>
+        · 2026-09-10
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42718683/">原文</a>
+      </div>
+      <p class="one-liner">该文用概率梯度提升整合DNA和蛋白质水平特征预测变异致病性，虽涉及蛋白质结构特征但核心是临床变异分类，方法为传统机器学习，与蛋白质结构计算建模关系较弱。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">A major challenge in clinical genomics is to classify genetic variations correctly, since it directly affects disease diagnosis and personal care. The existing methods tend to be based on the combination of different factors, such as protein structure, population frequencies, phenotypic annotations, and sequence conservation. Nevertheless, these methods often cannot be used to achieve the necessary interpretability, quantify uncertainty, and address rare cases. This paper presents a probabilistic gradient boosting model on variant pathogenicity prediction. The suggested framework applies biological characteristics at both level of DNA and protein levels while also scaling the level of uncertainty in clinical decision making. Our machine learning aims to solve the issues of variant interpretation by managing the features and through probability-based pathogenicity prediction. The framework formulation is aimed at generalizing over various datasets and minimizing overfitting. At the same time, it can ensure reasonable performance to facilitate clinical experiments. The model has also been tested on three standard datasets and demonstrated to be more predictive of the pathogenic effect of variants, in comparison with a variety of existing tools. The probabilistic gradient boosting model proposed had ROC AUC values of 0.9293, 0.9610, and 0.9646 on ClinVar variants, GRCh37, and GRCh38 human genome respectively. Furthermore, the dataset was ensured to include both exonic and intronic variants, and Variants of Uncertain Significance were also taken into consideration for Performance Testing. Through this it also aims to provide better clinical significance which will lead to a good interpretable tool for priority of variants for a large variety of disease conditions.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">临床基因组学中的一个主要挑战是正确分类遗传变异，因为这直接影响疾病诊断和个体化医疗。现有方法通常基于不同因素的组合，例如蛋白质结构、群体频率、表型注释和序列保守性。然而，这些方法往往无法实现必要的可解释性、量化不确定性，并处理罕见病例。本文提出了一种用于变异致病性预测的概率梯度提升模型。该框架在DNA和蛋白质两个层面应用生物学特征，同时缩放临床决策中的不确定性水平。我们的机器学习旨在通过管理特征和基于概率的致病性预测来解决变异解读问题。该框架的制定旨在泛化到各种数据集并最小化过拟合，同时确保合理的性能以促进临床实验。该模型已在三个标准数据集上进行了测试，与多种现有工具相比，在预测变异致病效应方面表现出更优的性能。所提出的概率梯度提升模型在ClinVar变异、GRCh37和GRCh38人类基因组上的ROC AUC值分别为0.9293、0.9610和0.9646。此外，数据集确保包含外显子和内含子变异，并且性能测试中也考虑了意义未明变异。通过这一点，该模型还旨在提供更好的临床意义，从而为多种疾病条件下的变异优先级排序提供一个良好的可解释工具。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Deep DNA and protein level feature integration for robust clinical variant interpretation using probabilistic gradient boosting</li>
+<li><strong>作者与单位</strong>: Karthik, V; Prejesh, S; Kudale, Sumedh Deepak; OmKumar, Chandra Umakanthan (Vellore Institute of Technology)</li>
+<li><strong>期刊/预印本平台</strong>: Frontiers in Digital Health</li>
+<li><strong>年份</strong>: 2026</li>
+<li><strong>论文类型</strong>: 研究论文</li>
+<li><strong>领域</strong>: 临床基因组学、变异致病性预测、机器学习</li>
+<li><strong>关键词</strong>: 变异解读、概率梯度提升、DNA特征、蛋白质特征、不确定性量化</li>
+<li><strong>DOI/arXiv 号</strong>: 10.3389/fdgth.2026.1845955</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: ClinVar 2020, GRCh37, GRCh38 (公开数据)</li>
+<li><strong>阅读日期</strong>: 2024-05-24</li>
+<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>: 本文聚焦于<strong>变异致病性预测</strong>，属于蛋白质结构相关计算研究的下游应用。它通过整合DNA和蛋白质层面的特征（包括序列组成、结构稳定性、进化保守性等），使用概率梯度提升模型进行预测。其核心贡献在于<strong>不确定性量化</strong>，而非蛋白质结构预测或构象采样本身。对于本课题方向，其可迁移之处在于<strong>如何将蛋白质结构/序列特征与机器学习模型结合，并输出带置信度的预测</strong>，以及<strong>特征工程和消融实验的设计思路</strong>。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出一个概率梯度提升模型，通过整合DNA和蛋白质层面的多维度特征（如序列组成、结构稳定性、进化保守性），对遗传变异进行致病性分类，并输出带不确定性量化的预测，在ClinVar、GRCh37和GRCh38三个数据集上取得了优于多种现有方法的ROC AUC（0.9293、0.9610、0.9646）。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何准确且可解释地预测遗传变异的致病性，并同时量化预测的不确定性，以支持临床决策？</li>
+<li><strong>为什么重要</strong>: 准确区分致病性变异与良性多态性是精准医学的核心，直接影响疾病诊断、治疗规划和靶向治疗。现有方法多为确定性分类，缺乏不确定性量化，且在高维特征（如蛋白质语言模型嵌入）上可解释性差，难以在临床中应用。</li>
+<li><strong>现有方法为何不足</strong>: 1) 多数方法输出确定性标签，无法提供预测置信度；2) 基于深度学习的模型（如蛋白质语言模型）可解释性差；3) 对罕见变异和不确定意义变异（VUS）的处理能力有限；4) 在异质性基因组数据集上性能不稳定。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>: Can a probabilistic gradient boosting model, integrating multi-level DNA and protein features, provide accurate and uncertainty-aware pathogenicity predictions that outperform existing deterministic methods across diverse genomic datasets?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>脉络来源</strong>: 经外部核验（基于论文Related Work节及领域常识）</li>
+<li><strong>阶段一: 基于规则和专家共识的方法</strong>。代表性方法: ACMG/AMP指南、ClinVar数据库。优点: 可解释性强，有临床共识。局限: 无法覆盖高通量测序产生的大量新变异，对VUS处理能力弱。</li>
+<li><strong>阶段二: 传统机器学习方法</strong>。代表性方法: 随机森林（如StrVCTVRE）、支持向量机。优点: 能整合多种特征，性能优于规则方法。局限: 多为确定性分类，缺乏不确定性量化，对高维特征（如PLM嵌入）处理能力有限。</li>
+<li><strong>阶段三: 深度学习方法</strong>。代表性方法: AlphaMissense、EVE、PrimateAI、VariPred。优点: 利用蛋白质语言模型或进化约束，性能显著提升。局限: 可解释性差（“黑箱”），不确定性量化不足，对临床部署构成障碍。</li>
+<li><strong>本文主张的位置</strong>: 本文提出一种<strong>概率梯度提升</strong>方法，旨在结合传统机器学习（梯度提升）的可解释性和深度学习的性能，同时通过<strong>异方差似然建模</strong>显式量化预测不确定性，填补了现有方法在“高性能+可解释+不确定性量化”方面的空白。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">痛点</th>
+<th style="text-align: left;">表现</th>
+<th style="text-align: left;">成因或作者解释</th>
+<th style="text-align: left;">文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>缺乏不确定性量化</strong></td>
+<td style="text-align: left;">现有方法输出确定性标签（致病/良性），无法提供预测置信度，临床医生难以判断预测的可靠性。</td>
+<td style="text-align: left;">传统机器学习模型（如随机森林、SVM）和部分深度学习模型（如AlphaMissense）本质上是点估计，未建模预测方差。</td>
+<td style="text-align: left;">Introduction: “Most conventional approaches, however, lead to deterministic classifications which are unable to properly capture and express the uncertainty in the predictions.”</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>可解释性差</strong></td>
+<td style="text-align: left;">基于蛋白质语言模型（PLM）的方法（如VariPred）使用高维嵌入，其决策过程难以理解，不适合临床使用。</td>
+<td style="text-align: left;">PLM的潜在嵌入是“黑箱”，需要事后归因方法，增加了临床应用的复杂性。</td>
+<td style="text-align: left;">Introduction: “the use of high-dimensional features such as embedding of protein language models has been shown to improve performance, but it suffers from poor interpretability.”</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>对罕见变异和VUS处理能力有限</strong></td>
+<td style="text-align: left;">现有方法在罕见变异和不确定意义变异（VUS）上性能下降，而VUS在临床数据中占比很高。</td>
+<td style="text-align: left;">训练数据中致病性变异数量远少于良性变异，导致模型过拟合，泛化能力差。</td>
+<td style="text-align: left;">Introduction: “The number of pathogenic examples in variant datasets is often not significantly large compared to benign examples... This imbalance can cause models to be overfitting, resulting in them having poor generalization capabilities to novel or rare variants.”</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>性能在异质性数据集上不稳定</strong></td>
+<td style="text-align: left;">同一方法在不同基因组参考（如GRCh37 vs GRCh38）或不同变异类型上表现差异大。</td>
+<td style="text-align: left;">不同数据集的特征分布、注释质量、变异类型构成存在差异，模型难以泛化。</td>
+<td style="text-align: left;">Introduction: “variability in performance on different and heterogeneous genomic datasets.”</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 提出一个<strong>概率梯度提升（Probabilistic Gradient Boosting）</strong> 框架，用于变异致病性预测。该框架首先从DNA和蛋白质两个层面提取多维度特征（如序列组成、结构稳定性、进化保守性、理化性质），然后将这些特征输入到一个经过超参数优化的梯度提升分类器中。该分类器不仅输出致病性概率，还通过一个<strong>异方差似然（heteroscedastic likelihood）</strong> 模型学习输入依赖的预测方差，从而提供不确定性估计。</li>
+<li><strong>核心洞察</strong>: 将<strong>不确定性量化</strong>与<strong>高性能分类</strong>结合，是推动计算预测进入临床工作流的关键。作者认为，临床医生不仅需要“是什么”（致病/良性），更需要“有多确定”（置信度）。通过将梯度提升的确定性输出扩展为概率分布（均值和方差），模型能够识别出哪些预测是可靠的，哪些需要人工复核，从而提升临床可用性。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>: 在生物信息学中，<strong>“预测+置信度”</strong> 的模式比单纯的“预测”更有价值。对于任何高风险的预测任务（如药物靶点预测、蛋白质设计效果评估），显式地量化并输出不确定性，可以显著提升模型的实用性和可信度。这可以通过修改损失函数（如加入方差项）或使用贝叶斯方法来实现。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 变异数据（来自ClinVar、GRCh37、GRCh38的VCF格式或用户提供的FASTA序列）。</li>
+<li><strong>输出</strong>: 每个变异的致病性概率（0-1）和预测不确定性（方差/标准差）。</li>
+<li><strong>模块</strong>:<ol>
+<li><strong>数据预处理与去重</strong>: 对输入数据进行坐标级别和转录本级别的去重，防止信息泄露。</li>
+<li><strong>特征工程</strong>:<ul>
+<li><strong>DNA层面特征</strong>: 序列比对得分、GC含量、Shannon熵、发夹结构热力学稳定性、密码子变化、移码指示、转换/颠换、转录因子结合基序破坏。</li>
+<li><strong>蛋白质层面特征</strong>: 分子量、等电点、净电荷、疏水性变化（Kyte-Doolittle）、二级结构倾向、脯氨酸含量、BLOSUM替换得分、进化保守性得分。</li>
+<li><strong>复合表示</strong>: 将所有特征拼接成一个向量。</li>
+</ul>
+</li>
+<li><strong>机器学习管道</strong>: 使用<strong>概率梯度提升</strong>模型。该模型通过梯度提升集成学习，输出一个均值（致病性概率）和一个方差（不确定性）。损失函数结合了交叉熵（用于分类）和异方差似然（用于方差估计）。超参数通过Optuna自动优化。</li>
+<li><strong>变异分类模块</strong>: 根据致病性概率和阈值（默认0.5）进行分类，并利用方差计算置信区间，标记需要人工复核的边界案例。</li>
+<li><strong>突变生成模块</strong>: 通过优化目标函数（最小化致病性概率），探索可能的同义或保守突变，以降低预测的致病性，生成用于实验验证的假设。</li>
+</ol>
+</li>
+<li><strong>训练</strong>: 使用分层k折交叉验证（k=5）和Optuna进行超参数优化。损失函数为负对数似然（交叉熵）+ 异方差方差损失。</li>
+<li><strong>工具</strong>: Python, pandas, scikit-learn, numpy, Optuna。</li>
+<li><strong>反馈回路</strong>: 无显式反馈回路。模型是静态训练的。</li>
+<li><strong>假设</strong>: 1) 整合DNA和蛋白质层面的特征能提供比单一层面更丰富的信息。2) 梯度提升能有效建模特征间的非线性关系。3) 异方差似然能合理捕捉输入依赖的预测不确定性。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模块</th>
+<th style="text-align: left;">功能</th>
+<th style="text-align: left;">为何需要</th>
+<th style="text-align: left;">输入输出</th>
+<th style="text-align: left;">支撑证据</th>
+<th style="text-align: left;">移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>特征工程 (DNA+Protein)</strong></td>
+<td style="text-align: left;">将原始序列数据转化为有意义的数值特征，编码变异的生化、结构和进化属性。</td>
+<td style="text-align: left;">原始序列数据无法直接被机器学习模型处理；多层面特征能提供互补信息，提升预测能力。</td>
+<td style="text-align: left;"><strong>输入</strong>: 参考/替代等位基因序列、侧翼序列。<strong>输出</strong>: 20维特征向量（如SNVs, Microsatellites, Stop_codons等）。</td>
+<td style="text-align: left;"><strong>消融实验 (Table 6)</strong>: 移除“序列结构”特征导致ROC AUC下降0.067，PR AUC下降0.077，是影响最大的特征组。</td>
+<td style="text-align: left;">模型性能显著下降，尤其是对依赖序列基序和结构信息的变异（如影响剪接的变异）的预测能力会大幅减弱。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>概率梯度提升分类器</strong></td>
+<td style="text-align: left;">基于特征向量，输出致病性概率和预测不确定性（方差）。</td>
+<td style="text-align: left;">核心预测引擎。梯度提升能处理非线性关系；概率输出提供不确定性量化，这是临床决策的关键。</td>
+<td style="text-align: left;"><strong>输入</strong>: 特征向量。<strong>输出</strong>: 均值μ(x)（致病性概率）和方差σ²(x)（不确定性）。</td>
+<td style="text-align: left;"><strong>性能结果 (Table 2)</strong>: 在三个数据集上取得高ROC AUC (0.9293-0.9646) 和PR AUC。<strong>校准分析</strong>: Brier score和ECE表明概率校准良好。</td>
+<td style="text-align: left;">模型退化为确定性分类器，无法提供置信度，临床可用性降低。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>超参数优化 (Optuna)</strong></td>
+<td style="text-align: left;">自动搜索最优的模型超参数（如树的数量、深度、学习率等）。</td>
+<td style="text-align: left;">手动调参效率低且难以找到全局最优；自动优化能提升模型性能和泛化能力。</td>
+<td style="text-align: left;"><strong>输入</strong>: 超参数搜索空间。<strong>输出</strong>: 最优超参数配置。</td>
+<td style="text-align: left;"><strong>Methods节</strong>: 描述了使用TPE采样器进行100次试验的优化过程，并给出了最终参数。</td>
+<td style="text-align: left;">模型性能可能无法达到最优，泛化能力下降。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>突变生成模块</strong></td>
+<td style="text-align: left;">探索能降低预测致病性的候选突变。</td>
+<td style="text-align: left;">为实验研究提供可验证的假设，探索变异校正的可能性。</td>
+<td style="text-align: left;"><strong>输入</strong>: 原始序列。<strong>输出</strong>: 一系列候选突变及其预测的良性概率。</td>
+<td style="text-align: left;"><strong>Results节</strong>: 展示了一个案例，通过突变将初始3.3%的良性概率提升至91.5%。</td>
+<td style="text-align: left;">失去一个生成生物学假设的工具，但核心预测功能不受影响。</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>公式1: 广义相似性指数</strong> <code>Sim = M / (M + S + G)</code><ul>
+<li><strong>符号含义</strong>: M=匹配数, S=替换数, G=空位数。</li>
+<li><strong>用途</strong>: 衡量参考和替代等位基因的序列相似性。</li>
+<li><strong>直觉</strong>: 值越高，序列越相似，变异可能越保守。</li>
+<li><strong>来源指针</strong>: Methods节, Equation 1。</li>
+</ul>
+</li>
+<li><strong>公式2: GC含量</strong> <code>GC% = (G+C) / (A+T+G+C) * 100</code><ul>
+<li><strong>符号含义</strong>: A,T,G,C为侧翼窗口中各核苷酸的数量。</li>
+<li><strong>用途</strong>: 描述局部序列的核苷酸组成。</li>
+<li><strong>直觉</strong>: 与基因调控和复制时序相关。</li>
+<li><strong>来源指针</strong>: Methods节, Equation 2。</li>
+</ul>
+</li>
+<li><strong>公式3: Shannon熵</strong> <code>H = -Σ p_i log2(p_i)</code><ul>
+<li><strong>符号含义</strong>: p_i是核苷酸i的频率。</li>
+<li><strong>用途</strong>: 量化序列复杂度。</li>
+<li><strong>直觉</strong>: 高熵表示区域高度可变（如重复区），低熵表示高度保守。</li>
+<li><strong>来源指针</strong>: Methods节, Equation 3。</li>
+</ul>
+</li>
+<li><strong>公式4: 热力学稳定性变化</strong> <code>ΔG = Σ ΔG_nn(b_i, b_{i+1})</code><ul>
+<li><strong>符号含义</strong>: ΔG_nn是相邻碱基对的自由能贡献。</li>
+<li><strong>用途</strong>: 预测发夹结构稳定性。</li>
+<li><strong>直觉</strong>: ΔG越负，结构越稳定。</li>
+<li><strong>来源指针</strong>: Methods节, Equation 4。</li>
+</ul>
+</li>
+<li><strong>公式5: 净电荷</strong> <code>Q = Σ (q_j * n_j)</code><ul>
+<li><strong>符号含义</strong>: q_j是氨基酸j在pH 7.4时的电荷，n_j是其数量。</li>
+<li><strong>用途</strong>: 计算突变蛋白在生理pH下的净电荷。</li>
+<li><strong>直觉</strong>: 电荷变化可能影响蛋白质折叠和相互作用。</li>
+<li><strong>来源指针</strong>: Methods节, Equation 5。</li>
+</ul>
+</li>
+<li><strong>公式6: 疏水性变化</strong> <code>ΔH = H_mut - H_ref</code><ul>
+<li><strong>符号含义</strong>: H_ref和H_mut分别是参考和突变残基的Kyte-Doolittle疏水指数。</li>
+<li><strong>用途</strong>: 衡量突变引起的疏水性变化。</li>
+<li><strong>直觉</strong>: 疏水性变化可能影响蛋白质的折叠和膜定位。</li>
+<li><strong>来源指针</strong>: Methods节, Equation 6。</li>
+</ul>
+</li>
+<li><strong>公式7: BLOSUM替换得分</strong> <code>S_sub = M(a_ref, a_mut)</code><ul>
+<li><strong>符号含义</strong>: M是BLOSUM矩阵中参考氨基酸a_ref与突变氨基酸a_mut的比较值。</li>
+<li><strong>用途</strong>: 量化氨基酸替换的进化似然性。</li>
+<li><strong>直觉</strong>: 正得分表示保守替换，负得分表示非保守替换。</li>
+<li><strong>来源指针</strong>: Methods节, Equation 7。</li>
+</ul>
+</li>
+<li><strong>公式10: 逻辑函数</strong> <code>p(y=1|x) = σ(F_T(x)) = 1 / (1 + e^{-F_T(x)})</code><ul>
+<li><strong>符号含义</strong>: F_T(x)是T轮提升后的集成输出，σ是sigmoid函数。</li>
+<li><strong>用途</strong>: 将梯度提升的原始输出转换为致病性概率。</li>
+<li><strong>直觉</strong>: 将任意实数映射到[0,1]区间。</li>
+<li><strong>来源指针</strong>: Methods节, Equation 10。</li>
+</ul>
+</li>
+<li><strong>公式13: 异方差方差损失</strong> <code>L_var = Σ [(y_i - μ(x_i))^2 / (2σ²(x_i)) + 0.5 * log(σ²(x_i))]</code><ul>
+<li><strong>符号含义</strong>: y_i是真实标签，μ(x_i)是预测均值，σ²(x_i)是预测方差。</li>
+<li><strong>用途</strong>: 学习输入依赖的预测不确定性。</li>
+<li><strong>直觉</strong>: 当预测误差大时，模型会学习增大方差来降低损失；反之亦然。这允许模型对不确定的预测输出高方差。</li>
+<li><strong>来源指针</strong>: Methods节, Equation 13。</li>
+</ul>
+</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>: ClinVar 2020, GRCh37, GRCh38。总变异数520,378（含151,931 likely benign, 37,993 likely pathogenic, 330,454 VUS）。</li>
+<li><strong>规模</strong>: 每个数据集被分为70%训练、15%验证、15%测试。</li>
+<li><strong>指标</strong>: ROC AUC, PR AUC, F1-Score, Precision, Recall, FPR, Brier Score, Expected Calibration Error (ECE)。</li>
+<li><strong>基线</strong>: EVE, DeepSAV, FexSplice, Optimized Random Forest, StrVCTVRE, AlphScore, FINSURF, VariPred, CNVoyant, NeuroCNVscore, TADA, PrimateAI, CNVscore, VarP, AlphaMissense, VEST-indel, PhenoSV-XGBoost。</li>
+<li><strong>预算</strong>: 未提供。</li>
+<li><strong>骨干/仪器</strong>: Python, scikit-learn, Optuna。</li>
+<li><strong>Oracle 输入</strong>: 来自ClinVar的“Pathogenic/Likely Pathogenic”和“Benign/Likely Benign”标签。</li>
+<li><strong>评测协议</strong>: 分层k折交叉验证（k=5），并在独立测试集上报告最终性能。使用bootstrap分析（1000次迭代）计算95%置信区间。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">实验</th>
+<th style="text-align: left;">检验的claim</th>
+<th style="text-align: left;">对比与条件</th>
+<th style="text-align: left;">结果</th>
+<th style="text-align: left;">支持的结论</th>
+<th style="text-align: left;">不支持更强的结论</th>
+<th style="text-align: left;">来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>主要性能评估</strong></td>
+<td style="text-align: left;">提出的概率梯度提升模型在三个数据集上优于现有方法。</td>
+<td style="text-align: left;">在ClinVar 2020, GRCh37, GRCh38上，与多个基线方法（如EVE, AlphaMissense等）比较ROC AUC。</td>
+<td style="text-align: left;">模型在三个数据集上分别取得0.9293, 0.9610, 0.9646的ROC AUC，均高于所有比较的基线。</td>
+<td style="text-align: left;">模型在区分致病/良性变异方面具有竞争力。</td>
+<td style="text-align: left;">比较是间接的（引用文献中的数值），而非在统一实验设置下复现。模型在更困难的任务（如区分VUS）上的性能未与基线直接比较。</td>
+<td style="text-align: left;">Table 4, Figures 11-13</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>消融实验</strong></td>
+<td style="text-align: left;">不同特征组对模型性能的贡献不同。</td>
+<td style="text-align: left;">依次移除“基因组上下文”、“序列结构”、“理化性质”等特征组，观察ROC AUC和PR AUC的变化。</td>
+<td style="text-align: left;">移除“序列结构”特征导致性能下降最大（ROC AUC -0.067）。移除“基因组上下文”和“评分”特征也有显著影响。</td>
+<td style="text-align: left;">序列结构特征（如基序、重复）是预测致病性的最重要因素。</td>
+<td style="text-align: left;">消融实验仅测试了移除整个特征组的影响，未测试特征间的交互作用。</td>
+<td style="text-align: left;">Table 6, Figure 15</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>VUS预测分析</strong></td>
+<td style="text-align: left;">模型能对不确定意义变异（VUS）进行有意义的分类。</td>
+<td style="text-align: left;">将训练好的模型应用于ClinVar VUS数据集，观察预测分布。</td>
+<td style="text-align: left;">76.98%的VUS被预测为良性，23.02%被预测为致病性。对于“likely benign”的VUS，模型有82.25%的预测一致性。</td>
+<td style="text-align: left;">模型能够基于学习到的模式，将VUS划分为类似良性或致病性的子集，为优先排序提供计算证据。</td>
+<td style="text-align: left;">缺乏实验验证，无法确认模型对VUS的预测是否准确。预测分布可能反映了训练数据的偏差。</td>
+<td style="text-align: left;">Table 7, Figure 16</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>校准分析</strong></td>
+<td style="text-align: left;">模型输出的概率是良好校准的。</td>
+<td style="text-align: left;">计算Brier Score和Expected Calibration Error (ECE)。</td>
+<td style="text-align: left;">ClinVar 2020: Brier=0.1141, ECE=0.0549; GRCh37: Brier=0.0907, ECE=0.0677; GRCh38: Brier=0.0909, ECE=0.0657。</td>
+<td style="text-align: left;">模型的概率估计是可靠的，预测的置信度与实际观察到的频率基本一致。</td>
+<td style="text-align: left;">ECE值（~0.06）表明仍存在一定程度的校准误差，尤其是在某些概率区间。</td>
+<td style="text-align: left;">Calibration analysis节, Figure 10</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 该模型旨在预测<strong>单核苷酸变异（SNV）和小型插入缺失（indel）</strong> 的致病性，主要针对<strong>编码区和非编码区</strong>的变异。其性能在<strong>ClinVar、GRCh37、GRCh38</strong>这三个标准数据集上得到验证。</li>
+<li><strong>Oracle/真值输入</strong>: 模型训练和评估依赖于ClinVar中“Pathogenic/Likely Pathogenic”和“Benign/Likely Benign”的标签。这些标签本身是专家共识，存在噪声和更新可能。</li>
+<li><strong>端到端状态</strong>: 该框架是一个<strong>端到端的计算预测工具</strong>，从原始序列输入到致病性概率和不确定性输出。但它<strong>不是</strong>一个临床诊断工具，其输出需要结合其他证据进行解读。</li>
+<li><strong>算力成本</strong>: 未提供具体算力需求，但梯度提升模型通常比大型深度学习模型（如AlphaFold）计算成本低。</li>
+<li><strong>历史数据依赖</strong>: 模型性能高度依赖于训练数据（ClinVar 2020）的质量和分布。对于训练数据中未充分代表的变异类型或人群，性能可能下降。</li>
+<li><strong>模型依赖</strong>: 模型基于梯度提升，其性能受超参数影响。作者使用Optuna进行了优化，但不同数据集可能需要不同的最优配置。</li>
+<li><strong>最难情形</strong>: 模型在<strong>VUS</strong>上的预测缺乏金标准验证，其可靠性未知。此外，对于<strong>影响非编码调控元件</strong>或<strong>具有复杂结构效应</strong>的变异，模型可能表现不佳，因为其特征工程主要针对序列和简单结构。</li>
+<li><strong>群体/领域边界</strong>: 模型主要基于人类基因组数据训练，其泛化到其他物种的能力未经测试。</li>
+<li><strong>有边界的复述</strong>: 本文提出的概率梯度提升模型，在<strong>ClinVar 2020、GRCh37、GRCh38</strong>这三个标准人类基因组变异数据集上，通过整合DNA和蛋白质层面的特征，在<strong>区分已知致病性和良性变异</strong>的任务上，取得了<strong>优于多种现有方法的ROC AUC</strong>，并同时提供了<strong>良好校准的概率估计</strong>。然而，其在<strong>VUS</strong>上的预测能力<strong>未经实验验证</strong>，且性能依赖于<strong>ClinVar标签的质量</strong>。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。但作者提及了以下相关约束：
+- <strong>间接比较</strong>: 在比较分析中，作者承认“Baseline comparisons reported in this study should be considered as indirect comparisons as the reference performance values were derived from previously published studies instead of being re-implemented in a consistent experimental protocol.” (Results节)
+- <strong>突变生成模块缺乏实验验证</strong>: “The mutation module lacks experimental validation but, in the future, could be integrated into in-silico mutation pipelines used in the laboratory.” (Conclusion节)</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">[Analysis] 观察</th>
+<th style="text-align: left;">潜在问题或替代解释</th>
+<th style="text-align: left;">为何重要</th>
+<th style="text-align: left;">如何检验</th>
+<th style="text-align: left;">依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>间接比较削弱了性能优势的结论</strong></td>
+<td style="text-align: left;">作者引用文献中的基线性能，而非在统一实验设置下复现。不同研究的数据集划分、预处理、评估协议可能不同，导致性能差异并非完全由模型本身引起。</td>
+<td style="text-align: left;">这是论文核心claim（“优于现有方法”）的证据基础。如果比较不公平，则结论可能不成立。</td>
+<td style="text-align: left;">在相同的训练/测试集划分、预处理和评估协议下，复现所有基线方法，进行头对头比较。</td>
+<td style="text-align: left;">Results节: “Baseline comparisons reported in this study should be considered as indirect comparisons...”</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>VUS预测的“成功”定义模糊</strong></td>
+<td style="text-align: left;">模型将76.98%的VUS预测为良性。这可能是由于训练数据中良性变异远多于致病性变异（类别不平衡），导致模型倾向于预测为良性。这并非真正的“预测能力”，而是反映了数据偏差。</td>
+<td style="text-align: left;">对VUS的预测是模型临床价值的关键。如果预测只是反映了训练集先验，则对临床决策帮助有限。</td>
+<td style="text-align: left;">1) 在独立、有实验验证的VUS数据集上评估模型。2) 分析模型对VUS的预测概率分布，看其是否与已知的致病性/良性变异分布有显著差异，而非简单地看比例。</td>
+<td style="text-align: left;">Table 7: 76.98% VUS predicted as benign. 训练数据中良性/致病性比例约为4:1 (151,931 / 37,993)。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>特征工程可能遗漏关键信息</strong></td>
+<td style="text-align: left;">模型使用的特征（如GC含量、Shannon熵）相对基础。现代方法（如AlphaMissense）利用蛋白质语言模型和AlphaFold2结构，捕捉了更复杂的序列-结构关系。本文的特征集可能无法捕捉到这些高阶信息。</td>
+<td style="text-align: left;">特征质量直接决定模型性能上限。使用更基础的特征可能解释了为何模型性能虽好，但并未达到颠覆性水平。</td>
+<td style="text-align: left;">1) 将本文的特征与AlphaMissense的PLM嵌入或AlphaFold2的结构特征进行消融实验，看性能提升。2) 在相同数据集上，将本文模型与直接使用PLM嵌入的模型进行比较。</td>
+<td style="text-align: left;">特征列表 (Table 5) 中未包含任何蛋白质语言模型嵌入或AlphaFold2预测的结构特征。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>不确定性量化的实际效用未验证</strong></td>
+<td style="text-align: left;">论文展示了模型能输出方差，但未证明这个方差在临床场景中如何被有效使用。例如，是否真的能帮助医生识别需要复核的边界案例？是否比简单的概率阈值更有效？</td>
+<td style="text-align: left;">这是论文的核心创新点。如果无法证明其实际效用，则“不确定性量化”只是一个技术噱头。</td>
+<td style="text-align: left;">设计一个模拟临床决策的实验。例如，让模型对一组变异进行预测，并标记出高不确定性的变异。然后比较“仅使用概率阈值”和“使用概率+不确定性”两种策略下，人工复核后最终决策的准确性。</td>
+<td style="text-align: left;">论文仅展示了方差的计算公式 (Equation 17) 和概念，未进行任何用户研究或模拟实验来验证其效用。</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li>
+<p><strong>可迁移概念: 不确定性量化 (Uncertainty Quantification)</strong></p>
+<ul>
+<li><strong>概念</strong>: 在预测任务中，不仅输出点估计（如致病概率），还输出一个置信度（如方差）。这通过修改损失函数（如异方差似然）实现。</li>
+<li><strong>如何迁移到本课题</strong>: 在蛋白质结构预测（如AlphaFold的pLDDT）、分子对接（如打分函数的置信度）、或蛋白质设计（如序列的可行性）中，显式地输出预测的不确定性。例如，可以训练一个模型，同时预测蛋白质-配体结合亲和力和该预测的方差，帮助筛选更可靠的候选分子。</li>
+</ul>
+</li>
+<li>
+<p><strong>可迁移方法: 多层面特征融合 (Multi-level Feature Integration)</strong></p>
+<ul>
+<li><strong>方法</strong>: 从不同层面（如DNA序列、蛋白质序列、蛋白质结构）提取特征，并将其拼接成一个复合向量，作为机器学习模型的输入。</li>
+<li><strong>如何迁移到本课题</strong>: 在蛋白质构象采样或生成任务中，可以融合序列特征（如进化信息、理化性质）、结构特征（如二级结构、接触图、溶剂可及性）和动力学特征（如B因子、均方根涨落），以更全面地描述构象状态。</li>
+</ul>
+</li>
+<li>
+<p><strong>可迁移实验设计: 消融研究 (Ablation Study)</strong></p>
+<ul>
+<li><strong>设计</strong>: 系统地移除模型的不同组件（如特征组、模块），观察性能变化，以量化每个组件的贡献。</li>
+<li><strong>如何迁移到本课题</strong>: 在开发新的蛋白质结构预测或设计方法时，通过消融实验来验证每个创新点（如新的特征、新的网络模块、新的损失函数）的必要性。例如，在开发一个基于扩散模型的构象生成器时，可以消融掉条件输入（如接触图约束），看其对生成构象多样性和准确性的影响。</li>
+</ul>
+</li>
+<li>
+<p><strong>可迁移工具: 自动超参数优化 (Automated Hyperparameter Optimization)</strong></p>
+<ul>
+<li><strong>工具</strong>: 使用Optuna等框架，通过贝叶斯优化自动搜索最优超参数。</li>
+<li><strong>如何迁移到本课题</strong>: 在训练任何复杂的蛋白质相关模型（如图神经网络、Transformer）时，使用自动调参工具替代手动调参，可以更高效地找到性能更优的模型配置，并提升实验的可重复性。</li>
+</ul>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>: 本文的<strong>概率梯度提升</strong>方法与<strong>CNVscore</strong> (Requena et al., 2022) 类似，都旨在为变异预测提供不确定性估计。但本文将其应用于更广泛的SNV/indel，并整合了DNA和蛋白质特征。</li>
+<li><strong>组合方向</strong>: 本文的<strong>特征工程</strong>思路可以与<strong>AlphaMissense</strong> (Cheng et al., 2023) 的蛋白质语言模型嵌入结合。一个潜在的改进方向是：使用AlphaMissense的嵌入作为本文模型的一个高级特征，看是否能进一步提升性能。</li>
+<li><strong>冲突观点</strong>: 本文强调<strong>可解释性</strong>，认为梯度提升比深度学习更透明。然而，<strong>VariPred</strong> (Haque et al., 2023) 等研究认为，尽管PLM是“黑箱”，但其性能优势足以弥补可解释性的不足。这是一个在性能和可解释性之间的经典权衡。</li>
+<li><strong>可迁移领域</strong>: 本文的<strong>不确定性量化框架</strong>可以迁移到<strong>蛋白质-蛋白质相互作用预测</strong>或<strong>药物-靶标亲和力预测</strong>领域。在这些领域，预测的可靠性同样至关重要，输出置信度可以帮助筛选出更可靠的候选相互作用或药物分子。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<ul>
+<li><strong>名称</strong>: 基于结构感知特征和不确定性量化的蛋白质-配体结合亲和力预测</li>
+<li><strong>来源局限/观察</strong>: 本文的特征工程主要基于序列和简单结构（如发夹），未利用蛋白质的三维结构信息（如AlphaFold2预测的结构）。在蛋白质-配体结合中，三维结构是决定性的。同时，本文的不确定性量化方法可以迁移到亲和力预测，以评估预测的可靠性。</li>
+<li><strong>核心假设</strong>: 将AlphaFold2预测的蛋白质结构特征（如口袋形状、静电势、疏水补丁）与序列特征结合，并使用异方差似然损失函数，可以训练出一个比现有方法更准确且能提供置信度的亲和力预测模型。</li>
+<li><strong>相对本文的增量</strong>:<ol>
+<li><strong>特征层面</strong>: 引入AlphaFold2预测的蛋白质三维结构特征（如口袋体积、表面电荷分布、疏水指数）。</li>
+<li><strong>任务层面</strong>: 从二分类（致病/良性）迁移到回归任务（预测结合亲和力，如pIC50或pKd）。</li>
+<li><strong>验证层面</strong>: 设计实验验证不确定性量化的实际效用，例如，在虚拟筛选任务中，比较“仅使用预测亲和力”和“使用预测亲和力+置信度”两种策略的富集因子。</li>
+</ol>
+</li>
+<li><strong>初步方法</strong>:<ol>
+<li>从PDBbind或BindingDB等数据库获取蛋白质-配体复合物结构及亲和力数据。</li>
+<li>使用AlphaFold2预测蛋白质结构（如果晶体结构不可用）。</li>
+<li>提取特征：蛋白质序列特征（如ESM-2嵌入）、蛋白质结构特征（如dMaSIF或EquiDock提取的口袋特征）、配体特征（如Morgan指纹）。</li>
+<li>构建一个概率梯度提升模型（或一个输出均值和方差的神经网络），使用异方差似然损失函数进行训练。</li>
+<li>在测试集上评估模型的预测性能（RMSE, Pearson R）和校准性能（如可靠性图）。</li>
+</ol>
+</li>
+<li><strong>验证方式</strong>:<ol>
+<li><strong>性能验证</strong>: 在标准基准数据集（如PDBbind v2020）上，与现有方法（如GNINA, OnionNet, DeepDTA）比较RMSE和Pearson相关系数。</li>
+<li><strong>效用验证</strong>: 设计一个虚拟筛选任务，从大量诱饵分子中筛选出已知活性分子。比较两种策略的富集因子：策略A按预测亲和力排序，策略B按“预测亲和力/预测方差”排序（即优先选择高亲和力且低不确定性的分子）。</li>
+</ol>
+</li>
+<li><strong>可能的失败模式</strong>:<ol>
+<li><strong>结构特征噪声</strong>: AlphaFold2预测的结构在柔性区域或非标准构象上可能不准确，引入噪声。</li>
+<li><strong>方差估计不准确</strong>: 异方差似然可能无法有效捕捉所有不确定性来源（如配体构象灵活性），导致方差校准不良。</li>
+<li><strong>数据量不足</strong>: 高质量的蛋白质-配体亲和力数据相对有限，可能不足以训练一个复杂的概率模型。</li>
+</ol>
+</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h1>Review</h1>
+<h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript (abstract, introduction, related work, proposed method, results and discussion, conclusion)</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodology, experimental design, claims, and evidence as presented in the manuscript</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose a probabilistic gradient boosting framework (PROBC-VP) that integrates DNA-level and protein-level features to predict variant pathogenicity with explicit uncertainty quantification, achieving ROC AUC values of 0.9293, 0.9610, and 0.9646 on ClinVar 2020, GRCh37, and GRCh38 datasets respectively, outperforming existing methods.</li>
+<li><strong>Visible evidence base</strong> Tables 1-7, Figures 1-16, performance metrics, ablation study, calibration analysis, feature importance analysis, VUS prediction results</li>
+<li><strong>Missing materials affecting confidence</strong> Code repository not provided; trained model weights not available; no independent validation cohort; no re-implementation of baseline methods for direct comparison; no supplementary material with detailed feature lists or hyperparameter search logs</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The manuscript addresses an important problem in clinical genomics—variant pathogenicity prediction with uncertainty quantification. The integration of DNA- and protein-level features within a probabilistic gradient boosting framework is conceptually sound. However, the manuscript suffers from several critical methodological weaknesses that undermine confidence in the reported results. The comparative analysis relies entirely on literature-reported values rather than re-implemented baselines, making direct performance comparisons invalid. The dataset construction and train/test splitting procedures are inadequately described, raising concerns about data leakage. The claimed novelty is overstated given existing probabilistic approaches in the field. The mutation generation module lacks any experimental or biological validation. These issues must be resolved before the case for this framework can be established.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Clinical geneticists and bioinformaticians working on variant interpretation pipelines would be interested in a method that provides calibrated uncertainty estimates alongside pathogenicity predictions. Researchers developing machine learning approaches for genomic medicine would find the feature engineering strategy and probabilistic formulation relevant. However, the current presentation does not provide sufficient evidence that the framework is ready for clinical deployment.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> 1. The probabilistic gradient boosting formulation with heteroscedastic variance estimation is a principled approach to uncertainty quantification in variant classification. 2. The integration of both DNA-level and protein-level features is comprehensive and biologically motivated. 3. The ablation study systematically evaluates the contribution of different feature groups. 4. The evaluation on VUS variants demonstrates potential clinical utility.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Experimental design / Comparative analysis</li>
+<li><strong>Claim pointer</strong> The model outperforms existing methods (AlphaMissense, EVE, PrimateAI, etc.) across all three datasets.</li>
+<li><strong>Evidence pointer</strong> Table 4, Figures 11-13</li>
+<li><strong>Concern</strong> The comparative analysis uses ROC AUC values reported in previous publications rather than re-implementing baseline methods under identical conditions. The authors acknowledge this limitation but still present the comparison as evidence of superiority. Different studies use different dataset versions, preprocessing pipelines, train/test splits, and evaluation protocols. For example, AlphaMissense (Cheng et al., 2023) was evaluated on a different ClinVar release with different filtering criteria. The reported 0.94 for AlphaMissense on GRCh38 may not be comparable to the authors' 0.9646.</li>
+<li><strong>Why it matters</strong> Without controlled head-to-head comparison, the claim of outperforming existing methods is not supported. The reported performance differences could be entirely due to dataset composition, label quality, or evaluation methodology rather than model superiority.</li>
+<li>
+<p><strong>Resolution test</strong> Re-implement at least 3-5 baseline methods (e.g., AlphaMissense, EVE, PrimateAI, REVEL) using the same training data, same test splits, and same evaluation metrics. Report results in a table with confidence intervals and statistical significance tests.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Data leakage / Experimental design</li>
+<li><strong>Claim pointer</strong> The model generalizes well across ClinVar 2020, GRCh37, and GRCh38 datasets.</li>
+<li><strong>Evidence pointer</strong> Section "Data acquisition and preprocessing", Section "Dataset description"</li>
+<li><strong>Concern</strong> The description of train/test splitting is insufficient to rule out data leakage. The authors state a 70/15/15 split with stratification but do not specify how variants that appear in multiple datasets (e.g., the same variant in both GRCh37 and GRCh38) are handled. The deduplication protocol mentions coordinate-level deduplication within each dataset but does not clarify whether the same variant mapped to different genome builds is kept in separate experiments or could appear in training of one build and testing of another. Furthermore, the total dataset size (520,378 variants) and the split into ClinVar 2020, GRCh37, and GRCh38 subsets are not clearly defined—are these three independent datasets or overlapping?</li>
+<li><strong>Why it matters</strong> Data leakage is a well-known pitfall in genomic machine learning that can inflate performance metrics by 10-20%. If the same variant appears in training and test sets (even across different genome builds), the reported ROC AUC values may not reflect true generalization.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a clear description of how many unique variants exist across all three datasets, how overlapping variants are handled, and confirm that no variant in any test set appears in any training set (including across genome builds). Provide variant-level deduplication statistics.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility / Methodology</li>
+<li><strong>Claim pointer</strong> The framework achieves ROC AUC of 0.9293, 0.9610, and 0.9646 on ClinVar 2020, GRCh37, and GRCh38 respectively.</li>
+<li><strong>Evidence pointer</strong> Table 2, Section "Performance results"</li>
+<li><strong>Concern</strong> The reported performance metrics are suspiciously high, especially for GRCh37 and GRCh38 (0.9610 and 0.9646). Most state-of-the-art methods report ROC AUC in the range of 0.85-0.95 on similar benchmarks. The authors do not report standard deviations or confidence intervals for the main performance metrics (Table 2), only for the bootstrap analysis (Table 3). The bootstrap confidence intervals are extremely narrow (±0.003), which is unusual for genomic datasets with inherent label noise and class imbalance. The 5-fold cross-validation standard deviations (0.0009-0.0020) are also remarkably low.</li>
+<li><strong>Why it matters</strong> Extremely narrow confidence intervals and near-perfect performance may indicate overfitting, data leakage, or label contamination. Without independent validation on a held-out cohort from a different source (e.g., a different ClinVar release or a clinical dataset), the reported performance cannot be trusted.</li>
+<li>
+<p><strong>Resolution test</strong> Validate the model on an independent dataset not used in any way during development (e.g., ClinVar 2024 release, or a clinical cohort). Report performance with 95% confidence intervals. Show calibration plots for the independent test set.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Novelty / Related work</li>
+<li><strong>Claim pointer</strong> The novelty lies in "systematic combination of multi-layered DNA-level and protein-level features with clinically-oriented uncertainty quantification, implemented around the framework of gradient boosting."</li>
+<li><strong>Evidence pointer</strong> Introduction, Related work</li>
+<li><strong>Concern</strong> The claimed novelty is overstated. Probabilistic gradient boosting for variant classification has been explored previously (e.g., CNVscore by Requena et al. [15] uses uncertainty estimates; the authors themselves cite methods that combine multiple feature types). The use of heteroscedastic likelihood for variance estimation in gradient boosting is standard in the machine learning literature (e.g., NGBoost, PGBM). The feature set (GC content, Shannon entropy, BLOSUM scores, conservation scores) is standard in the field. The authors do not clearly articulate what is novel beyond the specific implementation.</li>
+<li><strong>Why it matters</strong> For a methods paper, the novelty must be clearly defined and distinguished from existing work. If the contribution is primarily the specific combination of existing techniques, this should be stated honestly and the evaluation should focus on demonstrating practical advantages over simpler alternatives.</li>
+<li>
+<p><strong>Resolution test</strong> Clearly state which components are novel and which are adopted from existing work. Provide a comparison with a simpler baseline (e.g., standard gradient boosting without probabilistic output, or logistic regression with the same features) to demonstrate the value of the probabilistic formulation. Discuss how the approach differs from CNVscore and other uncertainty-aware methods.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Clinical validity / Mutation generation module</li>
+<li><strong>Claim pointer</strong> The mutation generation module "identifies sequence modifications that are predicted by the computational model to be associated with lower pathogenicity scores" and "even highly pathogenic variants can be transformed into benign provided suitable mutations are applied."</li>
+<li><strong>Evidence pointer</strong> Section "Mutation generation module", Section "Performance results"</li>
+<li><strong>Concern</strong> The mutation generation module is presented as a key contribution but lacks any experimental or biological validation. The example provided (GTC and ATC substitutions increasing benign probability to 91.5%) is a single anecdotal case. The authors explicitly state these are "in-silico hypotheses" but then make strong claims about "transforming pathogenic variants into benign." This language could be misinterpreted by readers as suggesting therapeutic potential.</li>
+<li><strong>Why it matters</strong> In a clinical genomics context, suggesting that mutations can "correct" pathogenicity without any experimental evidence is potentially misleading. The module's utility for hypothesis generation is reasonable, but the claims need to be appropriately scoped.</li>
+<li>
+<p><strong>Resolution test</strong> Remove or substantially soften claims about "transforming" variants. Clearly state that these are computational predictions with no demonstrated biological effect. Provide systematic evaluation of the mutation generation module (e.g., how many proposed mutations are synonymous? How many are in known functional domains?).</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Writing / Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The abstract contains grammatical errors and unclear phrasing: "The suggested framework applies biological characteristics at both level of DNA and protein levels while also scaling the level of uncertainty in clinical decision making." The phrase "scaling the level of uncertainty" is unclear.</li>
+<li>
+<p><strong>Required correction</strong> Revise for clarity: "The framework integrates biological features at both the DNA and protein levels while providing calibrated uncertainty estimates for clinical decision-making."</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Methodology / Reproducibility</li>
+<li><strong>Affected element</strong> Section "Data acquisition and preprocessing"</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The authors state that "variants from several genome builds were analyzed separately, and variants were never moved between experimental data sets." However, it is unclear whether the same variant (e.g., rsID) that appears in both GRCh37 and GRCh38 is treated as the same variant or as independent instances.</li>
+<li>
+<p><strong>Required correction</strong> Clarify whether variants are tracked by rsID or genomic coordinates across genome builds, and how cross-build duplicates are handled.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Results / Reporting</li>
+<li><strong>Affected element</strong> Table 2</li>
+<li><strong>Evidence pointer</strong> Table 2</li>
+<li><strong>Issue</strong> The table reports Precision, Recall, F1-Score, ROC AUC, and PR AUC but does not report the threshold used for binary classification. The decision boundary θ is mentioned as 0.5 by default but it is unclear if this was used for all reported metrics.</li>
+<li>
+<p><strong>Required correction</strong> Report the threshold used for computing Precision, Recall, and F1-Score. If threshold tuning was performed, describe the procedure.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Methodology / Feature engineering</li>
+<li><strong>Affected element</strong> Section "Feature engineering"</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The feature engineering section describes 20 features (listed in Section "Dataset description") but the derivation of several features is unclear. For example, "FI_Mutation_composite" and "FI_General_Stability" are not defined in the feature engineering subsections.</li>
+<li>
+<p><strong>Required correction</strong> Provide clear definitions and formulas for all 20 features. Ensure consistency between the feature list in the dataset description and the features described in the feature engineering section.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Results / VUS analysis</li>
+<li><strong>Affected element</strong> Section "Predicting pathogenicity of variants of uncertain significance"</li>
+<li><strong>Evidence pointer</strong> Table 7</li>
+<li><strong>Issue</strong> The VUS analysis uses "likely benign" and "likely pathogenic" variants as ground truth for evaluating VUS predictions. However, these labels are themselves uncertain (hence "likely"). The model's agreement with these labels does not necessarily indicate correctness.</li>
+<li>
+<p><strong>Required correction</strong> Acknowledge the limitation that "likely" labels are not definitive ground truth. Consider using only variants with "Pathogenic" or "Benign" (without "likely") for validation, or discuss the implications of label uncertainty.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Writing / References</li>
+<li><strong>Affected element</strong> Section "Related work"</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The related work section is overly long (approximately 30 paragraphs) and includes tangential references (e.g., PROBC [28] and Eralp and Sefer [29] are about Hi-C analysis, not variant pathogenicity). The connection to the proposed method is tenuous.</li>
+<li>
+<p><strong>Required correction</strong> Condense the related work section to focus on methods directly relevant to variant pathogenicity prediction. Move or remove the Hi-C discussion unless it directly informs the feature set.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m7</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Methodology / Hyperparameter optimization</li>
+<li><strong>Affected element</strong> Section "Machine learning pipeline"</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The hyperparameter search space and optimal values are reported in detail, but it is unclear whether the same hyperparameters were used for all three datasets or if separate optimization was performed for each.</li>
+<li>
+<p><strong>Required correction</strong> Clarify whether hyperparameter tuning was performed separately for each dataset or once on a combined/representative dataset.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m8</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Results / Calibration</li>
+<li><strong>Affected element</strong> Section "Calibration analysis"</li>
+<li><strong>Evidence pointer</strong> Figure 10</li>
+<li><strong>Issue</strong> The calibration curves are described but the figure is not provided in the manuscript text. The Brier scores (0.1141, 0.0907, 0.0909) are relatively high for well-calibrated models (ideal is 0 for perfect calibration, random guessing gives ~0.25 for balanced classes).</li>
+<li><strong>Required correction</strong> Include the calibration plot figure. Discuss whether the Brier scores are acceptable given the class imbalance and provide context from the literature.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ol>
+<li>"The proposed model demonstrates strong performance across all three datasets... outperforming existing methods" — Not supported due to lack of controlled head-to-head comparison.</li>
+<li>"Even highly pathogenic variants can be transformed into benign provided suitable mutations are applied" — Not supported; based on a single anecdotal example with no experimental validation.</li>
+<li>"The model is not sensitive to the partition of the data" — The reported cross-validation standard deviations are implausibly low and may indicate data leakage.</li>
+<li>"The framework possesses the flexibility to be applied to targeted genomic subsets, such as those specific to diverse population sub-groups" — No evidence of evaluation on diverse populations is provided.</li>
+<li>"The model could be adapted to rare diseases having limited variant data" — No evidence or methodology for few-shot or transfer learning is presented.</li>
+</ol></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

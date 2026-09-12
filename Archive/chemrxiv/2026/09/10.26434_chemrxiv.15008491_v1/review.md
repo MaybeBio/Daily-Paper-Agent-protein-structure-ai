@@ -1,0 +1,96 @@
+## Review setup
+- **Input scope** 摘要（ChemRxiv preprint，无正文、图、表或补充材料）
+- **Assessment boundary** 仅评估摘要中报告的方法学声明、基准测试结果及其可验证性；无法评估实现细节、代码质量、统计严谨性或实际可用性
+- **Shared manuscript claim summary** 作者提出 PARAM-DOCK，一个开源、Python 编写、Numba 编译的并行多蛋白-多配体分子对接引擎和集成 web 工作流。其核心声明包括：(1) 七项经验打分函数结合迭代局部搜索（Monte Carlo 扰动 + 有界 quasi-Newton 最小化）实现对接；(2) 在 CASF-2016 core set 上 scoring power Pearson 相关 0.631，mean within-target Spearman 相关 0.579，优于 Vina 的 0.604 和 0.528；(3) 在 255 个复合物的 de novo redocking 中，top-ranked pose 2.0 Å 内成功率 68.6%，九输出中 near-native 恢复率 84.3%，Vina 分别为 74.1% 和 93.7%；(4) 条件于生成 near-native pose 时，PARAM-DOCK 将其排第一的比例为 81.4%，Vina 为 79.1%
+- **Visible evidence base** 仅摘要文本；无方法细节、代码链接、基准测试协议、统计误差估计或补充数据
+- **Missing materials affecting confidence** 全文、图、表、补充信息、代码仓库、基准测试配置（搜索盒定义、RMSD 计算脚本、硬件规格）、CASF-2016 与 redocking 数据集的详细拆分、误差条或显著性检验
+
+## Reviewer
+- **Overall assessment** 摘要描述了一个有潜在价值的集成对接平台，其自动化多蛋白-多配体工作流和并行化设计可能对药物发现实践有实际意义。基准测试结果在 scoring 和 ranking 方面显示与 Vina 相当或略优，但 sampling 成功率明显低于 Vina。然而，当前材料仅为摘要，无法验证方法实现、统计显著性、基准测试公平性或代码可用性。核心声明中 scoring power 的改进幅度较小（0.631 vs 0.604），而 sampling 的显著劣势（68.6% vs 74.1% top-1 成功率）未被充分讨论。结论中「competitive scoring and ranking performance」的表述在 sampling 明显落后的背景下显得过于乐观。
+- **Who would be interested in the results, and why** 计算化学和结构生物信息学领域的研究人员，特别是从事虚拟筛选、药物发现管线开发和对接工具基准测试的团队。集成工作流和并行化设计对需要处理大规模多靶点筛选的工业或学术实验室有吸引力。此外，开发开源对接工具的社区可能关注其打分函数和采样策略的对比表现。
+- **Major strengths** 
+  1. 集成化设计解决了实际工作流中多工具切换的痛点，自动化预处理和后处理具有明确的实用性价值
+  2. 基准测试协议设计合理，包括匹配的 PDBQT 文件、相同搜索盒、对称性校正 RMSD 和相同硬件，这有助于公平对比
+  3. 条件排名分析（81.4% vs 79.1%）提供了比单纯成功率更细致的视角，显示在采样成功时排名能力有竞争力
+  4. 开源和 web 平台的可访问性设计有利于社区采用和验证
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** 统计严谨性
+  - **Claim pointer** 「PARAM-DOCK achieved a Pearson correlation of 0.631 for scoring power and a mean within-target Spearman correlation of 0.579, compared with 0.604 and 0.528 for Vina」
+  - **Evidence pointer** 摘要，基准测试段落；location not provided
+  - **Concern** 摘要未报告任何统计不确定性度量（如置信区间、标准误或显著性检验）。0.631 与 0.604 的 Pearson 相关差异在 285 个复合物上是否显著未知。同样，0.579 与 0.528 的 Spearman 差异也未提供配对检验结果。CASF-2016 基准测试通常报告多种打分函数的结果，但摘要未说明这些差异是否在多次运行或不同初始化条件下稳定。
+  - **Why it matters** 核心声明是 PARAM-DOCK 的 scoring 和 ranking 优于 Vina。如果差异不具统计显著性，则「competitive」甚至「superior」的结论不成立。Nature 系列期刊要求定量声明有适当的不确定性量化。
+  - **Resolution test** 提供 Pearson 和 Spearman 相关的 bootstrap 置信区间或配对显著性检验（如 Fisher z 变换或 Wilcoxon 符号秩检验）。如果差异不显著，应相应弱化结论表述。
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** 结果解释完整性
+  - **Claim pointer** 「These results indicate competitive scoring and ranking performance, while conformational sampling remains the main area for further improvement」
+  - **Evidence pointer** 摘要，结论句；location not provided
+  - **Concern** 摘要报告 PARAM-DOCK 的 top-1 成功率（68.6%）和 near-native 恢复率（84.3%）均显著低于 Vina（74.1% 和 93.7%），差距分别为 5.5 和 9.4 个百分点。在 255 个复合物上，这相当于约 14 和 24 个复合物的差异。将这种程度的 sampling 劣势仅描述为「main area for further improvement」而同时声称「competitive」表现，未充分承认 sampling 是 docking 的核心功能之一。一个在 sampling 上明显落后的工具，其实际应用价值需要更谨慎的讨论。
+  - **Why it matters** 分子对接的核心任务是生成正确的结合构象。如果 PARAM-DOCK 在近半数案例中无法在 top-1 位置生成 2.0 Å 内的 pose，其在实际筛选中的效用可能受限，即使排名能力尚可。摘要的结论表述可能误导读者对工具整体性能的判断。
+  - **Resolution test** 在全文或修订摘要中明确讨论 sampling 差距的实际影响，包括是否通过增加输出数（如 top-10 或 top-50）可弥补，以及是否有特定复合物类别（如柔性侧链、金属离子等）导致失败。结论应更平衡地反映 sampling 和 scoring 的相对贡献。
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** 方法可验证性
+  - **Claim pointer** 「PARAM-DOCK, an open-source molecular docking engine and integrated web workflow implemented in Python with Numba-compiled numerical kernels」
+  - **Evidence pointer** 摘要，第一段；location not provided
+  - **Concern** 摘要声称「open-source」但未提供代码仓库 URL、许可证类型或版本信息。同样，web 平台的可访问性声明无法验证。对于 Nature 系列期刊，软件工具的可用性和可复现性是基本要求。此外，七项打分函数的具体形式、参数化方法和训练数据未在摘要中描述，无法评估其创新性或与现有打分函数（如 Vina 的优化函数）的实质差异。
+  - **Why it matters** 如果代码不可获取或文档不完整，基准测试结果无法被独立复现，削弱了整个研究的可信度。打分函数的参数化来源（是重新拟合还是改编自现有函数）直接影响其新颖性评估。
+  - **Resolution test** 在修订版中提供代码仓库链接、许可证、版本号和完整的打分函数描述（或引用已发表的方法论文）。如果代码在评审时不可用，应说明原因和预计开放时间。
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** 基准测试公平性
+  - **Claim pointer** 「PARAM-DOCK was benchmarked against Vina using matched receptor and ligand PDBQT files, identical search boxes, symmetry-corrected RMSD evaluation, and identical hardware」
+  - **Evidence pointer** 摘要，基准测试段落；location not provided
+  - **Concern** 摘要声称「matched」和「identical」条件，但未说明 Vina 的版本（如 Vina 1.2 与 1.0 性能差异显著）、Vina 的 exhaustiveness 参数设置、或 PARAM-DOCK 的采样计算量（如迭代次数、Monte Carlo 步数）是否与 Vina 的计算预算匹配。如果 PARAM-DOCK 使用了显著更多的计算资源，则比较的公平性存疑。
+  - **Why it matters** 对接工具比较中，计算预算的匹配是公认的难点。如果 PARAM-DOCK 的采样成本远高于 Vina，则「competitive」的结论可能仅在高计算成本下成立，影响其实用性评估。
+  - **Resolution test** 在全文或修订摘要中报告 Vina 版本、exhaustiveness 值、PARAM-DOCK 的采样参数和两者的运行时间对比。如果计算成本差异大，应讨论性能-成本权衡。
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** 术语清晰度
+  - **Affected element** 「binding-basin population and pocket-complementarity descriptors」
+  - **Evidence pointer** 摘要，方法描述；location not provided
+  - **Issue** 这些术语未定义，读者无法理解其具体含义和计算方式。
+  - **Required correction** 在修订版中简要定义这些描述符，或引用已发表的方法学文献。
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** 数据集描述
+  - **Affected element** 「de novo redocking of 255 complexes」
+  - **Evidence pointer** 摘要，基准测试段落；location not provided
+  - **Issue** 未说明这 255 个复合物是否与 CASF-2016 的 285 个有重叠，或来自独立数据集。数据集来源和选择标准不清晰。
+  - **Required correction** 明确说明 redocking 数据集的来源、与 CASF-2016 的关系以及复合物选择标准。
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** 结果呈现
+  - **Affected element** 「recovered a near-native pose among nine outputs in 84.3%」
+  - **Evidence pointer** 摘要，基准测试段落；location not provided
+  - **Issue** 「nine outputs」的选择依据未说明。为何是九个而非十个或五个？这影响结果的可比性。
+  - **Required correction** 解释输出数量的选择理由，或引用标准协议。
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** 可访问性声明
+  - **Affected element** 「open-source」和「web workflow」
+  - **Evidence pointer** 摘要，第一段；location not provided
+  - **Issue** 未提供任何访问链接或使用说明。
+  - **Required correction** 在修订版中提供代码仓库和 web 平台的 URL。
+- **Technical failings that need to be addressed before the case is established** R1-M1（统计显著性缺失）、R1-M2（sampling 劣势未充分讨论）、R1-M3（代码和打分函数不可验证）
+- **Assessment against Nature-style criteria** 
+  - **Originality** 中等。集成多蛋白-多配体并行对接的工作流设计有一定新意，但七项经验打分函数和迭代局部搜索策略在对接领域并非全新概念。需要全文确认打分函数是否有实质创新。
+  - **Scientific importance** 中等。如果性能声明成立，对药物发现实践有实际价值，但属于增量改进而非范式转变。sampling 的明显劣势限制了其重要性。
+  - **Interdisciplinary readership** 有限。主要吸引计算化学和结构生物学子领域，对更广泛的 Nature 读者群吸引力不足。
+  - **Technical soundness** 当前不可评估。摘要缺乏方法细节和统计严谨性，无法判断基准测试的可靠性。
+  - **Readability for nonspecialists** 摘要对领域内读者可读，但术语（如「binding-basin population」）未解释，对非专家不够友好。
+- **Recommendation posture** 目前基于提供的材料无法建立核心结论。需要全文、代码和补充数据才能评估。建议在获得完整材料后重新评审。
+
+## Risk / unsupported claims
+- 「competitive scoring and ranking performance」的结论在 sampling 明显落后于 Vina 的背景下缺乏充分支撑，表述过于乐观
+- 「open-source」和「web workflow」的可访问性声明无法验证，未提供链接或访问信息
+- 打分函数优于 Vina 的声明（0.631 vs 0.604）未提供统计显著性证据，差异可能不显著
+- 「automates major pre-processing and post-processing steps」的声明无法从摘要验证，需要代码或使用文档确认
+- 条件排名 81.4% vs 79.1% 的差异未提供不确定性度量，可能不显著

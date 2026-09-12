@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Structural T-Cell Receptor Analysis in the Age of Machine Learning. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Structural T-Cell Receptor Analysis in the Age of Machine Learning.</h1>
+      <div class="meta">Quast, Nele P; Raybould, Matthew I J; Deane, Charlotte M</div>
+      <div class="meta muted">
+        
+        <span class="journal">Immunological reviews</span>
+        · 2026-09-06
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42700152/">原文</a>
+      </div>
+      <p class="one-liner">该文综述了机器学习时代下T细胞受体（TCR）结构预测的计算方法、资源及挑战，并探讨了结构预测在TCR特异性推断和设计中的应用，属于蛋白质结构计算领域，但以综述为主，方法创新性有限。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The development of highly accurate deep learning models for protein structure prediction has transformed the landscape of T-cell receptor (TCR) structure data, which can now be accessed at repertoire scale. We provide a perspective on the growing field of structural TCR immunoinformatics, summarizing core principles of TCR structural biology and highlighting existing resources and tools. We outline computational methods for TCR structure prediction, and discuss outstanding challenges faced by current tools, as well as potential avenues to address these. We expand on the research enabled by the availability of predicted TCR structures, exploring the utility of TCR structure predictions for computationally inferring TCR specificity, as well as summarizing opportunities emerging from the adjacent field of antibody research. Finally, we provide a forward-looking perspective on the advances in deep learning research which have recently enabled computational design of TCRs and TCR-like binders.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">用于蛋白质结构预测的高精度深度学习模型的发展，已经改变了T细胞受体（TCR）结构数据的格局，这些数据现在可以在库规模上获取。我们对结构TCR免疫信息学这一日益发展的领域提供了视角，总结了TCR结构生物学的核心原理，并强调了现有资源和工具。我们概述了用于TCR结构预测的计算方法，并讨论了当前工具面临的突出挑战，以及解决这些挑战的潜在途径。我们进一步阐述了由预测TCR结构可用性所推动的研究，探索了TCR结构预测在计算推断TCR特异性方面的实用性，并总结了来自相邻抗体研究领域的新机遇。最后，我们对深度学习研究的进展提供了前瞻性视角，这些进展最近已使TCR和TCR样结合物的计算设计成为可能。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Structural T-Cell Receptor Analysis in the Age of Machine Learning</li>
+<li><strong>作者与单位</strong>: Quast, Nele P; Raybould, Matthew I J; Deane, Charlotte M (University of Oxford, Department of Statistics)</li>
+<li><strong>期刊/预印本平台</strong>: Immunological Reviews</li>
+<li><strong>年份</strong>: 2026</li>
+<li><strong>论文类型</strong>: 综述 (Perspective/Review)</li>
+<li><strong>领域</strong>: 计算免疫学，结构生物信息学，T细胞受体(TCR)结构预测与设计</li>
+<li><strong>关键词</strong>: T-cell receptor, TCR, structure prediction, machine learning, deep learning, AlphaFold, TCR:pMHC, specificity prediction, protein design, inverse folding</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1111/imr.70168</li>
+<li><strong>代码</strong>: 文中提及STCRpy (https://github.com/oxpig/STCRpy), OTS数据库, FTCRDab等，但本文为综述，无核心代码。</li>
+<li><strong>数据</strong>: 文中提及STCRDab, TCR3d, OTS数据库, FTCRDab等。</li>
+<li><strong>阅读日期</strong>: 2024-05-21</li>
+<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>: 本文是一篇关于TCR结构分析、预测和设计的全面综述，聚焦于深度学习（特别是AlphaFold系列）如何改变该领域。它系统总结了TCR结构生物学原理、现有资源、预测方法（同源建模、AlphaFold变体、扩散模型）、结构特异性预测、以及基于结构的TCR设计（逆折叠、幻觉）。该文为领域内研究者提供了清晰的发展脉络、核心挑战和未来方向，是理解该子领域现状的权威入口。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文综述了深度学习（尤其是AlphaFold2及其衍生模型）如何使TCR结构预测达到接近实验精度，并探讨了这些预测在TCR特异性推断、结构分析和从头设计中的应用、当前挑战（如CDR3环预测精度、数据偏差、构象灵活性）及未来方向。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何利用机器学习和深度学习方法，从序列出发准确预测TCR及其与pMHC复合物的三维结构，并利用这些结构信息来推断TCR的特异性、理解其识别机制以及进行从头设计？</li>
+<li><strong>为什么重要</strong>: TCR是适应性免疫的核心，识别pMHC抗原。解码TCR特异性对于开发癌症免疫疗法、理解自身免疫疾病和评估生物制剂的免疫原性至关重要。然而，实验结构数据稀缺且昂贵，序列数据虽多但难以泛化。准确的结构预测有望提供正交信息，克服序列方法的局限性。</li>
+<li><strong>现有方法为何不足</strong>: 1) 实验结构数据（X射线、cryo-EM）数量远少于序列数据，且存在严重基因偏差。2) 基于序列的特异性预测方法容易过拟合，无法泛化到未见过的抗原，需要约1000倍的数据量才能实现泛化。3) 传统的同源建模在预测高度多样化的CDR3环时精度不足（RMSD &gt; 2Å）。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>: Can deep learning-based structure prediction of TCR:pMHC complexes, combined with confidence metrics, enable generalizable (de-novo) prediction of TCR specificity for unseen epitopes?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><strong>脉络</strong>: 从实验结构稀缺到深度学习驱动的结构预测与设计。
+<strong>阶段</strong>:
+1.  <strong>实验结构时代</strong>: 依赖X射线晶体学和cryo-EM，数据量小（~781个PDB条目），存在严重基因偏差（如TRAV12-2/TRBV6-5占15.7%）。优点：高精度。局限：通量低、成本高、覆盖度低。
+2.  <strong>同源建模时代</strong>: 工具如TCRBuilder, LYRA。优点：快速。局限：对框架区精度高（&lt;1.5Å RMSD），但对CDR3环预测精度差（&gt;2Å RMSD），依赖模板。
+3.  <strong>深度学习预测时代 (AlphaFold2及其衍生)</strong>: AlphaFold2/3, AlphaFold-Multimer, 以及TCR特异性模型如TCRBuilder2+, TCRmodel2, tFold-TCR。优点：整体精度显著提升，CDR3环预测优于同源建模（1.5-3.0Å RMSD），速度快。局限：CDR3环预测方差大（可达&gt;5Å），对罕见基因对预测仍困难，泛化到全新构象能力有限。
+4.  <strong>结构特异性预测时代</strong>: 利用结构预测的置信度指标（如pAE, pLDDT）或训练GNN来区分结合与非结合TCR。代表：TCRdock, NetTCR-struc, STAG。优点：在IMMREP25挑战中首次实现了对未见肽的统计显著泛化。局限：精度仍低（AUC0.1最高0.601），高度依赖复合物预测精度。
+5.  <strong>从头设计时代</strong>: 结合逆折叠（ProteinMPNN, ESM-IF）和骨架生成（RFDiffusion, 微调AlphaFold2）进行TCR和TCRm设计。代表：Motmaen et al. (TCR设计), 迷你结合体设计。优点：实现了实验验证的结合。局限：设计的TCR可能对空载MHC有反应，特异性仍需改进。</p>
+<p><strong>注</strong>: 此脉络是经外部核验的领域发展共识，本文作者进行了系统梳理。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">痛点</th>
+<th style="text-align: left;">表现</th>
+<th style="text-align: left;">成因或作者解释</th>
+<th style="text-align: left;">文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>实验结构数据稀缺且有偏</strong></td>
+<td style="text-align: left;">仅781个PDB条目，远少于序列数据；基因对分布极不均匀（如TRAV12-2/TRBV6-5占15.7%）。</td>
+<td style="text-align: left;">X射线晶体学仍是主要方法，cryo-EM对TCR Fv应用受限（尺寸小、稳定性差）；多数研究聚焦于特定疾病/靶点。</td>
+<td style="text-align: left;">Section 2.1, Table 1, Figure 2a, 2b</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CDR3环预测精度不足</strong></td>
+<td style="text-align: left;">深度学习模型对CDR3α和CDR3β的预测RMSD在1.5-3.0Å之间，但方差大，部分案例误差&gt;5Å。</td>
+<td style="text-align: left;">CDR3环固有的高序列和结构多样性；训练数据有限，模型难以泛化到全新构象。</td>
+<td style="text-align: left;">Section 4.1.2, 4.1.3, 4.4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TCR:pMHC复合物界面恢复困难</strong></td>
+<td style="text-align: left;">所有深度学习模型的fnat（恢复天然接触的分数）中位数低于50%。</td>
+<td style="text-align: left;">界面相互作用的精确预测仍是挑战，模型可能无法捕捉到原子级别的细节。</td>
+<td style="text-align: left;">Section 4.2.5</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>结构特异性预测泛化能力弱</strong></td>
+<td style="text-align: left;">在IMMREP25中，最佳方法的AUC0.1仅为0.601（随机基线0.5），提升有限。</td>
+<td style="text-align: left;">复合物结构预测精度是主要瓶颈；置信度指标与真实结合能力之间的关联尚不明确。</td>
+<td style="text-align: left;">Section 4.3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TCR设计中的交叉反应性</strong></td>
+<td style="text-align: left;">设计的TCR可能对空载MHC产生信号，表明未能完全区分肽特异性。</td>
+<td style="text-align: left;">设计流程未能完全捕捉天然TCR对肽和MHC的精细特异性。</td>
+<td style="text-align: left;">Section 5.3.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TCR特异性预测的序列数据瓶颈</strong></td>
+<td style="text-align: left;">基于序列的模型无法泛化到新抗原，估计需要1000倍数据量。</td>
+<td style="text-align: left;">序列数据本身可能不包含足够的信号来学习通用的结合规则。</td>
+<td style="text-align: left;">Section 4.3 (引用[19])</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 利用深度学习（特别是AlphaFold2/3及其TCR特异性变体）从序列预测TCR和TCR:pMHC复合物的三维结构，并利用这些预测结构的置信度指标（如pLDDT, pAE）或训练图神经网络（GNN）来推断TCR特异性或进行设计。</li>
+<li><strong>核心洞察</strong>: 结构预测的置信度指标（如pAE）本身包含了关于TCR:pMHC结合可能性的信号。即使预测的结构不完美，其不确定性也能区分结合与非结合。这为在缺乏大量实验结合数据的情况下进行特异性预测提供了新范式。此外，TCR的CDR3α和CDR3β在结构多样性上相当，这与抗体中CDR3L和CDR3H的不对称性形成对比，对预测和设计策略有重要影响。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>: 对于数据稀缺的生物物理问题，利用生成模型（如扩散模型）的置信度或不确定性作为下游任务的信号，是一种强大的策略。这比直接训练一个分类器更鲁棒，因为它利用了模型在训练过程中学到的关于“物理合理性”的隐式知识。这种方法可以迁移到其他蛋白质-蛋白质相互作用或配体-受体结合预测问题中。</li>
+</ol>
+<h2>07 方法总览</h2>
+<p>本文为综述，不提出单一方法。但可总结其描述的典型TCR结构预测与特异性推断流程：
+- <strong>输入</strong>: TCR α链和β链的氨基酸序列，以及pMHC的序列（肽和MHC等位基因）。
+- <strong>输出</strong>: TCR Fv或TCR:pMHC复合物的三维原子坐标，以及相关的置信度指标（如pLDDT, pAE, DockQ预测值）。
+- <strong>模块</strong>:
+    1.  <strong>序列处理</strong>: 使用IMGT编号方案对TCR序列进行注释，识别CDR环和框架区。
+    2.  <strong>结构预测</strong>: 使用深度学习模型（如AlphaFold-Multimer, TCRBuilder2+, tFold-TCR）或同源建模工具（如LYRA）生成初始结构。
+    3.  <strong>复合物生成</strong>: 对于TCR:pMHC，使用共折叠模型（如AlphaFold3）或对接协议（如HADDOCK + 几何评分函数）。
+    4.  <strong>置信度评估</strong>: 计算结构预测的置信度指标（如pLDDT, pAE, DockQ）。
+    5.  <strong>特异性推断</strong>: 使用GNN（如STAG, NetTCR-struc）或直接比较目标肽与诱饵肽的置信度指标（如TCRdock）来预测结合特异性。
+- <strong>训练</strong>: 模型在PDB中的实验结构数据（如STCRDab）上进行训练或微调。TCR特异性模型通常使用更小的、领域特定的数据集。
+- <strong>工具</strong>: AlphaFold2/3, AlphaFold-Multimer, OpenFold, Boltz, Chai, TCRBuilder2+, TCRmodel2, tFold-TCR, HADDOCK, STCRpy, ProteinMPNN, ESM-IF, RFDiffusion等。
+- <strong>反馈回路</strong>: 在设计中，使用结构预测（如AlphaFold2）来验证设计的序列是否能折叠回目标骨架，形成“设计-预测-验证”循环。
+- <strong>假设</strong>: 1) 序列决定结构，且深度学习可以学习到这种映射。2) 结构互补性是TCR:pMHC结合的主要决定因素。3) 预测结构的置信度与结合可能性相关。</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模块</th>
+<th style="text-align: left;">功能</th>
+<th style="text-align: left;">为何需要</th>
+<th style="text-align: left;">输入输出</th>
+<th style="text-align: left;">支撑证据</th>
+<th style="text-align: left;">移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>TCR Fv结构预测 (如TCRBuilder2+)</strong></td>
+<td style="text-align: left;">从TCR α/β链序列预测其Fv区域的三维结构。</td>
+<td style="text-align: left;">实验结构稀缺，需要高通量生成结构数据以进行下游分析。</td>
+<td style="text-align: left;">输入：TCR α/β序列。输出：Fv原子坐标，pLDDT。</td>
+<td style="text-align: left;">在独立基准测试中，与AlphaFold2/3精度相当，但速度快得多（&lt;1s/结构）。</td>
+<td style="text-align: left;">无法进行大规模（如百万级）的结构分析，无法生成用于训练GNN的预测结构数据集。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TCR:pMHC复合物预测 (如AlphaFold3, tFold-TCR)</strong></td>
+<td style="text-align: left;">从TCR和pMHC序列联合预测复合物结构。</td>
+<td style="text-align: left;">理解TCR如何识别抗原，是结构特异性预测和设计的基础。</td>
+<td style="text-align: left;">输入：TCR α/β, 肽, MHC序列。输出：复合物原子坐标，pAE, pLDDT。</td>
+<td style="text-align: left;">所有深度学习模型的中位iRMSD &lt; 3Å，优于传统对接方法。</td>
+<td style="text-align: left;">无法进行结构特异性预测，无法为设计提供准确的结合姿态。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>结构特异性评分函数 (如几何评分函数)</strong></td>
+<td style="text-align: left;">评估预测的TCR:pMHC复合物姿态的“TCR样”程度。</td>
+<td style="text-align: left;">通用对接评分函数对TCR:pMHC复合物排名不可靠，需要领域知识来筛选。</td>
+<td style="text-align: left;">输入：预测的复合物结构。输出：一个基于TCR规范对接角度的似然分数。</td>
+<td style="text-align: left;">将HADDOCK的AUC从0.631提升到0.843。</td>
+<td style="text-align: left;">对接结果中大量非规范姿态会干扰正确复合物的识别，降低特异性预测的准确性。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>基于置信度的特异性推断 (如TCRdock)</strong></td>
+<td style="text-align: left;">利用结构预测的置信度指标（如pAE）来区分结合与非结合TCR。</td>
+<td style="text-align: left;">避免训练复杂的分类器，直接利用模型对“物理合理性”的隐式判断。</td>
+<td style="text-align: left;">输入：目标肽和诱饵肽的复合物预测。输出：基于pAE的排名。</td>
+<td style="text-align: left;">在IMMREP25中，14/15个改进的提交使用了结构信息，最佳方法基于此。</td>
+<td style="text-align: left;">特异性预测将完全依赖序列模型，其泛化能力已被证明非常有限。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>逆折叠模型 (如ProteinMPNN)</strong></td>
+<td style="text-align: left;">给定蛋白质骨架结构，预测能折叠成该结构的氨基酸序列。</td>
+<td style="text-align: left;">是“从头设计”流程的核心，将结构信息转化为序列信息。</td>
+<td style="text-align: left;">输入：蛋白质骨架坐标。输出：每个位置的氨基酸概率分布。</td>
+<td style="text-align: left;">在TCR设计中，能恢复pMHC界面的天然序列，优于RosettaDesign。</td>
+<td style="text-align: left;">无法进行基于结构的序列设计，只能依赖随机突变或序列语言模型。</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用。本文为综述，未提出新的公式。</p>
+<h2>10 实验设计与证据链</h2>
+<p>本文为综述，不包含单一实验。但总结了多个关键实验/基准测试的证据链。</p>
+<p><strong>数据集/群体</strong>: STCRDab (781个PDB条目), OTS (163万非冗余配对TCR序列), IMMREP25挑战赛数据集。
+<strong>指标</strong>: RMSD, iRMSD, fnat, DockQ, pLDDT, pAE, AUC, AUC0.1。
+<strong>基线</strong>: 随机基线 (AUC0.1=0.5), 序列模型 (如NetTCR 2.2), 同源建模 (LYRA), 通用对接 (HADDOCK)。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">实验</th>
+<th style="text-align: left;">检验的claim</th>
+<th style="text-align: left;">对比与条件</th>
+<th style="text-align: left;">结果</th>
+<th style="text-align: left;">支持的结论</th>
+<th style="text-align: left;">不支持更强的结论</th>
+<th style="text-align: left;">来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>TCR:pMHC复合物预测基准测试</strong></td>
+<td style="text-align: left;">深度学习模型优于传统对接方法。</td>
+<td style="text-align: left;">对比TCRpMHCmodels (对接) vs. AlphaFold2/3, TCRmodel2, tFold-TCR等。</td>
+<td style="text-align: left;">所有深度学习模型的中位iRMSD &lt; 3Å，而对接方法表现更差。</td>
+<td style="text-align: left;">深度学习共折叠是当前TCR:pMHC复合物预测的SOTA。</td>
+<td style="text-align: left;">深度学习模型之间的差异在误差范围内，没有单一模型显著胜出。</td>
+<td style="text-align: left;">Section 4.2.5</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>几何评分函数评估</strong></td>
+<td style="text-align: left;">基于TCR规范对接角度的评分函数能提升对接结果排名。</td>
+<td style="text-align: left;">对比HADDOCK内部评分 vs. 几何评分 vs. 两者结合。</td>
+<td style="text-align: left;">几何评分将AUC从0.631提升到0.843。</td>
+<td style="text-align: left;">领域知识（规范对接角度）能有效筛选对接姿态。</td>
+<td style="text-align: left;">结合两者并未进一步提升AUC，但提升了Top 50的召回率。</td>
+<td style="text-align: left;">Section 4.2.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMMREP25特异性预测挑战</strong></td>
+<td style="text-align: left;">结构信息能提升对未见肽的特异性预测。</td>
+<td style="text-align: left;">对比纯序列方法 vs. 结构信息方法。</td>
+<td style="text-align: left;">14/15个改进的提交使用了结构信息，最佳AUC0.1=0.601。</td>
+<td style="text-align: left;">结构信息首次实现了对未见肽的统计显著泛化。</td>
+<td style="text-align: left;">提升仍然有限，AUC0.1仅略高于0.5，远未达到实用水平。</td>
+<td style="text-align: left;">Section 4.3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CDR3α vs CDR3β结构多样性分析</strong></td>
+<td style="text-align: left;">TCR的CDR3α与CDR3β结构多样性相当。</td>
+<td style="text-align: left;">分析STCRDab和OTS数据，对比抗体CDR3L。</td>
+<td style="text-align: left;">CDR3α无规范簇，预测难度与CDR3β相当。</td>
+<td style="text-align: left;">TCR的α链和β链在抗原识别中贡献更均衡，与抗体不同。</td>
+<td style="text-align: left;">该结论基于现有有限数据，更多数据可能揭示新的模式。</td>
+<td style="text-align: left;">Section 4.1.3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TCR设计实验验证</strong></td>
+<td style="text-align: left;">基于结构的计算设计能产生特异性TCR结合物。</td>
+<td style="text-align: left;">使用微调AlphaFold2 + ProteinMPNN设计TCR，并进行实验验证。</td>
+<td style="text-align: left;">设计的TCR对6/9个pMHC靶点特异性结合。</td>
+<td style="text-align: left;">计算TCR设计是可行的。</td>
+<td style="text-align: left;">部分设计对空载MHC有反应，特异性仍需改进。</td>
+<td style="text-align: left;">Section 5.3.2</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文结论主要适用于αβ TCR的结构预测、特异性推断和设计。γδ TCR未被涵盖。</li>
+<li><strong>oracle/真值输入</strong>: 所有结构预测方法的评估都依赖于PDB中的实验结构作为“金标准”。对于特异性预测，IMMREP25的评估依赖于实验验证的结合数据。</li>
+<li><strong>端到端状态</strong>: 从序列到特异性预测的端到端流程已初步可行，但精度有限。从序列到设计出实验验证的TCR也已实现，但成功率和对特异性的控制仍需提升。</li>
+<li><strong>算力成本</strong>: 高精度模型（如AlphaFold3）计算成本高。高通量模型（如TCRBuilder2+）速度快，但精度略低。大规模（百万级）结构预测仍面临速度瓶颈（12天/百万序列）。</li>
+<li><strong>历史数据依赖</strong>: 所有模型都严重依赖历史实验数据。数据偏差（如基因偏好）直接影响模型性能。模型对全新构象的泛化能力有限。</li>
+<li><strong>模型依赖</strong>: 结论高度依赖于AlphaFold系列模型。其他方法（如同源建模、传统对接）在特定场景下仍有价值，但整体上已被深度学习超越。</li>
+<li><strong>最难情形</strong>: 预测高度多样化的CDR3环、罕见基因对的TCR结构，以及区分与非常相似肽段结合的TCR特异性，仍是当前最困难的任务。</li>
+<li><strong>群体/领域边界</strong>: 结论主要基于对人类TCR的研究。对小鼠或其他物种的适用性需要验证。</li>
+<li><strong>不确定性</strong>: 结构预测的置信度指标（pLDDT, pAE）与真实结构误差和生物学功能（如结合）之间的关系尚不完全清楚，存在将预测误差误判为构象灵活性的风险。</li>
+</ul>
+<p><strong>有边界的复述</strong>: 在现有实验结构数据（约800个）和深度学习模型（如AlphaFold2/3）的支持下，TCR结构预测已达到接近实验的精度，但CDR3环仍是主要挑战。利用这些预测结构的置信度指标，首次实现了对未见抗原的统计显著特异性预测，但性能仍远低于实用水平。基于结构的TCR设计已产生实验验证的结合物，但设计的特异性仍需改进。这些进展主要局限于人类αβ TCR，并受限于现有数据的偏差和规模。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">局限</th>
+<th style="text-align: left;">具体表现</th>
+<th style="text-align: left;">作者提出的未来方向</th>
+<th style="text-align: left;">来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>CDR3环预测精度不足</strong></td>
+<td style="text-align: left;">深度学习模型对CDR3α和CDR3β的预测RMSD在1.5-3.0Å之间，但方差大，部分案例误差&gt;5Å。</td>
+<td style="text-align: left;">1) 定向实验解析具有未采样VJ基因对的TCR结构（约2000个）。2) 训练模型预测多个构象以捕捉环的灵活性。3) 利用MD模拟数据（如FTCRDab）改进预测。</td>
+<td style="text-align: left;">Section 4.4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TCR:pMHC界面恢复困难</strong></td>
+<td style="text-align: left;">所有深度学习模型的fnat中位数低于50%。</td>
+<td style="text-align: left;">继续改进通用蛋白质结构预测模型，特别是对蛋白质-蛋白质界面的预测。</td>
+<td style="text-align: left;">Section 4.2.5</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TCR特异性预测泛化能力弱</strong></td>
+<td style="text-align: left;">IMMREP25最佳AUC0.1仅为0.601。</td>
+<td style="text-align: left;">提高TCR:pMHC复合物预测精度，因为这是当前的主要瓶颈。</td>
+<td style="text-align: left;">Section 4.3, 4.4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TCR设计中的交叉反应性</strong></td>
+<td style="text-align: left;">设计的TCR可能对空载MHC产生信号。</td>
+<td style="text-align: left;">改进设计流程，以更好地捕捉天然TCR对肽和MHC的精细特异性。</td>
+<td style="text-align: left;">Section 5.3.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TCR结构数据偏差</strong></td>
+<td style="text-align: left;">现有结构数据偏向少数基因对（如TRAV12-2/TRBV6-5）。</td>
+<td style="text-align: left;">通过定向实验解析更多样化的TCR结构来对抗偏差。</td>
+<td style="text-align: left;">Section 2.1, 4.4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CDR3α和CDR3β构象可能不独立</strong></td>
+<td style="text-align: left;">存在链间相互作用的证据，以及Vα/Vβ结构域相对取向的变化。</td>
+<td style="text-align: left;">需要更复杂的模型来捕捉这种依赖性。</td>
+<td style="text-align: left;">Section 4.4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>诱导契合问题</strong></td>
+<td style="text-align: left;">TCR CDR环在结合pMHC时会发生构象变化，而当前模型主要训练于结合态结构。</td>
+<td style="text-align: left;">结构预测器需要抗原信息来预测互补的TCR构象。</td>
+<td style="text-align: left;">Section 4.4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>速度瓶颈</strong></td>
+<td style="text-align: left;">预测一个百万级序列的库需要约12天。</td>
+<td style="text-align: left;">需要同时提高预测精度和速度。</td>
+<td style="text-align: left;">Section 5.1.1</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">[Analysis] 观察</th>
+<th style="text-align: left;">潜在问题或替代解释</th>
+<th style="text-align: left;">为何重要</th>
+<th style="text-align: left;">如何检验</th>
+<th style="text-align: left;">依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>TCR特异性模型在IMMREP25上的成功主要归因于AlphaFold3的改进，而非TCR特异性方法。</strong></td>
+<td style="text-align: left;">最佳方法只是将TCRdock的AlphaFold2后端替换为AlphaFold3。这表明通用模型的进步比领域特定的微调贡献更大。</td>
+<td style="text-align: left;">这挑战了开发TCR特异性模型的必要性，暗示资源应投入到改进通用蛋白质结构预测模型上。</td>
+<td style="text-align: left;">1) 系统比较在相同数据上训练的TCR特异性模型与通用模型在特异性预测任务上的表现。2) 分析AlphaFold3相对于AlphaFold2在TCR:pMHC界面预测上的具体改进。</td>
+<td style="text-align: left;">Section 4.3: "The best performing method adapted the TCRdock specificity prediction pipeline to use AlphaFold3 instead of AlphaFold2."</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>“置信度指标用于特异性预测”的成功可能源于数据泄露或过拟合。</strong></td>
+<td style="text-align: left;">模型可能在训练时见过类似的TCR:pMHC对，因此对“熟悉”的界面给出高置信度，而非真正理解了结合物理。</td>
+<td style="text-align: left;">如果存在数据泄露，那么该方法在真正全新的抗原上可能失败，其泛化能力被高估。</td>
+<td style="text-align: left;">1) 严格分析IMMREP25测试集与训练集之间的序列和结构相似性。2) 设计一个“零样本”测试，使用与训练集完全不同的MHC等位基因或肽长度。</td>
+<td style="text-align: left;">Section 4.3: 作者未讨论数据泄露的可能性。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>将CDR3α和CDR3β的结构多样性等同起来的结论可能受数据偏差影响。</strong></td>
+<td style="text-align: left;">现有结构数据中CDR3α的多样性可能被低估，因为许多结构来自特定疾病背景，这些背景中CDR3β可能更重要。</td>
+<td style="text-align: left;">如果结论有偏，那么针对CDR3α的设计和预测策略可能被误导。</td>
+<td style="text-align: left;">1) 在更均衡、更广泛的数据集上（如来自健康供体的OTS数据）重新分析CDR3α和CDR3β的结构多样性。2) 使用无偏的聚类算法。</td>
+<td style="text-align: left;">Section 4.1.3: 结论基于STCRDab和OTS数据，但OTS是序列数据，结构多样性分析仍基于预测结构。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>“2000个结构即可覆盖VJ基因对空间”的估计过于乐观。</strong></td>
+<td style="text-align: left;">该估计假设每个VJ基因对只有一个代表性结构。但CDR3环的构象多样性远大于VJ基因对组合，同一基因对可产生多种CDR3构象。</td>
+<td style="text-align: left;">如果估计错误，那么通过定向实验解决结构预测问题的成本和时间将被严重低估。</td>
+<td style="text-align: left;">1) 对同一VJ基因对但不同CDR3序列的TCR进行大规模结构预测或实验解析，观察其构象多样性。2) 量化CDR3序列空间与构象空间的关系。</td>
+<td style="text-align: left;">Section 4.4: 作者承认CDR3α和CDR3β构象可能不独立，且组合空间巨大。</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li>
+<p><strong>可迁移概念: 利用生成模型的不确定性进行下游任务</strong></p>
+<ul>
+<li><strong>来源</strong>: 本文描述的TCRdock和NetTCR-struc方法，利用AlphaFold的pAE/pLDDT等置信度指标来区分结合与非结合TCR。</li>
+<li><strong>如何迁移到本课题</strong>: 在蛋白质结构相关计算研究中，可以广泛采用此策略。例如：<ul>
+<li><strong>分子对接</strong>: 使用扩散模型（如AlphaFold3）生成多个对接姿态，利用其置信度分数（而非传统打分函数）来筛选最可能的结合模式。</li>
+<li><strong>构象采样</strong>: 使用生成模型（如扩散模型）进行构象采样，利用其置信度来区分物理上合理的构象与伪影。</li>
+<li><strong>序列设计</strong>: 使用逆折叠模型设计序列后，用结构预测模型（如AlphaFold2）进行回折，利用回折结构的置信度（如pLDDT）作为设计质量的指标，而非仅依赖RMSD。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>可迁移方法: 结合领域知识的几何评分函数</strong></p>
+<ul>
+<li><strong>来源</strong>: 作者开发的TCR:pMHC几何评分函数，利用TCR相对于MHC的规范对接角度（扫描角、俯仰角）的先验知识来筛选对接姿态。</li>
+<li><strong>如何迁移到本课题</strong>: 对于任何具有已知或可推断的结合几何约束的蛋白质-蛋白质/蛋白质-配体系统，都可以构建类似的几何评分函数。例如：<ul>
+<li><strong>抗体-抗原对接</strong>: 利用抗体CDR环通常指向抗原的几何约束。</li>
+<li><strong>酶-底物对接</strong>: 利用活性位点口袋的几何约束。</li>
+<li><strong>膜蛋白-配体对接</strong>: 利用膜平面方向的约束。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>可迁移实验设计: 利用“诱饵”进行特异性推断</strong></p>
+<ul>
+<li><strong>来源</strong>: TCRdock通过比较目标肽与随机诱饵肽的复合物预测置信度来推断特异性。</li>
+<li><strong>如何迁移到本课题</strong>: 在评估任何结合预测模型时，可以设计一个“诱饵集”作为负样本。例如：<ul>
+<li><strong>评估对接算法</strong>: 对于给定的受体，生成一组与目标配体物理化学性质相似的诱饵配体，看算法是否能将目标配体排在诱饵之前。</li>
+<li><strong>评估序列设计</strong>: 对于给定的靶点，设计一组诱饵序列，看设计的序列是否在预测的结合能或置信度上显著优于诱饵。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>可迁移洞察: 数据偏差对模型泛化能力的根本性限制</strong></p>
+<ul>
+<li><strong>来源</strong>: 本文反复强调TCR结构数据中基因对的偏差，以及这种偏差如何导致模型对罕见基因对的预测性能下降。</li>
+<li><strong>如何迁移到本课题</strong>: 在构建任何蛋白质结构预测或设计模型时，必须仔细分析训练数据的分布偏差。例如：<ul>
+<li><strong>结构预测</strong>: 确保训练集覆盖了不同的折叠类型、序列家族和构象状态。</li>
+<li><strong>分子动力学模拟</strong>: 确保模拟的初始结构集具有代表性，避免结论仅适用于特定构象。</li>
+<li><strong>序列设计</strong>: 确保设计的序列空间不局限于训练集中常见的模式。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似连接</strong>: 本文描述的TCR结构预测挑战（特别是CDR环）与抗体结构预测领域高度相似。作者直接引用了抗体领域的工具（如ABodyBuilder2, SAbDab）和发现（如CDR3H驱动特异性），并指出TCR领域可以借鉴抗体领域的成功经验（如SPACE2的结构聚类分析，TAP的成药性评估）。</li>
+<li><strong>组合连接</strong>: 本文的核心思想——利用结构预测的置信度进行特异性推断——可以与<strong>不确定性量化（Uncertainty Quantification, UQ）</strong> 领域的知识相结合。UQ领域提供了更系统的方法来分解预测误差和模型不确定性，这有助于解决作者提出的“区分预测误差与真实灵活性”的挑战。</li>
+<li><strong>冲突连接</strong>: 本文指出TCR的CDR3α和CDR3β在结构多样性上相当，这与抗体领域公认的“CDR3H主导多样性，CDR3L相对保守”的范式形成鲜明对比。这提示在将抗体领域的经验迁移到TCR领域时需要谨慎。</li>
+<li><strong>可迁移领域</strong>: 本文描述的“设计-预测-验证”循环（使用逆折叠和结构预测）是<strong>从头蛋白质设计</strong>领域的标准范式。该方法已成功应用于设计迷你结合体、酶和其他功能蛋白。本文将其应用于TCR设计，是该范式在免疫受体领域的具体应用。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<ol>
+<li>
+<p><strong>名称</strong>: 基于扩散模型置信度引导的通用蛋白质-蛋白质对接姿态筛选</p>
+<ul>
+<li><strong>来源局限/观察</strong>: 传统对接打分函数对TCR:pMHC等复杂界面排名不可靠。AlphaFold3等扩散模型能生成多样化的对接姿态，但其置信度指标（如pAE）尚未被系统地用作通用筛选工具。</li>
+<li><strong>核心假设</strong>: 扩散模型（如AlphaFold3）生成的对接姿态的置信度（如界面pAE）与姿态的物理合理性正相关，且这种相关性在不同蛋白质-蛋白质复合物类型中具有普适性。</li>
+<li><strong>相对本文的增量</strong>: 将TCR:pMHC领域的特定几何评分函数思想，推广为一种不依赖领域知识的、基于生成模型置信度的通用筛选方法。</li>
+<li><strong>初步方法</strong>: 1) 收集多个蛋白质-蛋白质复合物基准集（如Dockground, ZDock benchmark）。2) 使用AlphaFold3为每个复合物生成N个对接姿态。3) 计算每个姿态的界面pAE（ipAE）或其他置信度指标。4) 评估ipAE与姿态的iRMSD（相对于实验结构）之间的相关性。5) 开发一个基于ipAE的排名函数，并与传统打分函数（如Rosetta, ZDock score）进行比较。</li>
+<li><strong>验证方式</strong>: 在基准集上，比较基于ipAE的排名与随机排名、传统打分函数排名的Top-1成功率、Top-10召回率等指标。</li>
+<li><strong>可能的失败模式</strong>: ipAE可能对某些类型的复合物（如高度柔性界面）不敏感，或者与iRMSD的相关性很弱，导致筛选效果不佳。</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+</li>
+<li>
+<p><strong>名称</strong>: 基于结构预测置信度差异的TCR交叉反应性预测</p>
+<ul>
+<li><strong>来源局限/观察</strong>: 现有TCR特异性预测方法（如TCRdock）主要关注“结合/不结合”的二分类问题。但TCR的交叉反应性（一个TCR结合多个相似肽）是重要的生物学现象，且是设计中的风险。结构预测的置信度可能对肽段间的微小差异更敏感。</li>
+<li><strong>核心假设</strong>: 对于同一个TCR，其与不同肽段（包括已知的交叉反应肽和诱饵肽）形成的复合物预测置信度（如ipAE）的差异，可以量化其交叉反应性谱。与高置信度预测的肽段更可能发生交叉反应。</li>
+<li><strong>相对本文的增量</strong>: 将结构置信度从二分类工具扩展为一种连续度量，用于预测和量化交叉反应性。</li>
+<li><strong>初步方法</strong>: 1) 收集已知具有交叉反应性的TCR:pMHC数据集（如来自VDJdb或文献）。2) 对于每个TCR，使用AlphaFold3预测其与所有已知结合肽和一组精心设计的诱饵肽的复合物结构。3) 计算每个复合物的ipAE。4) 分析ipAE的分布，看是否能将已知交叉反应肽与诱饵肽区分开。5) 训练一个模型，以ipAE为特征，预测TCR对不同肽段的结合强度或交叉反应概率。</li>
+<li><strong>验证方式</strong>: 在留出的交叉反应性数据上进行测试，比较预测的交叉反应肽列表与实验验证的列表。</li>
+<li><strong>可能的失败模式</strong>: 结构预测的精度不足以区分非常相似的肽段（如单点突变），导致置信度差异不显著。或者，交叉反应性可能由动力学因素主导，而非静态结构。</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+</li>
+<li>
+<p><strong>名称</strong>: 结合MD模拟和结构预测置信度的TCR CDR环构象系综生成</p>
+<ul>
+<li><strong>来源局限/观察</strong>: 当前结构预测模型主要输出单一结构，无法捕捉TCR CDR环的构象灵活性。MD模拟可以生成构象系综，但计算成本高。结构预测的置信度（如pLDDT）已被用于推断灵活性，但难以区分预测误差和真实灵活性。</li>
+<li><strong>核心假设</strong>: 将粗粒化MD模拟（如CALVADOS 3-Fv）生成的构象系综作为“真实”灵活性分布，可以训练一个模型来校准和解释AlphaFold的pLDDT分数，从而从单一预测中更准确地推断出构象多样性。</li>
+<li><strong>相对本文的增量</strong>: 提出一种混合方法，利用MD模拟的物理知识来提升对深度学习模型置信度指标的解释能力，从而在不运行昂贵MD的情况下获得构象系综信息。</li>
+<li><strong>初步方法</strong>: 1) 使用FTCRDab或类似数据集，获取多个TCR的MD构象系综。2) 对每个TCR，使用AlphaFold2/3进行多次预测（采样），获得多个预测结构及其pLDDT。3) 训练一个模型（如GNN或Transformer），输入AlphaFold的预测结构、pLDDT和序列信息，输出对每个残基/环的构象多样性（如RMSF）的预测。训练标签来自MD模拟的RMSF。4) 该模型学习将pLDDT的模式映射到真实的物理灵活性。</li>
+<li><strong>验证方式</strong>: 在留出的TCR上，比较模型预测的RMSF与MD模拟的RMSF。评估该模型能否比直接使用pLDDT更好地预测构象系综。</li>
+<li><strong>可能的失败模式</strong>: MD模拟本身可能不准确，无法提供可靠的“真实”灵活性标签。AlphaFold的预测结构可能无法覆盖MD模拟中观察到的所有构象空间。</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> 全文（Perspective/Review 手稿）</li>
+<li><strong>Assessment boundary</strong> 仅基于提供的稿件文本；未检索或核实任何外部引用文献、数据库内容或未提供的图表数据</li>
+<li><strong>Shared manuscript claim summary</strong> 本文为结构T细胞受体（TCR）免疫信息学领域的视角性综述，主张深度学习蛋白质结构预测方法的成熟已使TCR结构数据能够以组库规模获取，并据此综述了TCR结构生物学原理、结构预测工具（同源建模、AlphaFold2及其衍生模型）、TCR:pMHC复合物预测、基于结构的特异性预测，以及TCR和TCR模拟物（TCRm）的计算设计前沿。</li>
+<li><strong>Visible evidence base</strong> 正文文本；引用了多个外部数据库（STCRDab、TCR3d、FTCRDab、OTS等）和工具（STCRpy、TCRBuilder2、TCRmodel2、tFold-TCR、TCRdock等）；提及Figure 1、2、3、4和Table 1，但图表内容未提供</li>
+<li><strong>Missing materials affecting confidence</strong> 所有图表（Figure 1-4、Table 1）未提供；外部基准测试和数据库内容无法独立核实；作者自身未发表结果（如IMMREP25初步实验）的细节有限</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> 这是一篇撰写清晰、结构合理的视角性综述，及时总结了机器学习时代TCR结构预测领域的快速发展。作者是该领域的核心贡献者，文中多处引用自身工作（STCRpy、TCRBuilder2+、OTS、FTCRDab等），提供了有价值的领域内视角。综述覆盖范围全面，从实验结构数据库到预测工具、特异性推断和计算设计均有涉及。主要不足在于：部分关键论断缺乏定量支撑或仅引用作者自身未发表的工作；对领域内争议（如TCR特异性预测的可行性）的讨论可更深入；图表未提供导致部分论述无法评估。总体而言，该文对领域内研究者有参考价值，但作为视角性文章，其新颖性主要体现在综合框架而非新数据或新方法。</li>
+<li><strong>Who would be interested in the results, and why</strong> 计算免疫学、结构生物信息学和蛋白质设计领域的研究者会对本文感兴趣。具体包括：开发TCR特异性预测工具的研究人员（可了解结构方法的现状与局限）；TCR工程和细胞治疗开发者（可了解计算设计工具的可用性与验证状态）；以及关注AlphaFold等通用结构预测模型在免疫受体上应用效果的生物信息学方法开发者。综述中对抗体领域工具（如TAP、SPACE）与TCR领域的对比，对跨领域研究者也有参考价值。</li>
+<li><strong>Major strengths</strong> 1. 综述范围全面且组织清晰，从实验数据到预测工具再到设计应用，逻辑递进合理。2. 作者对领域有直接贡献，文中对工具开发动机和局限性的讨论具有实践洞察力。3. 对结构预测在特异性推断中的应用（STAG、TCRdock、NetTCR-struc）进行了有价值的梳理，这是当前领域的前沿问题。4. 对TCR与抗体结构生物学的差异（如CDR3α的结构多样性）有深入讨论，具有领域教育意义。</li>
+<li><strong>Major Concerns</strong> 见下方详细列表。</li>
+<li><strong>Minor Comments</strong> 见下方详细列表。</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1（未提供图表数据）、R1-M2（未发表结果支撑核心论断）、R1-M3（IMMREP25结果描述不完整）</li>
+<li><strong>Assessment against Nature-style criteria</strong> <strong>Originality</strong>：中等。综述框架本身并非全新，但将结构预测、特异性推断和设计三个主题整合于TCR语境下，具有一定综合价值。<strong>Scientific importance</strong>：较高。TCR特异性预测是免疫学核心难题，结构方法的进展值得及时综述。<strong>Interdisciplinary readership</strong>：中等。主要面向计算免疫学和结构生物学研究者，对实验免疫学家的可读性取决于其对机器学习概念的熟悉程度。<strong>Technical soundness</strong>：总体可靠，但部分关键论断依赖未提供的图表或未发表数据，无法完全验证。<strong>Readability for nonspecialists</strong>：良好。术语使用一致，背景介绍充分，但部分技术细节（如扩散模型、pAE指标）对非专业读者可能略显密集。综合而言，该文作为领域综述具有发表价值，但需解决证据可验证性问题。</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. 本文作为视角性综述具有领域价值，但需提供图表数据、明确区分已发表与未发表结果，并补充IMMREP25实验的完整描述。</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence availability</li>
+<li><strong>Claim pointer</strong> 文中多处引用Figure 1-4和Table 1来支撑关键论断，包括TCR结构特征（Figure 1）、数据分布偏差（Figure 2）、置信度指标与特异性相关性（Figure 3）以及设计流程（Figure 4）。</li>
+<li><strong>Evidence pointer</strong> Figure 1-4, Table 1（均未提供）</li>
+<li><strong>Concern</strong> 所有图表均未随稿件提供，导致文中依赖这些图表的定量论断无法评估。例如，Figure 2b声称展示了TRAV-TRBV基因对联合分布的稀疏采样，Figure 3b声称展示了IMMREP25数据集中21/30的靶标肽被正确识别，但这些数据无法核实。</li>
+<li><strong>Why it matters</strong> 作为视角性综述，图表的可验证性是读者评估作者论断可信度的基础。缺少图表使关键定量声明成为不可验证的断言，削弱了文章作为参考资源的可靠性。</li>
+<li>
+<p><strong>Resolution test</strong> 提供所有图表及其生成代码或详细方法说明，使读者能够独立验证文中引用的定量结果。</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> 文中多处引用作者自身未发表的工作作为关键论断的依据，包括STCRpy工具的功能描述、FTCRDab数据库的生成、以及IMMREP25初步实验的结果。</li>
+<li><strong>Evidence pointer</strong> Section 2.2, Section 3.3, Section 4.3</li>
+<li><strong>Concern</strong> 作者在多个关键节点依赖未发表的自身工作来支撑论述。例如，STCRpy的功能描述和FTCRDab的生成过程均无对应发表文献或预印本引用；IMMREP25初步实验（21/30靶标肽识别）被描述为"brief experiment"但无方法细节。这使得读者无法区分哪些论断有同行评议支撑，哪些仅为作者个人经验。</li>
+<li><strong>Why it matters</strong> 视角性综述的价值部分在于其可信度。未发表结果的引用应明确标注并说明其局限性，否则读者可能将初步结果误认为已确立的领域共识。</li>
+<li>
+<p><strong>Resolution test</strong> 对每处未发表工作明确标注"unpublished data"或"personal communication"，并提供足够的实验细节（样本量、方法、统计显著性）供读者评估；或引用已发表的预印本/同行评议文献替代。</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Claim pointer</strong> 文中声称IMMREP25是"首次"结构信息被多个团队用于特异性预测的竞赛，且多个参赛队伍"实现了统计显著的AUC0.1改进"，但未提供具体数值范围、参赛队伍数量或比较基准。</li>
+<li><strong>Evidence pointer</strong> Section 4.3</li>
+<li><strong>Concern</strong> IMMREP25结果的描述过于简略。作者提到"14/15的改进提交包含结构信息"和"最高AUC0.1为0.601"，但未说明这些结果的统计检验方法、与基线比较的具体方式，以及"结构信息"的具体定义（是预测结构还是实验结构？）。此外，作者声称"等待方法论文发表"但未提供任何引用。</li>
+<li><strong>Why it matters</strong> IMMREP25是文中论证"结构方法正在改善特异性预测"的关键证据。如果该论断缺乏可验证的细节，读者无法判断这是领域趋势还是个别案例。</li>
+<li>
+<p><strong>Resolution test</strong> 补充IMMREP25的详细结果描述，包括参赛方法概览、统计检验方法、基线定义，以及引用已发表的竞赛总结报告（如有）。</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Balance</li>
+<li><strong>Claim pointer</strong> 文中对TCR特异性预测的讨论主要聚焦于结构方法，对序列方法的进展和局限性着墨较少。</li>
+<li><strong>Evidence pointer</strong> Section 4.3</li>
+<li><strong>Concern</strong> 综述在讨论特异性预测时，将结构方法作为主要叙事线，但对序列基方法的现状（如GLIPH、TCRdist等）及其与结构方法的比较讨论不足。作者提到"序列方法难以泛化到未见抗原"，但未提供具体证据或引用支持这一论断。</li>
+<li><strong>Why it matters</strong> 视角性综述的价值在于提供平衡的领域图景。如果读者无法了解序列方法的现状和挑战，可能高估结构方法的相对优势。</li>
+<li><strong>Resolution test</strong> 增加一段对序列基特异性预测方法的简要综述，包括其代表性工具、性能基准和已知局限，并明确说明结构方法相对于序列方法的增量价值。</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section 4.2.5 标题和内容</li>
+<li><strong>Evidence pointer</strong> Section 4.2.5</li>
+<li><strong>Issue</strong> 该节标题为"Deep Learning Models That Jointly Predict the TCR and pMHC Complex"，但内容同时涵盖了AlphaFold2/3等通用模型和TCR特异性模型（TCRmodel2、TCRdock、tFold-TCR），标题可能误导读者认为所有讨论的模型均为TCR特异性。</li>
+<li>
+<p><strong>Required correction</strong> 考虑将标题改为"Deep Learning Models for TCR:pMHC Complex Prediction"或明确区分通用模型与TCR特异性模型。</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Consistency</li>
+<li><strong>Affected element</strong> 术语使用</li>
+<li><strong>Evidence pointer</strong> 全文</li>
+<li><strong>Issue</strong> 文中交替使用"TCR:pMHC"和"pMHC:TCR"两种顺序，虽不影响理解，但建议统一以保持一致性。</li>
+<li>
+<p><strong>Required correction</strong> 统一使用"TCR:pMHC"（与标题和多数文献一致）。</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Section 5.3.2</li>
+<li><strong>Evidence pointer</strong> Section 5.3.2</li>
+<li><strong>Issue</strong> 对TCR设计方法的讨论中，作者提到"Bits to Binders"竞赛的命中率范围（0.6%-38.4%），但未说明该竞赛是否涉及TCR或TCRm设计，可能造成读者混淆。</li>
+<li>
+<p><strong>Required correction</strong> 明确说明该竞赛的靶标类型，或将其与TCR/TCRm设计的关联性解释清楚。</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Section 4.1.3</li>
+<li><strong>Evidence pointer</strong> Section 4.1.3</li>
+<li><strong>Issue</strong> 关于CDR3α结构多样性的讨论中，作者提到"CDR3α loop structures showing little tendency to cluster into canonical forms"，但未提供与CDR3β的定量比较（如聚类分析的具体指标）。</li>
+<li><strong>Required correction</strong> 补充定量比较数据（如聚类数、簇内RMSD分布等），或引用已发表的比较分析。</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>文中声称"结构信息在IMMREP25中被多个团队使用并实现统计显著的泛化改进"，但未提供可验证的竞赛结果细节或引用。</li>
+<li>作者自身未发表的初步实验（Protenix预测IMMREP25数据集中21/30靶标肽）被用作结构方法有效性的证据，但无方法细节和统计检验。</li>
+<li>文中对STCRpy和FTCRDab的功能描述和性能声明无对应发表文献支撑。</li>
+<li>声称"TCR:pMHC复合物预测的准确性是特异性推断的关键限制因素"缺乏直接比较证据。</li>
+<li>对序列基特异性预测方法的局限性讨论缺乏具体引用和定量支撑。</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

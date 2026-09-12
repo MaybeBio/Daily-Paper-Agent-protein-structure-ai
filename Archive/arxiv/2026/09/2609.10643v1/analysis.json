@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2609.10643v1",
+  "title": "Zero-shot rib design: merging training-free generative prior with topology optimization",
+  "authors": "Yongmin Kwon; Namwoo Kang",
+  "journal": "",
+  "published_date": "2026-09-09",
+  "window": {
+    "start": "2026-09-05",
+    "end": "2026-09-11"
+  },
+  "score": 4,
+  "one_liner_zh": "该文将文本到图像扩散模型与拓扑优化结合用于结构设计，虽涉及生成模型和物理优化，但对象为工程结构而非蛋白质，且未涉及蛋白质结构计算问题，仅算法框架对蛋白结构设计有潜在启发。",
+  "abstract": "Natural load-bearing patterns such as leaf venation, trabecular bone, and spider webs achieve high stiffness per unit mass, yet classical topology optimizers rarely reach such geometries, and few let engineers express structural design intent through natural language. This work treats a frozen text-to-image diffusion model as a training-free source of design knowledge and distills it into the physics loop of density-based topology optimization via score distillation sampling, so that a text prompt becomes an explicit, machine-interpretable representation of engineer intent. The prompt-induced generative gradient and the finite element sensitivity are combined at every iteration, letting physics decide which prompt-induced features survive. In 245 primary SDS runs spanning four geometric domains and two physics regimes, 38 of 49 prompt--domain combinations achieved statistically significant compliance reductions (up to $-31.5\\%$ mechanical and $-23.0\\%$ thermoelastic), outperforming gradient-based baselines. Cross-domain morphological analysis identifies a recurring structural signature of improvement: in most domains the generative prior suppresses dead-end branches in the rib skeleton, with endpoint--compliance correlation $r = +0.56$ to $+0.99$. A Heaviside projection with $β$-continuation resolves a pronounced intermediate-density tendency in this diffusion--physics coupling ($42.6\\%$ to $<3\\%$), and an automated skeleton-based pipeline converts optimized density fields into \\rev{candidate geometry ready for computer-aided design. By retargeting the generative prior across domains, loading conditions, and physics objectives through a change of text prompt, with each new problem's physics setup specified separately, the framework uses a pretrained generative model as a reusable, training-free prior for engineering design.",
+  "abstract_zh": "天然承力模式，如叶脉 (leaf venation)、骨小梁 (trabecular bone) 和蜘蛛网 (spider web)，能够实现单位质量下的高刚度，然而经典拓扑优化器很少能达到此类几何构型，且鲜有方法允许工程师通过自然语言表达结构设计意图。本工作将冻结的文本到图像扩散模型 (frozen text-to-image diffusion model) 视为无需训练的设计知识来源，并通过分数蒸馏采样 (score distillation sampling) 将其蒸馏到基于密度的拓扑优化 (density-based topology optimization) 的物理循环中，从而使文本提示 (text prompt) 成为工程师意图的显式、机器可解释的表示。在每次迭代中，提示诱导的生成梯度与有限元灵敏度 (finite element sensitivity) 相结合，让物理过程决定哪些提示诱导的特征得以保留。在跨越四个几何域和两个物理机制的245次主SDS运行中，49个提示-域组合中有38个实现了统计上显著的柔度降低（机械方面高达$-31.5\\%$，热弹性方面高达$-23.0\\%$），优于基于梯度的基线方法。跨域形态分析识别出一个反复出现的改进结构特征：在大多数域中，生成先验 (generative prior) 抑制了肋骨架 (rib skeleton) 中的末端分支，端点-柔度相关性 $r = +0.56$ 至 $+0.99$。采用带有 $β$-延续 (β-continuation) 的Heaviside投影 (Heaviside projection) 解决了这种扩散-物理耦合中显著的中等密度倾向（从$42.6\\%$降至$<3\\%$），并且一个基于骨架的自动化流程将优化后的密度场转换为适用于计算机辅助设计 (computer-aided design) 的候选几何。通过改变文本提示来跨域、跨载荷条件和跨物理目标重新定向生成先验，同时每个新问题的物理设置单独指定，该框架将预训练生成模型用作工程设计中的可重用、无需训练的先验。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "",
+  "review_path": "",
+  "url": "https://arxiv.org/abs/2609.10643v1",
+  "source_url": "https://arxiv.org/abs/2609.10643v1",
+  "paper_page_path": "papers/arxiv/2609.10643v1/index.html"
+}

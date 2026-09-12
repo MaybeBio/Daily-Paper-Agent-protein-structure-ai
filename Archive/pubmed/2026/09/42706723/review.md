@@ -1,0 +1,74 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract
+- **Shared manuscript claim summary** The authors propose that IQSEC2, an intrinsically disordered protein, adopts compartment-specific conformational states (folded/inactive in cytosol, extended/active in PSD) and that standard force fields/water models (e.g., OPC) fail to capture the correct folded structure in bulk solvent, implying a need for compartment-aware biophysical parameterization.
+- **Visible evidence base** aMD simulations of IQSEC2 folding in aqueous solvent; comparison of force field and water model effects; OPC water model prediction of an incorrect distorted 3D folded structure.
+- **Missing materials affecting confidence** Full simulation details (system size, simulation length, convergence criteria, replica or ensemble size), experimental validation data, quantitative comparison metrics, PSD-mimicking simulation conditions, and any statistical analysis of the Gibbs ergodic hypothesis application.
+
+## Reviewer
+- **Overall assessment** The abstract presents an intriguing biophysical hypothesis linking IDP conformational states to compartment-specific environments, which could have broad implications for synaptic signaling and IDP modeling. However, the evidence provided is insufficient to establish the central claims. The key simulation result (OPC water model predicts an incorrect structure) is stated without quantitative benchmarks, and the proposed two-class IDP hypothesis is not directly tested. The abstract reads more as a proposal than a completed study.
+- **Who would be interested in the results, and why** Researchers in computational biophysics (especially IDP and force field development), synaptic biology (PSD organization and signaling), and structural biology of disordered proteins. The hypothesis could inform future simulation protocol design and experimental studies of compartment-specific IDP behavior.
+- **Major strengths** 1. The hypothesis is novel and biologically motivated, linking IDP folding to liquid-liquid phase separation compartments. 2. The focus on force field/water model limitations for IDPs is timely and important. 3. The compartment-specific conformational model for IQSEC2 is mechanistically plausible and testable.
+- **Major Concerns**
+    - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency
+    - **Claim pointer** "The OPC water model optimized for proteins with disordered structure in the extended state in bulk aqueous solvent predicted an incorrect distorted 3D folded structure of IQSEC2."
+    - **Evidence pointer** Abstract (location not provided)
+    - **Concern** The abstract provides no quantitative metrics (e.g., RMSD to a reference structure, radius of gyration, secondary structure content, free energy profiles) to define "incorrect" or "distorted." Without a reference structure (e.g., from experiment or a validated model) and a clear definition of correctness, this claim is unsubstantiated.
+    - **Why it matters** The entire argument for compartment-specific behavior hinges on the failure of standard models in bulk solvent. If the "incorrect" structure is not rigorously defined, the conclusion that bulk solvent models are inadequate is not supported.
+    - **Resolution test** Provide quantitative comparison of the OPC-predicted structure against an experimentally determined or consensus structure, including error bars and statistical significance. Define the criteria for "correct" folding.
+    - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Hypothesis testing
+    - **Claim pointer** "We propose that, due to fundamental biophysical differences between the dendritic cytosol and the postsynaptic density, there are two distinct classes of IDPs functioning in these different environments."
+    - **Evidence pointer** Abstract (location not provided)
+    - **Concern** The abstract does not present any simulation or experimental data that directly tests this two-class hypothesis. No simulations were performed under PSD-mimicking conditions (e.g., high crowding, altered viscosity, phase-separated environment). The claim is a speculation extrapolated from a single simulation in bulk solvent.
+    - **Why it matters** This is the central conceptual advance claimed. Without direct evidence, the paper does not establish the proposed classification, and the hypothesis remains untested.
+    - **Resolution test** Perform simulations under PSD-like conditions (e.g., with crowders, in a phase-separated droplet model) and compare IQSEC2 conformational ensembles. Alternatively, provide experimental data (e.g., FRET, NMR) showing different conformations in cytosol vs. PSD.
+    - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Methodological rigor
+    - **Claim pointer** "We applied the Gibbs ergodic hypothesis formulated in statistical ensembles for post-processing and analysis of the results."
+    - **Evidence pointer** Abstract (location not provided)
+    - **Concern** The abstract does not explain how the Gibbs ergodic hypothesis was applied, what assumptions were made, or how it affected the analysis. For aMD simulations, ergodicity is a critical concern, and its application must be justified with convergence checks and ensemble size.
+    - **Why it matters** Without this information, the reliability of the simulation analysis cannot be assessed. The claim that the OPC model is "incorrect" may be an artifact of insufficient sampling or improper ergodic analysis.
+    - **Resolution test** Provide details on the ergodic analysis (e.g., block averaging, autocorrelation times, ensemble convergence metrics) and show that the results are robust to sampling length.
+- **Minor Comments**
+    - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Hypothesis statement
+    - **Evidence pointer** Abstract (location not provided)
+    - **Issue** The phrase "two distinct classes of IDPs" is ambiguous. Does it mean two classes of IDP sequences, or two classes of conformational states for the same IDP? The abstract implies the latter, but the wording could be misinterpreted.
+    - **Required correction** Clarify: "two distinct classes of conformational states for IDPs" or "two distinct biophysical regimes for IDP folding."
+    - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Completeness
+    - **Affected element** Simulation comparison
+    - **Evidence pointer** Abstract (location not provided)
+    - **Issue** The abstract mentions comparing "two sets of parameters" but only names the OPC water model. The other force field/water model combination is not identified.
+    - **Required correction** Specify the second force field/water model used for comparison.
+    - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Biological context
+    - **Affected element** IQSEC2 activation mechanism
+    - **Evidence pointer** Abstract (location not provided)
+    - **Issue** The abstract states IQSEC2 "transiently adopt a catalytically active extended conformation in the PSD upon activation by neurotransmitter mediated calcium influx." It is unclear whether the simulation includes calcium or other activation signals, or if the extended conformation is assumed to be the active state.
+    - **Required correction** Clarify whether the simulation conditions include activation signals or if the extended conformation is inferred from prior experimental data.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (lack of quantitative definition of "incorrect" structure), R1-M2 (no direct test of the two-class hypothesis), R1-M3 (insufficient methodological detail on ergodic analysis).
+- **Assessment against Nature-style criteria** 
+    - **Originality**: High. The compartment-specific IDP hypothesis is novel and conceptually interesting.
+    - **Scientific importance**: Potentially high, if validated. Could impact IDP modeling and synaptic biology.
+    - **Interdisciplinary readership**: Moderate. Would appeal to biophysicists and neuroscientists, but the abstract is too technical for a general audience.
+    - **Technical soundness**: Low, based on the abstract. The central claims are not supported by the evidence presented, and key methodological details are missing.
+    - **Readability for nonspecialists**: Poor. The abstract assumes familiarity with aMD, Gibbs ergodic hypothesis, and PSD biology without sufficient context.
+- **Recommendation posture** Currently not established from the provided evidence. The hypothesis is interesting, but the abstract does not provide sufficient data or analysis to support the claims. A full manuscript with quantitative results, direct tests of the hypothesis, and rigorous methodological reporting would be needed to evaluate the work.
+
+## Risk / unsupported claims
+- "The OPC water model predicted an incorrect distorted 3D folded structure of IQSEC2" – unsupported; no quantitative definition of "incorrect" or reference structure provided.
+- "There are two distinct classes of IDPs functioning in these different environments" – unsupported; no direct evidence from PSD-mimicking conditions or experimental data.
+- "The Gibbs ergodic hypothesis was applied" – unsupported; no details on implementation or validation.

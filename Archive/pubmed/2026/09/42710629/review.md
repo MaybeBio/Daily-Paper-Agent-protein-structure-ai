@@ -1,0 +1,69 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims made in the abstract
+- **Shared manuscript claim summary** The authors used AlphaFold 3 to predict the structure of IMNV RdRp and performed virtual screening of 1,077 seaweed-derived metabolites, identifying three top compounds (GA002, RC003, BE012) with binding energies of -13.0 to -10.8 kcal/mol. Molecular dynamics (200 ns) and MMGBSA analyses indicated stable complexes with favorable binding free energies (-24.7 to -34.9 kcal/mol). The compounds showed acceptable drug-likeness. The authors conclude these are potential candidates for antiviral intervention against IMNV in shrimp aquaculture.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided.
+- **Missing materials affecting confidence** Full manuscript, including methods (AlphaFold 3 parameters, docking protocol, MD simulation details, MMGBSA calculation settings), figures/tables (docking poses, RMSD/RMSF plots, binding free energy components), and supplementary data (compound structures, ADMET profiles). Without these, the claims cannot be independently verified.
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible in silico pipeline for identifying potential RdRp inhibitors from seaweed metabolites against IMNV. However, the evidence provided is insufficient to assess the technical soundness or novelty of the work. Key methodological details and validation steps are absent, and the claims of "stable behavior" and "favorable binding affinity" are unsupported without raw data. The study is at a very early computational stage, and the abstract does not demonstrate a significant advance over existing virtual screening approaches.
+- **Who would be interested in the results, and why** Researchers in shrimp aquaculture virology and marine natural product discovery may be interested, as the study targets a neglected viral pathogen (IMNV) and explores an underexplored compound source (seaweed metabolites). However, the interest is conditional on rigorous validation, which is not provided here.
+- **Major strengths** 1. Addresses a practical problem (IMNV in shrimp aquaculture) with no approved therapeutics. 2. Uses a modern structure prediction tool (AlphaFold 3) for a viral polymerase. 3. Screens a relatively large library (1,077 compounds) from a natural source.
+- **Major Concerns**
+    - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical soundness – computational methodology
+    - **Claim pointer** "Deep learning-based prediction of AlphaFold 3 protein structures" and "docking results suggest the top-ranked three bioactive compounds... based on their highest binding energy score"
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract does not describe how the AlphaFold 3 model was validated for the IMNV RdRp (e.g., pLDDT scores, predicted aligned error, comparison to known RdRp structures). Docking scores (-13.0 to -10.8 kcal/mol) are reported without specifying the docking software, scoring function, or whether the protein structure was prepared (e.g., protonation, energy minimization). The selection of "top-ranked" compounds based solely on binding energy is insufficient; no mention of clustering, visual inspection, or consensus scoring.
+    - **Why it matters** Without validation of the predicted structure and a rigorous docking protocol, the reported binding energies may be artifacts of poor model quality or inappropriate docking parameters. This undermines the entire screening pipeline.
+    - **Resolution test** Provide AlphaFold 3 confidence metrics (pLDDT, PAE) and a comparison to a template-based model or experimental structure if available. Detail the docking protocol (software, scoring function, protein preparation, compound library source) and justify the selection criteria beyond binding energy (e.g., ligand efficiency, interaction fingerprint analysis).
+    - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical soundness – molecular dynamics and binding free energy
+    - **Claim pointer** "The 200 ns molecular dynamics simulations showed that the selected complexes exhibited stable behavior throughout the simulation time, with relatively low standard deviation values. Post-simulation MMGBSA analysis revealed total binding free energies... indicating favorable binding affinity and stable protein-ligand interactions."
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract provides no quantitative metrics for "stable behavior" (e.g., RMSD, RMSF, radius of gyration, hydrogen bond occupancy). "Relatively low standard deviation values" is vague. MMGBSA results (-24.7 to -34.9 kcal/mol) are reported without standard errors or decomposition into components (van der Waals, electrostatic, solvation). The simulation length (200 ns) is short for a reliable binding free energy estimate, and no mention of replicate simulations or convergence checks is made.
+    - **Why it matters** MD and MMGBSA are powerful but sensitive to protocol. Without reporting stability metrics and error estimates, the claim of "stable complexes" and "favorable binding affinity" is not supported. The reader cannot assess whether the simulations were converged or if the binding free energies are statistically meaningful.
+    - **Resolution test** Provide RMSD and RMSF plots for all complexes and the apo protein, with mean and standard deviation. Report MMGBSA results with standard errors (e.g., from bootstrap or block averaging) and a breakdown of energy components. Show that the simulations reached equilibrium (e.g., plateau in RMSD) and that the binding free energies are consistent across the last half of the trajectory.
+    - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Scientific importance – novelty and context
+    - **Claim pointer** "Infectious Myonecrosis Virus (IMNV) remains a major global threat to shrimp aquaculture... In this study, an advanced in silico approach was employed... to identify potential inhibitors targeting RNA-dependent RNA polymerase (RdRp)."
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract does not compare the identified compounds to any known RdRp inhibitors (e.g., from other viruses) or to existing anti-IMNV candidates. The novelty of the seaweed-derived compounds is not established; many natural product screens have been performed against viral targets. The claim of "advanced in silico approach" is overstated given the standard nature of the pipeline (docking + MD + MMGBSA).
+    - **Why it matters** For a Nature-style journal, the work must demonstrate a significant advance over the state of the art. Without benchmarking against known inhibitors or showing that the identified compounds have unique scaffolds or mechanisms, the study appears incremental.
+    - **Resolution test** Provide a comparison table of the top compounds' binding energies and interactions against known RdRp inhibitors (e.g., remdesivir, favipiravir) or previously reported anti-IMNV compounds. Discuss the structural novelty of the seaweed metabolites relative to existing antiviral libraries.
+- **Minor Comments**
+    - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Readability for nonspecialists
+    - **Affected element** Abstract text
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The abstract uses the term "RdRp_M01" without defining it. It is unclear whether this is a specific domain or a mutant form of the RdRp.
+    - **Required correction** Define "RdRp_M01" (e.g., "the M01 domain of the IMNV RNA-dependent RNA polymerase") in the abstract.
+    - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Technical soundness – drug-likeness
+    - **Claim pointer** "The drug-likeness and physicochemical profiles of the selected compounds were acceptable, supporting their further investigation."
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The abstract does not specify which drug-likeness rules were applied (e.g., Lipinski's Rule of Five, Veber's rules) or provide any numerical values (e.g., molecular weight, logP, hydrogen bond donors/acceptors). "Acceptable" is subjective.
+    - **Required correction** Report the specific drug-likeness parameters (e.g., MW, logP, HBD, HBA, TPSA) for each compound and state which rules they pass.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (AlphaFold 3 validation and docking protocol), R1-M2 (MD stability metrics and MMGBSA error estimates). These are blocking because without them, the core computational claims are unverifiable.
+- **Assessment against Nature-style criteria** 
+    - **Originality**: Low. The pipeline (AlphaFold + docking + MD + MMGBSA) is standard; the target (IMNV RdRp) and compound source (seaweed) are niche but not novel in approach.
+    - **Scientific importance**: Moderate. IMNV is a significant aquaculture pathogen, but the study is purely computational with no experimental validation. The impact is limited until in vitro/in vivo data are provided.
+    - **Interdisciplinary readership**: Low. The abstract is highly specialized (shrimp virology, computational chemistry) and does not frame the work in a broader context (e.g., antiviral discovery principles, marine natural products as drug leads).
+    - **Technical soundness**: Not assessable from the abstract. Key methodological details and validation data are missing.
+    - **Readability for nonspecialists**: Poor. Terms like "RdRp_M01" and "MMGBSA" are not explained, and the significance of binding energies is not contextualized.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract lacks the methodological detail and validation data necessary to assess the claims. The authors should provide the full manuscript with all supporting figures, tables, and methods before a meaningful review can be conducted.
+
+## Risk / unsupported claims
+- "Deep learning-based prediction of AlphaFold 3 protein structures" – unsupported without confidence metrics.
+- "Docking results suggest the top-ranked three bioactive compounds" – unsupported without docking protocol details.
+- "The 200 ns molecular dynamics simulations showed that the selected complexes exhibited stable behavior" – unsupported without RMSD/RMSF data.
+- "Post-simulation MMGBSA analysis revealed total binding free energies... indicating favorable binding affinity" – unsupported without error estimates and energy decomposition.
+- "The drug-likeness and physicochemical profiles of the selected compounds were acceptable" – unsupported without numerical values.

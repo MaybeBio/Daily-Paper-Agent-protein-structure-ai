@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Humanizing Antibodies and Nanobodies From Scratch With HuDiff. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Humanizing Antibodies and Nanobodies From Scratch With HuDiff.</h1>
+      <div class="meta">Nan, Yang; Sun, Hongshuai; Zhang, Bo; Yang, Yue; He, Jianxin; Bai, Qifeng</div>
+      <div class="meta muted">
+        
+        <span class="journal">Bio-protocol</span>
+        · 2026-09-11
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42724935/">原文</a>
+      </div>
+      <p class="one-liner">提出HuDiff，一种自适应自回归扩散方法，仅用CDR序列从头生成人源化抗体和纳米抗体，核心贡献在蛋白质序列设计（抗体人源化），方法为AI生成模型，对象为蛋白质（抗体），问题与方法高度契合。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Antibody (Ab) and nanobody (Nb) humanization is essential for reducing immunogenicity in therapeutic applications. HuDiff is an adaptive autoregressive diffusion approach that generates humanized antibodies and nanobodies from scratch using only complementarity-determining region sequences as input, eliminating the need for preexisting human templates. The method follows a two-stage training pipeline: pretraining on human antibody sequences to learn framework region patterns, followed by fine-tuning on target-species sequences. HuDiff-Ab processes paired heavy and light chains for conventional antibodies, while HuDiff-Nb can incorporate a specialized inpainting mode to preserve critical nanobody framework residues. This protocol provides a complete step-by-step guide for implementing HuDiff, covering data preparation, model training, and sequence generation. Key features * Requires only CDR sequences as input and does not require human template selection. * Uses a two-stage training strategy, with pretraining on human antibody sequences and fine-tuning on target-species sequences guided by humanness scores. * HuDiff-Ab humanizes paired heavy and light chains simultaneously, whereas HuDiff-Nb provides an inpainting mode to preserve key framework residues. * Generates multiple diverse humanized candidates for downstream experimental screening.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">抗体（Ab）和纳米抗体（Nb）的人源化对于减少治疗应用中的免疫原性至关重要。HuDiff是一种自适应自回归扩散方法，仅使用互补决定区序列作为输入，从头生成人源化抗体和纳米抗体，无需预先存在的人类模板。该方法遵循两阶段训练流程：先在人类抗体序列上进行预训练以学习框架区模式，再在目标物种序列上进行微调。HuDiff-Ab处理常规抗体的配对重链和轻链，而HuDiff-Nb可整合专门的修补模式以保留关键的纳米抗体框架残基。本协议提供了实施HuDiff的完整分步指南，涵盖数据准备、模型训练和序列生成。关键特性 * 仅需CDR序列作为输入，无需人类模板选择。 * 采用两阶段训练策略，在人类抗体序列上预训练，并在目标物种序列上以人源化评分指导微调。 * HuDiff-Ab同时人源化配对的重链和轻链，而HuDiff-Nb提供修补模式以保留关键框架残基。 * 生成多个多样化的人源化候选序列，供下游实验筛选使用。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Humanizing Antibodies and Nanobodies From Scratch With HuDiff</li>
+<li><strong>作者</strong>：Nan, Yang; Sun, Hongshuai; Zhang, Bo; Yang, Yue; He, Jianxin; Bai, Qifeng</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：Bio-protocol</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学/实验协议（Protocol）</li>
+<li><strong>领域</strong>：蛋白质结构相关计算研究 × AI/深度学习（抗体/纳米抗体人源化设计）</li>
+<li><strong>关键词</strong>：抗体人源化、纳米抗体人源化、自回归扩散模型、CDR序列、框架区、inpainting</li>
+<li><strong>DOI/arXiv 号</strong>：10.21769/BioProtoc.5816</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-04-26</li>
+<li><strong>方向定位</strong>：该文属于「蛋白质序列设计 × 生成模型」方向，具体为抗体/纳米抗体人源化。与结构预测（AlphaFold）和物理模拟（MD）不同，本文聚焦于序列层面的生成式人源化，但其框架区- CDR 的序列-结构关系与结构计算课题可交叉验证。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>HuDiff 是一个自适应自回归扩散模型，仅以 CDR 序列为输入，通过两阶段训练（人类抗体序列预训练 + 目标物种序列微调）从头生成人源化抗体和纳米抗体，无需人类模板，并支持纳米抗体 inpainting 模式以保留关键框架残基。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在不依赖预先选定的人类模板的情况下，仅从 CDR 序列出发生成低免疫原性的人源化抗体和纳米抗体？</li>
+<li><strong>为什么重要</strong>：抗体/纳米抗体人源化是降低治疗性蛋白免疫原性的关键步骤，传统方法依赖人类模板选择，模板质量直接影响结果，且对纳米抗体等非标准支架效果有限。</li>
+<li><strong>现有方法不足</strong>：传统 CDR 移植和表面重塑需要人工选择模板，耗时且对非人类框架适应性差；现有生成模型（如扩散模型）多需完整序列或结构输入，未针对 CDR-only 输入和框架区保留进行优化。</li>
+<li><strong>精确研究问题</strong>：Can an autoregressive diffusion model, pretrained on human antibody sequences and fine-tuned on target-species sequences, generate humanized antibodies and nanobodies from CDR sequences alone, without human template selection?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>阶段一：传统人源化方法</strong>（CDR 移植、表面重塑）——优点：成熟、可解释；局限：依赖模板选择，对非人类框架适应性差，耗时。</li>
+<li><strong>阶段二：基于序列的生成模型</strong>（如 LSTM、Transformer 用于抗体序列设计）——优点：可生成多样序列；局限：多需完整序列或结构输入，未专门针对人源化任务优化。</li>
+<li><strong>阶段三：扩散模型在蛋白质设计中的应用</strong>——优点：生成质量高、可控性强；局限：多数方法需结构或完整序列输入，计算成本高。</li>
+<li><strong>本文位置</strong>：提出 HuDiff，将自回归扩散模型适配到 CDR-only 输入的人源化任务，通过两阶段训练和 inpainting 模式解决框架区保留问题。</li>
+<li><strong>脉络核验</strong>：仅本文框架，未提供外部文献综述或对比实验。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模板依赖</td>
+<td>传统人源化需预先选择人类模板，模板质量影响结果</td>
+<td>模板选择是人工且经验性的，对非人类框架适应性差</td>
+<td>摘要：eliminating the need for preexisting human templates</td>
+</tr>
+<tr>
+<td>CDR-only 输入挑战</td>
+<td>仅用 CDR 序列生成完整抗体序列，框架区需被正确填充</td>
+<td>框架区与 CDR 的序列-结构关系复杂，需学习人类框架模式</td>
+<td>摘要：pretraining on human antibody sequences to learn framework region patterns</td>
+</tr>
+<tr>
+<td>纳米抗体框架区保留</td>
+<td>纳米抗体框架区残基对稳定性和亲和力至关重要，直接生成可能破坏</td>
+<td>纳米抗体框架区与常规抗体不同，需特殊处理</td>
+<td>摘要：HuDiff-Nb can incorporate a specialized inpainting mode to preserve critical nanobody framework residues</td>
+</tr>
+<tr>
+<td>人源化程度控制</td>
+<td>生成序列需平衡人源化程度与功能保留</td>
+<td>人源化程度需通过 humanness scores 引导</td>
+<td>摘要：fine-tuning on target-species sequences guided by humanness scores</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：两阶段训练的自回归扩散模型，输入 CDR 序列，输出完整人源化抗体/纳米抗体序列；纳米抗体支持 inpainting 模式。</li>
+<li><strong>核心洞察</strong>：通过预训练学习人类框架区模式，再通过微调适应目标物种，使得模型能够从 CDR 出发「填充」框架区，无需模板；inpainting 模式允许在生成过程中固定关键框架残基。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：对于序列生成任务，两阶段训练（先学通用模式，再学任务特定模式）可有效平衡通用性与特异性；inpainting 是处理「关键残基保留」问题的通用策略，可迁移到其他蛋白质设计任务。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：CDR 序列（抗体为重链和轻链 CDR，纳米抗体为单链 CDR）</li>
+<li><strong>输出</strong>：完整人源化抗体/纳米抗体序列（多个候选）</li>
+<li><strong>模块</strong>：
+  1. 数据预处理模块（CDR 序列提取、格式转换）
+  2. 预训练模块（人类抗体序列自回归扩散训练）
+  3. 微调模块（目标物种序列 + humanness scores 引导）
+  4. 生成模块（自回归扩散采样，纳米抗体支持 inpainting）</li>
+<li><strong>训练</strong>：两阶段——先在人类抗体序列上预训练，再在目标物种序列上微调</li>
+<li><strong>工具</strong>：未提供具体框架或库</li>
+<li><strong>反馈回路</strong>：humanness scores 在微调阶段作为引导信号</li>
+<li><strong>假设</strong>：人类框架区模式可从序列数据中学习；CDR 序列足以决定框架区选择</li>
+<li><strong>流程</strong>：CDR 序列 → 预处理 → 预训练模型加载 → 微调（目标物种 + humanness scores）→ 自回归扩散采样 → 多个候选序列 → 实验筛选</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预训练模块</td>
+<td>学习人类抗体框架区模式</td>
+<td>提供人源化所需的框架区先验知识</td>
+<td>输入：人类抗体序列；输出：预训练模型</td>
+<td>摘要：pretraining on human antibody sequences</td>
+<td>预期影响：模型无法生成人源化框架区 [预期效应]</td>
+</tr>
+<tr>
+<td>微调模块</td>
+<td>适应目标物种序列特征</td>
+<td>使生成序列符合目标物种偏好</td>
+<td>输入：目标物种序列 + humanness scores；输出：微调模型</td>
+<td>摘要：fine-tuning on target-species sequences guided by humanness scores</td>
+<td>预期影响：生成序列人源化程度不足 [预期效应]</td>
+</tr>
+<tr>
+<td>生成模块（自回归扩散）</td>
+<td>从 CDR 生成完整序列</td>
+<td>核心生成机制</td>
+<td>输入：CDR 序列；输出：多个候选序列</td>
+<td>摘要：adaptive autoregressive diffusion approach</td>
+<td>预期影响：无法生成完整序列 [预期效应]</td>
+</tr>
+<tr>
+<td>Inpainting 模块（HuDiff-Nb）</td>
+<td>保留关键纳米抗体框架残基</td>
+<td>防止生成过程破坏关键残基</td>
+<td>输入：CDR + 固定残基位置；输出：保留关键残基的序列</td>
+<td>摘要：specialized inpainting mode</td>
+<td>预期影响：纳米抗体框架区被破坏 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用。本文为实验协议，未提供数学模型或公式。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供具体数据集信息（人类抗体序列、目标物种序列来源未说明）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（humanness scores 提及但未定义具体指标）</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供（仅提及生成多个候选供实验筛选）</li>
+<li><strong>实验表格</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖抗体和纳米抗体的人源化序列生成，不涉及结构预测或功能验证。</li>
+<li><strong>oracle/真值输入</strong>：CDR 序列为唯一输入，无结构或实验标签。</li>
+<li><strong>端到端状态</strong>：非端到端——生成序列需下游实验筛选验证。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：依赖人类抗体序列和目标物种序列数据，具体来源和规模未提供。</li>
+<li><strong>模型依赖</strong>：依赖自回归扩散模型架构，具体实现细节未提供。</li>
+<li><strong>最难情形</strong>：纳米抗体框架区保留（通过 inpainting 部分解决）。</li>
+<li><strong>不确定性</strong>：人源化程度和功能保留的平衡未量化。</li>
+<li><strong>有边界复述</strong>：HuDiff 在 CDR-only 输入条件下，通过两阶段训练生成人源化抗体/纳米抗体序列，但生成序列的免疫原性和功能需实验验证，且模型性能边界（如对非标准 CDR 的适应性）未在本文中评估。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 生成序列需下游实验筛选（摘要：Generates multiple diverse humanized candidates for downstream experimental screening），暗示生成序列质量需实验验证。
+- 纳米抗体 inpainting 模式仅适用于 HuDiff-Nb，常规抗体无此功能。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供定量结果</td>
+<td>本文为协议，无实验数据支撑有效性</td>
+<td>无法评估模型性能</td>
+<td>需查阅原始 HuDiff 论文或复现实验</td>
+<td>摘要仅描述方法，无结果</td>
+</tr>
+<tr>
+<td>humanness scores 未定义</td>
+<td>引导微调的具体指标不明确</td>
+<td>影响可复现性</td>
+<td>需补充 humanness scores 的计算方法</td>
+<td>摘要提及但未展开</td>
+</tr>
+<tr>
+<td>数据集来源和规模未提供</td>
+<td>训练数据质量直接影响生成质量</td>
+<td>影响泛化性评估</td>
+<td>需补充数据描述</td>
+<td>全文未提及</td>
+</tr>
+<tr>
+<td>无对比实验</td>
+<td>无法判断 HuDiff 相对现有方法的优势</td>
+<td>影响方法定位</td>
+<td>需与 CDR 移植、其他生成模型对比</td>
+<td>摘要未提供对比</td>
+</tr>
+<tr>
+<td>仅序列输入，无结构信息</td>
+<td>框架区- CDR 的 3D 相互作用可能被忽略</td>
+<td>可能影响功能保留</td>
+<td>可结合 AlphaFold 或 MD 验证生成序列的结构合理性</td>
+<td>方法描述中无结构模块</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>两阶段训练策略</strong>：先预训练通用模式（人类抗体序列），再微调任务特定模式（目标物种），可迁移到其他蛋白质设计任务（如酶设计、抗原表位设计）。
+2. <strong>CDR-only 输入设计</strong>：仅用功能关键区域（CDR）作为输入，减少输入维度，降低数据需求，可迁移到其他功能位点驱动的设计任务。
+3. <strong>Inpainting 模式</strong>：在生成过程中固定关键残基，是处理「保守残基保留」问题的通用策略，可迁移到结构预测（如固定活性位点）或 MD 模拟（如固定结合口袋）。
+4. <strong>Humanness scores 引导微调</strong>：用可量化的属性分数引导生成过程，可迁移到其他属性优化任务（如稳定性、溶解度、亲和力）。
+5. <strong>多候选生成</strong>：生成多个多样候选供下游筛选，是生成模型与实验验证衔接的通用范式，可迁移到结构生成（如构象采样）任务。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与扩散模型在蛋白质设计中的应用（如 RFdiffusion）相似，但本文聚焦序列级生成，RFdiffusion 聚焦结构级生成。</li>
+<li><strong>组合方向</strong>：HuDiff 生成的序列可输入 AlphaFold 进行结构验证，或用于 MD 模拟评估框架区稳定性。</li>
+<li><strong>冲突点</strong>：本文仅用序列信息，与结构感知方法（如 AlphaFold 引导的设计）存在潜在冲突，需实验验证序列-only 方法的边界。</li>
+<li><strong>可迁移领域</strong>：inpainting 策略可迁移到构象采样（固定关键残基）、分子对接（固定结合位点）等任务。</li>
+<li><strong>候选方向</strong>：将 HuDiff 的两阶段训练策略与结构预测结合，实现序列-结构联合优化。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：HuDiff-结构感知扩展
+   - <strong>来源局限/观察</strong>：HuDiff 仅用序列输入，忽略框架区- CDR 的 3D 相互作用。
+   - <strong>核心假设</strong>：在生成过程中引入结构约束（如 AlphaFold 预测的框架区结构）可提高功能保留率。
+   - <strong>相对本文的增量</strong>：在 HuDiff 基础上增加结构模块，实现序列-结构联合生成。
+   - <strong>初步方法</strong>：将 AlphaFold 预测的框架区结构作为条件输入，或在生成后使用 MD 模拟筛选。
+   - <strong>验证方式</strong>：对比 HuDiff 与 HuDiff-结构感知在免疫原性预测和实验结合亲和力上的差异。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Inpainting 策略迁移到构象采样
+   - <strong>来源局限/观察</strong>：HuDiff-Nb 的 inpainting 模式可保留关键残基，类似问题存在于构象采样（如固定活性位点）。
+   - <strong>核心假设</strong>：将 inpainting 策略应用于构象生成模型，可提高采样效率并保留功能关键构象。
+   - <strong>相对本文的增量</strong>：将序列级 inpainting 迁移到结构级任务。
+   - <strong>初步方法</strong>：在扩散构象生成模型中引入固定残基约束，评估对采样多样性和功能构象保留的影响。
+   - <strong>验证方式</strong>：使用已知蛋白体系，对比 inpainting 与无约束采样的构象分布和功能构象占比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Humanness scores 泛化到多属性引导
+   - <strong>来源局限/观察</strong>：HuDiff 用 humanness scores 引导微调，但仅针对人源化。
+   - <strong>核心假设</strong>：类似引导策略可泛化到其他属性（如稳定性、溶解度、亲和力）。
+   - <strong>相对本文的增量</strong>：提出多属性引导的生成框架。
+   - <strong>初步方法</strong>：在 HuDiff 框架中引入多属性评分函数，联合优化多个目标。
+   - <strong>验证方式</strong>：在抗体设计任务中同时优化人源化程度和热稳定性，对比单属性引导。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：CDR-only 输入与结构预测的交叉验证
+   - <strong>来源局限/观察</strong>：HuDiff 假设 CDR 序列足以决定框架区选择，但未验证。
+   - <strong>核心假设</strong>：CDR 序列与框架区结构存在可学习的映射关系。
+   - <strong>相对本文的增量</strong>：系统评估 CDR-only 输入的边界。
+   - <strong>初步方法</strong>：使用 HuDiff 生成序列，输入 AlphaFold 预测结构，分析框架区结构多样性。
+   - <strong>验证方式</strong>：对比 CDR-only 与完整序列输入的生成结果在结构层面的差异。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> 摘要（protocol 描述）</li>
+<li><strong>Assessment boundary</strong> 仅评估摘要所呈现的方法学逻辑、可复现性声明与适用性描述；不评估完整 protocol 的逐步操作细节</li>
+<li><strong>Shared manuscript claim summary</strong> 作者提出 HuDiff 是一种自适应自回归扩散方法，仅以 CDR 序列为输入即可从零生成人源化抗体和纳米抗体，无需人源模板；采用两阶段训练（人源抗体序列预训练 + 目标物种序列微调，以 humanness scores 引导）；HuDiff-Ab 同时处理重轻链，HuDiff-Nb 提供 inpainting 模式保留关键框架残基；可生成多个多样化候选供实验筛选</li>
+<li><strong>Visible evidence base</strong> 摘要文本；无图、表、算法伪代码、超参数、数据集规模、评估指标或验证数据</li>
+<li><strong>Missing materials affecting confidence</strong> 完整 protocol 正文、训练数据来源与规模、humanness score 定义与计算方式、模型架构细节、生成序列的验证结果（体外或体内数据）、与现有方法（如 CDR grafting、structure-based humanization）的对比基准</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> 摘要描述了一个具有潜在实用价值的抗体人源化生成框架，其「仅需 CDR 输入、无需人源模板」的核心主张若成立，将简化现有工作流程。然而，当前摘要提供的技术细节极为有限，无法评估方法的可实现性、创新程度或实际性能。作为 protocol 类稿件，其价值取决于步骤的完整性和可复现性，而摘要中这些信息基本缺失。建议在完整稿件中补充关键实现细节和验证数据后再作最终判断。</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> 治疗性抗体和纳米抗体研发人员，特别是从事抗体工程、免疫原性降低和候选分子筛选的研究组；计算生物学和机器学习应用于蛋白质设计的研究者；以及关注 AI 驱动生物药物开发平台的工业界科学家。他们会对「仅需 CDR 输入即可生成人源化序列」这一简化流程感兴趣，因为它可能减少对结构数据和模板库的依赖。</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> 
+  1. 核心主张明确且具有实际意义：仅以 CDR 为输入、无需人源模板，直接回应了传统人源化方法依赖模板匹配的瓶颈。
+  2. 两阶段训练策略（人源预训练 + 目标物种微调）逻辑清晰，符合迁移学习在生物序列建模中的成熟范式。
+  3. 区分 HuDiff-Ab 和 HuDiff-Nb 两种模式，并针对纳米抗体引入 inpainting 机制，显示了对不同抗体格式特殊性的考虑。
+  4. 生成多个多样化候选的设计目标与实验筛选流程衔接合理，具有实际操作性。</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> 技术可实现性</li>
+<li><strong>Claim pointer</strong> 「HuDiff is an adaptive autoregressive diffusion approach that generates humanized antibodies and nanobodies from scratch using only complementarity-determining region sequences as input」</li>
+<li><strong>Evidence pointer</strong> 摘要全文；location not provided</li>
+<li><strong>Concern</strong> 摘要未提供任何关于「adaptive autoregressive diffusion」架构的具体描述。自回归模型与扩散模型的结合方式、自适应机制的具体含义、CDR 序列如何条件化生成过程，这些核心设计决策均未说明。作为 protocol 稿件，读者需要明确的架构定义才能复现。</li>
+<li><strong>Why it matters</strong> 如果架构描述不完整，protocol 无法被独立实施。此外，「adaptive」和「from scratch」的表述在当前描述下缺乏可验证的技术内涵，可能误导读者对方法复杂度和输入要求的理解。</li>
+<li>
+<p><strong>Resolution test</strong> 在完整 protocol 中提供模型架构图、输入输出张量维度、CDR 序列编码方式、自回归与扩散组件的具体交互机制，以及「adaptive」的准确定义。</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> 可复现性</li>
+<li><strong>Claim pointer</strong> 「pretraining on human antibody sequences to learn framework region patterns, followed by fine-tuning on target-species sequences guided by humanness scores」</li>
+<li><strong>Evidence pointer</strong> 摘要全文；location not provided</li>
+<li><strong>Concern</strong> 摘要未提供预训练和微调数据集的具体来源、规模、物种范围或序列筛选标准。humanness score 的定义、计算方法和在训练中的具体引导方式（如损失函数加权、采样约束或后处理过滤）完全未说明。两阶段训练的超参数（学习率、训练轮数、批次大小等）也未提及。</li>
+<li><strong>Why it matters</strong> 对于 protocol 类稿件，数据获取和评分标准是复现的关键路径。缺少这些信息，读者无法判断训练数据的适用性，也无法评估 humanness score 是否客观反映免疫原性风险。</li>
+<li>
+<p><strong>Resolution test</strong> 在 protocol 中列出数据来源（如 OAS、IMGT 等）、版本号、序列数量、物种组成、预处理流程；提供 humanness score 的数学定义或引用原始文献，并说明其在训练流程中的具体集成方式。</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> 性能验证</li>
+<li><strong>Claim pointer</strong> 「Generates multiple diverse humanized candidates for downstream experimental screening」</li>
+<li><strong>Evidence pointer</strong> 摘要全文；location not provided</li>
+<li><strong>Concern</strong> 摘要未提供任何生成序列的质量评估数据。没有 humanness score 的分布、与已知人源抗体的序列相似性、框架区残基保守性、CDR 结构完整性或功能活性（如抗原结合亲和力）的验证结果。也没有与现有方法（如 CDR grafting、Sapiens、BioPhi 等）的对比数据。</li>
+<li><strong>Why it matters</strong> 人源化的核心目标是降低免疫原性同时保留抗原结合活性。没有实验或计算验证，无法判断生成的「人源化」序列是否真正满足这两个要求。protocol 的价值取决于其输出是否可靠。</li>
+<li>
+<p><strong>Resolution test</strong> 在稿件中提供至少一个案例研究：输入一组 CDR 序列，展示生成的人源化候选的 humanness score、与亲本抗体的序列比对、关键框架残基的保留情况，以及（如有）实验验证的亲和力或表达数据。</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> 方法适用性边界</li>
+<li><strong>Claim pointer</strong> 「HuDiff-Nb can incorporate a specialized inpainting mode to preserve critical nanobody framework residues」</li>
+<li><strong>Evidence pointer</strong> 摘要全文；location not provided</li>
+<li><strong>Concern</strong> 摘要未说明 inpainting 模式的具体触发条件、哪些残基被定义为「critical」、以及该模式与传统 CDR grafting 或结构引导设计有何本质区别。纳米抗体的人源化面临独特的框架区保守性问题，但摘要未提供针对这一挑战的解决方案细节。</li>
+<li><strong>Why it matters</strong> 纳米抗体因其小尺寸和 CDR3 长环结构而具有特殊的人源化难点。如果 inpainting 模式只是简单的残基掩码和重建，可能不足以解决框架区稳定性和 VHH 特异性残基（如 45e、47、103 等）的保留问题。</li>
+<li>
+<p><strong>Resolution test</strong> 在 protocol 中明确 inpainting 模式的输入格式、掩码策略、关键残基的定义标准，并提供纳米抗体人源化的具体案例或基准测试。</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> 术语清晰度</li>
+<li><strong>Affected element</strong> 「adaptive autoregressive diffusion」</li>
+<li><strong>Evidence pointer</strong> 摘要第一段</li>
+<li><strong>Issue</strong> 「adaptive」一词在摘要中未定义，可能指架构自适应、训练策略自适应或生成过程自适应，含义模糊。</li>
+<li>
+<p><strong>Required correction</strong> 在摘要或引言中明确「adaptive」的具体含义，或在完整稿件中首次出现时给出定义。</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> 输入要求</li>
+<li><strong>Affected element</strong> 「using only complementarity-determining region sequences as input」</li>
+<li><strong>Evidence pointer</strong> 摘要第一段</li>
+<li><strong>Issue</strong> 未说明 CDR 序列的格式要求（如是否包含 CDR1-3 全部、是否需标注种系来源、长度范围限制）以及是否支持单域抗体（VHH）的 CDR 输入。</li>
+<li>
+<p><strong>Required correction</strong> 在 protocol 的输入数据格式部分明确 CDR 序列的规范、示例和边界情况。</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> 输出多样性</li>
+<li><strong>Affected element</strong> 「Generates multiple diverse humanized candidates」</li>
+<li><strong>Evidence pointer</strong> 摘要 Key features 第 4 条</li>
+<li><strong>Issue</strong> 未说明多样性的量化方式（如序列同一性阈值、聚类方法）或推荐生成数量。</li>
+<li>
+<p><strong>Required correction</strong> 在 protocol 中提供多样性评估指标和推荐的候选数量范围。</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> 计算资源</li>
+<li><strong>Affected element</strong> 训练和推理流程</li>
+<li><strong>Evidence pointer</strong> 摘要全文；location not provided</li>
+<li><strong>Issue</strong> 未提及训练所需的 GPU 类型、显存需求、预计训练时间或推理速度，影响用户对资源需求的预判。</li>
+<li>
+<p><strong>Required correction</strong> 在 protocol 的「设备要求」或「计算资源」部分补充硬件规格和运行时间估计。</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1（架构定义缺失）、R1-M2（数据与评分标准未说明）、R1-M3（无性能验证数据）。这三项是 protocol 可复现性和方法可信度的基础，必须在完整稿件中解决。</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong> </p>
+</li>
+<li><strong>Originality</strong> 中等。将扩散模型应用于抗体人源化并非全新概念，但「仅以 CDR 为输入、无需模板」的设定具有一定区分度。然而，摘要未提供与现有生成式人源化方法（如基于语言模型或扩散模型的方法）的差异化分析。</li>
+<li><strong>Scientific importance</strong> 中等偏高。抗体人源化是治疗性抗体开发的关键步骤，简化流程具有实际价值。但方法的最终重要性取决于生成序列的质量和实验验证结果，当前摘要无法支撑更高层级的科学贡献声明。</li>
+<li><strong>Interdisciplinary readership</strong> 中等。计算生物学、结构生物学和抗体工程领域的研究者可能感兴趣，但摘要的技术描述过于简略，难以吸引非专业读者。</li>
+<li><strong>Technical soundness</strong> 当前不可评估。核心架构、训练策略和验证方法均未提供足够细节，无法判断技术路线的合理性。</li>
+<li>
+<p><strong>Readability for nonspecialists</strong> 尚可。摘要语言清晰，但「adaptive autoregressive diffusion」和「inpainting mode」等术语缺乏解释，可能阻碍非计算背景读者理解。</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> 目前无法从摘要材料中确认方法的可行性和价值。建议在收到完整 protocol 后重新评估。若完整稿件包含架构细节、数据来源、humanness score 定义和至少一个验证案例，则持支持态度；否则，当前证据不足以建立方法可信度。</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>「eliminating the need for preexisting human templates」：摘要未提供证据表明生成的人源化序列在免疫原性上等同于或优于模板依赖方法，该主张目前无支撑。</li>
+<li>「adaptive」：未定义，无法评估其技术含义。</li>
+<li>「guided by humanness scores」：humanness score 的定义和计算方式未提供，该训练引导机制不可评估。</li>
+<li>「preserve critical nanobody framework residues」：未说明哪些残基被视为 critical 以及 inpainting 如何实现保护，该功能声明不可评估。</li>
+<li>「Generates multiple diverse humanized candidates」：多样性未量化，候选质量未验证，该功能声明仅有方向性意义。</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

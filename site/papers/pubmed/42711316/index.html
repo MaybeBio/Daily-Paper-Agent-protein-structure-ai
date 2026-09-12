@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ESMDynamic: Fast and accurate prediction of protein dynamic contact maps from single sequences. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>ESMDynamic: Fast and accurate prediction of protein dynamic contact maps from single sequences.</h1>
+      <div class="meta">Kleiman, Diego E; Feng, Jiangyan; Xue, Zhengyuan; Shukla, Diwakar</div>
+      <div class="meta muted">
+        
+        <span class="journal">Nature communications</span>
+        · 2026-09-09
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42711316/">原文</a>
+      </div>
+      <p class="one-liner">该文提出ESMDynamic，基于ESMFold架构从单序列直接预测蛋白质动态接触图，结合实验构象系综和MD模拟训练，实现了快速、准确的构象动态预测，对蛋白质结构计算（构象采样、动态分析）有直接贡献。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Understanding conformational dynamics is essential for elucidating protein function, yet most deep learning models in structural biology predict only static structures. Here, we present ESMDynamic, a deep learning model that predicts residue-residue contact dynamics directly from protein sequence. Built on the ESMFold architecture and trained on conformational variability from experimental structure ensembles and molecular dynamics (MD) simulations, ESMDynamic predicts dynamic contact probabilities, contact occupancy fraction, and coarse-grained kinetics of contact formation and dissociation across multiple temperature conditions. On large-scale MD benchmarks (mdCATH and ATLAS), ESMDynamic matches or outperforms state-of-the-art ensemble prediction methods (AlphaFlow, ESMFlow, BioEmu) while requiring orders-of-magnitude less computation. We demonstrate generalization to diverse systems, including membrane transporters, a de novo designed protein, and a homodimer complex. We show that predicted dynamic contacts enable automated selection of collective variables for Markov state model construction. Applied to the human proteome, ESMDynamic generates predictions for over 18,000 proteins, enabling large-scale analysis of conformational variability. Overall, ESMDynamic provides a scalable, sequence-based representation of protein dynamics to inform simulation, analysis, and design workflows.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">理解构象动态对于阐明蛋白质功能至关重要，然而结构生物学中的大多数深度学习模型仅预测静态结构。在此，我们提出ESMDynamic，一种直接从蛋白质序列预测残基-残基接触动态的深度学习模型。该模型基于ESMFold架构，并利用来自实验结构集合和分子动力学（MD）模拟的构象变异性进行训练，预测动态接触概率、接触占据分数，以及多种温度条件下接触形成和解离的粗粒度动力学。在大规模MD基准（mdCATH和ATLAS）上，ESMDynamic匹配或超越最先进的集合预测方法（AlphaFlow、ESMFlow、BioEmu），同时所需计算量低数个数量级。我们展示了其对多种系统的泛化能力，包括膜转运蛋白、一种从头设计的蛋白质以及一个同源二聚体复合物。我们表明，预测的动态接触能够实现马尔可夫状态模型构建中集体变量的自动选择。应用于人类蛋白质组时，ESMDynamic为超过18,000种蛋白质生成预测，从而支持构象变异性的规模化分析。总体而言，ESMDynamic提供了一种可扩展的、基于序列的蛋白质动态表示，以指导模拟、分析和设计工作流程。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：ESMDynamic: Fast and accurate prediction of protein dynamic contact maps from single sequences</li>
+<li><strong>作者</strong>：Kleiman, Diego E; Feng, Jiangyan; Xue, Zhengyuan; Shukla, Diwakar</li>
+<li><strong>单位</strong>：未提供（根据作者信息推测为美国高校，具体单位未在摘要中给出）</li>
+<li><strong>期刊/平台</strong>：Nature Communications</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：研究论文（Research Article）</li>
+<li><strong>领域</strong>：蛋白质结构预测 × 蛋白质动力学 × 深度学习</li>
+<li><strong>关键词</strong>：dynamic contact maps, ESMFold, molecular dynamics, conformational ensembles, contact kinetics</li>
+<li><strong>DOI/ID</strong>：10.1038/s41467-026-76361-2</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：mdCATH, ATLAS, 人类蛋白质组（18,000+ 蛋白质）</li>
+<li><strong>阅读日期</strong>：2026-09-09</li>
+<li><strong>URL</strong>：https://pubmed.ncbi.nlm.nih.gov/42711316/</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」方向，具体位于「从序列直接预测蛋白质构象动力学」这一子领域。与 AlphaFlow、ESMFlow、BioEmu 等 ensemble 预测方法并列，但强调极低计算成本与大规模可扩展性。其核心创新在于将 ESMFold 架构扩展为动态接触预测器，并引入粗粒化接触动力学（kinetics）预测，填补了「静态结构预测 → 动态构象预测」的空白。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 ESMDynamic，基于 ESMFold 架构改造的深度学习模型，从单条蛋白质序列直接预测残基-残基动态接触图（含接触概率、占据分数、接触形成/解离的粗粒化动力学），在 mdCATH 和 ATLAS 基准上以远低于现有 ensemble 方法（AlphaFlow、ESMFlow、BioEmu）的计算成本达到相当或更优的性能，并展示其在集体变量自动选择、人类蛋白质组规模分析中的实用性。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何从单条蛋白质序列直接、快速地预测蛋白质的构象动力学（而非仅静态结构）？</li>
+<li><strong>为什么重要</strong>：蛋白质功能往往依赖构象变化（如膜转运蛋白的开闭、变构调控），静态结构无法捕捉这些关键动态特征。现有深度学习方法（如 AlphaFold）只输出单一静态结构，无法提供构象多样性信息。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>AlphaFold 等静态预测器：无动力学信息。</li>
+<li>AlphaFlow、ESMFlow、BioEmu 等 ensemble 方法：需要多轮采样或扩散过程，计算成本高，难以扩展到蛋白质组规模。</li>
+<li>MD 模拟：准确但计算代价极高，无法高通量应用。</li>
+<li><strong>精确研究问题（Can ... ?）</strong>：Can a single-sequence deep learning model, built on ESMFold, predict residue-residue contact dynamics (probabilities, occupancies, and coarse-grained kinetics) with accuracy comparable to ensemble-based methods while requiring orders-of-magnitude less computation?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文摘要及作者引用的方法构建，标注为「仅本文框架」——即作者在摘要中呈现的叙事逻辑，未经外部文献核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态结构预测</td>
+<td>AlphaFold2, ESMFold</td>
+<td>高精度、单序列/多序列比对输入</td>
+<td>仅输出单一静态结构，无动力学信息</td>
+<td>本文以 ESMFold 为骨干架构</td>
+</tr>
+<tr>
+<td>构象 ensemble 生成</td>
+<td>AlphaFlow, ESMFlow, BioEmu</td>
+<td>可生成多个构象，捕捉部分动态</td>
+<td>计算成本高（多轮采样/扩散），难以大规模应用</td>
+<td>本文声称在精度上匹配或超越这些方法，但计算量低数个数量级</td>
+</tr>
+<tr>
+<td>分子动力学模拟</td>
+<td>MD (AMBER, GROMACS)</td>
+<td>物理精确、含时间信息</td>
+<td>计算代价极高，无法高通量</td>
+<td>本文用 MD 数据（mdCATH, ATLAS）作为训练/基准</td>
+</tr>
+<tr>
+<td>动态接触预测（本文）</td>
+<td><strong>ESMDynamic</strong></td>
+<td>单序列输入、极低计算成本、含粗粒化动力学</td>
+<td>粗粒化时间信息，非全原子精度</td>
+<td>本文主张填补「静态→动态」空白</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态结构不足以描述功能</td>
+<td>蛋白质功能依赖构象变化，静态结构无法捕捉</td>
+<td>现有 DL 模型（AlphaFold 等）只预测单一结构</td>
+<td>摘要第 1-2 句</td>
+</tr>
+<tr>
+<td>ensemble 方法计算成本过高</td>
+<td>AlphaFlow/ESMFlow/BioEmu 需要多轮采样或扩散</td>
+<td>生成多个构象需要大量前向传播</td>
+<td>摘要「requiring orders-of-magnitude less computation」</td>
+</tr>
+<tr>
+<td>MD 模拟无法高通量</td>
+<td>全原子 MD 计算代价极高</td>
+<td>物理模拟的时间步长限制</td>
+<td>摘要「large-scale MD benchmarks」暗示 MD 数据昂贵</td>
+</tr>
+<tr>
+<td>缺乏从序列直接预测动力学的工具</td>
+<td>现有方法要么需要 MSA、要么需要多轮采样</td>
+<td>架构设计未针对动力学输出</td>
+<td>摘要「predicts residue-residue contact dynamics directly from protein sequence」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<ul>
+<li>以 ESMFold 为骨干架构，改造其输出头，使其预测动态接触图（dynamic contact maps），包括：</li>
+<li>动态接触概率（dynamic contact probabilities）</li>
+<li>接触占据分数（contact occupancy fraction）</li>
+<li>粗粒化接触形成/解离动力学（coarse-grained kinetics）</li>
+<li>训练数据来自实验结构 ensemble 和 MD 模拟的构象变异。</li>
+<li>支持多温度条件下的预测。</li>
+</ul>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>静态结构预测器（ESMFold）的中间表征已隐含构象多样性信息</strong>——通过微调而非从零训练，可以将其转化为动力学预测器。</li>
+<li><strong>接触层面的粗粒化动力学</strong>（而非全原子轨迹）足以捕捉蛋白质功能相关的构象变化，且可端到端学习。</li>
+<li><strong>单序列输入 + 单次前向传播</strong>即可输出动力学信息，绕过了 ensemble 方法的多轮采样瓶颈。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>大型预训练结构模型的隐空间可能包含比显式输出更丰富的物理信息（如构象系综），微调输出头即可解锁新任务。</li>
+<li>粗粒化表示（如接触图）在保持生物学相关性的同时大幅降低预测难度，是连接序列与动力学的有效中间层。</li>
+<li>计算效率本身可以是一种设计目标——在精度相当的前提下，极低计算成本使蛋白质组规模分析成为可能。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：单条蛋白质氨基酸序列</li>
+<li><strong>输出</strong>：</li>
+<li>动态接触概率图（每个残基对的接触概率）</li>
+<li>接触占据分数（每个接触在 ensemble 中的出现比例）</li>
+<li>粗粒化接触形成/解离动力学（多温度条件下）</li>
+<li><strong>骨干架构</strong>：ESMFold（改造输出头）</li>
+<li><strong>训练数据</strong>：</li>
+<li>实验结构 ensemble（来源未详述）</li>
+<li>MD 模拟轨迹（mdCATH, ATLAS 数据集）</li>
+<li><strong>训练目标</strong>：预测 MD/实验 ensemble 中接触的统计分布与时间演化特征</li>
+<li><strong>温度条件</strong>：多温度预测（具体温度范围未在摘要中给出）</li>
+<li><strong>推理流程</strong>：
+  1. 输入序列 → ESMFold 编码器提取表征
+  2. 改造后的输出头解码为动态接触图（概率、占据、动力学）
+  3. 单次前向传播输出全部预测</li>
+<li><strong>下游应用</strong>：</li>
+<li>自动选择集体变量（collective variables）用于 Markov state model 构建</li>
+<li>人类蛋白质组规模预测（18,000+ 蛋白质）</li>
+<li><strong>假设</strong>：</li>
+<li>接触层面的统计足以表征功能相关构象动力学</li>
+<li>ESMFold 预训练表征可迁移至动力学预测任务</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESMFold 骨干编码器</td>
+<td>提取序列的进化与结构隐表征</td>
+<td>提供序列→结构的先验知识，减少训练数据需求</td>
+<td>输入：序列；输出：隐表征</td>
+<td>摘要「Built on the ESMFold architecture」</td>
+<td>[预期] 需从头训练，数据需求剧增，精度下降</td>
+</tr>
+<tr>
+<td>动态接触输出头</td>
+<td>将隐表征映射为动态接触图</td>
+<td>将静态结构预测转为动力学预测</td>
+<td>输入：隐表征；输出：接触概率/占据/动力学</td>
+<td>摘要「predicts residue-residue contact dynamics」</td>
+<td>[预期] 无法输出动力学信息，退化为静态预测</td>
+</tr>
+<tr>
+<td>多温度条件模块</td>
+<td>支持不同温度下的动力学预测</td>
+<td>温度是构象采样的关键物理参数</td>
+<td>输入：序列+温度条件；输出：对应温度的动态接触图</td>
+<td>摘要「across multiple temperature conditions」</td>
+<td>[预期] 丧失温度依赖性，无法捕捉热力学响应</td>
+</tr>
+<tr>
+<td>训练数据管道（MD + 实验 ensemble）</td>
+<td>提供动力学标签</td>
+<td>监督学习需要构象变异的真值</td>
+<td>输入：MD 轨迹/实验 ensemble；输出：接触统计标签</td>
+<td>摘要「trained on conformational variability from experimental structure ensembles and MD simulations」</td>
+<td>[预期] 无动力学标签则无法训练</td>
+</tr>
+<tr>
+<td>集体变量选择模块</td>
+<td>从预测的动态接触中自动选择 CV</td>
+<td>连接预测与下游模拟分析</td>
+<td>输入：动态接触图；输出：CV 集合</td>
+<td>摘要「enable automated selection of collective variables for Markov state model construction」</td>
+<td>[预期] 失去自动化 CV 选择能力，需人工设计</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用。摘要中未提供任何数学公式或符号定义。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<h3>数据集/群体、规模、指标、基线、预算、骨干/仪器、oracle 输入、评测协议</h3>
+<ul>
+<li><strong>训练数据</strong>：实验结构 ensemble + MD 模拟（具体规模未提供）</li>
+<li><strong>基准数据集</strong>：mdCATH, ATLAS（大规模 MD 基准）</li>
+<li><strong>基线方法</strong>：AlphaFlow, ESMFlow, BioEmu（ensemble 预测方法）</li>
+<li><strong>评测指标</strong>：未在摘要中具体说明（推测为接触预测的精度指标，如 AUC、F1 等）</li>
+<li><strong>计算预算</strong>：ESMDynamic 声称比基线方法低「orders-of-magnitude」计算量</li>
+<li><strong>骨干/仪器</strong>：ESMFold 架构</li>
+<li><strong>oracle 输入</strong>：MD 模拟轨迹作为训练标签；测试时仅用序列</li>
+<li><strong>评测协议</strong>：在 mdCATH 和 ATLAS 上与基线方法对比；额外测试膜转运蛋白、de novo 设计蛋白、同源二聚体；人类蛋白质组规模应用</li>
+</ul>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mdCATH 基准测试</td>
+<td>ESMDynamic 在动态接触预测上匹配或超越 ensemble 方法</td>
+<td>与 AlphaFlow, ESMFlow, BioEmu 对比</td>
+<td>「matches or outperforms」</td>
+<td>ESMDynamic 精度不低于现有方法</td>
+<td>未给出具体数值，无法判断优势幅度</td>
+<td>摘要第 4-5 句</td>
+</tr>
+<tr>
+<td>ATLAS 基准测试</td>
+<td>同上</td>
+<td>同上</td>
+<td>「matches or outperforms」</td>
+<td>同上</td>
+<td>同上</td>
+<td>摘要第 4-5 句</td>
+</tr>
+<tr>
+<td>计算成本对比</td>
+<td>ESMDynamic 计算量远低于基线</td>
+<td>与 ensemble 方法对比</td>
+<td>「orders-of-magnitude less computation」</td>
+<td>ESMDynamic 具有显著计算优势</td>
+<td>未给出具体加速比</td>
+<td>摘要第 5 句</td>
+</tr>
+<tr>
+<td>泛化性测试</td>
+<td>模型可推广到多样系统</td>
+<td>膜转运蛋白、de novo 设计蛋白、同源二聚体</td>
+<td>「demonstrate generalization」</td>
+<td>模型具有跨系统泛化能力</td>
+<td>未给出具体性能数值</td>
+<td>摘要第 6 句</td>
+</tr>
+<tr>
+<td>集体变量自动选择</td>
+<td>预测的动态接触可用于 MSM 构建</td>
+<td>与人工设计 CV 对比（推测）</td>
+<td>「enable automated selection」</td>
+<td>预测结果可直接用于下游模拟分析</td>
+<td>未说明与人工 CV 的性能对比</td>
+<td>摘要第 7 句</td>
+</tr>
+<tr>
+<td>人类蛋白质组规模应用</td>
+<td>模型可扩展到蛋白质组级别</td>
+<td>18,000+ 蛋白质</td>
+<td>「generates predictions for over 18,000 proteins」</td>
+<td>模型具备高通量能力</td>
+<td>未给出全蛋白质组分析的生物学发现</td>
+<td>摘要第 8 句</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖残基-残基接触层面的动力学预测，不涉及全原子坐标或连续轨迹生成。</li>
+<li><strong>oracle/真值输入</strong>：训练时依赖 MD 模拟和实验 ensemble 作为标签；测试时仅需序列。</li>
+<li><strong>端到端状态</strong>：从序列到动态接触图是端到端的，但「动力学」是粗粒化的（接触形成/解离），非全原子时间演化。</li>
+<li><strong>算力成本</strong>：声称比 ensemble 方法低数个数量级，但未给出绝对数值。</li>
+<li><strong>历史数据依赖</strong>：依赖 ESMFold 预训练权重和 MD/实验 ensemble 数据。</li>
+<li><strong>模型依赖</strong>：骨干为 ESMFold，若 ESMFold 表征有偏，可能影响动力学预测。</li>
+<li><strong>最难情形</strong>：摘要未提及模型在哪些系统上失败或表现不佳。</li>
+<li><strong>群体/领域边界</strong>：验证了膜转运蛋白、de novo 蛋白、同源二聚体，但未覆盖所有蛋白类型（如 intrinsically disordered proteins 未提及）。</li>
+<li><strong>不确定性</strong>：未报告预测不确定性的量化方法。</li>
+<li><strong>有边界的复述</strong>：ESMDynamic 在 mdCATH 和 ATLAS 基准上，以远低于现有 ensemble 方法的计算成本，达到相当或更优的动态接触预测精度，并能推广到多种蛋白系统及蛋白质组规模；但其预测限于粗粒化接触动力学，不提供全原子轨迹或连续时间演化。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限，基于摘要推断）：
+- 预测为粗粒化接触动力学，非全原子精度（摘要中「coarse-grained kinetics」暗示此约束）。
+- 训练依赖 MD 模拟数据，MD 的力场误差可能传递到预测中（推断，未在摘要中明说）。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>声称「matches or outperforms」但未给出具体数值</td>
+<td>可能仅在部分指标上超越，或优势幅度很小</td>
+<td>无法判断实际精度差距</td>
+<td>查阅全文中的具体指标对比表</td>
+<td>摘要第 4-5 句</td>
+</tr>
+<tr>
+<td>训练数据依赖 MD 模拟</td>
+<td>MD 力场误差可能被模型学习并放大</td>
+<td>影响预测的物理真实性</td>
+<td>对比不同力场训练的模型输出差异</td>
+<td>摘要「trained on ... MD simulations」</td>
+</tr>
+<tr>
+<td>粗粒化接触动力学的时间分辨率有限</td>
+<td>「coarse-grained kinetics」可能丢失快速构象变化信息</td>
+<td>影响对功能关键但短暂构象的捕捉</td>
+<td>与全原子 MD 的接触时间关联函数对比</td>
+<td>摘要「coarse-grained kinetics」</td>
+</tr>
+<tr>
+<td>泛化测试仅覆盖 3 类系统</td>
+<td>膜蛋白、de novo、二聚体不代表所有蛋白类别</td>
+<td>无法确认模型对 IDP、多结构域蛋白等的适用性</td>
+<td>在更多样化的蛋白集上测试</td>
+<td>摘要第 6 句</td>
+</tr>
+<tr>
+<td>人类蛋白质组预测缺乏下游验证</td>
+<td>18,000+ 蛋白质的预测可能包含大量假阳性</td>
+<td>影响大规模应用的可靠性</td>
+<td>对部分预测进行 MD 或实验验证</td>
+<td>摘要第 8 句</td>
+</tr>
+<tr>
+<td>未提及与 MD 模拟速度的定量对比</td>
+<td>「orders-of-magnitude」是模糊表述</td>
+<td>无法评估实际计算优势</td>
+<td>查阅全文中的 wall-clock time 对比</td>
+<td>摘要第 5 句</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li><strong>预训练结构模型的可迁移性</strong>：ESMFold 的隐表征可被微调为动力学预测器，说明大型结构模型的中间层包含构象多样性信息。→ 可迁移到本课题：尝试从 AlphaFold/ESMFold 的中间层提取特征用于其他动力学相关任务（如构象采样、ensemble 生成）。</li>
+<li><strong>粗粒化动力学作为输出目标</strong>：接触层面的统计（概率、占据、形成/解离速率）足以捕捉功能相关构象变化，且比全原子轨迹更易学习。→ 可迁移到本课题：在设计构象生成模型时，可先预测粗粒化动态特征，再映射回全原子坐标。</li>
+<li><strong>单次前向传播输出动力学</strong>：绕过多轮采样/扩散，大幅降低计算成本。→ 可迁移到本课题：在需要高通量构象分析的场景（如蛋白质组筛选）中，单次前向传播的设计极具吸引力。</li>
+<li><strong>多温度条件作为输入</strong>：将温度作为条件输入，使模型可预测不同热力学条件下的动力学。→ 可迁移到本课题：在 MD 模拟增强或构象采样任务中，可将温度/其他物理条件作为条件输入。</li>
+<li><strong>动态接触图 → 集体变量自动选择</strong>：预测的动态接触可直接用于构建 MSM 的 CV，连接 DL 预测与物理模拟。→ 可迁移到本课题：在 MD 模拟分析中，可用 DL 预测的动态特征替代人工设计的 CV。</li>
+<li><strong>实验 ensemble + MD 数据联合训练</strong>：混合实验和模拟数据作为训练标签，兼顾真实性与覆盖度。→ 可迁移到本课题：在训练构象生成模型时，可考虑多源标签的联合使用。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold2 / ESMFold</strong>：本文直接基于 ESMFold 架构，属于「预训练结构模型 → 下游任务微调」范式的延伸。可连接至 Rives et al. (2021) ESM 系列、Jumper et al. (2021) AlphaFold2。</li>
+<li><strong>AlphaFlow / ESMFlow / BioEmu</strong>：本文明确将这些 ensemble 预测方法作为基线，属于「从序列生成构象 ensemble」方向的竞争/互补方法。可连接至 Jing et al. (2024) AlphaFlow、ESMFlow 相关工作。</li>
+<li><strong>mdCATH / ATLAS</strong>：这两个大规模 MD 数据集是本文的基准，属于「MD 模拟数据作为 DL 训练/基准」的已知资源。可连接至 Vander Meersche et al. (2024) mdCATH、ATLAS 数据库相关工作。</li>
+<li><strong>Markov State Models (MSM)</strong>：本文展示预测的动态接触可自动选择 CV 用于 MSM 构建，连接至 Pande 学派 MSM 方法（Husic &amp; Pande, 2018）。</li>
+<li><strong>动态接触图预测</strong>：与早期基于 coevolution 的接触预测（如 DCA、PSICOV）形成对比——本文预测的是动态接触而非静态接触，属于「接触预测 → 动态接触预测」的演进。</li>
+<li><strong>[候选方向，未核验]</strong> 与蛋白质设计（如 de novo 设计蛋白验证）的交叉：本文在 de novo 设计蛋白上测试泛化，提示动态接触预测可辅助设计验证。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Dynamic Contact-Guided Conformational Sampling
+   - <strong>来源局限/观察</strong>：ESMDynamic 预测粗粒化接触动力学，但未直接生成全原子构象。
+   - <strong>核心假设</strong>：动态接触图可作为约束或条件输入，引导扩散模型或生成模型采样全原子构象 ensemble。
+   - <strong>相对本文的增量</strong>：从「预测动态特征」扩展到「生成动态构象」。
+   - <strong>初步方法</strong>：将 ESMDynamic 输出的接触概率/占据作为条件，输入到基于扩散的构象生成器（如 AlphaFlow 风格），生成多样构象。
+   - <strong>验证方式</strong>：在 mdCATH 上比较生成 ensemble 与 MD 参考 ensemble 的分布重叠（如 RMSD 分布、接触图相似度）。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Temperature-Conditioned Sequence Design for Dynamic Function
+   - <strong>来源局限/观察</strong>：ESMDynamic 支持多温度预测，但未反向用于序列设计。
+   - <strong>核心假设</strong>：通过优化序列使 ESMDynamic 在目标温度下预测出特定动态接触模式（如底物结合态），可实现「面向动力学的序列设计」。
+   - <strong>相对本文的增量</strong>：从「预测」扩展到「设计」，且以动力学而非静态结构为设计目标。
+   - <strong>初步方法</strong>：用可微的 ESMDynamic 作为目标函数，通过梯度上升优化序列（类似 ProteinMPNN 与 AlphaFold 的组合策略）。
+   - <strong>验证方式</strong>：设计序列经 MD 模拟验证是否重现目标动态接触模式。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Uncertainty-Aware Dynamic Contact Prediction
+   - <strong>来源局限/观察</strong>：摘要未提及预测不确定性量化。
+   - <strong>核心假设</strong>：对动态接触预测的不确定性进行校准，可提升下游 MSM 构建的可靠性。
+   - <strong>相对本文的增量</strong>：增加不确定性估计，使预测在低置信区域可被识别并回退到 MD 模拟。
+   - <strong>初步方法</strong>：在 ESMDynamic 中引入 MC dropout 或 ensemble 不确定性，输出每个接触的置信区间。
+   - <strong>验证方式</strong>：在 ATLAS 上比较校准曲线（reliability diagram）与下游 MSM 误差。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Cross-Species Dynamic Contact Atlas
+   - <strong>来源局限/观察</strong>：人类蛋白质组已覆盖，但未提及跨物种泛化。
+   - <strong>核心假设</strong>：ESMDynamic 可推广到非人类蛋白质组，构建跨物种动态接触图谱。
+   - <strong>相对本文的增量</strong>：从单物种扩展到多物种比较，可能揭示保守的动态接触模式。
+   - <strong>初步方法</strong>：在多个模式生物蛋白质组上运行 ESMDynamic，比较保守动态接触模块。
+   - <strong>验证方式</strong>：与已知功能位点注释（如 UniProt）交叉验证。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Dynamic Contact-Guided Enhanced Sampling
+   - <strong>来源局限/观察</strong>：ESMDynamic 预测的动力学可辅助 CV 选择，但未直接用于增强采样。
+   - <strong>核心假设</strong>：将预测的动态接触作为偏置势（bias potential）或 CV，可加速 MD 模拟的构象探索。
+   - <strong>相对本文的增量</strong>：将 DL 预测与增强采样方法（如 metadynamics、REMD）结合。
+   - <strong>初步方法</strong>：用 ESMDynamic 预测的接触占据分数作为 CV，在 metadynamics 中引导采样。
+   - <strong>验证方式</strong>：比较增强采样与普通 MD 的构象空间覆盖率和自由能面收敛速度。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present ESMDynamic, a deep learning model that predicts residue-residue contact dynamics (probabilities, occupancy, kinetics) from single protein sequences, trained on experimental and MD-derived conformational variability. The model is claimed to match or outperform existing ensemble prediction methods (AlphaFlow, ESMFlow, BioEmu) on large-scale MD benchmarks (mdCATH, ATLAS) with far lower computational cost, to generalize to diverse systems (membrane transporters, de novo proteins, homodimers), to enable automated collective variable selection for Markov state models, and to scale to the human proteome (18,000+ proteins).</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or supplementary materials provided.</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, including methods, benchmark details, comparison protocols, statistical analyses, and all figures/tables. Without these, the core claims cannot be independently evaluated.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents an ambitious and potentially impactful approach to predicting protein dynamics from sequence, a problem of high current interest. The claims are broad and impressive, but the abstract alone provides insufficient evidence to assess their validity. Key technical details—such as the training data composition, the definition of "dynamic contact probabilities," the exact comparison metrics against AlphaFlow/ESMFlow/BioEmu, and the statistical rigor of the proteome-scale analysis—are absent. The work is promising in concept, but the case is not established from the provided material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational structural biologists, protein engineers, and researchers in drug discovery and biophysics would be interested, as the method promises a fast, sequence-based route to conformational dynamics, which is critical for understanding function, allostery, and designing proteins. The scalability to the proteome is particularly attractive for large-scale analyses.</li>
+<li><strong>Major strengths</strong><ul>
+<li>Addresses a clear gap: most deep learning models predict static structures, not dynamics.</li>
+<li>Claims orders-of-magnitude computational savings over existing ensemble methods, which is practically significant.</li>
+<li>Demonstrates broad applicability across diverse protein classes and a proteome-scale application.</li>
+</ul>
+</li>
+<li><strong>Major Concerns</strong><ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "ESMDynamic matches or outperforms state-of-the-art ensemble prediction methods (AlphaFlow, ESMFlow, BioEmu) while requiring orders-of-magnitude less computation."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract provides no quantitative metrics (e.g., correlation coefficients, RMSD of contact probabilities, or kinetic rate errors) for the comparison. "Matches or outperforms" is vague. The computational cost comparison is also unquantified.</li>
+<li><strong>Why it matters</strong> This is the central performance claim. Without specific numbers and a clear description of the benchmark protocol (e.g., which metrics, on which subsets of mdCATH/ATLAS, with what statistical significance), the claim is unverifiable.</li>
+<li><strong>Resolution test</strong> Provide a table or figure in the full manuscript showing quantitative performance (e.g., Pearson/Spearman correlation for contact probabilities, MAE for occupancy) for ESMDynamic vs. each baseline on the same test sets, along with wall-clock time or FLOPs for inference.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological clarity</li>
+<li><strong>Claim pointer</strong> "predicts dynamic contact probabilities, contact occupancy fraction, and coarse-grained kinetics of contact formation and dissociation across multiple temperature conditions."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not define what "dynamic contact probabilities," "contact occupancy fraction," or "coarse-grained kinetics" mean in this context. It is unclear whether these are derived from a single model output or multiple heads, and how they relate to ground-truth MD observables.</li>
+<li><strong>Why it matters</strong> Without a clear definition, the reader cannot assess whether the predictions are physically meaningful or simply fitting noise. The novelty hinges on predicting dynamics, not just static contacts.</li>
+<li><strong>Resolution test</strong> In the full manuscript, provide a precise mathematical definition of each predicted quantity, describe the model architecture (e.g., output heads, loss functions), and show validation against MD-derived ground truth for a few example proteins.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalization claim</li>
+<li><strong>Claim pointer</strong> "We demonstrate generalization to diverse systems, including membrane transporters, a de novo designed protein, and a homodimer complex."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not specify how generalization is measured (e.g., performance on unseen folds, sequence identity thresholds, or whether these systems were held out during training). The homodimer case raises the question of whether the model handles inter-chain contacts, which is non-trivial.</li>
+<li><strong>Why it matters</strong> Generalization to structurally and functionally diverse proteins is a key selling point. Without details on the test set design and performance metrics, the claim is anecdotal.</li>
+<li><strong>Resolution test</strong> In the full manuscript, clearly state the training/test split, report performance on each system type, and compare to baselines where possible. For the homodimer, specify how the model handles multiple chains.</li>
+</ul>
+</li>
+<li><strong>Minor Comments</strong><ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Claim about proteome-scale application</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> "ESMDynamic generates predictions for over 18,000 proteins, enabling large-scale analysis of conformational variability." It is unclear what "predictions" means here (all four quantities? for all residues? at what temperature?).</li>
+<li><strong>Required correction</strong> Specify the scope of the proteome-scale predictions (e.g., "contact occupancy fractions for all residue pairs with sequence separation &gt; 5 at 300 K").</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> "coarse-grained kinetics"</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The term "coarse-grained kinetics" is ambiguous. It could refer to rates of contact formation/dissociation, transition path times, or something else.</li>
+<li><strong>Required correction</strong> Define "coarse-grained kinetics" explicitly in the abstract or introduction (e.g., "mean first passage times for contact formation and dissociation").</li>
+</ul>
+</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (quantitative comparison lacking), R1-M2 (definition of predicted quantities missing). These are blocking because the core claims of performance and novelty cannot be assessed without them.</li>
+<li><strong>Assessment against Nature-style criteria</strong><ul>
+<li><strong>Originality</strong>: High. Predicting dynamics from single sequences is a novel direction, distinct from static structure prediction or ensemble generation from multiple sequence alignments.</li>
+<li><strong>Scientific importance</strong>: Potentially high, if validated. Dynamics is central to function, and a fast, sequence-based method would be transformative.</li>
+<li><strong>Interdisciplinary readership</strong>: Yes, the topic bridges machine learning, structural biology, and biophysics.</li>
+<li><strong>Technical soundness</strong>: Cannot be assessed from the abstract alone. The claims are plausible but unsubstantiated.</li>
+<li><strong>Readability for nonspecialists</strong>: The abstract is clear and well-structured, though some terms (e.g., "coarse-grained kinetics") need definition.</li>
+</ul>
+</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract is promising, but the full manuscript must provide quantitative validation, clear definitions, and rigorous benchmarks to support the claims. A supportive posture is possible if these technical concerns are resolved.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that ESMDynamic "matches or outperforms" AlphaFlow, ESMFlow, and BioEmu is unsupported without quantitative metrics.</li>
+<li>The claim of predicting "coarse-grained kinetics" is unsupported without a definition and validation.</li>
+<li>The claim of generalization to membrane transporters, de novo proteins, and homodimers is unsupported without performance data.</li>
+<li>The claim of enabling "automated selection of collective variables for Markov state model construction" is unsupported; no evidence or example is provided.</li>
+<li>The claim of "large-scale analysis of conformational variability" for the human proteome is unsupported without any analysis results or validation.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

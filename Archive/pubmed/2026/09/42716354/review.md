@@ -1,0 +1,66 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and framing as presented in the abstract; no methods, figures, tables, or main text available for verification
+- **Shared manuscript claim summary** The review surveys deep generative models for DNA, RNA, and protein sequence and structure design, comparing model classes (VAEs, GANs, autoregressive/masked language models, diffusion, flow-based) across genomics, transcriptomics, and proteomics, with emphasis on controllability, long-range dependencies, structural grounding, generalization, and experimental utility. It claims to distinguish modality-dependent constraints from architecture-dependent advantages, and concludes that long-context models suit genome-scale tasks while structure-aware diffusion, flow, and inverse-folding approaches suit geometry-constrained RNA and protein design.
+- **Visible evidence base** Abstract text only; no figures, tables, references, or methodological details provided
+- **Missing materials affecting confidence** Full text, figures, tables, reference list, evaluation criteria, and any comparative analyses; without these, the depth, accuracy, and novelty of the review cannot be assessed
+
+## Reviewer
+- **Overall assessment** The abstract presents a well-structured and timely overview of a rapidly evolving field. The framing around modality-dependent versus architecture-dependent constraints is conceptually useful and suggests a thoughtful synthesis. However, the abstract alone provides no verifiable evidence of the review's depth, coverage, or critical rigor. The claims are plausible but entirely unsubstantiated from the supplied material. The review could be valuable to a broad computational biology audience, but its current assessment is limited to the quality of the abstract's framing and writing.
+- **Who would be interested in the results, and why** Computational biologists, bioengineers, and machine learning researchers working on biological sequence design; also experimental biologists seeking an accessible map of generative modeling tools for DNA, RNA, and protein engineering. The comparative framing across model classes and modalities would help practitioners choose appropriate methods for their design tasks.
+- **Major strengths** The abstract is clearly written and logically organized. The distinction between fundamental modality constraints and architecture-dependent advantages is a useful conceptual contribution that goes beyond a simple catalog. The explicit attention to evaluation strategies, out-of-distribution generalization, and closed-loop design-build-test-learn workflows indicates awareness of practical bottlenecks beyond model architecture.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The review claims to "compare" model classes across genomics, transcriptomics, and proteomics, and to "distinguish" modality-dependent from architecture-dependent constraints.
+  - **Evidence pointer** Abstract only; no figures, tables, or comparative analyses provided
+  - **Concern** The abstract asserts a comprehensive comparative analysis, but no supporting evidence (e.g., benchmark comparisons, case studies, or quantitative assessments) is visible. The claim of distinguishing fundamental constraints from architecture-dependent advantages requires a systematic argument that cannot be evaluated from the abstract alone.
+  - **Why it matters** For a review, the value lies in the depth and accuracy of the synthesis. Without visible evidence of the comparative framework, the reader cannot judge whether the conclusions are well-supported or merely asserted.
+  - **Resolution test** Provide the full text or at least the figures/tables that substantiate the comparative claims, including specific examples of model performance, limitations, and the basis for the modality-versus-architecture distinction.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Novelty and added value
+  - **Claim pointer** The review claims to provide "a critical framework for understanding the present capabilities, limitations, and convergence of generative approaches."
+  - **Evidence pointer** Abstract only; no comparison to existing reviews or identification of gaps in prior literature
+  - **Concern** The abstract does not state what is new relative to existing reviews on generative models in biology. Given the rapid proliferation of such reviews, the incremental contribution is unclear.
+  - **Why it matters** For a review to be publishable at a high-impact venue, it must offer a distinct perspective or synthesis. Without an explicit statement of novelty or gap-filling, the contribution is not established.
+  - **Resolution test** Add a clear statement in the abstract (or visible in the full text) of how this review differs from prior work, e.g., new taxonomy, updated coverage, or a novel evaluative lens.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Scope clarity
+  - **Affected element** Scope statement
+  - **Evidence pointer** Abstract, first paragraph
+  - **Issue** The abstract mentions "multimodal generative frameworks" but does not clarify what modalities are integrated (e.g., sequence-structure, sequence-function, or multi-omics).
+  - **Required correction** Specify the modalities covered to set accurate reader expectations.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology precision
+  - **Affected element** "Flow-based" approaches
+  - **Evidence pointer** Abstract, second paragraph
+  - **Issue** "Flow-based" is used without distinguishing normalizing flows from flow-matching; these have different properties and trade-offs.
+  - **Required correction** Clarify whether both are covered and how they are differentiated.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Evaluation criteria
+  - **Affected element** "Experimental utility"
+  - **Evidence pointer** Abstract, second paragraph
+  - **Issue** The abstract lists "experimental utility" as a comparison axis but does not define what constitutes utility (e.g., wet-lab validation rate, design success rate).
+  - **Required correction** Define the criteria used to assess experimental utility in the review.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are the primary blockers. The abstract alone does not establish the depth, novelty, or accuracy of the review's claims. No technical errors are identifiable from the abstract, but the absence of evidence prevents any technical assessment.
+- **Assessment against Nature-style criteria** 
+  - Originality: Not assessable from the abstract; no comparison to prior reviews is provided.
+  - Scientific importance: The topic is timely and important, but the abstract does not demonstrate a unique contribution.
+  - Interdisciplinary readership: The abstract is accessible to both computational and experimental biologists, which is a strength.
+  - Technical soundness: Not assessable; no methods, data, or analyses are visible.
+  - Readability for nonspecialists: The abstract is well-written and largely accessible, though some terms (e.g., "flow-matching," "inverse-folding") may require prior knowledge.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract is promising, but the full manuscript must be reviewed to assess the depth, accuracy, and novelty of the synthesis. A decision cannot be made on the abstract alone.
+
+## Risk / unsupported claims
+- The claim of a comprehensive comparison across model classes and modalities is unsupported without visible figures, tables, or analyses.
+- The distinction between modality-dependent constraints and architecture-dependent advantages is asserted but not demonstrated.
+- The conclusion that long-context models suit genome-scale tasks and structure-aware diffusion/flow methods suit RNA and protein design is presented as a finding, but no evidence is provided.
+- The "critical framework" claim implies a novel evaluative contribution that is not substantiated in the abstract.

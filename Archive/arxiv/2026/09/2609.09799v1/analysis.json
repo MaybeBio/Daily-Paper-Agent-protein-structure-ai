@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2609.09799v1",
+  "title": "uFlowCSP: Crystal Structure Prediction using Mean flow generative models",
+  "authors": "Sourin Dey; Dipannoy Das Gupta; Lai Wei; Sadman Sadeed Omee; Jianjun Hu",
+  "journal": "",
+  "published_date": "2026-09-09",
+  "window": {
+    "start": "2026-09-05",
+    "end": "2026-09-11"
+  },
+  "score": 6,
+  "one_liner_zh": "提出基于MeanFlow的晶体结构预测模型uFlowCSP，虽对象为晶体而非蛋白质，但其高效生成结构和对称性感知的Transformer架构对蛋白质构象生成与结构预测有方法借鉴意义。",
+  "abstract": "Crystal structure prediction (CSP) is fundamental to computational materials discovery. Generative models including CDVAE, DiffCSP, FlowMM, and CrystalFlow learn stable-crystal distributions directly, but diffusion and flow-matching inference requires tens to thousands of sequential network evaluations per candidate. We introduce uFlowCSP, a MeanFlow-based CSP model that learns the average, rather than instantaneous, probability-flow velocity. It generates a complete structure in one to five evaluations, delivering 5x-58x faster inference with equal or better performance. A chemistry- and symmetry-aware Transformer uses canonical atom ordering, global composition, and per-token chemistry embeddings. A coarse crystal-system token is used only during training; it provides additive gains, particularly improving space-group agreement despite being absent at inference, which remains formula-only. On MP-20 with 20 candidates per target, one step matches CrystalFlow (78.38% vs. 78.34%) with 100x fewer evaluations and about 10x lower wall-clock time. Five steps reach 83.64%, exceeding CrystalFlow (78.34% at 2,000 evaluations) and DiffCSP (77.93% at about 20,000), while using 20x fewer evaluations. uFlowCSP generates 10,000 structures in 0.39-1.31 minutes, versus 6.5 for CrystalFlow and 76.1 for DiffCSP. Under CSPBench's energy-ranked top-five structure-and-space-group criterion, five-step uFlowCSP reaches 72%/72%/65% structure, space-group, and consensus match rates. CrystalFlow reaches 78%/73%/68% at 100 steps but falls to 49%/32%/31% at five. Thus, uFlowCSP improves accuracy per network evaluation, not merely peak accuracy.",
+  "abstract_zh": "晶体结构预测（Crystal structure prediction, CSP）是计算材料发现的基础。生成模型（包括CDVAE、DiffCSP、FlowMM和CrystalFlow）直接学习稳定晶体的分布，但扩散和流匹配推理每个候选结构需要数十到数千次顺序网络评估。我们提出uFlowCSP，一种基于MeanFlow的CSP模型，它学习平均（而非瞬时）概率流速度。该模型在一次到五次评估内生成完整结构，推理速度提升5倍至58倍，性能相当或更优。一种化学与对称性感知的Transformer使用规范原子排序、全局组成和每个token的化学嵌入。粗粒度晶体系统token仅在训练期间使用；它提供附加增益，特别是在推理时（仅基于化学式）缺失的情况下仍能改善空间群一致性。在MP-20数据集上，每个目标20个候选结构时，单步评估匹配CrystalFlow（78.38% vs. 78.34%），评估次数减少100倍，实际时间降低约10倍。五步评估达到83.64%，超过CrystalFlow（2,000次评估时78.34%）和DiffCSP（约20,000次评估时77.93%），同时评估次数减少20倍。uFlowCSP在0.39-1.31分钟内生成10,000个结构，而CrystalFlow需6.5分钟，DiffCSP需76.1分钟。在CSPBench的能量排序前五结构与空间群准则下，五步uFlowCSP达到72%/72%/65%的结构、空间群和共识匹配率。CrystalFlow在100步时达到78%/73%/68%，但在五步时降至49%/32%/31%。因此，uFlowCSP提升的是每次网络评估的精度，而不仅仅是峰值精度。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2609.09799v1",
+  "source_url": "https://arxiv.org/abs/2609.09799v1",
+  "paper_page_path": "papers/arxiv/2609.09799v1/index.html"
+}
