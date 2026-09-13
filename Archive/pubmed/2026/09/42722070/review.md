@@ -1,70 +1,86 @@
 ## Review setup
-- **Input scope** Abstract
-- **Assessment boundary** Claims and evidence presented in the abstract only
-- **Shared manuscript claim summary** The authors report the engineering of a GH42 β-galactosidase (Tn1577) from *Thermotoga naphthophila* RUK10 using consensus design and virtual binding energy screening, yielding a triple mutant (M10, H271Q/V357G/Q340E) with a 6.5-fold increase in lactose hydrolysis activity at 55°C. The mutant is claimed to achieve near-complete hydrolysis of raw whey lactose within 2 hours under mild conditions (52.7°C, pH 5.5, 2.9 U/mL), preserving whey protein integrity.
-- **Visible evidence base** Abstract text only; no figures, tables, or supplementary data provided.
-- **Missing materials affecting confidence** Full manuscript, including Methods, Results, Figures, Tables, Supplementary Information, and any raw data or statistical analyses.
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full manuscript, figures, tables, or supplementary materials were provided.
+- **Shared manuscript claim summary** The authors report the engineering of a GH42 β-galactosidase (Tn1577) from *Thermotoga naphthophila* RUK10 via consensus design and virtual binding energy screening, yielding a triple mutant (M10: H271Q/V357G/Q340E) with a 6.5-fold increase in lactose hydrolysis activity at 55 °C. The mutant is claimed to achieve near-complete hydrolysis of whey lactose within 2 h under optimized conditions (52.7 °C, pH 5.5, 2.9 U/mL), with structural mechanisms elucidated by MD simulations.
+- **Visible evidence base** Abstract text only. No experimental data, sequence alignments, MD simulation parameters, kinetic measurements, or statistical analyses are visible.
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, supplementary data (e.g., sequence alignments, MD simulation trajectories, raw kinetic data, response surface methodology details, raw whey composition, and replicate information).
 
 ## Reviewer
-- **Overall assessment** The abstract presents an interesting and potentially impactful engineering strategy for improving a thermophilic GH42 β-galactosidase for whey lactose hydrolysis. The combination of consensus design and virtual screening is a rational approach, and the claimed 6.5-fold activity improvement is notable. However, the abstract lacks critical quantitative evidence to support the mechanistic claims and the reported performance metrics. The absence of any data on thermostability, kinetic parameters, and the statistical basis for the response surface methodology (RSM) optimization makes the current claims unverifiable. The mechanistic narrative, while plausible, is not supported by any presented data.
-- **Who would be interested in the results, and why** Researchers in industrial enzymology, dairy science, and food biotechnology would be interested. The work addresses a practical bottleneck in lactose-free dairy processing by offering a potentially more efficient and thermostable enzyme that operates under mild conditions, preserving whey protein value. The engineering strategy itself may be of interest to protein engineers.
-- **Major strengths** 
-  - The synergistic engineering strategy (consensus design + virtual screening) is a rational and potentially generalizable approach for enzyme improvement.
-  - The target application (whey lactose hydrolysis) is of clear industrial and environmental importance.
-  - The claimed 6.5-fold activity improvement and near-complete hydrolysis in 2 hours are practically significant if substantiated.
+- **Overall assessment** The abstract presents an interesting and potentially impactful engineering strategy for improving a thermophilic β-galactosidase for industrial lactose hydrolysis. The combination of consensus design and virtual screening is logical, and the claimed 6.5-fold activity improvement is notable. However, the abstract lacks the quantitative evidence needed to evaluate the robustness of the claims. Critical details—such as the number of sequences used for consensus, the virtual screening methodology, the statistical significance of the activity increase, and the reproducibility of the whey hydrolysis results—are absent. The mechanistic interpretations from MD simulations are plausible but cannot be assessed without the underlying data. The abstract is promising but insufficient to establish the case.
+- **Who would be interested in the results, and why** Researchers in industrial enzymology, dairy processing, and protein engineering would be interested. The work addresses a practical bottleneck in whey valorization, and the engineering strategy (consensus design + virtual screening) is broadly applicable. The potential for a mild-temperature, rapid lactose hydrolysis process is attractive for the dairy industry.
+- **Major strengths** 1. The problem is well-defined and industrially relevant. 2. The engineering strategy (consensus design + virtual screening) is rational and synergistic. 3. The claimed 6.5-fold activity improvement is substantial. 4. The proposed structural mechanisms (substrate tunnel remodeling, pocket rigidification, allosteric stabilization) are mechanistically interesting.
 - **Major Concerns**
-  - **Concern ID** R1-M1
-    **Severity** Major
-    **Blocking** Yes
-    **Axis** Data completeness and verification
-    **Claim pointer** "mutant M10 achieves a remarkable 6.5-fold increase in lactose hydrolysis activity at 55 degrees C compared with the wild-type enzyme."
-    **Evidence pointer** Abstract; location not provided
-    **Concern** The abstract provides no quantitative data to support this claim. No specific activity values (e.g., U/mg), kinetic parameters (kcat, Km), or statistical error bars are reported. The basis for the "6.5-fold" increase is unclear.
-    **Why it matters** Without these data, the magnitude of improvement cannot be assessed, and the claim is unverifiable. The fold-change could be misleading if the wild-type activity is very low or if the measurement conditions are not standardized.
-    **Resolution test** Provide the specific activity (U/mg) of wild-type and M10 at 55°C, along with standard deviations and number of replicates. Report Michaelis-Menten kinetic parameters (kcat, Km, kcat/Km) for both enzymes.
-  - **Concern ID** R1-M2
-    **Severity** Major
-    **Blocking** Yes
-    **Axis** Mechanistic support
-    **Claim pointer** "Molecular dynamics (MD) simulations revealed that M10s performance is driven by 3 key structural alterations... This engineered rigidity introduces a beneficial kinetic trade-off: it drastically accelerates catalytic turnover by intentionally weakening substrate affinity..."
-    **Evidence pointer** Abstract; location not provided
-    **Concern** The abstract presents a detailed mechanistic model (remodeled substrate tunnel, rigidified catalytic pocket, allosteric Q340E mutation, weakened substrate affinity) but provides no quantitative MD simulation data (e.g., RMSD, RMSF, binding free energy calculations, tunnel dimensions) to support these claims. The "beneficial kinetic trade-off" is a specific hypothesis that requires direct kinetic evidence (e.g., increased kcat, increased Km).
-    **Why it matters** The mechanistic narrative is central to the paper's novelty and scientific interest. Without supporting data, it remains speculation. The claim of "weakened substrate affinity" is directly testable via Km measurement.
-    **Resolution test** Provide key MD simulation results (e.g., RMSF plots, tunnel analysis, binding free energy from MM/GBSA). Report the Km and kcat values for wild-type and M10 to directly test the "weakened substrate affinity" and "accelerated turnover" claims.
-  - **Concern ID** R1-M3
-    **Severity** Major
-    **Blocking** Yes
-    **Axis** Industrial performance validation
-    **Claim pointer** "Response surface methodology established ideal industrial parameters: 52.7 degrees C, pH 5.5, and an enzyme dosage of 2.9 U/mL. Under these conditions, M10 accomplishes near-complete lactose hydrolysis of raw whey within a brief 2-h window."
-    **Evidence pointer** Abstract; location not provided
-    **Concern** The abstract reports optimized parameters and a performance claim ("near-complete lactose hydrolysis") without any data. The RSM model fit (e.g., R², p-values), the actual hydrolysis percentage, and the experimental validation of the predicted optimum are not provided. The definition of "near-complete" is ambiguous.
-    **Why it matters** The industrial applicability of the enzyme hinges on this claim. Without quantitative data (e.g., % lactose conversion, time course, reproducibility), the claim is not credible.
-    **Resolution test** Provide the RSM model statistics (e.g., ANOVA table, R², lack-of-fit test). Report the actual lactose hydrolysis percentage (e.g., >95%) achieved under the optimized conditions, with error bars from triplicate experiments. Show a time-course of lactose hydrolysis.
+    - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency
+    - **Claim pointer** "mutant M10 achieves a remarkable 6.5-fold increase in lactose hydrolysis activity at 55 degrees C compared with the wild-type enzyme"
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract provides no quantitative data to support the 6.5-fold activity increase. No kinetic parameters (kcat, KM, kcat/KM), specific activity values, or error estimates are given. It is unclear whether this is a single measurement or the mean of replicates, and what the statistical significance is.
+    - **Why it matters** Without these data, the magnitude and reliability of the claimed improvement cannot be assessed. A 6.5-fold increase could be due to experimental variation, assay conditions, or a single outlier.
+    - **Resolution test** Provide the specific activity (U/mg) or kinetic parameters for both wild-type and M10, with at least triplicate measurements and standard deviations. Report the fold-change with confidence intervals.
+    - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency
+    - **Claim pointer** "M10 accomplishes near-complete lactose hydrolysis of raw whey within a brief 2-h window"
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract does not define "near-complete" (e.g., >95%? >99%?), nor does it provide the initial lactose concentration, the final residual lactose, or the number of independent experiments. The use of raw whey introduces variability (e.g., pH, protein content, ionic strength) that is not controlled for.
+    - **Why it matters** "Near-complete" is ambiguous. Without a precise definition and supporting data, the claim of practical applicability is unsubstantiated. The dairy industry requires rigorous validation under realistic conditions.
+    - **Resolution test** Report the percentage of lactose hydrolyzed (e.g., 98.5% ± 0.3%) from at least three independent whey batches. Specify the initial lactose concentration and the assay conditions (e.g., whey source, pre-treatment).
+    - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Methodological transparency
+    - **Claim pointer** "consensus sequence design and virtual binding energy screening was applied"
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract does not describe the consensus design methodology (e.g., number of homologous sequences, alignment threshold, consensus threshold) or the virtual screening protocol (e.g., software, scoring function, library size). The iterative saturation mutagenesis is mentioned but not detailed.
+    - **Why it matters** These are the core engineering steps. Without methodological details, the work cannot be reproduced or evaluated for rigor. The choice of consensus positions and the virtual screening parameters directly affect the outcome.
+    - **Resolution test** Provide a clear description of the consensus design pipeline (including sequence database, alignment tool, and consensus criteria) and the virtual screening workflow (including software, target structure, and scoring function). Report the number of variants screened and the selection criteria.
+    - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency
+    - **Claim pointer** "Molecular dynamics (MD) simulations revealed that M10s performance is driven by 3 key structural alterations"
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract provides qualitative descriptions of MD-derived mechanisms (substrate tunnel remodeling, pocket rigidification, allosteric stabilization) but no quantitative metrics (e.g., RMSD, RMSF, tunnel radius, binding free energy, hydrogen bond occupancy). The simulation length, force field, and number of replicates are not stated.
+    - **Why it matters** MD simulations are powerful but require rigorous validation. Without quantitative data, the proposed mechanisms remain speculative. The claim of "allosteric regulation" from a single distal mutation is particularly strong and needs robust support.
+    - **Resolution test** Provide key MD metrics (e.g., RMSD plots, RMSF per residue, tunnel radius profiles, hydrogen bond occupancy for Q340E) for both wild-type and M10. State simulation parameters (length, force field, temperature, number of replicates). Show that the observed changes are statistically significant.
 - **Minor Comments**
-  - **Concern ID** R1-m1
-    **Severity** Minor
-    **Axis** Clarity and terminology
-    **Affected element** "home-discovered"
-    **Evidence pointer** Abstract
-    **Issue** The term "home-discovered" is informal and ambiguous. It is unclear if this means the enzyme was newly identified in the authors' lab or if it is a previously known enzyme from a public database.
-    **Required correction** Replace with a standard term such as "newly identified," "previously uncharacterized," or provide a reference to its discovery.
-  - **Concern ID** R1-m2
-    **Severity** Minor
-    **Axis** Readability for nonspecialists
-    **Affected element** "anion-pi interaction"
-    **Evidence pointer** Abstract
-    **Issue** While a standard term in structural biology, "anion-pi interaction" may not be familiar to all readers in the dairy science community. The abstract should briefly explain its significance (e.g., "a stabilizing non-covalent interaction").
-    **Required correction** Add a brief parenthetical explanation, e.g., "a stabilizing non-covalent interaction between a negatively charged residue and an aromatic ring."
-  - **Concern ID** R1-m3
-    **Severity** Minor
-    **Axis** Data presentation
-    **Affected element** "6.5-fold increase"
-    **Evidence pointer** Abstract
-    **Issue** The fold-change is reported without a baseline or error. It is unclear if this is the maximum activity or the activity under specific conditions.
-    **Required correction** Specify the conditions (e.g., "at 55°C, pH 5.5, and 1 mM lactose") and report the absolute values with errors.
+    - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** "home-discovered GH42-galactosidase"
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The term "home-discovered" is informal and ambiguous. It is unclear whether the enzyme was newly identified in this study or previously reported by the group.
+    - **Required correction** Replace with a precise statement, e.g., "a GH42 β-galactosidase (Tn1577) identified in our laboratory from *Thermotoga naphthophila* RUK10" or provide a reference if previously published.
+    - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** "intentionally weakening substrate affinity"
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The abstract states that the engineered rigidity "intentionally weakens substrate affinity" to prevent stagnation. This is a teleological interpretation. The data may show a higher KM, but the "intention" is a design choice, not a mechanistic observation.
+    - **Required correction** Rephrase to describe the observed kinetic trade-off objectively, e.g., "The mutations result in a higher KM (weakened substrate affinity) and a higher kcat, leading to a net increase in catalytic efficiency under the tested conditions."
+    - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Completeness
+    - **Affected element** "Response surface methodology established ideal industrial parameters"
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The abstract reports optimized parameters (52.7 °C, pH 5.5, 2.9 U/mL) but does not state the response variable (e.g., lactose conversion, specific activity) or the model fit (e.g., R², lack-of-fit test).
+    - **Required correction** Specify the response variable and provide key RSM statistics (e.g., model R², significance of factors) in the full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The core claims of activity improvement, practical whey hydrolysis, engineering methodology, and mechanistic understanding are all unsupported by the provided abstract.
+- **Assessment against Nature-style criteria** 
+    - **Originality**: The combination of consensus design and virtual screening for GH42 β-galactosidases is not entirely novel, but the specific target (Tn1577) and the proposed allosteric mechanism (Q340E) show some originality. However, the abstract does not provide enough detail to assess the novelty of the approach relative to existing literature.
+    - **Scientific importance**: The problem (whey lactose hydrolysis) is of high practical importance. A 6.5-fold improvement in a thermophilic enzyme is potentially significant, but the lack of quantitative data prevents assessment of the true impact.
+    - **Interdisciplinary readership**: The work bridges protein engineering, dairy science, and bioprocess optimization, which could attract a broad readership. The abstract is written in a way that is accessible to nonspecialists.
+    - **Technical soundness**: Cannot be assessed from the abstract alone. The methodological descriptions are too vague, and no data are provided to support the claims.
+    - **Readability for nonspecialists**: The abstract is well-written and clear, with a logical flow. The mechanistic descriptions are understandable, though some terms (e.g., "anion-pi interaction") may require background knowledge.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract is promising and the research direction is sound, but the absence of any quantitative data or methodological detail means that the core claims cannot be evaluated. A full manuscript with rigorous experimental data is required before a recommendation can be made.
 
 ## Risk / unsupported claims
-- The claim of a 6.5-fold activity increase is unsupported without specific activity or kinetic data.
-- The entire mechanistic model (remodeled tunnel, rigidified pocket, allosteric regulation, kinetic trade-off) is unsupported without MD simulation data and kinetic parameters.
-- The claim of "near-complete lactose hydrolysis" under optimized RSM conditions is unsupported without quantitative hydrolysis data and model statistics.
-- The claim that the mild thermal regimen "prevents the thermal denaturation of other valuable whey components" is an inference not directly tested in the abstract.
+- The 6.5-fold activity increase is unsupported (no kinetic data).
+- Near-complete whey hydrolysis in 2 h is unsupported (no conversion data).
+- The consensus design and virtual screening methodology is unverifiable (no details).
+- The MD-derived structural mechanisms are unsupported (no quantitative metrics).
+- The claim of "intentional" weakening of substrate affinity is a teleological interpretation, not a supported observation.
+- The RSM-optimized parameters are presented without statistical context.

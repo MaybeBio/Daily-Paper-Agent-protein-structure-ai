@@ -6,13 +6,13 @@
   "journal": "Bioinformatics (Oxford, England)",
   "published_date": "2026-09-10",
   "window": {
-    "start": "2026-09-05",
-    "end": "2026-09-11"
+    "start": "2026-09-06",
+    "end": "2026-09-12"
   },
   "score": 5,
-  "one_liner_zh": "该文提出ID3框架，通过梯度优化mRNA密码子序列以提升翻译起始区RNA可及性和密码子适应度，虽非直接蛋白质结构计算，但其可微优化策略可迁移至蛋白质序列设计等结构相关任务。",
+  "one_liner_zh": "该文提出ID3框架，利用梯度优化设计mRNA序列以优化翻译起始区RNA可及性和密码子适应指数，虽涉及序列设计但核心对象是mRNA而非蛋白质结构，方法上使用深度学习预测器进行可微优化，对蛋白质序列设计有间接启发。",
   "abstract": "MOTIVATION: Designing mRNA coding sequences that simultaneously optimize RNA accessibility in the translation initiation region and codon adaptation while preserving the encoded protein requires navigating a vast discrete combinatorial space. The inherently discrete nature of codon choices prevents direct application of gradient-based optimization, despite the availability of accurate deep learning predictors such as DeepRaccess for RNA accessibility prediction. RESULTS: We present the Input Data Differentiable Designer (ID3), a unified framework for mRNA codon optimization. ID3 treats trained models as fixed differentiable functions and optimizes input data through continuous probability distributions while preserving the encoded amino acid sequence through three constraint mechanisms. The framework shows strong performance in both accessibility optimization and joint accessibility-CAI optimization across diverse protein targets. We also provide convergence analyses from the perspective of trained model input optimization. AVAILABILITY AND IMPLEMENTATION: Code, datasets, and reproduction scripts are available at https://github.com/Li-Hongmin/ID3.git and archived on Zenodo (DOI: 10.5281/zenodo.18917770).",
-  "abstract_zh": "动机：设计同时优化翻译起始区域RNA可及性与密码子适应性、同时保留编码蛋白质的mRNA编码序列，需要探索一个巨大的离散组合空间。密码子选择固有的离散性使得基于梯度的优化方法无法直接应用，尽管已有诸如DeepRaccess等用于RNA可及性预测的精确深度学习预测器。结果：我们提出了输入数据可微设计器（Input Data Differentiable Designer, ID3），一个用于mRNA密码子优化的统一框架。ID3将训练好的模型视为固定的可微函数，通过连续概率分布优化输入数据，同时通过三种约束机制保留编码的氨基酸序列。该框架在多种蛋白质靶标的可及性优化以及可及性-密码子适应指数（CAI）联合优化中均表现出强劲性能。我们还从训练模型输入优化的角度提供了收敛性分析。可用性与实现：代码、数据集及复现脚本可在 https://github.com/Li-Hongmin/ID3.git 获取，并归档于Zenodo（DOI: 10.5281/zenodo.18917770）。",
+  "abstract_zh": "动机：设计同时优化翻译起始区域RNA可及性和密码子适应性、同时保留编码蛋白质的mRNA编码序列，需要探索一个巨大的离散组合空间。密码子选择固有的离散性质使得基于梯度的优化无法直接应用，尽管已有诸如DeepRaccess等用于RNA可及性预测的准确深度学习预测器。结果：我们提出了输入数据可微设计器（Input Data Differentiable Designer, ID3），一个用于mRNA密码子优化的统一框架。ID3将训练好的模型视为固定的可微函数，通过连续概率分布优化输入数据，同时通过三种约束机制保留编码的氨基酸序列。该框架在多种蛋白质靶标的可及性优化以及可及性-密码子适应指数（CAI）联合优化中均表现出强劲性能。我们还从训练模型输入优化的角度提供了收敛性分析。可用性与实现：代码、数据集和复现脚本可在https://github.com/Li-Hongmin/ID3.git获取，并归档于Zenodo（DOI: 10.5281/zenodo.18917770）。",
   "has_fulltext": false,
   "fulltext_source": "abstract",
   "fulltext_path": "fulltext.md",

@@ -1,85 +1,90 @@
 ## Review setup
-- **Input scope** Abstract
-- **Assessment boundary** Claims and evidence presented in the abstract only
-- **Shared manuscript claim summary** The authors propose a gating crosstalk mechanism in potassium channels where opening/closing of the central cavity modulates cavity hydration and selectivity filter entrance width, both of which regulate ion permeation. This mechanism is supported by MD simulations across six channel subfamilies and by experimental structures from the PDB.
-- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided
-- **Missing materials affecting confidence** Full manuscript, including methods, simulation details, quantitative results, figures, and supplementary data
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no figures, methods, or supplementary material were provided
+- **Shared manuscript claim summary** The authors propose a gating crosstalk model in which opening and closing of the central cavity modulate both cavity hydration and the width of the selectivity filter entrance, and these two features coordinately regulate ion permeation across multiple potassium channels
+- **Visible evidence base** Molecular dynamics simulations of six channels (MthK, cBK, TREK-2, KcsA, Kv4.2, aBK) and comparison with experimental structures from the Protein Data Bank
+- **Missing materials affecting confidence** Full methods, simulation parameters, force fields, convergence criteria, quantitative results, figures, statistical analyses, and details of PDB structure comparisons
 
 ## Reviewer
-- **Overall assessment** The abstract presents a potentially interesting mechanistic model for gating crosstalk in potassium channels, addressing a long-standing question in ion channel biophysics. The claim that cavity hydration and filter entrance size are coordinated to regulate permeation is plausible and the cross-subfamily consistency is appealing. However, the abstract lacks sufficient quantitative detail to evaluate the strength of the evidence. Key methodological choices, statistical measures, and the nature of the PDB structural analysis are not described. The assessment is therefore limited to plausibility rather than validation.
-
-- **Who would be interested in the results, and why** Biophysicists and structural biologists studying ion channel gating, allostery, and permeation mechanisms. The proposed model could inform drug design targeting channel gating and may be of interest to computational chemists developing multi-scale simulation approaches for membrane proteins.
-
-- **Major strengths** 1. Addresses a fundamental and incompletely understood question in potassium channel biology. 2. Cross-subfamily validation (six channels) suggests generality. 3. Integration of simulation and experimental structural data is a strength if properly executed.
-
+- **Overall assessment** The abstract presents a mechanistically plausible and potentially generalizable model for gating crosstalk in potassium channels. The central claim, that cavity hydration and filter entrance width are coordinated through a hydrophobic residue on the inner transmembrane helix, is interesting and could be of broad significance. However, the abstract alone provides insufficient quantitative evidence to evaluate the robustness of the simulations, the statistical significance of the observed correlations, or the strength of the link to experimental structures. The claim of consistency across six channels is stated but not substantiated with data. The work is potentially important, but the case is not fully established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in ion channel biophysics, membrane protein structural biology, and computational chemistry would be interested. The proposed mechanism addresses a long-standing question about allosteric coupling between activation and inactivation gates, and the cross-subfamily consistency suggests a general principle that could inform studies of channel gating, drug binding, and channelopathies.
+- **Major strengths** The study addresses a fundamental and unresolved question in ion channel biology. The use of multiple channels spanning several subfamilies strengthens the potential generality of the findings. The proposed model integrates two previously separate observations (cavity hydration and filter entrance width) into a unified framework. The attempt to connect simulations with experimental PDB structures is commendable and provides a potential bridge between computation and experiment.
 - **Major Concerns**
-- **Concern ID** R1-M1
-- **Severity** Major
-- **Blocking** Yes
-- **Axis** Evidence sufficiency
-- **Claim pointer** "Opening and closing of the central cavity simultaneously modulate cavity hydration level and the width of the selectivity filter entrance."
-- **Evidence pointer** Abstract; location not provided
-- **Concern** The abstract states that opening/closing modulates both hydration and filter entrance width, but provides no quantitative data (e.g., correlation coefficients, free energy differences, or structural metrics) to support this claim. It is unclear whether these modulations are statistically significant, how they were measured, and whether they are causally linked or merely correlated.
-- **Why it matters** Without quantitative evidence, the core mechanistic claim remains a qualitative observation. The field requires demonstration that these changes are functionally relevant and not artifacts of simulation conditions or channel-specific idiosyncrasies.
-- **Resolution test** Provide quantitative measures (e.g., hydration number vs. gate opening angle, filter entrance width vs. gate state) with error bars and statistical tests. Show that these relationships are robust across simulation replicates and channel types.
-
-- **Concern ID** R1-M2
-- **Severity** Major
-- **Blocking** Yes
-- **Axis** Methodological transparency
-- **Claim pointer** "Coupling between the filter entrance size and opening and closing of the central cavity is mediated by a hydrophobic residue on the inner transmembrane helix."
-- **Evidence pointer** Abstract; location not provided
-- **Concern** The abstract identifies a specific hydrophobic residue as the mediator of coupling but does not describe how this was determined (e.g., mutation studies, free energy perturbation, or correlation analysis). No data on residue identity, conservation, or mutational effects are provided.
-- **Why it matters** Identifying a specific structural mediator is a strong claim that requires direct evidence (e.g., mutational disruption of coupling, or structural analysis showing the residue's position changes with gate state). Without such evidence, the claim is speculative.
-- **Resolution test** Provide data showing that mutation of this residue disrupts the coupling between gate opening and filter entrance size, or that its conformational state correlates with both variables. Include sequence alignment showing conservation across the six channels.
-
-- **Concern ID** R1-M3
-- **Severity** Major
-- **Blocking** Yes
-- **Axis** Validation of experimental link
-- **Claim pointer** "Experimental structures from the Protein Data Bank also reveal state-dependent differences in the filter entrance size, thus establishing a direct link between experimental observations and our simulations."
-- **Evidence pointer** Abstract; location not provided
-- **Concern** The abstract claims a "direct link" between simulations and PDB structures, but does not specify which structures were used, how state-dependence was defined, or whether the observed differences are statistically significant given structural resolution and variability. The number of structures, their resolution, and the method for measuring filter entrance size are not described.
-- **Why it matters** A direct link requires quantitative agreement (e.g., correlation or overlap of distributions) between simulation predictions and experimental data. Without this, the claim is merely suggestive.
-- **Resolution test** Provide a list of PDB IDs, resolution cutoffs, and a quantitative comparison (e.g., histogram overlay or correlation plot) of filter entrance sizes from simulations and experimental structures in different gating states. Include error estimates.
-
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that opening and closing of the central cavity simultaneously modulate cavity hydration level and the width of the selectivity filter entrance, and that both features influence ion permeation rate
+  - **Evidence pointer** Abstract, no specific figures or tables provided
+  - **Concern** The abstract states these relationships as established findings, but no quantitative data are presented. There is no information on the magnitude of the changes in hydration or filter entrance width, the range of cavity opening states sampled, or the statistical significance of the correlations. Without these details, it is impossible to assess whether the observed effects are robust or within simulation noise.
+  - **Why it matters** The central mechanistic claim depends on the reliability and statistical power of the simulations. If the correlations are weak or non-reproducible, the proposed model would not be supported.
+  - **Resolution test** Provide quantitative data showing the relationship between cavity opening, hydration level, and filter entrance width, including error bars and statistical tests. Show that the effects are consistent across independent simulations and are not force-field dependent.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that the filter entrance size regulates ion occupancy at the selectivity filter, with maximal permeation occurring at an optimal size
+  - **Evidence pointer** Abstract, no specific figures or tables provided
+  - **Concern** The claim of an optimal filter entrance size implies a non-monotonic relationship, but no data are shown to support this. The abstract does not specify how the entrance size was varied, over what range, or how permeation was measured. The concept of an optimal size is mechanistically interesting but requires direct evidence.
+  - **Why it matters** This is a key prediction of the model. If the relationship is actually monotonic or if the optimal size is an artifact of the simulation setup, the model would need substantial revision.
+  - **Resolution test** Present a plot of permeation rate or ion occupancy versus filter entrance width, showing the non-monotonic relationship with a clear optimum. Include error bars and demonstrate that the optimum is robust across channels and simulation conditions.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that coupling between the filter entrance size and opening and closing of the central cavity is mediated by a hydrophobic residue on the inner transmembrane helix
+  - **Evidence pointer** Abstract, no specific residue or mutation data provided
+  - **Concern** The identity of the hydrophobic residue is not given, and no mutagenesis or perturbation data are described. The claim of mediation implies a causal role, but the abstract only states an association. Without showing that mutation or alteration of this residue disrupts the coupling, the causal claim is unsupported.
+  - **Why it matters** Identifying a specific structural mediator is a strong claim that goes beyond correlation. If the residue is not causally involved, the proposed mechanism would be incomplete or incorrect.
+  - **Resolution test** Identify the residue, show that its mutation or modification abolishes or alters the coupling between cavity opening and filter entrance width, and demonstrate that the effect is specific.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that experimental structures from the PDB reveal state-dependent differences in the filter entrance size, thus establishing a direct link between experimental observations and simulations
+  - **Evidence pointer** Abstract, no specific PDB entries or analysis details provided
+  - **Concern** The abstract does not specify which structures were compared, how the filter entrance size was measured in experimental structures, or whether the differences are statistically significant. The claim of a direct link is strong and requires careful structural analysis, including consideration of resolution, crystal contacts, and conformational heterogeneity.
+  - **Why it matters** The experimental comparison is presented as validation of the simulation results. If the experimental analysis is not rigorous, the validation is weakened, and the overall case for the model is diminished.
+  - **Resolution test** List the PDB entries used, describe the measurement protocol, and show that the state-dependent differences are statistically significant and consistent with the simulation predictions.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that the mechanism was consistently observed across six channels spanning several subfamilies, including MthK, cBK, TREK-2, KcsA, Kv4.2, and aBK
+  - **Evidence pointer** Abstract, no per-channel data provided
+  - **Concern** The claim of consistency across six channels is central to the generality of the model, but no per-channel results are presented. It is unclear whether all channels show the same quantitative relationships or whether there is variability that is being averaged over. The choice of channels and the simulation lengths for each are not described.
+  - **Why it matters** The generality of the model is a major selling point. If the consistency is only qualitative or if some channels deviate, the claim of a universal mechanism would be weakened.
+  - **Resolution test** Provide per-channel data for the key relationships (cavity opening versus hydration, filter entrance width, and permeation), and show that the trends are consistent across all six channels with appropriate statistical treatment.
 - **Minor Comments**
-- **Concern ID** R1-m1
-- **Severity** Minor
-- **Axis** Clarity
-- **Affected element** Mechanistic model description
-- **Evidence pointer** Abstract
-- **Issue** The phrase "cavity hydration reshapes the free energy of K(+) entry into the cavity" is vague. It is unclear whether this refers to a change in barrier height, well depth, or both, and whether the effect is direct (hydration alters ion solvation) or indirect (hydration alters cavity structure).
-- **Required correction** Specify the nature of the free energy change (e.g., barrier height, well depth) and provide a brief mechanistic explanation.
-
-- **Concern ID** R1-m2
-- **Severity** Minor
-- **Axis** Completeness
-- **Affected element** Scope of validation
-- **Evidence pointer** Abstract
-- **Issue** The abstract states the mechanism "may extend to other members of the K(+) channel family" but does not provide any rationale or evidence for this extrapolation beyond the six channels studied.
-- **Required correction** Either provide a basis for generalization (e.g., sequence conservation of the hydrophobic residue) or temper the claim to reflect the limited sampling.
-
-- **Concern ID** R1-m3
-- **Severity** Minor
-- **Axis** Terminology
-- **Affected element** "Gating crosstalk"
-- **Evidence pointer** Abstract
-- **Issue** The term "gating crosstalk" is used but not defined. It could be interpreted as allosteric coupling, coordinated regulation, or a specific kinetic model.
-- **Required correction** Define "gating crosstalk" in the context of this work (e.g., "the bidirectional allosteric communication between the activation gate and the inactivation gate").
-
-- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3
-
-- **Assessment against Nature-style criteria** 
-  - **Originality**: Moderate. The idea of gating crosstalk is not new, but the specific coordination of cavity hydration and filter entrance size as a unified mechanism is a novel synthesis. 
-  - **Scientific importance**: High if validated. Understanding gating crosstalk is a central problem in ion channel biophysics with implications for channelopathies and drug design.
-  - **Interdisciplinary readership**: Moderate. The topic is of primary interest to biophysicists and structural biologists; broader appeal would require clear physiological or pharmacological implications.
-  - **Technical soundness**: Cannot be assessed from the abstract alone. The claims require quantitative validation and methodological transparency.
-  - **Readability for nonspecialists**: Good. The abstract is clearly written and accessible, though some terms (e.g., "selectivity filter entrance") could be briefly defined.
-
-- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible and interesting model, but the evidence is insufficient to evaluate its validity. A full manuscript with quantitative data, methodological details, and statistical validation is required before a recommendation can be made.
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract, first sentence
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The term "gating crosstalk" is used without definition. Nonspecialist readers may not immediately understand what is meant by crosstalk in this context.
+  - **Required correction** Define gating crosstalk explicitly, for example as the mutual influence between distinct gating elements within a channel.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity of reporting
+  - **Affected element** Abstract, description of simulations
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract states "extensive molecular dynamics simulations" but does not indicate the total simulation time, number of replicas, or whether the simulations are equilibrium or enhanced sampling.
+  - **Required correction** Provide brief details on simulation length and sampling approach to allow readers to gauge the extent of the sampling.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Abstract, final sentence
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The claim that the mechanism "may extend to other members of the K(+) channel family" is speculative and not supported by data in the abstract.
+  - **Required correction** Either soften the claim to indicate that this is a hypothesis to be tested, or provide evidence for at least one additional channel beyond the six studied.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4, R1-M5. The abstract does not provide sufficient quantitative evidence to support the central mechanistic claims. The causal role of the hydrophobic residue, the optimal filter entrance size, the link to experimental structures, and the consistency across six channels all require detailed data that are not presented.
+- **Assessment against Nature-style criteria** Originality: The proposed model is original in integrating cavity hydration and filter entrance width into a single gating crosstalk framework. Scientific importance: The question of gating coupling is fundamental to ion channel biology, and a generalizable mechanism would be of high importance. Interdisciplinary readership: The topic is of interest to biophysicists, structural biologists, and computational chemists, but the abstract is written in a way that is largely accessible to these groups. Technical soundness: Cannot be assessed from the abstract alone; the lack of quantitative data is a major limitation. Readability for nonspecialists: The abstract is generally clear but could benefit from defining key terms and providing more context for the significance of the findings.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting hypothesis, but the supporting data are not visible. A full manuscript with quantitative results, statistical analyses, and detailed methods would be required to evaluate the claims. If the data are as robust as the abstract implies, the work could be significant, but the case is not made in the supplied material.
 
 ## Risk / unsupported claims
-- The claim that a specific hydrophobic residue mediates coupling (R1-M2) is unsupported without mutational or structural evidence.
-- The claim of a "direct link" between simulations and PDB structures (R1-M3) is unsupported without quantitative comparison.
-- The claim that the mechanism "may extend to other members of the K(+) channel family" is speculative without a rationale or broader sampling.
+- The claim that cavity hydration reshapes the free energy of K(+) entry is stated without supporting data.
+- The claim of an optimal filter entrance size for maximal permeation is unsupported without a quantitative relationship.
+- The claim that a specific hydrophobic residue mediates the coupling is unsupported without identification and perturbation data.
+- The claim of a direct link between experimental PDB structures and simulations is unsupported without specific structure comparisons.
+- The claim of consistent observation across six channels is unsupported without per-channel data.
+- The speculation that the mechanism may extend to other K(+) channels is not supported by evidence in the abstract.

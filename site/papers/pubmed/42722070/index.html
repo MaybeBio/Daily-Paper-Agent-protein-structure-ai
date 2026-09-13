@@ -29,7 +29,7 @@
          · 仅摘要
          · <a href="https://pubmed.ncbi.nlm.nih.gov/42722070/">原文</a>
       </div>
-      <p class="one-liner">该文通过共识设计和虚拟筛选结合分子动力学模拟，工程化改造GH42 β-半乳糖苷酶以提高乳糖水解活性，属于蛋白质结构计算辅助的酶工程研究，方法可迁移至蛋白质结构设计。</p>
+      <p class="one-liner">该文通过共识设计和虚拟筛选对GH42 β-半乳糖苷酶进行工程改造，结合MD模拟揭示结构机制，虽以酶工程应用为主，但涉及蛋白质结构计算（MD模拟、虚拟筛选）和结构-功能关系分析，对蛋白质结构设计有参考价值。</p>
     </div>
   </div>
   
@@ -41,7 +41,7 @@
   
   <section>
     <h2>摘要翻译</h2>
-    <div class="md">本研究通过工程化一种高效嗜热酶用于乳糖水解，将奶酪生产副产物乳清转化为高价值资源，从而解决了乳制品废弃物管理中的主要瓶颈。传统糖苷水解酶家族2 (GH2) 酶工业热稳定性差，而嗜热GH42替代酶则缺乏实际加工所需的催化效率。为弥补这一差距，本研究对从Thermotoga naphthophila RUK10中自主发现的GH42-半乳糖苷酶Tn1577，采用了结合共有序列设计与虚拟结合能筛选的协同工程策略。通过同源序列分析和迭代饱和突变，成功开发出命名为M10 (H271Q/V357G/Q340E) 的优越三重突变体。分子动力学 (molecular dynamics, MD) 模拟揭示，M10的性能由3个关键结构改变驱动。首先，重塑的底物通道加速了乳糖进入和产物释放，同时减少了活性腔内的分子拥挤。其次，共有突变使催化口袋刚性化，以在热应力下保持其几何结构。最后，远端的Q340E突变重新排列了局部氢键，并形成新的阴离子-π相互作用，通过别构调节锚定蛋白质骨架以稳定整体构象。这种工程化的刚性引入了一种有益的动力学权衡：通过有意削弱底物亲和力，大幅加速催化周转，防止酶停滞并确保持续的催化循环。因此，与野生型酶相比，突变体M10在55摄氏度下乳糖水解活性提高了6.5倍。响应面法确定了理想的工业参数：52.7摄氏度、pH 5.5、酶用量2.9 U/mL。在此条件下，M10在短短2小时内即可实现原料乳清的近完全乳糖水解。在低于核心乳清蛋白热解折叠温度（约60摄氏度）的条件下运行，这种温和的热处理方案缩短了加工时间，并防止了其他有价值乳清成分的热变性，展示了M10在高效率、稳定的无乳糖乳制品加工中的巨大潜力。</div>
+    <div class="md">本研究通过工程化一种高效的热稳定酶用于乳糖水解，解决了乳品废弃物管理中的重大瓶颈，将奶酪制造副产物乳清转化为高价值资源。传统糖苷水解酶家族2 (GH2) 酶因工业热稳定性差而受限，而热稳定的GH42替代酶则缺乏实际加工所需的催化效率。为弥合这一差距，本研究将共识序列设计与虚拟结合能筛选相结合的协同工程策略应用于Tn1577，这是一种从Thermotoga naphthophila RUK10中自行发现的GH42-半乳糖苷酶。通过同源序列分析和迭代饱和突变，成功开发出命名为M10的优越三重突变体（H271Q/V357G/Q340E）。分子动力学 (molecular dynamics) 模拟揭示，M10的性能由3个关键结构改变驱动。首先，重塑的底物通道加速了乳糖进入和产物释放，同时减少了活性腔内的分子拥挤。其次，共识突变使催化口袋刚性化，以在热应力下保持其几何结构。最后，远端Q340E突变重排了局部氢键网络，并形成新的阴离子-π相互作用，通过变构调控锚定蛋白质骨架以稳定整体构象。这种工程化刚性引入了一种有益的动力学权衡：通过有意削弱底物亲和力，大幅加速催化周转，防止酶停滞并确保持续的催化循环。因此，突变体M10在55摄氏度下实现了与野生型酶相比6.5倍的乳糖水解活性提升。响应面法确定了理想的工业参数：52.7摄氏度、pH 5.5、酶用量2.9 U/mL。在这些条件下，M10在短短2小时内实现了对原料乳清中乳糖的近完全水解。在低于核心乳清蛋白热解折叠点（约60摄氏度）的温度下运行，这种温和的热处理方案缩短了加工时间，并防止了其他有价值乳清组分的热变性，展示了M10在高效率、稳定无乳糖乳品加工中的巨大潜力。</div>
   </section>
   
   
@@ -49,337 +49,342 @@
     <h2>Paper Card</h2>
     <div class="md"><h2>01 基本信息</h2>
 <ul>
-<li><strong>标题</strong>: Consensus design and in silico screening of GH42 beta-galactosidase for enhanced catalytic hydrolysis of whey lactose.</li>
-<li><strong>作者与单位</strong>: Ding, Simeng; Li, Jiajia; Li, Jiahui; Nie, Huayu; Li, Yongxin; Guo, Zheng; Gao, Renjun（单位未提供）</li>
-<li><strong>期刊/预印本平台</strong>: Journal of Dairy Science</li>
-<li><strong>年份</strong>: 2026</li>
-<li><strong>论文类型</strong>: 研究论文</li>
-<li><strong>领域</strong>: 蛋白质工程、酶工程、乳品加工</li>
-<li><strong>关键词</strong>: 未提供</li>
-<li><strong>DOI/arXiv 号</strong>: 10.3168/jds.2026-29005</li>
-<li><strong>代码</strong>: 未提供</li>
-<li><strong>数据</strong>: 未提供</li>
-<li><strong>阅读日期</strong>: 2025-04-08</li>
-<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>: 本文属于<strong>蛋白质工程 × 物理模拟</strong>方向，具体为：利用<strong>共识序列设计</strong>（一种基于序列保守性的统计方法）和<strong>虚拟结合能筛选</strong>（in silico screening）对GH42 β-半乳糖苷酶进行理性设计，并通过<strong>分子动力学（MD）模拟</strong>解释突变体性能提升的结构机制。该工作不涉及深度学习，但展示了物理模拟（MD）在酶工程中解释机制和指导设计的经典应用。</li>
+<li><strong>标题</strong>：Consensus design and in silico screening of GH42 beta-galactosidase for enhanced catalytic hydrolysis of whey lactose</li>
+<li><strong>作者与单位</strong>：Ding, Simeng; Li, Jiajia; Li, Jiahui; Nie, Huayu; Li, Yongxin; Guo, Zheng; Gao, Renjun（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：Journal of Dairy Science</li>
+<li><strong>年份</strong>：2026（在线日期 2026-09-10）</li>
+<li><strong>论文类型</strong>：实验研究（酶工程 + 计算辅助设计）</li>
+<li><strong>领域</strong>：蛋白质工程、酶催化、乳品加工</li>
+<li><strong>关键词</strong>：GH42 β-galactosidase；consensus design；in silico screening；whey lactose hydrolysis；thermostability；molecular dynamics</li>
+<li><strong>DOI/arXiv 号</strong>：10.3168/jds.2026-29005</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（序列与突变数据见正文，但未提供独立数据仓库链接）</li>
+<li><strong>阅读日期</strong>：2026-05-15（按系统日期）</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × 物理模拟（MD）」交叉方向，具体为：以 consensus sequence design 与虚拟结合能筛选为计算驱动，结合 MD 模拟解释突变机制，对 GH42 β-半乳糖苷酶进行理性工程改造。其可迁移点在于：将序列保守性分析与结构动态模拟结合，用于酶活性与稳定性的协同优化，对蛋白质设计（尤其酶工程）具有方法论参考价值。</li>
 </ul>
 <h2>02 一句话总结</h2>
-<p>为解决乳清中乳糖水解效率低的问题，本文通过<strong>共识序列设计</strong>与<strong>虚拟结合能筛选</strong>相结合的策略，对来自 <em>Thermotoga naphthophila</em> 的 GH42 β-半乳糖苷酶进行工程化改造，获得一个<strong>三突变体 M10</strong>，该突变体通过重塑底物通道、刚性化催化口袋和远端变构调控，在55°C下将乳糖水解活性<strong>提升6.5倍</strong>，并在2小时内实现原料乳清的近完全水解。</p>
+<p>针对 GH42 β-半乳糖苷酶 Tn1577 催化效率不足的问题，本文通过 consensus sequence design 与虚拟结合能筛选获得三突变体 M10（H271Q/V357G/Q340E），在 55°C 下乳糖水解活性较野生型提升 6.5 倍，并在 52.7°C、pH 5.5、2.9 U/mL 酶量条件下实现乳清乳糖 2 小时内近完全水解。</p>
 <h2>03 研究问题</h2>
 <ul>
-<li><strong>具体问题</strong>: 如何工程化改造一种嗜热GH42 β-半乳糖苷酶，使其在工业相关温度（~55°C）下具有足够高的催化效率，以高效水解乳清中的乳糖，同时避免破坏乳清中其他热敏性蛋白质。</li>
-<li><strong>为什么重要</strong>: 乳清是奶酪生产的副产品，富含乳糖。高效水解乳糖可将其转化为高价值产品（如低乳糖乳清、半乳糖寡糖），减少环境负担并增加经济价值。现有GH2酶热稳定性差，而GH42酶催化效率低，两者均不理想。</li>
-<li><strong>现有方法为何不足</strong>: 传统GH2酶（如来自 <em>Kluyveromyces lactis</em> 的酶）在工业温度下热稳定性不足；而天然嗜热GH42酶虽然稳定，但催化效率（kcat/Km）低，无法满足工业加工的时间和经济要求。</li>
-<li><strong>精确的「Can ... ?」研究问题</strong>: Can a synergistic strategy combining consensus sequence design and virtual binding energy screening engineer a GH42 β-galactosidase mutant with significantly enhanced catalytic activity for lactose hydrolysis at a mild thermophilic temperature (e.g., 55°C)?</li>
+<li><strong>具体问题</strong>：如何获得一个兼具工业热稳定性和高催化效率的 β-半乳糖苷酶，用于乳清乳糖的高效水解？</li>
+<li><strong>为什么重要</strong>：乳清是奶酪生产的副产物，富含乳糖，但直接排放造成资源浪费与环境污染。高效乳糖水解可将其转化为高价值乳制品（如无乳糖乳品），但现有 GH2 酶热稳定性差，GH42 酶虽热稳定但催化效率低。</li>
+<li><strong>现有方法为何不足</strong>：传统 GH2 酶在工业温度下易失活；GH42 酶虽耐热但催化速率低，无法满足工业处理的时间与经济要求。单一突变策略难以同时优化稳定性与活性。</li>
+<li><strong>精确研究问题</strong>：Can consensus-guided mutagenesis combined with virtual binding energy screening yield a GH42 β-galactosidase variant with both enhanced catalytic activity and sufficient thermostability for whey lactose hydrolysis under mild thermal conditions?</li>
 </ul>
 <h2>04 背景与发展脉络</h2>
-<ul>
-<li><strong>脉络来源</strong>: 经外部核验（基于论文引言和领域常识）。</li>
-<li><strong>阶段1: 传统GH2 β-半乳糖苷酶</strong>。代表性方法：来自 <em>K. lactis</em> 或 <em>E. coli</em> 的酶。优点：催化效率高。局限：热稳定性差，在工业加工温度下易失活，且最适pH偏中性，不适合酸性乳清。</li>
-<li><strong>阶段2: 天然嗜热GH42 β-半乳糖苷酶</strong>。代表性方法：来自 <em>Thermotoga</em> 属的酶。优点：热稳定性好，最适pH偏酸性，适合乳清环境。局限：催化效率（尤其是对乳糖的kcat）低，导致反应时间长、酶用量大。</li>
-<li><strong>本文主张的位置</strong>: 本文提出一种<strong>协同工程策略</strong>，结合<strong>共识序列设计</strong>（提高稳定性）和<strong>虚拟结合能筛选</strong>（优化底物结合与催化），旨在同时提升GH42酶的<strong>热稳定性</strong>和<strong>催化效率</strong>，从而弥合上述两类酶的差距。该策略不依赖高通量实验筛选，而是通过计算指导的理性设计。</li>
-</ul>
+<p>（标注：以下脉络为「仅本文框架」，基于摘要与引言推断，未经外部核验）
+- <strong>阶段一：GH2 酶应用</strong>：传统 β-半乳糖苷酶（GH2 家族）广泛用于乳糖水解，但工业热稳定性差，难以在高温下维持活性。
+- <strong>阶段二：GH42 酶替代</strong>：GH42 家族酶来自嗜热菌，热稳定性好，但催化效率低，限制了实际应用。
+- <strong>阶段三：理性工程策略</strong>：采用 consensus sequence design（基于同源序列保守性设计突变）与虚拟结合能筛选（in silico screening）结合，旨在同时优化稳定性与活性。
+- <strong>本文位置</strong>：在 GH42 酶 Tn1577 上应用上述组合策略，获得三突变体 M10，并通过 MD 模拟揭示其结构机制，最终在真实乳清中验证应用潜力。</p>
 <h2>05 核心痛点</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">痛点</th>
-<th style="text-align: left;">表现</th>
-<th style="text-align: left;">成因或作者解释</th>
-<th style="text-align: left;">文中证据</th>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>天然GH42酶催化效率低</strong></td>
-<td style="text-align: left;">野生型Tn1577对乳糖的水解活性不足以满足工业需求。</td>
-<td style="text-align: left;">底物通道狭窄，导致底物进入和产物释放受阻；催化口袋柔性过大，在热应力下几何结构不稳定。</td>
-<td style="text-align: left;">作者通过MD模拟对比野生型和M10突变体，发现M10的底物通道更宽、催化口袋更刚性（Results节）。</td>
+<td>GH2 酶热稳定性差</td>
+<td>工业温度下易失活，无法长时间运行</td>
+<td>传统 GH2 酶缺乏嗜热菌来源的稳定结构</td>
+<td>摘要：传统 GH2 酶 suffer from poor industrial thermostability</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>传统工程策略效率低</strong></td>
-<td style="text-align: left;">随机突变或定向进化需要大量筛选工作，且难以同时优化稳定性和活性。</td>
-<td style="text-align: left;">稳定性和活性通常存在trade-off，单一策略难以兼顾。</td>
-<td style="text-align: left;">作者提出结合共识设计（提升稳定性）和虚拟筛选（优化活性）的协同策略，暗示单一策略的不足（Introduction节）。</td>
+<td>GH42 酶催化效率低</td>
+<td>乳糖水解速率慢，处理时间长</td>
+<td>底物通道或活性位点构象不利于快速催化</td>
+<td>摘要：GH42 alternatives lack the catalytic efficiency required for practical processing</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>工业条件限制</strong></td>
-<td style="text-align: left;">高温（&gt;60°C）会破坏乳清中其他有价值的蛋白质（如乳清蛋白）。</td>
-<td style="text-align: left;">需要在不高于60°C的温度下进行高效水解，这对酶的活性和稳定性提出了苛刻要求。</td>
-<td style="text-align: left;">作者将最优反应温度设定为52.7°C，并指出该温度低于乳清蛋白的热变性点（~60°C）（Results节）。</td>
+<td>稳定性与活性难以兼得</td>
+<td>单一突变常顾此失彼</td>
+<td>稳定化突变可能降低底物亲和力或催化速率</td>
+<td>摘要：作者采用组合策略以 bridge this gap</td>
+</tr>
+<tr>
+<td>乳清蛋白热变性风险</td>
+<td>高温处理破坏乳清中其他有价值蛋白</td>
+<td>乳清蛋白热解链温度约 60°C</td>
+<td>摘要：operating below thermal unfolding point of core whey proteins (~60°C)</td>
 </tr>
 </tbody>
 </table>
 <h2>06 核心思想</h2>
 <ol>
-<li><strong>表面方法</strong>: 通过<strong>共识序列设计</strong>（从同源序列中找出高频氨基酸）和<strong>虚拟结合能筛选</strong>（计算突变体与底物的结合能）的组合，对GH42 β-半乳糖苷酶进行理性设计，获得一个三突变体M10。</li>
-<li><strong>核心洞察</strong>: 提升酶活性的关键不在于增强底物结合，而在于<strong>故意削弱底物亲和力</strong>（即提高Km），从而避免产物抑制和酶-底物复合物停滞，加速催化周转。同时，通过<strong>刚性化催化口袋</strong>和<strong>重塑底物通道</strong>来优化底物进出动力学，并通过<strong>远端变构突变</strong>稳定整体构象。这是一种“以牺牲亲和力换取催化速率”的工程策略。</li>
-<li><strong>可能的普适教训 [Analysis]</strong>: 在酶工程中，<strong>“高亲和力”并不总是等于“高活性”</strong>。对于需要快速周转的酶，降低底物结合强度（提高Km）可以加速产物释放，从而提升kcat。这一trade-off机制（Km-kcat trade-off）可迁移到其他水解酶或需要高周转率的酶的设计中。此外，<strong>远端变构位点</strong>的突变可以产生意想不到的全局稳定效应，是理性设计中值得探索的“暗物质”。</li>
+<li><strong>表面方法</strong>：对 Tn1577（GH42 β-半乳糖苷酶）进行同源序列分析，采用 consensus sequence design 确定候选突变位点，结合虚拟结合能筛选（in silico screening）与迭代饱和突变（iterative saturation mutagenesis）获得三突变体 M10（H271Q/V357G/Q340E）。</li>
+<li><strong>核心洞察</strong>：M10 的活性提升并非源于底物亲和力增强，而是通过三个结构层面的协同改变：① 底物通道重塑，加速底物进入与产物释放；② consensus 突变刚性化催化口袋，维持热胁迫下几何结构；③ 远端 Q340E 突变通过氢键重排与新的 anion-π 相互作用，锚定蛋白骨架，实现别构稳定。这种刚性化带来一个「有益的动力学权衡」：刻意削弱底物亲和力，避免酶被底物「卡住」，从而加速催化循环。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：在酶工程中，活性与稳定性的矛盾可通过「远端别构调控 + 通道重塑」而非仅活性位点直接突变来协调；「降低亲和力以提升周转数」是一种反直觉但有效的策略，尤其适用于底物浓度高的工业环境。</li>
 </ol>
 <h2>07 方法总览</h2>
 <ul>
-<li><strong>输入</strong>: 野生型Tn1577 β-半乳糖苷酶的氨基酸序列和同源序列。</li>
-<li><strong>输出</strong>: 一个具有增强乳糖水解活性的三突变体M10 (H271Q/V357G/Q340E)。</li>
-<li><strong>模块</strong>:<ol>
-<li><strong>共识序列设计</strong>: 通过多序列比对，识别每个位点最保守的氨基酸，作为候选突变。</li>
-<li><strong>虚拟结合能筛选</strong>: 使用分子对接或类似方法，计算候选突变体与底物（乳糖）的结合自由能，筛选出预测结合能更优的突变。</li>
-<li><strong>迭代饱和突变</strong>: 对初步筛选出的热点位点进行饱和突变，并通过虚拟筛选或实验验证，逐步组合最优突变。</li>
-<li><strong>分子动力学（MD）模拟</strong>: 对野生型和最终突变体M10进行MD模拟，分析结构动态、底物通道、催化口袋刚性和变构效应。</li>
-<li><strong>响应面法（RSM）优化</strong>: 对温度、pH和酶用量等工业参数进行优化。</li>
-</ol>
-</li>
-<li><strong>训练</strong>: 不适用（无监督学习或模型训练）。</li>
-<li><strong>工具</strong>: 同源序列比对工具（如ClustalW）、分子对接软件（如AutoDock）、MD模拟软件（如GROMACS）、响应面法设计软件。</li>
-<li><strong>反馈回路</strong>: 虚拟筛选结果指导实验验证，实验数据（如活性）可能反馈回计算模型进行迭代优化（文中未明确提及闭环迭代，但暗示了筛选-验证流程）。</li>
-<li><strong>假设</strong>: 共识位点突变能提升稳定性；虚拟结合能筛选能有效预测活性变化；MD模拟能揭示结构-功能关系。</li>
-<li><strong>文字流程</strong>: 首先，对Tn1577进行同源序列分析，通过共识设计识别出多个候选突变位点。然后，对这些位点进行虚拟结合能筛选，预测哪些突变能改善底物结合。接着，通过迭代饱和突变实验，将预测有利的突变进行组合，最终获得最优三突变体M10。最后，通过MD模拟解析M10活性提升的结构机制，并用响应面法优化其工业应用条件。</li>
+<li><strong>输入</strong>：Tn1577 野生型序列（来自 Thermotoga naphthophila RUK10）；同源 GH42 序列库；乳清底物。</li>
+<li><strong>输出</strong>：三突变体 M10（H271Q/V357G/Q340E），及其催化活性、热稳定性、乳清水解效率数据。</li>
+<li><strong>模块</strong>：
+  1. 同源序列分析与 consensus 位点鉴定
+  2. 虚拟结合能筛选（in silico screening）候选突变
+  3. 迭代饱和突变（ISM）构建突变体库
+  4. 实验筛选（活性/稳定性测定）
+  5. MD 模拟解析结构机制
+  6. 响应面法（RSM）优化工业条件
+  7. 乳清验证实验</li>
+<li><strong>训练</strong>：不适用（非机器学习模型；但 consensus 设计可视为基于序列统计的「先验」）。</li>
+<li><strong>工具</strong>：未提供具体软件（如 MODELLER、GROMACS 等未在摘要中说明）。</li>
+<li><strong>反馈回路</strong>：实验筛选结果反馈至下一轮突变设计（ISM 迭代）。</li>
+<li><strong>假设</strong>：① consensus 位点突变可提升稳定性；② 虚拟结合能筛选可预测活性相关突变；③ MD 模拟可解释突变的结构效应。</li>
+<li><strong>流程</strong>：野生型序列 → 同源比对 → consensus 位点 → 虚拟筛选 → ISM 构建突变体 → 实验筛选 → M10 确认 → MD 模拟机制解析 → RSM 优化条件 → 乳清验证。</li>
 </ul>
 <h2>08 核心模块拆解</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">模块</th>
-<th style="text-align: left;">功能</th>
-<th style="text-align: left;">为何需要</th>
-<th style="text-align: left;">输入输出</th>
-<th style="text-align: left;">支撑证据</th>
-<th style="text-align: left;">移除后的已知或预期影响</th>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>共识序列设计</strong></td>
-<td style="text-align: left;">识别同源序列中保守的、可能对稳定性或功能关键的氨基酸位点。</td>
-<td style="text-align: left;">提供理性设计的起点，减少需要筛选的突变数量，尤其针对提升热稳定性。</td>
-<td style="text-align: left;">输入：Tn1577序列及同源序列。输出：候选突变位点列表。</td>
-<td style="text-align: left;">作者通过此方法获得了H271Q和V357G等候选突变（Methods节）。</td>
-<td style="text-align: left;"><strong>预期影响</strong>：失去稳定性提升的候选来源，工程化过程将更依赖随机突变，效率降低。</td>
+<td>Consensus sequence design</td>
+<td>基于同源序列保守性确定稳定化突变位点</td>
+<td>提升热稳定性而不破坏催化核心</td>
+<td>输入：同源序列比对；输出：候选 consensus 位点</td>
+<td>摘要：homologous sequence analysis 指导突变</td>
+<td>预期影响：稳定性提升效果减弱 [Analysis]</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>虚拟结合能筛选</strong></td>
-<td style="text-align: left;">计算突变体与底物（乳糖）的结合自由能，预测突变对催化活性的影响。</td>
-<td style="text-align: left;">在实验前过滤掉不利突变，聚焦于预测活性提升的突变，节省实验成本。</td>
-<td style="text-align: left;">输入：候选突变体结构模型、底物结构。输出：预测结合能排序。</td>
-<td style="text-align: left;">作者通过此方法筛选并组合了突变，最终获得M10（Methods节）。</td>
-<td style="text-align: left;"><strong>预期影响</strong>：无法有效预测活性变化，实验筛选工作量剧增，可能错过最优组合。</td>
+<td>虚拟结合能筛选</td>
+<td>计算预测突变对底物结合的影响</td>
+<td>筛选高活性突变，减少实验工作量</td>
+<td>输入：候选突变结构模型；输出：结合能排序</td>
+<td>摘要：virtual binding energy screening</td>
+<td>预期影响：活性提升突变可能被遗漏 [Analysis]</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>分子动力学（MD）模拟</strong></td>
-<td style="text-align: left;">模拟蛋白质在纳秒时间尺度上的动态行为，分析结构变化、相互作用和能量。</td>
-<td style="text-align: left;">解释M10活性提升的分子机制，验证设计假设，并为后续工程提供结构洞察。</td>
-<td style="text-align: left;">输入：野生型和M10的3D结构。输出：RMSD、底物通道尺寸、氢键网络、相互作用能等轨迹分析。</td>
-<td style="text-align: left;">作者通过MD模拟揭示了M10的3个关键结构改变：重塑底物通道、刚性化催化口袋、远端变构稳定（Results节）。</td>
-<td style="text-align: left;"><strong>预期影响</strong>：无法获得机制性解释，设计策略的通用性和可迁移性降低。</td>
+<td>迭代饱和突变（ISM）</td>
+<td>组合多个有益突变</td>
+<td>获得协同效应</td>
+<td>输入：单点突变体；输出：组合突变体库</td>
+<td>摘要：iterative saturation mutagenesis 获得 M10</td>
+<td>预期影响：无法获得三突变体协同效应</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>响应面法（RSM）</strong></td>
-<td style="text-align: left;">通过统计实验设计，优化多变量（温度、pH、酶量）条件下的酶反应性能。</td>
-<td style="text-align: left;">将实验室条件下的高活性转化为工业可行的工艺参数。</td>
-<td style="text-align: left;">输入：M10在不同条件下的活性数据。输出：最优反应条件（52.7°C, pH 5.5, 2.9 U/mL）。</td>
-<td style="text-align: left;">作者通过RSM确定了M10处理原料乳清的最优条件（Results节）。</td>
-<td style="text-align: left;"><strong>预期影响</strong>：无法确定最佳工业参数，酶的性能无法在实际应用中最大化。</td>
+<td>MD 模拟</td>
+<td>解析突变的结构机制</td>
+<td>解释活性提升的结构基础</td>
+<td>输入：WT/M10 结构；输出：构象动态、氢键/相互作用分析</td>
+<td>摘要：MD simulations revealed 3 key structural alterations</td>
+<td>预期影响：机制解释缺失，难以推广</td>
+</tr>
+<tr>
+<td>响应面法（RSM）</td>
+<td>优化反应条件（温度、pH、酶量）</td>
+<td>确定工业适用参数</td>
+<td>输入：实验数据；输出：最优条件（52.7°C, pH 5.5, 2.9 U/mL）</td>
+<td>摘要：RSM established ideal parameters</td>
+<td>预期影响：乳清验证效果可能不理想</td>
 </tr>
 </tbody>
 </table>
 <h2>09 关键公式符号</h2>
-<p>不适用。本文未提供核心的数学公式，主要依赖计算模拟和实验表征。</p>
+<p>不适用（摘要中未提供具体公式；RSM 模型方程、MD 力场参数等未在摘要中给出）。</p>
 <h2>10 实验设计与证据链</h2>
 <ul>
-<li><strong>数据集/群体</strong>: 野生型Tn1577及其突变体（包括单点、双点和三突变体M10）。</li>
-<li><strong>规模</strong>: 一个三突变体M10被作为主要研究对象。</li>
-<li><strong>指标</strong>: 乳糖水解活性（U/mL或相对活性）、kcat、Km、kcat/Km、热稳定性（Tm或半衰期）、底物通道尺寸、RMSD。</li>
-<li><strong>基线</strong>: 野生型Tn1577 β-半乳糖苷酶。</li>
-<li><strong>预算</strong>: 未提供。</li>
-<li><strong>骨干/仪器</strong>: 未提供。</li>
-<li><strong>oracle 输入</strong>: 未提供。</li>
-<li><strong>评测协议</strong>: 在55°C、pH 5.5条件下测定乳糖水解活性；使用MD模拟分析结构动态。</li>
+<li><strong>数据集/群体</strong>：Tn1577 野生型及突变体（M10 等）；乳清样品（来源未提供）。</li>
+<li><strong>规模</strong>：未提供具体突变体数量或实验重复数。</li>
+<li><strong>指标</strong>：乳糖水解活性（相对野生型倍数）、热稳定性（未提供具体半衰期或 Tm）、乳糖水解率（近完全水解）。</li>
+<li><strong>基线</strong>：野生型 Tn1577。</li>
+<li><strong>预算/骨干/仪器</strong>：未提供。</li>
+<li><strong>oracle 输入</strong>：不适用（非 ML 预测）。</li>
+<li><strong>评测协议</strong>：55°C 下活性比较；RSM 优化后条件验证；乳清 2 小时水解实验。</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">实验</th>
-<th style="text-align: left;">检验的claim</th>
-<th style="text-align: left;">对比与条件</th>
-<th style="text-align: left;">结果</th>
-<th style="text-align: left;">支持的结论</th>
-<th style="text-align: left;">不支持更强的结论</th>
-<th style="text-align: left;">来源</th>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>M10活性测定</strong></td>
-<td style="text-align: left;">M10的乳糖水解活性显著高于野生型。</td>
-<td style="text-align: left;">在55°C下比较M10与野生型的活性。</td>
-<td style="text-align: left;">M10的活性是野生型的<strong>6.5倍</strong>。</td>
-<td style="text-align: left;">共识设计与虚拟筛选策略成功提升了酶活性。</td>
-<td style="text-align: left;">未证明该策略优于其他方法（如定向进化）。</td>
-<td style="text-align: left;">Results节</td>
+<td>突变体活性筛选</td>
+<td>M10 活性高于 WT</td>
+<td>55°C 下比较</td>
+<td>6.5 倍提升</td>
+<td>M10 显著增强催化活性</td>
+<td>未提供绝对活性值或动力学参数（kcat/Km）</td>
+<td>摘要</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>MD模拟-底物通道</strong></td>
-<td style="text-align: left;">M10的底物通道更宽，有利于底物进入和产物释放。</td>
-<td style="text-align: left;">比较野生型和M10的MD模拟轨迹中的底物通道尺寸。</td>
-<td style="text-align: left;">M10的底物通道被“重塑”，尺寸增大。</td>
-<td style="text-align: left;">结构改变是活性提升的原因之一。</td>
-<td style="text-align: left;">未直接测量底物/产物进出速率。</td>
-<td style="text-align: left;">Results节</td>
+<td>MD 模拟</td>
+<td>结构机制解释</td>
+<td>WT vs M10 构象比较</td>
+<td>通道重塑、口袋刚性化、anion-π 相互作用</td>
+<td>突变通过结构改变实现功能提升</td>
+<td>模拟条件（力场、时长）未提供，无法评估可靠性</td>
+<td>摘要</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>MD模拟-催化口袋刚性</strong></td>
-<td style="text-align: left;">M10的催化口袋在模拟中更刚性，保持几何结构。</td>
-<td style="text-align: left;">比较野生型和M10催化口袋残基的RMSF（均方根波动）。</td>
-<td style="text-align: left;">M10催化口袋的RMSF更低，表明刚性增加。</td>
-<td style="text-align: left;">刚性化有助于在热应力下维持催化功能。</td>
-<td style="text-align: left;">未直接测量催化口袋的几何保真度。</td>
-<td style="text-align: left;">Results节</td>
+<td>RSM 优化</td>
+<td>确定工业条件</td>
+<td>温度、pH、酶量变量</td>
+<td>52.7°C, pH 5.5, 2.9 U/mL</td>
+<td>条件可用于乳清处理</td>
+<td>未提供优化模型 R² 或验证实验细节</td>
+<td>摘要</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>MD模拟-远端变构效应</strong></td>
-<td style="text-align: left;">Q340E突变通过远端变构作用稳定整体构象。</td>
-<td style="text-align: left;">分析Q340E突变周围的氢键和阴离子-π相互作用。</td>
-<td style="text-align: left;">发现新的氢键网络和阴离子-π相互作用，锚定蛋白骨架。</td>
-<td style="text-align: left;">远端突变可以通过长程相互作用影响全局稳定性。</td>
-<td style="text-align: left;">未通过突变回补实验直接验证该变构通路。</td>
-<td style="text-align: left;">Results节</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>原料乳清水解</strong></td>
-<td style="text-align: left;">M10能在工业相关条件下高效水解原料乳清。</td>
-<td style="text-align: left;">在RSM优化的条件（52.7°C, pH 5.5, 2.9 U/mL）下处理原料乳清2小时。</td>
-<td style="text-align: left;">实现<strong>近完全乳糖水解</strong>。</td>
-<td style="text-align: left;">M10具有实际工业应用潜力。</td>
-<td style="text-align: left;">未进行中试或连续流反应器测试。</td>
-<td style="text-align: left;">Results节</td>
+<td>乳清验证</td>
+<td>实际应用潜力</td>
+<td>优化条件下 2 小时</td>
+<td>近完全水解</td>
+<td>M10 可用于乳清处理</td>
+<td>未提供乳清来源、初始乳糖浓度、水解率具体数值</td>
+<td>摘要</td>
 </tr>
 </tbody>
 </table>
 <h2>11 结论正确解读</h2>
 <ul>
-<li><strong>任务范围</strong>: 本文仅针对一种特定的GH42 β-半乳糖苷酶（Tn1577）进行工程化，并测试了其对乳糖的水解活性。结论不能直接推广到所有GH42酶或所有底物。</li>
-<li><strong>oracle/真值输入</strong>: 虚拟筛选的准确性依赖于底物结合能计算方法的精度，其预测结果并非绝对真值，需要实验验证。</li>
-<li><strong>端到端状态</strong>: 本文完成了从计算设计到实验验证再到工艺优化的完整流程，但未进行大规模工业生产验证。</li>
-<li><strong>算力成本</strong>: 未提供MD模拟和虚拟筛选的具体算力消耗。</li>
-<li><strong>历史数据依赖</strong>: 共识序列设计依赖于同源序列数据库的完整性和质量。</li>
-<li><strong>模型依赖</strong>: 虚拟筛选和MD模拟的结果依赖于所使用的力场和软件。</li>
-<li><strong>最难情形</strong>: 未测试M10在极端pH、高盐或存在其他抑制物条件下的性能。</li>
-<li><strong>群体/领域边界</strong>: 结论仅适用于乳糖水解这一特定反应，以及乳清这一特定工业基质。</li>
-<li><strong>不确定性</strong>: 活性提升6.5倍是在特定实验条件下（55°C）测得的，在其他温度或底物浓度下可能不同。MD模拟揭示的机制是计算预测，需要更直接的实验证据（如X射线晶体学）来最终确认。</li>
-<li><strong>有边界的复述</strong>: 本文通过共识设计和虚拟筛选，成功将一种来自 <em>T. naphthophila</em> 的GH42 β-半乳糖苷酶改造为M10突变体，该突变体在55°C、pH 5.5条件下，对乳清中乳糖的水解活性相比野生型提升了6.5倍，并在2小时内实现了近完全水解。这一成功依赖于一种“削弱亲和力以加速周转”的工程策略，并通过MD模拟揭示了其结构基础。</li>
+<li><strong>任务范围</strong>：仅针对 GH42 β-半乳糖苷酶 Tn1577 的乳糖水解活性优化，未涉及其他底物或酶家族。</li>
+<li><strong>oracle/真值输入</strong>：实验测定的活性数据为真值；MD 模拟为解释性工具，非预测性 oracle。</li>
+<li><strong>端到端状态</strong>：从设计到验证完整，但未涉及大规模工业放大或长期稳定性测试。</li>
+<li><strong>算力成本</strong>：未提供 MD 模拟的计算资源或耗时。</li>
+<li><strong>历史数据依赖</strong>：consensus 设计依赖同源序列数据库，但未提供具体数据库版本或序列数量。</li>
+<li><strong>模型依赖</strong>：不适用（无 ML 模型）。</li>
+<li><strong>最难情形</strong>：未测试高浓度乳糖、复杂乳清基质（如脂肪、蛋白干扰）或长期连续运行。</li>
+<li><strong>不确定性</strong>：MD 模拟的力场选择、采样时长未说明；活性提升的动力学机制（kcat vs Km）未区分。</li>
+<li><strong>有边界的复述</strong>：在 55°C、pH 5.5 条件下，M10 突变体对乳清乳糖的水解活性较野生型提升 6.5 倍，可在 2 小时内实现近完全水解，但该结论仅限于所测试的乳清样品和实验条件，未涵盖长期稳定性或工业规模验证。</li>
 </ul>
 <h2>12 作者自认局限</h2>
-<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p>在提供的摘要中未发现作者明确承认的局限。摘要未包含 Limitations 或 Future Work 部分。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 操作温度需低于乳清蛋白热解链温度（~60°C），限制了更高温度下的应用潜力。
+- 酶用量为 2.9 U/mL，可能对工业成本有影响（未提供成本分析）。</p>
 <h2>13 批判性分析</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">[Analysis] 观察</th>
-<th style="text-align: left;">潜在问题或替代解释</th>
-<th style="text-align: left;">为何重要</th>
-<th style="text-align: left;">如何检验</th>
-<th style="text-align: left;">依据</th>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>活性提升的归因</strong></td>
-<td style="text-align: left;">作者将活性提升归因于“削弱亲和力以加速周转”，但未提供M10的Km和kcat具体数值。</td>
-<td style="text-align: left;">没有动力学参数，无法判断活性提升是来自kcat增加还是Km增加，或者两者共同作用。这是验证核心机制的关键证据。</td>
-<td style="text-align: left;">测定野生型和M10的稳态动力学参数（Km, kcat, kcat/Km）。</td>
-<td style="text-align: left;">文中仅提到“6.5-fold increase in lactose hydrolysis activity”，未提供Michaelis-Menten动力学数据。</td>
+<td>活性提升仅以「倍数」报告，未提供绝对动力学参数</td>
+<td>6.5 倍可能基于低 WT 基线，绝对活性仍可能低于其他工业酶</td>
+<td>无法与其他酶直接比较工业适用性</td>
+<td>要求提供 kcat、Km、kcat/Km 及单位酶活性（U/mg）</td>
+<td>摘要仅报告 relative increase</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>MD模拟的验证</strong></td>
-<td style="text-align: left;">MD模拟揭示了3个结构改变，但缺乏实验结构（如X-ray晶体结构）的验证。</td>
-<td style="text-align: left;">MD模拟结果依赖于力场和采样时间，可能存在偏差。实验结构是确认这些结构改变的金标准。</td>
-<td style="text-align: left;">解析M10突变体的晶体结构，与MD模拟预测的结构进行比较。</td>
-<td style="text-align: left;">文中仅依赖MD模拟，未提及任何实验结构数据。</td>
+<td>MD 模拟机制解释缺乏验证</td>
+<td>通道重塑、anion-π 相互作用可能为模拟伪影，而非真实机制</td>
+<td>机制解释若不可靠，则设计原则难以推广</td>
+<td>要求提供 MD 力场、模拟时长、重复次数；建议用突变体实验验证（如 Q340E 单点突变体）</td>
+<td>摘要未提供模拟细节</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>“共识”与“虚拟筛选”的贡献分离</strong></td>
-<td style="text-align: left;">作者声称是“协同策略”，但未设计实验来单独评估共识设计和虚拟筛选各自对最终性能提升的贡献。</td>
-<td style="text-align: left;">无法判断哪个步骤更关键，或者两者是否真的协同。这削弱了策略的通用性指导价值。</td>
-<td style="text-align: left;">设计对照实验：1) 仅用共识设计；2) 仅用虚拟筛选；3) 随机突变。比较各组最优突变体的性能。</td>
-<td style="text-align: left;">文中只展示了最终组合结果，无消融实验。</td>
+<td>乳清验证未报告初始乳糖浓度与水解率具体值</td>
+<td>「近完全水解」可能对应不同乳糖残留水平</td>
+<td>工业标准通常要求乳糖 &lt; 0.1 g/100 mL</td>
+<td>要求提供乳糖浓度测定方法、初始与最终浓度</td>
+<td>摘要仅描述 qualitative result</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>远端变构效应的证据强度</strong></td>
-<td style="text-align: left;">远端Q340E突变被解释为通过变构效应稳定构象，但证据仅为MD模拟中观察到的局部相互作用变化。</td>
-<td style="text-align: left;">变构效应通常需要更严格的实验验证（如双突变循环分析、NMR等）。目前的证据是相关性的，而非因果性的。</td>
-<td style="text-align: left;">进行双突变循环分析，定量测量Q340E与催化位点残基之间的耦合能。</td>
-<td style="text-align: left;">文中仅通过MD模拟观察到了新的相互作用，未进行变构效应的定量实验。</td>
+<td>Consensus 设计 + 虚拟筛选的组合策略未与单独策略对比</td>
+<td>无法判断两种策略各自的贡献</td>
+<td>若 consensus 设计单独即可达到类似效果，则虚拟筛选步骤可简化</td>
+<td>要求提供单策略对照实验（仅 consensus、仅虚拟筛选）</td>
+<td>摘要仅报告组合策略结果</td>
+</tr>
+<tr>
+<td>未报告突变体的热稳定性数据</td>
+<td>活性提升可能伴随稳定性下降</td>
+<td>工业应用需同时满足热稳定性和活性</td>
+<td>要求提供 Tm 或半衰期数据</td>
+<td>摘要仅提及 thermostable 但未给数据</td>
 </tr>
 </tbody>
 </table>
 <h2>14 学到什么</h2>
-<p><strong>Agent 提炼的知识候选</strong></p>
-<ol>
-<li>
-<p><strong>可迁移概念: “Km-kcat trade-off” 工程策略</strong></p>
-<ul>
-<li><strong>概念</strong>: 对于需要高周转率的酶，故意降低底物亲和力（提高Km）可以加速产物释放，从而提升kcat，最终提高整体催化效率。</li>
-<li><strong>如何迁移到本课题</strong>: 在蛋白质结构相关计算研究中，当设计<strong>高活性酶</strong>（如用于生物合成、降解或信号放大）时，不应盲目追求高亲和力。可以通过计算模拟（如MD、对接）预测哪些突变能“松动”底物结合，同时保持或提升催化步骤的速率。这为<strong>构象采样</strong>和<strong>分子对接</strong>研究提供了新的优化目标：不仅要找结合最紧的构象，也要找结合适中但解离最快的构象。</li>
-</ul>
-</li>
-<li>
-<p><strong>可迁移方法: 远端变构位点的理性设计</strong></p>
-<ul>
-<li><strong>方法</strong>: 通过MD模拟识别远离活性位点的“热点”残基，这些残基的突变可以通过长程相互作用（如氢键网络重排、盐桥形成）稳定整体构象。</li>
-<li><strong>如何迁移到本课题</strong>: 在<strong>蛋白质设计</strong>（如 <em>de novo</em> 设计或功能改造）中，除了关注活性位点，还应系统性地探索远端位点。可以开发基于图神经网络或弹性网络模型的方法，预测哪些远端残基的突变能通过变构效应影响活性位点的动态和功能。这为<strong>结构/序列设计</strong>提供了新的设计空间。</li>
-</ul>
-</li>
-<li>
-<p><strong>可迁移实验设计: 虚拟筛选与理性设计的协同</strong></p>
-<ul>
-<li><strong>设计</strong>: 将计算筛选（如虚拟对接、结合能计算）作为实验前的过滤器，大幅缩小候选突变范围，再结合理性设计原则（如共识序列）进行组合。</li>
-<li><strong>如何迁移到本课题</strong>: 在<strong>分子对接</strong>和<strong>虚拟筛选</strong>研究中，可以借鉴此思路，将对接结果与序列保守性、结构稳定性等特征结合，构建多目标评分函数，以提高筛选命中率。这对于<strong>AI方法</strong>而言，可以设计一个多任务学习模型，同时预测结合能、稳定性和活性。</li>
-</ul>
-</li>
-</ol>
+<p><strong>Agent 提炼的知识候选</strong>（面向蛋白质结构相关计算研究 × AI/物理模拟）：
+1. <strong>Consensus sequence design 作为先验</strong>：在缺乏高分辨率结构或 ML 模型时，同源序列保守性可提供稳定化突变候选，是一种低成本先验，可与 ML 预测结合。
+2. <strong>虚拟结合能筛选作为预筛工具</strong>：在实验前用计算结合能排序突变体，可减少实验工作量；但需注意结合能预测的准确性边界。
+3. <strong>「降低亲和力提升周转」的反直觉策略</strong>：在底物浓度高的工业环境中，适当削弱底物结合可避免产物抑制或酶「卡死」，提升总催化通量。可迁移至其他酶工程或蛋白质设计任务。
+4. <strong>远端别构突变</strong>：Q340E 位于活性位点远端，通过别构效应稳定整体构象。这提示在设计中可关注非活性位点残基，而非仅聚焦催化中心。
+5. <strong>MD 模拟用于机制解释</strong>：MD 可揭示突变如何影响通道几何、口袋刚性及非共价相互作用网络，为设计提供结构解释；但需注意模拟条件透明化。
+6. <strong>RSM 用于多参数优化</strong>：在酶工程中，反应条件（温度、pH、酶量）的联合优化可显著提升实际应用效果，适合作为实验设计模板。</p>
 <h2>15 与已有知识连接</h2>
 <ul>
-<li><strong>相似工作</strong>: 本文与许多通过<strong>共识序列设计</strong>提升酶稳定性的工作（如Reetz, M. T.等人的研究）相似，但创新点在于同时结合了<strong>虚拟结合能筛选</strong>来优化活性，并揭示了“削弱亲和力”这一反直觉的机制。</li>
-<li><strong>组合方向</strong>: 本文的“Km-kcat trade-off”策略可以与<strong>定向进化</strong>（Directed Evolution）方法结合。例如，可以先通过定向进化获得高活性但低稳定性的突变体，再通过共识设计或计算设计引入稳定性突变，实现优势互补。</li>
-<li><strong>冲突观点</strong>: 传统酶工程常认为“高亲和力是高活性的前提”。本文提供了一个反例，挑战了这一观点，并强调了<strong>催化周转速率</strong>的重要性。这与一些关于“底物抑制”和“产物释放为限速步骤”的研究一致。</li>
-<li><strong>可迁移领域</strong>: 该策略可迁移到其他<strong>水解酶</strong>（如纤维素酶、蛋白酶）、<strong>糖基转移酶</strong>或任何需要高周转率的工业酶的设计中。在<strong>蛋白质结构预测</strong>领域，该工作强调了<strong>动态构象</strong>（如底物通道的开放与关闭）对功能的重要性，而不仅仅是静态结构。</li>
+<li><strong>相似工作</strong>：Consensus design 在酶热稳定性工程中已有广泛应用（如 Lehmann &amp; Wyss, 2001, Curr Opin Biotechnol），本文将其与虚拟筛选结合，属于方法组合创新。</li>
+<li><strong>组合策略</strong>：与「计算设计 + 实验进化」的经典范式（如 Arnold 定向进化）相比，本文采用半理性设计，减少筛选库规模。</li>
+<li><strong>MD 模拟在酶工程中的应用</strong>：与「MD 引导的酶设计」文献一致（如 Childers &amp; Daggett, 2017, Mol Syst Des Eng），但本文更侧重机制解释而非设计预测。</li>
+<li><strong>可迁移领域</strong>：本文的「通道重塑 + 远端别构」策略可迁移至其他底物通道明确的酶（如糖苷酶、蛋白酶）；「降低亲和力提升周转」思路可迁移至工业生物催化中的高底物浓度场景。</li>
+<li><strong>与 AlphaFold 等结构预测工具的关系</strong>：本文未使用 AlphaFold，但 consensus 设计可视为序列层面的「先验」，若与 AlphaFold 预测结构结合，可能进一步提升设计效率 [Analysis]。</li>
 </ul>
 <h2>16 研究想法</h2>
-<p><strong>Agent 生成的研究候选</strong></p>
+<p><strong>Agent 生成的研究候选</strong>：</p>
 <ol>
 <li>
-<p><strong>名称</strong>: 基于图神经网络的远端变构位点预测与设计</p>
-<ul>
-<li><strong>来源局限/观察</strong>: 本文通过MD模拟偶然发现了远端Q340E的变构效应，但缺乏系统性的预测方法。现有方法多关注活性位点。</li>
-<li><strong>核心假设</strong>: 蛋白质的残基-残基相互作用网络（如接触图、协方差矩阵）中，存在一些“枢纽”节点，其突变能通过长程传播显著影响活性位点的动态和功能。</li>
-<li><strong>相对本文的增量</strong>: 将变构位点的发现从“事后解释”提升为“事前预测”，并实现自动化设计。</li>
-<li><strong>初步方法</strong>: 1) 构建蛋白质残基接触图或基于MD模拟的动态相关性网络。2) 使用图神经网络（GNN）学习节点（残基）特征与活性位点动态变化（如RMSF）之间的关系。3) 训练模型预测哪些远端残基的突变能最大程度地改变活性位点动态。4) 在GH42酶或其他系统上验证预测。</li>
-<li><strong>验证方式</strong>: 1) 计算预测：模型预测的变构位点与已知变构位点（如本文的Q340）的匹配度。2) 实验验证：选择预测的远端位点进行突变，测定其活性、稳定性，并用MD模拟验证其变构效应。</li>
-<li><strong>可能的失败模式</strong>: 1) 变构效应过于微弱或非特异性，难以被GNN捕捉。2) 模型过拟合到训练集，泛化能力差。3) 预测的突变在实验上难以实现或产生毒性。</li>
-<li><strong>创新状态</strong>: unverified</li>
-</ul>
+<p><strong>候选名称</strong>：ML 引导的 GH42 酶多目标优化
+   - <strong>来源局限/观察</strong>：本文依赖 consensus + 虚拟筛选，未使用 ML 模型；活性提升机制未完全解析。
+   - <strong>核心假设</strong>：图神经网络（GNN）或序列-结构联合模型可同时预测活性和稳定性，优于 consensus 先验。
+   - <strong>初步方法</strong>：收集 GH42 序列-活性-稳定性数据集，训练多任务模型；用主动学习迭代设计突变体。
+   - <strong>验证方式</strong>：与本文 M10 对比，在相同条件下测定活性与 Tm。
+   - <strong>可能的失败模式</strong>：数据量不足导致模型过拟合；活性-稳定性 trade-off 难以同时优化。
+   - <strong>创新状态</strong>：unverified</p>
 </li>
 <li>
-<p><strong>名称</strong>: 基于增强采样的底物通道动力学分析与设计</p>
-<ul>
-<li><strong>来源局限/观察</strong>: 本文通过常规MD模拟观察到M10的底物通道变宽，但常规MD可能无法充分采样通道的开放/关闭事件，尤其是对于大底物。</li>
-<li><strong>核心假设</strong>: 底物通道的“门控”动力学（开放频率、开放幅度、开放持续时间）是决定酶催化效率的关键限速步骤，且可以通过突变进行理性调控。</li>
-<li><strong>相对本文的增量</strong>: 从静态的“通道尺寸”分析，深入到动态的“门控动力学”分析，并提供设计原则。</li>
-<li><strong>初步方法</strong>: 1) 对野生型和M10进行增强采样MD模拟（如Metadynamics、Umbrella Sampling），计算底物通道沿反应坐标（如通道半径）的自由能景观。2) 分析通道开放/关闭的能垒、频率和路径。3) 将通道动力学参数（如开放能垒）与酶活性（kcat）进行关联。4) 基于此，设计新的突变来进一步降低开放能垒或延长开放时间。</li>
-<li><strong>验证方式</strong>: 1) 计算验证：增强采样模拟预测的通道动力学差异。2) 实验验证：测定新设计突变体的活性，并与预测的通道动力学参数进行对比。</li>
-<li><strong>可能的失败模式</strong>: 1) 增强采样模拟的计算成本过高。2) 通道动力学与活性的关联并非线性，存在其他限速步骤。3) 过度开放通道可能导致底物选择性丧失或稳定性下降。</li>
-<li><strong>创新状态</strong>: unverified</li>
-</ul>
+<p><strong>候选名称</strong>：MD 引导的通道重塑设计规则提取
+   - <strong>来源局限/观察</strong>：本文 MD 模拟揭示了通道重塑机制，但未系统化提取设计规则。
+   - <strong>核心假设</strong>：底物通道的几何参数（直径、疏水性、电荷分布）与催化效率存在可量化关系。
+   - <strong>初步方法</strong>：对 GH42 同源酶进行 MD 模拟，计算通道几何与底物通过自由能；建立回归模型预测活性。
+   - <strong>验证方式</strong>：设计通道突变体，实验测定活性并与模型预测对比。
+   - <strong>可能的失败模式</strong>：通道几何与活性的相关性弱；MD 采样不足导致自由能计算不准确。
+   - <strong>创新状态</strong>：unverified</p>
 </li>
 <li>
-<p><strong>名称</strong>: 结合AlphaFold2动态与Rosetta设计的“弱亲和力-高周转”酶设计流程</p>
-<ul>
-<li><strong>来源局限/观察</strong>: 本文的“削弱亲和力”策略依赖于对野生型酶的理解和MD模拟，但MD模拟耗时。AlphaFold2可以快速预测结构，但其对动态和亲和力的预测能力有限。</li>
-<li><strong>核心假设</strong>: 可以利用AlphaFold2预测的多种构象（通过多序列比对或随机种子）来模拟酶的动态，并结合Rosetta的界面能量计算，筛选出那些预测结合能适中（而非最强）但构象多样性高的突变体，这些突变体可能具有更高的周转率。</li>
-<li><strong>相对本文的增量</strong>: 提出一个无需昂贵MD模拟的、基于AlphaFold2和Rosetta的快速设计流程，专门针对“高周转率”这一目标。</li>
-<li><strong>初步方法</strong>: 1) 对目标酶，使用AlphaFold2生成多个预测结构（如通过不同的MSA子集或随机种子）。2) 对每个候选突变，使用Rosetta进行柔性对接或界面扫描，计算其与底物的结合能。3) 计算突变体预测结构的构象多样性（如平均RMSD）。4) 构建一个评分函数：Score = - (结合能) + α * (构象多样性)，其中α是权重。选择Score最高的突变体。5) 在GH42酶上测试该流程，并与本文的M10进行比较。</li>
-<li><strong>验证方式</strong>: 1) 计算验证：该流程预测的突变体是否具有更高的kcat和更高的Km。2) 实验验证：表达并纯化预测的突变体，测定其动力学参数。</li>
-<li><strong>可能的失败模式</strong>: 1) AlphaFold2预测的构象多样性可能不反映真实的溶液动态。2) Rosetta的结合能计算精度不足以区分细微的亲和力变化。3) 构象多样性过高可能导致酶失活。</li>
-<li><strong>创新状态</strong>: unverified</li>
-</ul>
+<p><strong>候选名称</strong>：别构位点预测与远端突变设计
+   - <strong>来源局限/观察</strong>：Q340E 的别构效应是本文亮点，但别构位点发现依赖 MD 模拟，缺乏系统性预测方法。
+   - <strong>核心假设</strong>：蛋白质残基相互作用网络中的高介数中心性节点可作为别构突变候选。
+   - <strong>初步方法</strong>：构建 Tn1577 残基相互作用图，计算中心性指标；结合 MD 模拟验证候选位点突变效应。
+   - <strong>验证方式</strong>：实验测定突变体活性与稳定性，与 M10 对比。
+   - <strong>可能的失败模式</strong>：中心性指标与别构效应相关性弱；突变可能破坏蛋白折叠。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AlphaFold 结构预测 + consensus 设计的组合策略
+   - <strong>来源局限/观察</strong>：本文未使用 AlphaFold，但 consensus 设计可受益于结构信息。
+   - <strong>核心假设</strong>：AlphaFold 预测结构可提高 consensus 位点选择的准确性，尤其在活性位点附近。
+   - <strong>初步方法</strong>：对 Tn1577 及同源酶进行 AlphaFold 预测，结合 consensus 位点与结构环境（如 B-factor、口袋残基）筛选突变。
+   - <strong>验证方式</strong>：与本文 M10 对比活性与稳定性。
+   - <strong>可能的失败模式</strong>：AlphaFold 对突变体结构预测不准确；结构信息对 consensus 设计增益有限。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：乳清基质中酶性能的微流控高通量筛选
+   - <strong>来源局限/观察</strong>：本文乳清验证为批次实验，未涉及高通量筛选。
+   - <strong>核心假设</strong>：微流控液滴系统可在乳清基质中快速筛选突变体，加速工业适用酶开发。
+   - <strong>初步方法</strong>：构建液滴微流控平台，以荧光标记乳糖类似物为底物，筛选 M10 衍生突变体库。
+   - <strong>验证方式</strong>：与批次实验对比筛选效率与命中率。
+   - <strong>可能的失败模式</strong>：乳清基质中荧光干扰；液滴内酶动力学与批次差异。
+   - <strong>创新状态</strong>：unverified</p>
 </li>
 </ol></div>
   </section>
@@ -389,77 +394,99 @@
     <h2>审稿人评审</h2>
     <div class="md"><h2>Review setup</h2>
 <ul>
-<li><strong>Input scope</strong> Abstract</li>
-<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract only</li>
-<li><strong>Shared manuscript claim summary</strong> The authors report the engineering of a GH42 β-galactosidase (Tn1577) from <em>Thermotoga naphthophila</em> RUK10 using consensus design and virtual binding energy screening, yielding a triple mutant (M10, H271Q/V357G/Q340E) with a 6.5-fold increase in lactose hydrolysis activity at 55°C. The mutant is claimed to achieve near-complete hydrolysis of raw whey lactose within 2 hours under mild conditions (52.7°C, pH 5.5, 2.9 U/mL), preserving whey protein integrity.</li>
-<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, or supplementary data provided.</li>
-<li><strong>Missing materials affecting confidence</strong> Full manuscript, including Methods, Results, Figures, Tables, Supplementary Information, and any raw data or statistical analyses.</li>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no full manuscript, figures, tables, or supplementary materials were provided.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors report the engineering of a GH42 β-galactosidase (Tn1577) from <em>Thermotoga naphthophila</em> RUK10 via consensus design and virtual binding energy screening, yielding a triple mutant (M10: H271Q/V357G/Q340E) with a 6.5-fold increase in lactose hydrolysis activity at 55 °C. The mutant is claimed to achieve near-complete hydrolysis of whey lactose within 2 h under optimized conditions (52.7 °C, pH 5.5, 2.9 U/mL), with structural mechanisms elucidated by MD simulations.</li>
+<li><strong>Visible evidence base</strong> Abstract text only. No experimental data, sequence alignments, MD simulation parameters, kinetic measurements, or statistical analyses are visible.</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, supplementary data (e.g., sequence alignments, MD simulation trajectories, raw kinetic data, response surface methodology details, raw whey composition, and replicate information).</li>
 </ul>
 <h2>Reviewer</h2>
 <ul>
-<li><strong>Overall assessment</strong> The abstract presents an interesting and potentially impactful engineering strategy for improving a thermophilic GH42 β-galactosidase for whey lactose hydrolysis. The combination of consensus design and virtual screening is a rational approach, and the claimed 6.5-fold activity improvement is notable. However, the abstract lacks critical quantitative evidence to support the mechanistic claims and the reported performance metrics. The absence of any data on thermostability, kinetic parameters, and the statistical basis for the response surface methodology (RSM) optimization makes the current claims unverifiable. The mechanistic narrative, while plausible, is not supported by any presented data.</li>
-<li><strong>Who would be interested in the results, and why</strong> Researchers in industrial enzymology, dairy science, and food biotechnology would be interested. The work addresses a practical bottleneck in lactose-free dairy processing by offering a potentially more efficient and thermostable enzyme that operates under mild conditions, preserving whey protein value. The engineering strategy itself may be of interest to protein engineers.</li>
-<li><strong>Major strengths</strong> </li>
-<li>The synergistic engineering strategy (consensus design + virtual screening) is a rational and potentially generalizable approach for enzyme improvement.</li>
-<li>The target application (whey lactose hydrolysis) is of clear industrial and environmental importance.</li>
-<li>The claimed 6.5-fold activity improvement and near-complete hydrolysis in 2 hours are practically significant if substantiated.</li>
-<li><strong>Major Concerns</strong></li>
-<li><strong>Concern ID</strong> R1-M1
-    <strong>Severity</strong> Major
-    <strong>Blocking</strong> Yes
-    <strong>Axis</strong> Data completeness and verification
-    <strong>Claim pointer</strong> "mutant M10 achieves a remarkable 6.5-fold increase in lactose hydrolysis activity at 55 degrees C compared with the wild-type enzyme."
-    <strong>Evidence pointer</strong> Abstract; location not provided
-    <strong>Concern</strong> The abstract provides no quantitative data to support this claim. No specific activity values (e.g., U/mg), kinetic parameters (kcat, Km), or statistical error bars are reported. The basis for the "6.5-fold" increase is unclear.
-    <strong>Why it matters</strong> Without these data, the magnitude of improvement cannot be assessed, and the claim is unverifiable. The fold-change could be misleading if the wild-type activity is very low or if the measurement conditions are not standardized.
-    <strong>Resolution test</strong> Provide the specific activity (U/mg) of wild-type and M10 at 55°C, along with standard deviations and number of replicates. Report Michaelis-Menten kinetic parameters (kcat, Km, kcat/Km) for both enzymes.</li>
-<li><strong>Concern ID</strong> R1-M2
-    <strong>Severity</strong> Major
-    <strong>Blocking</strong> Yes
-    <strong>Axis</strong> Mechanistic support
-    <strong>Claim pointer</strong> "Molecular dynamics (MD) simulations revealed that M10s performance is driven by 3 key structural alterations... This engineered rigidity introduces a beneficial kinetic trade-off: it drastically accelerates catalytic turnover by intentionally weakening substrate affinity..."
-    <strong>Evidence pointer</strong> Abstract; location not provided
-    <strong>Concern</strong> The abstract presents a detailed mechanistic model (remodeled substrate tunnel, rigidified catalytic pocket, allosteric Q340E mutation, weakened substrate affinity) but provides no quantitative MD simulation data (e.g., RMSD, RMSF, binding free energy calculations, tunnel dimensions) to support these claims. The "beneficial kinetic trade-off" is a specific hypothesis that requires direct kinetic evidence (e.g., increased kcat, increased Km).
-    <strong>Why it matters</strong> The mechanistic narrative is central to the paper's novelty and scientific interest. Without supporting data, it remains speculation. The claim of "weakened substrate affinity" is directly testable via Km measurement.
-    <strong>Resolution test</strong> Provide key MD simulation results (e.g., RMSF plots, tunnel analysis, binding free energy from MM/GBSA). Report the Km and kcat values for wild-type and M10 to directly test the "weakened substrate affinity" and "accelerated turnover" claims.</li>
-<li><strong>Concern ID</strong> R1-M3
-    <strong>Severity</strong> Major
-    <strong>Blocking</strong> Yes
-    <strong>Axis</strong> Industrial performance validation
-    <strong>Claim pointer</strong> "Response surface methodology established ideal industrial parameters: 52.7 degrees C, pH 5.5, and an enzyme dosage of 2.9 U/mL. Under these conditions, M10 accomplishes near-complete lactose hydrolysis of raw whey within a brief 2-h window."
-    <strong>Evidence pointer</strong> Abstract; location not provided
-    <strong>Concern</strong> The abstract reports optimized parameters and a performance claim ("near-complete lactose hydrolysis") without any data. The RSM model fit (e.g., R², p-values), the actual hydrolysis percentage, and the experimental validation of the predicted optimum are not provided. The definition of "near-complete" is ambiguous.
-    <strong>Why it matters</strong> The industrial applicability of the enzyme hinges on this claim. Without quantitative data (e.g., % lactose conversion, time course, reproducibility), the claim is not credible.
-    <strong>Resolution test</strong> Provide the RSM model statistics (e.g., ANOVA table, R², lack-of-fit test). Report the actual lactose hydrolysis percentage (e.g., &gt;95%) achieved under the optimized conditions, with error bars from triplicate experiments. Show a time-course of lactose hydrolysis.</li>
-<li><strong>Minor Comments</strong></li>
-<li><strong>Concern ID</strong> R1-m1
-    <strong>Severity</strong> Minor
-    <strong>Axis</strong> Clarity and terminology
-    <strong>Affected element</strong> "home-discovered"
-    <strong>Evidence pointer</strong> Abstract
-    <strong>Issue</strong> The term "home-discovered" is informal and ambiguous. It is unclear if this means the enzyme was newly identified in the authors' lab or if it is a previously known enzyme from a public database.
-    <strong>Required correction</strong> Replace with a standard term such as "newly identified," "previously uncharacterized," or provide a reference to its discovery.</li>
-<li><strong>Concern ID</strong> R1-m2
-    <strong>Severity</strong> Minor
-    <strong>Axis</strong> Readability for nonspecialists
-    <strong>Affected element</strong> "anion-pi interaction"
-    <strong>Evidence pointer</strong> Abstract
-    <strong>Issue</strong> While a standard term in structural biology, "anion-pi interaction" may not be familiar to all readers in the dairy science community. The abstract should briefly explain its significance (e.g., "a stabilizing non-covalent interaction").
-    <strong>Required correction</strong> Add a brief parenthetical explanation, e.g., "a stabilizing non-covalent interaction between a negatively charged residue and an aromatic ring."</li>
-<li><strong>Concern ID</strong> R1-m3
-    <strong>Severity</strong> Minor
-    <strong>Axis</strong> Data presentation
-    <strong>Affected element</strong> "6.5-fold increase"
-    <strong>Evidence pointer</strong> Abstract
-    <strong>Issue</strong> The fold-change is reported without a baseline or error. It is unclear if this is the maximum activity or the activity under specific conditions.
-    <strong>Required correction</strong> Specify the conditions (e.g., "at 55°C, pH 5.5, and 1 mM lactose") and report the absolute values with errors.</li>
+<li><strong>Overall assessment</strong> The abstract presents an interesting and potentially impactful engineering strategy for improving a thermophilic β-galactosidase for industrial lactose hydrolysis. The combination of consensus design and virtual screening is logical, and the claimed 6.5-fold activity improvement is notable. However, the abstract lacks the quantitative evidence needed to evaluate the robustness of the claims. Critical details—such as the number of sequences used for consensus, the virtual screening methodology, the statistical significance of the activity increase, and the reproducibility of the whey hydrolysis results—are absent. The mechanistic interpretations from MD simulations are plausible but cannot be assessed without the underlying data. The abstract is promising but insufficient to establish the case.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in industrial enzymology, dairy processing, and protein engineering would be interested. The work addresses a practical bottleneck in whey valorization, and the engineering strategy (consensus design + virtual screening) is broadly applicable. The potential for a mild-temperature, rapid lactose hydrolysis process is attractive for the dairy industry.</li>
+<li><strong>Major strengths</strong> 1. The problem is well-defined and industrially relevant. 2. The engineering strategy (consensus design + virtual screening) is rational and synergistic. 3. The claimed 6.5-fold activity improvement is substantial. 4. The proposed structural mechanisms (substrate tunnel remodeling, pocket rigidification, allosteric stabilization) are mechanistically interesting.</li>
+<li><strong>Major Concerns</strong><ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "mutant M10 achieves a remarkable 6.5-fold increase in lactose hydrolysis activity at 55 degrees C compared with the wild-type enzyme"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract provides no quantitative data to support the 6.5-fold activity increase. No kinetic parameters (kcat, KM, kcat/KM), specific activity values, or error estimates are given. It is unclear whether this is a single measurement or the mean of replicates, and what the statistical significance is.</li>
+<li><strong>Why it matters</strong> Without these data, the magnitude and reliability of the claimed improvement cannot be assessed. A 6.5-fold increase could be due to experimental variation, assay conditions, or a single outlier.</li>
+<li><strong>Resolution test</strong> Provide the specific activity (U/mg) or kinetic parameters for both wild-type and M10, with at least triplicate measurements and standard deviations. Report the fold-change with confidence intervals.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "M10 accomplishes near-complete lactose hydrolysis of raw whey within a brief 2-h window"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not define "near-complete" (e.g., &gt;95%? &gt;99%?), nor does it provide the initial lactose concentration, the final residual lactose, or the number of independent experiments. The use of raw whey introduces variability (e.g., pH, protein content, ionic strength) that is not controlled for.</li>
+<li><strong>Why it matters</strong> "Near-complete" is ambiguous. Without a precise definition and supporting data, the claim of practical applicability is unsubstantiated. The dairy industry requires rigorous validation under realistic conditions.</li>
+<li><strong>Resolution test</strong> Report the percentage of lactose hydrolyzed (e.g., 98.5% ± 0.3%) from at least three independent whey batches. Specify the initial lactose concentration and the assay conditions (e.g., whey source, pre-treatment).</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological transparency</li>
+<li><strong>Claim pointer</strong> "consensus sequence design and virtual binding energy screening was applied"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe the consensus design methodology (e.g., number of homologous sequences, alignment threshold, consensus threshold) or the virtual screening protocol (e.g., software, scoring function, library size). The iterative saturation mutagenesis is mentioned but not detailed.</li>
+<li><strong>Why it matters</strong> These are the core engineering steps. Without methodological details, the work cannot be reproduced or evaluated for rigor. The choice of consensus positions and the virtual screening parameters directly affect the outcome.</li>
+<li><strong>Resolution test</strong> Provide a clear description of the consensus design pipeline (including sequence database, alignment tool, and consensus criteria) and the virtual screening workflow (including software, target structure, and scoring function). Report the number of variants screened and the selection criteria.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "Molecular dynamics (MD) simulations revealed that M10s performance is driven by 3 key structural alterations"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract provides qualitative descriptions of MD-derived mechanisms (substrate tunnel remodeling, pocket rigidification, allosteric stabilization) but no quantitative metrics (e.g., RMSD, RMSF, tunnel radius, binding free energy, hydrogen bond occupancy). The simulation length, force field, and number of replicates are not stated.</li>
+<li><strong>Why it matters</strong> MD simulations are powerful but require rigorous validation. Without quantitative data, the proposed mechanisms remain speculative. The claim of "allosteric regulation" from a single distal mutation is particularly strong and needs robust support.</li>
+<li><strong>Resolution test</strong> Provide key MD metrics (e.g., RMSD plots, RMSF per residue, tunnel radius profiles, hydrogen bond occupancy for Q340E) for both wild-type and M10. State simulation parameters (length, force field, temperature, number of replicates). Show that the observed changes are statistically significant.</li>
+</ul>
+</li>
+<li><strong>Minor Comments</strong><ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> "home-discovered GH42-galactosidase"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The term "home-discovered" is informal and ambiguous. It is unclear whether the enzyme was newly identified in this study or previously reported by the group.</li>
+<li><strong>Required correction</strong> Replace with a precise statement, e.g., "a GH42 β-galactosidase (Tn1577) identified in our laboratory from <em>Thermotoga naphthophila</em> RUK10" or provide a reference if previously published.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> "intentionally weakening substrate affinity"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract states that the engineered rigidity "intentionally weakens substrate affinity" to prevent stagnation. This is a teleological interpretation. The data may show a higher KM, but the "intention" is a design choice, not a mechanistic observation.</li>
+<li><strong>Required correction</strong> Rephrase to describe the observed kinetic trade-off objectively, e.g., "The mutations result in a higher KM (weakened substrate affinity) and a higher kcat, leading to a net increase in catalytic efficiency under the tested conditions."</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> "Response surface methodology established ideal industrial parameters"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract reports optimized parameters (52.7 °C, pH 5.5, 2.9 U/mL) but does not state the response variable (e.g., lactose conversion, specific activity) or the model fit (e.g., R², lack-of-fit test).</li>
+<li><strong>Required correction</strong> Specify the response variable and provide key RSM statistics (e.g., model R², significance of factors) in the full manuscript.</li>
+</ul>
+</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4. The core claims of activity improvement, practical whey hydrolysis, engineering methodology, and mechanistic understanding are all unsupported by the provided abstract.</li>
+<li><strong>Assessment against Nature-style criteria</strong> <ul>
+<li><strong>Originality</strong>: The combination of consensus design and virtual screening for GH42 β-galactosidases is not entirely novel, but the specific target (Tn1577) and the proposed allosteric mechanism (Q340E) show some originality. However, the abstract does not provide enough detail to assess the novelty of the approach relative to existing literature.</li>
+<li><strong>Scientific importance</strong>: The problem (whey lactose hydrolysis) is of high practical importance. A 6.5-fold improvement in a thermophilic enzyme is potentially significant, but the lack of quantitative data prevents assessment of the true impact.</li>
+<li><strong>Interdisciplinary readership</strong>: The work bridges protein engineering, dairy science, and bioprocess optimization, which could attract a broad readership. The abstract is written in a way that is accessible to nonspecialists.</li>
+<li><strong>Technical soundness</strong>: Cannot be assessed from the abstract alone. The methodological descriptions are too vague, and no data are provided to support the claims.</li>
+<li><strong>Readability for nonspecialists</strong>: The abstract is well-written and clear, with a logical flow. The mechanistic descriptions are understandable, though some terms (e.g., "anion-pi interaction") may require background knowledge.</li>
+</ul>
+</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract is promising and the research direction is sound, but the absence of any quantitative data or methodological detail means that the core claims cannot be evaluated. A full manuscript with rigorous experimental data is required before a recommendation can be made.</li>
 </ul>
 <h2>Risk / unsupported claims</h2>
 <ul>
-<li>The claim of a 6.5-fold activity increase is unsupported without specific activity or kinetic data.</li>
-<li>The entire mechanistic model (remodeled tunnel, rigidified pocket, allosteric regulation, kinetic trade-off) is unsupported without MD simulation data and kinetic parameters.</li>
-<li>The claim of "near-complete lactose hydrolysis" under optimized RSM conditions is unsupported without quantitative hydrolysis data and model statistics.</li>
-<li>The claim that the mild thermal regimen "prevents the thermal denaturation of other valuable whey components" is an inference not directly tested in the abstract.</li>
+<li>The 6.5-fold activity increase is unsupported (no kinetic data).</li>
+<li>Near-complete whey hydrolysis in 2 h is unsupported (no conversion data).</li>
+<li>The consensus design and virtual screening methodology is unverifiable (no details).</li>
+<li>The MD-derived structural mechanisms are unsupported (no quantitative metrics).</li>
+<li>The claim of "intentional" weakening of substrate affinity is a teleological interpretation, not a supported observation.</li>
+<li>The RSM-optimized parameters are presented without statistical context.</li>
 </ul></div>
   </section>
   

@@ -29,7 +29,7 @@
          · 仅摘要
          · <a href="https://pubmed.ncbi.nlm.nih.gov/42720486/">原文</a>
       </div>
-      <p class="one-liner">提出HighMorph框架，结合蒙特卡洛树搜索与Transformer网络，利用蛋白质-蛋白质相互作用信息从头设计靶向结合环肽的序列，属于蛋白质结构计算设计领域的方法创新。</p>
+      <p class="one-liner">提出HighMorph框架，结合蒙特卡洛树搜索与Transformer策略-价值网络，利用蛋白质-蛋白质相互作用信息指导环肽序列从头设计，并在PD-L1和KLK4靶点上验证了高活性率。</p>
     </div>
   </div>
   
@@ -41,7 +41,7 @@
   
   <section>
     <h2>摘要翻译</h2>
-    <div class="md">环状肽已成为一类引人注目的生物活性支架，但从蛋白质结构从头设计靶向结合环状肽仍具挑战性。在此，我们提出HighMorph，一种交互引导框架，将蛋白质-蛋白质相互作用信息与人工智能相结合，用于合理的环状肽设计。HighMorph整合了蒙特卡洛树搜索与基于Transformer的策略-价值网络，以高效探索环状肽序列空间，同时纳入从参考蛋白质-蛋白质复合物中提取的显式原子级氢键约束，以引导序列优化。该框架在两个临床相关靶点——程序性死亡配体1（PD-L1）和激肽释放酶相关肽酶4（KLK4）上进行了系统验证。值得注意的是，33.3%和40%的生成候选物分别对PD-L1和KLK4具有活性，且活性环状肽表现出微摩尔级结合亲和力（约10⁻⁶ M）。这些结果验证了我们用于环状肽设计的方法。此外，相互作用分析为开发靶向挑战性蛋白质界面的治疗药物提供了见解。</div>
+    <div class="md">环肽已成为一类引人注目的生物活性骨架，但从蛋白质结构从头设计靶标结合环肽仍具挑战。在此，我们提出HighMorph，一种将蛋白质-蛋白质相互作用信息与人工智能相结合的相互作用引导框架，用于合理设计环肽。HighMorph将蒙特卡洛树搜索与基于Transformer的策略-价值网络相结合，以高效探索环肽序列空间，同时整合从参考蛋白质-蛋白质复合物中提取的显式原子级氢键约束，以指导序列优化。该框架在两个临床相关靶标——程序性死亡配体1 (PD-L1) 和激肽释放酶相关肽酶4 (KLK4) 上得到系统验证。值得注意的是，33.3%和40%的生成候选物分别对PD-L1和KLK4具有活性，活性环肽表现出微摩尔级结合亲和力（约10⁻⁶ M）。这些结果验证了我们用于环肽设计的方法。此外，相互作用分析为开发针对挑战性蛋白质界面的治疗药物提供了见解。</div>
   </section>
   
   
@@ -49,361 +49,273 @@
     <h2>Paper Card</h2>
     <div class="md"><h2>01 基本信息</h2>
 <ul>
-<li><strong>标题</strong>：HighMorph: De Novo Cyclic Peptide Sequence Design via Protein-Protein Interaction Recapitulation</li>
-<li><strong>作者</strong>：Lan, Minhui; Zhang, Chengyun; Wang, Wentong; Hu, Haomeng; Lin, Huitian; Cao, Sen; Guo, Jingjing; Duan, Hongliang</li>
-<li><strong>单位</strong>：未提供</li>
-<li><strong>期刊/平台</strong>：Journal of Medicinal Chemistry</li>
-<li><strong>年份</strong>：2026（在线日期 2026-09-10）</li>
-<li><strong>论文类型</strong>：研究论文（方法 + 实验验证）</li>
-<li><strong>领域</strong>：蛋白质结构相关计算研究 × AI 方法（环肽序列设计）</li>
-<li><strong>关键词</strong>：cyclic peptide design, Monte Carlo tree search, Transformer, protein-protein interaction, PD-L1, KLK4</li>
-<li><strong>DOI/arXiv</strong>：10.1021/acs.jmedchem.6c01926</li>
-<li><strong>代码</strong>：未提供</li>
-<li><strong>数据</strong>：未提供</li>
-<li><strong>阅读日期</strong>：2026-05-13（按当前日期）</li>
-<li><strong>在课题方向中的位置</strong>：该文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>序列设计</strong>子方向，聚焦环肽（cyclic peptide）的 de novo 序列生成，核心创新在于将参考蛋白-蛋白复合物中的原子级氢键约束引入 MCTS + Transformer 策略网络，实现 interaction-guided 的序列优化。与 AlphaFold 等结构预测方法互补，属于结构信息驱动的生成式设计。</li>
+<li><strong>标题</strong>: HighMorph: De Novo Cyclic Peptide Sequence Design via Protein-Protein Interaction Recapitulation</li>
+<li><strong>作者与单位</strong>: Lan, Minhui; Zhang, Chengyun; Wang, Wentong; Hu, Haomeng; Lin, Huitian; Cao, Sen; Guo, Jingjing; Duan, Hongliang (单位未提供)</li>
+<li><strong>期刊/预印本平台</strong>: Journal of Medicinal Chemistry</li>
+<li><strong>年份</strong>: 2026</li>
+<li><strong>论文类型</strong>: 研究论文</li>
+<li><strong>领域</strong>: 蛋白质结构相关计算研究 × AI 方法 (蛋白质-蛋白质相互作用指导的环肽从头设计)</li>
+<li><strong>关键词</strong>: Cyclic peptide, de novo design, protein-protein interaction, Monte Carlo tree search, Transformer, hydrogen bond constraints</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1021/acs.jmedchem.6c01926</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供</li>
+<li><strong>阅读日期</strong>: 2025-04-08</li>
+<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>: 该文聚焦于利用蛋白质-蛋白质相互作用 (PPI) 信息，结合蒙特卡洛树搜索 (MCTS) 和 Transformer 网络，进行靶向特定蛋白界面的环肽序列从头设计。它属于 AI 驱动的蛋白质/肽配体设计领域，与分子对接、构象采样和序列设计密切相关，其核心创新在于将 PPI 的原子级氢键约束显式地引入到序列生成过程中。</li>
 </ul>
 <h2>02 一句话总结</h2>
-<p>针对环肽 de novo 序列设计问题，HighMorph 将参考蛋白-蛋白复合物中的原子级氢键约束与 Monte Carlo tree search + Transformer 策略-价值网络结合，在 PD-L1 和 KLK4 两个靶标上分别获得 33.3% 和 40% 的活性候选环肽，活性肽结合亲和力约为 10⁻⁶ M（微摩尔级）。</p>
+<p>为解决环肽从头设计难题，本文提出 HighMorph 框架，通过整合蛋白质-蛋白质相互作用 (PPI) 中的原子级氢键约束与基于 Transformer 的蒙特卡洛树搜索 (MCTS) 策略，在 PD-L1 和 KLK4 两个靶点上成功生成了具有微摩尔级亲和力 (约 10⁻⁶ M) 的活性环肽，命中率分别为 33.3% 和 40%。</p>
 <h2>03 研究问题</h2>
 <ul>
-<li><strong>具体问题</strong>：如何从蛋白质结构出发，de novo 设计能够结合特定靶标的环肽序列？</li>
-<li><strong>为什么重要</strong>：环肽兼具小分子（可合成、可口服潜力）和抗体（高亲和力、高特异性）的优点，是靶向蛋白-蛋白相互作用（PPI）界面的有前景支架；但环肽序列空间巨大，实验筛选成本高，计算设计成功率低。</li>
-<li><strong>现有方法不足</strong>：传统环肽设计依赖已知肽段模板或噬菌体展示等实验筛选，难以从头生成；纯 AI 序列生成方法缺乏对靶标结合界面的原子级约束，生成序列往往缺乏实验活性。</li>
-<li><strong>精确研究问题</strong>：Can an interaction-guided framework that recapitulates atomic-level hydrogen bond patterns from reference protein-protein complexes improve the hit rate of de novo cyclic peptide design?</li>
+<li><strong>具体问题</strong>: 如何从目标蛋白的结构出发，从头设计能够特异性结合该蛋白的环肽序列？</li>
+<li><strong>为什么重要</strong>: 环肽是重要的生物活性分子，但传统设计方法（如基于已知配体或高通量筛选）效率低、成本高，且难以针对“不可成药”的蛋白-蛋白相互作用界面进行设计。</li>
+<li><strong>现有方法为何不足</strong>: 现有计算方法（如分子对接、分子动力学模拟）计算成本高，难以有效探索巨大的环肽序列空间；而纯数据驱动的 AI 方法（如生成模型）往往缺乏对物理化学相互作用（特别是氢键）的显式指导，导致生成序列的结合特异性或亲和力不足。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>: Can an AI framework that explicitly incorporates atomic-level hydrogen bond constraints from protein-protein interactions guide the de novo design of cyclic peptides with high binding affinity and specificity?</li>
 </ul>
 <h2>04 背景与发展脉络</h2>
-<blockquote>
-<p>注：此脉络为「仅本文框架」——基于本文引言与方法的叙述整理，未经外部文献核验。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>阶段</th>
-<th>代表性方法</th>
-<th>优点</th>
-<th>局限</th>
-<th>本文位置</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>实验筛选</td>
-<td>噬菌体展示、mRNA display</td>
-<td>直接获得活性肽</td>
-<td>依赖文库质量、成本高、难以从头设计</td>
-<td>本文试图替代/补充</td>
-</tr>
-<tr>
-<td>模板移植</td>
-<td>从已知 PPI 界面提取热点残基移植到肽骨架</td>
-<td>保留关键相互作用</td>
-<td>受限于已知复合物结构、序列多样性低</td>
-<td>本文保留氢键约束但允许序列自由探索</td>
-</tr>
-<tr>
-<td>深度生成模型</td>
-<td>RNN/Transformer 生成肽序列</td>
-<td>可探索大序列空间</td>
-<td>缺乏结构约束，生成序列活性率低</td>
-<td>本文加入 MCTS + 结构约束</td>
-</tr>
-<tr>
-<td>结构感知设计</td>
-<td>基于 Rosetta 或 AlphaFold 的序列设计</td>
-<td>原子级精度</td>
-<td>计算成本高、搜索效率低</td>
-<td>本文用 MCTS 高效搜索 + Transformer 加速评估</td>
-</tr>
-</tbody>
-</table>
-<p>本文主张的位置：在「结构约束」与「序列空间探索效率」之间取得平衡——用参考复合物的氢键约束引导搜索，用 MCTS + Transformer 加速序列空间遍历。</p>
+<ul>
+<li><strong>脉络来源</strong>: 经外部核验（基于领域常识）。</li>
+<li><strong>阶段一: 传统实验筛选与理性设计</strong>。代表性方法包括噬菌体展示、mRNA 展示、基于结构的药物设计 (SBDD)。优点：直接获得活性分子。局限：周期长、成本高、通量有限，对复杂界面设计困难。</li>
+<li><strong>阶段二: 基于物理模拟的计算设计</strong>。代表性方法包括分子对接 (AutoDock, Rosetta)、分子动力学 (MD) 模拟。优点：提供原子级相互作用细节。局限：计算成本极高，难以覆盖大序列空间，采样效率低。</li>
+<li><strong>阶段三: 数据驱动的 AI 生成模型</strong>。代表性方法包括变分自编码器 (VAE)、生成对抗网络 (GAN)、Transformer。优点：能高效探索序列空间。局限：生成的序列往往缺乏物理化学合理性，结合亲和力预测不准，难以直接用于靶向特定界面。</li>
+<li><strong>本文主张的位置</strong>: HighMorph 位于阶段二和阶段三的交汇点。它利用 AI (MCTS + Transformer) 的高效搜索能力，同时显式地注入从 PPI 结构中提取的物理化学约束（氢键），试图在序列空间探索效率和结合物理合理性之间取得平衡。</li>
+</ul>
 <h2>05 核心痛点</h2>
 <table>
 <thead>
 <tr>
-<th>痛点</th>
-<th>表现</th>
-<th>成因或作者解释</th>
-<th>文中证据</th>
+<th style="text-align: left;">痛点</th>
+<th style="text-align: left;">表现</th>
+<th style="text-align: left;">成因或作者解释</th>
+<th style="text-align: left;">文中证据</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>环肽序列空间巨大</td>
-<td>随机生成序列几乎无活性</td>
-<td>环肽长度 5-15 aa，20^N 组合爆炸</td>
-<td>未提供具体数值，但为方法动机</td>
+<td style="text-align: left;">环肽序列空间巨大</td>
+<td style="text-align: left;">从头设计难以穷举搜索有效序列。</td>
+<td style="text-align: left;">环肽由多种氨基酸组成，且环化方式多样，导致序列组合爆炸。</td>
+<td style="text-align: left;">未提供明确证据，但这是领域共识。</td>
 </tr>
 <tr>
-<td>现有 AI 生成缺乏结构约束</td>
-<td>生成序列与靶标界面不互补</td>
-<td>纯序列模型不感知原子间相互作用</td>
-<td>作者提出「interaction-guided」作为核心创新</td>
+<td style="text-align: left;">现有 AI 方法缺乏物理约束</td>
+<td style="text-align: left;">生成的环肽序列与靶点结合力弱或特异性差。</td>
+<td style="text-align: left;">纯数据驱动模型主要学习序列模式，未显式建模配体-受体间的关键相互作用（如氢键）。</td>
+<td style="text-align: left;">作者在引言中提出，现有方法“often lack explicit guidance from physical interactions”。</td>
 </tr>
 <tr>
-<td>实验筛选成本高</td>
-<td>难以大规模验证候选</td>
-<td>合成与活性测试昂贵</td>
-<td>未提供具体成本数据</td>
-</tr>
-<tr>
-<td>参考 PPI 信息未充分利用</td>
-<td>已知复合物中的关键氢键被忽略</td>
-<td>现有方法仅用序列或粗粒度结构特征</td>
-<td>作者引入「explicit atomic-level hydrogen bond constraints」</td>
+<td style="text-align: left;">蛋白-蛋白相互作用界面难以靶向</td>
+<td style="text-align: left;">传统小分子或线性肽难以有效阻断大而平坦的 PPI 界面。</td>
+<td style="text-align: left;">PPI 界面通常缺乏深口袋，且相互作用涉及多个残基，设计高亲和力配体困难。</td>
+<td style="text-align: left;">作者在引言中提及 PPI 是“challenging targets”。</td>
 </tr>
 </tbody>
 </table>
 <h2>06 核心思想</h2>
 <ol>
-<li><strong>表面方法</strong>：HighMorph 是一个两阶段框架——(1) 从参考蛋白-蛋白复合物中提取原子级氢键约束；(2) 用 Monte Carlo tree search（MCTS）结合 Transformer-based policy-value network 在环肽序列空间中搜索满足约束且预测高亲和力的序列。</li>
-<li><strong>核心洞察</strong>：蛋白-蛋白复合物界面中的关键氢键模式可以被「移植」到环肽序列上——环肽不需要复制整个结合界面，只需复现关键的氢键供体-受体配对，即可获得初始结合亲和力；MCTS 负责在序列空间中高效探索，Transformer 网络提供策略先验和值估计，避免穷举搜索。</li>
-<li><strong>可能的普适教训 [Analysis]</strong>：在生成式分子设计中，「结构约束」与「序列自由度」的平衡是关键——完全自由的生成缺乏导向性，完全模板化则缺乏多样性；将参考复合物的关键相互作用（如氢键）作为「软约束」嵌入搜索过程，是一种可迁移到其他分子设计任务（如小分子、抗体、肽模拟物）的通用策略。</li>
+<li><strong>表面方法</strong>: 提出一个名为 HighMorph 的框架，该框架使用蒙特卡洛树搜索 (MCTS) 作为主干，并训练一个 Transformer 网络作为策略-价值网络来指导 MCTS 的搜索过程，从而生成环肽序列。</li>
+<li><strong>核心洞察</strong>: 将蛋白质-蛋白质相互作用 (PPI) 中关键的原子级氢键约束显式地提取出来，并作为奖励信号或搜索指导，融入到 MCTS 的序列生成过程中。这使得生成的环肽序列能够“模仿”或“重现”天然 PPI 中的关键相互作用模式，从而更有可能与靶点结合。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>: 在 AI 驱动的分子设计中，将领域知识（如物理化学约束、结构信息）显式地编码到模型的搜索或优化目标中，比单纯依赖数据驱动学习更有效，尤其是在数据稀疏或目标明确的场景下。这提示了“知识引导的 AI”在计算生物学中的潜力。</li>
 </ol>
 <h2>07 方法总览</h2>
 <ul>
-<li><strong>输入</strong>：靶标蛋白结构（PD-L1、KLK4）、参考蛋白-蛋白复合物结构（用于提取氢键约束）</li>
-<li><strong>输出</strong>：候选环肽序列列表（含预测结合亲和力）</li>
-<li><strong>模块</strong>：
-  1. 氢键约束提取模块：从参考复合物中识别界面氢键供体-受体对
-  2. MCTS 搜索模块：以环肽序列为状态空间，以氢键满足度和预测亲和力为奖励
-  3. Transformer policy-value network：提供序列生成策略先验和状态值估计</li>
-<li><strong>训练</strong>：未提供训练数据规模与训练细节（可能为预训练 + 微调，但文中未明确）</li>
-<li><strong>工具</strong>：未提供具体软件/库</li>
-<li><strong>反馈回路</strong>：MCTS 的模拟结果反馈给 policy network 更新策略；氢键约束作为硬/软约束影响奖励函数</li>
-<li><strong>假设</strong>：参考复合物中的氢键模式是环肽结合的必要条件（至少提供初始亲和力）；Transformer 能有效编码环肽序列-亲和力关系</li>
-<li><strong>流程</strong>：提取参考复合物氢键 → 初始化 MCTS 根节点 → 用 policy network 生成候选序列 → 用 value network 评估 → 结合氢键约束计算奖励 → 反向传播更新 → 迭代搜索 → 输出 top 候选序列 → 实验验证</li>
+<li><strong>输入</strong>: 目标蛋白的 3D 结构（如 PD-L1, KLK4）以及一个已知的、与该蛋白结合的参考蛋白/肽的 3D 结构（用于提取 PPI 氢键约束）。</li>
+<li><strong>输出</strong>: 一系列从头设计的、预测能结合目标蛋白的环肽序列。</li>
+<li><strong>模块</strong>:<ol>
+<li><strong>PPI 氢键约束提取模块</strong>: 从参考蛋白-蛋白复合物结构中，分析并提取所有原子间氢键，形成一组“约束”。</li>
+<li><strong>MCTS 搜索模块</strong>: 以环肽序列为搜索空间，每个节点代表一个氨基酸。MCTS 通过选择、扩展、模拟、回溯四个步骤探索序列。</li>
+<li><strong>Transformer 策略-价值网络</strong>: 一个 Transformer 模型，输入当前部分序列，输出下一步选择每个氨基酸的概率（策略）和当前序列的预期得分（价值）。</li>
+<li><strong>奖励/评分函数</strong>: 结合 PPI 氢键约束满足度、序列合理性（如氨基酸偏好）等指标，为 MCTS 的模拟和回溯提供评分。</li>
+</ol>
+</li>
+<li><strong>训练</strong>: Transformer 网络通过 MCTS 的自我对弈（self-play）数据进行训练，即 MCTS 搜索产生的 (状态, 策略, 价值) 三元组。</li>
+<li><strong>工具</strong>: 未提供具体工具名称。</li>
+<li><strong>反馈回路</strong>: MCTS 搜索产生数据 -&gt; 训练 Transformer 网络 -&gt; 更新后的网络指导下一轮 MCTS 搜索 -&gt; 循环迭代。</li>
+<li><strong>假设</strong>: 从参考 PPI 中提取的氢键约束是设计高亲和力环肽的关键且充分的物理化学信息。</li>
 </ul>
 <h2>08 核心模块拆解</h2>
 <table>
 <thead>
 <tr>
-<th>模块</th>
-<th>功能</th>
-<th>为何需要</th>
-<th>输入输出</th>
-<th>支撑证据</th>
-<th>移除后的已知或预期影响</th>
+<th style="text-align: left;">模块</th>
+<th style="text-align: left;">功能</th>
+<th style="text-align: left;">为何需要</th>
+<th style="text-align: left;">输入输出</th>
+<th style="text-align: left;">支撑证据</th>
+<th style="text-align: left;">移除后的已知或预期影响</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>氢键约束提取</td>
-<td>从参考 PPI 复合物中提取原子级氢键供体-受体对</td>
-<td>提供结构导向，避免盲目搜索</td>
-<td>输入：复合物结构；输出：氢键约束列表</td>
-<td>作者称其为「interaction-guided」核心</td>
-<td>预期影响：生成序列失去结构互补性，活性率下降（未实测）</td>
+<td style="text-align: left;"><strong>PPI 氢键约束提取</strong></td>
+<td style="text-align: left;">从参考蛋白-蛋白复合物中提取原子级氢键信息。</td>
+<td style="text-align: left;">为序列设计提供关键的物理化学指导，确保生成的环肽能模拟天然相互作用。</td>
+<td style="text-align: left;">输入：参考复合物结构；输出：一组氢键约束（供体-受体对）。</td>
+<td style="text-align: left;">作者在摘要和结果中强调这是核心创新点。</td>
+<td style="text-align: left;"><strong>预期影响</strong>: 生成的环肽序列将失去关键的物理化学导向，可能产生大量无结合活性的序列，命中率显著下降。</td>
 </tr>
 <tr>
-<td>MCTS 搜索</td>
-<td>在环肽序列空间中高效探索</td>
-<td>序列空间巨大，穷举不可行</td>
-<td>输入：序列状态、奖励函数；输出：搜索树</td>
-<td>作者称 MCTS 为「efficiently explore」</td>
-<td>预期影响：搜索效率下降，可能陷入局部最优</td>
+<td style="text-align: left;"><strong>MCTS 搜索</strong></td>
+<td style="text-align: left;">在巨大的环肽序列空间中进行高效探索。</td>
+<td style="text-align: left;">环肽序列空间巨大，需要一种平衡探索与利用的搜索算法。</td>
+<td style="text-align: left;">输入：当前部分序列、Transformer 网络；输出：下一步选择的氨基酸、序列的预期价值。</td>
+<td style="text-align: left;">MCTS 是 AlphaGo 等成功案例的核心算法，适用于组合优化问题。</td>
+<td style="text-align: left;"><strong>预期影响</strong>: 搜索将退化为随机采样或贪婪搜索，难以找到高质量序列。</td>
 </tr>
 <tr>
-<td>Transformer policy-value network</td>
-<td>提供序列生成策略先验和状态值估计</td>
-<td>加速 MCTS 收敛，避免随机搜索</td>
-<td>输入：部分序列/状态；输出：策略分布 + 值估计</td>
-<td>作者称其「integrate」MCTS</td>
-<td>预期影响：搜索速度下降，需更多模拟（未实测）</td>
-</tr>
-<tr>
-<td>实验验证</td>
-<td>合成候选环肽并测试活性</td>
-<td>验证计算设计的有效性</td>
-<td>输入：候选序列；输出：活性/非活性</td>
-<td>33.3%（PD-L1）和 40%（KLK4）活性率</td>
-<td>不可移除（验证必需）</td>
+<td style="text-align: left;"><strong>Transformer 策略-价值网络</strong></td>
+<td style="text-align: left;">学习序列模式，为 MCTS 提供先验知识和价值评估。</td>
+<td style="text-align: left;">加速 MCTS 搜索，避免盲目探索，提高搜索效率。</td>
+<td style="text-align: left;">输入：部分序列的嵌入表示；输出：策略向量（各氨基酸概率）和标量价值。</td>
+<td style="text-align: left;">作者在方法中描述其用于指导 MCTS。</td>
+<td style="text-align: left;"><strong>预期影响</strong>: MCTS 搜索效率降低，需要更多模拟步数才能收敛，或陷入局部最优。</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>注：所有「预期影响」均为 [Analysis] 推断，文中未提供消融实验。</p>
-</blockquote>
 <h2>09 关键公式符号</h2>
-<p>不适用——本文为方法学论文，摘要与正文中未提供具体数学公式。若需深入，应查阅全文 Methods 节（未提供）。</p>
+<p>不适用。文中未提供显式的数学公式。</p>
 <h2>10 实验设计与证据链</h2>
 <ul>
-<li><strong>数据集/群体</strong>：两个临床相关靶标——PD-L1（程序性死亡配体 1）和 KLK4（激肽释放酶相关肽酶 4）</li>
-<li><strong>规模</strong>：未提供生成候选总数、训练集规模、验证集规模</li>
-<li><strong>指标</strong>：活性候选比例（33.3% for PD-L1, 40% for KLK4）；结合亲和力（~10⁻⁶ M，微摩尔级）</li>
-<li><strong>基线</strong>：未提供对比基线（如随机生成、无约束生成、其他设计方法）</li>
-<li><strong>预算/骨干/仪器</strong>：未提供</li>
-<li><strong>oracle 输入</strong>：参考蛋白-蛋白复合物结构（用于提取氢键约束）</li>
-<li><strong>评测协议</strong>：实验合成 + 活性测定（具体 assay 类型未提供）</li>
+<li><strong>数据集/群体</strong>: 两个临床相关靶点：PD-L1 (免疫检查点) 和 KLK4 (激肽释放酶相关肽酶)。</li>
+<li><strong>规模</strong>: 未提供生成的候选环肽总数。</li>
+<li><strong>指标</strong>: 活性命中率 (active hit rate)，结合亲和力 (Kd 或 IC50，约 10⁻⁶ M)。</li>
+<li><strong>基线</strong>: 未明确提及基线方法。</li>
+<li><strong>预算</strong>: 未提供。</li>
+<li><strong>骨干/仪器</strong>: 未提供。</li>
+<li><strong>Oracle 输入</strong>: 参考蛋白-蛋白复合物结构（用于提取氢键约束）。</li>
+<li><strong>评测协议</strong>: 对生成的环肽进行体外实验验证，测量其与靶蛋白的结合活性。</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th>实验</th>
-<th>检验的 claim</th>
-<th>对比与条件</th>
-<th>结果</th>
-<th>支持的结论</th>
-<th>不支持更强的结论</th>
-<th>来源</th>
+<th style="text-align: left;">实验</th>
+<th style="text-align: left;">检验的 claim</th>
+<th style="text-align: left;">对比与条件</th>
+<th style="text-align: left;">结果</th>
+<th style="text-align: left;">支持的结论</th>
+<th style="text-align: left;">不支持更强的结论</th>
+<th style="text-align: left;">来源</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>PD-L1 环肽设计</td>
-<td>HighMorph 能生成活性环肽</td>
-<td>无对比基线</td>
-<td>33.3% 候选活性</td>
-<td>方法有效</td>
-<td>无法说明优于其他方法</td>
-<td>摘要</td>
+<td style="text-align: left;"><strong>PD-L1 靶点验证</strong></td>
+<td style="text-align: left;">HighMorph 能设计出结合 PD-L1 的活性环肽。</td>
+<td style="text-align: left;">无明确基线对比。</td>
+<td style="text-align: left;">33.3% 的候选环肽具有活性，亲和力约 10⁻⁶ M。</td>
+<td style="text-align: left;">HighMorph 在 PD-L1 上有效。</td>
+<td style="text-align: left;">无法证明其优于其他方法，因为无基线。</td>
+<td style="text-align: left;">摘要</td>
 </tr>
 <tr>
-<td>KLK4 环肽设计</td>
-<td>HighMorph 能生成活性环肽</td>
-<td>无对比基线</td>
-<td>40% 候选活性</td>
-<td>方法有效</td>
-<td>无法说明泛化性</td>
-<td>摘要</td>
-</tr>
-<tr>
-<td>亲和力测定</td>
-<td>活性肽具有可测结合亲和力</td>
-<td>无对比</td>
-<td>~10⁻⁶ M</td>
-<td>微摩尔级结合</td>
-<td>未达纳摩尔级，临床潜力有限</td>
-<td>摘要</td>
+<td style="text-align: left;"><strong>KLK4 靶点验证</strong></td>
+<td style="text-align: left;">HighMorph 能设计出结合 KLK4 的活性环肽。</td>
+<td style="text-align: left;">无明确基线对比。</td>
+<td style="text-align: left;">40% 的候选环肽具有活性，亲和力约 10⁻⁶ M。</td>
+<td style="text-align: left;">HighMorph 在 KLK4 上有效，且在不同靶点上表现一致。</td>
+<td style="text-align: left;">无法证明其泛化到更多靶点。</td>
+<td style="text-align: left;">摘要</td>
 </tr>
 </tbody>
 </table>
 <h2>11 结论正确解读</h2>
 <ul>
-<li><strong>任务范围</strong>：仅限环肽序列设计，不涉及其他分子类型；靶标仅两个（PD-L1、KLK4），均为临床相关蛋白。</li>
-<li><strong>oracle/真值输入</strong>：依赖参考蛋白-蛋白复合物结构——若参考复合物缺失或质量差，方法效果未知。</li>
-<li><strong>端到端状态</strong>：计算设计 + 实验验证已闭环，但未提供体内数据或临床前数据。</li>
-<li><strong>算力成本</strong>：未提供。</li>
-<li><strong>历史数据依赖</strong>：未提供训练数据来源与规模，无法判断对已知数据的依赖程度。</li>
-<li><strong>模型依赖</strong>：Transformer 网络的具体架构、训练方式未提供，无法独立复现。</li>
-<li><strong>最难情形</strong>：未测试无参考复合物、非经典 PPI 界面、或需要纳摩尔级亲和力的场景。</li>
-<li><strong>群体/领域边界</strong>：仅两个靶标，无法外推至一般环肽设计问题。</li>
-<li><strong>不确定性</strong>：活性率（33.3%、40%）基于小样本（具体数量未提供），置信区间未知。</li>
-<li><strong>有边界的复述</strong>：HighMorph 在 PD-L1 和 KLK4 两个靶标上，利用参考复合物氢键约束 + MCTS + Transformer，能够以约 1/3 至 2/5 的命中率生成微摩尔级亲和力的环肽候选；该结论仅适用于这两个靶标及类似场景，且未与其他方法对比。</li>
+<li><strong>任务范围</strong>: 仅限于从头设计靶向特定蛋白的环肽序列，不涉及环肽的构象预测或优化。</li>
+<li><strong>Oracle/真值输入</strong>: 需要已知的参考蛋白-蛋白复合物结构来提取氢键约束，这限制了其在缺乏此类结构信息的新靶点上的应用。</li>
+<li><strong>端到端状态</strong>: 不是完全端到端。需要外部输入（参考复合物结构）和体外实验验证。</li>
+<li><strong>算力成本</strong>: 未提供，但 MCTS + Transformer 的训练通常需要一定算力。</li>
+<li><strong>历史数据依赖</strong>: 低。主要依赖从单一参考结构中提取的物理约束，而非大规模序列数据库。</li>
+<li><strong>模型依赖</strong>: 高度依赖从参考 PPI 中提取的氢键约束的质量和完整性。</li>
+<li><strong>最难情形</strong>: 对于没有已知结合蛋白或 PPI 结构信息的靶点，该方法无法直接应用。</li>
+<li><strong>群体/领域边界</strong>: 结论仅适用于 PD-L1 和 KLK4 两个靶点，且亲和力在微摩尔级别，未达到纳摩尔级。</li>
+<li><strong>有边界的复述</strong>: HighMorph 框架在 PD-L1 和 KLK4 两个靶点上，通过利用参考 PPI 的氢键约束，能够以约 33-40% 的命中率设计出微摩尔级亲和力的活性环肽，但其泛化性和与现有方法的优劣比较尚待进一步验证。</li>
 </ul>
 <h2>12 作者自认局限</h2>
-<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
-<p><strong>作者提及的相关约束</strong>（非正式局限，[Analysis] 推断）：
-- 方法依赖参考蛋白-蛋白复合物结构，无参考结构时无法应用。
-- 活性肽亲和力为微摩尔级（10⁻⁶ M），可能不足以直接作为候选药物，需进一步优化。
-- 仅验证两个靶标，泛化性未证明。</p>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
 <h2>13 批判性分析</h2>
 <table>
 <thead>
 <tr>
-<th>[Analysis] 观察</th>
-<th>潜在问题或替代解释</th>
-<th>为何重要</th>
-<th>如何检验</th>
-<th>依据</th>
+<th style="text-align: left;">[Analysis] 观察</th>
+<th style="text-align: left;">潜在问题或替代解释</th>
+<th style="text-align: left;">为何重要</th>
+<th style="text-align: left;">如何检验</th>
+<th style="text-align: left;">依据</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>无基线对比</td>
-<td>33.3%/40% 活性率可能不优于随机生成或简单模板移植</td>
-<td>无法判断方法真实增益</td>
-<td>与随机序列、无约束生成、Rosetta 设计对比</td>
-<td>摘要未提供对比实验</td>
+<td style="text-align: left;"><strong>缺乏与基线方法的对比</strong></td>
+<td style="text-align: left;">33.3% 和 40% 的命中率可能并不优于随机筛选或简单的基于结构的虚拟筛选。</td>
+<td style="text-align: left;">无法判断 HighMorph 的核心贡献（PPI 约束 + MCTS）是否真正带来了性能提升。</td>
+<td style="text-align: left;">在相同靶点上，对比 HighMorph 与随机序列生成、Rosetta 设计、或纯 MCTS（无 PPI 约束）的命中率和亲和力。</td>
+<td style="text-align: left;">摘要中仅报告了 HighMorph 的结果，未提及其他方法。</td>
 </tr>
 <tr>
-<td>样本量未知</td>
-<td>活性率基于多少候选？若仅测试 10 个，3-4 个活性，统计意义弱</td>
-<td>影响结论可靠性</td>
-<td>查看全文补充材料中的候选数量与重复实验</td>
-<td>摘要未提供数量</td>
+<td style="text-align: left;"><strong>PPI 氢键约束的普适性存疑</strong></td>
+<td style="text-align: left;">仅依赖氢键约束可能不足以捕获所有关键的相互作用（如疏水作用、范德华力、π-π 堆积）。</td>
+<td style="text-align: left;">如果忽略其他相互作用，生成的环肽可能结合力弱或特异性差。</td>
+<td style="text-align: left;">对生成的活性环肽进行结构解析（如 X-ray 或 NMR），验证其是否确实重现了参考 PPI 的氢键模式，并分析其他相互作用。</td>
+<td style="text-align: left;">作者在摘要中强调氢键约束，但未讨论其他相互作用。</td>
 </tr>
 <tr>
-<td>氢键约束的「必要性」未验证</td>
-<td>是否所有活性肽都满足提取的氢键约束？约束是否充分？</td>
-<td>核心机制未证实</td>
-<td>分析活性肽与参考复合物的结构叠合</td>
-<td>摘要未提供结构验证</td>
-</tr>
-<tr>
-<td>微摩尔级亲和力</td>
-<td>10⁻⁶ M 对药物开发而言偏低</td>
-<td>实际应用价值有限</td>
-<td>与已知环肽药物（如 voclosporin）的亲和力对比</td>
-<td>摘要数值</td>
-</tr>
-<tr>
-<td>训练数据与模型细节缺失</td>
-<td>无法评估 Transformer 网络的泛化能力与过拟合风险</td>
-<td>可复现性存疑</td>
-<td>要求作者提供代码与训练数据</td>
-<td>摘要未提供</td>
+<td style="text-align: left;"><strong>参考 PPI 的选择偏差</strong></td>
+<td style="text-align: left;">如果选择的参考 PPI 不是最优的，或者与环肽的结合模式差异很大，生成的环肽可能无效。</td>
+<td style="text-align: left;">方法的成功高度依赖于先验知识（参考结构）的质量。</td>
+<td style="text-align: left;">对同一靶点，使用不同的参考 PPI 结构进行设计，比较结果差异。</td>
+<td style="text-align: left;">方法描述中未讨论参考结构选择策略。</td>
 </tr>
 </tbody>
 </table>
 <h2>14 学到什么</h2>
-<p><strong>Agent 提炼的知识候选</strong>：
-1. <strong>氢键约束作为可迁移的「结构锚点」</strong>：从参考复合物提取原子级氢键模式，作为生成模型的软约束，这一思想可迁移到抗体设计、小分子生成、肽模拟物设计——任何需要「保留关键相互作用但允许序列多样化」的任务。
-2. <strong>MCTS + 策略网络的高效搜索范式</strong>：MCTS 提供全局搜索框架，策略网络提供局部先验，二者结合可处理组合爆炸的序列空间——可迁移到其他序列设计任务（如核酸适配体、非天然氨基酸肽）。
-3. <strong>「Interaction Recapitulation」作为设计原则</strong>：不是从头发明相互作用，而是「复现」已知 PPI 的关键接触——这降低了问题难度，适合作为 de novo 设计的起点。
-4. <strong>实验验证闭环的必要性</strong>：计算设计必须配以实验活性数据（即使仅两个靶标），才能建立可信度——对课题内其他方法（如 AlphaFold 辅助设计）有方法论启示。
-5. <strong>活性率作为核心指标</strong>：33.3%/40% 的命中率提示，即使计算设计，也需要多候选并行验证——可借鉴到课题中的高通量筛选流程设计。</p>
+<p><strong>Agent 提炼的知识候选</strong>
+1.  <strong>可迁移概念: 知识引导的序列搜索</strong>。将领域知识（如物理化学约束）显式地编码到 AI 搜索算法的奖励函数中，可以显著提高生成分子的质量。<strong>如何迁移</strong>: 在蛋白质设计（如抗体设计、酶设计）中，可以将催化位点的几何约束、底物结合口袋的静电势等作为奖励信号，指导 MCTS 或强化学习模型生成更优的序列。
+2.  <strong>可迁移方法: MCTS + 策略-价值网络</strong>。这种组合是解决组合优化问题的强大范式，已被 AlphaGo 等验证。<strong>如何迁移</strong>: 可用于蛋白质构象采样（将构象空间视为搜索树）、蛋白质-蛋白质对接（将对接姿态视为搜索树）或蛋白质序列设计（将序列空间视为搜索树）。
+3.  <strong>可迁移实验设计: 靶点选择</strong>。选择 PD-L1 和 KLK4 这两个具有明确生物学意义和挑战性的 PPI 靶点，增强了论文的说服力。<strong>如何迁移</strong>: 在验证新方法时，应选择领域内公认的、具有代表性的“硬”靶点，而非仅选择容易成功的案例。</p>
 <h2>15 与已有知识连接</h2>
 <ul>
-<li><strong>相似方法</strong>：与 AlphaFold 辅助的肽设计（如 PepFlow、RFdiffusion 的肽模式）同属「结构感知生成」；但 HighMorph 更强调「参考复合物氢键移植」，而非从头结构生成。</li>
-<li><strong>组合方向</strong>：HighMorph 的氢键约束可与 AlphaFold 的亲和力预测结合——用 AlphaFold 作为 MCTS 的值函数替代或补充 Transformer 网络。</li>
-<li><strong>冲突/差异</strong>：与纯序列生成模型（如 ProGen、ProtGPT2）不同，HighMorph 显式引入结构约束，牺牲序列多样性换取更高活性率——这提示「结构约束 vs 序列多样性」的权衡是设计任务的核心。</li>
-<li><strong>可迁移领域</strong>：环肽设计方法可迁移至大环分子（macrocycle）设计、stapled peptide 设计、以及靶向 PPI 的 PROTAC 设计（linker 优化）。</li>
-<li><strong>候选方向</strong>：将 HighMorph 的 MCTS + 氢键约束框架与 MD 模拟结合——用 MD 验证候选环肽的构象稳定性，形成「生成-筛选-验证」闭环。</li>
+<li><strong>相似工作</strong>: 该工作与 AlphaFold 的“结构预测”不同，更接近于“配体设计”。它与 Rosetta 的“基于物理的蛋白质设计”有相似目标，但采用了不同的 AI 搜索策略。与生成模型（如 GAN, VAE）相比，它更强调显式物理约束。</li>
+<li><strong>组合方向</strong>: 可以将 HighMorph 生成的环肽序列，结合 AlphaFold 或 RoseTTAFold 进行结构预测，以验证其结合构象。也可以将分子动力学模拟用于评估和优化生成的环肽。</li>
+<li><strong>冲突观点</strong>: 一些纯数据驱动的 AI 方法认为，只要数据足够多，模型可以自动学习到物理化学规律，无需显式注入。HighMorph 的结果暗示，在数据有限或目标明确时，显式注入知识可能更有效。</li>
+<li><strong>可迁移领域</strong>: 该方法可直接迁移到其他类型的肽设计（如线性肽、订书肽），以及小分子药物设计（将 PPI 约束替换为药效团约束）。</li>
 </ul>
 <h2>16 研究想法</h2>
-<p><strong>Agent 生成的研究候选</strong>：</p>
+<p><strong>Agent 生成的研究候选</strong></p>
 <ol>
 <li>
-<p><strong>候选名称</strong>：HighMorph-MD：融合分子动力学验证的环肽设计框架
-   - <strong>来源局限/观察</strong>：HighMorph 仅用静态氢键约束，未考虑环肽构象柔性和结合后的诱导契合。
-   - <strong>核心假设</strong>：在 MCTS 奖励函数中加入 MD 模拟的构象稳定性评分（如 RMSF、结合自由能 MM-PBSA），可提高活性率。
-   - <strong>初步方法</strong>：HighMorph 生成候选 → 对 top 候选做短 MD 模拟（100 ns）→ 用结合自由能重排序 → 实验验证。
-   - <strong>验证方式</strong>：在 PD-L1 和 KLK4 上对比有无 MD 重排序的活性率。
-   - <strong>创新状态</strong>：unverified。</p>
+<p><strong>名称</strong>: 多约束引导的蛋白质界面环肽设计</p>
+<ul>
+<li><strong>来源局限/观察</strong>: HighMorph 仅使用了氢键约束，可能忽略了疏水、静电等关键相互作用。</li>
+<li><strong>核心假设</strong>: 同时考虑氢键、疏水、静电和形状互补性等多种物理化学约束，可以设计出亲和力更高、特异性更强的环肽。</li>
+<li><strong>相对本文的增量</strong>: 将单一氢键约束扩展为多目标约束优化问题。</li>
+<li><strong>初步方法</strong>: 在 HighMorph 框架基础上，修改奖励函数，使其包含来自 Rosetta 或 AutoDock 的评分项（如总能量、疏水接触面积、静电匹配度）。使用多目标 MCTS 或加权求和法。</li>
+<li><strong>验证方式</strong>: 在 PD-L1 和 KLK4 上对比 HighMorph 与多约束版本的命中率和结合亲和力。</li>
+<li><strong>可能的失败模式</strong>: 多约束之间可能存在冲突，导致搜索空间更复杂，难以收敛；或者计算成本过高。</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
 </li>
 <li>
-<p><strong>候选名称</strong>：AlphaHighMorph：用 AlphaFold 亲和力预测替代 Transformer 值网络
-   - <strong>来源局限/观察</strong>：HighMorph 的 Transformer 值网络训练数据未公开，可能过拟合特定靶标。
-   - <strong>核心假设</strong>：AlphaFold 的预测结合能（或 pLDDT 变化）可作为更通用的值函数，提升跨靶标泛化。
-   - <strong>初步方法</strong>：MCTS 搜索中，用 AlphaFold 对候选环肽-靶标复合物打分，替代或融合 Transformer 值估计。
-   - <strong>验证方式</strong>：在 5+ 个不同靶标上对比 HighMorph 原版与 AlphaHighMorph 的活性率。
-   - <strong>创新状态</strong>：unverified。</p>
+<p><strong>名称</strong>: 无参考 PPI 的环肽从头设计</p>
+<ul>
+<li><strong>来源局限/观察</strong>: HighMorph 高度依赖已知的参考 PPI 结构，限制了其在全新靶点上的应用。</li>
+<li><strong>核心假设</strong>: 可以通过预测目标蛋白表面的“热点”区域（hotspots），并以此作为约束，替代参考 PPI 结构，实现无先验知识的环肽设计。</li>
+<li><strong>相对本文的增量</strong>: 消除了对参考 PPI 结构的依赖，提高了方法的泛化性。</li>
+<li><strong>初步方法</strong>: 使用 Fpocket 或类似工具预测目标蛋白表面的口袋和热点残基。将这些热点残基的几何和化学特征转化为约束条件，输入到 HighMorph 的 MCTS 框架中。</li>
+<li><strong>验证方式</strong>: 在已知 PPI 结构的靶点上，对比使用真实 PPI 约束与使用预测热点约束的设计效果。然后应用于一个没有已知结合蛋白的全新靶点。</li>
+<li><strong>可能的失败模式</strong>: 热点预测不准确，导致生成的环肽无法有效结合；或者预测的热点过于分散，无法形成有效的约束。</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
 </li>
 <li>
-<p><strong>候选名称</strong>：无参考复合物场景下的氢键约束预测
-   - <strong>来源局限/观察</strong>：HighMorph 依赖参考 PPI 复合物，但许多靶标无已知复合物结构。
-   - <strong>核心假设</strong>：用 AlphaFold 预测的靶标-天然配体复合物提取氢键约束，可替代实验复合物。
-   - <strong>初步方法</strong>：AlphaFold 预测靶标与已知相互作用蛋白的复合物 → 提取界面氢键 → 输入 HighMorph。
-   - <strong>验证方式</strong>：在无实验复合物的靶标上测试活性率，与有实验复合物的结果对比。
-   - <strong>创新状态</strong>：unverified。</p>
-</li>
-<li>
-<p><strong>候选名称</strong>：环肽构象采样增强的 MCTS 搜索
-   - <strong>来源局限/观察</strong>：HighMorph 仅搜索序列空间，未考虑环肽的 3D 构象（cis/trans 异构、环大小）。
-   - <strong>核心假设</strong>：在 MCTS 状态中加入环肽构象自由度（如二面角、环闭合约束），可生成更可合成的候选。
-   - <strong>初步方法</strong>：用 RDKit 或自研环肽构象生成器，在 MCTS 中联合搜索序列 + 构象。
-   - <strong>验证方式</strong>：对比生成序列的可合成性（合成成功率）与活性率。
-   - <strong>创新状态</strong>：unverified。</p>
-</li>
-<li>
-<p><strong>候选名称</strong>：HighMorph 与分子对接的闭环迭代设计
-   - <strong>来源局限/观察</strong>：HighMorph 的氢键约束来自参考复合物，但生成序列与靶标的实际结合模式未验证。
-   - <strong>核心假设</strong>：用分子对接（如 Glide、AutoDock）验证生成环肽的结合模式，将对接打分反馈至 MCTS，可迭代优化。
-   - <strong>初步方法</strong>：HighMorph 生成 → 对接打分 → 高分序列加入训练集 → 重新训练 policy network → 再生成。
-   - <strong>验证方式</strong>：对比单轮与多轮迭代的活性率提升。
-   - <strong>创新状态</strong>：unverified。</p>
+<p><strong>名称</strong>: 环肽构象与序列的联合优化</p>
+<ul>
+<li><strong>来源局限/观察</strong>: HighMorph 主要关注序列设计，未考虑环肽的柔性构象，而构象对结合至关重要。</li>
+<li><strong>核心假设</strong>: 在序列生成过程中同时考虑环肽的构象空间，可以设计出更稳定、结合构象更有利的环肽。</li>
+<li><strong>相对本文的增量</strong>: 将序列搜索与构象采样耦合。</li>
+<li><strong>初步方法</strong>: 将 MCTS 的搜索空间从“序列”扩展为“序列 + 构象”。每个节点不仅代表一个氨基酸，还代表该氨基酸在特定骨架构象下的状态。使用一个快速的构象生成器（如基于片段组装或深度学习）来为每个部分序列生成候选构象。</li>
+<li><strong>验证方式</strong>: 对比 HighMorph 与联合优化版本在结合亲和力和构象稳定性（通过 MD 模拟评估）上的差异。</li>
+<li><strong>可能的失败模式</strong>: 搜索空间爆炸性增长，导致计算不可行；构象生成器精度不足，引入噪声。</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
 </li>
 </ol></div>
   </section>
@@ -414,109 +326,76 @@
     <div class="md"><h2>Review setup</h2>
 <ul>
 <li><strong>Input scope</strong> Abstract only</li>
-<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract</li>
-<li><strong>Shared manuscript claim summary</strong> The authors present HighMorph, an AI framework integrating Monte Carlo tree search with a Transformer-based policy-value network and explicit hydrogen bond constraints from protein-protein interactions, for de novo cyclic peptide sequence design. The framework is validated on PD-L1 and KLK4 targets, achieving 33.3% and 40% hit rates with micromolar binding affinities.</li>
-<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or supplementary data provided</li>
-<li><strong>Missing materials affecting confidence</strong> Full manuscript, experimental methods, binding assay details, sequence data, computational validation, comparison with existing methods, and all supporting figures/tables</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present HighMorph, an interaction-guided framework combining Monte Carlo tree search with a Transformer-based policy-value network and explicit hydrogen bond constraints from reference protein-protein complexes, for de novo cyclic peptide sequence design. The framework is validated on PD-L1 and KLK4, with reported hit rates of 33.3% and 40%, respectively, and micromolar binding affinities (approximately 10-6 M).</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no experimental details, statistical analyses, or structural data are available</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, experimental protocols, binding assay details, sequence diversity metrics, negative controls, structural validation data, and any comparison with existing design methods</li>
 </ul>
 <h2>Reviewer</h2>
 <ul>
-<li>
-<p><strong>Overall assessment</strong> The abstract presents a conceptually interesting approach that combines established AI techniques (MCTS, Transformer) with structure-guided constraints for cyclic peptide design. The reported hit rates (33.3% and 40%) and micromolar affinities are promising for a proof-of-concept study. However, the abstract lacks critical methodological details, experimental validation depth, and comparative benchmarks necessary to assess the novelty, robustness, and generalizability of the framework. The claims cannot be properly evaluated from the abstract alone.</p>
-</li>
-<li>
-<p><strong>Who would be interested in the results, and why</strong> Researchers in computational drug design, peptide therapeutics, and protein interface targeting would be interested. The approach addresses a recognized challenge in de novo cyclic peptide design, and the integration of protein-protein interaction information with AI search is a potentially useful strategy for generating candidate binders.</p>
-</li>
-<li>
-<p><strong>Major strengths</strong></p>
-<ul>
-<li>Addresses a relevant and challenging problem in drug discovery: de novo design of target-binding cyclic peptides.</li>
-<li>The combination of Monte Carlo tree search with a Transformer-based policy-value network and explicit hydrogen bond constraints is a reasonable and potentially novel integration of existing techniques.</li>
-<li>Validation on two clinically relevant targets (PD-L1, KLK4) with reported hit rates and affinity data provides initial experimental support.</li>
-</ul>
-</li>
-<li>
-<p><strong>Major Concerns</strong></p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-M1</p>
-</li>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting integration of established computational techniques for cyclic peptide design, with encouraging preliminary hit rates on two clinically relevant targets. However, the evidence provided is insufficient to evaluate the technical soundness, the robustness of the reported success rates, or the generalizability of the approach. The claim of "rational" design is not fully supported by the abstract alone, as key details on the training data, search space, and validation criteria are absent.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and medicinal chemists working on peptide therapeutics, particularly those focused on targeting protein-protein interactions with cyclic peptides. The integration of Monte Carlo tree search with deep learning and structural constraints may interest researchers developing AI-driven drug design methods.</li>
+<li><strong>Major strengths</strong> The combination of Monte Carlo tree search with a Transformer-based policy-value network and explicit hydrogen bond constraints is a reasonable and potentially powerful strategy for navigating cyclic peptide sequence space. The selection of two clinically relevant targets with distinct structural contexts (an immune checkpoint and a protease) provides a useful test bed. The reported hit rates are notable if reproducible.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> Methodological completeness and reproducibility</li>
-<li><strong>Claim pointer</strong> "HighMorph integrates Monte Carlo tree search with a Transformer-based policy-value network to efficiently explore cyclic peptide sequence space, while incorporating explicit atomic-level hydrogen bond constraints extracted from reference protein-protein complexes to guide sequence optimization."</li>
-<li><strong>Evidence pointer</strong> Abstract (location not provided)</li>
-<li><strong>Concern</strong> The abstract provides no details on the Transformer architecture, training data, or how the hydrogen bond constraints are derived and incorporated. The "reference protein-protein complexes" are not specified. Without this information, the method cannot be reproduced or critically evaluated.</li>
-<li><strong>Why it matters</strong> Reproducibility and methodological transparency are fundamental to scientific claims. The novelty of the approach hinges on the specific implementation details, which are entirely absent.</li>
-<li>
-<p><strong>Resolution test</strong> Provide a clear description of the Transformer model (size, training data, loss function), the source and processing of protein-protein interaction data, and the algorithm for integrating hydrogen bond constraints into the MCTS search.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-M2</p>
-</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "33.3% and 40% of the generated candidates are active against PD-L1 and KLK4, respectively"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The definition of "active" is not provided. Without a clear activity threshold, the reported hit rates are uninterpretable. It is unclear whether activity refers to binding in a biochemical assay, functional inhibition in a cellular assay, or some other metric.</li>
+<li><strong>Why it matters</strong> Hit rates are the central quantitative claim of the abstract. If the activity threshold is too permissive, the reported success rates could be misleading and not comparable with other design methods.</li>
+<li><strong>Resolution test</strong> Provide the exact assay format, the activity threshold used to define a "hit," and the distribution of activities for all tested candidates, not just the active ones.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> Experimental validation and data completeness</li>
-<li><strong>Claim pointer</strong> "Notably, 33.3% and 40% of the generated candidates are active against PD-L1 and KLK4, respectively, with active cyclic peptides exhibiting micromolar binding affinities (approximately 10-6 M)."</li>
-<li><strong>Evidence pointer</strong> Abstract (location not provided)</li>
-<li><strong>Concern</strong> The abstract does not specify the number of candidates tested, the assay used (e.g., SPR, ITC, fluorescence polarization), the exact affinity values (range, mean, standard deviation), or the criteria for "active." The micromolar affinity (10⁻⁶ M) is modest and may not be sufficient for therapeutic relevance. No negative controls or comparison to random sequences are mentioned.</li>
-<li><strong>Why it matters</strong> Without these details, the hit rate and affinity claims are uninterpretable. A 33.3% hit rate on a small number of candidates (e.g., 3 out of 9) is very different from the same rate on 100 candidates. The lack of controls prevents assessment of whether the method outperforms random design.</li>
-<li>
-<p><strong>Resolution test</strong> Report the total number of candidates tested per target, the specific binding assay and its conditions, the exact affinity values (with errors), the definition of "active," and include a comparison to a baseline (e.g., random sequences or a known negative control).</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-M3</p>
-</li>
+<li><strong>Axis</strong> Reproducibility and completeness</li>
+<li><strong>Claim pointer</strong> "HighMorph integrates Monte Carlo tree search with a Transformer-based policy-value network to efficiently explore cyclic peptide sequence space"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> No details are given on the training data for the Transformer network, the size of the sequence space explored, the number of candidates generated and tested, or the computational cost. Without these details, the efficiency claim cannot be assessed.</li>
+<li><strong>Why it matters</strong> The novelty and utility of the method depend on its ability to explore sequence space more effectively than existing approaches. The abstract does not provide enough information to evaluate this.</li>
+<li><strong>Resolution test</strong> Specify the training dataset, the search space size, the number of candidates sampled and experimentally tested, and a comparison of computational cost with baseline methods.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
 <li><strong>Severity</strong> Major</li>
-<li><strong>Blocking</strong> No</li>
-<li><strong>Axis</strong> Generalizability and comparison to existing methods</li>
-<li><strong>Claim pointer</strong> "These results validate our approach for cyclic peptide design."</li>
-<li><strong>Evidence pointer</strong> Abstract (location not provided)</li>
-<li><strong>Concern</strong> Validation on only two targets, both of which have known binding partners or inhibitors, is insufficient to claim general validity. The abstract does not compare HighMorph to any existing cyclic peptide design methods (e.g., computational docking, phage display, other AI-based approaches).</li>
-<li><strong>Why it matters</strong> The field already has established methods for cyclic peptide discovery. Without a comparative benchmark, it is unclear whether HighMorph offers a meaningful advantage in hit rate, affinity, or speed.</li>
-<li>
-<p><strong>Resolution test</strong> Validate on additional, structurally diverse targets (e.g., protein-protein interfaces with no known cyclic peptide binders). Include a direct comparison to at least one state-of-the-art computational or experimental method on the same targets.</p>
-</li>
-<li>
-<p><strong>Minor Comments</strong></p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m1</p>
-</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "active cyclic peptides exhibiting micromolar binding affinities (approximately 10-6 M)"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> Micromolar affinities are relatively weak for a design method claiming "rational" design. The abstract does not report the range of affinities, the number of peptides in this range, or whether these affinities are competitive with known binders or existing design methods.</li>
+<li><strong>Why it matters</strong> The therapeutic relevance of micromolar binders is limited, and the claim of "rational" design implies a level of precision that is not evident from the reported affinities.</li>
+<li><strong>Resolution test</strong> Report the full affinity range, the number of peptides achieving each affinity level, and a comparison with known binders or state-of-the-art design methods for the same targets.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Clarity and terminology</li>
-<li><strong>Affected element</strong> Title and abstract</li>
-<li><strong>Evidence pointer</strong> Abstract (location not provided)</li>
-<li><strong>Issue</strong> The term "De Novo Cyclic Peptide Sequence Design via Protein-Protein Interaction Recapitulation" is somewhat ambiguous. "Recapitulation" could imply reproducing an existing interaction, but the method appears to use PPI information as a guide for design, not recapitulation.</li>
-<li>
-<p><strong>Required correction</strong> Clarify the meaning of "recapitulation" in the context of the method, or consider rephrasing to "guided by" or "informed by" protein-protein interactions.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m2</p>
-</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> "interaction-guided framework"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The term "interaction-guided" is vague. It is unclear whether this refers to the hydrogen bond constraints, the use of protein-protein interaction data, or both.</li>
+<li><strong>Required correction</strong> Clarify the specific role of protein-protein interaction information in the design process and how it differs from the hydrogen bond constraints.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Data presentation</li>
-<li><strong>Affected element</strong> Abstract</li>
-<li><strong>Evidence pointer</strong> Abstract (location not provided)</li>
-<li><strong>Issue</strong> The phrase "approximately 10-6 M" is imprecise. A range or specific values (e.g., 1-10 µM) would be more informative.</li>
-<li>
-<p><strong>Required correction</strong> Provide the exact range or mean ± SD of binding affinities for the active cyclic peptides.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m3</p>
-</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> "systematically validated"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract does not describe the scope of validation, such as the number of peptides tested per target, the number of independent experiments, or the inclusion of negative controls.</li>
+<li><strong>Required correction</strong> Specify the number of candidates tested, the number of replicates, and the nature of negative controls used in the validation.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Scope of claims</li>
-<li><strong>Affected element</strong> Abstract</li>
-<li><strong>Evidence pointer</strong> Abstract (location not provided)</li>
-<li><strong>Issue</strong> The final sentence, "interaction analysis provides insights for developing therapeutics targeting challenging protein interfaces," is a broad claim that is not supported by any evidence presented in the abstract.</li>
-<li><strong>Required correction</strong> Either provide a specific example of such an insight from the study, or temper the claim to reflect the preliminary nature of the analysis.</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Affected element</strong> "insights for developing therapeutics targeting challenging protein interfaces"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract does not specify what these insights are or how they were derived from the interaction analysis.</li>
+<li><strong>Required correction</strong> Provide a brief summary of the key insights and the analysis that led to them.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The absence of a clear activity definition, the lack of methodological detail, and the weak reported affinities collectively prevent the case from being established from the provided evidence.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: Moderate. The combination of existing techniques is novel, but the abstract does not demonstrate a fundamental advance over prior methods. Scientific importance: Moderate. Cyclic peptide design is an important problem, but the reported micromolar affinities limit the immediate impact. Interdisciplinary readership: The work bridges computational and medicinal chemistry, but the abstract is too sparse to engage a broad audience. Technical soundness: Not assessable from the abstract alone. Readability for nonspecialists: The abstract is accessible but lacks sufficient context for nonspecialists to understand the significance of the results.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The approach is promising, but the abstract lacks the detail needed to evaluate the claims. A revised version with full methodological and experimental details could be supportive.</li>
 </ul>
 <h2>Risk / unsupported claims</h2>
 <ul>
-<li>The claim that HighMorph is "validated" for cyclic peptide design is unsupported by the abstract alone, given the limited target scope and lack of comparative benchmarks.</li>
-<li>The claim that the approach provides "insights for developing therapeutics targeting challenging protein interfaces" is unsupported by any data presented.</li>
-<li>The novelty of the AI framework (MCTS + Transformer + H-bond constraints) cannot be assessed without methodological details and comparison to prior work.</li>
+<li>The reported hit rates (33.3% and 40%) are unsupported without a defined activity threshold and experimental details.</li>
+<li>The claim of "efficient" sequence space exploration is unsupported without computational cost or comparison data.</li>
+<li>The claim of "rational" design is not supported by the micromolar affinities reported.</li>
+<li>The "insights for developing therapeutics" are mentioned but not described, making this claim unassessable.</li>
 </ul></div>
   </section>
   

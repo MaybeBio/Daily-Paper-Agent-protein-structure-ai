@@ -1,76 +1,90 @@
 ## Review setup
 - **Input scope** Abstract only
-- **Assessment boundary** Claims and evidence presented in the abstract
-- **Shared manuscript claim summary** The authors report that emodin, a natural anthraquinone, acts as a competitive KPC-2 inhibitor (IC50 = 24.4 μM) identified via virtual screening, synergizes with meropenem against carbapenem-resistant *Klebsiella pneumoniae* in vitro and in a mouse pneumonia model, and that the mechanism involves both direct KPC-2 inhibition and modulation of succinate dehydrogenase (SDH) activity/expression leading to metabolic perturbation.
-- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary data provided.
-- **Missing materials affecting confidence** Full manuscript, including methods for virtual screening, MD simulation parameters, experimental details for IC50 determination, synergy assays, SDH activity/expression measurements, resistance development protocol, and in vivo study design (e.g., sample size, statistical methods). Without these, the claims cannot be independently verified.
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report identification of the natural anthraquinone emodin as a competitive inhibitor of KPC-2 carbapenemase via virtual screening and in vitro assays, with an IC50 of 24.4 µM. They propose a dual mechanism: direct active-site competition at Trp105 and Thr237 with secondary structural changes, and modulation of succinate dehydrogenase (SDH) activity and expression leading to metabolic perturbation. The combination of emodin and meropenem is claimed to be synergistic, to prevent resistance over 30 generations, and to reduce bacterial load and lung pathology in a mouse pneumonia model.
+- **Visible evidence base** Abstract text only; no experimental details, numerical data beyond IC50 and log CFU reduction, statistical analyses, or methodological descriptions are provided
+- **Missing materials affecting confidence** Full methods, all figures and tables, molecular dynamics simulation parameters and trajectories, binding affinity data, synergy assay details (checkerboard or time-kill), SDH activity assay specifics, transcriptional analysis data, resistance passage protocol, animal ethics and dosing details, histopathology images, and statistical reporting
 
 ## Reviewer
-- **Overall assessment** The abstract presents a potentially interesting finding—emodin as a dual-mechanism KPC-2 inhibitor and meropenem synergist—but the evidence base is too thin to assess the validity or significance of the claims. The abstract lacks critical quantitative details (e.g., fold reduction in MIC, synergy index, statistical significance), and the mechanistic link between SDH modulation and meropenem susceptibility is asserted without supporting data. The in vivo result (1.43 log CFU/g reduction) is modest and its clinical relevance is unclear. The claim of “no resistance development over 30 generations” is unsupported without data on mutation frequency or mechanism. Overall, the abstract is intriguing but insufficient to establish the case.
-- **Who would be interested in the results, and why** Researchers in antimicrobial resistance, natural product discovery, and β-lactamase inhibitor development would be interested if the claims are substantiated, as emodin could represent a new scaffold for KPC-2 inhibition with a novel dual mechanism.
-- **Major strengths** 1. Identification of a natural compound (emodin) as a KPC-2 inhibitor with a competitive mechanism, which is a relatively underexplored chemical space. 2. Proposal of a dual mechanism (direct enzyme inhibition + metabolic perturbation via SDH) that could reduce resistance development. 3. In vivo validation in a pneumonia model, which strengthens translational potential.
+- **Overall assessment** The abstract presents a potentially interesting dual-mechanism hypothesis for a natural product as a KPC-2 inhibitor and meropenem synergist. However, the evidence as summarized is insufficient to establish the mechanistic claims or the translational significance. The competitive inhibition mechanism is inferred from molecular dynamics without supporting kinetic or structural data. The SDH-mediated metabolic perturbation claim is presented without quantitative evidence linking it to the observed synergy. The in vivo efficacy is reported with a single log reduction value and no statistical context. The abstract is not currently sufficient to support the conclusions drawn.
+- **Who would be interested in the results, and why** Researchers in antimicrobial resistance, particularly those focused on carbapenemase inhibitors and combination therapy; medicinal chemists interested in natural product scaffolds for enzyme inhibition; and investigators studying metabolic modulation as an antibacterial strategy. The potential to restore carbapenem activity against KPC-producing pathogens is of broad clinical relevance.
+- **Major strengths** The study addresses a clinically urgent problem with a clear translational goal. The dual-mechanism hypothesis is intellectually interesting and, if rigorously supported, would represent a novel contribution. The inclusion of in vivo data, even if limited in the abstract, suggests an attempt to move beyond in vitro characterization. The resistance development assessment over 30 generations is a valuable addition.
 - **Major Concerns**
-    - **Concern ID** R1-M1
-    - **Severity** Major
-    - **Blocking** Yes
-    - **Axis** Insufficient evidence for core claim
-    - **Claim pointer** “emodin was identified as a KPC-2 inhibitor (IC50 = 24.4 μM) and a synergist of meropenem”
-    - **Evidence pointer** Abstract; location not provided
-    - **Concern** The abstract does not provide the fold reduction in meropenem MIC when combined with emodin, the fractional inhibitory concentration index (FICI), or the checkerboard assay results. Without these, the synergy claim is unsubstantiated. Additionally, the IC50 value (24.4 μM) is relatively high for a competitive inhibitor; no comparison to known inhibitors (e.g., avibactam) is given.
-    - **Why it matters** Synergy is a central claim of the paper. Without quantitative synergy data, the therapeutic relevance of emodin as a meropenem adjuvant cannot be assessed.
-    - **Resolution test** Provide the MIC of meropenem alone and in combination with emodin, the FICI, and a comparison of emodin’s IC50 to a positive control (e.g., avibactam) under identical assay conditions.
-    - **Concern ID** R1-M2
-    - **Severity** Major
-    - **Blocking** Yes
-    - **Axis** Unsupported mechanistic claim
-    - **Claim pointer** “emodin modulates succinate dehydrogenase (SDH) activity and its transcriptional expression, resulting in metabolic perturbation that renders bacteria susceptible to meropenem”
-    - **Evidence pointer** Abstract; location not provided
-    - **Concern** The abstract asserts a causal link between SDH modulation and meropenem susceptibility, but no data are presented (e.g., SDH activity fold-change, expression levels, or metabolic profiling). The mechanism by which SDH perturbation increases β-lactam susceptibility is not explained.
-    - **Why it matters** This dual mechanism is a novel aspect of the study. If unsupported, the paper’s main novelty is weakened.
-    - **Resolution test** Provide quantitative data on SDH activity and expression (e.g., qPCR, enzyme assay) in the presence/absence of emodin, and demonstrate that SDH inhibition alone (e.g., via a known SDH inhibitor) phenocopies the synergy.
-    - **Concern ID** R1-M3
-    - **Severity** Major
-    - **Blocking** Yes
-    - **Axis** Incomplete in vivo evidence
-    - **Claim pointer** “the combination therapy significantly reduced MEM usage, decreased the pulmonary bacterial load by 1.43 log CFU/g of model group, attenuated lung inflammation, and restored normal lung histology”
-    - **Evidence pointer** Abstract; location not provided
-    - **Concern** The abstract reports a 1.43 log CFU/g reduction, which is modest (approximately 3.7-fold). No statistical significance (p-value), sample size, or comparison to monotherapy (emodin alone, meropenem alone) is provided. “Restored normal lung histology” is a strong claim without histology images or scoring.
-    - **Why it matters** In vivo efficacy is critical for translational claims. A 1.43 log reduction may not be clinically meaningful, and without proper controls, the result is uninterpretable.
-    - **Resolution test** Provide full in vivo data: bacterial load for all groups (vehicle, emodin alone, meropenem alone, combination), p-values, sample size, and histology images with a blinded scoring system.
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic evidence
+  - **Claim pointer** "Molecular dynamics simulation and interaction analyses indicated that emodin competitively occupied the active site of KPC-2 at Trp105 and Thr237"
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The claim of competitive inhibition is based solely on molecular dynamics simulation and interaction analyses. No experimental kinetic data, such as Lineweaver-Burk plots or Dixon plots, are presented to demonstrate competitive inhibition. The specific residues Trp105 and Thr237 are mentioned without supporting mutagenesis or structural data.
+  - **Why it matters** Competitive inhibition is a specific kinetic mechanism that cannot be established by computational methods alone. The distinction between competitive and non-competitive or mixed inhibition has direct implications for the proposed mechanism of action and for future optimization of the compound.
+  - **Resolution test** Provide enzyme kinetics data with varying substrate and inhibitor concentrations showing a characteristic competitive pattern, or co-crystallography or NMR structural evidence of emodin bound at the active site. Mutagenesis of Trp105 and Thr237 with loss of inhibition would further support the claim.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic evidence
+  - **Claim pointer** "emodin modulates succinate dehydrogenase (SDH) activity and its transcriptional expression, resulting in metabolic perturbation that renders bacteria susceptible to meropenem"
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract claims that SDH modulation is a causal link to meropenem susceptibility, but no data are presented to show the direction or magnitude of SDH activity changes, the transcriptional changes, or the metabolic consequences. The connection between SDH modulation and restored meropenem susceptibility is asserted without mechanistic evidence.
+  - **Why it matters** This is a second, independent mechanism proposed alongside direct KPC-2 inhibition. If both mechanisms are claimed, each must be rigorously established. The SDH pathway is central to bacterial respiration and metabolic homeostasis, and off-target effects could confound the interpretation of synergy.
+  - **Resolution test** Provide quantitative SDH activity assays, transcriptional data (e.g., qPCR or RNA-seq), and metabolomic profiling. Demonstrate that SDH modulation alone, in the absence of KPC-2 inhibition, is sufficient to restore meropenem susceptibility, or show that the effect is dependent on the proposed pathway.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** In vivo efficacy
+  - **Claim pointer** "the combination therapy significantly reduced MEM usage, decreased the pulmonary bacterial load by 1.43 log CFU/g of model group, attenuated lung inflammation, and restored normal lung histology"
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The in vivo results are reported with a single log reduction value and no statistical measures, group sizes, or comparator details. The claim of "significantly reduced MEM usage" is not quantified. Histological restoration is stated without supporting images or scoring criteria.
+  - **Why it matters** The translational value of the study rests on the in vivo efficacy. Without proper statistical reporting and clear comparator groups, the clinical relevance cannot be assessed. The 1.43 log reduction, while potentially meaningful, requires context regarding the infection model, treatment regimen, and baseline bacterial load.
+  - **Resolution test** Provide full in vivo methods including animal numbers, dosing schedules, statistical tests, and effect sizes. Include histopathology scoring and representative images. Report the MEM dose reduction as a percentage or fold-change with confidence intervals.
 - **Minor Comments**
-    - **Concern ID** R1-m1
-    - **Severity** Minor
-    - **Axis** Clarity
-    - **Affected element** Resistance development claim
-    - **Evidence pointer** Abstract; location not provided
-    - **Issue** “No resistance development was observed over 30 generations of passage” is stated without context (e.g., against which drug? emodin alone? combination?).
-    - **Required correction** Specify the experimental conditions (e.g., serial passage with emodin alone, meropenem alone, or combination) and provide the resistance metric (e.g., MIC fold-change).
-    - **Concern ID** R1-m2
-    - **Severity** Minor
-    - **Axis** Completeness
-    - **Affected element** Virtual screening claim
-    - **Evidence pointer** Abstract; location not provided
-    - **Issue** The abstract states emodin was identified “through virtual screening based on the KPC-2 protein structure” but provides no details on the screening library size, scoring function, or hit rate.
-    - **Required correction** Briefly describe the virtual screening approach (e.g., docking software, number of compounds screened, selection criteria) in the abstract or refer to the main text.
-    - **Concern ID** R1-m3
-    - **Severity** Minor
-    - **Axis** Precision
-    - **Affected element** MD simulation claim
-    - **Evidence pointer** Abstract; location not provided
-    - **Issue** “Molecular dynamics simulation and interaction analyses indicated that emodin competitively occupied the active site of KPC-2 at Trp105 and Thr237, resulting in reduced alpha-helices and increased beta-sheets” – the abstract does not specify the simulation timescale or the magnitude of secondary structure changes.
-    - **Required correction** Provide key MD parameters (e.g., simulation length, RMSD stability) and quantitative secondary structure changes (e.g., % change in α-helix content).
-- **Technical failings that need to be addressed before the case is established** R1-M1 (synergy quantification), R1-M2 (SDH mechanism evidence), R1-M3 (in vivo data completeness)
-- **Assessment against Nature-style criteria** 
-    - **Originality**: Moderate. Emodin is a known compound, and its KPC-2 inhibition is novel but not paradigm-shifting. The dual mechanism (direct inhibition + metabolic perturbation) is potentially original but unsupported.
-    - **Scientific importance**: Potentially high if validated, as new KPC-2 inhibitors are urgently needed. However, the modest in vivo effect and high IC50 limit immediate impact.
-    - **Interdisciplinary readership**: Moderate. Would interest antimicrobial resistance and natural product communities, but less likely to attract a broad readership without stronger mechanistic or clinical data.
-    - **Technical soundness**: Cannot be assessed from the abstract alone. The claims require rigorous experimental validation (e.g., synergy assays, SDH studies, in vivo statistics).
-    - **Readability for nonspecialists**: The abstract is clear and well-structured, but technical terms (e.g., SDH, KPC-2) are not defined.
-- **Recommendation posture** Currently not established from the provided evidence. The abstract is promising but lacks the quantitative data and mechanistic support needed to evaluate the claims. A full manuscript with complete methods and results is required for a meaningful assessment.
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Reporting clarity
+  - **Affected element** IC50 value
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The IC50 of 24.4 µM is reported without assay conditions, substrate concentration, or replicates. This limits comparability with other KPC-2 inhibitors.
+  - **Required correction** Specify the assay buffer, substrate, enzyme concentration, and number of independent replicates. Report the IC50 with a confidence interval or standard deviation.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "competitive" inhibition
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The term "competitive" is used in the title and abstract, but the evidence presented is computational. This overstates the certainty of the mechanism.
+  - **Required correction** Use "putatively competitive" or "predicted to bind competitively" until experimental kinetic data are provided.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Structural interpretation
+  - **Affected element** Secondary structure changes
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The claim that emodin binding results in "reduced alpha-helices and increased beta-sheets" is presented without context on how this relates to enzyme function or whether this is a general protein perturbation rather than a specific inhibitory mechanism.
+  - **Required correction** Provide circular dichroism or other experimental structural data, and discuss how the observed secondary structure changes relate to catalytic activity.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Resistance assessment
+  - **Affected element** "No resistance development was observed over 30 generations"
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The resistance development claim lacks details on the bacterial strain, selection pressure, and whether the assessment was for emodin alone or the combination.
+  - **Required correction** Specify the strain, passage conditions, and whether resistance was assessed against emodin, meropenem, or the combination. Report the MIC values across generations.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Synergy quantification
+  - **Affected element** "Synergistic effect" of emodin and meropenem
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The synergy is stated but not quantified. No fractional inhibitory concentration index or time-kill data are provided.
+  - **Required correction** Report the FICI value or provide time-kill curves with statistical analysis to support the synergy claim.
 
-## Risk / unsupported claims
-- “emodin competitively occupied the active site of KPC-2 at Trp105 and Thr237, resulting in reduced alpha-helices and increased beta-sheets” – unsupported without MD simulation data (e.g., binding free energy, secondary structure analysis).
-- “emodin modulates succinate dehydrogenase (SDH) activity and its transcriptional expression, resulting in metabolic perturbation that renders bacteria susceptible to meropenem” – unsupported; no SDH data provided.
-- “No resistance development was observed over 30 generations of passage” – unsupported; no experimental details or data.
-- “the combination therapy significantly reduced MEM usage” – unsupported; no quantitative reduction in MEM dose provided.
-- “restored normal lung histology” – unsupported; no histology images or scoring.
+## Technical failings that need to be addressed before the case is established
+- R1-M1: Competitive inhibition mechanism not experimentally established
+- R1-M2: SDH-mediated metabolic perturbation as a causal mechanism not supported by data
+- R1-M3: In vivo efficacy claims lack statistical and methodological detail
+
+## Assessment against Nature-style criteria
+- **Originality** The dual-mechanism hypothesis combining direct enzyme inhibition with metabolic modulation is somewhat novel, but the individual components are not unprecedented. The originality is moderate and would depend on the rigor of the mechanistic evidence.
+- **Scientific importance** The clinical problem is important, and a natural product that restores carbapenem activity would be valuable. However, the importance of the specific findings cannot be fully assessed without stronger mechanistic and in vivo data.
+- **Interdisciplinary readership** The topic bridges medicinal chemistry, microbiology, and infectious disease, which could attract a broad audience. The abstract is written in a way that is accessible to nonspecialists, but the mechanistic claims require more technical support.
+- **Technical soundness** The technical soundness is currently inadequate based on the abstract alone. The computational and in vitro data are not sufficiently detailed, and the in vivo results lack statistical rigor.
+- **Readability for nonspecialists** The abstract is generally readable, but the mechanistic claims are presented with insufficient context for nonspecialists to evaluate their validity.
+
+## Recommendation posture
+Currently not established from the provided evidence. The abstract presents an interesting hypothesis but lacks the experimental detail required to support the mechanistic and translational claims. The authors should be encouraged to provide full kinetic, structural, and in vivo data to substantiate the conclusions. A revised manuscript with complete experimental evidence could be reconsidered.

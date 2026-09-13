@@ -1,96 +1,101 @@
 ## Review setup
 - **Input scope** Full manuscript
-- **Assessment boundary** The manuscript as provided, including abstract, introduction, sections on gene sequence analysis, protein structure prediction, drug design, future outlook, and conclusion.
-- **Shared manuscript claim summary** This manuscript claims to provide a comprehensive survey of large language models (LLMs) in bioinformatics, covering their principles, applications in gene sequence analysis, protein structure prediction, and drug design, and discussing future directions and challenges.
-- **Visible evidence base** The manuscript includes a narrative review of existing literature, a timeline figure (Figure 1), a model architecture comparison table (Table 1), and a figure illustrating LLM applications in bioinformatics (Figure 3). No original experimental data, code, or quantitative benchmarks are presented.
-- **Missing materials affecting confidence** No original data, code, or systematic evaluation methodology is provided. The survey lacks a PRISMA-style search strategy, inclusion/exclusion criteria, or a quantitative comparison of model performance across studies. The figures (Figure 1, 2, 3) are described but not shown.
+- **Assessment boundary** Scientific content, claims, evidence, and presentation as provided in the manuscript
+- **Shared manuscript claim summary** This survey reviews the principles of large language models (LLMs) and their applications in bioinformatics, specifically in gene/genome sequence analysis, protein structure/function prediction, and drug design. It also discusses challenges and future directions.
+- **Visible evidence base** Abstract, Introduction, sections on Gene sequence analysis, Protein structure prediction, Drug design, Future outlook, Conclusion, and references
+- **Missing materials affecting confidence** No figures or tables are provided; the manuscript references Figure 1, Figure 2, Figure 3, and Table 1, but these are absent. No code, data, or supplementary materials are available.
 
 ## Reviewer
-- **Overall assessment** This manuscript presents a broad, narrative-style survey of large language models in bioinformatics. While the topic is timely and the scope is ambitious, the manuscript suffers from a lack of depth, originality, and critical analysis. It reads more as a descriptive list of models and applications than a critical synthesis that would guide future research. The absence of a systematic methodology, quantitative comparisons, and a clear conceptual framework significantly limits its value as a survey. The manuscript does not meet the standards of originality, scientific importance, or technical soundness expected for a high-impact journal.
-- **Who would be interested in the results, and why** Early-career researchers or students seeking a high-level, non-technical introduction to the application of LLMs in bioinformatics might find this survey useful. However, the lack of critical analysis and depth means it offers limited value for experts in the field.
-- **Major strengths**
-    - The topic is highly relevant and timely, given the rapid integration of LLMs into bioinformatics.
-    - The manuscript covers a wide range of applications, from genomics to drug design.
-    - The inclusion of a timeline and a table summarizing representative models provides a useful, albeit superficial, overview.
+- **Overall assessment** This manuscript presents a broad survey of large language models in bioinformatics, covering genomic analysis, protein structure prediction, and drug design. While the topic is timely and the scope is ambitious, the manuscript suffers from significant structural and content issues. It reads as a disjointed collection of model descriptions rather than a coherent, critical synthesis. The absence of figures and tables, which are central to the narrative, makes it impossible to fully evaluate the claims. The survey lacks depth in critical analysis, fails to provide a clear comparative framework, and includes several unsupported or vague statements. The manuscript does not meet the standards of originality, scientific importance, or technical soundness expected for a high-impact journal.
+- **Who would be interested in the results, and why** Researchers new to the field of bioinformatics and LLMs might find this a useful starting point for a list of models and applications. However, the lack of critical analysis and comparative insights limits its value for experts or those seeking to understand the state-of-the-art.
+- **Major strengths** The manuscript covers a wide range of relevant models and applications across three major bioinformatics domains. The inclusion of a section on architectural considerations is a positive step.
 - **Major Concerns**
     - **Concern ID** R1-M1
     - **Severity** Major
     - **Blocking** Yes
-    - **Axis** Originality and Scientific Importance
-    - **Claim pointer** The manuscript claims to be a "comprehensive survey" that reviews the "background and research status of biological large-scale models" and "discusses future directions."
+    - **Axis** Evidence and Support
+    - **Claim pointer** The manuscript claims to provide a "comprehensive survey" and a "comprehensive overview" of LLMs in bioinformatics.
     - **Evidence pointer** Entire manuscript
-    - **Concern** The manuscript is a descriptive narrative review that lacks a systematic methodology. It does not define a search strategy, inclusion/exclusion criteria, or a framework for evaluating the quality of the cited studies. The "comprehensive" claim is not supported. The review primarily lists models and their applications without critical analysis, comparison, or synthesis. For example, the section on "Gene sequence analysis" presents a series of model descriptions (DeepMicrobes, MetaTransformer, ConF, etc.) without a comparative analysis of their strengths, weaknesses, or the contexts in which one might be preferred over another. The "Future outlook" section is generic and does not offer novel or specific research directions.
-    - **Why it matters** A survey in a high-impact journal must provide more than a list of existing work. It should offer a critical synthesis, identify key trends, highlight unresolved challenges, and propose a roadmap for future research. The current manuscript fails to do this, making it a low-impact contribution that does not advance the field.
-    - **Resolution test** The authors must restructure the manuscript as a systematic review with a clearly defined methodology (e.g., PRISMA guidelines). They should include a quantitative or qualitative comparison of model performance across key tasks, identify specific gaps in the literature, and propose concrete, testable hypotheses or research directions. The "comprehensive" claim must be justified by the methodology.
-
+    - **Concern** The survey is not comprehensive. It lacks a systematic methodology for literature selection, a comparative analysis of model performance, and a critical evaluation of the field's progress. The text reads as a list of models with brief descriptions, without synthesizing findings or identifying key trends, limitations, or open questions beyond generic statements. The absence of a clear framework for comparing models (e.g., by task, data, performance metrics) undermines the survey's value.
+    - **Why it matters** A survey's primary contribution is to synthesize and critically evaluate a body of work. Without this, the manuscript fails to provide a meaningful overview or guide future research.
+    - **Resolution test** The authors must provide a clear methodology for their literature search, a structured comparison of models (e.g., in a table with performance metrics, data used, and limitations), and a critical synthesis that identifies key trends, challenges, and future directions beyond generic statements.
     - **Concern ID** R1-M2
     - **Severity** Major
     - **Blocking** Yes
-    - **Axis** Technical Soundness and Depth
-    - **Claim pointer** The manuscript claims to review the "basic principles of LLMs" and their applications.
-    - **Evidence pointer** Sections: Introduction, Gene sequence analysis, Protein structure prediction, Drug design
-    - **Concern** The technical depth is insufficient for a survey aimed at an informed audience. The explanation of LLM principles is superficial (e.g., "Model scale: The number of parameters owned by the training model"). The discussion of model architectures (e.g., Transformer, GNN) is basic and does not delve into the specific adaptations required for biological sequences (e.g., tokenization strategies like k-mer vs. BPE, positional encoding for long sequences). The section on "Model architecture comparison and selection rationale" is a brief, generic list of model types without a clear connection to the specific challenges of bioinformatics data. The manuscript does not critically evaluate the limitations of applying LLMs to biological data, such as the challenge of modeling 3D structures from 1D sequences, the impact of data bias, or the computational cost of training large models.
-    - **Why it matters** A survey must provide sufficient technical detail for readers to understand the core concepts and evaluate the claims. The current level of detail is more appropriate for a magazine article than a scientific review. The lack of depth undermines the manuscript's credibility and utility.
-    - **Resolution test** The authors should significantly expand the technical sections. For example, they should explain the key components of the Transformer architecture (self-attention, multi-head attention, positional encoding) and how they are adapted for genomic or protein sequences. They should provide a more detailed comparison of different tokenization strategies and their impact on model performance. They should also discuss the specific challenges of applying LLMs to biological data, such as the need for inductive biases (e.g., equivariance for 3D structures) and the problem of data scarcity for rare variants.
-
+    - **Axis** Evidence and Support
+    - **Claim pointer** The manuscript references Figure 1, Figure 2, Figure 3, and Table 1 to support key claims and illustrate concepts.
+    - **Evidence pointer** Sections: Introduction, Gene sequence analysis, Protein structure prediction
+    - **Concern** The figures and table are not provided. The manuscript's narrative is heavily dependent on these visual elements (e.g., "Figure 1 illustrates the timeline...", "as illustrated in Figure 2", "Figure 3...", "Table 1 summarizes..."). Without them, the claims about timelines, model architectures, and application summaries are unverifiable and the manuscript is incomplete.
+    - **Why it matters** The core evidence for several key claims is missing, making it impossible to assess the validity of the arguments and the quality of the survey.
+    - **Resolution test** Provide all missing figures and tables. The figures must be of high quality, clearly labeled, and directly support the claims made in the text. The table must include a clear comparison of models with relevant features.
     - **Concern ID** R1-M3
     - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Originality and Scientific Importance
+    - **Claim pointer** The manuscript claims to discuss "future directions for developing reliable, scalable, and explainable bioinformatics foundation models."
+    - **Evidence pointer** Section: Future outlook
+    - **Concern** The "Future outlook" section is superficial and generic. It mentions data scarcity, multimodal integration, and ethical considerations, but does not provide specific, novel, or actionable research directions. The suggestions (e.g., "develop multimodal learning techniques", "integrate advanced algorithms") are vague and do not build on the survey's findings. The section lacks depth and fails to identify concrete, unsolved problems or propose innovative solutions.
+    - **Why it matters** A forward-looking perspective is a key component of a high-impact survey. A generic outlook does not provide value to the research community.
+    - **Resolution test** The authors must provide a detailed, critical, and forward-looking perspective. This should include specific, unsolved technical challenges (e.g., scaling laws for biological data, handling of long-range genomic interactions, integration of 3D structural information), potential solutions (e.g., novel architectures, training paradigms), and a roadmap for future research.
+    - **Concern ID** R1-M4
+    - **Severity** Major
     - **Blocking** No
-    - **Axis** Readability and Structure
-    - **Claim pointer** The manuscript is presented as a "comprehensive survey."
+    - **Axis** Technical Soundness
+    - **Claim pointer** The manuscript states that "DeepMicrobes... has similar accuracy in large-scale estimation" and that "MetaTransformer... outperforms DeepMicrobes in terms of species and genus classification ability, training speed, and inference speed."
+    - **Evidence pointer** Section: Gene sequence analysis, subsection: Application of deep learning models in gene sequence classification
+    - **Concern** These comparative claims are made without providing any quantitative evidence, such as accuracy scores, F1-scores, or speed benchmarks. The reader cannot assess the validity or significance of these comparisons.
+    - **Why it matters** Unsupported comparative claims are not scientifically rigorous and can be misleading.
+    - **Resolution test** Provide specific performance metrics (e.g., accuracy, F1-score, training time) for the models being compared, along with the datasets and evaluation protocols used.
+    - **Concern ID** R1-M5
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Readability for Nonspecialists
+    - **Claim pointer** The manuscript aims to be a "comprehensive survey" accessible to a broad audience.
     - **Evidence pointer** Entire manuscript
-    - **Concern** The manuscript's structure is disjointed and lacks a clear narrative flow. The introduction jumps between historical timelines, model characteristics, and applications without a clear logical progression. The sections on "Gene sequence analysis" and "Protein structure prediction" contain subsections that are not well-integrated (e.g., "Model architecture comparison and selection rationale" appears as a subsection within "Gene sequence analysis" but is not clearly linked to the preceding or following content). The "Future outlook" section is a list of general challenges (data scarcity, multimodal integration) that are not specifically tied to the models or applications discussed earlier.
-    - **Why it matters** A well-structured survey guides the reader through the material, building a coherent argument. The current structure is confusing and makes it difficult to follow the authors' main points. This reduces the manuscript's readability and impact.
-    - **Resolution test** The authors should reorganize the manuscript with a clear, logical structure. For example, they could start with a section on the fundamental principles of LLMs, followed by sections on specific application domains (genomics, proteomics, drug design), each with a consistent structure (e.g., problem definition, key models, comparative analysis, challenges). The "Future outlook" should be a synthesis of the challenges identified in the preceding sections, leading to specific, actionable research directions.
-
+    - **Concern** The manuscript contains numerous grammatical errors, awkward phrasing, and unclear sentences that significantly impede readability. Examples include: "The emergence of foundation models with trillion-level parameters has redefined the landscape of artificial intelligence." (vague), "Biological large-scale models are a cross-disciplinary research field..." (incorrect phrasing), "The development of reinforcement learning... has significantly reduced the reliance on large-scale manual annotation." (overly broad and unsupported). The text often reads as a direct translation or a draft that has not been carefully edited.
+    - **Why it matters** Poor writing quality undermines the credibility of the work and makes it difficult for readers to understand the key messages.
+    - **Resolution test** The manuscript must undergo thorough language editing by a native English speaker. Sentences should be restructured for clarity, and technical terms should be defined upon first use.
 - **Minor Comments**
     - **Concern ID** R1-m1
     - **Severity** Minor
-    - **Axis** Clarity and Accuracy
-    - **Affected element** Abstract
-    - **Evidence pointer** Abstract
-    - **Issue** The abstract states: "Biological large-scale models are a cross-disciplinary research field that combines mathematics, computer science, and biology, aiming to simulate and understand the structure, function, and dynamic changes of biological systems through the establishment of complex computational models." This definition is too broad and could apply to many areas of computational biology, not specifically LLMs.
-    - **Required correction** Refine the abstract to focus specifically on large language models and their unique contributions to bioinformatics, rather than "biological large-scale models" in general.
-
+    - **Axis** Structure and Organization
+    - **Affected element** Section: Gene sequence analysis, subsection: Model architecture comparison and selection rationale
+    - **Evidence pointer** location not provided
+    - **Issue** This subsection appears abruptly and is not well-integrated into the flow of the section. It provides a general comparison of architectures but does not directly connect to the specific models discussed in the preceding or following subsections.
+    - **Required correction** Either integrate this comparison into the introduction of the section or move it to a more appropriate location, such as the Introduction. Ensure it directly informs the discussion of the models that follow.
     - **Concern ID** R1-m2
     - **Severity** Minor
-    - **Axis** Accuracy
-    - **Affected element** Introduction
-    - **Evidence pointer** Introduction
-    - **Issue** The statement "DeepSeek-R1 ... reported in Nature" is not supported by the provided reference (Guo et al., 2025). The reference is not verifiable from the manuscript. The authors should ensure all claims about specific publications are accurate and properly cited.
-    - **Required correction** Verify the publication venue for DeepSeek-R1 and correct the citation if necessary. If the claim is not verifiable, it should be removed.
-
+    - **Axis** Completeness
+    - **Affected element** Section: Drug design, subsection: Applications of large language models in virtual screening and ligand discovery
+    - **Evidence pointer** location not provided
+    - **Issue** The text states, "In contrast, although virtual screening methods are also very useful in drug design, they may not be as good as large language models (LLMs) in terms of data processing capabilities, innovation, and multi-tasking." This is a strong, unsupported claim that pits LLMs against virtual screening, which are often complementary.
+    - **Required correction** Rephrase to avoid a false dichotomy. Acknowledge that LLMs and traditional virtual screening methods have different strengths and can be used in combination. Provide evidence for any comparative claims.
     - **Concern ID** R1-m3
     - **Severity** Minor
-    - **Axis** Completeness
-    - **Affected element** Table 1
-    - **Evidence pointer** Table 1
-    - **Issue** The manuscript states "Table 1 summarizes representative applications..." but the table itself is not provided in the manuscript text. The reader cannot evaluate the claims made about the table's contents.
-    - **Required correction** Include Table 1 in the manuscript.
-
+    - **Axis** Accuracy
+    - **Affected element** Section: Introduction
+    - **Evidence pointer** location not provided
+    - **Issue** The text states, "DeepSeek-R1 (Guo et al., 2025) demonstrated remarkable reasoning capabilities approaching frontier model performance with open-source weights, reported in Nature." The claim that it was "reported in Nature" is not verifiable from the provided text and may be inaccurate. The reference is not provided.
+    - **Required correction** Verify the publication venue of the cited work. If it is not published in Nature, correct the statement. Provide the full reference.
     - **Concern ID** R1-m4
     - **Severity** Minor
-    - **Axis** Clarity
-    - **Affected element** Section: "Research on end-to-end protein structure prediction model"
-    - **Evidence pointer** Section: "Research on end-to-end protein structure prediction model"
-    - **Issue** The sentence "DeepECA (Fukuda and Tomii, 2020) has been proposed to address the potential decrease in statement results caused by rich sequences" is unclear. What are "statement results"?
-    - **Required correction** Clarify the meaning of "statement results" or rephrase the sentence.
-
+    - **Axis** Consistency
+    - **Affected element** Section: Introduction
+    - **Evidence pointer** location not provided
+    - **Issue** The text lists "Model scale", "Model complexity", "The scale of training data", and "Self-Supervised Learning" as characteristics of recent LLMs. The formatting and phrasing are inconsistent (e.g., "The scale of training data" vs. "Model scale").
+    - **Required correction** Use a consistent format (e.g., bullet points or a table) and ensure all characteristics are clearly defined.
     - **Concern ID** R1-m5
     - **Severity** Minor
-    - **Axis** Accuracy
-    - **Affected element** Section: "Applications of large language models in virtual screening and ligand discovery"
-    - **Evidence pointer** Section: "Applications of large language models in virtual screening and ligand discovery"
-    - **Issue** The claim that "large language models (LLMs) can predict and generate new compound structures by learning a large amount of biomedical data, and can even perform drug design without a clear target structure" is an overstatement. While some generative models can propose novel molecules, "drug design without a clear target structure" is a highly active research area with significant limitations, and the manuscript does not provide evidence for this strong claim.
-    - **Required correction** Temper the claim to reflect the current state of the art, e.g., "LLMs can be used to propose novel molecular structures, and in some cases, can suggest potential ligands even when the target structure is not fully resolved, though this remains a challenging area of research."
+    - **Axis** Clarity
+    - **Affected element** Section: Gene sequence analysis, subsection: Research on training models using large-scale genomic data
+    - **Evidence pointer** location not provided
+    - **Issue** The sentence "Although there is no clear statement that the larger the model's size and data, the better, GPT1 to GPT3.5... have made significant improvements... with the increase of parameters and training data" is contradictory and unclear.
+    - **Required correction** Clarify the point. The authors likely mean that while scaling is not a guaranteed path to improvement, empirical evidence from the GPT series shows a strong correlation. Rephrase for clarity.
 
-- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2. The manuscript lacks a systematic methodology and sufficient technical depth to be considered a valuable scientific contribution.
-
-- **Assessment against Nature-style criteria**
-    - **Originality**: Low. The manuscript is a narrative review that does not present a novel synthesis, framework, or critical analysis. It largely re-describes existing work without offering new insights.
-    - **Scientific importance**: Low to Medium. The topic is important, but the manuscript's superficial treatment and lack of critical analysis mean it does not significantly advance understanding or guide future research.
-    - **Interdisciplinary readership**: Medium. The topic is inherently interdisciplinary, but the manuscript's lack of depth and poor structure may limit its appeal to experts in any one field (e.g., computer science, biology).
-    - **Technical soundness**: Low. The technical explanations are superficial and sometimes inaccurate. The lack of a systematic methodology undermines the survey's validity.
-    - **Readability for nonspecialists**: Low to Medium. The manuscript is written in accessible language, but the disjointed structure and lack of clear narrative make it difficult to follow for a nonspecialist seeking a coherent overview.
-
-- **Recommendation posture** Currently not established from the provided evidence. The manuscript requires a fundamental restructuring and significant expansion of its technical and critical content to be considered for publication in a high-impact journal. A major revision is needed, but the current scope and approach suggest the manuscript may be more suitable for a lower-tier review journal.
+## Risk / unsupported claims
+- The claim that "DeepSeek-R1... was reported in Nature" is unverifiable and potentially inaccurate.
+- The claim that "MetaTransformer... outperforms DeepMicrobes" is unsupported by quantitative evidence.
+- The claim that "virtual screening methods... may not be as good as large language models (LLMs) in terms of data processing capabilities, innovation, and multi-tasking" is a strong, unsupported, and potentially misleading comparison.
+- The claim that "The development of reinforcement learning... has significantly reduced the reliance on large-scale manual annotation" is an overgeneralization and is not supported by evidence in the context of bioinformatics.
+- The claim that "CellPolaris... model was trained based on the Graph based Recurrent Neural Network (GRN) model" is unclear and the acronym GRN is not defined in this context (it is typically "Gene Regulatory Network").
+- The claim that "RGN2... demonstrates superior performance to AlphaFold2 in single-sequence monomer prediction tasks on benchmarks such as CAMEO" is a strong claim that requires specific performance metrics and a clear description of the benchmark setup to be evaluated.

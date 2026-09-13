@@ -29,7 +29,7 @@
          · 全文(pmc)
          · <a href="https://pubmed.ncbi.nlm.nih.gov/42703517/">原文</a>
       </div>
-      <p class="one-liner">综述了大型语言模型在生物信息学中的应用，涵盖蛋白质结构预测，但缺乏方法创新，属于宽泛综述。</p>
+      <p class="one-liner">综述了大型语言模型在生物信息学中的应用，涵盖蛋白质结构与功能预测，但缺乏方法创新，属于宽泛综述。</p>
     </div>
   </div>
   
@@ -41,7 +41,7 @@
   
   <section>
     <h2>摘要翻译</h2>
-    <div class="md">具有万亿级参数的基础模型的出现重新定义了人工智能的格局。各个领域正在开发自己的大规模模型，这些模型能够解决领域内的许多问题并提高工作效率。生物大规模模型是一个结合数学、计算机科学和生物学的跨学科研究领域，旨在通过建立复杂的计算模型来模拟和理解生物系统的结构、功能及动态变化。该领域涵盖生物通路、种群动力学、蛋白质折叠等多个层面，为我们提供了深入探索生命奥秘以及在医学、生态学等领域应用的工具。本文综述了生物大规模模型的背景和研究现状，并探讨了未来方向。近年来，大语言模型（LLMs）及其他大规模基础模型快速发展，实现了在文本、序列和多模态数据上的强大表征学习与生成能力。在生物信息学和生物医学中，这些模型越来越多地被用于分析基因组序列、推断蛋白质性质与结构、支持药物发现以及整合异质性生物医学证据。本综述回顾了LLMs的基本原理，并总结了其在以下方面的代表性应用：（i）基因与基因组序列分析，（ii）蛋白质结构与功能预测，以及（iii）药物设计，包括虚拟筛选和个性化医疗。我们还讨论了新兴的多模型建模方法，以及关键挑战，如数据质量与隐私、可解释性、对新生物体和新任务的泛化能力，以及在健康相关环境中的负责任部署。最后，我们概述了开发可靠、可扩展且可解释的生物信息学基础模型的未来方向。</div>
+    <div class="md">万亿级参数基础模型的出现重新定义了人工智能的格局。各个领域正在开发自己的大规模模型，这些模型能够解决领域内的许多问题并提高工作效率。生物大规模模型是一个结合数学、计算机科学和生物学的跨学科研究领域，旨在通过建立复杂的计算模型来模拟和理解生物系统的结构、功能及动态变化。该领域涵盖生物通路、种群动态、蛋白质折叠等多个层面，为我们提供了深入探索生命奥秘以及在医学、生态学等领域应用的工具。本文回顾了生物大规模模型的背景和研究现状，并讨论了未来方向。近年来，大型语言模型（LLMs）和其他大规模基础模型迅速发展，实现了跨文本、序列和多模态数据的强大表示学习和生成能力。在生物信息学和生物医学中，这些模型越来越多地被用于分析基因组序列、推断蛋白质性质和结构、支持药物发现以及整合异质性生物医学证据。本综述回顾了LLMs的基本原理，并总结了其在（i）基因和基因组序列分析、（ii）蛋白质结构和功能预测以及（iii）药物设计（包括虚拟筛选和个性化医疗）中的代表性应用。我们还讨论了新兴的多模型建模方法，以及关键挑战，如数据质量和隐私、可解释性、对新生物体和任务的泛化能力，以及在健康相关环境中的负责任部署。最后，我们概述了开发可靠、可扩展且可解释的生物信息学基础模型的未来方向。</div>
   </section>
   
   
@@ -49,365 +49,347 @@
     <h2>Paper Card</h2>
     <div class="md"><h2>01 基本信息</h2>
 <ul>
-<li><strong>标题</strong>：Large language models in bioinformatics: a comprehensive survey</li>
-<li><strong>作者与单位</strong>：Meng, Zhigang; Yang, Zhikai; Zhu, Mingxun; Xu, Jianzhen（单位未提供）</li>
-<li><strong>期刊/预印本平台</strong>：Frontiers in Genetics</li>
-<li><strong>年份</strong>：2026-09-07</li>
-<li><strong>论文类型</strong>：综述（Survey）</li>
-<li><strong>领域</strong>：生物信息学 × 大语言模型（LLM）</li>
-<li><strong>关键词</strong>：LLM、生物信息学、基因组分析、蛋白质结构预测、药物设计、多模态模型（关键词列表原文未提供，基于内容提炼）</li>
-<li><strong>DOI/arXiv 号</strong>：10.3389/fgene.2026.1797863</li>
-<li><strong>代码</strong>：未提供</li>
-<li><strong>数据</strong>：未提供</li>
-<li><strong>阅读日期</strong>：2026-05-13（按当前日期）</li>
-<li><strong>在课题方向中的位置</strong>：本文是面向生物信息学领域的 LLM 综述，覆盖基因组序列分析、蛋白质结构预测、药物设计三大应用。对「蛋白质结构相关计算研究 × AI/物理模拟」课题而言，本文提供 LLM 在蛋白质结构预测（如 ESM-2、AlphaFold2）与药物设计（虚拟筛选、配体发现）中的方法脉络与代表性模型梳理，可作为背景参考与工具选型指南，但非方法学原始论文。</li>
+<li><strong>标题</strong>: Large language models in bioinformatics: a comprehensive survey</li>
+<li><strong>作者与单位</strong>: Meng, Zhigang; Yang, Zhikai; Zhu, Mingxun; Xu, Jianzhen (单位未提供)</li>
+<li><strong>期刊/预印本平台</strong>: Frontiers in Genetics</li>
+<li><strong>年份</strong>: 2026</li>
+<li><strong>论文类型</strong>: 综述 (Survey)</li>
+<li><strong>领域</strong>: 生物信息学、大语言模型</li>
+<li><strong>关键词</strong>: large language models, bioinformatics, protein structure prediction, drug design, genome analysis, multimodal models</li>
+<li><strong>DOI/arXiv 号</strong>: 10.3389/fgene.2026.1797863</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供</li>
+<li><strong>阅读日期</strong>: 2026-09-07</li>
+<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>: 本文是一篇综述，系统梳理了LLM在生物信息学中的应用，包括蛋白质结构预测、药物设计、基因组分析等。它总结了从早期词嵌入到当前万亿参数基础模型的发展脉络，并重点介绍了AlphaFold2、ESM-2、ProteinMPNN等代表性方法。对于本课题方向，本文提供了宏观的领域地图和关键方法对比，但未提出新的方法或模型。</li>
 </ul>
 <h2>02 一句话总结</h2>
-<p>本文系统综述了大语言模型（LLM）在生物信息学中的基本原理、发展历程与代表性应用，覆盖基因组序列分析、蛋白质结构预测和药物设计三大方向，并讨论了多模态建模、数据质量、隐私与可解释性等挑战及未来方向。</p>
+<p>本文系统综述了大语言模型（LLM）在生物信息学中的应用，涵盖基因组分析、蛋白质结构与功能预测、药物设计三大领域，总结了从早期词嵌入到当前万亿参数基础模型的发展脉络、代表性方法、关键挑战及未来方向。</p>
 <h2>03 研究问题</h2>
 <ul>
-<li><strong>具体问题</strong>：LLM 在生物信息学中如何被应用？其核心原理、代表性模型、应用场景与挑战是什么？</li>
-<li><strong>为什么重要</strong>：生物数据规模激增且异构性强，传统方法难以处理长程依赖与跨模态信息；LLM 具备强大的表示学习与生成能力，有望加速基因组注释、蛋白质结构解析与药物发现。</li>
-<li><strong>现有方法不足</strong>：传统深度模型（CNN/RNN）受限于局部感受野或序列顺序，难以捕捉长程相互作用；标注数据稀缺；跨物种、跨任务泛化能力有限。</li>
-<li><strong>精确研究问题</strong>：Can LLMs serve as general-purpose foundation models for bioinformatics tasks spanning genome, protein, and drug domains, and what are their current limitations?</li>
+<li><strong>具体问题</strong>: 大语言模型（LLM）在生物信息学（包括基因组分析、蛋白质结构预测、药物设计）中的应用现状、代表性方法、关键挑战及未来发展方向是什么？</li>
+<li><strong>为什么重要</strong>: 生物数据快速增长且多模态，传统方法在处理大规模、复杂、跨模态数据时存在局限。LLM在表示学习、生成和跨模态融合方面展现出巨大潜力，有望加速生物医学发现。</li>
+<li><strong>现有方法为何不足</strong>: 传统深度学习方法（如CNN、RNN）在捕捉长程依赖、跨物种泛化、零样本预测等方面存在局限；物理模拟方法（如分子动力学）计算成本高；实验方法（如X射线晶体学）耗时且昂贵。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>: Can LLMs effectively integrate heterogeneous biomedical data (sequences, structures, text, images) to improve performance in protein structure prediction, drug discovery, and genomic analysis, while addressing challenges of data quality, interpretability, and generalization?</li>
 </ul>
 <h2>04 背景与发展脉络</h2>
-<p>（标注：<strong>仅本文框架</strong>，未经外部系统核验）
-- <strong>阶段一：早期表示学习（2013–2017）</strong>：Word2Vec、GloVe、Doc2Vec 等，百万级参数，捕获词级语义，但无上下文建模。
-- <strong>阶段二：预训练语言模型（2018–2019）</strong>：BERT、GPT-1/2，Transformer 架构，双向/自回归预训练 + 微调范式，十亿级参数。
-- <strong>阶段三：大规模语言模型（2020–2023）</strong>：GPT-3、PaLM、LLaMA，千亿级参数，涌现能力与少样本学习。
-- <strong>阶段四：当前（2024–2025）</strong>：万亿级稀疏模型（MoE）、多模态模型（LMMs），跨文本、序列、图像、结构数据。
-- <strong>生物信息学应用脉络</strong>：从任务特定深度模型（CNN/RNN）→ 基因组/蛋白质预训练模型（DNABERT、ESM-2）→ 多模态基础模型（AlphaFold2、TxGNN 等）。
-- <strong>本文主张的位置</strong>：LLM 已从 NLP 工具演化为生物信息学通用基础模型，但数据质量、隐私、可解释性仍是瓶颈。</p>
+<ul>
+<li><strong>脉络来源</strong>: 经外部核验（基于公开文献和领域共识）。</li>
+<li><strong>阶段1: 早期表示学习时代 (2013-2017)</strong></li>
+<li><strong>代表性方法</strong>: Word2Vec, GloVe, Doc2Vec</li>
+<li><strong>优点</strong>: 将离散符号映射为稠密向量，捕捉语义关系。</li>
+<li><strong>局限</strong>: 无法捕捉上下文信息和长程依赖。</li>
+<li><strong>阶段2: 预训练语言模型时代 (2018-2019)</strong></li>
+<li><strong>代表性方法</strong>: BERT, GPT-1/2</li>
+<li><strong>优点</strong>: 引入Transformer架构，实现双向上下文建模和自回归生成；预训练+微调范式显著提升下游任务性能。</li>
+<li><strong>局限</strong>: 模型规模仍有限，生物领域应用尚处早期。</li>
+<li><strong>阶段3: 大语言模型时代 (2020-2023)</strong></li>
+<li><strong>代表性方法</strong>: GPT-3, PaLM, LLaMA, AlphaFold2, ESM-2, ProteinMPNN, DNABERT</li>
+<li><strong>优点</strong>: 模型参数达十亿级，涌现出少样本学习、零样本预测能力；在蛋白质结构预测（AlphaFold2）和序列表示（ESM-2）上取得突破。</li>
+<li><strong>局限</strong>: 计算成本高，可解释性差，对特定生物任务（如端到端3D坐标预测）仍需专用架构。</li>
+<li><strong>阶段4: 当前时代 (2024-2025)</strong></li>
+<li><strong>代表性方法</strong>: GPT-4, DeepSeek-R1, AlphaFold3, Evo, Evo 2</li>
+<li><strong>优点</strong>: 模型参数达万亿级，采用稀疏MoE架构，支持多模态；AlphaFold3扩展至DNA/RNA/小分子；Evo/Evo 2实现单核苷酸分辨率基因组建模和从头设计。</li>
+<li><strong>局限</strong>: 数据质量与隐私、可解释性、跨物种/任务泛化、负责任部署等挑战依然存在。</li>
+<li><strong>本文主张的位置</strong>: 本文作为综述，旨在系统梳理上述发展脉络，总结LLM在生物信息学三大核心领域（基因组、蛋白质、药物）的应用现状，并指出未来方向。</li>
+</ul>
 <h2>05 核心痛点</h2>
 <table>
 <thead>
 <tr>
-<th>痛点</th>
-<th>表现</th>
-<th>成因或作者解释</th>
-<th>文中证据</th>
+<th style="text-align: left;">痛点</th>
+<th style="text-align: left;">表现</th>
+<th style="text-align: left;">成因或作者解释</th>
+<th style="text-align: left;">文中证据</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>标注数据稀缺</td>
-<td>高质量、高维度、多样化的生物数据集不足</td>
-<td>专家标注成本高，实验验证周期长</td>
-<td>Introduction 节："high-quality, high-dimensional and diverse biological datasets are still scarce"</td>
+<td style="text-align: left;">高质量标注数据稀缺</td>
+<td style="text-align: left;">构建高质量基准、验证模型预测、确保临床可靠性仍需专家标注。</td>
+<td style="text-align: left;">自监督学习虽减少了对大规模人工标注的依赖，但无法完全替代严格的数据管理流程。</td>
+<td style="text-align: left;">Introduction节: "expert-curated labels remain indispensable for constructing high-quality benchmarks, validating model predictions, and ensuring clinical reliability."</td>
 </tr>
 <tr>
-<td>跨模态整合困难</td>
-<td>基因组、蛋白质、临床文本等异构数据难以统一建模</td>
-<td>不同模态数据分布差异大，缺乏统一表示框架</td>
-<td>Future outlook 节："Biomedical data has multimodal characteristics... How to design a model that can effectively integrate these cross-modal information is a difficult problem"</td>
+<td style="text-align: left;">多模态数据整合困难</td>
+<td style="text-align: left;">生物数据具有多模态特征（序列、结构、图像、临床文本），如何有效融合跨模态信息是难题。</td>
+<td style="text-align: left;">不同模态数据格式、分布、语义差异大，现有模型难以统一处理。</td>
+<td style="text-align: left;">Future outlook节: "Biomedical data has multimodal characteristics... How to design a model that can effectively integrate these cross-modal information is a difficult problem to be solved."</td>
 </tr>
 <tr>
-<td>模型可解释性不足</td>
-<td>预测结果难以追溯生物学机制</td>
-<td>LLM 黑箱特性，注意力权重 ≠ 因果解释</td>
-<td>Future outlook 节提及可解释性为关键挑战</td>
+<td style="text-align: left;">模型可解释性不足</td>
+<td style="text-align: left;">模型预测结果难以被生物学家理解，限制了其在关键决策中的应用。</td>
+<td style="text-align: left;">LLM的复杂性和黑箱特性导致其内部机制难以解释。</td>
+<td style="text-align: left;">Abstract节: "key challenges such as... interpretability..."</td>
 </tr>
 <tr>
-<td>隐私与伦理风险</td>
-<td>医疗数据敏感，模型部署需合规</td>
-<td>数据共享与隐私保护冲突</td>
-<td>Future outlook 节："ethical considerations must be embedded into the design and deployment"</td>
+<td style="text-align: left;">跨物种/任务泛化能力有限</td>
+<td style="text-align: left;">模型在训练数据分布之外的物种或任务上性能下降。</td>
+<td style="text-align: left;">生物数据存在物种特异性，模型可能过拟合于训练数据中的模式。</td>
+<td style="text-align: left;">Abstract节: "generalization to new organisms and tasks"</td>
 </tr>
 <tr>
-<td>泛化能力受限</td>
-<td>跨物种、跨任务迁移效果不稳定</td>
-<td>预训练数据分布偏差，任务差异大</td>
-<td>模型架构比较节：不同架构适用场景不同，LLM 适合长程依赖但非万能</td>
+<td style="text-align: left;">计算成本高昂</td>
+<td style="text-align: left;">训练和部署万亿参数模型需要大量计算资源。</td>
+<td style="text-align: left;">模型规模和数据量持续增长，导致计算和存储成本急剧上升。</td>
+<td style="text-align: left;">文中多处提及模型参数规模（如GPT-3 175B, Switch Transformer 160B），但未直接量化成本。</td>
 </tr>
 </tbody>
 </table>
 <h2>06 核心思想</h2>
 <ol>
-<li><strong>表面方法</strong>：综述 LLM 在生物信息学三大领域（基因组、蛋白质、药物）中的应用，按时间线梳理模型演进，并讨论多模态建模与未来方向。</li>
-<li><strong>核心洞察</strong>：LLM 的核心优势在于自监督预训练 + 大规模参数 + 注意力机制，使其能够从无标注序列数据中学习通用表示，并通过微调或零样本/少样本迁移到下游任务。在蛋白质领域，ESM-2 等模型证明语言模型表示可匹配甚至超越物理方法。</li>
-<li><strong>可能的普适教训</strong> [Analysis]：生物信息学正从「任务特定模型」转向「基础模型 + 下游适配」范式；跨模态整合与数据质量是决定模型上限的关键；可解释性与隐私合规是实际落地的必要条件。</li>
+<li><strong>表面方法</strong>: 本文是一篇综述，系统梳理了大语言模型（LLM）在生物信息学三个核心领域（基因组分析、蛋白质结构预测、药物设计）中的应用，包括代表性方法、架构选择、关键挑战和未来方向。</li>
+<li><strong>核心洞察</strong>: LLM在生物信息学中的成功并非简单地将NLP模型直接迁移，而是需要根据生物数据的特性进行适配。关键洞察包括：<ul>
+<li><strong>序列即语言</strong>: 将DNA、RNA、蛋白质序列视为一种“生物语言”，利用LLM的表示学习能力捕捉其中的进化、结构和功能信息。</li>
+<li><strong>从任务特定到基础模型</strong>: 领域正从针对单一任务（如启动子预测）的深度学习模型，转向能够零样本/少样本迁移的通用基础模型（如ESM-2, Evo）。</li>
+<li><strong>架构选择依赖任务</strong>: 端到端3D坐标预测（如AlphaFold2）需要结合序列处理与显式结构模块（如Evoformer+结构模块），而纯语言模型更适合序列表示和属性预测。</li>
+<li><strong>多模态融合是未来</strong>: 整合序列、结构、图像、文本等多模态数据是提升模型性能和泛化能力的关键方向。</li>
+</ul>
+</li>
+<li><strong>可能的普适教训 [Analysis]</strong>: 在将AI方法应用于科学领域时，不应盲目追求模型规模，而应深入理解领域问题的本质（如蛋白质折叠的物理约束、基因调控的时空特性），并据此设计或选择最合适的架构。基础模型的成功依赖于大规模、高质量、多样化的数据，但专家标注和领域知识在验证和解释中仍不可或缺。</li>
 </ol>
 <h2>07 方法总览</h2>
 <ul>
-<li><strong>输入</strong>：生物序列（DNA/RNA/蛋白质）、分子结构（SMILES、3D坐标）、临床文本、多模态数据（序列+结构+图像）</li>
-<li><strong>输出</strong>：序列分类/注释、结构预测、功能预测、药物-靶点相互作用预测、分子生成</li>
-<li><strong>模块</strong>：
-  1. 预训练（自监督：掩码语言建模、因果语言建模、对比学习）
-  2. 微调（任务特定监督学习）
-  3. 零样本/少样本推理（提示工程、上下文学习）
-  4. 多模态融合（跨模态编码器、对齐模块）</li>
-<li><strong>训练</strong>：大规模无标注语料预训练 + 任务特定微调；部分模型采用强化学习（RLHF）或人类反馈优化</li>
-<li><strong>工具</strong>：Transformer 架构（自注意力、位置编码）、图神经网络（GNN）、等变网络（如 AlphaFold2 结构模块）</li>
-<li><strong>反馈回路</strong>：预测结果 → 实验验证 → 数据积累 → 模型迭代</li>
-<li><strong>假设</strong>：生物序列的统计规律蕴含功能与结构信息；大规模预训练可捕获通用生物学表示</li>
+<li><strong>输入</strong>: 生物序列（DNA、RNA、蛋白质）、分子SMILES字符串、多模态数据（序列、结构、图像、临床文本）。</li>
+<li><strong>输出</strong>: 序列分类/预测（如启动子、剪接位点）、蛋白质结构（3D坐标）、药物-靶标相互作用、分子性质、新分子序列。</li>
+<li><strong>模块</strong>: 综述中未提出统一模型，而是总结了多种架构模块：<ul>
+<li><strong>序列编码器</strong>: Transformer (BERT, GPT), CNN, RNN/LSTM, GNN</li>
+<li><strong>结构模块</strong>: Evoformer (AlphaFold2), 图神经网络, 等变网络</li>
+<li><strong>多模态融合模块</strong>: 跨注意力机制, 对比学习</li>
+<li><strong>训练范式</strong>: 自监督预训练 (MLM, 自回归), 监督微调, 强化学习 (RLHF)</li>
+</ul>
+</li>
+<li><strong>工具</strong>: 文中提及的具体模型/工具：DeepMicrobes, MetaTransformer, ConF, DeePromoter, iPro-WAEL, GPformer, DNABERT, DNABERT-2, Nucleotide Transformer, ESM-2, ProteinMPNN, AlphaFold2, AlphaFold3, Evo, Evo 2, ProtTrans, MolBERT, BepiPred-3.0, DEDAL, SecProCT, DeepECA, RGN2, trRosettaX Single, DataDTA, ConPlex, DrugAssist, TxGNN, ChatDrug, BioMedGPT, CellPolaris, GeneCompass, CERNNE, Pathomic Fusion, HFBSurv, RNA degformer, Bingo, MSA Transformer, ResPRE, DeepSeek-R1。</li>
+<li><strong>反馈回路</strong>: 未明确提及统一的反馈回路，但部分方法（如DrugAssist）采用人机交互（human-in-the-loop）进行分子优化。</li>
+<li><strong>假设</strong>: 生物序列（DNA/RNA/蛋白质）的统计规律中蕴含了其结构、功能和进化信息，LLM能够通过自监督学习从大规模无标注数据中捕捉这些规律。</li>
+<li><strong>从输入到输出的文字流程</strong>: 以蛋白质结构预测为例：输入蛋白质序列 → 通过MSA构建或直接使用单序列 → 输入Transformer编码器（如Evoformer）提取序列和共进化特征 → 通过结构模块（如IPA）将特征映射为3D坐标 → 输出预测的蛋白质结构。</li>
 </ul>
 <h2>08 核心模块拆解</h2>
+<p>由于本文是综述，未提出统一模型，因此无法拆解单一模型的核心模块。以下基于文中重点讨论的AlphaFold2架构进行拆解，并标注为[基于综述内容的重构]。</p>
 <table>
 <thead>
 <tr>
-<th>模块</th>
-<th>功能</th>
-<th>为何需要</th>
-<th>输入输出</th>
-<th>支撑证据</th>
-<th>移除后的已知或预期影响</th>
+<th style="text-align: left;">模块</th>
+<th style="text-align: left;">功能</th>
+<th style="text-align: left;">为何需要</th>
+<th style="text-align: left;">输入输出</th>
+<th style="text-align: left;">支撑证据</th>
+<th style="text-align: left;">移除后的已知或预期影响</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>自注意力机制</td>
-<td>建模序列中任意位置间的长程依赖</td>
-<td>生物序列中远距离调控元件、蛋白质残基间相互作用关键</td>
-<td>输入：token序列；输出：上下文感知表示</td>
-<td>模型架构比较节：LLM/Transformer 适合长程基因组交互</td>
-<td>[预期] 无法捕获远距离相互作用，性能显著下降</td>
+<td style="text-align: left;"><strong>Evoformer</strong></td>
+<td style="text-align: left;">处理MSA和成对特征，通过迭代的注意力机制和三角乘法更新，融合序列、共进化和结构信息。</td>
+<td style="text-align: left;">捕捉蛋白质序列中长程共进化关系，为结构预测提供关键约束。</td>
+<td style="text-align: left;">输入: MSA特征、成对特征；输出: 更新的MSA和成对表示。</td>
+<td style="text-align: left;">文中引用AlphaFold2在CASP14达到92.4/100的GDT分数。</td>
+<td style="text-align: left;">移除后，模型将失去关键的共进化信息，导致对无MSA或MSA质量差的蛋白质预测精度大幅下降。</td>
 </tr>
 <tr>
-<td>预训练 + 微调范式</td>
-<td>从无标注数据学习通用表示，再适配下游任务</td>
-<td>标注数据稀缺，预训练可充分利用海量未标注序列</td>
-<td>输入：大规模序列语料；输出：任务特定模型</td>
-<td>Introduction 节：自监督学习减少标注依赖</td>
-<td>[预期] 需要大量标注数据，泛化能力下降</td>
+<td style="text-align: left;"><strong>结构模块 (Structure Module)</strong></td>
+<td style="text-align: left;">将Evoformer输出的表示映射为具体的3D原子坐标，通过迭代的IPA (Invariant Point Attention) 机制保证等变性。</td>
+<td style="text-align: left;">将抽象的序列表示转化为物理上合理的3D结构。</td>
+<td style="text-align: left;">输入: 成对表示、单序列表示；输出: 每个残基的3D坐标和旋转/平移。</td>
+<td style="text-align: left;">同上。</td>
+<td style="text-align: left;">移除后，模型无法输出3D坐标，退化为仅能预测残基间距离或接触图的模型。</td>
 </tr>
 <tr>
-<td>多模态融合</td>
-<td>整合序列、结构、文本等多源信息</td>
-<td>生物问题本质是多模态的（序列→结构→功能）</td>
-<td>输入：多模态数据；输出：统一表示/预测</td>
-<td>Future outlook 节：多模态建模为未来方向</td>
-<td>[预期] 无法利用结构/临床信息，预测精度受限</td>
-</tr>
-<tr>
-<td>图神经网络/等变网络</td>
-<td>处理分子图结构、3D坐标</td>
-<td>分子与蛋白质结构本质是图/几何对象</td>
-<td>输入：分子图/3D结构；输出：结构感知表示</td>
-<td>蛋白质结构预测节：AlphaFold2 结合图网络与结构模块</td>
-<td>[预期] 丧失结构信息，预测精度大幅下降</td>
-</tr>
-<tr>
-<td>对比学习</td>
-<td>学习正负样本间的判别性表示</td>
-<td>增强模型区分能力，用于药物-靶点相互作用等任务</td>
-<td>输入：正负样本对；输出：嵌入空间</td>
-<td>药物设计节：ConPlex 结合对比学习</td>
-<td>[预期] 表示区分度下降，检索/匹配任务性能降低</td>
+<td style="text-align: left;"><strong>循环精炼 (Recycling)</strong></td>
+<td style="text-align: left;">将结构模块的初步输出反馈回Evoformer，进行多轮迭代优化。</td>
+<td style="text-align: left;">允许模型在序列和结构表示之间进行多轮信息交换，逐步细化预测。</td>
+<td style="text-align: left;">输入: 上一轮的结构输出；输出: 下一轮改进的表示。</td>
+<td style="text-align: left;">文中未明确提及，但AlphaFold2原文中该模块对精度有显著贡献。</td>
+<td style="text-align: left;">移除后，预测精度会下降，尤其是在多轮迭代中能纠正的初始错误将无法被修正。</td>
 </tr>
 </tbody>
 </table>
 <h2>09 关键公式符号</h2>
-<p>不适用（本文为综述，未提供具体数学模型或公式）。</p>
+<p>不适用。本文是综述，未提出新的公式或模型。</p>
 <h2>10 实验设计与证据链</h2>
+<p>本文是综述，不包含新的实验。其证据链主要来自对已发表文献的引用和总结。</p>
 <ul>
-<li><strong>数据集</strong>：未提供具体数据集（综述性质，引用各模型原始论文）</li>
-<li><strong>指标</strong>：未提供统一指标（各模型使用不同基准，如 CASP/CAMEO 分数）</li>
-<li><strong>基线</strong>：未提供统一基线</li>
-<li><strong>评测协议</strong>：未提供统一协议</li>
+<li><strong>数据集/群体</strong>: 未提供统一数据集，引用了各原始论文使用的数据集（如CASP, CAMEO, Tox21等）。</li>
+<li><strong>规模</strong>: 未提供。</li>
+<li><strong>指标</strong>: 未提供统一指标，引用了各原始论文使用的指标（如GDT, AUROC, F1-score, accuracy等）。</li>
+<li><strong>基线</strong>: 未提供统一基线，引用了各原始论文的对比方法。</li>
+<li><strong>预算</strong>: 未提供。</li>
+<li><strong>骨干/仪器</strong>: 未提供。</li>
+<li><strong>Oracle 输入</strong>: 未提供。</li>
+<li><strong>评测协议</strong>: 未提供。</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th>实验</th>
-<th>检验的claim</th>
-<th>对比与条件</th>
-<th>结果</th>
-<th>支持的结论</th>
-<th>不支持更强的结论</th>
-<th>来源</th>
+<th style="text-align: left;">实验</th>
+<th style="text-align: left;">检验的claim</th>
+<th style="text-align: left;">对比与条件</th>
+<th style="text-align: left;">结果</th>
+<th style="text-align: left;">支持的结论</th>
+<th style="text-align: left;">不支持更强的结论</th>
+<th style="text-align: left;">来源</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>AlphaFold2 在 CASP14 的表现</td>
-<td>Transformer 架构可革命性提升蛋白质结构预测</td>
-<td>与 CASP13/14 参赛方法对比</td>
-<td>达到 92.4/100</td>
-<td>AlphaFold2 在结构预测上取得突破性精度</td>
-<td>未说明是否对所有蛋白类型均有效</td>
-<td>图 3 及蛋白质结构预测节</td>
+<td style="text-align: left;">AlphaFold2在CASP14上的表现</td>
+<td style="text-align: left;">Transformer架构能革命性地提升蛋白质结构预测精度。</td>
+<td style="text-align: left;">与CASP13及之前的参赛方法对比。</td>
+<td style="text-align: left;">达到92.4/100 GDT分数。</td>
+<td style="text-align: left;">AlphaFold2在蛋白质结构预测上取得了突破性进展。</td>
+<td style="text-align: left;">无法证明该方法在所有蛋白质类型或所有条件下都最优。</td>
+<td style="text-align: left;">Introduction节, Protein structure prediction节</td>
 </tr>
 <tr>
-<td>ESM-2 蛋白质语言模型</td>
-<td>语言模型表示可匹配物理方法</td>
-<td>与基于物理的方法对比</td>
-<td>声称匹配或超越物理方法</td>
-<td>蛋白质语言模型是有效表示学习工具</td>
-<td>未提供具体数值或基准细节</td>
-<td>蛋白质结构预测节</td>
+<td style="text-align: left;">ESM-2的零样本预测能力</td>
+<td style="text-align: left;">蛋白质语言模型能从序列中学习到丰富的功能信息。</td>
+<td style="text-align: left;">在多个下游任务（如稳定性预测、功能预测）上测试。</td>
+<td style="text-align: left;">性能匹配或超过基于物理的方法。</td>
+<td style="text-align: left;">蛋白质语言模型是有效的序列表示学习工具。</td>
+<td style="text-align: left;">无法证明其能完全替代物理模拟方法，尤其是在需要精确3D坐标的任务上。</td>
+<td style="text-align: left;">Introduction节, Protein structure prediction节</td>
 </tr>
 <tr>
-<td>DNABERT / DNABERT-2</td>
-<td>预训练基因组模型可迁移到多任务</td>
-<td>与任务特定模型对比</td>
-<td>声称 SOTA 性能</td>
-<td>基因组预训练模型具有通用性</td>
-<td>未提供具体任务与数值</td>
-<td>基因序列分析节</td>
-</tr>
-<tr>
-<td>药物设计 LLM 方法</td>
-<td>LLM 可用于虚拟筛选与配体发现</td>
-<td>与传统虚拟筛选对比</td>
-<td>声称可预测和生成新化合物</td>
-<td>LLM 在药物设计中具有潜力</td>
-<td>未提供临床验证证据</td>
-<td>药物设计节</td>
+<td style="text-align: left;">Evo/Evo 2的基因组建模能力</td>
+<td style="text-align: left;">基因组基础模型能实现零样本预测和从头序列设计。</td>
+<td style="text-align: left;">在变异效应预测、功能序列生成等任务上测试。</td>
+<td style="text-align: left;">在多种基因组元件上达到SOTA性能。</td>
+<td style="text-align: left;">大规模基因组预训练能捕捉到丰富的调控和功能信息。</td>
+<td style="text-align: left;">无法证明其能完美预测所有类型的变异效应或生成所有功能序列。</td>
+<td style="text-align: left;">Introduction节</td>
 </tr>
 </tbody>
 </table>
 <h2>11 结论正确解读</h2>
 <ul>
-<li><strong>任务范围</strong>：本文覆盖基因组序列分析、蛋白质结构预测、药物设计三大领域，但未深入讨论 MD 模拟、构象采样、分子对接等物理模拟方法。</li>
-<li><strong>oracle/真值输入</strong>：综述中引用的模型（如 AlphaFold2）依赖实验解析结构作为训练/验证真值，但本文未讨论 oracle 输入的具体设计。</li>
-<li><strong>端到端状态</strong>：多数模型为「预训练 + 微调」范式，非端到端物理模拟；AlphaFold2 为端到端结构预测，但依赖 MSA 输入。</li>
-<li><strong>算力成本</strong>：未提供具体算力需求数据。</li>
-<li><strong>历史数据依赖</strong>：预训练模型依赖大规模无标注序列数据，数据质量直接影响模型性能。</li>
-<li><strong>模型依赖</strong>：结论基于 Transformer 架构，不适用于非注意力机制模型。</li>
-<li><strong>最难情形</strong>：跨物种泛化、多模态整合、可解释性、隐私保护。</li>
-<li><strong>群体/领域边界</strong>：结论主要适用于有充足序列数据的模式生物和常见蛋白家族；对孤儿蛋白、新折叠、膜蛋白等挑战性目标适用性有限。</li>
-<li><strong>不确定性</strong>：综述未提供定量不确定性分析。</li>
-<li><strong>有边界的复述</strong>：LLM 在生物信息学三大领域已展示出通用表示学习与生成能力，尤其 AlphaFold2 在结构预测上达到实验级精度；但数据稀缺、跨模态整合、可解释性与隐私问题仍是实际应用的主要瓶颈，且结论主要基于有充足序列数据的场景。</li>
+<li><strong>任务范围</strong>: 本文结论仅限于对LLM在生物信息学中应用现状的综述性总结，不包含对新方法的提出或验证。</li>
+<li><strong>Oracle/真值输入</strong>: 综述中引用的各原始论文依赖不同的真值（如实验解析的蛋白质结构、功能注释数据库）。</li>
+<li><strong>端到端状态</strong>: 综述中讨论的方法并非都是端到端的。例如，AlphaFold2是端到端的结构预测，而许多LLM方法仅提供序列表示，需要下游任务特定头。</li>
+<li><strong>算力成本</strong>: 文中未量化算力成本，但指出万亿参数模型的计算成本高昂。</li>
+<li><strong>历史数据依赖</strong>: 所有模型性能都依赖于其训练数据的质量和规模。例如，AlphaFold2依赖PDB库，Evo依赖原核基因组。</li>
+<li><strong>模型依赖</strong>: 结论依赖于所引用的具体模型架构和训练方法。</li>
+<li><strong>最难情形</strong>: 文中指出，对于无MSA的孤儿蛋白、跨物种泛化、多模态数据整合等情形，现有方法仍面临挑战。</li>
+<li><strong>群体/领域边界</strong>: 结论主要适用于生物信息学领域，特别是基因组、蛋白质和药物设计三个子领域。</li>
+<li><strong>不确定性</strong>: 综述本身不提供不确定性量化，但引用的原始论文可能包含。</li>
+<li><strong>有边界的复述</strong>: 本文系统综述了截至2025年，大语言模型在生物信息学（基因组分析、蛋白质结构预测、药物设计）中的应用，表明LLM在序列表示、零样本预测和多模态融合方面展现出巨大潜力，但高质量数据稀缺、可解释性差、跨物种泛化有限和计算成本高昂仍是主要挑战。</li>
 </ul>
 <h2>12 作者自认局限</h2>
-<table>
-<thead>
-<tr>
-<th>局限</th>
-<th>具体表现</th>
-<th>作者提出的未来方向</th>
-<th>来源</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>高质量标注数据稀缺</td>
-<td>高维度、多样化生物数据集不足</td>
-<td>利用强化学习、自监督学习减少标注依赖；构建数据湖</td>
-<td>Future outlook 节</td>
-</tr>
-<tr>
-<td>多模态整合困难</td>
-<td>生物医学数据异构，跨模态建模难</td>
-<td>发展多模态学习技术，融合 Transformer、GNN、注意力机制</td>
-<td>Future outlook 节</td>
-</tr>
-<tr>
-<td>可解释性不足</td>
-<td>模型预测难以解释生物学机制</td>
-<td>将伦理与可解释性嵌入模型设计</td>
-<td>Future outlook 节</td>
-</tr>
-<tr>
-<td>隐私与合规风险</td>
-<td>医疗数据敏感，模型部署需合规</td>
-<td>联邦学习、隐私保护训练</td>
-<td>Future outlook 节</td>
-</tr>
-</tbody>
-</table>
+<p>在提供的材料中未发现作者明确承认的局限。但作者在“Future outlook”和“Conclusion”部分提及了相关约束，可视为非正式局限。</p>
+<p><strong>作者提及的相关约束</strong>:
+- <strong>数据质量与隐私</strong>: 高质量、高维、多样化的生物数据集仍然稀缺，且数据隐私是重要问题。
+- <strong>多模态整合</strong>: 如何设计有效整合跨模态信息的模型是难题。
+- <strong>可解释性</strong>: 模型的可解释性不足。
+- <strong>泛化能力</strong>: 模型对新生物体和任务的泛化能力有限。
+- <strong>负责任部署</strong>: 在健康相关场景中需要负责任地部署。</p>
 <h2>13 批判性分析</h2>
 <table>
 <thead>
 <tr>
-<th>[Analysis] 观察</th>
-<th>潜在问题或替代解释</th>
-<th>为何重要</th>
-<th>如何检验</th>
-<th>依据</th>
+<th style="text-align: left;">[Analysis] 观察</th>
+<th style="text-align: left;">潜在问题或替代解释</th>
+<th style="text-align: left;">为何重要</th>
+<th style="text-align: left;">如何检验</th>
+<th style="text-align: left;">依据</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>综述对「LLM 匹配或超越物理方法」的论断缺乏具体数值</td>
-<td>可能仅针对特定任务或数据集，不具普适性</td>
-<td>影响读者对 LLM 能力的准确判断</td>
-<td>查阅 ESM-2 原始论文，对比具体基准与任务范围</td>
-<td>蛋白质结构预测节</td>
+<td style="text-align: left;">综述将AlphaFold2归类为LLM应用的成功案例，但AlphaFold2的核心是结合了Transformer和显式结构模块的混合架构，并非纯语言模型。</td>
+<td style="text-align: left;">这可能模糊了“语言模型”与“通用Transformer架构”的界限。AlphaFold2的成功更多归功于其针对蛋白质折叠问题的精心设计，而非LLM的通用能力。</td>
+<td style="text-align: left;">正确区分架构类型有助于领域内研究者更精准地借鉴方法，避免盲目套用。</td>
+<td style="text-align: left;">对比AlphaFold2与纯语言模型（如ESM-2）在端到端结构预测任务上的性能差异。</td>
+<td style="text-align: left;">Introduction节将AlphaFold2与GPT、BERT并列讨论，并称其“bridging the gap between language models and biological sequence analysis”。</td>
 </tr>
 <tr>
-<td>AlphaFold2 被归为 LLM 应用，但其架构并非纯语言模型</td>
-<td>可能混淆「基于 Transformer」与「LLM」概念</td>
-<td>影响方法分类准确性</td>
-<td>对比 AlphaFold2 与 ESM-2 架构差异</td>
-<td>蛋白质结构预测节</td>
+<td style="text-align: left;">综述声称LLM在虚拟筛选中优于传统方法，但未提供具体量化对比数据。</td>
+<td style="text-align: left;">这可能是一种过度推广。传统虚拟筛选方法（如分子对接）在某些场景下（如已知靶点结构）可能更高效、更可解释。</td>
+<td style="text-align: left;">需要明确LLM的优势边界，避免误导研究者放弃成熟方法。</td>
+<td style="text-align: left;">在标准虚拟筛选基准（如DUD-E, MUV）上，系统对比LLM方法与对接、药效团等传统方法的性能、速度和可解释性。</td>
+<td style="text-align: left;">Drug design节: "although virtual screening methods are also very useful... they may not be as good as large language models (LLMs) in terms of data processing capabilities, innovation, and multi-tasking." 该论断缺乏直接证据。</td>
 </tr>
 <tr>
-<td>综述未讨论 LLM 在 MD 模拟、构象采样中的应用</td>
-<td>可能遗漏 LLM 与物理模拟结合的重要方向</td>
-<td>对课题读者而言，缺少可迁移的物理-LLM 混合方法信息</td>
-<td>检索 LLM+MD 相关文献</td>
-<td>全文范围</td>
-</tr>
-<tr>
-<td>药物设计部分缺乏对分子对接、虚拟筛选具体方法的深入比较</td>
-<td>可能因篇幅限制，未覆盖技术细节</td>
-<td>影响读者对 LLM 在药物设计中实际效用的判断</td>
-<td>查阅 DrugAssist、TxGNN 原始论文</td>
-<td>药物设计节</td>
-</tr>
-<tr>
-<td>未来方向中「数据湖」概念未具体展开</td>
-<td>可能为概念性提议，缺乏实施细节</td>
-<td>影响可操作性</td>
-<td>查阅数据湖在生物医学中的应用文献</td>
-<td>Future outlook 节</td>
+<td style="text-align: left;">综述将“模型规模”和“数据规模”作为进步的主要驱动力，但未深入讨论规模与性能之间的边际效益递减问题。</td>
+<td style="text-align: left;">可能存在“规模越大越好”的隐含假设，而实际中，对于特定任务，更小的、精心设计的模型可能更高效。</td>
+<td style="text-align: left;">资源有限的研究者需要知道如何分配计算预算，避免盲目追求大规模模型。</td>
+<td style="text-align: left;">在固定计算预算下，对比不同规模模型（如ESM-2的small/medium/large版本）在多个生物信息学任务上的性能-成本曲线。</td>
+<td style="text-align: left;">Introduction节: "Although there is no clear statement that the larger the model’s size and data, the better, GPT1 to GPT3.5 have made significant improvements..." 该表述本身已暗示了不确定性。</td>
 </tr>
 </tbody>
 </table>
 <h2>14 学到什么</h2>
-<p><strong>Agent 提炼的知识候选</strong>：
-1. <strong>可迁移概念</strong>：自监督预训练 + 微调范式可迁移至蛋白质结构预测任务，如使用 ESM-2 嵌入作为结构预测模型输入特征。
-2. <strong>可迁移方法</strong>：多模态融合策略（序列+结构+文本）可应用于蛋白质-配体相互作用预测，整合序列、结构、化学信息。
-3. <strong>可迁移工具</strong>：DNABERT-2 的 BPE tokenization 策略可借鉴用于蛋白质序列的 tokenization，处理长序列。
-4. <strong>可迁移实验设计</strong>：CASP 竞赛作为基准评估框架，可用于评估结构预测模型性能。
-5. <strong>可迁移思路</strong>：LLM 的零样本/少样本能力可用于新物种基因注释、孤儿蛋白功能预测等标注稀缺场景。
-6. <strong>对课题的启示</strong> [Analysis]：LLM 与物理模拟（MD、对接）的结合是未充分探索的方向，可尝试用 LLM 生成构象先验或加速自由能计算。</p>
-<h2>15 与已有知识连接</h2>
-<ul>
-<li><strong>相似工作</strong>：与 Lin et al. (2023) 的蛋白质语言模型综述、Rives et al. (2021) 的 ESM 系列工作一致，均强调预训练模型在蛋白质表示学习中的优势。</li>
-<li><strong>组合方向</strong>：本文与 AlphaFold2 (Jumper et al., 2021)、ESM-2 (Lin et al., 2023)、ProteinMPNN (Dauparas et al., 2022) 等原始论文可组合阅读，形成从序列到结构到设计的完整方法链。</li>
-<li><strong>冲突观点</strong>：本文对 LLM 能力的乐观评估与部分物理模拟研究者的保守观点存在张力，后者认为 LLM 缺乏物理约束，在动态构象采样中不可靠。</li>
-<li><strong>可迁移领域</strong>：本文的多模态整合思路可迁移至蛋白质-配体共折叠预测、突变效应预测等任务。</li>
-<li><strong>候选方向</strong> [Analysis]：LLM 生成蛋白质构象先验 + MD 精修，或 LLM 引导的构象空间探索，是本文未覆盖但值得探索的交叉方向。</li>
-</ul>
-<h2>16 研究想法</h2>
-<p><strong>Agent 生成的研究候选</strong>：</p>
+<p><strong>Agent 提炼的知识候选</strong></p>
 <ol>
 <li>
-<p><strong>名称</strong>：LLM 引导的蛋白质构象采样加速
-   - <strong>来源局限/观察</strong>：本文未讨论 LLM 与 MD 模拟的结合，但指出 LLM 擅长序列-结构关系学习。
-   - <strong>核心假设</strong>：LLM 可学习构象空间的高概率区域先验，用于初始化或引导 MD 采样。
-   - <strong>初步方法</strong>：使用 ESM-2 嵌入作为条件输入，训练生成模型预测低能构象，再以 MD 精修。
-   - <strong>验证方式</strong>：在 CASP 目标蛋白上对比 LLM 引导采样与标准 MD 采样的效率与精度。
-   - <strong>创新状态</strong>：unverified</p>
+<p><strong>可迁移概念: 生物序列的“语言”建模</strong></p>
+<ul>
+<li><strong>概念</strong>: 将DNA、RNA、蛋白质序列视为一种具有语法和语义的“生物语言”，利用NLP中的自监督预训练方法（如掩码语言模型MLM）来学习其内在规律。</li>
+<li><strong>如何迁移到本课题</strong>: 对于蛋白质结构预测、构象采样、序列设计等任务，可以借鉴此思路，将序列作为主要输入，通过大规模预训练获得强大的序列表示，再结合下游任务特定的结构模块或生成模块。</li>
+</ul>
 </li>
 <li>
-<p><strong>名称</strong>：多模态 LLM 用于蛋白质-配体相互作用预测
-   - <strong>来源局限/观察</strong>：本文药物设计部分提到 LLM 可预测蛋白质-配体相互作用，但未深入多模态整合。
-   - <strong>核心假设</strong>：整合序列、结构、化学文本信息可提升相互作用预测精度。
-   - <strong>初步方法</strong>：构建序列编码器（ESM-2）+ 图编码器（分子图）+ 文本编码器（文献描述）的多模态融合模型。
-   - <strong>验证方式</strong>：在 DUD-E、LIT-PCBA 等基准上对比单模态与多模态模型。
-   - <strong>创新状态</strong>：unverified</p>
+<p><strong>可迁移方法: 混合架构（序列编码 + 结构模块）</strong></p>
+<ul>
+<li><strong>方法</strong>: 如AlphaFold2所示，将Transformer（用于序列和共进化信息处理）与显式的几何/结构模块（如IPA、GNN）结合，以处理需要3D坐标输出的任务。</li>
+<li><strong>如何迁移到本课题</strong>: 在分子对接、构象生成等任务中，可以设计类似的混合架构：用LLM编码配体/蛋白质序列，用GNN或等变网络处理3D结构信息，并通过注意力机制或交叉注意力进行信息融合。</li>
+</ul>
 </li>
 <li>
-<p><strong>名称</strong>：LLM 驱动的蛋白质设计序列-结构协同优化
-   - <strong>来源局限/观察</strong>：本文提到 ProteinMPNN 等模型，但未讨论 LLM 在序列-结构协同设计中的潜力。
-   - <strong>核心假设</strong>：LLM 可同时建模序列与结构约束，生成高表达、高稳定性蛋白。
-   - <strong>初步方法</strong>：将结构信息编码为 token 序列，训练 LLM 进行序列-结构联合生成。
-   - <strong>验证方式</strong>：实验表达与功能验证，对比 Rosetta 设计基线。
-   - <strong>创新状态</strong>：unverified</p>
+<p><strong>可迁移实验设计: 零样本/少样本评估</strong></p>
+<ul>
+<li><strong>方法</strong>: 如ESM-2和Evo所示，在预训练后，直接在未见过的任务或物种上进行零样本评估，以检验模型学到的通用知识。</li>
+<li><strong>如何迁移到本课题</strong>: 在开发新的蛋白质结构预测或设计模型时，应设置零样本/少样本评估协议，测试模型对新蛋白质家族、新折叠类型或新物种的泛化能力，这比仅在标准测试集上评估更有说服力。</li>
+</ul>
 </li>
 <li>
-<p><strong>名称</strong>：面向新物种的零样本基因功能预测
-   - <strong>来源局限/观察</strong>：本文强调 LLM 的零样本/少样本能力，但未具体应用于新物种场景。
-   - <strong>核心假设</strong>：预训练基因组模型可零样本预测新物种基因功能。
-   - <strong>初步方法</strong>：使用 DNABERT-2 预训练模型，在未见物种基因组上直接进行功能注释。
-   - <strong>验证方式</strong>：与同源比对方法对比，评估注释覆盖率与准确率。
-   - <strong>创新状态</strong>：unverified</p>
+<p><strong>可迁移概念: 从任务特定到基础模型</strong></p>
+<ul>
+<li><strong>概念</strong>: 领域正从为每个任务（如启动子预测、剪接位点检测）训练独立模型，转向训练一个通用基础模型，然后通过微调或提示工程适应多种任务。</li>
+<li><strong>如何迁移到本课题</strong>: 可以探索训练一个统一的蛋白质基础模型，同时支持结构预测、功能预测、稳定性预测、序列设计等多种任务，而非为每个任务开发独立模型。</li>
+</ul>
 </li>
-</ol></div>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似连接</strong>: 本文对AlphaFold2、ESM-2、ProteinMPNN等方法的总结，与用户已有知识（如AlphaFold2的Evoformer+结构模块架构、ESM-2的掩码语言模型预训练）一致，可作为领域地图的补充。</li>
+<li><strong>组合连接</strong>: 本文提出的“LLM + 物理模拟”混合方法（如MSA Transformer与Potts模型的对比）提示，可以将LLM的序列表示能力与分子动力学（MD）模拟的物理约束相结合，例如用LLM预测的残基间距离作为MD模拟的约束。</li>
+<li><strong>冲突连接</strong>: 本文声称LLM在虚拟筛选中优于传统方法，但未提供量化证据。这与用户可能了解的“传统对接方法在特定场景下仍具优势”的知识存在潜在冲突，需要进一步验证。</li>
+<li><strong>可迁移领域</strong>: 本文讨论的基因组基础模型（如Evo, Evo 2）的方法论（单核苷酸分辨率、跨物种预训练、零样本预测）可直接迁移到蛋白质结构相关计算研究中，例如开发类似的基础模型用于蛋白质序列-结构-功能联合建模。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<p><strong>候选1: 基于蛋白质语言模型和等变网络的端到端构象生成模型</strong>
+- <strong>名称</strong>: ProtConformer-LLM
+- <strong>来源局限/观察</strong>: 现有构象生成方法（如扩散模型）通常需要大量计算资源，且对序列变化的泛化能力有限。纯语言模型无法直接输出3D坐标。
+- <strong>核心假设</strong>: 蛋白质语言模型（如ESM-2）学到的序列表示包含了足够的构象先验信息，通过一个轻量级的等变网络（如SE(3)-Transformer）可以将其解码为多样化的、物理上合理的构象。
+- <strong>相对本文的增量</strong>: 本文仅综述了现有方法，未提出新模型。本候选将LLM的序列表示与等变生成模型结合，实现从序列到构象的端到端生成。
+- <strong>初步方法</strong>:
+    1.  使用预训练的ESM-2提取输入蛋白质序列的嵌入。
+    2.  设计一个条件等变扩散模型，以ESM-2嵌入为条件，在3D残基坐标空间中进行扩散和去噪。
+    3.  在PDB构象集合和MD模拟轨迹数据上训练模型。
+- <strong>验证方式</strong>:
+    1.  在标准构象生成基准（如CASP的构象多样性评估）上，与Rosetta、AlphaFold2的构象采样、扩散模型等方法对比RMSD、覆盖率、多样性等指标。
+    2.  进行消融实验，验证ESM-2嵌入和等变网络的有效性。
+- <strong>可能的失败模式</strong>:
+    1.  ESM-2嵌入可能不包含足够的构象多样性信息，导致生成的构象单一。
+    2.  等变扩散模型可能难以生成高精度的局部细节。
+    3.  模型可能产生物理上不合理的构象（如原子碰撞）。
+- <strong>创新状态</strong>: unverified</p>
+<p><strong>候选2: 基于LLM的蛋白质-配体结合亲和力预测与对接姿势优化</strong>
+- <strong>名称</strong>: LLM-DockAffinity
+- <strong>来源局限/观察</strong>: 现有对接和亲和力预测方法通常将蛋白质和配体分开编码，或依赖复杂的物理能量函数。LLM在跨模态表示学习上具有潜力。
+- <strong>核心假设</strong>: 通过联合预训练蛋白质语言模型和化学语言模型（如SMILES BERT），可以学习到一个共享的嵌入空间，其中蛋白质结合口袋和配体的表示能够直接反映其结合亲和力和几何互补性。
+- <strong>相对本文的增量</strong>: 本文综述了DataDTA、ConPlex等LLM方法，但本候选强调联合预训练和端到端的姿势优化，而非仅预测亲和力。
+- <strong>初步方法</strong>:
+    1.  使用对比学习（如InfoNCE loss）联合预训练蛋白质语言模型（如ESM-2）和配体语言模型（如ChemBERTa），训练数据为已知的蛋白质-配体复合物对。
+    2.  在预训练基础上，增加一个轻量级的交叉注意力头，用于预测结合亲和力。
+    3.  进一步，将预训练的表示作为初始化，训练一个基于等变网络的姿势优化模块，以细化对接姿势。
+- <strong>验证方式</strong>:
+    1.  在PDBbind、DUD-E等基准上，与Glide、AutoDock Vina、DataDTA等方法对比亲和力预测的Pearson/Spearman相关系数和对接成功率。
+    2.  进行消融实验，验证联合预训练和姿势优化模块的贡献。
+- <strong>可能的失败模式</strong>:
+    1.  联合预训练可能无法有效对齐蛋白质和配体的表示空间。
+    2.  姿势优化模块可能过拟合于训练集中的已知复合物，对全新靶点泛化能力差。
+    3.  模型可能无法处理配体的构象灵活性。
+- <strong>创新状态</strong>: unverified</p></div>
   </section>
   
   
@@ -416,133 +398,111 @@
     <div class="md"><h2>Review setup</h2>
 <ul>
 <li><strong>Input scope</strong> Full manuscript</li>
-<li><strong>Assessment boundary</strong> The manuscript as provided, including abstract, introduction, sections on gene sequence analysis, protein structure prediction, drug design, future outlook, and conclusion.</li>
-<li><strong>Shared manuscript claim summary</strong> This manuscript claims to provide a comprehensive survey of large language models (LLMs) in bioinformatics, covering their principles, applications in gene sequence analysis, protein structure prediction, and drug design, and discussing future directions and challenges.</li>
-<li><strong>Visible evidence base</strong> The manuscript includes a narrative review of existing literature, a timeline figure (Figure 1), a model architecture comparison table (Table 1), and a figure illustrating LLM applications in bioinformatics (Figure 3). No original experimental data, code, or quantitative benchmarks are presented.</li>
-<li><strong>Missing materials affecting confidence</strong> No original data, code, or systematic evaluation methodology is provided. The survey lacks a PRISMA-style search strategy, inclusion/exclusion criteria, or a quantitative comparison of model performance across studies. The figures (Figure 1, 2, 3) are described but not shown.</li>
+<li><strong>Assessment boundary</strong> Scientific content, claims, evidence, and presentation as provided in the manuscript</li>
+<li><strong>Shared manuscript claim summary</strong> This survey reviews the principles of large language models (LLMs) and their applications in bioinformatics, specifically in gene/genome sequence analysis, protein structure/function prediction, and drug design. It also discusses challenges and future directions.</li>
+<li><strong>Visible evidence base</strong> Abstract, Introduction, sections on Gene sequence analysis, Protein structure prediction, Drug design, Future outlook, Conclusion, and references</li>
+<li><strong>Missing materials affecting confidence</strong> No figures or tables are provided; the manuscript references Figure 1, Figure 2, Figure 3, and Table 1, but these are absent. No code, data, or supplementary materials are available.</li>
 </ul>
 <h2>Reviewer</h2>
 <ul>
-<li><strong>Overall assessment</strong> This manuscript presents a broad, narrative-style survey of large language models in bioinformatics. While the topic is timely and the scope is ambitious, the manuscript suffers from a lack of depth, originality, and critical analysis. It reads more as a descriptive list of models and applications than a critical synthesis that would guide future research. The absence of a systematic methodology, quantitative comparisons, and a clear conceptual framework significantly limits its value as a survey. The manuscript does not meet the standards of originality, scientific importance, or technical soundness expected for a high-impact journal.</li>
-<li><strong>Who would be interested in the results, and why</strong> Early-career researchers or students seeking a high-level, non-technical introduction to the application of LLMs in bioinformatics might find this survey useful. However, the lack of critical analysis and depth means it offers limited value for experts in the field.</li>
-<li><strong>Major strengths</strong><ul>
-<li>The topic is highly relevant and timely, given the rapid integration of LLMs into bioinformatics.</li>
-<li>The manuscript covers a wide range of applications, from genomics to drug design.</li>
-<li>The inclusion of a timeline and a table summarizing representative models provides a useful, albeit superficial, overview.</li>
-</ul>
-</li>
-<li>
-<p><strong>Major Concerns</strong></p>
-<ul>
+<li><strong>Overall assessment</strong> This manuscript presents a broad survey of large language models in bioinformatics, covering genomic analysis, protein structure prediction, and drug design. While the topic is timely and the scope is ambitious, the manuscript suffers from significant structural and content issues. It reads as a disjointed collection of model descriptions rather than a coherent, critical synthesis. The absence of figures and tables, which are central to the narrative, makes it impossible to fully evaluate the claims. The survey lacks depth in critical analysis, fails to provide a clear comparative framework, and includes several unsupported or vague statements. The manuscript does not meet the standards of originality, scientific importance, or technical soundness expected for a high-impact journal.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers new to the field of bioinformatics and LLMs might find this a useful starting point for a list of models and applications. However, the lack of critical analysis and comparative insights limits its value for experts or those seeking to understand the state-of-the-art.</li>
+<li><strong>Major strengths</strong> The manuscript covers a wide range of relevant models and applications across three major bioinformatics domains. The inclusion of a section on architectural considerations is a positive step.</li>
+<li><strong>Major Concerns</strong><ul>
 <li><strong>Concern ID</strong> R1-M1</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> Originality and Scientific Importance</li>
-<li><strong>Claim pointer</strong> The manuscript claims to be a "comprehensive survey" that reviews the "background and research status of biological large-scale models" and "discusses future directions."</li>
+<li><strong>Axis</strong> Evidence and Support</li>
+<li><strong>Claim pointer</strong> The manuscript claims to provide a "comprehensive survey" and a "comprehensive overview" of LLMs in bioinformatics.</li>
 <li><strong>Evidence pointer</strong> Entire manuscript</li>
-<li><strong>Concern</strong> The manuscript is a descriptive narrative review that lacks a systematic methodology. It does not define a search strategy, inclusion/exclusion criteria, or a framework for evaluating the quality of the cited studies. The "comprehensive" claim is not supported. The review primarily lists models and their applications without critical analysis, comparison, or synthesis. For example, the section on "Gene sequence analysis" presents a series of model descriptions (DeepMicrobes, MetaTransformer, ConF, etc.) without a comparative analysis of their strengths, weaknesses, or the contexts in which one might be preferred over another. The "Future outlook" section is generic and does not offer novel or specific research directions.</li>
-<li><strong>Why it matters</strong> A survey in a high-impact journal must provide more than a list of existing work. It should offer a critical synthesis, identify key trends, highlight unresolved challenges, and propose a roadmap for future research. The current manuscript fails to do this, making it a low-impact contribution that does not advance the field.</li>
-<li>
-<p><strong>Resolution test</strong> The authors must restructure the manuscript as a systematic review with a clearly defined methodology (e.g., PRISMA guidelines). They should include a quantitative or qualitative comparison of model performance across key tasks, identify specific gaps in the literature, and propose concrete, testable hypotheses or research directions. The "comprehensive" claim must be justified by the methodology.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-M2</p>
-</li>
+<li><strong>Concern</strong> The survey is not comprehensive. It lacks a systematic methodology for literature selection, a comparative analysis of model performance, and a critical evaluation of the field's progress. The text reads as a list of models with brief descriptions, without synthesizing findings or identifying key trends, limitations, or open questions beyond generic statements. The absence of a clear framework for comparing models (e.g., by task, data, performance metrics) undermines the survey's value.</li>
+<li><strong>Why it matters</strong> A survey's primary contribution is to synthesize and critically evaluate a body of work. Without this, the manuscript fails to provide a meaningful overview or guide future research.</li>
+<li><strong>Resolution test</strong> The authors must provide a clear methodology for their literature search, a structured comparison of models (e.g., in a table with performance metrics, data used, and limitations), and a critical synthesis that identifies key trends, challenges, and future directions beyond generic statements.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> Technical Soundness and Depth</li>
-<li><strong>Claim pointer</strong> The manuscript claims to review the "basic principles of LLMs" and their applications.</li>
-<li><strong>Evidence pointer</strong> Sections: Introduction, Gene sequence analysis, Protein structure prediction, Drug design</li>
-<li><strong>Concern</strong> The technical depth is insufficient for a survey aimed at an informed audience. The explanation of LLM principles is superficial (e.g., "Model scale: The number of parameters owned by the training model"). The discussion of model architectures (e.g., Transformer, GNN) is basic and does not delve into the specific adaptations required for biological sequences (e.g., tokenization strategies like k-mer vs. BPE, positional encoding for long sequences). The section on "Model architecture comparison and selection rationale" is a brief, generic list of model types without a clear connection to the specific challenges of bioinformatics data. The manuscript does not critically evaluate the limitations of applying LLMs to biological data, such as the challenge of modeling 3D structures from 1D sequences, the impact of data bias, or the computational cost of training large models.</li>
-<li><strong>Why it matters</strong> A survey must provide sufficient technical detail for readers to understand the core concepts and evaluate the claims. The current level of detail is more appropriate for a magazine article than a scientific review. The lack of depth undermines the manuscript's credibility and utility.</li>
-<li>
-<p><strong>Resolution test</strong> The authors should significantly expand the technical sections. For example, they should explain the key components of the Transformer architecture (self-attention, multi-head attention, positional encoding) and how they are adapted for genomic or protein sequences. They should provide a more detailed comparison of different tokenization strategies and their impact on model performance. They should also discuss the specific challenges of applying LLMs to biological data, such as the need for inductive biases (e.g., equivariance for 3D structures) and the problem of data scarcity for rare variants.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-M3</p>
-</li>
+<li><strong>Axis</strong> Evidence and Support</li>
+<li><strong>Claim pointer</strong> The manuscript references Figure 1, Figure 2, Figure 3, and Table 1 to support key claims and illustrate concepts.</li>
+<li><strong>Evidence pointer</strong> Sections: Introduction, Gene sequence analysis, Protein structure prediction</li>
+<li><strong>Concern</strong> The figures and table are not provided. The manuscript's narrative is heavily dependent on these visual elements (e.g., "Figure 1 illustrates the timeline...", "as illustrated in Figure 2", "Figure 3...", "Table 1 summarizes..."). Without them, the claims about timelines, model architectures, and application summaries are unverifiable and the manuscript is incomplete.</li>
+<li><strong>Why it matters</strong> The core evidence for several key claims is missing, making it impossible to assess the validity of the arguments and the quality of the survey.</li>
+<li><strong>Resolution test</strong> Provide all missing figures and tables. The figures must be of high quality, clearly labeled, and directly support the claims made in the text. The table must include a clear comparison of models with relevant features.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Originality and Scientific Importance</li>
+<li><strong>Claim pointer</strong> The manuscript claims to discuss "future directions for developing reliable, scalable, and explainable bioinformatics foundation models."</li>
+<li><strong>Evidence pointer</strong> Section: Future outlook</li>
+<li><strong>Concern</strong> The "Future outlook" section is superficial and generic. It mentions data scarcity, multimodal integration, and ethical considerations, but does not provide specific, novel, or actionable research directions. The suggestions (e.g., "develop multimodal learning techniques", "integrate advanced algorithms") are vague and do not build on the survey's findings. The section lacks depth and fails to identify concrete, unsolved problems or propose innovative solutions.</li>
+<li><strong>Why it matters</strong> A forward-looking perspective is a key component of a high-impact survey. A generic outlook does not provide value to the research community.</li>
+<li><strong>Resolution test</strong> The authors must provide a detailed, critical, and forward-looking perspective. This should include specific, unsolved technical challenges (e.g., scaling laws for biological data, handling of long-range genomic interactions, integration of 3D structural information), potential solutions (e.g., novel architectures, training paradigms), and a roadmap for future research.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> No</li>
-<li><strong>Axis</strong> Readability and Structure</li>
-<li><strong>Claim pointer</strong> The manuscript is presented as a "comprehensive survey."</li>
+<li><strong>Axis</strong> Technical Soundness</li>
+<li><strong>Claim pointer</strong> The manuscript states that "DeepMicrobes... has similar accuracy in large-scale estimation" and that "MetaTransformer... outperforms DeepMicrobes in terms of species and genus classification ability, training speed, and inference speed."</li>
+<li><strong>Evidence pointer</strong> Section: Gene sequence analysis, subsection: Application of deep learning models in gene sequence classification</li>
+<li><strong>Concern</strong> These comparative claims are made without providing any quantitative evidence, such as accuracy scores, F1-scores, or speed benchmarks. The reader cannot assess the validity or significance of these comparisons.</li>
+<li><strong>Why it matters</strong> Unsupported comparative claims are not scientifically rigorous and can be misleading.</li>
+<li><strong>Resolution test</strong> Provide specific performance metrics (e.g., accuracy, F1-score, training time) for the models being compared, along with the datasets and evaluation protocols used.</li>
+<li><strong>Concern ID</strong> R1-M5</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Readability for Nonspecialists</li>
+<li><strong>Claim pointer</strong> The manuscript aims to be a "comprehensive survey" accessible to a broad audience.</li>
 <li><strong>Evidence pointer</strong> Entire manuscript</li>
-<li><strong>Concern</strong> The manuscript's structure is disjointed and lacks a clear narrative flow. The introduction jumps between historical timelines, model characteristics, and applications without a clear logical progression. The sections on "Gene sequence analysis" and "Protein structure prediction" contain subsections that are not well-integrated (e.g., "Model architecture comparison and selection rationale" appears as a subsection within "Gene sequence analysis" but is not clearly linked to the preceding or following content). The "Future outlook" section is a list of general challenges (data scarcity, multimodal integration) that are not specifically tied to the models or applications discussed earlier.</li>
-<li><strong>Why it matters</strong> A well-structured survey guides the reader through the material, building a coherent argument. The current structure is confusing and makes it difficult to follow the authors' main points. This reduces the manuscript's readability and impact.</li>
-<li><strong>Resolution test</strong> The authors should reorganize the manuscript with a clear, logical structure. For example, they could start with a section on the fundamental principles of LLMs, followed by sections on specific application domains (genomics, proteomics, drug design), each with a consistent structure (e.g., problem definition, key models, comparative analysis, challenges). The "Future outlook" should be a synthesis of the challenges identified in the preceding sections, leading to specific, actionable research directions.</li>
+<li><strong>Concern</strong> The manuscript contains numerous grammatical errors, awkward phrasing, and unclear sentences that significantly impede readability. Examples include: "The emergence of foundation models with trillion-level parameters has redefined the landscape of artificial intelligence." (vague), "Biological large-scale models are a cross-disciplinary research field..." (incorrect phrasing), "The development of reinforcement learning... has significantly reduced the reliance on large-scale manual annotation." (overly broad and unsupported). The text often reads as a direct translation or a draft that has not been carefully edited.</li>
+<li><strong>Why it matters</strong> Poor writing quality undermines the credibility of the work and makes it difficult for readers to understand the key messages.</li>
+<li><strong>Resolution test</strong> The manuscript must undergo thorough language editing by a native English speaker. Sentences should be restructured for clarity, and technical terms should be defined upon first use.</li>
 </ul>
 </li>
-<li>
-<p><strong>Minor Comments</strong></p>
-<ul>
+<li><strong>Minor Comments</strong><ul>
 <li><strong>Concern ID</strong> R1-m1</li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Clarity and Accuracy</li>
-<li><strong>Affected element</strong> Abstract</li>
-<li><strong>Evidence pointer</strong> Abstract</li>
-<li><strong>Issue</strong> The abstract states: "Biological large-scale models are a cross-disciplinary research field that combines mathematics, computer science, and biology, aiming to simulate and understand the structure, function, and dynamic changes of biological systems through the establishment of complex computational models." This definition is too broad and could apply to many areas of computational biology, not specifically LLMs.</li>
-<li>
-<p><strong>Required correction</strong> Refine the abstract to focus specifically on large language models and their unique contributions to bioinformatics, rather than "biological large-scale models" in general.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m2</p>
-</li>
-<li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Accuracy</li>
-<li><strong>Affected element</strong> Introduction</li>
-<li><strong>Evidence pointer</strong> Introduction</li>
-<li><strong>Issue</strong> The statement "DeepSeek-R1 ... reported in Nature" is not supported by the provided reference (Guo et al., 2025). The reference is not verifiable from the manuscript. The authors should ensure all claims about specific publications are accurate and properly cited.</li>
-<li>
-<p><strong>Required correction</strong> Verify the publication venue for DeepSeek-R1 and correct the citation if necessary. If the claim is not verifiable, it should be removed.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m3</p>
-</li>
+<li><strong>Axis</strong> Structure and Organization</li>
+<li><strong>Affected element</strong> Section: Gene sequence analysis, subsection: Model architecture comparison and selection rationale</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Issue</strong> This subsection appears abruptly and is not well-integrated into the flow of the section. It provides a general comparison of architectures but does not directly connect to the specific models discussed in the preceding or following subsections.</li>
+<li><strong>Required correction</strong> Either integrate this comparison into the introduction of the section or move it to a more appropriate location, such as the Introduction. Ensure it directly informs the discussion of the models that follow.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
 <li><strong>Severity</strong> Minor</li>
 <li><strong>Axis</strong> Completeness</li>
-<li><strong>Affected element</strong> Table 1</li>
-<li><strong>Evidence pointer</strong> Table 1</li>
-<li><strong>Issue</strong> The manuscript states "Table 1 summarizes representative applications..." but the table itself is not provided in the manuscript text. The reader cannot evaluate the claims made about the table's contents.</li>
-<li>
-<p><strong>Required correction</strong> Include Table 1 in the manuscript.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m4</p>
-</li>
-<li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Clarity</li>
-<li><strong>Affected element</strong> Section: "Research on end-to-end protein structure prediction model"</li>
-<li><strong>Evidence pointer</strong> Section: "Research on end-to-end protein structure prediction model"</li>
-<li><strong>Issue</strong> The sentence "DeepECA (Fukuda and Tomii, 2020) has been proposed to address the potential decrease in statement results caused by rich sequences" is unclear. What are "statement results"?</li>
-<li>
-<p><strong>Required correction</strong> Clarify the meaning of "statement results" or rephrase the sentence.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m5</p>
-</li>
+<li><strong>Affected element</strong> Section: Drug design, subsection: Applications of large language models in virtual screening and ligand discovery</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Issue</strong> The text states, "In contrast, although virtual screening methods are also very useful in drug design, they may not be as good as large language models (LLMs) in terms of data processing capabilities, innovation, and multi-tasking." This is a strong, unsupported claim that pits LLMs against virtual screening, which are often complementary.</li>
+<li><strong>Required correction</strong> Rephrase to avoid a false dichotomy. Acknowledge that LLMs and traditional virtual screening methods have different strengths and can be used in combination. Provide evidence for any comparative claims.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
 <li><strong>Severity</strong> Minor</li>
 <li><strong>Axis</strong> Accuracy</li>
-<li><strong>Affected element</strong> Section: "Applications of large language models in virtual screening and ligand discovery"</li>
-<li><strong>Evidence pointer</strong> Section: "Applications of large language models in virtual screening and ligand discovery"</li>
-<li><strong>Issue</strong> The claim that "large language models (LLMs) can predict and generate new compound structures by learning a large amount of biomedical data, and can even perform drug design without a clear target structure" is an overstatement. While some generative models can propose novel molecules, "drug design without a clear target structure" is a highly active research area with significant limitations, and the manuscript does not provide evidence for this strong claim.</li>
-<li><strong>Required correction</strong> Temper the claim to reflect the current state of the art, e.g., "LLMs can be used to propose novel molecular structures, and in some cases, can suggest potential ligands even when the target structure is not fully resolved, though this remains a challenging area of research."</li>
+<li><strong>Affected element</strong> Section: Introduction</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Issue</strong> The text states, "DeepSeek-R1 (Guo et al., 2025) demonstrated remarkable reasoning capabilities approaching frontier model performance with open-source weights, reported in Nature." The claim that it was "reported in Nature" is not verifiable from the provided text and may be inaccurate. The reference is not provided.</li>
+<li><strong>Required correction</strong> Verify the publication venue of the cited work. If it is not published in Nature, correct the statement. Provide the full reference.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Consistency</li>
+<li><strong>Affected element</strong> Section: Introduction</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Issue</strong> The text lists "Model scale", "Model complexity", "The scale of training data", and "Self-Supervised Learning" as characteristics of recent LLMs. The formatting and phrasing are inconsistent (e.g., "The scale of training data" vs. "Model scale").</li>
+<li><strong>Required correction</strong> Use a consistent format (e.g., bullet points or a table) and ensure all characteristics are clearly defined.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section: Gene sequence analysis, subsection: Research on training models using large-scale genomic data</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Issue</strong> The sentence "Although there is no clear statement that the larger the model's size and data, the better, GPT1 to GPT3.5... have made significant improvements... with the increase of parameters and training data" is contradictory and unclear.</li>
+<li><strong>Required correction</strong> Clarify the point. The authors likely mean that while scaling is not a guaranteed path to improvement, empirical evidence from the GPT series shows a strong correlation. Rephrase for clarity.</li>
 </ul>
 </li>
-<li>
-<p><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2. The manuscript lacks a systematic methodology and sufficient technical depth to be considered a valuable scientific contribution.</p>
-</li>
-<li>
-<p><strong>Assessment against Nature-style criteria</strong></p>
+</ul>
+<h2>Risk / unsupported claims</h2>
 <ul>
-<li><strong>Originality</strong>: Low. The manuscript is a narrative review that does not present a novel synthesis, framework, or critical analysis. It largely re-describes existing work without offering new insights.</li>
-<li><strong>Scientific importance</strong>: Low to Medium. The topic is important, but the manuscript's superficial treatment and lack of critical analysis mean it does not significantly advance understanding or guide future research.</li>
-<li><strong>Interdisciplinary readership</strong>: Medium. The topic is inherently interdisciplinary, but the manuscript's lack of depth and poor structure may limit its appeal to experts in any one field (e.g., computer science, biology).</li>
-<li><strong>Technical soundness</strong>: Low. The technical explanations are superficial and sometimes inaccurate. The lack of a systematic methodology undermines the survey's validity.</li>
-<li><strong>Readability for nonspecialists</strong>: Low to Medium. The manuscript is written in accessible language, but the disjointed structure and lack of clear narrative make it difficult to follow for a nonspecialist seeking a coherent overview.</li>
-</ul>
-</li>
-<li>
-<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript requires a fundamental restructuring and significant expansion of its technical and critical content to be considered for publication in a high-impact journal. A major revision is needed, but the current scope and approach suggest the manuscript may be more suitable for a lower-tier review journal.</p>
-</li>
+<li>The claim that "DeepSeek-R1... was reported in Nature" is unverifiable and potentially inaccurate.</li>
+<li>The claim that "MetaTransformer... outperforms DeepMicrobes" is unsupported by quantitative evidence.</li>
+<li>The claim that "virtual screening methods... may not be as good as large language models (LLMs) in terms of data processing capabilities, innovation, and multi-tasking" is a strong, unsupported, and potentially misleading comparison.</li>
+<li>The claim that "The development of reinforcement learning... has significantly reduced the reliance on large-scale manual annotation" is an overgeneralization and is not supported by evidence in the context of bioinformatics.</li>
+<li>The claim that "CellPolaris... model was trained based on the Graph based Recurrent Neural Network (GRN) model" is unclear and the acronym GRN is not defined in this context (it is typically "Gene Regulatory Network").</li>
+<li>The claim that "RGN2... demonstrates superior performance to AlphaFold2 in single-sequence monomer prediction tasks on benchmarks such as CAMEO" is a strong claim that requires specific performance metrics and a clear description of the benchmark setup to be evaluated.</li>
 </ul></div>
   </section>
   

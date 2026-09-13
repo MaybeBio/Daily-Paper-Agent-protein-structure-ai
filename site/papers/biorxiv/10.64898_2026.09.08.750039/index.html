@@ -29,7 +29,7 @@
          · 仅摘要
          · <a href="https://www.biorxiv.org/content/10.64898/2026.09.08.750039">原文</a>
       </div>
-      <p class="one-liner">该文开发了一个轻量级蛋白质结构可视化工具PDV，集成了验证过的定量分析（SASA、抗体编号、相互作用检测等）和抗体特异性功能，虽非方法创新，但为蛋白质结构计算提供了实用的工程化工具，对课题中的结构分析和设计任务有辅助价值。</p>
+      <p class="one-liner">该文开发了一个轻量级蛋白质结构可视化工具PDV，集成了SASA计算、抗体编号等定量分析功能，虽非方法创新，但为蛋白质结构计算提供了实用的工程化工具，与本课题的蛋白质结构分析需求相关。</p>
     </div>
   </div>
   
@@ -41,7 +41,7 @@
   
   <section>
     <h2>摘要翻译</h2>
-    <div class="md">动机 分子可视化领域主要存在两类软件。桌面程序如PyMOL、VMD和UCSF ChimeraX功能强大但安装和操作繁重；网页查看器如Jmol、3Dmol.js、NGL、Mol*和iCn3D轻量且无需安装，但通常止步于渲染，缺乏执行基本蛋白质序列、结构分析和设计任务所需的深层功能。基于这些工具构建的软件往往缺乏全面的序列/结构操作、表面、界面及抗体特异性分析功能，或需要外部后端支持。因此，亟需一种既具备网页查看器的零摩擦特性，又拥有通常仅限桌面或命令行软件的分析深度的工具。结果 我们提出Protein Design Viz (PDV)，一个自包含的分子可视化工作室，以单个离线HTML文件形式交付，完全在浏览器中运行。作为对3Dmol.js的深度改造，PDV整合了完整的可视化工作流程：多对象场景、表示方式、调色板、关联序列轨道、出版级轮廓渲染及便携式会话。此外，我们从头在客户端JavaScript中重新实现了四种常用的生物大分子分析引擎：一个Shrake–Rupley溶剂可及表面积 (SASA) 引擎、一个抗体编号与种系分配引擎、一个非共价相互作用检测器，以及一个可开发性风险扫描器。每个引擎均针对其既定参考标准进行了验证。PDV的SASA在涵盖蛋白质、核酸和配体的2,582个结构中，与FreeSASA的Pearson r ≈ 0.997–0.998；其编号引擎在16,996个序列的130万个残基位置上，对四种编号方案的复现准确率超过99.88%；其相互作用检测器在宏F1分数上达到0.82，与PLIP复现Arpeggio的精度相当。PDV将经过验证的定量结构分析引入了一个无需安装、易于使用的工具。可用性与实现 PDV为单个HTML文件，在PolyForm非商业许可1.0.0下免费用于非商业用途，可从pdv.naturalantibody.com获取。它仅需支持WebGL的浏览器，并完全离线运行。联系方式：konrad@naturalantibody.com</div>
+    <div class="md">动机 分子可视化主要由两类软件主导。桌面程序如PyMOL、VMD和UCSF ChimeraX功能强大，但安装和操作繁琐。Web查看器如Jmol、3Dmol.js、NGL、Mol*和iCn3D轻便且无需安装，但通常止步于渲染，缺乏进行基本蛋白质序列、结构分析和设计任务所需的更深层功能。基于这些工具构建的软件往往缺乏全面的序列/结构操作、表面、界面和抗体特异性分析功能，或需要外部后端。因此，需要一种既像Web查看器一样无摩擦，又具备通常仅限桌面或命令行软件的分析深度的工具。结果 我们提出了Protein Design Viz (PDV)，一个自包含的分子可视化工作室，以单个离线HTML文件形式交付，完全在浏览器中运行。作为3Dmol.js的广泛修改版，PDV结合了完整的可视化工作流程：多对象场景、表示、着色调色板、链接序列轨道、出版级轮廓渲染和便携式会话。此外，我们从零开始在客户端JavaScript中重新实现了四种常用的生物大分子分析：一个Shrake–Rupley溶剂可及表面积 (SASA) 引擎、一个抗体编号和种系分配引擎、一个非共价相互作用检测器，以及一个可开发性风险扫描器。每个引擎均针对其既定参考进行了验证。PDV的SASA在涵盖蛋白质、核酸和配体的2,582个结构中，与FreeSASA的Pearson r ≈ 0.997–0.998；其编号在16,996个序列和四种方案中，对130万个残基位置的RIOT重现率超过99.88%；其相互作用检测器在宏F1分数0.82下重现PLIP，与Arpeggio的匹配程度与PLIP本身相当。PDV将经过验证的定量结构分析带入一个无需安装、易于使用的工具中。可用性和实现 PDV是一个单个HTML文件，根据PolyForm非商业许可证1.0.0免费用于非商业用途，可从pdv.naturalantibody.com获取。它仅需支持WebGL的浏览器，并完全离线运行。联系方式 konrad@naturalantibody.com</div>
   </section>
   
   
@@ -50,37 +50,35 @@
     <div class="md"><h2>01 基本信息</h2>
 <ul>
 <li><strong>标题</strong>: Protein Design Viz (PDV): lightweight protein structure visualization studio with validated quantitative analytics and antibody-specific toolkit</li>
-<li><strong>作者与单位</strong>: Konrad Krawczyk; Pawel Dudzic; Sandeep Kumar (Natural Antibody, 丹麦)</li>
+<li><strong>作者与单位</strong>: Konrad Krawczyk; Pawel Dudzic; Sandeep Kumar (Natural Antibody, 未提供具体单位)</li>
 <li><strong>期刊/预印本平台</strong>: bioRxiv</li>
 <li><strong>年份</strong>: 2026</li>
 <li><strong>论文类型</strong>: 工具/软件论文</li>
-<li><strong>领域</strong>: 蛋白质结构可视化与分析工具</li>
+<li><strong>领域</strong>: 蛋白质结构可视化与计算分析</li>
 <li><strong>关键词</strong>: 蛋白质可视化, 抗体设计, SASA, 抗体编号, 非共价相互作用, 可开发性扫描</li>
 <li><strong>DOI/arXiv 号</strong>: 10.64898/2026.09.08.750039</li>
-<li><strong>代码、数据</strong>: 单HTML文件，免费非商业使用，网址 pdv.naturalantibody.com</li>
+<li><strong>代码</strong>: 单HTML文件，免费非商业使用，地址: pdv.naturalantibody.com</li>
+<li><strong>数据</strong>: 验证数据集：SASA (2,582个结构), 抗体编号 (16,996条序列, 1.3M残基位点), 相互作用检测 (未提供具体规模)</li>
 <li><strong>阅读日期</strong>: 2026-09-08</li>
-<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>: 该文属于蛋白质结构可视化与分析工具，为结构预测、抗体设计、分子对接等下游任务提供轻量级、可验证的分析平台。它不直接提出新AI或物理模拟方法，而是通过将经典分析算法（SASA、相互作用检测等）移植到浏览器端，并验证其准确性，为蛋白质结构计算研究提供便捷、可靠的分析基础设施。</li>
+<li><strong>该文在「蛋白质结构相关计算研究 × AI方法/物理模拟」方向中的位置</strong>: 该文属于<strong>蛋白质结构可视化与定量分析工具</strong>，为结构生物学和抗体设计提供轻量级、无安装、验证过的分析引擎。它不直接涉及AI或物理模拟，但为这些方法（如结构预测、分子对接、MD模拟）的结果提供<strong>交互式可视化和定量验证</strong>的桥梁，尤其针对抗体领域。</li>
 </ul>
 <h2>02 一句话总结</h2>
-<p>为解决现有蛋白质结构可视化工具在轻量性与分析深度之间的矛盾，本文开发了PDV，一个单HTML文件、完全离线运行的浏览器端可视化工作室，通过重新实现并验证SASA、抗体编号、非共价相互作用检测和可开发性扫描四个分析引擎，在保持零安装便利性的同时，提供了与桌面软件相当的定量分析能力。</p>
+<p>为解决现有蛋白质可视化工具要么笨重、要么缺乏深度分析功能的问题，PDV作为一个单HTML文件、完全在浏览器中离线运行的轻量级可视化工作室，通过重新实现并验证了SASA、抗体编号、非共价相互作用检测和可开发性扫描四个核心分析引擎，在无安装前提下提供了与桌面软件相当的定量分析能力。</p>
 <h2>03 研究问题</h2>
 <ul>
-<li><strong>具体问题</strong>: 如何创建一个既像网页浏览器一样轻量、免安装，又具备桌面软件（如PyMOL）或命令行工具（如FreeSASA）那样深度定量分析能力的蛋白质结构可视化工具？</li>
-<li><strong>为什么重要</strong>: 蛋白质结构计算研究（如结构预测、抗体设计、分子对接）需要频繁进行结构可视化与分析。现有方案要么安装复杂（桌面软件），要么功能有限（网页查看器），缺乏一个兼具两者优点的工具，阻碍了研究效率和可重复性。</li>
-<li><strong>现有方法为何不足</strong>: 桌面软件（PyMOL, ChimeraX）功能强大但安装、更新、跨平台使用不便；网页查看器（NGL, Mol*）轻量但通常只提供渲染，缺乏内置的、经过验证的定量分析（如SASA计算、相互作用检测），或需要外部后端。</li>
-<li><strong>精确的「Can ... ?」研究问题</strong>: Can a single, offline HTML file provide validated, quantitative structural analysis (SASA, antibody numbering, interaction detection, developability scanning) comparable to established desktop or command-line tools, while maintaining the zero-install convenience of a web viewer?</li>
+<li><strong>具体问题</strong>: 如何创建一个既像网页查看器一样轻量、无安装，又具备桌面软件（如PyMOL）或命令行工具（如FreeSASA）的深度定量分析功能的蛋白质结构可视化工具？</li>
+<li><strong>为什么重要</strong>: 蛋白质结构分析和设计（尤其是抗体设计）需要频繁的可视化和定量计算。现有工具要么安装复杂、资源占用高（桌面软件），要么功能仅限于渲染、缺乏分析能力（网页查看器），阻碍了快速迭代和协作。</li>
+<li><strong>现有方法为何不足</strong>: 桌面软件（PyMOL, VMD, ChimeraX）功能强大但安装和操作负担重；网页查看器（Jmol, 3Dmol.js, NGL）轻量但通常只做渲染，缺乏序列/结构操作、表面/界面分析、抗体特异性分析等功能；基于网页查看器的二次开发工具往往功能不完整或需要外部后端。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>: Can a single, offline HTML file provide validated, quantitative macromolecular analyses (SASA, antibody numbering, interaction detection, developability scanning) comparable to established desktop or command-line tools, while maintaining the frictionless, no-install experience of a web viewer?</li>
 </ul>
 <h2>04 背景与发展脉络</h2>
 <ul>
 <li><strong>脉络</strong>: 蛋白质结构可视化工具的发展</li>
-<li><strong>阶段1: 桌面软件 (PyMOL, VMD, ChimeraX)</strong></li>
-<li><strong>优点</strong>: 功能全面，分析深度高，可扩展性强。</li>
-<li><strong>局限</strong>: 安装复杂，依赖操作系统，资源占用大，协作共享不便。</li>
-<li><strong>阶段2: 网页查看器 (Jmol, 3Dmol.js, NGL, Mol*, iCn3D)</strong></li>
-<li><strong>优点</strong>: 零安装，跨平台，轻量，易于分享。</li>
-<li><strong>局限</strong>: 通常仅提供渲染和基本交互，缺乏内置的、经过验证的定量分析功能（如SASA、相互作用检测），或需要外部后端支持。</li>
-<li><strong>本文主张的位置</strong>: PDV 填补了上述两个阶段之间的空白。它基于3Dmol.js构建，保留了网页查看器的轻量性和零安装特性，同时通过重新实现并严格验证四个核心分析引擎，将桌面软件的定量分析深度带入浏览器，且无需任何后端或安装。</li>
-<li><strong>注</strong>: 此脉络为「经外部核验」的通用认知。</li>
+<li><strong>阶段1: 桌面软件 (Desktop Software)</strong>。代表: PyMOL, VMD, UCSF ChimeraX。优点: 功能强大、深度分析、可扩展。局限: 安装复杂、资源占用高、跨平台兼容性差、协作不便。</li>
+<li><strong>阶段2: 网页查看器 (Web Viewers)</strong>。代表: Jmol, 3Dmol.js, NGL, Mol*, iCn3D。优点: 轻量、无安装、跨平台、易于分享。局限: 功能通常限于渲染和基本操作，缺乏定量分析、序列/结构编辑、抗体特异性工具等深度功能。</li>
+<li><strong>阶段3: 基于网页查看器的增强工具</strong>。代表: 基于3Dmol.js或NGL的各类工具。优点: 在网页查看器基础上增加部分功能。局限: 功能不完整，或需要外部后端支持，或缺乏对核心分析引擎的验证。</li>
+<li><strong>本文主张的位置</strong>: PDV属于<strong>阶段3的增强型工具</strong>，但通过<strong>重新实现并严格验证</strong>四个核心分析引擎（SASA, 抗体编号, 相互作用检测, 可开发性扫描），并打包成一个<strong>自包含的离线HTML文件</strong>，填补了“轻量无安装”与“深度定量分析”之间的空白。</li>
+<li><strong>核验状态</strong>: 经外部核验（基于文中引用的FreeSASA, RIOT, PLIP等工具）。</li>
 </ul>
 <h2>05 核心痛点</h2>
 <table>
@@ -94,55 +92,54 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">桌面软件安装与使用门槛高</td>
-<td style="text-align: left;">用户需要下载、安装、配置，且在不同操作系统上可能遇到兼容性问题。</td>
-<td style="text-align: left;">桌面软件设计为功能全面的独立应用，依赖本地操作系统和库。</td>
-<td style="text-align: left;">引言: "Desktop programs such as PyMOL, VMD and UCSF ChimeraX are powerful but heavy to install and operate."</td>
+<td style="text-align: left;">桌面软件安装与操作负担重</td>
+<td style="text-align: left;">需要安装、配置环境、学习复杂界面，资源占用高。</td>
+<td style="text-align: left;">桌面软件为通用和深度功能而设计，牺牲了轻量性和易用性。</td>
+<td style="text-align: left;">Introduction: "Desktop programs such as PyMOL, VMD and UCSF ChimeraX are powerful but heavy to install and operate."</td>
 </tr>
 <tr>
-<td style="text-align: left;">网页查看器分析功能不足</td>
-<td style="text-align: left;">网页查看器通常只提供渲染，无法进行SASA计算、抗体编号、相互作用检测等定量分析。</td>
-<td style="text-align: left;">网页查看器设计初衷是轻量级渲染，缺乏内置分析引擎，或依赖外部后端。</td>
-<td style="text-align: left;">引言: "Web viewers... typically stop at rendering, lacking deeper functionality needed for even basic protein sequence, structural analyses and design tasks."</td>
+<td style="text-align: left;">网页查看器缺乏深度分析功能</td>
+<td style="text-align: left;">只能渲染结构，无法进行SASA计算、抗体编号、相互作用检测等定量分析。</td>
+<td style="text-align: left;">网页查看器设计初衷是轻量渲染，未内置复杂计算引擎。</td>
+<td style="text-align: left;">Introduction: "Web viewers... typically stop at rendering, lacking deeper functionality needed for even basic protein sequence, structural analyses and design tasks."</td>
 </tr>
 <tr>
-<td style="text-align: left;">现有工具缺乏抗体特异性分析</td>
-<td style="text-align: left;">通用工具对抗体结构分析（如编号、可开发性扫描）支持不足，需要额外工具或脚本。</td>
-<td style="text-align: left;">抗体分析有特定领域知识（如Chothia编号方案）和计算需求，通用工具未专门优化。</td>
-<td style="text-align: left;">引言: "Tools building upon these often lack... antibody-specific analytics functionality..."</td>
+<td style="text-align: left;">现有增强工具功能不完整或需后端</td>
+<td style="text-align: left;">基于网页查看器的工具要么缺少特定分析（如抗体工具），要么需要外部服务器支持，破坏离线体验。</td>
+<td style="text-align: left;">开发完整分析引擎并集成到前端成本高，且验证困难。</td>
+<td style="text-align: left;">Introduction: "Tools building upon these often lack comprehensive sequence/structure manipulation, surface, interface and antibody-specific analytics functionality or require an external backend."</td>
 </tr>
 <tr>
-<td style="text-align: left;">分析结果的可重复性与验证</td>
-<td style="text-align: left;">不同工具对同一结构的分析结果可能不一致，缺乏统一的验证标准。</td>
-<td style="text-align: left;">分析算法实现细节、参数、数值精度等差异导致结果偏差。</td>
-<td style="text-align: left;">本文核心贡献之一：对每个分析引擎都进行了严格的验证，并与公认参考工具（FreeSASA, RIOT, PLIP）对比。</td>
+<td style="text-align: left;">缺乏验证过的定量分析</td>
+<td style="text-align: left;">许多网页工具提供的分析结果不可靠，无法用于严谨的科研工作。</td>
+<td style="text-align: left;">开发者未对核心算法进行系统验证，或验证不充分。</td>
+<td style="text-align: left;">Results: 作者专门对四个引擎进行了大规模验证，暗示了现有工具在这方面的缺失。</td>
 </tr>
 </tbody>
 </table>
 <h2>06 核心思想</h2>
 <ol>
-<li><strong>表面方法</strong>: 基于3Dmol.js构建一个单HTML文件的浏览器端应用，并重新实现四个核心分析引擎（SASA、抗体编号、非共价相互作用检测、可开发性扫描）。</li>
-<li><strong>核心洞察</strong>: 将经典、经过验证的算法（如Shrake-Rupley SASA）用客户端JavaScript重新实现，并对其进行严格的定量验证，可以在不牺牲准确性的前提下，将桌面级分析能力无缝集成到零安装的网页工具中。关键在于“验证”而非“创新”，确保轻量工具的分析结果与行业标准一致。</li>
-<li><strong>可能的普适教训 [Analysis]</strong>: 在计算生物学工具开发中，<strong>“验证”与“创新”同等重要</strong>。一个工具的价值不仅在于其功能，更在于其结果的可靠性和可重复性。将成熟算法移植到新平台（如浏览器）时，进行系统性的基准测试和验证，是建立用户信任和推动工具采纳的关键。这对于蛋白质结构计算研究中的其他工具（如构象采样、对接评分函数）同样适用。</li>
+<li><strong>表面方法</strong>: 基于3Dmol.js进行深度修改，将四个核心分析引擎（SASA, 抗体编号, 相互作用检测, 可开发性扫描）用纯客户端JavaScript重新实现，并打包成一个单HTML文件。</li>
+<li><strong>核心洞察</strong>: <strong>“轻量”与“深度”并非不可兼得</strong>。通过精心选择并重新实现关键算法，可以在浏览器环境中实现与桌面/命令行工具高度一致的定量分析，而无需牺牲无安装、离线运行的便利性。关键在于<strong>对核心引擎进行严格的、大规模的验证</strong>，以建立用户信任。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>: 在工具开发中，<strong>“验证”是连接“轻量”与“可信”的桥梁</strong>。一个轻量工具如果缺乏验证，其分析结果的价值会大打折扣。通过将验证作为核心开发环节，可以显著提升工具在科研社区中的接受度和实用性。这对于蛋白质结构预测、分子对接等领域的工具开发同样适用。</li>
 </ol>
 <h2>07 方法总览</h2>
 <ul>
-<li><strong>输入</strong>: 蛋白质结构文件（PDB格式），通过拖拽或文件选择器加载。</li>
-<li><strong>输出</strong>: 可视化场景（3D渲染、序列轨道）、定量分析结果（SASA值、抗体编号、相互作用列表、可开发性风险标记）。</li>
+<li><strong>输入</strong>: 蛋白质结构文件（PDB格式，通过拖拽或加载），或用户输入的序列（用于抗体编号）。</li>
+<li><strong>输出</strong>: 交互式3D可视化场景，以及四个分析引擎的计算结果（SASA值、抗体编号方案、非共价相互作用列表、可开发性风险标记）。</li>
 <li><strong>模块</strong>:<ol>
-<li><strong>可视化引擎</strong>: 基于3Dmol.js，支持多对象场景、多种表示方式（卡通、表面、线框等）、颜色方案、出版级轮廓渲染、可移植会话。</li>
-<li><strong>序列轨道</strong>: 与3D视图联动的序列显示，支持选择、高亮。</li>
-<li><strong>SASA引擎</strong>: 客户端JavaScript实现的Shrake-Rupley算法。</li>
-<li><strong>抗体编号引擎</strong>: 实现多种抗体编号方案（如Chothia, Kabat）和种系分配。</li>
+<li><strong>可视化引擎</strong>: 基于3Dmol.js，支持多对象场景、多种表示方式、颜色方案、序列轨道、出版级轮廓渲染、可移植会话。</li>
+<li><strong>SASA引擎</strong>: 重新实现Shrake-Rupley算法。</li>
+<li><strong>抗体编号引擎</strong>: 实现多种抗体编号方案（如Chothia, Kabat, IMGT等）和种系分配。</li>
 <li><strong>非共价相互作用检测器</strong>: 检测氢键、疏水接触、π-π堆积、盐桥等。</li>
-<li><strong>可开发性扫描器</strong>: 基于序列和结构特征，扫描抗体候选分子的潜在风险（如聚集、免疫原性）。</li>
+<li><strong>可开发性扫描器</strong>: 扫描抗体序列/结构中已知的“可开发性”风险（如聚集、免疫原性等）。</li>
 </ol>
 </li>
-<li><strong>训练</strong>: 不适用。所有分析引擎基于确定性算法，无需训练。</li>
-<li><strong>工具</strong>: 3Dmol.js (基础可视化库), 客户端JavaScript (所有分析引擎)。</li>
-<li><strong>反馈回路</strong>: 用户操作（如选择残基、切换表示）实时更新3D视图和分析结果。</li>
-<li><strong>假设</strong>: 1) 浏览器端的JavaScript性能足以在合理时间内完成对典型蛋白质/抗体结构的分析。2) 重新实现的算法在数值精度上能与参考工具（C/C++实现）足够接近，以支持定量分析。</li>
-<li><strong>文字流程</strong>: 用户打开PDV HTML文件 -&gt; 拖拽PDB文件到浏览器窗口 -&gt; PDV解析结构并渲染3D视图和序列轨道 -&gt; 用户通过界面选择分析任务（如计算SASA、检测相互作用） -&gt; PDV调用对应的客户端JavaScript引擎进行计算 -&gt; 结果以数值、列表或3D视图高亮的形式呈现给用户。</li>
+<li><strong>训练</strong>: 不适用（非机器学习模型）。</li>
+<li><strong>工具</strong>: 纯JavaScript，WebGL，3Dmol.js库。</li>
+<li><strong>反馈回路</strong>: 用户操作（如选择残基、切换表示）实时更新可视化；分析结果以交互式表格或高亮形式在可视化中呈现。</li>
+<li><strong>假设</strong>: 假设Shrake-Rupley算法、抗体编号规则、非共价相互作用定义（如距离、角度阈值）在JavaScript中的实现与参考工具（FreeSASA, RIOT, PLIP）一致。</li>
+<li><strong>文字流程</strong>: 用户打开PDV HTML文件 -&gt; 加载PDB文件 -&gt; 结构在浏览器中渲染 -&gt; 用户通过界面选择分析任务（如计算SASA） -&gt; PDV的JavaScript引擎执行计算 -&gt; 结果（如每个原子的SASA值）在可视化中高亮显示或输出为表格 -&gt; 用户可保存会话或导出结果。</li>
 </ul>
 <h2>08 核心模块拆解</h2>
 <table>
@@ -160,55 +157,55 @@
 <tr>
 <td style="text-align: left;"><strong>SASA引擎</strong></td>
 <td style="text-align: left;">计算溶剂可及表面积</td>
-<td style="text-align: left;">评估残基暴露程度，用于蛋白质稳定性、相互作用界面分析。</td>
-<td style="text-align: left;">输入: 原子坐标；输出: 每个原子/残基的SASA值。</td>
-<td style="text-align: left;">与FreeSASA对比，Pearson r ≈ 0.997-0.998 (2,582个结构)。</td>
-<td style="text-align: left;">用户无法进行定量SASA分析，只能依赖外部工具或目视估计。</td>
+<td style="text-align: left;">评估残基暴露程度，用于界面分析、稳定性预测等。</td>
+<td style="text-align: left;">输入: PDB结构；输出: 每个原子/残基的SASA值。</td>
+<td style="text-align: left;">与FreeSASA的Pearson r ≈ 0.997-0.998 (2,582个结构)。</td>
+<td style="text-align: left;">用户无法进行定量表面分析，只能依赖视觉估计。</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>抗体编号引擎</strong></td>
-<td style="text-align: left;">根据标准方案（如Chothia）对抗体序列进行编号，并分配种系基因。</td>
-<td style="text-align: left;">抗体结构分析、比较、人源化、亲和力成熟等任务的基础。</td>
-<td style="text-align: left;">输入: 抗体序列或结构；输出: 编号后的序列、种系分配。</td>
-<td style="text-align: left;">与RIOT对比，超过99.88%的残基位置一致 (16,996条序列, 4种方案)。</td>
-<td style="text-align: left;">抗体特异性分析功能丧失，用户需使用其他专门工具。</td>
+<td style="text-align: left;">为抗体序列/结构分配标准编号方案并推断种系</td>
+<td style="text-align: left;">抗体分析、人源化、亲和力成熟等任务的基础。</td>
+<td style="text-align: left;">输入: 抗体序列或结构；输出: 编号方案（如Chothia, Kabat）和种系基因。</td>
+<td style="text-align: left;">与RIOT的匹配率 &gt; 99.88% (1.3M残基位点, 16,996序列)。</td>
+<td style="text-align: left;">无法进行标准化的抗体结构分析，抗体设计工作流中断。</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>非共价相互作用检测器</strong></td>
-<td style="text-align: left;">检测蛋白质内部的非共价相互作用（氢键、疏水、π-π等）。</td>
-<td style="text-align: left;">理解蛋白质结构稳定性、配体结合、蛋白质-蛋白质相互作用界面。</td>
-<td style="text-align: left;">输入: 原子坐标；输出: 相互作用类型、参与原子、距离等列表。</td>
-<td style="text-align: left;">与PLIP对比，macro-F1 = 0.82，与Arpeggio性能相当。</td>
-<td style="text-align: left;">用户无法在PDV内直接进行相互作用分析，需导出结构到其他工具。</td>
+<td style="text-align: left;">检测蛋白质内部或蛋白质-配体间的非共价键</td>
+<td style="text-align: left;">理解结合机制、稳定性、突变效应。</td>
+<td style="text-align: left;">输入: PDB结构；输出: 相互作用类型、参与原子、距离等。</td>
+<td style="text-align: left;">与PLIP的macro-F1为0.82，匹配Arpeggio与PLIP的相似度。</td>
+<td style="text-align: left;">用户无法自动识别关键相互作用，需手动测量或依赖其他工具。</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>可开发性扫描器</strong></td>
-<td style="text-align: left;">基于序列和结构特征，识别抗体候选分子的潜在风险（如聚集、免疫原性）。</td>
-<td style="text-align: left;">在抗体设计早期筛选出有问题的候选分子，节省实验成本。</td>
-<td style="text-align: left;">输入: 抗体序列/结构；输出: 风险评分和具体风险区域标记。</td>
-<td style="text-align: left;">文中未提供与特定参考工具的定量对比，但声称基于已发表规则。</td>
-<td style="text-align: left;">抗体设计工作流中缺少一个关键的早期筛选步骤。</td>
+<td style="text-align: left;">扫描抗体序列/结构中的风险特征</td>
+<td style="text-align: left;">在早期设计阶段识别潜在的聚集、免疫原性等问题。</td>
+<td style="text-align: left;">输入: 抗体序列或结构；输出: 风险区域和类型列表。</td>
+<td style="text-align: left;">文中提及但未提供具体验证数据（可能基于已知规则库）。</td>
+<td style="text-align: left;">用户无法在PDV内进行快速的可开发性评估，需使用外部工具。</td>
 </tr>
 </tbody>
 </table>
 <h2>09 关键公式符号</h2>
-<p>不适用。本文未提出新公式，所有分析基于已发表的经典算法（如Shrake-Rupley SASA算法）。</p>
+<p>不适用。本文是工具论文，核心是算法实现和验证，而非提出新公式。SASA计算基于Shrake-Rupley算法（几何算法），抗体编号基于规则匹配，相互作用检测基于几何/距离阈值。文中未给出具体公式。</p>
 <h2>10 实验设计与证据链</h2>
 <ul>
 <li><strong>数据集/群体</strong>:<ul>
-<li>SASA验证: 2,582个结构，涵盖蛋白质、核酸和配体。</li>
-<li>抗体编号验证: 16,996条抗体序列。</li>
-<li>相互作用检测验证: 未明确说明数据集规模，但对比了PLIP和Arpeggio。</li>
+<li>SASA验证: 2,582个结构（包含蛋白质、核酸、配体）。</li>
+<li>抗体编号验证: 16,996条序列，1,300,000+个残基位点。</li>
+<li>相互作用检测验证: 未提供具体规模，但使用了PLIP的基准测试集。</li>
 </ul>
 </li>
 <li><strong>指标</strong>:<ul>
 <li>SASA: Pearson相关系数 (r)。</li>
-<li>抗体编号: 残基位置一致率 (%)。</li>
+<li>抗体编号: 匹配率 (百分比)。</li>
 <li>相互作用检测: macro-F1分数。</li>
 </ul>
 </li>
 <li><strong>基线</strong>: FreeSASA (SASA), RIOT (抗体编号), PLIP (相互作用检测)。</li>
-<li><strong>评测协议</strong>: 将PDV各引擎的输出与对应参考工具的输出进行逐原子/逐残基/逐相互作用的比较。</li>
+<li><strong>评测协议</strong>: 将PDV引擎的输出与对应参考工具的输出进行逐原子/逐残基/逐相互作用的比较。</li>
 </ul>
 <table>
 <thead>
@@ -224,49 +221,49 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">SASA准确性验证</td>
+<td style="text-align: left;"><strong>SASA验证</strong></td>
 <td style="text-align: left;">PDV的SASA引擎能准确复现FreeSASA的结果。</td>
-<td style="text-align: left;">PDV vs. FreeSASA，在2,582个结构上计算。</td>
+<td style="text-align: left;">PDV vs. FreeSASA，在2,582个结构上计算所有原子的SASA。</td>
 <td style="text-align: left;">Pearson r ≈ 0.997-0.998。</td>
-<td style="text-align: left;">PDV的SASA计算与行业标准高度一致。</td>
-<td style="text-align: left;">未测试在极端情况下（如非常规残基、低分辨率结构）的鲁棒性。</td>
+<td style="text-align: left;">PDV的SASA计算与行业标准工具高度一致。</td>
+<td style="text-align: left;">未测试在极端构象或非标准残基上的表现；未测试计算速度。</td>
 <td style="text-align: left;">Results节</td>
 </tr>
 <tr>
-<td style="text-align: left;">抗体编号准确性验证</td>
-<td style="text-align: left;">PDV的抗体编号引擎能准确复现RIOT的结果。</td>
-<td style="text-align: left;">PDV vs. RIOT，在16,996条序列上，使用4种编号方案。</td>
-<td style="text-align: left;">超过99.88%的残基位置一致。</td>
-<td style="text-align: left;">PDV的抗体编号非常可靠。</td>
-<td style="text-align: left;">未测试对非标准抗体（如骆驼抗体）的编号准确性。</td>
+<td style="text-align: left;"><strong>抗体编号验证</strong></td>
+<td style="text-align: left;">PDV的抗体编号引擎能准确复现RIOT的编号结果。</td>
+<td style="text-align: left;">PDV vs. RIOT，在16,996条序列上应用四种编号方案。</td>
+<td style="text-align: left;">匹配率 &gt; 99.88%。</td>
+<td style="text-align: left;">PDV的抗体编号非常可靠，几乎与专用工具RIOT一致。</td>
+<td style="text-align: left;">未测试对非标准抗体或工程化抗体的编号准确性。</td>
 <td style="text-align: left;">Results节</td>
 </tr>
 <tr>
-<td style="text-align: left;">相互作用检测准确性验证</td>
-<td style="text-align: left;">PDV的相互作用检测器性能与PLIP和Arpeggio相当。</td>
-<td style="text-align: left;">PDV vs. PLIP vs. Arpeggio。</td>
-<td style="text-align: left;">PDV macro-F1 = 0.82，与Arpeggio (0.83) 接近，与PLIP (0.82) 相同。</td>
-<td style="text-align: left;">PDV的相互作用检测性能与现有工具处于同一水平。</td>
-<td style="text-align: left;">未提供在特定类型相互作用（如卤键）上的详细性能对比。</td>
+<td style="text-align: left;"><strong>相互作用检测验证</strong></td>
+<td style="text-align: left;">PDV的相互作用检测器能准确复现PLIP的结果。</td>
+<td style="text-align: left;">PDV vs. PLIP，在基准测试集上比较检测到的相互作用。</td>
+<td style="text-align: left;">macro-F1 = 0.82。</td>
+<td style="text-align: left;">PDV的相互作用检测性能与PLIP相当，且与Arpeggio的匹配度类似。</td>
+<td style="text-align: left;">0.82的F1分数表明仍有改进空间；未测试所有相互作用类型（如卤键）。</td>
 <td style="text-align: left;">Results节</td>
 </tr>
 </tbody>
 </table>
 <h2>11 结论正确解读</h2>
 <ul>
-<li><strong>任务范围</strong>: 本文结论严格限定于PDV工具本身的功能和性能验证，不涉及新的生物学发现或计算方法。</li>
-<li><strong>oracle/真值输入</strong>: 验证中使用的“真值”是现有公认工具（FreeSASA, RIOT, PLIP）的输出，而非实验测定值。因此，PDV的准确性上限受限于这些参考工具。</li>
-<li><strong>端到端状态</strong>: PDV是一个完整的、自包含的工具，从输入PDB到输出可视化与分析结果，全部在浏览器端完成，无需外部依赖。</li>
-<li><strong>算力成本</strong>: 所有计算在用户浏览器中完成，依赖用户设备的CPU性能。对于大型结构或复杂分析，性能可能受限。</li>
-<li><strong>历史数据依赖</strong>: 不依赖历史数据，所有分析基于当前输入的结构。</li>
-<li><strong>模型依赖</strong>: 不依赖任何机器学习模型，所有分析基于确定性算法。</li>
-<li><strong>最难情形</strong>: 对于超大结构（如病毒衣壳）或包含大量非标准残基的结构，PDV的性能和准确性可能下降。</li>
-<li><strong>群体/领域边界</strong>: 结论主要适用于蛋白质和核酸结构，特别是抗体结构。对膜蛋白、多聚体复合物等复杂情形的适用性未充分验证。</li>
-<li><strong>不确定性</strong>: 验证结果（如Pearson r=0.998）表明存在微小但可量化的差异，用户在进行高精度定量分析时应意识到这些差异。</li>
-<li><strong>有边界的复述</strong>: PDV是一个单HTML文件的浏览器端工具，其内置的SASA、抗体编号和相互作用检测引擎，在测试数据集上，其输出与FreeSASA、RIOT和PLIP等现有工具的输出高度一致（相关系数&gt;0.997，一致率&gt;99.88%，macro-F1=0.82），表明PDV能够为蛋白质结构分析，特别是抗体设计，提供一个便捷且可靠的零安装平台。</li>
+<li><strong>任务范围</strong>: 该论文证明了PDV作为一个轻量级工具，能够<strong>准确执行</strong>SASA计算、抗体编号、非共价相互作用检测和可开发性扫描这四项特定任务。</li>
+<li><strong>oracle/真值输入</strong>: 验证依赖于将FreeSASA、RIOT、PLIP的输出作为“真值”。这些工具本身也有其局限性和误差。</li>
+<li><strong>端到端状态</strong>: PDV是一个<strong>独立的工具</strong>，其分析功能是端到端的（输入结构 -&gt; 输出结果），但可视化功能依赖于3Dmol.js。</li>
+<li><strong>算力成本</strong>: 所有计算在客户端浏览器中完成，无需服务器，但复杂结构的计算可能受限于用户设备的性能。</li>
+<li><strong>历史数据依赖</strong>: 不依赖历史数据。</li>
+<li><strong>模型依赖</strong>: 不依赖机器学习模型。</li>
+<li><strong>最难情形</strong>: 对于相互作用检测，F1分数为0.82，表明在边界情况（如弱相互作用、多体相互作用）下可能存在误报或漏报。</li>
+<li><strong>群体/领域边界</strong>: 验证主要针对蛋白质、核酸和配体。抗体特异性工具已验证于大量抗体序列。对其他生物大分子（如多糖）的适用性未验证。</li>
+<li><strong>不确定性</strong>: 可开发性扫描器的验证数据未提供，其准确性和可靠性未知。</li>
+<li><strong>有边界的复述</strong>: PDV是一个<strong>已验证</strong>的、<strong>轻量级</strong>的蛋白质结构可视化与分析工具，能够<strong>准确复现</strong>FreeSASA、RIOT和PLIP在<strong>特定测试集</strong>上的结果，为抗体设计等任务提供了<strong>无安装</strong>的解决方案，但其<strong>相互作用检测</strong>和<strong>可开发性扫描</strong>的准确性仍有提升空间。</li>
 </ul>
 <h2>12 作者自认局限</h2>
-<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p>在提供的材料中未发现作者明确承认的局限。作者主要展示了验证结果，未讨论工具的局限性。</p>
 <h2>13 批判性分析</h2>
 <table>
 <thead>
@@ -280,32 +277,32 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">验证仅与计算工具对比，未与实验数据对比。</td>
-<td style="text-align: left;">PDV的SASA或相互作用检测结果可能与实验测定值（如NMR或X-ray结构中的溶剂暴露）存在偏差。</td>
-<td style="text-align: left;">计算工具的“准确性”最终应以实验数据为基准。仅与另一计算工具对比，无法保证其生物学相关性。</td>
-<td style="text-align: left;">使用一组有实验测定SASA或相互作用数据的蛋白质结构，比较PDV输出与实验值的差异。</td>
-<td style="text-align: left;">方法节：验证均与FreeSASA、RIOT、PLIP等计算工具对比。</td>
+<td style="text-align: left;">相互作用检测的macro-F1为0.82，与PLIP相当。</td>
+<td style="text-align: left;">0.82的F1分数意味着约18%的相互作用被错误分类或遗漏。这可能是因为PDV使用了简化的几何规则，或PLIP本身也有误差。</td>
+<td style="text-align: left;">对于需要精确相互作用图谱的研究（如药物设计），18%的误差可能不可接受。</td>
+<td style="text-align: left;">1. 分析PDV和PLIP在哪些类型的相互作用上分歧最大。2. 使用更高质量的晶体结构或MD模拟轨迹进行人工验证。</td>
+<td style="text-align: left;">Results节: "its interaction detector reproduces PLIP at macro-F1 0.82"</td>
 </tr>
 <tr>
-<td style="text-align: left;">相互作用检测的macro-F1=0.82，意味着约18%的相互作用未被正确识别或存在误报。</td>
-<td style="text-align: left;">对于需要高精度相互作用分析的任务（如药物设计中的关键接触），18%的误差可能不可接受。</td>
-<td style="text-align: left;">用户可能高估PDV在相互作用分析上的可靠性，导致错误结论。</td>
-<td style="text-align: left;">分析PDV误报和漏报的具体类型（如是否倾向于漏掉弱相互作用或误报长距离接触）。</td>
-<td style="text-align: left;">Results节：macro-F1 = 0.82。</td>
+<td style="text-align: left;">可开发性扫描器缺乏验证数据。</td>
+<td style="text-align: left;">该模块可能基于未经验证的规则库，其准确性和召回率未知。</td>
+<td style="text-align: left;">可开发性扫描是抗体设计的关键步骤，不可靠的扫描可能导致错误的设计决策。</td>
+<td style="text-align: left;">1. 要求作者提供该模块的验证数据集和性能指标。2. 使用已知的可开发性风险抗体进行独立测试。</td>
+<td style="text-align: left;">Results节: 仅提及该功能，未提供验证结果。</td>
 </tr>
 <tr>
-<td style="text-align: left;">可开发性扫描器缺乏定量验证。</td>
-<td style="text-align: left;">该模块可能基于简单规则，其预测能力未经系统评估，可能产生误导性结果。</td>
-<td style="text-align: left;">可开发性扫描是抗体设计的关键步骤，其可靠性直接影响候选分子的筛选。</td>
-<td style="text-align: left;">使用一组已知可开发性问题的抗体，评估PDV扫描器的敏感性和特异性。</td>
-<td style="text-align: left;">方法节：仅描述其功能，未提供与任何参考工具或实验数据的对比。</td>
+<td style="text-align: left;">验证数据集的选择可能存在偏差。</td>
+<td style="text-align: left;">SASA验证使用了2,582个结构，但未说明这些结构的多样性（如分辨率、大小、类型）。如果数据集偏向于高分辨率、小分子结构，则结论的泛化性有限。</td>
+<td style="text-align: left;">验证的可靠性取决于测试集的代表性。</td>
+<td style="text-align: left;">1. 分析测试集的结构多样性。2. 在更具挑战性的结构（如低分辨率、大复合物）上进行额外测试。</td>
+<td style="text-align: left;">Results节: 仅提及数量，未描述结构特征。</td>
 </tr>
 <tr>
-<td style="text-align: left;">性能未在大型结构或复杂场景下测试。</td>
-<td style="text-align: left;">对于大型复合物（如核糖体）或需要实时交互的复杂场景，浏览器端JavaScript可能性能不足。</td>
-<td style="text-align: left;">限制了PDV在更广泛研究场景中的应用。</td>
-<td style="text-align: left;">使用不同大小的结构（从单域抗体到病毒衣壳）测试PDV的加载、渲染和分析时间。</td>
-<td style="text-align: left;">未提供性能基准测试。</td>
+<td style="text-align: left;">与FreeSASA的Pearson r接近1，但可能存在系统偏差。</td>
+<td style="text-align: left;">高相关性不保证绝对数值一致。PDV可能系统地高估或低估SASA值，但保持了线性关系。</td>
+<td style="text-align: left;">对于需要绝对SASA值的应用（如结合自由能计算），系统偏差会导致错误。</td>
+<td style="text-align: left;">计算PDV与FreeSASA之间的平均绝对误差（MAE）或均方根误差（RMSE），而不仅仅是相关系数。</td>
+<td style="text-align: left;">Results节: 仅报告了Pearson r。</td>
 </tr>
 </tbody>
 </table>
@@ -313,58 +310,55 @@
 <p><strong>Agent 提炼的知识候选</strong></p>
 <ol>
 <li>
-<p><strong>可迁移概念: 轻量级验证分析引擎</strong></p>
+<p><strong>可迁移概念: 轻量级工具的“验证驱动开发”</strong>。PDV的核心贡献不仅是实现了功能，更是<strong>对每个功能进行了大规模、系统性的验证</strong>。这为开发其他轻量级蛋白质计算工具（如快速对接评分、突变效应预测）提供了范式：在追求轻量化的同时，必须将验证作为核心环节，以建立用户信任。</p>
 <ul>
-<li><strong>概念</strong>: 将经典、成熟的算法（如Shrake-Rupley SASA）用客户端语言（如JavaScript）重新实现，并对其进行严格的定量验证，使其成为零安装工具的核心功能。</li>
-<li><strong>如何迁移到本课题</strong>: 在蛋白质结构计算研究中，许多分析任务（如RMSD计算、接触图生成、能量项计算）都有成熟的算法。可以借鉴PDV的思路，将这些算法移植到浏览器端或轻量级Python库中，并附上验证基准，从而创建更易用、更可靠的分析工具，降低研究门槛。例如，为构象采样工具开发一个内置的、经过验证的聚类分析模块。</li>
+<li><strong>如何迁移到本课题</strong>: 在开发一个轻量级的蛋白质构象采样或结构预测结果分析工具时，可以借鉴此方法。例如，开发一个基于浏览器的MD模拟轨迹分析器，需要对其计算的RMSD、回旋半径等指标与标准工具（如MDTraj, MDAnalysis）进行严格验证，并公开验证结果。</li>
 </ul>
 </li>
 <li>
-<p><strong>可迁移方法: 多工具交叉验证</strong></p>
+<p><strong>可迁移方法: 纯客户端JavaScript实现复杂算法</strong>。PDV证明了Shrake-Rupley SASA、抗体编号等复杂算法可以完全在浏览器中用JavaScript高效实现。这打破了“复杂计算必须依赖后端”的思维定式。</p>
 <ul>
-<li><strong>方法</strong>: 将新工具的输出与多个现有公认工具（如FreeSASA, PLIP, Arpeggio）的输出进行对比，使用多个指标（如Pearson r, F1-score）进行量化评估。</li>
-<li><strong>如何迁移到本课题</strong>: 在开发新的评分函数、对接算法或结构预测方法时，不应仅与一个基线对比。应选择多个代表性工具，在多个标准数据集上进行交叉验证，并报告详细的性能指标（如成功率、相关性、AUC等），以全面展示新方法的优势和局限。这能增强结果的可信度。</li>
+<li><strong>如何迁移到本课题</strong>: 可以尝试将一些轻量级的蛋白质结构分析算法（如计算二面角、检测二级结构、简单的能量评估）用WebAssembly或纯JavaScript实现，集成到基于浏览器的蛋白质设计平台中，实现完全离线的分析工作流。</li>
 </ul>
 </li>
 <li>
-<p><strong>可迁移实验设计: 大规模、多样化的验证数据集</strong></p>
+<p><strong>可迁移实验设计: 多工具、多指标、大规模验证</strong>。PDV的验证策略非常扎实：对每个引擎，都选择了行业标准的参考工具（FreeSASA, RIOT, PLIP），使用了大规模数据集，并报告了多个指标（Pearson r, 匹配率, macro-F1）。</p>
 <ul>
-<li><strong>设计</strong>: 使用包含2,582个结构（涵盖蛋白质、核酸、配体）的数据集来验证SASA引擎，使用16,996条序列来验证抗体编号引擎。</li>
-<li><strong>如何迁移到本课题</strong>: 在验证蛋白质结构预测或分子对接方法时，应构建一个大规模、多样化的测试集，覆盖不同的蛋白质家族、大小、折叠类型和结合模式。这能更全面地评估方法的泛化能力，避免在特定类型结构上过拟合。</li>
+<li><strong>如何迁移到本课题</strong>: 在提出一个新的蛋白质结构预测或设计方法时，应遵循类似的验证策略。例如，对于一个新的抗体结构预测方法，应使用大规模、多样化的抗体测试集，与AlphaFold2、IgFold等基线方法比较，并报告TM-score、RMSD、CDR环区准确性等多个指标。</li>
 </ul>
 </li>
 </ol>
 <h2>15 与已有知识连接</h2>
 <ul>
-<li><strong>相似工具</strong>: 与PyMOL, ChimeraX, NGL, Mol*等可视化工具功能重叠，但PDV的独特之处在于其内置的、经过验证的定量分析引擎和零安装特性。</li>
-<li><strong>基础算法</strong>: PDV的SASA引擎基于Shrake-Rupley算法，这是计算结构生物学中的经典方法。其相互作用检测器基于几何和距离规则，与PLIP、Arpeggio等工具类似。</li>
-<li><strong>抗体设计领域</strong>: PDV的抗体编号和可开发性扫描功能直接服务于抗体工程领域，与AbYsis, IMGT, SAbDab等数据库和工具形成互补。</li>
-<li><strong>可迁移领域</strong>: 该工具的设计理念（轻量级+验证分析）可迁移到其他计算生物学领域，如<strong>RNA结构分析</strong>、<strong>小分子药物设计</strong>（开发一个轻量级的配体-蛋白质相互作用分析工具）或<strong>基因组浏览器</strong>（集成经过验证的序列分析功能）。</li>
+<li><strong>相似工具</strong>: 与<strong>PyMOL</strong> (桌面软件) 和 <strong>3Dmol.js</strong> (网页查看器) 直接相关。PDV是3Dmol.js的增强版，旨在提供PyMOL的部分分析功能。</li>
+<li><strong>验证基准</strong>: 验证中使用的参考工具 <strong>FreeSASA</strong> (Mitternacht, 2016), <strong>RIOT</strong> (未提供引用), <strong>PLIP</strong> (Salentin et al., 2015) 是蛋白质结构分析领域的标准工具。</li>
+<li><strong>抗体设计领域</strong>: PDV的抗体特异性工具（编号、种系分配、可开发性扫描）直接服务于抗体工程领域，与<strong>AbYsis</strong>, <strong>IMGT</strong>, <strong>SAbDab</strong>等数据库和工具形成互补。</li>
+<li><strong>可迁移领域</strong>: 该工具的开发思路可迁移到<strong>核酸结构分析</strong>（如RNA二级结构可视化与计算）、<strong>蛋白质-配体对接结果分析</strong>（快速计算相互作用指纹）等领域。</li>
 </ul>
 <h2>16 研究想法</h2>
 <p><strong>Agent 生成的研究候选</strong></p>
 <ol>
 <li>
-<p><strong>名称</strong>: 基于PDV的蛋白质-配体对接结果交互式分析插件</p>
+<p><strong>名称</strong>: 基于浏览器的轻量级蛋白质构象采样与能量评估工具</p>
 <ul>
-<li><strong>来源局限/观察</strong>: PDV目前主要关注蛋白质和抗体结构，其相互作用检测器可用于分析对接结果，但缺乏对配体（小分子）的专门支持，如配体可旋转键、药效团特征等。</li>
-<li><strong>核心假设</strong>: 在PDV中集成一个专门用于分析对接结果的模块，可以直观地展示对接姿态、关键相互作用、溶剂暴露变化，并自动计算RMSD与晶体结构对比，从而加速对接结果的筛选和评估。</li>
-<li><strong>相对本文的增量</strong>: 在PDV现有相互作用检测器基础上，增加对配体分子的识别、对接结果文件（如SDF, mol2）的解析、以及对接评分与几何质量的综合展示。</li>
-<li><strong>初步方法</strong>: 1) 扩展PDV的PDB解析器以支持多模型（对接构象）。2) 实现一个“对接分析”面板，显示每个构象的评分、RMSD、关键相互作用列表。3) 在3D视图中用不同颜色和样式高亮配体、关键残基和相互作用。4) 集成一个简单的聚类算法，对对接构象进行分组。</li>
-<li><strong>验证方式</strong>: 使用一组已知晶体结构的蛋白质-配体复合物，进行对接计算，然后用该插件分析结果，评估其是否能快速、准确地识别出近天然构象。</li>
-<li><strong>可能的失败模式</strong>: 1) 浏览器端JavaScript性能不足以处理大量对接构象（&gt;1000个）。2) 相互作用检测的准确性（macro-F1=0.82）可能成为分析瓶颈，导致误判关键相互作用。</li>
+<li><strong>来源局限/观察</strong>: PDV提供了静态结构的分析，但无法处理构象集合（如MD轨迹或对接产生的构象）。许多蛋白质设计任务需要评估构象的多样性和能量。</li>
+<li><strong>核心假设</strong>: 可以在浏览器中实现一个简化的构象采样算法（如基于主成分分析的扰动或片段组装）和一个轻量级的能量函数（如Rosetta的残基级能量项或基于知识的统计势），用于快速评估构象质量。</li>
+<li><strong>相对本文的增量</strong>: 在PDV的可视化和静态分析基础上，增加<strong>动态构象生成</strong>和<strong>能量评估</strong>能力。</li>
+<li><strong>初步方法</strong>: 1. 使用WebAssembly移植一个简化的Rosetta能量函数。2. 实现一个基于JavaScript的、使用预计算主成分的构象扰动算法。3. 将生成的构象与能量值在PDV的界面中可视化。</li>
+<li><strong>验证方式</strong>: 1. 将能量函数与Rosetta的原始能量函数在标准测试集上比较（Pearson r）。2. 将采样算法生成的构象与MD模拟的构象在RMSD分布上比较。</li>
+<li><strong>可能的失败模式</strong>: 1. 浏览器JavaScript性能不足以处理大规模构象采样。2. 简化的能量函数精度不足，无法区分近天然构象。3. 用户界面交互复杂，难以使用。</li>
 <li><strong>创新状态</strong>: unverified</li>
 </ul>
 </li>
 <li>
-<p><strong>名称</strong>: 基于PDV的MD模拟轨迹轻量级分析前端</p>
+<p><strong>名称</strong>: 基于PDV的抗体-抗原对接结果交互式分析与排序工具</p>
 <ul>
-<li><strong>来源局限/观察</strong>: PDV目前是静态结构分析工具。MD模拟产生大量轨迹数据，分析通常需要复杂脚本或桌面软件（如VMD）。缺乏一个轻量级的、可交互的轨迹分析工具。</li>
-<li><strong>核心假设</strong>: 通过将MD轨迹的关键帧（如聚类中心）或降维后的代表性结构加载到PDV中，并利用其SASA、相互作用检测等引擎，可以快速、直观地分析模拟过程中的关键构象变化和相互作用动态。</li>
-<li><strong>相对本文的增量</strong>: 增加对MD轨迹文件（如DCD, XTC）或代表性结构集的解析能力，并设计一个“轨迹浏览器”界面，允许用户在不同构象间切换，并实时更新分析结果。</li>
-<li><strong>初步方法</strong>: 1) 开发一个轻量级的轨迹解析器（或利用现有JavaScript库），提取关键帧。2) 在PDV中实现“构象滑块”或“播放”功能，允许用户遍历不同帧。3) 当用户切换到某一帧时，自动重新计算并显示该帧的SASA、相互作用等。4) 提供“差异分析”模式，高亮不同帧之间的结构变化。</li>
-<li><strong>验证方式</strong>: 使用一个已知的MD模拟轨迹（如蛋白质折叠或配体结合过程），评估该前端是否能帮助用户快速识别关键中间态和相互作用变化。</li>
-<li><strong>可能的失败模式</strong>: 1) 轨迹文件通常很大，浏览器端解析和存储可能成为瓶颈。2) 实时重新计算所有分析可能性能不足，需要预计算或仅计算关键指标。3) 用户可能仍需要VMD等工具进行更深入的轨迹分析。</li>
+<li><strong>来源局限/观察</strong>: PDV能检测非共价相互作用，但无法直接用于分析对接软件（如ZDOCK, HADDOCK）产生的大量对接模型，并对其进行排序和筛选。</li>
+<li><strong>核心假设</strong>: 可以将PDV的相互作用检测和SASA计算引擎与一个简单的评分函数（如结合界面面积、氢键数量、疏水补丁评分）结合，在浏览器中实现对对接结果的快速、交互式排序和可视化。</li>
+<li><strong>相对本文的增量</strong>: 将PDV从<strong>单结构分析</strong>扩展到<strong>多结构（对接结果）的批量分析与排序</strong>。</li>
+<li><strong>初步方法</strong>: 1. 扩展PDV以支持加载包含多个模型的PDB文件（如对接输出）。2. 为每个模型自动计算PDV的相互作用和SASA指标。3. 实现一个基于这些指标的加权评分函数。4. 在界面中提供一个排序列表，点击即可高亮显示对应的对接模型。</li>
+<li><strong>验证方式</strong>: 1. 使用一个已知的抗体-抗原复合物对接基准集（如Docking Benchmark 5.5）。2. 比较PDV的排序与基于Rosetta或PyMOL的排序在“近天然模型”识别上的成功率。</li>
+<li><strong>可能的失败模式</strong>: 1. 评分函数过于简单，无法有效区分近天然模型和假阳性。2. 加载和计算大量模型（&gt;1000个）时浏览器性能不足。3. 用户需要手动定义评分函数的权重，增加了使用门槛。</li>
 <li><strong>创新状态</strong>: unverified</li>
 </ul>
 </li>
@@ -377,130 +371,111 @@
     <div class="md"><h2>Review setup</h2>
 <ul>
 <li><strong>Input scope</strong> Abstract only</li>
-<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract</li>
-<li><strong>Shared manuscript claim summary</strong> The authors present PDV, a single-file, offline HTML molecular visualization tool with validated quantitative analytics (SASA, antibody numbering, interaction detection, developability scanning) and an antibody-specific toolkit, built as a modification of 3Dmol.js.</li>
-<li><strong>Visible evidence base</strong> Abstract text; no figures, tables, or supplementary materials provided</li>
-<li><strong>Missing materials affecting confidence</strong> Full manuscript, figures, tables, supplementary data, validation datasets, code repository, and user documentation</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no full manuscript, figures, tables, or supplementary materials provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present PDV, a single-file offline HTML molecular visualization tool built on 3Dmol.js, with four re-implemented analytical engines (SASA, antibody numbering and germline assignment, non-covalent interaction detection, developability-liability scanning), each validated against established references with reported quantitative agreement.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no code repository, benchmark datasets, validation protocols, or comparison details are accessible</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, validation methodology, benchmark dataset compositions, statistical analysis details, software architecture description, and any figures or tables</li>
 </ul>
 <h2>Reviewer</h2>
 <ul>
-<li>
-<p><strong>Overall assessment</strong> The abstract describes a potentially useful tool that addresses a genuine gap in the molecular visualization landscape: combining lightweight, no-install web delivery with validated quantitative analytics. The validation statistics reported for SASA, antibody numbering, and interaction detection are impressive and suggest careful benchmarking. However, the abstract alone provides insufficient detail to assess the tool’s novelty, usability, and the robustness of the validation. Key technical claims (e.g., “publication-quality outline rendering,” “portable sessions”) are stated without evidence. The antibody-specific toolkit is mentioned but not described in sufficient depth to evaluate its utility. The manuscript may be of interest to the structural biology and antibody engineering communities, but the current evidence base is too thin to support the strong claims made.</p>
-</li>
-<li>
-<p><strong>Who would be interested in the results, and why</strong> Structural biologists, protein engineers, and antibody researchers who need a lightweight, browser-based tool for routine visualization and quantitative analysis (SASA, interaction detection, antibody numbering) without installing heavy desktop software. The validated analytics and antibody-specific features could be particularly appealing for labs with limited computational resources or for teaching environments.</p>
-</li>
-<li>
-<p><strong>Major strengths</strong></p>
-<ol>
-<li>Addresses a clear gap: a no-install web viewer with validated quantitative analytics, combining the convenience of web tools with the depth of desktop software.</li>
-<li>Impressive validation statistics for SASA (Pearson r ≈ 0.997–0.998 against FreeSASA across 2,582 structures) and antibody numbering (&gt;99.88% agreement with RIOT across 1.3 million positions), suggesting careful benchmarking.</li>
-<li>Single offline HTML file delivery is a practical advantage for reproducibility and offline use.</li>
-</ol>
-</li>
-<li>
-<p><strong>Major Concerns</strong></p>
+<li><strong>Overall assessment</strong> The abstract describes a potentially useful tool that addresses a genuine gap between lightweight web viewers and feature-rich desktop software. The reported validation metrics are impressive at face value, but the abstract alone provides insufficient detail to assess the rigor of the benchmarking, the generalizability of the results, or the practical usability of the tool. The claims are plausible but not fully verifiable from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Structural biologists, protein engineers, and antibody researchers who need quick, installation-free structural analysis without sacrificing quantitative accuracy. The tool could also appeal to educators and researchers in resource-limited settings where desktop software installation is impractical.</li>
+<li><strong>Major strengths</strong> The tool addresses a real and well-articulated need. The choice to validate each engine against established references is commendable and directly supports the credibility of the quantitative claims. The single-file offline delivery model is a practical and innovative solution to accessibility barriers.</li>
+<li><strong>Major Concerns</strong> The abstract reports high agreement metrics but does not describe the validation conditions, dataset selection criteria, or potential biases. The claim of "validated" analytics requires scrutiny of whether the reference implementations were used correctly and whether the test sets are representative. The scope of the developability-liability scanner is not defined, making its validation status unclear.</li>
+<li><strong>Minor Comments</strong> The abstract would benefit from clarifying the relationship between PDV and 3Dmol.js in terms of licensing and code provenance. The performance characteristics for large structures or complex scenes are not mentioned. The user interface and learning curve are not addressed.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The validation methodology is not described in sufficient detail to assess whether the reported metrics are meaningful. Specifically, the SASA correlation range, the numbering accuracy threshold, and the interaction detector F1 score all require context on dataset composition, error definitions, and comparison baselines.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: moderate, as the combination of features in a single-file web tool is novel, though each individual component exists elsewhere. Scientific importance: potentially high for the antibody engineering community, but the abstract does not demonstrate a unique scientific insight. Interdisciplinary readership: the tool could attract readers from structural biology, immunology, and computational chemistry, but the abstract is written primarily for a specialist audience. Technical soundness: not fully assessable from the abstract; the validation claims are promising but under-specified. Readability for nonspecialists: the abstract is dense and assumes familiarity with multiple specialized tools and metrics.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved, specifically if the full manuscript provides rigorous validation details and the tool is demonstrated to be robust and usable in practice.</li>
+</ul>
+<h3>Major Concerns</h3>
 <ul>
 <li><strong>Concern ID</strong> R1-M1</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> Validation completeness</li>
-<li><strong>Claim pointer</strong> “PDV’s SASA reproduces FreeSASA at Pearson r ≈ 0.997–0.998 across 2,582 structures spanning proteins, nucleic acids and ligands”</li>
-<li><strong>Evidence pointer</strong> Abstract; no figure or table provided</li>
-<li><strong>Concern</strong> The abstract reports a Pearson correlation coefficient but does not specify whether this is for per-residue SASA, per-atom SASA, or total SASA. The range “0.997–0.998” suggests variation across structure types, but the source of this variation is unclear. No details are given on the test set composition, the reference implementation version, or the statistical methods used (e.g., whether outliers were excluded, whether the correlation is on raw or log-transformed values).</li>
-<li><strong>Why it matters</strong> Without these details, the reported correlation cannot be properly interpreted or reproduced. A high Pearson r can mask systematic biases (e.g., constant offset, scaling errors) that would affect downstream analyses.</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "PDV’s SASA reproduces FreeSASA at Pearson r ≈ 0.997–0.998 across 2,582 structures spanning proteins, nucleic acids and ligands"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract reports a Pearson correlation range but does not specify the exact comparison protocol, such as whether the same atomic radii and probe radius were used, how surface area was computed for nucleic acids and ligands, or whether the 2,582 structures were selected to avoid redundancy or bias.</li>
+<li><strong>Why it matters</strong> Pearson correlation can be high even with systematic offsets or scaling errors. Without details on the comparison metric, error distribution, and dataset composition, the claim of "reproduces" is not fully substantiated.</li>
 <li>
-<p><strong>Resolution test</strong> Provide a figure (e.g., scatter plot with regression line and Bland-Altman plot) showing per-residue SASA values from PDV vs. FreeSASA for a representative subset of structures. Report the mean absolute error and root-mean-square error alongside the correlation. Specify the test set composition and any filtering criteria.</p>
+<p><strong>Resolution test</strong> The full manuscript should provide a detailed methods section describing the SASA algorithm parameters, the reference implementation version, the dataset selection criteria, and a scatter plot or error analysis showing agreement beyond a single correlation coefficient.</p>
 </li>
 <li>
 <p><strong>Concern ID</strong> R1-M2</p>
 </li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> Validation completeness</li>
-<li><strong>Claim pointer</strong> “its numbering reproduces RIOT for over 99.88% of 1.3 million residue positions across 16,996 sequences and four schemes”</li>
-<li><strong>Evidence pointer</strong> Abstract; no figure or table provided</li>
-<li><strong>Concern</strong> The abstract reports a high agreement rate but does not specify what constitutes a “reproduction” (exact match of residue numbering? same scheme assignment?). The 0.12% disagreement rate (≈1,560 positions) is not characterized: are these systematic errors in specific CDR regions, or random mismatches? The four numbering schemes are not named.</li>
-<li><strong>Why it matters</strong> Antibody numbering is critical for CDR definition and downstream analysis. Even a small fraction of errors could mislead users if they occur in functionally important regions. Without error characterization, the tool’s reliability for antibody research is unclear.</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "its numbering reproduces RIOT for over 99.88% of 1.3 million residue positions across 16,996 sequences and four schemes"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not clarify what constitutes a "reproduced" position, how mismatches were defined, or whether the four numbering schemes were weighted equally. The threshold of 99.88% is high, but the failure modes and their structural or functional significance are not discussed.</li>
+<li><strong>Why it matters</strong> Numbering accuracy is critical for antibody analysis, and even small error rates can affect downstream applications such as CDR identification or germline assignment. The abstract does not indicate whether errors are random or systematic.</li>
 <li>
-<p><strong>Resolution test</strong> Provide a confusion matrix or error analysis table showing the types and locations of mismatches. Name the four schemes and report per-scheme accuracy. Include a figure showing example alignments where PDV and RIOT agree and disagree.</p>
+<p><strong>Resolution test</strong> The full manuscript should define the exact matching criteria, provide a breakdown of errors by scheme and sequence type, and discuss any systematic failure cases with examples.</p>
 </li>
 <li>
 <p><strong>Concern ID</strong> R1-M3</p>
 </li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> Validation completeness</li>
-<li><strong>Claim pointer</strong> “its interaction detector reproduces PLIP at macro-F1 0.82, matching Arpeggio as closely as PLIP itself does”</li>
-<li><strong>Evidence pointer</strong> Abstract; no figure or table provided</li>
-<li><strong>Concern</strong> The macro-F1 score of 0.82 is reported without context: what is the test set size? What interaction types are included (e.g., hydrogen bonds, hydrophobic contacts, π-stacking)? How are true positives, false positives, and false negatives defined? The claim that PDV “matches Arpeggio as closely as PLIP itself does” is ambiguous—does this mean PDV’s agreement with PLIP is similar to Arpeggio’s agreement with PLIP? If so, what is the reference value?</li>
-<li><strong>Why it matters</strong> Interaction detection is a complex task with many edge cases. Without a clear evaluation protocol, the reported F1 score cannot be assessed for reliability or compared to other tools.</li>
-<li><strong>Resolution test</strong> Provide a table showing per-interaction-type precision, recall, and F1 scores for PDV vs. PLIP. Specify the test set (e.g., PDB structures, number of complexes). Include a comparison with Arpeggio using the same test set and evaluation criteria.</li>
-</ul>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "its interaction detector reproduces PLIP at macro-F1 0.82, matching Arpeggio as closely as PLIP itself does"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The macro-F1 score is reported without context on the interaction types included, the dataset size, or the definition of a true positive. The comparison to Arpeggio is vague, as the abstract does not state the Arpeggio-to-PLIP agreement metric used for the comparison.</li>
+<li><strong>Why it matters</strong> Interaction detection is highly sensitive to parameter choices and interaction definitions. Without a clear benchmark protocol, the F1 score cannot be interpreted as evidence of reliable performance.</li>
+<li>
+<p><strong>Resolution test</strong> The full manuscript should specify the interaction categories, the benchmark dataset, the annotation protocol, and provide a detailed comparison table showing PDV, PLIP, and Arpeggio performance on identical inputs.</p>
 </li>
 <li>
-<p><strong>Minor Comments</strong></p>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scope and completeness</li>
+<li><strong>Claim pointer</strong> "a developability-liability scanner" is listed as one of the four validated engines</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe what the developability-liability scanner detects, what reference it was validated against, or what metrics were used. This is the only engine without a reported validation result.</li>
+<li><strong>Why it matters</strong> Developability assessment is a key selling point for antibody researchers, and an unvalidated or under-described component undermines the overall claim of "validated quantitative analytics."</li>
+<li><strong>Resolution test</strong> The full manuscript should describe the scanner's feature set, the validation reference, and the performance metrics, or explicitly state if this component is not yet validated.</li>
+</ul>
+<h3>Minor Comments</h3>
 <ul>
 <li><strong>Concern ID</strong> R1-m1</li>
 <li><strong>Severity</strong> Minor</li>
 <li><strong>Axis</strong> Clarity</li>
-<li><strong>Affected element</strong> Claim about “publication-quality outline rendering”</li>
-<li><strong>Evidence pointer</strong> Abstract</li>
-<li><strong>Issue</strong> The term “publication-quality” is subjective and not defined. It is unclear what specific rendering features (e.g., anti-aliasing, ray tracing, resolution control) are provided.</li>
+<li><strong>Affected element</strong> Tool description</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract states PDV is "an extensive modification of 3Dmol.js" but does not clarify the extent of modification or whether the original 3Dmol.js license terms are compatible with the PolyForm Noncommercial License.</li>
 <li>
-<p><strong>Required correction</strong> Define “publication-quality” in terms of specific rendering capabilities (e.g., resolution, anti-aliasing, export formats) or provide a figure comparing PDV output to a standard (e.g., PyMOL).</p>
+<p><strong>Required correction</strong> Provide a brief statement on code provenance and license compatibility in the full manuscript.</p>
 </li>
 <li>
 <p><strong>Concern ID</strong> R1-m2</p>
 </li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Clarity</li>
-<li><strong>Affected element</strong> Claim about “portable sessions”</li>
-<li><strong>Evidence pointer</strong> Abstract</li>
-<li><strong>Issue</strong> The term “portable sessions” is vague. Does this mean the entire session state (scene, representations, selections) can be saved and reloaded? In what format? Is it human-readable?</li>
+<li><strong>Axis</strong> Usability</li>
+<li><strong>Affected element</strong> Performance characteristics</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract does not mention performance limits, such as maximum structure size or number of objects, which could affect practical use.</li>
 <li>
-<p><strong>Required correction</strong> Specify the session file format (e.g., JSON, PSE) and describe what state is preserved (e.g., camera position, coloring, selections).</p>
+<p><strong>Required correction</strong> Include a performance benchmark or a statement on expected limitations in the full manuscript.</p>
 </li>
 <li>
 <p><strong>Concern ID</strong> R1-m3</p>
 </li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Completeness</li>
-<li><strong>Affected element</strong> Antibody-specific toolkit</li>
-<li><strong>Evidence pointer</strong> Abstract</li>
-<li><strong>Issue</strong> The abstract mentions an “antibody numbering and germline-assignment engine” and a “developability-liability scanner” but provides no details on the germline assignment method or the types of liabilities scanned (e.g., aggregation, immunogenicity, stability).</li>
-<li><strong>Required correction</strong> Briefly describe the germline assignment algorithm (e.g., BLAST against IMGT/V-QUEST) and list the liability types detected (e.g., aggregation-prone regions, deamidation sites, oxidation sites).</li>
-</ul>
-</li>
-<li>
-<p><strong>Technical failings that need to be addressed before the case is established</strong></p>
-<ul>
-<li>R1-M1: Insufficient detail on SASA validation (correlation metric, test set, error analysis)</li>
-<li>R1-M2: Insufficient detail on antibody numbering validation (error characterization, scheme names)</li>
-<li>R1-M3: Insufficient detail on interaction detector validation (test set, per-type metrics, comparison baseline)</li>
-</ul>
-</li>
-<li>
-<p><strong>Assessment against Nature-style criteria</strong></p>
-<ul>
-<li><strong>Originality</strong>: Moderate. The concept of a lightweight web viewer with validated analytics is not entirely new (e.g., Mol* has some analysis features), but the combination of a single offline HTML file with validated SASA, antibody numbering, and interaction detection appears novel. The validation approach is a strength.</li>
-<li><strong>Scientific importance</strong>: Potentially high for the antibody engineering community, where validated, accessible tools for numbering and developability assessment are in demand. The SASA and interaction detection features are broadly useful for structural biology.</li>
-<li><strong>Interdisciplinary readership</strong>: Moderate. The tool is primarily targeted at structural biologists and antibody engineers. The abstract is written in a technical style that may not be accessible to nonspecialists (e.g., “Shrake–Rupley solvent-accessible surface area,” “macro-F1”).</li>
-<li><strong>Technical soundness</strong>: Cannot be fully assessed from the abstract alone. The reported validation statistics are promising but lack the detail needed to evaluate their reliability. The tool’s implementation as a modification of 3Dmol.js is a reasonable approach.</li>
-<li><strong>Readability for nonspecialists</strong>: The abstract is dense with technical terms and acronyms (SASA, RIOT, PLIP, Arpeggio, macro-F1). A brief explanation of these terms and their significance would improve accessibility.</li>
-</ul>
-</li>
-<li>
-<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents a promising tool with impressive validation statistics, but the lack of detail on the validation methodology, error characterization, and tool features prevents a full assessment. The authors should provide the full manuscript with figures, tables, and supplementary data to support their claims.</p>
-</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Availability</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The tool is available at a specific URL, but the abstract does not state whether the source code is accessible for inspection or modification.</li>
+<li><strong>Required correction</strong> Clarify the availability of source code and any versioning information.</li>
 </ul>
 <h2>Risk / unsupported claims</h2>
 <ul>
-<li>“publication-quality outline rendering” – unsupported; no evidence provided.</li>
-<li>“portable sessions” – unsupported; no evidence provided.</li>
-<li>“developability-liability scanner” – unsupported; no details on the types of liabilities or validation.</li>
-<li>“germline-assignment engine” – unsupported; no details on the algorithm or validation.</li>
-<li>The claim that PDV “matches Arpeggio as closely as PLIP itself does” is ambiguous and unsupported without a direct comparison.</li>
+<li>The claim that PDV "brings validated, quantitative structural analysis into a no-install, simple to use tool" is not fully supported by the abstract alone, as the validation details are not provided.</li>
+<li>The developability-liability scanner is listed as validated but no validation evidence is reported in the abstract.</li>
+<li>The statement that PDV "matches Arpeggio as closely as PLIP itself does" is not verifiable without the specific comparison metric and dataset.</li>
+<li>The generalizability of the SASA validation across "proteins, nucleic acids and ligands" is not assessable without dataset composition details.</li>
 </ul></div>
   </section>
   

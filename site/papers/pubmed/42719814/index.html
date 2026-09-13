@@ -18,7 +18,7 @@
   <main>
 <article class="paper">
   <div class="paper-head">
-    <span class="score score-mid">7</span>
+    <span class="score score-mid">6</span>
     <div>
       <h1>Benchmarking antibody modeling tools across structure prediction, docking, and paratope-epitope interface analysis.</h1>
       <div class="meta">Yu, Zeyuan; Wu, Jilei; Ning, Ziyao; Qiao, Chunxia; Wang, Jing; Li, Xinying; Liu, Chenghua; Chen, Guojiang; Feng, Jiannan; Yu, Jijun</div>
@@ -29,7 +29,7 @@
          · 全文(pmc)
          · <a href="https://pubmed.ncbi.nlm.nih.gov/42719814/">原文</a>
       </div>
-      <p class="one-liner">该文系统比较了多种抗体结构预测、对接及界面分析工具的性能，属于蛋白质结构计算领域的工程化评估，方法创新性有限但问题和方法轴均相关。</p>
+      <p class="one-liner">该文系统比较了多种抗体结构预测、对接及界面分析工具的性能，虽为工程化评估而非方法创新，但直接涉及蛋白质结构预测、对接等核心计算问题，对本课题的工具选择与基准测试有参考价值。</p>
     </div>
   </div>
   
@@ -41,7 +41,7 @@
   
   <section>
     <h2>摘要翻译</h2>
-    <div class="md">动机：计算抗体工程需要对抗体可变片段结构、抗原-抗体复合物及结合界面进行可靠预测。然而，针对这些任务的公开可用工具，在受控且具有统计依据的设计下，很少被跨完整工作流程进行比较。结果：我们使用多种保留预测和配对统计检验，在50个非冗余人源化抗体-抗原复合物上评估了ImmuneBuilder、IgFold、AlphaFold3、GRAMM和dyMEAN。所有三种抗体结构预测器均表现准确，其中AlphaFold3整体性能最佳，并在重链第三互补决定区表现最优。AlphaFold3在复合物预测方面也显著优于GRAMM和dyMEAN，为46%的复合物生成了中等或高质量的结合界面，尽管整体界面准确性仍有限。当对接可靠时，AlphaFold3能准确恢复表位和互补位残基、盐桥及非键接触，但在氢键和细粒度接触强度的再现上一致性较差。这些发现为跨抗体建模工作流程选择工具提供了实用指导，并识别了细粒度界面预测中的持续局限性。可用性和实现：数据、结构预测、评估结果及分析代码可从Zenodo记录20710876获取。</div>
+    <div class="md">动机：计算抗体工程需要对抗体可变区片段结构、抗原-抗体复合物及结合界面进行可靠预测。然而，针对这些任务的公开可用工具，在受控且具有统计基础的设计下，很少在整个工作流程中进行比较。结果：我们使用多个保留预测和配对统计检验，在50个非冗余人源化抗体-抗原复合物上评估了ImmuneBuilder、IgFold、AlphaFold3、GRAMM和dyMEAN。所有三种抗体结构预测器均表现准确，其中AlphaFold3整体表现最佳，且在重链第三互补决定区上表现最优。AlphaFold3在复合物预测方面也显著优于GRAMM和dyMEAN，为46%的复合物生成了中等或高质量的结合界面，尽管整体界面准确性仍然有限。当对接可靠时，AlphaFold3能准确恢复表位和互补位残基、盐桥及非键接触，但在氢键和细粒度接触强度的再现上一致性较差。这些发现为跨抗体建模工作流选择工具提供了实用指导，并识别出细粒度界面预测中持续存在的局限性。可用性与实现：数据、结构预测、评估结果及分析代码可从Zenodo（记录号20710876）获取。</div>
   </section>
   
   
@@ -49,7 +49,7 @@
     <h2>Paper Card</h2>
     <div class="md"><h2>01 基本信息</h2>
 <ul>
-<li><strong>标题</strong>: Benchmarking antibody modeling tools across structure prediction, docking, and paratope-epitope interface analysis</li>
+<li><strong>标题</strong>: Benchmarking antibody modeling tools across structure prediction, docking, and paratope-epitope interface analysis.</li>
 <li><strong>作者与单位</strong>: Yu, Zeyuan; Wu, Jilei; Ning, Ziyao; Qiao, Chunxia; Wang, Jing; Li, Xinying; Liu, Chenghua; Chen, Guojiang; Feng, Jiannan; Yu, Jijun (单位未在摘要/全文提供)</li>
 <li><strong>期刊/预印本平台</strong>: Bioinformatics advances</li>
 <li><strong>年份</strong>: 2026-09-10</li>
@@ -57,28 +57,28 @@
 <li><strong>领域</strong>: 计算抗体工程，蛋白质结构预测，分子对接，界面分析</li>
 <li><strong>关键词</strong>: 抗体建模，结构预测，对接，AlphaFold3，基准测试</li>
 <li><strong>DOI/arXiv 号</strong>: 10.1093/bioadv/vbag223</li>
-<li><strong>代码、数据</strong>: Zenodo record 20710876</li>
-<li><strong>阅读日期</strong>: 2024-05-21</li>
-<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>: 该文是抗体建模领域的系统性基准测试，对比了AI驱动的抗体结构预测工具（IgFold, ABB2, AF3）和对接工具（GRAMM, dyMEAN, AF3），并评估了对接后界面恢复的准确性。它直接服务于蛋白质结构预测和分子对接的下游应用，为工具选择提供了统计上严格的指导，并指出了当前方法的局限性（如CDR-H3环精度、界面氢键恢复）。</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: Zenodo record 20710876</li>
+<li><strong>阅读日期</strong>: 2024-05-24</li>
+<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>: 该文是抗体建模领域的系统性基准测试，对比了AI驱动的结构预测工具（IgFold, ABB2, AF3）和对接工具（GRAMM, dyMEAN, AF3）在Fv结构预测、复合物对接和界面恢复三个层面的性能。它直接服务于抗体工程中的工具选择，并揭示了当前方法在CDR-H3环和精细界面相互作用预测上的局限性。</li>
 </ul>
 <h2>02 一句话总结</h2>
-<p>该文在50个非冗余人源化抗体-抗原复合物上，使用多次预测和配对统计检验，系统比较了ImmuneBuilder、IgFold、AlphaFold3、GRAMM和dyMEAN在Fv结构预测、复合物对接和互补位-表位界面恢复上的性能，发现AlphaFold3在所有任务中表现最佳，但界面精度仍有限，尤其是氢键和精细接触强度。</p>
+<p>该文通过在一个包含50个非冗余人源化抗体-抗原复合物的基准集上，使用多重预测和配对统计检验，系统比较了ImmuneBuilder、IgFold、AlphaFold3、GRAMM和dyMEAN在Fv结构预测、复合物对接和互补位-表位界面分析中的性能，发现AlphaFold3在三个层面均表现最佳，但界面精度仍有限，且氢键和接触强度预测不够可靠。</p>
 <h2>03 研究问题</h2>
 <ul>
-<li><strong>具体问题</strong>: 在抗体建模的完整流程（Fv结构预测、抗体-抗原复合物对接、互补位-表位界面分析）中，当前公开可用的计算工具（AI和传统方法）在受控、统计严谨的设计下，性能如何比较？</li>
-<li><strong>为什么重要</strong>: 抗体工程依赖于可靠的结构预测和界面分析，但不同工具（尤其是AI方法）缺乏直接的、端到端的比较，导致工具选择缺乏依据。</li>
-<li><strong>现有方法为何不足</strong>: 现有研究通常只评估单一任务（如结构预测或对接），或使用不同的数据集和指标，缺乏在统一、受控框架下对完整工作流的比较。此外，对接精度对下游界面分析的影响未被系统量化。</li>
-<li><strong>精确的「Can ... ?」研究问题</strong>: 在受控的基准测试下，AlphaFold3能否在抗体Fv结构预测、抗体-抗原复合物对接和界面恢复上，显著优于抗体专用工具（IgFold, ABB2）和传统/几何驱动对接方法（GRAMM, dyMEAN）？</li>
+<li><strong>具体问题</strong>: 在抗体工程流程中，用于抗体可变区（Fv）结构预测、抗原-抗体复合物对接和结合界面分析的各种公开可用工具，其性能如何？在受控的、统计严谨的设计下，这些工具之间缺乏全面的比较。</li>
+<li><strong>为什么重要</strong>: 准确的计算模型对于加速基于结构的抗体工程至关重要，但工具选择缺乏基于证据的指导。</li>
+<li><strong>现有方法为何不足</strong>: 尽管已有多种专用和通用工具，但它们很少在统一、受控的基准下进行直接比较，且其对下游界面分析的影响尚不明确。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>: 在受控的基准测试中，当前最先进的抗体建模工具（如AlphaFold3、IgFold、GRAMM）能否在Fv结构、复合物对接和界面恢复三个层面都达到足够高的精度，以可靠地指导抗体工程？</li>
 </ul>
 <h2>04 背景与发展脉络</h2>
 <ul>
-<li><strong>脉络</strong>: 该文框架，经外部核验（引用文献）。</li>
-<li><strong>阶段1: 传统实验方法</strong>: X射线晶体学、冷冻电镜。优点：准确。局限：耗时、昂贵，不适合大规模筛选。</li>
-<li><strong>阶段2: 通用AI结构预测</strong>: AlphaFold2 (Jumper et al. 2021) 带来范式转变，但抗体建模，特别是CDR环构象，仍有局限 (Fernández-Quintero et al. 2023, Chen et al. 2024)。</li>
-<li><strong>阶段3: 抗体专用AI工具</strong>: ABodyBuilder2/ImmuneBuilder (Abanades et al. 2023), IgFold (Ruffolo et al. 2023)。优点：整合抗体先验知识，速度快。局限：训练数据规模可能小于通用模型。</li>
-<li><strong>阶段4: 通用AI复合物预测</strong>: AlphaFold3 (Abramson et al. 2024)。优点：扩散架构，可联合建模多种生物分子。局限：在抗体-抗原这类挑战性复合物上的性能需系统评估。</li>
-<li><strong>阶段5: 传统与AI对接方法</strong>: GRAMM (Singh et al. 2024) 基于刚体对接和形状互补；dyMEAN (Kong et al. 2023) 使用等变图网络和表位引导。局限：刚体对接无法处理柔性，dyMEAN依赖表位信息质量。</li>
-<li><strong>本文主张的位置</strong>: 本文填补了上述方法在统一、统计严谨的基准测试下的比较空白，并首次将对接精度与下游界面恢复质量关联起来。</li>
+<li><strong>脉络</strong>: 抗体结构计算建模的发展</li>
+<li><strong>阶段1: 传统方法</strong>: 基于物理/几何的对接（如GRAMM）和基于同源建模的抗体结构预测。优点：有物理基础。局限：难以处理柔性、诱导契合，精度有限。</li>
+<li><strong>阶段2: 深度学习结构预测</strong>: AlphaFold2/3等通用预测器出现，精度大幅提升。优点：能处理复杂相互作用。局限：在抗体特异性区域（如CDR环）可能不如专用工具。</li>
+<li><strong>阶段3: 抗体专用深度学习工具</strong>: IgFold、ImmuneBuilder等工具，利用抗体先验知识或领域特定训练。优点：针对抗体优化，速度快，可重复性好。局限：泛化能力可能不如大型通用模型。</li>
+<li><strong>本文主张的位置</strong>: 本文通过系统基准测试，填补了这些工具在统一框架下比较的空白，揭示了AlphaFold3在多个任务上的优势，但也指出了其精细界面预测的不足，为工具选择提供了实用指导。</li>
+<li><strong>核验状态</strong>: 经外部核验（基于文献引用和常识）。</li>
 </ul>
 <h2>05 核心痛点</h2>
 <table>
@@ -92,61 +92,56 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>CDR-H3环预测精度不足</strong></td>
-<td style="text-align: left;">CDR-H3 RMSD显著高于整体Fv RMSD，是Fv结构误差的主要来源。</td>
-<td style="text-align: left;">CDR-H3固有的灵活性和结构异质性。</td>
-<td style="text-align: left;">Results 3.1节，图3A显示CDR-H3 RMSD分布更分散，回归分析（图3B-D）显示Fv RMSD与CDR-H3 RMSD强相关，斜率约3.6。</td>
+<td style="text-align: left;">CDR-H3环预测精度不足</td>
+<td style="text-align: left;">所有工具的CDR-H3 RMSD都显著高于整体Fv RMSD，且分布更分散。</td>
+<td style="text-align: left;">CDR-H3固有的柔性和结构异质性。</td>
+<td style="text-align: left;">Results 3.1节，图3A显示CDR-H3 RMSD中位数（AF3: 0.86Å, ABB2: 1.34Å, IgFold: 1.52Å）远高于Fv RMSD中位数（AF3: 0.87Å, ABB2: 1.04Å, IgFold: 1.04Å）。</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>抗体-抗原复合物对接精度有限</strong></td>
-<td style="text-align: left;">即使最佳方法（AF3）也仅对46%的复合物达到中等或高质量对接（DockQ ≥ 0.49）。</td>
-<td style="text-align: left;">抗体-抗原识别涉及柔性CDR环、局部构象适应和精细残基互补，对当前方法构成挑战。</td>
-<td style="text-align: left;">Results 3.2节，图5C显示AF3的DockQ分布，仅23/50达到中等质量。</td>
+<td style="text-align: left;">抗体-抗原复合物对接精度有限</td>
+<td style="text-align: left;">即使最好的方法（AF3）也仅对46%的复合物达到中等或高质量对接（DockQ ≥ 0.49）。</td>
+<td style="text-align: left;">抗体-抗原识别涉及柔性CDR环和诱导契合，对界面几何精度要求高。</td>
+<td style="text-align: left;">Results 3.2节，图5C显示AF3在DockQ ≥ 0.49的阈值下只有23/50个成功案例。</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>精细界面化学细节恢复不佳</strong></td>
-<td style="text-align: left;">氢键恢复率（recall 0.64）低于盐桥（0.84）和非键接触（0.75）；接触强度相关性中等（Spearman ρ=0.57）。</td>
-<td style="text-align: left;">氢键几何和侧链堆积对识别特异性贡献大，可能比整体结合姿态更难恢复。</td>
+<td style="text-align: left;">精细界面相互作用预测不可靠</td>
+<td style="text-align: left;">AF3对氢键的召回率（0.64）显著低于盐桥（0.84）和非键接触（0.75），且接触强度相关性中等（Spearman ρ=0.57）。</td>
+<td style="text-align: left;">氢键几何和侧链堆积对识别特异性贡献大，但难以从整体对接姿态中精确恢复。</td>
 <td style="text-align: left;">Results 3.3节，图6A和文中数据。</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>传统/几何驱动对接方法失效</strong></td>
-<td style="text-align: left;">GRAMM和dyMEAN几乎无法产生中等或高质量对接（DockQ ≥ 0.49）。</td>
-<td style="text-align: left;">刚体对接无法处理界面柔性；dyMEAN依赖的表位信息质量或几何约束转换能力不足。</td>
-<td style="text-align: left;">Results 3.2节，图5A-B显示GRAMM和dyMEAN的DockQ接近0。</td>
+<td style="text-align: left;">传统对接方法（GRAMM）和几何驱动方法（dyMEAN）性能差</td>
+<td style="text-align: left;">GRAMM和dyMEAN几乎无法产生中等或高质量对接姿态。</td>
+<td style="text-align: left;">刚性对接无法处理界面柔性；dyMEAN的表位引导策略不足以确保正确三维姿态。</td>
+<td style="text-align: left;">Results 3.2节，图4D显示GRAMM和dyMEAN的DockQ均值接近0。</td>
 </tr>
 </tbody>
 </table>
 <h2>06 核心思想</h2>
 <ol>
-<li><strong>表面方法</strong>: 在50个非冗余抗体-抗原复合物上，对5种工具（IgFold, ABB2, AF3, GRAMM, dyMEAN）进行Fv结构预测、复合物对接和界面恢复的端到端基准测试，使用多次预测和配对统计检验。</li>
-<li><strong>核心洞察</strong>: <strong>对接精度是界面恢复质量的“门控”因素</strong>。只有当AF3产生正确对接姿态时，其界面恢复（表位/互补位残基、盐桥）才高度准确。然而，即使对接成功，精细的氢键网络和接触强度仍难以准确预测。这表明当前AI方法擅长捕捉几何互补性，但尚未完全掌握抗体-抗原识别的完整能量景观。</li>
-<li><strong>可能的普适教训 [Analysis]</strong>: 对于蛋白质-蛋白质相互作用预测，<strong>评估应分层进行</strong>：先评估整体复合物结构（如DockQ），再评估界面残基恢复，最后评估原子级相互作用细节。一个方法可能在高层级任务上表现良好，但在低层级任务上存在显著局限。这为开发更精细的评估指标和设计针对性改进策略（如界面感知训练、后处理精炼）提供了方向。</li>
+<li><strong>表面方法</strong>: 对五种公开可用的抗体建模工具（IgFold, ABB2, AF3, GRAMM, dyMEAN）在50个非冗余抗体-抗原复合物上进行系统基准测试，使用多重预测和配对统计检验，评估Fv结构、复合物对接和界面恢复三个层面的性能。</li>
+<li><strong>核心洞察</strong>: AlphaFold3（AF3）作为通用生物分子复合物预测器，在Fv结构预测（尤其是CDR-H3）、复合物对接和界面恢复上均显著优于抗体专用工具和传统对接方法。然而，其成功高度依赖于对接姿态的正确性，且对氢键网络和接触强度等精细化学细节的预测仍不准确。这表明，当前AI模型擅长捕捉几何互补性，但尚未完全掌握抗体-抗原识别的完整能量景观。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>: 在蛋白质相互作用预测中，<strong>全局几何姿态的准确性是精细界面分析的前提</strong>。一个模型可能在全局拓扑上表现良好，但在原子级别的相互作用细节上仍有显著不足。这提示我们，对于需要精确原子级信息的任务（如基于结构的药物设计），不能仅依赖结构预测模型的输出，而需要结合专门的相互作用分析或后处理优化。此外，<strong>通用大模型（如AF3）在特定领域（如抗体）可能通过其更大的训练数据和更先进的架构超越专用小模型</strong>，这挑战了“专用模型必然优于通用模型”的传统观念。</li>
 </ol>
 <h2>07 方法总览</h2>
 <ul>
-<li><strong>输入</strong>: 50个抗体-抗原复合物的序列（Fv预测）或序列+结构（对接）。对于dyMEAN，额外需要抗原表位信息（来自HDOCK）。</li>
-<li><strong>输出</strong>: 预测的Fv结构（PDB文件）和/或抗体-抗原复合物结构（PDB文件）。</li>
+<li><strong>输入</strong>: 抗体重链和轻链序列（用于Fv预测）；抗体和抗原序列或结构（用于复合物预测）。</li>
+<li><strong>输出</strong>: 预测的Fv区域PDB文件；预测的抗体-抗原复合物PDB文件。</li>
 <li><strong>模块</strong>:<ol>
-<li><strong>数据集构建</strong>: 从PDB筛选50个非冗余人源化Fab复合物（分辨率&lt;3.0Å，发布日期晚于AF3截止日）。</li>
-<li><strong>Fv结构预测</strong>: 使用IgFold, ABB2, AF3分别预测Fv结构。</li>
-<li><strong>复合物对接</strong>: 使用AF3, GRAMM, dyMEAN分别预测复合物结构。AF3输入序列，GRAMM输入结构，dyMEAN输入序列+结构+表位。</li>
-<li><strong>结构评估</strong>: 使用TM-score, lDDT, RMSD, DockQ评估预测结构。</li>
-<li><strong>界面恢复分析</strong>: 仅对AF3预测的复合物，使用PDBsum提取界面接触，计算表位/互补位残基、接触对、氢键、盐桥、非键接触的精确率、召回率、F1分数，以及接触强度的Spearman相关性。</li>
+<li><strong>数据集构建</strong>: 从PDB筛选50个非冗余、高分辨率（&lt;3.0Å）、发布时间晚于AF3训练数据截止日期（2023-12-19）的人源化抗体-抗原Fab复合物。</li>
+<li><strong>Fv结构预测</strong>: 使用IgFold、ABB2和AF3分别对每个抗体的Fv区域进行预测，每个工具生成5个预测。</li>
+<li><strong>复合物结构预测</strong>: 使用AF3、GRAMM和dyMEAN分别对每个抗体-抗原复合物进行对接预测，每个工具生成5个预测。</li>
+<li><strong>结构评估</strong>: 使用TM-score, RMSD, lDDT, DockQ等指标，将预测结构与实验参考结构进行比较。</li>
+<li><strong>界面恢复分析</strong>: 仅对AF3预测的复合物，使用PDBsum提取界面接触（氢键、盐桥、非键接触），计算表位/互补位残基恢复、接触对恢复、接触类型恢复和接触强度一致性。</li>
+<li><strong>统计分析</strong>: 使用配对Wilcoxon符号秩检验和Benjamini-Hochberg校正进行工具间比较，使用bootstrap计算置信区间。</li>
 </ol>
 </li>
-<li><strong>训练</strong>: 所有工具均为预训练模型，本文不涉及训练。</li>
+<li><strong>训练</strong>: 不涉及，所有工具均为预训练模型。</li>
 <li><strong>工具</strong>: PyMOL, Structure Assessment Online Service, PDBsum, AbYsis。</li>
-<li><strong>反馈回路</strong>: 无。这是一个单向的评估流程。</li>
-<li><strong>假设</strong>: 实验解析的PDB结构是“金标准”真值；评估指标（如DockQ）能有效反映结构质量；多次预测的平均值能代表工具性能。</li>
+<li><strong>反馈回路</strong>: 无。</li>
+<li><strong>假设</strong>: 实验PDB结构是金标准；评估指标能有效反映结构质量；多重预测能反映模型的不确定性。</li>
+<li><strong>从输入到输出的文字流程</strong>: 从PDB获取50个抗体-抗原复合物的序列和结构信息。对于Fv预测，将抗体序列分别输入IgFold、ABB2和AF3，每个工具生成5个Fv结构模型。对于复合物预测，将抗体和抗原信息分别输入AF3、GRAMM和dyMEAN，每个工具生成5个复合物模型。然后，使用TM-score、RMSD、lDDT和DockQ等指标将所有预测模型与实验参考结构进行比较。最后，对AF3预测的复合物，使用PDBsum进行详细的界面恢复分析。</li>
 </ul>
-<p><strong>文字流程</strong>:
-1.  从PDB获取50个抗体-抗原复合物的实验结构。
-2.  提取Fv区域序列，分别输入IgFold、ABB2和AF3，每个工具生成5个预测Fv结构。
-3.  提取抗原和抗体Fv的序列和结构，分别输入AF3、GRAMM和dyMEAN，每个工具生成5个预测复合物结构。
-4.  将预测结构与实验结构比对，计算TM-score, lDDT, RMSD, DockQ。
-5.  对AF3预测的复合物，使用PDBsum分析界面，计算界面恢复指标。
-6.  使用配对Wilcoxon符号秩检验和Bootstrap进行统计分析。</p>
 <h2>08 核心模块拆解</h2>
 <table>
 <thead>
@@ -162,50 +157,50 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>Fv结构预测</strong></td>
-<td style="text-align: left;">从抗体序列预测Fv区域（含CDR环）的三维结构。</td>
-<td style="text-align: left;">是后续对接和界面分析的基础。</td>
-<td style="text-align: left;">输入：重链、轻链序列。输出：Fv PDB文件。</td>
-<td style="text-align: left;">Results 3.1节，图2显示所有方法TM-score &gt; 0.97。</td>
+<td style="text-align: left;">从抗体序列预测Fv区域的三维结构。</td>
+<td style="text-align: left;">是后续复合物对接和界面分析的基础。</td>
+<td style="text-align: left;">输入：重链和轻链序列。输出：Fv区域PDB文件。</td>
+<td style="text-align: left;">Results 3.1节，图2显示所有方法均能高精度重建Fv（TM-score &gt; 0.97）。</td>
 <td style="text-align: left;">无法进行后续的抗体-抗原对接，或对接精度会严重下降。</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>抗体-抗原对接</strong></td>
-<td style="text-align: left;">预测抗体和抗原结合时的相对取向和位置。</td>
-<td style="text-align: left;">是理解免疫识别和进行抗体工程的核心步骤。</td>
+<td style="text-align: left;"><strong>复合物对接</strong></td>
+<td style="text-align: left;">预测抗体和抗原的结合姿态。</td>
+<td style="text-align: left;">是理解抗体-抗原识别机制和进行基于结构设计的关键。</td>
 <td style="text-align: left;">输入：抗体和抗原序列/结构。输出：复合物PDB文件。</td>
-<td style="text-align: left;">Results 3.2节，图4、5显示AF3显著优于其他方法。</td>
-<td style="text-align: left;">无法进行有意义的界面分析，无法定位表位和互补位。</td>
+<td style="text-align: left;">Results 3.2节，图4显示AF3在对接上显著优于GRAMM和dyMEAN。</td>
+<td style="text-align: left;">无法获得结合界面信息，无法进行表位/互补位分析。</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>界面恢复分析</strong></td>
-<td style="text-align: left;">评估预测复合物中界面残基和原子间相互作用的准确性。</td>
-<td style="text-align: left;">验证对接结果是否在分子层面具有生物学意义。</td>
-<td style="text-align: left;">输入：预测和实验的复合物PDB。输出：残基/接触的P/R/F1，氢键/盐桥召回率等。</td>
-<td style="text-align: left;">Results 3.3节，图6显示对接成功时界面恢复良好，但氢键恢复差。</td>
-<td style="text-align: left;">无法判断预测的复合物是否可用于指导突变设计或药物发现。</td>
+<td style="text-align: left;">评估预测复合物中结合界面的准确性。</td>
+<td style="text-align: left;">对接姿态正确并不保证界面细节正确，需要专门评估。</td>
+<td style="text-align: left;">输入：预测和实验的复合物结构。输出：残基/接触恢复的精确率、召回率、F1分数等。</td>
+<td style="text-align: left;">Results 3.3节，图6显示AF3在成功对接的复合物中能高精度恢复界面残基和盐桥，但氢键恢复较差。</td>
+<td style="text-align: left;">无法判断预测的界面细节是否可靠，可能导致错误的生物学结论。</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>统计检验</strong></td>
-<td style="text-align: left;">使用配对Wilcoxon符号秩检验和Bootstrap评估工具间差异的显著性。</td>
-<td style="text-align: left;">确保观察到的性能差异不是由随机波动引起的。</td>
-<td style="text-align: left;">输入：各工具在每个靶标上的评估指标。输出：调整后的P值和置信区间。</td>
-<td style="text-align: left;">Methods 2.5节，Results中多处报告调整后P值。</td>
-<td style="text-align: left;">结论可能基于偶然的观察，缺乏统计可靠性。</td>
+<td style="text-align: left;"><strong>统计分析</strong></td>
+<td style="text-align: left;">确保工具间比较的统计显著性。</td>
+<td style="text-align: left;">避免因随机波动或单次预测的偶然性导致错误结论。</td>
+<td style="text-align: left;">输入：每个工具对每个靶标的多个预测结果。输出：调整后的p值和置信区间。</td>
+<td style="text-align: left;">Methods 2.5节，Results 3.1节。</td>
+<td style="text-align: left;">无法区分工具间的性能差异是真实的还是由随机性引起的。</td>
 </tr>
 </tbody>
 </table>
 <h2>09 关键公式符号</h2>
-<p>不适用。本文未提出新公式，主要使用现有指标（TM-score, RMSD, lDDT, DockQ, F1 score, Spearman ρ）。</p>
+<p>不适用。本文未提出新公式，主要使用现有评估指标（TM-score, RMSD, lDDT, DockQ）和统计方法（Wilcoxon检验）。</p>
 <h2>10 实验设计与证据链</h2>
 <ul>
-<li><strong>数据集/群体</strong>: 50个非冗余人源化抗体-抗原Fab复合物，来自PDB，分辨率&lt;3.0Å，发布日期晚于2023年12月19日。</li>
+<li><strong>数据集/群体</strong>: 50个非冗余人源化抗体-抗原Fab复合物，来自PDB，分辨率&lt;3.0Å，发布时间晚于2023-12-19。</li>
 <li><strong>规模</strong>: 50个复合物。</li>
-<li><strong>指标</strong>: TM-score, lDDT, RMSD, DockQ, 界面恢复的精确率/召回率/F1, Spearman ρ。</li>
-<li><strong>基线</strong>: 对于Fv预测，IgFold和ABB2是基线；对于对接，GRAMM和dyMEAN是基线。</li>
-<li><strong>预算</strong>: 本地工具使用4块RTX 3080 GPU (10GB)。AF3和GRAMM使用公共网络服务器。</li>
-<li><strong>骨干/仪器</strong>: 未提供。</li>
-<li><strong>Oracle 输入</strong>: 对于dyMEAN，抗原表位信息来自HDOCK，可视为一种oracle输入。</li>
-<li><strong>评测协议</strong>: 每个工具对每个靶标生成5个预测，取平均值作为该靶标的性能。使用配对Wilcoxon符号秩检验（BH校正）进行工具间比较。</li>
+<li><strong>指标</strong>: TM-score, RMSD, lDDT, DockQ, 精确率, 召回率, F1分数, Spearman相关系数。</li>
+<li><strong>基线</strong>: 无显式基线，但工具间互为对比。</li>
+<li><strong>预算</strong>: 未提供。</li>
+<li><strong>骨干/仪器</strong>: 4块NVIDIA RTX 3080 GPU（10GB内存）用于本地部署工具；AF3和GRAMM使用公共网络服务器。</li>
+<li><strong>Oracle 输入</strong>: 实验PDB结构作为真值。</li>
+<li><strong>评测协议</strong>: 每个工具对每个靶标生成5个预测，取均值作为该靶标的值。使用配对Wilcoxon符号秩检验进行工具间比较。</li>
 </ul>
 <table>
 <thead>
@@ -222,46 +217,46 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>Fv结构预测</strong></td>
-<td style="text-align: left;">AF3在Fv和CDR-H3预测上优于IgFold和ABB2。</td>
-<td style="text-align: left;">在50个复合物上比较TM-score, lDDT, DockQ, RMSD。</td>
-<td style="text-align: left;">AF3在所有指标上最高，差异显著（adj. P&lt;0.01）。</td>
-<td style="text-align: left;">AF3是Fv预测的最准确方法。</td>
-<td style="text-align: left;">抗体专用工具在特定场景（如高通量、可重复性）仍有价值。</td>
+<td style="text-align: left;">AF3在Fv和CDR-H3预测上优于ABB2和IgFold。</td>
+<td style="text-align: left;">对比AF3, ABB2, IgFold在50个复合物上的Fv RMSD, TM-score, lDDT, DockQ和CDR-H3 RMSD。</td>
+<td style="text-align: left;">AF3在所有指标上均最优，且统计显著。</td>
+<td style="text-align: left;">AF3是Fv和CDR-H3预测最准确的工具。</td>
+<td style="text-align: left;">不能说明AF3在所有情况下都优于其他工具，例如在高通量场景下，ABB2和IgFold的快速和可重复性可能更优。</td>
 <td style="text-align: left;">Results 3.1节，图2, 3</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>复合物对接</strong></td>
 <td style="text-align: left;">AF3在抗体-抗原对接上优于GRAMM和dyMEAN。</td>
-<td style="text-align: left;">在50个复合物上比较DockQ, RMSD。</td>
-<td style="text-align: left;">AF3的DockQ和RMSD显著优于其他两者（adj. P&lt;0.001）。46%达到中等质量对接。</td>
-<td style="text-align: left;">AF3是当前最有效的抗体-抗原对接方法。</td>
-<td style="text-align: left;">对接精度整体仍有限，超过一半的复合物对接失败。</td>
+<td style="text-align: left;">对比AF3, GRAMM, dyMEAN在50个复合物上的DockQ和RMSD。</td>
+<td style="text-align: left;">AF3的DockQ和RMSD显著优于其他两者，46%的复合物达到中等或高质量对接。</td>
+<td style="text-align: left;">AF3是当前最有效的抗体-抗原对接工具。</td>
+<td style="text-align: left;">不能说明AF3的对接精度已足够高，仍有超过一半的复合物对接失败。</td>
 <td style="text-align: left;">Results 3.2节，图4, 5</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>界面恢复分析</strong></td>
-<td style="text-align: left;">当对接成功时，AF3能准确恢复界面残基和主要相互作用。</td>
-<td style="text-align: left;">在23个可靠对接（DockQ≥0.49）的复合物上分析。</td>
-<td style="text-align: left;">表位/互补位F1≈0.85-0.87，盐桥召回率0.84，非键接触召回率0.75。</td>
-<td style="text-align: left;">AF3能可靠定位界面区域和强静电特征。</td>
-<td style="text-align: left;">氢键召回率低（0.64），接触强度相关性中等（ρ=0.57），精细细节不准确。</td>
+<td style="text-align: left;">在成功对接的复合物中，AF3能高精度恢复界面特征。</td>
+<td style="text-align: left;">分析AF3在DockQ≥0.49的23个复合物上的界面恢复指标。</td>
+<td style="text-align: left;">表位/互补位残基F1≈0.87，盐桥召回率0.84，但氢键召回率仅0.64。</td>
+<td style="text-align: left;">AF3能可靠定位界面区域和强静电特征，但氢键网络预测不准确。</td>
+<td style="text-align: left;">不能说明AF3的界面预测在所有细节上都可靠，尤其是氢键和接触强度。</td>
 <td style="text-align: left;">Results 3.3节，图6</td>
 </tr>
 </tbody>
 </table>
 <h2>11 结论正确解读</h2>
 <ul>
-<li><strong>任务范围</strong>: 该基准测试严格限定于<strong>人源化抗体-抗原复合物</strong>的Fv结构预测、对接和界面分析。结论不能直接推广到其他物种的抗体、纳米抗体、T细胞受体或其他类型的蛋白质复合物。</li>
-<li><strong>Oracle/真值输入</strong>: 实验解析的PDB结构被视为“金标准”，但实验结构本身也存在不确定性（如B因子、构象集合）。dyMEAN使用了来自HDOCK的oracle表位信息，这使其性能评估不完全独立。</li>
-<li><strong>端到端状态</strong>: 这是一个<strong>评估研究</strong>，不是端到端的抗体设计流程。它评估了现有工具的性能，但未提出新的设计方法。</li>
-<li><strong>算力成本</strong>: AF3使用公共服务器，成本未量化。本地工具（ABB2, IgFold, dyMEAN）在RTX 3080上运行，但具体时间未提供。</li>
-<li><strong>历史数据依赖</strong>: 所有工具都依赖其训练数据。AF3的优势可能部分源于其更大、更近期的训练集。基准测试特意选用了AF3截止日期后的结构，以减轻数据泄露。</li>
-<li><strong>模型依赖</strong>: 结论严格依赖于所测试的特定版本的工具（如AF3 web server版本，dyMEAN特定代码版本）。</li>
-<li><strong>最难情形</strong>: CDR-H3环预测和界面氢键恢复被识别为最困难的任务。</li>
-<li><strong>群体/领域边界</strong>: 结论适用于计算抗体工程领域，为工具选择提供指导，但<strong>不能</strong>直接用于临床决策或替代实验验证。</li>
-<li><strong>不确定性</strong>: 所有性能指标都附有95%置信区间，工具间差异通过统计检验确认。但50个复合物的样本量相对较小，可能无法完全代表抗体-抗原相互作用的多样性。</li>
+<li><strong>任务范围</strong>: 该基准测试仅限于人源化抗体-抗原Fab复合物的结构预测、对接和界面分析。结论可能不适用于其他类型的抗体（如骆驼科抗体）或抗原（如小分子、肽段）。</li>
+<li><strong>Oracle/真值输入</strong>: 所有评估均基于实验PDB结构，这些结构本身可能存在误差或代表单一构象。</li>
+<li><strong>端到端状态</strong>: 该研究是端到端的工具性能评估，不涉及下游任务（如亲和力预测、免疫原性预测）的验证。</li>
+<li><strong>算力成本</strong>: 本地部署工具使用了4块RTX 3080 GPU，AF3和GRAMM使用网络服务器，算力成本未详细比较。</li>
+<li><strong>历史数据依赖</strong>: 基准集特意选择了晚于AF3训练数据截止日期的结构，以避免数据泄露，但其他工具的训练数据可能包含更早的结构。</li>
+<li><strong>模型依赖</strong>: 结论强烈依赖于所测试工具的特定版本和配置。</li>
+<li><strong>最难情形</strong>: CDR-H3环和需要显著构象变化的对接场景是当前方法最难处理的情形。</li>
+<li><strong>群体/领域边界</strong>: 结论适用于人源化抗体建模领域，但可能无法直接推广到其他蛋白质-蛋白质相互作用系统。</li>
+<li><strong>不确定性</strong>: AF3的预测存在一定的运行间变异性，但该变异性远小于工具间的性能差异。</li>
+<li><strong>有边界的复述</strong>: 在50个非冗余人源化抗体-抗原复合物的基准测试中，AlphaFold3在Fv结构预测、复合物对接和界面恢复上均优于其他测试工具，但仍有超过一半的复合物对接失败，且对氢键和接触强度的预测不够精确。因此，AlphaFold3适用于需要高精度Fv和整体对接姿态的场景，但在需要原子级界面细节时应谨慎使用。</li>
 </ul>
-<p><strong>有边界的复述</strong>: 在50个人源化抗体-抗原复合物的受控基准测试中，AlphaFold3在Fv结构预测、复合物对接和界面恢复上均优于其他测试工具，但对接成功率（46%）和精细界面细节（特别是氢键）的预测精度仍是主要瓶颈。</p>
 <h2>12 作者自认局限</h2>
 <table>
 <thead>
@@ -274,35 +269,23 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>基准测试的代表性有限</strong></td>
-<td style="text-align: left;">未包含近期开发的DeepSCFold等方法。</td>
-<td style="text-align: left;">未来基准测试应使用相同靶标集、输入定义和评估指标，纳入DeepSCFold等新兴方法。</td>
+<td style="text-align: left;">基准集代表性有限</td>
+<td style="text-align: left;">未包含DeepSCFold等最新开发的框架。</td>
+<td style="text-align: left;">未来的基准测试应使用相同的靶标集、输入定义、模型选择标准和评估指标来评估DeepSCFold和其他新兴方法。</td>
 <td style="text-align: left;">Discussion 4.2节</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>CDR-H3仍是主要挑战</strong></td>
-<td style="text-align: left;">所有方法在CDR-H3上的误差都显著大于整体Fv。</td>
-<td style="text-align: left;">未来工作应整合AF3的规模和通用性与抗体专用训练，以提高CDR-H3预测的鲁棒性。</td>
-<td style="text-align: left;">Discussion 4.1节</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>界面化学细节预测不准确</strong></td>
-<td style="text-align: left;">氢键和接触强度预测不准确。</td>
-<td style="text-align: left;">需要更多抗体-抗原特异性结构数据、界面感知训练目标或后处理精炼策略。</td>
-<td style="text-align: left;">Discussion 4.3节</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>对接精度整体有限</strong></td>
-<td style="text-align: left;">即使最佳方法AF3，仍有超过一半的复合物对接失败。</td>
-<td style="text-align: left;">改进对接精度和界面化学是下一代免疫复合物预测器的互补优先事项。</td>
-<td style="text-align: left;">Discussion 4.2节, Conclusion</td>
+<td style="text-align: left;">界面恢复分析仅针对AF3</td>
+<td style="text-align: left;">由于GRAMM和dyMEAN的对接性能太差，界面恢复分析仅限于AF3。</td>
+<td style="text-align: left;">未明确提及，但隐含需要改进其他工具的对接性能。</td>
+<td style="text-align: left;">Results 3.3节</td>
 </tr>
 </tbody>
 </table>
 <p><strong>作者提及的相关约束</strong>:
-- 基准测试的靶标集是50个复合物，可能不足以覆盖所有抗体-抗原相互作用模式。
-- dyMEAN的性能可能受限于其使用的表位信息质量（来自HDOCK）。
-- 所有工具的性能都受其训练数据分布的影响。</p>
+- 研究仅评估了公开可用的工具，未包含商业或内部工具。
+- 基准集规模为50个复合物，可能不足以代表所有抗体-抗原相互作用的多样性。
+- 评估指标（如DockQ）的阈值选择可能影响结论。</p>
 <h2>13 批判性分析</h2>
 <table>
 <thead>
@@ -316,106 +299,88 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">AF3在Fv预测上的优势可能部分源于其更大的训练集和更近的截止日期，而非架构上的根本优势。</td>
-<td style="text-align: left;">抗体专用工具（IgFold, ABB2）的训练数据可能更小或更旧。AF3可能“见过”更多类似的CDR-H3构象。</td>
-<td style="text-align: left;">这会影响对“哪种方法更好”的归因。如果训练数据是主要因素，那么更新抗体专用工具的训练集可能就能缩小差距。</td>
-<td style="text-align: left;">使用相同训练集（或控制训练数据规模和时间）重新训练或微调抗体专用工具，再与AF3比较。</td>
-<td style="text-align: left;">文中提到AF3有“substantially larger and more diverse training corpus” (Discussion 4.1)。</td>
+<td style="text-align: left;">AF3在Fv预测上的优势可能部分源于其更大的训练数据，而非架构本身。</td>
+<td style="text-align: left;">作者也提到了这一点，但未进行消融实验。如果ABB2或IgFold用同样规模的数据训练，性能可能接近AF3。</td>
+<td style="text-align: left;">这关系到是“数据规模”还是“模型架构”是性能提升的关键，对未来的模型设计有指导意义。</td>
+<td style="text-align: left;">使用相同规模、经过精心筛选的抗体结构数据，重新训练ABB2或IgFold，然后与AF3比较。</td>
+<td style="text-align: left;">Discussion 4.1节提到“AF3’s substantially larger and more diverse training corpus”。</td>
 </tr>
 <tr>
-<td style="text-align: left;">界面恢复分析仅针对AF3，未评估其他方法在成功对接时的界面恢复能力。</td>
-<td style="text-align: left;">如果dyMEAN或GRAMM偶尔产生正确对接，它们的界面恢复能力可能不同。</td>
-<td style="text-align: left;">无法判断AF3的界面恢复优势是源于其更好的对接，还是其模型本身能更好地捕捉界面特征。</td>
-<td style="text-align: left;">对dyMEAN或GRAMM产生的少数成功对接案例（如dyMEAN的1个中等质量案例）进行同样的界面恢复分析。</td>
-<td style="text-align: left;">作者将分析限制在AF3，理由是“AF3 is the only method to dock a substantial fraction of complexes correctly” (Results 3.3)。</td>
+<td style="text-align: left;">基准集选择“晚于AF3训练数据截止日期”的结构，可能无意中偏向于AF3难以处理的新颖结构。</td>
+<td style="text-align: left;">虽然避免了数据泄露，但这些新结构可能代表了更难的预测案例，导致AF3的性能被低估。</td>
+<td style="text-align: left;">这影响了对AF3绝对性能的评估。</td>
+<td style="text-align: left;">构建一个包含新旧结构的混合基准集，分别评估AF3在两组上的性能。</td>
+<td style="text-align: left;">Methods 2.1节。</td>
 </tr>
 <tr>
-<td style="text-align: left;">使用PDBsum提取的接触作为“金标准”可能引入偏差。</td>
-<td style="text-align: left;">PDBsum的接触定义（如氢键几何标准）可能与AF3模型内部的表示不一致。</td>
-<td style="text-align: left;">评估指标本身可能对某些方法有利或不利。</td>
-<td style="text-align: left;">使用多种接触定义工具（如Arpeggio, Proximity）进行交叉验证，或使用更连续的界面评分（如Rosetta能量）。</td>
-<td style="text-align: left;">Methods 2.6节提到使用PDBsum。</td>
+<td style="text-align: left;">界面恢复分析仅针对AF3，且依赖于DockQ阈值，可能高估了AF3在“成功”案例中的表现。</td>
+<td style="text-align: left;">如果DockQ阈值设置得更严格，AF3的成功案例数会减少，但界面恢复指标可能会更高。反之亦然。</td>
+<td style="text-align: left;">这影响了对AF3界面预测能力的普适性结论。</td>
+<td style="text-align: left;">使用不同的DockQ阈值（如0.8, 0.23）重复界面恢复分析，观察指标变化趋势。</td>
+<td style="text-align: left;">Results 3.3节。</td>
 </tr>
 <tr>
-<td style="text-align: left;">基准测试的50个复合物均为“人源化”抗体，限制了结论的泛化性。</td>
-<td style="text-align: left;">小鼠抗体、骆驼科纳米抗体或完全人源抗体的结构特征和预测难度可能不同。</td>
-<td style="text-align: left;">结论可能不适用于其他类型的抗体，限制了其在实际应用中的指导价值。</td>
-<td style="text-align: left;">构建包含不同物种和抗体类型的更大、更多样化的基准测试集。</td>
-<td style="text-align: left;">数据集描述为“humanized antibody–antigen Fab complexes” (Methods 2.1)。</td>
+<td style="text-align: left;">研究未评估预测结构在真实下游任务（如虚拟筛选、亲和力成熟）中的效用。</td>
+<td style="text-align: left;">一个在结构上更准确的模型，不一定在下游任务中表现更好。</td>
+<td style="text-align: left;">这是评估计算工具实用性的最终标准。</td>
+<td style="text-align: left;">将不同工具预测的结构用于相同的下游任务（如对接小分子、预测突变效应），比较其性能。</td>
+<td style="text-align: left;">未在文中提及。</td>
 </tr>
 </tbody>
 </table>
 <h2>14 学到什么</h2>
-<p><strong>Agent 提炼的知识候选</strong>:</p>
-<ol>
-<li>
-<p><strong>分层评估框架</strong>: 对于蛋白质-蛋白质相互作用预测，应采用分层评估策略：先评估整体复合物结构（DockQ），再评估界面残基（F1），最后评估原子级相互作用（氢键、盐桥）。这能更精细地揭示方法的优势和局限。</p>
-<ul>
-<li><strong>迁移到本课题</strong>: 在评估任何蛋白质复合物预测方法（如设计蛋白-配体、酶-底物）时，都应采用此分层框架，避免仅依赖单一指标（如RMSD）得出片面结论。</li>
-</ul>
-</li>
-<li>
-<p><strong>对接精度是界面分析的“门控”因素</strong>: 界面恢复的质量高度依赖于对接姿态的正确性。一个错误的对接姿态会导致界面分析完全失效。</p>
-<ul>
-<li><strong>迁移到本课题</strong>: 在进行基于结构的蛋白质设计（如设计新的结合蛋白）时，必须首先确保对接或复合物预测的可靠性。如果对接不可靠，基于预测界面的任何设计（如突变扫描、亲和力优化）都可能无效。</li>
-</ul>
-</li>
-<li>
-<p><strong>AI方法擅长几何互补性，但弱于精细化学细节</strong>: AF3能准确预测整体结合姿态和强静电相互作用（盐桥），但难以准确预测方向性更强的氢键和精细的接触强度。</p>
-<ul>
-<li><strong>迁移到本课题</strong>: 在利用AI预测结构进行下游分析时，应区分“粗粒度”和“细粒度”信息。对于识别结合位点或热点残基，AI预测是可靠的；但对于需要精确原子坐标的物理模拟（如自由能微扰、分子动力学模拟），应谨慎使用，并考虑结合物理精炼或实验验证。</li>
-</ul>
-</li>
-<li>
-<p><strong>统计严谨的基准测试设计</strong>: 使用多次预测（5次）、配对统计检验（Wilcoxon）和Bootstrap置信区间，能有效控制随机性和提高结论的可靠性。</p>
-<ul>
-<li><strong>迁移到本课题</strong>: 在比较不同方法（如不同的构象采样算法、不同的序列设计模型）时，应采用类似的统计设计，避免仅凭单次运行或简单平均值下结论。</li>
-</ul>
-</li>
-</ol>
+<p><strong>Agent 提炼的知识候选</strong>:
+1.  <strong>可迁移概念: 通用大模型 vs. 专用小模型的权衡</strong>。在蛋白质结构预测领域，通用大模型（如AF3）可能通过其庞大的训练数据和先进的架构，在特定子任务（如抗体CDR-H3预测）上超越专用小模型。这提示我们在选择工具时，不应盲目迷信“专用”，而应进行实际基准测试。
+    - <strong>如何迁移到本课题</strong>: 在设计新的蛋白质结构预测或设计方法时，可以考虑利用通用基础模型（如ESM-2, RoseTTAFold）作为骨干，再通过微调或添加特定模块来适应特定任务（如抗体设计、酶设计），而不是从头构建一个专用模型。
+2.  <strong>可迁移方法: 多重预测与配对统计检验</strong>。该研究使用每个工具生成5个预测，并采用配对统计检验（Wilcoxon符号秩检验）来比较工具性能，这比仅比较单次预测或均值更稳健。
+    - <strong>如何迁移到本课题</strong>: 在评估任何新的蛋白质结构预测、对接或设计方法时，都应采用类似的多重预测和统计检验策略，以区分真实性能差异和随机波动。
+3.  <strong>可迁移实验设计: 分层评估</strong>。该研究将评估分为Fv结构、复合物对接和界面恢复三个层次，揭示了不同工具在不同层次上的优缺点。
+    - <strong>如何迁移到本课题</strong>: 在评估蛋白质相互作用预测方法时，应进行分层评估：先评估单体结构，再评估复合物整体姿态，最后评估界面细节。这有助于更全面地理解方法的优势和局限。
+4.  <strong>可迁移洞察: 全局姿态是精细分析的前提</strong>。该研究明确指出，界面恢复的准确性高度依赖于对接姿态的正确性。这强调了在蛋白质相互作用研究中，获得正确的全局结合模式是进行任何有意义的原子级分析的必要条件。
+    - <strong>如何迁移到本课题</strong>: 在开发新的对接或复合物预测方法时，应优先确保全局姿态的准确性，然后再优化界面细节。在评估方法时，也应将全局姿态指标（如DockQ）作为首要筛选条件。</p>
 <h2>15 与已有知识连接</h2>
 <ul>
-<li><strong>相似</strong>: 与先前评估AlphaFold2在抗体建模上局限性的研究一致 (Fernández-Quintero et al. 2023, Chen et al. 2024)。本文进一步将评估扩展到AlphaFold3和完整工作流。</li>
-<li><strong>组合</strong>: 本文的发现可与DeepSCFold (Hou et al. 2025) 的工作结合。DeepSCFold声称在抗体-抗原对接上优于AF3，本文的基准测试框架可直接用于验证和比较DeepSCFold。</li>
-<li><strong>冲突</strong>: 本文发现AF3在CDR-H3预测上优于抗体专用工具，这与“专用工具在特定领域应优于通用工具”的直觉相悖。作者将其归因于AF3更大的训练规模和更深的架构。</li>
-<li><strong>可迁移领域</strong>: 本文的评估框架和发现可直接迁移到其他蛋白质-蛋白质相互作用系统（如TCR-肽-MHC、细胞因子-受体、酶-抑制剂）的预测工具评估中。分层评估和统计严谨性设计是通用的。</li>
+<li><strong>相似工作</strong>: 该研究与之前评估AlphaFold2/3在抗体建模中性能的工作（如Fernández-Quintero et al. 2023, Chen et al. 2024）一致，都指出了CDR-H3环是主要挑战。但本文通过更系统的基准测试和统计检验，提供了更全面的比较。</li>
+<li><strong>组合方向</strong>: 该研究的结果可以与<strong>基于结构的抗体设计</strong>工作相结合。例如，可以使用AF3预测的结构作为起点，然后使用分子动力学模拟或基于物理的评分函数来优化界面相互作用，特别是氢键网络。</li>
+<li><strong>冲突观点</strong>: 该研究挑战了“抗体专用模型在CDR-H3预测上必然优于通用模型”的普遍观点，因为AF3在CDR-H3上表现最佳。这与一些早期研究（如Ruffolo et al. 2023）的预期可能不完全一致。</li>
+<li><strong>可迁移领域</strong>: 该研究的基准测试方法论（多重预测、配对统计检验、分层评估）可以直接迁移到其他蛋白质-蛋白质相互作用系统的工具评估中，例如<strong>T细胞受体-肽-MHC复合物</strong>、<strong>酶-底物复合物</strong>或<strong>信号转导复合物</strong>的预测。</li>
 </ul>
 <h2>16 研究想法</h2>
 <p><strong>Agent 生成的研究候选</strong>:</p>
 <ol>
 <li>
-<p><strong>名称</strong>: 界面感知的抗体结构预测后处理精炼</p>
+<p><strong>名称</strong>: 基于AF3预测结构的抗体-抗原界面氢键网络优化</p>
 <ul>
-<li><strong>来源局限/观察</strong>: AF3预测的界面氢键和接触强度不准确（recall 0.64, ρ=0.57）。</li>
-<li><strong>核心假设</strong>: 通过一个轻量级的、专门针对抗体-抗原界面进行训练的图神经网络（GNN）或能量最小化步骤，可以显著改善AF3预测复合物中的氢键网络和侧链堆积。</li>
-<li><strong>相对本文的增量</strong>: 本文仅评估了问题，本候选提出一个解决方案。它不改变AF3的对接，而是对输出进行后处理。</li>
-<li><strong>初步方法</strong>: 1) 收集AF3预测的、对接成功的复合物。2) 使用PDBsum或Rosetta提取界面特征（残基类型、距离、角度）。3) 训练一个GNN，以AF3的界面结构为输入，预测一个“精炼”的侧链构象或氢键网络，目标是最小化与实验结构的差异。4) 使用Rosetta的侧链包装和能量最小化作为替代或基线方法。</li>
-<li><strong>验证方式</strong>: 在本文的23个成功对接案例上，比较精炼前后界面氢键的召回率和接触强度的Spearman相关性。在独立的抗体-抗原测试集上验证泛化性。</li>
-<li><strong>可能的失败模式</strong>: 1) 精炼过程可能破坏AF3原本正确的整体骨架。2) 训练数据不足，无法学习到氢键网络的复杂模式。3) 后处理带来的改进有限，无法达到实验精度。</li>
+<li><strong>来源局限/观察</strong>: 本文发现AF3在成功对接的复合物中，氢键恢复率显著低于盐桥和非键接触。</li>
+<li><strong>核心假设</strong>: 通过结合基于物理的评分函数（如Rosetta）或短时分子动力学模拟，可以对AF3预测的复合物进行局部优化，从而改善氢键网络的准确性。</li>
+<li><strong>相对本文的增量</strong>: 本文仅评估了AF3的原始输出，未尝试后处理优化。本候选旨在探索一种可行的后处理策略。</li>
+<li><strong>初步方法</strong>: 1) 使用AF3预测50个复合物的结构。2) 对每个预测结构，使用Rosetta的<code>relax</code>协议或进行短时（~1ns）的约束MD模拟，允许侧链和局部主链运动。3) 比较优化前后结构的氢键恢复率、接触强度相关性等指标。</li>
+<li><strong>验证方式</strong>: 使用与本文相同的基准集和评估指标，比较优化前后AF3预测的界面恢复性能。</li>
+<li><strong>可能的失败模式</strong>: 优化过程可能破坏AF3已经正确的全局姿态，导致DockQ下降；或者优化本身无法系统性地改善氢键预测。</li>
 <li><strong>创新状态</strong>: unverified</li>
 </ul>
 </li>
 <li>
-<p><strong>名称</strong>: 基于扩散模型的柔性对接，显式建模CDR环构象变化</p>
+<p><strong>名称</strong>: 抗体-抗原对接的混合策略：AF3全局采样 + 专用工具局部精修</p>
 <ul>
-<li><strong>来源局限/观察</strong>: 刚体对接（GRAMM）和几何驱动方法（dyMEAN）在处理抗体-抗原界面柔性时失败。AF3虽好，但仍有54%的复合物对接失败。</li>
-<li><strong>核心假设</strong>: 在扩散模型的去噪过程中，显式地允许抗体CDR环（特别是CDR-H3）的构象变化，可以显著提高抗体-抗原对接的成功率，特别是对于需要诱导契合的复合物。</li>
-<li><strong>相对本文的增量</strong>: 本文指出柔性是挑战，本候选提出一个具体的、可实现的AI架构来应对这一挑战。</li>
-<li><strong>初步方法</strong>: 1) 基于AF3的扩散架构。2) 在输入表示中，为CDR环残基添加额外的噪声或可学习的“柔性”嵌入。3) 修改去噪网络，使其在预测坐标更新时，对CDR环区域应用更大的学习率或独立的更新步长。4) 训练时，使用包含多种CDR环构象的抗体-抗原复合物数据（如来自MD模拟或不同晶体构象）。</li>
-<li><strong>验证方式</strong>: 在本文的50个复合物基准上，比较新方法与AF3的对接成功率（DockQ ≥ 0.49）和CDR-H3 RMSD。在需要诱导契合的已知案例上（如存在显著构象变化的复合物）进行重点测试。</li>
-<li><strong>可能的失败模式</strong>: 1) 显式建模柔性可能导致训练不稳定或模式坍塌。2) 模型可能过度柔化CDR环，导致预测结构不物理。3) 计算成本显著高于AF3。</li>
+<li><strong>来源局限/观察</strong>: AF3在全局对接上表现最佳，但仍有超过一半的复合物失败；而专用工具（如dyMEAN）在全局上表现差，但可能在某些局部特征上有优势。</li>
+<li><strong>核心假设</strong>: 将AF3的全局采样能力与专用工具（或基于物理的对接方法）的局部精修能力相结合，可以产生比单独使用任一方法更好的对接结果。</li>
+<li><strong>相对本文的增量</strong>: 本文仅比较了独立工具，未探索组合策略。</li>
+<li><strong>初步方法</strong>: 1) 使用AF3生成多个候选对接姿态。2) 使用一个评分函数（如Rosetta的界面能量）或一个专用精修工具（如GalaxyRefineComplex）对每个候选姿态进行局部优化和重评分。3) 选择优化后评分最高的姿态作为最终预测。</li>
+<li><strong>验证方式</strong>: 在本文的50个复合物基准集上，比较混合策略与单独使用AF3的DockQ和成功率。</li>
+<li><strong>可能的失败模式</strong>: 局部精修可能无法挽救AF3的失败案例（全局姿态错误）；组合策略的计算成本可能过高。</li>
 <li><strong>创新状态</strong>: unverified</li>
 </ul>
 </li>
 <li>
-<p><strong>名称</strong>: 结合序列和结构互补性的抗体-抗原对接评分函数</p>
+<p><strong>名称</strong>: 针对抗体-抗原界面的接触强度预测模型</p>
 <ul>
-<li><strong>来源局限/观察</strong>: AF3的对接成功与否高度依赖于其内部评分，但仍有大量失败案例。DeepSCFold的成功表明序列互补性信息（如共进化）有价值。</li>
-<li><strong>核心假设</strong>: 将AF3的几何评分与从序列衍生的结构互补性评分（如DeepSCFold的paired MSA特征）结合，可以更可靠地识别正确的对接姿态，从而提高整体对接成功率。</li>
-<li><strong>相对本文的增量</strong>: 本文比较了现有方法，本候选提出一个集成方法，旨在直接提升AF3的性能。</li>
-<li><strong>初步方法</strong>: 1) 对每个靶标，使用AF3生成多个候选对接姿态（如5个）。2) 对每个候选姿态，计算其AF3内部置信度（如pLDDT, pAE）。3) 使用一个独立的模型（如预训练的DeepSCFold或一个轻量级MLP）计算该姿态的序列互补性得分。4) 训练一个融合模型（如逻辑回归或简单加权和），以实验DockQ为标签，学习如何最佳组合这两个得分来重排候选姿态。</li>
-<li><strong>验证方式</strong>: 在本文的50个复合物上，比较使用重排后的最佳姿态与AF3默认最佳姿态的对接成功率。在DeepSCFold的测试集上验证泛化性。</li>
-<li><strong>可能的失败模式</strong>: 1) 两个评分来源高度相关，融合后无显著提升。2) 序列互补性模型在未见过的抗体-抗原对上泛化能力差。3) 重排过程可能将正确的姿态降级。</li>
+<li><strong>来源局限/观察</strong>: 本文发现AF3预测的接触强度（原子接触数）与实验值仅中等相关（Spearman ρ=0.57）。</li>
+<li><strong>核心假设</strong>: 可以训练一个专门的图神经网络或回归模型，以AF3预测的复合物结构为输入，预测每个残基对的原子接触数，从而更准确地反映界面相互作用强度。</li>
+<li><strong>相对本文的增量</strong>: 本文仅评估了AF3的原始输出。本候选旨在开发一个专门的后处理模型来改进接触强度预测。</li>
+<li><strong>初步方法</strong>: 1) 从PDB收集大量抗体-抗原复合物结构，计算每个残基对的原子接触数作为标签。2) 使用AF3预测这些复合物的结构。3) 构建一个GNN模型，输入为AF3预测的复合物结构（原子坐标、残基类型等），输出为每个残基对的预测接触数。4) 在本文的50个复合物上测试模型性能。</li>
+<li><strong>验证方式</strong>: 比较该专用模型与AF3原始输出在接触强度预测上的Spearman相关系数。</li>
+<li><strong>可能的失败模式</strong>: 模型可能过拟合于训练数据中的特定模式，无法泛化到新的复合物；AF3预测的结构误差可能成为模型性能的瓶颈。</li>
 <li><strong>创新状态</strong>: unverified</li>
 </ul>
 </li>
@@ -425,124 +390,140 @@
   
   <section>
     <h2>审稿人评审</h2>
-    <div class="md"><h1>Review setup</h1>
+    <div class="md"><h2>Review setup</h2>
 <ul>
-<li><strong>Input scope</strong> Full manuscript (including main text, figures, methods, and supplementary information)</li>
-<li><strong>Assessment boundary</strong> Evaluation of computational benchmarking methodology, statistical rigor, dataset construction, and conclusions drawn from the presented evidence</li>
-<li><strong>Shared manuscript claim summary</strong> The authors benchmark five computational tools (ImmuneBuilder/ABB2, IgFold, AlphaFold3, GRAMM, dyMEAN) for antibody Fv structure prediction, antibody-antigen complex docking, and paratope-epitope interface analysis on a non-redundant set of 50 humanized antibody-antigen complexes, finding that AlphaFold3 outperforms the other methods across all tasks but still shows limited accuracy for fine-grained interface features.</li>
-<li><strong>Visible evidence base</strong> Main text (Sections 1–5), Methods (Section 2), Results (Section 3), Discussion (Section 4), Figures 1–6, Supplementary Tables S1–S4, Supplementary Data 1–2</li>
-<li><strong>Missing materials affecting confidence</strong> The actual supplementary material files (Supplementary Data 1–2, Tables S1–S4) are not provided; only their descriptions are visible. The Zenodo repository (record 20710876) is referenced but not accessible for verification. Figure contents are described but the figures themselves are not visible.</li>
+<li><strong>Input scope</strong> Full manuscript</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodology, results, and conclusions as presented in the manuscript</li>
+<li><strong>Shared manuscript claim summary</strong> The manuscript benchmarks five computational tools (ImmuneBuilder/ABB2, IgFold, AlphaFold3, GRAMM, dyMEAN) for antibody Fv structure prediction, antibody-antigen complex docking, and paratope-epitope interface analysis on a non-redundant set of 50 humanized antibody-antigen complexes, finding that AlphaFold3 is the most accurate across all tasks but still shows limited performance in fine-grained interface prediction.</li>
+<li><strong>Visible evidence base</strong> Full text, figures (referenced as Fig. 1-6), tables (referenced as Table S1-S4), methods section, results section, discussion, conclusion, data availability statement</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary Data 1, Supplementary Data 2, Supplementary Tables S1-S4, and all supplementary figures are not provided. The Zenodo repository (record 20710876) is not accessible for verification. Figure 1 (workflow diagram) is not visible. Individual per-complex results are not shown.</li>
 </ul>
-<h1>Reviewer</h1>
+<h2>Reviewer</h2>
 <ul>
-<li>
-<p><strong>Overall assessment</strong> This manuscript presents a timely and practically useful benchmarking study of computational antibody modeling tools. The experimental design is generally sound, with careful attention to dataset construction, statistical testing, and multi-level evaluation. The finding that AlphaFold3 outperforms antibody-specific tools even for CDR-H3 prediction is noteworthy and challenges prevailing assumptions in the field. However, several methodological concerns reduce confidence in the conclusions: the dataset size (n=50) is modest for the number of comparisons performed, the exclusion of recently published methods (particularly DeepSCFold) limits the study's currency, and the interface recovery analysis is conditional on docking success in a way that may introduce selection bias. The manuscript would benefit from clearer justification of the dataset size, discussion of statistical power, and inclusion of additional methods or a clear rationale for their exclusion.</p>
-</li>
-<li>
-<p><strong>Who would be interested in the results, and why</strong> Computational antibody engineers, structural biologists working on therapeutic antibody design, and developers of protein structure prediction methods. The study provides practical guidance for tool selection across the antibody modeling workflow and identifies specific limitations (CDR-H3 accuracy, fine-grained interface prediction) that define clear targets for method development.</p>
-</li>
-<li>
-<p><strong>Major strengths</strong>
-  1. Controlled, statistically grounded comparison using paired statistical testing with multiple-testing correction, which is more rigorous than typical benchmarks in this field.
-  2. Multi-level evaluation spanning Fv structure, complex docking, and interface recovery, providing a complete workflow assessment rather than isolated metric comparisons.
-  3. Careful dataset construction with temporal separation from training data and sequence redundancy analysis, reducing the risk of training-test leakage.
-  4. Practical guidance for tool selection with clear identification of trade-offs (AF3 accuracy vs. ABB2/IgFold reproducibility and speed).</p>
-</li>
+<li><strong>Overall assessment</strong> This manuscript presents a timely and practically relevant benchmark of antibody modeling tools across the complete workflow from Fv structure prediction to interface analysis. The study design is generally sound, with a non-redundant dataset, multiple retained predictions, and paired statistical testing. The finding that AlphaFold3 outperforms antibody-specific tools and docking methods is noteworthy, as is the conditional nature of interface recovery on docking success. However, several methodological details and analytical choices require clarification or strengthening before the conclusions can be fully supported. The most significant concerns relate to the dataset construction, the handling of AlphaFold3's training data cutoff, the statistical analysis framework, and the generalizability of the interface recovery analysis.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians working on antibody engineering, structural biologists studying antigen-antibody recognition, and developers of protein structure prediction methods. The results provide practical guidance for tool selection in antibody modeling workflows and identify persistent limitations that can inform future method development.</li>
+<li><strong>Major strengths</strong> 1) The study addresses a clear gap in the literature by comparing tools across the complete antibody modeling workflow under a controlled design. 2) The use of multiple retained predictions and paired statistical testing is methodologically rigorous. 3) The analysis of paratope-epitope interface recovery conditional on docking quality provides practical insights. 4) The dataset is designed to be non-redundant and temporally separated from training data.</li>
 <li>
 <p><strong>Major Concerns</strong></p>
-</li>
-</ul>
-<p><strong>Concern ID</strong> R1-M1
-<strong>Severity</strong> Major
-<strong>Blocking</strong> No
-<strong>Axis</strong> Statistical rigor / dataset adequacy
-<strong>Claim pointer</strong> The study evaluates five tools on 50 complexes and reports statistically significant differences between methods.
-<strong>Evidence pointer</strong> Section 2.1, Section 2.5, Section 3.1–3.2
-<strong>Concern</strong> The dataset of 50 complexes is modest for the number of comparisons performed (multiple tools, multiple metrics, multiple stratification levels). The authors use paired Wilcoxon tests with Benjamini-Hochberg correction, but do not report effect sizes or confidence intervals for the differences between methods beyond the bootstrap CIs for individual methods. For the CDR-H3 comparison (Section 3.1), the adjusted P-values are reported as 0.026 and 0.017, which are only marginally significant after correction. With n=50, the statistical power to detect moderate effect sizes is limited, and the study may be underpowered for some of the subgroup analyses (e.g., interface recovery stratified by DockQ threshold, where n=23 for the reliable docking subset).
-<strong>Why it matters</strong> Without adequate statistical power, the reported "significant" differences may be unreliable, and the absence of significant differences between ABB2 and IgFold (adjusted P=0.75) could reflect insufficient power rather than true equivalence. The study's conclusions about tool rankings depend on these statistical comparisons.
-<strong>Resolution test</strong> Provide a power analysis or justification that n=50 is sufficient for the planned comparisons. Report effect sizes (e.g., Cohen's d or rank-biserial correlation) alongside P-values for all pairwise comparisons. For the CDR-H3 comparison, consider whether the marginal significance (adjusted P=0.026, 0.017) supports the strong claim that "AF3 achieved the lowest CDR-H3 RMSD, significantly lower than both ABB2 and IgFold."</p>
-<p><strong>Concern ID</strong> R1-M2
-<strong>Severity</strong> Major
-<strong>Blocking</strong> No
-<strong>Axis</strong> Methodological completeness / currency
-<strong>Claim pointer</strong> The study evaluates "current publicly available computational tools" and provides "practical guidance for tool selection in antibody-modeling workflows" (Section 5).
-<strong>Evidence pointer</strong> Section 2.4, Section 4.2, Section 5
-<strong>Concern</strong> The study explicitly mentions DeepSCFold (Hou et al. 2025) in the Introduction and Discussion as a recently developed method that "was reported to achieve competitive interface DockQ relative to AF3 and a 12.4% improvement in prediction success rate at DockQ &gt; 0.23," yet DeepSCFold is not included in the benchmark. The authors state this is because it was "not included in the predefined experimental framework" (Section 4.2). Given that the manuscript is being submitted in 2026 and DeepSCFold was published in 2025, its exclusion is a significant gap that undermines the claim of providing comprehensive practical guidance. The study also does not include other recent methods such as ABlooper, DeepAb, or ESMFold-based antibody predictors.
-<strong>Why it matters</strong> The practical value of the benchmark for tool selection is substantially reduced if a method that reportedly outperforms AF3 on the same task is not evaluated. Readers cannot determine whether AF3 remains the best choice or whether DeepSCFold (or other recent methods) would be preferable.
-<strong>Resolution test</strong> Either include DeepSCFold and other recent methods in the benchmark, or provide a clear, justified rationale for their exclusion (e.g., unavailability of public code, inability to run at scale, or fundamental incompatibility with the evaluation framework). If exclusion is justified, temper the claims about providing comprehensive guidance.</p>
-<p><strong>Concern ID</strong> R1-M3
-<strong>Severity</strong> Major
-<strong>Blocking</strong> No
-<strong>Axis</strong> Selection bias / conditional analysis
-<strong>Claim pointer</strong> "When docking was reliable, AF3 accurately recovered epitope and paratope residues, salt bridges, and non-bonded contacts" (Abstract, Section 3.3).
-<strong>Evidence pointer</strong> Section 3.3, Figure 6
-<strong>Concern</strong> The interface recovery analysis is restricted to the 23/50 complexes where AF3 achieved DockQ ≥ 0.49 (medium or high quality). This conditional analysis introduces potential selection bias: the 23 "successful" complexes may systematically differ from the 27 "failed" complexes in ways that affect interface recovery metrics. For example, complexes with simpler interfaces, less conformational flexibility, or more canonical binding modes may be both easier to dock and easier to analyze for interface features. The authors report that "when docking failed (DockQ &lt; 0.23), the predicted and experimental contacts barely overlapped (mean residue-pair F1 = 0.04)," but this does not address whether the 23 successful cases are representative of antibody-antigen complexes generally.
-<strong>Why it matters</strong> The study's key practical conclusion—that AF3 is "well suited to identifying epitope and paratope regions in correctly docked complexes"—is based on a non-random subset of complexes. If the successful subset is biased toward easier cases, the reported interface recovery metrics may overestimate AF3's general performance.
-<strong>Resolution test</strong> Compare the characteristics of the 23 successful and 27 failed complexes (e.g., interface size, number of CDR contacts, antigen type, conformational change magnitude) to assess whether selection bias is present. Report interface recovery metrics for all 50 complexes (as is partially done in Figure 6A) and discuss how the conditional analysis affects generalizability.</p>
-<p><strong>Concern ID</strong> R1-M4
-<strong>Severity</strong> Major
-<strong>Blocking</strong> No
-<strong>Axis</strong> Reproducibility / methodology transparency
-<strong>Claim pointer</strong> "Data, structural predictions, evaluation results, and analysis code are available from Zenodo under record 20710876" (Availability and implementation).
-<strong>Evidence pointer</strong> Data availability statement, Section 2.4.6
-<strong>Concern</strong> The Zenodo repository is referenced but not accessible for verification. More critically, several methodological details that affect reproducibility are unclear: (1) For AF3, the authors used the "official AlphaFold3 web server" but do not specify which version or whether the server's model weights were updated during the study period. (2) For GRAMM, the "public GRAMM web server" was used in "free docking mode" but the specific version and parameter settings are not reported beyond this description. (3) For dyMEAN, "antigen epitope information used for dyMEAN input was obtained from HDOCK-based docking results" (Section 2.4.5), but the HDOCK parameters and how epitope information was extracted are not described. (4) The "five repeated local prediction runs" for ABB2 and IgFold used "different random seeds where seed control was available" (Section 2.4.6), but it is unclear which tools support seed control and what seeds were used.
-<strong>Why it matters</strong> Without precise methodological details, other researchers cannot reproduce the results or apply the same evaluation framework to new methods. The use of web servers (AF3, GRAMM) that may have changed between the study period and any attempted replication is particularly problematic.
-<strong>Resolution test</strong> Provide version numbers and specific parameters for all web servers and software tools. Describe the HDOCK procedure and epitope extraction method in sufficient detail for replication. Report whether seed control was available for each tool and what seeds were used. If possible, provide a frozen software environment (e.g., Docker container) for locally deployed tools.</p>
 <ul>
-<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Dataset construction and temporal separation</li>
+<li><strong>Claim pointer</strong> "To avoid overlap with the training data of the evaluated models, we restricted the set to structures released after the cutoff date of the most recent method (AF3; 19 December 2023)"</li>
+<li><strong>Evidence pointer</strong> Section 2.1</li>
+<li><strong>Concern</strong> The claim of temporal separation from training data is not adequately supported. The manuscript states that structures were restricted to those released after the AF3 cutoff date (19 December 2023), but does not provide the actual deposition dates for the 50 complexes. The cutoff dates for ABB2, IgFold, GRAMM, and dyMEAN are not stated, and it is unclear whether the dataset is also temporally separated from these methods. Furthermore, the PDB release date is not necessarily the same as the training data cutoff date used by each method, and the authors do not discuss how they verified that none of the 50 complexes were used in training any of the evaluated models.</li>
+<li><strong>Why it matters</strong> If any of the benchmark complexes were included in the training data of the evaluated methods, the performance comparisons would be biased in favor of those methods, undermining the validity of the conclusions about relative accuracy.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the deposition date for each of the 50 complexes (e.g., in a supplementary table). State the training data cutoff dates for ABB2, IgFold, GRAMM, and dyMEAN, and confirm that all 50 complexes were released after these dates. Describe the procedure used to verify non-overlap with training data for each method.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical analysis and reporting</li>
+<li><strong>Claim pointer</strong> "Group-level performance was reported as the mean across targets with a 95% confidence interval estimated by bootstrap resampling with 10,000 resamples. Pairwise comparisons between tools for a given metric were performed using two-sided Wilcoxon signed-rank tests on paired per-target values, with Benjamini–Hochberg correction across tool pairs"</li>
+<li><strong>Evidence pointer</strong> Section 2.5</li>
+<li><strong>Concern</strong> The statistical analysis has several issues. First, the use of the mean of five predictions per target as the unit of analysis discards within-target variability and may inflate the effective sample size. Second, the bootstrap confidence intervals are computed on the mean across targets, but the manuscript does not specify whether the bootstrap resamples at the target level or the prediction level. Third, the Wilcoxon signed-rank test is applied to paired per-target values, but the pairing is not clearly justified—are the same 50 targets used for all tools? Fourth, the Benjamini-Hochberg correction is applied across tool pairs, but the number of comparisons and the specific pairs tested are not stated. Fifth, the manuscript reports adjusted P values but does not provide the raw test statistics or effect sizes.</li>
+<li><strong>Why it matters</strong> Inadequate statistical reporting makes it impossible to assess the robustness of the claimed performance differences. The conclusions about which tools are significantly better than others depend on the validity of the statistical framework.</li>
+<li>
+<p><strong>Resolution test</strong> Clarify the statistical unit and the resampling procedure. Justify the use of the mean of five predictions as the unit of analysis, or use a hierarchical model that accounts for within-target variability. Report the number of pairwise comparisons, the specific pairs tested, and the raw test statistics (e.g., W statistic) alongside adjusted P values. Provide effect sizes (e.g., median difference with 95% CI) for key comparisons.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Interface recovery analysis scope and generalizability</li>
+<li><strong>Claim pointer</strong> "When docking was reliable, AlphaFold3 accurately recovered epitope and paratope residues, salt bridges, and non-bonded contacts, but reproduced hydrogen bonds and fine-grained contact strengths less consistently."</li>
+<li><strong>Evidence pointer</strong> Section 3.3, Figure 6</li>
+<li><strong>Concern</strong> The interface recovery analysis is restricted to AF3 predictions only, with the justification that only AF3 produced a substantial fraction of correctly docked complexes. This is a reasonable approach, but it limits the generalizability of the findings. The analysis is performed on only 23 complexes (those with DockQ &gt;= 0.49), which is a small sample for drawing robust conclusions about interface recovery patterns. Furthermore, the analysis uses PDBsum for contact extraction, but the manuscript does not discuss the sensitivity of the results to the choice of contact definition or the PDBsum parameters. The Spearman correlation for contact-multiplicity agreement (rho = 0.57) is reported without a confidence interval or a discussion of what constitutes a meaningful level of agreement.</li>
+<li><strong>Why it matters</strong> The conclusions about AF3's interface recovery capabilities are based on a small and potentially non-representative subset of complexes. Without a sensitivity analysis or a discussion of the limitations of the contact definition, the generalizability of these findings to other antibody-antigen complexes is unclear.</li>
+<li>
+<p><strong>Resolution test</strong> Report the number of complexes with DockQ &gt;= 0.49 for each of the three docking-quality strata (High, Medium, Acceptable) and consider analyzing these strata separately. Discuss the potential for selection bias in the 23-complex subset. Perform a sensitivity analysis using alternative contact definitions or parameters. Report the 95% confidence interval for the Spearman correlation.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Comparison with existing benchmarks and missing methods</li>
+<li><strong>Claim pointer</strong> "These tools have rarely been compared directly under a controlled, statistically grounded setup"</li>
+<li><strong>Evidence pointer</strong> Section 1, Section 4.2</li>
+<li><strong>Concern</strong> The manuscript acknowledges that DeepSCFold was not included in the benchmark but does not discuss other relevant methods or existing benchmarks. For example, the Critical Assessment of PRediction of Interactions (CAPRI) experiment regularly evaluates docking methods, including antibody-antigen complexes. The manuscript does not compare its findings with CAPRI results or other published benchmarks. Additionally, the choice of GRAMM as the representative classical docking method is not justified—other widely used docking tools (e.g., ZDOCK, HADDOCK, ClusPro) are not mentioned.</li>
+<li><strong>Why it matters</strong> The claim that this is a uniquely controlled comparison is weakened by the lack of discussion of existing benchmarks. The choice of GRAMM as the sole representative of classical docking may not be representative of the state of the art in this category.</li>
+<li><strong>Resolution test</strong> Discuss how the present benchmark relates to existing evaluations such as CAPRI. Justify the choice of GRAMM over other docking methods, or include additional docking tools. Acknowledge the limitations of the method selection and discuss how the findings might generalize to other tools.</li>
 </ul>
-<p><strong>Concern ID</strong> R1-m1
-<strong>Severity</strong> Minor
-<strong>Axis</strong> Presentation / clarity
-<strong>Affected element</strong> Section 2.2.4 (DockQ description)
-<strong>Evidence pointer</strong> Section 2.2.4
-<strong>Issue</strong> The description of DockQ computation for Fv prediction states "DockQ was computed for the heavy–light variable-domain interface," but the standard DockQ metric is designed for protein-protein complexes, not intra-complex domain interfaces. It is unclear whether the same thresholds (High ≥ 0.8, Medium ≥ 0.49, Acceptable ≥ 0.23) are appropriate for evaluating Fv domain packing.
-<strong>Required correction</strong> Clarify whether standard DockQ thresholds were used for Fv evaluation and justify their applicability, or report whether alternative thresholds were considered.</p>
-<p><strong>Concern ID</strong> R1-m2
-<strong>Severity</strong> Minor
-<strong>Axis</strong> Data presentation
-<strong>Affected element</strong> Figure 2, Figure 3, Figure 4
-<strong>Evidence pointer</strong> Section 3.1, Section 3.2
-<strong>Issue</strong> The figures are described in the text but not visible. From the descriptions, it appears that individual data points are shown in some plots (e.g., Figure 3A showing CDR-H3 RMSD distributions) but not others. For small datasets (n=50), showing individual points alongside summary statistics is important for assessing distribution shape and identifying outliers.
-<strong>Required correction</strong> Ensure all box plots or bar plots showing per-complex metrics include individual data points (e.g., as strip plots or jittered points) to allow readers to assess data distribution and identify potential outliers.</p>
-<p><strong>Concern ID</strong> R1-m3
-<strong>Severity</strong> Minor
-<strong>Axis</strong> Methodological clarity
-<strong>Affected element</strong> Section 2.1 (Dataset)
-<strong>Evidence pointer</strong> Section 2.1
-<strong>Issue</strong> The dataset is described as "non-redundant" based on MMseqs2 clustering at 90% and 95% sequence identity thresholds. However, the authors note that "only the light chains showed mild redundancy, forming 43–46 clusters" at these thresholds. It is unclear whether this mild redundancy could affect the statistical analysis, particularly for comparisons involving light chain-specific metrics.
-<strong>Required correction</strong> Discuss whether the mild light chain redundancy could affect the results and whether any sensitivity analyses were performed (e.g., removing redundant light chains and re-running key comparisons).</p>
-<p><strong>Concern ID</strong> R1-m4
-<strong>Severity</strong> Minor
-<strong>Axis</strong> Interpretation / nuance
-<strong>Affected element</strong> Section 4.1 (Discussion)
-<strong>Evidence pointer</strong> Section 4.1
-<strong>Issue</strong> The authors state that "AF3's strong performance on CDR-H3 is noteworthy because this hypervariable loop has traditionally been regarded as the regime in which antibody-specific models...would be expected to hold an advantage." However, they do not discuss the possibility that AF3's training data may include antibody structures that overlap with the test set, despite the temporal separation. The cutoff date (19 December 2023) ensures test structures were deposited after AF3's training cutoff, but AF3 may have been trained on other antibody structures that are structurally similar to the test set.
-<strong>Required correction</strong> Acknowledge the limitation that temporal separation does not guarantee structural non-redundancy with training data, and discuss whether any additional measures were taken to assess potential training-test similarity (e.g., structural clustering against known AF3 training structures).</p>
-<p><strong>Concern ID</strong> R1-m5
-<strong>Severity</strong> Minor
-<strong>Axis</strong> Completeness
-<strong>Affected element</strong> Section 2.5 (Statistical analysis)
-<strong>Evidence pointer</strong> Section 2.5
-<strong>Issue</strong> The authors use bootstrap resampling with 10,000 resamples to estimate 95% confidence intervals for group-level performance. However, they do not specify the bootstrap method (e.g., percentile, BCa, or basic bootstrap) or whether they accounted for the paired nature of the data in the bootstrap procedure.
-<strong>Required correction</strong> Specify the bootstrap method used and confirm that the paired structure of the data was preserved during resampling.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
 <ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reporting clarity</li>
+<li><strong>Affected element</strong> Section 2.4.5</li>
+<li><strong>Evidence pointer</strong> "The antigen epitope information used for dyMEAN input was obtained from HDOCK-based docking results (Yan et al. 2020)."</li>
+<li><strong>Issue</strong> The use of HDOCK to generate epitope information for dyMEAN introduces a potential circularity or dependency that is not discussed. If HDOCK is itself a docking method, using its output as input to dyMEAN may bias the comparison.</li>
 <li>
-<p><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (statistical power), R1-M2 (methodological completeness), R1-M3 (selection bias), R1-M4 (reproducibility)</p>
+<p><strong>Required correction</strong> Clarify whether HDOCK was used only to identify epitope residues (not to generate a full docking pose) and discuss whether this introduces any bias. If possible, use an independent method for epitope identification.</p>
 </li>
 <li>
-<p><strong>Assessment against Nature-style criteria</strong></p>
+<p><strong>Concern ID</strong> R1-m2</p>
 </li>
-<li><strong>Originality</strong>: Moderate. The study provides a controlled comparison that is more rigorous than typical benchmarks, but the individual findings (AF3 outperforms antibody-specific tools, docking remains challenging) are largely consistent with existing literature. The multi-level evaluation framework is a strength but not entirely novel.</li>
-<li><strong>Scientific importance</strong>: Moderate to high. The practical guidance for tool selection is valuable for the antibody engineering community, and the identification of persistent limitations (CDR-H3 accuracy, fine-grained interface prediction) provides clear targets for method development.</li>
-<li><strong>Interdisciplinary readership</strong>: Moderate. The study is primarily of interest to computational biologists and antibody engineers. The methods and results are presented with sufficient clarity for nonspecialists in structural biology, but the narrow focus on antibody modeling limits broader appeal.</li>
-<li><strong>Technical soundness</strong>: Moderate. The experimental design is generally sound, but concerns about statistical power, selection bias, and methodological completeness reduce confidence. The statistical methods are appropriate but their application could be more rigorous.</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Section 2.4.6</li>
+<li><strong>Evidence pointer</strong> "For ABB2/ImmuneBuilder and IgFold, five repeated local prediction runs were performed for each target using different random seeds where seed control was available."</li>
+<li><strong>Issue</strong> The phrase "where seed control was available" is vague. It is unclear whether seed control was available for both ABB2 and IgFold, and if not, how the five predictions were generated.</li>
 <li>
-<p><strong>Readability for nonspecialists</strong>: Good. The manuscript is well-structured with clear motivation, methods, and results. Technical terms are defined, and the figures (as described) appear to effectively communicate key findings. The Discussion provides helpful context and practical guidance.</p>
+<p><strong>Required correction</strong> Specify for each tool whether random seed control was available and, if not, describe the method used to generate multiple predictions (e.g., different random seeds for the random number generator, different initializations).</p>
 </li>
 <li>
-<p><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The study addresses a practical need and provides useful guidance, but the methodological concerns (particularly statistical power, exclusion of recent methods, and selection bias in the interface analysis) must be addressed before the conclusions can be considered robust. The authors should either strengthen the statistical analysis, include additional methods, or temper their claims to match the evidence provided.</p>
+<p><strong>Concern ID</strong> R1-m3</p>
 </li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data presentation</li>
+<li><strong>Affected element</strong> Figure 2, Figure 3, Figure 4, Figure 5, Figure 6</li>
+<li><strong>Evidence pointer</strong> Figures are referenced but not provided in the manuscript text.</li>
+<li><strong>Issue</strong> The figures are essential for evaluating the results, but they are not included in the provided manuscript. The text describes the figures in detail, but without seeing the actual plots, it is impossible to assess the validity of the visual claims.</li>
+<li>
+<p><strong>Required correction</strong> Provide the figures as part of the manuscript submission.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Section 2.2.4</li>
+<li><strong>Evidence pointer</strong> "For Fv prediction, DockQ was computed for the heavy–light variable-domain interface."</li>
+<li><strong>Issue</strong> DockQ is designed for protein-protein complexes, not for intra-chain domain interfaces. Using DockQ to assess the heavy-light chain interface within an Fv is unconventional and may not be appropriate, as DockQ's thresholds and interpretation are calibrated for inter-chain complexes.</li>
+<li>
+<p><strong>Required correction</strong> Justify the use of DockQ for the heavy-light chain interface, or use a more standard metric for this assessment (e.g., interface RMSD, fraction of native contacts). If DockQ is retained, discuss how its interpretation differs for intra-chain versus inter-chain interfaces.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Section 2.1</li>
+<li><strong>Evidence pointer</strong> "To characterize sequence redundancy, we clustered the 50 antibodies at the heavy-chain, light-chain, paired-Fv, and CDR-H3 levels using MMseqs2 (Steinegger and Söding 2017) at 90% and 95% sequence-identity thresholds."</li>
+<li><strong>Issue</strong> The clustering analysis is described but the results are only summarized in the text. The full clustering results are in Supplementary Data 2, which is not provided. The text states that the set is "essentially non-redundant," but the light chains show "mild redundancy" (43-46 clusters out of 50). The potential impact of this mild redundancy on the results is not discussed.</li>
+<li><strong>Required correction</strong> Provide the full clustering results. Discuss whether the mild redundancy in light chains could affect the performance comparisons, particularly for methods that may be sensitive to light chain sequence diversity.</li>
+</ul>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (temporal separation from training data), R1-M2 (statistical analysis framework), R1-M3 (interface recovery analysis scope and generalizability)</p>
+</li>
+<li><strong>Assessment against Nature-style criteria</strong> <strong>Originality:</strong> Moderate. The study provides a useful benchmark, but the individual tools and metrics are well-established. The novelty lies in the controlled comparison across the complete workflow. <strong>Scientific importance:</strong> High. Antibody engineering is a rapidly growing field, and reliable guidance for tool selection is of practical importance. The identification of persistent limitations in fine-grained interface prediction is valuable. <strong>Interdisciplinary readership:</strong> Moderate. The manuscript is primarily of interest to computational biologists and structural biologists. The practical implications for antibody engineering may attract a broader audience. <strong>Technical soundness:</strong> Requires improvement. The concerns about dataset construction, statistical analysis, and interface recovery analysis need to be addressed. <strong>Readability for nonspecialists:</strong> Good. The manuscript is well-structured and clearly written, with appropriate background and explanations of key concepts.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The manuscript addresses a timely and important question, and the core findings are potentially valuable. However, the concerns about dataset construction, statistical analysis, and interface recovery analysis must be addressed before the conclusions can be fully supported. The authors should provide the missing supplementary materials, clarify the statistical framework, and strengthen the interface recovery analysis.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the dataset is temporally separated from the training data of all evaluated methods is not adequately supported (R1-M1).</li>
+<li>The claim that AF3 is "the most accurate method across all three levels" is based on a statistical analysis that requires clarification and strengthening (R1-M2).</li>
+<li>The claim that AF3 "accurately recovered epitope and paratope residues, salt bridges, and non-bonded contacts" is based on a small subset of complexes and may not be generalizable (R1-M3).</li>
+<li>The claim that the benchmark is "controlled and statistically grounded" is weakened by the lack of discussion of existing benchmarks and the choice of GRAMM as the sole classical docking method (R1-M4).</li>
 </ul></div>
   </section>
   

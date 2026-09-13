@@ -1,72 +1,81 @@
 ## Review setup
-- **Input scope** Abstract only
-- **Assessment boundary** Claims made in the abstract
-- **Shared manuscript claim summary** The authors report a computational screening pipeline that identified three flavonoid phytochemicals (with Rutin as the top candidate) as potential inhibitors of the IBV spike protein, based on docking, MD simulations, MM-GBSA, and ADMET analyses.
-- **Visible evidence base** Abstract text only; no figures, tables, or supplementary material provided
-- **Missing materials affecting confidence** Full manuscript, all figures, tables, supplementary data, simulation parameter details, and validation datasets
+- **Input scope** Full manuscript (abstract and main text, as provided)
+- **Assessment boundary** The manuscript as submitted for review; supplementary material not accessible.
+- **Shared manuscript claim summary** The authors claim that three flavonoid phytochemicals (Rutin, and two others) identified via hierarchical virtual screening against the IBV spike protein are stable binders with favourable binding free energies, reduced protein flexibility, and acceptable ADMET profiles, and thus represent potential natural inhibitors of IBV spike-mediated viral entry.
+- **Visible evidence base** Abstract, main text (sections: Introduction, Methods, Results, Discussion, Conclusion), Figures 1-6, Tables 1-3, references.
+- **Missing materials affecting confidence** Supplementary material (including detailed methods, additional figures, and ADMET data) is not accessible; the full PCLibVer2 library composition and the specific docking protocols for the two binding pockets are not fully described in the main text.
 
 ## Reviewer
-- **Overall assessment** The abstract presents a standard computational drug discovery workflow applied to a relevant veterinary virology problem. The topic is timely given the need for alternatives to antibiotics in poultry. However, the abstract lacks critical quantitative details (e.g., docking scores, RMSD/RMSF values, convergence metrics) and does not provide any statistical comparison to known inhibitors or positive controls. Without the full manuscript, the robustness of the computational predictions cannot be evaluated. The claim of "potential" is appropriately cautious, but the evidence base visible in the abstract is insufficient to assess technical soundness.
-
-- **Who would be interested in the results, and why** Poultry virologists and veterinary pharmacologists interested in natural product-based antiviral strategies; computational chemists working on phytochemical screening pipelines; poultry industry stakeholders seeking alternatives to antibiotics.
-
-- **Major strengths** 1. Addresses a practical problem (IBV control in poultry) with a clear computational strategy. 2. Uses a curated phytochemical library (PCLibVer2) specific to poultry-safe botanicals, which is a novel resource. 3. Employs multiple independent MD simulations (3 × 100 ns) and trajectory-based MM-GBSA, which is a reasonable computational validation approach.
-
+- **Overall assessment** This manuscript presents a standard computational screening pipeline for identifying phytochemical inhibitors of the IBV spike protein. While the workflow is methodologically sound, the study lacks experimental validation, which is critical for claims of antiviral potential. The novelty is limited, as similar approaches have been widely reported for other coronaviruses. The results are preliminary and do not convincingly establish the proposed compounds as viable leads.
+- **Who would be interested in the results, and why** Researchers in computational drug discovery and veterinary virology, particularly those focused on avian coronaviruses and phytochemical-based interventions. The study may also interest poultry industry stakeholders seeking alternatives to antibiotics.
+- **Major strengths** 1. The use of a curated phytochemical library (PCLibVer2) derived from poultry-safe botanicals is a practical and relevant resource. 2. The application of multiple independent MD simulations (3 × 100 ns) and MM-GBSA calculations provides some statistical robustness. 3. The inclusion of PCA to assess protein flexibility adds a useful dimension to the analysis.
 - **Major Concerns**
-  - **Concern ID** R1-M1
-  - **Severity** Major
-  - **Blocking** Yes
-  - **Axis** Technical soundness – missing quantitative validation
-  - **Claim pointer** "All three phytochemicals exhibited favourable docking scores and stable protein-ligand interactions throughout the simulations."
-  - **Evidence pointer** Abstract only; no numerical values provided
-  - **Concern** The abstract does not report any docking scores, RMSD, RMSF, or hydrogen bond occupancy values. Without these numbers, the claim of "favourable" and "stable" is unverifiable. The reader cannot assess whether the interactions are physically realistic or merely artefactual.
-  - **Why it matters** In computational drug discovery, quantitative metrics are essential to distinguish genuine binding from false positives. The absence of any numerical data makes the core computational claims untestable.
-  - **Resolution test** Provide docking scores (Glide score, G-score), average RMSD, RMSF per residue, and hydrogen bond occupancy for each complex in the full manuscript.
-
-  - **Concern ID** R1-M2
-  - **Severity** Major
-  - **Blocking** Yes
-  - **Axis** Scientific importance – lack of comparator
-  - **Claim pointer** "Rutin exhibited the strongest binding affinity at both binding pockets (-50.07 ± 13.14 and -55.14 ± 20.22 kcal/mol)."
-  - **Evidence pointer** Abstract only
-  - **Concern** The MM-GBSA values are reported without any comparator (e.g., a known inhibitor, a decoy, or the apo protein). The large standard deviations (±13–20 kcal/mol) suggest high variability, which may indicate poor convergence or non-specific binding. Without a control, it is impossible to know whether these values are meaningful.
-  - **Why it matters** MM-GBSA is a relative scoring method; absolute values are not interpretable without a reference. The claim of "strongest binding affinity" is meaningless without a baseline.
-  - **Resolution test** Include MM-GBSA values for a known IBV spike inhibitor (if available) or a negative control (e.g., a non-binding compound). Report convergence of MM-GBSA over the simulation trajectory.
-
-  - **Concern ID** R1-M3
-  - **Severity** Major
-  - **Blocking** Yes
-  - **Axis** Technical soundness – simulation quality
-  - **Claim pointer** "Three independent 100 ns molecular dynamics simulations"
-  - **Evidence pointer** Abstract only
-  - **Concern** The abstract does not state whether the three simulations are replicates (same starting structure, different seeds) or independent runs (different initial velocities). It also does not report whether the systems reached equilibrium (e.g., RMSD plateau, energy convergence). Without this information, the reliability of the 100 ns trajectories is unknown.
-  - **Why it matters** Inadequate equilibration or insufficient sampling can lead to artefactual conclusions about stability and binding.
-  - **Resolution test** Provide RMSD vs. time plots for all three replicates, state equilibration criteria, and report whether the three runs converged to similar structural ensembles.
-
+    - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Experimental validation
+    - **Claim pointer** "These findings highlight the potential of flavonoid-based phytochemicals as natural inhibitors of IBV spike-mediated viral entry."
+    - **Evidence pointer** Section: Results, Discussion, Conclusion
+    - **Concern** The entire study is purely computational. No in vitro or in vivo experiments are performed to validate the predicted binding, antiviral activity, or toxicity of the identified phytochemicals. The claim of "potential inhibitors" is therefore unsupported by direct evidence.
+    - **Why it matters** Without experimental validation, the computational predictions remain speculative. The field requires at least cell-based assays (e.g., plaque reduction, pseudovirus entry) to confirm antiviral activity and cytotoxicity before any meaningful conclusion can be drawn.
+    - **Resolution test** Provide experimental data (e.g., IC50 values, CC50 values, selectivity index) from IBV infection assays in permissive cell lines (e.g., Vero cells, chicken embryo kidney cells) for the three lead compounds.
+    - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Novelty and significance
+    - **Claim pointer** "This study provides a computational framework for the development of phytochemical-based interventions that may complement existing vaccination strategies."
+    - **Evidence pointer** Section: Introduction, Discussion
+    - **Concern** The computational workflow (virtual screening, MD, MM-GBSA, PCA) is standard and has been applied extensively to other coronaviruses (e.g., SARS-CoV-2, MERS-CoV). The specific application to IBV spike protein does not introduce methodological novelty. The identified compounds (e.g., Rutin) are well-known flavonoids with previously reported antiviral activities against other viruses, reducing the novelty of the findings.
+    - **Why it matters** For a study to be considered impactful, it should either present a novel methodology, identify truly novel compounds, or provide deep mechanistic insight. This study does none of these, and the claims of complementing vaccination strategies are overstated without experimental evidence.
+    - **Resolution test** Demonstrate a unique mechanism of action for the identified compounds against IBV (e.g., specific binding site, allosteric modulation) or show that they are effective against multiple IBV variants, or provide a clear rationale for why these compounds are superior to existing candidates.
+    - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Technical soundness of docking
+    - **Claim pointer** "The three top-ranked lead phytochemicals were evaluated by three independent 100 ns molecular dynamics simulations."
+    - **Evidence pointer** Section: Methods, Results; Figure 2, Table 1
+    - **Concern** The manuscript does not specify the exact docking protocol used for the two binding pockets (e.g., grid box dimensions, docking precision, scoring function). The selection of the top three compounds from a library of 2,400 is not justified; the criteria for ranking (e.g., docking score threshold, interaction pattern) are not clearly stated. This makes the screening step non-reproducible.
+    - **Why it matters** Reproducibility is a cornerstone of computational studies. Without a clear description of the docking parameters and ranking criteria, the reader cannot assess the reliability of the initial hit selection.
+    - **Resolution test** Provide a detailed description of the docking protocol in the main text or accessible supplementary material, including grid box coordinates, docking precision (e.g., SP, XP), and the specific scoring function used. Clearly state the criteria (e.g., docking score < -8.0 kcal/mol, presence of key hydrogen bonds) used to select the top three compounds.
 - **Minor Comments**
-  - **Concern ID** R1-m1
-  - **Severity** Minor
-  - **Axis** Readability for nonspecialists
-  - **Affected element** Abstract text
-  - **Evidence pointer** Abstract
-  - **Issue** The phrase "reduced conformational sampling relative to the apo protein" is ambiguous. It could mean the ligand-bound protein explores fewer conformations (i.e., is stabilised) or that the simulation sampled less of phase space (a technical limitation).
-  - **Required correction** Clarify: "the ligand-bound protein exhibited reduced conformational flexibility compared to the apo protein, as indicated by lower RMSF values."
-
-  - **Concern ID** R1-m2
-  - **Severity** Minor
-  - **Axis** Scientific importance – scope
-  - **Affected element** Abstract conclusion
-  - **Evidence pointer** Abstract
-  - **Issue** The abstract claims the study "provides a computational framework for the development of phytochemical-based interventions," but the pipeline is standard (docking → MD → MM-GBSA → ADMET). The novelty of the framework itself is not evident.
-  - **Required correction** Either highlight a novel methodological aspect (e.g., the poultry-specific library) or temper the claim to "applies an established computational framework to a new target and library."
-
-- **Technical failings that need to be addressed before the case is established** R1-M1 (missing quantitative validation), R1-M2 (lack of comparator), R1-M3 (simulation quality not reported)
-
+    - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Figure 3
+    - **Evidence pointer** Figure 3 (RMSD plots)
+    - **Issue** The RMSD plots for the three complexes and the apo protein are presented, but the y-axis scale is not clearly labelled in the provided text description. It is unclear whether the RMSD values are for backbone atoms or all heavy atoms.
+    - **Required correction** Clearly state in the figure legend or main text which atoms were used for RMSD calculation (e.g., Cα atoms, backbone atoms, heavy atoms).
+    - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Data presentation
+    - **Affected element** Table 2
+    - **Evidence pointer** Table 2 (MM-GBSA results)
+    - **Issue** The MM-GBSA binding free energies are reported with standard deviations (e.g., -50.07 +/- 13.14 kcal/mol). The large standard deviations (e.g., 13.14 kcal/mol) suggest high variability in the binding energy estimates, which may indicate unstable binding or insufficient sampling. This is not discussed.
+    - **Required correction** Add a brief discussion of the variability in MM-GBSA results and its implications for the reliability of the binding affinity predictions. Consider reporting the range of values or performing a statistical test to compare the binding energies.
+    - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Completeness
+    - **Affected element** Section: Methods
+    - **Evidence pointer** Section: Methods (ADMET analysis)
+    - **Issue** The ADMET analysis is mentioned but the specific properties evaluated (e.g., solubility, permeability, toxicity endpoints) and the tools used (e.g., SwissADME, ADMETlab) are not named in the main text.
+    - **Required correction** Specify the ADMET properties assessed and the software/webserver used for the analysis.
+    - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Language
+    - **Affected element** Abstract
+    - **Evidence pointer** Abstract
+    - **Issue** The phrase "pending experimental validation" is used, which appropriately acknowledges the limitation. However, the overall tone of the abstract and conclusion overstates the significance of the findings (e.g., "highlight the potential", "may complement").
+    - **Required correction** Tone down the claims to more accurately reflect the preliminary nature of the computational results. For example, replace "highlight the potential" with "suggest a possible role" or "warrant further investigation".
+- **Technical failings that need to be addressed before the case is established** R1-M1 (experimental validation), R1-M2 (novelty/significance), R1-M3 (docking protocol reproducibility).
 - **Assessment against Nature-style criteria** 
-  - **Originality**: Low. The workflow is standard; the poultry-specific phytochemical library is a minor novelty.
-  - **Scientific importance**: Moderate. IBV is a significant poultry pathogen, and natural product inhibitors are of practical interest, but the abstract does not demonstrate that the identified compounds are likely to be effective in vivo.
-  - **Interdisciplinary readership**: Low. The abstract is written for a specialist computational chemistry / virology audience; it does not frame the problem in a way that would attract a broader readership.
-  - **Technical soundness**: Not assessable from the abstract alone. The missing quantitative data and lack of controls prevent evaluation.
-  - **Readability for nonspecialists**: Adequate for a specialist journal; the abstract uses appropriate terminology but could be clearer (see minor comment R1-m1).
+    - **Originality**: Low. The computational pipeline is standard, and the identified compounds (e.g., Rutin) are well-known. The application to IBV is incremental.
+    - **Scientific importance**: Low to moderate. While IBV is a significant poultry pathogen, the study does not provide new biological insights or a validated therapeutic candidate. The impact is limited to a computational hypothesis.
+    - **Interdisciplinary readership**: Low. The study is highly specialized for computational virologists and poultry disease researchers. It lacks the broad appeal of a Nature-style paper.
+    - **Technical soundness**: Moderate. The MD simulations and MM-GBSA calculations are performed correctly, but the docking protocol is insufficiently described, and the lack of experimental validation is a critical weakness.
+    - **Readability for nonspecialists**: Moderate. The manuscript is generally well-written, but the technical details (e.g., MM-GBSA, PCA) may be challenging for a general audience. The abstract is clear.
+- **Recommendation posture** Currently not established from the provided evidence. The study is a preliminary computational screen that requires substantial experimental validation and a clearer demonstration of novelty to be considered for publication in a high-impact journal. A more appropriate venue would be a specialized computational or veterinary journal.
 
-- **Recommendation posture** Currently not established from the provided evidence. The abstract lacks the quantitative detail and controls necessary to assess the validity of the computational predictions. A full manuscript with docking scores, simulation convergence metrics, and appropriate comparators would be required for a meaningful evaluation. The work may be suitable for a specialised computational pharmacology journal, but it does not meet the standards of a high-impact general journal like Nature.
+## Risk / unsupported claims
+- The claim that the three phytochemicals are "potential natural inhibitors of IBV spike-mediated viral entry" is unsupported without experimental validation.
+- The claim that the study provides a "computational framework" that "may complement existing vaccination strategies" is overstated and not supported by the data.
+- The claim that Rutin exhibits the "strongest binding affinity" is based on MM-GBSA calculations with large standard deviations, which may not be statistically significant.

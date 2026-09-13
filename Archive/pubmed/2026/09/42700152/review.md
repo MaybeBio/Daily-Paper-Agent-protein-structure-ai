@@ -1,99 +1,76 @@
 ## Review setup
-- **Input scope** 全文（Perspective/Review 手稿）
-- **Assessment boundary** 仅基于提供的稿件文本；未检索或核实任何外部引用文献、数据库内容或未提供的图表数据
-- **Shared manuscript claim summary** 本文为结构T细胞受体（TCR）免疫信息学领域的视角性综述，主张深度学习蛋白质结构预测方法的成熟已使TCR结构数据能够以组库规模获取，并据此综述了TCR结构生物学原理、结构预测工具（同源建模、AlphaFold2及其衍生模型）、TCR:pMHC复合物预测、基于结构的特异性预测，以及TCR和TCR模拟物（TCRm）的计算设计前沿。
-- **Visible evidence base** 正文文本；引用了多个外部数据库（STCRDab、TCR3d、FTCRDab、OTS等）和工具（STCRpy、TCRBuilder2、TCRmodel2、tFold-TCR、TCRdock等）；提及Figure 1、2、3、4和Table 1，但图表内容未提供
-- **Missing materials affecting confidence** 所有图表（Figure 1-4、Table 1）未提供；外部基准测试和数据库内容无法独立核实；作者自身未发表结果（如IMMREP25初步实验）的细节有限
+- **Input scope** Full manuscript
+- **Assessment boundary** Scientific content, claims, evidence, and presentation as provided in the manuscript
+- **Shared manuscript claim summary** The manuscript argues that recent advances in deep learning-based protein structure prediction have transformed the field of T-cell receptor (TCR) structural immunoinformatics, enabling repertoire-scale structure prediction, structure-based specificity inference, and computational TCR design, while also identifying key outstanding challenges such as CDR3 loop prediction accuracy, data bias, and the need for better confidence metrics.
+- **Visible evidence base** Full text, including abstract, introduction, sections on TCR structure resources, insights from structure analysis, structure prediction methods, specificity inference, forward perspectives, and concluding remarks. References are cited but not provided. Figures and tables are referenced but not provided.
+- **Missing materials affecting confidence** Figures, tables, and supplementary materials are not provided. References are not provided. The manuscript is a review/perspective, so primary data is not expected, but the absence of figures and tables limits the ability to assess the visual evidence supporting key claims (e.g., Figure 2 on data bias, Figure 3 on confidence metrics, Figure 4 on design pipeline).
 
 ## Reviewer
-- **Overall assessment** 这是一篇撰写清晰、结构合理的视角性综述，及时总结了机器学习时代TCR结构预测领域的快速发展。作者是该领域的核心贡献者，文中多处引用自身工作（STCRpy、TCRBuilder2+、OTS、FTCRDab等），提供了有价值的领域内视角。综述覆盖范围全面，从实验结构数据库到预测工具、特异性推断和计算设计均有涉及。主要不足在于：部分关键论断缺乏定量支撑或仅引用作者自身未发表的工作；对领域内争议（如TCR特异性预测的可行性）的讨论可更深入；图表未提供导致部分论述无法评估。总体而言，该文对领域内研究者有参考价值，但作为视角性文章，其新颖性主要体现在综合框架而非新数据或新方法。
-- **Who would be interested in the results, and why** 计算免疫学、结构生物信息学和蛋白质设计领域的研究者会对本文感兴趣。具体包括：开发TCR特异性预测工具的研究人员（可了解结构方法的现状与局限）；TCR工程和细胞治疗开发者（可了解计算设计工具的可用性与验证状态）；以及关注AlphaFold等通用结构预测模型在免疫受体上应用效果的生物信息学方法开发者。综述中对抗体领域工具（如TAP、SPACE）与TCR领域的对比，对跨领域研究者也有参考价值。
-- **Major strengths** 1. 综述范围全面且组织清晰，从实验数据到预测工具再到设计应用，逻辑递进合理。2. 作者对领域有直接贡献，文中对工具开发动机和局限性的讨论具有实践洞察力。3. 对结构预测在特异性推断中的应用（STAG、TCRdock、NetTCR-struc）进行了有价值的梳理，这是当前领域的前沿问题。4. 对TCR与抗体结构生物学的差异（如CDR3α的结构多样性）有深入讨论，具有领域教育意义。
-- **Major Concerns** 见下方详细列表。
-- **Minor Comments** 见下方详细列表。
-- **Technical failings that need to be addressed before the case is established** R1-M1（未提供图表数据）、R1-M2（未发表结果支撑核心论断）、R1-M3（IMMREP25结果描述不完整）
-- **Assessment against Nature-style criteria** **Originality**：中等。综述框架本身并非全新，但将结构预测、特异性推断和设计三个主题整合于TCR语境下，具有一定综合价值。**Scientific importance**：较高。TCR特异性预测是免疫学核心难题，结构方法的进展值得及时综述。**Interdisciplinary readership**：中等。主要面向计算免疫学和结构生物学研究者，对实验免疫学家的可读性取决于其对机器学习概念的熟悉程度。**Technical soundness**：总体可靠，但部分关键论断依赖未提供的图表或未发表数据，无法完全验证。**Readability for nonspecialists**：良好。术语使用一致，背景介绍充分，但部分技术细节（如扩散模型、pAE指标）对非专业读者可能略显密集。综合而言，该文作为领域综述具有发表价值，但需解决证据可验证性问题。
-- **Recommendation posture** Supportive if technical concerns are resolved. 本文作为视角性综述具有领域价值，但需提供图表数据、明确区分已发表与未发表结果，并补充IMMREP25实验的完整描述。
-
-### Major Concerns
-
-- **Concern ID** R1-M1
-- **Severity** Major
-- **Blocking** Yes
-- **Axis** Evidence availability
-- **Claim pointer** 文中多处引用Figure 1-4和Table 1来支撑关键论断，包括TCR结构特征（Figure 1）、数据分布偏差（Figure 2）、置信度指标与特异性相关性（Figure 3）以及设计流程（Figure 4）。
-- **Evidence pointer** Figure 1-4, Table 1（均未提供）
-- **Concern** 所有图表均未随稿件提供，导致文中依赖这些图表的定量论断无法评估。例如，Figure 2b声称展示了TRAV-TRBV基因对联合分布的稀疏采样，Figure 3b声称展示了IMMREP25数据集中21/30的靶标肽被正确识别，但这些数据无法核实。
-- **Why it matters** 作为视角性综述，图表的可验证性是读者评估作者论断可信度的基础。缺少图表使关键定量声明成为不可验证的断言，削弱了文章作为参考资源的可靠性。
-- **Resolution test** 提供所有图表及其生成代码或详细方法说明，使读者能够独立验证文中引用的定量结果。
-
-- **Concern ID** R1-M2
-- **Severity** Major
-- **Blocking** Yes
-- **Axis** Evidence quality
-- **Claim pointer** 文中多处引用作者自身未发表的工作作为关键论断的依据，包括STCRpy工具的功能描述、FTCRDab数据库的生成、以及IMMREP25初步实验的结果。
-- **Evidence pointer** Section 2.2, Section 3.3, Section 4.3
-- **Concern** 作者在多个关键节点依赖未发表的自身工作来支撑论述。例如，STCRpy的功能描述和FTCRDab的生成过程均无对应发表文献或预印本引用；IMMREP25初步实验（21/30靶标肽识别）被描述为"brief experiment"但无方法细节。这使得读者无法区分哪些论断有同行评议支撑，哪些仅为作者个人经验。
-- **Why it matters** 视角性综述的价值部分在于其可信度。未发表结果的引用应明确标注并说明其局限性，否则读者可能将初步结果误认为已确立的领域共识。
-- **Resolution test** 对每处未发表工作明确标注"unpublished data"或"personal communication"，并提供足够的实验细节（样本量、方法、统计显著性）供读者评估；或引用已发表的预印本/同行评议文献替代。
-
-- **Concern ID** R1-M3
-- **Severity** Major
-- **Blocking** No
-- **Axis** Completeness
-- **Claim pointer** 文中声称IMMREP25是"首次"结构信息被多个团队用于特异性预测的竞赛，且多个参赛队伍"实现了统计显著的AUC0.1改进"，但未提供具体数值范围、参赛队伍数量或比较基准。
-- **Evidence pointer** Section 4.3
-- **Concern** IMMREP25结果的描述过于简略。作者提到"14/15的改进提交包含结构信息"和"最高AUC0.1为0.601"，但未说明这些结果的统计检验方法、与基线比较的具体方式，以及"结构信息"的具体定义（是预测结构还是实验结构？）。此外，作者声称"等待方法论文发表"但未提供任何引用。
-- **Why it matters** IMMREP25是文中论证"结构方法正在改善特异性预测"的关键证据。如果该论断缺乏可验证的细节，读者无法判断这是领域趋势还是个别案例。
-- **Resolution test** 补充IMMREP25的详细结果描述，包括参赛方法概览、统计检验方法、基线定义，以及引用已发表的竞赛总结报告（如有）。
-
-- **Concern ID** R1-M4
-- **Severity** Major
-- **Blocking** No
-- **Axis** Balance
-- **Claim pointer** 文中对TCR特异性预测的讨论主要聚焦于结构方法，对序列方法的进展和局限性着墨较少。
-- **Evidence pointer** Section 4.3
-- **Concern** 综述在讨论特异性预测时，将结构方法作为主要叙事线，但对序列基方法的现状（如GLIPH、TCRdist等）及其与结构方法的比较讨论不足。作者提到"序列方法难以泛化到未见抗原"，但未提供具体证据或引用支持这一论断。
-- **Why it matters** 视角性综述的价值在于提供平衡的领域图景。如果读者无法了解序列方法的现状和挑战，可能高估结构方法的相对优势。
-- **Resolution test** 增加一段对序列基特异性预测方法的简要综述，包括其代表性工具、性能基准和已知局限，并明确说明结构方法相对于序列方法的增量价值。
-
-### Minor Comments
-
-- **Concern ID** R1-m1
-- **Severity** Minor
-- **Axis** Clarity
-- **Affected element** Section 4.2.5 标题和内容
-- **Evidence pointer** Section 4.2.5
-- **Issue** 该节标题为"Deep Learning Models That Jointly Predict the TCR and pMHC Complex"，但内容同时涵盖了AlphaFold2/3等通用模型和TCR特异性模型（TCRmodel2、TCRdock、tFold-TCR），标题可能误导读者认为所有讨论的模型均为TCR特异性。
-- **Required correction** 考虑将标题改为"Deep Learning Models for TCR:pMHC Complex Prediction"或明确区分通用模型与TCR特异性模型。
-
-- **Concern ID** R1-m2
-- **Severity** Minor
-- **Axis** Consistency
-- **Affected element** 术语使用
-- **Evidence pointer** 全文
-- **Issue** 文中交替使用"TCR:pMHC"和"pMHC:TCR"两种顺序，虽不影响理解，但建议统一以保持一致性。
-- **Required correction** 统一使用"TCR:pMHC"（与标题和多数文献一致）。
-
-- **Concern ID** R1-m3
-- **Severity** Minor
-- **Axis** Completeness
-- **Affected element** Section 5.3.2
-- **Evidence pointer** Section 5.3.2
-- **Issue** 对TCR设计方法的讨论中，作者提到"Bits to Binders"竞赛的命中率范围（0.6%-38.4%），但未说明该竞赛是否涉及TCR或TCRm设计，可能造成读者混淆。
-- **Required correction** 明确说明该竞赛的靶标类型，或将其与TCR/TCRm设计的关联性解释清楚。
-
-- **Concern ID** R1-m4
-- **Severity** Minor
-- **Axis** Readability
-- **Affected element** Section 4.1.3
-- **Evidence pointer** Section 4.1.3
-- **Issue** 关于CDR3α结构多样性的讨论中，作者提到"CDR3α loop structures showing little tendency to cluster into canonical forms"，但未提供与CDR3β的定量比较（如聚类分析的具体指标）。
-- **Required correction** 补充定量比较数据（如聚类数、簇内RMSD分布等），或引用已发表的比较分析。
+- **Overall assessment** This is a comprehensive and well-structured perspective on the current state and future directions of structural TCR immunoinformatics in the era of machine learning. The authors provide a thorough overview of TCR structural biology, existing resources, computational prediction methods, and emerging applications in specificity prediction and design. The manuscript is clearly written and will be of significant interest to the immunoinformatics and structural biology communities. However, several major concerns regarding the strength of evidence for key claims, particularly regarding the transformative impact of structure-based approaches and the generalizability of current methods, need to be addressed.
+- **Who would be interested in the results, and why** Researchers in computational immunology, structural biology, and protein engineering will be interested in this perspective for its comprehensive synthesis of the field, its identification of key challenges, and its forward-looking discussion of opportunities. Clinicians and immunologists interested in TCR-based therapeutics will also find the sections on specificity prediction and design relevant.
+- **Major strengths** Comprehensive and up-to-date review of the field, covering both established principles and recent advances. Clear articulation of key challenges, such as CDR3 loop prediction accuracy, data bias, and the limitations of current specificity prediction methods. Thoughtful discussion of opportunities arising from adjacent fields (e.g., antibody research) and emerging technologies (e.g., diffusion models, inverse folding). Well-structured and clearly written, making it accessible to nonspecialists.
+- **Major Concerns**
+    - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence for central claim
+    - **Claim pointer** The manuscript claims that structure-based approaches are gaining traction and can mitigate overfitting in TCR specificity prediction, citing the IMMREP25 challenge as evidence that structure-informed approaches exhibit a statistically significant ability to generalize to unseen epitopes.
+    - **Evidence pointer** Section: Introduction, paragraph 4; Section: Inferring TCR Specificity From TCR:pMHC Complex Predictions, paragraph 4
+    - **Concern** The claim that structure-based approaches are a viable solution to the generalization problem in TCR specificity prediction is supported primarily by preliminary results from the IMMREP25 challenge, which are described as showing "modest" improvements (AUC0.1 of 0.601 vs. random baseline of 0.5). The authors also present a brief experiment with Protenix-v1 showing that in 21/30 cases, the highest pTM confidence metric corresponded to the target peptide. However, the IMMREP25 results are not yet published in full, and the authors' own experiment is described as "brief" and not systematically validated. The claim that structure-based approaches are "gaining traction" and can "mitigate overfitting" is therefore based on very preliminary evidence.
+    - **Why it matters** The central thesis of the manuscript is that structural information, enabled by machine learning, is transforming TCR analysis. If the evidence for the key application of structure-based specificity prediction is weak, the overall impact and novelty of the perspective are diminished.
+    - **Resolution test** Provide a more detailed and critical assessment of the IMMREP25 results, including the specific methods used and the statistical significance of the improvements. The authors' own Protenix-v1 experiment should be expanded with a clear description of the dataset, methodology, and statistical analysis. Alternatively, the claims should be tempered to reflect the preliminary nature of the evidence.
+    - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence for central claim
+    - **Claim pointer** The manuscript claims that TCR-specific structure predictors perform similarly to general protein structure predictors, and that this is likely because general models also train on TCR data, and TCR data is relatively sparse.
+    - **Evidence pointer** Section: Outstanding Challenges in TCR and TCR:pMHC Structure Prediction, paragraph 1; Section: Concluding Remarks, paragraph 2
+    - **Concern** The claim that TCR-specific models do not outperform general models is supported by a single reference to an independent benchmark (reference 98). The authors do not provide any details of this benchmark, such as the dataset used, the metrics evaluated, or the specific models compared. Without this information, the reader cannot assess the validity of this important claim, which has significant implications for the field.
+    - **Why it matters** This claim directly challenges the value proposition of developing TCR-specific prediction tools. If it is true, it suggests that the field should focus on improving general protein structure prediction models rather than developing specialized ones. The lack of supporting evidence weakens the manuscript's authority.
+    - **Resolution test** Provide a more detailed summary of the benchmark results, including the dataset, metrics, and key findings. If the benchmark is not publicly available, the authors should state this and discuss the limitations of relying on a single, unreferenced source.
+    - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Completeness of analysis
+    - **Claim pointer** The manuscript claims that the CDR3α loop is at least as structurally diverse as the CDR3β loop, and that this is a key factor explaining the comparable prediction errors for both loops.
+    - **Evidence pointer** Section: TCR Structure Predictions Are Indicative of Equivalent CDR3α and CDR3β Structure Diversity, paragraph 1-3
+    - **Concern** The evidence for the claim that CDR3α is as structurally diverse as CDR3β is based on an analysis of solved TCR structures, which the authors themselves acknowledge are heavily biased towards a small number of gene pairs. The analysis of canonical clusters (Section 4.1.3) shows that only 22.4% of CDR3α loops could be assigned to a canonical cluster, compared to higher percentages for CDR1α and CDR2α. However, this does not directly demonstrate that CDR3α is as diverse as CDR3β, as the analysis for CDR3β is not presented. The claim is also supported by the observation that prediction errors for both loops are similar, but this could be due to other factors, such as the quality of the training data.
+    - **Why it matters** The claim about the equivalent structural diversity of CDR3α and CDR3β is a key insight that challenges the conventional wisdom that CDR3β is the primary driver of specificity. If this claim is not well-supported, it weakens the manuscript's contribution to the understanding of TCR biology.
+    - **Resolution test** Provide a direct comparison of the structural diversity of CDR3α and CDR3β loops, using metrics such as RMSD clustering or principal component analysis, on a dataset that is as unbiased as possible. Acknowledge the limitations of the current analysis due to data bias.
+- **Minor Comments**
+    - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Section: TCR Structure Prediction, paragraph 1
+    - **Evidence pointer** location not provided
+    - **Issue** The sentence "The current average RMSD of deep learning models lies between 1.5 and 2.5 Å for CDR3β loop and between 1.5 and 3.0 Å for the CDR3α loop" is ambiguous. It is unclear whether these are median or mean values, and what the range represents (e.g., standard deviation, interquartile range).
+    - **Required correction** Specify the metric (e.g., median, mean) and the measure of dispersion (e.g., standard deviation, interquartile range) for the reported RMSD values.
+    - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Completeness
+    - **Affected element** Section: TCR Structure Resources, paragraph 1
+    - **Evidence pointer** location not provided
+    - **Issue** The manuscript states that "as of July 2026 a total of 781 PDB entries had been consolidated in these repositories" but does not provide a breakdown of how many of these are unique TCRs versus multiple structures of the same TCR.
+    - **Required correction** Provide a more detailed analysis of the redundancy in the TCR structure database, such as the number of unique TCR sequences or the number of unique TRAV-TRBV gene pairs represented.
+    - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Section: TCR:pMHC Complex Structure Prediction, paragraph 1
+    - **Evidence pointer** location not provided
+    - **Issue** The description of the HADDOCK docking protocol is somewhat unclear. The authors state that "the residues of the six TCR CDR loops and the peptide residues are defined as 'actively' constrained residues in the simulation; additional unburied MHC residues within 6 Å of the peptide were defined as 'passively' constrained residues." It is not clear how the "unburied MHC residues" are defined.
+    - **Required correction** Clarify the definition of "unburied MHC residues" (e.g., residues with solvent-accessible surface area above a certain threshold).
+    - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Completeness
+    - **Affected element** Section: TCR Structure Resources, paragraph 2
+    - **Evidence pointer** location not provided
+    - **Issue** The manuscript mentions that "we developed STCRpy" but does not provide a citation for this tool. The reference is given as [66], but the full reference is not provided in the manuscript.
+    - **Required correction** Ensure that all tools and databases mentioned are properly cited with full references.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2
+- **Assessment against Nature-style criteria** **Originality:** The perspective provides a valuable synthesis of recent advances, but the core ideas (e.g., using structure prediction for specificity, the challenges of CDR3 prediction) are not entirely novel. The discussion of the equivalent diversity of CDR3α and CDR3β and the potential for a structural characterization of the VJ-gene space are interesting, but the evidence is preliminary. **Scientific importance:** The topic is of high importance to the immunology and structural biology communities. The manuscript effectively identifies key challenges and opportunities. **Interdisciplinary readership:** The manuscript is written in a clear and accessible style, making it suitable for a broad audience of computational and experimental researchers. **Technical soundness:** The technical content appears sound, but the lack of detail on key benchmarks (R1-M2) and the reliance on preliminary results (R1-M1) weaken the overall technical foundation. **Readability for nonspecialists:** The manuscript is well-structured and uses clear language, with helpful explanations of key concepts. The figures (not provided) would likely enhance readability.
+- **Recommendation posture** Supportive if technical concerns are resolved. The manuscript provides a valuable perspective, but the central claims regarding the transformative impact of structure-based approaches and the performance of TCR-specific models need to be supported by stronger evidence. The authors should address the concerns about the IMMREP25 results and the benchmark of TCR-specific models, and provide more detailed analyses where possible.
 
 ## Risk / unsupported claims
-- 文中声称"结构信息在IMMREP25中被多个团队使用并实现统计显著的泛化改进"，但未提供可验证的竞赛结果细节或引用。
-- 作者自身未发表的初步实验（Protenix预测IMMREP25数据集中21/30靶标肽）被用作结构方法有效性的证据，但无方法细节和统计检验。
-- 文中对STCRpy和FTCRDab的功能描述和性能声明无对应发表文献支撑。
-- 声称"TCR:pMHC复合物预测的准确性是特异性推断的关键限制因素"缺乏直接比较证据。
-- 对序列基特异性预测方法的局限性讨论缺乏具体引用和定量支撑。
+- The claim that structure-based approaches can mitigate overfitting in TCR specificity prediction is based on preliminary and unpublished results from IMMREP25 and a brief, unvalidated experiment by the authors. This claim is not yet established.
+- The claim that TCR-specific structure predictors perform similarly to general protein structure predictors is supported by a single, unreferenced benchmark. The evidence for this claim is insufficient.
+- The claim that CDR3α is as structurally diverse as CDR3β is supported by indirect evidence and requires a more direct comparison.

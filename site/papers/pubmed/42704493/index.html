@@ -29,7 +29,7 @@
          · 全文(pmc)
          · <a href="https://pubmed.ncbi.nlm.nih.gov/42704493/">原文</a>
       </div>
-      <p class="one-liner">该文通过分子动力学模拟比较两种环肽抑制剂与寨卡病毒NS2B/NS3蛋白酶的结合模式，涉及蛋白质-配体结合构象采样和自由能计算，属于蛋白质结构相关的计算模拟研究。</p>
+      <p class="one-liner">该文通过分子动力学模拟比较两种环肽抑制剂与寨卡病毒NS2B/NS3蛋白酶的结合模式、构象变化和结合自由能，直接涉及蛋白质-配体相互作用的计算模拟，属于蛋白质结构计算课题。</p>
     </div>
   </div>
   
@@ -41,7 +41,7 @@
   
   <section>
     <h2>摘要翻译</h2>
-    <div class="md">寨卡病毒NS2B/NS3蛋白酶是一个重要的抗病毒靶点，大环肽抑制剂因其结合多碱性识别基序与构象限制而成为有前景的支架。在此，我们研究了两种结构相关的环肽抑制剂，分别称为CP1和CP2，它们共享一个保守的大环框架，但在连接子取代基的化学性质上有所不同。分子动力学 (molecular dynamics) 模拟显示，两种肽在水溶液中均表现出广泛的分子内距离分布，表明关键的晶体接触在未结合状态下并非固有维持。与蛋白酶结合后，CP2采用了更明确的构象集合，并保持了与其晶体排列相容的短分子内接触，而CP1则失去了其晶体d2接触，并采样了更广泛的结合态分布。CP2还显示出更集中的相互作用网络，涉及催化区和底物识别区的残基，以及更有利的结合自由能估计。方法：使用Amber 20对每种环肽在水溶液及与寨卡病毒NS2B/NS3蛋白酶结合状态下进行了分子动力学模拟。蛋白质用ff14SB力场描述，环肽用GAFF2，系统用TIP3P水模型溶剂化。每个系统进行了三次独立的500 ns模拟。轨迹通过结构聚类、分子内距离分布、残基水平相互作用分析以及MM/PBSA和MM/GBSA结合自由能计算进行分析。</div>
+    <div class="md">寨卡病毒NS2B/NS3蛋白酶是一个重要的抗病毒靶点，大环肽抑制剂因其将多碱性识别基序与构象限制相结合而成为有前景的支架。在此，我们研究了两种结构相关的环肽抑制剂，分别称为CP1和CP2，它们共享一个保守的大环框架，但连接子取代基的化学性质不同。分子动力学 (molecular dynamics) 模拟显示，两种肽在水溶液中均表现出广泛的分子内距离分布，表明关键的晶体学接触在未结合状态下并非固有地维持。与蛋白酶结合后，CP2采用了更明确的构象集合，并保持了与其晶体学排列兼容的短分子内接触，而CP1则失去了其晶体学d2接触，并采样了更广泛的结合态分布。CP2还显示出涉及催化区和底物识别区残基的更集中的相互作用网络，以及更有利的结合自由能估计。方法：使用Amber 20对每个环肽在水溶液中以及与寨卡病毒NS2B/NS3蛋白酶结合的状态下进行分子动力学 (molecular dynamics) 模拟。蛋白质用ff14SB力场描述，环肽用GAFF2力场描述，系统用TIP3P水模型溶剂化。每个系统进行了三次独立的500 ns模拟。轨迹通过结构聚类、分子内距离分布、残基级相互作用分析以及MM/PBSA和MM/GBSA结合自由能计算进行分析。</div>
   </section>
   
   
@@ -58,26 +58,26 @@
 <li><strong>关键词</strong>: Zika virus; NS2B/NS3 protease; cyclic peptide inhibitors; molecular dynamics; MM/PBSA; MM/GBSA</li>
 <li><strong>DOI/arXiv 号</strong>: 10.1007/s00894-026-06945-8</li>
 <li><strong>代码</strong>: 未提供</li>
-<li><strong>数据</strong>: PDB ID 7PFY（CP1 复合物）、7PGC（CP2 复合物）；补充材料见 https://doi.org/10.1007/s00894-026-06945-8</li>
-<li><strong>阅读日期</strong>: 2026-09-07</li>
-<li><strong>在课题方向中的位置</strong>: 该文属于「蛋白质结构相关计算研究 × 物理模拟（MD）」方向，聚焦环肽抑制剂与黄病毒蛋白酶复合物的构象动态与结合自由能比较分析，不涉及深度学习/AI 方法，但提供了环肽构象采样、结合自由能计算、残基级相互作用分析的可迁移方法论。</li>
+<li><strong>数据</strong>: PDB 结构 7PFY（CP1 复合物）、7PGC（CP2 复合物）；补充材料见 DOI 链接</li>
+<li><strong>阅读日期</strong>: 2026-07-09（按当前日期）</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × 物理模拟（MD）」方向，聚焦环肽抑制剂与黄病毒蛋白酶复合物的构象动态与结合自由能比较分析，不涉及深度学习/AI 方法，但提供了 MD 模拟流程、MM/PBSA(GBSA) 计算、构象聚类与残基相互作用分析的可迁移范式。</li>
 </ul>
 <h2>02 一句话总结</h2>
-<p>该文通过 Amber 20 分子动力学模拟（每体系 3×500 ns 重复），比较了两个共享大环骨架但连接子（linker）化学性质不同的环肽抑制剂（CP1 与 CP2）在水溶液及与 ZIKV NS2B/NS3 蛋白酶结合状态下的构象行为，发现 CP2 在结合态中保留了晶体学 d1 分子内接触并呈现更聚焦的相互作用网络与更优的结合自由能，而 CP1 丢失了其 d2 接触并采样更宽的构象分布。</p>
+<p>本文通过 3×500 ns 的 Amber MD 模拟，比较两个共享大环骨架但 linker 化学性质不同的环肽抑制剂（CP1 与 CP2）在水溶液及与 ZIKV NS2B/NS3 蛋白酶结合状态下的构象行为，发现 CP2 在结合态保留了晶体学 d1 分子内接触并呈现更聚焦的相互作用网络与更优的结合自由能，而 CP1 丢失 d2 接触并采样更宽的构象分布。</p>
 <h2>03 研究问题</h2>
 <ul>
-<li><strong>具体问题</strong>: 环肽抑制剂的连接子（linker）化学修饰如何影响其在水溶液中的构象偏好、与 ZIKV NS2B/NS3 蛋白酶结合后的构象重排、残基级相互作用模式及结合自由能？</li>
-<li><strong>为什么重要</strong>: ZIKV NS2B/NS3 蛋白酶是抗病毒药物设计的关键靶点；环肽抑制剂兼具多碱性识别基序与构象限制优势，但连接子化学对结合态构象组织与能量学的影响机制尚不清楚。理解这一机制可为理性设计更优环肽抑制剂提供原子级依据。</li>
-<li><strong>现有方法为何不足</strong>: 先前的晶体学研究提供了静态快照，但无法揭示溶液态与结合态之间的构象动态差异；且同一大环骨架下不同连接子取代基的动态行为比较缺乏系统性 MD 研究。</li>
-<li><strong>精确研究问题</strong>: Can atomistic MD simulations distinguish the linker-dependent conformational and energetic differences between two cyclic peptide inhibitors (CP1 vs CP2) bound to the ZIKV NS2B/NS3 protease, and correlate these differences with their experimentally reported potency gap?</li>
+<li><strong>具体问题</strong>: 环肽抑制剂中 linker 取代基的化学性质差异如何影响其在水溶液中的构象偏好、与 ZIKV NS2B/NS3 蛋白酶结合后的构象重组织、分子内稳定化接触以及结合自由能？</li>
+<li><strong>为什么重要</strong>: ZIKV NS2B/NS3 蛋白酶是抗病毒药物设计的关键靶点；环肽抑制剂结合多碱性识别基序与构象限制，但 linker 化学修饰对结合态构象与能量的动态影响尚不清楚。理解 linker 如何调控结合态预组织可为理性设计更优环肽抑制剂提供依据。</li>
+<li><strong>现有方法为何不足</strong>: 晶体结构仅提供静态快照，无法揭示溶液态与结合态的构象动态差异；先前的实验研究（Huber et al.）虽报告了活性差异（CP2 Ki=2.33 nM vs CP1 340 nM），但缺乏原子水平的动态解释。</li>
+<li><strong>精确研究问题</strong>: Can atomistic MD simulations distinguish the linker-dependent conformational and energetic differences between two cyclic peptide inhibitors bound to the ZIKV NS2B/NS3 protease, and can these differences explain their experimentally observed potency gap?</li>
 </ul>
 <h2>04 背景与发展脉络</h2>
 <ul>
-<li><strong>阶段一：环肽作为抑制剂骨架的兴起</strong>。环化增强蛋白水解稳定性与构象限制，多碱性基序（如精氨酸/胍基）识别蛋白酶活性位点。代表：Huber et al. 系列大环抑制剂（本文引文 [15]）。优点：高亲和力、可口服性潜力；局限：构象-活性关系复杂，连接子修饰效应难以预测。</li>
-<li><strong>阶段二：黄病毒 NS2B/NS3 蛋白酶的结构与抑制研究</strong>。NS2B 辅因子与 NS3 丝氨酸蛋白酶域（催化三联体 His51-Asp75-Ser135）构成活性位点。代表：晶体结构解析（PDB 7PFY、7PGC）。优点：提供静态结合模式；局限：无法反映动态构象 ensemble。</li>
-<li><strong>阶段三：MD 模拟用于抑制剂构象与结合自由能分析</strong>。Amber 力场（ff14SB/GA2FF2）+ MM/PBSA、MM/GBSA 端点方法。优点：可采样构象动态、分解能量贡献；局限：力场精度、采样时间尺度、端点方法忽略熵与构象耦合的近似。</li>
-<li><strong>本文位置</strong>: 在阶段三框架内，通过比较两个共享骨架但连接子不同的环肽，将连接子化学与结合态构象组织、分子内接触保留、残基级相互作用网络及结合自由能关联起来，为环肽抑制剂的连接子优化提供动态视角。</li>
-<li><strong>脉络核验状态</strong>: 仅本文框架（基于本文引文与叙述重建，未经外部系统核验）。</li>
+<li><strong>阶段一: 黄病毒蛋白酶抑制剂开发</strong> — 代表性方法: 线性肽抑制剂、拟肽类抑制剂；优点: 高亲和力；局限: 代谢稳定性差、膜通透性低。</li>
+<li><strong>阶段二: 大环化策略</strong> — 代表性方法: 环肽抑制剂（如 Huber et al. 系列）；优点: 构象限制增强稳定性与亲和力；局限: 环化 linker 的化学修饰对构象与活性的影响缺乏系统动态理解。</li>
+<li><strong>阶段三: MD 模拟辅助环肽构象分析</strong> — 代表性方法: 增强采样、MM/PBSA(GBSA) 结合自由能计算；优点: 提供动态构象系综与能量分解；局限: 力场精度、采样时间尺度限制。</li>
+<li><strong>本文位置</strong>: 在阶段三框架下，通过比较两个结构相关但活性差异显著的环肽（CP1 vs CP2），建立 linker 化学性质 → 结合态构象预组织 → 相互作用网络 → 结合自由能的动态解释链条。</li>
+<li><strong>脉络标注</strong>: 该脉络基于本文引言与讨论的叙述框架，未经外部系统核验。</li>
 </ul>
 <h2>05 核心痛点</h2>
 <table>
@@ -91,50 +91,44 @@
 </thead>
 <tbody>
 <tr>
-<td>环肽连接子修饰对活性的影响机制不明</td>
-<td>CP1（L-缬氨酸连接子）活性显著低于 CP2（D-高环己基丙氨酸连接子），但共享同一大环骨架</td>
-<td>作者解释：连接子的疏水性与空间取向影响大环的分子内接触保留与结合态构象组织</td>
-<td>Introduction 节（引用 Huber et al. 的 Ki 值：CP2 Ki=2.33 nM vs CP1 340 nM）</td>
+<td>环肽 linker 化学修饰对活性的影响缺乏动态解释</td>
+<td>CP1 活性远低于 CP2（340 nM vs 2.33 nM），但两者共享相同大环骨架</td>
+<td>作者认为 linker 的化学性质（CP1 为 L-缬氨酸，CP2 为 D-高环己基丙氨酸）影响结合态构象预组织与分子内稳定化接触</td>
+<td>Introduction 节引用 Huber et al. 实验数据；Results 图 4 显示 CP2 保留 d1 接触而 CP1 丢失 d2 接触</td>
 </tr>
 <tr>
-<td>晶体结构无法反映溶液态构象动态</td>
-<td>水溶液中两肽均显示宽的分子内距离分布，与晶体构象不一致</td>
-<td>作者解释：环肽在未结合状态下高度柔性，晶体接触并非固有构象偏好</td>
-<td>Results 图 S4、图 4</td>
+<td>晶体结构无法反映溶液态与结合态的构象差异</td>
+<td>水溶液中两肽均显示宽分子内距离分布，与晶体构象不一致</td>
+<td>作者解释为环肽在无蛋白约束下具有高构象灵活性</td>
+<td>Results 图 S4 与图 4 的溶液态分布数据</td>
 </tr>
 <tr>
-<td>结合态构象重排程度因连接子而异</td>
-<td>CP2 结合后 d1 距离坍缩至 ~2.9 Å（匹配晶体），CP1 的 d2 距离丢失并移至 ~6 Å</td>
-<td>作者解释：CP1 的 L-缬氨酸连接子导致不利的疏水接触（如与 V155），破坏分子内稳定化</td>
-<td>Results 图 4、Discussion 节</td>
-</tr>
-<tr>
-<td>结合自由能预测与实验趋势一致但绝对值偏差大</td>
-<td>MM/PBSA 与 MM/GBSA 均显示 CP2 更优，但绝对值远低于实验 ΔG</td>
-<td>作者解释：端点方法忽略显式熵与构象耦合，应作比较性解读</td>
-<td>Results 表 S2、Discussion 节</td>
+<td>结合态构象预组织程度难以量化</td>
+<td>CP1 与 CP2 在结合态显示不同的构象收敛性</td>
+<td>作者归因于 linker 与蛋白疏水残基（如 V155）的相互作用差异</td>
+<td>Results 图 4 与图 S3 的 RMSD/聚类分析</td>
 </tr>
 </tbody>
 </table>
 <h2>06 核心思想</h2>
 <ol>
-<li><strong>表面方法</strong>: 对两个环肽抑制剂（CP1、CP2）分别在水溶液和与 ZIKV NS2B/NS3 蛋白酶结合状态下进行 3×500 ns 的 Amber 20 MD 模拟，结合结构聚类、分子内距离分布、残基级相互作用分析、MM/PBSA 与 MM/GBSA 结合自由能计算及计算丙氨酸扫描。</li>
-<li><strong>核心洞察</strong>: 环肽的连接子化学不仅影响其与蛋白的直接接触，更关键的是决定大环骨架在结合态中能否保留晶体学分子内接触（如 d1/d2 的羰基-胍基相互作用）。CP2 的疏水 D-高环己基丙氨酸连接子促进了结合态构象的预组织（preorganization），而 CP1 的 L-缬氨酸连接子导致不利的疏水接触，破坏分子内稳定化，从而削弱结合亲和力。</li>
-<li><strong>可能的普适教训</strong> [Analysis]: 对于构象受限的环肽/大环抑制剂，结合亲和力不仅取决于直接的蛋白-配体接触，还取决于配体在结合态中维持自身有利分子内相互作用的「构象记忆」能力。MD 模拟中的分子内距离分布可作为评估环肽「构象预组织」的定量指标，这一思路可迁移到其他大环/环肽体系的设计与筛选。</li>
+<li><strong>表面方法</strong>: 对两个环肽抑制剂分别进行水溶液与蛋白结合态的 3×500 ns MD 模拟，结合 RMSD/RMSF、结构聚类、分子内距离分布、MM/PBSA 与 MM/GBSA 结合自由能计算、残基相互作用指纹与计算丙氨酸扫描。</li>
+<li><strong>核心洞察</strong>: 环肽的 linker 化学性质通过调控分子内羰基与 P1 胍基的取向（d1/d2 接触），决定结合态构象预组织程度；CP2 的 linker 设计更有利于在蛋白环境中稳定晶体学接触，从而形成聚焦于催化残基的相互作用网络与更优的结合自由能。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>: 环肽抑制剂的活性不仅取决于与靶点的直接接触，还取决于 linker 是否能在结合态维持有利的分子内稳定化接触；MD 模拟中的分子内距离分布可作为评估环肽「构象预组织倾向」的动态描述符，适用于其他环肽-蛋白酶体系。</li>
 </ol>
 <h2>07 方法总览</h2>
 <ul>
-<li><strong>输入</strong>: PDB 7PFY（CP1-蛋白酶复合物晶体结构）、7PGC（CP2-蛋白酶复合物晶体结构）；环肽配体结构（GAFF2 参数化，HF/6-31G* 静电势拟合 RESP 电荷）</li>
-<li><strong>输出</strong>: 结合态与溶液态的构象 ensemble、分子内距离分布、残基级相互作用图谱、MM/PBSA 与 MM/GBSA 结合自由能、计算丙氨酸扫描 ΔΔG 值</li>
+<li><strong>输入</strong>: PDB 晶体结构 7PFY（CP1 复合物）、7PGC（CP2 复合物）；配体结构经 Gaussian09 HF/6-31G* 优化</li>
+<li><strong>输出</strong>: 构象系综、RMSD/RMSF 曲线、聚类代表结构、分子内距离分布、MM/PBSA(GBSA) 结合自由能、残基相互作用指纹、丙氨酸扫描 ΔΔG 值</li>
 <li><strong>模块</strong>:
-  1. 结构准备：PDB2PQR 质子化（pH 7.4，His51 为 HID 互变异构体）、UCSF Chimera 加氢、Gaussian09 HF/6-31G* 优化、RESP 电荷拟合、GAFF2 参数分配、Parmchk2 补全缺失参数
-  2. 体系构建：tLEaP 生成拓扑，TIP3P 水盒子（溶质-盒边最小距离 12 Å），中和离子
-  3. 能量最小化：多阶段（水分子/氢原子/全部原子）
-  4. 加热与平衡：10→298 K 逐步加热（200 ps），密度平衡（300 ps），等温等压平衡（500 ps，Berendsen 恒压器）
-  5. 生产模拟：3 个独立重复 × 500 ns/体系，Langevin 恒温器（298 K），8 Å 非键截断（水溶液体系）/10 Å（复合物体系），Verlet 积分，2 fs 步长
-  6. 轨迹分析：RMSD/RMSF、k-means 结构聚类（5 类，RMSD 相似性度量）、分子内距离分布（d1/d2）、残基级相互作用图谱、MM/PBSA（CHAGB 半径优化）与 MM/GBSA（igb=2，α=0.8, β=0.0, γ=2.909125）结合自由能、正常模熵校正、计算丙氨酸扫描</li>
-<li><strong>工具</strong>: Amber 20（tLEaP, pmemd.cuda）、Gaussian09、UCSF Chimera、PDB2PQR/APBS 服务器、SIETRAJ</li>
-<li><strong>假设</strong>: 力场（ff14SB/GAFF2/TIP3P）能准确描述蛋白-环肽相互作用；晶体结构为合理的初始结合姿态；3×500 ns 采样足以捕捉关键构象状态；端点方法适用于相对比较。</li>
+  1. 结构准备: PDB2PQR 质子化（pH 7.4，His51 为 HID 互变异构体）、UCSF Chimera 加氢
+  2. 参数化: 蛋白 Amber ff14SB；配体 GAFF2 + RESP 电荷（HF/6-31G* 静电势）
+  3. 系统构建: TIP3P 水盒子，最小溶质-盒边距 12 Å，中和离子
+  4. 能量最小化: 多阶段（水分子/氢原子/全系统）
+  5. 加热与平衡: 10→298 K 200 ps 加热，300 ps 密度调整，500 ps NPT 平衡
+  6. 生产模拟: 3×500 ns NPT，298 K（Langevin 恒温），1 atm（Berendsen 恒压），8/10 Å 非键截断，2 fs 步长，Verlet 积分
+  7. 分析: RMSD/RMSF、k-means 聚类（5 类）、DSSP 二级结构、分子内距离分布、MM/PBSA(GBSA)（igb=2，α=0.8，盐浓度 0.1 M）、残基相互作用指纹、计算丙氨酸扫描（SIETRAJ）</li>
+<li><strong>假设</strong>: 晶体结构为初始结合构象；力场参数可准确描述环肽构象；500 ns 时间尺度足以采样结合态构象系综</li>
 </ul>
 <h2>08 核心模块拆解</h2>
 <table>
@@ -150,81 +144,80 @@
 </thead>
 <tbody>
 <tr>
-<td>配体参数化（RESP/GAFF2）</td>
-<td>为环肽配体生成可靠的力场参数与原子电荷</td>
-<td>环肽含非标准残基（D-高环己基丙氨酸），需从头参数化</td>
-<td>输入：HF/6-31G* 优化几何；输出：GAFF2 参数与 RESP 电荷</td>
-<td>Methods 节</td>
-<td>参数不准确将直接导致结合自由能与构象分布的系统偏差 [预期]</td>
+<td>结构准备与质子化</td>
+<td>确定蛋白与配体的质子化状态</td>
+<td>His51 催化残基的互变异构体影响催化机制与相互作用</td>
+<td>输入: PDB 结构；输出: 质子化结构</td>
+<td>Methods 节明确 His51 为 HID</td>
+<td>质子化错误可能导致催化残基相互作用失真 [预期]</td>
 </tr>
 <tr>
-<td>多阶段平衡协议</td>
-<td>逐步消除初始接触并稳定体系</td>
-<td>直接生产模拟可能导致局部应力与不真实构象</td>
-<td>输入：最小化结构；输出：298 K/1 atm 平衡构象</td>
-<td>Methods 节</td>
-<td>平衡不充分可能导致初始瞬态主导轨迹 [预期]</td>
+<td>配体参数化</td>
+<td>生成 RESP 电荷与 GAFF2 参数</td>
+<td>环肽含非标准残基（D-高环己基丙氨酸），需自定义参数</td>
+<td>输入: 优化后几何；输出: 配体力场参数</td>
+<td>Methods 节描述 HF/6-31G* + RESP</td>
+<td>电荷误差直接影响静电相互作用与结合自由能 [预期]</td>
 </tr>
 <tr>
-<td>三重复 500 ns 生产模拟</td>
-<td>评估采样可重复性并覆盖构象空间</td>
-<td>环肽构象景观崎岖，单轨迹可能陷入局部态</td>
-<td>输入：平衡结构；输出：3×500 ns 轨迹</td>
-<td>Results 图 2（重复间聚类结构高度重叠）</td>
-<td>减少重复数将降低构象采样可信度 [预期]</td>
+<td>MD 生产模拟</td>
+<td>生成构象系综</td>
+<td>捕捉溶液态与结合态动态行为</td>
+<td>输入: 平衡系统；输出: 3×500 ns 轨迹</td>
+<td>Results 图 2 显示复制间收敛</td>
+<td>采样不足将无法区分构象差异 [预期]</td>
 </tr>
 <tr>
-<td>结构聚类（k-means）</td>
-<td>识别主导构象状态并提取代表结构</td>
-<td>压缩轨迹信息，便于比较两肽的构象偏好</td>
-<td>输入：复合物轨迹；输出：5 个聚类及代表结构</td>
-<td>Results 图 2、图 S5</td>
-<td>无法识别罕见但可能重要的构象态 [预期]</td>
+<td>分子内距离分析</td>
+<td>监测 d1/d2 接触的保持</td>
+<td>直接检验 linker 对分子内稳定化的影响</td>
+<td>输入: 轨迹；输出: 距离分布</td>
+<td>Results 图 4 显示 CP2 保留 d1 而 CP1 丢失 d2</td>
+<td>无法评估构象预组织 [实测核心证据]</td>
 </tr>
 <tr>
-<td>分子内距离分布（d1/d2）</td>
-<td>定量监测大环骨架的分子内接触保留</td>
-<td>直接检验晶体学接触在动态中的维持程度</td>
-<td>输入：轨迹坐标；输出：距离分布直方图</td>
-<td>Results 图 4、图 S4</td>
-<td>移除后无法区分两肽的构象预组织差异 [实测核心证据]</td>
+<td>MM/PBSA(GBSA)</td>
+<td>估算结合自由能</td>
+<td>比较两肽结合亲和力</td>
+<td>输入: 轨迹；输出: ΔG 值</td>
+<td>Results 节报告 CP2 更优（PB: −34.8 vs −27.6 kcal/mol）</td>
+<td>无法支持活性差异的结论 [实测核心证据]</td>
 </tr>
 <tr>
-<td>MM/PBSA 与 MM/GBSA</td>
-<td>估算结合自由能并分解残基贡献</td>
-<td>提供能量学排序以支持结构观察</td>
-<td>输入：轨迹快照；输出：ΔG 及各能量项</td>
-<td>Results 表 S2、图 5b</td>
-<td>移除后缺乏定量能量学支持 [实测]</td>
+<td>残基相互作用指纹</td>
+<td>识别关键接触残基</td>
+<td>定位相互作用网络差异</td>
+<td>输入: 轨迹；输出: 接触频率图</td>
+<td>Results 图 5a</td>
+<td>无法解释 CP2 更聚焦的相互作用 [实测]</td>
 </tr>
 <tr>
 <td>计算丙氨酸扫描</td>
-<td>识别关键结合残基</td>
-<td>验证相互作用网络的功能重要性</td>
-<td>输入：代表结构；输出：ΔΔG 值</td>
+<td>评估单残基贡献</td>
+<td>验证关键残基（Asp75, Asp129）的作用</td>
+<td>输入: 轨迹；输出: ΔΔG 值</td>
 <td>Results 图 S6</td>
-<td>移除后无法判断残基贡献的相对重要性 [实测]</td>
+<td>无法确认静电锚定贡献 [实测]</td>
 </tr>
 </tbody>
 </table>
 <h2>09 关键公式符号</h2>
 <ul>
-<li><strong>ΔE_MM = ΔE_int + ΔE_ele + ΔE_vdW</strong>（式 1）：分子力学能量项分解。ΔE_int 为内能（键、角、二面角），ΔE_ele 为静电相互作用，ΔE_vdW 为范德华相互作用。</li>
-<li><strong>ΔG_sol = ΔG_pl + ΔG_np</strong>（式 2）：溶剂化自由能分解。ΔG_pl 为极性溶剂化项（PB 或 GB 模型），ΔG_np 为非极性溶剂化项（通常与溶剂可及表面积 SASA 成正比）。</li>
-<li><strong>ΔG_total = ΔE_MM + ΔG_sol</strong>（式 3）：总结合自由能（未含熵项）。</li>
-<li><strong>ΔG_bind = ΔG_MM/GBSA − TΔS_NMA</strong>（式 4）：熵校正后的结合自由能。TΔS_NMA 由正常模分析估算。</li>
-<li><strong>ΔΔG_Ala = ΔG_bind^Ala − ΔG_bind^WT</strong>（式 5）：丙氨酸突变的结合自由能变化。正值表示该残基对结合有贡献。</li>
-<li><strong>直觉</strong>: 这些公式将结合自由能分解为可计算的能量项，用于比较两配体的相对结合强度与关键残基贡献，而非预测绝对亲和力。</li>
+<li><strong>ΔE_MM = ΔE_int + ΔE_ele + ΔE_vdW</strong> (Eq. 1): 分子力学能量，含内能、静电、范德华项</li>
+<li><strong>ΔG_sol = ΔG_pl + ΔG_np</strong> (Eq. 2): 溶剂化自由能，含极性与非极性项</li>
+<li><strong>ΔG_total = ΔE_MM + ΔG_sol</strong> (Eq. 3): 总结合自由能（不含熵）</li>
+<li><strong>ΔG_bind = ΔG_MM/GBSA − TΔS_NMA</strong> (Eq. 4): 熵校正结合自由能，NMA 为简正模分析</li>
+<li><strong>ΔΔG_Ala = ΔG_bind^Ala − ΔG_bind^WT</strong> (Eq. 5): 丙氨酸扫描突变效应，正值表示原残基有利</li>
+<li>符号说明: ΔE_int 内能变化；ΔE_ele 静电；ΔE_vdW 范德华；ΔG_pl 极性溶剂化；ΔG_np 非极性溶剂化；TΔS_NMA 熵项</li>
 </ul>
 <h2>10 实验设计与证据链</h2>
 <ul>
-<li><strong>数据集/群体</strong>: 2 个环肽抑制剂（CP1、CP2），各 2 个体系（水溶液、蛋白酶复合物），共 4 个体系 × 3 重复 = 12 条 500 ns 轨迹</li>
-<li><strong>规模</strong>: 每体系 3×500 ns = 1.5 µs 总采样；复合物体系含蛋白（约 200 残基）+ 配体 + 水 + 离子</li>
-<li><strong>指标</strong>: RMSD、RMSF、聚类结构重叠、d1/d2 距离分布、MM/PBSA 与 MM/GBSA 结合自由能、残基级能量分解、丙氨酸扫描 ΔΔG</li>
-<li><strong>基线</strong>: 晶体结构（PDB 7PFY、7PGC）作为参考构象；实验 Ki 值（CP2: 2.33 nM vs CP1: 340 nM）作为外部验证</li>
-<li><strong>骨干/仪器</strong>: Amber 20（pmemd.cuda），GPU 加速；Coaraci 超算（Fapesp 2019/17874-0）与 CCES-Unicamp（Fapesp 2013/08293-7）</li>
-<li><strong>oracle 输入</strong>: 晶体结构中的配体结合姿态作为初始坐标</li>
-<li><strong>评测协议</strong>: 三重复一致性检查（聚类结构重叠）；结合自由能比较（PB 与 GB 两种方法交叉验证）；丙氨酸扫描验证关键残基</li>
+<li><strong>数据集</strong>: 2 个环肽-蛋白酶复合物（PDB 7PFY、7PGC），每个系统 3 个独立复制</li>
+<li><strong>规模</strong>: 每系统 3×500 ns = 1.5 µs 总采样；水溶液系统 2 个 + 结合态系统 2 个 = 4 个系统，共 12 条轨迹</li>
+<li><strong>指标</strong>: RMSD、RMSF、二级结构占比、分子内距离（d1/d2）、MM/PBSA 与 MM/GBSA 结合自由能、残基相互作用频率、ΔΔG</li>
+<li><strong>基线</strong>: 晶体结构构象作为参考；实验 Ki 值（CP2: 2.33 nM, CP1: 340 nM）作为外部基准</li>
+<li><strong>评测协议</strong>: 3 个独立复制评估采样重现性；聚类分析识别主要构象态</li>
+<li><strong>oracle 输入</strong>: 晶体结构坐标作为初始结合构象</li>
 </ul>
 <table>
 <thead>
@@ -240,72 +233,73 @@
 </thead>
 <tbody>
 <tr>
-<td>水溶液中 d1/d2 距离分布</td>
-<td>晶体接触在未结合态不固有保留</td>
-<td>CP1 vs CP2 在水溶液中</td>
-<td>两肽均显示宽分布，峰值 ~11 Å</td>
-<td>未结合态大环高度柔性，晶体接触非固有</td>
-<td>不能推断溶液态主导构象的具体结构</td>
-<td>Results 图 S4</td>
+<td>复制间 RMSD 比较</td>
+<td>模拟收敛性</td>
+<td>3 个复制叠加</td>
+<td>复制间高度重叠（图 2）</td>
+<td>轨迹收敛至相似结合态</td>
+<td>不能证明全局构象空间被充分采样</td>
+<td>Results 图 2</td>
 </tr>
 <tr>
-<td>结合态 d1/d2 距离分布</td>
-<td>CP2 保留晶体接触而 CP1 丢失</td>
-<td>CP1 vs CP2 在蛋白酶结合态</td>
-<td>CP2 d1 坍缩至 ~2.9 Å；CP1 d2 移至 ~6 Å</td>
-<td>连接子化学决定结合态构象预组织程度</td>
-<td>不能确定 d1/d2 保留与活性的因果方向</td>
+<td>分子内距离 d1/d2 分布</td>
+<td>linker 对构象预组织的影响</td>
+<td>水溶液 vs 结合态；CP1 vs CP2</td>
+<td>CP2 结合态 d1 窄分布 ~2.9 Å；CP1 d2 移至 ~6 Å</td>
+<td>CP2 保留晶体学接触，CP1 丢失</td>
+<td>不能直接证明 d1 接触与活性因果相关</td>
 <td>Results 图 4</td>
 </tr>
 <tr>
-<td>MM/PBSA 与 MM/GBSA 结合自由能</td>
-<td>CP2 结合强于 CP1</td>
-<td>两种方法交叉验证</td>
+<td>MM/PBSA 与 MM/GBSA</td>
+<td>结合亲和力差异</td>
+<td>CP1 vs CP2</td>
 <td>PB: −34.8 vs −27.6 kcal/mol；GB: −83.3 vs −69.8 kcal/mol</td>
-<td>CP2 能量学更优，与实验 Ki 趋势一致</td>
-<td>绝对值不可作为定量预测；未含完整熵效应</td>
-<td>Results 表 S2</td>
+<td>CP2 结合更有利</td>
+<td>绝对值偏离实验 ΔG，仅可比较相对趋势</td>
+<td>Results 节</td>
 </tr>
 <tr>
-<td>残基级相互作用图谱</td>
-<td>CP2 聚焦于催化/底物识别区</td>
-<td>CP1 vs CP2 的相互作用指纹</td>
-<td>CP2 与 Asp75、Asp129、His51 持续接触；CP1 更分散</td>
-<td>CP2 的识别网络更紧凑且功能相关</td>
-<td>不能排除其他未检测残基的贡献</td>
+<td>残基相互作用指纹</td>
+<td>相互作用网络差异</td>
+<td>CP1 vs CP2</td>
+<td>CP2 与 Asp75/Asp129/His51 接触更持久</td>
+<td>CP2 聚焦于催化区</td>
+<td>不能证明这些接触是活性差异的唯一原因</td>
 <td>Results 图 5</td>
 </tr>
 <tr>
 <td>计算丙氨酸扫描</td>
-<td>Asp75/Asp129 是关键结合残基</td>
-<td>两复合物中突变效应比较</td>
-<td>Asp75/Asp129 突变产生较大正 ΔΔG，CP2 中 Asp129 效应更大</td>
-<td>酸性残基静电锚定对两肽均重要，对 CP2 更关键</td>
-<td>丙氨酸扫描为端点近似，未考虑构象重排</td>
+<td>关键残基贡献</td>
+<td>Asp75, Asp129 等</td>
+<td>Asp129 突变对 CP2 影响更大</td>
+<td>静电锚定对 CP2 更重要</td>
+<td>未做实验验证突变效应</td>
 <td>Results 图 S6</td>
 </tr>
 <tr>
-<td>三重复聚类结构重叠</td>
-<td>模拟可重复性</td>
-<td>每体系 3 个独立重复</td>
-<td>重复间代表结构高度重叠</td>
-<td>采样收敛，结果可靠</td>
-<td>不能排除更长时标的罕见构象事件</td>
-<td>Results 图 2</td>
+<td>二级结构分析</td>
+<td>结合态蛋白构象变化</td>
+<td>CP1 vs CP2 复合物</td>
+<td>NS2B 柔性区段二级结构差异小</td>
+<td>两复合物蛋白骨架稳定</td>
+<td>不能排除更长时间尺度构象变化</td>
+<td>Results 图 3</td>
 </tr>
 </tbody>
 </table>
 <h2>11 结论正确解读</h2>
 <ul>
-<li><strong>任务范围</strong>: 该文仅比较两个特定环肽（CP1、CP2）在特定力场（ff14SB/GAFF2/TIP3P）与采样条件（3×500 ns）下的构象与能量学差异，不涉及其他抑制剂或蛋白靶点。</li>
-<li><strong>oracle/真值输入</strong>: 晶体结构（7PFY、7PGC）提供初始结合姿态；实验 Ki 值仅用于趋势比较，未作为拟合目标。</li>
-<li><strong>端到端状态</strong>: 非端到端预测流程；MD 模拟依赖实验结构作为起点，结合自由能计算为端点近似。</li>
-<li><strong>算力成本</strong>: 12 条 500 ns 轨迹，GPU 加速（pmemd.cuda），具体 GPU 型号与耗时未提供。</li>
-<li><strong>历史数据依赖</strong>: 依赖 PDB 晶体结构；无序列或实验数据训练环节。</li>
-<li><strong>模型依赖</strong>: 力场选择（ff14SB/GAFF2/TIP3M）与隐式溶剂模型（igb=2）参数直接影响结果；不同力场可能改变定量结论。</li>
-<li><strong>最难情形</strong>: 环肽的大环柔性导致构象采样挑战；端点方法对强极性/带电体系（如胍基-天冬氨酸盐桥）的溶剂化描述可能不准确。</li>
-<li><strong>群体/领域边界</strong>: 结论仅适用于黄病毒 NS2B/NS3 蛋白酶体系中的大环肽抑制剂；对 unbounded 肽或非蛋白酶靶点的可迁移性未验证。</li>
-<li><strong>有边界的复述</strong>: 在 Amber ff14SB/GAFF2 力场与 3×500 ns 采样条件下，CP2 相比 CP1 在结合态中保留了晶体学 d1 分子内接触，呈现更聚焦的相互作用网络与更优的 MM/PBSA/MM/GBSA 结合自由能，与实验 Ki 趋势一致；但绝对能量值不可作为定量预测，且因果机制（构象预组织 vs 直接接触）未被严格证明。</li>
+<li><strong>任务范围</strong>: 仅比较两个环肽抑制剂（CP1 vs CP2）在 MD 模拟中的构象与能量差异，不涉及新抑制剂设计或实验验证。</li>
+<li><strong>oracle/真值输入</strong>: 使用晶体结构作为初始构象，实验 Ki 值作为外部参考，但 MD 结果未直接预测 Ki。</li>
+<li><strong>端到端状态</strong>: 非端到端；计算流程为结构准备→MD→分析，各步骤独立，无自动反馈回路。</li>
+<li><strong>算力成本</strong>: 12 条 500 ns 轨迹，需 GPU 加速（具体硬件未提供）；MM/PBSA(GBSA) 计算需额外后处理。</li>
+<li><strong>历史数据依赖</strong>: 依赖晶体结构（7PFY/7PGC）与 Huber et al. 的实验数据。</li>
+<li><strong>模型依赖</strong>: 依赖 ff14SB/GAFF2 力场精度；环肽非标准残基参数化质量影响结果。</li>
+<li><strong>最难情形</strong>: 环肽在溶液态的高构象灵活性导致宽距离分布，难以用单一构象描述；结合态构象差异较小，需精细分析。</li>
+<li><strong>群体/领域边界</strong>: 结论仅适用于 ZIKV NS2B/NS3 蛋白酶与这两类 linker 化学；不能外推至其他黄病毒蛋白酶或环肽骨架。</li>
+<li><strong>不确定性</strong>: 未报告误差传播分析；MM/PBSA(GBSA) 绝对值不可直接解释为实验结合自由能；熵估计依赖 NMA 近似。</li>
+<li><strong>有边界的复述</strong>: 在 ff14SB/GAFF2 力场与 500 ns 时间尺度下，CP2 相比 CP1 在结合态更有效地保留了分子内 d1 接触，并呈现更聚焦的催化区相互作用网络与更优的计算结合自由能，与实验活性趋势一致；但该结论不构成对活性差异的因果证明。</li>
 </ul>
 <h2>12 作者自认局限</h2>
 <table>
@@ -319,29 +313,28 @@
 </thead>
 <tbody>
 <tr>
-<td>端点方法近似</td>
-<td>MM/PBSA 与 MM/GBSA 绝对值远低于实验 ΔG，未含完整熵效应</td>
-<td>作者建议将结果作比较性解读而非定量预测</td>
-<td>Discussion 节、表 S2 注释</td>
-</tr>
-<tr>
-<td>未建立直接因果机制</td>
-<td>模拟显示构象与能量差异，但未证明连接子化学与抑制活性的因果链</td>
-<td>作者称提供「结构合理性解释」而非因果证明</td>
+<td>未建立直接因果联系</td>
+<td>作者明确表示模拟结果不建立单个接触与抑制效力之间的直接因果关系</td>
+<td>未明确给出</td>
 <td>Conclusions 节</td>
 </tr>
 <tr>
-<td>采样时标有限</td>
-<td>3×500 ns 可能未覆盖环肽全部构象空间</td>
-<td>未明确提及更长模拟或增强采样</td>
-<td>Methods 节（未提供）</td>
+<td>计算值仅可比较解释</td>
+<td>绝对结合自由能值显著偏离实验值，需比较性解读</td>
+<td>未明确给出</td>
+<td>Results 节（"emphasizing that the end-point calculations... should be interpreted comparatively"）</td>
+</tr>
+<tr>
+<td>未做实验验证</td>
+<td>丙氨酸扫描为计算预测，无实验突变数据</td>
+<td>未明确给出</td>
+<td>Results 图 S6 上下文</td>
 </tr>
 </tbody>
 </table>
 <p><strong>作者提及的相关约束</strong>（非正式局限）:
-- 力场选择（ff14SB/GAFF2）可能影响环肽二面角分布的准确性
-- 计算丙氨酸扫描为端点近似，未考虑突变后的构象重排
-- 仅两个化合物比较，样本量小，无法泛化到整个化合物系列</p>
+- 环肽构象景观崎岖，500 ns 可能不足以完全采样（Introduction 节提及环肽构象景观敏感性）
+- 仅研究两个化合物，样本量有限（Introduction 节研究范围描述）</p>
 <h2>13 批判性分析</h2>
 <table>
 <thead>
@@ -355,106 +348,102 @@
 </thead>
 <tbody>
 <tr>
-<td>d1/d2 距离分布仅监测两个特定分子内接触</td>
-<td>可能遗漏其他关键构象变化；d1/d2 的选择基于晶体结构，可能不全面</td>
-<td>若其他接触对结合更重要，则结论可能偏差</td>
-<td>计算所有分子内重原子接触的分布；使用 tICA 或 PCA 降维分析构象景观</td>
-<td>Results 图 4 仅展示两个距离</td>
+<td>仅 500 ns×3 复制可能不足以采样环肽完整构象空间</td>
+<td>环肽可能有多稳定态，更长模拟或增强采样可能发现不同结果</td>
+<td>构象结论依赖采样充分性</td>
+<td>运行 1-2 µs 模拟或使用副本交换/元动力学验证</td>
+<td>环肽构象景观崎岖（Introduction 节）</td>
 </tr>
 <tr>
-<td>MM/PBSA 与 MM/GBSA 结果差异大（−34.8 vs −83.3 kcal/mol）</td>
-<td>两种隐式溶剂模型对带电胍基-天冬氨酸相互作用的描述差异显著；绝对值不可靠</td>
-<td>若模型选择影响排序，则能量学结论可能不稳定</td>
-<td>使用 FEP/TI 或 MM-PBSA 与实验 Ki 的线性回归验证排序稳定性</td>
-<td>Results 表 S2</td>
+<td>MM/PBSA(GBSA) 方法精度有限</td>
+<td>熵项 NMA 近似、介电常数选择、力场误差可能影响排序</td>
+<td>结合自由能排序是核心结论之一</td>
+<td>使用 FEP/TI 或实验验证</td>
+<td>计算值偏离实验 ΔG（Results 节）</td>
 </tr>
 <tr>
-<td>未报告力场验证或参数敏感性分析</td>
-<td>GAFF2 对非标准残基（D-高环己基丙氨酸）的参数可能不准确</td>
-<td>参数误差可能系统性地影响两肽的比较</td>
-<td>使用不同力场（如 CHARMM/CGenFF）重复关键模拟</td>
+<td>仅两个化合物比较，缺乏统计效力</td>
+<td>观察到的差异可能是个例而非 linker 化学的普遍规律</td>
+<td>结论外推性受限</td>
+<td>扩展至更多 linker 变体</td>
+<td>研究设计仅含 CP1/CP2</td>
+</tr>
+<tr>
+<td>未报告力场参数化验证</td>
+<td>GAFF2 对非标准残基（D-高环己基丙氨酸）的适用性未验证</td>
+<td>参数误差可能影响构象与能量</td>
+<td>与 QM 参考或实验 NMR 对比</td>
 <td>Methods 节未提及验证</td>
 </tr>
 <tr>
-<td>计算丙氨酸扫描仅报告均值±标准差，未报告效应量或显著性</td>
-<td>小样本（3 重复）下标准差可能掩盖真实差异</td>
-<td>无法判断 Asp75/Asp129 贡献差异是否统计显著</td>
-<td>增加重复数或使用 bootstrap 估计置信区间</td>
-<td>Results 图 S6</td>
-</tr>
-<tr>
-<td>未讨论水分子介导的相互作用</td>
-<td>环肽-蛋白酶界面的水分子桥接可能对结合重要</td>
-<td>忽略水分子可能高估/低估某些残基贡献</td>
-<td>进行显式水分子分析或 WATMD 模拟</td>
-<td>全文未提及水分子分析</td>
-</tr>
-<tr>
-<td>初始结构仅来自单一晶体构象</td>
-<td>可能未覆盖结合态的其他亚稳态</td>
-<td>若存在多个结合构象，则比较可能不完整</td>
-<td>使用增强采样（如 GaMD、REMD）从不同初始结构出发</td>
-<td>Methods 节仅用晶体结构</td>
+<td>晶体结构作为初始构象可能引入偏差</td>
+<td>溶液态优势构象可能与晶体构象不同，影响结合路径</td>
+<td>初始构象影响模拟结果</td>
+<td>使用无偏初始构象或多起点模拟</td>
+<td>水溶液与晶体构象差异（图 S4）</td>
 </tr>
 </tbody>
 </table>
 <h2>14 学到什么</h2>
 <p><strong>Agent 提炼的知识候选</strong>:
-1. <strong>环肽构象预组织的定量评估方法</strong>: 通过分子内距离分布（如 d1/d2）监测大环骨架关键接触在溶液态与结合态之间的变化，可作为评估环肽「构象记忆」的通用指标。可迁移到其他环肽/大环抑制剂体系，用于筛选具有有利预组织倾向的候选分子。
-2. <strong>连接子化学对结合态构象的影响机制</strong>: 连接子的疏水性和空间取向不仅影响直接蛋白接触，还通过影响大环骨架的分子内相互作用（如羰基-胍基氢键）间接决定结合亲和力。这一「间接效应」视角可迁移到环肽设计：优化连接子时需同时考虑其与大环骨架的分子内兼容性。
-3. <strong>三重复 MD 模拟作为环肽构象采样的标准实践</strong>: 环肽构象景观崎岖，单轨迹易陷入局部态；三重复设计结合聚类分析可提高构象结论的可信度。这一实验设计可直接迁移到其他环肽-MD 研究。
-4. <strong>端点方法（MM/PBSA、MM/GBSA）的比较性使用策略</strong>: 两种方法绝对值差异大但排序一致时，可用于相对比较而非定量预测；结合计算丙氨酸扫描可识别关键残基。这一策略可迁移到其他蛋白-配体体系的结合自由能评估。
-5. <strong>晶体学接触作为 MD 验证锚点</strong>: 将晶体学分子内接触（d1/d2）作为 MD 模拟中「构象保留」的参考基准，可有效区分配体的构象稳定性差异。这一思路可迁移到其他基于晶体结构的 MD 比较研究。</p>
+1. <strong>环肽构象预组织评估方法</strong>: 使用分子内距离分布（如 d1/d2）作为环肽在结合态是否保持晶体学接触的动态描述符，可迁移至其他环肽-靶点体系。
+2. <strong>linker 化学与构象预组织的关联</strong>: linker 的疏水性与立体化学（如 D-氨基酸 vs L-氨基酸）可显著影响环肽在结合态的构象收敛性，为环肽设计提供「linker 构象调控」思路。
+3. <strong>多复制 MD 协议</strong>: 3×500 ns 独立复制 + 聚类分析验证采样重现性，适用于环肽等构象复杂体系。
+4. <strong>MM/PBSA(GBSA) 比较解读策略</strong>: 计算值仅用于相对比较而非绝对预测，结合实验 Ki 趋势验证计算排序。
+5. <strong>残基相互作用指纹 + 丙氨酸扫描组合</strong>: 从接触频率与能量贡献两个维度定位关键残基，可迁移至其他蛋白-配体体系。
+6. <strong>对 AI 方法的启示 [Analysis]</strong>: 本文的 MD 轨迹与距离分布数据可作为训练「环肽构象预测」或「linker 活性预测」模型的标注数据；d1/d2 距离可作为图神经网络中环肽构象的几何特征。</p>
 <h2>15 与已有知识连接</h2>
 <ul>
-<li><strong>Huber et al. 系列大环抑制剂研究</strong>（本文引文 [15]）：本文直接基于该系列的两个化合物（15 和 26）进行动态比较，将静态晶体学信息扩展为动态构象图景。可核验：该文献报道的 Ki 值（CP2: 2.33 nM vs CP1: 340 nM）与本文 MD 结果趋势一致。</li>
-<li><strong>黄病毒 NS2B/NS3 蛋白酶结构与功能研究</strong>（本文引文 [13, 34, 35]）：催化三联体 His51-Asp75-Ser135 与 NS2B 辅因子构象变化是黄病毒蛋白酶抑制研究的核心。本文的残基级相互作用分析（Asp75、Asp129）与此框架一致。</li>
-<li><strong>环肽构象采样方法论</strong>（本文引文 [36]）：环肽构象景观崎岖、对局部几何约束敏感，本文的三重复设计是对这一认识的实践响应。</li>
-<li><strong>MM/PBSA 与 MM/GBSA 端点方法</strong>（本文引文 [29-31]）：经典结合自由能估算方法，本文采用其比较性解读策略，与领域共识一致。</li>
-<li><strong>可迁移领域</strong> [Analysis]: 本文的「分子内接触保留」分析框架可迁移到其他构象受限配体（如大环、stapled peptide）的 MD 研究；三重复 MD + 聚类 + 距离分布的分析流程可迁移到蛋白质构象采样研究（如针对 AlphaFold 预测结构的 MD 验证）。</li>
+<li><strong>Huber et al. (2020)</strong>: 本文直接基于其合成的环肽系列（化合物 15 与 26），实验 Ki 值（2.33 nM vs 340 nM）作为外部基准。可进一步查阅该系列完整构效关系数据。</li>
+<li><strong>ZIKV NS2B/NS3 蛋白酶结构研究</strong>: PDB 7PFY/7PGC 为晶体复合物结构；可连接至其他黄病毒（DENV、WNV）蛋白酶抑制剂研究。</li>
+<li><strong>环肽构象分析文献</strong>: 环肽的构象采样与预组织是口服环肽药物设计的关键问题（如 Nair et al. 的环肽构象-渗透性研究）。</li>
+<li><strong>MM/PBSA(GBSA) 方法学</strong>: 该方法在蛋白-配体结合自由能预测中广泛应用，但精度有限；可连接至 Genheden &amp; Ryde 的方法学综述。</li>
+<li><strong>MD 模拟力场选择</strong>: ff14SB + GAFF2 + TIP3P 是常见组合；可连接至力场基准测试文献。</li>
+<li><strong>计算丙氨酸扫描工具</strong>: SIETRAJ 为专用工具；可连接至其他丙氨酸扫描方法（如 FoldX、Rosetta）。</li>
+<li><strong>对 AI 方法的连接 [Analysis]</strong>: 本文的 MD 轨迹可作为训练环肽-蛋白结合构象预测模型的训练数据；d1/d2 距离分布可作为环肽构象灵活性的几何描述符，用于图神经网络或扩散模型的特征工程。</li>
 </ul>
 <h2>16 研究想法</h2>
 <p><strong>Agent 生成的研究候选</strong>:</p>
 <ol>
 <li>
-<p><strong>候选名称</strong>: 环肽连接子疏水性与构象预组织的定量关联模型
-   - <strong>来源局限/观察</strong>: 本文仅比较两个化合物，样本量小，无法建立连接子化学性质与构象预组织程度的定量关系。
-   - <strong>核心假设</strong>: 连接子的疏水体积（如 ClogP 或分子体积）与结合态 d1/d2 接触保留率呈正相关。
-   - <strong>初步方法</strong>: 对 Huber 系列 10+ 个化合物进行 MD 模拟（每体系 3×500 ns），计算 d1/d2 保留率、结合自由能，与实验 Ki 做回归分析。
-   - <strong>验证方式</strong>: 交叉验证回归模型；对 2-3 个新设计化合物进行前瞻性预测。
-   - <strong>创新状态</strong>: unverified</p>
+<p><strong>候选名称</strong>: 环肽 linker 构象预组织倾向的机器学习预测器
+   - <strong>来源局限/观察</strong>: 本文仅比较两个化合物，样本量小；d1/d2 距离分布与活性趋势相关但未建立定量模型
+   - <strong>核心假设</strong>: 环肽 linker 的化学描述符（疏水性、立体化学、柔性）可预测其在结合态保持晶体学接触的概率
+   - <strong>初步方法</strong>: 对 Huber 系列全部化合物运行短 MD（如 100 ns×3），提取 d1/d2 距离分布特征；训练随机森林/GNN 预测 Ki 或结合态构象预组织分数
+   - <strong>验证方式</strong>: 留一法交叉验证；对未参与训练的新 linker 变体进行 MD 验证
+   - <strong>可能的失败模式</strong>: 力场误差主导构象差异；MD 采样不足；化学描述符无法捕捉 linker 与蛋白的协同适应</p>
 </li>
 <li>
-<p><strong>候选名称</strong>: 基于 MD 构象 ensemble 的环肽结合姿态重打分
-   - <strong>来源局限/观察</strong>: 本文显示溶液态与结合态构象差异大，单一晶体结构可能不足以代表结合态 ensemble。
-   - <strong>核心假设</strong>: 从 MD 轨迹提取的 ensemble 对接打分优于单结构对接打分。
-   - <strong>初步方法</strong>: 对 CP1/CP2 的 MD 轨迹进行聚类，将各聚类代表结构用于分子对接（如 AutoDock Vina、Glide），比较 ensemble 打分与单结构打分对实验 Ki 的预测能力。
-   - <strong>验证方式</strong>: 扩展到其他环肽-蛋白酶体系；与实验结合亲和力数据对比。
-   - <strong>创新状态</strong>: unverified</p>
+<p><strong>候选名称</strong>: 环肽-蛋白酶结合态构象的增强采样基准测试
+   - <strong>来源局限/观察</strong>: 500 ns 常规 MD 可能未充分采样环肽构象空间；作者未使用增强采样
+   - <strong>核心假设</strong>: 副本交换或元动力学可发现常规 MD 遗漏的结合态亚稳态，且这些亚稳态与活性差异更相关
+   - <strong>初步方法</strong>: 对 CP1/CP2 复合物运行 REST2 副本交换 MD（如 12 副本×200 ns），比较构象分布与 d1/d2 距离自由能面
+   - <strong>验证方式</strong>: 与晶体结构、实验 Ki 对比；检查复制间收敛性
+   - <strong>可能的失败模式</strong>: 增强采样参数选择不当；计算成本过高；亚稳态与活性无直接关联</p>
 </li>
 <li>
-<p><strong>候选名称</strong>: 环肽连接子修饰的增强采样构象景观比较
-   - <strong>来源局限/观察</strong>: 常规 MD 可能未充分采样环肽的高能构象态，尤其对柔性连接子。
-   - <strong>核心假设</strong>: 增强采样（如 GaMD、REMD）能揭示常规 MD 未见的构象态，且这些态对结合亲和力有贡献。
-   - <strong>初步方法</strong>: 对 CP1/CP2 分别进行 GaMD 和 REMD 模拟，比较构象自由能景观（tICA + Markov state model），识别与结合相关的亚稳态。
-   - <strong>验证方式</strong>: 与实验 Ki 对比；对关键亚稳态进行结合自由能计算（如 FEP）。
-   - <strong>创新状态</strong>: unverified</p>
+<p><strong>候选名称</strong>: 环肽 linker 设计的生成式 AI 框架
+   - <strong>来源局限/观察</strong>: 本文揭示 linker 化学通过构象预组织影响活性，但缺乏系统性设计工具
+   - <strong>核心假设</strong>: 条件扩散模型或遗传算法可在给定大环骨架与靶点结构时生成 linker 变体，优化预测的结合态构象预组织分数
+   - <strong>初步方法</strong>: 以本文 MD 数据为训练集，定义「构象预组织分数」（如 d1 距离分布窄度）；训练 linker 生成模型，用 MD 或 MM/GBSA 筛选候选
+   - <strong>验证方式</strong>: 合成 top 候选并测定 Ki；与 Huber 系列活性数据对比
+   - <strong>可能的失败模式</strong>: 训练数据不足；生成分子不可合成；MD 预测分数与实验活性相关性弱</p>
 </li>
 <li>
-<p><strong>候选名称</strong>: 环肽-蛋白酶结合界面的水分子介导相互作用分析
-   - <strong>来源局限/观察</strong>: 本文未分析水分子介导的氢键网络，而环肽的胍基-天冬氨酸盐桥可能涉及水分子桥接。
-   - <strong>核心假设</strong>: 水分子介导的相互作用对 CP2 的结合贡献大于 CP1。
-   - <strong>初步方法</strong>: 对 MD 轨迹进行水分子驻留时间分析（如 WaterMap、SPAM），比较两复合物的水合位点与热力学特征。
-   - <strong>验证方式</strong>: 与计算丙氨酸扫描结果交叉验证；对关键水合位点进行突变实验验证。
-   - <strong>创新状态</strong>: unverified</p>
+<p><strong>候选名称</strong>: 环肽-蛋白酶结合自由能的机器学习校正
+   - <strong>来源局限/观察</strong>: MM/PBSA(GBSA) 绝对值偏离实验值，作者仅做相对比较
+   - <strong>核心假设</strong>: 以 MD 轨迹特征（接触频率、构象熵、水合位点）为输入，训练模型校正 MM/GBSA 预测值至实验 ΔG
+   - <strong>初步方法</strong>: 收集黄病毒蛋白酶-环肽抑制剂的 MD 轨迹与实验 Ki 数据；提取特征；训练梯度提升或神经网络校正模型
+   - <strong>验证方式</strong>: 交叉验证；对未参与训练体系进行预测
+   - <strong>可能的失败模式</strong>: 数据量不足；特征与实验 ΔG 无稳定关联；过拟合</p>
 </li>
 <li>
-<p><strong>候选名称</strong>: 基于 MD 的环肽连接子库虚拟筛选工作流
-   - <strong>来源局限/观察</strong>: 本文显示连接子化学显著影响结合态构象与能量，但未提供筛选方法。
-   - <strong>核心假设</strong>: 以 CP2 为模板，对连接子进行组合替换，通过 MD + MM/GBSA 可有效筛选出更优的环肽抑制剂。
-   - <strong>初步方法</strong>: 构建连接子替换库（10-20 个类似物），自动化 MD 模拟 + MM/GBSA 打分，排序后合成验证。
-   - <strong>验证方式</strong>: 对 top 3 候选进行实验 Ki 测定，验证预测排序。
-   - <strong>创新状态</strong>: unverified</p>
+<p><strong>候选名称</strong>: 环肽结合态构象预组织的物理化学解析
+   - <strong>来源局限/观察</strong>: 作者未深入分析 linker 与蛋白残基（如 V155）的具体相互作用机制
+   - <strong>核心假设</strong>: CP2 的 D-高环己基丙氨酸通过疏水接触与构象限制协同稳定 d1 接触，而 CP1 的 L-缬氨酸侧链导致不利的 linker 骨架扭转
+   - <strong>初步方法</strong>: 对 CP1/CP2 复合物进行相互作用能分解（残基对能量）、扭转角分析、水合位点分析；与晶体结构 B-factor 对比
+   - <strong>验证方式</strong>: 与 Huber 系列其他 linker 变体的 MD 结果对比；设计定点突变（如 V155A）进行 MD 验证
+   - <strong>可能的失败模式</strong>: 力场对疏水相互作用的描述不准确；能量分解方法选择敏感；机制过于简化</p>
 </li>
 </ol></div>
   </section>
@@ -465,108 +454,88 @@
     <div class="md"><h2>Review setup</h2>
 <ul>
 <li><strong>Input scope</strong> Full manuscript (including main text, figures, and supplementary information reference)</li>
-<li><strong>Assessment boundary</strong> The manuscript as provided; supplementary material not accessible for review</li>
-<li><strong>Shared manuscript claim summary</strong> The authors use molecular dynamics simulations to compare two cyclic peptide inhibitors (CP1 and CP2) of the Zika virus NS2B/NS3 protease, showing that CP2 preserves key intramolecular contacts upon binding, exhibits a more focused interaction network, and has more favorable binding free-energy estimates than CP1, providing a structural rationale for the experimentally observed potency difference.</li>
-<li><strong>Visible evidence base</strong> Molecular dynamics trajectories (3 × 500 ns per system), RMSD/RMSF analyses, DSSP secondary-structure assignments, intramolecular distance distributions, residue-level interaction maps, MM/PBSA and MM/GBSA binding free-energy calculations, computational alanine scanning</li>
-<li><strong>Missing materials affecting confidence</strong> Supplementary material (Figs. S1–S6, Tables S1–S2) is referenced but not provided; these contain essential data supporting RMSD profiles, clustering, and entropy-corrected binding energies</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodology, data interpretation, and conclusions as presented in the manuscript</li>
+<li><strong>Shared manuscript claim summary</strong> The authors use molecular dynamics simulations to compare two cyclic peptide inhibitors (CP1 and CP2) of the Zika virus NS2B/NS3 protease, showing that CP2 preserves key intramolecular contacts upon binding, exhibits a more focused interaction network, and has more favorable binding free-energy estimates than CP1, providing a structural rationale for linker-dependent differences in inhibitor potency.</li>
+<li><strong>Visible evidence base</strong> Main text, figures (Fig. 1-5), tables (Table S1, S2 referenced), supplementary information link provided but content not accessible for review</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary information (ESM 1) not provided; raw trajectory data, force field parameter files, and input coordinates not available; experimental Ki values and crystallographic data from Huber et al. referenced but not included</li>
 </ul>
 <h2>Reviewer</h2>
 <ul>
-<li><strong>Overall assessment</strong> This is a competent computational study that uses molecular dynamics to rationalize the experimentally observed potency difference between two cyclic peptide inhibitors of the ZIKV NS2B/NS3 protease. The work is clearly presented and the methodological choices are appropriate for the stated goals. However, the study is largely descriptive and confirmatory of known experimental data, and several technical aspects limit the strength of the conclusions. The absence of the supplementary material prevents full evaluation of the evidence base.</li>
-<li><strong>Who would be interested in the results, and why</strong> Researchers working on flaviviral protease inhibitors, particularly those interested in macrocyclic peptide design and structure-activity relationships. The study provides atomistic insight into how linker modifications affect conformational preorganization and binding, which may inform future inhibitor optimization.</li>
-<li><strong>Major strengths</strong> 1. Clear comparative design with two structurally related inhibitors that differ only in the linker region, allowing focused investigation of linker effects. 2. Use of multiple independent replicas (3 × 500 ns) to assess reproducibility, which is appropriate for cyclic peptide systems with rugged conformational landscapes. 3. Integration of multiple analysis methods (distance distributions, interaction fingerprints, binding free energies, alanine scanning) to support the main conclusions.</li>
-<li><strong>Major Concerns</strong> R1-M1, R1-M2, R1-M3</li>
-<li><strong>Minor Comments</strong> R1-m1, R1-m2, R1-m3, R1-m4</li>
-<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (force field validation), R1-M2 (sampling convergence), R1-M3 (binding free-energy methodology)</li>
-<li><strong>Assessment against Nature-style criteria</strong> Originality: Moderate. The study applies established computational methods to a known system and does not introduce new concepts or methodologies. Scientific importance: Moderate. The ZIKV protease is a relevant target, and understanding linker effects in cyclic peptides is of general interest, but the study is confirmatory of known experimental data rather than predictive. Interdisciplinary readership: Low. The work is specialized for computational chemists and structural biologists working on protease inhibitors. Technical soundness: Adequate but with notable concerns regarding force field validation, sampling convergence, and binding free-energy methodology. Readability for nonspecialists: Good. The manuscript is clearly written and the figures are well-designed.</li>
-<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved, but the study would benefit from additional validation and a more critical assessment of the limitations.</li>
-</ul>
-<h3>Major Concerns</h3>
-<ul>
+<li><strong>Overall assessment</strong> This manuscript presents a molecular dynamics study comparing two cyclic peptide inhibitors of the Zika virus NS2B/NS3 protease. The study is well-structured and addresses a relevant question about how linker modifications affect inhibitor conformation and binding. However, several methodological concerns and missing details limit the strength of the conclusions. The work would benefit from additional validation, clearer reporting of simulation parameters, and a more critical discussion of the limitations of the computational approach.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in antiviral drug discovery, particularly those working on flavivirus proteases and macrocyclic peptide inhibitors, would be interested in the structural insights into how linker chemistry influences bound-state conformation and interaction networks. The study also provides a methodological framework for using MD simulations to compare closely related inhibitors.</li>
+<li><strong>Major strengths</strong> The study addresses a clear and relevant question about structure-activity relationships in cyclic peptide inhibitors. The use of multiple independent replicas (3 x 500 ns) is appropriate for assessing conformational reproducibility. The combination of intramolecular distance analysis, residue-level interaction profiling, and binding free-energy calculations provides a multi-faceted view of the inhibitor behavior. The comparison between solution and bound states is informative.</li>
+<li><strong>Major Concerns</strong></li>
 <li><strong>Concern ID</strong> R1-M1</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> Force field validation</li>
-<li><strong>Claim pointer</strong> The authors claim that the MD simulations provide a reliable atomistic description of the conformational behavior of CP1 and CP2 in solution and bound to the protease.</li>
-<li><strong>Evidence pointer</strong> Methodology section</li>
-<li><strong>Concern</strong> The cyclic peptides are parameterized with GAFF2, but no validation of the force field parameters for these specific macrocyclic compounds is provided. Macrocyclic peptides can have complex ring strain and torsional preferences that are not well captured by general force fields. The authors do not report whether the crystallographic geometries are stable in short test simulations, nor do they compare simulated conformational ensembles with any experimental data (e.g., NMR-derived distances or J-couplings) for validation.</li>
-<li><strong>Why it matters</strong> Without validation, it is unclear whether the observed differences between CP1 and CP2 reflect genuine physical behavior or force field artifacts. The central claim that CP2 preserves a specific intramolecular contact while CP1 does not could be an artifact of inadequate parameterization.</li>
-<li>
-<p><strong>Resolution test</strong> Provide evidence that the GAFF2 parameters reproduce known experimental observables for these or similar macrocyclic peptides. This could include: (1) short MD simulations starting from the crystallographic structure to verify stability, (2) comparison of simulated NMR parameters (e.g., NOE distances, 3J-couplings) with experimental data if available, or (3) quantum mechanical (QM) validation of key torsional profiles in the linker region.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-M2</p>
-</li>
+<li><strong>Axis</strong> Methodology / Reproducibility</li>
+<li><strong>Claim pointer</strong> The authors claim that the simulations show CP2 preserves a short intramolecular contact (d1) compatible with its crystallographic arrangement, while CP1 loses its crystallographic d2 contact.</li>
+<li><strong>Evidence pointer</strong> Section "Distinct linker geometries control intramolecular stabilization in the bound state", Figure 4</li>
+<li><strong>Concern</strong> The analysis of intramolecular distances d1 and d2 is central to the main conclusion, but the definition of these distances is ambiguous. The text states that d1 corresponds to "the intramolecular hydrogen bond between the P4 carbonyl oxygen and the P1 guanidinium group" and d2 monitors "an additional intramolecular contact involving a linker/backbone carbonyl located within the macrocyclic segment between P4 and P1." However, the specific atoms used to calculate these distances are not explicitly defined. Without atom-level definitions, the analysis cannot be reproduced or independently verified. Furthermore, the distance distributions in Figure 4 are presented without error bars or confidence intervals from the three replicas, making it impossible to assess the statistical significance of the observed differences between CP1 and CP2.</li>
+<li><strong>Why it matters</strong> The central claim of the paper—that CP2 preserves a key crystallographic contact while CP1 does not—rests entirely on this distance analysis. If the distance definitions are ambiguous or the distributions are not statistically robust, the main conclusion is unsupported.</li>
+<li><strong>Resolution test</strong> Provide explicit atom names and residue numbers for each distance (d1 and d2) in both CP1 and CP2. Show the distance distributions for each individual replica (e.g., as separate histograms or overlaid curves) to demonstrate reproducibility. Include statistical measures (e.g., mean ± standard deviation across replicas) for the key distance populations.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> Sampling convergence</li>
-<li><strong>Claim pointer</strong> The authors claim that CP2 preserves a short intramolecular contact (d1) upon binding, while CP1 loses its crystallographic contact (d2) and samples a broader bound-state ensemble.</li>
-<li><strong>Evidence pointer</strong> Results and discussion, Fig. 4</li>
-<li><strong>Concern</strong> The total simulation time per system is 1.5 µs (3 × 500 ns). For cyclic peptides, which can have slow conformational transitions, this may be insufficient to achieve converged sampling of the bound-state ensemble. The authors do not provide any convergence analysis (e.g., block averaging, time-evolution of key distances, or assessment of whether the d1/d2 distributions are stable over the last portion of each trajectory). The observation that CP1 loses its crystallographic d2 contact could reflect insufficient sampling rather than a genuine difference in bound-state behavior.</li>
-<li><strong>Why it matters</strong> The central structural conclusion of the paper—that CP2 is more preorganized in the bound state—depends on the reliability of the distance distributions. If sampling is not converged, the reported distributions may be misleading.</li>
-<li>
-<p><strong>Resolution test</strong> Provide convergence diagnostics for the key intramolecular distances (d1, d2). This could include: (1) time-evolution plots showing the distance as a function of simulation time for each replica, (2) cumulative averages to assess when the distributions stabilize, or (3) extended simulations (e.g., to 1 µs per replica) to verify that the observed differences are robust.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-M3</p>
-</li>
+<li><strong>Axis</strong> Methodology / Validation</li>
+<li><strong>Claim pointer</strong> The authors claim that CP2 shows more favorable binding free-energy estimates than CP1, with values of -34.8 vs -27.6 kcal/mol (MM/PBSA) and -83.3 vs -69.8 kcal/mol (MM/GBSA).</li>
+<li><strong>Evidence pointer</strong> Section "Residue-level interactions and binding free energy support stronger recognition of inhibitor 2", Table S2 (referenced)</li>
+<li><strong>Concern</strong> The absolute binding free-energy values from MM/PBSA and MM/GBSA are far more negative than the experimental values (-11.6 and -8.7 kcal/mol for CP2 and CP1, respectively). The authors acknowledge this discrepancy but do not discuss its implications for the reliability of the relative ranking. More critically, the MM/GBSA values (-83.3 and -69.8 kcal/mol) are more than double the MM/PBSA values (-34.8 and -27.6 kcal/mol), indicating a large method-dependent discrepancy. The authors do not explain which method is more appropriate for this system or why the relative difference between CP1 and CP2 is so much larger in MM/GBSA (13.5 kcal/mol) than in MM/PBSA (7.2 kcal/mol). Without a justification for the choice of method and an explanation of the discrepancy, the energetic conclusions are not reliable.</li>
+<li><strong>Why it matters</strong> The binding free-energy calculations are used to support the claim that CP2 is a stronger inhibitor. If the calculations are not validated or the method-dependent discrepancies are not explained, the energetic comparison is unconvincing.</li>
+<li><strong>Resolution test</strong> Provide a detailed comparison of MM/PBSA and MM/GBSA results, including the individual energy components (electrostatic, van der Waals, polar solvation, nonpolar solvation) for each method. Discuss why the methods give different absolute values and different relative differences. If possible, benchmark the calculations against the experimental Ki values using a correlation or error analysis. Report the standard errors of the mean for the binding free energies across the three replicas.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> No</li>
-<li><strong>Axis</strong> Binding free-energy methodology</li>
-<li><strong>Claim pointer</strong> The authors claim that CP2 has more favorable binding free-energy estimates than CP1, consistent with the experimental potency difference.</li>
-<li><strong>Evidence pointer</strong> Results and discussion, Fig. 5, Table S2</li>
-<li><strong>Concern</strong> The MM/PBSA and MM/GBSA calculations yield absolute binding free energies that are substantially more negative than the experimental values (e.g., MM/GBSA: −83.3 kcal/mol for CP2 vs. ΔGexp of −11.6 kcal/mol). While the authors acknowledge this discrepancy, the large systematic error raises questions about the reliability of the relative ranking. The normal-mode entropy correction reduces the magnitude but the corrected values are not reported in the main text (only in Table S2, which is not provided). Additionally, the MM/PBSA calculation uses a non-standard "CHAGB" optimization of atomic radii that is not widely validated, and the rationale for this choice is not explained.</li>
-<li><strong>Why it matters</strong> The binding free-energy calculations are used to support the structural conclusions and to argue that CP2 achieves "more effective recognition" of the protease. If the methodology is unreliable, this claim is weakened.</li>
-<li><strong>Resolution test</strong> (1) Report the entropy-corrected binding free energies in the main text, not just in the supplementary material. (2) Provide a sensitivity analysis showing how the relative ranking changes with different GB models (e.g., igb=5, igb=8) or PB parameters. (3) Discuss why the CHAGB model was chosen and how it affects the results compared to standard approaches. (4) Consider using a more rigorous free-energy method (e.g., FEP, TI) for the relative binding affinity, or at least acknowledge the limitations of the end-point approach more explicitly.</li>
-</ul>
-<h3>Minor Comments</h3>
-<ul>
+<li><strong>Axis</strong> Methodology / Force field and sampling</li>
+<li><strong>Claim pointer</strong> The authors claim that the simulations provide an "atomistic description" of the conformational states of the cyclic peptides.</li>
+<li><strong>Evidence pointer</strong> Section "Methodology", Section "Results and discussion"</li>
+<li><strong>Concern</strong> The cyclic peptides are parameterized with GAFF2, which is a general force field for small molecules. However, cyclic peptides can have complex conformational energetics that may not be well-captured by GAFF2 without specific validation. The authors do not provide any validation of the force field parameters for these specific macrocyclic compounds (e.g., comparison to quantum mechanical torsional profiles or NMR data). Additionally, the 500 ns simulation time per replica may be insufficient to fully sample the conformational space of cyclic peptides, which are known to have slow conformational transitions. The authors do not discuss convergence of the conformational sampling (e.g., using block analysis or autocorrelation times).</li>
+<li><strong>Why it matters</strong> If the force field is not validated for these compounds or the sampling is insufficient, the observed conformational differences between CP1 and CP2 may be artifacts of the simulation setup rather than genuine physical differences.</li>
+<li><strong>Resolution test</strong> Provide evidence that the GAFF2 parameters are appropriate for these macrocycles (e.g., by comparing dihedral energy profiles from QM calculations). Demonstrate that the conformational ensembles are converged within the 500 ns simulations (e.g., using RMSD convergence plots, cluster size evolution, or autocorrelation analysis). Discuss the limitations of the force field and sampling time.</li>
+<li><strong>Minor Comments</strong></li>
 <li><strong>Concern ID</strong> R1-m1</li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Clarity</li>
-<li><strong>Affected element</strong> Introduction</li>
-<li><strong>Evidence pointer</strong> Introduction, paragraph 5</li>
-<li><strong>Issue</strong> The description of the two inhibitors is confusing. The text states that CP1 (compound 15) has an L-valine residue in the linker, while CP2 (compound 26) has a D-homocyclohexylalanine residue. However, the figure caption (Fig. 1) describes the linker fragments differently. The relationship between the "linker region" and the "P4 substituent" is not clearly defined.</li>
-<li>
-<p><strong>Required correction</strong> Clarify the chemical structures of CP1 and CP2, explicitly defining what constitutes the "linker" versus the "macrocyclic core." Consider adding a table comparing the key structural features of the two compounds.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m2</p>
-</li>
+<li><strong>Axis</strong> Clarity / Reporting</li>
+<li><strong>Affected element</strong> Section "Methodology", "System construction"</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The nonbonded interaction cutoff is reported as 8 Å for aqueous peptide systems and 10 Å for protein-bound systems. The use of different cutoffs for the two types of systems is unusual and could introduce systematic differences in the energetics. The authors do not explain why different cutoffs were used.</li>
+<li><strong>Required correction</strong> Justify the use of different cutoffs or use a consistent cutoff for all simulations. If the different cutoffs are necessary, discuss the potential impact on the comparison between solution and bound-state results.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Data presentation</li>
-<li><strong>Affected element</strong> Results and discussion</li>
-<li><strong>Evidence pointer</strong> Fig. 4</li>
-<li><strong>Issue</strong> The y-axis labels in Fig. 4 are not visible in the provided manuscript. The figure caption describes the distance distributions but does not specify what the y-axis represents (probability density, frequency, etc.).</li>
-<li>
-<p><strong>Required correction</strong> Ensure that all axis labels are clearly visible and defined in the figure caption.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m3</p>
-</li>
+<li><strong>Axis</strong> Clarity / Reporting</li>
+<li><strong>Affected element</strong> Section "Methodology", "Binding free-energy calculations"</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The description of the MM/PBSA calculation mentions "an optimization of the atomic radii through the asymmetric Generalized Born hydration charge model (CHAGB)" and that "the dielectric surface...is shifted outward relative to the molecular surface." This description is unclear and non-standard. The CHAGB model is not a standard term in the Amber literature.</li>
+<li><strong>Required correction</strong> Clarify what specific PB radii set was used (e.g., mbondi2, mbondi3) and provide a reference for the CHAGB model. If a non-standard approach was used, explain it in more detail.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Statistical rigor</li>
-<li><strong>Affected element</strong> Results and discussion</li>
-<li><strong>Evidence pointer</strong> Fig. 5</li>
-<li><strong>Issue</strong> The per-residue energetic decomposition (Fig. 5b) shows error bars representing standard deviation across three replicas. However, with only three replicas, the standard deviation is a poor estimator of uncertainty. The authors should consider reporting the individual replica values or using a more robust measure (e.g., standard error of the mean).</li>
-<li>
-<p><strong>Required correction</strong> Report individual replica values in a supplementary table, or use a more appropriate measure of uncertainty given the small number of replicas.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m4</p>
-</li>
+<li><strong>Axis</strong> Clarity / Reporting</li>
+<li><strong>Affected element</strong> Section "Results and discussion", "Overall conformational stability"</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The text states that "CP1 remained more centrally confined within the catalytic cleft, whereas CP2 sampled a broader interaction footprint." However, this observation is not quantified. The authors refer to Figure S3, but the supplementary material is not available for review.</li>
+<li><strong>Required correction</strong> Provide a quantitative measure of the ligand binding pose (e.g., center-of-mass distance to key residues, solvent-accessible surface area buried upon binding) to support this qualitative observation.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Completeness</li>
-<li><strong>Affected element</strong> Conclusions</li>
-<li><strong>Evidence pointer</strong> Conclusions</li>
-<li><strong>Issue</strong> The conclusions are appropriately cautious but could be strengthened by explicitly stating the limitations of the study, particularly regarding force field accuracy, sampling convergence, and the correlative nature of the findings.</li>
-<li><strong>Required correction</strong> Add a "Limitations" paragraph to the Conclusions section, discussing the caveats mentioned above and suggesting how future work (e.g., enhanced sampling, QM/MM, experimental validation) could address them.</li>
+<li><strong>Axis</strong> Clarity / Reporting</li>
+<li><strong>Affected element</strong> Section "Results and discussion", "Residue-level interactions and binding free energy support stronger recognition of inhibitor 2"</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The computational alanine scanning results are presented in Figure S6, which is not available. The text states that "Replacement of Asp75 and Asp129 by alanine produced among the largest positive ΔΔG values," but the actual values are not reported in the main text.</li>
+<li><strong>Required correction</strong> Report the key ΔΔG values (e.g., for Asp75 and Asp129) in the main text or in a table, so the reader can assess the magnitude of the effects without needing the supplementary material.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (distance definition and statistical reporting), R1-M2 (binding free-energy validation and method discrepancy), R1-M3 (force field validation and sampling convergence)</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li><strong>Originality</strong>: Moderate. The study applies established MD simulation methods to a specific pair of inhibitors, but the conceptual framework (linker-dependent conformational preorganization) is not novel.</li>
+<li><strong>Scientific importance</strong>: Moderate. The Zika virus NS2B/NS3 protease is a relevant target, and understanding structure-activity relationships in cyclic peptide inhibitors is of interest. However, the study does not provide new mechanistic insights beyond what is already known from the crystallographic work of Huber et al.</li>
+<li><strong>Interdisciplinary readership</strong>: Low. The manuscript is written for a specialized audience of computational chemists and structural biologists working on flavivirus proteases. The conclusions are not framed in a way that would attract broader interest.</li>
+<li><strong>Technical soundness</strong>: Not established. The methodological concerns (R1-M1, R1-M2, R1-M3) undermine confidence in the results. The force field validation, sampling convergence, and statistical reporting are insufficient.</li>
+<li><strong>Readability for nonspecialists</strong>: Adequate. The manuscript is generally well-written and the figures are clear, but the technical details are not explained in a way that would be accessible to a general scientific audience.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript has a clear focus and addresses a relevant question, but the central claims are not adequately supported due to ambiguous distance definitions, unvalidated binding free-energy calculations, and insufficient force field validation. Major revisions are required to address these technical concerns before the case for the conclusions can be considered established.</li>
 </ul>
 <h2>Risk / unsupported claims</h2>
 <ul>
-<li>The claim that CP2 "preserves a short intramolecular contact compatible with its crystallographic arrangement" while CP1 "lost its crystallographic d2 contact" is supported by the distance distributions but requires convergence analysis (R1-M2) to be fully established.</li>
-<li>The claim that CP2 has "more favorable binding free-energy estimates" is supported by the MM/PBSA and MM/GBSA calculations, but the large systematic error and non-standard methodology (R1-M3) mean that the quantitative ranking should be interpreted with caution.</li>
-<li>The claim that the NS2B segment shows "greater local conformational plasticity" in the CP2 complex (based on 5.2% bend vs. 4.0% in CP1) is based on very small differences in secondary-structure populations and may not be statistically significant.</li>
+<li>The claim that CP2 preserves a key crystallographic contact (d1) while CP1 loses its contact (d2) is not supported due to ambiguous distance definitions and lack of statistical reporting across replicas.</li>
+<li>The claim that CP2 has more favorable binding free energy than CP1 is not supported due to large method-dependent discrepancies and lack of validation against experimental values.</li>
+<li>The claim that the simulations provide an "atomistic description" of the conformational states is not supported due to lack of force field validation and sampling convergence analysis.</li>
+<li>The claim that the NS2B segment shows different secondary-structure populations between the two complexes (9.8% turn vs 9.7% turn, 4.0% bend vs 5.2% bend) is likely not statistically significant given the small differences and the lack of error bars or confidence intervals.</li>
 </ul></div>
   </section>
   

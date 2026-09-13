@@ -1,79 +1,70 @@
 ## Review setup
 - **Input scope** Abstract only
-- **Assessment boundary** Claims and evidence presented in the abstract
-- **Shared manuscript claim summary** The authors present HighMorph, an AI framework integrating Monte Carlo tree search with a Transformer-based policy-value network and explicit hydrogen bond constraints from protein-protein interactions, for de novo cyclic peptide sequence design. The framework is validated on PD-L1 and KLK4 targets, achieving 33.3% and 40% hit rates with micromolar binding affinities.
-- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary data provided
-- **Missing materials affecting confidence** Full manuscript, experimental methods, binding assay details, sequence data, computational validation, comparison with existing methods, and all supporting figures/tables
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors present HighMorph, an interaction-guided framework combining Monte Carlo tree search with a Transformer-based policy-value network and explicit hydrogen bond constraints from reference protein-protein complexes, for de novo cyclic peptide sequence design. The framework is validated on PD-L1 and KLK4, with reported hit rates of 33.3% and 40%, respectively, and micromolar binding affinities (approximately 10-6 M).
+- **Visible evidence base** Abstract text only; no experimental details, statistical analyses, or structural data are available
+- **Missing materials affecting confidence** Full methods, experimental protocols, binding assay details, sequence diversity metrics, negative controls, structural validation data, and any comparison with existing design methods
 
 ## Reviewer
-- **Overall assessment** The abstract presents a conceptually interesting approach that combines established AI techniques (MCTS, Transformer) with structure-guided constraints for cyclic peptide design. The reported hit rates (33.3% and 40%) and micromolar affinities are promising for a proof-of-concept study. However, the abstract lacks critical methodological details, experimental validation depth, and comparative benchmarks necessary to assess the novelty, robustness, and generalizability of the framework. The claims cannot be properly evaluated from the abstract alone.
-
-- **Who would be interested in the results, and why** Researchers in computational drug design, peptide therapeutics, and protein interface targeting would be interested. The approach addresses a recognized challenge in de novo cyclic peptide design, and the integration of protein-protein interaction information with AI search is a potentially useful strategy for generating candidate binders.
-
-- **Major strengths**
-    - Addresses a relevant and challenging problem in drug discovery: de novo design of target-binding cyclic peptides.
-    - The combination of Monte Carlo tree search with a Transformer-based policy-value network and explicit hydrogen bond constraints is a reasonable and potentially novel integration of existing techniques.
-    - Validation on two clinically relevant targets (PD-L1, KLK4) with reported hit rates and affinity data provides initial experimental support.
-
+- **Overall assessment** The abstract presents a conceptually interesting integration of established computational techniques for cyclic peptide design, with encouraging preliminary hit rates on two clinically relevant targets. However, the evidence provided is insufficient to evaluate the technical soundness, the robustness of the reported success rates, or the generalizability of the approach. The claim of "rational" design is not fully supported by the abstract alone, as key details on the training data, search space, and validation criteria are absent.
+- **Who would be interested in the results, and why** Computational biologists and medicinal chemists working on peptide therapeutics, particularly those focused on targeting protein-protein interactions with cyclic peptides. The integration of Monte Carlo tree search with deep learning and structural constraints may interest researchers developing AI-driven drug design methods.
+- **Major strengths** The combination of Monte Carlo tree search with a Transformer-based policy-value network and explicit hydrogen bond constraints is a reasonable and potentially powerful strategy for navigating cyclic peptide sequence space. The selection of two clinically relevant targets with distinct structural contexts (an immune checkpoint and a protease) provides a useful test bed. The reported hit rates are notable if reproducible.
 - **Major Concerns**
-
-- **Concern ID** R1-M1
-- **Severity** Major
-- **Blocking** Yes
-- **Axis** Methodological completeness and reproducibility
-- **Claim pointer** "HighMorph integrates Monte Carlo tree search with a Transformer-based policy-value network to efficiently explore cyclic peptide sequence space, while incorporating explicit atomic-level hydrogen bond constraints extracted from reference protein-protein complexes to guide sequence optimization."
-- **Evidence pointer** Abstract (location not provided)
-- **Concern** The abstract provides no details on the Transformer architecture, training data, or how the hydrogen bond constraints are derived and incorporated. The "reference protein-protein complexes" are not specified. Without this information, the method cannot be reproduced or critically evaluated.
-- **Why it matters** Reproducibility and methodological transparency are fundamental to scientific claims. The novelty of the approach hinges on the specific implementation details, which are entirely absent.
-- **Resolution test** Provide a clear description of the Transformer model (size, training data, loss function), the source and processing of protein-protein interaction data, and the algorithm for integrating hydrogen bond constraints into the MCTS search.
-
-- **Concern ID** R1-M2
-- **Severity** Major
-- **Blocking** Yes
-- **Axis** Experimental validation and data completeness
-- **Claim pointer** "Notably, 33.3% and 40% of the generated candidates are active against PD-L1 and KLK4, respectively, with active cyclic peptides exhibiting micromolar binding affinities (approximately 10-6 M)."
-- **Evidence pointer** Abstract (location not provided)
-- **Concern** The abstract does not specify the number of candidates tested, the assay used (e.g., SPR, ITC, fluorescence polarization), the exact affinity values (range, mean, standard deviation), or the criteria for "active." The micromolar affinity (10⁻⁶ M) is modest and may not be sufficient for therapeutic relevance. No negative controls or comparison to random sequences are mentioned.
-- **Why it matters** Without these details, the hit rate and affinity claims are uninterpretable. A 33.3% hit rate on a small number of candidates (e.g., 3 out of 9) is very different from the same rate on 100 candidates. The lack of controls prevents assessment of whether the method outperforms random design.
-- **Resolution test** Report the total number of candidates tested per target, the specific binding assay and its conditions, the exact affinity values (with errors), the definition of "active," and include a comparison to a baseline (e.g., random sequences or a known negative control).
-
-- **Concern ID** R1-M3
-- **Severity** Major
-- **Blocking** No
-- **Axis** Generalizability and comparison to existing methods
-- **Claim pointer** "These results validate our approach for cyclic peptide design."
-- **Evidence pointer** Abstract (location not provided)
-- **Concern** Validation on only two targets, both of which have known binding partners or inhibitors, is insufficient to claim general validity. The abstract does not compare HighMorph to any existing cyclic peptide design methods (e.g., computational docking, phage display, other AI-based approaches).
-- **Why it matters** The field already has established methods for cyclic peptide discovery. Without a comparative benchmark, it is unclear whether HighMorph offers a meaningful advantage in hit rate, affinity, or speed.
-- **Resolution test** Validate on additional, structurally diverse targets (e.g., protein-protein interfaces with no known cyclic peptide binders). Include a direct comparison to at least one state-of-the-art computational or experimental method on the same targets.
-
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "33.3% and 40% of the generated candidates are active against PD-L1 and KLK4, respectively"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The definition of "active" is not provided. Without a clear activity threshold, the reported hit rates are uninterpretable. It is unclear whether activity refers to binding in a biochemical assay, functional inhibition in a cellular assay, or some other metric.
+  - **Why it matters** Hit rates are the central quantitative claim of the abstract. If the activity threshold is too permissive, the reported success rates could be misleading and not comparable with other design methods.
+  - **Resolution test** Provide the exact assay format, the activity threshold used to define a "hit," and the distribution of activities for all tested candidates, not just the active ones.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and completeness
+  - **Claim pointer** "HighMorph integrates Monte Carlo tree search with a Transformer-based policy-value network to efficiently explore cyclic peptide sequence space"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No details are given on the training data for the Transformer network, the size of the sequence space explored, the number of candidates generated and tested, or the computational cost. Without these details, the efficiency claim cannot be assessed.
+  - **Why it matters** The novelty and utility of the method depend on its ability to explore sequence space more effectively than existing approaches. The abstract does not provide enough information to evaluate this.
+  - **Resolution test** Specify the training dataset, the search space size, the number of candidates sampled and experimentally tested, and a comparison of computational cost with baseline methods.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "active cyclic peptides exhibiting micromolar binding affinities (approximately 10-6 M)"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** Micromolar affinities are relatively weak for a design method claiming "rational" design. The abstract does not report the range of affinities, the number of peptides in this range, or whether these affinities are competitive with known binders or existing design methods.
+  - **Why it matters** The therapeutic relevance of micromolar binders is limited, and the claim of "rational" design implies a level of precision that is not evident from the reported affinities.
+  - **Resolution test** Report the full affinity range, the number of peptides achieving each affinity level, and a comparison with known binders or state-of-the-art design methods for the same targets.
 - **Minor Comments**
-
-- **Concern ID** R1-m1
-- **Severity** Minor
-- **Axis** Clarity and terminology
-- **Affected element** Title and abstract
-- **Evidence pointer** Abstract (location not provided)
-- **Issue** The term "De Novo Cyclic Peptide Sequence Design via Protein-Protein Interaction Recapitulation" is somewhat ambiguous. "Recapitulation" could imply reproducing an existing interaction, but the method appears to use PPI information as a guide for design, not recapitulation.
-- **Required correction** Clarify the meaning of "recapitulation" in the context of the method, or consider rephrasing to "guided by" or "informed by" protein-protein interactions.
-
-- **Concern ID** R1-m2
-- **Severity** Minor
-- **Axis** Data presentation
-- **Affected element** Abstract
-- **Evidence pointer** Abstract (location not provided)
-- **Issue** The phrase "approximately 10-6 M" is imprecise. A range or specific values (e.g., 1-10 µM) would be more informative.
-- **Required correction** Provide the exact range or mean ± SD of binding affinities for the active cyclic peptides.
-
-- **Concern ID** R1-m3
-- **Severity** Minor
-- **Axis** Scope of claims
-- **Affected element** Abstract
-- **Evidence pointer** Abstract (location not provided)
-- **Issue** The final sentence, "interaction analysis provides insights for developing therapeutics targeting challenging protein interfaces," is a broad claim that is not supported by any evidence presented in the abstract.
-- **Required correction** Either provide a specific example of such an insight from the study, or temper the claim to reflect the preliminary nature of the analysis.
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** "interaction-guided framework"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "interaction-guided" is vague. It is unclear whether this refers to the hydrogen bond constraints, the use of protein-protein interaction data, or both.
+  - **Required correction** Clarify the specific role of protein-protein interaction information in the design process and how it differs from the hydrogen bond constraints.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** "systematically validated"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not describe the scope of validation, such as the number of peptides tested per target, the number of independent experiments, or the inclusion of negative controls.
+  - **Required correction** Specify the number of candidates tested, the number of replicates, and the nature of negative controls used in the validation.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Generalizability
+  - **Affected element** "insights for developing therapeutics targeting challenging protein interfaces"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not specify what these insights are or how they were derived from the interaction analysis.
+  - **Required correction** Provide a brief summary of the key insights and the analysis that led to them.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of a clear activity definition, the lack of methodological detail, and the weak reported affinities collectively prevent the case from being established from the provided evidence.
+- **Assessment against Nature-style criteria** Originality: Moderate. The combination of existing techniques is novel, but the abstract does not demonstrate a fundamental advance over prior methods. Scientific importance: Moderate. Cyclic peptide design is an important problem, but the reported micromolar affinities limit the immediate impact. Interdisciplinary readership: The work bridges computational and medicinal chemistry, but the abstract is too sparse to engage a broad audience. Technical soundness: Not assessable from the abstract alone. Readability for nonspecialists: The abstract is accessible but lacks sufficient context for nonspecialists to understand the significance of the results.
+- **Recommendation posture** Currently not established from the provided evidence. The approach is promising, but the abstract lacks the detail needed to evaluate the claims. A revised version with full methodological and experimental details could be supportive.
 
 ## Risk / unsupported claims
-- The claim that HighMorph is "validated" for cyclic peptide design is unsupported by the abstract alone, given the limited target scope and lack of comparative benchmarks.
-- The claim that the approach provides "insights for developing therapeutics targeting challenging protein interfaces" is unsupported by any data presented.
-- The novelty of the AI framework (MCTS + Transformer + H-bond constraints) cannot be assessed without methodological details and comparison to prior work.
+- The reported hit rates (33.3% and 40%) are unsupported without a defined activity threshold and experimental details.
+- The claim of "efficient" sequence space exploration is unsupported without computational cost or comparison data.
+- The claim of "rational" design is not supported by the micromolar affinities reported.
+- The "insights for developing therapeutics" are mentioned but not described, making this claim unassessable.

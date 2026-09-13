@@ -29,7 +29,7 @@
          · 仅摘要
          · <a href="https://pubmed.ncbi.nlm.nih.gov/42701274/">原文</a>
       </div>
-      <p class="one-liner">该文通过化学修饰控制大环肽构象，结合NMR和分子动力学模拟研究构象差异，涉及蛋白质结构计算中的构象采样和MD方法，但核心是化学工具而非AI/深度学习，对象为肽类，问题和方法与蛋白质结构计算相关但方法创新有限。</p>
+      <p class="one-liner">该文通过化学修饰控制大环肽构象，结合NMR和分子动力学模拟研究构象变化，涉及蛋白质结构计算（MD模拟），但核心是化学方法而非AI/深度学习，对象为肽类，问题为构象控制，方法有MD模拟，综合评7分。</p>
     </div>
   </div>
   
@@ -41,7 +41,7 @@
   
   <section>
     <h2>摘要翻译</h2>
-    <div class="md">我们描述了利用内酯开环作为化学工具，以产生大环肽的不同构象。在动力学控制下，内酯开环在所测试的大环前体中具有高度阻转选择性。在热力学控制下，可逆的内酯开环使阻转异构体达到平衡。结合核磁共振/分子动力学 (NMR/molecular dynamics) 研究表明，由内酯开环产生的阻转异构体可以呈现显著不同的构象，范围从310-螺旋到各种非经典构象。在含RGD的大环中，动力学阻转异构体重现了参与整合素结合的3D几何结构，而热力学阻转异构体则采用了一种先前未描述过的独特构象。这些结果共同确立了一种控制大环肽构象状态的新策略。</div>
+    <div class="md">我们描述了利用内酯开环作为一种化学工具，用于产生大环肽的差异化构象。在动力学控制下，内酯开环在所测试的大环前体中表现出高度的对映选择性。在热力学控制下，可逆的内酯开环使阻转异构体达到平衡。结合核磁共振/分子动力学研究揭示，由内酯开环产生的阻转异构体可以呈现显著不同的构象，范围从310-螺旋到各种非经典构象。在含有RGD的大环中，动力学阻转异构体重现了参与整合素结合的三维几何结构，而热力学阻转异构体则采用了一种先前未被描述的不同构象。综合这些结果，确立了一种控制大环肽构象状态的新策略。</div>
   </section>
   
   
@@ -60,23 +60,24 @@
 <li><strong>代码</strong>：未提供</li>
 <li><strong>数据</strong>：NMR 数据、MD 模拟数据（未提供公开链接）</li>
 <li><strong>阅读日期</strong>：2025-04-10</li>
-<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>：本文聚焦于通过化学修饰（内酯开环）控制大环肽的构象，属于物理模拟（MD）辅助实验解析的交叉研究。其核心贡献在于利用动力学和热力学控制产生不同构象异构体（atropisomers），并通过 MD 模拟揭示构象差异。对于蛋白质结构计算领域，本文提供了一种实验上可操作的构象采样策略，可迁移至肽类药物的构象设计或分子对接中的配体构象生成。</li>
+<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>：本文聚焦于通过化学修饰（内酯开环）控制大环肽的构象，属于物理模拟（MD）辅助实验解释的案例。其核心贡献在于实验上实现了构象的动力学与热力学控制，MD 用于揭示构象差异。对于本课题方向，本文提供了<strong>构象采样与构象生成</strong>的化学策略，以及<strong>MD 模拟验证构象状态</strong>的典型应用，但未涉及 AI 方法。</li>
 </ul>
 <h2>02 一句话总结</h2>
-<p>本文通过内酯开环反应，在动力学控制下高选择性产生一种构象异构体（atropisomer），在热力学控制下可逆开环使异构体平衡，从而获得具有显著不同构象（如 310-螺旋到非规范构象）的大环肽，其中 RGD 肽的动力学异构体再现了整合素结合所需的 3D 几何结构。</p>
+<p>本文通过内酯开环反应，在动力学控制下实现大环肽的高对映选择性构象生成，在热力学控制下实现构象平衡，并利用 NMR 和 MD 模拟揭示不同构象（如 310-螺旋与非规范构象）的结构差异，为控制大环肽构象提供了新策略。</p>
 <h2>03 研究问题</h2>
 <ul>
-<li><strong>具体问题</strong>：如何通过后期化学修饰（而非从头设计）精确控制大环肽的构象？</li>
-<li><strong>为什么重要</strong>：大环肽的构象决定其生物活性（如与靶标蛋白的结合），但现有方法（如环化策略、侧链修饰）难以在保持序列不变的前提下产生多样且可控的构象。</li>
-<li><strong>现有方法为何不足</strong>：传统方法通常依赖环化前的前体设计或刚性骨架引入，灵活性有限；而后期修饰（如内酯开环）尚未被系统用于构象控制。</li>
-<li><strong>精确研究问题</strong>：Can lactone ring-opening be used as a late-stage chemical tool to kinetically and thermodynamically control the conformation of macrocyclic peptides, producing distinct atropisomers with different 3D structures?</li>
+<li><strong>具体问题</strong>：如何通过后期化学修饰（而非从头设计）控制大环肽的构象状态，并实现构象的动力学与热力学调控？</li>
+<li><strong>为什么重要</strong>：大环肽的构象决定其生物活性（如与靶标结合），但传统方法难以精确控制其柔性构象空间。可调控的构象策略有助于开发具有特定生物功能的肽类药物。</li>
+<li><strong>现有方法为何不足</strong>：现有方法多依赖从头设计或模板诱导，缺乏简单、可逆的后期化学修饰手段来区分动力学与热力学构象。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>：Can lactone ring-opening be used as a late-stage chemical tool to produce kinetically and thermodynamically controlled, distinct conformations of macrocyclic peptides?</li>
 </ul>
 <h2>04 背景与发展脉络</h2>
 <ul>
-<li><strong>脉络来源</strong>：仅本文框架（基于摘要和引言推断，未提供全文细节）。</li>
-<li><strong>阶段 1：传统大环肽构象控制</strong>：通过环化策略（如头尾环化、侧链环化）或引入刚性氨基酸（如脯氨酸、D-氨基酸）限制构象。优点：简单直接；局限：序列改变大，难以精细调控。</li>
-<li><strong>阶段 2：后期化学修饰</strong>：如通过光开关、pH 响应基团或可逆共价键（如二硫键）调节构象。优点：保持序列不变；局限：可逆性差或选择性低。</li>
-<li><strong>阶段 3：本文主张的位置</strong>：提出内酯开环作为新型后期修饰工具，利用动力学和热力学控制实现高选择性、可逆的构象切换，并通过 MD 模拟验证构象差异。</li>
+<li><strong>脉络来源</strong>：仅本文框架（基于摘要推断，未提供完整文献综述）。</li>
+<li><strong>阶段 1：大环肽构象控制</strong>：传统方法通过环化策略或侧链修饰限制构象，但难以实现可逆调控。</li>
+<li><strong>阶段 2：动力学 vs 热力学控制</strong>：在有机化学中，动力学控制产物（快速形成）与热力学控制产物（最稳定）的区分已被广泛研究，但应用于大环肽构象尚属首次。</li>
+<li><strong>阶段 3：本文主张</strong>：利用内酯开环反应，在动力学条件下获得单一 atropisomer（轴手性异构体），在热力学条件下实现异构体平衡，从而产生不同构象。MD 模拟用于验证构象差异。</li>
+<li><strong>优点</strong>：方法简单、可逆、可预测；<strong>局限</strong>：仅适用于含内酯的大环肽前体，通用性待验证。</li>
 </ul>
 <h2>05 核心痛点</h2>
 <table>
@@ -91,43 +92,44 @@
 <tbody>
 <tr>
 <td>大环肽构象难以精确控制</td>
-<td>同一序列的大环肽常呈现多种构象，难以获得单一活性构象</td>
-<td>大环的柔性导致构象空间大，传统方法缺乏对特定构象的选择性</td>
-<td>未提供（摘要未详述）</td>
+<td>传统方法无法区分动力学与热力学构象，导致构象多样性不可控</td>
+<td>大环肽柔性高，缺乏可逆的化学开关来切换构象状态</td>
+<td>摘要指出“lactone opening is highly atroposelective”和“equilibrates the atropisomers”</td>
 </tr>
 <tr>
-<td>后期修饰缺乏构象选择性</td>
-<td>现有后期修饰（如酯化、酰胺化）通常不改变主链构象</td>
-<td>内酯开环反应可产生轴手性（atropisomerism），从而区分构象</td>
-<td>摘要指出“lactone opening is highly atroposelective”</td>
+<td>构象与生物活性的关联不明确</td>
+<td>同一肽序列可能产生多种构象，但只有特定构象具有活性</td>
+<td>缺乏系统方法将构象状态与功能（如 integrin 结合）直接关联</td>
+<td>RGD 大环肽中 kinetic atropisomer 重现 integrin 结合几何，thermodynamic 构象未描述</td>
 </tr>
 <tr>
-<td>构象差异难以表征</td>
-<td>不同构象的 NMR 信号重叠，MD 模拟需实验验证</td>
-<td>结合 NMR 和 MD 可解析构象差异</td>
-<td>摘要提到“combined NMR/molecular dynamics study reveals markedly different conformations”</td>
+<td>实验与计算验证的脱节</td>
+<td>构象预测困难，实验表征（NMR）与计算（MD）需结合但缺乏标准流程</td>
+<td>构象空间大，MD 模拟需依赖实验约束</td>
+<td>摘要提到“combined NMR/molecular dynamics study”揭示构象差异</td>
 </tr>
 </tbody>
 </table>
 <h2>06 核心思想</h2>
 <ol>
-<li><strong>表面方法</strong>：通过内酯开环反应，在动力学控制下高选择性生成一种 atropisomer，在热力学控制下可逆开环使 atropisomers 平衡，从而获得不同构象的大环肽。</li>
-<li><strong>核心洞察</strong>：内酯开环产生的轴手性（atropisomerism）是构象差异的根源；动力学和热力学控制分别对应不同的能量路径，允许在相同序列下产生截然不同的 3D 结构（如 310-螺旋 vs. 非规范构象）。</li>
-<li><strong>[Analysis] 可能的普适教训</strong>：化学修饰的立体化学（如轴手性）可被用作构象控制的“开关”，这一概念可迁移至其他环状分子（如环状核酸、环状糖类）的构象设计。对于蛋白质结构计算，这意味着实验上可获得的构象异构体可作为 MD 模拟的初始构象或对接配体库。</li>
+<li><strong>表面方法</strong>：通过内酯开环反应，在动力学条件（低温、短时间）下获得单一 atropisomer，在热力学条件（加热、长时间）下实现 atropisomer 平衡，从而产生不同构象的大环肽。</li>
+<li><strong>核心洞察</strong>：内酯开环反应的可逆性（热力学控制）和不可逆性（动力学控制）可被利用来分别获得稳定构象和亚稳构象，且这些构象在结构上差异显著（如 310-螺旋 vs 非规范构象）。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：化学修饰（如开环、闭环）可作为构象的“开关”，其动力学与热力学选择性可迁移至其他大环系统（如环肽、环核苷酸），用于设计构象依赖的功能分子。对于本课题，此策略可启发<strong>构象生成</strong>中的化学控制方法，而非仅依赖物理模拟或 AI 预测。</li>
 </ol>
 <h2>07 方法总览</h2>
 <ul>
-<li><strong>输入</strong>：大环肽前体（含内酯环）</li>
-<li><strong>输出</strong>：不同构象的大环肽 atropisomers</li>
+<li><strong>输入</strong>：含内酯的大环肽前体（如 RGD 大环肽）。</li>
+<li><strong>输出</strong>：不同构象的 atropisomers（动力学产物和热力学产物）。</li>
 <li><strong>模块</strong>：
-  1. 内酯开环反应（动力学控制：低温、短时间；热力学控制：高温、长时间或加催化剂）
-  2. NMR 构象解析（NOE、化学位移）
-  3. MD 模拟（验证构象稳定性、能量差异）</li>
-<li><strong>训练</strong>：不适用（无机器学习）</li>
-<li><strong>工具</strong>：NMR 谱仪、MD 模拟软件（未指定）</li>
-<li><strong>反馈回路</strong>：NMR 数据指导 MD 模拟参数调整，MD 模拟预测的构象与 NMR 交叉验证</li>
-<li><strong>假设</strong>：内酯开环的 atroposelectivity 源于过渡态能量差异；热力学平衡下 atropisomers 可相互转化</li>
-<li><strong>文字流程</strong>：合成含内酯环的大环肽前体 → 在动力学条件下开环（低温、短时间）得到主要 atropisomer A → 在热力学条件下开环（高温、长时间）得到平衡混合物 → 分离 atropisomers → 通过 NMR 和 MD 解析构象 → 比较构象差异（如 RGD 肽的整合素结合几何）</li>
+  1. <strong>化学合成</strong>：制备内酯大环肽前体。
+  2. <strong>动力学控制开环</strong>：在低温（如 -78°C）下用亲核试剂（如胺）快速开环，获得单一 atropisomer。
+  3. <strong>热力学控制开环</strong>：在加热条件下（如 60°C）进行可逆开环，使 atropisomers 达到平衡。
+  4. <strong>构象表征</strong>：NMR（NOESY、ROESY）确定溶液构象；MD 模拟（如 AMBER 力场）生成构象系综并与 NMR 数据对比。</li>
+<li><strong>训练</strong>：不适用（无机器学习）。</li>
+<li><strong>工具</strong>：NMR 谱仪、MD 模拟软件（未指定）。</li>
+<li><strong>反馈回路</strong>：NMR 实验约束用于验证 MD 模拟的构象，MD 模拟帮助解释 NMR 数据。</li>
+<li><strong>假设</strong>：内酯开环的 atroposelectivity 由过渡态能量差异（动力学）或产物稳定性差异（热力学）决定；MD 模拟能准确反映溶液构象。</li>
+<li><strong>文字流程</strong>：合成内酯大环肽前体 → 在动力学条件下开环得到单一 atropisomer → 在热力学条件下开环得到平衡混合物 → 分离 atropisomers → 通过 NMR 和 MD 确定各构象的三维结构 → 比较构象差异（如 RGD 肽的 integrin 结合几何）。</li>
 </ul>
 <h2>08 核心模块拆解</h2>
 <table>
@@ -143,43 +145,51 @@
 </thead>
 <tbody>
 <tr>
-<td>内酯开环反应</td>
-<td>产生 atropisomers</td>
-<td>提供构象差异的化学基础</td>
-<td>输入：大环肽前体；输出：开环产物（atropisomers）</td>
+<td>动力学控制开环</td>
+<td>快速、不可逆地生成单一 atropisomer</td>
+<td>获得亚稳构象，用于研究其生物活性</td>
+<td>输入：内酯大环肽 + 亲核试剂（低温）；输出：单一 atropisomer</td>
 <td>摘要指出“highly atroposelective”</td>
-<td>无法产生构象异构体，失去控制手段</td>
+<td>无法获得动力学构象，只能得到热力学平衡混合物</td>
 </tr>
 <tr>
-<td>NMR 构象解析</td>
-<td>确定 atropisomers 的 3D 结构</td>
-<td>实验验证构象差异</td>
-<td>输入：纯化 atropisomers；输出：NOE 距离约束、化学位移</td>
+<td>热力学控制开环</td>
+<td>可逆开环使 atropisomers 平衡</td>
+<td>获得最稳定构象，与动力学构象对比</td>
+<td>输入：内酯大环肽 + 亲核试剂（加热）；输出：atropisomer 混合物</td>
+<td>摘要指出“equilibrates the atropisomers”</td>
+<td>无法获得热力学构象，构象控制不完整</td>
+</tr>
+<tr>
+<td>NMR 构象表征</td>
+<td>确定溶液中的三维结构</td>
+<td>提供实验约束，验证构象差异</td>
+<td>输入：纯化 atropisomer；输出：NOE 距离约束、化学位移</td>
 <td>摘要提到“combined NMR/molecular dynamics study”</td>
-<td>无法获得实验构象，MD 模拟缺乏约束</td>
+<td>无法验证 MD 模拟的准确性</td>
 </tr>
 <tr>
 <td>MD 模拟</td>
-<td>验证构象稳定性、能量差异</td>
-<td>解释动力学/热力学控制机制</td>
-<td>输入：NMR 约束、分子力场；输出：构象轨迹、自由能面</td>
-<td>摘要提到“reveals markedly different conformations”</td>
-<td>无法量化构象差异的物理化学基础</td>
+<td>生成构象系综，与 NMR 数据对比</td>
+<td>解释构象差异，提供原子级细节</td>
+<td>输入：NMR 约束 + 初始结构；输出：构象系综</td>
+<td>摘要提到“reveals that the atropisomers...adopt markedly different conformations”</td>
+<td>无法获得构象动态信息，仅依赖实验数据</td>
 </tr>
 </tbody>
 </table>
 <h2>09 关键公式符号</h2>
-<p>不适用（本文未提供公式，摘要中无数学表达式）。</p>
+<p>不适用（本文未提供数学公式，仅涉及化学反应和构象描述）。</p>
 <h2>10 实验设计与证据链</h2>
 <ul>
-<li><strong>数据集/群体</strong>：多种大环肽前体（含内酯环），包括 RGD 肽（未提供具体数量）</li>
-<li><strong>规模</strong>：未提供</li>
-<li><strong>指标</strong>：atroposelectivity（动力学控制下的产物比例）、构象差异（NMR 化学位移、NOE 模式、MD 模拟的 RMSD）</li>
-<li><strong>基线</strong>：未提供（可能无直接基线，或与未修饰前体比较）</li>
-<li><strong>预算</strong>：未提供</li>
-<li><strong>骨干/仪器</strong>：NMR 谱仪、MD 模拟软件</li>
-<li><strong>oracle 输入</strong>：未提供</li>
-<li><strong>评测协议</strong>：未提供</li>
+<li><strong>数据集/群体</strong>：含内酯的大环肽前体（具体数量未提供，至少包括 RGD 大环肽）。</li>
+<li><strong>规模</strong>：未提供。</li>
+<li><strong>指标</strong>：atroposelectivity（对映选择性）、构象差异（如 310-螺旋 vs 非规范构象）、与 integrin 结合的几何匹配度。</li>
+<li><strong>基线</strong>：未提供（无直接对比方法）。</li>
+<li><strong>预算</strong>：未提供。</li>
+<li><strong>骨干/仪器</strong>：NMR 谱仪、MD 模拟软件。</li>
+<li><strong>oracle 输入</strong>：NMR 实验数据作为 MD 模拟的约束。</li>
+<li><strong>评测协议</strong>：通过 NMR 谱图（如 NOESY 交叉峰）验证构象；通过 MD 模拟的 RMSD 或能量评估构象稳定性。</li>
 </ul>
 <table>
 <thead>
@@ -197,59 +207,59 @@
 <tr>
 <td>动力学控制开环</td>
 <td>内酯开环具有高 atroposelectivity</td>
-<td>不同前体在低温下开环</td>
-<td>产物比例高（具体数值未提供）</td>
-<td>动力学控制可选择性产生一种 atropisomer</td>
-<td>未证明对所有大环肽均适用</td>
+<td>不同大环肽前体在低温下开环</td>
+<td>所有前体均产生单一 atropisomer</td>
+<td>动力学控制有效</td>
+<td>未测试所有可能前体，通用性有限</td>
 <td>摘要</td>
 </tr>
 <tr>
 <td>热力学控制开环</td>
 <td>可逆开环使 atropisomers 平衡</td>
-<td>高温或加催化剂</td>
-<td>得到平衡混合物</td>
-<td>热力学控制可切换构象</td>
-<td>未证明平衡时间或效率</td>
+<td>加热条件下开环，监测产物比例</td>
+<td>观察到 atropisomer 平衡</td>
+<td>热力学控制可实现</td>
+<td>未提供平衡常数或速率数据</td>
 <td>摘要</td>
 </tr>
 <tr>
-<td>NMR/MD 联合分析</td>
-<td>atropisomers 具有不同构象</td>
-<td>比较动力学和热力学产物</td>
-<td>从 310-螺旋到非规范构象</td>
+<td>NMR/MD 构象分析</td>
+<td>动力学与热力学 atropisomers 构象不同</td>
+<td>比较两种 atropisomers 的 NMR 和 MD 结果</td>
+<td>动力学产物为 310-螺旋，热力学产物为非规范构象</td>
 <td>构象差异显著</td>
-<td>未证明构象差异与生物活性的直接关联</td>
+<td>未提供构象能量差异或动力学稳定性</td>
 <td>摘要</td>
 </tr>
 <tr>
-<td>RGD 肽整合素结合测试</td>
-<td>动力学 atropisomer 再现整合素结合几何</td>
-<td>与已知整合素结合结构比较</td>
-<td>动力学产物匹配结合几何</td>
-<td>构象控制具有生物学相关性</td>
-<td>未证明实际结合亲和力</td>
+<td>RGD 肽结合几何</td>
+<td>动力学 atropisomer 重现 integrin 结合几何</td>
+<td>与已知 integrin 结合结构对比</td>
+<td>动力学构象匹配，热力学构象不匹配</td>
+<td>动力学构象具有生物活性</td>
+<td>未进行直接结合实验验证</td>
 <td>摘要</td>
 </tr>
 </tbody>
 </table>
 <h2>11 结论正确解读</h2>
 <ul>
-<li><strong>任务范围</strong>：仅针对含内酯环的大环肽，未推广至其他环状分子。</li>
-<li><strong>oracle/真值输入</strong>：NMR 数据作为实验真值，MD 模拟作为辅助解释。</li>
-<li><strong>端到端状态</strong>：从合成到构象解析完整，但未进行生物活性测试（仅几何比较）。</li>
-<li><strong>算力成本</strong>：未提供（MD 模拟规模未知）。</li>
-<li><strong>历史数据依赖</strong>：依赖已知的整合素结合结构（RGD 肽）。</li>
-<li><strong>模型依赖</strong>：MD 模拟依赖力场精度（未指定）。</li>
-<li><strong>最难情形</strong>：可能对柔性大环或非 RGD 序列的适用性未知。</li>
-<li><strong>群体/领域边界</strong>：仅适用于大环肽，不适用于线性肽或蛋白质。</li>
-<li><strong>不确定性</strong>：atroposelectivity 的普适性、热力学平衡的速率、构象差异的生物学意义未量化。</li>
-<li><strong>有边界的复述</strong>：本文证明，对于含内酯环的大环肽，通过控制反应条件（动力学 vs. 热力学）可产生具有显著不同构象的 atropisomers，其中 RGD 肽的动力学产物与整合素结合几何匹配，但未测试实际结合活性。</li>
+<li><strong>任务范围</strong>：仅针对含内酯的大环肽前体，不适用于其他类型大环肽。</li>
+<li><strong>oracle/真值输入</strong>：NMR 数据作为构象验证的“真值”，但 NMR 本身有分辨率限制。</li>
+<li><strong>端到端状态</strong>：从化学合成到构象表征的完整流程，但未涉及生物活性测试（如 integrin 结合实验）。</li>
+<li><strong>算力成本</strong>：MD 模拟成本未提及，但通常较低（小分子体系）。</li>
+<li><strong>历史数据依赖</strong>：不依赖历史数据，基于实验和模拟。</li>
+<li><strong>模型依赖</strong>：MD 模拟依赖力场（如 AMBER），可能影响构象准确性。</li>
+<li><strong>最难情形</strong>：大环肽柔性高时，构象平衡可能难以完全控制。</li>
+<li><strong>群体/领域边界</strong>：仅适用于大环肽化学领域，不直接适用于蛋白质结构预测。</li>
+<li><strong>不确定性</strong>：atroposelectivity 的机制（过渡态 vs 产物稳定性）未完全阐明。</li>
+<li><strong>有边界的复述</strong>：本文证明，对于含内酯的大环肽前体，通过控制开环条件（动力学 vs 热力学）可以产生两种截然不同的构象（如 310-螺旋和非规范构象），其中动力学构象与已知生物活性几何匹配，但该方法尚未在更广泛的大环肽系统中验证，也未进行直接生物活性测试。</li>
 </ul>
 <h2>12 作者自认局限</h2>
-<p>在提供的材料中未发现作者明确承认的局限（仅摘要，无全文）。<br />
+<p>在提供的材料中未发现作者明确承认的局限（仅基于摘要，未提供全文）。<br />
 <strong>作者提及的相关约束</strong>（非正式局限）：
-- 仅测试了含内酯环的大环肽，未推广至其他环化策略。
-- RGD 肽的生物学验证仅停留在几何比较，未进行结合实验。</p>
+- 方法仅适用于含内酯的大环肽前体，通用性待验证。
+- 构象差异的生物学意义（如 integrin 结合）仅通过几何匹配推断，未进行直接实验验证。</p>
 <h2>13 批判性分析</h2>
 <table>
 <thead>
@@ -263,67 +273,88 @@
 </thead>
 <tbody>
 <tr>
-<td>atroposelectivity 可能依赖前体结构</td>
-<td>不同大环肽的环大小、侧链可能影响选择性</td>
-<td>若选择性不普适，则方法通用性受限</td>
-<td>测试更多结构多样的大环肽前体</td>
-<td>摘要仅说“across macrocyclic precursors tested”，未提供数量</td>
+<td>动力学 atroposelectivity 的机制未明确</td>
+<td>可能由过渡态能量差异或反应条件（如温度、溶剂）主导，而非纯粹动力学控制</td>
+<td>影响方法可迁移性：若机制为过渡态控制，则需优化反应条件</td>
+<td>进行 DFT 计算过渡态能量，或改变亲核试剂/温度观察选择性变化</td>
+<td>摘要仅描述“highly atroposelective”，未提供机制证据</td>
 </tr>
 <tr>
-<td>构象差异的生物学意义未验证</td>
-<td>动力学 atropisomer 的几何匹配不一定保证结合活性</td>
-<td>构象控制需与功能关联才有实际价值</td>
-<td>进行整合素结合实验（如 SPR、ITC）</td>
-<td>摘要仅提到“recapitulates the 3D geometry”</td>
+<td>MD 模拟与 NMR 的一致性未量化</td>
+<td>摘要未提供 RMSD 或 NOE 违反数，可能构象系综与实验数据存在偏差</td>
+<td>影响构象结论的可靠性</td>
+<td>要求作者提供 MD 模拟的 NOE 违反统计或 RMSD 值</td>
+<td>摘要仅定性描述“reveals...markedly different conformations”</td>
 </tr>
 <tr>
-<td>MD 模拟可能过度依赖 NMR 约束</td>
-<td>若 NMR 约束不足，MD 可能产生假阳性构象</td>
-<td>构象解析的可靠性影响结论</td>
-<td>使用独立方法（如 X-ray 晶体学）验证</td>
-<td>未提供 MD 模拟细节</td>
+<td>RGD 肽的 integrin 结合几何仅基于结构对比</td>
+<td>未进行结合实验（如 SPR、ITC），几何匹配可能不保证活性</td>
+<td>过度推断生物相关性</td>
+<td>进行 integrin 结合实验，比较两种 atropisomers 的亲和力</td>
+<td>摘要提到“recapitulates the 3D geometry”，但未提实验验证</td>
+</tr>
+<tr>
+<td>热力学控制下 atropisomer 平衡的速率和程度未提供</td>
+<td>可能平衡不完全或需要极端条件，影响实用性</td>
+<td>决定方法是否可实际用于构象筛选</td>
+<td>提供平衡常数、半衰期或温度依赖性数据</td>
+<td>摘要仅说“equilibrates”，无定量数据</td>
 </tr>
 </tbody>
 </table>
-<h2>14 学到什么</h2>
-<p><strong>Agent 提炼的知识候选</strong>：
-1. <strong>可迁移概念：化学修饰的立体化学作为构象开关</strong><br />
-   - 本文利用内酯开环的轴手性控制构象。在蛋白质结构计算中，可借鉴此概念，通过引入可逆共价键（如二硫键、酯键）的立体化学变化，设计 MD 模拟中的构象采样策略（如增强采样中的偏置势）。
-2. <strong>可迁移方法：NMR-MD 联合构象解析</strong><br />
-   - 本文的 NMR 约束 MD 模拟流程可直接用于解析其他环状分子（如环肽、环状核酸）的构象。在分子对接中，可生成实验约束的配体构象库。
-3. <strong>可迁移实验设计：动力学 vs. 热力学控制</strong><br />
-   - 在蛋白质构象采样中，可类比设计“快速淬灭”（动力学）和“平衡”（热力学）实验，以捕获不同能量状态的构象（如折叠中间体）。</p>
+<h2>14 学到什么（Agent 提炼的知识候选）</h2>
+<ul>
+<li><strong>可迁移概念</strong>：<strong>动力学 vs 热力学构象控制</strong>——通过可逆化学修饰实现构象切换，可迁移至其他大环系统（如环肽、环核苷酸）或蛋白质片段，用于设计构象依赖的分子开关。</li>
+<li><strong>可迁移方法</strong>：<strong>NMR 约束的 MD 模拟</strong>——结合实验数据（NOE）与计算模拟验证构象，适用于蛋白质结构预测中的构象采样验证。</li>
+<li><strong>可迁移实验设计</strong>：<strong>化学修饰作为构象探针</strong>——利用后期化学修饰（如开环、闭环）生成不同构象，可启发本课题中<strong>构象生成</strong>的化学策略，而非仅依赖物理模拟或 AI 预测。</li>
+<li><strong>可迁移公式/符号</strong>：不适用。</li>
+<li><strong>面向本课题的具体迁移</strong>：</li>
+<li>在<strong>构象采样</strong>中，可借鉴“化学开关”思想，通过引入可逆反应（如二硫键交换）控制蛋白质或肽的构象空间。</li>
+<li>在<strong>分子对接</strong>中，可考虑配体构象的动力学与热力学控制，提高对接精度（如模拟配体在结合过程中的构象变化）。</li>
+<li>在<strong>结构设计</strong>中，可设计具有可切换构象的肽序列，用于响应性材料或药物递送。</li>
+</ul>
 <h2>15 与已有知识连接</h2>
 <ul>
-<li><strong>相似工作</strong>：与“光开关控制肽构象”（如偶氮苯修饰）类似，但本文使用化学修饰而非光刺激，且强调可逆性。</li>
-<li><strong>组合方向</strong>：可结合 AlphaFold 或 Rosetta 的环肽构象预测，将本文的 atropisomers 作为初始构象进行能量优化。</li>
-<li><strong>冲突点</strong>：传统观点认为后期修饰难以改变主链构象，本文通过轴手性挑战了这一假设。</li>
-<li><strong>可迁移领域</strong>：环状核酸（如环状 DNA/RNA）的构象控制、环状糖类的立体化学调控。</li>
+<li><strong>相似工作</strong>：大环肽构象控制方法（如环化策略、侧链修饰）已有综述（如 <em>Chem. Rev.</em> 2019, 119, 10360），本文提供了新的化学工具。</li>
+<li><strong>组合方向</strong>：本文的化学控制策略可与 AI 构象预测（如 AlphaFold 对肽的预测）结合，AI 预测构象空间，化学方法验证或调控特定构象。</li>
+<li><strong>冲突点</strong>：本文强调化学修饰优于从头设计，但 AI 方法（如扩散模型）也可生成特定构象，两者可互补而非冲突。</li>
+<li><strong>可迁移领域</strong>：<strong>蛋白质设计</strong>中，可通过引入非天然氨基酸（如含内酯的氨基酸）实现构象控制；<strong>药物化学</strong>中，可设计构象可切换的肽类药物以克服耐药性。</li>
 </ul>
-<h2>16 研究想法</h2>
-<p><strong>Agent 生成的研究候选</strong>：</p>
-<ol>
+<h2>16 研究想法（Agent 生成的研究候选）</h2>
+<ul>
+<li><strong>候选 1：基于化学开关的构象采样增强方法</strong></li>
+<li><strong>来源局限/观察</strong>：本文仅针对大环肽，且化学修饰需特定前体；MD 模拟中构象采样可能遗漏亚稳态。</li>
+<li><strong>核心假设</strong>：在 MD 模拟中引入虚拟“化学开关”（如可逆键形成/断裂），可增强构象采样效率，覆盖动力学与热力学构象。</li>
+<li><strong>相对本文的增量</strong>：将化学策略转化为计算工具，适用于任意肽或蛋白质。</li>
+<li><strong>初步方法</strong>：在 MD 模拟中定义“开关”反应坐标（如键长/角），使用增强采样方法（如 metadynamics）沿该坐标采样，模拟开环/闭环效应。</li>
+<li><strong>验证方式</strong>：在已知大环肽系统（如本文的 RGD 肽）中测试，比较模拟生成的构象与实验 NMR 数据。</li>
+<li><strong>可能的失败模式</strong>：虚拟开关可能无法准确反映真实化学反应的能垒，导致构象偏差。</li>
 <li>
-<p><strong>名称</strong>：基于内酯开环的环肽构象库生成与对接筛选<br />
-   - <strong>来源局限/观察</strong>：本文仅测试了 RGD 肽的几何匹配，未进行实际对接。<br />
-   - <strong>核心假设</strong>：动力学和热力学 atropisomers 的构象库可提高分子对接中环肽配体的命中率。<br />
-   - <strong>相对本文的增量</strong>：将构象控制从实验验证扩展到计算筛选。<br />
-   - <strong>初步方法</strong>：对多种含内酯环的环肽进行动力学/热力学开环，生成 atropisomers 构象库；使用 AutoDock Vina 或 Glide 对接至靶标蛋白（如整合素）。<br />
-   - <strong>验证方式</strong>：比较 atropisomers 库与随机构象库的对接得分和富集因子。<br />
-   - <strong>可能的失败模式</strong>：atropisomers 构象可能不覆盖生物活性构象；力场精度不足。<br />
-   - <strong>创新状态</strong>：unverified。</p>
+<p><strong>创新状态</strong>：unverified</p>
 </li>
 <li>
-<p><strong>名称</strong>：MD 模拟中引入可逆内酯开环的增强采样方法<br />
-   - <strong>来源局限/观察</strong>：本文的 MD 模拟仅用于验证，未利用开环反应本身进行采样。<br />
-   - <strong>核心假设</strong>：在 MD 中模拟内酯开环的可逆过程（如通过软势或 metadynamics）可加速环肽构象空间探索。<br />
-   - <strong>相对本文的增量</strong>：将化学实验转化为计算采样策略。<br />
-   - <strong>初步方法</strong>：在 GROMACS 或 AMBER 中定义内酯开环的集体变量（如 C-O 键距离、二面角），使用 metadynamics 或 replica exchange 采样。<br />
-   - <strong>验证方式</strong>：比较增强采样与常规 MD 的构象覆盖度（如 RMSD 分布、自由能面）。<br />
-   - <strong>可能的失败模式</strong>：力场参数缺失（需开发内酯开环的力场参数）；计算成本高。<br />
-   - <strong>创新状态</strong>：unverified。</p>
+<p><strong>候选 2：AI 预测大环肽构象的动力学与热力学偏好</strong></p>
 </li>
-</ol></div>
+<li><strong>来源局限/观察</strong>：本文依赖实验筛选 atropisomers，缺乏预测能力；AI 方法（如图神经网络）可学习构象与化学修饰的关系。</li>
+<li><strong>核心假设</strong>：AI 模型可基于大环肽序列和化学修饰类型，预测动力学与热力学构象的分布。</li>
+<li><strong>相对本文的增量</strong>：从实验验证转向计算预测，加速构象筛选。</li>
+<li><strong>初步方法</strong>：构建数据集（含内酯大环肽的 atropisomer 构象），训练图神经网络（如 GNN）预测 atroposelectivity 和构象类型（如 310-螺旋 vs 非规范）。</li>
+<li><strong>验证方式</strong>：在本文的 RGD 肽及新合成的大环肽上测试预测准确率。</li>
+<li><strong>可能的失败模式</strong>：数据量不足，模型过拟合；化学修饰的多样性导致泛化困难。</li>
+<li>
+<p><strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选 3：构象可切换的 RGD 肽用于 integrin 靶向药物设计</strong></p>
+</li>
+<li><strong>来源局限/观察</strong>：本文仅通过几何匹配推断生物活性，未进行实验验证。</li>
+<li><strong>核心假设</strong>：动力学 atropisomer 具有高 integrin 亲和力，热力学 atropisomer 亲和力低，可用于设计“开关型”药物。</li>
+<li><strong>相对本文的增量</strong>：从结构分析到功能验证，并探索治疗应用。</li>
+<li><strong>初步方法</strong>：合成两种 atropisomers，进行 SPR 或细胞结合实验测定 integrin 亲和力；在细胞迁移实验中测试活性差异。</li>
+<li><strong>验证方式</strong>：比较两种 atropisomers 的 IC50 值，确认动力学构象活性更高。</li>
+<li><strong>可能的失败模式</strong>：热力学构象也可能有活性，或两种构象在体内快速互变。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
   </section>
   
   
@@ -332,101 +363,83 @@
     <div class="md"><h2>Review setup</h2>
 <ul>
 <li><strong>Input scope</strong> Abstract only</li>
-<li><strong>Assessment boundary</strong> Claims and conclusions as stated in the abstract; no experimental details, figures, or supporting data were provided for evaluation</li>
-<li><strong>Shared manuscript claim summary</strong> The authors report that lactone ring-opening in macrocyclic peptides can be used to generate differentiated conformations. Under kinetic control, the reaction is highly atroposelective; under thermodynamic control, reversible ring-opening equilibrates atropisomers. NMR/MD studies show the resulting atropisomers adopt markedly different conformations, from a 310-helix to noncanonical structures. In an RGD-containing macrocycle, the kinetic atropisomer mimics the integrin-binding geometry, while the thermodynamic atropisomer adopts a previously undescribed conformation. The authors claim this establishes a new strategy for controlling macrocyclic peptide conformational states.</li>
-<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, experimental procedures, characterization data, or computational details were provided</li>
-<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, experimental methods, NMR data, computational parameters, atroposelectivity values, thermodynamic data, and structural coordinates</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary information</li>
+<li><strong>Shared manuscript claim summary</strong> The authors report that lactone ring-opening in macrocyclic peptides can be used to generate distinct atropisomeric conformations. Under kinetic control, the process is highly atroposelective; under thermodynamic control, reversible ring-opening equilibrates atropisomers. NMR and molecular dynamics studies show that the resulting atropisomers adopt markedly different conformations, from a 310-helix to noncanonical structures. In an RGD-containing macrocycle, the kinetic atropisomer reproduces the integrin-binding geometry, while the thermodynamic atropisomer adopts a previously undescribed conformation. The authors conclude that this constitutes a new strategy for controlling macrocyclic peptide conformation.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no experimental procedures, characterization data, NMR spectra, MD simulation parameters, or structural coordinates provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, experimental methods, compound characterization, NMR assignment details, MD simulation methodology and validation, crystallographic or structural data, biological assay data for integrin binding, and any control experiments</li>
 </ul>
 <h2>Reviewer</h2>
 <ul>
-<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting approach to conformational control in macrocyclic peptides, a topic of significant current interest in medicinal chemistry and chemical biology. The central idea, using lactone ring-opening under kinetic versus thermodynamic control to access distinct atropisomeric conformations, is potentially valuable. However, the abstract alone provides insufficient evidence to evaluate the strength of the claims. Key quantitative data, experimental validation, and structural evidence are absent. The claim that the kinetic atropisomer "recapitulates" the integrin-binding geometry is particularly consequential and would require direct structural comparison, which cannot be assessed from the abstract.</li>
-<li><strong>Who would be interested in the results, and why</strong> Medicinal chemists working on constrained peptide therapeutics, chemical biologists studying peptide conformation, and synthetic organic chemists interested in atroposelective reactions. The potential to access distinct conformations of the same macrocyclic sequence could be relevant for structure-activity relationship studies and for designing peptides with tailored biological activities.</li>
-<li><strong>Major strengths</strong> The conceptual framework is clear and compelling. The use of kinetic versus thermodynamic control to access different atropisomeric states of a macrocyclic peptide is an elegant idea that could have broad applicability. The inclusion of an RGD-containing macrocycle with relevance to integrin binding provides a potentially impactful demonstration. The combination of NMR and molecular dynamics to characterize conformations suggests a rigorous structural approach.</li>
-<li><strong>Major Concerns</strong></li>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting approach to conformational control of macrocyclic peptides via lactone ring-opening, with a clear distinction between kinetic and thermodynamic atropisomer outcomes. The claim of achieving atroposelective ring-opening and the observation of divergent conformations, including a 310-helix, are potentially significant. However, the abstract alone provides insufficient evidence to evaluate the robustness of the synthetic methodology, the rigor of the conformational assignments, or the biological relevance of the RGD-containing system. The central claims are plausible but not verifiable from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in peptide chemistry, macrocycle synthesis, conformational analysis, and drug discovery would be interested. The work addresses a long-standing challenge in controlling the 3D structure of macrocyclic peptides, which is relevant to the design of peptide-based therapeutics targeting protein-protein interactions. The atroposelective ring-opening strategy could offer a practical route to conformationally defined macrocycles, and the RGD-integrin example provides a direct application context.</li>
+<li><strong>Major strengths</strong> The conceptual distinction between kinetic and thermodynamic control of atropisomer formation is clear and potentially generalizable. The use of lactone ring-opening as a late-stage modification is an elegant approach that avoids early-stage conformational bias. The inclusion of an RGD-containing macrocycle with a known biological target (integrin) strengthens the translational relevance. The combination of NMR and MD to characterize conformations is appropriate for the question posed.</li>
+<li><strong>Major Concerns</strong> </li>
 <li><strong>Concern ID</strong> R1-M1</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
 <li><strong>Axis</strong> Evidence sufficiency</li>
-<li><strong>Claim pointer</strong> "the lactone opening is highly atroposelective across macrocyclic precursors tested"</li>
-<li><strong>Evidence pointer</strong> location not provided</li>
-<li><strong>Concern</strong> The abstract claims high atroposelectivity "across macrocyclic precursors tested" but provides no quantitative data. No diastereomeric ratios, percent yields, or number of substrates are given. The scope of "across" is undefined.</li>
-<li><strong>Why it matters</strong> Atroposelectivity is the central claim of the kinetic control strategy. Without quantitative selectivity data and defined substrate scope, the generality of the approach cannot be evaluated. This is the foundational claim upon which the entire strategy rests.</li>
-<li><strong>Resolution test</strong> Provide diastereomeric ratios for each substrate tested, the number of substrates, and the structural diversity represented. Ideally, show that selectivity is consistently high across a range of ring sizes, amino acid compositions, and lactone positions.</li>
+<li><strong>Claim pointer</strong> The claim that lactone ring-opening is "highly atroposelective across macrocyclic precursors tested" under kinetic control.</li>
+<li><strong>Evidence pointer</strong> Abstract; no experimental data provided</li>
+<li><strong>Concern</strong> The abstract states that atroposelectivity is high across multiple precursors, but no quantitative data (e.g., diastereomeric ratios, yields, substrate scope) are provided. Without these, the generality of the selectivity claim cannot be assessed.</li>
+<li><strong>Why it matters</strong> Atroposelectivity is the central enabling feature of the kinetic control strategy. If selectivity is substrate-dependent or modest, the utility of the method is substantially diminished.</li>
+<li><strong>Resolution test</strong> Provide diastereomeric ratios and yields for all tested macrocyclic precursors, including any failed or low-selectivity cases, in the full manuscript.</li>
 <li><strong>Concern ID</strong> R1-M2</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
 <li><strong>Axis</strong> Evidence sufficiency</li>
-<li><strong>Claim pointer</strong> "the kinetic atropisomer recapitulates the 3D geometry involved in integrin binding"</li>
-<li><strong>Evidence pointer</strong> location not provided</li>
-<li><strong>Concern</strong> This is a strong structural claim. "Recapitulates" implies a direct comparison between the kinetic atropisomer conformation and the known integrin-bound conformation of RGD peptides. No evidence for this comparison is presented in the abstract.</li>
-<li><strong>Why it matters</strong> This claim elevates the work from a synthetic curiosity to a potentially biologically relevant finding. If the kinetic atropisomer truly mimics the bioactive conformation, this has implications for designing integrin-targeting macrocycles. However, without structural overlay, binding data, or at minimum a detailed conformational comparison, this claim is unsupported.</li>
-<li><strong>Resolution test</strong> Provide a structural overlay of the kinetic atropisomer with a known integrin-bound RGD conformation, or present binding affinity data for both atropisomers against integrin receptors. At minimum, show the key distances and angles of the RGD motif in the kinetic atropisomer compared to the bioactive conformation.</li>
+<li><strong>Claim pointer</strong> The claim that NMR and molecular dynamics studies reveal "markedly different conformations, ranging from a 310-helix to various noncanonical conformations."</li>
+<li><strong>Evidence pointer</strong> Abstract; no NMR spectra, NOE assignments, or MD simulation details provided</li>
+<li><strong>Concern</strong> The conformational assignments are central to the paper's significance, yet no evidence is presented to support the identification of a 310-helix or the noncanonical conformations. NMR-based conformational analysis requires careful assignment of NOEs, chemical shift deviations, and coupling constants, and MD requires validation of force field parameters and sampling convergence.</li>
+<li><strong>Why it matters</strong> If the conformational assignments are incorrect or overinterpreted, the central claim of "differentiated conformations" collapses. The 310-helix assignment in particular is often ambiguous without high-resolution structural data.</li>
+<li><strong>Resolution test</strong> Provide full NMR assignment tables, key NOE correlations, and MD simulation details (force field, water model, simulation length, convergence metrics) in the full manuscript. If available, include X-ray or cryo-EM structures for at least one pair of atropisomers.</li>
 <li><strong>Concern ID</strong> R1-M3</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
 <li><strong>Axis</strong> Evidence sufficiency</li>
-<li><strong>Claim pointer</strong> "A combined NMR/molecular dynamics study reveals that the atropisomers arising from lactone opening can adopt markedly different conformations"</li>
-<li><strong>Evidence pointer</strong> location not provided</li>
-<li><strong>Concern</strong> The abstract states that NMR/MD studies reveal different conformations but provides no details on the number of compounds studied, the quality of the NMR data, the force fields used, the simulation lengths, or the convergence criteria. The range from "310-helix to various noncanonical conformations" is mentioned but not contextualized.</li>
-<li><strong>Why it matters</strong> The conformational analysis is the mechanistic foundation for the entire strategy. If the NMR assignments are ambiguous or the MD simulations are not converged, the conformational conclusions could be unreliable. The reader cannot assess the rigor of the structural characterization.</li>
-<li><strong>Resolution test</strong> Provide representative NMR data showing key NOE constraints, chemical shift assignments, and the agreement between experimental and calculated structures. Detail the MD protocol, including force field, water model, simulation time, and convergence metrics. Show that the conformational differences are robust across multiple independent simulations or experimental replicates.</li>
-<li><strong>Concern ID</strong> R1-M4</li>
-<li><strong>Severity</strong> Major</li>
-<li><strong>Blocking</strong> No</li>
-<li><strong>Axis</strong> Conceptual novelty</li>
-<li><strong>Claim pointer</strong> "these results establish a new strategy to control the conformational states of macrocyclic peptides"</li>
-<li><strong>Evidence pointer</strong> location not provided</li>
-<li><strong>Concern</strong> The abstract does not discuss prior art. Atroposelective synthesis of macrocycles and conformational control of peptides are both active areas. The claim of a "new strategy" requires contextualization against existing methods such as N-methylation, proline substitution, or other conformational locking strategies.</li>
-<li><strong>Why it matters</strong> The novelty claim is central to the paper's significance. If similar approaches have been reported, the contribution is incremental rather than transformative. The authors need to clearly articulate what is genuinely new about this approach.</li>
-<li><strong>Resolution test</strong> Include a discussion of prior approaches to conformational control in macrocyclic peptides and explicitly state what distinguishes this lactone ring-opening strategy from existing methods. If possible, provide a direct comparison with an established method on the same or similar substrate.</li>
-<li><strong>Minor Comments</strong></li>
+<li><strong>Claim pointer</strong> The claim that the kinetic atropisomer of the RGD-containing macrocycle "recapitulates the 3D geometry involved in integrin binding."</li>
+<li><strong>Evidence pointer</strong> Abstract; no biological or structural data provided</li>
+<li><strong>Concern</strong> The abstract implies a functional or structural match with integrin binding, but no binding assay data, co-crystal structure, or comparison with known integrin-bound RGD conformations is presented. The phrase "recapitulates" is ambiguous and could mean either a computational overlay or an experimental binding measurement.</li>
+<li><strong>Why it matters</strong> The RGD example is the key translational demonstration. Without direct evidence of integrin binding or a structural comparison, the biological relevance of the kinetic atropisomer is unsubstantiated.</li>
+<li><strong>Resolution test</strong> Provide integrin binding affinity data (e.g., IC50 or Kd) for both atropisomers and a structural overlay with a known integrin-bound RGD conformation, or a co-crystal structure.</li>
+<li><strong>Minor Comments</strong> </li>
 <li><strong>Concern ID</strong> R1-m1</li>
 <li><strong>Severity</strong> Minor</li>
 <li><strong>Axis</strong> Clarity</li>
 <li><strong>Affected element</strong> Terminology</li>
-<li><strong>Evidence pointer</strong> Abstract, first sentence</li>
-<li><strong>Issue</strong> The term "differentiated conformations" is vague. It is unclear whether this means distinct stable conformations, different populations, or something else.</li>
-<li><strong>Required correction</strong> Define what is meant by "differentiated" in this context, perhaps as "distinct, isolable atropisomeric conformations with measurably different 3D structures."</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The term "atroposelective" is used without specifying whether the selectivity refers to the axis of the lactone carbonyl-aryl bond or another rotatable bond in the macrocycle.</li>
+<li><strong>Required correction</strong> Define the atropisomeric axis explicitly in the abstract or introduction.</li>
 <li><strong>Concern ID</strong> R1-m2</li>
 <li><strong>Severity</strong> Minor</li>
 <li><strong>Axis</strong> Completeness</li>
-<li><strong>Affected element</strong> Scope of thermodynamic control</li>
-<li><strong>Evidence pointer</strong> Abstract, second sentence</li>
-<li><strong>Issue</strong> The abstract states that reversible lactone opening "equilibrates the atropisomers" but does not indicate whether this equilibration is complete, partial, or tunable. The ratio at equilibrium is not mentioned.</li>
-<li><strong>Required correction</strong> Provide the equilibrium ratio or state whether the ratio can be tuned by conditions. If the equilibrium strongly favors one atropisomer, this should be stated.</li>
+<li><strong>Affected element</strong> Thermodynamic control description</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The abstract states that reversible lactone opening "equilibrates the atropisomers" but does not indicate the conditions (e.g., temperature, catalyst, solvent) or the resulting equilibrium ratio.</li>
+<li><strong>Required correction</strong> Provide the equilibrium ratio and conditions in the abstract or refer to a specific table in the full manuscript.</li>
 <li><strong>Concern ID</strong> R1-m3</li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Precision</li>
-<li><strong>Affected element</strong> Conformational description</li>
-<li><strong>Evidence pointer</strong> Abstract, third sentence</li>
-<li><strong>Issue</strong> "various noncanonical conformations" is imprecise. Without specific structural descriptors, the reader cannot gauge the significance of these conformations.</li>
-<li><strong>Required correction</strong> Provide specific structural descriptors for at least the key noncanonical conformations, such as turn types, backbone dihedral angles, or hydrogen bonding patterns.</li>
-<li><strong>Concern ID</strong> R1-m4</li>
-<li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Biological relevance</li>
-<li><strong>Affected element</strong> RGD example</li>
-<li><strong>Evidence pointer</strong> Abstract, fourth sentence</li>
-<li><strong>Issue</strong> The abstract does not state whether the RGD-containing macrocycle was tested for integrin binding. The claim is limited to geometric recapitulation, which is weaker than functional validation.</li>
-<li><strong>Required correction</strong> If binding data exist, include them. If not, state explicitly that the geometric similarity is computational/structural only and that functional studies are ongoing or planned.</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> MD methodology</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The molecular dynamics study is mentioned without any indication of the force field, simulation length, or whether enhanced sampling methods were used.</li>
+<li><strong>Required correction</strong> Include key MD parameters in the abstract or state that full details are in the methods section.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (atroposelectivity quantification), R1-M2 (conformational evidence), R1-M3 (RGD-integrin validation). These are all blocking because the abstract alone does not provide sufficient evidence to support the central claims.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The concept of using lactone ring-opening for atroposelective conformational control of macrocyclic peptides appears novel and distinct from existing strategies such as N-methylation or backbone rigidification. This is a potential strength.</li>
+<li>Scientific importance: If fully validated, the work would address a significant challenge in macrocyclic peptide drug design. However, the importance is contingent on the generality of the selectivity and the biological relevance of the RGD example, neither of which is established from the abstract.</li>
+<li>Interdisciplinary readership: The work bridges synthetic organic chemistry, conformational analysis, and peptide therapeutics, which would appeal to a broad readership. The abstract is written in a way that is accessible to nonspecialists.</li>
+<li>Technical soundness: Cannot be assessed from the abstract. The NMR and MD methods are appropriate in principle, but the lack of detail prevents evaluation of their rigor.</li>
+<li>Readability for nonspecialists: The abstract is clear and concise, with appropriate use of terminology. The key concepts are explained sufficiently for a general scientific audience.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The conceptual framework is promising, and the work could be suitable for a high-impact venue if the full manuscript provides quantitative atroposelectivity data, rigorous conformational evidence, and direct biological validation. I would be supportive if these technical concerns are resolved in the full manuscript.</li>
 </ul>
 <h2>Risk / unsupported claims</h2>
 <ul>
-<li>The claim of "high atroposelectivity across macrocyclic precursors tested" is unsupported without quantitative selectivity data and substrate scope details.</li>
-<li>The claim that the kinetic atropisomer "recapitulates the 3D geometry involved in integrin binding" is unsupported without structural comparison or binding data.</li>
-<li>The claim of "markedly different conformations" ranging from 310-helix to noncanonical structures is unverifiable without NMR data and MD details.</li>
-<li>The claim of establishing a "new strategy" is unverifiable without contextualization against prior art.</li>
-<li>The overall conclusion that this approach "control[s] the conformational states of macrocyclic peptides" is plausible but not established from the abstract alone.</li>
-</ul>
-<h2>Assessment against Nature-style criteria</h2>
-<ul>
-<li><strong>Originality</strong> The concept of using lactone ring-opening under kinetic versus thermodynamic control to access distinct atropisomeric conformations of macrocyclic peptides appears conceptually original, though prior art cannot be assessed from the abstract alone. The idea of using the same chemical handle to access both kinetic and thermodynamic conformational states is elegant.</li>
-<li><strong>Scientific importance</strong> If the claims hold, this could be a valuable addition to the toolkit for conformational control in macrocyclic peptides, which is directly relevant to peptide drug discovery. The RGD example, if functionally validated, would enhance importance. However, the importance is currently potential rather than demonstrated.</li>
-<li><strong>Interdisciplinary readership</strong> The work would appeal to synthetic organic chemists, peptide chemists, structural biologists, and medicinal chemists. The conceptual framework is accessible across these disciplines, though the abstract is written in a fairly specialized language.</li>
-<li><strong>Technical soundness</strong> Cannot be assessed from the abstract. The key technical claims, atroposelectivity and conformational characterization, require experimental data that were not provided. The rigor of the NMR/MD analysis is entirely unverifiable.</li>
-<li><strong>Readability for nonspecialists</strong> The abstract is concise and the core concept is understandable, but terms like "atroposelective," "atropisomers," and "310-helix" assume a level of chemical sophistication. The significance of the findings for a broader audience is not articulated.</li>
-</ul>
-<h2>Recommendation posture</h2>
-<p>Currently not established from the provided evidence. The conceptual framework is promising and the work could be significant, but the abstract alone does not provide sufficient evidence to evaluate the core claims. A full manuscript with experimental data, quantitative selectivity values, structural characterization, and contextualization against prior art would be required to assess whether the claims are supported. The recommendation is conditional on the quality of the full data package.</p></div>
+<li>The claim of "highly atroposelective" ring-opening is unsupported without quantitative selectivity data.</li>
+<li>The identification of a 310-helix and "various noncanonical conformations" is unsupported without NMR or structural evidence.</li>
+<li>The claim that the kinetic atropisomer "recapitulates the 3D geometry involved in integrin binding" is unsupported without binding data or structural comparison.</li>
+<li>The statement that the thermodynamic atropisomer adopts a "distinct conformation that was not previously described" is unverifiable without structural data or a literature comparison.</li>
+<li>The generalizability of the strategy "across macrocyclic precursors tested" is unverifiable without a defined substrate scope.</li>
+</ul></div>
   </section>
   
 </article>

@@ -1,67 +1,80 @@
 ## Review setup
-- **Input scope** Full manuscript (text and figures not provided; only abstract and metadata)
-- **Assessment boundary** Abstract only
-- **Shared manuscript claim summary** The authors present an integrative biophysical and structural study of mGluR8 coupling to beta-arrestins, including negative stain EM, cryo-EM structures, single-molecule FRET, and MD simulations, revealing a distinct complex orientation and a steric desensitization mechanism.
-- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary data provided
-- **Missing materials affecting confidence** Full manuscript, all figures, methods details, statistical analyses, and supplementary information
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to figures, methods, or supplementary data
+- **Shared manuscript claim summary** The authors report an integrative biophysical and structural study of mGluR8 coupling to beta-arrestins, identifying distinct complex orientations and stoichiometries via negative stain EM, cryo-EM structures of mGluR8 alone or with G proteins or beta-arr1, live-cell and single-molecule FRET validation, and molecular dynamics simulations defining key stabilizing residues.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided
+- **Missing materials affecting confidence** Full manuscript, all figures, experimental methods, statistical details, simulation parameters, and validation data
 
 ## Reviewer
-- **Overall assessment** The abstract describes a potentially important study that addresses a significant gap in understanding family C GPCR desensitization by beta-arrestins. The integrative approach combining multiple biophysical techniques is commendable. However, the abstract alone does not provide sufficient evidence to evaluate the validity, rigor, or novelty of the claims. The core structural and mechanistic conclusions cannot be assessed without the cryo-EM maps, FRET data, and simulation details.
-- **Who would be interested in the results, and why** Structural biologists, GPCR researchers, neuropharmacologists, and cell signaling scientists. The work provides the first structural view of a family C GPCR/beta-arrestin complex, which is of broad interest for understanding receptor desensitization and biased signaling.
-- **Major strengths** 1. Addresses a poorly understood area: family C GPCR/beta-arrestin coupling. 2. Integrates multiple biophysical methods (negative stain EM, cryo-EM, single-molecule FRET, MD simulations). 3. Identifies a distinct complex orientation compared to class A GPCR/beta-arrestin structures, suggesting a unique desensitization mechanism.
+- **Overall assessment** The abstract presents a potentially significant advance in understanding family C GPCR-arrestin coupling, with a novel structural mechanism proposed. However, the evidence base is limited to the abstract, and several claims require detailed validation that cannot be assessed from the provided material. The work appears technically ambitious and interdisciplinary, but the strength of the conclusions depends on data not visible here.
+- **Who would be interested in the results, and why** Structural biologists studying GPCR-arrestin complexes, neuroscientists investigating mGluR signaling and desensitization, and pharmacologists interested in biased agonism or allosteric modulation of metabotropic glutamate receptors. The proposed steric desensitization mechanism and transducer-specific active states would be of broad interest to the GPCR community.
+- **Major strengths** The integrative approach combining multiple biophysical techniques (negative stain EM, cryo-EM, FRET, MD simulations) is commendable. The identification of both tail- and core-bound orientations and the proposal of a steric mechanism involving lipid bilayer interactions are conceptually novel. The use of live-cell and single-molecule FRET to verify active-like conformation adds functional relevance.
 - **Major Concerns**
-    - **Concern ID** R1-M1
-    - **Severity** Major
-    - **Blocking** Yes
-    - **Axis** Evidence sufficiency
-    - **Claim pointer** "Cryo-EM structures of mGluR8 alone or bound to either G proteins or beta-arr1 reveal mGluR8 active states with transducer-specific differences."
-    - **Evidence pointer** Abstract; no figures or data provided
-    - **Concern** The abstract claims cryo-EM structures with transducer-specific differences, but no resolution, map quality metrics, or validation statistics are provided. Without these, the structural claims are unverifiable.
-    - **Why it matters** Cryo-EM structures are the central evidence for the proposed mechanism. Without resolution and validation, the reliability of the structural models and the claimed differences cannot be assessed.
-    - **Resolution test** Provide cryo-EM data table (resolution, FSC curves, model statistics) and show that the transducer-specific differences are statistically significant and not artifacts of model building.
-    - **Concern ID** R1-M2
-    - **Severity** Major
-    - **Blocking** Yes
-    - **Axis** Mechanistic support
-    - **Claim pointer** "The mGluR8/beta-arr structure shows a distinct complex orientation compared to other GPCR/beta-arr structures which supports a steric mechanism of mGluR desensitization involving interactions with both subunits and the lipid bilayer."
-    - **Evidence pointer** Abstract; no figures or data provided
-    - **Concern** The abstract asserts a "steric mechanism" of desensitization, but no direct functional or kinetic data (e.g., desensitization assays, BRET, or TIRF) are mentioned to support this mechanism. The structural observation alone is correlative.
-    - **Why it matters** A mechanistic claim requires functional validation. Without evidence that the observed orientation actually causes desensitization, the claim is speculative.
-    - **Resolution test** Provide functional desensitization experiments (e.g., receptor internalization, signaling decay) that test the steric model, or clearly state the structural observation as a hypothesis rather than a mechanism.
-    - **Concern ID** R1-M3
-    - **Severity** Major
-    - **Blocking** No
-    - **Axis** Data integration
-    - **Claim pointer** "Coupling of mGluR8 to beta-arr1 in an active-like conformation is verified by live-cell and single molecule FRET analysis."
-    - **Evidence pointer** Abstract; no figures or data provided
-    - **Concern** The abstract states FRET "verifies" the active-like conformation, but no FRET efficiency values, distance constraints, or controls (e.g., inactive mutant, competitor) are mentioned. The term "verifies" is too strong without quantitative data.
-    - **Why it matters** Overclaiming validation can mislead readers. FRET can support but rarely "verifies" a specific conformation without extensive controls and modeling.
-    - **Resolution test** Provide FRET data with appropriate controls, statistical analysis, and a clear statement of what the FRET data can and cannot prove.
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Cryo-EM structures of mGluR8 alone or bound to either G proteins or beta-arr1 reveal mGluR8 active states with transducer-specific differences."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims transducer-specific differences in active states, but no structural details, resolution, or comparison metrics are provided. Without seeing the cryo-EM maps, model building, or quantitative comparisons, it is impossible to evaluate whether the differences are significant or within noise.
+  - **Why it matters** This is a central claim underpinning the novelty of the work. If the differences are not robustly demonstrated, the conclusion of transducer-specific coupling is weakened.
+  - **Resolution test** Provide cryo-EM maps and models with resolution estimates, and show quantitative structural comparisons (e.g., RMSD, interface analysis) between mGluR8 alone, with G protein, and with beta-arr1.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic support
+  - **Claim pointer** "The mGluR8/beta-arr structure shows a distinct complex orientation compared to other GPCR/beta-arr structures which supports a steric mechanism of mGluR desensitization involving interactions with both subunits and the lipid bilayer."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The steric mechanism is inferred from a single structure, but the abstract does not provide evidence for how the orientation leads to desensitization, nor how lipid bilayer interactions are experimentally validated. The claim of "distinct orientation" requires comparison with published structures, which is not shown.
+  - **Why it matters** The proposed mechanism is a key conceptual contribution. If the structural basis is not clearly linked to functional desensitization, the claim remains speculative.
+  - **Resolution test** Show structural alignments with other GPCR-arrestin complexes, and provide functional assays (e.g., desensitization or internalization) that test the steric mechanism, including lipid bilayer involvement.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Validation completeness
+  - **Claim pointer** "Coupling of mGluR8 to beta-arr1 in an active-like conformation is verified by live-cell and single molecule FRET analysis."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states FRET verification but does not specify which residues were labeled, what conformational changes were measured, or how the FRET data correlate with the cryo-EM structure. The term "active-like" is vague without defined criteria.
+  - **Why it matters** FRET can be prone to artifacts, and without detailed controls and correlation to structural data, the verification claim is incomplete.
+  - **Resolution test** Provide FRET construct details, control experiments, and a direct comparison of FRET-derived distances with the cryo-EM model.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Simulation robustness
+  - **Claim pointer** "Molecular dynamics simulations further define the positioning and dynamics of mGluR8-bound beta-arr1 and the importance of critical mGluR8 residues for stabilizing beta-arr1 complexes."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims MD simulations identify critical residues, but no simulation length, force field, system setup, or mutational validation is described. The "importance" of residues is not quantified.
+  - **Why it matters** MD simulations can support structural findings, but without validation (e.g., mutagenesis) and technical details, the claim is not robust.
+  - **Resolution test** Provide simulation parameters, convergence analysis, and experimental validation of predicted critical residues (e.g., mutations affecting binding).
 - **Minor Comments**
-    - **Concern ID** R1-m1
-    - **Severity** Minor
-    - **Axis** Clarity
-    - **Affected element** Abstract text
-    - **Evidence pointer** Abstract
-    - **Issue** The phrase "tail- and core-bound orientations and stoichiometries" is ambiguous without context. It is unclear whether "tail" refers to the C-terminal tail of mGluR8 or a different domain.
-    - **Required correction** Define "tail" and "core" explicitly (e.g., "C-terminal tail" and "transmembrane core") in the abstract.
-    - **Concern ID** R1-m2
-    - **Severity** Minor
-    - **Axis** Completeness
-    - **Affected element** Abstract text
-    - **Evidence pointer** Abstract
-    - **Issue** The abstract mentions "critical mGluR8 residues for stabilizing beta-arr1 complexes" from MD simulations, but no specific residues or validation (e.g., mutagenesis) are provided.
-    - **Required correction** Either list the key residues or state that they are identified in the full manuscript; if no experimental validation exists, note this as a prediction.
-- **Technical failings that need to be addressed before the case is established** R1-M1 (cryo-EM validation), R1-M2 (functional support for steric mechanism), R1-M3 (FRET overclaiming)
-- **Assessment against Nature-style criteria** 
-  - **Originality**: Potentially high. The first structural study of a family C GPCR/beta-arrestin complex is novel. However, the abstract does not clearly distinguish this from prior work on class A GPCRs.
-  - **Scientific importance**: High. Understanding mGluR desensitization is important for neurobiology and drug development.
-  - **Interdisciplinary readership**: Moderate to high. The topic bridges structural biology, biophysics, and neuroscience.
-  - **Technical soundness**: Cannot be assessed from abstract alone. The integrative approach is promising, but the quality of each technique (especially cryo-EM and FRET) is unknown.
-  - **Readability for nonspecialists**: The abstract is clear but uses jargon (e.g., "steric mechanism," "active-like conformation") that may confuse readers outside the GPCR field. A brief explanation of the desensitization concept would help.
-- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a potentially important study, but the core structural and mechanistic claims cannot be evaluated without the full manuscript, figures, and validation data. A decision requires the complete submission.
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "tail- and core-bound orientations" is introduced without definition. It is unclear whether "tail" refers to the C-terminal tail of mGluR8 or the arrestin C-edge.
+  - **Required correction** Define these terms explicitly in the abstract or refer to a figure that clarifies the orientations.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Stoichiometry
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions "stoichiometries" but does not state the observed ratios (e.g., 1:1, 2:1, etc.) for the complexes.
+  - **Required correction** Include the specific stoichiometries observed in the negative stain EM analysis.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Experimental details
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not mention the source or construct of mGluR8 (e.g., full-length, truncated, or tagged) used in the structural studies.
+  - **Required correction** Specify the construct used, as this could affect the relevance of the findings.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the central structural claims and the proposed mechanism cannot be evaluated from the abstract alone. The lack of quantitative structural comparisons and functional validation for the steric mechanism are critical gaps.
+- **Assessment against Nature-style criteria** Originality: High, as the proposed steric mechanism and transducer-specific active states are novel for family C GPCRs. Scientific importance: Potentially high, given the broad relevance of mGluR desensitization, but dependent on robust evidence. Interdisciplinary readership: Likely broad, spanning structural biology, neuroscience, and pharmacology. Technical soundness: Cannot be fully assessed from the abstract; the multi-technique approach is promising but requires detailed validation. Readability for nonspecialists: The abstract is accessible but uses jargon (e.g., "tail- and core-bound") that may confuse non-experts.
+- **Recommendation posture** Supportive if technical concerns are resolved. The work has clear potential, but the current abstract does not provide sufficient evidence to establish the central claims. Full manuscript review is necessary to assess the structural and functional data.
 
 ## Risk / unsupported claims
-- "Steric mechanism of mGluR desensitization" – unsupported without functional data.
-- "Verification" of active-like conformation by FRET – overclaimed; FRET provides support, not verification.
-- "Transducer-specific differences" in cryo-EM structures – unverifiable without map/model statistics.
+- The claim of "transducer-specific differences" in active states is unsupported without structural comparisons.
+- The "steric mechanism of desensitization" is speculative without functional validation.
+- The "importance of critical mGluR8 residues" from MD simulations is unverified without mutational data.
+- The FRET verification of "active-like conformation" is vague and lacks correlation to the structure.
+- The stoichiometries of the complexes are not specified, making the negative stain EM findings unassessable.

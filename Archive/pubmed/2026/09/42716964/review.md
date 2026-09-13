@@ -1,75 +1,70 @@
 ## Review setup
-- **Input scope** Abstract only
-- **Assessment boundary** Claims and evidence presented in the abstract
-- **Shared manuscript claim summary** The authors report the synthesis of generative protein design workflows to screen 1,758 de novo designed protein binders against BCMA, CD19, and CD22 for use as chimaeric antigen receptors (CARs) in T cells. They identify three key challenges (tonic signalling, occluded epitope engagement, off-target activity) and develop computational and experimental heuristics to overcome these limitations, enabling on-target CAR activation while mitigating liabilities.
+- **Input scope** Abstract
+- **Assessment boundary** Claims and evidence presented in the abstract only
+- **Shared manuscript claim summary** The authors report the synthesis of generative protein design workflows to screen 1,758 de novo protein binders targeting BCMA, CD19, and CD22 for use as chimaeric antigen receptors (CARs) in T cells. They identify three key challenges (tonic signalling, occluded epitope engagement, off-target activity) and develop computational and experimental heuristics to overcome these limitations, thereby accelerating the development of AI-designed proteins for preclinical therapeutic screening.
 - **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided.
-- **Missing materials affecting confidence** Full manuscript, including Methods, Results, Figures, Tables, Supplementary Information, and any data or code availability statements.
+- **Missing materials affecting confidence** Full manuscript, including all figures, tables, methods, supplementary data, and detailed results. The abstract provides no quantitative data, statistical analyses, or experimental details.
 
 ## Reviewer
-- **Overall assessment** The abstract presents a potentially impactful framework for integrating AI-designed protein binders into CAR T-cell therapy development. The scale of screening (1,758 binders) and the identification of specific failure modes are noteworthy. However, the abstract lacks sufficient detail to evaluate the robustness of the heuristics, the quantitative performance of the best candidates, and the generalizability of the approach. The claims are intriguing but not yet established from the provided material.
-- **Who would be interested in the results, and why** Researchers in synthetic immunology, protein engineering, and AI-driven drug discovery would be interested. The work addresses a critical translational gap for AI-designed proteins, moving beyond biochemical characterization into functional cellular assays. The identified failure modes and heuristics could guide future design efforts.
-- **Major strengths**
-    - Large-scale screening of 1,758 de novo binders across three clinically relevant targets (BCMA, CD19, CD22) is a substantial experimental effort.
-    - Explicit identification and characterization of three specific failure modes (tonic signalling, occluded epitope, off-target activity) provides actionable insights for the field.
-    - The development of both computational and experimental heuristics to address these liabilities suggests a practical, integrated workflow.
+- **Overall assessment** The abstract presents a compelling and timely concept: using generative AI to design protein binders for CAR T-cell therapy and systematically evaluating their performance. The identification of three specific challenges is a valuable contribution. However, the abstract lacks any quantitative evidence, making it impossible to assess the validity, robustness, or generalizability of the claims. The current submission is a high-level summary that does not meet the evidentiary standard required for a full manuscript evaluation.
+- **Who would be interested in the results, and why** Researchers in synthetic immunology, protein engineering, and AI-driven drug discovery would be interested. The work directly addresses a critical bottleneck in translating AI-designed proteins into functional therapeutics, particularly for cellular therapies. The systematic identification of failure modes (tonic signalling, epitope occlusion, off-target activity) is of broad interest to the CAR T-cell field.
+- **Major strengths** 
+    - The concept of systematically evaluating AI-designed protein binders in a functional CAR T-cell context is novel and addresses a clear gap in the field.
+    - The identification of three specific, actionable challenges (tonic signalling, occluded epitope engagement, off-target activity) provides a structured framework for future work.
+    - The scale of the screen (1,758 binders across three targets) is impressive and suggests a comprehensive approach.
 - **Major Concerns**
     - **Concern ID** R1-M1
     - **Severity** Major
     - **Blocking** Yes
     - **Axis** Evidence sufficiency
-    - **Claim pointer** "We develop computational and experimental heuristics to overcome these limitations... that retain on-target CAR activation while mitigating liabilities."
-    - **Evidence pointer** Abstract only; location not provided.
-    - **Concern** The abstract does not describe the nature, performance, or validation of these heuristics. It is unclear whether they are general rules, machine learning models, or specific sequence modifications. No quantitative data (e.g., fold improvement in activation, reduction in tonic signalling) is provided.
-    - **Why it matters** Without evidence that the heuristics are effective and generalizable, the central claim of the framework is unsubstantiated. The reader cannot assess whether the approach is a meaningful advance or a minor tweak.
-    - **Resolution test** The full manuscript must provide clear, quantitative data (e.g., bar charts, dose-response curves) comparing the performance of naive vs. heuristic-optimized CARs across all three targets and failure modes. Statistical significance and effect sizes must be reported.
-
+    - **Claim pointer** "We characterize three main challenges that hinder the utility of de novo protein binders as CARs, including tonic signalling, occluded epitope engagement and off-target activity."
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract claims to "characterize" these three challenges, but provides no data, examples, or quantitative metrics to support this characterization. It is unclear how these challenges were identified, how prevalent they are across the 1,758 binders, or what the magnitude of the effects is.
+    - **Why it matters** Without evidence, the claim of "characterization" is unsubstantiated. The reader cannot assess whether these are rare edge cases or systematic problems, nor can they evaluate the validity of the proposed heuristics to overcome them.
+    - **Resolution test** The full manuscript must provide clear, quantitative evidence for each of the three challenges, including representative data, statistical analyses, and a description of the experimental assays used to define them.
     - **Concern ID** R1-M2
     - **Severity** Major
     - **Blocking** Yes
-    - **Axis** Claim support
-    - **Claim pointer** "We characterize three main challenges that hinder the utility of de novo protein binders as CARs, including tonic signalling, occluded epitope engagement and off-target activity."
-    - **Evidence pointer** Abstract only; location not provided.
-    - **Concern** The abstract states these challenges are "characterized" but provides no data on their frequency, severity, or mechanistic basis. For example, what fraction of the 1,758 binders exhibited tonic signalling? How was "occluded epitope" defined and measured? What was the nature of off-target activity?
-    - **Why it matters** The claim of "characterization" implies a systematic analysis. Without any quantitative or qualitative description, the reader cannot evaluate the validity or depth of this analysis.
-    - **Resolution test** The full manuscript must present a systematic analysis of the 1,758 binders, e.g., a breakdown of how many failed due to each challenge, with representative examples and supporting data (e.g., flow cytometry, killing assays, binding specificity panels).
-
+    - **Axis** Evidence sufficiency
+    - **Claim pointer** "We develop computational and experimental heuristics to overcome these limitations, including screens of sequence variants of individual parental structures, that retain on-target CAR activation while mitigating liabilities."
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract states that heuristics were developed and that they "retain on-target CAR activation while mitigating liabilities," but provides no data on the success rate, the degree of improvement, or the specific nature of the heuristics. The term "heuristics" is vague and could refer to a wide range of approaches.
+    - **Why it matters** The central claim of the paper is that these heuristics are effective. Without any quantitative evidence of their performance (e.g., fold-change in tonic signalling, reduction in off-target binding, retention of on-target killing), the claim is not supported.
+    - **Resolution test** The full manuscript must present quantitative data demonstrating the efficacy of the heuristics, including comparisons to baseline (unmodified) binders, statistical significance, and the number of binders that were successfully improved.
     - **Concern ID** R1-M3
     - **Severity** Major
-    - **Blocking** No
-    - **Axis** Generalizability
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency
     - **Claim pointer** "Together, our framework accelerates the development of AI-designed proteins for future preclinical therapeutic screening, helping enable a new generation of cellular therapies."
-    - **Evidence pointer** Abstract only; location not provided.
-    - **Concern** The abstract only tests three targets (BCMA, CD19, CD22) and does not mention validation on any other target or in a different cellular context (e.g., NK cells). The claim of a general "framework" is premature.
-    - **Why it matters** The impact of the work depends on its generalizability beyond the specific targets and binders tested. The abstract provides no evidence for this.
-    - **Resolution test** The full manuscript should include at least one demonstration on a different target or a discussion of the principles that make the heuristics target-agnostic. Alternatively, the claim should be toned down to reflect the specific targets tested.
-
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** This is a broad, forward-looking claim that implies the framework is generalizable and ready for use. The abstract provides no evidence that the framework is applicable beyond the three targets tested, or that it is faster or more efficient than existing methods.
+    - **Why it matters** The claim of "acceleration" and "enabling a new generation" is a major selling point. Without a comparison to a baseline (e.g., traditional binder discovery or other AI methods) or a demonstration of generalizability, this claim is speculative.
+    - **Resolution test** The full manuscript must include a comparison to a relevant baseline (e.g., time/cost of traditional CAR development) and/or demonstrate the framework's success on additional, diverse targets.
 - **Minor Comments**
     - **Concern ID** R1-m1
     - **Severity** Minor
     - **Axis** Clarity
-    - **Affected element** Claim of "synthesize generative protein design workflows"
-    - **Evidence pointer** Abstract
-    - **Issue** The phrase "synthesize generative protein design workflows" is vague. It is unclear whether the authors are combining existing workflows, creating a new one, or simply applying a standard pipeline.
-    - **Required correction** Clarify what is novel about the workflow integration. For example, specify which generative models were used (e.g., RFdiffusion, ProteinMPNN, ESM-IF) and how they were combined.
-
+    - **Affected element** Scope of the screen
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The abstract states "1,758 newly designed protein binders" but does not specify how many of these were unique sequences versus variants of a smaller number of scaffolds.
+    - **Required correction** Clarify the diversity of the binder library (e.g., number of unique scaffolds, number of variants per scaffold).
     - **Concern ID** R1-m2
     - **Severity** Minor
-    - **Axis** Completeness
-    - **Affected element** Description of screening
-    - **Evidence pointer** Abstract
-    - **Issue** The abstract mentions "scalable protein-binding, T-cell activation and in vivo killing assays" but does not specify the model system (e.g., cell lines, mouse models) or the number of binders that progressed through each stage.
-    - **Required correction** Provide a brief summary of the screening funnel (e.g., "Of 1,758 binders, X showed binding, Y showed activation, and Z showed in vivo efficacy").
-
-- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2. The core claims of characterizing challenges and developing effective heuristics are not supported by the abstract alone.
+    - **Axis** Clarity
+    - **Affected element** Definition of "efficacious"
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The title uses "efficacious" but the abstract does not define what constitutes an efficacious CAR in this context (e.g., specific thresholds for activation, killing, or persistence).
+    - **Required correction** Provide a clear, quantitative definition of "efficacious" as used in the study.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The abstract lacks any quantitative evidence to support its central claims. The full manuscript must provide detailed experimental data, statistical analyses, and comparisons to baselines.
 - **Assessment against Nature-style criteria**
-    - **Originality:** Potentially high. The application of AI-designed binders to CARs and the systematic identification of failure modes is novel. However, the abstract does not clearly distinguish this from prior work on antibody-based CARs or other protein scaffolds.
-    - **Scientific importance:** High, if the heuristics are effective and generalizable. The work could address a key bottleneck in translating AI-designed proteins to therapeutics.
-    - **Interdisciplinary readership:** High. The topic bridges AI, protein engineering, and cellular immunotherapy, appealing to a broad audience.
-    - **Technical soundness:** Cannot be assessed from the abstract. The lack of quantitative data and methodological detail prevents evaluation.
-    - **Readability for nonspecialists:** The abstract is clear and well-structured, but terms like "tonic signalling" and "occluded epitope" may require brief explanation for a general audience.
-- **Recommendation posture** Currently not established from the provided evidence. The abstract is promising but lacks the quantitative and methodological detail required to support its central claims. A full manuscript with rigorous data is needed for a proper evaluation.
+    - **Originality:** High. The systematic evaluation of AI-designed protein binders in a functional CAR T-cell context is novel.
+    - **Scientific importance:** Potentially high, but unsubstantiated. If the claims are validated, the work could significantly impact the field of cellular therapy.
+    - **Interdisciplinary readership:** High. The work bridges AI, protein engineering, and immunology.
+    - **Technical soundness:** Cannot be assessed from the abstract. The lack of any quantitative data prevents evaluation.
+    - **Readability for nonspecialists:** The abstract is clear and well-written, but the lack of data makes it difficult for a nonspecialist to gauge the significance.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a promising concept, but the complete absence of quantitative data means the core claims are unsubstantiated. A full manuscript with rigorous experimental evidence is required before a meaningful assessment can be made.
 
 ## Risk / unsupported claims
-- The claim that the framework "accelerates the development of AI-designed proteins for future preclinical therapeutic screening" is unsupported without evidence of generalizability or a quantitative comparison to existing methods.
-- The claim that the three challenges are "characterized" is unsupported without data on their frequency, severity, or mechanism.
-- The claim that the heuristics "retain on-target CAR activation while mitigating liabilities" is unsupported without quantitative performance data.
+- The claim that three specific challenges (tonic signalling, occluded epitope engagement, off-target activity) are "characterized" is unsupported.
+- The claim that the developed heuristics are effective at retaining on-target activation while mitigating liabilities is unsupported.
+- The claim that the framework "accelerates" development and "enables a new generation" of therapies is unsupported and speculative.

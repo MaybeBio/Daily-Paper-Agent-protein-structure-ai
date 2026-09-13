@@ -1,77 +1,75 @@
 ## Review setup
-- **Input scope** Full manuscript (abstract only provided)
-- **Assessment boundary** Abstract only
+- **Input scope** Full manuscript text (abstract only provided in the prompt)
+- **Assessment boundary** Abstract only; no figures, tables, methods, or supplementary materials were provided.
 - **Shared manuscript claim summary** The authors develop an explainable AI framework to interrogate five AI models (AlphaFold3, Protenix, Boltz-2, Chai-1, DynamicBind) on orthosteric and allosteric ligand-protein complexes. They report a consistent performance gap in allosteric vs. orthosteric binding prediction, explain this via energy landscape theory (frustration landscapes), and propose that the AI blind spot can be turned into mechanistic insight.
-- **Visible evidence base** Abstract only; no figures, tables, methods, or results sections provided.
-- **Missing materials affecting confidence** Full text, all figures, tables, methods, datasets, code, and supplementary information.
+- **Visible evidence base** Abstract text only.
+- **Missing materials affecting confidence** Full manuscript, including methods, dataset descriptions, model architectures, training details, evaluation metrics, statistical analyses, figures, tables, and supplementary information. Without these, the claims cannot be independently verified.
 
 ## Reviewer
-- **Overall assessment** The abstract presents an intriguing and potentially important claim: that a systematic failure of current AI models to predict allosteric ligand binding can be explained by energy landscape theory and repurposed as a diagnostic tool. The concept is novel and the scope (five models, stratified datasets) is ambitious. However, the abstract alone provides insufficient evidence to evaluate the rigor of the framework, the statistical significance of the performance gap, the validity of the frustration landscape analysis, or the generalizability of the conclusions. The core claim—that the blind spot is "allosteric" in a mechanistic sense—requires careful control for confounding factors (e.g., binding site geometry, ligand properties, training data bias) that are not addressed in the abstract.
-
-- **Who would be interested in the results, and why** Structural biologists, computational chemists, and AI researchers working on protein-ligand interactions and drug discovery. The work could interest those seeking to understand the limitations of current AI models and those exploring physics-informed explanations for AI behavior. The potential to turn a failure mode into a diagnostic tool for allostery is of broad methodological interest.
-
-- **Major strengths** 1. The question is timely and important: allosteric binding is a major unsolved problem in computational drug discovery. 2. The approach of using explainable AI to interrogate multiple state-of-the-art models is methodologically sound in principle. 3. The connection to energy landscape theory provides a biophysical grounding that goes beyond black-box performance metrics.
-
+- **Overall assessment** The abstract presents an intriguing and potentially impactful hypothesis: that the failure of current AI models to predict allosteric binding is not merely a technical limitation but a reflection of fundamental biophysical principles. The conceptual framing is novel and could be of broad interest. However, the abstract alone provides insufficient evidence to evaluate the rigor of the analysis, the validity of the conclusions, or the reproducibility of the results. The core claims require substantial methodological detail and quantitative support that are not visible in the provided material.
+- **Who would be interested in the results, and why** Researchers in computational structural biology, drug discovery, and AI for science would be interested. The work addresses a recognized limitation of AI-based protein-ligand prediction and proposes a physics-informed explanation, which could guide the development of next-generation models. The interdisciplinary nature of the work (AI + biophysics) also appeals to a broader readership in physical sciences and bioinformatics.
+- **Major strengths** 1. The central hypothesis is conceptually elegant and addresses a timely problem in the field. 2. The use of multiple, diverse AI architectures strengthens the claim that the observed performance gap is systematic rather than model-specific. 3. The attempt to link AI prediction failures to energy landscape theory provides a mechanistic, physics-based explanation that goes beyond simple benchmarking.
 - **Major Concerns**
     - **Concern ID** R1-M1
     - **Severity** Major
     - **Blocking** Yes
     - **Axis** Evidence sufficiency
     - **Claim pointer** "a consistent and substantial performance gap observed across diverse architectures emerges in prediction of allosteric complexes"
-    - **Evidence pointer** Abstract only; no quantitative data provided
-    - **Concern** The abstract asserts a "consistent and substantial performance gap" but provides no metrics (e.g., RMSD, DockQ, binding affinity correlation), no statistical tests, and no comparison of effect sizes across models. Without these, the claim is unverifiable.
-    - **Why it matters** The entire narrative hinges on the existence and magnitude of this gap. If the gap is small, model-dependent, or confounded by dataset composition, the central thesis collapses.
-    - **Resolution test** Provide quantitative performance metrics for each model on orthosteric vs. allosteric datasets, with confidence intervals and statistical significance (e.g., paired t-test or Wilcoxon). Show that the gap is robust across multiple random splits and is not explained by trivial factors (e.g., ligand size, binding site depth).
-
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract states a "consistent and substantial performance gap" but provides no quantitative metrics (e.g., RMSD, DockQ, binding affinity correlation), no statistical significance tests, and no comparison of effect sizes across the five models. The term "substantial" is subjective without numerical support.
+    - **Why it matters** This is the foundational empirical claim of the paper. Without quantitative evidence, the reader cannot assess the magnitude or reliability of the reported gap, nor whether it is truly systematic or could be explained by dataset biases, model training differences, or evaluation protocols.
+    - **Resolution test** Provide a table or figure showing performance metrics (e.g., median RMSD, success rate) for each model on orthosteric vs. allosteric sets, with confidence intervals and statistical tests (e.g., paired t-test, Wilcoxon). Show that the gap is significant and consistent across models.
     - **Concern ID** R1-M2
     - **Severity** Major
     - **Blocking** Yes
-    - **Axis** Conceptual clarity and control
-    - **Claim pointer** "The biophysical logic for this dichotomy is unveiled through physics-based lens of the energy landscape theory"
-    - **Evidence pointer** Abstract only; no data on frustration landscapes
-    - **Concern** The abstract claims that frustration landscape analysis explains the performance gap, but it is unclear how this analysis was performed (e.g., on which structures, using which algorithm, with what validation). The link between AI prediction failure and "neutral frustration landscapes" is asserted, not demonstrated.
-    - **Why it matters** Without a clear, testable link between the computational frustration analysis and the AI model behavior, the explanation remains a post-hoc narrative. The claim that the blind spot is "diagnostic" requires that the frustration landscape be predictive of model failure, not just correlated.
-    - **Resolution test** Show that frustration landscape features (e.g., local frustration index, frustration density) quantitatively predict the performance gap across individual complexes. Provide a confusion matrix or ROC curve demonstrating that the frustration-based classifier outperforms a null model.
-
+    - **Axis** Methodological clarity
+    - **Claim pointer** "rigorously stratified datasets of orthosteric and allosteric ligand-protein complexes"
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract does not describe how the datasets were constructed, curated, or stratified. Key details are missing: size of each dataset, source (e.g., PDB, curated databases), criteria for classifying a site as orthosteric vs. allosteric, how ligand and protein diversity was controlled, and whether the datasets are balanced in terms of difficulty (e.g., binding pocket size, flexibility, sequence identity).
+    - **Why it matters** Dataset quality and stratification are critical for the validity of the comparison. If the allosteric set is systematically more challenging (e.g., larger, more flexible, or less well-represented in training data), the performance gap could be an artifact rather than a fundamental limitation of the models.
+    - **Resolution test** Provide a detailed description of dataset construction in the Methods, including inclusion/exclusion criteria, statistics (e.g., number of complexes, distribution of properties), and a demonstration that the two sets are matched on relevant confounding variables.
     - **Concern ID** R1-M3
     - **Severity** Major
     - **Blocking** Yes
-    - **Axis** Dataset rigor and bias
-    - **Claim pointer** "rigorously stratified datasets of orthosteric and allosteric ligand-protein complexes"
-    - **Evidence pointer** Abstract only; no dataset description
-    - **Concern** The abstract does not describe how orthosteric and allosteric complexes were defined, curated, or stratified. Potential confounds include: (a) allosteric sites may be systematically less well-represented in training data; (b) allosteric ligands may have different physicochemical properties; (c) the structural resolution of allosteric complexes may be lower.
-    - **Why it matters** If the performance gap is driven by data bias rather than a fundamental biophysical property, the conclusions are not generalizable.
-    - **Resolution test** Provide a detailed dataset table with PDB IDs, resolution, ligand properties, and training set overlap for each model. Show that the gap persists after controlling for these variables (e.g., via propensity score matching or regression).
-
+    - **Axis** Conceptual validation
+    - **Claim pointer** "Orthosteric binding creates dominant energetic funnels via ligand-induced minimal frustration quenching, while allosteric sites preserve neutral frustration landscapes in both apo and holo protein states."
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract claims a direct link between AI prediction outcomes and frustration landscapes, but it does not explain how frustration was computed, how the landscapes were compared between orthosteric and allosteric sites, or how the correlation with AI performance was established. The claim appears to be a post-hoc interpretation without independent validation.
+    - **Why it matters** This is the central mechanistic explanation of the paper. Without a clear methodology for computing frustration and a statistical demonstration of the correlation, the claim remains speculative. The reader cannot distinguish between a genuine biophysical insight and a narrative that fits the data.
+    - **Resolution test** Provide a clear description of the frustration analysis (e.g., using the Frustratometer or similar tool), show representative frustration landscapes for orthosteric and allosteric sites, and present a quantitative correlation (e.g., scatter plot, regression) between frustration metrics and AI prediction accuracy.
 - **Minor Comments**
     - **Concern ID** R1-m1
     - **Severity** Minor
     - **Axis** Clarity
     - **Affected element** Terminology
-    - **Evidence pointer** Abstract
-    - **Issue** The phrase "allosteric blind spot" is evocative but ambiguous. It is unclear whether this refers to a failure of prediction, a failure of interpretation, or a fundamental limitation of the models.
-    - **Required correction** Define "blind spot" explicitly in the abstract (e.g., "systematic underperformance in predicting allosteric vs. orthosteric binding poses").
-
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The term "explainable AI framework" is used but not defined. It is unclear whether this refers to a specific method (e.g., SHAP, attention analysis, perturbation-based) or a general approach.
+    - **Required correction** Briefly specify the explainability method(s) used in the abstract or Methods.
     - **Concern ID** R1-m2
     - **Severity** Minor
     - **Axis** Reproducibility
-    - **Affected element** Framework description
-    - **Evidence pointer** Abstract
-    - **Issue** The abstract mentions an "explainable AI framework" but does not specify which XAI method was used (e.g., SHAP, LIME, attention maps, integrated gradients).
-    - **Required correction** Name the XAI method(s) and briefly state how they were applied to the models.
-
-- **Technical failings that need to be addressed before the case is established** R1-M1 (quantitative evidence for performance gap), R1-M2 (causal link to frustration landscapes), R1-M3 (dataset bias control).
-
+    - **Affected element** Model versions
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The abstract lists model names (AlphaFold3, Protenix, etc.) but does not specify versions or release dates. Model performance can vary significantly between versions.
+    - **Required correction** Include version numbers or release dates for each model.
+    - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Scope
+    - **Affected element** Generalizability
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The abstract focuses on five specific models. It is unclear whether the findings are expected to generalize to other AI-based prediction tools (e.g., RoseTTAFold, ESMFold, or docking-based methods).
+    - **Required correction** Acknowledge the scope limitation or provide a rationale for model selection.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (quantitative evidence for performance gap), R1-M2 (dataset construction and stratification), R1-M3 (validation of frustration landscape link).
 - **Assessment against Nature-style criteria** 
-    - **Originality**: High. The idea of using AI failure as a diagnostic for allostery is novel and potentially transformative.
-    - **Scientific importance**: High if validated. Allostery is a central problem in drug discovery and structural biology.
-    - **Interdisciplinary readership**: Moderate to high. The work bridges AI, structural biology, and biophysics.
-    - **Technical soundness**: Cannot be assessed from abstract alone. The concerns above indicate that the evidence base is currently insufficient.
-    - **Readability for nonspecialists**: The abstract is well-written and accessible, though some terms (e.g., "minimal frustration quenching") may require definition.
-
-- **Recommendation posture** Currently not established from the provided evidence. The concept is promising, but the abstract lacks the quantitative and methodological detail needed to evaluate the core claims. A full manuscript with rigorous controls, statistical analysis, and validation is required before the case can be assessed.
+    - **Originality**: High. The idea of using AI prediction failures as diagnostic indicators of allostery is novel and not a simple extension of existing work.
+    - **Scientific importance**: Potentially high, if validated. Allosteric binding is a major challenge in drug discovery, and a physics-informed understanding of AI limitations could guide model improvement.
+    - **Interdisciplinary readership**: Strong. The work bridges AI, structural biology, and biophysics, appealing to a broad audience.
+    - **Technical soundness**: Cannot be assessed from the abstract alone. The core claims lack quantitative support and methodological detail.
+    - **Readability for nonspecialists**: The abstract is well-written and accessible, with clear conceptual framing. However, the lack of concrete numbers reduces its impact.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising, but the abstract alone does not provide sufficient evidence to support the central claims. A full manuscript with rigorous quantitative analysis, detailed methods, and validation of the frustration landscape link is required before a recommendation can be made.
 
 ## Risk / unsupported claims
-- The claim of a "consistent and substantial performance gap" is unsupported without quantitative data.
-- The claim that frustration landscapes "unveil" the biophysical logic is unsupported without showing the analysis and its predictive power.
-- The claim that the framework "turns the allosteric blind spot into mechanistic insight" is unsupported without demonstrating that the insight is novel, testable, and generalizable beyond the specific models and datasets used.
+- The claim of a "consistent and substantial performance gap" is unsupported without quantitative metrics and statistical tests.
+- The claim that the performance gap is explained by frustration landscapes is unsupported without a clear methodology and correlation analysis.
+- The claim that the datasets are "rigorously stratified" is unsupported without a description of the stratification criteria and dataset properties.
+- The claim that the framework "turns the allosteric blind spot into mechanistic insight" is a conceptual conclusion that cannot be evaluated from the abstract alone.

@@ -18,7 +18,7 @@
   <main>
 <article class="paper">
   <div class="paper-head">
-    <span class="score score-high">8</span>
+    <span class="score score-mid">6</span>
     <div>
       <h1>Predicted and experimental protein-ligand coordinates with distance labels and evaluation splits</h1>
       <div class="meta">Klamt T</div>
@@ -29,7 +29,7 @@
          · 仅摘要
          · <a href="https://www.biorxiv.org/content/10.64898/2026.09.06.749709">原文</a>
       </div>
-      <p class="one-liner">该文构建了PLI-Parallax数据集，提供预测与实验的蛋白质-配体坐标及校准的置信度标签，并设计了评估拆分，直接服务于蛋白质-配体结构预测的可靠性与泛化性评估，与本课题的蛋白质结构计算建模高度相关。</p>
+      <p class="one-liner">该文构建了蛋白-配体结构预测的基准数据集PLI-Parallax，包含预测与实验坐标及置信度校准，虽非新方法但为蛋白质结构计算评估提供了关键资源，与本课题相关。</p>
     </div>
   </div>
   
@@ -41,7 +41,7 @@
   
   <section>
     <h2>摘要翻译</h2>
-    <div class="md">结构预测工具现已能提供实验室实验尚未解析的蛋白质-配体几何结构。这些数据通常缺乏经过校准、实际可用的系统级度量，以判断给定复合物是否正确及其可信程度。独立构建的方法之间的一致性是该类问题的一个既定信号。缺失的是一种推导特定一致性水平价值的方法。我们提出PLI-Parallax，它将预测几何结构与校准所需的实验数据一同存储。Chai-1、两种Boltz-2配置以及对接引擎smina在共享输入上运行，覆盖了包含19,350个复合物的实验解析晶体层（crystal tier）和包含31,746个交叉对接对（cross-docked pairs）的语料层（corpus tier），后者在预测受体上缺乏实验真值，共产生307,314,646条残基-配体原子距离记录，存储的坐标允许用户自行选择截断值重新计算。它们之间的一致性在实验数据允许的情况下与观测准确率进行拟合，并推广至无实验数据的区域。通过这种方式，30,567个系统携带预测标签准确率及分裂共形区间（split-conformal interval）。在晶体层上，该区间以所述比率覆盖观测准确率。在语料层上，它根据预期标签质量对系统进行排序，因为两者的分布不同。该存储伴随有跨越七个数据分裂族（data split families）的646个评估配置，其中631个报告了其训练集与测试集在双样本检验（two-sample test）下的分离程度。906个蛋白质登录号（protein accessions）被分区以控制序列泄漏（sequence leakage），因此此处蛋白质冷分裂（protein-cold split）测试的是跨序列空间的泛化能力。这两个层支持基于实验数据的评估，以及在缺乏实验数据时，根据配置间一致性程度加权的监督。</div>
+    <div class="md">结构预测工具现在能够提供实验室实验尚未解析的蛋白质-配体几何结构。这些数据通常缺乏经过校准的、实际可用的系统级度量，以判断给定复合物是否正确及其可信程度。独立构建的方法之间的一致性是该类问题的一个既定信号。缺失的是一种方法，用以推导特定一致性水平的价值。我们提出PLI-Parallax，它将预测几何结构与校准所需的实验数据一同存储。Chai-1、两种Boltz-2配置以及对接引擎smina在共享输入上运行，覆盖了19,350个复合物的实验解析晶体层和31,746个无实验真值的预测受体交叉对接对语料层，产生了307,314,646条残基到配体原子的距离记录，存储的坐标允许使用者自行选择截断值重新计算这些记录。它们之间的一致性在实验数据允许的情况下与观测准确率进行拟合，并推广到无实验数据的场景。这样，30,567个系统携带预测标签准确率及分裂共形区间。在晶体层，该区间以所述速率覆盖观测准确率；在语料层，由于两个分布不同，它按预期标签质量对系统进行排序。该存储伴随七个数据分割家族的646个评估配置，其中631个报告了在双样本检验下训练和测试实体分离的程度。906个蛋白质登录号被分区以控制序列泄漏，因此这里的蛋白质冷分割测试了跨序列空间的泛化能力。这两个层支持针对实验数据的评估，并在缺乏实验数据时，根据配置一致程度进行加权监督。</div>
   </section>
   
   
@@ -50,72 +50,35 @@
     <div class="md"><h2>01 基本信息</h2>
 <ul>
 <li><strong>标题</strong>：Predicted and experimental protein-ligand coordinates with distance labels and evaluation splits</li>
-<li><strong>作者</strong>：Klamt T</li>
-<li><strong>单位</strong>：未提供</li>
-<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
-<li><strong>年份</strong>：2026-09-09</li>
-<li><strong>论文类型</strong>：数据资源/基准（Data Resource/Benchmark）</li>
-<li><strong>领域</strong>：蛋白质-配体结构预测、结构评估、不确定性校准、数据集构建</li>
-<li><strong>关键词</strong>：protein-ligand prediction, conformal prediction, evaluation splits, Chai-1, Boltz-2, smina, distance labels</li>
-<li><strong>DOI/ID</strong>：10.64898/2026.09.06.749709</li>
+<li><strong>作者与单位</strong>：Klamt T（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：数据集/基准（Dataset/Benchmark）</li>
+<li><strong>领域</strong>：蛋白质-配体结构预测、结构生物学、计算化学</li>
+<li><strong>关键词</strong>：protein-ligand, structure prediction, conformal prediction, evaluation splits, cross-docking</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.06.749709</li>
 <li><strong>代码</strong>：未提供</li>
-<li><strong>数据</strong>：PLI-Parallax 数据集（含坐标、距离标签、评估划分），存储于 bioRxiv 关联仓库（具体位置未提供）</li>
+<li><strong>数据</strong>：公开（通过DOI链接获取）</li>
 <li><strong>阅读日期</strong>：2026-09-09</li>
-<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>结构预测结果评估与不确定性量化</strong>子方向。它不提出新的预测模型，而是为已有预测工具（Chai-1、Boltz-2、smina）的输出提供<strong>校准后的可信度标签</strong>，并构建大规模评估基准。其核心贡献在于将<strong>split-conformal prediction</strong>引入蛋白质-配体结构预测的信任度评估，并提供了控制序列泄漏的评估划分。</li>
+<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>：本文提供了一个大规模、带实验真值（部分）和校准置信度的蛋白质-配体结构预测数据集，并设计了严格的序列泄漏控制评估拆分。它填补了结构预测工具（如Chai-1、Boltz-2）输出缺乏可操作置信度指标的空白，为蛋白质-配体对接和结构预测方法的评估与校准提供了关键资源。</li>
 </ul>
 <h2>02 一句话总结</h2>
-<p>为解决预测蛋白质-配体结构缺乏可用可信度度量的问题，本文构建了 PLI-Parallax 数据集（含 19,350 个晶体复合物和 31,746 个 cross-docked 对），用 Chai-1、两种 Boltz-2 配置和 smina 生成 3.07 亿条残基-配体原子距离记录，通过多方法一致性拟合实验精度，并用 split-conformal 区间为 30,567 个系统提供校准后的标签精度估计，在晶体层达到标称覆盖率。</p>
+<p>本文构建了PLI-Parallax数据集，通过将多个结构预测工具（Chai-1、Boltz-2、smina）的预测结果与实验晶体数据对齐，并利用一致性拟合和分裂共形预测，为30,567个蛋白质-配体系统提供了带校准置信区间的距离标签，同时提供了646个评估配置以控制序列泄漏。</p>
 <h2>03 研究问题</h2>
 <ul>
-<li><strong>具体问题</strong>：当结构预测工具给出蛋白质-配体几何结构时，消费者如何知道该结构是否正确、可信度有多高？现有输出缺乏<strong>逐系统的、校准过的、可实际使用的</strong>不确定性度量。</li>
-<li><strong>为什么重要</strong>：随着 AlphaFold 类工具扩展到蛋白质-配体复合物，大量无实验验证的预测结构被用于药物筛选、机制研究等下游任务。若无可信度度量，下游决策无法区分高置信与低置信预测。</li>
-<li><strong>现有方法为何不足</strong>：单一模型的自置信度（如 pLDDT）往往校准不良；实验验证成本高且无法覆盖所有预测；缺乏将多方法一致性转化为绝对精度度量的框架。</li>
-<li><strong>精确研究问题</strong>：Can we derive a calibrated, per-system measure of predicted protein-ligand complex accuracy from the agreement between independently constructed prediction methods, and validate it against experimental data where available?</li>
+<li><strong>具体问题</strong>：如何为蛋白质-配体结构预测结果提供可校准、可操作的每个系统的置信度度量，并构建一个支持严格泛化评估的数据集？</li>
+<li><strong>为什么重要</strong>：当前结构预测工具（如AlphaFold、Chai-1）能预测大量未实验解析的蛋白质-配体结构，但缺乏对预测正确性的可靠度量，限制了其在药物发现等下游任务中的可信应用。</li>
+<li><strong>现有方法为何不足</strong>：现有数据集要么缺乏实验真值，要么不提供校准的置信度；评估拆分常忽略序列泄漏，导致泛化性能被高估。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>：Can we derive a per-system confidence measure for predicted protein-ligand structures by calibrating inter-method agreement against experimental data, and provide evaluation splits that control for sequence leakage?</li>
 </ul>
 <h2>04 背景与发展脉络</h2>
-<p><em>（标注：以下脉络为「经外部核验」的领域常识，结合本文框架定位）</em></p>
-<table>
-<thead>
-<tr>
-<th>阶段</th>
-<th>代表性方法</th>
-<th>优点</th>
-<th>局限</th>
-<th>本文位置</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1. 单模型置信度</td>
-<td>AlphaFold pLDDT, Chai-1 confidence</td>
-<td>内置于模型，无需额外计算</td>
-<td>校准差，不同模型间不可比</td>
-<td>本文不依赖单一模型置信度</td>
-</tr>
-<tr>
-<td>2. 多方法一致性</td>
-<td>集成预测、consensus scoring</td>
-<td>无需实验数据，反映方法间共识</td>
-<td>一致性≠正确性，缺乏绝对标定</td>
-<td>本文核心：将一致性拟合到实验精度</td>
-</tr>
-<tr>
-<td>3. 不确定性校准</td>
-<td>Conformal prediction, calibration</td>
-<td>提供统计保证的区间</td>
-<td>需标定数据，未用于结构预测</td>
-<td>本文创新：split-conformal 用于结构标签</td>
-</tr>
-<tr>
-<td>4. 评估基准</td>
-<td>PDBbind, DUD-E, PoseBusters</td>
-<td>提供标准测试集</td>
-<td>序列泄漏控制不足，缺乏跨方法一致性</td>
-<td>本文提供 646 个评估配置，控制序列泄漏</td>
-</tr>
-</tbody>
-</table>
-<p>本文主张的位置：在「多方法一致性」与「不确定性校准」的交汇处，用实验数据标定一致性-精度关系，并将校准结果外推到无实验数据的系统。</p>
+<ul>
+<li><strong>脉络来源</strong>：经外部核验（基于领域常识）。</li>
+<li><strong>阶段1：实验结构解析</strong>（如PDB）。优点：高精度。局限：通量低，覆盖有限。</li>
+<li><strong>阶段2：计算对接</strong>（如AutoDock、smina）。优点：高通量。局限：依赖受体结构，精度有限，缺乏置信度。</li>
+<li><strong>阶段3：深度学习结构预测</strong>（如AlphaFold、Chai-1、Boltz-2）。优点：可预测未解析结构。局限：输出缺乏校准的置信度，评估拆分常不控制序列泄漏。</li>
+<li><strong>本文主张的位置</strong>：在阶段3的基础上，通过多方法一致性+实验校准，为预测结构提供置信度，并构建严格评估基准。</li>
+</ul>
 <h2>05 核心痛点</h2>
 <table>
 <thead>
@@ -128,60 +91,50 @@
 </thead>
 <tbody>
 <tr>
-<td>预测结构缺乏可信度度量</td>
-<td>消费者无法判断给定复合物是否正确</td>
-<td>预测工具输出未校准的置信度，缺乏逐系统标定</td>
-<td>摘要："typically provided without calibrated, practically usable per-system measures"</td>
+<td>缺乏校准的置信度</td>
+<td>预测结构无“可信度”标签，用户无法判断是否可用</td>
+<td>预测工具输出概率或分数未经实验校准，且无系统方法将方法间一致性转化为可操作度量</td>
+<td>摘要：“provided without calibrated, practically usable per-system measures”</td>
 </tr>
 <tr>
-<td>一致性无法转化为绝对精度</td>
-<td>多方法一致≠正确，但无量化关系</td>
-<td>缺乏将一致性水平映射到精度的标定数据</td>
-<td>摘要："What has been missing is a way to derive what a given level of agreement is worth"</td>
+<td>评估拆分中的序列泄漏</td>
+<td>训练集与测试集存在序列相似性，导致泛化性能被高估</td>
+<td>现有基准未严格控制蛋白质序列同源性</td>
+<td>摘要：“906 protein accessions were partitioned to control sequence leakage”</td>
 </tr>
 <tr>
-<td>评估划分存在序列泄漏</td>
-<td>训练与测试实体序列相似导致泛化高估</td>
-<td>未按序列相似性划分蛋白质</td>
-<td>摘要："906 protein accessions were partitioned to control sequence leakage"</td>
-</tr>
-<tr>
-<td>无实验数据系统的评估缺失</td>
-<td>预测受体上的 cross-docked 对无法验证</td>
-<td>缺乏实验真值，无法直接评估</td>
-<td>摘要："corpus tier ... without experimental ground truth"</td>
+<td>跨方法一致性缺乏量化价值</td>
+<td>不同方法预测一致时，无法知道其对应多高的准确率</td>
+<td>缺少将一致性水平映射到实验准确率的校准函数</td>
+<td>摘要：“What has been missing is a way to derive what a given level of agreement is worth.”</td>
 </tr>
 </tbody>
 </table>
 <h2>06 核心思想</h2>
 <ol>
-<li>
-<p><strong>表面方法</strong>：构建大规模数据集，用多个独立预测工具（Chai-1、两种 Boltz-2、smina）对共享输入生成结构，计算残基-配体原子距离标签；在实验数据可得的晶体层拟合多方法一致性与观测精度之间的关系；用 split-conformal 方法生成校准区间；将校准关系外推到无实验数据的 corpus 层；提供 646 个评估配置以控制序列泄漏。</p>
-</li>
-<li>
-<p><strong>核心洞察</strong>：多方法一致性本身不是精度，但<strong>一致性-精度关系是可标定的</strong>——在实验数据存在的子集上拟合这一关系，然后将其作为函数外推到无实验数据的系统。这本质上是将「共识」从定性信号转化为定量、校准的精度估计。Split-conformal 保证了在标定分布上覆盖率的统计保证。</p>
-</li>
-<li>
-<p><strong>可能的普适教训</strong> [Analysis]：对于任何「预测无真值」的结构生物学任务（如构象采样、对接打分），<strong>多方法一致性 + 实验子集标定 + 外推</strong>是一个可迁移的框架。它不要求新模型，而是为已有模型输出附加可信度层。此外，<strong>序列泄漏控制</strong>（按蛋白质 accession 划分）应成为所有结构预测基准的默认设计。</p>
-</li>
+<li><strong>表面方法</strong>：构建一个包含实验真值（晶体层）和无真值（语料库层）的大规模蛋白质-配体结构数据集，运行多个预测工具（Chai-1、Boltz-2、smina），计算它们之间的一致性，并在有实验数据的子集上拟合一致性-准确率关系，然后将此关系推广到无真值子集，生成带分裂共形预测区间的置信度标签。</li>
+<li><strong>核心洞察</strong>：不同独立方法之间的预测一致性，经过实验校准后，可以作为预测准确率的可靠代理指标，从而为无实验真值的系统提供可操作的置信度。</li>
+<li><strong>可能的普适教训</strong>：[Analysis] 在缺乏ground truth的预测任务中，多方法一致性经过小规模实验校准，可以成为一种有效的置信度估计策略。这适用于蛋白质结构预测、分子对接、甚至其他科学预测领域。</li>
 </ol>
 <h2>07 方法总览</h2>
 <ul>
-<li><strong>输入</strong>：蛋白质序列/结构、配体分子（来自 PDB 晶体层 19,350 复合物 + corpus 层 31,746 cross-docked 对）</li>
-<li><strong>输出</strong>：307,314,646 条残基-配体原子距离记录；30,567 个系统的预测标签精度 + split-conformal 区间；646 个评估配置</li>
-<li><strong>模块</strong>：
-  1. 数据收集与分层（晶体层 + corpus 层）
-  2. 多工具预测（Chai-1、Boltz-2×2、smina）
-  3. 距离标签计算（残基-配体原子距离）
-  4. 一致性-精度拟合（实验数据可得处）
-  5. Split-conformal 区间生成
-  6. 评估划分生成（7 个划分族，646 配置）</li>
-<li><strong>训练</strong>：无传统训练；一致性-精度关系拟合为监督回归</li>
-<li><strong>工具</strong>：Chai-1、Boltz-2（两种配置）、smina（对接引擎）</li>
-<li><strong>反馈回路</strong>：无在线反馈；一次性标定后外推</li>
-<li><strong>假设</strong>：① 多方法一致性在晶体层与 corpus 层对精度的预测关系可迁移；② 距离标签在任意截断下可重计算（存储坐标而非标签）；③ 序列划分能有效控制泄漏</li>
+<li><strong>输入</strong>：19,350个实验解析的蛋白质-配体复合物（晶体层）和31,746个交叉对接对（语料库层），共享输入（蛋白质序列、配体SMILES）。</li>
+<li><strong>输出</strong>：307,314,646个残基-配体原子距离记录，以及30,567个系统的预测标签准确率和分裂共形区间。</li>
+<li><strong>模块</strong>：<ol>
+<li><strong>预测模块</strong>：运行Chai-1、两个Boltz-2配置、smina，生成预测结构。</li>
+<li><strong>距离计算模块</strong>：计算所有预测结构中残基-配体原子距离。</li>
+<li><strong>一致性计算模块</strong>：计算不同方法间距离标签的一致性。</li>
+<li><strong>校准模块</strong>：在晶体层上，将一致性拟合到实验准确率，得到校准函数。</li>
+<li><strong>推广模块</strong>：将校准函数应用于语料库层，生成置信度标签和分裂共形区间。</li>
+<li><strong>评估拆分模块</strong>：设计7个数据拆分家族（共646个配置），控制序列泄漏，并计算训练/测试集的两样本检验距离。</li>
+</ol>
+</li>
+<li><strong>训练</strong>：不涉及模型训练，而是拟合校准函数。</li>
+<li><strong>工具</strong>：Chai-1, Boltz-2, smina。</li>
+<li><strong>反馈回路</strong>：无。</li>
+<li><strong>假设</strong>：方法间一致性在晶体层和语料库层上的分布差异不影响校准函数的可迁移性（作者承认分布不同，但认为仍可用于排序）。</li>
+<li><strong>文字流程</strong>：输入蛋白质-配体对 → 运行多个预测工具 → 计算所有预测结构的残基-配体距离 → 计算方法间距离一致性 → 在晶体层上拟合一致性-准确率关系 → 将校准函数应用于语料库层 → 输出带置信度标签和区间的系统。</li>
 </ul>
-<p><strong>文字流程</strong>：收集实验晶体复合物 → 对共享输入运行 4 个预测工具 → 计算残基-配体距离 → 在晶体层拟合一致性-精度关系 → 用 split-conformal 生成校准区间 → 将关系外推到 corpus 层 → 生成 646 个评估配置（含序列泄漏控制）→ 提供坐标存储供消费者自定义截断重算。</p>
 <h2>08 核心模块拆解</h2>
 <table>
 <thead>
@@ -196,70 +149,59 @@
 </thead>
 <tbody>
 <tr>
-<td>双层数据收集（晶体+corpus）</td>
-<td>提供有/无实验真值的两类数据</td>
-<td>标定需要真值，外推需要无真值数据</td>
-<td>输入：PDB 复合物；输出：19,350+31,746 对</td>
-<td>摘要："experimentally resolved crystal tier" + "corpus tier"</td>
-<td>移除任一层次则无法完成标定-外推流程</td>
+<td>预测模块</td>
+<td>生成多个独立的结构预测</td>
+<td>提供一致性计算的基础</td>
+<td>输入：蛋白质序列、配体SMILES；输出：预测结构坐标</td>
+<td>摘要：运行了Chai-1, Boltz-2, smina</td>
+<td>无法计算一致性，无法进行校准</td>
 </tr>
 <tr>
-<td>多工具预测</td>
-<td>生成独立的一致性信号</td>
-<td>一致性是精度代理</td>
-<td>输入：共享复合物；输出：4 套结构</td>
-<td>摘要："Chai-1, two Boltz-2 configurations, and smina"</td>
-<td>减少工具数则一致性信号可靠性下降</td>
+<td>距离计算模块</td>
+<td>将结构坐标转化为统一的距离标签</td>
+<td>便于跨方法比较和一致性计算</td>
+<td>输入：预测结构坐标；输出：残基-配体原子距离记录</td>
+<td>摘要：307,314,646个距离记录</td>
+<td>无法进行定量比较</td>
 </tr>
 <tr>
-<td>距离标签计算</td>
-<td>提供可重计算的几何度量</td>
-<td>消费者可自定义截断</td>
-<td>输入：坐标；输出：3.07 亿距离记录</td>
-<td>摘要："residue-to-ligand-atom distance records"</td>
-<td>移除则无法灵活评估</td>
+<td>校准模块</td>
+<td>将一致性映射到实验准确率</td>
+<td>赋予一致性以可操作的置信度意义</td>
+<td>输入：晶体层的一致性-准确率对；输出：校准函数</td>
+<td>摘要：“fitted against observed accuracy”</td>
+<td>置信度标签无校准，无法量化</td>
 </tr>
 <tr>
-<td>一致性-精度拟合</td>
-<td>将一致性映射到绝对精度</td>
-<td>一致性本身无绝对意义</td>
-<td>输入：晶体层一致性+真值；输出：映射函数</td>
-<td>摘要："fitted against observed accuracy"</td>
-<td>移除则无法外推</td>
-</tr>
-<tr>
-<td>Split-conformal 区间</td>
-<td>提供统计保证的精度区间</td>
-<td>消费者需要不确定性而非点估计</td>
-<td>输入：拟合残差；输出：校准区间</td>
-<td>摘要："split-conformal interval"</td>
-<td>移除则无统计保证</td>
-</tr>
-<tr>
-<td>评估划分生成</td>
-<td>控制序列泄漏</td>
-<td>泛化评估需序列分离</td>
-<td>输入：906 蛋白质 accession；输出：646 配置</td>
-<td>摘要："646 evaluation configurations"</td>
-<td>移除则泛化评估不可信</td>
+<td>评估拆分模块</td>
+<td>生成控制序列泄漏的训练/测试拆分</td>
+<td>确保泛化评估的严格性</td>
+<td>输入：蛋白质序列；输出：646个评估配置</td>
+<td>摘要：“906 protein accessions were partitioned to control sequence leakage”</td>
+<td>泛化性能被高估</td>
 </tr>
 </tbody>
 </table>
 <h2>09 关键公式符号</h2>
-<p><strong>不适用</strong>——本文为数据资源论文，摘要中未提供具体公式。Split-conformal prediction 的标准公式（如 conformal quantile 计算）未在摘要中展开，需查阅全文方法节。</p>
+<ul>
+<li><strong>不适用</strong>：本文未提供关键公式，核心方法是基于一致性拟合和分裂共形预测的统计过程，而非数学公式。</li>
+</ul>
 <h2>10 实验设计与证据链</h2>
 <ul>
-<li><strong>数据集</strong>：晶体层 19,350 复合物（有实验真值）；corpus 层 31,746 cross-docked 对（无实验真值，预测受体）</li>
-<li><strong>规模</strong>：总计 307,314,646 条距离记录；30,567 个系统带校准标签；906 个蛋白质 accession；646 个评估配置（7 个划分族）</li>
-<li><strong>指标</strong>：预测标签精度（具体指标未在摘要中定义，如 RMSD 或 contact 精度需查全文）；split-conformal 区间覆盖率</li>
-<li><strong>基线</strong>：未提供（无对比方法）</li>
-<li><strong>评测协议</strong>：晶体层验证覆盖率；corpus 层按一致性排序；631/646 配置报告双样本检验的 train/test 分离度</li>
+<li><strong>数据集/群体</strong>：晶体层（19,350个实验解析复合物）、语料库层（31,746个交叉对接对）。</li>
+<li><strong>规模</strong>：总计307,314,646个距离记录，30,567个系统有置信度标签。</li>
+<li><strong>指标</strong>：预测标签准确率、分裂共形区间覆盖率。</li>
+<li><strong>基线</strong>：无明确基线，但隐含与无置信度标签的原始预测对比。</li>
+<li><strong>预算</strong>：未提供。</li>
+<li><strong>骨干/仪器</strong>：Chai-1, Boltz-2, smina。</li>
+<li><strong>Oracle输入</strong>：实验晶体结构（用于校准）。</li>
+<li><strong>评测协议</strong>：在晶体层上验证共形区间覆盖率；在语料库层上验证系统排序能力。</li>
 </ul>
 <table>
 <thead>
 <tr>
 <th>实验</th>
-<th>检验的 claim</th>
+<th>检验的claim</th>
 <th>对比与条件</th>
 <th>结果</th>
 <th>支持的结论</th>
@@ -269,53 +211,56 @@
 </thead>
 <tbody>
 <tr>
-<td>晶体层覆盖率验证</td>
-<td>Split-conformal 区间达到标称覆盖率</td>
-<td>19,350 晶体复合物，4 工具预测</td>
-<td>"covers observed accuracy at the stated rate"</td>
-<td>校准区间在晶体层有效</td>
-<td>未证明在 corpus 层同样覆盖</td>
+<td>晶体层共形区间覆盖率</td>
+<td>分裂共形区间以声称的速率覆盖真实准确率</td>
+<td>在晶体层上计算区间覆盖率</td>
+<td>区间以声称的速率覆盖观察到的准确率</td>
+<td>校准方法在晶体层上有效</td>
+<td>不能证明在语料库层上同样有效</td>
 <td>摘要</td>
 </tr>
 <tr>
-<td>Corpus 层排序</td>
-<td>一致性可排序系统质量</td>
-<td>31,746 对，无真值</td>
-<td>"ranks systems by expected label quality"</td>
-<td>一致性排序有效</td>
-<td>未证明排序与绝对精度精确对应</td>
+<td>语料库层系统排序</td>
+<td>置信度标签能按预期质量对系统排序</td>
+<td>在语料库层上比较置信度标签与（未知的）真实准确率</td>
+<td>区间按预期质量对系统排序</td>
+<td>校准方法在语料库层上提供有意义的排序</td>
+<td>不能证明排序与真实准确率完全一致</td>
 <td>摘要</td>
 </tr>
 <tr>
-<td>序列泄漏控制</td>
-<td>划分能分离训练/测试实体</td>
-<td>906 accession，7 划分族</td>
-<td>631/646 报告显著分离</td>
-<td>蛋白冷划分有效</td>
-<td>未证明所有划分族均充分分离</td>
+<td>评估拆分两样本检验</td>
+<td>训练/测试集在序列上分离</td>
+<td>计算631个配置的两样本检验距离</td>
+<td>报告了分离距离</td>
+<td>评估拆分有效控制了序列泄漏</td>
+<td>不能证明所有配置都完全分离</td>
 <td>摘要</td>
 </tr>
 </tbody>
 </table>
 <h2>11 结论正确解读</h2>
 <ul>
-<li><strong>任务范围</strong>：仅覆盖蛋白质-配体复合物的<strong>距离标签精度</strong>评估，不涉及结合亲和力、构象采样质量或动力学性质。</li>
-<li><strong>Oracle/真值输入</strong>：晶体层使用实验解析结构作为真值；corpus 层无真值，依赖一致性代理。</li>
-<li><strong>端到端状态</strong>：非端到端预测系统，而是<strong>评估层</strong>——为已有预测工具的输出附加可信度。</li>
-<li><strong>算力成本</strong>：未提供（4 个工具 × 5 万+ 复合物的计算成本未在摘要中说明）。</li>
-<li><strong>历史数据依赖</strong>：依赖 PDB 中已有实验结构；corpus 层依赖预测受体结构。</li>
-<li><strong>模型依赖</strong>：结论依赖 Chai-1、Boltz-2、smina 的具体实现；更换工具可能改变一致性-精度映射。</li>
-<li><strong>最难情形</strong>：corpus 层（无真值）的校准外推是最大不确定性来源；cross-docked 对的受体为预测结构，误差可能累积。</li>
-<li><strong>群体/领域边界</strong>：仅覆盖晶体解析的复合物类型；膜蛋白、无序蛋白、共价配体等可能不适用。</li>
-<li><strong>不确定性</strong>：Split-conformal 区间仅保证覆盖率，不保证逐点精度；corpus 层区间含义与晶体层不同。</li>
-<li><strong>有边界的复述</strong>：在晶体复合物分布上，多方法一致性经标定后可提供覆盖率达标的精度区间；在无真值分布上，一致性可排序系统质量，但绝对精度不可验证。</li>
+<li><strong>任务范围</strong>：仅针对蛋白质-配体结构预测的置信度校准，不涉及其他类型预测。</li>
+<li><strong>Oracle/真值输入</strong>：校准依赖实验晶体数据，因此仅适用于有实验数据的子集。</li>
+<li><strong>端到端状态</strong>：非端到端，需要先运行多个预测工具。</li>
+<li><strong>算力成本</strong>：未提供，但运行多个工具成本较高。</li>
+<li><strong>历史数据依赖</strong>：依赖PDB等实验数据。</li>
+<li><strong>模型依赖</strong>：依赖Chai-1、Boltz-2、smina的预测质量。</li>
+<li><strong>最难情形</strong>：当所有方法都一致错误时，校准会给出高置信度的错误标签。</li>
+<li><strong>群体/领域边界</strong>：仅适用于蛋白质-配体复合物，不适用于蛋白质-蛋白质或核酸复合物。</li>
+<li><strong>不确定性</strong>：语料库层的置信度标签基于分布迁移假设，其准确性无法直接验证。</li>
+<li><strong>有边界的复述</strong>：本文通过多方法一致性校准，为蛋白质-配体结构预测提供了带校准置信区间的标签，该标签在实验数据上有效，在无实验数据时可用于系统排序，但无法保证绝对准确率。</li>
 </ul>
 <h2>12 作者自认局限</h2>
-<p>在提供的摘要材料中未发现作者明确承认的局限。</p>
-<p><em>作者提及的相关约束（非正式局限）</em>：
-- Corpus 层无实验真值，精度标签为代理度量（摘要："without experimental ground truth"）
-- 覆盖率保证仅在晶体层验证（摘要："On the crystal tier that interval covers observed accuracy"）
-- 两分布（晶体 vs corpus）存在差异（摘要："since both distributions differ"）</p>
+<ul>
+<li><strong>在提供的材料中未发现作者明确承认的局限</strong>。</li>
+<li><strong>作者提及的相关约束</strong>（非正式局限）：<ul>
+<li>语料库层和晶体层的分布不同，因此共形区间在语料库层上不保证覆盖率，仅用于排序。</li>
+<li>校准依赖所选预测工具，更换工具可能改变校准关系。</li>
+</ul>
+</li>
+</ul>
 <h2>13 批判性分析</h2>
 <table>
 <thead>
@@ -329,116 +274,72 @@
 </thead>
 <tbody>
 <tr>
-<td>一致性-精度映射的外推假设</td>
-<td>晶体层拟合的关系可能在 corpus 层失效，因预测受体引入额外误差</td>
-<td>外推是核心卖点，若失效则 corpus 层标签无意义</td>
-<td>在少量有实验验证的 corpus 子集上验证映射</td>
-<td>摘要："carried to where it does not [have experimental data]"</td>
+<td>校准函数在晶体层和语料库层间的可迁移性未经验证</td>
+<td>分布差异可能导致校准函数失效，即使排序有效，绝对置信度也可能有偏</td>
+<td>用户可能误用置信度标签的绝对值</td>
+<td>在语料库层上随机子集进行实验验证（如通过新实验或模拟）</td>
+<td>摘要：“since both distributions differ”</td>
 </tr>
 <tr>
-<td>工具选择偏差</td>
-<td>4 个工具可能共享训练数据或架构偏差，一致性被高估</td>
-<td>若工具非独立，一致性信号虚高</td>
-<td>检查工具训练集重叠；增加更多独立工具</td>
-<td>摘要："independently constructed methods" 的声称</td>
+<td>一致性度量仅基于距离标签，未考虑结构拓扑或化学合理性</td>
+<td>不同方法可能在距离上一致，但整体结构错误（如配体取向错误）</td>
+<td>置信度标签可能高估结构质量</td>
+<td>引入额外的结构质量指标（如RMSD、clash score）进行交叉验证</td>
+<td>方法节未提供细节</td>
 </tr>
 <tr>
-<td>距离标签的截断敏感性</td>
-<td>消费者自定义截断可能改变一致性-精度关系</td>
-<td>若关系对截断敏感，标定需逐截断重做</td>
-<td>在不同截断下重算并比较标定曲线</td>
-<td>摘要："recompute at a cutoff of their own choosing"</td>
-</tr>
-<tr>
-<td>序列划分的充分性</td>
-<td>906 accession 的划分可能未覆盖配体相似性泄漏</td>
-<td>配体相似也可能导致评估乐观</td>
-<td>增加配体相似性控制的划分</td>
-<td>摘要仅提及蛋白质序列泄漏控制</td>
-</tr>
-<tr>
-<td>覆盖率验证的统计功效</td>
-<td>19,350 样本上验证覆盖率，但未报告置信区间宽度</td>
-<td>覆盖率达标可能因样本量大而掩盖局部失效</td>
-<td>分层检查覆盖率（按蛋白家族、配体类型）</td>
-<td>摘要："covers observed accuracy at the stated rate"</td>
+<td>仅使用三种工具（Chai-1, Boltz-2, smina），一致性可能受工具偏差影响</td>
+<td>如果工具共享训练数据或架构，一致性可能不代表独立证据</td>
+<td>校准的鲁棒性可能被高估</td>
+<td>增加更多独立工具（如AlphaFold3、Rosetta）进行敏感性分析</td>
+<td>摘要：仅提及三种工具</td>
 </tr>
 </tbody>
 </table>
 <h2>14 学到什么</h2>
-<p><strong>Agent 提炼的知识候选</strong>：</p>
-<ol>
-<li>
-<p><strong>一致性-标定-外推框架</strong>：对于蛋白质结构预测、构象采样等无真值任务，可构建「多方法一致性 → 实验子集标定 → 外推」的三步框架，为每个预测附加校准后的可信度。可迁移到 MD 模拟的构象系综评估（如多力场一致性标定实验构象）。</p>
-</li>
-<li>
-<p><strong>Split-conformal 用于结构标签</strong>：将 conformal prediction 从分类/回归扩展到结构距离标签，为每个残基-配体原子距离提供覆盖率保证的区间。可迁移到 AlphaFold 输出中 pLDDT 的校准替代。</p>
-</li>
-<li>
-<p><strong>双层数据设计（有真值+无真值）</strong>：同时提供实验验证层和预测层，使标定与外推在同一数据生态内完成。可迁移到分子对接基准设计（如 DUD-E 有真值 + 大规模虚拟筛选无真值）。</p>
-</li>
-<li>
-<p><strong>序列泄漏控制的评估划分</strong>：按蛋白质 accession 而非复合物划分训练/测试，是评估泛化能力的必要设计。可迁移到所有蛋白质-配体预测基准。</p>
-</li>
-<li>
-<p><strong>可重计算标签存储</strong>：存储坐标而非预计算标签，允许消费者按自定义截断重算，增加数据复用灵活性。可迁移到构象数据集设计。</p>
-</li>
-<li>
-<p><strong>双样本检验用于划分质量</strong>：用两样本检验报告训练/测试实体分离度，为划分质量提供量化指标。可迁移到任何数据划分的验证。</p>
-</li>
-</ol>
+<p><strong>Agent 提炼的知识候选</strong>
+1. <strong>可迁移概念：多方法一致性校准</strong>。在缺乏ground truth的预测任务中，利用多个独立方法的一致性，并通过小规模实验校准，可以生成可操作的置信度。<strong>迁移</strong>：可用于蛋白质-蛋白质对接、RNA结构预测等任务的置信度估计。
+2. <strong>可迁移方法：分裂共形预测</strong>。一种无需模型重训练即可生成校准置信区间的方法。<strong>迁移</strong>：可用于任何回归或分类预测任务，如预测结合亲和力、稳定性变化等。
+3. <strong>可迁移实验设计：序列泄漏控制评估拆分</strong>。通过蛋白质序列聚类和两样本检验，确保训练/测试集在序列上分离。<strong>迁移</strong>：所有涉及蛋白质序列的机器学习任务都应采用此策略，以避免泛化性能高估。
+4. <strong>可迁移数据资源</strong>：PLI-Parallax数据集本身，包含大量带置信度标签的预测结构和评估拆分。<strong>迁移</strong>：可直接用于训练或评估新的蛋白质-配体对接或结构预测模型。</p>
 <h2>15 与已有知识连接</h2>
 <ul>
-<li><strong>AlphaFold 系列</strong>（Jumper et al., Nature 2021）：AlphaFold 的 pLDDT 是单模型置信度，本文的多方法一致性可视为其补充或替代。本文的序列泄漏控制与 AlphaFold 的 CASP 评估设计互补。</li>
-<li><strong>Conformal Prediction</strong>（Vovk et al., 2005）：本文将其应用于结构标签，是 conformal 在结构生物学的新应用场景。</li>
-<li><strong>Boltz-2</strong>（Wohlwend et al., 2024）：本文使用其作为预测工具之一，其置信度输出与本文的一致性信号可对比。</li>
-<li><strong>Chai-1</strong>（Chai Discovery, 2024）：同上。</li>
-<li><strong>smina</strong>（Koes et al., J Chem Inf Model 2013）：作为对接引擎，其打分函数与本文的距离标签互补。</li>
-<li><strong>PDBbind</strong>（Wang et al., 2004）：经典蛋白质-配体基准，本文的晶体层与之类似但规模更大（19,350 vs PDBbind 约 2 万）。</li>
-<li><strong>PoseBusters</strong>（Buttenschoen et al., 2024）：结构质量检查工具，本文的标签精度可与其结合。</li>
-<li><strong>候选方向</strong> [Analysis]：本文框架可扩展到蛋白质-蛋白质复合物预测（如 AlphaFold-Multimer 输出的一致性评估），或 MD 模拟的构象系综可信度评估。</li>
+<li><strong>相似</strong>：与AlphaFold的pLDDT、AlphaFold-Multimer的ipTM类似，都试图提供结构预测的置信度。但本文通过多方法一致性校准，而非模型内部置信度。</li>
+<li><strong>组合</strong>：可与基于物理的对接评分函数（如AutoDock Vina）结合，将置信度标签作为先验或权重，改进对接结果排序。</li>
+<li><strong>冲突</strong>：与一些认为“一致性不等于准确性”的观点冲突。本文通过实验校准部分解决了此问题，但未完全消除。</li>
+<li><strong>可迁移领域</strong>：分子动力学模拟的构象采样、蛋白质设计中的结构评估，均可借鉴多方法一致性校准的思路。</li>
 </ul>
 <h2>16 研究想法</h2>
-<p><strong>Agent 生成的研究候选</strong>：</p>
+<p><strong>Agent 生成的研究候选</strong></p>
 <ol>
 <li>
-<p><strong>名称</strong>：多力场一致性标定 MD 构象可信度
-   - <strong>来源局限/观察</strong>：本文用多工具一致性标定静态结构精度；MD 模拟的构象系综缺乏类似可信度度量。
-   - <strong>核心假设</strong>：多个独立力场（如 AMBER、CHARMM、GROMOS）对同一体系的构象采样一致性，经实验构象标定后，可预测无实验体系的结构可信度。
-   - <strong>初步方法</strong>：对已知晶体结构的蛋白-配体体系运行多力场 MD，计算构象系综间距离分布的一致性；拟合一致性-实验偏差关系；外推到无晶体结构体系。
-   - <strong>验证方式</strong>：在留出集上比较一致性标定与单力场置信度的预测误差。
+<p><strong>名称</strong>：基于多方法一致性的蛋白质-蛋白质对接置信度校准
+   - <strong>来源局限/观察</strong>：本文仅针对蛋白质-配体，但蛋白质-蛋白质对接同样面临置信度缺失问题。
+   - <strong>核心假设</strong>：多个独立蛋白质-蛋白质对接工具（如AlphaFold-Multimer、ZDOCK、HADDOCK）的预测一致性，经实验校准后，可作为对接质量的可靠指标。
+   - <strong>相对本文的增量</strong>：将方法从蛋白质-配体扩展到蛋白质-蛋白质，并可能引入新的结构一致性度量（如界面残基接触模式）。
+   - <strong>初步方法</strong>：构建蛋白质-蛋白质对接数据集，运行多个工具，计算界面残基-残基距离一致性，在实验数据上拟合校准函数。
+   - <strong>验证方式</strong>：在独立测试集上验证共形区间覆盖率，并与AlphaFold-Multimer的ipTM比较。
+   - <strong>可能的失败模式</strong>：不同工具间一致性低，或校准函数在无实验数据时迁移性差。
    - <strong>创新状态</strong>：unverified</p>
 </li>
 <li>
-<p><strong>名称</strong>：AlphaFold 输出与对接引擎的交叉一致性作为亲和力代理
-   - <strong>来源局限/观察</strong>：本文用 Chai-1/Boltz-2 与 smina 的一致性标定结构精度；未涉及亲和力预测。
-   - <strong>核心假设</strong>：AlphaFold 预测的配体结合姿态与 smina 对接姿态的一致性，经实验亲和力标定后，可预测无实验体系的相对亲和力排序。
-   - <strong>初步方法</strong>：对 PDBbind 体系计算 AlphaFold 姿态与 smina 姿态的 RMSD 一致性；拟合一致性-实验 Ki/Kd 关系；外推到虚拟筛选库。
-   - <strong>验证方式</strong>：在 DUD-E 或 LIT-PCBA 上比较一致性排序与 docking score 排序的富集因子。
+<p><strong>名称</strong>：结合物理评分与深度学习一致性的混合置信度模型
+   - <strong>来源局限/观察</strong>：本文仅使用距离标签一致性，未考虑物理化学合理性（如范德华力、静电）。
+   - <strong>核心假设</strong>：将多方法一致性特征与物理评分函数（如Vina score）结合，能提供比单一信号更鲁棒的置信度。
+   - <strong>相对本文的增量</strong>：引入多模态特征（一致性+物理评分），可能提升校准的准确性和鲁棒性。
+   - <strong>初步方法</strong>：在PLI-Parallax数据上，提取一致性特征和物理评分特征，训练一个轻量级模型（如随机森林）来预测实验准确率。
+   - <strong>验证方式</strong>：在晶体层上交叉验证，并与纯一致性校准比较。
+   - <strong>可能的失败模式</strong>：物理评分与一致性高度相关，无额外信息增益；或模型过拟合。
    - <strong>创新状态</strong>：unverified</p>
 </li>
 <li>
-<p><strong>名称</strong>：序列-配体双泄漏控制的评估划分生成器
-   - <strong>来源局限/观察</strong>：本文仅控制蛋白质序列泄漏（906 accession），未提及配体相似性控制。
-   - <strong>核心假设</strong>：同时控制蛋白质序列和配体骨架相似性的划分，能更准确评估泛化能力。
-   - <strong>初步方法</strong>：基于 MMseqs2 序列聚类 + 配体 ECFP 相似性聚类，生成联合划分；用双样本检验量化分离度。
-   - <strong>验证方式</strong>：在多个预测工具上比较联合划分与单维划分的泛化差距。
-   - <strong>创新状态</strong>：unverified</p>
-</li>
-<li>
-<p><strong>名称</strong>：Split-conformal 区间在构象采样中的覆盖率验证
-   - <strong>来源局限/观察</strong>：本文在晶体层验证了 conformal 覆盖率；未涉及构象系综的覆盖率。
-   - <strong>核心假设</strong>：对 MD 或生成模型（如扩散模型）采样的构象系综，split-conformal 区间能覆盖实验构象的指定比例。
-   - <strong>初步方法</strong>：对已知晶体结构体系运行构象采样，计算系综到实验构象的距离分布；用 split-conformal 生成区间并验证覆盖率。
-   - <strong>验证方式</strong>：在不同蛋白家族和采样方法上比较覆盖率稳定性。
-   - <strong>创新状态</strong>：unverified</p>
-</li>
-<li>
-<p><strong>名称</strong>：预测结构可信度标签用于虚拟筛选的加权打分
-   - <strong>来源局限/观察</strong>：本文提供 30,567 个系统的可信度标签，但未展示下游应用。
-   - <strong>核心假设</strong>：用可信度标签加权 docking score，可提高虚拟筛选的富集率（低可信度预测降权）。
-   - <strong>初步方法</strong>：在 corpus 层对 smina 打分乘以可信度权重；在已知活性体系上比较加权与未加权的 AUC。
-   - <strong>验证方式</strong>：在 DUD-E 子集上评估富集因子。
+<p><strong>名称</strong>：动态共形预测：根据预测难度调整置信度区间
+   - <strong>来源局限/观察</strong>：本文使用固定共形区间，但不同系统的预测难度不同。
+   - <strong>核心假设</strong>：根据输入特征（如序列长度、配体大小、同源性）动态调整共形区间宽度，能提供更精确的置信度。
+   - <strong>相对本文的增量</strong>：从静态区间到动态区间，可能提升区间效率（更窄的区间同时保持覆盖率）。
+   - <strong>初步方法</strong>：使用条件共形预测或分位数回归，以输入特征为条件，学习区间宽度。
+   - <strong>验证方式</strong>：在晶体层上比较动态区间与静态区间的平均宽度和覆盖率。
+   - <strong>可能的失败模式</strong>：动态区间在困难系统上过宽，失去实用价值。
    - <strong>创新状态</strong>：unverified</p>
 </li>
 </ol></div>
@@ -449,119 +350,88 @@
     <h2>审稿人评审</h2>
     <div class="md"><h2>Review setup</h2>
 <ul>
-<li><strong>Input scope</strong> Abstract</li>
-<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract only</li>
-<li><strong>Shared manuscript claim summary</strong> The authors present PLI-Parallax, a deposited dataset of predicted and experimental protein-ligand coordinates with distance labels, designed to provide calibrated per-system confidence measures for predicted complexes. The dataset includes 307 million distance records across two tiers (crystal and corpus), uses inter-method agreement to predict label accuracy, and provides split-conformal intervals. The deposit also includes 646 evaluation configurations across seven data split families, with 631 reporting two-sample test separation, and 906 protein accessions partitioned to control sequence leakage.</li>
-<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, or supplementary materials provided</li>
-<li><strong>Missing materials affecting confidence</strong> Full manuscript, figures, tables, supplementary data, code repository, dataset access details, and any experimental validation results</li>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present PLI-Parallax, a large-scale deposit of predicted and experimental protein–ligand coordinates with distance labels, split-conformal prediction intervals, and evaluation splits designed to control sequence leakage. The deposit is claimed to enable calibration of predicted complex accuracy using agreement between independent methods, and to support evaluation both where experimental data exist and where it does not.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or supplementary materials provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods description, figures, tables, supplementary data, code repository, and any validation results beyond the abstract’s summary statements</li>
 </ul>
 <h2>Reviewer</h2>
 <ul>
-<li>
-<p><strong>Overall assessment</strong> The abstract describes a potentially valuable resource for the structural biology and computational drug discovery communities. The core idea—using inter-method agreement to calibrate confidence in predicted protein-ligand geometries—is conceptually sound and addresses a recognized gap. However, the abstract is dense and lacks sufficient detail to evaluate the technical validity, statistical rigor, and practical utility of the proposed approach. Key claims about calibration, coverage, and generalisation are stated without supporting evidence or methodological justification. The assessment is therefore provisional, pending full manuscript review.</p>
-</li>
-<li>
-<p><strong>Who would be interested in the results, and why</strong> Computational structural biologists, drug discovery researchers, and developers of protein-ligand prediction methods. The dataset could serve as a benchmark for evaluating prediction tools and as a resource for training confidence models. The split-conformal intervals and evaluation splits are of direct interest to practitioners needing reliable uncertainty estimates for predicted complexes.</p>
-</li>
-<li>
-<p><strong>Major strengths</strong> 1. Addresses a clear and important gap: the lack of calibrated, per-system confidence measures for predicted protein-ligand geometries. 2. Large-scale dataset (307 million distance records) with both experimental and predicted data, enabling calibration and evaluation. 3. Use of inter-method agreement as a signal for accuracy is a well-motivated approach. 4. Inclusion of multiple evaluation splits (including protein-cold) and two-sample tests for leakage control is methodologically rigorous.</p>
-</li>
-<li>
-<p><strong>Major Concerns</strong></p>
-<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially valuable resource for the protein–ligand prediction community, but the claims of calibration, coverage, and evaluation utility cannot be assessed from the abstract alone. The deposit size and the inclusion of split-conformal intervals are notable, but critical details about the fitting procedure, the validity of the calibration transfer, and the actual performance of the intervals are absent. The manuscript may be of interest, but the current evidence is insufficient to evaluate its scientific contribution.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational structural biologists, drug discovery researchers, and developers of protein–ligand prediction methods would be interested in a large, curated dataset with calibrated confidence measures and controlled evaluation splits. The resource could facilitate benchmarking, model training, and uncertainty quantification in structure prediction.</li>
+<li><strong>Major strengths</strong> 1. Large scale: 307 million distance records from multiple prediction methods across &gt;50,000 complexes. 2. Inclusion of split-conformal prediction intervals, a principled uncertainty quantification approach, applied to a protein–ligand prediction context. 3. Explicit control of sequence leakage via protein-cold splits, addressing a known weakness in many benchmarks. 4. Provision of evaluation configurations with two-sample test results, enabling users to assess distributional similarity.</li>
+<li><strong>Major Concerns</strong><ul>
 <li><strong>Concern ID</strong> R1-M1</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> Statistical validity / calibration</li>
-<li><strong>Claim pointer</strong> "On the crystal tier that interval covers observed accuracy at the stated rate."</li>
-<li><strong>Evidence pointer</strong> Abstract only; no figure or table provided</li>
-<li><strong>Concern</strong> The abstract claims that the split-conformal interval achieves nominal coverage on the crystal tier, but provides no quantitative results (e.g., coverage rate, interval width, calibration plot). Without these, the claim is unverifiable.</li>
-<li><strong>Why it matters</strong> Calibration is the central claim of the work. If the intervals do not achieve the stated coverage, the entire premise of providing "practically usable per-system measures" is undermined.</li>
-<li>
-<p><strong>Resolution test</strong> Provide a calibration plot (e.g., empirical coverage vs. nominal level) for the crystal tier, along with interval width statistics. Report the exact coverage rate achieved at the stated nominal level.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-M2</p>
-</li>
+<li><strong>Axis</strong> Calibration validity</li>
+<li><strong>Claim pointer</strong> "Their mutual agreement is fitted against observed accuracy where experimental data permits it and carried to where it does not. This way 30,567 systems carry predicted label accuracy together with a split-conformal interval. On the crystal tier that interval covers observed accuracy at the stated rate."</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract claims that split-conformal intervals are calibrated on the crystal tier and then transferred to the corpus tier, but provides no details on the fitting procedure, the assumptions required for transfer, or the actual coverage rate achieved. The statement "that interval covers observed accuracy at the stated rate" is vague—what is the stated rate? Is it the nominal 90% or 95%? The abstract also acknowledges that "both distributions differ" between tiers, which directly undermines the validity of transferring calibration from one distribution to another without explicit justification or adjustment.</li>
+<li><strong>Why it matters</strong> The central claim of the deposit is that it provides calibrated, practically usable per-system measures of trust. If the calibration transfer is not theoretically justified or empirically validated on the corpus tier, the utility of the intervals for systems without experimental data is unsubstantiated. This is a core scientific claim that must be supported.</li>
+<li><strong>Resolution test</strong> Provide the exact coverage rate achieved on the crystal tier, the nominal level of the conformal interval, and a clear description of the calibration transfer method. Show empirical evidence (e.g., calibration plots or coverage statistics) on a held-out subset of the corpus tier where experimental data are available, or provide a theoretical argument for why transfer is valid despite distribution shift.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> Generalisation / transferability</li>
-<li><strong>Claim pointer</strong> "On the corpus tier it ranks systems by expected label quality, since both distributions differ."</li>
-<li><strong>Evidence pointer</strong> Abstract only</li>
-<li><strong>Concern</strong> The abstract states that the interval ranks systems on the corpus tier, but does not explain how this ranking is validated or what metric is used to assess ranking quality. The claim that "both distributions differ" is vague and does not justify the transfer of calibration from the crystal to the corpus tier.</li>
-<li><strong>Why it matters</strong> The corpus tier is where the method is most needed (no ground truth). Without a validation strategy for ranking quality, the practical utility of the intervals on this tier is unclear.</li>
-<li>
-<p><strong>Resolution test</strong> Describe the validation approach for ranking on the corpus tier (e.g., using held-out experimental data, synthetic benchmarks, or cross-validation). Report a ranking metric (e.g., Spearman correlation, AUC for identifying correct vs. incorrect complexes).</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-M3</p>
-</li>
-<li><strong>Severity</strong> Major</li>
-<li><strong>Blocking</strong> No</li>
-<li><strong>Axis</strong> Reproducibility / data access</li>
+<li><strong>Axis</strong> Reproducibility and data access</li>
 <li><strong>Claim pointer</strong> "The deposit is accompanied by 646 evaluation configurations across seven data split families, and 631 of them report how far their training and test entities separate under a two-sample test."</li>
-<li><strong>Evidence pointer</strong> Abstract only</li>
-<li><strong>Concern</strong> The abstract does not specify what the 15 missing configurations are, why they are missing, or whether this affects the completeness of the evaluation. The two-sample test used is not named, and the threshold for "separation" is not defined.</li>
-<li><strong>Why it matters</strong> Reproducibility and completeness of the evaluation are critical for a resource paper. Missing configurations and undefined metrics reduce confidence in the reported results.</li>
-<li><strong>Resolution test</strong> List the 15 missing configurations and explain their absence. Name the two-sample test (e.g., Kolmogorov-Smirnov, Wasserstein distance) and state the threshold used to define separation.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract does not specify where the deposit is hosted, whether it is publicly accessible, or what format the data and configurations are in. Without this information, the resource cannot be used or evaluated by the community. Additionally, the claim that 631 of 646 configurations report a two-sample test result is stated without any indication of what test was used, what the results were, or how they should be interpreted.</li>
+<li><strong>Why it matters</strong> Reproducibility and data availability are fundamental to the value of a deposited resource. The abstract’s claims about the deposit’s utility are untestable without access to the data and code.</li>
+<li><strong>Resolution test</strong> Provide a clear statement of data availability (e.g., a repository URL, DOI, or accession number) and a brief description of the two-sample test used, including the test statistic and a summary of the results (e.g., range of p-values or effect sizes).</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological clarity</li>
+<li><strong>Claim pointer</strong> "Agreement between independently constructed methods is an established signal for this type of problem. What has been missing is a way to derive what a given level of agreement is worth."</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract claims that the deposit provides a way to "derive what a given level of agreement is worth," but the method for doing so is not described. The fitting of agreement against observed accuracy is mentioned, but no details are given about the model, the features used, the training procedure, or the validation. The reader cannot assess whether this is a simple calibration curve, a more complex machine learning model, or something else.</li>
+<li><strong>Why it matters</strong> The novelty of the work hinges on this calibration step. Without a clear description, the contribution cannot be distinguished from existing approaches that also use agreement between methods as a proxy for accuracy.</li>
+<li><strong>Resolution test</strong> Provide a concise description of the calibration method, including the input features (e.g., which agreement metrics), the model class, the training data split, and the validation strategy. Show a comparison to a baseline (e.g., using a single method’s confidence score) to demonstrate added value.</li>
 </ul>
 </li>
-<li>
-<p><strong>Minor Comments</strong></p>
-<ul>
+<li><strong>Minor Comments</strong><ul>
 <li><strong>Concern ID</strong> R1-m1</li>
 <li><strong>Severity</strong> Minor</li>
 <li><strong>Axis</strong> Clarity</li>
 <li><strong>Affected element</strong> Abstract text</li>
-<li><strong>Evidence pointer</strong> Abstract</li>
-<li><strong>Issue</strong> The phrase "predicted label accuracy together with a split-conformal interval" is ambiguous. It is unclear whether the interval is on the label accuracy itself or on the predicted geometry.</li>
-<li>
-<p><strong>Required correction</strong> Clarify: e.g., "each system carries a predicted label (e.g., correct/incorrect) together with a split-conformal interval on the probability that the label is correct."</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m2</p>
-</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The phrase "predicted label accuracy" is ambiguous. It is unclear whether this refers to the accuracy of the predicted label (e.g., binary classification of correct/incorrect) or the accuracy of the predicted coordinates (e.g., RMSD or distance error).</li>
+<li><strong>Required correction</strong> Clarify what "label accuracy" means in this context. If it is a binary or categorical label, define it explicitly. If it is a continuous measure, state the metric (e.g., RMSD, DockQ, or fraction of native contacts).</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Abstract text</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract mentions "Chai-1, two Boltz-2 configurations, and the docking engine smina" but does not specify the versions or parameters used. This is important for reproducibility.</li>
+<li><strong>Required correction</strong> Provide version numbers and key parameters (e.g., default vs. custom settings) for each method, either in the abstract or by referencing a methods section.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
 <li><strong>Severity</strong> Minor</li>
 <li><strong>Axis</strong> Readability</li>
 <li><strong>Affected element</strong> Abstract text</li>
-<li><strong>Evidence pointer</strong> Abstract</li>
-<li><strong>Issue</strong> The abstract is dense with numbers (307,314,646, 30,567, 646, 631, 906) without context. It is difficult for a nonspecialist to assess the significance of these numbers.</li>
-<li>
-<p><strong>Required correction</strong> Provide brief context for key numbers (e.g., "30,567 systems, out of 31,746 in the corpus tier, carry predicted label accuracy").</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m3</p>
-</li>
-<li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Terminology</li>
-<li><strong>Affected element</strong> Abstract text</li>
-<li><strong>Evidence pointer</strong> Abstract</li>
-<li><strong>Issue</strong> The term "cross-docked pairs" is used without definition. It may be unclear to readers outside the docking community.</li>
-<li><strong>Required correction</strong> Define "cross-docked" (e.g., "pairs where a ligand is docked into a receptor structure that was not co-crystallised with that ligand").</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The sentence "The 906 protein accessions were partitioned to control sequence leakage, so a protein-cold split here tests generalisation across sequence space" is somewhat redundant and could be streamlined.</li>
+<li><strong>Required correction</strong> Consider rephrasing for conciseness, e.g., "The 906 protein accessions were partitioned to control sequence leakage, enabling a protein-cold split that tests generalisation across sequence space."</li>
 </ul>
 </li>
-<li>
-<p><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (calibration claim unverified), R1-M2 (ranking validation missing)</p>
-</li>
-<li>
-<p><strong>Assessment against Nature-style criteria</strong> </p>
-<ul>
-<li><strong>Originality</strong>: Moderate. The idea of using inter-method agreement for calibration is not entirely novel, but the scale and systematic nature of the dataset are original.</li>
-<li><strong>Scientific importance</strong>: High, if the calibration claims hold. The resource could significantly impact how predicted protein-ligand geometries are used in practice.</li>
-<li><strong>Interdisciplinary readership</strong>: Moderate. The work is primarily of interest to computational structural biologists and drug discovery researchers; broader appeal is limited without clear biological or chemical insights.</li>
-<li><strong>Technical soundness</strong>: Cannot be assessed from the abstract alone. The calibration and ranking claims are unverified.</li>
-<li><strong>Readability for nonspecialists</strong>: Poor. The abstract is dense and uses jargon without explanation. A nonspecialist would struggle to understand the key contributions.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (calibration transfer validity), R1-M2 (data availability and reproducibility), R1-M3 (methodological clarity of calibration)</li>
+<li><strong>Assessment against Nature-style criteria</strong> <ul>
+<li><strong>Originality</strong>: The concept of using agreement between independent methods to calibrate confidence in protein–ligand predictions is not entirely new, but the scale of the deposit and the application of split-conformal prediction intervals may represent a novel contribution. However, the abstract does not provide enough detail to assess the novelty of the calibration method itself.</li>
+<li><strong>Scientific importance</strong>: If the claims are substantiated, the resource could be important for benchmarking and uncertainty quantification in structure prediction. The controlled evaluation splits address a known issue in the field. The importance is moderate to high, contingent on validation.</li>
+<li><strong>Interdisciplinary readership</strong>: The work is primarily of interest to computational biologists and cheminformaticians. The abstract is written in a technical style that may not be accessible to a broader biological or chemical audience without additional context.</li>
+<li><strong>Technical soundness</strong>: Cannot be assessed from the abstract alone. The calibration transfer claim is particularly concerning given the acknowledged distribution shift. The lack of detail on the calibration method and the two-sample test undermines confidence.</li>
+<li><strong>Readability for nonspecialists</strong>: The abstract is dense and uses specialized terminology (e.g., "split-conformal interval," "two-sample test") without explanation. A nonspecialist would struggle to understand the key claims and their significance.</li>
 </ul>
 </li>
-<li>
-<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents a promising resource, but the central claims about calibration and ranking are unverifiable without the full manuscript. A supportive recommendation would require the full manuscript to demonstrate that the split-conformal intervals achieve nominal coverage and that the ranking on the corpus tier is validated.</p>
-</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract describes a potentially valuable resource, but the core claims about calibration, data availability, and methodological novelty cannot be evaluated without the full manuscript and supporting materials. The authors should address the three blocking concerns (R1-M1, R1-M2, R1-M3) before the work can be considered for publication.</li>
 </ul>
 <h2>Risk / unsupported claims</h2>
 <ul>
-<li>"On the crystal tier that interval covers observed accuracy at the stated rate." — Unsupported; no quantitative evidence provided.</li>
-<li>"On the corpus tier it ranks systems by expected label quality." — Unsupported; no validation strategy or metric provided.</li>
-<li>"The 906 protein accessions were partitioned to control sequence leakage, so a protein-cold split here tests generalisation across sequence space." — Unsupported; no evidence that the partition effectively controls leakage (e.g., sequence identity thresholds, clustering method).</li>
+<li>The claim that split-conformal intervals "cover observed accuracy at the stated rate" on the crystal tier is unsupported without specifying the rate and showing empirical coverage.</li>
+<li>The claim that calibration can be transferred to the corpus tier is unsupported and likely invalid without explicit adjustment for distribution shift.</li>
+<li>The claim that the deposit provides "practically usable per-system measures of whether a given complex is correct" is unsupported without evidence of the intervals’ performance on unseen data.</li>
+<li>The claim that the evaluation configurations enable "supervision weighted by how far the configurations agree" is unsupported without a description of the weighting scheme and its validation.</li>
 </ul></div>
   </section>
   

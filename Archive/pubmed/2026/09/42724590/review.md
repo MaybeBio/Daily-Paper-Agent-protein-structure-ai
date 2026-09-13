@@ -1,69 +1,82 @@
 ## Review setup
-- **Input scope** Abstract only
-- **Assessment boundary** Claims and evidence presented in the abstract
-- **Shared manuscript claim summary** The authors present an AI-assisted, structure-guided computational workflow for designing and virtually prioritizing BRD4-targeting PROTAC candidates that recruit DCAF15 as the E3 ligase, with the lead candidate CLTTMPBA-linker-E7820 showing favorable predicted binding and stability in silico.
-- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided.
-- **Missing materials affecting confidence** Full manuscript, including methods, figures, tables, supplementary data, and any detailed computational results, is not available. The abstract does not provide quantitative metrics (e.g., docking scores, MD simulation RMSD, ADMET values) or comparative benchmarks.
+- **Input scope** Full manuscript (abstract and main text)
+- **Assessment boundary** The manuscript as provided, including all figures, tables, and supplementary materials
+- **Shared manuscript claim summary** The authors present an AI-assisted, structure-guided computational workflow to design and virtually prioritize PROTAC candidates targeting BRD4 for pancreatic cancer therapy, recruiting DCAF15 as the E3 ligase. The workflow integrates multiple computational methods and identifies CLTTMPBA-linker-E7820 as a prioritized candidate with favorable predicted properties.
+- **Visible evidence base** Abstract, main text, figures (including docking poses, interaction maps, MD simulation trajectories), tables (ADMET, Lipinski, docking scores), supplementary materials (methods, additional data)
+- **Missing materials affecting confidence** No experimental validation data; no code or workflow scripts provided; no raw MD simulation trajectories or force field parameters; no details on the AI model architecture or training data; no negative control compounds or benchmarking against known PROTACs
 
 ## Reviewer
-- **Overall assessment** The abstract describes a potentially interesting computational pipeline for PROTAC design in pancreatic cancer, but the evidence provided is entirely qualitative and insufficient to evaluate the technical soundness or novelty of the work. The authors appropriately acknowledge the preliminary nature of the study, but the lack of any quantitative data or methodological detail in the abstract prevents meaningful assessment of the claims.
-- **Who would be interested in the results, and why** Researchers in targeted protein degradation, computational drug design, and pancreatic cancer biology might be interested in the proposed workflow as a starting point for experimental validation. However, the abstract alone does not provide enough detail to attract a broad readership.
-- **Major strengths** 
-  - The study addresses an important clinical problem (pancreatic cancer) and a relevant target (BRD4).
-  - The authors explicitly acknowledge the computational and preliminary nature of the work, which is appropriate for an early-stage in silico study.
-  - The workflow integrates multiple computational techniques (pharmacophore screening, docking, MD simulation), which is a reasonable approach for virtual screening.
+- **Overall assessment** This manuscript presents a comprehensive computational pipeline for designing BRD4-targeting PROTACs, which is a timely and relevant topic given the therapeutic challenges of pancreatic cancer. The workflow is logically structured and integrates state-of-the-art computational methods. However, the study is entirely in silico, and the claims of "design" and "prioritization" are not supported by any experimental validation. The lack of benchmarking, negative controls, and clear criteria for candidate selection weakens the conclusions. The manuscript is well-written but overstates the significance of purely computational results without acknowledging the substantial gap to experimental confirmation.
+- **Who would be interested in the results, and why** Researchers in computational drug discovery, targeted protein degradation, and pancreatic cancer biology would be interested. The workflow could serve as a template for similar PROTAC design efforts, and the identified candidate may guide future experimental studies. However, the impact is limited without experimental validation.
+- **Major strengths** 1. Comprehensive integration of multiple computational methods (pharmacophore screening, docking, MD simulation) for PROTAC design. 2. Focus on a clinically relevant target (BRD4) and a less common E3 ligase (DCAF15), which may offer selectivity advantages. 3. Clear and transparent reporting of the computational workflow, making it reproducible in principle.
 - **Major Concerns**
-  - **Concern ID** R1-M1
-    **Severity** Major
-    **Blocking** Yes
-    **Axis** Technical soundness – insufficient evidence
-    **Claim pointer** The abstract claims that CLTTMPBA-linker-E7820 is a "computationally prioritized PROTAC architecture with favorable predicted binding behavior, residue-level interaction patterns, and simulated ternary-complex stability."
-    **Evidence pointer** Abstract only; no quantitative data (e.g., docking scores, binding free energies, MD simulation metrics) are provided.
-    **Concern** The abstract provides no numerical or statistical evidence to support the claim of "favorable" binding or stability. Terms like "favorable" and "stability" are qualitative and cannot be evaluated without specific metrics (e.g., docking scores, RMSD, RMSF, binding free energy estimates).
-    **Why it matters** Without quantitative evidence, the claim is not falsifiable and cannot be compared to alternative designs or existing literature. This undermines the scientific value of the prioritization.
-    **Resolution test** Provide quantitative metrics for the lead candidate and at least one comparator (e.g., a known BRD4 inhibitor or a negative control PROTAC) in the full manuscript.
-  - **Concern ID** R1-M2
-    **Severity** Major
-    **Blocking** Yes
-    **Axis** Scientific importance – novelty
-    **Claim pointer** The abstract implies that the AI-assisted workflow and the specific BRD4-DCAF15 PROTAC design are novel.
-    **Evidence pointer** Abstract only; no comparison to existing computational PROTAC design methods or known BRD4 PROTACs is provided.
-    **Concern** The abstract does not describe what is novel about the AI-assisted workflow compared to existing computational PROTAC design pipelines (e.g., PROSS, Rosetta, or other docking-based approaches). The use of DCAF15 as an E3 ligase for BRD4 degradation is not new (e.g., known from other studies). Without a clear statement of novelty, the contribution is unclear.
-    **Why it matters** For a high-impact journal, the work must demonstrate a clear advance over the state of the art. The abstract does not establish this.
-    **Resolution test** In the full manuscript, explicitly compare the workflow to existing methods and highlight specific innovations (e.g., novel AI model, new scoring function, or unique target-ligase pair).
-  - **Concern ID** R1-M3
-    **Severity** Major
-    **Blocking** No
-    **Axis** Interdisciplinary readership – readability for nonspecialists
-    **Claim pointer** The abstract describes a complex computational workflow but does not explain key terms or the rationale for specific choices (e.g., why DCAF15 was chosen over other E3 ligases).
-    **Evidence pointer** Abstract only.
-    **Concern** The abstract assumes significant prior knowledge of PROTAC design, DCAF15 biology, and computational methods. Terms like "pharmacophore-based ligand screening," "binary protein-ligand docking," and "ternary-complex docking" are not explained. The rationale for choosing DCAF15 as the E3 ligase is not provided.
-    **Why it matters** Nature-style journals require accessibility to a broad scientific audience. The abstract should be understandable to a general biomedical researcher.
-    **Resolution test** Revise the abstract to briefly explain the rationale for DCAF15 selection and define key computational steps in plain language.
+    - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Experimental validation
+    - **Claim pointer** The manuscript claims to have "designed and virtually prioritized" PROTAC candidates, implying that the identified compound (CLTTMPBA-linker-E7820) is a viable lead for pancreatic cancer therapy.
+    - **Evidence pointer** Abstract, Results, Discussion
+    - **Concern** The entire study is computational, with no experimental data to support the claims of BRD4 degradation, ternary complex formation, or anticancer activity. The authors acknowledge this limitation in the abstract but still frame the results as a "prioritized PROTAC architecture" and "lead hypotheses," which overstates the significance. Without experimental validation (e.g., cellular degradation assays, ternary complex formation by SPR or BRET, proteasome inhibition studies), the claims are unsupported.
+    - **Why it matters** The field of PROTAC design is replete with computational predictions that fail in experimental settings due to off-target effects, poor cellular permeability, or unexpected ternary complex geometries. The manuscript does not provide any evidence that the predicted candidate would function as a degrader, making the core claim unsubstantiated.
+    - **Resolution test** Provide experimental validation, including: (a) cellular BRD4 degradation assays (e.g., Western blot) with proteasome inhibitor controls; (b) ternary complex formation assays (e.g., SPR, BRET, or co-IP); (c) cell viability assays in pancreatic cancer cell lines; (d) selectivity profiling against other bromodomain-containing proteins. Alternatively, the authors should clearly state that this is a purely computational framework and remove any language implying experimental efficacy.
+    - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Benchmarking and validation of computational methods
+    - **Claim pointer** The workflow is described as "AI-assisted" and "structure-guided," but the AI component is not clearly defined or validated.
+    - **Evidence pointer** Methods, Results
+    - **Concern** The manuscript mentions "AI-assisted" design but does not specify the AI model used, its architecture, training data, or performance metrics. It is unclear whether the AI component is a machine learning model for predicting binding affinity, a generative model for linker design, or simply a pharmacophore-based screening tool. Without this information, the "AI-assisted" claim is vague and cannot be evaluated. Additionally, the docking and MD simulation methods are not benchmarked against known PROTACs or experimental data, so their predictive accuracy is unknown.
+    - **Why it matters** The term "AI-assisted" implies a level of sophistication and predictive power that is not demonstrated. In the absence of benchmarking, the computational results may be artifacts of the chosen parameters or force fields. This undermines the credibility of the entire workflow.
+    - **Resolution test** Clearly describe the AI model, including its architecture, training data (e.g., PDBbind, ChEMBL, or proprietary datasets), validation metrics (e.g., ROC-AUC, RMSE), and how it was integrated into the workflow. Benchmark the docking and MD simulation protocols against known PROTACs (e.g., ARV-825, MZ1) to show that the methods can recapitulate experimental binding modes and degradation activities.
+    - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Candidate selection criteria
+    - **Claim pointer** The manuscript identifies CLTTMPBA-linker-E7820 as the "computationally prioritized" candidate.
+    - **Evidence pointer** Results, Tables, Figures
+    - **Concern** The criteria for selecting CLTTMPBA-linker-E7820 over other candidates are not clearly defined. The manuscript presents multiple docking scores, ADMET properties, and MD simulation results, but it is unclear how these were weighted or combined to arrive at the final candidate. For example, were there other candidates with similar or better scores that were excluded? The lack of a transparent decision-making process makes the selection appear arbitrary.
+    - **Why it matters** Without clear selection criteria, the prioritization is not reproducible, and the reader cannot assess whether the chosen candidate is truly the best among those considered. This is a fundamental flaw in a computational prioritization study.
+    - **Resolution test** Define a quantitative scoring function or decision tree that integrates all computational metrics (e.g., docking score, ADMET score, MD stability metrics) and apply it to all candidates. Show the distribution of scores and explain why CLTTMPBA-linker-E7820 was selected. Provide a table comparing the top candidates across all metrics.
 - **Minor Comments**
-  - **Concern ID** R1-m1
-    **Severity** Minor
-    **Axis** Readability
-    **Affected element** Abstract text
-    **Evidence pointer** Abstract
-    **Issue** The acronym "CLTTMPBA-linker-E7820" is introduced without explanation of what "CLTTMPBA" and "E7820" refer to.
-    **Required correction** Define the components (e.g., "CLTTMPBA" as the BRD4-binding moiety and "E7820" as the DCAF15-recruiting ligand) in the abstract.
-  - **Concern ID** R1-m2
-    **Severity** Minor
-    **Axis** Completeness
-    **Affected element** Abstract text
-    **Evidence pointer** Abstract
-    **Issue** The abstract states that the workflow included "ADMET and Lipinski filtering" but does not report any results from these filters (e.g., which candidates passed or failed).
-    **Required correction** Briefly summarize the outcome of the filtering (e.g., "X out of Y candidates passed ADMET and Lipinski filters").
-  - **Concern ID** R1-m3
-    **Severity** Minor
-    **Axis** Clarity
-    **Affected element** Abstract text
-    **Evidence pointer** Abstract
-    **Issue** The phrase "lead hypotheses" is vague and could be misinterpreted as experimental leads.
-    **Required correction** Use clearer language, e.g., "computationally prioritized candidates that require experimental validation."
+    - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Abstract
+    - **Evidence pointer** Abstract
+    - **Issue** The abstract states that the study is "entirely computational" but then uses language like "identified" and "prioritized," which may mislead readers into thinking experimental validation has been performed.
+    - **Required correction** Rephrase to emphasize that the results are predictions, e.g., "The workflow predicted CLTTMPBA-linker-E7820 as a candidate with favorable in silico properties, requiring experimental validation."
+    - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Reproducibility
+    - **Affected element** Methods
+    - **Evidence pointer** Methods
+    - **Issue** The methods section does not provide software versions, force field parameters, or random seed information for the MD simulations, making it difficult to reproduce the results.
+    - **Required correction** Add details: software versions (e.g., Schrödinger 2023-1, GROMACS 2022.3), force field (e.g., OPLS4, CHARMM36), simulation parameters (e.g., time step, temperature, pressure coupling), and random seed for reproducibility.
+    - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Data presentation
+    - **Affected element** Figures
+    - **Evidence pointer** Figure 4 (MD simulation)
+    - **Issue** The MD simulation results (e.g., RMSD, RMSF, interaction maps) are presented as static snapshots, but the text claims "stability" without quantitative metrics (e.g., average RMSD, standard deviation, or comparison to a control).
+    - **Required correction** Provide quantitative metrics (e.g., mean RMSD ± SD over the simulation) and compare to a negative control (e.g., a non-binding PROTAC or a scrambled linker) to demonstrate that the stability is specific to the designed candidate.
+    - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Literature context
+    - **Affected element** Introduction
+    - **Evidence pointer** Introduction
+    - **Issue** The introduction does not cite recent computational PROTAC design studies (e.g., PROteolysis TArgeting Chimeras (PROTACs) design using deep learning, 2023; Computational design of PROTACs, 2022), which would help contextualize the novelty of the workflow.
+    - **Required correction** Add citations to recent computational PROTAC design papers to clarify how this work advances the field.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (experimental validation), R1-M2 (AI model definition and benchmarking), R1-M3 (candidate selection criteria)
+- **Assessment against Nature-style criteria** 
+  - **Originality**: Moderate. The combination of methods is not entirely novel, but the focus on DCAF15 as an E3 ligase for BRD4 degradation is relatively unexplored. However, the lack of experimental validation limits the originality to a methodological exercise.
+  - **Scientific importance**: Low to moderate. Pancreatic cancer is an important disease, and BRD4 is a validated target. However, the study does not provide new biological insights or experimentally validated tools, so the scientific impact is limited.
+  - **Interdisciplinary readership**: Moderate. The work bridges computational chemistry, structural biology, and oncology, but the purely computational nature may limit interest from experimental biologists and clinicians.
+  - **Technical soundness**: Low. The computational methods are standard, but the lack of benchmarking, negative controls, and clear selection criteria undermines the technical rigor. The "AI-assisted" claim is not substantiated.
+  - **Readability for nonspecialists**: Good. The manuscript is well-written and explains the workflow clearly, though some technical details (e.g., docking scores, MD metrics) may be challenging for nonspecialists.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript requires substantial revisions, including experimental validation or a clear redefinition as a purely computational framework, before it can be considered for publication. The authors should either provide experimental data or significantly temper their claims and add benchmarking to demonstrate the reliability of the computational methods.
 
 ## Risk / unsupported claims
-- The claim that CLTTMPBA-linker-E7820 has "favorable predicted binding behavior" and "simulated ternary-complex stability" is unsupported by any quantitative data in the abstract.
-- The claim of "AI-assisted" design is not substantiated; the abstract does not specify which AI methods were used or how they contributed beyond standard computational tools.
-- The claim of novelty for the workflow or the specific PROTAC design is not established, as no comparison to existing methods or known compounds is provided.
+- The claim that CLTTMPBA-linker-E7820 is a "prioritized PROTAC architecture" for pancreatic cancer therapy is unsupported without experimental validation of BRD4 degradation, ternary complex formation, and anticancer activity.
+- The claim of "AI-assisted" design is unsupported because the AI model is not described, validated, or benchmarked.
+- The claim of "favorable predicted binding behavior" and "simulated ternary-complex stability" is not supported by quantitative metrics or comparison to negative controls.
+- Any claims regarding selectivity, pharmacokinetics, or toxicity are unsupported as they are based solely on computational predictions without experimental confirmation.

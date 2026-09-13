@@ -1,80 +1,87 @@
 ## Review setup
-- **Input scope** Abstract only
-- **Assessment boundary** Claims and conclusions as stated in the abstract; no methods, figures, or quantitative results were available for verification
-- **Shared manuscript claim summary** The authors claim that biomolecular condensates alter the folding landscape of protein alpha-helices through a balance of multivalent interactions (which drive unfolding) and crowding (which promotes folding), that helix-coil transitions are kinetically frustrated inside condensates due to coupling to contact rearrangement time scales with co-condensate proteins, and that helix folding landscapes are therefore "dually sequence-dependent" on both the helix sequence and the sequences of co-condensate proteins. They further claim implications for condensate-mediated proteinopathies and for designing condensates to program protein function.
-- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided
-- **Missing materials affecting confidence** Full manuscript, all figures and tables, simulation protocols, force field parameters, Bayesian optimization details, sequence selection rationale, condensate model compositions, and quantitative results
+- **Input scope** Full manuscript text (abstract and main text, without figures or supplementary information)
+- **Assessment boundary** Claims, methods, and evidence presented in the provided text only; no figures, tables, or supplementary materials were supplied.
+- **Shared manuscript claim summary** The authors propose that biomolecular condensates alter the folding landscape of protein alpha-helices through a balance of multivalent interactions (unfolding) and crowding (folding), and that this process is kinetically frustrated due to coupling with co-condensate protein contact rearrangement. They use atomistic simulations and Bayesian optimization to support this framework.
+- **Visible evidence base** Text descriptions of atomistic simulations, Bayesian optimization for a residue-resolution model, and application to three disease-associated proteins (TDP-43, Annexin A11, Androgen Receptor). No figures, tables, or quantitative data are provided.
+- **Missing materials affecting confidence** All figures, tables, supplementary information, simulation details, and quantitative results (e.g., free energy differences, kinetic rates, model parameters) are absent. This severely limits the ability to evaluate the claims.
 
 ## Reviewer
-- **Overall assessment** The abstract presents a conceptually interesting and potentially impactful framework for understanding how biomolecular condensates modulate protein folding. The central idea that a balance between multivalent interactions and crowding effects determines helix conformational ensembles is plausible and mechanistically appealing. However, the abstract alone provides no quantitative evidence, no methodological detail, and no direct comparison to experimental data. The claims regarding kinetic frustration and dual sequence dependence are stated as conclusions but the supporting evidence is entirely invisible. The work may be of interest to the biophysics and condensate biology communities, but the case is not established from the supplied material.
-- **Who would be interested in the results, and why** Researchers studying biomolecular condensates and phase separation, computational biophysicists interested in protein folding in cellular environments, and investigators working on neurodegenerative diseases associated with condensate-forming proteins such as TDP-43 and Annexin A11. The proposed framework could inform therapeutic strategies targeting aberrant condensates and guide synthetic biology efforts to design condensates with programmable functions.
-- **Major strengths** The conceptual framing is clear and addresses a timely question. The choice of alpha-helix as a model folded domain is sensible and tractable. The inclusion of disease-associated proteins adds translational relevance. The proposed balance between multivalent interactions and crowding is a useful organizing principle that could generate testable predictions.
+- **Overall assessment** The manuscript addresses a timely and important question about how biomolecular condensates influence protein folding, using alpha-helices as a model system. The proposed framework—balancing multivalent interactions and crowding, with kinetic frustration—is conceptually appealing. However, the provided text lacks the quantitative evidence, methodological details, and data necessary to support the central claims. Without access to figures, tables, or supplementary materials, the manuscript cannot be evaluated for technical soundness or reproducibility. The claims are interesting but currently unsubstantiated from the supplied material.
+- **Who would be interested in the results, and why** Researchers in biophysics, cell biology, and protein biochemistry, particularly those studying phase separation, protein folding in cellular environments, and condensate-associated diseases (e.g., neurodegenerative disorders). The work could provide a mechanistic link between condensate properties and protein misfolding, which is of broad interest.
+- **Major strengths** 1. The question is fundamental and timely, addressing a gap in understanding how condensates affect protein structure. 2. The proposed framework (balance of multivalent interactions and crowding, with kinetic frustration) is conceptually novel and testable. 3. The use of Bayesian optimization to develop a residue-resolution model is a methodological advance. 4. The focus on disease-associated proteins (TDP-43, Annexin A11, Androgen Receptor) adds translational relevance.
 - **Major Concerns**
-  - **Concern ID** R1-M1
-  - **Severity** Major
-  - **Blocking** Yes
-  - **Axis** Evidence sufficiency
-  - **Claim pointer** "Atomistic simulations suggest the helix-coil transition within condensates differs markedly from its behavior in dilute solution or in the presence of inert crowders."
-  - **Evidence pointer** Abstract; location not provided
-  - **Concern** The abstract states that atomistic simulations "suggest" a marked difference, but no quantitative data, simulation details, or statistical measures are provided. It is unclear how many systems were simulated, what force field was used, what condensate compositions were modeled, and how the comparison to dilute solution and inert crowder conditions was performed.
-  - **Why it matters** The central claim of the paper rests on this comparison. Without visible quantitative evidence, the reader cannot assess whether the observed differences are robust, significant, or an artifact of the simulation setup.
-  - **Resolution test** Provide simulation details, quantitative measures of helix propensity (e.g., helicity fractions, free energy differences), and error estimates for condensate versus dilute versus crowder conditions.
-  - **Concern ID** R1-M2
-  - **Severity** Major
-  - **Blocking** Yes
-  - **Axis** Model validation
-  - **Claim pointer** "We then use Bayesian optimization to develop a chemically specific, residue-resolution model for quantification of alpha-helical folding and apply it to characterize diverse helices..."
-  - **Evidence pointer** Abstract; location not provided
-  - **Concern** The abstract introduces a Bayesian optimization-derived model but provides no information on its training data, validation against known helix-coil theory or experimental measurements, transferability across sequences, or uncertainty quantification. The claim that the model is "chemically specific" and "residue-resolution" requires substantiation.
-  - **Why it matters** The model is the primary analytical tool used to characterize helix folding across the disease-associated proteins. If the model is not adequately validated, all downstream conclusions about sequence-dependent behavior are compromised.
-  - **Resolution test** Describe the model architecture, training set, validation metrics, and demonstrate agreement with established helix-coil models or experimental data for a test set of sequences.
-  - **Concern ID** R1-M3
-  - **Severity** Major
-  - **Blocking** Yes
-  - **Axis** Kinetic claim support
-  - **Claim pointer** "We show that helix folding transitions are kinetically frustrated inside condensates because they are coupled to the time scale of contact rearrangement with co-condensate proteins."
-  - **Evidence pointer** Abstract; location not provided
-  - **Concern** This is a strong kinetic claim, but no time scales, relaxation measurements, or comparison of folding rates in different environments are presented. The causal link between contact rearrangement time scales and kinetic frustration is asserted without visible evidence.
-  - **Why it matters** Kinetic frustration is a distinct and potentially important claim beyond the thermodynamic balance described earlier. If unsupported, it weakens the novelty and completeness of the proposed framework.
-  - **Resolution test** Provide computed or estimated folding/unfolding rates in condensate versus dilute conditions, and show a correlation between contact rearrangement time scales and folding kinetics.
-  - **Concern ID** R1-M4
-  - **Severity** Major
-  - **Blocking** No
-  - **Axis** Generalizability
-  - **Claim pointer** "Alpha-helix folding landscapes within condensates are dually sequence-dependent, informed by both the sequence of the alpha-helical domain and co-condensate proteins."
-  - **Evidence pointer** Abstract; location not provided
-  - **Concern** The abstract implies a general principle of dual sequence dependence, but it is unclear how many condensate compositions and helix sequences were tested. The claim may be specific to the systems studied rather than a general property.
-  - **Why it matters** The generality of the framework determines its utility for predicting behavior in uncharacterized systems and for guiding design efforts.
-  - **Resolution test** Show systematic variation of both helix sequences and co-condensate protein sequences, and demonstrate that the proposed balance holds across a diverse parameter space.
+    - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency
+    - **Claim pointer** "Atomistic simulations suggest the helix-coil transition within condensates differs markedly from its behavior in dilute solution or in the presence of inert crowders."
+    - **Evidence pointer** Location not provided (no figures or tables)
+    - **Concern** The text states that atomistic simulations suggest a difference, but no quantitative data (e.g., free energy profiles, transition temperatures, or population shifts) are presented. The nature of the simulations (e.g., force field, system size, condensate composition) is not described.
+    - **Why it matters** This claim is foundational to the entire study. Without quantitative evidence, the reader cannot assess the magnitude or significance of the difference, nor whether the simulations are reliable.
+    - **Resolution test** Provide the simulation results in figures or tables, including free energy differences, error estimates, and comparison to control conditions. Describe the simulation setup in sufficient detail for reproducibility.
+    - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency
+    - **Claim pointer** "We then use Bayesian optimization to develop a chemically specific, residue-resolution model for quantification of alpha-helical folding and apply it to characterize diverse helices... within condensates of varying physicochemical properties."
+    - **Evidence pointer** Location not provided (no figures, tables, or model details)
+    - **Concern** The Bayesian optimization model is central to the analysis, but no details are given: the training data, features, optimization procedure, validation, or model performance. The application to diverse helices is mentioned but not supported by any results.
+    - **Why it matters** Without model details, the reader cannot evaluate whether the model is accurate, generalizable, or appropriate for the problem. The claims about sequence dependence and condensate effects rest on this model.
+    - **Resolution test** Provide the model architecture, training data, validation metrics, and a demonstration of its predictive accuracy. Show the results of applying the model to the three disease-associated proteins.
+    - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency
+    - **Claim pointer** "Our results support a framework in which multivalent interactions drive unfolding while crowding promotes folding, and alpha-helix conformational ensembles inside condensates emerge from this balance."
+    - **Evidence pointer** Location not provided (no figures or tables)
+    - **Concern** The text asserts that the results support this framework, but no data are presented to demonstrate the relative contributions of multivalent interactions versus crowding. The balance is not quantified, and the evidence for each factor is not shown.
+    - **Why it matters** This is the central mechanistic claim of the paper. Without quantitative support (e.g., how much unfolding is due to multivalent interactions vs. crowding), the framework remains speculative.
+    - **Resolution test** Provide data that deconvolve the effects of multivalent interactions and crowding, such as simulations with varying condensate compositions or control experiments. Show the resulting conformational ensembles.
+    - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence sufficiency
+    - **Claim pointer** "Helix folding transitions are kinetically frustrated inside condensates because they are coupled to the time scale of contact rearrangement with co-condensate proteins."
+    - **Evidence pointer** Location not provided (no figures or tables)
+    - **Concern** The claim about kinetic frustration is a key novelty, but no kinetic data (e.g., folding/unfolding rates, relaxation times, or comparison to dilute solution) are presented. The coupling to contact rearrangement is asserted without evidence.
+    - **Why it matters** Kinetic frustration would have major implications for protein function and misfolding, but the claim is unsupported. Without kinetic measurements or simulations, the reader cannot assess its validity.
+    - **Resolution test** Provide kinetic data, such as folding rate constants or mean first-passage times, from simulations or experiments. Show that these are correlated with contact rearrangement timescales.
 - **Minor Comments**
-  - **Concern ID** R1-m1
-  - **Severity** Minor
-  - **Axis** Clarity
-  - **Affected element** Terminology
-  - **Evidence pointer** Abstract; location not provided
-  - **Issue** The phrase "dually sequence-dependent" is unusual and could be misinterpreted. It is not immediately clear whether this means dependence on two sequence sets or a more complex interaction.
-  - **Required correction** Rephrase to explicitly state that folding landscapes depend on both the helix sequence and the sequences of co-condensate proteins, and clarify whether these dependencies are additive or synergistic.
-  - **Concern ID** R1-m2
-  - **Severity** Minor
-  - **Axis** Scope
-  - **Affected element** Disease relevance
-  - **Evidence pointer** Abstract; location not provided
-  - **Issue** The abstract claims implications for "condensate-mediated proteinopathies" but does not specify how the findings connect to disease mechanisms or whether any disease-relevant predictions were tested.
-  - **Required correction** Add a sentence specifying the proposed link to pathology, or temper the claim to indicate potential rather than established implications.
-  - **Concern ID** R1-m3
-  - **Severity** Minor
-  - **Axis** Completeness
-  - **Affected element** Comparison to experiment
-  - **Evidence pointer** Abstract; location not provided
-  - **Issue** No mention is made of any experimental validation or comparison to experimental measurements of helix stability in condensates or crowded environments.
-  - **Required correction** State whether experimental comparison was performed, or acknowledge the purely computational nature of the study and discuss limitations accordingly.
-- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The core thermodynamic and kinetic claims are not verifiable from the abstract alone, and the model used for analysis is not described in sufficient detail to assess its validity.
-- **Assessment against Nature-style criteria** Originality: the idea of a balance between multivalent interactions and crowding in determining helix folding within condensates is a fresh perspective that extends existing work on macromolecular crowding and phase separation. Scientific importance: the topic is timely and relevant to a broad community studying condensate biology, protein folding, and neurodegeneration. Interdisciplinary readership: the work bridges physical chemistry, biophysics, and cell biology, and should appeal to readers across these fields. Technical soundness: cannot be assessed from the abstract; no quantitative results, methods, or validation are visible. Readability for nonspecialists: the abstract is well-written and accessible, with clear conceptual framing, though some terms (e.g., "contact rearrangement") could benefit from brief explanation.
-- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising and the work could be of significant interest, but the abstract alone does not provide sufficient quantitative or methodological detail to support the central claims. A full manuscript with simulation details, model validation, and quantitative comparisons would be required to assess the case.
+    - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Abstract
+    - **Evidence pointer** Location not provided
+    - **Issue** The phrase "horizontal line dense macromolecular assemblies" appears to be a formatting error (likely a typo for "—dense macromolecular assemblies").
+    - **Required correction** Correct the formatting to read "biomolecular condensates—dense macromolecular assemblies" or similar.
+    - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Completeness
+    - **Affected element** Methods description
+    - **Evidence pointer** Location not provided
+    - **Issue** The text mentions "atomistic simulations" but does not specify the force field, simulation package, or system size. This is insufficient for reproducibility.
+    - **Required correction** Add a brief description of the simulation methods, including force field, software, and key parameters.
+    - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Results description
+    - **Evidence pointer** Location not provided
+    - **Issue** The phrase "dually sequence-dependent" is ambiguous. It is unclear whether this means dependence on both the alpha-helix sequence and the co-condensate protein sequence, or something else.
+    - **Required correction** Clarify the meaning of "dually sequence-dependent" with a more explicit statement.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. All four major concerns are blocking because the provided text lacks the quantitative evidence, methodological details, and data necessary to support the central claims.
+- **Assessment against Nature-style criteria** 
+    - **Originality**: The concept of condensates dictating the folding landscape of alpha-helices through a balance of multivalent interactions and crowding, with kinetic frustration, is novel and goes beyond existing work on crowding or chemical denaturation. 
+    - **Scientific importance**: The question is important for understanding protein behavior in cellular environments and for condensate-associated diseases. If substantiated, the findings could have broad implications. 
+    - **Interdisciplinary readership**: The topic bridges biophysics, cell biology, and biochemistry, and would interest a wide audience. 
+    - **Technical soundness**: Cannot be assessed from the provided material. The lack of figures, tables, and methodological details prevents evaluation of the simulations, model, and data analysis. 
+    - **Readability for nonspecialists**: The abstract is clear and accessible, but the main text (not provided in full) would need to be evaluated. The current text is well-written but lacks the necessary evidence. 
+    - **Overall**: The manuscript has high potential but is currently not established from the provided evidence.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript requires substantial additional data (figures, tables, simulation details, model validation) to support its claims. I am supportive of the conceptual framework but cannot recommend publication without the missing evidence.
 
 ## Risk / unsupported claims
-- The claim that helix-coil transitions "differ markedly" in condensates is unsupported without quantitative data.
-- The claim that kinetic frustration arises from coupling to contact rearrangement time scales is unsupported without kinetic measurements or estimates.
-- The claim of dual sequence dependence is asserted but not demonstrated across a systematic parameter space.
-- The disease relevance implications are stated without any disease-specific evidence or mechanistic link.
-- The Bayesian optimization model is described but its accuracy, validation, and limitations are entirely unassessable from the abstract.
+- The claim that the helix-coil transition differs markedly inside condensates (R1-M1) is unsupported.
+- The claim that the Bayesian optimization model is accurate and applicable (R1-M2) is unsupported.
+- The claim that multivalent interactions drive unfolding while crowding promotes folding (R1-M3) is unsupported.
+- The claim that helix folding transitions are kinetically frustrated (R1-M4) is unsupported.
+- The claim that alpha-helix folding landscapes are dually sequence-dependent is unsupported, as it depends on the model and data not provided.
+- The implications for condensate-mediated proteinopathies, targeting aberrant condensates, and designing condensates are speculative and not supported by the provided evidence.

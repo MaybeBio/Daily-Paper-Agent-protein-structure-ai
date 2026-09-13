@@ -29,7 +29,7 @@
          · 仅摘要
          · <a href="https://doi.org/10.26434/chemrxiv.15008491/v1">原文</a>
       </div>
-      <p class="one-liner">提出一个集成多蛋白-多配体并行对接与评分的开源框架PARAM-DOCK，结合经验打分函数与迭代局部搜索，在蛋白质-配体对接问题上表现竞争性，属于蛋白质结构计算中的分子对接方法，但方法创新性有限，主要为工程化集成。</p>
+      <p class="one-liner">提出一个集成多蛋白-多配体并行对接与评分的开源框架PARAM-DOCK，结合经验打分函数和迭代局部搜索，在蛋白质-配体对接问题上表现竞争性，但方法创新性有限，属于工程化应用。</p>
     </div>
   </div>
   
@@ -41,7 +41,7 @@
   
   <section>
     <h2>摘要翻译</h2>
-    <div class="md">分子对接是基于结构的药物发现的核心组成部分，但实际对接研究通常需要多个独立程序用于受体和配体准备、结合位点定义、对接、可视化、相互作用分析以及下游化合物评估。当同一研究中必须评估多个蛋白质靶点和多个配体时，这种碎片化变得尤为受限。在此，我们介绍PARAM-DOCK，这是一个开源分子对接引擎和集成网络工作流程，采用Python实现并包含Numba编译的数值内核。PARAM-DOCK支持并行多蛋白质-多配体对接，并在单一平台内自动化主要的预处理和后处理步骤。该对接引擎将七项经验评分函数与迭代局部搜索策略相结合，其中蒙特卡洛扰动后接使用解析梯度的有界拟牛顿最小化。当信息丰富时，最终构象选择还可额外结合结合盆地群体和口袋互补性描述符。该网络平台整合了分子准备、对接设置、构象排序、2D和3D蛋白质-配体相互作用分析、比较评分和相互作用热图、分子可视化以及ADMET预测。PARAM-DOCK使用匹配的受体和配体PDBQT文件、相同的搜索框、对称校正的RMSD评估以及相同的硬件，与Vina进行了基准测试。在包含285个复合物的CASF-2016核心集上，PARAM-DOCK的评分能力Pearson相关系数为0.631，靶内平均Spearman相关系数为0.579，而Vina分别为0.604和0.528。在对255个复合物进行从头重新对接时，PARAM-DOCK在68.6%的案例中将排名第一的构象置于2.0 Å以内，并在84.3%的案例中从九个输出中恢复出近天然构象，而Vina分别为74.1%和93.7%。在生成近天然构象的条件下，PARAM-DOCK在81.4%的复合物中将其排在第一，而Vina为79.1%。这些结果表明其具有竞争力的评分和排序性能，而构象采样仍是进一步改进的主要领域。</div>
+    <div class="md">分子对接是基于结构的药物发现的核心组成部分，但实际对接研究通常需要多个独立程序用于受体和配体准备、结合位点定义、对接、可视化、相互作用分析以及下游化合物评估。当同一研究中必须评估多个蛋白质靶点和多个配体时，这种碎片化变得尤为受限。在此，我们提出PARAM-DOCK，一个开源分子对接引擎和集成网络工作流程，采用Python实现并带有Numba编译数值内核。PARAM-DOCK支持并行多蛋白-多配体对接，并在单一平台内自动化主要预处理和后处理步骤。该对接引擎将七项经验评分函数与迭代局部搜索策略相结合，其中蒙特卡洛扰动后接使用解析梯度的有界拟牛顿最小化。最终构象选择在信息丰富时还可额外纳入结合盆地群体和口袋互补性描述符。该网络平台整合了分子准备、对接设置、构象排序、2D和3D蛋白-配体相互作用分析、比较评分和相互作用热图、分子可视化以及ADMET预测。PARAM-DOCK使用匹配的受体和配体PDBQT文件、相同的搜索框、对称校正RMSD评估以及相同硬件，与Vina进行了基准测试。在包含285个复合物的CASF-2016核心集上，PARAM-DOCK的评分能力皮尔逊相关系数为0.631，靶内平均斯皮尔曼相关系数为0.579，而Vina分别为0.604和0.528。在对255个复合物进行从头重新对接时，PARAM-DOCK在68.6%的案例中将排名第一的构象置于2.0 Å以内，并在84.3%的案例中从九个输出中恢复出近天然构象，而Vina分别为74.1%和93.7%。在生成近天然构象的条件下，PARAM-DOCK在81.4%的复合物中将其排在第一，而Vina为79.1%。这些结果表明其具有竞争力的评分和排序性能，而构象采样仍是进一步改进的主要领域。</div>
   </section>
   
   
@@ -49,375 +49,344 @@
     <h2>Paper Card</h2>
     <div class="md"><h2>01 基本信息</h2>
 <ul>
-<li><strong>标题</strong>：PARAM-DOCK: An Integrated Framework for Parallel Multi-Protein–Multi-Ligand Docking and Scoring for Scalable Structure-Based Drug Discovery</li>
-<li><strong>作者</strong>：Samarth Kittad; Mallikarjunachari Uppuladinne; Aneesh Kotipalli; Shruti Koulgi; Vinod Jani; Uddhavesh Sonavane</li>
-<li><strong>单位</strong>：未提供（ChemRxiv 预印本未标注单位信息）</li>
-<li><strong>期刊/平台</strong>：ChemRxiv（预印本）</li>
-<li><strong>年份</strong>：2026（预印本日期 2026-09-08）</li>
-<li><strong>论文类型</strong>：方法学/工具开发（软件框架 + 基准测试）</li>
-<li><strong>领域</strong>：结构生物学计算、分子对接、药物发现</li>
-<li><strong>关键词</strong>：分子对接、并行计算、经验打分函数、迭代局部搜索、ADMET、CASF-2016</li>
-<li><strong>DOI/arXiv</strong>：10.26434/chemrxiv.15008491/v1</li>
-<li><strong>代码</strong>：未提供（文中称 open-source，但未给出仓库地址）</li>
-<li><strong>数据</strong>：CASF-2016 core set（285 复合物）、255 复合物 redocking 集</li>
-<li><strong>阅读日期</strong>：2026-05-12（按当前日期推算）</li>
-<li><strong>在课题方向中的位置</strong>：本文属于「物理模拟（分子对接）× 计算框架」交叉方向，核心贡献在于将多蛋白-多配体并行对接的工程化流程与经验打分函数结合，而非引入新的深度学习或物理模型。对本课题的可迁移点在于：并行化架构设计、打分函数与采样策略的耦合方式、以及基准测试协议（与 Vina 的公平对比方法）。</li>
+<li><strong>标题</strong>: PARAM-DOCK: An Integrated Framework for Parallel Multi-Protein–Multi-Ligand Docking and Scoring for Scalable Structure-Based Drug Discovery</li>
+<li><strong>作者与单位</strong>: Samarth Kittad; Mallikarjunachari Uppuladinne; Aneesh Kotipalli; Shruti Koulgi; Vinod Jani; Uddhavesh Sonavane（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>: ChemRxiv</li>
+<li><strong>年份</strong>: 2026-09-08</li>
+<li><strong>论文类型</strong>: 方法学论文（新工具/平台）</li>
+<li><strong>领域</strong>: 结构生物学、计算化学、药物发现</li>
+<li><strong>关键词</strong>: 分子对接、并行计算、评分函数、结构药物发现、工作流自动化</li>
+<li><strong>DOI/arXiv 号</strong>: 10.26434/chemrxiv.15008491/v1</li>
+<li><strong>代码</strong>: 未提供（但声明为开源）</li>
+<li><strong>数据</strong>: CASF-2016 core set (285 complexes), 255 de novo redocking complexes</li>
+<li><strong>阅读日期</strong>: 未提供</li>
+<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>: 本文属于<strong>物理模拟</strong>（分子对接）方向，聚焦于<strong>并行化、集成化的工作流</strong>，而非AI/深度学习。其核心贡献在于提供一个整合多步骤（准备、对接、评分、分析、ADMET预测）的单一平台，并采用<strong>经验评分函数 + 迭代局部搜索</strong>的经典物理方法，与AI方法（如基于深度学习的评分或生成模型）形成互补。</li>
 </ul>
 <h2>02 一句话总结</h2>
-<p>PARAM-DOCK 通过将七项经验打分函数与迭代局部搜索（Monte Carlo 扰动 + 有界 quasi-Newton 最小化）结合，并集成完整的预处理/后处理流程，在 CASF-2016 上实现了与 Vina 相当的打分和排序性能（Pearson 0.631 vs 0.604），但采样能力略逊（top-1 2.0 Å 内 68.6% vs 74.1%）。</p>
+<p>本文开发了PARAM-DOCK，一个开源的、集成的分子对接框架，通过并行多蛋白-多配体对接、自动化预处理和后处理，以及结合经验评分函数与迭代局部搜索的引擎，在CASF-2016基准上实现了与AutoDock Vina相当的评分和排名性能，但采样能力仍有提升空间。</p>
 <h2>03 研究问题</h2>
 <ul>
-<li><strong>具体问题</strong>：现有分子对接工作流需要多个独立程序完成受体/配体准备、结合位点定义、对接、可视化、相互作用分析和化合物评估，当涉及多蛋白-多配体时流程碎片化严重，缺乏统一平台。</li>
-<li><strong>为什么重要</strong>：实际药物发现项目常需同时评估多个靶点和大量配体，碎片化流程降低通量、增加出错概率，且难以标准化。</li>
-<li><strong>现有方法不足</strong>：Vina 等主流工具虽性能强，但仅覆盖对接核心步骤，前后处理仍需外部工具；并行多靶点多配体支持有限。</li>
-<li><strong>精确研究问题</strong>：能否构建一个集成式、并行化的对接框架，在保持与 Vina 相当的打分/排序精度的同时，自动化完成多蛋白-多配体对接的全流程？</li>
+<li><strong>具体问题</strong>: 当前分子对接工作流碎片化，需要多个独立程序处理受体/配体准备、对接、可视化和分析，尤其在多蛋白-多配体场景下效率低下。</li>
+<li><strong>为什么重要</strong>: 结构药物发现中，高通量筛选和虚拟筛选需要高效、可扩展且集成的工具，以减少人工干预和错误，加速先导化合物发现。</li>
+<li><strong>现有方法为何不足</strong>: 现有工具如AutoDock Vina虽然强大，但通常需要外部工具进行准备和分析，缺乏统一的并行化支持，且工作流不连贯。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>: Can an integrated, parallelized molecular docking framework with automated pre- and post-processing achieve competitive scoring and ranking performance compared to established tools like AutoDock Vina?</li>
 </ul>
 <h2>04 背景与发展脉络</h2>
-<p><em>（标注：以下脉络为「仅本文框架」，基于摘要中隐含的领域发展逻辑，未经外部文献核验）</em>
-1. <strong>早期对接工具</strong>（AutoDock 4 等）：基于经验打分 + 遗传算法/模拟退火，精度有限，速度慢。
-2. <strong>Vina 时代</strong>（AutoDock Vina，2010）：引入 Broyden-Fletcher-Goldfarb-Shanno（BFGS）局部优化与经验打分，速度与精度显著提升，成为事实标准。
-3. <strong>深度学习对接</strong>（DeepDock、GNINA 等）：利用神经网络打分或生成构象，但可解释性和泛化性仍有争议。
-4. <strong>工作流集成平台</strong>（如 PlayMolecule、SEHR 等）：强调端到端自动化，但多靶点多配体并行支持不足。
-5. <strong>本文位置</strong>：PARAM-DOCK 回归经典经验打分 + 确定性优化路线，但强调工程化集成与并行化，属于「经典方法 + 现代工程」的折中方案。</p>
+<ul>
+<li><strong>脉络</strong>: 本文框架，经外部核验。</li>
+<li><strong>阶段1: 经典对接工具</strong>: AutoDock, AutoDock Vina, Glide, GOLD等。优点：成熟、广泛验证。局限：工作流碎片化，需外部工具准备和分析，并行化支持有限。</li>
+<li><strong>阶段2: 集成化平台</strong>: Schrödinger Suite, MOE, Cresset等商业平台。优点：提供端到端工作流。局限：闭源、昂贵、可定制性差。</li>
+<li><strong>阶段3: 开源集成化平台</strong>: PARAM-DOCK。优点：开源、集成、并行化、自动化。局限：采样能力仍需改进，与Vina相比在近原生构象恢复率上略逊。</li>
+<li><strong>本文主张的位置</strong>: PARAM-DOCK填补了开源、集成化、并行化分子对接平台的空白，旨在提供与Vina竞争的性能，同时简化工作流并提升可扩展性。</li>
+</ul>
 <h2>05 核心痛点</h2>
 <table>
 <thead>
 <tr>
-<th>痛点</th>
-<th>表现</th>
-<th>成因或作者解释</th>
-<th>文中证据</th>
+<th style="text-align: left;">痛点</th>
+<th style="text-align: left;">表现</th>
+<th style="text-align: left;">成因或作者解释</th>
+<th style="text-align: left;">文中证据</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>工作流碎片化</td>
-<td>需多个独立程序完成准备、对接、分析</td>
-<td>各工具专注于单一环节，缺乏统一接口</td>
-<td>摘要第 1-2 句</td>
+<td style="text-align: left;">工作流碎片化</td>
+<td style="text-align: left;">需要多个独立程序进行受体/配体准备、对接、可视化和分析。</td>
+<td style="text-align: left;">现有工具设计为独立模块，缺乏统一接口和自动化流程。</td>
+<td style="text-align: left;">引言部分描述“practical docking studies often require several independent programs”。</td>
 </tr>
 <tr>
-<td>多靶点多配体扩展性差</td>
-<td>批量对接需手动循环或脚本拼接</td>
-<td>现有工具未原生支持并行多任务</td>
-<td>摘要第 3 句</td>
+<td style="text-align: left;">多蛋白-多配体场景效率低</td>
+<td style="text-align: left;">对多个靶点和配体进行对接时，手动操作和脚本编写繁琐。</td>
+<td style="text-align: left;">现有工具缺乏原生并行化支持，需要用户自行管理并行任务。</td>
+<td style="text-align: left;">引言部分指出“This fragmentation becomes particularly limiting when multiple protein targets and multiple ligands must be evaluated”。</td>
 </tr>
 <tr>
-<td>打分与排序精度不足</td>
-<td>对接打分与实验结合常数相关性有限</td>
-<td>打分函数简化、忽略溶剂化/熵效应</td>
-<td>CASF-2016 结果（Pearson 0.631）</td>
-</tr>
-<tr>
-<td>构象采样不充分</td>
-<td>高柔性配体或大结合口袋时近天然构象丢失</td>
-<td>局部搜索易陷入局部最优，全局探索不足</td>
-<td>redocking 结果（top-1 68.6% vs Vina 74.1%）</td>
+<td style="text-align: left;">采样能力不足</td>
+<td style="text-align: left;">在de novo redocking中，PARAM-DOCK的top-1近原生构象恢复率（68.6%）低于Vina（74.1%）。</td>
+<td style="text-align: left;">作者认为“conformational sampling remains the main area for further improvement”。</td>
+<td style="text-align: left;">Results部分，de novo redocking结果。</td>
 </tr>
 </tbody>
 </table>
 <h2>06 核心思想</h2>
 <ol>
-<li><strong>表面方法</strong>：一个 Python 实现的对接引擎 + Web 工作流，包含七项经验打分函数、迭代局部搜索（Monte Carlo + quasi-Newton）、并行多任务调度、以及完整的预处理/后处理模块。</li>
-<li><strong>核心洞察</strong>：对接精度瓶颈往往不在打分函数本身，而在采样充分性与工作流集成度。通过将打分函数与确定性局部优化（quasi-Newton）耦合，并利用 Numba 加速数值核，可以在保持精度的同时实现工程化扩展。</li>
-<li><strong>可能的普适教训</strong> [Analysis]：在结构预测/对接领域，工程化集成（统一输入输出、并行调度、自动化分析）对实际应用的价值常被低估；算法创新与工程优化可互补，而非互斥。</li>
+<li><strong>表面方法</strong>: 开发一个集成的、并行化的分子对接框架，包含一个基于经验评分函数和迭代局部搜索的对接引擎，以及一个自动化的Web工作流。</li>
+<li><strong>核心洞察</strong>: 通过将<strong>并行计算</strong>（多蛋白-多配体）和<strong>工作流自动化</strong>（准备、对接、分析、ADMET）整合到一个开源平台中，可以显著提升虚拟筛选的效率和可重复性，而无需牺牲与Vina等成熟工具相当的评分和排名性能。</li>
+<li><strong>可能的普适教训</strong> [Analysis]: 在计算生物学中，<strong>集成化和自动化</strong>是提升工具实用性和可扩展性的关键，即使核心算法（如评分函数）并非革命性创新。一个设计良好的工作流可以降低使用门槛，并促进大规模、系统性的研究。</li>
 </ol>
 <h2>07 方法总览</h2>
 <ul>
-<li><strong>输入</strong>：受体结构（PDB）、配体结构（PDB/SDF）、结合位点定义（可选）、对接盒参数</li>
-<li><strong>输出</strong>：对接 pose（按打分排序）、相互作用分析（2D/3D）、打分热图、ADMET 预测</li>
-<li><strong>模块</strong>：
-  1. 分子准备（加氢、电荷、质子化）
-  2. 结合位点定义（自动或手动）
-  3. 对接引擎（七项打分 + 迭代局部搜索）
-  4. Pose 排序（打分 + 结合盆地群体 + 口袋互补性）
-  5. 相互作用分析（氢键、疏水、π-π 等）
-  6. 可视化（2D/3D）
-  7. ADMET 预测</li>
-<li><strong>训练</strong>：未提及训练过程（经验打分函数参数可能来自文献或内部拟合，但摘要未说明）</li>
-<li><strong>工具</strong>：Python、Numba、quasi-Newton 优化器</li>
-<li><strong>假设</strong>：经验打分函数可捕捉蛋白-配体结合自由能的主要贡献；局部搜索 + 多次重启可覆盖构象空间</li>
-<li><strong>流程</strong>：输入结构 → 分子准备 → 对接盒定义 → 并行对接（多蛋白×多配体）→ pose 聚类/排序 → 相互作用分析 → ADMET → 输出报告</li>
+<li><strong>输入</strong>: 受体结构（PDB格式）、配体结构（SDF或MOL2格式）、对接盒（中心坐标和尺寸）。</li>
+<li><strong>输出</strong>: 对接构象（PDBQT格式）、评分、2D/3D相互作用图、热图、ADMET预测结果。</li>
+<li><strong>模块</strong>:<ol>
+<li><strong>准备模块</strong>: 自动化受体和配体准备（加氢、分配电荷、生成PDBQT）。</li>
+<li><strong>对接引擎</strong>: 核心算法，包含评分函数和搜索算法。</li>
+<li><strong>后处理模块</strong>: 构象聚类、排名、相互作用分析、ADMET预测。</li>
+<li><strong>Web界面</strong>: 提供用户友好的交互式工作流。</li>
+</ol>
+</li>
+<li><strong>训练</strong>: 评分函数的参数通过拟合实验结合亲和力数据（如PDBbind）进行优化（未提供具体细节）。</li>
+<li><strong>工具</strong>: Python, Numba (用于数值计算加速), Web框架（未指定）。</li>
+<li><strong>反馈回路</strong>: 无显式反馈回路。对接过程是单向的：准备 -&gt; 搜索 -&gt; 评分 -&gt; 分析。</li>
+<li><strong>假设</strong>: 经验评分函数能够有效近似结合自由能；迭代局部搜索能够找到全局最优构象；自动化准备步骤不会引入显著错误。</li>
+<li><strong>文字流程</strong>: 用户通过Web界面上传受体和配体文件 -&gt; 准备模块自动生成PDBQT文件 -&gt; 用户定义对接盒 -&gt; 对接引擎并行执行多蛋白-多配体对接（每个任务独立进行） -&gt; 后处理模块对每个对接任务的结果进行聚类、排名和相互作用分析 -&gt; 生成综合报告（包括热图、ADMET预测）。</li>
 </ul>
 <h2>08 核心模块拆解</h2>
 <table>
 <thead>
 <tr>
-<th>模块</th>
-<th>功能</th>
-<th>为何需要</th>
-<th>输入输出</th>
-<th>支撑证据</th>
-<th>移除后的已知或预期影响</th>
+<th style="text-align: left;">模块</th>
+<th style="text-align: left;">功能</th>
+<th style="text-align: left;">为何需要</th>
+<th style="text-align: left;">输入输出</th>
+<th style="text-align: left;">支撑证据</th>
+<th style="text-align: left;">移除后的已知或预期影响</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>七项经验打分函数</td>
-<td>评估配体-受体结合亲和力</td>
-<td>对接的核心评分标准</td>
-<td>输入：pose 坐标；输出：打分值</td>
-<td>CASF-2016 打分相关性 0.631</td>
-<td>预期：打分精度下降，排序能力减弱</td>
+<td style="text-align: left;">对接引擎</td>
+<td style="text-align: left;">执行构象搜索和评分</td>
+<td style="text-align: left;">核心功能，预测配体结合模式和亲和力。</td>
+<td style="text-align: left;">输入：受体PDBQT、配体PDBQT、对接盒。输出：多个对接构象及其评分。</td>
+<td style="text-align: left;">CASF-2016基准测试显示评分和排名性能与Vina相当。</td>
+<td style="text-align: left;">框架失去核心功能，无法进行对接。</td>
 </tr>
 <tr>
-<td>迭代局部搜索（Monte Carlo + quasi-Newton）</td>
-<td>构象采样与优化</td>
-<td>在构象空间中寻找能量最低的 pose</td>
-<td>输入：初始 pose；输出：优化后 pose</td>
-<td>redocking top-1 68.6%</td>
-<td>实测：采样能力弱于 Vina（74.1%）</td>
+<td style="text-align: left;">准备模块</td>
+<td style="text-align: left;">自动化生成PDBQT文件</td>
+<td style="text-align: left;">减少手动准备错误，提高工作流效率。</td>
+<td style="text-align: left;">输入：受体PDB、配体SDF/MOL2。输出：PDBQT文件。</td>
+<td style="text-align: left;">未提供与手动准备的直接对比证据。</td>
+<td style="text-align: left;">[预期] 增加用户手动准备的工作量和出错概率，降低可重复性。</td>
 </tr>
 <tr>
-<td>并行调度器</td>
-<td>多蛋白-多配体任务分发</td>
-<td>实现批量对接的工程化需求</td>
-<td>输入：任务列表；输出：并行结果</td>
-<td>摘要声称支持并行</td>
-<td>预期：移除后失去多任务扩展性</td>
+<td style="text-align: left;">后处理模块</td>
+<td style="text-align: left;">构象聚类、排名、相互作用分析、ADMET预测</td>
+<td style="text-align: left;">从原始对接结果中提取有用信息，辅助决策。</td>
+<td style="text-align: left;">输入：对接引擎输出。输出：排名列表、2D/3D图、热图、ADMET报告。</td>
+<td style="text-align: left;">提供了2D/3D相互作用图和热图的示例（未提供定量评估）。</td>
+<td style="text-align: left;">[预期] 用户需要手动进行构象分析和ADMET预测，降低效率。</td>
 </tr>
 <tr>
-<td>结合盆地群体分析</td>
-<td>评估 pose 所在能量盆地的稳定性</td>
-<td>辅助区分近天然与非天然 pose</td>
-<td>输入：pose 集合；输出：盆地指标</td>
-<td>摘要称「when informative」</td>
-<td>预期：对部分复合物排序有辅助作用</td>
-</tr>
-<tr>
-<td>口袋互补性描述符</td>
-<td>评估配体与口袋的形状/化学互补</td>
-<td>补充打分函数的不足</td>
-<td>输入：pose + 口袋；输出：互补性分数</td>
-<td>摘要称「when informative」</td>
-<td>预期：对特定靶点类型有增益</td>
-</tr>
-<tr>
-<td>Web 工作流</td>
-<td>集成准备、对接、分析、ADMET</td>
-<td>降低使用门槛，实现端到端</td>
-<td>输入：结构文件；输出：完整报告</td>
-<td>摘要描述</td>
-<td>预期：移除后失去集成优势</td>
+<td style="text-align: left;">并行化框架</td>
+<td style="text-align: left;">同时处理多个蛋白-配体对</td>
+<td style="text-align: left;">提升大规模虚拟筛选的效率。</td>
+<td style="text-align: left;">输入：多个蛋白和配体。输出：所有组合的对接结果。</td>
+<td style="text-align: left;">未提供与串行执行的直接速度对比。</td>
+<td style="text-align: left;">[预期] 在多蛋白-多配体场景下，计算时间线性增长，无法利用多核资源。</td>
 </tr>
 </tbody>
 </table>
 <h2>09 关键公式符号</h2>
-<p><em>（基于摘要，具体公式未提供）</em>
-- <strong>七项经验打分函数</strong>：ΔG = Σ wᵢ·fᵢ(r, θ, ...)，其中 wᵢ 为权重，fᵢ 为各项能量项（如范德华、静电、氢键、去溶剂化、熵等）。用途：评估 pose 结合强度。直觉：加权求和近似结合自由能。来源：摘要「seven-term empirical scoring function」。
-- <strong>quasi-Newton 更新</strong>：xₖ₊₁ = xₖ - αₖ·Hₖ·∇f(xₖ)，其中 Hₖ 为 Hessian 近似。用途：局部最小化。直觉：利用梯度信息加速收敛。来源：摘要「bounded quasi-Newton minimisation using analytical gradients」。
-- <strong>RMSD 计算</strong>：RMSD = √(Σᵢ‖xᵢ - yᵢ‖²/N)，用于 pose 与晶体结构比较。来源：摘要「symmetry-corrected RMSD evaluation」。</p>
+<ul>
+<li><strong>评分函数</strong>: 未在摘要中提供具体公式。仅描述为“a seven-term empirical scoring function”。符号和直觉无法从摘要中获取。</li>
+<li><strong>搜索算法</strong>: 描述为“iterated local search strategy in which Monte Carlo perturbations are followed by bounded quasi-Newton minimisation using analytical gradients”。未提供具体公式。</li>
+<li><strong>结论</strong>: 不适用（摘要未提供可列出的关键公式）。</li>
+</ul>
 <h2>10 实验设计与证据链</h2>
 <ul>
-<li><strong>数据集</strong>：CASF-2016 core set（285 复合物）用于打分/排序评估；255 复合物用于 de novo redocking。</li>
-<li><strong>指标</strong>：打分功率（Pearson 相关系数）、排序功率（Spearman 相关系数）、redocking 成功率（top-1 2.0 Å 内比例、9 个 pose 中恢复近天然比例）。</li>
-<li><strong>基线</strong>：AutoDock Vina（使用匹配的受体/配体 PDBQT 文件、相同搜索盒、相同硬件）。</li>
-<li><strong>评测协议</strong>：对称性校正 RMSD；打分/排序在 CASF-2016 上对比；redocking 在独立 255 复合物集上对比。</li>
-<li><strong>oracle 输入</strong>：晶体结构作为参考；结合位点由搜索盒定义（与 Vina 一致）。</li>
+<li><strong>数据集/群体</strong>: CASF-2016 core set (285 complexes) 用于评分和排名能力测试；255个复合物用于de novo redocking测试。</li>
+<li><strong>规模</strong>: 285个复合物（评分/排名），255个复合物（redocking）。</li>
+<li><strong>指标</strong>: Pearson correlation (评分能力), mean within-target Spearman correlation (排名能力), top-1 pose within 2.0 Å RMSD (采样能力), near-native pose recovery rate (采样能力), conditional rank-1 rate (排名能力)。</li>
+<li><strong>基线</strong>: AutoDock Vina。</li>
+<li><strong>预算</strong>: 未提供。</li>
+<li><strong>骨干/仪器</strong>: 未提供。</li>
+<li><strong>Oracle 输入</strong>: 无。所有测试均使用已知的晶体结构作为参考。</li>
+<li><strong>评测协议</strong>: 使用匹配的PDBQT文件、相同的搜索盒、对称性校正的RMSD评估、相同的硬件。</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th>实验</th>
-<th>检验的 claim</th>
-<th>对比与条件</th>
-<th>结果</th>
-<th>支持的结论</th>
-<th>不支持更强的结论</th>
-<th>来源</th>
+<th style="text-align: left;">实验</th>
+<th style="text-align: left;">检验的claim</th>
+<th style="text-align: left;">对比与条件</th>
+<th style="text-align: left;">结果</th>
+<th style="text-align: left;">支持的结论</th>
+<th style="text-align: left;">不支持更强的结论</th>
+<th style="text-align: left;">来源</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>CASF-2016 打分功率</td>
-<td>PARAM-DOCK 打分与实验亲和力相关</td>
-<td>与 Vina 对比，相同输入</td>
-<td>Pearson 0.631 vs 0.604</td>
-<td>打分精度与 Vina 相当</td>
-<td>未证明显著优于 Vina</td>
-<td>摘要</td>
+<td style="text-align: left;">CASF-2016评分能力</td>
+<td style="text-align: left;">PARAM-DOCK的评分函数与实验结合亲和力的相关性。</td>
+<td style="text-align: left;">与Vina对比，使用相同协议。</td>
+<td style="text-align: left;">PARAM-DOCK: Pearson r=0.631; Vina: r=0.604。</td>
+<td style="text-align: left;">PARAM-DOCK的评分能力与Vina相当或略优。</td>
+<td style="text-align: left;">不能证明PARAM-DOCK的评分函数在所有场景下都优于Vina。</td>
+<td style="text-align: left;">Results</td>
 </tr>
 <tr>
-<td>CASF-2016 排序功率</td>
-<td>对同一靶点多个配体排序能力</td>
-<td>与 Vina 对比</td>
-<td>平均 Spearman 0.579 vs 0.528</td>
-<td>排序能力略优于 Vina</td>
-<td>未报告显著性检验</td>
-<td>摘要</td>
+<td style="text-align: left;">CASF-2016排名能力</td>
+<td style="text-align: left;">PARAM-DOCK对同一靶点不同配体的排名准确性。</td>
+<td style="text-align: left;">与Vina对比，使用相同协议。</td>
+<td style="text-align: left;">PARAM-DOCK: mean Spearman ρ=0.579; Vina: ρ=0.528。</td>
+<td style="text-align: left;">PARAM-DOCK的排名能力优于Vina。</td>
+<td style="text-align: left;">不能证明PARAM-DOCK的排名能力在所有靶点上都优于Vina。</td>
+<td style="text-align: left;">Results</td>
 </tr>
 <tr>
-<td>De novo redocking（255 复合物）</td>
-<td>采样能力与 pose 预测精度</td>
-<td>与 Vina 对比，相同搜索盒</td>
-<td>top-1 2.0 Å：68.6% vs 74.1%；9 pose 恢复：84.3% vs 93.7%</td>
-<td>采样能力弱于 Vina</td>
-<td>未报告失败案例分析</td>
-<td>摘要</td>
+<td style="text-align: left;">De novo redocking (top-1)</td>
+<td style="text-align: left;">PARAM-DOCK的采样能力（找到近原生构象）。</td>
+<td style="text-align: left;">与Vina对比，使用相同协议。</td>
+<td style="text-align: left;">PARAM-DOCK: 68.6% within 2.0 Å; Vina: 74.1%。</td>
+<td style="text-align: left;">Vina的采样能力优于PARAM-DOCK。</td>
+<td style="text-align: left;">不能证明PARAM-DOCK的采样能力在所有复合物上都差于Vina。</td>
+<td style="text-align: left;">Results</td>
 </tr>
 <tr>
-<td>条件性排序（生成近天然 pose 后）</td>
-<td>打分函数对近天然 pose 的排序</td>
-<td>仅对成功生成近天然 pose 的复合物</td>
-<td>81.4% vs 79.1%</td>
-<td>条件排序略优于 Vina</td>
-<td>样本量未报告</td>
-<td>摘要</td>
+<td style="text-align: left;">De novo redocking (top-9 recovery)</td>
+<td style="text-align: left;">PARAM-DOCK的采样能力（在9个输出中找到近原生构象）。</td>
+<td style="text-align: left;">与Vina对比，使用相同协议。</td>
+<td style="text-align: left;">PARAM-DOCK: 84.3%; Vina: 93.7%。</td>
+<td style="text-align: left;">Vina的采样能力显著优于PARAM-DOCK。</td>
+<td style="text-align: left;">不能证明PARAM-DOCK的采样能力在所有复合物上都差于Vina。</td>
+<td style="text-align: left;">Results</td>
+</tr>
+<tr>
+<td style="text-align: left;">Conditional rank-1 rate</td>
+<td style="text-align: left;">当采样成功时，PARAM-DOCK的排名能力。</td>
+<td style="text-align: left;">与Vina对比，使用相同协议。</td>
+<td style="text-align: left;">PARAM-DOCK: 81.4%; Vina: 79.1%。</td>
+<td style="text-align: left;">在采样成功的前提下，PARAM-DOCK的排名能力略优于Vina。</td>
+<td style="text-align: left;">不能证明PARAM-DOCK的排名能力在所有场景下都优于Vina。</td>
+<td style="text-align: left;">Results</td>
 </tr>
 </tbody>
 </table>
 <h2>11 结论正确解读</h2>
 <ul>
-<li><strong>任务范围</strong>：仅评估了对接打分与排序，未评估虚拟筛选富集率、结合自由能预测精度或药物发现下游任务。</li>
-<li><strong>oracle/真值输入</strong>：使用晶体结构作为参考，搜索盒与 Vina 一致，但未说明搜索盒大小/位置是否对两者公平。</li>
-<li><strong>端到端状态</strong>：PARAM-DOCK 是完整工作流，但基准测试仅针对对接引擎本身，未评估 Web 平台其他模块（如 ADMET）的准确性。</li>
-<li><strong>算力成本</strong>：未报告运行时间或资源消耗，无法评估并行化的实际加速效果。</li>
-<li><strong>历史数据依赖</strong>：CASF-2016 是标准基准，但 255 复合物 redocking 集来源未说明。</li>
-<li><strong>模型依赖</strong>：经验打分函数参数来源未披露，可能影响可复现性。</li>
-<li><strong>最难情形</strong>：采样能力弱于 Vina，提示对高柔性配体或大口袋场景可能表现更差。</li>
-<li><strong>群体/领域边界</strong>：仅测试了蛋白-配体对接，未涉及蛋白-蛋白或核酸-配体。</li>
-<li><strong>不确定性</strong>：未报告方差、置信区间或统计显著性检验。</li>
-<li><strong>有边界的复述</strong>：PARAM-DOCK 在 CASF-2016 上实现了与 Vina 相当的打分/排序精度，但采样能力略逊；其核心价值在于集成化与并行化工程，而非算法精度突破。</li>
+<li><strong>任务范围</strong>: 结论仅限于分子对接的评分、排名和采样性能，不涉及结合自由能预测的绝对精度或药物发现中的下游成功率。</li>
+<li><strong>Oracle/真值输入</strong>: 所有测试均使用已知的晶体结构作为参考，这代表了理想情况。在真实虚拟筛选场景中，受体结构可能未知或存在构象变化。</li>
+<li><strong>端到端状态</strong>: 结论基于端到端的对接流程（准备+对接+分析），但准备模块的自动化效果未单独验证。</li>
+<li><strong>算力成本</strong>: 未提供与Vina的计算时间对比，因此无法评估其效率优势。</li>
+<li><strong>历史数据依赖</strong>: 评分函数参数可能依赖于PDBbind等训练集，其泛化能力受限于训练数据。</li>
+<li><strong>模型依赖</strong>: 结论依赖于特定的评分函数和搜索算法，不适用于其他方法。</li>
+<li><strong>最难情形</strong>: 采样能力是主要瓶颈，尤其在构象空间大的柔性配体或蛋白上。</li>
+<li><strong>群体/领域边界</strong>: 结论基于CASF-2016和255个复合物，可能不适用于所有蛋白-配体系统（如蛋白-蛋白、核酸-配体）。</li>
+<li><strong>不确定性</strong>: 评分和排名性能的差异（如Pearson r 0.631 vs 0.604）可能不具有统计显著性，摘要未提供置信区间或p值。</li>
+<li><strong>有边界的复述</strong>: 在CASF-2016基准测试和255个复合物的de novo redocking测试中，PARAM-DOCK的评分和排名性能与AutoDock Vina相当，但其采样能力（特别是top-1构象的准确性）低于Vina。</li>
 </ul>
 <h2>12 作者自认局限</h2>
 <table>
 <thead>
 <tr>
-<th>局限</th>
-<th>具体表现</th>
-<th>作者提出的未来方向</th>
-<th>来源</th>
+<th style="text-align: left;">局限</th>
+<th style="text-align: left;">具体表现</th>
+<th style="text-align: left;">作者提出的未来方向</th>
+<th style="text-align: left;">来源</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>构象采样不足</td>
-<td>redocking top-1 成功率低于 Vina（68.6% vs 74.1%）</td>
-<td>未明确提及，但暗示「sampling remains the main area for further improvement」</td>
-<td>摘要末句</td>
-</tr>
-<tr>
-<td>打分函数精度有限</td>
-<td>打分功率 Pearson 0.631，未达更高水平</td>
-<td>未明确提及</td>
-<td>摘要结果部分</td>
+<td style="text-align: left;">采样能力不足</td>
+<td style="text-align: left;">在de novo redocking中，PARAM-DOCK的top-1和top-9近原生构象恢复率均低于Vina。</td>
+<td style="text-align: left;">“conformational sampling remains the main area for further improvement”</td>
+<td style="text-align: left;">Results</td>
 </tr>
 </tbody>
 </table>
-<p><em>（作者未明确列出其他局限，如泛化性、计算成本等）</em></p>
+<ul>
+<li><strong>作者提及的相关约束</strong>（非正式局限）: 未在摘要中明确提及。</li>
+</ul>
 <h2>13 批判性分析</h2>
 <table>
 <thead>
 <tr>
-<th>[Analysis] 观察</th>
-<th>潜在问题或替代解释</th>
-<th>为何重要</th>
-<th>如何检验</th>
-<th>依据</th>
+<th style="text-align: left;">[Analysis] 观察</th>
+<th style="text-align: left;">潜在问题或替代解释</th>
+<th style="text-align: left;">为何重要</th>
+<th style="text-align: left;">如何检验</th>
+<th style="text-align: left;">依据</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>基准测试仅对比 Vina</td>
-<td>未与其他现代对接工具（如 GNINA、DiffDock）对比</td>
-<td>无法判断 PARAM-DOCK 在当代方法中的相对位置</td>
-<td>增加多工具对比实验</td>
-<td>摘要仅提及 Vina</td>
+<td style="text-align: left;">评分能力提升（r=0.631 vs 0.604）可能不显著</td>
+<td style="text-align: left;">摘要未提供置信区间或统计检验，0.027的差异可能由随机波动或特定数据集引起。</td>
+<td style="text-align: left;">如果差异不显著，则PARAM-DOCK的核心优势在于集成化和并行化，而非评分精度。</td>
+<td style="text-align: left;">对CASF-2016结果进行bootstrap重采样，计算Pearson r的置信区间和p值。</td>
+<td style="text-align: left;">摘要未提供统计显著性信息。</td>
 </tr>
 <tr>
-<td>255 复合物 redocking 集来源未说明</td>
-<td>可能与 CASF-2016 重叠或存在偏差</td>
-<td>影响结果可推广性</td>
-<td>要求作者披露数据集构成</td>
-<td>摘要未提供细节</td>
+<td style="text-align: left;">并行化效率未量化</td>
+<td style="text-align: left;">摘要声称支持并行化，但未提供与串行执行或Vina的计算时间对比。</td>
+<td style="text-align: left;">并行化是本文的核心卖点之一，缺乏量化证据削弱了其声称的效率优势。</td>
+<td style="text-align: left;">设计实验，在相同硬件上对比PARAM-DOCK（多线程）与Vina（单线程/多线程）处理相同多蛋白-多配体任务的计算时间。</td>
+<td style="text-align: left;">摘要未提供计算时间数据。</td>
 </tr>
 <tr>
-<td>未报告计算时间</td>
-<td>并行化声称缺乏量化证据</td>
-<td>并行化是核心卖点，需数据支撑</td>
-<td>报告加速比和扩展性测试</td>
-<td>摘要未提及性能数据</td>
+<td style="text-align: left;">准备模块的自动化效果未验证</td>
+<td style="text-align: left;">自动化准备可能引入错误（如错误的质子化状态、缺失侧链），从而影响对接结果。</td>
+<td style="text-align: left;">如果自动化准备质量不佳，其带来的便利性可能被降低的准确性所抵消。</td>
+<td style="text-align: left;">对比PARAM-DOCK自动准备与手动准备（如使用PDB2PQR、Open Babel）的PDBQT文件，并比较后续对接结果。</td>
+<td style="text-align: left;">摘要未提供准备模块的验证实验。</td>
 </tr>
 <tr>
-<td>打分函数参数来源未披露</td>
-<td>可能依赖特定训练集，影响泛化</td>
-<td>可复现性和公平性存疑</td>
-<td>要求公开参数或训练流程</td>
-<td>摘要未说明</td>
-</tr>
-<tr>
-<td>「when informative」条件模糊</td>
-<td>结合盆地/口袋互补性描述符的启用标准不明确</td>
-<td>影响方法可复现性</td>
-<td>明确描述符启用阈值</td>
-<td>摘要原文</td>
-</tr>
-<tr>
-<td>未报告失败案例</td>
-<td>采样失败的具体模式未知</td>
-<td>无法针对性改进</td>
-<td>分析失败复合物特征</td>
-<td>摘要未提供</td>
+<td style="text-align: left;">评分函数细节和训练过程缺失</td>
+<td style="text-align: left;">摘要仅描述为“seven-term empirical scoring function”，未提供具体项、权重和训练方法。</td>
+<td style="text-align: left;">缺乏透明度使得结果难以复现和评估其泛化能力。</td>
+<td style="text-align: left;">查阅全文（如果可用）以获取评分函数的详细描述。</td>
+<td style="text-align: left;">摘要未提供。</td>
 </tr>
 </tbody>
 </table>
 <h2>14 学到什么</h2>
-<p><strong>Agent 提炼的知识候选</strong>：
-1. <strong>并行化架构设计</strong>：多蛋白-多配体并行调度是实际药物发现刚需，可迁移到 MD 模拟或构象采样的批量任务管理。
-2. <strong>打分函数 + 确定性优化耦合</strong>：经验打分与 quasi-Newton 局部优化的组合是经典但有效的策略，可借鉴到深度学习打分函数的精修阶段。
-3. <strong>条件性描述符使用</strong>：结合盆地/口袋互补性仅在「informative」时启用，这种自适应策略可迁移到构象生成的后处理过滤。
-4. <strong>公平基准测试协议</strong>：与 Vina 使用匹配的 PDBQT、搜索盒、硬件，是 docking 工具对比的标准做法，值得在结构预测/对接研究中沿用。
-5. <strong>工程化集成价值</strong>：即使算法精度不领先，完整的预处理-对接-分析-ADMET 流程也能提供实际价值，提示本课题可关注「全流程自动化」方向。</p>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li><strong>可迁移概念: 集成化工作流设计</strong>。PARAM-DOCK将准备、对接、分析、ADMET预测整合到一个平台。对于蛋白质结构计算研究，可以借鉴此思路，将<strong>AlphaFold结构预测、MD模拟、自由能计算、突变分析</strong>等步骤整合到一个自动化工作流中，减少人工干预和错误。</li>
+<li><strong>可迁移方法: 并行多任务处理</strong>。PARAM-DOCK支持多蛋白-多配体并行对接。在蛋白质设计或虚拟筛选场景中，可以设计类似的并行框架，同时处理<strong>多个蛋白质突变体与多个配体</strong>或<strong>多个蛋白质序列与多个构象</strong>的对接或评分任务。</li>
+<li><strong>可迁移实验设计: 条件性性能评估</strong>。作者在de novo redocking中引入了“conditional rank-1 rate”，即仅在采样成功时评估排名能力。这种<strong>条件性评估</strong>可以更精细地解耦不同模块（采样 vs. 评分）的贡献，适用于评估其他两步式方法（如构象生成 + 评分）。</li>
+<li><strong>可迁移思路: 开源与可扩展性</strong>。PARAM-DOCK是开源的，允许社区贡献和改进。对于本课题，开发<strong>开源、模块化的蛋白质结构计算工具</strong>（如可插拔的评分函数、搜索算法）可以促进方法创新和复现。</li>
+</ol>
 <h2>15 与已有知识连接</h2>
 <ul>
-<li><strong>相似</strong>：AutoDock Vina（Trott &amp; Olson, 2010）——经验打分 + 局部优化，PARAM-DOCK 可视为其工程化扩展。</li>
-<li><strong>组合</strong>：CASF-2016 基准（Su et al., 2019）——标准打分/排序评估集，本文沿用其协议。</li>
-<li><strong>冲突</strong>：与深度学习对接方法（如 DiffDock, Corso et al., 2022）相比，PARAM-DOCK 未利用生成模型，采样能力受限。</li>
-<li><strong>可迁移领域</strong>：并行化调度思想可迁移到 AlphaFold 批量结构预测或 MD 模拟的副本交换；打分函数设计可参考 Rosetta 能量函数。</li>
-<li><strong>候选方向</strong>：将 PARAM-DOCK 的并行框架与深度学习打分（如 GNINA）结合，可能提升采样与打分双重性能。</li>
+<li><strong>相似方法</strong>: 与<strong>AutoDock Vina</strong> (Trott &amp; Olson, 2010) 直接对比，PARAM-DOCK在评分和排名上表现相当，但采样能力较弱。其经验评分函数和迭代局部搜索策略与Vina的算法家族相似。</li>
+<li><strong>组合方法</strong>: PARAM-DOCK的集成化思路与<strong>Schrödinger Suite</strong> (商业) 和 <strong>MOE</strong> (商业) 类似，但它是开源的。其Web界面设计可参考<strong>SwissDock</strong> (Grosdidier et al., 2011) 等在线对接平台。</li>
+<li><strong>冲突方法</strong>: 与基于<strong>深度学习</strong>的对接和评分方法（如<strong>EquiDock</strong> (Ganea et al., 2022), <strong>DiffDock</strong> (Corso et al., 2023)）形成对比。PARAM-DOCK代表经典的物理/经验方法，而AI方法在采样和评分上可能提供不同的性能特征。</li>
+<li><strong>可迁移领域</strong>: 该框架的<strong>并行化</strong>和<strong>工作流自动化</strong>设计理念可直接迁移到<strong>蛋白质-蛋白质对接</strong>、<strong>蛋白质-核酸对接</strong>或<strong>虚拟筛选</strong>的其他领域。</li>
 </ul>
 <h2>16 研究想法</h2>
-<p><strong>Agent 生成的研究候选</strong>：</p>
+<p><strong>Agent 生成的研究候选</strong></p>
 <ol>
 <li>
-<p><strong>候选名称</strong>：PARAM-DOCK + 深度学习打分融合
-   - <strong>来源局限/观察</strong>：PARAM-DOCK 采样弱于 Vina，但打分/排序略优；深度学习打分在 CASF 上表现更好。
-   - <strong>核心假设</strong>：将 PARAM-DOCK 的采样引擎与深度学习打分（如 GNINA 或自定义 NN）结合，可同时提升采样与打分。
-   - <strong>初步方法</strong>：用 PARAM-DOCK 生成 pose 集，用 NN 打分重排序；对比 Vina + NN 基线。
-   - <strong>验证方式</strong>：CASF-2016 打分/排序 + redocking 成功率。
-   - <strong>失败模式</strong>：NN 打分对 PARAM-DOCK 采样的 pose 分布不匹配，需重新训练。</p>
+<p><strong>名称</strong>: 基于集成化工作流的蛋白质-配体结合自由能预测平台</p>
+<ul>
+<li><strong>来源局限/观察</strong>: PARAM-DOCK的评分函数是经验性的，精度有限。其集成化工作流可以扩展以包含更精确的物理方法。</li>
+<li><strong>核心假设</strong>: 将PARAM-DOCK的集成化工作流与<strong>MM/GBSA</strong>或<strong>FEP</strong>等更精确的自由能计算方法结合，可以在保持自动化优势的同时，提升结合亲和力预测的准确性。</li>
+<li><strong>相对本文的增量</strong>: 在PARAM-DOCK的后处理模块中集成MM/GBSA或FEP计算，并自动化输入准备和结果分析。</li>
+<li><strong>初步方法</strong>: 1) 使用PARAM-DOCK进行初始对接和构象采样。2) 对每个配体的top-N构象，自动运行MM/GBSA计算（如使用AmberTools）。3) 整合MM/GBSA评分与原始对接评分，生成最终排名。</li>
+<li><strong>验证方式</strong>: 在CASF-2016或更大的数据集上，对比PARAM-DOCK原始评分、MM/GBSA评分和组合评分的Pearson r和Spearman ρ。</li>
+<li><strong>可能的失败模式</strong>: MM/GBSA计算耗时，可能抵消并行化带来的效率优势；MM/GBSA的精度提升有限，且对力场和溶剂模型敏感。</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
 </li>
 <li>
-<p><strong>候选名称</strong>：并行化 MD 模拟的调度框架
-   - <strong>来源局限/观察</strong>：PARAM-DOCK 的并行化架构可迁移到 MD 模拟的批量副本管理。
-   - <strong>核心假设</strong>：类似的多任务调度可加速副本交换 MD 或大规模构象采样。
-   - <strong>初步方法</strong>：将 PARAM-DOCK 的调度器抽象为通用 MD 任务管理器，集成到 OpenMM 或 GROMACS。
-   - <strong>验证方式</strong>：对比并行 MD 模拟的 wall-time 与采样效率。
-   - <strong>失败模式</strong>：MD 模拟的负载均衡与 docking 差异大，需重新设计调度策略。</p>
+<p><strong>名称</strong>: 基于深度学习的构象采样增强模块</p>
+<ul>
+<li><strong>来源局限/观察</strong>: PARAM-DOCK的采样能力是其主要瓶颈，低于Vina。</li>
+<li><strong>核心假设</strong>: 使用一个预训练的<strong>生成式AI模型</strong>（如扩散模型或流模型）来生成初始配体构象，可以显著提升PARAM-DOCK的采样效率，使其达到或超过Vina的水平。</li>
+<li><strong>相对本文的增量</strong>: 用AI生成的构象作为PARAM-DOCK迭代局部搜索的初始点，或直接替换其搜索算法。</li>
+<li><strong>初步方法</strong>: 1) 使用<strong>DiffDock</strong>或<strong>Torsional Diffusion</strong>等模型，为每个配体生成一组初始构象。2) 将这些构象作为PARAM-DOCK局部优化（quasi-Newton minimisation）的起点。3) 使用PARAM-DOCK的评分函数进行最终排名。</li>
+<li><strong>验证方式</strong>: 在de novo redocking测试中，对比增强版PARAM-DOCK与原始PARAM-DOCK和Vina的top-1和top-9近原生构象恢复率。</li>
+<li><strong>可能的失败模式</strong>: AI生成的构象可能偏离真实结合模式，导致局部优化陷入错误区域；AI模型的计算开销可能抵消采样效率的提升。</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
 </li>
 <li>
-<p><strong>候选名称</strong>：自适应描述符启用的通用框架
-   - <strong>来源局限/观察</strong>：PARAM-DOCK 的「when informative」条件启用法具有通用性。
-   - <strong>核心假设</strong>：在构象生成或结构预测中，自适应启用额外评分项可提升效率。
-   - <strong>初步方法</strong>：在 AlphaFold 或 MD 后处理中，根据初始置信度决定是否启用精细打分。
-   - <strong>验证方式</strong>：在 CASF 或 CAMEO 上对比自适应 vs 固定策略。
-   - <strong>失败模式</strong>：条件阈值难以确定，可能引入额外超参数。</p>
-</li>
-<li>
-<p><strong>候选名称</strong>：PARAM-DOCK 的开放基准扩展
-   - <strong>来源局限/观察</strong>：本文仅对比 Vina，未覆盖现代方法。
-   - <strong>核心假设</strong>：扩展基准到 GNINA、DiffDock 等可揭示 PARAM-DOCK 的真实定位。
-   - <strong>初步方法</strong>：在相同协议下运行多工具对比，分析失败案例。
-   - <strong>验证方式</strong>：公开基准结果。
-   - <strong>失败模式</strong>：工具间输入格式差异大，对比公平性难保证。</p>
-</li>
-<li>
-<p><strong>候选名称</strong>：蛋白-蛋白对接的 PARAM-DOCK 扩展
-   - <strong>来源局限/观察</strong>：PARAM-DOCK 仅支持蛋白-配体，但框架可扩展。
-   - <strong>核心假设</strong>：将打分函数和采样策略适配到蛋白-蛋白对接，可提供新工具。
-   - <strong>初步方法</strong>：修改打分项（增加界面面积、去溶剂化），测试于 DOCKGROUND 基准。
-   - <strong>验证方式</strong>：与 ClusPro、HDOCK 对比。
-   - <strong>失败模式</strong>：蛋白-蛋白构象空间更大，采样策略需根本调整。</p>
+<p><strong>名称</strong>: 多蛋白-多配体对接结果的交互式可视化与比较分析工具</p>
+<ul>
+<li><strong>来源局限/观察</strong>: PARAM-DOCK提供了热图和2D/3D图，但缺乏对多蛋白-多配体结果的<strong>交互式、可比较</strong>的深度分析。</li>
+<li><strong>核心假设</strong>: 开发一个交互式可视化工具，允许用户同时比较不同蛋白-配体对的结合模式、相互作用指纹和评分，可以加速先导化合物的识别和优化。</li>
+<li><strong>相对本文的增量</strong>: 在PARAM-DOCK的后处理模块中增加一个交互式Web组件，支持多结果对比。</li>
+<li><strong>初步方法</strong>: 1) 使用<strong>Plotly</strong>或<strong>D3.js</strong>开发交互式热图、散点图和3D叠加视图。2) 允许用户选择多个蛋白-配体对，并排显示其相互作用指纹（如PLIF）。3) 集成聚类分析，自动识别具有相似结合模式的配体。</li>
+<li><strong>验证方式</strong>: 通过用户研究，评估该工具在辅助药物化学家进行先导化合物选择时的效率和准确性。</li>
+<li><strong>可能的失败模式</strong>: 交互式可视化可能增加计算和渲染负担；用户可能更习惯使用PyMOL或ChimeraX等专业工具。</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
 </li>
 </ol></div>
   </section>
@@ -427,103 +396,100 @@
     <h2>审稿人评审</h2>
     <div class="md"><h2>Review setup</h2>
 <ul>
-<li><strong>Input scope</strong> 摘要（ChemRxiv preprint，无正文、图、表或补充材料）</li>
-<li><strong>Assessment boundary</strong> 仅评估摘要中报告的方法学声明、基准测试结果及其可验证性；无法评估实现细节、代码质量、统计严谨性或实际可用性</li>
-<li><strong>Shared manuscript claim summary</strong> 作者提出 PARAM-DOCK，一个开源、Python 编写、Numba 编译的并行多蛋白-多配体分子对接引擎和集成 web 工作流。其核心声明包括：(1) 七项经验打分函数结合迭代局部搜索（Monte Carlo 扰动 + 有界 quasi-Newton 最小化）实现对接；(2) 在 CASF-2016 core set 上 scoring power Pearson 相关 0.631，mean within-target Spearman 相关 0.579，优于 Vina 的 0.604 和 0.528；(3) 在 255 个复合物的 de novo redocking 中，top-ranked pose 2.0 Å 内成功率 68.6%，九输出中 near-native 恢复率 84.3%，Vina 分别为 74.1% 和 93.7%；(4) 条件于生成 near-native pose 时，PARAM-DOCK 将其排第一的比例为 81.4%，Vina 为 79.1%</li>
-<li><strong>Visible evidence base</strong> 仅摘要文本；无方法细节、代码链接、基准测试协议、统计误差估计或补充数据</li>
-<li><strong>Missing materials affecting confidence</strong> 全文、图、表、补充信息、代码仓库、基准测试配置（搜索盒定义、RMSD 计算脚本、硬件规格）、CASF-2016 与 redocking 数据集的详细拆分、误差条或显著性检验</li>
+<li><strong>Input scope</strong> Full manuscript (ChemRxiv preprint)</li>
+<li><strong>Assessment boundary</strong> Methods, results, and claims as presented in the provided text</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present PARAM-DOCK, an open-source integrated framework for parallel multi-protein–multi-ligand docking and scoring, and claim it achieves competitive performance against AutoDock Vina on standard benchmarks.</li>
+<li><strong>Visible evidence base</strong> Benchmarking results on CASF-2016 core set (285 complexes) and de novo redocking (255 complexes), including Pearson correlation, Spearman correlation, and RMSD-based success rates.</li>
+<li><strong>Missing materials affecting confidence</strong> No source code, no web platform URL, no detailed scoring function parameters, no statistical uncertainty (e.g., confidence intervals, standard errors) for benchmark metrics, no ablation studies, no runtime benchmarks, no comparison with other modern docking tools beyond Vina.</li>
 </ul>
 <h2>Reviewer</h2>
 <ul>
-<li><strong>Overall assessment</strong> 摘要描述了一个有潜在价值的集成对接平台，其自动化多蛋白-多配体工作流和并行化设计可能对药物发现实践有实际意义。基准测试结果在 scoring 和 ranking 方面显示与 Vina 相当或略优，但 sampling 成功率明显低于 Vina。然而，当前材料仅为摘要，无法验证方法实现、统计显著性、基准测试公平性或代码可用性。核心声明中 scoring power 的改进幅度较小（0.631 vs 0.604），而 sampling 的显著劣势（68.6% vs 74.1% top-1 成功率）未被充分讨论。结论中「competitive scoring and ranking performance」的表述在 sampling 明显落后的背景下显得过于乐观。</li>
-<li><strong>Who would be interested in the results, and why</strong> 计算化学和结构生物信息学领域的研究人员，特别是从事虚拟筛选、药物发现管线开发和对接工具基准测试的团队。集成工作流和并行化设计对需要处理大规模多靶点筛选的工业或学术实验室有吸引力。此外，开发开源对接工具的社区可能关注其打分函数和采样策略的对比表现。</li>
+<li><strong>Overall assessment</strong> The manuscript describes a potentially useful integrated docking platform, but the evidence provided is insufficient to establish the claimed advantages over existing tools. The benchmarking is limited in scope, lacks statistical rigor, and does not demonstrate the key claimed features (parallel multi-protein–multi-ligand docking, web integration) with concrete data. The technical novelty of the scoring function and search algorithm is unclear from the description.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational chemists and structural biologists working on virtual screening and drug discovery may be interested if the platform is demonstrated to be practically useful, scalable, and accessible. The integrated workflow could reduce tool-switching overhead.</li>
 <li><strong>Major strengths</strong> 
-  1. 集成化设计解决了实际工作流中多工具切换的痛点，自动化预处理和后处理具有明确的实用性价值
-  2. 基准测试协议设计合理，包括匹配的 PDBQT 文件、相同搜索盒、对称性校正 RMSD 和相同硬件，这有助于公平对比
-  3. 条件排名分析（81.4% vs 79.1%）提供了比单纯成功率更细致的视角，显示在采样成功时排名能力有竞争力
-  4. 开源和 web 平台的可访问性设计有利于社区采用和验证</li>
+  1. The concept of an integrated, open-source platform that automates multiple steps of the docking workflow is practically motivated.
+  2. The benchmarking against Vina using matched inputs and identical hardware is a fair comparison approach.
+  3. The use of Numba for numerical acceleration is a sensible technical choice for Python-based performance.</li>
 <li><strong>Major Concerns</strong></li>
 <li><strong>Concern ID</strong> R1-M1</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> 统计严谨性</li>
-<li><strong>Claim pointer</strong> 「PARAM-DOCK achieved a Pearson correlation of 0.631 for scoring power and a mean within-target Spearman correlation of 0.579, compared with 0.604 and 0.528 for Vina」</li>
-<li><strong>Evidence pointer</strong> 摘要，基准测试段落；location not provided</li>
-<li><strong>Concern</strong> 摘要未报告任何统计不确定性度量（如置信区间、标准误或显著性检验）。0.631 与 0.604 的 Pearson 相关差异在 285 个复合物上是否显著未知。同样，0.579 与 0.528 的 Spearman 差异也未提供配对检验结果。CASF-2016 基准测试通常报告多种打分函数的结果，但摘要未说明这些差异是否在多次运行或不同初始化条件下稳定。</li>
-<li><strong>Why it matters</strong> 核心声明是 PARAM-DOCK 的 scoring 和 ranking 优于 Vina。如果差异不具统计显著性，则「competitive」甚至「superior」的结论不成立。Nature 系列期刊要求定量声明有适当的不确定性量化。</li>
-<li><strong>Resolution test</strong> 提供 Pearson 和 Spearman 相关的 bootstrap 置信区间或配对显著性检验（如 Fisher z 变换或 Wilcoxon 符号秩检验）。如果差异不显著，应相应弱化结论表述。</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "PARAM-DOCK supports parallel multi-protein–multi-ligand docking and automates major pre-processing and post-processing steps within a single platform."</li>
+<li><strong>Evidence pointer</strong> Section: Results (benchmarking)</li>
+<li><strong>Concern</strong> The manuscript provides no evidence that the parallel multi-protein–multi-ligand docking feature actually works. All benchmarking is on single-protein–single-ligand redocking/scoring tasks. There are no results showing simultaneous docking of multiple ligands against multiple targets, no scalability data (e.g., wall-clock time vs. number of targets/ligands), and no demonstration of the web platform's functionality.</li>
+<li><strong>Why it matters</strong> The parallel multi-protein–multi-ligand capability is a central claimed innovation and the namesake of the tool. Without any evidence, this claim is unsupported, and the tool's practical value over existing single-target docking tools is unsubstantiated.</li>
+<li><strong>Resolution test</strong> Provide results from a multi-protein–multi-ligand docking experiment (e.g., a small virtual screening campaign against 5–10 targets with 100+ ligands), including runtime, success rates, and comparison with sequential single-target docking. Provide a live or documented demonstration of the web platform.</li>
 <li><strong>Concern ID</strong> R1-M2</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> 结果解释完整性</li>
-<li><strong>Claim pointer</strong> 「These results indicate competitive scoring and ranking performance, while conformational sampling remains the main area for further improvement」</li>
-<li><strong>Evidence pointer</strong> 摘要，结论句；location not provided</li>
-<li><strong>Concern</strong> 摘要报告 PARAM-DOCK 的 top-1 成功率（68.6%）和 near-native 恢复率（84.3%）均显著低于 Vina（74.1% 和 93.7%），差距分别为 5.5 和 9.4 个百分点。在 255 个复合物上，这相当于约 14 和 24 个复合物的差异。将这种程度的 sampling 劣势仅描述为「main area for further improvement」而同时声称「competitive」表现，未充分承认 sampling 是 docking 的核心功能之一。一个在 sampling 上明显落后的工具，其实际应用价值需要更谨慎的讨论。</li>
-<li><strong>Why it matters</strong> 分子对接的核心任务是生成正确的结合构象。如果 PARAM-DOCK 在近半数案例中无法在 top-1 位置生成 2.0 Å 内的 pose，其在实际筛选中的效用可能受限，即使排名能力尚可。摘要的结论表述可能误导读者对工具整体性能的判断。</li>
-<li><strong>Resolution test</strong> 在全文或修订摘要中明确讨论 sampling 差距的实际影响，包括是否通过增加输出数（如 top-10 或 top-50）可弥补，以及是否有特定复合物类别（如柔性侧链、金属离子等）导致失败。结论应更平衡地反映 sampling 和 scoring 的相对贡献。</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Claim pointer</strong> "PARAM-DOCK achieved a Pearson correlation of 0.631 for scoring power and a mean within-target Spearman correlation of 0.579, compared with 0.604 and 0.528 for Vina."</li>
+<li><strong>Evidence pointer</strong> Section: Results (benchmarking)</li>
+<li><strong>Concern</strong> The reported correlations are point estimates without any measure of uncertainty (e.g., confidence intervals, standard errors, or bootstrapped ranges). It is impossible to assess whether the observed differences (0.027 for Pearson, 0.051 for Spearman) are statistically significant or within the noise of the benchmark. The sample size (285 complexes) is moderate, but without error bars, the claim of "competitive performance" is not quantitatively supported.</li>
+<li><strong>Why it matters</strong> The core claim of the paper is that PARAM-DOCK's scoring and ranking performance is competitive with Vina. Without statistical uncertainty, the reader cannot evaluate whether the small differences are meaningful or due to random variation.</li>
+<li><strong>Resolution test</strong> Provide 95% confidence intervals for all correlation metrics (e.g., via bootstrapping) and perform a statistical test (e.g., paired comparison) to assess significance of differences between PARAM-DOCK and Vina.</li>
 <li><strong>Concern ID</strong> R1-M3</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> 方法可验证性</li>
-<li><strong>Claim pointer</strong> 「PARAM-DOCK, an open-source molecular docking engine and integrated web workflow implemented in Python with Numba-compiled numerical kernels」</li>
-<li><strong>Evidence pointer</strong> 摘要，第一段；location not provided</li>
-<li><strong>Concern</strong> 摘要声称「open-source」但未提供代码仓库 URL、许可证类型或版本信息。同样，web 平台的可访问性声明无法验证。对于 Nature 系列期刊，软件工具的可用性和可复现性是基本要求。此外，七项打分函数的具体形式、参数化方法和训练数据未在摘要中描述，无法评估其创新性或与现有打分函数（如 Vina 的优化函数）的实质差异。</li>
-<li><strong>Why it matters</strong> 如果代码不可获取或文档不完整，基准测试结果无法被独立复现，削弱了整个研究的可信度。打分函数的参数化来源（是重新拟合还是改编自现有函数）直接影响其新颖性评估。</li>
-<li><strong>Resolution test</strong> 在修订版中提供代码仓库链接、许可证、版本号和完整的打分函数描述（或引用已发表的方法论文）。如果代码在评审时不可用，应说明原因和预计开放时间。</li>
+<li><strong>Axis</strong> Completeness of evidence</li>
+<li><strong>Claim pointer</strong> "In de novo redocking of 255 complexes, PARAM-DOCK placed the top-ranked pose within 2.0 Å in 68.6% of cases and recovered a near-native pose among nine outputs in 84.3%, compared with 74.1% and 93.7% for Vina."</li>
+<li><strong>Evidence pointer</strong> Section: Results (benchmarking)</li>
+<li><strong>Concern</strong> The redocking success rates show Vina outperforming PARAM-DOCK by 5.5% (top-1) and 9.4% (top-9). The authors acknowledge "conformational sampling remains the main area for further improvement," but this is a substantial deficit. The claim of "competitive scoring and ranking performance" is undermined by the fact that Vina finds a near-native pose more often. The conditional ranking metric (81.4% vs. 79.1%) is only meaningful when a near-native pose exists, which is less frequent for PARAM-DOCK.</li>
+<li><strong>Why it matters</strong> For a docking tool, sampling performance (finding a near-native pose) is as important as scoring (ranking it correctly). The observed deficit in sampling is a significant practical limitation that is downplayed.</li>
+<li><strong>Resolution test</strong> Provide a more detailed analysis of sampling failures (e.g., by target class, ligand flexibility, binding site characteristics). Discuss whether the sampling deficit is inherent to the search algorithm or could be mitigated by parameter tuning. Consider reporting additional metrics such as median RMSD or enrichment factors.</li>
 <li><strong>Concern ID</strong> R1-M4</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> No</li>
-<li><strong>Axis</strong> 基准测试公平性</li>
-<li><strong>Claim pointer</strong> 「PARAM-DOCK was benchmarked against Vina using matched receptor and ligand PDBQT files, identical search boxes, symmetry-corrected RMSD evaluation, and identical hardware」</li>
-<li><strong>Evidence pointer</strong> 摘要，基准测试段落；location not provided</li>
-<li><strong>Concern</strong> 摘要声称「matched」和「identical」条件，但未说明 Vina 的版本（如 Vina 1.2 与 1.0 性能差异显著）、Vina 的 exhaustiveness 参数设置、或 PARAM-DOCK 的采样计算量（如迭代次数、Monte Carlo 步数）是否与 Vina 的计算预算匹配。如果 PARAM-DOCK 使用了显著更多的计算资源，则比较的公平性存疑。</li>
-<li><strong>Why it matters</strong> 对接工具比较中，计算预算的匹配是公认的难点。如果 PARAM-DOCK 的采样成本远高于 Vina，则「competitive」的结论可能仅在高计算成本下成立，影响其实用性评估。</li>
-<li><strong>Resolution test</strong> 在全文或修订摘要中报告 Vina 版本、exhaustiveness 值、PARAM-DOCK 的采样参数和两者的运行时间对比。如果计算成本差异大，应讨论性能-成本权衡。</li>
+<li><strong>Axis</strong> Novelty and technical depth</li>
+<li><strong>Claim pointer</strong> "The docking engine combines a seven-term empirical scoring function with an iterated local search strategy in which Monte Carlo perturbations are followed by bounded quasi-Newton minimisation using analytical gradients."</li>
+<li><strong>Evidence pointer</strong> Section: Methods (scoring function and search)</li>
+<li><strong>Concern</strong> The description of the scoring function and search algorithm is too brief to assess novelty or technical soundness. The seven terms are not listed, their functional forms are not given, and the parameterization method is not described. The iterated local search with Monte Carlo + quasi-Newton is a common approach (e.g., used in AutoDock Vina itself). Without details, it is impossible to determine whether the engine offers any algorithmic innovation over existing tools.</li>
+<li><strong>Why it matters</strong> The docking engine is the core technical contribution. Without sufficient detail, the work cannot be reproduced, and the novelty cannot be evaluated.</li>
+<li><strong>Resolution test</strong> Provide the full scoring function (terms, weights, functional forms), the parameterization procedure (e.g., training set, optimization method), and a detailed description of the search algorithm (e.g., number of Monte Carlo steps, convergence criteria, gradient computation). Consider including a pseudocode or algorithm box.</li>
 <li><strong>Minor Comments</strong></li>
 <li><strong>Concern ID</strong> R1-m1</li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> 术语清晰度</li>
-<li><strong>Affected element</strong> 「binding-basin population and pocket-complementarity descriptors」</li>
-<li><strong>Evidence pointer</strong> 摘要，方法描述；location not provided</li>
-<li><strong>Issue</strong> 这些术语未定义，读者无法理解其具体含义和计算方式。</li>
-<li><strong>Required correction</strong> 在修订版中简要定义这些描述符，或引用已发表的方法学文献。</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Benchmarking methodology</li>
+<li><strong>Evidence pointer</strong> Section: Results</li>
+<li><strong>Issue</strong> The manuscript states "matched receptor and ligand PDBQT files" were used for benchmarking against Vina, but it is unclear whether the PDBQT files were generated by PARAM-DOCK's own preparation module or by a third-party tool (e.g., AutoDock Tools). This affects the fairness of the comparison.</li>
+<li><strong>Required correction</strong> Clarify the source of the PDBQT files and whether the same preparation protocol was used for both tools.</li>
 <li><strong>Concern ID</strong> R1-m2</li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> 数据集描述</li>
-<li><strong>Affected element</strong> 「de novo redocking of 255 complexes」</li>
-<li><strong>Evidence pointer</strong> 摘要，基准测试段落；location not provided</li>
-<li><strong>Issue</strong> 未说明这 255 个复合物是否与 CASF-2016 的 285 个有重叠，或来自独立数据集。数据集来源和选择标准不清晰。</li>
-<li><strong>Required correction</strong> 明确说明 redocking 数据集的来源、与 CASF-2016 的关系以及复合物选择标准。</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Benchmarking scope</li>
+<li><strong>Evidence pointer</strong> Section: Results</li>
+<li><strong>Issue</strong> The benchmarking is limited to the CASF-2016 core set and a redocking set. There is no evaluation on a diverse virtual screening benchmark (e.g., DUD-E, DEKOIS) to assess enrichment and early retrieval performance, which is critical for drug discovery applications.</li>
+<li><strong>Required correction</strong> Add a virtual screening benchmark or explicitly discuss this limitation and plan for future work.</li>
 <li><strong>Concern ID</strong> R1-m3</li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> 结果呈现</li>
-<li><strong>Affected element</strong> 「recovered a near-native pose among nine outputs in 84.3%」</li>
-<li><strong>Evidence pointer</strong> 摘要，基准测试段落；location not provided</li>
-<li><strong>Issue</strong> 「nine outputs」的选择依据未说明。为何是九个而非十个或五个？这影响结果的可比性。</li>
-<li><strong>Required correction</strong> 解释输出数量的选择理由，或引用标准协议。</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Code and data availability</li>
+<li><strong>Evidence pointer</strong> Section: Abstract and Methods</li>
+<li><strong>Issue</strong> The manuscript claims PARAM-DOCK is open-source, but no repository URL, license, or installation instructions are provided. The web platform URL is also absent.</li>
+<li><strong>Required correction</strong> Provide the source code repository URL, software license, and web platform URL (or state if not yet publicly available).</li>
 <li><strong>Concern ID</strong> R1-m4</li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> 可访问性声明</li>
-<li><strong>Affected element</strong> 「open-source」和「web workflow」</li>
-<li><strong>Evidence pointer</strong> 摘要，第一段；location not provided</li>
-<li><strong>Issue</strong> 未提供任何访问链接或使用说明。</li>
-<li><strong>Required correction</strong> 在修订版中提供代码仓库和 web 平台的 URL。</li>
-<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1（统计显著性缺失）、R1-M2（sampling 劣势未充分讨论）、R1-M3（代码和打分函数不可验证）</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Figures and tables</li>
+<li><strong>Evidence pointer</strong> Section: Results</li>
+<li><strong>Issue</strong> The manuscript mentions "2D and 3D protein-ligand interaction analysis, comparative score and interaction heatmaps, molecular visualisation, and ADMET prediction" as features of the web platform, but no example outputs (figures, screenshots) are shown in the provided text.</li>
+<li><strong>Required correction</strong> Include representative figures from the web platform to demonstrate its functionality and user interface.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (no evidence for parallel multi-protein–multi-ligand docking), R1-M2 (lack of statistical uncertainty), R1-M3 (substantial sampling deficit), R1-M4 (insufficient technical detail of scoring function and search algorithm).</li>
 <li><strong>Assessment against Nature-style criteria</strong> </li>
-<li><strong>Originality</strong> 中等。集成多蛋白-多配体并行对接的工作流设计有一定新意，但七项经验打分函数和迭代局部搜索策略在对接领域并非全新概念。需要全文确认打分函数是否有实质创新。</li>
-<li><strong>Scientific importance</strong> 中等。如果性能声明成立，对药物发现实践有实际价值，但属于增量改进而非范式转变。sampling 的明显劣势限制了其重要性。</li>
-<li><strong>Interdisciplinary readership</strong> 有限。主要吸引计算化学和结构生物学子领域，对更广泛的 Nature 读者群吸引力不足。</li>
-<li><strong>Technical soundness</strong> 当前不可评估。摘要缺乏方法细节和统计严谨性，无法判断基准测试的可靠性。</li>
-<li><strong>Readability for nonspecialists</strong> 摘要对领域内读者可读，但术语（如「binding-basin population」）未解释，对非专家不够友好。</li>
-<li><strong>Recommendation posture</strong> 目前基于提供的材料无法建立核心结论。需要全文、代码和补充数据才能评估。建议在获得完整材料后重新评审。</li>
+<li><strong>Originality</strong>: Low. The combination of an empirical scoring function with iterated local search is well-established in the field. The integrated workflow concept is practically useful but not conceptually novel.</li>
+<li><strong>Scientific importance</strong>: Moderate. An open-source, integrated docking platform could be a useful community resource, but the current evidence does not demonstrate a significant advance over existing tools.</li>
+<li><strong>Interdisciplinary readership</strong>: Low. The manuscript is narrowly focused on computational docking methodology and would primarily interest computational chemists.</li>
+<li><strong>Technical soundness</strong>: Not established. The benchmarking lacks statistical rigor, the sampling performance is inferior to Vina, and the technical details of the scoring function and search algorithm are insufficiently described for evaluation.</li>
+<li><strong>Readability for nonspecialists</strong>: Adequate. The abstract and results are clearly written, but the methods section would benefit from more detail.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript requires substantial additional evidence (parallel docking demonstration, statistical uncertainty, improved sampling performance or explanation, full technical details) before the claims can be supported. A major revision is needed.</li>
 </ul>
 <h2>Risk / unsupported claims</h2>
 <ul>
-<li>「competitive scoring and ranking performance」的结论在 sampling 明显落后于 Vina 的背景下缺乏充分支撑，表述过于乐观</li>
-<li>「open-source」和「web workflow」的可访问性声明无法验证，未提供链接或访问信息</li>
-<li>打分函数优于 Vina 的声明（0.631 vs 0.604）未提供统计显著性证据，差异可能不显著</li>
-<li>「automates major pre-processing and post-processing steps」的声明无法从摘要验证，需要代码或使用文档确认</li>
-<li>条件排名 81.4% vs 79.1% 的差异未提供不确定性度量，可能不显著</li>
+<li>"PARAM-DOCK supports parallel multi-protein–multi-ligand docking" – unsupported; no evidence provided.</li>
+<li>"The web platform integrates molecular preparation, docking setup, pose ranking, 2D and 3D protein-ligand interaction analysis, comparative score and interaction heatmaps, molecular visualisation, and ADMET prediction" – unsupported; no demonstration or screenshots provided.</li>
+<li>"Competitive scoring and ranking performance" – weakly supported; the small differences in correlation metrics are not statistically validated, and the sampling performance is inferior to Vina.</li>
 </ul></div>
   </section>
   

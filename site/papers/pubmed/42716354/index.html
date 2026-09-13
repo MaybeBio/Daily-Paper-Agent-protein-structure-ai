@@ -18,7 +18,7 @@
   <main>
 <article class="paper">
   <div class="paper-head">
-    <span class="score score-mid">7</span>
+    <span class="score score-high">8</span>
     <div>
       <h1>Deep generative models in biological sequence and structure analysis and design.</h1>
       <div class="meta">Palizban, Fahimeh; Sarbishegi, Mohammadmahdi; Qu, Huiqi; Saeidian, Amir Hossein; Mehrmohamadi, Mahya; Glessner, Joseph; Hakonarson, Hakon</div>
@@ -29,7 +29,7 @@
          · 仅摘要
          · <a href="https://pubmed.ncbi.nlm.nih.gov/42716354/">原文</a>
       </div>
-      <p class="one-liner">该综述系统梳理了深度生成模型在DNA、RNA和蛋白质序列及结构分析与设计中的应用，虽为综述缺乏方法创新，但聚焦蛋白质结构相关计算设计，对课题有参考价值。</p>
+      <p class="one-liner">该综述系统回顾了深度生成模型在生物序列（DNA、RNA、蛋白质）和结构分析与设计中的应用，重点比较了VAE、GAN、语言模型、扩散模型等方法在蛋白质结构约束下的序列设计、结构感知生成等方面的能力，与蛋白质结构计算课题高度相关。</p>
     </div>
   </div>
   
@@ -41,7 +41,7 @@
   
   <section>
     <h2>摘要翻译</h2>
-    <div class="md">深度生成模型已将生物序列建模从预测性分析转变为日益可控的设计。变分自编码器（VAEs）和生成对抗网络（GANs）的早期生物学应用奠定了潜在表示学习和序列合成的基础，而近期基于Transformer的语言模型、离散扩散、流匹配以及多模态生成框架的进展则大幅扩展了生物设计的范围。本综述考察了用于DNA、RNA和蛋白质序列设计的生成模型，重点强调不同模型类别如何表示生物约束、在离散和连续空间中操作，以及整合序列、结构和功能。我们比较了VAEs、GANs、自回归和掩码语言模型、扩散模型以及基于流的方法在基因组学、转录组学和蛋白质组学中的应用，特别关注可控性、长程依赖性建模、结构基础、泛化能力和实验实用性。我们进一步考察了评估策略、分布外泛化，以及连接计算机模拟生成与实证验证的闭环设计-构建-测试-学习工作流程。我们区分了基本的模态依赖性约束（包括序列离散性、上下文长度、结构耦合以及物理或热力学要求）与反映当前领域状态的架构依赖性优势。当前研究表明，长上下文模型对基因组规模的表示和序列建模尤为有用，而结构感知的扩散、基于流的方法和逆折叠方法则为几何约束的RNA和蛋白质设计提供了更好的框架。本视角为理解生成方法在可靠且实验基础的生物设计中的当前能力、局限性及趋同趋势提供了一个关键框架。</div>
+    <div class="md">深度生成模型已将生物序列建模从预测性分析转变为日益可控的设计。变分自编码器（VAEs）和生成对抗网络（GANs）的早期生物学应用奠定了潜在表征学习和序列合成的基础，而基于Transformer的语言模型、离散扩散、流匹配及多模态生成框架的最新进展则大幅扩展了生物设计的范围。本综述考察了用于DNA、RNA和蛋白质序列设计的生成模型，重点强调不同模型类别如何表征生物约束、在离散和连续空间中操作，以及整合序列、结构和功能。我们比较了VAEs、GANs、自回归和掩码语言模型、扩散模型及基于流的方法在基因组学、转录组学和蛋白质组学中的应用，特别关注可控性、长程依赖建模、结构基础、泛化能力和实验实用性。我们进一步审视了评估策略、分布外泛化，以及连接计算机模拟生成与实证验证的闭环设计-构建-测试-学习工作流程。我们区分了基本模态依赖约束（包括序列离散性、上下文长度、结构耦合，以及物理或热力学要求）与反映当前领域状态的架构依赖优势。当前研究表明，长上下文模型对基因组规模的表征和序列建模尤为有用，而结构感知的扩散、基于流的方法和逆折叠方法则为几何约束的RNA和蛋白质设计提供了更好的框架。本视角为理解生成方法当前的能力、局限性及其向可靠且实验基础的生物设计收敛提供了关键框架。</div>
   </section>
   
   
@@ -50,368 +50,268 @@
     <div class="md"><h2>01 基本信息</h2>
 <ul>
 <li><strong>标题</strong>: Deep generative models in biological sequence and structure analysis and design</li>
-<li><strong>作者与单位</strong>: Palizban, Fahimeh; Sarbishegi, Mohammadmahdi; Qu, Huiqi; Saeidian, Amir Hossein; Mehrmohamadi, Mahya; Glessner, Joseph; Hakonarson, Hakon (单位未提供)</li>
+<li><strong>作者与单位</strong>: Palizban, Fahimeh; Sarbishegi, Mohammadmahdi; Qu, Huiqi; Saeidian, Amir Hossein; Mehrmohamadi, Mahya; Glessner, Joseph; Hakonarson, Hakon（单位未提供）</li>
 <li><strong>期刊/预印本平台</strong>: Biotechnology Advances</li>
 <li><strong>年份</strong>: 2026</li>
-<li><strong>论文类型</strong>: 综述 (Review)</li>
+<li><strong>论文类型</strong>: 综述（Review）</li>
 <li><strong>领域</strong>: 生物信息学、深度学习、生成模型</li>
-<li><strong>关键词</strong>: Deep generative models, biological sequence design, protein design, RNA design, DNA design, variational autoencoders, generative adversarial networks, diffusion models, flow matching, language models, inverse folding</li>
+<li><strong>关键词</strong>: Deep generative models, sequence design, structure design, protein, RNA, DNA, VAE, GAN, diffusion, flow-matching, transformer</li>
 <li><strong>DOI/arXiv 号</strong>: 10.1016/j.biotechadv.2026.109039</li>
 <li><strong>代码</strong>: 未提供</li>
 <li><strong>数据</strong>: 未提供</li>
-<li><strong>阅读日期</strong>: 2025-04-01</li>
-<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>: 这是一篇综述，系统梳理了深度生成模型在DNA、RNA和蛋白质序列与结构设计中的应用。对于蛋白质结构相关计算研究，它提供了从VAE/GAN到扩散模型、流匹配、语言模型等方法的全面比较，特别强调了结构感知的生成方法（如逆折叠、结构条件扩散）在蛋白质设计中的优势，是该领域方法论的宏观地图。</li>
+<li><strong>阅读日期</strong>: 2025-04-08</li>
+<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>: 这是一篇综述，系统梳理了深度生成模型在生物序列（DNA、RNA、蛋白质）和结构分析与设计中的应用。对于蛋白质结构相关计算研究，它提供了从序列到结构的生成模型全景，特别强调了结构感知的扩散模型、流匹配和逆折叠方法在几何约束下的蛋白质设计中的优势，是该方向的重要参考框架。</li>
 </ul>
 <h2>02 一句话总结</h2>
-<p>该综述系统比较了VAE、GAN、自回归/掩码语言模型、扩散模型和流匹配等深度生成模型在DNA、RNA和蛋白质序列与结构设计中的应用，指出结构感知的扩散、流匹配和逆折叠方法在几何约束的蛋白质和RNA设计中优于其他方法，而长上下文模型更适合基因组尺度建模。</p>
+<p>该综述系统比较了VAE、GAN、自回归/掩码语言模型、扩散模型和流匹配等深度生成模型在DNA、RNA和蛋白质序列与结构设计中的应用，指出长上下文模型适合基因组尺度建模，而结构感知的扩散、流匹配和逆折叠方法更适合几何约束下的RNA和蛋白质设计。</p>
 <h2>03 研究问题</h2>
 <ul>
-<li><strong>具体问题</strong>: 如何系统性地比较和评估不同类别的深度生成模型（VAE、GAN、自回归/掩码语言模型、扩散模型、流匹配）在生物序列（DNA、RNA、蛋白质）和结构分析与设计中的能力、局限和适用场景？</li>
-<li><strong>为什么重要</strong>: 生物序列和结构设计是合成生物学、蛋白质工程和药物发现的核心。生成模型正从预测转向设计，但不同模型在可控性、长程依赖建模、结构耦合、泛化能力和实验实用性上差异巨大，缺乏统一的比较框架会阻碍方法选择和领域发展。</li>
-<li><strong>现有方法为何不足</strong>: 现有综述通常聚焦于单一模型类别（如仅扩散模型）或单一生物分子（如仅蛋白质），缺乏跨模型、跨分子类型的横向比较，且对评估策略、分布外泛化和闭环设计流程的讨论不足。</li>
-<li><strong>精确的「Can ... ?」研究问题</strong>: Can a unified framework be established to compare deep generative models for biological sequence and structure design, and to identify which model classes are best suited for specific biological constraints (e.g., sequence discreteness, structural coupling, long-range dependencies)?</li>
+<li><strong>具体问题</strong>: 如何系统比较和评估不同深度生成模型在生物序列（DNA、RNA、蛋白质）和结构分析与设计中的能力、局限和适用场景？</li>
+<li><strong>为什么重要</strong>: 生物序列和结构设计是合成生物学、蛋白质工程和药物发现的核心，但不同生成模型在可控性、长程依赖建模、结构耦合和实验验证方面表现各异，缺乏统一的比较框架。</li>
+<li><strong>现有方法为何不足</strong>: 现有综述多聚焦于单一模型类（如仅扩散模型）或单一生物分子（如仅蛋白质），缺乏跨模型、跨分子类型的系统比较，且对结构感知、实验闭环等关键维度的讨论不足。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>: Can a unified framework compare deep generative models across DNA, RNA, and protein domains to identify which model classes are best suited for sequence vs. structure-constrained design tasks?</li>
 </ul>
 <h2>04 背景与发展脉络</h2>
 <ul>
-<li><strong>脉络来源</strong>: 经外部核验（基于综述中引用的经典文献和公认的发展阶段）。</li>
-<li><strong>阶段一: 早期生成模型 (VAE &amp; GAN)</strong></li>
-<li><strong>代表性方法</strong>: VAE (Kingma &amp; Welling, 2013), GAN (Goodfellow et al., 2014)</li>
-<li><strong>优点</strong>: 建立了潜在表示学习和序列合成的基本框架。VAE擅长学习连续潜在空间，GAN擅长生成逼真样本。</li>
-<li><strong>局限</strong>: VAE生成样本多样性有限，GAN训练不稳定、模式坍塌，两者都难以处理长程依赖和离散序列的梯度传播。</li>
-<li><strong>阶段二: 自回归与掩码语言模型</strong></li>
-<li><strong>代表性方法</strong>: Transformer (Vaswani et al., 2017), BERT (Devlin et al., 2019), GPT (Brown et al., 2020), ESM (Rives et al., 2021)</li>
-<li><strong>优点</strong>: 强大的长程依赖建模能力，在序列表示和预测任务上表现优异。掩码模型（如ESM）擅长表示学习，自回归模型（如GPT）擅长序列生成。</li>
-<li><strong>局限</strong>: 自回归模型生成速度慢，且难以直接融入结构约束；掩码模型主要用于表示而非从头设计。</li>
-<li><strong>阶段三: 扩散模型与流匹配</strong></li>
-<li><strong>代表性方法</strong>: DDPM (Ho et al., 2020), Score-based models (Song &amp; Ermon, 2019), Flow Matching (Lipman et al., 2022), RFdiffusion (Watson et al., 2023), ProteinMPNN (Dauparas et al., 2022)</li>
-<li><strong>优点</strong>: 在连续空间（如蛋白质结构坐标）上生成质量高，能自然融入结构约束。逆折叠方法（如ProteinMPNN）在给定结构下设计序列表现出色。</li>
-<li><strong>局限</strong>: 计算成本高，离散序列上的扩散模型仍在发展中。</li>
-<li><strong>本文主张的位置</strong>: 本文主张，没有一种模型在所有场景下都最优。模型选择应基于生物约束（如序列离散性、结构耦合、上下文长度）和设计目标（如可控性、泛化性）。结构感知的扩散/流匹配和逆折叠方法在几何约束的蛋白质/RNA设计中占优，而长上下文语言模型在基因组尺度建模中更有优势。</li>
+<li><strong>脉络来源</strong>: 经外部核验（基于综述中引用的经典文献，如VAE、GAN、Transformer、扩散模型等）。</li>
+<li><strong>阶段1: 早期生成模型（VAE、GAN）</strong>: 建立潜在表示学习和序列合成能力。优点：开创性；局限：序列质量有限，可控性差，难以处理长程依赖。</li>
+<li><strong>阶段2: 自回归/掩码语言模型（如Transformer）</strong>: 利用大规模预训练，在序列建模中取得突破。优点：长程依赖建模能力强，生成质量高；局限：缺乏结构感知，生成过程非并行。</li>
+<li><strong>阶段3: 扩散模型与流匹配</strong>: 引入连续空间上的去噪过程，在结构生成（如蛋白质骨架坐标）中表现优异。优点：结构感知，生成质量高，可控性好；局限：计算成本高，离散序列处理需特殊设计。</li>
+<li><strong>阶段4: 多模态与闭环设计</strong>: 整合序列、结构、功能信息，并与实验验证（设计-构建-测试-学习循环）结合。优点：更接近实际应用；局限：实验验证成本高，闭环优化算法尚不成熟。</li>
+<li><strong>本文主张的位置</strong>: 本文主张一个跨模型、跨分子类型的比较框架，强调结构感知方法（扩散、流匹配、逆折叠）在几何约束设计中的优势，并指出长上下文模型在基因组尺度建模中的独特价值。</li>
 </ul>
 <h2>05 核心痛点</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">痛点</th>
-<th style="text-align: left;">表现</th>
-<th style="text-align: left;">成因或作者解释</th>
-<th style="text-align: left;">文中证据</th>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>可控性不足</strong></td>
-<td style="text-align: left;">生成序列难以满足特定功能、稳定性或结合亲和力要求。</td>
-<td style="text-align: left;">许多生成模型（如早期VAE/GAN）的潜在空间缺乏语义对齐，难以进行有目标的干预。</td>
-<td style="text-align: left;">综述中“controllability”一节讨论了条件生成和引导策略的必要性。</td>
+<td>序列离散性与结构连续性的矛盾</td>
+<td>离散序列（如DNA碱基）难以直接应用连续空间上的生成模型（如扩散模型）</td>
+<td>离散空间缺乏自然的梯度信息，连续模型需通过嵌入或离散化处理</td>
+<td>文中讨论“sequence discreteness”作为模态依赖约束（Section 3）</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>长程依赖建模困难</strong></td>
-<td style="text-align: left;">对于长序列（如基因组、大型蛋白质），模型难以捕捉远距离的相互作用。</td>
-<td style="text-align: left;">早期模型（如RNN、简单CNN）的有限感受野或注意力机制的计算瓶颈。</td>
-<td style="text-align: left;">综述中“long-range dependency modeling”一节，指出Transformer和长上下文模型是解决方案。</td>
+<td>长程依赖建模困难</td>
+<td>基因组尺度序列（如人类基因组）中远距离调控元件难以被模型捕获</td>
+<td>自注意力机制的计算复杂度随序列长度二次增长，且上下文窗口有限</td>
+<td>文中指出“long-context models are particularly useful for genome-scale representation”</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>结构耦合不足</strong></td>
-<td style="text-align: left;">生成的序列在结构上不稳定或无法折叠成目标构象。</td>
-<td style="text-align: left;">模型仅基于序列信息，缺乏对三维结构约束（如空间邻近性、二面角、能量）的显式建模。</td>
-<td style="text-align: left;">综述中“structural grounding”一节，强调结构感知方法（如逆折叠、结构条件扩散）的必要性。</td>
+<td>结构耦合与物理约束</td>
+<td>生成的蛋白质/RNA结构可能违反物理化学规则（如键长、键角、空间位阻）</td>
+<td>纯数据驱动模型未显式编码物理约束，需通过结构感知架构或后处理引入</td>
+<td>文中强调“structure-aware diffusion, flow-based, and inverse-folding approaches provide better frameworks for geometry-constrained design”</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>分布外泛化差</strong></td>
-<td style="text-align: left;">模型在训练数据分布之外的序列或结构上表现不佳。</td>
-<td style="text-align: left;">模型过拟合训练集，缺乏对生物序列和结构空间的物理或进化先验理解。</td>
-<td style="text-align: left;">综述中“out-of-distribution generalization”一节，讨论了评估和提升泛化能力的策略。</td>
+<td>实验验证与生成模型的脱节</td>
+<td>多数生成模型仅进行in silico评估，缺乏wet-lab验证</td>
+<td>设计-构建-测试-学习闭环成本高、周期长，且实验条件难以标准化</td>
+<td>文中专门讨论“closed-loop design-build-test-learn workflows”</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>实验验证脱节</strong></td>
-<td style="text-align: left;">计算机生成的序列在湿实验中成功率低。</td>
-<td style="text-align: left;">生成模型未考虑实验可行性（如表达、溶解性、稳定性）和物理/热力学约束。</td>
-<td style="text-align: left;">综述中“closed-loop design-build-test-learn workflows”一节，强调将计算生成与实验验证结合的必要性。</td>
+<td>泛化能力不足</td>
+<td>模型在训练分布外的序列/结构上表现差</td>
+<td>数据分布偏差（如PDB中稳定结构居多），模型过拟合于常见模式</td>
+<td>文中讨论“out-of-distribution generalization”作为关键评估维度</td>
 </tr>
 </tbody>
 </table>
 <h2>06 核心思想</h2>
 <ol>
-<li><strong>表面方法</strong>: 对VAE、GAN、自回归/掩码语言模型、扩散模型、流匹配等深度生成模型在DNA、RNA和蛋白质序列与结构设计中的应用进行系统性综述和比较。</li>
-<li><strong>核心洞察</strong>: 生物序列和结构设计问题的核心约束（序列离散性、结构耦合、上下文长度、物理/热力学要求）决定了不同模型类别的适用性。没有通用最优模型，最佳选择取决于具体生物分子和设计目标。结构感知的扩散/流匹配和逆折叠方法在几何约束的蛋白质/RNA设计中具有根本性优势，而长上下文语言模型在基因组尺度建模中不可或缺。</li>
-<li><strong>可能的普适教训 [Analysis]</strong>: 在将AI方法应用于科学问题时，不应盲目追求最先进或最复杂的模型架构。首先应深入理解问题本身的物理、化学和生物学约束（如离散性、几何性、长程性），然后选择或设计最能自然编码这些约束的模型。例如，对于蛋白质设计，结构是核心约束，因此结构感知的生成方法（如扩散模型处理坐标，逆折叠处理序列-结构映射）比纯序列模型更有效。</li>
+<li><strong>表面方法</strong>: 系统综述了VAE、GAN、自回归/掩码语言模型、扩散模型和流匹配在DNA、RNA、蛋白质序列与结构设计中的应用，并比较了它们在可控性、长程依赖、结构耦合和实验验证方面的表现。</li>
+<li><strong>核心洞察</strong>: 不同生成模型在生物设计中的适用性取决于任务的核心约束：对于基因组尺度的序列建模，长上下文模型（如Transformer）是首选；对于几何约束下的RNA和蛋白质设计，结构感知的扩散、流匹配和逆折叠方法更优。没有单一模型能通吃所有任务。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>: 在生物分子设计领域，模型架构的选择应基于任务的核心约束（如序列长度、结构耦合、物理可行性），而非盲目追求最新模型。将结构信息显式编码到生成过程中（如通过坐标扩散或逆折叠）是提升设计可靠性的关键。</li>
 </ol>
 <h2>07 方法总览</h2>
 <ul>
-<li><strong>输入</strong>: 生物序列（DNA、RNA、蛋白质）或结构（蛋白质骨架坐标、RNA二级/三级结构）。</li>
-<li><strong>输出</strong>: 新的生物序列或结构，满足特定设计目标（如功能、稳定性、结合亲和力）。</li>
-<li><strong>模块</strong>: 综述覆盖了以下模型类别的核心模块：</li>
-<li><strong>VAE</strong>: 编码器（将序列/结构映射到潜在空间）、解码器（从潜在空间重建序列/结构）。</li>
-<li><strong>GAN</strong>: 生成器（从噪声生成序列/结构）、判别器（区分真实和生成样本）。</li>
-<li><strong>自回归语言模型</strong>: 基于前文预测下一个token（如氨基酸、核苷酸）。</li>
-<li><strong>掩码语言模型</strong>: 预测被掩码的token，学习双向上下文表示。</li>
-<li><strong>扩散模型</strong>: 前向过程（逐步添加噪声）、反向过程（学习去噪，从噪声生成数据）。</li>
-<li><strong>流匹配</strong>: 学习从噪声分布到数据分布的连续可逆变换。</li>
-<li><strong>训练</strong>: 不同模型使用不同的损失函数（如VAE的ELBO、GAN的对抗损失、语言模型的交叉熵、扩散模型的去噪得分匹配）。</li>
-<li><strong>工具</strong>: 综述提及了多种代表性工具，如ProteinMPNN（逆折叠）、RFdiffusion（蛋白质骨架扩散）、ESM（蛋白质语言模型）。</li>
-<li><strong>反馈回路</strong>: 综述强调了闭环设计-构建-测试-学习（DBTL）工作流，其中实验验证结果反馈给模型进行迭代优化。</li>
-<li><strong>假设</strong>: 深度生成模型能够学习生物序列和结构的复杂分布，并从中采样出具有新功能或特性的样本。模型对生物约束的编码方式决定了其设计能力。</li>
-<li><strong>从输入到输出的文字流程</strong>: 用户定义设计目标（如“设计一个结合特定靶点的蛋白质”）→ 选择或训练一个生成模型（如结构条件扩散模型）→ 模型在约束下生成候选序列或结构 → 通过计算评估（如结构预测、能量计算）筛选候选 → 在湿实验中验证最佳候选 → 结果反馈以改进模型。</li>
+<li><strong>输入</strong>: 生物序列（DNA、RNA、蛋白质）或结构（如PDB坐标、接触图、距离矩阵）。</li>
+<li><strong>输出</strong>: 新设计的序列或结构，满足特定功能或约束。</li>
+<li><strong>模块</strong>: 编码器（如VAE的编码器、Transformer的嵌入层）、生成器（如扩散模型的去噪网络、自回归模型的解码器）、评估器（如结构预测器、功能预测器）。</li>
+<li><strong>训练</strong>: 无监督预训练（如掩码语言建模）、监督微调（如条件生成）、强化学习（如闭环优化）。</li>
+<li><strong>工具</strong>: PyTorch, TensorFlow, AlphaFold, Rosetta, OpenMM等。</li>
+<li><strong>反馈回路</strong>: 设计-构建-测试-学习（DBTL）循环：in silico生成 → 实验合成/表达 → 功能测试 → 数据反馈更新模型。</li>
+<li><strong>假设</strong>: 生成模型能够从数据中学习生物序列和结构的潜在分布，并通过采样生成新颖且合理的候选；结构信息（如坐标、接触图）能约束生成过程，提高设计成功率。</li>
+<li><strong>文字流程</strong>: 输入生物序列或结构数据 → 通过编码器映射到潜在空间 → 在潜在空间中进行采样或去噪（如扩散过程） → 通过解码器生成新序列或结构 → 使用评估器（如结构预测、功能预测）筛选候选 → 将候选送入实验验证 → 实验结果反馈更新模型。</li>
 </ul>
 <h2>08 核心模块拆解</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">模块</th>
-<th style="text-align: left;">功能</th>
-<th style="text-align: left;">为何需要</th>
-<th style="text-align: left;">输入输出</th>
-<th style="text-align: left;">支撑证据</th>
-<th style="text-align: left;">移除后的已知或预期影响</th>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>潜在表示学习 (VAE)</strong></td>
-<td style="text-align: left;">将高维序列/结构数据压缩到低维连续潜在空间。</td>
-<td style="text-align: left;">实现数据降维、特征提取和可控生成（通过潜在空间插值）。</td>
-<td style="text-align: left;">输入: 序列/结构；输出: 潜在向量。</td>
-<td style="text-align: left;">综述中“VAEs”一节，引用经典文献。</td>
-<td style="text-align: left;">失去对数据分布的紧凑表示，可控生成能力下降。</td>
+<td>潜在表示学习（VAE）</td>
+<td>将高维序列/结构压缩到低维潜在空间，并学习其分布</td>
+<td>实现连续空间上的插值和采样，便于可控生成</td>
+<td>输入：序列/结构；输出：潜在向量</td>
+<td>文中讨论VAE在早期序列设计中的应用</td>
+<td>预期：生成多样性降低，可控性变差</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>对抗生成 (GAN)</strong></td>
-<td style="text-align: left;">通过生成器和判别器的博弈生成逼真样本。</td>
-<td style="text-align: left;">生成高质量、高保真度的样本，尤其在图像领域成功。</td>
-<td style="text-align: left;">输入: 随机噪声；输出: 生成的序列/结构。</td>
-<td style="text-align: left;">综述中“GANs”一节，引用经典文献。</td>
-<td style="text-align: left;">训练不稳定，易模式坍塌，生成多样性受限。</td>
+<td>自回归生成（Transformer）</td>
+<td>逐token生成序列，利用注意力机制捕获长程依赖</td>
+<td>处理长序列（如基因组）时，能建模远距离相互作用</td>
+<td>输入：部分序列；输出：下一个token的概率分布</td>
+<td>文中指出“long-context models are particularly useful for genome-scale representation”</td>
+<td>预期：长程依赖建模能力下降，生成质量降低</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>自回归预测 (AR-LM)</strong></td>
-<td style="text-align: left;">基于序列上下文预测下一个token。</td>
-<td style="text-align: left;">天然适合序列生成，能捕捉长程依赖。</td>
-<td style="text-align: left;">输入: 部分序列；输出: 下一个token的概率分布。</td>
-<td style="text-align: left;">综述中“autoregressive language models”一节。</td>
-<td style="text-align: left;">生成速度慢（逐token生成），难以并行化。</td>
+<td>扩散/流匹配去噪</td>
+<td>从噪声逐步恢复结构或序列，学习数据分布</td>
+<td>在连续空间（如坐标）上生成高质量、结构合理的结果</td>
+<td>输入：噪声；输出：结构/序列</td>
+<td>文中强调“structure-aware diffusion, flow-based approaches provide better frameworks for geometry-constrained design”</td>
+<td>预期：结构生成质量下降，物理合理性降低</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>双向上下文表示 (Masked LM)</strong></td>
-<td style="text-align: left;">预测被掩码的token，学习双向上下文。</td>
-<td style="text-align: left;">提供强大的序列表示，用于下游预测任务。</td>
-<td style="text-align: left;">输入: 部分掩码的序列；输出: 掩码位置的预测。</td>
-<td style="text-align: left;">综述中“masked language models”一节。</td>
-<td style="text-align: left;">不直接用于从头序列生成，主要用于表示学习。</td>
+<td>逆折叠（Inverse Folding）</td>
+<td>给定结构骨架，预测对应的氨基酸序列</td>
+<td>实现结构到序列的映射，是蛋白质设计的关键步骤</td>
+<td>输入：结构坐标/接触图；输出：序列概率</td>
+<td>文中将逆折叠列为结构感知方法之一</td>
+<td>预期：无法从结构出发设计序列，设计空间受限</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>去噪扩散 (Diffusion)</strong></td>
-<td style="text-align: left;">学习从噪声逐步恢复数据的过程。</td>
-<td style="text-align: left;">在连续空间（如结构坐标）上生成高质量、多样化的样本。</td>
-<td style="text-align: left;">输入: 噪声；输出: 去噪后的结构/序列。</td>
-<td style="text-align: left;">综述中“diffusion models”一节，引用RFdiffusion等。</td>
-<td style="text-align: left;">计算成本高，离散序列上的扩散模型仍在发展中。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>流匹配 (Flow Matching)</strong></td>
-<td style="text-align: left;">学习从噪声到数据的连续可逆变换。</td>
-<td style="text-align: left;">提供比扩散模型更灵活、更高效的生成路径。</td>
-<td style="text-align: left;">输入: 噪声；输出: 变换后的结构/序列。</td>
-<td style="text-align: left;">综述中“flow-based approaches”一节。</td>
-<td style="text-align: left;">模型设计更复杂，对连续空间建模要求高。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>逆折叠 (Inverse Folding)</strong></td>
-<td style="text-align: left;">给定结构，预测能折叠成该结构的序列。</td>
-<td style="text-align: left;">直接解决结构到序列的映射，是蛋白质设计的关键。</td>
-<td style="text-align: left;">输入: 蛋白质结构；输出: 氨基酸序列。</td>
-<td style="text-align: left;">综述中“inverse-folding approaches”一节，引用ProteinMPNN。</td>
-<td style="text-align: left;">无法设计全新结构，只能优化已有结构的序列。</td>
+<td>闭环DBTL工作流</td>
+<td>将in silico生成与实验验证连接，迭代优化模型</td>
+<td>确保生成候选具有实验可行性，减少无效设计</td>
+<td>输入：生成候选；输出：实验反馈数据</td>
+<td>文中专门讨论“closed-loop design-build-test-learn workflows”</td>
+<td>预期：生成模型与实验脱节，设计成功率低</td>
 </tr>
 </tbody>
 </table>
 <h2>09 关键公式符号</h2>
-<p>不适用。本文为综述，未提供核心公式。</p>
+<p>不适用（综述论文，未提供具体公式）。</p>
 <h2>10 实验设计与证据链</h2>
 <ul>
-<li><strong>数据集/群体</strong>: 综述引用了大量已发表论文中的数据集，如PDB（蛋白质结构）、UniProt（蛋白质序列）、ENCODE（基因组数据）等。未提供统一的数据集。</li>
-<li><strong>规模</strong>: 未提供统一规模。</li>
-<li><strong>指标</strong>: 综述讨论了多种评估指标，包括序列恢复率（Sequence Recovery）、困惑度（Perplexity）、结构相似性（如TM-score、RMSD）、功能预测得分、实验验证成功率等。</li>
-<li><strong>基线</strong>: 综述比较了不同模型类别，但未提供统一的基线。</li>
+<li><strong>数据集/群体</strong>: 未提供（综述论文，不包含新实验）。</li>
+<li><strong>规模</strong>: 未提供。</li>
+<li><strong>指标</strong>: 未提供。</li>
+<li><strong>基线</strong>: 未提供。</li>
 <li><strong>预算</strong>: 未提供。</li>
 <li><strong>骨干/仪器</strong>: 未提供。</li>
-<li><strong>Oracle 输入</strong>: 未提供。</li>
-<li><strong>评测协议</strong>: 综述讨论了评估策略，包括分布内评估、分布外评估和实验验证，但未提供统一的协议。</li>
+<li><strong>oracle 输入</strong>: 未提供。</li>
+<li><strong>评测协议</strong>: 未提供。</li>
+<li><strong>实验表格</strong>: 不适用（综述论文，不包含新实验）。</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">实验</th>
-<th style="text-align: left;">检验的claim</th>
-<th style="text-align: left;">对比与条件</th>
-<th style="text-align: left;">结果</th>
-<th style="text-align: left;">支持的结论</th>
-<th style="text-align: left;">不支持更强的结论</th>
-<th style="text-align: left;">来源</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>VAE vs. GAN vs. AR-LM 在蛋白质序列生成上的比较</strong></td>
-<td style="text-align: left;">不同模型在序列生成质量、多样性和可控性上的差异。</td>
-<td style="text-align: left;">引用多个独立研究，比较不同模型在相同或类似任务上的表现。</td>
-<td style="text-align: left;">VAE生成多样性有限，GAN易模式坍塌，AR-LM在长程依赖上表现好但生成慢。</td>
-<td style="text-align: left;">模型选择取决于具体任务需求。</td>
-<td style="text-align: left;">无法得出一个模型在所有方面都优于其他模型的结论。</td>
-<td style="text-align: left;">综述中“Comparison of generative models”相关章节。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>结构感知扩散模型 vs. 序列语言模型在蛋白质设计上的比较</strong></td>
-<td style="text-align: left;">结构信息对蛋白质设计的重要性。</td>
-<td style="text-align: left;">引用RFdiffusion（结构扩散）和ESM（序列语言模型）在从头设计蛋白质上的表现。</td>
-<td style="text-align: left;">RFdiffusion能设计出具有全新结构且可实验验证的蛋白质，而ESM等序列模型难以做到。</td>
-<td style="text-align: left;">结构感知方法在几何约束的蛋白质设计中具有根本性优势。</td>
-<td style="text-align: left;">序列模型在优化已有结构或预测功能上仍有价值。</td>
-<td style="text-align: left;">综述中“structural grounding”和“protein design”相关章节。</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>逆折叠方法 (ProteinMPNN) 在蛋白质序列设计上的表现</strong></td>
-<td style="text-align: left;">给定结构下，逆折叠方法能否设计出高序列恢复率且可折叠的序列。</td>
-<td style="text-align: left;">引用ProteinMPNN在PDB结构上的测试结果。</td>
-<td style="text-align: left;">ProteinMPNN在序列恢复率和实验验证成功率上显著优于早期方法。</td>
-<td style="text-align: left;">逆折叠是结构条件序列设计的有效框架。</td>
-<td style="text-align: left;">逆折叠无法设计全新结构，且对输入结构质量敏感。</td>
-<td style="text-align: left;">综述中“inverse-folding approaches”一节。</td>
-</tr>
-</tbody>
-</table>
 <h2>11 结论正确解读</h2>
 <ul>
-<li><strong>任务范围</strong>: 该综述的结论适用于DNA、RNA和蛋白质的序列与结构设计任务，但不同分子类型有各自的特异性约束。</li>
-<li><strong>Oracle/真值输入</strong>: 综述的结论基于对已发表文献的总结，这些文献中的“真值”通常来自实验验证（如晶体结构、功能测定）或高质量计算预测。</li>
-<li><strong>端到端状态</strong>: 综述强调，当前生成模型在计算机模拟中表现良好，但端到端的实验验证成功率仍然有限，闭环DBTL工作流是未来方向。</li>
-<li><strong>算力成本</strong>: 综述指出，扩散模型和大型语言模型的计算成本很高，是实际应用中的瓶颈。</li>
-<li><strong>历史数据依赖</strong>: 所有模型都严重依赖训练数据（如PDB、UniProt）的质量和分布，这限制了它们对全新或罕见生物系统的设计能力。</li>
-<li><strong>模型依赖</strong>: 结论依赖于所综述的模型类别和具体实现，未来新架构的出现可能改变当前比较结果。</li>
-<li><strong>最难情形</strong>: 设计具有全新结构、复杂功能（如酶活性）或需要精确多体相互作用的蛋白质/RNA仍然是当前最困难的任务。</li>
-<li><strong>群体/领域边界</strong>: 结论主要基于计算生物学和结构生物学领域的研究，对合成生物学和医学应用的直接指导意义需要进一步实验验证。</li>
-<li><strong>不确定性</strong>: 综述明确指出，没有一种模型在所有场景下都最优，最佳选择取决于具体问题。模型的可控性、泛化性和实验实用性仍有很大提升空间。</li>
-<li><strong>有边界的复述</strong>: 在DNA、RNA和蛋白质序列与结构设计领域，结构感知的扩散/流匹配和逆折叠方法在几何约束的设计任务中优于纯序列模型，而长上下文语言模型在基因组尺度建模中更有优势，但所有方法在分布外泛化和实验验证成功率上仍面临挑战。</li>
+<li><strong>任务范围</strong>: 该综述覆盖了DNA、RNA、蛋白质的序列和结构设计，但未深入讨论小分子或复合物设计。</li>
+<li><strong>oracle/真值输入</strong>: 综述基于已发表文献，其结论依赖于这些文献中的实验设置和评估标准。</li>
+<li><strong>端到端状态</strong>: 综述讨论了从生成到实验验证的闭环，但多数被引工作仍处于in silico阶段。</li>
+<li><strong>算力成本</strong>: 未量化不同模型的算力成本，但指出扩散模型计算成本高。</li>
+<li><strong>历史数据依赖</strong>: 所有生成模型都依赖于训练数据的分布，存在数据偏差风险。</li>
+<li><strong>模型依赖</strong>: 结论基于当前模型架构（截至2026年），未来新架构可能改变格局。</li>
+<li><strong>最难情形</strong>: 综述未明确讨论最困难的设计任务（如膜蛋白、 intrinsically disordered proteins）。</li>
+<li><strong>群体/领域边界</strong>: 结论主要适用于可溶性、结构已知的蛋白质和RNA，对非结构化区域或复杂复合物可能不适用。</li>
+<li><strong>不确定性</strong>: 综述指出实验验证是当前瓶颈，但未量化生成模型的实际实验成功率。</li>
+<li><strong>有边界的复述</strong>: 截至2026年，对于基因组尺度的序列建模，长上下文Transformer模型表现最佳；对于几何约束下的RNA和蛋白质结构设计，结构感知的扩散、流匹配和逆折叠方法更优；但所有方法都面临实验验证和泛化能力的挑战。</li>
 </ul>
 <h2>12 作者自认局限</h2>
 <p>在提供的材料中未发现作者明确承认的局限。</p>
-<p><strong>作者提及的相关约束</strong>:
-- 综述指出，当前生成模型在<strong>分布外泛化</strong>和<strong>实验验证</strong>方面仍存在显著挑战。
-- 综述强调，<strong>没有一种模型在所有场景下都最优</strong>，模型选择必须基于具体生物约束。
-- 综述提到，<strong>计算成本</strong>（尤其是扩散模型和大型语言模型）是实际应用中的瓶颈。
-- 综述指出，<strong>评估标准不统一</strong>，使得不同模型之间的公平比较变得困难。</p>
 <h2>13 批判性分析</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">[Analysis] 观察</th>
-<th style="text-align: left;">潜在问题或替代解释</th>
-<th style="text-align: left;">为何重要</th>
-<th style="text-align: left;">如何检验</th>
-<th style="text-align: left;">依据</th>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">综述将“结构感知”方法（扩散、流匹配、逆折叠）视为蛋白质设计的优势方法。</td>
-<td style="text-align: left;">这可能忽略了纯序列模型（如ESM）在结合结构预测（如AlphaFold2）后，也能实现有效的结构条件设计。</td>
-<td style="text-align: left;">这会影响对“结构感知”方法必要性的判断，以及资源分配（是开发新结构模型还是改进序列模型+结构预测管道）。</td>
-<td style="text-align: left;">设计实验：比较“结构扩散模型直接生成结构”与“序列语言模型生成序列 + AlphaFold2预测结构”在从头设计蛋白质上的成功率和效率。</td>
-<td style="text-align: left;">综述中“structural grounding”一节，但未深入讨论序列模型+结构预测的组合策略。</td>
+<td>综述强调结构感知方法优于纯序列方法，但未量化比较</td>
+<td>可能因不同任务（如序列设计 vs. 结构设计）的评估指标不同，难以直接比较</td>
+<td>读者可能高估结构感知方法的通用性</td>
+<td>在统一基准（如蛋白质设计成功率）上比较序列模型与结构感知模型</td>
+<td>文中仅定性描述，无定量对比</td>
 </tr>
 <tr>
-<td style="text-align: left;">综述强调“可控性”是重要痛点，但未深入分析不同模型实现可控性的具体机制和效率。</td>
-<td style="text-align: left;">不同模型（如条件VAE、引导扩散、提示语言模型）的可控性实现方式差异巨大，其鲁棒性和精度可能不同。</td>
-<td style="text-align: left;">对于实际应用（如设计特定结合亲和力的蛋白质），可控性的具体实现方式至关重要。</td>
-<td style="text-align: left;">对同一设计任务（如设计pM结合亲和力在特定范围内的蛋白质），比较不同可控生成策略（如条件扩散 vs. 提示语言模型）的精度和效率。</td>
-<td style="text-align: left;">综述中“controllability”一节，但讨论较为宏观。</td>
+<td>综述将“长上下文模型”与“结构感知模型”视为互补，但未讨论融合可能性</td>
+<td>可能存在混合架构（如长上下文+结构感知）能同时处理序列和结构约束</td>
+<td>融合方法可能突破当前性能上限</td>
+<td>设计实验：在长序列（如基因组）上同时施加结构约束，比较混合模型与纯序列/纯结构模型</td>
+<td>文中未讨论此类混合架构</td>
 </tr>
 <tr>
-<td style="text-align: left;">综述将“分布外泛化”作为关键挑战，但未区分不同类型的分布外（如新序列、新结构、新功能）。</td>
-<td style="text-align: left;">模型可能对序列分布外（新序列）泛化好，但对结构分布外（新折叠）泛化差，反之亦然。</td>
-<td style="text-align: left;">不同类型的分布外需要不同的解决方案（如数据增强、物理约束、迁移学习）。</td>
-<td style="text-align: left;">设计专门的分布外测试集，分别评估模型在序列、结构和功能分布外场景下的表现。</td>
-<td style="text-align: left;">综述中“out-of-distribution generalization”一节，但讨论较为笼统。</td>
+<td>综述未深入讨论生成模型的“可解释性”问题</td>
+<td>生成模型常被视为黑箱，难以理解其设计原理</td>
+<td>可解释性对于实验验证和模型改进至关重要</td>
+<td>分析生成模型潜在空间中的生物学意义（如突变效应、结构域识别）</td>
+<td>文中未提及可解释性</td>
+</tr>
+<tr>
+<td>综述依赖已发表文献，可能存在发表偏倚</td>
+<td>成功案例更易发表，失败案例可能被忽略</td>
+<td>导致对模型能力的乐观估计</td>
+<td>系统收集未发表或预印本中的失败案例，进行元分析</td>
+<td>综述性质决定，无法避免</td>
 </tr>
 </tbody>
 </table>
 <h2>14 学到什么</h2>
-<p><strong>Agent 提炼的知识候选</strong></p>
-<ol>
-<li>
-<p><strong>可迁移概念: 生物约束驱动的模型选择</strong></p>
-<ul>
-<li><strong>概念</strong>: 选择生成模型时，应优先考虑模型架构是否能自然编码问题的核心生物物理约束（如离散性、几何性、长程性）。</li>
-<li><strong>如何迁移到本课题</strong>: 在蛋白质结构相关计算研究中，如果目标是设计具有特定几何形状的结合口袋，应优先选择结构感知的扩散模型或逆折叠方法，而不是纯序列模型。如果目标是优化已有结构的稳定性，序列语言模型可能更高效。</li>
-</ul>
-</li>
-<li>
-<p><strong>可迁移方法: 闭环设计-构建-测试-学习 (DBTL) 工作流</strong></p>
-<ul>
-<li><strong>方法</strong>: 将计算生成与实验验证紧密结合，用实验数据反馈改进模型。</li>
-<li><strong>如何迁移到本课题</strong>: 在分子对接或MD模拟研究中，可以设计一个闭环：用生成模型设计候选分子 → 用对接/MD模拟筛选 → 合成并测试最佳候选 → 将实验结合数据或活性数据作为反馈，微调生成模型。</li>
-</ul>
-</li>
-<li>
-<p><strong>可迁移实验设计: 分布外泛化评估</strong></p>
-<ul>
-<li><strong>方法</strong>: 系统性地评估模型在训练数据分布之外（如新序列、新结构、新功能）的表现。</li>
-<li><strong>如何迁移到本课题</strong>: 在评估蛋白质结构预测模型（如AlphaFold2的变体）或构象采样方法时，应专门构建分布外测试集（如来自新折叠类型的蛋白质、来自不同物种的蛋白质），以检验模型的真实泛化能力。</li>
-</ul>
-</li>
-<li>
-<p><strong>可迁移思路: 区分模态依赖约束与架构依赖优势</strong></p>
-<ul>
-<li><strong>思路</strong>: 将问题固有的约束（如序列离散性、结构耦合）与特定模型架构的当前优势（如Transformer的长程依赖、扩散模型的高质量生成）区分开。</li>
-<li><strong>如何迁移到本课题</strong>: 在开发新方法时，应首先分析蛋白质结构设计问题的固有约束（如骨架的连续几何、侧链的离散旋转异构体），然后选择或设计最能处理这些约束的架构，而不是盲目追随最新模型。</li>
-</ul>
-</li>
-</ol>
+<p><strong>Agent 提炼的知识候选</strong>:
+1. <strong>结构感知生成框架</strong>: 将结构信息（如坐标、接触图、距离矩阵）显式编码到生成模型中（如扩散模型、逆折叠），是提升蛋白质/RNA设计可靠性的关键。可迁移到本课题：在蛋白质构象采样或分子对接中，可引入结构感知的生成模型来生成合理的初始构象。
+2. <strong>长上下文建模技术</strong>: 对于基因组尺度的序列建模，长上下文Transformer（如Longformer、BigBird）是有效工具。可迁移到本课题：在蛋白质序列设计中，若需考虑远距离残基相互作用（如变构效应），可借鉴长上下文架构。
+3. <strong>闭环DBTL工作流</strong>: 将in silico生成与实验验证结合，通过迭代优化提升设计成功率。可迁移到本课题：在蛋白质结构预测或分子对接中，可设计闭环流程，将预测结果与实验数据（如突变扫描、结合亲和力）反馈更新模型。
+4. <strong>模态依赖约束分类</strong>: 区分“模态依赖约束”（如序列离散性、结构耦合）与“架构依赖优势”（如Transformer的长程依赖），有助于选择合适模型。可迁移到本课题：在评估新方法时，应明确其针对的约束类型，避免跨模态泛化。
+5. <strong>评估策略</strong>: 综述强调out-of-distribution泛化和实验验证的重要性。可迁移到本课题：在蛋白质结构相关计算研究中，应设计严格的泛化测试（如跨家族、跨物种）和实验验证（如突变实验、结合实验）。</p>
 <h2>15 与已有知识连接</h2>
 <ul>
-<li><strong>相似连接</strong>: 该综述与《Advances in protein structure prediction and design》(Jumper et al., 2021; Watson et al., 2023) 等文献一致，都强调了结构信息在蛋白质设计中的核心作用。它系统化了这些文献中分散的方法论。</li>
-<li><strong>组合连接</strong>: 该综述的框架可以与《The protein design landscape》(Ovchinnikov &amp; Huang, 2021) 等综述结合，后者更侧重于蛋白质设计的物理和进化原理。两者结合可以提供从物理原理到AI方法的完整视角。</li>
-<li><strong>冲突连接</strong>: 该综述强调“结构感知”方法的优势，这与一些认为纯序列语言模型（如ESM）通过大规模预训练就能隐式学习结构信息的观点存在张力。这种冲突是当前领域的热点争论。</li>
-<li><strong>可迁移领域</strong>: 该综述中关于可控生成、分布外泛化和闭环工作流的讨论，可以直接迁移到<strong>小分子药物设计</strong>和<strong>材料设计</strong>领域，这些领域同样面临生成、评估和实验验证的挑战。</li>
+<li><strong>相似</strong>: 与《Advances in protein structure prediction and design using deep learning》（Jumper et al., 2021）等综述类似，均强调深度学习在蛋白质设计中的作用。但本文更聚焦于生成模型，并覆盖了DNA和RNA。</li>
+<li><strong>组合</strong>: 本文的结构感知生成方法（如扩散模型）可与AlphaFold2的结构预测能力组合，形成“预测-设计”闭环：先用AlphaFold2预测结构，再用扩散模型生成新序列。</li>
+<li><strong>冲突</strong>: 本文强调结构感知方法优于纯序列方法，这与一些纯序列语言模型（如ESM-1b）在功能预测中的成功形成对比。可能原因是任务不同：序列设计 vs. 功能预测。</li>
+<li><strong>可迁移领域</strong>: 本文的生成模型框架可迁移到小分子药物设计（如分子生成）、材料设计（如晶体结构生成）等领域，这些领域同样面临序列离散性、结构耦合和实验验证的挑战。</li>
 </ul>
 <h2>16 研究想法</h2>
-<p><strong>Agent 生成的研究候选</strong></p>
+<p><strong>Agent 生成的研究候选</strong>:</p>
 <ol>
 <li>
-<p><strong>名称</strong>: 结构感知的蛋白质-蛋白质界面设计扩散模型</p>
-<ul>
-<li><strong>来源局限/观察</strong>: 综述指出结构感知扩散模型（如RFdiffusion）在从头设计蛋白质上表现出色，但现有方法对设计特定蛋白质-蛋白质界面（如结合表位）的可控性不足。</li>
-<li><strong>核心假设</strong>: 通过将界面几何（如残基-残基距离、角度）作为显式条件输入扩散模型，可以显著提高设计界面结合特异性和亲和力的成功率。</li>
-<li><strong>相对本文的增量</strong>: 本文仅综述了现有方法，未提出新模型。本候选将扩散模型从“设计单体”扩展到“设计界面”，并引入更精细的几何条件。</li>
-<li><strong>初步方法</strong>: 1) 从PDB中提取蛋白质-蛋白质复合物界面几何特征（如距离矩阵、方向角）。2) 修改RFdiffusion或类似框架，将目标界面几何作为条件输入。3) 在已知复合物上训练，学习在给定界面几何下生成互补的蛋白质骨架。4) 使用ProteinMPNN等逆折叠方法为生成的骨架设计序列。</li>
-<li><strong>验证方式</strong>: 1) 计算验证：在留出的测试集上，评估生成界面的几何恢复率和序列恢复率。2) 实验验证：选择几个设计出的界面，通过酵母展示或噬菌体展示等实验验证其结合亲和力和特异性。</li>
-<li><strong>可能的失败模式</strong>: 1) 模型过拟合到已知界面几何，无法生成新颖界面。2) 生成的骨架在能量上不稳定，无法被逆折叠方法设计出可折叠的序列。3) 计算预测的结合亲和力与实验值相关性差。</li>
-<li><strong>创新状态</strong>: unverified</li>
-</ul>
+<p><strong>名称</strong>: 结构感知的长上下文蛋白质序列生成模型
+   - <strong>来源局限/观察</strong>: 综述指出长上下文模型适合基因组尺度，结构感知模型适合几何约束设计，但未讨论融合。
+   - <strong>核心假设</strong>: 将结构信息（如残基接触图）作为条件输入到长上下文Transformer中，可同时捕获长程序列依赖和结构约束，提升蛋白质序列设计的成功率。
+   - <strong>相对本文的增量</strong>: 提出一种混合架构，填补长上下文与结构感知之间的空白。
+   - <strong>初步方法</strong>: 使用预训练的长上下文Transformer（如ESM-2）作为骨干，在注意力层中引入结构偏置（如基于接触图的注意力掩码），并在蛋白质设计任务（如稳定性优化）上微调。
+   - <strong>验证方式</strong>: 在标准蛋白质设计基准（如ProteinGym、FireProt）上比较生成序列的稳定性、表达量和功能活性，并测试out-of-distribution泛化（如跨家族设计）。
+   - <strong>可能的失败模式</strong>: 结构信息可能引入噪声（如预测接触图不准确），导致生成质量下降；长上下文与结构偏置的融合可能增加计算复杂度。
+   - <strong>创新状态</strong>: unverified</p>
 </li>
 <li>
-<p><strong>名称</strong>: 基于流匹配的RNA三级结构从头设计</p>
-<ul>
-<li><strong>来源局限/观察</strong>: 综述指出结构感知方法在RNA设计上同样重要，但现有RNA设计方法多集中于二级结构或序列设计，对三级结构的从头设计能力有限。</li>
-<li><strong>核心假设</strong>: 流匹配（Flow Matching）因其灵活性和对连续空间建模的优势，可以比扩散模型更高效、更准确地生成RNA的三级结构骨架。</li>
-<li><strong>相对本文的增量</strong>: 本文综述了RNA设计，但未提出具体方法。本候选将流匹配这一较新的生成框架应用于RNA三级结构设计这一更具挑战性的任务。</li>
-<li><strong>初步方法</strong>: 1) 从PDB中提取RNA三级结构，将每个核苷酸的骨架原子（P, C4', C1', N1/N9）坐标作为数据点。2) 构建一个流匹配模型，学习从高斯噪声到RNA骨架坐标的变换。3) 在训练中引入RNA特有的约束（如碱基配对、糖苷键扭转角）作为条件或损失项。4) 生成新的RNA骨架后，使用逆折叠方法（如RDesign）设计序列。</li>
-<li><strong>验证方式</strong>: 1) 计算验证：评估生成结构的物理合理性（如键长、键角、无空间冲突）和与已知RNA结构的相似性（TM-score）。2) 使用Rosetta或AlphaFold3等工具预测生成序列的二级和三级结构，检查一致性。3) 实验验证：选择几个设计，通过体外转录和X射线晶体学或冷冻电镜验证其结构。</li>
-<li><strong>可能的失败模式</strong>: 1) RNA骨架的柔性极高，流匹配模型难以收敛。2) 生成的骨架在拓扑上不合理（如无法形成正确的假结）。3) 逆折叠方法无法为生成的RNA骨架设计出能稳定折叠的序列。</li>
-<li><strong>创新状态</strong>: unverified</li>
-</ul>
+<p><strong>名称</strong>: 基于扩散模型的蛋白质构象采样与对接初始构象生成
+   - <strong>来源局限/观察</strong>: 综述强调扩散模型在结构生成中的优势，但未讨论其在构象采样或分子对接中的应用。
+   - <strong>核心假设</strong>: 扩散模型能够从蛋白质的天然构象分布中采样，生成多样且合理的构象，可作为分子对接的初始构象，提高对接成功率。
+   - <strong>相对本文的增量</strong>: 将扩散模型从静态结构生成扩展到动态构象采样，并应用于对接。
+   - <strong>初步方法</strong>: 使用蛋白质骨架坐标扩散模型（如RFdiffusion）生成多个构象，然后使用对接软件（如AutoDock Vina）对每个构象进行配体对接，选择最佳结合模式。
+   - <strong>验证方式</strong>: 在标准对接基准（如PDBbind、DUD-E）上比较使用扩散模型生成初始构象 vs. 传统方法（如晶体结构、随机采样）的对接成功率（如RMSD &lt; 2Å）。
+   - <strong>可能的失败模式</strong>: 扩散模型生成的构象可能偏离天然状态，导致对接失败；计算成本高，难以处理大蛋白。
+   - <strong>创新状态</strong>: unverified</p>
 </li>
 <li>
-<p><strong>名称</strong>: 结合分子动力学模拟的蛋白质构象生成扩散模型</p>
-<ul>
-<li><strong>来源局限/观察</strong>: 综述讨论了生成模型，但未深入探讨如何与物理模拟（如MD）结合。MD模拟能提供构象系综，但计算成本高；扩散模型能快速生成构象，但可能缺乏物理真实性。</li>
-<li><strong>核心假设</strong>: 将MD模拟产生的构象轨迹作为训练数据，训练一个条件扩散模型，可以快速生成物理上合理的蛋白质构象系综，并用于下游任务（如对接、功能预测）。</li>
-<li><strong>相对本文的增量</strong>: 本文未讨论生成模型与MD模拟的结合。本候选提出一个混合框架，利用MD的物理精度和扩散模型的生成速度。</li>
-<li><strong>初步方法</strong>: 1) 对目标蛋白质进行短MD模拟（如微秒级），收集构象轨迹。2) 将轨迹中的构象（如Cα坐标）作为训练数据。3) 训练一个扩散模型，以蛋白质序列或初始结构为条件，学习生成与MD轨迹分布一致的构象。4) 使用训练好的模型快速生成大量构象，用于分子对接或构象系综分析。</li>
-<li><strong>验证方式</strong>: 1) 计算验证：比较生成构象的RMSD分布、主成分分析（PCA）空间与MD轨迹的差异。2) 评估生成构象的物理合理性（如Ramachandran图、能量分布）。3) 应用验证：使用生成的构象系综进行分子对接，比较其与使用MD轨迹或单一晶体结构进行对接的富集率。</li>
-<li><strong>可能的失败模式</strong>: 1) 短MD模拟可能无法充分采样构象空间，导致训练数据有偏。2) 扩散模型可能生成MD轨迹中未出现的、物理上不合理的构象。3) 生成的构象系综多样性不足，无法改善对接结果。</li>
-<li><strong>创新状态</strong>: unverified</li>
-</ul>
+<p><strong>名称</strong>: 闭环DBTL框架下的蛋白质稳定性优化
+   - <strong>来源局限/观察</strong>: 综述讨论了闭环DBTL工作流，但未提供具体实现。
+   - <strong>核心假设</strong>: 将生成模型（如逆折叠）与实验验证（如热稳定性测量）结合，通过贝叶斯优化迭代更新模型，可显著提升蛋白质稳定性设计的效率。
+   - <strong>相对本文的增量</strong>: 提出一个具体的闭环优化算法，并量化其相对于纯in silico方法的优势。
+   - <strong>初步方法</strong>: 使用逆折叠模型（如ProteinMPNN）生成突变序列，选择高置信度候选进行实验合成和热稳定性测量（如Tm值），将实验结果作为反馈，使用贝叶斯优化更新模型参数。
+   - <strong>验证方式</strong>: 在多个蛋白质（如荧光蛋白、酶）上比较闭环优化 vs. 随机突变 vs. 单轮in silico设计的稳定性提升幅度和实验成本。
+   - <strong>可能的失败模式</strong>: 实验验证成本高，周期长，难以在合理时间内完成多轮迭代；贝叶斯优化可能陷入局部最优。
+   - <strong>创新状态</strong>: unverified</p>
 </li>
 </ol></div>
   </section>
@@ -422,72 +322,83 @@
     <div class="md"><h2>Review setup</h2>
 <ul>
 <li><strong>Input scope</strong> Abstract only</li>
-<li><strong>Assessment boundary</strong> Claims and framing as presented in the abstract; no methods, figures, tables, or main text available for verification</li>
-<li><strong>Shared manuscript claim summary</strong> The review surveys deep generative models for DNA, RNA, and protein sequence and structure design, comparing model classes (VAEs, GANs, autoregressive/masked language models, diffusion, flow-based) across genomics, transcriptomics, and proteomics, with emphasis on controllability, long-range dependencies, structural grounding, generalization, and experimental utility. It claims to distinguish modality-dependent constraints from architecture-dependent advantages, and concludes that long-context models suit genome-scale tasks while structure-aware diffusion, flow, and inverse-folding approaches suit geometry-constrained RNA and protein design.</li>
-<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, references, or methodological details provided</li>
-<li><strong>Missing materials affecting confidence</strong> Full text, figures, tables, reference list, evaluation criteria, and any comparative analyses; without these, the depth, accuracy, and novelty of the review cannot be assessed</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract</li>
+<li><strong>Shared manuscript claim summary</strong> The authors review deep generative models for biological sequence and structure analysis and design, comparing VAEs, GANs, autoregressive/masked language models, diffusion models, and flow-based approaches across DNA, RNA, and protein domains, with emphasis on controllability, long-range dependencies, structural grounding, and experimental validation.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, or main text provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, figures, tables, references, evaluation benchmarks, and any quantitative comparisons are absent. The abstract provides only a high-level narrative without specific data or methodological details.</li>
 </ul>
 <h2>Reviewer</h2>
 <ul>
-<li><strong>Overall assessment</strong> The abstract presents a well-structured and timely overview of a rapidly evolving field. The framing around modality-dependent versus architecture-dependent constraints is conceptually useful and suggests a thoughtful synthesis. However, the abstract alone provides no verifiable evidence of the review's depth, coverage, or critical rigor. The claims are plausible but entirely unsubstantiated from the supplied material. The review could be valuable to a broad computational biology audience, but its current assessment is limited to the quality of the abstract's framing and writing.</li>
-<li><strong>Who would be interested in the results, and why</strong> Computational biologists, bioengineers, and machine learning researchers working on biological sequence design; also experimental biologists seeking an accessible map of generative modeling tools for DNA, RNA, and protein engineering. The comparative framing across model classes and modalities would help practitioners choose appropriate methods for their design tasks.</li>
-<li><strong>Major strengths</strong> The abstract is clearly written and logically organized. The distinction between fundamental modality constraints and architecture-dependent advantages is a useful conceptual contribution that goes beyond a simple catalog. The explicit attention to evaluation strategies, out-of-distribution generalization, and closed-loop design-build-test-learn workflows indicates awareness of practical bottlenecks beyond model architecture.</li>
-<li><strong>Major Concerns</strong> </li>
-<li><strong>Concern ID</strong> R1-M1</li>
-<li><strong>Severity</strong> Major</li>
-<li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> Evidence sufficiency</li>
-<li><strong>Claim pointer</strong> The review claims to "compare" model classes across genomics, transcriptomics, and proteomics, and to "distinguish" modality-dependent from architecture-dependent constraints.</li>
-<li><strong>Evidence pointer</strong> Abstract only; no figures, tables, or comparative analyses provided</li>
-<li><strong>Concern</strong> The abstract asserts a comprehensive comparative analysis, but no supporting evidence (e.g., benchmark comparisons, case studies, or quantitative assessments) is visible. The claim of distinguishing fundamental constraints from architecture-dependent advantages requires a systematic argument that cannot be evaluated from the abstract alone.</li>
-<li><strong>Why it matters</strong> For a review, the value lies in the depth and accuracy of the synthesis. Without visible evidence of the comparative framework, the reader cannot judge whether the conclusions are well-supported or merely asserted.</li>
-<li><strong>Resolution test</strong> Provide the full text or at least the figures/tables that substantiate the comparative claims, including specific examples of model performance, limitations, and the basis for the modality-versus-architecture distinction.</li>
-<li><strong>Concern ID</strong> R1-M2</li>
-<li><strong>Severity</strong> Major</li>
-<li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> Novelty and added value</li>
-<li><strong>Claim pointer</strong> The review claims to provide "a critical framework for understanding the present capabilities, limitations, and convergence of generative approaches."</li>
-<li><strong>Evidence pointer</strong> Abstract only; no comparison to existing reviews or identification of gaps in prior literature</li>
-<li><strong>Concern</strong> The abstract does not state what is new relative to existing reviews on generative models in biology. Given the rapid proliferation of such reviews, the incremental contribution is unclear.</li>
-<li><strong>Why it matters</strong> For a review to be publishable at a high-impact venue, it must offer a distinct perspective or synthesis. Without an explicit statement of novelty or gap-filling, the contribution is not established.</li>
-<li><strong>Resolution test</strong> Add a clear statement in the abstract (or visible in the full text) of how this review differs from prior work, e.g., new taxonomy, updated coverage, or a novel evaluative lens.</li>
-<li><strong>Minor Comments</strong> </li>
-<li><strong>Concern ID</strong> R1-m1</li>
-<li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Scope clarity</li>
-<li><strong>Affected element</strong> Scope statement</li>
-<li><strong>Evidence pointer</strong> Abstract, first paragraph</li>
-<li><strong>Issue</strong> The abstract mentions "multimodal generative frameworks" but does not clarify what modalities are integrated (e.g., sequence-structure, sequence-function, or multi-omics).</li>
-<li><strong>Required correction</strong> Specify the modalities covered to set accurate reader expectations.</li>
-<li><strong>Concern ID</strong> R1-m2</li>
-<li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Terminology precision</li>
-<li><strong>Affected element</strong> "Flow-based" approaches</li>
-<li><strong>Evidence pointer</strong> Abstract, second paragraph</li>
-<li><strong>Issue</strong> "Flow-based" is used without distinguishing normalizing flows from flow-matching; these have different properties and trade-offs.</li>
-<li><strong>Required correction</strong> Clarify whether both are covered and how they are differentiated.</li>
-<li><strong>Concern ID</strong> R1-m3</li>
-<li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Evaluation criteria</li>
-<li><strong>Affected element</strong> "Experimental utility"</li>
-<li><strong>Evidence pointer</strong> Abstract, second paragraph</li>
-<li><strong>Issue</strong> The abstract lists "experimental utility" as a comparison axis but does not define what constitutes utility (e.g., wet-lab validation rate, design success rate).</li>
-<li><strong>Required correction</strong> Define the criteria used to assess experimental utility in the review.</li>
-<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 and R1-M2 are the primary blockers. The abstract alone does not establish the depth, novelty, or accuracy of the review's claims. No technical errors are identifiable from the abstract, but the absence of evidence prevents any technical assessment.</li>
+<li><strong>Overall assessment</strong> The abstract presents a timely and broad-scope review of deep generative models in biological sequence and structure design. The topic is of high current interest, and the authors attempt to categorize models by their representation of biological constraints and their applicability across DNA, RNA, and protein domains. However, the abstract lacks specific evidence, quantitative comparisons, or critical evaluation of model performance, making it impossible to assess the depth, novelty, or rigor of the review. The claims are plausible but unsubstantiated from the provided material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational biology, bioinformatics, and machine learning for drug discovery and protein engineering would be interested, as the review promises a comparative framework for generative models in sequence and structure design. The focus on controllability and experimental validation is relevant to practitioners seeking to apply these models in wet-lab settings.</li>
+<li><strong>Major strengths</strong> </li>
+<li>The abstract covers a comprehensive range of generative model classes (VAEs, GANs, language models, diffusion, flow-based) and biological modalities (DNA, RNA, protein).</li>
+<li>It explicitly addresses key challenges such as controllability, long-range dependencies, structural grounding, and out-of-distribution generalization.</li>
+<li>The distinction between modality-dependent constraints and architecture-dependent advantages is a useful conceptual framing.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1
+    <strong>Severity</strong> Major
+    <strong>Blocking</strong> Yes
+    <strong>Axis</strong> Evidence and support
+    <strong>Claim pointer</strong> The abstract claims that "long-context models are particularly useful for genome-scale representation and sequence modeling, whereas structure-aware diffusion, flow-based, and inverse-folding approaches provide better frameworks for geometry-constrained RNA and protein design."
+    <strong>Evidence pointer</strong> Abstract text; location not provided
+    <strong>Concern</strong> This is a strong comparative claim about model suitability across domains, but the abstract provides no quantitative evidence, benchmark results, or specific examples to support it. Without data on performance metrics (e.g., perplexity, design success rates, structural accuracy), the claim is unsupported.
+    <strong>Why it matters</strong> The central value of this review appears to be its comparative analysis. If such claims are not backed by systematic evidence, the review risks being a subjective opinion rather than a critical synthesis.
+    <strong>Resolution test</strong> Provide a table or figure comparing model performance on standardized tasks (e.g., protein inverse folding, RNA secondary structure design, genome sequence generation) with clear metrics and statistical significance.</li>
+<li><strong>Concern ID</strong> R1-M2
+    <strong>Severity</strong> Major
+    <strong>Blocking</strong> Yes
+    <strong>Axis</strong> Scope and completeness
+    <strong>Claim pointer</strong> The abstract states that the review "examines evaluation strategies, out-of-distribution generalization, and closed-loop design-build-test-learn workflows."
+    <strong>Evidence pointer</strong> Abstract text; location not provided
+    <strong>Concern</strong> The abstract does not indicate how these topics are treated. For example, are specific evaluation metrics (e.g., perplexity, novelty, diversity, experimental validation rate) discussed? Are there case studies of closed-loop workflows? The lack of detail makes it impossible to assess the depth of coverage.
+    <strong>Why it matters</strong> These are critical aspects for the practical utility of generative models. A review that merely mentions them without substantive analysis would be superficial.
+    <strong>Resolution test</strong> Include a dedicated section or table summarizing evaluation metrics used in the literature, with examples of out-of-distribution tests and at least one detailed case study of a closed-loop design cycle.</li>
+<li><strong>Concern ID</strong> R1-M3
+    <strong>Severity</strong> Major
+    <strong>Blocking</strong> No
+    <strong>Axis</strong> Novelty and contribution
+    <strong>Claim pointer</strong> The abstract claims to provide "a critical framework for understanding the present capabilities, limitations, and convergence of generative approaches."
+    <strong>Evidence pointer</strong> Abstract text; location not provided
+    <strong>Concern</strong> Several recent reviews (e.g., in Nature Reviews Genetics, Nature Machine Intelligence, and others) have covered similar ground. The abstract does not articulate what distinguishes this review from existing ones—e.g., a novel taxonomy, a new evaluation framework, or a focus on underexplored areas.
+    <strong>Why it matters</strong> Without a clear statement of novelty, the review may be redundant with existing literature.
+    <strong>Resolution test</strong> Explicitly state in the abstract (or introduction) how this review differs from prior work, e.g., by focusing on a specific comparison axis (e.g., structural grounding vs. sequence-only models) or by including a meta-analysis of published benchmarks.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1
+    <strong>Severity</strong> Minor
+    <strong>Axis</strong> Clarity
+    <strong>Affected element</strong> Abstract text
+    <strong>Evidence pointer</strong> Abstract text; location not provided
+    <strong>Issue</strong> The phrase "modality-dependent constraints including sequence discreteness, context length, structural coupling, and physical or thermodynamic requirements" is dense and could be clarified. For example, "context length" is ambiguous—does it refer to sequence length or model context window?
+    <strong>Required correction</strong> Define each constraint briefly, e.g., "sequence discreteness (discrete amino acid or nucleotide tokens), context length (maximum sequence length a model can process), structural coupling (dependence of sequence on 3D structure), and physical/thermodynamic requirements (e.g., folding stability)."</li>
+<li><strong>Concern ID</strong> R1-m2
+    <strong>Severity</strong> Minor
+    <strong>Axis</strong> Readability
+    <strong>Affected element</strong> Abstract text
+    <strong>Evidence pointer</strong> Abstract text; location not provided
+    <strong>Issue</strong> The abstract uses technical jargon (e.g., "inverse-folding approaches") without definition, which may reduce readability for nonspecialists.
+    <strong>Required correction</strong> Add a brief parenthetical explanation, e.g., "inverse-folding approaches (predicting sequences that fold into a given structure)."</li>
+<li><strong>Concern ID</strong> R1-m3
+    <strong>Severity</strong> Minor
+    <strong>Axis</strong> Scope
+    <strong>Affected element</strong> Abstract text
+    <strong>Evidence pointer</strong> Abstract text; location not provided
+    <strong>Issue</strong> The abstract mentions "multimodal generative frameworks" but does not specify what modalities are integrated (e.g., sequence + structure, sequence + function, or others).
+    <strong>Required correction</strong> Clarify the types of multimodal integration covered, e.g., "multimodal frameworks that jointly model sequence, structure, and function."</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 and R1-M2 are blocking concerns. Without quantitative evidence for comparative claims and substantive treatment of evaluation/closed-loop workflows, the review's contribution cannot be assessed.</li>
 <li><strong>Assessment against Nature-style criteria</strong> </li>
-<li>Originality: Not assessable from the abstract; no comparison to prior reviews is provided.</li>
-<li>Scientific importance: The topic is timely and important, but the abstract does not demonstrate a unique contribution.</li>
-<li>Interdisciplinary readership: The abstract is accessible to both computational and experimental biologists, which is a strength.</li>
-<li>Technical soundness: Not assessable; no methods, data, or analyses are visible.</li>
-<li>Readability for nonspecialists: The abstract is well-written and largely accessible, though some terms (e.g., "flow-matching," "inverse-folding") may require prior knowledge.</li>
-<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract is promising, but the full manuscript must be reviewed to assess the depth, accuracy, and novelty of the synthesis. A decision cannot be made on the abstract alone.</li>
+<li><strong>Originality</strong>: Not assessable from the abstract alone. The topic is well-trodden; the review's novelty depends on its specific framing or meta-analysis, which is not evident.</li>
+<li><strong>Scientific importance</strong>: High. The field is rapidly evolving, and a critical, evidence-based comparison would be valuable.</li>
+<li><strong>Interdisciplinary readership</strong>: Potentially high, as the topic bridges machine learning, structural biology, and genomics. However, the abstract's dense jargon may limit accessibility.</li>
+<li><strong>Technical soundness</strong>: Not assessable. No data, methods, or benchmarks are provided.</li>
+<li><strong>Readability for nonspecialists</strong>: Moderate. The abstract assumes familiarity with generative model classes and biological constraints. Minor clarifications would help.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract outlines a promising review, but the lack of specific evidence, quantitative comparisons, and clear novelty prevents a positive assessment. The authors should provide the full manuscript or a more detailed abstract with supporting data to allow evaluation.</li>
 </ul>
 <h2>Risk / unsupported claims</h2>
 <ul>
-<li>The claim of a comprehensive comparison across model classes and modalities is unsupported without visible figures, tables, or analyses.</li>
-<li>The distinction between modality-dependent constraints and architecture-dependent advantages is asserted but not demonstrated.</li>
-<li>The conclusion that long-context models suit genome-scale tasks and structure-aware diffusion/flow methods suit RNA and protein design is presented as a finding, but no evidence is provided.</li>
-<li>The "critical framework" claim implies a novel evaluative contribution that is not substantiated in the abstract.</li>
+<li>The claim that "long-context models are particularly useful for genome-scale representation and sequence modeling, whereas structure-aware diffusion, flow-based, and inverse-folding approaches provide better frameworks for geometry-constrained RNA and protein design" is unsupported.</li>
+<li>The claim that the review "examines evaluation strategies, out-of-distribution generalization, and closed-loop design-build-test-learn workflows" is unsubstantiated without evidence of depth or specific examples.</li>
+<li>The claim of providing a "critical framework" is not supported by the abstract alone, as no novel taxonomy or analysis is presented.</li>
 </ul></div>
   </section>
   

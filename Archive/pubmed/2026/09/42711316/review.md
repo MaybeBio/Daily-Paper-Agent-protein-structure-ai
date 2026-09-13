@@ -1,72 +1,77 @@
 ## Review setup
 - **Input scope** Abstract only
 - **Assessment boundary** Claims and evidence presented in the abstract
-- **Shared manuscript claim summary** The authors present ESMDynamic, a deep learning model that predicts residue-residue contact dynamics (probabilities, occupancy, kinetics) from single protein sequences, trained on experimental and MD-derived conformational variability. The model is claimed to match or outperform existing ensemble prediction methods (AlphaFlow, ESMFlow, BioEmu) on large-scale MD benchmarks (mdCATH, ATLAS) with far lower computational cost, to generalize to diverse systems (membrane transporters, de novo proteins, homodimers), to enable automated collective variable selection for Markov state models, and to scale to the human proteome (18,000+ proteins).
-- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided.
-- **Missing materials affecting confidence** Full manuscript, including methods, benchmark details, comparison protocols, statistical analyses, and all figures/tables. Without these, the core claims cannot be independently evaluated.
+- **Shared manuscript claim summary** The authors present ESMDynamic, a deep learning model that predicts residue-residue contact dynamics from single protein sequences, trained on experimental and MD-derived conformational ensembles. The model is claimed to match or outperform existing ensemble prediction methods on large-scale benchmarks while being computationally efficient, and to generalize to diverse systems including membrane proteins, de novo designs, and homodimers. The authors further claim that predicted dynamic contacts enable automated collective variable selection for Markov state models and that the model has been applied to the human proteome.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided
+- **Missing materials affecting confidence** Full manuscript, methods section, benchmark details, comparison data, figures, tables, and supplementary information are not available. The abstract alone is insufficient to evaluate the technical soundness, reproducibility, or validity of the claims.
 
 ## Reviewer
-- **Overall assessment** The abstract presents an ambitious and potentially impactful approach to predicting protein dynamics from sequence, a problem of high current interest. The claims are broad and impressive, but the abstract alone provides insufficient evidence to assess their validity. Key technical details—such as the training data composition, the definition of "dynamic contact probabilities," the exact comparison metrics against AlphaFlow/ESMFlow/BioEmu, and the statistical rigor of the proteome-scale analysis—are absent. The work is promising in concept, but the case is not established from the provided material.
-- **Who would be interested in the results, and why** Computational structural biologists, protein engineers, and researchers in drug discovery and biophysics would be interested, as the method promises a fast, sequence-based route to conformational dynamics, which is critical for understanding function, allostery, and designing proteins. The scalability to the proteome is particularly attractive for large-scale analyses.
-- **Major strengths**
-    - Addresses a clear gap: most deep learning models predict static structures, not dynamics.
-    - Claims orders-of-magnitude computational savings over existing ensemble methods, which is practically significant.
-    - Demonstrates broad applicability across diverse protein classes and a proteome-scale application.
+- **Overall assessment** The abstract presents an ambitious and potentially impactful approach to predicting protein dynamics from sequence. The concept of moving beyond static structure prediction to dynamic contact maps is timely and addresses a clear gap in the field. However, the abstract lacks sufficient detail to assess the validity of the core claims, particularly regarding model architecture, training data, benchmark comparisons, and generalization. The claims of matching or outperforming state-of-the-art methods and enabling downstream applications require rigorous validation that cannot be evaluated from the abstract alone.
+- **Who would be interested in the results, and why** Computational structural biologists, protein engineers, and researchers in molecular dynamics and drug discovery would be interested. The ability to predict dynamic contacts from sequence alone could accelerate the study of conformational ensembles, inform simulation setup, and enable large-scale proteome-wide analyses of dynamics, which are currently computationally prohibitive.
+- **Major strengths** 1. Addresses a significant gap: most deep learning models predict static structures, while dynamics are critical for function. 2. Claims orders-of-magnitude computational savings over existing ensemble prediction methods, which is practically important. 3. Demonstrates application to the human proteome, suggesting scalability. 4. Shows potential utility in downstream tasks (collective variable selection for Markov state models).
 - **Major Concerns**
     - **Concern ID** R1-M1
     - **Severity** Major
     - **Blocking** Yes
-    - **Axis** Evidence sufficiency
+    - **Axis** Technical soundness
     - **Claim pointer** "ESMDynamic matches or outperforms state-of-the-art ensemble prediction methods (AlphaFlow, ESMFlow, BioEmu) while requiring orders-of-magnitude less computation."
     - **Evidence pointer** Abstract; location not provided
-    - **Concern** The abstract provides no quantitative metrics (e.g., correlation coefficients, RMSD of contact probabilities, or kinetic rate errors) for the comparison. "Matches or outperforms" is vague. The computational cost comparison is also unquantified.
-    - **Why it matters** This is the central performance claim. Without specific numbers and a clear description of the benchmark protocol (e.g., which metrics, on which subsets of mdCATH/ATLAS, with what statistical significance), the claim is unverifiable.
-    - **Resolution test** Provide a table or figure in the full manuscript showing quantitative performance (e.g., Pearson/Spearman correlation for contact probabilities, MAE for occupancy) for ESMDynamic vs. each baseline on the same test sets, along with wall-clock time or FLOPs for inference.
+    - **Concern** The abstract does not specify the metrics used for comparison (e.g., which dynamic contact properties were compared, on which benchmarks, and under what conditions). "Matches or outperforms" is vague and could encompass a wide range of outcomes. The computational cost comparison is also unquantified.
+    - **Why it matters** Without clear metrics and quantitative results, the central claim of superiority cannot be assessed. This is the core selling point of the method.
+    - **Resolution test** Provide specific performance metrics (e.g., Pearson correlation, AUC, F1 score) for each benchmark and each compared method. Report wall-clock time or FLOPs for a fair computational cost comparison.
     - **Concern ID** R1-M2
     - **Severity** Major
     - **Blocking** Yes
-    - **Axis** Methodological clarity
-    - **Claim pointer** "predicts dynamic contact probabilities, contact occupancy fraction, and coarse-grained kinetics of contact formation and dissociation across multiple temperature conditions."
+    - **Axis** Reproducibility and methodology
+    - **Claim pointer** "Built on the ESMFold architecture and trained on conformational variability from experimental structure ensembles and molecular dynamics (MD) simulations."
     - **Evidence pointer** Abstract; location not provided
-    - **Concern** The abstract does not define what "dynamic contact probabilities," "contact occupancy fraction," or "coarse-grained kinetics" mean in this context. It is unclear whether these are derived from a single model output or multiple heads, and how they relate to ground-truth MD observables.
-    - **Why it matters** Without a clear definition, the reader cannot assess whether the predictions are physically meaningful or simply fitting noise. The novelty hinges on predicting dynamics, not just static contacts.
-    - **Resolution test** In the full manuscript, provide a precise mathematical definition of each predicted quantity, describe the model architecture (e.g., output heads, loss functions), and show validation against MD-derived ground truth for a few example proteins.
+    - **Concern** The abstract does not describe how the model was adapted from ESMFold (a structure prediction model) to predict dynamics, nor the nature and size of the training data. The combination of experimental ensembles and MD simulations raises questions about data heterogeneity, quality control, and potential biases.
+    - **Why it matters** Without methodological details, the approach cannot be reproduced or evaluated for soundness. The training data composition is critical for understanding the model's capabilities and limitations.
+    - **Resolution test** Provide a clear description of the model architecture modifications, training data sources (including number of proteins, ensemble sizes, and simulation lengths), and any data preprocessing or filtering steps.
     - **Concern ID** R1-M3
     - **Severity** Major
-    - **Blocking** No
-    - **Axis** Generalization claim
+    - **Blocking** Yes
+    - **Axis** Generalization and validation
     - **Claim pointer** "We demonstrate generalization to diverse systems, including membrane transporters, a de novo designed protein, and a homodimer complex."
     - **Evidence pointer** Abstract; location not provided
-    - **Concern** The abstract does not specify how generalization is measured (e.g., performance on unseen folds, sequence identity thresholds, or whether these systems were held out during training). The homodimer case raises the question of whether the model handles inter-chain contacts, which is non-trivial.
-    - **Why it matters** Generalization to structurally and functionally diverse proteins is a key selling point. Without details on the test set design and performance metrics, the claim is anecdotal.
-    - **Resolution test** In the full manuscript, clearly state the training/test split, report performance on each system type, and compare to baselines where possible. For the homodimer, specify how the model handles multiple chains.
+    - **Concern** The abstract does not provide any quantitative results for these test cases. "Demonstrate generalization" is a strong claim that requires evidence of accurate predictions on systems that are structurally and functionally distinct from the training data.
+    - **Why it matters** Generalization to unseen and challenging systems is a key test of the model's utility. Without data, the claim is unsupported.
+    - **Resolution test** Provide prediction accuracy metrics (e.g., contact map correlation, occupancy fraction error) for each of these test systems, ideally compared to ground truth from MD or experimental data.
+    - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Downstream application validation
+    - **Claim pointer** "We show that predicted dynamic contacts enable automated selection of collective variables for Markov state model construction."
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract does not describe how the collective variables were selected, how the Markov state models were constructed, or whether the resulting models were validated against simulation or experimental data.
+    - **Why it matters** This claim suggests a practical application, but without validation, it is unclear whether the predicted contacts are useful for this purpose or if the approach is robust.
+    - **Resolution test** Provide a case study with quantitative validation (e.g., comparison of MSM kinetics to reference MD, or experimental observables).
 - **Minor Comments**
     - **Concern ID** R1-m1
     - **Severity** Minor
     - **Axis** Clarity
-    - **Affected element** Claim about proteome-scale application
-    - **Evidence pointer** Abstract
-    - **Issue** "ESMDynamic generates predictions for over 18,000 proteins, enabling large-scale analysis of conformational variability." It is unclear what "predictions" means here (all four quantities? for all residues? at what temperature?).
-    - **Required correction** Specify the scope of the proteome-scale predictions (e.g., "contact occupancy fractions for all residue pairs with sequence separation > 5 at 300 K").
+    - **Affected element** Claim about "coarse-grained kinetics of contact formation and dissociation across multiple temperature conditions"
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The abstract does not explain what "coarse-grained kinetics" means in this context or how temperature dependence is modeled.
+    - **Required correction** Define "coarse-grained kinetics" and briefly describe the temperature modeling approach in the abstract or main text.
     - **Concern ID** R1-m2
     - **Severity** Minor
-    - **Axis** Terminology
-    - **Affected element** "coarse-grained kinetics"
-    - **Evidence pointer** Abstract
-    - **Issue** The term "coarse-grained kinetics" is ambiguous. It could refer to rates of contact formation/dissociation, transition path times, or something else.
-    - **Required correction** Define "coarse-grained kinetics" explicitly in the abstract or introduction (e.g., "mean first passage times for contact formation and dissociation").
-- **Technical failings that need to be addressed before the case is established** R1-M1 (quantitative comparison lacking), R1-M2 (definition of predicted quantities missing). These are blocking because the core claims of performance and novelty cannot be assessed without them.
-- **Assessment against Nature-style criteria**
-    - **Originality**: High. Predicting dynamics from single sequences is a novel direction, distinct from static structure prediction or ensemble generation from multiple sequence alignments.
-    - **Scientific importance**: Potentially high, if validated. Dynamics is central to function, and a fast, sequence-based method would be transformative.
-    - **Interdisciplinary readership**: Yes, the topic bridges machine learning, structural biology, and biophysics.
-    - **Technical soundness**: Cannot be assessed from the abstract alone. The claims are plausible but unsubstantiated.
-    - **Readability for nonspecialists**: The abstract is clear and well-structured, though some terms (e.g., "coarse-grained kinetics") need definition.
-- **Recommendation posture** Currently not established from the provided evidence. The abstract is promising, but the full manuscript must provide quantitative validation, clear definitions, and rigorous benchmarks to support the claims. A supportive posture is possible if these technical concerns are resolved.
+    - **Axis** Scope
+    - **Affected element** Claim about "predictions for over 18,000 proteins" in the human proteome
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The abstract does not indicate whether these predictions have been validated or if they are simply raw outputs. The scale is impressive, but the utility is unclear without any analysis.
+    - **Required correction** Clarify whether the proteome-scale predictions are validated against any known dynamics or if they are presented as a resource for the community.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The abstract lacks the quantitative and methodological detail necessary to evaluate the core claims. The model architecture, training data, benchmark comparisons, and downstream application validation are all insufficiently described.
+- **Assessment against Nature-style criteria** 
+    - **Originality**: High. Predicting dynamic contact maps from single sequences is a novel and potentially transformative approach.
+    - **Scientific importance**: High. Protein dynamics are fundamental to function, and a scalable prediction method would have broad impact.
+    - **Interdisciplinary readership**: High. The work bridges computational biology, structural biology, and biophysics.
+    - **Technical soundness**: Cannot be assessed from the abstract. The claims are not supported by the provided evidence.
+    - **Readability for nonspecialists**: The abstract is clear and accessible, but the lack of detail limits its informativeness.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an exciting concept, but the core claims regarding performance, generalization, and downstream utility are not supported by the available material. A full manuscript with detailed methods, quantitative results, and validation is required to assess the work.
 
 ## Risk / unsupported claims
-- The claim that ESMDynamic "matches or outperforms" AlphaFlow, ESMFlow, and BioEmu is unsupported without quantitative metrics.
-- The claim of predicting "coarse-grained kinetics" is unsupported without a definition and validation.
-- The claim of generalization to membrane transporters, de novo proteins, and homodimers is unsupported without performance data.
-- The claim of enabling "automated selection of collective variables for Markov state model construction" is unsupported; no evidence or example is provided.
-- The claim of "large-scale analysis of conformational variability" for the human proteome is unsupported without any analysis results or validation.
+- "ESMDynamic matches or outperforms state-of-the-art ensemble prediction methods (AlphaFlow, ESMFlow, BioEmu) while requiring orders-of-magnitude less computation." – Unsupported; no metrics or computational cost data provided.
+- "We demonstrate generalization to diverse systems, including membrane transporters, a de novo designed protein, and a homodimer complex." – Unsupported; no quantitative results for these test cases.
+- "We show that predicted dynamic contacts enable automated selection of collective variables for Markov state model construction." – Unsupported; no validation or case study data.
+- "Applied to the human proteome, ESMDynamic generates predictions for over 18,000 proteins, enabling large-scale analysis of conformational variability." – Unsupported; no analysis or validation of these predictions.

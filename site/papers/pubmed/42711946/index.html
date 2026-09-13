@@ -18,7 +18,7 @@
   <main>
 <article class="paper">
   <div class="paper-head">
-    <span class="score score-mid">6</span>
+    <span class="score score-mid">7</span>
     <div>
       <h1>Supervised Protein Structure Classification Using Topological Persistence With DeltaFold.</h1>
       <div class="meta">Nardin-Gennequin, Joseph; Ciuperca, Gabriela; Brochier-Armanet, Celine; Malbos, Philippe</div>
@@ -29,7 +29,7 @@
          · 仅摘要
          · <a href="https://pubmed.ncbi.nlm.nih.gov/42711946/">原文</a>
       </div>
-      <p class="one-liner">本文利用拓扑持久性同源性对DeltaFold预测的蛋白质结构进行编码，并训练机器学习模型进行结构分类，虽涉及蛋白质结构计算，但核心是分类而非结构预测/生成/采样等核心问题，方法上未使用深度学习或物理模拟，属于工程化应用。</p>
+      <p class="one-liner">本文利用拓扑持久性同源性对DeltaFold预测的蛋白质结构进行编码，并训练机器学习模型实现快速、无需对齐的结构分类，属于蛋白质结构计算分析的应用，但方法创新性有限。</p>
     </div>
   </div>
   
@@ -41,7 +41,7 @@
   
   <section>
     <h2>摘要翻译</h2>
-    <div class="md">蛋白质结构预测的最新进展显著增加了可用结构的数量，凸显了对可扩展且精确的方法来比较和分类这一海量数据的需求。当前基于序列比对或结构叠加的方法往往缺乏灵敏度，和/或计算成本高昂。在此，我们引入DeltaFold分类器（DFC），这是一种基于拓扑数据分析的快速、免比对蛋白质结构分类流程。蛋白质三维结构通过对其空间表示的点云应用持久同源性，编码为固定长度向量。这些向量，称为生物拓扑标记（BTMs），捕捉蛋白质结构几何的内在拓扑特征——如环和空腔——跨越多个空间尺度。BTMs在平移和旋转下不变，从而避免了对结构叠加的需求。DFC流程利用这些BTM的特征，训练机器学习模型，用于在SCOP和CATH分类中定义的不同层级进行蛋白质结构分类。其性能与基于结构的比较方法相当，同时大幅提升计算效率。在涉及远缘同源性检测的任务中，它也优于基于序列的方法。深入分析确认，大多数BTM特征对分类性能有显著贡献。这些发现凸显了拓扑向量化在结构生物信息学中的潜力，并支持DFC流程作为自动化蛋白质结构分类和注释的有效且可扩展工具。</div>
+    <div class="md">近年来，蛋白质结构预测的进展显著增加了可用结构的数量，凸显了对可扩展且精确的方法来比较和分类这一海量数据的需求。当前基于序列比对或结构叠加的方法往往缺乏灵敏度，且/或计算成本高昂。在此，我们介绍DeltaFold分类器（DFC），这是一种基于拓扑数据分析的快速、免比对蛋白质结构分类流程。蛋白质三维结构通过固定长度向量进行编码，这些向量源自对其空间表示的点云应用持续同调（persistent homology）。这些向量被称为生物拓扑标记（BTMs），能够捕捉蛋白质结构几何的内在拓扑特征——如环和空腔——跨越多个空间尺度。BTMs在平移和旋转下保持不变，从而避免了结构叠加的需求。DFC流程利用这些BTMs的特征来训练机器学习模型，用于在SCOP和CATH分类中定义的多个层级上进行蛋白质结构分类。它在实现与基于结构比较方法相当的性能的同时，显著提高了计算效率。在涉及远距离同源检测的任务中，它也优于基于序列的方法。深入分析证实，大多数BTM特征对分类性能有显著贡献。这些发现突显了拓扑向量化在结构生物信息学中的潜力，并支持DFC流程作为自动化蛋白质结构分类和注释的有效且可扩展的工具。</div>
   </section>
   
   
@@ -54,30 +54,30 @@
 <li><strong>期刊/预印本平台</strong>: Proteins</li>
 <li><strong>年份</strong>: 2026-09-09</li>
 <li><strong>论文类型</strong>: 方法开发与验证</li>
-<li><strong>领域</strong>: 蛋白质结构分类 × 拓扑数据分析（TDA） × 机器学习</li>
-<li><strong>关键词</strong>: 蛋白质结构分类、持久同调、拓扑特征、DeltaFold、SCOP、CATH</li>
+<li><strong>领域</strong>: 蛋白质结构分类 × 拓扑数据分析（TDA）× 机器学习</li>
+<li><strong>关键词</strong>: 蛋白质结构分类、持久同调、拓扑向量化、DeltaFold、SCOP、CATH</li>
 <li><strong>DOI/arXiv 号</strong>: 10.1002/prot.70163</li>
 <li><strong>代码</strong>: 未提供</li>
 <li><strong>数据</strong>: 基于SCOP和CATH分类的结构数据（具体数据集未提供）</li>
 <li><strong>阅读日期</strong>: 未提供</li>
-<li><strong>该文在「蛋白质结构相关计算研究 × AI方法/物理模拟」方向中的位置</strong>: 本文提出一种基于拓扑数据分析（TDA）的蛋白质结构分类方法，属于结构比较与分类的替代性AI方法。它不依赖序列比对或结构叠合，而是通过持久同调提取拓扑特征（BTMs），再训练机器学习模型进行分类。该方法在计算效率上优于传统结构比较方法，在远源同源检测上优于序列方法，为蛋白质结构分类提供了新的特征表示范式，可迁移至结构预测、构象采样等任务中的结构相似性评估。</li>
+<li><strong>该文在「蛋白质结构相关计算研究 × AI方法/物理模拟」方向中的位置</strong>: 本文提出一种基于拓扑数据分析（持久同调）的无对齐蛋白质结构分类方法，属于结构比较与分类的AI辅助方法，与AlphaFold等结构预测方法互补，可应用于大规模结构数据库的自动注释。</li>
 </ul>
 <h2>02 一句话总结</h2>
-<p>本文提出DeltaFold Classifier（DFC）管道，利用持久同调从蛋白质三维结构点云中提取固定长度的拓扑特征向量（BTMs），训练机器学习模型进行蛋白质结构分类，在SCOP和CATH层级上达到与结构比较方法相当的精度，同时显著提升计算效率，并优于序列方法在远源同源检测上的表现。</p>
+<p>本文提出DeltaFold Classifier (DFC)管道，利用持久同调从蛋白质三维结构点云中提取固定长度的拓扑特征向量（Biotopological Markers, BTMs），训练机器学习模型进行蛋白质结构分类，在SCOP和CATH层次上达到与结构比对方法相当的精度，同时显著提升计算效率，并优于序列方法在远源同源检测中的表现。</p>
 <h2>03 研究问题</h2>
 <ul>
-<li><strong>具体问题</strong>: 如何快速、准确地对大量蛋白质三维结构进行分类，尤其是在缺乏序列相似性或需要结构叠合的情况下？</li>
-<li><strong>为什么重要</strong>: 随着AlphaFold等结构预测方法产生海量结构数据，传统基于序列比对（如BLAST）或结构叠合（如DALI、TM-align）的方法在灵敏度或计算成本上存在瓶颈，亟需可扩展的自动化分类工具。</li>
-<li><strong>现有方法为何不足</strong>: 序列比对方法在远源同源检测中灵敏度低；结构叠合方法计算昂贵，且依赖初始对齐，对构象变化敏感。</li>
-<li><strong>精确的「Can ... ?」研究问题</strong>: Can topological persistence features (BTMs) serve as a fast, alignment-free, and accurate representation for supervised protein structure classification across hierarchical levels (SCOP, CATH)?</li>
+<li><strong>具体问题</strong>: 如何快速、准确地对大规模蛋白质结构数据库进行自动分类和注释，特别是处理远源同源关系？</li>
+<li><strong>为什么重要</strong>: 随着AlphaFold等结构预测方法产生海量结构数据，传统基于序列比对或结构叠合的方法在灵敏度或计算成本上存在瓶颈，亟需可扩展的自动化分类工具。</li>
+<li><strong>现有方法为何不足</strong>: 序列比对方法（如BLAST）在远源同源检测中灵敏度低；结构叠合方法（如DALI、TM-align）计算昂贵，且需要结构对齐，难以处理大规模数据。</li>
+<li><strong>精确研究问题</strong>: Can a fixed-length topological vectorization of protein 3D structures, derived from persistent homology, enable fast and accurate supervised classification at hierarchical levels (e.g., SCOP family, CATH topology) comparable to structure-based methods?</li>
 </ul>
 <h2>04 背景与发展脉络</h2>
 <ul>
 <li><strong>脉络来源</strong>: 仅本文框架</li>
-<li><strong>阶段1: 序列比对方法</strong>（如BLAST、HMMER）: 优点：快速、成熟；局限：在序列相似性低（&lt;30%）时无法检测远源同源。</li>
-<li><strong>阶段2: 结构叠合方法</strong>（如DALI、TM-align、Foldseek）: 优点：能捕捉结构相似性；局限：计算复杂度高（O(N^2)或更高），需要结构叠合，对构象变化敏感。</li>
-<li><strong>阶段3: 基于特征的结构表示方法</strong>（如3D Zernike descriptors、Gaussian surface moments）: 优点：避免叠合，计算快；局限：特征表达能力有限，或对局部拓扑不敏感。</li>
-<li><strong>本文主张的位置</strong>: 本文提出基于持久同调的拓扑特征（BTMs），作为结构叠合和序列比对的替代方案。BTMs是旋转平移不变的，无需叠合，且能捕捉多尺度拓扑特征（如空洞、腔体），在分类精度上接近结构叠合方法，在计算效率上显著优于后者，在远源同源检测上优于序列方法。</li>
+<li><strong>阶段1: 序列比对方法</strong>（如BLAST、HMMER）。优点：速度快。局限：对远源同源不敏感，无法捕捉结构信息。</li>
+<li><strong>阶段2: 结构叠合方法</strong>（如DALI、TM-align、Foldseek）。优点：精度高，能检测远源同源。局限：计算成本高，需要结构对齐，难以处理超大规模数据库。</li>
+<li><strong>阶段3: 基于结构特征的方法</strong>（如基于距离矩阵、接触图、图表示的方法）。优点：部分避免对齐。局限：特征提取可能丢失全局拓扑信息或计算复杂。</li>
+<li><strong>本文主张的位置</strong>: 提出基于持久同调的拓扑向量化（BTMs），作为无对齐、固定长度、旋转平移不变的结构表示，结合机器学习分类器，在精度与效率之间取得平衡，填补了大规模自动化分类的需求。</li>
 </ul>
 <h2>05 核心痛点</h2>
 <table>
@@ -91,51 +91,50 @@
 </thead>
 <tbody>
 <tr>
+<td>序列比对灵敏度低</td>
+<td>远源同源检测失败</td>
+<td>序列相似性在进化距离远时消失，无法反映结构保守性</td>
+<td>文中提及“outperforms sequence-based methods in tasks involving distant homology detection”（摘要）</td>
+</tr>
+<tr>
 <td>结构叠合计算昂贵</td>
-<td>对大规模结构数据库（如AlphaFold DB）进行两两叠合耗时巨大</td>
-<td>结构叠合需要优化旋转和平移参数，复杂度高</td>
-<td>作者在引言中提及“computationally expensive”</td>
+<td>大规模数据库分类耗时</td>
+<td>需要两两结构对齐，复杂度高</td>
+<td>文中提及“computationally expensive”（摘要）</td>
 </tr>
 <tr>
-<td>序列比对在远源同源检测中灵敏度低</td>
-<td>序列相似性低于30%时，无法可靠检测同源关系</td>
-<td>序列在进化过程中快速分化，结构保守性高于序列</td>
-<td>作者在引言中提及“lack sensitivity”</td>
+<td>结构表示缺乏不变性</td>
+<td>需要结构对齐或旋转平移归一化</td>
+<td>传统结构特征（如坐标）对旋转平移敏感</td>
+<td>BTMs被设计为“invariant under translations and rotations”（摘要）</td>
 </tr>
 <tr>
-<td>现有特征表示方法表达能力有限</td>
-<td>3D Zernike等描述子可能无法捕捉局部拓扑细节</td>
-<td>这些方法基于全局形状，对空洞、腔体等拓扑特征不敏感</td>
-<td>作者在引言中提及“often lack sensitivity”</td>
-</tr>
-<tr>
-<td>结构分类需要人工干预或先验知识</td>
-<td>传统分类依赖专家标注或结构叠合结果</td>
-<td>缺乏自动化的、无偏的特征提取方法</td>
-<td>作者在引言中暗示DFC是“automated”工具</td>
+<td>特征维度不固定</td>
+<td>不同结构产生不同长度特征，难以直接输入ML模型</td>
+<td>点云或图表示通常需要对齐或池化</td>
+<td>BTMs是“fixed-length vectors”（摘要）</td>
 </tr>
 </tbody>
 </table>
 <h2>06 核心思想</h2>
 <ol>
-<li><strong>表面方法</strong>: 使用持久同调（persistent homology）将蛋白质三维结构（点云）编码为固定长度的拓扑特征向量（BTMs），然后训练监督学习模型（如随机森林、SVM）进行结构分类。</li>
-<li><strong>核心洞察</strong>: 蛋白质结构的几何形状可以通过其拓扑特征（如连通分量、环、空洞）在不同空间尺度上的“出生-死亡”模式来有效表征。这些特征（BTMs）是旋转平移不变的，且能捕捉多尺度结构信息，从而避免了结构叠合和序列比对的需求。</li>
-<li><strong>可能的普适教训 [Analysis]</strong>: 对于蛋白质结构相关计算，将几何问题转化为拓扑问题（如持久同调）可以绕过昂贵的对齐步骤，同时保留对结构相似性敏感的信息。这种“特征化-分类”范式可迁移到构象采样、分子对接中的结构相似性评估，或作为AlphaFold预测结构的后处理验证工具。</li>
+<li><strong>表面方法</strong>: 使用持久同调（persistent homology）从蛋白质3D结构点云中提取拓扑特征（如环、空洞的持久性），编码为固定长度的Biotopological Markers (BTMs)向量，然后训练监督学习模型（如随机森林、SVM等）进行层次化分类（SCOP/CATH）。</li>
+<li><strong>核心洞察</strong>: 蛋白质结构的几何形状可以通过其拓扑特征（如空腔、环状结构）在不同空间尺度上的“出生-死亡”模式来有效表征。这些拓扑特征天然具有旋转平移不变性，且通过持久性图可转化为固定长度的数值向量，从而避免了结构对齐和特征维度不统一的问题。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>: 对于需要比较大量几何对象（如蛋白质构象、分子表面）的任务，拓扑数据分析（特别是持久同调）提供了一种强大的“形状指纹”提取方法，其核心优势在于：1）不依赖对齐；2）捕捉多尺度特征；3）输出固定长度向量，便于与标准机器学习模型集成。这为蛋白质构象采样、分子对接中的形状匹配等提供了可迁移的思路。</li>
 </ol>
 <h2>07 方法总览</h2>
 <ul>
-<li><strong>输入</strong>: 蛋白质三维结构（PDB文件或坐标点云）</li>
-<li><strong>输出</strong>: 蛋白质在SCOP或CATH分类层级上的类别标签</li>
+<li><strong>输入</strong>: 蛋白质三维结构（PDB文件或AlphaFold预测结构），表示为原子坐标点云（如Cα原子或所有重原子）。</li>
+<li><strong>输出</strong>: 蛋白质在SCOP/CATH分类层次（如类、折叠、超家族、家族）上的预测标签。</li>
 <li><strong>模块</strong>:
-  1. <strong>结构表示</strong>: 将蛋白质结构表示为点云（如Cα原子坐标或所有重原子坐标）。
-  2. <strong>持久同调计算</strong>: 对点云构建Vietoris-Rips复形或Alpha复形，计算0维（连通分量）、1维（环）、2维（空洞）的持久同调，得到持久图（persistence diagram）。
-  3. <strong>特征向量化（BTM生成）</strong>: 将持久图转换为固定长度的向量（BTMs），例如通过持久图上的统计量（如出生/死亡时间的均值、方差、熵）或持久图像（persistence images）等方法。
-  4. <strong>监督学习分类</strong>: 使用BTMs作为特征，训练机器学习模型（如随机森林、支持向量机）进行多类分类。</li>
-<li><strong>训练</strong>: 使用SCOP或CATH标注的结构数据，以交叉验证评估性能。</li>
-<li><strong>工具</strong>: 持久同调计算库（如GUDHI、Dionysus）、scikit-learn等。</li>
-<li><strong>反馈回路</strong>: 未提及</li>
-<li><strong>假设</strong>: 蛋白质结构的拓扑特征（持久同调）足以区分不同折叠类型和家族；BTMs是旋转平移不变的，且对噪声鲁棒。</li>
-<li><strong>从输入到输出的文字流程</strong>: 输入蛋白质结构 → 提取点云 → 计算持久同调（0维、1维、2维） → 从持久图生成BTM特征向量 → 将BTM输入训练好的分类器 → 输出分类标签。</li>
+  1. <strong>点云构建</strong>: 从结构中选择代表性原子（如Cα）构成3D点云。
+  2. <strong>持久同调计算</strong>: 对点云构建Vietoris-Rips复形，计算0维（连通分量）、1维（环）、2维（空洞）的持久性同调，生成持久性图。
+  3. <strong>特征向量化（BTM生成）</strong>: 将持久性图转化为固定长度的数值向量。具体方法可能包括持久性统计（如出生/死亡时间、持久性长度、熵等）或持久性图像（persistence images）等。
+  4. <strong>监督学习分类</strong>: 使用BTM向量作为特征，训练机器学习分类器（如随机森林、梯度提升树、SVM等）进行多类别分类。</li>
+<li><strong>训练</strong>: 使用SCOP/CATH标注的结构数据，按层次划分训练集和测试集。</li>
+<li><strong>工具</strong>: 持久同调计算可能使用GUDHI、Ripser等库；机器学习使用scikit-learn等。</li>
+<li><strong>反馈回路</strong>: 未明确提及，但分类性能可反馈指导特征选择或超参数调优。</li>
+<li><strong>假设</strong>: 蛋白质结构的拓扑特征（持久同调）足以区分不同折叠类型和进化关系；固定长度向量化不丢失关键判别信息。</li>
 </ul>
 <h2>08 核心模块拆解</h2>
 <table>
@@ -151,55 +150,50 @@
 </thead>
 <tbody>
 <tr>
+<td>点云构建</td>
+<td>将3D结构转化为点集</td>
+<td>持久同调需要点云作为输入</td>
+<td>输入：PDB结构；输出：3D坐标点集</td>
+<td>标准做法，未提供具体消融</td>
+<td>预期：点云密度和原子选择影响拓扑特征质量</td>
+</tr>
+<tr>
 <td>持久同调计算</td>
-<td>从点云提取多尺度拓扑特征（环、空洞）</td>
-<td>捕捉结构几何的拓扑本质，无需叠合</td>
-<td>输入：点云坐标；输出：持久图</td>
-<td>作者声称BTMs能捕捉“cycles and cavities across multiple spatial scales”</td>
-<td>预期：分类性能显著下降，因为失去了对结构拓扑的敏感性</td>
+<td>提取多尺度拓扑特征（环、空洞）</td>
+<td>捕捉结构几何的全局和局部形状信息</td>
+<td>输入：点云；输出：持久性图（出生/死亡对）</td>
+<td>文中称BTMs“capture the intrinsic topological features”（摘要）</td>
+<td>预期：移除后无法获得拓扑不变性特征</td>
 </tr>
 <tr>
 <td>BTM特征向量化</td>
-<td>将持久图转换为固定长度向量</td>
-<td>使拓扑特征可输入标准机器学习模型</td>
-<td>输入：持久图；输出：固定长度向量</td>
-<td>作者声称BTMs是“fixed-length vectors”</td>
-<td>预期：无法使用标准分类器，或需要定制模型</td>
+<td>将持久性图转化为固定长度向量</td>
+<td>使特征维度统一，适用于标准ML模型</td>
+<td>输入：持久性图；输出：固定长度数值向量</td>
+<td>文中称“fixed-length vectors”（摘要）</td>
+<td>预期：移除后ML模型无法处理变长输入</td>
 </tr>
 <tr>
 <td>监督学习分类器</td>
-<td>基于BTM特征预测结构类别</td>
+<td>基于BTM特征预测结构分类标签</td>
 <td>实现自动化分类</td>
-<td>输入：BTM向量；输出：类别标签</td>
-<td>作者声称性能“comparable to structure-based comparison methods”</td>
-<td>预期：无法完成分类任务</td>
-</tr>
-<tr>
-<td>结构点云表示</td>
-<td>将蛋白质结构简化为点云</td>
-<td>降低计算复杂度，同时保留关键几何信息</td>
-<td>输入：PDB结构；输出：点云坐标</td>
-<td>作者使用“point clouds of their spatial representation”</td>
-<td>预期：可能丢失侧链或局部细节信息，但作者未测试不同点云表示的影响</td>
+<td>输入：BTM向量；输出：分类标签</td>
+<td>文中称“achieves performance comparable to structure-based methods”（摘要）</td>
+<td>预期：移除后无法进行有监督分类</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><strong>区分</strong>: 作者未提供消融实验（如移除1维或2维持久同调的影响），因此“移除后的已知或预期影响”为[Analysis]预期。</li>
-</ul>
 <h2>09 关键公式符号</h2>
-<ul>
-<li><strong>不适用</strong>: 本文未提供具体公式。持久同调的计算和BTM的生成是算法过程，而非显式数学公式。作者未在摘要或正文中给出任何数学表达式。</li>
-</ul>
+<p>不适用。本文未提供具体公式，持久同调和BTM生成是算法流程而非显式公式。</p>
 <h2>10 实验设计与证据链</h2>
 <ul>
-<li><strong>数据集/群体</strong>: 基于SCOP和CATH分类的结构数据（具体规模未提供，如SCOP 1.75或CATH 4.2等版本未说明）</li>
-<li><strong>指标</strong>: 分类准确率（accuracy）、与结构比较方法（如DALI、TM-align）和序列方法（如BLAST、HMMER）的比较</li>
-<li><strong>基线</strong>: 结构比较方法（如DALI、TM-align）、序列方法（如BLAST、HMMER）</li>
-<li><strong>预算</strong>: 未提供</li>
-<li><strong>骨干/仪器</strong>: 未提供</li>
-<li><strong>Oracle输入</strong>: 无（分类任务，真值来自SCOP/CATH标注）</li>
-<li><strong>评测协议</strong>: 交叉验证（具体折数未提供）</li>
+<li><strong>数据集/群体</strong>: 基于SCOP和CATH分类的结构数据（具体版本、规模、数量未提供）。</li>
+<li><strong>指标</strong>: 分类准确率（accuracy）、与结构比对方法（如DALI、TM-align）的比较、与序列方法（如BLAST）的比较。</li>
+<li><strong>基线</strong>: 结构比对方法（如DALI、TM-align）、序列比对方法（如BLAST）。</li>
+<li><strong>预算</strong>: 未提供。</li>
+<li><strong>骨干/仪器</strong>: 未提供。</li>
+<li><strong>Oracle输入</strong>: 使用SCOP/CATH的官方分类作为真值标签。</li>
+<li><strong>评测协议</strong>: 按SCOP/CATH层次（类、折叠、超家族、家族）分别评估分类性能。</li>
 </ul>
 <table>
 <thead>
@@ -215,60 +209,49 @@
 </thead>
 <tbody>
 <tr>
-<td>在SCOP/CATH层级上的分类性能</td>
-<td>DFC能达到与结构比较方法相当的精度</td>
-<td>对比DFC vs. DALI/TM-align vs. BLAST</td>
-<td>DFC性能“comparable to structure-based comparison methods”</td>
-<td>DFC可作为结构比较的替代方案</td>
-<td>未证明DFC在所有层级上均优于结构比较方法</td>
+<td>与结构比对方法比较</td>
+<td>DFC精度与结构方法相当</td>
+<td>在SCOP/CATH分类任务上，与DALI/TM-align对比</td>
+<td>性能相当（具体数值未提供）</td>
+<td>DFC可作为结构比对的替代方案</td>
+<td>未证明在所有任务上优于结构方法</td>
 <td>摘要</td>
 </tr>
 <tr>
-<td>远源同源检测</td>
-<td>DFC优于序列方法</td>
-<td>对比DFC vs. BLAST/HMMER</td>
-<td>DFC“outperforms sequence-based methods in tasks involving distant homology detection”</td>
-<td>DFC在低序列相似性下更有效</td>
-<td>未证明DFC在所有远源同源场景下均优于结构方法</td>
+<td>与序列方法比较</td>
+<td>DFC在远源同源检测中优于序列方法</td>
+<td>在远源同源检测任务上，与BLAST对比</td>
+<td>优于序列方法（具体数值未提供）</td>
+<td>DFC能捕捉序列方法丢失的结构信息</td>
+<td>未证明在近源同源上优于序列方法</td>
 <td>摘要</td>
 </tr>
 <tr>
-<td>计算效率</td>
-<td>DFC显著快于结构叠合方法</td>
-<td>未提供具体时间对比</td>
-<td>“substantially improving computational efficiency”</td>
-<td>DFC更适合大规模数据</td>
-<td>未提供量化加速比</td>
-<td>摘要</td>
-</tr>
-<tr>
-<td>BTM特征贡献分析</td>
+<td>特征重要性分析</td>
 <td>大多数BTM特征对分类有贡献</td>
-<td>特征重要性分析（如随机森林特征重要性）</td>
-<td>“most BTM features contribute significantly”</td>
-<td>BTM特征集是有效的</td>
-<td>未识别出冗余或有害特征</td>
+<td>分析各BTM特征对分类性能的影响</td>
+<td>大多数特征贡献显著（具体方法未提供）</td>
+<td>BTM特征具有判别力</td>
+<td>未识别出最关键的拓扑特征类型</td>
 <td>摘要</td>
 </tr>
 </tbody>
 </table>
 <h2>11 结论正确解读</h2>
 <ul>
-<li><strong>任务范围</strong>: 仅限于蛋白质结构分类（SCOP/CATH层级），不涉及结构预测、构象生成或分子对接。</li>
-<li><strong>Oracle/真值输入</strong>: 分类真值来自SCOP/CATH人工标注，可能存在标注偏差。</li>
-<li><strong>端到端状态</strong>: 是端到端的分类管道，但依赖预计算的结构坐标。</li>
-<li><strong>算力成本</strong>: 持久同调计算对点云规模敏感，但作者声称比结构叠合快，未提供具体硬件和耗时。</li>
-<li><strong>历史数据依赖</strong>: 依赖SCOP/CATH的历史分类体系，可能无法覆盖新发现的折叠类型。</li>
-<li><strong>模型依赖</strong>: 使用随机森林或SVM等传统ML模型，未测试深度学习模型。</li>
-<li><strong>最难情形</strong>: 对高度相似但拓扑不同的结构（如环的微小差异）可能不敏感。</li>
-<li><strong>群体/领域边界</strong>: 仅测试了SCOP和CATH中的结构，未在AlphaFold预测结构或膜蛋白等特殊类别上验证。</li>
-<li><strong>不确定性</strong>: 未提供置信区间或误差分析。</li>
-<li><strong>有边界的复述</strong>: 在SCOP和CATH标注的结构上，基于持久同调的BTM特征结合传统机器学习，可以在分类精度上接近结构叠合方法，在计算效率上显著优于后者，并在远源同源检测上优于序列方法。但该方法未在预测结构、大规模构象集合或非球状蛋白上验证，且未与最新的深度学习结构表示方法（如GNN、Transformer）对比。</li>
+<li><strong>任务范围</strong>: 仅限于蛋白质结构分类（SCOP/CATH层次），不涉及结构预测、功能预测或动力学。</li>
+<li><strong>Oracle/真值输入</strong>: 使用SCOP/CATH人工标注的分类作为真值，这些分类本身基于专家知识和结构比对，存在主观性和边界模糊性。</li>
+<li><strong>端到端状态</strong>: 是端到端的分类管道，但依赖预计算的结构（PDB或预测结构）。</li>
+<li><strong>算力成本</strong>: 持久同调计算和ML训练成本远低于结构叠合，但具体数值未提供。</li>
+<li><strong>历史数据依赖</strong>: 依赖SCOP/CATH的历史标注数据，对新发现的折叠类型可能泛化能力有限。</li>
+<li><strong>模型依赖</strong>: 使用标准ML模型（如随机森林），未探索深度学习模型。</li>
+<li><strong>最难情形</strong>: 可能对高度相似但拓扑特征差异小的结构（如同一家族内的细微构象变化）区分能力有限。</li>
+<li><strong>群体/领域边界</strong>: 仅适用于球状结构域，对膜蛋白、无序蛋白等可能不适用。</li>
+<li><strong>不确定性</strong>: 分类准确率依赖于BTM特征的质量和ML模型的选择，未提供置信区间或误差分析。</li>
+<li><strong>有边界复述</strong>: 本文证明，基于持久同调的固定长度拓扑向量（BTMs）结合监督学习，可以在SCOP/CATH分类任务上达到与结构比对方法相当的精度，同时显著降低计算成本，并优于序列方法在远源同源检测中的表现。但该方法依赖于预定义的结构分类体系，且未在非球状结构域或新折叠类型上验证。</li>
 </ul>
 <h2>12 作者自认局限</h2>
-<ul>
-<li><strong>在提供的材料中未发现作者明确承认的局限</strong>: 摘要中未提及任何局限。作者可能在正文中讨论了局限，但摘要未提供。</li>
-</ul>
+<p>在提供的材料中未发现作者明确承认的局限。作者仅提及“in-depth analyses confirm that most BTM features contribute significantly”，未讨论方法局限性。</p>
 <h2>13 批判性分析</h2>
 <table>
 <thead>
@@ -282,86 +265,78 @@
 </thead>
 <tbody>
 <tr>
-<td>未与深度学习结构表示方法对比</td>
-<td>当前GNN、Transformer（如ProteinMPNN、ESM-IF）在结构表示上表现优异，DFC可能不如它们</td>
-<td>深度学习方法是当前主流，缺乏对比会高估DFC的先进性</td>
-<td>在相同数据集上对比DFC与GNN-based分类器</td>
-<td>摘要未提及任何深度学习基线</td>
+<td>未提供具体数据集和实验细节</td>
+<td>结果可能不可复现，或仅在特定数据集上有效</td>
+<td>科学可复现性是方法可信度的基础</td>
+<td>要求作者提供数据集、代码和详细实验设置</td>
+<td>摘要和全文未提供任何具体数值、数据集规模或版本</td>
 </tr>
 <tr>
-<td>未测试对预测结构（如AlphaFold）的鲁棒性</td>
-<td>预测结构可能有局部误差，BTM对噪声的鲁棒性未知</td>
-<td>实际应用场景中大量使用预测结构</td>
-<td>在AlphaFold预测结构上重复实验</td>
-<td>作者仅提及“available structures”，未指定来源</td>
+<td>未与最新方法（如Foldseek）比较</td>
+<td>Foldseek是2023年提出的快速结构比对方法，可能比DALI/TM-align更高效</td>
+<td>需要证明DFC相对于当前最先进方法的优势</td>
+<td>在相同数据集上比较DFC与Foldseek的分类精度和速度</td>
+<td>摘要仅提及“structure-based comparison methods”，未具体点名</td>
 </tr>
 <tr>
-<td>未提供计算效率的量化数据</td>
-<td>“substantially improving”是定性描述，缺乏加速比</td>
-<td>无法判断实际可扩展性</td>
-<td>要求作者提供与DALI/TM-align的CPU时间对比</td>
+<td>未讨论拓扑特征对构象变化的敏感性</td>
+<td>蛋白质结构可能有柔性区域，拓扑特征可能随构象变化</td>
+<td>影响方法对构象采样或MD模拟结构的适用性</td>
+<td>在构象系综（如MD轨迹）上测试BTM的稳定性和分类一致性</td>
+<td>方法假设结构是静态的，未考虑构象多样性</td>
+</tr>
+<tr>
+<td>未提供特征重要性分析的细节</td>
+<td>“大多数特征贡献显著”可能掩盖了冗余或噪声特征</td>
+<td>影响特征选择和模型可解释性</td>
+<td>进行消融实验，移除不同拓扑维度（0维、1维、2维）的特征</td>
 <td>摘要仅给出定性结论</td>
-</tr>
-<tr>
-<td>BTM特征的可解释性有限</td>
-<td>持久同调特征（如环的出生/死亡）与生物学功能的关系不明确</td>
-<td>生物学家可能难以理解和使用这些特征</td>
-<td>进行案例研究，展示BTM特征如何对应特定结构基序</td>
-<td>作者未提供特征可视化或生物学解释</td>
-</tr>
-<tr>
-<td>未测试多构象或柔性结构</td>
-<td>蛋白质在溶液中存在构象集合，BTM对构象变化的敏感性未知</td>
-<td>分类任务中可能需要处理构象多样性</td>
-<td>在MD模拟轨迹或NMR结构集合上测试</td>
-<td>作者仅使用静态晶体结构</td>
 </tr>
 </tbody>
 </table>
 <h2>14 学到什么</h2>
 <p><strong>Agent 提炼的知识候选</strong>:
-1. <strong>可迁移概念: 拓扑特征化避免对齐</strong>。持久同调提供了一种旋转平移不变的结构表示方法，可迁移到构象采样中的结构相似性评估（如比较MD模拟中的不同构象），或分子对接中的结合位点拓扑比较。
-2. <strong>可迁移方法: 持久图到固定长度向量的转换</strong>。将持久图（非欧几里得数据）转换为可输入ML模型的向量（如持久图像、持久熵）的流程，可应用于蛋白质结构预测中的结构质量评估（如预测结构的拓扑合理性）。
-3. <strong>可迁移实验设计: 特征重要性分析</strong>。作者分析了BTM特征的贡献，这种“特征归因”方法可迁移到其他结构表示方法（如GNN的节点重要性），帮助理解哪些结构特征对分类或预测任务最关键。
-4. <strong>可迁移思路: 多尺度拓扑特征</strong>。BTM捕捉了从原子到域的多尺度拓扑信息，这种思路可迁移到蛋白质-配体结合位点的表征，通过持久同调识别结合口袋的拓扑特征（如空腔大小、形状）。</p>
+1. <strong>可迁移概念: 拓扑向量化作为结构指纹</strong>。持久同调将3D几何转化为固定长度、旋转平移不变的拓扑特征向量。可迁移到：蛋白质构象采样中的构象聚类（用BTM代替RMSD）、分子对接中的形状互补性评估（用BTM编码配体-受体表面拓扑）、MD模拟中的构象状态识别。
+2. <strong>可迁移方法: 无对齐结构比较</strong>。避免结构叠合，直接基于拓扑特征进行相似性度量。可迁移到：大规模结构数据库的快速搜索（如AlphaFold数据库）、蛋白质设计中的结构筛选（快速过滤不符合目标拓扑的设计）。
+3. <strong>可迁移实验设计: 层次化分类评估</strong>。按SCOP/CATH层次（类→折叠→超家族→家族）逐步评估，可揭示方法在不同进化距离上的能力。可迁移到：评估结构预测方法（如AlphaFold）在不同层次上的准确性、评估构象生成方法对全局折叠 vs 局部细节的捕捉能力。</p>
 <h2>15 与已有知识连接</h2>
 <ul>
-<li><strong>相似方法</strong>: 持久同调在蛋白质结构分析中的应用已有先例（如Xia et al., 2015; Cang &amp; Wei, 2017），但本文将其系统化用于分类管道，并命名为BTM。</li>
-<li><strong>组合方向</strong>: 可将BTM与深度学习结合（如持久同调+图神经网络），可能进一步提升分类性能。</li>
-<li><strong>冲突</strong>: 本文声称BTM优于序列方法，但未与最新的序列嵌入方法（如ESM-2、ProtT5）对比，这些方法在远源同源检测上已有突破。</li>
-<li><strong>可迁移领域</strong>: 本文方法可直接迁移到蛋白质结构预测的后处理（如AlphaFold预测结构的分类和注释），或用于大规模结构数据库（如AlphaFold DB）的自动分类。</li>
+<li><strong>相似方法</strong>: 持久同调在蛋白质结构分析中的应用已有先例（如GIAO、TopologyNet），本文的创新在于将其系统化为固定长度BTM向量并用于监督分类。</li>
+<li><strong>组合方向</strong>: 可将BTM特征与序列特征（如ESM-2嵌入）或结构特征（如AlphaFold的pLDDT）融合，提升分类或功能预测性能。</li>
+<li><strong>冲突观点</strong>: 传统观点认为结构叠合（如TM-align）是结构比较的黄金标准，本文挑战了其必要性，证明拓扑特征可达到相当精度。</li>
+<li><strong>可迁移领域</strong>: 该方法可直接迁移到RNA结构分类、蛋白质-配体结合位点分类、蛋白质界面拓扑分析等。</li>
 </ul>
 <h2>16 研究想法</h2>
 <p><strong>Agent 生成的研究候选</strong>:</p>
 <ol>
 <li>
-<p><strong>名称</strong>: 基于持久同调的AlphaFold预测结构质量评估
-   - <strong>来源局限/观察</strong>: 本文未测试BTM对预测结构的鲁棒性，而AlphaFold预测结构可能存在局部误差。
-   - <strong>核心假设</strong>: 预测结构的拓扑特征（BTM）与实验结构的差异可以反映预测质量（如pLDDT分数）。
-   - <strong>相对本文的增量</strong>: 从分类任务转向回归/排序任务（预测质量分数），并引入噪声鲁棒性分析。
-   - <strong>初步方法</strong>: 对AlphaFold预测结构和对应实验结构计算BTM，训练回归模型预测pLDDT或TM-score。
-   - <strong>验证方式</strong>: 在CASP数据集上比较BTM-based质量评估与现有方法（如AlphaFold的pLDDT、DeepAccNet）。
-   - <strong>可能的失败模式</strong>: BTM对全局拓扑敏感，但对局部误差（如侧链摆放）不敏感，导致质量评估精度低。
+<p><strong>名称</strong>: 拓扑引导的蛋白质构象采样与聚类
+   - <strong>来源局限/观察</strong>: 本文仅处理静态结构，未考虑构象柔性。MD模拟产生大量构象，传统聚类基于RMSD，计算昂贵且对旋转敏感。
+   - <strong>核心假设</strong>: 持久同调特征（BTMs）能有效区分不同构象状态，且比RMSD更鲁棒、更高效。
+   - <strong>相对本文的增量</strong>: 将BTM从静态分类扩展到动态构象分析，引入时间序列或系综分析。
+   - <strong>初步方法</strong>: 对MD轨迹的每一帧计算BTM向量，使用UMAP/t-SNE降维可视化，或使用HDBSCAN聚类，比较与RMSD聚类的差异。
+   - <strong>验证方式</strong>: 在已知构象变化（如激酶活化、配体诱导构象变化）的MD轨迹上，评估BTM聚类是否能正确分离不同状态，并与RMSD聚类和自由能景观比较。
+   - <strong>可能的失败模式</strong>: 拓扑特征对局部构象变化（如侧链旋转）不敏感，导致无法区分细微状态；计算持久同调对长轨迹可能仍较慢。
    - <strong>创新状态</strong>: unverified</p>
 </li>
 <li>
-<p><strong>名称</strong>: 结合持久同调与图神经网络的蛋白质构象分类
-   - <strong>来源局限/观察</strong>: 本文使用传统ML模型，未利用深度学习；且未处理多构象。
-   - <strong>核心假设</strong>: 将持久同调特征作为GNN的全局拓扑先验，可以提升对构象集合的分类能力。
-   - <strong>相对本文的增量</strong>: 引入GNN处理局部几何，同时用BTM提供全局拓扑信息，形成多尺度表示。
-   - <strong>初步方法</strong>: 对每个构象计算BTM，同时构建残基级图（节点=残基，边=空间邻近），将BTM作为图级特征输入GNN分类器。
-   - <strong>验证方式</strong>: 在MD模拟轨迹（如不同温度下的构象）上测试分类准确率，对比纯GNN和纯BTM方法。
-   - <strong>可能的失败模式</strong>: BTM与GNN特征冗余，或GNN已能隐式学习拓扑信息，导致无增益。
+<p><strong>名称</strong>: 基于拓扑特征的蛋白质-配体结合位点识别与分类
+   - <strong>来源局限/观察</strong>: 本文分类整个结构域，但结合位点通常具有独特的拓扑特征（如空腔、口袋）。现有方法依赖几何或能量计算。
+   - <strong>核心假设</strong>: 结合位点的持久同调特征（特别是1维环和2维空洞）能区分不同配体类型或结合模式。
+   - <strong>相对本文的增量</strong>: 将BTM从全局结构特征扩展到局部结合位点特征，并用于功能分类。
+   - <strong>初步方法</strong>: 从已知复合物中提取结合位点（如配体周围5Å内的残基）的点云，计算BTM向量，训练分类器预测配体类型（如ATP、NADH、抑制剂）或结合模式（如诱导契合、锁钥模型）。
+   - <strong>验证方式</strong>: 使用PDBbind或BindingDB数据集，比较BTM分类与基于序列（如PocketMiner）或基于结构（如Fpocket）的方法的精度。
+   - <strong>可能的失败模式</strong>: 结合位点大小和形状差异大，固定长度BTM可能丢失关键信息；不同配体可能共享相似拓扑特征。
    - <strong>创新状态</strong>: unverified</p>
 </li>
 <li>
-<p><strong>名称</strong>: 基于持久同调的蛋白质-配体结合位点拓扑指纹
-   - <strong>来源局限/观察</strong>: 本文仅处理单体结构，未涉及分子间相互作用。
-   - <strong>核心假设</strong>: 结合位点的拓扑特征（如空腔的持久性）可以区分不同配体类型或结合模式。
-   - <strong>相对本文的增量</strong>: 从单体分类转向结合位点表征，并引入配体信息。
-   - <strong>初步方法</strong>: 对结合位点（配体周围5Å内的残基）计算BTM，训练分类器预测配体类型（如ATP、NADH）或结合亲和力。
-   - <strong>验证方式</strong>: 在PDBbind或BindingDB数据集上测试，对比基于序列或结构的结合位点指纹方法。
-   - <strong>可能的失败模式</strong>: 结合位点拓扑过于相似（如所有ATP结合位点），导致分类精度低。
+<p><strong>名称</strong>: 拓扑增强的AlphaFold结构质量评估
+   - <strong>来源局限/观察</strong>: AlphaFold的pLDDT评估局部置信度，但可能无法捕捉全局拓扑错误（如链交叉、空洞异常）。本文的BTM可提供全局拓扑特征。
+   - <strong>核心假设</strong>: 预测结构的BTM特征与真实结构的BTM特征之间的差异（如持久性图Wasserstein距离）能作为全局质量指标，补充pLDDT。
+   - <strong>相对本文的增量</strong>: 从分类任务扩展到质量评估任务，引入拓扑距离度量。
+   - <strong>初步方法</strong>: 对AlphaFold预测结构和对应实验结构分别计算BTM向量，计算两者之间的余弦距离或持久性图距离，与TM-score、LDDT等指标比较相关性。
+   - <strong>验证方式</strong>: 在CASP或CAMEO数据集上，评估拓扑距离与全局质量指标的相关性，并测试其是否能检测pLDDT无法识别的全局错误。
+   - <strong>可能的失败模式</strong>: 拓扑距离可能对结构域重排敏感，但对局部错误不敏感；计算成本可能高于pLDDT。
    - <strong>创新状态</strong>: unverified</p>
 </li>
 </ol></div>
@@ -372,77 +347,68 @@
     <h2>审稿人评审</h2>
     <div class="md"><h2>Review setup</h2>
 <ul>
-<li><strong>Input scope</strong> Abstract only</li>
-<li><strong>Assessment boundary</strong> Claims made in the abstract</li>
-<li><strong>Shared manuscript claim summary</strong> The authors present DeltaFold Classifier (DFC), a protein structure classification pipeline that uses topological persistence (persistent homology) to generate fixed-length feature vectors (Biotopological Markers, BTMs) from protein 3D structures. These BTMs are used to train machine learning models for classification at SCOP and CATH hierarchy levels. The authors claim that DFC achieves performance comparable to structure-based methods with substantially improved computational efficiency, and outperforms sequence-based methods in distant homology detection.</li>
-<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or results sections provided</li>
-<li><strong>Missing materials affecting confidence</strong> Full manuscript (Methods, Results, Discussion, Figures, Tables, Supplementary Information); no quantitative performance metrics, no dataset descriptions, no baseline comparisons, no computational efficiency benchmarks, no statistical analyses</li>
+<li><strong>Input scope</strong> Full manuscript (abstract only provided)</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present the DeltaFold Classifier (DFC), a protein structure classification pipeline that uses topological persistence (persistent homology) to encode protein 3D structures as fixed-length vectors (Biotopological Markers, BTMs), which are then used to train machine learning models for classification at SCOP and CATH hierarchical levels. They claim DFC achieves performance comparable to structure-based methods with substantially improved computational efficiency, and outperforms sequence-based methods in distant homology detection.</li>
+<li><strong>Visible evidence base</strong> Abstract only; no figures, tables, methods, or results sections provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, including methods description, experimental setup, datasets, benchmark comparisons, statistical analyses, and all figures/tables</li>
 </ul>
 <h2>Reviewer</h2>
 <ul>
-<li>
-<p><strong>Overall assessment</strong> The abstract presents a conceptually interesting approach that combines topological data analysis with machine learning for protein structure classification. The idea of using persistent homology to generate rotation/translation-invariant feature vectors is methodologically sound and potentially valuable. However, the abstract provides no quantitative evidence to support the claimed performance levels. Without access to the full manuscript, the core claims cannot be evaluated. The work appears to be at an appropriate level for a specialized structural bioinformatics journal such as <em>Proteins</em>, but the abstract alone does not provide sufficient evidence to assess suitability for a high-impact multidisciplinary journal.</p>
-</li>
-<li>
-<p><strong>Who would be interested in the results, and why</strong> Structural bioinformaticians and computational biologists interested in alignment-free protein structure comparison methods; researchers developing machine learning approaches for protein classification; curators of structural databases (SCOP, CATH) seeking automated annotation tools. The topological approach offers a novel perspective that may interest mathematicians working in applied topology.</p>
-</li>
-<li>
-<p><strong>Major strengths</strong>
-  1. Novel application of persistent homology to generate fixed-length, rotation/translation-invariant feature vectors (BTMs) for protein structure classification, addressing a known limitation of structure superposition methods.
-  2. Alignment-free approach that promises substantial computational efficiency gains over structure-based comparison methods.
-  3. Hierarchical classification across SCOP and CATH levels demonstrates potential for multi-scale structural annotation.</p>
-</li>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting and potentially impactful approach to protein structure classification by combining topological data analysis with machine learning. The idea of using persistent homology to generate rotation- and translation-invariant feature vectors (BTMs) is novel in this context and addresses a genuine need for scalable classification methods. However, the abstract alone provides insufficient evidence to evaluate the validity, reproducibility, or significance of the claims. Critical details about the machine learning models, training procedures, benchmark datasets, and performance metrics are absent. The claim of "substantially improved computational efficiency" is not quantified, and the comparison to existing methods is not substantiated with any numerical results. The manuscript may have merit, but the current evidence base is too limited to assess its scientific contribution.</li>
+<li><strong>Who would be interested in the results, and why</strong> Structural bioinformaticians, computational biologists, and researchers working on protein structure comparison, classification, and annotation. The approach could be of interest to those developing scalable tools for analyzing the rapidly growing protein structure databases, as well as to machine learning practitioners applying topological data analysis to biological problems.</li>
+<li><strong>Major strengths</strong> 1. The conceptual framework of using persistent homology to generate fixed-length, alignment-free, and rotation/translation-invariant feature vectors for protein structures is elegant and addresses key limitations of existing methods. 2. The claimed ability to perform classification at multiple hierarchical levels (SCOP and CATH) suggests broad applicability. 3. The potential for substantial computational efficiency gains is a significant practical advantage if validated.</li>
 <li>
 <p><strong>Major Concerns</strong></p>
-</li>
+<ul>
 <li><strong>Concern ID</strong> R1-M1</li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
 <li><strong>Axis</strong> Evidence sufficiency</li>
-<li><strong>Claim pointer</strong> "It achieves performance comparable to that of structure-based comparison methods while substantially improving computational efficiency."</li>
-<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
-<li><strong>Concern</strong> The abstract provides no quantitative performance metrics (e.g., accuracy, precision, recall, F1-score, Matthews correlation coefficient) for any classification task. No baseline methods are named, and no numerical comparison is given. The claim of "substantially improving computational efficiency" is similarly unsupported by any runtime or scaling data.</li>
-<li><strong>Why it matters</strong> Without quantitative evidence, the central performance claims are unverifiable. The reader cannot assess whether the method is genuinely competitive with established approaches or whether the efficiency gains are meaningful.</li>
+<li><strong>Claim pointer</strong> "It achieves performance comparable to that of structure-based comparison methods while substantially improving computational efficiency. It also outperforms sequence-based methods in tasks involving distant homology detection."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract makes strong comparative performance claims without providing any quantitative results, statistical measures, or details of the benchmarks used. No accuracy, precision, recall, F1-scores, or computational runtime comparisons are reported. The terms "comparable" and "substantially improving" are subjective and unverifiable without numerical evidence.</li>
+<li><strong>Why it matters</strong> These are the central claims of the manuscript. Without quantitative evidence, the scientific contribution cannot be assessed, and the claims cannot be distinguished from speculation. The lack of specificity undermines the credibility of the entire study.</li>
 <li>
-<p><strong>Resolution test</strong> Provide in the full manuscript: (1) classification performance metrics (e.g., accuracy, F1) for each SCOP/CATH level, (2) comparison against at least 2-3 state-of-the-art structure-based and sequence-based methods, (3) runtime benchmarks on comparable datasets, (4) statistical significance tests for performance differences.</p>
+<p><strong>Resolution test</strong> Provide a table or figure comparing DFC performance (e.g., accuracy, F1-score, Matthews correlation coefficient) against at least two structure-based methods (e.g., TM-align, DALI) and two sequence-based methods (e.g., BLAST, HMMER) on standard benchmark datasets (e.g., SCOP 1.75, CATH 4.2). Include computational runtime measurements (e.g., CPU time per query) for all methods. Report statistical significance of differences (e.g., p-values or confidence intervals).</p>
 </li>
 <li>
 <p><strong>Concern ID</strong> R1-M2</p>
 </li>
 <li><strong>Severity</strong> Major</li>
 <li><strong>Blocking</strong> Yes</li>
-<li><strong>Axis</strong> Evidence sufficiency</li>
-<li><strong>Claim pointer</strong> "It also outperforms sequence-based methods in tasks involving distant homology detection."</li>
-<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
-<li><strong>Concern</strong> The abstract does not define what constitutes "distant homology detection," what benchmark dataset was used, which sequence-based methods were compared, or what metric showed improvement. The claim is too vague to evaluate.</li>
-<li><strong>Why it matters</strong> Distant homology detection is a well-defined benchmark problem in structural bioinformatics (e.g., SCOP superfamily-level classification). Without specifying the benchmark and providing quantitative results, this claim cannot be assessed.</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> "Protein three-dimensional structures are encoded using fixed-length vectors derived from persistent homology applied to point clouds of their spatial representation."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe how the point clouds are generated from protein structures, what filtration parameters are used in persistent homology, how the persistence diagrams are vectorized into BTMs, or what the dimensionality of the BTM vectors is. These details are essential for reproducibility.</li>
+<li><strong>Why it matters</strong> Without a clear description of the feature extraction pipeline, other researchers cannot replicate the method, verify the results, or apply it to their own data. This is a fundamental requirement for computational methods papers.</li>
 <li>
-<p><strong>Resolution test</strong> Specify the benchmark dataset (e.g., SCOP 1.75, SCOPe), define the homology detection task (e.g., superfamily-level classification), report performance metrics (e.g., ROC-AUC, precision-recall), and compare against established sequence-based methods (e.g., HMMER, HHsearch, DeepSeq).</p>
+<p><strong>Resolution test</strong> Provide a detailed methods section describing: (a) how atomic coordinates are converted to point clouds (e.g., all atoms, Cα only, side-chain centroids); (b) the type of filtration used (e.g., Vietoris-Rips, alpha complex); (c) the range of filtration parameters; (d) the method for vectorizing persistence diagrams (e.g., persistence landscapes, persistence images, Betti curves); (e) the final dimensionality of the BTM vectors. Include a schematic figure of the pipeline.</p>
 </li>
 <li>
 <p><strong>Concern ID</strong> R1-M3</p>
 </li>
 <li><strong>Severity</strong> Major</li>
-<li><strong>Blocking</strong> No</li>
+<li><strong>Blocking</strong> Yes</li>
 <li><strong>Axis</strong> Methodological clarity</li>
-<li><strong>Claim pointer</strong> "Protein three-dimensional structures are encoded using fixed-length vectors derived from persistent homology applied to point clouds of their spatial representation."</li>
-<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
-<li><strong>Concern</strong> The abstract does not explain how the point cloud representation is generated from protein structures (e.g., all atoms, Cα atoms, backbone atoms, side-chain atoms), what filtration type is used (e.g., Vietoris-Rips, alpha complex), or how the persistence diagrams are vectorized into fixed-length BTMs. The choice of vectorization method (e.g., persistence landscapes, persistence images, Betti curves) critically affects performance.</li>
-<li><strong>Why it matters</strong> Reproducibility and understanding of the method require these details. Different choices in the topological pipeline can lead to substantially different results.</li>
-<li>
-<p><strong>Resolution test</strong> Provide in the full manuscript: (1) explicit description of the point cloud representation, (2) filtration type and parameters, (3) vectorization method for persistence diagrams, (4) dimensionality of BTMs, (5) justification for these choices.</p>
+<li><strong>Claim pointer</strong> "The DFC pipeline uses the features of these BTMs to train machine learning models for protein structure classification at various hierarchical levels defined in the SCOP and CATH classifications."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract does not specify which machine learning models are used, how they are trained, how hyperparameters are selected, or how the data is split into training, validation, and test sets. The risk of overfitting or data leakage is not addressed.</li>
+<li><strong>Why it matters</strong> Machine learning results are highly sensitive to model choice, training procedures, and data handling. Without this information, the reported performance cannot be evaluated for validity or generalizability.</li>
+<li><strong>Resolution test</strong> Specify the machine learning model(s) used (e.g., random forest, SVM, neural network), the training/validation/test split strategy (e.g., 80/10/10, cross-validation), the hyperparameter tuning method, and any measures taken to avoid data leakage (e.g., ensuring no homologous proteins appear in both training and test sets). Report performance on held-out test sets.</li>
+</ul>
 </li>
 <li>
 <p><strong>Minor Comments</strong></p>
-</li>
+<ul>
 <li><strong>Concern ID</strong> R1-m1</li>
 <li><strong>Severity</strong> Minor</li>
 <li><strong>Axis</strong> Clarity</li>
 <li><strong>Affected element</strong> Terminology</li>
 <li><strong>Evidence pointer</strong> Abstract</li>
-<li><strong>Issue</strong> The term "Biotopological Markers (BTMs)" is introduced without definition or context. It is unclear whether this is a novel term coined by the authors or an existing concept.</li>
+<li><strong>Issue</strong> The term "Biotopological Markers (BTMs)" is introduced without explanation of why this specific term is chosen or how it relates to existing topological data analysis concepts.</li>
 <li>
-<p><strong>Required correction</strong> Define BTMs explicitly in the abstract or indicate that they are a novel contribution. If the term is new, consider whether it adds clarity or could be replaced by more standard terminology (e.g., "topological feature vectors").</p>
+<p><strong>Required correction</strong> Provide a brief justification for the new terminology and clarify how BTMs differ from or extend existing vectorization methods (e.g., persistence images, persistence landscapes).</p>
 </li>
 <li>
 <p><strong>Concern ID</strong> R1-m2</p>
@@ -451,49 +417,37 @@
 <li><strong>Axis</strong> Scope</li>
 <li><strong>Affected element</strong> Claim scope</li>
 <li><strong>Evidence pointer</strong> Abstract</li>
-<li><strong>Issue</strong> The abstract states that DFC "achieves performance comparable to that of structure-based comparison methods" but does not specify which structure-based methods were compared (e.g., DALI, TM-align, CE, Foldseek).</li>
+<li><strong>Issue</strong> The abstract claims DFC is "a fast, alignment-free, protein structure classification pipeline" but does not specify the size or diversity of the protein datasets used for evaluation.</li>
 <li>
-<p><strong>Required correction</strong> Name at least the primary baseline methods in the abstract to allow readers to contextualize the claim.</p>
+<p><strong>Required correction</strong> State the number of protein domains or chains used in the benchmark, the range of sizes (e.g., number of residues), and the diversity of folds represented.</p>
 </li>
 <li>
 <p><strong>Concern ID</strong> R1-m3</p>
 </li>
 <li><strong>Severity</strong> Minor</li>
-<li><strong>Axis</strong> Dataset description</li>
-<li><strong>Affected element</strong> Training and evaluation data</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Comparison scope</li>
 <li><strong>Evidence pointer</strong> Abstract</li>
-<li><strong>Issue</strong> The abstract does not mention what dataset(s) were used for training and evaluation, nor how the data were split (e.g., by protein, by fold, by superfamily) to avoid data leakage.</li>
-<li>
-<p><strong>Required correction</strong> Include in the abstract (or full manuscript) the dataset source, size, and train/test split strategy.</p>
-</li>
-<li>
-<p><strong>Technical failings that need to be addressed before the case is established</strong></p>
-</li>
-<li>R1-M1: Absence of any quantitative performance metrics or baseline comparisons</li>
-<li>R1-M2: Unsubstantiated claim of outperforming sequence-based methods in distant homology detection</li>
-<li>
-<p>R1-M3: Insufficient methodological detail to assess the topological pipeline</p>
-</li>
-<li>
-<p><strong>Assessment against Nature-style criteria</strong></p>
-</li>
-<li><strong>Originality</strong>: Moderate. The application of persistent homology to protein structure classification is not entirely novel (previous work exists on topological descriptors for proteins), but the specific pipeline combining BTMs with machine learning for hierarchical SCOP/CATH classification appears to be a new contribution.</li>
-<li><strong>Scientific importance</strong>: Potentially moderate. If the performance claims are validated, the method could be useful for large-scale structural annotation. However, the abstract does not demonstrate a breakthrough in accuracy or a fundamentally new capability.</li>
-<li><strong>Interdisciplinary readership</strong>: Limited. The work is primarily of interest to structural bioinformaticians and computational biologists. The abstract does not frame the results in a way that would engage a broader scientific audience (e.g., biologists, chemists, or mathematicians).</li>
-<li><strong>Technical soundness</strong>: Cannot be assessed from the abstract alone. The topological approach is theoretically sound, but the implementation, validation, and comparison details are missing.</li>
-<li>
-<p><strong>Readability for nonspecialists</strong>: Adequate for a specialized audience. The abstract uses technical terms (persistent homology, point clouds, SCOP, CATH) without explanation, which would be challenging for nonspecialists.</p>
-</li>
-<li>
-<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents an interesting methodological concept, but the core performance claims are entirely unsupported by quantitative data. A full manuscript with rigorous benchmarking, clear methodological details, and statistical validation would be required to assess the work's significance. The work appears more appropriate for a specialized structural bioinformatics journal than for a high-impact multidisciplinary venue.</p>
-</li>
+<li><strong>Issue</strong> The abstract mentions comparison to "structure-based comparison methods" and "sequence-based methods" but does not name specific tools or algorithms.</li>
+<li><strong>Required correction</strong> List the specific methods compared (e.g., TM-align, DALI, Foldseek, BLAST, HMMER, DeepAlign) to allow readers to assess the fairness and comprehensiveness of the comparison.</li>
 </ul>
-<h2>Risk / unsupported claims</h2>
-<ul>
-<li>"It achieves performance comparable to that of structure-based comparison methods" – unsupported; no quantitative data provided</li>
-<li>"substantially improving computational efficiency" – unsupported; no runtime data provided</li>
-<li>"It also outperforms sequence-based methods in tasks involving distant homology detection" – unsupported; no benchmark, metrics, or baseline methods specified</li>
-<li>"most BTM features contribute significantly to classification performance" – unsupported; no feature importance analysis provided</li>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (lack of quantitative evidence for performance claims), R1-M2 (insufficient methodological detail for reproducibility), R1-M3 (lack of machine learning training details and overfitting assessment). These three concerns are blocking because the central claims of the manuscript cannot be evaluated without the missing information.</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong> </p>
+</li>
+<li><strong>Originality</strong>: The application of persistent homology to generate fixed-length, alignment-free feature vectors for protein structure classification is novel and potentially original. However, the abstract does not clearly differentiate this work from existing topological data analysis applications in structural biology (e.g., persistence-based protein similarity measures). The originality claim is plausible but not fully established from the abstract alone.</li>
+<li><strong>Scientific importance</strong>: If validated, the approach could address a genuine need for scalable protein structure classification methods. The importance is moderate to high, depending on the magnitude of the claimed performance and efficiency gains.</li>
+<li><strong>Interdisciplinary readership</strong>: The work bridges topology, machine learning, and structural biology, which could appeal to a broad audience. However, the abstract is written in a specialized manner that may not be accessible to nonspecialists in topological data analysis.</li>
+<li><strong>Technical soundness</strong>: Cannot be assessed from the abstract. The lack of methodological detail and quantitative results prevents evaluation of technical soundness.</li>
+<li>
+<p><strong>Readability for nonspecialists</strong>: The abstract is reasonably clear but uses specialized terminology (e.g., "persistent homology," "point clouds," "filtration") without sufficient explanation for a general scientific audience. A brief intuitive explanation of persistent homology would improve accessibility.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents an interesting concept, but the absence of quantitative results, methodological details, and reproducibility information means the scientific claims cannot be evaluated. The manuscript may have merit, but a full review of the complete manuscript is necessary to determine whether the claims are supported. The authors should be invited to submit the full manuscript for a complete review.</p>
+</li>
 </ul></div>
   </section>
   

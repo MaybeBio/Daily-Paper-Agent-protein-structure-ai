@@ -1,78 +1,70 @@
 ## Review setup
 - **Input scope** Abstract only
-- **Assessment boundary** Claims and evidence presented in the abstract
-- **Shared manuscript claim summary** The authors report the molecular characterisation of vitellogenin (Vg) and its receptor (VgR) in *Maruca vitrata*, including cloning, phylogenetic analysis, protein modelling, docking, and CRISPR-based sgRNA design and *in vitro* validation.
-- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary data provided
-- **Missing materials affecting confidence** Full manuscript, all figures/tables, detailed methods (cloning, CRISPR design, *in vitro* cleavage assay protocols, docking parameters), sequence data, and statistical analyses
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report cloning and molecular characterisation of the complete vitellogenin (Vg) coding sequence from *Maruca vitrata*, phylogenetic and protein domain analyses, homology modelling and docking of Vg with its receptor (VgR), and design and in vitro validation of three sgRNAs for CRISPR/Cas9 editing, with two showing cleavage activity and one failing due to secondary structure.
+- **Visible evidence base** Abstract text only; no sequence alignments, phylogenetic trees, domain annotations, model quality metrics beyond GMQE values, docking scores, sgRNA sequences, or cleavage assay data are visible
+- **Missing materials affecting confidence** Full manuscript, figures, tables, supplementary data, sequence accession details, sgRNA design parameters, experimental protocols, and statistical analyses
 
 ## Reviewer
-- **Overall assessment** The abstract presents a logical progression from gene characterisation to CRISPR tool development for a pest of agricultural importance. However, the claims are supported only by summary statements without any visible data. The core functional validation—sgRNA cleavage activity—is described qualitatively, and the docking result is presented without context or error metrics. The abstract alone does not provide sufficient evidence to evaluate the technical soundness or reproducibility of the work.
-
-- **Who would be interested in the results, and why** Researchers working on lepidopteran pest management, insect reproductive biology, and CRISPR-based gene editing in non-model insects. The work provides preliminary molecular resources for future functional studies of Vg in *M. vitrata*.
-
-- **Major strengths** 1. Addresses a relevant pest species with high economic impact. 2. Integrates multiple approaches (cloning, phylogenetics, modelling, CRISPR) in a single study. 3. Reports a negative result (sgRNA3 failure) which is valuable for sgRNA design guidelines.
-
+- **Overall assessment** The abstract presents a logical progression from gene characterisation to CRISPR tool validation, with a clear applied motivation. However, the evidence base is too limited to assess technical soundness or the strength of the central claims. Several statements, particularly regarding docking interaction quality, sgRNA failure mechanism, and the "first" claim, require verification against full data. The work is potentially of interest to lepidopteran pest management and insect reproductive biology communities, but the case is not established from the abstract alone.
+- **Who would be interested in the results, and why** Researchers in insect molecular biology, reproductive physiology, and genetic pest management would find the Vg and VgR characterisation useful for comparative studies. Those working on CRISPR-based gene editing in non-model Lepidoptera would value validated sgRNA designs. Applied entomologists targeting sustainable control of *M. vitrata* would see direct relevance to future sterile insect or gene drive approaches.
+- **Major strengths** The study addresses a clear applied problem with a well-defined target gene. The combination of sequence, structural, and functional validation is a coherent approach. The inclusion of a negative sgRNA result adds transparency. The reported sequence identity with a known accession provides a verifiable anchor.
 - **Major Concerns**
   - **Concern ID** R1-M1
   - **Severity** Major
   - **Blocking** Yes
-  - **Axis** Technical soundness – data availability
-  - **Claim pointer** "sgRNA1 targeting the LPD_N domain and sgRNA2 targeting the signal peptide region exhibited efficient site-specific cleavage activity, whereas sgRNA3 failed to induce cleavage because of an unfavourable secondary structure"
-  - **Evidence pointer** Abstract only; no figure or table cited
-  - **Concern** The abstract states that sgRNA1 and sgRNA2 showed "efficient site-specific cleavage activity" and that sgRNA3 failed due to "unfavourable secondary structure," but no quantitative data (e.g., cleavage efficiency percentages, gel images, replicate numbers) are provided. The claim about secondary structure is speculative without supporting structural predictions or experimental validation.
-  - **Why it matters** The central functional claim of the study—that validated sgRNAs are ready for embryo microinjection—rests entirely on these *in vitro* cleavage results. Without visible data, the claim cannot be assessed for reproducibility or statistical significance.
-  - **Resolution test** Provide gel images, quantification of cleavage efficiency (e.g., band intensity ratios), replicate data, and secondary structure predictions for all three sgRNAs.
-
+  - **Axis** Technical soundness
+  - **Claim pointer** "Homology models of Vg and VgR (GMQE: 0.58 and 0.51) showed a favourable interaction by protein-protein docking (score: -295.66)."
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The docking score of -295.66 is presented as evidence of a "favourable interaction" without any context such as the docking software, scoring function, comparison to a negative control, or statistical significance. GMQE values of 0.58 and 0.51 indicate moderate model quality, which may limit the reliability of downstream docking predictions.
+  - **Why it matters** A docking score alone is not a validated measure of biological interaction. Overinterpretation of such in silico results could mislead subsequent experimental design. The claim of a favourable interaction is central to the structural characterisation component of the study.
+  - **Resolution test** Provide the docking methodology, a comparison with a known non-interacting protein pair or a mutated VgR, and an assessment of model quality impact on docking reliability. If possible, include experimental validation such as co-immunoprecipitation or binding assays.
   - **Concern ID** R1-M2
   - **Severity** Major
   - **Blocking** Yes
-  - **Axis** Technical soundness – docking analysis
-  - **Claim pointer** "Homology models of Vg and VgR (GMQE: 0.58 and 0.51) showed a favourable interaction by protein-protein docking (score: -295.66)"
-  - **Evidence pointer** Abstract only; no figure or table cited
-  - **Concern** The docking score of -295.66 is presented without units, comparison to a control (e.g., random or known non-interacting proteins), or any measure of confidence (e.g., Z-score, RMSD, or multiple docking runs). GMQE values of 0.58 and 0.51 indicate moderate model quality, which may limit the reliability of the docking prediction.
-  - **Why it matters** The docking result is used to support the biological relevance of the Vg-VgR interaction, but without proper validation, the claim of a "favourable interaction" is unsubstantiated.
-  - **Resolution test** Provide docking statistics, control docking results, model validation metrics (e.g., Ramachandran plots), and a clear statement of what the score represents.
-
+  - **Axis** Technical soundness
+  - **Claim pointer** "sgRNA3 failed to induce cleavage because of an unfavourable secondary structure that likely impaired Cas9-sgRNA complex formation."
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The causal mechanism for sgRNA3 failure is stated as "likely" but presented as a definitive explanation. No data on secondary structure prediction, experimental validation of the structure, or alternative explanations such as off-target binding or poor target site accessibility are provided.
+  - **Why it matters** Understanding why a sgRNA fails is critical for designing effective editing experiments. If the stated mechanism is incorrect, future users may waste resources on sgRNAs predicted to work based on flawed criteria.
+  - **Resolution test** Show the predicted secondary structure with free energy values, compare with sgRNA1 and sgRNA2, and ideally provide a modified sgRNA3 variant that rescues cleavage to confirm the mechanism.
   - **Concern ID** R1-M3
   - **Severity** Major
-  - **Blocking** No
-  - **Axis** Scientific importance – novelty
+  - **Blocking** Yes
+  - **Axis** Originality and claim substantiation
   - **Claim pointer** "this study provides the first CRISPR-oriented functional characterisation and sgRNA validation of the M. vitrata Vg gene"
-  - **Evidence pointer** Abstract only
-  - **Concern** The abstract does not clarify how this work differs from the previously reported *M. vitrata* Vg sequence (MG799570.1), with which it shares 99.04% identity. The novelty appears limited to the CRISPR component, but the functional characterisation (cloning, phylogenetics, domain analysis) largely replicates existing data.
-  - **Why it matters** The claim of "first CRISPR-oriented functional characterisation" is potentially valid, but the abstract does not demonstrate that the CRISPR work goes beyond sgRNA design and *in vitro* cleavage to actual functional disruption (e.g., in embryos or adults).
-  - **Resolution test** Clarify in the abstract or full text what new biological insight the CRISPR validation provides beyond confirming that sgRNAs can cut the target *in vitro*.
-
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The "first" claim is a strong novelty statement that cannot be verified from the abstract. No literature search or comparison with prior work is presented. Additionally, the abstract describes sgRNA validation but not actual gene editing in vivo, so "functional characterisation" may be overstated.
+  - **Why it matters** Novelty claims are a key basis for publication interest. If prior CRISPR work on this gene or species exists, the claim would be inaccurate. The distinction between in vitro sgRNA validation and functional characterisation in an organism is important for readers.
+  - **Resolution test** Provide a clear literature search statement and define what "functional characterisation" means in this context. If only in vitro cleavage was performed, revise the claim to "in vitro sgRNA validation" rather than functional characterisation.
 - **Minor Comments**
   - **Concern ID** R1-m1
   - **Severity** Minor
-  - **Axis** Clarity
+  - **Axis** Readability for nonspecialists
   - **Affected element** Abstract text
-  - **Evidence pointer** Abstract
-  - **Issue** The phrase "preliminary molecular resources for future CRISPR/Cas9 studies" is vague. It is unclear whether the sgRNAs have been tested in vivo or only in vitro.
-  - **Required correction** Specify the current stage of validation (e.g., "in vitro-validated sgRNAs" vs. "in vivo-tested sgRNAs").
-
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract uses domain abbreviations (LPD_N, DUF1943, VWD) without explaining their functional relevance, which may confuse readers unfamiliar with vitellogenin structure.
+  - **Required correction** Add a brief phrase describing the role of these domains, such as "lipid binding" for LPD_N, to improve accessibility.
   - **Concern ID** R1-m2
   - **Severity** Minor
-  - **Axis** Completeness
-  - **Affected element** Abstract text
-  - **Evidence pointer** Abstract
-  - **Issue** The abstract mentions "three conserved domains" but only names LPD_N, DUF1943, and VWD. It does not state which domain was targeted by sgRNA3 or why the signal peptide region was chosen for sgRNA2.
-  - **Required correction** Briefly justify the selection of target regions for each sgRNA.
-
-- **Technical failings that need to be addressed before the case is established** R1-M1 (sgRNA cleavage data missing), R1-M2 (docking validation missing)
-
-- **Assessment against Nature-style criteria** 
-  - **Originality**: Moderate. The Vg sequence is nearly identical to a previously reported one; the CRISPR component is novel but limited to *in vitro* validation.
-  - **Scientific importance**: Moderate. The pest is economically important, but the study does not demonstrate functional disruption of reproduction, which would be required for high impact.
-  - **Interdisciplinary readership**: Low. The work is primarily of interest to entomologists and insect molecular biologists; the CRISPR application is not sufficiently advanced to attract a broader audience.
-  - **Technical soundness**: Not assessable from the abstract alone. Key data (cleavage assays, docking) are missing.
-  - **Readability for nonspecialists**: Adequate. The abstract is clearly written but uses field-specific terminology without explanation.
-
-- **Recommendation posture** Currently not established from the provided evidence. The abstract lacks the quantitative data needed to evaluate the core claims of sgRNA validation and docking analysis. A full manuscript with figures, methods, and statistical details is required for a meaningful assessment.
+  - **Axis** Technical soundness
+  - **Affected element** Sequence identity claim
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The 99.04% identity with MG799570.1 is reported, but it is unclear if this is nucleotide or amino acid identity, and over what region.
+  - **Required correction** Specify the comparison type and region, such as "nucleotide identity across the full CDS" or "amino acid identity of the deduced protein."
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** sgRNA design description
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract states three sgRNAs were designed but only gives target regions for sgRNA1 and sgRNA2. The target for sgRNA3 is not specified.
+  - **Required correction** State the target region for sgRNA3 to allow readers to assess the design logic.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (docking interpretation), R1-M2 (sgRNA failure mechanism), R1-M3 (novelty and functional characterisation claim)
+- **Assessment against Nature-style criteria** Originality: The work appears incremental, combining standard gene characterisation with in vitro sgRNA testing; the "first" claim needs verification. Scientific importance: Moderate for pest management applications, but the abstract does not demonstrate a significant advance beyond existing CRISPR protocols. Interdisciplinary readership: Limited, as the abstract is primarily of interest to entomologists and molecular biologists. Technical soundness: Not assessable from the abstract; key methods and controls are missing. Readability for nonspecialists: The abstract is generally clear but uses domain abbreviations without explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract suggests a useful resource for the community, but the technical concerns regarding docking interpretation, sgRNA failure mechanism, and novelty claim must be resolved with full data before the case is convincing.
 
 ## Risk / unsupported claims
-- "sgRNA1 and sgRNA2 exhibited efficient site-specific cleavage activity" – unsupported; no data provided.
-- "sgRNA3 failed to induce cleavage because of an unfavourable secondary structure" – unsupported; speculative without structural data.
-- "Homology models showed a favourable interaction by protein-protein docking (score: -295.66)" – unsupported; no docking validation or controls.
-- "first CRISPR-oriented functional characterisation" – potentially overstated; the abstract describes only *in vitro* validation, not functional characterisation in vivo.
+- The claim of a "favourable interaction" based solely on a docking score is unsupported without methodological context and controls.
+- The causal explanation for sgRNA3 failure is speculative and presented as definitive.
+- The "first CRISPR-oriented functional characterisation" claim is unverifiable from the abstract and may overstate the scope of work, which appears limited to in vitro sgRNA validation.
+- The applied relevance to "sustainable management" is stated as a future possibility, not a demonstrated outcome, which is appropriately framed but should not be read as a current achievement.

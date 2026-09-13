@@ -1,85 +1,78 @@
 ## Review setup
-- **Input scope** Abstract only
-- **Assessment boundary** Claims and evidence presented in the abstract
-- **Shared manuscript claim summary** The authors present a computational method (WEMD + normal mode driving) that can predict cryptic pockets from apo protein structures, and demonstrate its performance on a diverse protein dataset, achieving 57% success in sampling pockets within 2 Å of holo conformation. They also show that pocket ligandability can be ranked using their Target X model.
-- **Visible evidence base** Abstract text only; no figures, tables, or supplementary materials provided
-- **Missing materials affecting confidence** Full manuscript, dataset composition, detailed methodology, statistical analysis, comparison to existing methods, Target X model details, and all figures/tables
+- **Input scope** Full manuscript (abstract and main text provided)
+- **Assessment boundary** Methods, results, figures, and supplementary information not provided; only the abstract and a brief description of the study are available.
+- **Shared manuscript claim summary** The authors present a computational method combining normal-mode-driven Weighted Ensemble molecular dynamics (WEMD) simulations with a ligandability prediction model (Target X) to identify cryptic pockets in proteins from their apo structures, achieving a 57% success rate in sampling pockets within 2 Å of the holo conformation across a diverse protein dataset.
+- **Visible evidence base** Abstract text only; no figures, tables, or supplementary data are available for review.
+- **Missing materials affecting confidence** Full methods, dataset details, simulation parameters, validation statistics, comparison to existing methods, and all figures/tables are absent. The assessment is severely limited by the lack of primary evidence.
 
 ## Reviewer
-- **Overall assessment** The abstract describes a potentially valuable computational approach for cryptic pocket detection, a problem of high relevance to drug discovery. The reported success rates (57% for structural sampling, 92% for volume overlap at 20% threshold) are promising. However, the abstract alone provides insufficient detail to evaluate the robustness of the method, the diversity and size of the test set, the statistical significance of results, and the practical utility of the ligandability ranking. The claims are interesting but not yet established from the provided material.
-
-- **Who would be interested in the results, and why** Computational chemists, structural biologists, and drug discovery researchers interested in targeting challenging proteins (e.g., KRAS, Werner helicase) where cryptic pockets are critical for inhibitor design. The method could reduce experimental costs and time in early-stage target assessment.
-
-- **Major strengths** 1. Addresses a significant problem in drug discovery: identifying cryptic pockets without prior ligand knowledge. 2. Reports quantitative success metrics (57% structural sampling, 92% volume overlap at 20% threshold). 3. Integrates pocket detection with ligandability prediction (Target X), adding practical utility.
-
+- **Overall assessment** The manuscript addresses a timely and important problem in drug discovery—the computational identification of cryptic pockets from apo protein structures. The proposed approach, combining normal-mode-driven WEMD with a ligandability model, is conceptually interesting and builds on prior work by the authors. However, the provided abstract alone is insufficient to evaluate the robustness, reproducibility, or generalizability of the claims. Critical details on the dataset, simulation protocols, validation metrics, and statistical significance are missing, preventing a rigorous assessment of the method's performance and its potential impact.
+- **Who would be interested in the results, and why** Computational chemists, structural biologists, and drug discovery researchers would be interested, as the method offers a potentially cost-effective and scalable alternative to experimental cryptic pocket discovery, which could accelerate target identification for challenging proteins like KRAS and Werner helicase.
+- **Major strengths** The problem is of high scientific and therapeutic importance. The use of normal modes to guide WEMD simulations is a clever strategy to enhance sampling of rare conformational events. The integration of a ligandability prediction model (Target X) to rank pockets adds practical value for prioritization in drug design.
 - **Major Concerns**
-  - **Concern ID** R1-M1
-  - **Severity** Major
-  - **Blocking** Yes
-  - **Axis** Evidence sufficiency
-  - **Claim pointer** "evaluate this cryptic pocket detection technique on a data set of diverse proteins and show that it successfully samples cryptic pockets within 2 A of the known holo conformation 57% of the time"
-  - **Evidence pointer** Abstract; location not provided
-  - **Concern** The abstract does not specify the size, composition, or selection criteria of the "diverse protein dataset." Without knowing how many proteins were tested, their structural diversity, and whether they represent a fair challenge set, the 57% success rate cannot be interpreted meaningfully. A small or biased dataset could inflate performance.
-  - **Why it matters** Generalizability is the core claim. If the dataset is small or cherry-picked, the method's utility for novel targets is unsubstantiated.
-  - **Resolution test** Provide the full dataset (number of proteins, names, PDB IDs, cryptic pocket characteristics) and justify its diversity. Report per-protein results to show variance.
-
-  - **Concern ID** R1-M2
-  - **Severity** Major
-  - **Blocking** Yes
-  - **Axis** Methodological validation
-  - **Claim pointer** "successfully samples cryptic pockets within 2 A of the known holo conformation 57% of the time, starting with just the apo structure"
-  - **Evidence pointer** Abstract; location not provided
-  - **Concern** The metric "within 2 A of the known holo conformation" is ambiguous. Does this refer to RMSD of the pocket residues, the ligand binding site, or the entire protein? The abstract also reports volume overlap metrics (20%, 50%, 80%) with success rates of 92%, 84%, and 46%, but the relationship between these two metrics is unclear. Are they measuring the same thing? How are "success" and "sampling" defined?
-  - **Why it matters** Without clear, reproducible definitions, the reported numbers cannot be independently verified or compared to other methods.
-  - **Resolution test** Define all metrics precisely (e.g., pocket RMSD, volume overlap calculation method, threshold for "sampled"). Show how the two metrics correlate for individual cases.
-
-  - **Concern ID** R1-M3
-  - **Severity** Major
-  - **Blocking** No
-  - **Axis** Comparison to existing methods
-  - **Claim pointer** "Time-consuming and expensive experiments currently used to uncover these biologically rare events could be usefully complemented by a computational method"
-  - **Evidence pointer** Abstract; location not provided
-  - **Concern** The abstract does not compare the WEMD method to any existing computational cryptic pocket detection approaches (e.g., MD simulations, mixed-solvent MD, or machine learning methods). Without a benchmark, the claimed advantage over experiments is speculative.
-  - **Why it matters** The field already has computational methods for cryptic pocket detection. The novelty and practical value of this work depend on showing improvement or complementarity.
-  - **Resolution test** Include a comparison to at least one established computational method on the same dataset, reporting the same metrics.
-
+    - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical soundness
+    - **Claim pointer** The method successfully samples cryptic pockets within 2 Å of the known holo conformation 57% of the time, starting with just the apo structure.
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract reports a 57% success rate for sampling pockets within 2 Å RMSD of the holo conformation, but no details are given on the dataset size, diversity, or how "success" is defined (e.g., per-residue RMSD, pocket-wide RMSD, or ligand-binding site alignment). The threshold of 2 Å is also not justified. Without these details, the claim is unverifiable.
+    - **Why it matters** The core claim of the method's predictive accuracy depends on this metric. If the dataset is small or biased, or if the RMSD threshold is too lenient, the reported success rate may not reflect true performance on unseen targets.
+    - **Resolution test** Provide the full dataset (number and names of proteins, their structural classes, and known cryptic pockets), define the RMSD calculation method, and justify the 2 Å threshold. Include a confusion matrix or per-target success/failure list.
+    - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Reproducibility
+    - **Claim pointer** The predicted pockets show at least 20%, 50%, and 80% volume overlap with the bound ligand in the holo structure, with success rates of 92%, 84%, and 46%, respectively.
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The volume overlap metric is not defined. Is it the Jaccard index, Dice coefficient, or another measure? How is the pocket volume computed (e.g., using a grid-based method, solvent-accessible surface, or a tool like fpocket)? The success rates at different overlap thresholds are presented without confidence intervals or statistical tests.
+    - **Why it matters** Volume overlap is a key validation metric. Without a clear definition and statistical context, the reported success rates cannot be interpreted or compared to other methods.
+    - **Resolution test** Define the volume overlap metric explicitly, describe the pocket detection algorithm, and provide per-target overlap values with error bars or confidence intervals. Include a comparison to a baseline method (e.g., random sampling or standard MD).
+    - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Generalizability
+    - **Claim pointer** The method is evaluated on a "data set of diverse proteins."
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The abstract does not specify the number of proteins, their sequence or structural diversity, or whether they represent different fold classes, sizes, or functional families. The claim of diversity is unsubstantiated.
+    - **Why it matters** A method that works on a few well-studied targets (e.g., KRAS) may not generalize to other proteins. The diversity of the test set is critical for assessing the method's broad applicability.
+    - **Resolution test** List all proteins in the dataset, their PDB IDs, and key properties (size, fold, number of known cryptic pockets). Provide a phylogenetic or structural diversity analysis.
+    - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Validation
+    - **Claim pointer** The ligandability prediction model Target X can successfully rank candidate pockets from WEMD.
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** No details are given on Target X: its architecture, training data, features, or performance metrics (e.g., AUC, precision-recall). The claim of "successfully rank" is vague—what is the success criterion (e.g., top-1, top-3, or top-10 ranking)? How does it compare to existing ligandability predictors?
+    - **Why it matters** The practical utility of the method hinges on the ability to prioritize pockets. Without validation of Target X, the ranking step is unsubstantiated.
+    - **Resolution test** Describe Target X in detail, provide its performance on a held-out test set, and show ranking results for the cryptic pockets identified by WEMD (e.g., a table of predicted vs. actual ligandability scores).
 - **Minor Comments**
-  - **Concern ID** R1-m1
-  - **Severity** Minor
-  - **Axis** Clarity
-  - **Affected element** Claim about Target X
-  - **Evidence pointer** Abstract; location not provided
-  - **Issue** "we can successfully rank candidate pockets from WEMD using our pocket ligandability prediction model, Target X" – no performance metric (e.g., AUC, enrichment factor) is provided for this ranking.
-  - **Required correction** Report at least one quantitative measure of Target X's ranking performance on the WEMD-generated pockets.
-
-  - **Concern ID** R1-m2
-  - **Severity** Minor
-  - **Axis** Reproducibility
-  - **Affected element** Method description
-  - **Evidence pointer** Abstract; location not provided
-  - **Issue** The abstract mentions "normal modes representing the direction of the most collective motion of a protein" but does not specify how many normal modes were used, how they were selected, or how they drive the WEMD simulations.
-  - **Required correction** Provide key methodological parameters in the abstract or reference a detailed methods section.
-
-  - **Concern ID** R1-m3
-  - **Severity** Minor
-  - **Axis** Statistical rigor
-  - **Affected element** Success rate reporting
-  - **Evidence pointer** Abstract; location not provided
-  - **Issue** The success rates (57%, 92%, 84%, 46%) are reported without confidence intervals or error estimates. For a dataset of unknown size, these point estimates are not informative.
-  - **Required correction** Report confidence intervals or standard errors, and specify the number of test cases.
-
-- **Technical failings that need to be addressed before the case is established** R1-M1 (dataset composition), R1-M2 (metric definitions), R1-M3 (comparison to existing methods)
-
+    - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Abstract
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The phrase "within 2 A of the known holo conformation" is ambiguous. It is unclear whether this refers to the pocket region, the entire protein, or a subset of residues.
+    - **Required correction** Specify the structural alignment used (e.g., "pocket Cα RMSD" or "ligand-binding site heavy-atom RMSD").
+    - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Reproducibility
+    - **Affected element** Abstract
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The abstract mentions "normal modes representing the direction of the most collective motion of a protein" but does not specify how many normal modes were used or how they were selected.
+    - **Required correction** Provide the number of normal modes and the selection criterion (e.g., lowest-frequency modes, modes with highest overlap with known conformational changes).
+    - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Completeness
+    - **Affected element** Abstract
+    - **Evidence pointer** Abstract; location not provided
+    - **Issue** The abstract states that the method "successfully samples cryptic pockets" but does not mention false positives or the rate at which non-cryptic pockets are incorrectly identified as cryptic.
+    - **Required correction** Report the false positive rate or specificity of the method, or acknowledge this limitation.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The core claims of success rate, volume overlap, dataset diversity, and ligandability ranking are all unverifiable from the provided material.
 - **Assessment against Nature-style criteria** 
-  - **Originality**: The combination of normal-mode-driven WEMD with ligandability prediction (Target X) appears novel, but the abstract does not clearly differentiate from prior WEMD work by the same group.
-  - **Scientific importance**: High – cryptic pocket detection is a bottleneck in targeting challenging proteins.
-  - **Interdisciplinary readership**: Moderate – primarily computational chemistry and structural biology; drug discovery audience may find it relevant.
-  - **Technical soundness**: Cannot be assessed from abstract alone; key methodological details and validation are missing.
-  - **Readability for nonspecialists**: The abstract is clear and well-structured, though some metrics (e.g., volume overlap) could be better explained.
-
-- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting approach with promising numbers, but the lack of dataset details, metric definitions, and comparison to existing methods prevents evaluation of the method's validity and significance. A full manuscript with rigorous validation is needed.
-
-## Risk / unsupported claims
-- The claim that the method "successfully samples cryptic pockets within 2 A of the known holo conformation 57% of the time" is unsupported without dataset details and metric definitions.
-- The claim that Target X "successfully rank[s] candidate pockets" is unsupported without performance metrics.
-- The implied advantage over experimental methods is unsupported without comparison to existing computational approaches.
+    - **Originality**: The combination of normal-mode-driven WEMD with a ligandability model is novel, but the individual components (WEMD, normal modes, pocket prediction) are established. The originality is moderate and depends on the demonstrated performance gain over existing methods.
+    - **Scientific importance**: High. Cryptic pocket discovery is a bottleneck in drug development for challenging targets. A reliable computational method would have significant impact.
+    - **Interdisciplinary readership**: The topic is of interest to computational chemists, structural biologists, and drug discovery researchers, but the abstract lacks the clarity and context needed to engage a broader audience (e.g., biologists or clinicians).
+    - **Technical soundness**: Cannot be assessed from the abstract alone. The missing details on dataset, metrics, and validation prevent any judgment of technical rigor.
+    - **Readability for nonspecialists**: The abstract is concise but uses jargon (e.g., "Weighted Ensemble molecular dynamics," "normal modes," "ligandability") without explanation, limiting accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript has potential but requires full disclosure of methods, data, and validation to support its claims. A supportive recommendation would be contingent on addressing all major concerns with complete evidence.

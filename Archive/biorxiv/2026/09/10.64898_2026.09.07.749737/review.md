@@ -1,93 +1,73 @@
 ## Review setup
-- **Input scope** Abstract only
+- **Input scope** Full manuscript (abstract only provided)
 - **Assessment boundary** Claims and evidence presented in the abstract
-- **Shared manuscript claim summary** The authors present PRIS, a unified structure-based deep-learning framework comprising PRISeq (nucleotide probability estimation) and PRIScore (residue-nucleotide distance prediction). PRIS is claimed to improve native-like protein-RNA structure selection from AlphaFold3, infer position-specific binding preferences, and enable high-throughput virtual screening of RNA libraries with superior performance over existing methods.
-- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided.
-- **Missing materials affecting confidence** Full manuscript, all figures/tables, method details, benchmark definitions, dataset descriptions, code, and supplementary information.
+- **Shared manuscript claim summary** The authors present PRIS, a unified deep-learning framework for high-throughput screening of protein-binding RNAs, comprising two components: PRISeq for nucleotide probability estimation and PRIScore for residue-nucleotide distance prediction. The framework is claimed to improve structure selection from AlphaFold3 predictions and to outperform existing methods in binding-preference inference and virtual screening.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided
+- **Missing materials affecting confidence** Full manuscript, including methods description, benchmark details, dataset composition, training/validation splits, statistical analyses, and all figures/tables
 
 ## Reviewer
-- **Overall assessment** The abstract presents a potentially impactful framework for structure-based RNA screening, combining structure selection and binding preference inference. The reported performance metrics are impressive, particularly the speed and enrichment factors. However, the abstract lacks sufficient methodological detail and validation context to assess the robustness of the claims. Key concerns include the absence of benchmark composition, statistical significance, and comparison fairness. The framework’s novelty relative to existing deep learning approaches for protein-RNA interactions is not clearly articulated.
-- **Who would be interested in the results, and why** Researchers in computational structural biology, RNA bioinformatics, and therapeutic RNA discovery (e.g., aptamer design) would be interested. The framework promises to accelerate RNA library screening by integrating structure prediction with binding preference inference, which could streamline the identification of functional RNAs.
-- **Major strengths** 1. The unified framework (PRISeq + PRIScore) addresses two complementary tasks—structure selection and binding preference inference—within a single architecture, which is a practical advance. 2. The reported screening speed (129,248 RNA hairpins in 11.95 seconds) and enrichment factor (EF 0.5% of 14.40) are notably high, suggesting potential for high-throughput applications. 3. The framework is demonstrated on multiple targets (MS2, NELF-E, GFP), indicating some generality.
+- **Overall assessment** The abstract presents a potentially interesting computational framework for RNA-protein interaction prediction and screening. However, the provided material is insufficient to evaluate the validity of the core claims. Key methodological details, benchmark definitions, and statistical evidence are absent, making it impossible to assess technical soundness or reproducibility.
+- **Who would be interested in the results, and why** Researchers in computational structural biology, RNA biology, and aptamer discovery would be interested if the claims are substantiated. The framework's reported speed and accuracy could be valuable for high-throughput RNA library screening and rational design of RNA-based therapeutics.
+- **Major strengths** The framework's two-component design (structure selection + binding-preference inference) is conceptually logical. The reported screening speed (129,248 hairpins in 11.95 seconds) is impressive if validated. The application to multiple protein targets (MS2, NELF-E, GFP) suggests potential generalizability.
 - **Major Concerns**
     - **Concern ID** R1-M1
     - **Severity** Major
     - **Blocking** Yes
-    - **Axis** Methodological transparency and reproducibility
-    - **Claim pointer** PRIScore improves selection of native-like protein-RNA predictions from AlphaFold3, achieving a top-1 success rate of 81.91% on a docking benchmark, compared to 79.26% for AlphaFold3.
-    - **Evidence pointer** Abstract only; no benchmark details provided.
-    - **Concern** The abstract does not describe the composition of the docking benchmark (e.g., number of complexes, diversity of protein/RNA types, resolution range). The reported improvement (2.65 percentage points) is small, and without error bars or statistical testing, it is unclear whether this difference is significant. Additionally, the method by which AlphaFold3 predictions were generated and filtered is not specified.
-    - **Why it matters** Without benchmark details and statistical rigor, the claimed improvement over AlphaFold3 cannot be evaluated. A small absolute gain may be within the noise of the prediction method.
-    - **Resolution test** Provide the full benchmark dataset, performance metrics with confidence intervals or standard deviations, and a statistical test (e.g., paired t-test or Wilcoxon) comparing PRIScore to AlphaFold3.
+    - **Axis** Technical soundness
+    - **Claim pointer** "PRIScore improves the selection of native-like protein-RNA predictions generated by AlphaFold3, achieving a top-1 success rate of 81.91% on a docking benchmark, compared to 79.26% for AlphaFold3."
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The reported improvement of 2.65 percentage points (81.91% vs. 79.26%) is small, and no statistical significance is reported. The docking benchmark is not described—its size, composition, and whether it overlaps with training data are unknown. Without confidence intervals or error bars, this difference could be within noise.
+    - **Why it matters** The core claim of PRIScore improving upon AlphaFold3 depends on this comparison. If the improvement is not statistically robust, the framework's primary advantage is unsubstantiated.
+    - **Resolution test** Provide the full benchmark description, including number of test cases, standard deviations or confidence intervals, and a statistical test (e.g., paired t-test or McNemar's test) comparing PRIScore to AlphaFold3.
 
     - **Concern ID** R1-M2
     - **Severity** Major
     - **Blocking** Yes
-    - **Axis** Comparison fairness and baseline selection
-    - **Claim pointer** On a PWM benchmark, PRISeq achieved a mean absolute error (MAE) of 0.75, outperforming FoldX, Rosetta-based scoring functions, and NA-MPNN.
-    - **Evidence pointer** Abstract only; no benchmark details provided.
-    - **Concern** The abstract does not specify the PWM benchmark (e.g., number of complexes, RNA length, source of experimental binding data). The baselines (FoldX, Rosetta, NA-MPNN) are not described in terms of their implementation or parameter settings. It is unclear whether these baselines were run under comparable conditions (e.g., same input structures, same scoring protocol).
-    - **Why it matters** Without a clear description of the benchmark and baseline configurations, the claim of outperformance is unverifiable. Different implementations or input structures could lead to different results.
-    - **Resolution test** Provide the full benchmark dataset, baseline implementation details (including version, parameters, and input structures), and a table comparing MAE with standard deviations across multiple runs or cross-validation.
+    - **Axis** Technical soundness
+    - **Claim pointer** "On a PWM benchmark, PRISeq achieved a mean absolute error (MAE) of 0.75, outperforming FoldX, Rosetta-based scoring functions, and NA-MPNN."
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The PWM benchmark is undefined. The MAE of 0.75 is reported without units, baseline MAE values, or the range of the predicted quantity. It is unclear whether this MAE is on a normalized scale (e.g., 0–1) or an absolute scale. Without these details, the claim of "outperforming" cannot be evaluated.
+    - **Why it matters** This is the primary quantitative evidence for PRISeq's accuracy. If the benchmark or metric is ambiguous, the entire performance claim is unverifiable.
+    - **Resolution test** Define the PWM benchmark (number of proteins, RNA sequences, data source), report the MAE scale and range, and provide the MAE values for all compared methods with error estimates.
 
     - **Concern ID** R1-M3
     - **Severity** Major
     - **Blocking** Yes
-    - **Axis** Validation of virtual screening claims
-    - **Claim pointer** In virtual screening against MS2 protein, PRISeq screens 129,248 RNA hairpins within 11.95 seconds, achieving the highest EF 0.5% of 14.40, approximately double the best baseline.
-    - **Evidence pointer** Abstract only; no screening details provided.
-    - **Concern** The abstract does not describe the RNA library (e.g., sequence diversity, length, source), the baseline methods used for comparison, or the definition of enrichment factor (EF 0.5%). The screening time is reported without hardware specifications (e.g., GPU/CPU type, memory), making it impossible to assess computational efficiency. Additionally, the claim of "approximately double the best baseline" requires explicit identification of that baseline and its EF value.
-    - **Why it matters** Virtual screening claims are highly sensitive to library composition, baseline selection, and hardware. Without these details, the reported performance cannot be reproduced or compared to other methods.
-    - **Resolution test** Provide the RNA library composition, baseline methods and their EF values, hardware specifications, and a clear definition of EF 0.5%. Report screening time with standard deviation across multiple runs.
-
-    - **Concern ID** R1-M4
-    - **Severity** Major
-    - **Blocking** No
-    - **Axis** Novelty and differentiation
-    - **Claim pointer** PRIS is a "unified structure-based deep-learning framework" that combines structure selection and binding preference inference.
-    - **Evidence pointer** Abstract only.
-    - **Concern** The abstract does not clearly differentiate PRIS from existing deep learning methods for protein-RNA interaction prediction (e.g., RNABindR, PRIME, or graph-based methods). The key architectural innovations (A-GAT, k-MPI attention) are mentioned but not explained in terms of their advantage over standard attention or graph convolution mechanisms.
-    - **Why it matters** For a Nature-level journal, the novelty of the framework must be clearly established relative to the state of the art. Without this, the contribution may be incremental.
-    - **Resolution test** Provide a clear comparison table or discussion of existing methods, and explain why A-GAT and k-MPI attention are necessary and superior for this task.
+    - **Axis** Reproducibility
+    - **Claim pointer** "In virtual screening against MS2 protein, PRISeq screens 129,248 RNA hairpins within 11.95 seconds, achieving the highest EF 0.5% of 14.40, approximately double the best baseline."
+    - **Evidence pointer** Abstract; location not provided
+    - **Concern** The enrichment factor (EF 0.5%) of 14.40 is reported without the baseline EF values or the number of true positives in the top 0.5%. The screening time of 11.95 seconds is hardware-dependent and not contextualized (e.g., GPU vs. CPU, model size). The "best baseline" is not named.
+    - **Why it matters** Virtual screening performance is a key application claim. Without baseline comparisons and hardware specifications, the reported speed and enrichment cannot be assessed for significance or reproducibility.
+    - **Resolution test** Report the EF 0.5% for all baselines, the number of known binders in the library, and the hardware configuration (GPU/CPU, memory, batch size) used for timing.
 
 - **Minor Comments**
     - **Concern ID** R1-m1
     - **Severity** Minor
-    - **Axis** Clarity and completeness
-    - **Affected element** Abstract text
+    - **Axis** Clarity
+    - **Affected element** Framework description
     - **Evidence pointer** Abstract
-    - **Issue** The abstract states that PRIS "effectively enriches active aptamers against NELF-E and GFP while preserving sequence diversity," but no quantitative metrics (e.g., enrichment factor, diversity index) are provided for these targets.
-    - **Required correction** Include quantitative results for NELF-E and GFP, or state that these results are presented in the full manuscript.
+    - **Issue** The relationship between PRIScore and PRISeq is described as "complementary," but it is unclear whether they are used sequentially (PRIScore first, then PRISeq) or in parallel. The abstract states "The selected structures are then fed into PRISeq," suggesting a pipeline, but this is not explicit.
+    - **Required correction** Clarify the workflow: are PRIScore and PRISeq used in a fixed pipeline, or can they be used independently? Provide a schematic in the main text.
 
     - **Concern ID** R1-m2
     - **Severity** Minor
-    - **Axis** Terminology
-    - **Affected element** Abstract text
+    - **Axis** Completeness
+    - **Affected element** Application scope
     - **Evidence pointer** Abstract
-    - **Issue** The term "native-like" is used without a clear definition. In the context of protein-RNA docking, "native-like" typically refers to structures within a certain RMSD threshold (e.g., < 2 Å or < 5 Å). The threshold used should be specified.
-    - **Required correction** Define "native-like" explicitly (e.g., RMSD < X Å) in the abstract or full manuscript.
+    - **Issue** The abstract mentions screening against NELF-E and GFP but provides no quantitative results (e.g., enrichment factors, hit rates) for these targets. The claim "PRIS also effectively enriches active aptamers" is qualitative.
+    - **Required correction** Provide quantitative metrics for the NELF-E and GFP screens, or state that these results are preliminary and will be detailed in the full manuscript.
 
-    - **Concern ID** R1-m3
-    - **Severity** Minor
-    - **Axis** Reproducibility
-    - **Affected element** Abstract text
-    - **Evidence pointer** Abstract
-    - **Issue** The abstract mentions "AlphaFold3" but does not specify the version or whether the predictions were used as-is or refined.
-    - **Required correction** Specify the AlphaFold3 version and any post-processing steps applied to its predictions.
-
-- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. These concerns relate to missing benchmark details, statistical validation, and comparison fairness, which are essential for evaluating the core claims of the framework.
-
-- **Assessment against Nature-style criteria**
-    - **Originality**: The unified framework combining structure selection and binding preference inference is a practical integration, but the abstract does not clearly demonstrate how the individual components (A-GAT, k-MPI attention) are novel beyond existing graph-based methods. The originality is currently unclear.
-    - **Scientific importance**: The problem of high-throughput RNA screening is important for therapeutic discovery. If validated, the framework could have significant impact. However, the abstract does not provide enough evidence to assess the magnitude of the advance.
-    - **Interdisciplinary readership**: The topic bridges structural biology, machine learning, and RNA therapeutics, which is of broad interest. The abstract is written in a way that is accessible to nonspecialists, though some technical terms (e.g., k-MPI attention) could be better explained.
-    - **Technical soundness**: The technical soundness cannot be assessed from the abstract alone. The reported metrics are promising, but the lack of benchmark details, statistical tests, and baseline comparisons raises concerns.
-    - **Readability for nonspecialists**: The abstract is generally clear, but the description of the architecture (A-GAT, k-MPI) is too brief for a nonspecialist to understand the innovation. A brief explanation of why these components are advantageous would improve readability.
-
-- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting framework with promising metrics, but the lack of methodological detail, benchmark descriptions, and statistical validation prevents a reliable assessment of the claims. The authors should provide the full manuscript and supplementary materials to address the major concerns.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3
+- **Assessment against Nature-style criteria** 
+    - **Originality**: The two-component framework (structure selection + binding-preference inference) appears novel, but the individual components (graph attention networks, distance prediction) are established techniques. The originality claim is plausible but not yet substantiated.
+    - **Scientific importance**: If validated, the framework could address a significant bottleneck in RNA aptamer discovery. However, the importance depends on the magnitude of improvement over existing methods, which is not yet clear.
+    - **Interdisciplinary readership**: The work bridges computational biology, structural biology, and RNA therapeutics, which could attract broad interest. The abstract is accessible to nonspecialists.
+    - **Technical soundness**: Cannot be assessed from the abstract alone. The missing benchmark details, statistical analyses, and methodological descriptions prevent evaluation.
+    - **Readability for nonspecialists**: The abstract is well-written and understandable, with clear definitions of acronyms (A-GAT, k-MPI, MAE, EF). However, the lack of context for benchmarks and metrics may confuse readers unfamiliar with the field.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting concept, but the core quantitative claims are unverifiable without the full manuscript. A decision would require the complete methods, benchmark descriptions, and statistical analyses.
 
 ## Risk / unsupported claims
-- The claim that PRIScore improves AlphaFold3's top-1 success rate (81.91% vs. 79.26%) is unsupported without benchmark details and statistical significance.
-- The claim that PRISeq outperforms FoldX, Rosetta, and NA-MPNN on a PWM benchmark is unsupported without benchmark composition and baseline implementation details.
-- The claim of virtual screening performance (EF 0.5% of 14.40, 129,248 hairpins in 11.95 seconds) is unsupported without library description, baseline comparison, and hardware specifications.
-- The claim that PRIS "effectively enriches active aptamers against NELF-E and GFP while preserving sequence diversity" is unsupported without quantitative metrics for these targets.
+- The claim that PRIScore "improves the selection of native-like protein-RNA predictions generated by AlphaFold3" is unsupported without statistical significance testing and benchmark details.
+- The claim that PRISeq "outperforming FoldX, Rosetta-based scoring functions, and NA-MPNN" is unsupported without baseline MAE values and benchmark definition.
+- The claim of "achieving the highest EF 0.5% of 14.40, approximately double the best baseline" is unsupported without baseline EF values and hardware specifications.
+- The claim that "PRIS also effectively enriches active aptamers against NELF-E and GFP" is unsupported as no quantitative results are provided.

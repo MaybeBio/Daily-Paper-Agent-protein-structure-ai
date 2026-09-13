@@ -1,75 +1,92 @@
 ## Review setup
-- **Input scope** Full manuscript (preprint)
-- **Assessment boundary** Claims, methods, and evidence as presented in the provided text
-- **Shared manuscript claim summary** The authors report the de novo computational design of small protein binders targeting specific surface sites on MAP4K4, evaluated primarily by AlphaFold3 (AF3) ipTM scores and limited molecular dynamics (MD) simulations, and claim that the approach demonstrates the feasibility of generating novel, site-specific protein probes using free, publicly available tools.
-- **Visible evidence base** AF3 ipTM scores for 20 candidates; BLASTp results; 100-ns MD simulations for 5 complexes; AF3 control experiments with CDK2; ToxinPred2 and AlgPred 2.0 screening.
-- **Missing materials affecting confidence** No experimental validation (e.g., binding affinity measurements, cellular assays, structural characterization); no sequences or structures of the designed binders; no details of the hotspot determination algorithm; no MD simulation data (e.g., RMSD, energy plots); no statistical details for the control comparison beyond a p-value.
+- **Input scope** Full manuscript text, including abstract, introduction, methods, results, discussion, and conclusions. No supplementary files, figures, or tables were provided beyond those referenced in the text.
+- **Assessment boundary** Evaluation is limited to the claims and evidence presented in the provided manuscript text. No external validation, replication, or access to raw data, code, or supplementary materials was possible.
+- **Shared manuscript claim summary** The authors claim that de novo design of small protein binders targeting specific surface hotspots of MAP4K4 is achievable using free, publicly available computational tools (RFdiffusion, ProteinMPNN, AlphaFold2, BindCraft) and that AlphaFold3 (AF3) evaluation, molecular dynamics simulations, and negative-control screening support the specificity and stability of the top candidates.
+- **Visible evidence base** The manuscript provides AF3 ipTM scores for 20 candidates, AF2 pipeline scores, MD simulation results for five complexes, BLASTp sequence novelty searches, and in silico toxicity/allergenicity predictions. Tables and figures are referenced but not directly visible in the provided text.
+- **Missing materials affecting confidence** Supplementary tables (S1, S2), all figures (1–5), the full list of candidate sequences, the hotspot scoring algorithm code, and the raw MD trajectory data were not provided. This limits the ability to independently verify the reported results and statistical analyses.
 
 ## Reviewer
-- **Overall assessment** The manuscript presents a potentially interesting computational pipeline for designing protein binders to a therapeutically relevant kinase, MAP4K4. However, the central claim—that these are genuine, specific binders—rests entirely on computational predictions (AF3 ipTM scores and short MD simulations) without any experimental validation. The evidence is insufficient to support the conclusion that the designed proteins are functional binders. The work is more appropriately framed as a computational design and *in silico* evaluation study, but even then, the lack of detailed methods and data limits reproducibility and confidence.
-- **Who would be interested in the results, and why** Researchers in computational protein design, de novo binder engineering, and those interested in MAP4K4 as a therapeutic target. The pipeline and hotspot algorithm could be of methodological interest, but the lack of experimental validation will limit its impact for the broader structural biology and drug discovery communities.
-- **Major strengths** 1. Addresses an important and undrugged target (MAP4K4) with a novel computational approach. 2. The use of multiple, publicly available tools (RFdiffusion, ProteinMPNN, AF2, BindCraft, AF3) in a pipeline is commendable for accessibility. 3. The inclusion of a negative-control kinase (CDK2) and allergen/toxin screening adds some rigor.
+- **Overall assessment** The manuscript presents a computationally intensive pipeline for de novo binder design against MAP4K4, a therapeutically relevant kinase. The work is timely and addresses an important gap in targeting this kinase with protein binders. However, the study is entirely computational, with no experimental validation, and the evidence base is limited by the absence of key data (sequences, figures, supplementary materials). The claims of specificity and stability rest on AF3 predictions and MD simulations, which, while supportive, are not definitive. The manuscript is well-structured and readable, but several technical and conceptual issues need to be addressed before the conclusions can be fully accepted.
+- **Who would be interested in the results, and why** Researchers in computational protein design, structural biology, and kinase biology would find this work relevant. The demonstration of a low-cost, accessible pipeline for binder design could appeal to the broader synthetic biology and biotechnology community, including citizen scientists. The identification of novel MAP4K4 surface epitopes may interest those studying kinase signaling and drug development.
+- **Major strengths** The study addresses a clinically relevant target with a clear unmet need. The use of multiple, publicly available tools and the emphasis on accessibility is commendable. The inclusion of negative-control screening and MD simulations adds depth to the computational validation. The finding that AF2 and AF3 scores diverge significantly is an important methodological observation.
 - **Major Concerns**
-    - **Concern ID** R1-M1
-    - **Severity** Major
-    - **Blocking** Yes
-    - **Axis** Experimental validation
-    - **Claim pointer** The manuscript claims that the designed proteins are "binders" and "protein probes" for MAP4K4.
-    - **Evidence pointer** Section: Results (AF3 evaluation, MD simulations)
-    - **Concern** The entire claim of binding rests on AF3 ipTM scores and 100-ns MD simulations. AF3 is a structure prediction tool, not a binding assay. High ipTM scores indicate a plausible predicted complex, but they do not confirm that the protein actually binds in solution. The MD simulations (100 ns) are too short to assess binding stability or specificity reliably, and no experimental data (e.g., SPR, ITC, pull-down, fluorescence polarization) are provided.
-    - **Why it matters** Without experimental validation, the central conclusion that "de novo design of small, site-specific protein probes... is achievable" is unsupported. The field requires experimental confirmation to distinguish genuine binders from computational false positives.
-    - **Resolution test** Provide experimental binding data (e.g., SPR, ITC, or at minimum a pull-down assay) for at least the top 3–5 candidates, demonstrating specific, concentration-dependent binding to MAP4K4 and not to a control protein.
-    - **Concern ID** R1-M2
-    - **Severity** Major
-    - **Blocking** Yes
-    - **Axis** Reproducibility and data availability
-    - **Claim pointer** The manuscript describes a "hotspot determination algorithm" and a pipeline that generated "thousands of candidate sequences."
-    - **Evidence pointer** Section: Methods (implied)
-    - **Concern** The hotspot determination algorithm is not described in sufficient detail to be reproduced. The sequences of the 20 evaluated binders are not provided. The MD simulation data (e.g., RMSD, energy, contact maps) are not shown. The BLASTp results are only summarized qualitatively.
-    - **Why it matters** Reproducibility is a cornerstone of scientific claims. Without access to the sequences, algorithm details, and raw simulation data, other researchers cannot evaluate, replicate, or build upon this work.
-    - **Resolution test** Provide: (1) a detailed description or pseudocode of the hotspot algorithm; (2) the full sequences of all 20 designed binders (e.g., in a supplementary table); (3) representative MD simulation data (e.g., RMSD plots, energy traces) for the 5 complexes.
-    - **Concern ID** R1-M3
-    - **Severity** Major
-    - **Blocking** No
-    - **Axis** Statistical rigor and control
-    - **Claim pointer** The control experiment with CDK2 shows a "significant, consistent reduction in ipTM (p = 0.0039)."
-    - **Evidence pointer** Section: Results (AF3 control)
-    - **Concern** The statistical test used is not specified. The p-value is reported without effect size, confidence intervals, or sample size (number of candidates tested). It is unclear if the comparison is between the 9 high-confidence candidates and their CDK2 counterparts, or between all 20. A single p-value is insufficient to demonstrate specificity.
-    - **Why it matters** The claim of binding specificity hinges on this control. Inadequate statistical reporting undermines confidence in the conclusion.
-    - **Resolution test** Specify the statistical test (e.g., paired t-test, Wilcoxon), report the sample size, effect size (e.g., mean difference in ipTM), and confidence intervals. Show the individual data points (e.g., a paired dot plot).
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that nine candidates are "AF3-confirmed" binders with ipTM ≥ 0.80, and that these represent high-confidence, specific binders.
+  - **Evidence pointer** Section 3.1, Table 2 (referenced, not provided)
+  - **Concern** The core claim of successful binder design rests entirely on AF3 ipTM scores. While AF3 is a powerful tool, ipTM is a predicted metric and does not confirm actual binding. The manuscript lacks any experimental validation (e.g., SPR, BLI, pull-down) to support the claim that these are true binders. The term "AF3-confirmed" is misleading, as it implies a level of validation that is not achieved by computational prediction alone.
+  - **Why it matters** The central conclusion of the paper is that de novo design of specific binders is achievable. Without experimental evidence, this conclusion is not established. The manuscript's own limitations section acknowledges this, but the abstract and conclusions present the findings with more certainty than is warranted.
+  - **Resolution test** The authors must either provide experimental binding data for at least a subset of the top candidates or temper the language throughout the manuscript to clearly state that these are computational predictions requiring experimental validation. The claim of "confirmed" binders should be removed or rephrased.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and data availability
+  - **Claim pointer** The authors state that a custom hotspot scoring algorithm was developed and that all candidate sequences are reported in Table 2.
+  - **Evidence pointer** Section 2.2, Table 2 (referenced, not provided)
+  - **Concern** The manuscript does not provide the code for the hotspot scoring algorithm, nor are the full sequences of the 20 candidates visible in the provided text. Without access to the algorithm and the sequences, the work cannot be reproduced or independently evaluated. The claim of a "custom coded automated scoring tool" is unverifiable.
+  - **Why it matters** Reproducibility is a cornerstone of scientific research. The lack of access to the algorithm and sequence data prevents other researchers from building on this work or assessing its validity. This is a significant barrier to the manuscript's impact.
+  - **Resolution test** The authors must provide the hotspot scoring algorithm as supplementary code or a clear pseudocode description, and the full sequences of all 20 candidates must be made available in a supplementary table or a public repository.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Statistical rigor
+  - **Claim pointer** The authors report a statistically significant reduction in ipTM for binders against CDK2 compared to MAP4K4 (p = 0.0039, Wilcoxon signed-rank test).
+  - **Evidence pointer** Section 3.9, Table 3 (referenced, not provided)
+  - **Concern** The statistical test is mentioned, but the details are not provided. The number of comparisons, the distribution of the data, and whether the test was one- or two-tailed are unclear. With only nine candidates, the power of the test is limited, and the p-value alone is insufficient to assess the robustness of the finding.
+  - **Why it matters** The specificity claim is a key part of the paper. A weak statistical analysis undermines the confidence in this claim. The authors should provide more detail on the statistical methods and consider reporting effect sizes or confidence intervals.
+  - **Resolution test** Provide a clear description of the statistical test, including the number of pairs, the test assumptions, and the exact p-value. Consider reporting the median and interquartile range of ipTM values for both targets and a measure of effect size.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretation of MD results
+  - **Claim pointer** The authors state that MD simulations show that "interchain contact was retained for all five designs over 100 ns," and that BC-88 is the "strongest MD-supported candidate."
+  - **Evidence pointer** Section 3.8, Figure 4 (referenced, not provided)
+  - **Concern** The MD results are presented qualitatively. The manuscript reports RMSD, Rg, and hydrogen-bond counts, but the criteria for "stability" are not defined. For example, BC-128 shows progressive destabilization, and PA2-history ends with a late-stage excursion. The interpretation of these results as supportive of binding is not fully justified. The authors do not discuss whether the observed fluctuations are within the range expected for a stable complex or if they indicate weak binding.
+  - **Why it matters** The MD simulations are used to support the stability of the predicted complexes. If the interpretation is not rigorous, the support is weakened. The authors should define clear criteria for stability and discuss the limitations of the 100-ns timescale.
+  - **Resolution test** Provide quantitative criteria for what constitutes a "stable" complex (e.g., RMSD thresholds, hydrogen-bond occupancy). Discuss the implications of the observed fluctuations for the predicted binding affinity and whether longer simulations or enhanced sampling methods would be needed.
 - **Minor Comments**
-    - **Concern ID** R1-m1
-    - **Severity** Minor
-    - **Axis** Clarity
-    - **Affected element** Abstract/Introduction
-    - **Evidence pointer** Location not provided
-    - **Issue** The phrase "truly novel binding solutions and previously unexplored regions of protein sequence space" is an overstatement based on BLASTp results alone. Low BLASTp hits do not guarantee novelty of function or structure.
-    - **Required correction** Rephrase to: "BLASTp searches returned only low-significance matches for half of the sequences, suggesting that these sequences are not closely related to known proteins, but further structural and functional characterization is needed to confirm novelty."
-    - **Concern ID** R1-m2
-    - **Severity** Minor
-    - **Axis** Data presentation
-    - **Affected element** Results (MD simulations)
-    - **Evidence pointer** Location not provided
-    - **Issue** The statement "stability varying substantially between systems" is vague. No quantitative metrics (e.g., RMSD, number of interchain contacts over time) are provided.
-    - **Required correction** Provide a table or figure summarizing key MD metrics (e.g., average RMSD, minimum distance, number of hydrogen bonds) for each of the 5 complexes.
-    - **Concern ID** R1-m3
-    - **Severity** Minor
-    - **Axis** Scope
-    - **Affected element** Discussion/Conclusion
-    - **Evidence pointer** Location not provided
-    - **Issue** The final sentence about "amateur scientists" and "public" contribution is a speculative leap that is not supported by the data presented. The pipeline, while using free tools, still requires significant computational expertise and resources.
-    - **Required correction** Remove or substantially temper this claim. Focus the conclusion on the computational feasibility and the need for experimental validation.
-- **Technical failings that need to be addressed before the case is established** R1-M1 (experimental validation), R1-M2 (reproducibility/data availability), R1-M3 (statistical rigor).
-- **Assessment against Nature-style criteria**
-    - **Originality**: Moderate. The combination of tools is not entirely novel, but the application to MAP4K4 and the hotspot algorithm have some originality.
-    - **Scientific importance**: Potentially high if the binders are validated, but currently low due to lack of experimental evidence.
-    - **Interdisciplinary readership**: Limited. The work is primarily computational and will mainly interest protein designers and computational biologists.
-    - **Technical soundness**: Weak. The core claims are not supported by experimental data, and the computational evidence (AF3, short MD) is insufficient to establish binding.
-    - **Readability for nonspecialists**: Fair. The abstract is clear, but the methods and results lack detail for a general audience.
-- **Recommendation posture** Currently not established from the provided evidence. The manuscript requires major revisions, including experimental validation and full data disclosure, before it can be considered for publication in a high-impact journal.
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, "Results" section
+  - **Issue** The abstract states that "nine candidates having ipTM ≥ 0.80" and "five scoring ≥ 0.87," but the total number of candidates (20) is not mentioned until later. This could be confusing to a reader scanning the abstract.
+  - **Required correction** Clarify the total number of candidates evaluated in the abstract, e.g., "Of 20 candidates evaluated, nine had ipTM ≥ 0.80..."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical detail
+  - **Affected element** Section 2.5
+  - **Evidence pointer** Section 2.5, "Additional scoring of designed binders with AlphaFold3"
+  - **Issue** The authors state that a 295-residue subsequence of 4U40 was used for AF3 evaluation but do not specify which residues are included. This is important for reproducibility.
+  - **Required correction** Provide the residue range of the subsequence or refer to the supplementary sequence file more explicitly.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Language
+  - **Affected element** Section 4, Discussion
+  - **Evidence pointer** Section 4, "Discussion"
+  - **Issue** The sentence "they comprise provide substantial additional support" contains a grammatical error.
+  - **Required correction** Correct to "they provide substantial additional support."
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Section 3.10
+  - **Evidence pointer** Section 3.10, "Predicted biophysical properties of top candidates"
+  - **Issue** The authors mention that instability index values are reported in Supplementary Table S1, but this table was not provided. The discussion of the instability index is brief and could benefit from a more detailed interpretation.
+  - **Required correction** Ensure the supplementary table is available and expand the discussion of what the instability index values mean for the practical use of these binders.
+- **Technical failings that need to be addressed before the case is established** The lack of experimental validation is the primary technical failing. The absence of the hotspot scoring algorithm code and full sequence data also needs to be addressed. The statistical analysis of the specificity data needs more detail.
+- **Assessment against Nature-style criteria** 
+  - **Originality** The application of a combined computational pipeline to a specific kinase target is not entirely novel, but the systematic comparison of AF2 and AF3 scores and the focus on a low-cost, accessible approach adds a degree of originality.
+  - **Scientific importance** The target, MAP4K4, is clinically relevant, and the potential to design specific binders is of interest. However, the lack of experimental validation limits the immediate scientific impact.
+  - **Interdisciplinary readership** The work is relevant to computational biology, structural biology, and protein engineering. The accessibility angle may broaden its appeal.
+  - **Technical soundness** The computational methods are generally sound, but the reliance on predicted metrics without experimental confirmation is a significant weakness. The MD simulations are a positive addition but are not fully rigorous.
+  - **Readability for nonspecialists** The manuscript is generally well-written and accessible, but the methods section assumes familiarity with the specific tools and metrics.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript presents a promising computational pipeline, but the central claims of successful binder design and specificity are not supported by experimental data. The lack of access to key data (sequences, code, figures) further weakens the case. The authors should be encouraged to provide experimental validation or significantly temper their conclusions and make all data and code publicly available.
 
 ## Risk / unsupported claims
-- The claim that the designed proteins are "binders" or "protein probes" is unsupported without experimental validation.
-- The claim of "truly novel binding solutions" is an overstatement based on BLASTp alone.
-- The claim that the work points to a "greater role for the public and amateur scientists" is speculative and unsupported.
-- The claim of binding specificity based on a single p-value from an unspecified test is insufficiently supported.
+- The claim that nine candidates are "AF3-confirmed" binders is unsupported, as AF3 is a prediction tool and no experimental validation is provided.
+- The claim that the designed binders are "truly novel protein sequences" based on BLAST searches is only weakly supported, as the search parameters and the significance thresholds are not fully described.
+- The claim that the binder-defined hotspots represent "previously uncharacterized biologically active sites" is speculative and not supported by functional data.
+- The claim that the pipeline can be used by "the public and amateur scientists" is an extrapolation that is not directly supported by the data presented.
+- The statistical significance of the specificity data (p = 0.0039) is reported without sufficient methodological detail to assess its validity.

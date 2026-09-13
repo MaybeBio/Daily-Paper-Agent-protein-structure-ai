@@ -1,80 +1,81 @@
 ## Review setup
-- **Input scope** Full manuscript (abstract only provided)
-- **Assessment boundary** Claims and evidence as presented in the abstract
-- **Shared manuscript claim summary** The authors report the identification and characterization of two xanthine oxidase (XO) inhibitory peptides (QGDIVAIPSGAAHW and AFYLAGGVPR) from sesame 11S globulin trypsin hydrolyzate, demonstrating mixed-type inhibition, preferential binding to the FAD domain of XO via molecular docking and MD simulations, and in vivo efficacy in a zebrafish hyperuricemia model.
-- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided
-- **Missing materials affecting confidence** Full manuscript (methods, results, figures, tables, supplementary data), experimental details for kinetics, docking, MD simulations, and zebrafish model
+- **Input scope** Full manuscript (abstract and main text, including figures and tables)
+- **Assessment boundary** Scientific content, methodology, data interpretation, and conclusions as presented in the provided material
+- **Shared manuscript claim summary** The manuscript identifies and characterizes novel xanthine oxidase (XO) inhibitory peptides from sesame 11S globulin, demonstrating that these peptides preferentially target the FAD domain of XO, and validates their efficacy in a zebrafish hyperuricemia model.
+- **Visible evidence base** Abstract, Introduction, Results, Discussion, Materials and Methods, Figures 1–7, Tables 1–3, Supplementary Information (as referenced)
+- **Missing materials affecting confidence** Raw mass spectrometry data (e.g., spectra, peak lists), molecular dynamics simulation trajectories, MM-GBSA energy decomposition details, zebrafish experimental protocols (e.g., sample sizes, statistical methods), and full supplementary figures/tables are not provided. The manuscript lacks explicit statistical reporting for key in vivo data.
 
 ## Reviewer
-- **Overall assessment** The abstract presents a potentially interesting discovery of food-derived XO inhibitory peptides from sesame with a novel FAD-domain targeting mechanism. However, the evidence base is too limited to evaluate the rigor of the claims. Critical details on peptide identification, kinetic analysis, computational validation, and in vivo experimental design are absent. The claim of preferential FAD domain binding requires stronger experimental support beyond computational predictions.
-
-- **Who would be interested in the results, and why** Researchers in food chemistry, nutraceuticals, and functional foods, particularly those studying bioactive peptides for hyperuricemia management. The FAD-domain targeting mechanism may also interest structural biologists studying XO inhibition.
-
-- **Major strengths** 1. Identification of novel XO inhibitory peptides from an understudied source (sesame). 2. Multi-level characterization from in vitro kinetics to in vivo zebrafish model. 3. Computational evidence for a potentially novel binding site (FAD domain).
-
+- **Overall assessment** This manuscript presents a systematic investigation of XO inhibitory peptides from sesame protein, combining in vitro, in silico, and in vivo approaches. The identification of peptides targeting the FAD domain is novel and potentially significant for the development of functional foods. However, several methodological and analytical weaknesses undermine the robustness of the conclusions, particularly regarding the molecular dynamics simulations, statistical reporting, and the mechanistic link between FAD binding and in vivo efficacy.
+- **Who would be interested in the results, and why** Researchers in food chemistry, bioactive peptides, and nutraceuticals will be interested in the identification of novel XO inhibitors from a sustainable protein source. The study also appeals to those studying hyperuricemia and gout, as it provides a potential dietary intervention strategy. The FAD domain targeting mechanism may interest structural biologists and drug discovery scientists.
+- **Major strengths** 1. The study uses a multi-protease screening approach to identify the most effective hydrolysate, which is methodologically sound. 2. The combination of in vitro kinetics, molecular docking, and molecular dynamics simulations provides a comprehensive characterization of peptide-XO interactions. 3. The zebrafish hyperuricemia model offers a relevant in vivo validation system. 4. The identification of peptides targeting the FAD domain, rather than the molybdenum center, is a novel finding that could lead to different inhibition mechanisms.
 - **Major Concerns**
-    - **Concern ID** R1-M1
-    - **Severity** Major
-    - **Blocking** Yes
-    - **Axis** Experimental validation of binding site
-    - **Claim pointer** "Molecular docking against two XO crystal structures (3NVY, 3NRZ) consistently favored the FAD domain"
-    - **Evidence pointer** Abstract only; no docking results, binding poses, or comparison with known inhibitors provided
-    - **Concern** The claim of preferential FAD domain binding is based solely on computational docking and MD simulations. No experimental validation (e.g., site-directed mutagenesis, competitive binding assays with FAD, or XO variants lacking the FAD domain) is mentioned. The abstract does not specify whether the docking was performed on the full XO structure or isolated domains, nor whether the FAD domain is accessible in the native enzyme conformation.
-    - **Why it matters** Without experimental confirmation, the FAD domain targeting claim remains speculative. Many computational docking studies report false positives, especially for allosteric or non-catalytic sites. This is the central mechanistic claim of the paper.
-    - **Resolution test** Provide experimental evidence such as: (a) binding assays with XO variants lacking the FAD domain, (b) competition assays with FAD or FAD-binding inhibitors, (c) spectroscopic evidence of peptide-FAD interaction, or (d) at minimum, a rigorous comparison of docking scores against known FAD-binding and molybdenum-binding inhibitors.
-
-    - **Concern ID** R1-M2
-    - **Severity** Major
-    - **Blocking** Yes
-    - **Axis** In vivo model rigor
-    - **Claim pointer** "In a zebrafish hyperuricemia model, TSH reduced uric acid and XO activity while upregulating purine salvage (hprt1) and urate transport (oat1) genes"
-    - **Evidence pointer** Abstract only; no details on model induction, dosing, sample size, statistical analysis, or controls
-    - **Concern** The abstract reports in vivo efficacy for the crude hydrolyzate (TSH), not the purified peptides. The gene expression data (hprt1, oat1) suggest additional mechanisms beyond XO inhibition, but the abstract provides no information on: (a) how hyperuricemia was induced, (b) dose-response relationships, (c) whether the peptides themselves were tested in vivo, (d) sample size and statistical power, (e) whether the observed effects are specific to the identified peptides or due to other components in TSH.
-    - **Why it matters** The title and claims focus on specific peptides, but the in vivo validation uses a complex mixture. Without testing the purified peptides, the causal link between the identified peptides and the observed effects is not established. The gene expression changes also complicate the mechanism.
-    - **Resolution test** Test the purified peptides individually or in combination in the zebrafish model, or provide clear evidence that the observed effects are attributable to the identified peptides (e.g., by comparing TSH with a peptide-depleted fraction).
-
-    - **Concern ID** R1-M3
-    - **Severity** Major
-    - **Blocking** Yes
-    - **Axis** Peptide identification and purity
-    - **Claim pointer** "Eight 11S globulin peptides were identified by nanoUHPLC-ESI-Q-TOF MS/MS"
-    - **Evidence pointer** Abstract only; no MS/MS spectra, sequence coverage, or purity data
-    - **Concern** The abstract does not specify whether the identified peptides were synthesized or isolated from the hydrolyzate. If synthesized, the purity and characterization (e.g., HPLC, MS) are not mentioned. If isolated from TSH, the purification strategy and yield are absent. The IC50 values (467.2 and 536.1 µM) are relatively high compared to known XO inhibitors (e.g., allopurinol IC50 ~1-10 µM), raising questions about physiological relevance.
-    - **Why it matters** Without confirmation of peptide identity and purity, the reported IC50 values and kinetic data cannot be properly evaluated. High IC50 values also question the practical utility as functional food candidates.
-    - **Resolution test** Provide MS/MS spectra for peptide identification, HPLC purity data for synthetic peptides, and a discussion of the IC50 values in the context of known food-derived XO inhibitors.
-
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Data analysis and interpretation
+  - **Claim pointer** The manuscript claims that molecular dynamics simulations with MM-GBSA analysis provide "convergent support" for FAD domain binding, with binding free energies of -160 to -317 kJ mol⁻¹.
+  - **Evidence pointer** Section "Molecular Dynamics Simulations and MM-GBSA Analysis" (location not provided), Figure 5, Table 3
+  - **Concern** The MM-GBSA binding free energies reported (-160 to -317 kJ mol⁻¹) are unusually large and physically unrealistic for peptide-protein interactions. Typical MM-GBSA values for peptide-protein binding range from -20 to -80 kJ mol⁻¹. The authors do not provide standard deviations or error estimates for these values, nor do they report the individual energy components (e.g., van der Waals, electrostatic, solvation). Additionally, the simulation length (500 ns) is stated, but no convergence analysis (e.g., RMSD plateau, energy fluctuation over time) is shown. Without these details, the reliability of the binding free energy calculations is questionable.
+  - **Why it matters** The central claim of preferential FAD domain binding rests heavily on these computational results. If the MM-GBSA values are artifacts of poor parameterization or insufficient sampling, the mechanistic conclusion is unsupported.
+  - **Resolution test** Provide standard deviations for all MM-GBSA values, report individual energy components, and show convergence plots (e.g., RMSD, energy vs. time) for the 500 ns simulations. Compare the calculated values to known experimental binding affinities for peptide-XO interactions to validate the magnitude.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical reporting and reproducibility
+  - **Claim pointer** The manuscript claims that TSH (trypsin hydrolysate of sesame) reduces uric acid and XO activity in the zebrafish hyperuricemia model, and upregulates hprt1 and oat1 genes.
+  - **Evidence pointer** Section "In Vivo Validation in Zebrafish" (location not provided), Figure 7
+  - **Concern** The zebrafish experiments lack essential statistical details. No sample sizes (n) are reported for any group, no error bars are shown on the bar graphs in Figure 7, and no statistical test (e.g., ANOVA, t-test) is mentioned. The figure legends do not indicate whether data are mean ± SD or SEM. Without these details, the in vivo results cannot be evaluated for reproducibility or significance.
+  - **Why it matters** The in vivo validation is a key component of the study's translational claim. If the data are not statistically robust, the conclusion that sesame peptides are effective in a whole-organism model is not supported.
+  - **Resolution test** Report sample sizes for each experimental group, include error bars (with definition) on all bar graphs, and state the statistical test used and the resulting p-values for all comparisons.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Mechanistic interpretation
+  - **Claim pointer** The manuscript claims that the peptides exhibit "preferential association with the XO FAD domain" and that this is a novel mechanism.
+  - **Evidence pointer** Section "Molecular Docking" and "Molecular Dynamics Simulations" (location not provided), Figures 4 and 5
+  - **Concern** The docking and MD simulations were performed against two XO crystal structures (3NVY and 3NRZ). However, these structures represent the oxidized form of XO. The FAD domain is known to undergo conformational changes upon reduction. The authors do not discuss whether the simulations account for the redox state of the enzyme. Furthermore, the docking results show that the peptides also bind to the molybdenum center (MoCo) domain with comparable scores (Table 2), yet the authors emphasize only the FAD domain. A more balanced discussion of the relative binding affinities and the potential for dual-domain binding is needed.
+  - **Why it matters** Overstating the specificity of FAD domain binding could mislead future research. If the peptides also bind the MoCo domain, the mechanism may be more complex than claimed.
+  - **Resolution test** Perform docking and simulations against reduced XO structures (if available) or discuss the limitations of using oxidized structures. Provide a quantitative comparison of binding affinities for FAD vs. MoCo domains and discuss the implications for the inhibition mechanism.
 - **Minor Comments**
-    - **Concern ID** R1-m1
-    - **Severity** Minor
-    - **Axis** Data presentation
-    - **Affected element** IC50 values
-    - **Evidence pointer** Abstract
-    - **Issue** The IC50 values are reported as 467.2 and 536.1 µM with four significant figures, which implies an unrealistic precision given typical experimental variability in enzyme inhibition assays.
-    - **Required correction** Round IC50 values to two or three significant figures (e.g., 467 and 536 µM, or 470 and 540 µM) and report standard deviations or confidence intervals.
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity and presentation
+  - **Affected element** Figure 7
+  - **Evidence pointer** Figure 7 (location not provided)
+  - **Issue** The figure labels for gene expression data (hprt1, oat1) are not clearly defined in the figure legend. The units for uric acid and XO activity are missing.
+  - **Required correction** Add clear labels and units to all axes in Figure 7. Define all abbreviations in the figure legend.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Methodology
+  - **Affected element** Materials and Methods
+  - **Evidence pointer** Section "Zebrafish Hyperuricemia Model" (location not provided)
+  - **Issue** The method for inducing hyperuricemia in zebrafish is not described. The concentration of potassium oxonate or other uricase inhibitors used is not stated. The route of administration (e.g., immersion, injection) is unclear.
+  - **Required correction** Provide a detailed description of the hyperuricemia induction protocol, including the chemical used, concentration, and administration method.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Data presentation
+  - **Affected element** Table 2
+  - **Evidence pointer** Table 2 (location not provided)
+  - **Issue** The docking scores for the two XO structures (3NVY and 3NRZ) are presented without units. It is unclear whether these are binding energy (kcal/mol) or docking scores (e.g., Glide score).
+  - **Required correction** Add units to the docking scores in Table 2 and specify the scoring function used.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Literature context
+  - **Affected element** Discussion
+  - **Evidence pointer** Section "Discussion" (location not provided)
+  - **Issue** The manuscript claims that FAD domain targeting is novel, but does not cite or discuss previous studies that have reported XO inhibitors binding to the FAD domain (e.g., some flavonoids and polyphenols).
+  - **Required correction** Add a brief discussion of known FAD domain inhibitors to contextualize the novelty of the current findings.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (MM-GBSA values and convergence), R1-M2 (statistical reporting in zebrafish experiments)
+- **Assessment against Nature-style criteria** 
+  - **Originality**: Moderate. The identification of sesame-derived XO inhibitory peptides is novel, but the concept of food-derived XO inhibitors is well-established. The FAD domain targeting is a potentially original mechanistic insight, but its novelty is diminished by the lack of comparison to known FAD binders.
+  - **Scientific importance**: Moderate. The study addresses a relevant health issue (hyperuricemia) and provides a potential dietary intervention. However, the mechanistic claims are not fully supported, and the in vivo data lack statistical rigor, limiting the impact.
+  - **Interdisciplinary readership**: Moderate. The work bridges food chemistry, biochemistry, and pharmacology, but the technical weaknesses may limit its appeal to a broad audience.
+  - **Technical soundness**: Weak. The computational methods are not validated, and the in vivo data are not statistically reported. The overall technical execution is insufficient to support the claims.
+  - **Readability for nonspecialists**: Good. The manuscript is well-structured and the language is clear, though some technical details (e.g., MM-GBSA) could be better explained.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript has potential, but the major concerns regarding the computational validation and statistical reporting must be resolved before the case for FAD domain targeting and in vivo efficacy can be accepted.
 
-    - **Concern ID** R1-m2
-    - **Severity** Minor
-    - **Axis** Mechanistic interpretation
-    - **Affected element** Mixed-type inhibition (α > 1)
-    - **Evidence pointer** Abstract
-    - **Issue** The abstract states "mixed-type inhibition (α > 1)" but does not explain what α represents or how it was determined. For readers unfamiliar with enzyme kinetics, this is unclear.
-    - **Required correction** Briefly define α (the factor by which the inhibitor changes the Michaelis constant) and state whether the inhibition is competitive, uncompetitive, or noncompetitive in nature.
-
-    - **Concern ID** R1-m3
-    - **Severity** Minor
-    - **Axis** Terminology
-    - **Affected element** "Preferential association with the XO FAD domain"
-    - **Evidence pointer** Abstract
-    - **Issue** The term "preferential association" is vague. Does it mean preferential over the molybdenum or other domains? Or preferential over other peptides?
-    - **Required correction** Clarify the comparator: "preferential association with the FAD domain over the molybdenum-pterin domain" or similar.
-
-- **Technical failings that need to be addressed before the case is established** R1-M1 (FAD domain validation), R1-M2 (in vivo peptide testing), R1-M3 (peptide identification and purity)
-
-- **Assessment against Nature-style criteria**
-    - **Originality**: Moderate. Food-derived XO inhibitors are well-studied, but FAD-domain targeting is a relatively novel concept. However, the abstract does not demonstrate that this mechanism is unique to these peptides.
-    - **Scientific importance**: Moderate. If validated, the FAD-domain targeting mechanism could open new avenues for XO inhibitor design. However, the high IC50 values and lack of in vivo peptide data limit the immediate impact.
-    - **Interdisciplinary readership**: Limited. The work is primarily of interest to food chemistry and nutraceutical researchers. The mechanistic claims are not sufficiently developed to attract structural biologists or pharmacologists.
-    - **Technical soundness**: Cannot be assessed from the abstract alone. Critical experimental details are missing.
-    - **Readability for nonspecialists**: Adequate for an abstract, though some kinetic terms (α, mixed-type inhibition) could be better explained.
-
-- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting hypothesis but lacks the experimental validation required to support the central claims of FAD-domain targeting and in vivo efficacy of the specific peptides. A full manuscript with detailed methods, controls, and experimental validation of the binding site is needed for proper evaluation.
+## Risk / unsupported claims
+- The claim that MM-GBSA binding free energies of -160 to -317 kJ mol⁻¹ are physically realistic is unsupported and likely erroneous.
+- The claim that TSH reduces uric acid and XO activity in zebrafish is unsupported due to lack of statistical reporting.
+- The claim of "preferential association with the XO FAD domain" is not fully supported, as docking scores for the MoCo domain are comparable and the redox state of the enzyme is not considered.

@@ -1,80 +1,98 @@
 ## Review setup
-- **Input scope** Abstract
-- **Assessment boundary** Claims and evidence presented in the abstract only
-- **Shared manuscript claim summary** The authors present CDSM, a geometry-guided deterministic model for collagen triple-helix structure prediction, and claim it achieves high coverage (93.8% vs 8.8% for THeBuScr), competitive accuracy with learned models (AlphaFold 3, Boltz-2, Chai-1, Protenix-v1) on a benchmark of 80 structures, superior robustness on post-cutoff structures, and dramatically lower cost (400–790x cheaper, ~$3×10⁻⁵ per structure).
-- **Visible evidence base** Abstract text only; no figures, tables, or supplementary materials provided.
-- **Missing materials affecting confidence** Full manuscript, methods, benchmark details, statistical analyses, figure legends, and supplementary data are not available. The abstract provides summary statistics but no error bars, confidence intervals, or detailed comparisons.
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present CDSM, a collagen-specific deterministic structure modeler built on the THeBuScr empirical geometric parameterization, and claim that it achieves high coverage and competitive accuracy on a benchmark of 80 collagen triple-helical structures when compared against AlphaFold 3, Boltz-2, Chai-1, and Protenix-v1, at substantially lower computational cost.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary data
+- **Missing materials affecting confidence** Full methods, benchmark construction details, training-data cutoff definitions, per-method configuration and cost calculations, statistical analyses, and all supporting figures and tables
 
 ## Reviewer
-- **Overall assessment** The abstract presents a compelling and well-motivated case for a compact, geometry-based approach to collagen structure prediction. The reported coverage improvement and cost reduction are striking, and the post-cutoff analysis is a thoughtful test of generalizability. However, the abstract alone cannot substantiate several critical claims: the benchmark composition, the statistical significance of accuracy comparisons, the definition of "successful prediction," and the robustness of the cost analysis. The work is potentially important, but the evidence as presented is insufficient to fully evaluate its validity.
+- **Overall assessment** The abstract presents a potentially interesting and practically valuable contribution to protein structure prediction for a constrained structural class. The central idea, that explicit encoding of geometric constraints can yield a compact and highly efficient predictor for collagen, is conceptually appealing and aligns with ongoing discussions about complementing large learned models with mechanistic or rule-based approaches. However, the evidence as presented in the abstract is insufficient to fully evaluate the robustness of the claims. Key details regarding benchmark construction, evaluation protocols, cost calculations, and statistical significance are missing. The reported performance comparisons, particularly the win-rate analyses on post-cutoff structures, are intriguing but require careful scrutiny of how cutoffs were defined and applied. The computational cost advantage is striking but needs verification of the cost model. Overall, the work appears promising and likely of interest to the structural biology and protein design communities, but the current abstract alone does not establish the case with sufficient rigor.
+- **Who would be interested in the results, and why** Structural biologists studying collagen and other fibrous proteins, computational biologists developing structure prediction methods, researchers interested in hybrid approaches combining empirical knowledge with machine learning, and developers of lightweight prediction tools for high-throughput or resource-constrained applications. The cost and speed advantages could also appeal to industrial users and those performing large-scale screening.
+- **Major strengths** The conceptual framing is clear and compelling, positioning the work within a broader discussion of model complexity versus structural constraints. The reported coverage improvement from 8.8% to 93.8% is substantial and suggests a meaningful methodological advance. The inclusion of post-training-cutoff evaluation is a thoughtful attempt to address generalization concerns. The computational cost advantage, if accurately reported, is remarkable and practically significant.
+- **Major Concerns** 
+  - R1-M1
+  - R1-M2
+  - R1-M3
+  - R1-M4
+- **Minor Comments** 
+  - R1-m1
+  - R1-m2
+  - R1-m3
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4
+- **Assessment against Nature-style criteria** Originality is moderate to high, as the idea of encoding empirical geometric constraints into a deterministic modeler for a specific protein class is not entirely new but the specific application and systematic benchmarking appear novel. Scientific importance is potentially high for the collagen community and for the broader discussion of efficient structure prediction, though the generalizability beyond collagen remains speculative. Interdisciplinary readership is plausible, spanning structural biology, computational biology, and machine learning. Technical soundness cannot be fully assessed from the abstract alone, as critical methodological details are missing. Readability for nonspecialists is good, with clear motivation and accessible language, though some technical terms such as THeBuScr and training-data cutoff may require additional context.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is promising and the reported results are intriguing, but the evidence base provided is insufficient to fully establish the claims. A complete manuscript with detailed methods, benchmark descriptions, and statistical analyses would be needed to assess technical soundness.
 
-- **Who would be interested in the results, and why** Structural biologists, computational biophysicists, and researchers in protein design and biomaterials, particularly those working on fibrous proteins or systems with strong geometric constraints. The work also interests the broader AI-for-science community as a demonstration of compact, interpretable models complementing large learned ones.
+### Major Concerns
 
-- **Major strengths** 1. Clear motivation: collagen's constrained geometry is a natural fit for a compact model. 2. Impressive coverage improvement (8.8% to 93.8%) over the baseline THeBuScr. 3. Thoughtful evaluation design, including a post-cutoff subset to test generalizability. 4. Dramatic cost reduction (400–790x cheaper) is a strong practical advantage. 5. The broader message about compact scientific representations is timely and important.
+- **Concern ID** R1-M1
+- **Severity** Major
+- **Blocking** Yes
+- **Axis** Benchmark construction and evaluation protocol
+- **Claim pointer** The claim that CDSM was benchmarked against AlphaFold 3, Boltz-2, Chai-1, and Protenix-v1 on 80 experimentally resolved collagen triple-helical structures, with coverage increasing from 8.8% to 93.8%.
+- **Evidence pointer** Abstract, benchmark description; location not provided
+- **Concern** The abstract does not describe how the 80 benchmark structures were selected, how the coverage metric was defined, or how the 75 structures successfully predicted by all methods were determined. The criteria for successful prediction, the handling of partial predictions, and the potential for selection bias in the benchmark are not addressed.
+- **Why it matters** Without a clear and unbiased benchmark construction, the reported coverage and accuracy comparisons may not be representative or reproducible. Selection bias in benchmark structures could inflate or deflate the apparent performance of any method.
+- **Resolution test** Provide a detailed description of benchmark construction, including structure selection criteria, redundancy removal, resolution thresholds, and the definition of successful prediction. Report coverage metrics with clear denominators and describe how partial predictions were handled.
 
-- **Major Concerns**
-    - **Concern ID** R1-M1
-    - **Severity** Major
-    - **Blocking** Yes
-    - **Axis** Evidence completeness
-    - **Claim pointer** "CDSM increases coverage of this benchmark from 8.8% for native THeBuScr to 93.8%."
-    - **Evidence pointer** Abstract, location not provided
-    - **Concern** The abstract does not define what constitutes a "successful prediction" (e.g., RMSD or TM-score threshold, or whether all-atom or backbone). Without this definition, the coverage metric is uninterpretable. Additionally, the benchmark of 80 structures is not described: are they all unique collagen sequences? What is the diversity of lengths, post-translational modifications, or resolution? The 8.8% baseline for THeBuScr is also unexplained—does THeBuScr fail on 91.2% of structures, or is it not designed for all-atom prediction?
-    - **Why it matters** The central claim of the paper—that CDSM dramatically improves coverage—cannot be evaluated without knowing the success criteria and benchmark composition. If the threshold is too lenient, the coverage may be inflated; if the benchmark is biased, the comparison may be unfair.
-    - **Resolution test** Provide a clear definition of "successful prediction" (e.g., backbone RMSD < 2 Å, TM-score > 0.8). Describe the benchmark: number of unique sequences, length range, resolution distribution, and any filtering criteria. Explain why THeBuScr achieves only 8.8% coverage.
+- **Concern ID** R1-M2
+- **Severity** Major
+- **Blocking** Yes
+- **Axis** Generalization evaluation and training-data cutoff definition
+- **Claim pointer** The claim that when evaluated only on structures deposited after each learned model's training-data cutoff, CDSM becomes more competitive, with aggregate win rates increasing from 29% to 55% for TM-score and from 40% to 65% for backbone RMSD.
+- **Evidence pointer** Abstract, post-cutoff evaluation; location not provided
+- **Concern** The abstract does not specify how training-data cutoffs were determined for each learned model, how the post-cutoff subset was defined, or how many structures fell into this subset. The statistical significance of the win-rate differences is not reported, and the stability of CDSM performance across subsets is stated without supporting data.
+- **Why it matters** The post-cutoff analysis is central to the claim that CDSM generalizes better to novel structures. If the subset is small or the cutoff definitions are inconsistent, the win-rate comparisons may be statistically underpowered or biased.
+- **Resolution test** Report the number of post-cutoff structures for each model, the exact cutoff dates used, and confidence intervals or significance tests for the win-rate comparisons. Provide per-structure performance data to allow independent verification.
 
-    - **Concern ID** R1-M2
-    - **Severity** Major
-    - **Blocking** Yes
-    - **Axis** Statistical rigor
-    - **Claim pointer** "CDSM closely reproduces experimental backbone and global geometry, with fewer large-error predictions, while the learned models achieve modestly higher local and side-chain accuracy."
-    - **Evidence pointer** Abstract, location not provided
-    - **Concern** The abstract reports aggregate win rates (29% to 55% for TM-score, 40% to 65% for backbone RMSD) on post-cutoff subsets, but does not provide any measure of variance (e.g., standard deviation, confidence intervals, or per-structure distributions). The phrase "fewer large-error predictions" is qualitative. Without statistical testing, it is unclear whether the observed differences are significant or due to random variation across the small post-cutoff set.
-    - **Why it matters** The claim that CDSM becomes "more competitive" on post-cutoff structures is a key argument for its robustness. If the win rates are not statistically significant, the conclusion is unsupported. Similarly, the trade-off between CDSM's global accuracy and learned models' local/side-chain accuracy needs quantitative comparison.
-    - **Resolution test** Provide per-structure results (e.g., scatter plots of TM-score or RMSD for each method), report mean ± SD or 95% CI for all metrics, and perform a statistical test (e.g., paired t-test or Wilcoxon) comparing CDSM to each learned model on the post-cutoff subset.
+- **Concern ID** R1-M3
+- **Severity** Major
+- **Blocking** Yes
+- **Axis** Computational cost comparison methodology
+- **Claim pointer** The claim that CDSM generates structures in 2.4 s on a single CPU core at approximately $3 × 10 −5 per structure, making it 400 to 790× cheaper than the learned methods even when each is run on its lowest-cost compatible GPU.
+- **Evidence pointer** Abstract, cost comparison; location not provided
+- **Concern** The abstract does not describe how the cost per structure was calculated for each method, including hardware assumptions, cloud pricing models, amortization of model training costs, or whether inference-only costs were considered. The range of 400 to 790× suggests variability across methods, but the basis for this range is not explained.
+- **Why it matters** The cost advantage is a major selling point of the work. If the cost model is incomplete or inconsistent across methods, the claimed advantage may be overstated or misleading.
+- **Resolution test** Provide a detailed cost model for each method, including hardware specifications, pricing sources, inference time measurements, and whether training or development costs were included. Justify the range of cost ratios reported.
 
-    - **Concern ID** R1-M3
-    - **Severity** Major
-    - **Blocking** Yes
-    - **Axis** Cost analysis validity
-    - **Claim pointer** "CDSM generates structures in 2.4 s on a single CPU core at approximately $3 x 10^-5 per structure, making it 400 to 790x cheaper than the learned methods even when each is run on its lowest-cost compatible GPU."
-    - **Evidence pointer** Abstract, location not provided
-    - **Concern** The cost comparison is presented as a single number without accounting for hardware amortization, energy costs, or cloud pricing variability. The "lowest-cost compatible GPU" for each learned model is not specified, and the 400–790x range is not explained (e.g., what drives the lower vs. upper bound?). Additionally, the cost per structure for CDSM ($3×10⁻⁵) seems extremely low—is this purely compute cost, or does it include development/amortization? The abstract does not state whether the 2.4 s includes preprocessing or postprocessing.
-    - **Why it matters** The cost advantage is a major selling point for practical applications. If the comparison is not apples-to-apples (e.g., ignoring GPU rental minimums or setup time), the claim may be misleading. A rigorous cost analysis is essential for reproducibility and fair comparison.
-    - **Resolution test** Provide a detailed cost model: hardware specifications, cloud pricing source, runtime per structure (including any overhead), and the basis for the 400–790x range. Clarify whether costs are marginal (per-structure) or include fixed costs. Report the cost for each learned method individually.
+- **Concern ID** R1-M4
+- **Severity** Major
+- **Blocking** Yes
+- **Axis** Accuracy metrics and statistical rigor
+- **Claim pointer** The claim that CDSM closely reproduces experimental backbone and global geometry, with fewer large-error predictions, while the learned models achieve modestly higher local and side-chain accuracy.
+- **Evidence pointer** Abstract, accuracy comparison; location not provided
+- **Concern** The abstract reports qualitative differences in accuracy without providing quantitative metrics, error distributions, or statistical tests. The terms "closely reproduces," "fewer large-error predictions," and "modestly higher" are vague and do not allow assessment of the magnitude or significance of the differences.
+- **Why it matters** The relative accuracy of CDSM versus learned models is a central claim. Without quantitative metrics and statistical analysis, the reader cannot determine whether the differences are meaningful or within noise.
+- **Resolution test** Report specific metrics for backbone RMSD, TM-score, and side-chain accuracy for all methods, with error bars or confidence intervals. Provide error distributions and statistical tests for pairwise comparisons.
 
-- **Minor Comments**
-    - **Concern ID** R1-m1
-    - **Severity** Minor
-    - **Axis** Clarity
-    - **Affected element** Benchmark description
-    - **Evidence pointer** Abstract, location not provided
-    - **Issue** The abstract states "80 experimentally resolved collagen triple-helical structures" but does not specify the source (e.g., PDB IDs) or resolution range.
-    - **Required correction** Add a brief description of the benchmark source and key characteristics (e.g., "80 structures from the Protein Data Bank, resolution ≤ 3.0 Å, lengths 100–300 residues").
+### Minor Comments
 
-    - **Concern ID** R1-m2
-    - **Severity** Minor
-    - **Axis** Terminology
-    - **Affected element** "Aggregate win rates"
-    - **Evidence pointer** Abstract, location not provided
-    - **Issue** The term "aggregate win rates" is ambiguous: does it mean the fraction of structures where CDSM outperforms each learned model, or an average across all comparisons?
-    - **Required correction** Define "win rate" explicitly (e.g., "the fraction of structures for which CDSM achieves a higher TM-score than the learned model").
+- **Concern ID** R1-m1
+- **Severity** Minor
+- **Axis** Terminology clarity
+- **Affected element** THeBuScr reference
+- **Evidence pointer** Abstract, first paragraph; location not provided
+- **Issue** The abstract references THeBuScr as the basis for the empirical geometric parameterization but does not provide a citation or brief description of what THeBuScr is, which may confuse readers unfamiliar with this tool.
+- **Required correction** Add a citation for THeBuScr and a one-sentence description of its role in the parameterization.
 
-    - **Concern ID** R1-m3
-    - **Severity** Minor
-    - **Axis** Reproducibility
-    - **Affected element** "Training-data cutoff"
-    - **Evidence pointer** Abstract, location not provided
-    - **Issue** The abstract refers to "each learned model's training-data cutoff" but does not state the cutoff dates or how they were determined.
-    - **Required correction** Provide the cutoff dates for each learned model (e.g., "AlphaFold 3: September 2021; Boltz-2: January 2022") and the number of post-cutoff structures.
+- **Concern ID** R1-m2
+- **Severity** Minor
+- **Axis** Scope of generalizability claim
+- **Affected element** Final sentence on broader applicability
+- **Evidence pointer** Abstract, final sentence; location not provided
+- **Issue** The claim that the approach "motivates future AI-driven searches over algorithms, representations, and empirical parameterizations" for other structural protein domains is speculative and not supported by evidence in the abstract.
+- **Required correction** Soften the language to indicate this is a future direction or hypothesis rather than a demonstrated outcome.
 
-- **Technical failings that need to be addressed before the case is established** R1-M1 (coverage definition and benchmark), R1-M2 (statistical rigor of accuracy comparison), R1-M3 (cost analysis validity). These three concerns are blocking because the core claims of coverage, accuracy, and cost cannot be evaluated from the abstract alone.
+- **Concern ID** R1-m3
+- **Severity** Minor
+- **Axis** Reproducibility of cost figure
+- **Affected element** Cost per structure figure
+- **Evidence pointer** Abstract, cost comparison; location not provided
+- **Issue** The cost figure of approximately $3 × 10 −5 per structure is presented without context on how this was derived or whether it includes any overhead.
+- **Required correction** Provide a brief note on the assumptions underlying this figure, such as cloud instance type and utilization assumptions.
 
-- **Assessment against Nature-style criteria**
-    - **Originality**: High. The idea of using a compact, geometry-guided model for a constrained protein family is novel and contrasts with the dominant learned-model paradigm. The post-cutoff analysis is a clever test of generalizability.
-    - **Scientific importance**: Potentially high. If validated, CDSM could provide a practical tool for collagen structure prediction and inspire similar approaches for other constrained protein families. The cost reduction is significant for high-throughput applications.
-    - **Interdisciplinary readership**: Moderate to high. The work bridges structural biology, computational modeling, and AI-for-science, and the cost/accuracy trade-off is of interest to experimentalists and computationalists alike.
-    - **Technical soundness**: Cannot be fully assessed from the abstract. The coverage and accuracy claims lack statistical rigor, and the cost analysis is insufficiently detailed. The approach itself is plausible, but the evidence is incomplete.
-    - **Readability for nonspecialists**: Good. The abstract is well-written, with clear motivation and a logical flow. Technical terms (e.g., "TM-score," "backbone RMSD") are used appropriately but could benefit from brief definitions.
-
-- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an intriguing and potentially important result, but the lack of methodological detail, statistical rigor, and cost analysis transparency prevents a full evaluation. The work merits further review of the full manuscript, but the claims as stated cannot be accepted without substantial additional evidence.
+## Risk / unsupported claims
+- The claim that CDSM "closely reproduces experimental backbone and global geometry" is unsupported without quantitative metrics.
+- The claim that CDSM becomes "more competitive" on post-cutoff structures is unsupported without details on subset size and statistical significance.
+- The claim that the approach "motivates future AI-driven searches" for other domains is speculative and not supported by evidence in the abstract.
+- The generalizability of the approach beyond collagen is not demonstrated and should not be implied.
+- The cost advantage range of 400 to 790× is not verifiable without a detailed cost model.

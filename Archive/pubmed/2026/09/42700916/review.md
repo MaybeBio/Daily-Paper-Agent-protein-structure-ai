@@ -1,21 +1,62 @@
 ## Review setup
-- **Input scope** Full text (abstract only provided)
-- **Assessment boundary** Abstract only
-- **Shared manuscript claim summary** The review argues that four emerging technologies—organoids, gene editing, AI-driven molecular design, and synthetic biology—are reshaping antiviral research by providing a synergistic workflow that moves the field from empirical methods toward precise, intelligent strategies.
-- **Visible evidence base** Abstract text only; no figures, tables, or references provided
-- **Missing materials affecting confidence** Full manuscript, figures, tables, references, and any supplementary information
+- **Input scope** Full manuscript (review article)
+- **Assessment boundary** Scientific content, structure, and claims as presented in the provided text
+- **Shared manuscript claim summary** This review argues that four emerging technologies—organoids, gene editing, AI-driven molecular design, and synthetic biology—are collectively transforming antiviral research by enabling more precise, intelligent, and integrated approaches to disease modeling, target discovery, and therapeutic development.
+- **Visible evidence base** The manuscript text only; no figures, tables, references, or supplementary materials were provided.
+- **Missing materials affecting confidence** Figures, tables, references list, supplementary data, and any detailed case studies or examples referenced in the text. Without these, the depth of evidence supporting the review's claims cannot be assessed.
 
 ## Reviewer
-- **Overall assessment** The abstract presents a timely and ambitious vision for integrating four emerging technologies in antiviral research. However, the provided material is insufficient to evaluate the depth, originality, or rigor of the review. The abstract contains significant redundancy and lacks specific examples, critical analysis, or evidence of a cohesive framework beyond a high-level description.
-- **Who would be interested in the results, and why** Researchers in virology, drug discovery, synthetic biology, and computational biology would be interested in a comprehensive synthesis of these technologies. Clinicians and public health officials might also benefit from understanding the translational potential. However, the abstract does not demonstrate how the review provides new insights beyond existing literature.
-- **Major strengths** 1. The topic is highly relevant and timely, addressing a critical need for innovative antiviral strategies. 2. The proposed integration of four distinct technological frontiers into a synergistic workflow is conceptually appealing. 3. The scope spans both human and animal health, which is a valuable perspective.
-- **Major Concerns** None identified from the supplied material, as the abstract alone does not provide sufficient evidence to assess specific claims.
-- **Minor Comments** None identified from the supplied material, as the abstract alone does not provide sufficient evidence to assess specific claims.
-- **Technical failings that need to be addressed before the case is established** The abstract contains substantial redundancy (e.g., the first two paragraphs repeat similar statements about viral threats and technological frontiers). This suggests the full manuscript may lack a clear, concise narrative. The abstract also fails to provide any specific examples, case studies, or critical evaluation of the technologies, which is essential for a review.
-- **Assessment against Nature-style criteria** Based solely on the abstract, the work has potential for **originality** in its integrative framework, but this is not demonstrated with concrete examples. **Scientific importance** is high, but the abstract does not show how the review advances beyond existing summaries. **Interdisciplinary readership** is plausible, but the abstract is too generic to attract specialists. **Technical soundness** cannot be assessed. **Readability for nonspecialists** is adequate, though the redundancy detracts from clarity. Overall, the abstract does not meet Nature-style standards for novelty, depth, or critical synthesis.
-- **Recommendation posture** Currently not established from the provided evidence. A full manuscript is required to evaluate the review’s contribution, depth, and rigor.
-
-## Risk / unsupported claims
-- The claim that these technologies form a "synergistic workflow" is unsupported by the abstract, which provides no evidence of integration or synergy.
-- The claim that the review "offers a framework to guide the intelligent evolution of antiviral strategies" is unsupported; no framework is described.
-- The claim that the review "highlights ongoing challenges in integration and scalability" is stated but not substantiated with any specific challenges or examples.
+- **Overall assessment** This manuscript presents a broad, high-level overview of four emerging technologies in antiviral research. The topic is timely and the conceptual framework of an integrated workflow is appealing. However, the text is highly repetitive, lacks specific examples or case studies, and does not provide critical analysis of the limitations or comparative effectiveness of these technologies. The review reads more as an extended abstract than a substantive, critical review. The absence of any figures, tables, or references in the provided material severely limits the ability to evaluate the depth and rigor of the work.
+- **Who would be interested in the results, and why** Researchers new to the antiviral field or those seeking a very general introduction to the potential of organoids, gene editing, AI, and synthetic biology might find this overview useful. However, specialists in any of these individual areas would likely find the treatment too superficial to be of significant value.
+- **Major strengths** The manuscript identifies a genuinely important and timely topic: the convergence of multiple emerging technologies to address the limitations of traditional antiviral approaches. The proposed synergistic workflow (disease modeling to iterative optimization) provides a logical and appealing conceptual structure.
+- **Major Concerns**
+    - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Scientific depth and novelty
+    - **Claim pointer** The review claims to "examine the roles of four key frontiers" and "present a cohesive view of these converging methodologies."
+    - **Evidence pointer** Entire manuscript text
+    - **Concern** The manuscript provides only a superficial, generic description of each technology. For example, it states that "Organoids provide physiologically relevant platforms" and "Gene editing tools... enable precise manipulation," but offers no specific examples, case studies, or critical discussion of how these tools have been applied, what their limitations are, or how they compare to traditional methods. The text is highly repetitive, with nearly identical sentences appearing in the first and second halves (e.g., the description of viral disease threats and the role of organoids).
+    - **Why it matters** A review article in a high-impact journal must offer more than a list of technologies. It should synthesize existing literature, critically evaluate evidence, identify key challenges, and propose future directions. The current manuscript fails to do this, reading more like a grant proposal or a textbook introduction.
+    - **Resolution test** The authors must significantly expand the manuscript to include specific, well-referenced examples of each technology in action, a critical analysis of their respective strengths and weaknesses, and a discussion of the practical challenges of integrating them into a cohesive workflow. The repetitive text must be eliminated.
+    - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence and referencing
+    - **Claim pointer** The review makes numerous claims about the capabilities and impact of these technologies (e.g., "AI technologies... address long-standing bottlenecks in structural biology").
+    - **Evidence pointer** Entire manuscript text; no references provided.
+    - **Concern** The manuscript contains no citations or references. All claims are presented as unsupported assertions. A review article must be grounded in the published literature to be credible.
+    - **Why it matters** Without references, the reader cannot verify the claims, assess the evidence base, or understand the context of the discussion. This is a fundamental requirement for any scholarly review.
+    - **Resolution test** The authors must add a comprehensive reference list that supports every specific claim made in the text. The manuscript should be rewritten to integrate citations properly.
+    - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Structure and focus
+    - **Claim pointer** The review claims to "offer a framework to guide the intelligent evolution of antiviral strategies."
+    - **Evidence pointer** Entire manuscript text
+    - **Concern** The manuscript lacks a clear, structured argument. It begins with a general statement, then lists the four technologies, and then repeats much of the same information. There is no clear sectioning, no comparative analysis, and no synthesis of how these technologies interact. The "synergistic workflow" is mentioned but not explained in any detail.
+    - **Why it matters** A well-structured review guides the reader through a logical argument. The current text is disorganized and repetitive, making it difficult to extract the core message or understand the unique contribution of the review.
+    - **Resolution test** The authors should restructure the manuscript with clear sections (e.g., Introduction, Organoids, Gene Editing, AI, Synthetic Biology, Integration and Challenges, Future Outlook). Each section should have a specific thesis and provide detailed evidence. The repetitive content must be removed.
+- **Minor Comments**
+    - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Readability and style
+    - **Affected element** Entire text
+    - **Evidence pointer** Location not provided
+    - **Issue** The text contains significant repetition. For example, the first paragraph and the second paragraph both describe the threat of viral diseases and the limitations of conventional strategies in nearly identical language. The description of organoids is also repeated.
+    - **Required correction** Thoroughly revise the manuscript to eliminate all redundant sentences and paragraphs. Each concept should be introduced once and then built upon.
+    - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Scope and title
+    - **Affected element** Title
+    - **Evidence pointer** Title
+    - **Issue** The title "Application of emerging technologies in the antiviral field" is very broad and generic. It does not reflect the specific focus on the four technologies or the proposed integrated workflow.
+    - **Required correction** Consider a more specific and descriptive title, such as "Converging frontiers: Organoids, gene editing, AI, and synthetic biology in antiviral research" or "An integrated framework for emerging technologies in antiviral development."
+- **Technical failings that need to be addressed before the case is established** R1-M1 (lack of depth and novelty), R1-M2 (absence of references). These are fundamental failings that prevent the manuscript from being considered a substantive review.
+- **Assessment against Nature-style criteria** 
+    - **Originality:** Low. The concept of applying these technologies to antiviral research is not new. The proposed "integrated workflow" is a logical but not novel framework.
+    - **Scientific importance:** Potentially high, but not demonstrated. The topic is important, but the manuscript does not provide the critical analysis or synthesis needed to advance the field.
+    - **Interdisciplinary readership:** The topic is inherently interdisciplinary, but the superficial treatment is unlikely to engage specialists from any of the four fields.
+    - **Technical soundness:** Cannot be assessed due to the lack of specific examples, data, or references. The general claims are not technically unsound, but they are unsubstantiated.
+    - **Readability for nonspecialists:** The text is clear and accessible, but the repetition and lack of structure detract from readability.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript in its current form is a preliminary outline, not a publishable review. A major revision is required to provide the necessary depth, evidence, and structure. I would be supportive of a resubmission if the authors can address the major concerns, particularly by adding specific examples, critical analysis, and a comprehensive reference list.

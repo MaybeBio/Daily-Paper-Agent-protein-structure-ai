@@ -18,7 +18,7 @@
   <main>
 <article class="paper">
   <div class="paper-head">
-    <span class="score score-high">9</span>
+    <span class="score score-high">8</span>
     <div>
       <h1>Multi-state Structure Prediction of G Protein-Coupled Receptor Proteins via Prompting on AlphaFold.</h1>
       <div class="meta">Sun, Zhigang; Zhang, Tao; Zhang, Kexin; Pang, Anqi; Yu, Jiale; Zeng, Liting; Yang, Sibei; Zhao, Suwen; Zheng, Jie</div>
@@ -26,10 +26,10 @@
         
         <span class="journal">Computational and structural biotechnology journal</span>
         · 2026-09-11
-         · 仅摘要
+         · 全文(pmc)
          · <a href="https://pubmed.ncbi.nlm.nih.gov/42724007/">原文</a>
       </div>
-      <p class="one-liner">该文提出PromptGPCR，通过向AlphaFold输入基于结构生物学知识的序列提示，实现GPCR蛋白活性与非活性多态结构的高精度预测，并验证其在分子对接中的实用性，直接契合蛋白质结构预测与构象采样课题。</p>
+      <p class="one-liner">该文提出PromptGPCR，通过向AlphaFold模型注入结构生物学知识提示，实现GPCR活性/非活性多状态结构预测，并验证其在分子对接中的实用性，属于蛋白质结构预测与AI方法的直接结合。</p>
     </div>
   </div>
   
@@ -41,7 +41,7 @@
   
   <section>
     <h2>摘要翻译</h2>
-    <div class="md">G蛋白偶联受体（G protein-coupled receptors, GPCRs）是一类重要的跨膜蛋白家族，广泛参与生物体内的信号转导，并长期被视为主要的治疗靶点类别。在基于结构的药物设计中，GPCRs在活性和非活性状态下的高分辨率结构分别对于设计激动剂和拮抗剂至关重要。然而，获取实验性GPCR结构成本高昂，而同源建模及包括AlphaFold 2和AlphaFold 3在内的人工智能驱动方法在预测活性状态构象时往往准确性降低。为解决上述局限性，我们提出PromptGPCR，一种基于AlphaFold的推理框架，旨在预测GPCRs在活性和非活性状态下的高精度结构。我们向AlphaFold-Multimer和AlphaFold 3提供基于结构生物学知识的生物序列作为提示，以引导模型在多状态预测任务中的表现。实验结果表明，与基线方法相比，PromptGPCR能够准确预测活性和非活性结构，表明其在缺乏状态分辨实验结构的情况下能提供结构假设的能力。此外，PromptGPCR在分子对接中表现出比基线更高的成功率，这提示其预测结果在涉及特定GPCR构象状态的下游应用场景中可能具有一定程度的实用性。</div>
+    <div class="md">G蛋白偶联受体（G protein-coupled receptors, GPCRs）是一类重要的跨膜蛋白家族，广泛参与生物体内的信号转导，并长期被视为主要的治疗靶点类别。在基于结构的药物设计中，GPCRs在活性和非活性状态下的高分辨率结构分别对于设计激动剂和拮抗剂至关重要。然而，获取实验性GPCR结构成本高昂，而同源建模及包括AlphaFold 2和AlphaFold 3在内的人工智能驱动方法在预测活性状态构象时往往准确性降低。为解决上述局限性，我们提出PromptGPCR，一种基于AlphaFold的推理框架，旨在预测GPCRs在活性和非活性状态下的高精度结构。我们向AlphaFold-Multimer和AlphaFold 3提供基于结构生物学知识的生物序列作为提示，以引导模型在多状态预测任务中的表现。实验结果表明，与基线方法相比，PromptGPCR能够准确预测活性和非活性结构，表明其在缺乏状态分辨实验结构的情况下能提供结构假设的能力。此外，PromptGPCR在分子对接中表现出比基线更高的成功率，这提示PromptGPCR的预测在涉及特定GPCR构象状态的下游应用场景中可能具有一定程度的实用性。</div>
   </section>
   
   
@@ -49,79 +49,38 @@
     <h2>Paper Card</h2>
     <div class="md"><h2>01 基本信息</h2>
 <ul>
-<li><strong>标题</strong>：Multi-state Structure Prediction of G Protein-Coupled Receptor Proteins via Prompting on AlphaFold</li>
-<li><strong>作者</strong>：Sun, Zhigang; Zhang, Tao; Zhang, Kexin; Pang, Anqi; Yu, Jiale; Zeng, Liting; Yang, Sibei; Zhao, Suwen; Zheng, Jie</li>
-<li><strong>单位</strong>：未提供（根据作者名单推测可能包含上海科技大学等机构，但原文未明确标注，故写「未提供」）</li>
-<li><strong>期刊/平台</strong>：Computational and Structural Biotechnology Journal</li>
-<li><strong>年份</strong>：2026（在线日期 2026-09-11）</li>
-<li><strong>论文类型</strong>：方法学/应用研究</li>
-<li><strong>领域</strong>：蛋白质结构预测 × GPCR 多状态构象 × AlphaFold 提示工程</li>
-<li><strong>关键词</strong>：GPCR、多状态结构预测、AlphaFold、prompting、活性/非活性构象、分子对接</li>
-<li><strong>DOI/arXiv</strong>：10.34133/csbj.0179</li>
-<li><strong>代码</strong>：未提供</li>
-<li><strong>数据</strong>：未提供（基于 AlphaFold 2/3 与 GPCR 序列数据）</li>
-<li><strong>阅读日期</strong>：2026-05-12（按当前日期推算）</li>
-<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」交叉方向，具体为利用 AlphaFold 的 prompting 机制实现 GPCR 活性/非活性双状态结构预测，属于结构预测中「构象状态特异性」问题的前沿探索，与构象采样、构象生成任务直接相关。</li>
+<li><strong>标题</strong>: Multi-state Structure Prediction of G Protein-Coupled Receptor Proteins via Prompting on AlphaFold</li>
+<li><strong>作者与单位</strong>: Sun, Zhigang; Zhang, Tao; Zhang, Kexin; Pang, Anqi; Yu, Jiale; Zeng, Liting; Yang, Sibei; Zhao, Suwen; Zheng, Jie (单位未提供)</li>
+<li><strong>期刊/预印本平台</strong>: Computational and Structural Biotechnology Journal</li>
+<li><strong>年份</strong>: 2026-09-11</li>
+<li><strong>论文类型</strong>: 方法研究</li>
+<li><strong>领域</strong>: 蛋白质结构预测 × AI/深度学习</li>
+<li><strong>关键词</strong>: GPCR, multi-state structure prediction, AlphaFold, prompt learning, molecular docking</li>
+<li><strong>DOI/arXiv 号</strong>: 10.34133/csbj.0179</li>
+<li><strong>代码</strong>: https://github.com/PAFFMew/PromptGPCR</li>
+<li><strong>数据</strong>: 基准数据集（411个结构，107个受体）和未见数据集（44个活性态结构，20个GPCR）</li>
+<li><strong>阅读日期</strong>: 未提供</li>
+<li><strong>该文在「蛋白质结构相关计算研究 × AI 方法/物理模拟」方向中的位置</strong>: 本文提出一种基于AlphaFold的推理框架，通过引入结构生物学知识指导的蛋白序列提示（prompt），实现GPCR活性态和非活性态的多态结构预测。该方法属于AI驱动的蛋白质结构预测，特别是利用预训练模型（AlphaFold-Multimer和AlphaFold 3）进行下游任务适配，不涉及物理模拟。</li>
 </ul>
-<hr />
 <h2>02 一句话总结</h2>
-<p>本文提出 PromptGPCR 框架，通过向 AlphaFold-Multimer 和 AlphaFold 3 输入基于结构生物学知识的生物序列作为 prompts，引导模型分别预测 GPCR 的活性与非活性构象，在基准测试中优于基线方法，并在分子对接中表现出更高的成功率。</p>
-<hr />
+<p>本文提出PromptGPCR，通过向AlphaFold-Multimer和AlphaFold 3输入基于结构生物学知识选择的蛋白序列提示（mini-Gs用于活性态，T4溶菌酶用于非活性态），引导模型预测GPCR的特定构象状态，在基准和未见数据集上优于基线方法，并在分子对接中取得更高成功率。</p>
 <h2>03 研究问题</h2>
 <ul>
-<li><strong>具体问题</strong>：如何利用 AlphaFold 系列模型预测 GPCR 的活性（active）与非活性（inactive）两种功能状态的高分辨率结构？</li>
-<li><strong>为什么重要</strong>：GPCR 是最大类药物靶点家族之一，基于结构的药物设计（SBDD）中，激动剂设计需要活性态结构，拮抗剂设计需要非活性态结构。实验解析 GPCR 结构成本高、周期长，尤其活性态结构更难获得。</li>
-<li><strong>现有方法为何不足</strong>：同源建模对活性态构象精度不足；AlphaFold 2 和 AlphaFold 3 虽在静态结构预测上表现优异，但对 GPCR 活性态构象的预测精度显著下降，原因在于训练数据中活性态结构稀少，模型偏向于预测稳定的非活性或中间态。</li>
-<li><strong>精确研究问题</strong>：Can AlphaFold-based prompting with structural-biology-informed sequence inputs accurately predict both active and inactive states of GPCRs, and do the resulting predictions support downstream molecular docking?</li>
+<li><strong>具体问题</strong>: 如何利用AlphaFold准确预测GPCR的活性态和非活性态结构？</li>
+<li><strong>为什么重要</strong>: GPCR是重要药物靶点，其活性态和失活态结构分别对激动剂和拮抗剂设计至关重要。实验解析成本高，现有计算方法（如同源建模、AlphaFold 2/3）对活性态预测精度不足。</li>
+<li><strong>现有方法为何不足</strong>: AlphaFold 2偏向预测非活性态；AlphaFold 3虽整体精度更高，但无法直接解决多态预测问题；基于MSA或模板优化的方法（如浅MSA、多点突变、模板搜索）要么无法生成状态特异性构象，要么依赖高质量模板。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>: Can AlphaFold be guided by biologically meaningful protein sequence prompts to accurately predict both active and inactive states of GPCRs?</li>
 </ul>
-<hr />
 <h2>04 背景与发展脉络</h2>
-<blockquote>
-<p>注：此脉络基于本文框架及领域常识，标注「经外部核验」部分。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>阶段</th>
-<th>代表性方法</th>
-<th>优点</th>
-<th>局限</th>
-<th>本文位置</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>实验结构解析</td>
-<td>X-ray crystallography, Cryo-EM</td>
-<td>高精度、状态明确</td>
-<td>成本高、周期长、部分 GPCR 难结晶</td>
-<td>本文试图补充实验无法覆盖的状态</td>
-</tr>
-<tr>
-<td>同源建模</td>
-<td>MODELLER, Swiss-Model</td>
-<td>快速、可批量</td>
-<td>活性态精度差、依赖模板质量</td>
-<td>本文对比基线之一</td>
-</tr>
-<tr>
-<td>深度学习方法</td>
-<td>AlphaFold 2, AlphaFold 3, ESMFold</td>
-<td>精度高、无需模板</td>
-<td>多状态预测能力弱，偏向单一稳定态</td>
-<td>本文基于 AlphaFold 进行 prompting 扩展</td>
-</tr>
-<tr>
-<td>多状态预测</td>
-<td>AF-Cluster, MSA 子采样, 多序列比对策略</td>
-<td>可探索构象空间</td>
-<td>计算成本高、状态区分不明确</td>
-<td>本文通过序列 prompts 显式引导状态</td>
-</tr>
-</tbody>
-</table>
-<p><strong>核验状态</strong>：AlphaFold 2/3 对 GPCR 活性态预测精度不足这一判断，在本文中为作者主张，但符合领域内广泛认知（经外部核验：AlphaFold 2 在 GPCR 活性态预测上确实存在系统性偏差，如相关 benchmark 研究所示）。</p>
-<hr />
+<ul>
+<li><strong>脉络来源</strong>: 经外部核验（基于文中引用和领域常识）</li>
+<li><strong>阶段1: 实验方法</strong>: X射线晶体学、冷冻电镜。优点：高分辨率。局限：耗时、成本高，仅覆盖222个人类GPCR（截至2024年底）。</li>
+<li><strong>阶段2: 同源建模</strong>: 如GPCR-I-TASSER。优点：无需实验。局限：要求模板序列一致性&gt;30%，对低同源性GPCR效果差。</li>
+<li><strong>阶段3: AI驱动单态预测</strong>: AlphaFold 2。优点：整体精度高。局限：对GPCR活性态预测精度低，偏向非活性态。</li>
+<li><strong>阶段4: AI驱动复合物预测</strong>: AlphaFold-Multimer、AlphaFold 3。优点：可预测复合物结构，对活性态有一定学习。局限：仍无法直接输出状态特异性构象。</li>
+<li><strong>阶段5: 输入优化方法</strong>: 浅MSA、多点突变、模板优化（如AlphaFold-MultiState）。优点：可诱导不同构象。局限：无法保证状态特异性，或依赖高质量模板。</li>
+<li><strong>本文主张的位置</strong>: PromptGPCR属于阶段5的变体，通过引入结构生物学知识指导的蛋白序列提示（prompt），在不依赖模板的情况下，引导AlphaFold预测状态特异性构象。</li>
+</ul>
 <h2>05 核心痛点</h2>
 <table>
 <thead>
@@ -134,61 +93,52 @@
 </thead>
 <tbody>
 <tr>
-<td>GPCR 活性态实验结构稀缺</td>
-<td>活性态结构数量远少于非活性态</td>
-<td>活性态构象不稳定、难以结晶或冷冻制样</td>
-<td>作者在引言中说明（未提供具体数据）</td>
+<td>AlphaFold 2对GPCR活性态预测精度低</td>
+<td>活性态GDT-TS平均比非活性态低7.47</td>
+<td>训练数据中大多数GPCR结构接近非活性态，模型主要学习了序列到非活性态的映射</td>
+<td>Results 图2A</td>
 </tr>
 <tr>
-<td>AlphaFold 对活性态预测精度低</td>
-<td>AF2/AF3 预测的 GPCR 结构偏向非活性或中间态</td>
-<td>训练集中活性态样本少，模型偏向高概率构象</td>
-<td>作者在引言中主张（未提供具体数值）</td>
+<td>现有输入优化方法无法保证状态特异性</td>
+<td>浅MSA、多点突变等方法只能诱导不同构象，但不能生成状态特异性构象</td>
+<td>这些方法缺乏对特定状态的结构生物学知识指导</td>
+<td>Introduction 节</td>
 </tr>
 <tr>
-<td>同源建模对活性态无能为力</td>
-<td>模板缺乏活性态结构时预测失败</td>
-<td>同源建模依赖模板构象</td>
-<td>作者在引言中提及（未提供具体对比数据）</td>
+<td>模板依赖方法受限于模板质量</td>
+<td>AlphaFold-MultiState在未见数据集上表现差（GDT-TS=78.22）</td>
+<td>新发布结构无法找到高序列一致性模板</td>
+<td>Results 图3C</td>
 </tr>
 <tr>
-<td>多状态预测缺乏显式控制</td>
-<td>现有方法无法指定预测哪一状态</td>
-<td>模型没有状态条件输入</td>
-<td>本文提出的 prompting 方法即为解决方案</td>
+<td>非活性态提示的特异性不足</td>
+<td>T4溶菌酶和阴性对照（二氢叶酸还原酶）产生相似效果</td>
+<td>阴性对照序列与GPCR无已知关联，但同样提升预测精度</td>
+<td>Results 图A3</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2>06 核心思想</h2>
-<h3>1) 表面方法</h3>
-<p>PromptGPCR 将 GPCR 的序列信息与结构生物学知识（如保守 motif、状态相关的关键残基、G 蛋白结合位点等）编码为生物序列形式的 prompts，输入到 AlphaFold-Multimer 或 AlphaFold 3 中，通过多序列比对（MSA）的构造方式引导模型输出特定状态的构象。</p>
-<h3>2) 核心洞察</h3>
-<p>AlphaFold 的 MSA 输入不仅是进化信息的载体，也可以作为「条件注入」的通道——通过精心设计的序列 prompts，可以在不修改模型参数的情况下，将状态信息（活性/非活性）传递给模型，从而引导其采样到目标构象状态。这利用了 AlphaFold 对输入序列的敏感性，将结构生物学知识转化为模型可理解的「语言」。</p>
-<h3>3) 可能的普适教训 [Analysis]</h3>
-<ul>
-<li>对于任意结构预测模型，输入表示（input representation）的设计可以成为控制输出的「软开关」，无需重新训练模型。</li>
-<li>将领域知识（如 GPCR 状态相关的残基特征）编码为模型原生输入格式（如序列、MSA），是一种低成本、高可迁移性的条件生成策略。</li>
-<li>该方法可能推广到其他多状态蛋白（如激酶、离子通道）的构象预测。</li>
-</ul>
-<hr />
+<ol>
+<li><strong>表面方法</strong>: 将结构生物学知识指导的蛋白序列（mini-Gs用于活性态，T4溶菌酶用于非活性态）作为独立链与目标GPCR序列一起输入AlphaFold-Multimer或AlphaFold 3，预测复合物结构，从中提取GPCR的特定构象状态。</li>
+<li><strong>核心洞察</strong>: AlphaFold在训练过程中已学习到GPCR活性态和非活性态的构象模式，但这些模式主要与复合物（如GPCR-G蛋白、GPCR-T4溶菌酶融合蛋白）相关联。通过引入这些复合物中的伴侣蛋白序列作为提示，可以激活模型对特定构象状态的记忆，从而在不依赖模板的情况下实现状态特异性预测。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>: 对于具有多构象状态的蛋白家族，如果其不同构象在训练数据中主要与特定结合伙伴或融合蛋白相关联，则可以通过引入这些伴侣蛋白的序列作为提示，引导预训练结构预测模型输出目标构象。这为利用预训练模型进行下游任务适配提供了一种低成本的推理阶段策略。</li>
+</ol>
 <h2>07 方法总览</h2>
 <ul>
-<li><strong>输入</strong>：GPCR 目标序列 + 结构生物学知识编码的 prompts（序列形式）</li>
-<li><strong>输出</strong>：活性态或非活性态的 3D 结构预测</li>
-<li><strong>模块</strong>：
-  1. Prompt 构造模块：基于 GPCR 保守 motif、状态特异性残基、G 蛋白/arrestin 结合位点等知识，生成附加序列
-  2. MSA 构建模块：将 prompts 与目标序列结合，构建多序列比对
-  3. AlphaFold 推理模块：使用 AlphaFold-Multimer 或 AlphaFold 3 进行结构预测
-  4. 状态评估模块：通过结构特征（如 TM6 向外位移、DRY motif 构象）验证预测状态</li>
-<li><strong>训练</strong>：无训练（inference-only），不修改 AlphaFold 参数</li>
-<li><strong>工具</strong>：AlphaFold-Multimer、AlphaFold 3</li>
-<li><strong>反馈回路</strong>：预测后通过结构生物学指标（如 TM6 位移、G 蛋白 docking 位点开放程度）评估状态正确性，必要时调整 prompts 重新预测</li>
-<li><strong>假设</strong>：AlphaFold 对输入序列的敏感性足以被 prompts 引导至目标状态；结构生物学知识可以编码为序列形式并被模型理解</li>
+<li><strong>输入</strong>: 目标GPCR的野生型氨基酸序列 + 提示蛋白序列（mini-Gs或T4溶菌酶）+ 对应的MSA</li>
+<li><strong>输出</strong>: 预测的GPCR-提示蛋白复合物结构，从中提取GPCR亚基作为状态特异性结构</li>
+<li><strong>模块</strong>:
+  1. 数据准备：从UniProt获取序列，从GPCRdb获取PDB结构，构建MSA
+  2. 提示选择：基于结构生物学知识选择mini-Gs（活性态）或T4溶菌酶（非活性态）
+  3. 模型推理：将GPCR序列和提示序列作为两条链输入AlphaFold-Multimer v2.2.3或AlphaFold 3
+  4. 结构后处理：从预测的复合物中提取GPCR结构，忽略未对齐区域</li>
+<li><strong>训练</strong>: 无训练，仅推理阶段操作</li>
+<li><strong>工具</strong>: AlphaFold-Multimer v2.2.3, AlphaFold 3, CSAlign-Dock</li>
+<li><strong>反馈回路</strong>: 无</li>
+<li><strong>假设</strong>: AlphaFold在训练中已学习到GPCR活性态和非活性态的构象模式，且这些模式与特定伴侣蛋白（G蛋白、T4溶菌酶）相关联</li>
+<li><strong>文字流程</strong>: 输入GPCR序列和提示序列 → 构建MSA → 输入AlphaFold-Multimer或AlphaFold 3 → 预测复合物结构 → 提取GPCR亚基 → 评估（GDT-TS、RMSD）或下游应用（分子对接）</li>
 </ul>
-<p><strong>文字流程</strong>：
-目标 GPCR 序列 → 根据状态（活性/非活性）选择对应的 prompts → 将 prompts 与目标序列拼接/融合 → 构建 MSA → 输入 AlphaFold-Multimer 或 AF3 → 输出结构 → 用结构特征验证状态 → 若状态不符则调整 prompts 重试 → 最终输出高置信度的目标状态结构。</p>
-<hr />
 <h2>08 核心模块拆解</h2>
 <table>
 <thead>
@@ -203,60 +153,60 @@
 </thead>
 <tbody>
 <tr>
-<td>Prompt 构造模块</td>
-<td>将结构生物学知识编码为序列</td>
-<td>为模型提供状态条件信息</td>
-<td>输入：GPCR 序列+知识库；输出：prompt 序列</td>
-<td>作者在 Methods 中描述（未提供具体设计细节）</td>
-<td>预期影响：移除后模型无法区分状态，退化为标准 AF2/AF3 预测 [预期效应]</td>
+<td>提示序列选择</td>
+<td>基于结构生物学知识选择mini-Gs（活性态）或T4溶菌酶（非活性态）</td>
+<td>提供上下文信息，引导模型预测特定构象</td>
+<td>输入：GPCR序列；输出：提示序列</td>
+<td>图2B显示mini-Gs优于其他mini-G蛋白和截短版本；图2C显示序列相似性越高，预测精度越高</td>
+<td>移除后模型退化为单链预测，活性态精度下降（图2B中单链AlphaFold-Multimer GDT-TS约85，加提示后&gt;88）</td>
 </tr>
 <tr>
-<td>MSA 构建模块</td>
-<td>将 prompts 与目标序列融合</td>
-<td>AlphaFold 依赖 MSA 作为主要输入</td>
-<td>输入：目标序列+prompts；输出：MSA</td>
-<td>作者在 Methods 中描述（未提供具体融合策略）</td>
-<td>预期影响：融合方式不当可能导致 MSA 噪声增加，降低预测精度 [预期效应]</td>
+<td>复合物预测</td>
+<td>将GPCR和提示序列作为两条链输入AlphaFold-Multimer或AlphaFold 3</td>
+<td>激活模型对复合物中特定构象的记忆</td>
+<td>输入：GPCR序列+提示序列+MSA；输出：复合物结构</td>
+<td>图2D/E显示加提示后AlphaFold 3在44/67个非活性态和52/66个活性态目标上提升</td>
+<td>移除后无法利用复合物上下文，预测精度下降</td>
 </tr>
 <tr>
-<td>AlphaFold 推理模块</td>
-<td>执行结构预测</td>
-<td>核心预测引擎</td>
-<td>输入：MSA；输出：3D 结构+置信度</td>
-<td>基于 AF2/AF3 标准流程</td>
-<td>不可移除（核心组件）</td>
+<td>结构后处理</td>
+<td>从复合物中提取GPCR亚基，忽略未对齐区域</td>
+<td>获得纯净的GPCR结构用于评估</td>
+<td>输入：复合物结构；输出：GPCR结构</td>
+<td>Methods节描述</td>
+<td>不适用</td>
 </tr>
 <tr>
-<td>状态评估模块</td>
-<td>验证预测结构的状态</td>
-<td>确保输出符合目标状态</td>
-<td>输入：预测结构；输出：状态判定</td>
-<td>作者在 Results 中展示状态区分度（未提供具体指标数值）</td>
-<td>预期影响：移除后无法保证预测状态正确性 [预期效应]</td>
+<td>分子对接</td>
+<td>使用CSAlign-Dock对预测结构进行配体对接</td>
+<td>评估预测结构在下游应用中的可用性</td>
+<td>输入：预测结构+参考配体；输出：对接配体构象</td>
+<td>图4D/E显示AlphaFold 3+提示的对接成功率为77.78%，优于其他方法</td>
+<td>不适用</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>注：本文未提供详细的消融实验，因此「实测消融效应」不可得，以上均为预期影响。</p>
-</blockquote>
-<hr />
 <h2>09 关键公式符号</h2>
-<p>不适用。本文为基于 AlphaFold 的 prompting 方法，未提出新的数学公式或损失函数。核心机制为输入序列的构造策略，而非形式化数学表达。</p>
-<hr />
+<ul>
+<li><strong>GDT-TS (Global Distance Test - Total Score)</strong>: 用于评估预测结构与实验结构之间的全局相似性。计算所有Cα原子对中，距离小于多个阈值（1Å, 2Å, 4Å, 8Å）的百分比的平均值。值越高表示预测越准确。来源：Methods节。</li>
+<li><strong>RMSD (Root Mean Square Deviation)</strong>: 用于评估预测结构与实验结构之间原子位置的差异。在对接实验中，若前5个对接配体中至少有一个的RMSD &lt; 2Å，则认为对接成功。来源：Methods节。</li>
+</ul>
 <h2>10 实验设计与证据链</h2>
 <ul>
-<li><strong>数据集</strong>：GPCR 数据集，具体规模未提供（作者未明确列出测试集数量）</li>
-<li><strong>测试集</strong>：包含已知活性态和非活性态实验结构的 GPCR 子集（具体列表未提供）</li>
-<li><strong>指标</strong>：预测结构与实验结构的 RMSD、TM-score 等（具体指标定义未提供）</li>
-<li><strong>基线</strong>：标准 AlphaFold 2、AlphaFold 3、同源建模（具体基线列表未提供）</li>
-<li><strong>oracle 输入</strong>：实验解析的活性/非活性结构作为真值参考</li>
-<li><strong>评测协议</strong>：对每个测试 GPCR，分别预测活性态和非活性态，与对应实验结构比较</li>
+<li><strong>数据集/群体</strong>: 基准数据集（411个结构，107个类A GPCR，33个同时有活性态和非活性态）；未见数据集（44个活性态结构，20个GPCR，2022年7月后发布）</li>
+<li><strong>规模</strong>: 基准数据集：107个受体；未见数据集：20个受体</li>
+<li><strong>指标</strong>: GDT-TS, 口袋区域RMSD（全原子、主链、Cα），配体RMSD，对接成功率</li>
+<li><strong>基线</strong>: AlphaFold 2, AlphaFold-MultiState, AlphaFold-Multimer, AlphaFold 3</li>
+<li><strong>预算</strong>: 未提供</li>
+<li><strong>骨干/仪器</strong>: AlphaFold-Multimer v2.2.3, AlphaFold 3</li>
+<li><strong>Oracle 输入</strong>: 实验结构中的参考配体（用于对接）</li>
+<li><strong>评测协议</strong>: 对AlphaFold-Multimer选最高置信度预测；对AlphaFold 3用5个随机种子，每个生成5个结构，选最高排名分数</li>
 </ul>
 <table>
 <thead>
 <tr>
 <th>实验</th>
-<th>检验的 claim</th>
+<th>检验的claim</th>
 <th>对比与条件</th>
 <th>结果</th>
 <th>支持的结论</th>
@@ -266,57 +216,108 @@
 </thead>
 <tbody>
 <tr>
-<td>多状态预测精度</td>
-<td>PromptGPCR 能同时准确预测活性/非活性态</td>
-<td>对比标准 AF2/AF3</td>
-<td>作者报告优于基线（具体数值未提供）</td>
-<td>PromptGPCR 在状态特异性预测上优于基线</td>
-<td>无法判断是否对所有 GPCR 家族均有效</td>
-<td>Results 节（未提供图/表编号）</td>
+<td>多态结构预测（基准数据集）</td>
+<td>PromptGPCR能准确预测活性态和非活性态</td>
+<td>对比AlphaFold 2, AlphaFold-MultiState, AlphaFold-Multimer, AlphaFold 3</td>
+<td>活性态：AlphaFold 3+提示GDT-TS最高（未提供具体值）；非活性态：AlphaFold-MultiState最高（90.20）</td>
+<td>PromptGPCR在活性态预测上优于基线</td>
+<td>非活性态预测未显著优于AlphaFold-MultiState</td>
+<td>图2A</td>
 </tr>
 <tr>
-<td>状态区分度</td>
-<td>预测的活性态与非活性态结构在构象上有显著差异</td>
-<td>比较两种状态预测结构的构象差异</td>
-<td>作者报告状态区分明显（具体指标未提供）</td>
-<td>PromptGPCR 能产生状态特异的构象</td>
-<td>无法判断构象差异是否与实验观察一致</td>
-<td>Results 节</td>
+<td>提示序列选择</td>
+<td>mini-Gs是最佳活性态提示</td>
+<td>对比mini-Gs, mini-Gi, mini-Gq及截短版本</td>
+<td>mini-Gs平均GDT-TS最高且最一致</td>
+<td>mini-Gs是活性态最佳提示</td>
+<td>截短版本效果较差</td>
+<td>图2B</td>
 </tr>
 <tr>
-<td>分子对接成功率</td>
-<td>PromptGPCR 预测结构可用于下游对接</td>
-<td>使用预测结构进行分子对接，比较成功对接率</td>
-<td>作者报告高于基线（具体数值未提供）</td>
-<td>预测结构具有下游实用性</td>
-<td>未提供对接靶标、配体集等细节</td>
-<td>Results 节</td>
+<td>提示序列特异性</td>
+<td>提示序列相似性影响预测精度</td>
+<td>使用与mini-Gs不同相似度的随机序列</td>
+<td>序列相似性越高，GDT-TS越高</td>
+<td>提示序列需要与目标状态相关</td>
+<td>未测试完全无关序列</td>
+<td>图2C</td>
+</tr>
+<tr>
+<td>未见数据集泛化</td>
+<td>PromptGPCR能泛化到新结构</td>
+<td>对比AlphaFold 2, AlphaFold-MultiState, AlphaFold-Multimer, AlphaFold 3</td>
+<td>AlphaFold 3+提示平均GDT-TS=89.76，优于其他方法</td>
+<td>PromptGPCR能泛化到未见数据</td>
+<td>未见数据集仅含活性态</td>
+<td>图3C</td>
+</tr>
+<tr>
+<td>分子对接</td>
+<td>PromptGPCR预测结构可用于对接</td>
+<td>对比AlphaFold 2, AlphaFold-MultiState, AlphaFold-Multimer, AlphaFold 3</td>
+<td>AlphaFold 3+提示对接成功率77.78%，平均配体RMSD=1.85Å</td>
+<td>PromptGPCR预测结构在对接中表现更好</td>
+<td>实验为引导性pose恢复，非盲对接</td>
+<td>图4D/E</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>注：原文摘要中未提供具体数值、图/表编号，以上证据链基于作者文字描述。</p>
-</blockquote>
-<hr />
 <h2>11 结论正确解读</h2>
 <ul>
-<li><strong>任务范围</strong>：仅针对 GPCR 家族的活性/非活性双状态预测，不涉及其他蛋白家族或多状态（如中间态）预测。</li>
-<li><strong>oracle/真值输入</strong>：使用实验解析的 GPCR 结构作为评估真值，但未说明是否包含未公开或最新解析的结构。</li>
-<li><strong>端到端状态</strong>：方法为 inference-only，不涉及模型训练或微调，因此不依赖训练数据更新。</li>
-<li><strong>算力成本</strong>：与标准 AlphaFold 推理相当，但 prompts 构造和多次尝试可能增加额外计算开销（作者未量化）。</li>
-<li><strong>历史数据依赖</strong>：依赖 AlphaFold 预训练模型的知识，以及 GPCR 结构生物学知识库的完整性。</li>
-<li><strong>模型依赖</strong>：方法依赖 AlphaFold-Multimer 和 AlphaFold 3 的特定行为，若模型更新可能影响 prompts 有效性。</li>
-<li><strong>最难情形</strong>：对于缺乏保守 motif 或状态特征不明显的 GPCR（如组成型活性突变体），prompts 设计可能失效。</li>
-<li><strong>不确定性</strong>：作者未提供置信区间、误差棒或失败案例分析，无法评估预测的可靠性边界。</li>
-<li><strong>有边界的复述</strong>：PromptGPCR 在特定 GPCR 测试集上，通过序列 prompts 引导 AlphaFold 预测活性/非活性态，精度优于标准 AF2/AF3，并在分子对接中表现更好；但该结论仅限于测试的 GPCR 子集，且未提供量化细节。</li>
+<li><strong>任务范围</strong>: 仅针对类A GPCR的活性态和非活性态预测，未评估其他GPCR类（B、C、F、T）或中间态。</li>
+<li><strong>Oracle/真值输入</strong>: 对接实验使用了实验结构中的参考配体作为输入，非盲对接。</li>
+<li><strong>端到端状态</strong>: 非端到端，需要手动选择提示序列。</li>
+<li><strong>算力成本</strong>: 未提供，但基于AlphaFold推理，成本与标准AlphaFold运行相当。</li>
+<li><strong>历史数据依赖</strong>: 依赖AlphaFold训练数据中GPCR复合物结构的存在。</li>
+<li><strong>模型依赖</strong>: 依赖AlphaFold-Multimer和AlphaFold 3，未测试其他结构预测模型。</li>
+<li><strong>最难情形</strong>: 未见数据集中的新GPCR（序列相似性&lt;70%），AlphaFold-MultiState表现差（GDT-TS=78.22）。</li>
+<li><strong>群体/领域边界</strong>: 仅适用于GPCR，且提示选择依赖结构生物学知识。</li>
+<li><strong>不确定性</strong>: 非活性态提示的特异性未充分验证（阴性对照产生相似效果）。</li>
+<li><strong>有边界的复述</strong>: PromptGPCR通过向AlphaFold-Multimer和AlphaFold 3输入mini-Gs或T4溶菌酶序列作为提示，能在不依赖模板的情况下，对类A GPCR的活性态和非活性态进行准确预测，并在引导性分子对接中取得较高成功率，但该方法对非活性态提示的特异性有限，且未验证其他GPCR类或中间态。</li>
 </ul>
-<hr />
 <h2>12 作者自认局限</h2>
-<p>在提供的材料（摘要）中未发现作者明确承认的局限。作者未在摘要中讨论方法不足或失败场景。</p>
-<p><strong>作者提及的相关约束</strong>（非正式局限）：
-- 作者提到「提供结构假设（structural hypotheses）」，暗示预测结果应视为假设而非确定结构。
-- 作者强调「在实验结构不可用的情况下」提供价值，暗示方法不能替代实验验证。</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>忽略脂质环境</td>
+<td>脂质对膜蛋白折叠和构象稳定性至关重要，但AlphaFold训练数据中通常排除脂质分子</td>
+<td>未明确提及</td>
+<td>Conclusions 节</td>
+</tr>
+<tr>
+<td>G蛋白类与预测性能的关系未探索</td>
+<td>不同G蛋白家族（Gs, Gi/o, Gq/11, G12/13）可能影响预测结果</td>
+<td>探索G蛋白亚型与状态特异性预测性能的潜在联系</td>
+<td>Conclusions 节</td>
+</tr>
+<tr>
+<td>方法可能适用于其他蛋白家族但未验证</td>
+<td>其他多构象蛋白家族可能受益，但需要先验知识选择提示</td>
+<td>探索使用生成模型或提示调优自动生成提示序列；细化案例研究</td>
+<td>Conclusions 节</td>
+</tr>
+<tr>
+<td>未系统评估嗅觉受体（ORs）</td>
+<td>ORs是GPCR超家族重要成员，但PromptGPCR缺乏系统评估</td>
+<td>未来工作中进一步探索ORs</td>
+<td>Conclusions 节</td>
+</tr>
+<tr>
+<td>非活性态提示有效性需进一步验证</td>
+<td>T4溶菌酶与阴性对照产生相似效果，提示特异性不足</td>
+<td>进一步扩展非活性态预测框架的可用性</td>
+<td>Conclusions 节</td>
+</tr>
+</tbody>
+</table>
 <h2>13 批判性分析</h2>
 <table>
 <thead>
@@ -330,128 +331,90 @@
 </thead>
 <tbody>
 <tr>
-<td>摘要未提供量化结果</td>
-<td>可能效果提升有限，或仅在特定子集上有效</td>
-<td>无法评估方法的实际增益</td>
-<td>获取全文，检查 RMSD/TM-score 数值及统计显著性</td>
-<td>摘要中仅定性描述「accurate」「higher success rates」</td>
+<td>非活性态提示的特异性不足</td>
+<td>T4溶菌酶和阴性对照（二氢叶酸还原酶）产生相似效果，可能提示非活性态预测的提升并非来自提示的特异性，而是来自复合物预测本身（如增加输入链数）</td>
+<td>若提升来自复合物预测而非提示特异性，则方法的核心假设（提示引导状态特异性）被削弱</td>
+<td>使用多种无关蛋白序列作为提示，比较其对非活性态预测的影响</td>
+<td>Results 图A3</td>
 </tr>
 <tr>
-<td>Prompts 设计依赖领域知识</td>
-<td>不同 GPCR 亚家族可能需要不同 prompts，泛化性存疑</td>
-<td>方法可推广性取决于 prompt 设计的自动化程度</td>
-<td>检查是否提供自动化 prompt 生成策略</td>
-<td>摘要未提及 prompt 设计流程</td>
+<td>未见数据集仅含活性态</td>
+<td>未见数据集仅包含44个活性态结构，未评估非活性态泛化能力</td>
+<td>无法判断PromptGPCR对非活性态的泛化能力是否同样优于基线</td>
+<td>收集新发布的非活性态GPCR结构，构建平衡的未见数据集</td>
+<td>Results 图3C</td>
 </tr>
 <tr>
-<td>与 AF-Cluster 等无提示方法对比缺失</td>
-<td>可能已有方法也能实现多状态预测</td>
-<td>需明确增量贡献</td>
-<td>检查基线是否包含多状态预测方法</td>
-<td>摘要仅提及「baselines」，未具体列出</td>
+<td>对接实验为引导性pose恢复</td>
+<td>对接使用了实验结构中的参考配体作为输入，非盲对接或虚拟筛选</td>
+<td>实验结果不能直接推广到实际药物设计场景（如虚拟筛选）</td>
+<td>设计盲对接或虚拟筛选实验，比较PromptGPCR与基线方法的命中率</td>
+<td>Results 节</td>
 </tr>
 <tr>
-<td>分子对接成功率提升的机制不明</td>
-<td>可能是结构整体质量提升而非状态特异性所致</td>
-<td>需区分「状态正确」与「整体更优」的贡献</td>
-<td>对比相同精度的非状态特异性结构在对接中的表现</td>
-<td>摘要未提供对照实验</td>
+<td>提示序列选择依赖先验知识</td>
+<td>需要结构生物学知识选择提示，限制了方法的自动化程度</td>
+<td>对于缺乏先验知识的蛋白家族，该方法难以直接应用</td>
+<td>探索使用生成模型或提示调优自动生成提示序列</td>
+<td>Conclusions 节</td>
 </tr>
 <tr>
-<td>测试集规模与多样性未说明</td>
-<td>可能仅包含少数易预测的 GPCR</td>
-<td>影响结论外推性</td>
-<td>检查测试集是否覆盖 A/B/C/F 各类 GPCR</td>
-<td>摘要未提供测试集信息</td>
+<td>未评估计算成本</td>
+<td>未提供运行时间或资源消耗</td>
+<td>实际应用中计算成本是重要考量因素</td>
+<td>报告PromptGPCR与基线方法的运行时间和资源消耗</td>
+<td>未提供</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2>14 学到什么</h2>
-<p><strong>Agent 提炼的知识候选</strong>：</p>
-<ol>
-<li>
-<p><strong>Prompting 作为条件生成策略</strong>：在不修改模型参数的前提下，通过设计输入序列（prompts）引导 AlphaFold 输出特定构象状态。这一思路可迁移到其他多状态蛋白（如激酶活性/非活性、离子通道开/闭态）的结构预测。</p>
-</li>
-<li>
-<p><strong>结构生物学知识编码为序列</strong>：将保守 motif、状态特异性残基等知识转化为模型可理解的序列形式，是一种「知识注入」的低成本方案。可迁移到其他结构预测任务中，如将配体结合信息编码为序列辅助 holo 结构预测。</p>
-</li>
-<li>
-<p><strong>状态验证的闭环设计</strong>：预测后通过结构特征（如 TM6 位移）验证状态正确性，形成「预测-验证-调整」的闭环。可迁移到构象采样任务中，作为采样结果的过滤标准。</p>
-</li>
-<li>
-<p><strong>下游任务验证上游预测</strong>：用分子对接成功率评估结构预测的实用性，而非仅看 RMSD。这一评估思路可迁移到所有结构预测方法评估中，特别是面向 SBDD 的场景。</p>
-</li>
-<li>
-<p><strong>多状态预测的「软控制」思路</strong>：与显式添加状态标签或训练多状态模型不同，prompting 提供了一种「软控制」方式，保留了模型原有能力的同时实现状态切换。可迁移到其他生成模型（如扩散模型）的构象生成任务中。</p>
-</li>
-</ol>
-<hr />
+<p><strong>Agent 提炼的知识候选</strong>:
+1. <strong>可迁移概念: 提示学习用于蛋白质结构预测</strong>。本文展示了如何将自然语言处理中的提示学习概念迁移到蛋白质结构预测领域，通过引入结构生物学知识指导的蛋白序列作为提示，引导预训练模型输出特定构象。<strong>迁移到本课题</strong>: 对于其他具有多构象状态的蛋白（如激酶、离子通道），可以尝试识别其不同构象对应的结合伙伴或融合蛋白，将其序列作为提示输入AlphaFold或其他结构预测模型。
+2. <strong>可迁移方法: 基于复合物预测的状态特异性结构提取</strong>。本文通过将提示序列作为独立链与目标序列一起输入，预测复合物结构，然后提取目标蛋白亚基。<strong>迁移到本课题</strong>: 对于需要预测特定结合状态（如配体结合、蛋白-蛋白相互作用）的蛋白结构，可以尝试将结合伙伴的序列作为提示，利用复合物预测模型获得更准确的构象。
+3. <strong>可迁移实验设计: 提示序列特异性验证</strong>。本文通过使用不同相似度的随机序列作为提示，验证了提示序列与目标状态的相关性对预测精度的影响。<strong>迁移到本课题</strong>: 在验证提示方法的有效性时，应设计阴性对照实验，使用无关序列或随机序列作为提示，以排除复合物预测本身带来的提升。
+4. <strong>可迁移概念: 预训练模型的知识激活</strong>。本文的核心洞察是AlphaFold在训练中已学习到GPCR不同构象的模式，但需要特定上下文（复合物）来激活。<strong>迁移到本课题</strong>: 对于其他预训练模型（如ESMFold、RoseTTAFold），可以探索通过输入特定上下文（如结合伙伴、突变序列）来激活模型对特定构象或功能的记忆。</p>
 <h2>15 与已有知识连接</h2>
 <ul>
-<li><strong>AlphaFold 2/3 的已知局限</strong>：Jumper et al. (2021) 的 AlphaFold 2 在单态预测上表现优异，但对构象状态多样性捕捉不足；本文针对这一局限提出 prompting 方案，属于「在预训练模型基础上做推理时控制」的路线。</li>
-<li><strong>GPCR 结构生物学知识</strong>：GPCR 的 DRY motif、NPxxY motif、TM6 向外位移等状态标志物是领域内公认的结构特征（经外部核验），本文利用这些知识设计 prompts，与结构生物学先验知识一致。</li>
-<li><strong>MSA 子采样方法</strong>：已有研究（如 AF-Cluster, Wayment-Steele et al. 2023）通过 MSA 子采样探索 AlphaFold 的构象多样性；本文的 prompting 方法可视为对 MSA 输入的另一种操控方式，两者互补。</li>
-<li><strong>分子对接与结构预测的衔接</strong>：本文用对接成功率评估预测结构，与「结构预测服务于 SBDD」的领域趋势一致，类似思路见于 AlphaFold 3 的 ligand 对接能力研究。</li>
-<li><strong>候选方向（未验证）</strong>：prompting 方法可能与 ESM-2 等蛋白质语言模型的 embedding 条件化方法结合，实现更精细的构象控制。</li>
+<li><strong>相似方法</strong>: Del Alamo et al. (2022) 使用浅MSA引导AlphaFold 2预测GPCR构象；Stein and Mchaourab (2022) 通过多点突变诱导构象多样性；Wayment-Steele et al. (2022) 通过MSA聚类引导替代结构预测。这些方法与PromptGPCR同属输入优化策略，但PromptGPCR通过引入提示序列实现状态特异性。</li>
+<li><strong>相似方法</strong>: AlphaFold-MultiState (Heo &amp; Feig, 2022) 通过模板优化实现多态预测，但依赖高质量模板。PromptGPCR不依赖模板，但需要先验知识选择提示。</li>
+<li><strong>组合方向</strong>: Cheng et al. (2024) 在GPCR外域调节子设计中使用了G蛋白作为结构提示，与PromptGPCR的活性态提示策略相似，但目标不同（设计 vs. 预测）。两者可组合：PromptGPCR提供准确结构，Cheng的方法用于设计调节子。</li>
+<li><strong>冲突观点</strong>: 本文认为AlphaFold在训练中已学习到GPCR活性态模式，但需要提示激活。这与一些观点（如AlphaFold无法预测活性态是因为训练数据中活性态不足）部分冲突。本文通过实验表明，即使训练数据中活性态较少，通过提示仍可激活模型对活性态的记忆。</li>
+<li><strong>可迁移领域</strong>: 该方法可迁移到其他具有多构象状态的蛋白家族，如激酶（活性态/非活性态）、离子通道（开放/关闭态）、核受体（激动剂结合/拮抗剂结合态）。关键是需要识别与特定构象相关的结合伙伴或融合蛋白。</li>
 </ul>
-<hr />
 <h2>16 研究想法</h2>
-<p><strong>Agent 生成的研究候选</strong>：</p>
-<hr />
-<h3>候选 1：自动化 Prompt 设计框架</h3>
-<ul>
-<li><strong>名称</strong>：AutoPrompt-GPCR：基于序列特征自动生成状态提示</li>
-<li><strong>来源局限/观察</strong>：本文 prompts 依赖人工结构生物学知识，不同 GPCR 亚家族可能需要不同 prompts，泛化性受限</li>
-<li><strong>核心假设</strong>：GPCR 序列中的保守 motif 和状态相关残基可以通过序列比对自动识别，并自动生成 prompts</li>
-<li><strong>初步方法</strong>：利用多序列比对中的共进化信息 + 已知状态标志物数据库，训练一个小型模型自动生成 prompts；在多个 GPCR 亚家族上验证</li>
-<li><strong>验证方式</strong>：在本文数据集上对比 AutoPrompt 与人工 prompts 的预测精度</li>
-<li><strong>创新状态</strong>：unverified</li>
-</ul>
-<hr />
-<h3>候选 2：Prompting 扩展到其他多状态蛋白</h3>
-<ul>
-<li><strong>名称</strong>：MultiState-Prompt：将 prompting 策略推广到激酶、离子通道等</li>
-<li><strong>来源局限/观察</strong>：本文仅针对 GPCR，但多状态预测是普遍问题</li>
-<li><strong>核心假设</strong>：prompting 策略不依赖于 GPCR 特有知识，可迁移到其他具有明确状态标志物的蛋白家族</li>
-<li><strong>初步方法</strong>：选择激酶（活性/非活性）、离子通道（开/闭）等体系，设计对应的状态 prompts，评估预测精度</li>
-<li><strong>验证方式</strong>：与实验结构对比 RMSD，并与 AF-Cluster 等无提示方法对比</li>
-<li><strong>创新状态</strong>：unverified</li>
-</ul>
-<hr />
-<h3>候选 3：Prompting 与 MSA 子采样结合</h3>
-<ul>
-<li><strong>名称</strong>：Prompt-Sampling：融合 prompting 与 MSA 子采样增强构象多样性</li>
-<li><strong>来源局限/观察</strong>：本文 prompting 可能只覆盖两个状态，但 GPCR 存在多个中间态</li>
-<li><strong>核心假设</strong>：prompting 与 MSA 子采样正交，可叠加使用以覆盖更广的构象空间</li>
-<li><strong>初步方法</strong>：在 prompts 引导的基础上，对 MSA 进行子采样，生成多个候选结构，用状态验证模块筛选</li>
-<li><strong>验证方式</strong>：在已知多中间态的 GPCR（如 β2-AR）上测试，比较构象覆盖度</li>
-<li><strong>创新状态</strong>：unverified</li>
-</ul>
-<hr />
-<h3>候选 4：Prompting 用于 apo/holo 结构预测</h3>
-<ul>
-<li><strong>名称</strong>：Ligand-Prompt：将配体结合信息编码为 prompts 预测 holo 结构</li>
-<li><strong>来源局限/观察</strong>：本文仅关注活性/非活性状态，但 GPCR 的配体结合状态（apo/holo）同样影响结构</li>
-<li><strong>核心假设</strong>：配体结合位点信息可以编码为序列 prompts，引导 AlphaFold 预测 holo 构象</li>
-<li><strong>初步方法</strong>：将已知配体结合残基信息编码为 prompts，预测 holo 结构，与实验 holo 结构对比</li>
-<li><strong>验证方式</strong>：在具有 apo 和 holo 实验结构的 GPCR 上测试</li>
-<li><strong>创新状态</strong>：unverified</li>
-</ul>
-<hr />
-<h3>候选 5：Prompting 的可解释性分析</h3>
-<ul>
-<li><strong>名称</strong>：Prompt-Interpret：解析 prompts 如何影响 AlphaFold 内部表示</li>
-<li><strong>来源局限/观察</strong>：本文未解释 prompts 为何有效，机制不明</li>
-<li><strong>核心假设</strong>：prompts 通过影响 MSA 的进化信息权重，改变模型对构象状态的先验</li>
-<li><strong>初步方法</strong>：对 AlphaFold 的 attention map 和 MSA 表示进行探针分析，比较有/无 prompts 时的内部状态差异</li>
-<li><strong>验证方式</strong>：识别 prompts 影响的关键层和 attention head，验证其与状态相关残基的对应关系</li>
-<li><strong>创新状态</strong>：unverified</li>
-</ul>
-<hr />
-<blockquote>
-<p>以上候选均基于本文 prompting 思路的延伸，创新状态均为 unverified，需进一步实验验证。</p>
-</blockquote></div>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>名称</strong>: 自动提示生成用于多态蛋白结构预测
+   - <strong>来源局限/观察</strong>: PromptGPCR的提示选择依赖结构生物学先验知识，限制了方法的自动化程度和可迁移性。
+   - <strong>核心假设</strong>: 可以通过生成模型或提示调优自动学习与特定构象状态相关的蛋白序列提示，无需先验知识。
+   - <strong>相对本文的增量</strong>: 将提示选择从人工设计扩展到自动生成，提高方法的通用性。
+   - <strong>初步方法</strong>: 使用可微调的蛋白语言模型（如ESM-2）或提示调优技术，以预测结构GDT-TS为优化目标，自动搜索最优提示序列。
+   - <strong>验证方式</strong>: 在GPCR基准数据集和未见数据集上比较自动生成提示与人工选择提示的预测精度；扩展到其他蛋白家族（如激酶）。
+   - <strong>可能的失败模式</strong>: 自动生成的提示可能过拟合到训练数据，泛化能力差；优化过程计算成本高。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 非活性态提示特异性增强策略
+   - <strong>来源局限/观察</strong>: PromptGPCR中非活性态提示（T4溶菌酶）与阴性对照产生相似效果，提示特异性不足。
+   - <strong>核心假设</strong>: 非活性态预测的提升主要来自复合物预测本身，而非提示的特异性；通过设计更特异的非活性态提示（如GPCR拮抗剂结合域、特定突变序列）可以进一步提升性能。
+   - <strong>相对本文的增量</strong>: 解决非活性态提示特异性问题，提升方法在非活性态预测上的可靠性和可解释性。
+   - <strong>初步方法</strong>: 设计多种非活性态相关提示（如拮抗剂结合蛋白、非活性态特异性突变序列、GPCR C末端序列），比较其与T4溶菌酶和阴性对照的预测效果；使用消融实验分析复合物预测和提示特异性各自的贡献。
+   - <strong>验证方式</strong>: 在基准数据集和未见数据集上比较不同提示的GDT-TS；使用统计检验（如配对t检验）评估提示特异性是否显著。
+   - <strong>可能的失败模式</strong>: 所有非活性态提示均产生相似效果，表明复合物预测是主要因素；或无法找到比T4溶菌酶更特异的提示。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: PromptGPCR在虚拟筛选中的应用评估
+   - <strong>来源局限/观察</strong>: 本文的对接实验为引导性pose恢复，非盲对接或虚拟筛选，不能直接推广到实际药物设计场景。
+   - <strong>核心假设</strong>: PromptGPCR预测的活性态结构在虚拟筛选（如对接大型化合物库）中能比基线方法（如AlphaFold 2、AlphaFold 3）产生更高的富集因子和命中率。
+   - <strong>相对本文的增量</strong>: 将评估从pose恢复扩展到虚拟筛选，验证方法在实际药物发现中的实用性。
+   - <strong>初步方法</strong>: 选择多个GPCR靶点，使用PromptGPCR和基线方法预测活性态结构；使用标准对接工具（如Glide、AutoDock Vina）对已知配体和诱饵库进行虚拟筛选；计算富集因子、ROC-AUC等指标。
+   - <strong>验证方式</strong>: 比较不同方法预测结构的虚拟筛选性能；使用已知活性配体和DUD-E诱饵库。
+   - <strong>可能的失败模式</strong>: PromptGPCR预测结构在虚拟筛选中不优于基线方法，表明pose恢复性能不能直接转化为虚拟筛选性能。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
   </section>
   
   
@@ -459,122 +422,142 @@
     <h2>审稿人评审</h2>
     <div class="md"><h2>Review setup</h2>
 <ul>
-<li><strong>Input scope</strong> Full manuscript (Computational and structural biotechnology journal, 2026)</li>
-<li><strong>Assessment boundary</strong> Claims, methods, results, and conclusions as presented in the provided text</li>
-<li><strong>Shared manuscript claim summary</strong> The authors propose PromptGPCR, an AlphaFold-based inference framework that uses biologically informed sequence prompts to guide AlphaFold-Multimer and AlphaFold 3 toward predicting both active and inactive GPCR structures with higher accuracy than existing methods, and demonstrate improved performance in molecular docking.</li>
-<li><strong>Visible evidence base</strong> Abstract only; no figures, tables, methods section, or supplementary materials provided</li>
-<li><strong>Missing materials affecting confidence</strong> Full methods, all figures/tables, supplementary data, code availability, benchmark datasets, statistical analyses, and comparison details</li>
+<li><strong>Input scope</strong> Full manuscript</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodology, experimental design, data analysis, and conclusions as presented in the manuscript</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose PromptGPCR, an AlphaFold-based inference framework that uses biologically informed protein sequence prompts (mini-Gs for active states, T4 lysozyme for inactive states) to guide AlphaFold-Multimer and AlphaFold 3 toward predicting state-specific GPCR structures. They claim that PromptGPCR outperforms baseline methods in backbone structure prediction and molecular docking success rates.</li>
+<li><strong>Visible evidence base</strong> Full manuscript text, figures referenced in text (Fig. 1, 2, 3, 4, 5, A2, A3), tables referenced in text, benchmark dataset description, unseen dataset description, docking test set description</li>
+<li><strong>Missing materials affecting confidence</strong> The supplementary materials are referenced but not provided. The GitHub repository is mentioned but its contents are not visible. Individual data points for figures are not provided. Statistical significance measures (e.g., p-values, confidence intervals) are absent from all comparisons.</li>
 </ul>
 <h2>Reviewer</h2>
 <ul>
-<li>
-<p><strong>Overall assessment</strong> The manuscript addresses a timely and important problem—predicting multiple conformational states of GPCRs, which is a known limitation of current AlphaFold implementations. The core idea of using biologically informed sequence prompts to steer AlphaFold toward specific states is conceptually interesting. However, the provided abstract alone is insufficient to evaluate the technical validity, reproducibility, or significance of the claimed results. Critical details about the prompting strategy, benchmark design, and quantitative comparisons are absent, making it impossible to assess whether the claims are supported.</p>
-</li>
-<li>
-<p><strong>Who would be interested in the results, and why</strong> Structural biologists, computational chemists, and drug discovery researchers working on GPCR-targeted therapeutics would be interested, as accurate multi-state GPCR prediction could directly impact structure-based drug design for agonists and antagonists.</p>
-</li>
-<li>
-<p><strong>Major strengths</strong></p>
-</li>
-<li>The problem of predicting both active and inactive GPCR states is well-recognized and practically important.</li>
-<li>The approach of using sequence-based prompts to guide AlphaFold is conceptually novel and potentially generalizable.</li>
-<li>
-<p>The claim of improved molecular docking success rates suggests practical utility in drug discovery pipelines.</p>
-</li>
+<li><strong>Overall assessment</strong> The manuscript presents a conceptually interesting approach to a well-recognized problem in structural biology: predicting multiple conformational states of GPCRs. The idea of using biologically informed sequence prompts to guide AlphaFold toward specific states is creative and builds on plausible reasoning about the model's training data. However, the manuscript suffers from several significant technical weaknesses that undermine the strength of the claims. The most critical issues are the lack of rigorous statistical evaluation, the absence of proper controls for the inactive-state prompt, the limited scope of the docking validation, and the failure to address the fundamental question of whether the method actually produces state-specific conformations or merely improves overall prediction quality. The conclusions are not fully supported by the evidence presented.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational structural biology, GPCR biology, and structure-based drug design would be interested. The method addresses a practical need for generating state-specific GPCR models, which is relevant for understanding receptor function and for drug discovery efforts targeting specific conformational states.</li>
+<li><strong>Major strengths</strong> 1. The core idea of using biologically informed sequence prompts to guide AlphaFold toward specific conformational states is novel and well-motivated by structural biology knowledge. 2. The study evaluates the method on both a benchmark dataset and an unseen dataset, providing some assessment of generalizability. 3. The inclusion of molecular docking experiments attempts to connect structure prediction to a downstream application.</li>
 <li>
 <p><strong>Major Concerns</strong></p>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Experimental design and controls</li>
+<li><strong>Claim pointer</strong> The authors claim that the T4 lysozyme prompt guides AlphaFold toward predicting inactive-state GPCR structures.</li>
+<li><strong>Evidence pointer</strong> Section "Multi-state structure prediction via prompts", Figure A3</li>
+<li><strong>Concern</strong> The negative control experiment for the inactive-state prompt (T4 lysozyme) uses dihydrofolate reductase (DHFR) as a control sequence. The results show that DHFR produces nearly identical prediction accuracy (average GDT-TS &gt; 90) to the T4 lysozyme prompt. The authors acknowledge this but dismiss it as not indicating "complete nonspecificity." This result fundamentally undermines the claim that the T4 lysozyme is specifically guiding the model toward inactive-state conformations. If a completely unrelated protein sequence produces the same effect, the observed improvement may be an artifact of providing any additional sequence to the model, not a state-specific effect.</li>
+<li><strong>Why it matters</strong> The core claim of the method is that specific prompts guide the model toward specific states. If the inactive-state prompt is not specific, then the method's mechanism is not as described, and the results for inactive-state prediction may be coincidental or due to other factors. This weakens the entire framework's conceptual foundation.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must provide a rigorous set of control experiments. This should include: (1) multiple unrelated protein sequences of varying lengths as prompts for both active and inactive states; (2) scrambled or randomized versions of the mini-Gs and T4 lysozyme sequences; (3) a demonstration that the prompt's effect is state-specific, e.g., showing that the T4 lysozyme prompt does not improve active-state prediction and the mini-Gs prompt does not improve inactive-state prediction. The authors should also quantify the effect size and show that the specific prompts produce statistically significantly better results than controls.</p>
 </li>
 <li>
-<p><strong>Concern ID</strong> R1-M1
-    <strong>Severity</strong> Major
-    <strong>Blocking</strong> Yes
-    <strong>Axis</strong> Methodological clarity
-    <strong>Claim pointer</strong> "We provide AlphaFold-Multimer and AlphaFold 3 with biological sequences based on knowledge of structural biology as prompts to guide the models in the multi-state prediction task."
-    <strong>Evidence pointer</strong> Abstract; location not provided
-    <strong>Concern</strong> The nature of the "prompts" is entirely undefined. The abstract does not specify what biological sequences are used, how they are derived from structural biology knowledge, how they are incorporated into AlphaFold's input, or whether this is a simple sequence concatenation, a modified MSA, or a more complex conditioning strategy. Without this information, the method cannot be reproduced or evaluated.
-    <strong>Why it matters</strong> The core novelty of the work hinges on the prompting strategy. If the prompts are trivial (e.g., appending a known active-state sequence), the contribution is minimal. If they are sophisticated, the lack of detail prevents assessment of their validity and generalizability.
-    <strong>Resolution test</strong> Provide a clear description of the prompting mechanism, including the exact input format, the source and selection criteria for the prompt sequences, and how they differ from standard AlphaFold inputs. Include a schematic or pseudocode.</p>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor and reproducibility</li>
+<li><strong>Claim pointer</strong> The authors claim that PromptGPCR "outperforms the baselines" and "can accurately predict the active and inactive states."</li>
+<li><strong>Evidence pointer</strong> Section "Multi-state structure prediction via prompts", Figures 2, 3</li>
+<li><strong>Concern</strong> All performance comparisons are presented as mean GDT-TS values or as counts of targets where one method outperforms another. No measures of variance (standard deviation, standard error), confidence intervals, or statistical significance tests (e.g., paired t-tests, Wilcoxon signed-rank tests) are provided. Without these, it is impossible to determine whether the observed differences are meaningful or could be due to random variation. The claim that one method "outperforms" another is not statistically substantiated.</li>
+<li><strong>Why it matters</strong> The primary claims of the paper rest on comparative performance. Without statistical validation, the conclusions are not reproducible or reliable. This is a fundamental requirement for any computational method paper.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must provide statistical analysis for all key comparisons. For per-target comparisons (e.g., Figure 2D, 2E, 3A, 3B), a paired statistical test should be performed. For aggregate comparisons (e.g., Figure 2A, 2B, 3C), the mean, standard deviation, and sample size should be reported, and appropriate tests should be used. The authors should also report effect sizes.</p>
 </li>
 <li>
-<p><strong>Concern ID</strong> R1-M2
-    <strong>Severity</strong> Major
-    <strong>Blocking</strong> Yes
-    <strong>Axis</strong> Quantitative validation
-    <strong>Claim pointer</strong> "Experimental results demonstrate that PromptGPCR can accurately predict active and inactive structures compared to baselines."
-    <strong>Evidence pointer</strong> Abstract; location not provided
-    <strong>Concern</strong> No quantitative metrics (e.g., RMSD, TM-score, GDT_TS, or state-specific metrics) are reported. The claim of "accurate" prediction is unsubstantiated. The abstract does not specify which baselines were used (e.g., standard AlphaFold2/3, RoseTTAFold, or other GPCR-specific methods), nor the number of GPCR targets tested, nor the statistical significance of any improvements.
-    <strong>Why it matters</strong> Without numerical evidence, the central claim of the paper cannot be evaluated. The field requires rigorous benchmarking against established methods on a representative set of GPCRs with known active and inactive structures.
-    <strong>Resolution test</strong> Report full benchmarking results including: (1) list of GPCR targets and their state annotations, (2) quantitative comparison metrics (RMSD, TM-score, etc.) for both active and inactive predictions, (3) comparison against at least standard AlphaFold2/3 and one other state-of-the-art method, (4) statistical tests (e.g., paired t-test or Wilcoxon) for significance.</p>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim-evidence alignment</li>
+<li><strong>Claim pointer</strong> The authors claim that PromptGPCR predicts "state-specific" conformations and that the predictions show "an evident tendency to the specific state."</li>
+<li><strong>Evidence pointer</strong> Section "Multi-state structure prediction via prompts", Figure A2</li>
+<li><strong>Concern</strong> The manuscript does not provide a direct, quantitative demonstration that the predicted structures are state-specific. The only evidence is a qualitative visual comparison in Figure A2 for two GPCRs. The authors do not report any metric that directly measures state-specificity, such as: (1) the RMSD of the predicted active-state structure to the experimental active-state structure versus the experimental inactive-state structure; (2) the distance between the predicted structure and the two reference states in a conformational landscape; (3) the position of key structural features (e.g., the ionic lock, TM6 outward movement) relative to known active and inactive states. The GDT-TS metric measures overall structural similarity but does not distinguish between states. A high GDT-TS to an active-state structure could simply mean the prediction is generally good, not that it is specifically in the active conformation.</li>
+<li><strong>Why it matters</strong> The entire premise of the method is to predict multi-state structures. If the method only improves overall prediction quality without actually producing state-specific conformations, it does not solve the stated problem. The claim of state-specificity is central and must be rigorously demonstrated.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must provide a quantitative analysis of state-specificity. This should include: (1) for GPCRs with both active and inactive experimental structures, calculate the RMSD of the prompt-guided prediction to both states and show that the active-state prompt produces structures closer to the active state and vice versa; (2) report state-specific structural metrics (e.g., TM6 tilt angle, distance between key residues in the DRY motif, RMSD of the ligand-binding pocket) for the predicted structures and compare them to the experimental states; (3) perform a principal component analysis or similar dimensionality reduction on the ensemble of predicted and experimental structures to show that the prompt-guided predictions cluster with the intended state.</p>
 </li>
 <li>
-<p><strong>Concern ID</strong> R1-M3
-    <strong>Severity</strong> Major
-    <strong>Blocking</strong> Yes
-    <strong>Axis</strong> Downstream validation
-    <strong>Claim pointer</strong> "PromptGPCR exhibits higher success rates in molecular docking than baselines, and this indicates that the predictions of PromptGPCR may have a certain degree of usability in downstream application scenarios involving specific GPCR conformational states."
-    <strong>Evidence pointer</strong> Abstract; location not provided
-    <strong>Concern</strong> The docking success rate is mentioned but not defined. What constitutes "success"? Is it enrichment of known ligands, pose prediction accuracy (RMSD &lt; 2 Å), or something else? Which docking program was used? How many ligands were tested? Were the docking experiments blinded to the known active/inactive state? Without these details, the docking claim is uninterpretable.
-    <strong>Why it matters</strong> Docking validation is a key practical test of structural accuracy. Poorly defined success criteria can inflate apparent performance. The field requires standardized docking benchmarks (e.g., DUD-E, DEKOIS) with clear metrics.
-    <strong>Resolution test</strong> Provide: (1) definition of docking success, (2) docking software and parameters, (3) number and source of ligands, (4) results for each GPCR target, (5) comparison to docking on experimental structures (if available) and on baseline predictions.</p>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Scope and generalizability of claims</li>
+<li><strong>Claim pointer</strong> The authors claim that PromptGPCR "exhibits higher success rates in molecular docking than baselines" and that this "indicates that the predictions of PromptGPCR may have a certain degree of usability in downstream application scenarios."</li>
+<li><strong>Evidence pointer</strong> Section "Protein–ligand docking", Section "Application of high-precision multi-state GPCR conformations"</li>
+<li><strong>Concern</strong> The molecular docking validation is limited in scope and methodology. It uses only 9 GPCRs from the unseen dataset, all of which are active-state structures with small-molecule ligands. The docking method (CSAlign-Dock) is a guided pose-recovery test that requires the reference ligand from the experimental structure as input. The authors explicitly state that this "differs from scenarios such as blind docking" and "does not support the conclusion that PromptGPCR can achieve excellent performance in virtual screening scenarios." This significantly limits the conclusions that can be drawn about the method's utility in drug discovery. The sample size is small, and no statistical analysis is provided for the docking results.</li>
+<li><strong>Why it matters</strong> The docking experiments are presented as evidence of downstream applicability, but the experimental design is too limited to support broad claims about usability in drug design. The authors' own caveat about the limitations of the docking setup is appropriate but should be more prominently reflected in the conclusions.</li>
+<li><strong>Resolution test</strong> The authors should either: (1) expand the docking validation to include a larger and more diverse set of GPCRs, including inactive-state structures and antagonists, and use a blind docking protocol; or (2) significantly temper the claims about downstream applicability and clearly state that the docking results are preliminary and only demonstrate pose-recovery capability, not virtual screening performance.</li>
+</ul>
 </li>
 <li>
 <p><strong>Minor Comments</strong></p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m1
-    <strong>Severity</strong> Minor
-    <strong>Axis</strong> Clarity
-    <strong>Affected element</strong> Abstract
-    <strong>Evidence pointer</strong> Abstract
-    <strong>Issue</strong> The phrase "biological sequences based on knowledge of structural biology as prompts" is vague and could be misinterpreted. It is unclear whether these are sequences from homologous GPCRs in specific states, engineered sequences, or something else.
-    <strong>Required correction</strong> Replace with a precise description, e.g., "We use the sequence of a known active-state GPCR (e.g., β2-adrenergic receptor in active conformation) as a prompt appended to the target GPCR sequence in the AlphaFold input."</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m2
-    <strong>Severity</strong> Minor
-    <strong>Axis</strong> Scope
-    <strong>Affected element</strong> Abstract
-    <strong>Evidence pointer</strong> Abstract
-    <strong>Issue</strong> The abstract claims PromptGPCR predicts "highly accurate structures" but does not define a threshold for "highly accurate." This is subjective.
-    <strong>Required correction</strong> Replace with a quantitative statement, e.g., "achieving median TM-score &gt; 0.9 for active-state predictions" or similar.</p>
-</li>
-<li>
-<p><strong>Concern ID</strong> R1-m3
-    <strong>Severity</strong> Minor
-    <strong>Axis</strong> Reproducibility
-    <strong>Affected element</strong> Abstract
-    <strong>Evidence pointer</strong> Abstract
-    <strong>Issue</strong> No mention of code or data availability. For a computational method, this is essential for reproducibility.
-    <strong>Required correction</strong> Add a statement about code and data availability (e.g., GitHub repository, Zenodo archive).</p>
-</li>
-<li>
-<p><strong>Technical failings that need to be addressed before the case is established</strong></p>
-</li>
-<li>R1-M1: Undefined prompting strategy</li>
-<li>R1-M2: Absence of quantitative validation metrics</li>
-<li>
-<p>R1-M3: Unclear docking validation protocol</p>
-</li>
-<li>
-<p><strong>Assessment against Nature-style criteria</strong></p>
-</li>
-<li><strong>Originality</strong>: The concept of using sequence prompts to steer AlphaFold toward specific GPCR states is moderately original. However, similar ideas (e.g., using templates or MSA manipulation) have been explored. The novelty depends on the specific implementation, which is not described.</li>
-<li><strong>Scientific importance</strong>: High. GPCR multi-state prediction is a critical bottleneck in structure-based drug design. If validated, this method could have significant impact.</li>
-<li><strong>Interdisciplinary readership</strong>: Moderate. The work bridges computational biology and drug discovery, but the abstract is too technical for a broad audience without context.</li>
-<li><strong>Technical soundness</strong>: Cannot be assessed from the abstract alone. The lack of quantitative results and methodological detail prevents evaluation.</li>
-<li>
-<p><strong>Readability for nonspecialists</strong>: The abstract is reasonably clear for a specialist audience but uses jargon (e.g., "prompts," "AlphaFold-Multimer") without explanation. A nonspecialist would struggle to understand the method.</p>
-</li>
-<li>
-<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents an interesting concept but lacks the quantitative and methodological detail necessary to support the claims. A full manuscript with rigorous benchmarking and clear method description is required before a meaningful assessment can be made.</p>
-</li>
-</ul>
-<h2>Risk / unsupported claims</h2>
 <ul>
-<li>"PromptGPCR can accurately predict active and inactive structures" – unsupported; no quantitative metrics provided.</li>
-<li>"PromptGPCR exhibits higher success rates in molecular docking than baselines" – unsupported; docking success criteria and results not defined.</li>
-<li>"PromptGPCR may have a certain degree of usability in downstream application scenarios" – speculative; no evidence of real-world application.</li>
-<li>"We provide AlphaFold-Multimer and AlphaFold 3 with biological sequences based on knowledge of structural biology as prompts" – unverifiable; method not described.</li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity and presentation</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The abstract states that PromptGPCR "can accurately predict active and inactive structures compared to baselines." This phrasing is ambiguous. It is unclear whether the method is being compared to baselines or whether the prediction accuracy is being evaluated in comparison to experimental structures.</li>
+<li>
+<p><strong>Required correction</strong> Rephrase to clarify: "PromptGPCR predicts active and inactive structures with higher accuracy than baseline methods, as measured by GDT-TS."</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data presentation</li>
+<li><strong>Affected element</strong> Figures 2, 3, 4</li>
+<li><strong>Evidence pointer</strong> Figures 2, 3, 4</li>
+<li><strong>Issue</strong> The figures do not show individual data points or error bars. For box plots or bar charts, the number of data points (n) should be clearly stated in the figure legend. The y-axis labels for some panels are not fully descriptive (e.g., "GDT-TS" should be defined in the legend).</li>
+<li>
+<p><strong>Required correction</strong> Add individual data points or error bars to all plots. Clearly state the sample size (n) for each group in the figure legend. Define all abbreviations in the figure legend.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Methodology</li>
+<li><strong>Affected element</strong> Section "Data processing"</li>
+<li><strong>Evidence pointer</strong> Section "Data processing"</li>
+<li><strong>Issue</strong> The authors state that they excluded "all intermediate states" from the benchmark dataset but do not provide a clear definition or criterion for what constitutes an intermediate state. This is a critical detail for reproducibility.</li>
+<li>
+<p><strong>Required correction</strong> Provide a clear, operational definition of "intermediate state" (e.g., based on specific structural features, ligand type, or annotation in GPCRdb). Alternatively, state the criteria used for classification.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Section "Overview of PromptGPCR"</li>
+<li><strong>Evidence pointer</strong> Section "Overview of PromptGPCR"</li>
+<li><strong>Issue</strong> The description of the AlphaFold 3 inference setup is incomplete. The authors state they used "5 random seeds" and generated "5 structures per seed," but they do not specify which random seeds were used. This is essential for reproducibility.</li>
+<li>
+<p><strong>Required correction</strong> Either specify the random seeds used or state that the seeds were randomly selected and provide the code/script that generates them.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section "Knowledge-guided biological prompts"</li>
+<li><strong>Evidence pointer</strong> Section "Knowledge-guided biological prompts"</li>
+<li><strong>Issue</strong> The analogy between AlphaFold and large language models (LLMs) is drawn extensively but is not rigorously justified. The authors state that AlphaFold "can be regarded as language models trained on biological data," but this is a loose analogy. The mechanisms of prompt engineering in LLMs (e.g., influencing token probability distributions) are not directly analogous to providing a separate protein sequence to a structure prediction model.</li>
+<li><strong>Required correction</strong> Either provide a more rigorous justification for the analogy, or reframe the motivation in terms of AlphaFold's training data and architecture without relying on the LLM analogy. The core idea (providing a binding partner to bias the prediction) is already well-motivated by structural biology.</li>
+</ul>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (lack of proper controls for inactive-state prompt), R1-M2 (lack of statistical rigor), R1-M3 (lack of quantitative demonstration of state-specificity)</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong> </p>
+</li>
+<li><strong>Originality</strong>: The concept of using biologically informed sequence prompts to guide AlphaFold toward specific conformational states is moderately original. While the idea of providing binding partners to bias predictions is not entirely new, the systematic application to GPCR multi-state prediction and the specific choice of prompts (mini-Gs, T4 lysozyme) based on structural biology knowledge is a novel contribution.</li>
+<li><strong>Scientific importance</strong>: The problem of predicting GPCR multi-state structures is of high importance for structural biology and drug discovery. If the method were rigorously validated, it would be a valuable tool. However, the current evidence is insufficient to establish the method's effectiveness, particularly for state-specific prediction.</li>
+<li><strong>Interdisciplinary readership</strong>: The topic is of interest to computational biologists, structural biologists, and pharmacologists. The manuscript is written in a way that is accessible to these audiences, though the LLM analogy may be confusing to some.</li>
+<li><strong>Technical soundness</strong>: The technical soundness is currently weak. The major concerns (lack of proper controls, lack of statistical analysis, lack of state-specificity validation) are fundamental flaws that prevent the paper from being considered technically sound.</li>
+<li>
+<p><strong>Readability for nonspecialists</strong>: The manuscript is generally well-written and clear, with a logical structure. The introduction and motivation are well-articulated. However, the technical details of the method and the limitations of the evaluation could be more clearly explained.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The core claims of the method are not adequately supported due to critical flaws in experimental design (lack of proper controls for the inactive-state prompt), lack of statistical rigor, and failure to quantitatively demonstrate state-specificity. The manuscript requires major revisions and additional experiments before it can be considered for publication.</p>
+</li>
 </ul></div>
   </section>
   

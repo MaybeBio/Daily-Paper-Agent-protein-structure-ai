@@ -1,85 +1,75 @@
 ## Review setup
-- **Input scope** Abstract
-- **Assessment boundary** Claims and evidence presented in the abstract only
-- **Shared manuscript claim summary** The authors present PLI-Parallax, a deposited dataset of predicted and experimental protein-ligand coordinates with distance labels, designed to provide calibrated per-system confidence measures for predicted complexes. The dataset includes 307 million distance records across two tiers (crystal and corpus), uses inter-method agreement to predict label accuracy, and provides split-conformal intervals. The deposit also includes 646 evaluation configurations across seven data split families, with 631 reporting two-sample test separation, and 906 protein accessions partitioned to control sequence leakage.
-- **Visible evidence base** Abstract text only; no figures, tables, or supplementary materials provided
-- **Missing materials affecting confidence** Full manuscript, figures, tables, supplementary data, code repository, dataset access details, and any experimental validation results
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract
+- **Shared manuscript claim summary** The authors present PLI-Parallax, a large-scale deposit of predicted and experimental protein–ligand coordinates with distance labels, split-conformal prediction intervals, and evaluation splits designed to control sequence leakage. The deposit is claimed to enable calibration of predicted complex accuracy using agreement between independent methods, and to support evaluation both where experimental data exist and where it does not.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided
+- **Missing materials affecting confidence** Full manuscript, methods description, figures, tables, supplementary data, code repository, and any validation results beyond the abstract’s summary statements
 
 ## Reviewer
-- **Overall assessment** The abstract describes a potentially valuable resource for the structural biology and computational drug discovery communities. The core idea—using inter-method agreement to calibrate confidence in predicted protein-ligand geometries—is conceptually sound and addresses a recognized gap. However, the abstract is dense and lacks sufficient detail to evaluate the technical validity, statistical rigor, and practical utility of the proposed approach. Key claims about calibration, coverage, and generalisation are stated without supporting evidence or methodological justification. The assessment is therefore provisional, pending full manuscript review.
-
-- **Who would be interested in the results, and why** Computational structural biologists, drug discovery researchers, and developers of protein-ligand prediction methods. The dataset could serve as a benchmark for evaluating prediction tools and as a resource for training confidence models. The split-conformal intervals and evaluation splits are of direct interest to practitioners needing reliable uncertainty estimates for predicted complexes.
-
-- **Major strengths** 1. Addresses a clear and important gap: the lack of calibrated, per-system confidence measures for predicted protein-ligand geometries. 2. Large-scale dataset (307 million distance records) with both experimental and predicted data, enabling calibration and evaluation. 3. Use of inter-method agreement as a signal for accuracy is a well-motivated approach. 4. Inclusion of multiple evaluation splits (including protein-cold) and two-sample tests for leakage control is methodologically rigorous.
-
+- **Overall assessment** The abstract describes a potentially valuable resource for the protein–ligand prediction community, but the claims of calibration, coverage, and evaluation utility cannot be assessed from the abstract alone. The deposit size and the inclusion of split-conformal intervals are notable, but critical details about the fitting procedure, the validity of the calibration transfer, and the actual performance of the intervals are absent. The manuscript may be of interest, but the current evidence is insufficient to evaluate its scientific contribution.
+- **Who would be interested in the results, and why** Computational structural biologists, drug discovery researchers, and developers of protein–ligand prediction methods would be interested in a large, curated dataset with calibrated confidence measures and controlled evaluation splits. The resource could facilitate benchmarking, model training, and uncertainty quantification in structure prediction.
+- **Major strengths** 1. Large scale: 307 million distance records from multiple prediction methods across >50,000 complexes. 2. Inclusion of split-conformal prediction intervals, a principled uncertainty quantification approach, applied to a protein–ligand prediction context. 3. Explicit control of sequence leakage via protein-cold splits, addressing a known weakness in many benchmarks. 4. Provision of evaluation configurations with two-sample test results, enabling users to assess distributional similarity.
 - **Major Concerns**
     - **Concern ID** R1-M1
     - **Severity** Major
     - **Blocking** Yes
-    - **Axis** Statistical validity / calibration
-    - **Claim pointer** "On the crystal tier that interval covers observed accuracy at the stated rate."
-    - **Evidence pointer** Abstract only; no figure or table provided
-    - **Concern** The abstract claims that the split-conformal interval achieves nominal coverage on the crystal tier, but provides no quantitative results (e.g., coverage rate, interval width, calibration plot). Without these, the claim is unverifiable.
-    - **Why it matters** Calibration is the central claim of the work. If the intervals do not achieve the stated coverage, the entire premise of providing "practically usable per-system measures" is undermined.
-    - **Resolution test** Provide a calibration plot (e.g., empirical coverage vs. nominal level) for the crystal tier, along with interval width statistics. Report the exact coverage rate achieved at the stated nominal level.
-
+    - **Axis** Calibration validity
+    - **Claim pointer** "Their mutual agreement is fitted against observed accuracy where experimental data permits it and carried to where it does not. This way 30,567 systems carry predicted label accuracy together with a split-conformal interval. On the crystal tier that interval covers observed accuracy at the stated rate."
+    - **Evidence pointer** Abstract, location not provided
+    - **Concern** The abstract claims that split-conformal intervals are calibrated on the crystal tier and then transferred to the corpus tier, but provides no details on the fitting procedure, the assumptions required for transfer, or the actual coverage rate achieved. The statement "that interval covers observed accuracy at the stated rate" is vague—what is the stated rate? Is it the nominal 90% or 95%? The abstract also acknowledges that "both distributions differ" between tiers, which directly undermines the validity of transferring calibration from one distribution to another without explicit justification or adjustment.
+    - **Why it matters** The central claim of the deposit is that it provides calibrated, practically usable per-system measures of trust. If the calibration transfer is not theoretically justified or empirically validated on the corpus tier, the utility of the intervals for systems without experimental data is unsubstantiated. This is a core scientific claim that must be supported.
+    - **Resolution test** Provide the exact coverage rate achieved on the crystal tier, the nominal level of the conformal interval, and a clear description of the calibration transfer method. Show empirical evidence (e.g., calibration plots or coverage statistics) on a held-out subset of the corpus tier where experimental data are available, or provide a theoretical argument for why transfer is valid despite distribution shift.
     - **Concern ID** R1-M2
     - **Severity** Major
     - **Blocking** Yes
-    - **Axis** Generalisation / transferability
-    - **Claim pointer** "On the corpus tier it ranks systems by expected label quality, since both distributions differ."
-    - **Evidence pointer** Abstract only
-    - **Concern** The abstract states that the interval ranks systems on the corpus tier, but does not explain how this ranking is validated or what metric is used to assess ranking quality. The claim that "both distributions differ" is vague and does not justify the transfer of calibration from the crystal to the corpus tier.
-    - **Why it matters** The corpus tier is where the method is most needed (no ground truth). Without a validation strategy for ranking quality, the practical utility of the intervals on this tier is unclear.
-    - **Resolution test** Describe the validation approach for ranking on the corpus tier (e.g., using held-out experimental data, synthetic benchmarks, or cross-validation). Report a ranking metric (e.g., Spearman correlation, AUC for identifying correct vs. incorrect complexes).
-
+    - **Axis** Reproducibility and data access
+    - **Claim pointer** "The deposit is accompanied by 646 evaluation configurations across seven data split families, and 631 of them report how far their training and test entities separate under a two-sample test."
+    - **Evidence pointer** Abstract, location not provided
+    - **Concern** The abstract does not specify where the deposit is hosted, whether it is publicly accessible, or what format the data and configurations are in. Without this information, the resource cannot be used or evaluated by the community. Additionally, the claim that 631 of 646 configurations report a two-sample test result is stated without any indication of what test was used, what the results were, or how they should be interpreted.
+    - **Why it matters** Reproducibility and data availability are fundamental to the value of a deposited resource. The abstract’s claims about the deposit’s utility are untestable without access to the data and code.
+    - **Resolution test** Provide a clear statement of data availability (e.g., a repository URL, DOI, or accession number) and a brief description of the two-sample test used, including the test statistic and a summary of the results (e.g., range of p-values or effect sizes).
     - **Concern ID** R1-M3
     - **Severity** Major
-    - **Blocking** No
-    - **Axis** Reproducibility / data access
-    - **Claim pointer** "The deposit is accompanied by 646 evaluation configurations across seven data split families, and 631 of them report how far their training and test entities separate under a two-sample test."
-    - **Evidence pointer** Abstract only
-    - **Concern** The abstract does not specify what the 15 missing configurations are, why they are missing, or whether this affects the completeness of the evaluation. The two-sample test used is not named, and the threshold for "separation" is not defined.
-    - **Why it matters** Reproducibility and completeness of the evaluation are critical for a resource paper. Missing configurations and undefined metrics reduce confidence in the reported results.
-    - **Resolution test** List the 15 missing configurations and explain their absence. Name the two-sample test (e.g., Kolmogorov-Smirnov, Wasserstein distance) and state the threshold used to define separation.
-
+    - **Blocking** Yes
+    - **Axis** Methodological clarity
+    - **Claim pointer** "Agreement between independently constructed methods is an established signal for this type of problem. What has been missing is a way to derive what a given level of agreement is worth."
+    - **Evidence pointer** Abstract, location not provided
+    - **Concern** The abstract claims that the deposit provides a way to "derive what a given level of agreement is worth," but the method for doing so is not described. The fitting of agreement against observed accuracy is mentioned, but no details are given about the model, the features used, the training procedure, or the validation. The reader cannot assess whether this is a simple calibration curve, a more complex machine learning model, or something else.
+    - **Why it matters** The novelty of the work hinges on this calibration step. Without a clear description, the contribution cannot be distinguished from existing approaches that also use agreement between methods as a proxy for accuracy.
+    - **Resolution test** Provide a concise description of the calibration method, including the input features (e.g., which agreement metrics), the model class, the training data split, and the validation strategy. Show a comparison to a baseline (e.g., using a single method’s confidence score) to demonstrate added value.
 - **Minor Comments**
     - **Concern ID** R1-m1
     - **Severity** Minor
     - **Axis** Clarity
     - **Affected element** Abstract text
-    - **Evidence pointer** Abstract
-    - **Issue** The phrase "predicted label accuracy together with a split-conformal interval" is ambiguous. It is unclear whether the interval is on the label accuracy itself or on the predicted geometry.
-    - **Required correction** Clarify: e.g., "each system carries a predicted label (e.g., correct/incorrect) together with a split-conformal interval on the probability that the label is correct."
-
+    - **Evidence pointer** Abstract, location not provided
+    - **Issue** The phrase "predicted label accuracy" is ambiguous. It is unclear whether this refers to the accuracy of the predicted label (e.g., binary classification of correct/incorrect) or the accuracy of the predicted coordinates (e.g., RMSD or distance error).
+    - **Required correction** Clarify what "label accuracy" means in this context. If it is a binary or categorical label, define it explicitly. If it is a continuous measure, state the metric (e.g., RMSD, DockQ, or fraction of native contacts).
     - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Completeness
+    - **Affected element** Abstract text
+    - **Evidence pointer** Abstract, location not provided
+    - **Issue** The abstract mentions "Chai-1, two Boltz-2 configurations, and the docking engine smina" but does not specify the versions or parameters used. This is important for reproducibility.
+    - **Required correction** Provide version numbers and key parameters (e.g., default vs. custom settings) for each method, either in the abstract or by referencing a methods section.
+    - **Concern ID** R1-m3
     - **Severity** Minor
     - **Axis** Readability
     - **Affected element** Abstract text
-    - **Evidence pointer** Abstract
-    - **Issue** The abstract is dense with numbers (307,314,646, 30,567, 646, 631, 906) without context. It is difficult for a nonspecialist to assess the significance of these numbers.
-    - **Required correction** Provide brief context for key numbers (e.g., "30,567 systems, out of 31,746 in the corpus tier, carry predicted label accuracy").
-
-    - **Concern ID** R1-m3
-    - **Severity** Minor
-    - **Axis** Terminology
-    - **Affected element** Abstract text
-    - **Evidence pointer** Abstract
-    - **Issue** The term "cross-docked pairs" is used without definition. It may be unclear to readers outside the docking community.
-    - **Required correction** Define "cross-docked" (e.g., "pairs where a ligand is docked into a receptor structure that was not co-crystallised with that ligand").
-
-- **Technical failings that need to be addressed before the case is established** R1-M1 (calibration claim unverified), R1-M2 (ranking validation missing)
-
+    - **Evidence pointer** Abstract, location not provided
+    - **Issue** The sentence "The 906 protein accessions were partitioned to control sequence leakage, so a protein-cold split here tests generalisation across sequence space" is somewhat redundant and could be streamlined.
+    - **Required correction** Consider rephrasing for conciseness, e.g., "The 906 protein accessions were partitioned to control sequence leakage, enabling a protein-cold split that tests generalisation across sequence space."
+- **Technical failings that need to be addressed before the case is established** R1-M1 (calibration transfer validity), R1-M2 (data availability and reproducibility), R1-M3 (methodological clarity of calibration)
 - **Assessment against Nature-style criteria** 
-    - **Originality**: Moderate. The idea of using inter-method agreement for calibration is not entirely novel, but the scale and systematic nature of the dataset are original.
-    - **Scientific importance**: High, if the calibration claims hold. The resource could significantly impact how predicted protein-ligand geometries are used in practice.
-    - **Interdisciplinary readership**: Moderate. The work is primarily of interest to computational structural biologists and drug discovery researchers; broader appeal is limited without clear biological or chemical insights.
-    - **Technical soundness**: Cannot be assessed from the abstract alone. The calibration and ranking claims are unverified.
-    - **Readability for nonspecialists**: Poor. The abstract is dense and uses jargon without explanation. A nonspecialist would struggle to understand the key contributions.
-
-- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a promising resource, but the central claims about calibration and ranking are unverifiable without the full manuscript. A supportive recommendation would require the full manuscript to demonstrate that the split-conformal intervals achieve nominal coverage and that the ranking on the corpus tier is validated.
+    - **Originality**: The concept of using agreement between independent methods to calibrate confidence in protein–ligand predictions is not entirely new, but the scale of the deposit and the application of split-conformal prediction intervals may represent a novel contribution. However, the abstract does not provide enough detail to assess the novelty of the calibration method itself.
+    - **Scientific importance**: If the claims are substantiated, the resource could be important for benchmarking and uncertainty quantification in structure prediction. The controlled evaluation splits address a known issue in the field. The importance is moderate to high, contingent on validation.
+    - **Interdisciplinary readership**: The work is primarily of interest to computational biologists and cheminformaticians. The abstract is written in a technical style that may not be accessible to a broader biological or chemical audience without additional context.
+    - **Technical soundness**: Cannot be assessed from the abstract alone. The calibration transfer claim is particularly concerning given the acknowledged distribution shift. The lack of detail on the calibration method and the two-sample test undermines confidence.
+    - **Readability for nonspecialists**: The abstract is dense and uses specialized terminology (e.g., "split-conformal interval," "two-sample test") without explanation. A nonspecialist would struggle to understand the key claims and their significance.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a potentially valuable resource, but the core claims about calibration, data availability, and methodological novelty cannot be evaluated without the full manuscript and supporting materials. The authors should address the three blocking concerns (R1-M1, R1-M2, R1-M3) before the work can be considered for publication.
 
 ## Risk / unsupported claims
-- "On the crystal tier that interval covers observed accuracy at the stated rate." — Unsupported; no quantitative evidence provided.
-- "On the corpus tier it ranks systems by expected label quality." — Unsupported; no validation strategy or metric provided.
-- "The 906 protein accessions were partitioned to control sequence leakage, so a protein-cold split here tests generalisation across sequence space." — Unsupported; no evidence that the partition effectively controls leakage (e.g., sequence identity thresholds, clustering method).
+- The claim that split-conformal intervals "cover observed accuracy at the stated rate" on the crystal tier is unsupported without specifying the rate and showing empirical coverage.
+- The claim that calibration can be transferred to the corpus tier is unsupported and likely invalid without explicit adjustment for distribution shift.
+- The claim that the deposit provides "practically usable per-system measures of whether a given complex is correct" is unsupported without evidence of the intervals’ performance on unseen data.
+- The claim that the evaluation configurations enable "supervision weighted by how far the configurations agree" is unsupported without a description of the weighting scheme and its validation.
