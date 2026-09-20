@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlphaBridge: Tools for the analysis of predicted biomolecular complexes. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>AlphaBridge: Tools for the analysis of predicted biomolecular complexes.</h1>
+      <div class="meta">Alvarez-Salmoral, Daniel; Borza, Razvan; Maiella, Carmen; Kwee, Bjorn P Y; Xie, Ren; Joosten, Robbie P; Hekkelman, Maarten L; Perrakis, Anastassis</div>
+      <div class="meta muted">
+        
+        <span class="journal">Structure (London, England : 1993)</span>
+        · 2026-09-16
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42748924/">原文</a>
+      </div>
+      <p class="one-liner">该文开发AlphaBridge工具，利用AlphaFold3置信度指标分析预测的生物分子复合物界面，属于蛋白质结构预测结果的后处理分析工具，虽非新方法但直接服务于蛋白质结构计算研究。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Artificial intelligence (AI)-powered protein structure prediction transformed how scientists explore macromolecular function. AI-based prediction of macromolecular complexes is increasingly used for evaluating the likelihood of proteins forming complexes with other proteins, nucleic acids, lipids, sugars, or small-molecule ligands. Efficient tools are needed to evaluate such predicted models. Here, we combine confidence metrics of AlphaFold3 to enable clustering of sequence motifs participating in binary interactions and subsequently in 3D interfaces of complexes. Interaction interfaces within confidence limits are visualized via chord diagrams, network graphs, and summary tables of predicted interfaces and intermolecular interactions, and linked to interactive graphics. We validate AlphaBridge for scoring binary and multi-component protein complexes and discuss real-life examples of its use. AlphaBridge is a reproducible, objective, and automated toolkit available also as a web server, providing novice and experienced users with validation for assessing structure prediction of biomolecular complexes.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">人工智能（AI）驱动的蛋白质结构预测改变了科学家探索大分子功能的方式。基于AI的大分子复合物预测越来越多地用于评估蛋白质与其他蛋白质、核酸、脂质、糖类或小分子配体形成复合物的可能性。需要高效工具来评估此类预测模型。在此，我们结合AlphaFold3的置信度指标，实现对参与二元相互作用的序列基序及其随后在复合物三维界面中的聚类。在置信度范围内的相互作用界面通过弦图、网络图以及预测界面和分子间相互作用的汇总表进行可视化，并链接到交互式图形。我们验证了AlphaBridge在评分二元和多组分蛋白质复合物方面的性能，并讨论了其实际应用案例。AlphaBridge是一个可重复、客观且自动化的工具包，也可作为网络服务器使用，为新手和经验丰富的用户提供评估生物分子复合物结构预测的验证手段。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：AlphaBridge: Tools for the analysis of predicted biomolecular complexes</li>
+<li><strong>作者与单位</strong>：Alvarez-Salmoral, Daniel; Borza, Razvan; Maiella, Carmen; Kwee, Bjorn P Y; Xie, Ren; Joosten, Robbie P; Hekkelman, Maarten L; Perrakis, Anastassis（单位未提供，推测为荷兰癌症研究所 Oncode Institute 相关团队，Perrakis 为该所资深研究员）</li>
+<li><strong>期刊/平台</strong>：Structure (London, England : 1993)</li>
+<li><strong>年份</strong>：2026（在线日期 2026-09-16）</li>
+<li><strong>论文类型</strong>：方法学/工具论文</li>
+<li><strong>领域</strong>：蛋白质结构预测后分析、复合物界面验证、AI 结构预测置信度评估</li>
+<li><strong>关键词</strong>：AlphaFold3、蛋白质复合物、界面预测、置信度指标、可视化、web server</li>
+<li><strong>DOI/arXiv 号</strong>：10.1016/j.str.2026.08.011</li>
+<li><strong>代码</strong>：未提供（文中提及有 web server，但未给出 URL）</li>
+<li><strong>数据</strong>：未提供（文中提及真实案例，但未列出具体数据集）</li>
+<li><strong>阅读日期</strong>：2026-09-16</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「AI 结构预测（AlphaFold3）输出模型的后处理与验证」环节，聚焦于复合物界面置信度评估与可视化，是连接「结构预测」与「功能解读」之间的工具层，不涉及新预测算法或物理模拟，而是对预测结果的可信度进行客观化、自动化评估。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 AlphaBridge 工具，通过组合 AlphaFold3 的置信度指标对参与二元相互作用的序列基序进行聚类，进而识别复合物 3D 界面，并以弦图、网络图和汇总表形式可视化界面内相互作用，为预测的蛋白质复合物模型提供客观、可复现的验证手段。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：AlphaFold3 等 AI 工具预测的蛋白质复合物模型缺乏系统化、客观化的验证工具，研究者难以判断预测的复合物界面是否可信、哪些残基/基序真正参与相互作用。</li>
+<li><strong>为什么重要</strong>：AI 结构预测已广泛用于评估蛋白质与蛋白质、核酸、脂质、糖类及小分子配体形成复合物的可能性，但预测模型本身带有不确定性，若缺乏验证手段，下游功能推断可能建立在不可靠的界面上。</li>
+<li><strong>现有方法为何不足</strong>：AlphaFold3 输出包含多种置信度指标（如 ipTM、pTM、PAE 等），但缺乏将这些指标转化为可操作、可解释的界面级评估的工具；现有可视化工具多面向单体或静态展示，缺乏对界面相互作用的系统化聚类与交互式呈现。</li>
+<li><strong>精确研究问题</strong>：Can we build an automated, reproducible toolkit that converts AlphaFold3 confidence metrics into validated, interpretable interaction interfaces for biomolecular complexes?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架，未经外部系统核验，标注为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期：实验结构解析</td>
+<td>X-ray crystallography, Cryo-EM</td>
+<td>高精度、真实</td>
+<td>耗时、昂贵、不适用于所有复合物</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>中期：计算对接</td>
+<td>Docking (e.g., HADDOCK, ClusPro)</td>
+<td>可预测复合物</td>
+<td>精度有限、需实验约束</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>近期：AI 端到端预测</td>
+<td>AlphaFold2-Multimer, AlphaFold3</td>
+<td>高精度、快速</td>
+<td>缺乏系统化验证工具、置信度指标解读困难</td>
+<td>本文的直接前提</td>
+</tr>
+<tr>
+<td>本文：预测后验证</td>
+<td>AlphaBridge</td>
+<td>自动化、客观、可复现、可视化</td>
+<td>依赖 AlphaFold3 输出质量</td>
+<td>本文贡献</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>置信度指标难以直接解读</td>
+<td>AlphaFold3 输出 ipTM、pTM、PAE 等，但研究者难以判断哪些界面可信</td>
+<td>指标是全局或成对残基级别的，未转化为界面级语义</td>
+<td>未提供（摘要未详述）</td>
+</tr>
+<tr>
+<td>缺乏自动化界面识别</td>
+<td>手动检查预测模型中的相互作用界面费时且主观</td>
+<td>无现成工具将置信度指标与序列基序聚类结合</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>可视化不直观</td>
+<td>现有工具难以呈现多组分复合物的界面相互作用</td>
+<td>缺乏弦图、网络图等交互式可视化手段</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>可复现性不足</td>
+<td>不同研究者对同一预测模型的判断可能不一致</td>
+<td>缺乏客观、自动化的评分流程</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：将 AlphaFold3 的置信度指标作为输入，对参与二元相互作用的序列基序进行聚类，识别 3D 界面，并通过弦图、网络图和汇总表进行可视化。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：AlphaFold3 的置信度指标不仅可用于评估整体模型质量，还可通过聚类分析转化为界面级信息——即哪些序列基序在空间上接近且具有高置信度，从而构成可信的相互作用界面。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：AI 预测模型的输出中往往包含比表面指标更丰富的信息，通过适当的后处理（如聚类、阈值化、可视化）可以将全局置信度转化为局部可操作知识。这一思路可迁移到其他 AI 预测工具的输出分析中。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：AlphaFold3 预测的复合物结构模型及其置信度指标（ipTM、pTM、PAE 等）</li>
+<li><strong>输出</strong>：聚类后的相互作用基序、3D 界面列表、弦图、网络图、汇总表</li>
+<li><strong>模块</strong>：
+  1. 置信度指标提取与归一化
+  2. 序列基序聚类（基于置信度阈值）
+  3. 3D 界面识别（基于空间邻近性与置信度）
+  4. 可视化模块（弦图、网络图、交互式图形）
+  5. 汇总表生成</li>
+<li><strong>训练</strong>：不涉及（工具，非预测模型）</li>
+<li><strong>工具</strong>：未提供具体编程语言/框架</li>
+<li><strong>反馈回路</strong>：不适用（静态分析工具）</li>
+<li><strong>假设</strong>：AlphaFold3 的置信度指标能反映界面真实性；聚类阈值能有效区分真实与虚假界面</li>
+<li><strong>流程</strong>：输入 AlphaFold3 预测模型 → 提取置信度指标 → 对参与二元相互作用的序列基序聚类 → 在 3D 空间中识别界面 → 生成可视化与汇总表 → 输出验证结果</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>置信度指标提取</td>
+<td>从 AlphaFold3 输出中提取 ipTM、pAE 等</td>
+<td>提供界面评估的基础数据</td>
+<td>输入：AlphaFold3 输出；输出：归一化置信度矩阵</td>
+<td>未提供</td>
+<td>预期：无法进行后续聚类与界面识别</td>
+</tr>
+<tr>
+<td>序列基序聚类</td>
+<td>将参与二元相互作用的序列片段聚类</td>
+<td>识别哪些基序共同参与界面</td>
+<td>输入：置信度矩阵；输出：基序簇</td>
+<td>未提供</td>
+<td>预期：无法区分独立相互作用位点</td>
+</tr>
+<tr>
+<td>3D 界面识别</td>
+<td>在空间上确认聚类基序是否构成界面</td>
+<td>将序列信息转化为结构信息</td>
+<td>输入：基序簇+3D 坐标；输出：界面列表</td>
+<td>未提供</td>
+<td>预期：无法确认空间邻近性</td>
+</tr>
+<tr>
+<td>可视化模块</td>
+<td>生成弦图、网络图、交互式图形</td>
+<td>直观呈现界面与相互作用</td>
+<td>输入：界面列表；输出：图形</td>
+<td>未提供</td>
+<td>预期：降低可解释性</td>
+</tr>
+<tr>
+<td>汇总表生成</td>
+<td>列出预测界面与分子间相互作用</td>
+<td>提供文本化、可检索的输出</td>
+<td>输入：界面列表；输出：表格</td>
+<td>未提供</td>
+<td>预期：降低可复现性与客观性</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：所有「预期影响」均为 [Analysis] 推断，文中未提供消融实验。</p>
+</blockquote>
+<h2>09 关键公式符号</h2>
+<p>不适用。本文为工具论文，摘要中未提供具体数学公式。核心方法基于 AlphaFold3 已有的置信度指标（ipTM、pTM、PAE）的阈值化与聚类，未引入新公式。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：未提供（文中提及「真实案例」但未列出具体复合物）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（可能使用 ipTM、pTM 等，但未明确）</li>
+<li><strong>基线</strong>：未提供（未提及与现有工具对比）</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>oracle 输入</strong>：AlphaFold3 预测模型及其置信度指标</li>
+<li><strong>评测协议</strong>：未提供（文中提及「validate for scoring binary and multi-component protein complexes」，但未给出具体协议）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>二元复合物评分验证</td>
+<td>AlphaBridge 能有效评分二元复合物</td>
+<td>未提供对比基线</td>
+<td>未提供具体数值</td>
+<td>工具可用于二元复合物验证</td>
+<td>无法判断与现有工具的相对优劣</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>多组分复合物评分验证</td>
+<td>AlphaBridge 能有效评分多组分复合物</td>
+<td>未提供对比基线</td>
+<td>未提供具体数值</td>
+<td>工具可扩展至多组分</td>
+<td>无法判断复杂场景下的鲁棒性</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>真实案例展示</td>
+<td>工具在实际研究中有用</td>
+<td>未提供对照</td>
+<td>未提供具体案例细节</td>
+<td>工具具有实用性</td>
+<td>无法判断案例的代表性</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对 AlphaFold3 预测的复合物模型，不涉及实验结构或对接结果</li>
+<li><strong>oracle/真值输入</strong>：依赖 AlphaFold3 的置信度指标，若 AlphaFold3 本身预测错误，AlphaBridge 无法纠正</li>
+<li><strong>端到端状态</strong>：工具提供从预测模型到可视化验证的完整流程，但不涉及预测本身</li>
+<li><strong>算力成本</strong>：未提供</li>
+<li><strong>历史数据依赖</strong>：不依赖历史数据，仅依赖当前预测模型的输出</li>
+<li><strong>模型依赖</strong>：强依赖 AlphaFold3 的置信度指标质量</li>
+<li><strong>最难情形</strong>：多组分复合物中弱相互作用界面的识别可能受限于置信度阈值选择</li>
+<li><strong>不确定性</strong>：聚类阈值的选择可能影响界面识别的敏感性/特异性，文中未提供阈值优化策略</li>
+<li><strong>群体/领域边界</strong>：适用于 AlphaFold3 用户，不适用于其他预测工具或实验结构</li>
+</ul>
+<p><strong>有边界的复述</strong>：AlphaBridge 是一个针对 AlphaFold3 预测复合物模型的后处理工具，通过置信度指标聚类识别界面并可视化，其有效性受限于 AlphaFold3 输出质量与阈值选择，文中未提供定量性能指标。</p>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 工具依赖 AlphaFold3 的置信度指标，暗示其适用范围限于 AlphaFold3 用户（摘要中「combine confidence metrics of AlphaFold3」）
+- 验证范围限于「binary and multi-component protein complexes」，未提及核酸、脂质、糖类或小分子配体复合物的验证效果</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供定量性能指标</td>
+<td>工具的有效性缺乏可量化证据</td>
+<td>无法判断与现有工具（如 PyMOL、ChimeraX 的界面分析）的相对优劣</td>
+<td>要求作者提供与现有工具的对比实验（如 precision/recall）</td>
+<td>摘要中仅定性描述「validate」</td>
+</tr>
+<tr>
+<td>依赖 AlphaFold3 置信度指标</td>
+<td>若 AlphaFold3 置信度本身不可靠，工具输出可能误导</td>
+<td>置信度指标是工具的唯一输入，其质量直接决定输出可靠性</td>
+<td>在 AlphaFold3 已知失败案例（如多结构域蛋白）上测试工具</td>
+<td>摘要中「combine confidence metrics of AlphaFold3」</td>
+</tr>
+<tr>
+<td>聚类阈值选择未说明</td>
+<td>阈值可能影响界面识别的敏感性/特异性</td>
+<td>不同阈值可能导致截然不同的界面集合</td>
+<td>要求作者提供阈值敏感性分析</td>
+<td>摘要未提及阈值策略</td>
+</tr>
+<tr>
+<td>可视化工具的可扩展性未知</td>
+<td>大规模复合物（如核糖体）可能无法有效可视化</td>
+<td>影响工具在复杂体系中的实用性</td>
+<td>在大型复合物上测试渲染性能</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>未与其他预测工具（如 AlphaFold2-Multimer）对比</td>
+<td>工具可能仅适用于 AlphaFold3</td>
+<td>限制工具的通用性</td>
+<td>在 AlphaFold2-Multimer 输出上测试</td>
+<td>摘要仅提及 AlphaFold3</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>置信度指标聚类方法</strong>：将全局置信度指标（ipTM、pTM、PAE）通过聚类转化为界面级信息，这一思路可迁移到其他 AI 预测工具（如 AlphaFold2-Multimer、RoseTTAFold）的输出分析中，用于识别可信的相互作用界面。</p>
+</li>
+<li>
+<p><strong>可视化策略</strong>：弦图与网络图结合的方式可直观呈现多组分复合物中的相互作用关系，适用于蛋白质-核酸、蛋白质-配体复合物的界面展示。</p>
+</li>
+<li>
+<p><strong>后处理工具设计模式</strong>：以「预测模型 + 置信度指标」为输入、以「界面列表 + 可视化」为输出的工具设计，可作为结构预测下游分析的标准范式，可迁移至 MD 模拟轨迹的界面稳定性分析。</p>
+</li>
+<li>
+<p><strong>验证框架思路</strong>：对二元与多组分复合物分别验证的设计，提示在开发类似工具时需区分不同复杂度的测试场景。</p>
+</li>
+<li>
+<p><strong>可复现性设计</strong>：自动化、客观化的评分流程设计，可迁移至其他需要减少人工判断偏差的结构分析任务（如构象聚类、对接结果筛选）。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold3 置信度指标</strong>：ipTM（interface pTM）和 pAE（predicted aligned error）是 AlphaFold 系列用于评估复合物预测质量的标准指标，本文将其作为输入，与 AlphaFold3 原始论文（Abramson et al., 2024, Nature）中的指标定义一致。</li>
+<li><strong>界面分析工具</strong>：与 PyMOL、ChimeraX 中的 Contact 分析、PDBePISA 等界面分析工具互补——后者基于几何/化学性质，本文基于预测置信度。</li>
+<li><strong>结构预测后验证</strong>：与 AlphaFold DB 的 per-residue confidence（pLDDT）可视化思路一致，但扩展到界面级。</li>
+<li><strong>候选方向</strong>：与「蛋白质-配体相互作用预测」相关，AlphaBridge 的界面识别方法可能适用于 AlphaFold3 预测的蛋白质-小分子复合物验证，但文中未明确验证此场景。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：AlphaBridge 与 MD 模拟的界面稳定性交叉验证
+   - <strong>来源局限/观察</strong>：AlphaBridge 仅基于静态预测模型的置信度，未考虑动态构象变化
+   - <strong>核心假设</strong>：AlphaBridge 识别的高置信度界面在 MD 模拟中应表现出更高的结构稳定性（如更低的 RMSF、更持久的氢键）
+   - <strong>相对本文的增量</strong>：将静态置信度与动态模拟结合，提供界面预测的时间维度验证
+   - <strong>初步方法</strong>：对 AlphaBridge 识别的界面残基进行 MD 模拟，计算界面残基的 RMSF、接触持久性，与置信度分数做相关性分析
+   - <strong>验证方式</strong>：在已知实验结构的复合物上测试，比较高/低置信度界面的动态稳定性差异
+   - <strong>可能的失败模式</strong>：AlphaFold3 置信度与动态稳定性可能无显著相关性，因置信度反映的是静态模型的自洽性而非热力学稳定性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：基于 AlphaBridge 界面聚类的蛋白质-配体结合位点预测
+   - <strong>来源局限/观察</strong>：AlphaBridge 目前聚焦于蛋白质-蛋白质/多组分复合物，未涉及小分子配体
+   - <strong>核心假设</strong>：AlphaBridge 的基序聚类方法可迁移至 AlphaFold3 预测的蛋白质-配体复合物，识别配体结合口袋
+   - <strong>相对本文的增量</strong>：扩展工具适用范围至药物设计相关场景
+   - <strong>初步方法</strong>：将 AlphaBridge 的聚类逻辑应用于蛋白质-配体复合物的置信度指标，识别配体周围的高置信度残基簇，与已知结合位点比对
+   - <strong>验证方式</strong>：在 PDBbind 等数据集上测试，比较预测结合位点与实验结合位点的重叠率
+   - <strong>可能的失败模式</strong>：AlphaFold3 对小分子配体的置信度指标可能不够精确，导致聚类结果噪声大
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AlphaBridge 界面置信度与实验突变数据的关联分析
+   - <strong>来源局限/观察</strong>：AlphaBridge 未与实验功能数据（如突变对结合的影响）关联
+   - <strong>核心假设</strong>：AlphaBridge 识别的高置信度界面残基在实验突变研究中更可能表现为结合热点（hotspot）
+   - <strong>相对本文的增量</strong>：为界面预测提供实验验证维度
+   - <strong>初步方法</strong>：收集已知复合物的突变-结合亲和力数据（如 SKEMPI 2.0），将 AlphaBridge 界面残基与热点残基比对，计算富集度
+   - <strong>验证方式</strong>：统计高置信度界面残基中热点残基的比例是否显著高于非界面残基
+   - <strong>可能的失败模式</strong>：AlphaFold3 置信度反映的是结构确定性而非功能重要性，两者可能不重合
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present AlphaBridge, a toolkit that combines AlphaFold3 confidence metrics to cluster sequence motifs involved in binary interactions and 3D interfaces of biomolecular complexes. The tool visualizes interfaces via chord diagrams, network graphs, and summary tables, and is validated for scoring binary and multi-component protein complexes, with real-life examples. It is described as reproducible, objective, automated, and available as a web server.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, validation datasets, or comparison benchmarks are described</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, validation data, figures, tables, code repository details, web server URL, and any statistical analyses</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially useful software tool for evaluating AlphaFold3-predicted complexes, addressing a genuine need in the structural biology community. However, the abstract provides insufficient technical detail and no quantitative evidence to assess the validity, novelty, or performance of the approach. The claims of validation and reproducibility cannot be evaluated from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Structural biologists, computational biologists, and bioinformaticians who use AlphaFold3 for predicting protein complexes and need tools to assess model confidence and interpret interaction interfaces. The web server availability may also attract experimentalists seeking user-friendly validation tools.</li>
+<li><strong>Major strengths</strong> The tool addresses a timely and practical problem, namely the evaluation of AI-predicted macromolecular complexes. The combination of confidence metrics with clustering of sequence motifs and 3D interface analysis appears conceptually sound. The provision of a web server and automated, reproducible workflows is commendable for accessibility.</li>
+<li><strong>Major Concerns</strong> None identified from the supplied material, as the abstract lacks sufficient detail to formulate specific major concerns beyond the general lack of evidence.</li>
+<li><strong>Minor Comments</strong> None identified from the supplied material, as the abstract is too brief to support specific minor comments.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The abstract does not provide any quantitative validation results, benchmark comparisons, or statistical measures. The claim that AlphaBridge is "validated" for scoring binary and multi-component complexes is unsupported by data. The methods for clustering, confidence thresholding, and interface scoring are not described in sufficient detail to assess technical soundness.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The concept of using AlphaFold3 confidence metrics for interface analysis is plausible but not demonstrably novel from the abstract alone. Scientific importance: The problem is relevant, but the abstract does not establish the impact of the tool. Interdisciplinary readership: The abstract is accessible to structural biologists but lacks detail for computational specialists. Technical soundness: Cannot be assessed without methods and validation data. Readability for nonspecialists: The abstract is clear but uses jargon without explanation.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract alone is insufficient to support the claims of validation and utility. A full manuscript with methods, results, and benchmarks is required for a substantive review.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that AlphaBridge is "validated" for scoring binary and multi-component protein complexes is unsupported, as no validation data or metrics are provided.</li>
+<li>The claim that the toolkit is "reproducible, objective, and automated" is not verifiable from the abstract.</li>
+<li>The claim that real-life examples demonstrate utility is unsubstantiated without descriptions of these examples.</li>
+<li>The general effectiveness of combining confidence metrics for clustering and interface visualization is not demonstrated with any quantitative or qualitative evidence.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

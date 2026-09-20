@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to methods, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors present a workflow for diagnosing and mitigating biases in machine learning models trained on antibody sequence data from drug pipeline projects, using a custom cross-validation procedure. They demonstrate the workflow by training a model to predict VHH binding to baculovirus particles (BVP), a nonspecific binding assay, and report that structure-based descriptors identify risk factors correlating with higher polyreactivity.
+- **Visible evidence base** Abstract text only; no quantitative results, performance metrics, dataset descriptions, or methodological details are provided
+- **Missing materials affecting confidence** Full methods, dataset composition and size, model architecture and hyperparameters, cross-validation scheme details, performance metrics, descriptor definitions, statistical analyses, figures, tables, and any validation on external datasets
+
+## Reviewer
+- **Overall assessment** The abstract addresses a relevant and practical problem in biotherapeutic developability, namely the risk of bias in machine learning models trained on highly homologous pipeline-derived antibody sequences. The proposed workflow concept, centered on cluster-aware cross-validation, is sensible and potentially valuable. However, the abstract provides no quantitative evidence of model performance, no comparison to existing approaches, and no details on the biological or structural features identified as risk factors. As presented, the claims are plausible but not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers and practitioners in antibody engineering, biotherapeutic developability assessment, and machine learning applied to protein sequences. The workflow could be of interest to industrial groups generating large internal antibody datasets, as well as academic groups developing generalizable predictive models for protein biophysical properties.
+- **Major strengths** The problem framing is clear and practically motivated. The emphasis on diagnosing data bias from pipeline-derived sequences is an important and often underappreciated issue. The use of structure-based descriptors is a reasonable choice that may capture biophysical determinants of nonspecific binding beyond sequence identity.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The workflow "can evaluate model performance on unseen data in different contexts" and the model "predict[s] VHH binding to baculovirus particles."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No quantitative performance metrics are reported. The abstract does not state accuracy, AUC, precision, recall, correlation coefficients, or any benchmark against existing methods or a naive baseline. Without these, the claim that the workflow successfully evaluates model performance is unsupported.
+  - **Why it matters** The central value proposition of the work is that the cluster-aware validation procedure yields reliable performance estimates. Without reporting actual performance numbers, the reader cannot assess whether the model is useful in practice or whether the workflow meaningfully changes conclusions compared to standard validation.
+  - **Resolution test** Provide performance metrics for the model under the proposed cluster-aware cross-validation, ideally compared to standard random-split validation, with confidence intervals. Report at least one external or held-out validation context.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "The workflow identifies several risk factors that correlate with higher polyreactivity levels."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not specify which risk factors were identified, their direction of effect, statistical significance, or effect sizes. The term "risk factors" is vague and could refer to sequence motifs, structural features, physicochemical properties, or other descriptors.
+  - **Why it matters** The identification of interpretable risk factors is a key claimed outcome and would be of high interest to the community. Without naming the factors or providing any statistical support, the claim is not assessable and cannot be used by others to guide experimental design or hypothesis generation.
+  - **Resolution test** List the specific risk factors identified, with their associated statistics (e.g., coefficients, p-values, feature importance scores) and a clear description of the descriptor types used.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** The workflow "can evaluate model performance on unseen data in different contexts."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not describe what "different contexts" means operationally. It is unclear whether this refers to different sequence clusters, different antigen panels, different assay conditions, or other partitions. The generalizability of the workflow beyond the single BVP assay demonstration is not addressed.
+  - **Why it matters** The stated purpose of the workflow is to mitigate bias and improve generalizability. Without a clear definition of the contexts tested and evidence that the workflow performs well across them, the broader applicability of the approach remains speculative.
+  - **Resolution test** Define the contexts used in the cross-validation procedure and report model performance separately for each context. If possible, include at least one context that is biologically or experimentally distinct from the training data.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "cluster-aware validation" is introduced without definition. The reader cannot tell whether this refers to sequence identity clustering, structural clustering, or another grouping scheme.
+  - **Required correction** Define the clustering criterion and the level of sequence or structural similarity used to define clusters.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Dataset description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No information is given on the size, source, or composition of the dataset used for training and validation. The number of VHH sequences, the number of positive and negative examples, and the diversity of the sequences are all absent.
+  - **Required correction** Provide dataset size, class balance, and a brief description of sequence diversity or source.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Comparison to existing work
+  - **Affected element** Benchmarking
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No comparison is made to existing in silico tools or previously published models for predicting nonspecific binding or polyreactivity.
+  - **Required correction** Include a comparison to at least one existing method or baseline to contextualize the performance of the proposed workflow.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The absence of quantitative performance metrics and the lack of specificity regarding identified risk factors mean the core claims of the abstract are not currently supported by the provided evidence.
+- **Assessment against Nature-style criteria** Originality: The focus on cluster-aware validation for pipeline-derived antibody data is a useful contribution, though the concept of clustered cross-validation is not entirely novel in machine learning. Scientific importance: The problem of nonspecific binding prediction is practically important for biotherapeutic development, and the workflow could have broad applicability if validated. Interdisciplinary readership: The work sits at the interface of machine learning, structural biology, and antibody engineering, and would appeal to a specialized but not broad audience. Technical soundness: Cannot be assessed from the abstract alone; no methodological or statistical details are provided. Readability for nonspecialists: The abstract is generally clear, but the lack of concrete results makes it difficult for a nonspecialist to gauge the significance of the work.
+- **Recommendation posture** Currently not established from the provided evidence. The concept is promising and the problem is relevant, but the abstract lacks the quantitative and specific information needed to support the claims. A revised version with performance metrics, defined risk factors, and clearer methodological descriptions could change this assessment.
+
+## Risk / unsupported claims
+- The claim that the workflow "can evaluate model performance on unseen data in different contexts" is unsupported without performance metrics or a definition of contexts.
+- The claim that "several risk factors" correlate with higher polyreactivity is unsupported without naming the factors or providing statistical evidence.
+- The implicit claim that the workflow mitigates bias and improves generalizability is not assessable from the abstract alone.
+- Any implied superiority of the proposed approach over existing methods is unsupported, as no comparisons are provided.

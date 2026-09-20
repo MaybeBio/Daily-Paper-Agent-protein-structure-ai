@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to methods, figures, tables, or supplementary material
+- **Shared manuscript claim summary** The authors report an ensemble-based computational workflow that detects and clusters 17,178 pockets across 753 monomeric influenza A nucleoprotein conformations from three independent molecular dynamics simulations, reconstructs six recurrent binding-site regions, characterizes them by recurrence, residue composition, plasticity, and assembly context, and prioritizes them for ligand-specific investigation. Four sites match experimentally characterized or structurally supported ligand-binding environments, and assembly mapping reveals context-dependent exposure near RNA- and NP-NP interaction surfaces.
+- **Visible evidence base** Abstract text only; no quantitative results, methodological details, or validation data are provided
+- **Missing materials affecting confidence** Full methods, simulation parameters, clustering algorithm details, pocket detection tool and thresholds, validation against experimental structures, figures, tables, and any statistical or comparative analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually reasonable ensemble-based approach to binding-site identification on a conformationally dynamic viral protein, and the biological target is of genuine interest. However, the abstract alone does not provide sufficient methodological detail, quantitative results, or validation evidence to assess the technical soundness of the workflow or the robustness of the six identified sites. The claim of correspondence to four experimentally characterized sites is stated without supporting evidence, and the prioritization logic is not transparently defined. The work may be of interest to computational chemists and virologists, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational biophysicists and medicinal chemists working on ensemble-based drug target characterization would find the methodological approach relevant. Virologists studying influenza A nucleoprotein as an antiviral target would be interested in the identification of dynamic binding-site regions, particularly those near RNA- and NP-NP interaction surfaces, as these may inform future ligand design or mutagenesis experiments.
+- **Major strengths** The use of multiple independent molecular dynamics simulations to capture conformational variability is a sound strategy for addressing the limitation of static structures. The grouping of pockets by lining-residue composition is a sensible approach to reconstructing recurrent sites. The distinction between stable pockets and plastic regions whose accessibility depends on conformational and assembly context is a useful conceptual framework for target prioritization.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that 17,178 pockets detected across 753 monomeric NP conformations were grouped to reconstruct recurrent binding-site regions, and that six potentially druggable sites were retained.
+  - **Evidence pointer** Abstract only; methods not provided
+  - **Concern** The abstract provides no information on the pocket detection algorithm, the clustering methodology, the criteria for retaining six sites, or the definition of druggability used. Without these details, the reproducibility and validity of the workflow cannot be assessed.
+  - **Why it matters** The central contribution of the work is the identification and prioritization of binding sites. If the detection thresholds, clustering parameters, or retention criteria are arbitrary or poorly justified, the six reported sites may not be robust or biologically meaningful.
+  - **Resolution test** Provide a detailed methods section describing the pocket detection tool and parameters, the clustering algorithm and similarity metric, the criteria for site retention, and the druggability assessment. Include a sensitivity analysis or validation showing that the six sites are stable to reasonable parameter variations.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** The abstract claims that four sites corresponded to experimentally characterized or structurally supported ligand-binding environments.
+  - **Evidence pointer** Abstract only; no figures or tables provided
+  - **Concern** No specific experimental structures, ligand-bound complexes, or literature references are cited to support this correspondence. The nature of the correspondence, such as residue-level overlap or geometric similarity, is not defined.
+  - **Why it matters** This claim is a key validation of the method. Without explicit evidence, the reader cannot distinguish genuine agreement with known biology from coincidental overlap.
+  - **Resolution test** Provide a table or figure mapping each of the six sites to known ligand-binding environments, with quantitative measures of overlap, such as residue identity fractions or RMSD-based comparisons, and cite the relevant experimental structures.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim support
+  - **Claim pointer** The abstract claims that assembly mapping revealed context-dependent exposure near RNA- and NP-NP interaction surfaces, thereby identifying dynamic NP binding-site regions prioritized for ligand-specific investigation.
+  - **Evidence pointer** Abstract only; assembly context not described
+  - **Concern** The abstract does not explain how assembly context was modeled or mapped. It is unclear whether the authors used known oligomeric structures, simulated assemblies, or docking-based approaches. The criteria for prioritizing sites for ligand-specific investigation are not stated.
+  - **Why it matters** The prioritization is a central output of the work. Without a transparent definition of how assembly context affects site exposure and how prioritization was determined, the practical utility of the findings for ligand design is unclear.
+  - **Resolution test** Describe the assembly modeling approach, define the metrics used to assess context-dependent exposure, and provide a clear prioritization scheme with thresholds or scoring criteria.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract, sentence describing the six sites
+  - **Issue** The terms "compact, residue-stable sites," "adaptive RNA-proximal regions," and "extended E339-centered interdomain groove" are descriptive but not quantitatively defined.
+  - **Required correction** Provide operational definitions for these categories, such as residue identity fluctuation thresholds or geometric criteria, in the main text or methods.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Simulation details
+  - **Evidence pointer** Abstract, mention of three independent molecular dynamics simulations
+  - **Issue** The abstract does not state the simulation lengths, force fields, or system setup, which are essential for assessing conformational sampling adequacy.
+  - **Required correction** Include simulation duration, force field, water model, and temperature/pressure coupling details in the methods.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretability
+  - **Affected element** Druggability claim
+  - **Evidence pointer** Abstract, phrase "potentially druggable"
+  - **Issue** The basis for the druggability assessment is not described, such as pocket volume, hydrophobicity, or known ligandability.
+  - **Required correction** Define the druggability criteria and state which metrics were used to classify a site as potentially druggable.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of methodological detail, validation evidence, and a defined prioritization scheme means the central claims of site identification, experimental correspondence, and context-dependent prioritization cannot be evaluated from the supplied material.
+- **Assessment against Nature-style criteria** Originality: The ensemble-based reconstruction of binding sites on influenza A nucleoprotein is a reasonable application of existing methods rather than a conceptually novel approach, though the specific target and integration of assembly context may offer some novelty. Scientific importance: The target is relevant for antiviral development, and the distinction between stable and plastic sites could inform future drug design, but the significance is not demonstrated without validation. Interdisciplinary readership: The work would primarily appeal to computational chemists and structural biologists, with limited immediate accessibility to a broader biological audience. Technical soundness: Cannot be assessed from the abstract alone; the lack of methodological detail is a critical gap. Readability for nonspecialists: The abstract is concise and generally clear, but the terminology and claims would benefit from more explicit definitions and context.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual approach is plausible and the target is relevant, but the abstract does not provide sufficient methodological detail, quantitative results, or validation to support the central claims. A full manuscript with detailed methods, validation against experimental data, and a transparent prioritization scheme would be required to assess the work properly.
+
+## Risk / unsupported claims
+- The claim that six potentially druggable sites were retained is unsupported without a defined druggability criterion.
+- The claim that four sites corresponded to experimentally characterized or structurally supported ligand-binding environments is unsupported without specific structures or quantitative comparisons.
+- The claim that assembly mapping revealed context-dependent exposure is unsupported without a description of the assembly modeling approach.
+- The prioritization of sites for ligand-specific investigation is not defined and therefore not assessable.
+- The statistical or structural significance of the 17,178 pockets and their clustering is not assessable without methodological details.

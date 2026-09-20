@@ -1,0 +1,84 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report two siblings from a consanguineous Kurdish family with a homozygous ZSWIM6 variant (c.3119G>A, p.Arg1040His) presenting severe syndromic short stature, biochemical features of GH deficiency, microcephaly, and developmental delay. They performed in vitro transcriptional reporter assays and AlphaFold structural modelling for three ZSWIM6 variants (p.Arg1040His, p.Arg1163Trp, p.Arg913Ter) and propose allele-specific effects on transcriptional regulation of HECW2 and ZIC2 promoters, linking these to clinical heterogeneity.
+- **Visible evidence base** Abstract text only; no raw data, statistical details, experimental protocols, or structural model outputs provided
+- **Missing materials affecting confidence** Full methods, detailed clinical phenotyping data, biochemical assay values, statistical analyses, structural model figures, variant validation data, and any control experiments
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially novel finding of a homozygous ZSWIM6 variant associated with a distinct syndromic phenotype. The proposed functional characterization is conceptually interesting and could contribute to understanding ZSWIM6-related disorders. However, the evidence base is limited to the abstract, and several claims regarding genotype-phenotype correlations and allele-specific functional effects are not sufficiently supported by the provided information. The clinical and functional data require detailed scrutiny in the full manuscript.
+- **Who would be interested in the results, and why** Clinical geneticists and pediatric endocrinologists interested in syndromic short stature and GH deficiency; molecular biologists studying transcriptional regulation and ZSWIM6 function; researchers in the field of neurodevelopmental disorders and craniofacial anomalies. The findings may also be relevant to those studying genotype-phenotype correlations in autosomal recessive conditions.
+- **Major strengths** The report of a first homozygous ZSWIM6 variant expands the known inheritance pattern and phenotypic spectrum. The use of both functional assays and structural modelling to compare three distinct variants is a comprehensive approach. The clinical description of a novel phenotype with biochemical features of GH deficiency adds practical relevance.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency for causal claim  
+  - **Claim pointer** The abstract states that the homozygous ZSWIM6 variant causes the observed phenotype, implying a causal relationship.  
+  - **Evidence pointer** Abstract, Results and Conclusion sections; location not provided  
+  - **Concern** The causal link between the homozygous ZSWIM6 variant and the full clinical phenotype is asserted without presentation of segregation data, functional validation in patient-derived cells, or exclusion of other potential genetic or environmental contributors. The abstract does not mention whether the variant was confirmed to segregate with the phenotype in the family or whether other candidate variants were excluded.  
+  - **Why it matters** Establishing causality is essential for a novel gene-disease association, especially in a consanguineous family where multiple homozygous variants may be present. Without segregation and exclusion evidence, the claim that ZSWIM6 is the causative gene is premature.  
+  - **Resolution test** Provide family segregation data, list of filtered variants, and evidence that no other plausible homozygous or compound heterozygous variants segregate with the phenotype. Functional rescue experiments or patient-derived cell assays would strengthen causality.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Functional assay validity and interpretation  
+  - **Claim pointer** The abstract claims that p.Arg1040His reduces ZIC2 activation (loss-of-function), p.Arg1163Trp enhances ZIC2 activation (gain-of-function), and p.Arg913Ter specifically increases HECW2 activation (derepression).  
+  - **Evidence pointer** Abstract, Methods and Results sections; location not provided  
+  - **Concern** The functional assays are described only in minimal detail. No information is provided on the magnitude of effects, statistical significance, number of replicates, or whether the effects are specific to the tested promoters. The claim of "derepression" for p.Arg913Ter implies a mechanistic model that is not explained. The abstract does not state whether wild-type ZSWIM6 represses HECW2 or whether the variant abolishes this repression.  
+  - **Why it matters** The allele-specific functional differences are central to the proposed genotype-phenotype correlation. Without robust quantitative data and appropriate controls, these conclusions cannot be evaluated.  
+  - **Resolution test** Provide full reporter assay data with effect sizes, error bars, statistical tests, and appropriate controls (e.g., empty vector, wild-type ZSWIM6, and possibly a known neutral variant). Clarify the mechanistic basis for the "derepression" claim.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Structural modelling interpretation  
+  - **Claim pointer** The abstract states that AlphaFold modelling predicted p.Arg1040His and p.Arg1163Trp alter local surface charge without disrupting the overall fold, while p.Arg913Ter truncates ZSWIM6, potentially affecting DNA binding interactions.  
+  - **Evidence pointer** Abstract, Methods and Results sections; location not provided  
+  - **Concern** The structural predictions are presented as supporting evidence for functional differences, but no details are given on the confidence of the AlphaFold models, the specific residues affected, or how the predicted surface charge changes relate to functional outcomes. The claim that p.Arg913Ter affects DNA binding is speculative without experimental validation.  
+  - **Why it matters** Structural modelling is predictive and should be corroborated by experimental data. Overinterpretation of in silico results could mislead the genotype-phenotype correlation.  
+  - **Resolution test** Provide model confidence metrics, structural figures, and discuss limitations. If possible, include experimental validation such as DNA binding assays or protein stability measurements.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Clinical phenotype specificity  
+  - **Claim pointer** The abstract claims the siblings exhibit a "distinct clinical presentation" with partial overlap to prior ZSWIM6-associated phenotypes.  
+  - **Evidence pointer** Abstract, Introduction and Results sections; location not provided  
+  - **Concern** The clinical features are listed but not compared systematically to previously reported ZSWIM6 cases. The claim of a "novel phenotype" is based on the combination of features, but the abstract does not provide a detailed clinical comparison or a table of features across cases.  
+  - **Why it matters** The novelty of the phenotype is a key claim. Without a systematic comparison, it is unclear whether the presentation is truly distinct or within the known spectrum.  
+  - **Resolution test** Provide a detailed clinical comparison table with previously reported ZSWIM6 cases, including growth parameters, endocrine workup, and developmental assessments.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity of terminology  
+  - **Affected element** "putative transcription factor"  
+  - **Evidence pointer** Abstract, Introduction; location not provided  
+  - **Issue** The term "putative" is used for ZSWIM6, but the functional assays later confirm transcriptional regulatory activity. This inconsistency may confuse readers.  
+  - **Required correction** Revise the introduction to state that ZSWIM6 is a proposed or candidate transcription factor, and clarify that the study provides functional evidence supporting this role.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Reporting of biochemical features  
+  - **Affected element** "biochemical features of GH deficiency"  
+  - **Evidence pointer** Abstract, Introduction and Results; location not provided  
+  - **Issue** The specific biochemical parameters (e.g., IGF-1, GH stimulation test results) are not mentioned. This limits the clinical interpretability.  
+  - **Required correction** Specify the biochemical criteria used to define GH deficiency in the abstract or refer to detailed data in the full manuscript.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Statistical reporting  
+  - **Affected element** Functional assay results  
+  - **Evidence pointer** Abstract, Results; location not provided  
+  - **Issue** No statistical details are provided for the reporter assays, making it impossible to assess the robustness of the observed differences.  
+  - **Required correction** Include p-values, effect sizes, and number of independent experiments in the abstract or full manuscript.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Terminology for variant effect  
+  - **Affected element** "derepression"  
+  - **Evidence pointer** Abstract, Results; location not provided  
+  - **Issue** The term "derepression" implies a specific regulatory mechanism that is not explained in the abstract.  
+  - **Required correction** Define what is meant by derepression in this context and provide supporting data.
+
+## Risk / unsupported claims
+- The claim that the homozygous ZSWIM6 variant is causative for the full phenotype is unsupported without segregation and exclusion data.
+- The allele-specific functional effects (loss-of-function, gain-of-function, derepression) are not quantitatively supported in the abstract.
+- The structural modelling predictions are presented as evidence but lack validation and confidence metrics.
+- The claim of a "novel phenotype" is not substantiated by a systematic comparison with prior cases.
+- The biochemical features of GH deficiency are mentioned but not defined, making the clinical claim unverifiable from the abstract.

@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HighFold4: extending AlphaFold3 to accurate cyclic peptide conformation prediction via custom chemical connectivity. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>HighFold4: extending AlphaFold3 to accurate cyclic peptide conformation prediction via custom chemical connectivity.</h1>
+      <div class="meta">Zhang, Chengyun; Wang, Wentong; Zhu, Renjie; Cao, Sen; Xu, Yiqi; Zhu, Ning; Wu, Yaling; Guo, Jingjing; Duan, Hongliang</div>
+      <div class="meta muted">
+        
+        <span class="journal">Briefings in bioinformatics</span>
+        · 2026-09-15
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42743971/">原文</a>
+      </div>
+      <p class="one-liner">该文通过自定义化学连接扩展AlphaFold3，实现环肽构象的准确预测，属于蛋白质结构预测方法创新，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">While AlphaFold3 has revolutionized protein structure prediction and supports noncanonical amino acids, its architecture always fails to reliably generate the closed-ring topologies characteristic of cyclic peptides. Existing adaptations, such as imposing distance constraints via an offset matrix, enforce ring geometry but cannot specify the chemical identity of the cyclization bond, leading to a restrictive bias toward amide- or disulfide-linked macrocycles. Here, we present HighFold4, a framework that adapts AlphaFold3 to explicitly incorporate user-defined chemical connectivity between residues, thereby enabling both topological closure and bond-specific cyclization. Without retraining the base model, HighFold4 achieves accurate, chemistry-aware prediction of diverse cyclic peptide conformations, as validated on 179 structures. This work established a new paradigm for the conformation construction of macrocyclic peptides with tailored ring geometry and linkage chemistry, significantly expanding the utility of deep learning in peptide-based drug discovery.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">尽管AlphaFold3已彻底改变了蛋白质结构预测，并支持非标准氨基酸，但其架构始终无法可靠地生成环肽特有的闭合环拓扑结构。现有改编方法，如通过偏移矩阵施加距离约束，虽能强制环几何结构，却无法指定环化键的化学身份，导致对酰胺键或二硫键连接的大环产生限制性偏差。在此，我们提出HighFold4，一个将AlphaFold3适配为显式纳入残基间用户定义化学连接性的框架，从而同时实现拓扑闭合和键特异性环化。无需重新训练基础模型，HighFold4即可实现对多样化环肽构象的准确、化学感知预测，并在179个结构上得到验证。这项工作为具有定制环几何结构和连接化学的大环肽构象构建确立了新范式，显著扩展了深度学习在基于肽的药物发现中的实用性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：HighFold4: extending AlphaFold3 to accurate cyclic peptide conformation prediction via custom chemical connectivity</li>
+<li><strong>作者与单位</strong>：Zhang, Chengyun; Wang, Wentong; Zhu, Renjie; Cao, Sen; Xu, Yiqi; Zhu, Ning; Wu, Yaling; Guo, Jingjing; Duan, Hongliang（澳门理工大学，Macao Polytechnic University）</li>
+<li><strong>期刊/预印本平台</strong>：Briefings in Bioinformatics</li>
+<li><strong>年份</strong>：2026-09-15</li>
+<li><strong>论文类型</strong>：方法学（Method）</li>
+<li><strong>领域</strong>：蛋白质结构预测 × 环肽构象预测 × 深度学习</li>
+<li><strong>关键词</strong>：AlphaFold3、环肽、构象预测、化学连接性、共价键</li>
+<li><strong>DOI/arXiv 号</strong>：10.1093/bib/bbag505</li>
+<li><strong>代码</strong>：https://github.com/hongliangduan/HighFold4</li>
+<li><strong>数据</strong>：支持信息文件（Tables S1–S4）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」方向，具体为基于 AlphaFold3 的环肽构象预测。其核心贡献在于通过显式定义原子级化学连接性（而非仅依赖距离约束），解决 AlphaFold3 无法可靠生成环肽闭合拓扑的问题，属于结构预测中「拓扑约束注入」这一技术路线。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过向 AlphaFold3 的输入特征中显式注入用户定义的原子级共价连接性（以邻接矩阵形式编码），在不重训练模型的前提下，使模型能够准确预测多种化学连接类型（头尾酰胺键、二硫键、侧链介导连接）的环肽构象，在 179 个结构上验证了 100% 的环化成功率。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：AlphaFold3 虽支持非标准氨基酸，但其构象生成模块无法可靠生成环肽的闭合环状拓扑，常输出「类环状」的线性构象；现有改进（如 HighFold3 的偏移矩阵）虽能强制环闭合，但无法指定环化键的化学性质，导致对非酰胺/非二硫键连接（如侧链介导连接）的预测出现系统性偏差。</li>
+<li><strong>为什么重要</strong>：环肽是重要的治疗性分子骨架，其生物活性高度依赖精确的三维构象和环化连接方式。准确预测环肽构象是环肽药物理性设计与筛选的关键前置步骤。</li>
+<li><strong>现有方法为何不足</strong>：AlphaFold3 默认假设线性拓扑，对环化缺乏显式表示；HighFold3 的偏移矩阵仅编码残基间距离约束，无法区分不同化学键类型，且对训练数据中少见的连接方式泛化能力差。</li>
+<li><strong>精确研究问题</strong>：Can we extend AlphaFold3 to accurately predict cyclic peptide conformations with user-defined, atom-level chemical connectivity, without retraining the base model?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引言及方法描述整理，标注为「仅本文框架」，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通用结构预测</td>
+<td>AlphaFold / AlphaFold2</td>
+<td>高精度蛋白质结构预测</td>
+<td>不支持非标准残基与环状拓扑</td>
+</tr>
+<tr>
+<td>扩展至非标准残基</td>
+<td>AlphaFold3</td>
+<td>支持非天然氨基酸、配体、共价修饰</td>
+<td>对环肽闭合拓扑生成不可靠，常输出线性构象</td>
+</tr>
+<tr>
+<td>强制环闭合</td>
+<td>HighFold3（偏移矩阵 + FCP 算法）</td>
+<td>通过距离约束实现拓扑闭合</td>
+<td>无法指定环化键的化学性质，偏向酰胺/二硫键，对侧链介导连接失效</td>
+</tr>
+<tr>
+<td>化学连接性显式建模</td>
+<td><strong>HighFold4（本文）</strong></td>
+<td>原子级共价连接性注入，支持任意用户定义连接</td>
+<td>依赖用户提供准确的连接信息；无法解决 AlphaFold3 固有的手性错误等问题</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlphaFold3 无法生成环肽闭合拓扑</td>
+<td>输出线性或「类环状」但未闭合的构象</td>
+<td>模型训练数据以线性肽为主，构象生成模块缺乏环化拓扑的显式表示</td>
+<td>Introduction 第 2 段；Results 图 2A</td>
+</tr>
+<tr>
+<td>偏移矩阵无法指定化学键类型</td>
+<td>HighFold3 对侧链介导连接生成错误键型</td>
+<td>偏移矩阵仅编码残基间距离，不包含原子级化学身份信息</td>
+<td>Introduction 第 3 段；Methods 图 2B</td>
+</tr>
+<tr>
+<td>对非标准连接泛化差</td>
+<td>侧链环化肽预测出现结构不合理（原子碰撞）</td>
+<td>训练数据中此类连接稀少，模型无法从数据中隐式学习</td>
+<td>Results 图 6C</td>
+</tr>
+<tr>
+<td>环化成功率低</td>
+<td>AlphaFold3 对规范环肽复合物环化成功率 0%</td>
+<td>模型默认线性拓扑，缺乏环化约束</td>
+<td>Results 图 5A–E</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：在 AlphaFold3 的特征工程阶段，将用户定义的原子级共价连接性编码为稀疏邻接矩阵 G（N_token × N_token），经稠密化后与配体连接信息合并，通过 bond_embedding 模块编码进 pair_feat，从而在 Evoformer 的注意力计算中注入化学连接约束。</li>
+<li><strong>核心洞察</strong>：环肽的拓扑闭合本质上是一个「图论问题」而非「距离优化问题」——仅约束残基间距离（HighFold3 的做法）无法确定连接的具体化学身份；只有显式指定原子对之间的共价键，模型才能在构象生成时同时满足拓扑闭合和化学正确性。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：对于结构预测模型，当目标拓扑偏离训练数据分布时，与其依赖模型隐式学习或距离约束间接引导，不如在输入特征层面显式注入离散的结构先验（如共价连接性）。这一思路可迁移至其他需要约束特定拓扑（如二硫键、交联、环化）的预测任务。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：环肽氨基酸序列（含非标准残基）、用户定义的原子级共价连接性（邻接矩阵 G）、可选的小分子/配体信息</li>
+<li><strong>输出</strong>：预测的环肽三维构象（含所有重原子坐标）</li>
+<li><strong>模块</strong>：
+  1. 特征工程：构建邻接矩阵 G（稀疏格式），稠密化后与配体连接信息合并
+  2. bond_embedding：将连接性编码为 pair_feat 的一部分
+  3. Evoformer：在 pair representation 中融合连接性特征
+  4. 构象生成模块：基于融合特征生成三维坐标</li>
+<li><strong>训练</strong>：无需重训练或微调，直接使用 AlphaFold3 预训练权重</li>
+<li><strong>工具</strong>：AlphaFold3 开源代码框架</li>
+<li><strong>流程</strong>：序列 + 连接性 → 邻接矩阵 G → 特征融合 → Evoformer 编码 → 构象生成 → 输出坐标</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>邻接矩阵构建</td>
+<td>将用户定义的共价连接性编码为稀疏矩阵</td>
+<td>提供原子级化学连接信息</td>
+<td>输入：连接性定义；输出：稀疏矩阵 G</td>
+<td>Methods 图 2C</td>
+<td>预期影响：退化为 HighFold3，无法区分化学键类型</td>
+</tr>
+<tr>
+<td>特征稠密化与合并</td>
+<td>将稀疏矩阵转为稠密表示，与配体连接信息拼接</td>
+<td>使连接性信息可被 Evoformer 处理</td>
+<td>输入：稀疏矩阵 G + 配体连接；输出：稠密连接特征</td>
+<td>Methods 图 2C</td>
+<td>预期影响：连接性信息丢失，模型无法感知环化</td>
+</tr>
+<tr>
+<td>bond_embedding</td>
+<td>将连接特征线性编码为 pair_feat</td>
+<td>将离散连接性转化为连续向量表示</td>
+<td>输入：稠密连接特征；输出：嵌入向量</td>
+<td>Methods 图 2C</td>
+<td>预期影响：pair_feat 中无环化信息，构象生成不受约束</td>
+</tr>
+<tr>
+<td>Evoformer 融合</td>
+<td>在 pair representation 中融合连接性嵌入</td>
+<td>使注意力计算感知化学连接</td>
+<td>输入：pair_feat + 连接嵌入；输出：更新后的 pair representation</td>
+<td>Methods 图 2C</td>
+<td>预期影响：模型无法在注意力中区分环化与非环化残基对</td>
+</tr>
+<tr>
+<td>构象生成模块</td>
+<td>基于融合特征生成三维坐标</td>
+<td>输出最终预测结构</td>
+<td>输入：Evoformer 输出；输出：原子坐标</td>
+<td>Results 图 3</td>
+<td>预期影响：无约束时生成线性构象</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>本文核心方法为特征工程操作，无复杂数学公式。以下为文中出现的评估指标定义。</p>
+</blockquote>
+<p><strong>RMSD（均方根偏差）</strong>：
+RMSD = √( (1/N) Σᵢⱼ (xᵢⱼ^native − xᵢⱼ^model)² )</p>
+<ul>
+<li>x^native：实验测定结构中原子坐标</li>
+<li>x^model：预测结构中原子坐标</li>
+<li>i：原子索引（1 到 N）</li>
+<li>j：空间维度索引（x, y, z）</li>
+<li>N：参与比对的原子总数</li>
+</ul>
+<p><strong>LDDT（局部距离差异测试）</strong>：
+LDDT_score(l) = (1/|R|) Σ_{m∈R} [1 − (d_lm − d_lm^ref) / d_cutoff]⁺</p>
+<ul>
+<li>d_lm：预测结构中原子 l 和 m 的距离</li>
+<li>R：满足距离阈值（蛋白 &lt;15 Å，核酸 &lt;30 Å）的原子集合</li>
+<li>d_cutoff：距离截断值</li>
+</ul>
+<p><strong>pTM（预测 TM-score）</strong>：
+pTM = max_b [ (1/N) Σᵢⱼ pᵢⱼ^b · Δ_b ] / d₀(N)</p>
+<ul>
+<li>pᵢⱼ^b：token j 相对 token i 局部坐标系的比对误差落入 bin b 的概率</li>
+<li>Δ_b：bin b 的中心值</li>
+<li>d₀(N)：归一化常数</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>：
+- set_canonical：62 个环肽单体 + 32 个环肽-蛋白复合物，全部由标准氨基酸组成，来源包括 Bhardwaj et al. 和 ADCP 研究，以及 PDB 查询（BIRD 属性 + 环肽分类 + 分辨率 &lt;2.5 Å）
+- set_noncanonical：68 个环肽单体 + 17 个环肽-蛋白复合物，含非标准氨基酸
+- 环肽长度范围：5–43 个残基</p>
+<p><strong>指标</strong>：RMSD_Cα、RMSD_bb、RMSD_aa、RMSD_uaa、Fnat、环化成功率、pLDDT、pTM、ipTM、ipAE</p>
+<p><strong>基线</strong>：AlphaFold3（原始）、HighFold3（偏移矩阵方法）</p>
+<p><strong>评测协议</strong>：四层级 RMSD 评估（Cα、骨架、全原子、非标准残基原子）；环化成功率通过人工检查连接性判定</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>规范环肽单体预测</td>
+<td>HighFold4 能准确预测规范环肽构象</td>
+<td>与 AlphaFold3、HighFold3 对比</td>
+<td>平均 RMSD_Cα = 1.428 Å，29 个结构 RMSD &lt; 1.0 Å</td>
+<td>HighFold4 达到原子级精度</td>
+<td>未与其它专门环肽预测方法对比</td>
+<td>Results 图 3A；Tables S5–S13</td>
+</tr>
+<tr>
+<td>规范环肽-蛋白复合物预测</td>
+<td>HighFold4 能准确预测复合物中环肽构象</td>
+<td>与 AlphaFold3、HighFold3 对比</td>
+<td>近 40% 样本 Fnat &gt; 0.8；3ava 达 Fnat = 1.0</td>
+<td>复合物预测精度高</td>
+<td>样本量有限（32 个复合物）</td>
+<td>Results 图 3B</td>
+</tr>
+<tr>
+<td>非规范环肽单体预测</td>
+<td>HighFold4 能处理含非标准残基的环肽</td>
+<td>与 AlphaFold3、HighFold3 对比</td>
+<td>平均 RMSD_Cα = 1.515 Å，RMSD_aa = 2.901 Å</td>
+<td>非标准残基建模能力良好</td>
+<td>非标准残基 RMSD 高于标准残基</td>
+<td>Results 图 3C</td>
+</tr>
+<tr>
+<td>非规范环肽-蛋白复合物预测</td>
+<td>HighFold4 在非规范复合物上保持精度</td>
+<td>与 AlphaFold3、HighFold3 对比</td>
+<td>平均 RMSD_Cα = 0.693 Å（配体）</td>
+<td>复合物中配体预测精度高</td>
+<td>未报告复合物整体 RMSD</td>
+<td>Results 图 3D</td>
+</tr>
+<tr>
+<td>环化成功率</td>
+<td>HighFold4 能可靠生成闭合环状拓扑</td>
+<td>与 AlphaFold3、HighFold3 对比</td>
+<td>HighFold4 在所有任务中 100% 环化成功；AlphaFold3 对规范复合物 0% 成功</td>
+<td>显式连接性注入有效解决环化问题</td>
+<td>环化成功 ≠ 构象完全正确</td>
+<td>Results 图 5A–E</td>
+</tr>
+<tr>
+<td>侧链环化肽预测</td>
+<td>HighFold4 能处理侧链介导的连接</td>
+<td>与 HighFold3 对比案例研究</td>
+<td>HighFold3 生成错误键型或结构碰撞；HighFold4 正确预测</td>
+<td>化学连接性注入优于纯距离约束</td>
+<td>案例数量有限（3 个）</td>
+<td>Results 图 6A–C</td>
+</tr>
+<tr>
+<td>长度与二级结构相关性</td>
+<td>预测精度受肽长度和二级结构影响</td>
+<td>分层分析</td>
+<td>长肽预测更准；α-螺旋/β-折叠优于环状构象</td>
+<td>稳定二级结构有利于预测</td>
+<td>相关性分析未做显著性检验</td>
+<td>Results 图 7</td>
+</tr>
+<tr>
+<td>置信度指标相关性</td>
+<td>pLDDT 能反映预测精度</td>
+<td>相关性分析</td>
+<td>pLDDT &gt; 95 时 RMSD ≈ 1 Å；pTM 与 RMSD 无一致相关</td>
+<td>pLDDT 是可靠置信度指标</td>
+<td>pTM 不适用于环肽评估</td>
+<td>Results 图 8</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对环肽（含标准与非标准残基）的单体及与蛋白的复合物构象预测，不涉及环肽设计、序列设计或功能预测。</li>
+<li><strong>Oracle/真值输入</strong>：方法需要用户预先提供环化连接的原子对信息（即「oracle 连接性」），这在实际应用中需要化学知识或实验数据支撑。</li>
+<li><strong>端到端状态</strong>：非端到端——连接性定义是外部输入，模型本身不预测环化位点或连接类型。</li>
+<li><strong>算力成本</strong>：与 AlphaFold3 相同（无额外训练），推理成本不变。</li>
+<li><strong>历史数据依赖</strong>：依赖 AlphaFold3 预训练权重，未在环肽数据上微调。</li>
+<li><strong>模型依赖</strong>：方法有效性依赖于 AlphaFold3 的架构和预训练质量。</li>
+<li><strong>最难情形</strong>：柔性环状构象（loop-rich）预测精度最低；非标准残基的侧链原子预测误差较大。</li>
+<li><strong>不确定性</strong>：作者未报告多次运行的标准差或置信区间；环化成功率基于人工检查，存在主观性。</li>
+<li><strong>边界化复述</strong>：在用户提供准确环化连接信息的条件下，HighFold4 能在不重训练 AlphaFold3 的情况下，以 100% 的环化成功率预测环肽构象，精度与 HighFold3 相当或更优，且能处理侧链介导的非标准连接。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>手性错误</td>
+<td>部分预测结构存在手性错误</td>
+<td>未提供具体方案</td>
+<td>Limitations 节</td>
+</tr>
+<tr>
+<td>非标准残基建模精度有限</td>
+<td>RMSD_uaa 高于标准残基 RMSD</td>
+<td>未提供具体方案</td>
+<td>Limitations 节</td>
+</tr>
+<tr>
+<td>无法微调 AlphaFold3</td>
+<td>方法局限于特征工程层面，无法优化模型参数</td>
+<td>未来可探索对 AlphaFold3 进行微调以适应环肽预测</td>
+<td>Limitations 节</td>
+</tr>
+<tr>
+<td>依赖用户提供连接信息</td>
+<td>需要预先定义环化原子对</td>
+<td>未提供具体方案</td>
+<td>Limitations 节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>环化成功率 100% 可能被高估</td>
+<td>评估基于人工检查，且数据集规模有限（179 个结构），可能无法代表所有环肽类型</td>
+<td>若成功率被高估，方法在更复杂环肽上的可靠性存疑</td>
+<td>扩大测试集，引入自动化拓扑验证工具</td>
+<td>Results 图 5</td>
+</tr>
+<tr>
+<td>与 HighFold3 的 RMSD 差异很小（&lt;0.1 Å）</td>
+<td>两种方法在标准连接类型上精度相当，HighFold4 的优势可能仅体现在非标准连接上</td>
+<td>若优势有限，方法增量价值需重新评估</td>
+<td>在更多非标准连接类型上做系统对比</td>
+<td>Table 1</td>
+</tr>
+<tr>
+<td>未与其它环肽专用方法对比</td>
+<td>缺乏与 Rosetta、RFdiffusion 等环肽建模工具的基准比较</td>
+<td>无法判断方法在整体环肽预测领域的相对位置</td>
+<td>引入多方法基准测试</td>
+<td>全文未提及</td>
+</tr>
+<tr>
+<td>固定蛋白结构（SiteAF3）的改进可能来自搜索空间缩小而非方法本身</td>
+<td>固定蛋白减少了构象搜索空间，可能人为提升精度</td>
+<td>若改进来自搜索空间缩小，方法在柔性对接场景的适用性存疑</td>
+<td>在柔性蛋白体系上测试</td>
+<td>Results 图 9</td>
+</tr>
+<tr>
+<td>未报告失败案例</td>
+<td>仅展示成功预测，未分析失败模式</td>
+<td>了解失败模式对方法改进至关重要</td>
+<td>要求作者补充失败案例分析</td>
+<td>全文未提及</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>显式拓扑约束注入</strong>：对于偏离训练数据分布的目标拓扑（如环化），在输入特征层面显式编码离散结构先验（邻接矩阵）比依赖距离约束或隐式学习更有效。可迁移至二硫键预测、蛋白质交联建模等任务。
+2. <strong>特征工程替代重训练</strong>：在不改变模型参数的前提下，通过精心设计的输入特征工程即可扩展模型能力边界。这一思路对算力受限场景尤为有价值。
+3. <strong>层级化 RMSD 评估体系</strong>：采用 Cα、骨架、全原子、非标准残基四层级 RMSD 评估，可精确定位模型在不同结构层面的误差来源。可迁移至其他结构预测任务的评估设计。
+4. <strong>环化成功率作为补充指标</strong>：传统 RMSD 无法捕捉拓扑闭合失败，引入环化成功率作为独立指标可更全面评估环肽预测质量。
+5. <strong>固定受体结构的条件生成</strong>：借鉴 SiteAF3 思路，在受体结构已知时固定蛋白构象、仅生成配体构象，可显著提升预测精度。可迁移至分子对接、配体构象生成任务。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold3 (Abramson et al., 2024)</strong>：本文直接基于 AlphaFold3 架构扩展，属于其下游应用改进。</li>
+<li><strong>HighFold3 (Zhang et al., 2025)</strong>：本文的前作，采用偏移矩阵方法，本文在其基础上引入化学连接性。</li>
+<li><strong>RFdiffusion (Watson et al., 2023)</strong>：文中提及的基于扩散模型的蛋白质设计工具，同样使用偏移矩阵约束环状拓扑。</li>
+<li><strong>Bhardwaj et al. (2019)</strong>：环肽单体数据集的来源之一，提供了大量环肽结构用于验证。</li>
+<li><strong>SiteAF3 (Tang et al., 2025)</strong>：本文借鉴其固定蛋白结构进行条件生成的思想。</li>
+<li><strong>AlphaFold (Jumper et al., 2021)</strong>：AlphaFold 系列的基础工作，本文的出发点。</li>
+<li><strong>pLDDT/pTM (Jumper et al., 2021)</strong>：置信度指标沿用自 AlphaFold2。</li>
+<li><strong>候选方向 [Analysis]</strong>：本文方法与基于扩散模型的环肽生成方法（如 RFdiffusion 的环肽变体）的对比尚未见报道，可作为后续研究方向。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：环肽连接位点自动预测模块
+   - <strong>来源局限/观察</strong>：HighFold4 需要用户预先提供环化连接信息，这限制了其在无先验知识场景下的应用。
+   - <strong>核心假设</strong>：通过训练一个轻量级分类器，基于序列和预测结构特征自动识别可能的环化位点。
+   - <strong>初步方法</strong>：在 HighFold4 基础上增加一个连接位点预测头，使用已知环肽数据训练。
+   - <strong>验证方式</strong>：在 HighFold4 测试集上比较自动预测 vs 人工提供的连接信息的预测精度。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：环肽构象系综生成
+   - <strong>来源局限/观察</strong>：HighFold4 仅输出单一构象，但环肽在溶液中常呈现多构象平衡。
+   - <strong>核心假设</strong>：通过多次采样或温度扰动，可从 HighFold4 中获得多样化的构象系综。
+   - <strong>初步方法</strong>：对同一环肽序列运行多次预测，分析构象聚类和能量分布。
+   - <strong>验证方式</strong>：与 MD 模拟生成的构象系综对比 RMSF 和主成分分析。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：环肽-蛋白结合诱导拟合建模
+   - <strong>来源局限/观察</strong>：HighFold4 在复合物预测中固定蛋白结构，无法捕捉结合诱导的蛋白构象变化。
+   - <strong>核心假设</strong>：将 HighFold4 与柔性蛋白建模结合，可提高环肽-蛋白复合物预测精度。
+   - <strong>初步方法</strong>：在 HighFold4 预测后，对蛋白结合口袋进行局部柔性优化。
+   - <strong>验证方式</strong>：在构象变化显著的环肽-蛋白复合物测试集上比较精度。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：环肽可合成性感知的构象筛选
+   - <strong>来源局限/观察</strong>：HighFold4 预测的构象可能对应难以化学合成的环化方式。
+   - <strong>核心假设</strong>：将化学可合成性评分与构象预测结合，可筛选出更实用的候选环肽。
+   - <strong>初步方法</strong>：开发环化反应可行性评分函数，与 HighFold4 预测结果联合排序。
+   - <strong>验证方式</strong>：对预测结果进行实验合成验证，比较通过率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：基于扩散模型的环肽从头设计
+   - <strong>来源局限/观察</strong>：HighFold4 仅做结构预测，不涉及序列设计。
+   - <strong>核心假设</strong>：将 HighFold4 的化学连接性编码方式引入扩散模型，可实现环肽序列-结构联合设计。
+   - <strong>初步方法</strong>：在 RFdiffusion 框架中引入原子级连接性条件。
+   - <strong>验证方式</strong>：设计环肽序列并预测结构，比较与天然环肽的结构相似性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, discussion, supplementary references)</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, clarity of claims, and adequacy of evidence as presented in the supplied text. No independent verification of data or code was performed.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present HighFold4, a framework that extends AlphaFold3 to predict cyclic peptide conformations by explicitly incorporating user-defined chemical connectivity between residues. The method is claimed to achieve accurate, chemistry-aware prediction of diverse cyclic peptide conformations without retraining the base model, validated on 179 structures, and to outperform both default AlphaFold3 and the offset-based HighFold3 in handling side-chain cyclization.</li>
+<li><strong>Visible evidence base</strong> Abstract, Introduction, Methods (Dataset, Method, Metrics), Results (predictive performance, comparisons, side-chain cyclization, property correlations, fixed protein application), Discussion, Limitations, supplementary table references (Tables S1–S17, Fig. S1), and code repository link.</li>
+<li><strong>Missing materials affecting confidence</strong> Full figures (Figs. 1–9) and supplementary tables (S1–S17) are referenced but not provided. Algorithm pseudocode (Algorithms S1, S2) is mentioned but not included. Detailed statistical methodology for the paired comparison (Table 1) is not described. No information on training data composition, model hyperparameters, or computational resources is given.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a relevant and timely problem in computational peptide drug discovery: adapting AlphaFold3 to accurately model cyclic peptide topologies with user-defined chemical linkages. The proposed approach of explicitly encoding polymer-polymer covalent bonds into the feature pipeline is conceptually sound and represents a logical extension of existing work. However, the evidence presented is insufficient to fully establish the claimed advantages. Key quantitative results are only referenced in supplementary materials that were not provided, and the comparison against HighFold3, while showing comparable performance on standard cyclization, lacks a rigorous statistical framework. The case studies for side-chain cyclization are qualitative and limited in number. The manuscript would benefit from clearer presentation of the algorithmic changes, more detailed validation metrics, and a discussion of failure cases.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational structural biology, peptide drug design, and AI-driven protein engineering would be interested. The work directly addresses a practical limitation of AlphaFold3 for a therapeutically important class of molecules, and the proposed method could be adopted by groups working on macrocyclic peptide design. The integration with a fixed-protein docking mode also has practical appeal for high-throughput screening applications.</li>
+<li><strong>Major strengths</strong>
+  1. The problem is well-motivated and practically important.
+  2. The methodological contribution (explicit covalent bond encoding) is conceptually clear and distinct from prior offset-based approaches.
+  3. The evaluation covers both canonical and noncanonical cyclic peptides, including complexes, which is comprehensive in scope.
+  4. The authors acknowledge limitations and provide practical usage guidelines.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "HighFold4 achieves accurate, chemistry-aware prediction of diverse cyclic peptide conformations, as validated on 179 structures."</li>
+<li><strong>Evidence pointer</strong> Results section, Tables S5–S17, Figs. 3–5 (location not provided)</li>
+<li><strong>Concern</strong> The central validation claim rests entirely on supplementary tables and figures that are not included in the provided material. Without access to these data, the accuracy of the reported RMSD values, the distribution of results, and the statistical significance of any comparisons cannot be assessed. The manuscript text provides only summary statistics (e.g., average RMSD values) without confidence intervals or per-structure breakdowns.</li>
+<li><strong>Why it matters</strong> The core contribution of the paper is empirical: demonstrating that the method works. If the underlying data are not available for scrutiny, the scientific case is not established.</li>
+<li><strong>Resolution test</strong> Provide the supplementary tables and figures, or include key results (e.g., per-structure RMSD distributions, scatter plots) in the main text. Report confidence intervals and statistical tests for all comparisons.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological clarity</li>
+<li><strong>Claim pointer</strong> "we have refined the relevant modules in HighFold4... this connectivity is explicitly parameterized as an adjacency matrix G... subsequently, within the computational pipeline of the AlphaFold3 Evoformer module, this sparse matrix is inflated back to a dense state, merged with other ligand-associated connectivity relationships, and ultimately encoded into the pair_feat through a dedicated bond_embedding module."</li>
+<li><strong>Evidence pointer</strong> Methods section, Algorithms S1 and S2 (location not provided)</li>
+<li><strong>Concern</strong> The algorithmic description is high-level and lacks critical implementation details. The referenced pseudocode (Algorithms S1, S2) is not provided. Key questions remain unanswered: How is the adjacency matrix converted to pair features? What is the exact architecture of the bond_embedding module? How are the polymer-polymer bonds merged with ligand bonds without conflicts? Is the model's attention mechanism modified to account for the new connectivity?</li>
+<li><strong>Why it matters</strong> Reproducibility is a cornerstone of computational research. Without a detailed algorithmic description, other groups cannot implement or verify the method.</li>
+<li><strong>Resolution test</strong> Provide the full pseudocode and a detailed description of the feature encoding and merging process. Include a diagram of the modified pipeline.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Comparative rigor</li>
+<li><strong>Claim pointer</strong> "our model demonstrates performance comparable to HighFold3 across these structural metrics... most ΔRMSD_mean values falling within a narrow margin (&lt;0.1 Å, P &gt; .05)... Accuracy is improved for noncanonical monomer total atoms (RMSD_aa, P = .013) and noncanonical amino acids (RMSD_uaa, P = .046)"</li>
+<li><strong>Evidence pointer</strong> Results section, Table 1 (location not provided)</li>
+<li><strong>Concern</strong> The statistical comparison between HighFold4 and HighFold3 is described only in terms of P-values, with no mention of the test used, sample sizes, or effect sizes beyond mean differences. The claim of "comparable performance" for canonical structures is based on a narrow margin, but the practical significance of a 0.1 Å difference is not discussed. Furthermore, the comparison does not appear to account for multiple testing across the many RMSD metrics evaluated.</li>
+<li><strong>Why it matters</strong> The authors position HighFold4 as an extension rather than a replacement, but the statistical evidence for equivalence or superiority needs to be robust to support this claim.</li>
+<li><strong>Resolution test</strong> Describe the statistical test used, report effect sizes with confidence intervals, and apply multiple-testing corrections. Discuss the practical significance of observed differences.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> "we constructed a dataset comprising side-chain cyclized cyclic peptides for structural prediction... We selected several side-chain-cyclized peptide sequences from existing experimental literatures [55–58], none of which had experimentally determined PDB structures, for case analysis."</li>
+<li><strong>Evidence pointer</strong> Results section, Fig. 6 (location not provided)</li>
+<li><strong>Concern</strong> The evaluation of side-chain cyclization relies on a small number of case studies (appears to be 4–5 compounds) without experimentally determined structures. The authors claim HighFold4 "successfully predicted the correct structure" but the basis for correctness is unclear, as there is no ground truth. The comparison against HighFold3 is qualitative (e.g., "failed to recognize this constraint").</li>
+<li><strong>Why it matters</strong> The claimed advantage of HighFold4 over HighFold3 is specifically in handling side-chain cyclization. If this is demonstrated only on a few qualitative examples without quantitative metrics, the claim is not well-supported.</li>
+<li><strong>Resolution test</strong> Provide quantitative metrics for these case studies (e.g., internal consistency, energy scores, comparison to known pharmacophore models). Increase the number of cases and, if possible, validate against structures determined by other means (e.g., NMR, crystallography).</li>
+<li><strong>Concern ID</strong> R1-M5</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interpretation of confidence metrics</li>
+<li><strong>Claim pointer</strong> "we also explored the correlation between popular indicators and RMSD values... A strong inverse relationship was observed between pLDDT and RMSD values... However, no clear correlation was observed between pTM and structural deviation of the binders."</li>
+<li><strong>Evidence pointer</strong> Results section, Fig. 8 (location not provided)</li>
+<li><strong>Concern</strong> The authors report correlations between confidence metrics and accuracy but do not provide correlation coefficients, significance levels, or scatter plots. The claim that pLDDT is a reliable indicator while pTM is not is based on visual inspection of figures that are not available. The discussion of false positives and the use of additional filters is reasonable but appears to be based on anecdotal evidence rather than systematic analysis.</li>
+<li><strong>Why it matters</strong> Guidance on when to trust model predictions is practically important. If the evidence for the reliability of pLDDT is not quantified, users cannot calibrate their expectations.</li>
+<li><strong>Resolution test</strong> Report correlation coefficients (e.g., Spearman's rho) with confidence intervals. Provide scatter plots in the main text. Quantify the false-positive rate and the effectiveness of the proposed filtering strategy.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The phrase "its architecture always fails to reliably generate the closed-ring topologies" is overly strong. The authors later note that AlphaFold3 can sometimes produce cyclic-like structures, suggesting the failure is not absolute.</li>
+<li><strong>Required correction</strong> Rephrase to "frequently fails" or "does not reliably generate."</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Introduction</li>
+<li><strong>Evidence pointer</strong> Introduction, paragraph 2</li>
+<li><strong>Issue</strong> The term "offset matrix" is used without a formal definition. It is later described as a "distance constraint" but the relationship to the CycPOEM is not made explicit.</li>
+<li><strong>Required correction</strong> Define the offset matrix and its role in HighFold3 before introducing CycPOEM.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data description</li>
+<li><strong>Affected element</strong> Dataset section</li>
+<li><strong>Evidence pointer</strong> Methods, Dataset</li>
+<li><strong>Issue</strong> The dataset description mentions "manual curation" and "deduplication" but does not specify the criteria for inclusion or exclusion. The number of structures (179) is stated but the breakdown between monomers and complexes is only given in the text (62+32=94 canonical, 68+17=85 noncanonical, total 179).</li>
+<li><strong>Required correction</strong> Provide a clear flowchart or table describing the dataset construction process, including inclusion/exclusion criteria.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Results, comparison section</li>
+<li><strong>Evidence pointer</strong> Results, "The performance comparison between HighFold4 and HighFold3"</li>
+<li><strong>Issue</strong> The P-values are reported without specifying the statistical test used. It is unclear whether a paired t-test, Wilcoxon signed-rank test, or other method was applied.</li>
+<li><strong>Required correction</strong> State the statistical test used for each comparison.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Figure quality</li>
+<li><strong>Affected element</strong> Fig. 3M</li>
+<li><strong>Evidence pointer</strong> Results, "The predictive performance of HighFold4"</li>
+<li><strong>Issue</strong> The text refers to "representative predicted structures" but does not describe what is shown in the figure or how the structures were selected.</li>
+<li><strong>Required correction</strong> Add a figure caption describing the content and selection criteria.</li>
+<li><strong>Concern ID</strong> R1-m6</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Language</li>
+<li><strong>Affected element</strong> Discussion</li>
+<li><strong>Evidence pointer</strong> Discussion, final paragraph</li>
+<li><strong>Issue</strong> The phrase "improving the improvement of the related clinic drugs" is grammatically incorrect and unclear.</li>
+<li><strong>Required correction</strong> Rephrase to "improving the development of related clinical drugs."</li>
+<li><strong>Concern ID</strong> R1-m7</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Methods, Metrics</li>
+<li><strong>Evidence pointer</strong> Methods, Metrics</li>
+<li><strong>Issue</strong> The RMSD calculation formula is referenced but not shown. The definition of Fnat is not provided.</li>
+<li><strong>Required correction</strong> Include the formula and define Fnat.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (missing data), R1-M2 (insufficient algorithmic detail), R1-M3 (incomplete statistical reporting), R1-M4 (weak validation of side-chain cyclization claims).</li>
+<li><strong>Assessment against Nature-style criteria</strong></li>
+<li><strong>Originality</strong> The concept of explicitly encoding polymer-polymer covalent bonds into AlphaFold3's feature pipeline is a novel contribution, distinct from prior offset-based approaches. However, the idea of using adjacency matrices for molecular connectivity is not new in the broader deep learning literature, and the incremental nature of the extension should be acknowledged more clearly.</li>
+<li><strong>Scientific importance</strong> The problem is important for peptide drug discovery, and the method has potential practical utility. However, the demonstrated impact is limited by the lack of strong validation data and the absence of comparison to other state-of-the-art methods beyond HighFold3 and AlphaFold3.</li>
+<li><strong>Interdisciplinary readership</strong> The work bridges computational biology, machine learning, and medicinal chemistry. The writing is generally accessible, but the methods section assumes familiarity with AlphaFold3's architecture, which may limit readability for non-specialists.</li>
+<li><strong>Technical soundness</strong> The core idea is technically plausible, but the lack of algorithmic detail and incomplete statistical reporting prevent a full assessment. The reliance on qualitative case studies for the key differentiator (side-chain cyclization) is a significant weakness.</li>
+<li><strong>Readability for nonspecialists</strong> The abstract and introduction are clear, but the methods and results sections are dense and would benefit from more explanatory text and figure callouts.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript addresses a relevant problem and presents a conceptually sound approach, but the central validation claims are not verifiable from the supplied material. The authors must provide the supplementary data, detailed algorithmic descriptions, and more rigorous statistical analysis before the case for HighFold4's utility can be assessed.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "accurate, chemistry-aware prediction" on 179 structures is unsupported without access to the underlying data.</li>
+<li>The claim that HighFold4 "successfully predicted the correct structure" for side-chain cyclized peptides is unsupported, as no ground truth exists for these cases.</li>
+<li>The claim that AlphaFold3 "always fails" to generate closed-ring topologies is contradicted by the authors' own observation that it can produce cyclic-like structures.</li>
+<li>The claim that HighFold4 achieves "100% cyclization success rate across all tasks" is not verifiable without the data.</li>
+<li>The assertion that "no clear correlation was observed between pTM and structural deviation" is unsupported without correlation coefficients or figures.</li>
+<li>The statement that the fixed-protein mode "improves" prediction accuracy is not quantified in the text.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

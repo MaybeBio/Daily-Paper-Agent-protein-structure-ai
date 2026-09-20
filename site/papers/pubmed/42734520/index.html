@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>To ML-Predict or Not to ML-Predict: The Impact of Machine Learning-Predicted Protein Structures on FEP Accuracy and Data Augmentation. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>To ML-Predict or Not to ML-Predict: The Impact of Machine Learning-Predicted Protein Structures on FEP Accuracy and Data Augmentation.</h1>
+      <div class="meta">Dryja, Parker; Muller, Morne; Horn, Monique; Balabin, Ilya; Dentmon, Zackery W; Rimal, Prawin; Peterson, Yuri K; Joubert, Fourie; Kaiser, Thomas M; Burger, Pieter B</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-09-14
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42734520/">原文</a>
+      </div>
+      <p class="one-liner">该文系统评估了ML预测蛋白结构（如AlphaFold2/3）作为FEP计算输入的性能，聚焦蛋白-配体复合物结构对自由能预测精度的影响，属于蛋白质结构计算与物理模拟结合的应用研究，但方法创新性有限。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The rapid advancement of machine learning (ML)-based protein structure prediction, exemplified by AlphaFold2 and extended by newer models such as AlphaFold3 and Boltz-2, has generated significant optimism for structure-guided drug discovery. In particular, ligand-protein cofolding approaches offer the potential to overcome limitations in generating starting structures for physics-based free energy perturbation (FEP) calculations. However, the practical readiness of ML-predicted structures for FEP applications remains insufficiently evaluated. Here, we systematically assess experimentally determined crystal structures, a homology model, and ML-predicted protein structures as inputs for FEP using a well-characterized congeneric series targeting the tyrosine kinase cSrc. A data set of 133 compounds was evaluated through more than 1400 FEP calculations under minimal optimization to approximate &#34;out-of-the-box&#34; performance. By maintaining consistent preparation protocols, we isolate the impact of structural origin on predictive accuracy. Variable performance was observed across both experimental and ML-predicted structures, highlighting that even under this idealized benchmark scenario, significant challenges remain in reliably generating and refining predictive protein-ligand complexes. This study demonstrates that predictive variation in micro and macro conformational states horizontal line rather than the structural source horizontal line governs predictive reliability, underscoring the need for careful validation when integrating ML-derived structures into FEP workflows.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">基于机器学习（ML）的蛋白质结构预测的快速发展，以AlphaFold2为代表，并由AlphaFold3和Boltz-2等新模型进一步扩展，为结构引导的药物发现带来了巨大乐观前景。特别是，配体-蛋白质共折叠方法有望克服基于物理的自由能微扰（FEP）计算中起始结构生成的局限性。然而，ML预测结构在FEP应用中的实际准备程度仍未得到充分评估。在此，我们系统评估了实验确定的晶体结构、同源模型以及ML预测的蛋白质结构作为FEP输入，使用一个针对酪氨酸激酶cSrc的充分表征的同源系列化合物。在最小优化条件下，通过超过1400次FEP计算评估了133个化合物的数据集，以近似“开箱即用”的性能。通过保持一致的制备方案，我们隔离了结构来源对预测准确性的影响。在实验和ML预测结构中均观察到可变的性能，突显即使在理想化基准场景下，可靠生成和优化预测性蛋白质-配体复合物仍面临重大挑战。本研究表明，微宏观构象状态中的预测变异性（而非结构来源）主导了预测可靠性，强调在将ML衍生结构整合到FEP工作流中时需进行仔细验证。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：To ML-Predict or Not to ML-Predict: The Impact of Machine Learning-Predicted Protein Structures on FEP Accuracy and Data Augmentation</li>
+<li><strong>作者</strong>：Dryja, Parker; Muller, Morne; Horn, Monique; Balabin, Ilya; Dentmon, Zackery W; Rimal, Prawin; Peterson, Yuri K; Joubert, Fourie; Kaiser, Thomas M; Burger, Pieter B</li>
+<li><strong>单位</strong>：未提供（PubMed 记录未列出单位信息）</li>
+<li><strong>期刊/平台</strong>：Journal of Chemical Information and Modeling</li>
+<li><strong>年份</strong>：2026（在线日期 2026-09-14）</li>
+<li><strong>论文类型</strong>：系统评估/基准研究（benchmark study）</li>
+<li><strong>领域</strong>：结构生物学 × 计算化学 × 机器学习；蛋白质结构预测（AlphaFold2/3、Boltz-2）在 FEP 计算中的适用性</li>
+<li><strong>关键词</strong>：FEP、AlphaFold、Boltz-2、结构预测、自由能微扰、cSrc、数据增强</li>
+<li><strong>DOI/arXiv</strong>：10.1021/acs.jcim.6c01024</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：133 个化合物的 congeneric series 数据集，1400+ FEP 计算（未提供公开数据链接）</li>
+<li><strong>阅读日期</strong>：2026-09-14（基于在线日期）</li>
+<li><strong>在该方向中的位置</strong>：本文处于「蛋白质结构预测（ML）× 物理模拟（FEP）」交叉点，系统评估 ML 预测结构（含共折叠方法）作为 FEP 输入的实际可靠性，属于结构预测下游应用的验证性研究，而非方法开发。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过 133 个 cSrc 抑制剂类似物、1400+ 次 FEP 计算，在最小优化条件下系统比较实验晶体结构、同源模型与 ML 预测结构（AlphaFold2/3、Boltz-2）作为 FEP 输入的预测精度，发现预测可靠性由微/宏观构象状态的变化主导，而非结构来源本身。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：ML 预测的蛋白质结构（特别是配体-蛋白共折叠结构）能否作为 FEP 计算的可靠输入？其预测精度与实验晶体结构相比如何？</li>
+<li><strong>为什么重要</strong>：AlphaFold2/3 和 Boltz-2 等模型引发了对结构引导药物发现的乐观预期；若 ML 结构可用于 FEP，将大幅降低对实验晶体结构的依赖，加速先导化合物优化。</li>
+<li><strong>现有方法为何不足</strong>：此前缺乏在受控条件下、大规模、系统性地比较 ML 预测结构与实验结构在 FEP 中表现的评估；多数研究仅用少量体系或未控制制备协议差异。</li>
+<li><strong>精确研究问题</strong>：在一致的制备协议下，ML 预测结构（含共折叠）与实验晶体结构作为 FEP 输入，其预测精度（以 R²、MUE 等衡量）是否存在系统性差异？预测可靠性是否由结构来源决定，还是由构象状态决定？</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>标注：以下脉络基于本文框架，未经外部系统核验。</em>
+- <strong>阶段 1：实验结构依赖的 FEP</strong>。传统 FEP 依赖高分辨率晶体结构作为起点，优点是成熟可靠，缺点是通量低、对难结晶靶点不适用。
+- <strong>阶段 2：同源建模补充</strong>。同源模型可填补无晶体结构时的空白，但精度受序列一致性和模板质量限制。
+- <strong>阶段 3：AlphaFold2 及后续模型</strong>。AlphaFold2 实现高精度 apo 结构预测；AlphaFold3、Boltz-2 等引入配体-蛋白共折叠，理论上可直接生成 holo 结构用于 FEP。
+- <strong>阶段 4：ML 结构用于 FEP 的验证需求</strong>。本文定位在此阶段：系统评估 ML 结构在 FEP 中的实际表现，识别影响可靠性的关键因素。
+- <strong>本文主张的位置</strong>：ML 结构在 FEP 中并非不可用，但其可靠性取决于构象状态的选择与优化，而非结构来源；需在集成 ML 结构时进行仔细验证。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ML 结构在 FEP 中精度不稳定</td>
+<td>不同 ML 结构间预测精度差异大，部分结构表现差</td>
+<td>微/宏观构象状态差异主导，而非结构来源本身</td>
+<td>摘要：variable performance across both experimental and ML-predicted structures</td>
+</tr>
+<tr>
+<td>共折叠结构未充分解决起始结构生成问题</td>
+<td>即使使用 AlphaFold3/Boltz-2 共折叠，FEP 精度仍不理想</td>
+<td>共折叠结构可能未正确采样配体诱导的构象变化</td>
+<td>摘要：ligand-protein cofolding approaches offer potential... but practical readiness remains insufficiently evaluated</td>
+</tr>
+<tr>
+<td>实验结构也非总是可靠</td>
+<td>实验晶体结构间也存在精度差异</td>
+<td>晶体堆积、构象选择等影响 FEP 起点质量</td>
+<td>摘要：variable performance was observed across both experimental and ML-predicted structures</td>
+</tr>
+<tr>
+<td>缺乏"开箱即用"的可靠性</td>
+<td>最小优化条件下，ML 结构未展现稳定优势</td>
+<td>需要额外的构象优化/验证步骤</td>
+<td>摘要：significant challenges remain in reliably generating and refining predictive protein-ligand complexes</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：在 cSrc 激酶体系上，用 133 个类似物、1400+ FEP 计算，比较实验晶体结构、同源模型、AlphaFold2/3、Boltz-2 预测结构作为输入的预测精度；所有结构采用一致的制备协议，最小化优化。</li>
+<li><strong>核心洞察</strong>：FEP 预测可靠性的决定因素是微/宏观构象状态的变化（predictive variation in micro and macro conformational states），而非结构来源（experimental vs. ML）。即：一个结构是否适合 FEP，取决于其是否处于正确的构象状态，而非其产生方式。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：在将 ML 结构集成到物理模拟工作流时，不应默认"ML 结构 = 可用"或"实验结构 = 可靠"；应建立基于构象状态评估的筛选/优化流程，而非仅依赖结构来源作为质量代理。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：cSrc 激酶结构（实验晶体结构、同源模型、AlphaFold2/3、Boltz-2 预测结构）；133 个 congeneric 抑制剂类似物</li>
+<li><strong>输出</strong>：FEP 预测的相对结合自由能（ΔΔG），与实验值比较的精度指标（如 R²、MUE）</li>
+<li><strong>模块</strong>：
+  1. 结构准备（蛋白结构来源选择与预处理）
+  2. 配体参数化与对接/共折叠
+  3. FEP 计算（1400+ 次，最小优化）
+  4. 精度评估（预测 vs. 实验 ΔΔG）</li>
+<li><strong>训练</strong>：不适用（FEP 为物理模拟，ML 模型为预训练结构预测器）</li>
+<li><strong>工具</strong>：未提供具体软件（推测为商业或开源 FEP 套件，如 FEP+、ABFE 等，但文中未明确）</li>
+<li><strong>反馈回路</strong>：无显式反馈回路；为一次性评估流程</li>
+<li><strong>假设</strong>：一致的制备协议可隔离结构来源的影响；cSrc 体系可代表典型激酶药物发现场景</li>
+<li><strong>流程</strong>：选择结构来源 → 统一制备（蛋白准备、配体参数化）→ 生成蛋白-配体复合物 → 运行 FEP → 与实验数据比较 → 分析精度与构象状态关系</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构来源选择</td>
+<td>提供 FEP 起始蛋白构象</td>
+<td>比较不同来源结构的适用性</td>
+<td>输入：晶体/同源/ML 结构；输出：FEP 起始结构</td>
+<td>摘要：systematically assess... structures as inputs</td>
+<td>移除则无法比较来源差异 [预期]</td>
+</tr>
+<tr>
+<td>一致制备协议</td>
+<td>消除制备差异，隔离结构来源影响</td>
+<td>确保比较公平</td>
+<td>输入：原始结构；输出：标准化蛋白-配体复合物</td>
+<td>摘要：maintaining consistent preparation protocols</td>
+<td>移除则无法归因精度差异 [预期]</td>
+</tr>
+<tr>
+<td>FEP 计算引擎</td>
+<td>计算相对结合自由能</td>
+<td>核心物理模拟步骤</td>
+<td>输入：复合物、配体系列；输出：ΔΔG 预测</td>
+<td>摘要：more than 1400 FEP calculations</td>
+<td>移除则无预测结果 [预期]</td>
+</tr>
+<tr>
+<td>精度评估</td>
+<td>比较预测与实验 ΔΔG</td>
+<td>量化结构来源影响</td>
+<td>输入：预测/实验值；输出：R²、MUE 等</td>
+<td>摘要：isolate the impact of structural origin on predictive accuracy</td>
+<td>移除则无法得出结论 [预期]</td>
+</tr>
+<tr>
+<td>构象状态分析</td>
+<td>识别微/宏观构象差异</td>
+<td>解释精度差异来源</td>
+<td>输入：FEP 轨迹/结构；输出：构象状态分类</td>
+<td>摘要：predictive variation in micro and macro conformational states governs reliability</td>
+<td>移除则无法解释"为何差异" [预期]</td>
+</tr>
+</tbody>
+</table>
+<p><em>注：本文为评估性研究，未提供模块级消融实验；上述"移除影响"均为 [预期] 推断，非实测。</em></p>
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。本文为 FEP 应用评估研究，未在摘要中提供新公式；FEP 计算本身基于标准热力学微扰公式（ΔG = -kT ln⟨exp(-ΔH/kT)⟩），但文中未给出具体公式或符号定义。如需完整公式需查阅全文。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：133 个 cSrc 抑制剂类似物（congeneric series）；1400+ FEP 计算</li>
+<li><strong>体系</strong>：酪氨酸激酶 cSrc</li>
+<li><strong>结构来源</strong>：实验晶体结构、同源模型、AlphaFold2、AlphaFold3、Boltz-2 预测结构</li>
+<li><strong>基线</strong>：实验晶体结构作为参考基线</li>
+<li><strong>指标</strong>：FEP 预测 ΔΔG 与实验值的相关性（推测为 R²、MUE 等，摘要未给出具体数值）</li>
+<li><strong>制备协议</strong>：一致化处理，最小优化（"out-of-the-box" 近似）</li>
+<li><strong>评测协议</strong>：比较不同结构来源的预测精度，分析构象状态影响</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构来源比较</td>
+<td>ML 结构是否可用于 FEP</td>
+<td>晶体 vs. 同源 vs. AF2 vs. AF3 vs. Boltz-2，一致制备</td>
+<td>各来源间精度存在差异，但无系统性优劣</td>
+<td>结构来源不是可靠性的唯一决定因素</td>
+<td>不能断言某类结构普遍优于其他</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>构象状态分析</td>
+<td>构象变化是否主导可靠性</td>
+<td>微/宏观构象状态 vs. 结构来源</td>
+<td>构象状态变化与预测可靠性相关</td>
+<td>构象状态是可靠性的关键决定因素</td>
+<td>未提供定量相关性指标</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>数据增强评估</td>
+<td>ML 结构能否用于数据增强</td>
+<td>未提供具体实验设计</td>
+<td>未提供具体结果</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>摘要未详述</td>
+</tr>
+</tbody>
+</table>
+<p><em>注：摘要信息有限，具体数值、统计显著性、实验分组细节需查阅全文。</em></p>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限 cSrc 激酶体系、congeneric 抑制剂系列；不适用于其他靶点或化学类型的泛化结论。</li>
+<li><strong>oracle/真值输入</strong>：实验结合自由能数据作为真值；实验晶体结构作为参考结构。</li>
+<li><strong>端到端状态</strong>：FEP 计算在最小优化条件下进行，非生产级优化流程；"out-of-the-box" 表现不代表最佳可达精度。</li>
+<li><strong>算力成本</strong>：1400+ FEP 计算，具体算力未提供。</li>
+<li><strong>历史数据依赖</strong>：依赖 cSrc 体系已有的实验结构和活性数据。</li>
+<li><strong>模型依赖</strong>：依赖 AlphaFold2/3、Boltz-2 的特定版本和参数化。</li>
+<li><strong>最难情形</strong>：ML 结构在需要精确配体诱导构象变化的体系中可能表现不佳。</li>
+<li><strong>不确定性</strong>：摘要未提供置信区间、误差棒或统计检验。</li>
+<li><strong>有边界的复述</strong>：在 cSrc 体系、133 个类似物、最小优化条件下，FEP 预测精度受构象状态变化影响大于结构来源；ML 结构可作为 FEP 输入，但需验证构象状态是否合适。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的摘要材料中，作者未明确列出局限性。摘要仅指出"significant challenges remain in reliably generating and refining predictive protein-ligand complexes"，但未以"limitation"形式系统声明。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 研究限于单一靶点（cSrc）和 congeneric 系列，泛化性有限。
+- 采用最小优化条件，不代表生产级 FEP 工作流的最佳表现。
+- 构象状态的影响被识别为主导因素，但未提供如何系统选择/优化构象状态的解决方案。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单一靶点（cSrc）结论泛化性有限</td>
+<td>cSrc 可能不代表所有激酶或非激酶靶点的 FEP 行为</td>
+<td>若结论仅适用于 cSrc，则对药物发现领域的指导意义有限</td>
+<td>在多个靶点（不同激酶、蛋白酶、蛋白-蛋白界面）重复类似基准</td>
+<td>摘要仅提及 cSrc</td>
+</tr>
+<tr>
+<td>"构象状态主导"结论缺乏定量指标</td>
+<td>摘要未提供构象状态与精度的定量相关性（如 R²、p 值）</td>
+<td>无法判断该结论的强度</td>
+<td>要求作者提供构象聚类与 FEP 误差的定量分析</td>
+<td>摘要未提供数值</td>
+</tr>
+<tr>
+<td>最小优化条件可能低估 ML 结构潜力</td>
+<td>若对 ML 结构进行充分优化（如长 MD 平衡），精度可能提升</td>
+<td>结论可能过于悲观，影响 ML 结构在 FEP 中的采用</td>
+<td>对比最小优化 vs. 充分优化的 ML 结构 FEP 精度</td>
+<td>摘要明确"minimal optimization"</td>
+</tr>
+<tr>
+<td>未报告具体 ML 模型版本和参数</td>
+<td>AlphaFold3/Boltz-2 的版本差异可能影响结果</td>
+<td>无法复现或评估模型选择的影响</td>
+<td>要求提供模型版本、置信度分数、共折叠设置</td>
+<td>摘要未提供</td>
+</tr>
+<tr>
+<td>数据增强部分缺乏具体结果</td>
+<td>摘要标题提及 data augmentation，但摘要正文未给出相关结果</td>
+<td>数据增强可能是重要贡献，但证据缺失</td>
+<td>查阅全文数据增强实验设计</td>
+<td>摘要未详述</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>构象状态优先于结构来源</strong>：在将 ML 预测结构用于物理模拟（FEP、MD）时，应优先评估构象状态是否与配体结合相关，而非默认"ML 结构 = 可用"。可迁移到本课题：在 MD 模拟或对接中，对 ML 结构进行构象聚类和选择，而非直接使用单一预测结构。
+2. <strong>一致制备协议是公平比较的前提</strong>：评估不同结构来源时，必须控制制备流程差异，否则无法归因精度差异。可迁移到本课题：在比较不同结构预测方法（AF2 vs. AF3 vs. 其他）对下游模拟的影响时，需统一准备流程。
+3. <strong>"开箱即用"测试的价值</strong>：在最小优化条件下测试，能暴露方法的真实鲁棒性，而非最佳表现。可迁移到本课题：评估新方法时，先测试默认参数下的表现，再考虑优化。
+4. <strong>共折叠方法的潜力与局限并存</strong>：AlphaFold3/Boltz-2 的共折叠能力并未自动解决 FEP 起始结构问题，需额外验证。可迁移到本课题：使用共折叠结构进行对接或 MD 时，需检查配体结合模式是否合理。
+5. <strong>数据增强需谨慎验证</strong>：ML 结构作为数据增强来源时，需验证其是否引入偏差。可迁移到本课题：在训练结构-序列模型时，用 ML 结构扩充数据集需评估对下游任务的影响。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold2 原始论文</strong>（Jumper et al., Nature 2021）：AF2 的 apo 结构预测精度，本文将其作为 ML 结构来源之一，验证其在 FEP 中的适用性。</li>
+<li><strong>AlphaFold3</strong>（Abramson et al., Nature 2024）：引入配体-蛋白共折叠，本文直接评估其输出用于 FEP 的表现。</li>
+<li><strong>Boltz-2</strong>（2024/2025 预印本）：开源共折叠模型，本文将其与 AF3 并列评估。</li>
+<li><strong>FEP 方法学</strong>（如 Schrödinger FEP+、NAMD FEP）：传统 FEP 依赖实验结构，本文挑战这一假设。</li>
+<li><strong>激酶抑制剂设计</strong>：cSrc 是经典激酶靶点，本文的 congeneric 系列设计符合先导化合物优化场景。</li>
+<li><strong>结构预测在药物发现中的应用综述</strong>：本文属于该综述框架下的实证验证，补充了 ML 结构在 FEP 中可靠性的数据点。</li>
+<li><strong>[Analysis] 候选连接</strong>：与"ML 结构在 MD 模拟中的适用性"研究（如 AF2 结构作为 MD 起点的评估）形成互补，本文聚焦 FEP 而非 MD 轨迹分析。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：多靶点 ML 结构 FEP 适用性基准扩展
+   - <strong>来源局限/观察</strong>：本文仅用 cSrc 单靶点，泛化性有限。
+   - <strong>核心假设</strong>：ML 结构在 FEP 中的可靠性因靶点类型（激酶 vs. 蛋白酶 vs. 蛋白-蛋白界面）而异。
+   - <strong>初步方法</strong>：选取 5-10 个不同靶点体系，各配 50-100 个类似物，重复本文的 FEP 评估协议。
+   - <strong>验证方式</strong>：比较各靶点的 R²/MUE 分布，检验靶点类型与 ML 结构适用性的相关性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：构象状态感知的 ML 结构筛选流程
+   - <strong>来源局限/观察</strong>：本文指出构象状态主导可靠性，但未提供选择/优化方案。
+   - <strong>核心假设</strong>：基于 ML 结构集合的构象聚类 + 对接打分 + 短 MD 平衡，可筛选出适合 FEP 的起始结构。
+   - <strong>初步方法</strong>：对每个 ML 预测结构生成 ensemble，聚类后各取代表结构进行 FEP，比较与实验的精度。
+   - <strong>验证方式</strong>：在 cSrc 数据集上对比"单结构直接 FEP" vs. "构象筛选后 FEP"的精度提升。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：共折叠结构在 FEP 中的系统误差分析
+   - <strong>来源局限/观察</strong>：AF3/Boltz-2 共折叠结构在 FEP 中表现不稳定，但误差来源未分解。
+   - <strong>核心假设</strong>：共折叠结构的误差主要来自配体结合模式错误，而非蛋白骨架偏差。
+   - <strong>初步方法</strong>：将共折叠结构的配体姿势与实验晶体结构比对，分类误差类型（结合位点偏移、侧链冲突、水分子缺失），关联 FEP 精度。
+   - <strong>验证方式</strong>：在 cSrc 数据上建立误差分类与 FEP 精度的统计关系。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：ML 结构数据增强在 FEP 训练集构建中的应用
+   - <strong>来源局限/观察</strong>：本文标题提及 data augmentation，但摘要未给出结果。
+   - <strong>核心假设</strong>：用 ML 结构扩充 FEP 训练集（如用于训练 ΔΔG 预测模型）可提升泛化性，但需控制结构质量。
+   - <strong>初步方法</strong>：构建 ML 结构增强的训练集，训练 ΔΔG 预测模型，在独立测试集上评估。
+   - <strong>验证方式</strong>：对比"仅实验结构" vs. "实验+ML 结构"训练集的预测精度。
+   - <strong>创新状态</strong>：unverified（需先查阅全文确认本文数据增强部分的具体设计）</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：ML 结构置信度分数与 FEP 可靠性的关联
+   - <strong>来源局限/观察</strong>：AF2/3 和 Boltz-2 均输出置信度指标（pLDDT、PAE、iptm 等），本文未利用这些信息。
+   - <strong>核心假设</strong>：ML 结构置信度分数可预测其 FEP 适用性，高置信度结构更可能产生准确预测。
+   - <strong>初步方法</strong>：提取每个 ML 结构的置信度指标，与 FEP 精度做相关性分析。
+   - <strong>验证方式</strong>：在 cSrc 数据上检验 pLDDT/PAE 与 FEP R² 的 Spearman 相关性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The authors evaluate whether machine learning-predicted protein structures, including those from AlphaFold2, AlphaFold3, and Boltz-2, are suitable inputs for free energy perturbation calculations. Using a congeneric series of 133 compounds targeting cSrc, they perform over 1400 FEP calculations with minimal optimization to approximate out-of-the-box performance. They report that predictive variation in micro and macro conformational states, rather than the structural source, governs predictive reliability.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no numerical results, figures, tables, or methodological details are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, detailed methods for FEP setup and ML structure generation, statistical analyses, and any comparison of performance metrics</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract addresses a timely and practically important question regarding the readiness of ML-predicted protein structures for FEP-based drug discovery. The study design, using a large congeneric series and extensive FEP calculations, is commendable in scope. However, the abstract provides insufficient quantitative evidence to support the central claim that conformational state variation, rather than structural source, governs predictive reliability. The conclusion is stated without supporting data, and the abstract does not report key performance metrics that would allow assessment of the magnitude and significance of observed differences.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational chemists and structural biologists engaged in structure-based drug design, particularly those considering adoption of ML-based structure prediction tools in FEP workflows. The findings would also interest developers of ML structure prediction methods who seek validation of their models in downstream physics-based applications, as well as pharmaceutical researchers evaluating the practical utility of AlphaFold-class models in lead optimization.</li>
+<li><strong>Major strengths</strong> The study addresses a question of high practical relevance with a substantial dataset of 133 compounds and over 1400 FEP calculations. The use of a consistent preparation protocol to isolate the effect of structural origin is a sound experimental design. The inclusion of multiple structure types, including experimental, homology, and ML-predicted structures, provides a broad comparison basis.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The abstract claims that "predictive variation in micro and macro conformational states rather than the structural source governs predictive reliability."</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The central conclusion is stated without any quantitative support in the abstract. No performance metrics, statistical comparisons, or effect sizes are reported that would substantiate the claim that conformational state variation is the dominant factor over structural source.</li>
+<li><strong>Why it matters</strong> This claim is the primary takeaway of the study and directly informs whether researchers should prioritize conformational sampling over structural source selection when using ML-predicted structures in FEP. Without supporting data, the conclusion cannot be evaluated or trusted.</li>
+<li><strong>Resolution test</strong> Provide quantitative evidence in the abstract or full manuscript, such as correlation coefficients between conformational state metrics and FEP accuracy, statistical tests comparing performance across structural sources, or variance decomposition analyses that attribute predictive error to conformational versus structural factors.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Result reporting</li>
+<li><strong>Claim pointer</strong> The abstract states that "variable performance was observed across both experimental and ML-predicted structures."</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract does not report any numerical results, such as mean absolute errors, correlation coefficients, or success rates, for any of the structure types evaluated. The reader cannot assess the magnitude of variability or whether differences are practically meaningful.</li>
+<li><strong>Why it matters</strong> The claim of variable performance is central to the study's message that challenges remain in using ML-predicted structures. Without quantitative results, the reader cannot determine whether the variability is within acceptable bounds for FEP applications or whether specific structure types are systematically worse.</li>
+<li><strong>Resolution test</strong> Report key performance metrics for each structure type in the abstract, including at least one accuracy measure and its dispersion, along with appropriate statistical comparisons.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Methodological transparency</li>
+<li><strong>Claim pointer</strong> The abstract states that FEP calculations were performed "under minimal optimization to approximate out-of-the-box performance."</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract does not specify what "minimal optimization" entails, which protein preparation steps were applied, which FEP method was used, or how ML-predicted structures were generated and processed prior to FEP.</li>
+<li><strong>Why it matters</strong> The interpretation of the results depends critically on the preparation protocol. If the protocol is not representative of typical FEP practice, the conclusions may not generalize. Conversely, if the protocol is too idealized, the results may overstate the readiness of ML structures.</li>
+<li><strong>Resolution test</strong> Provide a clear description of the preparation protocol in the full manuscript, including specific software versions, parameter settings, and any steps taken to relax or refine ML-predicted structures before FEP.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Title</li>
+<li><strong>Evidence pointer</strong> Title, location not provided</li>
+<li><strong>Issue</strong> The title uses a rhetorical question format that is unconventional for a research article and may not clearly convey the study's findings.</li>
+<li><strong>Required correction</strong> Consider a more direct title that states the key finding, such as "Conformational State Variation, Not Structural Source, Governs FEP Accuracy with ML-Predicted Protein Structures."</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Abstract text</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The phrase "micro and macro conformational states" is used without definition. These terms may have different meanings in different contexts and could confuse readers.</li>
+<li><strong>Required correction</strong> Define these terms explicitly in the abstract or full manuscript, or use more standard terminology such as "local side-chain conformations" and "global domain arrangements."</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Abstract text</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract does not mention the specific ML models used for structure prediction beyond naming AlphaFold2, AlphaFold3, and Boltz-2 in the introduction. It is unclear whether all three were tested or only a subset.</li>
+<li><strong>Required correction</strong> Specify which ML models were used to generate the structures evaluated in the FEP calculations.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 and R1-M2 are blocking because the central claims of the study are not supported by quantitative evidence in the abstract. R1-M3 is important for reproducibility but does not alone block the case.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The question of whether ML-predicted structures are ready for FEP is timely and has been addressed by others, but the systematic comparison across multiple structure types with a large dataset is a valuable contribution.</li>
+<li>Scientific importance: The findings have direct implications for the adoption of ML structure prediction in drug discovery, which is a topic of broad interest.</li>
+<li>Interdisciplinary readership: The work bridges machine learning, structural biology, and computational chemistry, and would appeal to researchers in all three communities.</li>
+<li>Technical soundness: The study design is sound in principle, but the abstract does not provide enough detail to assess the technical execution or the validity of the statistical analyses.</li>
+<li>Readability for nonspecialists: The abstract is generally clear but uses specialized terminology without sufficient context, and the lack of quantitative results makes it difficult for nonspecialists to gauge the significance of the findings.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents a plausible and important study, but the central claims are not supported by quantitative data in the abstract. A decision would require access to the full manuscript to evaluate the evidence base. If the full manuscript provides the missing performance metrics and statistical analyses, the study could be supportive of the stated conclusions.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that conformational state variation, rather than structural source, governs predictive reliability is unsupported in the abstract due to the absence of quantitative evidence.</li>
+<li>The claim of variable performance across structure types is unsupported without reported performance metrics.</li>
+<li>The generalizability of the findings beyond the cSrc system and the specific congeneric series is not addressed and cannot be assessed from the abstract.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

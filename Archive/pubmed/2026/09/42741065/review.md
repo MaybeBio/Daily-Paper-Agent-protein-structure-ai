@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Full manuscript text, including abstract, introduction, methods, results, discussion, and supplementary material references.
+- **Assessment boundary** Scientific validity, methodological rigor, clarity of claims, and alignment with stated objectives. Editorial and formatting issues are noted only where they affect scientific comprehension.
+- **Shared manuscript claim summary** The authors extend the Finenzyme protein language model with an in silico selection pipeline and molecular dynamics (MD) simulations to evaluate the structural stability and potential catalytic competence of generated enzyme sequences across four EC classes. They report that 74–95% of pre-selected generated models maintain stable tertiary structures, with 82.6% overall stability and 69.1% potential catalytic competence.
+- **Visible evidence base** Main text, Tables 1–7, Figures 1–10, and references to Supplementary Tables S1–S7. Supplementary material itself was not provided for review.
+- **Missing materials affecting confidence** Supplementary Tables S1–S7, detailed MD simulation parameters, force field validation data, and the Finenzyme model code or configuration files. These are referenced but not accessible, limiting full verification of thresholds and reproducibility.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a useful integration of a conditional protein language model with MD-based structural validation, addressing a relevant gap in enzyme sequence design. The core claim, that a substantial fraction of generated sequences maintain stable folds, is supported by the presented data for the pre-selected subset. However, several methodological details are insufficiently described, particularly regarding the selection of reference structures, the handling of cofactors, and the statistical treatment of MD descriptors. The distinction between "stability" and "catalytic competence" is acknowledged but the latter is inferred from indirect metrics without experimental validation, which limits the strength of the conclusions. The work is of interest to the enzyme engineering and computational biology communities, but the current evidence base does not fully establish the broader claims about functional potential.
+- **Who would be interested in the results, and why** Computational protein designers and enzyme engineers will find the pipeline relevant, as it offers a practical workflow for filtering language model outputs using MD simulations. Researchers working on generative models for proteins may also be interested in the empirical stability rates reported across different sampling parameters. The discussion of compactness and solvent exposure in relation to industrial enzyme applications could appeal to biotechnologists seeking thermostable or solvent-tolerant variants.
+- **Major strengths** The study addresses a timely problem, namely the structural validation of language model-generated enzyme sequences, which is often neglected in favor of sequence-level metrics. The use of multiple MD descriptors (RMSD, RMSF, RoG, SASA) provides a reasonably comprehensive view of conformational behavior. The comparison between two sampling parameters (p = 0.5 and p = 0.75) offers practical guidance on generation settings. The authors are transparent about the limitations of their in silico approach and appropriately frame the results as candidates for experimental testing.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological rigor
+  - **Claim pointer** The manuscript claims that generated sequences "exhibit high stability" and that a subset shows "potential catalytic competence" based on MD-derived metrics.
+  - **Evidence pointer** Section 2.4 (Molecular dynamics simulations), Section 3 (Results and discussion), Tables 2–7, Figures 3–9.
+  - **Concern** The classification of sequences as "stable" or "catalytically competent" relies on threshold values derived from reference simulations, but the statistical basis for these thresholds is not fully described. The text mentions a μ + σ criterion for RMSD and RMSF and μ + 2σ for RoG and SASA, but it is unclear whether these thresholds are applied to the mean, maximum, or time-averaged values of each descriptor. Additionally, the rationale for using different criteria for different descriptors is not explained. Without a clear definition of how thresholds are computed and applied, the reported success rates (e.g., 82.6% stability) are difficult to interpret or reproduce.
+  - **Why it matters** The central quantitative claims of the manuscript depend entirely on these classification criteria. If the thresholds are not rigorously defined, the reported stability and competence rates cannot be independently verified, undermining the main conclusions.
+  - **Resolution test** Provide a precise mathematical definition of each threshold, specify which portion of the trajectory is used for averaging, and state whether thresholds are applied per-residue or globally. Include a supplementary table listing the exact threshold values for each reference structure and each descriptor, and justify the choice of μ + σ versus μ + 2σ for different metrics.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The manuscript states that "several generated sequences exhibited greater predicted stability and residue diversity than their reference counterparts, enabling the design of mutant variants with potential enhanced catalytic activity or stability."
+  - **Evidence pointer** Section 3 (Results and discussion), Section 4 (Conclusions and future developments), Figures 3–9.
+  - **Concern** The claim that generated sequences may have "enhanced" properties compared to natural enzymes is not supported by direct evidence. The MD simulations compare generated sequences to a single reference structure per EC class, but no statistical comparison is provided to show that the observed differences (e.g., lower RMSD or RoG) are significant or meaningful. Furthermore, the term "residue diversity" is not quantified, and no analysis of active-site conservation or catalytic residue positioning is presented. The inference of enhanced activity from stability metrics alone is speculative.
+  - **Why it matters** This claim goes beyond the data presented and could mislead readers into overinterpreting the functional potential of the generated sequences. The manuscript itself acknowledges that catalytic competence is inferred from limited metrics, but the language in the conclusions is stronger than the evidence warrants.
+  - **Resolution test** Either temper the language to clearly state that enhanced properties are hypothetical and require experimental validation, or provide additional analyses such as active-site geometry comparisons, substrate binding simulations, or free energy calculations to substantiate the claim.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** The methods state that "a randomly selected subset of the generated sequences was used as input" for MD simulations, and that "MD simulations were capped to match other classes" for EC 6.3.4.15.
+  - **Evidence pointer** Section 2.4 (Molecular dynamics simulations), Tables 2–7.
+  - **Concern** The random selection process is not described in sufficient detail. No random seed is provided, and the criteria for capping the number of simulations for EC 6.3.4.15 are not specified. This makes it impossible to reproduce the exact subset of sequences analyzed, which is critical for verifying the reported success rates.
+  - **Why it matters** Reproducibility is a core requirement for computational studies. Without a clear description of the sampling procedure, other researchers cannot replicate the analysis or assess potential selection bias.
+  - **Resolution test** Specify the random seed, the exact number of sequences selected per EC class, and the rationale for the cap. Provide the list of selected sequence identifiers in the supplementary material.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Section 2.3 (Selection of generated sequences)
+  - **Evidence pointer** Section 2.3, Figure 1.
+  - **Issue** The description of the three filters is clear, but the order of application is not explicitly stated. It is implied that novelty filtering precedes structure prediction, but this should be confirmed.
+  - **Required correction** State explicitly the order in which the novelty, structure-quality, and fold-confirmation filters are applied, and whether any sequences were removed at each stage.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Section 2.5 (Statistical analysis)
+  - **Evidence pointer** Section 2.5, Supplementary Table S1.
+  - **Issue** The text states that the μ + σ criterion captures approximately 68% of data under normality, but no normality testing is reported for the MD descriptor distributions. The assumption of normality may not hold for all descriptors or all reference structures.
+  - **Required correction** Either justify the normality assumption with appropriate tests or use non-parametric thresholds (e.g., percentiles) that do not rely on distributional assumptions.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Presentation
+  - **Affected element** Section 3 (Results and discussion), Figure 10.
+  - **Evidence pointer** Figure 10, Section 3.5 (Distribution of data across EC classes).
+  - **Issue** The normalized ratio plots in Figure 10 are informative, but the text does not explain how the ratios are computed (e.g., generated value divided by reference value) or whether the reference value is the mean or a specific percentile.
+  - **Required correction** Add a sentence in the figure legend or text describing the normalization procedure and the reference value used.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Section 2.4 (Molecular dynamics simulations)
+  - **Evidence pointer** Section 2.4, Supplementary material.
+  - **Issue** The manuscript states that "more details of the MD simulations are provided in the Supplementary materials," but the supplementary material was not available for review. Key parameters such as the number of water molecules, box size, salt concentration, and equilibration protocol are not described in the main text.
+  - **Required correction** Provide a summary of the key MD parameters in the main text or ensure the supplementary material is accessible and contains all necessary details.
+- **Technical failings that need to be addressed before the case is established** The threshold definition for stability and competence classification (R1-M1) is the primary technical issue that must be resolved. The lack of a detailed sampling description (R1-M3) also needs to be addressed for reproducibility. The overinterpretation of enhanced properties (R1-M2) should be corrected to align with the evidence.
+- **Assessment against Nature-style criteria**  
+  - Originality: Moderate. The combination of a conditional PLM with MD-based filtering is not entirely novel, as similar in silico screening approaches exist, but the specific application to EC-conditioned enzyme generation adds some originality.  
+  - Scientific importance: Moderate. The work addresses a practical need in enzyme engineering, but the findings are largely confirmatory of existing expectations that not all generated sequences will be stable. The lack of experimental validation limits the broader impact.  
+  - Interdisciplinary readership: Moderate. The study bridges machine learning and biophysics, which could attract readers from both communities, but the technical depth in each area may limit accessibility for nonspecialists.  
+  - Technical soundness: The MD simulations appear to be conducted with standard protocols, but the threshold-based classification is not rigorously justified, and the statistical treatment is incomplete.  
+  - Readability for nonspecialists: The manuscript is generally well written, but the methods section assumes familiarity with both PLM terminology and MD analysis. A brief primer on key concepts would improve accessibility.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is sound and the data are potentially useful, but the threshold definitions and sampling details must be clarified, and the language regarding enhanced properties must be tempered. Once these issues are addressed, the manuscript could make a solid contribution to the field of computational enzyme design.

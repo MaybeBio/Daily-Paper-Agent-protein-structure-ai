@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors introduce LDDM, a unified 3D generative framework for structure-based drug design supporting multiple tasks (constrained and unconstrained docking, fragment linking and growing, de novo design). They claim a programmable design algorithm enables synthesis-aware design with fine-grained objective control. Experimental validation across five protein targets reportedly yields high success rates, with confirmed binding affinity from few synthesized compounds, and structural characterization by NMR and X-ray crystallography demonstrating high prediction accuracy.
+- **Visible evidence base** Abstract text only; no quantitative results, experimental protocols, or structural data are available
+- **Missing materials affecting confidence** Full manuscript, methods, all figures and tables, experimental datasets, synthesis details, binding assay protocols, structural validation statistics, and comparison baselines
+
+## Reviewer
+- **Overall assessment** The abstract presents an ambitious and potentially impactful generative framework for structure-based drug design, with a notable emphasis on synthetic accessibility and experimental validation. The scope of tasks supported and the inclusion of structural characterization are commendable. However, the abstract provides no quantitative evidence, no methodological detail, and no comparative analysis. The core claims of high success rates and prediction accuracy cannot be evaluated from the supplied material. The work may be of interest to the computational drug discovery community, but the current evidence base is insufficient to assess technical soundness or establish the stated conclusions.
+- **Who would be interested in the results, and why** Computational chemists and medicinal chemists working on generative models for drug design would be interested in the unified task coverage and synthesis-aware design capabilities. Structural biologists and biophysicists may find the NMR and crystallographic validation of predicted ligand poses relevant. Researchers in AI for science and machine learning applied to molecular discovery would also be interested in the architectural and algorithmic contributions, provided the full manuscript substantiates them.
+- **Major strengths** The abstract describes a unified framework addressing multiple drug design tasks, which is a meaningful integration of capabilities. The explicit focus on synthetic accessibility and programmable design objectives addresses a known limitation in generative drug design. The inclusion of experimental validation across five targets, with structural characterization of the best designs, suggests a commitment to real-world relevance beyond computational benchmarks.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "LDDM achieved high success rates, allowing us to identify molecules with confirmed binding affinity while synthesizing only a small number of generated compounds"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states high success rates and confirmed binding affinity but provides no numerical data, no definition of success rate, no number of compounds synthesized, no affinity values, and no comparator. Without these data, the claim is unverifiable.
+  - **Why it matters** The central value proposition of the work is experimental validation with high efficiency. Without quantitative evidence, the reader cannot assess whether the success rates are meaningfully better than random screening or existing methods, nor whether the synthesis burden is genuinely small.
+  - **Resolution test** Provide in the full manuscript the number of compounds designed, synthesized, and confirmed as binders per target, with affinity values and success rate definitions, ideally benchmarked against a relevant baseline.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "a programmable design algorithm that enables accurate design of synthetically accessible compounds satisfying various fine-grained objectives"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not describe how synthetic accessibility is encoded, how the programmable objectives are specified, or how accuracy is measured. No algorithmic detail or evaluation metric is provided.
+  - **Why it matters** The claim of accurate, synthesis-aware design is a key differentiator. Without a description of the algorithm and its evaluation, the technical contribution cannot be assessed, and the claim remains an assertion rather than a demonstrated result.
+  - **Resolution test** Describe the algorithm in the methods, define the synthetic accessibility metric, and report quantitative accuracy on design tasks with appropriate baselines.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "The best designs were structurally characterised through NMR spectroscopy and X-ray crystallography, demonstrating high prediction accuracy"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims high prediction accuracy from structural characterization but provides no metrics, such as RMSD between predicted and experimental poses, or any statistical comparison. The number of structures solved and the targets involved are not stated.
+  - **Why it matters** Structural validation is a strong form of evidence, but only if the agreement between prediction and experiment is quantified. Without such metrics, the claim of high accuracy is not supported.
+  - **Resolution test** Report pose prediction accuracy metrics (e.g., RMSD) for all structurally characterized compounds, with experimental details and representative figures.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Task enumeration
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract lists "constrained and unconstrained docking, fragment linking and growing, and de novo design" but does not define what constrained versus unconstrained docking means in this context.
+  - **Required correction** Provide brief definitions or a reference in the full manuscript to clarify the task distinctions.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Target details
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions "five therapeutically relevant protein targets" but does not name them or indicate their therapeutic areas.
+  - **Required correction** List the targets and their relevance in the full manuscript to allow readers to assess the breadth of validation.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scope clarity
+  - **Affected element** Non-natural peptides
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states the framework is applicable to "small molecules and non-natural peptides" but does not clarify whether the experimental validation included both classes or only small molecules.
+  - **Required correction** Specify which compound classes were experimentally validated and whether the framework handles both with the same pipeline.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative results, algorithmic detail, and structural validation metrics means the core claims are not currently established from the provided evidence.
+- **Assessment against Nature-style criteria** Originality: The unified multi-task framework with synthesis-aware design is potentially original, but the abstract does not allow assessment of novelty relative to existing generative models. Scientific importance: The focus on synthetic accessibility and experimental validation addresses a significant gap, but importance cannot be confirmed without evidence of performance. Interdisciplinary readership: The work bridges machine learning, computational chemistry, and structural biology, which is well suited to a broad audience, but the abstract lacks the technical depth needed for specialists. Technical soundness: Not assessable from the abstract; no methods or metrics are provided. Readability for nonspecialists: The abstract is clear and accessible, though some terms such as "programmable design algorithm" would benefit from brief explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a promising framework, but the absence of quantitative data and methodological detail prevents any assessment of validity. A supportive stance would require the full manuscript to substantiate the claims with rigorous experimental and computational evidence.
+
+## Risk / unsupported claims
+- "LDDM achieved high success rates" is unsupported; no success rate data are provided.
+- "confirmed binding affinity while synthesizing only a small number of generated compounds" is unsupported; no compound counts or affinity values are given.
+- "accurate design of synthetically accessible compounds" is unsupported; no algorithmic description or accuracy metrics are provided.
+- "high prediction accuracy" from structural characterization is unsupported; no RMSD or other structural agreement metrics are provided.
+- The general applicability to "small molecules and non-natural peptides" is not assessable; no evidence is provided for either class.

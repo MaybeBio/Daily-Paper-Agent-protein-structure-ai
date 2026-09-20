@@ -1,0 +1,99 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, introduction, results, discussion, conclusions, and methods
+- **Assessment boundary** Scientific claims, methodological soundness, and internal consistency of the computational study as presented; no assessment of experimental validation beyond what is reported
+- **Shared manuscript claim summary** The authors propose a dual gating mechanism in Cas12j where the α7 helix (steric barrier) and REC2 loop (electrostatic barrier) cooperatively control target-strand access to the catalytic site, and they predict specific mutations that could tune cleavage activity along a nuclease-to-nickase spectrum
+- **Visible evidence base** Molecular dynamics simulations (classical and well-tempered metadynamics) totaling approximately 175 μs across 20 Cas12j variants, PCA-based conformational analysis, free energy surface reconstruction, hydrogen bond analysis, and clustering of target-strand orientations
+- **Missing materials affecting confidence** No experimental validation data; no raw simulation trajectories or input files; no convergence plots for individual systems beyond textual description; no error bars or replicate statistics for reported free energy barriers; no explicit force field validation against experimental observables
+
+## Reviewer
+- **Overall assessment** This manuscript presents a computationally intensive and mechanistically detailed study of target-strand cleavage regulation in Cas12j. The dual gating model is plausible and builds logically on prior experimental work. However, the central claims rest entirely on simulation data without experimental corroboration, and several methodological choices raise concerns about whether the conclusions are sufficiently robust. The manuscript is well-written and the conceptual framework is appealing, but the strength of the claims currently exceeds what the evidence can support.
+- **Who would be interested in the results, and why** Researchers in CRISPR biology and genome engineering, particularly those working on Cas12 family nucleases and nickase development. The proposed mechanistic framework and specific mutant predictions could inform rational design of Cas12j variants with tailored cleavage properties. Computational biophysicists studying protein-DNA interactions and conformational gating may also find the methodological approach of interest.
+- **Major strengths** The study addresses a genuinely important and unresolved question in CRISPR biology, namely how target-strand cleavage is regulated in Cas12j. The computational effort is substantial, with extensive sampling across many variants. The dual gating concept provides a coherent framework that reconciles prior experimental observations. The authors are appropriately cautious in several places, acknowledging the need for experimental validation. The analysis of target-strand orientation relative to the nicks is a thoughtful addition that goes beyond simple distance-based metrics.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence strength
+  - **Claim pointer** The manuscript claims that REC2-R mutations "stabilize electrostatically trapped states that are compatible with a nickase-like configuration" and that this represents a viable strategy for engineering nickases
+  - **Evidence pointer** Results and Discussion, Figures 4 and 5
+  - **Concern** The prediction that REC2-R would produce nickase activity is based solely on the observation that this variant samples blocked states with high free energy barriers. However, the manuscript does not demonstrate that these blocked states are actually catalytically competent for nts cleavage, nor does it show that ts cleavage is specifically inhibited rather than globally impaired. The connection between conformational sampling and enzymatic outcome is inferred rather than demonstrated. The authors themselves note that "in silico mutational analysis" produces "computational predictions" requiring experimental validation, but the abstract and conclusions present these predictions with considerably more confidence.
+  - **Why it matters** The central practical claim of the manuscript is that specific mutations can tune Cas12j along a nuclease-to-nickase spectrum. If the connection between the simulated conformational states and actual cleavage outcomes is not established, the engineering recommendations are not supported. This is the difference between a mechanistic hypothesis and a validated design principle.
+  - **Resolution test** The authors should either provide experimental cleavage data for at least the key variants (WT, REC2-R, REC2-A, REC2-Q) or substantially soften the language throughout to clearly frame all functional predictions as hypotheses requiring testing. If experimental data cannot be provided, the manuscript should explicitly state that no functional validation was performed and that all claims about nuclease versus nickase behavior are purely speculative.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological rigor
+  - **Claim pointer** The manuscript claims that the free energy landscapes reveal "two distinct kinetic pathways for ts release" and that energy barriers can be quantitatively compared across variants
+  - **Evidence pointer** Results and Discussion, Figures 4 and 5, Table S4
+  - **Concern** The well-tempered metadynamics simulations use only two distance-based collective variables to describe a complex conformational transition involving multiple protein domains and nucleic acid rearrangements. The choice of CVs may not capture all relevant degrees of freedom, potentially leading to incomplete or biased free energy surfaces. More critically, the manuscript reports single metadynamics runs per system (one 2.0 μs simulation each), with no replicate simulations to assess convergence or statistical uncertainty. The reported energy barriers are presented as precise values without error estimates, yet the text acknowledges that some systems required additional simulations with modified parameters (threefold increased Gaussian height), which introduces methodological inconsistency across systems. The comparison of energy barriers between WT and mutants may therefore reflect simulation artifacts rather than genuine physical differences.
+  - **Why it matters** The quantitative comparison of energy barriers across variants is central to the claim that REC2-R increases the barrier approximately 3.5-fold relative to WT. Without replicate simulations and uncertainty quantification, these numbers cannot be considered reliable. The use of different metadynamics parameters for different systems further complicates direct comparison.
+  - **Resolution test** The authors should provide at least three independent metadynamics runs per system with identical parameters, report the mean and standard deviation of energy barriers, and demonstrate convergence through multiple metrics (e.g., free energy difference evolution, bias deposition rate). If this is computationally prohibitive, the quantitative barrier comparisons should be removed or presented only as qualitative observations.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Model completeness
+  - **Claim pointer** The manuscript claims that the α7 helix and REC2 loop form a "coordinated dual-gating mechanism" and that mutations in these regions can independently tune cleavage kinetics
+  - **Evidence pointer** Results and Discussion, Figures 2 and 4
+  - **Concern** The simulations are based on a single cryo-EM structure (PDB 7LYT) representing the nts-cleavage state. The manuscript does not address whether the observed gating dynamics are dependent on this particular starting conformation. The authors model missing residues with AlphaFold, but the impact of these modeled regions on the simulated dynamics is not assessed. Additionally, the manuscript does not discuss whether the presence of Mg2+ ions (required for catalysis) at the active site could influence the gating behavior, despite the simulations including 1.5 mM MgCl2. The relationship between the simulated conformational states and the actual catalytic steps (e.g., metal ion positioning, water activation) is not explored.
+  - **Why it matters** A gating mechanism implies a dynamic equilibrium between states. If the simulations are strongly biased by the starting structure or fail to capture catalytically relevant interactions, the proposed mechanism may not reflect the true biological process. The lack of sensitivity analysis to starting conditions weakens confidence in the generality of the conclusions.
+  - **Resolution test** The authors should perform at least one additional simulation set starting from a different conformational state (e.g., an apo structure or a ts-cleavage state if available) to demonstrate that the observed gating dynamics are robust. Alternatively, they should explicitly discuss the limitations of using a single starting structure and how this might affect the conclusions.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretive consistency
+  - **Claim pointer** The manuscript claims that "stronger electrostatic interactions progressively bias the ts toward non-productive geometries" and that this explains why REC2-R would favor nickase activity
+  - **Evidence pointer** Results and Discussion, Figures 6 and 7
+  - **Concern** The analysis of target-strand orientation relative to the nts is based on clustering of only 2000 frames per system (2500 for α7N) extracted from metadynamics trajectories. The manuscript does not report how many frames fell into each free energy minimum, nor whether the orientation distributions are statistically distinguishable between systems. The claim that REC2-R predominantly populates "released states lacking antiparallel alignment" is based on a small number of frames and may not be robust. Furthermore, the manuscript does not establish a quantitative threshold for what constitutes "productive" versus "non-productive" orientation beyond the geometric definition of antiparallel alignment.
+  - **Why it matters** The orientation analysis is used to explain why REC2-R would produce nickase activity despite sampling released states. If the orientation distributions are not statistically robust, this explanation is not supported. The manuscript needs to demonstrate that the observed differences in orientation between variants are meaningful and not due to sampling noise.
+  - **Resolution test** The authors should report the number of frames in each cluster for each system, provide statistical tests comparing orientation distributions between variants, and clearly define the criteria for productive versus non-productive orientation. If the sample sizes are insufficient, the orientation analysis should be presented as preliminary observation rather than a central finding.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract states that the study reveals "a coordinated dual-barrier mechanism" but does not clearly distinguish between the steric and electrostatic components until later in the text. The abstract could benefit from a more explicit statement of what each barrier is and how they interact.
+  - **Required correction** Consider revising the abstract to briefly define the two barriers (e.g., "a steric barrier formed by the α7 helix and an electrostatic barrier formed by the REC2 loop") for readers who may not read the full manuscript.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods
+  - **Evidence pointer** Materials and Methods, System setup
+  - **Issue** The methods state that missing residues were modeled using AlphaFold 3.0, Maestro Viewer, and PyMOL, but do not provide sufficient detail on how these tools were combined or how the modeled regions were validated.
+  - **Required correction** Provide additional detail on the modeling protocol, including which regions were modeled, how the AlphaFold predictions were integrated with the cryo-EM structure, and whether the modeled regions were stable during simulation.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Results
+  - **Evidence pointer** Results and Discussion, Figure 5
+  - **Issue** The relative energy barriers are reported as single values without any measure of uncertainty. Given that these are derived from single metadynamics runs, this is misleading.
+  - **Required correction** Either provide error estimates from replicate simulations or clearly state that these are single-run estimates and should be interpreted qualitatively.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Literature context
+  - **Affected element** Introduction
+  - **Evidence pointer** Introduction
+  - **Issue** The introduction mentions that Cas12j is "one of the most compact RNA-guided endonucleases" but does not provide a quantitative comparison with other compact Cas12 variants or discuss the specific advantages of this compactness for delivery.
+  - **Required correction** Consider adding a brief comparison of Cas12j size with other Cas12 effectors and a statement on why compactness is advantageous for genome editing applications.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Figure quality
+  - **Affected element** Figures 4 and 5
+  - **Evidence pointer** Figures 4 and 5
+  - **Issue** The free energy surfaces in Figure 4 are described in the text but the figure itself is not referenced in the main text at the appropriate location. The energy barrier values in Figure 5 are presented as relative values without clear definition of the reference state.
+  - **Required correction** Ensure all figures are explicitly referenced in the text at the point of discussion. Define what "relative energy barrier" means in the figure legend or text.
+  - **Concern ID** R1-m6
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Conclusions
+  - **Evidence pointer** Conclusions
+  - **Issue** The term "nickase-like behavior" is used to describe the predicted phenotype of REC2-R, but the manuscript does not define what specific experimental readout would constitute "nickase-like" behavior.
+  - **Required correction** Consider defining the expected experimental phenotype (e.g., nts cleavage retained, ts cleavage reduced or abolished) to make the prediction more testable and falsifiable.
+
+## Risk / unsupported claims
+- The claim that REC2-R mutations would produce nickase activity is unsupported by experimental data and rests on indirect inference from conformational sampling
+- The quantitative energy barrier comparisons across variants (e.g., 3.5-fold increase for REC2-R) are not supported by replicate simulations or uncertainty estimates
+- The claim that "stronger electrostatic interactions progressively bias the ts toward non-productive geometries" is based on limited frame sampling and lacks statistical validation
+- The assertion that the proposed dual gating mechanism is generalizable to other Cas12 family members is speculative and not directly tested
+- The prediction that combining Δ155-176 (GSSG) with alanine substitutions would "maximize double-strand break activity" is extrapolated from single-point mutation simulations and lacks direct simulation of the combined variant
+- The statement that the simulations "reveal" two distinct kinetic pathways is overstated given that the pathways are inferred from free energy surface topology rather than directly observed transition dynamics

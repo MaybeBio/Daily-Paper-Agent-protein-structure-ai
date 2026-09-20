@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.09.17.752279",
+  "title": "Conditional Generation And Inpainting Of Non-coding RNA Sequences With Masked Discrete Diffusion",
+  "authors": "Upadhyay U; Dai C; Herold J; Sato K; Schug A",
+  "journal": "bioRxiv",
+  "published_date": "2026-09-18",
+  "window": {
+    "start": "2026-09-13",
+    "end": "2026-09-19"
+  },
+  "score": 7,
+  "one_liner_zh": "该文提出RNA-MDLM，用掩码离散扩散模型对非编码RNA进行条件生成与修复，虽对象为RNA而非蛋白质，但其生成与修复框架及条件控制方法可迁移至蛋白质结构/序列设计，具有借鉴价值。",
+  "abstract": "<h4>Design: </h4> ing functional non-coding RNA (ncRNA) is fundamental to synthetic biology and RNA therapeutics, yet generative modelling for ncRNA has received far less attention than protein design. We present RNA-MDLM, a framework that extends Masked Discrete Language Models (MDLM) to the conditional generation and inpainting of ncRNA. We make two additions: first, conditioning on RNA-type representations from a pretrained RNA language model, and second, a modified classifier-free guidance scheme (Mod-CFG) that interpolates among conditional, unconditional, and random-sequence probabilities for better control. We also introduce REPAINT GAMES, a benchmark of seven structured masking tasks to probe a model's performance on sequence patterns, structural motifs, and base-pairing per RNA type. Our model is trained on 4.6 million ncRNA sequences spanning six evaluable classes. It produces sequences whose composition and folding statistics closely match natural RNAs. Through extensive ablation studies, we find that the embedding-conditioned model achieves the best balance of structural fidelity, biological novelty, and inpainting accuracy, and its class label steers generation far more strongly than a plain label baseline. We further show that a model trained on a smaller, class-balanced subset can appear more realistic mainly by copying abundant natural sequences rather than learning their rules. We also benchmark against a masked-diffusion model and a family-specific VAE on ribozyme families, and find that a type-conditioned model like ours and a per-family model are solving different tasks, which must be accounted for in a fair comparison. We will release the code and the trained models.",
+  "abstract_zh": "<h4>设计：</h4> 功能性非编码RNA（ncRNA）的设计是合成生物学和RNA治疗学的基础，然而针对ncRNA的生成建模所受到的关注远少于蛋白质设计。我们提出了RNA-MDLM，一个将掩码离散语言模型（MDLM）扩展到ncRNA的条件生成和修复的框架。我们做了两项改进：首先，基于预训练的RNA语言模型中的RNA类型表示进行条件化；其次，采用一种改进的无分类器引导方案（Mod-CFG），在条件、无条件及随机序列概率之间进行插值，以实现更好的控制。我们还引入了REPAINT GAMES，一个包含七项结构化掩码任务的基准测试，用于评估模型在序列模式、结构基序和碱基配对方面按RNA类型的表现。我们的模型在覆盖六个可评估类别的460万个ncRNA序列上进行了训练。它生成的序列在组成和折叠统计上与天然RNA高度接近。通过广泛的消融研究，我们发现嵌入条件化模型在结构保真度、生物新颖性和修复准确性方面达到了最佳平衡，且其类别标签对生成的引导作用远强于普通标签基线。我们进一步表明，在较小、类别平衡的子集上训练的模型可能主要通过复制丰富的天然序列而非学习其规则来显得更真实。我们还针对核酶家族，将我们的模型与掩码扩散模型和家族特异性VAE进行了基准比较，发现像我们这样的类型条件化模型和逐家族模型在解决不同任务，这在公平比较中必须予以考虑。我们将发布代码和训练好的模型。",
+  "has_fulltext": false,
+  "fulltext_source": "abstract",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.17.752279",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.09.17.752279",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.09.17.752279/index.html"
+}

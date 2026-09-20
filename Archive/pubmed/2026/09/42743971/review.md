@@ -1,0 +1,127 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, methods, results, discussion, supplementary references)
+- **Assessment boundary** Scientific validity, methodological soundness, clarity of claims, and adequacy of evidence as presented in the supplied text. No independent verification of data or code was performed.
+- **Shared manuscript claim summary** The authors present HighFold4, a framework that extends AlphaFold3 to predict cyclic peptide conformations by explicitly incorporating user-defined chemical connectivity between residues. The method is claimed to achieve accurate, chemistry-aware prediction of diverse cyclic peptide conformations without retraining the base model, validated on 179 structures, and to outperform both default AlphaFold3 and the offset-based HighFold3 in handling side-chain cyclization.
+- **Visible evidence base** Abstract, Introduction, Methods (Dataset, Method, Metrics), Results (predictive performance, comparisons, side-chain cyclization, property correlations, fixed protein application), Discussion, Limitations, supplementary table references (Tables S1–S17, Fig. S1), and code repository link.
+- **Missing materials affecting confidence** Full figures (Figs. 1–9) and supplementary tables (S1–S17) are referenced but not provided. Algorithm pseudocode (Algorithms S1, S2) is mentioned but not included. Detailed statistical methodology for the paired comparison (Table 1) is not described. No information on training data composition, model hyperparameters, or computational resources is given.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a relevant and timely problem in computational peptide drug discovery: adapting AlphaFold3 to accurately model cyclic peptide topologies with user-defined chemical linkages. The proposed approach of explicitly encoding polymer-polymer covalent bonds into the feature pipeline is conceptually sound and represents a logical extension of existing work. However, the evidence presented is insufficient to fully establish the claimed advantages. Key quantitative results are only referenced in supplementary materials that were not provided, and the comparison against HighFold3, while showing comparable performance on standard cyclization, lacks a rigorous statistical framework. The case studies for side-chain cyclization are qualitative and limited in number. The manuscript would benefit from clearer presentation of the algorithmic changes, more detailed validation metrics, and a discussion of failure cases.
+- **Who would be interested in the results, and why** Researchers in computational structural biology, peptide drug design, and AI-driven protein engineering would be interested. The work directly addresses a practical limitation of AlphaFold3 for a therapeutically important class of molecules, and the proposed method could be adopted by groups working on macrocyclic peptide design. The integration with a fixed-protein docking mode also has practical appeal for high-throughput screening applications.
+- **Major strengths**
+  1. The problem is well-motivated and practically important.
+  2. The methodological contribution (explicit covalent bond encoding) is conceptually clear and distinct from prior offset-based approaches.
+  3. The evaluation covers both canonical and noncanonical cyclic peptides, including complexes, which is comprehensive in scope.
+  4. The authors acknowledge limitations and provide practical usage guidelines.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "HighFold4 achieves accurate, chemistry-aware prediction of diverse cyclic peptide conformations, as validated on 179 structures."
+  - **Evidence pointer** Results section, Tables S5–S17, Figs. 3–5 (location not provided)
+  - **Concern** The central validation claim rests entirely on supplementary tables and figures that are not included in the provided material. Without access to these data, the accuracy of the reported RMSD values, the distribution of results, and the statistical significance of any comparisons cannot be assessed. The manuscript text provides only summary statistics (e.g., average RMSD values) without confidence intervals or per-structure breakdowns.
+  - **Why it matters** The core contribution of the paper is empirical: demonstrating that the method works. If the underlying data are not available for scrutiny, the scientific case is not established.
+  - **Resolution test** Provide the supplementary tables and figures, or include key results (e.g., per-structure RMSD distributions, scatter plots) in the main text. Report confidence intervals and statistical tests for all comparisons.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological clarity
+  - **Claim pointer** "we have refined the relevant modules in HighFold4... this connectivity is explicitly parameterized as an adjacency matrix G... subsequently, within the computational pipeline of the AlphaFold3 Evoformer module, this sparse matrix is inflated back to a dense state, merged with other ligand-associated connectivity relationships, and ultimately encoded into the pair_feat through a dedicated bond_embedding module."
+  - **Evidence pointer** Methods section, Algorithms S1 and S2 (location not provided)
+  - **Concern** The algorithmic description is high-level and lacks critical implementation details. The referenced pseudocode (Algorithms S1, S2) is not provided. Key questions remain unanswered: How is the adjacency matrix converted to pair features? What is the exact architecture of the bond_embedding module? How are the polymer-polymer bonds merged with ligand bonds without conflicts? Is the model's attention mechanism modified to account for the new connectivity?
+  - **Why it matters** Reproducibility is a cornerstone of computational research. Without a detailed algorithmic description, other groups cannot implement or verify the method.
+  - **Resolution test** Provide the full pseudocode and a detailed description of the feature encoding and merging process. Include a diagram of the modified pipeline.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Comparative rigor
+  - **Claim pointer** "our model demonstrates performance comparable to HighFold3 across these structural metrics... most ΔRMSD_mean values falling within a narrow margin (<0.1 Å, P > .05)... Accuracy is improved for noncanonical monomer total atoms (RMSD_aa, P = .013) and noncanonical amino acids (RMSD_uaa, P = .046)"
+  - **Evidence pointer** Results section, Table 1 (location not provided)
+  - **Concern** The statistical comparison between HighFold4 and HighFold3 is described only in terms of P-values, with no mention of the test used, sample sizes, or effect sizes beyond mean differences. The claim of "comparable performance" for canonical structures is based on a narrow margin, but the practical significance of a 0.1 Å difference is not discussed. Furthermore, the comparison does not appear to account for multiple testing across the many RMSD metrics evaluated.
+  - **Why it matters** The authors position HighFold4 as an extension rather than a replacement, but the statistical evidence for equivalence or superiority needs to be robust to support this claim.
+  - **Resolution test** Describe the statistical test used, report effect sizes with confidence intervals, and apply multiple-testing corrections. Discuss the practical significance of observed differences.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** "we constructed a dataset comprising side-chain cyclized cyclic peptides for structural prediction... We selected several side-chain-cyclized peptide sequences from existing experimental literatures [55–58], none of which had experimentally determined PDB structures, for case analysis."
+  - **Evidence pointer** Results section, Fig. 6 (location not provided)
+  - **Concern** The evaluation of side-chain cyclization relies on a small number of case studies (appears to be 4–5 compounds) without experimentally determined structures. The authors claim HighFold4 "successfully predicted the correct structure" but the basis for correctness is unclear, as there is no ground truth. The comparison against HighFold3 is qualitative (e.g., "failed to recognize this constraint").
+  - **Why it matters** The claimed advantage of HighFold4 over HighFold3 is specifically in handling side-chain cyclization. If this is demonstrated only on a few qualitative examples without quantitative metrics, the claim is not well-supported.
+  - **Resolution test** Provide quantitative metrics for these case studies (e.g., internal consistency, energy scores, comparison to known pharmacophore models). Increase the number of cases and, if possible, validate against structures determined by other means (e.g., NMR, crystallography).
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretation of confidence metrics
+  - **Claim pointer** "we also explored the correlation between popular indicators and RMSD values... A strong inverse relationship was observed between pLDDT and RMSD values... However, no clear correlation was observed between pTM and structural deviation of the binders."
+  - **Evidence pointer** Results section, Fig. 8 (location not provided)
+  - **Concern** The authors report correlations between confidence metrics and accuracy but do not provide correlation coefficients, significance levels, or scatter plots. The claim that pLDDT is a reliable indicator while pTM is not is based on visual inspection of figures that are not available. The discussion of false positives and the use of additional filters is reasonable but appears to be based on anecdotal evidence rather than systematic analysis.
+  - **Why it matters** Guidance on when to trust model predictions is practically important. If the evidence for the reliability of pLDDT is not quantified, users cannot calibrate their expectations.
+  - **Resolution test** Report correlation coefficients (e.g., Spearman's rho) with confidence intervals. Provide scatter plots in the main text. Quantify the false-positive rate and the effectiveness of the proposed filtering strategy.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract
+  - **Issue** The phrase "its architecture always fails to reliably generate the closed-ring topologies" is overly strong. The authors later note that AlphaFold3 can sometimes produce cyclic-like structures, suggesting the failure is not absolute.
+  - **Required correction** Rephrase to "frequently fails" or "does not reliably generate."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Introduction
+  - **Evidence pointer** Introduction, paragraph 2
+  - **Issue** The term "offset matrix" is used without a formal definition. It is later described as a "distance constraint" but the relationship to the CycPOEM is not made explicit.
+  - **Required correction** Define the offset matrix and its role in HighFold3 before introducing CycPOEM.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Data description
+  - **Affected element** Dataset section
+  - **Evidence pointer** Methods, Dataset
+  - **Issue** The dataset description mentions "manual curation" and "deduplication" but does not specify the criteria for inclusion or exclusion. The number of structures (179) is stated but the breakdown between monomers and complexes is only given in the text (62+32=94 canonical, 68+17=85 noncanonical, total 179).
+  - **Required correction** Provide a clear flowchart or table describing the dataset construction process, including inclusion/exclusion criteria.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Results, comparison section
+  - **Evidence pointer** Results, "The performance comparison between HighFold4 and HighFold3"
+  - **Issue** The P-values are reported without specifying the statistical test used. It is unclear whether a paired t-test, Wilcoxon signed-rank test, or other method was applied.
+  - **Required correction** State the statistical test used for each comparison.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Figure quality
+  - **Affected element** Fig. 3M
+  - **Evidence pointer** Results, "The predictive performance of HighFold4"
+  - **Issue** The text refers to "representative predicted structures" but does not describe what is shown in the figure or how the structures were selected.
+  - **Required correction** Add a figure caption describing the content and selection criteria.
+  - **Concern ID** R1-m6
+  - **Severity** Minor
+  - **Axis** Language
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion, final paragraph
+  - **Issue** The phrase "improving the improvement of the related clinic drugs" is grammatically incorrect and unclear.
+  - **Required correction** Rephrase to "improving the development of related clinical drugs."
+  - **Concern ID** R1-m7
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Methods, Metrics
+  - **Evidence pointer** Methods, Metrics
+  - **Issue** The RMSD calculation formula is referenced but not shown. The definition of Fnat is not provided.
+  - **Required correction** Include the formula and define Fnat.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (missing data), R1-M2 (insufficient algorithmic detail), R1-M3 (incomplete statistical reporting), R1-M4 (weak validation of side-chain cyclization claims).
+- **Assessment against Nature-style criteria**
+  - **Originality** The concept of explicitly encoding polymer-polymer covalent bonds into AlphaFold3's feature pipeline is a novel contribution, distinct from prior offset-based approaches. However, the idea of using adjacency matrices for molecular connectivity is not new in the broader deep learning literature, and the incremental nature of the extension should be acknowledged more clearly.
+  - **Scientific importance** The problem is important for peptide drug discovery, and the method has potential practical utility. However, the demonstrated impact is limited by the lack of strong validation data and the absence of comparison to other state-of-the-art methods beyond HighFold3 and AlphaFold3.
+  - **Interdisciplinary readership** The work bridges computational biology, machine learning, and medicinal chemistry. The writing is generally accessible, but the methods section assumes familiarity with AlphaFold3's architecture, which may limit readability for non-specialists.
+  - **Technical soundness** The core idea is technically plausible, but the lack of algorithmic detail and incomplete statistical reporting prevent a full assessment. The reliance on qualitative case studies for the key differentiator (side-chain cyclization) is a significant weakness.
+  - **Readability for nonspecialists** The abstract and introduction are clear, but the methods and results sections are dense and would benefit from more explanatory text and figure callouts.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript addresses a relevant problem and presents a conceptually sound approach, but the central validation claims are not verifiable from the supplied material. The authors must provide the supplementary data, detailed algorithmic descriptions, and more rigorous statistical analysis before the case for HighFold4's utility can be assessed.
+
+## Risk / unsupported claims
+- The claim of "accurate, chemistry-aware prediction" on 179 structures is unsupported without access to the underlying data.
+- The claim that HighFold4 "successfully predicted the correct structure" for side-chain cyclized peptides is unsupported, as no ground truth exists for these cases.
+- The claim that AlphaFold3 "always fails" to generate closed-ring topologies is contradicted by the authors' own observation that it can produce cyclic-like structures.
+- The claim that HighFold4 achieves "100% cyclization success rate across all tasks" is not verifiable without the data.
+- The assertion that "no clear correlation was observed between pTM and structural deviation" is unsupported without correlation coefficients or figures.
+- The statement that the fixed-protein mode "improves" prediction accuracy is not quantified in the text.

@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Structure-based virulence factor classification using a dual-driven graph transformer with a pretrained language model. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Structure-based virulence factor classification using a dual-driven graph transformer with a pretrained language model.</h1>
+      <div class="meta">Bai, Peihao; Li, Guanghui; Jiang, Nan; Chen, Jiao; Liang, Cheng; Ding, Yijie</div>
+      <div class="meta muted">
+        
+        <span class="journal">Briefings in bioinformatics</span>
+        · 2026-09-15
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42743970/">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于蛋白结构图与预训练语言模型的双驱动图Transformer框架SDGT，用于细菌毒力因子分类，虽对象非典型结构计算问题，但方法上结合结构图表示与AI，对蛋白质结构表征学习有借鉴意义。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Bacterial pathogenicity relies on a multitude of virulence factors (VFs). Identifying these factors is crucial for comprehending the molecular mechanisms driving bacterial pathogenesis and pinpointing potential targets for antivirulence strategies. While the identification of VFs has received extensive attention, there is still a lack of prediction from the perspective of VF classes. Moreover, most computational methods focus solely on sequence information for virulence proteins, neglecting spatial structure information. Here, a novel Structure-based Dual-driven Graph Transformer framework named SDGT is proposed to identify multiple distinct VFs by leveraging graph data structures of virulence proteins and sequence representations generated from a pretrained protein language model. By representing virulence proteins at both the atom and residue levels, SDGT adaptively and comprehensively learns a graph representation of protein structure through the utilization of self-attention pooling. The results of extensive experiments demonstrate that SDGT significantly enhances the classification performance, achieving an accuracy of 0.7623 on an independent test dataset, outperforming other sequence-based and structure-based methods. Moreover, cluster analysis of pathogen VF features learned by SDGT proves the excellent specificity and similarity feature learning power of the proposed model. The current analysis suggests that SDGT is an effective tool for identifying of VF classes.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">细菌致病性依赖于多种毒力因子（virulence factors, VFs）。识别这些因子对于理解驱动细菌发病机制的分子机制以及确定抗毒力策略的潜在靶点至关重要。尽管VFs的识别已受到广泛关注，但从VF类别的角度进行预测仍存在不足。此外，大多数计算方法仅关注毒力蛋白的序列信息，忽视了空间结构信息。本文提出了一种名为SDGT的新型基于结构的双驱动图变换器框架（Structure-based Dual-driven Graph Transformer），通过利用毒力蛋白的图数据结构以及由预训练蛋白质语言模型生成的序列表示，来识别多种不同的VFs。通过在原子和残基水平上表示毒力蛋白，SDGT利用自注意力池化自适应且全面地学习蛋白质结构的图表示。大量实验结果表明，SDGT显著提升了分类性能，在独立测试数据集上达到了0.7623的准确率，优于其他基于序列和基于结构的方法。此外，对SDGT学习到的病原体VF特征的聚类分析证明了该模型在特异性和相似性特征学习方面的卓越能力。当前分析表明，SDGT是识别VF类别的有效工具。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Structure-based virulence factor classification using a dual-driven graph transformer with a pretrained language model</li>
+<li><strong>作者</strong>：Bai, Peihao; Li, Guanghui; Jiang, Nan; Chen, Jiao; Liang, Cheng; Ding, Yijie</li>
+<li><strong>单位</strong>：未提供（根据基金信息推测为江西地区高校/科研机构）</li>
+<li><strong>期刊/平台</strong>：Briefings in Bioinformatics</li>
+<li><strong>年份</strong>：2026-09-15（在线发表）</li>
+<li><strong>论文类型</strong>：方法学（Method）研究</li>
+<li><strong>领域</strong>：蛋白质结构计算 × 图神经网络 × 预训练语言模型 × 毒力因子分类</li>
+<li><strong>关键词</strong>：virulence factor classification; graph transformer; protein language model; structure-based prediction; dual-driven</li>
+<li><strong>DOI/ID</strong>：10.1093/bib/bbag508</li>
+<li><strong>代码</strong>：https://github.com/ghli16/SDGT</li>
+<li><strong>数据</strong>：VFDB数据库（经CD-HIT处理），GitHub可获取</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/深度学习」方向，具体为利用AlphaFold/ESMFold预测结构 + 图神经网络进行蛋白质功能分类。其核心贡献在于：(1) 将结构信息（原子级+残基级）与序列语言模型特征融合用于蛋白质分类任务；(2) 提出双驱动（dual-driven）图Transformer架构，同时捕捉局部原子信息和全局残基信息。该工作可迁移至其他蛋白质功能注释、毒力因子发现等任务。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出SDGT框架，通过ESMFold预测蛋白质三维结构并构建原子级和残基级双图，结合ESMFold预训练语言模型提取的序列特征，利用图Transformer和自注意力池化实现七类毒力因子的多分类，在独立测试集上达到76.23%的准确率，优于GCN、GAT等基线方法。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何利用蛋白质的三维结构信息（而非仅序列信息）进行毒力因子（virulence factor, VF）的多类别分类？</li>
+<li><strong>为什么重要</strong>：毒力因子是细菌致病性的关键分子，识别其类别有助于理解细菌发病机制、发现抗毒力策略的潜在靶点。现有方法多聚焦于VF的二元识别（是否为VF），缺乏从类别角度（如黏附、效应物递送系统、免疫调节等）的预测。</li>
+<li><strong>现有方法不足</strong>：(1) 比较基因组学方法只能发现保守的已知VF基因，无法识别进化分歧的新VF；(2) 传统机器学习方法依赖人工特征工程，表征能力有限；(3) 深度学习方法（如DeepVF、PreVFs-RG）仅使用序列信息，忽略了蛋白质空间结构这一决定功能的关键维度。</li>
+<li><strong>精确研究问题</strong>：Can a dual-driven graph transformer that integrates both atom-level and residue-level structural information with pretrained protein language model representations accurately classify virulence factors into multiple functional categories?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引言及参考文献，经外部核验部分有限，标注为「部分经外部核验」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>比较基因组学</td>
+<td>VRprofile [12]、VFanalyzer [13]</td>
+<td>可识别保守VF基因</td>
+<td>无法发现新VF；依赖同源搜索</td>
+<td>超越</td>
+</tr>
+<tr>
+<td>传统机器学习</td>
+<td>PBVF [14]、MP3 [15]、VirulentPred [16]</td>
+<td>可扩展、快速</td>
+<td>依赖手工特征工程</td>
+<td>超越</td>
+</tr>
+<tr>
+<td>深度学习（序列）</td>
+<td>DeepVF [21]、PreVFs-RG [22]</td>
+<td>自动学习序列模式</td>
+<td>忽略结构信息</td>
+<td>超越</td>
+</tr>
+<tr>
+<td>图神经网络（结构）</td>
+<td>DeepFRI [32]、GAT-GO [33]、HEAL [35]</td>
+<td>利用结构信息</td>
+<td>多为单尺度（残基级），未结合原子级</td>
+<td>本文扩展</td>
+</tr>
+<tr>
+<td><strong>本文</strong></td>
+<td><strong>SDGT</strong></td>
+<td><strong>双尺度（原子+残基）+ 预训练语言模型</strong></td>
+<td>依赖预测结构质量</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>现有方法忽略结构信息</td>
+<td>仅用序列特征预测VF类别</td>
+<td>作者认为空间结构是蛋白质功能的关键决定因素，序列方法无法捕捉</td>
+<td>引言第3段</td>
+</tr>
+<tr>
+<td>单尺度图表示不充分</td>
+<td>仅用残基级图或仅用原子级图</td>
+<td>残基级捕捉全局但丢失原子细节，原子级计算量大但信息丰富</td>
+<td>方法节、图1</td>
+</tr>
+<tr>
+<td>毒力因子类别不平衡</td>
+<td>某些VF类别样本数少</td>
+<td>数据来源VFDB本身分布不均</td>
+<td>Results节、图3a</td>
+</tr>
+<tr>
+<td>缺乏从类别角度的VF预测</td>
+<td>多数方法仅做二元VF/非VF分类</td>
+<td>现有数据集和任务设计未覆盖多类别</td>
+<td>引言第2段、方法节</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+- 使用ESMFold预测蛋白质3D结构
+- 构建残基级图（Cα距离&lt;4.5Å连边）和原子级图（k-NN，k=10）
+- 残基特征用ESM-2预训练语言模型初始化，原子特征用原子类型、氨基酸类别、相对距离、方向角等
+- 双分支图Transformer分别处理残基图和原子图，自注意力池化融合，MLP分类</p>
+<p><strong>2) 核心洞察</strong>：
+- 蛋白质功能由多尺度结构共同决定：残基级图捕捉全局折叠拓扑，原子级图捕捉局部化学环境（氢键、疏水作用等），两者互补
+- 预训练蛋白质语言模型（ESM-2）提供的序列嵌入可作为高质量残基初始特征，弥补结构预测误差
+- 自注意力池化可自适应地识别对分类重要的节点，而非简单平均</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 双尺度/多尺度图表示是蛋白质结构建模的有效策略：单一尺度（仅残基或仅原子）会丢失关键信息
+- 预训练语言模型特征与结构图特征的融合是「序列-结构」协同的通用范式，可迁移至其他蛋白质功能预测任务
+- 结构预测工具（ESMFold/AlphaFold）的成熟使得「序列→结构→功能」的pipeline成为可行路径</p>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：蛋白质氨基酸序列</p>
+<p><strong>处理流程</strong>：
+1. <strong>结构预测</strong>：ESMFold预测3D结构（原子坐标）
+2. <strong>图构建</strong>：
+   - 残基图 G_Res：节点=Cα原子，边=距离&lt;4.5Å的Cα对
+   - 原子图 G_Atom：节点=原子，边=k-NN（k=10）
+3. <strong>特征初始化</strong>：
+   - 残基特征 H_Res：ESM-2序列嵌入 + 二面角位置编码 S_Res
+   - 原子特征 H_Atom：原子类型、氨基酸类别、相对距离、方向角 + 笛卡尔坐标位置编码 S_Atom
+4. <strong>双分支图Transformer</strong>：
+   - 残基分支：N=3层图Transformer
+   - 原子分支：K=3层图Transformer
+   - 原子特征通过聚合转换为残基级特征（Atom2Res）
+5. <strong>特征融合</strong>：拼接残基分支输出和Atom2Res输出，得到双驱动表示 H_dual
+6. <strong>自注意力池化</strong>：基于图卷积计算注意力分数，加权聚合节点特征
+7. <strong>分类</strong>：MLP输出7类VF概率</p>
+<p><strong>输出</strong>：7类毒力因子的分类概率</p>
+<p><strong>训练</strong>：交叉熵损失，AdamW优化器，学习率0.0001，随机种子42</p>
+<p><strong>关键假设</strong>：
+- ESMFold预测的结构足够准确以反映真实功能相关构象
+- 原子级和残基级图信息互补且可有效融合
+- 7类VF的划分具有生物学意义且类别间特征可区分</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESMFold结构预测</td>
+<td>生成蛋白质3D坐标</td>
+<td>提供结构信息输入</td>
+<td>输入：序列；输出：PDB结构</td>
+<td>方法节</td>
+<td>无法构建图结构，模型退化为纯序列方法</td>
+</tr>
+<tr>
+<td>残基级图构建</td>
+<td>捕捉残基间空间邻近关系</td>
+<td>反映蛋白质折叠拓扑和远程接触</td>
+<td>输入：Cα坐标；输出：G_Res</td>
+<td>方法节、图1</td>
+<td>丢失全局结构信息，仅剩原子级局部信息</td>
+</tr>
+<tr>
+<td>原子级图构建</td>
+<td>捕捉原子间精细相互作用</td>
+<td>反映化学键、氢键、疏水作用等</td>
+<td>输入：全原子坐标；输出：G_Atom</td>
+<td>方法节、图1</td>
+<td>丢失局部化学细节，仅剩残基级粗粒度信息</td>
+</tr>
+<tr>
+<td>ESM-2特征初始化</td>
+<td>提供残基级序列语义嵌入</td>
+<td>预训练语言模型捕捉进化保守性和序列模式</td>
+<td>输入：序列；输出：H_Res</td>
+<td>方法节</td>
+<td>残基特征质量下降，需从头学习</td>
+</tr>
+<tr>
+<td>图Transformer（残基分支）</td>
+<td>学习残基节点表示</td>
+<td>聚合邻居信息，捕捉全局结构模式</td>
+<td>输入：G_Res, H_Res, S_Res；输出：H_Res^(N)</td>
+<td>方法节</td>
+<td>无法建模残基间长程依赖</td>
+</tr>
+<tr>
+<td>图Transformer（原子分支）</td>
+<td>学习原子节点表示</td>
+<td>捕捉原子级局部化学环境</td>
+<td>输入：G_Atom, H_Atom, S_Atom；输出：H_Atom^(K)</td>
+<td>方法节</td>
+<td>无法建模原子级精细相互作用</td>
+</tr>
+<tr>
+<td>Atom2Res转换</td>
+<td>原子特征聚合为残基特征</td>
+<td>统一两种尺度特征维度</td>
+<td>输入：H_Atom^(K)；输出：Ĥ_Atom2Res</td>
+<td>方法节</td>
+<td>原子信息无法与残基信息融合</td>
+</tr>
+<tr>
+<td>自注意力池化</td>
+<td>自适应聚合节点特征为图级表示</td>
+<td>识别对分类重要的节点</td>
+<td>输入：H_dual；输出：图级特征</td>
+<td>方法节、图1</td>
+<td>简单平均池化会稀释关键节点信息</td>
+</tr>
+<tr>
+<td>MLP分类器</td>
+<td>输出7类VF概率</td>
+<td>最终分类决策</td>
+<td>输入：图级特征；输出：类别概率</td>
+<td>方法节</td>
+<td>无法完成分类任务</td>
+</tr>
+</tbody>
+</table>
+<p><strong>消融实验证据</strong>（Table 2）：
+- SDGT-w/o atom-D（移除原子分支）：Acc下降0.0493 → 实测消融效应，证明原子级信息的重要性
+- SDGT-w/o position（移除位置编码）：Acc下降0.0203 → 实测消融效应，证明位置编码的作用
+- SDGT-replace GAP（用全局平均池化替代自注意力池化）：Acc下降0.0122 → 实测消融效应，证明自注意力池化的优势</p>
+<h2>09 关键公式符号</h2>
+<p><strong>1) 图Transformer中的多头注意力</strong>：</p>
+<p>Attention(Q, K, V) = softmax(QK^T / √d_k) V</p>
+<ul>
+<li>Q, K, V：查询、键、值矩阵</li>
+<li>d_k：键的维度</li>
+<li>多头：MultiHead = Concat(head_1, ..., head_h) W^O</li>
+</ul>
+<p><strong>2) 图卷积层（GCN）</strong>：</p>
+<p>H^(k+1) = σ(D^(-1/2) A D^(-1/2) H^(k) W^(k))</p>
+<ul>
+<li>A：邻接矩阵</li>
+<li>D：度矩阵</li>
+<li>W^(k)：第k层可学习权重</li>
+<li>σ(·)：非线性激活函数</li>
+<li>H^(0) = (H ‖ S)：初始特征拼接位置编码</li>
+</ul>
+<p><strong>3) 自注意力池化</strong>：</p>
+<p>s = σ(GCN(H_dual, A))  （注意力分数）
+H_pooled = [ave_pool(s ⊙ H_dual) ‖ max_pool(s ⊙ H_dual)]</p>
+<ul>
+<li>s：节点注意力分数</li>
+<li>⊙：逐元素乘法（广播）</li>
+<li>ave_pool, max_pool：全局平均/最大池化</li>
+</ul>
+<p><strong>4) 交叉熵损失</strong>：</p>
+<p>L = -Σ_i Σ_c y_ic log(p_ic)</p>
+<ul>
+<li>y_ic：样本i是否属于类别c的指示变量</li>
+<li>p_ic：预测概率</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>：
+- 来源：VFDB数据库 [46]
+- 处理：CD-HIT去冗余
+- 规模：未提供具体样本数（摘要未给出）
+- 类别：7类VF（黏附、效应物递送系统、运动性、免疫调节等）
+- 划分：训练/验证/测试集（比例未明确，测试集为独立测试集）</p>
+<p><strong>基线方法</strong>：
+- 图结构方法：GCN [48]、GAT [57]、GCN-Residual、GAT-Residual
+- 序列方法：CNN [58]
+- 其他VF识别工具：PBVF [14]、MP3 [15]、VirulentPred [16]、DeepVF [21]、BLAST [60]</p>
+<p><strong>评测指标</strong>：Accuracy (Acc)、Precision (Pre)、Recall、F1 score（加权）</p>
+<p><strong>实验列表</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多分类任务</td>
+<td>SDGT能有效分类7类VF</td>
+<td>与GCN、GAT、CNN等对比</td>
+<td>Acc=76.23%, Pre=79.94%, F1=73.67%</td>
+<td>SDGT优于所有基线</td>
+<td>未证明在更大规模数据集上的泛化性</td>
+<td>Results节、图2d、Table 3</td>
+</tr>
+<tr>
+<td>参数分析</td>
+<td>自注意力池化mask率M影响性能</td>
+<td>M=0.5, 0.6, 0.7, 0.8</td>
+<td>M=0.7时最优</td>
+<td>mask率需调优</td>
+<td>未系统搜索全部超参数</td>
+<td>Results节、图2a</td>
+</tr>
+<tr>
+<td>GCN层数分析</td>
+<td>GCN层数影响性能</td>
+<td>1-4层</td>
+<td>最优层数在文中讨论</td>
+<td>层数需适中</td>
+<td>未与其他图结构（如GIN）对比</td>
+<td>Results节、图2b-c、Note 2</td>
+</tr>
+<tr>
+<td>消融实验</td>
+<td>各模块对性能的贡献</td>
+<td>移除原子分支/位置编码/替换池化</td>
+<td>原子分支移除降0.0493，位置编码移除降0.0203，池化替换降0.0122</td>
+<td>原子级信息最重要，位置编码次之</td>
+<td>未做组合消融</td>
+<td>Table 2</td>
+</tr>
+<tr>
+<td>二元VF识别</td>
+<td>SDGT适用于VF/非VF识别</td>
+<td>与PBVF、MP3、VirulentPred、DeepVF、BLAST对比</td>
+<td>Acc=81.9%, F1=80.7%, 灵敏度81.2%</td>
+<td>SDGT优于现有工具</td>
+<td>测试集规模有限（576+576）</td>
+<td>Results节、Table 4</td>
+</tr>
+<tr>
+<td>跨系统评估</td>
+<td>模型能识别不同分泌系统</td>
+<td>训练集含T2SS/T4SS/T6SS/T7SS，测试集仅T3SS</td>
+<td>文中Note 5讨论</td>
+<td>模型具有一定泛化能力</td>
+<td>未覆盖所有分泌系统类型</td>
+<td>Results节、图4、Note 5</td>
+</tr>
+<tr>
+<td>特征可视化</td>
+<td>学习到的特征具有生物学意义</td>
+<td>t-SNE降维可视化</td>
+<td>同类VF聚集，不同属形成亚群</td>
+<td>特征具有可解释性</td>
+<td>未与实验验证关联</td>
+<td>Results节、图5c、图6c、图7b</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文解决的是毒力因子7类多分类问题，以及二元VF/非VF识别任务。结论仅适用于这两个任务设置。</li>
+<li><strong>数据范围</strong>：数据来自VFDB数据库，经CD-HIT去冗余。结论适用于该数据分布，未在独立外部数据库（如UniProt、PATRIC）上验证。</li>
+<li><strong>结构来源</strong>：所有结构均由ESMFold预测，非实验解析结构。结论依赖于ESMFold的预测质量。</li>
+<li><strong>端到端状态</strong>：SDGT是端到端可训练的，但结构预测（ESMFold）是独立的前置步骤，非联合优化。</li>
+<li><strong>算力成本</strong>：训练50轮需78.76分钟，峰值显存5.98 GiB，单蛋白推理18.54 ms（GPU）。该成本在可接受范围内，但未与基线方法对比计算成本。</li>
+<li><strong>历史数据依赖</strong>：模型依赖VFDB的标注质量，且类别分布不均可能影响少数类性能。</li>
+<li><strong>模型依赖</strong>：性能依赖ESM-2和ESMFold的预训练质量，更换其他语言模型或结构预测器可能影响结果。</li>
+<li><strong>最难情形</strong>：从混淆矩阵（图3a）看，某些类别（如免疫调节）召回率较高（97%），但其他类别可能存在混淆；跨分泌系统泛化（图4）是更具挑战的场景。</li>
+<li><strong>有边界的复述</strong>：SDGT在VFDB来源的数据集上，通过融合ESMFold预测结构与ESM-2序列特征，实现了优于现有方法的VF多分类性能（Acc 76.23%），且消融实验证实原子级信息贡献最大。该结论适用于VFDB数据分布和ESMFold结构质量条件下。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原子级与残基级特征分离学习</td>
+<td>两个分支独立进行特征提取，没有交互学习</td>
+<td>未来可让原子和残基特征在提取过程中相互转化</td>
+<td>Discussion节</td>
+</tr>
+<tr>
+<td>数据不平衡问题未解决</td>
+<td>数据集中各类VF样本数不均，影响少数类性能</td>
+<td>计划进行更细粒度的VF分类研究</td>
+<td>Discussion节</td>
+</tr>
+<tr>
+<td>结构预测依赖</td>
+<td>使用ESMFold预测结构，预测误差可能影响下游分类</td>
+<td>可尝试其他结构预测工具（如AlphaFold 3）作为替代</td>
+<td>Discussion节</td>
+</tr>
+<tr>
+<td>未进行交互式学习</td>
+<td>双驱动特征提取是并行而非交互的</td>
+<td>未来研究将探索原子-残基交互学习机制</td>
+<td>Discussion节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构信息增益未与序列-only方法严格对比</td>
+<td>作者对比了CNN等序列方法，但未对比ESM-2嵌入直接分类（不加结构图）的性能</td>
+<td>若序列嵌入已包含足够判别信息，结构图的贡献可能被高估</td>
+<td>增加「ESM-2嵌入 + MLP」基线，对比有无结构图的性能差</td>
+<td>Table 3</td>
+</tr>
+<tr>
+<td>消融实验仅报告Acc差异，未报告统计显著性</td>
+<td>0.0493的Acc差异可能不显著，尤其测试集规模未知</td>
+<td>无法判断模块贡献是否可靠</td>
+<td>报告多次运行的标准差和p值</td>
+<td>Table 2</td>
+</tr>
+<tr>
+<td>未与最新的蛋白质功能预测方法对比</td>
+<td>未对比ProteinBERT、ProtTrans等专用蛋白质语言模型，也未对比其他结构感知方法（如GearNet、CDConv）</td>
+<td>无法确定SDGT是否代表当前最优</td>
+<td>增加与SOTA方法的对比实验</td>
+<td>Table 3</td>
+</tr>
+<tr>
+<td>跨系统评估设计可能过于简单</td>
+<td>仅将T3SS作为测试集，其他系统作为训练集，但未说明各类别内系统类型的分布</td>
+<td>若训练集中已包含T3SS相关序列，评估意义有限</td>
+<td>明确序列相似性控制，确保测试集与训练集无同源序列</td>
+<td>Results节、图4</td>
+</tr>
+<tr>
+<td>特征聚类分析缺乏定量指标</td>
+<td>聚类结果仅用百分比描述，未报告轮廓系数等聚类质量指标</td>
+<td>无法客观评估特征判别力</td>
+<td>计算聚类质量指标并与基线特征对比</td>
+<td>Results节、图8</td>
+</tr>
+<tr>
+<td>未讨论ESMFold预测结构质量的影响</td>
+<td>不同蛋白质的预测结构质量差异大（pLDDT分数），低质量结构可能引入噪声</td>
+<td>结构质量是pipeline的关键变量</td>
+<td>按pLDDT分层分析性能</td>
+<td>方法节</td>
+</tr>
+<tr>
+<td>类别定义依赖VFDB的生物学分类</td>
+<td>VF类别边界可能模糊（如某些蛋白兼具多种功能）</td>
+<td>分类任务本身可能存在标签噪声</td>
+<td>进行标签鲁棒性分析</td>
+<td>方法节</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>双尺度图表示策略</strong>：同时构建原子级和残基级图，分别捕捉局部化学环境和全局折叠拓扑，融合后用于分类。该策略可迁移至其他蛋白质功能预测任务（如酶功能注释、结合位点预测），也可用于蛋白质-配体相互作用预测。</p>
+</li>
+<li>
+<p><strong>预训练语言模型 + 结构图的融合范式</strong>：用ESM-2序列嵌入初始化残基节点特征，用几何特征（原子类型、距离、角度）初始化原子节点特征，实现「序列语义 + 结构几何」的互补。此范式可迁移至蛋白质设计（序列-结构协同优化）、蛋白质-蛋白质相互作用预测等任务。</p>
+</li>
+<li>
+<p><strong>自注意力池化替代简单池化</strong>：通过图卷积计算注意力分数，自适应加权节点特征，比全局平均/最大池化更有效（Acc提升1.22%）。该设计可迁移至任何图级蛋白质表示学习任务。</p>
+</li>
+<li>
+<p><strong>结构预测工具作为上游模块</strong>：ESMFold预测结构 + 下游图学习的pipeline，避免了依赖实验结构的限制，使方法可扩展到大规模蛋白质组学分析。此思路可迁移至蛋白质功能注释、致病性预测等应用场景。</p>
+</li>
+<li>
+<p><strong>消融实验设计范式</strong>：通过移除关键模块（原子分支、位置编码、注意力池化）量化各组件贡献，为模块设计提供直接证据。该实验设计方法可迁移至其他图神经网络架构的验证。</p>
+</li>
+<li>
+<p><strong>跨系统泛化评估</strong>：通过将特定分泌系统（T3SS）作为测试集，检验模型对未见系统类型的泛化能力。此评估策略可迁移至其他蛋白质功能分类任务，验证模型是否学习到通用特征而非记忆特定序列模式。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>ESM-2 / ESMFold</strong>：与Lin et al. (2023) 的ESM-2和ESMFold直接相关，本文使用这两个工具作为特征提取和结构预测模块。ESM-2是当前蛋白质语言模型的代表，其嵌入已广泛用于下游任务。</li>
+<li><strong>图Transformer</strong>：与Dwivedi &amp; Bresson (2020) 的Graph Transformer架构相关，本文将其适配到蛋白质图结构。</li>
+<li><strong>GCN</strong>：与Kipf &amp; Welling (2017) 的GCN相关，本文的图Transformer中使用了GCN作为基础组件。</li>
+<li><strong>DeepFRI</strong>：与Gligorijević et al. (2021) 的DeepFRI相关，两者均利用结构信息（接触图/图）进行蛋白质功能预测。本文扩展了DeepFRI的思路，引入原子级信息。</li>
+<li><strong>VFDB数据库</strong>：与Liu et al. (2019) 的VFDB数据库直接相关，本文使用该数据库构建数据集。</li>
+<li><strong>蛋白质结构预测进展</strong>：与Jumper et al. (2021) 的AlphaFold2和Abramson et al. (2024) 的AlphaFold3相关，本文的pipeline依赖此类工具提供结构输入。</li>
+<li><strong>候选方向</strong>：本文的双驱动图Transformer思路可迁移至蛋白质-配体结合亲和力预测（结合口袋原子级+残基级建模）、蛋白质稳定性预测、抗原表位预测等任务。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<p><strong>候选1：双驱动图Transformer用于蛋白质-配体结合亲和力预测</strong>
+- <strong>来源局限/观察</strong>：SDGT在蛋白质功能分类中有效融合原子级和残基级信息，而蛋白质-配体相互作用本质上依赖原子级接触和残基级结合口袋拓扑
+- <strong>核心假设</strong>：双尺度图表示可捕捉配体结合所需的局部化学互补性和全局口袋形状
+- <strong>初步方法</strong>：将配体原子加入原子图，构建蛋白质-配体异质图；残基级图保留蛋白质拓扑；双分支图Transformer编码后预测结合亲和力
+- <strong>验证方式</strong>：PDBbind基准数据集，对比现有方法（如GraphDTA、Holoprot）
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选2：结构感知的毒力因子亚型分类（分泌系统类型识别）</strong>
+- <strong>来源局限/观察</strong>：作者仅做了跨系统泛化测试（T3SS vs 其他），但未专门训练分泌系统亚型分类器
+- <strong>核心假设</strong>：不同分泌系统（T2SS/T3SS/T4SS/T6SS/T7SS）的效应蛋白在结构上具有可区分的特征
+- <strong>初步方法</strong>：在SDGT基础上增加细粒度分类头，专门对效应物递送系统类进行亚型分类
+- <strong>验证方式</strong>：构建T2SS-T7SS亚型标注数据集，评估亚型分类准确率
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选3：序列-结构联合预训练策略替代分离式特征提取</strong>
+- <strong>来源局限/观察</strong>：SDGT中ESM-2和ESMFold是分离使用的，未进行联合微调
+- <strong>核心假设</strong>：端到端联合微调序列编码器和结构编码器可学习更一致的表示
+- <strong>初步方法</strong>：将ESM-2和轻量结构编码器联合训练，在VF分类任务上微调
+- <strong>验证方式</strong>：对比分离式vs联合式训练的性能差异
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选4：不确定性感知的VF分类用于高置信度毒力因子发现</strong>
+- <strong>来源局限/观察</strong>：SDGT输出确定性分类，未提供预测置信度
+- <strong>核心假设</strong>：引入不确定性估计可帮助筛选高置信度候选VF，减少假阳性
+- <strong>初步方法</strong>：在SDGT中引入MC-Dropout或深度集成，输出预测分布
+- <strong>验证方式</strong>：在VFDB测试集上评估不确定性校准质量（ECE指标），并验证低不确定性样本的准确率更高
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选5：多尺度图Transformer用于蛋白质-蛋白质相互作用界面预测</strong>
+- <strong>来源局限/观察</strong>：SDGT的双尺度设计可自然扩展至双蛋白质体系
+- <strong>核心假设</strong>：原子级图捕捉界面接触残基的化学互补性，残基级图捕捉亚基整体折叠
+- <strong>初步方法</strong>：构建双蛋白异质图，双分支编码后预测界面残基对
+- <strong>验证方式</strong>：Docking Benchmark 5.5数据集，对比现有PPI预测方法
+- <strong>创新状态</strong>：unverified</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, discussion) without supplementary materials, figures, or tables</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, reproducibility, and claims as supported by the provided text</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose SDGT, a structure-based dual-driven graph transformer framework that classifies bacterial virulence factors (VFs) into seven major classes by integrating residue-level and atom-level graph representations with pretrained protein language model embeddings. They report superior classification performance over sequence-based and structure-based baselines, with accuracy of 0.7623 on an independent test set.</li>
+<li><strong>Visible evidence base</strong> Abstract, Introduction, Materials and methods (sections on graph construction, feature extraction, graph transformer architecture, and prediction), Results (performance metrics, parameter effects, cross-system evaluation, ablation studies, comparisons), Discussion</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures and tables (Fig. S1–S3, Tables S1–S6), algorithm pseudocode (Algorithm S1), detailed dataset statistics, baseline implementation details, and full experimental results referenced in the text but not provided</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a technically plausible architecture that combines graph neural networks with transformer mechanisms for virulence factor classification. The dual-driven design at residue and atom levels is conceptually interesting, and the authors address an important gap by incorporating structural information. However, the provided text lacks sufficient experimental detail to fully evaluate the claims. Key concerns include unclear dataset construction, incomplete baseline comparisons, potential data leakage in the cross-system evaluation, and insufficient statistical rigor. The work may be of interest to the bioinformatics community, but the current evidence does not fully establish the superiority claims.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational biology, particularly those working on protein function prediction, virulence factor identification, and graph-based deep learning for biological structures. The methodological combination of pretrained language models with structural graph representations may also interest the broader machine learning for biology community.</li>
+<li><strong>Major strengths</strong> The manuscript addresses an important and relatively underexplored problem of VF class prediction rather than binary identification. The dual-driven architecture at both residue and atom levels is a thoughtful design that captures multi-scale structural information. The use of pretrained language models for initial feature extraction is current and appropriate. The authors include ablation studies and cross-system evaluations, which strengthen the analysis.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>R1-M1</strong> (Major, Blocking: Yes, Axis: Data and dataset construction): The dataset construction is described only by reference to supplementary materials. The number of samples per class, the source of negative samples for binary classification, and the potential for sequence redundancy between training and test sets are not described in the main text. Without this information, the reported performance cannot be properly interpreted.</li>
+<li><strong>R1-M2</strong> (Major, Blocking: Yes, Axis: Experimental methodology and baselines): The comparison with baseline methods is incomplete. The text states that SDGT outperforms GCN, GAT, GCN-Residual, GAT-Residual, and CNN, but does not describe the hyperparameter tuning, training procedures, or whether these baselines were given comparable structural information. The comparison with state-of-the-art VF identification tools (PBVF, MP3, VirulentPred, DeepVF, BLAST) lacks detail on how these tools were run and whether their default parameters were used.</li>
+<li><strong>R1-M3</strong> (Major, Blocking: Yes, Axis: Cross-system evaluation validity): The cross-system evaluation described in the section "Cross-system evaluation of model on effector delivery system recognition" is concerning. The text states that T3SS was reserved for the test set while other secretion systems were used for training, and vice versa. However, the description is ambiguous about whether the model was retrained for each split or whether the same model was evaluated. If the model was trained once and evaluated on both splits, this could introduce data leakage. The results are only discussed in supplementary Note 5, which is not provided.</li>
+<li><strong>R1-M4</strong> (Major, Blocking: No, Axis: Statistical rigor): The manuscript reports a t-test for comparing SDGT with baselines, but does not describe the number of runs, the variance across runs, or whether the test was paired. The paired bootstrap analysis is mentioned but only shown in a figure without numerical details. The statistical significance of the improvements is not clearly established.</li>
+<li><strong>R1-M5</strong> (Major, Blocking: No, Axis: Interpretability claims): The interpretability analysis in the section "Interpretability of features" is largely descriptive. The clustering analysis shows that certain genera cluster within VF classes, but the authors do not quantify how this relates to classification performance or provide a rigorous evaluation of feature quality beyond visual inspection.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>R1-m1</strong> (Minor, Axis: Clarity and notation): The mathematical notation in the graph transformer section is incomplete. Equations are referenced but not fully displayed in the provided text. The definitions of variables such as (W^{(k)}), (H^{(0)}), and the attention mechanism are not fully specified.</li>
+<li><strong>R1-m2</strong> (Minor, Axis: Reproducibility): The manuscript states that code and datasets are available on GitHub, which is positive. However, the specific versions of ESM-2 and ESMFold used, the exact training/validation/test split ratios, and the random seed are only partially described.</li>
+<li><strong>R1-m3</strong> (Minor, Axis: Writing quality): The phrase "identifying of VF classes" in the abstract is grammatically awkward and should be revised. The manuscript would benefit from careful proofreading.</li>
+<li><strong>R1-m4</strong> (Minor, Axis: Discussion of limitations): The discussion of limitations is brief. The authors mention the lack of interactive learning between atom and residue levels and the data imbalance issue, but do not discuss potential solutions or the impact of these limitations on practical applications.</li>
+<li><strong>R1-m5</strong> (Minor, Axis: Related work): The introduction could more thoroughly discuss recent deep learning approaches for protein function prediction that also use structural information, to better position the novelty of SDGT.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: Moderate. The combination of dual-driven graph transformer with pretrained language models for VF classification is novel, but the individual components are established. The problem of VF class prediction is relatively underexplored, which adds some originality.</li>
+<li>Scientific importance: Moderate. VF identification is important for understanding pathogenesis and developing antivirulence strategies. However, the practical impact of improved classification accuracy is not clearly demonstrated.</li>
+<li>Interdisciplinary readership: Limited. The work is primarily of interest to computational biologists and bioinformaticians. The biological insights are not sufficiently developed to attract a broader microbiology audience.</li>
+<li>Technical soundness: The architecture is plausible, but the experimental validation is incomplete. The lack of detailed dataset description, baseline comparisons, and statistical rigor prevents a full assessment.</li>
+<li>Readability for nonspecialists: The manuscript is written for a specialized audience. The methods section assumes familiarity with graph neural networks and transformer architectures. The abstract is accessible but the main text would be challenging for nonspecialists.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript addresses an interesting problem with a plausible approach, but the missing experimental details and potential methodological issues prevent a positive recommendation. The authors should provide the supplementary materials, clarify the dataset construction and cross-system evaluation, and strengthen the statistical analysis.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that SDGT "significantly enhances" classification performance is not supported without statistical significance testing details.</li>
+<li>The claim that SDGT "efficiently identify VFs at both the residue and atom levels" is not fully supported by the t-SNE visualizations alone.</li>
+<li>The claim that the model possesses "excellent specificity and similarity feature learning power" is based on descriptive clustering analysis without quantitative evaluation.</li>
+<li>The performance comparison with state-of-the-art tools (Table 4) cannot be evaluated without details on the experimental setup.</li>
+<li>The cross-system evaluation results are referenced only in supplementary materials and cannot be assessed from the provided text.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

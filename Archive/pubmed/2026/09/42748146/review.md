@@ -1,0 +1,63 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors combine experimental Chemical Shift Covariance Analysis (CHESCA) with computational Chemically Accurate Contact Response Analysis (ChACRA) to map an allosteric network that couples PEP binding in the C-terminal EIC domain to closure of the N-terminal EIN domain in bacterial Enzyme I. They report a dominant cluster of residues whose chemical shifts correlate with the closed-state population derived from small-angle X-ray scattering, and an atomistic interaction network from Hamiltonian replica exchange molecular dynamics simulations. They conclude that EI closure is governed by an extended allosteric network and that convergence of the two methods provides mutual validation.
+- **Visible evidence base** Abstract text only. No experimental details, statistical measures, simulation parameters, or validation metrics are provided.
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, supplementary information, experimental protocols, simulation convergence criteria, CHESCA clustering details, SAXS data and fitting, mutant library construction and characterization, and any control experiments.
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting integrative approach to a well-known problem in bacterial phosphotransferase system enzymology. The combination of NMR chemical shift covariance with contact-response analysis of simulations is conceptually appealing. However, the abstract alone provides insufficient detail to evaluate the rigor of either method, the statistical significance of the correlations, or the robustness of the proposed allosteric network. The central claim of convergence between CHESCA and ChACRA is stated but not substantiated with quantitative evidence. The work may be of interest to the structural biology and allostery communities, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Structural biologists studying large domain rearrangements in multi-domain enzymes, researchers in the allostery field interested in integrative experimental-computational approaches, and investigators of the bacterial phosphoenolpyruvate:sugar phosphotransferase system. The proposed general framework for resolving allostery could attract method developers in NMR and molecular dynamics.
+- **Major strengths** The study addresses a mechanistically important and long-standing question. The combination of two independent methods reporting on different physical observables is a sound conceptual strategy. The use of a mutant library to tune the conformational equilibrium is a thoughtful experimental design. The claim of a spatially continuous network rather than a single contact is a testable and mechanistically meaningful hypothesis.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** CHESCA identifies a dominant cluster of residues whose chemical shifts correlate with the SAXS-derived population of the closed state, revealing long-range energetic coupling.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not report the number of residues in the cluster, the magnitude or statistical significance of the correlations, the number of mutants used, or how the SAXS-derived populations were obtained and validated. Without these details, the claim of long-range energetic coupling cannot be assessed.
+  - **Why it matters** The central experimental pillar of the study rests on the quality and significance of the CHESCA-SAXS correlation. If the correlation is weak, driven by a few outliers, or confounded by mutation-induced structural changes, the allosteric interpretation would be unsupported.
+  - **Resolution test** Provide the correlation coefficients with confidence intervals, the number of residues in the cluster, the number of mutants, and a demonstration that the mutations do not perturb the local structure beyond the intended equilibrium shift. Show that the correlation is robust to removal of individual mutants.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** ChACRA analysis of Hamiltonian replica exchange molecular dynamics simulations identifies a spatially continuous network of coupled interactions spanning the PEP-binding pocket, interdomain linker, domain interfaces, and dimer contacts.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No information is given on the force field, simulation length, number of replicas, convergence criteria, or how the contact-response analysis defines and validates a "coupled interaction." The claim of spatial continuity is central to the conclusion but cannot be evaluated without these details.
+  - **Why it matters** Molecular dynamics-based network inference is highly sensitive to sampling quality and analysis choices. Without convergence evidence and a clear definition of coupling, the identified network may be an artifact of insufficient sampling or arbitrary thresholds.
+  - **Resolution test** Report simulation parameters, convergence metrics (e.g., replica exchange statistics, block averaging), and a sensitivity analysis of the network to thresholds and force field choice. Provide a comparison to a control simulation without ligand to demonstrate that the network is ligand-responsive.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim-evidence alignment
+  - **Claim pointer** CHESCA and ChACRA report on different physical observables; their convergence provides experimental validation of an atomistic interaction map and atomic-resolution interpretation of sparse NMR correlations.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract asserts convergence but provides no quantitative measure of agreement between the two methods. It is unclear whether the same residues, the same interaction pairs, or the same network topology are identified by both approaches, and what threshold defines "convergence."
+  - **Why it matters** The claim of mutual validation is the key novelty of the study. If the agreement is qualitative or partial, the conclusion that the atomistic map is experimentally validated would be overstated.
+  - **Resolution test** Provide a quantitative comparison, such as overlap coefficients between CHESCA-identified residues and ChACRA-identified network nodes, and a statistical test against random overlap. State the criteria for declaring convergence.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract uses acronyms (CHESCA, ChACRA, SAXS, PEP, EIC, EIN) without defining them in the abstract itself, which may hinder readers outside the immediate field.
+  - **Required correction** Spell out each acronym at first use in the abstract, or provide a brief parenthetical definition.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scientific importance framing
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract claims a "general framework for resolving allostery in complex biomolecular systems" but does not specify what aspects are generalizable beyond EI or what limitations remain.
+  - **Required correction** Add one sentence specifying the scope of generalizability and any known limitations of the approach.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient quantitative or methodological detail to establish the central claims of long-range coupling, network continuity, and cross-method convergence.
+- **Assessment against Nature-style criteria** Originality: The combination of CHESCA and ChACRA is conceptually novel and potentially original. Scientific importance: The problem of allosteric domain closure in EI is of interest, but the broader significance depends on the generalizability of the framework, which is not yet demonstrated. Interdisciplinary readership: The work bridges NMR, SAXS, and simulation, which could appeal to a broad audience, but the abstract is too technical for nonspecialists. Technical soundness: Not assessable from the abstract; the methods and validation are not described in sufficient detail. Readability for nonspecialists: The abstract is dense and acronym-heavy, limiting accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual approach is promising, and the study could be supportive if the technical concerns regarding statistical rigor, simulation convergence, and quantitative cross-method agreement are resolved in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that CHESCA reveals "long-range energetic coupling" is unsupported without correlation statistics and mutant characterization.
+- The claim that ChACRA identifies a "spatially continuous network" is unsupported without simulation convergence and network definition details.
+- The claim that convergence of CHESCA and ChACRA provides "experimental validation" is unsupported without a quantitative overlap measure.
+- The claim of a "general framework for resolving allostery" is not assessable from the abstract alone.

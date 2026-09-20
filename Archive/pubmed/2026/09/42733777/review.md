@@ -1,0 +1,94 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, data description, methods, tables referenced but not fully visible)
+- **Assessment boundary** Scientific soundness, methodological transparency, data utility, and cross-species comparative claims of the molecular docking dataset
+- **Shared manuscript claim summary** The authors present a molecular docking dataset comparing ligand affinities of selected environmental pollutants and reference agonists toward human and zebrafish variants of the aryl hydrocarbon receptor (AhR) and the Keap1 oxidative stress sensor. The dataset includes docking poses, binding energies, and sequence alignments, and is intended to support cross-species extrapolation in environmental toxicology.
+- **Visible evidence base** Abstract, full data description sections for Keap1 and AhR docking, tables 1–8 (referenced, partially visible as placeholders), figures 1–13 (referenced, not all visible), methods summary, supplementary file descriptions
+- **Missing materials affecting confidence** Actual table data (Tables 3–8), figure images, supplementary figures S1–S42, supplementary tables S1, SI9–SI11 files, and the full methods section in the supplementary manuscript were not provided. These are essential for verifying quantitative claims.
+
+## Reviewer
+- **Overall assessment** This data article presents a potentially useful docking dataset for cross-species comparison of two key toxicity pathways. The conceptual framing is relevant and timely, and the inclusion of both AlphaFold-predicted and experimental structures for validation is commendable. However, the manuscript as provided has several issues that limit its current utility: (1) key quantitative data are not visible in the provided material, making the core claims unverifiable; (2) the docking methodology is described at a level of brevity that may compromise reproducibility; (3) some interpretive claims appear to exceed what docking data alone can support; and (4) there are minor inconsistencies in the text that need correction. The dataset has potential value for the ecotoxicology and computational toxicology communities, but the case is not fully established from the provided evidence.
+- **Who would be interested in the results, and why** Environmental toxicologists and regulators interested in cross-species extrapolation of receptor-mediated toxicity pathways; computational biologists developing or benchmarking docking workflows; researchers working on adverse outcome pathways (AOPs) involving AhR and Keap1/Nrf2; and scientists involved in effect-based monitoring of water quality who need to understand the relevance of mammalian bioassay results for aquatic species.
+- **Major strengths** 1. The cross-species comparative design (human vs. zebrafish) addresses a genuine knowledge gap in environmental toxicology. 2. The inclusion of multiple zebrafish paralogs (zfKeap1a/b, zfAhR1a/1b/2) adds biological nuance. 3. The use of AlphaFold-predicted structures with validation against partial crystal structures is a sound approach. 4. The dataset is positioned as reusable input/output material, which is appropriate for a data article. 5. The consideration of Keap1 dimerisation effects on binding site accessibility shows biological awareness.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence availability
+  - **Claim pointer** The manuscript claims to present a complete dataset with binding energies, poses, and sequence alignments, with specific quantitative values cited throughout (e.g., binding energies of −6.6, −6.3, −6.0 kcal/mol for tBHQ; homology percentages of 73%, 51%, 42%, 32%, etc.)
+  - **Evidence pointer** Tables 3–8, Figures 1–13, SI9–SI11, supplementary figures S1–S42
+  - **Concern** The actual data tables and figures are not visible in the provided material. All quantitative claims (binding energies, distances, homology percentages) are presented as text but cannot be verified against the underlying data. The tables are shown as placeholders ("Image, table 3 dummy alt text"), and figure images are not included.
+  - **Why it matters** For a data article, the data themselves are the primary product. Without access to the tables and figures, the core claims of the manuscript cannot be assessed for accuracy, completeness, or internal consistency. The reader cannot determine whether the docking results support the stated conclusions.
+  - **Resolution test** Provide the full tables (3–8) with all binding energy values, poses, and distances; provide all figure images; provide SI9–SI11 files. The claims should then be checked against these data for consistency.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological reproducibility
+  - **Claim pointer** The methods state that docking was performed using AutoDock Vina in PyMOL, with grids defined "in proximity to the points of interest" and that "for parameter optimisation in Avogadro, see section 2.6.1 of the SM."
+  - **Evidence pointer** Section 4.3 (Docking), Section 4.1 (Ligand preparation), Section 4.2 (Receptor preparation)
+  - **Concern** The methods description is too brief to be reproducible. Key parameters are not specified: exhaustiveness, number of runs, grid box dimensions (except for AhR where an 18×18×18 Å box is mentioned), grid center coordinates, receptor preparation steps (protonation, charge assignment), ligand preparation details, and the specific version of AutoDock Vina used. The authors defer to the supplementary manuscript for details, but this is not accessible in the provided material.
+  - **Why it matters** Reproducibility is a core requirement for a dataset intended for reuse. Without complete methodological details, other researchers cannot replicate the docking or meaningfully benchmark against it. The scientific value of the dataset is substantially reduced if the methods cannot be independently verified.
+  - **Resolution test** Provide the full methods section (from the SM) with all docking parameters, grid definitions, and preparation steps. The methods should be complete enough for an independent researcher to replicate the docking without additional information.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretive overreach
+  - **Claim pointer** The manuscript states that "binding affinities near Cys151 are qualitatively weaker in zebrafish variants than in human variants" and that "Cys273 and 288 are missing within one zebrafish variant. Therefore, their electrophile-sensing importance might hypothetically be reduced within zebrafish."
+  - **Evidence pointer** Section 3.1.2.3 (MZC molecular docking results - summary), Section 3.1.1.5 (tBHQ molecular docking results - summary)
+  - **Concern** The manuscript draws functional conclusions (e.g., reduced electrophile-sensing importance, susceptibility hierarchies) from docking scores alone. Docking binding energies are approximate and do not account for protein flexibility, solvation effects, or cellular context. The leap from in silico binding affinity to biological function is not adequately caveated. The statement about reduced electrophile-sensing importance in zebrafish is speculative and goes beyond what the data can show.
+  - **Why it matters** Overinterpretation of docking results can mislead readers, particularly regulators who may not be familiar with the limitations of in silico methods. The manuscript should clearly distinguish between computational predictions and experimentally validated findings.
+  - **Resolution test** Revise the language to clearly frame all functional interpretations as hypotheses requiring experimental validation. Add explicit caveats about the limitations of docking-based affinity predictions. Consider softening the claim about reduced electrophile-sensing importance.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Validation adequacy
+  - **Claim pointer** The manuscript states that "AlphaFold-predicted structures are consistent with docking to partial X-ray structures of hKeap1, indicating that the predicted Keap1 models are relevant."
+  - **Evidence pointer** Section 3.1.1.5 (tBHQ molecular docking results - summary), Section 3.1.2.3 (MZC molecular docking results - summary)
+  - **Concern** The validation of AlphaFold structures against crystal structures is mentioned but not described in detail. It is unclear how many crystal structures were used, which regions were compared, what metrics were used to assess consistency (e.g., RMSD, binding pose overlap), and whether the validation was performed for all receptor variants or only hKeap1. The statement that docking results are "consistent" is vague.
+  - **Why it matters** The reliability of the dataset depends on the quality of the protein structures used. If the AlphaFold structures are not adequately validated, the docking results may be unreliable. The validation approach needs to be transparent and quantitative.
+  - **Resolution test** Provide details of the validation procedure, including the specific crystal structures used, the comparison metrics, and the results. If validation was only performed for hKeap1, state this limitation explicitly and discuss its implications for the zebrafish structures.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Data presentation
+  - **Affected element** Table 7
+  - **Evidence pointer** Section 3.1.2.3
+  - **Issue** Table 7 is described as showing "binding energy differences within the proximity of canonical cysteine 151 in Δ kcal/mol between investigated Keap1 variants." The text states that the differences are "identical across both investigated ligands" (1.1/1.2 and 0.7 Δ kcal/mol), but the table itself is not visible. The notation "1.1/1.2" is ambiguous.
+  - **Required correction** Clarify the notation in the text and ensure Table 7 is clearly presented with all values and units specified.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Internal consistency
+  - **Affected element** Section 3.2 (Docking of various ligands to the AhR)
+  - **Evidence pointer** Section 3.2, Table 8
+  - **Issue** The text states that for zfAhR1a, TCDD displays the lowest binding affinity, but the summary bullet states "Except for zfAhR1a, the following susceptibility hierarchy was computed regarding the absolute best binding energy pose: DAI > TCDD > TBDZ > CLB." This is consistent, but the text also states "CLB shows the weakest affinity to all AhR variants, with one exception. For zfAhR1a, TCDD displays the lowest binding affinity to the receptor." The phrasing is slightly confusing and could be streamlined.
+  - **Required correction** Rephrase for clarity, e.g., "CLB shows the weakest affinity to most AhR variants, with the exception of zfAhR1a, where TCDD shows the lowest affinity."
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reference accuracy
+  - **Affected element** Section 4.1 (Ligands and ligand preparation)
+  - **Evidence pointer** Section 4.1
+  - **Issue** The CAS number for metazachlor is given as "67,129-08–2" which contains a comma and an en dash. The correct format should be "67129-08-2". Additionally, the CAS number for TCDD is listed as "1746–01–6" which is correct, but the same number is also listed for thiabendazole, which is incorrect (thiabendazole CAS is 148-79-8).
+  - **Required correction** Correct the CAS numbers for metazachlor and thiabendazole.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Figure quality
+  - **Affected element** Figures 1–13
+  - **Evidence pointer** All figures
+  - **Issue** The figure images are not visible in the provided material. The figure captions suggest informative content, but the quality, clarity, and labeling of the figures cannot be assessed.
+  - **Required correction** Ensure all figures are high-resolution, clearly labeled, and include all necessary annotations (e.g., binding site locations, distances, color codes).
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Section 3.1 (Molecular docking of tBHQ and MZC to keap1)
+  - **Evidence pointer** Section 3.1
+  - **Issue** The section title uses "keap1" in lowercase, while the rest of the manuscript uses "Keap1." This is inconsistent.
+  - **Required correction** Standardize the capitalization of Keap1 throughout the manuscript.
+- **Technical failings that need to be addressed before the case is established** 1. The full dataset (tables, figures, SI files) must be made available for verification. 2. The docking methodology must be described in sufficient detail for reproducibility. 3. The validation of AlphaFold structures against experimental structures needs to be documented quantitatively. 4. The CAS number errors must be corrected. 5. The interpretive claims about biological function should be tempered with appropriate caveats.
+- **Assessment against Nature-style criteria** Originality: Moderate. Cross-species docking comparisons for these pathways are not entirely novel, but the specific combination of targets, ligands, and the inclusion of multiple zebrafish paralogs adds some originality. Scientific importance: Moderate. The dataset addresses a relevant question in environmental toxicology, but its impact depends on the quality and completeness of the data, which cannot be fully assessed from the provided material. Interdisciplinary readership: Moderate. The dataset will interest environmental toxicologists, computational chemists, and potentially regulators, but the appeal is somewhat narrow. Technical soundness: Currently unverifiable. The methodology appears reasonable in outline, but key details and data are missing. Readability for nonspecialists: Good. The manuscript is generally well-written and accessible, with clear explanations of the biological context.
+- **Recommendation posture** Supportive if technical concerns are resolved. The dataset has clear potential value, and the conceptual framing is sound. However, the case is not currently established from the provided evidence due to the unavailability of the core data and the brevity of the methods. The authors should be encouraged to resubmit after addressing the concerns above.
+
+## Risk / unsupported claims
+- The claim that "binding affinities near Cys151 are qualitatively weaker in zebrafish variants than in human variants" is unsupported without the full docking data and appropriate statistical or comparative analysis.
+- The statement that "Cys273 and 288 are missing within one zebrafish variant. Therefore, their electrophile-sensing importance might hypothetically be reduced within zebrafish" is speculative and goes beyond the data.
+- The claim that "AlphaFold-predicted structures are consistent with docking to partial X-ray structures" is unverifiable without details of the validation procedure and results.
+- The hierarchy of binding affinities across receptor variants (hAhR > zfAhR1b > zfAhR2 > zfAhR1a) is presented as a robust finding, but its significance cannot be assessed without error estimates or statistical analysis.
+- The statement that "all receptor variants in zebrafish seem susceptible to the ligands identified within the environmental samples" is a functional interpretation that docking data alone cannot support.

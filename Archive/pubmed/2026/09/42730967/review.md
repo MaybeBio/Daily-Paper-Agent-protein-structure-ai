@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and methods as presented in the abstract; no full-text methods, figures, tables, or supplementary materials were available for evaluation
+- **Shared manuscript claim summary** The authors report the first comparative computational study of zebrafish RAB1A and RAB1B in GDP- and GTP-bound states, using homology modeling and 1-microsecond all-atom molecular dynamics simulations. They claim high sequence and structural conservation between isoforms, a Tyr-to-Phe substitution in the RAB1B Switch I region, and greater stability, reduced fluctuations, and more compact conformations for GDP-bound complexes relative to GTP-bound systems. They further claim these findings provide molecular insights supporting zebrafish as a translational model for Rab1-related biology.
+- **Visible evidence base** Abstract text only; no figures, tables, numerical data, or methodological details beyond those summarized in the abstract
+- **Missing materials affecting confidence** Full manuscript text, all figures and tables, simulation parameter details, validation results, trajectory analysis outputs, and any statistical analyses. Without these, quantitative claims cannot be verified.
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially useful comparative study of two zebrafish Rab1 isoforms. The topic is of interest to the vesicle trafficking and model organism communities. However, the evidence base available for review is limited to the abstract, which precludes verification of the central quantitative claims. The novelty claim of "first comparative computational investigation" is reasonable but requires confirmation against existing literature. The methodological approach is standard for the field, and the reported findings are internally consistent. The main limitation is that the abstract does not provide sufficient quantitative detail to assess the robustness of the simulation results or the significance of the observed differences between isoforms and nucleotide states.
+- **Who would be interested in the results, and why** Researchers studying small GTPase structure and dynamics, particularly Rab proteins and their roles in vesicular trafficking. Investigators using zebrafish as a model organism for neurodegenerative disease or cancer research would also be interested, as the study provides structural context for interpreting Rab1-related phenotypes in this system. Computational biologists working on homology modeling and MD simulations of GTPases may find the methodological pipeline useful.
+- **Major strengths** The study addresses a genuine gap in the literature, as zebrafish Rab1 isoform dynamics have not been previously characterized. The use of long-timescale simulations (1 microsecond) with duplicate runs is appropriate for capturing conformational dynamics. The multi-tool validation approach for homology models is thorough. The comparative design across two isoforms and two nucleotide states provides a systematic framework.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that GDP-bound complexes exhibited greater structural stability, reduced residue fluctuations, and more compact conformations than GTP-bound systems
+  - **Evidence pointer** Abstract, Results section (location not provided)
+  - **Concern** The abstract states these differences were observed but provides no quantitative values, no measures of uncertainty, and no statistical assessment. It is unclear whether the differences between GDP- and GTP-bound states are of meaningful magnitude relative to simulation noise, and whether the duplicate runs produced consistent results.
+  - **Why it matters** The central conclusion of the study rests on these comparative stability claims. Without quantitative support, the reader cannot judge whether the observed differences are robust or within expected variability for MD simulations of this type.
+  - **Resolution test** Provide numerical values for RMSD, RMSF, and Rg for each system, with standard deviations or standard errors across duplicate runs, and appropriate statistical tests (e.g., block averaging or bootstrapping) demonstrating significant differences between GDP- and GTP-bound states.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that the Tyr-to-Phe substitution within the RAB1B Switch I region is characteristic and functionally relevant
+  - **Evidence pointer** Abstract, Sequence and structural analyses (location not provided)
+  - **Concern** The abstract identifies this substitution but does not explain its potential functional consequences. It is unclear whether this substitution is unique to zebrafish, conserved across other species, or known to affect Switch I dynamics. The relevance of this finding to the overall conclusions is not articulated.
+  - **Why it matters** The substitution is presented as a notable finding, but without functional interpretation or comparison to other species, its significance remains unclear. If this substitution is common across vertebrates, it would not be a zebrafish-specific feature.
+  - **Resolution test** Provide a multiple sequence alignment showing the conservation of this position across species, and discuss the known or predicted effects of Tyr-to-Phe substitution on Switch I conformational behavior, with supporting references or additional simulation analysis.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** The claim that homology models were generated using human Rab1 structures as templates and validated using multiple tools
+  - **Evidence pointer** Abstract, Methods (location not provided)
+  - **Concern** The abstract lists validation tools but provides no validation scores or criteria for acceptability. It is unclear whether the models met standard quality thresholds and whether the template selection was optimal.
+  - **Why it matters** The reliability of all downstream simulation results depends on the quality of the starting structures. Without reporting validation metrics, the reader cannot assess whether the models are suitable for MD simulation.
+  - **Resolution test** Report the key validation metrics (e.g., PROCHECK Ramachandran statistics, ERRAT score, Verify3D score, ProSA Z-score, QMEANDisCo score) for each model, and state the acceptance criteria used.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, Methods
+  - **Evidence pointer** Abstract, Methods (location not provided)
+  - **Issue** The abstract states simulations were performed "in duplicate for 1 micros" but does not specify whether these are independent replicates with different initial velocities or simply two runs. The level of independence affects the interpretation of variability.
+  - **Required correction** Clarify whether the duplicate runs used different random seeds or initial velocity assignments, and state the equilibration protocol.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract, Results
+  - **Evidence pointer** Abstract, Results (location not provided)
+  - **Issue** The abstract mentions principal component analysis, dynamic cross-correlation matrix analysis, and free energy landscape calculations but does not summarize any findings from these analyses. The reader cannot assess what these additional analyses contributed.
+  - **Required correction** Include a brief summary of the key findings from these analyses, or state explicitly that they were consistent with the primary stability results.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Context
+  - **Affected element** Abstract, Introduction
+  - **Evidence pointer** Abstract, Context (location not provided)
+  - **Issue** The abstract states the isoforms are "implicated in neurodegenerative diseases and cancer" but does not specify which diseases or provide any mechanistic link to the structural findings.
+  - **Required correction** Briefly specify the relevant diseases and, if possible, connect the structural observations to disease-relevant functional implications.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (quantitative support for stability differences), R1-M2 (functional relevance of the Tyr-to-Phe substitution), R1-M3 (model validation metrics)
+- **Assessment against Nature-style criteria** 
+  - Originality: Moderate. The study addresses an uncharacterized system, but the approach is standard and the findings are incremental rather than conceptually novel.
+  - Scientific importance: Moderate. The results may be useful for the zebrafish and Rab GTPase communities but do not fundamentally alter current understanding of Rab1 function or dynamics.
+  - Interdisciplinary readership: Limited. The study is primarily of interest to computational structural biologists and researchers working on Rab proteins or zebrafish models.
+  - Technical soundness: Not fully assessable from the abstract. The methodological pipeline is appropriate, but quantitative results and validation metrics are missing.
+  - Readability for nonspecialists: The abstract is clearly written and accessible, though some domain-specific terms (e.g., Switch I, QMEANDisCo) are used without explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a reasonable study, but the central quantitative claims cannot be verified without the full manuscript. If the full paper provides the missing quantitative data, validation metrics, and functional interpretation, the study could be considered a solid contribution to the field. Supportive if technical concerns are resolved.
+
+## Risk / unsupported claims
+- The claim that GDP-bound complexes exhibited greater stability, reduced fluctuations, and more compact conformations than GTP-bound systems is unsupported in the abstract due to lack of quantitative data.
+- The claim that the Tyr-to-Phe substitution is "characteristic" is unsupported without comparative sequence analysis across species.
+- The claim that the findings "support the use of Danio rerio as a translational model" is an extrapolation not directly supported by the structural data presented.
+- The novelty claim of "first comparative computational investigation" cannot be verified without a literature search, though it is plausible.
+- All claims regarding simulation results are unverifiable without access to figures, tables, and numerical data.

@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TRPM8 virtual screening: the essential role of target-specific, inactive-enriched machine-learning scoring functions. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">5</span>
+    <div>
+      <h1>TRPM8 virtual screening: the essential role of target-specific, inactive-enriched machine-learning scoring functions.</h1>
+      <div class="meta">James, Nivya; Ballester, Pedro J</div>
+      <div class="meta muted">
+        
+        <span class="journal">Digital discovery</span>
+        · 2026-09-19
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42761640/">原文</a>
+      </div>
+      <p class="one-liner">该文针对TRPM8离子通道建立结构基虚拟筛选基准，评估机器学习打分函数，虽涉及蛋白结构对接和ML方法，但核心是药物筛选而非蛋白质结构计算建模，且对象为离子通道，算法可部分迁移至蛋白体系。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The Transient Receptor Potential Melastatin 8 (TRPM8) ion channel is an emerging therapeutic target implicated in pain, inflammation and other disorders. While structure-based virtual screening (VS) is widely used in drug discovery, the effectiveness of generic and target-specific machine-learning (ML) scoring functions (SFs) for ion channels such as TRPM8 remains to be investigated. We established the first comprehensive structure-based VS benchmark for TRPM8. This evaluates classical docking SFs, generic ML SFs and target-specific ML models retrospectively across multiple TRPM8 protein conformations and docking protocols. The evaluation revealed that generic ML rescoring at most provided modest and conformation-dependent improvements over classical docking on this target. Target-specific ML models based only on protein-ligand interaction fingerprints improved early enrichment on test sets when regression algorithms were employed. However, performance remained sensitive to protein conformation choice and chemical dissimilarity. Systematic evaluation of feature representations showed that combining structure-derived interaction features with ligand-based descriptors enhanced enrichment under selected docking tool-protein conformation combinations. Critically, presenting the learning algorithm with many more negative training instances, via inactive-enriched training, strongly reduced false positives. This also resulted in markedly improved generalization to chemically dissimilar test sets for structure-based models. By contrast, ligand-only QSAR models collapsed under the same class-imbalanced regime. Under inactive-enriched training, PLEC-based support vector regression (SVR) models achieved robust and strong VS performance, highlighting the critical role of learning the vast diversity of inactive molecules better during model training in developing predictive target-specific ML SFs for TRPM8 VS.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">瞬时受体电位M8（TRPM8）离子通道是一个新兴的治疗靶点，涉及疼痛、炎症及其他疾病。尽管基于结构的虚拟筛选（VS）在药物发现中广泛应用，但通用及靶标特异性机器学习（ML）打分函数（SFs）对TRPM8等离子通道的有效性仍有待研究。我们建立了首个针对TRPM8的全面基于结构的VS基准。该基准回顾性评估了经典对接SF、通用ML SF及靶标特异性ML模型，涵盖多种TRPM8蛋白构象和对接协议。评估结果显示，通用ML重打分在该靶标上最多仅提供适度的、依赖构象的改进，优于经典对接。基于仅蛋白-配体相互作用指纹的靶标特异性ML模型，在采用回归算法时，提高了测试集上的早期富集度。然而，性能仍对蛋白构象选择和化学不相似性敏感。对特征表示的系统评估表明，将结构衍生的相互作用特征与基于配体的描述符相结合，在选定的对接工具-蛋白构象组合下增强了富集度。关键的是，通过非活性富集训练，向学习算法提供更多负训练实例，显著减少了假阳性。这也导致基于结构的模型在化学不相似测试集上的泛化能力显著提升。相比之下，仅基于配体的QSAR模型在同一类不平衡条件下崩溃。在非活性富集训练下，基于PLEC的支持向量回归（SVR）模型实现了稳健且强大的VS性能，突显了在模型训练期间更好地学习大量非活性分子多样性，对于开发预测性靶标特异性ML SF以用于TRPM8 VS的关键作用。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: TRPM8 virtual screening: the essential role of target-specific, inactive-enriched machine-learning scoring functions</li>
+<li><strong>作者与单位</strong>: James, Nivya; Ballester, Pedro J.（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>: Digital Discovery</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-09-19）</li>
+<li><strong>论文类型</strong>: 研究论文（benchmark + 方法评估）</li>
+<li><strong>领域</strong>: 计算机辅助药物设计（CADD）；结构基虚拟筛选（SBVS）；机器学习打分函数；离子通道靶标</li>
+<li><strong>关键词</strong>: TRPM8；virtual screening；machine learning scoring functions；inactive-enriched training；interaction fingerprints；PLEC</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1039/d6dd00399k</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供（benchmark 数据集构建细节见正文，但未在摘要中给出公开链接）</li>
+<li><strong>阅读日期</strong>: 2026-09-19（基于 URL 访问日期推断，实际阅读日期未提供）</li>
+<li><strong>该文在课题方向中的位置</strong>: 本文属于「结构预测/构象采样 × 分子对接 × ML 打分函数」交叉点，聚焦于靶标特异性 ML-SF 在离子通道 TRPM8 上的 VS 性能，核心贡献是首个 TRPM8 结构基 VS benchmark，并系统评估了 inactive-enriched 训练策略对泛化能力的影响。对蛋白质结构相关计算研究（尤其构象选择、相互作用指纹特征、类不平衡训练）有直接方法学参考价值。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对 TRPM8 离子通道，本文构建了首个结构基 VS benchmark，系统比较经典对接 SF、通用 ML-SF 与靶标特异性 ML 模型，发现 inactive-enriched 训练（大量负样本）能显著降低假阳性并提升对化学不相似测试集的泛化，其中 PLEC 特征 + SVR 模型表现最佳，而仅用配体描述的 QSAR 模型在同类不平衡下崩溃。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 对于 TRPM8 这类离子通道靶标，通用与靶标特异性 ML 打分函数在结构基虚拟筛选中的表现如何？如何训练才能获得稳健的早期富集与泛化？</li>
+<li><strong>为什么重要</strong>: TRPM8 是疼痛、炎症等疾病的潜在治疗靶点；VS 是发现其配体的常用手段，但 ML-SF 在离子通道上的系统评估缺失，且类不平衡（活性 vs 非活性）问题普遍被忽视。</li>
+<li><strong>现有方法为何不足</strong>: 经典对接 SF 精度有限；通用 ML-SF（如基于通用训练集）在特定靶标上可能过拟合或迁移差；靶标特异性模型常因训练集小、负样本不足或特征选择不当而泛化差。</li>
+<li><strong>精确研究问题</strong>: Can target-specific ML scoring functions, trained with inactive-enriched data and structure-derived interaction features, achieve robust early enrichment and generalization to chemically dissimilar test sets in TRPM8 structure-based virtual screening?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：以下脉络为「经外部核验」的领域常识 + 本文框架的定位）
+- <strong>阶段 1: 经典对接打分函数</strong>（如 Glide、AutoDock Vina 等）。优点：快速、无需训练；局限：对结合自由能近似粗糙，富集率有限。
+- <strong>阶段 2: 通用 ML 打分函数</strong>（如 RF-Score、NNScore 等）。优点：从已知复合物学习结合倾向；局限：训练集覆盖的靶标空间有限，对特定靶标（如离子通道）可能不适用。
+- <strong>阶段 3: 靶标特异性 ML-SF</strong>。优点：针对单一靶标优化；局限：需要足够活性与非活性数据，负样本选择与特征工程影响大。
+- <strong>本文位置</strong>: 首次在 TRPM8 上建立系统 benchmark，将上述三类方法放在同一协议下比较，并引入 inactive-enriched 训练作为关键改进，强调负样本多样性对泛化的决定性作用。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通用 ML-SF 在 TRPM8 上提升有限</td>
+<td>仅提供 modest 且构象依赖的改进</td>
+<td>通用模型训练集与 TRPM8 化学空间/结合位点差异大</td>
+<td>摘要：generic ML rescoring at most provided modest and conformation-dependent improvements</td>
+</tr>
+<tr>
+<td>靶标特异性模型对构象选择敏感</td>
+<td>不同蛋白构象下富集率波动大</td>
+<td>对接构象质量影响相互作用指纹质量</td>
+<td>摘要：performance remained sensitive to protein conformation choice</td>
+</tr>
+<tr>
+<td>对化学不相似测试集泛化差</td>
+<td>训练集与测试集化学空间重叠小时性能下降</td>
+<td>模型未学到足够的非活性分子多样性</td>
+<td>摘要：generalization to chemically dissimilar test sets 差</td>
+</tr>
+<tr>
+<td>类不平衡导致假阳性高</td>
+<td>活性分子少、非活性分子多时模型偏向预测非活性</td>
+<td>训练时负样本不足或采样策略不当</td>
+<td>摘要：inactive-enriched training strongly reduced false positives</td>
+</tr>
+<tr>
+<td>配体-only QSAR 在类不平衡下崩溃</td>
+<td>性能急剧下降</td>
+<td>缺乏结构信息，无法区分结合位点特异性</td>
+<td>摘要：ligand-only QSAR models collapsed under the same class-imbalanced regime</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 构建 TRPM8 结构基 VS benchmark，比较经典对接 SF、通用 ML-SF、靶标特异性 ML 模型；系统评估不同蛋白构象、对接协议、特征表示（如 PLEC、相互作用指纹、配体描述符）与训练集类不平衡策略。</li>
+<li><strong>核心洞察</strong>: 靶标特异性 ML-SF 的性能瓶颈不在模型复杂度，而在训练数据的负样本多样性与特征的结构信息含量。Inactive-enriched 训练（大量非活性分子作为负样本）能显著降低假阳性，并提升对化学不相似分子的泛化；而仅依赖配体描述符的 QSAR 模型因缺乏结构上下文，在类不平衡下无法学习到区分性模式。</li>
+<li><strong>可能的普适教训</strong> [Analysis]: 在蛋白质-配体相互作用预测中，负样本的构造与多样性往往比正样本的精细标注更重要；结构衍生特征（如相互作用指纹）与配体描述符的组合能提供互补信息，但需与训练策略（如类不平衡处理）协同优化。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: TRPM8 蛋白结构（多个构象）、已知活性分子库、非活性分子库（用于 inactive-enriched 训练）、对接软件生成的配体构象。</li>
+<li><strong>输出</strong>: 各打分函数/模型在测试集上的富集率（如 EF、AUC）与泛化性能评估。</li>
+<li><strong>模块</strong>:
+  1. Benchmark 构建：收集 TRPM8 活性/非活性数据，准备多个蛋白构象。
+  2. 对接协议：使用不同对接软件/参数生成配体-蛋白复合物构象。
+  3. 特征提取：计算 PLEC、相互作用指纹、配体描述符等。
+  4. 模型训练：经典对接 SF（如 Vina）、通用 ML-SF（如 RF-Score）、靶标特异性 ML（如 SVR、RF）在不同训练策略下（随机 vs inactive-enriched）训练。
+  5. 评估：在独立测试集（含化学不相似分子）上计算富集指标。</li>
+<li><strong>训练</strong>: 靶标特异性模型使用 TRPM8 已知活性与非活性数据训练；inactive-enriched 指训练集中非活性分子数量远大于活性分子。</li>
+<li><strong>假设</strong>: 结构衍生特征 + 大量负样本能提升 VS 的早期富集与泛化。</li>
+<li><strong>文字流程</strong>: 蛋白构象准备 → 配体库准备 → 分子对接生成复合物 → 特征计算 → 模型训练（不同策略）→ 测试集评估 → 比较各方法。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多构象蛋白准备</td>
+<td>提供不同结合位点状态</td>
+<td>构象选择影响对接与特征质量</td>
+<td>输入：TRPM8 结构；输出：多个构象</td>
+<td>摘要：performance sensitive to conformation choice</td>
+<td>预期：单构象下性能波动大，无法评估构象依赖性 [Analysis]</td>
+</tr>
+<tr>
+<td>对接协议</td>
+<td>生成配体-蛋白复合物构象</td>
+<td>为特征提取提供结构上下文</td>
+<td>输入：配体、蛋白；输出：对接 pose</td>
+<td>摘要：evaluated across docking protocols</td>
+<td>预期：不同协议影响特征质量，进而影响 ML 性能 [Analysis]</td>
+</tr>
+<tr>
+<td>特征提取（PLEC/指纹/描述符）</td>
+<td>将复合物编码为 ML 输入</td>
+<td>结构信息与配体信息互补</td>
+<td>输入：复合物；输出：特征向量</td>
+<td>摘要：combining structure-derived features with ligand descriptors enhanced enrichment</td>
+<td>实测：组合特征优于单一特征（摘要）</td>
+</tr>
+<tr>
+<td>靶标特异性 ML 模型（SVR/RF）</td>
+<td>学习 TRPM8 特异性结合模式</td>
+<td>通用模型迁移差</td>
+<td>输入：特征+标签；输出：打分</td>
+<td>摘要：target-specific models improved early enrichment</td>
+<td>预期：移除后仅剩通用模型，性能下降 [Analysis]</td>
+</tr>
+<tr>
+<td>Inactive-enriched 训练</td>
+<td>提供大量负样本</td>
+<td>降低假阳性，提升泛化</td>
+<td>输入：活性+大量非活性；输出：训练好的模型</td>
+<td>摘要：strongly reduced false positives, improved generalization</td>
+<td>实测：移除后假阳性增加，泛化下降（摘要）</td>
+</tr>
+<tr>
+<td>配体-only QSAR</td>
+<td>仅用配体描述符预测活性</td>
+<td>作为对照</td>
+<td>输入：配体描述符；输出：活性预测</td>
+<td>摘要：collapsed under class imbalance</td>
+<td>实测：在类不平衡下崩溃（摘要）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（摘要中未提供具体公式；正文可能含富集因子 EF、AUC 等标准 VS 指标，但未在提供材料中给出定义）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>: TRPM8 活性分子库与非活性分子库（具体规模未在摘要中提供）；多个蛋白构象；多个对接协议。</li>
+<li><strong>指标</strong>: 早期富集（early enrichment）、泛化到化学不相似测试集的能力。</li>
+<li><strong>基线</strong>: 经典对接 SF（如 Vina）、通用 ML-SF（如 RF-Score）。</li>
+<li><strong>评测协议</strong>: 回顾性 benchmark，训练集与测试集划分（含化学不相似测试集）。</li>
+<li><strong>骨干/仪器</strong>: 未提供（计算平台信息缺失）。</li>
+<li><strong>oracle 输入</strong>: 已知活性/非活性标签（来自实验数据）。</li>
+<li><strong>表格</strong>:
+| 实验 | 检验的 claim | 对比与条件 | 结果 | 支持的结论 | 不支持更强的结论 | 来源 |
+|------|--------------|------------|------|-------------|-------------------|------|
+| 通用 ML-SF vs 经典对接 | 通用 ML 是否优于经典对接 | 同一 benchmark 上比较 | 仅 modest 且构象依赖的改进 | 通用 ML 在 TRPM8 上优势有限 | 不能推广到所有靶标 | 摘要 |
+| 靶标特异性 ML vs 通用/经典 | 靶标特异性模型是否更优 | 相同特征与训练策略 | 早期富集提升 | 靶标特异性训练有效 | 未证明对所有化学类型有效 | 摘要 |
+| 特征组合 vs 单一特征 | 结构+配体特征是否互补 | 不同特征集比较 | 组合增强富集 | 特征互补性存在 | 未证明最优特征集 | 摘要 |
+| Inactive-enriched vs 随机训练 | 负样本多样性是否关键 | 相同模型不同训练集 | 假阳性降低，泛化提升 | 负样本多样性是关键 | 未证明对所有 ML 算法有效 | 摘要 |
+| 配体-only QSAR vs 结构模型 | 结构信息是否必要 | 类不平衡下比较 | QSAR 崩溃 | 结构信息在类不平衡下必要 | 未证明在平衡数据下也如此 | 摘要 |
+| PLEC-SVR vs 其他模型 | PLEC+SVR 是否最优 | 多种模型比较 | 稳健且强 VS 性能 | PLEC-SVR 是推荐配置 | 未证明全局最优 | 摘要 |</li>
+</ul>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 仅针对 TRPM8 靶标的结构基 VS；不涉及其他离子通道或可溶性蛋白。</li>
+<li><strong>oracle/真值输入</strong>: 使用已知活性/非活性标签（实验来源），但未提供数据规模与来源细节。</li>
+<li><strong>端到端状态</strong>: 回顾性 benchmark，非前瞻性验证；未进行湿实验验证。</li>
+<li><strong>算力成本</strong>: 未提供。</li>
+<li><strong>历史数据依赖</strong>: 训练集与测试集划分方式未在摘要中详述，化学不相似测试集的构造标准未提供。</li>
+<li><strong>模型依赖</strong>: 结论基于特定 ML 算法（SVR、RF 等）与特征（PLEC、指纹、描述符），不能直接外推至其他算法。</li>
+<li><strong>最难情形</strong>: 化学不相似测试集上的泛化是难点，inactive-enriched 训练对此有改善，但未证明对所有化学空间有效。</li>
+<li><strong>群体/领域边界</strong>: 结论限于 TRPM8 靶标与所用数据集；对 GPCR、激酶等靶标需重新评估。</li>
+<li><strong>不确定性</strong>: 未提供置信区间或统计显著性检验信息。</li>
+<li><strong>有边界的复述</strong>: 在 TRPM8 结构基 VS 中，使用 PLEC 特征 + SVR 回归，并采用 inactive-enriched 训练（大量非活性负样本），能显著降低假阳性并提升对化学不相似测试集的早期富集；而仅用配体描述符的 QSAR 模型在同类不平衡下失效。该结论仅适用于 TRPM8 及类似离子通道靶标，且需在更大规模数据集上验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。<br />
+<strong>作者提及的相关约束</strong>（非正式局限）:
+- 性能对蛋白构象选择敏感（摘要中提及，但未作为局限讨论）。
+- 化学不相似测试集上的泛化仍具挑战（摘要中提及，但未明确为局限）。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摘要未报告数据集规模与来源</td>
+<td>可能数据集较小或偏置，影响结论普适性</td>
+<td>小数据集上 inactive-enriched 的效果可能被高估</td>
+<td>检查正文数据集统计与来源；在更大库上复现</td>
+<td>摘要未提供数据细节</td>
+</tr>
+<tr>
+<td>仅报告早期富集，未报告全 AUC 或 ROC</td>
+<td>早期富集对 VS 重要，但可能掩盖整体性能</td>
+<td>需确认模型是否在中等排序区间也稳健</td>
+<td>要求补充全 AUC、BEDROC 等指标</td>
+<td>摘要仅提 early enrichment</td>
+</tr>
+<tr>
+<td>化学不相似测试集的构造标准未说明</td>
+<td>若测试集与训练集差异过大，可能低估模型能力</td>
+<td>泛化结论依赖测试集设计</td>
+<td>检查正文测试集划分方法</td>
+<td>摘要未提供细节</td>
+</tr>
+<tr>
+<td>未比较不同 inactive-enriched 比例</td>
+<td>可能存在最优比例，而非越多越好</td>
+<td>训练策略的调优空间未探索</td>
+<td>系统扫描负样本比例</td>
+<td>摘要仅提 "many more negative instances"</td>
+</tr>
+<tr>
+<td>未报告计算成本</td>
+<td>ML-SF 训练与推理成本可能影响实际应用</td>
+<td>实用性评估缺失</td>
+<td>报告训练/推理时间</td>
+<td>摘要未提供</td>
+</tr>
+<tr>
+<td>仅用 PLEC 特征，未与其他结构特征（如 GraphTrans、3D CNN）比较</td>
+<td>可能其他特征更优</td>
+<td>特征选择结论可能不完整</td>
+<td>扩展特征集比较</td>
+<td>摘要仅提 PLEC</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:
+1. <strong>Inactive-enriched 训练策略</strong>: 在靶标特异性 ML-SF 训练中，大量非活性负样本能显著降低假阳性并提升对化学不相似分子的泛化。可迁移至其他靶标（如激酶、GPCR）的 VS 任务，尤其当活性数据稀缺时。
+2. <strong>结构特征与配体描述符互补</strong>: 将相互作用指纹（如 PLEC）与配体描述符结合，在特定构象-对接协议组合下能增强富集。可迁移至蛋白质-配体结合预测任务，作为特征工程基线。
+3. <strong>构象敏感性评估</strong>: 多构象 benchmark 设计可揭示模型对蛋白构象的依赖，为构象采样方法（如 MD 或 AlphaFold 多构象）在 VS 中的应用提供评估框架。
+4. <strong>类不平衡处理的重要性</strong>: 配体-only QSAR 在类不平衡下崩溃，提示在蛋白质-配体预测中，负样本构造与模型选择同等重要。
+5. <strong>Benchmark 设计</strong>: 首个 TRPM8 结构基 VS benchmark 的构建方法（多构象、多对接协议、多特征）可作为其他离子通道或难治靶标 benchmark 的模板。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>: 与 Ballester 团队早期工作（如 RF-Score 系列）一致，强调 ML-SF 的靶标特异性与训练数据质量；与 Ain et al. (2015) 的 "machine-learning scoring functions to improve binding affinity prediction" 方法学相关。</li>
+<li><strong>组合/互补</strong>: 与结构预测工具（AlphaFold2、MD 模拟）结合，可为 TRPM8 提供更可靠的构象集合，进一步降低构象敏感性。</li>
+<li><strong>冲突/差异</strong>: 与部分通用 ML-SF 研究（如 DeepDock、GNINA）主张通用模型可迁移不同，本文强调靶标特异性 + 负样本多样性的必要性，提示通用模型在离子通道上可能不足。</li>
+<li><strong>可迁移领域</strong>: 蛋白质-肽相互作用预测、共价对接、变构位点 VS 等，均可借鉴 inactive-enriched 训练与特征组合策略。</li>
+<li><strong>候选方向</strong>: 将 inactive-enriched 策略与图神经网络（GNN）结合，或探索主动学习以高效选择负样本。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: Inactive-enriched 训练在 AlphaFold 多构象 VS 中的迁移研究
+   - <strong>来源局限/观察</strong>: 本文显示构象选择影响 ML-SF 性能；AlphaFold 可生成多构象。
+   - <strong>核心假设</strong>: 使用 AlphaFold 生成的 TRPM8 多构象 + inactive-enriched 训练，可进一步提升 VS 富集并降低构象敏感性。
+   - <strong>初步方法</strong>: 对 TRPM8 用 AlphaFold2/3 生成多个构象，对接同一配体库，用 PLEC-SVR 训练并评估。
+   - <strong>验证方式</strong>: 与本文 benchmark 结果对比 EF/AUC。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 负样本多样性对 ML-SF 泛化的系统评估
+   - <strong>来源局限/观察</strong>: 本文强调 inactive-enriched 但未系统变化负样本比例与来源。
+   - <strong>核心假设</strong>: 负样本的化学多样性（而非仅数量）是泛化关键。
+   - <strong>初步方法</strong>: 在不同负样本采样策略（随机、最大多样性、聚类）下训练同一模型，比较化学不相似测试集性能。
+   - <strong>验证方式</strong>: 在 TRPM8 及另一靶标（如 DRD3）上交叉验证。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 结构特征与配体描述符的自适应融合
+   - <strong>来源局限/观察</strong>: 本文显示组合特征有效，但未探索最优融合方式。
+   - <strong>核心假设</strong>: 基于注意力机制的动态特征融合可优于简单拼接。
+   - <strong>初步方法</strong>: 设计一个小型注意力网络，输入 PLEC 与配体描述符，输出融合特征用于 SVR/RF。
+   - <strong>验证方式</strong>: 与简单拼接对比在 TRPM8 benchmark 上的 EF。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 类不平衡下配体-only QSAR 的崩溃机制分析
+   - <strong>来源局限/观察</strong>: 本文观察到 QSAR 崩溃，但未解释机制。
+   - <strong>核心假设</strong>: 崩溃源于模型偏向多数类，且缺乏结构信息无法纠正。
+   - <strong>初步方法</strong>: 分析 QSAR 模型在类不平衡下的决策边界与特征重要性变化。
+   - <strong>验证方式</strong>: 用 t-SNE 可视化特征空间，对比平衡/不平衡训练。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: TRPM8 变构位点 VS 的 ML-SF 适配
+   - <strong>来源局限/观察</strong>: 本文聚焦正构位点；TRPM8 有变构调节剂。
+   - <strong>核心假设</strong>: 变构位点 VS 需要不同的特征与训练策略。
+   - <strong>初步方法</strong>: 构建变构位点 benchmark，比较 PLEC-SVR 与正构位点训练模型的性能。
+   - <strong>验证方式</strong>: 用已知变构调节剂作为测试集。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present the first comprehensive structure-based virtual screening (VS) benchmark for the TRPM8 ion channel, comparing classical docking scoring functions, generic machine-learning (ML) scoring functions, and target-specific ML models across multiple protein conformations and docking protocols. They report that generic ML rescoring offers modest, conformation-dependent improvements; target-specific models using protein-ligand interaction fingerprints improve early enrichment with regression algorithms but remain sensitive to conformation and chemical dissimilarity; combining structure-derived and ligand-based features enhances enrichment under selected conditions; and inactive-enriched training markedly reduces false positives and improves generalization for structure-based models, whereas ligand-only QSAR models fail under class imbalance. PLEC-based support vector regression (SVR) with inactive-enriched training achieves robust performance.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no methodological details, dataset descriptions, performance metrics, or statistical analyses are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, benchmark dataset composition, protein conformation selection criteria, docking protocols, feature definitions, model hyperparameters, training and test set splits, and any statistical significance testing</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract addresses a relevant and timely question in computational drug discovery, namely the development of target-specific ML scoring functions for ion channel VS. The reported findings, particularly the benefit of inactive-enriched training for structure-based models and the contrasting failure of ligand-only QSAR models, are potentially valuable. However, the abstract alone provides insufficient detail to evaluate the rigor of the benchmark, the validity of the comparisons, or the robustness of the conclusions. Several claims are stated without quantitative support, and the sensitivity analyses mentioned are not described in a way that allows assessment of their adequacy. The work may be of interest to the computational chemistry and drug discovery communities, but the evidence base is too limited to establish the case.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational chemists, medicinal chemists, and researchers developing or applying ML-based scoring functions for structure-based virtual screening. The focus on TRPM8, an ion channel with therapeutic relevance to pain and inflammation, may also attract investigators in analgesic drug discovery. The methodological emphasis on inactive-enriched training and feature representation could inform broader VS practice beyond this specific target.</li>
+<li><strong>Major strengths</strong> The abstract identifies a clear gap in the literature, namely the lack of a comprehensive VS benchmark for TRPM8. The study design appears to include multiple protein conformations and docking protocols, which is appropriate for assessing robustness. The finding that inactive-enriched training improves generalization for structure-based models, while ligand-only QSAR models collapse, is a potentially important and non-obvious result. The use of PLEC-based SVR as a final recommended model provides a concrete and actionable outcome.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The abstract claims that "generic ML rescoring at most provided modest and conformation-dependent improvements over classical docking on this target" and that "target-specific ML models based only on protein-ligand interaction fingerprints improved early enrichment on test sets when regression algorithms were employed."</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> No quantitative performance metrics, such as enrichment factors, AUC values, or rank-based statistics, are reported for any of the comparisons. The terms "modest," "improved," and "robust" are used without numerical context or statistical significance testing. It is impossible to assess the magnitude of the reported effects or whether they are meaningful in a practical VS context.</li>
+<li><strong>Why it matters</strong> Without quantitative results, the reader cannot judge whether the proposed methods offer a practically useful advantage over existing approaches. The central claims of the paper rest on comparative performance, which cannot be evaluated from the abstract alone.</li>
+<li><strong>Resolution test</strong> Provide specific performance metrics with confidence intervals or statistical tests for each comparison, including baseline classical docking, generic ML rescoring, and target-specific models under all tested conditions.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The abstract states that "systematic evaluation of feature representations showed that combining structure-derived interaction features with ligand-based descriptors enhanced enrichment under selected docking tool-protein conformation combinations" and that "inactive-enriched training strongly reduced false positives."</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe the composition of the training and test sets, the ratio of active to inactive compounds, the source of inactive molecules, or the criteria for chemical dissimilarity. The term "inactive-enriched" is not defined quantitatively. Without these details, the training regime cannot be reproduced or compared with other studies.</li>
+<li><strong>Why it matters</strong> The central methodological contribution is the inactive-enriched training strategy. If the enrichment ratio, inactive selection method, or data splitting protocol is not specified, the finding cannot be validated or applied by other researchers.</li>
+<li><strong>Resolution test</strong> Specify the number of active and inactive compounds, the source and selection criteria for inactives, the training and test split strategy, and the definition of chemical dissimilarity used in the generalization tests.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> The abstract claims that "under inactive-enriched training, PLEC-based support vector regression (SVR) models achieved robust and strong VS performance" and that this "highlight[s] the critical role of learning the vast diversity of inactive molecules better during model training."</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> The abstract reports performance only for TRPM8. It is unclear whether the observed benefit of inactive-enriched training is specific to this target, to the particular protein conformations used, or to the PLEC-SVR combination. The claim of a "critical role" implies a general principle, but no evidence from other targets or datasets is presented.</li>
+<li><strong>Why it matters</strong> If the finding is target-specific, its broader significance is limited. The abstract does not provide any external validation or discussion of transferability, which is essential for a general methodological claim.</li>
+<li><strong>Resolution test</strong> Provide evidence from at least one additional target or dataset, or explicitly limit the claim to TRPM8 and discuss the conditions under which the approach is likely to transfer.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract wording</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The phrase "the first comprehensive structure-based VS benchmark for TRPM8" is a strong claim. The abstract does not describe how "comprehensive" is defined, such as the number of conformations, docking tools, or scoring functions included.</li>
+<li><strong>Required correction</strong> Clarify the scope of the benchmark, for example by stating the number of protein conformations, docking protocols, and scoring functions evaluated.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> "inactive-enriched training"</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The term "inactive-enriched" is used without definition. It is unclear whether this refers to a specific ratio of inactives to actives, a particular sampling strategy, or a general principle of including more inactives than actives.</li>
+<li><strong>Required correction</strong> Define the term explicitly, including the ratio or sampling method used.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Comparison with ligand-only QSAR models</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The abstract states that "ligand-only QSAR models collapsed under the same class-imbalanced regime" but does not specify what "collapsed" means in quantitative terms, such as a drop in enrichment or AUC.</li>
+<li><strong>Required correction</strong> Provide a quantitative description of the performance degradation for ligand-only QSAR models.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, and R1-M3 are blocking. The absence of quantitative metrics, insufficient methodological detail for reproduction, and lack of evidence for generalizability collectively prevent the case from being established from the supplied material.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The focus on TRPM8 and the systematic comparison of scoring function types is a useful contribution, but the abstract does not demonstrate a fundamentally new concept. The idea of using inactive-enriched training is not entirely novel, though its application to structure-based models for this target may be.</li>
+<li>Scientific importance: The findings could be important for VS practitioners, particularly regarding the value of inactive-enriched training. However, the importance is contingent on the robustness and generalizability of the results, which cannot be assessed from the abstract.</li>
+<li>Interdisciplinary readership: The topic is relevant to computational chemistry, cheminformatics, and drug discovery. The abstract is written in a way that is accessible to these audiences, though specialists in ML may find the lack of technical detail limiting.</li>
+<li>Technical soundness: Cannot be evaluated from the abstract. The absence of metrics, dataset descriptions, and statistical analyses precludes any assessment of technical rigor.</li>
+<li>Readability for nonspecialists: The abstract is generally clear and well-structured, but terms such as "PLEC-based SVR" and "inactive-enriched training" are used without explanation, which may hinder nonspecialist readers.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents potentially interesting findings, but the lack of quantitative results, methodological detail, and generalizability evidence means the case cannot be supported. A full manuscript with complete data and analyses would be required for a supportive assessment.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that this is the "first comprehensive structure-based VS benchmark for TRPM8" is unsupported without a description of the benchmark scope.</li>
+<li>The claim that "generic ML rescoring at most provided modest and conformation-dependent improvements" is unsupported without quantitative metrics.</li>
+<li>The claim that "target-specific ML models based only on protein-ligand interaction fingerprints improved early enrichment" is unsupported without specific enrichment values.</li>
+<li>The claim that "combining structure-derived interaction features with ligand-based descriptors enhanced enrichment" is unsupported without details of the feature sets and performance differences.</li>
+<li>The claim that "inactive-enriched training strongly reduced false positives" is unsupported without false positive rates or related metrics.</li>
+<li>The claim that "PLEC-based SVR models achieved robust and strong VS performance" is unsupported without performance numbers or comparison baselines.</li>
+<li>The claim that "ligand-only QSAR models collapsed" is unsupported without quantitative degradation data.</li>
+<li>The general principle that learning "the vast diversity of inactive molecules better" is critical is not established from a single target study.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

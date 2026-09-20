@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors present a physics-based workflow combining microsecond-scale molecular dynamics with Folddisco to map mimotope-derived antibody epitopes onto cognate antigens. They report 60 to 100% precision in epitope localization and 100% recovery of functional hotspots across four antibody-antigen systems, outperforming three benchmark tools. For the ChiLob 7/4 system, they identify a minimal tetrapeptide (PWVP) sufficient for antibody recognition, validated by Western blot and immunoprecipitation.
+- **Visible evidence base** Abstract text only; no quantitative data, methodological details, or validation results are accessible
+- **Missing materials affecting confidence** Full methods, all figures and tables, supplementary information, benchmark implementation details, MD simulation parameters, Folddisco configuration, statistical analyses, and raw validation data
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially valuable approach to a long-standing problem in epitope mapping, with a clear conceptual rationale for why sequence- or geometry-based predictors fail. However, the evidence presented is insufficient to evaluate the technical soundness of the workflow, the validity of the benchmark comparisons, or the robustness of the reported performance metrics. The central claims are plausible but currently not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in antibody engineering, structural vaccinology, and immunoinformatics would be interested in a method that connects phage display data to mechanistic structural insight. The approach could also appeal to computational biologists developing physics-based tools for protein-protein interaction analysis, and to experimental groups seeking to prioritize residues for mutagenesis or therapeutic antibody optimization.
+- **Major strengths** The conceptual framing is clear and addresses a recognized limitation in the field. The use of energy-resolved conformational refinement rather than sequence or static geometry is a sensible departure from existing methods. The inclusion of a clinically relevant system (ChiLob 7/4) with experimental validation adds translational relevance. The reported performance gains over three benchmarks are striking if reproducible.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The workflow reaches 60 to 100% precision in epitope localization and recovers 100% of mutagenesis- or structurally validated functional hotspots across four antibody-antigen systems.  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract reports performance metrics without any methodological detail on how precision and recovery were defined, computed, or thresholded. No information is given on the number of mimotopes per system, the length of MD simulations, the convergence criteria, or how Folddisco mappings were scored. Without these details, the metrics cannot be interpreted or reproduced.  
+  - **Why it matters** Precision and recovery are threshold-dependent and can be trivially inflated by permissive scoring. The absence of definitions and parameters makes the reported performance unverifiable and prevents comparison with existing benchmarks.  
+  - **Resolution test** Provide explicit definitions of precision and recovery, the scoring thresholds used, the number of mimotopes per system, and the MD and Folddisco parameters. Show the distribution of scores and the sensitivity of results to threshold choices.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Comparative validity  
+  - **Claim pointer** The workflow outperforms three widely used benchmarks (EpiSearch, ClusPro, SEPPA-mAb), which achieve at most 25% functional hotspot recovery.  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The comparison with benchmarks is stated without any detail on how these tools were run, whether they were used in their default configurations, whether the same input data were provided, or how their outputs were converted to epitope predictions. Benchmark tools often require parameter tuning, and unfair or suboptimal usage can produce misleadingly poor performance.  
+  - **Why it matters** The central claim of superiority depends entirely on the fairness and rigor of the benchmark comparison. If the benchmarks were not optimally configured or if the evaluation protocol favored the proposed method, the conclusion would be invalid.  
+  - **Resolution test** Describe the exact input format, parameters, and output processing for each benchmark tool. Provide evidence that the tools were used according to their documented best practices, and consider reporting performance across multiple parameter settings.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Validation sufficiency  
+  - **Claim pointer** For the ChiLob 7/4 system, the workflow identifies a minimal tetrapeptide (PWVP) sufficient for antibody recognition, validated by Western blot and immunoprecipitation.  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract states that PWVP is sufficient for antibody recognition but provides no experimental details. Western blot and immunoprecipitation can demonstrate binding but do not establish that PWVP is the minimal functional epitope, as no truncation or alanine-scanning data are mentioned. The claim of sufficiency requires negative controls showing that shorter or substituted peptides do not bind.  
+  - **Why it matters** The identification of a minimal functional motif is a strong claim with therapeutic implications. If the experimental validation does not include systematic truncation or substitution analysis, the claim of minimality is unsupported.  
+  - **Resolution test** Provide the full peptide series tested, including negative controls, and show that PWVP is the shortest sequence retaining binding. Include quantitative binding data and statistical analysis.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Generalizability  
+  - **Claim pointer** Across four antibody-antigen systems with crystallographically defined epitopes, the workflow reaches 60 to 100% precision.  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract does not specify the diversity of the four systems in terms of antigen class, epitope type (conformational versus linear), antibody affinity, or mimotope characteristics. If the systems are structurally or chemically similar, the reported performance may not generalize.  
+  - **Why it matters** The utility of the method depends on its applicability across a broad range of antibody-antigen pairs. Without information on system diversity, the generalizability claim is weak.  
+  - **Resolution test** List the four systems with their antigen structures, epitope types, and mimotope sequences. Discuss how the chosen systems represent the range of challenges in epitope mapping.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Workflow description  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The term "Folddisco" is introduced without explanation of what it is or what it does.  
+  - **Required correction** Provide a brief description of Folddisco and its role in the workflow, with a citation.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Reproducibility  
+  - **Affected element** MD simulation details  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract mentions "microsecond-scale molecular dynamics" but does not specify the force field, water model, temperature, or simulation software.  
+  - **Required correction** Include these parameters in the methods section.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Statistical rigor  
+  - **Affected element** Performance comparison  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The performance comparison across benchmarks is reported as single values without confidence intervals or statistical tests.  
+  - **Required correction** Report variability across replicates or systems and perform appropriate statistical comparisons.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Terminology  
+  - **Affected element** "Functional epitope"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The term "functional epitope" is used but not defined. It is unclear whether it refers to residues affecting binding affinity, specificity, or biological function.  
+  - **Required correction** Define the term explicitly and state how functional hotspots were identified in the validation data.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of methodological detail, benchmark fairness, and validation completeness prevents the core claims from being assessed.
+- **Assessment against Nature-style criteria**  
+  - Originality: The conceptual approach is original in its use of energy-resolved conformational refinement of mimotopes, but the abstract does not demonstrate how this differs methodologically from existing MD-based docking or mapping approaches.  
+  - Scientific importance: The problem addressed is important and the potential to connect phage display to structural insight is significant, but the importance is not yet established by the evidence.  
+  - Interdisciplinary readership: The work bridges experimental immunology, computational biophysics, and structural biology, which could attract a broad audience if the methods are clearly presented.  
+  - Technical soundness: Not assessable from the abstract. The reported metrics and comparisons lack the detail required for evaluation.  
+  - Readability for nonspecialists: The abstract is concise and the conceptual framing is accessible, but the lack of context for terms like Folddisco and the absence of methodological explanation limit readability for nonspecialists.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual premise is promising and the reported results are potentially impactful, but the abstract alone does not provide sufficient methodological detail, benchmark rigor, or validation completeness to support the central claims. A full manuscript with detailed methods, fair benchmark comparisons, and comprehensive validation data would be required to assess the work properly.
+
+## Risk / unsupported claims
+- The claim of 60 to 100% precision in epitope localization is unsupported without definitions of precision, thresholds, and system details.
+- The claim of 100% recovery of functional hotspots is unsupported without specification of how functional hotspots were defined and validated.
+- The claim of superiority over EpiSearch, ClusPro, and SEPPA-mAb is unsupported without details of benchmark configuration and evaluation protocol.
+- The claim that PWVP is a minimal tetrapeptide sufficient for antibody recognition is unsupported without truncation or substitution analysis and negative controls.
+- The generalizability of the workflow across antibody-antigen systems is not assessable from the abstract.

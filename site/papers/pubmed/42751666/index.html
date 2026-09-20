@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MiLaSol: modeling protein solubility by mixing up multiple protein language models. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>MiLaSol: modeling protein solubility by mixing up multiple protein language models.</h1>
+      <div class="meta">Lou, Weiwei; Erden, Mert; Cowen, Lenore</div>
+      <div class="meta muted">
+        
+        <span class="journal">Bioinformatics advances</span>
+        · 2026-09-17
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42751666/">原文</a>
+      </div>
+      <p class="one-liner">该文利用多种蛋白质语言模型预测蛋白可溶性，并结合模拟退火优化进行可溶性重设计，属于蛋白质序列-性质预测与生成优化，虽非直接结构建模，但方法可迁移至蛋白结构相关计算。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">MOTIVATION: Protein solubility is a critical property that significantly impacts therapeutic efficacy and protein reengineering applications. Recent advances in machine learning and deep learning techniques provide unprecedented opportunities to develop predictive models for solubility, enabling more efficient protein design and optimization. This work is motivated by the potential of leveraging deep learning to address the solubility prediction challenge and to accelerate protein engineering workflows. RESULTS: Leveraging and combining multiple protein language model representations, our MiLaSol model attains 81% accuracy, outperforming prior methods, with the highest Matthews Correlation Coefficient (MCC) score of 0.63 demonstrating balanced performance across both soluble and insoluble proteins. Through simulated annealing optimization coupled with the Raygun model, we also present a computational method to reengineer insoluble protein variants into soluble forms, with predictions confirmed by multiple independent solubility prediction methods. Our results demonstrate the effectiveness of combining machine learning-based solubility prediction with generative optimization for protein engineering. AVAILABILITY AND IMPLEMENTATION: MiLaSol is available at https://github.com/weiweiloutufts/milasolAn archived version of the code at the time of submission can be found at https://doi.org/10.5281/zenodo.21495202.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">动机：蛋白质溶解度是一个关键性质，显著影响治疗效力和蛋白质重工程应用。机器学习和深度学习技术的最新进展为开发溶解度预测模型提供了前所未有的机会，从而实现更高效的蛋白质设计和优化。本工作的动机在于利用深度学习解决溶解度预测挑战并加速蛋白质工程工作流程的潜力。结果：通过利用和组合多种蛋白质语言模型表示，我们的MiLaSol模型达到了81%的准确率，优于先前方法，最高马修斯相关系数（MCC）得分为0.63，展示了在可溶性和不溶性蛋白质上的平衡性能。通过模拟退火优化结合Raygun模型，我们还提出了一种计算方法，将不溶性蛋白质变体重工程为可溶形式，预测结果由多种独立溶解度预测方法确认。我们的结果证明了将基于机器学习的溶解度预测与生成优化相结合用于蛋白质工程的有效性。可用性和实现：MiLaSol可在https://github.com/weiweiloutufts/milasol获取。提交时的代码存档版本可在https://doi.org/10.5281/zenodo.21495202找到。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：MiLaSol: modeling protein solubility by mixing up multiple protein language models</li>
+<li><strong>作者</strong>：Lou, Weiwei; Erden, Mert; Cowen, Lenore</li>
+<li><strong>单位</strong>：Tufts University（据致谢与作者信息推断，未在摘要中明确列出）</li>
+<li><strong>期刊/平台</strong>：Bioinformatics Advances</li>
+<li><strong>年份</strong>：2026（在线发表日期 2026-09-17）</li>
+<li><strong>论文类型</strong>：方法学（Method）论文</li>
+<li><strong>领域</strong>：蛋白质溶解度预测 × 蛋白质语言模型（PLM）深度学习</li>
+<li><strong>关键词</strong>：protein solubility, protein language models, ESM2, ProtT5, Raygun, deep learning, simulated annealing</li>
+<li><strong>DOI/arXiv 号</strong>：10.1093/bioadv/vbag233</li>
+<li><strong>代码</strong>：https://github.com/weiweiloutufts/milasol</li>
+<li><strong>数据</strong>：DeepSol 基准数据集（62,478 训练 / 6,942 验证 / 2,001 测试）；PLM_Sol 数据集（70,031 训练 / 4,000 验证 / 4,000 测试）；SoluProtMutDB（溶解度突变数据库）</li>
+<li><strong>阅读日期</strong>：2026-05-14（按当前日期）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>序列-性质预测</strong>子方向，具体为溶解度预测。其核心贡献在于：(1) 提出多 PLM 嵌入融合架构，无需手工特征即可超越现有方法；(2) 将预测器作为 oracle 与模拟退火结合，实现溶解度导向的序列重设计。与结构预测（AlphaFold）不同，本文不直接预测结构，但利用 PLM 隐式编码的结构信息，且用 Boltz-2 验证设计序列的可折叠性，属于「预测-生成-验证」闭环范式。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 MiLaSol——一种融合 ESM2、ProtT5、Raygun 三种蛋白质语言模型嵌入的深度学习分类器，在 DeepSol 基准上达到 81% 准确率和 0.63 MCC，超越现有方法；并进一步将该预测器作为 oracle，结合 Raygun 潜空间采样与模拟退火，将 12% 的预测不可溶突变体计算重设计为可溶形式，且经 Boltz-2 结构预测验证仍保持高 pLDDT。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否仅从氨基酸序列出发，不依赖手工特征或结构信息，准确预测蛋白质内在溶解度？更进一步，能否利用该预测器指导序列设计，将不可溶蛋白变体重设计为可溶形式？</li>
+<li><strong>为什么重要</strong>：溶解度是治疗性蛋白表达、纯化和递送的关键属性，直接影响药物开发效率和蛋白质工程应用。可溶的蛋白才能正确折叠并发挥功能，不可溶蛋白常形成包涵体或聚集体，导致产量低下。</li>
+<li><strong>现有方法为何不足</strong>：(1) 早期方法依赖手工特征（如氨基酸组成、疏水性、电荷分布），无法捕捉全局序列上下文；(2) 单 PLM 方法（如仅用 ESM2 或 ProtT5）只利用单一表示，丢失多视角互补信息；(3) 结构信息虽有用但获取成本高，且对溶解度这种受多种因素影响的属性，结构贡献有限；(4) 现有方法多为纯预测，未与序列设计闭环结合。</li>
+<li><strong>精确研究问题</strong>：Can a multi-PLM fusion architecture achieve state-of-the-art solubility prediction without handcrafted features, and can the resulting predictor serve as an oracle to guide simulated annealing in latent space toward soluble sequence variants?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引言与相关工作部分，属「仅本文框架」，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期统计/机器学习</td>
+<td>PROSO (Smialowski 2007), PROSO II (Smialowski 2012), 基于理化性质的手工特征</td>
+<td>可解释、计算快</td>
+<td>特征工程依赖专家知识，无法捕捉复杂序列模式</td>
+</tr>
+<tr>
+<td>深度学习（CNN/LSTM）</td>
+<td>DeepSol (Khurana 2018), PaRSnIP (Rawi 2018), EPSOL (Wu &amp; Yu 2021)</td>
+<td>自动特征提取，性能提升</td>
+<td>单架构表示有限，未利用预训练模型</td>
+</tr>
+<tr>
+<td>PLM 编码</td>
+<td>使用 ESM2、ProtT5 等作为特征提取器</td>
+<td>利用大规模预训练知识</td>
+<td>单模型视角有限，未融合多模型互补信息</td>
+</tr>
+<tr>
+<td>结构增强</td>
+<td>Tan et al. (2024b) 引入结构信息</td>
+<td>结构信息提升准确率</td>
+<td>结构获取成本高，且提升有限</td>
+</tr>
+<tr>
+<td><strong>本文位置</strong></td>
+<td><strong>MiLaSol：多 PLM 融合 + 潜空间生成</strong></td>
+<td><strong>无需手工特征/结构，多视角互补，预测-设计闭环</strong></td>
+<td><strong>依赖预训练模型质量，生成设计需实验验证</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>手工特征工程瓶颈</td>
+<td>传统方法需人工设计理化特征，泛化差</td>
+<td>溶解度由复杂序列-结构-表面性质共同决定，手工特征难以覆盖</td>
+<td>Introduction 节：早期方法依赖已知理化性质</td>
+</tr>
+<tr>
+<td>单 PLM 表示不足</td>
+<td>单一 PLM 嵌入无法捕捉全部溶解度相关信号</td>
+<td>不同 PLM 在预训练任务、训练数据、架构上存在差异，编码的信息互补</td>
+<td>Section 5.2.1：消融实验显示三模型融合优于任一单独模型</td>
+</tr>
+<tr>
+<td>结构信息获取成本高</td>
+<td>结构增强方法需预测或实验结构</td>
+<td>结构预测耗时且对溶解度贡献有限</td>
+<td>Introduction 节：现有方法难以有效整合结构信息</td>
+</tr>
+<tr>
+<td>预测与设计脱节</td>
+<td>多数方法仅做预测，不指导序列改造</td>
+<td>缺乏将预测器作为 oracle 的生成框架</td>
+<td>Section 5.3：作者提出用模拟退火 + Raygun 潜空间采样实现设计闭环</td>
+</tr>
+<tr>
+<td>类别不平衡</td>
+<td>数据集中可溶/不可溶样本比例失衡</td>
+<td>实验溶解度测定偏向可溶蛋白</td>
+<td>Section 3.3.2.1：对比损失按类别频率加权</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+- 多 PLM 嵌入融合：将 ESM2、ProtT5、Raygun 三种预训练语言模型的序列级池化嵌入拼接，经线性投影、CNN、BiLSTM 提取局部与全局特征，最终由 MLP 分类头输出溶解度二分类概率。
+- 辅助正则化：潜空间 mixup 增强 + 去噪自编码器（DAE）重构损失 + 对比损失 + 原型损失，共同约束表征空间。
+- 潜空间序列设计：以 MiLaSol 为 oracle，在 Raygun 的潜空间中对不可溶序列加噪采样，用模拟退火迭代优化溶解度得分，生成候选可溶变体。</p>
+<p><strong>2) 核心洞察</strong>：
+- 不同 PLM 在预训练任务（掩码语言建模、下一句预测、结构感知等）上的差异导致其嵌入编码互补的序列-性质信息，融合可消除单模型偏差。
+- 溶解度预测不需要显式结构信息——PLM 嵌入已隐式编码结构相关特征，融合多模型可逼近甚至超越结构增强方法。
+- 预测器可作为可微 oracle 直接驱动潜空间搜索，将「预测」与「设计」统一在同一表征空间中。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 多 PLM 融合策略可迁移至其他蛋白质性质预测任务（稳定性、表达量、免疫原性等），核心是选择预训练任务差异大的模型以最大化互补性。
+- 潜空间生成 + 预测器 oracle 的闭环范式适用于任何「序列→性质」可微预测任务，尤其当离散序列空间搜索不可行时。
+- 正则化（mixup、DAE、对比、原型）的组合拳可显著提升小样本性质预测的泛化性。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：氨基酸序列（tokenized），同时输入三种 PLM 编码器。</li>
+<li><strong>输出</strong>：溶解度二分类概率（可溶/不可溶）。</li>
+<li><strong>模块</strong>：
+  1. <strong>多视图序列编码</strong>：ESM2、ProtT5、Raygun 三个预训练编码器分别生成序列级池化嵌入（各为固定维度向量）。
+  2. <strong>表示增强</strong>：线性投影将各嵌入映射到统一潜空间（维度 64）。
+  3. <strong>局部特征提取</strong>：1D CNN（kernel size 5/7，128-192 filters）提取局部 motif。
+  4. <strong>长程依赖建模</strong>：BiLSTM（hidden 64/128/192）捕捉全局上下文。
+  5. <strong>注意力池化</strong>：缩放点积自注意力 + 均值池化，聚合为固定维度向量。
+  6. <strong>分类头</strong>：两层 MLP（tanh 激活，dropout 0.3）输出 logit。
+  7. <strong>辅助正则化</strong>：潜空间 mixup、DAE 重构、对比损失、原型损失。</li>
+<li><strong>训练</strong>：AdamW（lr=1e-4, weight decay=1e-5）+ Lookahead；cosine annealing + warm restart（每 8 epoch）；early stopping（8 epoch 后连续 3 epoch 无改善）。</li>
+<li><strong>设计流程</strong>：对预测不可溶序列，用 Raygun 编码器映射到潜空间 → 加高斯噪声（σ=0.1）采样候选 → 解码为序列 → MiLaSol 预测溶解度 → 模拟退火（5 步迭代，100 次独立重启）接受/拒绝 → 输出预测可溶变体。</li>
+<li><strong>验证</strong>：对生成序列运行 Boltz-2 结构预测，比较 pLDDT 与原始序列。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多 PLM 编码器（ESM2/ProtT5/Raygun）</td>
+<td>生成互补的序列表示</td>
+<td>不同 PLM 编码不同层面的序列-结构-功能信息</td>
+<td>输入：氨基酸序列；输出：各 1024/1024/512 维池化嵌入</td>
+<td>Table 4 消融：三模型融合最优</td>
+<td>移除任一模型均导致性能下降（Table 4）；ESM2 贡献最大（Figure S1）</td>
+</tr>
+<tr>
+<td>线性投影层</td>
+<td>将异构嵌入映射到统一潜空间</td>
+<td>各 PLM 嵌入维度/分布不同，需对齐</td>
+<td>输入：拼接嵌入；输出：64 维统一表示</td>
+<td>Section 3.1.1</td>
+<td>预期：维度不匹配导致无法融合</td>
+</tr>
+<tr>
+<td>1D CNN</td>
+<td>提取局部序列 motif</td>
+<td>溶解度受局部氨基酸模式影响</td>
+<td>输入：投影后嵌入序列；输出：卷积特征图</td>
+<td>Section 3.1.1</td>
+<td>预期：丢失局部模式信息，性能下降</td>
+</tr>
+<tr>
+<td>BiLSTM</td>
+<td>建模长程依赖</td>
+<td>溶解度可能依赖远距离残基相互作用</td>
+<td>输入：CNN 输出；输出：双向隐藏状态</td>
+<td>Section 3.1.1</td>
+<td>预期：长程上下文丢失，性能下降</td>
+</tr>
+<tr>
+<td>自注意力 + 均值池化</td>
+<td>聚合序列级表示</td>
+<td>需将变长序列压缩为固定向量</td>
+<td>输入：BiLSTM 输出；输出：固定维度向量</td>
+<td>Section 3.1.1</td>
+<td>预期：信息聚合不充分</td>
+</tr>
+<tr>
+<td>潜空间 mixup</td>
+<td>数据增强</td>
+<td>提升泛化、平滑决策边界</td>
+<td>输入：两个训练样本嵌入；输出：凸组合</td>
+<td>Section 3.2.2；Figure 2 谱分析</td>
+<td>移除后泛化性下降（预期）</td>
+</tr>
+<tr>
+<td>DAE 重构</td>
+<td>去噪正则化</td>
+<td>增强表征鲁棒性</td>
+<td>输入：加噪嵌入；输出：重构原嵌入</td>
+<td>Section 3.2.1</td>
+<td>移除后表征鲁棒性下降（预期）</td>
+</tr>
+<tr>
+<td>对比损失</td>
+<td>类间分离</td>
+<td>增强判别性</td>
+<td>输入：批次嵌入+标签；输出：对比损失值</td>
+<td>Section 3.3.2.1</td>
+<td>移除后类间分离度下降（预期）</td>
+</tr>
+<tr>
+<td>原型损失</td>
+<td>类内紧凑</td>
+<td>稳定表征聚类</td>
+<td>输入：嵌入+标签；输出：原型距离损失</td>
+<td>Section 3.3.2.2</td>
+<td>移除后类内方差增大（预期）</td>
+</tr>
+<tr>
+<td>模拟退火 + Raygun 潜空间采样</td>
+<td>序列设计</td>
+<td>在连续潜空间搜索可溶变体</td>
+<td>输入：不可溶序列；输出：候选可溶序列</td>
+<td>Section 5.3；Figure 4C-D</td>
+<td>无此模块则无法实现设计闭环</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1) 潜空间 mixup</strong>：
+[
+\tilde{e} = \lambda e_i + (1-\lambda) e_j, \quad \lambda \sim \text{Beta}(\alpha, \alpha)
+]
+- ( e_i, e_j )：批次中两个样本的潜空间嵌入
+- ( \lambda )：mixup 系数，从 Beta 分布采样
+- 用途：生成虚拟训练样本，平滑决策边界</p>
+<p><strong>2) DAE 重构损失</strong>：
+[
+\mathcal{L}_{\text{rec}} = | e - \text{Decoder}(\text{Encoder}(\tilde{e})) |_2^2
+]
+- ( \tilde{e} )：加噪后的嵌入
+- 用途：迫使编码器学习鲁棒表征</p>
+<p><strong>3) 总损失</strong>：
+[
+\mathcal{L} = \mathcal{L}<em>{\text{cls}} + \alpha \mathcal{L}</em>{\text{con}} + \beta \mathcal{L}<em>{\text{rec}} + \gamma \mathcal{L}</em>{\text{regu}}
+]
+- ( \mathcal{L}<em>{\text{cls}} )：二分类交叉熵
+- ( \mathcal{L}</em>{\text{con}} )：监督对比损失
+- ( \mathcal{L}_{\text{regu}} )：原型正则化损失
+- ( \alpha, \beta, \gamma )：可学习权重
+- 用途：多任务联合优化</p>
+<p><strong>4) 原型更新</strong>（指数移动平均）：
+[
+\text{proto} = 0.75 \times \text{batch_mean} + 0.25 \times \text{proto_prev}
+]
+- 用途：稳定少数类原型</p>
+<p><strong>5) 模拟退火接受准则</strong>（Metropolis）：
+[
+P(\text{accept}) = \min\left(1, \exp\left(\frac{\Delta S}{T}\right)\right)
+]
+- ( \Delta S )：候选序列与当前序列的溶解度得分差
+- ( T )：温度参数，随迭代降低
+- 用途：在探索与利用间平衡</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集与规模</strong>：
+- DeepSol 基准（Khurana et al. 2018）：62,478 训练（36,403 不可溶 / 26,075 可溶）、6,942 验证（4,045 不可溶 / 2,897 可溶）、2,001 测试（1,001 不可溶 / 1,000 可溶）
+- PLM_Sol 基准（Zhang et al. 2024）：70,031 训练、4,000 验证、4,000 测试（31,581 不可溶 / 46,450 可溶）
+- SoluProtMutDB（Velecký et al. 2022）：用于设计评估的突变数据库</p>
+<p><strong>指标</strong>：Accuracy、MCC、Precision、Recall（两类）、AUROC、AUPRC</p>
+<p><strong>基线</strong>：DeepSol、PaRSnIP、EPSOL、PLM_Sol、单 PLM 变体（仅 ESM2/ProtT5/Raygun）</p>
+<p><strong>评测协议</strong>：与 DeepSol 相同的数据划分；PLM_Sol 基准上复现其划分；消融实验在 DeepSol 验证集上进行</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主实验（DeepSol 基准）</td>
+<td>MiLaSol 超越现有方法</td>
+<td>对比 DeepSol, PaRSnIP, EPSOL, PLM_Sol</td>
+<td>Accuracy 0.81, MCC 0.63（最高）</td>
+<td>多 PLM 融合优于单模型和手工特征方法</td>
+<td>未报告统计显著性检验</td>
+<td>Table 2, Figure 3</td>
+</tr>
+<tr>
+<td>跨基准验证（PLM_Sol 基准）</td>
+<td>MiLaSol 泛化到新数据</td>
+<td>复现 PLM_Sol 划分</td>
+<td>4/7 指标领先，Accuracy 0.7488 vs 0.7299, MCC 0.5077 vs 0.4690</td>
+<td>性能提升非过拟合特定基准</td>
+<td>PLM_Sol 在 Recall 和 AUC 上略优</td>
+<td>Table 3</td>
+</tr>
+<tr>
+<td>消融：移除各 PLM</td>
+<td>每个 PLM 均有贡献</td>
+<td>替换为 unit vectors</td>
+<td>移除 ESM2 降幅最大；三模型融合最优</td>
+<td>多 PLM 互补性</td>
+<td>未分析两两组合</td>
+<td>Table 4, Figures S1-S2</td>
+</tr>
+<tr>
+<td>消融：移除正则化</td>
+<td>正则化提升泛化</td>
+<td>移除 DAE/mixup/对比/原型</td>
+<td>各正则化均有正贡献；label mixup 有害</td>
+<td>潜空间 mixup 优于标签 mixup</td>
+<td>未报告各正则化独立贡献</td>
+<td>Table 5, Figures S3-S4</td>
+</tr>
+<tr>
+<td>设计实验</td>
+<td>MiLaSol 可指导序列重设计</td>
+<td>239/1993 序列被重预测为可溶</td>
+<td>12% 序列被「拯救」；多模型一致认可</td>
+<td>预测器可作为 oracle 驱动设计</td>
+<td>无湿实验验证；pLDDT 略降</td>
+<td>Figure 4C-D</td>
+</tr>
+<tr>
+<td>结构验证</td>
+<td>设计序列仍可折叠</td>
+<td>Boltz-2 预测 pLDDT</td>
+<td>pLDDT &gt; 0.8（除 1 例外）</td>
+<td>设计序列保持可折叠性</td>
+<td>pLDDT 非实验结构验证</td>
+<td>Figure 4D</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文解决的是<strong>内在溶解度</strong>（intrinsic solubility）预测，即从序列本身推断蛋白在水溶液中的可溶倾向，不涉及特定表达系统、缓冲液条件、温度等外在因素。模型预测的是「序列固有属性」，而非特定实验条件下的实际溶解度。</li>
+<li><strong>oracle/真值输入</strong>：训练标签来自 DeepSol 数据集的实验溶解度测定（E. coli 表达系统），本质上是二分类标签（可溶/不可溶），非连续溶解度值。设计实验中的 oracle 是 MiLaSol 自身的预测概率，非实验测量。</li>
+<li><strong>端到端状态</strong>：预测任务端到端完成（序列→概率）；设计任务为「计算闭环」，未进行湿实验验证。生成序列仅经 Boltz-2 结构预测验证可折叠性，未验证实际溶解度。</li>
+<li><strong>算力成本</strong>：依赖三个大型预训练 PLM（ESM2、ProtT5、Raygun），推理和训练成本显著高于单模型方法；设计阶段需多次前向传播。</li>
+<li><strong>历史依赖</strong>：模型性能受预训练 PLM 的训练数据影响，对与训练分布差异大的序列（如新折叠类型、非标准氨基酸）可能失效。</li>
+<li><strong>最难情形</strong>：跨物种、跨表达系统的泛化；膜蛋白（如 GPCR，文中明确提及虽富 α-螺旋但不可溶）； intrinsically disordered proteins。</li>
+<li><strong>群体/领域边界</strong>：训练数据以 E. coli 表达为主，对真核表达系统（酵母、哺乳动物细胞）的适用性未验证；对设计序列的预测可能受分布偏移影响。</li>
+<li><strong>不确定性</strong>：未报告置信区间或校准曲线；二分类概率的绝对值可能不可直接解释为溶解度程度。</li>
+<li><strong>有边界的复述</strong>：MiLaSol 在 DeepSol 基准上达到 81% 准确率/0.63 MCC，超越现有方法；其预测器可引导潜空间搜索，将 12% 的预测不可溶突变体计算重设计为可溶，且生成序列经结构预测仍可能正确折叠。这些结论限于计算预测范畴，未经实验验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺乏直接实验验证</td>
+<td>设计序列未进行湿实验溶解度测定</td>
+<td>未明确提及，但暗示「experimental validation」为后续工作</td>
+<td>Section 5.3 末句</td>
+</tr>
+<tr>
+<td>依赖现有基准数据</td>
+<td>训练/评估基于 DeepSol 和 PLM_Sol 数据集，可能引入偏差</td>
+<td>未明确提及</td>
+<td>Section 4</td>
+</tr>
+<tr>
+<td>生成序列的折叠验证有限</td>
+<td>仅用 pLDDT 作为可折叠性指标，非实验结构</td>
+<td>未明确提及</td>
+<td>Section 5.6</td>
+</tr>
+<tr>
+<td>设计成功率有限</td>
+<td>仅 12% 序列被预测为可溶</td>
+<td>未明确提及</td>
+<td>Section 5.6</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：作者在 Discussion 中未系统列出局限性，以上为文中可辨识的隐含局限。作者提及的相关约束：设计过程依赖 Raygun 潜空间的可解释性，且模拟退火步数（5 步）和重启次数（100 次）为经验设定，未系统优化。</p>
+</blockquote>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>81% 准确率可能受数据泄漏影响</td>
+<td>DeepSol 数据集经 CD-HIT 90% 去冗余，但测试集仅 30% 相似度阈值，训练/测试间可能存在残留同源性</td>
+<td>高估模型泛化能力</td>
+<td>检查训练/测试集最大序列相似度分布；在更严格去冗余（如 30%）下重训</td>
+<td>Section 4：测试集来自 Chang et al. 2014，30% 去冗余</td>
+</tr>
+<tr>
+<td>多 PLM 融合的增益可能来自参数量而非互补性</td>
+<td>未对比「单 PLM + 同等参数量 MLP」的基线</td>
+<td>无法归因增益来源</td>
+<td>增加单 PLM 大模型基线（如仅 ESM2-large + 大 MLP）</td>
+<td>Table 4 消融仅对比单 PLM 小头</td>
+</tr>
+<tr>
+<td>设计实验的「成功」标准循环论证</td>
+<td>用 MiLaSol 预测自己生成的序列，无独立验证</td>
+<td>可能只是模型自我一致性，非真实溶解度提升</td>
+<td>用独立溶解度预测器（如 PaRSnIP）交叉验证；湿实验验证</td>
+<td>Figure 4C 中对比模型均为训练集相似模型</td>
+</tr>
+<tr>
+<td>pLDDT 阈值选择未说明</td>
+<td>pLDDT &gt; 0.8 的阈值依据未给出</td>
+<td>影响可折叠性结论的可靠性</td>
+<td>报告不同阈值下的结果；与实验结构比较</td>
+<td>Figure 4D</td>
+</tr>
+<tr>
+<td>类别不平衡处理仅靠损失加权</td>
+<td>未报告加权前后的类别分布和 PR 曲线</td>
+<td>可能掩盖少数类性能</td>
+<td>报告混淆矩阵、PR 曲线、F1</td>
+<td>Section 3.3.2.1</td>
+</tr>
+<tr>
+<td>未与结构感知方法公平对比</td>
+<td>对比方法中 Tan et al. 2024b 使用结构信息，但未报告其结构输入的计算成本</td>
+<td>无法评估「无结构」方法的实际优势</td>
+<td>在相同计算预算下对比</td>
+<td>Table 2</td>
+</tr>
+<tr>
+<td>模拟退火参数未系统优化</td>
+<td>5 步迭代、100 次重启、σ=0.1 均为经验值</td>
+<td>可能低估设计性能上限</td>
+<td>参数扫描；对比其他优化方法（贝叶斯优化、遗传算法）</td>
+<td>Section 5.3</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>多 PLM 融合策略</strong>：不同预训练任务（MLM、结构感知、进化信息）的 PLM 嵌入互补，融合可消除单模型偏差。可迁移至其他性质预测（热稳定性、表达量、免疫原性），选择预训练任务差异大的模型是关键。</p>
+</li>
+<li>
+<p><strong>潜空间生成 + 预测器 oracle 闭环</strong>：将预测器作为可微目标函数，在连续潜空间（而非离散序列空间）中搜索优化，规避组合爆炸。可迁移至抗体亲和力成熟、酶活性优化等「序列→性质」任务。</p>
+</li>
+<li>
+<p><strong>正则化组合拳</strong>：潜空间 mixup + DAE + 对比损失 + 原型损失的组合可显著提升小样本性质预测泛化性。其中「潜空间 mixup 优于标签 mixup」的发现值得注意——在表征空间插值比在标签空间插值更有效。</p>
+</li>
+<li>
+<p><strong>无结构预测的可行性</strong>：PLM 嵌入隐式编码结构信息，对溶解度这类受多因素影响的属性，纯序列方法可逼近甚至超越结构增强方法。启示：并非所有性质预测都需要显式结构输入。</p>
+</li>
+<li>
+<p><strong>设计验证的「计算闭环」范式</strong>：用结构预测器（Boltz-2）验证设计序列的可折叠性，作为湿实验前的筛选步骤。可迁移至其他设计任务，作为低成本初步验证。</p>
+</li>
+<li>
+<p><strong>类别不平衡处理</strong>：对比损失按类别频率加权 + 少数类原型保持，是处理溶解度数据不平衡的有效策略。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>DeepSol (Khurana et al. 2018)</strong>：本文的直接基线，首次将 CNN+LSTM 用于溶解度预测。MiLaSol 在其数据集和基准上评估，可视为对 DeepSol 的 PLM 升级版。</li>
+<li><strong>PaRSnIP (Rawi et al. 2018)</strong>：序列编码器 + 全连接网络，本文对比的另一个基线。</li>
+<li><strong>EPSOL (Wu &amp; Yu 2021)</strong>：集成学习策略，本文对比基线。</li>
+<li><strong>PLM_Sol (Zhang et al. 2024)</strong>：近期 PLM 方法，本文在其基准上额外验证。</li>
+<li><strong>ESM2 (Lin et al. 2022)</strong>：Meta 的蛋白质语言模型，本文三大编码器之一，提供进化尺度表示。</li>
+<li><strong>ProtT5 (Elnaggar et al. 2021)</strong>：T5 架构蛋白质语言模型，本文编码器之一。</li>
+<li><strong>Raygun (Devkota et al. 2024)</strong>：本文编码器之一，其固定长度潜表示被用于设计模块。</li>
+<li><strong>AlphaFold 系列 (Jumper et al. 2021)</strong>：本文用 Boltz-2（AlphaFold 类方法）验证设计序列可折叠性，体现「预测-设计-验证」闭环。</li>
+<li><strong>SoluProtMutDB (Velecký et al. 2022)</strong>：溶解度突变数据库，本文设计评估的数据来源。</li>
+<li><strong>mixup (Zhang et al. 2017)</strong>：原始 mixup 数据增强方法，本文将其从输入空间迁移至潜空间。</li>
+<li><strong>对比学习 (Khosla et al. 2020)</strong>：监督对比损失，本文用于表征学习。</li>
+<li><strong>模拟退火 (Karchin et al. 2005; Feyfant et al. 2007)</strong>：经典优化方法，本文用于潜空间序列设计。</li>
+</ul>
+<p><strong>可迁移方向</strong>：
+- 将多 PLM 融合架构迁移至其他蛋白质性质预测（稳定性、表达量、聚集倾向）
+- 将「潜空间生成 + oracle」闭环迁移至抗体设计、酶工程
+- 将「潜空间 mixup + DAE + 对比 + 原型」正则化组合迁移至小样本性质预测任务</p>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Multi-PLM Fusion for Thermostability Prediction
+   - <strong>来源局限/观察</strong>：本文证明多 PLM 融合对溶解度有效，热稳定性是另一关键性质，且同样受全局序列特征影响
+   - <strong>核心假设</strong>：ESM2 + ProtT5 + 结构感知 PLM（如 ESM-IF）的融合可超越单模型热稳定性预测
+   - <strong>初步方法</strong>：复用 MiLaSol 架构，替换数据集为 Meltome Atlas 或 ThermoMutDB，增加结构感知编码器
+   - <strong>验证方式</strong>：与单 PLM 基线、结构基方法对比；消融实验
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Latent-Space Directed Evolution for Solubility Engineering
+   - <strong>来源局限/观察</strong>：本文的模拟退火仅 5 步、100 次重启，搜索效率有限；且未利用进化信息
+   - <strong>核心假设</strong>：在 Raygun 潜空间中结合进化策略（CMA-ES）或贝叶斯优化，可更高效地发现可溶变体
+   - <strong>初步方法</strong>：将 MiLaSol 作为 oracle，对比模拟退火 vs CMA-ES vs 贝叶斯优化在潜空间的搜索效率；引入多样性惩罚避免局部最优
+   - <strong>验证方式</strong>：在 SoluProtMutDB 上回顾性验证；湿实验验证 top 候选
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Structure-Aware Multi-PLM Fusion for Solubility
+   - <strong>来源局限/观察</strong>：本文完全忽略结构信息，但 Tan et al. (2024b) 显示结构可提升溶解度预测；PLM 嵌入虽隐式编码结构，但显式结构可能补充局部几何信息
+   - <strong>核心假设</strong>：在 MiLaSol 基础上增加 ESM-IF 或 GearNet 结构编码器，可进一步提升准确率
+   - <strong>初步方法</strong>：对训练集预测结构（AlphaFold2），提取结构嵌入与序列嵌入融合；对比有无结构分支的性能
+   - <strong>验证方式</strong>：DeepSol 基准 + 独立测试集；消融实验
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Uncertainty-Aware Solubility Prediction for Active Learning
+   - <strong>来源局限/观察</strong>：MiLaSol 输出点估计概率，无不确定性量化；实验验证成本高，需优先选择高信息量候选
+   - <strong>核心假设</strong>：在 MiLaSol 中加入 MC-Dropout 或深度集成，可提供校准的不确定性估计，指导主动学习采样
+   - <strong>初步方法</strong>：将 MiLaSol 扩展为深度集成，在未标注序列池中按不确定性采样，迭代标注训练
+   - <strong>验证方式</strong>：模拟主动学习曲线；与随机采样对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Cross-Species Solubility Transfer via Domain Adaptation
+   - <strong>来源局限/观察</strong>：DeepSol 数据以 E. coli 为主，对真核表达系统泛化未知；不同表达系统的溶解度决定因素可能不同
+   - <strong>核心假设</strong>：通过域对抗训练或元学习，可将 E. coli 训练的模型迁移至酵母/哺乳动物表达系统
+   - <strong>初步方法</strong>：收集多表达系统溶解度数据，训练域对抗网络对齐表征；评估跨域迁移性能
+   - <strong>验证方式</strong>：跨数据集验证；与直接迁移基线对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (main text, tables referenced, figure captions not provided in full)</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodological soundness, benchmark evaluation, and design application as presented in the provided manuscript text</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present MiLaSol, a deep learning model that predicts protein solubility by combining embeddings from three protein language models (ESM2, ProtT5, Raygun) without handcrafted features. They report 81% accuracy and MCC 0.63 on the DeepSol benchmark, outperforming prior methods. They also propose a computational design pipeline using Raygun latent-space sampling with simulated annealing to convert insoluble variants into soluble ones, validated by cross-method agreement and Boltz-2 pLDDT scores.</li>
+<li><strong>Visible evidence base</strong> Main text, Tables 1-5 (referenced), Figures 1-4 (referenced), supplementary tables S1, S8-S12 and figures S1-S6 (referenced but not provided)</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary material (Tables S1, S8-S12; Figures S1-S6; Algorithm S1), full figure captions, hyperparameter details, training curves, and the PLM_Sol benchmark dataset details were not provided. These are needed to fully assess ablation claims, regularization contributions, and the design pipeline's validity.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a straightforward application of multi-PLM embedding fusion for protein solubility prediction, with a modest improvement over prior benchmarks. The prediction results are plausible but the improvement margins are small and the statistical significance is not established. The design application is conceptually interesting but the validation is indirect and the reported "rescue" rate of 12% lacks experimental confirmation. The writing is clear but some methodological details are underspecified, and the reliance on supplementary material for key ablation results limits the assessable evidence base.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in protein engineering, computational biology, and machine learning applied to biophysics. Those working on solubility prediction benchmarks or developing PLM-based predictors would find the comparison useful. The design pipeline may interest groups working on protein optimization, though the lack of experimental validation limits its immediate utility.</li>
+<li><strong>Major strengths</strong> </li>
+<li>Clear motivation and well-structured presentation</li>
+<li>Use of multiple complementary PLMs is a sensible and timely approach</li>
+<li>Direct comparison on a standard benchmark enables fair assessment</li>
+<li>The design application addresses a practical need (reengineering insoluble proteins)</li>
+<li>Ablation studies are referenced, indicating attention to component contributions</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Claim pointer</strong> "MiLaSol attains 81% accuracy, outperforming prior methods, with the highest Matthews Correlation Coefficient (MCC) score of 0.63"</li>
+<li><strong>Evidence pointer</strong> Table 2, Section 5.1</li>
+<li><strong>Concern</strong> The reported accuracy improvement over prior methods (e.g., 81% vs. 79% for EPSOL) is small, and no confidence intervals, standard deviations across multiple runs, or statistical significance tests are reported. It is unclear whether the observed differences are meaningful or within run-to-run variability.</li>
+<li><strong>Why it matters</strong> Without statistical significance assessment, the central claim of "outperforming prior methods" is not established. A 2% accuracy difference could easily arise from random seed variation or minor data splits.</li>
+<li><strong>Resolution test</strong> Provide confidence intervals or standard deviations over at least 5 independent training runs, and perform a paired statistical test (e.g., McNemar's test) against the closest competitor.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Validation of design claims</li>
+<li><strong>Claim pointer</strong> "We also present a computational method to reengineer insoluble protein variants into soluble forms, with predictions confirmed by multiple independent solubility prediction methods"</li>
+<li><strong>Evidence pointer</strong> Section 5.3-5.6, Figure 4</li>
+<li><strong>Concern</strong> The design pipeline is validated only by agreement with other computational predictors and by Boltz-2 pLDDT scores. No experimental validation is provided. The pLDDT analysis shows a slight drop in all cases, which is interpreted as acceptable, but the threshold for "acceptable" is not justified. Cross-predictor agreement does not confirm true solubility, as all predictors may share systematic biases.</li>
+<li><strong>Why it matters</strong> The claim of "reengineering" implies a functional outcome. Computational agreement is a weak proxy for actual solubility improvement. Without experimental data, the design claim is speculative.</li>
+<li><strong>Resolution test</strong> Provide at least one experimental validation (e.g., expression and solubility assay) for a small set of designed variants, or substantially soften the claim to "computationally predicted" solubility improvement.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Methodological completeness</li>
+<li><strong>Claim pointer</strong> "We find that using and combining signals from multiple different pre-trained language models allows us not to need to include hand-tuned solubility-related features"</li>
+<li><strong>Evidence pointer</strong> Section 3.1, Table 4, Figures S1-S2</li>
+<li><strong>Concern</strong> The claim that handcrafted features are unnecessary is supported only by the ablation in Table 4, but the comparison is against other PLM-based methods, not against methods that use handcrafted features. The statement "matching the performance of structure-based and handcrafted feature models" is made without a direct comparison to such models in the provided text.</li>
+<li><strong>Why it matters</strong> The novelty claim rests partly on eliminating handcrafted features. Without a direct comparison to a strong handcrafted-feature baseline, this claim is not substantiated.</li>
+<li><strong>Resolution test</strong> Include a baseline model that uses handcrafted physicochemical features (e.g., from PROSO II) with the same architecture, and show MiLaSol matches or exceeds it.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> "MiLaSol is available at https://github.com/weiweiloutufts/milasol"</li>
+<li><strong>Evidence pointer</strong> Availability section</li>
+<li><strong>Concern</strong> The manuscript does not specify the exact versions of PLMs used, the embedding extraction procedure (e.g., which layer, pooling strategy), or the computational resources required. The hyperparameter search is described but the final selected values are only partially reported in the main text.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core expectation for computational methods. Without precise model configuration details, other groups cannot reliably replicate or build upon the work.</li>
+<li><strong>Resolution test</strong> Provide a complete configuration file or table listing all hyperparameters, PLM versions, and embedding extraction details in the main text or supplement.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section 3.1.1</li>
+<li><strong>Evidence pointer</strong> "The model operates on four complementary input representations"</li>
+<li><strong>Issue</strong> The four input representations are described but not explicitly enumerated in a list or figure. The reader must infer them from context.</li>
+<li><strong>Required correction</strong> Explicitly list the four input representations (e.g., ESM2 pooled embedding, ProtT5 pooled embedding, Raygun pooled embedding, tokenized sequence) in a bulleted list or table.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Section 5.2.2</li>
+<li><strong>Evidence pointer</strong> "ΔGain(sol.)=0.138 with them versus 0.056 without"</li>
+<li><strong>Issue</strong> The term "ΔGain(sol.)" is not defined in the main text. It is unclear what this metric represents and how it is computed.</li>
+<li><strong>Required correction</strong> Define ΔGain(sol.) explicitly, or replace with a standard metric (e.g., difference in recall for the soluble class).</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Section 5.6</li>
+<li><strong>Evidence pointer</strong> "we compare the predicted Local Distance Difference Test (pLDDT, see Supplementary Information)"</li>
+<li><strong>Issue</strong> The pLDDT threshold for "high score" is referenced to Jumper et al. (2021), but the specific threshold used (0.8) is not justified in the context of solubility. pLDDT is a fold confidence metric, not a solubility metric.</li>
+<li><strong>Required correction</strong> Clarify why pLDDT &gt; 0.8 is an appropriate proxy for solubility-relevant folding, or acknowledge its limitation as an indirect measure.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data description</li>
+<li><strong>Affected element</strong> Section 4</li>
+<li><strong>Evidence pointer</strong> "The test dataset contains 2001 protein sequences from Chang et al. (2014)"</li>
+<li><strong>Issue</strong> The class balance of the test set is not stated. Given the known imbalance in the training set, it is important to know whether the test set is balanced.</li>
+<li><strong>Required correction</strong> Report the number of soluble and insoluble sequences in the test set.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> </li>
+<li>R1-M1 (statistical significance of benchmark improvements)</li>
+<li>R1-M2 (lack of experimental validation for design claims)</li>
+<li>R1-M3 (missing direct comparison to handcrafted-feature baselines)</li>
+<li>R1-M4 (incomplete reproducibility details)</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: Moderate. Combining multiple PLMs is a reasonable incremental contribution, but the approach is not conceptually novel; similar fusion strategies exist in other domains.</li>
+<li>Scientific importance: Moderate. Solubility prediction is practically relevant, but the improvement over prior methods is marginal and the design application lacks experimental confirmation.</li>
+<li>Interdisciplinary readership: Limited. The work will primarily interest computational biologists and ML practitioners; the biological insights are minimal.</li>
+<li>Technical soundness: Partially established. The benchmark evaluation is standard, but statistical rigor is missing and the design validation is indirect.</li>
+<li>Readability for nonspecialists: Good. The manuscript is clearly written and the motivation is accessible, though some methodological details require domain expertise.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The prediction benchmark claims require statistical substantiation, and the design application claims require either experimental validation or substantial softening. The manuscript has potential but needs major revisions to support its central claims.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that MiLaSol "outperforms prior methods" is unsupported without statistical significance testing.</li>
+<li>The claim that handcrafted features are unnecessary is unsupported without a direct comparison to a handcrafted-feature baseline.</li>
+<li>The claim that the design pipeline "reengineers" insoluble proteins into soluble forms is unsupported without experimental validation.</li>
+<li>The claim that pLDDT &gt; 0.8 indicates solubility-relevant folding is an unvalidated proxy.</li>
+<li>The claim that the augmented latent space is "more information-dense" based on singular value spectrum is weakly supported and not tied to task performance.</li>
+<li>The selection of 1993 sequences from 2463 "– –" labeled mutants is not justified; the exclusion criteria are unclear.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

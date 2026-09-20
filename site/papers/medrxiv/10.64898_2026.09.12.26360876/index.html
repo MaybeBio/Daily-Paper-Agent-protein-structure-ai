@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI-Based Synthetic Data in Biomedicine: A Decade of Growth and a Persistent Translation Gap · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">5</span>
+    <div>
+      <h1>AI-Based Synthetic Data in Biomedicine: A Decade of Growth and a Persistent Translation Gap</h1>
+      <div class="meta">Asgari N; Pérez IF; Epelde G; Zhang L; Horesh L; Saab CY; Muszkat M; Rosen-Zvi M</div>
+      <div class="meta muted">
+        
+        <span class="journal">medRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-14
+         · 全文(europepmc)
+         · <a href="https://www.medrxiv.org/content/10.64898/2026.09.12.26360876">原文</a>
+      </div>
+      <p class="one-liner">该文系统综述了2015-2025年生物医学AI合成数据的增长与转化差距，虽涉及分子和药物应用中的SE(3)等变架构与结构预测模型，但核心是文献计量分析而非蛋白质结构计算建模，对课题仅有间接启发。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">AI-generated synthetic data are increasingly used to address data scarcity, privacy constraints and experimental limitations in biomedicine, but how far these methods have translated into practice remains unclear. We conducted a systematic mapping and bibliometric analysis of 4,143 publications spanning 2015–2025, combining expert annotation with LLM-assisted classification across data modality, medical domain, paper type, deployment status and research stance. Publication volume grew continuously; 77.8% of papers were strongly supportive while critical work remained below 1% . Medical imaging dominated the corpus, consistent with well-characterized transformation-group invariances supporting data augmentation and generative modeling. Highly cited primary research concentrated disproportionately in molecular and pharmaceutical applications, where SE(3)-equivariant architectures and structure-prediction models accelerated generative approaches. Only 27 publications reported operational use; omics and tabular clinical data, lacking well-characterized invariance structures, remained underrepresented. These findings reveal a gap between methodological growth and deployment, motivating investment in evaluation standards, deployment reporting and encoding domain-relevant invariances.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">AI生成的合成数据越来越多地被用于解决生物医学中的数据稀缺、隐私约束和实验局限性问题，但这些方法在实践中的转化程度仍不清楚。我们对2015–2025年间4,143篇出版物进行了系统映射和文献计量分析，结合专家标注与LLM辅助分类，涵盖数据模态、医学领域、论文类型、部署状态和研究立场。出版量持续增长；77.8%的论文持强烈支持态度，而批判性工作占比低于1%。医学影像在文献中占主导地位，这与支持数据增强和生成建模的、特征明确的变换群不变性（transformation-group invariances）相一致。高被引的原始研究不成比例地集中在分子和制药应用中，其中SE(3)-等变架构和结构预测模型加速了生成方法的发展。仅有27篇出版物报告了实际部署使用；组学（omics）和表格型临床数据，由于缺乏特征明确的不变性结构，仍然代表性不足。这些发现揭示了方法学增长与部署之间的差距，促使在评估标准、部署报告和编码领域相关不变性方面进行投资。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：AI-Based Synthetic Data in Biomedicine: A Decade of Growth and a Persistent Translation Gap</li>
+<li><strong>作者与单位</strong>：Asgari N (Fordham University); Pérez IF; Epelde G (Bio-Gipuzkoa); Zhang L (TU Eindhoven); Horesh L (IBM); Saab CY (Cleveland Clinic); Muszkat M (Hebrew University of Jerusalem); Rosen-Zvi M (Merck KGaA, 前 IBM Research)</li>
+<li><strong>期刊/预印本平台</strong>：medRxiv</li>
+<li><strong>年份</strong>：2026-09-14</li>
+<li><strong>论文类型</strong>：系统综述/文献计量分析（Systematic mapping + bibliometric analysis）</li>
+<li><strong>领域</strong>：生物医学 AI 合成数据</li>
+<li><strong>关键词</strong>：synthetic data, biomedicine, generative AI, bibliometric analysis, translation gap</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.12.26360876</li>
+<li><strong>代码</strong>：https://doi.org/10.5281/zenodo.21720346（含标注语料库与全部代码）</li>
+<li><strong>数据</strong>：https://doi.org/10.5281/zenodo.21720346</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文是生物医学 AI 合成数据领域的系统综述与文献计量研究，覆盖 2015–2025 年 4,143 篇 PubMed 论文。对「蛋白质结构相关计算研究 × AI/物理模拟」课题而言，本文提供了：(1) 分子与制药领域在合成数据高影响力研究中的突出地位证据；(2) SE(3)-等变架构与结构预测模型（如 AlphaFold）驱动分子生成方法加速的量化证据；(3) 非成像模态（组学、表格临床数据）因缺乏不变性结构而发展受限的分析框架；(4) 合成数据从「数据增强工具」向「科学有效数据来源」范式转变的论述。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文通过系统综述与 LLM 辅助标注 4,143 篇 2015–2025 年 PubMed 论文，量化了生物医学 AI 合成数据领域的持续增长（77.8% 强烈支持、&lt;1% 批判性），发现医学影像占出版量主导（37.8%）但分子与制药领域集中高被引研究，且仅 27 篇（0.65%）报告实际部署，揭示了方法增长与临床转化之间的显著鸿沟。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：过去十年（2015–2025）AI 合成数据在生物医学领域的研究产出如何分布？这些方法在多大程度上已转化为实际部署？</li>
+<li><strong>为什么重要</strong>：合成数据被视为解决医疗数据稀缺、隐私限制和高获取成本的关键途径，但其实际应用程度缺乏量化证据。理解领域结构（模态分布、立场分布、部署率）对资源分配、评估标准制定和未来研究方向至关重要。</li>
+<li><strong>现有方法不足</strong>：已有综述（如 Breugel et al. 2024, Nature Reviews Bioengineering）以方法类别为组织框架，提供定性分类，但缺乏：(1) 全领域规模的量化分布；(2) 跨模态、跨时间趋势的系统比较；(3) 部署状态的实证评估。</li>
+<li><strong>精确研究问题</strong>：Can a corpus-level bibliometric analysis of a decade of biomedical synthetic data publications reveal systematic patterns in modality distribution, research stance, and deployment status that explain the gap between methodological growth and clinical translation?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架，未经外部独立核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法/事件</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期（~2015–2017）</td>
+<td>传统模拟与图像处理、GAN 初步应用</td>
+<td>建立合成数据基本范式</td>
+<td>模态单一，以生命科学产业为主</td>
+<td>本文数据显示此阶段生命科学产业占 90–100%</td>
+</tr>
+<tr>
+<td>扩展期（~2018–2020）</td>
+<td>GAN 在医学影像中广泛采用、扩散模型兴起</td>
+<td>影像合成质量显著提升</td>
+<td>评估标准不统一，缺乏临床验证</td>
+<td>本文显示医疗产业方向 2019 Q1 首次超越生命科学</td>
+</tr>
+<tr>
+<td>生成式 AI 爆发（~2021–2023）</td>
+<td>扩散模型、大语言模型、AlphaFold 等结构预测</td>
+<td>跨模态生成能力跃升；分子领域出现科学有效数据</td>
+<td>递归训练风险（AI 自噬）、分布偏移</td>
+<td>本文显示 2021 年后生成式 AI 与数字孪生术语集中出现</td>
+</tr>
+<tr>
+<td>当前（~2024–2025）</td>
+<td>数字孪生、基础模型、量子模拟混合范式</td>
+<td>物理约束与生成模型结合</td>
+<td>部署率极低（27/4,143），评估标准缺失</td>
+<td>本文定位为「方法成熟但转化不成熟」阶段</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>翻译鸿沟（Translation Gap）</td>
+<td>仅 27/4,143 篇（0.65%）报告实际部署</td>
+<td>作者解释：文献记录偏向研究早期阶段；部署报告可能不进入学术文献</td>
+<td>Results 节 "only 27 carry an In use label"；Discussion 节 "even this small number overstates genuine deployment"</td>
+</tr>
+<tr>
+<td>批判性研究稀缺</td>
+<td>&lt;1% 论文持批判立场，77.8% 强烈支持</td>
+<td>作者解释：领域处于快速增长期，研究文化偏向方法推广</td>
+<td>Results 节 stance 分布数据</td>
+</tr>
+<tr>
+<td>模态分布失衡</td>
+<td>医学影像占 37.8%，组学与表格临床数据占比低</td>
+<td>作者解释：影像数据具有良好特征化的变换群不变性，天然适配增强与生成</td>
+<td>Results 节 "Medical imaging dominates the data-type distribution"</td>
+</tr>
+<tr>
+<td>评估标准缺失</td>
+<td>评估类论文仅占 14.1%，且集中于影像增强效果</td>
+<td>作者解释：缺乏对临床终点、下游任务性能的系统评估</td>
+<td>Discussion 节 "evaluation is heavily concentrated on the efficacy of image augmentation"</td>
+</tr>
+<tr>
+<td>非影像模态发展受限</td>
+<td>组学与表格数据缺乏不变性结构，生成方法难以适配</td>
+<td>作者解释：这些模态缺少类似影像的变换群结构</td>
+<td>Discussion 节 "omics and tabular clinical data, lacking well-characterized invariance structures, remained underrepresented"</td>
+</tr>
+<tr>
+<td>标注可靠性有限</td>
+<td>人机标注一致性 κ = 0.57 ± 0.08</td>
+<td>作者解释：合成数据边界定义本身存在模糊性</td>
+<td>Methods 节 "Annotation, validation, and citation analysis"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：构建 4,143 篇 PubMed 论文语料库，采用五维度标注框架（论文类型、医学领域、合成数据类型、实用性、立场），结合六位专家人工标注与三 LLM（GPT-4o、Qwen3-14B、Llama-3.3-70B-Instruct）大规模标注，通过多数投票确定最终标签，并进行时间趋势分析与被引率归一化分析。</p>
+<p><strong>2) 核心洞察</strong>：
+- <strong>模态-影响力错配</strong>：医学影像主导出版量（37.8%），但高被引非综述论文集中于分子与制药领域。这表明「出版量」与「科学影响力」并非同构，分子领域的合成数据（如药物发现、毒性预测）具有更强的实际工具价值。
+- <strong>不变性结构决定生成可行性</strong>：影像数据因具有良好特征化的变换群不变性（旋转、平移）而天然适配数据增强与生成建模；分子数据因 SE(3) 与置换对称性明确而催生了等变生成架构；组学与表格数据缺乏此类结构，成为发展瓶颈。
+- <strong>部署报告的系统性缺失</strong>：仅 0.65% 论文报告实际使用，且细读后部分仍为验证研究。这不仅是领域问题，更是学术出版系统的结构性偏差——部署报告缺乏发表渠道。
+- <strong>范式转变</strong>：合成数据正从「数据稀缺的权宜之计」转向「科学有效数据的来源」（如 AlphaFold 的结构预测），但这一转变在分子领域最为明显。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 对蛋白质结构计算研究：分子领域的高影响力表明，当生成模型建立在明确物理对称性（SE(3)）之上时，其产出更可能具有科学有效性。这支持了在蛋白质设计中优先采用等变架构的策略。
+- 对非影像模态：组学与表格数据的困境提示，若缺乏可发现的不变性结构，单纯增加数据量或模型容量难以突破生成质量瓶颈；可能需要先发现或构造数据的内在对称性。
+- 对评估标准：影像领域评估集中于增强效果而非临床终点，提示蛋白质结构预测领域应警惕类似陷阱——模型评估不应止于结构精度指标，而应延伸至功能验证和下游任务表现。</p>
+<hr />
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：PubMed 高级检索返回的 4,153 条记录（2015/01/01–2025/04/30，英语），经 XML 解析提取 PMID、标题、摘要、作者关键词、MeSH 词、期刊、发表年份、DOI。</p>
+<p><strong>处理流程</strong>：
+1. <strong>语料构建</strong>：布尔查询（三组术语 AND 组合）+ 出版类型过滤（排除勘误、社论、评论、信件），最终 4,143 篇。
+2. <strong>五维度标注框架</strong>：论文类型（新方法/评估/综述等）、医学领域、合成数据类型、实用性（In use / Not in use）、立场（强烈支持/部分支持/批判等）。
+3. <strong>专家标注</strong>：六位领域专家分三批标注 97 篇论文（Batch 1: 11 篇，Batch 2: 20 篇，Batch 3: 66 篇），Batch 1 后讨论优化指南，Batch 2 人机一致性 κ = 0.60 ± 0.24。
+4. <strong>LLM 标注</strong>：三模型（GPT-4o、Qwen3-14B、Llama-3.3-14B-Instruct）独立标注全部 4,143 篇，每篇每维度一次 API 调用，共 62,145 次调用；输出经规范化映射到标准词汇表，多数投票确定最终标签。
+5. <strong>时间趋势分析</strong>：对 ≥300 篇的 18 个候选类别，拟合泊松回归（季度计数 ~ 季度索引 × 类别成员 + 交互项），Benjamini-Hochberg FDR 校正（q &lt; 0.05），6 个类别显著。
+6. <strong>被引分析</strong>：通过 OpenAPI 解析 PMID→OpenAlex 记录，获取 2025 年 11 月 6 日被引数，按发表月数归一化。</p>
+<p><strong>输出</strong>：五维度标注的完整语料库、各维度分布统计、时间趋势交互系数、被引率排名、部署状态清单。</p>
+<p><strong>关键工具</strong>：PubMed 高级检索界面、OpenAlex API、scikit-learn（Cohen's κ）、泊松回归（GLM）。</p>
+<p><strong>假设</strong>：LLM 标注与人类专家标注的一致性（κ = 0.57 ± 0.08）足以支撑大规模标注；PubMed 索引足以代表生物医学领域的合成数据研究。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>语料构建（布尔查询 + 出版类型过滤）</td>
+<td>从 PubMed 检索并筛选相关文献</td>
+<td>确保语料覆盖目标领域且排除非研究性文献</td>
+<td>输入：三组术语 + 日期/语言限制；输出：4,143 篇记录</td>
+<td>Methods 节 "Literature search and corpus construction"；PRISMA 2020 流程</td>
+<td>移除后语料将混入非研究文献或遗漏关键论文，影响所有下游统计</td>
+</tr>
+<tr>
+<td>五维度标注框架</td>
+<td>对每篇论文进行多维度分类</td>
+<td>单一维度无法捕捉合成数据研究的复杂性</td>
+<td>输入：标题+摘要；输出：五维度标签</td>
+<td>Table 1-3；Methods 节 "Annotation"</td>
+<td>移除后无法进行模态-影响力错配等交叉分析</td>
+</tr>
+<tr>
+<td>专家标注（三批迭代）</td>
+<td>提供高质量人工标注基准</td>
+<td>作为 LLM 标注的训练示例与验证基准</td>
+<td>输入：97 篇论文；输出：专家标签</td>
+<td>Batch 1 κ=0.48 → Batch 2 κ=0.60 提升</td>
+<td>移除后 LLM 标注缺乏 ground truth 验证，可信度无法评估</td>
+</tr>
+<tr>
+<td>LLM 集成标注（三模型投票）</td>
+<td>大规模标注全部语料</td>
+<td>人工标注无法覆盖 4,143 篇</td>
+<td>输入：全部论文标题+摘要+few-shot 示例；输出：多数投票标签</td>
+<td>人机一致性 κ=0.57±0.08；58.2%-84.6% 一致率</td>
+<td>移除后无法获得全语料标注，所有分布统计不可行</td>
+</tr>
+<tr>
+<td>时间趋势泊松回归</td>
+<td>检测类别相对增长/萎缩</td>
+<td>识别领域结构性变化</td>
+<td>输入：季度计数 + 类别成员；输出：交互系数 + q 值</td>
+<td>6 个显著类别；图 2B 展示 3 个最大效应</td>
+<td>移除后无法区分「整体增长」与「结构性转变」</td>
+</tr>
+<tr>
+<td>被引率归一化分析</td>
+<td>衡量研究影响力</td>
+<td>原始被引数受发表时间影响</td>
+<td>输入：OpenAlex 被引数 + 发表月数；输出：归一化被引率</td>
+<td>Table 5 前十被引论文</td>
+<td>移除后无法识别高影响力模态/领域</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>1) Cohen's κ（标注一致性）</strong></p>
+<p>$$\kappa = \frac{p_o - p_e}{1 - p_e}$$</p>
+<ul>
+<li>$p_o$：观察一致率（observed agreement）</li>
+<li>$p_e$：期望一致率（expected agreement，基于边际分布）</li>
+<li>用途：衡量标注者间一致性，校正随机一致</li>
+<li>直觉：实际一致性超出随机一致性的比例</li>
+<li>来源：Methods 节 "Inter-Rater Reliability and Annotation Refinement"</li>
+</ul>
+<p><strong>2) 泊松回归（时间趋势分析）</strong></p>
+<p>$$\log(\lambda_{it}) = \beta_0 + \beta_1 \cdot t + \beta_2 \cdot \mathbb{1}(i \in C) + \beta_3 \cdot t \cdot \mathbb{1}(i \in C)$$</p>
+<ul>
+<li>$\lambda_{it}$：类别 $i$ 在季度 $t$ 的期望论文数</li>
+<li>$t$：季度索引（居中）</li>
+<li>$\mathbb{1}(i \in C)$：论文是否属于候选类别 $C$ 的指示变量</li>
+<li>$\beta_3$：交互项系数，衡量类别 $C$ 相对语料整体的超额季度增长率</li>
+<li>用途：检测类别相对增长/萎缩</li>
+<li>直觉：交互项显著为正表示该类别增长快于整体</li>
+<li>来源：Methods 节 "Annotation, validation, and citation analysis"</li>
+</ul>
+<p><strong>3) 归一化被引率</strong></p>
+<p>$$r_i = \frac{c_i}{m_i}$$</p>
+<ul>
+<li>$c_i$：论文 $i$ 的总被引数（截至 2025-11-06）</li>
+<li>$m_i$：论文 $i$ 自发表至被引统计日的月数（天数/30.44）</li>
+<li>用途：跨发表时间比较影响力</li>
+<li>直觉：每月平均被引数，消除「老论文天然被引多」的偏差</li>
+<li>来源：Methods 节 "Citation analysis"</li>
+</ul>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>：PubMed 检索 4,153 条 → 过滤后 4,143 篇（2015/01–2025/04，英语）。标注语料库已存入 Zenodo（DOI: 10.5281/zenodo.21720346）。</p>
+<p><strong>规模</strong>：4,143 篇论文 × 5 维度 × 3 LLM = 62,145 次 API 调用；97 篇人工标注（Batch 1: 11，Batch 2: 20，Batch 3: 66）。</p>
+<p><strong>指标</strong>：Cohen's κ（标注一致性）、泊松回归交互系数（时间趋势）、归一化被引率（影响力）。</p>
+<p><strong>基线</strong>：无显式基线；时间趋势分析以语料整体增长率为参照。</p>
+<p><strong>评测协议</strong>：三 LLM 多数投票 vs 人类专家标注（Batch 3 独立测试集）；时间趋势分析排除 2025 Q2（不完整季度）。</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>立场分布统计</td>
+<td>领域对合成数据高度支持</td>
+<td>4,143 篇全语料</td>
+<td>77.8% 强烈支持，&lt;1% 批判</td>
+<td>领域文化偏向方法推广</td>
+<td>不能推断实际效果好坏</td>
+<td>Results 节 图 3E</td>
+</tr>
+<tr>
+<td>模态分布统计</td>
+<td>医学影像主导合成数据研究</td>
+<td>按合成数据类型分类</td>
+<td>影像占 37.8%</td>
+<td>影像因不变性结构适配生成</td>
+<td>不能推断其他模态不重要</td>
+<td>Results 节 图 3C</td>
+</tr>
+<tr>
+<td>被引率排名</td>
+<td>高影响力研究集中于分子/制药</td>
+<td>归一化被引率 Top 10</td>
+<td>3/4 非综述高被引论文为分子/制药</td>
+<td>分子领域合成数据工具价值高</td>
+<td>不能推断影像领域无高影响力工作</td>
+<td>Results 节 Table 5</td>
+</tr>
+<tr>
+<td>时间趋势分析</td>
+<td>医疗健康方向增长快于生命科学</td>
+<td>泊松回归交互项</td>
+<td>医疗 2019 Q1 超越生命科学（51.0% vs 35.3%）；交互系数 +0.021（q&lt;0.001）</td>
+<td>领域重心从生命科学转向医疗健康</td>
+<td>不能推断原因（技术成熟 vs 政策驱动）</td>
+<td>Results 节 图 2B</td>
+</tr>
+<tr>
+<td>部署状态统计</td>
+<td>合成数据实际部署极少</td>
+<td>"In use" 标签计数</td>
+<td>仅 27/4,143（0.65%）</td>
+<td>翻译鸿沟显著</td>
+<td>不能推断未部署即无效（可能未报告）</td>
+<td>Results 节；Discussion 节</td>
+</tr>
+<tr>
+<td>人机标注一致性</td>
+<td>LLM 标注可替代人工</td>
+<td>Batch 3 测试集</td>
+<td>κ = 0.57 ± 0.08</td>
+<td>LLM 标注在语料规模上可行</td>
+<td>不能推断单篇标注准确</td>
+<td>Methods 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅覆盖 PubMed 索引的英语文献（2015/01–2025/04），不包含 arXiv、bioRxiv、medRxiv 等预印本平台及会议论文。因此，方法论前沿（如最新扩散模型架构）可能被低估。</li>
+<li><strong>Oracle/真值输入</strong>：标注的 ground truth 来自六位专家对 97 篇论文的标注，但专家标注本身存在主观性（Batch 1 κ 仅 0.48）。LLM 标注与专家一致性中等（κ = 0.57），意味着语料级统计可靠，但单篇标签可能有误。</li>
+<li><strong>端到端状态</strong>：本文是文献计量分析，不涉及合成数据方法的端到端验证。被引率反映学术影响力而非实际临床/产业效用。</li>
+<li><strong>算力成本</strong>：不适用（无模型训练）。</li>
+<li><strong>历史数据依赖</strong>：被引数据截至 2025-11-06，2025 年论文被引数偏低；时间趋势分析排除 2025 Q2。</li>
+<li><strong>模型依赖</strong>：LLM 标注结果依赖 GPT-4o、Qwen3-14B、Llama-3.3-70B-Instruct 的版本与提示设计；不同模型或版本可能产生不同标签分布。</li>
+<li><strong>最难情形</strong>：AI 技术类型（pre-GenAI vs GenAI）标注一致性最低，作者归因于摘要信息不足和专家背景差异。</li>
+<li><strong>群体/领域边界</strong>：本文聚焦生物医学应用场景，不覆盖纯计算机科学的合成数据方法研究。分子/制药领域的高影响力可能部分反映该领域对合成数据的刚性需求（如虚拟筛选），而非方法本身的普适优越性。</li>
+<li><strong>有边界的复述</strong>：在 PubMed 索引的 2015–2025 年生物医学文献中，AI 合成数据研究持续增长且以医学影像为主，但高影响力研究集中于分子/制药领域；实际部署报告极少（0.65%），且该数字可能高估真实部署水平。领域需要评估标准、部署报告机制和非影像模态的不变性结构研究。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PubMed 覆盖范围有限</td>
+<td>未包含 arXiv、bioRxiv、medRxiv、NeurIPS、ICML、ICLR、MICCAI、IEEE TMI 等主要 AI 方法学平台</td>
+<td>未明确提及</td>
+<td>Discussion 节 "Limitations"</td>
+</tr>
+<tr>
+<td>标注一致性中等</td>
+<td>人机一致性 κ = 0.57 ± 0.08；AI 技术类型标注一致性最低</td>
+<td>改进标注指南，引入更多专家</td>
+<td>Methods 节 "Inter-Rater Reliability"</td>
+</tr>
+<tr>
+<td>部署状态可能被低估</td>
+<td>仅 27 篇报告 "In use"，但实际部署可能未进入学术文献</td>
+<td>建议建立部署报告机制</td>
+<td>Discussion 节 "practicality gap"</td>
+</tr>
+<tr>
+<td>2025 年数据不完整</td>
+<td>仅覆盖至 2025 年 4 月 30 日</td>
+<td>未明确提及</td>
+<td>Methods 节 "Literature search"</td>
+</tr>
+<tr>
+<td>合成数据定义边界模糊</td>
+<td>不同研究者对「合成数据」的界定不同</td>
+<td>建议社区讨论统一标准</td>
+<td>Discussion 节 "definitional ambiguities"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>被引率作为影响力指标可能偏向「工具型」论文</td>
+<td>高被引分子/制药论文可能是数据库/平台（如 CARD）而非方法论文；被引率受领域引用文化影响</td>
+<td>影响对「模态-影响力错配」结论的解读</td>
+<td>区分论文类型（数据库 vs 方法 vs 应用）后重新分析</td>
+<td>Table 5 中 CARD 为数据库资源</td>
+</tr>
+<tr>
+<td>LLM 标注的多数投票可能掩盖系统性偏差</td>
+<td>三模型可能共享训练数据中的相似偏差，多数投票不能消除系统性错误</td>
+<td>影响所有语料级统计的可信度</td>
+<td>使用不同模型家族（如 Claude、Gemini）交叉验证；对争议标签进行人工复核</td>
+<td>Methods 节 "LLM-based annotators"</td>
+</tr>
+<tr>
+<td>「翻译鸿沟」可能被出版系统放大</td>
+<td>部署报告通常以白皮书、监管文件、内部报告形式存在，不进入 PubMed；0.65% 可能低估实际部署</td>
+<td>影响对领域成熟度的判断</td>
+<td>补充灰色文献、临床试验注册库、FDA 审批数据库的交叉检索</td>
+<td>Discussion 节 "only 27 carry an In use label"</td>
+</tr>
+<tr>
+<td>不变性结构解释可能过于简化</td>
+<td>组学数据虽缺乏几何不变性，但具有置换不变性（基因/蛋白集合）和层次结构，可能未被充分挖掘</td>
+<td>影响对非影像模态发展瓶颈的判断</td>
+<td>分析组学领域合成数据方法的具体技术障碍（如高维稀疏性、批次效应）</td>
+<td>Discussion 节 "lacking well-characterized invariance structures"</td>
+</tr>
+<tr>
+<td>时间趋势分析未控制领域规模差异</td>
+<td>医疗健康方向增长快可能反映该领域基数小而非增速快</td>
+<td>影响对「重心转移」结论的解读</td>
+<td>以相对增长率（而非绝对占比）重新分析</td>
+<td>Results 节 图 2B</td>
+</tr>
+<tr>
+<td>立场分类可能混淆「方法支持」与「领域乐观」</td>
+<td>论文可能对合成数据持支持态度但对其具体方法持批判态度；单维度立场分类过于粗糙</td>
+<td>影响对领域批判性水平的判断</td>
+<td>引入多维度立场标注（方法 vs 应用 vs 伦理）</td>
+<td>Table 1 stance 定义</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>不变性结构决定生成可行性</strong>：影像数据因变换群不变性而主导合成数据研究；分子数据因 SE(3) 对称性而催生等变生成架构并产生高影响力成果。对蛋白质结构计算研究：应优先利用已知的 SE(3) 对称性设计等变生成模型，而非依赖无结构约束的通用生成方法。</p>
+</li>
+<li>
+<p><strong>出版量 ≠ 影响力</strong>：医学影像占 37.8% 出版量但高被引研究集中于分子/制药。对蛋白质结构研究：在追求方法多样性的同时，应关注可验证的物理/化学有效性，而非仅追求生成逼真度。</p>
+</li>
+<li>
+<p><strong>部署报告的系统性缺失</strong>：仅 0.65% 论文报告实际部署，且部分仍为验证研究。对蛋白质结构计算研究：应建立从方法论文到实际部署（如药物发现管线、临床决策支持）的完整报告链，避免「方法内卷」而忽视转化。</p>
+</li>
+<li>
+<p><strong>LLM 辅助标注的可行性边界</strong>：人机一致性 κ = 0.57 ± 0.08 表明 LLM 可用于大规模文献分类，但单篇标签可靠性有限。对蛋白质结构计算研究：可借鉴此方法进行大规模文献筛选，但关键结论需人工复核。</p>
+</li>
+<li>
+<p><strong>范式转变：从增强到科学有效数据</strong>：合成数据正从「数据稀缺的权宜之计」转向「科学有效数据的来源」（如 AlphaFold 结构预测）。对蛋白质结构计算研究：应区分「统计逼真」与「物理有效」两种生成目标，前者适合数据增强，后者适合科学发现。</p>
+</li>
+<li>
+<p><strong>时间趋势分析的方法</strong>：泊松回归 + 交互项可检测类别相对增长，FDR 校正控制多重比较。对蛋白质结构计算研究：可用于追踪子领域（如扩散模型 vs GAN vs 等变模型）的相对兴衰。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Breugel et al. (2024), Nature Reviews Bioengineering</strong>：本文直接引用的最接近综述，以方法类别为组织框架提供定性分类。本文补充了量化视角（分布、趋势、部署率），两者互补。</li>
+<li><strong>CARD 数据库 (Alcock et al.)</strong>：高被引论文之一，代表分子/制药领域合成数据的实际工具价值。</li>
+<li><strong>ProTox (Banerjee et al.)</strong>：毒性预测平台，同为高被引分子/制药论文。</li>
+<li><strong>AI 自噬 / 模型崩溃 (Shumailov et al.)</strong>：本文讨论递归训练风险时隐含关联，但未直接引用。</li>
+<li><strong>等变神经网络 (Cohen et al.; Thomas et al.)</strong>：本文讨论 SE(3)-等变架构时隐含关联，未直接引用但属于同一理论脉络。</li>
+<li><strong>AlphaFold (Jumper et al.; Abramson et al.)</strong>：本文提及结构预测模型作为「科学有效合成数据」的典型案例。</li>
+<li><strong>2024 诺贝尔化学奖</strong>：授予 Baker、Hassabis、Jumper，本文将其作为分子合成数据领域影响力提升的外部事件。</li>
+<li><strong>PRISMA 2020</strong>：本文遵循的系统综述报告规范。</li>
+<li><strong>可迁移方向</strong>：本文的「不变性结构 → 生成可行性」框架可直接迁移至蛋白质结构计算研究，用于解释为何 SE(3)-等变模型在蛋白质设计中优于非等变方法，以及为何组学数据（缺乏明确不变性）的生成模型发展滞后。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：蛋白质构象生成中的不变性结构分类与适配性评估
+   - <strong>来源局限/观察</strong>：本文提出「不变性结构决定生成可行性」框架，但未深入蛋白质构象生成的具体不变性结构（SE(3)、置换、时间反演等）。
+   - <strong>核心假设</strong>：蛋白质构象生成方法的性能与其利用的对称性结构类型和程度正相关。
+   - <strong>初步方法</strong>：系统分类现有构象生成方法（扩散模型、Flow Matching、MD 增强）所利用的对称性结构，建立「对称性利用度」评分，与生成质量（RMSD、多样性、物理有效性）做回归分析。
+   - <strong>验证方式</strong>：在标准构象生成基准（如 MD17、Dipeptide 构象）上比较不同对称性利用度的方法。
+   - <strong>可能的失败模式</strong>：对称性利用度与性能可能非线性相关，或受模型容量、训练数据规模等混淆变量影响。</p>
+</li>
+<li>
+<p><strong>名称</strong>：蛋白质结构预测模型的「科学有效性」评估框架
+   - <strong>来源局限/观察</strong>：本文区分「统计逼真」与「科学有效」两种生成目标，但未提供操作化评估方法。
+   - <strong>核心假设</strong>：AlphaFold 等结构预测模型的输出可作为「科学有效合成数据」，其有效性可通过下游功能预测（如结合亲和力、酶活性）而非仅结构精度来评估。
+   - <strong>初步方法</strong>：构建从结构预测输出到功能预测的端到端评估管线，比较「预测结构」与「实验结构」在下游任务中的性能差异。
+   - <strong>验证方式</strong>：在酶功能预测、蛋白质-配体结合预测等基准上比较。
+   - <strong>可能的失败模式</strong>：功能预测本身误差可能掩盖结构预测的差异；评估成本高。</p>
+</li>
+<li>
+<p><strong>名称</strong>：蛋白质-配体对接中的合成数据增强：不变性感知的数据生成策略
+   - <strong>来源局限/观察</strong>：本文显示分子/制药领域合成数据高影响力，但未涉及具体对接场景的数据增强策略。
+   - <strong>核心假设</strong>：利用 SE(3)-等变生成模型合成的蛋白质-配体复合物数据，比通用 GAN/扩散模型生成的数据更能提升对接模型性能。
+   - <strong>初步方法</strong>：比较不同生成策略（等变扩散 vs 非等变 GAN）合成的复合物数据对对接模型（如 DiffDock、GNINA）性能的影响。
+   - <strong>验证方式</strong>：在 PDBbind 等基准上比较增强前后的对接成功率。
+   - <strong>可能的失败模式</strong>：合成数据与真实数据分布差异可能引入偏差；等变模型训练成本高。</p>
+</li>
+<li>
+<p><strong>名称</strong>：蛋白质设计中的「翻译鸿沟」：从方法论文到实际部署的系统性分析
+   - <strong>来源局限/观察</strong>：本文发现生物医学合成数据领域存在显著翻译鸿沟（0.65% 部署率），蛋白质设计领域可能类似。
+   - <strong>核心假设</strong>：蛋白质设计方法的部署率同样极低，且部署障碍（实验验证成本、可扩展性、监管）与合成数据领域不同。
+   - <strong>初步方法</strong>：对蛋白质设计文献（2015–2025）进行类似五维度标注，增加「实验验证状态」维度，量化从计算设计到湿实验验证的转化率。
+   - <strong>验证方式</strong>：与本文数据对比，识别蛋白质设计领域特有的转化瓶颈。
+   - <strong>可能的失败模式</strong>：蛋白质设计领域的「部署」定义模糊（湿实验验证 vs 产业化）；文献标注主观性。</p>
+</li>
+<li>
+<p><strong>名称</strong>：组学数据生成中的潜在对称性发现：从置换不变性到层次结构
+   - <strong>来源局限/观察</strong>：本文指出组学数据因缺乏不变性结构而发展受限，但未探索可能的替代对称性。
+   - <strong>核心假设</strong>：组学数据虽缺乏几何变换群，但具有置换不变性（基因/蛋白集合）和层次结构（通路、模块），可利用这些结构设计更有效的生成模型。
+   - <strong>初步方法</strong>：开发基于集合和层次结构的生成模型（如 Set Transformer + 扩散），与现有 VAE/GAN 方法在单细胞 RNA-seq 数据增强上比较。
+   - <strong>验证方式</strong>：下游分类/聚类任务性能、生成数据与真实数据的分布距离。
+   - <strong>可能的失败模式</strong>：组学数据的噪声和批次效应可能掩盖对称性结构；层次结构定义主观。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, main text, methods, supplementary information, and data/code availability statements</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodological rigor, validity of claims, and completeness of evidence as presented in the provided material</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present a systematic mapping and bibliometric analysis of 4,143 PubMed-indexed publications (2015–2025) on AI-based synthetic data in biomedicine, using a combination of expert annotation and LLM-assisted classification across five facets (paper type, medical domain, synthetic data type, practicality, stance). They report continuous growth in publication volume, dominance of medical imaging (37.8%), a strong positive stance distribution (77.8% strongly supportive, &lt;1% critical), a concentration of high citation impact in molecular/pharmaceutical applications, and only 27 papers reporting operational use. They interpret these findings as evidence of a translation gap and propose theoretical explanations based on invariance structures across data modalities.</li>
+<li><strong>Visible evidence base</strong> Abstract; full main text sections (Motivation and contributions, Results, Discussion, Methods); supplementary information on facet definitions, inter-rater reliability, and top cited papers; data availability and code availability statements</li>
+<li><strong>Missing materials affecting confidence</strong> Figures 1–6 are referenced but not provided; Table 1 (facet definitions), Table 3 (facet full list), Table 4 (bootstrap test results), and Table 5 (top cited papers) are referenced but not shown; Supplementary Material is referenced but not provided; the full search query string is described but not reproduced verbatim; the annotation guidelines are summarized but not fully detailed</li>
+</ul>
+<h2>Reviewer</h2>
+<h3>Overall assessment</h3>
+<p>This manuscript addresses a timely and important question: to what extent has AI-based synthetic data translated from methodological development into practical biomedical application? The authors have assembled a substantial corpus and applied a novel combination of expert annotation and LLM-assisted classification. The core descriptive findings, particularly the volume-impact asymmetry between imaging and molecular/pharmaceutical domains and the extremely low number of papers reporting operational deployment, are potentially valuable contributions to the field. However, the manuscript as presented has several significant limitations that prevent full assessment of the claims. The absence of all figures and tables makes it impossible to evaluate the primary evidence. The methodological description, while detailed in parts, leaves important questions unanswered regarding the validity of the LLM-based annotation approach, the handling of ambiguous cases, and the robustness of the statistical analyses. The theoretical framing around invariance structures, while interesting, is presented as interpretation rather than as a tested hypothesis, and the connection between the empirical findings and this framework is not rigorously established. The manuscript would benefit from clearer articulation of what is novel relative to existing reviews and bibliometric analyses, and from a more careful treatment of the limitations of the corpus construction and annotation methodology.</p>
+<h3>Who would be interested in the results, and why</h3>
+<p>Researchers and practitioners in biomedical AI, including those working on synthetic data generation, data augmentation, and generative models for medical imaging and drug discovery, would find the descriptive landscape useful for understanding where the field has concentrated its efforts. Funders and journal editors in biomedical informatics and AI would be interested in the evidence of a translation gap and the proposed priorities for evaluation standards and deployment reporting. Methodologists studying the use of LLMs for systematic review and bibliometric analysis would find the annotation approach of interest. However, the broad interdisciplinary readership that Nature-style publications typically target may find the manuscript too narrowly focused on a bibliometric description without deeper methodological or conceptual advances.</p>
+<h3>Major Strengths</h3>
+<ol>
+<li>The corpus size (4,143 papers) and the systematic approach to classification across five facets represent a substantial effort and provide a useful descriptive resource.</li>
+<li>The finding that only 27 of 4,143 papers report operational use is a striking and potentially important observation that challenges the enthusiasm surrounding synthetic data in biomedicine.</li>
+<li>The volume-impact asymmetry between imaging and molecular/pharmaceutical domains is an interesting and non-obvious finding that could stimulate further investigation.</li>
+<li>The use of LLM-based annotation with human validation is a contemporary methodological choice that, if properly validated, could be of interest to the bibliometrics community.</li>
+<li>The discussion of invariance structures as a potential explanatory framework for modality differences is conceptually interesting and connects the empirical findings to a broader theoretical literature.</li>
+</ol>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence completeness</li>
+<li><strong>Claim pointer</strong> The manuscript claims to present a systematic mapping and bibliometric analysis with specific quantitative findings, including facet distributions, temporal trends, and citation analyses.</li>
+<li><strong>Evidence pointer</strong> Figures 1–6, Tables 1, 3, 4, 5; location not provided</li>
+<li><strong>Concern</strong> All figures and most tables are referenced but not provided in the submitted material. The quantitative claims (e.g., 37.8% imaging, 77.8% strongly supportive, interaction coefficients, kappa values) cannot be verified against the underlying data visualizations or tabulated results. The reader cannot assess the distribution of papers across categories, the temporal patterns claimed, or the citation analyses.</li>
+<li><strong>Why it matters</strong> The core contribution of this manuscript is empirical description. Without access to the figures and tables, the evidence base for the central claims is absent. The reader cannot evaluate whether the reported percentages are correctly derived, whether the temporal trends are visually supported, or whether the citation analyses are appropriately presented. This is a fundamental barrier to assessment.</li>
+<li>
+<p><strong>Resolution test</strong> Provide all figures and tables in a revised submission. The quantitative claims should be directly traceable to the displayed data.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological validity</li>
+<li><strong>Claim pointer</strong> The manuscript claims that annotation combined multi-round expert labeling with LLM-assisted classification, validated against a held-out set of human annotated papers, with agreement of kappa = 0.57 ± 0.08 between human and LLM labels.</li>
+<li><strong>Evidence pointer</strong> Methods section, "Annotation, validation, and citation analysis"; Supplementary information, "Inter-Rater Reliability and Annotation Refinement"; location not provided</li>
+<li><strong>Concern</strong> The validation of the LLM-based annotation approach is described with a single kappa value (0.57 ± 0.08) for human-LLM agreement on the held-out Batch 3 test set. This level of agreement is moderate at best and raises questions about the reliability of the corpus-wide labels. The manuscript does not report per-facet agreement, which is critical given that some facets (e.g., stance) may be more subjective than others. The use of majority vote across three LLMs is described, but the agreement among the LLMs themselves is not reported. The manuscript also does not describe how the LLM prompts were validated, whether the few-shot examples were representative, or whether there was any calibration of the LLM outputs against human judgment beyond the single kappa value. The decision to use majority vote with a fixed priority order for three-way disagreements (affecting 1.4% of decisions) is described but the potential bias introduced by this resolution method is not discussed.</li>
+<li><strong>Why it matters</strong> The entire corpus classification rests on the validity of the LLM-based annotation. If the labels are unreliable, all downstream analyses (facet distributions, temporal trends, citation analyses) are compromised. A kappa of 0.57 indicates substantial disagreement between human and machine labels, and the manuscript does not adequately address what this means for the confidence in the reported percentages. The lack of per-facet reliability data makes it impossible to know which facets are trustworthy.</li>
+<li>
+<p><strong>Resolution test</strong> Report per-facet human-LLM agreement, LLM-LLM agreement, and a confusion matrix or error analysis for the held-out test set. Discuss the implications of the observed agreement levels for the reliability of the corpus-wide labels. Consider whether a higher agreement threshold should be required for inclusion of a label in the analysis.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim support</li>
+<li><strong>Claim pointer</strong> The manuscript claims that "only 27 of 4,143 papers in our corpus report a system in operational use" and that this "profound practicality gap" is a central finding.</li>
+<li><strong>Evidence pointer</strong> Results section, "Discussion and future directions"; location not provided</li>
+<li><strong>Concern</strong> The identification of only 27 papers with an "In use" label is a striking claim, but the manuscript provides no detail on how this label was operationalized. What specific criteria were used to determine that a paper reports operational use? Was this based on explicit statements in the abstract, or was it inferred? How was inter-annotator agreement for this specific facet? Given that the overall human-LLM agreement is only moderate (kappa = 0.57), the reliability of this specific and consequential label is unclear. The manuscript also acknowledges that "even this small number overstates genuine deployment" but does not provide a breakdown of how many of the 27 are validation studies versus routine operational systems. The claim that this represents a "translation gap" depends entirely on the reliability of this label.</li>
+<li><strong>Why it matters</strong> The "translation gap" is presented as one of the most important findings of the manuscript. If the "In use" label is unreliable or was applied too conservatively, the central conclusion could be an artifact of the annotation methodology. The reader needs to understand exactly how this label was defined and applied, and what confidence can be placed in it.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the specific criteria for the "In use" label, report per-facet agreement for this label, and provide a detailed breakdown of the 27 papers, including how many are validation studies versus operational systems. Consider whether a more nuanced categorization of deployment status would be more informative.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interpretive validity</li>
+<li><strong>Claim pointer</strong> The manuscript proposes that the volume-impact asymmetry between imaging and molecular/pharmaceutical domains can be explained by "well-characterized transformation-group invariances" in imaging and "SE(3)-equivariant architectures and structure-prediction models" in molecular applications.</li>
+<li><strong>Evidence pointer</strong> Abstract; "Motivation and contributions" section; "Discussion and future directions" section; location not provided</li>
+<li><strong>Concern</strong> The theoretical interpretation linking the empirical findings to invariance structures is presented as a post-hoc explanation without direct evidence. The manuscript does not test whether papers in the imaging domain actually rely on transformation-group invariances, nor whether molecular papers actually use SE(3)-equivariant architectures. The connection between the citation analysis and these theoretical constructs is asserted rather than demonstrated. The manuscript also does not consider alternative explanations for the observed patterns, such as differences in data availability, regulatory pathways, or funding priorities across domains.</li>
+<li><strong>Why it matters</strong> The theoretical framing is presented as a significant contribution, but it is not empirically supported within the manuscript. If the interpretation is speculative, it should be clearly labeled as such. If it is intended as a testable hypothesis, the manuscript should provide some evidence or at least a clear research design for testing it. As presented, the interpretation risks overreaching beyond what the data can support.</li>
+<li>
+<p><strong>Resolution test</strong> Either clearly label the invariance-based interpretation as a speculative hypothesis requiring further testing, or provide empirical evidence linking the citation patterns to the use of specific architectural or methodological approaches in the cited papers.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Comparative contribution</li>
+<li><strong>Claim pointer</strong> The manuscript claims its contribution is complementary to prior reviews, specifically citing Breugel et al. (2024) as the most direct comparator, and claims to offer "the first corpus-level quantification of how the field has distributed its effort across modalities, paper types, deployment status, and citation impact across a full decade."</li>
+<li><strong>Evidence pointer</strong> "Motivation and contributions" section; location not provided</li>
+<li><strong>Concern</strong> The manuscript does not provide a systematic comparison with prior bibliometric analyses or reviews of synthetic data in biomedicine. The claim of being "the first" corpus-level quantification is strong and requires careful verification against existing literature. The manuscript mentions Breugel et al. but does not systematically compare findings, methodologies, or coverage. There may be other bibliometric studies of synthetic data or generative AI in healthcare that are not addressed.</li>
+<li><strong>Why it matters</strong> The novelty claim is central to the manuscript's contribution. If similar analyses have been published, the manuscript's contribution is incremental rather than novel. The reader cannot assess the novelty claim without a more thorough review of related work.</li>
+<li><strong>Resolution test</strong> Provide a systematic comparison with prior bibliometric analyses and reviews of synthetic data in biomedicine, including a clear statement of what is new in this analysis relative to each prior work.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract states "77.8% of papers were strongly supportive while critical work remained below 1%." The term "strongly supportive" is not defined in the abstract, and the reader is left to infer what this means. The abstract also does not mention the kappa values or the validation of the LLM-based annotation, which are important for assessing the reliability of these percentages.</li>
+<li>
+<p><strong>Required correction</strong> Briefly define the stance categories in the abstract or refer to the methods for definitions. Consider adding a sentence about the validation of the annotation approach.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Methodological transparency</li>
+<li><strong>Affected element</strong> Methods, "Literature search and corpus construction"</li>
+<li><strong>Evidence pointer</strong> Methods section; location not provided</li>
+<li><strong>Issue</strong> The search query is described in terms of three clusters of terms combined with AND, plus a disjunctive arm for "virtual patient" work. However, the exact query string is not reproduced. The manuscript states that step-by-step retrieval instructions are given in Protocol A, but this protocol is not provided in the submitted material. The choice of terms within each cluster is not justified, and it is unclear whether the query was validated for sensitivity and specificity.</li>
+<li>
+<p><strong>Required correction</strong> Reproduce the full query string in the main text or supplementary material. Justify the choice of terms and describe any validation of the search strategy.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Methods, "Annotation, validation, and citation analysis"</li>
+<li><strong>Evidence pointer</strong> Methods section; location not provided</li>
+<li><strong>Issue</strong> The manuscript reports interaction coefficients for temporal trends (e.g., -0.025, +0.021, -0.027) with q-values but does not report confidence intervals or effect sizes in a way that allows the reader to assess the magnitude of these effects. The choice of Poisson regression is stated but the model diagnostics are not described.</li>
+<li>
+<p><strong>Required correction</strong> Report confidence intervals for the interaction coefficients and describe model diagnostics. Consider whether the effect sizes are practically meaningful in addition to statistically significant.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Throughout</li>
+<li><strong>Evidence pointer</strong> Main text; location not provided</li>
+<li><strong>Issue</strong> The term "synthetic data" is used broadly, and the manuscript acknowledges in the discussion that the boundary of what constitutes synthetic data is unsettled. However, the operational definition used for corpus inclusion is only briefly stated in the methods. The manuscript includes digital twins and structure-prediction outputs (e.g., AlphaFold predictions) as synthetic data, which is a broad interpretation that may not be shared by all readers.</li>
+<li>
+<p><strong>Required correction</strong> Provide a more detailed operational definition of synthetic data as used for corpus inclusion, with examples and exclusions. Discuss the implications of this broad definition for the interpretation of the findings.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Discussion, limitations</li>
+<li><strong>Evidence pointer</strong> "Discussion and future directions" section; location not provided</li>
+<li><strong>Issue</strong> The manuscript lists several limitations but does not discuss the potential for publication bias, the exclusion of non-English literature, or the restriction to PubMed-indexed records as potential sources of bias in the corpus. The decision to exclude arXiv and other preprint servers is acknowledged but the implications for the completeness of the methodological literature are not discussed.</li>
+<li>
+<p><strong>Required correction</strong> Add a discussion of these potential biases and their implications for the generalizability of the findings.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Data and code availability</li>
+<li><strong>Evidence pointer</strong> Data availability section; location not provided</li>
+<li><strong>Issue</strong> The data availability statement indicates that the annotated corpus and code are deposited in Zenodo, but the specific DOI is not provided in the submitted material. The statement also does not specify the license under which the data and code are released.</li>
+<li><strong>Required correction</strong> Provide the specific DOI and license information in the data availability statement.</li>
+</ul>
+<h3>Technical failings that need to be addressed before the case is established</h3>
+<ol>
+<li>Absence of all figures and tables, which are essential for evaluating the empirical claims (R1-M1).</li>
+<li>Insufficient reporting of per-facet inter-rater agreement and LLM validation details, which undermines confidence in the corpus labels (R1-M2).</li>
+<li>Lack of operationalization of the "In use" label, which is central to the "translation gap" claim (R1-M3).</li>
+<li>Post-hoc theoretical interpretation without empirical support (R1-M4).</li>
+<li>Incomplete comparison with prior work, leaving the novelty claim unverified (R1-M5).</li>
+</ol>
+<h3>Assessment against Nature-style criteria</h3>
+<p><strong>Originality:</strong> The manuscript offers a corpus-level quantification of the synthetic data field in biomedicine, which is a useful descriptive contribution. However, the originality is moderate, as the approach builds on established bibliometric methods and the findings largely confirm expectations about the dominance of imaging and the early stage of deployment. The theoretical framing around invariance structures is interesting but not original in itself, and its application here is speculative.</p>
+<p><strong>Scientific importance:</strong> The finding that only 27 of 4,143 papers report operational use is potentially important and could influence research priorities and funding decisions. The volume-impact asymmetry is also a notable observation. However, the importance is tempered by the methodological limitations and the lack of a rigorous connection between the empirical findings and the proposed theoretical explanations.</p>
+<p><strong>Interdisciplinary readership:</strong> The topic is relevant to researchers in biomedical informatics, AI, and clinical translation. However, the manuscript is written primarily for a specialized audience familiar with bibliometric methods and generative AI terminology. The theoretical discussion of invariance structures may be accessible to a broader readership, but the overall presentation is not optimized for interdisciplinary appeal.</p>
+<p><strong>Technical soundness:</strong> The methodological approach is reasonable in principle, but the reporting is incomplete. The lack of figures and tables, the insufficient detail on LLM validation, and the absence of per-facet reliability data are significant technical shortcomings. The statistical analysis is described but not fully documented.</p>
+<p><strong>Readability for nonspecialists:</strong> The manuscript is generally well-written and the main findings are clearly stated. However, the methods section assumes familiarity with bibliometric and LLM-based annotation techniques. The discussion of invariance structures and SE(3)-equivariant architectures may be challenging for readers outside the AI field. The abstract is accessible but could benefit from clearer definitions of key terms.</p>
+<h3>Recommendation posture</h3>
+<p>Currently not established from the provided evidence. The manuscript addresses a timely and potentially important question, and the descriptive findings could be valuable. However, the absence of all figures and tables, the incomplete reporting of the annotation methodology and validation, and the lack of operationalization of the central "In use" label prevent a full assessment of the claims. The theoretical interpretation is speculative and not empirically supported. The manuscript would require substantial revision, including provision of all visual and tabular evidence, detailed reporting of per-facet reliability, a clear operational definition of the deployment label, and a more rigorous treatment of the theoretical framework, before the case for its findings can be established.</p>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that "only 27 of 4,143 papers report operational use" is unsupported without a clear operational definition of the "In use" label and evidence of its reliable application.</li>
+<li>The claim that the volume-impact asymmetry can be explained by "well-characterized transformation-group invariances" and "SE(3)-equivariant architectures" is unsupported, as no empirical evidence linking the citation patterns to these specific methodological features is provided.</li>
+<li>The claim that the corpus provides "the first corpus-level quantification" of this field is unverifiable without a systematic comparison with prior bibliometric analyses.</li>
+<li>The quantitative percentages reported in the abstract and main text (e.g., 37.8%, 77.8%, 8.6%, &lt;1%) cannot be verified without access to the underlying figures and tables.</li>
+<li>The claim that the annotation approach was "validated" is only weakly supported by a single kappa value, and the implications of the moderate agreement level for the reliability of the corpus labels are not discussed.</li>
+<li>The statement that "the peer reviewed record captures the early stages of the research pipeline far better than the late ones" is presented as a finding but is an interpretation that goes beyond the data presented.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

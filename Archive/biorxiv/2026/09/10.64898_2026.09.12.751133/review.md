@@ -1,0 +1,88 @@
+## Review setup
+
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract, as supplied
+- **Shared manuscript claim summary** The authors report the design of ST9, a peptide with high nanomolar affinity for claudin-5 (CLDN5), generated via generative protein design and atomistic simulations. They claim that ST9 induces rapid, transient, size-controlled, and fully reversible increases in paracellular permeability across the blood-brain barrier (BBB) in brain endothelial cells, without altering CLDN5 expression or the proteomic profile of these cells. They further claim that ST9 acts through a mechanism distinct from that of their previously reported peptide f1-C5C2, and position ST9 as a promising next-generation BBB-opening agent for neurological disease treatment.
+- **Visible evidence base** Abstract text only. No figures, tables, methods, or supplementary materials were provided.
+- **Missing materials affecting confidence** Full manuscript text, all figures and tables, experimental methods, simulation details, statistical analyses, proteomics datasets, permeability assay protocols, and any in vivo data. None of these are available for assessment.
+
+## Reviewer
+
+- **Overall assessment** The abstract presents a potentially interesting approach to BBB modulation via a designed CLDN5-binding peptide. The combination of generative protein design with atomistic simulations is timely and the reported functional properties of ST9, if fully supported, would be of interest to the drug delivery and neurotherapeutics communities. However, the abstract alone provides no quantitative data, no methodological detail, and no statistical support for any of the claims made. The central assertions regarding affinity, permeability modulation, reversibility, size selectivity, and mechanistic distinction from f1-C5C2 cannot be evaluated from the supplied material. The claim of an unaltered proteomic profile is particularly strong and requires substantial evidence that is not visible here.
+- **Who would be interested in the results, and why** Researchers working on blood-brain barrier biology, tight junction regulation, peptide-based drug delivery, and computational protein design would find these results relevant. The potential for transient and reversible BBB opening is of direct interest to those developing therapeutics for neurological disorders, as well as to groups studying paracellular transport mechanisms. The use of generative design combined with simulation may also appeal to the computational biology community.
+- **Major strengths** The conceptual approach of combining generative protein design with atomistic simulations to target a specific tight junction protein is innovative and timely. The reported properties of ST9, namely rapid onset, transient action, size-controlled permeability, and full reversibility, represent an attractive profile for a BBB-opening agent. The comparison with a previously reported peptide and the claim of a distinct mechanism suggest a thoughtful experimental design, assuming the underlying data are robust.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** ST9 has high nanomolar affinity for CLDN5.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract states that ST9 has high nanomolar affinity for CLDN5 but provides no binding data, no assay type, no quantitative affinity value, and no comparison with the affinity of f1-C5C2 under identical conditions.
+  - **Why it matters** The affinity claim is foundational to the entire study. Without a measurable and reproducible binding constant, the design success cannot be assessed, and all downstream functional claims are weakened.
+  - **Resolution test** Provide the binding assay data, including the measured dissociation constant with error bars, the assay method, and a direct comparison with f1-C5C2 under the same experimental conditions.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** ST9 induces a rapid, transient, size-controlled, and fully reversible increase in paracellular permeability.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract makes four distinct kinetic and functional claims about the permeability effect of ST9, but no experimental data are shown. There is no indication of the permeability assay used, the tracer molecules employed, the time course of the effect, the concentration dependence, or the quantitative extent of permeability increase.
+  - **Why it matters** These are the central functional claims of the study. Without quantitative time-course data, dose-response relationships, and tracer size series, the properties of rapidity, transience, size control, and reversibility cannot be verified.
+  - **Resolution test** Present permeability assay data showing time-dependent changes for multiple tracer sizes, with appropriate controls, replicates, and statistical analysis. Demonstrate reversibility with washout experiments and show that the effect is dose-dependent.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** ST9 does not alter CLDN5 expression or the proteomic profile of brain endothelial cells.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The claim of an unaltered proteomic profile is a strong negative result. The abstract provides no information on the proteomics methodology, the number of proteins quantified, the statistical thresholds used, the number of biological replicates, or the power of the analysis to detect changes.
+  - **Why it matters** Negative claims require rigorous statistical demonstration. If the proteomics analysis is underpowered or lacks appropriate controls, the claim of an unaltered proteome is not meaningful. This claim is used to support the distinct mechanism of action, so its validity is important.
+  - **Resolution test** Provide full proteomics methods, including sample preparation, mass spectrometry parameters, data analysis pipeline, statistical thresholds, and a demonstration that the experiment was powered to detect relevant changes. Show the number of quantified proteins and the distribution of fold changes.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** ST9 acts through a mechanism distinct from that of f1-C5C2.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract states that the distinct effects of ST9 compared with f1-C5C2 indicate distinct mechanisms of tight junction destabilization, but no mechanistic data are presented. No structural, biophysical, or cellular evidence is shown to support a mechanistic difference.
+  - **Why it matters** The claim of a distinct mechanism is a key differentiator for the study. Without direct mechanistic evidence, such as structural data, binding site mapping, or differential effects on tight junction protein interactions, this claim is speculative.
+  - **Resolution test** Provide direct evidence of the binding mode of ST9 on CLDN5, such as mutagenesis data, cryo-EM or NMR structures, or molecular dynamics simulations that show a different interaction interface compared with f1-C5C2. Alternatively, provide cellular assays that demonstrate differential effects on tight junction components.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The term "high nanomolar affinity" is imprecise. Nanomolar affinity spans a wide range, and the reader cannot gauge the strength of the interaction.
+  - **Required correction** Provide the exact dissociation constant value in the abstract, for example "with a Kd of 5 nM" or similar.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Model system
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract does not specify the experimental model used to assess permeability. It is unclear whether the data come from in vitro cell monolayers, ex vivo preparations, or in vivo models.
+  - **Required correction** State the model system explicitly in the abstract, for example "in primary human brain endothelial cell monolayers" or "in an in vivo mouse model."
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Peptide design details
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract mentions generative protein design and atomistic simulations but provides no details on the design pipeline, the training data, or the simulation methods.
+  - **Required correction** Briefly describe the design approach in the abstract or refer to a methods section where full details are provided.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. All four major concerns must be resolved with quantitative data before the central claims of the study can be considered established.
+- **Assessment against Nature-style criteria** 
+  - Originality: The combination of generative design and simulation for CLDN5 targeting is a fresh approach, though peptide-based BBB modulation is an active field. The originality cannot be fully assessed without seeing the design methodology and comparing it with existing approaches.
+  - Scientific importance: The potential for controlled, reversible BBB opening is of high importance for neurotherapeutics. If the claims are substantiated, the work would be a meaningful contribution.
+  - Interdisciplinary readership: The topic bridges computational design, biophysics, cell biology, and drug delivery, which would appeal to a broad readership.
+  - Technical soundness: Not assessable from the abstract. No methods, data, or statistical analyses are visible.
+  - Readability for nonspecialists: The abstract is clearly written and accessible, with appropriate context for the non-specialist.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an appealing narrative, but the absence of any quantitative data or methodological detail prevents assessment of the core claims. A supportive stance would require full access to the manuscript, including binding data, permeability assays, proteomics results, and mechanistic studies.
+
+## Risk / unsupported claims
+
+- The claim of high nanomolar affinity for CLDN5 is unsupported by any visible data.
+- The claim of rapid, transient, size-controlled, and fully reversible permeability increase is unsupported by any visible data.
+- The claim that CLDN5 expression and the proteomic profile are unaltered is unsupported by any visible data.
+- The claim of a distinct mechanism of tight junction destabilization compared with f1-C5C2 is unsupported by any visible data.
+- The positioning of ST9 as a promising next-generation BBB-opening agent is an extrapolation that cannot be evaluated without in vivo data or at minimum robust in vitro functional evidence.

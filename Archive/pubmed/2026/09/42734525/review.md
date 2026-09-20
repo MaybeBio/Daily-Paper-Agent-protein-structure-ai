@@ -1,0 +1,85 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and scope as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors present a review of AI-driven drug-target interaction (DTI) prediction, covering binding theories, task formulations, data representation, model design, translational applications, and open challenges. They claim to compare representative approaches across multiple methodological dimensions and to provide a systematic reference for future algorithm design and real-world drug discovery.
+- **Visible evidence base** Abstract text only; no figures, tables, references, or methodological details provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, reference list, any quantitative comparisons or benchmarks, and details of the proposed methodological taxonomy
+
+## Reviewer
+- **Overall assessment** The abstract describes a broad and timely review of AI-driven DTI prediction. The scope is ambitious and the proposed organizational framework is sensible. However, the abstract alone provides insufficient detail to evaluate the depth, rigor, or novelty of the review. The claims of systematic comparison and coverage of translational applications cannot be verified from the supplied material. The manuscript may be of interest to computational biologists and machine learning researchers, but the current evidence base does not establish whether the review offers meaningful synthesis beyond existing literature.
+- **Who would be interested in the results, and why** Computational biologists, medicinal chemists, and machine learning researchers working on drug discovery, particularly those developing or applying DTI prediction methods. The review could serve as an entry point for newcomers and a reference for practitioners selecting models or data representations. The translational applications section may also interest industrial researchers in pharmaceutical R&D.
+- **Major strengths** The abstract identifies a comprehensive set of topics spanning from molecular binding theory to industrial pipelines. The proposed multi-dimensional comparison framework (input representation, encoder architecture, interaction modeling, pretraining, learning objective, output, optimization, generalization) is potentially valuable for organizing a rapidly growing field. The explicit mention of challenges such as data distribution shifts and conformational variability indicates awareness of current limitations.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The abstract claims to "compare representative approaches across orthogonal methodological dimensions" and to provide "a systematic reference for future algorithm design."  
+  - **Evidence pointer** Abstract only; no comparison tables or methodological details provided  
+  - **Concern** The abstract asserts a systematic comparison but provides no indication of the number of methods reviewed, the selection criteria, or the nature of the comparisons. Without access to the full text, it is impossible to assess whether the comparison is comprehensive, balanced, or merely illustrative.  
+  - **Why it matters** A review's value depends on the rigor and transparency of its method selection and comparison framework. If the comparison is not systematic or is biased toward certain approaches, the conclusions could mislead readers.  
+  - **Resolution test** Provide the full manuscript with explicit method selection criteria, a summary of the number and types of methods compared, and at least one representative comparison table or figure.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Novelty and contribution  
+  - **Claim pointer** The abstract implies the review offers a novel organizational framework and addresses unresolved challenges.  
+  - **Evidence pointer** Abstract only; no comparison with prior reviews  
+  - **Concern** The abstract does not state how this review differs from existing DTI prediction reviews. Multiple similar reviews have been published in recent years. Without an explicit statement of novelty or a gap analysis relative to prior work, the contribution is unclear.  
+  - **Why it matters** For a review to be publishable in a high-impact venue, it must offer a distinct perspective or cover recent advances not captured elsewhere. The abstract does not establish this.  
+  - **Resolution test** Add a paragraph in the introduction or abstract that explicitly identifies gaps in prior reviews and states the unique contributions of this work.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Translational relevance  
+  - **Claim pointer** The abstract claims to outline "DTI applications in disease target mining, compound virtual screening, affinity and selectivity optimization, complex structure prediction, and industrial drug discovery pipelines."  
+  - **Evidence pointer** Abstract only; no case studies or examples provided  
+  - **Concern** The abstract lists application areas but provides no evidence of depth, such as specific case studies, success rates, or industrial adoption examples. The claim of covering "industrial drug discovery pipelines" is particularly strong and requires concrete support.  
+  - **Why it matters** Translational claims are often overstated in computational biology reviews. Without specific examples or data, readers cannot judge the practical impact of the methods discussed.  
+  - **Resolution test** Include at least one concrete case study per application area, with quantitative outcomes where available, or temper the claims to reflect the current state of evidence.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Challenge coverage  
+  - **Claim pointer** The abstract states the review discusses "key challenges such as data distribution shifts, dynamic protein conformational variability, and insufficient experimental validation."  
+  - **Evidence pointer** Abstract only; no proposed solutions or future directions detailed  
+  - **Concern** The challenges are named but not elaborated. The abstract does not indicate whether the review proposes potential solutions, evaluates existing mitigation strategies, or merely lists the challenges.  
+  - **Why it matters** A review that identifies challenges without discussing possible resolutions is less useful to practitioners. The value lies in actionable insights.  
+  - **Resolution test** In the full text, ensure each challenge is accompanied by a discussion of existing approaches, open questions, and potential research directions.
+
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Abstract structure  
+  - **Evidence pointer** Abstract, second sentence  
+  - **Issue** The sentence "DTI prediction has shifted from docking, similarity-based inference, and hand-crafted features toward data-driven representation learning and interaction modeling" is a useful framing but could be more precise about the timeline and the overlap between traditional and AI-based methods.  
+  - **Required correction** Consider adding a brief qualifier such as "in recent years" and acknowledging that some traditional methods remain in active use.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Terminology  
+  - **Affected element** "multitask prediction with uncertainty assessment"  
+  - **Evidence pointer** Abstract, task settings section  
+  - **Issue** The phrase "multitask prediction with uncertainty assessment" conflates two distinct concepts. Multitask prediction and uncertainty quantification are separate methodological directions.  
+  - **Required correction** Separate these into distinct task settings or clarify how they are combined.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Data representation list  
+  - **Evidence pointer** Abstract, data representation section  
+  - **Issue** The list of data modalities is extensive but omits certain emerging types such as single-cell transcriptomic data or proteomic profiles, which are increasingly used in DTI context.  
+  - **Required correction** Consider adding a sentence acknowledging additional emerging data modalities or justify the exclusion.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Readability  
+  - **Affected element** Abstract length and density  
+  - **Evidence pointer** Abstract, overall  
+  - **Issue** The abstract is dense and lists many topics without prioritization. Nonspecialist readers may struggle to identify the core message.  
+  - **Required correction** Consider restructuring the abstract to lead with the main contribution and the key takeaway for readers.
+
+## Risk / unsupported claims
+- The claim of providing "a systematic reference" is unsupported from the abstract alone; the full comparison framework and its application are not visible.
+- The claim of covering "industrial drug discovery pipelines" is unsupported without specific examples or evidence of industrial adoption.
+- The claim that the review addresses "unresolved challenges" is unverifiable without seeing the depth of discussion in the full text.
+- The novelty of the review relative to prior DTI prediction reviews is not established from the abstract.
+- The comprehensiveness of the data representation and model design coverage cannot be assessed without the full manuscript.

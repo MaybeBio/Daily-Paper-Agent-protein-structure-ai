@@ -1,0 +1,85 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present EM3DFold, a unified deep learning framework for de novo model building of proteins, nucleic acids, and protein-nucleic acid complexes from cryo-EM maps. The method integrates sequence, density, and structural information via a three-track attention network. Performance is reported on 298 experimental maps at resolutions better than 4.0 Å, with median completeness values of 75% for nucleic acids, 90% for protein-nucleic acid complexes, and 95% for proteins, outperforming ModelAngelo, EM2NA, CryoREAD, and EMProt. The authors also claim superior model-to-map fit and stereochemical quality.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or benchmark details were supplied
+- **Missing materials affecting confidence** Full manuscript, methods description, benchmark definitions, evaluation metrics, statistical analyses, comparison details, and code or data availability verification
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially valuable contribution to cryo-EM model building, particularly for nucleic acid targets where existing tools are limited. The reported performance metrics are impressive and the unified treatment of proteins, nucleic acids, and complexes is a sensible design goal. However, the abstract alone provides insufficient detail to evaluate the validity of the claims. Key methodological choices, benchmark construction, evaluation protocols, and statistical rigor cannot be assessed from the supplied material. The claim of "unprecedented" accuracy requires careful scrutiny of the comparison methodology and dataset composition.
+- **Who would be interested in the results, and why** Structural biologists using cryo-EM, particularly those working on nucleic acid-containing complexes, would be the primary audience. Developers of computational tools for cryo-EM model building would also find the methodological advances relevant. The potential for fully automated model building with high accuracy could benefit high-throughput structural biology efforts.
+- **Major strengths** The unified framework addressing proteins, nucleic acids, and complexes fills a clear gap in the field. The reported performance on nucleic acid targets substantially exceeds current state-of-the-art tools. The use of language model-powered deep learning is a timely and potentially powerful methodological direction. The large benchmark size of 298 maps provides a reasonable basis for performance claims, assuming appropriate construction.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims "unprecedentedly high median accuracy" with specific completeness, coverage, and sequence accuracy values across three target classes
+  - **Evidence pointer** Abstract, performance metrics section; location not provided
+  - **Concern** The abstract reports median completeness values but does not describe how these metrics are defined, how they were computed, or what constitutes a "correctly" built residue. The relationship between completeness, coverage, and sequence accuracy is unclear. Without a precise definition of these metrics and the evaluation protocol, the reported numbers cannot be interpreted or compared across methods.
+  - **Why it matters** Performance metrics in model building are highly sensitive to definition. Different tools in the field use different criteria for residue-level accuracy, and the choice of threshold for "correct" placement dramatically affects reported values. The claim of outperforming existing methods is only meaningful if the evaluation protocol is identical and fairly applied to all methods.
+  - **Resolution test** Provide explicit definitions of completeness, coverage, and sequence accuracy, including the distance thresholds and atom selection criteria used. Describe the evaluation pipeline in sufficient detail that the benchmark could be reproduced independently.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract states that EM3DFold was "extensively evaluated on independent benchmarks of 298 experimental cryo-EM maps at < 4.0 Å resolutions"
+  - **Evidence pointer** Abstract, benchmark description; location not provided
+  - **Concern** The term "independent benchmarks" is ambiguous. It is unclear whether these maps were used during training, whether they overlap with maps used to develop competing methods, or how the benchmark set was selected. The resolution range of < 4.0 Å spans a wide range of map quality, and performance is likely to vary substantially across this range. No information is provided about the distribution of resolutions, molecular weights, or target types in the benchmark.
+  - **Why it matters** Benchmark composition is the single most important factor in evaluating model building performance. If the benchmark is biased toward targets where the method performs well, or if it includes maps used in training, the reported accuracy would be inflated. The resolution distribution matters because model building difficulty increases sharply at lower resolutions.
+  - **Resolution test** Describe the benchmark construction process, including how maps were selected, whether any were used in training, and the distribution of resolutions and target sizes. Provide a breakdown of performance by resolution bins.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims EM3DFold "substantially outperforms state-of-the-art methods including ModelAngelo, EM2NA, CryoREAD, and EMProt"
+  - **Evidence pointer** Abstract, comparison statement; location not provided
+  - **Concern** No details are provided about how the comparison was conducted. It is unclear whether all methods were run under identical conditions, whether the same evaluation metrics were used, whether multiple runs were performed to account for stochasticity, or whether statistical significance was assessed. The choice of comparison methods is also incomplete, as other tools exist in this space.
+  - **Why it matters** Comparative claims are central to the paper's contribution. Without a rigorous and transparent comparison protocol, the claim of superiority cannot be verified. Stochastic deep learning methods can produce variable results, and single runs may not be representative.
+  - **Resolution test** Describe the comparison protocol in detail, including software versions, parameter settings, compute resources, number of runs, and statistical tests applied. Provide per-target performance data to allow assessment of the consistency of the improvement.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims EM3DFold "produces models with superior model-to-map fit and stereochemical quality"
+  - **Evidence pointer** Abstract, quality statement; location not provided
+  - **Concern** No metrics are reported to support this claim. Model-to-map fit is typically measured with correlation coefficients or Q-scores, and stereochemical quality with Ramachandran statistics, rotamer outliers, or MolProbity scores. None of these are mentioned in the abstract.
+  - **Why it matters** Completeness and sequence accuracy alone do not guarantee that the resulting models are physically plausible or fit the density well. The claim of superior quality is a distinct assertion that requires its own evidence.
+  - **Resolution test** Report specific quality metrics for EM3DFold and comparison methods, including the criteria used and the statistical significance of any differences.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract, method description
+  - **Evidence pointer** Abstract, first paragraph; location not provided
+  - **Issue** The term "density-aware, large language model-powered three-track attention (TTA) network" is dense and may be difficult for readers outside the deep learning field to parse. The abstract does not explain what the three tracks are or how the language model contributes to the model building task.
+  - **Required correction** Briefly clarify what the three tracks represent and how the language model component aids in model building, or provide a one-sentence intuitive description of the method.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness of reporting
+  - **Affected element** Abstract, benchmark description
+  - **Evidence pointer** Abstract, performance metrics; location not provided
+  - **Issue** The abstract reports median values but does not indicate the spread of the data. Readers cannot assess how consistent the performance is across targets.
+  - **Required correction** Include interquartile ranges or other dispersion measures for the reported metrics.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Abstract, availability statement
+  - **Evidence pointer** Abstract, last sentence; location not provided
+  - **Issue** The abstract states the package is freely available at a GitHub URL, but no license, documentation, or dependency information is mentioned. It is also unclear whether the code is accompanied by trained model weights.
+  - **Required correction** Specify the license, provide documentation links, and state whether pretrained weights are included in the repository.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The core performance claims cannot be evaluated without detailed methodology and benchmark descriptions. The comparison with existing methods requires a transparent and rigorous protocol. The quality claims require specific metrics.
+- **Assessment against Nature-style criteria** 
+  - Originality: The unified treatment of proteins, nucleic acids, and complexes in a single framework is a novel contribution, and the application of language model-powered deep learning to this problem is timely. However, the abstract does not provide enough detail to assess the novelty of the architectural design relative to existing approaches.
+  - Scientific importance: Accurate model building for nucleic acids is a recognized bottleneck in cryo-EM, and a method that substantially improves this capability would be of significant value to the field. The potential for fully automated model building is also important.
+  - Interdisciplinary readership: The work sits at the intersection of structural biology, machine learning, and computational biology. The abstract is written in a way that is accessible to structural biologists, but the deep learning aspects may be opaque to nonspecialists.
+  - Technical soundness: Cannot be assessed from the abstract alone. The evaluation methodology, benchmark construction, and comparison protocol are not described in sufficient detail.
+  - Readability for nonspecialists: The abstract is generally clear but contains jargon that may hinder comprehension for readers outside the immediate field.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents promising results, but the absence of methodological detail, benchmark descriptions, and evaluation protocols prevents verification of the central claims. A full manuscript with detailed methods and transparent evaluation would be required to assess whether the claims are supported.
+
+## Risk / unsupported claims
+- The claim of "unprecedentedly high median accuracy" is unsupported without a clear definition of the metrics and a demonstration that the evaluation protocol is consistent with or stricter than those used in prior work.
+- The claim of "substantially outperforming" four named methods is unsupported without details of the comparison protocol, including software versions, parameter settings, and statistical analysis.
+- The claim of "superior model-to-map fit and stereochemical quality" is unsupported as no specific quality metrics are reported.
+- The benchmark of 298 maps is described as "independent" but no evidence is provided that these maps were excluded from training or that the selection process was unbiased.
+- The performance breakdown across the three target classes (nucleic acids, protein-nucleic acid complexes, proteins) is reported as median values only, with no indication of variance or per-target consistency.

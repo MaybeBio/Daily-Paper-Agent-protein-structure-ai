@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UFold-X: an enhanced Dual &amp; Dynamic U-Mamba model for long-range RNA secondary structure prediction. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>UFold-X: an enhanced Dual &amp; Dynamic U-Mamba model for long-range RNA secondary structure prediction.</h1>
+      <div class="meta">Fu, Laiyi; Li, Jiachun; Wang, Ruiqi; Sun, Hequan; Wu, Danyang</div>
+      <div class="meta muted">
+        
+        <span class="journal">Nucleic acids research</span>
+        · 2026-09-13
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42728800/">原文</a>
+      </div>
+      <p class="one-liner">该文提出UFold-X，一种结合卷积与Mamba的深度学习模型用于长链RNA二级结构预测，虽对象为RNA而非蛋白质，但其长程依赖建模和结构预测方法可迁移至蛋白质结构计算，具有借鉴价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">RNA secondary structure is essential for understanding the functions of non-coding RNAs, ribosomal RNAs, and viral genomes. However, accurate prediction of long RNA structures remains challenging due to complex long-range interactions and the limited availability of long-RNA training data. We present UFold-X, a dual-branch deep learning framework that combines a convolutional encoder for local structure modeling with a Mamba-based Visual State Space Module for capturing long-range dependencies. A dynamic gating mechanism adaptively integrates the two branches according to sequence length. UFold-X was evaluated on multiple benchmark datasets containing RNAs up to 5000 nucleotides. To rigorously assess generalization, we introduced a cross-clan benchmark for long RNAs. Under this stringent setting, UFold-X achieved performance comparable to state-of-the-art classical approaches while achieving the best performance among deep learning-based methods. Additional cross-family and within-family evaluations further demonstrated robust transferability and competitive predictive performance. UFold-X also maintained excellent computational efficiency, requiring only 0.08 s per sequence on average. To assess biological consistency, we developed a SHAPE-based reactivity prediction variant (UFold-X-R) and an integrated metric, the Hybrid Reactivity-Pairing Score (HRPS). UFold-X-R showed strong agreement with experimental icSHAPE data and achieved the highest HRPS among all evaluated methods. A user-friendly web server is available at https://ufold-x.ai4bread.com.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">RNA二级结构对于理解非编码RNA、核糖体RNA和病毒基因组的功能至关重要。然而，由于复杂的长程相互作用以及长RNA训练数据的有限性，准确预测长RNA结构仍然具有挑战性。我们提出了UFold-X，一种双分支深度学习框架，结合了用于局部结构建模的卷积编码器和基于Mamba的视觉状态空间模块，以捕捉长程依赖性。动态门控机制根据序列长度自适应地整合两个分支。UFold-X在包含长达5000个核苷酸的RNA的多个基准数据集上进行了评估。为了严格评估泛化能力，我们引入了针对长RNA的跨家族基准。在这种严格设置下，UFold-X达到了与最先进的经典方法相当的性能，同时在基于深度学习的方法中取得了最佳表现。额外的跨家族和家族内评估进一步证明了其稳健的可迁移性和竞争性的预测性能。UFold-X还保持了出色的计算效率，平均每条序列仅需0.08秒。为了评估生物学一致性，我们开发了基于SHAPE的反应性预测变体（UFold-X-R）以及一个综合指标，即混合反应性配对评分（HRPS）。UFold-X-R与实验icSHAPE数据表现出强烈的一致性，并在所有评估方法中取得了最高的HRPS。用户友好的网络服务器可在https://ufold-x.ai4bread.com访问。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：UFold-X: an enhanced Dual &amp; Dynamic U-Mamba model for long-range RNA secondary structure prediction</li>
+<li><strong>作者与单位</strong>：Fu, Laiyi; Li, Jiachun; Wang, Ruiqi; Sun, Hequan; Wu, Danyang（单位未在摘要中提供）</li>
+<li><strong>期刊/预印本平台</strong>：Nucleic Acids Research</li>
+<li><strong>年份</strong>：2026-09-13</li>
+<li><strong>论文类型</strong>：研究论文（方法学）</li>
+<li><strong>领域</strong>：RNA 二级结构预测；深度学习；状态空间模型（State Space Models）</li>
+<li><strong>关键词</strong>：RNA secondary structure; long-range interactions; Mamba; U-Net; deep learning; SHAPE reactivity</li>
+<li><strong>DOI/arXiv 号</strong>：10.1093/nar/gkag887</li>
+<li><strong>代码</strong>：https://github.com/AI4Bread/UFold-X</li>
+<li><strong>数据</strong>：RNAstralign、ArchiveII、RCSB（PDB）、BGSU、Rfam、RMDB（未提供具体下载链接）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「RNA 结构预测 × 深度学习」方向，核心创新在于将 Mamba（状态空间模型）引入 RNA 二级结构预测，解决长序列中长程相互作用建模的难题。与蛋白质结构预测中的 AlphaFold 等基于 Transformer 的方法不同，本文探索了线性复杂度的 SSM 架构在生物大分子结构预测中的潜力，对蛋白质结构预测中长程依赖建模具有直接的可迁移参考价值。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 UFold-X，一个双分支 U-Net 架构，通过将卷积局部特征提取与 Mamba 状态空间全局建模结合，并引入基于序列长度的动态门控机制，在 RNA 二级结构预测中实现了对长达 5000 nt 序列的高效、准确预测，性能优于现有深度学习方法。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何准确预测长 RNA 序列（&gt;600 nt，甚至长达 5000 nt）的二级结构，特别是长程碱基配对相互作用？</li>
+<li><strong>为什么重要</strong>：长 RNA（如 lncRNA、rRNA、病毒基因组）在基因调控中发挥关键作用，但其结构预测因序列长、结构复杂而极具挑战。现有方法在长序列上性能显著下降。</li>
+<li><strong>现有方法不足</strong>：</li>
+<li>传统热力学方法（RNAfold、Mfold）时间复杂度为 O(L³)，无法扩展到长序列。</li>
+<li>现有深度学习方法（如 UFold、e2efold）主要基于卷积网络，感受野有限，难以捕捉长程依赖。</li>
+<li>Transformer 类方法虽能建模长程依赖，但注意力机制 O(N²) 复杂度在长序列上计算代价过高。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>：Can a dual-branch architecture combining convolutional local feature extraction with Mamba-based global state space modeling, adaptively fused by a length-aware gating mechanism, achieve accurate and efficient RNA secondary structure prediction for sequences up to 5000 nucleotides?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络基于本文框架，未经外部系统核验）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>热力学方法</td>
+<td>Mfold, RNAfold, RNAstructure</td>
+<td>无需训练数据，有物理基础</td>
+<td>O(L³) 复杂度，长序列不可行</td>
+</tr>
+<tr>
+<td>统计/概率方法</td>
+<td>CONTRAfold, EternaFold</td>
+<td>数据驱动参数估计</td>
+<td>仍受限于动态规划复杂度</td>
+</tr>
+<tr>
+<td>线性时间近似</td>
+<td>LinearFold</td>
+<td>线性复杂度，速度快</td>
+<td>可能牺牲全局最优性</td>
+</tr>
+<tr>
+<td>深度学习（卷积）</td>
+<td>UFold, e2efold</td>
+<td>速度快，捕捉局部模式</td>
+<td>感受野有限，长程依赖建模不足</td>
+</tr>
+<tr>
+<td>深度学习（循环）</td>
+<td>SPOT-RNA</td>
+<td>可建模序列依赖</td>
+<td>LSTM 顺序计算，长序列效率低</td>
+</tr>
+<tr>
+<td>深度学习（注意力）</td>
+<td>RNAformer, MXfold2</td>
+<td>全局上下文建模</td>
+<td>O(N²) 复杂度，长序列计算昂贵</td>
+</tr>
+<tr>
+<td><strong>本文位置</strong></td>
+<td><strong>UFold-X</strong></td>
+<td><strong>卷积+SSM 双分支，线性复杂度，长程建模</strong></td>
+<td><strong>依赖训练数据，跨家族泛化仍有挑战</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>长序列预测性能下降</td>
+<td>现有方法在 &gt;600 nt 序列上 F1 显著降低</td>
+<td>卷积感受野有限，无法捕捉长程依赖</td>
+<td>Results 节，Fig. 3A-B</td>
+</tr>
+<tr>
+<td>计算复杂度高</td>
+<td>热力学方法 O(L³)，注意力机制 O(N²)</td>
+<td>动态规划或全对注意力</td>
+<td>Introduction 节</td>
+</tr>
+<tr>
+<td>训练数据不足</td>
+<td>长 RNA 实验结构数据稀缺</td>
+<td>实验测定长 RNA 结构困难</td>
+<td>Introduction 节</td>
+</tr>
+<tr>
+<td>跨家族泛化差</td>
+<td>在未见过的 RNA 家族上性能大幅下降</td>
+<td>训练数据分布偏差，同源泄漏</td>
+<td>Results 节，Cross-family/Cross-clan 部分</td>
+</tr>
+<tr>
+<td>生物学一致性难以评估</td>
+<td>高 F1 不一定意味着生物学上合理的结构</td>
+<td>现有指标未考虑反应性/化学探针数据</td>
+<td>Discussion 节，HRPS 设计动机</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：构建一个双分支 U-Net 编码器-解码器架构。一个分支使用全卷积层提取局部结构特征；另一个分支使用基于 Mamba 的 Visual State Space Module (VSSM) 捕捉长程依赖。两个分支通过动态门控机制融合，门控权重由输入序列长度决定。输入为 17 通道的伪图像张量（16 通道 Kronecker 编码 + 1 通道配对势能），输出为碱基配对概率矩阵。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：
+   - RNA 结构形成具有层次性：局部茎环结构（短程配对）与全局拓扑（长程配对）需要不同类型的特征提取器。
+   - 卷积擅长局部模式识别，但感受野有限；Mamba/SSM 能以线性复杂度建模长程依赖，且无需 O(N²) 的注意力矩阵。
+   - 不同长度的 RNA 对局部与全局特征的依赖程度不同：短序列以局部结构为主，长序列需要更多全局上下文。因此，门控权重应随序列长度动态调整。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：
+   - 对于生物大分子结构预测，混合架构（局部+全局）优于单一架构，关键在于如何自适应地平衡两者。
+   - 状态空间模型（SSM/Mamba）是 Transformer 的高效替代方案，尤其适用于长序列建模任务，可迁移至蛋白质长序列结构预测。
+   - 任务相关的先验知识（如 RNA 配对规则、长度依赖）可以通过输入编码和门控机制注入网络，而非仅依赖网络自动学习。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：RNA 序列，转换为 17 通道伪图像张量 I ∈ R^(17×L×L)。前 16 通道为 Kronecker 积编码（每种碱基对组合一个通道），第 17 通道为基于三种规范配对规则（A-U, G-C, G-U）的连续配对势能分数。</li>
+<li><strong>输出</strong>：碱基配对概率矩阵 Y ∈ [0,1]^(L×L)，经后处理（对称化、约束优化）得到最终二级结构。</li>
+<li><strong>模块</strong>：
+  1. 双分支编码器：卷积分支（局部特征）+ VSSM 分支（全局特征）
+  2. 动态门控融合：根据序列长度计算门控权重 α, β，融合两分支特征
+  3. 解码器：U-Net 对称结构，上采样恢复分辨率
+  4. 后处理：基于物理约束（无假结、无尖锐环）的优化</li>
+<li><strong>训练</strong>：二元交叉熵损失，SGD 优化，ReLU 激活，输出层 sigmoid</li>
+<li><strong>工具</strong>：未提供具体深度学习框架信息</li>
+<li><strong>流程</strong>：序列 → Kronecker 编码 → 双分支编码 → 门控融合 → 解码 → 概率矩阵 → 后处理 → 结构</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kronecker 输入编码</td>
+<td>将序列转换为 16 通道碱基对组合张量</td>
+<td>显式编码所有配对可能性，丰富特征空间</td>
+<td>输入：one-hot 序列 X∈R^(L×4)；输出：K∈R^(16×L×L)</td>
+<td>Methods 节</td>
+<td>特征空间缩减，可能损失配对类型信息</td>
+</tr>
+<tr>
+<td>配对势能通道</td>
+<td>编码规范配对规则（A-U, G-C, G-U）的连续分数</td>
+<td>提供物理先验，缓解稀疏性</td>
+<td>输入：序列；输出：R^(1×L×L)</td>
+<td>Methods 节，CDPFold 启发</td>
+<td>失去物理先验，可能降低非规范配对预测能力</td>
+</tr>
+<tr>
+<td>卷积分支</td>
+<td>提取局部茎环结构特征</td>
+<td>卷积天然适合局部模式识别</td>
+<td>输入：17 通道张量；输出：特征图</td>
+<td>Methods 节，Fig. 2</td>
+<td>局部结构建模能力下降</td>
+</tr>
+<tr>
+<td>VSSM 分支</td>
+<td>捕捉长程碱基配对依赖</td>
+<td>Mamba 线性复杂度建模长程依赖</td>
+<td>输入：17 通道张量；输出：特征图</td>
+<td>Methods 节，Fig. 2</td>
+<td>长程配对预测能力显著下降</td>
+</tr>
+<tr>
+<td>动态门控机制</td>
+<td>根据序列长度自适应融合两分支</td>
+<td>不同长度 RNA 对局部/全局特征需求不同</td>
+<td>输入：序列长度 x_L；输出：权重 α, β</td>
+<td>Methods 节，Approach I/II</td>
+<td>固定权重融合，长序列性能下降</td>
+</tr>
+<tr>
+<td>后处理优化</td>
+<td>施加物理约束（对称、无假结）</td>
+<td>确保输出为有效 RNA 结构</td>
+<td>输入：概率矩阵；输出：二元接触图</td>
+<td>Methods 节，Test and evaluation</td>
+<td>可能产生无效结构（非规范配对、假结）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>符号含义</th>
+<th>用途</th>
+<th>直觉</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>K(i,j,k) = 1 if bases at j,k match under mode i</td>
+<td>K: Kronecker 张量；i: 配对模式索引；j,k: 序列位置</td>
+<td>输入编码</td>
+<td>将序列对关系分解为 16 个配对类型通道</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>I ∈ R^(17×L×L)</td>
+<td>I: 输入张量；L: 序列长度</td>
+<td>网络输入</td>
+<td>16 通道配对编码 + 1 通道势能</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>Z = α·Z_local + β·Z_global</td>
+<td>Z: 融合特征；α, β: 门控权重</td>
+<td>双分支融合</td>
+<td>根据长度动态平衡局部与全局特征</td>
+<td>Methods 节，Eq. 11</td>
+</tr>
+<tr>
+<td>α = 1 if x_L &lt; 600, else 0 (Approach I)</td>
+<td>x_L: 序列长度</td>
+<td>门控策略</td>
+<td>短序列用局部，长序列用全局</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>α = x_L / 1800 (Approach II)</td>
+<td>x_L: 序列长度</td>
+<td>门控策略</td>
+<td>长度线性缩放权重</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>L = -Σ[P_ij log(P̂_ij) + (1-P_ij) log(1-P̂_ij)]</td>
+<td>P: 真实接触图；P̂: 预测概率</td>
+<td>训练损失</td>
+<td>二元交叉熵</td>
+<td>Methods 节，Training</td>
+</tr>
+<tr>
+<td>HRPS = α·S_p_corr + β·F1 + γ·F1_mid + δ·F1_long</td>
+<td>α=0.4, β=0.3, γ=0.1, δ=0.2</td>
+<td>综合评估</td>
+<td>结合反应性相关性与分层配对精度</td>
+<td>Methods 节，HRPS 定义</td>
+</tr>
+</tbody>
+</table>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：</li>
+<li>RNAstralign（30,451 条序列，分为 &lt;600 nt、600-1800 nt 子集）</li>
+<li>ArchiveII（3,975 条短序列，10 个家族）</li>
+<li>RCSB1800（40 条，600-1800 nt）、RCSB4000（61 条，2800-5000 nt）</li>
+<li>BGSU1800/BGSU5000、Rfam1800/Rfam5000（来自 RNAsolo2）</li>
+<li>RMDB 化学探针数据（12,711 条，用于训练 UFold-X-R）</li>
+<li><strong>基线</strong>：RNAstructure, Mfold, LinearFold, EternaFold, CONTRAfold, SPOT-RNA, e2efold, UFold</li>
+<li><strong>指标</strong>：F1 分数（主要）、精确率、召回率、HRPS（综合指标）</li>
+<li><strong>评测协议</strong>：统一预处理流程；交叉数据集评估；交叉家族评估；交叉分支评估（cross-clan）；统计检验（Mann-Whitney U 检验、配对 t 检验、bootstrap）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>混合长度评估 (RNAstralign-all)</td>
+<td>UFold-X 在混合长度上优于基线</td>
+<td>训练于 RNAstralign-all，测试同分布</td>
+<td>F1=0.920，较 UFold (0.773) 提升 19.0%</td>
+<td>双分支架构有效提升整体性能</td>
+<td>未区分长度段的具体增益</td>
+<td>Results 节，Fig. 3A</td>
+</tr>
+<tr>
+<td>长 RNA 评估 (RNAstralign-1800)</td>
+<td>UFold-X 在长序列上表现最佳</td>
+<td>训练于 600-1800 nt 子集</td>
+<td>F1=0.955，较 UFold (0.900) 提升 6.1%</td>
+<td>VSSM 有效捕捉长程依赖</td>
+<td>未与 Transformer 类方法直接对比</td>
+<td>Results 节，Fig. 3B</td>
+</tr>
+<tr>
+<td>非规范配对评估</td>
+<td>UFold-X 在非规范配对条件下仍保持优势</td>
+<td>去除规范配对约束</td>
+<td>F1=0.981，较规范版本提升 2.72%</td>
+<td>模型能学习非规范配对模式</td>
+<td>非规范配对的实际生物学意义未验证</td>
+<td>Results 节，Fig. 3C</td>
+</tr>
+<tr>
+<td>长程配对专项评估</td>
+<td>UFold-X 在长程配对预测上显著优于 UFold</td>
+<td>仅评估距离 &gt; L/2 的配对</td>
+<td>F1=0.590 vs UFold 0.315，提升 87.3%</td>
+<td>VSSM 对长程相互作用建模有效</td>
+<td>长程配对定义依赖 L/2 阈值</td>
+<td>Results 节，Fig. 3D</td>
+</tr>
+<tr>
+<td>跨数据集评估 (RCSB)</td>
+<td>UFold-X 可迁移至独立数据集</td>
+<td>训练于 RNAstralign-1800，测试 RCSB1800/4000</td>
+<td>RCSB4000 上 F1 较 UFold 提升 &gt;10 倍</td>
+<td>模型泛化能力强</td>
+<td>RCSB 数据集规模较小</td>
+<td>Results 节，Fig. 4B</td>
+</tr>
+<tr>
+<td>跨家族评估</td>
+<td>UFold-X 在未见家族上表现最佳</td>
+<td>训练于 RNAstralign-1800，测试 4 个未见家族</td>
+<td>F1=0.495，较 UFold (0.389) 提升 27.2%</td>
+<td>跨家族泛化能力优于现有深度学习方法</td>
+<td>绝对性能仍较低，跨家族预测仍有挑战</td>
+<td>Results 节，Fig. 5A</td>
+</tr>
+<tr>
+<td>跨分支评估 (cross-clan)</td>
+<td>UFold-X 在严格同源控制下仍具优势</td>
+<td>训练于 RNAstralign-1800，测试 11 个未见分支</td>
+<td>F1=0.359，与经典方法相当</td>
+<td>在严格条件下性能与热力学方法可比</td>
+<td>深度学习方法在跨分支场景优势有限</td>
+<td>Results 节，Fig. 5B</td>
+</tr>
+<tr>
+<td>生物学一致性 (HRPS)</td>
+<td>UFold-X 预测结构与实验反应性更一致</td>
+<td>在 BGSU1800 上计算 HRPS</td>
+<td>HRPS=0.640，较 UFold (0.619) 提升 3.39%</td>
+<td>预测结构具有生物学合理性</td>
+<td>HRPS 依赖 UFold-X-R 的伪反应性预测</td>
+<td>Results 节，Fig. 5C-D</td>
+</tr>
+<tr>
+<td>统计显著性检验</td>
+<td>UFold-X 性能提升具有统计显著性</td>
+<td>Mann-Whitney U 检验、配对 t 检验、bootstrap</td>
+<td>UFold 在 RCSB 上 p=3.61×10⁻¹⁰；UFold-X p=0.449</td>
+<td>UFold-X 性能稳定，UFold 随长度显著下降</td>
+<td>统计检验仅覆盖部分数据集</td>
+<td>Results 节，Statistical significance</td>
+</tr>
+<tr>
+<td>推理时间</td>
+<td>UFold-X 计算效率高</td>
+<td>RNAstralign-1800 上平均每序列推理时间</td>
+<td>0.080 s/序列，最快</td>
+<td>SSM 架构高效，适合长序列</td>
+<td>未与所有基线对比推理时间</td>
+<td>Results 节，Table 2</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文聚焦于 RNA 二级结构预测，输入仅为序列信息，不涉及三级结构、配体结合或动力学。</li>
+<li><strong>oracle/真值输入</strong>：训练标签来自 RNAstralign 等数据库中的已知结构（实验或计算获得）；UFold-X-R 使用 RMDB 实验反应性数据训练。</li>
+<li><strong>端到端状态</strong>：UFold-X 是端到端训练的深度网络，但后处理步骤（对称化、约束优化）非可微，属于混合 pipeline。</li>
+<li><strong>算力成本</strong>：未提供具体训练算力信息；推理效率高（0.08 s/序列）。</li>
+<li><strong>历史数据依赖</strong>：依赖 RNAstralign 等数据库的结构注释质量；跨家族/跨分支评估显示性能下降，说明对训练数据分布有依赖。</li>
+<li><strong>模型依赖</strong>：性能依赖于 VSSM 和门控机制的设计；UFold-X-R 的伪反应性预测依赖短序列训练数据。</li>
+<li><strong>最难情形</strong>：跨分支（cross-clan）评估中，所有方法 F1 均低于 0.4，说明远程同源结构预测仍是开放挑战。</li>
+<li><strong>群体/领域边界</strong>：结论适用于 600-5000 nt 的 RNA 序列；对 &lt;600 nt 短序列，UFold-X 与 UFold 性能相当（Supplementary Fig. S8）。</li>
+<li><strong>有边界的复述</strong>：UFold-X 在长 RNA（600-5000 nt）二级结构预测中，在标准基准和跨数据集/跨家族评估下，性能优于现有深度学习方法，与经典热力学方法在严格跨分支条件下相当，同时保持高效推理。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练数据依赖</td>
+<td>依赖大规模、高质量标注 RNA 结构数据；跨分支评估中性能下降</td>
+<td>整合更多实验验证的结构数据</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>缺乏物理可解释性</td>
+<td>深度网络为黑盒，缺乏热力学稳定性等物理量</td>
+<td>将能量约束或已知 RNA 基序整合到学习过程</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>跨分支泛化有限</td>
+<td>在严格同源控制下，性能与经典方法相当，未显著超越</td>
+<td>开发更鲁棒的跨家族训练策略</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>双分支架构参数增加</td>
+<td>模型参数量增加，可能带来内存和计算开销</td>
+<td>进一步优化门控机制和模型压缩</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>伪反应性依赖</td>
+<td>UFold-X-R 的 HRPS 评估依赖模型自身预测的伪反应性，而非实验数据</td>
+<td>在更多实验反应性数据上验证</td>
+<td>Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>跨分支评估中 UFold-X 与经典方法 F1 相近（0.359 vs 0.393/0.390）</td>
+<td>深度学习方法在严格同源控制下可能并未真正超越物理模型；VSSM 的优势可能主要来自数据分布内的模式记忆</td>
+<td>若深度学习方法无法在跨分支场景超越经典方法，其「泛化能力」主张需弱化</td>
+<td>在更多跨分支数据集上评估，或设计零样本预测任务</td>
+<td>Results 节，Fig. 5B</td>
+</tr>
+<tr>
+<td>HRPS 中伪反应性由 UFold-X-R 自身预测</td>
+<td>存在循环论证风险：模型 A 预测结构，模型 B（同架构）预测反应性，再用两者相关性评估 A</td>
+<td>生物学一致性主张可能被高估</td>
+<td>使用独立实验反应性数据（如 icSHAPE 实测）验证</td>
+<td>Results 节，Biological correlation analysis</td>
+</tr>
+<tr>
+<td>门控机制仅基于序列长度</td>
+<td>RNA 结构复杂性不仅取决于长度，还受序列组成、GC 含量、家族类型影响</td>
+<td>门控机制可能过于简化，未能充分捕捉结构多样性</td>
+<td>消融实验：对比基于序列特征（如 GC 含量）的门控</td>
+<td>Methods 节，Dynamic gating mechanism</td>
+</tr>
+<tr>
+<td>未与 Transformer 类方法直接对比</td>
+<td>论文未报告与 RNAformer 等注意力机制方法的公平对比</td>
+<td>无法判断 SSM 是否真的优于注意力机制，还是仅优于卷积方法</td>
+<td>在相同数据和训练条件下对比 RNAformer、MXfold2</td>
+<td>Results 节，未提供</td>
+</tr>
+<tr>
+<td>推理时间对比不完整</td>
+<td>仅对比了 4 种方法，未包含所有基线</td>
+<td>效率主张的适用范围有限</td>
+<td>扩展推理时间对比至所有基线</td>
+<td>Results 节，Table 2</td>
+</tr>
+<tr>
+<td>非规范配对评估中 F1 提升可能来自评估协议差异</td>
+<td>去除规范配对约束后，评估标准变化可能使 F1 数值不可直接比较</td>
+<td>非规范配对能力提升的真实幅度需谨慎解读</td>
+<td>明确说明评估协议变化，提供多组对比</td>
+<td>Results 节，Fig. 3C</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>双分支架构设计</strong>：将局部特征提取器（卷积）与全局依赖建模器（SSM/Mamba）并行组合，通过门控机制自适应融合。此思路可直接迁移至蛋白质结构预测：卷积分支捕捉局部二级结构（α-螺旋、β-折叠），SSM 分支建模长程残基接触。</p>
+</li>
+<li>
+<p><strong>长度感知的动态门控</strong>：根据输入序列长度动态调整局部/全局特征权重，而非使用固定融合策略。对于蛋白质设计，可类比为根据蛋白质长度调整局部序列模式与全局折叠约束的平衡。</p>
+</li>
+<li>
+<p><strong>Kronecker 积输入编码</strong>：将序列对关系显式编码为多通道张量，而非依赖网络隐式学习。此方法可迁移至蛋白质残基对编码，或分子对接中的原子对特征。</p>
+</li>
+<li>
+<p><strong>SSM 替代注意力机制</strong>：Mamba 以 O(N) 复杂度实现长程依赖建模，相比 Transformer 的 O(N²) 在长序列上具有显著效率优势。对于蛋白质序列（通常 100-1000+ 残基），SSM 可能是比注意力更高效的骨干网络选择。</p>
+</li>
+<li>
+<p><strong>分层评估协议</strong>：本文设计了从 within-family → cross-dataset → cross-family → cross-clan 的递进式评估体系，严格程度递增。这种评估设计可迁移至蛋白质结构预测，用于区分「记忆训练分布」与「真正泛化」。</p>
+</li>
+<li>
+<p><strong>生物学一致性指标（HRPS）</strong>：将结构预测精度与实验反应性数据结合，构建综合评估指标。对于蛋白质结构预测，可类比为结合实验突变数据（如深度突变扫描）与结构精度，评估预测结构的生物学有效性。</p>
+</li>
+<li>
+<p><strong>数据增强策略</strong>：通过随机突变（5%-10% 碱基）生成增强数据，在保持结构相关性的同时增加序列多样性。此策略可迁移至蛋白质结构预测中的数据增强，或蛋白质设计中的序列多样化。</p>
+</li>
+<li>
+<p><strong>跨分支评估的启示</strong>：在严格同源控制下，深度学习方法与经典物理方法性能相当，说明纯数据驱动方法在远程同源场景仍有瓶颈。对于蛋白质结构预测，这提示将物理约束（能量函数、分子动力学）与深度学习结合可能是突破方向。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, discussion) as provided. Figures, tables, and supplementary materials referenced but not fully available.</li>
+<li><strong>Assessment boundary</strong> Scientific and technical evaluation of the proposed UFold-X model, its experimental design, reported results, and claims. No assessment of code correctness or web server functionality beyond what is described.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present UFold-X, a dual-branch deep learning framework combining convolutional and Mamba-based (VSSM) encoders with a dynamic gating mechanism for long-range RNA secondary structure prediction. They claim state-of-the-art performance among deep learning methods on long RNAs, competitive performance with classical approaches, robust generalization under cross-clan evaluation, biological consistency via a SHAPE-based reactivity variant (UFold-X-R) and a new metric (HRPS), and high computational efficiency.</li>
+<li><strong>Visible evidence base</strong> Text descriptions of benchmark datasets (RNAstralign, ArchiveII, RCSB, BGSU, Rfam), reported F1 scores, precision, recall, HRPS values, inference times, and statistical test results. References to Figures 1–9 and Supplementary Figures/Tables, none of which were provided in full.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, tables (including Table 1 and 2), and supplementary materials are referenced but not included. This prevents verification of numerical results, visual comparisons, ablation studies, and detailed statistical outputs. The exact model architecture hyperparameters, training details, and data preprocessing code are not fully described.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a relevant and timely problem in RNA bioinformatics: accurate secondary structure prediction for long sequences. The proposed architecture is a reasonable extension of prior work (UFold) with a clear motivation for incorporating long-range modeling via Mamba-based modules. The evaluation strategy, particularly the introduction of cross-clan benchmarks, is thoughtful and addresses a known limitation in the field. However, the manuscript as presented has several significant issues. The most critical is the lack of a clear, quantitative comparison of the proposed dynamic gating mechanism against simpler alternatives (e.g., fixed weighting, learned scalar weighting) and against the individual branches alone. The claim of "state-of-the-art among deep learning methods" is made but the comparison set is limited and the significance of improvements is not always established. The HRPS metric is introduced but its validation and the interpretation of its components require more rigorous justification. The biological consistency analysis relies on a model (UFold-X-R) trained on short sequences and applied to long ones, and the validity of this transfer is not thoroughly discussed. The computational efficiency claim is based on a single benchmark and lacks comparison with other efficient methods. Overall, the work has potential but the current evidence does not fully establish the superiority or novelty of the proposed approach over existing methods, especially given the missing figures and tables.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians working on RNA structure prediction, particularly those interested in deep learning approaches for long non-coding RNAs, viral genomes, and ribosomal RNAs. The work may also be of interest to researchers developing Mamba-based architectures for biological sequence analysis, as it demonstrates an application of this architecture to a structured prediction problem. The web server and open-source code could be useful for practitioners needing a fast and accessible prediction tool.</li>
+<li><strong>Major strengths</strong>
+  1. The problem addressed is important and the focus on long-range interactions is well-motivated.
+  2. The dual-branch architecture with dynamic gating is a sensible and potentially effective design.
+  3. The introduction of cross-clan evaluation is a significant methodological contribution, addressing a critical gap in the field's evaluation practices.
+  4. The development of a reactivity prediction variant and the HRPS metric attempts to bridge structural prediction with biochemical interpretability.
+  5. The reported computational efficiency is a practical advantage.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>R1-M1</strong><ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that the dynamic gating mechanism (Approach I) is superior to Approach II and to static fusion methods is not sufficiently supported.</li>
+<li><strong>Evidence pointer</strong> Section "Dynamic gating mechanism for range-aware feature fusion", Results section (referenced but not fully provided), Supplementary Fig. S3.</li>
+<li><strong>Concern</strong> The manuscript states that "Empirical results show that Approach I generally yields better performance on test sets" but provides no quantitative data in the text. The comparison is relegated to a supplementary figure. More importantly, there is no ablation study comparing the full model against (a) the convolutional branch alone, (b) the VSSM branch alone, and (c) a version with fixed (non-dynamic) fusion weights. Without these, it is impossible to determine whether the dynamic gating mechanism is the source of the reported improvements, or whether the improvements come simply from having a larger, more complex model.</li>
+<li><strong>Why it matters</strong> The dynamic gating mechanism is a core novelty of the proposed architecture. If its contribution is not rigorously demonstrated, the added complexity of the model cannot be justified. The claim of a "dynamic" and "adaptive" mechanism requires evidence that it outperforms simpler, static alternatives.</li>
+<li><strong>Resolution test</strong> Provide a full ablation study in the main text or a clearly referenced supplementary table, showing F1 scores (and other metrics) for: (1) UFold-X with Approach I gating, (2) UFold-X with Approach II gating, (3) UFold-X with fixed weights (e.g., α=β=0.5), (4) convolutional branch only, (5) VSSM branch only. Statistical significance tests should be performed for the key comparisons.</li>
+</ul>
+</li>
+<li><strong>R1-M2</strong><ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that UFold-X achieves "state-of-the-art" performance among deep learning methods and is "comparable" to classical approaches.</li>
+<li><strong>Evidence pointer</strong> Results section, Figures 3–5, Tables 1–2 (all referenced but not provided).</li>
+<li><strong>Concern</strong> The comparison set is limited to a few methods (RNAstructure, Mfold, LinearFold, EternaFold, CONTRAfold, SPOT-RNA, e2efold, UFold). Several recent deep learning methods for RNA secondary structure prediction (e.g., E2Efold-2, RNAformer, MXfold2 are mentioned but not consistently included in all benchmarks) are missing. The claim of "state-of-the-art" requires a more comprehensive and up-to-date comparison. Furthermore, the statistical significance of the improvements over the second-best method is only reported for some comparisons (e.g., cross-clan), and it is unclear if the improvements on other benchmarks are significant.</li>
+<li><strong>Why it matters</strong> The primary contribution of the paper is a new model with claimed superior performance. Without a comprehensive and statistically rigorous comparison, the central claim of the paper is not established.</li>
+<li><strong>Resolution test</strong> Expand the baseline set to include all recently published deep learning methods with available code. Perform statistical significance tests (e.g., paired bootstrap or Wilcoxon signed-rank test) for all key comparisons across all benchmarks and report the results clearly.</li>
+</ul>
+</li>
+<li><strong>R1-M3</strong><ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> The claim that the HRPS metric provides a "biologically meaningful" and "quantitatively balanced" evaluation that is superior to using F1 score alone.</li>
+<li><strong>Evidence pointer</strong> Section "Hybrid Reactivity-Pairing Score", Results section, Figure 5C–D, Table 1.</li>
+<li><strong>Concern</strong> The HRPS is a weighted combination of F1 and Spearman correlation. The weights (α=0.4, β=0.3, γ=0.1, δ=0.2) appear arbitrary and are not justified. The metric's behavior is not analyzed: how sensitive is the ranking of methods to the choice of weights? Is the Spearman correlation term measuring something that is not already captured by F1? The validation of UFold-X-R is limited to a short-sequence dataset, and its application to long sequences is based on the assumption that the learned reactivity patterns generalize, which is not directly tested. The claim that HRPS is "biologically meaningful" requires a demonstration that it correlates with some independent biological readout or that it provides information beyond what F1 provides.</li>
+<li><strong>Why it matters</strong> Introducing a new metric is a significant contribution only if it is well-justified, validated, and shown to provide unique and useful information. If the metric is arbitrary, its use in the paper's main conclusions weakens the overall argument.</li>
+<li><strong>Resolution test</strong> Provide a sensitivity analysis of HRPS to its weights. Show that the ranking of methods is robust to reasonable variations in the weights. Validate UFold-X-R on a held-out long RNA dataset with experimental reactivity data, if available. Justify the choice of weights based on a principled argument or empirical optimization.</li>
+</ul>
+</li>
+<li><strong>R1-M4</strong><ul>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that the cross-clan benchmark is a "stringent" and "homology-independent" evaluation setting.</li>
+<li><strong>Evidence pointer</strong> Section "Redundancy reduction and data leakage prevention", Section "Cross-clan evaluation".</li>
+<li><strong>Concern</strong> The construction of the cross-clan benchmark is not fully described. The manuscript states that 227 sequences from 12 families were obtained, and 66 sequences from 11 families were retained for testing. The criteria for selecting these specific families and sequences are not given. The use of computationally predicted structures (from CONTRAfold) as training labels for the augmented data is a potential source of bias, as the model is trained on the same type of predictions it is being evaluated against. The manuscript does not discuss the potential impact of this circularity.</li>
+<li><strong>Why it matters</strong> The validity of the cross-clan benchmark is central to the paper's claim of robust generalization. If the benchmark construction is flawed or biased, the conclusions drawn from it are weakened.</li>
+<li><strong>Resolution test</strong> Provide a detailed description of the benchmark construction, including the list of families, the number of sequences per family, and the criteria for inclusion. Discuss the potential bias introduced by using computationally predicted labels for training and how this might affect the results. Consider evaluating on a subset of the test set with experimentally validated structures, if available.</li>
+</ul>
+</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>R1-m1</strong><ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Introduction and Methods</li>
+<li><strong>Evidence pointer</strong> Section "Introduction", Section "Overview of the UFold-X framework"</li>
+<li><strong>Issue</strong> The manuscript assumes significant familiarity with both RNA structure prediction and deep learning architectures. Terms like "Mamba," "VSSM," "state space model," and "selective scanning" are introduced without sufficient background for a general reader.</li>
+<li><strong>Required correction</strong> Add a brief, accessible explanation of Mamba/SSM concepts and why they are advantageous for long-range dependency modeling in the context of RNA. Consider a short paragraph in the Introduction or a "Background" subsection.</li>
+</ul>
+</li>
+<li><strong>R1-m2</strong><ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Methods, "Training" section</li>
+<li><strong>Evidence pointer</strong> Section "Training" (not fully provided)</li>
+<li><strong>Issue</strong> The training details are incomplete. The manuscript mentions SGD and ReLU but does not specify learning rate, batch size, number of epochs, learning rate schedule, weight decay, or the hardware used. The loss function is described as BCE, but the handling of class imbalance (most base pairs are unpaired) is not discussed.</li>
+<li><strong>Required correction</strong> Provide a complete description of the training hyperparameters and any techniques used to address class imbalance (e.g., weighted loss, focal loss).</li>
+</ul>
+</li>
+<li><strong>R1-m3</strong><ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Methods, "Data preprocessing" section</li>
+<li><strong>Evidence pointer</strong> Section "Data preprocessing"</li>
+<li><strong>Issue</strong> The manuscript states that the model supports variable-length RNA sequences "without the need for input padding." This is a strong claim that needs clarification. How is the variable-length input handled in the convolutional and VSSM branches, which typically require fixed-size inputs? Is there a maximum length? How are the outputs for different lengths handled?</li>
+<li><strong>Required correction</strong> Clarify the mechanism for handling variable-length inputs. If padding is used internally, state this. If the model is fully convolutional and can handle arbitrary sizes, explain how the VSSM component, which may have learned positional parameters, adapts.</li>
+</ul>
+</li>
+<li><strong>R1-m4</strong><ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Affected element</strong> Results, "Biological correlation analysis" section</li>
+<li><strong>Evidence pointer</strong> Section "Biological correlation analysis", Table 1</li>
+<li><strong>Issue</strong> The manuscript reports that UFold-X and UFold achieve identical Spearman correlation (0.293) with pseudo-reactivity. This is a suspicious result that suggests the reactivity prediction is not sensitive to the structural differences between the two models. The authors do not comment on this.</li>
+<li><strong>Required correction</strong> Discuss why the Spearman correlation is identical for both models. If the reactivity prediction is dominated by sequence features rather than predicted structure, this should be acknowledged and its implications for the HRPS metric discussed.</li>
+</ul>
+</li>
+<li><strong>R1-m5</strong><ul>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interdisciplinary readership</li>
+<li><strong>Affected element</strong> Discussion</li>
+<li><strong>Evidence pointer</strong> Section "Discussion"</li>
+<li><strong>Issue</strong> The discussion of limitations is brief and does not address the potential for overfitting to the training distribution, the sensitivity of the results to the choice of training data, or the performance on pseudoknotted structures, which are known to be challenging.</li>
+<li><strong>Required correction</strong> Expand the discussion to include these points. Specifically, address the model's performance on pseudoknotted structures, as the manuscript mentions pseudoknots in the introduction but does not provide a detailed analysis of the model's ability to predict them.</li>
+</ul>
+</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong>
+  1. Lack of a complete ablation study for the dynamic gating mechanism (R1-M1).
+  2. Incomplete and potentially outdated baseline comparison (R1-M2).
+  3. Unjustified and unvalidated new metric (HRPS) (R1-M3).
+  4. Potential bias in the cross-clan benchmark construction (R1-M4).
+  5. Incomplete training details and unclear handling of variable-length inputs (R1-m2, R1-m3).</li>
+<li><strong>Assessment against Nature-style criteria</strong></li>
+<li><strong>Originality</strong> The combination of a convolutional encoder with a Mamba-based VSSM in a dual-branch architecture for RNA secondary structure prediction is a novel application of recent architectural innovations. The introduction of the cross-clan benchmark is a valuable methodological contribution. However, the core idea of combining local and global models is not entirely new, and the novelty is primarily in the specific implementation.</li>
+<li><strong>Scientific importance</strong> The problem of long-range RNA structure prediction is of high importance. The paper addresses a real limitation of existing deep learning methods. However, the importance of the contribution is diminished by the lack of rigorous validation of the key components (gating, HRPS) and the limited baseline comparison. The cross-clan benchmark, if properly constructed, could be a significant resource for the community.</li>
+<li><strong>Interdisciplinary readership</strong> The work is primarily of interest to computational biologists and bioinformaticians. The methods section is technical and may be challenging for experimental biologists. The potential biological applications (e.g., lncRNA, viral genomes) are mentioned but not deeply explored. The paper is unlikely to appeal to a broad interdisciplinary audience in its current form.</li>
+<li><strong>Technical soundness</strong> The technical soundness is currently not fully established. The main issues are the missing ablation study, the potential bias in the benchmark, and the lack of detail in the training and architecture description. The reported results are promising but require more rigorous validation.</li>
+<li><strong>Readability for nonspecialists</strong> The abstract is clear, but the main text is dense and assumes significant background knowledge. The introduction of Mamba/SSM concepts is not accessible to a general reader. The paper would benefit from a clearer explanation of the core ideas and their significance.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The manuscript addresses an important problem and presents a plausible and potentially effective solution. However, the current evidence is insufficient to fully support the central claims. The authors must provide a complete ablation study, a more comprehensive and up-to-date baseline comparison, a rigorous justification and validation of the HRPS metric, and a detailed description of the benchmark construction and training procedures. If these concerns are adequately addressed, the paper could make a valuable contribution to the field.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that UFold-X is "state-of-the-art" among deep learning methods is not fully supported due to the limited baseline set and lack of statistical significance testing for all comparisons.</li>
+<li>The claim that the dynamic gating mechanism is superior to static alternatives is unsupported without a full ablation study.</li>
+<li>The claim that the HRPS metric is "biologically meaningful" is not validated.</li>
+<li>The claim that the cross-clan benchmark is "homology-independent" is not fully supported due to the potential for remote homology and the use of computationally predicted labels.</li>
+<li>The claim of "excellent computational efficiency" is based on a single benchmark and lacks comparison with other efficient methods.</li>
+<li>The claim that the model handles variable-length sequences "without the need for input padding" is unclear and requires clarification.</li>
+<li>The reported Spearman correlation of 0.89 for UFold-X-R on the held-out test set is presented without details on the test set size, composition, or the variance of this estimate.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

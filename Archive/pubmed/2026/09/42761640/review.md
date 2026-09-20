@@ -1,0 +1,79 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors present the first comprehensive structure-based virtual screening (VS) benchmark for the TRPM8 ion channel, comparing classical docking scoring functions, generic machine-learning (ML) scoring functions, and target-specific ML models across multiple protein conformations and docking protocols. They report that generic ML rescoring offers modest, conformation-dependent improvements; target-specific models using protein-ligand interaction fingerprints improve early enrichment with regression algorithms but remain sensitive to conformation and chemical dissimilarity; combining structure-derived and ligand-based features enhances enrichment under selected conditions; and inactive-enriched training markedly reduces false positives and improves generalization for structure-based models, whereas ligand-only QSAR models fail under class imbalance. PLEC-based support vector regression (SVR) with inactive-enriched training achieves robust performance.
+- **Visible evidence base** Abstract text only; no methodological details, dataset descriptions, performance metrics, or statistical analyses are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, benchmark dataset composition, protein conformation selection criteria, docking protocols, feature definitions, model hyperparameters, training and test set splits, and any statistical significance testing
+
+## Reviewer
+- **Overall assessment** The abstract addresses a relevant and timely question in computational drug discovery, namely the development of target-specific ML scoring functions for ion channel VS. The reported findings, particularly the benefit of inactive-enriched training for structure-based models and the contrasting failure of ligand-only QSAR models, are potentially valuable. However, the abstract alone provides insufficient detail to evaluate the rigor of the benchmark, the validity of the comparisons, or the robustness of the conclusions. Several claims are stated without quantitative support, and the sensitivity analyses mentioned are not described in a way that allows assessment of their adequacy. The work may be of interest to the computational chemistry and drug discovery communities, but the evidence base is too limited to establish the case.
+- **Who would be interested in the results, and why** Computational chemists, medicinal chemists, and researchers developing or applying ML-based scoring functions for structure-based virtual screening. The focus on TRPM8, an ion channel with therapeutic relevance to pain and inflammation, may also attract investigators in analgesic drug discovery. The methodological emphasis on inactive-enriched training and feature representation could inform broader VS practice beyond this specific target.
+- **Major strengths** The abstract identifies a clear gap in the literature, namely the lack of a comprehensive VS benchmark for TRPM8. The study design appears to include multiple protein conformations and docking protocols, which is appropriate for assessing robustness. The finding that inactive-enriched training improves generalization for structure-based models, while ligand-only QSAR models collapse, is a potentially important and non-obvious result. The use of PLEC-based SVR as a final recommended model provides a concrete and actionable outcome.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that "generic ML rescoring at most provided modest and conformation-dependent improvements over classical docking on this target" and that "target-specific ML models based only on protein-ligand interaction fingerprints improved early enrichment on test sets when regression algorithms were employed."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** No quantitative performance metrics, such as enrichment factors, AUC values, or rank-based statistics, are reported for any of the comparisons. The terms "modest," "improved," and "robust" are used without numerical context or statistical significance testing. It is impossible to assess the magnitude of the reported effects or whether they are meaningful in a practical VS context.
+  - **Why it matters** Without quantitative results, the reader cannot judge whether the proposed methods offer a practically useful advantage over existing approaches. The central claims of the paper rest on comparative performance, which cannot be evaluated from the abstract alone.
+  - **Resolution test** Provide specific performance metrics with confidence intervals or statistical tests for each comparison, including baseline classical docking, generic ML rescoring, and target-specific models under all tested conditions.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** The abstract states that "systematic evaluation of feature representations showed that combining structure-derived interaction features with ligand-based descriptors enhanced enrichment under selected docking tool-protein conformation combinations" and that "inactive-enriched training strongly reduced false positives."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract does not describe the composition of the training and test sets, the ratio of active to inactive compounds, the source of inactive molecules, or the criteria for chemical dissimilarity. The term "inactive-enriched" is not defined quantitatively. Without these details, the training regime cannot be reproduced or compared with other studies.
+  - **Why it matters** The central methodological contribution is the inactive-enriched training strategy. If the enrichment ratio, inactive selection method, or data splitting protocol is not specified, the finding cannot be validated or applied by other researchers.
+  - **Resolution test** Specify the number of active and inactive compounds, the source and selection criteria for inactives, the training and test split strategy, and the definition of chemical dissimilarity used in the generalization tests.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Generalizability
+  - **Claim pointer** The abstract claims that "under inactive-enriched training, PLEC-based support vector regression (SVR) models achieved robust and strong VS performance" and that this "highlight[s] the critical role of learning the vast diversity of inactive molecules better during model training."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract reports performance only for TRPM8. It is unclear whether the observed benefit of inactive-enriched training is specific to this target, to the particular protein conformations used, or to the PLEC-SVR combination. The claim of a "critical role" implies a general principle, but no evidence from other targets or datasets is presented.
+  - **Why it matters** If the finding is target-specific, its broader significance is limited. The abstract does not provide any external validation or discussion of transferability, which is essential for a general methodological claim.
+  - **Resolution test** Provide evidence from at least one additional target or dataset, or explicitly limit the claim to TRPM8 and discuss the conditions under which the approach is likely to transfer.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The phrase "the first comprehensive structure-based VS benchmark for TRPM8" is a strong claim. The abstract does not describe how "comprehensive" is defined, such as the number of conformations, docking tools, or scoring functions included.
+  - **Required correction** Clarify the scope of the benchmark, for example by stating the number of protein conformations, docking protocols, and scoring functions evaluated.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "inactive-enriched training"
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The term "inactive-enriched" is used without definition. It is unclear whether this refers to a specific ratio of inactives to actives, a particular sampling strategy, or a general principle of including more inactives than actives.
+  - **Required correction** Define the term explicitly, including the ratio or sampling method used.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Comparison with ligand-only QSAR models
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract states that "ligand-only QSAR models collapsed under the same class-imbalanced regime" but does not specify what "collapsed" means in quantitative terms, such as a drop in enrichment or AUC.
+  - **Required correction** Provide a quantitative description of the performance degradation for ligand-only QSAR models.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, and R1-M3 are blocking. The absence of quantitative metrics, insufficient methodological detail for reproduction, and lack of evidence for generalizability collectively prevent the case from being established from the supplied material.
+- **Assessment against Nature-style criteria** 
+  - Originality: The focus on TRPM8 and the systematic comparison of scoring function types is a useful contribution, but the abstract does not demonstrate a fundamentally new concept. The idea of using inactive-enriched training is not entirely novel, though its application to structure-based models for this target may be.
+  - Scientific importance: The findings could be important for VS practitioners, particularly regarding the value of inactive-enriched training. However, the importance is contingent on the robustness and generalizability of the results, which cannot be assessed from the abstract.
+  - Interdisciplinary readership: The topic is relevant to computational chemistry, cheminformatics, and drug discovery. The abstract is written in a way that is accessible to these audiences, though specialists in ML may find the lack of technical detail limiting.
+  - Technical soundness: Cannot be evaluated from the abstract. The absence of metrics, dataset descriptions, and statistical analyses precludes any assessment of technical rigor.
+  - Readability for nonspecialists: The abstract is generally clear and well-structured, but terms such as "PLEC-based SVR" and "inactive-enriched training" are used without explanation, which may hinder nonspecialist readers.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents potentially interesting findings, but the lack of quantitative results, methodological detail, and generalizability evidence means the case cannot be supported. A full manuscript with complete data and analyses would be required for a supportive assessment.
+
+## Risk / unsupported claims
+- The claim that this is the "first comprehensive structure-based VS benchmark for TRPM8" is unsupported without a description of the benchmark scope.
+- The claim that "generic ML rescoring at most provided modest and conformation-dependent improvements" is unsupported without quantitative metrics.
+- The claim that "target-specific ML models based only on protein-ligand interaction fingerprints improved early enrichment" is unsupported without specific enrichment values.
+- The claim that "combining structure-derived interaction features with ligand-based descriptors enhanced enrichment" is unsupported without details of the feature sets and performance differences.
+- The claim that "inactive-enriched training strongly reduced false positives" is unsupported without false positive rates or related metrics.
+- The claim that "PLEC-based SVR models achieved robust and strong VS performance" is unsupported without performance numbers or comparison baselines.
+- The claim that "ligand-only QSAR models collapsed" is unsupported without quantitative degradation data.
+- The general principle that learning "the vast diversity of inactive molecules better" is critical is not established from a single target study.

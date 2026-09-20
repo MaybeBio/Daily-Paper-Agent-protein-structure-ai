@@ -1,0 +1,78 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report the engineering of a β-aminopeptidase (CbAP) from *Caulobacter* sp. to improve product selectivity for L-carnosine synthesis. They identify competing hydrolysis and self-ligation pathways, introduce a composite selectivity index (R S), perform structure-guided mutagenesis, and obtain a triple mutant (CbAPM2) with improved selectivity. Molecular dynamics simulations are used to rationalize the improvements. A 10 mL-scale reaction achieves 37.3 mM L-carnosine in 1 h with 74.6% yield and a space-time yield of 8.44 g L⁻¹ h⁻¹.
+- **Visible evidence base** Abstract text only; no experimental methods, sequence data, kinetic parameters, structural coordinates, simulation details, or raw reaction data are provided
+- **Missing materials affecting confidence** Full methods, all figures and tables, supplementary data, enzyme characterization data, MD simulation parameters and trajectories, statistical analyses, and any control experiments
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially useful enzyme engineering effort with a clear practical goal, namely improved L-carnosine production. The identification of competing side reactions and the introduction of a selectivity index are sensible contributions. However, the abstract alone does not provide sufficient detail to evaluate the robustness of the engineering strategy, the validity of the selectivity metric, the statistical significance of the reported improvements, or the reliability of the MD-based mechanistic interpretation. The reported yields and space-time yield are promising but cannot be fully assessed without reaction condition details and replicate data. The work may be of interest to biocatalysis and enzyme engineering communities, but the case is not fully established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in biocatalysis, enzyme engineering, and applied biochemistry would be interested in the engineering strategy and the improved selectivity for dipeptide synthesis. Those working on carnosine production or related peptide synthesis via aminopeptidases would find the competing pathway analysis and the selectivity index concept useful. The MD-based rationalization may also appeal to computational enzymologists, though the level of detail is insufficient for deep evaluation.
+- **Major strengths** The abstract clearly identifies two competing side reactions and introduces a composite selectivity index to guide engineering. The structure-guided mutagenesis approach is logical and the iterative combination of beneficial mutations is a standard but effective strategy. The reported improvements in selectivity are substantial and the final production metrics are practically relevant. The use of MD simulations to propose a mechanistic basis is a positive addition, though the interpretation is preliminary.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that CbAPM2 exhibits an approximately 2.3-fold increase in R S relative to Q138F and an approximately 3.1-fold increase relative to the wild-type enzyme.
+  - **Evidence pointer** Abstract, Results section (location not provided)
+  - **Concern** The abstract does not report the number of replicates, error bars, or statistical tests for the R S values. Without these, it is impossible to determine whether the reported fold-changes are statistically significant or within experimental noise. Additionally, the definition of R S is only described as a "composite apparent selectivity index" without a formula or explanation of how it is calculated from measurable quantities.
+  - **Why it matters** The central claim of the paper rests on the reliability of R S as a metric and the significance of the observed improvements. If the metric is not well-defined or the improvements are not statistically robust, the entire engineering conclusion is weakened.
+  - **Resolution test** Provide the explicit formula for R S, report replicate numbers and standard deviations for each variant, and include appropriate statistical tests (e.g., t-tests or ANOVA) comparing CbAPM2 to Q138F and wild-type.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract states that molecular dynamics simulations indicated that the improvements arise from reduced substrate binding stability and disrupted hydrogen-bonding interactions with β-alaninamide and L-Car.
+  - **Evidence pointer** Abstract, Results section (location not provided)
+  - **Concern** The abstract provides no details on the MD simulation setup, including force field, simulation length, number of replicates, system preparation, or how binding stability and hydrogen-bonding interactions were quantified. The claim that "reduced substrate binding stability" leads to improved selectivity is mechanistically counterintuitive and requires careful validation. Without these details, the MD-based explanation is not assessable.
+  - **Why it matters** The mechanistic interpretation is a key part of the paper's contribution. If the MD analysis is not rigorous or the interpretation is not well-supported, the proposed mechanism may be speculative and could mislead future engineering efforts.
+  - **Resolution test** Provide full MD methods, including simulation parameters, convergence checks, and quantitative analysis of binding free energies or interaction energies. Show that the observed changes in binding stability and hydrogen bonding are statistically significant and correlate with the experimental selectivity data.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** The abstract reports that under optimized 10 mL-scale conditions, CbAPM2 produced 37.3 mM L-Car within 1 h, corresponding to a 74.6% yield based on β-alanine methyl ester, with an STY of 8.44 g L⁻¹ h⁻¹.
+  - **Evidence pointer** Abstract, Results section (location not provided)
+  - **Concern** The abstract does not specify the substrate concentrations, enzyme loading, temperature, pH, buffer composition, or the basis for the yield calculation. The yield is stated as based on β-alanine methyl ester, but the reaction uses β-alaninamide and L-histidine as substrates. The relationship between β-alanine methyl ester and the actual substrates is unclear. Without these details, the reported yield and STY cannot be reproduced or independently verified.
+  - **Why it matters** The production metrics are a major selling point of the paper. If the conditions are not fully described or the yield basis is ambiguous, the practical claims are not verifiable.
+  - **Resolution test** Provide a complete description of the reaction conditions, including all substrate and enzyme concentrations, and clarify the yield calculation basis. Show that the yield is consistent with the actual substrate consumption and product formation.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, Introduction
+  - **Evidence pointer** Abstract, first sentence (location not provided)
+  - **Issue** The phrase "efficient enzymatic synthesis of L-carnosine is often limited by competing hydrolysis and side reactions" is vague. It is not clear whether these limitations are specific to the enzyme used here or general to all enzymatic carnosine synthesis routes.
+  - **Required correction** Specify the scope of the limitation, for example by citing prior work on other enzymes or by clarifying that this applies to β-aminopeptidase-based synthesis.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, Results
+  - **Evidence pointer** Abstract, "Analysis of β-alaninamide-derived byproducts" (location not provided)
+  - **Issue** The abstract mentions "self-ligation into short oligopeptides" but does not specify the length or composition of these oligopeptides. This makes it difficult to assess the extent of this side reaction.
+  - **Required correction** Provide a brief description of the oligopeptide products, such as the degree of polymerization or the dominant species observed.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, Results
+  - **Evidence pointer** Abstract, "residues within 4–6 Å of the active site" (location not provided)
+  - **Issue** The abstract does not state how the active site was defined or which structural template was used for the distance calculation. This limits the reproducibility of the mutagenesis strategy.
+  - **Required correction** Specify the structural basis for the active site definition, such as the PDB structure or homology model used.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, Results
+  - **Evidence pointer** Abstract, "CbAPQ138FF96Y (CbAPM2)" (location not provided)
+  - **Issue** The naming convention for the mutant is inconsistent. The abstract uses "CbAPQ138FF96Y" and then defines "CbAPM2" as the optimal mutant. It is unclear whether CbAPM2 contains only these two mutations or additional ones from the iterative combination.
+  - **Required correction** Clarify the full mutation set in CbAPM2 and explain the naming convention.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (statistical rigor of R S improvements), R1-M2 (MD simulation details and mechanistic support), R1-M3 (reaction condition details and yield basis)
+- **Assessment against Nature-style criteria** Originality: The identification of competing pathways and the selectivity index are useful but not highly novel; similar selectivity metrics exist in biocatalysis. Scientific importance: The work addresses a practical problem in carnosine production, which is of moderate importance. Interdisciplinary readership: The work is primarily of interest to biocatalysis and enzyme engineering specialists; the MD component may attract computational chemists, but the abstract does not provide enough depth for broad appeal. Technical soundness: Not fully assessable from the abstract; the lack of statistical detail and MD methods is a significant concern. Readability for nonspecialists: The abstract is generally readable, but terms like "composite apparent selectivity index" and "STY" are not defined for a general audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible engineering story with promising results, but the lack of methodological detail and statistical rigor prevents a full assessment. The authors should provide complete experimental and computational methods, replicate data, and a clear definition of the selectivity index before the claims can be considered robust.
+
+## Risk / unsupported claims
+- The claim that CbAPM2 shows a 2.3-fold and 3.1-fold improvement in R S is unsupported without replicate data and statistical analysis.
+- The MD-based mechanistic explanation is unsupported without simulation details and quantitative analysis.
+- The reported yield of 74.6% and STY of 8.44 g L⁻¹ h⁻¹ are not verifiable without full reaction conditions and yield calculation basis.
+- The statement that "substantial suppression of undesired side reactions" is achieved is not quantified in the abstract.
+- The claim that the engineering was "systematic" is not verifiable without details on the mutagenesis library size and screening strategy.

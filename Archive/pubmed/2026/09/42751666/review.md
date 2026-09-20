@@ -1,0 +1,102 @@
+## Review setup
+- **Input scope** Full manuscript text (main text, tables referenced, figure captions not provided in full)
+- **Assessment boundary** Scientific claims, methodological soundness, benchmark evaluation, and design application as presented in the provided manuscript text
+- **Shared manuscript claim summary** The authors present MiLaSol, a deep learning model that predicts protein solubility by combining embeddings from three protein language models (ESM2, ProtT5, Raygun) without handcrafted features. They report 81% accuracy and MCC 0.63 on the DeepSol benchmark, outperforming prior methods. They also propose a computational design pipeline using Raygun latent-space sampling with simulated annealing to convert insoluble variants into soluble ones, validated by cross-method agreement and Boltz-2 pLDDT scores.
+- **Visible evidence base** Main text, Tables 1-5 (referenced), Figures 1-4 (referenced), supplementary tables S1, S8-S12 and figures S1-S6 (referenced but not provided)
+- **Missing materials affecting confidence** Supplementary material (Tables S1, S8-S12; Figures S1-S6; Algorithm S1), full figure captions, hyperparameter details, training curves, and the PLM_Sol benchmark dataset details were not provided. These are needed to fully assess ablation claims, regularization contributions, and the design pipeline's validity.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a straightforward application of multi-PLM embedding fusion for protein solubility prediction, with a modest improvement over prior benchmarks. The prediction results are plausible but the improvement margins are small and the statistical significance is not established. The design application is conceptually interesting but the validation is indirect and the reported "rescue" rate of 12% lacks experimental confirmation. The writing is clear but some methodological details are underspecified, and the reliance on supplementary material for key ablation results limits the assessable evidence base.
+- **Who would be interested in the results, and why** Researchers in protein engineering, computational biology, and machine learning applied to biophysics. Those working on solubility prediction benchmarks or developing PLM-based predictors would find the comparison useful. The design pipeline may interest groups working on protein optimization, though the lack of experimental validation limits its immediate utility.
+- **Major strengths** 
+  - Clear motivation and well-structured presentation
+  - Use of multiple complementary PLMs is a sensible and timely approach
+  - Direct comparison on a standard benchmark enables fair assessment
+  - The design application addresses a practical need (reengineering insoluble proteins)
+  - Ablation studies are referenced, indicating attention to component contributions
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical rigor
+  - **Claim pointer** "MiLaSol attains 81% accuracy, outperforming prior methods, with the highest Matthews Correlation Coefficient (MCC) score of 0.63"
+  - **Evidence pointer** Table 2, Section 5.1
+  - **Concern** The reported accuracy improvement over prior methods (e.g., 81% vs. 79% for EPSOL) is small, and no confidence intervals, standard deviations across multiple runs, or statistical significance tests are reported. It is unclear whether the observed differences are meaningful or within run-to-run variability.
+  - **Why it matters** Without statistical significance assessment, the central claim of "outperforming prior methods" is not established. A 2% accuracy difference could easily arise from random seed variation or minor data splits.
+  - **Resolution test** Provide confidence intervals or standard deviations over at least 5 independent training runs, and perform a paired statistical test (e.g., McNemar's test) against the closest competitor.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Validation of design claims
+  - **Claim pointer** "We also present a computational method to reengineer insoluble protein variants into soluble forms, with predictions confirmed by multiple independent solubility prediction methods"
+  - **Evidence pointer** Section 5.3-5.6, Figure 4
+  - **Concern** The design pipeline is validated only by agreement with other computational predictors and by Boltz-2 pLDDT scores. No experimental validation is provided. The pLDDT analysis shows a slight drop in all cases, which is interpreted as acceptable, but the threshold for "acceptable" is not justified. Cross-predictor agreement does not confirm true solubility, as all predictors may share systematic biases.
+  - **Why it matters** The claim of "reengineering" implies a functional outcome. Computational agreement is a weak proxy for actual solubility improvement. Without experimental data, the design claim is speculative.
+  - **Resolution test** Provide at least one experimental validation (e.g., expression and solubility assay) for a small set of designed variants, or substantially soften the claim to "computationally predicted" solubility improvement.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Methodological completeness
+  - **Claim pointer** "We find that using and combining signals from multiple different pre-trained language models allows us not to need to include hand-tuned solubility-related features"
+  - **Evidence pointer** Section 3.1, Table 4, Figures S1-S2
+  - **Concern** The claim that handcrafted features are unnecessary is supported only by the ablation in Table 4, but the comparison is against other PLM-based methods, not against methods that use handcrafted features. The statement "matching the performance of structure-based and handcrafted feature models" is made without a direct comparison to such models in the provided text.
+  - **Why it matters** The novelty claim rests partly on eliminating handcrafted features. Without a direct comparison to a strong handcrafted-feature baseline, this claim is not substantiated.
+  - **Resolution test** Include a baseline model that uses handcrafted physicochemical features (e.g., from PROSO II) with the same architecture, and show MiLaSol matches or exceeds it.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** "MiLaSol is available at https://github.com/weiweiloutufts/milasol"
+  - **Evidence pointer** Availability section
+  - **Concern** The manuscript does not specify the exact versions of PLMs used, the embedding extraction procedure (e.g., which layer, pooling strategy), or the computational resources required. The hyperparameter search is described but the final selected values are only partially reported in the main text.
+  - **Why it matters** Reproducibility is a core expectation for computational methods. Without precise model configuration details, other groups cannot reliably replicate or build upon the work.
+  - **Resolution test** Provide a complete configuration file or table listing all hyperparameters, PLM versions, and embedding extraction details in the main text or supplement.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Section 3.1.1
+  - **Evidence pointer** "The model operates on four complementary input representations"
+  - **Issue** The four input representations are described but not explicitly enumerated in a list or figure. The reader must infer them from context.
+  - **Required correction** Explicitly list the four input representations (e.g., ESM2 pooled embedding, ProtT5 pooled embedding, Raygun pooled embedding, tokenized sequence) in a bulleted list or table.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Presentation
+  - **Affected element** Section 5.2.2
+  - **Evidence pointer** "ΔGain(sol.)=0.138 with them versus 0.056 without"
+  - **Issue** The term "ΔGain(sol.)" is not defined in the main text. It is unclear what this metric represents and how it is computed.
+  - **Required correction** Define ΔGain(sol.) explicitly, or replace with a standard metric (e.g., difference in recall for the soluble class).
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Section 5.6
+  - **Evidence pointer** "we compare the predicted Local Distance Difference Test (pLDDT, see Supplementary Information)"
+  - **Issue** The pLDDT threshold for "high score" is referenced to Jumper et al. (2021), but the specific threshold used (0.8) is not justified in the context of solubility. pLDDT is a fold confidence metric, not a solubility metric.
+  - **Required correction** Clarify why pLDDT > 0.8 is an appropriate proxy for solubility-relevant folding, or acknowledge its limitation as an indirect measure.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Data description
+  - **Affected element** Section 4
+  - **Evidence pointer** "The test dataset contains 2001 protein sequences from Chang et al. (2014)"
+  - **Issue** The class balance of the test set is not stated. Given the known imbalance in the training set, it is important to know whether the test set is balanced.
+  - **Required correction** Report the number of soluble and insoluble sequences in the test set.
+- **Technical failings that need to be addressed before the case is established** 
+  - R1-M1 (statistical significance of benchmark improvements)
+  - R1-M2 (lack of experimental validation for design claims)
+  - R1-M3 (missing direct comparison to handcrafted-feature baselines)
+  - R1-M4 (incomplete reproducibility details)
+- **Assessment against Nature-style criteria** 
+  - Originality: Moderate. Combining multiple PLMs is a reasonable incremental contribution, but the approach is not conceptually novel; similar fusion strategies exist in other domains.
+  - Scientific importance: Moderate. Solubility prediction is practically relevant, but the improvement over prior methods is marginal and the design application lacks experimental confirmation.
+  - Interdisciplinary readership: Limited. The work will primarily interest computational biologists and ML practitioners; the biological insights are minimal.
+  - Technical soundness: Partially established. The benchmark evaluation is standard, but statistical rigor is missing and the design validation is indirect.
+  - Readability for nonspecialists: Good. The manuscript is clearly written and the motivation is accessible, though some methodological details require domain expertise.
+- **Recommendation posture** Currently not established from the provided evidence. The prediction benchmark claims require statistical substantiation, and the design application claims require either experimental validation or substantial softening. The manuscript has potential but needs major revisions to support its central claims.
+
+## Risk / unsupported claims
+- The claim that MiLaSol "outperforms prior methods" is unsupported without statistical significance testing.
+- The claim that handcrafted features are unnecessary is unsupported without a direct comparison to a handcrafted-feature baseline.
+- The claim that the design pipeline "reengineers" insoluble proteins into soluble forms is unsupported without experimental validation.
+- The claim that pLDDT > 0.8 indicates solubility-relevant folding is an unvalidated proxy.
+- The claim that the augmented latent space is "more information-dense" based on singular value spectrum is weakly supported and not tied to task performance.
+- The selection of 1993 sequences from 2463 "– –" labeled mutants is not justified; the exclusion criteria are unclear.

@@ -1,0 +1,94 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors present PANDA, an end-to-end generative architecture for protein design that performs denoising in a unified all-atom Cartesian representation, recovering sequence identity directly from atomic occupancy patterns. The method couples global and local coordinate tracks, uses a sampling strategy that preserves side-chain geometry, and conditions functional design on pairwise distances between motif atoms rather than fixed coordinates. The authors claim the highest self-consistency design success across protein lengths among evaluated all-atom methods, and superior scaffolding success on the Atomic Motif Enzyme benchmark, particularly for larger motifs.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark details, baseline specifications, or methodological descriptions are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, benchmark definitions, baseline method lists, hyperparameters, training details, evaluation protocols, and code availability
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting architectural contribution to all-atom protein design, with a plausible motivation for moving beyond separated backbone and sequence generation. However, the evidence base available for this review is limited to the abstract, which contains no quantitative results, no comparisons with specific baselines, and no methodological detail sufficient to assess technical soundness. The core claims of state-of-the-art performance cannot be evaluated from the supplied material. The conceptual framing is clear and the proposed approach of conditioning on pairwise motif distances rather than fixed coordinates is a reasonable design choice worth investigating, but the case is not established from the abstract alone.
+- **Who would be interested in the results, and why** Computational protein designers and researchers in generative models for biomolecular structure would be the primary audience. Those working on all-atom generation, functional motif scaffolding, and end-to-end design pipelines would find the approach relevant if the reported performance holds under scrutiny. The work may also interest researchers developing diffusion or denoising architectures for structured outputs beyond proteins.
+- **Major strengths** The abstract identifies a genuine limitation in existing approaches, namely the separation of backbone generation from sequence assignment and the reliance on non-Cartesian representations. The proposed unified all-atom denoising framework is a coherent response to that limitation. The design choice to condition on pairwise distances between motif atoms rather than fixed coordinates is a sensible way to allow functional atoms to be positioned jointly with the scaffold, which could improve flexibility in functional design. The claim of recovering sequence identity directly from atomic occupancy patterns is an interesting conceptual move that, if validated, would simplify the design pipeline.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The abstract claims that PANDA achieves the highest self-consistency design success across protein lengths among evaluated all-atom methods.  
+  - **Evidence pointer** Abstract only; no quantitative results or benchmark tables provided  
+  - **Concern** No numerical results, benchmark names, baseline identifiers, or statistical measures are provided in the abstract. The claim of highest self-consistency design success is presented without any supporting data.  
+  - **Why it matters** A state-of-the-art performance claim requires quantitative comparison against a defined set of baselines on a defined benchmark. Without these, the claim is unverifiable and cannot be assessed for significance or robustness.  
+  - **Resolution test** Provide a table or figure reporting self-consistency success rates for PANDA and all evaluated baselines across protein lengths, including error bars or confidence intervals and the number of design trials per length.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The abstract claims that PANDA delivers substantially higher scaffolding success than previous approaches on the Atomic Motif Enzyme benchmark, particularly for larger motifs.  
+  - **Evidence pointer** Abstract only; no benchmark results or comparison data provided  
+  - **Concern** The scaffolding success claim is made without any quantitative support. The benchmark is named but no success rates, baseline results, or motif size ranges are given.  
+  - **Why it matters** Scaffolding success is a central functional claim of the work. Without numbers and a clear definition of the benchmark and baselines, the claim cannot be evaluated for magnitude, significance, or generalizability.  
+  - **Resolution test** Provide a figure or table reporting scaffolding success rates for PANDA and each baseline, stratified by motif size, with statistical significance tests and the exact benchmark protocol.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The abstract states that PANDA performs denoising in a unified all-atom representation and recovers sequence identity directly from atomic occupancy patterns.  
+  - **Evidence pointer** Abstract only; no architectural details or training description provided  
+  - **Concern** The abstract does not describe how the all-atom representation is constructed, how the denoising objective is defined, how atomic occupancy patterns are decoded into sequence identity, or how the global and local coordinate tracks are coupled. Without these details, the technical soundness of the architecture cannot be assessed.  
+  - **Why it matters** The core methodological contribution is the architecture itself. If the representation or training procedure has fundamental flaws, the reported performance would not be reproducible or meaningful.  
+  - **Resolution test** Provide a full methods section describing the representation, the denoising objective, the decoding mechanism, the coupling of coordinate tracks, and the training procedure, with sufficient detail for independent reimplementation.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The abstract states that PANDA introduces a sampling strategy that preserves side-chain geometry.  
+  - **Evidence pointer** Abstract only; no description of the sampling strategy provided  
+  - **Concern** The sampling strategy is mentioned but not described. It is unclear how side-chain geometry is preserved during sampling, what constraints are imposed, or how this differs from standard denoising sampling procedures.  
+  - **Why it matters** Side-chain geometry preservation is presented as a key advantage. Without a description of the strategy, the claim cannot be evaluated, and the mechanism by which PANDA outperforms other methods remains opaque.  
+  - **Resolution test** Provide a detailed description of the sampling strategy, including the algorithm, any geometric constraints, and a comparison with standard sampling approaches on a defined metric of side-chain quality.  
+  - **Concern ID** R1-M5  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The abstract claims that PANDA provides an efficient route to high-quality all-atom generative design.  
+  - **Evidence pointer** Abstract only; no runtime, memory, or scalability data provided  
+  - **Concern** The efficiency claim is not supported by any computational cost measurements. No runtime comparisons, memory usage, or scaling behavior with protein length are reported.  
+  - **Why it matters** Efficiency is a stated advantage, but without quantitative measurements it is not possible to determine whether PANDA is actually more efficient than existing methods or whether the claim is aspirational.  
+  - **Resolution test** Provide runtime and memory measurements for PANDA and baselines across a range of protein lengths, including hardware specifications and any relevant scaling analysis.
+
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Abstract wording  
+  - **Evidence pointer** Abstract, first sentence  
+  - **Issue** The phrase "most approaches still separate backbone generation from sequence assignment or rely on latent and torsional representations" is a broad generalization that may not accurately represent the full landscape of current methods, some of which operate in Cartesian space or jointly model sequence and structure.  
+  - **Required correction** Qualify the statement by citing specific representative methods and clarifying the scope of the claim.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Abstract wording  
+  - **Evidence pointer** Abstract, statement on conditioning on pairwise distances  
+  - **Issue** The phrase "allowing the functional atoms to be positioned jointly with the scaffold" is vague. It is unclear what is meant by jointly positioned and how this differs from other conditioning approaches.  
+  - **Required correction** Provide a more precise description of the conditioning mechanism and its intended effect on the generated structure.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Reproducibility  
+  - **Affected element** Abstract, benchmark reference  
+  - **Evidence pointer** Abstract, Atomic Motif Enzyme benchmark  
+  - **Issue** The benchmark is named but not described. It is unclear what the benchmark contains, how it is scored, and whether it is publicly available.  
+  - **Required correction** Provide a citation or brief description of the benchmark, including its composition and evaluation protocol.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Abstract, baseline comparisons  
+  - **Evidence pointer** Abstract, claims of highest and substantially higher performance  
+  - **Issue** The abstract does not name any of the evaluated all-atom methods or previous approaches against which PANDA is compared.  
+  - **Required correction** List the specific baselines used in the evaluation, either in the abstract or by clear reference to the main text.
+
+## Risk / unsupported claims
+- The claim of highest self-consistency design success across protein lengths among evaluated all-atom methods is unsupported by any quantitative data in the supplied material.
+- The claim of substantially higher scaffolding success on the Atomic Motif Enzyme benchmark is unsupported by any quantitative data in the supplied material.
+- The claim of efficiency is unsupported by any computational cost measurements in the supplied material.
+- The technical soundness of the all-atom denoising architecture, the sequence recovery mechanism, the global and local coordinate coupling, and the side-chain-preserving sampling strategy cannot be assessed from the abstract alone.
+- The generalizability of the method beyond the named benchmark cannot be evaluated from the supplied material.

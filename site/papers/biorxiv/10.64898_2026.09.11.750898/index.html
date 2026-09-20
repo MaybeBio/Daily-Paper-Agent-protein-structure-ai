@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PANDA: Protein All-atom Nested-tree Denoising Architecture for End-to-End Generation · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>PANDA: Protein All-atom Nested-tree Denoising Architecture for End-to-End Generation</h1>
+      <div class="meta">Bai J; Jiang H</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-13
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.11.750898">原文</a>
+      </div>
+      <p class="one-liner">PANDA提出了一种全原子嵌套树去噪生成架构，实现端到端的蛋白质序列与结构联合设计，并在功能基序支架设计上显著优于现有方法，直接契合蛋白质结构生成与设计课题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Deep generative models have expanded the scope of computational protein design, yet most approaches still separate backbone generation from sequence assignment or rely on latent and torsional representations that do not operate directly on all atoms in Cartesian space. We present PANDA, an end-to-end generative architecture that performs denoising in a unified all-atom representation, recovering sequence identity directly from atomic occupancy patterns. By coupling global and local coordinate tracks and introducing a sampling strategy that preserves side-chain geometry, PANDA achieves the highest self-consistency design success across protein lengths among evaluated all-atom methods. For functional design it conditions on pairwise distances between motif atoms rather than fixing their coordinates, allowing the functional atoms to be positioned jointly with the scaffold. On the Atomic Motif Enzyme benchmark, PANDA preserves motif geometry and delivers substantially higher scaffolding success than previous approaches, particularly for larger motifs. PANDA thus provides an efficient route to high-quality all-atom generative design with flexible atomic-level control.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">深度生成模型扩展了计算蛋白质设计的范围，但大多数方法仍将骨架生成与序列分配分离，或依赖潜在和扭转表示，这些表示不直接在笛卡尔空间中的所有原子上操作。我们提出PANDA，一种端到端的生成架构，在统一的全原子表示中进行去噪，直接从原子占据模式中恢复序列身份。通过耦合全局和局部坐标轨迹，并引入一种保持侧链几何形状的采样策略，PANDA在评估的全原子方法中，跨蛋白质长度实现了最高的自洽设计成功率。对于功能设计，它基于基序原子间的成对距离进行条件化，而非固定其坐标，从而允许功能原子与支架共同定位。在原子基序酶基准测试中，PANDA保持了基序几何形状，并在支架构建成功率上显著高于先前方法，尤其对于较大基序。因此，PANDA为高质量全原子生成设计提供了一条高效路径，并具备灵活的原子级控制能力。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：PANDA: Protein All-atom Nested-tree Denoising Architecture for End-to-End Generation</li>
+<li><strong>作者</strong>：Bai J; Jiang H（单位未提供）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026-09-13</li>
+<li><strong>论文类型</strong>：预印本（方法学）</li>
+<li><strong>领域</strong>：蛋白质设计 × 深度生成模型（扩散模型）</li>
+<li><strong>关键词</strong>：all-atom generation, denoising, nested-tree, motif scaffolding, self-consistency</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.09.11.750898</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（基准数据集为公开的 Atomic Motif Enzyme benchmark，具体版本未提供）</li>
+<li><strong>阅读日期</strong>：2026-09-13</li>
+<li><strong>方向定位</strong>：该文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>全原子生成模型</strong>分支，与 RFdiffusion（骨干生成）、Chroma（骨干生成）、FrameDiff（骨干生成）等形成对照，主张直接在 Cartesian 全原子空间做 denoising，并同时解决序列分配与结构生成问题，属于端到端生成方向。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>PANDA 提出一种在统一全原子 Cartesian 表示上做 denoising 的端到端生成架构，通过嵌套树（nested-tree）组织原子、耦合全局与局部坐标轨道、并采用保持侧链几何的采样策略，在自洽性设计成功率与 motif scaffolding 成功率上超过现有全原子方法。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何实现端到端的全原子蛋白质生成——即同时生成主链、侧链与序列身份，且不依赖 latent 或 torsional 中间表示？</li>
+<li><strong>为什么重要</strong>：现有方法要么分离骨干生成与序列分配（如 RFdiffusion + ProteinMPNN 两阶段），要么使用 torsional/latent 表示（如 Chroma、FrameDiff），无法直接在 Cartesian 空间对所有原子进行统一建模，限制了原子级控制与功能位点设计。</li>
+<li><strong>现有方法不足</strong>：两阶段方法存在误差累积；torsional 表示难以精确控制原子间距离；latent 表示缺乏可解释的原子级约束。</li>
+<li><strong>精确研究问题</strong>：Can a single denoising architecture operating directly on all atoms in Cartesian space achieve higher design success and motif scaffolding success than existing all-atom methods?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络为「仅本文框架」——基于本文引言与相关工作推断，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 骨干生成 + 序列设计两阶段</td>
+<td>RFdiffusion → ProteinMPNN</td>
+<td>骨干质量高、模块化</td>
+<td>误差累积、无法原子级控制</td>
+<td>本文主张端到端替代</td>
+</tr>
+<tr>
+<td>2. 骨干生成（扩散/流匹配）</td>
+<td>Chroma, FrameDiff</td>
+<td>生成多样、可条件化</td>
+<td>仅主链、序列需后分配</td>
+<td>本文扩展至全原子</td>
+</tr>
+<tr>
+<td>3. 全原子生成（torsional/latent）</td>
+<td>部分方法（未具名）</td>
+<td>侧链可生成</td>
+<td>非 Cartesian 直接操作、几何控制弱</td>
+<td>本文直接 Cartesian 全原子</td>
+</tr>
+<tr>
+<td>4. 全原子 Cartesian 端到端</td>
+<td><strong>PANDA（本文）</strong></td>
+<td>统一表示、原子级控制、序列直接恢复</td>
+<td>计算成本高、预印本未充分验证</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>骨干与序列分离</td>
+<td>两阶段方法需先设计骨干再分配序列，误差累积</td>
+<td>骨干生成与序列设计目标不一致</td>
+<td>引言（未提供具体节号）</td>
+</tr>
+<tr>
+<td>非 Cartesian 表示限制原子控制</td>
+<td>torsional/latent 表示无法直接约束原子间距离</td>
+<td>表示空间与物理空间不对齐</td>
+<td>引言（未提供具体节号）</td>
+</tr>
+<tr>
+<td>功能位点固定坐标限制设计自由度</td>
+<td>现有 motif scaffolding 常固定 motif 坐标，限制 scaffold 与 motif 联合优化</td>
+<td>固定坐标导致 scaffold 难以适应 motif</td>
+<td>摘要「conditions on pairwise distances rather than fixing coordinates」</td>
+</tr>
+<tr>
+<td>大 motif 脚手架成功率低</td>
+<td>现有方法在大 motif 上失败率高</td>
+<td>未明确解释，可能与表示能力有关</td>
+<td>摘要「substantially higher scaffolding success ... particularly for larger motifs」</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<ul>
+<li>在 Cartesian 空间对所有原子（N, Cα, C, O, 侧链原子）做 denoising。</li>
+<li>使用嵌套树（nested-tree）组织原子层级，耦合全局与局部坐标轨道。</li>
+<li>采样策略保持侧链几何。</li>
+<li>序列身份直接从原子占据模式（atomic occupancy patterns）恢复。</li>
+<li>功能设计条件化为 motif 原子间 pairwise distances 而非固定坐标。</li>
+</ul>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>统一表示</strong>：所有原子在同一 Cartesian 空间做 denoising，避免表示转换带来的信息损失。</li>
+<li><strong>序列即占据模式</strong>：序列身份可从原子占据模式直接读出，无需单独序列解码器。</li>
+<li><strong>距离条件化优于坐标固定</strong>：用 pairwise distances 条件化功能原子，允许功能原子与 scaffold 联合优化，提升设计自由度。</li>
+<li><strong>嵌套树结构</strong>：通过层级组织原子，使 denoising 过程在局部与全局尺度上同时保持几何一致性。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>在生成模型中，<strong>表示空间的选择直接决定可控性</strong>：Cartesian 空间虽计算成本高，但提供最直接的物理约束。</li>
+<li><strong>条件化方式影响设计自由度</strong>：用距离而非坐标做条件，可让模型在满足功能约束的同时保留结构灵活性。</li>
+<li><strong>端到端并非总是优于模块化</strong>：本文主张端到端，但需注意其计算成本与验证范围（预印本）。</li>
+</ul>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：噪声化的全原子坐标（Cartesian），以及可选的 motif 原子 pairwise distance 条件。</li>
+<li><strong>输出</strong>：去噪后的全原子坐标 + 序列身份（从原子占据模式恢复）。</li>
+<li><strong>模块</strong>：
+  1. 嵌套树编码器：组织原子层级，提取局部与全局特征。
+  2. 全局坐标轨道（global coordinate track）：处理整体结构一致性。
+  3. 局部坐标轨道（local coordinate track）：处理侧链与局部几何。
+  4. 采样策略：保持侧链几何的 denoising 采样。
+  5. 序列读出头：从原子占据模式预测氨基酸类型。</li>
+<li><strong>训练</strong>：denoising 目标（预测噪声），序列恢复作为辅助或联合目标（具体损失未提供）。</li>
+<li><strong>工具</strong>：未提供（框架、硬件未说明）。</li>
+<li><strong>反馈回路</strong>：未明确说明（可能为自洽性评估后迭代，但文中未提）。</li>
+<li><strong>假设</strong>：全原子 Cartesian 表示可同时支持结构生成与序列恢复；距离条件化可替代坐标固定。</li>
+</ul>
+<p><strong>文字流程</strong>：
+1. 输入噪声化全原子坐标（+ 可选 motif 距离条件）。
+2. 嵌套树编码器将原子组织为层级结构，提取局部与全局特征。
+3. 全局与局部坐标轨道并行处理，分别维护整体与局部几何。
+4. 采样策略逐步去噪，保持侧链几何。
+5. 去噪完成后，序列读出头从原子占据模式预测序列。
+6. 输出全原子结构 + 序列。</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>嵌套树编码器</td>
+<td>组织原子层级，提取多尺度特征</td>
+<td>全原子数量大，需层级结构管理</td>
+<td>输入：原子坐标；输出：层级特征</td>
+<td>摘要「nested-tree」</td>
+<td>预期：局部几何信息丢失 [Analysis]</td>
+</tr>
+<tr>
+<td>全局坐标轨道</td>
+<td>维护整体结构一致性</td>
+<td>防止全局漂移</td>
+<td>输入：全局特征；输出：全局坐标更新</td>
+<td>摘要「coupling global and local coordinate tracks」</td>
+<td>预期：整体折叠失败 [Analysis]</td>
+</tr>
+<tr>
+<td>局部坐标轨道</td>
+<td>处理侧链与局部几何</td>
+<td>侧链精度影响序列恢复</td>
+<td>输入：局部特征；输出：局部坐标更新</td>
+<td>摘要「preserves side-chain geometry」</td>
+<td>预期：侧链精度下降，序列恢复率降低 [Analysis]</td>
+</tr>
+<tr>
+<td>侧链保持采样策略</td>
+<td>在 denoising 中保持侧链几何</td>
+<td>侧链几何破坏会导致序列不可读</td>
+<td>输入：噪声坐标；输出：去噪坐标</td>
+<td>摘要「sampling strategy that preserves side-chain geometry」</td>
+<td>预期：自洽性下降 [Analysis]</td>
+</tr>
+<tr>
+<td>序列读出头</td>
+<td>从原子占据模式恢复序列</td>
+<td>实现端到端序列分配</td>
+<td>输入：去噪原子坐标；输出：氨基酸序列</td>
+<td>摘要「recovering sequence identity directly from atomic occupancy patterns」</td>
+<td>预期：需额外序列设计模块，失去端到端优势 [Analysis]</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：以上「预期影响」均为 [Analysis] 推断，文中未提供消融实验。</p>
+</blockquote>
+<h2>09 关键公式符号</h2>
+<p>不适用——文中未提供具体数学公式（预印本摘要层面，方法细节未展开）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：Atomic Motif Enzyme benchmark（具体规模、版本未提供）。</li>
+<li><strong>指标</strong>：self-consistency design success（自洽性设计成功率）；motif scaffolding success（脚手架成功率）。</li>
+<li><strong>基线</strong>：其他全原子方法（未具名）。</li>
+<li><strong>评测协议</strong>：未提供（如是否用 AlphaFold 回折验证自洽性未说明）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自洽性设计成功率</td>
+<td>全原子端到端生成质量</td>
+<td>与全原子方法对比，按蛋白长度分层</td>
+<td>PANDA 在各类长度中最高</td>
+<td>端到端全原子生成可行且优于现有方法</td>
+<td>未说明统计显著性、样本量</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>Motif scaffolding（Atomic Motif Enzyme）</td>
+<td>功能位点条件化设计能力</td>
+<td>与先前方法对比，按 motif 大小分层</td>
+<td>PANDA 保持 motif 几何，成功率显著更高，尤其大 motif</td>
+<td>距离条件化优于坐标固定</td>
+<td>未说明具体提升幅度、置信区间</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：全原子蛋白质生成（结构 + 序列），以及 motif scaffolding。</li>
+<li><strong>oracle/真值输入</strong>：motif 原子 pairwise distances 作为条件（非坐标固定）。</li>
+<li><strong>端到端状态</strong>：结构生成与序列恢复在同一模型内完成，无两阶段分离。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：未提供（训练数据规模、来源未说明）。</li>
+<li><strong>模型依赖</strong>：未提供（架构细节、参数规模未说明）。</li>
+<li><strong>最难情形</strong>：大 motif 脚手架（作者声称提升显著，但未量化）。</li>
+<li><strong>不确定性</strong>：预印本，未提供统计检验、消融实验、失败案例分析。</li>
+<li><strong>有边界的复述</strong>：PANDA 在 Atomic Motif Enzyme benchmark 上，以全原子 Cartesian denoising 方式实现了高于现有全原子方法的自洽性设计成功率与 motif scaffolding 成功率，尤其在大 motif 场景下；但具体数值、统计显著性、计算成本与泛化边界均未在摘要中披露。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要未提及任何局限或未来方向，仅强调优势。预印本全文可能包含局限讨论，但不在提供材料范围内。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供具体数值</td>
+<td>「最高」「显著更高」缺乏量化支撑</td>
+<td>无法评估效果大小与可重复性</td>
+<td>获取全文，提取具体成功率与置信区间</td>
+<td>摘要未提供数值</td>
+</tr>
+<tr>
+<td>基线未具名</td>
+<td>「全原子方法」范围模糊</td>
+<td>无法判断对比公平性</td>
+<td>核对全文基线列表与超参设置</td>
+<td>摘要未具名</td>
+</tr>
+<tr>
+<td>未说明自洽性评测协议</td>
+<td>自洽性可能用 AlphaFold 回折，也可能用其他方法</td>
+<td>不同协议结果不可直接比较</td>
+<td>查看 Methods 节</td>
+<td>摘要未说明</td>
+</tr>
+<tr>
+<td>距离条件化的优势缺乏消融</td>
+<td>可能是其他设计（如嵌套树）带来的提升</td>
+<td>无法归因于距离条件化</td>
+<td>要求消融：固定坐标 vs 距离条件</td>
+<td>摘要未提供消融</td>
+</tr>
+<tr>
+<td>预印本未经同行评审</td>
+<td>方法细节、代码、数据未公开</td>
+<td>可复现性存疑</td>
+<td>检查全文是否提供代码/数据链接</td>
+<td>预印本状态</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>全原子 Cartesian denoising 的可行性</strong>：PANDA 表明直接在 Cartesian 空间对所有原子做 denoising 是可行的，且能同时恢复序列。→ 可迁移：在蛋白质结构预测/生成任务中，考虑放弃 torsional/latent 中间表示，直接建模原子坐标。</li>
+<li><strong>序列即占据模式</strong>：序列身份可从原子占据模式直接读出，无需单独序列解码器。→ 可迁移：在结构-序列联合建模中，探索用结构特征直接预测序列的端到端方案。</li>
+<li><strong>距离条件化优于坐标固定</strong>：功能位点设计用 pairwise distances 而非固定坐标，可提升 scaffold 与 motif 的联合优化自由度。→ 可迁移：在分子对接或 motif scaffolding 任务中，用距离约束替代刚性坐标约束。</li>
+<li><strong>嵌套树结构管理全原子</strong>：层级组织原子可同时维护局部与全局几何。→ 可迁移：在 MD 模拟或构象采样中，用层级表示降低全原子建模的复杂度。</li>
+<li><strong>侧链几何保持的采样策略</strong>：denoising 采样中显式保持侧链几何，可提升序列恢复率。→ 可迁移：在构象生成中，关注侧链几何的物理合理性。</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：与 RFdiffusion（骨干生成 + 序列后分配）目标相同但路径不同——PANDA 端到端全原子；与 Chroma/FrameDiff 同属扩散生成，但 PANDA 直接在 Cartesian 空间操作。</li>
+<li><strong>组合</strong>：PANDA 的序列恢复策略可与 AlphaFold 的结构验证结合，形成生成-验证闭环。</li>
+<li><strong>冲突</strong>：与「骨干生成与序列设计分离更优」的既有观点（如 RFdiffusion + ProteinMPNN 两阶段范式）形成潜在冲突，需实验对比。</li>
+<li><strong>可迁移领域</strong>：分子对接（距离条件化）、构象采样（嵌套树表示）、序列设计（占据模式读出）。</li>
+<li><strong>候选方向</strong>：将 PANDA 的嵌套树思想用于 MD 模拟的粗粒化-全原子映射；将距离条件化用于抗体-抗原对接的 CDR 设计。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Distance-conditioned Motif Scaffolding for Antibody CDR Design
+   - <strong>来源局限/观察</strong>：PANDA 用 pairwise distances 条件化 motif，提升 scaffold 自由度；抗体 CDR 设计常需固定 CDR 坐标，限制框架区优化。
+   - <strong>核心假设</strong>：用 CDR 原子间距离条件化替代固定坐标，可提升抗体框架区与 CDR 的联合设计成功率。
+   - <strong>初步方法</strong>：基于 PANDA 架构，将 motif 条件改为 CDR 原子 pairwise distances，在抗体数据集上训练与评估。
+   - <strong>验证方式</strong>：与固定坐标基线对比设计成功率、CDR 几何保持度。
+   - <strong>创新状态</strong>：unverified（基于 PANDA 摘要推断，未检索先例）。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Nested-tree Representation for Coarse-grained-to-All-atom Mapping in MD Simulation
+   - <strong>来源局限/观察</strong>：PANDA 的嵌套树组织原子层级，可管理全原子复杂度；MD 模拟中粗粒化到全原子的回映常丢失局部几何。
+   - <strong>核心假设</strong>：嵌套树表示可提升粗粒化到全原子回映的几何保真度。
+   - <strong>初步方法</strong>：将 PANDA 的嵌套树编码器用于 CG→AA 映射网络，在公开 MD 轨迹上训练。
+   - <strong>验证方式</strong>：回映后结构 RMSD、侧链 χ 角分布与全原子 MD 轨迹对比。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Occupancy-pattern-based Sequence Recovery for Inverse Folding
+   - <strong>来源局限/观察</strong>：PANDA 从原子占据模式恢复序列，无需单独序列解码器；现有 inverse folding 方法多依赖几何特征。
+   - <strong>核心假设</strong>：原子占据模式可作为序列预测的充分特征，且比几何特征更鲁棒。
+   - <strong>初步方法</strong>：在 CATH 数据集上，用 PANDA 的序列读出头替换现有 inverse folding 解码器，对比恢复率。
+   - <strong>验证方式</strong>：序列恢复准确率、native 结构回折成功率。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Side-chain-preserving Sampling for Conformer Generation
+   - <strong>来源局限/观察</strong>：PANDA 的采样策略保持侧链几何；小分子或肽段构象生成常忽略侧链物理合理性。
+   - <strong>核心假设</strong>：在构象生成中显式保持侧链几何可提升生成构象的能量合理性。
+   - <strong>初步方法</strong>：将 PANDA 的采样策略迁移到小分子构象生成模型，对比能量分布。
+   - <strong>验证方式</strong>：生成构象与 DFT 优化构象的 RMSD、能量排序。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：End-to-end All-atom Generation with AlphaFold-based Self-consistency Filter
+   - <strong>来源局限/观察</strong>：PANDA 的自洽性评估协议未说明；AlphaFold 回折是常用验证手段。
+   - <strong>核心假设</strong>：在 PANDA 生成流程中嵌入 AlphaFold 回折作为可微筛选，可进一步提升设计成功率。
+   - <strong>初步方法</strong>：将 AlphaFold 的 pLDDT 作为 denoising 过程中的辅助损失或重采样权重。
+   - <strong>验证方式</strong>：与无筛选基线对比设计成功率。
+   - <strong>创新状态</strong>：unverified（需注意 AlphaFold 可微性限制）。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present PANDA, an end-to-end generative architecture for protein design that performs denoising in a unified all-atom Cartesian representation, recovering sequence identity directly from atomic occupancy patterns. The method couples global and local coordinate tracks, uses a sampling strategy that preserves side-chain geometry, and conditions functional design on pairwise distances between motif atoms rather than fixed coordinates. The authors claim the highest self-consistency design success across protein lengths among evaluated all-atom methods, and superior scaffolding success on the Atomic Motif Enzyme benchmark, particularly for larger motifs.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, benchmark details, baseline specifications, or methodological descriptions are visible</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, benchmark definitions, baseline method lists, hyperparameters, training details, evaluation protocols, and code availability</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially interesting architectural contribution to all-atom protein design, with a plausible motivation for moving beyond separated backbone and sequence generation. However, the evidence base available for this review is limited to the abstract, which contains no quantitative results, no comparisons with specific baselines, and no methodological detail sufficient to assess technical soundness. The core claims of state-of-the-art performance cannot be evaluated from the supplied material. The conceptual framing is clear and the proposed approach of conditioning on pairwise motif distances rather than fixed coordinates is a reasonable design choice worth investigating, but the case is not established from the abstract alone.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational protein designers and researchers in generative models for biomolecular structure would be the primary audience. Those working on all-atom generation, functional motif scaffolding, and end-to-end design pipelines would find the approach relevant if the reported performance holds under scrutiny. The work may also interest researchers developing diffusion or denoising architectures for structured outputs beyond proteins.</li>
+<li><strong>Major strengths</strong> The abstract identifies a genuine limitation in existing approaches, namely the separation of backbone generation from sequence assignment and the reliance on non-Cartesian representations. The proposed unified all-atom denoising framework is a coherent response to that limitation. The design choice to condition on pairwise distances between motif atoms rather than fixed coordinates is a sensible way to allow functional atoms to be positioned jointly with the scaffold, which could improve flexibility in functional design. The claim of recovering sequence identity directly from atomic occupancy patterns is an interesting conceptual move that, if validated, would simplify the design pipeline.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> The abstract claims that PANDA achieves the highest self-consistency design success across protein lengths among evaluated all-atom methods.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; no quantitative results or benchmark tables provided  </li>
+<li><strong>Concern</strong> No numerical results, benchmark names, baseline identifiers, or statistical measures are provided in the abstract. The claim of highest self-consistency design success is presented without any supporting data.  </li>
+<li><strong>Why it matters</strong> A state-of-the-art performance claim requires quantitative comparison against a defined set of baselines on a defined benchmark. Without these, the claim is unverifiable and cannot be assessed for significance or robustness.  </li>
+<li><strong>Resolution test</strong> Provide a table or figure reporting self-consistency success rates for PANDA and all evaluated baselines across protein lengths, including error bars or confidence intervals and the number of design trials per length.  </li>
+<li><strong>Concern ID</strong> R1-M2  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> The abstract claims that PANDA delivers substantially higher scaffolding success than previous approaches on the Atomic Motif Enzyme benchmark, particularly for larger motifs.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; no benchmark results or comparison data provided  </li>
+<li><strong>Concern</strong> The scaffolding success claim is made without any quantitative support. The benchmark is named but no success rates, baseline results, or motif size ranges are given.  </li>
+<li><strong>Why it matters</strong> Scaffolding success is a central functional claim of the work. Without numbers and a clear definition of the benchmark and baselines, the claim cannot be evaluated for magnitude, significance, or generalizability.  </li>
+<li><strong>Resolution test</strong> Provide a figure or table reporting scaffolding success rates for PANDA and each baseline, stratified by motif size, with statistical significance tests and the exact benchmark protocol.  </li>
+<li><strong>Concern ID</strong> R1-M3  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Technical soundness  </li>
+<li><strong>Claim pointer</strong> The abstract states that PANDA performs denoising in a unified all-atom representation and recovers sequence identity directly from atomic occupancy patterns.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; no architectural details or training description provided  </li>
+<li><strong>Concern</strong> The abstract does not describe how the all-atom representation is constructed, how the denoising objective is defined, how atomic occupancy patterns are decoded into sequence identity, or how the global and local coordinate tracks are coupled. Without these details, the technical soundness of the architecture cannot be assessed.  </li>
+<li><strong>Why it matters</strong> The core methodological contribution is the architecture itself. If the representation or training procedure has fundamental flaws, the reported performance would not be reproducible or meaningful.  </li>
+<li><strong>Resolution test</strong> Provide a full methods section describing the representation, the denoising objective, the decoding mechanism, the coupling of coordinate tracks, and the training procedure, with sufficient detail for independent reimplementation.  </li>
+<li><strong>Concern ID</strong> R1-M4  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Technical soundness  </li>
+<li><strong>Claim pointer</strong> The abstract states that PANDA introduces a sampling strategy that preserves side-chain geometry.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; no description of the sampling strategy provided  </li>
+<li><strong>Concern</strong> The sampling strategy is mentioned but not described. It is unclear how side-chain geometry is preserved during sampling, what constraints are imposed, or how this differs from standard denoising sampling procedures.  </li>
+<li><strong>Why it matters</strong> Side-chain geometry preservation is presented as a key advantage. Without a description of the strategy, the claim cannot be evaluated, and the mechanism by which PANDA outperforms other methods remains opaque.  </li>
+<li><strong>Resolution test</strong> Provide a detailed description of the sampling strategy, including the algorithm, any geometric constraints, and a comparison with standard sampling approaches on a defined metric of side-chain quality.  </li>
+<li><strong>Concern ID</strong> R1-M5  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> The abstract claims that PANDA provides an efficient route to high-quality all-atom generative design.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; no runtime, memory, or scalability data provided  </li>
+<li><strong>Concern</strong> The efficiency claim is not supported by any computational cost measurements. No runtime comparisons, memory usage, or scaling behavior with protein length are reported.  </li>
+<li><strong>Why it matters</strong> Efficiency is a stated advantage, but without quantitative measurements it is not possible to determine whether PANDA is actually more efficient than existing methods or whether the claim is aspirational.  </li>
+<li>
+<p><strong>Resolution test</strong> Provide runtime and memory measurements for PANDA and baselines across a range of protein lengths, including hardware specifications and any relevant scaling analysis.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong>  </p>
+</li>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Abstract wording  </li>
+<li><strong>Evidence pointer</strong> Abstract, first sentence  </li>
+<li><strong>Issue</strong> The phrase "most approaches still separate backbone generation from sequence assignment or rely on latent and torsional representations" is a broad generalization that may not accurately represent the full landscape of current methods, some of which operate in Cartesian space or jointly model sequence and structure.  </li>
+<li><strong>Required correction</strong> Qualify the statement by citing specific representative methods and clarifying the scope of the claim.  </li>
+<li><strong>Concern ID</strong> R1-m2  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Abstract wording  </li>
+<li><strong>Evidence pointer</strong> Abstract, statement on conditioning on pairwise distances  </li>
+<li><strong>Issue</strong> The phrase "allowing the functional atoms to be positioned jointly with the scaffold" is vague. It is unclear what is meant by jointly positioned and how this differs from other conditioning approaches.  </li>
+<li><strong>Required correction</strong> Provide a more precise description of the conditioning mechanism and its intended effect on the generated structure.  </li>
+<li><strong>Concern ID</strong> R1-m3  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Reproducibility  </li>
+<li><strong>Affected element</strong> Abstract, benchmark reference  </li>
+<li><strong>Evidence pointer</strong> Abstract, Atomic Motif Enzyme benchmark  </li>
+<li><strong>Issue</strong> The benchmark is named but not described. It is unclear what the benchmark contains, how it is scored, and whether it is publicly available.  </li>
+<li><strong>Required correction</strong> Provide a citation or brief description of the benchmark, including its composition and evaluation protocol.  </li>
+<li><strong>Concern ID</strong> R1-m4  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Completeness  </li>
+<li><strong>Affected element</strong> Abstract, baseline comparisons  </li>
+<li><strong>Evidence pointer</strong> Abstract, claims of highest and substantially higher performance  </li>
+<li><strong>Issue</strong> The abstract does not name any of the evaluated all-atom methods or previous approaches against which PANDA is compared.  </li>
+<li><strong>Required correction</strong> List the specific baselines used in the evaluation, either in the abstract or by clear reference to the main text.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of highest self-consistency design success across protein lengths among evaluated all-atom methods is unsupported by any quantitative data in the supplied material.</li>
+<li>The claim of substantially higher scaffolding success on the Atomic Motif Enzyme benchmark is unsupported by any quantitative data in the supplied material.</li>
+<li>The claim of efficiency is unsupported by any computational cost measurements in the supplied material.</li>
+<li>The technical soundness of the all-atom denoising architecture, the sequence recovery mechanism, the global and local coordinate coupling, and the side-chain-preserving sampling strategy cannot be assessed from the abstract alone.</li>
+<li>The generalizability of the method beyond the named benchmark cannot be evaluated from the supplied material.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

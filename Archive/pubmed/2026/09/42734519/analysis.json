@@ -1,0 +1,24 @@
+{
+  "source": "pubmed",
+  "id": "42734519",
+  "title": "Biasing Conformational Sampling in AlphaFold 3 and Boltz-2 via Pair Representation Scaling.",
+  "authors": "Suzuki, Shosuke; Amagasa, Toshiyuki",
+  "journal": "Journal of chemical information and modeling",
+  "published_date": "2026-09-14",
+  "window": {
+    "start": "2026-09-13",
+    "end": "2026-09-19"
+  },
+  "score": 9,
+  "one_liner_zh": "该文提出一种无需重训练的推理时方法，通过缩放AlphaFold 3和Boltz-2的pair表示来偏置构象采样，从而恢复蛋白质的替代功能态，直接针对蛋白质构象采样这一核心计算问题，方法创新且可迁移。",
+  "abstract": "Deep learning has transformed protein structure prediction, yet most systems return a single dominant conformation with little control over the alternative functional states. We introduce pair representation scaling, an inference-time method that biases conformational sampling in diffusion-based structure predictors by multiplying the latent pair representation by a single scalar before the Pairformer trunk, without retraining, an auxiliary model, or a second forward pass. On 86 two-state targets spanning domain motions and membrane transporters, scaling broadens the conformational ensembles of both AlphaFold 3 and Boltz-2 and recovers alternative states that default inference misses, most strongly in AlphaFold 3, where the gains extend even to targets deposited after the training cutoff. It approaches the alternative-state recovery of alignment-based sampling methods, and the benefit persists even without a multiple-sequence alignment. The predicted distance distributions show that scaling shifts the encoded two-state distribution toward the experimentally observed alternative state, a directed modulation rather than an arbitrary perturbation. Pair representation scaling is an interpretable, low-cost handle for the conformational ensembles of deep-learning structure predictors.",
+  "abstract_zh": "深度学习已彻底改变了蛋白质结构预测，但大多数系统仅返回单一主导构象，对替代功能状态的控制有限。我们引入了配对表示缩放（pair representation scaling），这是一种推理时方法，通过在Pairformer主干之前将潜在配对表示乘以单一标量，来偏置基于扩散的结构预测器中的构象采样，无需重新训练、辅助模型或第二次前向传播。在涵盖结构域运动和膜转运蛋白的86个双态靶标上，缩放拓宽了AlphaFold 3和Boltz-2的构象系综，并恢复了默认推理遗漏的替代状态，在AlphaFold 3中效果最为显著，其增益甚至扩展到训练截止日期后提交的靶标。该方法接近基于比对采样方法的替代状态恢复能力，且即使在没有多序列比对的情况下，其益处依然存在。预测的距离分布表明，缩放将编码的双态分布向实验观察到的替代状态移动，这是一种定向调制而非任意扰动。配对表示缩放为深度学习结构预测器的构象系综提供了一个可解释、低成本的调控手段。",
+  "has_fulltext": true,
+  "fulltext_source": "pmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42734519/",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/42734519/",
+  "paper_page_path": "papers/pubmed/42734519/index.html"
+}

@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Genolator enables protein function interpretation using a multimodal large language model fusing genomic and structural interpretation with natural language interaction. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Genolator enables protein function interpretation using a multimodal large language model fusing genomic and structural interpretation with natural language interaction.</h1>
+      <div class="meta">Danner, Martin; Islam, Tanhim; Begemann, Matthias; Kraft, Florian; Elbracht, Miriam; Kurth, Ingo; Krause, Jeremias</div>
+      <div class="meta muted">
+        
+        <span class="journal">Genome biology</span>
+        · 2026-09-17
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42750043/">原文</a>
+      </div>
+      <p class="one-liner">该文开发了融合DNA、氨基酸序列和蛋白质结构嵌入的多模态大语言模型Genolator，用于回答蛋白质功能相关问题，虽以蛋白质结构为输入之一并涉及结构信息整合，但核心问题是功能注释而非结构预测/采样/生成/对接等结构计算建模，方法上属AI应用但缺乏结构层面的方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">BACKGROUND: Decoding the genetic code to unveil its genome functionality is a monumental task which would greatly advance the understanding of disease mechanisms and development of targeted treatments. Although large language models (LLMs) have transformed natural language processing across diverse domains, translating the complex language of DNA into human-readable form remains challenging due to genomic data complexity and unexplored regions of the human genome. Current language models either are capable of processing natural language or the genomic code. Models fusing both aspects are largely lacking. RESULTS: Here we present Genolator, a multimodal large language model that integrates embeddings from DNA sequences, amino acid sequences, and protein structures with natural language queries. Fine-tuned on over 365,000 question-answer pairs generated using abstracted Gene-Ontology (GO) terms, Genolator effectively answers queries regarding protein subcellular localization, molecular function, and biological processes. Evaluation demonstrates high accuracy in confirming or denying protein function associations, outperforming baseline models such as openly available allrounder LLMs like GPT 4.1 as well as smaller domain-specific models integrating knowledge from a protein structure transformer. Explorations of Genolator&#39;s hidden states unveil a biologically and linguistically plausible organization of its learned representations. Analysis of the attention heads of the underlying language model and an ablation study provide evidence for a benefit of the multi-modal approach. CONCLUSION: Genolator enhances accessibility to genomic information by enabling natural language interaction with protein data, facilitating biological discovery, and clinical research. It represents a step towards bridging genomic code and human language through the integration of a multimodal LLM.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">背景：解码遗传密码以揭示其基因组功能是一项艰巨的任务，将极大推进对疾病机制的理解和靶向治疗的发展。尽管大型语言模型（LLMs）已在多个领域变革了自然语言处理，但由于基因组数据的复杂性和人类基因组中未探索的区域，将DNA的复杂语言翻译成人类可读形式仍具挑战性。当前的语言模型要么能处理自然语言，要么能处理基因组编码，融合这两方面的模型大多缺失。结果：在此，我们提出Genolator，一种多模态大型语言模型，将DNA序列、氨基酸序列和蛋白质结构的嵌入与自然语言查询整合。基于使用抽象化基因本体（Gene-Ontology, GO）术语生成的超过365,000个问答对进行微调，Genolator有效回答关于蛋白质亚细胞定位、分子功能和生物过程的查询。评估显示其在确认或否定蛋白质功能关联方面具有高准确性，优于基线模型，如公开可用的全能型LLM（如GPT 4.1）以及整合蛋白质结构变换器知识的小型领域特定模型。对Genolator隐藏状态的探索揭示了其学习表示在生物学和语言学上合理的组织。对底层语言模型注意力头的分析和消融研究提供了多模态方法益处的证据。结论：Genolator通过实现与蛋白质数据的自然语言交互，增强了对基因组信息的可访问性，促进了生物发现和临床研究。它代表了通过整合多模态LLM桥接基因组编码与人类语言的一步。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Genolator enables protein function interpretation using a multimodal large language model fusing genomic and structural interpretation with natural language interaction</li>
+<li><strong>作者与单位</strong>: Danner, Martin; Islam, Tanhim; Begemann, Matthias; Kraft, Florian; Elbracht, Miriam; Kurth, Ingo; Krause, Jeremias（单位未在摘要中提供，推测为德国亚琛工业大学医院/Uniklinik RWTH Aachen，依据致谢部分）</li>
+<li><strong>期刊/预印本平台</strong>: Genome Biology</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-09-17）</li>
+<li><strong>论文类型</strong>: 研究论文（方法 + 评估）</li>
+<li><strong>领域</strong>: 蛋白质功能预测 × 多模态大语言模型（基因组序列 + 蛋白质结构 + 自然语言）</li>
+<li><strong>关键词</strong>: 多模态大语言模型、蛋白质功能注释、Gene Ontology、Evo2、ESM2、PST、自然语言交互</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1186/s13059-026-04274-w</li>
+<li><strong>代码</strong>: 未提供（文中提及代码已存档于 GitHub 和 Zenodo，但未给出具体链接）</li>
+<li><strong>数据</strong>: 未提供（QA 数据集已存档于 Hugging Face，但未给出具体链接）</li>
+<li><strong>阅读日期</strong>: 2026-05-13（按当前日期推算）</li>
+<li><strong>在该方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>多模态融合</strong>分支，将 DNA 序列（Evo2）、氨基酸序列（ESM2）和蛋白质结构（PST）嵌入与 LLM 结合，实现自然语言交互的蛋白质功能注释。与 AlphaFold 等结构预测方法不同，本文聚焦于<strong>结构信息的下游功能解读</strong>，而非结构预测本身。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>Genolator 通过将 DNA 序列（Evo2）、氨基酸序列（ESM2）和蛋白质结构（PST）的嵌入投影为虚拟 token 并与 Llama-3 8B 联合微调，在 365,000+ QA 对训练后，能够以自然语言问答形式准确确认或否认蛋白质的 GO 功能关联（F1≈0.98, MCC=0.959），优于 GPT-4.1 和 XGBoost 基线。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何让非技术用户通过自然语言交互，对给定基因/蛋白质序列进行功能解读（亚细胞定位、分子功能、生物学过程）？</li>
+<li><strong>为什么重要</strong>: 基因组数据量激增，但功能注释仍依赖专家和耗时实验；现有计算方法多为黑箱预测，缺乏可解释性和交互性，且难以整合多源信息（DNA、序列、结构）。</li>
+<li><strong>现有方法不足</strong>:</li>
+<li>通用 LLM（如 GPT-4.1）无法直接处理原始 DNA/蛋白质序列，且会产生幻觉（如虚假记忆、氨基酸乱码）。</li>
+<li>专用预测模型（如 XGBoost）缺乏生成能力和自然语言交互。</li>
+<li>现有基因组 LLM 仅处理单一模态（DNA 或蛋白质），未融合结构信息。</li>
+<li><strong>精确研究问题</strong>: Can a multimodal LLM that fuses DNA, amino acid sequence, and protein structure embeddings with natural language queries accurately confirm/deny and generate GO-based functional annotations for unseen proteins?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：此脉络基于本文引言及参考文献，经外部核验部分有限，标注为「部分经外部核验」）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统计算预测</td>
+<td>BLAST、序列比对、结构域搜索</td>
+<td>可解释、快速</td>
+<td>依赖已知同源物，对新基因/孤儿基因效果差</td>
+<td>超越</td>
+</tr>
+<tr>
+<td>机器学习预测</td>
+<td>SVM、随机森林、XGBoost（本文基线）</td>
+<td>可处理多特征</td>
+<td>需人工特征工程，无生成能力</td>
+<td>本文基线之一</td>
+</tr>
+<tr>
+<td>深度学习预测</td>
+<td>深度神经网络、图神经网络</td>
+<td>自动特征学习</td>
+<td>多为黑箱，缺乏交互</td>
+<td>超越</td>
+</tr>
+<tr>
+<td>蛋白质语言模型</td>
+<td>ESM2、ProtTrans</td>
+<td>捕获序列进化信息</td>
+<td>仅序列模态，无结构信息</td>
+<td>本文组件</td>
+</tr>
+<tr>
+<td>基因组基础模型</td>
+<td>Evo2、Nucleotide Transformer</td>
+<td>处理长 DNA 上下文</td>
+<td>缺乏自然语言理解</td>
+<td>本文组件</td>
+</tr>
+<tr>
+<td>结构预测/表示</td>
+<td>AlphaFold、PST</td>
+<td>结构信息丰富</td>
+<td>结构预测≠功能解读</td>
+<td>本文组件（PST）</td>
+</tr>
+<tr>
+<td>通用 LLM</td>
+<td>GPT-4.1、Llama-3</td>
+<td>自然语言能力强</td>
+<td>无法直接处理生物序列，产生幻觉</td>
+<td>本文基座</td>
+</tr>
+<tr>
+<td><strong>多模态融合 LLM</strong></td>
+<td><strong>Genolator（本文）</strong></td>
+<td><strong>整合 DNA+序列+结构+语言</strong></td>
+<td><strong>训练数据依赖、开放问答精度有限</strong></td>
+<td><strong>本文贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通用 LLM 无法处理生物序列</td>
+<td>GPT-4.1 在直接输入 DNA/蛋白质序列时产生错误识别、氨基酸乱码、反问</td>
+<td>模型训练数据中缺乏生物序列理解；序列长度超出有效处理范围；模型依赖记忆而非推理</td>
+<td>Results 节 "Case study" 部分；Table S1</td>
+</tr>
+<tr>
+<td>通用 LLM 产生幻觉</td>
+<td>GPT-4.1 声称执行了 BLAST 搜索并给出错误蛋白识别（如将 BRCA1 识别为 TP53/HTT）</td>
+<td>模型试图用训练记忆填补知识空白，缺乏真实工具调用能力</td>
+<td>Results 节 "Case study" 部分；Table S1</td>
+</tr>
+<tr>
+<td>单模态模型信息不完整</td>
+<td>ESM2 嵌入对蛋白质功能预测贡献有限（消融后损失仅 +0.51%）</td>
+<td>氨基酸序列本身包含的功能信号有限，结构信息更关键</td>
+<td>Results 图 12A；Ablation 节</td>
+</tr>
+<tr>
+<td>结构信息整合困难</td>
+<td>直接使用 ESM2 序列嵌入不如 PST 结构增强嵌入有效</td>
+<td>PST 嵌入包含折叠信息，能捕获功能相关结构域</td>
+<td>Results 表 1；图 12B</td>
+</tr>
+<tr>
+<td>开放问答评估困难</td>
+<td>困惑度/交叉熵无法反映事实正确性</td>
+<td>开放生成任务中，语言流畅性与事实准确性脱节</td>
+<td>Discussion 节 "Evaluating" 部分</td>
+</tr>
+<tr>
+<td>数据泄露风险</td>
+<td>传统基因级划分可能让同源基因跨集分布</td>
+<td>序列/结构相似的基因可能同时出现在训练和测试集</td>
+<td>Methods 节 "Similarity-aware dataset splitting"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>: 将三种生物模态（DNA 序列、氨基酸序列、蛋白质结构）分别通过预训练编码器（Evo2、ESM2、PST）提取嵌入，经可学习的线性投影器映射为 LLM 的虚拟 token，与自然语言问题拼接后输入 Llama-3 8B 进行指令微调。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>: 
+   - <strong>结构信息 &gt; 序列信息</strong>：PST（结构增强）嵌入比 ESM2（纯序列）嵌入带来更大的性能提升（消融损失 3.31% vs 0.51%），说明蛋白质三维结构对功能解读的贡献远超一级序列。
+   - <strong>冻结编码器 + 可训练投影器</strong>：保持 Evo2/ESM2/PST 权重冻结，仅训练投影器和 LLM，既保留预训练知识又降低计算成本。
+   - <strong>虚拟 token 作为跨模态桥梁</strong>：将高维生物嵌入压缩为 LLM 可理解的 token 序列，实现生物信息与自然语言的统一表示空间。
+   - <strong>自然语言作为交互界面</strong>：将功能预测重构为问答任务，使非技术用户可直接查询，同时通过确认/否认问题设计实现可验证的二元判断。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]: 
+   - 多模态融合中，<strong>模态的信息密度差异</strong>决定了其贡献权重——结构 &gt; 序列 &gt; 文本，这提示在设计融合策略时应优先考虑信息量最大的模态。
+   - <strong>冻结基础模型 + 轻量适配器</strong>是高效的多模态集成范式，可避免灾难性遗忘和巨额训练成本。
+   - 将预测任务重构为问答格式，不仅提升可用性，还能利用 LLM 的生成能力输出解释性内容，而不仅是标签。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: </li>
+<li>DNA 序列（基因的 cDNA 序列，含 UTR）</li>
+<li>氨基酸序列（对应蛋白质）</li>
+<li>蛋白质结构（AlphaFold 数据库 PDB 文件）</li>
+<li>自然语言问题（如 "Is this protein involved in DNA repair?"）</li>
+<li><strong>输出</strong>: 自然语言回答（确认/否认 + 解释），或开放问答的生成文本</li>
+<li><strong>模块</strong>:
+  1. <strong>Evo2 (7B)</strong>：DNA 序列编码器，提取 4096 维嵌入
+  2. <strong>ESM2 (3B)</strong>：氨基酸序列编码器，提取 2560 维嵌入
+  3. <strong>PST (Protein Structure Transformer)</strong>：结构增强序列编码器，提取 1280 维嵌入
+  4. <strong>虚拟 token 投影器</strong>：3 个线性层，将各模态嵌入映射到 Llama 隐藏维度 (4096)
+  5. <strong>Llama-3 8B (Bio-Medical-Llama-3)</strong>：基座 LLM，处理拼接后的 token 序列</li>
+<li><strong>训练</strong>:</li>
+<li>数据: 365,000+ QA 对（确认/否认 + 开放问答），基于 MANE Select v1.4 的 ~18,000 个基因</li>
+<li>策略: 冻结 Evo2/ESM2/PST，微调投影器 + Llama（LoRA, rank 未提供）</li>
+<li>优化: 学习率 5×10⁻⁵，batch size 8，最多 10 epochs，early stopping (patience=2)</li>
+<li>数据划分: 相似性感知 KMeans 聚类（k=3），80/10/10 训练/验证/测试</li>
+<li><strong>评估</strong>:</li>
+<li>二元分类: 确认/否认任务，指标 Accuracy, Precision, Recall, F1, MCC</li>
+<li>开放问答: LLM-as-judge（GPT-4.1）将生成答案映射到 GO Slim terms，计算重叠率</li>
+<li><strong>流程</strong>: 用户输入问题 + 序列 → 编码器提取嵌入 → 投影为虚拟 token → 与问题 token 拼接 → Llama 生成回答</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Evo2 编码器</td>
+<td>提取 DNA 序列的进化/调控特征</td>
+<td>DNA 包含剪接、UTR 调控等蛋白质序列缺失的信息</td>
+<td>输入: DNA 序列; 输出: 4096-d 嵌入</td>
+<td>Methods 节 "Genomic sequence embeddings with Evo2"</td>
+<td>预期显著降低功能预测性能（DNA 是核心输入模态）</td>
+</tr>
+<tr>
+<td>ESM2 编码器</td>
+<td>提取氨基酸序列的进化特征</td>
+<td>提供蛋白质一级序列信息</td>
+<td>输入: 氨基酸序列; 输出: 2560-d 嵌入</td>
+<td>Methods 节 "Protein sequence embeddings with ESM2"</td>
+<td>消融实验: 损失 +0.51%（图 12A），贡献有限</td>
+</tr>
+<tr>
+<td>PST 编码器</td>
+<td>提取结构增强的序列嵌入</td>
+<td>蛋白质功能高度依赖三维结构</td>
+<td>输入: PDB 文件; 输出: 1280-d 嵌入</td>
+<td>Methods 节 "Structural enriched protein sequence embeddings with PST"</td>
+<td>消融实验: 损失 +3.31%（图 12B），贡献最大</td>
+</tr>
+<tr>
+<td>虚拟 token 投影器</td>
+<td>将各模态嵌入映射到 LLM 空间</td>
+<td>不同嵌入维度/分布需统一</td>
+<td>输入: 各模态嵌入; 输出: 8×4096-d 虚拟 token</td>
+<td>Methods 节 "Multimodal projection"</td>
+<td>预期完全失效（无法跨模态通信）</td>
+</tr>
+<tr>
+<td>Llama-3 8B 基座</td>
+<td>处理拼接 token，生成自然语言回答</td>
+<td>提供语言理解和生成能力</td>
+<td>输入: 虚拟 token + 文本 token; 输出: 回答文本</td>
+<td>Methods 节 "Llama fine-tuning"</td>
+<td>预期完全失效（无语言能力）</td>
+</tr>
+<tr>
+<td>LoRA 适配器</td>
+<td>参数高效微调 LLM</td>
+<td>降低训练成本，避免灾难性遗忘</td>
+<td>应用于注意力投影模块</td>
+<td>Methods 节 "Fine-tuning"</td>
+<td>预期性能下降（全量微调可能略优但成本高）</td>
+</tr>
+<tr>
+<td>相似性感知 KMeans 划分</td>
+<td>按嵌入空间聚类划分数据</td>
+<td>防止同源基因跨集泄露</td>
+<td>输入: 多模态嵌入; 输出: 3 个聚类</td>
+<td>Methods 节 "Similarity-aware dataset splitting"</td>
+<td>预期评估结果虚高（传统随机划分）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><em>（本文为深度学习应用型论文，核心公式较少，以下为理解所需的关键数学描述）</em></p>
+<ol>
+<li>
+<p><strong>虚拟 token 投影</strong>:
+   - 对每个模态 m ∈ {DNA, protein, structure}，嵌入 E_m 经线性变换:
+   - <strong>T_m = W_m · E_m + b_m</strong>
+   - 其中 T_m ∈ R^(8×4096) 为虚拟 token 序列，W_m 为可学习权重矩阵，b_m 为偏置
+   - 用途: 将不同维度的生物嵌入统一映射到 LLM 的 token 空间
+   - 直觉: 类似多模态 LLM 中的 "adapter" 或 "projector" 层</p>
+</li>
+<li>
+<p><strong>嵌入归一化</strong>:
+   - 各模态嵌入在拼接前进行 L2 归一化，确保尺度一致
+   - 用途: 防止某一模态因数值范围大而主导训练</p>
+</li>
+<li>
+<p><strong>交叉熵损失</strong>（训练目标）:
+   - <strong>L = -Σ log P(y_t | y_&lt;t, T_DNA, T_prot, T_struct, T_prompt)</strong>
+   - 标准自回归语言建模损失，条件于虚拟 token 和问题 token
+   - 用途: 微调 Llama 生成准确回答</p>
+</li>
+<li>
+<p><strong>MCC（Matthews 相关系数）</strong>:
+   - <strong>MCC = (TP·TN - FP·FN) / √[(TP+FP)(TP+FN)(TN+FP)(TN+FN)]</strong>
+   - 用途: 评估二元确认/否认分类性能，对类别不平衡更稳健</p>
+</li>
+<li>
+<p><strong>余弦相似度</strong>（表示分析）:
+   - <strong>cos(A,B) = (A·B) / (||A|| · ||B||)</strong>
+   - 用途: 量化 GO term 嵌入之间的语义/功能相似性</p>
+</li>
+</ol>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>:
+- MANE Select v1.4 (GRCh38)，~18,000 个人类蛋白编码基因
+- 训练数据: 365,000+ QA 对（确认/否认 + 开放问答）
+- 测试集: 34,743 个确认/否认问题（15,463 确认 + 14,943 否认），基于 KMeans 相似性感知划分
+- 蛋白质结构: AlphaFold 数据库 PDB 文件</p>
+<p><strong>指标</strong>: Accuracy, Precision, Recall, F1-score, MCC</p>
+<p><strong>基线</strong>:
+- GPT-4.1（通用 LLM，直接输入序列）
+- XGBoost（专用分类器，PST 嵌入 + BioBERT 问题嵌入）
+- Genolator 消融变体（TP-only 微调）</p>
+<p><strong>评测协议</strong>:
+- 确认/否认任务: 二元分类，自动 GPT-4.1 后处理标记回答
+- 开放问答: LLM-as-judge（GPT-4.1）提取 GO Slim terms，与 ground truth 比较</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>确认/否认分类性能</td>
+<td>Genolator 优于通用 LLM 和专用基线</td>
+<td>6 模型对比，34,743 测试问题</td>
+<td>Genolator (Evo2+PST) F1≈0.98, MCC=0.959；GPT-4.1 MCC=0.179；XGBoost MCC=0.913</td>
+<td>多模态融合 + 微调显著优于通用 LLM 和传统 ML</td>
+<td>未提供各模型完整 Precision/Recall 分解</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>模态消融</td>
+<td>PST 结构信息贡献 &gt; ESM2 序列信息</td>
+<td>分别移除 ESM2/PST token</td>
+<td>ESM2 消融损失 +0.51%；PST 消融损失 +3.31%</td>
+<td>结构信息对功能预测贡献远大于序列信息</td>
+<td>未测试仅用单模态的极端情况</td>
+<td>Results 图 12</td>
+</tr>
+<tr>
+<td>微调策略对比</td>
+<td>全模型微调优于仅训练投影器</td>
+<td>Full vs TP-only</td>
+<td>Full 显著优于 TP-only（MCC 0.959 vs 0.924/0.895）</td>
+<td>更新 LLM 参数对跨模态理解必要</td>
+<td>未测试中间策略（如更多可训练层）</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>GPT-4.1 案例研究</td>
+<td>通用 LLM 无法可靠处理生物序列</td>
+<td>BRCA1/IHH/INS 序列识别</td>
+<td>INS 正确；BRCA1 误认为 TP53/HTT；IHH 误认为 COL1A1/MPZ</td>
+<td>通用 LLM 依赖记忆而非序列理解</td>
+<td>案例数量有限（3 个基因）</td>
+<td>Results "Case study" 节；Table S1</td>
+</tr>
+<tr>
+<td>隐藏状态可视化</td>
+<td>模型学习到生物学合理的表示</td>
+<td>t-SNE + 余弦相似度</td>
+<td>确认/否认样本形成分离聚类；相关 GO term 嵌入接近</td>
+<td>模型表示具有生物学意义</td>
+<td>定性分析，无定量聚类指标</td>
+<td>Results 图 4-9</td>
+</tr>
+<tr>
+<td>开放问答评估</td>
+<td>Genolator 能生成合理的功能描述</td>
+<td>LLM-as-judge 与 ground truth 比较</td>
+<td>确认/否认: 78.51% (BP), 89.59% (MF), 89.19% (CC) 有重叠；完全匹配率低 (2.51-5.83%)</td>
+<td>模型能捕获主要功能，但精确注释仍有局限</td>
+<td>完全匹配率低，可能因 GO term 粒度差异</td>
+<td>Results 图 9</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文仅针对人类蛋白质编码基因的 GO 功能注释（三个 aspect: BP/MF/CC），不涉及非编码元件、其他物种或更细粒度的功能预测。</li>
+<li><strong>输入要求</strong>: 需要 DNA 序列、氨基酸序列和蛋白质结构（AlphaFold 预测）三模态输入，实际应用中需先获得这些数据。</li>
+<li><strong>性能边界</strong>: 在确认/否认任务上表现优异（MCC=0.959），但开放问答的完全匹配率仅 2.51-5.83%，说明生成精确功能注释的能力有限。</li>
+<li><strong>基线比较</strong>: 与 GPT-4.1 的比较中，GPT-4.1 仅使用文本序列输入，未经过微调，可能低估了其在更优提示工程下的表现。</li>
+<li><strong>数据依赖</strong>: 训练数据由 GPT-4.1 生成，存在潜在的标签噪声和偏差；KMeans 划分虽减少泄露，但聚类边界可能影响泛化评估。</li>
+<li><strong>计算成本</strong>: 需要 Evo2 (7B) + ESM2 (3B) + PST 三个编码器进行推理，实际部署成本较高。</li>
+<li><strong>因果性</strong>: 本文展示的是关联性功能注释，不涉及因果机制解释；"功能"指 GO 注释关联，非实验验证的功能。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开放问答性能有限</td>
+<td>完全匹配率低（2.51-5.83%），生成注释与 ground truth 存在差距</td>
+<td>改进训练数据质量、引入更细粒度 GO term 处理</td>
+<td>Results 图 9；Discussion 节</td>
+</tr>
+<tr>
+<td>数据不平衡</td>
+<td>某些 GO term 在训练数据中代表性不足，影响泛化</td>
+<td>未明确提及</td>
+<td>Discussion 节 "Evaluating" 部分</td>
+</tr>
+<tr>
+<td>评估方法局限</td>
+<td>困惑度/交叉熵无法反映事实正确性，LLM-as-judge 可能引入偏差</td>
+<td>开发更鲁棒的事实性评估指标</td>
+<td>Discussion 节 "Evaluating" 部分</td>
+</tr>
+<tr>
+<td>未进行超参数调优</td>
+<td>Llama 模型未系统调优，可能未达最优性能</td>
+<td>未来可进行超参数搜索</td>
+<td>Discussion 节 "Differentiating" 部分</td>
+</tr>
+<tr>
+<td>单物种限制</td>
+<td>仅在人类基因上训练和评估</td>
+<td>扩展到多物种数据</td>
+<td>Discussion 节 "Differentiating" 部分</td>
+</tr>
+<tr>
+<td>结构信息依赖</td>
+<td>依赖 AlphaFold 预测结构，预测误差可能传播</td>
+<td>未明确提及</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPT-4.1 基线可能被低估</td>
+<td>GPT-4.1 未经过微调，且提示词可能不是最优；直接输入长序列超出其有效上下文</td>
+<td>基线对比公平性影响结论强度</td>
+<td>使用更优提示工程、分块输入、或微调 GPT-4.1 重新对比</td>
+<td>Results 表 1；Case study 节</td>
+</tr>
+<tr>
+<td>训练数据由 GPT-4.1 生成</td>
+<td>存在系统性偏差和标签噪声；模型可能学习生成器的风格而非真实功能关联</td>
+<td>影响模型泛化到真实场景的能力</td>
+<td>人工审核子集、与实验验证数据对比、使用独立标注数据测试</td>
+<td>Methods 节 "Construction of QA datasets"</td>
+</tr>
+<tr>
+<td>KMeans 划分的局限性</td>
+<td>聚类数 k=3 可能过于粗糙；嵌入空间聚类不等同于功能相似性</td>
+<td>测试集可能仍包含与训练集相似的样本</td>
+<td>使用序列/结构相似性阈值划分、跨染色体划分、时间序列划分</td>
+<td>Methods 节 "Similarity-aware dataset splitting"</td>
+</tr>
+<tr>
+<td>消融实验仅报告损失变化</td>
+<td>损失变化小（0.51-3.31%）可能掩盖分类性能的显著差异</td>
+<td>损失与任务性能不完全等价</td>
+<td>报告消融后的 Accuracy/F1/MCC 变化</td>
+<td>Results 图 12</td>
+</tr>
+<tr>
+<td>隐藏状态分析为定性</td>
+<td>t-SNE 聚类和余弦相似度缺乏统计显著性检验</td>
+<td>生物学合理性结论可能受主观影响</td>
+<td>计算聚类纯度、轮廓系数、置换检验</td>
+<td>Results 图 4-9</td>
+</tr>
+<tr>
+<td>未与其他蛋白质功能预测 SOTA 比较</td>
+<td>未对比 DeepGO、ProteinBERT 等专用功能预测模型</td>
+<td>无法确定 Genolator 相对专用模型的优势</td>
+<td>在相同测试集上运行多个 SOTA 模型对比</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>开放问答评估的粒度问题</td>
+<td>GO Slim 映射可能丢失细粒度信息；完全匹配率低可能因 term 层级不同</td>
+<td>评估方法可能低估模型真实能力</td>
+<td>使用多种 GO term 相似度度量（如 Resnik、Lin 相似度）</td>
+<td>Results 图 9</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:</p>
+<ol>
+<li>
+<p><strong>多模态融合策略</strong>: 将不同生物模态（DNA、序列、结构）通过预训练编码器提取嵌入，再经轻量投影器映射为 LLM 虚拟 token，是高效的多模态集成范式。可迁移至蛋白质设计任务，如将结构约束（来自 AlphaFold 或 MD 模拟）与序列信息融合用于生成式设计。</p>
+</li>
+<li>
+<p><strong>冻结编码器 + 微调 LLM</strong>: 保持 Evo2/ESM2/PST 冻结，仅训练投影器和 LLM，既保留预训练知识又降低计算成本。此策略可迁移至其他蛋白质相关任务，如将 MD 模拟轨迹编码为 token 输入 LLM 进行动态性质问答。</p>
+</li>
+<li>
+<p><strong>结构信息 &gt; 序列信息</strong>: 消融实验表明 PST（结构增强）嵌入贡献远大于 ESM2（序列）嵌入（3.31% vs 0.51% 损失）。这提示在蛋白质功能预测中，结构信息是更关键的特征，可指导未来模型设计优先考虑结构模态。</p>
+</li>
+<li>
+<p><strong>问答格式重构预测任务</strong>: 将功能预测重构为确认/否认 + 开放问答，不仅提升可用性，还能利用 LLM 生成解释性内容。可迁移至蛋白质设计中的约束满足检查，如 "Does this mutation preserve the active site?"。</p>
+</li>
+<li>
+<p><strong>相似性感知数据划分</strong>: 使用 KMeans 在嵌入空间聚类后划分数据，比随机划分更严格地评估泛化能力。此方法可迁移至任何蛋白质 ML 任务，避免同源蛋白跨集泄露。</p>
+</li>
+<li>
+<p><strong>注意力分析 + 消融结合</strong>: 同时使用注意力权重分析和 token 消融实验评估模态重要性，避免单一方法的偏差。可迁移至多模态蛋白质模型的可解释性分析。</p>
+</li>
+<li>
+<p><strong>LLM-as-judge 评估生成任务</strong>: 使用 GPT-4.1 将生成文本映射到 GO terms 进行评估，解决开放问答的自动评估难题。可迁移至蛋白质设计生成序列的功能评估。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Evo2 (Brixi et al., 2025)</strong>：基因组基础模型，本文使用其提取 DNA 嵌入。Evo2 的 7B 版本支持长达 1M token 的 DNA 上下文，本文利用其编码完整 cDNA 区域。</li>
+<li><strong>ESM2 (Lin et al., 2023)</strong>：蛋白质语言模型，本文使用其提取氨基酸序列嵌入。ESM2 已在结构预测、功能预测等任务中广泛验证。</li>
+<li><strong>PST (Hartout et al.)</strong>：蛋白质结构 transformer，本文使用其生成结构增强的序列嵌入。PST 将 AlphaFold 结构信息注入 ESM 嵌入。</li>
+<li><strong>ChatNT (Chatterjee et al.)</strong>：本文明确对比的模型，基于 Nucleotide Transformer 的对话代理。差异在于 ChatNT 不支持蛋白质结构信息，且未训练 GO 功能预测。</li>
+<li><strong>AlphaFold (Jumper et al., 2021; Varadi et al., 2024)</strong>：本文使用 AlphaFold 数据库的结构作为 PST 输入，体现结构预测与功能解读的衔接。</li>
+<li><strong>GO 功能预测传统方法 (DeepGO, ProteinBERT)</strong>：本文的 XGBoost 基线代表传统方法，Genolator 的生成能力是核心差异。</li>
+<li><strong>多模态 LLM 架构 (LLaVA, LLaMA-Adapter)</strong>：本文的虚拟 token 投影策略与视觉-语言模型中的 adapter 方法类似，但应用于生物序列模态。</li>
+<li><strong>LoRA (Hu et al., 2022)</strong>：参数高效微调方法，本文用于微调 Llama-3 8B。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: MD-Genolator: 融合分子动力学模拟轨迹的蛋白质构象功能问答
+   - <strong>来源局限/观察</strong>: Genolator 使用静态 AlphaFold 结构，但蛋白质功能常依赖构象动态；MD 模拟可提供构象 ensemble 信息。
+   - <strong>核心假设</strong>: 将 MD 轨迹编码为时序 token 输入 LLM，可回答关于构象变化、变构效应、动力学稳定性等功能问题。
+   - <strong>初步方法</strong>: 使用 MD 模拟生成构象轨迹 → 降维/聚类提取代表性构象 → 用结构编码器（如 PST）编码 → 时序拼接为虚拟 token → 微调 LLM 进行功能问答。
+   - <strong>验证方式</strong>: 在已知变构蛋白（如 GPCR、激酶）上测试，对比静态结构输入的 Genolator。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: Struct2Seq-Gen: 基于结构约束的蛋白质序列生成与功能验证
+   - <strong>来源局限/观察</strong>: Genolator 是判别式功能解读，未涉及生成；蛋白质设计需要从结构/功能约束生成序列。
+   - <strong>核心假设</strong>: 将结构嵌入（PST）与 LLM 生成能力结合，可生成满足特定功能约束的蛋白质序列。
+   - <strong>初步方法</strong>: 将目标结构嵌入作为条件 token，微调 LLM 进行序列生成；使用 GO term 作为功能约束；结合 Rosetta/AlphaFold 验证生成序列的结构可行性。
+   - <strong>验证方式</strong>: 在已知酶家族上测试，评估生成序列的活性保留率、结构稳定性。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: MutantChat: 突变效应的多模态自然语言解释
+   - <strong>来源局限/观察</strong>: Genolator 处理野生型序列，未涉及突变效应；临床遗传学需要变异功能解读。
+   - <strong>核心假设</strong>: 将突变前后序列/结构嵌入对比输入 LLM，可生成变异致病性的自然语言解释。
+   - <strong>初步方法</strong>: 对同一蛋白的野生型和突变型分别编码 → 计算嵌入差异 → 作为额外 token 输入 LLM → 微调生成变异解释。
+   - <strong>验证方式</strong>: 在 ClinVar 数据集上测试，对比 Pathogenic/Benign 分类准确率和解释质量。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: CrossSpecies-Func: 跨物种蛋白质功能迁移学习
+   - <strong>来源局限/观察</strong>: Genolator 仅训练人类基因，跨物种泛化未知。
+   - <strong>核心假设</strong>: 多模态嵌入（DNA+序列+结构）具有跨物种可迁移性，可零样本预测非人类蛋白质功能。
+   - <strong>初步方法</strong>: 在人类数据上训练，在模式生物（小鼠、斑马鱼、酵母）上零样本测试；分析嵌入空间中的物种聚类结构。
+   - <strong>验证方式</strong>: 使用模式生物 GO 注释数据库评估零样本性能。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: StructAware-FuncPretrain: 结构感知的蛋白质功能基础模型预训练
+   - <strong>来源局限/观察</strong>: Genolator 依赖预训练编码器（Evo2/ESM2/PST），未针对功能任务联合预训练。
+   - <strong>核心假设</strong>: 在更大规模数据上联合预训练多模态编码器 + LLM，可提升功能预测的泛化性和鲁棒性。
+   - <strong>初步方法</strong>: 使用 UniProt/Swiss-Prot 注释数据构建预训练语料；设计结构-序列-DNA 对齐的预训练任务；对比 Genolator 的微调策略。
+   - <strong>验证方式</strong>: 在多个功能预测 benchmark（CAFA、GOA）上评估。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including abstract, main text, methods, and figure legends</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological rigor, reproducibility, and claims as supported by the provided evidence</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present Genolator, a multimodal large language model that fuses DNA sequence, amino acid sequence, and protein structure embeddings with natural language understanding to answer questions about protein function, including subcellular localization, molecular function, and biological processes. The model is fine-tuned on over 365,000 question-answer pairs generated from Gene Ontology annotations and is evaluated on confirmation/denial tasks and open-ended questions, with analyses of hidden representations and attention patterns.</li>
+<li><strong>Visible evidence base</strong> Main text, methods section, figure legends for Figures 1-15, Table 1, and references to supplementary files (Additional files 1 and 2)</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures and tables (Figures S1-S20, Table S1), Additional file 2 (including case study Excel sheets and prompts), actual model outputs, hyperparameter details, and full evaluation results for all baseline models</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The manuscript describes a technically ambitious integration of multiple genomic modalities into a generative language model framework. The core idea of fusing DNA, protein sequence, and structural embeddings with a fine-tuned LLM is timely and potentially useful for the genomics community. However, the current evidence base is insufficient to establish the claimed advantages. The evaluation is largely self-referential, with limited external validation, and several methodological details that are critical for reproducibility are missing. The attention and ablation analyses are suggestive but do not fully support the conclusion that the multimodal approach is the primary driver of performance. The manuscript would benefit from a more rigorous comparison against state-of-the-art protein function prediction methods and a clearer demonstration of practical utility beyond the constructed QA framework.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians working on protein function prediction, genome annotation, and the application of large language models to biological data. Researchers developing multimodal AI systems for genomics would also find the architectural choices and fusion strategy relevant. The natural language interface aspect may appeal to clinicians and biologists seeking more accessible tools for interpreting genomic variants, though the current manuscript does not yet demonstrate this use case convincingly.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong></p>
+</li>
+<li>The multimodal fusion strategy combining DNA, protein sequence, and structural embeddings is conceptually novel and addresses a real gap in existing models.</li>
+<li>The use of frozen foundation models (Evo2, ESM2, PST) with trainable projectors is a practical and efficient design choice.</li>
+<li>The construction of a large QA dataset with both confirmation/denial and open-ended questions is a substantial effort.</li>
+<li>The inclusion of attention analysis and ablation studies shows a thoughtful approach to model interpretability.</li>
+<li>
+<p>The manuscript is generally well-written and the figures are informative.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that Genolator outperforms baseline models including GPT 4.1 and XGBoost on confirmation/denial tasks.</li>
+<li><strong>Evidence pointer</strong> Table 1, Section "Genolator can accurately confirm and deny gene functionality associations and outperforms allrounder and specialist baseline models"</li>
+<li><strong>Concern</strong> The evaluation methodology for the confirmation/denial task is not fully described. It is unclear how the binary classification is derived from the generative model's responses. The automatic GPT 4.1 post-processor used to label responses as "confirmation" or "denial" introduces a potential source of bias and error that is not quantified. Furthermore, the XGBoost baseline is trained on PST embeddings and prompt embeddings, but the details of this training (e.g., feature construction, hyperparameters, class balancing) are not provided. The comparison with GPT 4.1, which receives raw sequences in the prompt, is not apples-to-apples because Genolator receives pre-computed embeddings. This makes it difficult to attribute the performance difference to the model architecture versus the input representation.</li>
+<li><strong>Why it matters</strong> Without a clear and unbiased evaluation protocol, the central claim of outperformance cannot be verified. The comparison is confounded by differences in input representation and the use of an LLM-based post-processor that may favor the fine-tuned model.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed description of the classification protocol, including the exact prompt used for the GPT 4.1 post-processor and its accuracy on a manually annotated subset. Report the performance of the XGBoost baseline with full hyperparameter details. Include an additional baseline where GPT 4.1 is given the same embedding-based input as Genolator, or where Genolator is given raw sequences, to isolate the effect of the multimodal fusion.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The overall reproducibility of the model training and evaluation pipeline.</li>
+<li><strong>Evidence pointer</strong> Methods section "Fine-tuning and experimental setup"</li>
+<li><strong>Concern</strong> Critical training details are missing. The manuscript states that training was conducted for up to ten epochs with early stopping, but does not specify the number of training steps, the optimizer, the learning rate schedule, the warmup steps, the weight decay, or the LoRA rank and alpha values. The batch size is given as eight, but the gradient accumulation steps are not mentioned. The hardware configuration for training is not described. The exact composition of the training, validation, and test splits after the KMeans clustering is not reported (e.g., number of genes per split). The prompt templates used for training and inference are not shown in the main text, only referenced as being in Additional file 2.</li>
+<li><strong>Why it matters</strong> Reproducibility is a cornerstone of scientific publication. Without these details, other researchers cannot replicate the training procedure or verify the results. The manuscript claims a reproducible pipeline but omits essential information.</li>
+<li>
+<p><strong>Resolution test</strong> Add a comprehensive hyperparameter table, describe the optimizer and scheduler, report the final split sizes, and include the full prompt templates in the main text or a clearly referenced supplementary section.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> The claim that Genolator's hidden representations are "biologically and linguistically plausible" and that the model learns meaningful structure.</li>
+<li><strong>Evidence pointer</strong> Section "Genolator's hidden states contain linguistically and biological plausible representations", Figures 3-8</li>
+<li><strong>Concern</strong> The t-SNE visualizations and cosine similarity analyses are largely qualitative. The manuscript reports specific cosine similarity values for selected term pairs but does not provide a systematic quantitative assessment. For example, it is unclear whether the observed clustering is significantly different from what would be expected by chance or from a model trained without one of the modalities. The claim of "biological plausibility" is based on visual inspection of a few selected examples. A more rigorous analysis, such as comparing the embedding geometry to a known ontology structure or using a quantitative clustering metric, would strengthen this claim.</li>
+<li><strong>Why it matters</strong> The interpretability analysis is presented as evidence that the model has learned meaningful representations. If this is not rigorously demonstrated, the claim is weakened and the value of the multimodal approach is less clear.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a quantitative evaluation of the clustering, such as silhouette scores or adjusted Rand index compared to a random baseline. Perform an ablation where one modality is removed and show that the clustering quality degrades. Consider comparing the embedding distances to a gold-standard semantic similarity measure for GO terms.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that the open-ended question answering capability is a valuable feature, with reported overlap rates of 78-89% with ground truth.</li>
+<li><strong>Evidence pointer</strong> Section "Evaluating the Genolators capability to answer open-ended questions", Figure 9</li>
+<li><strong>Concern</strong> The evaluation of open-ended questions relies on a GPT 4.1-based LLM-as-judge to map both predictions and ground truth to GO Slim terms. This introduces a circularity concern, as GPT 4.1 is also used as a baseline and was shown to perform poorly on the confirmation/denial task. The accuracy of the GPT 4.1 mapping itself is not validated. The reported "overlap" rates are difficult to interpret without knowing the baseline rate of overlap expected by chance. For example, if the model always predicted the most common GO Slim term, what would the overlap rate be? The manuscript does not provide this context.</li>
+<li><strong>Why it matters</strong> The open-ended QA capability is a key differentiator of the model. If the evaluation is biased or not properly calibrated, the reported performance may be misleading.</li>
+<li>
+<p><strong>Resolution test</strong> Validate the GPT 4.1 mapping on a manually annotated subset. Report the expected overlap rate for a trivial baseline (e.g., always predicting the most frequent term). Consider using a more objective evaluation metric, such as semantic similarity against the GO graph.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interdisciplinary readership</li>
+<li><strong>Claim pointer</strong> The claim that Genolator "enhances accessibility to genomic information" and is useful for "clinical research."</li>
+<li><strong>Evidence pointer</strong> Abstract, Conclusion</li>
+<li><strong>Concern</strong> The manuscript does not provide any demonstration of practical utility in a real-world or clinical setting. The evaluation is entirely on a synthetic QA dataset constructed by the authors. There is no validation on experimentally characterized proteins, no comparison to established protein function prediction benchmarks (e.g., CAFA), and no case study showing how a researcher would use Genolator to gain new biological insights. The claim of clinical relevance is therefore unsupported.</li>
+<li><strong>Why it matters</strong> The stated motivation is to advance understanding of disease mechanisms and support clinical research. Without a concrete demonstration of utility, the broader impact claim is not established.</li>
+<li>
+<p><strong>Resolution test</strong> Include a case study on a set of proteins with well-characterized functions that were not part of the training set. Compare Genolator's predictions to experimental annotations. Discuss how the natural language interface could be used in a practical research workflow.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Figure 1 and Figure 2</li>
+<li><strong>Evidence pointer</strong> Figure legends</li>
+<li><strong>Issue</strong> The figures are described as illustrative but the actual content of the conversation and the backend process is not fully explained in the legend. It is unclear what the user is typing and what the model is responding with.</li>
+<li>
+<p><strong>Required correction</strong> Expand the figure legends to include a more detailed description of the interaction, including example user queries and model responses.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Methods, "Structural enriched protein sequence embeddings with PST"</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The description of the PST model is brief. It is not clear how the PST model differs from the standard ESM2 model in terms of architecture and training. The reference to Hartout et al. is helpful but a brief summary of the key innovation would improve readability.</li>
+<li>
+<p><strong>Required correction</strong> Add a sentence or two summarizing how PST incorporates structural information into sequence embeddings.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods, "Construction of custom QA datasets"</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The process of generating QA pairs with GPT 4.1 is described but the specific prompts used for generation are not shown. The quality control process (e.g., how "accepted," "declined," or "review" annotations were reconciled) is not described.</li>
+<li>
+<p><strong>Required correction</strong> Include the generation prompts in the supplementary material and describe the inter-annotator agreement or reconciliation process.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Discussion of cosine similarity values</li>
+<li><strong>Evidence pointer</strong> Section "The Genolator implicitly learns the different categories of the GO-hierarchy"</li>
+<li><strong>Issue</strong> The manuscript reports cosine similarity values but does not explain the scale or what constitutes a "low" or "high" value in this context. The interpretation of these values is not intuitive for a non-specialist reader.</li>
+<li>
+<p><strong>Required correction</strong> Provide context for the cosine similarity values, such as the range of values observed across all term pairs and what values would be expected for unrelated terms.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Table 1</li>
+<li><strong>Evidence pointer</strong> Table 1</li>
+<li><strong>Issue</strong> The table is described as having green highlights for best performance, but the table itself is not visible in the provided text. It is unclear which metrics are reported and for which models.</li>
+<li>
+<p><strong>Required correction</strong> Ensure the table is included in the final version and that all column and row headers are clearly defined.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Discussion of GPT 4.1 limitations</li>
+<li><strong>Evidence pointer</strong> Section "The non-finetuned publicly available GPT 4.1 model (falsely) remembers genomic data and struggles with the concept of sequence similarity"</li>
+<li><strong>Issue</strong> The case study with GPT 4.1 is interesting but the sample size is very small (three genes). The conclusions drawn about GPT 4.1's limitations are based on anecdotal evidence.</li>
+<li><strong>Required correction</strong> Acknowledge the limited sample size and consider expanding the case study or framing it as a preliminary observation.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that Genolator "outperforms" GPT 4.1 and XGBoost is not fully supported due to the confounded evaluation design and missing methodological details.</li>
+<li>The claim that the hidden representations are "biologically plausible" is based on qualitative visual inspection and lacks quantitative validation.</li>
+<li>The claim of clinical relevance and enhanced accessibility is not demonstrated with any real-world use case.</li>
+<li>The reported overlap rates for open-ended questions are not calibrated against a chance baseline and rely on an unvalidated LLM-as-judge.</li>
+<li>The performance of the ablated projector-only models is reported but not discussed in sufficient detail to understand the contribution of each modality.</li>
+<li>The manuscript does not report any statistical significance testing for the differences in performance between models.</li>
+<li>The generalizability of the model to proteins with unknown function, which is a stated motivation, is not tested.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

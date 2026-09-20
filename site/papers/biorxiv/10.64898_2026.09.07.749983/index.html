@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ForceFlowAb: physics-aware mixture-of-experts flow matching model for antibody CDRs design · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>ForceFlowAb: physics-aware mixture-of-experts flow matching model for antibody CDRs design</h1>
+      <div class="meta">Zonghui Li; Zexin Lv; Guijun Zhang</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-14
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.07.749983">原文</a>
+      </div>
+      <p class="one-liner">该文提出ForceFlowAb，一种物理感知的混合专家流匹配模型，用于抗原条件抗体CDR序列-结构协同设计，结合可微力场引导采样以优化抗体-抗原相互作用能，属于蛋白质结构生成与设计核心课题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Motivation: Antibodies are a major class of therapeutic molecules, and their recognition of target antigens is largely mediated by complementarity-determining regions (CDRs), making antigen-conditioned CDR design a central problem in antibody engineering. Recent generative methods have enabled antigen-conditioned co-design of CDR sequences and structures, but their limited capacity to capture local interface heterogeneity and lack explicit energy-based guidance during sampling, which may result in unfavorable antibody-antigen interaction energies. Overcoming these limitations requires methods that better represent diverse interface environments via adaptive routing and incorporate physical guidance to steer sampling toward energetically favorable conformations. Results: We present ForceFlowAb, a physics-aware mixture-of-experts flow-matching framework for antigen-conditioned CDR sequence-structure co-design. The framework models heterogeneous interface environments through specialized expert routing and applies differentiable force-field guidance during sampling to guide CDR generation toward energetically favorable conformations. For CDR-H3 design, ForceFlowAb achieved more favorable antibody-antigen interaction energies than FlowDesign and Diffab, with improvement rates (IMP) of 46.5% versus 35.0% and 35.5%, respectively. For simultaneous six-CDR design, ForceFlowAb also outperformed Diffab, with IMP values of 16% versus 9%. These results suggest complementary roles for interface-adaptive modeling and energy-based guidance, with the former capturing binding-mode diversity and the latter leveraging physical constraints to ensure biophysical feasibility. Availability and implementation: The web server is freely available at http://zhanglab-bioinf.com/ForceFlowAb. The source code and implementation are available at https://github.com/iobio-zjut/ForceFlowAb. Contact: zgj@zjut.edu.cn Supplementary information: Supplementary data are available at Bioinformatics online.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">动机：抗体是一类主要的治疗性分子，其识别靶抗原主要依赖于互补决定区（complementarity-determining regions, CDRs），因此抗原条件化的CDR设计成为抗体工程中的核心问题。近期生成方法已实现抗原条件化的CDR序列与结构协同设计，但它们在捕捉局部界面异质性方面能力有限，且在采样过程中缺乏显式的基于能量的引导，可能导致不利的抗体-抗原相互作用能量。克服这些限制需要方法通过自适应路由更好地表征多样化的界面环境，并纳入物理引导以将采样导向能量上有利的构象。结果：我们提出了ForceFlowAb，一种物理感知的专家混合流匹配框架，用于抗原条件化的CDR序列-结构协同设计。该框架通过专门化的专家路由建模异质性界面环境，并在采样过程中应用可微分的力场引导，以将CDR生成导向能量上有利的构象。对于CDR-H3设计，ForceFlowAb实现了比FlowDesign和Diffab更有利的抗体-抗原相互作用能量，改善率（IMP）分别为46.5%对比35.0%和35.5%。对于同时设计六个CDR，ForceFlowAb也优于Diffab，IMP值分别为16%对比9%。这些结果表明界面自适应建模和基于能量的引导具有互补作用，前者捕捉结合模式多样性，后者利用物理约束确保生物物理可行性。可用性与实现：网络服务器免费提供于http://zhanglab-bioinf.com/ForceFlowAb。源代码和实现可在https://github.com/iobio-zjut/ForceFlowAb获取。联系方式：zgj@zjut.edu.cn 补充信息：补充数据可在Bioinformatics在线获取。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：ForceFlowAb: physics-aware mixture-of-experts flow matching model for antibody CDRs design</li>
+<li><strong>作者</strong>：Zonghui Li; Zexin Lv; Guijun Zhang</li>
+<li><strong>单位</strong>：浙江工业大学（根据通讯邮箱 zgj@zjut.edu.cn 推断，未在文中明确标注）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学（Method）论文，提出新的生成模型框架</li>
+<li><strong>领域</strong>：抗体工程 × 生成模型（flow matching）× 物理引导（可微力场）</li>
+<li><strong>关键词</strong>：抗体CDR设计、flow matching、mixture-of-experts、可微力场引导、抗原条件生成</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.07.749983</li>
+<li><strong>代码</strong>：https://github.com/iobio-zjut/ForceFlowAb</li>
+<li><strong>数据</strong>：SAbDab（截至2025年10月18日，10,056个复合物结构）；处理后3,377个非冗余簇</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI生成模型」交叉方向，具体位于抗体CDR序列-结构共设计子领域。它结合了flow matching生成框架、mixture-of-experts自适应路由和可微力场引导，针对现有方法（如Diffab、FlowDesign）在界面异质性建模和物理可行性方面的不足，提出了一种物理感知的生成方案。该工作与RFantibody、Diffab、FlowDesign等构成直接竞争与互补关系。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出ForceFlowAb，一个将flow matching生成框架与mixture-of-experts自适应路由及可微力场引导相结合的抗体CDR序列-结构共设计模型，在CDR-H3和六CDR联合设计任务中相比Diffab和FlowDesign获得更优的抗体-抗原界面能量（IMP：46.5% vs 35.0%/35.5%），同时保持相当的序列恢复率和结构精度。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在抗原条件下同时生成抗体CDR的序列和三维结构，使得生成结果既能在序列层面恢复天然氨基酸偏好，又能在结构层面形成物理上可行的、能量上有利的抗体-抗原相互作用界面？</li>
+<li><strong>为什么重要</strong>：抗体是重要治疗分子，CDR环直接介导抗原识别。实验筛选抗体序列-结构空间成本极高，计算设计可大幅加速抗体发现流程。CDR-H3尤其重要，因其长度和构象多样性最大，对抗原结合贡献最显著。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>传统物理方法（如RosettaAntibodyDesign）依赖能量函数和采样，计算昂贵且探索效率低；</li>
+<li>序列语言模型（如AbLang、AntiBERTy、IgLM）不显式建模三维结构，无法捕捉几何互补性；</li>
+<li>结构感知生成模型（如Diffab、FlowDesign）虽能联合生成序列和结构，但使用共享参数处理所有界面区域，难以捕捉不同接触区域对残基类型、几何和理化相互作用的异质性需求；同时缺乏显式的能量引导，生成结果可能出现空间冲突、不利接触或界面互补性不足。</li>
+<li><strong>精确研究问题</strong>：Can a flow matching framework with adaptive mixture-of-experts routing and differentiable force-field guidance generate antibody CDR sequences and structures with more favorable antibody-antigen interface energetics than existing diffusion/flow-based baselines, while maintaining competitive sequence recovery and structural accuracy?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引言及作者引用，标注为「经外部核验」的部分仅指所引文献确实存在，脉络组织为本文框架。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理采样与能量优化</td>
+<td>RosettaAntibodyDesign (Adolf-Bryfogle et al., 2018)；Lippow et al., 2007</td>
+<td>物理可解释，能量函数成熟</td>
+<td>采样空间大、计算昂贵、依赖能量函数精度</td>
+<td>本文保留物理引导思想，但以可微力场形式嵌入生成过程</td>
+</tr>
+<tr>
+<td>序列语言模型</td>
+<td>AbLang (Olsen et al., 2022)；AntiBERTy (Ruffolo et al., 2021)；IgLM (Shuai et al., 2023)</td>
+<td>高效、可扩展、能捕捉序列统计规律</td>
+<td>不显式建模三维结构，缺乏几何与界面互补性信息</td>
+<td>本文不采用纯序列方法，而是序列-结构联合生成</td>
+</tr>
+<tr>
+<td>结构感知生成模型</td>
+<td>RefineGNN (Jin et al., 2022)；dyMEAN (Kong et al., 2023)</td>
+<td>引入几何图表示和等变网络，联合建模序列与结构</td>
+<td>生成质量受限于表示能力，缺乏物理约束</td>
+<td>本文继承结构感知生成范式</td>
+</tr>
+<tr>
+<td>扩散/流匹配生成</td>
+<td>Diffab (Luo et al., 2022)；AbDiffuser (Martinkus et al., 2023)；AbX (Zhu et al., 2024)；FlowDesign (Wu et al., 2025)</td>
+<td>生成质量高、支持多样采样、FlowDesign避免离散扩散复杂性</td>
+<td>共享参数难以捕捉界面异质性；缺乏显式能量引导；部分方法（AbX、AbDiffuser）无法在统一协议下部署</td>
+<td>本文直接对标Diffab和FlowDesign，引入MoE和力场引导作为增量</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在flow matching框架基础上，通过mixture-of-experts实现界面自适应建模，通过可微力场引导实现物理可行性约束，两者互补地提升生成质量。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>界面异质性建模不足</td>
+<td>现有模型用共享参数处理所有CDR区域，难以捕捉不同接触区域对残基类型、几何和理化相互作用的差异化需求</td>
+<td>不同CDR环在长度、构象自由度、接触模式上差异大，单一变换难以覆盖全部模式</td>
+<td>Introduction: "existing co-design models typically use shared representations and parameters across diverse interface environments, which may limit their ability to capture region-specific geometric and physicochemical interaction patterns"</td>
+</tr>
+<tr>
+<td>缺乏显式能量引导</td>
+<td>生成结果可能出现空间冲突、不利接触或界面互补性不足</td>
+<td>深度学习模型通过训练目标隐式学习物理约束，但生成时无显式能量检查或引导</td>
+<td>Introduction: "sequences and structures generated by deep learning models may not be physically feasible at the binding interface... leaving limited explicit energy-based guidance during sampling"</td>
+</tr>
+<tr>
+<td>生成结果物理可行性不足</td>
+<td>生成构象可能存在steric clashes、unfavorable contacts</td>
+<td>训练数据中的天然结构分布不能完全覆盖生成过程中的中间状态，模型可能偏离物理可行区域</td>
+<td>Introduction: "generated candidates may still exhibit steric clashes, unfavourable contacts or insufficient interfacial complementarity"</td>
+</tr>
+<tr>
+<td>基线方法部署困难</td>
+<td>AbX无训练流程、AbDiffuser无官方实现，无法在统一评估协议下比较</td>
+<td>部分方法未提供完整可复现的代码或训练管线</td>
+<td>Results 3.1: "AbX and Ab-Diffuser were also considered but excluded because neither could be deployed under our unified evaluation protocol"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>ForceFlowAb是一个条件flow matching框架，包含五个组件：Input Frame Embedder（编码残基级理化特征和成对几何关系）、CDR Embedder（通过IPA和Transformer块迭代精化CDR区域表示）、MoE Module（通过专家路由自适应建模异质界面）、Decoder（预测序列、坐标和朝向的drift fields）、Force Guidance模块（在采样后期步骤70-80施加可微力场引导）。训练目标包含flow matching损失、CDR疏水性偏好损失和MoE负载均衡损失。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>洞察一</strong>：抗体-抗原界面的异质性可以通过mixture-of-experts的稀疏路由来建模——不同CDR位置根据其局部环境被路由到不同专家，每个专家学习特定的表示变换，从而捕捉区域特异的相互作用模式。</li>
+<li><strong>洞察二</strong>：物理引导不需要贯穿整个生成过程，只需在采样后期（步骤70-80）施加可微力场梯度，即可在保持生成多样性的同时将构象推向能量有利区域。这避免了全程力场引导带来的计算开销和梯度不稳定。</li>
+<li><strong>洞察三</strong>：flow matching相比扩散模型在抗体CDR设计中的优势在于：无需专门的离散扩散过程来建模氨基酸类别，可以直接匹配离散分布，且采样步数更少、计算成本更低。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>生成模型中的「物理引导」不必是全程的，可以在生成轨迹的关键阶段（如后期精化阶段）施加，这类似于coarse-to-fine策略在蛋白质结构预测中的应用。</li>
+<li>异质性建模不一定要通过更深的网络或更大的模型实现，通过稀疏路由（MoE）在计算成本几乎不变的情况下即可获得自适应建模能力。</li>
+<li>在评估生成模型时，除了序列恢复率和结构精度外，界面能量指标（如Rosetta interface energy）和独立验证工具（如AlphaFold 3）的交叉验证对于判断生成结果的实用性至关重要。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：抗体-抗原复合物结构，其中目标CDR区域被masked；固定框架和抗原残基作为条件上下文C = {(s_j, x_j, O_j)}；目标CDR区域R = {s_i, x_i, O_i | i = l+1, ..., l+m}</li>
+<li><strong>输出</strong>：生成的CDR序列（氨基酸类别概率分布）和结构（Cα坐标和骨架朝向）</li>
+<li><strong>模块</strong>：
+  1. <strong>Input Frame Embedder</strong>：编码残基级特征（氨基酸类型、局部重原子坐标、骨架二面角、链类型、疏水性、电荷）和成对特征（氨基酸对、同链指示、相对序列位置、重原子距离、相对骨架朝向）
+  2. <strong>CDR Embedder</strong>：6层IPA + Transformer块，迭代精化CDR区域表示，以flow matching时间步t为条件
+  3. <strong>MoE Module</strong>：6层，4个路由专家 + 1个共享专家，top-2路由；先通过抗原交叉注意力更新抗体侧表示，再路由到专家
+  4. <strong>Decoder</strong>：3个MLP头分别预测序列drift field F_θ,i、坐标drift field G_θ,i、朝向drift field H_θ,i
+  5. <strong>Force Guidance</strong>：在采样步骤70-80，计算基于MadraX的简化能量（保留骨架氢键能、骨架熵、肽键违反惩罚），对Cα坐标施加梯度引导</li>
+<li><strong>训练</strong>：300,000次迭代，batch size 16，Adam优化器（β1=0.9, β2=0.999），初始学习率1×10⁻⁴，权重衰减0，梯度裁剪最大范数100，学习率衰减因子0.8（验证指标平台期），EMA衰减0.995；前200,000次迭代α=1, β=0（仅序列和坐标损失），后100,000次迭代α=0, β=1（仅朝向损失）；单张A100 GPU约3天</li>
+<li><strong>推理</strong>：100个flow steps，从先验分布采样初始CDR状态，沿学习到的向量场积分；在步骤70-80施加力场引导</li>
+<li><strong>文字流程</strong>：输入复合物结构 → Input Frame Embedder生成frame single和pair表示 → CDR Embedder通过IPA和Transformer迭代精化（以时间步t为条件）→ MoE模块通过抗原交叉注意力和专家路由精化抗体侧表示 → Decoder预测drift fields → 沿flow轨迹积分更新CDR状态 → 在后期步骤施加力场引导 → 输出最终CDR序列和结构</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input Frame Embedder</td>
+<td>编码残基级和成对级几何/理化特征</td>
+<td>为后续模块提供结构感知的初始表示</td>
+<td>输入：复合物结构；输出：frame single表示和pair表示</td>
+<td>Methods 2.3；特征定义见Supplementary Table S1</td>
+<td>[预期] 移除后模型无法感知几何上下文，生成结构将失去物理合理性</td>
+</tr>
+<tr>
+<td>CDR Embedder</td>
+<td>通过IPA和Transformer块迭代精化CDR区域表示</td>
+<td>IPA捕捉局部几何交互，Transformer建模长程依赖；时间步条件化使表示随生成进度调整</td>
+<td>输入：frame表示 + 时间步t；输出：精化后的CDR表示</td>
+<td>Methods 2.3: "six-layer CDR condition inference module consisting of IPA and Transformer encoder blocks"</td>
+<td>[预期] 移除后模型无法有效整合几何和序列上下文，生成精度下降</td>
+</tr>
+<tr>
+<td>MoE Module</td>
+<td>通过专家路由自适应建模异质性界面</td>
+<td>不同CDR区域需要不同的表示变换；稀疏路由在增加容量的同时保持计算成本</td>
+<td>输入：抗体侧表示（经抗原交叉注意力更新）；输出：路由聚合后的表示</td>
+<td>Methods 2.3: "six-layer interface MoE module with four routed experts, one shared expert, and top-2 expert routing"；Results 3.6 图5</td>
+<td>[实测] 消融实验中移除MoE导致性能一致下降（Results 3.7 图6），主要影响界面相关指标</td>
+</tr>
+<tr>
+<td>Decoder</td>
+<td>预测序列、坐标、朝向的drift fields</td>
+<td>flow matching需要向量场来驱动生成过程</td>
+<td>输入：精化表示；输出：F_θ,i, G_θ,i, H_θ,i</td>
+<td>Methods 2.3</td>
+<td>[预期] 移除后无法定义生成轨迹</td>
+</tr>
+<tr>
+<td>Force Guidance</td>
+<td>在采样后期施加可微力场梯度</td>
+<td>将生成构象推向能量有利区域，减少空间冲突和不利接触</td>
+<td>输入：中间CDR状态 + 固定上下文；输出：Cα坐标梯度</td>
+<td>Methods 2.3: "steps 70–80"；Results 3.7 图6</td>
+<td>[实测] 消融实验中移除力场引导导致界面能量指标下降（Results 3.7 图6），主要影响能量相关指标</td>
+</tr>
+<tr>
+<td>疏水性损失</td>
+<td>约束生成序列的疏水性分布</td>
+<td>天然CDR序列具有特定的疏水性偏好，该损失帮助序列物理化学合理性</td>
+<td>输入：预测氨基酸概率；输出：标量损失</td>
+<td>Methods 2.3: "CDR hydropathy preference loss"；基于Kyte-Doolittle疏水性标度</td>
+<td>[预期] 移除后序列可能偏离天然疏水性分布</td>
+</tr>
+<tr>
+<td>MoE负载均衡损失</td>
+<td>防止路由崩溃，确保专家被均匀使用</td>
+<td>无均衡约束时，路由可能收敛到少数专家，降低MoE有效性</td>
+<td>输入：路由概率和选择指示；输出：标量损失</td>
+<td>Methods 2.3: "auxiliary load-balancing loss"</td>
+<td>[预期] 移除后可能出现路由崩溃，MoE退化为固定变换</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>1. Flow matching插值（序列和坐标线性插值，朝向在SO(3)上SLERP插值）：</strong></p>
+<ul>
+<li>序列和Cα坐标：线性插值 R_t = (1-t)·T + t·R</li>
+<li>骨架朝向：SLERP插值，将初始朝向T_O,i和天然朝向O_i转换为四元数T_q,i和q_i，在SO(3)上球面线性插值，再转回旋转矩阵</li>
+</ul>
+<p><strong>2. Flow matching损失：</strong></p>
+<p>L_flow = E[||F_θ,i - (s_i - s_T,i)||² + ||G_θ,i - (x_i - x_T,i)||² + α·||H_θ,i - (q_i ⊗ T_q,i⁻¹)||²_quat + β·||H_θ,i - (O_i - T_O,i)||²_rot]</p>
+<p>其中：
+- F_θ,i, G_θ,i, H_θ,i：预测的序列、坐标、朝向drift fields
+- s_i, x_i, O_i：天然CDR状态
+- s_T,i, x_T,i, T_O,i：初始（先验采样）CDR状态
+- q_i, T_q,i：天然和初始朝向的四元数表示
+- ⊗：四元数乘法
+- α, β：朝向损失的权重系数（训练阶段切换：前200k迭代α=1, β=0；后100k迭代α=0, β=1）</p>
+<p><strong>3. MoE路由：</strong></p>
+<p>w_i,e = softmax(W_g · h_i + b_g)_e</p>
+<p>其中：
+- w_i,e：位置i分配给专家e的路由权重
+- W_g, b_g：可学习的门控参数
+- h_i：位置i的隐藏表示</p>
+<p><strong>4. 专家输出聚合：</strong></p>
+<p>h'_i = Σ_e w_i,e · FFN_e(h_i)</p>
+<p>其中FFN_e为第e个专家网络</p>
+<p><strong>5. 力场引导：</strong></p>
+<p>x_t ← x_t - η · ∇_x E_phys(R_t, C)</p>
+<p>其中：
+- E_phys(R_t, C)：基于MadraX的简化能量（保留骨架氢键能、骨架熵、肽键违反惩罚）
+- η：引导步长
+- 梯度仅对生成的CDR Cα坐标计算，固定上下文坐标不变</p>
+<p><strong>6. 疏水性损失：</strong></p>
+<p>L_hydro = ||Σ_a p_θ,i,a · r_a - Σ_a y_i,a · r_a||²</p>
+<p>其中：
+- p_θ,i,a：预测的氨基酸概率
+- y_i,a：天然one-hot标签
+- r_a：氨基酸a的归一化Kyte-Doolittle疏水性值</p>
+<p><strong>7. MoE负载均衡损失：</strong></p>
+<p>L_balance = Σ_e (f_e - 1/N_exp)²</p>
+<p>其中f_e为专家e的归一化选择频率</p>
+<p><strong>8. 总损失：</strong></p>
+<p>L_total = L_flow + λ_hydro · L_hydro + λ_balance · L_balance</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<h3>数据集与规模</h3>
+<ul>
+<li><strong>数据来源</strong>：SAbDab，截至2025年10月18日下载，初始10,056个抗体-抗原复合物结构</li>
+<li><strong>清洗</strong>：去除靶向非蛋白抗原的抗体、分辨率差于4Å的结构</li>
+<li><strong>聚类划分</strong>：所有CDR序列拼接后使用MMseqs2在70%序列同一性阈值下聚类，得到3,377个非冗余簇</li>
+<li><strong>测试集</strong>：采用FlowAdam的20个抗体-抗原复合物测试集，对应16个簇，与训练/验证集无重叠</li>
+<li><strong>训练/验证划分</strong>：剩余3,361个簇按9:1划分</li>
+</ul>
+<h3>基线方法</h3>
+<ul>
+<li><strong>DiffAdam</strong>：抗原条件扩散模型，按原始流程重训练</li>
+<li><strong>FlowDesign</strong>：flow matching模型，按原始流程重训练</li>
+<li>两者使用与ForceFlowAb相同的训练/验证集和测试集</li>
+</ul>
+<h3>评估协议</h3>
+<ul>
+<li>每个测试复合物生成100个候选结构</li>
+<li>侧链使用Rosetta side-chain packing构建，随后进行relaxation减少原子间冲突</li>
+<li>按Rosetta interface energy排序，保留top 10候选</li>
+<li>指标：Rosetta interface energy（ΔΔG）、IMP（improvement rate，生成候选能量低于参考复合物的比例）、Cα RMSD、Amino Acid Recovery（AAR）、DockQ</li>
+</ul>
+<h3>独立验证</h3>
+<ul>
+<li>AlphaFold 3预测生成序列与抗原的复合物结构，评估ipAdam和CDR-pLDDT</li>
+<li>阈值：ipAdam ≥ 0.6，CDR-pLDDT ≥ 70</li>
+</ul>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CDR-H3设计</td>
+<td>ForceFlowAb产生更有利的界面能量</td>
+<td>与FlowDesign、DiffAdam对比，100个候选/复合物，top 10评估</td>
+<td>IMP：ForceFlowAb 46.5% vs FlowDesign 35.0% vs DiffAdam 35.5%</td>
+<td>ForceFlowAb在界面能量上优于基线</td>
+<td>未报告具体ΔΔG数值分布和统计显著性检验</td>
+<td>Results 3.3 图2a, 2d</td>
+</tr>
+<tr>
+<td>CDR-H3结构精度</td>
+<td>ForceFlowAb保持竞争性结构精度</td>
+<td>Cα RMSD对比</td>
+<td>与基线无显著差异</td>
+<td>能量改进不以牺牲结构精度为代价</td>
+<td>未报告具体RMSD数值</td>
+<td>Results 3.3 图2b</td>
+</tr>
+<tr>
+<td>CDR-H3序列恢复</td>
+<td>ForceFlowAb保持竞争性序列恢复</td>
+<td>AAR对比</td>
+<td>AAR最高，与FlowDesign相当，高于DiffAdam</td>
+<td>序列质量未因能量引导而下降</td>
+<td>未报告具体AAR数值</td>
+<td>Results 3.3 图2e</td>
+</tr>
+<tr>
+<td>CDR-H3界面质量</td>
+<td>ForceFlowAb改善对接界面</td>
+<td>DockQ对比</td>
+<td>ForceFlowAb高于基线</td>
+<td>界面几何质量改善</td>
+<td>未报告具体DockQ数值</td>
+<td>Results 3.3 图2c</td>
+</tr>
+<tr>
+<td>六CDR联合设计</td>
+<td>ForceFlowAb可扩展到多环联合设计</td>
+<td>与DiffAdam对比（FlowDesign不支持该任务）</td>
+<td>IMP：16% vs 9%</td>
+<td>多环联合设计下仍优于基线</td>
+<td>未报告其他指标细节</td>
+<td>Results 3.4 图3a, 3b</td>
+</tr>
+<tr>
+<td>Alpha Adam 3验证</td>
+<td>生成序列与结构兼容</td>
+<td>AF3预测复合物，评估ipAdam和CDR-pLDDT</td>
+<td>ForceFlowAb通过率50% vs DiffAdam 42%</td>
+<td>生成序列在独立评估下更可靠</td>
+<td>AF3评估仍为计算预测，非实验验证</td>
+<td>Results 3.5 图4</td>
+</tr>
+<tr>
+<td>消融实验</td>
+<td>MoE和力场引导各自贡献</td>
+<td>移除MoE、移除力场引导、同时移除</td>
+<td>任一组件移除均导致性能下降，同时移除下降最大</td>
+<td>两个组件互补，各自贡献</td>
+<td>未报告各消融变体的具体数值</td>
+<td>Results 3.7 图6</td>
+</tr>
+<tr>
+<td>专家路由分析</td>
+<td>路由与CDR区域相关</td>
+<td>提取最终MoE层路由输出，计算top-2富集</td>
+<td>不同CDR区域偏好不同专家</td>
+<td>路由确实捕捉了区域特异性</td>
+<td>未报告定量富集分数</td>
+<td>Results 3.6 图5</td>
+</tr>
+<tr>
+<td>案例研究</td>
+<td>无实验结构时可用外部模板</td>
+<td>RFdiffusion和HDOCK生成模板，ForceFlowAdam设计</td>
+<td>两种策略均产出候选，能量分布有差异</td>
+<td>可与外部模板生成方法集成</td>
+<td>未提供实验验证</td>
+<td>Supplementary Case study</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅针对抗体CDR序列-结构共设计，具体为CDR-H3和六CDR联合设计。不涉及完整抗体设计、亲和力成熟或可开发性优化。</li>
+<li><strong>评估边界</strong>：所有评估均为计算指标（Rosetta能量、RMSD、AAR、DockQ、AF3评分），无湿实验验证。能量指标的改善不代表体外结合亲和力的改善。</li>
+<li><strong>基线范围</strong>：仅与DiffAdam和FlowDesign比较。未与RFantibody、AbX、AbDiffuser等直接比较（后两者因无法在统一协议下部署而被排除）。</li>
+<li><strong>数据依赖</strong>：训练数据来自SAbDab，截至2025年10月18日。数据集的覆盖范围（抗原类型、物种、CDR长度分布）可能影响模型的泛化能力。</li>
+<li><strong>力场引导的局限性</strong>：使用的MadAdam简化能量仅包含骨架相关项（骨架氢键、骨架熵、肽键违反），不包含侧链相互作用、溶剂化、静电等项。因此，力场引导主要改善骨架几何合理性，对侧链层面的相互作用优化能力有限。</li>
+<li><strong>MoE的贡献</strong>：消融实验显示MoE和力场引导各自贡献，但未量化各自对具体指标的贡献大小。MoE主要影响界面相关指标，力场引导主要影响能量相关指标。</li>
+<li><strong>有边界的复述</strong>：ForceFlowAdam在计算评估下，相比DiffAdam和FlowDesign，在CDR-H3和六CDR联合设计任务中产生了更有利的Rosetta界面能量和更高的改进率，同时保持了相当的序列恢复率和结构精度。这些结论基于统一评估协议下的计算指标，尚未经过实验验证。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺乏湿实验验证</td>
+<td>所有评估均为计算指标，未进行体外表达、结合实验或动物实验</td>
+<td>"wet-lab validation is needed to determine whether the generated antibodies can be experimentally produced and bind effectively to the target antigen"</td>
+<td>Conclusion</td>
+</tr>
+<tr>
+<td>依赖实验解析的复合物结构</td>
+<td>方法需要抗体-抗原复合物结构作为训练数据，对于缺乏复合物结构的靶点适用性受限</td>
+<td>"extending ForceFlowAb to less reliable or predicted complex structures"</td>
+<td>Conclusion</td>
+</tr>
+<tr>
+<td>力场引导效率待提升</td>
+<td>物理引导的计算成本可能限制大规模应用</td>
+<td>"improving the efficiency of physical guidance"</td>
+<td>Conclusion</td>
+</tr>
+<tr>
+<td>基线覆盖不全</td>
+<td>AbX和AbDiffuser因无法在统一协议下部署而被排除，未纳入比较</td>
+<td>未明确提及</td>
+<td>Results 3.1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>测试集仅20个复合物</td>
+<td>样本量小，统计功效有限，可能无法代表CDR设计的多样性</td>
+<td>结论的泛化性存疑</td>
+<td>在更大规模测试集（如SAbDab全量或独立基准）上重复评估</td>
+<td>Results 3.1: "adopted its test set of 20 antibody-antigen complexes"</td>
+</tr>
+<tr>
+<td>力场引导仅在采样后期（步骤70-80）施加</td>
+<td>引导窗口窄，可能无法充分纠正早期采样产生的结构偏差；但全程引导又可能过度限制多样性</td>
+<td>引导时机和强度是关键超参数，影响生成质量与多样性的平衡</td>
+<td>系统扫描引导起始步骤、强度、持续时间，绘制Pareto前沿</td>
+<td>Methods 2.3: "steps 70–80"</td>
+</tr>
+<tr>
+<td>能量指标与功能相关性未验证</td>
+<td>Rosetta interface energy是近似能量函数，与真实结合亲和力相关性有限</td>
+<td>能量指标的改善可能不转化为功能改善</td>
+<td>对生成候选进行表面等离子体共振（SPR）或生物层干涉（BLI）实验验证</td>
+<td>Results 3.3: 使用Rosetta interface energy作为主要评估指标</td>
+</tr>
+<tr>
+<td>MoE路由分析仅报告定性趋势</td>
+<td>图5展示了富集模式，但未提供定量统计检验</td>
+<td>无法判断路由模式是否显著非随机</td>
+<td>计算路由分配的互信息或置换检验</td>
+<td>Results 3.6 图5</td>
+</tr>
+<tr>
+<td>与FlowDesign的比较公平性</td>
+<td>FlowDesign可能针对不同任务优化，直接比较需确认超参数和训练协议完全对齐</td>
+<td>不公平比较可能导致结论偏差</td>
+<td>检查FlowDesign原始论文的训练配置，确认复现流程一致</td>
+<td>Results 3.1: "retrained following their original training pipelines"</td>
+</tr>
+<tr>
+<td>疏水性损失的权重未报告</td>
+<td>多任务损失的相对权重影响最终性能，未报告权重值及敏感性分析</td>
+<td>无法判断疏水性损失的贡献大小</td>
+<td>报告损失权重及消融实验</td>
+<td>Methods 2.3: 损失函数定义中未给出λ_hydro具体值</td>
+</tr>
+<tr>
+<td>未报告生成多样性指标</td>
+<td>仅报告了能量和结构精度，未评估生成样本的多样性</td>
+<td>高多样性是生成模型的重要目标，可能牺牲多样性换取能量优化</td>
+<td>计算生成样本间的成对RMSD分布或有效多样性</td>
+<td>Results 3.3-3.4 未提及多样性指标</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题：Agent 提炼的知识候选</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>可迁移概念：后期力场引导策略</strong>。ForceFlowAb仅在flow matching采样的最后10步（步骤70-80）施加可微力场梯度，而非全程引导。这种「先多样化探索、后物理精化」的两阶段策略可迁移到其他蛋白质生成任务（如环区建模、蛋白质骨架设计），在保持生成多样性的同时改善物理合理性。</p>
+</li>
+<li>
+<p><strong>可迁移方法：MoE用于界面异质性建模</strong>。通过稀疏路由将不同残基位置分配给不同专家网络，每个专家学习特定的表示变换，从而在不显著增加计算成本的情况下捕捉区域特异的相互作用模式。这一思路可迁移到蛋白质-蛋白质相互作用预测、结合位点分析等任务中，用于建模不同界面区域的异质性。</p>
+</li>
+<li>
+<p><strong>可迁移方法：基于MadAdam的简化可微力场</strong>。作者没有使用完整的全原子力场，而是选择MadAdam中保留结构的关键项（骨架氢键、骨架熵、肽键违反惩罚），在保持可微性的同时降低计算复杂度。这种「最小可行力场」思路可迁移到其他需要物理引导的生成模型中，避免全原子力场的计算瓶颈。</p>
+</li>
+<li>
+<p><strong>可迁移实验设计：统一评估协议</strong>。作者强调所有基线在相同训练/验证集、相同侧链构建和relaxation流程、相同候选数（100个）和保留数（top 10）下评估，并使用Rosetta interface energy作为统一指标。这种严格的评估协议设计对生成模型类论文的可复现性和公平比较至关重要。</p>
+</li>
+<li>
+<p><strong>可迁移评估策略：独立验证工具交叉检查</strong>。使用AlphaFold 3作为独立评估工具，通过ipAdam和CDR-pLDDT验证生成序列与结构的兼容性。这种「生成模型 + 独立结构预测器」的交叉验证策略可迁移到其他蛋白质设计任务中，作为计算层面的功能验证手段。</p>
+</li>
+<li>
+<p><strong>可迁移概念：疏水性偏好作为序列先验</strong>。作者引入基于Kyte-Doolittle标度的疏水性损失，将物理化学先验直接编码到训练目标中。这种「将已知生物物理知识转化为可微损失项」的思路可迁移到其他序列设计任务中，如稳定性优化、溶解度预测等。</p>
+</li>
+<li>
+<p><strong>可迁移洞察：MoE路由与生物学结构的相关性</strong>。图5显示专家选择与CDR区域相关，说明路由模式可能捕捉了有生物学意义的结构-功能关系。这一观察提示，MoE路由权重本身可作为可解释性分析的工具，用于识别不同结构区域的表征需求。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ol>
+<li>
+<p><strong>Flow matching用于蛋白质设计</strong>：本文直接继承FlowDesign（Wu et al., 2025）的flow matching框架，将其扩展到抗体CDR设计。Flow matching相比扩散模型的优势（无需离散扩散、采样效率高）在本文中得到进一步验证。可对比阅读Lipman et al. (2023)的flow matching理论基础。</p>
+</li>
+<li>
+<p><strong>扩散模型用于抗体设计</strong>：DiffAdam（Luo et al., 2022）是本文的主要基线之一，代表扩散模型在CDR设计中的应用。本文在flow matching框架下引入MoE和力场引导，与DiffAdam形成方法对比。可进一步对比AbDiffuser（Martinkus et al., 2023）和AbX（Zhu et al., 2024）的设计选择。</p>
+</li>
+<li>
+<p><strong>Mixture-of-experts在蛋白质领域的应用</strong>：MoE在NLP中已被广泛使用（Shazeer et al., 2017），但在蛋白质结构建模中的应用相对较新。本文将其用于界面异质性建模，与Switch Transformer等通用MoE架构的稀疏路由思想一脉相承。</p>
+</li>
+<li>
+<p><strong>可微力场与物理引导</strong>：MadAdam（Orlando et al., 2024）作为可微力场，其设计受FoldAdam能量函数（Guerois et al., 2002; Schymkowitz et al., 2005）启发。本文使用其简化版本进行采样引导，与AlphaFold 3中物理约束的使用形成互补。可对比其他可微力场如OpenMM、TorchAdam等。</p>
+</li>
+<li>
+<p><strong>抗体CDR设计的历史脉络</strong>：从传统物理方法（RosettaAntibodyDesign, Adolf-Bryfogle et al., 2018）到序列语言模型（AbLang, AntiBERTy, IgLM），再到结构感知生成模型（RefineGNN, dyMEAN），最后到扩散/flow matching方法（DiffAdam, FlowDesign, ForceFlowAb）。本文处于这一演进的最新阶段。</p>
+</li>
+<li>
+<p><strong>RFantibody的评估策略</strong>：本文的Alpha Adam 3评估策略直接继承自RFantibody（Bennett et al., 2026），使用ipAdam ≥ 0.6作为界面置信度参考。这种「生成 + 独立预测」的评估范式正在成为抗体设计领域的标准做法。</p>
+</li>
+<li>
+<p><strong>SAbDab数据库</strong>：本文数据来自SAbDab（Dunbar et al., 2014），这是抗体结构领域最常用的数据库。其数据规模和质量直接影响模型训练和评估的可靠性。</p>
+</li>
+</ol>
+<hr />
+<h2>16 研究想法</h2>
+<blockquote>
+<p>标题：Agent 生成的研究候选</p>
+</blockquote>
+<h3>候选1：将后期力场引导策略迁移到蛋白质骨架从头设计</h3>
+<ul>
+<li><strong>名称</strong>：Late-stage force-guided flow matching for protein backbone design</li>
+<li><strong>来源局限/观察</strong>：ForceFlowAb仅在采样后期施加力场引导，有效平衡了多样性与物理合理性。蛋白质骨架从头设计同样面临生成多样性与结构可行性的权衡。</li>
+<li><strong>核心假设</strong>：在蛋白质骨架生成的flow matching采样后期施加简化的可微力场（如Ramachandran偏好、氢键网络、clash惩罚），可以在不显著损失多样性的前提下提高生成骨架的物理可行性。</li>
+<li><strong>初步方法</strong>：基于FrameFlow或FoldFlow等骨架生成模型，在采样后期加入基于可微力场的梯度引导，系统比较不同引导起始步骤和强度对生成质量的影响。</li>
+<li><strong>验证方式</strong>：使用自洽性（self-consistency）评估，即用AlphaFold 2/3反向预测生成序列的结构，比较与生成骨架的一致性；同时评估生成骨架的物理合理性指标（Ramachandran异常比例、clash数等）。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选2：MoE路由权重作为蛋白质界面可解释性分析工具</h3>
+<ul>
+<li><strong>名称</strong>：Expert routing as an interpretability probe for protein-protein interfaces</li>
+<li><strong>来源局限/观察</strong>：ForceFlowAb的图5显示专家选择与CDR区域相关，但作者未深入分析路由模式与界面结构特征（如接触残基类型、几何互补性、疏水/亲水偏好）之间的定量关系。</li>
+<li><strong>核心假设</strong>：MoE路由权重编码了有生物学意义的界面子结构模式，可通过分析路由分配来识别功能相关的界面区域。</li>
+<li><strong>初步方法</strong>：在训练好的ForceFlowAb上，对大量复合物提取每个残基的路由分配向量，聚类分析路由模式与界面几何/化学特征（如接触面积、残基类型偏好、氢键模式）的关联。</li>
+<li><strong>验证方式</strong>：将路由模式与已知的功能位点注释（如来自CoAdamMab或SAbDab的抗原表位注释）进行富集分析，检验路由模式是否能区分功能相关与结构性的界面区域。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选3：将疏水性偏好损失推广为通用序列物理化学先验</h3>
+<ul>
+<li><strong>名称</strong>：Generalizable physicochemical priors as differentiable losses for protein sequence design</li>
+<li><strong>来源局限/观察</strong>：ForceFlowAb使用Kyte-Doolittle疏水性损失约束序列的物理化学合理性，但仅使用了单一性质。蛋白质序列设计可受益于更丰富的物理化学先验。</li>
+<li><strong>核心假设</strong>：将多种物理化学性质（疏水性、电荷分布、极性、芳香性等）编码为可微损失项，可提高生成序列的物理化学合理性，且不损害序列恢复率。</li>
+<li><strong>初步方法</strong>：在flow matching或扩散模型框架中，将序列drift field的预测与多种物理化学性质的约束相结合，系统评估不同性质组合对生成序列质量的影响。</li>
+<li><strong>验证方式</strong>：在标准蛋白质设计基准（如从头设计、功能位点设计）上评估序列恢复率、物理化学合理性指标，以及AlphaFold 3预测的结构可行性。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选4：将MoE + 力场引导框架扩展到非抗体蛋白-蛋白相互作用设计</h3>
+<ul>
+<li><strong>名称</strong>：Transferring physics-aware MoE flow matching to general PPI interface design</li>
+<li><strong>来源局限/观察</strong>：ForceFlowAb针对抗体CDR设计，但其核心思想（MoE建模界面异质性 + 力场引导物理可行性）可推广到更广泛的蛋白-蛋白相互作用（PPI）界面设计。</li>
+<li><strong>核心假设</strong>：MoE路由和后期力场引导的组合策略在非抗体PPI界面设计上同样有效，甚至可能因PPI界面多样性更大而获益更多。</li>
+<li><strong>初步方法</strong>：将ForceFlowAb的框架适配到一般PPI界面设计任务，使用更大的专家数量和更丰富的力场项，在PPI基准数据集上评估。</li>
+<li><strong>验证方式</strong>：与现有PPI设计方法（如RIFDock、ProteinMPNN + 结构生成组合）比较界面能量、序列恢复率和结构精度。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选5：力场引导时机与强度的自适应调度策略</h3>
+<ul>
+<li><strong>名称</strong>：Adaptive scheduling of force-guided sampling in generative protein models</li>
+<li><strong>来源局限/观察</strong>：ForceFlowAb固定步骤70-80施加力场引导，但最优引导时机可能因目标CDR长度、复杂度或抗原类型而异。</li>
+<li><strong>核心假设</strong>：根据生成过程中的中间状态质量（如clash数、能量梯度范数）自适应调整引导时机和强度，可优于固定调度策略。</li>
+<li><strong>初步方法</strong>：设计一个轻量级的调度器，监控生成中间状态的物理合理性指标，动态决定何时开始施加力场引导及引导强度。</li>
+<li><strong>验证方式</strong>：在CDR-H3和六CDR设计任务上比较固定调度与自适应调度的生成质量，分析不同复杂度目标下的最优调度模式。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, conclusion, supplementary notes) as provided</li>
+<li><strong>Assessment boundary</strong> Scientific and technical evaluation of the described method, experimental design, results, and claims; no assessment of code functionality or web server availability beyond stated claims</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present ForceFlowAb, a physics-aware mixture-of-experts flow-matching framework for antigen-conditioned antibody CDR sequence-structure co-design. They claim improved antibody-antigen interaction energies compared to FlowDesign and Diffab, with competitive sequence recovery, structural accuracy, and interface quality, supported by Rosetta-based metrics and AlphaFold 3 evaluation.</li>
+<li><strong>Visible evidence base</strong> Abstract, full introduction, methods sections 2.1-2.4, results sections 3.1-3.7, conclusion, supplementary note on training, case study description</li>
+<li><strong>Missing materials affecting confidence</strong> Full figures and tables (Fig. 1-6, Supplementary Figs S1-S8, Tables S1-S4) are referenced but not provided; detailed mathematical formulations for loss functions and interpolation are partially described but equations are not fully shown; no statistical analysis details (e.g., significance testing, confidence intervals) are provided; no comparison of computational cost or runtime against baselines</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a relevant problem in antibody engineering with a technically plausible combination of established components: flow matching, mixture-of-experts routing, and differentiable force-field guidance. The motivation is clearly articulated, and the methodological choices are reasonable. However, the evidence presented is insufficient to fully establish the claimed advantages. Key results are described qualitatively with reference to figures that are not available in the provided material, and critical details regarding statistical significance, hyperparameter sensitivity, and the specific contribution of each component are lacking. The work is potentially of interest to the computational antibody design community, but the current evidence base does not fully support the strength of the claims made.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians working on antibody design and generative protein models would be the primary audience. The combination of flow matching with mixture-of-experts and physics-based guidance is a methodological direction that could inform future work in protein generation beyond antibodies. Researchers developing structure-based generative models for proteins may find the architectural choices and the integration of energy-based guidance during sampling of interest.</li>
+<li><strong>Major strengths</strong>
+  1. The problem is well-motivated and addresses a clear limitation in existing generative antibody design methods, namely the lack of explicit physical guidance and adaptive modeling of heterogeneous interfaces.
+  2. The methodological combination of flow matching, mixture-of-experts, and differentiable force-field guidance is novel in the context of antibody CDR design and represents a sensible integration of complementary ideas.
+  3. The evaluation includes multiple complementary metrics (Rosetta energy, IMP, DockQ, AAR, Cα RMSD, AF3-based scores), which is appropriate for assessing different aspects of design quality.
+  4. The authors acknowledge the limitation of not including AbX and Ab-Diffuser due to practical constraints, which is transparent.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The claim that ForceFlowAb achieved "more favorable antibody-antigen interaction energies than FlowDesign and Diffab, with improvement rates (IMP) of 46.5% versus 35.0% and 35.5%, respectively" for CDR-H3 design.</li>
+<li><strong>Evidence pointer</strong> Section 3.3, Fig. 2, Supplementary Table S2</li>
+<li><strong>Concern</strong> The quantitative results are presented in figures and supplementary tables that are not available in the provided material. The text describes trends ("tended to produce lower ΔΔG values") but does not provide the actual distributions, variances, or statistical significance of the differences. Without access to the underlying data, it is impossible to assess whether the reported IMP differences are robust or within noise. Furthermore, the definition of IMP and how it relates to the distribution of energies across 100 sampled candidates is not fully specified.</li>
+<li><strong>Why it matters</strong> The central claim of the paper rests on the superiority of ForceFlowAb over baselines in terms of interaction energy. If the differences are not statistically significant or are sensitive to the specific test set or evaluation protocol, the main conclusion would be weakened. The current presentation does not allow the reader to verify this.</li>
+<li><strong>Resolution test</strong> Provide the full data distributions for ΔΔG, IMP, DockQ, and AAR for all methods, including measures of variance (e.g., standard deviation, interquartile range) and results of appropriate statistical tests (e.g., Wilcoxon signed-rank test) comparing ForceFlowAb to each baseline. Clarify the exact definition of IMP and how it is computed from the 100 sampled candidates.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that the "differentiable force-guidance mechanism steers generated CDR conformations towards energetically favourable antibody-antigen interfaces during sampling" and that this contributes to improved results.</li>
+<li><strong>Evidence pointer</strong> Section 2.3, Section 3.7, Fig. 6</li>
+<li><strong>Concern</strong> The description of the force-guidance mechanism is incomplete. The text states that a reduced MadraX-based energy is used, retaining only backbone hydrogen-bond energy, backbone entropy, and peptide-bond violation penalty, but the rationale for selecting these specific terms is not provided. The gradient is applied only to Cα coordinates, which is a significant simplification, and the potential consequences for side-chain placement and overall structural realism are not discussed. The ablation study (Section 3.7) is described only qualitatively; the actual magnitude of the degradation when force guidance is removed is not reported.</li>
+<li><strong>Why it matters</strong> The contribution of the physics-based guidance is a key novelty of the method. If the mechanism is not well-justified or its effect is marginal, the added complexity may not be warranted. The current description does not allow the reader to understand the design choices or assess the robustness of the approach.</li>
+<li><strong>Resolution test</strong> Provide a more detailed description of the force-guidance implementation, including the exact energy terms, their functional forms, and the rationale for their selection. Report quantitative results from the ablation study, including the specific changes in metrics when force guidance is removed. Discuss the limitations of applying gradients only to Cα atoms and the potential impact on side-chain conformations.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The claim that the method can be reproduced from the provided description and that the source code is available.</li>
+<li><strong>Evidence pointer</strong> Section 2.3, Section 2.4, Supplementary Note 1, Data availability</li>
+<li><strong>Concern</strong> While the overall architecture is described, several critical implementation details are missing. The exact architecture of the Input Frame Encoder, the number of IPA and Transformer blocks in the CDR Embedder, the specific dimensions of the hidden layers, and the precise formulation of the loss functions are not fully specified. The training procedure is described in Supplementary Note 1, but the hyperparameter search strategy, if any, is not mentioned. The code is stated to be available, but it is not possible to verify its functionality or completeness from the manuscript.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for computational methods. Without complete implementation details, other researchers cannot build upon or verify the method. The availability of code mitigates this to some extent, but the manuscript should be self-contained enough to allow understanding and reimplementation.</li>
+<li><strong>Resolution test</strong> Provide a complete specification of all architectural components, including layer counts, dimensions, and activation functions. Include the full mathematical formulation of all loss terms. Describe the hyperparameter selection process and provide the final hyperparameter values. Ensure the code repository is complete, documented, and includes instructions for reproduction.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Evaluation rigor</li>
+<li><strong>Claim pointer</strong> The claim that "AlphaFold 3 evaluation further supported the structural compatibility of the generated sequences" and the use of AF3-based metrics (ipTM, pLDDT) as an independent assessment.</li>
+<li><strong>Evidence pointer</strong> Section 3.5, Fig. 4, Supplementary Figs S3-S4</li>
+<li><strong>Concern</strong> The use of AF3 as an evaluation tool is reasonable, but the interpretation of the results is unclear. The authors report a "joint confidence pass rate" of 50% for ForceFlowAb versus 42% for Diffab, but the significance of this difference is not assessed. Moreover, the relationship between AF3 confidence scores and actual experimental binding affinity or structural validity is not established. The authors do not discuss potential biases in AF3 evaluation, such as the model potentially favoring sequences similar to its training distribution.</li>
+<li><strong>Why it matters</strong> The AF3-based assessment is presented as supporting evidence for the method's utility. If the differences are not significant or the metric is not well-calibrated, this support is weak. The reader needs to understand the limitations of this evaluation approach.</li>
+<li><strong>Resolution test</strong> Provide statistical analysis of the AF3-based metrics, including confidence intervals or significance tests. Discuss the known limitations of using AF3 confidence scores as a proxy for experimental validity. Consider including additional independent evaluations, such as comparison to experimentally validated antibodies or docking-based assessments.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section 2.2, Task formulation</li>
+<li><strong>Evidence pointer</strong> Section 2.2</li>
+<li><strong>Issue</strong> The notation for the interpolation of amino acid identities and coordinates is described but the actual equations are not shown. The text states "Amino acid identities and Cα coordinates are interpolated linearly" but does not provide the specific formulas.</li>
+<li><strong>Required correction</strong> Include the explicit mathematical expressions for the linear interpolation of both categorical (amino acid) and continuous (coordinate) variables, and clarify how the interpolation handles the discrete nature of amino acid identities.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Section 3.1, Evaluation settings</li>
+<li><strong>Evidence pointer</strong> Section 3.1</li>
+<li><strong>Issue</strong> The exclusion of AbX and Ab-Diffuser is mentioned, but the specific reasons are only briefly stated. For AbX, the lack of a training pipeline is cited, but it is unclear why the provided pretrained checkpoints could not be used for evaluation. For Ab-Diffuser, the absence of an official implementation is stated, but it is not clear if any unofficial implementations were considered.</li>
+<li><strong>Required correction</strong> Provide more detail on why the pretrained AbX model could not be used under the unified evaluation protocol, and clarify whether any alternative implementations of Ab-Diffuser were evaluated or considered.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Section 3.3, Section 3.4</li>
+<li><strong>Evidence pointer</strong> Section 3.3, Section 3.4</li>
+<li><strong>Issue</strong> The results are described in terms of trends ("tended to produce lower", "showed a higher") without reporting the number of test cases, the variance across test cases, or any statistical significance measures.</li>
+<li><strong>Required correction</strong> Report the number of test complexes, the distribution of results across test cases, and the results of appropriate statistical tests for all key comparisons.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section 2.3, Force Guidance module</li>
+<li><strong>Evidence pointer</strong> Section 2.3</li>
+<li><strong>Issue</strong> The description of the force-guidance application states it is applied "in the later phase of the sampling trajectory (specifically, steps 70-80)" but does not explain why this specific range was chosen or how sensitive the results are to this choice.</li>
+<li><strong>Required correction</strong> Provide a rationale for the choice of steps 70-80 and include a sensitivity analysis showing the effect of varying this range on the final results.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Section 3.6, Expert selection analysis</li>
+<li><strong>Evidence pointer</strong> Section 3.6, Fig. 5</li>
+<li><strong>Issue</strong> The expert selection analysis is described qualitatively, and the implications of the observed patterns are not discussed in depth. The authors state that "expert selection depends on the input CDR environment" but do not elaborate on what this means for the method's interpretability or design.</li>
+<li><strong>Required correction</strong> Provide a more detailed interpretation of the expert selection patterns, including what specific features or sequence motifs are associated with different expert preferences, and discuss the implications for understanding CDR sequence-structure relationships.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong>
+  1. Lack of statistical significance testing for all key comparisons between ForceFlowAb and baselines (R1-M1).
+  2. Incomplete description of the force-guidance mechanism and its ablation results (R1-M2).
+  3. Insufficient implementation details for reproducibility (R1-M3).
+  4. Unclear interpretation and limitations of AF3-based evaluation (R1-M4).</li>
+<li><strong>Assessment against Nature-style criteria</strong></li>
+<li><strong>Originality</strong> Moderate. The combination of flow matching, mixture-of-experts, and force-based guidance is novel in the context of antibody CDR design, but each component is established in the broader generative modeling literature. The specific integration and application to antibody design represents incremental novelty rather than a fundamentally new paradigm.</li>
+<li><strong>Scientific importance</strong> Moderate. Antibody design is an important application area, and improvements in computational methods could have practical impact. However, the demonstrated improvements over baselines are modest and not fully established statistically. The method does not address fundamental limitations of existing approaches beyond combining known techniques.</li>
+<li><strong>Interdisciplinary readership</strong> Limited. The work is primarily of interest to computational biologists and machine learning researchers working on protein design. The methods and evaluation are highly specialized, and the potential broader impact on fields such as immunology or drug discovery is not demonstrated.</li>
+<li><strong>Technical soundness</strong> The approach is technically plausible, but the evidence presented is insufficient to fully assess its soundness. Key implementation details are missing, and the statistical rigor of the evaluation is inadequate. The ablation study is described only qualitatively.</li>
+<li><strong>Readability for nonspecialists</strong> The manuscript is written in a technical style that assumes familiarity with generative models, protein structure, and antibody biology. The abstract is accessible, but the methods and results sections would be challenging for readers outside the immediate field.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript presents a plausible method with a reasonable motivation, but the evidence base is insufficient to support the strength of the claims. The lack of statistical analysis, incomplete method description, and qualitative presentation of key results prevent a definitive assessment of the method's value. The authors should be encouraged to resubmit after addressing the major concerns, particularly providing full quantitative results with statistical analysis, complete implementation details, and a more rigorous ablation study.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

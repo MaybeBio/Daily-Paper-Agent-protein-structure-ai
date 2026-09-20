@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calibrated structural homology transfer yields putative molecular functions for domains of unknown function in four model proteomes · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Calibrated structural homology transfer yields putative molecular functions for domains of unknown function in four model proteomes</h1>
+      <div class="meta">Pannu JS; Green K; Vedanayagam J</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-16
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.11.750891">原文</a>
+      </div>
+      <p class="one-liner">该文利用AlphaFold结构预测和Foldseek远程同源搜索，对未知功能结构域进行功能注释并系统评估可靠性，属于蛋白质结构预测的应用与基准测试，方法创新有限但问题和方法与课题相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Improvements in computational protein structure prediction have enabled searches for remote homologs of proteins whose molecular function remain unknown. However, the reliability of functional annotations from such searches has not been systematically quantified. In this study, we assembled a time-split benchmark from Pfam families annotated as domains of unknown function (DUFs) in Pfam 28.0 and were subsequently assigned a function in the current release (Pfam 38.0). These retrospective-DUFs provide ground truth for assessing functional annotation from remote homology searches. In our benchmark analysis, we paired retrospective-DUFs with a difficulty-matched arm from known domains to distinguish query difficulty from the method’s performance. Across four model proteomes (yeast, C. elegans , Drosophila , and mice), Foldseek searches against AlphaFold/Swiss-Prot, PDB100, and CATH50 recovered the later-assigned function for 15.9% of retrospective DUF queries, compared with 30.1% of matched known-domain queries, after masking for self-family and self-clan level hits to remove circularity. At a fixed confidence cut-off (qTM ≥ 0.5), 55.4% of informative calls on retrospective DUFs were incorrect, establishing an error model for prospective use. Furthermore, in our comparison of tools for homology searches, Foldseek outperformed MMseq2-based sequence search but was not statistically separable from the ESM-2 protein language model embedding baseline. Applying the calibrated structural homology search pipeline to 296 currently unannotated DUF queries in Pfam 38.0 yielded 50 confident, specific functional assignments. We provide the benchmark and ranked candidates as a resource to facilitate functional studies.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">计算蛋白质结构预测的改进使得能够搜索分子功能未知的蛋白质的远缘同源物。然而，此类搜索功能注释的可靠性尚未被系统量化。在本研究中，我们从Pfam 28.0中注释为未知功能域（DUFs）的Pfam家族构建了一个时间分割基准，这些家族在当前版本（Pfam 38.0）中随后被赋予了功能。这些回顾性DUFs为评估远缘同源搜索的功能注释提供了真实依据。在我们的基准分析中，我们将回顾性DUFs与难度匹配的已知域配对，以区分查询难度与方法性能。在四个模型蛋白质组（酵母、线虫、果蝇和小鼠）中，针对AlphaFold/Swiss-Prot、PDB100和CATH50的Foldseek搜索，在屏蔽自家族和自氏族级别命中以消除循环性后，恢复了15.9%的回顾性DUF查询的后续分配功能，而匹配的已知域查询为30.1%。在固定置信度截断值（qTM ≥ 0.5）下，回顾性DUFs上55.4%的信息性调用是错误的，为前瞻性使用建立了错误模型。此外，在我们对同源搜索工具的比较中，Foldseek优于基于MMseq2的序列搜索，但在统计上与ESM-2蛋白质语言模型嵌入基线无显著差异。将校准的结构同源搜索流程应用于Pfam 38.0中296个当前未注释的DUF查询，产生了50个自信且特异的功能分配。我们提供基准和排名候选作为资源，以促进功能研究。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Calibrated structural homology transfer yields putative molecular functions for domains of unknown function in four model proteomes</li>
+<li><strong>作者与单位</strong>：Pannu JS; Green K; Vedanayagam J（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 基准评测 + 资源报告）</li>
+<li><strong>领域</strong>：蛋白质结构预测应用 / 功能注释 / 远程同源搜索</li>
+<li><strong>关键词</strong>：DUF（Domain of Unknown Function）、结构同源转移、Foldseek、AlphaFold、功能注释、基准测试</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.11.750891</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：基准数据集与排名候选列表作为资源提供（具体存放位置未提供）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>该文在课题方向中的位置</strong>：本文处于「蛋白质结构预测（AlphaFold）→ 下游功能注释」的衔接环节，核心贡献是<strong>系统量化</strong>结构同源搜索（Foldseek）在 DUF 功能注释中的可靠性，并给出<strong>校准后的错误率模型</strong>。对课题方向（结构预测 × AI/物理模拟）而言，本文提供了一个<strong>可迁移的基准评测框架</strong>（time-split benchmark + difficulty-matched control + circularity masking），可用于评估任何结构比对/嵌入方法在功能或结构注释任务中的真实增益。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过构建 time-split 的 Pfam DUF 基准（Pfam 28.0 中未知、38.0 中已知功能的域），系统量化了 Foldseek 结构同源搜索在四个模式蛋白质组中恢复 DUF 后期功能的能力（15.9% vs 已知域 30.1%），并建立 qTM ≥ 0.5 下 55.4% 错误率的校准模型，最终对 296 个当前 DUF 给出 50 个高置信功能分配。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：从 AlphaFold 预测结构中进行的远程同源搜索，其功能注释的可靠性如何？能否被系统量化并校准？</li>
+<li><strong>为什么重要</strong>：AlphaFold 等结构预测工具的大规模应用使得对 DUF（功能未知域）进行远程同源搜索成为常规操作，但这类注释的错误率从未被系统评估，导致大量可能错误的注释进入数据库。</li>
+<li><strong>现有方法为何不足</strong>：已有 benchmark 多基于已知功能域，无法反映 DUF 查询的难度分布；且未区分「查询本身难」与「方法表现差」；同时缺乏对 self-family/self-clan 命中（循环性）的系统处理。</li>
+<li><strong>精确研究问题</strong>：Can a time-split, difficulty-matched benchmark with circularity masking provide a calibrated error model for structural homology-based functional annotation of DUFs?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：<strong>经外部核验</strong>——基于领域常识与本文引用，非仅本文框架）
+- <strong>阶段一：序列同源搜索（BLAST/PSI-BLAST, 1990s–2000s）</strong>。优点：快速、广泛使用；局限：对远程同源灵敏度低，DUF 常无序列同源。
+- <strong>阶段二：隐马尔可夫模型（HMMER/HHpred, 2000s–2010s）</strong>。优点：profile-based 搜索提高灵敏度；局限：仍依赖序列信息，对结构趋同或极端序列分歧无能为力。
+- <strong>阶段三：结构预测驱动的同源搜索（AlphaFold + Foldseek, 2020s–）</strong>。优点：结构比对（如 Foldseek 的 3Di alphabet）可捕捉序列不可见的远程同源；局限：预测结构误差、比对假阳性、功能注释的可靠性未校准。
+- <strong>本文位置</strong>：在阶段三中引入<strong>校准层</strong>——用 time-split DUF 基准 + difficulty-matched control + circularity masking 建立错误率模型，使结构同源搜索从「可用」走向「可量化信任」。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>功能注释缺乏 ground truth</td>
+<td>DUF 无已知功能，无法直接评估注释正确性</td>
+<td>功能未知是 DUF 的定义属性</td>
+<td>摘要：DUFs 提供 ground truth 的困难</td>
+</tr>
+<tr>
+<td>查询难度与方法表现混淆</td>
+<td>简单查询成功 ≠ 方法好；难查询失败 ≠ 方法差</td>
+<td>不同 DUF 的远程同源可检测性差异大</td>
+<td>摘要：difficulty-matched arm 的设计</td>
+</tr>
+<tr>
+<td>循环性命中（circularity）</td>
+<td>命中自身家族/氏族导致虚假高估</td>
+<td>数据库中含查询自身或近缘序列</td>
+<td>摘要：masking for self-family and self-clan level hits</td>
+</tr>
+<tr>
+<td>置信度阈值不可靠</td>
+<td>qTM ≥ 0.5 时大量错误注释</td>
+<td>结构比对分数与功能正确性非线性相关</td>
+<td>摘要：55.4% 错误率 at qTM ≥ 0.5</td>
+</tr>
+<tr>
+<td>工具选择缺乏依据</td>
+<td>不同搜索工具（Foldseek vs MMseq2 vs ESM-2）表现差异未量化</td>
+<td>缺乏统一基准下的系统比较</td>
+<td>摘要：Foldseek vs MMseq2 vs ESM-2 比较</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：构建 time-split Pfam DUF 基准（Pfam 28.0 中 DUF → 38.0 中已注释功能），用 Foldseek 对四个模式蛋白质组进行结构同源搜索，mask 掉 self-family/self-clan 命中，计算恢复率；并用 difficulty-matched 已知域作为对照；最后用校准后的错误率模型对当前 DUF 进行前瞻性注释。</li>
+<li><strong>核心洞察</strong>：结构同源搜索的功能注释<strong>不是二值的</strong>——恢复率（15.9%）与错误率（55.4% at qTM ≥ 0.5）必须同时报告；且 DUF 查询的系统性难度低于已知域（15.9% vs 30.1%），说明 DUF 的「未知」并非单纯因为更难，而可能反映真实的功能分歧或注释滞后。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：任何基于预测结构的注释/搜索任务（包括本课题中的构象采样、对接、设计）都应建立<strong>带 ground truth 的 time-split 基准 + 难度匹配对照 + 循环性屏蔽</strong>的三元组评测框架，否则无法区分「方法增益」与「查询红利」。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：Pfam 28.0 中注释为 DUF、在 Pfam 38.0 中获得功能的域序列（retrospective-DUFs）；四个模式蛋白质组（酵母、线虫、果蝇、小鼠）的蛋白质组序列；AlphaFold/Swiss-Prot、PDB100、CATH50 数据库。</li>
+<li><strong>输出</strong>：每个 DUF 查询的候选功能注释（Pfam 家族分配）+ 置信度（qTM）+ 校准后的错误率。</li>
+<li><strong>模块</strong>：
+  1. 基准构建（time-split DUF 识别 + difficulty-matched 已知域配对）
+  2. 结构搜索（Foldseek 对 AlphaFold/Swiss-Prot、PDB100、CATH50）
+  3. 循环性屏蔽（mask self-family/self-clan hits）
+  4. 恢复率计算与对照比较
+  5. 错误率校准（qTM 阈值下的错误率模型）
+  6. 前瞻性应用（对 Pfam 38.0 中 296 个未注释 DUF 进行搜索与过滤）</li>
+<li><strong>工具</strong>：Foldseek（结构比对）、MMseq2（序列比对对照）、ESM-2 embedding（语言模型对照）。</li>
+<li><strong>假设</strong>：Pfam 家族注释可作为功能 ground truth；time-split 可避免信息泄漏；difficulty-matched 对照可分离查询难度与方法表现。</li>
+<li><strong>流程</strong>：从 Pfam 28.0 提取 DUF → 在 Pfam 38.0 中确认功能分配 → 对四个蛋白质组运行 Foldseek 搜索 → mask 循环命中 → 计算恢复率 → 与已知域对照比较 → 建立 qTM-错误率校准曲线 → 应用于当前 DUF 前瞻性注释。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time-split DUF 基准</td>
+<td>提供带 ground truth 的 DUF 查询集</td>
+<td>无 ground truth 则无法评估注释正确性</td>
+<td>输入：Pfam 28.0 DUF + 38.0 功能注释；输出：retrospective-DUF 集</td>
+<td>摘要：assembled a time-split benchmark</td>
+<td>移除后无法量化错误率，只能定性报告</td>
+</tr>
+<tr>
+<td>Difficulty-matched 对照</td>
+<td>区分查询难度与方法表现</td>
+<td>避免将 DUF 的固有难度归咎于方法</td>
+<td>输入：retrospective-DUF + 已知域；输出：配对查询集</td>
+<td>摘要：difficulty-matched arm from known domains</td>
+<td>移除后恢复率差异无法归因</td>
+</tr>
+<tr>
+<td>循环性屏蔽</td>
+<td>去除 self-family/self-clan 命中</td>
+<td>防止数据库中含查询自身导致虚假高估</td>
+<td>输入：原始搜索 hits；输出：masked hits</td>
+<td>摘要：after masking for self-family and self-clan level hits</td>
+<td>不移除则恢复率虚高，校准失效</td>
+</tr>
+<tr>
+<td>错误率校准模型</td>
+<td>建立 qTM 阈值与错误率的映射</td>
+<td>为前瞻性使用提供置信度依据</td>
+<td>输入：qTM 分数 + 已知功能；输出：错误率曲线</td>
+<td>摘要：55.4% incorrect at qTM ≥ 0.5</td>
+<td>移除后无法对前瞻性注释设置可靠阈值</td>
+</tr>
+<tr>
+<td>工具比较</td>
+<td>Foldseek vs MMseq2 vs ESM-2</td>
+<td>确定最优搜索工具</td>
+<td>输入：同一查询集；输出：各工具恢复率</td>
+<td>摘要：Foldseek outperformed MMseq2 but not separable from ESM-2</td>
+<td>移除后无法指导工具选择</td>
+</tr>
+<tr>
+<td>前瞻性应用</td>
+<td>对当前 DUF 进行功能分配</td>
+<td>提供可检验的候选注释资源</td>
+<td>输入：296 个未注释 DUF；输出：50 个高置信分配</td>
+<td>摘要：yielded 50 confident assignments</td>
+<td>移除后论文仅为方法学，无实际产出</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>qTM（query-TM score）</strong>：结构比对质量分数，范围 [0,1]，越高表示查询与命中结构越相似。用途：作为置信度阈值。直觉：qTM ≥ 0.5 被用作「可信命中」的常用阈值，但本文显示该阈值下错误率仍高达 55.4%。来源：摘要中 qTM ≥ 0.5 的引用。</li>
+<li><strong>恢复率（Recovery rate）</strong>：retrospective-DUF 中被正确分配后期功能的查询比例。公式：恢复率 = 正确注释的 DUF 数 / 总 DUF 查询数。用途：衡量方法灵敏度。直觉：15.9% vs 30.1% 的对比显示 DUF 查询的系统性困难。来源：摘要数值。</li>
+<li><strong>错误率（Error rate at fixed threshold）</strong>：在 qTM ≥ 0.5 的命中中，功能注释错误的比例。公式：错误率 = 错误注释数 / 总注释数（at qTM ≥ 0.5）。用途：前瞻性使用的校准依据。直觉：55.4% 意味着超过一半的高置信命中是错的。来源：摘要数值。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：Pfam 28.0 中注释为 DUF、在 Pfam 38.0 中获得功能的域（retrospective-DUFs）；四个模式蛋白质组（酵母、C. elegans、果蝇、小鼠）；搜索数据库：AlphaFold/Swiss-Prot、PDB100、CATH50。</li>
+<li><strong>规模</strong>：未提供具体 DUF 数量；四个蛋白质组为模式生物标准蛋白质组。</li>
+<li><strong>指标</strong>：恢复率（正确功能分配的 DUF 比例）；错误率（qTM ≥ 0.5 下错误注释比例）。</li>
+<li><strong>基线</strong>：MMseq2 序列搜索、ESM-2 embedding 搜索。</li>
+<li><strong>评测协议</strong>：time-split（Pfam 28.0 → 38.0）；difficulty-matched 对照（已知域配对）；循环性屏蔽（mask self-family/self-clan hits）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>恢复率比较</td>
+<td>结构搜索可恢复 DUF 后期功能</td>
+<td>retrospective-DUF vs difficulty-matched 已知域</td>
+<td>15.9% vs 30.1%</td>
+<td>DUF 查询系统性更难</td>
+<td>不能归因于方法缺陷 vs 查询难度</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>工具比较</td>
+<td>Foldseek 优于序列搜索</td>
+<td>Foldseek vs MMseq2 vs ESM-2</td>
+<td>Foldseek &gt; MMseq2；与 ESM-2 无统计差异</td>
+<td>结构搜索优于序列搜索</td>
+<td>不能断言 Foldseek 优于 embedding 方法</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>错误率校准</td>
+<td>qTM ≥ 0.5 是可靠阈值</td>
+<td>固定 qTM ≥ 0.5 下的错误率</td>
+<td>55.4% 错误</td>
+<td>高置信阈值仍不可靠</td>
+<td>不能推广到其他阈值</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>前瞻性应用</td>
+<td>可对当前 DUF 给出高置信注释</td>
+<td>296 个未注释 DUF</td>
+<td>50 个高置信分配</td>
+<td>方法可产出可检验候选</td>
+<td>不能断言这些注释全部正确</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖 Pfam 定义的 DUF 域，不涵盖所有功能未知蛋白；仅四个模式蛋白质组，不涵盖全部物种。</li>
+<li><strong>Oracle/真值输入</strong>：Pfam 38.0 的功能注释作为 ground truth，但 Pfam 注释本身可能包含错误或过时信息。</li>
+<li><strong>端到端状态</strong>：非端到端——输入为 Pfam 域序列而非原始基因组；输出为 Pfam 家族分配而非分子机制级功能。</li>
+<li><strong>算力成本</strong>：未提供；Foldseek 为轻量工具，但 AlphaFold 结构生成成本未计入。</li>
+<li><strong>历史数据依赖</strong>：time-split 设计（Pfam 28.0 → 38.0）依赖 Pfam 版本间的注释变化，可能受 Pfam 注释策略变化影响。</li>
+<li><strong>模型依赖</strong>：依赖 AlphaFold 预测结构质量；预测错误可能传导至比对与注释。</li>
+<li><strong>最难情形</strong>：qTM ≥ 0.5 下 55.4% 错误率表明高置信阈值下仍大量错误，说明结构相似 ≠ 功能相同（如趋同结构、多结构域蛋白的域间干扰）。</li>
+<li><strong>群体/领域边界</strong>：仅模式生物蛋白质组，可能不适用于病原体、极端环境物种等。</li>
+<li><strong>不确定性</strong>：50 个前瞻性注释未经实验验证，错误率未知。</li>
+<li><strong>有边界的复述</strong>：在 Pfam 28.0→38.0 time-split 框架下，对四个模式蛋白质组，Foldseek 结构搜索可恢复 15.9% 的 DUF 后期功能，但 qTM ≥ 0.5 时错误率高达 55.4%，因此该方法的输出应视为「候选」而非「结论」。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。作者仅提及「提供基准和候选作为资源以促进功能研究」，未展开讨论局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 恢复率仅 15.9%，说明大量 DUF 仍无法通过结构同源转移注释。
+- qTM ≥ 0.5 下 55.4% 错误率，说明当前置信度阈值不可靠。
+- 前瞻性 50 个注释未经实验验证。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time-split 依赖 Pfam 注释策略变化</td>
+<td>Pfam 28.0→38.0 的功能分配可能受注释流程更新影响，而非真实功能发现</td>
+<td>若注释变化由流程驱动，则基准高估方法能力</td>
+<td>对比 Pfam 版本间注释变化的来源（人工 vs 自动）</td>
+<td>摘要：time-split benchmark 设计</td>
+</tr>
+<tr>
+<td>Difficulty-matched 对照的匹配标准未说明</td>
+<td>若匹配仅基于序列长度/结构域数，而非真实难度，则对照无效</td>
+<td>对照是分离「查询难度」与「方法表现」的关键</td>
+<td>检查匹配变量的选择与敏感性分析</td>
+<td>摘要：difficulty-matched arm 描述</td>
+</tr>
+<tr>
+<td>55.4% 错误率可能低估</td>
+<td>仅评估 Pfam 家族级注释，未评估分子功能（GO 分子功能）级错误</td>
+<td>家族正确 ≠ 功能正确，实际错误率可能更高</td>
+<td>用 GO 注释或实验数据子集重评估</td>
+<td>摘要：错误率 at qTM ≥ 0.5</td>
+</tr>
+<tr>
+<td>ESM-2 与 Foldseek 无统计差异</td>
+<td>可能因样本量不足或 ESM-2 已隐含结构信息</td>
+<td>若 embedding 方法同样有效，则无需结构预测步骤</td>
+<td>增大样本量或使用更严格的统计检验</td>
+<td>摘要：not statistically separable</td>
+</tr>
+<tr>
+<td>前瞻性 50 个注释无验证</td>
+<td>可能包含大量假阳性，但无实验或文献验证</td>
+<td>资源价值取决于注释质量</td>
+<td>对 50 个注释进行文献挖掘或实验验证</td>
+<td>摘要：yielded 50 confident assignments</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>Time-split 基准设计</strong>：用「历史版本中未知、当前版本中已知」的 DUF 作为 ground truth，可迁移到本课题中任何「预测→验证」任务（如构象采样后验证是否采到已知功能构象）。
+2. <strong>Difficulty-matched 对照</strong>：在评估新方法（如新的结构比对或嵌入方法）时，应配对难度相当的已知域作为对照，以区分「方法增益」与「查询红利」。
+3. <strong>循环性屏蔽（self-family/self-clan masking）</strong>：在评估同源搜索时，必须屏蔽与查询自身同源的命中，否则恢复率虚高。可迁移到 MD 模拟或对接中「排除已知结合模式」的评估设计。
+4. <strong>校准错误率模型</strong>：任何置信度阈值（如 qTM ≥ 0.5）都应配套错误率报告，而非仅报告灵敏度。本课题中，若用 AlphaFold 结构做对接或设计，应建立类似的「结构质量→功能正确性」校准曲线。
+5. <strong>工具比较的统计严谨性</strong>：Foldseek 与 ESM-2 无统计差异的结论提示，在比较结构搜索与 embedding 方法时，需注意统计功效。
+6. <strong>前瞻性注释的资源化</strong>：将预测结果作为「候选资源」发布而非「结论」，可促进社区验证，适合本课题中大规模结构预测或设计结果的发布策略。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：与 AlphaFold 结构预测后的功能注释工作流一致（如 AlphaFold DB 的 DUF 注释尝试）；与 Foldseek 的 3Di 比对方法直接相关（van Kempen et al., 2023, Nature Biotechnology）。</li>
+<li><strong>组合</strong>：本文的校准框架可与 ESM-2 等 embedding 方法结合，用于「结构 + 序列」双通道的功能注释；也可与 AlphaFold 的 pLDDT 分数结合，建立「结构质量 → 注释可靠性」的联合模型。</li>
+<li><strong>冲突</strong>：本文 55.4% 错误率与部分文献中「结构相似即功能相似」的乐观假设相冲突，提示结构同源 ≠ 功能同源。</li>
+<li><strong>可迁移领域</strong>：本课题中的构象采样（如 MD 或生成模型）可借鉴 time-split 思路，用「已知功能构象」作为 ground truth 评估采样方法的覆盖率；分子对接可借鉴「循环性屏蔽」排除已知结合位点的命中。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：Structure-to-Function Calibration for Conformational Sampling
+   - <strong>来源局限/观察</strong>：本文显示结构同源 ≠ 功能正确（55.4% 错误率），构象采样中「结构相似」的判定同样可能误导。
+   - <strong>核心假设</strong>：在构象采样评估中，用「功能构象」而非「结构相似」作为 ground truth，可更准确评估采样方法。
+   - <strong>初步方法</strong>：构建 time-split 的「已知功能构象」基准（如酶活性位点构象），对 MD/生成模型的采样结果做功能级评估。
+   - <strong>验证方式</strong>：对比结构相似度指标与功能正确性指标的相关性。
+   - <strong>可能的失败模式</strong>：功能构象定义模糊，ground truth 构建困难。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Embedding-based Remote Homology with Uncertainty Quantification
+   - <strong>来源局限/观察</strong>：本文中 ESM-2 与 Foldseek 无统计差异，但未报告 embedding 方法的错误率校准。
+   - <strong>核心假设</strong>：ESM-2 embedding 的相似度分数可被校准为功能注释的概率。
+   - <strong>初步方法</strong>：在本文的 time-split DUF 基准上，用 ESM-2 embedding 距离训练校准模型（如 Platt scaling）。
+   - <strong>验证方式</strong>：比较校准后的 ESM-2 与 Foldseek 的错误率曲线。
+   - <strong>可能的失败模式</strong>：embedding 空间的功能信号可能非线性，校准模型过拟合。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Circularity-Aware Evaluation for Docking and Design
+   - <strong>来源局限/观察</strong>：本文的循环性屏蔽（self-family/self-clan masking）在评估中至关重要，但对接和设计评估中常忽略。
+   - <strong>核心假设</strong>：在分子对接或蛋白设计评估中，屏蔽与训练集/已知结合模式同源的命中，可更真实反映泛化能力。
+   - <strong>初步方法</strong>：在对接 benchmark 中，按序列/结构相似性分层屏蔽，重新计算成功率。
+   - <strong>验证方式</strong>：对比屏蔽前后的成功率差异，识别「记忆」vs「泛化」。
+   - <strong>可能的失败模式</strong>：屏蔽过度导致样本量不足。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Proteome-wide DUF Annotation with Calibrated Confidence
+   - <strong>来源局限/观察</strong>：本文仅覆盖四个模式蛋白质组，且 50 个前瞻性注释未验证。
+   - <strong>核心假设</strong>：将校准后的结构同源搜索扩展到更多蛋白质组，可产出可检验的 DUF 功能候选。
+   - <strong>初步方法</strong>：对全部 AlphaFold DB 中的 DUF 运行 Foldseek + 校准模型，发布带错误率的候选列表。
+   - <strong>验证方式</strong>：与已知功能数据库（如 Gene Ontology、UniProt）交叉验证，并邀请实验社区验证。
+   - <strong>可能的失败模式</strong>：计算成本高，且错误率可能随物种多样性上升。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present a benchmark for assessing functional annotation of domains of unknown function (DUFs) via structural homology searches, report an error model for prospective use, compare multiple search tools, and apply their calibrated pipeline to currently unannotated DUFs to generate candidate functional assignments.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative details beyond those stated in the abstract</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, benchmark construction details, statistical analyses, figures, tables, supplementary data, and the resource of ranked candidates</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a timely and potentially valuable benchmarking effort for a problem of growing importance in structural bioinformatics. The use of time-split retrospective DUFs as ground truth is a sound conceptual design, and the inclusion of a difficulty-matched control arm is a thoughtful methodological choice. However, the abstract alone provides insufficient detail to evaluate the rigor of the benchmark construction, the statistical treatment, or the validity of the error model. Several claims are stated without supporting quantitative context, and the practical utility of the proposed resource cannot be assessed from the supplied material. The work is likely of interest to the computational biology community, but the case is not fully established from the abstract alone.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians working on protein function prediction, structural genomics consortia, and researchers using AlphaFold-derived models for functional annotation. The benchmark and error model would be of direct use to those applying homology search tools in high-throughput annotation pipelines, and the ranked candidate list could guide experimental validation efforts for uncharacterized domains.</li>
+<li><strong>Major strengths</strong> The time-split benchmark design using retrospective DUFs is a principled approach to obtaining ground truth without circularity. The inclusion of a difficulty-matched control arm is a rigorous attempt to separate query difficulty from method performance. The explicit reporting of an error rate at a fixed confidence threshold is a practical contribution for prospective users. The comparison of multiple search tools, including a language model baseline, addresses a current methodological question.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The benchmark analysis recovered the later-assigned function for 15.9% of retrospective DUF queries versus 30.1% of matched known-domain queries.</li>
+<li><strong>Evidence pointer</strong> Abstract, results section; location not provided</li>
+<li><strong>Concern</strong> The abstract reports recovery rates but provides no information on how these rates were calculated, what constituted a "recovery," how the difficulty matching was performed, or what statistical uncertainty surrounds these point estimates. Without details on the matching procedure, the comparability of the two arms is unclear, and the 15.9% versus 30.1% difference cannot be interpreted as a method effect versus a query difficulty effect.</li>
+<li><strong>Why it matters</strong> The central claim of the paper is that structural homology searches perform worse on DUFs than on known domains, and that this difference is attributable to the method rather than to the queries. If the difficulty matching is inadequate, the comparison is confounded and the conclusion is unsupported.</li>
+<li><strong>Resolution test</strong> Provide a description of the difficulty-matching algorithm, the distribution of matched features between arms, and confidence intervals or significance tests for the recovery rate difference.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> At a fixed confidence cut-off (qTM ≥ 0.5), 55.4% of informative calls on retrospective DUFs were incorrect, establishing an error model for prospective use.</li>
+<li><strong>Evidence pointer</strong> Abstract, results section; location not provided</li>
+<li><strong>Concern</strong> The abstract states that 55.4% of informative calls were incorrect but does not define what constitutes an "informative call," how the qTM threshold was chosen, whether this threshold was optimized on the benchmark, or how the error rate varies as a function of the threshold. The claim that this "establishes an error model" is not supported by a single point estimate.</li>
+<li><strong>Why it matters</strong> The error model is presented as a key practical output for prospective users. Without a characterization of the trade-off between recall and precision across thresholds, and without a definition of the call types, the error model cannot be applied by others.</li>
+<li><strong>Resolution test</strong> Provide a precision-recall curve or a table of error rates across qTM thresholds, define "informative call" operationally, and state whether the threshold was pre-specified or selected post hoc.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> Foldseek outperformed MMseq2-based sequence search but was not statistically separable from the ESM-2 protein language model embedding baseline.</li>
+<li><strong>Evidence pointer</strong> Abstract, results section; location not provided</li>
+<li><strong>Concern</strong> The abstract reports a comparative result without any statistical detail. No test names, effect sizes, or measures of variability are given. The phrase "not statistically separable" implies a test was performed, but the abstract does not state what test, what the sample size was, or what the power of the comparison was.</li>
+<li><strong>Why it matters</strong> The tool comparison is a central methodological contribution. Without statistical support, the claim that Foldseek outperforms MMseq2 but not ESM-2 is an unsupported assertion.</li>
+<li><strong>Resolution test</strong> Report the statistical test used, the test statistic, the p-value or confidence interval, and the number of queries included in the comparison.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility and resource availability</li>
+<li><strong>Claim pointer</strong> Applying the calibrated pipeline to 296 currently unannotated DUF queries in Pfam 38.0 yielded 50 confident, specific functional assignments.</li>
+<li><strong>Evidence pointer</strong> Abstract, results section; location not provided</li>
+<li><strong>Concern</strong> The abstract states that 50 confident assignments were made but does not define "confident" or "specific" in this context, does not state how these assignments were validated, and does not indicate whether any manual curation was performed. The claim that these are "specific" functional assignments is particularly strong and requires a definition of specificity.</li>
+<li><strong>Why it matters</strong> The resource of 50 assignments is a primary deliverable. If the confidence criteria are not transparent, users cannot assess the reliability of individual assignments, and the resource may be misused.</li>
+<li><strong>Resolution test</strong> Provide the operational definition of "confident" and "specific," describe any validation steps, and state whether the assignments were manually reviewed.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Benchmark description</li>
+<li><strong>Evidence pointer</strong> Abstract, methods description; location not provided</li>
+<li><strong>Issue</strong> The abstract states that the benchmark was assembled from Pfam families annotated as DUFs in Pfam 28.0 and assigned a function in Pfam 38.0, but does not state how many families were included, how the time split was defined, or whether any filtering was applied.</li>
+<li><strong>Required correction</strong> Provide the number of families in the benchmark and a brief description of the inclusion and exclusion criteria.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Masking procedure</li>
+<li><strong>Evidence pointer</strong> Abstract, methods description; location not provided</li>
+<li><strong>Issue</strong> The abstract mentions masking for self-family and self-clan level hits to remove circularity, but does not explain what these masks are or how they were applied.</li>
+<li><strong>Required correction</strong> Define self-family and self-clan masking in one or two sentences.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Model proteome selection</li>
+<li><strong>Evidence pointer</strong> Abstract, methods description; location not provided</li>
+<li><strong>Issue</strong> The abstract lists four model proteomes but does not state why these were chosen or whether results were consistent across them.</li>
+<li><strong>Required correction</strong> Add a sentence on the rationale for proteome selection and note whether recovery rates varied substantially across proteomes.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Resource description</li>
+<li><strong>Evidence pointer</strong> Abstract, resource statement; location not provided</li>
+<li><strong>Issue</strong> The abstract states that the benchmark and ranked candidates are provided as a resource, but does not specify the format, location, or any access restrictions.</li>
+<li><strong>Required correction</strong> State where and in what format the resource will be made available.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4. The abstract does not provide sufficient statistical or methodological detail to support the central quantitative claims. The error model, the tool comparison, and the difficulty-matched benchmark all require additional detail to be evaluable.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The time-split retrospective DUF benchmark is a novel and valuable contribution, though the concept of using historical annotations as ground truth is not entirely new. Scientific importance: The problem of reliable functional annotation from structural predictions is of high importance to the field, and a calibrated error model would be a practical contribution. Interdisciplinary readership: The work is primarily of interest to computational biologists and bioinformaticians; the abstract does not currently frame the results in a way that would attract a broader biological audience. Technical soundness: Not assessable from the abstract alone; the missing statistical and methodological details are a significant barrier. Readability for nonspecialists: The abstract is generally clear but uses field-specific terms (qTM, Foldseek, MMseq2, ESM-2) without sufficient context for a general reader.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The conceptual design is promising and the work is likely to be of interest, but the abstract does not provide enough detail to assess the validity of the central claims. A full manuscript with methods, statistical analyses, and validation details would be required to evaluate the case.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the benchmark "establishes an error model for prospective use" is unsupported by a single error rate at one threshold.</li>
+<li>The claim that Foldseek "outperformed" MMseq2 is unsupported without statistical detail.</li>
+<li>The claim that 50 assignments are "confident, specific" is unsupported without operational definitions.</li>
+<li>The comparability of the difficulty-matched arms is not assessable from the abstract.</li>
+<li>The generalizability of the results across the four model proteomes is not assessable.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

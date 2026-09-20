@@ -1,0 +1,84 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report a bioinformatics pipeline integrating genomic deletion mapping, differential expression analysis, PPI network construction, hub gene identification, mutation analysis, and molecular dynamics simulation to propose that GABA(A) receptor subunits, particularly CACNA1D, GABRA1, and GABRB2, may act as tumor suppressors and therapeutic targets in glioblastoma
+- **Visible evidence base** Abstract text only; no datasets, statistical outputs, simulation parameters, or validation results are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, dataset identifiers, statistical methods and thresholds, MD simulation parameters and convergence criteria, mutation impact prediction details, and any experimental validation
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible multi-step bioinformatics workflow with a coherent narrative linking chromosomal deletions to GABA(A) receptor signaling in GBM. However, the evidence as presented is insufficient to establish the central claims. The abstract reports results without providing any quantitative data, statistical measures, or methodological details necessary to evaluate rigor. The leap from computational predictions to statements about tumor-suppressive roles and therapeutic potential is not supported by the visible evidence. The work may have interest as a hypothesis-generating study, but the current abstract does not demonstrate that the case is established.
+- **Who would be interested in the results, and why** Researchers in glioblastoma biology and neuro-oncology may find the focus on GABA(A) receptor signaling as a potential GBM target of interest. Computational biologists working on integrative genomic analyses of cancer deletion regions may be interested in the methodological pipeline. Drug discovery researchers exploring repurposing of GABAergic agents such as meprobamate for oncology applications could also find the work relevant. The interdisciplinary nature of the approach may attract readers from both bioinformatics and molecular neuroscience communities.
+- **Major strengths** The study addresses a clinically relevant problem, namely the need for novel biomarkers and therapeutic targets in GBM. The integration of multiple bioinformatics resources and tools (BioMart, GEO2R, STRING, GEPIA2, cBioPortal, GROMACS) represents a comprehensive computational approach. The focus on deletion regions as a strategy to identify candidate tumor suppressors is methodologically sound. The inclusion of molecular dynamics simulations adds a structural dimension that goes beyond standard expression-based analyses.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical rigor and evidence quality
+  - **Claim pointer** The authors claim identification of 1704 dDEGs and significant downregulation of 11 hub genes in TCGA GBM samples
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No statistical thresholds, effect sizes, p-values, or adjusted significance criteria are reported for the differential expression analysis or for the identification of the 1704 dDEGs. The term "significantly downregulated" is used without any quantitative support. The criteria for hub gene selection from the PPI network are not described.
+  - **Why it matters** Without explicit statistical parameters, the reader cannot assess whether the findings are robust or could arise from lenient thresholds or multiple testing artifacts. The core claim of the paper depends entirely on the validity of these selection steps.
+  - **Resolution test** Provide the full statistical framework including significance thresholds, multiple testing correction methods, effect size distributions, and hub gene selection criteria. Report the number of samples per group and the specific GEO dataset identifiers.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Causal inference
+  - **Claim pointer** The authors state that CACNA1D, GABRA1, and GABRB2 "may have potential tumor-suppressive roles in GBM"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract presents only correlative evidence: genes are located in deletion regions, are downregulated, and harbor predicted deleterious mutations. No functional experiments, loss-of-function or gain-of-function studies, or animal model data are presented. The term "tumor-suppressive roles" implies a functional claim that cannot be established from bioinformatics alone.
+  - **Why it matters** Tumor suppressor designation carries significant biological and clinical weight. Making this claim without functional validation risks overinterpretation and could mislead subsequent research efforts.
+  - **Resolution test** Either temper the language to "candidate tumor suppressors" or provide experimental evidence such as cell proliferation assays, colony formation, migration/invasion assays, or in vivo tumor growth studies with modulation of these genes.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Structural and simulation validity
+  - **Claim pointer** The authors state that mutations in CACNA1D, GABRA1, and GABRB2 were "predicted to disrupt protein structure and function" and that MD simulations showed meprobamate "remained associated with the GABA(A) receptor but exhibited time-dependent repositioning"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No details are provided on the mutation prediction tools used, the confidence scores, or the structural models employed. For the MD simulations, the abstract does not report simulation length, force field, water model, temperature/pressure coupling, equilibration protocol, or convergence metrics. The biological relevance of "time-dependent repositioning" is unclear without quantitative measures such as binding free energy, RMSD, or contact analysis.
+  - **Why it matters** The structural and simulation components are presented as supporting evidence for the therapeutic target claim. Without methodological transparency, these results cannot be evaluated for technical soundness or reproducibility.
+  - **Resolution test** Provide complete details of mutation prediction methods and scores, the structural templates used, and full MD simulation parameters. Report quantitative binding metrics and show that the simulation reached equilibrium. Clarify what "time-dependent repositioning" means in structural terms and why it is biologically significant.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Therapeutic claim
+  - **Claim pointer** The authors state that "GABA(A) receptors may represent potential molecular targets in GBM, warranting further experimental investigation"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The selection of meprobamate as an agonist is not justified in the abstract. No rationale is given for choosing this compound over other GABA(A) receptor modulators. The therapeutic relevance of targeting GABA(A) receptors in GBM is asserted but not contextualized with existing literature on GABAergic signaling in cancer.
+  - **Why it matters** The therapeutic targeting claim is a key translational output of the study. Without justification for compound selection and context for the therapeutic hypothesis, the claim appears arbitrary.
+  - **Resolution test** Provide a rationale for meprobamate selection based on drug repurposing criteria, bioavailability, blood-brain barrier penetration, or existing safety data. Discuss the current state of knowledge on GABA(A) receptor expression and function in GBM and other cancers.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Methodological transparency
+  - **Affected element** Data sources
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract does not specify which microarray datasets were analyzed, how many samples were included, or whether normal brain tissue controls were appropriately matched.
+  - **Required correction** List the GEO dataset identifiers, sample sizes, and tissue types in the abstract or methods.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Interpretive clarity
+  - **Affected element** GABA(A) receptor claim
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract states that "subunits of the entire GABA(A) receptor complex" were among the 11 hub genes. This phrasing is ambiguous regarding whether all GABA(A) receptor subunits were downregulated or only a subset.
+  - **Required correction** Specify which subunits were identified and clarify the extent of the downregulation across the receptor complex.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Language precision
+  - **Affected element** Conclusion wording
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The phrase "may have potential tumor-suppressive roles" is doubly hedged and imprecise. It is unclear whether the authors intend a strong or weak claim.
+  - **Required correction** Use more precise language such as "are candidate tumor suppressors requiring functional validation" or "are predicted to have tumor-suppressive functions based on computational analysis."
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Validation status
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract does not mention any form of validation, whether computational (e.g., independent cohorts) or experimental.
+  - **Required correction** State whether any validation was performed and if not, explicitly acknowledge the lack of validation as a limitation.
+
+## Risk / unsupported claims
+- The claim that CACNA1D, GABRA1, and GABRB2 "may have potential tumor-suppressive roles in GBM" is unsupported by the visible evidence, which is purely computational and correlative
+- The claim that mutations in these genes are "predicted to disrupt protein structure and function" is unverifiable without details of the prediction methods and scores
+- The claim that meprobamate "remained associated with the GABA(A) receptor" is unverifiable without MD simulation parameters and quantitative binding metrics
+- The therapeutic potential claim for GABA(A) receptors in GBM is asserted without supporting literature context or experimental evidence
+- The identification of 1704 dDEGs and 11 hub genes is not assessable without statistical thresholds and dataset details

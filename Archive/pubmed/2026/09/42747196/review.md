@@ -1,0 +1,87 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report discovery of a novel thermostable 3-quinuclidinone reductase (ScQR) from hot spring metagenomes, its heterologous expression, biochemical characterization, structural analysis, molecular dynamics simulations, and computational design of improved variants for industrial biocatalysis.
+- **Visible evidence base** Abstract text only; no experimental data, figures, tables, or methods are available for verification
+- **Missing materials affecting confidence** Full manuscript, all experimental data, structural coordinates, simulation parameters, variant sequences, assay protocols, and statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting enzyme discovery with claims of exceptional thermostability and stereoselectivity. However, the evidence base is limited to the abstract, and several claims lack sufficient detail to assess their validity. The work could be of interest to the biocatalysis community, but the current presentation does not allow for rigorous evaluation of the central conclusions.
+- **Who would be interested in the results, and why** Researchers in biocatalysis, enzyme engineering, and pharmaceutical synthesis would be interested in a novel thermostable reductase with high stereoselectivity for (R)-3-quinuclidinol, a key chiral building block. The metagenomic mining approach and computational design workflow may also appeal to those working on enzyme discovery from extreme environments.
+- **Major strengths** The discovery of a thermostable SDR enzyme from hot spring metagenomes is a relevant contribution. The combination of experimental characterization with molecular dynamics and structure-guided design is a modern and potentially powerful approach. The reported thermal stability (86% activity after 48 hours at 70 degrees C) is notable if accurately measured.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The enzyme demonstrates exceptional thermal stability, retaining 86% of its activity after 48 hours at 70 degrees C.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract provides no information on how activity was measured, what substrate concentration was used, what the assay conditions were, or whether the 86% retention is relative to initial activity under identical conditions. No replicates, error bars, or statistical analysis are mentioned.
+  - **Why it matters** Thermal stability is a central claim of the paper and a key selling point for industrial applications. Without assay details and statistical support, the claim cannot be evaluated or reproduced.
+  - **Resolution test** Provide full experimental methods, including assay conditions, substrate concentrations, time courses, and replicate data with statistical analysis. Show that the 86% retention is reproducible and not an artifact of assay conditions.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The enzyme exhibits optimal activity at pH 9 and 85 degrees C.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract states optimal activity at 85 degrees C, but also claims thermal stability at 70 degrees C. No data are shown for activity at different temperatures or pH values, and it is unclear whether the enzyme retains activity at 85 degrees C over time or only in short assays.
+  - **Why it matters** The optimal temperature claim is central to the enzyme's industrial relevance. Without a clear activity profile and stability data at the optimal temperature, the claim is unsupported.
+  - **Resolution test** Provide full temperature and pH activity profiles, including stability data at 85 degrees C, with appropriate controls and replicates.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** Structure-guided computational design enabled by LigandMPNN and UniKP yielded three ScQR variants with improved substrate affinity and catalytic efficiency while maintaining the overall fold and function.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract claims improved variants but provides no quantitative data on the degree of improvement, the specific mutations introduced, or how the variants were validated experimentally. It is unclear whether the improvements are statistically significant and whether the variants were tested under the same conditions as the wild type.
+  - **Why it matters** The computational design is a major component of the paper's novelty. Without quantitative comparison of kinetic parameters and stability between wild type and variants, the claim of improvement is not established.
+  - **Resolution test** Provide kinetic parameters (Km, kcat, catalytic efficiency) for wild type and each variant, with statistical analysis, and demonstrate that the fold and function are maintained through structural or biophysical evidence.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** Molecular dynamics simulations further revealed that ScQR preserves global structural integrity up to 360 K, whereas higher temperatures induce destabilization, predominantly in the C-terminal region and residues 95-100.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract reports simulation results but provides no details on simulation length, force field, solvent model, or how structural integrity was quantified. The claim about specific destabilized regions is presented without supporting data.
+  - **Why it matters** The MD simulations are used to explain the enzyme's thermal behavior. Without methodological details and quantitative measures of structural integrity, the conclusions are not verifiable.
+  - **Resolution test** Provide full simulation parameters, convergence criteria, and quantitative measures of structural stability (e.g., RMSD, RMSF) with appropriate analysis.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Enzyme nomenclature
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The enzyme is named ScQR, but the source organism is not identified. It is unclear whether ScQR is derived from a specific organism or is a metagenomic sequence.
+  - **Required correction** Clarify the origin of the sequence and the basis for the enzyme name.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Ion effects
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract states that K(+) and Mg(2)(+) ions significantly enhanced activity at specific concentrations, but no concentrations or fold enhancements are given.
+  - **Required correction** Provide specific concentrations and quantitative enhancement data.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Stereoselectivity claim
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The claim of high stereoselectivity for (R)-3-quinuclidinol with no activity against (S)-3-quinuclidinol is stated without assay details or detection limits.
+  - **Required correction** Specify the assay method, detection limits, and how "no activity" was determined.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The central claims of thermostability, optimal activity, variant improvement, and MD-based structural analysis are all unsupported by the abstract alone. Experimental and computational details are required to establish the case.
+- **Assessment against Nature-style criteria** 
+  - Originality: The metagenomic discovery of a thermostable SQR is potentially original, but the abstract does not demonstrate how this enzyme differs functionally from known SQRs beyond stability.
+  - Scientific importance: The enzyme could be useful for pharmaceutical synthesis, but the importance is not fully established without quantitative comparisons to existing biocatalysts.
+  - Interdisciplinary readership: The work spans metagenomics, enzymology, and computational design, which could appeal to a broad audience, but the abstract is too brief to engage nonspecialists.
+  - Technical soundness: Cannot be assessed from the abstract alone. Key experimental and computational details are missing.
+  - Readability for nonspecialists: The abstract is generally readable but uses technical terms without sufficient context.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents interesting claims, but the lack of experimental detail and quantitative data prevents evaluation of the central conclusions. A full manuscript with complete methods and results would be required to assess the work.
+
+## Risk / unsupported claims
+- Exceptional thermal stability (86% activity after 48 hours at 70 degrees C) is unsupported without assay details and replicates.
+- Optimal activity at pH 9 and 85 degrees C is unsupported without activity profiles.
+- K(+) and Mg(2)(+) enhancement is unsupported without concentrations and quantitative data.
+- High stereoselectivity with no activity against (S)-3-quinuclidinol is unsupported without assay details and detection limits.
+- Three improved variants from computational design are unsupported without kinetic data and validation.
+- MD simulation conclusions about structural integrity and destabilized regions are unsupported without methodological details.
+- The claim that ScQR is "one of the most heat-resistant members of the SDR superfamily" is not verifiable without comparative data against other SDR enzymes.

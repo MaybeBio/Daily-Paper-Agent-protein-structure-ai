@@ -1,0 +1,78 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and methods as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report an integrated computational workflow (ADMET screening, molecular docking, molecular dynamics simulations) applied to 35 known HDAC inhibitors to identify potential HDAC11 inhibitors. Five compounds were shortlisted. Mocetinostat showed the highest docking affinity (-8.70 kcal/mol) with acceptable pharmacokinetics; Belinostat showed the safest toxicity profile; Resminostat showed favorable drug-likeness. Nanatinostat-HDAC11 and Resminostat-HDAC11 complexes exhibited high structural stability over 500 ns MD simulations. The authors conclude these are promising candidates for experimental validation.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or numerical results beyond those stated in the abstract
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, MD trajectory data, docking poses, ADMET output tables, force field parameter details, system setup information, validation run results, and any statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a straightforward computational screening study with a logical workflow. However, the evidence provided in the abstract is insufficient to evaluate the technical rigor of the methods or the validity of the conclusions. Several claims lack quantitative support, and the relationship between docking scores, MD stability, and actual inhibitor efficacy is not established. The study may be of interest to computational chemists working on HDAC inhibitors, but the case for "targeted chemotherapy" is not supported by the presented evidence.
+- **Who would be interested in the results, and why** Computational medicinal chemists and structural biologists working on histone deacetylase inhibitors may find the workflow and candidate identification useful as a starting point for further studies. Researchers focused on HDAC11 as a cancer target may also be interested, though the lack of experimental validation limits broader appeal.
+- **Major strengths** The workflow integrates multiple computational filters (ADMET, docking, MD) in a logical sequence. The use of long-timescale MD (500 ns) with triplicate validation runs is commendable. The authors explicitly acknowledge the need for experimental validation.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Mocetinostat exhibited the highest binding affinity toward HDAC11 (-8.70 kcal/mol)"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The docking score is presented as a single value without any measure of uncertainty, comparison to a positive control, or validation of the docking protocol. No information is provided on how the HDAC11 structure was prepared, whether known inhibitors were used to validate the docking setup, or whether multiple conformations were considered.
+  - **Why it matters** A single docking score without context or validation cannot establish binding affinity. Docking scores are highly sensitive to protein preparation, grid placement, and scoring function choice. Without a validated protocol, the ranking of compounds may be artifactual.
+  - **Resolution test** Provide docking validation results (e.g., redocking of co-crystallized ligands with RMSD values), include multiple docking runs with standard deviations, and compare against a known HDAC11 inhibitor as a positive control.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Comparative MD analyses over 500 ns revealed high structural stability for the Nanatinostat-HDAC11 and Resminostat-HDAC11 complexes by lower RMSD, reduced residue fluctuations, and more stable hydrogen bond interactions"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The claim of "high structural stability" is based on qualitative descriptors (lower, reduced, more stable) without any numerical values, statistical comparisons, or reference to what constitutes "high" stability. No RMSD or RMSF values are provided, and there is no comparison to the other three shortlisted compounds or to an apo form of the protein.
+  - **Why it matters** Without quantitative data and appropriate comparators, the conclusion that these two complexes are more stable than others cannot be evaluated. MD stability is context-dependent, and claims of stability require numerical thresholds or statistical testing.
+  - **Resolution test** Provide mean and standard deviation of RMSD and RMSF for all five complexes, include statistical tests comparing the two claimed stable complexes against the others, and show representative trajectory plots.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** "These findings highlight promising HDAC11 inhibitors for further experimental validation in anticancer drug development"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The leap from computational predictions to "promising inhibitors for anticancer drug development" is not supported. No experimental data, cellular assays, or in vivo studies are presented. The abstract does not establish that any of these compounds actually inhibits HDAC11 in a biological context, nor that HDAC11 inhibition translates to anticancer activity for these specific compounds.
+  - **Why it matters** Computational predictions alone, especially without experimental validation, cannot support claims of therapeutic promise. The title's reference to "targeted chemotherapy" implies a clinical relevance that is not demonstrated.
+  - **Resolution test** Either temper the conclusion to reflect the computational nature of the study, or provide experimental validation data (e.g., enzymatic assays, cell viability assays) demonstrating HDAC11 inhibition and anticancer activity.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract context
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract assumes familiarity with HDAC biology and computational methods without sufficient context for a general scientific audience.
+  - **Required correction** Briefly explain why HDAC11 is a relevant cancer target and define key terms such as TPSA and LD50 in context.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Force field choice
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The CHARMM27 force field is outdated for protein-ligand simulations, and its use with the TIP3P water model for a small molecule inhibitor may not be optimal. No justification is provided for this choice.
+  - **Required correction** Justify the force field selection or use a more current force field (e.g., CHARMM36) with appropriate ligand parameters.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Simulation time description
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states "A total of 3.5 micros of molecular dynamics simulations were performed, including a 500 ns production run and triplicate 100 ns validation runs for each complex." The arithmetic is unclear. For five complexes, triplicate 100 ns runs would total 1.5 microseconds, plus 500 ns production runs for five complexes would total 2.5 microseconds, summing to 4.0 microseconds, not 3.5.
+  - **Required correction** Clarify the simulation time accounting or correct the total.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Compound selection rationale
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states five compounds were shortlisted but only three are discussed in the results (Mocetinostat, Belinostat, Resminostat, Nanatinostat). The criteria for shortlisting and the fate of the other two compounds are unclear.
+  - **Required correction** Clearly state which five compounds were shortlisted and provide results for all five, or explain why only three are discussed.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (docking validation), R1-M2 (quantitative MD analysis), R1-M3 (overstated conclusions without experimental support)
+- **Assessment against Nature-style criteria** Originality: The workflow is standard and does not present a novel methodological approach. Scientific importance: HDAC11 is a relevant target, but the study does not advance understanding of HDAC11 biology or inhibition beyond what is already known. Interdisciplinary readership: The abstract is likely to appeal primarily to computational chemists; the lack of experimental validation limits broader appeal. Technical soundness: Cannot be fully assessed from the abstract, but the identified issues with docking validation and MD analysis raise concerns. Readability for nonspecialists: The abstract is dense with jargon and assumes significant background knowledge.
+- **Recommendation posture** Currently not established from the provided evidence. The computational workflow is reasonable, but the claims require substantial additional evidence, including docking validation, quantitative MD results, and either tempered conclusions or experimental support.
+
+## Risk / unsupported claims
+- The claim that Mocetinostat has the "highest binding affinity" based on a single docking score is unsupported without protocol validation.
+- The claim of "high structural stability" for Nanatinostat-HDAC11 and Resminostat-HDAC11 complexes is unsupported without quantitative data and statistical comparisons.
+- The conclusion that these compounds are "promising HDAC11 inhibitors for further experimental validation in anticancer drug development" is unsupported by the evidence presented, as no experimental validation is included.
+- The total simulation time of 3.5 microseconds is arithmetically inconsistent with the stated simulation lengths.
+- The selection criteria for the five shortlisted compounds and the results for all five are not fully described.

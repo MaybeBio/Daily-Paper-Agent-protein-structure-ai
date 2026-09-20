@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A structural antibody benchmark for leakage-aware deep-learning evaluation · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>A structural antibody benchmark for leakage-aware deep-learning evaluation</h1>
+      <div class="meta">Cohen T; Bhattacharya H; Ozery-Flato M; Schneidman D</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-13
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.06.749672">原文</a>
+      </div>
+      <p class="one-liner">该文构建了防泄漏的抗体结构基准数据集SABLE，用于深度学习抗体结构预测与相互作用建模的标准化评估，直接服务于蛋白质结构计算研究。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Deep-learning methods for antibody structure prediction, antibody-antigen interaction modelling and design are advancing rapidly. However, comparisons across studies remain difficult because training and test sets are often constructed independently, and a temporal cutoff alone does not prevent train-test leakage. We present SABLE (Structural Antibody Benchmark for deep-Learning Evaluation), a versioned structural antibody resource that couples a fixed training collection with a leakage-controlled held-out test set for reproducible machine-learning development and evaluation. SABLE combines 16,511 experimental training entries with 327 manually reviewed test entries and 3,274 high-confidence, patent-derived AlphaFold3 models spanning 476 antigens. Candidate test structures were selected after the AlphaFold3 temporal cutoff and filtered against the training set using antibody and antigen sequence similarity filters. Each test entry records its nearest training set neighbour, allowing users to quantify remaining relatedness and stratify performance by similarity. Versioned releases provide metadata, processed structures, CDR annotations, redundancy labels and model-confidence fields. A Python/PyTorch API and standardised benchmark metrics provide reproducible database access and evaluation code without requiring additional antibody-structure processing.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">基于深度学习的抗体结构预测、抗体-抗原相互作用建模与设计方法正在快速发展。然而，由于训练集和测试集通常独立构建，且仅凭时间截断无法防止训练-测试泄漏，跨研究比较仍具挑战性。我们提出SABLE（Structural Antibody Benchmark for deep-Learning Evaluation），一个版本化的结构抗体资源，将固定训练集与泄漏控制的留出测试集相结合，用于可复现的机器学习开发和评估。SABLE整合了16,511个实验训练条目、327个经人工审核的测试条目，以及3,274个高置信度、源自专利的AlphaFold3模型，覆盖476种抗原。候选测试结构在AlphaFold3时间截断之后选定，并通过抗体和抗原序列相似性过滤器与训练集进行筛选。每个测试条目记录其最近训练集邻居，使用户能够量化剩余相关性并按相似性分层评估性能。版本化发布提供元数据、处理后的结构、CDR注释、冗余标签和模型置信度字段。Python/PyTorch API和标准化基准指标提供可复现的数据库访问和评估代码，无需额外处理抗体结构。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：A structural antibody benchmark for leakage-aware deep-learning evaluation</li>
+<li><strong>作者</strong>：Cohen T; Bhattacharya H; Ozery-Flato M; Schneidman D</li>
+<li><strong>单位</strong>：未提供（根据作者姓名推测可能来自以色列相关研究机构，但原文未提供）</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法/资源型论文）</li>
+<li><strong>领域</strong>：抗体结构预测、抗体-抗原相互作用建模、深度学习评估基准</li>
+<li><strong>关键词</strong>：antibody structure prediction, benchmark, data leakage, deep learning, AlphaFold3, evaluation</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.06.749672</li>
+<li><strong>代码</strong>：未提供（文中提及提供 Python/PyTorch API，但未给出具体仓库地址）</li>
+<li><strong>数据</strong>：SABLE 数据库（16,511 训练条目 + 327 人工审核测试条目 + 3,274 专利衍生 AlphaFold3 模型）</li>
+<li><strong>阅读日期</strong>：2026-09-13（根据预印本日期推断）</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>基准测试与数据泄漏控制</strong>子方向。它不提出新的预测模型，而是提供一个<strong>泄漏感知的评估框架</strong>，直接回应深度学习抗体结构预测中训练/测试集泄漏导致评估虚高的问题。对本课题的可迁移价值在于：其<strong>序列相似性过滤 + 最近邻记录 + 分层评估</strong>的设计模式可迁移到任何蛋白质结构预测/对接/设计任务的基准构建中。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文构建了一个名为 SABLE 的版本化抗体结构基准资源，通过将固定训练集与经过序列相似性过滤、在 AlphaFold3 时间截点之后选取的测试集配对，并记录每个测试条目与训练集的最近邻相似度，使深度学习抗体结构预测的评估可复现且可量化泄漏程度。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何构建一个抗体结构预测基准，使得训练集与测试集之间的泄漏可被量化、控制，并支持可复现的深度学习评估？</li>
+<li><strong>为什么重要</strong>：抗体结构预测、抗体-抗原相互作用建模和设计领域的深度学习方法进展迅速，但不同研究之间的比较困难，因为训练集和测试集常独立构建，且仅靠时间截点无法防止训练-测试泄漏。泄漏会导致评估结果虚高，误导方法比较和领域进展判断。</li>
+<li><strong>现有方法为何不足</strong>：现有基准（如 SAbDab 衍生的数据集）通常只提供结构数据，不提供泄漏控制机制；时间截点（temporal cutoff）只能防止未来数据进入训练集，但无法防止同源序列或相同抗体在不同时间点被重新解析并分入不同集合。</li>
+<li><strong>精确研究问题</strong>：Can a versioned structural antibody benchmark with sequence-similarity-based leakage filtering and nearest-neighbor annotation enable reproducible and leakage-aware evaluation of deep-learning antibody structure prediction methods?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架构建，标注为「仅本文框架」，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法/资源</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期</td>
+<td>基于 PDB 的抗体结构数据集（如 SAbDab）</td>
+<td>提供真实实验结构</td>
+<td>无标准化划分，训练/测试可能重叠</td>
+<td>本文不依赖单一 PDB 快照，提供版本化资源</td>
+</tr>
+<tr>
+<td>中期</td>
+<td>时间截点划分（temporal split）</td>
+<td>简单、可复现</td>
+<td>无法防止同源序列泄漏；同一抗体可能在不同时间被重新解析</td>
+<td>本文在时间截点之外增加序列相似性过滤</td>
+</tr>
+<tr>
+<td>近期</td>
+<td>AlphaFold3 等生成模型用于抗体结构预测</td>
+<td>高精度、可批量生成</td>
+<td>模型本身可能已见过测试结构；评估时难以区分模型能力与数据泄漏</td>
+<td>本文测试集包含 AlphaFold3 专利衍生模型，但经过时间截点和相似性双重过滤</td>
+</tr>
+<tr>
+<td>本文</td>
+<td>SABLE 基准</td>
+<td>固定训练集 + 泄漏控制测试集 + 最近邻记录 + 版本化发布</td>
+<td>测试集规模有限（327 人工审核条目）</td>
+<td>本文位置：提供泄漏感知的标准化评估基础设施</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练-测试泄漏</td>
+<td>不同研究使用独立构建的训练/测试集，同源序列可能同时出现在两侧</td>
+<td>仅靠时间截点无法防止泄漏；同一抗体可能在不同时间被重新解析</td>
+<td>摘要：「a temporal cutoff alone does not prevent train-test leakage」</td>
+</tr>
+<tr>
+<td>评估不可复现</td>
+<td>不同研究的数据处理流程不同，结果难以直接比较</td>
+<td>缺乏标准化的版本化数据资源和统一的评估代码</td>
+<td>摘要：「comparisons across studies remain difficult because training and test sets are often constructed independently」</td>
+</tr>
+<tr>
+<td>泄漏程度不可量化</td>
+<td>用户无法知道测试条目与训练集的相似程度</td>
+<td>现有基准不记录最近邻信息</td>
+<td>摘要：「Each test entry records its nearest training set neighbour, allowing users to quantify remaining relatedness」</td>
+</tr>
+<tr>
+<td>数据版本漂移</td>
+<td>PDB 持续更新，同一基准在不同时间构建结果不同</td>
+<td>缺乏版本化发布机制</td>
+<td>摘要：「versioned structural antibody resource」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>SABLE 是一个版本化的抗体结构基准资源，包含：
+- <strong>固定训练集</strong>：16,511 个实验结构条目
+- <strong>测试集</strong>：327 个人工审核的实验结构条目 + 3,274 个高置信度、专利衍生的 AlphaFold3 模型（覆盖 476 个抗原）
+- <strong>泄漏控制</strong>：测试候选结构在 AlphaFold3 时间截点之后选取，并用抗体和抗原序列相似性过滤器过滤
+- <strong>最近邻记录</strong>：每个测试条目记录其与训练集的最近邻，允许用户量化剩余相关性
+- <strong>API 与指标</strong>：Python/PyTorch API 和标准化基准指标</p>
+<h3>2) 核心洞察</h3>
+<p>[Analysis] 本文的核心洞察在于：<strong>泄漏不是二元的（有/无），而是连续的（程度可量化）</strong>。与其试图完全消除泄漏（这在结构生物学中几乎不可能，因为同一抗体家族天然共享序列和结构特征），不如<strong>显式记录并暴露泄漏程度</strong>，让用户自行决定如何分层评估。这一设计哲学将「泄漏」从隐藏的缺陷转变为可审计的元数据。</p>
+<p>另一个洞察是：<strong>时间截点 + 序列相似性过滤是互补的</strong>。时间截点防止未来数据泄漏，序列相似性过滤防止同源数据泄漏，两者结合才能有效控制泄漏。</p>
+<h3>3) 可能的普适教训</h3>
+<p>[Analysis] 对于蛋白质结构相关计算研究，本文的设计模式可迁移为：
+- <strong>任何结构预测基准都应记录测试条目与训练集的最近邻相似度</strong>，而非仅提供二元「是否泄漏」标签
+- <strong>版本化发布</strong>是保证可复现评估的基础设施，而非可选项
+- <strong>专利数据库可作为测试集的补充来源</strong>，因为专利序列通常不在公共训练数据中，天然降低了泄漏风险</p>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：PDB 中的实验抗体结构、专利数据库中的抗体序列</li>
+<li><strong>输出</strong>：版本化的 SABLE 基准资源（训练集 + 测试集 + 元数据 + API）</li>
+<li><strong>模块</strong>：
+  1. <strong>训练集构建</strong>：从 PDB 收集 16,511 个实验抗体结构条目
+  2. <strong>测试集构建</strong>：327 个人工审核的实验结构 + 3,274 个 AlphaFold3 专利衍生模型
+  3. <strong>泄漏过滤</strong>：抗体和抗原序列相似性过滤器
+  4. <strong>最近邻注释</strong>：每个测试条目记录与训练集的最近邻
+  5. <strong>元数据与 API</strong>：版本化发布，提供 CDR 注释、冗余标签、模型置信度字段</li>
+<li><strong>训练</strong>：不涉及模型训练，仅提供数据资源</li>
+<li><strong>工具</strong>：Python/PyTorch API</li>
+<li><strong>反馈回路</strong>：不适用（非迭代方法）</li>
+<li><strong>假设</strong>：</li>
+<li>序列相似性过滤能有效控制结构层面的泄漏</li>
+<li>AlphaFold3 时间截点之后的专利衍生模型具有足够的结构置信度</li>
+<li>327 个人工审核测试条目足以代表抗体结构预测的评估需求</li>
+</ul>
+<p><strong>文字流程</strong>：
+1. 从 PDB 收集实验抗体结构 → 构建训练集（16,511 条目）
+2. 从专利数据库获取抗体序列 → 用 AlphaFold3 生成结构模型 → 筛选高置信度模型（3,274 个）
+3. 人工审核测试候选结构 → 保留 327 个实验结构
+4. 对测试候选应用序列相似性过滤（抗体 + 抗原）→ 排除与训练集高度相似的条目
+5. 对每个测试条目计算并记录与训练集的最近邻相似度
+6. 打包为版本化资源，提供元数据、CDR 注释、冗余标签、置信度字段
+7. 发布 Python/PyTorch API 和标准化评估指标</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练集（16,511 实验条目）</td>
+<td>提供固定训练数据</td>
+<td>保证不同研究使用相同训练数据，实现可复现比较</td>
+<td>输入：PDB 结构；输出：标准化训练集</td>
+<td>摘要：「fixed training collection」</td>
+<td>[预期] 移除后无法保证训练数据一致性，评估不可复现</td>
+</tr>
+<tr>
+<td>测试集（327 人工审核 + 3,274 AlphaFold3 模型）</td>
+<td>提供泄漏控制的评估数据</td>
+<td>测试集需独立于训练集且覆盖多样抗原</td>
+<td>输入：实验结构 + 专利序列；输出：测试集</td>
+<td>摘要：「leakage-controlled held-out test set」</td>
+<td>[预期] 移除后无法进行标准化评估</td>
+</tr>
+<tr>
+<td>序列相似性过滤</td>
+<td>排除与训练集高度相似的测试条目</td>
+<td>防止同源序列泄漏</td>
+<td>输入：测试候选序列 + 训练集序列；输出：过滤后的测试集</td>
+<td>摘要：「filtered against the training set using antibody and antigen sequence similarity filters」</td>
+<td>[预期] 移除后泄漏风险显著增加，评估虚高</td>
+</tr>
+<tr>
+<td>最近邻注释</td>
+<td>记录每个测试条目与训练集的最近邻</td>
+<td>允许用户量化剩余相关性并分层评估</td>
+<td>输入：测试条目 + 训练集；输出：最近邻相似度记录</td>
+<td>摘要：「Each test entry records its nearest training set neighbour」</td>
+<td>[预期] 移除后用户无法感知剩余泄漏程度</td>
+</tr>
+<tr>
+<td>版本化发布</td>
+<td>提供固定版本的数据和元数据</td>
+<td>保证长期可复现性</td>
+<td>输入：数据快照；输出：版本化资源</td>
+<td>摘要：「versioned structural antibody resource」</td>
+<td>[预期] 移除后数据漂移导致评估不可比</td>
+</tr>
+<tr>
+<td>Python/PyTorch API</td>
+<td>提供标准化数据访问和评估代码</td>
+<td>降低使用门槛，保证评估一致性</td>
+<td>输入：API 调用；输出：数据加载和指标计算</td>
+<td>摘要：「Python/PyTorch API and standardised benchmark metrics」</td>
+<td>[预期] 移除后用户需自行处理数据，引入额外变量</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用。本文为基准资源描述，未提供数学公式。核心概念（序列相似性过滤、最近邻记录）均为算法流程而非数学表达式。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：16,511 训练条目（实验结构）；327 人工审核测试条目（实验结构）；3,274 AlphaFold3 专利衍生模型（覆盖 476 个抗原）</li>
+<li><strong>规模</strong>：总计约 20,000 个结构条目</li>
+<li><strong>指标</strong>：未提供具体指标（文中提及「standardised benchmark metrics」但未列出具体名称）</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：AlphaFold3（用于生成专利衍生模型）</li>
+<li><strong>Oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供具体协议细节</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>测试集构建</td>
+<td>测试候选在 AlphaFold3 时间截点之后选取</td>
+<td>时间截点过滤</td>
+<td>测试集包含时间截点后的结构</td>
+<td>防止未来数据泄漏</td>
+<td>不能证明时间截点完全消除泄漏</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>序列相似性过滤</td>
+<td>过滤后测试集与训练集无高相似条目</td>
+<td>抗体 + 抗原序列相似性过滤</td>
+<td>测试集通过过滤</td>
+<td>降低同源泄漏风险</td>
+<td>不能证明过滤完全消除结构相似性</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>最近邻注释</td>
+<td>每个测试条目可量化与训练集的相似度</td>
+<td>最近邻计算</td>
+<td>每个测试条目有最近邻记录</td>
+<td>用户可分层评估</td>
+<td>不能证明最近邻记录覆盖所有泄漏维度</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>专利衍生模型</td>
+<td>AlphaFold3 模型可作为测试集补充</td>
+<td>高置信度筛选</td>
+<td>3,274 个模型入选</td>
+<td>扩大测试集覆盖</td>
+<td>不能证明专利模型与实验结构等价</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文不提出新的预测方法，而是提供评估基础设施。其结论边界为：SABLE 是一个可用于抗体结构预测深度学习评估的版本化基准资源。</li>
+<li><strong>Oracle/真值输入</strong>：测试集中的实验结构来自 PDB，AlphaFold3 模型来自专利序列预测。实验结构作为真值，AlphaFold3 模型作为补充测试数据。</li>
+<li><strong>端到端状态</strong>：本文提供的是数据资源 + API，不涉及端到端模型训练或推理。</li>
+<li><strong>算力成本</strong>：未提供。AlphaFold3 模型生成需要 GPU 资源，但具体成本未披露。</li>
+<li><strong>历史数据依赖</strong>：训练集来自 PDB 历史积累，测试集在 AlphaFold3 时间截点后选取。</li>
+<li><strong>模型依赖</strong>：AlphaFold3 用于生成专利衍生测试模型，其质量直接影响测试集可靠性。</li>
+<li><strong>最难情形</strong>：本文未讨论最难情形。可推测：与训练集高度同源但通过过滤的测试条目可能是最难评估的情形。</li>
+<li><strong>群体/领域边界</strong>：SABLE 仅覆盖抗体结构，不涵盖其他蛋白质类型。测试集规模（327 人工审核条目）相对较小，可能不足以支撑高统计功效的评估。</li>
+<li><strong>不确定性</strong>：未提供置信区间或不确定性量化。</li>
+</ul>
+<p><strong>有边界的复述</strong>：SABLE 提供了一个版本化的抗体结构基准，通过时间截点 + 序列相似性过滤控制泄漏，并通过最近邻记录使泄漏程度可量化。该资源适用于抗体结构预测、抗体-抗原相互作用建模和设计任务的深度学习评估，但其测试集规模有限，且依赖 AlphaFold3 模型质量。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。摘要仅描述资源构建方法和组成，未讨论局限性。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 测试集包含 AlphaFold3 模型，其质量依赖模型预测精度（摘要：「high-confidence, patent-derived AlphaFold3 models」——「high-confidence」暗示置信度筛选，但未说明筛选阈值）
+- 测试集规模（327 人工审核条目）相对训练集（16,511 条目）较小，可能限制评估的统计功效</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列相似性过滤仅基于序列，未提及结构相似性过滤</td>
+<td>序列相似性低但结构高度相似的抗体可能仍存在泄漏</td>
+<td>结构预测任务中，结构相似性比序列相似性更直接相关</td>
+<td>对测试集与训练集进行结构比对（如 TM-score 或 FoldSeek），检查是否存在高结构相似但低序列相似的对</td>
+<td>摘要仅提及「sequence similarity filters」</td>
+</tr>
+<tr>
+<td>专利衍生 AlphaFold3 模型作为测试集</td>
+<td>专利序列可能具有与公共序列不同的分布特征，导致测试集偏差</td>
+<td>测试集应代表真实应用场景，专利序列可能偏向特定治疗靶点</td>
+<td>比较专利衍生测试集与实验测试集在序列多样性、抗原覆盖度上的差异</td>
+<td>摘要：「patent-derived AlphaFold3 models spanning 476 antigens」</td>
+</tr>
+<tr>
+<td>327 个人工审核测试条目规模较小</td>
+<td>小测试集可能导致评估结果方差大，难以区分方法间微小差异</td>
+<td>基准的统计功效直接影响方法比较的可靠性</td>
+<td>计算测试集在主要指标上的置信区间，评估最小可检测差异</td>
+<td>摘要：「327 manually reviewed test entries」</td>
+</tr>
+<tr>
+<td>最近邻记录仅提供相似度，未提供过滤阈值建议</td>
+<td>用户可能不知道多高的相似度应视为「泄漏」</td>
+<td>不同任务对泄漏的容忍度不同，缺乏指导可能误用</td>
+<td>提供不同相似度阈值下的性能分层示例，帮助用户判断</td>
+<td>摘要：「allowing users to quantify remaining relatedness and stratify performance by similarity」</td>
+</tr>
+<tr>
+<td>未提及训练集的时间范围</td>
+<td>如果训练集包含近期结构，而测试集在时间截点后选取，时间差可能影响评估公平性</td>
+<td>时间泄漏是结构预测评估中的常见问题</td>
+<td>检查训练集和测试集的时间分布，确认无重叠</td>
+<td>摘要仅提及「temporal cutoff」用于测试集选择</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>泄漏量化设计模式</strong>：将「泄漏」从二元标签转变为连续度量（最近邻相似度），允许用户分层评估。可迁移到任何蛋白质结构预测基准的构建中——不仅记录「是否泄漏」，更记录「泄漏程度」。</p>
+</li>
+<li>
+<p><strong>时间截点 + 序列相似性双重过滤</strong>：单一过滤机制不足以控制泄漏，组合使用时间截点和序列相似性过滤可互补覆盖不同泄漏来源。可迁移到分子对接、MD 模拟等任务的训练/测试划分中。</p>
+</li>
+<li>
+<p><strong>专利数据库作为测试集补充</strong>：专利序列通常不在公共训练数据中，天然降低泄漏风险。可迁移到蛋白质设计任务中，利用专利序列作为独立测试集。</p>
+</li>
+<li>
+<p><strong>版本化发布基础设施</strong>：固定版本的数据 + 元数据 + API 是保证可复现评估的关键。可迁移到任何需要长期维护的基准资源中。</p>
+</li>
+<li>
+<p><strong>CDR 注释和冗余标签</strong>：提供细粒度的功能区域注释（CDR）和冗余度标签，支持用户按需过滤。可迁移到抗体-抗原对接基准中，支持按 CDR 区域分层评估。</p>
+</li>
+<li>
+<p><strong>标准化评估代码</strong>：提供统一的数据加载和指标计算代码，减少不同研究间的实现差异。可迁移到结构预测、构象采样等任务的评估协议标准化中。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>SAbDab（Structural Antibody Database）</strong>：SAbDab 是抗体结构的主要数据库，本文的训练集很可能基于 SAbDab 或类似资源构建。SABLE 的贡献在于增加了泄漏控制和版本化机制，这是 SAbDab 未提供的。</li>
+<li><strong>AlphaFold3</strong>：本文使用 AlphaFold3 生成专利衍生测试模型。AlphaFold3 是蛋白质结构预测的前沿方法，本文将其输出作为测试集的一部分，但经过时间截点和相似性过滤。</li>
+<li><strong>Temporal split 相关研究</strong>：已有研究（如蛋白质工程中的时间划分）指出时间截点不足以防止泄漏，本文是对这一问题的直接回应。</li>
+<li><strong>[Analysis] 候选连接</strong>：与「leakage-aware evaluation」相关的概念可连接到机器学习中的分布偏移（distribution shift）和数据泄漏（data leakage）文献。本文的最近邻记录类似于「leakage score」的概念，可连接到 fairness 和 robustness 评估中的分层分析（stratified analysis）方法。</li>
+<li><strong>[Analysis] 可迁移领域</strong>：本文的版本化基准设计模式可迁移到蛋白质对接基准（如 DockQ 基准）、MD 模拟力场评估基准、蛋白质设计评估基准中。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Leakage-Aware 蛋白质对接基准
+   - <strong>来源局限/观察</strong>：本文仅覆盖抗体结构预测，未覆盖蛋白质-蛋白质对接。对接任务中训练/测试泄漏同样严重，且缺乏标准化基准。
+   - <strong>核心假设</strong>：将 SABLE 的「最近邻记录 + 序列相似性过滤 + 版本化」设计模式迁移到蛋白质对接基准，可显著提高对接评估的可复现性和泄漏可控性。
+   - <strong>相对本文的增量</strong>：扩展应用领域，从结构预测到对接；需处理对接特有的二聚体/多聚体序列相似性度量。
+   - <strong>初步方法</strong>：基于 DockQ 或类似对接基准，构建版本化训练/测试集，记录每个测试复合物的最近邻训练复合物，提供分层评估 API。
+   - <strong>验证方式</strong>：在多个对接方法（如 AlphaFold3 多聚体、RoseTTAFold 等）上比较泄漏感知评估与常规评估的结果差异。
+   - <strong>可能的失败模式</strong>：对接复合物的序列相似性度量复杂，可能难以定义统一的「最近邻」标准。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：结构相似性泄漏过滤器
+   - <strong>来源局限/观察</strong>：SABLE 仅使用序列相似性过滤，未使用结构相似性过滤。结构预测任务中，结构相似的训练/测试对可能绕过序列过滤。
+   - <strong>核心假设</strong>：在序列过滤之外增加结构相似性过滤（如 TM-score 阈值），可进一步降低泄漏，且不会过度减少测试集规模。
+   - <strong>相对本文的增量</strong>：增加结构维度的泄漏控制，使基准更严格。
+   - <strong>初步方法</strong>：对 SABLE 测试集与训练集进行全对全结构比对，计算 TM-score 分布，设定阈值并评估过滤效果。
+   - <strong>验证方式</strong>：比较过滤前后测试集上的模型性能差异，检验是否存在高结构相似但低序列相似的对。
+   - <strong>可能的失败模式</strong>：结构比对计算成本高，且结构相似的阈值选择可能引入主观性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：时间感知的抗体设计评估协议
+   - <strong>来源局限/观察</strong>：SABLE 的测试集在 AlphaFold3 时间截点后选取，但未讨论训练集的时间范围。抗体设计任务中，时间泄漏（使用未来数据训练）可能更隐蔽。
+   - <strong>核心假设</strong>：在抗体设计评估中引入严格的时间分层（如按 PDB 沉积日期划分），可更真实地反映模型在「未见未来」条件下的泛化能力。
+   - <strong>相对本文的增量</strong>：将时间维度从测试集选择扩展到训练集构建，形成完整的时间感知评估协议。
+   - <strong>初步方法</strong>：按 PDB 沉积日期将抗体结构分为时间桶，构建「过去训练、未来测试」的评估协议，并与随机划分对比。
+   - <strong>验证方式</strong>：在多个抗体设计方法上比较时间划分与随机划分的性能差异。
+   - <strong>可能的失败模式</strong>：时间划分可能导致训练集和测试集分布差异过大，评估结果受分布偏移影响而非模型能力。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：抗体-抗原共折叠基准的泄漏控制扩展
+   - <strong>来源局限/观察</strong>：SABLE 覆盖 476 个抗原，但未明确说明抗原-抗体复合物的共折叠评估。抗体-抗原共折叠预测是当前热点，泄漏控制更为复杂。
+   - <strong>核心假设</strong>：在抗体-抗原共折叠基准中，需要同时控制抗体和抗原两侧的序列相似性，且复合物层面的相似性度量比单体更复杂。
+   - <strong>相对本文的增量</strong>：将泄漏控制从单体扩展到复合物，处理双序列相似性约束。
+   - <strong>初步方法</strong>：构建复合物级别的最近邻记录，同时考虑抗体和抗原的序列相似性，提供复合物层面的分层评估。
+   - <strong>验证方式</strong>：在共折叠方法（如 AlphaFold3 多聚体）上比较复合物级泄漏控制与单体级泄漏控制的效果。
+   - <strong>可能的失败模式</strong>：复合物层面的相似性度量可能过于严格，导致测试集规模过小。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce SABLE, a versioned structural antibody benchmark that couples a fixed training collection with a leakage-controlled held-out test set, combining experimental and patent-derived AlphaFold3 models, with sequence-similarity filtering against the training set, per-entry nearest-neighbour records, and a Python/PyTorch API for reproducible evaluation.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, validation metrics, or comparative analyses are reported</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, figures, tables, benchmark statistics, validation experiments, API documentation, and any comparison with existing benchmarks</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially valuable community resource for standardising antibody structure prediction evaluation. The concept of leakage-aware benchmarking with explicit nearest-neighbour reporting is timely and addresses a real methodological gap. However, the abstract provides no quantitative evidence of the benchmark's utility, no validation that the filtering procedure achieves its stated goal, and no demonstration that the resource functions as intended. The scientific case is therefore plausible but not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers developing deep-learning methods for antibody structure prediction, antibody-antigen docking, and antibody design would benefit from a standardised, leakage-controlled benchmark. The community lacks agreed-upon evaluation protocols, and a versioned resource with explicit redundancy labels would enable fairer cross-study comparisons. Machine-learning practitioners focused on generalisation assessment under distribution shift may also find the nearest-neighbour stratification approach of interest.</li>
+<li><strong>Major strengths</strong> The proposed benchmark addresses a recognised problem in the field, namely train-test leakage arising from independent dataset construction. The design choice to record nearest training-set neighbours for each test entry is conceptually sound and enables users to quantify residual relatedness. The inclusion of patent-derived AlphaFold3 models selected after the model's temporal cutoff is a thoughtful approach to expanding test coverage while respecting temporal leakage constraints. The provision of a standardised API and metrics lowers the barrier to adoption.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li><strong>Concern ID</strong> R1-M1<br />
+<strong>Severity</strong> Major<br />
+<strong>Blocking</strong> Yes<br />
+<strong>Axis</strong> Evidence sufficiency<br />
+<strong>Claim pointer</strong> The abstract implies that SABLE provides a leakage-controlled test set suitable for reproducible evaluation.<br />
+<strong>Evidence pointer</strong> Abstract, "leakage-controlled held-out test set" and "filtered against the training set using antibody and antigen sequence similarity filters"<br />
+<strong>Concern</strong> No data are presented demonstrating that the filtering procedure effectively eliminates or quantifiably reduces leakage. The abstract states that filters were applied but provides no threshold values, no distribution of nearest-neighbour similarities, and no analysis of how many test entries retain close training neighbours.<br />
+<strong>Why it matters</strong> The central value proposition of the benchmark rests on the adequacy of the leakage control. Without evidence that the filtering achieves its purpose, users cannot assess whether the benchmark meaningfully improves on existing resources.<br />
+<strong>Resolution test</strong> Provide a quantitative analysis showing the distribution of sequence identity between test entries and their nearest training neighbours, including the fraction of test entries above and below chosen thresholds, and demonstrate that performance rankings of representative models differ when evaluated on SABLE versus a naively constructed test set.  </li>
+<li><strong>Concern ID</strong> R1-M2<br />
+<strong>Severity</strong> Major<br />
+<strong>Blocking</strong> Yes<br />
+<strong>Axis</strong> Validation of utility<br />
+<strong>Claim pointer</strong> The abstract implies that SABLE enables reproducible machine-learning development and evaluation.<br />
+<strong>Evidence pointer</strong> Abstract, "reproducible machine-learning development and evaluation" and "standardised benchmark metrics provide reproducible database access and evaluation code"<br />
+<strong>Concern</strong> No demonstration is provided that the benchmark is usable in practice. There are no example evaluations, no baseline results, no runtime or resource requirements, and no evidence that the API functions as described. The claim of reproducibility cannot be assessed without any empirical demonstration.<br />
+<strong>Why it matters</strong> A benchmark resource is only valuable if it can be readily adopted and if its outputs are meaningful. Without baseline results or a worked example, the community cannot judge whether the resource is fit for purpose.<br />
+<strong>Resolution test</strong> Include a baseline evaluation of at least two established antibody structure prediction methods on the SABLE test set, with runtime and resource usage reported, and demonstrate that the provided code reproduces the reported numbers.  </li>
+<li><strong>Concern ID</strong> R1-M3<br />
+<strong>Severity</strong> Major<br />
+<strong>Blocking</strong> No<br />
+<strong>Axis</strong> Scope and representativeness<br />
+<strong>Claim pointer</strong> The abstract states that SABLE combines 16,511 experimental training entries with 327 manually reviewed test entries and 3,274 patent-derived AlphaFold3 models spanning 476 antigens.<br />
+<strong>Evidence pointer</strong> Abstract, "16,511 experimental training entries" and "3,274 high-confidence, patent-derived AlphaFold3 models"<br />
+<strong>Concern</strong> The abstract does not clarify the relationship between the 327 manually reviewed test entries and the 3,274 patent-derived models. It is unclear whether the patent-derived models are part of the test set, a separate validation set, or an auxiliary resource. The antigen count of 476 is not attributed to either subset.<br />
+<strong>Why it matters</strong> Users need to understand the exact composition of the test set to interpret benchmark results. Ambiguity in the resource structure undermines the stated goal of standardisation.<br />
+<strong>Resolution test</strong> Clearly specify the composition of the test set, including how many entries are experimental versus model-derived, how many unique antigens are represented in each subset, and whether the patent-derived models are intended for evaluation or for other purposes.  </li>
+<li><strong>Minor Comments</strong>  </li>
+<li><strong>Concern ID</strong> R1-m1<br />
+<strong>Severity</strong> Minor<br />
+<strong>Axis</strong> Clarity<br />
+<strong>Affected element</strong> Benchmark name<br />
+<strong>Evidence pointer</strong> Abstract, "SABLE (Structural Antibody Benchmark for deep-Learning Evaluation)"<br />
+<strong>Issue</strong> The acronym expansion is provided, which is helpful, but the abstract does not state whether the resource is deposited in a public repository or how versioning is managed beyond the statement "versioned releases."<br />
+<strong>Required correction</strong> Add a sentence specifying the public repository location and the versioning scheme, such as semantic versioning or dated releases.  </li>
+<li><strong>Concern ID</strong> R1-m2<br />
+<strong>Severity</strong> Minor<br />
+<strong>Axis</strong> Reproducibility<br />
+<strong>Affected element</strong> Temporal cutoff statement<br />
+<strong>Evidence pointer</strong> Abstract, "selected after the AlphaFold3 temporal cutoff"<br />
+<strong>Issue</strong> The abstract does not state the specific date of the AlphaFold3 temporal cutoff, which is essential for users to understand the temporal scope of the test entries.<br />
+<strong>Required correction</strong> Provide the exact cutoff date in the abstract or refer to a methods section where it is specified.  </li>
+<li><strong>Concern ID</strong> R1-m3<br />
+<strong>Severity</strong> Minor<br />
+<strong>Axis</strong> Completeness<br />
+<strong>Affected element</strong> Benchmark metrics<br />
+<strong>Evidence pointer</strong> Abstract, "standardised benchmark metrics"<br />
+<strong>Issue</strong> The abstract does not list which metrics are included, such as RMSD, TM-score, or CDR-specific metrics.<br />
+<strong>Required correction</strong> Enumerate the specific metrics provided in the API, or state that a full list is available in the methods.  </li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 and R1-M2 are blocking. The absence of any quantitative validation of the leakage control and the lack of a demonstrated use case mean the central claims of the resource cannot be evaluated from the supplied material.</li>
+</ul>
+<h2>Assessment against Nature-style criteria</h2>
+<ul>
+<li><strong>Originality</strong> The concept of a leakage-aware benchmark with explicit nearest-neighbour reporting is a useful contribution, though the general idea of benchmark resources for structural biology is not new. The specific focus on leakage quantification is a differentiating element.</li>
+<li><strong>Scientific importance</strong> The problem addressed is real and of broad relevance to the antibody modelling community. A well-validated benchmark would have tangible impact on how methods are compared.</li>
+<li><strong>Interdisciplinary readership</strong> The work sits at the intersection of structural biology, machine learning, and immunology. The abstract is written in a way that is accessible to these communities, though the lack of results limits its appeal.</li>
+<li><strong>Technical soundness</strong> The design logic is reasonable, but technical soundness cannot be assessed without methods details and validation data. The filtering approach and the use of AlphaFold3 models require scrutiny that the abstract cannot support.</li>
+<li><strong>Readability for nonspecialists</strong> The abstract is clearly written and avoids unnecessary jargon. The acronym and scope are explained adequately for a broad scientific audience.</li>
+</ul>
+<h2>Recommendation posture</h2>
+<p>Currently not established from the provided evidence. The resource concept is promising and the design choices are defensible, but the absence of any quantitative validation or demonstration of utility means the scientific case is incomplete. I would be supportive if the authors provide evidence that the leakage control is effective and that the benchmark is usable in practice, as specified in R1-M1 and R1-M2.</p>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that SABLE provides a "leakage-controlled" test set is unsupported without quantitative analysis of the filtering outcome.</li>
+<li>The claim that the resource enables "reproducible machine-learning development and evaluation" is unsupported without a demonstrated use case or baseline results.</li>
+<li>The claim that the patent-derived AlphaFold3 models are "high-confidence" is not verifiable from the abstract alone.</li>
+<li>The relationship between the 327 manually reviewed test entries and the 3,274 patent-derived models is ambiguous and cannot be resolved from the supplied material.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

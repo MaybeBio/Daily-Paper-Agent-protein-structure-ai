@@ -1,0 +1,74 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors evaluate whether machine learning-predicted protein structures, including those from AlphaFold2, AlphaFold3, and Boltz-2, are suitable inputs for free energy perturbation calculations. Using a congeneric series of 133 compounds targeting cSrc, they perform over 1400 FEP calculations with minimal optimization to approximate out-of-the-box performance. They report that predictive variation in micro and macro conformational states, rather than the structural source, governs predictive reliability.
+- **Visible evidence base** Abstract text only; no numerical results, figures, tables, or methodological details are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, detailed methods for FEP setup and ML structure generation, statistical analyses, and any comparison of performance metrics
+
+## Reviewer
+- **Overall assessment** The abstract addresses a timely and practically important question regarding the readiness of ML-predicted protein structures for FEP-based drug discovery. The study design, using a large congeneric series and extensive FEP calculations, is commendable in scope. However, the abstract provides insufficient quantitative evidence to support the central claim that conformational state variation, rather than structural source, governs predictive reliability. The conclusion is stated without supporting data, and the abstract does not report key performance metrics that would allow assessment of the magnitude and significance of observed differences.
+- **Who would be interested in the results, and why** Computational chemists and structural biologists engaged in structure-based drug design, particularly those considering adoption of ML-based structure prediction tools in FEP workflows. The findings would also interest developers of ML structure prediction methods who seek validation of their models in downstream physics-based applications, as well as pharmaceutical researchers evaluating the practical utility of AlphaFold-class models in lead optimization.
+- **Major strengths** The study addresses a question of high practical relevance with a substantial dataset of 133 compounds and over 1400 FEP calculations. The use of a consistent preparation protocol to isolate the effect of structural origin is a sound experimental design. The inclusion of multiple structure types, including experimental, homology, and ML-predicted structures, provides a broad comparison basis.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that "predictive variation in micro and macro conformational states rather than the structural source governs predictive reliability."
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The central conclusion is stated without any quantitative support in the abstract. No performance metrics, statistical comparisons, or effect sizes are reported that would substantiate the claim that conformational state variation is the dominant factor over structural source.
+  - **Why it matters** This claim is the primary takeaway of the study and directly informs whether researchers should prioritize conformational sampling over structural source selection when using ML-predicted structures in FEP. Without supporting data, the conclusion cannot be evaluated or trusted.
+  - **Resolution test** Provide quantitative evidence in the abstract or full manuscript, such as correlation coefficients between conformational state metrics and FEP accuracy, statistical tests comparing performance across structural sources, or variance decomposition analyses that attribute predictive error to conformational versus structural factors.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Result reporting
+  - **Claim pointer** The abstract states that "variable performance was observed across both experimental and ML-predicted structures."
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not report any numerical results, such as mean absolute errors, correlation coefficients, or success rates, for any of the structure types evaluated. The reader cannot assess the magnitude of variability or whether differences are practically meaningful.
+  - **Why it matters** The claim of variable performance is central to the study's message that challenges remain in using ML-predicted structures. Without quantitative results, the reader cannot determine whether the variability is within acceptable bounds for FEP applications or whether specific structure types are systematically worse.
+  - **Resolution test** Report key performance metrics for each structure type in the abstract, including at least one accuracy measure and its dispersion, along with appropriate statistical comparisons.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Methodological transparency
+  - **Claim pointer** The abstract states that FEP calculations were performed "under minimal optimization to approximate out-of-the-box performance."
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not specify what "minimal optimization" entails, which protein preparation steps were applied, which FEP method was used, or how ML-predicted structures were generated and processed prior to FEP.
+  - **Why it matters** The interpretation of the results depends critically on the preparation protocol. If the protocol is not representative of typical FEP practice, the conclusions may not generalize. Conversely, if the protocol is too idealized, the results may overstate the readiness of ML structures.
+  - **Resolution test** Provide a clear description of the preparation protocol in the full manuscript, including specific software versions, parameter settings, and any steps taken to relax or refine ML-predicted structures before FEP.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Title
+  - **Evidence pointer** Title, location not provided
+  - **Issue** The title uses a rhetorical question format that is unconventional for a research article and may not clearly convey the study's findings.
+  - **Required correction** Consider a more direct title that states the key finding, such as "Conformational State Variation, Not Structural Source, Governs FEP Accuracy with ML-Predicted Protein Structures."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The phrase "micro and macro conformational states" is used without definition. These terms may have different meanings in different contexts and could confuse readers.
+  - **Required correction** Define these terms explicitly in the abstract or full manuscript, or use more standard terminology such as "local side-chain conformations" and "global domain arrangements."
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract does not mention the specific ML models used for structure prediction beyond naming AlphaFold2, AlphaFold3, and Boltz-2 in the introduction. It is unclear whether all three were tested or only a subset.
+  - **Required correction** Specify which ML models were used to generate the structures evaluated in the FEP calculations.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the central claims of the study are not supported by quantitative evidence in the abstract. R1-M3 is important for reproducibility but does not alone block the case.
+- **Assessment against Nature-style criteria** 
+  - Originality: The question of whether ML-predicted structures are ready for FEP is timely and has been addressed by others, but the systematic comparison across multiple structure types with a large dataset is a valuable contribution.
+  - Scientific importance: The findings have direct implications for the adoption of ML structure prediction in drug discovery, which is a topic of broad interest.
+  - Interdisciplinary readership: The work bridges machine learning, structural biology, and computational chemistry, and would appeal to researchers in all three communities.
+  - Technical soundness: The study design is sound in principle, but the abstract does not provide enough detail to assess the technical execution or the validity of the statistical analyses.
+  - Readability for nonspecialists: The abstract is generally clear but uses specialized terminology without sufficient context, and the lack of quantitative results makes it difficult for nonspecialists to gauge the significance of the findings.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible and important study, but the central claims are not supported by quantitative data in the abstract. A decision would require access to the full manuscript to evaluate the evidence base. If the full manuscript provides the missing performance metrics and statistical analyses, the study could be supportive of the stated conclusions.
+
+## Risk / unsupported claims
+- The claim that conformational state variation, rather than structural source, governs predictive reliability is unsupported in the abstract due to the absence of quantitative evidence.
+- The claim of variable performance across structure types is unsupported without reported performance metrics.
+- The generalizability of the findings beyond the cSrc system and the specific congeneric series is not addressed and cannot be assessed from the abstract.

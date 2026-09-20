@@ -1,0 +1,87 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present a benchmark for assessing functional annotation of domains of unknown function (DUFs) via structural homology searches, report an error model for prospective use, compare multiple search tools, and apply their calibrated pipeline to currently unannotated DUFs to generate candidate functional assignments.
+- **Visible evidence base** Abstract text only; no quantitative details beyond those stated in the abstract
+- **Missing materials affecting confidence** Full methods, benchmark construction details, statistical analyses, figures, tables, supplementary data, and the resource of ranked candidates
+
+## Reviewer
+- **Overall assessment** The abstract describes a timely and potentially valuable benchmarking effort for a problem of growing importance in structural bioinformatics. The use of time-split retrospective DUFs as ground truth is a sound conceptual design, and the inclusion of a difficulty-matched control arm is a thoughtful methodological choice. However, the abstract alone provides insufficient detail to evaluate the rigor of the benchmark construction, the statistical treatment, or the validity of the error model. Several claims are stated without supporting quantitative context, and the practical utility of the proposed resource cannot be assessed from the supplied material. The work is likely of interest to the computational biology community, but the case is not fully established from the abstract alone.
+- **Who would be interested in the results, and why** Computational biologists and bioinformaticians working on protein function prediction, structural genomics consortia, and researchers using AlphaFold-derived models for functional annotation. The benchmark and error model would be of direct use to those applying homology search tools in high-throughput annotation pipelines, and the ranked candidate list could guide experimental validation efforts for uncharacterized domains.
+- **Major strengths** The time-split benchmark design using retrospective DUFs is a principled approach to obtaining ground truth without circularity. The inclusion of a difficulty-matched control arm is a rigorous attempt to separate query difficulty from method performance. The explicit reporting of an error rate at a fixed confidence threshold is a practical contribution for prospective users. The comparison of multiple search tools, including a language model baseline, addresses a current methodological question.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The benchmark analysis recovered the later-assigned function for 15.9% of retrospective DUF queries versus 30.1% of matched known-domain queries.
+  - **Evidence pointer** Abstract, results section; location not provided
+  - **Concern** The abstract reports recovery rates but provides no information on how these rates were calculated, what constituted a "recovery," how the difficulty matching was performed, or what statistical uncertainty surrounds these point estimates. Without details on the matching procedure, the comparability of the two arms is unclear, and the 15.9% versus 30.1% difference cannot be interpreted as a method effect versus a query difficulty effect.
+  - **Why it matters** The central claim of the paper is that structural homology searches perform worse on DUFs than on known domains, and that this difference is attributable to the method rather than to the queries. If the difficulty matching is inadequate, the comparison is confounded and the conclusion is unsupported.
+  - **Resolution test** Provide a description of the difficulty-matching algorithm, the distribution of matched features between arms, and confidence intervals or significance tests for the recovery rate difference.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** At a fixed confidence cut-off (qTM ≥ 0.5), 55.4% of informative calls on retrospective DUFs were incorrect, establishing an error model for prospective use.
+  - **Evidence pointer** Abstract, results section; location not provided
+  - **Concern** The abstract states that 55.4% of informative calls were incorrect but does not define what constitutes an "informative call," how the qTM threshold was chosen, whether this threshold was optimized on the benchmark, or how the error rate varies as a function of the threshold. The claim that this "establishes an error model" is not supported by a single point estimate.
+  - **Why it matters** The error model is presented as a key practical output for prospective users. Without a characterization of the trade-off between recall and precision across thresholds, and without a definition of the call types, the error model cannot be applied by others.
+  - **Resolution test** Provide a precision-recall curve or a table of error rates across qTM thresholds, define "informative call" operationally, and state whether the threshold was pre-specified or selected post hoc.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** Foldseek outperformed MMseq2-based sequence search but was not statistically separable from the ESM-2 protein language model embedding baseline.
+  - **Evidence pointer** Abstract, results section; location not provided
+  - **Concern** The abstract reports a comparative result without any statistical detail. No test names, effect sizes, or measures of variability are given. The phrase "not statistically separable" implies a test was performed, but the abstract does not state what test, what the sample size was, or what the power of the comparison was.
+  - **Why it matters** The tool comparison is a central methodological contribution. Without statistical support, the claim that Foldseek outperforms MMseq2 but not ESM-2 is an unsupported assertion.
+  - **Resolution test** Report the statistical test used, the test statistic, the p-value or confidence interval, and the number of queries included in the comparison.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and resource availability
+  - **Claim pointer** Applying the calibrated pipeline to 296 currently unannotated DUF queries in Pfam 38.0 yielded 50 confident, specific functional assignments.
+  - **Evidence pointer** Abstract, results section; location not provided
+  - **Concern** The abstract states that 50 confident assignments were made but does not define "confident" or "specific" in this context, does not state how these assignments were validated, and does not indicate whether any manual curation was performed. The claim that these are "specific" functional assignments is particularly strong and requires a definition of specificity.
+  - **Why it matters** The resource of 50 assignments is a primary deliverable. If the confidence criteria are not transparent, users cannot assess the reliability of individual assignments, and the resource may be misused.
+  - **Resolution test** Provide the operational definition of "confident" and "specific," describe any validation steps, and state whether the assignments were manually reviewed.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Benchmark description
+  - **Evidence pointer** Abstract, methods description; location not provided
+  - **Issue** The abstract states that the benchmark was assembled from Pfam families annotated as DUFs in Pfam 28.0 and assigned a function in Pfam 38.0, but does not state how many families were included, how the time split was defined, or whether any filtering was applied.
+  - **Required correction** Provide the number of families in the benchmark and a brief description of the inclusion and exclusion criteria.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Masking procedure
+  - **Evidence pointer** Abstract, methods description; location not provided
+  - **Issue** The abstract mentions masking for self-family and self-clan level hits to remove circularity, but does not explain what these masks are or how they were applied.
+  - **Required correction** Define self-family and self-clan masking in one or two sentences.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Model proteome selection
+  - **Evidence pointer** Abstract, methods description; location not provided
+  - **Issue** The abstract lists four model proteomes but does not state why these were chosen or whether results were consistent across them.
+  - **Required correction** Add a sentence on the rationale for proteome selection and note whether recovery rates varied substantially across proteomes.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Resource description
+  - **Evidence pointer** Abstract, resource statement; location not provided
+  - **Issue** The abstract states that the benchmark and ranked candidates are provided as a resource, but does not specify the format, location, or any access restrictions.
+  - **Required correction** State where and in what format the resource will be made available.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The abstract does not provide sufficient statistical or methodological detail to support the central quantitative claims. The error model, the tool comparison, and the difficulty-matched benchmark all require additional detail to be evaluable.
+- **Assessment against Nature-style criteria** Originality: The time-split retrospective DUF benchmark is a novel and valuable contribution, though the concept of using historical annotations as ground truth is not entirely new. Scientific importance: The problem of reliable functional annotation from structural predictions is of high importance to the field, and a calibrated error model would be a practical contribution. Interdisciplinary readership: The work is primarily of interest to computational biologists and bioinformaticians; the abstract does not currently frame the results in a way that would attract a broader biological audience. Technical soundness: Not assessable from the abstract alone; the missing statistical and methodological details are a significant barrier. Readability for nonspecialists: The abstract is generally clear but uses field-specific terms (qTM, Foldseek, MMseq2, ESM-2) without sufficient context for a general reader.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual design is promising and the work is likely to be of interest, but the abstract does not provide enough detail to assess the validity of the central claims. A full manuscript with methods, statistical analyses, and validation details would be required to evaluate the case.
+
+## Risk / unsupported claims
+- The claim that the benchmark "establishes an error model for prospective use" is unsupported by a single error rate at one threshold.
+- The claim that Foldseek "outperformed" MMseq2 is unsupported without statistical detail.
+- The claim that 50 assignments are "confident, specific" is unsupported without operational definitions.
+- The comparability of the difficulty-matched arms is not assessable from the abstract.
+- The generalizability of the results across the four model proteomes is not assessable.

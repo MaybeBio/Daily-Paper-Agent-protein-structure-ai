@@ -1,0 +1,151 @@
+# Evaluating transformer-based models for structural characterization of orphan proteins
+
+
+## Motivation
+  Transformer-based models (TBMs) are state-of-the-art deep learning architectures that predict protein structural features with high accuracy. Despite methodological differences, they all rely on large datasets structured in families of homologous sequences. However, 5%–30% of eukaryotic proteomes consist of orphan proteins, which are sequences without detectable similarity to known families. Although they may share structural traits with characterized proteins, their lack of homology makes them an ideal dataset for evaluating TBM generalization beyond familiar sequence space.
+
+
+## Results
+  We compared predictions from several widely used TBM architectures on an expert-curated set of orphan proteins from the Meloidogyne genus, comprising some of the most destructive plant-parasitic nematodes. Multiple sequence alignment–based approaches such as AlphaFold2 performed poorly on orphan proteins, as did single-sequence or embedding-based language models ESMFold, OmegaFold, and ProtT5. This limited performance cannot be fully attributed to intrinsic disorder, as confirmed by independent non-TBM disorder predictors. While accurate tertiary structure prediction remains out of reach, secondary structure is more reliably captured: predictors share about 70% of secondary structure elements, regardless of global fold similarity, and these elements are consistently identified by dedicated secondary structure tools.
+
+
+## Availability
+  All data and analysis scripts are available at https://doi.org/10.5281/zenodo.18788931
+
+
+## 1 Introduction
+  Since the introduction of the transformer architecture, protein structure prediction has undergone a major conceptual and practical leap. Transformer-based models (TBMs), originally developed for natural language processing, have proven particularly effective at capturing long-range dependencies in protein sequences and at integrating evolutionary and structural information at scale (Akdel et al. 2022). Their adoption has led to a new generation of predictors that significantly outperform previous approaches based on coevolutionary statistics and shallow neural architectures.
+
+  A milestone in this transition is AlphaFold2 (Jumper et al. 2021), which introduced a set of ad-hoc architectural components tailored to protein geometry. AlphaFold2 jointly reasons over sequence and pairwise representations using attention mechanisms, including pairwise and triangular attention, and incorporates an equivariant structure module based on invariant point attention (IPA) and explicit SE(3) frames. This design allows the model to iteratively refine atomic coordinates while preserving rotational and translational equivariance, resulting in near-experimental accuracy for many targets.
+
+  Subsequent models have explored alternative ways of leveraging transformer architectures. ESMFold (Lin et al. 2023) builds upon large protein language models such as ESM-1b and ESM-2 to generate sequence and pairwise embeddings directly from single sequences, without relying on multiple sequence alignments. These embeddings are then processed by a structure module derived from AlphaFold2, together with a newly introduced folding block. For confidence estimation, ESMFold reports pLDDT values computed using AlphaFold2’s prediction head applied to its own internal representations.
+
+  A different design philosophy is illustrated by OmegaFold (Wu et al. 2022), which employs a transformer-based architecture trained end-to-end for structure prediction while explicitly incorporating geometric constraints and rotation-equivariant operations. OmegaFold emphasizes rapid inference and reduced dependence on evolutionary depth, further highlighting the versatility of transformer architectures for structural modeling.
+
+  Beyond full 3D structure prediction, transformer-derived protein language models have been widely used to extract informative embeddings for downstream tasks. Models such as ProtT5 (Elnaggar et al. 2022), trained on hundreds of millions of sequences, have demonstrated strong performance in predicting secondary structure, transmembrane regions, and other local structural features, even in low-similarity regimes.
+
+  Despite these advances, transformer-based predictors are not free from limitations. Prediction biases and structural hallucinations have been repeatedly observed, particularly for proteins with shallow evolutionary context or unusual folds (Pratt et al. 2025). While recent studies have begun to quantify the extent of these errors and to investigate their underlying causes (Williams et al. 2025, Sarti and Cazals 2026, Cazals and Sarti 2026), a comprehensive theoretical explanation of why and when such failures occur is still lacking.
+
+  In parallel, progress in protein structure analysis has been enabled by new methods for fast and sensitive structural comparison. Foldseek (van Kempen et al. 2024) introduced the 3Di structural alphabet, which encodes local backbone conformations as discrete symbols, allowing structural alignments to be reduced to sequence-like comparisons. Other approaches similarly exploit compact structural representations to improve scalability and classification accuracy. Here too, transformer-based models play a role: ProstT5 (Heinzinger et al. 2024) predicts 3Di sequences directly from amino acid sequences and vice versa, bridging sequence- and structure-based representations within a unified framework.
+
+  All TBMs ultimately rely on the abundance of available protein sequence data for training, yet their architectures are inherently sensitive to out-of-distribution inputs. Orphan proteins, by definition, lack detectable homologs in current databases and are therefore absent from training sets; moreover, no experimentally determined structures are available for this class of proteins (Fakhar et al. 2023). Nevertheless, studying them is of paramount importance: indeed, they have been found to be associated with new functionalizations, especially in organisms under high evolutionary pressure (Seçkin et al. 2025b). For example, in root-knot nematodes (Meloidogyne genus), responsible for major worldwide crop losses, they have been found to regulate and adapt their parasitic strategies to their host plants (Seçkin et al. 2025a).
+
+  Orphan proteins can arise through two distinct etiologies (Fig. 1). Some correspond to highly diverged members of known protein families, whose evolutionary origins are obscured by strong selective pressures and extensive sequence divergence, while others are de novo proteins that have emerged relatively recently from previously non-coding genomic regions (Seçkin et al. 2025b). In the former case, it is generally assumed that aspects of the ancestral fold and function may be conserved despite the loss of detectable sequence similarity, whereas for de novo proteins there is little prior knowledge regarding either structure or function.
+
+  These two origins also suggest different expectations for intrinsic disorder. For diverged proteins, the overall level of intrinsic disorder is expected to be broadly comparable to that of their (unknown) ancestral family. In contrast, several studies have reported that de novo proteins are enriched in intrinsically disordered regions, consistent with their amino acid composition and recent evolutionary origin (Basile et al. 2017, Wilson et al. 2017, Heames et al. 2020). However, this view is not unanimous, and other analyses have found no systematic increase in disorder relative to older proteins (Ekman and Elofsson 2010, Schmitz and Bornberg-Bauer 2018). Taken together, these considerations make orphan proteins an ideal dataset for assessing the true generalization capabilities of transformer-based approaches. In this work, we compare several transformer-based predictors on a recently published orphan protein dataset of plant-parasitic nematodes of the Meloidogyne genus, which constitutes an interesting case study for several reasons: it includes species that are phylogenetically distant from the closest model organism (C. elegans), that are under evolutionary pressure to escape pesticides, and whose orphan genes are highly involved in parasitism (Seçkin et al. 2025a). While tertiary structure predictions remain unreliable for sequences without homology, we find that secondary structure can still be captured with notable accuracy.
+
+
+## 2 Methods
+
+### 2.1 Meloidogyne orphan proteome benchmark
+  Meloidogyne protein datasets and their orphan status were obtained from a previous comparative genomics study in which eight Meloidogyne species were analyzed against all other available nematode proteomes and a broad representation of non-nematode taxa using a dedicated homology-detection pipeline (Seçkin et al. 2025a). In that study, orphan proteins were defined as those with no detectable homologs outside the genus Meloidogyne, as determined by sequence similarity searches and orthology inference. Homologous proteins were clustered into orthogroups and a total of 8,974 orthogroups were identified as orphans, which corresponds to a total of 48,681 proteins, of which approximately 20% were inferred to result from extreme sequence divergence, while 16% were suggested to have emerged de novo. For the rest of the orphans, it was difficult to identify the origin and emergence as it is not always evident how to trace them back to the distant homolog or non-coding region from which they appeared. For the control benchmark of non-orphan proteins, we only considered sequences that were present in the Meloidogyne genus and had detectable homologs in at least four additional non-Meloidogyne species.
+
+
+### 2.2 Structure predictions
+  Three independent structure prediction approaches were used to model orphan and non-orphan proteins: AlphaFold2 (Jumper et al. 2021), OmegaFold (Wu et al. 2022), and ESMFold (Lin et al. 2023).
+
+  For AlphaFold2 (v 2.3.2), structure prediction was performed at the orthogroup level rather than per individual sequence. For each orthogroup, a custom multiple sequence alignment (MSA) was generated using the protein sequences belonging to that orthogroup with MAFFT (Katoh et al. 2019). One representative sequence per orthogroup was selected as the query sequence to represent the highly similar sequences in the same orthogroup, and the corresponding orthogroup-specific MSA was used as input to AlphaFold2. This strategy allowed us to leverage evolutionary information within orthogroups in the absence of homologs outside of the genus. All other parameters were left at their default values.
+
+  OmegaFold (v 1.1.0) and ESMFold (v 1.0) predictions were performed independently for each protein sequence without the need to use custom MSAs, following the default parameters of each method. For orphan proteins, one structural model was therefore generated per protein sequence. In order to compose a comparable negative sample of non-orphan structure predictions, we created two different sets:
+
+  Structural confidence was evaluated using the mean predicted Local Distance Difference Test (pLDDT) score for each model, as provided by the respective tools. Structural similarity between predictions obtained from different methods was assessed using TM-score calculated with TM-align (release 2018–04-26) (Zhang and Skolnick 2005).
+
+
+### 2.3 Disorder predictions
+  Intrinsic disorder was predicted from amino acid sequences using three independent predictors that are progressively less related to transformer-based structure prediction models: LoRA-DR v 1.0 (Lombardi et al. 2025) directly uses PLM embeddings, AIUPred v 1.0 (Erdős and Dosztányi 2024) uses a transformer architecture trained with data that is not derived from TBMs, and flDPnn (Hu et al. 2021) uses a fully connected encoder on non-TBM data. flDPnn and AIUPred were run using default parameters. LoRA-DR predictions were performed using the model trained on ESM embeddings to estimate residue-level disorder probabilities.
+
+  All three predictors provide per-residue disorder probability scores ranging from 0 to 1. A sequence-level disorder metric was calculated by averaging residue-level probabilities across each full-length protein. Mean disorder scores were subsequently compared among highly diverged orphan proteins, de novo orphan proteins, and non-orphan proteins.
+
+  Disorder can also be estimated through the calculation of the relative surface accessibility (RSA). We use the algorithm described in (Piovesan et al. 2022) on ESMFold predictions as a further comparison.
+
+
+### 2.4 Secondary structure predictions
+  Secondary structure of orphan and non-orphan proteins was predicted directly from sequence using ProtT5 with the option to distinguish the three states: helix, sheet and coil. ProtT5 (Elnaggar et al. 2022) generated output in sequence format with these three states. The predicted secondary structures from the sequence were then compared to secondary structure predictions of AlphaFold2 and ESMFold using the DSSP algorithm (Hekkelman et al. 2025), in order to assess the similarity of the predictions. Namely, residues denoted by DSSP with the code-letters G (310-helix), H (α-helix), I (pi-helix), and E (extended β-strand) were considered as secondary structure.
+
+
+### 2.5 Search against PDB and AFDB databases
+  To assess potential tertiary structure similarities between orphan proteins and previously characterized proteins, we performed structural homology searches using two complementary approaches.
+
+  In the first approach, orphan protein sequences were converted into 3Di structural representations using ProstT5 (Heinzinger et al. 2024). The resulting 3Di sequences were queried against the Protein Data Bank (PDB) and AlphaFold2 Protein Structure Database (AFDB) using Foldseek (van Kempen et al. 2024) (easy-search mode). Foldseek outputs included alignment statistics such as percent sequence identity and alignment scores, which were used to evaluate the significance of detected similarities.
+
+  In the second approach, structural homology searches were performed directly using the predicted three-dimensional models generated by ESMFold. These predicted structures were queried against the same reference databases using Foldseek.
+
+  For both approaches, a hit was considered significant if the e-value was below 10−3.
+
+
+## 3 Results
+
+### 3.1 TBM predictions of orphan proteins have low pLDDT regardless of MSA usage
+  We performed AlphaFold2, ESMFold and OmegaFold predictions on an exhaustive set of orphan proteins of the 4 species composing the Clade 1 of the genus Meloidogyne, and on the entire non-orphan proteome of M. incognita (see Methods and (Seçkin et al. 2025a)). Orphan protein orthologs within the Meloidogyne genus have been grouped in so-called orthogroups (OGs), allowing us to build a shallow input MSA for AlphaFold2. Notably, AlphaFold2 produces one structure prediction per OG, whereas ESMFold and OmegaFold produce one prediction per sequence. When comparing the results of AlphaFold2 to the other two tools, we based the comparisons on the representative sequence used for AlphaFold2.
+
+  For the three models, the median and average pLDDT of diverged and de novo predictions are in the “low” (50<pLDDT<70) or “very low” (pLDDT<50) quality ranges, with ESMFold getting systematically lower quality estimates (Fig. 2A). The non-orphan predictions are associated with significantly higher pLDDT values, just above or below the “high” quality threshold (pLDDT=70). Despite differences in their averages, the pLDDT scores relative to the three models are found to correlate (Spearman’s ρ=0.522 for AlphaFold2 vs ESMFold and Spearman’s ρ=0.522 for AlphaFold2 vs OmegaFold) (Fig. 2B and C).
+
+  The correlation between OmegaFold and ESMFold reveals two subpopulations (Fig. S1, available at supplementary material  Bioinformatics Advances online). Both show a correlation in pLDDT scores between the methods, but one exhibits a systematic shift in OmegaFold values. This effect arises from larger score differences among members of the same OG in OmegaFold than in ESMFold: the subpopulation with higher OmegaFold values is predominantly composed of structures ranked first within their OGs. This effect is not related to the presence of these sequences in UniProt (and thus in the OmegaFold training set).
+
+
+### 3.2 Structural similarity correlates with pLDDT
+  Given the uniformly low pLDDT scores produced by all three methods, a natural question is whether the pLDDT metric fails to adequately assess proteins that may lie outside its training distribution (the PDB), or whether the low confidence reflects genuine uncertainty in the predicted structures. Since no experimentally determined structures are available for orphan proteins, this question cannot be addressed by comparing predictions with ground truth. Instead, we compared the predictions produced by the three methods for each protein using pairwise structural alignments computed with TM-align (Zhang and Skolnick 2005). We found that the pLDDT assigned by each predictor correlates with the structural agreement among the three predicted models: high pLDDT values are associated with high pairwise TM-scores, whereas low pLDDT values correspond to substantial disagreement between predictors (Fig. 3). Low pLDDT values are thus accompanied by a lack of consensus across independent prediction methods.
+
+
+### 3.3 Intrinsic disorder and orphan structure prediction
+  Intrinsic disorder (ID) is believed to be prevalent in orphan and especially de novo proteins. Lacking direct experimental evidence on Meloidogyne proteins or orphan proteins in general, we used three ID predictors that are progressively less connected to transformer-based structure predictors (see Methods). As a further comparison, we also calculated the relative surface accessibility of the structure predictions. We observe that the more closely the method is related to TBMs, the more disorder will be predicted (Fig. 4). We also notice that a difference in intrinsic disorder density is only visible for the PLM-based method LoRA-DR and for the RSA calculated directly on the TBMs output, whereas the other two state-of-the-art methods do not find statistically significant differences.
+
+
+### 3.4 Predicted orphan tertiary structures lack structural homologs
+  By definition, orphan proteins lack detectable homologs at the sequence level. Consistent with this, we observed reduced confidence in structure predictions for orphan proteins compared to non-orphan controls. However, structural similarity is often more conserved than primary sequence similarity. We therefore investigated whether orphan proteins might nonetheless share detectable structural similarity with known protein structures.
+
+  To address this, we first applied a sequence-based structural search strategy that does not rely on predicted three-dimensional models. Representative sequences from each of the 8,974 orphan orthogroups were converted into 3Di representations using ProstT5. These 3Di sequences were then queried against the Protein Data Bank (PDB) and the AlphaFold Protein Structure Database (AFDB) using Foldseek. This approach yielded only 64 hits against PDB and 79 hits against AFDB across all orphan orthogroups. Among these, only 13 hits in either approach had an e-value below 10−3 and only two PDB hits and one AFDB hit exhibited greater than 50% identity, indicating that high-confidence structural matches are extremely rare.
+
+  In a second approach, we performed structural searches using predicted ESMFold models for orphan proteins, despite their overall lower prediction confidence. Querying these models against PDB and AFDB resulted in a larger number of matches (2,404 hits against PDB and 3,893 hits against AFDB). However, significant and high-identity matches remained uncommon, with 133 significant hits against PDB of which only 23 hits exceeded 50% identity and 164 significant hits against AFDB with only 16 hits exceeding 50% identity.
+
+  Taken together, these results indicate that the vast majority of orphan proteins lack detectable high-confidence structural homologs in current structural databases. Even when leveraging predicted models, structural similarity to known proteins remains limited. Consequently, reliable structural inference for orphan proteins remains challenging.
+
+
+### 3.5 Similar secondary structure content, lower confidence
+  The predicted structures of orphan proteins do not exhibit a systematic increase in flexible or disordered regions. Specifically, the proportion of residues participating in secondary structure elements (SSEs) remains largely unchanged across the three TBMs considered: AlphaFold2, ESMFold, and ProtT5 (Fig. 5). Notably, ProtT5 is the only method that does not overestimate alpha helical SSEs and that minimizes differences in beta sheet SSE content.
+
+  For non-orphan proteins, SSE assignments are largely consistent across TBMs, with pairwise identity ranging from 85% to 90%. In contrast, orphan proteins show lower agreement, with identities between 65% and 75% (Table S1, available at supplementary material  Bioinformatics Advances online). Given the high fraction of residues assigned to SSEs, we assessed whether these identity levels could arise from random assignment or instead reflect genuine consensus between methods to determine whether these levels of agreement could arise by chance (see Methods and Appendix A). Even for the least concordant pair of methods (AlphaFold2 and ProtT5, 65% identity), the associated P-value is below 0.05 for 95% of the sequences, confirming that TBM predictions are significantly more similar than expected by chance (Figs S2–S4, available at supplementary material  Bioinformatics Advances online).
+
+  Conversely, marked differences in pLDDT values are observed for residues belonging to SSEs, particularly beta sheets (Figs S5 and S6, available at supplementary material  Bioinformatics Advances online). This observation is consistent with the overall lower pLDDT scores associated with orphan proteins and indicates that, irrespective of their true intrinsic disorder content, TBMs do not model orphan proteins as being more disordered than non-orphan proteins.
+
+
+## 4 Discussion
+  Transformer-based models (TBMs) have rapidly become the dominant paradigm for protein structure prediction, largely due to their exceptional performance on proteins embedded in rich evolutionary contexts. In this work, we explicitly tested whether this success extends to genuinely out-of-distribution sequences, focusing on orphan proteins that either originate de novo or have diverged beyond detectable homology. Using a curated dataset of Meloidogyne orphan proteins, we show that this regime exposes clear limitations of current TBMs: indeed, tertiary structure predictions are incoherent across different methods, and pLDDT values are significantly lower than those of non-orphan proteins. Moreover, even though highly diverged and de novo sequences are different in several aspects (Seçkin et al. 2025a), they are treated similarly and poorly by TBMs as they both lack enough evolutionary information. Intrinsic disorder alone does not account for this prediction failure. Whereas there is evidence for de novo proteins to be enriched in intrinsic disorder (Wilson et al. 2017), diverged proteins (accounting for 50–80% of orphan proteins) are thought to retain structural similarity with their original protein family. Our results agree with this intuition and show that even for confirmed de novo proteins, disorder prediction estimates show an increase only when directly or indirectly calculated with TBMs. Instead, we find that secondary structure is consistently and significantly recovered across models, even when global folds disagree.
+
+  To enable the use of the MSA-based AlphaFold2, we organized our analyses around orthogroups (OGs) rather than individual sequences. For the single-sequence predictors ESMFold and OmegaFold, we therefore selected one representative sequence per OG. This raised the question of whether ESMFold and OmegaFold would predict similar structures for different sequences within the same OG. While 28% of same-OG predictions exhibit identical structures, we found that 50% have a median TM-score <0.5 when compared using TM-align (Fig. S7, available at supplementary material  Bioinformatics Advances online). However, we also observed that, among dishomogeneous OGs, the median TM-score is negatively correlated with the fraction of disordered residues (Fig. S8, available at supplementary material  Bioinformatics Advances online). Thus, rather than indicating genuine fold diversity, these low TM-scores likely reflect the broad conformational ensembles characteristic of predicted intrinsically disordered proteins.
+
+  Another potential concern is that orphan proteins are substantially shorter than the typical proteins used to benchmark structure predictors, raising the possibility that our observations might be driven by sequence length rather than orphan status per se. We explicitly controlled for this effect by repeating all analyses on a length-matched subset of non-orphan proteins, selected to reproduce the orphan length distribution (Figs S9 and S10, available at supplementary material  Bioinformatics Advances online). Across all metrics, the results were unchanged. This demonstrates that the observed deficiencies in tertiary structure prediction are not a trivial consequence of shorter sequences, but instead reflect a failure to generalize to sequences lacking identifiable evolutionary context.
+
+  Although our dataset is restricted to Meloidogyne orphan proteins, multiple lines of evidence suggest that the conclusions extend more broadly. Comparative studies have shown that many statistical and compositional features of de novo proteins are remarkably conserved across taxa, despite their independent evolutionary origins (Basile et al. 2017)). In line with this, a recent study on Drosophila de novo proteins reports strikingly similar results (Middendorf and Eicholt 2024):
+
+  Although limited to only de novo proteins, AlphaFold2 predictions and flDPnn predictions, the study confirms low confidence and poor agreement in tertiary structure prediction, and limited explanatory power of intrinsic disorder. While broader validation across additional clades will be necessary, the convergence of these findings strongly suggests that the observed behavior reflects a general property of TBMs confronted with truly novel protein sequences rather than lineage-specific peculiarities.
+
+  These results naturally raise the question of whether the observed failures are inherent to transformer architectures themselves. Recent work suggests that TBMs struggle to learn complex evolutionary and functional abstractions beyond what is directly supported by training data, particularly when evolutionary depth is shallow or absent (Hassan et al. 2025). Complementarily, theoretical and empirical analyses of transformers indicate that they predominantly capture local and mid-range interactions, such as motifs and short structural patterns, rather than encoding truly global context (Zhang et al. 2024), and that they incorporate structural prediction biases (Pratt et al. 2025, Sarti and Cazals 2026). This perspective offers a parsimonious explanation for our observations: secondary structure elements, which are largely determined by local sequence patterns, remain accessible to TBMs even in orphan proteins, whereas tertiary structure, requiring long-range coordination and global constraints, cannot be reliably inferred when evolutionary signals are missing.
+
+  Taken together, our results suggest a clear conceptual distinction between what TBMs interpolate and what they genuinely generalize. While these models excel at reconstructing folds represented in their training distributions, their predictions for orphan proteins reveal an intrinsic reliance on evolutionary redundancy. Importantly, the partial success observed at the level of secondary structure indicates that TBMs do capture meaningful biophysical regularities, but that these are insufficient to resolve full three-dimensional organization in the absence of homologous constraints. Orphan proteins therefore constitute a stringent and biologically relevant benchmark for probing the limits of modern protein language models, and highlight the need for future architectures or training strategies that better integrate physical principles and global structural reasoning.
+
+
+## Supplementary Material
+
+## Author contributions
+  Ercan Seçkin (Data curation-Lead, Methodology-Equal, Software-Lead, Writing—original draft-Equal), Dominique Colinet (Supervision-Equal, Validation-Equal, Writing—original draft-Equal), Etienne G Danchin (Supervision-Equal, Validation-Equal, Writing—original draft-Equal), Edoardo Sarti (Conceptualization-Lead, Methodology-Lead, Supervision-Equal, Validation-Equal, Writing—original draft-Equal)
+
+
+## Supplementary material
+  Supplementary material is available at Bioinformatics Advances online.
+
+
+## Conflicts of interest
+  None declared.
+
+
+## Funding
+  This work was supported by the joint INRAE-Inria PhD program, which funds the PhD thesis of Er.S. We are grateful to the Genotoul bioinformatics platform Toulouse Occitanie [Bioinfo Genotoul, DOI: 10.15454/1.5572369328961167E12] as well as to the bioinformatics and genomics platform, BIG, Sophia Antipolis [ISC PlantBIOs, DOI: 10.15454/qyey-ar89] for computing and storage resources.
+
+
+## Data availability
+  The original orphan dataset, the dataset including all our analysis and all scripts used for the analyses are available at https://doi.org/10.5281/zenodo.18788931
+
+
+## Acknowledgments
+  The authors thank Frédéric Cazals, Mathilde Carpentier, Gianni Liti, Alessandra Carbone, Vincent Mallet for the insightful discussions, and the anonymous reviewers for the constructive comments and suggestions.

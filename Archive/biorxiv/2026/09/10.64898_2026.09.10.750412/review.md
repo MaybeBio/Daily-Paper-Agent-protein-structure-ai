@@ -1,0 +1,95 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, main text, methods, figure legends not provided)
+- **Assessment boundary** Scientific soundness, methodological validity, claims vs evidence, and suitability for a general interdisciplinary audience
+- **Shared manuscript claim summary** The authors present ICARus, a positive-unlabelled (PU) learning framework that integrates protein language model (pLM)-derived protein-protein interaction (PPI) predictions to refine a genome-wide RNAi screen for vaccinia virus (VACV) host factors. They report improved prioritisation of known host factors, a broadening of the functional landscape of top-ranked genes, and release the data as an agentic-AI-enabled community resource (ICARusPox).
+- **Visible evidence base** Abstract, Results (narrative), Discussion, Methods (partial), Code/Data availability statements. Figures and tables are referenced but not provided. Supplementary figures and tables are referenced but not provided.
+- **Missing materials affecting confidence** All figures (Fig. 1-4), all tables (Table 1-3), all supplementary figures and tables (Figs. S1-S10, Tables S1-S10), the GitHub repository, and the Zenodo data repository. These are essential for evaluating the validity of the reported results.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a relevant problem in functional genomics screens, namely the mitigation of off-target effects and assay noise through computational refinement. The proposed approach, ICARus, is conceptually interesting and the integration of pLM-derived PPI predictions is timely. However, the current manuscript is severely under-supported by the provided evidence. The core results, including all quantitative performance metrics, model comparisons, and functional enrichment analyses, are presented without the corresponding figures, tables, or supplementary data. The methodological description is also incomplete, lacking critical details on the PU learning setup, hyperparameter selection, and the construction of the negative set. The claims of improved prioritisation and biological plausibility cannot be verified from the supplied material. The manuscript is not yet suitable for publication in its current form.
+- **Who would be interested in the results, and why** Researchers in virology, particularly those studying poxvirus-host interactions, would be interested in the refined list of candidate host factors. The broader functional genomics and screening community would be interested in the ICARus methodology as a generalisable strategy for hit prioritisation. The agentic-AI resource (ICARusPox) may appeal to bioinformaticians and computational biologists developing AI-assisted data exploration tools.
+- **Major strengths** The problem being addressed is significant and well-motivated. The proposed solution, using pLM-derived PPI predictions as a prior in a PU learning framework, is a novel and potentially powerful idea. The decision to release the data as an interactive, agentic resource is commendable and aligns with modern data-sharing practices. The discussion of limitations, particularly regarding the dependence on the positive reference set and PPI data quality, is thoughtful.
+- **Major Concerns**
+    - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence
+    - **Claim pointer** The claim that ICARus "enhances the identification of human genes with potential antiviral function" and "improves VACV host factor prioritisation" is central to the manuscript.
+    - **Evidence pointer** Results section, Figures 2 and 3, Tables 2 and 3, Supplementary Figures S2-S9, Supplementary Tables S3-S7.
+    - **Concern** The primary evidence for the effectiveness of ICARus is missing. The manuscript references performance metrics (AUROC, PR AUC, MCC) and enrichment analyses, but the corresponding figures and tables are not provided in the submitted material. Without these, it is impossible to assess the magnitude of the improvement, the statistical significance, or the robustness of the results. The comparison between the uncorrupted and corrupted PPI feature models is a key control, but its results are not visible.
+    - **Why it matters** The core claim of the paper rests entirely on these quantitative results. The reader cannot evaluate whether the proposed method works as described, whether the improvement is meaningful, or whether the conclusions are justified.
+    - **Resolution test** Provide all figures and tables with clear captions, including error bars, statistical test details, and sample sizes. The enrichment analysis (Fig. 3c) must be shown with the full list of significant terms and the statistical thresholds used.
+    - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Methodology
+    - **Claim pointer** The description of the ICARus framework and its components is insufficient for replication or full understanding.
+    - **Evidence pointer** Methods section, "Architecture and training of the MLP classification head for PPI prediction" and "Architecture and training of the multimodal MLP for VACV host factor prediction".
+    - **Concern** The Methods section lacks critical details. For the PPI prediction model, the input features are described as "xCAPT5-derived representations (ℝ 164 )", but the origin and nature of these representations are not explained. For the PU learning framework, the exact architecture of the "multimodal MLP" is described, but the training procedure, loss function details (beyond the name "nnPU"), and the handling of the positive-unlabelled data are not fully specified. The process for selecting the positive prior (π p = 5 × 10 ™ 2 ) is not justified. The construction of the negative PPI set, based on nucleolar localisation, is a strong assumption that needs more discussion and validation.
+    - **Why it matters** A Nature-style paper must provide sufficient methodological detail for experts to understand and potentially replicate the work. The current description is too high-level and leaves too many critical parameters and design choices unexplained.
+    - **Resolution test** Provide a complete and detailed description of the model architectures, training procedures, hyperparameter tuning, and the rationale for key design choices. Clarify the source and computation of the xCAPT5 representations. Justify the choice of the positive prior and the negative set construction strategy.
+    - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Data Availability
+    - **Claim pointer** The claim that the raw and refined read-outs are provided as a community resource (ICARusPox) is a key deliverable.
+    - **Evidence pointer** Data Availability statement, Code Availability statement, Results section "An interactive community resource for candidate antiviral target exploration".
+    - **Concern** The manuscript states that data and code are available, but the actual repositories (GitHub, Zenodo) are not accessible from the provided material. The description of the ICARusPox resource is narrative and lacks a demonstration of its functionality. It is unclear what specific data formats are provided, how the agentic features work, and whether the resource is stable and documented.
+    - **Why it matters** The value of the resource is a major part of the paper's contribution. Without access to it, the community cannot use it, and the claim of providing a "community resource" cannot be verified.
+    - **Resolution test** Ensure the repositories are public and accessible. Provide a clear description of the data structure, the API, and the agentic capabilities. Include a figure or a detailed example of how the resource can be used to answer a biological question.
+    - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Biological Validation
+    - **Claim pointer** The manuscript implies that the refined hits are more biologically relevant, but no experimental validation is presented.
+    - **Evidence pointer** Results section, Discussion.
+    - **Concern** The paper presents a computational refinement of a screen but does not include any experimental validation of the prioritised hits. While the authors acknowledge this is a resource for future validation, the claim that the refinement "broadens the functional landscape" in a way "consistent with established VACV biology" is based solely on computational enrichment analysis. The lack of any orthogonal validation (e.g., targeted knockdowns, overexpression, or biochemical assays) weakens the impact of the findings.
+    - **Why it matters** For a high-impact journal, the biological significance of the findings needs to be demonstrated, not just inferred. The absence of validation makes it difficult to assess the true value of the prioritised gene list.
+    - **Resolution test** Include at least a small set of validation experiments for a few top-ranked hits, or clearly state that the work is purely computational and frame the claims accordingly.
+- **Minor Comments**
+    - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Abstract
+    - **Evidence pointer** Abstract
+    - **Issue** The abstract states that ICARus "boosts the discovery" and "enhances the identification" but does not provide a single quantitative figure to support this. A specific metric, such as the improvement in recall@k or enrichment, would strengthen the abstract.
+    - **Required correction** Include a key quantitative result in the abstract, e.g., "ICARus improved recall of known host factors by X-fold compared to the uncorrected screen."
+    - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Reproducibility
+    - **Affected element** Methods, "VACV screening assay"
+    - **Evidence pointer** Methods section
+    - **Issue** The screening assay is described as following "an identical protocol to (Rämö et al. 2014)". While this is acceptable, the reference is not in the provided reference list, and the key parameters (e.g., siRNA library, cell density, timepoints) are not restated.
+    - **Required correction** Provide the full citation and briefly summarise the key parameters of the assay to make the Methods section self-contained.
+    - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Presentation
+    - **Affected element** Results, "Benchmarking protein-protein interaction models"
+    - **Evidence pointer** Table 1
+    - **Issue** The text states that xCAPT5 "consistently outperformed" the other models, but the table is not provided. The reader cannot see the actual values for AUROC, PR AUC, and MCC for all models.
+    - **Required correction** Ensure Table 1 is included and clearly formatted, with all metrics for all models.
+    - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Terminology
+    - **Affected element** Title
+    - **Evidence pointer** Title
+    - **Issue** The term "Agentic-AI-ready" is not standard and may be unclear to some readers. While it is explained in the text, the title could be more accessible.
+    - **Required correction** Consider a more standard phrasing, e.g., "AI-ready" or "interactive community resource", or define the term in the abstract.
+- **Technical failings that need to be addressed before the case is established**
+    - R1-M1: Missing figures and tables for all core performance and enrichment results.
+    - R1-M2: Incomplete methodological details for both the PPI prediction model and the PU learning framework.
+    - R1-M3: Inaccessible data and code repositories.
+- **Assessment against Nature-style criteria**
+    - **Originality** The concept of using pLM-derived PPI predictions as a prior for refining RNAi screen results is novel. The application of PU learning to this specific problem is also a new contribution. The originality is high, but it is contingent on the method being shown to work.
+    - **Scientific importance** The problem of off-target effects in RNAi screens is important and widespread. A generalisable solution would be of significant value. The specific application to poxvirus biology is timely given the recent mpox outbreaks. The importance is high, but again, it depends on the evidence.
+    - **Interdisciplinary readership** The work sits at the intersection of virology, functional genomics, and machine learning. The potential readership is broad. However, the current manuscript is not written for a general audience. The methods are described at a level that assumes significant expertise in both machine learning and high-throughput screening. The abstract is accessible, but the main text is not.
+    - **Technical soundness** The technical soundness cannot be assessed from the provided material. The missing figures, tables, and methodological details prevent any evaluation of the validity of the approach. The design of the negative set and the choice of the positive prior are potential weaknesses that need to be addressed.
+    - **Readability for nonspecialists** The abstract is clear, but the main text is dense and relies heavily on jargon. The description of the ICARusPox resource is the most accessible part. The manuscript would benefit from a clearer explanation of the PU learning concept and the pLM embeddings for a broader audience.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript is not suitable for publication in its current form. The core claims are unverifiable due to missing data and methodological details. A resubmission with complete figures, tables, and a fully detailed Methods section could be considered, but the current submission does not meet the standards required for a Nature-style journal.
+
+## Risk / unsupported claims
+- The claim that ICARus "enhances the identification of human genes with potential antiviral function" is unsupported without the performance metrics and enrichment analyses.
+- The claim that the refinement "broadens the functional landscape" of top-ranked genes is unsupported without Figure 3 and the associated supplementary data.
+- The claim that the pLM-based PPI predictions are a meaningful source of biological prior information is only indirectly supported by the ablation-style experiments (permutation tests), but the results of these experiments are not shown.
+- The claim that ICARusPox is a functional "agentic harness" is unverifiable without access to the resource.
+- The overall generalisability of the strategy to other screening modalities is a reasonable speculation but is not demonstrated.

@@ -1,0 +1,82 @@
+## Review setup
+- **Input scope** Full manuscript text, including abstract, introduction, results, discussion, materials and methods, and figure legends as provided.
+- **Assessment boundary** Evaluation is limited to the scientific content, methodology, and claims presented in the provided manuscript. No external data, code, or supplementary files were accessed.
+- **Shared manuscript claim summary** The authors present PAbFold, a computational pipeline based on AlphaFold2 (via LocalColabFold), to predict linear antibody epitopes from antibody and antigen sequences. The method was tested on anti-Myc and anti-HA antibodies, and on a novel anti-SARS-CoV-2 nucleocapsid antibody (mBG17), with experimental validation via peptide competition ELISA and alanine scanning.
+- **Visible evidence base** Main text figures (Figures 1–4), figure supplements referenced, source data files, and methods descriptions. Specific numerical values for some results are provided in the text.
+- **Missing materials affecting confidence** Supplementary files (e.g., antibody sequences, peptide lists, source data) were not available for review. Code repository was not inspected. Raw pLDDT data and full model outputs were not accessible.
+
+## Reviewer
+- **Overall assessment** The manuscript describes a practical and potentially useful application of AlphaFold2 for linear epitope prediction. The core idea is timely and the experimental validation with a novel antibody is a strength. However, the evidence presented is largely based on a small number of test cases, and the sensitivity of the method to peptide length, MSA details, and AlphaFold2 versions raises concerns about robustness and generalizability. The manuscript would benefit from a more systematic evaluation and clearer reporting of performance metrics.
+- **Who would be interested in the results, and why** Researchers in antibody engineering, immunology, and structural biology, particularly those interested in rapid epitope mapping. The method could also be of interest to computational biologists developing protein-protein interaction prediction tools.
+- **Major strengths** 1. The study addresses a real bottleneck in antibody characterization. 2. The use of a novel antibody (mBG17) with experimental validation is a strong point. 3. The method is presented as an accessible, open-source pipeline. 4. The authors honestly discuss the sensitivity of the method to various parameters.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that PAbFold "was able to accurately flag known epitope sequences" for Myc and HA, and "very accurately predict" the mBG17 epitope.
+  - **Evidence pointer** Results sections "Testing of scFv:peptide structure prediction method using the Myc Epitope", "Testing of the PAbFold method using the HA epitope", "Determination and experimental validation of a novel linear antibody epitope"; Figures 2 and 3.
+  - **Concern** The evidence for "accurate" prediction is based on a very small number of examples (two known antibodies, one novel antibody). The performance is not quantified in a systematic way (e.g., no clear definition of a "hit" or a "successful prediction" across a larger benchmark set). The ranking of the correct epitope is described, but the statistical significance of this ranking over random or alternative methods is not established. The sensitivity to parameters (peptide length, MSA, model version) suggests the method may not be robust, and the conditions for optimal performance are not clearly defined.
+  - **Why it matters** Without a more rigorous and quantitative evaluation, it is difficult to assess the general utility and reliability of the method. The current evidence is anecdotal and may not support the broad claims of predictive capability.
+  - **Resolution test** The authors should provide a more comprehensive benchmark, ideally including a larger set of antibodies with known linear epitopes, and report performance metrics such as sensitivity, specificity, and rank of the true epitope. They should also systematically explore the parameter space (peptide length, MSA generation, model version) to define the conditions under which the method works reliably.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that the method's success is due to the "lack of strong competing structure within the short peptide" (Introduction) and that it can predict "the structural details for how that linear epitope binds to the antibody" (Results, mBG17 section).
+  - **Evidence pointer** Introduction, Results section "Fine characterization of the mBG17 epitope and comparison to the predicted AlphaFold2 model", Figure 4.
+  - **Concern** The mechanistic hypothesis for why the method works is not tested. The comparison between the predicted model and the alanine scanning data is qualitative. The authors state that the model is "remarkably consistent" with the experimental data, but the criteria for this consistency are not defined. It is unclear if the predicted interactions are specific and accurate, or if the agreement is coincidental. The claim that the method provides "structural details" is not supported by a quantitative comparison to the experimental data.
+  - **Why it matters** The manuscript implies that the method can provide structural insights into antibody-peptide interactions. This is a strong claim that requires more rigorous validation. A qualitative comparison to alanine scanning data is insufficient to establish the accuracy of the predicted binding mode.
+  - **Resolution test** The authors should provide a more detailed and quantitative comparison between the predicted model and the experimental alanine scanning data. For example, they could calculate a correlation between the predicted effect of each mutation on binding and the experimentally measured effect. They should also discuss the limitations of the predicted model.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** The claim that the method is sensitive to "AlphaFold2 neural network versions, and multiple-sequence alignment databases" (Abstract) and that "caching the MSAs proved to be very useful" (Discussion).
+  - **Evidence pointer** Discussion section, Figure 3—figure supplements 1–7.
+  - **Concern** The manuscript describes significant difficulties in reproducing results due to changes in third-party tools (ColabFold, MMseqs2). While the authors provide a recommendation to cache MSAs, the issue of reproducibility is a major concern for a method that is presented as a practical tool. The specific conditions under which the method works are not fully specified, and it is unclear if a user following the provided instructions would obtain the same results.
+  - **Why it matters** Reproducibility is a cornerstone of scientific method. If the method's performance is highly dependent on the exact versions of software and databases, its utility is limited. The authors need to provide a more robust solution or a clear guide for users to achieve reproducible results.
+  - **Resolution test** The authors should provide a containerized version of the pipeline (e.g., Docker) with pinned versions of all dependencies. They should also provide a clear description of the exact software and database versions used to generate the results in the paper.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Methods section "Software"
+  - **Evidence pointer** Materials and methods, "Software" section.
+  - **Issue** The description of the "Consensus" method is somewhat unclear. It states that "residues are averaged across each of the five models that AF2 uses," but it is not clear if this averaging is done per-residue across models, or if the entire peptide structure is averaged.
+  - **Required correction** Clarify the exact procedure for the "Consensus" method, including how the per-residue pLDDT values from the five models are combined.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Results section "Testing of scFv:peptide structure prediction method using the Myc Epitope"
+  - **Evidence pointer** Results, "Testing of scFv:peptide structure prediction method using the Myc Epitope" section.
+  - **Issue** The text states that the "expected Myc peptide epitope (EQKLISEEDL) was one of several peptides with high average pLDDT" but the ranking of this exact peptide is not clearly stated. It is also mentioned that the "second highest ranked peptide in this analysis (QKLISEEDLL) was a near perfect match for the expected epitope." It would be helpful to know the rank of the exact epitope.
+  - **Required correction** Provide the rank of the exact epitope sequence in the list of all peptides, for each antibody tested.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Presentation
+  - **Affected element** Figure 4
+  - **Evidence pointer** Figure 4.
+  - **Issue** The figure legend for Figure 4 is not provided in the manuscript text. It is difficult to interpret the figure without a legend.
+  - **Required correction** Include a complete figure legend for Figure 4, describing all panels and the data shown.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Data availability
+  - **Evidence pointer** Data availability section.
+  - **Issue** The data availability statement mentions a Zenodo record, but the link is not provided in the text.
+  - **Required correction** Provide the full URL for the Zenodo record.
+- **Technical failings that need to be addressed before the case is established** The lack of a systematic benchmark and quantitative performance metrics (R1-M1) is a key technical failing. The qualitative comparison to alanine scanning data (R1-M2) also needs to be made more rigorous. The reproducibility issues (R1-M3) need to be addressed with a more robust solution.
+- **Assessment against Nature-style criteria** 
+  - **Originality** The application of AlphaFold2 to linear epitope prediction is not entirely new, but the specific pipeline and its focus on linear epitopes is a useful contribution. The originality is moderate.
+  - **Scientific importance** The problem of epitope mapping is important, and a reliable computational method would be valuable. However, the current evidence does not convincingly demonstrate that the method is reliable enough for broad use.
+  - **Interdisciplinary readership** The topic is relevant to immunology, structural biology, and computational biology. The manuscript is written in a way that is accessible to these communities.
+  - **Technical soundness** The technical soundness is currently not established due to the lack of a rigorous evaluation and the reproducibility concerns.
+  - **Readability for nonspecialists** The manuscript is generally well-written and the concepts are explained clearly. The methods section is detailed, but the lack of a clear figure legend for Figure 4 is a minor issue.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript has potential, but the major concerns regarding the robustness and quantitative validation of the method need to be addressed before the claims can be supported.
+
+## Risk / unsupported claims
+- The claim that PAbFold "was able to accurately flag known epitope sequences" is not supported by a quantitative benchmark.
+- The claim that the method can predict "the structural details for how that linear epitope binds to the antibody" is not supported by a rigorous comparison to experimental data.
+- The claim that the method's success is due to the "lack of strong competing structure within the short peptide" is a hypothesis that is not tested.
+- The generalizability of the method to other antibodies and antigens is not established, given the small number of test cases.

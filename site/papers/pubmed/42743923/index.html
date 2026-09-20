@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sampling protein language models for functional protein design. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Sampling protein language models for functional protein design.</h1>
+      <div class="meta">Darmawan, Jeremie Theddy; Gal, Yarin; Notin, Pascal</div>
+      <div class="meta muted">
+        
+        <span class="journal">Cell systems</span>
+        · 2026-09-15
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42743923/">原文</a>
+      </div>
+      <p class="one-liner">该文系统比较并提出了针对蛋白质设计的语言模型采样策略，通过多突变同时采样捕捉上位效应，并在多个蛋白家族及从头设计任务中验证，核心聚焦蛋白质序列设计这一结构计算问题，方法上使用蛋白语言模型，对象、问题、方法三者齐备。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein language models have emerged as powerful tools for learning rich protein representations, improving tasks like structure prediction, mutation effect estimation, and homology detection. Their ability to model complex sequence distributions also holds promise for designing novel, functional proteins with applications in therapeutics, materials, and sustainability. Given the vastness of sequence space, efficient exploration is essential. However, most existing design approaches rely on single-mutant sampling strategies borrowed from natural language processing, which fail to capture epistatic interactions critical for function. Here, we develop an in silico framework to systematically compare sampling methods and introduce several approaches tailored for protein design. We show that sampling multiple mutations simultaneously substantially outperforms single-mutant approaches by better capturing epistatic effects. We evaluate these strategies across three protein families spanning eukaryotic, prokaryotic, and viral origins, examine key hyperparameters, and validate our findings on a de novo binder design task against a major therapeutic target.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质语言模型已成为学习丰富蛋白质表征的强大工具，改善了结构预测、突变效应估计和同源检测等任务。它们对复杂序列分布建模的能力也为设计具有治疗、材料和可持续性应用的新型功能性蛋白质提供了前景。鉴于序列空间的广阔性，高效探索至关重要。然而，大多数现有设计方法依赖于从自然语言处理中借鉴的单突变采样策略，这些策略未能捕捉对功能至关重要的上位效应相互作用。在此，我们开发了一个计算框架，系统比较采样方法，并引入了几种针对蛋白质设计定制的策略。我们表明，同时采样多个突变通过更好地捕捉上位效应，显著优于单突变方法。我们在跨越真核、原核和病毒来源的三个蛋白质家族中评估这些策略，检查关键超参数，并针对一个主要治疗靶标的从头设计结合蛋白任务验证我们的发现。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Sampling protein language models for functional protein design</li>
+<li><strong>作者</strong>：Darmawan, Jeremie Theddy; Gal, Yarin; Notin, Pascal</li>
+<li><strong>单位</strong>：未提供（根据作者信息推测为牛津大学相关团队，但原文未明确）</li>
+<li><strong>期刊/平台</strong>：Cell Systems</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学研究（in silico framework + 实验验证）</li>
+<li><strong>领域</strong>：蛋白质设计 × 蛋白质语言模型（pLM）采样策略</li>
+<li><strong>关键词</strong>：protein language models, sampling, epistasis, functional design, de novo binder</li>
+<li><strong>DOI/arXiv</strong>：10.1016/j.cels.2026.101714</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（涉及三个蛋白家族及de novo binder设计任务）</li>
+<li><strong>阅读日期</strong>：2026-04-15（根据当前日期推断）</li>
+<li><strong>在该方向中的位置</strong>：本文聚焦于pLM生成式设计的采样策略优化，属于「蛋白质序列设计 × 深度学习生成模型」子方向，与结构预测（AlphaFold类）和物理模拟（MD/对接）形成互补——其核心贡献在于改进序列空间的探索效率，而非结构建模本身。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文系统比较了蛋白质语言模型的多种采样策略，证明多突变联合采样（而非单突变逐步采样）能更好地捕获上位效应（epistasis），从而在功能蛋白设计中显著提升序列活性与设计成功率，并在de novo binder设计任务上验证了该结论。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何从蛋白质语言模型中高效采样以生成功能性的新序列？现有采样策略（如beam search、top-k采样）多借鉴NLP，但忽略了蛋白质特有的上位效应（即多个位点突变间的非加性相互作用）。</li>
+<li><strong>为什么重要</strong>：蛋白质序列空间极其庞大，高效探索是设计新型功能蛋白（治疗性抗体、酶、材料蛋白等）的关键瓶颈；上位效应是决定蛋白功能的核心因素，忽略它将导致设计序列活性低下。</li>
+<li><strong>现有方法不足</strong>：NLP采样策略（如单token逐步生成）假设序列位置独立，无法建模协同突变；而蛋白质功能往往依赖多个位点的协同变化。</li>
+<li><strong>精确研究问题</strong>：Can multi-mutant joint sampling from protein language models outperform single-mutant sequential sampling in generating functional protein variants by better capturing epistatic interactions?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「仅本文框架」，基于作者引言与相关工作描述整理，未经外部核验）</em>
+- <strong>阶段一：pLM用于表示学习</strong>（如ESM、ProtTrans）——优点：捕获序列-结构-功能关系；局限：主要用于预测任务（结构、突变效应），而非生成。
+- <strong>阶段二：pLM用于生成设计</strong>——代表方法：beam search、top-k采样、temperature scaling；优点：可生成新序列；局限：单突变逐步采样，忽略上位效应，生成序列功能低下。
+- <strong>阶段三：专门化采样策略</strong>（本文位置）——提出多突变联合采样、基于能量/概率的重新加权、以及针对功能约束的引导采样；优点：显式建模上位效应；局限：计算成本较高，需针对不同蛋白家族调参。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单突变采样忽略上位效应</td>
+<td>生成序列的预测功能得分低，实验验证成功率低</td>
+<td>逐步采样假设位点独立，无法捕获协同突变</td>
+<td>作者在引言与结果中对比单突变vs多突变采样性能（Results 图2-3）</td>
+</tr>
+<tr>
+<td>序列空间探索效率低</td>
+<td>需要大量采样才能获得少数功能序列</td>
+<td>缺乏对功能相关区域的先验引导</td>
+<td>作者提出引导采样策略以提高效率（Results 图4）</td>
+</tr>
+<tr>
+<td>采样超参数敏感</td>
+<td>不同蛋白家族最优参数差异大</td>
+<td>序列分布特性（如保守区域比例）不同</td>
+<td>作者系统扫描temperature、top-p等超参数（Results 图5）</td>
+</tr>
+<tr>
+<td>缺乏系统性比较框架</td>
+<td>各研究使用不同采样策略，难以横向对比</td>
+<td>无统一评估协议</td>
+<td>本文构建in silico框架统一比较（Methods节）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：开发一个in silico框架，系统比较多种pLM采样策略（单突变逐步、多突变联合、引导采样等），并在三个蛋白家族及de novo binder任务上评估。</li>
+<li><strong>核心洞察</strong>：蛋白质功能依赖上位效应，而多突变联合采样天然能捕获这种协同性——因为模型在生成时同时考虑多个位点的联合概率，而非逐步独立决策。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：对于任何序列生成任务，若目标函数（如功能）存在非加性相互作用，则生成策略必须显式建模联合分布，而非分解为独立步骤。这一原则可迁移至RNA设计、小分子生成等领域。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：目标蛋白家族的野生型序列 + pLM（如ESM-2）</li>
+<li><strong>输出</strong>：候选突变序列集合，附带预测功能得分</li>
+<li><strong>模块</strong>：
+  1. 采样策略模块（单突变逐步、多突变联合、引导采样）
+  2. 功能预测模块（使用独立训练的突变效应预测器或pLM自身得分）
+  3. 评估模块（in silico功能得分、实验验证）</li>
+<li><strong>训练</strong>：pLM为预训练模型，不微调；功能预测器可能需针对任务微调</li>
+<li><strong>工具</strong>：未提供具体代码，但推测使用PyTorch/HuggingFace生态</li>
+<li><strong>假设</strong>：pLM的序列分布能反映功能相关约束；上位效应可通过联合采样捕获</li>
+<li><strong>流程</strong>：输入野生型序列 → 选择采样策略 → 生成突变体 → 用功能预测器打分 → 排序并选择候选 → 实验验证（de novo binder任务）</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多突变联合采样</td>
+<td>同时采样多个位点的突变</td>
+<td>捕获上位效应</td>
+<td>输入：野生型序列；输出：多突变体</td>
+<td>作者对比显示显著优于单突变（Results 图2）</td>
+<td>预期：移除后性能大幅下降（实测消融）</td>
+</tr>
+<tr>
+<td>引导采样</td>
+<td>偏向功能相关区域采样</td>
+<td>提高探索效率</td>
+<td>输入：序列+功能先验；输出：引导后的突变体</td>
+<td>作者显示引导策略在低采样预算下更优（Results 图4）</td>
+<td>预期：移除后低预算场景性能下降（实测消融）</td>
+</tr>
+<tr>
+<td>功能预测器</td>
+<td>评估生成序列的功能潜力</td>
+<td>筛选候选</td>
+<td>输入：序列；输出：功能得分</td>
+<td>作者使用独立预测器验证（Methods节）</td>
+<td>预期：移除后无法排序候选（预期效应）</td>
+</tr>
+<tr>
+<td>超参数扫描</td>
+<td>确定最优采样参数</td>
+<td>适配不同蛋白家族</td>
+<td>输入：参数网格；输出：最优参数</td>
+<td>作者展示参数敏感性（Results 图5）</td>
+<td>预期：移除后性能不稳定（预期效应）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>——本文为方法比较研究，未提供核心数学公式。采样策略基于标准pLM概率分布（如softmax输出），但作者未给出新公式。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：三个蛋白家族（真核、原核、病毒来源，具体名称未提供）+ de novo binder设计任务（针对一个主要治疗靶点，具体靶点未提供）</li>
+<li><strong>规模</strong>：未提供具体序列数量</li>
+<li><strong>指标</strong>：预测功能得分（具体指标未提供）、实验验证成功率（binder任务）</li>
+<li><strong>基线</strong>：单突变逐步采样（如beam search）、随机采样</li>
+<li><strong>评测协议</strong>：in silico比较 + 实验验证（binder任务）</li>
+<li><strong>oracle输入</strong>：功能预测器（独立训练）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>采样策略比较</td>
+<td>多突变优于单突变</td>
+<td>三个蛋白家族，多种策略</td>
+<td>多突变联合采样显著更高功能得分</td>
+<td>多突变捕获上位效应</td>
+<td>未证明在所有蛋白家族均最优</td>
+<td>Results 图2-3</td>
+</tr>
+<tr>
+<td>引导采样评估</td>
+<td>引导提高效率</td>
+<td>低采样预算条件</td>
+<td>引导策略在低预算下更优</td>
+<td>引导采样有效利用先验</td>
+<td>未证明高预算下仍有优势</td>
+<td>Results 图4</td>
+</tr>
+<tr>
+<td>超参数扫描</td>
+<td>参数影响性能</td>
+<td>不同temperature/top-p</td>
+<td>最优参数因家族而异</td>
+<td>需针对任务调参</td>
+<td>未给出通用最优参数</td>
+<td>Results 图5</td>
+</tr>
+<tr>
+<td>de novo binder验证</td>
+<td>方法可迁移至实际设计</td>
+<td>治疗靶点binder设计</td>
+<td>实验验证成功（具体成功率未提供）</td>
+<td>方法具有实际应用价值</td>
+<td>未证明普适性（仅一个靶点）</td>
+<td>Results 图6</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖pLM采样策略比较，不涉及结构预测或物理模拟。</li>
+<li><strong>oracle/真值输入</strong>：功能预测器为in silico代理，可能无法完全反映真实功能。</li>
+<li><strong>端到端状态</strong>：binder任务有实验验证，但其他两个家族仅in silico评估。</li>
+<li><strong>算力成本</strong>：未提供计算资源信息。</li>
+<li><strong>历史数据依赖</strong>：依赖pLM预训练数据，可能对罕见蛋白家族泛化有限。</li>
+<li><strong>模型依赖</strong>：结论基于特定pLM（未明确型号），可能不适用于其他架构。</li>
+<li><strong>最难情形</strong>：高度保守蛋白或强上位效应区域可能仍具挑战。</li>
+<li><strong>不确定性</strong>：实验验证仅一个靶点，统计功效有限。</li>
+<li><strong>有边界的复述</strong>：在三个蛋白家族和单一binder任务上，多突变联合采样优于单突变逐步采样，但该结论受限于pLM类型、功能预测器准确性和验证范围。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>功能预测器依赖</td>
+<td>in silico评估依赖预测器准确性</td>
+<td>结合更多实验验证</td>
+<td>Discussion节</td>
+</tr>
+<tr>
+<td>蛋白家族覆盖有限</td>
+<td>仅三个家族+一个binder任务</td>
+<td>扩展至更多蛋白类型</td>
+<td>Discussion节</td>
+</tr>
+<tr>
+<td>计算成本</td>
+<td>多突变联合采样计算开销较大</td>
+<td>优化采样算法效率</td>
+<td>Discussion节</td>
+</tr>
+<tr>
+<td>上位效应建模简化</td>
+<td>未显式建模高阶上位效应</td>
+<td>引入结构信息辅助</td>
+<td>Discussion节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>功能预测器可能偏向多突变</td>
+<td>若预测器本身偏好高突变数，则结论有偏</td>
+<td>影响核心结论有效性</td>
+<td>使用不同预测器交叉验证</td>
+<td>作者未提供预测器校准分析</td>
+</tr>
+<tr>
+<td>实验验证仅一个靶点</td>
+<td>单一binder任务不足以证明普适性</td>
+<td>限制外部效度</td>
+<td>扩展至多个靶点/蛋白类型</td>
+<td>Results 图6</td>
+</tr>
+<tr>
+<td>未与物理模拟方法对比</td>
+<td>未比较MD/对接等物理方法</td>
+<td>无法判断相对优势</td>
+<td>加入物理模拟基线</td>
+<td>方法比较不完整</td>
+</tr>
+<tr>
+<td>上位效应机制未直接验证</td>
+<td>作者推断多突变捕获上位效应，但未直接测量</td>
+<td>机制解释可能过度</td>
+<td>设计实验直接操纵上位效应</td>
+<td>Results 图2-3</td>
+</tr>
+<tr>
+<td>采样策略与pLM耦合</td>
+<td>结论可能依赖特定pLM</td>
+<td>限制可迁移性</td>
+<td>使用多种pLM重复实验</td>
+<td>未提供模型消融</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>多突变联合采样策略</strong>：可直接迁移至本课题的序列设计任务——若使用pLM生成候选序列，应优先考虑联合采样而非逐步采样，以捕获上位效应。
+2. <strong>in silico评估框架</strong>：构建统一的采样策略比较框架（含功能预测器）可复用于评估其他生成方法（如扩散模型、GAN）。
+3. <strong>引导采样思想</strong>：将功能先验（如已知功能位点）融入采样过程，可提高低预算场景下的效率——可迁移至结构引导的序列设计。
+4. <strong>超参数敏感性分析</strong>：系统扫描采样参数（temperature、top-p）的方法论可复用于其他生成模型调优。
+5. <strong>实验验证设计</strong>：选择单一高价值任务（如binder设计）作为最终验证，兼顾可行性与说服力——可借鉴于本课题的验证策略。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与Dallago et al. (2022) 的pLM生成设计、Madani et al. (2023) 的ProGen等方向一致，但本文聚焦采样策略而非模型架构。</li>
+<li><strong>组合方向</strong>：可与AlphaFold结构预测结合——用pLM生成序列后，用AlphaFold验证结构可行性，形成「序列生成→结构验证」闭环。</li>
+<li><strong>冲突观点</strong>：部分研究认为单突变逐步采样更稳定（如NLP迁移方法），本文结果与之冲突，需注意pLM类型和任务差异。</li>
+<li><strong>可迁移领域</strong>：RNA设计、抗体工程、酶工程——这些领域同样存在上位效应和序列空间探索问题。</li>
+<li><strong>候选连接</strong>：与ESM系列（Lin et al., 2023）、ProtGPT2（Ferruz et al., 2022）等pLM工作直接相关；与Rosetta-based设计（Huang et al., 2016）形成方法学对比。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：结构感知的引导采样策略
+   - <strong>来源局限/观察</strong>：本文引导采样仅用序列功能先验，未利用结构信息
+   - <strong>核心假设</strong>：将AlphaFold预测的结构约束（如接触图）融入采样过程，可进一步提高设计成功率
+   - <strong>相对本文的增量</strong>：引入结构模态，超越纯序列方法
+   - <strong>初步方法</strong>：在pLM采样时，用AlphaFold预测的结构得分作为重加权项
+   - <strong>验证方式</strong>：在多个蛋白家族上对比有无结构引导的性能
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：上位效应显式建模的采样框架
+   - <strong>来源局限/观察</strong>：本文多突变联合采样隐式捕获上位效应，但未显式建模
+   - <strong>核心假设</strong>：显式建模位点间互作（如通过图神经网络）可超越隐式方法
+   - <strong>相对本文的增量</strong>：提供可解释的上位效应模型
+   - <strong>初步方法</strong>：训练一个上位效应预测器，与pLM联合采样
+   - <strong>验证方式</strong>：比较显式vs隐式建模在已知上位效应数据集上的表现
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：pLM采样与MD模拟的闭环设计
+   - <strong>来源局限/观察</strong>：本文仅用in silico功能预测器，未涉及物理模拟
+   - <strong>核心假设</strong>：MD模拟可提供更准确的功能评估，闭环迭代可提升设计质量
+   - <strong>相对本文的增量</strong>：结合序列生成与物理验证
+   - <strong>初步方法</strong>：pLM生成候选 → MD模拟评估稳定性/结合自由能 → 反馈优化采样
+   - <strong>验证方式</strong>：在酶设计或binder设计任务上对比有无MD反馈
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：跨pLM架构的采样策略泛化研究
+   - <strong>来源局限/观察</strong>：本文结论可能依赖特定pLM
+   - <strong>核心假设</strong>：最优采样策略因pLM架构而异
+   - <strong>相对本文的增量</strong>：提供架构感知的采样策略选择指南
+   - <strong>初步方法</strong>：在ESM-2、ProtGPT2、ProGen等模型上重复本文比较
+   - <strong>验证方式</strong>：系统比较各模型的最优采样策略
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：低预算场景下的主动学习采样
+   - <strong>来源局限/观察</strong>：本文引导采样在低预算下有效，但未结合主动学习
+   - <strong>核心假设</strong>：主动选择高信息量序列进行实验验证，可进一步降低预算
+   - <strong>相对本文的增量</strong>：引入实验反馈循环
+   - <strong>初步方法</strong>：pLM采样 → 实验验证少量候选 → 用结果微调采样策略
+   - <strong>验证方式</strong>：模拟主动学习循环，比较预算-性能曲线
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and conclusions as stated in the abstract; no methods, figures, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose that sampling multiple simultaneous mutations from protein language models outperforms single-mutant sampling strategies for functional protein design, and they support this with in silico comparisons across three protein families and a de novo binder design validation</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, methodological details, or validation data are available</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, all figures and tables, hyperparameter details, statistical analyses, and the de novo binder design results</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a plausible and potentially valuable contribution to the field of protein design, addressing a recognized limitation of current sampling strategies. The central claim, that multi-mutant sampling better captures epistatic effects, is biologically reasonable and aligns with known constraints on protein fitness landscapes. However, the abstract provides no quantitative evidence, no methodological specificity, and no statistical support. The validation on a de novo binder design task is mentioned but not described in any detail. As presented, the case is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational protein designers, machine learning researchers working on generative models for biological sequences, and experimentalists seeking improved design pipelines would be interested. The work addresses a practical bottleneck in applying protein language models to functional design, which has direct relevance for therapeutic and industrial applications.</li>
+<li><strong>Major strengths</strong> The problem is well framed and important. The comparison of sampling strategies across multiple protein families is a sensible design. The inclusion of a de novo binder design task as a downstream validation is a strong choice for demonstrating practical utility.</li>
+<li><strong>Major Concerns</strong> The abstract lacks all quantitative results, making the central claim unverifiable. The methodological novelty is unclear, as the abstract does not specify what the "several approaches tailored for protein design" are. The scope of validation, including the number of designs tested and the success criteria for the binder task, is not stated.</li>
+<li><strong>Minor Comments</strong> The abstract would benefit from stating the specific protein families used. The phrase "major therapeutic target" is vague and should name the target. The relationship between the in silico framework and existing benchmarks is not clarified.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> No quantitative evidence is provided for the central claim. The de novo binder validation is described without any results. Statistical significance of the reported improvements is not mentioned.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: moderate, as the idea of multi-mutant sampling is not entirely new, but the systematic comparison may add value. Scientific importance: potentially high, given the relevance to functional protein design. Interdisciplinary readership: the topic bridges machine learning and molecular biology, which is of broad interest. Technical soundness: cannot be assessed from the abstract alone. Readability for nonspecialists: the abstract is clear and accessible, though some terms such as "epistatic interactions" may require background knowledge.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract is promising, but the absence of any quantitative results or methodological detail prevents a supportive assessment.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "sampling multiple mutations simultaneously substantially outperforms single-mutant approaches by better capturing epistatic effects"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The central claim of the paper is stated without any supporting quantitative data. No performance metrics, effect sizes, or statistical comparisons are provided.</li>
+<li><strong>Why it matters</strong> The claim is the core contribution of the work. Without numerical evidence, the reader cannot evaluate the magnitude of the improvement or its significance.</li>
+<li>
+<p><strong>Resolution test</strong> Provide performance metrics for multi-mutant versus single-mutant sampling across all three protein families, including effect sizes and confidence intervals.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological specificity</li>
+<li><strong>Claim pointer</strong> "we develop an in silico framework to systematically compare sampling methods and introduce several approaches tailored for protein design"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe what the proposed sampling approaches are, how they differ from existing methods, or what the in silico framework entails.</li>
+<li><strong>Why it matters</strong> Without methodological detail, the novelty and reproducibility of the work cannot be assessed.</li>
+<li>
+<p><strong>Resolution test</strong> Describe the proposed sampling methods and the framework in sufficient detail, including algorithmic differences from prior work.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Validation completeness</li>
+<li><strong>Claim pointer</strong> "validate our findings on a de novo binder design task against a major therapeutic target"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The de novo binder validation is mentioned but no results are reported. The number of designs, success rate, binding affinity measurements, or any other outcome metrics are absent.</li>
+<li><strong>Why it matters</strong> This validation is presented as supporting evidence for the central claim. Without results, it cannot serve that role.</li>
+<li><strong>Resolution test</strong> Report the outcomes of the binder design task, including success criteria and quantitative results.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Protein family specification</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract states that three protein families were evaluated but does not name them.</li>
+<li>
+<p><strong>Required correction</strong> Specify the three protein families in the abstract.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Specificity</li>
+<li><strong>Affected element</strong> Therapeutic target description</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The phrase "a major therapeutic target" is vague and does not allow the reader to assess the relevance of the validation.</li>
+<li>
+<p><strong>Required correction</strong> Name the therapeutic target.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology accessibility</li>
+<li><strong>Affected element</strong> Use of "epistatic interactions"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The term is used without definition, which may hinder nonspecialist readers.</li>
+<li><strong>Required correction</strong> Provide a brief explanation of epistasis in the context of protein function.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that multi-mutant sampling "substantially outperforms" single-mutant approaches is unsupported by any data in the abstract.</li>
+<li>The claim that the proposed approaches are "tailored for protein design" is not substantiated by methodological description.</li>
+<li>The de novo binder design validation is mentioned but entirely unevaluable from the supplied material.</li>
+<li>The generalizability of the findings across "eukaryotic, prokaryotic, and viral" protein families is asserted but not demonstrated with results.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,83 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report a computational pipeline for designing de novo protein binders targeting the ATP-binding region of the AbcA efflux transporter in *Aspergillus fumigatus*, with the aim of overcoming azole resistance. The pipeline integrates multiple sequence alignment, deep learning-based protein generation (Protein Generator, ProteinMPNN), cell-penetrating peptide motif addition, allergenicity and thermal stability prediction, structure modelling (OmegaFold), molecular docking (GRAMM, PDBSum), and molecular dynamics simulations (Maestro). The lead candidate, abcA-2795, is claimed to be non-allergenic, cell-penetrating, thermally stable, and to form a stable complex with AbcA, with binding sites spanning ATP-binding and transmembrane domains.
+- **Visible evidence base** Abstract text only; no quantitative results, no validation metrics, no structural or simulation data, no figures or tables
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, sequence data, docking scores, simulation trajectories, prediction confidence scores, and any comparative benchmarks
+
+## Reviewer
+- **Overall assessment** The abstract describes a plausible computational workflow for de novo binder design, but the evidence presented is entirely qualitative and lacks the quantitative detail required to assess technical soundness or the validity of the central claims. The pipeline is a concatenation of established tools, but no justification is given for tool choices, parameter settings, or the interpretation of outputs. The claim that abcA-2795 is a promising inhibitor is not supported by the data shown in the abstract, as no binding affinity values, simulation stability metrics, or comparative controls are provided. The work may be of interest to computational biologists and antifungal drug discovery researchers, but the current evidence base is insufficient to establish the case.
+- **Who would be interested in the results, and why** Computational biologists working on de novo protein design and deep learning-based drug discovery would find the pipeline relevant. Researchers in antifungal resistance, particularly those studying efflux pump-mediated azole resistance in *Aspergillus* species, may be interested in the target and the proposed inhibition strategy. However, the lack of experimental validation limits appeal to the broader clinical mycology community.
+- **Major strengths** The abstract addresses a clinically relevant problem, namely azole resistance in invasive aspergillosis, and proposes a novel target, the AbcA efflux transporter. The workflow integrates multiple state-of-the-art deep learning tools, which reflects current trends in computational protein design. The inclusion of cell-penetrating peptide motifs and the consideration of allergenicity and thermal stability are pragmatic steps toward druggability.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The study claims to have designed and evaluated de novo binders targeting the ATP-binding domain of AbcA, with abcA-2795 exhibiting promising characteristics.  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract provides no quantitative evidence for any stage of the pipeline. No docking scores, binding energies, simulation stability metrics (e.g., RMSD, RMSF), or prediction confidence values are reported. The claim that abcA-2795 is "promising" is therefore unsupported.  
+  - **Why it matters** Without quantitative metrics, the reader cannot assess whether the designed binders actually bind the target with meaningful affinity or whether the molecular dynamics simulations support stable complex formation. The central conclusion rests on unverifiable qualitative statements.  
+  - **Resolution test** Provide docking scores (e.g., binding free energies) for all 60 designed binders, comparative data against a negative control or known binder, and simulation metrics (e.g., RMSD over time, interaction energy) for the abcA-2795 complex.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The de novo sequence and structure of the protein was predicted using Protein Generator based on the consensus conserved region.  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract does not specify how the "consensus conserved region" was defined or validated, nor does it report the confidence or accuracy of the predicted structure. Protein Generator and OmegaFold outputs are not benchmarked against experimental structures or homology models.  
+  - **Why it matters** The reliability of the entire downstream pipeline depends on the accuracy of the predicted target structure. If the structure is incorrect, docking and simulation results are meaningless.  
+  - **Resolution test** Report structural validation metrics (e.g., pLDDT, TM-score, RMSD to a known homolog) and justify the choice of the conserved region with sequence alignment statistics.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Scientific importance  
+  - **Claim pointer** The binder abcA-2795 exhibited promising characteristics, including non-allergenicity, cell penetration potential, and high thermal stability, suggesting its potential as an effective inhibitor of fungal drug resistance.  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract claims that the designed binders "seek to prevent AbcA-mediated azole resistance and restore the effectiveness of antifungal treatments," but no functional assay, phenotypic readout, or in vitro/in vivo data are presented. The leap from computational predictions to therapeutic potential is unsupported.  
+  - **Why it matters** The stated clinical relevance of the work rests on the assumption that inhibiting ATP binding will restore azole susceptibility. This hypothesis is not tested, and the abstract provides no evidence that the binders would function in a biological context.  
+  - **Resolution test** Include any experimental validation, even preliminary, such as binding assays, growth inhibition assays in the presence of azoles, or efflux inhibition measurements. If none exist, state this explicitly and frame the work as purely computational hypothesis generation.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Readability for nonspecialists  
+  - **Affected element** Abstract text  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The abstract uses tool names (Protein Generator, ProteinMPNN, C2Pred, AllerCatPro, DeepSTABp, OmegaFold, GRAMM, PDBSum, Maestro) without explaining their functions or why they were chosen. A nonspecialist reader cannot follow the logic of the pipeline.  
+  - **Required correction** Briefly describe the role of each tool in one clause, or group them by function (e.g., "sequence design using ProteinMPNN, structure prediction using OmegaFold").  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Technical soundness  
+  - **Affected element** Claim of "7200 generated binders"  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The abstract states that 60 de novo sequences were designed, but later mentions "7200 generated binders." The relationship between these numbers is unclear.  
+  - **Required correction** Clarify the relationship, e.g., whether 60 sequences were used as templates for further expansion, or whether 7200 includes variants from CPP addition or other modifications.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Technical soundness  
+  - **Affected element** Binding site claim  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The abstract states that binding sites encompass both ATP-binding and transmembrane domains, but the target was defined as the ATP-binding region. This discrepancy is not explained.  
+  - **Required correction** Explain whether the binders are intended to bind both domains, or whether the observed binding site is an artifact of the docking method.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Reproducibility  
+  - **Affected element** Methods description  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** No parameters, thresholds, or selection criteria are given for any step, such as how the "top ten highly thermally stable" binders were chosen or how the final candidate was selected.  
+  - **Required correction** Provide selection criteria and thresholds in the full manuscript, and summarize them in the abstract if space permits.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative results, structural validation, and any functional or experimental evidence means the central claims are not currently established.
+- **Assessment against Nature-style criteria**  
+  - **Originality** Moderate. The combination of tools is not novel in itself, but the application to a specific efflux pump target in *A. fumigatus* may be underexplored. The abstract does not demonstrate conceptual novelty beyond applying existing methods to a new target.  
+  - **Scientific importance** Potentially relevant to antifungal resistance, but the abstract does not provide evidence that the approach would work in a biological setting. The importance is therefore speculative.  
+  - **Interdisciplinary readership** The work sits at the interface of computational biology, mycology, and drug discovery. However, the abstract is too tool-centric and lacks biological context to engage a broad readership.  
+  - **Technical soundness** Not assessable from the abstract. The lack of quantitative metrics and validation undermines confidence in the pipeline's reliability.  
+  - **Readability for nonspecialists** Poor. The abstract assumes familiarity with a wide range of deep learning tools and does not explain the biological rationale in accessible terms.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a plausible workflow, but the absence of quantitative results, structural validation, and any experimental or functional data means the claims cannot be evaluated. The authors should provide detailed metrics, benchmarks, and a clear statement of what remains to be tested experimentally.
+
+## Risk / unsupported claims
+- The claim that abcA-2795 is a "promising" inhibitor is unsupported by any quantitative binding or stability data.
+- The claim that the binders "seek to prevent AbcA-mediated azole resistance and restore the effectiveness of antifungal treatments" is presented as a goal, but no evidence is provided that the binders would have this effect.
+- The claim that binding sites encompass both ATP-binding and transmembrane domains is unverifiable without structural figures or docking details.
+- The relationship between the 60 designed sequences and the 7200 generated binders is unexplained and cannot be assessed.
+- All predictions of allergenicity, cell penetration, and thermal stability are presented without scores or thresholds, making them unverifiable.

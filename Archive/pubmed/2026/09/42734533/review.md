@@ -1,0 +1,78 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors propose a computational framework that uses predicted cryptic-pocket residues as mutation handles to perturb the conformational landscape of proteins, thereby exposing open, ligand-compatible states in the absence of ligand. They report application to TEM-1 beta-lactamase and three additional systems, with evidence from docking and unbiased simulations that the open states support ligand binding, and that ligand remains bound after reversion to wild-type sequence.
+- **Visible evidence base** Abstract text only; no quantitative results, simulation details, or methodological descriptions are available
+- **Missing materials affecting confidence** Full methods, simulation parameters, force fields, system preparation details, mutation selection criteria, docking protocols, trajectory analyses, binding stability metrics, and all figures/tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting idea: using predicted cryptic-pocket residues as mutation handles to bias conformational ensembles toward open, ligand-compatible states. The concept has potential utility for structure-based drug discovery. However, the abstract provides no quantitative evidence, no methodological detail, and no comparative benchmarks. The central claims, particularly the recovery of a holo-like wild-type conformation after mutation reversion, are stated without supporting data. The generalization to four systems is asserted but not substantiated. As presented, the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational biophysicists and medicinal chemists working on cryptic pocket identification and structure-based ligand discovery would be interested. The framework, if validated, could offer a practical route from apo structures to ligand-compatible conformations, which is a recognized bottleneck in targeting transient binding sites. Researchers developing enhanced-sampling or machine-learning approaches for conformational sampling may also find the concept relevant.
+- **Major strengths** The conceptual framing is clear and addresses a genuine gap: existing AI/ML methods identify cryptic pocket residues but do not generate the corresponding open conformations. The idea of using mutations as perturbations to reshape the free-energy landscape is mechanistically plausible and potentially generalizable. The claim that targeted residues are not the principal ligand-interaction determinants is an important design principle, if supported.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The framework "can shift the conformational ensemble toward an open pocket state prior to ligand binding" and "the resulting open state supports ligand binding in both docked structures and unbiased simulations."  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** No quantitative data are presented to support the claim that mutation-induced perturbations shift the ensemble toward an open state. No measures of pocket volume, solvent accessibility, or conformational populations are given. The statement that ligand binding is supported in "docked structures and unbiased simulations" is made without any metrics such as binding free energies, residence times, or root-mean-square deviation analyses.  
+  - **Why it matters** The core premise of the framework is that mutations can pre-organize the apo state into a ligand-compatible conformation. Without quantitative evidence of ensemble shifts and stable binding, the claim remains an assertion. The absence of any numerical data prevents assessment of statistical significance or practical utility.  
+  - **Resolution test** Provide quantitative comparisons of conformational ensembles (e.g., pocket volume distributions, principal component projections) between wild-type and mutant systems, and binding metrics (e.g., ligand root-mean-square deviation over time, interaction energies, or free-energy estimates) from unbiased simulations.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Claim consistency  
+  - **Claim pointer** "The ligand remains stably bound after reversion to the wild-type sequence, consistent with recovery of a holo-like wild-type conformation."  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The abstract states that mutations are used to open the pocket, then reverted to wild-type while the ligand remains bound. This implies a two-step protocol, but no details are given on how reversion is performed in silico, how the system is equilibrated after reversion, or how stability is measured. The claim of "recovery of a holo-like wild-type conformation" is a strong statement that requires demonstration that the reverted system is thermodynamically stable and kinetically accessible, not merely that the ligand does not dissociate within a short simulation window.  
+  - **Why it matters** The central novelty appears to be that the open state is compatible with the wild-type sequence, meaning the mutations are purely a sampling aid. If the reverted system is not shown to be stable over meaningful timescales, the claim of "recovery" is unsupported and the practical value of the framework is diminished.  
+  - **Resolution test** Provide simulation details for the reversion protocol, including equilibration time, total simulation length, and ligand stability metrics (e.g., root-mean-square deviation, contact persistence) for the reverted wild-type system. Ideally, compare with a directly simulated wild-type apo-to-holo transition to demonstrate equivalence.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Generalizability  
+  - **Claim pointer** "We further generalize this framework to LfrR, FtsZ, and Bombyx mori pheromone-binding protein, where mutation of predicted cryptic residues likewise generates open conformations capable of supporting ligand binding."  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The generalization to three additional systems is stated in a single sentence with no supporting data. No information is given on the nature of these systems, the predicted cryptic residues, the mutations introduced, or the criteria used to judge "open conformations" and "supporting ligand binding."  
+  - **Why it matters** The claim of generalizability is a key selling point of the framework. Without evidence across multiple systems, the reader cannot assess whether the approach is broadly applicable or whether the TEM-1 result is idiosyncratic. The lack of detail also prevents evaluation of whether the same standards of evidence were applied to all systems.  
+  - **Resolution test** Provide per-system summaries with the same level of quantitative detail as for TEM-1, including mutation sites, ensemble shift metrics, and binding stability data. If space is limited, include these in supplementary material with clear pointers in the main text.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Methodological transparency  
+  - **Claim pointer** "Residues with high cryptic-pocket propensity are used as mutation handles to perturb the free-energy landscape."  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The abstract does not specify how cryptic-pocket propensity is predicted, how mutations are selected (e.g., alanine scanning, conservative substitutions, charge-altering mutations), or how the perturbation is expected to reshape the landscape. The relationship between the predicted residues and the conformational change mechanism is not articulated.  
+  - **Why it matters** Reproducibility is a core requirement for computational studies. Without knowing the prediction method and mutation design rules, other groups cannot apply the framework. The mechanistic rationale for why these particular mutations would promote opening is also unclear, which weakens the conceptual contribution.  
+  - **Resolution test** Describe the prediction method (e.g., specific machine-learning model or biophysical descriptor), the mutation selection criteria, and provide a mechanistic hypothesis for how the mutations alter the free-energy landscape, supported by reference to known features of each system.
+
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Terminology  
+  - **Evidence pointer** Abstract, "holo-like" usage  
+  - **Issue** The term "holo-like" is used to describe both the open state and the recovered wild-type conformation. It is unclear whether "holo-like" refers to a structural similarity to a known holo structure or to a functional competence for ligand binding.  
+  - **Required correction** Define "holo-like" explicitly, ideally with reference to a structural criterion (e.g., root-mean-square deviation to a crystallographic holo state) or a functional criterion (e.g., ligand binding competence).  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Context  
+  - **Affected element** Comparison to existing methods  
+  - **Evidence pointer** Abstract, first two sentences  
+  - **Issue** The abstract contrasts the approach with "recent AI/ML approaches" and "enhanced-sampling and mixed-solvent strategies" but does not cite specific works or explain how the proposed method differs in outcome or efficiency.  
+  - **Required correction** Add brief citations and a sentence clarifying the specific advantage over existing methods, such as avoiding non-native conditions or providing stable holo-like states that other methods do not.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Simulation details  
+  - **Evidence pointer** Abstract, "unbiased simulations"  
+  - **Issue** The abstract mentions "unbiased simulations" but does not specify the timescale, force field, or water model. These details are essential for judging the reliability of the binding stability claims.  
+  - **Required correction** Include simulation length and force field in the abstract or indicate that full details are in the Methods section.
+
+## Risk / unsupported claims
+- The claim that mutation-induced perturbations "shift the conformational ensemble toward an open pocket state" is unsupported by any quantitative data in the abstract.
+- The claim that the ligand "remains stably bound after reversion to the wild-type sequence" is unsupported without simulation timescales and stability metrics.
+- The claim of generalization to LfrR, FtsZ, and Bombyx mori pheromone-binding protein is unsubstantiated; no data are provided for these systems.
+- The statement that targeted residues "are not the principal determinants of the ligand interactions" is presented as a finding but no interaction analysis is shown.
+- The overall claim that the framework "provides a practical framework for studying and targeting cryptic pockets" is not evaluable from the abstract alone, as no practical metrics (e.g., success rate, computational cost, comparison to brute-force sampling) are given.

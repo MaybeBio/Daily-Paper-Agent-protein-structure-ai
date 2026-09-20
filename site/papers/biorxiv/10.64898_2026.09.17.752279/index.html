@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conditional Generation And Inpainting Of Non-coding RNA Sequences With Masked Discrete Diffusion · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Conditional Generation And Inpainting Of Non-coding RNA Sequences With Masked Discrete Diffusion</h1>
+      <div class="meta">Upadhyay U; Dai C; Herold J; Sato K; Schug A</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-18
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.17.752279">原文</a>
+      </div>
+      <p class="one-liner">该文提出RNA-MDLM，用掩码离散扩散模型对非编码RNA进行条件生成与修复，虽对象为RNA而非蛋白质，但其生成与修复框架及条件控制方法可迁移至蛋白质结构/序列设计，具有借鉴价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">&lt;h4&gt;Design: &lt;/h4&gt; ing functional non-coding RNA (ncRNA) is fundamental to synthetic biology and RNA therapeutics, yet generative modelling for ncRNA has received far less attention than protein design. We present RNA-MDLM, a framework that extends Masked Discrete Language Models (MDLM) to the conditional generation and inpainting of ncRNA. We make two additions: first, conditioning on RNA-type representations from a pretrained RNA language model, and second, a modified classifier-free guidance scheme (Mod-CFG) that interpolates among conditional, unconditional, and random-sequence probabilities for better control. We also introduce REPAINT GAMES, a benchmark of seven structured masking tasks to probe a model&#39;s performance on sequence patterns, structural motifs, and base-pairing per RNA type. Our model is trained on 4.6 million ncRNA sequences spanning six evaluable classes. It produces sequences whose composition and folding statistics closely match natural RNAs. Through extensive ablation studies, we find that the embedding-conditioned model achieves the best balance of structural fidelity, biological novelty, and inpainting accuracy, and its class label steers generation far more strongly than a plain label baseline. We further show that a model trained on a smaller, class-balanced subset can appear more realistic mainly by copying abundant natural sequences rather than learning their rules. We also benchmark against a masked-diffusion model and a family-specific VAE on ribozyme families, and find that a type-conditioned model like ours and a per-family model are solving different tasks, which must be accounted for in a fair comparison. We will release the code and the trained models.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">&lt;h4&gt;设计：&lt;/h4&gt; 功能性非编码RNA（ncRNA）的设计是合成生物学和RNA治疗学的基础，然而针对ncRNA的生成建模所受到的关注远少于蛋白质设计。我们提出了RNA-MDLM，一个将掩码离散语言模型（MDLM）扩展到ncRNA的条件生成和修复的框架。我们做了两项改进：首先，基于预训练的RNA语言模型中的RNA类型表示进行条件化；其次，采用一种改进的无分类器引导方案（Mod-CFG），在条件、无条件及随机序列概率之间进行插值，以实现更好的控制。我们还引入了REPAINT GAMES，一个包含七项结构化掩码任务的基准测试，用于评估模型在序列模式、结构基序和碱基配对方面按RNA类型的表现。我们的模型在覆盖六个可评估类别的460万个ncRNA序列上进行了训练。它生成的序列在组成和折叠统计上与天然RNA高度接近。通过广泛的消融研究，我们发现嵌入条件化模型在结构保真度、生物新颖性和修复准确性方面达到了最佳平衡，且其类别标签对生成的引导作用远强于普通标签基线。我们进一步表明，在较小、类别平衡的子集上训练的模型可能主要通过复制丰富的天然序列而非学习其规则来显得更真实。我们还针对核酶家族，将我们的模型与掩码扩散模型和家族特异性VAE进行了基准比较，发现像我们这样的类型条件化模型和逐家族模型在解决不同任务，这在公平比较中必须予以考虑。我们将发布代码和训练好的模型。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Conditional Generation And Inpainting Of Non-coding RNA Sequences With Masked Discrete Diffusion</li>
+<li><strong>作者</strong>：Upadhyay U; Dai C; Herold J; Sato K; Schug A</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 基准测试）</li>
+<li><strong>领域</strong>：RNA 生成建模；Masked Discrete Diffusion；条件生成；序列 inpainting</li>
+<li><strong>关键词</strong>：ncRNA 生成、MDLM、classifier-free guidance、RNA 语言模型、inpainting、结构基序</li>
+<li><strong>DOI/arXiv</strong>：10.64898/2026.09.17.752279</li>
+<li><strong>代码</strong>：作者声明将发布（"We will release the code and the trained models"）</li>
+<li><strong>数据</strong>：4.6M ncRNA 序列，六个可评估类别；REPAINT GAMES 基准（七个结构化 masking 任务）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在本课题方向中的位置</strong>：本文属于「RNA 序列生成 × 离散扩散模型」方向，与蛋白质结构预测/设计中的生成建模（如扩散模型用于蛋白质序列/结构生成）方法同源，但其对象是 ncRNA 而非蛋白质。对本课题的可迁移点在于：MDLM 框架、classifier-free guidance 的改进（Mod-CFG）、以及结构化 inpainting 基准设计（REPAINT GAMES）均可迁移至蛋白质序列设计或结构条件生成任务。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 RNA-MDLM，将 Masked Discrete Language Model 扩展至 ncRNA 的条件生成与 inpainting，通过 RNA 语言模型嵌入条件化和改进的 classifier-free guidance（Mod-CFG），在 4.6M 序列上训练，生成序列的组成与折叠统计接近天然 RNA，并通过消融实验揭示类平衡子集训练的模型可能通过复制天然序列而非学习规则来显得更真实。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何实现 ncRNA 序列的条件生成与 inpainting，使得生成序列在组成、折叠统计和结构基序上接近天然 RNA，同时保持生物学新颖性？</li>
+<li><strong>为什么重要</strong>：功能性 ncRNA 设计是合成生物学和 RNA 治疗的基础，但生成建模在 ncRNA 上的关注远少于蛋白质设计。</li>
+<li><strong>现有方法不足</strong>：蛋白质设计已有大量生成模型（如扩散模型、语言模型），但 ncRNA 生成缺乏类似工具；现有 RNA 生成方法（如 VAE、masked diffusion）在条件控制、结构保真度和 inpainting 能力上不足。</li>
+<li><strong>精确研究问题</strong>：Can a masked discrete diffusion model, conditioned on RNA-type embeddings and guided by a modified classifier-free scheme, generate ncRNA sequences that match natural composition and folding statistics while enabling controllable inpainting?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期 RNA 生成</td>
+<td>家族特异性 VAE</td>
+<td>简单、可解释</td>
+<td>泛化差、条件控制弱</td>
+<td>本文作为对比基线</td>
+</tr>
+<tr>
+<td>蛋白质生成扩散模型</td>
+<td>DDPM、MDLM</td>
+<td>高质量生成、灵活条件化</td>
+<td>主要面向蛋白质，RNA 适配不足</td>
+<td>本文借鉴 MDLM 框架</td>
+</tr>
+<tr>
+<td>RNA 语言模型</td>
+<td>RNA-FM、RNABERT 等预训练模型</td>
+<td>捕获序列-结构关系</td>
+<td>生成能力有限，主要用于表示学习</td>
+<td>本文用其嵌入作为条件</td>
+</tr>
+<tr>
+<td>Masked Discrete Diffusion</td>
+<td>MDLM（通用）</td>
+<td>支持条件生成与 inpainting</td>
+<td>条件控制粒度不足</td>
+<td>本文扩展至 RNA，并改进 guidance</td>
+</tr>
+<tr>
+<td>本文</td>
+<td>RNA-MDLM + Mod-CFG + REPAINT GAMES</td>
+<td>条件生成 + inpainting + 结构化基准</td>
+<td>预印本，未发布代码</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ncRNA 生成建模关注不足</td>
+<td>相比蛋白质设计，ncRNA 生成模型稀少</td>
+<td>领域惯性，RNA 结构复杂性高</td>
+<td>引言部分（未提供具体节号）</td>
+</tr>
+<tr>
+<td>条件控制粒度不足</td>
+<td>类标签条件生成时，类别引导弱</td>
+<td>标准 CFG 在离散扩散中不适用</td>
+<td>作者提出 Mod-CFG 作为解决方案</td>
+</tr>
+<tr>
+<td>类平衡子集训练的模型看似更真实但实为复制</td>
+<td>生成序列与天然序列高度相似，但缺乏规则学习</td>
+<td>小数据集上模型倾向记忆而非泛化</td>
+<td>消融实验部分（未提供具体图号）</td>
+</tr>
+<tr>
+<td>公平比较困难</td>
+<td>类型条件模型与家族特异性模型任务不同</td>
+<td>不同条件粒度导致任务定义差异</td>
+<td>基准对比部分（未提供具体节号）</td>
+</tr>
+<tr>
+<td>结构基序保持不足</td>
+<td>生成序列在结构 motif 上保真度低</td>
+<td>序列级生成难以直接编码结构信息</td>
+<td>REPAINT GAMES 基准设计动机</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：将 MDLM 扩展至 ncRNA，加入 RNA 语言模型嵌入条件化，并设计 Mod-CFG 改进 guidance；构建 REPAINT GAMES 基准评估结构化 inpainting。</li>
+<li><strong>核心洞察</strong>：条件生成的质量不仅取决于模型架构，还取决于条件表示（嵌入 vs 标签）和 guidance 策略；类平衡训练可能掩盖真实生成能力。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：在生成模型中，评估基准的设计（如 REPAINT GAMES 的结构化 masking）直接影响对模型能力的判断；条件化方式（嵌入 vs 标签）对生成控制的影响可能大于模型架构本身。</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：ncRNA 序列（4.6M 条，六个类别）；条件信息（RNA 类型标签或 RNA 语言模型嵌入）</li>
+<li><strong>输出</strong>：生成的 ncRNA 序列；inpainting 结果（部分序列补全）</li>
+<li><strong>模块</strong>：
+  1. MDLM 主干（masked discrete diffusion）
+  2. 条件嵌入模块（RNA 语言模型预训练嵌入）
+  3. Mod-CFG guidance 模块
+  4. REPAINT GAMES 评估模块（七个 masking 任务）</li>
+<li><strong>训练</strong>：在 4.6M ncRNA 序列上训练；消融实验比较不同条件化方式</li>
+<li><strong>工具</strong>：未提供具体框架（如 PyTorch 等）</li>
+<li><strong>反馈回路</strong>：生成序列的组成与折叠统计与天然 RNA 对比，用于评估</li>
+<li><strong>假设</strong>：RNA 语言模型嵌入能提供比类标签更丰富的条件信息；Mod-CFG 能改善生成控制</li>
+<li><strong>流程</strong>：输入序列 → MDLM 前向扩散（masking）→ 反向去噪（生成）→ 条件嵌入注入 → Mod-CFG 调整概率 → 输出序列 → REPAINT GAMES 评估</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MDLM 主干</td>
+<td>序列生成与 inpainting</td>
+<td>支持离散 token 的扩散生成</td>
+<td>输入：masked 序列；输出：完整序列</td>
+<td>作者声称生成质量高（未提供具体指标）</td>
+<td>预期：生成能力大幅下降 [预期效应]</td>
+</tr>
+<tr>
+<td>RNA 语言模型嵌入条件化</td>
+<td>提供丰富的类别/结构信息</td>
+<td>类标签信息量不足</td>
+<td>输入：RNA 序列；输出：嵌入向量</td>
+<td>消融实验显示嵌入条件化优于标签（未提供具体数据）</td>
+<td>实测：条件控制减弱 [实测消融效应]</td>
+</tr>
+<tr>
+<td>Mod-CFG</td>
+<td>插值条件/无条件/随机概率</td>
+<td>标准 CFG 在离散扩散中不适用</td>
+<td>输入：三类概率；输出：调整后概率</td>
+<td>作者声称更好控制（未提供具体对比）</td>
+<td>预期：生成可控性下降 [预期效应]</td>
+</tr>
+<tr>
+<td>REPAINT GAMES</td>
+<td>结构化 inpainting 评估</td>
+<td>现有基准缺乏结构感知任务</td>
+<td>输入：masked 序列；输出：评估分数</td>
+<td>七个任务覆盖序列/结构/碱基配对</td>
+<td>移除后：无法评估结构保真度 [预期效应]</td>
+</tr>
+<tr>
+<td>类平衡子集训练</td>
+<td>测试数据分布影响</td>
+<td>揭示复制 vs 学习问题</td>
+<td>输入：子集；输出：模型</td>
+<td>消融显示子集模型复制天然序列</td>
+<td>预期：生成多样性下降 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>（提供的材料中未包含具体公式；仅提及 MDLM、Mod-CFG 等概念，无数学表达式）。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：4.6M ncRNA 序列，六个可评估类别</li>
+<li><strong>规模</strong>：未提供具体序列长度分布、类别分布</li>
+<li><strong>指标</strong>：组成统计、折叠统计、结构保真度、生物学新颖性、inpainting 准确率</li>
+<li><strong>基线</strong>：masked-diffusion 模型、家族特异性 VAE</li>
+<li><strong>评测协议</strong>：REPAINT GAMES（七个结构化 masking 任务）</li>
+<li><strong>oracle 输入</strong>：RNA 类型标签或 RNA 语言模型嵌入</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>嵌入条件化 vs 标签条件化</td>
+<td>嵌入条件化更好</td>
+<td>消融实验</td>
+<td>嵌入条件化达到最佳平衡</td>
+<td>条件表示影响生成质量</td>
+<td>未提供具体数值，无法量化差异</td>
+<td>消融实验部分</td>
+</tr>
+<tr>
+<td>类平衡子集训练</td>
+<td>子集模型更真实</td>
+<td>与全数据模型对比</td>
+<td>子集模型看似更真实但复制天然序列</td>
+<td>小数据导致记忆而非学习</td>
+<td>未提供复制率具体指标</td>
+<td>消融实验部分</td>
+</tr>
+<tr>
+<td>与 masked-diffusion 对比</td>
+<td>RNA-MDLM 更优</td>
+<td>同任务对比</td>
+<td>未提供具体结果</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>基准对比部分</td>
+</tr>
+<tr>
+<td>与家族特异性 VAE 对比</td>
+<td>类型条件模型任务不同</td>
+<td>核酶家族</td>
+<td>两者任务不同</td>
+<td>公平比较需考虑任务定义</td>
+<td>未提供具体性能差异</td>
+<td>基准对比部分</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：ncRNA 序列生成与 inpainting，不涉及结构预测或分子对接。</li>
+<li><strong>oracle/真值输入</strong>：RNA 类型标签或预训练嵌入；无实验验证（如体外功能 assay）。</li>
+<li><strong>端到端状态</strong>：生成序列的组成与折叠统计接近天然 RNA，但未验证生物学功能。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：依赖 4.6M ncRNA 序列，类别分布可能影响泛化。</li>
+<li><strong>模型依赖</strong>：依赖 RNA 语言模型嵌入质量；不同预训练模型可能影响结果。</li>
+<li><strong>最难情形</strong>：结构 motif 保持（REPAINT GAMES 中结构任务）；类平衡子集下的真实生成。</li>
+<li><strong>群体/领域边界</strong>：仅覆盖六个 ncRNA 类别；其他类别（如 lncRNA）未验证。</li>
+<li><strong>不确定性</strong>：未提供置信区间或统计显著性检验。</li>
+<li><strong>有边界的复述</strong>：RNA-MDLM 在 4.6M ncRNA 上训练，能生成组成和折叠统计接近天然的序列，嵌入条件化优于标签，但类平衡子集模型可能复制而非学习；与现有方法对比需考虑任务定义差异。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 模型仅覆盖六个可评估类别，其他 ncRNA 类别未验证。
+- 代码和模型尚未发布（"We will release"），可复现性待确认。
+- 未提供与实验验证（如体外功能 assay）相关的证据。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>嵌入条件化优于标签的结论缺乏具体数值</td>
+<td>可能仅在小类别上成立；嵌入可能引入噪声</td>
+<td>条件化方式的选择影响模型设计</td>
+<td>要求作者提供各条件化方式的量化对比（如 FID、准确率）</td>
+<td>消融实验部分未提供数据</td>
+</tr>
+<tr>
+<td>类平衡子集模型"复制"结论缺乏复制率指标</td>
+<td>可能只是序列相似度高，而非真正复制</td>
+<td>影响对模型泛化能力的判断</td>
+<td>计算生成序列与训练集的最大相似度（如 BLAST）</td>
+<td>消融实验部分</td>
+</tr>
+<tr>
+<td>REPAINT GAMES 任务设计未详细说明</td>
+<td>任务难度可能不均衡，影响基准公平性</td>
+<td>基准设计影响模型评估</td>
+<td>要求提供任务定义、masking 比例、评估指标</td>
+<td>基准部分未提供细节</td>
+</tr>
+<tr>
+<td>与 VAE 对比时"任务不同"的结论</td>
+<td>可能回避了性能比较</td>
+<td>影响对模型优劣的判断</td>
+<td>设计统一任务（如相同类别、相同 masking）进行对比</td>
+<td>基准对比部分</td>
+</tr>
+<tr>
+<td>未提供生成序列的生物学验证</td>
+<td>组成和折叠统计接近不等于功能有效</td>
+<td>影响实际应用价值</td>
+<td>进行体外转录/功能 assay</td>
+<td>全文未提及实验验证</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>MDLM 框架可迁移至蛋白质序列设计</strong>：Masked Discrete Diffusion 支持条件生成与 inpainting，可直接用于蛋白质序列设计（如 motif 插入、功能位点补全）。</li>
+<li><strong>嵌入条件化优于标签条件化</strong>：在蛋白质设计中，用预训练蛋白质语言模型（如 ESM）的嵌入作为条件，可能比类别标签提供更丰富的结构/功能信息。</li>
+<li><strong>Mod-CFG 的 guidance 插值策略</strong>：在无条件、条件、随机概率间插值，可迁移至蛋白质生成中的可控性调节（如控制结构相似度 vs 新颖性）。</li>
+<li><strong>REPAINT GAMES 基准设计思路</strong>：结构化 masking 任务（序列模式、结构 motif、碱基配对）可类比设计蛋白质 benchmark（如二级结构 motif、活性位点、二硫键模式）。</li>
+<li><strong>类平衡子集训练的陷阱</strong>：在蛋白质生成中，小数据集上模型可能复制天然序列而非学习规则，评估时需检查生成序列与训练集的相似度。</li>
+<li><strong>公平比较需考虑任务定义</strong>：在蛋白质生成模型对比中，条件粒度（家族 vs 类型）不同会导致任务差异，需统一任务设计。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：MDLM 与蛋白质设计中的扩散模型（如 ProteinMPNN、RFdiffusion）同属生成建模，但 MDLM 是离散 token 空间，RFdiffusion 是连续结构空间。</li>
+<li><strong>组合方向</strong>：RNA 语言模型嵌入条件化可类比蛋白质语言模型（ESM-2、ProtTrans）在生成模型中的使用。</li>
+<li><strong>冲突点</strong>：本文强调类平衡子集模型复制而非学习，与蛋白质设计中"小数据集微调"的常见做法形成对比，提示需谨慎评估。</li>
+<li><strong>可迁移领域</strong>：inpainting 任务设计（REPAINT GAMES）可迁移至蛋白质功能位点设计；Mod-CFG 可迁移至任何离散扩散生成任务。</li>
+<li><strong>候选方向</strong>：将 RNA-MDLM 的框架迁移至蛋白质序列设计，或结合 AlphaFold 结构验证生成序列的折叠可行性。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：Protein-MDLM：基于 MDLM 的蛋白质序列条件生成与功能位点 inpainting
+   - <strong>来源局限/观察</strong>：本文 MDLM 框架在 RNA 上有效，蛋白质序列设计缺乏类似工具
+   - <strong>核心假设</strong>：MDLM + 蛋白质语言模型嵌入条件化可生成功能有效的蛋白质序列
+   - <strong>增量</strong>：将 RNA 方法迁移至蛋白质，并引入结构验证（AlphaFold）
+   - <strong>初步方法</strong>：用 ESM-2 嵌入作为条件，训练 MDLM 于蛋白质序列；设计功能位点 inpainting 任务
+   - <strong>验证方式</strong>：生成序列的 AlphaFold 结构预测、功能 assay
+   - <strong>失败模式</strong>：蛋白质序列空间更大，MDLM 可能难以收敛；结构验证可能失败
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Mod-CFG 在蛋白质构象生成中的可控性调节
+   - <strong>来源局限/观察</strong>：Mod-CFG 在 RNA 生成中改善控制，蛋白质构象生成需要类似可控性
+   - <strong>核心假设</strong>：Mod-CFG 可调节蛋白质构象生成的结构相似度 vs 新颖性
+   - <strong>增量</strong>：将 guidance 策略从序列生成迁移至构象采样
+   - <strong>初步方法</strong>：在扩散模型（如 RFdiffusion）中引入 Mod-CFG 插值
+   - <strong>验证方式</strong>：生成构象的 RMSD 分布、能量评估
+   - <strong>失败模式</strong>：构象空间连续，离散 guidance 可能不直接适用
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：REPAINT-GAMES 蛋白质版：结构化 masking 基准
+   - <strong>来源局限/观察</strong>：RNA 基准设计有效，蛋白质缺乏类似结构化 inpainting 基准
+   - <strong>核心假设</strong>：结构化 masking 任务可评估蛋白质生成模型的结构保真度
+   - <strong>增量</strong>：设计覆盖二级结构、活性位点、二硫键模式的 masking 任务
+   - <strong>初步方法</strong>：基于本文七个任务设计蛋白质版
+   - <strong>验证方式</strong>：与现有蛋白质生成模型对比
+   - <strong>失败模式</strong>：蛋白质结构复杂性高，任务设计可能过于简单或困难
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：类平衡训练对蛋白质生成模型的影响
+   - <strong>来源局限/观察</strong>：本文发现类平衡子集导致复制而非学习
+   - <strong>核心假设</strong>：蛋白质生成模型在类平衡子集上训练同样会复制天然序列
+   - <strong>增量</strong>：系统评估数据分布对蛋白质生成模型泛化的影响
+   - <strong>初步方法</strong>：在不同类别平衡度上训练蛋白质生成模型，比较生成序列与训练集相似度
+   - <strong>验证方式</strong>：序列相似度、结构多样性指标
+   - <strong>失败模式</strong>：蛋白质类别定义模糊，类平衡操作困难
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no figures, tables, methods, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose RNA-MDLM, a masked discrete diffusion framework for conditional generation and inpainting of non-coding RNA sequences. They introduce RNA-type conditioning via a pretrained RNA language model and a modified classifier-free guidance scheme (Mod-CFG). They also present REPAINT GAMES, a benchmark of seven structured masking tasks. The model is trained on 4.6 million ncRNA sequences across six classes. Claims include close matching of natural composition and folding statistics, superior balance of structural fidelity, biological novelty, and inpainting accuracy for the embedding-conditioned model, stronger class-label steering than a plain label baseline, a demonstration that class-balanced training can lead to copying rather than rule learning, and a comparative analysis against a masked-diffusion model and a family-specific VAE on ribozyme families.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, figures, tables, or methodological details are available</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, model architecture details, training hyperparameters, benchmark task definitions, evaluation metrics, baseline implementations, and statistical analyses</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially valuable contribution to RNA generative modeling, addressing an understudied area relative to protein design. The proposed methodological additions, namely RNA-type conditioning and modified classifier-free guidance, are conceptually reasonable. The introduction of a structured benchmark for inpainting tasks is a useful community resource. However, the abstract provides no quantitative evidence to support the central claims. Key assertions about performance, biological novelty, and class-label steering are stated without numerical backing. The comparative analysis against baselines is described only qualitatively, and the claim that different models solve different tasks, while plausible, is not substantiated with data. The abstract is well written and accessible, but the absence of any results makes it impossible to assess technical soundness or the strength of the evidence. The work is likely of interest to the RNA biology and generative modeling communities, but the case is not established from the provided material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in RNA synthetic biology, RNA therapeutics, and computational RNA design would be interested in a generative model for non-coding RNA sequences. The machine learning community, particularly those working on discrete diffusion models and language models for biological sequences, would also find the methodological contributions relevant. The proposed benchmark could serve as a standard evaluation suite for RNA inpainting and generation tasks.</li>
+<li><strong>Major strengths</strong> The abstract addresses a clear gap in generative modeling for non-coding RNA. The methodological additions, including RNA-type conditioning and modified classifier-free guidance, are novel in this context. The introduction of a structured benchmark with seven masking tasks is a practical contribution. The authors also consider an important caveat regarding class-balanced training and sequence copying, which demonstrates critical thinking about evaluation pitfalls.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The model produces sequences whose composition and folding statistics closely match natural RNAs.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract states that generated sequences closely match natural RNAs in composition and folding statistics, but no quantitative metrics, comparisons, or statistical tests are reported. It is unclear what "closely match" means in this context, how folding statistics were computed, or against which natural RNA datasets the comparison was made.</li>
+<li><strong>Why it matters</strong> This is a central claim about the model's core capability. Without quantitative evidence, the reader cannot judge whether the match is biologically meaningful or merely superficial. The claim also lacks context regarding the variability within natural RNA sequences, which is essential for interpreting any similarity measure.</li>
+<li><strong>Resolution test</strong> Provide quantitative comparisons, such as distributional statistics for sequence composition and predicted folding energies or structures, with appropriate error bars and statistical significance tests against natural RNA sequences.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The embedding-conditioned model achieves the best balance of structural fidelity, biological novelty, and inpainting accuracy.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract claims that the embedding-conditioned model outperforms alternatives on three distinct criteria, but no metrics, ablation results, or comparisons are shown. The term "best balance" is undefined, and it is unclear how the three criteria were weighted or measured.</li>
+<li><strong>Why it matters</strong> This is the primary methodological conclusion of the work. Without defined metrics and numerical results, the claim is unfalsifiable from the provided material. The absence of ablation details also prevents the reader from understanding which components contribute to the reported performance.</li>
+<li><strong>Resolution test</strong> Present ablation study results with clear metrics for each criterion, including definitions of structural fidelity, biological novelty, and inpainting accuracy, along with statistical comparisons across model variants.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> Class label steers generation far more strongly than a plain label baseline.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The claim of stronger class-label steering is made without any quantitative measure of steering strength or comparison to the baseline. The term "far more strongly" is subjective and unsupported.</li>
+<li><strong>Why it matters</strong> This claim is central to the proposed conditioning approach. Without a defined metric for steering strength, such as class-conditional accuracy or distributional divergence, the reader cannot evaluate the advantage of the proposed method.</li>
+<li><strong>Resolution test</strong> Define a quantitative measure of class-label steering, such as the probability of generating sequences assigned to the target class by a classifier, and report results for the proposed model versus the plain label baseline with appropriate statistical tests.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> A model trained on a smaller, class-balanced subset can appear more realistic mainly by copying abundant natural sequences rather than learning their rules.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract claims that a class-balanced model appears realistic by copying sequences, but no evidence of copying is presented. The distinction between copying and rule learning is not operationalized, and the claim is made without supporting analysis.</li>
+<li><strong>Why it matters</strong> This is an important cautionary finding about evaluation methodology. However, without evidence such as sequence similarity to training data, motif analysis, or generative diversity metrics, the claim is speculative.</li>
+<li><strong>Resolution test</strong> Provide analyses that distinguish copying from rule learning, such as nearest-neighbor distances to training sequences, exact or near-exact match rates, and diversity metrics, for both the class-balanced and full models.</li>
+<li><strong>Concern ID</strong> R1-M5</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> A type-conditioned model and a per-family model are solving different tasks, which must be accounted for in a fair comparison.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract states that the comparison between the proposed model and a family-specific VAE is confounded by task differences, but no details of the comparison, the tasks, or the analysis supporting this conclusion are provided.</li>
+<li><strong>Why it matters</strong> This claim affects the interpretation of the benchmark results. Without specifics on how the tasks differ and how this was determined, the reader cannot assess the validity of the comparison or the fairness of the conclusions.</li>
+<li><strong>Resolution test</strong> Describe the evaluation tasks for each model, provide quantitative results for both, and present an analysis that demonstrates the task difference, such as differences in input requirements, output constraints, or evaluation metrics.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract, description of REPAINT GAMES</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract states that REPAINT GAMES includes seven structured masking tasks but does not specify what these tasks are or how they differ from standard inpainting benchmarks.</li>
+<li><strong>Required correction</strong> Provide a brief description of the seven tasks, such as masking patterns, target features, or evaluation criteria, to clarify the benchmark's scope.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract, description of Mod-CFG</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The modified classifier-free guidance scheme is described as interpolating among conditional, unconditional, and random-sequence probabilities, but the motivation for including random-sequence probabilities and the mechanism of interpolation are not explained.</li>
+<li><strong>Required correction</strong> Briefly explain why random-sequence probabilities are included and how the interpolation is performed, to help the reader understand the methodological contribution.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Abstract, training data description</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract mentions six evaluable classes but does not list them or explain why other classes were excluded.</li>
+<li><strong>Required correction</strong> List the six RNA classes and briefly state the exclusion criteria for other classes to provide context for the model's scope.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract, claim about biological novelty</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The term "biological novelty" is used without definition, and it is unclear how novelty was measured or why it is desirable in generated sequences.</li>
+<li><strong>Required correction</strong> Define biological novelty in the context of this work, such as sequence dissimilarity to known ncRNAs or functional plausibility, and explain its relevance to the intended applications.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4, R1-M5. All five major concerns relate to the absence of quantitative evidence for central claims. The abstract provides no numerical results, statistical analyses, or methodological details that would allow the claims to be evaluated.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The work addresses an understudied area and introduces novel methodological components, including RNA-type conditioning and modified classifier-free guidance. The benchmark is a new contribution. However, the degree of originality relative to existing RNA generative models cannot be fully assessed without a literature comparison in the abstract.</li>
+<li>Scientific importance: The potential importance is high, given the relevance of ncRNA to synthetic biology and therapeutics. The proposed benchmark could be a valuable community resource. However, the importance is contingent on the validity of the claims, which are not yet supported.</li>
+<li>Interdisciplinary readership: The work bridges machine learning and RNA biology, and the abstract is written in a way that is accessible to both communities. The benchmark and model could attract interest from both fields.</li>
+<li>Technical soundness: Cannot be assessed from the abstract. The methodological descriptions are too brief, and no results are presented. The absence of any quantitative evaluation is a critical gap.</li>
+<li>Readability for nonspecialists: The abstract is clear and well structured, with technical terms introduced in context. The writing is accessible to a broad scientific audience.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents a promising framework and benchmark, but the absence of any quantitative results or methodological details prevents an assessment of the claims. The manuscript would need to provide comprehensive experimental evidence, including defined metrics, statistical analyses, and comparisons to baselines, before the case can be evaluated.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that generated sequences closely match natural RNAs in composition and folding statistics is unsupported by any quantitative data.</li>
+<li>The claim that the embedding-conditioned model achieves the best balance of structural fidelity, biological novelty, and inpainting accuracy is unsupported, as no metrics or comparisons are provided.</li>
+<li>The claim that class label steers generation far more strongly than a plain label baseline is unsupported, as no measure of steering strength is given.</li>
+<li>The claim that a class-balanced model appears realistic by copying sequences rather than learning rules is unsupported, as no copying analysis is presented.</li>
+<li>The claim that the type-conditioned model and the family-specific VAE solve different tasks is unsupported, as no task analysis or comparison details are provided.</li>
+<li>The performance of the model on the REPAINT GAMES benchmark is not reported, making the benchmark's utility unassessable.</li>
+<li>The claim that the model is trained on 4.6 million ncRNA sequences is stated but not verifiable from the abstract alone, and the composition of the training set is not described.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,80 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors benchmark AlphaFold2 and SWISS-MODEL predicted kinase structures against experimental structures for structure-based drug discovery, using docking and MD simulations, and report that SWISS-MODEL yields slightly better structural metrics, that MD refinement before docking is detrimental, and that post-docking MD reduces false positives with true-positive rates of 30% (SWISS-MODEL) and 35% (AlphaFold2)
+- **Visible evidence base** Abstract text only; no numerical data, statistical tests, dataset details, or methodological parameters are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, docking scores, RMSD values, interaction similarity measures, MD simulation parameters, MM/GBSA results, statistical analyses, and dataset composition details
+
+## Reviewer
+- **Overall assessment** The abstract addresses a relevant and timely question in structure-based drug discovery, namely the practical utility of predicted protein structures relative to experimental ones. The study design is sensible and includes multiple evaluation layers. However, the abstract alone does not provide sufficient quantitative evidence to assess the robustness of the conclusions. Several claims are stated without supporting numbers or statistical context, and the reported true-positive rates are presented without defining the denominator or the criteria for true positives. The finding that MD refinement before docking is detrimental is interesting but counterintuitive and requires careful validation. The manuscript may have merit, but the case is not fully established from the supplied material.
+- **Who would be interested in the results, and why** Computational chemists and structural biologists engaged in structure-based drug discovery, particularly those who use predicted structures when experimental ones are unavailable. The comparison between a deep learning method and a traditional homology modeling approach is directly relevant to practitioners deciding which tool to use. The finding on post-docking MD filtering could also interest method developers working on virtual screening pipelines.
+- **Major strengths** The study addresses a practical question with direct applicability. The benchmarking design includes multiple conditions (raw, energy-minimized, MD-refined) and multiple assessment layers (structural metrics, docking, post-docking MD, binding energy). The inclusion of experimental structures as a reference is appropriate. The observation that MD refinement before docking can be detrimental is a potentially valuable cautionary finding.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that SWISS-MODEL produced slightly lower RMSD values and better interaction similarity than AlphaFold, although overall docking scores were statistically comparable
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that SWISS-MODEL outperformed AlphaFold on structural metrics but that docking scores were statistically comparable. No numerical values, effect sizes, or statistical test results are provided. It is unclear whether the differences in RMSD and interaction similarity are meaningful in a practical sense or whether the statistical comparability of docking scores is based on adequate power.
+  - **Why it matters** The central comparative claim of the paper depends on the magnitude and significance of these differences. Without quantitative support, the reader cannot judge whether the reported differences are robust or within noise.
+  - **Resolution test** Provide the actual RMSD values, interaction similarity scores, docking scores, and the statistical tests used with p-values or confidence intervals. State the number of kinases for which each comparison was made and whether multiple testing corrections were applied.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim validity
+  - **Claim pointer** The claim that MD refinement prior to docking reduced structural suitability by increasing binding-pocket deviations and was associated with misoriented ligand poses
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** This is a counterintuitive finding that contradicts the common expectation that MD refinement improves structure quality. The abstract provides no quantitative measure of binding-pocket deviation, no definition of misorientation, and no comparison with the starting structures. It is also unclear whether the MD protocol was appropriate for the purpose of structure refinement.
+  - **Why it matters** If this claim is correct, it has practical implications for how predicted structures should be prepared for docking. However, if the MD protocol was suboptimal or the analysis metrics were flawed, the conclusion could be misleading.
+  - **Resolution test** Provide quantitative binding-pocket deviation values before and after MD, define the criteria for misoriented poses, and show representative examples. Justify the MD protocol in terms of equilibration, force field, and simulation length. Show that the effect is consistent across the dataset and not driven by a few outliers.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that post-docking MD effectively identified unstable ligand poses and reduced false-positive predictions, with overall true-positive rates of 30% for SWISS-MODEL and 35% for AlphaFold2
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The true-positive rates are presented without defining the denominator. It is unclear whether the rates refer to the fraction of kinases for which the correct pose was identified, the fraction of docking poses that were retained after MD filtering, or something else. The criteria for true positive and false positive are not stated. The improvement from MD filtering is not quantified.
+  - **Why it matters** The main practical recommendation of the paper, namely that dynamic validation is important, rests on these rates. Without a clear definition and the corresponding false-positive rates before and after MD filtering, the reader cannot assess the magnitude of the benefit.
+  - **Resolution test** Define the true-positive and false-positive criteria explicitly. State the denominator for the reported rates. Provide the false-positive rates before and after MD filtering for each method and for experimental structures. Show the number of cases where MD detected ligand dissociation and how this correlated with docking scores.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Dataset description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that a curated dataset of 20 kinase structures was used but does not specify the kinase families, the diversity of the binding sites, or the criteria for curation.
+  - **Required correction** Provide a brief description of the dataset composition, including kinase families and the range of binding-site properties, in the abstract or state where this information can be found.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Methodological transparency
+  - **Affected element** Docking software details
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** Three docking programs were used (AutoDock Vina, AutoDock, and MOE), but the abstract does not state whether the results were concordant across programs or whether one program dominated the findings.
+  - **Required correction** State whether the conclusions hold across all three docking programs or note any program-specific differences.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Use of the term "statistically comparable"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "statistically comparable" is vague. It could mean that the null hypothesis of no difference was not rejected, but the power to detect a difference is unknown.
+  - **Required correction** Specify the statistical test used and report the test statistic and p-value, or state the confidence interval for the difference.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** MM/GBSA results
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** MM/GBSA binding energy estimation is mentioned as part of the assessment, but no results from this analysis are reported in the abstract.
+  - **Required correction** Either report the key MM/GBSA findings or state that they were consistent with the docking results and refer to the full text.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient quantitative evidence to support the central comparative claims, the counterintuitive finding on MD pre-refinement, or the reported true-positive rates.
+- **Assessment against Nature-style criteria** Originality: the question of how predicted structures perform in realistic drug discovery workflows is not entirely new, but the specific comparison of AlphaFold2 and SWISS-MODEL with multiple evaluation layers is a useful contribution. Scientific importance: moderate to high for the computational drug discovery community, though the scope is limited to kinases. Interdisciplinary readership: the work sits at the interface of structural biology and computational chemistry and would appeal to a specialized audience rather than a broad one. Technical soundness: cannot be fully assessed from the abstract; the design is reasonable, but the lack of quantitative detail prevents verification. Readability for nonspecialists: the abstract is generally clear, though some terms such as MM/GBSA and true-positive rate would benefit from brief explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The study addresses a relevant question and the design is sensible, but the abstract lacks the quantitative detail needed to assess the robustness of the claims. The counterintuitive finding on MD pre-refinement and the reported true-positive rates require careful scrutiny. I would be supportive if the full manuscript provides adequate statistical support and clear definitions of the evaluation criteria.
+
+## Risk / unsupported claims
+- The claim that SWISS-MODEL produced slightly lower RMSD values and better interaction similarity than AlphaFold is unsupported without numerical values.
+- The claim that overall docking scores were statistically comparable is unsupported without test statistics or confidence intervals.
+- The claim that MD refinement prior to docking reduced structural suitability is unsupported without quantitative binding-pocket deviation data.
+- The claim that post-docking MD reduced false-positive predictions is unsupported without before-and-after false-positive rates.
+- The true-positive rates of 30% and 35% are uninterpretable without a definition of the denominator and the criteria for true positives.
+- The claim that energy minimization provided little to no improvement is unsupported without quantitative comparison.
+- The generalizability of the findings beyond the 20 kinase structures is not assessable from the abstract.

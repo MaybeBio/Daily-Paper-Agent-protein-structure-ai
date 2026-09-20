@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose ESpma, a method for classifying biological versus crystal (non-biological) protein-protein interfaces. The method pools protein language model (pLM) embeddings over structurally defined local regions (interface-localized pooling) and optionally integrates point-cloud-based surface features. The authors report that interface-localized pooling outperforms full-sequence and non-interacting surface pooling across three pLM backbones on two benchmark datasets, performs within the range of established methods, and that adding geometric surface information does not significantly improve performance. The model is linear, allowing exact decomposition of interface-level scores into per-residue contributions.
+- **Visible evidence base** Abstract text only; no numerical results, dataset descriptions, benchmark details, statistical tests, or code verification are available
+- **Missing materials affecting confidence** Full manuscript, benchmark dataset specifications, performance tables, statistical significance analyses, model architecture details, hyperparameter settings, and code repository contents
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting and potentially useful contribution to the field of protein-protein interface classification. The central claim, that localizing pLM embeddings to physically interacting residues provides the principal performance gain, is plausible and aligns with current trends in structure-aware sequence representation. However, the abstract lacks quantitative evidence, making it impossible to assess the magnitude of reported effects, the validity of statistical claims, or the practical significance of the method relative to existing approaches. The work appears technically sound in concept, but the evidence base provided is insufficient to establish the case.
+- **Who would be interested in the results, and why** Structural biologists and bioinformaticians working on protein complex prediction, interface annotation, and functional site identification would find this work relevant. The lightweight, linear model with exact per-residue score decomposition could appeal to researchers seeking interpretable and accessible tools for distinguishing biological from crystal contacts. The methodological question, whether simple pooling of pLM embeddings over local regions suffices, is of general interest to the protein language model community.
+- **Major strengths** The study addresses a well-defined and practically important classification problem. The comparison of full-sequence pooling, interface-localized pooling, and multimodal integration is a clear and systematic design. The linear model with exact per-residue decomposition is an elegant feature that enhances interpretability. The claim that simplicity does not compromise performance, if supported by data, would be a valuable practical contribution.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "On two benchmark datasets, interface-localized pooling achieved stronger performance than full-sequence or non-interacting surface pooling across three pLM backbones."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No quantitative results are reported. The abstract states that interface-localized pooling achieved stronger performance, but provides no performance metrics, effect sizes, or confidence intervals. Without numbers, the magnitude of the improvement and its practical relevance cannot be evaluated.
+  - **Why it matters** The central claim of the paper rests on this comparative performance. If the improvement is marginal, the conclusion that localization is the principal gain would be weakened. The absence of data prevents any assessment of whether the reported effect is meaningful or merely noise.
+  - **Resolution test** Provide performance metrics (e.g., accuracy, AUC, F1) for all compared methods on both benchmarks, with standard deviations or confidence intervals, and specify the statistical test used to support the claim of stronger performance.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical validity
+  - **Claim pointer** "Incorporating explicit geometric surface information changed performance slightly, without reaching statistical significance."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The claim of no statistical significance is made without reporting the test used, the p-values, or the effect sizes. The phrase "changed performance slightly" is vague and does not indicate direction or magnitude.
+  - **Why it matters** This negative result is important for the conclusion that geometric information is unnecessary. Without proper statistical reporting, the reader cannot determine whether the lack of significance reflects a true absence of effect or insufficient statistical power.
+  - **Resolution test** Report the statistical test, p-values, and effect sizes for the comparison between interface-localized pooling with and without geometric features. Specify the sample size and power considerations.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Benchmark validity
+  - **Claim pointer** "On two benchmark datasets" and "performed within the range of established methods that rely on explicit evolutionary analysis or geometric modeling."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The benchmark datasets are not described, and the comparison to established methods is not quantified. The reader cannot assess whether the benchmarks are standard, whether the comparison is fair, or whether the performance range is meaningful.
+  - **Why it matters** The generalizability of the findings depends on the representativeness and difficulty of the benchmarks. The comparison to established methods is a key selling point, but without numbers, it is unverifiable.
+  - **Resolution test** Describe the benchmark datasets, including size, composition, and source. Provide a table comparing ESpma to established methods with the same metrics and evaluation protocol.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Method description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "point-clouds-based structural features" is mentioned but not defined. The abstract does not clarify what specific geometric features are used or how they are computed.
+  - **Required correction** Briefly describe the point-cloud features and their computation in the abstract or refer to a methods section.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Code availability
+  - **Evidence pointer** GitHub link in abstract
+  - **Issue** The GitHub link is provided, but the abstract does not state whether the code is documented, tested, or accompanied by usage examples.
+  - **Required correction** State in the abstract or methods that the code includes documentation and example usage.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretability
+  - **Affected element** Per-residue decomposition
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The claim that "the interface-level score decomposes exactly into per-residue contributions, which varied within amino-acid types" is interesting but not elaborated. The abstract does not explain how this variation is characterized or what it implies.
+  - **Required correction** Provide a brief explanation of the per-residue variation and its potential biological or methodological significance.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, and R1-M3 are blocking. The absence of quantitative results, statistical reporting, and benchmark details means the core claims cannot be verified from the provided material.
+- **Assessment against Nature-style criteria** Originality: The approach of pooling pLM embeddings over structurally defined local regions is a reasonable and potentially novel contribution, though the abstract does not fully distinguish it from prior work. Scientific importance: The problem is important, and a lightweight, interpretable method would be valuable, but the significance cannot be assessed without data. Interdisciplinary readership: The work is relevant to structural biology and bioinformatics, but the abstract is accessible to specialists only. Technical soundness: The design is conceptually sound, but the lack of evidence prevents verification. Readability for nonspecialists: The abstract is concise but assumes familiarity with pLMs and interface classification; it is not written for a broad audience.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising, and the authors should be encouraged to resubmit with full quantitative results, statistical analyses, and benchmark descriptions. The recommendation would become supportive if the technical concerns are resolved.
+
+## Risk / unsupported claims
+- The claim that interface-localized pooling outperforms full-sequence and non-interacting surface pooling is unsupported without quantitative data.
+- The claim that geometric information does not significantly improve performance is unsupported without statistical reporting.
+- The claim that the method performs within the range of established methods is unsupported without comparison data.
+- The claim that the model is linear and allows exact per-residue decomposition is plausible but not verifiable from the abstract alone.
+- The generalizability of the findings to other datasets or protein types is not addressed and cannot be assessed.

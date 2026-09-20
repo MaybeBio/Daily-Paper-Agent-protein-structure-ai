@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no evaluation of full methodology, statistical details, or supplementary data
+- **Shared manuscript claim summary** The authors report that anagrelide induces formation of a PDE3A-SLFN12 complex that remodels its interactome in cancer cell lines, gaining interactions with translation initiation factors and ribosomal proteins while losing interactions with proteasome and ER-associated proteins. They propose that the drug-induced complex relocalizes to the mRNA entry channel of the 43S pre-initiation complex, based on proximity biotinylation, co-immunoprecipitation, immunofluorescence, and AlphaFold modeling.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided
+- **Missing materials affecting confidence** Full methods, all quantitative data (including interaction scores and statistics), validation details for co-immunoprecipitation and immunofluorescence, AlphaFold model parameters and confidence metrics, cell line characterization, and any negative controls
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting mechanistic advance for understanding PDE3A modulator action, with a plausible model linking drug-induced complex formation to translation initiation. However, the evidence base visible in the abstract is insufficient to evaluate the robustness of the interactome data, the specificity of the observed changes, or the validity of the structural model. The claims are ambitious relative to what can be assessed from the provided material.
+- **Who would be interested in the results, and why** Researchers in cancer pharmacology, particularly those studying PDE3A modulators as therapeutic agents; structural biologists interested in protein complex remodeling; and investigators studying translation initiation regulation in cancer. The proposed link between a drug-induced complex and the 43S pre-initiation complex could be of broad interest if the evidence is solid.
+- **Major strengths** The study addresses a clinically relevant gap in understanding the cellular context of PDE3A modulator action. The use of proximity-dependent biotinylation in two cell lines is appropriate for interactome mapping. The combination of experimental validation (co-immunoprecipitation, immunofluorescence) with computational modeling (AlphaFold) is a reasonable multi-pronged approach. The proposed model is mechanistically specific and testable.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Anagrelide induced 259 high-confidence interactions, most notably with ribosomal proteins and translation initiation factors, while suppressing 877 interactions"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract reports large numbers of induced and suppressed interactions without any indication of the statistical thresholds, false discovery rates, or reproducibility criteria used to define "high-confidence" interactions. The magnitude of change (259 induced, 877 suppressed) is substantial, but without methodological detail it is impossible to assess whether these numbers reflect true biological remodeling or technical artifacts.
+  - **Why it matters** The central claim of the paper is that anagrelide remodels the interactome. If the interaction calling criteria are not robust, the entire mechanistic model is built on an unstable foundation.
+  - **Resolution test** Provide the full methods for proximity biotinylation data processing, including thresholds, statistical tests, and replication strategy. Show that the induced and suppressed interactions are reproducible across biological replicates and are not explained by changes in protein abundance.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Model validity
+  - **Claim pointer** "AlphaFold modeling of the PDE3A-SLFN12 complex with a partial 43S pre-initiation complex predicted binding near eIF3B and the eIF2alphabetagamma-tRNA ternary complex at the mRNA entry channel"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract presents a structural model as a key piece of evidence, but provides no information about the confidence of the AlphaFold predictions, the composition of the "partial 43S pre-initiation complex" used, or whether the model was validated experimentally. AlphaFold predictions of large multi-protein complexes are notoriously unreliable, and the abstract does not indicate whether the predicted interface is supported by mutagenesis or cross-linking data.
+  - **Why it matters** The proposed model is the culmination of the study and is presented as providing "important mechanistic context." If the structural prediction is speculative, the model should be framed as a hypothesis rather than a finding.
+  - **Resolution test** Provide AlphaFold confidence metrics (e.g., pLDDT, PAE) for the predicted interface, describe the components and stoichiometry of the modeled complex, and include any experimental validation (e.g., mutagenesis, cross-linking) that supports the predicted binding site.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** "These findings were validated by native co-immunoprecipitation across three cancer cell lines"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states validation in three cell lines but does not specify which lines, whether the validation covered the key interactome changes (e.g., eIF3A/eIF3B gain, eIF3H/eIF3L/eIF3M loss), or whether the validation was quantitative. The two cell lines used for the primary interactome mapping (SA-4, HeLa) are of different tissue origins, but the abstract does not indicate whether the interactome changes were consistent between them.
+  - **Why it matters** The claim of validation is central to establishing that the interactome changes are not cell line-specific artifacts. Without details on the validation scope and consistency, the generalizability of the findings is unclear.
+  - **Resolution test** Specify the three cell lines used for validation, show that the key interactome changes (eIF3 subunit selectivity) are reproduced, and provide quantitative comparison of the validation results across lines.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "remodels the PDE3A-SLFN12 interactome" is used in the title and abstract, but the abstract does not clearly define what "remodeling" means in quantitative terms (e.g., net gain/loss of interactions, changes in interaction strength, or subcellular relocalization).
+  - **Required correction** Define "remodeling" explicitly in the abstract, distinguishing between changes in interaction partners, interaction stoichiometry, and subcellular localization.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Specificity
+  - **Affected element** eIF3 subunit selectivity claim
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that interactions were "selectively induced" with eIF3A and eIF3B while "suppressed" with eIF3H, eIF3L, and eIF3M, but does not indicate whether this selectivity was statistically significant or whether other eIF3 subunits were unchanged.
+  - **Required correction** Clarify whether the selectivity is based on statistical comparison of all eIF3 subunits or is a descriptive observation, and report the status of other eIF3 subunits.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "eIF2alphabetagamma-tRNA ternary complex"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "eIF2alphabetagamma-tRNA ternary complex" is non-standard; the canonical term is "eIF2-GTP-Met-tRNAi ternary complex." The current phrasing may confuse readers.
+  - **Required correction** Use the standard terminology for the ternary complex.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (interactome calling criteria) and R1-M2 (AlphaFold model validity) are blocking. Without these addressed, the core claims of interactome remodeling and the structural model cannot be considered established.
+- **Assessment against Nature-style criteria**  
+  - Originality: The proposed link between PDE3A-SLFN12 and translation initiation is novel and not evident from prior literature on PDE3A modulators.  
+  - Scientific importance: If validated, the findings could inform the mechanism of action of a drug class with clinical potential, which is of high importance.  
+  - Interdisciplinary readership: The topic bridges cancer biology, pharmacology, and structural biology, which could attract a broad audience.  
+  - Technical soundness: Cannot be assessed from the abstract alone; the blocking concerns above must be resolved.  
+  - Readability for nonspecialists: The abstract is reasonably accessible but uses specialized terminology (e.g., "43S pre-initiation complex") without sufficient context for a general reader.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting hypothesis, but the key claims require full methodological transparency and additional validation. Supportive if the blocking concerns are resolved in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that anagrelide "remodels" the interactome with specific gain/loss patterns is unsupported without statistical and methodological detail.
+- The claim that the PDE3A-SLFN12 complex binds "near eIF3B and the eIF2alphabetagamma-tRNA ternary complex at the mRNA entry channel" is unsupported without AlphaFold confidence metrics or experimental validation.
+- The claim of validation "across three cancer cell lines" is unverifiable without specifying the lines and the extent of validation.
+- The proposed model of relocalization to the mRNA entry channel is presented as a conclusion but is better framed as a hypothesis given the evidence visible in the abstract.

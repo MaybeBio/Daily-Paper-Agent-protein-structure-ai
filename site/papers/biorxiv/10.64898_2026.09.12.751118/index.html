@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Latent generative search unlocks de novo design of untapped biomolecular interactions at scale · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Latent generative search unlocks de novo design of untapped biomolecular interactions at scale</h1>
+      <div class="meta">Didi K; Reidenbach D; Penner M; Ravichandran S; Case M; Nichols M; Swanson E; Reis A; Prescott M; Qian Y; Qian D; Yang J; Li W; Li L; Shonai D; Gay S; Basu Mallik B; Chim HY; Chen L; Atienza Juanatey M; Klein H; Rieger D; Schlegel P; Macintyre AU; Secor M; Granata D; Cha S; Cao Z; Zhou G; Geffner T; Chen X; Livne M; Zhang Z; Zhang T; Gion K; Bronstein MM; Steinegger M; Deibler K; Soderling S; Schoeder CT; Khmelinskaia A; Hollfelder F; Dallago C; Kucukbenli E; Vahdat A; Ogden P; Kreis K</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-18
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.12.751118">原文</a>
+      </div>
+      <p class="one-liner">该文提出潜空间生成搜索框架，利用奖励引导的推理时搜索驱动Proteina-Complexa生成模型协同设计蛋白序列与结构，实现针对极性表位和柔性配体的全新蛋白结合剂设计，直接命中蛋白质结构生成与设计核心问题，方法创新性强。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">De novo protein design has advanced rapidly, yet designing binders to polar, solvent-exposed epitopes and small, flexible ligands remains challenging. Such hydrated surfaces and flexible molecules, including carbohydrates, provide few of the hydrophobic contacts favoured by current methods and have largely resisted de novo binders. To address this challenge, here we introduce latent generative search for binder design, a novel framework that uses reward-guided search at inference time to steer the Proteina-Complexa generative model. The model codesigns sequence and structure - generating them together in a continuous latent space - and thereby removes the inverse-folding step on which current methods rely. In a screen of more than one million designs by multiplexed phage display, latent generative search produced more validated binders than every other method tested, its codesigned sequences surpassing post hoc redesign. It delivered high-affinity binders across therapeutic receptors, a viral attachment protein and intracellular signalling targets. Our approach also accessed previously untapped biology, generating the first de novo proteins that bind a free carbohydrate, including one that discriminates between blood-group antigens - a polar, flexible target class beyond the reach of current design methods.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">从头设计蛋白质已取得快速进展，但针对极性、溶剂暴露表位以及小型柔性配体的结合剂设计仍具挑战性。此类水合表面和柔性分子（包括碳水化合物）提供的疏水接触较少，而当前方法偏好这些接触，因此大多难以生成从头结合剂。为应对这一挑战，我们在此引入用于结合剂设计的潜在生成搜索（latent generative search），这是一种新颖框架，在推理时利用奖励引导搜索来引导Proteina-Complexa生成模型。该模型共同设计序列和结构——在连续潜在空间中同时生成它们——从而消除了当前方法所依赖的逆折叠步骤。在超过一百万个设计的多重噬菌体展示筛选实验中，潜在生成搜索产生的验证结合剂数量超过所有其他测试方法，其共同设计的序列优于事后重设计。它提供了针对治疗性受体、病毒附着蛋白和细胞内信号靶点的高亲和力结合剂。我们的方法还触及了此前未开发的生物学领域，生成了首个结合游离碳水化合物的从头蛋白质，其中包括一种能区分血型抗原的结合剂——这是一个极性、柔性的靶标类别，超出了当前设计方法的能力范围。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Latent generative search unlocks de novo design of untapped biomolecular interactions at scale</li>
+<li><strong>作者与单位</strong>：Didi K; Reidenbach D; Penner M; 等（NVIDIA、Manifold Bio、Viva Biotech、Novo Nordisk 等，详见 Competing Interest Statement）</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026-09-18</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 实验验证）</li>
+<li><strong>领域</strong>：蛋白质设计 × 生成式 AI × 实验验证（噬菌体展示）</li>
+<li><strong>关键词</strong>：de novo binder design, latent generative search, sequence-structure codesign, reward-guided inference, carbohydrate-binding proteins, phage display</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.12.751118</li>
+<li><strong>代码</strong>：https://github.com/NVIDIA-BioNeMo/Proteina-Complexa</li>
+<li><strong>数据</strong>：未提供（文中提及超过一百万 designs 的噬菌体展示筛选，但未给出完整数据集）</li>
+<li><strong>阅读日期</strong>：2026-09-18</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的 de novo 蛋白-蛋白/蛋白-配体相互作用设计方向。其核心创新在于：(1) 使用连续潜空间中的序列-结构联合生成（codesign），绕开传统 inverse-folding 两步法；(2) 在推理时引入 reward-guided search（类似 RL/引导生成），而非仅靠训练时监督；(3) 首次实现 de novo 自由碳水化合物结合蛋白。该文与 AlphaFold 类结构预测方法互补——它不预测天然结构，而是生成新结合界面；与 MD 模拟的关系在于其目标靶点包括柔性配体（如碳水化合物），这类体系正是 MD 采样困难的场景。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 latent generative search（LGS）框架，在 Proteina-Complexa 生成模型的连续潜空间中进行 reward-guided 推理时搜索，联合生成 binder 的序列与结构，经超过一百万 designs 的噬菌体展示筛选，在多个靶点（治疗性受体、病毒附着蛋白、胞内信号靶点）上获得高亲和力 binder，并首次生成能结合自由碳水化合物（含血型抗原区分）的 de novo 蛋白。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何设计能够结合极性、溶剂暴露表位（如蛋白表面亲水区域）以及小分子柔性配体（如碳水化合物）的 de novo 结合蛋白？</li>
+<li><strong>为什么重要</strong>：现有 de novo binder 设计方法主要依赖疏水相互作用，对极性和水合表面效果差；碳水化合物等柔性配体在生物学中广泛存在（血型抗原、病原体表面糖基化等），但从未有 de novo 蛋白成功结合自由碳水化合物。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>传统方法（如 RFdiffusion + ProteinMPNN）采用「结构生成 → 序列逆折叠」两步法，逆折叠步骤可能丢失结构信息，且对极性界面的序列设计能力有限。</li>
+<li>现有方法偏好疏水接触，对水合极性表面缺乏设计原则。</li>
+<li>柔性配体（如糖）的构象空间大，难以用固定骨架的 docking 或扩散方法处理。</li>
+<li><strong>精确研究问题</strong>：Can a generative model that codesigns sequence and structure in a continuous latent space, combined with reward-guided search at inference time, produce de novo binders to polar, solvent-exposed epitopes and small flexible ligands (including free carbohydrates) at scale?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文引言与讨论的框架，标注为「仅本文框架」；部分代表性方法为外部常识，标注「经外部核验」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期计算设计</td>
+<td>Rosetta 能量函数设计</td>
+<td>物理可解释</td>
+<td>成功率低，需大量实验筛选</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>深度生成结构设计</td>
+<td>RFdiffusion（扩散模型生成骨架）</td>
+<td>可生成新骨架，成功率提升</td>
+<td>需逆折叠步骤；对极性界面效果差</td>
+<td>本文的直接前身</td>
+</tr>
+<tr>
+<td>序列设计</td>
+<td>ProteinMPNN 等逆折叠方法</td>
+<td>快速、可扩展</td>
+<td>依赖输入结构；对极性表面序列设计能力有限</td>
+<td>本文绕开的步骤</td>
+</tr>
+<tr>
+<td>序列-结构联合生成</td>
+<td>潜空间生成模型（如 Proteina-Complexa 的前身工作）</td>
+<td>避免逆折叠信息损失</td>
+<td>缺乏推理时引导，生成质量不可控</td>
+<td>本文的基础模型</td>
+</tr>
+<tr>
+<td>推理时引导生成</td>
+<td>LGS（本文）</td>
+<td>在潜空间中用 reward 引导搜索，无需重新训练</td>
+<td>需要可微或可查询的 reward 函数</td>
+<td><strong>本文核心贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：LGS 是第一个将「潜空间序列-结构联合生成」与「推理时 reward-guided search」结合用于 binder 设计的方法，并首次扩展到自由碳水化合物靶点。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>极性/水合表位难以设计 binder</td>
+<td>现有方法对亲水表面成功率极低</td>
+<td>现有方法偏好疏水接触；极性界面需要精确的氢键网络和水的协调，难以用现有评分函数捕捉</td>
+<td>Abstract：「provide few of the hydrophobic contacts favoured by current methods」</td>
+</tr>
+<tr>
+<td>柔性配体（糖类）无法设计</td>
+<td>从未有 de novo 蛋白结合自由碳水化合物</td>
+<td>柔性配体构象空间大，难以用固定骨架方法处理；糖-蛋白相互作用依赖极性接触</td>
+<td>Abstract：「have largely resisted de novo binders」</td>
+</tr>
+<tr>
+<td>逆折叠步骤信息损失</td>
+<td>结构生成后的序列设计可能破坏结合界面</td>
+<td>逆折叠是独立步骤，无法在序列-结构联合空间中优化</td>
+<td>Abstract：「removes the inverse-folding step on which current methods rely」</td>
+</tr>
+<tr>
+<td>生成模型缺乏目标导向</td>
+<td>无条件生成无法保证结合活性</td>
+<td>训练目标（数据似然）与设计目标（结合亲和力）不一致</td>
+<td>推理时引入 reward-guided search（Methods 节）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<ul>
+<li>使用 Proteina-Complexa 生成模型，在连续潜空间中联合生成 binder 的序列与结构（codesign）。</li>
+<li>在推理时引入 reward-guided search：定义 reward 函数（如结合能、界面互补性、形状匹配等），在潜空间中进行引导搜索，使生成偏向高 reward 区域。</li>
+<li>通过 multiplexed phage display 对超过 100 万 designs 进行实验筛选。</li>
+</ul>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>潜空间是连续且可导航的</strong>：与离散序列空间或结构坐标空间不同，潜空间中的插值和搜索可以同时改变序列和结构，保持二者的协调性。</li>
+<li><strong>推理时搜索可以补偿训练目标的不足</strong>：生成模型只需学习合理的序列-结构分布，而结合特异性可以通过推理时的 reward 引导实现，无需为每个靶点重新训练。</li>
+<li><strong>Codesign 优于两步法</strong>：联合生成序列和结构避免了逆折叠的信息损失，尤其对极性界面（氢键网络需要序列-结构协同优化）。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>生成模型的「推理时计算」可以作为一种通用杠杆：当训练数据有限或目标函数复杂时，用推理时搜索替代训练时优化，可能比重新训练更高效。</li>
+<li>对柔性配体（如糖、小分子）的结合设计，可能需要放弃「刚性界面」假设，转而利用潜空间的连续变形能力来匹配配体构象。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：靶点结构（蛋白或配体）；目标表位/结合位点定义；reward 函数（结合能、界面指标等）。</li>
+<li><strong>输出</strong>：binder 的序列 + 预测结构（codesign 输出）；经实验验证的 binder 列表。</li>
+<li><strong>模块</strong>：
+  1. <strong>Proteina-Complexa 生成模型</strong>：在连续潜空间中联合生成序列与结构。
+  2. <strong>Reward 函数</strong>：评估生成 binder 与靶点的结合潜力（具体形式未在摘要中详述）。
+  3. <strong>潜空间搜索算法</strong>：在潜空间中进行 reward-guided 迭代搜索（具体算法细节未在摘要中详述）。
+  4. <strong>实验筛选</strong>：multiplexed phage display，&gt;1M designs。</li>
+<li><strong>训练</strong>：Proteina-Complexa 为预训练生成模型；LGS 不重新训练模型，仅在推理时搜索。</li>
+<li><strong>工具</strong>：代码在 GitHub（NVIDIA-BioNeMo/Proteina-Complexa）。</li>
+<li><strong>假设</strong>：潜空间中的 reward-guided 搜索能有效找到高结合潜力的序列-结构对；codesign 优于序列后设计。</li>
+<li><strong>流程</strong>：定义靶点与 reward → 在潜空间中初始化候选 → 迭代搜索（生成 → 评估 → 更新）→ 输出候选序列 → 实验筛选 → 验证 binder。</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proteina-Complexa 生成模型</td>
+<td>在潜空间中联合生成序列与结构</td>
+<td>提供可导航的连续潜空间，支持 codesign</td>
+<td>输入：潜变量/噪声；输出：序列+结构</td>
+<td>Abstract：「codesigns sequence and structure」</td>
+<td>无生成模型则无法生成候选（预期）</td>
+</tr>
+<tr>
+<td>Reward 函数</td>
+<td>评估 binder-靶点结合潜力</td>
+<td>引导搜索方向，使生成偏向高结合候选</td>
+<td>输入：binder-靶点复合物；输出：标量 reward</td>
+<td>Abstract：「reward-guided search」</td>
+<td>无 reward 则搜索无方向，退化为无条件生成（预期）</td>
+</tr>
+<tr>
+<td>潜空间搜索算法</td>
+<td>在潜空间中迭代优化候选</td>
+<td>推理时引导，无需重新训练</td>
+<td>输入：初始潜变量+reward；输出：优化后的潜变量</td>
+<td>Abstract：「steer the Proteina-Complexa generative model」</td>
+<td>无搜索则生成质量不可控（预期）</td>
+</tr>
+<tr>
+<td>Codesign（联合生成）</td>
+<td>同时生成序列与结构</td>
+<td>避免逆折叠信息损失，尤其对极性界面</td>
+<td>输入：潜变量；输出：序列+结构对</td>
+<td>Abstract：「removes the inverse-folding step」；「codesigned sequences surpassing post hoc redesign」</td>
+<td>若改为两步法，性能下降（实测：codesign 优于 post hoc redesign）</td>
+</tr>
+<tr>
+<td>Multiplexed phage display</td>
+<td>实验验证候选 binder</td>
+<td>计算预测需实验确认</td>
+<td>输入：&gt;1M designs；输出：validated binders</td>
+<td>Abstract：「screen of more than one million designs」</td>
+<td>无实验验证则无法确认功能（预期）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用。摘要与正文中未提供具体公式或符号定义。方法细节（reward 函数形式、搜索算法更新规则等）未在提供的材料中披露。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：超过 1,000,000 个 designs（计算生成）；经 multiplexed phage display 筛选。</li>
+<li><strong>靶点</strong>：治疗性受体、病毒附着蛋白、胞内信号靶点、自由碳水化合物（含血型抗原）。</li>
+<li><strong>指标</strong>：validated binders 数量；结合亲和力（高亲和力）；与现有方法对比的 binder 数量。</li>
+<li><strong>基线</strong>：「every other method tested」（具体基线方法未在摘要中列出）。</li>
+<li><strong>预算/规模</strong>：&gt;1M designs 的噬菌体展示筛选（大规模）。</li>
+<li><strong>评测协议</strong>：multiplexed phage display；未提供详细协议。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大规模 binder 筛选</td>
+<td>LGS 能产生 validated binders</td>
+<td>与其他方法对比</td>
+<td>LGS 产生更多 validated binders</td>
+<td>LGS 优于现有方法</td>
+<td>未提供具体数量与效应量</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>Codesign vs post hoc redesign</td>
+<td>联合生成优于序列后设计</td>
+<td>codesign 输出 vs 后设计序列</td>
+<td>codesign 序列表现更好</td>
+<td>联合生成保留关键界面信息</td>
+<td>未提供具体指标</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>碳水化合物 binder</td>
+<td>能设计自由糖结合蛋白</td>
+<td>无先例（首次）</td>
+<td>成功生成糖结合蛋白，含血型抗原区分</td>
+<td>方法扩展到柔性极性配体</td>
+<td>未提供亲和力数值</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>多靶点验证</td>
+<td>方法泛化性</td>
+<td>受体、病毒蛋白、胞内靶点</td>
+<td>均获得高亲和力 binder</td>
+<td>方法具有靶点泛化性</td>
+<td>未提供各靶点成功率</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：de novo binder 设计，靶点包括蛋白（受体、病毒蛋白、胞内蛋白）和自由碳水化合物。</li>
+<li><strong>oracle/真值输入</strong>：噬菌体展示实验筛选是最终真值；reward 函数为计算代理（具体形式未披露）。</li>
+<li><strong>端到端状态</strong>：计算生成 → 实验验证全流程完成，但未提供临床或体内数据。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：Proteina-Complexa 为预训练模型，训练数据未披露。</li>
+<li><strong>模型依赖</strong>：结果依赖 Proteina-Complexa 的潜空间质量；若更换生成模型，LGS 效果可能变化。</li>
+<li><strong>最难情形</strong>：自由碳水化合物（柔性、极性、水合）是当前方法最难的目标类别，本文首次突破。</li>
+<li><strong>群体/领域边界</strong>：结果限于噬菌体展示可筛选的靶点；未覆盖膜蛋白、翻译后修饰等复杂体系。</li>
+<li><strong>不确定性</strong>：未提供 binder 亲和力具体数值、成功率、假阳性率；未提供与现有方法的定量对比数据。</li>
+<li><strong>有边界的复述</strong>：在本文测试的靶点集合内，LGS 结合 Proteina-Complexa 的 codesign 潜空间搜索，在噬菌体展示筛选中产生了比对比方法更多的 validated binders，并首次获得自由碳水化合物结合蛋白；但具体性能数值、泛化边界和计算成本未在提供的材料中披露。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要 + 声明）中，未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限，来自 Competing Interest Statement）：
+- 多位作者为 NVIDIA、Manifold Bio、Viva Biotech、Novo Nordisk 员工，存在商业利益关联。
+- 方法相关专利已申请（美国专利公开号 2026/0212951 A1 及临时专利 64/005,317），可能限制方法开源使用。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供定量对比数据</td>
+<td>摘要仅称「more validated binders than every other method tested」，无具体数量、效应量、统计显著性</td>
+<td>无法评估优势的实际幅度</td>
+<td>要求作者提供与各基线方法的完整对比表（含 designs 数量、验证率、亲和力分布）</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>Reward 函数未披露</td>
+<td>搜索效果高度依赖 reward 设计；若 reward 有偏差，结果可能偏向特定界面类型</td>
+<td>Reward 是方法核心，不披露则无法复现</td>
+<td>要求补充 reward 函数形式、超参数、消融实验</td>
+<td>Methods 节未提供</td>
+</tr>
+<tr>
+<td>碳水化合物 binder 的亲和力与特异性未量化</td>
+<td>「binds a free carbohydrate」与「discriminates between blood-group antigens」未给出 Kd 或特异性倍数</td>
+<td>无法判断实际应用价值</td>
+<td>要求提供 SPR/ITC 亲和力数据及交叉反应性实验</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>未提供失败案例分析</td>
+<td>大规模筛选中必然有大量失败 designs；失败模式可揭示方法边界</td>
+<td>失败分析是方法改进的关键</td>
+<td>要求补充失败 designs 的特征分析（如 reward 分数分布、序列特征）</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>预印本未经同行评审</td>
+<td>方法细节、数据完整性、结论稳健性未经验证</td>
+<td>预印本结论可能被后续评审修正</td>
+<td>关注后续正式发表版本</td>
+<td>期刊状态</td>
+</tr>
+<tr>
+<td>Codesign 优势的机制解释不足</td>
+<td>为何 codesign 优于 post hoc redesign？是潜空间连续性、还是 reward 搜索的贡献？</td>
+<td>机制理解影响方法迁移</td>
+<td>要求消融：固定结构仅搜索序列 vs 联合搜索</td>
+<td>Abstract 仅给结论</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>推理时 reward-guided search 作为通用设计范式</strong>：本文最核心的可迁移思想是「训练时学分布，推理时做优化」。对于蛋白质设计，这意味着可以先用大规模数据预训练生成模型，再针对特定靶点定义 reward 函数进行推理时搜索，避免为每个靶点重新训练。可迁移到本课题的构象采样/生成任务：例如用生成模型产生候选构象，再用物理或 ML reward 引导搜索。</p>
+</li>
+<li>
+<p><strong>Codesign（序列-结构联合生成）优于两步法</strong>：传统「结构生成 → 序列设计」的流水线存在信息损失。本文证据表明联合生成在 binder 设计中更优。可迁移到本课题的序列设计任务：考虑在潜空间中同时优化序列与结构，而非固定骨架做逆折叠。</p>
+</li>
+<li>
+<p><strong>潜空间连续性的价值</strong>：连续潜空间允许插值和梯度引导，这是离散空间（如氨基酸序列）难以实现的。可迁移到构象生成任务：用 VAE/扩散模型的潜空间表示构象系综，在潜空间中做 reward-guided 采样可能比直接坐标空间更高效。</p>
+</li>
+<li>
+<p><strong>极性/柔性界面的设计原则</strong>：本文证明极性、水合、柔性靶点（糖类）并非不可设计，只是需要合适的生成框架。可迁移到本课题的分子对接/MD 模拟：对柔性配体，可能需要显式考虑水分子和构象系综，而非单一刚性结构。</p>
+</li>
+<li>
+<p><strong>大规模实验筛选作为计算方法的验证闭环</strong>：&gt;1M designs 的噬菌体展示筛选提供了强大的验证信号。可迁移到本课题：计算方法应设计与高通量实验兼容的输出格式（如条形码、multiplex 策略）。</p>
+</li>
+<li>
+<p><strong>Reward 函数设计是关键瓶颈</strong>：搜索效果取决于 reward 质量。可迁移到本课题：若用 MD 模拟或对接打分作为 reward，需注意计算成本与可微性；可考虑用 ML 代理模型加速 reward 评估。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>RFdiffusion (Watson et al., 2023, Nature)</strong>：扩散模型生成蛋白骨架，是本文的直接前身。本文的 Proteina-Complexa 可视为 RFdiffusion 的潜空间扩展，增加了序列联合生成和推理时引导。连接点：RFdiffusion 的骨架生成 + ProteinMPNN 逆折叠 = 两步法；本文的 codesign = 一步法。</li>
+<li><strong>ProteinMPNN (Dauparas et al., 2022, Science)</strong>：逆折叠序列设计。本文声称 codesign 优于 post hoc redesign（即优于 ProteinMPNN 类方法），这是一个可直接对比的 claim。</li>
+<li><strong>AlphaFold (Jumper et al., 2021, Nature)</strong>：结构预测。本文不预测天然结构，而是生成新结合界面；但 AlphaFold 可作为 reward 函数的一部分（预测复合物结构并评估置信度）。</li>
+<li><strong>Diffusion models for protein design (e.g., Chroma, Ingraham et al., 2023)</strong>：Chroma 也做序列-结构联合生成，但本文的增量是推理时 reward-guided search 和碳水化合物靶点。</li>
+<li><strong>Carbohydrate-binding proteins (lectins)</strong>：天然凝集素是糖结合蛋白的经典范例，但 de novo 设计糖结合蛋白此前未实现。本文填补了这一空白。</li>
+<li><strong>Phage display for binder screening</strong>：高通量实验验证的标准方法，本文将其扩展到 &gt;1M designs 规模。</li>
+<li><strong>[Analysis] 候选方向</strong>：与 MD 模拟的联系——本文的 reward 函数若包含物理能量项（如 Rosetta 或 AMBER 打分），则与 MD 模拟的力场设计直接相关；柔性糖配体的处理也涉及构象采样问题，可与增强采样方法（如 metadynamics、replica exchange）结合。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：潜空间 reward-guided 构象采样（Latent Reward-Guided Conformational Sampling）
+   - <strong>来源局限/观察</strong>：本文在潜空间中搜索 binder 序列-结构，但未涉及构象系综；对柔性配体（糖）的构象多样性处理方式未披露。
+   - <strong>核心假设</strong>：在潜空间中结合 reward-guided 搜索与构象多样性约束，可以更高效地采样蛋白-配体结合构象系综，优于传统 MD 或 docking。
+   - <strong>初步方法</strong>：用 Proteina-Complexa 或类似模型生成 binder-配体复合物潜变量，定义 reward 为结合能 + 构象多样性惩罚，在潜空间做多模态搜索。
+   - <strong>验证方式</strong>：对已知柔性配体体系（如凝集素-糖）回测，比较生成构象与实验结构（晶体/MD 系综）的覆盖度。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：物理-生成混合 reward 函数（Physics-Generative Hybrid Reward）
+   - <strong>来源局限/观察</strong>：本文 reward 函数未披露；纯 ML reward 可能缺乏物理可解释性。
+   - <strong>核心假设</strong>：将 MD 力场能量项（如 AMBER/CHARMM）与 ML 界面评分结合作为 reward，可提高生成 binder 的实验成功率。
+   - <strong>初步方法</strong>：在 LGS 框架中，reward = α·ML_score + β·MM_energy + γ·solvation_term，在潜空间中搜索。
+   - <strong>验证方式</strong>：对本文的靶点集合进行消融，比较不同 reward 组合的验证率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AlphaFold 引导的潜空间搜索（AlphaFold-Guided Latent Search）
+   - <strong>来源局限/观察</strong>：本文未使用结构预测作为 reward 或验证；AlphaFold 可作为复合物结构的强先验。
+   - <strong>核心假设</strong>：将 AlphaFold 对生成复合物的预测置信度（pLDDT/pAE）纳入 reward，可过滤低质量设计，提高实验命中率。
+   - <strong>初步方法</strong>：在 LGS 搜索的每次迭代中，对候选复合物运行 AlphaFold 预测，将置信度分数加入 reward。
+   - <strong>验证方式</strong>：对比有无 AlphaFold reward 的验证率与亲和力分布。
+   - <strong>创新状态</strong>：unverified（AlphaFold 用于设计验证已有先例，但结合潜空间搜索为新的）</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：糖-蛋白界面设计规则提取（Glycan-Binding Interface Design Rules）
+   - <strong>来源局限/观察</strong>：本文首次实现 de novo 糖结合蛋白，但未系统分析成功 binder 的界面特征。
+   - <strong>核心假设</strong>：成功糖结合 binder 存在可提取的序列-结构模式（如极性残基排列、水分子介导氢键网络），可用于后续设计规则。
+   - <strong>初步方法</strong>：对本文成功 binder 与失败 designs 做对比分析，提取界面残基偏好、氢键模式、形状互补性特征。
+   - <strong>验证方式</strong>：用提取规则设计新糖靶点 binder，检验成功率是否提升。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：多靶点 reward 联合搜索（Multi-Target Joint Reward Search）
+   - <strong>来源局限/观察</strong>：本文针对单靶点设计；对需要选择性（如区分血型抗原）的场景，reward 需包含负向约束。
+   - <strong>核心假设</strong>：在 reward 中同时包含目标结合项与非目标排斥项，可在潜空间中搜索选择性 binder。
+   - <strong>初步方法</strong>：reward = 目标结合能 − λ·非目标结合能，在潜空间中搜索。
+   - <strong>验证方式</strong>：对血型抗原体系测试选择性 binder 设计。
+   - <strong>创新状态</strong>：unverified（选择性设计已有先例，但结合潜空间搜索为新）</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract, with no access to methods, figures, tables, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce latent generative search for binder design, a framework that applies reward-guided search at inference time to a generative model called Proteina-Complexa, which codesigns sequence and structure in a continuous latent space. They report that this approach outperformed other tested methods in a multiplexed phage display screen of over one million designs, produced high-affinity binders against therapeutic receptors, a viral attachment protein, and intracellular signalling targets, and generated the first de novo proteins that bind a free carbohydrate, including one that discriminates between blood-group antigens.</li>
+<li><strong>Visible evidence base</strong> Abstract text only. No methods, figures, tables, or supplementary data were provided for review.</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, experimental protocols, statistical analyses, benchmark definitions, phage display screen details, binding affinity measurements, specificity data, and all primary data. The absence of these materials severely limits the ability to evaluate the validity and robustness of the reported claims.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents an ambitious and potentially significant advance in de novo protein design, specifically targeting polar, solvent-exposed epitopes and flexible ligands such as carbohydrates. The core idea of reward-guided latent generative search with sequence-structure codesign is conceptually interesting and could address known limitations of current inverse-folding approaches. However, the abstract alone provides insufficient evidence to assess the technical soundness, statistical rigor, or reproducibility of the reported results. The claims of "first de novo proteins that bind a free carbohydrate" and broad superiority over other methods require detailed experimental and computational evidence that is not visible here. The manuscript may be of high interest to the protein design and engineering community, but the case is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational protein designers, structural biologists, and engineers working on binder design, antibody engineering, and therapeutic development would be interested. The claim of accessing previously untapped target classes, particularly carbohydrates, would also attract researchers in glycobiology and vaccine development. The methodological advance of codesigning sequence and structure in latent space with inference-time search is relevant to the broader generative modeling community.</li>
+<li><strong>Major strengths</strong> The problem addressed is well-recognized and important. The proposed framework conceptually removes the inverse-folding step, which is a plausible source of inefficiency in current methods. The scale of the experimental screen, over one million designs, suggests a serious empirical effort. The reported success on a carbohydrate target class, if substantiated, would represent a notable advance.</li>
+<li><strong>Major Concerns</strong> See detailed items below.</li>
+<li><strong>Minor Comments</strong> See detailed items below.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4, R1-M5</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The concept of latent generative search with sequence-structure codesign appears novel, though the abstract does not provide enough detail to distinguish it clearly from prior generative approaches. Scientific importance: The target class of polar, flexible ligands is of high importance, and a demonstrated advance would be significant. Interdisciplinary readership: The topic bridges machine learning, structural biology, and therapeutic development, which is well suited to a broad audience. Technical soundness: Not assessable from the abstract alone. Readability for nonspecialists: The abstract is reasonably clear, though terms such as "latent generative search" and "codesigns sequence and structure" may require elaboration for a general audience.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "latent generative search produced more validated binders than every other method tested"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The claim of superiority over every other method tested is presented without any comparative details. No information is given on which methods were compared, how the comparison was controlled, what metrics were used, or how statistical significance was assessed.</li>
+<li><strong>Why it matters</strong> A claim of universal superiority is strong and requires a rigorous, well-controlled benchmark. Without details on the comparator methods, experimental conditions, and statistical analysis, the claim cannot be evaluated or reproduced.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a full description of the benchmark, including the list of comparator methods, the experimental setup, the number of replicates, the statistical tests used, and the effect sizes. Show that the comparison was fair and that the reported advantage is robust.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "the first de novo proteins that bind a free carbohydrate, including one that discriminates between blood-group antigens"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> This is a strong novelty claim. The abstract does not provide any experimental data on the carbohydrate-binding proteins, such as binding affinities, specificity measurements, structural characterization, or the definition of "free carbohydrate." It is also unclear how the authors established that no prior de novo carbohydrate binders exist.</li>
+<li><strong>Why it matters</strong> Novelty claims of this magnitude require a thorough literature search and direct experimental evidence. Without data on binding kinetics, specificity, and structural validation, the claim is unsupported.</li>
+<li>
+<p><strong>Resolution test</strong> Provide binding affinity data, specificity assays against related carbohydrates, structural or biophysical characterization of the binder-carbohydrate interaction, and a clear literature search demonstrating the absence of prior de novo carbohydrate binders.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "The model codesigns sequence and structure - generating them together in a continuous latent space - and thereby removes the inverse-folding step"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The technical description of the model is minimal. No details are provided on the architecture, training data, latent space properties, or how reward-guided search is implemented. The claim that codesign removes the inverse-folding step is plausible but requires a clear explanation of how sequence and structure are jointly generated and how this differs from existing approaches.</li>
+<li><strong>Why it matters</strong> The methodological contribution is central to the paper. Without a detailed technical description, the novelty and validity of the approach cannot be assessed, and the work cannot be reproduced or built upon.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a full methods section describing the model architecture, training procedure, latent space design, and the reward-guided search algorithm. Include a comparison with existing sequence-structure codesign methods to clarify the claimed distinction.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "It delivered high-affinity binders across therapeutic receptors, a viral attachment protein and intracellular signalling targets"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract lists target classes but provides no quantitative data. No affinity values, target names, or functional assays are described. The term "high-affinity" is undefined.</li>
+<li><strong>Why it matters</strong> The practical utility of the method depends on the quality of the binders produced. Without quantitative affinity data and functional validation, the claim of high-affinity binders is unsubstantiated.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a table of target names, measured affinities, assay types, and functional validation results. Define the threshold for "high-affinity" in the context of the intended applications.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> "In a screen of more than one million designs by multiplexed phage display"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The scale of the screen is stated, but no details are given on the design library construction, the phage display protocol, the selection strategy, or the criteria for calling a "validated binder." The reproducibility of the screen is therefore not assessable.</li>
+<li><strong>Why it matters</strong> The screen is the primary experimental evidence for the method's success. Without a detailed protocol and clear validation criteria, the results cannot be reproduced or independently verified.</li>
+<li><strong>Resolution test</strong> Provide a complete description of the library design, phage display selection, hit identification, and validation pipeline. Include details on controls, replicates, and the definition of a validated binder.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract terminology</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The term "latent generative search" is introduced without definition or context. Readers unfamiliar with generative models may not understand what this means.</li>
+<li>
+<p><strong>Required correction</strong> Define the term clearly in the abstract or provide a brief explanation of how the search operates.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Target class description</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract mentions "therapeutic receptors, a viral attachment protein and intracellular signalling targets" but does not name any of them. This makes it difficult to assess the breadth and relevance of the results.</li>
+<li>
+<p><strong>Required correction</strong> Provide at least a few named examples of the targets in each class, or refer to a table in the full manuscript.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Comparison statement</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The phrase "its codesigned sequences surpassing post hoc redesign" is vague. It is unclear what "post hoc redesign" refers to and how the comparison was made.</li>
+<li>
+<p><strong>Required correction</strong> Clarify what post hoc redesign means in this context and describe the comparison briefly.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Accessibility</li>
+<li><strong>Affected element</strong> Code and data availability</li>
+<li><strong>Evidence pointer</strong> Footnotes, location not provided</li>
+<li><strong>Issue</strong> The abstract mentions a GitHub repository and a research page, but it is unclear whether the code, model weights, and data are fully accessible or whether there are restrictions.</li>
+<li><strong>Required correction</strong> State clearly in the abstract or a data availability statement what is publicly released and under what license.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that latent generative search produced more validated binders than every other method tested is unsupported without comparative data and statistical analysis.</li>
+<li>The claim of generating the first de novo proteins that bind a free carbohydrate is unsupported without experimental data and a literature search.</li>
+<li>The claim of high-affinity binders across multiple target classes is unsupported without quantitative affinity measurements.</li>
+<li>The technical claim that codesigning sequence and structure removes the inverse-folding step is not assessable without a detailed methods description.</li>
+<li>The reproducibility of the phage display screen is not assessable without a full protocol and validation criteria.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

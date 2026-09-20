@@ -1,0 +1,69 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to methods, figures, tables, or supplementary material
+- **Shared manuscript claim summary** The authors propose that a conserved hydrogen bond between Asp233 and Asp246 in class A beta-lactamases modulates active site dynamics. Using site-directed mutagenesis in Mycobacterium tuberculosis BlaC, they report subtle effects on activity and stability, with D246A showing larger effects than D233A. Molecular dynamics simulations suggest a shift in conformational equilibria toward less active states. The authors conclude that second-shell residues form a complex network supporting catalytic residue positioning.
+- **Visible evidence base** Abstract text only; no experimental data, statistical analyses, simulation parameters, or structural details are provided
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, supplementary information, statistical details, simulation protocols, and raw data
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially interesting hypothesis regarding the role of a conserved second-shell hydrogen bond in class A beta-lactamases. However, the evidence base available for review is limited to the abstract, which precludes a rigorous evaluation of the experimental design, data quality, and the strength of the conclusions. The claims are qualitatively reasonable but quantitatively unsupported from the supplied material. The differential effects between D246A and D233A are noted but not explained mechanistically, and the molecular dynamics results are described only in general terms. The work may be of interest to enzymologists and protein engineers, but the case is not fully established from the abstract alone.
+- **Who would be interested in the results, and why** Enzymologists studying beta-lactamase structure-function relationships, protein engineers interested in second-shell residue contributions to catalysis, and researchers working on antibiotic resistance mechanisms, particularly in Mycobacterium tuberculosis. The findings may also interest computational biologists studying conformational dynamics in enzyme catalysis.
+- **Major strengths** The study addresses a well-defined and mechanistically relevant question about conserved second-shell residues. The use of both experimental mutagenesis and molecular dynamics simulations provides a complementary approach. The observation of differential effects between the two mutants is a useful finding that suggests the hydrogen bond is not the sole determinant of the observed changes.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that disruption of the hydrogen bond "subtly affects the activity and stability of the enzyme" and that molecular dynamics "indicate a shift in the conformational landscape" toward less active states.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract provides no quantitative data, no statistical measures, and no details on the magnitude of the reported effects. Terms such as "subtly affects" and "larger effects" are not supported by any numerical values, error estimates, or significance testing. Similarly, the molecular dynamics results are described only qualitatively, with no information on simulation length, force field, convergence, or the specific conformational changes observed.
+  - **Why it matters** Without quantitative evidence, the reader cannot assess whether the reported effects are biologically meaningful or within experimental noise. The central claim that the hydrogen bond "modulates active site dynamics" requires demonstration that the observed changes are significant and reproducible, which is not possible from the abstract alone.
+  - **Resolution test** Provide specific kinetic parameters (e.g., kcat, Km, kcat/Km) with standard deviations and p-values for each mutant compared to wild type. For molecular dynamics, provide quantitative measures of conformational populations, free energy differences, or root-mean-square deviations that demonstrate a statistically robust shift in the conformational landscape.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic interpretation
+  - **Claim pointer** The abstract states that "effects cannot solely be attributed to the loss of the hydrogen bond" based on the differential effects of D246A versus D233A.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract does not offer any alternative explanation for the differential effects. If the effects are not solely due to hydrogen bond loss, what other factors are involved? Possibilities include electrostatic changes, steric effects, altered solvation, or differential impacts on local backbone conformation. Without a proposed mechanism or supporting data, this claim is incomplete.
+  - **Why it matters** The differential effect is presented as a key finding, but its interpretation is left unresolved. A mechanistic explanation is essential to support the conclusion that second-shell residues act as a "complex network." Without it, the claim remains descriptive rather than explanatory.
+  - **Resolution test** Provide a detailed analysis of the structural and dynamic consequences of each mutation, such as changes in hydrogen bonding patterns, electrostatic potential maps, or per-residue fluctuation profiles, that can account for the observed differential effects.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** The abstract implies that the findings for BlaC are representative of class A beta-lactamases generally, given the conservation of Asp233 and Asp246.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The study is performed in a single enzyme, BlaC. While the residues are conserved, the functional role of the hydrogen bond may vary across different class A beta-lactamases due to differences in active site architecture, substrate profiles, or evolutionary context. The abstract does not discuss whether the findings are expected to generalize or whether any comparative data exist.
+  - **Why it matters** The broader relevance of the work depends on whether the observed effects are conserved across the enzyme family. If the role is context-dependent, the conclusions would need to be tempered accordingly.
+  - **Resolution test** Include a discussion of sequence conservation across class A beta-lactamases and, if available, comparative mutagenesis data from other family members. Alternatively, clearly state the limits of generalizability based on the single-enzyme study.
+
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The phrase "rigid enzymes" in the opening sentence is potentially misleading, as the abstract later discusses conformational dynamics. This apparent contradiction is not reconciled.
+  - **Required correction** Clarify the intended meaning of "rigid" in this context, or revise the wording to acknowledge that while the overall fold is stable, local dynamics are functionally relevant.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The term "short hydrogen bond" is used without a distance range. This is a specific structural feature that should be quantified.
+  - **Required correction** Provide the donor-acceptor distance or define what is meant by "short" in this context.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract content
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract does not state the specific activity assay or substrate used, nor the conditions under which stability was measured.
+  - **Required correction** Include brief mention of the assay type and conditions, or refer to methods in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that the hydrogen bond "modulates active site dynamics" is unsupported from the abstract alone, as no dynamic data are presented quantitatively.
+- The claim that effects "cannot solely be attributed to the loss of the hydrogen bond" is unsupported without an alternative mechanistic explanation.
+- The claim that molecular dynamics "indicate a shift in the conformational landscape" is unsupported without simulation details and quantitative analysis.
+- The generalizability of the findings to all class A beta-lactamases is not assessable from the supplied material.
+- The functional significance of the "subtle" effects on activity and stability is not assessable without quantitative benchmarks.

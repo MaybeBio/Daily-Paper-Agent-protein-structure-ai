@@ -1,0 +1,74 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract
+- **Shared manuscript claim summary** The abstract asserts that a substantial portion of the human proteome remains poorly characterized, that recent AI-based structure prediction, cryo-EM, functional genomics, and multi-omics technologies offer new opportunities to explore this "dark proteome," and that characterizing it could reveal novel therapeutic targets for cancer, neurodegenerative, metabolic, and rare genetic diseases. The review is said to summarize current knowledge, highlight emerging approaches, discuss challenges, and outline translational prospects.
+- **Visible evidence base** Abstract text only. No figures, tables, methods, or reference list were provided.
+- **Missing materials affecting confidence** Full manuscript text, figures, tables, references, and any detailed discussion of specific technologies or disease examples. Without these, the depth, accuracy, and novelty of the review cannot be assessed.
+
+## Reviewer
+- **Overall assessment** The abstract presents a timely and potentially valuable topic, namely the functional characterization of understudied proteins and their therapeutic relevance. The framing is clear and the scope is appropriate for a review article. However, the abstract is largely descriptive and provides no specific examples, quantitative claims, or critical evaluation of the technologies discussed. The scientific case for the review's novelty and impact cannot be established from the supplied material alone.
+- **Who would be interested in the results, and why** Researchers in functional genomics, structural biology, proteomics, and drug discovery would find this review relevant. Clinicians and translational scientists interested in novel therapeutic targets for complex diseases may also benefit. The topic bridges computational biology and experimental medicine, which could attract a broad interdisciplinary audience.
+- **Major strengths** The topic is timely and of high relevance to current biomedical research. The abstract clearly identifies a gap in knowledge and connects emerging technologies to potential therapeutic applications. The scope is well defined and the structure of the review is logical.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that recent developments in AI-based structure prediction, cryo-EM, functional genomics, and multi-omics technologies "have provided new opportunities to explore this hidden region of the proteome."
+  - **Evidence pointer** Abstract only, location not provided
+  - **Concern** The abstract asserts that these technologies provide new opportunities but does not provide any specific examples, data, or comparative analysis to support this claim. It is unclear how these technologies have been applied to the dark proteome, what successes have been achieved, or what limitations remain.
+  - **Why it matters** A review must critically evaluate the state of the art, not merely list technologies. Without concrete examples or evidence of application, the claim remains unsupported and the review's value as a critical synthesis is questionable.
+  - **Resolution test** The full manuscript should include specific case studies, quantitative outcomes, or comparative assessments demonstrating how each technology has advanced dark proteome characterization. The abstract should reflect at least one concrete example or key finding.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim precision
+  - **Claim pointer** The abstract states that characterizing the dark proteome "could reveal novel therapeutic targets for cancer, neurodegenerative, metabolic, and rare genetic diseases."
+  - **Evidence pointer** Abstract only, location not provided
+  - **Concern** This claim is broad and unsupported by any specific evidence in the abstract. No examples of dark proteome targets that have been validated or linked to these disease areas are provided. The causal link between characterization and therapeutic target discovery is asserted rather than demonstrated.
+  - **Why it matters** The therapeutic potential is a central motivation for the review. If this link is not substantiated with examples or literature evidence, the review risks overstating the translational readiness of dark proteome research.
+  - **Resolution test** The full manuscript should provide at least one well-documented example of a dark proteome protein that has been functionally characterized and linked to a disease, ideally with evidence of therapeutic targeting. The abstract should mention such an example or clearly qualify the claim as prospective.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Novelty and differentiation
+  - **Claim pointer** The abstract presents the review as summarizing "current knowledge" and highlighting "emerging experimental and computational approaches."
+  - **Evidence pointer** Abstract only, location not provided
+  - **Concern** The abstract does not indicate how this review differs from existing reviews on the dark proteome or understudied proteins. There is no statement of what new synthesis, framework, or perspective is offered.
+  - **Why it matters** For a review to be publishable in a high-impact venue, it must offer a novel angle or critical insight beyond what is already available. Without differentiation, the contribution is unclear.
+  - **Resolution test** The full manuscript should include an explicit statement of novelty, such as a new classification scheme, a critical comparison of technologies, or a roadmap for integration. The abstract should hint at this unique contribution.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Definition of "dark proteome"
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The term "dark proteome" is used but not precisely defined. It is described as "poorly characterized" but the criteria for inclusion are vague.
+  - **Required correction** Provide a clear operational definition, such as proteins lacking experimental structures, functional annotations, or disease associations, ideally with a quantitative threshold.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scope clarity
+  - **Affected element** Disease list
+  - **Evidence pointer** Abstract, sentence on therapeutic targets
+  - **Issue** The list of disease areas (cancer, neurodegenerative, metabolic, rare genetic) is broad and may imply equal depth of coverage, which is unlikely in a single review.
+  - **Required correction** Clarify whether these are illustrative examples or areas of focused discussion, and adjust the abstract wording accordingly.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "Emerging technologies"
+  - **Evidence pointer** Abstract, sentence on technologies
+  - **Issue** The term "emerging" is used for cryo-EM and functional genomics, which are now mature technologies. This may misrepresent the state of the field.
+  - **Required correction** Use more precise descriptors, such as "recently applied" or "increasingly integrated," to reflect the actual maturity of each technology.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the abstract's central claims regarding technological opportunity and therapeutic potential are not supported by any specific evidence. The review's contribution cannot be evaluated without addressing these gaps.
+- **Assessment against Nature-style criteria** 
+  - Originality: Not assessable from the abstract. The topic is not new, and the abstract does not indicate a novel framework or synthesis.
+  - Scientific importance: High potential importance, as the dark proteome represents a large and underexplored area with clear therapeutic relevance. However, importance is asserted, not demonstrated.
+  - Interdisciplinary readership: The topic bridges structural biology, computational biology, genomics, and drug discovery, which could attract a broad audience. The abstract is accessible but lacks specific hooks for each community.
+  - Technical soundness: Not assessable from the abstract. No methods, data, or critical analysis are presented.
+  - Readability for nonspecialists: The abstract is clear and jargon is minimal, but the lack of concrete examples reduces its accessibility and impact.
+- **Recommendation posture** Currently not established from the provided evidence. The topic is promising and the abstract is well written, but the central claims require substantiation with specific examples and critical analysis. A revised abstract that includes at least one concrete finding or example, and a full manuscript that demonstrates novelty and evidence depth, would be needed to support a positive recommendation.
+
+## Risk / unsupported claims
+- The claim that AI-based structure prediction, cryo-EM, functional genomics, and multi-omics technologies "have provided new opportunities" is unsupported by specific examples or data in the abstract.
+- The claim that characterizing the dark proteome "could reveal novel therapeutic targets" for the listed diseases is asserted without evidence of any validated or even preliminary examples.
+- The implicit claim that the review offers a novel synthesis or perspective is not supported by the abstract, which reads as a general overview.

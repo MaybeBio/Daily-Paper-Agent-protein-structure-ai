@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report 5 microsecond all-atom molecular dynamics simulations of human FOXM1b NRD-TAD complexes in unphosphorylated and tetra-phosphorylated states. They claim that phosphorylation induces local unfolding of a beta-hairpin beginning at Ser715, leading to global disruption of the NRD interface, and that Ser715 phosphorylation is sufficient to initiate this transition. They further claim that MM-PBSA energy decomposition identifies Ser715 as the dominant locus of energetic perturbation.
+- **Visible evidence base** Abstract text only; no simulation details, force field parameters, convergence metrics, or quantitative results are provided
+- **Missing materials affecting confidence** Full methods, simulation setup and validation, force field choice, system preparation details, replica simulation parameters, MM-PBSA calculation details, all quantitative results, figures, and supplementary data
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible mechanistic hypothesis supported by molecular dynamics simulations, but the evidence base available for review is limited to the abstract. The central claims regarding the sufficiency of Ser715 phosphorylation and the reproducibility of the unfolding event cannot be adequately evaluated without access to simulation details, convergence analyses, and quantitative energetic data. The work addresses a biologically relevant question, but the current evidence as presented is insufficient to fully establish the mechanistic case.
+- **Who would be interested in the results, and why** Researchers studying FOXM1 biology, transcription factor regulation, phosphorylation-driven conformational switches, and the application of molecular dynamics to intrinsically disordered or autoinhibited protein systems. Computational biophysicists interested in long-timescale simulations of regulatory conformational transitions would also find the approach relevant.
+- **Major strengths** The study addresses a mechanistically important and poorly characterized regulatory switch in a clinically relevant transcription factor. The use of 5 microsecond all-atom simulations is appropriate for capturing conformational transitions of this nature. The inclusion of replicate simulations and a monophosphorylated control to test reproducibility and sufficiency is a commendable experimental design feature. The focus on per-residue energetic decomposition provides a potentially useful framework for identifying key structural determinants.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that phosphorylation induces local unfolding of the beta-hairpin beginning at Ser715 and propagates to global disruption of the NRD interface.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract does not provide any quantitative metrics to support the claimed unfolding and disruption events. No data are shown regarding hydrogen bond occupancy, salt bridge distances, secondary structure time courses, or root-mean-square deviation and fluctuation analyses. Without these data, the reader cannot assess whether the observed changes are statistically significant, reproducible across independent simulations, or within the expected thermal fluctuations of the system.
+  - **Why it matters** The central mechanistic claim rests on the observation of a specific unfolding pathway. If the evidence for this pathway is not robustly quantified and shown to be distinct from baseline conformational dynamics, the conclusion that phosphorylation triggers a specific order-to-disorder transition is not established.
+  - **Resolution test** Provide quantitative time series and ensemble averages for secondary structure content, interdomain contact maps, hydrogen bond occupancies, and salt bridge distances for both phosphorylated and unphosphorylated states. Show that the differences exceed thermal noise and are consistent across replicate simulations.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that a monophosphorylated Ser715 simulation reproduced the beta-hairpin unfolding event, supporting the sufficiency of Ser715 phosphorylation in initiating this transition.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states that a single monophosphorylated Ser715 simulation reproduced the unfolding event, but no details are provided regarding the number of replicates, the criteria used to define "reproduction" of the event, or the comparison with the unphosphorylated control. A single simulation is generally insufficient to establish sufficiency, particularly for rare or stochastic conformational transitions.
+  - **Why it matters** The sufficiency claim is a key mechanistic conclusion with potential implications for drug targeting. If the evidence rests on a single trajectory, the conclusion is not robustly supported.
+  - **Resolution test** Provide multiple independent monophosphorylated Ser715 simulations with quantitative criteria for defining the unfolding event. Show that the event occurs consistently and with a timescale distinct from the unphosphorylated control.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that per-residue MM-PBSA energy decomposition reveals Ser715 as the dominant locus of energetic perturbation despite the presence of multiple phosphosites.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** MM-PBSA calculations are known to be sensitive to the choice of dielectric constants, radii, and entropy estimates. The abstract provides no information on the parameters used, the convergence of the energetic estimates, or the statistical significance of the per-residue differences. Without this information, the claim that Ser715 is the dominant energetic locus cannot be evaluated.
+  - **Why it matters** The identification of Ser715 as a key energetic switch is a central conclusion that could guide future experimental validation and drug design. If the energetic decomposition is not robust, this conclusion is not reliable.
+  - **Resolution test** Provide full details of the MM-PBSA protocol, including dielectric constants, radii set, and entropy treatment. Show convergence of per-residue energy estimates and statistical comparisons across replicate simulations.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract background
+  - **Evidence pointer** Abstract, first two sentences
+  - **Issue** The abstract assumes familiarity with the FOXM1 domain architecture and the autoinhibitory mechanism. A brief clarification of the functional significance of the NRD-TAD interaction would improve accessibility.
+  - **Required correction** Add one sentence explaining the biological consequence of FOXM1 autoinhibition and its relief.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Simulation description
+  - **Evidence pointer** Abstract, methods description
+  - **Issue** The abstract does not specify the force field, water model, or simulation temperature and pressure conditions. These details are essential for reproducibility.
+  - **Required correction** Include force field, water model, and ensemble conditions in the methods summary.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity of claims
+  - **Affected element** Conclusion
+  - **Evidence pointer** Abstract, final sentence
+  - **Issue** The phrase "targeting FOXM1 activation via its regulatory fold" is vague and does not specify whether the authors propose small molecule binding, peptide interference, or another strategy.
+  - **Required correction** Clarify the proposed targeting strategy or remove the speculative statement.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The quantitative evidence for the unfolding pathway and the sufficiency claim must be provided and shown to be robust before the mechanistic conclusions can be accepted.
+- **Assessment against Nature-style criteria** Originality: The mechanistic question is important and the approach is appropriate, but the abstract does not reveal a conceptually novel finding beyond what might be expected from phosphorylation-induced destabilization. Scientific importance: FOXM1 is a relevant therapeutic target, and understanding its activation mechanism has potential translational value. Interdisciplinary readership: The work is primarily of interest to computational biophysicists and FOXM1 biologists; broader appeal is limited by the specialized nature of the system. Technical soundness: Cannot be fully assessed from the abstract; the blocking concerns above must be resolved. Readability for nonspecialists: The abstract is reasonably clear but could benefit from additional context as noted in minor comments.
+- **Recommendation posture** Currently not established from the provided evidence. The mechanistic claims are plausible but require the full quantitative evidence base to be evaluated. If the full manuscript addresses the blocking concerns with robust data, the work could be considered supportive.
+
+## Risk / unsupported claims
+- The claim that Ser715 phosphorylation is sufficient to initiate beta-hairpin unfolding is not supported by the abstract alone, as it rests on a single monophosphorylated simulation with no quantitative criteria or replicate data.
+- The claim that phosphorylation propagates to "global disruption of the NRD interface" is not quantitatively supported without contact maps, distance time series, or free energy estimates.
+- The claim that Ser715 is the "dominant locus of energetic perturbation" is not evaluable without MM-PBSA parameter details and statistical analysis.
+- The reproducibility claim based on "additional replicate tetra-phosphorylated simulations" cannot be assessed without knowing the number of replicates and the criteria for reproduction.

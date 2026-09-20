@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Combining AI Structure Prediction and Integrative Modeling for Nanobody-Antigen Complexes. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Combining AI Structure Prediction and Integrative Modeling for Nanobody-Antigen Complexes.</h1>
+      <div class="meta">Sanchez-Marin, Miguel; Giulini, Marco; Bonvin, Alexandre M J J</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-09-14
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42734515/">原文</a>
+      </div>
+      <p class="one-liner">该研究结合AlphaFold2/ImmuneBuilder结构预测与HADDOCK集成对接，构建纳米抗体-抗原复合物结构预测流程，属于蛋白质结构计算建模与AI/物理模拟结合的方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Nanobodies exhibit antigen-binding affinities of the same order as those of antibodies, which, along with their small size and unique structural characteristics, makes them well-suited for therapeutic and diagnostic applications. The lack of coevolutionary signals in nanobody-antigen complexes, together with the broad complementarity determining region 3 loop (CDR3) conformational space, poses a challenge for predicting the 3D structure of those complexes with computational modeling and artificial intelligence-based methods. In this context, physics-based information-driven docking can provide an alternative solution. This study evaluates the state-of-the-art machine-learning-based methods for nanobody structure prediction and benchmarks various HADDOCK workflows to model their interaction with antigens using different input nanobody ensembles and information scenarios. We propose an ensemble docking pipeline that achieves high success rates starting from nanobody structural models predicted by AlphaFold2 and ImmuneBuilder. Provided that some information on the epitope is available, our pipeline achieves higher success rates than the AlphaFold baseline on all generated models.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">纳米抗体（nanobodies）对抗原的结合亲和力与抗体处于同一数量级，加之其体积小和独特的结构特征，使其非常适合治疗和诊断应用。然而，纳米抗体-抗原复合物中缺乏共进化信号，加上互补决定区3环（CDR3）构象空间广泛，这给通过计算建模和基于人工智能的方法预测这些复合物的三维结构带来了挑战。在此背景下，基于物理学的信息驱动对接可提供一种替代解决方案。本研究评估了最先进的基于机器学习的纳米抗体结构预测方法，并基准测试了多种HADDOCK工作流程，以使用不同的输入纳米抗体集合和信息场景来模拟其与抗原的相互作用。我们提出了一种集成对接流程，该流程从AlphaFold2和ImmuneBuilder预测的纳米抗体结构模型出发，实现了高成功率。在可获得表位某些信息的前提下，我们的流程在所有生成的模型上均取得了高于AlphaFold基线的成功率。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Combining AI Structure Prediction and Integrative Modeling for Nanobody-Antigen Complexes</li>
+<li><strong>作者</strong>：Sanchez-Marin, Miguel; Giulini, Marco; Bonvin, Alexandre M J J</li>
+<li><strong>单位</strong>：未提供（Bonvin 隶属 Utrecht University，依据其长期 affiliation，但原文未提供）</li>
+<li><strong>期刊/平台</strong>：Journal of Chemical Information and Modeling</li>
+<li><strong>年份</strong>：2026（在线日期 2026-09-14）</li>
+<li><strong>论文类型</strong>：方法评估与流程基准测试（benchmarking study）</li>
+<li><strong>领域</strong>：蛋白质结构预测 × 信息驱动分子对接（AI 结构预测 + 整合建模）</li>
+<li><strong>关键词</strong>：Nanobody、AlphaFold2-Multimer、AlphaFold3、ImmuneBuilder、HADDOCK、Docking、CDR3</li>
+<li><strong>DOI/arXiv</strong>：10.1021/acs.jcim.6c01301</li>
+<li><strong>代码</strong>：https://github.com/haddocking/nanobodies（数据集）</li>
+<li><strong>数据</strong>：40 个 nanobody-antigen 复合物基准数据集；226 个 Paratope 数据集（来自 SAbDab）</li>
+<li><strong>阅读日期</strong>：2026-09-14</li>
+<li><strong>在课题方向中的位置</strong>：本文处于「蛋白质结构相关计算研究 × AI/物理模拟」交叉点，系统评估 AI 结构预测方法（AlphaFold2-Multimer、AlphaFold3、ImmuneBuilder 等）作为输入，结合信息驱动对接（HADDOCK）预测 nanobody-antigen 复合物结构。核心贡献在于：(1) 构建非冗余基准数据集；(2) 系统比较多种 AI 预测方法；(3) 提出 ensemble 对接流程与框架感知（framework-aware）的 paratope 定义，显著提升对接成功率。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文构建了 40 个非冗余 nanobody-antigen 复合物基准数据集，系统评估多种 AI 结构预测方法，并提出将 AlphaFold2-Multimer 与 ImmuneBuilder 预测的 nanobody 结构 ensemble 作为 HADDOCK 信息驱动对接的输入，在具备部分表位信息时，该流程的成功率超过 AlphaFold2-Multimer 基线，与 AlphaFold3 相当。</p>
+<hr />
+<h2>03 研究问题</h2>
+<p><strong>具体问题</strong>：Nanobody-antigen 复合物结构预测中，由于缺乏共进化信号且 CDR3 环构象空间巨大，现有 AI 方法（如 AlphaFold2-Multimer）成功率有限。能否通过将 AI 结构预测与信息驱动对接（HADDOCK）相结合，在仅有部分表位信息（如 loose interface 或两个关键残基）的条件下，获得更高的预测成功率？</p>
+<p><strong>为什么重要</strong>：Nanobody 在治疗和诊断应用中具有重要价值，其抗原结合亲和力与传统抗体相当，但体积小、稳定性高。准确预测 nanobody-antigen 复合物结构对 nanobody 工程改造、表位识别和药物设计至关重要。</p>
+<p><strong>现有方法不足</strong>：
+- AlphaFold2-Multimer 依赖共进化信号，而 nanobody-antigen 复合物缺乏这种信号，导致成功率有限（Top 1 仅 25% acceptable）。
+- AlphaFold3 虽表现更好，但需要大量采样（1000 seeds/5000 models），计算成本极高，且服务器版限制下游建模使用。
+- 传统对接方法需要准确的单体结构输入，而 nanobody CDR3 预测精度不足。</p>
+<p><strong>精确研究问题</strong>：Can an ensemble docking pipeline, combining AI-predicted nanobody structures with information-driven HADDOCK docking, achieve higher success rates than AlphaFold2-Multimer baseline on nanobody-antigen complexes when partial epitope information is available?</p>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架整理，部分经外部核验（标注）。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统抗体建模</td>
+<td>同源建模 + CDR 环库</td>
+<td>可解释、物理合理</td>
+<td>精度有限，CDR3 构象采样不足</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>深度学习方法（单体）</td>
+<td>AlphaFold2、ImmuneBuilder、NanoNet、RaptorX-Single</td>
+<td>快速、无需共进化信号（部分方法）</td>
+<td>CDR3 精度仍有限（RMSD &gt; 3 Å）</td>
+<td>本文评估对象</td>
+</tr>
+<tr>
+<td>深度学习方法（复合物）</td>
+<td>AlphaFold2-Multimer、AlphaFold3</td>
+<td>端到端预测复合物</td>
+<td>缺乏共进化信号时成功率低；AF3 计算成本极高</td>
+<td>本文基线</td>
+</tr>
+<tr>
+<td>信息驱动对接</td>
+<td>HADDOCK（抗体-抗原流程）</td>
+<td>可整合实验信息、物理评分</td>
+<td>依赖输入结构质量与表位信息</td>
+<td>本文核心方法</td>
+</tr>
+<tr>
+<td>整合流程（本文）</td>
+<td>AI 预测 ensemble + HADDOCK 对接</td>
+<td>结合 AI 速度与物理对接精度，成功率超过 AF2M</td>
+<td>需要部分表位信息；评分仍具挑战</td>
+<td><strong>本文贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>经外部核验的脉络</strong>：AlphaFold2 在无共进化信号（孤儿蛋白）上表现下降已有广泛报道；HADDOCK 在抗体-抗原复合物预测中的成功已有先例（Ambrosetti et al.）；AlphaFold3 的高采样需求在 Abramson et al. 中有明确报告。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺乏共进化信号</td>
+<td>AF2M 在 nanobody-antigen 复合物上 Top 1 acceptable 仅 25%</td>
+<td>Nanobody-antigen 相互作用缺乏足够的 MSA 共进化信息</td>
+<td>Results 节 "AlphaFold Has Moderate Accuracy..."</td>
+</tr>
+<tr>
+<td>CDR3 构象空间巨大</td>
+<td>所有方法 CDR3 RMSD 均值 &gt; 3 Å</td>
+<td>CDR3 长度可变（6-24 残基）、柔性高、缺乏模板</td>
+<td>Results 节 Table 1</td>
+</tr>
+<tr>
+<td>抗原建模误差</td>
+<td>9/40 抗原全局 RMSD &gt; 5 Å，3 个表位 RMSD &gt; 5 Å</td>
+<td>AF2M 对多链抗原或非 globular 抗原建模困难</td>
+<td>Results 节 "The Quality of Antigen Structure Prediction..."</td>
+</tr>
+<tr>
+<td>多链抗原相对取向错误</td>
+<td>PDB 7QNE 中链 A/E 相对取向错误，导致所有对接失败</td>
+<td>AF2M 对多链复合物的链间取向预测不可靠</td>
+<td>Results 节，7QNE 案例分析</td>
+</tr>
+<tr>
+<td>评分函数无法识别近天然模型</td>
+<td>Top 1 成功率远低于 Top 200 成功率</td>
+<td>HADDOCK 评分函数在 nanobody-antigen 上区分度不足</td>
+<td>Results 节 图 2、图 3</td>
+</tr>
+<tr>
+<td>计算成本高</td>
+<td>AF3 需 1000 seeds/5000 models 才能达到 60% acceptable</td>
+<td>AF3 的扩散采样策略需要大量样本</td>
+<td>Introduction 节</td>
+</tr>
+<tr>
+<td>Paratope 定义不完整</td>
+<td>仅用 CDR 环定义 paratope 时，部分案例 F_para &lt; 60%</td>
+<td>Nanobody 的框架区（FR）也参与抗原结合</td>
+<td>Results 节 图 4b、Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>构建一个多阶段流程：(a) 用多种 AI 方法（AF2M、AF2、IB、NN、RXS）预测 nanobody 单体结构；(b) 将不同方法的预测结果合并为 ensemble，通过 CDR3 RMSD 层次聚类去冗余；(c) 用 HADDOCK3 信息驱动对接，将 nanobody ensemble 对接到抗原表位区域；(d) 用 HADDOCK 评分函数排序并评估。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>Ensemble 优于单模型</strong>：不同 AI 方法在不同案例上各有优劣，合并 ensemble 后最佳可用模型的 CDR3 RMSD 中位数降至 1.23 Å（远低于任何单一方法），说明方法间误差互补。</li>
+<li><strong>信息驱动对接可弥补 AI 复合物预测不足</strong>：当有部分表位信息（loose interface 或两个关键残基）时，HADDOCK 对接成功率超过 AF2M 基线，与 AF3 相当，但计算成本远低于 AF3 的 1000 seeds 采样。</li>
+<li><strong>Paratope 定义是关键</strong>：nanobody 的框架区（FR）在抗原结合中贡献显著，仅用 CDR 环定义 paratope 会遗漏重要结合残基。基于 226 个实验结构分析，提出 CDR+FR 的 paratope 定义，提升对接成功率。</li>
+<li><strong>评分是瓶颈</strong>：Top 200 成功率远高于 Top 1/Top 10，说明正确模型已生成但难以被评分函数识别。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>AI 预测 + 物理对接的互补性</strong>：AI 方法擅长从序列预测结构，但缺乏对相互作用物理化学的显式建模；信息驱动对接擅长在约束下搜索结合模式，但依赖输入结构质量。两者结合可互补短板。</li>
+<li><strong>Ensemble 策略的普适性</strong>：在单一方法不确定性高时，合并多种方法的输出并聚类去冗余，可显著提高"最佳可用模型"的质量——这一思路可迁移到其他蛋白质结构预测任务。</li>
+<li><strong>信息分级与鲁棒性</strong>：本文系统评估了从"全表位已知"到"仅两个关键残基"的信息级别，展示了信息驱动方法在不同信息可用性下的表现边界，为实际应用提供了选择依据。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：
+- Nanobody 氨基酸序列（FASTA）
+- 抗原氨基酸序列（FASTA）
+- 可选信息：表位残基（不同信息级别：TI/LI/2I/AS）</p>
+<p><strong>输出</strong>：
+- Nanobody-antigen 复合物结构模型（按 HADDOCK 评分排序）
+- 按 CAPRI 标准分类的模型质量（acceptable/medium/high）</p>
+<p><strong>模块</strong>：</p>
+<ol>
+<li><strong>Nanobody 结构预测</strong>：6 种方法（AF2M、AF2、IB、NN、RXS、AF3），每种生成多个模型</li>
+<li><strong>Ensemble 构建与聚类</strong>：合并所有方法模型，基于 CDR3 RMSD 层次聚类（阈值 2.5 Å），每簇选置信度最高模型</li>
+<li><strong>抗原结构准备</strong>：优先使用实验同源结构；否则用 AF2M 预测，按 pLDDT 选择最佳模型</li>
+<li><strong>HADDOCK3 对接</strong>：
+   - 刚性对接（rigid-body docking）
+   - Top 200 模型进入柔性细化（flexible refinement）
+   - 能量最小化
+   - FCC 聚类，每簇选 Top 4</li>
+<li><strong>评分与评估</strong>：HADDOCK 评分函数（HS = 1.0·Evdw + 0.2·Eelec + 1.0·Edesolv + 0.1·Eair − 0.01·BSA），CAPRI 标准分类</li>
+</ol>
+<p><strong>工具</strong>：ColabFold v1.5.3（AF2M）、AlphaFold3 服务器、ImmuneBuilder（NanoBodyBuilder2）、NanoNet、RaptorX-Single、HADDOCK3、pdb-tools、MDAnalysis、Profit v3.3</p>
+<p><strong>流程</strong>（文字描述）：
+序列输入 → 各 AI 方法独立预测 nanobody 结构 → 合并所有预测为 ensemble → CDR3 RMSD 层次聚类去冗余 → 每簇选代表模型 → 与抗原结构（实验或预测）一起输入 HADDOCK3 → 按信息场景生成 ambiguous restraints → 刚性对接 → 柔性细化 → FCC 聚类 → 评分排序 → CAPRI 分类评估</p>
+<p><strong>假设</strong>：
+- 实验结构中的抗原构象与溶液状态一致（bound 实验中使用结合态抗原）
+- 对接评分函数（HADDOCK score）能近似反映结合自由能
+- 表位信息（即使不完整）能有效引导对接搜索</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI 结构预测（多方法）</td>
+<td>生成 nanobody 单体结构候选</td>
+<td>单一方法 CDR3 精度不足，多方法可互补</td>
+<td>输入：序列；输出：结构模型集合</td>
+<td>Results 图 1a：各方法 CDR3 RMSD 分布</td>
+<td>预期影响：ensemble 多样性降低，最佳可用模型质量下降 [预期效应]</td>
+</tr>
+<tr>
+<td>Ensemble 聚类</td>
+<td>去冗余、保留多样性</td>
+<td>大量模型直接对接计算成本高，且相似模型无信息增益</td>
+<td>输入：所有模型；输出：聚类代表模型</td>
+<td>Results 图 1a：聚类后 ensemble 中位数 CDR3 RMSD 1.23 Å</td>
+<td>预期影响：计算成本降低但可能丢失稀有构象 [预期效应]</td>
+</tr>
+<tr>
+<td>抗原结构选择</td>
+<td>获取高质量抗原结构</td>
+<td>抗原建模误差直接限制对接精度</td>
+<td>输入：AF2M 预测或 PDB 同源结构；输出：抗原结构</td>
+<td>Results 节：9/40 抗原全局 RMSD &gt; 5 Å</td>
+<td>实测影响：7QNE 因抗原多链取向错误导致所有对接失败 [实测]</td>
+</tr>
+<tr>
+<td>HADDOCK3 对接（刚性+柔性）</td>
+<td>搜索结合模式并优化</td>
+<td>信息驱动对接可利用表位信息引导搜索</td>
+<td>输入：nanobody ensemble + 抗原 + restraints；输出：复合物模型</td>
+<td>Results 图 2：TI 场景 Top 10 达 80-87.5%</td>
+<td>预期影响：无信息引导时成功率大幅下降 [预期效应]</td>
+</tr>
+<tr>
+<td>信息场景定义（TI/LI/2I/AS）</td>
+<td>模拟不同信息可用性</td>
+<td>实际应用中表位信息完整度不同</td>
+<td>输入：表位残基集合；输出：ambiguous restraints</td>
+<td>Results 图 2：TI &gt; LI ≈ 2I &gt;&gt; AS</td>
+<td>实测影响：AS 场景成功率仅 7.5-20% [实测]</td>
+</tr>
+<tr>
+<td>Paratope 定义（CDR vs CDR+FR）</td>
+<td>定义 nanobody 侧可能的结合残基</td>
+<td>仅 CDR 环无法覆盖全部 paratope</td>
+<td>输入：结构/序列；输出：活性残基集合</td>
+<td>Results 图 4b：F_para 与 docking 成功率相关</td>
+<td>实测影响：CDR+FR 定义提升 LI 场景 Top 10 SR 12.5% [实测]</td>
+</tr>
+<tr>
+<td>FCC 聚类 + Top N 选择</td>
+<td>从大量模型中提取代表性预测</td>
+<td>对接产生大量模型，需聚类排序</td>
+<td>输入：所有对接模型；输出：Top N 代表模型</td>
+<td>Results 节：FCC 聚类提升 Top 10 SR</td>
+<td>预期影响：无聚类时 Top N 冗余度高 [预期效应]</td>
+</tr>
+<tr>
+<td>评分函数（HADDOCK score / VoroIF-jury）</td>
+<td>排序模型质量</td>
+<td>识别近天然模型是当前瓶颈</td>
+<td>输入：模型集合；输出：排序列表</td>
+<td>Results 节：Top 200 远高于 Top 1/Top 10</td>
+<td>实测影响：评分函数区分度不足，是主要瓶颈 [实测]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>1. HADDOCK 评分函数</strong>（Methods 节）：</p>
+<p>HS = 1.0·E_vdw + 0.2·E_elec + 1.0·E_desolv + 0.1·E_air − 0.01·BSA</p>
+<ul>
+<li>HS：HADDOCK score，用于模型排序</li>
+<li>E_vdw：分子间范德华能</li>
+<li>E_elec：分子间静电相互作用能</li>
+<li>E_desolv：经验去溶剂化能</li>
+<li>E_air：ambiguous interaction restraints（AIR）能量项</li>
+<li>BSA：埋藏表面积（buried surface area）</li>
+</ul>
+<p><strong>2. CAPRI 分类标准</strong>（Methods 节）：</p>
+<p>基于 i-RMSD、L-RMSD、F_nat 三个指标：
+- High：F_nat ≥ 0.5 且 (i-RMSD ≤ 1 Å 或 L-RMSD ≤ 1 Å)
+- Medium：F_nat ≥ 0.3 且 (i-RMSD ≤ 2 Å 或 L-RMSD ≤ 5 Å)
+- Acceptable：F_nat ≥ 0.1 且 (i-RMSD ≤ 4 Å 或 L-RMSD ≤ 10 Å)
+- Incorrect：不满足上述任何条件</p>
+<p><strong>3. F_para</strong>（Results 节）：</p>
+<p>F_para = 用于 restraints 的活性残基中属于实验 paratope 的残基数 / 实验 paratope 总残基数</p>
+<p><strong>4. DockQ</strong>（Results 节）：</p>
+<p>连续评分，综合 F_nat、i-RMSD、L-RMSD，范围 0-1，用于评估模型质量。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>：
+- 基准数据集：40 个 nanobody-antigen 复合物晶体结构，来自 SAbDab Nano，2021-09-30 后发布（避免与训练集重叠），CDR3 序列非冗余（60% 同源性阈值），CDR3 长度 6-24 残基，抗原来源包括病毒（17）、人（8）、细菌（7）、啮齿类（4）、植物（3）、原生动物（1）
+- Paratope 数据集：226 个 nanobody-antigen 实验结构，无截止日期限制</p>
+<p><strong>评估指标</strong>：
+- 可接受成功率（acceptable SR）：至少一个 acceptable 或更高质量模型的案例百分比
+- 中等等成功率（medium SR）：至少一个 medium 或更高质量模型的案例百分比
+- DockQ：连续质量评分
+- CDR3 RMSD：nanobody 预测精度
+- F_para：paratope 覆盖率</p>
+<p><strong>基线</strong>：
+- AF2M 复合物预测（Top 1/Top 10）
+- AF3 复合物预测（25 模型）
+- HADDOCK 对接（不同信息场景、不同 nanobody 输入）</p>
+<p><strong>实验列表</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AF2M 复合物预测</td>
+<td>AF2M 在 nanobody-antigen 上成功率有限</td>
+<td>40 个案例，Top 1/Top 10</td>
+<td>Top 1 acceptable 25%，Top 10 27.5%</td>
+<td>AF2M 基线成功率有限</td>
+<td>不能推广到所有复合物类型</td>
+<td>Results 图 2</td>
+</tr>
+<tr>
+<td>AF3 复合物预测</td>
+<td>AF3 优于 AF2M</td>
+<td>25 模型/复合物</td>
+<td>Top 1 acceptable 32.5%，Top 10 52.5%</td>
+<td>AF3 是强基线</td>
+<td>25 模型远少于 1000 seeds 设置</td>
+<td>Results 图 2</td>
+</tr>
+<tr>
+<td>单体预测精度比较</td>
+<td>各方法 CDR3 预测精度</td>
+<td>6 种方法，CDR3 RMSD</td>
+<td>AF3 最佳（均值 2.48 Å），NN 最差（4.60 Å）</td>
+<td>方法间存在显著差异</td>
+<td>均值受离群值影响</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>Ensemble 聚类效果</td>
+<td>合并多方法 ensemble 提升最佳可用模型</td>
+<td>合并 vs 单一方法</td>
+<td>聚类后 ensemble 中位数 CDR3 RMSD 1.23 Å</td>
+<td>Ensemble 策略有效</td>
+<td>最佳模型仍需下游筛选</td>
+<td>Results 图 1a</td>
+</tr>
+<tr>
+<td>HADDOCK TI 场景</td>
+<td>全表位信息下对接成功率</td>
+<td>bound/unbound 抗原</td>
+<td>Top 10 达 80-87.5%</td>
+<td>信息驱动对接有效</td>
+<td>依赖完整表位信息</td>
+<td>Results 图 2</td>
+</tr>
+<tr>
+<td>HADDOCK LI/2I 场景</td>
+<td>部分信息下仍优于 AF2M</td>
+<td>与 AF2M/AF3 对比</td>
+<td>LI/2I Top 10 约 40-55%，高于 AF2M</td>
+<td>部分信息足够</td>
+<td>低于 TI 场景</td>
+<td>Results 图 2</td>
+</tr>
+<tr>
+<td>HADDOCK AS 场景</td>
+<td>无信息时对接困难</td>
+<td>仅 CDR 活性</td>
+<td>Top 10 仅 20%</td>
+<td>无信息时成功率低</td>
+<td>仅测试了 1 个 ensemble</td>
+<td>Results 图 S3</td>
+</tr>
+<tr>
+<td>F_para 分析</td>
+<td>paratope 覆盖率影响成功率</td>
+<td>226 个结构分析</td>
+<td>F_para &lt; 60% 时成功率显著下降</td>
+<td>Paratope 定义关键</td>
+<td>相关性非因果</td>
+<td>Results 图 4b</td>
+</tr>
+<tr>
+<td>CDR+FR paratope</td>
+<td>框架感知 paratope 提升成功率</td>
+<td>原 CDR vs CDR+FR</td>
+<td>LI 场景 Top 10 SR 提升 12.5%</td>
+<td>框架区参与结合</td>
+<td>仅 LI 场景测试</td>
+<td>Results 图 S9</td>
+</tr>
+<tr>
+<td>失败案例分析</td>
+<td>识别失败原因</td>
+<td>7QNE 等多链抗原</td>
+<td>多链抗原相对取向错误导致失败</td>
+<td>抗原建模是瓶颈</td>
+<td>案例数有限</td>
+<td>Results 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>：本文仅针对 nanobody-antigen 复合物，不涉及抗体-抗原或其他蛋白-蛋白复合物。基准数据集限于晶体结构，未包含冷冻电镜或溶液状态结构。</p>
+<p><strong>oracle/真值输入</strong>：所有评估均以实验晶体结构为真值。信息场景中，表位残基来自实验结构注释（TI 场景为全表位，LI 为 loose 定义，2I 为两个关键残基）。这代表"理想化"的信息可用性，实际应用中表位信息可能更不精确。</p>
+<p><strong>端到端状态</strong>：本文流程并非全自动端到端——需要人工选择信息场景、设定 restraints 参数、判断聚类阈值。AF3 服务器版本限制了下游建模使用，因此未纳入 ensemble。</p>
+<p><strong>算力成本</strong>：HADDOCK 流程平均运行时间 37-45 分钟（12 核），远低于 AF3 的 1000 seeds 设置。但 ensemble 方法需要运行多个 AI 预测，总成本需累加。</p>
+<p><strong>历史数据依赖</strong>：基准数据集刻意选择 2021-09-30 后发布的结构，避免与 AI 方法训练集重叠。但 AI 方法仍在更新，新方法可能改变结论。</p>
+<p><strong>模型依赖</strong>：结论基于当前版本的 AF2M、AF3、ImmuneBuilder 等。这些方法持续更新，性能变化可能影响结论的时效性。</p>
+<p><strong>最难情形</strong>：多链抗原（如 7QNE）中链间相对取向预测错误是当前流程的致命弱点；无任何表位信息时（AS 场景）成功率极低。</p>
+<p><strong>群体/领域边界</strong>：结论适用于 nanobody-antigen 复合物，且限于晶体结构可解析的构象。对于柔性抗原、膜蛋白抗原或翻译后修饰抗原，结论可能不成立。</p>
+<p><strong>有边界的复述</strong>：在 40 个非冗余 nanobody-antigen 复合物上，当提供 loose interface 或两个关键残基的表位信息时，以 AI 预测 nanobody ensemble 为输入的 HADDOCK 对接流程，其 acceptable 成功率（Top 10 约 40-55%）显著高于 AF2M 基线（27.5%），与 AF3 的 25 模型设置相当（52.5%），且计算成本远低于 AF3 的 1000 seeds 设置。该结论不适用于无表位信息场景，也不适用于多链抗原中链间取向严重错误的情况。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据集规模有限</td>
+<td>仅 40 个复合物，统计功效有限</td>
+<td>扩展数据集以包含更多样化的 nanobody-antigen 复合物</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>数据集偏倚</td>
+<td>主要来自晶体结构，可能偏向稳定、易结晶的复合物</td>
+<td>纳入冷冻电镜、溶液状态结构</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>表位信息理想化</td>
+<td>信息场景中的表位残基来自实验结构注释，实际应用中可能不精确</td>
+<td>结合表位预测工具自动生成 restraints</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>多链抗原建模失败</td>
+<td>7QNE 等案例中 AF2M 对链间相对取向预测错误</td>
+<td>开发专门的多链抗原建模策略</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>评分函数是瓶颈</td>
+<td>Top 200 成功率远高于 Top 1/Top 10，正确模型难以被识别</td>
+<td>开发更好的评分函数或 ML-based 排序方法</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>AF3 未纳入 ensemble</td>
+<td>AF3 服务器版限制下游建模使用</td>
+<td>等待 AF3 开放本地运行或开发替代方案</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>AlphaFlow 无优势</td>
+<td>在 nanobody CDR3 上 AlphaFlow 未提供显著改进</td>
+<td>进一步探索生成式方法在 CDR3 采样中的应用</td>
+<td>Results 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基准数据集刻意排除训练集重叠案例</td>
+<td>可能高估了 AI 方法在"新"nanobody 上的表现；实际应用中 nanobody 可能部分相似于训练数据</td>
+<td>影响结论的生态效度</td>
+<td>在包含训练集重叠案例的数据集上重新评估</td>
+<td>Methods 节数据集构建</td>
+</tr>
+<tr>
+<td>TI 场景代表"理想化"信息</td>
+<td>实际应用中全表位已知的情况很少，TI 场景的成功率可能高估了流程上限</td>
+<td>影响实际应用预期</td>
+<td>在真实应用场景（如仅知突变数据）中测试</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>Ensemble 聚类阈值（2.5 Å）为经验选择</td>
+<td>不同阈值可能改变 ensemble 组成和下游对接结果</td>
+<td>影响流程鲁棒性</td>
+<td>进行阈值敏感性分析</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>仅测试了 1 个 ensemble（IBMu）用于 AS 场景</td>
+<td>AS 场景结论可能不适用于其他 ensemble 组合</td>
+<td>影响无信息场景的结论</td>
+<td>在多个 ensemble 上测试 AS 场景</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>HADDOCK 评分函数与实验结合自由能相关性未验证</td>
+<td>高 HADDOCK score 不一定对应高结合亲和力</td>
+<td>影响模型排序可靠性</td>
+<td>与实验结合亲和力数据对比</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>未报告各方法的运行时间/资源消耗</td>
+<td>实际应用中计算资源是重要考量</td>
+<td>影响方法选择</td>
+<td>补充基准测试</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>与 AF3 的比较不公平（25 vs 1000 模型）</td>
+<td>AF3 在 1000 seeds 下可能表现更好</td>
+<td>影响"与 AF3 相当"的结论</td>
+<td>在相同采样规模下比较</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>Paratope 分析基于 226 个结构，但分类标准（kinked/extended）可能过于简化</td>
+<td>实际 paratope 分布可能更连续</td>
+<td>影响 paratope 定义普适性</td>
+<td>使用更细粒度的分类标准</td>
+<td>Results 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题：Agent 提炼的知识候选</p>
+</blockquote>
+<h3>可迁移概念</h3>
+<ol>
+<li>
+<p><strong>多方法 ensemble 优于单一方法</strong>：在蛋白质结构预测中，不同方法（AF2M、IB、NN 等）的误差具有互补性，合并后聚类去冗余可显著提升"最佳可用模型"质量。这一策略可迁移到其他结构预测任务（如抗体 CDR 环预测、酶活性位点预测）。</p>
+</li>
+<li>
+<p><strong>信息分级评估框架</strong>：本文系统定义了 TI/LI/2I/AS 四个信息场景，模拟从"全表位已知"到"无信息"的梯度。这种评估框架可迁移到其他 docking 或结构预测任务，帮助研究者理解方法在不同信息条件下的适用边界。</p>
+</li>
+<li>
+<p><strong>框架感知的 paratope 定义</strong>：仅用 CDR 环定义 paratope 会遗漏框架区（FR）的结合贡献。这一发现提示在 nanobody 对接中应纳入 FR 残基，也可迁移到抗体-抗原对接中重新审视 paratope 定义。</p>
+</li>
+<li>
+<p><strong>聚类 + 置信度选择策略</strong>：在大量预测模型中，基于结构相似性聚类后选择置信度最高的代表模型，是平衡计算成本与多样性的有效策略。</p>
+</li>
+</ol>
+<h3>可迁移方法</h3>
+<ol>
+<li>
+<p><strong>HADDOCK 信息驱动对接流程</strong>：将 AI 预测结构作为 ensemble 输入，结合表位信息生成 ambiguous restraints，经刚性对接→柔性细化→聚类→排序的完整流程，可直接迁移到其他蛋白-蛋白复合物预测任务。</p>
+</li>
+<li>
+<p><strong>CDR3 RMSD 作为质量指标</strong>：以 CDR3 环的 RMSD 作为 nanobody 预测精度的核心指标，比全局 RMSD 更能反映功能相关精度。</p>
+</li>
+<li>
+<p><strong>F_para 分析</strong>：通过计算 restraints 中活性残基对实验 paratope 的覆盖率，定量评估 paratope 定义的质量，可用于优化对接输入。</p>
+</li>
+</ol>
+<h3>对课题方向的启示</h3>
+<ol>
+<li>
+<p><strong>AI 预测与物理对接的互补性</strong>：本文证明，当 AI 端到端预测（AF2M）失败时，AI 预测单体 + 信息驱动对接可以成功。这提示在蛋白质结构预测研究中，混合策略（AI 生成构象 + 物理方法筛选/优化）可能比单一方法更鲁棒。</p>
+</li>
+<li>
+<p><strong>评分函数是共同瓶颈</strong>：无论是 AI 方法还是 docking 流程，"生成正确模型但无法识别"是普遍问题。这指向了开发更好的模型排序/评分方法的重要性，是值得投入的研究方向。</p>
+</li>
+<li>
+<p><strong>数据泄漏控制</strong>：本文严格选择训练截止日期后的结构作为基准，这种"时间分割"策略值得在类似 benchmark 研究中推广，以避免高估 AI 方法性能。</p>
+</li>
+<li>
+<p><strong>多链抗原建模缺口</strong>：AF2M 在多链抗原上的失败提示，当前 AI 方法对多链复合物的链间取向预测不足，是值得关注的技术缺口。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, discussion, conclusion, methods) without figures, tables, or supplementary material</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodological soundness, claim-evidence alignment, and reporting quality as presented in the provided text</li>
+<li><strong>Shared manuscript claim summary</strong> The authors benchmark AI-based structure prediction methods for nanobody-antigen complexes and propose an integrative docking pipeline using HADDOCK3 that achieves higher success rates than AlphaFold2-Multimer when some epitope information is available, with a framework-aware paratope definition improving performance.</li>
+<li><strong>Visible evidence base</strong> Textual descriptions of results, numerical values for success rates and RMSDs, methodological descriptions, references to figures and tables (not visible)</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, tables (including Tables S1-S3), supplementary material, benchmark data set details, and the GitHub repository contents</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This manuscript addresses a relevant and timely problem in structural biology, namely the prediction of nanobody-antigen complexes. The authors present a systematic benchmark of current AI-based methods and demonstrate that integrative modeling with HADDOCK3 can outperform AlphaFold2-Multimer when epitope information is available. The work is technically sound in its overall design, but several concerns regarding data set construction, statistical rigor, and the strength of certain claims need to be addressed. The manuscript is well-written and accessible, though some methodological details require clarification. The proposed framework-aware paratope definition is a useful contribution, but its generalizability and the statistical significance of the improvements need stronger support.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Researchers in structural biology, computational biology, and protein engineering, particularly those working on antibody and nanobody design, integrative modeling, and benchmarking of AI-based structure prediction methods. The work is also relevant for developers of docking software and machine learning methods for protein-protein complex prediction.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> The manuscript addresses a clear and important gap in the field, namely the limited evaluation of AI-based methods for nanobody-antigen complexes specifically. The benchmark data set is carefully constructed with attention to non-redundancy and temporal separation from training data. The systematic evaluation of multiple prediction methods and docking scenarios is thorough. The proposed framework-aware paratope definition is a novel and practical contribution. The authors are transparent about limitations, including the small data set size and the challenges of model scoring.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor and claim support</li>
+<li><strong>Claim pointer</strong> The authors claim that their pipeline achieves higher success rates than the AlphaFold2-Multimer baseline in the low-information scenarios (LI and 2I), and that the framework-aware paratope definition improves docking performance.</li>
+<li><strong>Evidence pointer</strong> Results sections "Information-Driven HADDOCK Unbound Docking" and "Framework-Aware Paratope Description Improves the Modeling Success"; Figures 3, 4, S9 (not visible)</li>
+<li><strong>Concern</strong> The manuscript reports success rates and improvements without providing any statistical significance testing or confidence intervals. With a data set of only 40 complexes, the observed differences between scenarios and between paratope definitions could be within sampling variability. For example, the improvement in LI Top 10 SR from 30% to 42.5% (unbound) or from 50% to 62.5% (bound) represents only a handful of additional successful cases. The authors should provide statistical analysis, such as bootstrap confidence intervals or paired tests, to support the claim that the observed improvements are meaningful.</li>
+<li><strong>Why it matters</strong> The central claim of the manuscript is that the proposed pipeline outperforms existing methods. Without statistical support, the reader cannot assess whether the observed differences are robust or could be due to chance, particularly given the modest data set size.</li>
+<li>
+<p><strong>Resolution test</strong> Provide confidence intervals or statistical tests (e.g., McNemar's test for paired success/failure outcomes) for the key comparisons. If the improvements are not statistically significant, temper the claims accordingly.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Data set construction and potential bias</li>
+<li><strong>Claim pointer</strong> The benchmark data set is described as nonredundant and designed to minimize data leakage with AI training sets.</li>
+<li><strong>Evidence pointer</strong> Methods section "Benchmark Data Set Assembly"; Tables S1, S2 (not visible)</li>
+<li><strong>Concern</strong> The data set construction relies on a CDR3 sequence identity threshold of 60% for redundancy removal. This is a reasonable but somewhat arbitrary choice. More importantly, the authors state that structures were selected based on deposition date after September 30th, 2021, to avoid overlap with training data. However, the training data cutoffs for different methods (AlphaFold2, ImmuneBuilder, NanoBot, RaptorX-Single, AlphaFold3) may differ, and some methods may have been trained on data released after this date. The authors should verify and report the actual training data cutoffs for each method and confirm that the benchmark data set does not overlap with any of them. Additionally, the exclusion of certain structures (e.g., PDB 7NBB for being a polyubiquitin chain) should be justified more thoroughly, as this could introduce selection bias.</li>
+<li><strong>Why it matters</strong> The validity of the benchmark depends on ensuring that the evaluated methods have not seen the test structures during training. If there is any overlap, the reported success rates could be inflated, undermining the conclusions.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed table of training data cutoffs for each method and confirm that all benchmark structures fall outside these cutoffs. Justify all exclusion criteria and assess their potential impact on the results.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Methodological clarity and reproducibility</li>
+<li><strong>Claim pointer</strong> The authors describe a pipeline combining AI structure prediction and integrative modeling with HADDOCK3, including a framework-aware paratope definition.</li>
+<li><strong>Evidence pointer</strong> Methods sections "Information Scenarios and Restraints Generation", "HADDOCK3 Docking Protocols", and "Paratope Analysis and Framework-Aware Restraints Definition"</li>
+<li><strong>Concern</strong> The description of the framework-aware paratope definition is incomplete. The authors state that "several other regions were also defined as active" and list 10 regions, but it is unclear how these regions were selected. Were they derived from the clustering analysis of the Paratope Data Set? If so, how exactly? The relationship between the two identified binding modes and the specific regions listed needs to be clarified. Additionally, the authors mention that "when a region is defined as active, it is sufficient for any of the selected residues to be in contact with the antigen's defined epitope for the restraint to be satisfied," but the exact implementation in HADDOCK3 (e.g., how ambiguous restraints are defined for multiple residues) is not fully described.</li>
+<li><strong>Why it matters</strong> The framework-aware paratope definition is a key contribution of the manuscript. Without a clear and complete description, other researchers cannot reproduce or build upon this work.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed description of how the regions were derived from the clustering analysis, including the criteria for selecting specific residues. Include a step-by-step description of how the restraints are implemented in HADDOCK3, possibly with a schematic figure.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Comparison with AlphaFold3</li>
+<li><strong>Claim pointer</strong> The authors state that AlphaFold3 achieves higher success rates than AlphaFold2-Multimer on the benchmark data set, but they do not include AlphaFold3 in the docking pipeline comparisons.</li>
+<li><strong>Evidence pointer</strong> Results section "AlphaFold Has Moderate Accuracy in Nanobody-Antigen Complex Prediction"; Table 1 (not visible)</li>
+<li><strong>Concern</strong> The manuscript reports AlphaFold3 results (32.5% Top 1 acceptable SR) but excludes AlphaFold3 from the docking pipeline evaluation due to licensing restrictions. While this is understandable, the comparison between the proposed pipeline and AlphaFold3 is incomplete. The authors should discuss more explicitly how the proposed pipeline compares to AlphaFold3 in terms of both success rates and computational cost, and whether the pipeline offers advantages beyond what AlphaFold3 can achieve.</li>
+<li><strong>Why it matters</strong> AlphaFold3 represents the current state of the art for complex prediction, and readers will want to know whether the proposed pipeline offers a meaningful alternative or improvement. Without a direct comparison, the practical value of the pipeline is unclear.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a discussion section comparing the proposed pipeline to AlphaFold3 in terms of success rates, computational cost, and applicability. If possible, include a qualitative comparison based on the reported results.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of reporting</li>
+<li><strong>Affected element</strong> Results section "AlphaFold Has Moderate Accuracy in Nanobody-Antigen Complex Prediction"</li>
+<li><strong>Evidence pointer</strong> Text describing AlphaFold3 results</li>
+<li><strong>Issue</strong> The authors report AlphaFold3 results with 25 models generated per complex, but the number of seeds used is not clearly stated. The text mentions "5 different seeds" in the Methods section, but this is not explicitly linked to the AlphaFold3 results in the Results section.</li>
+<li>
+<p><strong>Required correction</strong> Clarify the number of seeds used for AlphaFold3 predictions in the Results section and discuss how this might affect the reported success rates.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness of information</li>
+<li><strong>Affected element</strong> Results section "The Quality of Antigen Structure Prediction with AlphaFold2-Multimer Can Be Limiting for Docking"</li>
+<li><strong>Evidence pointer</strong> Text describing antigen model selection</li>
+<li><strong>Issue</strong> The authors state that they selected the best antigen models based on global pLDDT, but it is unclear how many models were generated per antigen and whether the selection was based on the complex prediction or the monomer prediction.</li>
+<li>
+<p><strong>Required correction</strong> Provide details on the number of models generated, the selection criteria, and whether the antigen models were extracted from the complex predictions or predicted separately.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Results section "Information-Driven HADDOCK Unbound Docking"</li>
+<li><strong>Evidence pointer</strong> Text describing success rates</li>
+<li><strong>Issue</strong> The manuscript reports success rates as percentages without specifying the number of cases or providing confidence intervals. For a data set of 40 complexes, a 5% difference represents only 2 cases.</li>
+<li>
+<p><strong>Required correction</strong> Report the number of successful cases alongside percentages and consider providing confidence intervals for key results.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Discussion completeness</li>
+<li><strong>Affected element</strong> Discussion section</li>
+<li><strong>Evidence pointer</strong> Text discussing limitations</li>
+<li><strong>Issue</strong> The authors mention the limited size of the benchmark data set but do not discuss the potential impact of data set composition (e.g., antigen types, nanobody families) on the generalizability of the findings.</li>
+<li>
+<p><strong>Required correction</strong> Add a brief discussion of the diversity of the benchmark data set and how the results might generalize to other nanobody-antigen systems.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods section "HADDOCK3 Docking Protocols"</li>
+<li><strong>Evidence pointer</strong> Text describing the docking protocol</li>
+<li><strong>Issue</strong> The authors mention that the default HADDOCK scoring function is used but do not provide the exact parameters or version of HADDOCK3 used. The equation for the scoring function is provided, but the specific weights and terms may vary between versions.</li>
+<li>
+<p><strong>Required correction</strong> Specify the exact version of HADDOCK3 and any non-default parameters used in the docking runs.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of terminology</li>
+<li><strong>Affected element</strong> Results section "Framework-Aware Paratope Description Improves the Modeling Success"</li>
+<li><strong>Evidence pointer</strong> Text describing the new paratope definition</li>
+<li><strong>Issue</strong> The term "framework-aware paratope" is used, but the distinction between this and the standard CDR-based paratope definition is not clearly explained in the main text.</li>
+<li><strong>Required correction</strong> Provide a clear definition of the framework-aware paratope and how it differs from the standard definition, possibly with a schematic figure.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the proposed pipeline achieves "higher success rates than the AlphaFold baseline on all generated models" is not fully supported without statistical testing, given the modest data set size.</li>
+<li>The claim that the framework-aware paratope definition improves docking performance is based on a single benchmark data set and needs validation on independent data.</li>
+<li>The statement that AlphaFold3 results are "consistent with other benchmarking studies" is not supported by specific citations in the provided text.</li>
+<li>The claim that the pipeline's computational requirements are "comparable to those of AlphaFold" is not quantified in the provided text.</li>
+<li>The generalizability of the findings beyond the specific benchmark data set is not established, particularly given the limited diversity of the data set.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

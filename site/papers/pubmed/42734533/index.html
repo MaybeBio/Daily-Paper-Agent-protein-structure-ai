@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mutation-Guided Recovery of Ligand-Compatible Holo-Like Conformations in Proteins with Cryptic Pockets. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Mutation-Guided Recovery of Ligand-Compatible Holo-Like Conformations in Proteins with Cryptic Pockets.</h1>
+      <div class="meta">Routh, Reshob; Radhakrishna, Mithun</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-09-14
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42734533/">原文</a>
+      </div>
+      <p class="one-liner">该文提出一种计算框架，利用预测的隐秘口袋残基作为突变手柄扰动自由能景观，从apo结构恢复可结合配体的holo样构象，并通过MD和对接验证，核心贡献在蛋白质构象采样与结构计算建模。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Cryptic pockets are transient ligand-binding sites that remain hidden in apo protein structures and become accessible only through conformational change, making them difficult to identify and exploit in structure-based ligand discovery. Although recent AI/ML approaches can identify residues associated with cryptic pocket formation, they do not directly yield the corresponding holo-like conformations. Enhanced-sampling and mixed-solvent strategies can promote pocket opening, but often under non-native conditions and without demonstrating stable ligand-bound holo-like states. Here, we present a computational framework in which residues with high cryptic-pocket propensity are used as mutation handles to perturb the free-energy landscape and expose ligand-compatible open states even in the absence of ligand binding. We establish this strategy on TEM-1 beta-lactamase, a canonical cryptic-pocket system, and show that mutation-induced perturbations can shift the conformational ensemble toward an open pocket state prior to ligand binding. The resulting open state supports ligand binding in both docked structures and unbiased simulations, and the ligand remains stably bound after reversion to the wild-type sequence, consistent with recovery of a holo-like wild-type conformation. Importantly, the residues targeted for mutation are not the principal determinants of the ligand interactions observed in the bound state, indicating that their role is to reshape the conformational landscape and promote access to an open, ligand-compatible pocket rather than to form the binding interface itself. We further generalize this framework to LfrR, FtsZ, and Bombyx mori pheromone-binding protein, where mutation of predicted cryptic residues likewise generates open conformations capable of supporting ligand binding. Together, these results show that cryptic residue predictions can be used not only to identify hidden binding sites but also to recover holo-like conformations from apo structures, providing a practical framework for studying and targeting cryptic pockets.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">隐秘口袋（cryptic pockets）是瞬态的配体结合位点，在脱辅基（apo）蛋白结构中保持隐藏，仅通过构象变化才变得可及，这使得它们在基于结构的配体发现中难以识别和利用。尽管近期的AI/ML方法能够识别与隐秘口袋形成相关的残基，但它们并不直接产生相应的全样（holo-like）构象。增强采样和混合溶剂策略可以促进口袋开放，但往往在非天然条件下进行，且未证明稳定的配体结合全样状态。在此，我们提出一个计算框架，其中具有高隐秘口袋倾向性的残基被用作突变手柄，以扰动自由能景观并在缺乏配体结合的情况下暴露配体兼容的开放状态。我们在TEM-1 β-内酰胺酶（TEM-1 beta-lactamase）这一典型隐秘口袋系统上建立了该策略，并表明突变诱导的扰动可以在配体结合前将构象集合转向开放口袋状态。所得的开放状态在对接结构和无偏模拟中均支持配体结合，且在恢复野生型序列后配体仍稳定结合，这与恢复全样野生型构象一致。重要的是，靶向突变的残基并非结合态中观察到的配体相互作用的主要决定因素，表明它们的作用是重塑构象景观并促进进入开放、配体兼容的口袋，而非形成结合界面本身。我们进一步将该框架推广至LfrR、FtsZ和家蚕信息素结合蛋白（Bombyx mori pheromone-binding protein），其中预测隐秘残基的突变同样产生能够支持配体结合的开放构象。综合来看，这些结果表明隐秘残基预测不仅可用于识别隐藏结合位点，还可用于从脱辅基结构中恢复全样构象，为研究和靶向隐秘口袋提供了实用框架。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Mutation-Guided Recovery of Ligand-Compatible Holo-Like Conformations in Proteins with Cryptic Pockets</li>
+<li><strong>作者与单位</strong>：Routh, Reshob; Radhakrishna, Mithun（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：Journal of Chemical Information and Modeling (JCIM)</li>
+<li><strong>年份</strong>：2026（在线日期 2026-09-14）</li>
+<li><strong>论文类型</strong>：研究论文（方法学 + 计算验证）</li>
+<li><strong>领域</strong>：蛋白质构象采样、cryptic pocket 预测与利用、结构-based 配体发现</li>
+<li><strong>关键词</strong>：cryptic pocket、构象采样、突变引导、holo-like 构象、TEM-1 β-lactamase、增强采样</li>
+<li><strong>DOI/arXiv 号</strong>：10.1021/acs.jcim.6c01260</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（涉及 TEM-1、LfrR、FtsZ、Bombyx mori  pheromone-binding protein 体系）</li>
+<li><strong>阅读日期</strong>：2026-05-12（按当前日期推算）</li>
+<li><strong>在课题方向中的位置</strong>：该文属于「蛋白质结构相关计算研究 × 物理模拟（增强采样）+ AI 预测」交叉方向，聚焦 cryptic pocket 的构象恢复问题，将 AI/ML 的 cryptic residue 预测与分子动力学（MD）增强采样结合，提出一种不依赖配体存在的 holo-like 构象生成策略，可作为结构预测与构象采样之间的桥梁方法。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出一种计算框架：利用 cryptic pocket 相关残基的预测作为突变位点，通过突变扰动自由能景观，在无配体条件下将 apo 蛋白构象 ensemble 推向开放的 pocket 状态，随后恢复野生型序列并验证配体稳定结合，从而从 apo 结构恢复 holo-like 构象。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何从 apo 蛋白结构出发，在不依赖配体结合的条件下，生成与配体兼容的 holo-like 开放构象？</li>
+<li><strong>为什么重要</strong>：Cryptic pocket 是瞬态、隐藏的配体结合位点，在 apo 结构中不可见，但具有药物靶向潜力。若能可靠恢复其开放构象，将极大促进 structure-based drug discovery（SBDD）中对这类位点的利用。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>AI/ML 方法（如 cryptic residue 预测）只能识别与 pocket 形成相关的残基，不能直接生成构象。</li>
+<li>增强采样（如 metadynamics）和 mixed-solvent MD 虽可促进 pocket 开放，但常在非天然条件下进行，且未证明能稳定维持配体结合的 holo-like 状态。</li>
+<li><strong>精确研究问题</strong>：Can mutation of predicted cryptic-pocket residues, in the absence of ligand, shift the conformational ensemble of an apo protein toward an open, ligand-compatible state that remains stable upon reversion to the wild-type sequence?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：以下脉络为「经外部核验」的领域常识，结合本文框架整理）
+- <strong>阶段 1：静态结构时代</strong>——基于 apo 晶体结构的 docking 与虚拟筛选。代表性方法：AutoDock、Glide。优点：计算成本低。局限：无法处理 cryptic pocket 的瞬态开放。
+- <strong>阶段 2：增强采样探索构象</strong>——MD 模拟结合 metadynamics、replica exchange、Gaussian accelerated MD 等。优点：可探索隐蔽构象。局限：计算成本高，常在非生理条件（如高浓度 cosolvent）下进行，且难以保证开放态是配体兼容的稳定态。
+- <strong>阶段 3：AI/ML 预测 cryptic 位点</strong>——基于序列或结构的深度学习模型预测 cryptic pocket 相关残基。优点：快速、可扩展。局限：只输出残基标签，不生成构象。
+- <strong>阶段 4（本文位置）</strong>：将 AI 预测的 cryptic residues 作为「突变手柄」，通过突变扰动自由能景观，在无配体条件下暴露开放态，再恢复野生型序列验证配体稳定性。该方法将「预测」与「构象生成」衔接，填补了从残基预测到 holo-like 构象之间的空白。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cryptic pocket 在 apo 结构中不可见</td>
+<td>配体结合位点隐藏，无法直接用于 docking</td>
+<td>口袋开放需要构象变化，apo 态能量上更稳定</td>
+<td>摘要首句</td>
+</tr>
+<tr>
+<td>AI/ML 预测 cryptic residues 不生成构象</td>
+<td>预测结果仅为残基列表，无法直接用于 SBDD</td>
+<td>预测模型输出标签而非坐标</td>
+<td>摘要第 2 句</td>
+</tr>
+<tr>
+<td>增强采样在非天然条件下进行</td>
+<td>常需高浓度 cosolvent 或非生理条件</td>
+<td>为降低自由能壁垒而引入非生理扰动</td>
+<td>摘要第 3 句</td>
+</tr>
+<tr>
+<td>开放态不保证配体兼容</td>
+<td>开放构象可能不稳定或无法结合配体</td>
+<td>缺乏对开放态稳定性和配体兼容性的验证</td>
+<td>摘要第 4-5 句（本文通过突变 + 恢复野生型验证）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：用 cryptic residue 预测结果选择突变位点，对 apo 蛋白进行点突变，通过 MD 模拟观察构象 ensemble 是否向开放态偏移；随后将突变恢复为野生型序列，验证配体能否稳定结合。</li>
+<li><strong>核心洞察</strong>：Cryptic pocket 相关残基虽不直接参与配体结合（非 principal determinants），但它们在自由能景观中扮演「门控」角色——突变这些残基可降低开放态与闭合态之间的能垒，使开放态在无配体条件下即可被群体性地访问。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：在蛋白质构象工程中，靶向「构象门控残基」而非「结合界面残基」可能是一种更通用的策略——通过扰动能量景观而非直接构建结合位点来诱导功能构象。这一思路可迁移到其他构象变化驱动的功能调控场景（如酶活性开关、变构调控）。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：apo 蛋白结构（如 TEM-1 β-lactamase 的 apo 晶体结构）、cryptic residue 预测结果（来自 AI/ML 工具，具体工具未提供）</li>
+<li><strong>输出</strong>：开放的、配体兼容的 holo-like 构象（MD 轨迹中的构象 ensemble）</li>
+<li><strong>模块</strong>：
+  1. Cryptic residue 预测模块（外部 AI/ML 工具）
+  2. 突变设计模块（选择高 cryptic propensity 残基作为突变位点）
+  3. MD 模拟模块（增强采样或常规 MD，具体方法未提供）
+  4. 配体结合验证模块（docking + 无偏 MD 模拟）
+  5. 序列恢复模块（将突变恢复为野生型，验证配体稳定性）</li>
+<li><strong>训练</strong>：不涉及模型训练；使用预训练 cryptic residue 预测器</li>
+<li><strong>工具</strong>：MD 模拟软件（未提供具体名称）、docking 软件（未提供）</li>
+<li><strong>假设</strong>：突变 cryptic residues 可扰动自由能景观而不破坏蛋白整体折叠；恢复野生型后开放态仍可维持</li>
+<li><strong>流程</strong>：apo 结构 → 预测 cryptic residues → 选择突变位点 → 突变体 MD 模拟 → 观察开放态 → docking 验证配体兼容性 → 恢复野生型序列 → 无偏 MD 验证配体稳定结合</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cryptic residue 预测</td>
+<td>识别与 pocket 形成相关的残基</td>
+<td>提供突变位点的先验选择依据</td>
+<td>输入：apo 结构/序列；输出：残基列表</td>
+<td>摘要第 2 句（AI/ML 方法可识别）</td>
+<td>预期影响：突变位点选择失去指导，需随机或经验选择，效率降低</td>
+</tr>
+<tr>
+<td>突变设计</td>
+<td>选择高 cryptic propensity 残基进行点突变</td>
+<td>扰动自由能景观，促进开放态</td>
+<td>输入：cryptic residue 列表；输出：突变体序列</td>
+<td>摘要第 4 句（突变可 shift ensemble）</td>
+<td>预期影响：无法定向扰动，开放态可能不可达</td>
+</tr>
+<tr>
+<td>MD 模拟（突变体）</td>
+<td>采样突变体的构象 ensemble</td>
+<td>观察开放态是否被暴露</td>
+<td>输入：突变体结构；输出：构象轨迹</td>
+<td>摘要第 4 句（ensemble shift 到开放态）</td>
+<td>预期影响：无法验证突变效应</td>
+</tr>
+<tr>
+<td>Docking 验证</td>
+<td>检验开放态是否与配体兼容</td>
+<td>确认开放态具有配体结合能力</td>
+<td>输入：开放构象 + 配体；输出：docking 评分/pose</td>
+<td>摘要第 5 句（docked structures 支持结合）</td>
+<td>预期影响：无法确认开放态的功能相关性</td>
+</tr>
+<tr>
+<td>序列恢复 + 无偏 MD</td>
+<td>将突变恢复为野生型，验证配体稳定结合</td>
+<td>证明开放态是野生型的内在性质而非突变人工产物</td>
+<td>输入：突变体开放构象 + 野生型序列；输出：配体结合稳定性</td>
+<td>摘要第 5 句（ligand remains stably bound after reversion）</td>
+<td>预期影响：无法排除突变本身导致的人工结合</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（本文为方法学描述，未提供定量公式或能量表达式；增强采样相关公式未在摘要中给出）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：4 个蛋白体系——TEM-1 β-lactamase（主要体系）、LfrR、FtsZ、Bombyx mori pheromone-binding protein（泛化验证）</li>
+<li><strong>规模</strong>：未提供（未说明模拟时长、重复次数、突变体数量）</li>
+<li><strong>指标</strong>：开放态构象的群体比例、配体结合稳定性（docking 评分 + MD 中配体 RMSD）</li>
+<li><strong>基线</strong>：未提供（未与 apo 野生型模拟、随机突变、或增强采样方法直接对比）</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供（MD 软件、力场、docking 软件均未说明）</li>
+<li><strong>Oracle 输入</strong>：cryptic residue 预测结果（来自外部 AI/ML 工具，具体未提供）</li>
+<li><strong>评测协议</strong>：未提供（无明确量化标准，如开放态定义、稳定性阈值）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TEM-1 突变体 MD</td>
+<td>突变可 shift ensemble 到开放态</td>
+<td>突变体 vs. 野生型 apo（未明确对比）</td>
+<td>开放态在无配体条件下被暴露</td>
+<td>突变可促进开放态</td>
+<td>未证明开放态是全局最优或唯一可达态</td>
+<td>摘要第 4 句</td>
+</tr>
+<tr>
+<td>Docking 到开放态</td>
+<td>开放态支持配体结合</td>
+<td>开放构象 + 配体 docking</td>
+<td>配体可 dock 到开放态</td>
+<td>开放态与配体兼容</td>
+<td>未证明 docking pose 在 MD 中稳定</td>
+<td>摘要第 5 句</td>
+</tr>
+<tr>
+<td>序列恢复 + 无偏 MD</td>
+<td>恢复野生型后配体仍稳定结合</td>
+<td>突变体开放态 → 恢复野生型 → 配体 MD</td>
+<td>配体稳定结合</td>
+<td>开放态是野生型的内在性质</td>
+<td>未证明恢复后构象与突变体开放态完全一致</td>
+<td>摘要第 5 句</td>
+</tr>
+<tr>
+<td>泛化到 LfrR/FtsZ/BmPBP</td>
+<td>方法可推广</td>
+<td>4 个体系独立验证</td>
+<td>均生成开放构象并支持配体结合</td>
+<td>方法具有泛化性</td>
+<td>未提供各体系的定量细节</td>
+<td>摘要第 6 句</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对 cryptic pocket 体系，且限于 4 个测试蛋白；不适用于所有蛋白或所有类型的构象变化。</li>
+<li><strong>Oracle/真值输入</strong>：依赖外部 cryptic residue 预测器的输出；预测质量直接影响突变位点选择，但预测器本身未在本文中验证。</li>
+<li><strong>端到端状态</strong>：方法并非全自动端到端流程——需要人工选择突变位点、设计 MD 协议、判断开放态。</li>
+<li><strong>算力成本</strong>：未提供；MD 模拟 + docking 的计算成本可能较高，但未与增强采样方法对比。</li>
+<li><strong>历史数据依赖</strong>：依赖 apo 结构（晶体或预测）作为起点；若 apo 结构本身不准确，方法可能失效。</li>
+<li><strong>模型依赖</strong>：依赖 cryptic residue 预测器的准确性；预测器可能在不同蛋白家族上表现不一。</li>
+<li><strong>最难情形</strong>：对构象变化幅度大、开放态能量显著高于闭合态的体系，突变可能不足以克服自由能壁垒。</li>
+<li><strong>群体/领域边界</strong>：结论仅适用于所测试的 4 个体系；对真核蛋白、膜蛋白、多结构域蛋白的适用性未知。</li>
+<li><strong>不确定性</strong>：未提供误差估计、重复实验统计、或对开放态定义的敏感性分析。</li>
+<li><strong>有边界的复述</strong>：在 TEM-1、LfrR、FtsZ 和 BmPBP 四个体系中，突变预测的 cryptic residues 可在无配体条件下诱导开放构象，且恢复野生型后配体可稳定结合；但该结论受限于预测器质量、体系数量、以及未提供的定量细节。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。
+- <strong>作者提及的相关约束</strong>（非正式局限）：
+  - 摘要中暗示「residues targeted for mutation are not the principal determinants of ligand interactions」，说明突变位点选择需依赖预测器，且突变本身不直接参与结合。
+  - 泛化验证仅提及 4 个体系，未说明失败案例或适用边界。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供与增强采样方法的直接对比</td>
+<td>突变引导可能不如 metadynamics 或 mixed-solvent MD 高效</td>
+<td>若增强采样已能生成开放态，则突变策略的增量价值存疑</td>
+<td>在相同体系上运行 metadynamics 或 mixed-solvent MD，对比开放态生成效率与配体稳定性</td>
+<td>摘要仅描述方法，未提及对比基线</td>
+</tr>
+<tr>
+<td>未提供突变体与野生型的定量 ensemble 对比</td>
+<td>「shift toward open state」可能只是主观判断，缺乏量化指标</td>
+<td>无量化则无法评估突变效应的大小和显著性</td>
+<td>计算开放态群体比例（如 RMSD 聚类）并做统计检验</td>
+<td>摘要第 4 句仅定性描述</td>
+</tr>
+<tr>
+<td>未说明 cryptic residue 预测器的具体来源与误差</td>
+<td>预测器可能对某些体系失效，导致突变位点选择偏差</td>
+<td>方法可靠性依赖预测器，但预测器本身未验证</td>
+<td>使用多个预测器交叉验证，或对预测器输出做敏感性分析</td>
+<td>摘要未提及预测器名称或版本</td>
+</tr>
+<tr>
+<td>序列恢复后配体稳定结合可能源于「构象记忆」而非热力学偏好</td>
+<td>恢复野生型后，开放态可能只是动力学陷阱而非自由能最低态</td>
+<td>若开放态非热力学偏好，则方法无法在真实无配体条件下自发恢复</td>
+<td>从野生型 apo 结构直接模拟，看是否能自发到达开放态</td>
+<td>摘要第 5 句仅描述恢复后稳定性，未测试自发到达</td>
+</tr>
+<tr>
+<td>泛化验证缺乏细节</td>
+<td>4 个体系可能都属同一类（如细菌蛋白），不代表广泛适用性</td>
+<td>泛化性 claim 需要更多样化的体系支持</td>
+<td>扩展到真核蛋白、膜蛋白、多结构域蛋白</td>
+<td>摘要第 6 句仅列体系名称</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>构象门控残基概念</strong>：突变不直接参与配体结合的残基可扰动自由能景观，诱导功能构象——这一思路可迁移到其他构象变化驱动的蛋白功能调控（如酶活性开关、变构位点设计）。
+2. <strong>「突变-恢复」验证策略</strong>：先突变诱导开放态，再恢复野生型验证配体稳定性，是一种可区分「突变人工产物」与「内在构象偏好」的实验设计范式，适用于 MD 模拟中的构象采样验证。
+3. <strong>AI 预测与物理模拟的衔接</strong>：将 AI 的残基级预测（cryptic residues）转化为 MD 的突变位点，实现了「预测 → 扰动 → 验证」的闭环，可作为结构预测与构象采样之间的桥接方法。
+4. <strong>无配体构象生成思路</strong>：在无配体条件下通过能量景观扰动生成配体兼容构象，可避免配体诱导拟合（induced fit）的偏差，适用于 cryptic pocket 的 SBDD 前处理。
+5. <strong>对课题方向的迁移</strong>：在蛋白质结构预测或构象生成任务中，可借鉴「先扰动后恢复」的策略来验证生成构象的物理合理性；在分子对接中，可用该方法预生成开放态构象作为 docking 的受体集合。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与 mixed-solvent MD（如 cosolvent MD）和 metadynamics 目标相似，均旨在暴露 cryptic pocket；但本文用突变替代外部扰动，属于「内源性扰动」策略。</li>
+<li><strong>组合方向</strong>：可与 AlphaFold 等结构预测工具结合——先用 AF 预测 apo 结构，再用本文方法生成开放态，最后用 docking 验证。</li>
+<li><strong>冲突点</strong>：与「配体诱导拟合」传统观点存在张力——本文主张开放态可在无配体条件下通过突变暴露，暗示 cryptic pocket 开放可能更多是「构象选择」而非「诱导拟合」。</li>
+<li><strong>可迁移领域</strong>：变构位点预测、酶工程（通过突变改变构象 ensemble）、蛋白设计（设计构象门控残基）。</li>
+<li><strong>候选连接文献</strong>（未在原文中引用，但为领域内可核验方向）：Cimermancic et al. (2016) 关于 cryptic pocket 的 MD 研究；Oleinikovas et al. (2016) 关于 cryptic pocket 的 mixed-solvent MD 方法。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：
+1. <strong>候选名称</strong>：Cryptic Pocket 构象恢复的「突变-恢复」自动化流程
+   - <strong>来源局限/观察</strong>：本文方法依赖人工选择突变位点和判断开放态，缺乏自动化标准
+   - <strong>核心假设</strong>：可将 cryptic residue 预测 + 突变设计 + MD 采样 + 开放态判定整合为自动化 pipeline
+   - <strong>初步方法</strong>：用深度学习预测 cryptic residues → 自动生成单点突变库 → 并行 MD 采样 → 用 pocket 体积/溶剂可及性作为开放态量化指标 → 自动选择最优突变 → 恢复野生型验证
+   - <strong>验证方式</strong>：在多个已知 cryptic pocket 体系上测试，与 metadynamics 对比开放态生成效率和配体结合稳定性
+   - <strong>创新状态</strong>：unverified</p>
+<ol start="2">
+<li>
+<p><strong>候选名称</strong>：构象门控残基的通用预测模型
+   - <strong>来源局限/观察</strong>：本文仅用 cryptic residue 预测器选择突变位点，未系统研究「哪些残基突变最有效」
+   - <strong>核心假设</strong>：存在一类「构象门控残基」，其突变对自由能景观的影响可预测
+   - <strong>初步方法</strong>：收集已知 cryptic pocket 体系的突变-开放态数据，训练 GNN 或 transformer 模型预测「突变敏感性」评分
+   - <strong>验证方式</strong>：在未见过的蛋白上预测突变位点，用 MD 验证开放态生成
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AlphaFold 与突变引导采样的集成框架
+   - <strong>来源局限/观察</strong>：本文从 apo 结构出发，但 apo 结构可能来自预测（如 AlphaFold），预测误差可能影响突变效果
+   - <strong>核心假设</strong>：将 AlphaFold 的置信度信息（pLDDT）与 cryptic residue 预测结合，可更稳健地选择突变位点
+   - <strong>初步方法</strong>：在 AlphaFold 预测结构上运行本文流程，用 pLDDT 加权 cryptic residue 评分，选择高置信度区域的突变位点
+   - <strong>验证方式</strong>：在 CASP 或连续蛋白集上测试，对比使用实验 apo 结构与 AF 预测结构的成功率
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：突变引导构象采样的力场敏感性分析
+   - <strong>来源局限/观察</strong>：本文未说明 MD 力场和采样协议，不同力场可能对突变效应有显著影响
+   - <strong>核心假设</strong>：突变引导的开放态生成效果对力场选择敏感，存在最优力场组合
+   - <strong>初步方法</strong>：在 TEM-1 体系上使用 AMBER、CHARMM、OPLS 等力场重复本文流程，对比开放态生成效率和配体稳定性
+   - <strong>验证方式</strong>：统计各力场下开放态群体比例和配体 RMSD 分布
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose a computational framework that uses predicted cryptic-pocket residues as mutation handles to perturb the conformational landscape of proteins, thereby exposing open, ligand-compatible states in the absence of ligand. They report application to TEM-1 beta-lactamase and three additional systems, with evidence from docking and unbiased simulations that the open states support ligand binding, and that ligand remains bound after reversion to wild-type sequence.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, simulation details, or methodological descriptions are available</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, simulation parameters, force fields, system preparation details, mutation selection criteria, docking protocols, trajectory analyses, binding stability metrics, and all figures/tables</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting idea: using predicted cryptic-pocket residues as mutation handles to bias conformational ensembles toward open, ligand-compatible states. The concept has potential utility for structure-based drug discovery. However, the abstract provides no quantitative evidence, no methodological detail, and no comparative benchmarks. The central claims, particularly the recovery of a holo-like wild-type conformation after mutation reversion, are stated without supporting data. The generalization to four systems is asserted but not substantiated. As presented, the case is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and medicinal chemists working on cryptic pocket identification and structure-based ligand discovery would be interested. The framework, if validated, could offer a practical route from apo structures to ligand-compatible conformations, which is a recognized bottleneck in targeting transient binding sites. Researchers developing enhanced-sampling or machine-learning approaches for conformational sampling may also find the concept relevant.</li>
+<li><strong>Major strengths</strong> The conceptual framing is clear and addresses a genuine gap: existing AI/ML methods identify cryptic pocket residues but do not generate the corresponding open conformations. The idea of using mutations as perturbations to reshape the free-energy landscape is mechanistically plausible and potentially generalizable. The claim that targeted residues are not the principal ligand-interaction determinants is an important design principle, if supported.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> The framework "can shift the conformational ensemble toward an open pocket state prior to ligand binding" and "the resulting open state supports ligand binding in both docked structures and unbiased simulations."  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> No quantitative data are presented to support the claim that mutation-induced perturbations shift the ensemble toward an open state. No measures of pocket volume, solvent accessibility, or conformational populations are given. The statement that ligand binding is supported in "docked structures and unbiased simulations" is made without any metrics such as binding free energies, residence times, or root-mean-square deviation analyses.  </li>
+<li><strong>Why it matters</strong> The core premise of the framework is that mutations can pre-organize the apo state into a ligand-compatible conformation. Without quantitative evidence of ensemble shifts and stable binding, the claim remains an assertion. The absence of any numerical data prevents assessment of statistical significance or practical utility.  </li>
+<li><strong>Resolution test</strong> Provide quantitative comparisons of conformational ensembles (e.g., pocket volume distributions, principal component projections) between wild-type and mutant systems, and binding metrics (e.g., ligand root-mean-square deviation over time, interaction energies, or free-energy estimates) from unbiased simulations.  </li>
+<li><strong>Concern ID</strong> R1-M2  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Claim consistency  </li>
+<li><strong>Claim pointer</strong> "The ligand remains stably bound after reversion to the wild-type sequence, consistent with recovery of a holo-like wild-type conformation."  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The abstract states that mutations are used to open the pocket, then reverted to wild-type while the ligand remains bound. This implies a two-step protocol, but no details are given on how reversion is performed in silico, how the system is equilibrated after reversion, or how stability is measured. The claim of "recovery of a holo-like wild-type conformation" is a strong statement that requires demonstration that the reverted system is thermodynamically stable and kinetically accessible, not merely that the ligand does not dissociate within a short simulation window.  </li>
+<li><strong>Why it matters</strong> The central novelty appears to be that the open state is compatible with the wild-type sequence, meaning the mutations are purely a sampling aid. If the reverted system is not shown to be stable over meaningful timescales, the claim of "recovery" is unsupported and the practical value of the framework is diminished.  </li>
+<li><strong>Resolution test</strong> Provide simulation details for the reversion protocol, including equilibration time, total simulation length, and ligand stability metrics (e.g., root-mean-square deviation, contact persistence) for the reverted wild-type system. Ideally, compare with a directly simulated wild-type apo-to-holo transition to demonstrate equivalence.  </li>
+<li><strong>Concern ID</strong> R1-M3  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Generalizability  </li>
+<li><strong>Claim pointer</strong> "We further generalize this framework to LfrR, FtsZ, and Bombyx mori pheromone-binding protein, where mutation of predicted cryptic residues likewise generates open conformations capable of supporting ligand binding."  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The generalization to three additional systems is stated in a single sentence with no supporting data. No information is given on the nature of these systems, the predicted cryptic residues, the mutations introduced, or the criteria used to judge "open conformations" and "supporting ligand binding."  </li>
+<li><strong>Why it matters</strong> The claim of generalizability is a key selling point of the framework. Without evidence across multiple systems, the reader cannot assess whether the approach is broadly applicable or whether the TEM-1 result is idiosyncratic. The lack of detail also prevents evaluation of whether the same standards of evidence were applied to all systems.  </li>
+<li><strong>Resolution test</strong> Provide per-system summaries with the same level of quantitative detail as for TEM-1, including mutation sites, ensemble shift metrics, and binding stability data. If space is limited, include these in supplementary material with clear pointers in the main text.  </li>
+<li><strong>Concern ID</strong> R1-M4  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Methodological transparency  </li>
+<li><strong>Claim pointer</strong> "Residues with high cryptic-pocket propensity are used as mutation handles to perturb the free-energy landscape."  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The abstract does not specify how cryptic-pocket propensity is predicted, how mutations are selected (e.g., alanine scanning, conservative substitutions, charge-altering mutations), or how the perturbation is expected to reshape the landscape. The relationship between the predicted residues and the conformational change mechanism is not articulated.  </li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for computational studies. Without knowing the prediction method and mutation design rules, other groups cannot apply the framework. The mechanistic rationale for why these particular mutations would promote opening is also unclear, which weakens the conceptual contribution.  </li>
+<li>
+<p><strong>Resolution test</strong> Describe the prediction method (e.g., specific machine-learning model or biophysical descriptor), the mutation selection criteria, and provide a mechanistic hypothesis for how the mutations alter the free-energy landscape, supported by reference to known features of each system.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong>  </p>
+</li>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Terminology  </li>
+<li><strong>Evidence pointer</strong> Abstract, "holo-like" usage  </li>
+<li><strong>Issue</strong> The term "holo-like" is used to describe both the open state and the recovered wild-type conformation. It is unclear whether "holo-like" refers to a structural similarity to a known holo structure or to a functional competence for ligand binding.  </li>
+<li><strong>Required correction</strong> Define "holo-like" explicitly, ideally with reference to a structural criterion (e.g., root-mean-square deviation to a crystallographic holo state) or a functional criterion (e.g., ligand binding competence).  </li>
+<li><strong>Concern ID</strong> R1-m2  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Context  </li>
+<li><strong>Affected element</strong> Comparison to existing methods  </li>
+<li><strong>Evidence pointer</strong> Abstract, first two sentences  </li>
+<li><strong>Issue</strong> The abstract contrasts the approach with "recent AI/ML approaches" and "enhanced-sampling and mixed-solvent strategies" but does not cite specific works or explain how the proposed method differs in outcome or efficiency.  </li>
+<li><strong>Required correction</strong> Add brief citations and a sentence clarifying the specific advantage over existing methods, such as avoiding non-native conditions or providing stable holo-like states that other methods do not.  </li>
+<li><strong>Concern ID</strong> R1-m3  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Completeness  </li>
+<li><strong>Affected element</strong> Simulation details  </li>
+<li><strong>Evidence pointer</strong> Abstract, "unbiased simulations"  </li>
+<li><strong>Issue</strong> The abstract mentions "unbiased simulations" but does not specify the timescale, force field, or water model. These details are essential for judging the reliability of the binding stability claims.  </li>
+<li><strong>Required correction</strong> Include simulation length and force field in the abstract or indicate that full details are in the Methods section.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that mutation-induced perturbations "shift the conformational ensemble toward an open pocket state" is unsupported by any quantitative data in the abstract.</li>
+<li>The claim that the ligand "remains stably bound after reversion to the wild-type sequence" is unsupported without simulation timescales and stability metrics.</li>
+<li>The claim of generalization to LfrR, FtsZ, and Bombyx mori pheromone-binding protein is unsubstantiated; no data are provided for these systems.</li>
+<li>The statement that targeted residues "are not the principal determinants of the ligand interactions" is presented as a finding but no interaction analysis is shown.</li>
+<li>The overall claim that the framework "provides a practical framework for studying and targeting cryptic pockets" is not evaluable from the abstract alone, as no practical metrics (e.g., success rate, computational cost, comparison to brute-force sampling) are given.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

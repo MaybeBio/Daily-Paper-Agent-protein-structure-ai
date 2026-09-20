@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protein language model-generated enzyme sequences exhibit high stability in molecular dynamics simulations. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Protein language model-generated enzyme sequences exhibit high stability in molecular dynamics simulations.</h1>
+      <div class="meta">Fassi, Enrico Mario Alessandro; Nicolini, Marco; Saitto, Emanuele; Valentini, Giorgio; Casiraghi, Elena; Grazioso, Giovanni</div>
+      <div class="meta muted">
+        
+        <span class="journal">Frontiers in artificial intelligence</span>
+        · 2026-09-15
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42741065/">原文</a>
+      </div>
+      <p class="one-liner">该文结合蛋白语言模型Finenzyme生成酶序列，并通过分子动力学模拟评估其结构稳定性，属于蛋白质序列设计与结构计算验证的交叉研究，方法上融合AI生成与物理模拟，与本课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">INTRODUCTION: Large Language Models (LLMs) have transformed protein engineering by capturing complex sequence patterns from large datasets, enabling applications such as structure prediction and functional annotation. Finenzyme applies conditional transfer learning to generate biologically plausible enzyme sequences conditioned on Enzyme Commission (EC) numbers. METHODS: In this work, we extended Finenzyme with an in silico selection pipeline that first identifies generated sequences most likely to preserve or enhance the functional characteristics of specific EC categories and then evaluates them through molecular dynamics (MD) simulations to assess their structural stability and conformational dynamics. RESULTS: MD simulations of 236 Finenzyme-generated enzymes across four EC classes (59 micros total simulation time) confirmed high structural stability. Across all enzyme classes, 74-95% of the models maintained stable tertiary structures and correct folding throughout the trajectories, with 195 out of 236 structures (82.6%) exhibiting sustained stability. DISCUSSION: By combining conditional pre-trained language model fine-tuning with dynamic structural evaluation, our framework advances beyond static sequence-based predictions to address the structural and functional dimensions of enzyme behavior, key aspects for both biomedical and industrial applications.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">引言：大型语言模型（LLMs）通过从大型数据集中捕捉复杂序列模式，彻底改变了蛋白质工程领域，使其能够应用于结构预测和功能注释等任务。Finenzyme 应用条件迁移学习，基于酶委员会（EC）编号生成生物学上合理的酶序列。方法：在本研究中，我们对 Finenzyme 进行了扩展，加入了一个计算机模拟筛选流程，该流程首先识别最有可能保留或增强特定 EC 类别功能特征的生成序列，然后通过分子动力学（MD）模拟评估其结构稳定性和构象动态。结果：对四个 EC 类别中 236 个 Finenzyme 生成酶的 MD 模拟（总模拟时间为 59 微秒）确认了高结构稳定性。在所有酶类别中，74-95% 的模型在整个轨迹中保持了稳定的三级结构和正确折叠，其中 236 个结构中有 195 个（82.6%）表现出持续稳定性。讨论：通过将条件预训练语言模型微调与动态结构评估相结合，我们的框架超越了基于静态序列的预测，解决了酶行为的结构和功能维度，这些方面对生物医学和工业应用均至关重要。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Protein language model-generated enzyme sequences exhibit high stability in molecular dynamics simulations</li>
+<li><strong>作者与单位</strong>: Fassi, Enrico Mario Alessandro; Nicolini, Marco; Saitto, Emanuele; Valentini, Giorgio; Casiraghi, Elena; Grazioso, Giovanni（单位未提供，作者致谢米兰大学支持）</li>
+<li><strong>期刊/预印本平台</strong>: Frontiers in Artificial Intelligence</li>
+<li><strong>年份</strong>: 2026-09-15</li>
+<li><strong>论文类型</strong>: 研究论文（Research Article）</li>
+<li><strong>领域</strong>: 蛋白质工程 × 蛋白质语言模型 × 分子动力学模拟</li>
+<li><strong>关键词</strong>: 蛋白质语言模型（Protein Language Model）、酶序列生成、分子动力学模拟、结构稳定性、EC 编号条件生成</li>
+<li><strong>DOI/arXiv 号</strong>: 10.3389/frai.2026.1844189</li>
+<li><strong>代码</strong>: https://github.com/AnacletoLAB/Finenzyme</li>
+<li><strong>数据</strong>: 作者承诺按合理请求提供 PDB 文件、MD 输入文件、轨迹等</li>
+<li><strong>阅读日期</strong>: 2026-05-13</li>
+<li><strong>在该方向中的位置</strong>: 本文位于「蛋白质语言模型生成序列 → 结构预测 → MD 模拟验证」这一流程的交叉点，属于 AI 生成序列与物理模拟验证的衔接性工作。其核心贡献不在于提出新的生成模型（Finenzyme 已在前期工作中发表），而在于建立了一个 in silico 筛选 + MD 验证的 pipeline，系统评估 PLM 生成酶序列的结构稳定性与潜在催化活性兼容性。该工作为「AI 生成序列是否真的能折叠成稳定结构」这一关键问题提供了大规模 MD 证据。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文对 Finenzyme 生成的 236 条酶序列（覆盖 4 个 EC 类别）进行 ESMFold 结构预测、BLAST/PDB 同源模板匹配和 Foldseek 折叠确认后，通过 250 ns/条的 MD 模拟（总计 59 μs），发现 82.6%（195/236）的生成序列保持稳定折叠，69.1%（163/236）表现出与催化活性兼容的结构特征，且降低生成自由度（p=0.5）比提高自由度（p=0.75）产生更高比例的稳定变体。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 蛋白质语言模型（PLM）生成的酶序列是否能够折叠成稳定的三维结构并保持与催化活性兼容的构象特征？</li>
+<li><strong>为什么重要</strong>: PLM 在序列空间中的探索能力已被广泛验证，但生成序列是否真正具备「可折叠性」和「功能兼容性」缺乏系统验证。如果生成序列无法稳定折叠，则其在酶工程中的应用价值将大打折扣。该问题直接关系到 AI 辅助酶设计的可靠性和实用性。</li>
+<li><strong>现有方法为何不足</strong>: 此前 Finenzyme 的工作（Nicolini et al., 2025）仅从序列层面评估生成质量（如序列相似性、保守性），缺乏对生成序列三维结构和动态行为的验证。静态结构预测（如 ESMFold）只能给出单一构象，无法评估蛋白质在溶液中的动态稳定性、折叠维持能力和构象采样行为。</li>
+<li><strong>精确研究问题</strong>: Can Finenzyme-generated enzyme sequences, after in silico filtering, maintain stable tertiary structures and catalytically compatible conformational dynamics in explicit-solvent MD simulations?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络主要基于本文引用与作者叙述，标注为「仅本文框架」；部分节点经外部核验。</p>
+</blockquote>
+<ol>
+<li><strong>蛋白质语言模型的兴起</strong>（Ferruz and Birte, 2022; Valentini et al., 2023）: 从大规模序列数据库中学习蛋白质序列模式，应用于结构预测、功能注释等任务。</li>
+<li><strong>ProGen 条件生成框架</strong>（Madani et al., 2023）: 基于 CTRL 架构，通过前置标签（如 EC 编号、物种）控制生成过程，实现条件序列生成。</li>
+<li><strong>Finenzyme 微调方法</strong>（Nicolini et al., 2025）: 在 ProGen 基础上对特定酶类进行微调，提升特定 EC 类别的序列生成质量。作者前期工作表明，对催化反应定义明确的酶类微调效果最佳。</li>
+<li><strong>结构预测工具的发展</strong>: ESMFold（Lin et al., 2023）提供快速、准确的单序列结构预测，pLDDT 作为置信度指标。</li>
+<li><strong>结构比对与折叠识别</strong>: Foldseek（van Kempen et al., 2024）实现快速的结构相似性搜索，TM-score 用于量化折叠相似性。</li>
+<li><strong>MD 模拟在酶工程中的应用</strong>（K and Venugopal, 2024; Walsh and Walsh, 2022）: MD 模拟提供蛋白质动态行为、稳定性、构象采样的原子级信息，是评估设计序列功能潜力的重要工具。</li>
+<li><strong>本文位置</strong>: 将上述技术串联为「生成 → 筛选 → 结构预测 → 折叠确认 → MD 验证」的完整 pipeline，首次对 PLM 生成酶序列进行大规模系统 MD 验证。</li>
+</ol>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PLM 生成序列缺乏结构验证</td>
+<td>生成序列仅在序列层面被评估，三维结构和动态行为未知</td>
+<td>序列层面的指标（如相似性、保守性）无法反映蛋白质的折叠能力和动态稳定性</td>
+<td>Introduction: "Finenzyme applies conditional transfer learning to generate biologically plausible enzyme sequences..."; 缺乏结构验证的表述贯穿引言</td>
+</tr>
+<tr>
+<td>随机采样产生低质量序列</td>
+<td>自回归采样可能产生退化或重复序列</td>
+<td>随机采样的随机性导致部分生成序列偏离有效序列空间</td>
+<td>Methods 2.3: "the stochastic sampling can yield degenerate or repetitive sequences"</td>
+</tr>
+<tr>
+<td>高序列相似性不等于功能等价</td>
+<td>与天然序列高度相似的生成序列可能只是近似拷贝，缺乏新颖性</td>
+<td>高序列同一性意味着生成序列未真正探索新序列空间</td>
+<td>Methods 2.3.1: 使用 80% MaxID 阈值排除近重复序列</td>
+</tr>
+<tr>
+<td>静态结构预测不足以评估稳定性</td>
+<td>单一结构快照无法反映蛋白质在溶液中的动态行为</td>
+<td>蛋白质功能依赖构象动态，静态结构无法捕捉折叠稳定性、构象转变等关键特征</td>
+<td>Introduction: "extending the application of sequence-based predictions to encompass the conformational landscapes"</td>
+</tr>
+<tr>
+<td>缺乏统一的筛选-验证流程</td>
+<td>生成、筛选、验证各环节脱节，缺乏系统评估框架</td>
+<td>各工具（BLAST、ESMFold、Foldseek、MD）分散在不同工作流中，缺乏整合</td>
+<td>本文提出的三级筛选 + MD 验证 pipeline 即为解决此痛点</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>:
+构建一个「生成 → 筛选 → 结构预测 → 折叠确认 → MD 验证」的完整 in silico pipeline。Finenzyme 生成序列后，依次经过：(a) BLASTp 新颖性筛选（MaxID &lt; 80%）；(b) ESMFold 结构预测（pLDDT &gt; 0.8）；(c) Foldseek 折叠确认（TM-score ≥ 0.8，覆盖率 ≥ 0.9）；(d) 对通过筛选的序列进行 250 ns 显式溶剂 MD 模拟，以参考晶体结构为对照，评估 RMSD、RMSF、RoG、SASA 等指标。</p>
+<p><strong>2) 核心洞察</strong>:
+- <strong>PLM 生成序列具有天然的结构可折叠性</strong>：经过筛选的生成序列中，82.6% 在 MD 模拟中保持稳定折叠，说明 PLM 从序列模式中学到的信息足以编码稳定的三维结构。
+- <strong>生成自由度（nucleus sampling p 值）是可控的稳定性调节旋钮</strong>：p=0.5（较低自由度）生成的序列在多个 EC 类别中表现出更高的稳定性和催化兼容性比例，而 p=0.75（较高自由度）虽然探索更多序列空间，但代价是更高的结构失稳风险。
+- <strong>MD 模拟提供了静态结构预测无法捕捉的判别力</strong>：部分序列虽然 ESMFold pLDDT 较高，但在 MD 中表现出展开或过度波动，说明动态模拟是必要的验证层级。
+- <strong>参考归一化阈值比绝对阈值更合理</strong>：由于不同酶在大小、折叠、动态特性上差异显著，使用参考蛋白的 μ+σ 或 μ+2σ 作为阈值，而非统一绝对 cutoff。</p>
+<p><strong>3) 可能的普适教训</strong> [Analysis]:
+- AI 生成序列的「可折叠性」不是全有或全无的属性，而是可以通过计算筛选逐步富集的。本文的三级筛选策略（新颖性 → 结构质量 → 折叠确认）可视为一种「计算达尔文选择」，有效提高了 MD 验证的通过率。
+- 生成模型的采样参数（如 nucleus sampling 的 p 值）直接影响下游结构质量，这提示生成式蛋白质模型的研究者应将采样策略视为超参数而非固定设置。
+- 参考归一化的评估指标（相对于野生型/参考蛋白的偏差）比绝对阈值更适合跨蛋白家族的泛化评估，这一思路可迁移到其他蛋白质设计评估场景。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: Finenzyme 生成的酶序列（4 个 EC 类别：1.1.1.1 醇脱氢酶、2.1.1.37 DNA(胞嘧啶-5)-甲基转移酶、5.4.99.5 分支酸变位酶、6.3.4.15 生物素蛋白连接酶），采样参数 p=0.5 和 p=0.75</li>
+<li><strong>输出</strong>: 每条序列的稳定性分类（稳定/折叠 vs. 不稳定）和潜在催化兼容性分类</li>
+<li><strong>模块</strong>:
+  1. <strong>序列生成</strong>: Finenzyme（基于 Progen 的微调模型），nucleus sampling
+  2. <strong>新颖性筛选</strong>: BLASTp 对 EC 特定 UniProt 集，MaxID &lt; 80%
+  3. <strong>结构预测</strong>: ESMFold，pLDDT &gt; 0.8
+  4. <strong>折叠确认</strong>: Foldseek 对 PDB 搜索，TM-score ≥ 0.8，目标覆盖率 ≥ 0.9，查询覆盖率 ≥ 0.9
+  5. <strong>参考模板匹配</strong>: BLAST 对 PDB 数据库，确定最相似的实验解析结构作为参考
+  6. <strong>MD 模拟</strong>: Amber24，ff14SB 力场，TIP3P 水模型，250 ns/体系，GPU 加速 PMMD
+  7. <strong>轨迹分析</strong>: AmberTools24，计算 Cα RMSD、RMSF、RoG、SASA
+  8. <strong>统计分类</strong>: 参考归一化阈值（μ+σ 或 μ+2σ）</li>
+<li><strong>流程</strong>: 生成 → BLASTp 筛选 → ESMFold → Foldseek → 随机抽样 → 参考模板匹配 → 辅因子转移 → 能量最小化 → MD 模拟 → 指标计算 → 阈值分类</li>
+<li><strong>关键假设</strong>: (1) ESMFold pLDDT 能有效预筛结构质量；(2) 参考晶体结构的 MD 行为可作为生成序列的对照基准；(3) 辅因子可通过结构比对直接转移到生成模型（未做序列-结构共进化验证）</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Finenzyme 序列生成</td>
+<td>生成 EC 条件酶序列</td>
+<td>核心生成模型，产生候选序列</td>
+<td>输入：EC 编号 + 采样参数；输出：氨基酸序列</td>
+<td>前期工作（Nicolini et al., 2025）</td>
+<td>无此模块则整个 pipeline 无输入</td>
+</tr>
+<tr>
+<td>BLASTp 新颖性筛选</td>
+<td>排除与训练集 &gt;80% 同一性的序列</td>
+<td>确保生成序列具有新颖性而非近似拷贝</td>
+<td>输入：生成序列 + EC 特定 UniProt 集；输出：通过/排除</td>
+<td>Methods 2.3.1; 图 2 分布显示 p=0.75 产生更低 MaxID</td>
+<td>移除后可能保留大量近重复序列，降低新颖性但可能提高稳定性通过率（未测试）</td>
+</tr>
+<tr>
+<td>ESMFold 结构预测</td>
+<td>预测生成序列的三级结构</td>
+<td>为折叠确认和 MD 提供起始结构</td>
+<td>输入：氨基酸序列；输出：PDB 结构 + pLDDT</td>
+<td>pLDDT &gt; 0.8 阈值（作者设定，0.7 已被 ESMFold 作者视为良好）</td>
+<td>移除后无法进行结构层面的筛选，MD 需从无结构状态开始（不可行）</td>
+</tr>
+<tr>
+<td>Foldseek 折叠确认</td>
+<td>验证预测结构是否具有已知折叠</td>
+<td>确保生成序列折叠为天然存在的折叠类型</td>
+<td>输入：ESMFold 预测结构；输出：TM-score、覆盖率</td>
+<td>Methods 2.3.3; TM-score ≥ 0.8, 覆盖率 ≥ 0.9</td>
+<td>移除后可能保留具有新折叠但无法验证的序列，增加 MD 不确定性</td>
+</tr>
+<tr>
+<td>参考模板匹配（BLAST vs PDB）</td>
+<td>确定最相似的实验结构作为 MD 参考</td>
+<td>提供结构比对基准和辅因子转移模板</td>
+<td>输入：生成序列；输出：参考 PDB ID</td>
+<td>各 EC 类别的参考结构（1LLU, 1DCT, 3RMI/1ODE, 1WNL/6NDL）</td>
+<td>无参考则无法进行归一化阈值比较</td>
+</tr>
+<tr>
+<td>MD 模拟（Amber24）</td>
+<td>评估生成序列的动态稳定性</td>
+<td>核心验证手段，提供原子级动态信息</td>
+<td>输入：ESMFold 结构 + 辅因子；输出：轨迹</td>
+<td>250 ns/体系，ff14SB，TIP3P</td>
+<td>移除则整个研究退化为静态结构预测，无法评估动态稳定性</td>
+</tr>
+<tr>
+<td>轨迹分析 + 阈值分类</td>
+<td>计算 RMSD/RMSF/RoG/SASA 并分类</td>
+<td>将原始轨迹转化为可判读的稳定性/功能兼容性结论</td>
+<td>输入：MD 轨迹；输出：稳定/不稳定、兼容/不兼容分类</td>
+<td>Methods 2.5; 参考归一化 μ+σ/μ+2σ 阈值</td>
+<td>无此模块则 MD 结果无法系统解读</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>本文未提供明确的数学公式。核心评估指标为 MD 模拟中常用的几何量，定义如下（基于领域通用知识，非原文公式）：</p>
+<ul>
+<li><strong>RMSD (Root Mean Square Deviation)</strong>: 衡量模拟构象与参考结构（通常为初始结构或晶体结构）的 Cα 原子坐标偏差。RMSD = √[(1/N)Σᵢ(δᵢ²)]，其中 δᵢ 为第 i 个 Cα 原子在叠合后的位移，N 为对齐的 Cα 原子数。低 RMSD 表示结构稳定。</li>
+<li><strong>RMSF (Root Mean Square Fluctuation)</strong>: 衡量每个残基在模拟时间内的位置波动。RMSFᵢ = √[(1/T)Σₜ(rᵢ(t) - r̄ᵢ)²]，其中 rᵢ(t) 为残基 i 在时间 t 的坐标，r̄ᵢ 为时间平均坐标。高 RMSF 表示该区域柔性大。</li>
+<li><strong>RoG (Radius of Gyration)</strong>: 衡量蛋白质的紧凑程度。RoG = √[(Σᵢ mᵢ|rᵢ - r_cm|²)/Σᵢ mᵢ]，其中 mᵢ 为原子质量，r_cm 为质心。高 RoG 值可能表示结构膨胀或展开。</li>
+<li><strong>SASA (Solvent Accessible Surface Area)</strong>: 衡量蛋白质表面可被溶剂接触的面积。高 SASA 可能表示结构部分展开或表面过度暴露。</li>
+<li><strong>分类阈值</strong>: 对每个指标，以参考蛋白 MD 模拟的均值 μ 和标准差 σ 为基准，生成序列的指标值需满足特定条件（如 RMSD &lt; μ+σ 或 μ+2σ，具体条件因指标而异，详见原文公式区域，但原文未给出完整公式）。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>:
+- 4 个 EC 类别：1.1.1.1（醇脱氢酶）、2.1.1.37（DNA(胞嘧啶-5)-甲基转移酶）、5.4.99.5（分支酸变位酶）、6.3.4.15（生物素蛋白连接酶）
+- 生成序列总数：初始生成数量未明确给出；通过筛选后进入 MD 的序列为 236 条
+- 采样参数：nucleus sampling p=0.5 和 p=0.75
+- 参考结构：1LLU（EC 1.1.1.1）、1DCT（EC 2.1.1.37）、3RMI 和 1ODE（EC 5.4.99.5）、1WNL 和 6NDL（EC 6.3.4.15）</p>
+<p><strong>规模</strong>:
+- MD 模拟：236 条生成序列 × 250 ns/条 = 59 μs 总模拟时间
+- 每条序列 1 次模拟（无重复）</p>
+<p><strong>指标</strong>:
+- 稳定性分类：基于 RMSD（平均 RMSD 低于参考 μ+σ 或 μ+2σ，具体因 EC 类而异）
+- 折叠保持：RMSD 轨迹是否持续低于阈值
+- 潜在催化兼容性：RMSF、RoG、SASA 均需在阈值范围内</p>
+<p><strong>基线/对照</strong>:
+- 各 EC 类别的实验解析晶体结构（PDB 参考）作为对照，在相同 MD 条件下模拟</p>
+<p><strong>评测协议</strong>:
+- 对每条生成序列，计算 MD 轨迹后 250 ns 内的平均 RMSD、RMSF、RoG、SASA
+- 与参考蛋白的对应指标比较，使用参考归一化阈值分类</p>
+<p><strong>实验列表</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EC 1.1.1.1 MD 模拟（45 条序列）</td>
+<td>生成序列能保持稳定折叠</td>
+<td>参考 1LLU；p=0.75 序列</td>
+<td>41/45（91.1%）稳定；37/45（82.2%）催化兼容</td>
+<td>大多数生成序列稳定折叠</td>
+<td>未测试 p=0.5（仅 1 条生成）</td>
+<td>Results 3.1; 表 2</td>
+</tr>
+<tr>
+<td>EC 2.1.1.37 MD 模拟（23 条序列）</td>
+<td>生成序列能保持稳定折叠</td>
+<td>参考 1DCT；p=0.5 和 p=0.75</td>
+<td>p=0.5: 11/11（100%）稳定；p=0.75: 11/12（91.7%）稳定；催化兼容: p=0.5 63.6%, p=0.75 41.7%</td>
+<td>p=0.5 生成序列更稳定</td>
+<td>样本量小（n=23）</td>
+<td>Results 3.2; 表 3</td>
+</tr>
+<tr>
+<td>EC 5.4.99.5 MD 模拟（73 条序列）</td>
+<td>生成序列能保持稳定折叠</td>
+<td>参考 3RMI 和 1ODE；p=0.5 和 p=0.75</td>
+<td>总体 58/73（79.4%）稳定；48/73（65.7%）催化兼容；1ODE 类序列全部稳定</td>
+<td>多数序列稳定；1ODE 参考极稳定导致阈值严格</td>
+<td>1ODE 类序列 RMSD 均高于参考但仍在阈值内</td>
+<td>Results 3.3; 表 4, 5</td>
+</tr>
+<tr>
+<td>EC 6.3.4.15 MD 模拟（95 条序列）</td>
+<td>生成序列能保持稳定折叠</td>
+<td>参考 1WNL 和 6NDL；p=0.5 和 p=0.75</td>
+<td>1WNL 类: p=0.5 82.1% 稳定, p=0.75 66.7% 稳定；6NDL 类: p=0.5 95.2% 稳定, p=0.75 68.7% 稳定</td>
+<td>p=0.5 序列更稳定</td>
+<td>催化兼容性比例低于稳定性比例</td>
+<td>Results 3.4; 表 6, 7</td>
+</tr>
+<tr>
+<td>跨 EC 类别汇总</td>
+<td>生成序列整体稳定性</td>
+<td>所有 236 条序列</td>
+<td>195/236（82.6%）稳定；163/236（69.1%）催化兼容</td>
+<td>Finenzyme 生成序列整体高稳定性</td>
+<td>稳定性不代表催化活性，仅结构兼容性</td>
+<td>Results 3.5; 图 10</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文评估的是「结构稳定性」和「结构层面的催化兼容性」，而非实验验证的催化活性。所有结论均基于 MD 模拟的计算指标，不涉及湿实验验证。</li>
+<li><strong>Oracle/真值输入</strong>: 参考晶体结构（PDB）作为结构比对和阈值归一化的基准；辅因子通过结构比对从参考结构转移到生成模型，未验证辅因子结合位点的序列保守性。</li>
+<li><strong>端到端状态</strong>: 该 pipeline 是「生成 → 计算筛选 → 计算验证」的端到端流程，但终点是计算层面的「候选物」，未进入实验表达、纯化和活性测定阶段。</li>
+<li><strong>算力成本</strong>: 59 μs 总模拟时间，使用 GPU 加速 PMMD，具体算力资源未量化说明。</li>
+<li><strong>历史数据依赖</strong>: Finenzyme 的训练数据来自 UniProt（EC 注释序列），生成质量依赖训练数据的覆盖度和注释质量。</li>
+<li><strong>模型依赖</strong>: 结果依赖于 ESMFold 结构预测的准确性、Foldseek 折叠识别的可靠性、ff14SB 力场和 TIP3P 水模型的精度。</li>
+<li><strong>最难情形</strong>: 1ODE（分支酸变位酶）参考结构 RMSD 极低（1.06 Å），导致阈值极为严格，所有生成序列 RMSD 均高于参考，但仍在 μ+2σ 内。这提示参考蛋白本身的高稳定性可能使生成序列难以超越。</li>
+<li><strong>群体/领域边界</strong>: 仅覆盖 4 个 EC 类别，且均为单体酶或简单复合物；未涉及多亚基酶、膜蛋白、 intrinsically disordered proteins 等更复杂体系。</li>
+<li><strong>不确定性</strong>: 单次 MD 模拟（无重复），采样长度 250 ns 可能不足以捕捉慢时间尺度的构象转变；pLDDT 阈值 0.8 可能排除部分可折叠但预测置信度较低的序列。</li>
+<li><strong>有边界的复述</strong>: 在 4 个 EC 类别的 236 条 Finenzyme 生成序列中，经 BLASTp 新颖性筛选、ESMFold 结构质量筛选和 Foldseek 折叠确认后，82.6% 在 250 ns 显式溶剂 MD 模拟中保持稳定折叠，69.1% 表现出与催化兼容的结构特征；降低采样自由度（p=0.5）倾向于产生更高比例的稳定序列。这些结论仅适用于计算筛选后的子集，不推广至 Finenzyme 的全部生成输出，也不等同于实验活性验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>80% 序列同一性 cutoff 不建立结构新颖性</td>
+<td>"the 80% sequence-identity cut-off used in the novelty filter bounds redundancy but does not by itself establish structural novelty: sequences below this threshold can still belong to the same fold and family, as is the case here by design"</td>
+<td>量化活性位点新颖性（催化残基保守性、空间排列、基序多样性）</td>
+<td>Conclusions</td>
+</tr>
+<tr>
+<td>MD 指标仅提供初步催化兼容性指示</td>
+<td>"MD-derived average RMSF, RoG, and SASA values" 为有限的计算评估</td>
+<td>实验验证催化功能</td>
+<td>Conclusions（隐含）</td>
+</tr>
+<tr>
+<td>单次 MD 模拟可能受随机性影响</td>
+<td>"only one trajectory was generated for each system, the results may be influenced by the stochastic nature of MD simulations"</td>
+<td>重复模拟或延长模拟时间</td>
+<td>Methods 2.4</td>
+</tr>
+<tr>
+<td>失败模式未系统分析</td>
+<td>未对不稳定序列进行系统性失败归因</td>
+<td>"A systematic, quantitative failure analysis that could inform future fine-tuning iterations is left for follow-up work"</td>
+<td>Conclusions</td>
+</tr>
+<tr>
+<td>仅评估有限 EC 类别</td>
+<td>4 个 EC 类别，未覆盖全部酶功能多样性</td>
+<td>分析不同 PLM（通用和微调）生成的酶</td>
+<td>Conclusions</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>筛选 pipeline 可能引入选择偏差</td>
+<td>通过 BLASTp、ESMFold、Foldseek 三级筛选后的序列本身已是「高可折叠性」子集，82.6% 的稳定性可能反映筛选效率而非 Finenzyme 生成质量</td>
+<td>若将稳定性归因于生成模型而非筛选，会高估 PLM 的生成能力</td>
+<td>对未筛选的原始生成序列直接进行 MD 模拟，比较稳定性分布</td>
+<td>Methods 2.3 描述筛选条件；Results 明确说明成功率针对筛选后子集</td>
+</tr>
+<tr>
+<td>参考归一化阈值可能过于宽松或严格</td>
+<td>使用参考蛋白的 μ+σ 或 μ+2σ 作为阈值，但参考蛋白本身的动态范围差异大（如 1ODE RMSD=1.06 Å vs 1LLU 可能更高），导致跨 EC 类别的可比性存疑</td>
+<td>不同 EC 类别的「稳定」标准不一致，汇总统计（82.6%）可能掩盖类别间差异</td>
+<td>报告各 EC 类别的参考蛋白 MD 指标值，检验阈值可比性</td>
+<td>Methods 2.5; Results 3.5 图 10 显示分布</td>
+</tr>
+<tr>
+<td>辅因子转移未验证序列兼容性</td>
+<td>辅因子通过结构比对直接转移到生成模型，但未检查生成序列中辅因子结合残基的保守性</td>
+<td>若辅因子结合位点突变，MD 中观察到的稳定性可能不代表全酶功能状态</td>
+<td>对辅因子结合位点进行序列保守性分析，或进行辅因子结合 MD 模拟</td>
+<td>Methods 2.4 描述辅因子转移；未提及结合位点验证</td>
+</tr>
+<tr>
+<td>单次 250 ns 模拟不足以捕捉慢构象转变</td>
+<td>250 ns 对许多酶的功能构象转变（如 domain motion, allostery）可能不足</td>
+<td>短时间尺度稳定不代表长时间尺度功能相关构象可达</td>
+<td>延长模拟至 μs 级或使用增强采样方法</td>
+<td>Methods 2.4 承认单次模拟限制</td>
+</tr>
+<tr>
+<td>pLDDT &gt; 0.8 阈值可能排除有效序列</td>
+<td>ESMFold pLDDT 与实验结构质量相关，但高 pLDDT 不保证功能，低 pLDDT 也不一定不可折叠</td>
+<td>阈值选择直接影响进入 MD 的序列数量和质量</td>
+<td>测试不同 pLDDT 阈值对 MD 稳定性的影响</td>
+<td>Methods 2.3.2 描述阈值；未提供敏感性分析</td>
+</tr>
+<tr>
+<td>未报告阴性对照</td>
+<td>未对随机序列或已知不稳定序列进行相同 pipeline 的 MD 模拟作为阴性对照</td>
+<td>缺乏基线比较，无法判断 82.6% 是否显著高于随机生成</td>
+<td>加入 scrambled sequence 或负设计序列作为对照</td>
+<td>全文未提及阴性对照</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:</p>
+<ol>
+<li>
+<p><strong>「生成 → 多级筛选 → MD 验证」pipeline 设计</strong>: 本文提供了一个可复用的计算验证框架：新颖性筛选（BLASTp）→ 结构质量筛选（ESMFold pLDDT）→ 折叠确认（Foldseek TM-score）→ 动态验证（MD）。该 pipeline 可迁移至任何 PLM 生成序列的验证任务，尤其是酶设计场景。</p>
+</li>
+<li>
+<p><strong>参考归一化阈值策略</strong>: 使用参考蛋白的 MD 指标分布（μ、σ）作为分类阈值，而非绝对 cutoff。这一策略对跨蛋白家族的泛化评估尤为重要，可迁移至其他蛋白质设计评估任务（如结合亲和力预测、稳定性设计）。</p>
+</li>
+<li>
+<p><strong>采样参数（nucleus sampling p）作为稳定性调节旋钮</strong>: 较低的 p 值（0.5）倾向于产生更保守、更稳定的序列，而较高的 p 值（0.75）探索更多序列空间但牺牲稳定性。这一发现提示在生成式蛋白质模型中，采样策略应被视为可调超参数，而非固定设置。</p>
+</li>
+<li>
+<p><strong>MD 指标的分层解读</strong>: 本文区分了「稳定性」（RMSD 为主）和「催化兼容性」（RMSF、RoG、SASA 综合），并分别报告成功率。这种分层评估比单一指标更全面，可迁移至其他功能蛋白设计验证。</p>
+</li>
+<li>
+<p><strong>辅因子转移的简化处理</strong>: 通过结构比对将辅因子从参考晶体结构转移到生成模型，是一种计算成本低的近似方法。虽然未验证结合位点保守性，但为 MD 模拟提供了合理的起始构象。此方法可迁移至其他含辅因子酶的设计验证。</p>
+</li>
+<li>
+<p><strong>失败模式的分类学</strong>: 虽然本文未系统分析失败模式，但识别出「部分展开」「持续高波动」「表面过度暴露」等失败类型（通过 RMSD/RMSF/SASA 超标体现），为后续工作提供了失败分类框架。</p>
+</li>
+<li>
+<p><strong>EC 类别特异性差异</strong>: 不同 EC 类别的生成序列稳定性差异显著（如 1ODE 类全部稳定 vs 3RMI 类 68.8%），提示生成模型的性能高度依赖目标酶家族的特性。这一观察提示在评估 PLM 生成能力时，应分家族报告而非仅报告汇总统计。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Finenzyme 前期工作</strong>（Nicolini et al., 2025）: 本文是 Finenzyme 生成模型的后续验证工作，直接建立在其序列生成能力之上。连接点：生成模型 → 结构验证。</li>
+<li><strong>ProGen 条件生成</strong>（Madani et al., 2023）: Finenzyme 基于 ProGen 架构，本文的生成序列质量间接反映了 ProGen 架构的表示学习能力。</li>
+<li><strong>ESMFold 单序列结构预测</strong>（Lin et al., 2023）: 本文使用 ESMFold 作为结构预测工具，pLDDT &gt; 0.8 阈值高于 ESMFold 作者建议的 0.7 良好阈值，体现了更严格的结构质量要求。</li>
+<li><strong>Foldseek 快速结构比对</strong>（van Kempen et al., 2024）: 本文使用 Foldseek 进行折叠确认，TM-score ≥ 0.8 是结构生物学中公认的「相同折叠」阈值。</li>
+<li><strong>MD 模拟在酶设计中的应用</strong>（K and Venugopal, 2024; Walsh and Walsh, 2022）: 本文的 MD 验证策略（RMSD/RMSF/RoG/SASA + 参考归一化阈值）与领域内酶设计验证实践一致。</li>
+<li><strong>与 AlphaFold 的关系</strong> [Analysis]: 本文未使用 AlphaFold，而是选择 ESMFold。这可能是因为 ESMFold 是单序列模型，更适合快速批量处理生成序列；AlphaFold 需要 MSA，对孤儿序列（orphan sequences）可能不适用。这一选择提示在 PLM 生成序列验证中，单序列结构预测工具可能更具实用性。</li>
+<li><strong>与蛋白质构象采样/生成的关系</strong> [Analysis]: 本文的 MD 模拟本质上是对生成序列的构象空间采样，但仅评估了单一轨迹的稳定性，未进行增强采样或构象系综分析。未来可结合 metadynamics、replica exchange 等方法探索生成序列的完整构象景观。</li>
+<li><strong>与分子对接的关系</strong> [Analysis]: 本文未涉及对接，但其「辅因子通过结构比对转移」的策略可视为一种简化的对接/定位方法。对于需要评估底物结合或产物释放的酶设计，可进一步结合分子对接或 MD/MM 方法。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: 生成酶序列的增强采样构象景观分析
+   - <strong>来源局限/观察</strong>: 本文仅使用单次 250 ns 标准 MD，可能遗漏慢时间尺度的构象转变；部分序列虽在 250 ns 内稳定，但可能无法访问功能相关构象。
+   - <strong>核心假设</strong>: 使用增强采样（如 metadynamics、replica exchange MD）可揭示生成序列与参考蛋白在构象自由能景观上的差异，提供比单一轨迹更全面的稳定性评估。
+   - <strong>初步方法</strong>: 选取本文中稳定和不稳定的代表性序列各 5-10 条，进行 1 μs 常规 MD + well-tempered metadynamics（以 RMSD 或关键二面角为集体变量），比较自由能景观的深度、宽度和全局最小值位置。
+   - <strong>验证方式</strong>: 若增强采样发现部分「稳定」序列在更长时间尺度或更高自由能态下展开，则说明单轨迹评估的局限性；若景观与参考蛋白高度相似，则支持生成序列的功能可折叠性。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 辅因子结合位点保守性对生成酶 MD 稳定性的影响
+   - <strong>来源局限/观察</strong>: 本文通过结构比对直接转移辅因子，未验证生成序列中辅因子结合残基的保守性；部分序列的不稳定可能源于辅因子结合位点的不兼容。
+   - <strong>核心假设</strong>: 生成序列中辅因子结合残基的序列保守性与 MD 稳定性正相关；结合位点突变是导致部分序列失稳的主要原因。
+   - <strong>初步方法</strong>: 对 236 条生成序列进行辅因子结合位点残基的序列比对（与参考蛋白），计算保守性得分；将序列按保守性分组，比较组间 MD 稳定性差异；对低保守但稳定的序列进行结构分析，寻找替代性结合模式。
+   - <strong>验证方式</strong>: 若保守性与稳定性显著相关，则可在筛选 pipeline 中加入结合位点保守性作为预筛条件，提高 MD 验证通过率。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 采样参数 p 值与生成序列结构多样性的定量关系
+   - <strong>来源局限/观察</strong>: 本文观察到 p=0.5 比 p=0.75 产生更稳定的序列，但未定量分析 p 值对序列空间探索范围的影响。
+   - <strong>核心假设</strong>: p 值不仅影响稳定性，还影响生成序列在序列空间中的分布密度和多样性；存在最优 p 值区间，在稳定性和新颖性之间取得平衡。
+   - <strong>初步方法</strong>: 在多个 EC 类别中，以 p=0.3、0.4、0.5、0.6、0.7、0.8 生成序列，计算序列间平均成对距离、与训练集的平均距离、ESMFold pLDDT 分布、MD 稳定性通过率，绘制 p 值与各指标的关系曲线。
+   - <strong>验证方式</strong>: 若存在明确的 p 值-稳定性-多样性权衡曲线，可为 PLM 生成策略提供定量指导。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 生成序列的底物结合口袋动态行为与催化兼容性预测
+   - <strong>来源局限/观察</strong>: 本文的「催化兼容性」仅基于 RMSF、RoG、SASA 等全局/半全局指标，未直接评估底物结合口袋的动态行为。
+   - <strong>核心假设</strong>: 生成序列中底物结合口袋残基的 MD 波动模式与参考蛋白的相似度，是比全局 RMSF 更准确的催化兼容性预测指标。
+   - <strong>初步方法</strong>: 对 236 条生成序列的 MD 轨迹，提取参考蛋白底物结合口袋对应残基的 RMSF 和协同运动模式（dynamic cross-correlation matrix），与参考蛋白比较；将口袋级指标与全局指标分别作为分类器输入，比较预测催化兼容性的准确率。
+   - <strong>验证方式</strong>: 若口袋级指标显著优于全局指标，则可在 pipeline 中加入口袋级分析作为更精细的筛选层。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 多 PLM 生成酶序列的跨模型稳定性基准测试
+   - <strong>来源局限/观察</strong>: 本文仅评估 Finenzyme（基于 Progen）生成的序列；作者在结论中明确提到未来将分析不同 PLM 生成的酶。
+   - <strong>核心假设</strong>: 不同 PLM（如 ESM-2、ProtGPT2、ProGen2 等）生成的酶序列在 MD 稳定性上存在系统性差异，且与模型架构、训练数据、生成策略相关。
+   - <strong>初步方法</strong>: 使用多种 PLM 对相同 4 个 EC 类别生成等量序列，应用本文相同的筛选 pipeline 和 MD 评估协议，比较各模型的稳定性通过率、序列多样性、计算成本。
+   - <strong>验证方式</strong>: 若发现特定模型在特定 EC 类别上表现更优，可为下游酶设计任务的模型选择提供依据。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including abstract, introduction, methods, results, discussion, and supplementary material references.</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological rigor, clarity of claims, and alignment with stated objectives. Editorial and formatting issues are noted only where they affect scientific comprehension.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors extend the Finenzyme protein language model with an in silico selection pipeline and molecular dynamics (MD) simulations to evaluate the structural stability and potential catalytic competence of generated enzyme sequences across four EC classes. They report that 74–95% of pre-selected generated models maintain stable tertiary structures, with 82.6% overall stability and 69.1% potential catalytic competence.</li>
+<li><strong>Visible evidence base</strong> Main text, Tables 1–7, Figures 1–10, and references to Supplementary Tables S1–S7. Supplementary material itself was not provided for review.</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary Tables S1–S7, detailed MD simulation parameters, force field validation data, and the Finenzyme model code or configuration files. These are referenced but not accessible, limiting full verification of thresholds and reproducibility.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a useful integration of a conditional protein language model with MD-based structural validation, addressing a relevant gap in enzyme sequence design. The core claim, that a substantial fraction of generated sequences maintain stable folds, is supported by the presented data for the pre-selected subset. However, several methodological details are insufficiently described, particularly regarding the selection of reference structures, the handling of cofactors, and the statistical treatment of MD descriptors. The distinction between "stability" and "catalytic competence" is acknowledged but the latter is inferred from indirect metrics without experimental validation, which limits the strength of the conclusions. The work is of interest to the enzyme engineering and computational biology communities, but the current evidence base does not fully establish the broader claims about functional potential.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational protein designers and enzyme engineers will find the pipeline relevant, as it offers a practical workflow for filtering language model outputs using MD simulations. Researchers working on generative models for proteins may also be interested in the empirical stability rates reported across different sampling parameters. The discussion of compactness and solvent exposure in relation to industrial enzyme applications could appeal to biotechnologists seeking thermostable or solvent-tolerant variants.</li>
+<li><strong>Major strengths</strong> The study addresses a timely problem, namely the structural validation of language model-generated enzyme sequences, which is often neglected in favor of sequence-level metrics. The use of multiple MD descriptors (RMSD, RMSF, RoG, SASA) provides a reasonably comprehensive view of conformational behavior. The comparison between two sampling parameters (p = 0.5 and p = 0.75) offers practical guidance on generation settings. The authors are transparent about the limitations of their in silico approach and appropriately frame the results as candidates for experimental testing.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological rigor</li>
+<li><strong>Claim pointer</strong> The manuscript claims that generated sequences "exhibit high stability" and that a subset shows "potential catalytic competence" based on MD-derived metrics.</li>
+<li><strong>Evidence pointer</strong> Section 2.4 (Molecular dynamics simulations), Section 3 (Results and discussion), Tables 2–7, Figures 3–9.</li>
+<li><strong>Concern</strong> The classification of sequences as "stable" or "catalytically competent" relies on threshold values derived from reference simulations, but the statistical basis for these thresholds is not fully described. The text mentions a μ + σ criterion for RMSD and RMSF and μ + 2σ for RoG and SASA, but it is unclear whether these thresholds are applied to the mean, maximum, or time-averaged values of each descriptor. Additionally, the rationale for using different criteria for different descriptors is not explained. Without a clear definition of how thresholds are computed and applied, the reported success rates (e.g., 82.6% stability) are difficult to interpret or reproduce.</li>
+<li><strong>Why it matters</strong> The central quantitative claims of the manuscript depend entirely on these classification criteria. If the thresholds are not rigorously defined, the reported stability and competence rates cannot be independently verified, undermining the main conclusions.</li>
+<li><strong>Resolution test</strong> Provide a precise mathematical definition of each threshold, specify which portion of the trajectory is used for averaging, and state whether thresholds are applied per-residue or globally. Include a supplementary table listing the exact threshold values for each reference structure and each descriptor, and justify the choice of μ + σ versus μ + 2σ for different metrics.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The manuscript states that "several generated sequences exhibited greater predicted stability and residue diversity than their reference counterparts, enabling the design of mutant variants with potential enhanced catalytic activity or stability."</li>
+<li><strong>Evidence pointer</strong> Section 3 (Results and discussion), Section 4 (Conclusions and future developments), Figures 3–9.</li>
+<li><strong>Concern</strong> The claim that generated sequences may have "enhanced" properties compared to natural enzymes is not supported by direct evidence. The MD simulations compare generated sequences to a single reference structure per EC class, but no statistical comparison is provided to show that the observed differences (e.g., lower RMSD or RoG) are significant or meaningful. Furthermore, the term "residue diversity" is not quantified, and no analysis of active-site conservation or catalytic residue positioning is presented. The inference of enhanced activity from stability metrics alone is speculative.</li>
+<li><strong>Why it matters</strong> This claim goes beyond the data presented and could mislead readers into overinterpreting the functional potential of the generated sequences. The manuscript itself acknowledges that catalytic competence is inferred from limited metrics, but the language in the conclusions is stronger than the evidence warrants.</li>
+<li><strong>Resolution test</strong> Either temper the language to clearly state that enhanced properties are hypothetical and require experimental validation, or provide additional analyses such as active-site geometry comparisons, substrate binding simulations, or free energy calculations to substantiate the claim.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The methods state that "a randomly selected subset of the generated sequences was used as input" for MD simulations, and that "MD simulations were capped to match other classes" for EC 6.3.4.15.</li>
+<li><strong>Evidence pointer</strong> Section 2.4 (Molecular dynamics simulations), Tables 2–7.</li>
+<li><strong>Concern</strong> The random selection process is not described in sufficient detail. No random seed is provided, and the criteria for capping the number of simulations for EC 6.3.4.15 are not specified. This makes it impossible to reproduce the exact subset of sequences analyzed, which is critical for verifying the reported success rates.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for computational studies. Without a clear description of the sampling procedure, other researchers cannot replicate the analysis or assess potential selection bias.</li>
+<li><strong>Resolution test</strong> Specify the random seed, the exact number of sequences selected per EC class, and the rationale for the cap. Provide the list of selected sequence identifiers in the supplementary material.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section 2.3 (Selection of generated sequences)</li>
+<li><strong>Evidence pointer</strong> Section 2.3, Figure 1.</li>
+<li><strong>Issue</strong> The description of the three filters is clear, but the order of application is not explicitly stated. It is implied that novelty filtering precedes structure prediction, but this should be confirmed.</li>
+<li><strong>Required correction</strong> State explicitly the order in which the novelty, structure-quality, and fold-confirmation filters are applied, and whether any sequences were removed at each stage.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Section 2.5 (Statistical analysis)</li>
+<li><strong>Evidence pointer</strong> Section 2.5, Supplementary Table S1.</li>
+<li><strong>Issue</strong> The text states that the μ + σ criterion captures approximately 68% of data under normality, but no normality testing is reported for the MD descriptor distributions. The assumption of normality may not hold for all descriptors or all reference structures.</li>
+<li><strong>Required correction</strong> Either justify the normality assumption with appropriate tests or use non-parametric thresholds (e.g., percentiles) that do not rely on distributional assumptions.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Section 3 (Results and discussion), Figure 10.</li>
+<li><strong>Evidence pointer</strong> Figure 10, Section 3.5 (Distribution of data across EC classes).</li>
+<li><strong>Issue</strong> The normalized ratio plots in Figure 10 are informative, but the text does not explain how the ratios are computed (e.g., generated value divided by reference value) or whether the reference value is the mean or a specific percentile.</li>
+<li><strong>Required correction</strong> Add a sentence in the figure legend or text describing the normalization procedure and the reference value used.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Section 2.4 (Molecular dynamics simulations)</li>
+<li><strong>Evidence pointer</strong> Section 2.4, Supplementary material.</li>
+<li><strong>Issue</strong> The manuscript states that "more details of the MD simulations are provided in the Supplementary materials," but the supplementary material was not available for review. Key parameters such as the number of water molecules, box size, salt concentration, and equilibration protocol are not described in the main text.</li>
+<li><strong>Required correction</strong> Provide a summary of the key MD parameters in the main text or ensure the supplementary material is accessible and contains all necessary details.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The threshold definition for stability and competence classification (R1-M1) is the primary technical issue that must be resolved. The lack of a detailed sampling description (R1-M3) also needs to be addressed for reproducibility. The overinterpretation of enhanced properties (R1-M2) should be corrected to align with the evidence.</li>
+<li><strong>Assessment against Nature-style criteria</strong>  </li>
+<li>Originality: Moderate. The combination of a conditional PLM with MD-based filtering is not entirely novel, as similar in silico screening approaches exist, but the specific application to EC-conditioned enzyme generation adds some originality.  </li>
+<li>Scientific importance: Moderate. The work addresses a practical need in enzyme engineering, but the findings are largely confirmatory of existing expectations that not all generated sequences will be stable. The lack of experimental validation limits the broader impact.  </li>
+<li>Interdisciplinary readership: Moderate. The study bridges machine learning and biophysics, which could attract readers from both communities, but the technical depth in each area may limit accessibility for nonspecialists.  </li>
+<li>Technical soundness: The MD simulations appear to be conducted with standard protocols, but the threshold-based classification is not rigorously justified, and the statistical treatment is incomplete.  </li>
+<li>Readability for nonspecialists: The manuscript is generally well written, but the methods section assumes familiarity with both PLM terminology and MD analysis. A brief primer on key concepts would improve accessibility.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea is sound and the data are potentially useful, but the threshold definitions and sampling details must be clarified, and the language regarding enhanced properties must be tempered. Once these issues are addressed, the manuscript could make a solid contribution to the field of computational enzyme design.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

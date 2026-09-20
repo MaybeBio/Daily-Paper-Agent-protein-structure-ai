@@ -1,0 +1,100 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, methods, results, discussion, and conclusion. No supplementary files, figures, or tables were provided for inspection.
+- **Assessment boundary** The review is limited to the computational methodology, the reported results as described in the text, and the internal consistency of the claims. No experimental validation data are available for assessment.
+- **Shared manuscript claim summary** The authors claim that a reverse vaccinology and immunoinformatics pipeline applied to the MCV-1 proteome can identify antigenic, non-allergenic, non-toxic epitopes and assemble them into a multi-epitope vaccine construct with favorable physicochemical properties, structural stability, and predicted strong binding to TLR4, thereby constituting a promising prophylactic vaccine candidate against molluscum contagiosum virus.
+- **Visible evidence base** The manuscript text describes the full computational workflow, including proteome retrieval, protein prioritization, epitope prediction, vaccine construction, structural modeling, docking, and normal mode analysis. Numerical results are reported for vaccine properties, docking scores, and population coverage. No actual data files, structural coordinates, or detailed prediction outputs are visible.
+- **Missing materials affecting confidence** Supplementary tables (S1) and figures (Figs. 1-9) are referenced but not provided. The specific epitope sequences, their coordinates within source proteins, the complete list of predicted epitopes with scores, the vaccine construct sequence, and the docking interaction details are not available for independent verification. The PDB structure of TLR4 used for docking is not specified beyond the ID.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a standard computational reverse vaccinology workflow applied to a virus for which no vaccine currently exists. The methodology is largely conventional and follows established protocols in the field. The results are reported in a descriptive manner, but the core claims of vaccine candidacy rest entirely on in silico predictions without any experimental validation. The manuscript is technically competent in its execution of the pipeline, but the scientific advance is incremental and the conclusions are overstated relative to the evidence provided. The discussion section appropriately acknowledges the need for experimental validation, which tempers some concerns, but the abstract and conclusion present the construct as a "promising candidate" in a way that exceeds what computational predictions alone can establish.
+- **Who would be interested in the results, and why** Researchers in computational vaccinology and immunoinformatics may find this a useful example of applying established tools to a neglected virus. Those working on MCV specifically, or on poxvirus vaccine development, may use these predictions as a starting point for experimental work. The paper may also be of interest to methodologists comparing different immunoinformatics pipelines, though the novelty here is limited.
+- **Major strengths**
+  - The study addresses a genuine gap, namely the absence of a prophylactic vaccine for MCV.
+  - The computational pipeline is comprehensive and uses widely accepted, publicly available tools.
+  - The authors explicitly acknowledge the limitations of in silico predictions and the need for experimental validation.
+  - The inclusion of population coverage analysis adds practical relevance to the epitope selection.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract and conclusion state that the vaccine construct is a "promising prophylactic vaccine candidate" and that docking and normal mode analyses "suggest" strong and stable interaction with TLR4.
+  - **Evidence pointer** Abstract; Results sections "Molecular docking analysis" and "Molecular dynamics simulation of the vaccine–TLR4 complex using iMODS"; Discussion section "Molecular docking analysis" and "Normal mode analysis"
+  - **Concern** The central claim of vaccine candidacy rests entirely on computational predictions. No experimental data are provided to support immunogenicity, safety, or protective efficacy. The docking score of -190.46 and the normal mode analysis are presented as evidence of favorable interaction, but these are purely predictive and have no demonstrated correlation with actual immune activation or protection. The authors themselves acknowledge this in the discussion, yet the abstract and conclusion do not carry the same caveat.
+  - **Why it matters** The claim that this is a "promising candidate" is not supported by the evidence level. Computational predictions can generate hypotheses, but they cannot establish vaccine candidacy. Overstating the significance of in silico results can mislead readers and potentially direct resources toward unpromising targets.
+  - **Resolution test** The claim of vaccine candidacy should be downgraded to a hypothesis-generating prediction. The abstract and conclusion should explicitly state that the construct requires experimental validation before it can be considered a candidate. Alternatively, the authors could provide additional computational evidence, such as molecular dynamics simulations over longer timescales or binding free energy calculations, to strengthen the docking claim, though this would still not substitute for experimental data.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and transparency
+  - **Claim pointer** The methods describe the use of specific tools and thresholds, and the results report selected epitopes and vaccine properties.
+  - **Evidence pointer** Methods sections "Prediction of linear B-cell epitopes", "Prediction of cytotoxic T-lymphocyte epitopes", "Prediction of helper T-lymphocyte epitopes", "Construction of the multi-epitope vaccine"; Results sections "Prediction of linear B-cell epitopes", "Prediction of CTL epitopes", "Prediction of HTL epitopes", "Construction of the multi-epitope vaccine"
+  - **Concern** The manuscript does not provide the actual sequences of the selected epitopes, their source proteins, or the final vaccine construct. The supplementary tables are referenced but not available for review. Without these data, the work cannot be reproduced or independently evaluated. The criteria for selecting the "final immunodominant epitopes" from the larger set of predicted epitopes are described only in general terms.
+  - **Why it matters** Reproducibility is a core requirement for scientific publication. Readers cannot assess the validity of the epitope selection, the vaccine construction, or the docking results without access to the underlying sequences and prediction scores. The lack of transparency limits the utility of this work for other researchers.
+  - **Resolution test** The authors should provide the complete list of predicted epitopes with their scores, the final selected epitopes with their sequences and source proteins, and the full vaccine construct sequence. These should be included in the main text or supplementary materials. The selection criteria for final epitopes should be explicitly defined with numerical thresholds.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical rigor
+  - **Claim pointer** The methods state that "Eight candidate proteins were selected for detailed immunoinformatics analysis" and that "six were predicted to be antigenic." The results report that "Nineteen linear B-cell epitopes were selected" and "18 high-affinity CTL epitopes were identified."
+  - **Evidence pointer** Methods section "Candidate protein selection"; Results sections "Prediction of linear B-cell epitopes", "Prediction of CTL epitopes"
+  - **Concern** The manuscript does not clearly describe the filtering criteria used at each step of the epitope selection process. For example, how were the 19 B-cell epitopes reduced to the final three? What thresholds were applied for antigenicity, allergenicity, toxicity, and binding affinity? The text mentions that epitopes were "prioritized based on antigenicity, safety, HLA-binding affinity, and worldwide population coverage" but does not provide the specific cutoffs or ranking scheme. Similarly, the selection of the eight candidate proteins from the 163-protein proteome is described only as based on "reported biological roles."
+  - **Why it matters** Without explicit criteria, the selection process is not transparent and could be seen as arbitrary. This weakens confidence in the reproducibility and objectivity of the pipeline. The choice of thresholds can dramatically affect the final vaccine composition, and readers need to understand how these choices were made.
+  - **Resolution test** The authors should provide a detailed stepwise description of the filtering criteria, including specific score cutoffs for each tool, the ranking method, and the rationale for each threshold. A flow diagram showing the number of candidates at each stage would be helpful.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretation of results
+  - **Claim pointer** The results state that "docking predicted a favorable interaction with TLR4 (score, -190.46) supported by hydrogen bonds, salt bridges, and electrostatic interactions."
+  - **Evidence pointer** Results section "Molecular docking analysis"; Table 15; Figure 7
+  - **Concern** The docking score is presented as evidence of a favorable interaction, but the manuscript does not provide context for interpreting this score. What is the range of possible scores for HDOCK? How does this score compare to known protein-protein interactions, particularly for TLR4 with its natural ligands or with other vaccine constructs? The number of hydrogen bonds and salt bridges is reported, but the specific residues involved are only partially listed in the text.
+  - **Why it matters** A docking score without context is difficult to interpret. Readers cannot assess whether -190.46 represents a strong, moderate, or weak interaction. The claim of "favorable interaction" needs a benchmark or comparison to be meaningful.
+  - **Resolution test** The authors should provide a comparison of their docking score with those of known TLR4 interactions or with a set of decoy structures. They should also discuss the significance of the number of interactions in the context of known protein-protein binding interfaces.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Results section "Antigenicity prediction"
+  - **Evidence pointer** Results section "Antigenicity prediction"
+  - **Issue** The text states "MC057L showed the highest antigenicity score0.6098" with a missing space and decimal formatting inconsistency. Similar formatting issues appear elsewhere, such as "score, -190.46" and "6 × His" written as "6×His" in some places.
+  - **Required correction** Proofread the manuscript for consistent formatting of numbers, units, and symbols.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Methods section "Molecular dynamics simulation of the vaccine–TLR4 complex using iMODS"
+  - **Evidence pointer** Methods section "Molecular dynamics simulation of the vaccine–TLR4 complex using iMODS"
+  - **Issue** The methods state that normal mode analysis was performed using iMODS, but the specific parameters used (e.g., number of modes, temperature) are not reported. The results report an eigenvalue but do not explain its significance in the context of the complex.
+  - **Required correction** Provide the parameters used for the iMODS analysis and explain the meaning of the eigenvalue in the results.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Referencing
+  - **Affected element** Discussion section "Experimental support for multi-epitope vaccine strategies"
+  - **Evidence pointer** Discussion section "Experimental support for multi-epitope vaccine strategies"
+  - **Issue** The discussion cites several experimental studies (Kibria et al., Guo et al., Atanasova et al., Leal et al.) as proof of concept for multi-epitope vaccines. However, the relevance of these studies to MCV is indirect, and the authors do not critically evaluate how the differences between those viruses and MCV might affect the translatability of the approach.
+  - **Required correction** Add a brief critical assessment of how the cited studies relate to the specific challenges of MCV vaccine development, such as the virus's immune evasion mechanisms and its unique life cycle.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Language
+  - **Affected element** Throughout
+  - **Evidence pointer** Throughout
+  - **Issue** The manuscript contains several instances of awkward or unclear phrasing, such as "The findings underscore how intracellular antigen delivery and signal-peptide engineering can influence the processing and presentation of a computationally designed multi-epitope antigen to the immune system." Some sentences are overly long and could be split for clarity.
+  - **Required correction** Revise for clarity and conciseness. Consider having a native English speaker review the manuscript.
+- **Technical failings that need to be addressed before the case is established**
+  - R1-M1: The claim of vaccine candidacy is not supported by the evidence level. The abstract and conclusion overstate the significance of computational predictions.
+  - R1-M2: The lack of detailed data on epitope sequences, selection criteria, and vaccine construct composition prevents reproducibility and independent evaluation.
+  - R1-M3: The filtering criteria at each step of the pipeline are not explicitly defined, undermining the transparency of the selection process.
+  - R1-M4: The docking score is presented without context or comparison, making it difficult to interpret its significance.
+- **Assessment against Nature-style criteria**
+  - **Originality** Limited. The application of reverse vaccinology and immunoinformatics to MCV is new, but the methodology is entirely standard and has been applied to numerous other viruses. The study does not introduce any novel computational approaches or conceptual advances.
+  - **Scientific importance** Moderate. MCV is a common infection with no vaccine, so the topic is of clinical relevance. However, the study is purely computational and provides no experimental validation, limiting its immediate impact. The findings are hypothesis-generating at best.
+  - **Interdisciplinary readership** Narrow. The work is primarily of interest to computational biologists and vaccinologists. It is unlikely to attract readers from outside these fields due to its highly specialized nature and lack of broader conceptual implications.
+  - **Technical soundness** The individual tools are used appropriately, and the pipeline is logically structured. However, the lack of explicit filtering criteria and the absence of comparative benchmarks for the docking analysis weaken the technical rigor. The manuscript would benefit from more detailed methods and a more critical interpretation of results.
+  - **Readability for nonspecialists** The manuscript is written in a technical style that assumes familiarity with immunoinformatics tools and concepts. The abstract is accessible, but the methods and results sections would be challenging for nonspecialists. The discussion does provide some context, but overall the paper is not written for a broad audience.
+- **Recommendation posture** Currently not established from the provided evidence. The computational work is competently executed but does not, on its own, establish a viable vaccine candidate. The claims in the abstract and conclusion need to be tempered to reflect the hypothesis-generating nature of the results. The manuscript could become publishable after major revisions that address the transparency of the methods, provide the missing data, and reframe the conclusions. However, even with these revisions, the scientific advance would be modest and the paper would be more suitable for a specialized journal than for a high-impact general journal.
+
+## Risk / unsupported claims
+- The claim that the vaccine construct is a "promising prophylactic vaccine candidate" is unsupported by the evidence, as no experimental validation is provided.
+- The claim that docking and normal mode analyses "suggest" a "strong and stable interaction" with TLR4 is an overinterpretation of computational predictions without experimental confirmation.
+- The statement that the vaccine "should be considered a promising candidate for preventing MCV infection" is not supported by the data presented.
+- The assertion that the selected proteins are "likely to elicit protective immune responses" is speculative and not backed by any functional assays.
+- The claim of "broad immunological applicability" based on population coverage analysis is presented without discussion of the limitations of the underlying allele frequency data.

@@ -1,0 +1,96 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, materials and methods) without figures or supplementary materials
+- **Assessment boundary** Scientific claims, methodological soundness, and interpretive validity based solely on the provided text; no assessment of figures, tables, or supplementary data that were not supplied
+- **Shared manuscript claim summary** The authors propose that binding of the small-molecule agonist CMF-019 to the apelin receptor (APLNR) does not stabilize a canonical active-state conformation but instead reshapes the receptor's conformational ensemble, kinetic landscape, and allosteric communication network toward activation-competent states, thereby promoting signaling competence prior to downstream effector coupling
+- **Visible evidence base** Text descriptions of RMSD, RMSF, PCA, porcupine plots, Rg, SASA, helical propensity, TM3–TM6 distance, MSM construction and validation, PCCA+ macrostates, MFPT analysis, NRI-based interaction inference, and Dijkstra shortest-path analysis; references to Figures 1–6 and Figures S1–S5
+- **Missing materials affecting confidence** All figures and supplementary figures; numerical values for RMSD, RMSF, Rg, SASA, helical propensity, TM3–TM6 distances, MSM populations, MFPTs, and NRI interaction strengths; simulation convergence metrics; docking validation details; NRI hyperparameters and architecture specifics; statistical uncertainty estimates
+
+## Reviewer
+- **Overall assessment** This manuscript presents a computationally intensive investigation of APLNR dynamics using GaMD, MSM, and NRI methods. The central hypothesis, that agonist binding promotes signaling competence through kinetic and allosteric remodeling rather than stabilization of a single active conformation, is timely and conceptually interesting. However, the manuscript as written does not provide sufficient quantitative evidence to support several key claims. The absence of figures and numerical data makes it impossible to evaluate the robustness of the analyses, the statistical significance of observed differences, or the validity of the network inference conclusions. The methodological descriptions are generally adequate but lack critical details regarding validation, uncertainty quantification, and comparison with experimental data. The manuscript would benefit substantially from quantitative comparisons between apo and holo states, explicit statistical testing, and a more cautious interpretation of the NRI and shortest-path results.
+- **Who would be interested in the results, and why** Computational biophysicists and GPCR researchers studying receptor activation mechanisms would find the kinetic and allosteric framework of interest. Researchers working on APLNR as a therapeutic target, particularly those interested in biased agonism and ligand-specific signaling, would value the conceptual model proposed. Methodologists developing or applying enhanced sampling and network inference approaches to membrane proteins may also find the integrated pipeline of interest.
+- **Major strengths** The manuscript addresses a genuinely important and unresolved question in GPCR biology, namely how agonist binding alone prepares a receptor for signaling. The integration of three complementary computational methods (GaMD, MSM, NRI) is ambitious and appropriate for the multiscale nature of the problem. The authors are appropriately cautious in framing their model as one of kinetic and allosteric priming rather than direct structural activation. The discussion of ligand-dependent variability in activation mechanisms is thoughtful and well contextualized.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that CMF-019 binding "selectively constrains receptor flexibility while preserving collective motions" and that this indicates a transition toward a "more signaling-permissive dynamic state"
+  - **Evidence pointer** Section 2.1, Figure 2
+  - **Concern** The claim of selective constraint is based on RMSD, RMSF, and PCA analyses, but no numerical values, statistical comparisons, or uncertainty estimates are provided in the text. The statement that the holo state shows "broader" versus "constrained" fluctuations is qualitative. Without quantitative data, effect sizes, or statistical testing, it is impossible to determine whether the observed differences are meaningful or within simulation noise. Furthermore, the interpretation that constrained flexibility equates to signaling permissiveness requires additional justification, as reduced flexibility could equally indicate stabilization of an inactive state.
+  - **Why it matters** The entire conceptual framework of the manuscript rests on the claim that CMF-019 binding produces a distinct dynamic state that is signaling-permissive. If this claim is not quantitatively supported, the subsequent MSM and NRI analyses lack a solid foundation.
+  - **Resolution test** Provide quantitative RMSD and RMSF values with standard errors or confidence intervals for both states, perform statistical tests (e.g., bootstrap or block averaging) to demonstrate significant differences, and justify the interpretation of reduced flexibility as signaling-permissive with reference to experimental or structural data.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim overreach
+  - **Claim pointer** The authors state that "CMF-019 binding alone did not result in sustained adoption of a canonical active-state architecture" and that the receptor "predominantly sampled conformations that remained within inactive-like to activation-competent structural regimes"
+  - **Evidence pointer** Section 2.3, Figure 4
+  - **Concern** This claim is based on the TM3–TM6 distance (R3.50–L6.34) as a single structural descriptor. While this distance is a reasonable proxy for intracellular opening, it is insufficient to characterize the full conformational state of a GPCR. The authors do not report the distribution of this distance, the populations of open versus closed states, or how these compare quantitatively to the experimentally resolved active-state structure (PDB 8XZH). The statement that the receptor does not adopt a canonical active state is a strong negative claim that requires more comprehensive structural analysis.
+  - **Why it matters** The central conclusion that CMF-019 promotes activation-competent but not fully active states depends critically on this claim. If the TM3–TM6 distance analysis is incomplete or ambiguous, the conclusion is not established.
+  - **Resolution test** Report the full distribution of TM3–TM6 distances for both states, compare quantitatively to the active-state reference structure, and ideally include additional activation-related descriptors (e.g., TM6 kink angle, TM5–TM6 packing, side-chain rotamer states of conserved motifs) to support the claim of incomplete activation.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological validation
+  - **Claim pointer** The authors claim that NRI "uncovered extensive rewiring of the receptor communication network" and that shortest-path analysis demonstrates "convergent signal propagation" toward intracellular regions
+  - **Evidence pointer** Sections 2.4 and 2.5, Figures 5 and 6
+  - **Concern** The NRI methodology is described only briefly, and critical details are missing. The authors do not report the number of training and validation trajectories, the convergence criteria for the variational inference, the sensitivity of results to hyperparameters, or any benchmarking against known or synthetic systems. The claim of "extensive rewiring" is qualitative, with no quantitative metrics of network change (e.g., edge weight distributions, network centrality measures, or statistical significance of rewiring). Similarly, the shortest-path analysis is described without reporting path lengths, path degeneracy, or robustness to network inference uncertainty.
+  - **Why it matters** NRI is a complex deep learning method that can produce spurious or unstable results if not carefully validated. The conclusions about allosteric rewiring and convergent communication are central to the manuscript's mechanistic model. Without evidence of methodological reliability and quantitative network metrics, these claims are not established.
+  - **Resolution test** Provide detailed NRI training and validation procedures, including convergence plots, hyperparameter sensitivity analysis, and benchmarking on a system with known allosteric communication. Report quantitative network metrics (e.g., edge weight distributions, betweenness centrality, path length distributions) with uncertainty estimates, and demonstrate that the observed rewiring is statistically significant relative to null models or bootstrapped replicates.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** External validation
+  - **Claim pointer** The authors suggest that their findings "provide a mechanistic framework for understanding how APLNR ligand efficacy may emerge through kinetic and allosteric reorganization"
+  - **Evidence pointer** Sections 3 and 4
+  - **Concern** The manuscript is entirely computational and lacks any experimental validation or comparison with experimental data. While computational studies can stand alone, the authors make claims about signaling competence and ligand efficacy that are experimentally testable. No attempt is made to connect the simulated states to experimentally observed signaling outcomes, such as G protein recruitment, β-arrestin engagement, or downstream pathway activation. The discussion acknowledges this limitation but does not propose concrete experimental predictions that could validate the model.
+  - **Why it matters** The broader significance of the work, particularly for therapeutic targeting of APLNR, depends on the relevance of the computational findings to real biological signaling. Without experimental validation or at least specific, testable predictions, the impact of the study is limited.
+  - **Resolution test** Include specific, quantitative predictions from the simulations (e.g., expected effects of specific mutations on state populations or communication pathways) that could be tested experimentally, or compare simulated state distributions with available experimental data on APLNR activation.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Section 2.1, description of Rg and SASA results
+  - **Evidence pointer** Section 2.1, Figure 2d,e
+  - **Issue** The statement that the holo state shows "modestly higher" Rg and SASA with "substantial overlap" is vague. It is unclear whether these differences are considered significant or biologically meaningful.
+  - **Required correction** Provide quantitative values with uncertainty estimates and state explicitly whether the observed differences are statistically significant and whether they are interpreted as functionally relevant.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Methodological detail
+  - **Affected element** Section 4.1, ligand docking
+  - **Evidence pointer** Section 4.1
+  - **Issue** The docking procedure is described briefly. No information is provided on the docking score of the selected pose, the number of poses considered, or the structural rationale for selecting the "lowest energy" pose.
+  - **Required correction** Provide the docking score, a brief description of the pose selection criteria, and ideally a comparison with the experimentally determined binding mode of CMF-019 or related ligands if available.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** Section 2.3, MSM populations
+  - **Evidence pointer** Section 2.3, Figure 4c,d
+  - **Issue** The population differences between apo (State4 at 92%) and holo (State4 at 74%) states are reported as point estimates without uncertainty. Given that these populations are derived from a single 6 μs trajectory per state, sampling uncertainty could be substantial.
+  - **Required correction** Report confidence intervals or bootstrap estimates for state populations, and discuss whether the observed population shifts are within sampling error.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interpretive caution
+  - **Affected element** Section 2.5, identification of "putative relay nodes"
+  - **Evidence pointer** Section 2.5, Figure 6
+  - **Issue** The identification of specific residues as "putative relay nodes" in the shortest-path analysis is presented without functional validation or comparison with known allosteric sites in APLNR or related GPCRs.
+  - **Required correction** Either provide additional evidence supporting the functional relevance of these residues (e.g., conservation analysis, comparison with experimental mutagenesis data) or soften the language to indicate that these are computational predictions requiring experimental testing.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Section 4.4, NRI implementation
+  - **Evidence pointer** Section 4.4
+  - **Issue** The NRI implementation is described without reference to a specific software package or code repository. The authors state that they used a "graph-based deep learning approach" but do not provide sufficient detail for reproduction.
+  - **Required correction** Provide a reference to the specific NRI implementation used, or make the code available, and include key hyperparameters (e.g., number of layers, hidden dimensions, learning rate schedule, number of training epochs).
+- **Technical failings that need to be addressed before the case is established** R1-M1 (lack of quantitative evidence for dynamic differences), R1-M2 (insufficient structural characterization to support the incomplete activation claim), R1-M3 (inadequate validation of NRI and network analysis methods)
+- **Assessment against Nature-style criteria** Originality: The conceptual framework of kinetic and allosteric priming is not entirely novel, as similar ideas have been proposed for other GPCRs, but its application to APLNR is new. Scientific importance: The question of how agonist binding prepares a receptor for signaling is of broad interest, but the current evidence is insufficient to establish the proposed mechanism. Interdisciplinary readership: The work integrates computational biophysics, machine learning, and GPCR biology, which could appeal to a broad audience, but the presentation is heavily specialized and may not be accessible to nonspecialists. Technical soundness: The methodological approach is reasonable in principle, but the lack of quantitative validation and uncertainty quantification undermines confidence in the results. Readability for nonspecialists: The manuscript is clearly written but assumes substantial familiarity with GPCR biology, enhanced sampling methods, and graph neural networks; the abstract is accessible, but the results section would be challenging for readers outside these fields.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript addresses an important question with an appropriate methodological toolkit, but the absence of quantitative data, statistical validation, and methodological rigor prevents the central claims from being supported. Substantial revision with additional analyses and clearer presentation of quantitative results would be required before the case is established.
+
+## Risk / unsupported claims
+- The claim that CMF-019 binding "selectively constrains receptor flexibility while preserving collective motions" is unsupported without quantitative RMSD/RMSF/PCA data and statistical testing
+- The claim that the receptor "predominantly sampled conformations that remained within inactive-like to activation-competent structural regimes" is unsupported without quantitative comparison of TM3–TM6 distance distributions to the active-state reference
+- The claim that NRI revealed "extensive rewiring" of the communication network is unsupported without quantitative network metrics and validation of the NRI model
+- The claim that shortest-path analysis demonstrates "convergent signal propagation" toward intracellular regions is unsupported without quantitative path analysis and robustness testing
+- The claim that CMF-019 promotes "signaling competence through integrated kinetic and allosteric remodeling" is an interpretive conclusion that extends beyond the presented evidence, particularly given the absence of experimental validation
+- The assertion that the holo state shows "modestly higher" Rg and SASA is not quantitatively supported and its functional significance is unclear
+- The identification of "putative relay nodes" in the communication network is presented without functional validation or comparison with known allosteric sites

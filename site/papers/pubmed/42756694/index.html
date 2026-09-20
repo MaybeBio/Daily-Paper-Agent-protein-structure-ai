@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Computational Design of RNA Aptamers Targeting Oncogenic miR-10b Using T‑SELEX and Molecular Dynamics-Based Stability Metrics. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Computational Design of RNA Aptamers Targeting Oncogenic miR-10b Using T‑SELEX and Molecular Dynamics-Based Stability Metrics.</h1>
+      <div class="meta">Mokgopa, Kabelo Phuti; Lobb, Kevin A; Tshiwawa, Tendamudzimu</div>
+      <div class="meta muted">
+        
+        <span class="journal">ACS omega</span>
+        · 2026-09-18
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42756694/">原文</a>
+      </div>
+      <p class="one-liner">该文用T-SELEX框架结合MD模拟和MM-GBSA计算设计靶向miR-10b的RNA适配体，虽对象为RNA而非蛋白质，但其结构预测、对接和MD稳定性评估的计算流程可迁移至蛋白质结构计算，故给予中档评分。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Aptamers are versatile single-stranded nucleic acids with high specificity and stability, making them ideal for targeting challenging biomolecules. Their structural flexibility enables selective recognition of nonprotein targets such as microRNAs (miRNAs). Among these, miR-10b plays a pivotal role in cancer progression and metastasis through its oncogenic 5p and 3p arms. We propose designing aptamers specifically targeting miR-10b through a computational framework to enable precise and efficient regulation of aberrant miRNA activity in cancer. Herein, we introduce a multiscale computational workflow built on the T_SELEX framework, integrating sequence generation, folding of secondary and tertiary structure prediction, then virtual screening, quantum mechanical (QM) calculations, molecular dynamics (MD) simulations, and MM-GBSA analysis for the design and evaluation of RNA aptamer candidates targeting pre-miR-10b and its mature 5p and 3p arms. This robust workflow enables large-scale identification and structural evaluation of computationally promising RNA aptamer candidates for RNA-targeted drug discovery. In this study, a library of 1100 22-mer aptamers was virtually screened, with heatmap and interaction energy analyses revealing strong affinities toward hsa-miR-25-5p. Molecular docking identified aptamer557 as the top binder to miR-10b-3p with -545.96 docking score and aptamer899 as the best for miR-10b-5p with -482.55 docking score. QM single-point calculations assessed electronic stability via total molecular energy and the HOMO-LUMO gaps, showing model-dependent variations. MD simulations incorporated novel stability metrics combining RMSD area integration and changepoint detection, alongside hydrogen bonding, RMSF, and radius of gyration analyses. The miR-10b-3p complexes exhibited lower RMSF and RMSD values with more persistent hydrogen bonds, reflecting stronger and more stable interactions than 5p complexes. Interestingly, despite both the aptamer and target miRNA adopting folded secondary and tertiary structures, partial Watson-Crick interactions were observed during both docking and molecular dynamics simulations, particularly at accessible loop and terminal regions, suggesting a hybrid binding mechanism involving localized base pairing together with structure-dependent structural recognition. MM-GBSA binding energy analysis further supported these findings, confirming that our T-SELEX-guided in silico strategy identifies computationally promising aptamer-like candidates and provides a robust framework for the rational design of RNA-targeting therapeutics.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">适配体（aptamer）是一类多功能的单链核酸，具有高特异性和稳定性，使其成为靶向具有挑战性的生物分子的理想工具。其结构灵活性使其能够选择性识别非蛋白质靶标，如微小RNA（microRNA, miRNA）。其中，miR-10b通过其致癌性5p和3p臂在癌症进展和转移中发挥关键作用。我们提出通过计算框架设计特异性靶向miR-10b的适配体，以实现对癌症中异常miRNA活性的精确高效调控。在此，我们介绍一种基于T_SELEX框架构建的多尺度计算工作流程，整合序列生成、二级和三级结构预测的折叠、虚拟筛选、量子力学（quantum mechanical, QM）计算、分子动力学（molecular dynamics, MD）模拟以及MM-GBSA分析，用于设计和评估靶向pre-miR-10b及其成熟5p和3p臂的RNA适配体候选物。这一稳健的工作流程能够实现大规模识别和结构评估计算上具有前景的RNA适配体候选物，从而推动RNA靶向药物发现。在本研究中，对1100个22-mer适配体文库进行了虚拟筛选，热图和相互作用能分析显示其与hsa-miR-25-5p具有强亲和力。分子对接鉴定出适配体557为miR-10b-3p的最佳结合物，对接得分为-545.96，适配体899为miR-10b-5p的最佳结合物，对接得分为-482.55。QM单点计算通过总分子能和HOMO-LUMO能隙评估电子稳定性，显示出模型依赖性差异。MD模拟引入了结合RMSD面积积分和变点检测的新型稳定性指标，同时进行了氢键、RMSF和回旋半径分析。miR-10b-3p复合物表现出较低的RMSF和RMSD值，并具有更持久的氢键，反映出比5p复合物更强、更稳定的相互作用。有趣的是，尽管适配体和靶标miRNA均采用折叠的二级和三级结构，但在对接和分子动力学模拟过程中均观察到部分Watson-Crick相互作用，特别是在可及的环区和末端区域，这表明存在一种涉及局部碱基配对和结构依赖性识别的混合结合机制。MM-GBSA结合能分析进一步支持了这些发现，证实我们基于T-SELEX引导的计算机模拟策略能够识别计算上具有前景的适配体样候选物，并为RNA靶向治疗药物的合理设计提供了稳健框架。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Computational Design of RNA Aptamers Targeting Oncogenic miR-10b Using T‑SELEX and Molecular Dynamics-Based Stability Metrics</li>
+<li><strong>作者与单位</strong>: Mokgopa, Kabelo Phuti; Lobb, Kevin A; Tshiwawa, Tendamudzimu（Rhodes University，南非；作者致谢中提及 Rhodes University 化学系及 CMCDD 研究组）</li>
+<li><strong>期刊/预印本平台</strong>: ACS Omega</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-09-18）</li>
+<li><strong>论文类型</strong>: 计算研究（in silico 设计 + 多尺度计算验证）</li>
+<li><strong>领域</strong>: RNA 适配体计算设计 × 癌症 miRNA 靶向 × 分子动力学稳定性评估</li>
+<li><strong>关键词</strong>: RNA aptamer, T-SELEX, miR-10b, molecular dynamics, MM-PBSA, virtual screening, QM calculations</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1021/acsomega.6c03088</li>
+<li><strong>代码</strong>: 部分数据公开于 GitHub（https://github.com/KPMOKGOPA/MSc_supplementary_data/tree/main/Docking_results）</li>
+<li><strong>数据</strong>: 1100 条 22-mer 适配体序列库；对接结果、MD 轨迹、MM-PBSA 数据（部分见 Supporting Information）</li>
+<li><strong>阅读日期</strong>: 2026-05-12（按当前日期推算）</li>
+<li><strong>在该方向中的位置</strong>: 本文属于「RNA 适配体（非蛋白靶标）计算设计」方向，将经典 SELEX 逻辑迁移至全计算流程（T-SELEX），并引入新的 MD 后处理稳定性指标（changepoint detection + RMSD area 复合指标 mμ），面向 RNA-RNA 互作体系，是 AI/物理模拟方法在 RNA 靶向药物设计中的一次方法学整合尝试。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文构建了一个基于 T-SELEX 框架的多尺度计算流程（序列生成→二级/三级结构预测→分子对接→QM 计算→MD 模拟→MM-PBSA），从 1100 条 22-mer RNA 适配体库中筛选出靶向 miR-10b-3p 的 aptamer557（对接分数 −545.96）和靶向 miR-10b-5p 的 aptamer899（对接分数 −482.55），并通过新提出的复合稳定性指标 mμ（结合 RMSD 面积积分与 changepoint 检测）评估了复合物的动态稳定性，发现 aptamer331 和 aptamer274 分别对 5p 和 3p 臂形成最稳定的复合物。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何通过纯计算方法高效设计靶向致癌 miRNA（miR-10b-5p 和 miR-10b-3p）的 RNA 适配体，并可靠评估其结合稳定性？</li>
+<li><strong>为什么重要</strong>: miR-10b 在多种癌症中作为致癌基因（oncomiR）促进转移和增殖，但传统 SELEX 实验耗时数周至数月且成本高；适配体相比抗体具有低免疫原性、易合成修饰等优势，是 miRNA 靶向干预的潜在工具。计算方法可大幅加速候选筛选。</li>
+<li><strong>现有方法不足</strong>: 常规 in silico 对接流程仅做单步虚拟筛选，缺乏对 RNA-RNA 复合物动态稳定性的系统评估；RNA 分子高度柔性，传统 RMSD 阈值判断稳定性不适用；现有 SELEX 计算化改造（如 T-SELEX 前身）未整合 MD 级别的后验证。</li>
+<li><strong>精确研究问题</strong>: Can a T-SELEX-guided multiscale computational workflow (sequence generation → folding → docking → QM → MD → MM-PBSA) identify structurally stable and energetically favorable RNA aptamer candidates targeting oncogenic miR-10b arms?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」+「仅本文框架」混合，具体标注于各阶段）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验 SELEX（1990–）</td>
+<td>Ellington &amp; Szostak 经典 SELEX；SOMAmer、thioaptamer、X-Aptamer 变体</td>
+<td>真实结合筛选，高可靠性</td>
+<td>耗时、昂贵、周期长</td>
+<td>本文试图用计算替代实验循环</td>
+</tr>
+<tr>
+<td>计算 SELEX 化（2010s–）</td>
+<td>序列生成算法 + 二级结构预测 + 对接评分</td>
+<td>快速、低成本、可并行</td>
+<td>缺乏动态验证，假阳性高</td>
+<td>本文的 T-SELEX 框架即属此阶段</td>
+</tr>
+<tr>
+<td>RNA 结构预测工具</td>
+<td>RNAfold（二级结构）、RNAComposer（三级结构）</td>
+<td>成熟、易用</td>
+<td>三级结构精度有限，MFE 单一构象不代表 ensemble</td>
+<td>本文使用二者作为流程组件</td>
+</tr>
+<tr>
+<td>RNA-RNA 对接</td>
+<td>HDOCK、IntaRNA</td>
+<td>可处理 RNA-RNA 体系</td>
+<td>评分函数不精确，忽略构象动态</td>
+<td>本文用 HDOCK 做虚拟筛选，IntaRNA 做交互预测</td>
+</tr>
+<tr>
+<td>MD 后验证（2020s–）</td>
+<td>常规 RMSD/RMSF/Rg 分析</td>
+<td>提供动态信息</td>
+<td>RNA 高柔性导致 RMSD 阈值判断失效</td>
+<td>本文提出 τ（changepoint 数）+ RMSD 面积 + mμ 复合指标</td>
+</tr>
+<tr>
+<td>QM 级评估</td>
+<td>GFN2-xTB 半经验方法</td>
+<td>电子结构信息</td>
+<td>计算成本高，仅适用于小体系</td>
+<td>本文用于 top 复合物的电子稳定性评估</td>
+</tr>
+</tbody>
+</table>
+<p><em>（注：前两阶段为经外部核验的领域常识；后三阶段为本文方法组件，属「仅本文框架」描述。）</em></p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RNA 高柔性导致 RMSD 分析失效</td>
+<td>短 RNA 复合物 RMSD 常超 3 nm，传统阈值判断无法区分稳定与不稳定体系</td>
+<td>RNA 缺乏蛋白的紧密疏水核心，loop 和末端区域大幅摆动</td>
+<td>Methodology 节 "Stability Metrics" 段：短 RNA 因 hairpin loops 和 exterior tails 导致 RMSD 高</td>
+</tr>
+<tr>
+<td>实验 SELEX 周期长成本高</td>
+<td>需数周至数月多轮筛选扩增</td>
+<td>实验循环的固有耗时</td>
+<td>Introduction 节：SELEX 耗时、昂贵、成功率不确定</td>
+</tr>
+<tr>
+<td>单步虚拟筛选假阳性高</td>
+<td>仅靠对接分数无法区分真正稳定结合与偶然匹配</td>
+<td>对接评分函数忽略构象动态和溶剂效应</td>
+<td>本文引入 MD + MM-PBSA 多级验证</td>
+</tr>
+<tr>
+<td>计算流程碎片化</td>
+<td>序列生成、结构预测、对接、验证各步骤独立，缺乏统一框架</td>
+<td>缺乏整合性计算 SELEX 框架</td>
+<td>Introduction 节：T-SELEX 旨在统一全流程</td>
+</tr>
+<tr>
+<td>RNA 三级结构预测精度有限</td>
+<td>RNAComposer 生成结构仅作起始构象</td>
+<td>力场和采样限制</td>
+<td>Methodology 节：结构作为 docking 起始构象，需 MD 进一步优化</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>:
+一个多尺度计算流水线：BRA 序列生成 → RNAfold 二级结构 → RNAComposer 三级结构 → HDOCK 对接 → GFN2-xTB QM 计算 → GROMACS MD 模拟（100 ns）→ MM-PBSA 结合自由能 → 新提出的稳定性指标（τ + RMSD 面积 + mμ）综合排序。</p>
+<p><strong>2) 核心洞察</strong>:
+- RNA-RNA 复合物的稳定性不能仅靠对接分数或单一 RMSD 值判断，需要结合「构象转变频率」（changepoint 数 τ）和「累积偏移量」（RMSD 面积）两个互补维度。
+- 即使适配体和靶标各自折叠为复杂二级/三级结构，局部 Watson-Crick 配对仍可在 loop 和末端区域发生，形成「部分互补 + 结构识别」的混合结合模式。
+- 对接排名与 MD 稳定性排名可能不一致（如 aptamer557 对接最优但 MD 稳定性并非最佳），多级验证可提供更全面的候选排序。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>:
+- 对高度柔性的核酸体系，传统蛋白导向的稳定性指标（如单一 RMSD 阈值）需要重新设计；「事件频率 + 累积幅度」的二维指标思路可迁移至其他高柔性生物分子体系。
+- 计算筛选流程的每一级都可能改变候选排名，多级验证不是可选项而是必要步骤。
+- 将实验方法学逻辑（SELEX 的富集-扩增循环）映射为计算流程（生成-筛选-验证循环），是一种可推广的方法学设计模式。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: miR-10b 靶标序列（pre-miR-10b、miR-10b-5p、miR-10b-3p，来自 miRBase）</li>
+<li><strong>输出</strong>: 排序后的适配体候选列表，附带对接分数、QM 能量、MD 稳定性指标（τ、RMSD 面积、mμ）和 MM-PBSA 结合能</li>
+<li><strong>模块</strong>:
+  1. 序列生成（BRA 算法，1100 条 22-mer）
+  2. 二级结构预测（RNAfold，MFE 结构）
+  3. 三级结构建模（RNAComposer）
+  4. 虚拟筛选（HDOCK 对接，每复合物最多 100 poses，取 top 10 高置信模型）
+  5. 后对接分析（氢键、π-π 堆积分析，Discovery Studio + 自定义 Perl 脚本）
+  6. QM 计算（GFN2-xTB 单点能，top 5 模型）
+  7. MD 模拟（GROMACS，AMBER 力场，TIP3P 水盒子，100 ns，40 个复合物）
+  8. 稳定性分析（RMSD、RMSF、Rg、τ、RMSD 面积、mμ）
+  9. MM-PBSA 结合自由能计算</li>
+<li><strong>训练</strong>: 无监督/无训练过程，纯物理模拟 + 经验评分</li>
+<li><strong>工具</strong>: RNAfold, RNAComposer, HDOCK, GFN2-xTB, GROMACS, MM-PBSA (gmx_MMPBSA), Discovery Studio, 自定义 Perl/Python 脚本</li>
+<li><strong>反馈回路</strong>: 无显式反馈回路；各模块串联执行，前级输出作为后级输入</li>
+<li><strong>假设</strong>: (1) MFE 结构可作为合理起始构象；(2) 对接 poses 能覆盖天然结合模式；(3) 100 ns MD 足以评估相对稳定性；(4) MM-PBSA 在 RNA-RNA 体系中的相对排序具有参考价值</li>
+</ul>
+<p><strong>文字流程</strong>:
+BRA 生成 1100 条序列 → RNAfold 预测二级结构（排除 MFE=0 的未折叠序列，保留 819 条）→ RNAComposer 建模三级结构 → HDOCK 对接至三个靶标 → 按对接分数排序 → top 复合物进行氢键/π-π 分析 → top 5 复合物进行 GFN2-xTB 单点能计算 → 40 个复合物进行 100 ns MD → 计算 RMSD/RMSF/Rg/τ/RMSD 面积/mμ → MM-PBSA 结合能 → 综合排序确定最终候选。</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BRA 序列生成</td>
+<td>生成多样化的 22-mer 适配体序列库</td>
+<td>提供初始候选空间</td>
+<td>输入：随机种子/碱基分布；输出：1100 条序列</td>
+<td>Methods 节 "Data Generation"</td>
+<td>无候选池，流程无法启动</td>
+</tr>
+<tr>
+<td>RNAfold 二级结构预测</td>
+<td>预测 MFE 二级结构，过滤未折叠序列</td>
+<td>确保候选具有可折叠的稳定结构</td>
+<td>输入：序列；输出：MFE 结构 + ΔG</td>
+<td>Methods 节：819/1100 条通过折叠筛选</td>
+<td>保留未折叠序列将增加假阳性</td>
+</tr>
+<tr>
+<td>RNAComposer 三级结构建模</td>
+<td>从二级结构生成三维坐标</td>
+<td>为对接提供起始构象</td>
+<td>输入：二级结构；输出：PDB 结构</td>
+<td>Methods 节</td>
+<td>无三维结构则无法对接</td>
+</tr>
+<tr>
+<td>HDOCK 虚拟筛选</td>
+<td>预测适配体-靶标结合模式并评分</td>
+<td>初步筛选高亲和候选</td>
+<td>输入：适配体+靶标 PDB；输出：对接分数、poses</td>
+<td>Results 表 1：aptamer557 得分 −545.96</td>
+<td>仅靠此模块则缺乏动态验证</td>
+</tr>
+<tr>
+<td>氢键/π-π 分析</td>
+<td>统计界面相互作用</td>
+<td>理解结合模式</td>
+<td>输入：对接 poses；输出：相互作用计数</td>
+<td>Results 节 "Interaction Bonds"</td>
+<td>无法区分静态有利与动态稳定</td>
+</tr>
+<tr>
+<td>GFN2-xTB QM 计算</td>
+<td>评估电子结构稳定性</td>
+<td>提供比力场更精确的电子级信息</td>
+<td>输入：top 5 复合物结构；输出：总能量、HOMO-LUMO gap</td>
+<td>Results 图：aptamer577 model 2 总能量 −3007.37 Eh</td>
+<td>失去电子级分辨率，但影响有限（仅 top 5）</td>
+</tr>
+<tr>
+<td>MD 模拟（GROMACS）</td>
+<td>评估复合物动态稳定性</td>
+<td>核心验证模块</td>
+<td>输入：对接复合物；输出：轨迹</td>
+<td>Results 图：所有复合物 RMSD &lt; 3 nm</td>
+<td>失去动态信息，无法区分稳定与不稳定</td>
+</tr>
+<tr>
+<td>τ + RMSD 面积 + mμ</td>
+<td>量化稳定性</td>
+<td>解决 RNA 高柔性下 RMSD 阈值失效问题</td>
+<td>输入：RMSD 轨迹；输出：τ、面积、mμ</td>
+<td>Methods 节 "Stability Metrics"；Results：aptamer331 τ=2 最稳定</td>
+<td>回到传统 RMSD 判断，将误分类高柔性稳定体系</td>
+</tr>
+<tr>
+<td>MM-PBSA 结合能</td>
+<td>估算结合自由能</td>
+<td>提供热力学排序</td>
+<td>输入：MD 轨迹；输出：ΔG_bind</td>
+<td>Results 图：aptamer331 model 1/5 达 −660.282/−544.148 kJ/mol</td>
+<td>失去热力学排序，仅靠动力学指标</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1) Changepoint detection（PELT 算法）代价函数</strong>:
+$$C = \sum_{i=1}^{m} \left( \sum_{t=\tau_{i-1}+1}^{\tau_i} (x_t - \mu_i)^2 \right) + \beta m$$</p>
+<ul>
+<li>$x_t$: 第 t 帧的 RMSD 值</li>
+<li>$\mu_i$: 第 i 段的均值</li>
+<li>$\tau_i$: 第 i 个 changepoint 位置</li>
+<li>$m$: 分段数</li>
+<li>$\beta$: 惩罚参数，控制分段数量与拟合优度的平衡</li>
+<li><strong>用途</strong>: 识别 RMSD 轨迹中统计性质发生显著变化的时刻，τ = changepoint 总数，越小表示构象转变越少、越稳定</li>
+<li><strong>直觉</strong>: 将 RMSD 时间序列分割为若干统计均匀的片段，片段越多说明系统频繁在不同构象状态间切换</li>
+</ul>
+<p><strong>2) RMSD 面积（ARMSD）</strong>:
+$$A_{RMSD} = \int_a^b f(x) \, dx$$</p>
+<ul>
+<li>$f(x)$: RMSD 随时间变化的函数</li>
+<li>$[a, b]$: 模拟时间区间</li>
+<li><strong>离散近似</strong>: 使用复合 Simpson 1/3 法则
+$$\int_a^b f(x) \, dx \approx \frac{1}{3}h \left[ f(x_0) + 4\sum_{i=1}^{n/2} f(x_{2i-1}) + 2\sum_{i=1}^{n/2-1} f(x_{2i}) + f(x_n) \right]$$</li>
+<li>$h = (b-a)/n$，$n$ 为偶数子区间数</li>
+<li><strong>误差界</strong>: $E = -\frac{1}{180} h^4 (b-a) f^{(4)}(\xi)$，$\xi \in [a,b]$</li>
+<li><strong>用途</strong>: 量化 RMSD 轨迹的累积偏移量，面积越大表示整体偏离起始构象越远</li>
+<li><strong>直觉</strong>: 将 RMSD 曲线下的面积作为「总构象偏移量」的标量度量</li>
+</ul>
+<p><strong>3) 复合稳定性指标 mμ</strong>:
+$$m_\mu = \alpha \cdot \tau + (1-\alpha) \cdot A_{RMSD}$$</p>
+<ul>
+<li>$\alpha$: 权重因子，平衡 changepoint 频率与 RMSD 面积贡献</li>
+<li><strong>用途</strong>: 综合「转变频率」与「偏移幅度」两个维度，单一标量排序复合物稳定性</li>
+<li><strong>直觉</strong>: 低 τ（少转变）+ 低面积（小偏移）= 高稳定性</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>:
+- 1100 条 BRA 生成的 22-mer RNA 适配体序列
+- 过滤后 819 条折叠适配体用于对接
+- 3 个靶标：pre-miR-10b、miR-10b-5p、miR-10b-3p
+- 40 个复合物进行 MD 模拟（每靶标 top 适配体 × 多模型）</p>
+<p><strong>指标</strong>:
+- 对接分数（HDOCK score，负值越优）
+- 置信分数（confidence score）
+- 适应度分数（fitness score）
+- 总能量、HOMO-LUMO gap（QM）
+- RMSD、RMSF、Rg（MD）
+- τ（changepoint 数）、ARMSD（RMSD 面积）、mμ（复合指标）
+- MM-PBSA 结合自由能（kJ/mol）</p>
+<p><strong>基线/对比</strong>:
+- 无实验基线（纯计算研究）
+- 对比维度：不同适配体之间、同一适配体不同 docking models 之间、5p vs 3p 臂之间</p>
+<p><strong>评测协议</strong>:
+- 对接：每复合物生成最多 100 poses，取 top 10 高置信模型
+- 从 top 10 中选 top 5 进行 QM 计算
+- 40 个复合物进行 100 ns MD（AMBER 力场，TIP3P 水盒子）
+- MM-PBSA 在最后 5000 帧上平均</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IntaRNA 交互预测</td>
+<td>适配体对 13 种致癌 miRNA 有差异结合</td>
+<td>13 种 miRNA 靶标对比</td>
+<td>miR-25-5p 平均交互能最强（−5.013 kcal/mol）</td>
+<td>适配体库对靶标有选择性</td>
+<td>不能证明功能性抑制</td>
+<td>Results 图 1</td>
+</tr>
+<tr>
+<td>HDOCK 虚拟筛选</td>
+<td>存在对接分数显著优于其他的适配体</td>
+<td>819 适配体 × 3 靶标</td>
+<td>aptamer557 对 3p 得分 −545.96；aptamer899 对 5p 得分 −482.55</td>
+<td>计算筛选可识别 top 候选</td>
+<td>对接分数不等于实验亲和力</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>氢键/π-π 分析</td>
+<td>top 适配体形成稳定分子间接触</td>
+<td>top 2 适配体 × 5 models</td>
+<td>第一排名适配体氢键数多于第二排名</td>
+<td>对接排名与相互作用强度相关</td>
+<td>静态分析无法反映动态稳定性</td>
+<td>Results 图 3</td>
+</tr>
+<tr>
+<td>QM 计算</td>
+<td>电子结构稳定性与对接排名相关</td>
+<td>top 5 复合物</td>
+<td>aptamer577 model 2 总能量最低（−3007.37 Eh）</td>
+<td>电子级计算可区分构象稳定性</td>
+<td>单点能未考虑热力学 ensemble</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>MD 模拟（RMSD）</td>
+<td>复合物在 100 ns 内保持结构完整性</td>
+<td>40 复合物</td>
+<td>所有复合物 RMSD &lt; 3 nm；aptamer331 对 5p 最稳定（τ=2）</td>
+<td>多数复合物动态稳定</td>
+<td>RMSD 单独无法完全区分稳定性</td>
+<td>Results 图 5</td>
+</tr>
+<tr>
+<td>τ + ARMSD + mμ</td>
+<td>新指标可区分稳定与不稳定复合物</td>
+<td>40 复合物对比</td>
+<td>aptamer331（5p）和 aptamer274（3p）mμ 最低</td>
+<td>复合指标优于单一 RMSD 判断</td>
+<td>指标未经实验验证</td>
+<td>Results 图 6</td>
+</tr>
+<tr>
+<td>MM-PBSA</td>
+<td>结合自由能与动力学稳定性一致</td>
+<td>40 复合物</td>
+<td>aptamer331 model 1/5 达 −660.282/−544.148 kJ/mol</td>
+<td>稳定复合物具有更负结合能</td>
+<td>MM-PBSA 为近似方法，非实验 Kd</td>
+<td>Results 图 7</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文仅覆盖计算设计阶段，未包含任何体外/体内实验验证（无 SPR、ITC、凝胶位移等生化结合实验）。</li>
+<li><strong>oracle/真值输入</strong>: 无实验真值；所有「稳定性」「亲和力」均为计算预测值。对接分数、MM-PBSA 能量为相对比较指标，非绝对亲和力。</li>
+<li><strong>端到端状态</strong>: 流程为「计算端到端」，即从序列到候选的完整计算管线，但未闭环到实验验证。</li>
+<li><strong>算力成本</strong>: 1100 序列 × 3 靶标的对接 + 40 复合物 × 100 ns MD + top 5 QM 计算，属于中等规模计算任务；作者未提供具体 GPU/CPU 时数。</li>
+<li><strong>历史数据依赖</strong>: 依赖 miRBase 序列数据库；BRA 序列生成不依赖训练数据。</li>
+<li><strong>模型依赖</strong>: 依赖 HDOCK 评分函数、AMBER 力场、GFN2-xTB 半经验方法、MM-PBSA 隐式溶剂模型的准确性。</li>
+<li><strong>最难情形</strong>: RNA 三级结构预测精度有限；RNA-RNA 对接缺乏基准数据集验证；100 ns 时间尺度可能不足以捕捉大尺度构象重排。</li>
+<li><strong>群体/领域边界</strong>: 结论仅适用于 miR-10b 体系的计算筛选；不可外推至其他 miRNA 或实验条件下的结合行为。</li>
+<li><strong>不确定性</strong>: 作者未提供误差棒、重复模拟或力场敏感性分析；MM-PBSA 结果对介电常数（设为 100）敏感。</li>
+</ul>
+<p><strong>有边界的复述</strong>: 在 T-SELEX 计算框架下，对 819 条可折叠 22-mer RNA 适配体进行对接筛选和 100 ns MD 验证，aptamer557（对 3p）和 aptamer899（对 5p）具有最优对接分数，aptamer331（对 5p）和 aptamer274（对 3p）具有最优动态稳定性指标；这些结论仅限于计算预测层面，未经实验验证。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>纯计算预测，缺乏实验验证</td>
+<td>结论限于 in silico 预测和相对比较</td>
+<td>需要生化结合实验（如表面等离子共振、凝胶迁移实验）和功能抑制实验验证</td>
+<td>Conclusion 节</td>
+</tr>
+<tr>
+<td>结合机制尚不明确</td>
+<td>无法确定是部分 Watson-Crick 配对还是结构识别主导</td>
+<td>未来需澄清结合主要由结构识别还是反义配对驱动</td>
+<td>Conclusion 节</td>
+</tr>
+<tr>
+<td>计算资源限制</td>
+<td>1100 条序列库规模受限于下游计算成本</td>
+<td>更大文库和更长的模拟时间可提高筛选可靠性</td>
+<td>Methods 节（隐含）</td>
+</tr>
+<tr>
+<td>单一 MFE 构象假设</td>
+<td>RNAfold MFE 结构作为唯一代表构象，忽略结构 ensemble</td>
+<td>未明确提及</td>
+<td>Methods 节（隐含）</td>
+</tr>
+</tbody>
+</table>
+<p><em>（注：作者在 Conclusion 中明确承认前两项局限；后两项为 [Analysis] 从方法描述中推断的隐含约束，非作者明确表述。）</em></p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无实验验证的「top 候选」可能为假阳性</td>
+<td>对接分数和 MM-PBSA 能量与真实亲和力相关性有限</td>
+<td>计算筛选的最终价值取决于实验命中率</td>
+<td>对 top 候选进行 SPR/ITC 结合实验</td>
+<td>全文无任何实验数据</td>
+</tr>
+<tr>
+<td>100 ns MD 对 RNA 体系可能不足</td>
+<td>RNA 构象重排时间尺度可达 μs-ms</td>
+<td>短模拟可能高估或低估稳定性</td>
+<td>延长模拟至 μs 级或使用增强采样</td>
+<td>Methods 节：100 ns 生产模拟</td>
+</tr>
+<tr>
+<td>介电常数 ε=100 的 MM-PBSA 设定偏高</td>
+<td>高介电常数可能低估静电贡献</td>
+<td>影响结合能排序</td>
+<td>进行 ε 敏感性分析（ε=1, 4, 80）</td>
+<td>Methods 节 MM-PBSA 部分</td>
+</tr>
+<tr>
+<td>仅用 MFE 结构作为对接起始构象</td>
+<td>RNA 溶液态存在多种构象，单一构象可能错过真实结合模式</td>
+<td>可能遗漏仅在其他构象下可结合的适配体</td>
+<td>使用结构 ensemble 或多构象对接</td>
+<td>Methods 节：MFE 作为代表构象</td>
+</tr>
+<tr>
+<td>新指标 mμ 的 α 权重未做敏感性分析</td>
+<td>α 的选择可能影响最终排序</td>
+<td>指标鲁棒性未知</td>
+<td>对 α 进行扫描，检验排序稳定性</td>
+<td>Methods 节公式 6</td>
+</tr>
+<tr>
+<td>适配体库规模（1100）相对有限</td>
+<td>更大的序列空间可能包含更优候选</td>
+<td>筛选覆盖率有限</td>
+<td>扩大文库或使用智能采样策略</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>未与随机序列对照</td>
+<td>无法排除「任何适配体都能结合」的可能性</td>
+<td>缺乏阴性对照降低结论说服力</td>
+<td>加入随机 RNA 序列作为对照</td>
+<td>全文未提及对照实验</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:</p>
+<ol>
+<li>
+<p><strong>T-SELEX 框架的可迁移设计模式</strong>: 将实验 SELEX 的「多样性生成→选择→扩增」逻辑映射为「序列生成→计算筛选→多级验证」的计算流程。本课题（蛋白质结构相关计算）可借鉴此模式，将实验筛选逻辑映射为计算管线，例如将噬菌体展示库映射为计算序列生成 + 结构筛选。</p>
+</li>
+<li>
+<p><strong>RNA 体系稳定性评估的双维度指标（τ + ARMSD）</strong>: 针对高柔性生物分子，单一 RMSD 阈值失效时，可结合「构象转变频率」（changepoint 数）与「累积偏移量」（RMSD 面积）两个互补维度。此思路可迁移至蛋白质构象采样分析、 intrinsically disordered proteins（IDPs）的稳定性评估，或 MD 模拟中蛋白-配体复合物的构象稳定性判断。</p>
+</li>
+<li>
+<p><strong>多级计算筛选的排序不一致性</strong>: 本文显示对接最优（aptamer557）与 MD 稳定性最优（aptamer331/274）并不一致，说明不同计算层级可能给出不同排序。本课题（如分子对接 + MD 验证流程）应明确各层级的筛选标准，避免仅依赖单一指标。</p>
+</li>
+<li>
+<p><strong>RNA-RNA 对接的特殊挑战</strong>: 与蛋白-蛋白对接不同，RNA-RNA 体系缺乏明确结合口袋，需依赖 loop 和末端区域的局部互补。本课题若涉及 RNA-蛋白互作（如 RBP 结合），可借鉴「局部 Watson-Crick + 结构识别」的混合结合模式分析思路。</p>
+</li>
+<li>
+<p><strong>QM 级评估作为中间验证层</strong>: 在 MD 之前插入 GFN2-xTB 半经验 QM 计算，以电子结构指标（总能量、HOMO-LUMO gap）筛选构象。此思路可迁移至蛋白-配体体系中的反应性评估或电荷转移分析。</p>
+</li>
+<li>
+<p><strong>计算流程的模块化设计</strong>: 每个模块（生成、折叠、对接、QM、MD、MM-PBSA）独立可替换，便于后续升级单个组件（如用 AlphaFold3 替代 RNAComposer）。本课题可借鉴此模块化架构，便于集成新工具。</p>
+</li>
+<li>
+<p><strong>数据共享实践</strong>: 作者将 docking 结果公开于 GitHub，支持可重复性。本课题应同样考虑中间产物（对接 poses、MD 轨迹）的开放共享。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>T-SELEX 前作</strong>: 作者在 Introduction 中提及「we previously introduced T_SELEX」，表明该框架有前期工作基础（未提供具体引用文献，需查证）。</li>
+<li><strong>经典 SELEX 文献</strong>: Ellington &amp; Szostak (1990) 首次引入适配体概念，本文在此基础上提出计算化变体。</li>
+<li><strong>RNA 结构预测工具链</strong>: RNAfold（ViennaRNA 包）和 RNAComposer 为 RNA 计算领域标准工具，与蛋白质结构预测中的 AlphaFold/Rosetta 形成类比。</li>
+<li><strong>HDOCK 对接</strong>: 该工具主要用于蛋白-蛋白/蛋白-核酸对接，本文将其扩展至 RNA-RNA 体系，与蛋白-配体对接（如 AutoDock Vina、Glide）形成对照。</li>
+<li><strong>MM-PBSA 方法</strong>: 广泛用于蛋白-配体结合自由能估算，本文将其应用于 RNA-RNA 体系，与蛋白体系中的同类计算（如 Kollman et al., 2000）方法学同源。</li>
+<li><strong>changepoint detection（PELT）</strong>: Killick et al. (2012) 提出的 Pruned Exact Linear Time 算法，本文首次将其应用于 RNA MD 轨迹的 RMSD 分析，属方法学创新。</li>
+<li><strong>与 AlphaFold 类方法的关联 [Analysis]</strong>: 本文未使用深度学习结构预测，但 RNAComposer 的局限性（依赖单一 MMF 构象）提示了深度学习方法（如 AlphaFold3、RoseTTAFold2NA）在 RNA 结构预测中的潜在替代价值。</li>
+<li><strong>与蛋白适配体设计的类比 [Analysis]</strong>: 蛋白适配体（如 DARPin、affibody）设计中的计算筛选流程与本文 RNA 适配体流程高度相似，可互相借鉴筛选策略和验证层级设计。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<p><strong>候选 1: 将 T-SELEX 框架迁移至蛋白适配体设计</strong>
+- <strong>来源局限/观察</strong>: 本文的 T-SELEX 框架仅针对 RNA 适配体，但其「生成→筛选→多级验证」逻辑可迁移至蛋白适配体（如 DARPin、affibody、monobody）设计。
+- <strong>核心假设</strong>: 将 BRA 序列生成替换为蛋白序列设计算法（如 ProteinMPNN、EvoDiff），将 RNA 折叠替换为 AlphaFold2/ESMFold 结构预测，将 HDOCK 替换为蛋白-蛋白对接（如 ClusPro、HADDOCK），可构建蛋白适配体计算设计管线。
+- <strong>初步方法</strong>: 以 BRA 逻辑生成蛋白序列库 → AlphaFold2 预测结构 → 蛋白-蛋白对接筛选 → MD 验证 + MM-PBSA 评估。
+- <strong>验证方式</strong>: 对已知蛋白适配体-靶标对进行回测，比较计算排名与实验亲和力。
+- <strong>创新状态</strong>: unverified</p>
+<p><strong>候选 2: 将 τ + ARMSD 复合稳定性指标推广至蛋白-配体 MD 分析</strong>
+- <strong>来源局限/观察</strong>: 本文提出的 mμ 指标针对 RNA 高柔性体系，但蛋白-配体复合物同样面临 RMSD 阈值判断失效问题（尤其柔性 loop 区域）。
+- <strong>核心假设</strong>: mμ 指标可推广至蛋白-配体体系，提供比单一 RMSD 更鲁棒的稳定性排序。
+- <strong>初步方法</strong>: 对多个蛋白-配体 MD 轨迹计算 τ、ARMSD、mμ，与已知实验亲和力或热稳定性数据对比。
+- <strong>验证方式</strong>: 使用蛋白数据库（如 PDBbind）中的复合物进行基准测试。
+- <strong>创新状态</strong>: unverified</p>
+<p><strong>候选 3: 深度学习结构预测替代 RNAcomposer 的 T-SELEX 升级版</strong>
+- <strong>来源局限/观察</strong>: 本文使用 RNAcomposer 进行三级结构预测，但其依赖单一 MFE 构象，可能遗漏重要构象状态。深度学习方法（如 AlphaFold3、RoseTTAFold2NA）已支持 RNA 结构预测。
+- <strong>核心假设</strong>: 用深度学习方法替代 RNAcomposer 可提高 T-SELEX 筛选的准确性。
+- <strong>初步方法</strong>: 对同一适配体库分别用 RNAcomposer 和深度学习方法建模，比较下游对接和 MD 结果。
+- <strong>验证方式</strong>: 对已知 RNA 适配体-靶标复合物进行回测。
+- <strong>创新状态</strong>: unverified</p>
+<p><strong>候选 4: 蛋白构象采样中的 changepoint 检测应用</strong>
+- <strong>来源局限/观察</strong>: 本文的 PELT changepoint 检测用于识别 RMSD 轨迹中的构象转变，此方法可迁移至蛋白折叠/构象采样分析。
+- <strong>核心假设</strong>: PELT 可自动识别蛋白 MD 中的构象状态切换，替代人工设定 RMSD 聚类阈值。
+- <strong>初步方法</strong>: 对蛋白折叠轨迹应用 PELT，比较检测到的 changepoint 与已知折叠中间态。
+- <strong>验证方式</strong>: 使用已知折叠路径的蛋白体系（如 villin、trp-cage）进行验证。
+- <strong>创新状态</strong>: unverified</p>
+<p><strong>候选 5: 多级计算筛选的排序一致性分析框架</strong>
+- <strong>来源局限/观察</strong>: 本文显示对接排名与 MD 稳定性排名不一致，但未系统分析这种不一致的模式。
+- <strong>核心假设</strong>: 不同计算层级（对接、QM、MD、MM-PBSA）的排名差异存在系统性模式，可据此优化筛选策略。
+- <strong>初步方法</strong>: 对多个 RNA 适配体-靶标体系进行全流程计算，统计分析各层级排名的相关性和差异来源。
+- <strong>验证方式</strong>: 若存在实验数据，可检验哪一层级排名与实验最相关。
+- <strong>创新状态</strong>: unverified</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methodology, results, discussion, conclusion) without figures, tables, or supplementary material</li>
+<li><strong>Assessment boundary</strong> Computational design and evaluation of RNA aptamers targeting miR-10b using T-SELEX, docking, QM calculations, MD simulations, and MM-PBSA analysis</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose a multiscale computational workflow (T-SELEX) integrating sequence generation, RNA folding, docking, QM calculations, MD simulations, and MM-PBSA analysis to design and evaluate RNA aptamer candidates targeting oncogenic miR-10b and its mature 5p and 3p arms. They identify specific aptamers (e.g., aptamer557 for miR-10b-3p, aptamer899 for miR-10b-5p) as top candidates and introduce a composite stability metric (mμ) combining RMSD area integration and changepoint detection for assessing RNA complex stability.</li>
+<li><strong>Visible evidence base</strong> Text descriptions of results; references to figures (Figures 1-8 approximately), tables (Table 1), and supplementary materials (Tables S1-S10, Figures S1-S7, S12-S13) that were not provided</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, tables, and supplementary information; specific numerical data for docking scores beyond top candidates; MD simulation parameters and convergence criteria; QM calculation details; validation metrics for the stability metric algorithm</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This manuscript presents a computationally intensive pipeline for RNA aptamer design targeting miR-10b, an oncogenic microRNA of clinical relevance. The integration of multiple computational methods is commendable in scope, and the introduction of a composite stability metric (mμ) for RNA complex analysis represents a potentially useful methodological contribution. However, the manuscript suffers from several critical issues that undermine confidence in the conclusions. First, the abstract contains a significant internal inconsistency: it states that the library was screened against miR-10b targets, yet the results section reports the strongest interactions with hsa-miR-25-5p, hsa-miR-122-5p, and hsa-miR-155-5p, which are not the stated targets. This discrepancy is not adequately explained. Second, the validation of the computational predictions is entirely absent; no experimental data, benchmarking against known aptamer-target pairs, or comparison with alternative computational methods is provided. Third, the novelty of the approach is overstated, as the individual components (RNAfold, RNAComposer, HDOCK, GFN2-xTB, GROMACS, MM-PBSA) are all established methods, and the claimed novelty of the T-SELEX framework and mμ metric requires more rigorous benchmarking and comparison with existing approaches. The manuscript would benefit from substantial revision, including clarification of the target selection rationale, addition of validation studies, and more careful interpretation of results relative to the stated aims.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians working on RNA-targeted drug discovery would find the integrated pipeline of interest, particularly the methodological aspects of combining docking, QM calculations, and MD simulations with a novel stability metric. Researchers focused on microRNA therapeutics, especially those targeting miR-10b in cancer contexts, may find the identified aptamer candidates worth pursuing for experimental validation. Methodologists developing computational tools for RNA-RNA interaction analysis would be interested in the mμ stability metric, provided it is properly validated and benchmarked.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong>
+  1. The integration of multiple computational methods (sequence generation, folding, docking, QM, MD, MM-PBSA) into a unified pipeline is comprehensive and reflects current best practices in computational drug discovery.
+  2. The introduction of a composite stability metric (mμ) combining RMSD area integration with changepoint detection addresses a real need in RNA dynamics analysis, where conventional RMSD interpretation is often insufficient.
+  3. The authors acknowledge limitations of individual methods (e.g., MFE structure as approximation, HDOCK scoring function limitations) and appropriately frame results as computational predictions requiring experimental validation.
+  4. The study addresses a clinically relevant target (miR-10b) with established roles in cancer metastasis, increasing the translational relevance of the work.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Internal consistency and claim-target alignment</li>
+<li><strong>Claim pointer</strong> The abstract states the study aims to design aptamers targeting miR-10b and its mature 5p and 3p arms, and the introduction reiterates this focus. However, the results section reports that "hsa-miR-25-5p consistently shows the most favorable interaction profile" and identifies hsa-miR-25-5p, hsa-miR-122-5p, and hsa-miR-155-5p as top candidates based on interaction energy analysis.</li>
+<li><strong>Evidence pointer</strong> Abstract; Results and Discussion, "RNA-RNA Interaction Predictions" section</li>
+<li><strong>Concern</strong> The manuscript presents a fundamental inconsistency between the stated target (miR-10b) and the reported findings. The interaction energy analysis identifies hsa-miR-25-5p, hsa-miR-122-5p, and hsa-miR-155-5p as having the strongest interactions, yet these are not the targets the study claims to address. This discrepancy is not explained or discussed. If the aptamer library was screened against 13 oncogenic miRNAs including miR-10b, the rationale for including these additional targets and the implications of finding stronger interactions with non-target miRNAs must be addressed. This issue fundamentally affects the interpretation of the results and the validity of the stated conclusions about miR-10b targeting.</li>
+<li><strong>Why it matters</strong> The central claim of the manuscript is the design of aptamers targeting miR-10b. If the computational screening identifies stronger interactions with other miRNAs, this either (a) undermines the specificity of the designed aptamers for miR-10b, or (b) indicates that the screening was broader than stated, requiring reinterpretation of the results. Without clarification, the reader cannot assess whether the identified aptamers are genuinely selective for miR-10b or whether they might have off-target effects on other miRNAs.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must clarify the scope of the screening (was it against 13 miRNAs or only miR-10b targets?) and provide a discussion of the specificity of the top aptamer candidates. If other miRNAs show stronger interactions, the authors should either explain why the focus remains on miR-10b or acknowledge that the aptamers may not be selective. Ideally, the authors should provide a comparative analysis of aptamer binding to miR-10b versus the other identified miRNAs to assess selectivity.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Validation and benchmarking</li>
+<li><strong>Claim pointer</strong> The manuscript claims the T-SELEX workflow "identifies computationally promising aptamer candidates" and that the stability metric mμ provides a "robust post-MD analytical tool for RNA-RNA interaction studies."</li>
+<li><strong>Evidence pointer</strong> Abstract; Methodology, "Stability Metrics" section; Conclusion</li>
+<li><strong>Concern</strong> The manuscript provides no validation of the computational predictions against experimental data or established benchmarks. No known aptamer-target pairs are used as positive controls to assess whether the docking scores, interaction energies, or stability metrics correlate with experimentally measured binding affinities. The mμ metric is introduced without benchmarking against existing stability measures or demonstrating its superiority over conventional RMSD analysis. The authors do not compare their results with those obtained from alternative computational methods (e.g., other docking tools, different force fields, or established RNA-RNA interaction prediction algorithms).</li>
+<li><strong>Why it matters</strong> Without validation, the reader cannot assess whether the computational predictions are reliable. The field of computational drug discovery is replete with examples where in silico predictions do not translate to experimental activity. The introduction of a new metric (mμ) without benchmarking is particularly problematic, as its interpretation and utility remain unclear. The claim that the workflow "identifies computationally promising aptamer candidates" is weakened by the absence of any evidence that the computational rankings correlate with actual binding affinity.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should include a validation section demonstrating that their pipeline can correctly identify known aptamer-target interactions (e.g., using experimentally validated aptamer-miRNA pairs as positive controls). The mμ metric should be benchmarked against existing stability measures (e.g., conventional RMSD, RMSF, radius of gyration) and its added value demonstrated. Ideally, the authors should also compare their docking and scoring results with those from alternative methods to show consistency or explain discrepancies.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological rigor and reproducibility</li>
+<li><strong>Claim pointer</strong> The methodology describes MD simulations using an "in-house PySMQM workflow" implemented within GROMACS, described as "a statistical mechanics and quantum mechanics extension we developed for RNA studies."</li>
+<li><strong>Evidence pointer</strong> Methodology, "Molecular Dynamics Simulations" section</li>
+<li><strong>Concern</strong> The description of the MD simulation protocol is insufficient for reproducibility. Key parameters are missing, including: the specific Amber force field version used, the salt concentration and ion type for neutralization, the temperature and pressure coupling algorithms and parameters, the integration time step, the cutoff schemes for nonbonded interactions, and the treatment of long-range electrostatics. The "PySMQM workflow" is mentioned but not described in sufficient detail for others to implement or evaluate it. The criteria for selecting the "best five models from the top four aptamer-miRNA complexes" for QM calculations are not clearly defined. Additionally, the manuscript states that 40 complexes were simulated, but the selection criteria for these 40 from the larger pool of candidates are not specified.</li>
+<li><strong>Why it matters</strong> Reproducibility is a fundamental requirement for computational studies. Without complete methodological details, other researchers cannot replicate the simulations or assess the validity of the results. The use of an in-house workflow that is not fully described raises concerns about the transparency and generalizability of the approach. The lack of clarity on complex selection criteria introduces potential selection bias that could affect the conclusions.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide complete simulation parameters in the methodology or supplementary information, including force field version, water model, ion concentration, ensemble parameters, and integration settings. The PySMQM workflow should be described in sufficient detail or made available. The criteria for selecting complexes for QM calculations and MD simulations should be explicitly stated.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interpretation of results and biological relevance</li>
+<li><strong>Claim pointer</strong> The manuscript concludes that "aptamer331 and aptamer274 consistently formed the most stable complexes with miR-10b-5p and miR-10b-3p, respectively" based on MD simulations and stability metrics, while also noting that "partial Watson-Crick interactions were observed" suggesting a "hybrid binding mechanism."</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, "Molecular Dynamics" and "MM-PBSA" sections; Conclusion</li>
+<li><strong>Concern</strong> The biological interpretation of the results is underdeveloped. The manuscript does not discuss whether the predicted binding modes are biologically plausible given the known structure and function of miR-10b. The observation of "partial Watson-Crick interactions" is presented as a novel finding, but the functional implications of this hybrid binding mechanism are not explored. The manuscript does not address whether the identified aptamers would be expected to inhibit miR-10b function in cellular contexts, nor does it discuss potential off-target effects given the sequence similarity between miR-10b and other miRNAs. The discrepancy between the docking rankings (aptamer557 for miR-10b-3p, aptamer899 for miR-10b-5p) and the MD-based stability rankings (aptamer274 for miR-10b-3p, aptamer331 for miR-10b-5p) is not reconciled.</li>
+<li><strong>Why it matters</strong> The ultimate goal of the study is to identify aptamers that could therapeutically target miR-10b. The biological relevance of the computational predictions is critical for this goal. The lack of discussion about how the predicted binding would translate to functional inhibition, and the unresolved discrepancy between different computational rankings, leaves the reader uncertain about which aptamers to prioritize for experimental validation.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a more detailed discussion of the biological implications of their findings, including how the predicted binding modes relate to miR-10b function. The discrepancy between docking and MD rankings should be addressed, with a clear recommendation on which aptamers should be prioritized for experimental testing and why. The authors should also discuss potential off-target effects and specificity considerations.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity and terminology</li>
+<li><strong>Affected element</strong> Abstract; Methodology</li>
+<li><strong>Evidence pointer</strong> Abstract; Methodology, "Data Generation and Virtual Screening" section</li>
+<li><strong>Issue</strong> The manuscript uses the term "T-SELEX" and "T_SELEX" interchangeably. The abstract uses "T-SELEX" while the methodology uses "T_SELEX." This inconsistency in terminology is confusing and should be standardized throughout.</li>
+<li>
+<p><strong>Required correction</strong> Standardize the terminology to a single form (e.g., "T-SELEX") and use it consistently throughout the manuscript, including the abstract, methodology, results, and conclusion.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data presentation</li>
+<li><strong>Affected element</strong> Results and Discussion, "Virtual Screening" section</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, "Virtual Screening" section; Table 1</li>
+<li><strong>Issue</strong> The manuscript states that "the top-scoring aptamer achieved a docking score of approximately -550 against miR-10b_3p and approximately -500 against miR-10b_5p" but does not specify which aptamer achieved these scores in the text. The specific aptamer identities are only available in Table 1, which was not provided for review.</li>
+<li>
+<p><strong>Required correction</strong> The text should explicitly identify the aptamers corresponding to the top docking scores for each target, even if the full data are presented in the table.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical analysis</li>
+<li><strong>Affected element</strong> Results and Discussion, "MM-PBSA" section</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, "MM-PBSA" section</li>
+<li><strong>Issue</strong> The MM-PBSA results are presented as comparative indicators, but no statistical analysis (e.g., standard deviations, confidence intervals, or significance testing) is reported. Given that MM-PBSA calculations are known to be sensitive to simulation length and conformational sampling, the absence of error estimates limits the interpretation of differences between aptamers.</li>
+<li>
+<p><strong>Required correction</strong> Provide standard deviations or other measures of uncertainty for the MM-PBSA binding energies, and indicate whether differences between aptamers are statistically significant.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Literature context</li>
+<li><strong>Affected element</strong> Introduction</li>
+<li><strong>Evidence pointer</strong> Introduction</li>
+<li><strong>Issue</strong> The introduction provides a general overview of aptamers and their advantages but does not adequately situate the work within the existing literature on computational aptamer design against miRNAs. The authors mention their previous introduction of T-SELEX but do not cite or discuss other computational approaches for RNA aptamer design, nor do they discuss previous attempts to target miR-10b with nucleic acid therapeutics.</li>
+<li>
+<p><strong>Required correction</strong> Expand the introduction to include a brief review of existing computational methods for RNA aptamer design and previous therapeutic approaches targeting miR-10b, to better establish the novelty and significance of the present work.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Figure quality and accessibility</li>
+<li><strong>Affected element</strong> Results and Discussion, all sections</li>
+<li><strong>Evidence pointer</strong> Figures 1-8 (not provided)</li>
+<li><strong>Issue</strong> The manuscript references multiple figures, but their content and quality cannot be assessed from the text alone. The figure captions are not included in the text, making it difficult to understand what each figure displays.</li>
+<li>
+<p><strong>Required correction</strong> Ensure that figure captions are comprehensive and self-explanatory, and that all figures are of sufficient resolution and quality for publication.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong>
+  1. The internal inconsistency between the stated target (miR-10b) and the reported strongest interactions (hsa-miR-25-5p, hsa-miR-122-5p, hsa-miR-155-5p) must be resolved (R1-M1).
+  2. The absence of any experimental validation or benchmarking against known aptamer-target pairs undermines confidence in the computational predictions (R1-M2).
+  3. The MD simulation protocol is insufficiently described for reproducibility, and the selection criteria for complexes subjected to QM calculations and MD simulations are not specified (R1-M3).
+  4. The discrepancy between docking-based and MD-based aptamer rankings is not reconciled, leaving uncertainty about which candidates should be prioritized (R1-M4).</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong></p>
+</li>
+<li><strong>Originality</strong>: Moderate. The integration of multiple computational methods into a unified pipeline is not entirely novel, as similar multiscale approaches have been reported for RNA-targeting drug design. The introduction of the mμ stability metric is a potentially original contribution, but its novelty and utility are not adequately demonstrated without benchmarking.</li>
+<li><strong>Scientific importance</strong>: Moderate. miR-10b is a clinically relevant oncogenic miRNA, and computational approaches to identify RNA aptamers against it could have translational value. However, the study is purely computational, and the lack of experimental validation limits the immediate scientific impact.</li>
+<li><strong>Interdisciplinary readership</strong>: Limited. The manuscript is primarily of interest to computational biologists and bioinformaticians specializing in RNA structure and drug design. The clinical relevance to cancer researchers is acknowledged but not developed sufficiently to attract a broader readership.</li>
+<li><strong>Technical soundness</strong>: Questionable. While the individual computational methods are established, the lack of validation, incomplete methodological details, and internal inconsistencies in the results undermine confidence in the technical rigor of the study.</li>
+<li>
+<p><strong>Readability for nonspecialists</strong>: Acceptable. The manuscript is generally well-written and accessible, with clear explanations of the computational methods. However, the technical details of the stability metric and the significance of the results may be challenging for nonspecialists to fully appreciate.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript presents a computationally intensive pipeline with potentially useful methodological contributions, but the internal inconsistency regarding target selection, the absence of validation, and the incomplete methodological details prevent the conclusions from being supported by the evidence presented. Substantial revision and additional work, including benchmarking and clarification of the target selection rationale, would be required before the case for the computational aptamer candidates is established.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the T-SELEX workflow "identifies computationally promising aptamer candidates" is unsupported without validation against experimental data or known aptamer-target pairs.</li>
+<li>The claim that the mμ stability metric provides a "robust post-MD analytical tool" is unsupported without benchmarking against existing stability measures.</li>
+<li>The identification of aptamer557 and aptamer899 as top binders to miR-10b-3p and miR-10b-5p, respectively, is based solely on docking scores and cannot be assessed for reliability without experimental validation.</li>
+<li>The conclusion that "aptamer331 and aptamer274 consistently formed the most stable complexes" is based on MD simulations and stability metrics, but the discrepancy with docking rankings is not resolved, and the biological significance of these findings is not established.</li>
+<li>The statement that "partial Watson-Crick interactions were observed" suggesting a "hybrid binding mechanism" is presented as a finding, but the evidence for this mechanism is not clearly presented in the text provided.</li>
+<li>The claim that the workflow "enables large-scale identification and structural evaluation of computationally promising RNA aptamer candidates" is not supported by any comparison with alternative methods or demonstration of scalability beyond the 1100-aptamer library.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

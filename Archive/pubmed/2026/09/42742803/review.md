@@ -1,0 +1,87 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors apply an equal-weighted multi-parameter Gaussian network model (ewmGNM) to three SHP-2 systems (wild-type closed, E76K open, and E76K with SHP099) and report that the E76K mutation increases global flexibility and disrupts N-SH2/PTP coupling, that SHP099 largely restores closed-state dynamics with residual flexibility, and that transfer entropy analysis identifies the N-SH2 domain as a possible new entropy source in the open state, tentatively proposed as a novel allosteric site.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or numerical results were provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, model parameterization details, validation against experimental or simulation data, statistical measures, and any comparison with conventional GNM results
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible computational study of SHP-2 conformational dynamics using a coarse-grained elastic network model combined with transfer entropy analysis. The biological question is relevant and the methodological combination is potentially interesting. However, the abstract alone provides insufficient evidence to evaluate the validity of the central claims. Key issues include the lack of quantitative results, absence of model validation, unclear treatment of transfer entropy on coarse-grained modes, and the speculative nature of the proposed allosteric site. The case is not established from the provided material.
+- **Who would be interested in the results, and why** Researchers in computational biophysics and structural biology studying allosteric regulation in protein tyrosine phosphatases, particularly those interested in SHP-2 as a therapeutic target. The methodological combination of elastic network models with information-theoretic analysis may also appeal to method developers in coarse-grained dynamics and allosteric communication prediction.
+- **Major strengths** The biological problem is well-motivated and clinically relevant. The choice of three systems (closed wild-type, open mutant, mutant with inhibitor) provides a sensible comparative framework. The use of low-frequency modes to probe large-scale domain rearrangements is appropriate for the system size. The tentative language around the proposed allosteric site is appropriately cautious.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The ewmGNM was used to compute residue fluctuations, dynamic cross-correlations, and transfer entropy to map directional information flow.
+  - **Evidence pointer** Methods section (abstract only); location not provided
+  - **Concern** The abstract does not describe how transfer entropy was computed from elastic network model outputs. Transfer entropy requires time series data, but GNM provides static modes and covariance information. The methodological basis for deriving directional information flow from a static model is unclear and not justified.
+  - **Why it matters** If transfer entropy is not properly defined on the model outputs, the central claim about directional information flow and the identification of the N-SH2 domain as an entropy source is unsupported. This is a core methodological pillar of the study.
+  - **Resolution test** Provide a clear mathematical description of how transfer entropy is computed from ewmGNM outputs, including the construction of pseudo-time series or equivalent, and validate the approach on a test system with known allosteric communication.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The E76K mutation globally increases protein flexibility and disrupts inter-domain coupling, particularly at the N-SH2/PTP interface.
+  - **Evidence pointer** Results section (abstract only); location not provided
+  - **Concern** No quantitative results are presented. The abstract reports qualitative statements about flexibility changes and coupling disruption without any numerical values, statistical significance, or comparison to experimental data. The magnitude of the reported effects cannot be assessed.
+  - **Why it matters** Without quantitative support, the claims are not verifiable. The reader cannot judge whether the observed differences are meaningful or within model noise.
+  - **Resolution test** Provide numerical values for residue fluctuations, correlation coefficients, or transfer entropy differences across the three systems, with appropriate error estimates or significance testing.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** SHP099 binding largely restores the closed state dynamics but retains mutation-induced residual flexibility.
+  - **Evidence pointer** Results section (abstract only); location not provided
+  - **Concern** The claim of "largely restores" and "residual flexibility" requires a quantitative comparison between the wild-type closed state and the SHP099-bound mutant. No such comparison is shown. The degree of restoration and the nature of the residual flexibility are undefined.
+  - **Why it matters** This is a key comparative claim that supports the mechanistic interpretation. Without quantitative comparison, the conclusion about SHP099's effect is speculative.
+  - **Resolution test** Show quantitative similarity measures between the wild-type closed and SHP099-bound systems, and identify which residues or regions retain elevated flexibility relative to wild-type.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Originality and scientific importance
+  - **Claim pointer** The N-SH2 domain possibly acts as a new entropy source, tentatively suggesting its potential as a novel allosteric site.
+  - **Evidence pointer** Results section (abstract only); location not provided
+  - **Concern** The proposal of a novel allosteric site is based on transfer entropy analysis whose validity is not established (see R1-M1). The claim is presented with appropriate tentativeness, but the evidence base is too thin to support even a tentative proposal. No comparison with known allosteric sites or experimental validation is mentioned.
+  - **Why it matters** The proposed allosteric site is a major potential contribution. If the underlying analysis is flawed or the interpretation is overreaching, the study's value is substantially diminished.
+  - **Resolution test** Provide additional evidence supporting the N-SH2 domain as an allosteric site, such as comparison with known mutational data, experimental allosteric modulators, or independent computational methods.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract background
+  - **Evidence pointer** Context section; location not provided
+  - **Issue** The abstract assumes familiarity with SHP-2 domain architecture and the closed/open conformational states without defining them.
+  - **Required correction** Briefly define N-SH2, C-SH2, and PTP domains and the functional significance of the closed-to-open transition.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Model description
+  - **Evidence pointer** Methods section; location not provided
+  - **Issue** The term "equal-weighted multi-parameter Gaussian network model" is introduced without explaining what parameters are multi-parameter or how equal weighting is applied.
+  - **Required correction** Provide a brief description of the model parameters and the weighting scheme, or cite the original method development.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Model validation
+  - **Evidence pointer** Methods section; location not provided
+  - **Issue** No mention of model validation against experimental B-factors, known functional residues, or molecular dynamics simulations.
+  - **Required correction** State whether the ewmGNM results were validated against any reference data and report the outcome.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interdisciplinary readership
+  - **Affected element** Transfer entropy interpretation
+  - **Evidence pointer** Results section; location not provided
+  - **Issue** The biological interpretation of "entropy source" is not explained for readers unfamiliar with information theory.
+  - **Required correction** Briefly explain what an entropy source means in the context of allosteric communication and why it is biologically significant.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (transfer entropy methodology undefined), R1-M2 (no quantitative results), R1-M3 (no quantitative comparison for SHP099 restoration claim), R1-M4 (allosteric site proposal insufficiently supported)
+- **Assessment against Nature-style criteria** Originality: The combination of elastic network models with transfer entropy for SHP-2 is moderately novel, but the approach is not fundamentally new. Scientific importance: The biological question is important for cancer biology and drug design, but the contribution is incremental without experimental validation. Interdisciplinary readership: The topic bridges computational biophysics and cancer biology, but the abstract is too technical for a broad audience. Technical soundness: Cannot be assessed from the abstract; the transfer entropy methodology is a major unaddressed concern. Readability for nonspecialists: The abstract is dense and assumes domain knowledge; improvements are needed.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible study with an interesting biological question, but the lack of quantitative results, undefined transfer entropy methodology, and unsupported allosteric site proposal prevent any positive recommendation. A full manuscript with detailed methods, validation, and quantitative results would be required for proper evaluation.
+
+## Risk / unsupported claims
+- The claim that the E76K mutation "globally increases protein flexibility" is unsupported without quantitative data.
+- The claim that SHP099 "largely restores the closed state dynamics" is unsupported without a quantitative comparison.
+- The proposal of the N-SH2 domain as a "novel allosteric site" is unsupported given the unvalidated transfer entropy methodology.
+- The claim that the open state exhibits the N-SH2 domain as a "new entropy source" is not assessable without methodological details.
+- The overall mechanistic interpretation of SHP-2 conformational regulation is not assessable from the abstract alone.

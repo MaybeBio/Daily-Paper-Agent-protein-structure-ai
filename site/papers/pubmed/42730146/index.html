@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evaluating transformer-based models for structural characterization of orphan proteins. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Evaluating transformer-based models for structural characterization of orphan proteins.</h1>
+      <div class="meta">Seckin, Ercan; Colinet, Dominique; Danchin, Etienne G J; Sarti, Edoardo</div>
+      <div class="meta muted">
+        
+        <span class="journal">Bioinformatics advances</span>
+        · 2026-09-13
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42730146/">原文</a>
+      </div>
+      <p class="one-liner">该文系统评估了AlphaFold2、ESMFold等Transformer模型在孤儿蛋白结构预测上的泛化能力，聚焦蛋白质结构预测问题，方法为AI模型评估，虽无新算法但针对结构计算核心问题，具有重要参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">MOTIVATION: Transformer-based models (TBMs) are state-of-the-art deep learning architectures that predict protein structural features with high accuracy. Despite methodological differences, they all rely on large datasets structured in families of homologous sequences. However, 5%-30% of eukaryotic proteomes consist of orphan proteins, which are sequences without detectable similarity to known families. Although they may share structural traits with characterized proteins, their lack of homology makes them an ideal dataset for evaluating TBM generalization beyond familiar sequence space. RESULTS: We compared predictions from several widely used TBM architectures on an expert-curated set of orphan proteins from the Meloidogyne genus, comprising some of the most destructive plant-parasitic nematodes. Multiple sequence alignment-based approaches such as AlphaFold2 performed poorly on orphan proteins, as did single-sequence or embedding-based language models ESMFold, OmegaFold, and ProtT5. This limited performance cannot be fully attributed to intrinsic disorder, as confirmed by independent non-TBM disorder predictors. While accurate tertiary structure prediction remains out of reach, secondary structure is more reliably captured: predictors share about 70% of secondary structure elements, regardless of global fold similarity, and these elements are consistently identified by dedicated secondary structure tools. AVAILABILITY: All data and analysis scripts are available at https://doi.org/10.5281/zenodo.18788931.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">动机：基于Transformer的模型（TBMs）是当前最先进的深度学习架构，能够高精度预测蛋白质结构特征。尽管方法上存在差异，它们都依赖于按同源序列家族组织的大型数据集。然而，真核生物蛋白质组中有5%-30%由孤儿蛋白组成，这些序列与已知家族无可检测的相似性。尽管它们可能与已表征蛋白质共享结构特征，但缺乏同源性使它们成为评估TBM在熟悉序列空间之外泛化能力的理想数据集。结果：我们比较了几种广泛使用的TBM架构在专家精选的根结线虫属（Meloidogyne）孤儿蛋白集上的预测，该属包含一些最具破坏性的植物寄生线虫。基于多序列比对的方法如AlphaFold2在孤儿蛋白上表现不佳，单序列或基于嵌入的语言模型ESMFold、OmegaFold和ProtT5同样如此。这种有限性能不能完全归因于内在无序性，独立非TBM无序预测器证实了这一点。虽然准确的三级结构预测仍难以实现，但二级结构更可靠地被捕获：预测器共享约70%的二级结构元素，无论整体折叠相似性如何，这些元素都能被专门的二级结构工具一致识别。可用性：所有数据和分析脚本可在https://doi.org/10.5281/zenodo.18788931获取。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Evaluating transformer-based models for structural characterization of orphan proteins</li>
+<li><strong>作者</strong>：Seckin, Ercan; Colinet, Dominique; Danchin, Etienne G J; Sarti, Edoardo</li>
+<li><strong>单位</strong>：未提供（从基金信息推断涉及 INRAE 与 Inria 联合项目）</li>
+<li><strong>期刊/平台</strong>：Bioinformatics Advances</li>
+<li><strong>年份</strong>：2026（在线日期 2026-09-13）</li>
+<li><strong>论文类型</strong>：方法评估/基准测试研究（Benchmarking study）</li>
+<li><strong>领域</strong>：蛋白质结构预测 × Transformer 模型泛化能力评估</li>
+<li><strong>关键词</strong>：orphan proteins, transformer-based models, AlphaFold2, ESMFold, OmegaFold, protein structure prediction, generalization</li>
+<li><strong>DOI/arXiv</strong>：10.1093/bioadv/vbag215</li>
+<li><strong>代码/数据</strong>：https://doi.org/10.5281/zenodo.18788931</li>
+<li><strong>阅读日期</strong>：2026-09-13</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构预测 × AI 方法」方向中的<strong>模型泛化能力评估</strong>子方向，聚焦于 Transformer 模型在孤儿蛋白（orphan proteins，无同源序列）上的表现边界，为结构预测模型的适用域划定提供基准证据。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文以 Meloidogyne 属植物寄生线虫的孤儿蛋白为基准数据集，系统评估 AlphaFold2、ESMFold、OmegaFold 三种 Transformer 结构预测模型，发现这些模型对孤儿蛋白的 pLDDT 置信度显著偏低且不同模型间结构预测不一致，但二级结构预测仍具较高一致性，表明当前 TBM 对无同源序列蛋白的三级结构预测能力有限。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：Transformer-based models（TBMs）在孤儿蛋白（orphan proteins，即无可检测同源序列的蛋白）上的结构预测表现如何？其预测置信度、结构一致性、二级结构可预测性分别处于什么水平？</li>
+<li><strong>为什么重要</strong>：真核生物蛋白质组中 5%–30% 为孤儿蛋白，这些蛋白在病原体适应、新功能化中起关键作用（如 Meloidogyne 线虫的寄生策略调控），但缺乏同源信息使其成为结构预测的极端挑战场景。评估 TBM 在此类蛋白上的表现，直接关系到结构基因组学中「未知蛋白」的自动化注释可靠性。</li>
+<li><strong>现有方法为何不足</strong>：TBM 的训练依赖大规模同源序列家族数据，其架构设计隐含对进化信息的依赖；已有研究虽报道了低进化深度蛋白的预测偏差，但缺乏系统性的、基于真实孤儿蛋白数据集的量化评估。</li>
+<li><strong>精确研究问题</strong>：Can transformer-based structure prediction models reliably predict tertiary structures of orphan proteins that lack detectable homologous sequences?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」——基于本文引言及领域公认发展史）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期共进化方法</td>
+<td>PSICOV, EVfold</td>
+<td>利用多序列比对中的共进化信号</td>
+<td>依赖深度 MSA，孤儿蛋白无 MSA 可用</td>
+</tr>
+<tr>
+<td>深度学习单序列方法</td>
+<td>trRosetta, AlphaFold2</td>
+<td>端到端学习序列-结构映射</td>
+<td>仍依赖 MSA 提供进化信息</td>
+</tr>
+<tr>
+<td>大语言模型方法</td>
+<td>ESMFold, OmegaFold, ProtT5</td>
+<td>单序列直接预测，无需 MSA</td>
+<td>训练数据隐含同源家族偏差，对 OOD 序列泛化存疑</td>
+</tr>
+<tr>
+<td>结构比对加速</td>
+<td>Foldseek (3Di 字母表)</td>
+<td>将结构比对转化为序列比对，速度提升数个数量级</td>
+<td>依赖已有结构数据库覆盖度</td>
+</tr>
+<tr>
+<td>本文位置</td>
+<td>TBM 泛化边界评估</td>
+<td>首次在真实孤儿蛋白集上系统量化 TBM 的预测边界</td>
+<td>数据集限于单一属</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>孤儿蛋白三级结构预测置信度极低</td>
+<td>AlphaFold2、ESMFold、OmegaFold 对孤儿蛋白的 pLDDT 中位数均落在 "low"（50–70）或 "very low"（&lt;50）区间</td>
+<td>缺乏同源序列导致 MSA 信息不足，模型无法建立可靠的进化约束</td>
+<td>Results 3.1, Fig. 2A</td>
+</tr>
+<tr>
+<td>不同模型间预测结构不一致</td>
+<td>低 pLDDT 区域对应模型间 TM-score 显著降低</td>
+<td>低置信度反映模型对结构的不确定性，而非单一模型的系统性偏差</td>
+<td>Results 3.2, Fig. 3</td>
+</tr>
+<tr>
+<td>孤儿蛋白缺乏结构数据库同源匹配</td>
+<td>仅极少数孤儿蛋白在 PDB/AFDB 中找到显著结构同源（e-value &lt; 10⁻³）</td>
+<td>孤儿蛋白可能代表全新的结构空间，现有结构数据库覆盖不足</td>
+<td>Results 3.4</td>
+</tr>
+<tr>
+<td>内在无序蛋白（IDP）预测偏差</td>
+<td>与 TBM 越相关的 ID 预测器给出越高的无序倾向估计</td>
+<td>TBM 对无序区域的预测偏差可能源于训练数据中 IDP 表征不足</td>
+<td>Results 3.3, Fig. 4</td>
+</tr>
+<tr>
+<td>模型对孤儿蛋白的「虚假自信」风险</td>
+<td>部分高 pLDDT 预测仍与其他模型不一致</td>
+<td>pLDDT 校准在 OOD 序列上失效</td>
+<td>Results 3.2</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：构建 Meloidogyne 属 8 个物种的孤儿蛋白基准集（8,974 个孤儿 orthogroups，48,681 条蛋白序列），分别用 AlphaFold2（MSA-based）、ESMFold 和 OmegaFold（single-sequence-based）进行结构预测，用 pLDDT、TM-score 等指标评估预测质量，并用三种独立的无序预测器（LoRA-DR、AIUPred、flDPnn）交叉验证无序性假设，最后用 Foldseek 搜索 PDB/AFDB 检查结构同源性。</p>
+<p><strong>2) 核心洞察</strong>：
+- TBM 对孤儿蛋白的预测失败并非源于单一模型缺陷，而是系统性的——三种架构不同的模型在孤儿蛋白上均表现不佳，说明问题出在「无同源信息」这一根本条件上。
+- 二级结构预测（SSE）在孤儿蛋白上仍保持较高一致性（65%–75% 一致性，显著高于随机水平），说明 TBM 捕获的局部序列-结构规律在 OOD 场景下仍然有效，失效的是需要全局协调的三级结构推理。
+- 无序性不能完全解释预测失败——只有与 TBM 相关的无序预测器（LoRA-DR）显示孤儿蛋白无序性升高，独立的非 TBM 方法（flDPnn、AIUPred）未发现显著差异。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：TBM 的泛化能力存在「层级差异」——局部结构特征（二级结构）可迁移，全局结构组织（三级结构）不可迁移。这提示结构预测模型的改进方向应聚焦于增强全局推理能力，而非仅优化局部特征提取。</p>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：Meloidogyne 属孤儿蛋白氨基酸序列（来自 8 个物种，8,974 个 orthogroups）；非孤儿蛋白对照序列（在至少 4 个非 Meloidogyne 物种中有同源）</p>
+<p><strong>输出</strong>：
+- 三级结构预测（PDB 格式）
+- pLDDT 置信度分数
+- 二级结构分配（DSSP）
+- 无序性预测分数
+- 结构数据库搜索命中列表</p>
+<p><strong>模块</strong>：
+1. <strong>基准集构建</strong>：基于 Seçkin et al. 2025a 的比较基因组学数据，定义孤儿蛋白（属内无同源）并分类为高度分化（diverged）或从头起源（de novo）
+2. <strong>结构预测</strong>：AlphaFold2 v2.3.2（orthogroup 级 MSA + MAFFT 比对）、ESMFold v1.0、OmegaFold v1.1.0
+3. <strong>结构比较</strong>：TM-align 计算 pairwise TM-score
+4. <strong>无序预测</strong>：LoRA-DR（PLM-based）、AIUPred（transformer-based）、flDPnn（非 TBM）
+5. <strong>结构同源搜索</strong>：ProstT5 生成 3Di 序列 → Foldseek 搜索 PDB/AFDB</p>
+<p><strong>训练</strong>：无新训练；全部使用预训练模型默认参数</p>
+<p><strong>工具</strong>：MAFFT（MSA 构建）、TM-align（结构比对）、DSSP（二级结构分配）、Foldseek（结构搜索）</p>
+<p><strong>假设</strong>：pLDDT 可作为预测可靠性的代理指标；TM-score 可作为模型间一致性的度量；孤儿蛋白的预测困难主要源于缺乏进化信息而非序列长度等混淆因素（文中通过长度匹配对照排除此假设）</p>
+<p><strong>文字流程</strong>：孤儿蛋白序列 → 按 orthogroup 分组 → AlphaFold2 用 orthogroup 级 MSA 预测 / ESMFold、OmegaFold 单序列预测 → 计算 pLDDT → TM-align 两两比对三种模型预测结构 → DSSP 分配二级结构 → 三种无序预测器评估无序性 → ProstT5 转 3Di → Foldseek 搜索 PDB/AFDB → 统计比较孤儿 vs 非孤儿蛋白的各指标分布</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>孤儿蛋白基准集</td>
+<td>提供无同源序列的真实测试集</td>
+<td>现有基准（如 CASP）富含同源信息，无法测试 OOD 泛化</td>
+<td>输入：8 个 Meloidogyne 物种蛋白质组；输出：8,974 个孤儿 orthogroups</td>
+<td>Methods 2.1；Seçkin et al. 2025a</td>
+<td>无此基准则无法区分「模型能力不足」与「任务本身困难」</td>
+</tr>
+<tr>
+<td>AlphaFold2 预测（orthogroup 级 MSA）</td>
+<td>利用属内同源构建浅层 MSA</td>
+<td>测试 MSA 深度对预测的影响；模拟真实场景中可用的最丰富进化信息</td>
+<td>输入：orthogroup 内序列 + MAFFT 比对；输出：结构 + pLDDT</td>
+<td>Methods 2.2；Results 3.1</td>
+<td>移除后无法评估 MSA 策略对孤儿蛋白的增益</td>
+</tr>
+<tr>
+<td>ESMFold / OmegaFold 单序列预测</td>
+<td>无 MSA 依赖的端到端预测</td>
+<td>测试纯语言模型在无进化信息时的表现</td>
+<td>输入：单条序列；输出：结构 + pLDDT</td>
+<td>Methods 2.2；Results 3.1</td>
+<td>移除后无法对比 MSA-based vs single-sequence 策略</td>
+</tr>
+<tr>
+<td>TM-score 一致性分析</td>
+<td>量化模型间预测分歧</td>
+<td>pLDDT 是模型自评，需独立交叉验证</td>
+<td>输入：三种模型预测结构；输出：pairwise TM-score</td>
+<td>Results 3.2, Fig. 3</td>
+<td>移除后无法区分「低置信度但正确」与「低置信度且错误」</td>
+</tr>
+<tr>
+<td>无序性交叉验证</td>
+<td>检验低 pLDDT 是否由无序区驱动</td>
+<td>排除「孤儿蛋白天然无序」这一替代解释</td>
+<td>输入：序列；输出：三种无序概率分数</td>
+<td>Results 3.3, Fig. 4</td>
+<td>移除后无法排除 IDP 作为混淆因素</td>
+</tr>
+<tr>
+<td>Foldseek 结构搜索</td>
+<td>检查孤儿蛋白是否具有已知结构同源</td>
+<td>评估「结构新颖性」程度</td>
+<td>输入：3Di 序列或预测结构；输出：PDB/AFDB 命中列表</td>
+<td>Results 3.4</td>
+<td>移除后无法判断预测失败是否因结构空间完全新颖</td>
+</tr>
+<tr>
+<td>长度匹配对照</td>
+<td>排除序列长度作为混淆变量</td>
+<td>孤儿蛋白可能系统性偏短/偏长</td>
+<td>输入：非孤儿蛋白子集（长度匹配）；输出：对照预测</td>
+<td>Discussion；Figs S9–S10</td>
+<td>移除后无法断言观察到的差异源于孤儿状态而非长度</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>本文为评估性研究，无新提出的数学模型。核心使用的指标公式如下：</p>
+<p><strong>pLDDT（predicted Local Distance Difference Test）</strong>：模型输出的每个残基的预测置信度分数，范围 0–100。文中采用 AlphaFold2 的区间划分：&gt;90 为 "very high"，70–90 为 "high"，50–70 为 "low"，&lt;50 为 "very low"。</p>
+<p><strong>TM-score（Template Modeling score）</strong>：衡量两个结构间拓扑相似性，由 TM-align 计算：
+[
+TM\text{-}score = \frac{1}{L_N} \sum_{i=1}^{L_T} \frac{1}{1 + (d_i/d_0)^2}
+]
+其中 (L_N) 为比对长度，(L_T) 为模板长度，(d_i) 为第 i 对残基的 Cα 距离，(d_0 = 1.24\sqrt[3]{L_T - 15} - 1.8)。TM-score &gt; 0.5 通常视为同一折叠。</p>
+<p><strong>Spearman's ρ</strong>：用于评估不同模型 pLDDT 分数间的秩相关性（Results 3.1 中 ρ = 0.522）。</p>
+<p><strong>无序性分数</strong>：各预测器输出的残基级无序概率，序列级分数为残基平均。</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>：
+- 孤儿蛋白：Meloidogyne 属 8 个物种，8,974 个孤儿 orthogroups，48,681 条蛋白序列
+- 非孤儿对照：Meloidogyne 属内存在且在至少 4 个非 Meloidogyne 物种中有同源的蛋白
+- 长度匹配对照子集：用于排除序列长度混淆</p>
+<p><strong>指标</strong>：pLDDT（模型自评置信度）、TM-score（模型间一致性）、SSE 一致性（二级结构分配重叠）、无序性分数、Foldseek 命中率</p>
+<p><strong>基线</strong>：非孤儿蛋白（同属、有同源序列的蛋白）作为对照基线</p>
+<p><strong>骨干/仪器</strong>：AlphaFold2 v2.3.2、ESMFold v1.0、OmegaFold v1.1.0、ProtT5、LoRA-DR v1.0、AIUPred v1.0、flDPnn、TM-align、Foldseek、DSSP</p>
+<p><strong>评测协议</strong>：对每个蛋白/orthogroup 独立预测，比较孤儿 vs 非孤儿组的指标分布；对三种预测器两两计算 TM-score；对 SSE 分配计算一致性并检验显著性（置换检验，P &lt; 0.05）</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>三种 TBM 预测孤儿蛋白</td>
+<td>孤儿蛋白 pLDDT 显著低于非孤儿</td>
+<td>孤儿 vs 非孤儿；三种模型独立预测</td>
+<td>孤儿蛋白 pLDDT 中位数落在 low/very low 区间；非孤儿接近 high 阈值</td>
+<td>TBM 对孤儿蛋白的预测置信度系统性偏低</td>
+<td>低 pLDDT 是否等价于结构错误（无实验结构验证）</td>
+<td>Results 3.1, Fig. 2A</td>
+</tr>
+<tr>
+<td>pLDDT 跨模型相关性</td>
+<td>不同模型对同一蛋白的置信度评估一致</td>
+<td>Spearman 相关分析</td>
+<td>ρ = 0.522（AF2 vs ESMFold；AF2 vs OmegaFold）</td>
+<td>模型间置信度评估中度一致</td>
+<td>相关性是否在不同孤儿亚类中稳定</td>
+<td>Results 3.1, Fig. 2B–C</td>
+</tr>
+<tr>
+<td>模型间结构一致性</td>
+<td>高 pLDDT 对应模型间高 TM-score</td>
+<td>按 pLDDT 分层比较 TM-score</td>
+<td>高 pLDDT 区域 TM-score 高，低 pLDDT 区域 TM-score 低</td>
+<td>pLDDT 能反映模型间一致性</td>
+<td>pLDDT 是否校准于真实结构精度</td>
+<td>Results 3.2, Fig. 3</td>
+</tr>
+<tr>
+<td>无序性分析</td>
+<td>孤儿蛋白无序性是否系统性升高</td>
+<td>三种无序预测器（LoRA-DR、AIUPred、flDPnn）</td>
+<td>仅 LoRA-DR 显示孤儿蛋白无序性升高；flDPnn 和 AIUPred 无显著差异</td>
+<td>无序性不能完全解释预测失败</td>
+<td>无序性差异是否源于 TBM 偏差而非真实生物学差异</td>
+<td>Results 3.3, Fig. 4</td>
+</tr>
+<tr>
+<td>Foldseek 结构搜索</td>
+<td>孤儿蛋白是否具有已知结构同源</td>
+<td>3Di 序列搜索 PDB/AFDB；e-value &lt; 10⁻³</td>
+<td>仅极少数命中（PDB 2 个 &gt;50% identity；AFDB 1 个）</td>
+<td>孤儿蛋白结构空间高度新颖</td>
+<td>无命中是否因预测结构错误而非真实无同源</td>
+<td>Results 3.4</td>
+</tr>
+<tr>
+<td>长度匹配对照</td>
+<td>观察到的差异是否由序列长度驱动</td>
+<td>长度匹配的非孤儿子集重复分析</td>
+<td>结果不变</td>
+<td>预测失败归因于孤儿状态而非长度</td>
+<td>—</td>
+<td>Discussion, Figs S9–S10</td>
+</tr>
+<tr>
+<td>SSE 一致性分析</td>
+<td>二级结构预测是否可靠</td>
+<td>三种模型 SSE 分配一致性；置换检验</td>
+<td>孤儿蛋白 SSE 一致性 65%–75%，显著高于随机（P &lt; 0.05 for 95% 序列）</td>
+<td>二级结构预测在孤儿蛋白上仍有效</td>
+<td>SSE 一致性是否等价于真实二级结构正确性</td>
+<td>Results 3.5, Figs S2–S4</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅评估结构预测，不涉及功能预测、配体结合等下游任务。</li>
+<li><strong>数据集边界</strong>：结论基于 Meloidogyne 属孤儿蛋白，跨物种泛化需谨慎——作者指出与 Drosophila 研究结果一致，但样本仍限于两个谱系。</li>
+<li><strong>oracle/真值输入</strong>：无实验解析结构作为金标准；评估基于模型自评（pLDDT）和模型间一致性（TM-score），非真实结构精度。</li>
+<li><strong>端到端状态</strong>：非端到端评估——各模型独立预测，未测试集成策略或后处理优化。</li>
+<li><strong>算力成本</strong>：未报告具体计算资源消耗。</li>
+<li><strong>历史数据依赖</strong>：所有模型依赖训练时的 PDB 结构分布；孤儿蛋白可能代表训练分布外的折叠空间。</li>
+<li><strong>最难情形</strong>：de novo 孤儿蛋白（无任何进化痕迹）比高度分化孤儿蛋白更难预测。</li>
+<li><strong>不确定性</strong>：pLDDT 与真实结构精度的关系在 OOD 场景下未经验证；模型间不一致可能反映多种结构状态（如无序）而非预测错误。</li>
+<li><strong>有边界的复述</strong>：在 Meloidogyne 属孤儿蛋白上，当前主流 TBM 无法可靠预测三级结构（低 pLDDT、跨模型不一致），但可部分捕获二级结构信息；此结论适用于无同源序列的蛋白，不适用于有同源序列的常规蛋白。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据集限于单一属</td>
+<td>仅 Meloidogyne 属孤儿蛋白，跨物种泛化需验证</td>
+<td>在更多谱系上验证（作者提及 Drosophila 研究的一致性，但呼吁更广验证）</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>无实验结构金标准</td>
+<td>无法直接评估预测结构的真实精度</td>
+<td>未来可结合实验解析的孤儿蛋白结构进行验证</td>
+<td>Discussion（隐含）</td>
+</tr>
+<tr>
+<td>未测试所有 TBM 变体</td>
+<td>仅评估三种代表性模型</td>
+<td>未明确提及</td>
+<td>—</td>
+</tr>
+<tr>
+<td>无序性评估依赖预测器</td>
+<td>不同无序预测器结果不一致</td>
+<td>未明确提及</td>
+<td>Results 3.3</td>
+</tr>
+</tbody>
+</table>
+<p><em>（注：作者在 Discussion 中明确承认数据集局限和泛化问题，其余为隐含约束）</em></p>
+<p><strong>作者提及的相关约束（非正式局限）</strong>：
+- 孤儿蛋白的 orthogroup 分组可能引入偏差（同一 orthogroup 内序列高度相似，代表性序列选择可能影响结果）
+- 长度匹配对照仅控制长度，未控制氨基酸组成等其他混淆因素</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pLDDT 作为主要评估指标</td>
+<td>pLDDT 是模型自评，可能系统性低估 OOD 输入的置信度；低 pLDDT 可能反映模型校准问题而非结构预测错误</td>
+<td>若 pLDDT 在 OOD 上失准，则「预测失败」的结论可能被夸大</td>
+<td>对少量孤儿蛋白进行实验结构解析（如 Cryo-EM/X-ray）直接验证</td>
+<td>Results 3.1–3.2</td>
+</tr>
+<tr>
+<td>模型间 TM-score 一致性作为间接验证</td>
+<td>三种模型可能共享训练数据偏差，一致性高不一定正确，不一致也不一定错误</td>
+<td>需要独立于训练数据的验证信号</td>
+<td>与实验结构或独立物理模拟（如 MD）结果对比</td>
+<td>Results 3.2</td>
+</tr>
+<tr>
+<td>无序性结论依赖预测器选择</td>
+<td>仅 LoRA-DR 显示差异，可能反映 PLM 嵌入中的偏差而非真实生物学差异</td>
+<td>若无序性差异是 TBM 伪影，则「无序性不能解释预测失败」的结论需修正</td>
+<td>使用实验无序数据（如 NMR）或共识预测策略</td>
+<td>Results 3.3, Fig. 4</td>
+</tr>
+<tr>
+<td>Foldseek 搜索的阈值选择</td>
+<td>e-value &lt; 10⁻³ 可能过严或过松，影响「无结构同源」结论</td>
+<td>结构同源性判断直接影响「孤儿蛋白结构新颖」的结论</td>
+<td>敏感性分析：不同 e-value 阈值下的命中率变化</td>
+<td>Results 3.4</td>
+</tr>
+<tr>
+<td>对照组选择</td>
+<td>非孤儿蛋白来自同一属，可能共享某些属性（如分泌蛋白富集）导致差异</td>
+<td>需要更广泛的对照（如其他属的典型蛋白）</td>
+<td>增加多物种非孤儿对照</td>
+<td>Methods 2.1</td>
+</tr>
+<tr>
+<td>序列长度匹配仅控制单一变量</td>
+<td>孤儿蛋白可能在等电点、疏水性等理化性质上系统性偏离</td>
+<td>这些性质可能独立影响预测难度</td>
+<td>多变量匹配或回归控制</td>
+<td>Discussion, Figs S9–S10</td>
+</tr>
+<tr>
+<td>未报告预测运行时间/资源</td>
+<td>实际应用中资源消耗是重要考量</td>
+<td>影响方法可用性判断</td>
+<td>补充基准测试</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li>
+<p><strong>可迁移的评估框架</strong>：本文提供了「无同源序列蛋白」的基准测试范式——用 pLDDT 分布 + 跨模型 TM-score 一致性 + 独立无序预测器交叉验证 + 结构数据库搜索四重证据链，可迁移到任何新结构预测模型的 OOD 泛化评估。</p>
+</li>
+<li>
+<p><strong>「层级泛化」概念</strong>：TBM 的局部特征（二级结构）可迁移到 OOD 序列，全局特征（三级结构）不可迁移。这提示在蛋白质设计/结构预测研究中，应分别评估模型的局部与全局预测能力，而非仅看端到端指标。</p>
+</li>
+<li>
+<p><strong>Orthogroup 级 MSA 策略</strong>：对孤儿蛋白，AlphaFold2 使用属内同源构建的浅层 MSA 并未显著改善预测，说明「同源信息量」存在阈值效应——低于阈值时增加 MSA 深度无益。这对 MSA 采样策略设计有直接参考价值。</p>
+</li>
+<li>
+<p><strong>无序性作为混淆变量的控制方法</strong>：本文展示了如何用多个「与 TBM 关联度不同」的无序预测器来区分「真实无序」与「TBM 伪影」，此思路可迁移到其他结构属性（如结合位点、翻译后修饰）的评估中。</p>
+</li>
+<li>
+<p><strong>3Di 序列搜索策略</strong>：用 ProstT5 将序列转 3Di 表示后做 Foldseek 搜索，绕过了低质量结构预测的瓶颈，为「无结构预测条件下的同源检测」提供了新思路，可迁移到大规模孤儿蛋白注释流程。</p>
+</li>
+<li>
+<p><strong>长度匹配对照设计</strong>：在比较两组蛋白的预测难度时，长度匹配子集是排除基本混淆变量的最低要求，但需注意多变量匹配的必要性。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold2 原始论文</strong>（Jumper et al. 2021, Nature）：本文直接评估其泛化边界，补充了原始论文未覆盖的 OOD 场景。</li>
+<li><strong>ESMFold</strong>（Lin et al. 2023, Science）：本文测试了其单序列预测能力在孤儿蛋白上的表现，与 ESMFold 声称的「无需 MSA」形成对照。</li>
+<li><strong>OmegaFold</strong>（Wu et al. 2022, PNAS）：本文验证了其端到端训练策略在极端 OOD 下的局限。</li>
+<li><strong>孤儿蛋白研究</strong>（Seçkin et al. 2025a, 2025b）：本文使用的基准数据集来源，提供了孤儿蛋白的进化与功能背景。</li>
+<li><strong>Drosophila de novo 蛋白研究</strong>（Middendorf and Eicholt 2024）：作者指出结果一致性，支持结论的跨物种泛化。</li>
+<li><strong>无序蛋白预测</strong>（LoRA-DR: Lombardi et al. 2025; AIUPred: Erdős and Dobson 2024; flDPnn: Hu et al. 2021）：本文用三种方法交叉验证，展示了不同方法论在 OOD 场景下的分歧。</li>
+<li><strong>Foldseek/3Di</strong>（van Kempen et al. 2024, Nature Biotechnology）：本文将其用于无结构预测条件下的同源搜索，拓展了其应用场景。</li>
+<li><strong>结构预测偏差研究</strong>（Pratt et al. 2025; Sarti and Cazals 2026; Cazals and Sarti 2026）：本文与这些工作共同构成对 TBM 系统性偏差的量化证据。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<ol>
+<li>
+<p><strong>候选：物理模拟增强的孤儿蛋白结构精修</strong>
+   - <strong>来源局限/观察</strong>：本文显示 TBM 对孤儿蛋白三级结构预测不可靠，但二级结构可预测。物理模拟（MD/粗粒化）不依赖同源信息，可作为 TBM 预测的补充。
+   - <strong>核心假设</strong>：以 TBM 预测的二级结构为约束，结合 MD 模拟的构象采样，可对孤儿蛋白获得比纯 TBM 更可靠的三级结构模型。
+   - <strong>初步方法</strong>：对孤儿蛋白子集，用 AlphaFold2/ESMFold 预测初始模型 → 提取二级结构约束 → 用 MD（如 GROMACS/OpenMM）进行增强采样（如 replica exchange）→ 用聚类分析选择代表性构象 → 与 TBM 预测比较。
+   - <strong>验证方式</strong>：对少量有实验结构的孤儿蛋白（或设计蛋白）进行盲测，比较纯 TBM vs TBM+MD 的 TM-score 和 RMSD。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选：基于扩散模型的孤儿蛋白构象生成</strong>
+   - <strong>来源局限/观察</strong>：本文证明 TBM 对孤儿蛋白的预测分歧大，可能反映真实构象多样性而非单一错误。扩散模型天然适合生成多构象。
+   - <strong>核心假设</strong>：用结构扩散模型（如 Chroma、RFdiffusion 的逆过程）可从序列直接生成孤儿蛋白的构象系综，比单结构预测更好地捕捉无序/多构象状态。
+   - <strong>初步方法</strong>：对孤儿蛋白序列，用序列条件扩散模型生成多个候选构象 → 用物理能量函数（如 Rosetta）重排分 → 与 TBM 预测的构象分布比较。
+   - <strong>验证方式</strong>：对已知无序蛋白和有序孤儿蛋白分别测试，评估生成构象的多样性是否与实验观测一致。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选：孤儿蛋白的二级结构引导的序列设计</strong>
+   - <strong>来源局限/观察</strong>：本文发现二级结构预测在孤儿蛋白上相对可靠（65%–75% 一致性），这为基于二级结构的设计提供了锚点。
+   - <strong>核心假设</strong>：对孤儿蛋白，以预测的二级结构为约束进行序列重设计，可产生具有稳定折叠的变体，从而间接验证结构预测的正确性。
+   - <strong>初步方法</strong>：选取预测二级结构高置信度的孤儿蛋白 → 用 ProteinMPNN 或 ESM-IF 在固定骨架下设计新序列 → 表达并实验验证折叠（CD/圆二色谱）→ 若设计序列可折叠，则支持预测的二级结构正确。
+   - <strong>验证方式</strong>：实验表达 + 生物物理表征。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选：TBM 预测失败模式的无监督分类</strong>
+   - <strong>来源局限/观察</strong>：本文发现三种 TBM 对孤儿蛋白的预测分歧模式不同（Fig. 3），但未深入分类失败模式。
+   - <strong>核心假设</strong>：孤儿蛋白的 TBM 预测失败可分为可预测的亚型（如无序区主导、长程接触缺失、结构域边界错误），且这些亚型可从序列特征（组成、长度、进化速率）中预测。
+   - <strong>初步方法</strong>：对孤儿蛋白预测结果做聚类分析（基于 pLDDT 分布、跨模型 TM-score 矩阵、SSE 一致性）→ 提取每个聚类的序列特征 → 训练分类器预测失败模式。
+   - <strong>验证方式</strong>：交叉验证 + 对独立孤儿蛋白数据集的外部验证。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选：混合 MSA 策略的优化</strong>
+   - <strong>来源局限/观察</strong>：本文中 AlphaFold2 使用 orthogroup 级浅层 MSA 仍表现不佳，但未系统测试不同 MSA 构建策略。
+   - <strong>核心假设</strong>：对孤儿蛋白，结合远程同源检测（如 HMMER 的敏感模式）和合成 MSA 扩展（如 MSA Transformer 生成）可改善 AlphaFold2 预测。
+   - <strong>初步方法</strong>：对孤儿蛋白子集，比较不同 MSA 策略（仅 orthogroup、加远程同源、加生成序列）下的 AlphaFold2 预测质量。
+   - <strong>验证方式</strong>：pLDDT 提升 + 跨模型一致性提升。
+   - <strong>创新状态</strong>：partially checked（已有文献支持 MSA 深度影响，但未在孤儿蛋白上系统测试）</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including abstract, introduction, methods, results, discussion, and supplementary figure references.</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, clarity of claims, and alignment with the stated scope of evaluating transformer-based models on orphan proteins. No assessment of editorial fit or journal-specific policy.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors evaluate three transformer-based structure prediction tools (AlphaFold2, ESMFold, OmegaFold) on a curated set of orphan proteins from Meloidogyne nematodes, finding low-confidence tertiary predictions but more reliable secondary structure recovery, and conclude that TBMs fail to generalize to sequences lacking evolutionary context.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Fig 1–5), supplementary figure references (S1–S10), supplementary table reference (Table S1), methods descriptions, and a data availability link.</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures and table are referenced but not provided in the submitted material. Experimental validation (e.g., crystallography, NMR) is absent, which is acknowledged by the authors. The exact composition of the orphan dataset (e.g., sequence length distributions, species breakdown) is only partially described.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript addresses a timely and important question: whether transformer-based structure prediction models generalize to orphan proteins lacking detectable homologs. The authors use a biologically relevant dataset from Meloidogyne and apply multiple complementary analyses, including pLDDT comparisons, cross-model structural agreement, disorder prediction, and database searches. The finding that tertiary predictions are unreliable while secondary structure is partially recoverable is plausible and consistent with existing literature. However, the manuscript has several methodological gaps that limit the strength of the conclusions. The lack of a clear null model for the secondary structure agreement analysis, incomplete reporting of dataset characteristics, and the absence of a direct comparison to non-transformer baselines weaken the case. The discussion of why secondary structure succeeds while tertiary fails is speculative but reasonable. Overall, the work is a useful contribution, but the evidence as presented does not fully establish the central claims.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists studying protein structure prediction, particularly those interested in model generalization and out-of-distribution performance. Researchers working on orphan proteins or de novo gene emergence, especially in non-model organisms, would find the benchmark and results relevant. The paper may also interest developers of protein language models who need to understand failure modes on evolutionarily isolated sequences.</li>
+<li><strong>Major strengths</strong> The study addresses a clearly defined and biologically important problem. The use of a curated, expert-validated orphan dataset from a non-model genus is a strength. The multi-method approach, combining three structure predictors, multiple disorder predictors, and two database search strategies, provides a broad view. The control for sequence length effects is a thoughtful addition. The secondary structure agreement analysis with statistical significance testing is a useful contribution.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological rigor</li>
+<li><strong>Claim pointer</strong> The authors claim that secondary structure is "consistently and significantly recovered across models" (Discussion) and that agreement is "significantly more similar than expected by chance" (Section 3.5).</li>
+<li><strong>Evidence pointer</strong> Section 3.5, Table S1, Figs S2–S4 (not provided)</li>
+<li><strong>Concern</strong> The statistical test for secondary structure agreement is described only in the Appendix, which is not included in the submitted material. The main text states that a P-value below 0.05 is achieved for 95% of sequences, but the null model is not described. Without knowing how the null distribution was generated (e.g., random assignment with what constraints on composition and length?), it is impossible to assess whether the test is meaningful. For example, if the null model does not preserve amino acid composition or secondary structure propensities, the test could be trivially significant.</li>
+<li><strong>Why it matters</strong> This is the core positive result of the paper. If the statistical test is flawed or overly permissive, the claim that secondary structure is reliably predicted is not supported. The reader cannot evaluate this without the Appendix.</li>
+<li><strong>Resolution test</strong> Provide the full null model description in the main text or a clearly accessible supplement. Show that the null model preserves relevant sequence properties (e.g., composition, length, per-residue propensities). Report the distribution of P-values across all sequences, not just the 95% threshold.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Completeness of evidence</li>
+<li><strong>Claim pointer</strong> The authors state that "the observed deficiencies in tertiary structure prediction are not a trivial consequence of shorter sequences" (Discussion), based on a length-matched control.</li>
+<li><strong>Evidence pointer</strong> Section 4, Figs S9 and S10 (not provided)</li>
+<li><strong>Concern</strong> The length-matched control is described only in the Discussion and the corresponding figures are in the supplementary material, which was not provided. The main text does not describe how the length-matched subset was constructed, how many sequences were included, or which metrics were compared. Without this information, the claim that length is not a confounding factor cannot be verified.</li>
+<li><strong>Why it matters</strong> Orphan proteins are often shorter than average, and sequence length is known to affect structure prediction confidence. If the control is underpowered or improperly matched, the conclusion that the failure is due to lack of evolutionary context rather than length is not established.</li>
+<li><strong>Resolution test</strong> Describe the matching procedure in the main text (e.g., binning, propensity score matching). Report the number of sequences in the control and the distribution of lengths. Show that the key metrics (pLDDT, TM-score agreement) are unchanged in the matched subset.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interpretive clarity</li>
+<li><strong>Claim pointer</strong> The authors state that "the more closely the method is related to TBMs, the more disorder will be predicted" (Section 3.3).</li>
+<li><strong>Evidence pointer</strong> Section 3.3, Fig 4</li>
+<li><strong>Concern</strong> This is an interesting observation, but the interpretation is ambiguous. The authors do not discuss whether this reflects a systematic bias in TBM-based disorder predictors, or whether it indicates that TBMs are correctly identifying disorder that other methods miss. The lack of experimental validation for disorder means the direction of the bias cannot be determined. The authors acknowledge this indirectly but do not explore the implications for their main argument.</li>
+<li><strong>Why it matters</strong> If TBM-based disorder predictors are biased toward overpredicting disorder, this could explain the low pLDDT scores for tertiary structure, which would be a different failure mode than the one the authors emphasize. The paper would be stronger if this alternative interpretation were addressed.</li>
+<li><strong>Resolution test</strong> Add a discussion of whether the observed trend is consistent with known biases in TBM-based disorder predictors. If possible, compare to a small set of experimentally characterized disordered proteins to calibrate the predictors.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Benchmark completeness</li>
+<li><strong>Claim pointer</strong> The authors conclude that "reliable structural inference for orphan proteins remains challenging" (Section 3.4).</li>
+<li><strong>Evidence pointer</strong> Section 3.4</li>
+<li><strong>Concern</strong> The database search results are reported as hit counts, but the authors do not report the distribution of alignment lengths, sequence identities, or coverage for the significant hits. The threshold of e-value below 10^-3 is permissive, and the biological relevance of the hits is not discussed. For example, a hit with 50% identity over a short region may not indicate meaningful structural similarity.</li>
+<li><strong>Why it matters</strong> The conclusion that orphan proteins lack structural homologs depends on the quality of the search. If the hits are mostly spurious or cover only fragments, the conclusion is stronger. If the hits are meaningful but the authors dismiss them, the conclusion is weaker. The current reporting does not allow the reader to judge.</li>
+<li><strong>Resolution test</strong> Report the distribution of alignment coverage and identity for significant hits. Discuss a few representative examples, including whether the predicted structures align over full-length or only local regions.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section 2.2</li>
+<li><strong>Evidence pointer</strong> Section 2.2, "In order to compose a comparable negative sample of non-orphan structure predictions, we created two different sets:"</li>
+<li><strong>Issue</strong> This sentence is incomplete. The two sets are not described in the main text.</li>
+<li><strong>Required correction</strong> Complete the sentence or refer to a supplementary section where the two sets are defined.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Section 2.2</li>
+<li><strong>Evidence pointer</strong> Section 2.2, AlphaFold2 description</li>
+<li><strong>Issue</strong> The authors state that AlphaFold2 was run "at the orthogroup level" with a custom MSA, but do not specify how the representative sequence was chosen or how many sequences were included in the MSA on average.</li>
+<li><strong>Required correction</strong> Provide the selection criterion for the representative sequence and the average MSA depth.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Section 3.1</li>
+<li><strong>Evidence pointer</strong> Section 3.1, Fig 2</li>
+<li><strong>Issue</strong> Spearman correlation coefficients are reported for pLDDT comparisons, but confidence intervals or P-values are not given.</li>
+<li><strong>Required correction</strong> Report P-values or confidence intervals for the correlations.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Section 3.5</li>
+<li><strong>Evidence pointer</strong> Section 3.5, "pairwise identity ranging from 85% to 90%"</li>
+<li><strong>Issue</strong> The term "pairwise identity" is used for secondary structure agreement, but it is not defined. It is unclear whether this refers to per-residue agreement or something else.</li>
+<li><strong>Required correction</strong> Define the metric explicitly.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Literature context</li>
+<li><strong>Affected element</strong> Discussion</li>
+<li><strong>Evidence pointer</strong> Discussion, reference to Middendorf and Eicholt 2024</li>
+<li><strong>Issue</strong> The comparison to the Drosophila study is brief and the sentence ends with a colon, suggesting a quote or list that is not present.</li>
+<li><strong>Required correction</strong> Complete the sentence and provide a more detailed comparison of the two studies' findings.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (statistical test for secondary structure agreement) and R1-M2 (length-matched control) are the most critical. Both are central to the main claims and cannot be evaluated from the submitted material. R1-M3 (disorder interpretation) and R1-M4 (database search quality) are important but not blocking.</li>
+<li><strong>Assessment against Nature-style criteria</strong><br />
+<em>Originality</em>: The question of TBM generalization to orphan proteins is not entirely new, but the specific application to Meloidogyne and the multi-method comparison is a useful contribution. The work is incremental rather than transformative.<br />
+<em>Scientific importance</em>: The topic is relevant to a broad community, as orphan proteins are widespread and understudied. The findings have practical implications for users of structure prediction tools. However, the importance is moderate, as the conclusions are largely negative (TBMs fail on tertiary structure) and the positive result (secondary structure) is not surprising.<br />
+<em>Interdisciplinary readership</em>: The manuscript is likely to appeal to computational biologists, structural biologists, and evolutionary biologists. The writing is accessible, but some methods details are sparse.<br />
+<em>Technical soundness</em>: The overall approach is reasonable, but the missing details on the statistical test and the length-matched control are significant gaps. The lack of experimental validation is acknowledged but limits the strength of the conclusions.<br />
+<em>Readability for nonspecialists</em>: The manuscript is generally well-written and the figures are clear. The abstract and introduction are accessible. Some methods sections assume familiarity with specific tools.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core question is valid and the dataset is valuable, but the current evidence does not fully establish the central claims about secondary structure reliability and the role of sequence length. The authors should provide the missing methodological details and clarify the interpretation of the disorder results.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that secondary structure is "consistently and significantly recovered" is not fully supported without the null model description (R1-M1).</li>
+<li>The claim that the observed failures are not due to sequence length is not verifiable without the length-matched control details (R1-M2).</li>
+<li>The claim that "the more closely the method is related to TBMs, the more disorder will be predicted" is presented as a general trend but is based on a single dataset and three predictors; the direction of the bias is not established (R1-M3).</li>
+<li>The conclusion that "reliable structural inference for orphan proteins remains challenging" is supported, but the database search results are not reported in sufficient detail to assess the strength of this conclusion (R1-M4).</li>
+<li>The statement that "the convergence of these findings strongly suggests that the observed behavior reflects a general property of TBMs" is speculative, as it relies on a single comparison to a Drosophila study with limited detail.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

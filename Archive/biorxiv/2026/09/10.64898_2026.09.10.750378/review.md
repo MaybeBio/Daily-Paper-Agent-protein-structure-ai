@@ -1,0 +1,87 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose using the first 10 non-zero eigenvalues of the Laplace–Beltrami spectrum as a compact descriptor for protein surface shape, enabling training-free classification. They report 85.8% accuracy on 97 original classes and 97.7% accuracy on 45 homology-grouped classes from the SHREC 2025 dataset, with approximately 75 minutes computation time on a conventional desktop processor.
+- **Visible evidence base** Abstract text only; no dataset details, algorithmic specifications, statistical analyses, or comparative baselines are visible
+- **Missing materials affecting confidence** Full manuscript, methods section, figures, tables, supplementary information, dataset documentation, and code or reproducibility details
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting and computationally attractive idea, namely the use of a very small number of Laplace–Beltrami eigenvalues as a fixed-length descriptor for protein surface classification. The reported accuracies are notable, and the computational cost is modest. However, the abstract alone does not provide sufficient methodological detail to assess the validity, generalizability, or novelty of the approach. Key questions regarding the training-free claim, the choice of the eigenvalue cutoff, the comparison to existing descriptors, and the statistical robustness of the reported accuracies remain unanswered. The work may be of interest to the structural biology and computational geometry communities, but the case is not fully established from the supplied material.
+- **Who would be interested in the results, and why** Structural biologists and bioinformaticians working on protein structure comparison, function prediction, and database-scale screening would be interested. Researchers developing geometric descriptors for molecular surfaces, as well as those applying spectral methods in computational biology, would also find the approach relevant. The potential for rapid, parallelizable screening of large structure databases, including predicted models from AlphaFold, broadens the appeal to the protein science community.
+- **Major strengths** The use of only 10 eigenvalues is a striking reduction in descriptor dimensionality compared to existing approaches such as 121-entry Zernike descriptors. The reported accuracy values are high, particularly on the homology-grouped classes. The computational time of approximately 75 minutes for over 11,000 meshes suggests practical scalability. The claim of training-free classification is conceptually appealing for database screening applications.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The method achieves 85.8% accuracy on the original 97 classes and 97.7% accuracy on the homology-grouped 45 classes of the SHREC 2025 dataset.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract reports accuracy values but provides no information on the classification procedure, the definition of accuracy, the train-test split, or the statistical significance of the results. It is unclear whether the classification is performed by nearest-neighbor matching in the 10-dimensional eigenvalue space, by clustering, or by some other rule. Without this information, the reported accuracies cannot be interpreted or reproduced.
+  - **Why it matters** Accuracy values are meaningless without a clear specification of the evaluation protocol. The claim of training-free classification is central to the contribution, but the abstract does not explain how classification is achieved without training. This is a fundamental methodological gap.
+  - **Resolution test** The full manuscript must describe the exact classification algorithm, the distance metric used, the handling of degenerate or repeated eigenvalues, and the evaluation protocol. The authors should provide a confusion matrix or per-class accuracy breakdown, and ideally a comparison to a simple baseline such as nearest-neighbor classification using a standard descriptor.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The first 10 non-zero eigenvalues of the Laplace–Beltrami spectrum capture protein structural properties sufficient for classification.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not justify the choice of 10 eigenvalues. No ablation study, convergence analysis, or comparison to other numbers of eigenvalues is presented. It is possible that fewer eigenvalues suffice, or that more eigenvalues would improve accuracy. The sensitivity of the results to this parameter is unknown.
+  - **Why it matters** The central claim of the paper is that a very small number of eigenvalues is sufficient. Without a systematic analysis of the effect of the number of eigenvalues on classification performance, the choice of 10 appears arbitrary and the claim is not substantiated.
+  - **Resolution test** The authors should provide a plot or table showing classification accuracy as a function of the number of eigenvalues used, for example from 1 to 50, on the same benchmark. This would demonstrate that 10 is a principled choice.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** The approach can easily be applied to large protein structure databases and allows the incorporation of other descriptors, including surface features such as charge.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims scalability and extensibility but provides no evidence. No runtime scaling analysis with respect to database size is shown, and no example of incorporating additional descriptors is given. The claim that the method is readily parallelizable is plausible but unverified.
+  - **Why it matters** Scalability and extensibility are presented as key advantages over existing methods. Without quantitative evidence, these claims remain speculative and do not distinguish the method from other approaches that also claim scalability.
+  - **Resolution test** The authors should provide a scaling experiment showing computation time as a function of the number of meshes, and a demonstration of how additional surface features are integrated into the descriptor and whether they improve classification accuracy.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Originality
+  - **Claim pointer** The use of the Laplace–Beltrami spectrum as an efficient option to capture protein structural properties is proposed.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not discuss prior work on spectral methods for shape analysis or protein structure representation. Laplace–Beltrami spectra have been used extensively in computer graphics and shape retrieval. The novelty of applying this to protein surfaces with a very small number of eigenvalues is unclear without a literature review.
+  - **Why it matters** The contribution of the paper depends on what is genuinely new. If spectral descriptors have been applied to proteins before, the novelty may lie only in the specific choice of 10 eigenvalues and the benchmark results. The abstract does not allow the reader to assess this.
+  - **Resolution test** The full manuscript must include a thorough literature review of spectral shape descriptors in biology and computer graphics, and clearly state the novel contribution relative to prior work.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Definition of Laplace–Beltrami spectrum
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract defines the Laplace–Beltrami spectrum as a mathematical representation derived from eigenvalues of the Laplace–Beltrami operator, but does not explain in intuitive terms what this represents geometrically or why it is suited for protein surface comparison.
+  - **Required correction** Add one or two sentences explaining, in accessible terms, that these eigenvalues capture global shape properties such as curvature and volume, and why they are invariant to rotation and translation, which is relevant for structure comparison.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Computational time claim
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The computation time of approximately 75 minutes is reported for a specific processor, but no details are given on the software implementation, the mesh preprocessing steps, or whether this time includes mesh generation or only eigenvalue computation.
+  - **Required Correction** Specify the exact steps included in the timing measurement, the software and libraries used, and whether the time is for a single run or averaged over multiple runs.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Comparison to existing methods
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions Zernike descriptors and combinations of molecular and geometric properties as existing approaches but does not provide a quantitative comparison of the proposed method against these baselines on the same dataset.
+  - **Required Correction** Include a comparison table or text reporting accuracy and computation time for at least one existing descriptor method on the SHREC 2025 dataset under the same evaluation protocol.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interdisciplinary readership
+  - **Affected element** Dataset description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The SHREC 2025 dataset is mentioned but not described. Readers outside the shape retrieval community may not know its composition, the nature of the 97 classes, or the meaning of homology grouping.
+  - **Required Correction** Provide a brief description of the dataset, including the number of proteins, the source of structures, and the definition of homology groups.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The classification procedure and evaluation protocol must be fully specified, the choice of 10 eigenvalues must be justified through systematic analysis, and the scalability and extensibility claims must be supported with quantitative evidence.
+- **Assessment against Nature-style criteria** Originality: The idea of using a very small number of Laplace–Beltrami eigenvalues for protein surface classification may be novel, but this cannot be confirmed without a literature review. Scientific importance: The potential for rapid, training-free screening of large structure databases is significant, but the impact depends on demonstrating clear advantages over existing methods. Interdisciplinary readership: The topic bridges structural biology and computational geometry, which could attract a broad audience, but the abstract is too technical for nonspecialists. Technical soundness: The reported accuracies are promising, but the lack of methodological detail prevents assessment of validity. Readability for nonspecialists: The abstract is concise but assumes familiarity with spectral methods and shape descriptors; it could be improved with brief intuitive explanations.
+
+## Risk / unsupported claims
+- The reported accuracy values (85.8% and 97.7%) are unsupported because the classification procedure and evaluation protocol are not described.
+- The claim that the method is training-free is unsupported because the abstract does not explain how classification is performed without training.
+- The claim that the choice of 10 eigenvalues is sufficient is unsupported because no ablation or sensitivity analysis is presented.
+- The claim that the method is readily parallelizable and allows incorporation of other descriptors is unsupported by any evidence.
+- The computational time claim is weakly supported because the measurement conditions are not specified.
+- The generalizability of the method beyond the SHREC 2025 dataset is not assessable from the abstract.

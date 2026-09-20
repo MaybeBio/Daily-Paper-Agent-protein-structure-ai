@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the supplied abstract text
+- **Shared manuscript claim summary** The abstract argues that generative AI has advanced protein design, that current confidence metrics are optimized for static interfaces and fail on underrepresented or conformationally complex targets, that ensemble-based methods could improve design success rates, and that emerging strategies such as fold-switching scaffolds and molecular glues expand the functional scope of designed proteins.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or references provided
+- **Missing materials affecting confidence** Full manuscript text, figures, tables, references, and any experimental or computational validation data
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and timely perspective on the protein design landscape, but the claims are broad and largely unsupported by the supplied material. The central assertion that confidence metrics fail on underrepresented or conformationally complex targets is stated without evidence, and the proposed ensemble-based solution is not substantiated. The abstract reads as a high-level overview rather than a critical review with a clear evidence base. The scope is ambitious, covering multiple application areas, but the depth of analysis cannot be assessed from the abstract alone.
+- **Who would be interested in the results, and why** Computational biologists, protein engineers, and structural biophysicists working on de novo protein design, antibody engineering, and peptide therapeutics would find this review relevant. Researchers developing generative models for biomolecular design and those applying such tools in drug discovery would also be interested, as the abstract addresses practical limitations in current confidence metrics and proposes methodological directions.
+- **Major strengths** The abstract identifies a genuine gap in the field, namely the mismatch between confidence metrics optimized for static interfaces and the complexity of conformationally dynamic or underrepresented targets. The breadth of application areas covered, from peptide and small molecule design to vaccines and antibodies, reflects a comprehensive scope. The mention of emerging strategies such as fold-switching scaffolds and molecular glues indicates awareness of frontier developments.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that confidence metrics "remain optimized for static protein interfaces and can fail when applied to underrepresented or conformationally complex targets"
+  - **Evidence pointer** Abstract text, location not provided
+  - **Concern** The abstract asserts a failure mode for confidence metrics without presenting any comparative data, case studies, or quantitative analysis. No specific examples of failure are given, and no benchmarks are cited.
+  - **Why it matters** This claim is central to the review's motivation and proposed direction. If unsupported, the rationale for ensemble-based methods is weakened, and the review risks being perceived as opinion rather than evidence-based synthesis.
+  - **Resolution test** Provide specific examples or citations where confidence metrics demonstrably failed on underrepresented or conformationally complex targets, with quantitative or qualitative comparison to performance on static interfaces.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that "the integration of ensemble-based methods represents a promising avenue for improving design success rates"
+  - **Evidence pointer** Abstract text, location not provided
+  - **Concern** The abstract proposes ensemble-based methods as a solution but provides no evidence, proof-of-concept, or literature support for this assertion. It is unclear whether this is a hypothesis, a synthesis of existing work, or a novel proposal.
+  - **Why it matters** The review's forward-looking recommendation depends on this claim. Without supporting evidence or a clear rationale, the recommendation is not actionable for readers.
+  - **Resolution test** Cite existing studies or preliminary data demonstrating that ensemble-based approaches improve design success rates, or clearly frame this as a hypothesis with a reasoned mechanistic basis.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scope coherence
+  - **Claim pointer** The abstract claims to "outline the current landscape of deep learning-driven protein design pipelines" and "discuss tailored applications" across five areas
+  - **Evidence pointer** Abstract text, location not provided
+  - **Concern** The abstract lists multiple application areas but does not indicate the depth or comparative framework of the discussion. It is unclear whether the review provides a systematic comparison, a series of case studies, or a narrative overview.
+  - **Why it matters** Readers need to know the review's structure and analytical approach to judge its utility. A list of topics without a clear organizing principle reduces the review's value as a reference.
+  - **Resolution test** Clarify in the abstract the review's structure, such as a comparative framework, a set of criteria for evaluating pipelines, or a thematic organization.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract text, location not provided
+  - **Issue** The term "ensemble-based methods" is used without definition or context. It is ambiguous whether this refers to ensembles of models, ensembles of conformations, or both.
+  - **Required correction** Define the term explicitly in the abstract or provide a brief parenthetical clarification.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Precision
+  - **Affected element** Claim scope
+  - **Evidence pointer** Abstract text, location not provided
+  - **Issue** The phrase "high-affinity binders against diverse targets" is broad and could imply universal success, which is not supported by the field's current state.
+  - **Required correction** Qualify the statement with a phrase such as "in several demonstrated cases" or "for a range of target classes."
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Emerging strategies
+  - **Evidence pointer** Abstract text, location not provided
+  - **Issue** The mention of "fold-switching scaffolds and molecular glues realized through engineered cyclic peptides" is intriguing but lacks any indication of maturity, validation, or limitations.
+  - **Required correction** Add a brief note on the stage of development or key challenges for these strategies.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are the primary technical concerns. The central claims regarding metric failure and ensemble-based solutions require explicit evidence or clear framing as hypotheses. Without these, the review's contribution is not established from the supplied material.
+- **Assessment against Nature-style criteria** Originality: The abstract touches on a relevant gap but does not demonstrate a novel synthesis or unique perspective beyond what is common in the field. Scientific importance: The topic is important, but the abstract does not convey a specific, actionable insight. Interdisciplinary readership: The abstract is accessible to a broad audience, but the lack of depth limits its appeal to specialists. Technical soundness: Not assessable from the abstract; no methods or data are presented. Readability for nonspecialists: The abstract is clearly written and avoids jargon, which is a positive feature.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible overview, but the central claims require substantiation. A revised abstract with explicit evidence, clearer framing, and defined terminology could change this assessment.
+
+## Risk / unsupported claims
+- The claim that confidence metrics fail on underrepresented or conformationally complex targets is unsupported by any data or citation in the supplied material.
+- The claim that ensemble-based methods improve design success rates is unsupported and appears as an assertion rather than a reasoned recommendation.
+- The assertion that the listed advances "position de novo protein design as a broadly applicable technology platform" is a general statement without specific evidence in the abstract.
+- The scope and depth of the review's coverage of the five application areas cannot be evaluated from the abstract alone.

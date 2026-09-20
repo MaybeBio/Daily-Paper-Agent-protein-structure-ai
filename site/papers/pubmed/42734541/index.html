@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exploring Protein Conformational Ensembles Using Evolutionary Conditional Diffusion. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Exploring Protein Conformational Ensembles Using Evolutionary Conditional Diffusion.</h1>
+      <div class="meta">Cui, Xinyue; Ge, Lingyu; Yang, Xinguang; Li, Xuhui; Hou, Dongliang; Zhou, Xiaogen; Zhang, Guijun</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-09-14
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42734541/">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于进化条件扩散的DiffEnsemble框架，从静态蛋白结构学习潜在动态表征并生成构象系综，在ATLAS基准上优于现有方法，直接命中蛋白质构象采样与生成这一核心计算问题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein conformational ensembles encode the dynamic landscapes underlying biological function, regulation, and allostery. Accurately reconstructing such ensembles while balancing the accuracy of conformational distributions and physical plausibility remains a fundamental challenge in structural biology, particularly when dynamic data are scarce. Here, we propose DiffEnsemble, a diffusion-based framework designed for modeling protein conformational ensembles. DiffEnsemble learns latent dynamical representations from static protein structures in the Protein Data Bank and integrates the structural profile derived from the AlphaFold Protein Structure Database as conditional guidance during the diffusion process. Benchmarking on 72 protein targets from the ATLAS molecular dynamics simulation data set demonstrates that DiffEnsemble outperforms existing methods, including BioEmu and AlphaFLOW. Compared with AlphaFLOW, DiffEnsemble achieves improvements of 28.9% and 7.5% in Pearson correlation coefficients for ensemble pairwise root-mean-square deviation and root-mean-square fluctuation, respectively. The results demonstrate that latent dynamical information embedded in static structural data can effectively support the modeling of protein conformational ensembles.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质构象系综编码了支撑生物功能、调控和别构效应的动态景观。在平衡构象分布的准确性与物理合理性的同时，精确重建此类系综仍是结构生物学中的一项基本挑战，尤其是在动态数据稀缺的情况下。在此，我们提出DiffEnsemble，一个基于扩散的框架，旨在建模蛋白质构象系综。DiffEnsemble从蛋白质数据银行（Protein Data Bank）中的静态蛋白质结构学习潜在动态表征，并将AlphaFold蛋白质结构数据库（AlphaFold Protein Structure Database）导出的结构谱作为扩散过程中的条件引导进行整合。在来自ATLAS分子动力学模拟数据集的72个蛋白质靶标上的基准测试表明，DiffEnsemble优于现有方法，包括BioEmu和AlphaFLOW。与AlphaFLOW相比，DiffEnsemble在系综成对均方根偏差和均方根涨落的皮尔逊相关系数上分别实现了28.9%和7.5%的提升。结果表明，静态结构数据中嵌入的潜在动态信息能有效支持蛋白质构象系综的建模。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Exploring Protein Conformational Ensembles Using Evolutionary Conditional Diffusion</li>
+<li><strong>作者</strong>：Cui, Xinyue; Ge, Lingyu; Yang, Xinguang; Li, Xuhui; Hou, Dongliang; Zhou, Xiaogen; Zhang, Guijun</li>
+<li><strong>单位</strong>：未提供（基于作者信息推测为中国机构，具体单位未在摘要中给出）</li>
+<li><strong>期刊/平台</strong>：Journal of Chemical Information and Modeling (JCIM)</li>
+<li><strong>年份</strong>：2026（在线日期 2026-09-14）</li>
+<li><strong>论文类型</strong>：方法学论文（提出新框架 + 基准评测）</li>
+<li><strong>领域</strong>：蛋白质构象系综建模 × 扩散模型 × 进化信息</li>
+<li><strong>关键词</strong>：conformational ensemble, diffusion model, evolutionary information, AlphaFold, structural dynamics</li>
+<li><strong>DOI/arXiv</strong>：10.1021/acs.jcim.6c01319</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：ATLAS MD 模拟数据集（72 个蛋白靶标）；PDB 静态结构；AlphaFold Protein Structure Database</li>
+<li><strong>阅读日期</strong>：2026-09-14（基于 URL 访问日期推断，实际阅读日期未提供）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质构象采样/系综生成 × 扩散模型」子方向，与 BioEmu、AlphaFLOW 等生成式构象系综方法直接竞争；其独特之处在于利用 PDB 静态结构中的潜在动力学信息 + AlphaFold 结构特征作为条件引导，而非依赖 MD 模拟数据或显式物理约束。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>DiffEnsemble 利用从 PDB 静态结构中学习的潜在动力学表示，并以 AlphaFold 结构特征为条件引导的扩散过程，在 72 个 ATLAS 靶标上生成蛋白质构象系综，相比 AlphaFLOW 在系综 RMSD 和 RMSF 的 Pearson 相关系数上分别提升 28.9% 和 7.5%。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何仅从静态蛋白质结构（PDB + AlphaFold 数据库）出发，生成物理上合理且分布准确的蛋白质构象系综，尤其是在缺乏实验动力学数据（如 MD 轨迹）的情况下？</li>
+<li><strong>为什么重要</strong>：蛋白质构象系综编码了功能、调控和别构背后的动态景观；准确重建系综是结构生物学核心挑战，对药物设计、功能预测和机制理解至关重要。</li>
+<li><strong>现有方法为何不足</strong>：传统 MD 模拟计算成本高且难以充分采样；现有生成式方法（如 BioEmu、AlphaFLOW）或依赖大规模 MD 训练数据，或需要显式物理约束，在动态数据稀缺时性能受限。</li>
+<li><strong>精确研究问题</strong>：Can latent dynamical information embedded in static protein structures (PDB + AlphaFold) serve as sufficient conditional signal for diffusion models to generate accurate conformational ensembles without explicit MD training data?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>标注：此脉络为「仅本文框架」——基于摘要中提及的方法对比，未进行外部文献核验。</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理模拟</td>
+<td>MD 模拟</td>
+<td>物理精确、原子级分辨率</td>
+<td>计算昂贵、采样不充分、需要力场</td>
+<td>作为评测基准（ATLAS 数据）</td>
+</tr>
+<tr>
+<td>粗粒化/增强采样</td>
+<td>各类增强采样方法</td>
+<td>加速采样</td>
+<td>仍需物理模型、参数化复杂</td>
+<td>未直接涉及</td>
+</tr>
+<tr>
+<td>生成式构象建模</td>
+<td>BioEmu</td>
+<td>从序列直接生成系综</td>
+<td>依赖大规模训练数据、可能缺乏物理约束</td>
+<td>作为对比基线</td>
+</tr>
+<tr>
+<td>生成式构象建模</td>
+<td>AlphaFLOW</td>
+<td>结合 AlphaFold 特征、flow-based 生成</td>
+<td>系综分布精度有限</td>
+<td>作为主要对比基线</td>
+</tr>
+<tr>
+<td><strong>本文</strong></td>
+<td><strong>DiffEnsemble</strong></td>
+<td><strong>利用静态结构中的潜在动力学 + AlphaFold 条件引导</strong></td>
+<td><strong>依赖 PDB 结构多样性、未验证泛化性</strong></td>
+<td><strong>提出新框架</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>动态数据稀缺</td>
+<td>实验 MD 轨迹或 NMR 系综难以获得</td>
+<td>实验成本高、时间尺度限制</td>
+<td>摘要： "particularly when dynamic data are scarce"</td>
+</tr>
+<tr>
+<td>静态结构信息未充分利用</td>
+<td>PDB 中大量静态结构仅用于单构象预测</td>
+<td>缺乏从静态结构提取动力学信息的有效方法</td>
+<td>摘要： "learns latent dynamical representations from static protein structures"</td>
+</tr>
+<tr>
+<td>现有生成方法分布精度不足</td>
+<td>BioEmu、AlphaFLOW 在系综 RMSD/RMSF 上精度有限</td>
+<td>条件信号不足或生成机制不适合系综分布建模</td>
+<td>摘要： DiffEnsemble 相比 AlphaFLOW 在 RMSD 上提升 28.9%</td>
+</tr>
+<tr>
+<td>物理合理性 vs 分布准确性权衡</td>
+<td>生成系综要么物理合理但分布偏差，要么分布准确但物理不合理</td>
+<td>缺乏同时优化两者的框架</td>
+<td>摘要： "balancing the accuracy of conformational distributions and physical plausibility"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：DiffEnsemble 是一个条件扩散模型，以 AlphaFold 结构特征为条件引导，从 PDB 静态结构中学习潜在动力学表示，生成蛋白质构象系综。</li>
+<li><strong>核心洞察</strong>：静态蛋白质结构数据库中（PDB）隐含着丰富的进化保守的动力学信息——不同物种/同源蛋白的静态结构差异编码了构象变化的潜在模式；AlphaFold 数据库中的结构特征可作为有效的条件信号，引导扩散过程生成物理上合理的构象系综，而无需显式 MD 数据。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：静态数据（如 PDB 快照）中可能编码了动态信息，通过合适的表示学习方法可以提取并用于动态建模；条件扩散模型可以灵活整合多种结构特征作为引导信号，为「数据稀缺条件下的构象建模」提供新范式。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质序列（或结构）；PDB 静态结构（训练用）；AlphaFold 结构特征（条件引导）</li>
+<li><strong>输出</strong>：蛋白质构象系综（多个构象的集合）</li>
+<li><strong>模块</strong>：
+  1. 潜在动力学表示学习模块（从 PDB 静态结构提取）
+  2. 条件扩散模型（生成构象）
+  3. AlphaFold 结构特征提取与编码模块（条件信号）</li>
+<li><strong>训练</strong>：在 PDB 静态结构上训练潜在动力学表示；扩散模型以 AlphaFold 特征为条件进行训练</li>
+<li><strong>工具</strong>：扩散模型框架（具体架构未在摘要中详述）</li>
+<li><strong>反馈回路</strong>：未明确提及（可能通过生成构象的物理合理性评估进行迭代优化，但摘要未提供）</li>
+<li><strong>假设</strong>：PDB 静态结构中的潜在动力学信息可迁移到目标蛋白的构象系综建模；AlphaFold 结构特征可作为有效的条件引导</li>
+<li><strong>流程</strong>：输入序列 → 获取 AlphaFold 结构特征 → 结合 PDB 学习的潜在动力学表示 → 条件扩散模型迭代去噪 → 输出构象系综 → 评测（RMSD/RMSF 与 ATLAS MD 对比）</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>潜在动力学表示学习</td>
+<td>从 PDB 静态结构提取进化保守的动力学模式</td>
+<td>提供无 MD 数据时的动力学先验</td>
+<td>输入：PDB 结构；输出：潜在动力学表示</td>
+<td>摘要： "learns latent dynamical representations from static protein structures"</td>
+<td>预期影响：失去动力学先验，生成系综可能偏离真实构象分布 [预期效应，未实测]</td>
+</tr>
+<tr>
+<td>AlphaFold 条件引导</td>
+<td>将 AlphaFold 结构特征作为扩散条件</td>
+<td>提供目标蛋白的结构上下文，引导生成方向</td>
+<td>输入：AlphaFold 结构特征；输出：条件向量</td>
+<td>摘要： "integrates the structural profile derived from the AlphaFold Protein Structure Database as conditional guidance"</td>
+<td>预期影响：生成构象可能缺乏目标蛋白特异性 [预期效应，未实测]</td>
+</tr>
+<tr>
+<td>条件扩散生成器</td>
+<td>迭代去噪生成构象系综</td>
+<td>核心生成机制</td>
+<td>输入：噪声 + 条件；输出：构象集合</td>
+<td>摘要： "diffusion-based framework"</td>
+<td>移除则无法生成 [核心模块]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用——摘要中未提供任何数学公式或符号定义。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：ATLAS MD 模拟数据集（72 个蛋白靶标）</li>
+<li><strong>规模</strong>：72 个蛋白靶标</li>
+<li><strong>指标</strong>：系综 pairwise RMSD 的 Pearson 相关系数；RMSF 的 Pearson 相关系数</li>
+<li><strong>基线</strong>：BioEmu、AlphaFLOW</li>
+<li><strong>评测协议</strong>：将生成系综与 ATLAS MD 模拟的系综进行对比，计算 Pearson 相关系数</li>
+<li><strong>oracle 输入</strong>：AlphaFold 结构特征（作为条件引导）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系综 RMSD 对比</td>
+<td>DiffEnsemble 生成系综的分布准确性</td>
+<td>vs AlphaFLOW</td>
+<td>Pearson 相关系数提升 28.9%</td>
+<td>DiffEnsemble 在系综分布上优于 AlphaFLOW</td>
+<td>未提供绝对数值，无法判断绝对精度</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>系综 RMSF 对比</td>
+<td>DiffEnsemble 生成系综的波动准确性</td>
+<td>vs AlphaFLOW</td>
+<td>Pearson 相关系数提升 7.5%</td>
+<td>DiffEnsemble 在残基波动上优于 AlphaFLOW</td>
+<td>提升幅度小于 RMSD，可能波动预测仍有局限</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>与 BioEmu 对比</td>
+<td>DiffEnsemble 优于现有生成方法</td>
+<td>vs BioEmu</td>
+<td>未提供具体数值</td>
+<td>DiffEnsemble 优于 BioEmu</td>
+<td>未提供具体提升幅度</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对 72 个 ATLAS 蛋白靶标的构象系综生成，未覆盖所有蛋白类型或更大规模测试集。</li>
+<li><strong>oracle/真值输入</strong>：使用 AlphaFold 结构特征作为条件引导，但 AlphaFold 本身是预测结构，可能引入预测误差。</li>
+<li><strong>端到端状态</strong>：方法端到端可运行，但依赖 PDB 预训练和 AlphaFold 特征提取，非完全从序列直接生成。</li>
+<li><strong>算力成本</strong>：未提供训练和推理的计算成本信息。</li>
+<li><strong>历史数据依赖</strong>：依赖 PDB 静态结构的多样性和 AlphaFold 数据库的覆盖度。</li>
+<li><strong>模型依赖</strong>：依赖扩散模型的生成质量和条件编码器的表达能力。</li>
+<li><strong>最难情形</strong>：未讨论高度动态蛋白、 intrinsically disordered proteins 或多结构域蛋白的挑战。</li>
+<li><strong>不确定性</strong>：仅报告 Pearson 相关系数，未提供误差条、统计显著性检验或绝对误差指标。</li>
+<li><strong>边界化复述</strong>：DiffEnsemble 在 72 个 ATLAS 靶标上，利用 PDB 静态结构和 AlphaFold 特征作为条件，生成的构象系综在分布（RMSD）和波动（RMSF）上与 MD 模拟的 Pearson 相关性优于 AlphaFLOW 和 BioEmu，但绝对精度、泛化性和计算成本未在摘要中报告。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><em>作者提及的相关约束（非正式局限）</em>：
+- 摘要中提及 "particularly when dynamic data are scarce"，暗示方法针对数据稀缺场景设计，但未明确说明在数据充足时的表现。
+- 评测仅基于 ATLAS 数据集，未提及跨数据集泛化验证。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅报告 Pearson 相关系数</td>
+<td>Pearson 相关对线性关系敏感，可能掩盖系统偏差；高相关不一定意味着高绝对精度</td>
+<td>系综生成需要同时评估分布形状和物理合理性</td>
+<td>补充 RMSD 绝对误差、分布重叠指标（如 Jensen-Shannon divergence）</td>
+<td>摘要仅提及 Pearson 相关系数</td>
+</tr>
+<tr>
+<td>提升幅度差异大（RMSD 28.9% vs RMSF 7.5%）</td>
+<td>可能表明方法在全局构象分布上改进显著，但残基级波动预测仍有不足</td>
+<td>残基波动对功能位点识别至关重要</td>
+<td>分析 RMSF 误差的空间分布，检查是否在 loop/活性位点区域误差更大</td>
+<td>摘要中两个指标的提升幅度</td>
+</tr>
+<tr>
+<td>依赖 AlphaFold 结构特征</td>
+<td>AlphaFold 预测结构本身可能不准确，条件信号可能引入系统性偏差</td>
+<td>条件信号质量直接影响生成结果</td>
+<td>对比使用实验结构 vs AlphaFold 结构作为条件的生成质量</td>
+<td>摘要： "structural profile derived from the AlphaFold Protein Structure Database"</td>
+</tr>
+<tr>
+<td>未报告与 MD 模拟的计算成本对比</td>
+<td>如果生成成本接近 MD，则优势减弱</td>
+<td>计算效率是方法实用性的关键</td>
+<td>对比 DiffEnsemble 与 MD 模拟达到相似精度的计算时间</td>
+<td>摘要未提供计算成本信息</td>
+</tr>
+<tr>
+<td>72 个靶标的测试集规模</td>
+<td>可能不足以覆盖蛋白构象多样性</td>
+<td>泛化性存疑</td>
+<td>在更大规模、更多样化的数据集上验证</td>
+<td>摘要： "72 protein targets from the ATLAS"</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>静态结构中的潜在动力学提取</strong>：PDB 中大量静态结构（不同物种、不同配体状态）可能编码进化保守的构象变化模式。可迁移到本课题：在缺乏 MD 数据时，利用 PDB 同源结构集合学习构象变化的潜在表示，作为 MD 模拟或构象生成的先验。</li>
+<li><strong>AlphaFold 结构特征作为条件引导</strong>：将 AlphaFold 预测的结构特征（而非仅序列）作为扩散模型的条件信号，可提供目标蛋白的结构上下文。可迁移到本课题：在构象生成、分子对接或结构设计中，将 AlphaFold 特征作为条件输入，增强生成结构的目标特异性。</li>
+<li><strong>条件扩散模型用于系综生成</strong>：扩散模型天然适合生成多样化的构象集合，通过条件控制可平衡多样性与物理合理性。可迁移到本课题：在构象采样、构象生成任务中，采用条件扩散框架替代传统 MD 或自回归生成。</li>
+<li><strong>评测指标选择</strong>：使用系综级 RMSD 和 RMSF 的 Pearson 相关系数评估生成系综与 MD 参考的一致性。可迁移到本课题：在构象生成方法评测中，同时报告分布级和残基级指标，避免单一指标误导。</li>
+<li><strong>无 MD 数据的构象建模范式</strong>：本文展示了在无显式 MD 训练数据条件下，通过静态结构 + 进化信息进行构象建模的可行性。可迁移到本课题：对于缺乏实验动力学数据的目标蛋白，可探索类似「静态结构 → 潜在动力学 → 构象生成」的 pipeline。</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：BioEmu（基于扩散模型的构象系综生成）、AlphaFLOW（基于 flow 的构象生成）——本文直接对比的方法，属于生成式构象建模前沿。</li>
+<li><strong>理论基础</strong>：扩散模型（DDPM/Score-based）在蛋白质结构生成中的应用，如 AlphaFold3 的扩散模块、RFdiffusion 等。</li>
+<li><strong>数据资源</strong>：ATLAS MD 数据集（构象系综评测基准）、PDB（静态结构训练数据）、AlphaFold Protein Structure Database（条件特征来源）。</li>
+<li><strong>相关方向</strong>：进化信息在结构预测中的应用（如 MSA 特征）、蛋白质动态的进化保守性研究。</li>
+<li><strong>可迁移领域</strong>：分子对接中的构象采样（生成多样结合构象）、蛋白质设计中的构象多样性控制、MD 模拟的增强采样初始化。</li>
+<li><em>注：以上连接基于摘要中明确提及的方法和数据，未进行外部文献核验。</em></li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：进化条件扩散用于无 MD 数据的蛋白-配体结合构象生成
+   - <strong>来源局限/观察</strong>：DiffEnsemble 仅针对 apo 蛋白构象系综，未涉及配体结合状态；分子对接中构象采样常受限于初始构象。
+   - <strong>核心假设</strong>：利用 PDB 中不同配体结合状态的静态结构差异，可学习配体诱导的构象变化模式，用于生成结合态构象。
+   - <strong>相对本文的增量</strong>：将条件从 AlphaFold 特征扩展到配体存在/结合位点信息，生成结合态系综。
+   - <strong>初步方法</strong>：在 DiffEnsemble 框架中引入配体分子特征作为额外条件，在 PDB 结合态结构上训练。
+   - <strong>验证方式</strong>：在 benchmark 对接数据集上比较生成结合构象与实验共晶结构的 RMSD。
+   - <strong>可能的失败模式</strong>：配体诱导构象变化可能不总是进化保守，PDB 中结合态结构多样性不足。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：扩散模型生成构象系综的物理合理性增强
+   - <strong>来源局限/观察</strong>：DiffEnsemble 仅报告 Pearson 相关系数，未明确验证生成构象的物理合理性（如键长、键角、非键接触）。
+   - <strong>核心假设</strong>：在扩散采样过程中引入轻量级物理约束（如 clash 惩罚、Ramachandran 偏好）可提升生成构象的物理合理性而不显著损失分布精度。
+   - <strong>相对本文的增量</strong>：在扩散采样阶段加入可微物理约束，实现「分布精度 + 物理合理性」双目标优化。
+   - <strong>初步方法</strong>：在 DiffEnsemble 的采样过程中加入 clash 和 torsional 约束项，对比有无约束的生成质量。
+   - <strong>验证方式</strong>：使用 MolProbity 或类似工具评估生成构象的物理质量，同时保持 RMSD/RMSF 精度。
+   - <strong>可能的失败模式</strong>：物理约束可能过度限制构象多样性，导致分布精度下降。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：跨数据集泛化性评估与进化信息增强
+   - <strong>来源局限/观察</strong>：DiffEnsemble 仅在 ATLAS 数据集上评测，未验证跨数据集泛化性。
+   - <strong>核心假设</strong>：在训练数据中引入更丰富的进化信息（如多序列比对深度、系统发育距离）可提升模型在未见蛋白上的泛化能力。
+   - <strong>相对本文的增量</strong>：系统评估进化信息质量对生成性能的影响，提出进化信息增强策略。
+   - <strong>初步方法</strong>：在不同 MSA 深度/多样性的蛋白上测试 DiffEnsemble，分析性能与进化信息质量的相关性。
+   - <strong>验证方式</strong>：在多个独立构象数据集（如 PDBflex、MD ensemble 数据库）上评测。
+   - <strong>可能的失败模式</strong>：进化信息与构象动态的相关性可能因蛋白家族而异，难以统一增强。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：DiffEnsemble 与 MD 模拟的混合采样策略
+   - <strong>来源局限/观察</strong>：DiffEnsemble 生成系综可能缺乏 MD 模拟的物理动力学细节；MD 模拟采样效率低。
+   - <strong>核心假设</strong>：DiffEnsemble 生成多样化的初始构象，作为 MD 模拟的多个起点，可加速构象空间探索并保持物理精度。
+   - <strong>相对本文的增量</strong>：提出「生成式初始化 + MD 精修」的混合 pipeline，结合两者优势。
+   - <strong>初步方法</strong>：用 DiffEnsemble 生成 N 个构象作为 MD 模拟起点，对比单起点 MD 的采样效率。
+   - <strong>验证方式</strong>：比较混合策略与纯 MD 在相同计算预算下的构象空间覆盖度。
+   - <strong>可能的失败模式</strong>：生成构象可能处于高能区域，MD 精修需要较长平衡时间。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose DiffEnsemble, a diffusion-based framework that learns latent dynamical representations from static protein structures and integrates AlphaFold-derived structural profiles as conditional guidance, to model protein conformational ensembles. They report benchmarking on 72 protein targets from the ATLAS molecular dynamics simulation dataset, claiming superior performance over BioEmu and AlphaFLOW, with specific improvements of 28.9% and 7.5% in Pearson correlation coefficients for ensemble pairwise root-mean-square deviation and root-mean-square fluctuation, respectively.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods details, or supplementary information were supplied</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript text, methods section, benchmark details, statistical analyses, figure and table contents, dataset construction details, and any code or reproducibility information</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially interesting application of diffusion models to protein conformational ensemble prediction, with a conceptually appealing idea of leveraging static structure databases to infer dynamical properties. However, the evidence provided in the abstract alone is insufficient to evaluate the technical soundness, statistical rigor, or generalizability of the claims. The reported performance improvements are presented without confidence intervals, statistical tests, or methodological details, and the absence of any description of the model architecture, training procedure, or evaluation protocol prevents independent assessment. The core claim that latent dynamical information in static structures can effectively support ensemble modeling is plausible but not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational structural biologists, researchers working on protein dynamics and conformational sampling, and developers of generative models for biomolecular applications would be interested. The work addresses a recognized challenge in reconstructing conformational ensembles when experimental dynamic data are scarce, and the proposed approach of using static structure databases as a source of dynamical information could be of practical value if validated.</li>
+<li><strong>Major strengths</strong> The conceptual framing is clear and addresses a relevant problem in structural biology. The use of AlphaFold-derived structural profiles as conditional guidance is a sensible and timely integration of existing resources. The choice of benchmarking against established methods such as BioEmu and AlphaFLOW on the ATLAS dataset provides a reasonable comparative context.</li>
+<li><strong>Major Concerns</strong> </li>
+<li>R1-M1</li>
+<li>R1-M2</li>
+<li>R1-M3</li>
+<li><strong>Minor Comments</strong> </li>
+<li>R1-m1</li>
+<li>R1-m2</li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality is moderate; the application of diffusion models to conformational ensembles is not entirely new, though the specific use of static structure-derived latent dynamics as conditioning is a distinctive angle. Scientific importance is potentially high if the claims hold, given the broad relevance of conformational ensembles to function and drug design. Interdisciplinary readership is plausible, spanning structural biology, machine learning, and biophysics. Technical soundness cannot be assessed from the abstract alone, as no methodological or statistical details are provided. Readability for nonspecialists is adequate, with the abstract being concise and accessible, though some terms such as "latent dynamical representations" and "conditional diffusion" may require prior familiarity.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract is promising but the absence of methodological and statistical detail precludes a supportive recommendation. A full manuscript with detailed methods, validation, and statistical analysis would be required to assess the claims.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Claim pointer</strong> The claim that DiffEnsemble outperforms BioEmu and AlphaFLOW, with specific improvements of 28.9% and 7.5% in Pearson correlation coefficients for ensemble pairwise root-mean-square deviation and root-mean-square fluctuation, respectively.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The performance improvements are reported as single point estimates without any indication of variance, confidence intervals, or statistical significance testing. It is unclear whether these improvements are consistent across the 72 targets or driven by a subset. No information is provided on how the Pearson correlations were computed, whether they are averaged per target or pooled, or whether the differences are statistically meaningful.</li>
+<li><strong>Why it matters</strong> Without measures of uncertainty or statistical testing, the reported improvements cannot be distinguished from noise. The claim of superiority over existing methods is central to the paper's contribution, and unsupported performance claims undermine the credibility of the entire study.</li>
+<li>
+<p><strong>Resolution test</strong> Provide confidence intervals or standard errors for the reported metrics, perform appropriate statistical tests (for example paired tests across the 72 targets), and report per-target distributions of the correlation coefficients. If the improvements are not uniformly observed, discuss the conditions under which DiffEnsemble performs better or worse.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological transparency</li>
+<li><strong>Claim pointer</strong> The claim that DiffEnsemble learns latent dynamical representations from static protein structures in the Protein Data Bank and integrates the structural profile derived from the AlphaFold Protein Structure Database as conditional guidance during the diffusion process.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract provides no description of the model architecture, the nature of the latent dynamical representations, how they are learned from static structures, or how the AlphaFold-derived structural profile is integrated as conditioning. There is no information on the training data, the preprocessing steps, the diffusion process specifics, or the inference procedure.</li>
+<li><strong>Why it matters</strong> The methodological novelty is a key selling point of the work, but without any technical detail, the approach cannot be evaluated for soundness, reproducibility, or novelty relative to existing diffusion-based methods. Readers cannot determine whether the proposed framework is genuinely distinct or a minor variation of existing approaches.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed methods section describing the model architecture, training procedure, conditioning mechanism, and inference protocol. Include sufficient detail to allow replication, and clarify what specifically constitutes the "latent dynamical representations" and how they are derived from static structures.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Validation scope</li>
+<li><strong>Claim pointer</strong> The claim that benchmarking on 72 protein targets from the ATLAS molecular dynamics simulation dataset demonstrates that DiffEnsemble outperforms existing methods.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract reports results on a single benchmark dataset. No information is provided on the diversity of the 72 targets in terms of size, fold class, conformational flexibility, or functional relevance. It is unclear whether the benchmark includes targets with large-scale conformational changes, intrinsically disordered regions, or other challenging features that would test the method's generalizability. Additionally, no comparison is made to experimental data or to the quality of the generated ensembles in terms of physical plausibility beyond the two reported metrics.</li>
+<li><strong>Why it matters</strong> Performance on a single dataset, even with multiple targets, may not generalize to the broader space of proteins. The claim that the method effectively models conformational ensembles requires evidence that the generated ensembles are physically realistic and biologically meaningful, not just that they correlate with simulation-derived metrics on a selected benchmark.</li>
+<li><strong>Resolution test</strong> Describe the composition of the 72 targets and justify their representativeness. Include additional validation on independent datasets or experimental data where available. Report additional metrics that assess physical plausibility, such as Ramachandran plot distributions, clash scores, or agreement with experimental observables such as chemical shifts or SAXS profiles.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of terminology</li>
+<li><strong>Affected element</strong> "latent dynamical representations"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The term "latent dynamical representations" is used without definition or context. It is unclear whether this refers to a learned embedding of conformational states, a reduced-dimensional representation of dynamics, or something else.</li>
+<li>
+<p><strong>Required correction</strong> Define the term explicitly in the abstract or introduction, and clarify how these representations relate to physical dynamics.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness of comparison</li>
+<li><strong>Affected element</strong> Benchmarking against BioEmu and AlphaFLOW</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract states that DiffEnsemble outperforms BioEmu and AlphaFLOW but does not specify the performance of these baselines on the same metrics. Without baseline values, the magnitude of the improvement is difficult to contextualize.</li>
+<li>
+<p><strong>Required correction</strong> Report the baseline performance values alongside the DiffEnsemble results, or provide a figure or table showing the comparison.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Code and data availability</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> No mention is made of code availability, model weights, or access to the trained models. For a computational method, reproducibility is a key consideration.</li>
+<li><strong>Required correction</strong> State in the abstract or a data availability statement whether code and models will be made publicly available, and if so, under what license.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of superiority over BioEmu and AlphaFLOW is unsupported due to the absence of statistical testing, confidence intervals, and baseline values.</li>
+<li>The claim that latent dynamical information embedded in static structural data can effectively support ensemble modeling is not established, as no mechanistic or ablative evidence is provided to support this interpretation.</li>
+<li>The generalizability of the method beyond the 72 ATLAS targets is unassessable from the supplied material.</li>
+<li>The physical plausibility of the generated ensembles is not demonstrated, as only correlation-based metrics are reported.</li>
+<li>The methodological novelty relative to existing diffusion-based approaches cannot be evaluated without a methods description.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

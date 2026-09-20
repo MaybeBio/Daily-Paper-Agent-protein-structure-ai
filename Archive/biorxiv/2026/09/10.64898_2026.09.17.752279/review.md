@@ -1,0 +1,103 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no figures, tables, methods, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose RNA-MDLM, a masked discrete diffusion framework for conditional generation and inpainting of non-coding RNA sequences. They introduce RNA-type conditioning via a pretrained RNA language model and a modified classifier-free guidance scheme (Mod-CFG). They also present REPAINT GAMES, a benchmark of seven structured masking tasks. The model is trained on 4.6 million ncRNA sequences across six classes. Claims include close matching of natural composition and folding statistics, superior balance of structural fidelity, biological novelty, and inpainting accuracy for the embedding-conditioned model, stronger class-label steering than a plain label baseline, a demonstration that class-balanced training can lead to copying rather than rule learning, and a comparative analysis against a masked-diffusion model and a family-specific VAE on ribozyme families.
+- **Visible evidence base** Abstract text only; no quantitative results, figures, tables, or methodological details are available
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, model architecture details, training hyperparameters, benchmark task definitions, evaluation metrics, baseline implementations, and statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable contribution to RNA generative modeling, addressing an understudied area relative to protein design. The proposed methodological additions, namely RNA-type conditioning and modified classifier-free guidance, are conceptually reasonable. The introduction of a structured benchmark for inpainting tasks is a useful community resource. However, the abstract provides no quantitative evidence to support the central claims. Key assertions about performance, biological novelty, and class-label steering are stated without numerical backing. The comparative analysis against baselines is described only qualitatively, and the claim that different models solve different tasks, while plausible, is not substantiated with data. The abstract is well written and accessible, but the absence of any results makes it impossible to assess technical soundness or the strength of the evidence. The work is likely of interest to the RNA biology and generative modeling communities, but the case is not established from the provided material.
+- **Who would be interested in the results, and why** Researchers in RNA synthetic biology, RNA therapeutics, and computational RNA design would be interested in a generative model for non-coding RNA sequences. The machine learning community, particularly those working on discrete diffusion models and language models for biological sequences, would also find the methodological contributions relevant. The proposed benchmark could serve as a standard evaluation suite for RNA inpainting and generation tasks.
+- **Major strengths** The abstract addresses a clear gap in generative modeling for non-coding RNA. The methodological additions, including RNA-type conditioning and modified classifier-free guidance, are novel in this context. The introduction of a structured benchmark with seven masking tasks is a practical contribution. The authors also consider an important caveat regarding class-balanced training and sequence copying, which demonstrates critical thinking about evaluation pitfalls.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The model produces sequences whose composition and folding statistics closely match natural RNAs.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract states that generated sequences closely match natural RNAs in composition and folding statistics, but no quantitative metrics, comparisons, or statistical tests are reported. It is unclear what "closely match" means in this context, how folding statistics were computed, or against which natural RNA datasets the comparison was made.
+  - **Why it matters** This is a central claim about the model's core capability. Without quantitative evidence, the reader cannot judge whether the match is biologically meaningful or merely superficial. The claim also lacks context regarding the variability within natural RNA sequences, which is essential for interpreting any similarity measure.
+  - **Resolution test** Provide quantitative comparisons, such as distributional statistics for sequence composition and predicted folding energies or structures, with appropriate error bars and statistical significance tests against natural RNA sequences.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The embedding-conditioned model achieves the best balance of structural fidelity, biological novelty, and inpainting accuracy.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract claims that the embedding-conditioned model outperforms alternatives on three distinct criteria, but no metrics, ablation results, or comparisons are shown. The term "best balance" is undefined, and it is unclear how the three criteria were weighted or measured.
+  - **Why it matters** This is the primary methodological conclusion of the work. Without defined metrics and numerical results, the claim is unfalsifiable from the provided material. The absence of ablation details also prevents the reader from understanding which components contribute to the reported performance.
+  - **Resolution test** Present ablation study results with clear metrics for each criterion, including definitions of structural fidelity, biological novelty, and inpainting accuracy, along with statistical comparisons across model variants.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** Class label steers generation far more strongly than a plain label baseline.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The claim of stronger class-label steering is made without any quantitative measure of steering strength or comparison to the baseline. The term "far more strongly" is subjective and unsupported.
+  - **Why it matters** This claim is central to the proposed conditioning approach. Without a defined metric for steering strength, such as class-conditional accuracy or distributional divergence, the reader cannot evaluate the advantage of the proposed method.
+  - **Resolution test** Define a quantitative measure of class-label steering, such as the probability of generating sequences assigned to the target class by a classifier, and report results for the proposed model versus the plain label baseline with appropriate statistical tests.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** A model trained on a smaller, class-balanced subset can appear more realistic mainly by copying abundant natural sequences rather than learning their rules.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract claims that a class-balanced model appears realistic by copying sequences, but no evidence of copying is presented. The distinction between copying and rule learning is not operationalized, and the claim is made without supporting analysis.
+  - **Why it matters** This is an important cautionary finding about evaluation methodology. However, without evidence such as sequence similarity to training data, motif analysis, or generative diversity metrics, the claim is speculative.
+  - **Resolution test** Provide analyses that distinguish copying from rule learning, such as nearest-neighbor distances to training sequences, exact or near-exact match rates, and diversity metrics, for both the class-balanced and full models.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** A type-conditioned model and a per-family model are solving different tasks, which must be accounted for in a fair comparison.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract states that the comparison between the proposed model and a family-specific VAE is confounded by task differences, but no details of the comparison, the tasks, or the analysis supporting this conclusion are provided.
+  - **Why it matters** This claim affects the interpretation of the benchmark results. Without specifics on how the tasks differ and how this was determined, the reader cannot assess the validity of the comparison or the fairness of the conclusions.
+  - **Resolution test** Describe the evaluation tasks for each model, provide quantitative results for both, and present an analysis that demonstrates the task difference, such as differences in input requirements, output constraints, or evaluation metrics.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, description of REPAINT GAMES
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract states that REPAINT GAMES includes seven structured masking tasks but does not specify what these tasks are or how they differ from standard inpainting benchmarks.
+  - **Required correction** Provide a brief description of the seven tasks, such as masking patterns, target features, or evaluation criteria, to clarify the benchmark's scope.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, description of Mod-CFG
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The modified classifier-free guidance scheme is described as interpolating among conditional, unconditional, and random-sequence probabilities, but the motivation for including random-sequence probabilities and the mechanism of interpolation are not explained.
+  - **Required correction** Briefly explain why random-sequence probabilities are included and how the interpolation is performed, to help the reader understand the methodological contribution.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract, training data description
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract mentions six evaluable classes but does not list them or explain why other classes were excluded.
+  - **Required correction** List the six RNA classes and briefly state the exclusion criteria for other classes to provide context for the model's scope.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, claim about biological novelty
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The term "biological novelty" is used without definition, and it is unclear how novelty was measured or why it is desirable in generated sequences.
+  - **Required correction** Define biological novelty in the context of this work, such as sequence dissimilarity to known ncRNAs or functional plausibility, and explain its relevance to the intended applications.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4, R1-M5. All five major concerns relate to the absence of quantitative evidence for central claims. The abstract provides no numerical results, statistical analyses, or methodological details that would allow the claims to be evaluated.
+- **Assessment against Nature-style criteria** 
+  - Originality: The work addresses an understudied area and introduces novel methodological components, including RNA-type conditioning and modified classifier-free guidance. The benchmark is a new contribution. However, the degree of originality relative to existing RNA generative models cannot be fully assessed without a literature comparison in the abstract.
+  - Scientific importance: The potential importance is high, given the relevance of ncRNA to synthetic biology and therapeutics. The proposed benchmark could be a valuable community resource. However, the importance is contingent on the validity of the claims, which are not yet supported.
+  - Interdisciplinary readership: The work bridges machine learning and RNA biology, and the abstract is written in a way that is accessible to both communities. The benchmark and model could attract interest from both fields.
+  - Technical soundness: Cannot be assessed from the abstract. The methodological descriptions are too brief, and no results are presented. The absence of any quantitative evaluation is a critical gap.
+  - Readability for nonspecialists: The abstract is clear and well structured, with technical terms introduced in context. The writing is accessible to a broad scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a promising framework and benchmark, but the absence of any quantitative results or methodological details prevents an assessment of the claims. The manuscript would need to provide comprehensive experimental evidence, including defined metrics, statistical analyses, and comparisons to baselines, before the case can be evaluated.
+
+## Risk / unsupported claims
+- The claim that generated sequences closely match natural RNAs in composition and folding statistics is unsupported by any quantitative data.
+- The claim that the embedding-conditioned model achieves the best balance of structural fidelity, biological novelty, and inpainting accuracy is unsupported, as no metrics or comparisons are provided.
+- The claim that class label steers generation far more strongly than a plain label baseline is unsupported, as no measure of steering strength is given.
+- The claim that a class-balanced model appears realistic by copying sequences rather than learning rules is unsupported, as no copying analysis is presented.
+- The claim that the type-conditioned model and the family-specific VAE solve different tasks is unsupported, as no task analysis or comparison details are provided.
+- The performance of the model on the REPAINT GAMES benchmark is not reported, making the benchmark's utility unassessable.
+- The claim that the model is trained on 4.6 million ncRNA sequences is stated but not verifiable from the abstract alone, and the composition of the training set is not described.

@@ -1,0 +1,84 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to methods, figures, tables, or supplementary material
+- **Shared manuscript claim summary** The authors propose UniPoseScore, a Graphormer3D-based framework for protein-ligand binding pose scoring and refinement. The model jointly predicts pose RMSD and atomic displacement vectors, and is reported to outperform existing methods across four benchmark data sets, with a refinement success rate of 74.3% on CASF-2016. The authors also claim that learned embeddings capture structural features correlated with pose accuracy.
+- **Visible evidence base** Abstract text only; no quantitative comparisons, statistical analyses, or methodological details are provided
+- **Missing materials affecting confidence** Full methods, model architecture details, training and evaluation protocols, benchmark data set descriptions, baseline comparisons, error bars or significance tests, embedding visualization figures, and code documentation
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful contribution to structure-based drug discovery, namely a unified framework for pose scoring and refinement. The core idea of jointly predicting RMSD and displacement vectors is reasonable and may offer advantages over single-task scoring functions. However, the abstract provides insufficient evidence to evaluate the technical soundness, the validity of the performance claims, or the generalizability of the approach. The reported success rate on CASF-2016 is presented without context, such as baseline comparisons or statistical significance. The claim about embedding visualization is vague and cannot be assessed without the corresponding figures. The manuscript may be of interest to computational chemists and drug discovery researchers, but the current evidence base is too limited to establish the case.
+- **Who would be interested in the results, and why** Computational chemists, medicinal chemists, and researchers in structure-based drug discovery would be interested in improved pose scoring and refinement methods, as these directly affect docking accuracy and virtual screening outcomes. Developers of machine learning models for molecular interactions may also find the joint prediction approach relevant.
+- **Major strengths** The proposed framework addresses a well-recognized limitation in current scoring functions. The joint prediction of RMSD and displacement vectors is a sensible design that could improve refinement performance. The availability of code via GitHub is a positive step for reproducibility.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims "consistently strong performance and better generalization" across four benchmark data sets.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not provide any quantitative results, such as specific metrics, baseline names, or data set identifiers, to support the claim of superior performance and generalization. Without these details, the claim cannot be evaluated.
+  - **Why it matters** The central contribution of the work is the claimed performance advantage. If the supporting data are not presented, the reader cannot judge whether the method is genuinely better than existing approaches or whether the advantage is marginal or data set specific.
+  - **Resolution test** Provide a table or figure in the full manuscript with performance metrics for UniPoseScore and at least two baseline methods across all four data sets, including error bars or confidence intervals.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract states that the model "simultaneously predicts pose RMSD and atomic displacement vectors to guide ligand pose refinement."
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** No details are given on how the two prediction tasks are combined in the loss function, how the displacement vectors are used to generate refined poses, or how the model is trained and validated. The technical feasibility of the approach cannot be assessed.
+  - **Why it matters** The novelty and utility of the framework depend on the soundness of the joint prediction and refinement mechanism. Without methodological details, the reader cannot determine whether the approach is technically valid or whether the reported success rate is an artifact of the training setup.
+  - **Resolution test** Describe the model architecture, loss function, training procedure, and the algorithm for converting predicted displacement vectors into refined poses in the full manuscript.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim substantiation
+  - **Claim pointer** The abstract reports a "refinement success rate of 74.3%" on CASF-2016.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The success rate is presented without a definition of "success," without comparison to baseline refinement methods, and without any indication of statistical variability. The reader cannot interpret whether 74.3% is a strong result.
+  - **Why it matters** A single number without context is not informative. The claim of effectiveness hinges on this metric being both well defined and competitive, which is not established.
+  - **Resolution test** Define the success criterion, compare the success rate to at least one established refinement method on the same data set, and report the number of test cases and any variance across runs.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretability
+  - **Claim pointer** The abstract states that "visualization of the learned embeddings further suggests that the model captures structural features correlated with pose accuracy."
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The claim is qualitative and unsupported by any described analysis. It is unclear what the embeddings are, how they were visualized, or what "correlated with pose accuracy" means quantitatively.
+  - **Why it matters** This claim is presented as supporting evidence for the model's utility, but without a clear analysis, it adds little and may be misleading.
+  - **Resolution test** Provide the embedding visualization figure and a quantitative analysis, such as a correlation coefficient between embedding distances and pose RMSD, in the full manuscript.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The phrase "better generalization" is vague and could be interpreted in multiple ways.
+  - **Required correction** Specify what is meant by generalization, such as performance on unseen targets or data sets not used in training.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Code availability statement
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The GitHub link is provided, but there is no mention of a license, documentation, or dependencies.
+  - **Required correction** State the license and provide basic usage instructions or a link to documentation in the full manuscript.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Benchmark description
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The four benchmark data sets are not named, which limits the reader's ability to assess the relevance of the evaluation.
+  - **Required correction** List the names of the four data sets in the abstract or full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient quantitative or methodological evidence to support the central claims of performance and technical validity.
+- **Assessment against Nature-style criteria** 
+  - Originality: The joint prediction of RMSD and displacement vectors is a reasonable idea, but similar approaches have been explored in the literature. The originality is moderate and cannot be fully assessed without the full manuscript.
+  - Scientific importance: Improved pose scoring and refinement is a relevant problem in drug discovery, but the abstract does not demonstrate a substantial advance over existing methods.
+  - Interdisciplinary readership: The work is likely to appeal to computational chemists and machine learning researchers, but the abstract is too technical and lacks context for a broader audience.
+  - Technical soundness: Not assessable from the abstract. The lack of methodological detail prevents evaluation of the model design and training.
+  - Readability for nonspecialists: The abstract is concise but assumes familiarity with docking, RMSD, and scoring functions. It is readable for the target audience but not for a general scientific readership.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract alone does not provide enough information to support the claims. A full manuscript with detailed methods, quantitative comparisons, and statistical analyses would be required to assess the contribution.
+
+## Risk / unsupported claims
+- The claim of "consistently strong performance and better generalization" across four benchmark data sets is unsupported, as no quantitative results are provided.
+- The refinement success rate of 74.3% on CASF-2016 is presented without definition, baseline comparison, or statistical context.
+- The claim that learned embeddings capture structural features correlated with pose accuracy is unsupported and not assessable without the visualization and analysis.
+- The overall effectiveness of the framework for drug discovery applications is stated as a potential, but no evidence is provided to support this broader claim.

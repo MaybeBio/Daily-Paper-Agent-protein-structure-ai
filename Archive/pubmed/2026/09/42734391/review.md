@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to methods, figures, tables, or supplementary information
+- **Shared manuscript claim summary** The authors propose a deep-learning-enabled dual-mode crystal structure prediction (CSP) framework that (1) predicts stable crystal structures for given elemental compositions and (2) identifies chemically viable elemental substitutions for a predefined crystal topology. The framework uses an improved normalized structural fingerprint descriptor and a cascaded site-probability model (autoencoder plus sigmoid classifiers) to predict occupancy probabilities of 84 elements. The authors claim the model captures elemental chemical similarity and periodic trends from topological information alone. Applications include high-throughput screening in the B-N system, yielding a hexagonal BN phase and a metastable monoclinic B2N3 structure, and substitution screening on the zinc-blende prototype yielding In4Sb4 and Ga4Sb4.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or numerical results provided
+- **Missing materials affecting confidence** Full manuscript, methods description, model architecture details, training and validation datasets, performance metrics, crystallographic data for predicted phases, computational parameters (e.g., DFT settings), and any comparison with existing CSP methods
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful dual-mode CSP framework with an interesting claim regarding emergent chemical similarity from topological training. However, the abstract alone provides insufficient evidence to evaluate the technical soundness, the validity of the predictions, or the significance of the claimed results. The core claims regarding model performance, phase stability, and the novelty of the framework cannot be assessed without access to the full manuscript and supporting data.
+- **Who would be interested in the results, and why** Computational materials scientists and chemists working on crystal structure prediction, high-throughput materials discovery, and machine-learning applications in inorganic chemistry. The dual-mode capability (structure prediction and substitution screening) may appeal to researchers seeking efficient screening tools for functional materials, particularly in the context of superhard materials and semiconductor prototypes.
+- **Major strengths** The dual-mode design addresses two complementary tasks within a single framework, which is a practical and potentially efficient approach. The claim that the model captures elemental chemical similarity and periodic trends from topological information alone is scientifically interesting and, if substantiated, would be a notable finding. The application to B-N superhard materials and zinc-blende substitution screening demonstrates concrete use cases.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The framework predicts stable crystal structures and identifies chemically viable elemental substitutions with high efficiency and low cost.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract provides no quantitative performance metrics, no comparison with existing CSP methods, and no details on the training data, model architecture, or validation procedures. Without these, the technical soundness of the framework cannot be established.
+  - **Why it matters** The central claim of a "low-cost, high-efficiency, data-driven strategy" requires evidence of accuracy, reliability, and generalizability. The absence of any benchmark or baseline comparison leaves the reader unable to judge whether the framework offers any advantage over established methods.
+  - **Resolution test** Provide in the full manuscript a clear description of the model architecture, training and test datasets, evaluation metrics (e.g., success rate, accuracy of site occupancy predictions), and a comparison with at least one existing CSP method on standard benchmark systems.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The framework identifies a thermodynamically, mechanically, and dynamically stable hexagonal BN phase and a metastable monoclinic B2N3 structure.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that these phases are stable but provides no crystallographic details, no computational methods (e.g., DFT functional, pseudopotentials, k-point sampling), and no numerical data (e.g., formation energies, elastic constants, phonon spectra) to support the stability claims.
+  - **Why it matters** Stability claims in CSP require rigorous computational validation. Without the underlying data and methods, the reader cannot verify whether the predicted phases are genuinely stable or whether the results are artifacts of the model or the computational setup.
+  - **Resolution test** Include in the full manuscript the predicted lattice parameters, atomic coordinates, formation energies relative to competing phases, elastic constants, and phonon dispersion curves for the hexagonal BN and monoclinic B2N3 phases, along with the computational parameters used.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Originality and significance
+  - **Claim pointer** The framework provides a novel dual-mode CSP approach that captures elemental chemical similarity and periodic trends from topological information alone.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not situate the work within the existing literature on machine-learning-based CSP. It is unclear what is genuinely novel compared to prior work on fingerprint descriptors, site-occupancy prediction, or substitution screening. The claim that the model "autonomously captures" chemical similarity is intriguing but is presented without supporting analysis or visualization.
+  - **Why it matters** For a Nature-style audience, the originality and scientific importance of the work must be clearly articulated and demonstrated. Without a clear statement of prior art and a demonstration of what the framework enables that was not previously possible, the significance of the contribution remains unclear.
+  - **Resolution test** In the full manuscript, provide a concise review of prior CSP and machine-learning methods, explicitly state the novel contributions, and include an analysis (e.g., embedding visualizations or similarity matrices) that demonstrates the emergent chemical similarity and periodic trends in the model's predictions.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "improved normalized structural fingerprint descriptor" is vague. It is unclear what is being improved upon and how the descriptor differs from existing ones.
+  - **Required correction** Specify the baseline descriptor and briefly state the key improvement in the abstract or clearly reference the relevant methods section.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity of claims
+  - **Affected element** Abstract statement on "chemically viable elemental substitutions"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not define what constitutes "chemically viable" in the context of the substitution screening. This term is used without a clear criterion.
+  - **Required correction** Define the viability criterion (e.g., thermodynamic stability, synthesizability, or a score threshold) in the abstract or refer to a specific section where it is defined.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract statement on "high-throughput screening"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions high-throughput screening but does not indicate the scale of the screening (e.g., number of compositions or prototypes considered) or the computational cost.
+  - **Required correction** Provide a quantitative indication of the screening scale and computational cost in the abstract or refer to a table or figure in the full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (lack of performance metrics and benchmarks), R1-M2 (insufficient evidence for stability claims), R1-M3 (unclear novelty relative to prior work)
+- **Assessment against Nature-style criteria** Originality: The dual-mode concept is potentially original, but the abstract does not demonstrate how it differs from existing approaches. Scientific importance: The application to superhard materials and substitution screening is relevant, but the significance is not established without quantitative results and comparison to prior work. Interdisciplinary readership: The work may appeal to computational chemists and materials scientists, but the abstract is too technical and lacks context for a broader audience. Technical soundness: Cannot be assessed from the abstract alone; no methods or validation data are provided. Readability for nonspecialists: The abstract is dense and uses specialized terminology without sufficient explanation, limiting accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting concept, but the technical soundness, validity of the stability claims, and novelty relative to existing methods cannot be assessed without the full manuscript and supporting data. A revised assessment would be possible upon review of the complete work.
+
+## Risk / unsupported claims
+- The claim that the framework "provides a low-cost, high-efficiency, data-driven strategy" is unsupported without quantitative cost or efficiency data.
+- The claim that the model "autonomously captures elemental chemical similarity and intrinsic periodic trends" is unsupported without analysis or visualization of the learned representations.
+- The stability claims for the hexagonal BN phase and monoclinic B2N3 structure are unsupported without crystallographic and computational data.
+- The claim that In4Sb4 and Ga4Sb4 are "metastable compounds" is unsupported without energetic or dynamical data.
+- The overall performance and generalizability of the framework are not assessable from the abstract alone.

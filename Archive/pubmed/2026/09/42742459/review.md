@@ -1,0 +1,67 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors propose a coarse-grained protein model in explicit solvent where each residue is represented by a polymer bead with five degrees of freedom, including two variables for backbone dihedral angles. All interaction parameters are derived from all-atom molecular dynamics trajectories. The authors claim the model reproduces residue-level structural information closely matching crystal structures and all-atom simulation results.
+- **Visible evidence base** Abstract text only; no quantitative results, comparison metrics, or methodological details are available
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, simulation protocols, parameter derivation details, validation datasets, and comparison statistics
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting approach to incorporating backbone dihedral information into a coarse-grained protein model, which addresses a recognized limitation of standard coarse-graining methods. However, the abstract provides insufficient quantitative evidence to evaluate the strength of the claimed structural reproduction. The central claim of close matching to crystal structures and all-atom simulations cannot be assessed without specific error metrics, comparison benchmarks, or validation details. The work may be of interest to the computational biophysics community, but the current evidence base is too limited to establish the case.
+- **Who would be interested in the results, and why** Computational biophysicists and molecular modelers developing or using coarse-grained methods for protein simulations would be the primary audience. Researchers studying large-scale protein dynamics, conformational transitions, or self-assembly processes that require extended time and length scales would find the approach relevant if the structural fidelity claims hold. The explicit incorporation of dihedral information into a simple bead model could also interest method developers seeking to balance computational efficiency with structural accuracy.
+- **Major strengths** The abstract identifies a genuine limitation of coarse-grained models, namely the loss of dihedral angle information, and proposes a straightforward extension that adds two dihedral variables per residue. The parameterization strategy, deriving all interaction parameters from all-atom trajectories, is a principled approach that could enhance transferability. The model design, using a single bead per residue with explicit solvent beads, maintains computational efficiency while adding structural information.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that the coarse-grained approach reproduces residue-level structural information that closely matches crystal structures and all-atom simulation results
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states that the model reproduces structural information closely matching crystal structures and all-atom results, but provides no quantitative metrics, such as root-mean-square deviation, contact map overlap, or dihedral angle distributions, to support this claim. No benchmark proteins, comparison protocols, or statistical measures are mentioned.
+  - **Why it matters** The central value proposition of the method depends on its structural accuracy. Without quantitative evidence, the reader cannot determine whether the model achieves meaningful fidelity or whether the agreement is limited to specific cases or coarse observables. The claim of close matching is the primary basis for the method's utility and must be substantiated with data.
+  - **Resolution test** Provide quantitative comparisons for a defined set of test proteins, including metrics such as C-alpha RMSD, dihedral angle recovery, and contact map accuracy relative to crystal structures and all-atom simulations, with appropriate error bars or standard deviations across multiple trajectories.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** The claim that all interaction parameters for bonded, non-bonded, dihedral coupling and bead-solvent interactions are derived from the equilibrated all-atom molecular dynamics simulation trajectory
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract does not describe how the parameters are derived from the all-atom trajectory, which system or proteins were used for parameterization, how many parameters are involved, or whether the parameterization is transferable to proteins outside the training set. The derivation procedure is central to the method's reproducibility and generalizability.
+  - **Why it matters** Parameter derivation from all-atom simulations can introduce system-specific biases. Without details on the derivation protocol, the training set, and validation on independent proteins, the reader cannot assess whether the model is broadly applicable or overfit to specific systems. The method's utility for general protein simulations depends on this information.
+  - **Resolution test** Describe the parameter derivation procedure in detail, specify the training proteins and simulation conditions, and demonstrate transferability by validating the model on proteins not used in parameterization.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scope of validation
+  - **Claim pointer** The claim that the model reproduces residue-level structural information closely matching crystal structures and all-atom simulation results
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract does not specify the range of proteins or structural features tested. It is unclear whether the model was validated on globular proteins, intrinsically disordered proteins, or both, and whether secondary structure elements, tertiary contacts, and overall folds are all reproduced with similar accuracy.
+  - **Why it matters** Coarse-grained models often perform differently across protein classes and structural features. A claim of general structural reproduction requires demonstration across diverse systems. If the model only works for certain folds or under specific conditions, the claim of close matching is overstated.
+  - **Resolution test** Present validation results for a diverse set of proteins, including different structural classes and sizes, and report accuracy separately for secondary structure, tertiary contacts, and global fold.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Model representation description
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract states that each polymer bead has five degrees of freedom, including position of the center and two additional variables for backbone dihedral angles. It is unclear how two variables capture the full backbone dihedral information, which typically involves phi and psi angles per residue, and how these variables relate to the polymer bead representation.
+  - **Required correction** Clarify the mapping between the two dihedral variables and the standard backbone dihedral angles, and explain how these variables are integrated into the bead dynamics.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Solvent representation
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract states that water oxygen is represented as a solvent bead, but does not specify whether hydrogen atoms are treated implicitly, how the solvent bead interactions are parameterized, or whether the solvent is modeled as explicit or implicit in terms of dielectric effects.
+  - **Required correction** Specify the solvent model details, including whether hydrogens are implicit, the interaction form for solvent beads, and any electrostatic treatment.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Comparison basis
+  - **Affected element** Validation claim
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract claims close matching to crystal structures and all-atom simulation results, but does not state which all-atom simulation data were used for comparison, whether the same proteins were simulated, or what time scales were compared.
+  - **Required correction** Specify the all-atom simulation datasets used for comparison, the simulation lengths, and the specific structural properties compared.
+
+## Risk / unsupported claims
+- The claim of close matching to crystal structures and all-atom simulation results is unsupported by quantitative evidence in the abstract.
+- The claim that all interaction parameters are derived from all-atom trajectories is unverifiable without methodological details.
+- The generalizability of the model to proteins beyond the parameterization set is not assessable from the abstract.
+- The specific structural accuracy across different protein classes and structural features is not assessable from the abstract.

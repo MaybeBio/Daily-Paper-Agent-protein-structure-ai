@@ -1,0 +1,87 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the supplied abstract; no access to full methods, figures, tables, or supplementary data
+- **Shared manuscript claim summary** The authors report that bioinformatics analyses of previously identified SNPs in biofilm-associated genes (lasI, rhlI, ndvB, tssc1) of Pseudomonas aeruginosa and Klebsiella pneumoniae predict functional and structural impacts on proteins, with supporting evidence from SIFT, Mupro, INPS-3D, NCBI Conserved Domain Search, SwissDock, and molecular dynamics simulations.
+- **Visible evidence base** Abstract text only; no figures, tables, or method details provided
+- **Missing materials affecting confidence** Full methods, sequence accession numbers, SNP validation data, complete docking and simulation parameters, statistical analyses, and all numerical outputs beyond those cited in the abstract
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible bioinformatics workflow but the evidence base is too limited to establish the central claim that specific SNPs significantly alter protein function and biofilm formation. Several reported values are internally inconsistent or lack context, and the link between in silico predictions and biological outcomes is asserted rather than demonstrated. The work may be of interest to researchers in microbial genomics and biofilm biology, but the current abstract does not provide sufficient detail for rigorous evaluation.
+- **Who would be interested in the results, and why** Researchers studying biofilm formation in Pseudomonas aeruginosa and Klebsiella pneumoniae, particularly those focused on quorum-sensing systems and the molecular basis of biofilm-associated virulence. The use of multiple prediction tools and molecular dynamics may also interest computational biologists working on SNP effect prediction.
+- **Major strengths** The abstract addresses a relevant topic with potential clinical implications. The use of multiple complementary bioinformatics tools is appropriate for a first-pass assessment. The inclusion of both static predictions and dynamic simulations is a reasonable approach.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that SIFT and Mupro predicted lasI/rhlI mutations D39N (0.01/0.2) and D44N (0.5) impair signaling molecule synthesis.
+  - **Evidence pointer** Abstract text, location not provided
+  - **Concern** The reported values are ambiguous. For D39N, the pair (0.01/0.2) is not clearly attributed to SIFT versus Mupro, and for D44N only a single value (0.5) is given without specifying which tool produced it. SIFT scores below 0.05 typically indicate deleterious effects, while Mupro scores are usually reported as delta delta G values with different thresholds. The abstract does not clarify which score corresponds to which tool or what thresholds were used.
+  - **Why it matters** Without clear attribution and thresholds, the reader cannot assess whether the predictions support the claim of impaired signaling molecule synthesis. This is a core part of the paper's central assertion.
+  - **Resolution test** Provide a table or explicit text stating which tool produced each score, the thresholds used, and the interpretation for each mutation.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract states that molecular dynamics simulation showed a significant increase in RMSF from 1.5 to 3.5 for the D44N mutant in rhlI.
+  - **Evidence pointer** Abstract text, location not provided
+  - **Concern** The units for RMSF are not specified, and no statistical measure (e.g., standard deviation, confidence interval, or p-value) is provided to support the claim of significance. A change from 1.5 to 3.5 may be large, but without error bars or replicate information, the significance cannot be evaluated.
+  - **Why it matters** The claim of significance is central to the conclusion that this SNP changes protein function. Without statistical support, the claim is unsupported.
+  - **Resolution test** Report RMSF with units, include error estimates or replicate data, and state the statistical test used to establish significance.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** The abstract concludes that in silico analysis indicated that mutations in quorum-sensing and biofilm-associated genes significantly impact bacterial biofilm formation.
+  - **Evidence pointer** Abstract text, location not provided
+  - **Concern** The abstract provides no direct experimental evidence linking the predicted protein changes to biofilm formation. All reported results are computational predictions. The leap from in silico predictions to a claim about biofilm formation is not justified without functional assays or at least a clear mechanistic argument supported by prior experimental data.
+  - **Why it matters** The title and conclusion imply a biological effect, but the evidence presented is purely predictive. Overstating the implications weakens the scientific case.
+  - **Resolution test** Either add experimental validation (e.g., biofilm assays) or temper the conclusion to state that predictions suggest a potential impact that requires experimental confirmation.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** The abstract describes the use of SwissDock and molecular dynamics simulations to compare free energy, RMSF, polarity, flexibility, and molecular contacts.
+  - **Evidence pointer** Abstract text, location not provided
+  - **Concern** No details are given on the simulation parameters, force field, simulation length, solvent model, or the specific software versions used. The docking results are reported as a DeltaDeltaG change from -7 to -7.2, but the units and the method for calculating DeltaDeltaG are not stated.
+  - **Why it matters** Reproducibility is a core requirement for computational studies. Without these details, the results cannot be independently verified.
+  - **Resolution test** Provide full methods for docking and simulation, including software versions, parameters, and analysis protocols.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text, location not provided
+  - **Issue** The phrase "Regarding with docking results" is grammatically incorrect and should be revised.
+  - **Required correction** Change to "Regarding the docking results" or "For the docking results".
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text, location not provided
+  - **Issue** The abstract mentions a frame-shift mutation in tssc1 but provides no details on its location, predicted effect, or how it was identified.
+  - **Required correction** Add a brief description of the frame-shift mutation, including its position and predicted consequence.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Consistency
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text, location not provided
+  - **Issue** The abstract uses "rhlI" and "rhII" inconsistently for the same gene.
+  - **Required correction** Use a single consistent gene symbol throughout.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text, location not provided
+  - **Issue** The abstract states "increase the flexibility in mutant compared with wild type" but does not specify which region of the protein shows increased flexibility.
+  - **Required correction** Specify the protein region or residue range where the flexibility change occurs.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (ambiguous score attribution), R1-M2 (unsupported significance claim), R1-M3 (overstated biological conclusion), R1-M4 (insufficient methodological detail)
+- **Assessment against Nature-style criteria** Originality: moderate, as the application of prediction tools to biofilm genes is not novel but the specific SNP set may be. Scientific importance: limited as presented, because the link to biofilm formation is not experimentally validated. Interdisciplinary readership: narrow, primarily relevant to microbial genomics and computational biology. Technical soundness: not established from the abstract due to missing methodological details and ambiguous data reporting. Readability for nonspecialists: the abstract is understandable but contains jargon and inconsistent notation that could confuse readers.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a reasonable computational framework, but the missing methodological details, ambiguous score reporting, and unsupported significance claims prevent a positive assessment. The authors should provide full methods, clarify all numerical values, and either add experimental validation or temper the conclusions.
+
+## Risk / unsupported claims
+- The claim that mutations "significantly impact bacterial biofilm formation" is unsupported by the abstract, as no experimental data are presented.
+- The claim of a "significant increase in RMSF" is unsupported without statistical measures.
+- The attribution of specific prediction scores to SIFT versus Mupro is unclear and cannot be evaluated.
+- The functional impact of the frame-shift mutation in tssc1 is mentioned but not described or supported.
+- The DeltaDeltaG values for docking are reported without units or calculation method, making them unverifiable.

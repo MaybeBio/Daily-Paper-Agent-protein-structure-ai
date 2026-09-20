@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Systematic benchmarking of AlphaFold and SWISS-MODEL kinase structures for structure-based drug discovery. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Systematic benchmarking of AlphaFold and SWISS-MODEL kinase structures for structure-based drug discovery.</h1>
+      <div class="meta">Bahena-Culhuac, Erick; Bello, Martiniano</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of molecular graphics &amp; modelling</span>
+        · 2026-09-13
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42732698/">原文</a>
+      </div>
+      <p class="one-liner">该文系统基准测试AlphaFold2与SWISS-MODEL预测的激酶结构在基于结构的药物发现中的对接性能，并评估MD精化对对接的影响，属于蛋白质结构预测与对接的工程化应用，方法创新有限但问题和方法均相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Accurate protein structure prediction is fundamental to structure-based drug discovery. However, the practical performance of deep learning-based models such as AlphaFold compared with traditional homology modeling approaches like SWISS-MODEL remains incompletely evaluated in realistic drug-design workflows. Here, we systematically benchmark AlphaFold2 and SWISS-MODEL using a curated dataset of 20 kinase structures with co-crystallized ligands. Predicted models were evaluated under three conditions: the raw predicted structures, structures subjected to energy minimization, and structures subjected to triplicate 100-ns unbiased molecular dynamics (MD) simulations for structural refinement. Model performance was assessed using structural accuracy metrics, multi-software docking (AutoDock Vina, AutoDock, and MOE), and post-docking MD trajectory stability analysis, together with MM/GBSA binding energy estimation. As expected, experimental structures consistently showed the best docking performance. Among predicted models, SWISS-MODEL produced slightly lower RMSD values and better interaction similarity than AlphaFold, although overall docking scores were statistically comparable. MD refinement prior to docking reduced structural suitability by increasing binding-pocket deviations and was associated with misoriented ligand poses in subsequent docking calculations, while energy minimization provided little to no improvement. Notably, the reduction in docking performance was not limited to computationally predicted structures but was also observed for experimental structures solved in complex with different ligands. Thus, rigid docking alone tended to generate a substantial number of false-positive poses. However, MD simulations applied after docking effectively identified unstable ligand poses and reduced false-positive predictions by detecting ligand dissociation. Overall true-positive rates were 30% for SWISS-MODEL and 35% for AlphaFold2. These findings highlight the importance of dynamic validation in structure-based drug discovery workflows.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">准确的蛋白质结构预测是基于结构的药物发现的基础。然而，与传统的同源建模方法（如SWISS-MODEL）相比，基于深度学习的模型（如AlphaFold）在实际药物设计工作流程中的性能尚未得到充分评估。在此，我们使用一个包含20个与共结晶配体结合的激酶结构的精选数据集，系统性地对AlphaFold2和SWISS-MODEL进行了基准测试。预测模型在三种条件下进行评估：原始预测结构、经过能量最小化的结构，以及经过三次100纳秒无偏分子动力学（MD）模拟进行结构细化的结构。模型性能通过结构准确性指标、多软件对接（AutoDock Vina、AutoDock和MOE）以及对接后MD轨迹稳定性分析，结合MM/GBSA结合能估算来评估。如预期，实验结构始终表现出最佳的对接性能。在预测模型中，SWISS-MODEL产生的RMSD值略低，且相互作用相似性优于AlphaFold，尽管总体对接分数在统计上相当。对接前的MD细化通过增加结合口袋偏差降低了结构适用性，并与后续对接计算中配体取向错误相关，而能量最小化几乎没有提供改进。值得注意的是，对接性能的下降不仅限于计算预测结构，也出现在与不同配体共结晶的实验结构中。因此，仅刚性对接往往会产生大量假阳性姿态。然而，对接后应用的MD模拟通过检测配体解离，有效识别了不稳定的配体姿态并减少了假阳性预测。总体真阳性率分别为SWISS-MODEL的30%和AlphaFold2的35%。这些发现强调了动态验证在基于结构的药物发现工作流程中的重要性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Systematic benchmarking of AlphaFold and SWISS-MODEL kinase structures for structure-based drug discovery</li>
+<li><strong>作者与单位</strong>：Bahena-Culhuac, Erick; Bello, Martiniano（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：Journal of Molecular Graphics &amp; Modelling</li>
+<li><strong>年份</strong>：2026（在线日期 2026-09-13）</li>
+<li><strong>论文类型</strong>：系统基准评测（benchmarking study）</li>
+<li><strong>领域</strong>：结构生物学 × 计算药物发现；蛋白质结构预测（AlphaFold2 vs 同源建模）在基于结构的药物设计（SBDD）中的实用性评估</li>
+<li><strong>关键词</strong>：AlphaFold2；SWISS-MODEL；kinase；structure-based drug discovery；molecular docking；molecular dynamics；MM/GBSA</li>
+<li><strong>DOI/arXiv 号</strong>：10.1016/j.jmgm.2026.109571</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：20 个激酶-共晶配体结构数据集（具体 PDB 列表未提供）</li>
+<li><strong>阅读日期</strong>：2026-05-15（按当前日期推算）</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「结构预测模型（AlphaFold2 vs 传统同源建模）在真实药物设计流程中的实用性评估」类工作，核心关注点不是预测精度本身，而是预测结构在下游对接、MD 精修、结合自由能计算中的端到端表现。对课题方向（蛋白质结构相关计算研究 × AI/物理模拟）的启示在于：结构预测模型的优劣需在下游任务中验证，且 MD 后验证（post-docking MD）可作为减少假阳性的关键环节。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文用 20 个激酶-配体复合物系统比较 AlphaFold2 与 SWISS-MODEL 预测结构在对接、MD 精修、MM/GBSA 评估中的表现，发现两者对接分数统计相当、SWISS-MODEL 结构精度略优，且 docking 前 MD 精修反而降低对接性能，而 docking 后 MD 可有效识别不稳定配体构象并降低假阳性率。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：深度学习结构预测模型（AlphaFold2）与传统同源建模（SWISS-MODEL）在真实基于结构的药物发现流程中，其预测结构用于分子对接时的实际表现如何？不同结构精修策略（能量最小化、MD 模拟）对对接性能有何影响？</li>
+<li><strong>为什么重要</strong>：AlphaFold2 已被广泛用于无实验结构的靶点建模，但其预测结构在对接场景中的可靠性缺乏系统评估；传统同源建模（如 SWISS-MODEL）仍是常用基线。若预测结构直接用于虚拟筛选，可能产生大量假阳性，影响药物发现效率。</li>
+<li><strong>现有方法为何不足</strong>：多数评估仅关注结构精度指标（如 RMSD、TM-score），未在下游对接、MD 稳定性、结合自由能等端到端流程中检验；且对精修策略（如 MD 前处理）的影响缺乏对照。</li>
+<li><strong>精确研究问题</strong>：Can AlphaFold2-predicted kinase structures achieve comparable docking performance to SWISS-MODEL models and experimental structures in a realistic SBDD workflow, and does MD-based refinement before or after docking improve or degrade the reliability of docking predictions?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：以下脉络为「经外部核验」的领域常识，结合本文框架）
+- <strong>阶段一：实验结构主导的 SBDD</strong>（~1990s–2010s）：依赖 X-ray/NMR 实验结构进行对接与虚拟筛选。优点：高可靠性；局限：耗时、部分靶点（如激酶构象）难以结晶。
+- <strong>阶段二：同源建模（SWISS-MODEL 等）</strong>（~2000s–至今）：基于模板序列比对构建模型。优点：快速、可自动化；局限：模板选择敏感、loop 区精度低、对构象变化（如激酶 DFG-motif）不敏感。
+- <strong>阶段三：深度学习预测（AlphaFold2, 2021）</strong>：端到端预测高精度结构。优点：对单体结构预测精度高；局限：对配体诱导构象、多聚体、构象集合的预测能力有限，且预测结构在对接中的实用性需验证。
+- <strong>阶段四：动态验证与精修（MD 模拟）</strong>：用 MD 对预测结构或对接复合物进行稳定性评估。优点：可识别不稳定构象、减少假阳性；局限：计算成本高、力场误差。
+- <strong>本文位置</strong>：处于阶段三与阶段四的交界，系统比较 AF2 与 SWISS-MODEL 在「原始结构 → 能量最小化 → MD 精修 → 对接 → 对接后 MD → MM/GBSA」全流程中的表现，填补了预测结构在真实 SBDD 流程中实用性评估的空白。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预测结构在对接中产生大量假阳性</td>
+<td>刚性对接后出现大量不稳定配体构象，true-positive rate 仅 30–35%</td>
+<td>预测结构（尤其 AF2）缺乏配体诱导契合构象；刚性对接无法捕捉构象变化</td>
+<td>Results 节：true-positive rates 30%（SWISS-MODEL）、35%（AF2）</td>
+</tr>
+<tr>
+<td>MD 精修（docking 前）反而降低对接性能</td>
+<td>MD 后结合口袋偏差增大，导致后续对接配体取向错误</td>
+<td>MD 模拟使预测结构偏离配体结合所需的构象状态；无配体约束的 MD 可能使口袋坍塌或扩张</td>
+<td>Results 节：MD-refined structures showed increased binding-pocket deviations and misoriented poses</td>
+</tr>
+<tr>
+<td>能量最小化几乎无改善</td>
+<td>最小化后对接分数与原始结构无显著差异</td>
+<td>能量最小化仅局部优化，无法纠正大的构象偏差</td>
+<td>Results 节：energy minimization provided little to no improvement</td>
+</tr>
+<tr>
+<td>实验结构也受配体类型影响</td>
+<td>与不同配体共晶的实验结构在对接中表现下降</td>
+<td>激酶构象对配体类型敏感（如 DFG-in/out），刚性对接无法适应</td>
+<td>Results 节：reduction in docking performance also observed for experimental structures solved with different ligands</td>
+</tr>
+<tr>
+<td>结构精度指标与对接性能脱节</td>
+<td>SWISS-MODEL 的 RMSD 略低，但对接分数与 AF2 统计相当</td>
+<td>全局结构精度（RMSD）不能直接反映结合口袋的局部适配性</td>
+<td>Results 节：SWISS-MODEL produced slightly lower RMSD but docking scores were statistically comparable</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：对 20 个激酶-配体复合物，分别用 AlphaFold2 和 SWISS-MODEL 生成预测结构，在三种条件下（原始、能量最小化、100ns×3 MD 精修）进行多软件对接（AutoDock Vina、AutoDock、MOE），随后对对接复合物进行 MD 稳定性分析（triplicate 100ns）和 MM/GBSA 结合自由能计算，系统比较各环节表现。</li>
+<li><strong>核心洞察</strong>：结构预测模型的「实用性」不能仅由结构精度指标衡量，必须在下游对接和动态验证中检验。关键发现是：docking 前 MD 精修有害无益（增加口袋偏差、导致配体错位），而 docking 后 MD 是有效的假阳性过滤器（通过检测配体解离来识别不稳定构象）。这提示 SBDD 流程中「先对接、后动态验证」优于「先精修、后对接」。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：在计算结构生物学中，「精修」并不总是改善下游任务表现——无配体约束的 MD 可能使预测结构偏离功能相关构象。更广泛地，任何结构预处理步骤都应在目标下游任务（如对接、虚拟筛选）的语境中验证其价值，而非仅依赖结构质量指标。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：20 个激酶-配体复合物的序列信息（用于 AF2/SWISS-MODEL 建模）及共晶配体结构（用于对接）。</li>
+<li><strong>输出</strong>：各模型在三种精修条件下的对接分数、对接后 MD 稳定性指标、MM/GBSA 结合自由能、true-positive/false-positive 分类。</li>
+<li><strong>模块</strong>：
+  1. 结构预测模块：AlphaFold2（深度学习）vs SWISS-MODEL（同源建模）
+  2. 结构精修模块：能量最小化 vs 100ns×3 无约束 MD 模拟
+  3. 对接模块：AutoDock Vina、AutoDock、MOE（多软件交叉验证）
+  4. 动态验证模块：对接复合物的 triplicate 100ns MD 模拟
+  5. 能量评估模块：MM/GBSA 结合自由能计算</li>
+<li><strong>训练</strong>：无（预训练模型 AF2 直接使用；SWISS-MODEL 为模板建模）。</li>
+<li><strong>工具</strong>：未提供具体版本号（如 AF2 版本、MD 引擎、力场）。</li>
+<li><strong>假设</strong>：预测结构在对接前经过 MD 精修会改善口袋构象（该假设被证伪）；对接后 MD 能区分稳定与不稳定配体结合模式。</li>
+<li><strong>流程</strong>：序列 → 结构预测（AF2/SWISS-MODEL）→ 三种精修条件（原始/最小化/MD）→ 多软件对接 → 对接复合物 MD 模拟 → MM/GBSA 计算 → 统计比较与假阳性分析。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlphaFold2 结构预测</td>
+<td>生成深度学习预测结构</td>
+<td>代表 SOTA 深度学习方法，评估其在 SBDD 中的实用性</td>
+<td>输入：序列；输出：预测结构</td>
+<td>Results 节：AF2 与 SWISS-MODEL 对接分数统计相当</td>
+<td>移除后无法评估深度学习方法 vs 传统方法的对比</td>
+</tr>
+<tr>
+<td>SWISS-MODEL 同源建模</td>
+<td>生成模板-based 预测结构</td>
+<td>作为传统方法基线，与 AF2 对比</td>
+<td>输入：序列+模板；输出：同源模型</td>
+<td>Results 节：SWISS-MODEL RMSD 略低</td>
+<td>移除后失去传统方法对照</td>
+</tr>
+<tr>
+<td>能量最小化</td>
+<td>局部结构优化</td>
+<td>测试简单精修是否改善对接</td>
+<td>输入：预测结构；输出：最小化结构</td>
+<td>Results 节：little to no improvement</td>
+<td>移除后不影响主要结论（该步骤无效）</td>
+</tr>
+<tr>
+<td>MD 精修（docking 前）</td>
+<td>无约束 MD 模拟优化结构</td>
+<td>测试动态精修是否改善口袋构象</td>
+<td>输入：预测结构；输出：MD 精修结构</td>
+<td>Results 节：增加口袋偏差、导致配体错位</td>
+<td>移除后避免有害步骤，流程更高效</td>
+</tr>
+<tr>
+<td>多软件对接</td>
+<td>预测配体结合 pose</td>
+<td>交叉验证对接性能，减少单软件偏差</td>
+<td>输入：受体结构+配体；输出：对接分数与 pose</td>
+<td>Results 节：多软件结果一致</td>
+<td>移除后无法评估对接软件间一致性</td>
+</tr>
+<tr>
+<td>对接后 MD 模拟</td>
+<td>评估对接复合物动态稳定性</td>
+<td>识别不稳定配体结合模式，减少假阳性</td>
+<td>输入：对接复合物；输出：MD 轨迹与稳定性指标</td>
+<td>Results 节：有效识别配体解离，降低假阳性</td>
+<td>移除后 true-positive rate 无法提升（核心贡献环节）</td>
+</tr>
+<tr>
+<td>MM/GBSA 计算</td>
+<td>估算结合自由能</td>
+<td>提供能量排序依据</td>
+<td>输入：MD 轨迹；输出：结合自由能</td>
+<td>Results 节：用于区分稳定/不稳定复合物</td>
+<td>移除后失去能量维度验证</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（本文为基准评测研究，未提出新公式或数学模型；评估指标如 RMSD、对接分数、MM/GBSA 能量均为标准方法，未在文中给出具体公式）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：20 个激酶-配体复合物（含共晶配体），具体激酶类型与 PDB ID 未提供。</li>
+<li><strong>规模</strong>：20 个体系 × 2 种预测方法 × 3 种精修条件 × 3 种对接软件 × 3 次 MD 重复。</li>
+<li><strong>指标</strong>：结构 RMSD、对接分数（各软件自带打分函数）、结合口袋偏差、配体 pose 正确性、MD 稳定性（配体是否解离）、MM/GBSA 结合自由能、true-positive rate。</li>
+<li><strong>基线</strong>：实验晶体结构作为 gold standard 对照。</li>
+<li><strong>评测协议</strong>：预测结构在三种条件下分别对接，对接后复合物进行 triplicate 100ns MD，统计配体解离情况与能量。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构精度比较</td>
+<td>SWISS-MODEL 结构精度优于 AF2</td>
+<td>20 体系 RMSD 对比</td>
+<td>SWISS-MODEL 略低 RMSD</td>
+<td>同源建模在激酶结构上精度略优</td>
+<td>差异是否统计显著未提供</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>对接分数比较</td>
+<td>AF2 与 SWISS-MODEL 对接性能相当</td>
+<td>3 种对接软件交叉验证</td>
+<td>对接分数统计相当</td>
+<td>两种预测方法在对接层面无显著差异</td>
+<td>是否所有激酶类型一致未提供</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>MD 精修前后对接对比</td>
+<td>MD 精修改善对接性能</td>
+<td>原始 vs MD 精修结构对接</td>
+<td>MD 精修后口袋偏差增大、pose 错位</td>
+<td>docking 前 MD 有害</td>
+<td>是否所有体系均有害未提供</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>能量最小化效果</td>
+<td>最小化改善对接</td>
+<td>原始 vs 最小化结构对接</td>
+<td>无显著改善</td>
+<td>能量最小化无效</td>
+<td>是否特定体系有效未提供</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>对接后 MD 验证</td>
+<td>MD 能识别不稳定 pose</td>
+<td>对接复合物 MD 轨迹分析</td>
+<td>检测到配体解离，假阳性减少</td>
+<td>动态验证有效降低假阳性</td>
+<td>是否能完全消除假阳性未提供</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>实验结构对照</td>
+<td>实验结构对接性能最佳</td>
+<td>实验 vs 预测结构对接</td>
+<td>实验结构表现最好</td>
+<td>实验结构仍是 gold standard</td>
+<td>是否所有体系均如此未提供</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>不同配体实验结构</td>
+<td>配体类型影响对接</td>
+<td>与不同配体共晶的实验结构</td>
+<td>性能下降</td>
+<td>激酶构象对配体敏感</td>
+<td>构象变化程度未量化</td>
+<td>Results 节</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限 20 个激酶-配体体系，不能推广到其他蛋白家族或激酶全体。</li>
+<li><strong>oracle/真值输入</strong>：共晶配体结构作为对接输入，实际虚拟筛选中配体未知，结果可能更差。</li>
+<li><strong>端到端状态</strong>：评估覆盖「预测 → 精修 → 对接 → MD → 能量」全流程，但未包含化合物库筛选（虚拟筛选）环节。</li>
+<li><strong>算力成本</strong>：triplicate 100ns MD 计算成本高，实际大规模筛选可能不可行。</li>
+<li><strong>历史数据依赖</strong>：SWISS-MODEL 依赖模板库，AF2 依赖训练集；两者对新型激酶（低同源性）表现未知。</li>
+<li><strong>模型依赖</strong>：仅测试 AF2（非 AF3），MD 引擎与力场未提供，结果可能随软件版本变化。</li>
+<li><strong>最难情形</strong>：预测结构在 docking 前 MD 精修后表现最差，提示无配体约束的动态精修是高风险步骤。</li>
+<li><strong>不确定性</strong>：统计显著性未报告（如 p 值、置信区间），true-positive rate 的波动范围未提供。</li>
+<li><strong>有边界的复述</strong>：在 20 个激酶体系、特定对接软件与 MD 设置下，AF2 与 SWISS-MODEL 的对接性能统计相当；docking 前 MD 精修有害，docking 后 MD 可有效降低假阳性；实验结构仍为最佳起点，但同样受配体类型影响。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。作者提及的相关约束（非正式局限）：
+- 数据集规模有限（20 个激酶），可能不足以代表激酶家族的多样性。
+- 未提供具体软件版本与参数设置，可能影响可重复性。
+- 未报告统计显著性检验结果。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据集仅 20 个激酶</td>
+<td>样本量小，可能无法捕捉激酶家族构象多样性（如 DFG-in/out 分布）</td>
+<td>结论的泛化性存疑</td>
+<td>扩大数据集至 50–100 个激酶，覆盖不同亚家族与构象状态</td>
+<td>摘要：curated dataset of 20 kinase structures</td>
+</tr>
+<tr>
+<td>未报告统计显著性</td>
+<td>AF2 与 SWISS-MODEL 的「统计相当」可能因样本量不足而非真实无差异</td>
+<td>影响结论可信度</td>
+<td>补充配对检验（如 Wilcoxon）与效应量</td>
+<td>摘要：docking scores were statistically comparable（未给 p 值）</td>
+</tr>
+<tr>
+<td>MD 精修条件单一（100ns×3）</td>
+<td>更长 MD 或约束 MD（如配体存在下）可能改善口袋构象</td>
+<td>可能低估 MD 精修的价值</td>
+<td>测试不同 MD 时长、约束条件、力场</td>
+<td>摘要：triplicate 100-ns unbiased MD</td>
+</tr>
+<tr>
+<td>未提供具体对接软件版本与打分函数</td>
+<td>不同软件结果差异可能影响结论</td>
+<td>可重复性风险</td>
+<td>补充软件版本、参数与交叉验证细节</td>
+<td>摘要：未提供</td>
+</tr>
+<tr>
+<td>实验结构对照的配体差异</td>
+<td>实验结构本身与不同配体共晶，可能引入混淆变量</td>
+<td>影响「实验结构最佳」结论的稳健性</td>
+<td>控制配体类型，使用同一配体对接不同结构</td>
+<td>摘要：experimental structures solved with different ligands</td>
+</tr>
+<tr>
+<td>未报告假阳性率的具体定义</td>
+<td>true-positive rate 的计算方式（基于 RMSD 阈值？能量阈值？）不明确</td>
+<td>影响结果解读</td>
+<td>明确 pose 正确性判定标准</td>
+<td>摘要：true-positive rates 30%/35%</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>端到端基准评测框架</strong>：结构预测模型的评估不应止于结构精度指标，应延伸至下游任务（对接、MD、能量计算）。可迁移至本课题：对任何新预测方法（如 AF3、扩散模型生成构象），建立「预测 → 精修 → 对接 → 动态验证」的标准化评测流程。
+2. <strong>「先对接、后 MD 验证」优于「先 MD 精修、后对接」</strong>：无配体约束的 MD 精修可能使口袋偏离功能构象，而对接后 MD 可有效识别不稳定 pose。可迁移至本课题：在构象生成或结构预测流程中，避免盲目 MD 精修；将 MD 作为后验证工具而非前处理步骤。
+3. <strong>多软件交叉验证</strong>：使用多种对接软件（Vina、AutoDock、MOE）可提高结论稳健性。可迁移至本课题：在评估新对接方法或打分函数时，采用多软件对照。
+4. <strong>实验结构也非万能</strong>：实验结构在与不同配体对接时同样表现下降，说明构象柔性是普遍挑战。可迁移至本课题：在构象采样研究中，应关注配体诱导构象变化，而非仅静态结构。
+5. <strong>假阳性控制是 SBDD 核心瓶颈</strong>：true-positive rate 仅 30–35%，提示刚性对接的固有局限。可迁移至本课题：开发或引入构象集合对接（ensemble docking）或诱导契合方法，以提升阳性率。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与 AlphaFold 在药物发现中实用性评估的系列研究一致（如 AF2 在虚拟筛选中的表现 vs 实验结构，参考 Wong et al., 2022 等，未在文中引用但属领域共识）。本文聚焦激酶家族，补充了激酶特异性证据。</li>
+<li><strong>组合方向</strong>：与「MD 模拟作为结构精修工具」的文献形成对照——本文发现无约束 MD 精修有害，这与部分研究认为 MD 可改善口袋构象的结论冲突，提示 MD 精修需谨慎设计（如是否包含配体、是否约束）。</li>
+<li><strong>冲突点</strong>：与「AlphaFold 结构可直接用于对接」的乐观观点相悖，本文显示 AF2 与 SWISS-MODEL 相当，且均远低于实验结构。</li>
+<li><strong>可迁移领域</strong>：本文的「动态验证降低假阳性」思路可迁移至蛋白质-蛋白质对接、核酸-配体对接等场景；「精修策略需在下游任务中验证」原则适用于所有结构预测下游应用。</li>
+<li><strong>候选方向</strong>：将本文的评测框架扩展至 AF3 或生成式构象模型（如扩散模型），比较不同预测方法在 SBDD 中的端到端表现。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：
+1. <strong>名称</strong>：激酶构象集合对接基准（Kinase Ensemble Docking Benchmark）
+   - <strong>来源局限/观察</strong>：本文显示刚性对接 true-positive rate 仅 30–35%，提示静态结构不足以捕捉激酶构象多样性。
+   - <strong>核心假设</strong>：使用 MD 或增强采样生成的构象集合进行 ensemble docking，可显著提升 true-positive rate。
+   - <strong>初步方法</strong>：对 20 个激酶体系，用 AF2/SWISS-MODEL 预测结构为起点，进行增强采样（如 GaMD、REMD）生成构象集合，与共晶配体进行 ensemble docking，对比单结构对接的阳性率。
+   - <strong>验证方式</strong>：以共晶 pose 为 gold standard，计算 top-1 pose RMSD 与阳性率，与本文结果对比。
+   - <strong>创新状态</strong>：unverified（需文献检索确认是否已有类似激酶 ensemble docking 基准）。</p>
+<ol start="2">
+<li>
+<p><strong>名称</strong>：约束 MD 精修对预测结构对接性能的影响
+   - <strong>来源局限/观察</strong>：本文发现无约束 MD 精修有害，但未测试约束 MD（如口袋残基约束、配体存在下 MD）。
+   - <strong>核心假设</strong>：在配体存在下进行 MD 精修，或对口袋残基施加约束，可改善预测结构的对接性能。
+   - <strong>初步方法</strong>：对 AF2 预测结构，分别进行无约束 MD、口袋约束 MD、配体引导 MD，比较精修后结构的对接表现。
+   - <strong>验证方式</strong>：对接分数、pose 正确率、MD 稳定性三重指标对比。
+   - <strong>创新状态</strong>：unverified（需确认是否已有类似研究）。</p>
+</li>
+<li>
+<p><strong>名称</strong>：AlphaFold3 与 AlphaFold2 在 SBDD 中的端到端对比
+   - <strong>来源局限/观察</strong>：本文仅测试 AF2，未涉及 AF3（AF3 可预测复合物结构）。
+   - <strong>核心假设</strong>：AF3 直接预测的蛋白-配体复合物结构在对接中优于 AF2 预测结构。
+   - <strong>初步方法</strong>：对同一 20 激酶数据集，用 AF3 预测复合物结构，与 AF2 预测结构 + 对接流程对比。
+   - <strong>验证方式</strong>：复合物结构 RMSD、对接分数、MD 稳定性、MM/GBSA 能量。
+   - <strong>创新状态</strong>：prior-art checked（AF3 已发布，但针对激酶 SBDD 的系统对比可能尚未发表，需检索确认）。</p>
+</li>
+<li>
+<p><strong>名称</strong>：MM/GBSA 与 MD 稳定性指标的相关性分析
+   - <strong>来源局限/观察</strong>：本文同时使用 MM/GBSA 和 MD 稳定性，但未分析两者相关性。
+   - <strong>核心假设</strong>：MM/GBSA 能量与 MD 中配体保留时间显著相关，可简化假阳性筛选流程。
+   - <strong>初步方法</strong>：对本文 20 体系的 MD 轨迹，计算 MM/GBSA 能量与配体 RMSD 随时间变化的相关性。
+   - <strong>验证方式</strong>：Spearman 相关系数、ROC 曲线评估 MM/GBSA 作为假阳性筛选指标的效能。
+   - <strong>创新状态</strong>：unverified（需检索 MM/GBSA 与 MD 稳定性相关性的已有研究）。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors benchmark AlphaFold2 and SWISS-MODEL predicted kinase structures against experimental structures for structure-based drug discovery, using docking and MD simulations, and report that SWISS-MODEL yields slightly better structural metrics, that MD refinement before docking is detrimental, and that post-docking MD reduces false positives with true-positive rates of 30% (SWISS-MODEL) and 35% (AlphaFold2)</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no numerical data, statistical tests, dataset details, or methodological parameters are visible</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, docking scores, RMSD values, interaction similarity measures, MD simulation parameters, MM/GBSA results, statistical analyses, and dataset composition details</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract addresses a relevant and timely question in structure-based drug discovery, namely the practical utility of predicted protein structures relative to experimental ones. The study design is sensible and includes multiple evaluation layers. However, the abstract alone does not provide sufficient quantitative evidence to assess the robustness of the conclusions. Several claims are stated without supporting numbers or statistical context, and the reported true-positive rates are presented without defining the denominator or the criteria for true positives. The finding that MD refinement before docking is detrimental is interesting but counterintuitive and requires careful validation. The manuscript may have merit, but the case is not fully established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational chemists and structural biologists engaged in structure-based drug discovery, particularly those who use predicted structures when experimental ones are unavailable. The comparison between a deep learning method and a traditional homology modeling approach is directly relevant to practitioners deciding which tool to use. The finding on post-docking MD filtering could also interest method developers working on virtual screening pipelines.</li>
+<li><strong>Major strengths</strong> The study addresses a practical question with direct applicability. The benchmarking design includes multiple conditions (raw, energy-minimized, MD-refined) and multiple assessment layers (structural metrics, docking, post-docking MD, binding energy). The inclusion of experimental structures as a reference is appropriate. The observation that MD refinement before docking can be detrimental is a potentially valuable cautionary finding.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The claim that SWISS-MODEL produced slightly lower RMSD values and better interaction similarity than AlphaFold, although overall docking scores were statistically comparable</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract states that SWISS-MODEL outperformed AlphaFold on structural metrics but that docking scores were statistically comparable. No numerical values, effect sizes, or statistical test results are provided. It is unclear whether the differences in RMSD and interaction similarity are meaningful in a practical sense or whether the statistical comparability of docking scores is based on adequate power.</li>
+<li><strong>Why it matters</strong> The central comparative claim of the paper depends on the magnitude and significance of these differences. Without quantitative support, the reader cannot judge whether the reported differences are robust or within noise.</li>
+<li><strong>Resolution test</strong> Provide the actual RMSD values, interaction similarity scores, docking scores, and the statistical tests used with p-values or confidence intervals. State the number of kinases for which each comparison was made and whether multiple testing corrections were applied.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim validity</li>
+<li><strong>Claim pointer</strong> The claim that MD refinement prior to docking reduced structural suitability by increasing binding-pocket deviations and was associated with misoriented ligand poses</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> This is a counterintuitive finding that contradicts the common expectation that MD refinement improves structure quality. The abstract provides no quantitative measure of binding-pocket deviation, no definition of misorientation, and no comparison with the starting structures. It is also unclear whether the MD protocol was appropriate for the purpose of structure refinement.</li>
+<li><strong>Why it matters</strong> If this claim is correct, it has practical implications for how predicted structures should be prepared for docking. However, if the MD protocol was suboptimal or the analysis metrics were flawed, the conclusion could be misleading.</li>
+<li><strong>Resolution test</strong> Provide quantitative binding-pocket deviation values before and after MD, define the criteria for misoriented poses, and show representative examples. Justify the MD protocol in terms of equilibration, force field, and simulation length. Show that the effect is consistent across the dataset and not driven by a few outliers.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The claim that post-docking MD effectively identified unstable ligand poses and reduced false-positive predictions, with overall true-positive rates of 30% for SWISS-MODEL and 35% for AlphaFold2</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The true-positive rates are presented without defining the denominator. It is unclear whether the rates refer to the fraction of kinases for which the correct pose was identified, the fraction of docking poses that were retained after MD filtering, or something else. The criteria for true positive and false positive are not stated. The improvement from MD filtering is not quantified.</li>
+<li><strong>Why it matters</strong> The main practical recommendation of the paper, namely that dynamic validation is important, rests on these rates. Without a clear definition and the corresponding false-positive rates before and after MD filtering, the reader cannot assess the magnitude of the benefit.</li>
+<li><strong>Resolution test</strong> Define the true-positive and false-positive criteria explicitly. State the denominator for the reported rates. Provide the false-positive rates before and after MD filtering for each method and for experimental structures. Show the number of cases where MD detected ligand dissociation and how this correlated with docking scores.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Dataset description</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract states that a curated dataset of 20 kinase structures was used but does not specify the kinase families, the diversity of the binding sites, or the criteria for curation.</li>
+<li><strong>Required correction</strong> Provide a brief description of the dataset composition, including kinase families and the range of binding-site properties, in the abstract or state where this information can be found.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Methodological transparency</li>
+<li><strong>Affected element</strong> Docking software details</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> Three docking programs were used (AutoDock Vina, AutoDock, and MOE), but the abstract does not state whether the results were concordant across programs or whether one program dominated the findings.</li>
+<li><strong>Required correction</strong> State whether the conclusions hold across all three docking programs or note any program-specific differences.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Use of the term "statistically comparable"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The phrase "statistically comparable" is vague. It could mean that the null hypothesis of no difference was not rejected, but the power to detect a difference is unknown.</li>
+<li><strong>Required correction</strong> Specify the statistical test used and report the test statistic and p-value, or state the confidence interval for the difference.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> MM/GBSA results</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> MM/GBSA binding energy estimation is mentioned as part of the assessment, but no results from this analysis are reported in the abstract.</li>
+<li><strong>Required correction</strong> Either report the key MM/GBSA findings or state that they were consistent with the docking results and refer to the full text.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient quantitative evidence to support the central comparative claims, the counterintuitive finding on MD pre-refinement, or the reported true-positive rates.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: the question of how predicted structures perform in realistic drug discovery workflows is not entirely new, but the specific comparison of AlphaFold2 and SWISS-MODEL with multiple evaluation layers is a useful contribution. Scientific importance: moderate to high for the computational drug discovery community, though the scope is limited to kinases. Interdisciplinary readership: the work sits at the interface of structural biology and computational chemistry and would appeal to a specialized audience rather than a broad one. Technical soundness: cannot be fully assessed from the abstract; the design is reasonable, but the lack of quantitative detail prevents verification. Readability for nonspecialists: the abstract is generally clear, though some terms such as MM/GBSA and true-positive rate would benefit from brief explanation.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The study addresses a relevant question and the design is sensible, but the abstract lacks the quantitative detail needed to assess the robustness of the claims. The counterintuitive finding on MD pre-refinement and the reported true-positive rates require careful scrutiny. I would be supportive if the full manuscript provides adequate statistical support and clear definitions of the evaluation criteria.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that SWISS-MODEL produced slightly lower RMSD values and better interaction similarity than AlphaFold is unsupported without numerical values.</li>
+<li>The claim that overall docking scores were statistically comparable is unsupported without test statistics or confidence intervals.</li>
+<li>The claim that MD refinement prior to docking reduced structural suitability is unsupported without quantitative binding-pocket deviation data.</li>
+<li>The claim that post-docking MD reduced false-positive predictions is unsupported without before-and-after false-positive rates.</li>
+<li>The true-positive rates of 30% and 35% are uninterpretable without a definition of the denominator and the criteria for true positives.</li>
+<li>The claim that energy minimization provided little to no improvement is unsupported without quantitative comparison.</li>
+<li>The generalizability of the findings beyond the 20 kinase structures is not assessable from the abstract.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

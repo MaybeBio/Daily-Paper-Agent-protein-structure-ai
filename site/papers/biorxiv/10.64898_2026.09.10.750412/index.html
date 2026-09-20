@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agentic-AI-ready genome-wide poxvirus–host interaction screen refined by a protein language model · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">5</span>
+    <div>
+      <h1>Agentic-AI-ready genome-wide poxvirus–host interaction screen refined by a protein language model</h1>
+      <div class="meta">Jacob Marcel Anter; Jason Mercer; Artur Yakimovich</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-13
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.10.750412">原文</a>
+      </div>
+      <p class="one-liner">该文利用蛋白语言模型整合蛋白互作信息优化痘病毒-宿主全基因组筛选，虽涉及蛋白语言模型但核心是功能筛选而非蛋白质结构计算建模，算法可部分借鉴。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Recent mpox outbreaks highlight the necessity to understand the interactions between poxviruses and the human host. These can be discovered systematically through screening for host genes involved in infection at the single-cell level using RNA interference. However, off-target effects and assay noise obscure true gene-phenotype relationships, hampering the discovery of therapeutically relevant targets. Here, we show that integrating protein-protein interaction information derived from a protein language model boosts the discovery of vaccinia virus-host interactions. We propose ICARus – a positive-unlabelled read-out refinement framework to achieve this. Our approach enhances the identification of human genes with potential antiviral function. We provide the raw and refined read-outs of a genome-wide screen for vaccinia virus host factors as an agentic-AI-enabled community resource. Our findings provide a generalisable strategy for robust hit prioritisation in functional screens, accelerating discovery across complex biological systems.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">近期猴痘疫情暴发凸显了理解痘病毒与人类宿主之间相互作用的必要性。这些相互作用可通过在单细胞水平上利用RNA干扰筛选参与感染的宿主基因来系统性地发现。然而，脱靶效应和检测噪声掩盖了真实的基因-表型关系，阻碍了治疗相关靶点的发现。在此，我们表明整合源自蛋白质语言模型的蛋白质-蛋白质相互作用信息可增强牛痘病毒-宿主相互作用的发现。我们提出ICARus——一种正-未标记读出精炼框架以实现这一目标。我们的方法增强了对具有潜在抗病毒功能的人类基因的识别。我们提供了全基因组牛痘病毒宿主因子筛选的原始及精炼读出数据，作为代理式AI赋能的社区资源。我们的发现为功能筛选中稳健命中优先排序提供了一种通用策略，加速了复杂生物系统中的发现进程。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Agentic-AI-ready genome-wide poxvirus–host interaction screen refined by a protein language model</li>
+<li><strong>作者</strong>：Jacob Marcel Anter; Jason Mercer; Artur Yakimovich</li>
+<li><strong>单位</strong>：未提供（根据致谢推测与 CASUS、Helmholtz AI 相关）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学 + 资源型研究（含湿实验筛选 + 计算框架）</li>
+<li><strong>领域</strong>：病毒-宿主互作、RNAi 筛选、蛋白质语言模型、正-未标记学习</li>
+<li><strong>关键词</strong>：poxvirus、vaccinia virus、RNAi screen、protein language model、positive-unlabelled learning、host factor prioritisation、agentic AI</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.10.750412</li>
+<li><strong>代码</strong>：GitHub 仓库 ICARusPox（具体 URL 未提供）</li>
+<li><strong>数据</strong>：Zenodo 仓库，https://doi.org/10.5281/zenodo.22307677</li>
+<li><strong>阅读日期</strong>：2026-09-13</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的功能筛选数据精炼方向。核心创新在于将蛋白质语言模型（pLM）衍生的 PPI 预测概率作为先验知识，通过 PU 学习框架对全基因组 RNAi 筛选结果进行重排序和置信度加权，从而缓解脱靶效应和 assay 噪声。该工作展示了 pLM 嵌入不仅可用于结构预测，还可作为功能筛选的生物学先验，对蛋白质-蛋白质相互作用预测与功能基因组学交叉领域具有方法学参考价值。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文针对痘病毒-宿主互作的全基因组 RNAi 筛选结果受脱靶效应和 assay 噪声干扰的问题，提出 ICARus 框架——利用蛋白质语言模型（xCAPT5）预测病毒-宿主 PPI 概率，通过正-未标记（PU）学习对筛选结果进行置信度加权精炼，从而提升已知宿主因子的回收率并拓宽高排名基因的功能景观，同时发布支持 agentic AI 交互的社区资源 ICARusPox。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：全基因组 RNAi 筛选（针对痘病毒感染）的原始 readout 受脱靶效应（off-target effects, OTEs）和 assay 噪声干扰，导致真正的病毒-宿主互作（virus-host interactions, VHIs）难以与假阳性区分，宿主因子（host factors）的优先级排序不可靠。</li>
+<li><strong>为什么重要</strong>：mpox 等痘病毒疫情的暴发凸显了理解痘病毒-宿主互作的紧迫性。可靠的宿主因子鉴定是发现宿主导向抗病毒靶点（host-directed antiviral targets）的前提。RNAi 筛选虽可系统性地发现宿主基因，但其噪声问题长期未得到有效解决。</li>
+<li><strong>现有方法为何不足</strong>：传统方法依赖化学修饰 siRNA 或统计校正来缓解 OTEs，但无法利用生物学先验知识（如蛋白质互作信息）来区分真实互作与噪声；公共 PPI 数据库覆盖度有限，难以泛化到新病原体。</li>
+<li><strong>精确研究问题</strong>：Can a protein language model-derived PPI prior, integrated via positive-unlabelled learning, refine the read-out of a genome-wide RNAi screen to improve the prioritisation of vaccinia virus host factors?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文 Introduction 与 Discussion 的叙述，标注为「仅本文框架」，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RNAi 筛选技术</td>
+<td>全基因组 siRNA 文库（如 Rämö et al. 2014 的 VACV 筛选）</td>
+<td>可系统性地沉默每个宿主基因，发现参与病毒感染的宿主因子</td>
+<td>脱靶效应（OTEs）和 assay 噪声导致假阳性/假阴性</td>
+</tr>
+<tr>
+<td>OTE 缓解策略</td>
+<td>化学修饰 siRNA、多 siRNA 验证、统计校正</td>
+<td>部分降低脱靶效应</td>
+<td>无法利用生物学先验区分真实互作与噪声</td>
+</tr>
+<tr>
+<td>基于数据库的 hit triage</td>
+<td>使用公共 PPI 数据库（如 HVIDB）进行功能注释和互作验证</td>
+<td>提供实验验证的互作信息</td>
+<td>数据库覆盖度有限，对新病原体泛化能力差</td>
+</tr>
+<tr>
+<td>AI 驱动的 PPI 预测</td>
+<td>SENSE-PPI、xCAPT5、MaTPIP 等 pLM 方法</td>
+<td>可从序列直接预测 PPI，泛化能力强</td>
+<td>预测概率未经功能筛选验证，直接用于 hit prioritisation 的框架尚缺</td>
+</tr>
+<tr>
+<td><strong>本文位置</strong></td>
+<td><strong>ICARus：pLM-PPI 先验 + PU 学习精炼 RNAi readout</strong></td>
+<td><strong>将 PPI 预测概率作为连续先验，通过 PU 学习对筛选结果进行置信度加权，而非简单二值化</strong></td>
+<td>依赖 PPI 预测模型质量；PU 学习假设（如先验概率）需谨慎设定</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RNAi 脱靶效应（OTEs）</td>
+<td>siRNA 与非靶标 mRNA 结合，导致基因沉默表型与真实基因功能不符</td>
+<td>siRNA 序列互补性不完全；单个基因的多个 siRNA 可能共享种子序列</td>
+<td>Introduction 第 2 段："RNAi is hampered by off-target effects (OTEs) involving binding of an siRNA molecule to an mRNA molecule other than its intended target"</td>
+</tr>
+<tr>
+<td>Assay 噪声</td>
+<td>阳性/阴性对照的 Z'-score 仅 0.43，线性可分性边际</td>
+<td>实验条件波动、细胞异质性、成像/分析流程误差</td>
+<td>Results 第 1 节："the best-performing positive and negative controls resulted in 0.43, suggesting the linear separability of the results was marginal"</td>
+</tr>
+<tr>
+<td>公共 PPI 数据库覆盖不足</td>
+<td>实验验证的 PPI 数据稀疏，尤其对新病原体</td>
+<td>实验验证成本高、周期长；数据库更新滞后</td>
+<td>Introduction 第 3 段："the coverage of public interaction databases remains inherently limited"</td>
+</tr>
+<tr>
+<td>现有 hit triage 缺乏生物学先验</td>
+<td>仅依赖统计阈值或功能注释，无法区分真实互作与噪声</td>
+<td>未利用蛋白质序列中蕴含的互作信息</td>
+<td>Introduction 第 3 段："Hit triage has benefited from... functional annotation data and PPI data... However, the coverage... remains inherently limited"</td>
+</tr>
+<tr>
+<td>多模态整合困难</td>
+<td>表型特征与 PPI 特征直接拼接未带来性能提升</td>
+<td>不同模态信息量不对等，需样本级自适应加权</td>
+<td>Results 第 3 节："the multimodal approach did not outperform the PPI-only model"（作者归因于模态互补性不足）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>ICARus 是一个两阶段计算框架：
+- <strong>阶段一</strong>：使用 xCAPT5（pLM 驱动的 PPI 预测模型）对 VACV 所有 440 个蛋白与人类宿主蛋白之间的互作概率进行预测，得到每个宿主基因的 PPI 特征向量（维度 = 440，每个维度对应一个 VACV 蛋白的互作概率）。
+- <strong>阶段二</strong>：将 PPI 特征向量作为输入，训练一个 PU 学习模型（MLP + nnPU loss），以已知 VACV 宿主因子为正样本，其余基因为未标记样本，输出每个基因的宿主因子概率。
+- <strong>最终精炼</strong>：将 PU 模型概率与原始筛选强度相乘（soft-masking），实现置信度加权，得到精炼后的 readout。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>pLM 作为生物学先验的桥梁</strong>：pLM 嵌入捕捉了蛋白质序列中与结构、功能和互作相关的基本生化原理，因此其 PPI 预测可以超越实验验证数据库的覆盖限制，为功能筛选提供可泛化的先验知识。</li>
+<li><strong>PU 学习而非监督学习</strong>：RNAi 筛选中「非宿主因子」的标签本质上是不可靠的（未标记 ≠ 负样本），因为许多真正的宿主因子尚未被发现。PU 学习显式建模这种不确定性，将未标记样本视为「可能是正样本」而非「负样本」。</li>
+<li><strong>连续先验而非二值过滤</strong>：传统方法将 PPI 信息作为二值过滤器（有互作/无互作），而 ICARus 使用连续概率进行 soft-masking，保留了不确定性信息，避免因 PPI 预测错误而完全丢弃真实候选基因。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>先验知识的注入方式决定其效用</strong>：将外部生物学先验（如 PPI 预测）作为连续权重而非硬性过滤器，可以更鲁棒地处理先验本身的不确定性。这一思路可迁移到其他功能筛选（如 CRISPR 筛选）的 hit prioritisation。</li>
+<li><strong>模态融合需考虑信息互补性</strong>：本文发现多模态（表型 + PPI）并未优于单模态（PPI-only），提示模态融合并非简单拼接，而需评估各模态的信息增益和冗余度。这对蛋白质结构预测中多序列比对、结构模板、语言模型嵌入等多源信息的融合策略具有警示意义。</li>
+<li><strong>「未标记」与「负样本」的区分是生物信息学的核心建模决策</strong>：在蛋白质互作预测、功能注释等任务中，负样本的构建方式直接影响模型性能。PU 学习框架为处理「缺失标签」而非「确定负样本」的场景提供了范式。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：</li>
+<li>全基因组 siRNA 筛选的原始 readout（每个基因的早期/晚期病毒基因表达、细胞数等表型特征，3 维向量）</li>
+<li>人类宿主蛋白与 VACV 蛋白的氨基酸序列</li>
+<li>已知 VACV 宿主因子列表（正样本，来自文献，Table S8）</li>
+<li><strong>输出</strong>：</li>
+<li>每个基因的宿主因子概率（PU 模型输出）</li>
+<li>精炼后的 readout（原始强度 × PU 概率）</li>
+<li>高排名宿主因子列表（用于实验验证）</li>
+<li><strong>模块</strong>：
+  1. <strong>PPI 预测模块</strong>：xCAPT5（Sled checkpoint + MLP 分类头），输入蛋白序列对，输出互作概率
+  2. <strong>特征聚合模块</strong>：对每个宿主基因，将其编码的所有蛋白的 PPI 概率向量按元素取最大值，得到 440 维基因级 PPI 特征
+  3. <strong>PU 学习模块</strong>：MLP + nnPU loss，输入 PPI 特征，输出宿主因子概率
+  4. <strong>Soft-masking 模块</strong>：将 PU 概率与原始表型强度相乘，得到精炼 readout
+  5. <strong>Agentic 资源模块</strong>：ICARusPox 网站，提供数据浏览、脚本执行和 LLM 接口</li>
+<li><strong>训练</strong>：</li>
+<li>PPI 分类头：在 VACV 特异性 PPI 数据集上微调（686 训练 / 68 验证 / 70 测试），二元交叉熵损失</li>
+<li>PU 模型：nnPU loss，正类先验 π_p = 5 × 10⁻²，1,000 epochs，Adam 优化器</li>
+<li><strong>假设</strong>：</li>
+<li>已知宿主因子（正样本）的标签是可靠的</li>
+<li>未标记基因中可能存在未知宿主因子（因此用 PU 而非二元分类）</li>
+<li>PPI 预测概率与宿主因子可能性正相关</li>
+<li><strong>文字流程</strong>：
+  1. 对 VACV 的 440 个蛋白与所有人类蛋白进行 PPI 预测（xCAPT5）
+  2. 将蛋白级 PPI 概率聚合为基因级特征（逐元素最大值）
+  3. 以已知宿主因子为正样本，其余为未标记样本，训练 PU 模型
+  4. 用 PU 模型对全基因组进行评分，得到宿主因子概率
+  5. 将概率与原始筛选强度相乘，得到精炼 readout
+  6. 对精炼后的高排名基因进行功能富集分析（ORA），评估生物学合理性
+  7. 将原始和精炼数据发布至 ICARusPox 平台，支持 agentic AI 交互</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xCAPT5 PPI 预测（Sled + MLP 头）</td>
+<td>预测 VACV 蛋白与人类蛋白的互作概率</td>
+<td>提供超越实验数据库的 PPI 先验</td>
+<td>输入：蛋白序列对；输出：互作概率（0-1）</td>
+<td>Table 1-2：微调后 AUROC 0.93，PR AUC 0.94，MCC 0.72</td>
+<td>移除后失去 PPI 先验，PU 模型无有效输入特征，框架失效</td>
+</tr>
+<tr>
+<td>基因级特征聚合（逐元素最大值）</td>
+<td>将蛋白级 PPI 概率聚合为基因级特征</td>
+<td>基因可能编码多个蛋白异构体，需统一为单一特征向量</td>
+<td>输入：蛋白级 PPI 概率向量；输出：440 维基因级特征</td>
+<td>Methods 节："aggregated by taking the element-wise maximum across all isoforms"</td>
+<td>若改为均值或求和，可能稀释强互作信号，降低 PU 模型判别力 [Analysis]</td>
+</tr>
+<tr>
+<td>PU 学习模型（MLP + nnPU loss）</td>
+<td>从 PPI 特征预测宿主因子概率</td>
+<td>处理「未标记 ≠ 负样本」的问题，显式建模标签不确定性</td>
+<td>输入：440 维 PPI 特征；输出：宿主因子概率</td>
+<td>Table 3：未扰动特征 AUROC 0.77 vs 行/列置换后 ~0.47-0.50</td>
+<td>移除后无法将 PPI 先验转化为可用的置信度权重</td>
+</tr>
+<tr>
+<td>Soft-masking（置信度加权）</td>
+<td>将 PU 概率与原始强度相乘</td>
+<td>实现 PPI 信息对原始 readout 的连续校正</td>
+<td>输入：原始强度 + PU 概率；输出：精炼 readout</td>
+<td>Results 第 3 节：精炼后功能景观拓宽</td>
+<td>若改为硬阈值过滤，可能丢失低强度但真实的宿主因子 [Analysis]</td>
+</tr>
+<tr>
+<td>功能富集分析（ORA）</td>
+<td>评估精炼后高排名基因的生物学合理性</td>
+<td>验证精炼是否引入生物学一致的功能类别</td>
+<td>输入：高排名基因列表；输出：富集的 Reactome 通路</td>
+<td>Results 第 3 节：精炼后 "Membrane trafficking" 等类别占比上升</td>
+<td>移除后无法验证精炼的生物学有效性</td>
+</tr>
+<tr>
+<td>ICARusPox agentic 平台</td>
+<td>发布数据并提供 LLM 交互接口</td>
+<td>使社区能够以 agentic AI 方式探索数据</td>
+<td>输入：用户查询/脚本；输出：分析结果/可视化</td>
+<td>Results 第 4 节：平台提供 dashboard、BioJS 沙箱和 LLM API</td>
+<td>移除后数据可用性降低，但核心方法不受影响</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>符号含义</th>
+<th>用途</th>
+<th>直觉</th>
+<th>来源指针</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recall@k = (已知正样本中排名前 k 的比例)</td>
+<td>k = 预测数量</td>
+<td>评估 PU 模型对已知宿主因子的回收能力</td>
+<td>衡量模型能否将已知正样本排在前面</td>
+<td>Methods "Evaluation metrics" 节，equation 1</td>
+</tr>
+<tr>
+<td>Precision@k = (前 k 中真正正样本的比例)</td>
+<td>k = 预测数量</td>
+<td>评估前 k 预测的精确度</td>
+<td>衡量前 k 个预测中有多少是真实正样本</td>
+<td>Methods "Evaluation metrics" 节，equation 2</td>
+</tr>
+<tr>
+<td>Enrichment@k = Precision@k / 基线正样本率</td>
+<td>基线正样本率 = 数据集中正样本比例</td>
+<td>量化模型相对随机选择的富集程度</td>
+<td>&gt;1 表示优于随机选择</td>
+<td>Methods "Evaluation metrics" 节，equation 3-4</td>
+</tr>
+<tr>
+<td>nnPU loss</td>
+<td>π_p = 正类先验（5 × 10⁻²）</td>
+<td>PU 学习训练目标</td>
+<td>在无负样本标签下估计分类器</td>
+<td>Methods 节："non-negative PU (nnPU) loss with a positive-class prior of π_p = 5 × 10⁻²"</td>
+</tr>
+<tr>
+<td>Soft-masking: refined = raw × P(host factor)</td>
+<td>raw = 原始筛选强度；P = PU 模型概率</td>
+<td>置信度加权</td>
+<td>高概率基因保留强度，低概率基因被抑制</td>
+<td>Results 第 3 节："multiplication of the raw intensities by the PU model probability"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：</li>
+<li>全基因组 siRNA 筛选：HeLa CCL-2 细胞，VACV WR 株（双荧光报告病毒），约 1,046 个训练基因 / 104 验证 / 294 测试（PU 学习数据集）</li>
+<li>PPI 数据集：412 个实验验证的 VACV WR-人类 PPI（HVIDB），负样本为计算生成的核仁蛋白配对，最终 686 训练 / 68 验证 / 70 测试</li>
+<li><strong>规模</strong>：全基因组（约 18,000 基因），PU 学习数据集为 1,444 基因</li>
+<li><strong>指标</strong>：AUROC、PR AUC、MCC、Recall@k、Precision@k、Enrichment@k</li>
+<li><strong>基线</strong>：未校正的原始筛选强度；行/列置换的 PPI 特征（消融对照）</li>
+<li><strong>骨干/仪器</strong>：Molecular Devices ImageXpress 高内涵显微镜；CellProfiler 图像分析流水线</li>
+<li><strong>oracle 输入</strong>：已知 VACV 宿主因子列表（文献来源，Table S8）作为 PU 学习的正样本</li>
+<li><strong>评测协议</strong>：在测试集上评估 AUROC/PR AUC；通过 ORA 评估精炼后高排名基因的功能富集；通过置换检验验证 PPI 特征的非随机性</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPI 模型基准测试</td>
+<td>xCAPT5 优于 SENSE-PPI 和 MaTPIP</td>
+<td>零样本 vs 微调，Sled vs Pan checkpoint</td>
+<td>xCAPT5 + Sled 微调后 AUROC 0.93，PR AUC 0.94，MCC 0.72</td>
+<td>xCAPT5 适合 VACV-人类 PPI 预测</td>
+<td>未与其他非 pLM 方法比较</td>
+<td>Table 1-2</td>
+</tr>
+<tr>
+<td>PU 模型特征消融</td>
+<td>PPI 特征包含非随机信号</td>
+<td>未扰动 vs 行/列置换特征</td>
+<td>未扰动 AUROC 0.77 vs 置换后 0.47-0.50</td>
+<td>PPI 特征对宿主因子预测有显著贡献</td>
+<td>未测试其他特征组合</td>
+<td>Table 3, Figs. S6-S9</td>
+</tr>
+<tr>
+<td>多模态 vs 单模态</td>
+<td>表型 + PPI 特征优于 PPI 单独</td>
+<td>多模态（表型 + PPI）vs PPI-only</td>
+<td>多模态未优于 PPI-only</td>
+<td>当前表型特征提供有限增量信息</td>
+<td>未测试更丰富的表型特征</td>
+<td>Results 第 3 节, Fig. S7</td>
+</tr>
+<tr>
+<td>Soft-masking 功能景观分析</td>
+<td>精炼后高排名基因功能更广</td>
+<td>精炼前 vs 精炼后 ORA</td>
+<td>"Membrane trafficking" 从 7.6% 升至 27.2%，"Immune response" 从 14.7% 升至 29.2%</td>
+<td>精炼引入生物学一致的宿主因子类别</td>
+<td>未进行湿实验验证新候选</td>
+<td>Results 第 3 节, Fig. 3c</td>
+</tr>
+<tr>
+<td>置换检验</td>
+<td>PPI 特征信号非随机</td>
+<td>行/列置换 vs 原始</td>
+<td>置换后性能接近随机</td>
+<td>信号来自 PPI 特征本身</td>
+<td>未检验 PPI 预测误差的影响</td>
+<td>Table 3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅针对 VACV（痘病毒科原型）在 HeLa 细胞中的全基因组 siRNA 筛选。结论不应外推至其他病毒、细胞类型或筛选技术（如 CRISPR）。</li>
+<li><strong>端到端状态</strong>：ICARus 是计算精炼框架，输出的是优先级排序的候选基因列表，而非经过湿实验验证的宿主因子。所有性能指标均基于已知宿主因子的回收率，不代表新候选的准确率。</li>
+<li><strong>oracle 依赖</strong>：PU 学习的正样本来自文献已知宿主因子，其完整性和准确性直接影响模型性能。若已知宿主因子存在偏差（如偏向高表达基因），模型可能继承该偏差。</li>
+<li><strong>PPI 预测的不确定性</strong>：xCAPT5 的预测概率本身存在误差，且训练数据（HVIDB）可能包含体外条件下可检测但体内不发生的互作。作者在 Discussion 中承认了这一局限。</li>
+<li><strong>性能边界</strong>：AUROC 0.77（PU 模型）和 0.93（PPI 分类器）是在特定测试集上的结果，且测试集与训练集同源（同一 VACV 株）。跨病毒株或跨物种的泛化性能未评估。</li>
+<li><strong>有边界的复述</strong>：ICARus 利用 pLM 衍生的 PPI 先验，通过 PU 学习对 VACV 全基因组 RNAi 筛选结果进行置信度加权，在已知宿主因子的回收率和功能景观广度上优于未校正的原始筛选，但新候选基因的生物学功能仍需独立实验验证。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>依赖正样本集质量</td>
+<td>正样本为已知 VACV 宿主因子，可能不完整或有偏差</td>
+<td>定期更新正样本集，纳入新实验证据</td>
+<td>Discussion 第 1 段："The framework would therefore benefit from periodic curation and updating of the positive reference set as new experimental evidence becomes available"</td>
+</tr>
+<tr>
+<td>PPI 数据质量与生物学背景</td>
+<td>实验验证的 PPI 可能包含体外可检测但体内不发生的互作</td>
+<td>更严格筛选 PPI 数据的实验条件和细胞定位信息</td>
+<td>Discussion 第 2 段："Experimentally demonstrated VACV-human PPIs may include interactions that are detectable under in vitro conditions but are unlikely to occur during infection"</td>
+</tr>
+<tr>
+<td>多模态整合未提升性能</td>
+<td>表型 + PPI 特征未优于 PPI-only</td>
+<td>探索更丰富的表型特征或更复杂的融合策略</td>
+<td>Results 第 3 节："this approach did not outperform the PPI-only model"</td>
+</tr>
+<tr>
+<td>自噬相关基因代表性下降</td>
+<td>精炼后自噬类别的基因占比降低</td>
+<td>作者认为可能反映正样本集偏差，需进一步研究</td>
+<td>Discussion 第 1 段："The reduced representation of autophagy-related genes after refinement may illustrate this limitation"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PU 学习正样本仅来自文献，未包含本筛选新发现的候选</td>
+<td>正样本集可能偏向研究充分的基因（如免疫相关），导致模型对未充分研究的通路（如自噬）产生系统性低估</td>
+<td>若正样本集有偏，精炼结果可能强化已有研究偏见，而非发现新生物学</td>
+<td>使用独立来源的正样本集（如 CRISPR 筛选、遗传关联研究）进行交叉验证</td>
+<td>Discussion 中作者承认自噬基因代表性下降</td>
+</tr>
+<tr>
+<td>PPI 特征维度为 440（VACV 蛋白数），但未报告特征重要性分析</td>
+<td>可能只有少数 VACV 蛋白的互作概率驱动模型预测，其余为噪声</td>
+<td>理解哪些 VACV 蛋白的互作信息最关键，有助于生物学解释和模型简化</td>
+<td>进行特征重要性分析（如 SHAP、排列重要性）</td>
+<td>Methods 节未提及特征重要性分析</td>
+</tr>
+<tr>
+<td>Soft-masking 的乘法操作缺乏理论推导</td>
+<td>乘法假设 PPI 概率与原始强度独立且线性可乘，但实际关系可能更复杂</td>
+<td>若乘法假设不成立，精炼后的 readout 可能引入新的偏差</td>
+<td>比较乘法、加法、对数等不同融合策略的性能</td>
+<td>Results 第 3 节仅报告乘法结果</td>
+</tr>
+<tr>
+<td>置换检验仅置换 PPI 特征，未置换正样本标签</td>
+<td>模型可能通过记忆正样本的序列特征而非泛化的 PPI 模式进行预测</td>
+<td>若模型过拟合正样本，新候选的可靠性存疑</td>
+<td>进行标签置换检验，或使用独立验证集</td>
+<td>Table 3 仅报告特征置换结果</td>
+</tr>
+<tr>
+<td>未与简单基线（如直接使用 PPI 数据库评分）比较</td>
+<td>未证明 pLM 衍生的 PPI 先验优于传统数据库先验</td>
+<td>若传统方法同样有效，pLM 的增量价值不明确</td>
+<td>增加与 HVIDB 直接评分、STRING 等数据库评分的比较</td>
+<td>文中未提供此类比较</td>
+</tr>
+<tr>
+<td>平台宣称 "agentic-AI-ready" 但未提供具体 agent 工作流评估</td>
+<td>平台提供 LLM 接口，但未展示 agent 能否有效利用数据产生新假设</td>
+<td>Agentic 功能是本文的卖点之一，缺乏评估则难以判断其实际效用</td>
+<td>设计标准化的 agent 任务（如候选基因优先级排序、通路假设生成）进行评估</td>
+<td>Results 第 4 节仅描述平台功能，无评估</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>pLM 作为功能筛选先验的范式</strong>：本文展示了 pLM（如 xCAPT5）不仅可用于结构预测，其嵌入衍生的 PPI 概率可作为功能基因组学筛选的连续先验。对于蛋白质结构相关计算研究，这意味着 pLM 嵌入可能蕴含超越结构的生物学功能信息，值得在结构-功能关联任务中进一步挖掘。</p>
+</li>
+<li>
+<p><strong>PU 学习处理「未标记 ≠ 负样本」</strong>：在蛋白质互作预测、功能注释等任务中，负样本的构建是核心难题。本文的 PU 学习框架为处理「缺失标签」场景提供了可迁移的建模思路，尤其适用于病毒-宿主互作这类正样本稀少、负样本不确定的问题。</p>
+</li>
+<li>
+<p><strong>Soft-masking 而非硬过滤</strong>：将外部先验作为连续权重而非二值过滤器，可以保留不确定性信息，避免因先验错误而完全丢弃真实候选。这一策略可迁移到结构预测中的模板筛选、对接中的打分函数融合等场景。</p>
+</li>
+<li>
+<p><strong>多模态融合的警示</strong>：本文发现表型 + PPI 多模态并未优于 PPI 单模态，提示模态融合需评估信息互补性而非简单拼接。对于蛋白质结构预测中多源信息（MSA、模板、语言模型嵌入）的融合策略，这一发现具有方法论警示意义。</p>
+</li>
+<li>
+<p><strong>Agentic 数据资源的设计</strong>：ICARusPox 将数据、分析函数和 LLM 接口整合为一个 agent 可交互的平台，为计算生物学数据共享提供了新范式。对于结构生物学领域，类似的设计可应用于结构数据库、MD 模拟轨迹等资源的发布。</p>
+</li>
+<li>
+<p><strong>置换检验作为特征有效性验证</strong>：通过行/列置换 PPI 特征验证信号非随机性，是一种简单有效的消融实验设计，可迁移到其他特征工程任务的验证中。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Rämö et al. 2014</strong>：本文的筛选实验方案完全沿用 Rämö 等人的 VACV 全基因组 siRNA 筛选流程（Methods 节明确说明）。该工作为本文提供了原始数据来源和实验基础。</li>
+<li><strong>xCAPT5 (Anter et al.)</strong>：本文使用的 PPI 预测模型，属于 pLM 驱动的互作预测方法。与 SENSE-PPI、MaTPIP 等同类方法进行了基准比较。</li>
+<li><strong>PU 学习 (Elkan &amp; Noto 2008; du Plessis et al. 2014)</strong>：nnPU loss 是 PU 学习的经典变体，本文将其应用于功能筛选精炼，是该理论在病毒学领域的迁移应用。</li>
+<li><strong>HVIDB (Human-Virus Interaction Database)</strong>：本文 PPI 正样本的来源数据库，提供了实验验证的 VACV-人类互作数据。</li>
+<li><strong>DAVID 功能注释工具</strong>：用于 ORA 分析，将精炼后的高排名基因映射到 Reactome 通路。</li>
+<li><strong>AlphaFold 等结构预测方法</strong>：本文未直接使用结构预测，但其 pLM 嵌入思想与 AlphaFold 的 Evoformer 架构共享序列表示学习的基础。对于结构-功能关联研究，本文提供了 pLM 嵌入在功能预测中应用的新视角。</li>
+<li><strong>Agentic AI 在生物学的应用</strong>：ICARusPox 与近期 LLM 驱动的科学发现平台（如 ChemCrow、Coscientist）理念一致，但聚焦于数据资源的 agent 可访问性设计。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：pLM-PPI 先验在 CRISPR 筛选精炼中的迁移应用
+   - <strong>来源局限/观察</strong>：本文方法针对 RNAi 筛选，但 CRISPR 筛选同样面临脱靶效应和噪声问题，且 CRISPR 筛选数据规模更大、噪声特征不同。
+   - <strong>核心假设</strong>：pLM 衍生的 PPI 先验同样能提升 CRISPR 筛选的 hit prioritisation 性能。
+   - <strong>初步方法</strong>：将 ICARus 框架迁移至 CRISPR 筛选数据，使用 pLM 预测的 PPI 概率作为特征，PU 学习进行精炼。
+   - <strong>验证方式</strong>：在公开的 CRISPR 筛选数据集（如 DepMap）上评估已知互作基因的回收率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：结构感知的 PPI 先验增强
+   - <strong>来源局限/观察</strong>：本文仅使用序列衍生的 pLM 嵌入，未利用蛋白质三维结构信息。AlphaFold 预测的结构可能提供更精确的互作界面信息。
+   - <strong>核心假设</strong>：结合结构信息（如互作界面残基、结合能）的 PPI 先验比纯序列先验更能提升宿主因子预测精度。
+   - <strong>初步方法</strong>：使用 AlphaFold-Multimer 预测 VACV-人类蛋白复合物结构，提取界面特征与 xCAPT5 概率融合。
+   - <strong>验证方式</strong>：在本文的 VACV 数据集上对比结构增强与纯序列先验的 AUROC/PR AUC。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：动态先验更新的迭代 PU 学习
+   - <strong>来源局限/观察</strong>：本文的 PU 学习使用静态正样本集，未利用模型自身的预测结果进行迭代优化。
+   - <strong>核心假设</strong>：通过迭代方式，将高置信度预测加入正样本集，可逐步提升模型对未知宿主因子的发现能力。
+   - <strong>初步方法</strong>：设计自训练循环，每轮将 PU 模型高置信度预测（如概率 &gt; 0.9）加入正样本集，重新训练。
+   - <strong>验证方式</strong>：在 VACV 数据集上比较迭代与静态训练的候选基因列表差异，并通过文献验证新候选。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：跨病毒属的 PPI 先验泛化性评估
+   - <strong>来源局限/观察</strong>：本文仅针对 VACV，未评估框架对其他痘病毒（如 mpox virus、ectromelia virus）的适用性。
+   - <strong>核心假设</strong>：pLM 衍生的 PPI 先验可跨病毒属泛化，但泛化性能受病毒蛋白序列相似性影响。
+   - <strong>初步方法</strong>：在 mpox virus 的已知互作数据上测试 ICARus 框架，比较与 VACV 的性能差异。
+   - <strong>验证方式</strong>：使用 HVIDB 中其他痘病毒的互作数据作为测试集。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：agentic 结构-功能联合分析工作流
+   - <strong>来源局限/观察</strong>：ICARusPox 提供 agentic 数据访问，但未将结构预测工具（如 AlphaFold、MD 模拟）整合进分析流程。
+   - <strong>核心假设</strong>：将结构预测和 MD 模拟工具整合进 agentic 工作流，可实现对候选宿主因子的结构-功能联合验证。
+   - <strong>初步方法</strong>：设计 LLM 驱动的 agent，自动调用 AlphaFold 预测候选互作复合物结构，并运行短程 MD 模拟评估互作稳定性。
+   - <strong>验证方式</strong>：在 ICARus 输出的高排名候选基因上运行工作流，评估结构验证对候选优先级的修正效果。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, main text, methods, figure legends not provided)</li>
+<li><strong>Assessment boundary</strong> Scientific soundness, methodological validity, claims vs evidence, and suitability for a general interdisciplinary audience</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present ICARus, a positive-unlabelled (PU) learning framework that integrates protein language model (pLM)-derived protein-protein interaction (PPI) predictions to refine a genome-wide RNAi screen for vaccinia virus (VACV) host factors. They report improved prioritisation of known host factors, a broadening of the functional landscape of top-ranked genes, and release the data as an agentic-AI-enabled community resource (ICARusPox).</li>
+<li><strong>Visible evidence base</strong> Abstract, Results (narrative), Discussion, Methods (partial), Code/Data availability statements. Figures and tables are referenced but not provided. Supplementary figures and tables are referenced but not provided.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures (Fig. 1-4), all tables (Table 1-3), all supplementary figures and tables (Figs. S1-S10, Tables S1-S10), the GitHub repository, and the Zenodo data repository. These are essential for evaluating the validity of the reported results.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a relevant problem in functional genomics screens, namely the mitigation of off-target effects and assay noise through computational refinement. The proposed approach, ICARus, is conceptually interesting and the integration of pLM-derived PPI predictions is timely. However, the current manuscript is severely under-supported by the provided evidence. The core results, including all quantitative performance metrics, model comparisons, and functional enrichment analyses, are presented without the corresponding figures, tables, or supplementary data. The methodological description is also incomplete, lacking critical details on the PU learning setup, hyperparameter selection, and the construction of the negative set. The claims of improved prioritisation and biological plausibility cannot be verified from the supplied material. The manuscript is not yet suitable for publication in its current form.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in virology, particularly those studying poxvirus-host interactions, would be interested in the refined list of candidate host factors. The broader functional genomics and screening community would be interested in the ICARus methodology as a generalisable strategy for hit prioritisation. The agentic-AI resource (ICARusPox) may appeal to bioinformaticians and computational biologists developing AI-assisted data exploration tools.</li>
+<li><strong>Major strengths</strong> The problem being addressed is significant and well-motivated. The proposed solution, using pLM-derived PPI predictions as a prior in a PU learning framework, is a novel and potentially powerful idea. The decision to release the data as an interactive, agentic resource is commendable and aligns with modern data-sharing practices. The discussion of limitations, particularly regarding the dependence on the positive reference set and PPI data quality, is thoughtful.</li>
+<li><strong>Major Concerns</strong><ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence</li>
+<li><strong>Claim pointer</strong> The claim that ICARus "enhances the identification of human genes with potential antiviral function" and "improves VACV host factor prioritisation" is central to the manuscript.</li>
+<li><strong>Evidence pointer</strong> Results section, Figures 2 and 3, Tables 2 and 3, Supplementary Figures S2-S9, Supplementary Tables S3-S7.</li>
+<li><strong>Concern</strong> The primary evidence for the effectiveness of ICARus is missing. The manuscript references performance metrics (AUROC, PR AUC, MCC) and enrichment analyses, but the corresponding figures and tables are not provided in the submitted material. Without these, it is impossible to assess the magnitude of the improvement, the statistical significance, or the robustness of the results. The comparison between the uncorrupted and corrupted PPI feature models is a key control, but its results are not visible.</li>
+<li><strong>Why it matters</strong> The core claim of the paper rests entirely on these quantitative results. The reader cannot evaluate whether the proposed method works as described, whether the improvement is meaningful, or whether the conclusions are justified.</li>
+<li><strong>Resolution test</strong> Provide all figures and tables with clear captions, including error bars, statistical test details, and sample sizes. The enrichment analysis (Fig. 3c) must be shown with the full list of significant terms and the statistical thresholds used.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodology</li>
+<li><strong>Claim pointer</strong> The description of the ICARus framework and its components is insufficient for replication or full understanding.</li>
+<li><strong>Evidence pointer</strong> Methods section, "Architecture and training of the MLP classification head for PPI prediction" and "Architecture and training of the multimodal MLP for VACV host factor prediction".</li>
+<li><strong>Concern</strong> The Methods section lacks critical details. For the PPI prediction model, the input features are described as "xCAPT5-derived representations (ℝ 164 )", but the origin and nature of these representations are not explained. For the PU learning framework, the exact architecture of the "multimodal MLP" is described, but the training procedure, loss function details (beyond the name "nnPU"), and the handling of the positive-unlabelled data are not fully specified. The process for selecting the positive prior (π p = 5 × 10 ™ 2 ) is not justified. The construction of the negative PPI set, based on nucleolar localisation, is a strong assumption that needs more discussion and validation.</li>
+<li><strong>Why it matters</strong> A Nature-style paper must provide sufficient methodological detail for experts to understand and potentially replicate the work. The current description is too high-level and leaves too many critical parameters and design choices unexplained.</li>
+<li><strong>Resolution test</strong> Provide a complete and detailed description of the model architectures, training procedures, hyperparameter tuning, and the rationale for key design choices. Clarify the source and computation of the xCAPT5 representations. Justify the choice of the positive prior and the negative set construction strategy.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Data Availability</li>
+<li><strong>Claim pointer</strong> The claim that the raw and refined read-outs are provided as a community resource (ICARusPox) is a key deliverable.</li>
+<li><strong>Evidence pointer</strong> Data Availability statement, Code Availability statement, Results section "An interactive community resource for candidate antiviral target exploration".</li>
+<li><strong>Concern</strong> The manuscript states that data and code are available, but the actual repositories (GitHub, Zenodo) are not accessible from the provided material. The description of the ICARusPox resource is narrative and lacks a demonstration of its functionality. It is unclear what specific data formats are provided, how the agentic features work, and whether the resource is stable and documented.</li>
+<li><strong>Why it matters</strong> The value of the resource is a major part of the paper's contribution. Without access to it, the community cannot use it, and the claim of providing a "community resource" cannot be verified.</li>
+<li><strong>Resolution test</strong> Ensure the repositories are public and accessible. Provide a clear description of the data structure, the API, and the agentic capabilities. Include a figure or a detailed example of how the resource can be used to answer a biological question.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Biological Validation</li>
+<li><strong>Claim pointer</strong> The manuscript implies that the refined hits are more biologically relevant, but no experimental validation is presented.</li>
+<li><strong>Evidence pointer</strong> Results section, Discussion.</li>
+<li><strong>Concern</strong> The paper presents a computational refinement of a screen but does not include any experimental validation of the prioritised hits. While the authors acknowledge this is a resource for future validation, the claim that the refinement "broadens the functional landscape" in a way "consistent with established VACV biology" is based solely on computational enrichment analysis. The lack of any orthogonal validation (e.g., targeted knockdowns, overexpression, or biochemical assays) weakens the impact of the findings.</li>
+<li><strong>Why it matters</strong> For a high-impact journal, the biological significance of the findings needs to be demonstrated, not just inferred. The absence of validation makes it difficult to assess the true value of the prioritised gene list.</li>
+<li><strong>Resolution test</strong> Include at least a small set of validation experiments for a few top-ranked hits, or clearly state that the work is purely computational and frame the claims accordingly.</li>
+</ul>
+</li>
+<li><strong>Minor Comments</strong><ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The abstract states that ICARus "boosts the discovery" and "enhances the identification" but does not provide a single quantitative figure to support this. A specific metric, such as the improvement in recall@k or enrichment, would strengthen the abstract.</li>
+<li><strong>Required correction</strong> Include a key quantitative result in the abstract, e.g., "ICARus improved recall of known host factors by X-fold compared to the uncorrected screen."</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods, "VACV screening assay"</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The screening assay is described as following "an identical protocol to (Rämö et al. 2014)". While this is acceptable, the reference is not in the provided reference list, and the key parameters (e.g., siRNA library, cell density, timepoints) are not restated.</li>
+<li><strong>Required correction</strong> Provide the full citation and briefly summarise the key parameters of the assay to make the Methods section self-contained.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Results, "Benchmarking protein-protein interaction models"</li>
+<li><strong>Evidence pointer</strong> Table 1</li>
+<li><strong>Issue</strong> The text states that xCAPT5 "consistently outperformed" the other models, but the table is not provided. The reader cannot see the actual values for AUROC, PR AUC, and MCC for all models.</li>
+<li><strong>Required correction</strong> Ensure Table 1 is included and clearly formatted, with all metrics for all models.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Title</li>
+<li><strong>Evidence pointer</strong> Title</li>
+<li><strong>Issue</strong> The term "Agentic-AI-ready" is not standard and may be unclear to some readers. While it is explained in the text, the title could be more accessible.</li>
+<li><strong>Required correction</strong> Consider a more standard phrasing, e.g., "AI-ready" or "interactive community resource", or define the term in the abstract.</li>
+</ul>
+</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong><ul>
+<li>R1-M1: Missing figures and tables for all core performance and enrichment results.</li>
+<li>R1-M2: Incomplete methodological details for both the PPI prediction model and the PU learning framework.</li>
+<li>R1-M3: Inaccessible data and code repositories.</li>
+</ul>
+</li>
+<li><strong>Assessment against Nature-style criteria</strong><ul>
+<li><strong>Originality</strong> The concept of using pLM-derived PPI predictions as a prior for refining RNAi screen results is novel. The application of PU learning to this specific problem is also a new contribution. The originality is high, but it is contingent on the method being shown to work.</li>
+<li><strong>Scientific importance</strong> The problem of off-target effects in RNAi screens is important and widespread. A generalisable solution would be of significant value. The specific application to poxvirus biology is timely given the recent mpox outbreaks. The importance is high, but again, it depends on the evidence.</li>
+<li><strong>Interdisciplinary readership</strong> The work sits at the intersection of virology, functional genomics, and machine learning. The potential readership is broad. However, the current manuscript is not written for a general audience. The methods are described at a level that assumes significant expertise in both machine learning and high-throughput screening. The abstract is accessible, but the main text is not.</li>
+<li><strong>Technical soundness</strong> The technical soundness cannot be assessed from the provided material. The missing figures, tables, and methodological details prevent any evaluation of the validity of the approach. The design of the negative set and the choice of the positive prior are potential weaknesses that need to be addressed.</li>
+<li><strong>Readability for nonspecialists</strong> The abstract is clear, but the main text is dense and relies heavily on jargon. The description of the ICARusPox resource is the most accessible part. The manuscript would benefit from a clearer explanation of the PU learning concept and the pLM embeddings for a broader audience.</li>
+</ul>
+</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript is not suitable for publication in its current form. The core claims are unverifiable due to missing data and methodological details. A resubmission with complete figures, tables, and a fully detailed Methods section could be considered, but the current submission does not meet the standards required for a Nature-style journal.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that ICARus "enhances the identification of human genes with potential antiviral function" is unsupported without the performance metrics and enrichment analyses.</li>
+<li>The claim that the refinement "broadens the functional landscape" of top-ranked genes is unsupported without Figure 3 and the associated supplementary data.</li>
+<li>The claim that the pLM-based PPI predictions are a meaningful source of biological prior information is only indirectly supported by the ablation-style experiments (permutation tests), but the results of these experiments are not shown.</li>
+<li>The claim that ICARusPox is a functional "agentic harness" is unverifiable without access to the resource.</li>
+<li>The overall generalisability of the strategy to other screening modalities is a reasonable speculation but is not demonstrated.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

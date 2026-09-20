@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linear antibody epitope prediction using AlphaFold2. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Linear antibody epitope prediction using AlphaFold2.</h1>
+      <div class="meta">DeRoo, Jacob; Terry, James S; Zhao, Ning; Stasevich, Timothy J; Snow, Christopher; Geiss, Brian J</div>
+      <div class="meta muted">
+        
+        <span class="journal">eLife</span>
+        · 2026-09-18
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42758531/">原文</a>
+      </div>
+      <p class="one-liner">该文开发了基于AlphaFold2的PAbFold流程，通过预测抗体-线性肽复合物结构来预测线性抗体表位，属于蛋白质结构预测在抗体表位识别上的应用，方法创新且经实验验证。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Defining the binding epitopes of antibodies is essential for understanding how they bind to their antigens and perform their molecular functions. However, while determining linear epitopes of monoclonal antibodies can be accomplished utilizing well-established empirical procedures, these approaches are generally labor- and time-intensive, and costly. To take advantage of the recent advances in protein structure prediction algorithms available to the scientific community, we developed a calculation pipeline based on the localColabFold implementation of AlphaFold2 that can predict linear antibody epitopes by predicting the structure of the complex between antibody heavy and light chains and target peptide sequences derived from antigens. We found that this AlphaFold2 pipeline, which we call PAbFold, was able to accurately flag known epitope sequences for several well-known antibody targets (HA/Myc) when the target sequence was broken into small overlapping linear peptides and antibody complementarity determining regions were grafted onto several different antibody framework regions in the single-chain antibody fragment format. To determine if this pipeline was able to identify the epitope of a novel antibody with no structural information publicly available, we determined the epitope of a novel anti-SARS-CoV-2 nucleocapsid-targeted antibody using our method and then experimentally validated our computational results using peptide competition ELISA assays. These results indicate that the AlphaFold2-based PAbFold pipeline we developed is capable of accurately identifying linear antibody epitopes in a short time using just antibody and target protein sequences. This emergent capability of the method is sensitive to methodological details such as peptide length, AlphaFold2 neural network versions, and multiple-sequence alignment databases. PAbFold is available at https://github.com/jbderoo/PAbFold.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">定义抗体的结合表位对于理解其如何与抗原结合并执行分子功能至关重要。然而，虽然利用成熟的经验性程序可以完成单克隆抗体线性表位的测定，但这些方法通常劳动密集、耗时且成本高昂。为了利用科学界可用的蛋白质结构预测算法的最新进展，我们开发了一个基于AlphaFold2的localColabFold实现的计算流程，通过预测抗体重链和轻链与源自抗原的靶标肽段序列之间的复合物结构，来预测线性抗体表位。我们发现，这个我们称为PAbFold的AlphaFold2流程，在将靶标序列分解为小的重叠线性肽段，并将抗体互补决定区移植到单链抗体片段格式中的几种不同抗体框架区上时，能够准确标记多个已知抗体靶标（HA/Myc）的已知表位序列。为了确定该流程是否能识别出无公开结构信息的新型抗体的表位，我们使用我们的方法确定了一种新型抗SARS-CoV-2核衣壳靶向抗体的表位，并通过肽竞争ELISA实验验证了我们的计算结果。这些结果表明，我们开发的基于AlphaFold2的PAbFold流程能够仅使用抗体和靶蛋白序列，在短时间内准确识别线性抗体表位。该方法的这种新兴能力对方法学细节敏感，如肽段长度、AlphaFold2神经网络版本和多序列比对数据库。PAbFold可在https://github.com/jbderoo/PAbFold获取。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Linear antibody epitope prediction using AlphaFold2</li>
+<li><strong>作者与单位</strong>: DeRoo, Jacob; Terry, James S; Zhao, Ning; Stasevich, Timothy J; Snow, Christopher; Geiss, Brian J（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>: eLife</li>
+<li><strong>年份</strong>: 2026-09-18</li>
+<li><strong>论文类型</strong>: 方法学/工具开发</li>
+<li><strong>领域</strong>: 蛋白质结构预测 × 抗体表位预测</li>
+<li><strong>关键词</strong>: AlphaFold2, linear epitope, antibody, scFv, pLDDT, ColabFold</li>
+<li><strong>DOI/arXiv 号</strong>: 10.7554/eLife.98369</li>
+<li><strong>代码</strong>: https://github.com/jbderoo/PAbFold</li>
+<li><strong>数据</strong>: https://zenodo.org/records/10884181</li>
+<li><strong>阅读日期</strong>: 未提供</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × AI 方法」方向，具体为利用 AlphaFold2 的 pLDDT 置信度分数进行线性抗体表位预测。与传统的序列基表位预测工具（如 BepiPred、ElliPro）不同，本文直接利用结构预测的置信度作为表位打分的依据，为抗体-抗原相互作用预测提供了新的思路。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文开发了 PAbFold 流程，将抗体 scFv 序列与抗原来源的 10 氨基酸重叠肽段进行 AlphaFold2 共折叠结构预测，利用肽段残基的 pLDDT 分数作为表位打分依据，成功预测了 Myc、HA 及一个 novel 抗 SARS-CoV-2 核衣壳蛋白抗体（mBG17）的线性表位，并通过竞争 ELISA 实验验证了 mBG17 的预测结果。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 能否仅从抗体和抗原的氨基酸序列出发，利用 AlphaFold2 预测抗体的线性表位？</li>
+<li><strong>为什么重要</strong>: 确定抗体表位是理解抗体功能、疫苗设计和免疫诊断的关键，但传统实验方法（如肽扫描、竞争 ELISA）耗时且昂贵。随着单细胞 B 细胞测序的普及，抗体序列获取变得容易，但表位鉴定成为瓶颈。</li>
+<li><strong>现有方法不足</strong>: 现有表位预测工具（BepiPred、ElliPro、ABCpred）主要基于抗原序列或结构特征，不针对特定抗体，无法提供抗体-表位相互作用的分子细节。结构对接方法（HADDOCK、ZDOCK）需要已知肽段，无法从头预测表位位置。</li>
+<li><strong>精确研究问题</strong>: Can AlphaFold2 accurately predict linear antibody epitopes from antibody and antigen sequences alone, using pLDDT confidence scores as a readout?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（注：此脉络基于本文引言及参考文献，经外部核验部分有限，标注如下）
+- <strong>阶段一：实验表位定位</strong>（传统方法）：通过肽扫描、缺失突变、竞争 ELISA 等实验手段确定表位。优点：结果可靠；缺点：耗时、昂贵、通量低。
+- <strong>阶段二：序列基表位预测</strong>（BepiPred、ABCpred 等）：基于抗原序列的理化性质或机器学习分类器预测 B 细胞表位。优点：快速；缺点：不针对特定抗体，无法提供结构信息。
+- <strong>阶段三：结构基对接方法</strong>（HADDOCK、ZDOCK）：将已知肽段对接至抗体结构。优点：提供分子相互作用细节；缺点：需要预先知道候选肽段，无法从头发现表位。
+- <strong>阶段四：深度学习结构预测</strong>（AlphaFold2, 2021）：AlphaFold2 及其 multimer 版本可预测蛋白质复合物结构。已有研究（Ko &amp; Lee 2021; Tsaban et al. 2022）探索了 AF2 在抗体-抗原复合物预测中的应用，但结果参差不齐。本文首次系统性地将 AF2 的 pLDDT 分数用于线性表位的从头预测。
+- <strong>本文位置</strong>: 处于阶段四，利用 AF2 的 emergent capability（pLDDT 作为结合置信度指标），将表位预测转化为结构预测问题，并系统评估了方法学细节（肽段长度、AF2 版本、MSA 数据库）对预测性能的影响。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验表位鉴定耗时昂贵</td>
+<td>肽扫描、ELISA 等需数周至数月</td>
+<td>需要化学合成肽段、优化实验条件</td>
+<td>Introduction 第 1 段</td>
+</tr>
+<tr>
+<td>现有计算工具不针对特定抗体</td>
+<td>BepiPred 等预测的是抗原上的一般 B 细胞表位，而非特定抗体的结合位点</td>
+<td>这些工具不利用抗体序列信息</td>
+<td>Introduction 第 2 段</td>
+</tr>
+<tr>
+<td>AF2 预测抗体-抗原复合物困难</td>
+<td>全抗原与抗体共折叠预测失败</td>
+<td>抗原结构大、构象变化复杂，AF2 难以处理</td>
+<td>Results 图 1—figure supplement 2</td>
+</tr>
+<tr>
+<td>AF2 版本和 MSA 数据库更新导致性能下降</td>
+<td>新版本（mm3 + 新 MSA 数据库）预测性能显著下降</td>
+<td>模型参数和训练数据变化改变了 pLDDT 的分布特征</td>
+<td>Discussion 第 3 段；图 3—figure supplements 2-5</td>
+</tr>
+<tr>
+<td>肽段长度敏感</td>
+<td>仅 10 aa 肽段有效，其他长度预测能力下降</td>
+<td>短肽缺乏结构约束，长肽引入过多非特异性相互作用</td>
+<td>Results 图 2—figure supplement 1</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 将抗体 scFv 序列与抗原序列切成的 10 aa 重叠肽段进行共折叠预测，用肽段残基的 pLDDT 分数作为表位打分依据。</li>
+<li><strong>核心洞察</strong>: AlphaFold2 的 pLDDT 分数不仅反映结构预测的置信度，还能作为蛋白质-肽段结合亲和力的代理指标。短肽缺乏独立折叠结构，其被 AF2 建模到抗体 CDR 环区的置信度直接反映了抗体-肽段的兼容性。将表位预测问题转化为「哪个肽段能被 AF2 高置信度地停靠在抗体结合位点」的问题。</li>
+<li><strong>可能的普适教训</strong> [Analysis]: 
+   - AF2 的 emergent capability（pLDDT 作为结合指标）可以迁移到其他蛋白质-肽段相互作用预测问题。
+   - 将大蛋白切成小肽段进行「局部对接」可以规避 AF2 处理大复合物的困难。
+   - 方法学细节（AF2 版本、MSA 数据库）对 emergent capability 影响巨大，需要仔细控制和记录。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 抗体 scFv 氨基酸序列 + 抗原全长氨基酸序列</li>
+<li><strong>输出</strong>: 抗原序列上每个残基的 pLDDT 分数（最大值或共识值），用于排名候选表位肽段</li>
+<li><strong>模块</strong>:
+  1. 肽段生成: 将抗原序列切成 10 aa 肽段，步长 1 aa（滑动窗口）
+  2. 共折叠预测: 每个 scFv:肽段对通过 ColabFold 本地版运行 AlphaFold2 multimer 预测
+  3. 分数提取: 提取肽段残基的 pLDDT 分数
+  4. 表位排名: 两种方法——Simple Max（取每个残基在所有窗口中的最大 pLDDT）和 Consensus（先对 5 个 AF2 模型取平均，再计算肽段平均 pLDDT）</li>
+<li><strong>工具</strong>: LocalColabFold (v1.5.2), Python 3.7, NumPy, Matplotlib</li>
+<li><strong>硬件</strong>: AMD EPYC 7443 服务器 + 2× NVIDIA RTX A5000 GPU</li>
+<li><strong>关键假设</strong>: 短肽段无独立结构，AF2 将其建模到抗体结合位点的置信度反映真实结合亲和力</li>
+<li><strong>流程</strong>: 输入序列 → 生成肽段 → 批量 AF2 预测 → 提取 pLDDT → 排名 → 输出候选表位</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>肽段生成器</td>
+<td>将抗原序列切成重叠肽段</td>
+<td>将大抗原分解为可处理的小片段</td>
+<td>输入: 抗原序列；输出: 10 aa 肽段列表</td>
+<td>Methods 节</td>
+<td>无法处理全抗原共折叠（图 1—figure supplement 2 显示失败）</td>
+</tr>
+<tr>
+<td>MSA 缓存</td>
+<td>缓存每个肽段的 MSA</td>
+<td>避免重复查询 MSA 服务器，保证一致性</td>
+<td>输入: 肽段序列；输出: 缓存 MSA</td>
+<td>Methods 节</td>
+<td>性能下降（图 3—figure supplements 4-5 显示 MSA 变化影响结果）</td>
+</tr>
+<tr>
+<td>AF2 共折叠预测</td>
+<td>预测 scFv:肽段复合物结构</td>
+<td>核心结构预测步骤</td>
+<td>输入: scFv+肽段序列；输出: 5 个模型结构</td>
+<td>Results 图 1</td>
+<td>无法进行表位预测</td>
+</tr>
+<tr>
+<td>pLDDT 提取器</td>
+<td>提取肽段残基的 pLDDT 分数</td>
+<td>将结构预测转化为可排名的分数</td>
+<td>输入: AF2 输出；输出: 每残基 pLDDT</td>
+<td>Methods 节</td>
+<td>无替代打分方案</td>
+</tr>
+<tr>
+<td>Simple Max 排名</td>
+<td>取每个残基的最大 pLDDT</td>
+<td>识别高置信度残基</td>
+<td>输入: 每残基 pLDDT；输出: 排名</td>
+<td>Results 图 2E</td>
+<td>可能受单模型异常值影响</td>
+</tr>
+<tr>
+<td>Consensus 排名</td>
+<td>5 模型平均后计算肽段平均 pLDDT</td>
+<td>减少单模型噪声</td>
+<td>输入: 5 模型 pLDDT；输出: 排名</td>
+<td>Results 图 2A-D</td>
+<td>对模型间不一致敏感</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用。本文方法不涉及显式数学公式，核心指标为 AlphaFold2 输出的 pLDDT 分数（0-100），通过求和/平均进行排名。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>: </li>
+<li>Myc 系统: 抗 Myc 抗体 9E10 scFv（野生型及 15F11、2E2 框架移植变体），抗原为人 Myc 原癌蛋白全长序列</li>
+<li>HA 系统: 抗 HA 抗体 scFv（野生型及 15F11、2E2 变体），抗原为流感病毒血凝素蛋白</li>
+<li>mBG17 系统: 抗 SARS-CoV-2 核衣壳蛋白小鼠单抗，抗原为 SARS-CoV-2 核衣壳蛋白</li>
+<li><strong>规模</strong>: 每个系统约数百个 scFv:肽段对（10 aa 肽段，1 aa 滑动窗口）</li>
+<li><strong>指标</strong>: 表位排名（正确表位肽段的排名位置）</li>
+<li><strong>基线</strong>: 无明确基线工具，与已知实验表位比较</li>
+<li><strong>评测协议</strong>: 与已知晶体结构（Myc: PDB 2or9; HA: PDB 1frg）或实验数据（mBG17: 竞争 ELISA）比较</li>
+<li><strong>oracle 输入</strong>: 无，仅使用序列信息</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scFv 结构验证</td>
+<td>AF2 能正确预测 scFv 结构</td>
+<td>预测结构与晶体结构 2orb 比对</td>
+<td>RMSD 0.42 Å（WT Myc）</td>
+<td>AF2 可准确预测 scFv 结构</td>
+<td>仅测试了少数抗体</td>
+<td>Results 图 1—figure supplement 1</td>
+</tr>
+<tr>
+<td>Myc 表位预测</td>
+<td>PAbFold 能检测 Myc 表位</td>
+<td>WT、15F11、2E2 三种 scFv</td>
+<td>正确表位排名靠前（共识法）</td>
+<td>方法可检测已知表位</td>
+<td>排名非绝对第一</td>
+<td>Results 图 2A-C</td>
+</tr>
+<tr>
+<td>HA 表位预测</td>
+<td>PAbFold 能检测 HA 表位</td>
+<td>WT、15F11、2E2 三种 scFv</td>
+<td>正确表位排名靠前</td>
+<td>方法可推广到其他表位</td>
+<td>性能略低于 Myc</td>
+<td>Results 图 2—figure supplement 3</td>
+</tr>
+<tr>
+<td>肽段长度优化</td>
+<td>10 aa 是最优肽段长度</td>
+<td>8/9/10/11 aa 比较</td>
+<td>10 aa 性能最佳</td>
+<td>肽段长度是关键参数</td>
+<td>未测试更长肽段</td>
+<td>Results 图 2—figure supplement 1</td>
+</tr>
+<tr>
+<td>负对照肽段</td>
+<td>非结合肽段分数低</td>
+<td>随机肽段</td>
+<td>分数显著低于真实表位</td>
+<td>方法具有特异性</td>
+<td>负对照数量有限</td>
+<td>Results 图 2—figure supplement 1I, 5J</td>
+</tr>
+<tr>
+<td>mBG17 表位预测</td>
+<td>能预测 novel 抗体表位</td>
+<td>无先验表位信息</td>
+<td>预测表位位于 aa 400-415</td>
+<td>方法可处理 novel 抗体</td>
+<td>仅一个 novel 抗体</td>
+<td>Results 图 3A-F</td>
+</tr>
+<tr>
+<td>竞争 ELISA 验证</td>
+<td>预测表位与实验一致</td>
+<td>7 个重叠肽段竞争 ELISA</td>
+<td>aa 401-410 肽段完全竞争</td>
+<td>预测表位实验验证</td>
+<td>未做丙氨酸扫描验证</td>
+<td>Results 图 3G-H</td>
+</tr>
+<tr>
+<td>丙氨酸扫描</td>
+<td>预测的关键残基正确</td>
+<td>10 个丙氨酸突变肽段</td>
+<td>D2, F3, L7, Q8 是关键残基</td>
+<td>AF2 预测的相互作用正确</td>
+<td>仅一个表位</td>
+<td>Results 图 4A</td>
+</tr>
+<tr>
+<td>AF2 版本敏感性</td>
+<td>方法对版本敏感</td>
+<td>mm2 vs mm3 + 新旧 MSA</td>
+<td>mm2 + 旧 MSA 性能最佳</td>
+<td>方法学细节至关重要</td>
+<td>未系统测试所有组合</td>
+<td>Discussion; 图 3—figure supplements 2-5</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 仅针对线性表位（连续氨基酸序列），不适用于构象表位（不连续氨基酸在空间上靠近）。</li>
+<li><strong>oracle/真值输入</strong>: 无，仅需抗体和抗原序列。</li>
+<li><strong>端到端状态</strong>: 是端到端流程，从序列直接到表位预测，无需实验数据。</li>
+<li><strong>算力成本</strong>: 每个 scFv:肽段对约 200 秒（GPU），整个扫描约 12 小时（数百对）。</li>
+<li><strong>历史数据依赖</strong>: 依赖 AF2 训练数据，但 novel 抗体 mBG17 的成功预测表明泛化能力。</li>
+<li><strong>模型依赖</strong>: 高度依赖 AlphaFold2 特定版本（mm2）和 MSA 数据库（UniRef30 2202, PDB70 220313），版本更新会导致性能下降。</li>
+<li><strong>最难情形</strong>: 构象表位、长肽段、新 AF2 版本。</li>
+<li><strong>群体/领域边界</strong>: 适用于线性表位抗体，不适用于构象表位；对肽段长度敏感（仅 10 aa 有效）。</li>
+<li><strong>不确定性</strong>: 预测排名非绝对第一，需结合实验验证；方法对 MSA 内容敏感，难以完全复现。</li>
+</ul>
+<p><strong>有边界的复述</strong>: PAbFold 能在特定条件下（10 aa 肽段、AF2 mm2 + 特定 MSA 数据库）从序列准确预测线性抗体表位，并在 novel 抗体上通过实验验证，但该方法对 AF2 版本和 MSA 数据库高度敏感，且不适用于构象表位。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅适用于线性表位</td>
+<td>未测试构象表位</td>
+<td>未明确提及</td>
+<td>Discussion 第 1 段</td>
+</tr>
+<tr>
+<td>对 AF2 版本和 MSA 数据库敏感</td>
+<td>mm3 + 新 MSA 数据库性能下降</td>
+<td>建议缓存 MSA，追踪版本变化</td>
+<td>Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>肽段长度敏感</td>
+<td>仅 10 aa 有效</td>
+<td>未明确提及</td>
+<td>Results 图 2—figure supplement 1</td>
+</tr>
+<tr>
+<td>无法完美复现初始结果</td>
+<td>重建 MSA 后性能下降</td>
+<td>建议使用缓存 MSA</td>
+<td>Discussion 第 3 段；图 3—figure supplements 4-5</td>
+</tr>
+<tr>
+<td>计算时间较长</td>
+<td>每个扫描约 12 小时</td>
+<td>未明确提及</td>
+<td>Results 图 1</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练集污染风险</td>
+<td>Myc/HA 表位可能已存在于 AF2 训练数据中</td>
+<td>若存在污染，novel 抗体 mBG17 的成功预测是唯一干净的验证</td>
+<td>检查 AF2 训练集是否包含 2or9/1frg 结构；用更多 novel 抗体测试</td>
+<td>Results 图 3</td>
+</tr>
+<tr>
+<td>正负样本不平衡</td>
+<td>每个抗原只有 1 个真实表位，数百个负样本</td>
+<td>排名指标可能受负样本数量影响</td>
+<td>使用多个已知表位的抗体系统测试</td>
+<td>Results 图 2</td>
+</tr>
+<tr>
+<td>pLDDT 作为结合指标的机制不明确</td>
+<td>高 pLDDT 可能反映肽段被「强制」建模到 CDR 区，而非真实结合</td>
+<td>理解机制有助于改进方法</td>
+<td>比较结合/非结合肽段的 AF2 结构特征</td>
+<td>Discussion 第 2 段</td>
+</tr>
+<tr>
+<td>未与现有工具系统比较</td>
+<td>未与 BepiPred、DiscoTope 等工具对比</td>
+<td>无法评估相对优势</td>
+<td>在相同数据集上运行多种工具比较</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>方法对 MSA 的敏感性未充分解释</td>
+<td>仅描述现象，未分析原因</td>
+<td>理解原因有助于稳定方法</td>
+<td>系统比较不同 MSA 生成参数</td>
+<td>图 3—figure supplements 4-5</td>
+</tr>
+<tr>
+<td>仅测试 3 个抗体系统</td>
+<td>样本量小，泛化性存疑</td>
+<td>需要更多样化的测试集</td>
+<td>在更多抗体-抗原系统上验证</td>
+<td>Results 图 2-3</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:
+1. <strong>pLDDT 作为结合代理指标</strong>: AF2 的 pLDDT 分数可迁移用于蛋白质-肽段相互作用预测，不仅限于抗体表位，也可用于其他蛋白-肽段结合位点预测。
+2. <strong>肽段化策略规避复合物预测困难</strong>: 将大蛋白切成小肽段进行「局部对接」可规避 AF2 处理大复合物的困难，此策略可迁移到其他大蛋白复合物预测问题。
+3. <strong>MSA 缓存的重要性</strong>: 在批量预测中缓存 MSA 可保证结果一致性和可复现性，对任何基于 AF2 的高通量筛选都重要。
+4. <strong>框架移植（loop grafting）可提高预测性能</strong>: 将 CDR 移植到高表达框架上不仅改善蛋白性质，还提高表位预测的信噪比，可迁移到其他抗体工程任务。
+5. <strong>版本敏感性评估</strong>: 任何基于 AF2 的工具都应系统评估模型版本和数据库更新对性能的影响，并记录具体版本信息。
+6. <strong>实验验证闭环</strong>: 计算方法预测后必须用实验（如竞争 ELISA、丙氨酸扫描）验证，计算-实验闭环是可信度关键。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold2 原始论文</strong> (Jumper et al., 2021; Evans et al., 2022): 本文直接基于 AF2 multimer，验证了其 emergent capability。</li>
+<li><strong>AF2 在抗体-抗原预测中的应用</strong> (Ko &amp; Lee 2021; Tsaban et al. 2022; Ghani et al. 2022): 本文与这些工作一致，但聚焦于线性表位而非全抗原复合物。</li>
+<li><strong>传统表位预测工具</strong> (BepiPred: Larsen et al., 2006; ElliPro: Ponomarenko et al., 2008; ABCpred: Saha &amp; Raghava, 2008): 本文方法利用结构信息，优于纯序列基方法。</li>
+<li><strong>对接工具</strong> (HADDOCK: Dominguez et al., 2003; ZDOCK: Chen et al., 2003): 本文方法无需预先知道肽段，优于对接方法。</li>
+<li><strong>深度学习结合预测工具</strong> (GearBind: Cai et al., 2021; PALM/A2binder: He et al., 2023; DSMBind: Jin et al., 2023): 本文与这些工具互补，但更简单直接。</li>
+<li><strong>ColabFold</strong> (Mirdita et al., 2022): 本文基于 LocalColabFold 实现，依赖其 MSA 生成和模型推理。</li>
+<li><strong>候选方向</strong>: 本文方法可扩展到构象表位预测（通过更长肽段或表位拼接）、B 细胞表位图谱绘制、抗体-抗原共进化分析等。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: PAbFold-构象表位扩展
+   - <strong>来源局限/观察</strong>: 本文仅处理线性表位，构象表位是更大挑战
+   - <strong>核心假设</strong>: 通过多肽段共折叠或表位拼接，AF2 可预测构象表位
+   - <strong>初步方法</strong>: 将抗原切成更大片段（20-30 aa）或使用多个不连续肽段同时与 scFv 共折叠
+   - <strong>验证方式</strong>: 在已知构象表位抗体（如抗流感血凝素头部的抗体）上测试
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 多抗体表位扫描
+   - <strong>来源局限/观察</strong>: 本文每次只测一个抗体，效率低
+   - <strong>核心假设</strong>: 多个 scFv 可同时与同一肽段库共折叠，实现高通量表位筛选
+   - <strong>初步方法</strong>: 设计 scFv 库，批量与抗原肽段共折叠，用 pLDDT 矩阵识别交叉反应表位
+   - <strong>验证方式</strong>: 用已知交叉反应抗体对测试
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: pLDDT 结合打分函数优化
+   - <strong>来源局限/观察</strong>: 本文使用简单平均/最大 pLDDT，未充分利用结构信息
+   - <strong>核心假设</strong>: 结合界面残基接触数、氢键、疏水作用等特征可提高预测精度
+   - <strong>初步方法</strong>: 从 AF2 输出结构中提取界面特征，训练机器学习分类器
+   - <strong>验证方式</strong>: 在更大抗体-表位数据集上交叉验证
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: AF2 版本鲁棒性研究
+   - <strong>来源局限/观察</strong>: 本文发现 AF2 版本更新导致性能下降
+   - <strong>核心假设</strong>: 通过集成多版本预测或校准 pLDDT 分布可提高鲁棒性
+   - <strong>初步方法</strong>: 在多个 AF2 版本上运行 PAbFold，比较 pLDDT 分布，开发校准方法
+   - <strong>验证方式</strong>: 在标准表位数据集上比较不同版本性能
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 表位-抗体共进化分析
+   - <strong>来源局限/观察</strong>: 本文仅预测表位位置，未分析进化保守性
+   - <strong>核心假设</strong>: 表位区域在抗原进化中相对保守，结合 pLDDT 和序列保守性可提高预测可靠性
+   - <strong>初步方法</strong>: 对抗原进行多序列比对，计算保守性分数，与 pLDDT 分数结合
+   - <strong>验证方式</strong>: 在流感血凝素等快速进化抗原上测试
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: PAbFold 在抗体工程中的应用
+   - <strong>来源局限/观察</strong>: 本文仅用于表位预测，未涉及抗体优化
+   - <strong>核心假设</strong>: PAbFold 可指导抗体亲和力成熟和表位定向改造
+   - <strong>初步方法</strong>: 用 PAbFold 预测突变 scFv 与表位肽段的结合，指导实验突变
+   - <strong>验证方式</strong>: 与噬菌体展示或酵母展示实验结合
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including abstract, introduction, results, discussion, materials and methods, and figure legends as provided.</li>
+<li><strong>Assessment boundary</strong> Evaluation is limited to the scientific content, methodology, and claims presented in the provided manuscript. No external data, code, or supplementary files were accessed.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present PAbFold, a computational pipeline based on AlphaFold2 (via LocalColabFold), to predict linear antibody epitopes from antibody and antigen sequences. The method was tested on anti-Myc and anti-HA antibodies, and on a novel anti-SARS-CoV-2 nucleocapsid antibody (mBG17), with experimental validation via peptide competition ELISA and alanine scanning.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Figures 1–4), figure supplements referenced, source data files, and methods descriptions. Specific numerical values for some results are provided in the text.</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary files (e.g., antibody sequences, peptide lists, source data) were not available for review. Code repository was not inspected. Raw pLDDT data and full model outputs were not accessible.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript describes a practical and potentially useful application of AlphaFold2 for linear epitope prediction. The core idea is timely and the experimental validation with a novel antibody is a strength. However, the evidence presented is largely based on a small number of test cases, and the sensitivity of the method to peptide length, MSA details, and AlphaFold2 versions raises concerns about robustness and generalizability. The manuscript would benefit from a more systematic evaluation and clearer reporting of performance metrics.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in antibody engineering, immunology, and structural biology, particularly those interested in rapid epitope mapping. The method could also be of interest to computational biologists developing protein-protein interaction prediction tools.</li>
+<li><strong>Major strengths</strong> 1. The study addresses a real bottleneck in antibody characterization. 2. The use of a novel antibody (mBG17) with experimental validation is a strong point. 3. The method is presented as an accessible, open-source pipeline. 4. The authors honestly discuss the sensitivity of the method to various parameters.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that PAbFold "was able to accurately flag known epitope sequences" for Myc and HA, and "very accurately predict" the mBG17 epitope.</li>
+<li><strong>Evidence pointer</strong> Results sections "Testing of scFv:peptide structure prediction method using the Myc Epitope", "Testing of the PAbFold method using the HA epitope", "Determination and experimental validation of a novel linear antibody epitope"; Figures 2 and 3.</li>
+<li><strong>Concern</strong> The evidence for "accurate" prediction is based on a very small number of examples (two known antibodies, one novel antibody). The performance is not quantified in a systematic way (e.g., no clear definition of a "hit" or a "successful prediction" across a larger benchmark set). The ranking of the correct epitope is described, but the statistical significance of this ranking over random or alternative methods is not established. The sensitivity to parameters (peptide length, MSA, model version) suggests the method may not be robust, and the conditions for optimal performance are not clearly defined.</li>
+<li><strong>Why it matters</strong> Without a more rigorous and quantitative evaluation, it is difficult to assess the general utility and reliability of the method. The current evidence is anecdotal and may not support the broad claims of predictive capability.</li>
+<li><strong>Resolution test</strong> The authors should provide a more comprehensive benchmark, ideally including a larger set of antibodies with known linear epitopes, and report performance metrics such as sensitivity, specificity, and rank of the true epitope. They should also systematically explore the parameter space (peptide length, MSA generation, model version) to define the conditions under which the method works reliably.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that the method's success is due to the "lack of strong competing structure within the short peptide" (Introduction) and that it can predict "the structural details for how that linear epitope binds to the antibody" (Results, mBG17 section).</li>
+<li><strong>Evidence pointer</strong> Introduction, Results section "Fine characterization of the mBG17 epitope and comparison to the predicted AlphaFold2 model", Figure 4.</li>
+<li><strong>Concern</strong> The mechanistic hypothesis for why the method works is not tested. The comparison between the predicted model and the alanine scanning data is qualitative. The authors state that the model is "remarkably consistent" with the experimental data, but the criteria for this consistency are not defined. It is unclear if the predicted interactions are specific and accurate, or if the agreement is coincidental. The claim that the method provides "structural details" is not supported by a quantitative comparison to the experimental data.</li>
+<li><strong>Why it matters</strong> The manuscript implies that the method can provide structural insights into antibody-peptide interactions. This is a strong claim that requires more rigorous validation. A qualitative comparison to alanine scanning data is insufficient to establish the accuracy of the predicted binding mode.</li>
+<li><strong>Resolution test</strong> The authors should provide a more detailed and quantitative comparison between the predicted model and the experimental alanine scanning data. For example, they could calculate a correlation between the predicted effect of each mutation on binding and the experimentally measured effect. They should also discuss the limitations of the predicted model.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The claim that the method is sensitive to "AlphaFold2 neural network versions, and multiple-sequence alignment databases" (Abstract) and that "caching the MSAs proved to be very useful" (Discussion).</li>
+<li><strong>Evidence pointer</strong> Discussion section, Figure 3—figure supplements 1–7.</li>
+<li><strong>Concern</strong> The manuscript describes significant difficulties in reproducing results due to changes in third-party tools (ColabFold, MMseqs2). While the authors provide a recommendation to cache MSAs, the issue of reproducibility is a major concern for a method that is presented as a practical tool. The specific conditions under which the method works are not fully specified, and it is unclear if a user following the provided instructions would obtain the same results.</li>
+<li><strong>Why it matters</strong> Reproducibility is a cornerstone of scientific method. If the method's performance is highly dependent on the exact versions of software and databases, its utility is limited. The authors need to provide a more robust solution or a clear guide for users to achieve reproducible results.</li>
+<li><strong>Resolution test</strong> The authors should provide a containerized version of the pipeline (e.g., Docker) with pinned versions of all dependencies. They should also provide a clear description of the exact software and database versions used to generate the results in the paper.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Methods section "Software"</li>
+<li><strong>Evidence pointer</strong> Materials and methods, "Software" section.</li>
+<li><strong>Issue</strong> The description of the "Consensus" method is somewhat unclear. It states that "residues are averaged across each of the five models that AF2 uses," but it is not clear if this averaging is done per-residue across models, or if the entire peptide structure is averaged.</li>
+<li><strong>Required correction</strong> Clarify the exact procedure for the "Consensus" method, including how the per-residue pLDDT values from the five models are combined.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Results section "Testing of scFv:peptide structure prediction method using the Myc Epitope"</li>
+<li><strong>Evidence pointer</strong> Results, "Testing of scFv:peptide structure prediction method using the Myc Epitope" section.</li>
+<li><strong>Issue</strong> The text states that the "expected Myc peptide epitope (EQKLISEEDL) was one of several peptides with high average pLDDT" but the ranking of this exact peptide is not clearly stated. It is also mentioned that the "second highest ranked peptide in this analysis (QKLISEEDLL) was a near perfect match for the expected epitope." It would be helpful to know the rank of the exact epitope.</li>
+<li><strong>Required correction</strong> Provide the rank of the exact epitope sequence in the list of all peptides, for each antibody tested.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Figure 4</li>
+<li><strong>Evidence pointer</strong> Figure 4.</li>
+<li><strong>Issue</strong> The figure legend for Figure 4 is not provided in the manuscript text. It is difficult to interpret the figure without a legend.</li>
+<li><strong>Required correction</strong> Include a complete figure legend for Figure 4, describing all panels and the data shown.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Data availability</li>
+<li><strong>Evidence pointer</strong> Data availability section.</li>
+<li><strong>Issue</strong> The data availability statement mentions a Zenodo record, but the link is not provided in the text.</li>
+<li><strong>Required correction</strong> Provide the full URL for the Zenodo record.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The lack of a systematic benchmark and quantitative performance metrics (R1-M1) is a key technical failing. The qualitative comparison to alanine scanning data (R1-M2) also needs to be made more rigorous. The reproducibility issues (R1-M3) need to be addressed with a more robust solution.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li><strong>Originality</strong> The application of AlphaFold2 to linear epitope prediction is not entirely new, but the specific pipeline and its focus on linear epitopes is a useful contribution. The originality is moderate.</li>
+<li><strong>Scientific importance</strong> The problem of epitope mapping is important, and a reliable computational method would be valuable. However, the current evidence does not convincingly demonstrate that the method is reliable enough for broad use.</li>
+<li><strong>Interdisciplinary readership</strong> The topic is relevant to immunology, structural biology, and computational biology. The manuscript is written in a way that is accessible to these communities.</li>
+<li><strong>Technical soundness</strong> The technical soundness is currently not established due to the lack of a rigorous evaluation and the reproducibility concerns.</li>
+<li><strong>Readability for nonspecialists</strong> The manuscript is generally well-written and the concepts are explained clearly. The methods section is detailed, but the lack of a clear figure legend for Figure 4 is a minor issue.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript has potential, but the major concerns regarding the robustness and quantitative validation of the method need to be addressed before the claims can be supported.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that PAbFold "was able to accurately flag known epitope sequences" is not supported by a quantitative benchmark.</li>
+<li>The claim that the method can predict "the structural details for how that linear epitope binds to the antibody" is not supported by a rigorous comparison to experimental data.</li>
+<li>The claim that the method's success is due to the "lack of strong competing structure within the short peptide" is a hypothesis that is not tested.</li>
+<li>The generalizability of the method to other antibodies and antigens is not established, given the small number of test cases.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

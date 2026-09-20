@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report the use of NMR crystallography, combining solid-state NMR, X-ray diffraction, and first-principles calculations with machine-learning accelerated geometry refinement, to determine active-site protonation states in the Toho-1 beta-lactamase:avibactam complex. They report two X-ray structures, near-complete resonance assignments, and conclude that Lys73 and Lys234 are protonated, Glu166 is deprotonated, and that avibactam inhibition arises from the intrinsic resistance of the Ser70-avibactam carbamoyl linkage to hydrolysis, rather than from pKa perturbations suppressing proton transfers.
+- **Visible evidence base** Abstract text only; no experimental details, spectra, crystallographic statistics, computational parameters, or validation data are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, crystallographic data and refinement statistics, NMR assignment tables, chemical shift tensor data, computational workflow details, machine-learning potential training and validation information, and any control experiments or statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a technically ambitious and potentially significant application of NMR crystallography to a clinically relevant enzyme-inhibitor complex. The methodological innovation, using machine-learning interatomic potentials to overcome scaling limits, is timely and could be of broad interest. However, the abstract alone provides insufficient evidence to evaluate the validity of the structural models, the accuracy of the protonation state assignments, or the strength of the mechanistic conclusion. The central claim, that avibactam resistance to hydrolysis is the direct chemical origin of inhibition, appears to be an inference that requires substantial kinetic or computational support not visible here.
+- **Who would be interested in the results, and why** Structural biologists and NMR spectroscopists developing methods for large protein systems; enzymologists studying beta-lactamases and antibiotic resistance mechanisms; medicinal chemists interested in the design of beta-lactamase inhibitors; and computational chemists developing machine-learning accelerated quantum chemical workflows for biological systems.
+- **Major strengths** The combination of multiple experimental and computational techniques is appropriate for the question of protonation states. The use of machine-learning interatomic potentials to enable NMR crystallography in a system of this size is a plausible and potentially valuable methodological advance. The conclusion that Lys73 and Lys234 are protonated and Glu166 is deprotonated is consistent with the canonical catalytic mechanism of class A beta-lactamases, lending face validity to the approach.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that quantitative analysis of active-site chemical shifts and chemical shift tensors reveals the protonation states of Lys73, Lys234, and Glu166.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract states that protonation states are revealed by quantitative analysis, but no quantitative data, statistical measures, or comparison to computational predictions are shown. The reader cannot assess whether the agreement between experimental and calculated shifts is sufficient to distinguish alternative protonation states, or whether the assignments are unambiguous.
+  - **Why it matters** Protonation state determination by NMR crystallography relies on the sensitivity and specificity of chemical shift calculations to protonation. Without visible validation metrics, such as correlation coefficients, root-mean-square deviations, or comparison to alternative models, the central structural conclusion is not established.
+  - **Resolution test** Provide in the full manuscript a clear comparison of experimental versus calculated chemical shifts for the proposed protonation states, including statistical measures and, ideally, a comparison to at least one alternative protonation state model to demonstrate discriminative power.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic inference
+  - **Claim pointer** The abstract concludes that avibactam inhibition arises from the intrinsic resistance of the Ser70-avibactam carbamoyl linkage to hydrolysis, contrary to proposals of pKa perturbation.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract presents this mechanistic conclusion as a direct outcome of the protonation state data, but the data described, namely active-site protonation states, do not directly measure the hydrolysis rate of the carbamoyl linkage or the kinetic stability of the complex. The conclusion appears to be an inference that requires additional evidence, such as kinetic measurements, computational reaction barriers, or long-timescale simulations.
+  - **Why it matters** The mechanistic conclusion is the primary scientific take-home message. If it is not directly supported by the presented data, the significance of the work is substantially weakened, and the claim may overreach the evidence.
+  - **Resolution test** Provide explicit evidence linking the observed protonation states to the hydrolysis resistance, such as kinetic data on the complex stability, quantum mechanical calculations of the hydrolysis barrier, or a clear logical argument with supporting references that the protonation states rule out the pKa perturbation mechanism.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Method validation
+  - **Claim pointer** The abstract claims that machine-learning interatomic potentials enable efficient geometry refinement prior to density functional theory chemical shift calculations.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** No details are provided on the machine-learning potential, its training set, its accuracy for this specific system, or how its use affects the reliability of the subsequent chemical shift calculations. The validity of the entire computational pipeline depends on the accuracy of this geometry refinement step.
+  - **Why it matters** If the machine-learning potential introduces systematic errors in geometry, the calculated chemical shifts could be biased, leading to incorrect protonation state assignments. The methodological novelty is a key selling point, but it must be validated.
+  - **Resolution test** Provide in the full manuscript a validation of the machine-learning potential for this system, such as comparison of refined geometries to the X-ray structures, benchmarks against full DFT optimizations on smaller model systems, or an analysis of the uncertainty in the resulting chemical shifts.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract text
+  - **Issue** The phrase "near-complete backbone and side-chain resonance assignments" is vague. The reader cannot gauge the actual coverage or the quality of the assignments.
+  - **Required correction** Specify the percentage of assignments completed and the criteria used for assignment confidence.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Structural data
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract mentions two X-ray crystal structures but provides no information on resolution, space group, or whether the structures are in different states or conformations.
+  - **Required correction** Include key crystallographic parameters in the abstract or state that they are provided in the full manuscript.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Context
+  - **Affected element** Mechanistic discussion
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract refers to "recent proposals" regarding pKa perturbations but does not cite or briefly describe these proposals, making it difficult to assess the novelty of the counter-claim.
+  - **Required correction** Add a brief citation or a one-sentence description of the alternative mechanism being challenged.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The protonation state assignments must be quantitatively validated, the mechanistic conclusion must be directly supported, and the machine-learning accelerated workflow must be validated for this system.
+- **Assessment against Nature-style criteria** Originality: The application of NMR crystallography to a full enzyme-inhibitor complex with machine-learning acceleration is novel and potentially original. Scientific importance: The mechanistic question of avibactam inhibition is clinically relevant and of interest to the antibiotic resistance community. Interdisciplinary readership: The work bridges NMR, crystallography, and computation, and could appeal to a broad readership if the methods are clearly explained. Technical soundness: Cannot be assessed from the abstract alone; the key computational and experimental validations are not visible. Readability for nonspecialists: The abstract is reasonably clear but uses specialized terminology without sufficient context for a general audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a promising approach and plausible results, but the central claims require the full manuscript for validation. I would be supportive if the technical concerns regarding quantitative validation, mechanistic support, and method validation are resolved in the full paper.
+
+## Risk / unsupported claims
+- The claim that avibactam inhibition arises from intrinsic resistance of the Ser70-avibactam carbamoyl linkage to hydrolysis is unsupported by the visible evidence, as no kinetic or computational data on hydrolysis are presented.
+- The claim that the protonation states are "revealed" by quantitative analysis is unsupported without visible quantitative metrics.
+- The claim that the machine-learning accelerated workflow overcomes scaling limits is unverifiable without details on the potential and its validation.
+- The completeness of resonance assignments and the quality of the X-ray structures are unassessable from the abstract.

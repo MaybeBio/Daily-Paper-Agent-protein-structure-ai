@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pose2Muscle: Structured Spatio-Temporal Decoding for Discrete Muscle Activity Estimation from Human Pose · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-low">2</span>
+    <div>
+      <h1>Pose2Muscle: Structured Spatio-Temporal Decoding for Discrete Muscle Activity Estimation from Human Pose</h1>
+      <div class="meta">Yuepeng Chen; Jiehong Shi; Kaili Zheng; Boyi Zhang; Chenyi Guo; Ji Wu; Xiangling Fu</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-16
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2609.18336v1">原文</a>
+      </div>
+      <p class="one-liner">该文从人体姿态估计离散肌肉活动状态，虽涉及结构化预测和时空注意力，但核心对象是人体运动与肌肉信号，而非蛋白质结构计算，与课题无关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Muscle activity is fundamental to human movement, and understanding its patterns is critical for injury prevention and rehabilitation. Conventional muscle activity monitoring relies on specialized sensors such as surface electromyography, which limits its practicality for long-term real-world use. Existing studies suggest that muscle-related information can be inferred from human pose. However, the substantial gap between externally observable pose and internal muscle activation, limits the accuracy and generalization of current approaches. In this study, we propose Pose2Muscle, a pose-driven framework for discrete muscle activity estimation without requiring sEMG signals at inference time. Instead of directly regressing continuous sEMG signals, Pose2Muscle reformulates muscle estimation as a structured prediction problem over discrete muscle activity states, yielding a more stable and interpretable target space. The framework combines multi-scale spatio-temporal attention to capture motion patterns at complementary spatial and temporal scales with a directed acyclic graph-based decoder that maintains multiple candidate muscle-state hypotheses and performs structured trajectory inference over time. To support this task, we construct PoseEMG-43, a synchronized pose-sEMG dataset containing 2,992 movement instances from 43 daily-life actions performed by 14 participants. Experiments show that Pose2Muscle consistently outperforms representative retrieval- and pose-based baselines. It achieves an Adjacent-level Accuracy of 86.36% and a Pearson correlation coefficient of 0.8821 under the Random Split, and 63.97% and 0.6795, respectively, under the Subject-Level Split. These results demonstrate the feasibility of inferring structured muscle-state patterns from human pose and suggest the potential of Pose2Muscle for muscle-aware movement analysis when direct physiological sensing is impractical</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">肌肉活动是人类运动的基础，理解其模式对于损伤预防和康复至关重要。传统的肌肉活动监测依赖于表面肌电图等专用传感器，这限制了其在长期现实世界应用中的实用性。现有研究表明，肌肉相关信息可以从人体姿态中推断出来。然而，外部可观察姿态与内部肌肉激活之间的显著差距，限制了当前方法的准确性和泛化能力。在本研究中，我们提出Pose2Muscle，一种无需推理时sEMG信号的姿态驱动框架，用于离散肌肉活动估计。Pose2Muscle不直接回归连续sEMG信号，而是将肌肉估计重新表述为离散肌肉活动状态上的结构化预测问题，从而产生更稳定且可解释的目标空间。该框架结合多尺度时空注意力以捕捉互补空间和时间尺度上的运动模式，并采用基于有向无环图的解码器，该解码器维护多个候选肌肉状态假设并随时间执行结构化轨迹推理。为支持此任务，我们构建了PoseEMG-43，一个同步的姿态-sEMG数据集，包含来自14名参与者执行的43种日常动作的2,992个运动实例。实验表明，Pose2Muscle始终优于代表性的检索式和基于姿态的基线方法。在随机划分下，它实现了86.36%的相邻级别准确率和0.8821的皮尔逊相关系数，在受试者级别划分下分别达到63.97%和0.6795。这些结果证明了从人体姿态推断结构化肌肉状态模式的可行性，并表明在直接生理传感不可行时，Pose2Muscle在肌肉感知运动分析中的潜在应用价值。</div>
+  </section>
+  
+  
+  
+</article>
+</main>
+</body>
+</html>
