@@ -1,0 +1,64 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full methods, figures, tables, or supplementary data
+- **Shared manuscript claim summary** The authors report engineering a salicylate carboxymethyltransferase (CbSAMT) via N-terminal polyhistidine tag fusion, achieving a 12-fold improvement in catalytic efficiency. They attribute this to tag-induced remodeling of the catalytic microenvironment, supported by molecular dynamics simulations. They further report SAM regeneration pathway reinforcement and an in situ two-phase fermentation system using n-dodecane, culminating in a fed-batch MeSA titer of 5.12 g/L, stated as the highest reported to date.
+- **Visible evidence base** Abstract text only; no numerical data, figures, tables, or methodological details provided
+- **Missing materials affecting confidence** Full methods, enzyme kinetic data, simulation parameters and trajectories, strain construction details, fermentation profiles, analytical quantification methods, and comparison datasets for prior production records
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting enzyme engineering strategy with a notable final titer claim. However, the evidence base available for review is limited to the abstract, which precludes verification of the mechanistic interpretation, the quantitative claims, and the comparative statement of highest production. The polyhistidine tag effect on catalytic efficiency is a surprising and mechanistically non-obvious result that would require rigorous kinetic and structural evidence to be convincing. The fermentation titer claim, while impressive if accurate, cannot be assessed without full experimental detail.
+- **Who would be interested in the results, and why** Researchers in metabolic engineering and synthetic biology focused on volatile natural product biosynthesis, particularly those working on methylated aromatic compounds. Enzyme engineers interested in non-canonical uses of affinity tags for catalytic modulation would also find the work relevant. The two-phase fermentation approach may interest bioprocess engineers working on product toxicity and volatilization challenges.
+- **Major strengths** The systematic screening approach to identify a suitable carboxymethyltransferase is a reasonable strategy. The combination of enzyme engineering, cofactor regeneration, and process engineering addresses multiple bottlenecks simultaneously, which is a holistic approach to pathway optimization. The reported titer of 5.12 g/L, if reproducible, would represent a substantial advance in MeSA biosynthesis.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness of mechanistic claim
+  - **Claim pointer** The abstract claims that the polyhistidine tag reshaped the catalytic microenvironment by remodeling the hydrogen-bonding network and reducing the distance between SA and key substrate-positioning residues, thereby enhancing substrate binding and catalytic turnover.
+  - **Evidence pointer** Molecular dynamics simulations and computational analyses, location not provided
+  - **Concern** The mechanistic explanation for the 12-fold improvement in catalytic efficiency is based solely on computational analyses, as described in the abstract. No experimental validation of the proposed mechanism is presented, such as site-directed mutagenesis of the identified key residues, binding affinity measurements, or structural characterization. The claim that a polyhistidine tag, typically considered a passive affinity handle, can remodel the catalytic microenvironment in such a dramatic manner is counterintuitive and requires strong corroborating evidence.
+  - **Why it matters** The mechanistic claim is central to the novelty of the work. If the tag effect is real but the mechanism is incorrectly attributed, the study loses its conceptual contribution. If the tag effect is an artifact of the assay conditions or a misattribution of another variable, the entire enzyme engineering strategy is undermined.
+  - **Resolution test** Provide experimental validation of the proposed mechanism, including but not limited to kinetic characterization of mutant variants targeting the identified hydrogen-bonding residues, isothermal titration calorimetry or surface plasmon resonance binding studies, and ideally a crystal structure or cryo-EM structure of the tagged versus untagged enzyme. The simulations should be described with sufficient detail to assess their quality, including force field parameters, simulation length, and convergence criteria.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Verification of quantitative claims
+  - **Claim pointer** The abstract claims a 12-fold improvement in catalytic efficiency for 7 x His-CbSAMT over wild-type and a final MeSA titer of 5.12 g/L in fed-batch fermentation, stated as the highest production level reported to date.
+  - **Evidence pointer** Fermentation results and enzyme kinetics, location not provided
+  - **Concern** The abstract provides no numerical data for the kinetic parameters of either the wild-type or the tagged enzyme. The 12-fold improvement is stated without reporting the actual kcat and Km values. Similarly, the 5.12 g/L titer is presented without any information on the fermentation conditions, strain background, feeding strategy, or the analytical method used for quantification. The claim of "highest production level reported to date" requires a comprehensive comparison with prior literature, which is not provided.
+  - **Why it matters** Quantitative claims are the primary metrics by which the significance of this work will be judged. Without the underlying data, the claims cannot be verified or reproduced. The comparative statement of highest production is a strong claim that requires a thorough literature benchmark.
+  - **Resolution test** Provide full kinetic data for both enzymes, including substrate concentration ranges, assay conditions, and calculated kcat, Km, and kcat/Km values with error estimates. Provide complete fermentation profiles including time courses, OD600, residual glucose, MeSA concentration over time, and the analytical method (e.g., GC-FID or GC-MS) with calibration details. Provide a table comparing the achieved titer with all previously reported MeSA production levels in microbial systems.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility and methodological completeness
+  - **Claim pointer** The abstract describes reinforcement of intracellular SAM regeneration and establishment of an in situ two-phase fermentation system using n-dodecane as the extractant.
+  - **Evidence pointer** Methods, location not provided
+  - **Concern** The abstract does not specify how SAM regeneration was reinforced. Options include overexpression of SAM synthetase, modulation of the methionine cycle, or precursor feeding. The choice of n-dodecane as extractant is mentioned but no details are given on the phase ratio, extraction efficiency, biocompatibility, or whether the two-phase system was maintained throughout the entire fermentation or introduced at a specific time point.
+  - **Why it matters** These engineering strategies are presented as integral components of the overall production platform. Without methodological detail, other researchers cannot reproduce the system or adapt it to their own work. The relative contribution of each strategy to the final titer is also unclear.
+  - **Resolution test** Provide detailed methods for the SAM regeneration strategy, including genetic modifications and any precursor supplementation. Describe the two-phase system setup, including the organic phase fraction, mixing regime, and timing of addition. Quantify the contribution of each engineering strategy to the final titer through appropriate control experiments.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of terminology
+  - **Affected element** Enzyme nomenclature
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract refers to "salicylate carboxymethyltransferase" and then identifies "CbSAMT" as the selected enzyme. The abbreviation SAMT typically stands for salicylic acid methyltransferase, and the substrate is salicylic acid, not salicylate. The terminology should be consistent and accurate.
+  - **Required correction** Use consistent terminology throughout, preferably "salicylic acid methyltransferase" and "salicylic acid" as the substrate, or clearly define the abbreviations at first use.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness of reporting
+  - **Affected element** Strain and plasmid details
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract does not specify the E. coli strain background used for production or the plasmid system for gene expression.
+  - **Required correction** Include the strain designation and expression vector information in the methods or results section.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Contextualization
+  - **Affected element** Comparison with prior work
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The claim of "highest production level reported to date" is made without any citation or comparison to prior studies in the abstract.
+  - **Required correction** Provide a brief comparative statement in the abstract or a comprehensive comparison table in the results section.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The mechanistic claim requires experimental validation, and the quantitative claims require full data disclosure. Without these, the central contributions of the work cannot be assessed.
+- **Assessment against Nature-style criteria** Originality: The use of a polyhistidine tag to modulate enzyme catalysis is unconventional and potentially original, but the mechanistic basis is not yet established. Scientific importance: MeSA is a commercially relevant compound, and a 5.12 g/L titer would be significant if verified. Interdisciplinary readership: The work spans enzyme engineering, metabolic engineering, and bioprocess design, which could appeal to a broad readership. Technical soundness: Cannot be assessed from the abstract alone; the computational mechanistic claim is currently unsupported by experimental evidence. Readability for nonspecialists: The abstract is generally clear, though the mechanistic description is dense and would benefit from a more accessible explanation of why the tag effect is significant.
+- **Recommendation posture** Currently not established from the provided evidence. The work has potential interest, but the abstract alone does not provide sufficient evidence to support the mechanistic claims or verify the quantitative results. A full review of the complete manuscript would be required to make a more definitive assessment.

@@ -1,0 +1,1086 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All-atom molecular dynamics simulation of Cyclophilin A in complex with Sanglifehrin A. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>All-atom molecular dynamics simulation of Cyclophilin A in complex with Sanglifehrin A.</h1>
+      <div class="meta">Aliabadi, Zahra; Mohebbi, Alireza</div>
+      <div class="meta muted">
+        
+        <span class="journal">PloS one</span>
+        · 2026-09-22
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42771608/">原文</a>
+      </div>
+      <p class="one-liner">该文通过全原子分子动力学模拟研究亲环蛋白A与抑制剂Sanglifehrin A复合物的构象动态和结合自由能，属于蛋白质-配体复合物的结构计算研究，方法上使用MD模拟，与本课题的蛋白质结构计算方向高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Cyclophilin A (CypA), a key peptidyl-prolyl cis/trans isomerase, plays a pivotal role in various biological processes and is a target for therapeutic intervention, particularly in viral and cancer-related diseases. This study explores the structural and dynamic effects of Sanglifehrin A (SangfA), a potent CypA inhibitor, using molecular dynamics (MD) simulation. All-atom MD simulations (100 ns) of apo CypA and its complex with SangfA were performed using GROMACS v2023. In addition to MD analyses, essential dynamics, clustering, secondary structure, and binding free energy were analyzed. SangfA binding induces a dual dynamic response: local rigidification of the active-site beta2-beta3 loop, residues 100-102 and 108-111 with a coil‑to‑beta-strand transition (beta-sheet content rises from 28.0% to 32.3%), alongside enhanced mobility in distal loops and a 1.1‑fold expansion of the conformational ensemble. Principal component analysis shows redistribution of motions from a single dominant mode (apo PC1 = 44.2%) to more diffuse fluctuations (holo PC1 = 30.4%), increasing configurational entropy. The ligand forms a dynamic hydrogen‑bond network (1-2 persistent bonds) anchored by Arg55 and hydrophobic contacts with Phe60 and Lys105, while Arg55 remains uninvolved. The computed binding free energy (DeltaG = -20.45 +/- 3.07 Kcal/mol) accords with picomolar potency. SangfA acts via conformational selection, stabilizing a pre‑existing CypA substate with augmented beta-structure and broader dynamics. This entropically driven mechanism challenges static inhibition paradigms. Future efforts should validate the beta2-beta3 loop transition experimentally and exploit the Lys105 contact to design next‑generation cyclophilin inhibitors.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">亲环蛋白A（Cyclophilin A, CypA）是一种关键的肽基脯氨酰顺反异构酶，在多种生物过程中发挥重要作用，并且是治疗干预的靶点，尤其在病毒和癌症相关疾病中。本研究利用分子动力学（molecular dynamics, MD）模拟，探讨了强效CypA抑制剂Sanglifehrin A（SangfA）的结构和动态效应。使用GROMACS v2023对apo CypA及其与SangfA的复合物进行了全原子MD模拟（100 ns）。除MD分析外，还分析了本质动力学、聚类、二级结构和结合自由能。SangfA结合诱导双重动态响应：活性位点beta2-beta3环的局部刚性化，残基100-102和108-111发生卷曲至β-折叠转变（β-折叠含量从28.0%升至32.3%），同时远端环的流动性增强，构象集合扩大1.1倍。主成分分析显示，运动从单一主导模式（apo PC1 = 44.2%）重新分布为更弥散的波动（holo PC1 = 30.4%），增加了构象熵。配体形成由Arg55锚定的动态氢键网络（1-2个持久键）以及与Phe60和Lys105的疏水接触，而Arg55未参与其中。计算的结合自由能（DeltaG = -20.45 +/- 3.07 Kcal/mol）与皮摩尔级效力一致。SangfA通过构象选择发挥作用，稳定了CypA预先存在的亚态，该亚态具有增强的β结构和更广泛的动态性。这种熵驱动的机制挑战了静态抑制范式。未来工作应通过实验验证beta2-beta3环转变，并利用Lys105接触来设计下一代亲环蛋白抑制剂。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: All-atom molecular dynamics simulation of Cyclophilin A in complex with Sanglifehrin A</li>
+<li><strong>作者与单位</strong>: Aliabadi, Zahra; Mohebbi, Alireza（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>: PloS one</li>
+<li><strong>年份</strong>: 2026-09-22</li>
+<li><strong>论文类型</strong>: 研究论文（计算模拟研究）</li>
+<li><strong>领域</strong>: 蛋白质-配体相互作用；分子动力学模拟；药物设计</li>
+<li><strong>关键词</strong>: Cyclophilin A; Sanglifehrin A; molecular dynamics; conformational selection; binding free energy</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1371/journal.pone.0358847</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供（PDB 结构 1BCK 为公开数据；PubChem 获取 SangfA 结构）</li>
+<li><strong>阅读日期</strong>: 未提供</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × 物理模拟 (MD)」方向，聚焦于 CypA 与其抑制剂 SangfA 复合物的动态行为研究。其核心价值在于：(1) 展示了 MD 模拟在解析抑制剂诱导的蛋白质构象变化中的应用；(2) 提出了配体结合通过构象选择机制而非传统"锁钥"模型发挥作用的证据；(3) 为蛋白质-配体相互作用研究提供了从 RMSD/RMSF 到 PCA、聚类、二级结构、结合自由能的全流程分析范式。该文与 AlphaFold 等 AI 结构预测方法互补，关注的是动态构象 ensemble 而非静态结构。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文通过 100 ns 全原子 MD 模拟（GROMACS，GROMOS96 43a1 力场），发现 SangfA 结合 CypA 后诱导活性位点 β2-β3 loop（残基 100-102 和 108-111）发生 coil-to-β-strand 转变，同时增加远端 loop 的流动性并使整体构象 ensemble 扩大 1.1 倍，支持构象选择机制而非静态锁定机制。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: SangfA 作为 CypA 的高效抑制剂（IC50 = 6.9 ± 0.9 nM），其结合如何影响 CypA 的结构和动态行为？具体而言，配体结合是否诱导二级结构变化、如何改变局部和全局的构象动力学，以及这些变化背后的热力学机制是什么？</li>
+<li><strong>为什么重要</strong>: CypA 是多种病毒（HIV、SARS-CoV-2、HCV 等）和癌症相关疾病的重要治疗靶点。理解抑制剂如何通过动态机制发挥作用，对于设计更有效的下一代 CypA 抑制剂至关重要。传统观点认为抑制剂通过空间阻塞发挥功能，但动态机制可能提供新的设计思路。</li>
+<li><strong>现有方法为何不足</strong>: 传统分子对接和晶体结构分析提供的是静态快照，无法捕捉配体结合诱导的构象重排、loop 的动态转变以及整个蛋白质构象 landscape 的变化。X 射线晶体结构（如 Kallen et al. 报道的 CypA-SangfA 复合物）虽然提供了高分辨率静态信息，但无法揭示溶液中动态的氢键网络和构象 ensemble 的重新分布。</li>
+<li><strong>精确的 "Can ... ?" 研究问题</strong>: Can all-atom MD simulation reveal that SangfA binding to CypA induces specific secondary structure transitions and redistributes conformational dynamics in a manner consistent with a conformational selection mechanism?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文引用和论述整理，标注为「仅本文框架」——即主要依据本文引用的文献和作者论述，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法/工作</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期：CypA 结构与功能解析</td>
+<td>X 射线晶体学解析 CypA-CsA 复合物；CypA 作为 PPIase 的催化机制研究</td>
+<td>提供高分辨率静态结构；确立活性位点关键残基（Arg55 等）</td>
+<td>静态快照，无法反映动态过程</td>
+<td>本文以晶体结构 1BCK 为起点</td>
+</tr>
+<tr>
+<td>中期：CypA 抑制剂开发</td>
+<td>CsA 及其衍生物、Sanglifehrins 的合成与活性评估；SAR 研究</td>
+<td>获得高亲和力抑制剂（SangfA IC50 = 6.9 nM）</td>
+<td>缺乏对抑制机制的动态理解</td>
+<td>本文聚焦 SangfA 这一高效抑制剂</td>
+</tr>
+<tr>
+<td>近期：MD 模拟在蛋白质-配体研究中的应用</td>
+<td>全原子 MD、增强采样、MM-PBSA 等自由能计算方法</td>
+<td>可捕捉构象变化、动态氢键网络、溶剂效应</td>
+<td>力场精度限制；采样时间有限；计算成本高</td>
+<td>本文采用 100 ns 全原子 MD + LIE 自由能计算</td>
+</tr>
+<tr>
+<td>当前：动态机制与构象选择模型</td>
+<td>核磁共振（如 Eisenmesser et al. 对 CypA 动态 loop 的研究）；MD 与实验结合</td>
+<td>揭示蛋白质功能与构象动态的关系</td>
+<td>实验与模拟的时空尺度差异</td>
+<td>本文通过 MD 证据支持构象选择模型</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>: 本文处于「MD 模拟揭示抑制剂动态机制」这一前沿位置，主张 SangfA 通过构象选择机制（而非诱导契合或静态阻塞）发挥作用，即配体稳定一个预先存在的 CypA 亚态，该亚态具有增强的 β-折叠含量和更广泛的构象分布。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态结构无法解释抑制机制</td>
+<td>晶体结构显示 SangfA 深埋于 CypA 疏水口袋，但无法解释其超高亲和力（IC50 = 6.9 nM）的来源</td>
+<td>作者认为抑制不仅依赖静态互补，还涉及动态构象重排</td>
+<td>Introduction 节；Discussion 节引用 Kallen et al. [56]</td>
+</tr>
+<tr>
+<td>传统"锁钥"模型不足以描述抑制剂作用</td>
+<td>配体结合后蛋白质仍保持高度动态，而非被"冻结"</td>
+<td>作者通过 MD 发现配体结合反而增加了构象多样性（75 vs 66 clusters）</td>
+<td>Results 节 Clustering 分析；Discussion 节</td>
+</tr>
+<tr>
+<td>氢键网络的动态性被低估</td>
+<td>晶体结构显示 6 个氢键，但 MD 显示任意时刻仅 1-2 个持久氢键</td>
+<td>溶液中水分子不断介导和竞争氢键，形成"闪烁"的氢键网络</td>
+<td>Results 节 Hydrogen-bonding 分析；Discussion 节引用 Heal et al. [55]</td>
+</tr>
+<tr>
+<td>二级结构变化的定量描述缺失</td>
+<td>配体结合对 β-折叠含量的影响未被系统量化</td>
+<td>作者通过 DSSP 时间分辨分析发现 β-sheet 含量从 28.0% 升至 32.3%</td>
+<td>Results 节 Secondary structure 分析；Table 4</td>
+</tr>
+<tr>
+<td>构象 ensemble 的全局变化难以表征</td>
+<td>单一结构无法反映蛋白质在溶液中的构象 landscape</td>
+<td>作者通过 PCA 和聚类分析揭示配体结合使构象空间扩大 1.1 倍</td>
+<td>Results 节 PCA 分析；Fig 14-15</td>
+</tr>
+<tr>
+<td>力场选择限制自由能计算</td>
+<td>GROMOS96 43a1 力场不支持 MM-PBSA 分析</td>
+<td>作者明确承认因力场限制无法进行 MM-PBSA 计算</td>
+<td>Discussion 节 Limitations</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>对 CypA（PDB: 1BCK）及其与 SangfA 的复合物分别进行 100 ns 全原子 MD 模拟（GROMACS），随后进行系统的轨迹分析，包括 RMSD、RMSF、SASA、氢键网络、二级结构（DSSP）、PCA 主成分分析、GROMOS 聚类分析，以及 LIE 方法估算结合自由能。</p>
+<h3>2) 核心洞察</h3>
+<p><strong>SangfA 通过"局部刚性化 + 全局柔性化"的双重动态响应发挥抑制作用。</strong> 具体而言：</p>
+<ul>
+<li><strong>局部刚性化</strong>：配体结合诱导活性位点附近的 β2-β3 loop（残基 100-102 和 108-111）从 coil 转变为稳定的 β-strand 构象，这一转变"锁定"了底物识别区域的关键构象，阻碍底物进入催化中心。</li>
+<li><strong>全局柔性化</strong>：与此同时，远端 loop 的流动性增加，整体构象 ensemble 扩大（cluster 数从 66 增至 75，构象空间体积增大 1.1 倍），蛋白质的构象熵增加。</li>
+<li><strong>构象选择机制</strong>：配体并非诱导全新构象，而是稳定一个预先存在的、具有更高 β-折叠含量的 CypA 亚态。这一机制与传统的"诱导契合"或"静态阻塞"模型不同，强调了抑制剂通过重塑蛋白质构象 landscape 发挥功能的可能性。</li>
+<li><strong>熵驱动的结合</strong>：结合自由能 ΔG = −20.45 ± 3.07 kcal/mol 与皮摩尔级亲和力一致，但结合过程中蛋白质构象熵增加（而非减少），提示结合可能由焓驱动（配体-蛋白质相互作用）而熵代价被构象熵增加所补偿。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>抑制剂的"动态指纹"概念</strong>：高效抑制剂可能不是通过最大化静态互补性，而是通过重塑靶蛋白的构象 landscape 来发挥作用。这提示药物设计应关注配体对蛋白质动态行为的调控，而非仅关注静态结合模式。</li>
+<li><strong>局部与全局的权衡</strong>：配体结合可以在局部区域（活性位点）增加有序性，同时在全局范围增加无序性。这种"局部刚性化-全局柔性化"的模式可能是一种普遍的配体结合策略，值得在其他蛋白质-配体体系中检验。</li>
+<li><strong>MD 模拟作为"动态结构生物学"工具</strong>：本文展示了 MD 模拟如何补充晶体学和 NMR 的静态/ensemble 信息，为理解抑制剂机制提供动态视角。对于蛋白质结构预测（如 AlphaFold）得到的静态结构，MD 模拟是探索其动态行为的自然延伸。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>:</li>
+<li>CypA 晶体结构：PDB ID 1BCK（分辨率 1.8 Å，与 11 个环孢菌素衍生物共结晶）</li>
+<li>SangfA 三维结构：PubChem 数据库</li>
+<li>
+<p>复合物构建：基于先前描述的方法（引用 [36,37]）</p>
+</li>
+<li>
+<p><strong>输出</strong>:</p>
+</li>
+<li>100 ns 全原子 MD 轨迹（apo 和 holo 各一条）</li>
+<li>结合自由能估计（LIE 方法）</li>
+<li>
+<p>构象 ensemble 的定量描述（聚类、PCA、二级结构分布）</p>
+</li>
+<li>
+<p><strong>模块</strong>:
+  1. <strong>结构准备</strong>：使用 UCSF Chimera 1.10.2 清洗结构、保留相关链；Swiss-Pdb Viewer 进行能量最小化
+  2. <strong>拓扑生成</strong>：蛋白质拓扑由 GROMACS 工具生成；配体拓扑由 PRODRG 服务器生成（GROMOS96 43a1 力场框架）
+  3. <strong>溶剂化与中和</strong>：SPC 水模型；加入 2 个 Cl⁻ 离子中和体系
+  4. <strong>能量最小化</strong>：最陡下降法
+  5. <strong>平衡</strong>：NVT 60 ps（300 K，速度重缩放恒温器）；NPT 60 ps（1 bar，Parrinello-Rahman 恒压器）
+  6. <strong>生产模拟</strong>：100 ns，时间步长 2 fs
+  7. <strong>轨迹分析</strong>：</p>
+<ul>
+<li>RMSD（gmx rms）</li>
+<li>RMSF（gmx rmsf）</li>
+<li>SASA（gmx sasa）</li>
+<li>氢键分析（gmx hbond）</li>
+<li>二级结构（DSSP 算法）</li>
+<li>PCA 主成分分析（gmx covar, gmx anaeig）</li>
+<li>GROMOS 聚类（gmx cluster，RMSD cutoff 0.10 nm）</li>
+<li>盐桥分析（gmx saltbr）</li>
+<li>最小距离分析（gmx select）
+  8. <strong>结合自由能</strong>：LIE 方法，α = 0.18，β = 0.50</li>
+</ul>
+</li>
+<li>
+<p><strong>工具</strong>:</p>
+</li>
+<li>GROMACS 5.1.4（正文 Methods 提及；摘要写 v2023，存在版本不一致）</li>
+<li>GROMOS96 43a1 力场</li>
+<li>UCSF Chimera 1.10.2</li>
+<li>Swiss-Pdb Viewer</li>
+<li>PRODRG 服务器</li>
+<li>
+<p>R v4.5.2（统计分析）</p>
+</li>
+<li>
+<p><strong>假设</strong>:</p>
+</li>
+<li>GROMOS96 43a1 力场适用于该蛋白质-配体体系</li>
+<li>100 ns 模拟时间足以捕捉关键的构象转变</li>
+<li>LIE 方法（α = 0.18, β = 0.50）适用于该体系的结合自由能估计</li>
+<li>
+<p>初始晶体结构（1BCK）代表溶液中 CypA 的生理相关构象</p>
+</li>
+<li>
+<p><strong>文字流程</strong>:
+  1. 从 PDB 获取 CypA 晶体结构，从 PubChem 获取 SangfA 结构
+  2. 使用 Chimera 清洗蛋白质结构，保留相关链
+  3. 使用 Swiss-Pdb Viewer 对结构进行能量最小化
+  4. 使用 PRODRG 生成 SangfA 的 GROMOS96 43a1 兼容拓扑
+  5. 构建 apo 和 holo 两个体系，分别置于 SPC 水盒子中，加入 Cl⁻ 中和
+  6. 最陡下降能量最小化
+  7. NVT 平衡 60 ps（300 K）→ NPT 平衡 60 ps（1 bar）
+  8. 100 ns 生产模拟（2 fs 时间步长，PME 处理静电）
+  9. 对轨迹进行 RMSD、RMSF、SASA、氢键、二级结构、PCA、聚类分析
+  10. 使用 LIE 方法计算结合自由能
+  11. 统计分析（R v4.5.2），包括 t 检验、Mann-Whitney U 检验、卡方检验</p>
+</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构准备与能量最小化</td>
+<td>清洗晶体结构、生成配体拓扑、最小化体系能量</td>
+<td>确保模拟起始结构合理，消除晶体 packing 引入的应力</td>
+<td>输入：1BCK 结构 + SangfA PubChem 结构；输出：最小化后的 apo/holo 体系</td>
+<td>Methods 节 "Preparation" 段落</td>
+<td>预期影响：起始结构不合理会导致模拟轨迹偏离生理相关构象 [预期效应]</td>
+</tr>
+<tr>
+<td>NVT/NPT 平衡</td>
+<td>将体系稳定在目标温度（300 K）和压力（1 bar）</td>
+<td>确保体系在进入生产模拟前达到热力学平衡</td>
+<td>输入：最小化结构；输出：平衡后的体系</td>
+<td>Methods 节 "Molecular dynamics simulation" 段落</td>
+<td>预期影响：平衡不充分会导致生产模拟初期出现人为弛豫 [预期效应]</td>
+</tr>
+<tr>
+<td>100 ns 生产模拟</td>
+<td>生成蛋白质-配体复合物的动态轨迹</td>
+<td>核心数据来源，用于所有后续分析</td>
+<td>输入：平衡体系；输出：100 ns 轨迹</td>
+<td>Results 图 1-15</td>
+<td>预期影响：模拟时间不足可能无法捕捉 loop 转变等慢过程 [预期效应]</td>
+</tr>
+<tr>
+<td>RMSD 分析</td>
+<td>评估体系整体稳定性</td>
+<td>判断模拟是否达到收敛，比较 apo/holo 的整体构象偏差</td>
+<td>输入：Cα/骨架原子轨迹；输出：RMSD vs 时间曲线</td>
+<td>Results 图 1</td>
+<td>实测：holo 体系 RMSD 略高但分布更窄，提示配体约束了构象变异</td>
+</tr>
+<tr>
+<td>RMSF 分析</td>
+<td>评估残基水平柔性</td>
+<td>识别配体结合对局部柔性的影响</td>
+<td>输入：Cα 轨迹；输出：每残基 RMSF 曲线</td>
+<td>Results 图 2</td>
+<td>实测：特定区域（如 β2-β3 loop）柔性降低，远端 loop 柔性增加</td>
+</tr>
+<tr>
+<td>SASA 分析</td>
+<td>量化溶剂可及表面积</td>
+<td>评估配体结合对蛋白质溶剂暴露的影响</td>
+<td>输入：蛋白质轨迹；输出：SASA vs 时间</td>
+<td>Results 图 3</td>
+<td>实测：holo 体系 SASA 增加 2.4%（78.42 vs 76.58 nm²），p &lt; 0.001</td>
+</tr>
+<tr>
+<td>氢键分析</td>
+<td>表征蛋白质-配体间氢键网络</td>
+<td>理解配体锚定的分子机制</td>
+<td>输入：蛋白质-配体轨迹；输出：氢键数量、占有率、持久时间</td>
+<td>Results 图 4-5；Table 1</td>
+<td>实测：平均 1.72 ± 1.11 个氢键/帧，87.1% 占有率，持久时间仅 8.5 ps</td>
+</tr>
+<tr>
+<td>二级结构分析（DSSP）</td>
+<td>追踪二级结构随时间的演变</td>
+<td>检测配体诱导的 coil-to-β-strand 转变</td>
+<td>输入：蛋白质轨迹；输出：每残基二级结构分配</td>
+<td>Results 图 8, 12；Table 4</td>
+<td>实测：β-sheet 含量从 28.0% 升至 32.3%；残基 100-102 和 108-111 从 coil 转为 β-strand</td>
+</tr>
+<tr>
+<td>PCA 主成分分析</td>
+<td>提取主要的协同运动模式</td>
+<td>比较 apo/holo 的构象 landscape 和运动分布</td>
+<td>输入：Cα 轨迹；输出：特征值、特征向量、PC 投影</td>
+<td>Results 图 14-15</td>
+<td>实测：apo PC1 = 44.2%，holo PC1 = 30.4%，配体使运动分散到更多模式</td>
+</tr>
+<tr>
+<td>GROMOS 聚类分析</td>
+<td>将构象分为离散簇</td>
+<td>量化构象 ensemble 的大小和分布</td>
+<td>输入：Cα 轨迹；输出：簇数量、种群分布</td>
+<td>Results 图 6-7</td>
+<td>实测：holo 75 簇 vs apo 66 簇，构象多样性增加</td>
+</tr>
+<tr>
+<td>LIE 结合自由能计算</td>
+<td>估算蛋白质-配体结合亲和力</td>
+<td>将模拟结果与实验亲和力关联</td>
+<td>输入：结合/非结合态轨迹的能量项；输出：ΔGbind</td>
+<td>Results 图 10；Discussion 节</td>
+<td>实测：ΔG = −20.45 ± 3.07 kcal/mol，与皮摩尔级 IC50 一致</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>本文涉及的公式主要为 PCA 和 LIE 方法中的标准公式。由于原文未提供完整公式编号，以下基于文中描述整理：</p>
+<p><strong>1. PCA 方差分解（Methods 节 "Essential dynamics" 段落）</strong></p>
+<p>文中提到 Equation 1-3 用于计算总方差、各主成分贡献率和累积贡献率：</p>
+<ul>
+<li>
+<p><strong>Equation 1（总方差）</strong>:
+  [
+  \text{Total Variance} = \sum_{i=1}^{N} \lambda_i
+  ]
+  其中 λᵢ 是协方差矩阵的第 i 个特征值，N 是原子数（文中为 Cα 原子数）。</p>
+</li>
+<li>
+<p><strong>Equation 2（单主成分贡献率）</strong>:
+  [
+  \text{Contribution}<em>i = \frac{\lambda_i}{\sum</em>{j=1}^{N} \lambda_j}
+  ]
+  表示第 i 个主成分解释的方差比例。</p>
+</li>
+<li>
+<p><strong>Equation 3（累积贡献率）</strong>:
+  [
+  \text{Cumulative Contribution}<em>k = \frac{\sum</em>{i=1}^{k} \lambda_i}{\sum_{j=1}^{N} \lambda_j}
+  ]
+  表示前 k 个主成分累计解释的方差比例。</p>
+</li>
+</ul>
+<p><strong>直觉</strong>: 这些公式用于量化蛋白质构象运动的"集中度"。apo 状态 PC1 占 44.2% 说明运动高度集中在一个主要模式；holo 状态 PC1 降至 30.4% 说明运动被分散到更多模式中，即构象 landscape 更加"平坦"和多样化。</p>
+<p><strong>2. LIE 结合自由能（Methods 节 "Calculation of linear interaction energy (LIE)" 段落）</strong></p>
+<p>文中给出的 LIE 公式为：
+[
+\Delta G_{\text{bind}} = \alpha (\langle V_{\text{vdw,lig-surr}} \rangle_{\text{bound}} - \langle V_{\text{vdw,lig-surr}} \rangle_{\text{unbound}}) + \beta (\langle V_{\text{ele,lig-surr}} \rangle_{\text{bound}} - \langle V_{\text{ele,lig-surr}} \rangle_{\text{unbound}})
+]</p>
+<p>其中：
+- α = 0.18，β = 0.50（经验缩放系数）
+- V_vdw 和 V_ele 分别是配体-环境间的范德华和静电相互作用能
+- "bound" 和 "unbound" 分别指配体在复合物中和在自由溶液中的状态</p>
+<p><strong>直觉</strong>: LIE 方法基于线性响应近似，认为结合自由能可以表示为配体在结合态和非结合态中与环境相互作用能差异的线性组合。范德华项系数较小（0.18）反映非极性相互作用对自由能的贡献，静电项系数较大（0.50）反映极性相互作用的贡献。</p>
+<p><strong>3. 卡方检验（Methods 节 "Statistical analysis" 段落）</strong></p>
+<p>用于比较 apo/holo 二级结构组成差异：
+[
+\chi^2 = \sum \frac{(O_i - E_i)^2}{E_i}
+]
+其中 Oᵢ 为观测频数，Eᵢ 为期望频数。文中报告 χ² = 17776.30，p &lt; 0.001。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<h3>数据集/群体</h3>
+<ul>
+<li><strong>蛋白质结构</strong>：人 CypA 晶体结构（PDB ID: 1BCK，分辨率 1.8 Å）</li>
+<li><strong>配体结构</strong>：SangfA（PubChem 数据库）</li>
+<li><strong>体系数量</strong>：2 个（apo CypA 和 CypA-SangfA 复合物）</li>
+<li><strong>模拟时间</strong>：各 100 ns</li>
+<li><strong>力场</strong>：GROMOS96 43a1</li>
+<li><strong>水模型</strong>：SPC</li>
+<li><strong>温度/压力</strong>：300 K / 1 bar</li>
+<li><strong>离子</strong>：2 Cl⁻（中和）</li>
+<li><strong>硬件</strong>：Core i7 + NVIDIA GeForce GPU</li>
+</ul>
+<h3>评测指标</h3>
+<ul>
+<li>RMSD（整体稳定性）</li>
+<li>RMSF（残基柔性）</li>
+<li>SASA（溶剂暴露）</li>
+<li>氢键数量/占有率/持久时间</li>
+<li>二级结构含量（DSSP）</li>
+<li>PCA 特征值/贡献率</li>
+<li>聚类数量/种群分布</li>
+<li>LIE 结合自由能</li>
+</ul>
+<h3>评测协议</h3>
+<ul>
+<li>平衡期后取 20-100 ns 轨迹进行分析</li>
+<li>100 ns 轨迹以 1.25 ns 移动平均平滑</li>
+<li>统计显著性：t 检验、Mann-Whitney U 检验、卡方检验（FDR = 0.05）</li>
+</ul>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RMSD 分析</td>
+<td>配体结合改变整体构象稳定性</td>
+<td>apo vs holo，Cα 和骨架 RMSD</td>
+<td>holo RMSD 略高（0.232 vs 0.218 nm）但 IQR 更窄（0.019 vs 0.070 nm）</td>
+<td>配体约束了构象变异，holo 体系更"稳定"地偏离起始结构</td>
+<td>不能证明配体诱导了整体构象转变</td>
+<td>Results 图 1</td>
+</tr>
+<tr>
+<td>RMSF 分析</td>
+<td>配体结合改变局部柔性</td>
+<td>apo vs holo，每残基 RMSF</td>
+<td>平均 RMSF 略降（0.109 vs 0.114 nm）；高柔性残基分布改变</td>
+<td>配体结合降低整体平均柔性</td>
+<td>不能确定具体哪些残基的柔性变化具有功能意义</td>
+<td>Results 图 2</td>
+</tr>
+<tr>
+<td>SASA 分析</td>
+<td>配体结合改变溶剂暴露</td>
+<td>apo vs holo，总 SASA</td>
+<td>holo 78.42 ± 1.69 nm² vs apo 76.58 ± 1.86 nm²（+2.4%，p &lt; 0.001）</td>
+<td>配体结合使蛋白质更"开放"，溶剂暴露增加</td>
+<td>SASA 增加是否直接导致功能变化尚不明确</td>
+<td>Results 图 3</td>
+</tr>
+<tr>
+<td>氢键分析</td>
+<td>配体通过动态氢键网络锚定</td>
+<td>holo 体系内蛋白质-配体氢键</td>
+<td>平均 1.72 ± 1.11 个氢键/帧，87.1% 占有率，持久时间 8.5 ps</td>
+<td>氢键网络高度动态，"闪烁"而非静态</td>
+<td>无法确定哪些氢键对结合自由能贡献最大</td>
+<td>Results 图 4-5；Table 1</td>
+</tr>
+<tr>
+<td>盐桥分析</td>
+<td>带电残基参与配体结合</td>
+<td>holo 体系内蛋白质-配体盐桥</td>
+<td>未检测到经典盐桥（Arg55 未直接接触配体）</td>
+<td>结合不依赖盐桥</td>
+<td>无法排除水介导的静电相互作用</td>
+<td>Results 图 5；Table 1</td>
+</tr>
+<tr>
+<td>二级结构分析</td>
+<td>配体诱导 coil-to-β-strand 转变</td>
+<td>apo vs holo，DSSP 二级结构分配</td>
+<td>β-sheet 含量 28.0% → 32.3%；残基 100-102 和 108-111 从 coil 转为 β-strand</td>
+<td>配体结合诱导活性位点 loop 的二级结构转变</td>
+<td>无法确定这一转变是否直接导致抑制活性</td>
+<td>Results 图 8, 12；Table 4</td>
+</tr>
+<tr>
+<td>聚类分析</td>
+<td>配体改变构象 ensemble 的多样性</td>
+<td>apo vs holo，GROMOS 聚类（cutoff 0.10 nm）</td>
+<td>holo 75 簇 vs apo 66 簇；holo 最大簇仅含 12.2% 帧 vs apo 40.0%</td>
+<td>配体结合增加构象多样性，使 ensemble 更分散</td>
+<td>构象多样性增加是否有利于功能尚需实验验证</td>
+<td>Results 图 6-7</td>
+</tr>
+<tr>
+<td>PCA 分析</td>
+<td>配体改变协同运动的分布</td>
+<td>apo vs holo，Cα 协方差矩阵</td>
+<td>apo PC1 = 44.2%，holo PC1 = 30.4%；holo 需更多 PC 达到相同累计贡献</td>
+<td>配体将运动从单一主导模式分散到多个模式</td>
+<td>无法确定分散的运动模式的具体功能角色</td>
+<td>Results 图 14-15</td>
+</tr>
+<tr>
+<td>LIE 计算</td>
+<td>结合自由能与实验亲和力一致</td>
+<td>holo 体系，α = 0.18, β = 0.50</td>
+<td>ΔG = −20.45 ± 3.07 kcal/mol</td>
+<td>与皮摩尔级 IC50（6.9 nM）定性一致</td>
+<td>LIE 方法精度有限，不能作为定量预测</td>
+<td>Results 图 10；Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<h3>任务范围</h3>
+<ul>
+<li>本文仅基于计算模拟，未进行任何湿实验验证</li>
+<li>模拟体系为单一 CypA 构象（1BCK）和单一配体（SangfA）</li>
+<li>模拟时间为 100 ns，可能不足以捕捉所有相关的构象转变</li>
+</ul>
+<h3>Oracle/真值输入</h3>
+<ul>
+<li>起始结构来自 X 射线晶体学（1BCK），这是实验真值</li>
+<li>配体结构来自 PubChem 数据库</li>
+<li>无实验结合自由能数据直接对比（IC50 来自文献 [70]）</li>
+</ul>
+<h3>端到端状态</h3>
+<ul>
+<li>非端到端：本文是纯计算研究，未与 NMR、突变实验或等温滴定量热法（ITC）等实验交叉验证</li>
+<li>结合自由能计算使用 LIE 方法，精度有限（通常误差 ±1-2 kcal/mol）</li>
+</ul>
+<h3>算力成本</h3>
+<ul>
+<li>100 ns 全原子 MD × 2 体系，在单 GPU 工作站上完成</li>
+<li>未提供具体计算时间</li>
+</ul>
+<h3>历史数据依赖</h3>
+<ul>
+<li>依赖 1BCK 晶体结构（2000 年前后解析）</li>
+<li>依赖文献中报道的 IC50 值 [70]</li>
+</ul>
+<h3>模型依赖</h3>
+<ul>
+<li>依赖 GROMOS96 43a1 力场的准确性</li>
+<li>依赖 PRODRG 生成的配体拓扑参数质量</li>
+<li>依赖 LIE 方法的经验参数（α, β）</li>
+</ul>
+<h3>最难情形</h3>
+<ul>
+<li>作者未讨论模拟中遇到的技术困难</li>
+<li>未讨论力场对 loop 转变的潜在偏差</li>
+</ul>
+<h3>群体/领域边界</h3>
+<ul>
+<li>结论仅适用于 CypA-SangfA 这一特定体系</li>
+<li>不能外推至其他 Cyp 家族成员或其他 Sanglifehrin 类似物</li>
+<li>构象选择机制的推断需要更多实验证据支持</li>
+</ul>
+<h3>不确定性</h3>
+<ul>
+<li>作者未提供误差棒或重复实验</li>
+<li>统计检验仅用于二级结构组成比较</li>
+<li>结合自由能的误差范围未报告</li>
+</ul>
+<h3>有边界的复述</h3>
+<p>在 100 ns 全原子 MD 模拟的时间尺度和 GROMOS96 43a1 力场的精度范围内，SangfA 结合诱导 CypA 活性位点 β2-β3 loop（残基 100-102 和 108-111）发生从 coil 到 β-strand 的二级结构转变，同时增加远端 loop 的流动性和整体构象 ensemble 的多样性。这些观察与构象选择机制一致，但需要实验验证。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅依赖 MD 模拟</td>
+<td>未进行实验验证（NMR、X-ray 等）</td>
+<td>未来 NMR 和 X 射线晶体学实验验证预测的 β2-β3 loop 构象转变</td>
+<td>Discussion 节末段</td>
+</tr>
+<tr>
+<td>力场限制</td>
+<td>GROMOS96 43a1 力场不支持 MM-PBSA 分析</td>
+<td>未来研究将使用支持 MM-PBSA 的力场进行更精确的结合自由能计算</td>
+<td>Discussion 节末段</td>
+</tr>
+<tr>
+<td>模拟时间有限</td>
+<td>100 ns 可能不足以完全采样构象空间</td>
+<td>未明确提及延长模拟时间，但暗示需要更全面的构象采样</td>
+<td>Discussion 节（隐含）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模拟时间仅 100 ns，且未使用增强采样方法</td>
+<td>Loop 的 coil-to-β-strand 转变可能是模拟早期的非平衡伪影，而非真实的配体诱导效应；100 ns 可能不足以充分采样 loop 的构象转变</td>
+<td>核心结论（构象选择机制）依赖于这一转变的可靠性</td>
+<td>延长模拟至 μs 尺度；使用副本交换（REMD）或元动力学（metadynamics）验证转变的收敛性；重复模拟以检查初始条件依赖性</td>
+<td>Methods 节；Results 图 8</td>
+</tr>
+<tr>
+<td>仅使用单一力场（GROMOS96 43a1）和单一水模型（SPC）</td>
+<td>力场依赖的结论可能不稳健；GROMOS96 43a1 是较老力场，对蛋白质-配体相互作用的描述可能不如 CHARMM36 或 AMBER ff14SB 准确</td>
+<td>力场选择可能影响二级结构倾向性和配体结合模式</td>
+<td>使用 CHARMM36/ff19SB 等现代力场重复模拟，比较关键结论是否一致</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>LIE 方法精度有限，且未与实验值直接校准</td>
+<td>ΔG = −20.45 ± 3.07 kcal/mol 的绝对值可能不准确；LIE 方法对静电项的线性响应假设可能不适用于该体系</td>
+<td>结合自由能的定量结论可能被高估或低估</td>
+<td>使用 MM-PBSA/MM-GBSA 或 FEP/TI 等更精确方法交叉验证；与 ITC 实验值对比</td>
+<td>Methods 节 "Calculation of linear interaction energy"</td>
+</tr>
+<tr>
+<td>未报告模拟的重复次数和统计不确定性</td>
+<td>所有结论基于单次 100 ns 轨迹，无法评估采样误差</td>
+<td>科学结论需要可重复性和不确定性量化</td>
+<td>至少 3 次独立重复模拟，报告均值 ± 标准差</td>
+<td>Methods 节；Results 节</td>
+</tr>
+<tr>
+<td>作者声称 Arg55 未参与配体接触，但 Discussion 中又将其描述为"锚定"残基</td>
+<td>结论存在内部矛盾：如果 Arg55 未接触配体，其"锚定"作用如何实现？可能是水介导的间接作用</td>
+<td>影响对结合模式的理解</td>
+<td>详细分析 Arg55 周围的水分子分布和桥接氢键</td>
+<td>Results 图 5；Table 1；Discussion 节</td>
+</tr>
+<tr>
+<td>构象 ensemble 扩大的结论基于聚类数和 PC1-PC2 面积</td>
+<td>这些指标对聚类算法参数和 PCA 截断敏感；"1.1 倍扩大"可能不具有统计显著性</td>
+<td>构象多样性增加的结论需要更稳健的量化</td>
+<td>使用多种聚类算法和不同 cutoff 进行敏感性分析；计算构象熵的 bootstrap 置信区间</td>
+<td>Results 图 6-7, 14-15</td>
+</tr>
+<tr>
+<td>未讨论配体结合对 CypA 二聚化或与其他蛋白相互作用的影响</td>
+<td>CypA 的功能不仅限于 PPIase 活性，还涉及其作为分子伴侣和信号分子的角色</td>
+<td>抑制剂的动态效应可能影响 CypA 的非催化功能</td>
+<td>结合蛋白-蛋白相互作用预测或实验（如交联质谱）</td>
+<td>Introduction 节；Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题：Agent 提炼的知识候选</p>
+</blockquote>
+<h3>可迁移的概念</h3>
+<ol>
+<li>
+<p><strong>"局部刚性化-全局柔性化"双重响应模型</strong>：配体结合不一定是整体"冻结"蛋白质，而是可以在活性位点增加有序性（β-strand 形成）的同时增加远端区域的柔性。这一概念可迁移至其他蛋白质-配体体系的研究，特别是当传统"锁钥"模型无法解释高亲和力结合时。</p>
+</li>
+<li>
+<p><strong>构象选择 vs 诱导契合的 MD 证据标准</strong>：本文展示了如何通过聚类分析（cluster 数量变化）、PCA（主成分贡献率变化）和二级结构时间演化来区分构象选择与诱导契合机制。这一分析框架可迁移至其他蛋白质-配体/蛋白质-蛋白质相互作用研究。</p>
+</li>
+<li>
+<p><strong>"闪烁"氢键网络概念</strong>：配体-蛋白质间的氢键不是静态的，而是不断断裂和重组的动态网络（平均 1.72 个/帧，持久时间仅 8.5 ps）。这一概念对理解高亲和力但高动态性的结合模式具有重要意义。</p>
+</li>
+<li>
+<p><strong>远端效应（allostery）的 MD 检测</strong>：通过比较 apo/holo 的 RMSF 差异，可以识别配体结合诱导的远端构象变化，即使这些变化不涉及直接的配体接触。</p>
+</li>
+</ol>
+<h3>可迁移的方法</h3>
+<ol>
+<li>
+<p><strong>MD 分析流水线</strong>：RMSD → RMSF → SASA → 氢键 → 盐桥 → 二级结构（DSSP）→ PCA → 聚类的系统分析流程，可作为蛋白质-配体 MD 研究的标准分析模板。</p>
+</li>
+<li>
+<p><strong>PCA 用于比较构象 landscape</strong>：通过比较 apo/holo 的 PC1 贡献率（44.2% vs 30.4%）和 PC1-PC2 投影面积，可以定量比较配体结合对构象 ensemble 的影响。</p>
+</li>
+<li>
+<p><strong>DSSP 时间分辨分析</strong>：追踪特定 loop 区域（如残基 100-111）的二级结构随时间的变化，可以识别配体诱导的二级结构转变及其时间尺度。</p>
+</li>
+<li>
+<p><strong>LIE 方法作为快速结合自由能估算</strong>：在无法使用 MM-PBSA 时（如力场限制），LIE 方法提供了一种计算成本较低的替代方案。</p>
+</li>
+</ol>
+<h3>可迁移的设计原则</h3>
+<ol>
+<li>
+<p><strong>配体设计应考虑动态效应</strong>：高效抑制剂可能通过稳定特定构象亚态（而非最大化静态接触）来发挥作用。设计时应考虑配体对蛋白质构象 ensemble 的影响，而非仅关注结合位点的几何互补。</p>
+</li>
+<li>
+<p><strong>"部分占据"活性位点的策略</strong>：SangfA 不完全占据催化位点（Arg55 未接触），但通过稳定 loop 构象实现高效抑制。这提示"别构调控"或"部分占据"可能是设计高选择性抑制剂的策略。</p>
+</li>
+<li>
+<p><strong>构象熵作为设计指标</strong>：配体结合导致的构象熵变化（增加或减少）可能影响结合自由能和选择性。在设计配体时，可以考虑如何调控靶蛋白的构象熵。</p>
+</li>
+</ol>
+<h3>对蛋白质结构相关计算研究 × AI/物理模拟的迁移建议</h3>
+<ol>
+<li>
+<p><strong>MD 作为 AlphaFold 结构的动态验证工具</strong>：对 AlphaFold 预测的蛋白质-配体复合物结构进行 MD 模拟，可以检验预测结构的动态稳定性，并识别可能的构象重排。</p>
+</li>
+<li>
+<p><strong>构象 ensemble 作为 AI 训练数据</strong>：MD 生成的构象 ensemble（特别是配体诱导的构象变化）可以作为训练蛋白质-配体结合预测模型或构象生成模型的数据。</p>
+</li>
+<li>
+<p><strong>动态特征作为 AI 模型输入</strong>：将 MD 导出的动态特征（如 RMSF、氢键持久性、二级结构转变概率）作为机器学习模型的输入特征，可能提高结合亲和力预测的准确性。</p>
+</li>
+<li>
+<p><strong>"动态指纹"用于配体分类</strong>：不同配体可能诱导靶蛋白产生不同的"动态指纹"（RMSF 模式、聚类分布、PC 贡献率），这些指纹可用于配体分类和虚拟筛选。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<h3>相似工作</h3>
+<ol>
+<li>
+<p><strong>CypA-CsA 复合物的 MD 研究</strong>：本文引用了 Heal et al. (2015) [55] 对 CypA-CsA 复合物氢键稳定性的研究。本文的发现（氢键网络动态性）与 Heal 等人的结果一致，但进一步揭示了 SangfA 特有的动态效应。</p>
+</li>
+<li>
+<p><strong>CypA-SangfA 晶体结构</strong>：Kallen et al. [56] 报道了 CypA-SangfA 复合物的高分辨率晶体结构，显示 6 个氢键。本文通过 MD 发现这些氢键在溶液中高度动态，挑战了静态晶体结构的解读。</p>
+</li>
+<li>
+<p><strong>Eisenmesser et al. [57] 对 CypA 动态 loop 的 NMR 研究</strong>：该研究识别了 L98-S99 区域为催化动态 loop。本文发现 SangfA 诱导该区域附近的 β-strand 形成，与 NMR 观察到的动态区域一致。</p>
+</li>
+</ol>
+<h3>可组合的方法</h3>
+<ol>
+<li>
+<p><strong>MD + 增强采样</strong>：本文使用常规 MD，未采用增强采样方法。可组合 REMD、元动力学或伞形采样来更全面地刻画构象 landscape，特别是验证 coil-to-β-strand 转变的自由能面。</p>
+</li>
+<li>
+<p><strong>MD + 机器学习势函数</strong>：GROMOS96 43a1 是经典力场，精度有限。可组合机器学习势函数（如 ANI、MACE、DeepMD）进行更精确的模拟，特别是对配体-蛋白质相互作用能的描述。</p>
+</li>
+<li>
+<p><strong>MD + AlphaFold</strong>：AlphaFold 可预测 CypA-SangfA 复合物的静态结构，MD 可探索其动态行为。两者组合可提供"静态预测 + 动态验证"的完整框架。</p>
+</li>
+<li>
+<p><strong>MD + 自由能微扰（FEP）</strong>：LIE 方法精度有限，可组合 FEP 计算更精确的结合自由能，并分解为残基级别的贡献。</p>
+</li>
+</ol>
+<h3>潜在冲突</h3>
+<ol>
+<li>
+<p><strong>"构象多样性增加"与"抑制活性"的关系</strong>：传统观点认为抑制剂应减少蛋白质的构象多样性（"锁定"非活性构象）。本文发现 SangfA 反而增加了整体构象多样性，这与传统观点存在张力。可能的解释是：抑制活性主要来自活性位点 loop 的局部刚性化，而非整体构象的冻结。</p>
+</li>
+<li>
+<p><strong>Arg55 的角色</strong>：晶体结构 [56] 和既往文献 [64] 认为 Arg55 是底物脯氨酸的关键识别残基。本文发现 Arg55 未直接接触 SangfA，这与"Arg55 是抑制剂锚定位点"的传统观点存在冲突。可能的解释是 Arg55 通过水介导的间接作用参与结合。</p>
+</li>
+<li>
+<p><strong>SangfA 与 CsA 的机制差异</strong>：CsA 主要通过疏水接触和氢键网络与 CypA 结合，而本文发现 SangfA 还诱导二级结构转变。这提示不同抑制剂可能通过不同机制发挥作用，需要分别研究。</p>
+</li>
+</ol>
+<h3>概念框架</h3>
+<ol>
+<li>
+<p><strong>构象选择 vs 诱导契合</strong>：本文的发现（配体稳定预先存在的亚态）支持构象选择模型。这一框架可用于理解其他蛋白质-配体体系。</p>
+</li>
+<li>
+<p><strong>熵-焓补偿</strong>：配体结合通常伴随熵损失（构象自由度减少），但本文发现 SangfA 结合反而增加了蛋白质的构象熵。这提示结合自由能中熵-焓补偿的复杂性。</p>
+</li>
+<li>
+<p><strong>别构调控的动态机制</strong>：本文发现的"局部刚性化-全局柔性化"模式可能是一种普遍的别构调控机制，即配体通过改变蛋白质的动态 landscape 而非静态构象来传递信号。</p>
+</li>
+</ol>
+<hr />
+<h2>16 研究想法</h2>
+<blockquote>
+<p>标题：Agent 生成的研究候选</p>
+</blockquote>
+<h3>候选 1：基于 MD 衍生的"动态指纹"开发 CypA 抑制剂分类模型</h3>
+<ul>
+<li><strong>名称</strong>: Dynamic Fingerprint-Based Classification of Cyclophilin Inhibitors</li>
+<li><strong>来源局限/观察</strong>: 本文发现 SangfA 和 CsA 可能通过不同机制抑制 CypA（SangfA 诱导 β-strand 转变，CsA 主要依赖静态氢键网络）。传统基于静态结构的抑制剂分类可能忽略了机制差异。</li>
+<li><strong>核心假设</strong>: 不同 CypA 抑制剂诱导的蛋白质动态响应模式（RMSF 谱、二级结构转变、聚类分布）可以作为分类特征，区分抑制剂的结合机制。</li>
+<li><strong>初步方法</strong>: (1) 对一系列已知 CypA 抑制剂（CsA 衍生物、Sanglifehrin 类似物、非免疫抑制小分子）进行 100-500 ns MD 模拟；(2) 提取每体系的 RMSF 谱、DSSP 时间序列、PCA 特征、聚类分布作为"动态指纹"；(3) 使用无监督学习（如 t-SNE、UMAP）或监督学习（如随机森林、SVM）对抑制剂进行分类；(4) 将分类结果与实验 IC50 和结合模式关联。</li>
+<li><strong>验证方式</strong>: 与已知实验数据（IC50、NMR 化学位移扰动、突变研究）对比；留一法交叉验证分类器性能。</li>
+<li><strong>可能的失败模式</strong>: 不同力场或模拟条件可能导致动态指纹不稳定；分类结果可能仅反映结合亲和力而非机制差异。</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<h3>候选 2：利用增强采样 MD 验证 CypA-SangfA 的构象选择机制</h3>
+<ul>
+<li><strong>名称</strong>: Enhanced Sampling Validation of Conformational Selection in CypA-SangfA Binding</li>
+<li><strong>来源局限/观察</strong>: 本文基于 100 ns 常规 MD 推断构象选择机制，但常规 MD 的采样效率有限，无法充分验证"配体稳定预先存在的亚态"这一核心假设。</li>
+<li><strong>核心假设</strong>: 在无偏增强采样下，apo CypA 的构象 ensemble 中已存在与 SangfA 结合态相似的 β-strand 富集亚态；SangfA 结合只是提高了该亚态的占有率。</li>
+<li><strong>初步方法</strong>: (1) 对 apo CypA 进行副本交换 MD（REMD）或元动力学模拟（以 β2-β3 loop 的构象为集合变量）；(2) 构建自由能曲面（FES），识别 apo 状态的低能亚态；(3) 将 SangfA 结合态结构映射到 FES 上，检验其是否对应 apo 状态的预存亚态；(4) 计算结合态与 apo 亚态之间的构象重叠度。</li>
+<li><strong>验证方式</strong>: 与本文的常规 MD 结果对比；与 NMR 实验（如 CPMG 弛豫弥散）预测的激发态构象对比。</li>
+<li><strong>可能的失败模式</strong>: 集合变量选择不当可能遗漏关键构象转变；力场偏差可能影响 β-strand 倾向性的定量预测。</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<h3>候选 3：基于 MD 衍生的构象 ensemble 训练蛋白质-配体结合预测模型</h3>
+<ul>
+<li><strong>名称</strong>: MD-Derived Conformational Ensembles for Training Protein-Ligand Binding Predictors</li>
+<li><strong>来源局限/观察</strong>: 本文展示了配体结合显著改变 CypA 的构象 ensemble（cluster 数、PC 分布、二级结构含量）。传统基于单一静态结构的结合预测模型（如分子对接评分函数、机器学习预测器）忽略了这种构象多样性。</li>
+<li><strong>核心假设</strong>: 将 MD 衍生的构象 ensemble 作为训练数据，可以训练出比基于单一结构训练的模型更准确的蛋白质-配体结合预测器。</li>
+<li><strong>初步方法</strong>: (1) 对一组蛋白质-配体复合物（如 PDBbind 子集）进行短 MD 模拟（50-100 ns）；(2) 从 MD 轨迹中提取多样化的结合态构象；(3) 使用这些构象作为训练数据，训练图神经网络或 Transformer 模型预测结合亲和力；(4) 与基于晶体结构的模型对比。</li>
+<li><strong>验证方式</strong>: 在 PDBbind 测试集和 CASF 基准上评估预测精度；与 AlphaFold 3 等结构预测工具的输出对比。</li>
+<li><strong>可能的失败模式</strong>: MD 模拟的计算成本限制了可处理的体系数量；构象 ensemble 的多样性可能引入噪声而非有效信号。</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<h3>候选 4：CypA 别构位点的动态分析用于设计非竞争性抑制剂</h3>
+<ul>
+<li><strong>名称</strong>: Dynamic Allosteric Site Identification in CypA for Non-Competitive Inhibitor Design</li>
+<li><strong>来源局限/观察</strong>: 本文发现 SangfA 结合诱导远端 loop 的流动性增加和构象 ensemble 的扩大，提示存在别构效应。但本文未系统分析这些远端变化是否构成可药用的别构位点。</li>
+<li><strong>核心假设</strong>: CypA 存在可药用的别构位点，配体结合该位点可通过动态效应（而非直接竞争）调节 PPIase 活性。</li>
+<li><strong>初步方法</strong>: (1) 对 apo 和 holo CypA 的 MD 轨迹进行动态网络分析（Dynamical Network Analysis）和社区检测，识别配体结合与远端区域之间的通信路径；(2) 使用混合溶剂 MD（cosolvent MD）或 FTMap 识别潜在的别构口袋；(3) 对候选别构位点进行虚拟筛选；(4) 对筛选出的化合物进行 MD 验证其动态效应。</li>
+<li><strong>验证方式</strong>: 与实验突变数据（如本文引用的 L98-S99 动态区域）对比；SPR 或 ITC 实验验证别构配体结合。</li>
+<li><strong>可能的失败模式</strong>: 动态网络分析可能识别出与功能无关的通信路径；别构位点的可药性可能较低。</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<h3>候选 5：利用 MD 衍生的构象变化增强 AlphaFold 3 的配体结合预测</h3>
+<ul>
+<li><strong>名称</strong>: MD-Augmented AlphaFold 3 Predictions for Cyclophilin-Ligand Complexes</li>
+<li><strong>来源局限/观察</strong>: AlphaFold 3 等 AI 结构预测工具通常预测静态结构，无法捕捉本文发现的配体诱导的动态构象变化（如 β2-β3 loop 的 coil-to-β-strand 转变）。</li>
+<li><strong>核心假设</strong>: 将 AlphaFold 3 预测的结构作为 MD 模拟的起点，可以比单独使用任一方法更准确地预测蛋白质-配体复合物的功能相关构象。</li>
+<li><strong>初步方法</strong>: (1) 使用 AlphaFold 3 预测 CypA-SangfA 复合物结构；(2) 以预测结构为起点进行多副本 MD 模拟（3 × 200 ns）；(3) 比较 MD 平衡后的构象与 AlphaFold 3 预测结构的差异，特别是 β2-β3 loop 区域；(4) 评估 MD 是否能够"修正"AlphaFold 3 预测中的非功能构象。</li>
+<li><strong>验证方式</strong>: 与本文的 MD 结果（从晶体结构出发）对比；与实验结构（如冷冻电镜或共晶结构）对比。</li>
+<li><strong>可能的失败模式</strong>: AlphaFold 3 预测结构可能已经接近功能构象，MD 修正效果有限；计算成本较高。</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, discussion, conclusion) without figures, tables, or supplementary material</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodological rigor, internal consistency, and interpretation of results as presented in the text</li>
+<li><strong>Shared manuscript claim summary</strong> The authors report that 100 ns all-atom MD simulations of apo CypA and CypA-SangfA complex reveal that SangfA binding induces local rigidification of the β2-β3 loop (residues 100-102, 108-111) with a coil-to-β-strand transition, increased flexibility in distal loops, a 1.1-fold expansion of conformational ensemble, redistribution of PCA modes, and a binding free energy of -20.45 ± 3.07 kcal/mol, supporting a conformational selection mechanism of inhibition.</li>
+<li><strong>Visible evidence base</strong> Text descriptions of results from RMSD, RMSF, SASA, hydrogen bonding, clustering, DSSP secondary structure, PCA, and LIE binding free energy analyses</li>
+<li><strong>Missing materials affecting confidence</strong> Figures 1-15, Table 1, Table 2, Table 3, Table 4, Supplementary S1 Data, Supplementary S1 Video, and all equations (Equations 1-3 and the LIE equation) were not provided</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This manuscript presents a molecular dynamics study of CypA in complex with SangfA, a topic of potential interest to the drug discovery community. The authors report a number of interesting observations, including a coil-to-β-strand transition in the β2-β3 loop and a redistribution of conformational dynamics upon ligand binding. However, the manuscript has several significant issues that prevent a positive assessment. The most serious concern is a direct internal contradiction: the abstract and conclusion state that Arg55 anchors the ligand via hydrogen bonds, while the results section explicitly states that Arg55 shows no contact (0% occupancy) and "remains uninvolved." This contradiction is not resolved anywhere in the text. Additionally, the reported binding free energy of -20.45 kcal/mol is inconsistent with the stated picomolar potency, and the LIE method with the parameters used is not appropriate for a ligand of this size. The manuscript also contains numerous typographical errors, unclear statements, and missing methodological details that undermine confidence in the results. The claim of conformational selection is not well supported by the data presented, as the authors themselves note that the holo state explores a broader conformational space, which is more consistent with an induced-fit or population-shift model that is not clearly distinguished from conformational selection. The manuscript requires major revisions and additional analyses before the claims can be considered established.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Researchers in computational drug discovery and structural biology, particularly those working on cyclophilin inhibitors for antiviral and anticancer applications. The study addresses a clinically relevant target and provides a dynamic perspective on inhibitor binding that could inform future drug design efforts. The methodological approach, combining MD simulation with essential dynamics and clustering analyses, may also be of interest to computational chemists studying protein-ligand interactions.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong>
+  1. The study addresses a clinically relevant target (CypA) with a known potent inhibitor (SangfA), and the dynamic perspective offered by MD simulation is a valuable complement to static structural studies.
+  2. The authors employ a range of complementary analytical techniques (RMSD, RMSF, SASA, hydrogen bonding, clustering, DSSP, PCA, LIE) to characterize the binding effects.
+  3. The observation of a coil-to-β-strand transition in the β2-β3 loop is a specific, testable prediction that could guide future experimental validation.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Internal consistency</li>
+<li><strong>Claim pointer</strong> The abstract states that the ligand forms a hydrogen-bond network "anchored by Arg55," and the conclusion repeats that the ligand is "anchored persistently by Arg55." However, the results section states that "ARG residues were never within the cutoff distance, averaging 16.67 nm away" and that "Arg55 remains uninvolved."</li>
+<li><strong>Evidence pointer</strong> Abstract; Results section "The binding interface is characterized by a specific ionic interaction rather than distributed salt bridges"; Conclusion</li>
+<li><strong>Concern</strong> This is a direct and unresolved contradiction. The abstract and conclusion claim Arg55 anchors the ligand via hydrogen bonds, while the results explicitly report that Arg55 has 0% contact occupancy and is never within the cutoff distance. The authors cannot have it both ways. Either the results are wrong, or the abstract and conclusion are wrong. This contradiction fundamentally undermines the reliability of the reported findings.</li>
+<li><strong>Why it matters</strong> The role of Arg55 is a key mechanistic claim of the paper. Arg55 is a known catalytically important residue in CypA, and whether SangfA engages it or not has implications for the proposed mechanism of inhibition. A reader cannot trust the conclusions if the central results contradict them.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must reconcile this contradiction. If Arg55 is not in contact, the abstract and conclusion must be corrected. If Arg55 is in contact, the results section must be corrected with appropriate evidence (e.g., distance plots, occupancy data). The corrected text must be internally consistent.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Quantitative rigor</li>
+<li><strong>Claim pointer</strong> The computed binding free energy is reported as ΔG = -20.45 ± 3.07 kcal/mol, and the authors state this "accords with picomolar potency."</li>
+<li><strong>Evidence pointer</strong> Abstract; Results section "Binding free energy analysis using LIE method"</li>
+<li><strong>Concern</strong> A binding free energy of -20.45 kcal/mol corresponds to a dissociation constant (Kd) of approximately 10^-15 M (femtomolar), not picomolar (10^-12 M). The relationship ΔG = RT ln(Kd) at 300 K gives ΔG = -16.4 kcal/mol for 1 pM. The reported value is far too negative to be consistent with picomolar potency. Furthermore, the LIE method with α = 0.18 and β = 0.50 is calibrated for relatively small, drug-like molecules, and applying it to a large macrocyclic natural product like SangfA (molecular weight ~1000 Da) without validation is questionable. The authors also do not report the individual van der Waals and electrostatic energy components, nor do they provide any error estimate beyond the standard deviation.</li>
+<li><strong>Why it matters</strong> The binding free energy is a central quantitative result of the paper. If it is inconsistent with the known experimental potency, the validity of the computational protocol is called into question. This affects the credibility of all other quantitative claims in the paper.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must either (a) recalculate the binding free energy using a more appropriate method (e.g., MM-PBSA with a suitable force field, or a validated LIE parameter set for macrocycles), or (b) provide a clear explanation for why the LIE result deviates from the experimental potency. The reported value must be consistent with the known picomolar affinity of SangfA.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological transparency</li>
+<li><strong>Claim pointer</strong> The methods section describes the simulation protocol, but several critical details are missing or unclear.</li>
+<li><strong>Evidence pointer</strong> Materials and methods section "Molecular dynamics simulation"</li>
+<li><strong>Concern</strong> The following details are not provided: (a) the specific force field parameters for SangfA (how were partial charges derived? what parameterization approach was used?); (b) the protonation states of ionizable residues; (c) the water model details beyond "simple point charge"; (d) the equilibration protocol specifics (number of steps, convergence criteria); (e) the temperature and pressure coupling details are given but the barostat coupling type is not specified; (f) the total number of atoms and system size; (g) the simulation box dimensions and shape; (h) the method for generating the initial complex structure (the authors state "as described before" but do not provide sufficient detail for reproduction). Additionally, the authors state the topology was generated using "GROMACS utilities" for the protein, but the specific GROMACS version is inconsistent (v2023 in the abstract, 5.1.4 in the methods).</li>
+<li><strong>Why it matters</strong> Reproducibility is a cornerstone of computational research. Without complete methodological details, other researchers cannot replicate the simulations or assess the validity of the results. The version inconsistency is also concerning.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must provide a complete description of the simulation setup, including all force field parameters, system composition, and a consistent software version. A detailed methods section or a link to a repository with input files and parameter files would be acceptable.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Claim pointer</strong> The authors report a chi-square test (χ² = 17776.30, p &lt; 0.001) for secondary structure comparison and t-tests for SASA differences, but no effect sizes or confidence intervals are reported for most comparisons.</li>
+<li><strong>Evidence pointer</strong> Results section "Ligand binding induces a statistically significant reorganization of secondary structure"; Materials and methods section "Statistical analysis"</li>
+<li><strong>Concern</strong> The chi-square test on a full 8-state secondary structure count table with such a large χ² value is almost certainly trivially significant given the large number of frames (8000+ per system). The authors do not report Cramér's V or any other effect size measure. Similarly, the t-test for SASA (78.42 vs 76.58 nm²) reports p &lt; 0.001 but the difference is only 2.4%, and no effect size (Cohen's d) is reported despite the methods section claiming it would be computed. The biological significance of such small differences is unclear.</li>
+<li><strong>Why it matters</strong> Statistical significance does not imply biological significance. Without effect sizes, the reader cannot judge whether the reported differences are meaningful. The large sample sizes in MD simulations make trivial differences statistically significant.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must report effect sizes (e.g., Cramér's V for chi-square, Cohen's d for t-tests) and confidence intervals for all statistical comparisons. They should also discuss the biological relevance of the observed differences.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interpretation of results</li>
+<li><strong>Claim pointer</strong> The authors claim that "SangfA acts via conformational selection, stabilizing a pre-existing CypA substate with augmented β-structure and broader dynamics."</li>
+<li><strong>Evidence pointer</strong> Abstract; Discussion section</li>
+<li><strong>Concern</strong> The data presented do not clearly distinguish conformational selection from induced fit. The authors show that the holo state has a broader conformational ensemble (more clusters, more distributed PCA modes), which is actually more consistent with induced fit or a population-shift model where the ligand stabilizes a higher-energy state. Conformational selection typically involves the ligand binding to a pre-existing conformation that is already populated in the apo state, which would predict a narrowing of the ensemble, not an expansion. The authors do not provide any evidence (e.g., apo-state pre-population of the bound conformation, transition path analysis) to support their claim.</li>
+<li><strong>Why it matters</strong> The proposed mechanism is a central conclusion of the paper. If the data do not support the conformational selection model, the interpretation is incorrect and could mislead future drug design efforts.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must either (a) provide additional analysis to support the conformational selection claim (e.g., showing that the bound conformation is populated in the apo ensemble), or (b) revise their interpretation to be consistent with the data, such as describing the mechanism as induced fit or a hybrid model.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The abstract states "Arg55 remains uninvolved" in one sentence while also claiming the ligand is "anchored by Arg55" in the same paragraph. This is confusing and appears to be a typographical error.</li>
+<li>
+<p><strong>Required correction</strong> Clarify the role of Arg55. If Arg55 is not involved, remove the "anchored by Arg55" claim. If it is involved, correct the "remains uninvolved" statement.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Results section "Binding free energy analysis using LIE method"</li>
+<li><strong>Evidence pointer</strong> Results section</li>
+<li><strong>Issue</strong> The text states "Lenard-Jones" and "Ciulombic" which are misspellings of "Lennard-Jones" and "Coulombic."</li>
+<li>
+<p><strong>Required correction</strong> Correct the spelling errors.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Discussion section</li>
+<li><strong>Evidence pointer</strong> Discussion section</li>
+<li><strong>Issue</strong> The sentence "Future NMR and X-ray crystallographic experiments can be conducted to validate the predicted conformational switch in the β2-β3 loop on the CypA-SangfA complex would be invaluable" is grammatically incorrect and unclear.</li>
+<li>
+<p><strong>Required correction</strong> Rewrite the sentence, e.g., "Future NMR and X-ray crystallographic experiments to validate the predicted conformational switch in the β2-β3 loop of the CypA-SangfA complex would be invaluable."</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Conclusion</li>
+<li><strong>Evidence pointer</strong> Conclusion</li>
+<li><strong>Issue</strong> The sentence "the increased CypA's conformational upun SangfA bonding" contains a typo ("upun" should be "upon") and is grammatically awkward.</li>
+<li>
+<p><strong>Required correction</strong> Rewrite, e.g., "the increased conformational dynamics of CypA upon SangfA binding."</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Consistency</li>
+<li><strong>Affected element</strong> Materials and methods section</li>
+<li><strong>Evidence pointer</strong> Materials and methods section "Molecular dynamics simulation"</li>
+<li><strong>Issue</strong> The abstract states GROMACS v2023 was used, while the methods section states GROMACS 5.1.4. This inconsistency must be resolved.</li>
+<li>
+<p><strong>Required correction</strong> Use a consistent GROMACS version throughout the manuscript.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Results section "The catalytic site shows partial engagement while the canonical hydrophobic pocket is largely bypassed"</li>
+<li><strong>Evidence pointer</strong> Results section</li>
+<li><strong>Issue</strong> The text mentions "PHE102, GLU103, ALA104, LYS105, ALA106" as a cluster with 100% contact occupancy, but the relationship between these residues and the previously mentioned β2-β3 loop (residues 100-111) is not clearly explained. The text also refers to "PHE46 (β5, 100%)" and "LYS64, LYS66, THR63 (β7, 90-94%)" but the secondary structure assignments are not defined.</li>
+<li>
+<p><strong>Required correction</strong> Clarify the secondary structure assignments and the relationship between the identified clusters and the β2-β3 loop.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m7</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Results section "Ligand binding increases conformational diversity and reduces structural convergence"</li>
+<li><strong>Evidence pointer</strong> Results section</li>
+<li><strong>Issue</strong> The text states "the number of effective conformations, calculated as total frames divided by the average cluster size, increased by 124% upon ligand binding (Holo: 75.0; Apo: 66.0)." However, 75/66 = 1.136, which is a 13.6% increase, not 124%. The calculation method is also unclear.</li>
+<li>
+<p><strong>Required correction</strong> Clarify the calculation method and correct the percentage increase.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m8</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Results section "Ligand binding increases conformational diversity and reduces structural convergence"</li>
+<li><strong>Evidence pointer</strong> Results section</li>
+<li><strong>Issue</strong> The text reports "a 26% greater standard deviation (Holo: 374,970 nm; Apo: 298,466 nm)" for inter-cluster RMSD values. These values are implausibly large for RMSD in nanometers (374,970 nm = 374.97 μm). This appears to be a unit error or a misreporting of the data.</li>
+<li>
+<p><strong>Required correction</strong> Correct the units or the reported values.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m9</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Results section "Ligand binding induces subtle shifts in backbone dihedral distributions and secondary structure propensity"</li>
+<li><strong>Evidence pointer</strong> Results section</li>
+<li><strong>Issue</strong> The text states "The proportion of residues in the core α-helical region increased by 1.9 percentage points upon ligand binding. Concurrently, the population of the core β-strand region decreased by 2.1% points." These changes are small and the text does not report whether they are statistically significant.</li>
+<li>
+<p><strong>Required correction</strong> Report statistical significance and effect sizes for these comparisons.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m10</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Materials and methods section "Calculation of linear interaction energy (LIE)"</li>
+<li><strong>Evidence pointer</strong> Materials and methods section</li>
+<li><strong>Issue</strong> The LIE equation is mentioned but not shown. The text states "the binding free energy is given by" but the equation is missing. The parameters α and β are stated, but the derivation of the equation and the specific implementation are not described.</li>
+<li><strong>Required correction</strong> Include the full LIE equation and describe the implementation details.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that Arg55 anchors the ligand via hydrogen bonds (abstract, conclusion) is directly contradicted by the results section, which reports 0% contact occupancy for Arg55. This claim is unsupported and internally inconsistent.</li>
+<li>The claim that the binding free energy of -20.45 ± 3.07 kcal/mol "accords with picomolar potency" is quantitatively incorrect. The reported value corresponds to femtomolar affinity, not picomolar.</li>
+<li>The claim of a conformational selection mechanism is not well supported by the data. The observed broadening of the conformational ensemble in the holo state is more consistent with induced fit or population shift, and no direct evidence for conformational selection is provided.</li>
+<li>The claim that the β2-β3 loop undergoes a coil-to-β-strand transition is based on DSSP analysis, but the statistical significance and magnitude of this change are not fully reported. The text reports mean β-sheet occupancy values for clusters but does not provide a clear comparison with the apo state.</li>
+<li>The claim that "SangfA increases CypA's conformational entropy" is inferred from PCA and clustering results, but no direct entropy calculation is performed. The relationship between the observed changes and thermodynamic entropy is not established.</li>
+<li>The claim that "the ligand remains tightly bound" is based on a 100 ns simulation, which may not be sufficient to observe dissociation events for a high-affinity ligand. The absence of dissociation in 100 ns does not establish stable binding.</li>
+<li>The reported inter-cluster RMSD values (374,970 nm and 298,466 nm) are physically implausible and suggest a unit error or data misreporting. Any conclusions based on these values are unreliable.</li>
+<li>The claim that "the ligand induces a conformational adjustment that increases the protein's overall solvent exposure" is based on a 2.4% SASA increase. The biological significance of this small change is not established, and the text does not report which specific residues contribute to the change.</li>
+<li>The claim that "SangfA's effector domain leaves the catalytic machinery only partially occluded" is speculative and not directly supported by the data presented.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

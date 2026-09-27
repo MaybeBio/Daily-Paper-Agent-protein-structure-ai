@@ -1,0 +1,80 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors propose a spectral measure of information, recast as Leff, defined as the number of fully independent alignment positions reproducing observed sequence diversity in MSAs. They claim Leff quantifies evolutionary constraints in RNA and protein MSAs, correlates with protein structure prediction accuracy, and measures diversity and overlap in experimental and computational libraries, establishing it as an operational tool for estimating effective information and guiding design.
+- **Visible evidence base** Abstract text only; no numerical results, methodological details, or validation data are visible
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, statistical analyses, benchmark datasets, and comparison to existing diversity measures
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting idea, namely the reinterpretation of a spectral measure as an interpretable effective number of independent positions in an MSA. The potential applications to evolutionary constraint quantification, structure prediction diagnostics, and library design are timely and could appeal to a broad computational biology audience. However, the abstract alone provides insufficient evidence to evaluate the validity, novelty, or robustness of the proposed measure. Key methodological details, validation against existing approaches, and quantitative results are absent. The claims, as stated, are plausible but not established from the supplied material.
+- **Who would be interested in the results, and why** Computational biologists working on protein and RNA evolution, developers of machine learning methods for biological sequences, and experimentalists involved in deep mutational scanning or directed evolution would find this work relevant. The proposed measure could inform MSA preprocessing, model training, and library design, making it of interest to both method developers and practitioners.
+- **Major strengths** The conceptual framing of a spectral measure as an interpretable count of independent positions is appealing and potentially useful. The abstract identifies a clear practical need, namely estimating effective information in MSAs, and proposes a unified tool with multiple downstream applications. The breadth of applications, from evolutionary analysis to structure prediction and library design, suggests a potentially versatile contribution.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that Leff is defined as the number of fully independent alignment positions that reproduce the observed sequence diversity.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The definition of Leff is stated but no mathematical formulation, derivation, or algorithmic description is provided. It is unclear how the spectral measure is recast, what assumptions underlie the definition, and how independence is operationalized.
+  - **Why it matters** Without a precise definition and derivation, the measure cannot be reproduced, validated, or compared to existing approaches. The core contribution of the paper hinges on this definition.
+  - **Resolution test** Provide the full mathematical definition, derivation, and pseudocode or algorithm for computing Leff, along with a worked example on a small MSA.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** The claim that evolutionary constraints nearly halve diversity in RNA MSAs relative to secondary structure alone, and that proteins show even lower effective diversity.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** No quantitative results, datasets, or statistical analyses are presented to support these claims. The magnitude of the effect, the number of MSAs analyzed, and the significance of the differences are not reported.
+  - **Why it matters** These are central empirical claims that establish the utility of Leff. Without supporting data, the reader cannot assess whether the observed effects are robust or specific to particular datasets.
+  - **Resolution test** Report the datasets analyzed, the distribution of Leff values, effect sizes, and appropriate statistical tests comparing Leff to secondary structure-based estimates and between RNA and protein MSAs.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that Leff correlates with protein structure prediction accuracy and anticipates cases with insufficient evolutionary signal.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** No correlation coefficients, benchmark datasets, or comparison to existing metrics such as the number of effective sequences or alignment depth are provided. It is unclear whether Leff adds predictive value beyond existing measures.
+  - **Why it matters** This claim positions Leff as a practical diagnostic tool. Without evidence of incremental utility over existing metrics, the practical value is not established.
+  - **Resolution test** Provide correlation analyses on standard benchmark sets, compare Leff to existing metrics in a regression or classification framework, and report confidence intervals and significance.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** The claim that Leff measures produced diversity and cross-library overlap in experimental and computational libraries, quantifying novelty.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** No details on the libraries analyzed, the definition of overlap, or the comparison to existing diversity measures are provided. The claim of quantifying novelty is not operationalized.
+  - **Why it matters** This application extends the utility of Leff to experimental design. Without validation on real or simulated libraries, the claim remains speculative.
+  - **Resolution test** Describe the libraries, define the overlap metric, and compare Leff-based novelty assessment to existing measures on benchmark datasets.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The term "spectral measure of information" is used without context or citation, which may confuse nonspecialist readers.
+  - **Required correction** Briefly explain the origin of the spectral measure or provide a citation in the abstract.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The phrase "evolutionary constraints nearly halve diversity relative to the secondary structure alone" is ambiguous regarding the baseline and the direction of the effect.
+  - **Required correction** Clarify the baseline and state whether Leff is lower or higher relative to the secondary structure-based estimate.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract does not mention any limitations of Leff or potential failure modes.
+  - **Required correction** Add a sentence on limitations, such as sensitivity to alignment quality or sequence redundancy.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4
+- **Assessment against Nature-style criteria** Originality: The idea of recasting a spectral measure as an interpretable effective count is potentially original, but the abstract does not demonstrate novelty relative to existing diversity measures such as effective sequence number or phylogenetic entropy. Scientific importance: The potential applications are important, but the evidence is insufficient to establish impact. Interdisciplinary readership: The abstract is written in a way that could appeal to computational biologists and experimentalists, but technical details are lacking. Technical soundness: Not assessable from the abstract; the definition and validation are missing. Readability for nonspecialists: The abstract is generally readable but uses undefined technical terms.
+- **Recommendation posture** Currently not established from the provided evidence. The idea is promising, but the abstract alone does not provide sufficient methodological detail or quantitative support. A full manuscript with rigorous validation would be required to assess the claims.
+
+## Risk / unsupported claims
+- The claim that Leff is a valid measure of effective information is unsupported without a mathematical definition and derivation.
+- The quantitative claims about RNA and protein diversity reduction are unsupported without data.
+- The correlation with protein structure prediction accuracy is unsupported without correlation coefficients and benchmarks.
+- The utility of Leff for library diversity and overlap measurement is unsupported without experimental or simulated validation.
+- The claim that Leff can "anticipate modeling difficulties" is speculative and not operationalized.

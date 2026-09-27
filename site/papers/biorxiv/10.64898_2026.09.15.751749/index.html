@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PREpiBind: Protein Representation-integrated Epitope–MHC Class II Binding Prediction · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>PREpiBind: Protein Representation-integrated Epitope–MHC Class II Binding Prediction</h1>
+      <div class="meta">Jang DH; Kim D; Park B; Hwang U; Choi Y; Lee J</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-21
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.15.751749">原文</a>
+      </div>
+      <p class="one-liner">该文开发了整合多种蛋白表征的pMHC-II结合预测框架PREpiBind，虽以肽-MHC结合预测为核心，但系统评估了结构预测衍生表征和蛋白语言模型在蛋白质序列-结构表征中的适用性，对蛋白质结构计算建模有方法学参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Accurate prediction of peptide–MHC class II (pMHC-II) binding remains challenging because of extensive MHC polymorphism and context-dependent peptide recognition, and it is unclear which protein representation best captures these determinants when the downstream model is held fixed. Here, we present PREpiBind, a pMHC-II prediction method based on a dual-stream, joint-attention framework that integrates MHC and epitope representations. We integrated ten protein representations spanning substitution-matrix, structure-prediction-derived, and protein language model (PLM) families and evaluated them under a common downstream architecture and identical splits across Qualitative, mass spectrometry (MS), and thresholded IC50 datasets. Overall, PREpiBind with PLM representations yielded higher performance than the evaluated reference methods in the Qualitative and MS datasets, whereas NetMHCIIpan-4.3 was higher on the thresholded IC50 datasets using its binding-affinity head. In pooled evaluations, PLM representations yielded the highest ROC-AUC values among the tested representations. ESM3 Large led the Qualitative dataset with an AUC value of 0.927 ± 0.002, and PLMs also led on the MS and thresholded IC50 datasets. This advantage remained, but narrowed in allele-wise and leave-one-molecule-out evaluations, where structure-prediction-derived Chai-1 was competitive with the leading PLM representations. Under cross-species H2-out transfer, PLMs led when all H2 rows were pooled, whereas Chai-1 led when the eight H2 molecules were weighted equally. The small H2 panel did not support a stable ordering among these leading representations. The results indicate that protein representation choice should depend on the intended prediction scenario rather than on a single global ranking. PREpiBind is an openly available pMHC-II prediction framework with modular and flexible protein representations.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">肽–MHC II类（pMHC-II）结合的准确预测仍具挑战性，原因在于MHC的高度多态性和依赖上下文的肽识别，且当下游模型固定时，尚不清楚哪种蛋白质表示最能捕捉这些决定因素。在此，我们提出PREpiBind，一种基于双流联合注意力框架的pMHC-II预测方法，该框架整合了MHC和表位表示。我们整合了十种蛋白质表示，涵盖替换矩阵、结构预测衍生和蛋白质语言模型（PLM）家族，并在共同的下游架构和相同的划分下，对定性、质谱（MS）和阈值化IC50数据集进行了评估。总体而言，采用PLM表示的PREpiBind在定性和MS数据集中表现优于所评估的参考方法，而NetMHCIIpan-4.3在阈值化IC50数据集中使用其结合亲和力头时表现更高。在汇总评估中，PLM表示在测试的表示中获得了最高的ROC-AUC值。ESM3 Large在定性数据集中领先，AUC值为0.927 ± 0.002，PLM在MS和阈值化IC50数据集中也领先。这一优势在等位基因-wise和留一分子-out评估中仍然存在，但有所缩小，其中结构预测衍生的Chai-1与领先的PLM表示相当。在跨物种H2-out转移中，当所有H2行汇总时，PLM领先，而当八个H2分子等权时，Chai-1领先。小型H2面板未能支持这些领先表示之间的稳定排序。结果表明，蛋白质表示的选择应取决于预期的预测场景，而非单一的全局排名。PREpiBind是一个公开可用的pMHC-II预测框架，具有模块化和灵活的蛋白质表示。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：PREpiBind: Protein Representation-integrated Epitope–MHC Class II Binding Prediction</li>
+<li><strong>作者</strong>：Jang DH; Kim D; Park B; Hwang U; Choi Y; Lee J</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法学/基准评估型）</li>
+<li><strong>领域</strong>：免疫信息学 × 蛋白质表示学习 × 肽-MHC II 类结合预测</li>
+<li><strong>关键词</strong>：pMHC-II binding prediction, protein representation, protein language model, structure prediction, epitope, MHC class II</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.15.751749</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：Qualitative、mass spectrometry (MS)、thresholded IC50 数据集（具体来源未提供）</li>
+<li><strong>阅读日期</strong>：2026-09-21</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中<strong>蛋白质表示选择与下游预测任务适配</strong>的基准性研究。其核心贡献不是提出全新的结合预测架构，而是系统比较十种蛋白质表示（substitution-matrix、structure-prediction-derived、PLM 三大类）在固定下游架构（dual-stream joint-attention）下的表现，回答「哪种表示最适合 pMHC-II 结合预测」这一表示工程问题。对课题方向的启示在于：蛋白质表示的选择应依预测场景而定，而非追求单一全局最优。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文通过固定下游 dual-stream joint-attention 架构，系统比较十种蛋白质表示在 pMHC-II 结合预测中的表现，发现 PLM 表示在 pooled 评估中 ROC-AUC 最高（ESM3 Large 在 Qualitative 数据集达 0.927 ± 0.002），但该优势在 allele-wise 和 leave-one-molecule-out 评估中收窄，且跨物种 H2 转移时 Chai-1（structure-prediction-derived）在等权 H2 分子评估下领先，结论是表示选择应依预测场景而定。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：当下游 pMHC-II 结合预测模型固定时，哪种蛋白质表示（substitution-matrix、structure-prediction-derived、PLM）最能捕捉 MHC 多态性和上下文依赖的肽识别决定因素？</li>
+<li><strong>为什么重要</strong>：MHC-II 具有高度多态性，肽识别具有上下文依赖性，pMHC-II 结合预测对疫苗设计和免疫治疗有直接应用价值。表示选择直接影响预测性能上限，但此前缺乏在固定下游架构下的系统比较。</li>
+<li><strong>现有方法为何不足</strong>：已有 pMHC-II 预测方法（如 NetMHCIIpan）各自采用不同的表示和架构，性能差异无法归因于表示本身；缺乏在统一下游架构、相同数据划分下的公平比较。</li>
+<li><strong>精确研究问题</strong>：Can a systematic comparison of ten protein representations under a fixed downstream architecture reveal which representation family (PLM vs. structure-derived vs. substitution-matrix) yields the highest pMHC-II binding prediction performance, and does this ranking generalize across evaluation scenarios (pooled, allele-wise, leave-one-molecule-out, cross-species transfer)?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架构建，未经外部核验，标注为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期：序列谱/基序方法</td>
+<td>位置特异性打分矩阵、锚定残基基序</td>
+<td>简单、可解释</td>
+<td>无法捕捉长程互作和上下文依赖</td>
+<td>作为 baseline 背景</td>
+</tr>
+<tr>
+<td>中期：substitution-matrix 表示</td>
+<td>BLOSUM 等矩阵编码肽和 MHC 序列</td>
+<td>计算轻量、无需预训练</td>
+<td>缺乏进化深度和结构信息</td>
+<td>本文比较的表示家族之一</td>
+</tr>
+<tr>
+<td>近期：NetMHCIIpan 系列</td>
+<td>NetMHCIIpan-4.3</td>
+<td>大规模训练、binding-affinity head 强</td>
+<td>表示和架构耦合，难以归因</td>
+<td>本文参考方法之一</td>
+</tr>
+<tr>
+<td>当前：PLM 表示</td>
+<td>ESM2/ESM3 等</td>
+<td>捕捉进化上下文、迁移能力强</td>
+<td>计算成本高、表示维度大</td>
+<td>本文发现 pooled 评估下最优</td>
+</tr>
+<tr>
+<td>当前：structure-prediction-derived</td>
+<td>AlphaFold/Chai-1 等结构预测模型内部表示</td>
+<td>含结构先验</td>
+<td>计算昂贵、结构预测误差传播</td>
+<td>本文发现 allele-wise 和 H2 等权下具竞争力</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在统一下游架构下，首次系统比较三大表示家族，揭示表示选择与评估场景的交互效应。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表示选择缺乏公平比较</td>
+<td>不同方法采用不同表示+架构，性能差异无法归因</td>
+<td>下游架构和表示耦合，缺乏统一基准</td>
+<td>摘要：「unclear which protein representation best captures these determinants when the downstream model is held fixed」</td>
+</tr>
+<tr>
+<td>评估场景影响结论</td>
+<td>pooled 评估下 PLM 最优，但 allele-wise 和 leave-one-molecule-out 下优势收窄</td>
+<td>不同评估场景对表示的泛化能力要求不同</td>
+<td>摘要：「This advantage remained, but narrowed in allele-wise and leave-one-molecule-out evaluations」</td>
+</tr>
+<tr>
+<td>跨物种迁移不稳定</td>
+<td>跨物种 H2 转移时，pooled 下 PLM 领先，等权 H2 分子下 Chai-1 领先</td>
+<td>小样本 H2 面板不足以稳定排序</td>
+<td>摘要：「The small H2 panel did not support a stable ordering」</td>
+</tr>
+<tr>
+<td>单一全局排序误导</td>
+<td>追求单一最优表示可能忽略场景特异性</td>
+<td>表示性能依赖预测场景</td>
+<td>摘要：「protein representation choice should depend on the intended prediction scenario」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：构建 PREpiBind——一个 dual-stream、joint-attention 的 pMHC-II 结合预测框架，将 MHC 和表位（epitope）分别编码后融合。在此固定架构下，替换十种蛋白质表示（涵盖 substitution-matrix、structure-prediction-derived、PLM 三大类），在 Qualitative、MS、thresholded IC50 三类数据集上以相同划分评估。</p>
+<p><strong>2) 核心洞察</strong>：表示选择的「最优」不是绝对的，而是与评估场景耦合的。PLM 表示在 pooled 评估（数据量充足、多样性高）下优势明显；但当评估转向 allele-wise（每个等位基因独立评估）或 leave-one-molecule-out（泛化到未见分子）时，structure-prediction-derived 表示（Chai-1）的竞争力显著上升。这表明不同表示编码的信息类型（进化上下文 vs. 结构先验）在不同泛化需求下各有优势。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：在蛋白质相关预测任务中，表示选择不应仅看单一 benchmark 的全局指标，而应针对目标应用场景（如新等位基因预测、跨物种迁移、未知分子泛化）选择或组合表示。固定下游架构进行表示消融是归因表示贡献的有效实验范式，值得推广到其他蛋白质预测任务。</p>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：MHC-II 等位基因序列 + 表位（epitope）肽序列</li>
+<li><strong>输出</strong>：结合预测分数（用于 ROC-AUC 评估；具体输出形式——分类概率或亲和力值——未提供）</li>
+<li><strong>模块</strong>：
+  1. MHC 编码器：将 MHC 序列通过所选蛋白质表示编码为向量
+  2. 表位编码器：将表位序列通过所选蛋白质表示编码为向量
+  3. Joint-attention 融合模块：对 MHC 和表位表示进行交叉注意力融合
+  4. 预测头：基于融合表示输出结合分数</li>
+<li><strong>训练</strong>：在相同划分下训练所有表示变体；具体损失函数、优化器、训练轮数未提供</li>
+<li><strong>工具</strong>：十种蛋白质表示（具体列表未提供，但涵盖 substitution-matrix、structure-prediction-derived 如 AlphaFold/Chai-1、PLM 如 ESM 系列）</li>
+<li><strong>假设</strong>：固定下游架构时，表示差异是性能差异的主要来源；评估场景（pooled vs. allele-wise vs. leave-one-molecule-out vs. cross-species）影响表示相对排序</li>
+<li><strong>流程</strong>：MHC 和表位序列 → 各自表示编码 → joint-attention 融合 → 预测头 → 结合分数 → 按数据集和评估协议计算 ROC-AUC</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MHC 表示编码器</td>
+<td>将 MHC-II 序列编码为稠密向量</td>
+<td>MHC 多态性是结合特异性的主要决定因素</td>
+<td>输入：MHC 序列；输出：表示向量</td>
+<td>摘要：「integrates MHC and epitope representations」</td>
+<td>预期：无法捕捉等位基因特异性 [Analysis]</td>
+</tr>
+<tr>
+<td>表位表示编码器</td>
+<td>将表位肽序列编码为稠密向量</td>
+<td>肽序列决定结合特异性</td>
+<td>输入：表位序列；输出：表示向量</td>
+<td>同上</td>
+<td>预期：失去肽侧信息 [Analysis]</td>
+</tr>
+<tr>
+<td>Joint-attention 融合</td>
+<td>对 MHC 和表位表示进行交叉注意力</td>
+<td>捕捉 MHC-肽上下文依赖互作</td>
+<td>输入：双流表示；输出：融合表示</td>
+<td>摘要：「dual-stream, joint-attention framework」</td>
+<td>预期：退化为拼接或平均，损失互作建模 [Analysis]</td>
+</tr>
+<tr>
+<td>预测头</td>
+<td>输出结合分数</td>
+<td>将融合表示映射为预测</td>
+<td>输入：融合表示；输出：分数</td>
+<td>未提供具体结构</td>
+<td>预期：影响预测校准 [Analysis]</td>
+</tr>
+<tr>
+<td>表示替换机制</td>
+<td>模块化替换十种表示</td>
+<td>公平比较表示贡献</td>
+<td>输入：同一序列；输出：不同表示</td>
+<td>摘要：「modular and flexible protein representations」</td>
+<td>预期：无法归因表示差异 [Analysis]</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：以上「移除后影响」均为 [Analysis] 预期推断，非文中消融实验证据。文中未提供模块级消融数据。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用。摘要和正文未提供具体数学公式、损失函数或注意力计算式。所有性能以 ROC-AUC 报告，但未给出计算式。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：
+- Qualitative 数据集（规模未提供）
+- Mass spectrometry (MS) 数据集（规模未提供）
+- Thresholded IC50 数据集（规模未提供）
+- 跨物种 H2 转移数据集（H2 为小鼠 MHC-II 分子，8 个 H2 分子，规模未提供）</p>
+<p><strong>指标</strong>：ROC-AUC（所有比较均以此报告）</p>
+<p><strong>基线/参考方法</strong>：NetMHCIIpan-4.3（在 thresholded IC50 数据集上使用其 binding-affinity head）</p>
+<p><strong>评测协议</strong>：
+- 相同划分（identical splits）用于所有表示变体
+- 评估场景：pooled（合并评估）、allele-wise（逐等位基因）、leave-one-molecule-out（留一分子）、cross-species H2-out transfer（跨物种迁移）</p>
+<p><strong>骨干/仪器</strong>：未提供（无湿实验）</p>
+<p><strong>oracle 输入</strong>：不适用（纯计算预测）</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>十种表示在 Qualitative 数据集 pooled 评估</td>
+<td>PLM 表示优于其他家族</td>
+<td>固定下游架构、相同划分</td>
+<td>ESM3 Large AUC = 0.927 ± 0.002，为最高</td>
+<td>PLM 在 pooled 评估下最优</td>
+<td>不能说明 PLM 在所有场景最优</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>十种表示在 MS 数据集 pooled 评估</td>
+<td>PLM 表示优于其他家族</td>
+<td>同上</td>
+<td>PLM 表示最高（具体值未提供）</td>
+<td>PLM 在 MS 数据 pooled 下最优</td>
+<td>同上</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>十种表示在 thresholded IC50 数据集 pooled 评估</td>
+<td>PREpiBind 优于参考方法</td>
+<td>与 NetMHCIIpan-4.3 比较</td>
+<td>NetMHCIIpan-4.3 更高（使用 binding-affinity head）</td>
+<td>亲和力 head 在 IC50 任务上有优势</td>
+<td>不能说明 PREpiBind 整体劣于 NetMHCIIpan</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>Allele-wise 评估</td>
+<td>PLM 优势保持</td>
+<td>逐等位基因独立评估</td>
+<td>PLM 优势收窄</td>
+<td>表示优势在等位基因层面减弱</td>
+<td>不能说明 PLM 不再最优</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>Leave-one-molecule-out 评估</td>
+<td>PLM 优势保持</td>
+<td>留一分子泛化</td>
+<td>PLM 优势收窄，Chai-1 具竞争力</td>
+<td>结构派生表示在泛化场景有竞争力</td>
+<td>不能说明 Chai-1 全面超越 PLM</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>跨物种 H2-out 迁移（pooled）</td>
+<td>PLM 领先</td>
+<td>所有 H2 行 pooled</td>
+<td>PLM 领先</td>
+<td>PLM 在 pooled 跨物种迁移下最优</td>
+<td>不能说明 PLM 在等权 H2 下最优</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>跨物种 H2-out 迁移（等权 8 个 H2 分子）</td>
+<td>Chai-1 领先</td>
+<td>8 个 H2 分子等权平均</td>
+<td>Chai-1 领先</td>
+<td>结构派生表示在小样本等权场景下更优</td>
+<td>小样本面板不足以稳定排序</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限 pMHC-II 结合预测，不涉及 MHC-I、TCR 识别或下游免疫反应。</li>
+<li><strong>oracle/真值输入</strong>：使用公开数据集（Qualitative、MS、IC50），真值来源未提供；MS 数据可能包含非结合肽的噪声。</li>
+<li><strong>端到端状态</strong>：PREpiBind 是端到端可训练的预测框架，但表示本身是预训练或固定的（如 PLM、Chai-1），未进行任务特定微调（文中未说明是否微调）。</li>
+<li><strong>算力成本</strong>：未提供训练/推理成本；PLM 和结构预测表示的计算开销显著高于 substitution-matrix，但文中未量化。</li>
+<li><strong>历史数据依赖</strong>：依赖训练数据的等位基因覆盖度；跨物种 H2 面板仅 8 个分子，统计功效有限。</li>
+<li><strong>模型依赖</strong>：结论基于单一下游架构（dual-stream joint-attention）；其他架构下表示排序可能不同。</li>
+<li><strong>最难情形</strong>：allele-wise 和 leave-one-molecule-out 是更难场景，PLM 优势收窄；跨物种等权 H2 下 Chai-1 领先。</li>
+<li><strong>不确定性</strong>：小样本 H2 面板下排序不稳定，作者明确承认。</li>
+<li><strong>有边界的复述</strong>：在固定 dual-stream joint-attention 架构下，PLM 表示在 pooled 评估中取得最高 ROC-AUC（Qualitative 上 ESM3 Large 为 0.927 ± 0.002），但该优势在 allele-wise 和 leave-one-molecule-out 场景收窄；在跨物种 H2 等权评估下 Chai-1 领先；NetMHCIIpan-4.3 在 thresholded IC50 数据集上使用 binding-affinity head 时更高。表示选择应依预测场景而定。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小样本 H2 面板不足以稳定排序</td>
+<td>跨物种 H2-out 迁移中，8 个 H2 分子等权评估下 PLM 与 Chai-1 排序不稳定</td>
+<td>未提供</td>
+<td>摘要：「The small H2 panel did not support a stable ordering among these leading representations」</td>
+</tr>
+<tr>
+<td>表示选择依赖预测场景</td>
+<td>无单一表示在所有场景最优</td>
+<td>未提供</td>
+<td>摘要：「protein representation choice should depend on the intended prediction scenario」</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：作者未明确列出其他局限（如计算成本、数据偏差、架构泛化性等），以上为文中明确承认的两点。</p>
+</blockquote>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅报告 ROC-AUC，未报告 PR-AUC 或 F1</td>
+<td>结合预测中正负样本不平衡常见，ROC-AUC 可能高估性能</td>
+<td>影响对实际应用价值的判断</td>
+<td>补充 PR-AUC、F1、校准曲线</td>
+<td>摘要仅提及 ROC-AUC</td>
+</tr>
+<tr>
+<td>下游架构固定为 dual-stream joint-attention</td>
+<td>表示排序可能依赖此特定架构；其他架构（如 CNN、Transformer encoder-only）下结论可能不同</td>
+<td>限制结论泛化性</td>
+<td>在 2-3 种不同下游架构下重复表示比较</td>
+<td>摘要：「when the downstream model is held fixed」</td>
+</tr>
+<tr>
+<td>未说明 PLM 是否微调</td>
+<td>若 PLM 未微调，其表示可能未充分适配任务；若微调，则比较不公平</td>
+<td>影响表示比较的公平性</td>
+<td>明确报告微调状态；比较 frozen vs. fine-tuned</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>跨物种 H2 仅 8 个分子</td>
+<td>样本量过小，等权评估的排序可能受单个分子影响</td>
+<td>跨物种结论不可靠</td>
+<td>扩大 H2 面板或使用 bootstrap 置信区间</td>
+<td>摘要：「small H2 panel」</td>
+</tr>
+<tr>
+<td>未报告数据集规模与组成</td>
+<td>无法判断数据多样性对表示排序的影响</td>
+<td>影响结果可复现性</td>
+<td>提供数据集统计和划分细节</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>未与 NetMHCIIpan-4.3 在相同表示条件下比较</td>
+<td>参考方法使用不同表示和架构，性能差异可能来自架构而非表示</td>
+<td>削弱「表示比较」的纯净性</td>
+<td>将 NetMHCIIpan-4.3 的表示嵌入 PREpiBind 架构比较</td>
+<td>摘要：「NetMHCIIpan-4.3 was higher on the thresholded IC50 datasets using its binding-affinity head」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>固定下游架构的表示消融范式</strong>：在蛋白质预测任务中，若想归因表示贡献，应固定下游架构和训练协议，仅替换表示。此范式可直接迁移到蛋白质结构预测、构象采样、分子对接等任务中，用于选择最优编码器。</p>
+</li>
+<li>
+<p><strong>评估场景与表示选择的耦合</strong>：pooled 评估偏好 PLM（数据多样性高时利用进化上下文），而 allele-wise 和 leave-one-molecule-out 场景下结构派生表示（Chai-1）竞争力上升。这提示在蛋白质-配体对接或构象生成任务中，若目标是对未见蛋白泛化，应优先考虑结构派生表示。</p>
+</li>
+<li>
+<p><strong>跨物种迁移的评估陷阱</strong>：小样本（8 个 H2 分子）下等权评估与 pooled 评估给出不同排序，说明跨物种/跨家族迁移评估需谨慎，应报告两种聚合方式并检查稳定性。这对 MD 模拟或对接中的跨体系泛化评估有直接借鉴意义。</p>
+</li>
+<li>
+<p><strong>模块化表示集成框架</strong>：PREpiBind 的 dual-stream joint-attention 架构将 MHC 和表位分别编码后融合，这种「双流编码 + 交叉注意力」设计可迁移到蛋白质-配体、蛋白质-蛋白质相互作用预测中，替代简单的序列拼接。</p>
+</li>
+<li>
+<p><strong>参考方法比较的公平性</strong>：与 NetMHCIIpan-4.3 比较时，其 binding-affinity head 在 IC50 任务上占优，说明任务特定输出头（如回归 vs. 分类）对性能影响显著。在蛋白质结构预测或对接任务中，输出头设计（如能量项 vs. 直接坐标回归）同样关键。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>NetMHCIIpan 系列</strong>（Jensen et al., 2018; Reynisson et al., 2020）：本文直接以 NetMHCIIpan-4.3 为参考方法，比较其在 thresholded IC50 数据集上的表现。NetMHCIIpan 采用 ANN 架构和序列谱表示，本文的贡献在于系统比较更现代的 PLM 和结构派生表示。</li>
+<li><strong>ESM 系列</strong>（Lin et al., 2023; Hayes et al., 2024）：ESM3 Large 在 Qualitative 数据集上取得最高 AUC，验证了大规模 PLM 表示在免疫表位预测中的迁移能力。这与 ESM 在结构预测（ESMFold）中的成功一致。</li>
+<li><strong>AlphaFold/Chai-1</strong>（Jumper et al., 2021; Chai Discovery, 2024）：结构派生表示在 allele-wise 和 leave-one-molecule-out 场景下具竞争力，提示结构先验在低数据泛化场景中的价值，与 AlphaFold 在孤儿蛋白结构预测中的优势呼应。</li>
+<li><strong>pMHC-II 预测的表示选择问题</strong>：已有工作如 MixMHC2pred（Racle et al., 2019）和 MARIA（Sarkizova et al., 2020）采用不同表示，但缺乏统一比较。本文填补了这一空白。</li>
+<li><strong>[Analysis] 候选方向</strong>：本文的「表示 × 场景」交互效应与蛋白质-配体对接中「全局 vs. 局域泛化」的讨论类似（如 GLIDE vs. 深度学习打分函数），可进一步探索结构派生表示在对接打分中的场景依赖优势。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：结构感知表示在未知等位基因 pMHC-II 预测中的系统评估
+   - <strong>来源局限/观察</strong>：本文发现 leave-one-molecule-out 下 Chai-1 具竞争力，但 H2 面板仅 8 个分子，统计功效不足。
+   - <strong>核心假设</strong>：在完全未知的 MHC-II 等位基因上，结构派生表示（如 Chai-1/AlphaFold 内部表示）的泛化优势比 PLM 更显著。
+   - <strong>初步方法</strong>：扩大等位基因面板（如 &gt;50 个 HLA-DR/DQ/DP），在 leave-one-allele-out 协议下比较 PLM vs. 结构派生表示；结合结构预测置信度（pLDDT）作为特征。
+   - <strong>验证方式</strong>：ROC-AUC/PR-AUC 比较 + 等位基因系统发育距离分层分析。
+   - <strong>可能的失败模式</strong>：结构预测误差在罕见等位基因上更大，抵消结构先验优势。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：双流联合注意力在蛋白质-配体对接打分中的迁移
+   - <strong>来源局限/观察</strong>：PREpiBind 的 dual-stream joint-attention 架构在 pMHC-II 上有效，但未在蛋白质-小分子对接中验证。
+   - <strong>核心假设</strong>：将蛋白质和配体分别编码后交叉注意力融合，可优于当前拼接式深度学习打分函数。
+   - <strong>初步方法</strong>：将 PREpiBind 架构适配到蛋白质-配体对接任务，使用 PLM（ESM2）编码蛋白、分子图编码配体，在 PDBbind 上训练和评估。
+   - <strong>验证方式</strong>：与 DeepDock、GNINA 等基线比较 docking pose 选择和亲和力排序指标。
+   - <strong>可能的失败模式</strong>：配体分子量小，交叉注意力难以捕捉关键接触；数据规模不足。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：表示-场景适配的元学习框架
+   - <strong>来源局限/观察</strong>：本文结论「表示选择应依场景而定」缺乏自动化机制。
+   - <strong>核心假设</strong>：可通过元学习自动选择或加权组合多种蛋白质表示，以适配不同评估场景。
+   - <strong>初步方法</strong>：在 PREpiBind 框架中引入可学习的表示混合层，以评估场景（如 allele-wise vs. pooled）为条件，训练门控网络动态加权表示。
+   - <strong>验证方式</strong>：在 Qualitative/MS/IC50 数据集上比较固定最优表示 vs. 动态加权表示。
+   - <strong>可能的失败模式</strong>：场景条件特征难以定义；过拟合风险。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：跨物种 pMHC 预测的表示稳定性分析
+   - <strong>来源局限/观察</strong>：H2 等权评估下 Chai-1 领先，但小样本下排序不稳定。
+   - <strong>核心假设</strong>：跨物种迁移时，表示性能排序与物种间 MHC 序列相似度相关，而非全局一致。
+   - <strong>初步方法</strong>：收集人（HLA）、小鼠（H2）、恒河猴（Mamu）等 MHC-II 数据，按序列相似度分层评估表示性能。
+   - <strong>验证方式</strong>：分层 ROC-AUC + 序列相似度相关性分析。
+   - <strong>可能的失败模式</strong>：跨物种数据量不足，无法得出统计显著结论。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：结构预测置信度作为 pMHC-II 预测的辅助特征
+   - <strong>来源局限/观察</strong>：结构派生表示（Chai-1）在部分场景有优势，但未利用结构置信度信息。
+   - <strong>核心假设</strong>：将结构预测的 pLDDT/PAE 作为辅助特征，可提升 pMHC-II 预测的校准性和泛化性。
+   - <strong>初步方法</strong>：在 PREpiBind 中引入结构置信度特征通道，与序列表示融合。
+   - <strong>验证方式</strong>：比较有无置信度特征的 ROC-AUC 和 expected calibration error。
+   - <strong>可能的失败模式</strong>：结构预测置信度与结合亲和力相关性弱，引入噪声。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present PREpiBind, a dual-stream joint-attention framework for peptide–MHC class II binding prediction, and systematically compare ten protein representations under a fixed downstream architecture across three dataset types. They report that protein language model representations generally outperform reference methods on Qualitative and mass spectrometry datasets, while NetMHCIIpan-4.3 performs best on thresholded IC50 datasets. They further report that representation ranking shifts across evaluation scenarios, including allele-wise, leave-one-molecule-out, and cross-species transfer settings, and conclude that representation choice should be scenario-dependent.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results beyond a single AUC value for ESM3 Large on the Qualitative dataset, no dataset descriptions, no architecture details, no statistical methods, no code availability statement</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, all figures and tables, dataset construction and preprocessing details, evaluation protocol specifications, baseline implementation details, statistical significance testing, code and data availability information</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a well-motivated and timely question regarding the choice of protein representations for pMHC-II binding prediction, and the proposed framework with modular representation integration is conceptually appealing. However, the abstract alone provides insufficient detail to evaluate the technical soundness of the approach, the validity of the comparisons, or the robustness of the reported conclusions. The central claim that representation choice should depend on the prediction scenario is plausible but not adequately supported by the limited quantitative information provided. The work addresses an important problem in immunoinformatics, and the systematic comparison across ten representations is a potentially valuable contribution, but the current evidence base is too thin to assess whether the case is established.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational immunologists and bioinformaticians developing or applying peptide–MHC binding prediction tools would be the primary audience. Researchers working on T-cell epitope discovery, vaccine design, and neoantigen prediction would also be interested in guidance on representation selection. The systematic comparison of protein language models, structure-prediction-derived embeddings, and substitution-matrix features under a controlled architecture could inform tool selection in both research and clinical translation contexts.</li>
+<li><strong>Major strengths</strong> The study addresses a clearly defined and practically important question, namely which protein representation family is most effective for pMHC-II binding prediction when the downstream model is held fixed. The design of a dual-stream joint-attention framework that can accommodate diverse representation types is a sensible methodological choice. The evaluation across multiple dataset types, including qualitative binding labels, mass spectrometry data, and thresholded IC50 values, and across multiple evaluation scenarios, including allele-wise, leave-one-molecule-out, and cross-species transfer, reflects a thoughtful attempt to assess generalizability. The finding that representation ranking is scenario-dependent, rather than globally consistent, is a nuanced and potentially useful insight.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors claim that PREpiBind with PLM representations yielded higher performance than the evaluated reference methods in the Qualitative and MS datasets, and that NetMHCIIpan-4.3 was higher on the thresholded IC50 datasets.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract reports only a single performance value, namely an AUC of 0.927 ± 0.002 for ESM3 Large on the Qualitative dataset. No performance values are provided for the MS or thresholded IC50 datasets, no comparisons with reference methods are quantified, and no statistical significance testing is described. The claim of superiority for PLM representations on two dataset types and for NetMHCIIpan-4.3 on a third cannot be assessed without the underlying numbers, error bars, and significance tests.</li>
+<li><strong>Why it matters</strong> The central comparative claims of the paper rest on quantitative differences between methods and representations. Without reporting the actual performance metrics, confidence intervals, and statistical tests, the reader cannot determine whether the reported differences are meaningful or within noise. This is particularly important given the authors' own statement that the small H2 panel did not support a stable ordering, which suggests that some comparisons may be underpowered.</li>
+<li><strong>Resolution test</strong> Provide full performance tables for all representations and reference methods across all three dataset types, including means, standard deviations, and appropriate statistical significance tests. Report effect sizes and confidence intervals for the key comparisons, and specify the number of independent replicates or cross-validation folds used.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The authors claim that PREpiBind is an openly available pMHC-II prediction framework with modular and flexible protein representations.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract states that the framework is openly available but provides no code repository URL, no license information, no documentation of dependencies, and no description of how the modular representation integration is implemented. The claim of open availability cannot be verified from the supplied material.</li>
+<li><strong>Why it matters</strong> Reproducibility and usability are central to the value proposition of a computational tool. If the code is not accessible or not adequately documented, the contribution is substantially diminished regardless of the reported performance. The abstract's claim of open availability is a concrete promise that must be verifiable.</li>
+<li><strong>Resolution test</strong> Provide the code repository URL, license, installation instructions, and a clear description of the software architecture. If the code is not yet available, state the expected release timeline and any access restrictions.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors claim that the results indicate that protein representation choice should depend on the intended prediction scenario rather than on a single global ranking.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract describes scenario-dependent rankings, including allele-wise, leave-one-molecule-out, and cross-species H2-out transfer evaluations, but provides no quantitative results for any of these scenarios. The claim that Chai-1 was competitive with leading PLM representations in allele-wise and leave-one-molecule-out settings, and that Chai-1 led when H2 molecules were weighted equally in cross-species transfer, is presented without supporting numbers. The statement that the small H2 panel did not support a stable ordering further complicates the interpretation.</li>
+<li><strong>Why it matters</strong> The conclusion that representation choice should be scenario-dependent is the main takeaway message of the abstract. If the underlying comparisons are underpowered or the differences are not statistically robust, this conclusion may be premature. The authors themselves acknowledge instability in the H2 panel, which raises questions about the reliability of the cross-species findings.</li>
+<li><strong>Resolution test</strong> Provide full quantitative results for all evaluation scenarios, including performance metrics, variability estimates, and statistical tests. Clearly state which comparisons are statistically significant and which are not. Discuss the power limitations of the H2 panel and how they affect the strength of the conclusions.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Dataset description</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract refers to Qualitative, mass spectrometry, and thresholded IC50 datasets but does not describe their sizes, sources, or how they were split. The term "Qualitative" is ambiguous and could refer to binary binding labels from different assays.</li>
+<li><strong>Required correction</strong> Provide a brief description of each dataset, including the number of peptides, the number of MHC alleles, the source of the data, and the nature of the labels. Clarify what "Qualitative" means in this context.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Reference methods</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract mentions "evaluated reference methods" but only names NetMHCIIpan-4.3. The identity and number of other reference methods are not specified.</li>
+<li><strong>Required correction</strong> List all reference methods compared in the study and briefly justify their selection.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Performance variability</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> Only one AUC value with a standard deviation is reported. No information is provided on how variability was estimated, whether across folds or across random seeds, or whether the reported standard deviation reflects a meaningful measure of uncertainty.</li>
+<li><strong>Required correction</strong> Describe the procedure for estimating variability, including the number of replicates, the cross-validation scheme, and whether the reported standard deviation is across folds or across independent runs.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> "Protein representation-integrated"</li>
+<li><strong>Evidence pointer</strong> Title; location not provided</li>
+<li><strong>Issue</strong> The title uses the term "Protein Representation-integrated" which is somewhat unusual. It is not immediately clear whether this refers to the integration of multiple representations within a single model or to the use of protein representations as input features.</li>
+<li><strong>Required correction</strong> Consider clarifying the terminology in the title or abstract to avoid ambiguity, for example by specifying that the framework integrates multiple representation types.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The absence of quantitative results for most comparisons, the lack of verifiable code availability, and the insufficient evidence for the scenario-dependent conclusion collectively prevent the case from being established from the supplied material.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that PLM representations yielded higher performance than reference methods on Qualitative and MS datasets is unsupported because no performance values or statistical tests are reported for these comparisons.</li>
+<li>The claim that NetMHCIIpan-4.3 was higher on thresholded IC50 datasets is unsupported for the same reason.</li>
+<li>The claim that Chai-1 was competitive with leading PLM representations in allele-wise and leave-one-molecule-out evaluations is unsupported because no quantitative results are provided.</li>
+<li>The claim that Chai-1 led when H2 molecules were weighted equally in cross-species transfer is unsupported.</li>
+<li>The claim that the small H2 panel did not support a stable ordering is unverifiable without details on the panel size and the variability of the results.</li>
+<li>The claim that PREpiBind is openly available is unverifiable without a code repository or access information.</li>
+<li>The overall conclusion that representation choice should depend on the intended prediction scenario is not adequately supported by the evidence presented in the abstract.</li>
+</ul>
+<h2>Assessment against Nature-style criteria</h2>
+<ul>
+<li><strong>Originality</strong> The question of which protein representation is most effective for pMHC-II binding prediction under a controlled architecture is a reasonable and timely one, but the abstract does not demonstrate that the proposed framework or the comparison itself is methodologically novel beyond what is already known in the field. The dual-stream joint-attention architecture is not described in sufficient detail to assess its novelty.</li>
+<li><strong>Scientific importance</strong> The problem of pMHC-II binding prediction is of clear importance for immunology and vaccine design, and guidance on representation selection could be practically valuable. However, the abstract does not establish that the findings would change current practice or resolve a long-standing debate.</li>
+<li><strong>Interdisciplinary readership</strong> The topic sits at the intersection of computational biology, immunology, and machine learning. The abstract is written in a way that is accessible to specialists in these areas, but the lack of quantitative detail limits its usefulness to a broader readership.</li>
+<li><strong>Technical soundness</strong> The technical soundness cannot be assessed from the abstract alone. The evaluation design is described at a high level, but the absence of methods details, performance numbers, and statistical tests prevents any judgment on the validity of the comparisons.</li>
+<li><strong>Readability for nonspecialists</strong> The abstract is generally readable, but terms such as "dual-stream, joint-attention framework" and "leave-one-molecule-out" may be opaque to nonspecialists. The key message, that representation choice is scenario-dependent, is clearly stated.</li>
+</ul>
+<h2>Recommendation posture</h2>
+<p>Currently not established from the provided evidence. The abstract presents a plausible and potentially valuable study, but the absence of quantitative results, statistical analyses, and code availability means that the central claims cannot be verified. The authors should be encouraged to provide the full manuscript with complete results, methods, and code access for a proper evaluation. If the full manuscript addresses the concerns raised above, the work could be a useful contribution to the field.</p></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

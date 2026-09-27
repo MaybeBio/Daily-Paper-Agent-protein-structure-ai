@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.09.15.751749",
+  "title": "PREpiBind: Protein Representation-integrated Epitope–MHC Class II Binding Prediction",
+  "authors": "Jang DH; Kim D; Park B; Hwang U; Choi Y; Lee J",
+  "journal": "bioRxiv",
+  "published_date": "2026-09-21",
+  "window": {
+    "start": "2026-09-20",
+    "end": "2026-09-26"
+  },
+  "score": 6,
+  "one_liner_zh": "该文开发了整合多种蛋白表征的pMHC-II结合预测框架PREpiBind，虽以肽-MHC结合预测为核心，但系统评估了结构预测衍生表征和蛋白语言模型在蛋白质序列-结构表征中的适用性，对蛋白质结构计算建模有方法学参考价值。",
+  "abstract": "Accurate prediction of peptide–MHC class II (pMHC-II) binding remains challenging because of extensive MHC polymorphism and context-dependent peptide recognition, and it is unclear which protein representation best captures these determinants when the downstream model is held fixed. Here, we present PREpiBind, a pMHC-II prediction method based on a dual-stream, joint-attention framework that integrates MHC and epitope representations. We integrated ten protein representations spanning substitution-matrix, structure-prediction-derived, and protein language model (PLM) families and evaluated them under a common downstream architecture and identical splits across Qualitative, mass spectrometry (MS), and thresholded IC50 datasets. Overall, PREpiBind with PLM representations yielded higher performance than the evaluated reference methods in the Qualitative and MS datasets, whereas NetMHCIIpan-4.3 was higher on the thresholded IC50 datasets using its binding-affinity head. In pooled evaluations, PLM representations yielded the highest ROC-AUC values among the tested representations. ESM3 Large led the Qualitative dataset with an AUC value of 0.927 ± 0.002, and PLMs also led on the MS and thresholded IC50 datasets. This advantage remained, but narrowed in allele-wise and leave-one-molecule-out evaluations, where structure-prediction-derived Chai-1 was competitive with the leading PLM representations. Under cross-species H2-out transfer, PLMs led when all H2 rows were pooled, whereas Chai-1 led when the eight H2 molecules were weighted equally. The small H2 panel did not support a stable ordering among these leading representations. The results indicate that protein representation choice should depend on the intended prediction scenario rather than on a single global ranking. PREpiBind is an openly available pMHC-II prediction framework with modular and flexible protein representations.",
+  "abstract_zh": "肽–MHC II类（pMHC-II）结合的准确预测仍具挑战性，原因在于MHC的高度多态性和依赖上下文的肽识别，且当下游模型固定时，尚不清楚哪种蛋白质表示最能捕捉这些决定因素。在此，我们提出PREpiBind，一种基于双流联合注意力框架的pMHC-II预测方法，该框架整合了MHC和表位表示。我们整合了十种蛋白质表示，涵盖替换矩阵、结构预测衍生和蛋白质语言模型（PLM）家族，并在共同的下游架构和相同的划分下，对定性、质谱（MS）和阈值化IC50数据集进行了评估。总体而言，采用PLM表示的PREpiBind在定性和MS数据集中表现优于所评估的参考方法，而NetMHCIIpan-4.3在阈值化IC50数据集中使用其结合亲和力头时表现更高。在汇总评估中，PLM表示在测试的表示中获得了最高的ROC-AUC值。ESM3 Large在定性数据集中领先，AUC值为0.927 ± 0.002，PLM在MS和阈值化IC50数据集中也领先。这一优势在等位基因-wise和留一分子-out评估中仍然存在，但有所缩小，其中结构预测衍生的Chai-1与领先的PLM表示相当。在跨物种H2-out转移中，当所有H2行汇总时，PLM领先，而当八个H2分子等权时，Chai-1领先。小型H2面板未能支持这些领先表示之间的稳定排序。结果表明，蛋白质表示的选择应取决于预期的预测场景，而非单一的全局排名。PREpiBind是一个公开可用的pMHC-II预测框架，具有模块化和灵活的蛋白质表示。",
+  "has_fulltext": false,
+  "fulltext_source": "abstract",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.15.751749",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.09.15.751749",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.09.15.751749/index.html"
+}

@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cryo-EM Pipeline for Actin Filament End Structures. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Cryo-EM Pipeline for Actin Filament End Structures.</h1>
+      <div class="meta">Palmer, Nicholas J; Dominguez, Roberto</div>
+      <div class="meta muted">
+        
+        <span class="journal">Bio-protocol</span>
+        · 2026-09-22
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42769743/">原文</a>
+      </div>
+      <p class="one-liner">该文描述了一套基于冷冻电镜和机器学习粒子挑选的肌动蛋白丝末端结构测定流程，虽以实验方法为主，但涉及结构计算处理，对蛋白丝状结构计算建模有参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Actin filaments undergo dynamic growth and disassembly at their ends, regulated by many actin-binding proteins. However, structural analysis of filament end dynamics has been challenging due to the low abundance of filament ends in cryo-electron microscopy (cryo-EM) micrographs, their intrinsic polymorphisms, and the diversity and flexibility of end-binding proteins. Here, we describe a standardized cryo-EM protocol for determining actin filament end structures. First, short actin filaments are generated either biochemically using capping or severing proteins or mechanically through shearing. Filaments are then vitrified under conditions optimized for each specific end-binding protein. We describe data collection parameters using a 300 kV Titan Krios G3i microscope, including optimized grid preparation and imaging settings. Finally, we present a data processing pipeline for filament end structure determination based on machine learning-based particle picking, masking, and sorting strategies. This protocol has enabled the determination of multiple high-resolution structures of free, capped, elongating, and depolymerizing actin filament ends, and we further discuss considerations for extending this approach to other end-binding proteins. Key features * Generation of short actin filaments for cryo-EM using capping proteins, severing proteins, or mechanical shearing. * Integrated data collection and image processing workflow for filament end structure determination. * Common challenges, solutions, and experimental considerations for diverse actin filament end-binding complexes.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">肌动蛋白丝在其末端经历动态生长和解聚，受多种肌动蛋白结合蛋白调控。然而，由于冷冻电子显微镜（cryo-EM）显微图中丝末端的丰度低、其固有多态性以及末端结合蛋白的多样性和灵活性，对丝末端动力学的结构分析一直具有挑战性。在此，我们描述了一种用于测定肌动蛋白丝末端结构的标准化冷冻电镜方案。首先，通过使用封端蛋白或切割蛋白进行生化方法，或通过机械剪切，生成短肌动蛋白丝。随后，在针对每种特定末端结合蛋白优化的条件下对丝进行玻璃化处理。我们描述了使用300 kV Titan Krios G3i显微镜的数据采集参数，包括优化的网格制备和成像设置。最后，我们提出了一种基于机器学习粒子拾取、掩膜和分类策略的丝末端结构测定数据处理流程。该方案已成功测定了游离、封端、延伸和解聚肌动蛋白丝末端的多个高分辨率结构，并进一步讨论了将该方法扩展到其他末端结合蛋白的考虑因素。关键特征 * 使用封端蛋白、切割蛋白或机械剪切生成用于冷冻电镜的短肌动蛋白丝。 * 用于丝末端结构测定的集成数据采集和图像处理工作流程。 * 针对多种肌动蛋白丝末端结合复合物的常见挑战、解决方案和实验考虑。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Cryo-EM Pipeline for Actin Filament End Structures</li>
+<li><strong>作者与单位</strong>：Palmer, Nicholas J; Dominguez, Roberto（宾夕法尼亚大学，美国）</li>
+<li><strong>期刊/预印本平台</strong>：Bio-protocol</li>
+<li><strong>年份</strong>：2026-09-22</li>
+<li><strong>论文类型</strong>：实验方法/协议（Protocol）</li>
+<li><strong>领域</strong>：结构生物学、冷冻电镜（cryo-EM）、肌动蛋白细胞骨架</li>
+<li><strong>关键词</strong>：Actin filaments, cryo-EM, filament ends, actin-binding proteins, Topaz, cryoSPARC</li>
+<li><strong>DOI/arXiv 号</strong>：10.21769/BioProtoc.5794</li>
+<li><strong>代码</strong>：未提供（依赖 cryoSPARC、Topaz、UCSF ChimeraX 等第三方软件）</li>
+<li><strong>数据</strong>：EMPIAR-13421（原始显微图）；EMDB EMD-72310、EMD-72326（最终图谱）</li>
+<li><strong>阅读日期</strong>：2026-05-15</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × 物理模拟/AI 方法」中的 cryo-EM 结构解析方法学。其核心贡献在于针对肌动蛋白丝末端这一低丰度、高异质性样本，提出了一套结合机器学习（Topaz）粒子挑选与 cryoSPARC 分类/精修的标准化流程。对蛋白质结构计算研究方向的启示在于：如何通过样本制备（短丝生成）与计算策略（ML 粒子挑选、mask 引导分类）解决「低丰度、高构象异质性」结构解析难题——该问题同样存在于其他纤维状蛋白系统（如微管、中间丝、淀粉样纤维）及动态蛋白复合物的结构研究中。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出一套标准化 cryo-EM 工作流程，通过生化方法（加帽蛋白/切割蛋白）或机械剪切生成短肌动蛋白丝以富集丝末端，结合 Topaz 机器学习粒子挑选与 cryoSPARC 中的 mask 引导分类/精修，成功解析了自由态、加帽态、延伸态和解聚态肌动蛋白丝末端的高分辨率结构（最高约 2.6 Å）。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何利用 cryo-EM 解析肌动蛋白丝末端（barbed end 和 pointed end）的高分辨率结构？丝末端在细胞中丰度极低、构象高度异质，且末端结合蛋白（如 CP、CAP、gelsolin、INF2 等）具有多样性和柔性，导致传统 cryo-EM 流程难以获得足够数量的均一粒子。</li>
+<li><strong>为什么重要</strong>：肌动蛋白丝的末端动态（聚合/解聚）是细胞运动、分裂、胞内运输等核心生命过程的基础，受多种末端结合蛋白调控。高分辨率末端结构是理解这些蛋白调控机制（如加帽、切割、解聚）的结构基础，也与多种人类疾病（如肌病、神经退行性疾病）相关。</li>
+<li><strong>现有方法不足</strong>：传统 cryo-EM 流程针对丝状样本通常聚焦于丝中部（可对称平均），而末端粒子丰度低、无对称性、构象异质，导致粒子挑选困难、分类效率低、最终分辨率受限。经典 blob/template-based 粒子挑选方法无法有效区分末端与中部。</li>
+<li><strong>精确研究问题</strong>：Can a standardized cryo-EM pipeline combining biochemical filament shortening, machine learning–based particle picking, and mask-guided 3D classification enable routine determination of high-resolution structures of actin filament ends bound to diverse end-binding proteins?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」——基于 cryo-EM 领域公认发展史及本文引用文献）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期（2010s 前）</td>
+<td>负染 EM、X 射线晶体学</td>
+<td>可获得高分辨率单体/寡聚结构</td>
+<td>无法捕捉丝状动态构象</td>
+</tr>
+<tr>
+<td>中期（2010s）</td>
+<td>cryo-EM 单颗粒分析（SPA）用于丝状样本</td>
+<td>可获得丝中部高分辨率结构（~3-4 Å）</td>
+<td>末端粒子丰度低、异质，难以解析</td>
+</tr>
+<tr>
+<td>近期（2020s）</td>
+<td>机器学习粒子挑选（Topaz, crYOLO）+ 分类策略优化</td>
+<td>可训练模型识别特定粒子类型</td>
+<td>需要足够训练集；末端与中部区分仍具挑战</td>
+</tr>
+<tr>
+<td>本文位置</td>
+<td>整合生化短丝制备 + Topaz 挑选 + mask 引导分类/精修</td>
+<td>系统化解决末端结构解析难题</td>
+<td>依赖特定蛋白行为；需针对新蛋白优化</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在 cryo-EM 方法学中，本文填补了「丝状蛋白末端结构解析」的标准化流程空白，将 ML 粒子挑选与 mask 引导分类策略系统化，并验证于多种末端结合蛋白系统。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>丝末端丰度极低</td>
+<td>每张显微图中末端粒子数远少于丝中部</td>
+<td>肌动蛋白丝可延伸数微米，末端仅占极小比例</td>
+<td>Background 节："actin filaments can extend over micrometers, often spanning entire micrographs, resulting in very few filament ends per image"</td>
+</tr>
+<tr>
+<td>末端构象异质</td>
+<td>同一末端类型（barbed/pointed）存在多种构象状态</td>
+<td>末端结合蛋白（如 CAP）具有柔性、多构象；聚合/解聚中间态多样</td>
+<td>Background 节："intrinsic polymorphisms, and the diversity and flexibility of end-binding proteins"</td>
+</tr>
+<tr>
+<td>经典粒子挑选失效</td>
+<td>blob/template 方法无法区分末端与中部</td>
+<td>末端与中部在投影图像上差异不显著；模板缺乏</td>
+<td>Background 节："classical methods such as blob- or template-based approaches often fail to distinguish filament ends from filament middles"</td>
+</tr>
+<tr>
+<td>末端结合蛋白占据率低</td>
+<td>部分蛋白仅结合部分末端，导致混合群体</td>
+<td>蛋白亲和力、结合动力学差异</td>
+<td>Procedure E23 节："populations of bound and unbound ends are often mixed"</td>
+</tr>
+<tr>
+<td>优选方向（preferred orientation）</td>
+<td>图谱分辨率各向异性</td>
+<td>粒子与气-液界面相互作用</td>
+<td>Troubleshooting Problem 3 节："particle interactions with the air–water interface"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：一套分步式 cryo-EM 工作流程，包括：(a) 生化制备短肌动蛋白丝（加帽蛋白或切割蛋白处理，或机械剪切）；(b) 优化 vitrification 条件；(c) 300 kV Titan Krios G3i 数据采集；(d) Topaz 机器学习粒子挑选；(e) cryoSPARC 中 mask 引导的 3D 分类与精修；(f) 标准验证（FSC、方向分布、局部分辨率、3D FSC）。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：丝末端结构解析的关键瓶颈不在数据采集，而在「粒子富集」与「计算分类」两个层面。生化层面，通过加帽/切割蛋白或剪切将丝缩短至纳米尺度，使末端在显微图中占比大幅提升；计算层面，利用 Topaz 训练特异性末端识别模型，并通过 mask 引导分类将末端与中部、不同末端类型（barbed/pointed）及不同结合状态分离。<strong>关键创新在于「两轮 Topaz 训练」策略</strong>：第一轮用少量手动挑选的末端训练模型，第二轮用 3D 分类后的高置信末端粒子重新训练，迭代提升模型精度。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：对于任何「低丰度、高异质性」的结构生物学目标（不仅是丝末端，也包括其他纤维状蛋白、动态复合物、膜蛋白等），解决思路可归纳为「物理富集 + 计算筛选」双管齐下：在样本制备阶段通过生化手段增加目标构象的占比，在计算阶段通过 ML 粒子挑选与 mask 引导分类迭代优化。该策略可迁移至其他纤维状蛋白系统（微管、中间丝、细菌鞭毛等）及动态蛋白复合物的结构研究。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：纯化的兔骨骼肌 α-肌动蛋白（G-actin）、末端结合蛋白（如 CP、CAP）、cryo-EM 显微图（300 kV Titan Krios G3i 采集）</li>
+<li><strong>输出</strong>：高分辨率肌动蛋白丝末端 3D 密度图（最高约 2.6-3.0 Å）</li>
+<li><strong>模块</strong>：
+  1. <strong>短丝制备</strong>：G-actin 聚合为 F-actin，通过加帽蛋白（如 CP）或切割蛋白（如 gelsolin、INF2）控制丝长度，或机械剪切
+  2. <strong>Vitrification</strong>：Quantifoil R1.2/1.3 300 目铜网，Vitrobot Mark IV  plunge-freezing
+  3. <strong>数据采集</strong>：Titan Krios G3i，300 kV，K3-GIF 直接电子探测器，超分辨率模式，像素尺寸 0.54 Å，总剂量约 50 e-/Å²
+  4. <strong>预处理</strong>：cryoSPARC Patch Motion Correction（F-crop 1/2，像素尺寸变为 1.08 Å）、Patch CTF
+  5. <strong>粒子挑选</strong>：手动挑选 ~1,000 个末端 → Topaz Train 训练模型 → Topaz Extract 全图挑选
+  6. <strong>2D 分类</strong>：cryoSPARC 2D Classification，筛选高质量末端粒子
+  7. <strong>3D 分类</strong>：mask 引导的 3D Classification，分离 barbed/pointed end 及不同结合状态
+  8. <strong>精修</strong>：Non-uniform Refinement、CTF Refinement（全局+局部）、Reference-based Motion Correction
+  9. <strong>验证</strong>：FSC 曲线、方向分布图、局部分辨率图、3D FSC（cFAR 指标）</li>
+<li><strong>工具</strong>：cryoSPARC v4.7、Topaz v0.3.0、UCSF ChimeraX v1.10.1、EPU v3.12</li>
+<li><strong>文字流程</strong>：短丝制备 → 网格制备与 vitrification → 数据采集 → 运动校正与 CTF 估计 → 手动挑选训练集 → Topaz 训练与全图挑选 → 2D 分类筛选 → mask 引导 3D 分类（分离末端类型与结合状态）→ 非均匀精修 → CTF 精修 → 最终精修 → 验证与可视化</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>短丝制备（加帽/切割/剪切）</td>
+<td>将长丝缩短至纳米尺度，增加末端密度</td>
+<td>长丝中末端占比极低，无法获得足够粒子</td>
+<td>输入：G-actin + 加帽/切割蛋白；输出：短 F-actin</td>
+<td>Background 节："filaments can be shortened either biochemically...or mechanically through shearing"</td>
+<td>预期影响：末端粒子数大幅减少，无法达到结构解析所需数量</td>
+</tr>
+<tr>
+<td>Topaz 训练与挑选</td>
+<td>机器学习模型识别丝末端</td>
+<td>经典方法无法区分末端与中部</td>
+<td>输入：手动挑选的 ~1,000 末端 + 显微图；输出：全图末端坐标</td>
+<td>Procedure E5-E7 节；Validation 节引用 [11,13-15]</td>
+<td>预期影响：粒子挑选精度下降，混入大量中部粒子，分类效率降低</td>
+</tr>
+<tr>
+<td>Mask 引导 3D 分类</td>
+<td>分离 barbed/pointed end 及不同结合状态</td>
+<td>末端类型和结合状态混合，需分类纯化</td>
+<td>输入：2D 分类后粒子 + 初始 mask；输出：分类后的末端亚群</td>
+<td>Procedure E13-E25 节；Troubleshooting Problem 1</td>
+<td>实测影响：不正确的 mask 导致末端与中部无法分离（Troubleshooting Problem 1）</td>
+</tr>
+<tr>
+<td>两轮 Topaz 迭代</td>
+<td>用 3D 分类结果重新训练模型</td>
+<td>第一轮模型精度有限，迭代可提升</td>
+<td>输入：第一轮 3D 分类后的末端粒子；输出：改进的 Topaz 模型</td>
+<td>Procedure E14-E15 节</td>
+<td>预期影响：模型精度提升有限，末端召回率下降</td>
+</tr>
+<tr>
+<td>末端重定位（re-centering）</td>
+<td>将末端移至盒子中心</td>
+<td>末端位置偏移导致分类/精修失败</td>
+<td>输入：3D 分类后的粒子 + 对齐参数；输出：重定位后的粒子</td>
+<td>Procedure E20-E21 节；Troubleshooting Problem 1</td>
+<td>实测影响：末端靠近盒子边缘导致分类失败（Troubleshooting Problem 1）</td>
+</tr>
+<tr>
+<td>CTF 精修（全局+局部）</td>
+<td>校正局部像差</td>
+<td>提高高分辨率信号</td>
+<td>输入：精修后粒子；输出：CTF 校正后粒子</td>
+<td>Procedure E27 节</td>
+<td>预期影响：高分辨率特征（&gt;3 Å）无法解析</td>
+</tr>
+<tr>
+<td>Reference-based Motion Correction</td>
+<td>基于参考图校正束诱导运动</td>
+<td>提高信噪比</td>
+<td>输入：CTF 精修后粒子 + 参考图；输出：运动校正后粒子</td>
+<td>Procedure E28 节</td>
+<td>预期影响：分辨率提升受限，尤其对低占据率蛋白</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>——本文为实验方法学协议，不涉及数学公式或算法推导。核心计算工具（Topaz、cryoSPARC）的数学原理在各自原始文献中描述，本文未重复。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：兔骨骼肌 α-肌动蛋白（UniProt P68135）；末端结合蛋白包括 CP（加帽蛋白，异二聚体）、CAP（cyclase-associated protein，pointed end 结合蛋白）等</li>
+<li><strong>规模</strong>：未提供具体显微图数量/粒子总数（协议类文章通常不报告完整统计）</li>
+<li><strong>指标</strong>：cryo-EM 分辨率（FSC 0.143 标准）、cFAR（各向同性指标）、局部分辨率</li>
+<li><strong>基线</strong>：未提供（协议类文章无对比基线）</li>
+<li><strong>评测协议</strong>：FSC 曲线、方向分布图、局部分辨率图、3D FSC 图</li>
+<li><strong>oracle 输入</strong>：手动挑选的 ~1,000 个末端粒子用于 Topaz 训练；基于已知结构的 mask 生成（如 CAP HFD 晶体结构 PDB 6RSW）</li>
+<li><strong>骨干/仪器</strong>：Titan Krios G3i（300 kV）、K3-GIF 直接电子探测器、BioQuantum K3 成像滤波器、8-GPU cryo-EM 工作站</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>短丝制备（加帽蛋白法）</td>
+<td>加帽蛋白可有效限制丝长度</td>
+<td>高浓度 CP 存在下聚合 G-actin</td>
+<td>获得短丝，末端密度显著增加</td>
+<td>生化富集末端策略可行</td>
+<td>未提供定量长度分布数据</td>
+<td>Procedure A1 节</td>
+</tr>
+<tr>
+<td>短丝制备（切割蛋白法）</td>
+<td>切割蛋白可产生新末端</td>
+<td>gelsolin/INF2 处理预成型 F-actin</td>
+<td>获得短丝</td>
+<td>切割法适用于不结合加帽蛋白的末端结合蛋白</td>
+<td>未提供切割效率定量数据</td>
+<td>Procedure A2 节</td>
+</tr>
+<tr>
+<td>Topaz 训练与挑选</td>
+<td>ML 模型可区分末端与中部</td>
+<td>手动挑选 ~1,000 末端训练</td>
+<td>成功识别末端粒子</td>
+<td>ML 粒子挑选适用于丝末端</td>
+<td>未提供精确率/召回率指标</td>
+<td>Procedure E5-E7 节</td>
+</tr>
+<tr>
+<td>两轮 Topaz 迭代</td>
+<td>迭代训练提升模型性能</td>
+<td>第一轮 vs 第二轮模型</td>
+<td>第二轮模型识别更多末端</td>
+<td>迭代策略有效</td>
+<td>未提供定量对比</td>
+<td>Procedure E14-E15 节</td>
+</tr>
+<tr>
+<td>Mask 引导 3D 分类</td>
+<td>可分离 barbed/pointed end</td>
+<td>5 类 3D 分类</td>
+<td>获得 distinct barbed/pointed 类</td>
+<td>分类策略有效</td>
+<td>未提供各类粒子数</td>
+<td>Procedure E13 节</td>
+</tr>
+<tr>
+<td>末端重定位</td>
+<td>重定位改善分类结果</td>
+<td>重定位前后对比</td>
+<td>分类后末端对齐改善</td>
+<td>重定位必要</td>
+<td>未提供定量对比</td>
+<td>Procedure E20-E21 节</td>
+</tr>
+<tr>
+<td>最终结构解析</td>
+<td>流程可获得高分辨率末端结构</td>
+<td>多轮精修</td>
+<td>CAP-pointed end 结构约 3.0 Å；CP-barbed end 约 2.6 Å</td>
+<td>流程可产出高分辨率结构</td>
+<td>未提供 FSC 曲线细节</td>
+<td>Validation 节；[14,15]</td>
+</tr>
+<tr>
+<td>验证图谱</td>
+<td>图谱质量可靠</td>
+<td>FSC、方向分布、局部分辨率、3D FSC</td>
+<td>cFAR = 0.59（中等各向同性）</td>
+<td>图谱存在一定方向偏好但可接受</td>
+<td>未提供各向异性校正后对比</td>
+<td>Procedure F 节；图 4</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本协议适用于「肌动蛋白丝末端」结构解析，具体包括自由末端、加帽末端（CP）、解聚末端（CAP）等。作者明确说明该流程可能适用于其他纤维状蛋白系统，但需满足「丝长度可控」这一前提条件。</li>
+<li><strong>oracle/真值输入</strong>：Topaz 训练依赖手动挑选的 ~1,000 个末端粒子（人工标注）；mask 生成依赖已知结构信息（如 CAP HFD 晶体结构 PDB 6RSW）或预测模型（如 AlphaFold）。这意味着流程的初始步骤需要一定程度的先验知识。</li>
+<li><strong>端到端状态</strong>：该流程已在多个已发表/未发表项目中成功应用（引用 [11,13-15]），但并非全自动——需要人工干预的环节包括：手动挑选训练粒子、mask 调整、分类参数优化。</li>
+<li><strong>算力成本</strong>：未提供具体计算时间/资源需求。仅提及使用 8-GPU 工作站，Topaz 训练和 cryoSPARC 分类/精修均需 GPU 加速。</li>
+<li><strong>历史数据依赖</strong>：Topaz 模型训练依赖当前数据集的手动标注，不依赖历史数据；但 mask 生成可能依赖已知结构（PDB 6RSW）。</li>
+<li><strong>模型依赖</strong>：流程依赖 Topaz（ML 粒子挑选）和 cryoSPARC（分类/精修）两个第三方软件，其版本和参数选择会影响结果。</li>
+<li><strong>最难情形</strong>：弱结合、低占据率、高构象柔性的末端结合蛋白（如 CAP 的多个结构域缺失）；优选方向问题（需通过去垢剂等添加剂改善）。</li>
+<li><strong>群体/领域边界</strong>：结论仅针对肌动蛋白丝系统验证；对其他纤维状蛋白（微管、中间丝等）的适用性为推测性（"may also be applicable"），未提供实验证据。</li>
+<li><strong>有边界的复述</strong>：在肌动蛋白丝系统中，通过生化短丝制备 + Topaz ML 粒子挑选 + mask 引导分类/精修，可获得约 2.6-3.0 Å 的末端结构；该策略对低丰度、高异质性丝末端结构解析有效，但需针对每个新末端结合蛋白优化制备和分类参数。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>粒子数量要求高</td>
+<td>至少 20,000 张显微图才能获得完整高分辨率结构</td>
+<td>未明确提及</td>
+<td>Procedure C 节</td>
+</tr>
+<tr>
+<td>优选方向问题</td>
+<td>部分末端结合蛋白存在优选方向，导致图谱各向异性</td>
+<td>尝试不同去垢剂（如 NP40）改善</td>
+<td>Troubleshooting Problem 3</td>
+</tr>
+<tr>
+<td>弱结合蛋白挑战</td>
+<td>低占据率、高柔性蛋白难以获得高分辨率</td>
+<td>需优化结合条件、增加占据率</td>
+<td>Procedure E23 节</td>
+</tr>
+<tr>
+<td>流程非全自动</td>
+<td>需要多轮人工干预（手动挑选、mask 调整）</td>
+<td>未明确提及</td>
+<td>整体流程描述</td>
+</tr>
+<tr>
+<td>适用性有限</td>
+<td>对其他纤维状蛋白系统的适用性未验证</td>
+<td>"may also be applicable to other filamentous protein systems"</td>
+<td>General notes 节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供定量对比数据</td>
+<td>文中未报告 Topaz 模型精确率/召回率、分类前后粒子数变化、不同制备方法长度分布等定量指标</td>
+<td>无法客观评估各步骤的实际贡献和效率</td>
+<td>要求作者提供各步骤的定量评估数据</td>
+<td>全文未提供具体数值</td>
+</tr>
+<tr>
+<td>分辨率报告不完整</td>
+<td>仅提及最高约 2.6 Å（CP）和约 3.0 Å（CAP），未提供 FSC 曲线细节、各向异性校正前后对比</td>
+<td>无法独立验证图谱质量</td>
+<td>查阅引用文献 [14,15] 中的完整 FSC 数据</td>
+<td>Validation 节</td>
+</tr>
+<tr>
+<td>样本量信息缺失</td>
+<td>未报告显微图总数、粒子总数、最终用于精修的粒子数</td>
+<td>无法评估统计功效和流程可重复性</td>
+<td>要求补充完整的数据统计</td>
+<td>全文未提供</td>
+</tr>
+<tr>
+<td>流程步骤的独立性未验证</td>
+<td>未进行消融实验（如不使用 Topaz 而用传统方法、不进行两轮迭代等）</td>
+<td>无法确定各步骤的必要性和贡献</td>
+<td>设计对照实验，逐一移除各步骤</td>
+<td>全文未提供消融实验</td>
+</tr>
+<tr>
+<td>适用性声明缺乏证据</td>
+<td>"may also be applicable to other filamentous protein systems" 为推测性声明</td>
+<td>读者可能过度推广该流程</td>
+<td>在其他纤维状蛋白系统（如微管）上验证</td>
+<td>General notes 节</td>
+</tr>
+<tr>
+<td>计算资源需求不明确</td>
+<td>未提供 Topaz 训练和 cryoSPARC 处理的具体时间/资源需求</td>
+<td>影响其他实验室的可复制性</td>
+<td>要求提供基准测试数据</td>
+<td>全文未提供</td>
+</tr>
+<tr>
+<td>对 AlphaFold 的依赖未充分讨论</td>
+<td>mask 生成可使用 AlphaFold 预测结构，但预测误差对 mask 质量的影响未讨论</td>
+<td>AlphaFold 预测在柔性区域可能不准确，影响 mask 引导分类效果</td>
+<td>比较不同来源 mask（晶体结构 vs AlphaFold 预测）的分类效果</td>
+<td>Procedure D 节</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>「物理富集 + 计算筛选」双策略</strong>：对于低丰度、高异质性结构目标，先在样本制备阶段通过生化手段（加帽、切割、剪切）增加目标构象占比，再在计算阶段通过 ML 粒子挑选与 mask 引导分类迭代纯化。该策略可迁移至其他纤维状蛋白系统（微管、中间丝、细菌鞭毛、淀粉样纤维）及动态蛋白复合物的结构研究。</p>
+</li>
+<li>
+<p><strong>两轮 Topaz 迭代训练</strong>：第一轮用少量手动挑选的粒子训练模型，经 3D 分类后用高置信粒子重新训练，可显著提升模型精度。该「迭代式 ML 训练」思路可推广至其他 cryo-EM 粒子挑选场景，尤其是目标粒子形态与背景相似的情况。</p>
+</li>
+<li>
+<p><strong>Mask 引导分类的精细策略</strong>：先用宽 mask 覆盖末端区域（包含可能错位的亚基），分类后再用窄 mask 聚焦末端结合蛋白。这种「由宽到窄」的 mask 策略可有效处理构象异质性，对蛋白质结构计算研究中的构象分类问题具有方法论启示。</p>
+</li>
+<li>
+<p><strong>末端重定位（re-centering）的必要性</strong>：3D 分类后需将末端移至盒子中心再进行精修，否则边缘效应导致分类失败。这一细节对任何「非对称、无对称性」结构目标的精修流程均有参考价值。</p>
+</li>
+<li>
+<p><strong>F-crop 策略的权衡</strong>：在运动校正时使用 F-crop 1/2 可显著加速处理，但会限制最高分辨率（本例中 2.16 Å 极限）。需根据目标分辨率需求权衡处理速度与分辨率上限——对蛋白质结构计算研究中的计算资源分配具有参考意义。</p>
+</li>
+<li>
+<p><strong>去垢剂改善优选方向</strong>：NP40 等去垢剂可改善气-液界面导致的优选方向问题。这一经验可迁移至其他膜蛋白或纤维状蛋白的 cryo-EM 样本优化。</p>
+</li>
+<li>
+<p><strong>针对弱结合蛋白的占据率优化</strong>：通过提高末端结合蛋白浓度、优化结合缓冲液条件，可提高结合占据率，从而改善分类效果。对蛋白质-蛋白质相互作用的结构研究具有直接参考价值。</p>
+</li>
+<li>
+<p><strong>验证指标的全面性</strong>：除 FSC 外，需同时检查方向分布图（各向同性）、局部分辨率图（空间异质性）和 3D FSC（cFAR 指标），以全面评估图谱质量。这一验证框架可推广至所有 cryo-EM 结构解析项目。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text</li>
+<li><strong>Assessment boundary</strong> Technical and methodological soundness of the described cryo-EM pipeline, clarity and reproducibility of the protocol, and alignment with the stated claims in the abstract and background</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present a standardized cryo-EM workflow for determining structures of actin filament ends, covering sample preparation (short filament generation via capping, severing, or shearing), vitrification, data collection on a 300 kV Titan Krios G3i, and a data processing pipeline using machine learning-based particle picking, masking, and classification in cryoSPARC. They state this protocol has enabled determination of multiple high-resolution structures of free, capped, elongating, and depolymerizing actin filament ends.</li>
+<li><strong>Visible evidence base</strong> Full protocol text including Materials, Procedure (Sections A through F), Validation of protocol, General notes and troubleshooting, and References. Figures are referenced but not provided. Video 1 is referenced but not provided.</li>
+<li><strong>Missing materials affecting confidence</strong> Figures 1 through 4 are cited but not included in the supplied material. Video 1 is cited but not included. The specific published structures referenced as outcomes of this protocol [11,13-15] are not described in detail. No representative micrographs, 2D class averages, 3D reconstructions, or resolution statistics are shown. The EMPIAR and EMDB accession codes are listed but the associated data are not accessible within the supplied scope.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript presents a detailed and potentially valuable protocol for a challenging cryo-EM application, namely structural determination of actin filament ends. The procedural steps are described with a level of specificity that is generally commendable for a methods paper, including concrete parameters for grid preparation, microscope operation, and data processing jobs. The authors also address common pitfalls such as preferred orientation, particle picking bias, and filament reannealing, which will be useful to practitioners. However, the protocol's central claim, that it reliably produces high-resolution structures of diverse actin filament end complexes, is not directly evidenced within the supplied material. The absence of representative results, validation metrics, and the referenced figures limits the ability to assess whether the described pipeline is indeed robust and broadly applicable. The manuscript would be strengthened by including example outputs at key stages and by clarifying certain steps that currently rely on anecdotal or underspecified guidance.</li>
+<li><strong>Who would be interested in the results, and why</strong> Structural biologists studying the actin cytoskeleton, particularly those interested in filament dynamics, end-binding proteins, and the molecular mechanisms of polymerization and depolymerization. Researchers in the broader cryo-EM community working on filamentous systems or challenging particle geometries will also find the described approaches to particle picking, masking, and classification relevant. The protocol is likely to be of practical use to laboratories seeking to establish similar structural studies.</li>
+<li><strong>Major strengths</strong> The protocol addresses a technically demanding and biologically important problem. The step-by-step format is clear and logical, progressing from sample preparation through data collection to processing and validation. The inclusion of specific parameters, such as pixel size, dose, defocus range, and box size, provides a useful starting point for replication. The troubleshooting section is practical and addresses issues that are commonly encountered in cryo-EM of filamentous samples. The authors also demonstrate awareness of the limitations of their approach, such as the need for large datasets and the challenges of conformational heterogeneity.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence for core claim</li>
+<li><strong>Claim pointer</strong> The abstract and validation section state that this protocol "has enabled the determination of multiple high-resolution structures of free, capped, elongating, and depolymerizing actin filament ends."</li>
+<li><strong>Evidence pointer</strong> Validation of protocol section; Figures 1 and 4 (not provided)</li>
+<li><strong>Concern</strong> The central claim of the protocol's success is not supported by any direct evidence within the supplied material. The referenced figures, which presumably show 2D classes, final reconstructions, FSC curves, and orientation distributions, are not included. The validation section merely states that the protocol has been applied successfully in prior publications [11,13-15] without providing any quantitative or qualitative results from those applications.</li>
+<li><strong>Why it matters</strong> A methods paper's value rests on the demonstrated effectiveness of the described procedure. Without representative results, the reader cannot judge whether the pipeline works as claimed, what typical resolutions are achievable, or whether the described challenges (e.g., low end abundance, heterogeneity) are adequately overcome. This is a fundamental issue for a protocol whose stated purpose is to enable high-resolution structure determination.</li>
+<li><strong>Resolution test</strong> Include representative figures showing (a) example micrographs with picked filament ends, (b) 2D class averages distinguishing ends from middles, (c) final 3D reconstructions for at least one end complex, and (d) validation plots (FSC, orientation distribution, local resolution) with resolution values stated in the text or figure legends.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility of data processing</li>
+<li><strong>Claim pointer</strong> Section E describes a multi-step data processing pipeline involving Topaz training, extraction, heterogeneous refinement, and 3D classification, with the expectation that this yields separable end and middle classes.</li>
+<li><strong>Evidence pointer</strong> Section E, steps E5 through E17; Figure 1 (not provided)</li>
+<li><strong>Concern</strong> Several steps in the data processing pipeline rely on subjective judgment or underspecified criteria. For example, the selection of 2D classes that "resemble filaments" (E10) and the identification of "junk" classes (E10) are not defined with objective criteria. The number of classes for 3D classification (E13) is stated as 5, but the rationale for this choice is not given. The criteria for determining when "junk particles are removed" (E13) are not specified. The troubleshooting section offers some guidance, but the decision-making process remains largely qualitative.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for a protocol. If key classification and selection steps depend on unstated or subjective criteria, different users may obtain different results even when following the text exactly. This is particularly critical in this pipeline, where the distinction between end and middle particles is the central sorting problem.</li>
+<li><strong>Resolution test</strong> Provide more explicit guidance on how to distinguish end from middle classes in 2D and 3D classifications, including specific visual features to look for. Where possible, suggest quantitative metrics (e.g., class occupancy, resolution estimates) to guide decisions. Justify the choice of the number of 3D classes.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability of the protocol</li>
+<li><strong>Claim pointer</strong> The abstract and background suggest the protocol is "standardized" and can be extended to "other end-binding proteins" and potentially "other classes of filamentous proteins."</li>
+<li><strong>Evidence pointer</strong> Abstract; Background; General notes and troubleshooting, note 5</li>
+<li><strong>Concern</strong> The protocol is described as standardized, but the authors note that parameters such as the concentration of end-binding protein, incubation time, and the need for detergents to address preferred orientation must be optimized for each new protein. The example given (CAP) is a specific case with particular biochemical properties. The extent to which the described parameters and workflow can be directly transferred to other systems is unclear. The statement that the protocol "may also be applicable to other filamentous protein systems" is speculative and not supported by examples.</li>
+<li><strong>Why it matters</strong> The claimed generality is a key part of the protocol's potential impact. If the workflow requires extensive re-optimization for each new system, its value as a standardized pipeline is diminished. The authors should clarify which steps are universal and which are system-specific.</li>
+<li><strong>Resolution test</strong> Provide a clearer discussion of which parameters are expected to be transferable and which will require case-by-case optimization. If possible, mention any other systems (filamentous or otherwise) to which the pipeline has been successfully applied, even if only in preliminary form.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of sample preparation</li>
+<li><strong>Affected element</strong> Section A1, step A1.2</li>
+<li><strong>Evidence pointer</strong> Section A1, step A1.2</li>
+<li><strong>Issue</strong> The step states to add CP to a final concentration of 5 µM and then add G-actin to 25 µM. The order of addition and the mixing procedure are not described. It is also unclear whether the CP is pre-incubated with G-actin before polymerization is initiated, or whether polymerization and capping occur simultaneously.</li>
+<li><strong>Required correction</strong> Specify the order of addition, whether mixing is performed by pipetting or vortexing, and whether any pre-incubation step is included before the polymerization is initiated.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness of data collection parameters</li>
+<li><strong>Affected element</strong> Section C</li>
+<li><strong>Evidence pointer</strong> Section C, paragraph 1</li>
+<li><strong>Issue</strong> The text states that data were collected at 81,000x magnification with a pixel size of 0.54 Å, but does not specify the energy filter slit width, the use of a phase plate, or the exact exposure time per frame. These parameters can significantly affect data quality and are typically reported in cryo-EM methods.</li>
+<li><strong>Required correction</strong> Add the missing parameters, including energy filter settings, exposure time, and any other relevant microscope configuration details.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Justification of mask generation</li>
+<li><strong>Affected element</strong> Section D</li>
+<li><strong>Evidence pointer</strong> Section D, steps D1 through D10</li>
+<li><strong>Issue</strong> The protocol describes generating a mask from a PDB model using ChimeraX and then processing it in cryoSPARC. However, the rationale for choosing a 16 Å resolution for the molmap command is not explained. The relationship between the mask and the subsequent classification steps could be clarified.</li>
+<li><strong>Required correction</strong> Briefly justify the choice of 16 Å for the molmap resolution and explain how the mask is expected to influence the classification outcomes.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Validation metrics</li>
+<li><strong>Affected element</strong> Section F</li>
+<li><strong>Evidence pointer</strong> Section F, steps F1 through F3</li>
+<li><strong>Issue</strong> The section describes which plots to generate but does not provide guidance on what constitutes acceptable values for these metrics. For example, what is a good cFAR value? What does a "good" FSC curve look like beyond reaching zero?</li>
+<li><strong>Required correction</strong> Add brief interpretive guidance for each validation metric, including typical or acceptable ranges where applicable.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reference to prior work</li>
+<li><strong>Affected element</strong> Validation of protocol section</li>
+<li><strong>Evidence pointer</strong> Validation of protocol section</li>
+<li><strong>Issue</strong> The validation section cites references [11,13-15] as evidence of the protocol's success but does not summarize what was achieved in those studies. A reader unfamiliar with those papers cannot assess the relevance or quality of the prior results.</li>
+<li><strong>Required correction</strong> Briefly describe the outcomes of the cited studies, including the number of structures determined, their resolutions, and the specific end-binding proteins studied.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The absence of representative results (figures, resolution statistics, validation plots) is the primary technical failing that prevents the protocol's effectiveness from being established. The subjective nature of several classification and selection steps also needs to be addressed to ensure reproducibility.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The protocol addresses a niche but important problem. While individual components (e.g., Topaz picking, cryoSPARC classification) are established, their combination for the specific purpose of actin filament end structure determination appears to be a novel contribution. However, the degree of novelty is moderate, as the workflow largely repurposes existing tools.</li>
+<li>Scientific importance: The ability to determine structures of actin filament ends is of significant importance for understanding cytoskeletal dynamics and the molecular mechanisms of end-binding proteins. The protocol, if effective, would be a valuable resource for the field.</li>
+<li>Interdisciplinary readership: The primary audience is structural biologists and cell biologists with expertise in cryo-EM and actin biochemistry. The protocol is unlikely to attract a broad interdisciplinary readership beyond these fields.</li>
+<li>Technical soundness: The described steps are generally technically sound and reflect established cryo-EM practice. However, the lack of demonstrated results and the subjective elements in the processing pipeline weaken the case for technical robustness.</li>
+<li>Readability for nonspecialists: The manuscript is written for a specialist audience. Terms such as "cFAR," "Ewald sphere curvature," and "reference-based motion correction" are used without definition, which is appropriate for a methods paper in a specialized journal but would be challenging for nonspecialists.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The protocol addresses a real need and is described in considerable detail. However, the central claim of effectiveness is not currently established from the provided evidence. Inclusion of representative results and clarification of subjective steps are required before the protocol can be recommended for adoption.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

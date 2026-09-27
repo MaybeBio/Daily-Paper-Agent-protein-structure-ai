@@ -1,0 +1,95 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, conclusions) without supplementary figures, tables, or experimental procedures
+- **Assessment boundary** Scientific claims, methodological coherence, and evidence consistency as presented in the main text; supplementary materials referenced but not independently verifiable from the supplied material
+- **Shared manuscript claim summary** The authors report a computational-experimental pipeline combining diffusion-based sequence generation, multi-model ΔΔG prediction, and PAL-specific functional engineering to produce FortiPAL-1, a peptide asparaginyl ligase variant with improved thermal stability (Tm = 69 °C), high soluble zymogen expression in E. coli (64 mg L−1), catalytic efficiency comparable to butelase-1 (kcat/Km = 1.3 × 106 M−1 s−1), and a decoupling between global stability and optimal catalytic temperature.
+- **Visible evidence base** Main text figures referenced (Figs 1–5), Tables 1 and S2–S5 (referenced), supplementary figures S1–S13 (referenced), supplementary sequence data, Zenodo dataset, and SeqGenerator GitHub repository
+- **Missing materials affecting confidence** Supplementary figures, tables, experimental procedures, sequence data, and computational details were not provided; these are essential for verifying key claims regarding screening outcomes, ΔΔG predictions, mutagenesis coverage, and kinetic measurements
+
+## Reviewer
+- **Overall assessment** The manuscript presents a well-structured, multi-stage engineering campaign that addresses a genuine bottleneck in PAL-based biocatalysis. The conceptual framing, particularly the sequential integration of generative design with experimental refinement and the reported decoupling between thermodynamic stability and catalytic temperature optimum, is intellectually appealing. However, the main text alone does not provide sufficient quantitative detail to fully assess the robustness of the screening data, the statistical significance of improvements, or the reproducibility of the computational predictions. The claims are plausible and potentially impactful, but several key assertions require additional evidence from the supplementary materials to be fully established.
+- **Who would be interested in the results, and why** Researchers in enzyme engineering, protein design, and biocatalysis would find this work relevant. The demonstration that diffusion-based generative models can be coupled with experimental screening to improve a therapeutically and industrially relevant enzyme class (PALs) speaks directly to the growing community applying deep learning to protein engineering. Additionally, groups working on peptide macrocyclization, bioconjugation, and ligase development would be interested in FortiPAL-1 as a potential new tool. The reported expression improvement (64 mg L−1) is particularly notable for a PAL, which could lower barriers to adoption in applied settings.
+- **Major strengths** 1) The integrated workflow is logically sequenced, with each stage addressing a distinct limitation (stability, expression, selectivity, pH tolerance) and building on the previous one. 2) The use of multiple complementary ΔΔG prediction tools with consensus ranking is a sensible approach to reduce model-specific bias. 3) The reported decoupling between Tm and optimal catalytic temperature is an interesting and non-obvious finding that challenges simplistic assumptions about stability-activity relationships. 4) The split-PAL expression strategy and the quantification of core-domain recovery (approximately 40 mg L−1) provide practical information for users. 5) The substrate specificity analysis, particularly the differential positional preferences at P2′ versus P2″, adds mechanistic depth.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "FortiPAL-1 exhibits markedly enhanced thermal stability (Tm = 69 °C versus ∼50 °C for typical PALs) and achieves a soluble zymogen expression level of 64 mg L−1 in E. coli, substantially exceeding reported expression levels for natural PALs"
+  - **Evidence pointer** Figure 5b, 5f; Table S5; location not provided for expression quantification details
+  - **Concern** The headline claims of 64 mg L−1 expression and Tm = 69 °C are presented as central outcomes, but the main text does not provide the experimental details needed to evaluate their reliability. Specifically, the expression level is reported as a single value without information on biological replicates, error bars, or the specific quantification method (e.g., densitometry vs. purified protein yield). Similarly, the Tm comparison to "typical PALs" relies on literature values that are not tabulated in the main text, and the conditions under which Tm was measured (buffer, protein concentration, method) are not stated.
+  - **Why it matters** These two parameters are the primary quantitative claims of the paper and are likely to be the most cited. If the expression level is not reproducible or the Tm comparison is confounded by different measurement conditions, the practical value of FortiPAL-1 would be substantially diminished. The claim of "substantially exceeding reported expression levels" requires a systematic comparison, not a single reference point.
+  - **Resolution test** Provide full experimental details for expression quantification (biological replicates, standard deviation, purification yield) and Tm determination (method, buffer, protein concentration). Include a table comparing FortiPAL-1 Tm and expression to all previously reported PALs under matched conditions, with citations.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** "Consensus ranking from these tools yielded a prioritized single-point mutant library (Tables S3 and S4). Residues within 5 Å of the catalytic triad were excluded to avoid perturbing catalytic function, resulting in 125 candidate mutations for mutagenesis"
+  - **Evidence pointer** Tables S3 and S4; location not provided for selection criteria
+  - **Concern** The selection of 125 mutations from the consensus ranking is a critical step, but the main text does not specify the threshold or criteria used to define "consensus." It is unclear whether all mutations predicted as stabilizing by at least one tool were included, or whether a minimum number of tools had to agree. The exclusion of residues within 5 Å of the catalytic triad is stated, but the rationale for this distance cutoff and its impact on coverage of potentially beneficial mutations is not discussed. Without this information, the reader cannot assess whether the screening library was biased or incomplete.
+  - **Why it matters** The success of the subsequent screening depends entirely on the quality and coverage of the mutant library. If the consensus criteria were too stringent, potentially beneficial mutations may have been missed; if too permissive, the screening may have been underpowered. The reproducibility of this workflow by other groups requires a clear description of the selection logic.
+  - **Resolution test** Specify the exact consensus criteria (e.g., number of tools predicting stabilization, minimum predicted ΔΔG threshold). Justify the 5 Å cutoff with reference to structural or functional data. Provide the full list of 125 mutations with their predicted ΔΔG values from each tool in the supplementary materials.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretive rigor
+  - **Claim pointer** "Notably, the enhanced structural stability does not translate into a corresponding shift in the optimal reaction temperature, highlighting a decoupling between global folding stability and catalytic performance."
+  - **Evidence pointer** Figure 5d; location not provided for optimal temperature determination
+  - **Concern** The decoupling claim is presented as a key conceptual insight, but the main text does not provide the actual optimal temperature values for FortiPAL-1 versus the parental NeoLEG2 or natural PALs. The temperature-activity profile in Figure 5d is described qualitatively, but the reader cannot determine the magnitude of the discrepancy between Tm and optimal catalytic temperature. Moreover, the mechanistic interpretation offered in the Discussion (local perturbations of loop dynamics) is speculative and not directly tested.
+  - **Why it matters** The decoupling phenomenon is intellectually interesting and could have implications for enzyme engineering strategies. However, without quantitative data on the temperature-activity profiles and a more direct test of the proposed mechanism, the claim remains suggestive rather than established. Overinterpretation of this finding could mislead other researchers.
+  - **Resolution test** Report the optimal catalytic temperatures for FortiPAL-1, NeoLEG2, and at least one natural PAL under identical assay conditions. Provide a quantitative comparison of the Tm-optimal temperature gap. Consider additional experiments (e.g., activity assays at varying temperatures with structural probes) to test the loop-dynamics hypothesis.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Comparative benchmarking
+  - **Claim pointer** "maintaining catalytic efficiency comparable to the fastest known natural PAL, butelase-1 (kcat/Km = 1.3 × 106 M−1 s−1)"
+  - **Evidence pointer** Figure 5g; location not provided for kinetic assay conditions
+  - **Concern** The claim of catalytic efficiency comparable to butelase-1 is based on a single kcat/Km value. The main text does not specify the substrate, assay conditions, temperature, pH, or the error associated with this measurement. Butelase-1 kinetics are known to be substrate-dependent, and a direct comparison requires matched conditions. Additionally, the kcat/Km value for butelase-1 is cited from the literature, but the specific reference and conditions are not given in the main text.
+  - **Why it matters** This is a central performance claim that positions FortiPAL-1 as a practical alternative to butelase-1. If the comparison is not apples-to-apples, the claim could be misleading. The reproducibility of the kinetic measurement is also essential for other groups attempting to use FortiPAL-1.
+  - **Resolution test** Provide full kinetic parameters (kcat, Km, kcat/Km) with standard errors for FortiPAL-1 and butelase-1 measured under identical conditions (same substrate, buffer, temperature, pH). Specify the substrate used and justify its relevance. Include the literature source for the butelase-1 comparison value.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, "Tm = 69 °C versus ∼50 °C for typical PALs"
+  - **Issue** The abstract states "Tm = 69 °C" without specifying the pH or buffer conditions, which are known to affect protein stability measurements. The comparison to "typical PALs" is vague.
+  - **Required correction** Specify the measurement conditions in the abstract or refer to the main text and supplementary materials for full details. Consider rephrasing to "Tm = 69 °C (pH 5.0) compared to reported values of 50–52 °C for natural PALs."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Internal consistency
+  - **Affected element** Results section, "Diffusion-based generation and selection"
+  - **Evidence pointer** Figure 1b and 1c; location not provided
+  - **Concern** The text states that generated sequences displayed "more variability (63% median pairwise identity)" compared to natural sequences (70%). However, the statistical significance of this difference is not reported, and the biological relevance of a 7% difference in median pairwise identity is unclear.
+  - **Required correction** Provide a statistical test (e.g., Mann-Whitney U test) for the difference in pairwise identity distributions. Discuss whether this level of sequence diversification is expected to translate into functional diversity.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion, "natura of the engineering starting point"
+  - **Issue** The phrase "altered the natura of the engineering starting point" contains a typographical error ("natura" instead of "nature").
+  - **Required correction** Correct the typo to "nature."
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Results section, "Surface charge engineering"
+  - **Evidence pointer** Figure 5i and 5j; location not provided
+  - **Concern** The surface charge modification is described as improving pH stability, but the main text does not specify the extent of chemical modification (e.g., number of conjugated ethanolamine molecules per protein) or whether the modification affects catalytic activity at the optimal pH.
+  - **Required correction** Provide characterization of the modified protein (e.g., degree of labeling, mass spectrometry confirmation) and report activity at optimal pH before and after modification to rule out adverse effects.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Results section, "Functional screening"
+  - **Evidence pointer** Figure 2a; location not provided for screening conditions
+  - **Issue** The screening assay for cyclization activity is described, but the main text does not specify the number of replicates, the threshold for calling a variant "active," or the variability between experiments.
+  - **Required correction** Provide details on the number of independent experiments, the criteria for classifying variants as active/inactive, and the reproducibility of the activity measurements.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (quantitative claims require full experimental details), R1-M2 (selection criteria for mutant library must be specified), R1-M4 (kinetic comparison requires matched conditions and error reporting). These are not necessarily technical errors but rather gaps in reporting that prevent full evaluation of the central claims.
+- **Assessment against Nature-style criteria** Originality: The work is original in its specific combination of diffusion-based generation with PAL-specific engineering constraints. The concept of using generative models to create non-natural starting points for enzyme stabilization is not entirely new, but its application to PALs and the sequential multi-objective optimization strategy are novel. Scientific importance: The reported improvements in expression and stability address real bottlenecks in PAL applications, and the decoupling observation has conceptual value. However, the importance would be significantly enhanced by demonstrating utility in a practical application (e.g., preparative-scale macrocyclization). Interdisciplinary readership: The work bridges computational protein design, enzymology, and biocatalysis, and should appeal to readers across these fields. The writing is accessible to nonspecialists in each area, though some familiarity with enzyme engineering concepts is assumed. Technical soundness: The computational methods are state-of-the-art, and the experimental validation is logically designed. However, the lack of quantitative detail in the main text limits the assessment of technical rigor. Readability for nonspecialists: The manuscript is generally well-written and logically organized. The figures are referenced appropriately, and the narrative flow from design to characterization is clear. Some sections, particularly the Discussion, are somewhat speculative but clearly flagged as such.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core concept and workflow are promising, and the reported outcomes are potentially significant. However, the manuscript in its current form does not provide sufficient experimental detail to fully verify the central quantitative claims. If the supplementary materials address the concerns raised above, particularly regarding expression quantification, Tm measurements, mutant library selection, and kinetic comparisons, the work would merit publication in a high-impact venue. The decoupling observation and the demonstration of a generalizable multi-tier engineering strategy are the most novel contributions and should be highlighted more prominently.
+
+## Risk / unsupported claims
+- The claim that FortiPAL-1 achieves "soluble zymogen expression level of 64 mg L−1" is not verifiable from the main text alone; the quantification method and replicate information are not provided.
+- The comparison of FortiPAL-1 Tm (69 °C) to "typical PALs" (∼50 °C) is not supported by a systematic literature comparison in the main text.
+- The statement that generated sequences "retained key functional features of PALs" based on sequence logo analysis is plausible but not quantitatively supported in the main text.
+- The claim that "the enhanced structural stability does not translate into a corresponding shift in the optimal reaction temperature" requires the actual optimal temperature values, which are not reported in the main text.
+- The mechanistic interpretation involving "long-range entropic stabilization" and "redistribution of local flexibility" is speculative and not directly tested by the presented experiments.
+- The assertion that diffusion-based generation "altered the nature of the engineering starting point" in a way that enables tolerance to extensive engineering is an interesting hypothesis but is not directly demonstrated by comparative experiments with natural PAL starting points.

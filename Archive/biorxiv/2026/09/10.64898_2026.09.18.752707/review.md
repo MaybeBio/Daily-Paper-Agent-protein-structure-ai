@@ -1,0 +1,64 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose that 14-3-3 binding sites are determined by multi-scale biological context beyond local motifs, and present CAMP-14-3-3, a predictor integrating multi-scale features, protein language model embeddings, phylogeny-based data augmentation, and distribution-matched negative sampling, which outperforms existing methods on independent data
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark details, or methodological descriptions are available
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, dataset descriptions, benchmark protocols, and code or model availability statements
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially valuable direction for improving 14-3-3 binding site prediction by incorporating contextual and language model features. However, the claims of biological enrichment and predictive superiority are stated without any quantitative support in the provided material. The core novelty, methodological rigor, and generalizability cannot be assessed from the abstract alone. The work may be of interest to the phospho-signaling and computational biology communities, but the current evidence base is insufficient to establish the case.
+- **Who would be interested in the results, and why** Researchers studying 14-3-3 mediated signaling, phospho-dependent protein interactions, and intrinsically disordered protein function would find the contextual view relevant. Computational biologists developing predictors for post-translational modification sites under data-limited conditions may also be interested in the data augmentation and negative sampling strategies.
+- **Major strengths** The abstract identifies a clear gap in existing 14-3-3 predictors, namely the over-reliance on local sequence features. The proposed integration of multi-scale biological features and protein language model embeddings is conceptually reasonable and aligns with recent trends in the field. The emphasis on data augmentation and distribution-matched negative sampling addresses a recognized challenge in training predictors with limited positive examples.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that 14-3-3-binding proteins are enriched for condensation-related properties and that docking sites preferentially localize to compact intrinsically disordered regions
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states these biological findings as established results, but no data, statistical tests, or effect sizes are presented. It is unclear how enrichment was measured, what comparators were used, and whether the findings are robust to dataset composition.
+  - **Why it matters** These biological claims are presented as foundational motivation for the predictor design. If they are not rigorously supported, the rationale for incorporating these features is weakened, and the novelty of the context-aware view is not established.
+  - **Resolution test** Provide quantitative enrichment analyses with appropriate statistical tests, clear definitions of condensation-related properties and compact disordered regions, and validation on independent or held-out datasets.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Performance validation
+  - **Claim pointer** The authors claim that CAMP-14-3-3 outperformed motif-based approaches and existing predictors on independent data
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No performance metrics, benchmark datasets, or comparison protocols are reported. It is impossible to evaluate whether the improvement is meaningful, statistically significant, or generalizable across different test conditions.
+  - **Why it matters** The central claim of the manuscript is that the proposed framework is superior to existing methods. Without quantitative evidence, this claim is unverifiable and the practical utility of the predictor remains unknown.
+  - **Resolution test** Report standard metrics such as AUC, precision-recall, and F1 on multiple independent test sets, with confidence intervals and statistical significance tests against baseline methods.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** The authors describe a framework integrating multi-scale biological features, protein language model embeddings, phylogeny-based data augmentation, and distribution-matched negative sampling
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract provides no details on how these components are implemented, combined, or optimized. The phylogeny-based augmentation strategy and distribution-matched negative sampling are mentioned but not defined, making it impossible to assess their novelty or correctness.
+  - **Why it matters** Reproducibility and technical soundness are core requirements for computational methods. Without methodological detail, the contribution cannot be evaluated or built upon by the community.
+  - **Resolution test** Provide a complete methods section with algorithmic descriptions, hyperparameter choices, and code or model availability.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The phrase "Identifying phosphorylated serine/threonine residues that mediate 14-3-3 interactions remain a major challenge" contains a subject-verb agreement error. "Identifying" is singular and should take "remains."
+  - **Required correction** Change "remain" to "remains."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scope clarity
+  - **Affected element** Abstract claims
+  - **Evidence pointer** Abstract, general
+  - **Issue** The abstract claims a "general strategy for modeling phospho-dependent protein interactions under limited-data conditions," but the evidence presented is specific to 14-3-3. The generalizability to other phospho-dependent interactions is asserted without demonstration.
+  - **Required correction** Either temper the claim to reflect that generalizability is a hypothesis, or provide preliminary evidence on another phospho-binding domain system.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The biological enrichment claims, performance superiority, and methodological details are all unsubstantiated in the provided material.
+- **Assessment against Nature-style criteria** Originality: The idea of incorporating multi-scale context and language model embeddings for 14-3-3 prediction is not entirely new but the specific combination may offer a novel contribution. Scientific importance: 14-3-3 interactions are biologically significant, and improved prediction would be valuable. Interdisciplinary readership: The work bridges computational biology and phospho-signaling, which could attract a broad audience. Technical soundness: Cannot be assessed from the abstract. Readability for nonspecialists: The abstract is generally clear but uses jargon such as "distribution-matched negative sampling" without explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a potentially interesting approach, but the absence of quantitative results and methodological detail prevents any assessment of validity or impact. A full manuscript with rigorous benchmarking and biological validation would be required to support the claims.
+
+## Risk / unsupported claims
+- The claim that 14-3-3-binding proteins are enriched for condensation-related properties is unsupported.
+- The claim that 14-3-3 docking sites preferentially localize to compact intrinsically disordered regions is unsupported.
+- The claim that protein language model embeddings provide informative representations for this task is unsupported.
+- The claim that CAMP-14-3-3 outperformed motif-based approaches and existing predictors is unsupported.
+- The claim that the framework provides a general strategy for modeling phospho-dependent protein interactions is unsupported and likely overreaching given the 14-3-3-specific evidence.

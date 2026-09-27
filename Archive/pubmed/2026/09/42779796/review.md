@@ -1,0 +1,93 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided for evaluation
+- **Shared manuscript claim summary** The authors introduce "latent generative search for binder design," a framework that uses reward-guided search at inference time to steer the Proteina-Complexa generative model, which codesigns sequence and structure in a continuous latent space, removing the inverse-folding step. They report that in a screen of over one million designs by multiplexed phage display, this method produced more validated binders than every other method tested, with codesigned sequences surpassing post hoc redesign. They claim high-affinity binders across therapeutic receptors, a viral attachment protein, and intracellular signalling targets, and report the first de novo proteins that bind a free carbohydrate, including one that discriminates between blood-group antigens.
+- **Visible evidence base** Abstract text only; no quantitative data, statistical analyses, experimental protocols, or validation details are provided
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, supplementary information, sequence data, binding affinity measurements, phage display screening details, and comparative benchmarking data
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially significant advance in de novo protein binder design, particularly the claim of accessing carbohydrate targets that have resisted current methods. The conceptual shift from post hoc inverse folding to joint sequence-structure generation in latent space is intellectually appealing and could represent a meaningful methodological contribution. However, the abstract alone provides insufficient evidence to evaluate the validity, robustness, or generalizability of the claims. The central assertions regarding superiority over other methods, affinity ranges, and the novelty of carbohydrate binding rest on data not visible in the supplied material. The work is promising in principle, but the case is not established from the abstract alone.
+- **Who would be interested in the results, and why** Computational protein designers and machine learning researchers developing generative models for biomolecular design would be primary audiences. Experimental protein engineers seeking binders to challenging targets, particularly polar or flexible epitopes, would find the claimed capabilities directly relevant. Researchers working on carbohydrate recognition, including those in glycobiology and blood-group serology, would be interested in the claimed first de novo carbohydrate-binding proteins. The broader structural biology and drug discovery communities would follow this work given its potential to expand the targetable interaction space.
+- **Major strengths** The conceptual advance of codesigning sequence and structure in latent space, removing the inverse-folding step, is a clear and potentially impactful departure from current paradigms. The claim of accessing a target class, free carbohydrates, that has been refractory to de novo design is scientifically compelling and would represent a notable milestone if substantiated. The scale of the reported screen, over one million designs, suggests a rigorous empirical approach. The breadth of target classes claimed, from therapeutic receptors to intracellular signalling proteins, indicates potential generalizability.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The method "produced more validated binders than every other method tested" and "its codesigned sequences surpassing post hoc redesign"
+  - **Evidence pointer** Abstract only; no comparative data, statistical tests, or benchmarking details provided
+  - **Concern** The abstract asserts superiority over other methods without presenting any quantitative comparison. No numbers of validated binders, hit rates, enrichment factors, or statistical significance values are given. The comparison set of "every other method tested" is not specified, and the criteria for "validated" are undefined.
+  - **Why it matters** The central claim of the work is that this method outperforms existing approaches. Without visible comparative data, the reader cannot assess whether the reported advantage is meaningful, marginal, or an artifact of screening conditions or validation criteria. This claim is foundational to the paper's contribution.
+  - **Resolution test** Provide a comparative table or figure showing hit rates and validated binder counts for all methods tested under identical conditions, with appropriate statistical analysis. Define validation criteria explicitly and show that the comparison is apples-to-apples.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "It delivered high-affinity binders across therapeutic receptors, a viral attachment protein and intracellular signalling targets"
+  - **Evidence pointer** Abstract only; no affinity values, target names, or experimental validation data provided
+  - **Concern** The term "high-affinity" is used without any quantitative definition. No dissociation constants, binding kinetics, or assay formats are reported. The specific targets are not named, preventing assessment of their biological relevance or difficulty.
+  - **Why it matters** Affinity is the primary quantitative metric for binder quality. Without numerical values, the claim of "high-affinity" is unfalsifiable from the supplied material. The absence of target identities also prevents the reader from judging whether the chosen targets represent a fair test of the method's capabilities.
+  - **Resolution test** Report dissociation constants or EC50 values for all claimed binders, name the targets, and describe the binding assay used. Ideally, include a comparison with binders generated by established methods for the same targets.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "generating the first de novo proteins that bind a free carbohydrate, including one that discriminates between blood-group antigens"
+  - **Evidence pointer** Abstract only; no structural, biophysical, or functional data for the carbohydrate-binding proteins provided
+  - **Concern** This is the most striking claim in the abstract, yet no evidence is visible. The claim of "first" requires a thorough literature comparison that cannot be evaluated. The discrimination between blood-group antigens implies specificity, but no selectivity data are presented. The mode of binding to a "free" carbohydrate, as opposed to a conjugated or surface-presented form, is not experimentally documented.
+  - **Why it matters** If substantiated, this claim would open an entirely new target class for de novo design. However, extraordinary claims require extraordinary evidence. The abstract provides no structural or biophysical characterization to support the binding mode, no specificity data to support discrimination, and no literature survey to support the "first" designation.
+  - **Resolution test** Provide biophysical characterization of the carbohydrate-binding proteins, including binding affinity and specificity data against a panel of related carbohydrates. Include structural evidence, such as a cocrystal structure or cryo-EM reconstruction, showing the binding interface. Document a systematic literature search supporting the "first" claim.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** The overall framework of "latent generative search" using the "Proteina-Complexa generative model"
+  - **Evidence pointer** Abstract only; no model architecture, training data, search algorithm, or implementation details provided
+  - **Concern** The method is described at a high level, but no technical details are visible. The model architecture, training procedure, latent space construction, reward function, and search strategy are all unspecified. The name "Proteina-Complexa" suggests a specific model, but its provenance, availability, and relationship to existing models are not described.
+  - **Why it matters** For a computational method, reproducibility is essential. Without architectural and algorithmic details, other researchers cannot implement or build upon the approach. The field's progress depends on methods being transparent and accessible.
+  - **Resolution test** Provide a complete methods section describing the model architecture, training data and procedure, latent space design, reward function, and search algorithm. Release code and model weights, or provide a clear pathway to access them.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract, first sentence of methods description
+  - **Issue** The term "latent generative search" is introduced without a clear definition of what distinguishes it from other forms of latent space optimization or guided generation.
+  - **Required correction** Provide a concise definition of the term and clarify how it differs from existing approaches such as latent space sampling with reward models or classifier-guided generation.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Target description
+  - **Evidence pointer** Abstract, results summary
+  - **Issue** The abstract mentions "therapeutic receptors, a viral attachment protein and intracellular signalling targets" without naming any of them. This level of vagueness is unusual for a results summary.
+  - **Required correction** Name at least a representative subset of the targets in the abstract, or indicate that full target lists are provided in the main text.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Context
+  - **Affected element** Literature positioning
+  - **Evidence pointer** Abstract, introduction of the problem
+  - **Issue** The abstract states that polar, solvent-exposed epitopes and flexible ligands "have largely resisted de novo binders" but does not cite or summarize the specific prior attempts that failed.
+  - **Required correction** Add brief context on prior approaches and their limitations, with appropriate citations, to establish the gap being addressed.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Precision
+  - **Affected element** Screening description
+  - **Evidence pointer** Abstract, screening claim
+  - **Issue** The phrase "screen of more than one million designs by multiplexed phage display" does not specify how many targets were screened, how many rounds of selection were performed, or what the hit criteria were.
+  - **Required correction** Provide these details in the abstract or indicate where they appear in the main text.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The abstract does not provide sufficient quantitative or technical evidence to establish any of the central claims. The comparative superiority claim, the affinity claim, the carbohydrate-binding novelty claim, and the method reproducibility claim all require substantial additional evidence from the full manuscript.
+- **Assessment against Nature-style criteria** 
+  - Originality: The conceptual approach of joint sequence-structure generation in latent space with inference-time reward-guided search appears novel and distinct from current inverse-folding paradigms. The claimed application to carbohydrate targets would be highly original if substantiated. However, originality cannot be fully assessed without seeing the methods and comparing with existing literature.
+  - Scientific importance: The potential to expand de novo binder design to polar, flexible, and carbohydrate targets would be scientifically important, with implications for therapeutic development and fundamental understanding of molecular recognition. The importance is contingent on the claims being validated.
+  - Interdisciplinary readership: The work would appeal to computational biologists, protein engineers, structural biologists, glycobiologists, and drug discovery researchers. The abstract is written accessibly enough for nonspecialists to grasp the core advance, though the technical details are necessarily opaque at this level.
+  - Technical soundness: Cannot be assessed from the abstract. No experimental details, statistical analyses, or validation protocols are visible. The scale of the screen suggests rigor, but this cannot be confirmed.
+  - Readability for nonspecialists: The abstract is clearly written and the core concept is understandable. The significance of the carbohydrate claim is communicated effectively even to readers outside the immediate field.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a compelling vision and potentially significant results, but the absence of all supporting data prevents any assessment of validity. The recommendation is conditional: if the full manuscript provides rigorous comparative benchmarking, quantitative affinity data, structural or biophysical evidence for carbohydrate binding, and complete methodological transparency, this could be a strong candidate for publication in a high-impact venue. Without those elements, the claims remain unsubstantiated.
+
+## Risk / unsupported claims
+- The claim that the method "produced more validated binders than every other method tested" is unsupported in the abstract; no comparative data are visible.
+- The claim of "high-affinity binders" is unsupported; no affinity values or assay details are provided.
+- The claim of "the first de novo proteins that bind a free carbohydrate" is unsupported; no literature comparison or experimental evidence is visible.
+- The claim that the model "codesigns sequence and structure" and "removes the inverse-folding step" is not verifiable without architectural details.
+- The claim that the method "accessed previously untapped biology" is an interpretation that cannot be evaluated without target descriptions and prior art analysis.
+- The overall performance of the method relative to existing approaches is not assessable from the abstract alone.

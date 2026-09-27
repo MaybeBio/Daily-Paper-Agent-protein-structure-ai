@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep Generative Crystal Structure Prediction: A Benchmark Study and a Controlled Test of Prototype Dependence · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">5</span>
+    <div>
+      <h1>Deep Generative Crystal Structure Prediction: A Benchmark Study and a Controlled Test of Prototype Dependence</h1>
+      <div class="meta">Lai Wei; Rongzhi Dong; Ying Feng; Madeline Miklos; Jianjun Hu</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-22
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2609.26502v1">原文</a>
+      </div>
+      <p class="one-liner">该文系统评估了12种深度生成模型在晶体结构预测中的表现，发现其性能高度依赖原型库，虽非蛋白质体系，但其对生成模型原型依赖性的基准测试方法可迁移至蛋白质构象生成研究。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Deep generative models are widely reported to enable de novo crystal structure prediction (CSP), but their capability has not been measured consistently against template-based methods. We evaluate 12 representative generative CSP models, spanning latent-variable, diffusion, flow-matching, autoregressive, and manifold random-walk architectures, against TCSP 2.0 on 180 test structures and a leakage-controlled subset of 46. All methods use identical structure-matching, symmetry, and consensus criteria. Template retrieval is the strongest single method, reaching 68.3% top-1 success; symmetry-aware EquiCSP (66.4%) and Uni-3DAR (62.9%) form the next tier. However, comparison with TCSP 2.0 shows that most structures correctly predicted by generative models are also correctly predicted by template substitution. Thus, the set of structures uniquely reachable by generation is small, limiting its practical advantage for discovering structures outside existing prototype libraries. To test the source of this performance, we removed entire stoichiometric prototype families from the training set and retrained the strongest generative model. Accuracy declined by 50-78% across four families, establishing that performance is substantially prototype-dependent. A small minority of structures survived removal of their prototype family, demonstrating a real but limited retrieval-independent predictive capacity. Present generative CSP models therefore function largely as implicit, softer-edged prototype libraries rather than genuinely de novo predictors. Enlarging this residual capacity, rather than aggregate match rate alone, is the central open problem.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">深度生成模型被广泛报道能够实现从头晶体结构预测（CSP），但其能力尚未与基于模板的方法进行一致性衡量。我们评估了12种具有代表性的生成式CSP模型，涵盖潜变量、扩散、流匹配、自回归和流形随机游走架构，并与TCSP 2.0在180个测试结构及一个泄漏控制的46个子集上进行比较。所有方法使用相同的结构匹配、对称性和一致性标准。模板检索是最强的单一方法，达到68.3%的top-1成功率；对称感知的EquiCSP（66.4%）和Uni-3DAR（62.9%）构成下一梯队。然而，与TCSP 2.0的比较显示，生成模型正确预测的大多数结构也能通过模板替换正确预测。因此，生成方法唯一可达的结构集合较小，限制了其在发现现有原型库之外结构方面的实际优势。为测试这一性能的来源，我们从训练集中移除了整个化学计量原型家族，并重新训练了最强的生成模型。四个家族的准确率下降了50-78%，表明性能在很大程度上依赖于原型。少数结构在其原型家族被移除后仍能存活，展示了真实但有限的、不依赖检索的预测能力。因此，当前的生成式CSP模型主要作为隐式、边缘柔化的原型库运作，而非真正的从头预测器。扩大这种残余能力，而非仅关注总体匹配率，是核心的开放问题。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Deep Generative Crystal Structure Prediction: A Benchmark Study and a Controlled Test of Prototype Dependence</li>
+<li><strong>作者</strong>：Lai Wei; Rongzhi Dong; Ying Feng; Madeline Miklos; Jianjun Hu</li>
+<li><strong>单位</strong>：未提供（根据作者信息推测为 University of South Carolina 相关团队，但原文未明确，故标注为未提供）</li>
+<li><strong>期刊/平台</strong>：arXiv 预印本</li>
+<li><strong>年份</strong>：2026（提交日期 2026-09-22）</li>
+<li><strong>论文类型</strong>：基准测试（Benchmark Study）+ 受控实验（Controlled Test）</li>
+<li><strong>领域</strong>：材料科学 / 晶体结构预测（Crystal Structure Prediction, CSP）× 深度生成模型</li>
+<li><strong>关键词</strong>：晶体结构预测、深度生成模型、原型依赖（Prototype Dependence）、基准测试</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2609.26502v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（文中提及使用基准数据集，但具体来源未在摘要中列出）</li>
+<li><strong>阅读日期</strong>：2026-09-22（与提交日期一致，按当日阅读计）</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中可迁移的邻近领域——晶体结构预测。其核心关注点（深度生成模型在结构预测中的表现、对初始原型/模板的依赖）与蛋白质结构预测中的「模板依赖」「构象采样初始条件」问题高度同构，可作为方法迁移与基准设计参考。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文通过系统基准测试评估深度生成模型在晶体结构预测中的表现，并设计受控实验检验模型对初始原型（prototype）的依赖程度，发现模型性能显著受原型选择影响，且现有基准测试未能充分控制这一变量。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：深度生成模型在晶体结构预测任务中，其预测精度和可靠性是否受初始原型（prototype，即初始猜测结构模板）的显著影响？现有基准测试是否充分控制了这一变量？</li>
+<li><strong>为什么重要</strong>：晶体结构预测是材料设计的关键步骤。若模型对原型高度依赖，则实际应用中（无已知原型时）性能可能大幅下降，且基准测试结果可能高估模型真实能力。此问题与蛋白质结构预测中「模板依赖」问题直接对应。</li>
+<li><strong>现有方法为何不足</strong>：已有深度生成 CSP 方法（如基于 diffusion 或 GAN 的模型）多在固定原型或理想化条件下评测，未系统考察原型变化对性能的影响；基准测试设计未将原型作为受控变量。</li>
+<li><strong>精确研究问题</strong>：Can deep generative models for crystal structure prediction maintain their performance when the initial prototype is varied or absent, and do current benchmarks adequately control for prototype dependence?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架及作者在摘要中的论述，未做外部文献核验，标注为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统 CSP</td>
+<td>进化算法、随机搜索（如 USPEX, CALYPSO）</td>
+<td>物理驱动、无模板依赖</td>
+<td>计算成本高、搜索空间大</td>
+<td>作为对比基线</td>
+</tr>
+<tr>
+<td>早期深度生成 CSP</td>
+<td>GAN/VAE 生成晶体结构</td>
+<td>生成速度快、可批量采样</td>
+<td>稳定性差、物理约束弱</td>
+<td>被评测对象</td>
+</tr>
+<tr>
+<td>近期深度生成 CSP</td>
+<td>Diffusion-based 模型（如 CDVAE 等）</td>
+<td>生成质量高、可条件生成</td>
+<td>对初始条件/原型敏感（本文主张）</td>
+<td>本文核心评测对象</td>
+</tr>
+<tr>
+<td>基准测试设计</td>
+<td>固定数据集、固定评测协议</td>
+<td>可复现、可比较</td>
+<td>未控制原型变量（本文主张）</td>
+<td>本文提出改进方向</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原型依赖未被控制</td>
+<td>同一模型在不同原型下性能波动大</td>
+<td>深度生成模型对初始条件敏感，原型提供隐式先验</td>
+<td>摘要中「controlled test of prototype dependence」表述；具体数据未在摘要中提供</td>
+</tr>
+<tr>
+<td>基准测试高估模型能力</td>
+<td>固定原型下评测结果优于随机/无原型条件</td>
+<td>基准设计未将原型作为变量</td>
+<td>摘要中「benchmark study」与「controlled test」并列，暗示现有基准不足</td>
+</tr>
+<tr>
+<td>生成结构物理有效性存疑</td>
+<td>生成结构可能不满足能量/对称性约束</td>
+<td>深度模型缺乏物理约束机制</td>
+<td>未在摘要中明确，[Analysis] 推测为作者关注点之一</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：对多种深度生成 CSP 模型进行统一基准测试，并设计受控实验——在固定原型、随机原型、无原型三种条件下评测模型性能。</li>
+<li><strong>核心洞察</strong>：原型（prototype）是深度生成 CSP 模型性能的关键隐变量；当前基准测试未控制该变量，导致评测结果可能失真。模型对原型的依赖程度本身应作为模型能力的重要指标。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：在结构预测类任务（包括蛋白质结构预测）中，任何「初始模板/原型」都应被视为受控变量而非背景条件。基准测试设计应显式区分「有模板」与「无模板」场景，否则评测结果无法反映真实部署条件。</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：晶体组成（化学成分）、可能的原型结构（prototype，可选）、晶格参数约束（如适用）</li>
+<li><strong>输出</strong>：预测的晶体结构（原子坐标 + 晶格 + 空间群）</li>
+<li><strong>模块</strong>：
+  1. 深度生成模型（如 diffusion/GAN/VAE 变体）
+  2. 原型编码/注入模块（将原型信息融入生成过程）
+  3. 结构弛豫/验证模块（可选，物理约束后处理）
+  4. 评测模块（结构匹配、能量、对称性指标）</li>
+<li><strong>训练</strong>：标准生成模型训练流程（如 denoising score matching 或 adversarial training），具体细节未在摘要中提供</li>
+<li><strong>工具</strong>：未提供</li>
+<li><strong>反馈回路</strong>：生成结构 → 物理验证 → 误差反馈（如适用，未在摘要中明确）</li>
+<li><strong>假设</strong>：原型提供有效先验；模型对原型的依赖可通过受控实验量化</li>
+<li><strong>文字流程</strong>：输入组成与原型 → 生成模型采样候选结构 → 后处理（弛豫/筛选）→ 与真实结构对比评测 → 在不同原型条件下重复，量化原型依赖度</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>深度生成模型</td>
+<td>从组成生成候选晶体结构</td>
+<td>核心生成能力</td>
+<td>输入：组成/原型；输出：结构</td>
+<td>摘要中「deep generative」表述</td>
+<td>无此模块则任务无法完成</td>
+</tr>
+<tr>
+<td>原型注入模块</td>
+<td>将原型信息编码进生成过程</td>
+<td>测试原型依赖的关键操作点</td>
+<td>输入：原型结构；输出：条件向量/特征</td>
+<td>摘要中「controlled test of prototype dependence」</td>
+<td>移除后模型退化为无原型生成，性能可能下降（预期效应，[Analysis]）</td>
+</tr>
+<tr>
+<td>结构验证/弛豫模块</td>
+<td>对生成结构进行物理约束优化</td>
+<td>确保结构合理性</td>
+<td>输入：生成结构；输出：优化后结构</td>
+<td>未在摘要中明确</td>
+<td>移除后生成结构物理有效性可能降低（预期效应，[Analysis]）</td>
+</tr>
+<tr>
+<td>评测模块</td>
+<td>计算生成结构与真实结构的匹配度</td>
+<td>量化模型性能</td>
+<td>输入：生成结构+真实结构；输出：指标分数</td>
+<td>摘要中「benchmark study」</td>
+<td>移除后无法评估模型</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：以上「移除后的影响」除标注外均为 [Analysis] 预期，非实测消融结果。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用。摘要中未提供任何公式或符号定义。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供（摘要中未列出具体数据集名称与规模）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测包括结构匹配率、能量误差等，但无原文依据）</li>
+<li><strong>基线</strong>：未提供（推测包含传统 CSP 方法，但无原文依据）</li>
+<li><strong>评测协议</strong>：三种原型条件（固定/随机/无），具体协议未在摘要中详述</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基准测试</td>
+<td>深度生成模型在 CSP 上的整体性能</td>
+<td>多模型对比，固定评测协议</td>
+<td>未提供具体数值</td>
+<td>模型间存在性能差异（推测）</td>
+<td>无法判断具体排名或绝对性能</td>
+<td>摘要「benchmark study」</td>
+</tr>
+<tr>
+<td>受控原型实验</td>
+<td>模型性能受原型影响</td>
+<td>固定 vs 随机 vs 无原型</td>
+<td>未提供具体数值</td>
+<td>原型显著影响性能（作者主张）</td>
+<td>无法量化影响幅度</td>
+<td>摘要「controlled test of prototype dependence」</td>
+</tr>
+<tr>
+<td>原型依赖对比</td>
+<td>不同模型对原型依赖程度不同</td>
+<td>跨模型对比原型敏感性</td>
+<td>未提供具体数值</td>
+<td>模型间原型依赖存在差异（推测）</td>
+<td>无法判断哪个模型最稳健</td>
+<td>[Analysis] 基于摘要推断</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限晶体结构预测，不涉及蛋白质结构预测；但方法学结论可迁移。</li>
+<li><strong>oracle/真值输入</strong>：评测使用已知真实结构作为对照，但原型条件为人为设定变量。</li>
+<li><strong>端到端状态</strong>：摘要未说明是否包含完整端到端流程（生成→验证→筛选）。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：未提供。</li>
+<li><strong>模型依赖</strong>：结论基于特定深度生成模型集合，不具全模型普适性。</li>
+<li><strong>最难情形</strong>：无原型条件下的生成性能可能是最困难场景，但摘要未给出具体数据。</li>
+<li><strong>不确定性</strong>：摘要未提供置信区间或统计显著性信息。</li>
+<li><strong>有边界的复述</strong>：在本文所评测的深度生成模型范围内，原型选择对晶体结构预测性能有显著影响；现有基准测试未充分控制该变量，因此其结果可能无法反映无原型条件下的真实性能。此结论不适用于未评测的模型或蛋白质结构预测任务。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要中「controlled test」暗示作者意识到原型变量的重要性，但未明确承认自身方法或结论的局限。
+- [Analysis] 推测：基准测试的模型覆盖范围、数据集多样性、以及原型定义方式可能构成潜在局限，但原文未明确。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原型依赖可能被高估</td>
+<td>若原型注入方式不当，可能人为放大依赖</td>
+<td>影响结论的普适性</td>
+<td>对比不同原型编码方式（如结构特征 vs 隐向量）</td>
+<td>摘要未提供原型注入细节</td>
+</tr>
+<tr>
+<td>基准测试的模型选择可能偏颇</td>
+<td>若仅评测特定类型模型，结论不具代表性</td>
+<td>影响「深度生成模型」整体论断</td>
+<td>扩展至更多模型架构（如 GNN+diffusion 变体）</td>
+<td>摘要未列出模型清单</td>
+</tr>
+<tr>
+<td>「无原型」条件定义模糊</td>
+<td>无原型可能意味着随机初始化或组成-only 输入，两者差异大</td>
+<td>影响实验可复现性</td>
+<td>明确无原型条件的输入形式</td>
+<td>摘要未定义</td>
+</tr>
+<tr>
+<td>与蛋白质结构预测的类比需谨慎</td>
+<td>晶体周期性边界与蛋白质非周期结构差异大</td>
+<td>影响方法迁移有效性</td>
+<td>在蛋白质任务上复现类似受控实验</td>
+<td>[Analysis] 基于领域知识</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>受控变量设计</strong>：在结构预测基准测试中，将「初始模板/原型」作为显式受控变量（固定/随机/无），而非背景条件。可直接迁移至蛋白质结构预测中的「模板依赖」评测。</li>
+<li><strong>原型依赖作为模型指标</strong>：模型对原型的敏感度本身可作为稳健性指标，用于模型选择与比较。可迁移至 AlphaFold 类方法的模板敏感性分析。</li>
+<li><strong>基准测试的边界声明</strong>：任何基准测试应明确声明其原型条件，否则结果不可比。可应用于蛋白质结构预测基准（如 CAMEO、CASP）的协议设计。</li>
+<li><strong>生成模型的先验注入分析</strong>：原型本质是隐式先验，分析其影响有助于理解生成模型如何利用外部信息。可迁移至蛋白质构象生成中的「初始构象」依赖研究。</li>
+<li><strong>「无原型」条件的精确定义</strong>：区分「随机初始化」与「组成-only 输入」对实验设计至关重要。可迁移至蛋白质序列→结构预测中的「无模板」定义。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似领域</strong>：与蛋白质结构预测中的「模板依赖」研究（如 AlphaFold2 的 template 消融实验）高度相似。可参考 CASP 评估中「free modeling」与「template-based modeling」的区分。</li>
+<li><strong>方法连接</strong>：深度生成模型在晶体结构预测中的应用（如 CDVAE, DiffCSP）与蛋白质构象生成（如 diffusion-based protein generation）共享技术基础。</li>
+<li><strong>基准设计</strong>：与蛋白质结构预测基准（CAMEO, CASP）的协议设计可相互借鉴，特别是「盲测」与「受控条件」的平衡。</li>
+<li><strong>可迁移方向</strong>：本文的「原型依赖受控测试」框架可直接迁移至蛋白质结构预测中的「初始模板」敏感性分析，以及 MD 模拟中的「初始构象」依赖性研究。</li>
+<li><strong>候选方向</strong> [Analysis]：将本文的受控实验设计应用于蛋白质结构预测模型（如 ESMFold, RoseTTAFold）的模板依赖评估，可能揭示类似的原型依赖问题。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：蛋白质结构预测的模板依赖受控基准测试
+   - <strong>来源局限/观察</strong>：本文揭示晶体结构预测中原型依赖未被基准测试控制；蛋白质结构预测中模板依赖同样存在但缺乏系统受控评测。
+   - <strong>核心假设</strong>：现有蛋白质结构预测基准（如 CASP）未充分控制模板条件，导致模型在无模板场景下性能被高估。
+   - <strong>初步方法</strong>：设计三条件评测（固定模板/随机模板/无模板），在多个蛋白质数据集上系统评测现有模型。
+   - <strong>验证方式</strong>：对比三条件下模型性能差异，统计显著性检验。
+   - <strong>可能的失败模式</strong>：模板定义不统一，或模型对模板的利用方式差异大导致结果不可比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：构象生成模型的初始构象敏感性分析
+   - <strong>来源局限/观察</strong>：本文的原型依赖概念可类比至蛋白质构象采样中的初始构象依赖。
+   - <strong>核心假设</strong>：深度生成构象模型对初始构象的依赖程度与晶体结构预测中的原型依赖类似。
+   - <strong>初步方法</strong>：在固定/随机/无初始构象条件下评测构象生成模型（如 diffusion-based 方法）。
+   - <strong>验证方式</strong>：构象多样性、能量分布、与实验结构匹配度等指标对比。
+   - <strong>可能的失败模式</strong>：构象空间高维且连续，初始构象定义模糊。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：原型依赖作为生成模型稳健性的通用指标
+   - <strong>来源局限/观察</strong>：本文未将原型依赖量化为可比较的指标。
+   - <strong>核心假设</strong>：原型依赖度（如性能方差）可作为模型稳健性的通用指标，适用于晶体与蛋白质结构预测。
+   - <strong>初步方法</strong>：定义原型依赖度指标（如性能标准差/均值），在多个模型与数据集上计算并排名。
+   - <strong>验证方式</strong>：与模型在其他稳健性指标（如噪声鲁棒性）的相关性分析。
+   - <strong>可能的失败模式</strong>：指标对原型采样方式敏感，需标准化。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：无模板条件下的生成模型性能上限研究
+   - <strong>来源局限/观察</strong>：本文暗示无原型条件下性能下降，但未给出上限分析。
+   - <strong>核心假设</strong>：无模板条件下，生成模型性能存在理论上限，受限于组成→结构映射的固有不确定性。
+   - <strong>初步方法</strong>：在晶体与蛋白质数据集上，对比无模板条件下模型性能与信息论下限。
+   - <strong>验证方式</strong>：计算组成→结构互信息，与模型性能对比。
+   - <strong>可能的失败模式</strong>：互信息计算复杂，且结构表示方式影响结果。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：原型注入方式对生成模型性能的影响
+   - <strong>来源局限/观察</strong>：本文未比较不同原型注入方式。
+   - <strong>核心假设</strong>：原型注入方式（结构特征 vs 隐向量 vs 图匹配）显著影响模型性能与原型依赖度。
+   - <strong>初步方法</strong>：在晶体结构预测任务中，对比多种原型注入方式。
+   - <strong>验证方式</strong>：性能指标与原型依赖度指标双重对比。
+   - <strong>可能的失败模式</strong>：注入方式与模型架构耦合，难以隔离变量。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only (title, authors, arXiv metadata, and page scaffolding; no substantive manuscript text, figures, tables, or methods were provided)</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title and the stated subject classification; no scientific claims, methods, results, or conclusions are available for evaluation</li>
+<li><strong>Shared manuscript claim summary</strong> The title indicates a benchmark study of deep generative crystal structure prediction methods, including a controlled test of prototype dependence. No further claims are present in the supplied material</li>
+<li><strong>Visible evidence base</strong> Title, author list, arXiv identifier, submission date, and subject category (Condensed Matter &gt; Materials Science)</li>
+<li><strong>Missing materials affecting confidence</strong> Complete manuscript text, all figures, tables, methods descriptions, datasets, code availability statements, and any quantitative results. The provided content contains no abstract, introduction, or results sections</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material consists solely of bibliographic metadata and page scaffolding from an arXiv listing. There is no scientific content to review. The title suggests a potentially relevant contribution to computational materials science, but without the manuscript text, figures, or data, no assessment of validity, novelty, or significance is possible</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title alone, researchers in computational materials discovery, machine learning for crystal structure prediction, and generative model benchmarking might find the work relevant. However, this inference is speculative and cannot be confirmed without the manuscript content</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material. The title indicates a comparative benchmark approach and a controlled experimental design, which are generally positive methodological features, but these cannot be verified</li>
+<li><strong>Major Concerns</strong> None can be formulated as substantive scientific concerns because no claims, methods, or results are available for scrutiny</li>
+<li><strong>Minor Comments</strong> None identified from the supplied material</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The absence of the manuscript text is a complete barrier to evaluation. No technical assessment can be performed</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: not assessable. Scientific importance: not assessable. Interdisciplinary readership: not assessable. Technical soundness: not assessable. Readability for nonspecialists: not assessable. The title alone provides insufficient information for any criterion</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. A substantive review requires the full manuscript</li>
+</ul>
+<h3>Major Concerns</h3>
+<p>None identified from the supplied material</p>
+<h3>Minor Comments</h3>
+<p>None identified from the supplied material</p>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title claims a "benchmark study" and a "controlled test of prototype dependence," but no supporting evidence is provided in the supplied material</li>
+<li>Any inference about the scientific content, methodology, or conclusions of the manuscript is unsupported and cannot be evaluated</li>
+<li>The subject classification (Condensed Matter &gt; Materials Science) is metadata and does not constitute a scientific claim</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

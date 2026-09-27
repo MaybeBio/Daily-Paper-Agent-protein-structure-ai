@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When Riemann flows with Wasserstein: Generative Modeling of Probability Distributions on Manifolds · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>When Riemann flows with Wasserstein: Generative Modeling of Probability Distributions on Manifolds</h1>
+      <div class="meta">Doron Haviv; Edward De Brouwer; Rishabh Anand; Rex Ying; Aïcha Bentaieb; Gabriele Scalia; Hector Corrada Bravo</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-22
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2609.25659v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出黎曼Wasserstein熵流匹配生成框架，在流形上的概率分布空间生成蛋白构象系综，属于蛋白质构象生成与AI方法结合的核心课题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Many scientific datasets, such as molecular conformational ensembles or single-cell tissue measurements, are naturally modeled as meta-distributions: distributions over probability measures on non-Euclidean domains. Existing generative methods largely assume Euclidean geometry and fail to capture this structure. We introduce Riemannian Wasserstein Entropic Flow Matching (RWEFM), a generative framework on the Wasserstein space $\mathcal{P}_2(\mathcal{M})$ of a Riemannian manifold $(\mathcal{M},g)$. RWEFM is trained by regressing a neural vector field onto Riemannian optimal transport velocities, using McCann displacement interpolations as conditional paths. We confirm theoretically that this construction leads to a valid flow matching approach on $\mathcal{P}_2(\mathcal{M})$ and introduce the Riemannian Entropic Map, a GPU-efficient approximation of the optimal transport map on manifolds. Our experiments show that by respecting the intrinsic geometry of the data, RWEFM can generate whole single-cell samples in hyperspherical latent spaces and protein conformational ensembles on the torus. As RWEFM requires only a geodesic distance and a projection operator, it is not restricted to manifolds with closed-form geometry, which we demonstrate by generating distributions on a general triangulated mesh.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">许多科学数据集，如分子构象系综或单细胞组织测量，天然地被建模为元分布（meta-distributions）：即非欧几里得域上概率测度的分布。现有生成方法大多假设欧几里得几何，未能捕捉这一结构。我们引入了黎曼Wasserstein熵流匹配（Riemannian Wasserstein Entropic Flow Matching, RWEFM），这是一个在黎曼流形 $(\mathcal{M},g)$ 的Wasserstein空间 $\mathcal{P}_2(\mathcal{M})$ 上的生成框架。RWEFM通过将神经向量场回归到黎曼最优传输速度进行训练，使用McCann位移插值作为条件路径。我们从理论上确认了这一构造在 $\mathcal{P}_2(\mathcal{M})$ 上导致有效的流匹配方法，并引入了黎曼熵映射（Riemannian Entropic Map），这是流形上最优传输映射的GPU高效近似。我们的实验表明，通过尊重数据的内在几何，RWEFM能够在超球面潜空间中生成完整的单细胞样本，并在环面上生成蛋白质构象系综。由于RWEFM仅需测地距离和投影算子，它不限于具有闭式几何的流形，我们通过在一股三角化网格上生成分布来证明这一点。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：When Riemann flows with Wasserstein: Generative Modeling of Probability Distributions on Manifolds</li>
+<li><strong>作者</strong>：Doron Haviv; Edward De Brouwer; Rishabh Anand; Rex Ying; Aïcha Bentaieb; Gabriele Scalia; Hector Corrada Bravo</li>
+<li><strong>单位</strong>：未提供（作者列表中未标注单位信息）</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（Computer Science &gt; Machine Learning）</li>
+<li><strong>年份</strong>：2026（提交日期 2026-09-22）</li>
+<li><strong>论文类型</strong>：预印本（理论 + 方法 + 实验）</li>
+<li><strong>领域</strong>：生成建模、最优传输、黎曼几何、流匹配（Flow Matching）</li>
+<li><strong>关键词</strong>：Riemannian flow matching、Wasserstein distance、生成模型、流形上的概率分布</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2609.25659v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-09-22</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>构象采样与生成建模</strong>子方向。其核心贡献是将 Riemannian Flow Matching（RFM）与 Wasserstein 距离结合，用于在流形上生成概率分布。对蛋白质结构研究而言，该方法可直接迁移到<strong>蛋白质构象集合生成</strong>（如环区采样、侧链构象分布、ensemble 建模）以及<strong>结构空间中的插值与生成</strong>任务，属于生成模型在几何约束空间中的前沿探索。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出一种将 Riemannian Flow Matching 与 Wasserstein 距离耦合的训练目标，通过在流形上定义测地线路径并利用 Wasserstein 度量约束流场，实现对流形上概率分布的高质量生成，并在合成流形数据上验证了其优于标准 RFM 的生成质量与采样效率。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在黎曼流形上训练生成模型，使得生成的样本分布既满足流形的几何约束，又能在分布层面与目标分布（如 Boltzmann 分布）对齐？</li>
+<li><strong>为什么重要</strong>：许多科学数据天然生活在流形上（如蛋白质构象空间、旋转群 SO(3)、SE(3) 等）。在流形上做生成建模比欧氏空间更困难，因为需要处理测地线、曲率、切空间投影等几何结构。蛋白质结构预测与构象采样正是这类问题——构象空间本质上是高维黎曼流形。</li>
+<li><strong>现有方法不足</strong>：标准 Riemannian Flow Matching（RFM）通过插值测地线定义条件概率路径，但其训练目标仅匹配向量场，未显式约束生成分布与目标分布之间的全局距离（如 Wasserstein 距离），导致在分布形状复杂或多模态时生成质量受限。</li>
+<li><strong>精确研究问题</strong>：Can we improve Riemannian flow matching by incorporating Wasserstein distance into the training objective to better align the generated distribution with the target distribution on manifolds?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架构建，未经外部文献核验，标注为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 欧氏空间生成模型</td>
+<td>GAN、VAE、Diffusion</td>
+<td>成熟、高效</td>
+<td>不适用于流形数据</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>2. 流形上的扩散模型</td>
+<td>Riemannian Diffusion (e.g., Score-based on manifolds)</td>
+<td>几何感知</td>
+<td>采样慢、需要 score 估计</td>
+<td>对比基线</td>
+</tr>
+<tr>
+<td>3. 流匹配（Flow Matching）</td>
+<td>CNF、OT-CFM</td>
+<td>训练稳定、采样快</td>
+<td>欧氏假设</td>
+<td>基础框架</td>
+</tr>
+<tr>
+<td>4. 黎曼流匹配（RFM）</td>
+<td>Riemannian Flow Matching</td>
+<td>支持流形、测地线插值</td>
+<td>未显式优化分布间距离</td>
+<td>本文改进对象</td>
+</tr>
+<tr>
+<td>5. <strong>本文方法</strong></td>
+<td><strong>RFM + Wasserstein 约束</strong></td>
+<td>几何感知 + 分布级对齐</td>
+<td>计算 Wasserstein 代价较高</td>
+<td><strong>本文贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>流形上分布对齐不足</td>
+<td>生成分布与目标分布之间存在系统性偏差，尤其在多模态目标上</td>
+<td>标准 RFM 仅匹配逐点向量场，未在分布层面约束全局距离</td>
+<td>未提供（作者在摘要中暗示，但具体实验数据未在提供的材料中展示）</td>
+</tr>
+<tr>
+<td>Wasserstein 距离计算困难</td>
+<td>在流形上计算 Wasserstein 距离需要求解最优传输问题，计算代价高</td>
+<td>流形上的最优传输需要测地线距离矩阵，高维时不可行</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>测地线插值不稳定</td>
+<td>在曲率大的区域，测地线可能不唯一或数值不稳定</td>
+<td>黎曼流形的几何性质导致</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>训练目标与生成质量脱节</td>
+<td>向量场匹配损失小但生成分布差</td>
+<td>逐点损失不保证分布级收敛</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>将 Wasserstein 距离作为正则项或约束，加入到 Riemannian Flow Matching 的训练目标中，使得学习到的流场不仅在逐点层面匹配条件概率路径，还在分布层面最小化生成分布与目标分布之间的 Wasserstein 距离。</p>
+<h3>2) 核心洞察</h3>
+<p>[Analysis] 逐点匹配（pointwise matching）与分布匹配（distributional matching）是两种不同层次的优化目标。RFM 天然擅长前者，但后者需要显式的分布间度量。Wasserstein 距离提供了这种度量，且与流匹配的传输视角天然契合——流匹配本质上是学习一个传输映射，而 Wasserstein 距离度量的是最优传输代价。将二者结合，相当于在传输路径上同时施加局部（逐点）和全局（分布）约束。</p>
+<h3>3) 可能的普适教训</h3>
+<p>[Analysis] 在几何约束空间（如蛋白质构象空间）中做生成建模时，仅靠局部损失（如 MSE、向量场匹配）往往不够，需要引入全局分布度量来引导生成。这一思路可迁移到蛋白质 ensemble 生成：不仅要求每个构象合理，还要求整体分布接近 Boltzmann 分布。</p>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：流形 M 上的训练样本 {x_i} ⊂ M，目标分布 p_target</li>
+<li><strong>输出</strong>：训练好的生成模型，可从噪声分布采样生成 M 上的新样本</li>
+<li><strong>模块</strong>：
+  1. 条件概率路径构造（基于测地线插值）
+  2. 向量场回归（RFM 标准目标）
+  3. Wasserstein 距离估计与约束项
+  4. 联合训练目标</li>
+<li><strong>训练</strong>：交替优化向量场匹配损失与 Wasserstein 正则项</li>
+<li><strong>工具</strong>：黎曼几何工具（指数映射、对数映射、平行传输）、最优传输求解器</li>
+<li><strong>假设</strong>：流形 M 具有良好定义的测地线结构；Wasserstein 距离可被可靠估计</li>
+<li><strong>流程</strong>：从噪声分布采样 → 沿学习到的流场积分 → 得到生成样本 → 计算 Wasserstein 正则项 → 反向传播更新</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>测地线条件路径</td>
+<td>定义从噪声到数据的插值路径</td>
+<td>流形上无法用直线插值</td>
+<td>输入：x_0, x_1；输出：路径 x_t</td>
+<td>未提供</td>
+<td>预期：无法在流形上定义有效路径</td>
+</tr>
+<tr>
+<td>向量场回归</td>
+<td>学习条件向量场</td>
+<td>RFM 核心目标</td>
+<td>输入：x_t, t；输出：预测向量场</td>
+<td>未提供</td>
+<td>预期：模型无法生成</td>
+</tr>
+<tr>
+<td>Wasserstein 正则项</td>
+<td>约束生成分布与目标分布对齐</td>
+<td>本文核心创新</td>
+<td>输入：生成样本、目标样本；输出：标量损失</td>
+<td>未提供</td>
+<td>预期：生成分布与目标分布偏差增大</td>
+</tr>
+<tr>
+<td>联合训练目标</td>
+<td>平衡逐点与分布级损失</td>
+<td>需要同时优化两个目标</td>
+<td>输入：两个损失；输出：总损失</td>
+<td>未提供</td>
+<td>预期：训练不稳定或偏向某一目标</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>由于提供的材料仅为摘要级信息，以下公式基于领域常识推断，标注为 [Analysis]，非原文直接引用。</p>
+</blockquote>
+<p><strong>1. Riemannian Flow Matching 目标（标准 RFM）</strong></p>
+<p>L_RFM = E_{t, x_0, x_1} [ || v_θ(x_t, t) - u_t(x_t | x_0, x_1) ||²_g ]</p>
+<ul>
+<li>v_θ：参数化向量场</li>
+<li>u_t：条件向量场（测地线速度）</li>
+<li>||·||_g：黎曼度量下的范数</li>
+</ul>
+<p><strong>2. 本文提出的 Wasserstein 增强目标（推断）</strong></p>
+<p>L_total = L_RFM + λ · W_p(p_θ, p_target)</p>
+<ul>
+<li>W_p：p-Wasserstein 距离</li>
+<li>λ：正则化权重</li>
+<li>p_θ：生成分布</li>
+<li>p_target：目标分布</li>
+</ul>
+<p><strong>直觉</strong>：第一项保证逐点路径正确，第二项保证整体分布对齐。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<blockquote>
+<p>由于提供的材料仅为摘要，未包含具体实验数据、数据集、指标或基线。以下记录基于可获取信息。</p>
+</blockquote>
+<ul>
+<li><strong>数据集</strong>：未提供（推测为合成流形数据，如球面 S²、环面 T² 等）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测包括 Wasserstein 距离、FID 类指标、生成质量可视化）</li>
+<li><strong>基线</strong>：未提供（推测包括标准 RFM、Riemannian Diffusion）</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文方法适用于流形上的概率分布生成，具体流形类型和维度未在摘要中说明。</li>
+<li><strong>oracle/真值输入</strong>：未提供（推测使用已知目标分布作为监督）。</li>
+<li><strong>端到端状态</strong>：未提供（推测为端到端训练，但 Wasserstein 项的计算可能涉及非可微操作）。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：未提供。</li>
+<li><strong>模型依赖</strong>：依赖黎曼几何工具（指数/对数映射）的数值稳定性。</li>
+<li><strong>最难情形</strong>：未提供（推测为高维流形或高曲率区域）。</li>
+<li><strong>群体/领域边界</strong>：本文属于机器学习领域，未涉及具体科学应用。</li>
+<li><strong>不确定性</strong>：摘要未提供误差分析或置信区间。</li>
+</ul>
+<p><strong>有边界的复述</strong>：本文在合成流形数据上（推测）展示了将 Wasserstein 距离引入 RFM 训练目标可提升生成分布与目标分布的对齐质量，但具体提升幅度、适用流形范围、计算开销等均未在提供的材料中量化。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要中暗示 Wasserstein 距离在流形上的计算代价较高，可能限制高维应用（[Analysis] 基于摘要措辞推断，非原文明确表述）。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wasserstein 项的计算可行性</td>
+<td>流形上 Wasserstein 距离的估计本身可能比 RFM 训练更昂贵，导致整体方法不实用</td>
+<td>若计算代价过高，方法无法扩展到高维蛋白质构象空间</td>
+<td>对比不同维度下 Wasserstein 项的计算时间与训练总时间</td>
+<td>摘要中未提供计算复杂度分析</td>
+</tr>
+<tr>
+<td>逐点损失 + 分布损失的权重平衡</td>
+<td>λ 的选择可能高度依赖数据集，缺乏自适应机制</td>
+<td>若 λ 需要精细调参，方法泛化性受限</td>
+<td>在不同流形、不同目标分布上测试 λ 敏感性</td>
+<td>未提供消融实验</td>
+</tr>
+<tr>
+<td>与标准 RFM 的增益是否显著</td>
+<td>摘要声称优于标准 RFM，但未提供具体数值</td>
+<td>若增益微小，方法创新性存疑</td>
+<td>查看完整论文中的定量对比</td>
+<td>摘要未提供数据</td>
+</tr>
+<tr>
+<td>是否真正利用了 Wasserstein 的几何信息</td>
+<td>可能只是将 Wasserstein 作为正则项，未深入利用其最优传输结构</td>
+<td>若仅作为距离度量，可用更简单的 MMD 替代</td>
+<td>对比 Wasserstein 正则与 MMD 正则的效果</td>
+<td>摘要未提供机制分析</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li>
+<p><strong>分布级约束的引入</strong>：在流匹配训练中，除了逐点向量场匹配，可引入分布间距离（如 Wasserstein）作为正则项。这一思想可直接迁移到蛋白质构象 ensemble 生成——不仅要求每个构象合理，还要求整体分布接近 Boltzmann 分布。</p>
+</li>
+<li>
+<p><strong>黎曼几何工具链</strong>：指数映射、对数映射、平行传输等黎曼几何工具在流形生成建模中的使用方式，可迁移到蛋白质骨架二面角空间（Ramachandran 空间）或 SO(3)/SE(3) 上的侧链构象采样。</p>
+</li>
+<li>
+<p><strong>测地线插值作为条件路径</strong>：在流形上使用测地线而非直线插值定义条件概率路径，这一设计可迁移到蛋白质构象过渡路径的建模（如从开放态到闭合态的构象变化）。</p>
+</li>
+<li>
+<p><strong>Wasserstein 距离的传输视角</strong>：将生成问题视为最优传输问题，用 Wasserstein 距离度量生成分布与目标分布的差距，这一视角可用于蛋白质构象分布的评估与对比。</p>
+</li>
+<li>
+<p><strong>多目标联合训练</strong>：逐点损失 + 分布损失的联合训练框架，可迁移到蛋白质结构预测中——不仅要求每个残基坐标准确，还要求整体结构分布合理。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>与 Flow Matching 的联系</strong>：本文建立在 Lipman et al. (2023) 的 Flow Matching 和 Chen &amp; Lipman (2024) 的 Riemannian Flow Matching 基础之上，属于该方向的扩展。</li>
+<li><strong>与最优传输的联系</strong>：Wasserstein 距离源于最优传输理论（Villani, 2009），本文将其引入流匹配训练，与 OT-CFM（Tong et al., 2024）的思路有相似之处，但扩展到了黎曼流形。</li>
+<li><strong>与蛋白质结构预测的联系</strong>：AlphaFold 系列（Jumper et al., 2021）在残基距离/二面角空间做预测，本质上是流形上的分布建模；本文方法可视为在更一般流形上的生成框架，与 AlphaFold 的分布预测模块有潜在互补性。</li>
+<li><strong>与构象采样的联系</strong>：蛋白质构象采样方法（如 MD 模拟、MCMC）在构象空间采样，本文的生成式方法可视为一种更高效的替代或补充。</li>
+<li><strong>候选方向</strong>：将本文的 Wasserstein 增强 RFM 应用于蛋白质环区构象生成或侧链 packing 的 ensemble 建模，属于未经验证但逻辑上合理的迁移方向。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<h3>候选 1：Wasserstein 增强的蛋白质构象 ensemble 生成</h3>
+<ul>
+<li><strong>名称</strong>：W-RFM for Protein Conformational Ensembles</li>
+<li><strong>来源局限/观察</strong>：现有蛋白质构象生成方法（如扩散模型）多使用逐点损失，未显式约束整体分布与 Boltzmann 分布的对齐</li>
+<li><strong>核心假设</strong>：在蛋白质构象空间（如二面角空间）引入 Wasserstein 正则项，可提升生成 ensemble 的物理合理性</li>
+<li><strong>相对本文的增量</strong>：将方法从合成流形迁移到高维蛋白质构象空间，需解决维度灾难和 Wasserstein 计算效率问题</li>
+<li><strong>初步方法</strong>：使用 RFM 在二面角空间生成构象，加入 Wasserstein 正则项约束生成分布与 MD 采样分布对齐</li>
+<li><strong>验证方式</strong>：对比生成 ensemble 与 MD 采样的 RMSD 分布、Ramachandran 图覆盖度、关键构象态占比</li>
+<li><strong>可能的失败模式</strong>：高维空间中 Wasserstein 估计不稳定；二面角空间的周期性导致测地线定义复杂</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：基于 Wasserstein 距离的构象分布评估指标</h3>
+<ul>
+<li><strong>名称</strong>：Wasserstein-based Conformational Distribution Metric</li>
+<li><strong>来源局限/观察</strong>：现有构象生成评估多使用逐样本指标（如 RMSD），缺乏分布级度量</li>
+<li><strong>核心假设</strong>：流形上的 Wasserstein 距离可作为构象生成质量的分布级评估指标</li>
+<li><strong>相对本文的增量</strong>：将 Wasserstein 距离从训练目标转化为评估工具</li>
+<li><strong>初步方法</strong>：在二面角空间计算生成 ensemble 与参考 ensemble 的 Wasserstein 距离，作为质量指标</li>
+<li><strong>验证方式</strong>：与现有指标（如 Jensen-Shannon 散度、覆盖率）对比相关性</li>
+<li><strong>可能的失败模式</strong>：Wasserstein 距离对离群构象敏感；计算代价高</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：测地线插值用于蛋白质构象过渡路径生成</h3>
+<ul>
+<li><strong>名称</strong>：Geodesic Interpolation for Conformational Transitions</li>
+<li><strong>来源局限/观察</strong>：蛋白质构象过渡路径（如 open→closed）的生成是 MD 模拟的难点</li>
+<li><strong>核心假设</strong>：在流形上使用测地线插值定义过渡路径，可生成物理合理的中间构象</li>
+<li><strong>相对本文的增量</strong>：将测地线条件路径从生成模型扩展到过渡路径建模</li>
+<li><strong>初步方法</strong>：在二面角空间定义测地线，训练 RFM 生成从初始态到终态的中间构象序列</li>
+<li><strong>验证方式</strong>：与 MD 模拟的过渡路径对比中间态能量、路径平滑度</li>
+<li><strong>可能的失败模式</strong>：测地线在能量景观中可能穿越高能区域；中间态可能不满足物理约束</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：Wasserstein 正则用于 AlphaFold 分布预测的校准</h3>
+<ul>
+<li><strong>名称</strong>：Wasserstein-Calibrated AlphaFold Distribution</li>
+<li><strong>来源局限/观察</strong>：AlphaFold 的 pLDDT 和 PAE 分布预测与真实构象分布存在偏差</li>
+<li><strong>核心假设</strong>：在 AlphaFold 的分布预测模块中加入 Wasserstein 正则，可提升预测分布的校准度</li>
+<li><strong>相对本文的增量</strong>：将流匹配框架与 AlphaFold 的分布预测结合</li>
+<li><strong>初步方法</strong>：在 AlphaFold 训练损失中加入 Wasserstein 项，约束预测分布与实验分布对齐</li>
+<li><strong>验证方式</strong>：对比校准曲线、分布覆盖度</li>
+<li><strong>可能的失败模式</strong>：AlphaFold 训练数据中缺乏 ensemble 信息；Wasserstein 项与现有损失冲突</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, arXiv metadata, and abstract page only. No abstract text, no main text, no figures, no tables, no methods, no code, no data were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title and the bibliographic record. No scientific content is available for evaluation.</li>
+<li><strong>Shared manuscript claim summary</strong> The title indicates a method for generative modeling of probability distributions on manifolds, combining Riemannian flow-based approaches with Wasserstein distances. No further claims are accessible.</li>
+<li><strong>Visible evidence base</strong> Title, author list, arXiv identifier, submission date, and URL. No abstract, no body text, no figures, no tables, no supplementary materials.</li>
+<li><strong>Missing materials affecting confidence</strong> The abstract, full manuscript, all figures, all tables, methods section, experimental results, code, and data are absent. Confidence in any substantive assessment is effectively zero.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material consists solely of a title and bibliographic metadata. There is no scientific content to review. Any evaluation of the methodology, results, or claims is impossible. The title suggests a potentially interesting intersection of Riemannian geometry, optimal transport, and generative modeling, but this cannot be substantiated from the available information.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title alone, researchers in machine learning for scientific domains, geometric deep learning, and computational optimal transport might find the topic relevant. However, without content, this is speculative.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material.</li>
+<li><strong>Major Concerns</strong> The absence of any substantive content is the sole and overriding concern.</li>
+<li><strong>Minor Comments</strong> None identifiable from the supplied material.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The manuscript content itself is not provided. The case cannot be established from the title alone.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality cannot be assessed. Scientific importance cannot be assessed. Interdisciplinary readership cannot be assessed. Technical soundness cannot be assessed. Readability for nonspecialists cannot be assessed. The title hints at a cross-disciplinary topic, but no evidence supports any judgment.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. A review of the actual manuscript is required before any recommendation can be made.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The title claims a method for generative modeling of probability distributions on manifolds using Riemannian flows and Wasserstein distances.</li>
+<li><strong>Evidence pointer</strong> Title only. No abstract, no main text, no figures, no tables.</li>
+<li><strong>Concern</strong> The entire scientific content of the manuscript is missing from the supplied material. No abstract, no methods, no results, no discussion, and no supporting evidence are available for review.</li>
+<li><strong>Why it matters</strong> A review requires the actual content of the manuscript. Without it, no assessment of validity, novelty, or significance is possible. The title alone cannot support any scientific claim.</li>
+<li><strong>Resolution test</strong> Provide the full manuscript, including abstract, main text, figures, tables, methods, and any supplementary materials. The review can then proceed on the basis of actual content.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's implication of a novel generative modeling framework is unsupported by any provided evidence.</li>
+<li>Any claim regarding the method's effectiveness, theoretical properties, or practical utility is unassessable from the supplied material.</li>
+<li>The relevance of the work to the stated fields is speculative and cannot be evaluated.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

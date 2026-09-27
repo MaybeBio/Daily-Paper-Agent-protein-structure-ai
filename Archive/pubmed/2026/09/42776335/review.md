@@ -1,0 +1,82 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report a hybrid quantum-classical study of 15 octapeptides from the RCSB PDB, using classical 100-ns MD simulations to characterize structural stability and energetic trends, and a lattice-based Hamiltonian optimized with VQE on the IBM quantum simulator to identify low-energy folded states. They report that VQE consistently converges to competitive low-energy conformations, and that quantitative comparisons using Cα RMSD and TM-score were performed against original PDB structures, with TM-scores also compared against AlphaFold predictions.
+- **Visible evidence base** Abstract text only; no numerical results, figures, tables, or methodological details are available
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, numerical data (energies, RMSD values, TM-scores), details of the VQE implementation (ansatz, number of qubits, error mitigation), MD simulation parameters, the list of 15 peptides and their PDB IDs, and the AlphaFold comparison protocol
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting proof-of-concept application of VQE to peptide folding on a lattice model, benchmarked against classical MD and AlphaFold. However, the abstract alone provides insufficient quantitative evidence to evaluate the validity of the central claims. The comparison between MD and lattice Hamiltonian energies is acknowledged to be on different absolute scales, and the correlation-based evaluation is not described with any numerical support. The claim that VQE "consistently converges to competitive low-energy conformations" is not substantiated by any data in the abstract. The comparison with AlphaFold is mentioned but no results are given. The work may be of interest to the quantum biology and computational biophysics communities, but the case is not established from the provided material.
+- **Who would be interested in the results, and why** Researchers in quantum computing applied to biology, particularly those working on VQE and quantum optimization for protein folding; computational biophysicists interested in hybrid quantum-classical methods; and method developers in structural biology who follow alternative approaches to structure prediction beyond deep learning methods.
+- **Major strengths** The study addresses a timely and important problem, namely the limitations of homology-based structure prediction methods for novel proteins, and proposes a quantum computing alternative. The use of a well-defined benchmark set of 15 octapeptides from the PDB is a reasonable design. The combination of classical MD, lattice Hamiltonian modeling, and comparison with AlphaFold provides a multi-method evaluation framework. The acknowledgment that absolute energy scales differ between MD and lattice models is honest and indicates awareness of the modeling limitations.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "The results demonstrate that VQE consistently converges to competitive low-energy conformations."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The central claim of the study is that VQE converges to competitive low-energy conformations, but no numerical data are presented in the abstract to support this. No energies, convergence metrics, or comparisons against any baseline are given. The phrase "competitive" is undefined.
+  - **Why it matters** Without quantitative evidence, the reader cannot assess whether VQE actually performs well, how it compares to classical methods, or whether the results are statistically meaningful across the 15 peptides. This is the core contribution of the paper.
+  - **Resolution test** Provide the numerical results, such as the VQE-obtained ground state energies, the correlation coefficients between MD and lattice energies, and a clear definition of "competitive" with respect to a defined baseline.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological clarity
+  - **Claim pointer** "These results are then contrasted with energies obtained from a lattice-based Hamiltonian optimization using the VQE algorithm, executed on the IBM quantum simulator."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not describe the lattice model, the mapping from PDB structures to the lattice, the Hamiltonian construction, the VQE ansatz, the number of qubits, or the error mitigation strategy. Without these details, the method cannot be reproduced or evaluated for correctness.
+  - **Why it matters** VQE results are highly sensitive to the ansatz, the Hamiltonian encoding, and the classical optimizer. The absence of these details prevents any assessment of whether the implementation is sound and whether the results are meaningful.
+  - **Resolution test** Include a description of the lattice model, the Hamiltonian terms, the ansatz used, the number of qubits, the simulator settings, and any error mitigation techniques in the full manuscript.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Comparative validity
+  - **Claim pointer** "Furthermore, the TM-scores obtained from the VQE predictions were compared with those obtained from the AlphaFold predictions."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The comparison with AlphaFold is mentioned but no results are given. It is unclear whether AlphaFold was run on the same 15 peptides, what version was used, and whether the comparison is favorable or unfavorable to VQE.
+  - **Why it matters** The comparison with AlphaFold is a key differentiator of this work, as it positions VQE against a state-of-the-art classical method. Without results, the reader cannot judge whether the quantum approach offers any advantage or is merely a proof of concept.
+  - **Resolution test** Provide the TM-score distributions for both VQE and AlphaFold predictions, with statistical tests if appropriate, and describe the AlphaFold protocol.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Title
+  - **Evidence pointer** Title
+  - **Issue** The title "A Quantum-Classical Analysis of Variability in Peptide Energies and Conformations" suggests a focus on variability, but the abstract does not describe any analysis of variability across peptides or across methods.
+  - **Required correction** Either adjust the title to reflect the actual scope, or add a brief statement in the abstract about how variability is assessed.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "paves the road" is non-standard English; the common expression is "paves the way."
+  - **Required correction** Replace "paves the road" with "paves the way."
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that 15 peptides were selected from the RCSB PDB, but no criteria for selection are given. It is unclear whether the selection was random, representative, or biased toward certain structural classes.
+  - **Required correction** Add a sentence describing the selection criteria, such as sequence diversity, structural class, or absence of homologous sequences.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract reports that VQE "consistently converges" but does not state how many of the 15 peptides showed convergence, or whether convergence was defined by a threshold.
+  - **Required correction** Report the number of peptides for which VQE converged, and define the convergence criterion.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative results, methodological details, and comparative data means the central claims cannot be evaluated.
+- **Assessment against Nature-style criteria** 
+  - Originality: The application of VQE to peptide folding on a lattice is not entirely new, but the combination with MD and AlphaFold comparison on a defined peptide set has some novelty. However, the abstract does not demonstrate a clear advance over existing work.
+  - Scientific importance: The problem of structure prediction for proteins without homologs is important, but the abstract does not show that VQE offers a practical advantage. The importance of the work is therefore not established.
+  - Interdisciplinary readership: The topic bridges quantum computing and structural biology, which could attract a broad readership, but the abstract is too thin to engage either community deeply.
+  - Technical soundness: Cannot be assessed from the abstract. The lack of methodological detail and numerical results prevents any evaluation of technical correctness.
+  - Readability for nonspecialists: The abstract is generally readable, but terms such as "lattice-based Hamiltonian" and "VQE" are used without explanation, which may hinder nonspecialist understanding.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible research direction but lacks the quantitative and methodological substance required to support the claims. A revised manuscript with full results, detailed methods, and a clear comparative analysis would be needed to assess the contribution.
+
+## Risk / unsupported claims
+- The claim that VQE "consistently converges to competitive low-energy conformations" is unsupported by any data in the abstract.
+- The claim that the comparison between MD and lattice Hamiltonian energies enables a "correlation-based evaluation" is not supported by any reported correlation coefficient or statistical measure.
+- The comparison with AlphaFold is mentioned but no results are provided, making the claim of a comparison unsupported.
+- The statement that the work "paves the road for future quantum biology studies" is an overstatement given the lack of demonstrated results.

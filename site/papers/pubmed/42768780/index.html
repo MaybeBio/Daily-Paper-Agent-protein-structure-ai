@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Time-Dependent Voronoi Analysis of Amino Acid Side-Chain Packing in Simulations. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Time-Dependent Voronoi Analysis of Amino Acid Side-Chain Packing in Simulations.</h1>
+      <div class="meta">Bettencourt, Sofiya B; Hwang, Wonmuk</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of computational chemistry</span>
+        · 2026-09-22
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42768780/">原文</a>
+      </div>
+      <p class="one-liner">该文利用Voro++对分子动力学轨迹进行时间依赖的Voronoi分析，追踪氨基酸侧链堆积动态，以探测蛋白质构象变化前的细微结构变化，属于蛋白质结构计算模拟的应用性方法研究。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein conformational motion depends on geometric and chemical constraints in side-chain packing. Thermal forces and incomplete packing produce &#34;breathing&#34; motions that allow internal rearrangement. Packing dynamics therefore inform protein allostery, conformational change, and folding. While Voronoi tessellation is a promising approach to this end, its application to proteins has been mainly focused on static structures. Here, the Voro++ library is adopted to investigate time-dependent amino acid packing in molecular dynamics trajectories of a titin immunoglobulin domain at 300 and 400 K. Tracking per-residue Voronoi volume changes and reorganization of neighbor faces in the Voronoi lattice reveals residue-level volume shifts and the corresponding timing of localized protein swelling. Side-chain motion into and out of the protein core can also be monitored by mapping neighbor switching. This framework is applicable to detecting delicate changes preceding protein conformational transition or unfolding, and analyzing protein-protein interface reorganization or surface hydration.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质构象运动取决于侧链堆积中的几何与化学约束。热力与不完全堆积产生“呼吸”运动，允许内部重排。因此，堆积动力学为蛋白质变构、构象变化和折叠提供信息。虽然Voronoi镶嵌是实现此目的的一种有前景的方法，但其在蛋白质中的应用主要集中于静态结构。在此，采用Voro++库研究titin免疫球蛋白结构域在300和400 K下分子动力学轨迹中时间依赖的氨基酸堆积。追踪每个残基的Voronoi体积变化及Voronoi晶格中邻居面的重组，揭示了残基水平的体积变化及局部蛋白质膨胀的相应时间。侧链运动进出蛋白质核心也可通过映射邻居切换来监测。该框架适用于检测蛋白质构象转变或去折叠前的细微变化，并分析蛋白质-蛋白质界面重组或表面水合作用。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Time-Dependent Voronoi Analysis of Amino Acid Side-Chain Packing in Simulations</li>
+<li><strong>作者与单位</strong>: Bettencourt, Sofiya B; Hwang, Wonmuk（美国德州农工大学，Texas A&amp;M University，据致谢与计算资源推断）</li>
+<li><strong>期刊/预印本平台</strong>: Journal of Computational Chemistry</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-09-22）</li>
+<li><strong>论文类型</strong>: 方法学/工具开发 + 应用示范</li>
+<li><strong>领域</strong>: 蛋白质构象动力学 × 几何分析（Voronoi 镶嵌）</li>
+<li><strong>关键词</strong>: Voronoi tessellation; side-chain packing; molecular dynamics; protein dynamics; allostery; titin I27</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1002/jcc.70499</li>
+<li><strong>代码</strong>: https://github.com/sofiyabettencourt/voro_dcd.git</li>
+<li><strong>数据</strong>: 未提供（仅代码公开）</li>
+<li><strong>阅读日期</strong>: 2026-09-22</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × 物理模拟（MD）」中的<strong>轨迹后处理/几何分析</strong>环节，提供了一种基于 Voronoi 镶嵌的时间分辨侧链堆积分析方法，可迁移至构象采样、构象生成、变构机制研究等场景，与 AlphaFold 等结构预测方法互补（预测静态结构 vs. 分析动态堆积）。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文开发了一套基于 Voro++ 库的模块化 C++ 后处理管线，对 MD 轨迹逐帧构建重原子 Voronoi 镶嵌，通过逐残基侧链体积和邻居面变化的时间序列，在 titin I27 结构域的 300 K 与 400 K 模拟中定位了 β-折叠层间打开和环区重排等局部堆积重组的时序。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何在 MD 模拟轨迹中定量、时间分辨地追踪氨基酸侧链堆积的动态变化（体积涨落、邻居重排），从而定位蛋白质内部局部膨胀和重组的起始位置与顺序？</li>
+<li><strong>为什么重要</strong>: 侧链堆积决定蛋白质的几何与化学约束，堆积动态是变构、构象转变和折叠的基础；现有方法多基于 Cα 或骨架，丢失侧链级别的空间信息。</li>
+<li><strong>现有方法不足</strong>: (1) 基于 RMSF/RMSD 的骨架分析无法捕捉侧链级别的堆积变化；(2) 基于截断距离的接触分析依赖任意 cutoff，且无法反映空间分割（Voronoi 无参数）；(3) 现有 Voronoi 工具（如 MOLE、TRAVIS、Voronoia、Voronota）多聚焦静态结构或单一量（如空腔），缺乏对轨迹逐帧的低级控制与自定义后处理灵活性。</li>
+<li><strong>精确研究问题</strong>: Can a time-resolved Voronoi tessellation of heavy atoms in MD trajectories reveal residue-level side-chain volume shifts and neighbor reorganization that precede and localize protein conformational changes?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络主要基于本文引言与讨论，标注为「仅本文框架」；部分经典方法为领域常识，标注「经外部核验」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态堆积分析</td>
+<td>Voronoi 应用于晶体结构（Richards 1974; Gerstein 等）</td>
+<td>无参数、几何严格</td>
+<td>仅静态，无时间分辨</td>
+<td>本文扩展至轨迹</td>
+</tr>
+<tr>
+<td>骨架动态分析</td>
+<td>RMSF、RMSD、Cα 接触图</td>
+<td>简单、广泛使用</td>
+<td>丢失侧链信息，无法反映堆积</td>
+<td>本文补充侧链级别</td>
+</tr>
+<tr>
+<td>接触/网络分析</td>
+<td>截断距离接触图、氢键/VDW 接触网络</td>
+<td>物理意义明确</td>
+<td>依赖任意 cutoff，非空间分割</td>
+<td>本文用 Voronoi 邻居替代</td>
+</tr>
+<tr>
+<td>时间分辨 Voronoi</td>
+<td>TRAVIS、Voronota 等</td>
+<td>可处理轨迹</td>
+<td>聚焦单一量（体积/空腔），高层封装限制定制</td>
+<td>本文强调低级控制与模块化</td>
+</tr>
+<tr>
+<td>空腔/通道追踪</td>
+<td>MOLE、CAVER 等</td>
+<td>识别功能相关通道</td>
+<td>阈值依赖，非全残基覆盖</td>
+<td>本文关注全残基堆积动态</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>侧链动态信息丢失</td>
+<td>RMSF/RMSD 无法反映侧链堆积变化</td>
+<td>骨架测量是侧链堆积的间接指标</td>
+<td>Introduction 第 1-2 段</td>
+</tr>
+<tr>
+<td>接触分析 cutoff 任意性</td>
+<td>截断距离法可能漏掉或误计邻居</td>
+<td>无物理依据的阈值选择</td>
+<td>Introduction 第 3 段</td>
+</tr>
+<tr>
+<td>现有 Voronoi 工具灵活性不足</td>
+<td>难以提取自定义量（如邻居身份、时间序列）</td>
+<td>高层封装、面向特定应用</td>
+<td>Discussion 第 2 段</td>
+</tr>
+<tr>
+<td>静态 Voronoi 无法捕捉动态</td>
+<td>晶体结构分析无法反映热涨落与重排</td>
+<td>静态结构是单一构象快照</td>
+<td>Introduction 第 4 段</td>
+</tr>
+<tr>
+<td>总体积变化掩盖局部事件</td>
+<td>整体体积增加无法定位具体残基</td>
+<td>累积效应掩盖局部时序</td>
+<td>Results 图 2A vs 图 3A</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 对 MD 轨迹逐帧运行 Voro++ 库构建重原子 Voronoi 镶嵌，后处理将原子级 Voronoi 单元聚合为残基级，输出逐残基体积和邻居身份（蛋白质/溶剂）的时间序列。</li>
+<li><strong>核心洞察</strong>: Voronoi 镶嵌无需 cutoff 即可定义空间邻居，且其体积和邻居面随构象变化而连续改变，因此可提供比 RMSD/RMSF 更早、更局部的堆积重排信号——例如 L84 在 β-折叠层打开前就出现体积增加。</li>
+<li><strong>可能的普适教训</strong> [Analysis]: 几何分割（Voronoi）比距离阈值更鲁棒地定义「邻居」，且时间分辨的局部几何量（体积、邻居身份）能揭示全局序参量（如 RMSD）无法分辨的早期事件。这一思路可迁移至构象采样中的反应坐标定义、变构路径分析等。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: MD 轨迹（CHARMM DCD 格式，已对齐到参考结构）；PSF 文件（原子-残基映射）；模拟盒子尺寸。</li>
+<li><strong>输出</strong>: 逐残基侧链体积时间序列；逐残基邻居（蛋白质/溶剂）身份与数量时间序列；热图、轨迹图。</li>
+<li><strong>模块</strong>:
+  1. 预处理（CHARMM）：平移盒子使蛋白质居中、对齐到首帧、去除氢原子、保留 5 Å（400 K 为 7 Å）内溶剂。
+  2. Voronoi 构建（Voro++）：逐帧对重原子坐标构建周期边界 Voronoi 镶嵌。
+  3. 后处理（自写 C++）：按 PSF 将原子 Voronoi 单元聚合为残基；区分蛋白质/溶剂邻居；输出体积、邻居列表。
+  4. 分析/可视化（Python NumPy/Matplotlib；VMD 渲染 Voronoi 单元）。</li>
+<li><strong>训练</strong>: 无（非机器学习方法）。</li>
+<li><strong>工具</strong>: Voro++ 库；CHARMM（预处理与 MD）；OpenMM（生产模拟）；VMD（可视化）。</li>
+<li><strong>假设</strong>: 重原子 Voronoi 体积可代表侧链堆积状态；去除氢原子不影响相对体积变化检测；5 Å 溶剂层足以构建表面残基的 Voronoi 单元。</li>
+<li><strong>流程</strong>: DCD 轨迹 → 预处理（对齐、去氢、溶剂裁剪）→ 逐帧 Voro++ 镶嵌 → 原子→残基聚合 → 体积/邻居时间序列 → 热图与统计。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预处理（CHARMM）</td>
+<td>对齐轨迹、去除氢、裁剪溶剂层</td>
+<td>保证 Voronoi 构建一致性；减少计算量；避免氢原子引入噪声</td>
+<td>输入：原始 DCD；输出：对齐后重原子坐标+近蛋白溶剂</td>
+<td>Methods 图 1A</td>
+<td>预期：不对齐将导致体积时间序列混入整体转动/平动；不去氢将增加计算量且可能引入非物理 Voronoi 面</td>
+</tr>
+<tr>
+<td>Voro++ 镶嵌</td>
+<td>逐帧构建重原子 Voronoi 单元</td>
+<td>无参数定义空间邻居与体积</td>
+<td>输入：坐标+盒子；输出：原子级 Voronoi 单元</td>
+<td>Methods 图 1A-iii</td>
+<td>预期：无法定义无 cutoff 的邻居关系</td>
+</tr>
+<tr>
+<td>原子→残基聚合</td>
+<td>将原子 Voronoi 单元合并为残基级</td>
+<td>生物学功能单元是残基而非原子</td>
+<td>输入：原子 Voronoi 数据+PSF；输出：残基体积、邻居列表</td>
+<td>Methods 图 1B</td>
+<td>预期：无法直接解释残基级堆积</td>
+</tr>
+<tr>
+<td>邻居身份区分</td>
+<td>区分蛋白质/溶剂邻居</td>
+<td>追踪侧链进出核心或暴露变化</td>
+<td>输入：邻居原子索引；输出：蛋白质/溶剂邻居计数</td>
+<td>Results 图 4</td>
+<td>预期：无法区分堆积重排与溶剂化变化</td>
+</tr>
+<tr>
+<td>时间序列分析</td>
+<td>生成体积/邻居热图与轨迹</td>
+<td>定位局部事件时序</td>
+<td>输入：逐帧残基数据；输出：热图、统计</td>
+<td>Results 图 2-4</td>
+<td>预期：仅静态分析将丢失动态信息</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>本文为方法学论文，未给出显式数学公式。以下为 Voronoi 镶嵌的基本定义（经外部核验，非本文原文）。</p>
+</blockquote>
+<ul>
+<li><strong>Voronoi 单元</strong>: 对点集 {p_i}，点 p 的 Voronoi 单元 V(p_i) = {x ∈ R³ : ‖x − p_i‖ ≤ ‖x − p_j‖, ∀j ≠ i}。含义：空间中离 p_i 比离任何其他点更近的区域。用途：定义无参数邻居（共享面的点对）与体积（单元体积）。直觉：每个原子占据其「领地」，邻居关系由几何分割而非 cutoff 决定。</li>
+<li><strong>残基体积</strong>: V_res = Σ_{a∈res} V_atom(a)（原子 Voronoi 体积之和）。用途：衡量残基堆积紧密程度。直觉：体积增大表示堆积变松或向外膨胀。</li>
+<li><strong>邻居计数</strong>: N_neighbor(res) = 与残基共享 Voronoi 面的其他残基/溶剂分子数。用途：追踪堆积网络重连。直觉：邻居身份变化反映侧链进出核心或表面暴露改变。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>: titin I27 结构域（PDB 1WAA，链 F，残基 1-89）；CHARMM36 力场；TIP3P 水；Na/Cl 中和至约 50 mM。</li>
+<li><strong>规模</strong>: 两个独立 MD 模拟（300 K 与 400 K），各 200 ns；坐标每 20 ps 保存，共 10,000 帧/模拟。</li>
+<li><strong>指标</strong>: 总 Voronoi 体积（蛋白质重原子）；逐残基侧链体积；侧链体积与初始结构 VDW 体积偏差；溶剂/蛋白质邻居比；RMSD、RMSF（对照）。</li>
+<li><strong>基线</strong>: 300 K 模拟作为 400 K 的对照；初始晶体结构（平衡后）作为体积比较基准。</li>
+<li><strong>评测协议</strong>: 比较 300 K 与 400 K 的体积时间序列、热图、邻居变化；识别体积增加残基并映射到结构。</li>
+<li><strong>骨干/仪器</strong>: NVIDIA A100 GPU（OpenMM 生产模拟）；CPU 集群（CHARMM 预处理与平衡）。</li>
+<li><strong>oracle 输入</strong>: 无（无监督几何分析）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总 Voronoi 体积时间序列</td>
+<td>400 K 下蛋白质总体积增加</td>
+<td>300 K vs 400 K，200 ns</td>
+<td>400 K 总体积更大且随时间增加；300 K 稳定</td>
+<td>温度升高导致整体堆积变松</td>
+<td>未证明体积增加是构象变化而非单纯热膨胀</td>
+<td>Results 图 2A</td>
+</tr>
+<tr>
+<td>逐残基侧链体积热图</td>
+<td>体积变化具有残基特异性</td>
+<td>300 K vs 400 K 全残基热图</td>
+<td>表面残基体积增加更显著；部分埋藏残基在特定时间点突增</td>
+<td>侧链堆积变化不均匀，可定位到具体残基</td>
+<td>未量化统计显著性</td>
+<td>Results 图 2B-D, 图 S4</td>
+</tr>
+<tr>
+<td>侧链体积 vs VDW 体积比较</td>
+<td>模拟体积与力场 VDW 体积关系</td>
+<td>平衡后结构 VDW 体积 vs 模拟平均 Voronoi 体积</td>
+<td>300 K 下 40/89 残基平均体积低于 VDW 体积 &gt;1 SD；400 K 下 21/89 残基高于 VDW 体积 &gt;1 SD</td>
+<td>300 K 堆积更紧密，400 K 更松散</td>
+<td>未讨论 VDW 体积与 Voronoi 体积的系统偏差</td>
+<td>Results 图 2F</td>
+</tr>
+<tr>
+<td>邻居分析（溶剂/蛋白质比）</td>
+<td>侧链进出核心可被邻居变化捕获</td>
+<td>300 K vs 400 K 邻居比时间序列</td>
+<td>400 K 下邻居比波动更大；CD 环在 155 ns 发生重排</td>
+<td>Voronoi 邻居可追踪堆积网络重连</td>
+<td>未与接触分析（cutoff 法）直接对比</td>
+<td>Results 图 4A-C</td>
+</tr>
+<tr>
+<td>事件时序定位</td>
+<td>Voronoi 可识别早期事件</td>
+<td>400 K 轨迹中体积突增残基 vs RMSD/RMSF</td>
+<td>L84 在 β-折叠层打开前体积增加；150 ns CD 环重排导致 RMSD 跳变</td>
+<td>Voronoi 提供比 RMSD/RMSF 更早的局部信号</td>
+<td>单条轨迹，无法排除随机涨落</td>
+<td>Results 图 3A-C, 图 S1</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文仅分析 titin I27 单结构域的两条 200 ns MD 轨迹（300 K 与 400 K），未涉及其他蛋白质、更长时间尺度或增强采样。</li>
+<li><strong>oracle/真值输入</strong>: 无实验验证；结论基于模拟轨迹的几何分析，未与 NMR/晶体结构动态对比。</li>
+<li><strong>端到端状态</strong>: 方法管线完整（预处理→Voronoi→后处理→可视化），但未封装为独立软件包，依赖 CHARMM 预处理与 Voro++。</li>
+<li><strong>算力成本</strong>: 未报告具体耗时；Voro++ 为高效库，但逐帧全原子镶嵌对大型体系可能昂贵。</li>
+<li><strong>历史数据依赖</strong>: 无机器学习训练，无历史数据依赖。</li>
+<li><strong>模型依赖</strong>: 依赖 CHARMM36 力场与 TIP3P 水模型的准确性；Voronoi 结果对坐标噪声敏感。</li>
+<li><strong>最难情形</strong>: 埋藏残基的微小体积变化可能被热涨落掩盖；溶剂层裁剪厚度（5/7 Å）可能影响表面残基 Voronoi 单元完整性。</li>
+<li><strong>群体/领域边界</strong>: 结论仅适用于 titin I27 在所述模拟条件下的行为；方法可推广，但具体残基事件不可外推。</li>
+<li><strong>不确定性</strong>: 未报告误差棒或重复实验；单条轨迹的特定事件（如 155 ns CD 环重排）可能依赖初始条件。</li>
+<li><strong>有边界的复述</strong>: 在 CHARMM36 力场、TIP3P 水、200 ns 时间尺度下，时间分辨 Voronoi 分析能够以残基级别定位 titin I27 在 400 K 下的体积增加和邻居重排，并识别出早于 RMSD 变化的局部堆积信号（如 L84）；该方法可作为 MD 轨迹的补充分析工具，但未证明其优于现有接触分析或适用于所有体系。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模拟时间较短</td>
+<td>200 ns 可能不足以捕捉完整构象转变</td>
+<td>未明确提及，但暗示可应用于更长模拟</td>
+<td>Discussion 第 1 段</td>
+</tr>
+<tr>
+<td>单条轨迹</td>
+<td>特定事件顺序可能依赖初始条件</td>
+<td>建议使用多条轨迹验证</td>
+<td>Discussion 第 3 段（"may depend on individual trajectories"）</td>
+</tr>
+<tr>
+<td>未加权 Voronoi</td>
+<td>未按原子半径加权，可能影响绝对体积精度</td>
+<td>提及可通过 Voro++ 的 "container_poly" 功能加入半径加权</td>
+<td>Discussion 第 2 段</td>
+</tr>
+<tr>
+<td>溶剂层裁剪</td>
+<td>5/7 Å 溶剂层可能不完整覆盖表面残基</td>
+<td>未明确提及</td>
+<td>Methods 图 1A 说明</td>
+</tr>
+<tr>
+<td>未与其他方法对比</td>
+<td>未与接触分析、RMSF 等方法系统比较</td>
+<td>未明确提及</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>体积增加归因于「堆积变松」</td>
+<td>体积增加可能部分来自溶剂层裁剪差异或周期边界效应</td>
+<td>影响对堆积状态的物理解释</td>
+<td>改变溶剂层厚度（如 3/10 Å）重复分析，检查体积变化是否稳定</td>
+<td>Methods 图 1A</td>
+</tr>
+<tr>
+<td>未报告统计显著性</td>
+<td>体积差异可能来自热涨落而非系统性变化</td>
+<td>影响结论可靠性</td>
+<td>计算残基体积涨落的置信区间，或多条轨迹重复</td>
+<td>Results 图 2D 未含误差棒</td>
+</tr>
+<tr>
+<td>单条轨迹的特定事件（155 ns CD 环）</td>
+<td>可能为随机涨落而非确定性事件</td>
+<td>影响对「早期信号」的解读</td>
+<td>多条独立轨迹检查该事件是否重现</td>
+<td>Results 图 4C</td>
+</tr>
+<tr>
+<td>未与现有方法对比</td>
+<td>无法证明 Voronoi 优于 RMSF 或接触分析</td>
+<td>影响方法价值评估</td>
+<td>在同一轨迹上运行 RMSF、接触分析，比较事件检测时间与分辨率</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>氢原子去除</td>
+<td>氢原子参与堆积相互作用，去除可能丢失信息</td>
+<td>影响侧链堆积的完整性</td>
+<td>保留氢原子（使用加权 Voronoi）重复分析</td>
+<td>Methods 第 2 段</td>
+</tr>
+<tr>
+<td>未讨论计算成本</td>
+<td>逐帧全原子 Voronoi 对大型体系可能昂贵</td>
+<td>影响可扩展性</td>
+<td>报告不同体系大小的运行时间</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题：Agent 提炼的知识候选</p>
+</blockquote>
+<ol>
+<li><strong>Voronoi 镶嵌作为无参数邻居定义</strong>: 在 MD 轨迹分析中，Voronoi 邻居比 cutoff 接触更鲁棒，可迁移至构象采样中的反应坐标定义（如用 Voronoi 体积变化作为堆积序参量）。</li>
+<li><strong>时间分辨的局部几何量优于全局序参量</strong>: L84 的体积增加早于 RMSD 变化，说明局部堆积信号可预测后续构象转变——可迁移至变构路径分析或构象生成中的早期事件检测。</li>
+<li><strong>侧链体积与 VDW 体积比较可评估堆积状态</strong>: 300 K 下多数残基体积低于 VDW 体积（紧密堆积），400 K 下高于 VDW 体积（松散）——可迁移至力场评估或折叠态判定。</li>
+<li><strong>邻居身份（蛋白质/溶剂）变化追踪侧链进出核心</strong>: 溶剂/蛋白质邻居比的时间序列可量化侧链的埋藏/暴露动态——可迁移至蛋白质-蛋白质界面重组分析。</li>
+<li><strong>模块化管线设计</strong>: 预处理（CHARMM）→ 几何计算（Voro++）→ 后处理（C++）→ 可视化（VMD/Python）的分层架构，便于替换或扩展，可迁移至其他几何量（如 Voronoi 面面积、顶点数）分析。</li>
+<li><strong>加权 Voronoi 的潜在改进</strong>: 作者指出可用 "container_poly" 加入原子半径加权，提示在需要绝对体积时需考虑原子大小差异——可迁移至更精确的堆积体积计算。</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Voronoi 在蛋白质结构中的应用</strong>: 与 Richards (1974) 和 Gerstein 等的经典静态 Voronoi 分析一脉相承，本文将其扩展至时间分辨轨迹分析（本文 Introduction 引用 [1,2,3,12]）。</li>
+<li><strong>MD 轨迹分析工具</strong>: 与 MOLE、TRAVIS、Voronoia、Voronota 等现有工具互补，本文强调低级控制与模块化（Discussion 第 2 段）。</li>
+<li><strong>蛋白质堆积与变构</strong>: 与「蛋白质呼吸」（protein breathing）和「蛋白质地震」（proteinquake）概念相关（Discussion 引用 [49,50,51,52]），本文提供了量化这些现象的几何工具。</li>
+<li><strong>与 AlphaFold 等结构预测方法的关系</strong> [Analysis]: AlphaFold 预测静态结构，本文方法可分析预测结构在 MD 中的堆积稳定性，或用于评估预测结构的 packing 质量（与 VDW 体积比较）。</li>
+<li><strong>与构象采样/生成的关系</strong> [Analysis]: Voronoi 体积和邻居变化可作为构象采样的集体变量（CV），或用于构象生成的聚类/筛选指标。</li>
+<li><strong>与分子对接的关系</strong> [Analysis]: Voronoi 邻居分析可评估对接后界面堆积质量，或追踪界面残基在 MD 中的重组。</li>
+</ul>
+<h2>16 研究想法</h2>
+<blockquote>
+<p>标题：Agent 生成的研究候选</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>Voronoi 体积作为构象采样的集体变量（CV）</strong>
+   - 来源: 本文发现 L84 体积变化早于 RMSD 变化，提示 Voronoi 体积可捕捉早期构象信号。
+   - 假设: 将关键残基的 Voronoi 体积作为 CV 进行增强采样（如 metadynamics），可加速构象转变的采样。
+   - 方法: 在 titin 或其他体系上，比较以 Voronoi 体积为 CV 与以 RMSD/距离为 CV 的采样效率。
+   - 验证: 自由能曲面收敛速度、转变路径重现性。
+   - 创新状态: unverified</p>
+</li>
+<li>
+<p><strong>Voronoi 邻居网络分析用于变构路径识别</strong>
+   - 来源: 本文邻居分析揭示 CD 环与 EF 环的相互作用变化。
+   - 假设: Voronoi 邻居网络的时间演化可识别变构信号传播路径。
+   - 方法: 构建残基-残基 Voronoi 邻居网络，计算网络连通性、介数中心性随时间的变化，与已知变构残基比对。
+   - 验证: 在已知变构蛋白（如 GPCR、激酶）上测试。
+   - 创新状态: unverified</p>
+</li>
+<li>
+<p><strong>加权 Voronoi 体积用于力场评估</strong>
+   - 来源: 本文未加权 Voronoi 与 VDW 体积比较（图 2F），作者提及加权选项。
+   - 假设: 加权 Voronoi 体积与实验堆积密度（如 NMR 或晶体 B-factor）更相关。
+   - 方法: 在多种蛋白质上比较加权/未加权 Voronoi 体积与实验数据的相关性。
+   - 验证: 相关系数、误差分析。
+   - 创新状态: unverified</p>
+</li>
+<li>
+<p><strong>Voronoi 分析用于 AlphaFold 预测结构的堆积质量评估</strong>
+   - 来源: 本文方法可分析任意坐标集，AlphaFold 预测结构可作为输入。
+   - 假设: AlphaFold 预测结构的 Voronoi 堆积质量（体积异常、邻居异常）可预测其局部可信度（pLDDT）。
+   - 方法: 对 AlphaFold 预测结构运行 Voronoi 分析，与 pLDDT 及 MD 弛豫后的结构比较。
+   - 验证: 堆积异常区域是否对应低 pLDDT 或 MD 中不稳定区域。
+   - 创新状态: unverified</p>
+</li>
+<li>
+<p><strong>Voronoi 时间序列用于构象生成结果的筛选</strong>
+   - 来源: 本文时间分辨分析可区分稳定与不稳定堆积。
+   - 假设: 构象生成（如扩散模型）产物的 Voronoi 堆积时间演化可筛选出物理合理的构象。
+   - 方法: 对生成构象进行短 MD，计算 Voronoi 体积/邻居变化，与已知天然态比较。
+   - 验证: 筛选后构象的 RMSD 分布、实验可观测值重现。
+   - 创新状态: unverified</p>
+</li>
+<li>
+<p><strong>Voronoi 面面积追踪侧链-溶剂相互作用</strong>
+   - 来源: 本文仅用邻居计数，未用面面积。
+   - 假设: Voronoi 面面积的时间变化可量化侧链-溶剂接触的动态，比计数更敏感。
+   - 方法: 扩展后处理管线输出面面积，分析表面残基的溶剂暴露动态。
+   - 验证: 与实验溶剂可及表面积（SASA）比较。
+   - 创新状态: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methodology, results, discussion, funding, data availability)</li>
+<li><strong>Assessment boundary</strong> Technical soundness and scientific validity of the proposed Voronoi-based time-dependent analysis framework as applied to titin I27 MD simulations; claims regarding the method's utility for detecting protein conformational changes</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present a Voronoi tessellation-based computational framework for analyzing time-dependent amino acid side-chain packing in MD trajectories. Applied to titin I27 at 300 and 400 K, the method tracks per-residue Voronoi volume changes and neighbor reorganization, identifying localized "breathing" motions and internal packing shifts that precede or accompany conformational changes. The authors claim this approach offers advantages over existing tools in terms of modularity, low-level control, and ability to capture subtle dynamic events.</li>
+<li><strong>Visible evidence base</strong> Main text with Figures 1-4 referenced; Supplementary Figures S1-S6 and Movie S1 mentioned but not provided; GitHub repository for code availability</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures (S1-S6) and Movie S1 are referenced but not included in the provided material; no raw data or trajectory files; no validation against experimental data or established methods; no statistical analysis details beyond mean/SD; no convergence or error analysis for the MD simulations</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The manuscript presents a potentially useful computational tool for time-resolved Voronoi analysis of protein packing in MD simulations. The methodological framework is clearly described and the demonstration on titin I27 shows some interesting observations. However, the scientific claims regarding the method's ability to detect "subtle changes preceding conformational transitions" are not fully supported by the evidence presented. The analysis is largely descriptive, lacks quantitative validation, and the biological significance of the observed changes remains unclear. The manuscript would benefit from stronger validation against established methods, more rigorous statistical treatment, and a clearer demonstration of unique insights that this method provides over existing approaches.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Computational biophysicists and molecular dynamics practitioners studying protein dynamics, allostery, and folding would be the primary audience. Researchers developing geometric analysis tools for biomolecular simulations may find the modular framework valuable. Those studying protein packing and its relationship to conformational change could use this approach to complement existing analyses. The method's potential application to protein-protein interfaces and surface hydration may interest researchers in protein engineering and drug design.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> 
+  1. The methodological framework is clearly described with a logical workflow (Figure 1) and the code is made openly available, supporting reproducibility.
+  2. The use of Voro++ for time-resolved analysis is a sensible adaptation of an established library, and the modular design allows for flexible customization.
+  3. The demonstration on titin I27 at two temperatures provides a concrete example of the method's capabilities, including the identification of residue-specific volume changes and neighbor reorganization events.
+  4. The authors appropriately acknowledge limitations of simple volume measurements and discuss potential extensions of the method.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness / Validation</li>
+<li><strong>Claim pointer</strong> The authors claim the method can detect "subtle changes preceding protein conformational transition or unfolding" and identify "areas where intra-protein shifts and 'proteinquakes' originate."</li>
+<li><strong>Evidence pointer</strong> Results section, Figures 2-3; location not provided</li>
+<li><strong>Concern</strong> The manuscript does not provide quantitative validation of the Voronoi-based volume measurements against established methods or experimental data. While the authors mention comparison with CHARMM COOR VOLUme (Methodology section), no results of this comparison are shown. The claim that the method can detect events "preceding" conformational changes is not supported by any predictive analysis or comparison with known transition states. The single 200-ns trajectory at each temperature is insufficient to establish statistical significance of the observed events.</li>
+<li><strong>Why it matters</strong> Without validation, the reader cannot assess whether the Voronoi volumes and neighbor dynamics accurately reflect physical packing changes. The claim of detecting precursors to conformational transitions requires either multiple independent trajectories showing consistent pre-transition signals or comparison with known experimental/structural data. The current evidence is largely descriptive and could reflect simulation artifacts or stochastic fluctuations.</li>
+<li>
+<p><strong>Resolution test</strong> Provide comparison of Voronoi volumes with CHARMM COOR VOLUme results for the same trajectories. Include multiple independent simulations (at least 3 replicates) to assess reproducibility of the observed events. If claiming detection of pre-transition events, demonstrate that the identified changes consistently precede a known conformational transition in a test system with established transition behavior.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scientific importance / Biological significance</li>
+<li><strong>Claim pointer</strong> The authors state the framework is "useful for extracting geometric yet physically relevant information" and can inform "protein allostery, conformational change, and folding."</li>
+<li><strong>Evidence pointer</strong> Abstract, Introduction, Concluding Discussion; location not provided</li>
+<li><strong>Concern</strong> The biological significance of the observed changes is not established. The manuscript describes volume changes and neighbor reorganization at 400 K but does not connect these observations to specific functional implications for titin I27 or general principles of protein dynamics. The relevance to allostery, folding, or conformational change is asserted but not demonstrated. The choice of titin I27 as a demonstration system is not justified in terms of known allosteric behavior or conformational transitions.</li>
+<li><strong>Why it matters</strong> For a methods paper, demonstrating biological utility is essential to establish the method's value to the community. Without clear biological context or functional interpretation, the observations remain phenomenological. The claim that this approach can inform allostery and conformational change requires at least one example where the method provides insights not obtainable from standard analyses (RMSD, RMSF, contact maps).</li>
+<li>
+<p><strong>Resolution test</strong> Apply the method to a system with well-characterized allosteric transitions or conformational changes and demonstrate that the Voronoi-based analysis reveals new mechanistic insights. Alternatively, provide a more detailed functional interpretation of the titin I27 observations in the context of its known mechanical properties and immunoglobulin domain behavior.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness / Methodology</li>
+<li><strong>Claim pointer</strong> The authors state that the solvent layer provides "a boundary where Voronoi cells of surface residues in contact with solvent can be built" and that the 5 Å (7 Å for 400 K) cutoff is sufficient.</li>
+<li><strong>Evidence pointer</strong> Methodology, Preprocessing and Voronoi Tessellation; location not provided</li>
+<li><strong>Concern</strong> The choice of solvent shell thickness (5 Å or 7 Å) is not justified. The authors do not demonstrate that this cutoff is sufficient to avoid boundary effects on Voronoi cell calculations for surface residues. The difference in cutoff between 300 K and 400 K systems introduces a potential confound when comparing results between temperatures. No sensitivity analysis is provided to show that results are robust to the choice of solvent shell thickness.</li>
+<li><strong>Why it matters</strong> Voronoi cell volumes and neighbor relationships for surface residues depend critically on the surrounding solvent molecules included in the calculation. An insufficient solvent shell could lead to artificial truncation of Voronoi cells and incorrect volume estimates. The different cutoffs at the two temperatures could bias the temperature comparison.</li>
+<li>
+<p><strong>Resolution test</strong> Perform a sensitivity analysis with varying solvent shell thicknesses (e.g., 3, 5, 7, 10 Å) and show that the key results are robust. Justify the choice of different cutoffs for the two temperatures or use the same cutoff for both.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness / Statistical rigor</li>
+<li><strong>Claim pointer</strong> The authors describe "significant" differences and "sharp increases" in volumes and neighbor reorganization events.</li>
+<li><strong>Evidence pointer</strong> Results section, Figures 2-4; location not provided</li>
+<li><strong>Concern</strong> No statistical analysis is provided for the observed differences between 300 K and 400 K. The manuscript reports mean values and standard deviations but does not perform hypothesis testing, confidence interval estimation, or effect size calculations. The identification of "significant" events appears to be based on visual inspection of traces rather than quantitative criteria.</li>
+<li><strong>Why it matters</strong> Without statistical rigor, the reader cannot distinguish genuine temperature-dependent effects from random fluctuations. The stochastic nature of MD simulations requires appropriate statistical treatment, especially when making claims about specific events at specific time points.</li>
+<li>
+<p><strong>Resolution test</strong> Provide statistical tests (e.g., t-tests, Mann-Whitney U tests) for volume differences between temperatures. For time-resolved events, use change-point detection algorithms or define quantitative thresholds for what constitutes a "significant" change. Report confidence intervals for all key measurements.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity / Reproducibility</li>
+<li><strong>Affected element</strong> Methodology, MD Simulation</li>
+<li><strong>Evidence pointer</strong> Methodology section; location not provided</li>
+<li><strong>Issue</strong> The manuscript states that the system was neutralized with Na and Cl at "about 50-mM concentration" but does not specify the exact number of ions added or the method used to determine this concentration. The equilibration protocol is described but key parameters (e.g., pressure coupling method, temperature coupling constants during production) are not fully specified.</li>
+<li>
+<p><strong>Required correction</strong> Provide exact ion counts, specify the ion placement method, and include all relevant simulation parameters in a table or supplementary material to ensure reproducibility.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation / Figure quality</li>
+<li><strong>Affected element</strong> Figure 2B</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 2B; location not provided</li>
+<li><strong>Issue</strong> The color scale in Figure 2B is described but the figure itself is not provided in the manuscript text. The authors should ensure that the color scale is clearly legible and that the mapping between colors and volume changes is intuitive.</li>
+<li>
+<p><strong>Required correction</strong> Ensure all figures are self-explanatory with clear legends, color bars, and axis labels. Consider adding a schematic in Figure 1 that more clearly illustrates the workflow steps.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Literature context</li>
+<li><strong>Affected element</strong> Introduction, Concluding Discussion</li>
+<li><strong>Evidence pointer</strong> Introduction section; location not provided</li>
+<li><strong>Issue</strong> The manuscript cites several Voronoi-based tools but does not provide a systematic comparison of their capabilities versus the proposed method. The claim that existing tools "limit modularity and make customized trajectory analysis less convenient" is not quantitatively supported.</li>
+<li>
+<p><strong>Required correction</strong> Provide a table comparing features of existing tools (e.g., MOLE, TRAVIS, Voronoia, Voronota) with the proposed method, including computational efficiency, output options, and customization capabilities.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical clarity</li>
+<li><strong>Affected element</strong> Methodology, Postprocessing</li>
+<li><strong>Evidence pointer</strong> Methodology section; location not provided</li>
+<li><strong>Issue</strong> The description of how neighbor faces are identified and how multiple atoms within the same residue are combined is somewhat vague. The statement "multiple interfaces for atoms belonging to a single neighboring residue were combined to count only as one neighbor" needs more detail on the algorithm.</li>
+<li>
+<p><strong>Required correction</strong> Provide pseudocode or a more detailed algorithmic description of the neighbor counting and face identification procedures.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Results, Temperature-Dependent Behaviors</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 2A; location not provided</li>
+<li><strong>Issue</strong> The total Voronoi volume difference of 624 Å³ between 300 and 400 K is reported as an average over 200 ns, but the time-dependence of this difference is not shown. It is unclear whether this difference is constant or grows over time.</li>
+<li><strong>Required correction</strong> Show the time evolution of the volume difference or provide a time-averaged value with a measure of temporal variability.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the method can detect "subtle changes preceding protein conformational transition or unfolding" is not supported by the presented evidence, as no transition or unfolding event is analyzed.</li>
+<li>The assertion that the approach can inform "protein allostery, conformational change, and folding" is speculative and not demonstrated with specific examples.</li>
+<li>The statement that existing Voronoi tools "limit modularity and make customized trajectory analysis less convenient" is not quantitatively supported by comparative benchmarks.</li>
+<li>The claim that the 5 Å solvent shell is sufficient for accurate Voronoi cell construction is not validated with sensitivity analysis.</li>
+<li>The biological significance of the observed volume changes and neighbor reorganization at 400 K is not established.</li>
+<li>The comparison between 300 K and 400 K results may be confounded by the different solvent shell cutoffs used (5 Å vs 7 Å).</li>
+<li>The manuscript does not demonstrate that the observed events are reproducible across independent simulations.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

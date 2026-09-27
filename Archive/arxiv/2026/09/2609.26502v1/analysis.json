@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2609.26502v1",
+  "title": "Deep Generative Crystal Structure Prediction: A Benchmark Study and a Controlled Test of Prototype Dependence",
+  "authors": "Lai Wei; Rongzhi Dong; Ying Feng; Madeline Miklos; Jianjun Hu",
+  "journal": "",
+  "published_date": "2026-09-22",
+  "window": {
+    "start": "2026-09-20",
+    "end": "2026-09-26"
+  },
+  "score": 5,
+  "one_liner_zh": "该文系统评估了12种深度生成模型在晶体结构预测中的表现，发现其性能高度依赖原型库，虽非蛋白质体系，但其对生成模型原型依赖性的基准测试方法可迁移至蛋白质构象生成研究。",
+  "abstract": "Deep generative models are widely reported to enable de novo crystal structure prediction (CSP), but their capability has not been measured consistently against template-based methods. We evaluate 12 representative generative CSP models, spanning latent-variable, diffusion, flow-matching, autoregressive, and manifold random-walk architectures, against TCSP 2.0 on 180 test structures and a leakage-controlled subset of 46. All methods use identical structure-matching, symmetry, and consensus criteria. Template retrieval is the strongest single method, reaching 68.3% top-1 success; symmetry-aware EquiCSP (66.4%) and Uni-3DAR (62.9%) form the next tier. However, comparison with TCSP 2.0 shows that most structures correctly predicted by generative models are also correctly predicted by template substitution. Thus, the set of structures uniquely reachable by generation is small, limiting its practical advantage for discovering structures outside existing prototype libraries. To test the source of this performance, we removed entire stoichiometric prototype families from the training set and retrained the strongest generative model. Accuracy declined by 50-78% across four families, establishing that performance is substantially prototype-dependent. A small minority of structures survived removal of their prototype family, demonstrating a real but limited retrieval-independent predictive capacity. Present generative CSP models therefore function largely as implicit, softer-edged prototype libraries rather than genuinely de novo predictors. Enlarging this residual capacity, rather than aggregate match rate alone, is the central open problem.",
+  "abstract_zh": "深度生成模型被广泛报道能够实现从头晶体结构预测（CSP），但其能力尚未与基于模板的方法进行一致性衡量。我们评估了12种具有代表性的生成式CSP模型，涵盖潜变量、扩散、流匹配、自回归和流形随机游走架构，并与TCSP 2.0在180个测试结构及一个泄漏控制的46个子集上进行比较。所有方法使用相同的结构匹配、对称性和一致性标准。模板检索是最强的单一方法，达到68.3%的top-1成功率；对称感知的EquiCSP（66.4%）和Uni-3DAR（62.9%）构成下一梯队。然而，与TCSP 2.0的比较显示，生成模型正确预测的大多数结构也能通过模板替换正确预测。因此，生成方法唯一可达的结构集合较小，限制了其在发现现有原型库之外结构方面的实际优势。为测试这一性能的来源，我们从训练集中移除了整个化学计量原型家族，并重新训练了最强的生成模型。四个家族的准确率下降了50-78%，表明性能在很大程度上依赖于原型。少数结构在其原型家族被移除后仍能存活，展示了真实但有限的、不依赖检索的预测能力。因此，当前的生成式CSP模型主要作为隐式、边缘柔化的原型库运作，而非真正的从头预测器。扩大这种残余能力，而非仅关注总体匹配率，是核心的开放问题。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2609.26502v1",
+  "source_url": "https://arxiv.org/abs/2609.26502v1",
+  "paper_page_path": "papers/arxiv/2609.26502v1/index.html"
+}

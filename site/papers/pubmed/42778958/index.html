@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conserved protein sequence-structure signatures identify antibiotic resistance genes from the human microbiome. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Conserved protein sequence-structure signatures identify antibiotic resistance genes from the human microbiome.</h1>
+      <div class="meta">Bartrop, Lachlan; Beauchemin-Lauzon, Emy; Grenier, Frederic; Rodrigue, Sebastien; Haraoui, Louis-Patrick</div>
+      <div class="meta muted">
+        
+        <span class="journal">Microbiome</span>
+        · 2026-09-24
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42778958/">原文</a>
+      </div>
+      <p class="one-liner">该文开发ARG-PASS方法，利用序列与结构特征识别人类微生物组中的抗生素抗性基因，虽对象非蛋白质结构计算核心，但方法涉及结构建模且可迁移至蛋白质功能预测。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">BACKGROUND: Bacteria exhibiting antimicrobial resistance (AMR) are a significant public health challenge worldwide. The human microbiome is a known repository of key determinants of AMR, antibiotic resistance genes (ARGs). Identifying previously undetected ARGs in the human microbiome that confer resistance to clinical concentrations of antibiotics is a crucial component of addressing AMR, yet can be hindered by their low homology to existing ARGs. Here, we address this by focussing on functionally important protein regions. RESULTS: ARG-PASS (ARG-PAirwise Sequence vs Structure) is a protein function prediction method which leverages a one-class support vector machine trained on pairwise primary and tertiary distributions of structurally conserved regions of proteins encoded by ARGs. ARG-PASS was applied to six reference strains of the Human Microbiome Project. Nine candidates were selected for experimental verification, and all were functionally confirmed when expressed in E.coli, belonging to ARG classes: APH, dfr, class B and C beta-lactamases, and penicillin-binding proteins. We also used ARG-PASS directly on protein structures within the AlphaFold database and identified a phnP gene (metallo-beta-lactamase fold) with low similarity to characterised beta-lactamases and media-dependent ampicillin activity. In total, 80% of the tested genes confer resistance at CLSI resistant breakpoints and the remainder represent &#39;pre-resistance&#39; genes, with activity but not at a clinically relevant minimum inhibitory concentration. We suggest pre-resistance genes may preferentially evolve into clinically relevant resistance determinants. CONCLUSION: ARG-PASS provides a precise computational approach that integrates sequence and structure to identify divergent ARGs that evade homology-based detection, supporting improved resistance surveillance and antibiotic stewardship. Video Abstract.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">背景：具有抗菌药物耐药性（AMR）的细菌是全球重大公共卫生挑战。人类微生物组是AMR关键决定因素——抗生素耐药基因（ARGs）的已知储存库。识别人类微生物组中先前未检测到的、能赋予临床浓度抗生素耐药性的ARGs，是应对AMR的关键组成部分，但可能因其与现有ARGs的同源性较低而受到阻碍。在此，我们通过聚焦功能重要的蛋白质区域来解决这一问题。结果：ARG-PASS（ARG-PAirwise Sequence vs Structure）是一种蛋白质功能预测方法，利用一类支持向量机，该机基于ARGs编码蛋白质的结构保守区域的两两一级和三级分布进行训练。ARG-PASS被应用于人类微生物组计划的六个参考菌株。筛选出九个候选基因进行实验验证，所有基因在大肠杆菌中表达时均得到功能确认，属于ARG类别：APH、dfr、B类和C类β-内酰胺酶，以及青霉素结合蛋白。我们还直接将ARG-PASS应用于AlphaFold数据库中的蛋白质结构，并识别出一个phnP基因（金属-β-内酰胺酶折叠），其与已表征的β-内酰胺酶相似性低，且具有培养基依赖性氨苄青霉素活性。总体而言，80%的测试基因在CLSI耐药断点处赋予耐药性，其余代表“前耐药”基因，具有活性但未达到临床相关的最低抑菌浓度。我们建议前耐药基因可能优先进化为临床相关的耐药决定因素。结论：ARG-PASS提供了一种精确的计算方法，整合序列和结构来识别逃避基于同源性检测的差异性ARGs，支持改进的耐药性监测和抗生素管理。视频摘要。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Conserved protein sequence-structure signatures identify antibiotic resistance genes from the human microbiome</li>
+<li><strong>作者与单位</strong>: Bartrop, Lachlan; Beauchemin-Lauzon, Emy; Grenier, Frederic; Rodrigue, Sebastien; Haraoui, Louis-Patrick（单位未提供，推测为加拿大 Université de Sherbrooke 相关机构）</li>
+<li><strong>期刊/预印本平台</strong>: Microbiome</li>
+<li><strong>年份</strong>: 2026-09-24</li>
+<li><strong>论文类型</strong>: 研究论文（含方法开发与实验验证）</li>
+<li><strong>领域</strong>: 蛋白质结构预测 × 抗生素耐药基因（ARG）功能预测 × 微生物组</li>
+<li><strong>关键词</strong>: ARG-PASS, antibiotic resistance genes, protein structure, one-class SVM, human microbiome, AlphaFold</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1186/s40168-026-02487-6</li>
+<li><strong>代码</strong>: 未提供（数据可从 https://zenodo.org/records/21209970 获取）</li>
+<li><strong>数据</strong>: 训练数据（ARG 结构）、HMP 参考菌株基因组、PCM 验证数据集、ResFinderFG v2.0 数据集</li>
+<li><strong>阅读日期</strong>: 2026-10-05</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × AI 方法」交叉方向，具体为利用 AlphaFold 预测结构与序列信息结合，通过 one-class SVM 对 ARG 进行功能预测。其核心创新在于聚焦蛋白质保守结构区域（high-lDDT）而非全长序列/结构比对，为低同源性蛋白的功能注释提供了新思路，可迁移至其他蛋白质功能预测任务。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文开发了 ARG-PASS 方法，利用 one-class SVM 学习已知 ARG 编码蛋白在保守结构区域上的序列同一性（seqID）与结构相似性（TM-score）联合分布，从人类微生物组中预测低同源性的新型 ARG，并通过 E. coli 异源表达验证了 9 个新 ARG 的功能。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何从人类微生物组中识别与已知 ARG 同源性低（seqID &lt; 50%）但功能上具有耐药性的新型 ARG？</li>
+<li><strong>为什么重要</strong>: 人类微生物组是 ARG 的重要储存库，低同源性 ARG 可逃避现有基于序列同源性的检测方法，构成潜在的临床耐药威胁。准确识别这些"隐藏" ARG 对耐药性监测和抗生素管理至关重要。</li>
+<li><strong>现有方法不足</strong>: 传统方法依赖序列同源性比对（如 BLAST、HMM），对低 seqID 的 ARG 灵敏度低；而结构比对方法（如 TM-score）虽能捕捉远缘同源，但单独使用无法区分功能性与非功能性蛋白（如 proto-resistance genes）。</li>
+<li><strong>精确的 "Can ... ?" 问题</strong>: Can conserved sequence-structure signatures (seqID vs TM-score distributions of high-lDDT regions) distinguish functional ARGs from non-functional homologues, thereby enabling the discovery of novel ARGs with low homology to known resistance genes?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>阶段一：序列同源性方法</strong>（BLAST、HMM）：依赖高 seqID，对远缘 ARG 检测能力有限。代表：CARD 数据库的基于序列的注释。</li>
+<li><strong>阶段二：结构预测与比对</strong>（AlphaFold2/3、TM-score）：结构比序列更保守，可捕捉远缘同源，但单独使用无法区分功能性与非功能性蛋白（如 proto-resistance genes）。</li>
+<li><strong>阶段三：序列-结构联合方法</strong>（本文）：将 seqID 与 TM-score 结合，聚焦保守结构区域（high-lDDT），通过 one-class SVM 学习功能 ARG 的序列-结构特征分布，在保持高精度的同时识别低同源性 ARG。</li>
+<li><strong>本文主张的位置</strong>: 在序列同源性与结构相似性之间架起桥梁，通过聚焦保守结构区域而非全长比对，实现了对低同源性 ARG 的高精度预测，并首次从人类微生物组中功能验证了多个新型 ARG。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>低同源性 ARG 检测困难</td>
+<td>传统序列比对方法对 seqID &lt; 50% 的 ARG 灵敏度低</td>
+<td>ARG 序列多样性高，功能保守但序列分化大</td>
+<td>背景部分：blaNDM-1 与 blaVIM 仅共享 ~33% seqID</td>
+</tr>
+<tr>
+<td>结构相似性单独使用产生高假阳性</td>
+<td>高 TM-score 蛋白可能缺乏耐药功能（proto-resistance genes）</td>
+<td>结构相似不等于功能相同，关键残基差异决定功能</td>
+<td>背景部分：proto-resistance genes 概念；图 1 显示全长结构比对无法区分功能</td>
+</tr>
+<tr>
+<td>现有 ML 方法受训练数据偏差影响</td>
+<td>基于序列的 ML 分类器偏向检测高同源 ARG</td>
+<td>训练数据库（如 CARD）主要包含临床相关、高同源 ARG</td>
+<td>背景部分：ML 方法在内部验证集上表现好但泛化性存疑</td>
+</tr>
+<tr>
+<td>实验验证通量低</td>
+<td>功能验证是 ARG 发现的瓶颈</td>
+<td>需要克隆、表达、MIC 测定等繁琐步骤</td>
+<td>方法部分：仅 9 个候选被选为实验验证</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 开发 ARG-PASS 流程，包括：(1) 对已知 ARG 蛋白按序列同一性聚类；(2) 用 FoldMason 进行多结构比对，提取保守结构区域（high-lDDT）；(3) 在保守区域内计算 pairwise seqID vs TM-score 分布；(4) 用 one-class SVM 学习该分布，预测查询蛋白是否具有耐药功能。</li>
+<li><strong>核心洞察</strong>: 功能相关的序列-结构特征集中在保守结构区域（high-lDDT），而非全长蛋白。通过聚焦这些区域，可以放大功能信号、降低噪声，从而在低同源性条件下仍能准确预测功能。此外，seqID 与 TM-score 的联合分布比任一单一指标更能刻画功能 ARG 的特征。</li>
+<li><strong>可能的普适教训</strong> [Analysis]: 在蛋白质功能预测中，与其使用全长序列/结构比对，不如聚焦功能关键区域（如活性位点、保守结构域）。这种"局部特征"策略可显著提高对远缘同源蛋白的功能预测能力，可推广至其他功能注释任务（如酶功能预测、配体结合位点识别）。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 查询蛋白的氨基酸序列（或 AlphaFold 预测结构）</li>
+<li><strong>输出</strong>: 功能预测（是否属于特定 ARG 类别）</li>
+<li><strong>模块</strong>:
+  1. <strong>训练集构建</strong>: 从 CARD v4.0.1 获取已知 ARG 蛋白序列，按类别分组（AAC, APH, ANT, Dfr, Sul, β-lactamases, PBP, TRPP）
+  2. <strong>结构获取</strong>: 从 AlphaFold DB 下载或使用 AF2/AF3 预测
+  3. <strong>聚类</strong>: 按 20%、30%、50% seqID 对 ARG 蛋白聚类
+  4. <strong>保守区域提取</strong>: 用 FoldMason 对每个聚类进行多结构比对，提取 high-LDDT 残基（≥Q50/Q75/Q90 阈值）
+  5. <strong>特征计算</strong>: 对每个聚类，计算 pairwise seqID vs TM-score（FoldMason 比对后）
+  6. <strong>模型训练</strong>: 对每个聚类训练 one-class SVM（RBF 核），学习 seqID-TM-score 分布
+  7. <strong>预测</strong>: 查询蛋白与每个聚类的 high-LDDT 结构比对，计算特征，判断是否落在 SVM 决策边界内</li>
+<li><strong>流程</strong>: 查询序列 → 结构预测（如需要）→ 与各聚类 high-LDDT 结构比对 → 特征提取 → SVM 分类 → 功能预测</li>
+<li><strong>工具</strong>: FoldMason (v.2-7bd21ed), Foldseek (v.10-941cd33), AlphaFold2/3, Diamond, scikit-learn</li>
+<li><strong>假设</strong>: 功能 ARG 在保守结构区域具有相似的 seqID-TM-score 分布，而非功能蛋白（如 proto-resistance genes）则偏离此分布</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ARG 蛋白聚类</td>
+<td>按 seqID 将已知 ARG 分组</td>
+<td>减少类内变异，提高保守区域提取的准确性</td>
+<td>输入：ARG 序列；输出：聚类</td>
+<td>方法节：20/30/50% 三级聚类</td>
+<td>预期：聚类过粗会降低保守区域特异性，过细则减少训练数据</td>
+</tr>
+<tr>
+<td>FoldMason 多结构比对</td>
+<td>提取保守结构区域（high-LDDT）</td>
+<td>聚焦功能关键残基，减少非功能区域噪声</td>
+<td>输入：聚类内 ARG 结构；输出：比对 + LDDT 分数</td>
+<td>方法节：LDDT 阈值选择（Q50/Q75/Q90）</td>
+<td>预期：移除后无法区分功能关键区域，预测精度显著下降</td>
+</tr>
+<tr>
+<td>seqID-TM-score 特征计算</td>
+<td>量化查询蛋白与已知 ARG 的序列-结构相似性</td>
+<td>联合特征比单一指标更能刻画功能保守性</td>
+<td>输入：比对结果；输出：2D 特征点</td>
+<td>图 2c-d：功能/非功能预测的分布差异</td>
+<td>预期：移除任一维度都会降低判别能力</td>
+</tr>
+<tr>
+<td>One-class SVM</td>
+<td>学习功能 ARG 的特征分布边界</td>
+<td>无需负样本，适合"仅正例"的功能预测场景</td>
+<td>输入：训练特征；输出：决策边界</td>
+<td>方法节：RBF 核，ν=1/N</td>
+<td>预期：移除后无法自动确定功能/非功能阈值</td>
+</tr>
+<tr>
+<td>查询蛋白结构比对</td>
+<td>将查询蛋白与 high-LDDT 结构比对</td>
+<td>计算查询蛋白的特征点</td>
+<td>输入：查询结构 + 聚类结构；输出：特征点</td>
+<td>方法节：Foldseek TM-align</td>
+<td>预期：移除后无法进行预测</td>
+</tr>
+<tr>
+<td>实验验证</td>
+<td>克隆表达 + MIC 测定</td>
+<td>验证预测的准确性</td>
+<td>输入：候选基因；输出：耐药表型</td>
+<td>表 1：9 个候选全部有活性</td>
+<td>预期：移除后无法确认预测的生物学意义</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>One-class SVM 决策函数</strong>: f(x) ≥ 0 表示查询蛋白被预测为功能性 ARG。其中 x = (seqID, TM-score) 为 2D 特征向量，f 为 SVM 学习到的决策函数。</li>
+<li><strong>TM-score</strong>: 模板建模分数，范围 [0,1]，衡量两个蛋白质结构的全局相似性，由 Foldseek 计算并归一化（除以 subject 长度）。</li>
+<li><strong>seqID</strong>: 序列同一性，即比对区域中相同氨基酸残基的比例。</li>
+<li><strong>LDDT (local Distance Difference Test)</strong>: 局部距离差异测试，用于评估多结构比对中每个残基位置的结构保守性。阈值选择：Q50（中位数）、Q75、Q90 分位数。</li>
+<li><strong>ν (nu)</strong>: one-class SVM 的超参数，控制训练数据中被视为异常值的比例上限，设为 1/N（N 为训练点数）。</li>
+<li><strong>γ (gamma)</strong>: RBF 核的宽度参数，由 scikit-learn 的 'scale' 选项自动设置，γ = 1/(特征数 × 数据方差)。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>:</li>
+<li>训练集：CARD v4.0.1 中 12 个 ARG 类别的蛋白序列（1203 个结构）</li>
+<li>验证集 1：PCM 数据集（59 个实验验证的候选，seqID &lt; 95%）</li>
+<li>验证集 2：ResFinderFG v2.0（204 个功能宏基因组 ARG）</li>
+<li>查询集：6 个 HMM 参考菌株基因组</li>
+<li><strong>指标</strong>: 精度（precision）、特异性（specificity）、灵敏度（sensitivity）</li>
+<li><strong>基线</strong>: PCM 方法（Ruppé et al. 2019）</li>
+<li><strong>评测协议</strong>: 对 PCM 数据集进行回顾性验证；对 HMM 菌株进行前瞻性预测 + 实验验证</li>
+<li><strong>实验列表</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCM 数据集验证</td>
+<td>ARG-PASS 能准确预测已知功能 ARG</td>
+<td>59 个 PCM 候选，seqID &lt; 95%</td>
+<td>精度 0.85，特异性 0.75</td>
+<td>ARG-PASS 在低同源性下保持高精度</td>
+<td>灵敏度 0.51 较低，可能漏检部分 ARG</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>ResFinderFG v2.0 验证</td>
+<td>ARG-PASS 对功能宏基因组 ARG 有较高灵敏度</td>
+<td>204 个序列，分层 seqID 采样</td>
+<td>灵敏度 0.80</td>
+<td>ARG-PASS 能识别多种来源的 ARG</td>
+<td>部分类别（ANT, C 类 β-内酰胺酶）灵敏度低</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>交叉类别验证</td>
+<td>ARG-PASS 能区分不同 β-内酰胺酶类别</td>
+<td>A/C/D 类 β-内酰胺酶和 PBP 互检</td>
+<td>仅 LRA-13 被预测为功能性</td>
+<td>ARG-PASS 具有类别特异性</td>
+<td>样本量小，需更多验证</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>HMM 菌株预测</td>
+<td>人类微生物组中存在新型 ARG</td>
+<td>6 个 HMM 参考菌株</td>
+<td>16 个预测为功能性</td>
+<td>ARG-PASS 能发现新 ARG</td>
+<td>预测数量有限</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>实验验证</td>
+<td>预测的 ARG 确实赋予耐药性</td>
+<td>9 个候选在 E. coli 中表达</td>
+<td>全部有活性，7 个达 CLSI 耐药折点</td>
+<td>ARG-PASS 预测具有生物学意义</td>
+<td>仅测试了 9/16 个预测</td>
+<td>表 1</td>
+</tr>
+<tr>
+<td>低同源性检测</td>
+<td>ARG-PASS 能识别 seqID &lt; 50% 的 ARG</td>
+<td>9 个验证的 ARG 平均 seqID 46%</td>
+<td>全部有活性</td>
+<td>低同源性 ARG 可被有效识别</td>
+<td>未测试更低 seqID 的极限</td>
+<td>Results 节</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: ARG-PASS 仅针对 12 个特定 ARG 类别（AAC, APH, ANT, Dfr, Sul, β-内酰胺酶 A/B/C/D 类, PBP, TRPP），不覆盖所有 ARG 类型。</li>
+<li><strong>预测条件</strong>: 需要查询蛋白的 3D 结构（可从 AFDB 下载或 AF2/AF3 预测），且结构预测质量影响结果。</li>
+<li><strong>功能验证边界</strong>: 实验验证在 E. coli BW23113 (ΔbamBΔtolC) 中进行，结果可能不反映原生宿主中的功能。</li>
+<li><strong>"pre-resistance" 概念</strong>: 本文定义了"pre-resistance"基因——具有耐药活性但 MIC 低于 CLSI 临床折点的基因，并推测其可能进化为临床耐药。这是概念性贡献，但缺乏进化实验证据。</li>
+<li><strong>灵敏度限制</strong>: 在 PCM 数据集上灵敏度仅 0.51，意味着约一半的已知功能 ARG 未被预测到，可能由于训练数据偏差或保守区域提取不足。</li>
+<li><strong>统计边界</strong>: 实验验证样本量小（9 个功能性 + 5 个非功能性），统计功效有限。</li>
+<li><strong>有边界的复述</strong>: ARG-PASS 通过聚焦保守结构区域的序列-结构特征，能够在低同源性条件下以较高精度预测特定类别的 ARG 功能，并在人类微生物组中发现了多个新型耐药基因，但其灵敏度有限，且"pre-resistance"概念需要进一步实验验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>灵敏度有限</td>
+<td>PCM 数据集上灵敏度 0.51，ResFinderFG 上 0.80</td>
+<td>未明确提及</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>小聚类训练数据不足</td>
+<td>聚类成员少时 SVM 决策边界不可靠</td>
+<td>未明确提及</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>训练数据仅来自 CARD</td>
+<td>可能偏向临床相关 ARG，忽略环境 ARG</td>
+<td>未明确提及</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>未覆盖所有 ARG 类别</td>
+<td>仅 12 个类别，排除外排泵等</td>
+<td>未来可扩展至其他 ARG 类别</td>
+<td>方法节</td>
+</tr>
+<tr>
+<td>实验验证样本量小</td>
+<td>仅 9 个功能性 + 5 个非功能性</td>
+<td>未明确提及</td>
+<td>表 1</td>
+</tr>
+<tr>
+<td>保守区域提取依赖 FoldMason 版本</td>
+<td>后续版本可能改变 LDDT 评分</td>
+<td>保留 v.2-7bd21ed 以保证可重复性</td>
+<td>方法节</td>
+</tr>
+<tr>
+<td>未检测到 MGE 关联</td>
+<td>基因组分析未发现移动元件</td>
+<td>未明确提及</td>
+<td>Results 节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练数据仅来自 CARD</td>
+<td>CARD 主要收录临床相关 ARG，可能遗漏环境中的功能 ARG 变体</td>
+<td>训练数据偏差可能导致对非临床 ARG 的误判</td>
+<td>使用环境宏基因组 ARG 数据集进行独立验证</td>
+<td>方法节：训练集来源</td>
+</tr>
+<tr>
+<td>One-class SVM 对聚类大小敏感</td>
+<td>小聚类（如 Sul 类仅 12 个结构）的决策边界可能过紧或过松</td>
+<td>影响预测的可靠性和泛化能力</td>
+<td>对不同聚类大小进行敏感性分析</td>
+<td>方法节：聚类统计</td>
+</tr>
+<tr>
+<td>"pre-resistance" 定义依赖 E. coli 异源表达</td>
+<td>异源表达可能低估或高估基因的耐药贡献</td>
+<td>影响对临床风险的正确评估</td>
+<td>在原生宿主中验证表达和耐药表型</td>
+<td>表 1 注释</td>
+</tr>
+<tr>
+<td>未与现有 ML 方法进行系统比较</td>
+<td>仅与 PCM 比较，未与基于序列的 ML 方法（如 DeepARG）对比</td>
+<td>无法评估 ARG-PASS 的相对优势</td>
+<td>在相同数据集上运行多种方法进行基准测试</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>保守区域提取依赖 LDDT 阈值</td>
+<td>Q50/Q75/Q90 阈值选择可能影响结果</td>
+<td>不同阈值可能改变预测性能</td>
+<td>进行阈值敏感性分析</td>
+<td>方法节：表 2</td>
+</tr>
+<tr>
+<td>未报告计算资源需求</td>
+<td>大规模应用时结构预测成本可能过高</td>
+<td>影响方法的可扩展性和实用性</td>
+<td>报告结构预测和 SVM 推理的时间/资源消耗</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>验证集与训练集可能存在重叠</td>
+<td>PCM 和 ResFinderFG 数据可能包含与 CARD 同源的序列</td>
+<td>可能高估性能</td>
+<td>检查序列相似性并排除重叠</td>
+<td>方法节：去重步骤</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>局部特征优于全局特征</strong> [可迁移方法]: 在蛋白质功能预测中，聚焦保守结构区域（如 high-LDDT）而非全长比对，可显著提高对远距离同源蛋白的功能预测能力。可迁移至酶功能预测、配体结合位点识别等任务。
+2. <strong>序列-结构联合特征</strong> [可迁移方法]: 将序列同一性（seqID）与结构相似性（TM-score）结合为 2D 特征，比单一指标更能刻画功能保守性。可推广至其他功能注释任务。
+3. <strong>One-class SVM 用于正样本-only 分类</strong> [可迁移方法]: 在缺乏可靠负样本的场景下，one-class SVM 可有效学习正样本的特征分布边界。适用于"已知功能蛋白 vs 未知蛋白"的筛选任务。
+4. <strong>"Pre-resistance" 概念</strong> [可迁移概念]: 将具有活性但未达临床折点的基因定义为"pre-resistance"，为理解耐药进化提供了中间状态概念，可应用于其他耐药基因研究。
+5. <strong>结构预测与功能验证的闭环</strong> [可迁移实验设计]: 从 AlphaFold 结构出发进行功能预测，再通过异源表达和 MIC 测定验证，形成了"计算预测-实验验证"的完整闭环，可作为蛋白质功能研究的范式。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>: Ruppé et al. (2019) 的 PCM 方法，同样利用结构信息预测 ARG，但 ARG-PASS 聚焦保守区域并引入 ML 分类器，性能更优。</li>
+<li><strong>相关数据库</strong>: CARD（训练数据来源）、ResFinderFG v2.0（验证数据）、AlphaFold DB（结构来源）、MobileOG-db（移动元件分析）。</li>
+<li><strong>工具链</strong>: FoldMason/Foldseek（结构比对）、AlphaFold2/3（结构预测）、Diamond（序列搜索）、scikit-learn（SVM）。</li>
+<li><strong>概念连接</strong>: "proto-resistance genes" 概念来自 Martinez et al.，本文进一步提出"pre-resistance"作为中间状态。</li>
+<li><strong>可迁移领域</strong> [Analysis]: 该方法可迁移至其他功能预测任务，如毒力因子预测、代谢酶功能注释、蛋白质-配体相互作用预测等，特别是对于序列多样性高但结构保守的蛋白质家族。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: ARG-PASS 扩展到环境宏基因组
+   - <strong>来源局限/观察</strong>: 训练数据仅来自 CARD（临床相关），可能遗漏环境 ARG
+   - <strong>核心假设</strong>: 环境宏基因组中存在大量未被注释的功能 ARG，其保守结构区域特征与临床 ARG 不同
+   - <strong>初步方法</strong>: 从环境宏基因组（如土壤、海洋）中构建 ARG 候选集，用 ARG-PASS 预测并实验验证
+   - <strong>验证方式</strong>: 与现有数据库比对，评估新发现的 ARG 比例和功能活性
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于结构特征的通用蛋白质功能预测框架
+   - <strong>来源局限/观察</strong>: ARG-PASS 仅针对 12 个 ARG 类别，但方法具有通用性
+   - <strong>核心假设</strong>: "保守结构区域 + seqID/TM-score 联合特征 + one-class SVM"可推广至其他蛋白质功能预测
+   - <strong>初步方法</strong>: 选择 3-5 个功能多样的蛋白质家族（如水解酶、转移酶），构建类似 ARG-PASS 的预测流程
+   - <strong>验证方式</strong>: 在已知功能蛋白数据集上评估精度/召回率，与现有方法（如 DeepFRI、ProteInfer）比较
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: "Pre-resistance" 基因的进化动力学研究
+   - <strong>来源局限/观察</strong>: 本文提出 pre-resistance 概念但缺乏进化实验证据
+   - <strong>核心假设</strong>: pre-resistance 基因在抗生素压力下可快速进化为临床耐药基因
+   - <strong>初步方法</strong>: 对 pre-resistance 基因进行定点突变或定向进化实验，结合结构分析预测关键突变位点
+   - <strong>验证方式</strong>: 测定突变体的 MIC 变化，结合分子动力学模拟解释耐药机制
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 结合语言模型与结构特征的 ARG 预测
+   - <strong>来源局限/观察</strong>: ARG-PASS 依赖结构比对，计算成本高；蛋白质语言模型可提供序列嵌入特征
+   - <strong>核心假设</strong>: 蛋白质语言模型嵌入 + 结构特征可提高 ARG 预测的准确性和效率
+   - <strong>初步方法</strong>: 用 ESM-2 等模型提取序列嵌入，与 ARG-PASS 的结构特征融合，训练分类器
+   - <strong>验证方式</strong>: 在 PCM 和 ResFinderFG 数据集上比较性能，评估计算效率
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: ARG-PASS 在临床耐药监测中的应用
+   - <strong>来源局限/观察</strong>: 本文仅验证了 6 个 HMM 菌株，未涉及临床样本
+   - <strong>核心假设</strong>: ARG-PASS 可从临床宏基因组数据中识别新型 ARG，辅助耐药监测
+   - <strong>初步方法</strong>: 收集临床宏基因组数据，用 ARG-PASS 预测新型 ARG，与表型耐药数据关联
+   - <strong>验证方式</strong>: 评估预测 ARG 与临床耐药表型的相关性，与传统方法比较
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including abstract, background, results, discussion, methods, and figure legends. Supplementary files were not provided.</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, clarity of claims, and alignment with the stated conclusions. Editorial and stylistic issues are noted only where they affect comprehension.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present ARG-PASS, a computational method that uses pairwise sequence-structure comparisons of conserved protein regions to predict antibiotic resistance genes (ARGs) from human microbiome data. They report functional validation of nine predicted ARGs in E. coli, including a highly divergent phnP gene with low sequence identity to known β-lactamases, and propose a "pre-resistance" category for genes with sub-clinical activity.</li>
+<li><strong>Visible evidence base</strong> Main text, Methods, Tables 1–2, Figures 1–5, and references to Supplementary files (not provided).</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary files (Tables S1–S9, Alignments 1–16, Figures S1–S3) were not available for review. These are referenced extensively for validation data, hyperparameter details, and phylogenetic analyses. Their absence limits full verification of several claims.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a conceptually interesting approach that integrates protein structure prediction with machine learning to identify divergent ARGs. The core idea of using conserved structural regions rather than full-length homology is sound and addresses a real limitation in current ARG detection methods. However, the evidence provided is insufficient to fully establish the method's generalizability, and several claims regarding novelty, clinical relevance, and the "pre-resistance" concept require stronger support. The experimental validation is limited in scope, and the absence of a dedicated negative test set weakens the specificity assessment. The manuscript would benefit from clearer reporting of validation metrics and a more critical discussion of limitations.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in antimicrobial resistance surveillance, metagenomics, and computational biology would find this work relevant. The method's potential to identify highly divergent ARGs that evade homology-based detection is of practical interest for environmental and clinical monitoring. The "pre-resistance" concept may also interest evolutionary biologists studying the emergence of clinical resistance.</li>
+<li><strong>Major strengths</strong>
+  1. The methodological innovation of using pairwise sequence-structure distributions of conserved regions is a thoughtful departure from standard homology-based approaches.
+  2. The inclusion of experimental validation for nine predicted ARGs, including a highly divergent phnP gene, demonstrates a commitment to functional confirmation.
+  3. The use of CLSI breakpoints to distinguish resistance from pre-resistance is a clinically meaningful framework.
+  4. The cross-class evaluation of β-lactamase models provides some evidence of specificity.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "ARG-PASS provides a precise computational approach that integrates sequence and structure to identify divergent ARGs that evade homology-based detection."</li>
+<li><strong>Evidence pointer</strong> Methods, Validation sections; Supplementary Tables S5–S7 (not provided)</li>
+<li><strong>Concern</strong> The precision, sensitivity, and specificity of ARG-PASS are reported only against the PCM dataset (n=59) and the ResFinderFG v2.0 dataset (n=204). The PCM dataset is small, and the ResFinderFG analysis is described as a sensitivity evaluation without a corresponding specificity assessment. The absence of a dedicated negative test set, acknowledged by the authors, means the false positive rate of ARG-PASS in a realistic metagenomic context is unknown. The claim of "precision" is therefore not fully established from the provided evidence.</li>
+<li><strong>Why it matters</strong> A method intended for ARG discovery must demonstrate that it does not produce excessive false positives, especially when applied to large metagenomic datasets where the vast majority of proteins are not ARGs. Without a robust negative control, the practical utility of ARG-PASS remains uncertain.</li>
+<li><strong>Resolution test</strong> Provide a dedicated negative test set of proteins with similar folds but no resistance function (e.g., non-ARG metallo-β-lactamase superfamily members) and report precision, specificity, and false positive rates. Alternatively, apply ARG-PASS to a large, well-annotated metagenomic dataset and compare predictions against functional metagenomics results.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> "We suggest pre-resistance genes may preferentially evolve into clinically relevant resistance determinants."</li>
+<li><strong>Evidence pointer</strong> Discussion, Figure 4</li>
+<li><strong>Concern</strong> The "pre-resistance" concept is introduced based on two genes (bla02, bla03) with sub-clinical MICs. The claim that these genes "may preferentially evolve" into clinically relevant determinants is speculative and not supported by any evolutionary or experimental data in this manuscript. The conceptual framework is interesting, but the evidence base is too thin to support a generalizable claim.</li>
+<li><strong>Why it matters</strong> If the "pre-resistance" category is to be a meaningful contribution, it needs a clearer operational definition and evidence that such genes are indeed on a trajectory toward clinical resistance. Without this, the term risks being a label for "low activity" without predictive value.</li>
+<li><strong>Resolution test</strong> Provide additional examples of pre-resistance genes, ideally with mutational or selection experiments demonstrating increased resistance under antibiotic pressure. Alternatively, rephrase the claim to be more cautious and explicitly frame it as a hypothesis requiring further testing.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "In total, 80% of the tested genes confer resistance at CLSI resistant breakpoints and the remainder represent 'pre-resistance' genes."</li>
+<li><strong>Evidence pointer</strong> Table 1, Results section</li>
+<li><strong>Concern</strong> The functional validation relies on a single E. coli expression system (BW25113 ΔbamB ΔtolC). The authors acknowledge this limitation, but the generalizability of the results to other hosts, particularly Gram-positive bacteria or anaerobes, is not addressed. The use of a hypersusceptible strain may overestimate the clinical relevance of the observed MICs.</li>
+<li><strong>Why it matters</strong> The clinical relevance of an ARG depends on its expression in relevant pathogens. A gene that confers resistance in a hypersusceptible laboratory strain may not do so in a clinical isolate with different membrane permeability or efflux systems.</li>
+<li><strong>Resolution test</strong> Validate a subset of the predicted ARGs in a more clinically relevant host, such as a pathogenic E. coli strain or another species. Discuss the potential impact of the expression system on the observed MICs.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Originality</li>
+<li><strong>Claim pointer</strong> "ARG-PASS (ARG-PAirwise Sequence vs Structure) is a protein function prediction method which leverages a one-class support vector machine trained on pairwise primary and tertiary distributions of structurally conserved regions of proteins encoded by ARGs."</li>
+<li><strong>Evidence pointer</strong> Methods, Figure 2</li>
+<li><strong>Concern</strong> The novelty of ARG-PASS relative to existing structure-based methods (e.g., PCM) is not clearly articulated. The authors state that PCM uses pairwise comparative modeling, but the specific advantages of ARG-PASS over PCM or other machine learning approaches are not systematically compared. The claim of novelty is therefore not fully substantiated.</li>
+<li><strong>Why it matters</strong> For a methods paper, it is essential to demonstrate that the new approach offers a meaningful improvement over existing tools. Without a direct comparison, the contribution of ARG-PASS is unclear.</li>
+<li><strong>Resolution test</strong> Provide a head-to-head comparison of ARG-PASS against PCM and at least one sequence-based machine learning method (e.g., DeepARG, CARD's Resistance Gene Identifier) on the same datasets, reporting precision, recall, and computational cost.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Abstract and Introduction</li>
+<li><strong>Evidence pointer</strong> Abstract, Background</li>
+<li><strong>Issue</strong> The abstract uses terms like "pairwise primary and tertiary distributions" and "one-class support vector machine" without sufficient context for a general microbiology audience. The significance of the approach is not immediately clear.</li>
+<li><strong>Required correction</strong> Briefly explain in plain language what the method does and why it is an improvement over existing approaches. For example, "We compare the 3D shapes and sequences of protein regions that are known to be important for resistance, allowing us to find genes that look very different from known resistance genes but have similar functional parts."</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Methods, "Manual adjustment of Foldseek seqID calculations"</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The manual adjustment of seqID calculations is described but the rationale and the exact procedure are not fully detailed. This is a critical step that could affect reproducibility.</li>
+<li><strong>Required correction</strong> Provide a more detailed description of the adjustment procedure, including the formula or algorithm used, and ideally a worked example.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Affected element</strong> Discussion, "pre-resistance" concept</li>
+<li><strong>Evidence pointer</strong> Discussion, Figure 4</li>
+<li><strong>Issue</strong> The "fitness-MIC landscape" figure is conceptual and not based on experimental data. While useful for illustration, it may be misinterpreted as empirical.</li>
+<li><strong>Required correction</strong> Clearly label Figure 4b as a conceptual model and avoid implying that the positions of specific genes on the landscape are experimentally determined.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Methods, "Training set"</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The criteria for selecting ARG classes and the specific number of structures per class are not fully reported. The clustering thresholds (20%, 30%, 50%) are described, but the rationale for these specific values is not given.</li>
+<li><strong>Required correction</strong> Provide a table or supplementary figure showing the number of structures per class and the number of clusters at each threshold. Justify the choice of thresholds.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Results, "Development of the ARG-PASS method"</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 2</li>
+<li><strong>Issue</strong> The description of the three-step framework is clear, but the figure legend is dense and may be difficult for nonspecialists to follow.</li>
+<li><strong>Required correction</strong> Simplify the figure legend and consider adding a schematic that shows the workflow in a more intuitive way.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong>
+  1. Lack of a dedicated negative test set for specificity assessment (R1-M1).
+  2. Insufficient evidence for the "pre-resistance" evolutionary claim (R1-M2).
+  3. Limited generalizability of functional validation due to single-host expression system (R1-M3).
+  4. Incomplete description of the manual seqID adjustment procedure (R1-m2).
+  5. Absence of a direct comparison with existing methods to establish novelty (R1-M4).</li>
+<li><strong>Assessment against Nature-style criteria</strong></li>
+<li><strong>Originality</strong> The concept of using conserved structural regions for ARG prediction is a creative extension of existing structure-based approaches. However, the novelty is not fully demonstrated without a direct comparison to PCM or other methods. The "pre-resistance" concept is interesting but underdeveloped.</li>
+<li><strong>Scientific importance</strong> The problem of identifying divergent ARGs is significant for antimicrobial resistance surveillance. The method has potential, but the evidence for its practical utility is incomplete. The clinical relevance of the findings is limited by the narrow experimental scope.</li>
+<li><strong>Interdisciplinary readership</strong> The work bridges computational biology, microbiology, and clinical diagnostics. However, the presentation is heavily technical and may not be accessible to a broad audience. The abstract and introduction need to be more accessible.</li>
+<li><strong>Technical soundness</strong> The core methodology is plausible, but the validation is insufficient. The absence of a negative control set and the small validation dataset undermine confidence in the reported precision. The manual adjustment of seqIDs is a potential source of bias that is not fully addressed.</li>
+<li><strong>Readability for nonspecialists</strong> The manuscript is well-structured but uses technical jargon without adequate explanation. The figures are informative but the legends are dense. The discussion of limitations is honest but could be more critical.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript presents a promising approach, but the claims of precision, novelty, and the "pre-resistance" concept require additional validation and clearer reporting. I would be supportive if the authors address the major concerns, particularly the need for a negative test set, a direct comparison with existing methods, and a more cautious framing of the evolutionary claims.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that ARG-PASS "provides a precise computational approach" is not fully supported due to the lack of a dedicated negative test set and the small validation dataset.</li>
+<li>The suggestion that "pre-resistance genes may preferentially evolve into clinically relevant resistance determinants" is speculative and not supported by experimental evidence in this manuscript.</li>
+<li>The statement that "80% of the tested genes confer resistance at CLSI resistant breakpoints" is based on a small sample size and a single expression system, limiting its generalizability.</li>
+<li>The assertion that the method can identify "potentially a large reservoir of previously uncharacterised ARGs with clinical relevance" is an extrapolation from a limited number of validated examples and requires broader testing.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The predicted interactome of the human mitochondrial proteome. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>The predicted interactome of the human mitochondrial proteome.</h1>
+      <div class="meta">Swaminathan, Abhinav B; Zulkifli, Mohammad; Guerra, Rachel M; Calabrese, Sofia M; Kalafatis, Dimitris T; Pagliarini, David J; Gohil, Vishal M</div>
+      <div class="meta muted">
+        
+        <span class="journal">Nature communications</span>
+        · 2026-09-24
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42778582/">原文</a>
+      </div>
+      <p class="one-liner">该文利用AlphaFold Multimer对整个人类线粒体蛋白质组进行大规模相互作用预测，构建相互作用组图谱，属于蛋白质结构预测方法在蛋白质相互作用问题上的应用，与蛋白质结构计算课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Despite the fundamental importance of mitochondria in cellular metabolism, the molecular function(s) of many mitochondrial proteins remain unknown. Since protein function can be inferred from their interacting partners, we repurpose the protein structure prediction algorithm AlphaFold Multimer (AFM) as a classification model to predict protein-protein interactions of the entire human mitochondrial proteome. By screening 630,003 protein pairs, we create a compendium of 2,895 previously known and newly observed interactions, which include the interacting partner(s) of 85 uncharacterized mitochondrial proteins, thereby linking them to a known biochemical pathway. Extending the AFM-based analysis to 11 diverse eukaryotes identifies evolutionarily conserved interactions among human hits, including regulators of core bioenergetic pathways. Our experiments, guided by these predictions, nominate protein interactions that form the coenzyme Q metabolon and define the mitochondrial copper delivery pathway to cytochrome c oxidase. Our compendium represents a powerful resource for the systematic, structure-based functionalization of the human mitochondrial proteome.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">尽管线粒体在细胞代谢中具有根本重要性，但许多线粒体蛋白的分子功能仍属未知。由于蛋白质功能可从其相互作用伙伴推断，我们将蛋白质结构预测算法AlphaFold Multimer (AFM)重新用作分类模型，以预测整个人类线粒体蛋白质组的蛋白质-蛋白质相互作用。通过筛选630,003对蛋白质，我们构建了一个包含2,895个已知和新观察到的相互作用的汇编，其中包括85个未表征线粒体蛋白的相互作用伙伴，从而将它们与已知生化途径联系起来。将基于AFM的分析扩展到11种多样的真核生物，识别出人类命中中进化上保守的相互作用，包括核心生物能量途径的调节因子。我们的实验在这些预测的指导下，提名了形成辅酶Q代谢体（coenzyme Q metabolon）的蛋白质相互作用，并定义了向细胞色素c氧化酶的线粒体铜递送途径。我们的汇编代表了系统、基于结构的人类线粒体蛋白质组功能化的强大资源。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：The predicted interactome of the human mitochondrial proteome</li>
+<li><strong>作者与单位</strong>：Swaminathan, Abhinav B; Zulkifli, Mohammad; Guerra, Rachel M; Calabrese, Sofia M; Kalafatis, Dimitris T; Pagliarini, David J; Gohil, Vishal M（单位未提供，推测为 Texas A&amp;M University 等，依据致谢中的 TAMU-HPRC）</li>
+<li><strong>期刊/预印本平台</strong>：Nature Communications</li>
+<li><strong>年份</strong>：2026-09-24</li>
+<li><strong>论文类型</strong>：研究论文（含计算方法开发 + 实验验证）</li>
+<li><strong>领域</strong>：蛋白质结构预测 × 蛋白质-蛋白质相互作用（PPI）预测 × 线粒体蛋白质组学</li>
+<li><strong>关键词</strong>：AlphaFold-Multimer、蛋白质相互作用、线粒体蛋白质组、MitoMatch、辅酶Q代谢、铜转运通路</li>
+<li><strong>DOI/arXiv 号</strong>：10.1038/s41467-026-77112-z</li>
+<li><strong>代码</strong>：未提供（MitoMatch 数据库网址：mitomatch.web.app；数据存放于 Zenodo deposition 21232148）</li>
+<li><strong>数据</strong>：Zenodo deposition 21232148（630,003 个蛋白对预测结果）</li>
+<li><strong>阅读日期</strong>：2026-06-02（按当前日期推算）</li>
+<li><strong>该文在课题方向中的位置</strong>：本文是「AlphaFold-Multimer 作为 PPI 分类器」在大规模蛋白质组（线粒体）上的系统性应用，属于「结构预测 × 相互作用预测」交叉方向。其核心贡献在于：(1) 将 AFM 从结构预测工具重新定位为高通量 PPI 筛选器；(2) 提出 ipTM 均值作为分类指标的策略；(3) 结合实验验证（Co-IP、CRISPR 敲除、ICP-MS）形成「预测-验证」闭环。对蛋白质结构相关计算研究课题的可迁移点包括：AFM 的 ipTM 阈值设定方法、MSA 深度对预测质量的影响分析、以及「先限定亚细胞空间再全对筛选」的策略。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过将 AlphaFold-Multimer 重新定位为二分类器，以平均 ipTM ≥ 0.5 为阈值筛选人类线粒体蛋白质组中 630,003 个蛋白对，产出含 2,895 个相互作用的 MitoMatch 数据库（85% 精度），并实验验证了辅酶Q代谢物和 COA4-COX11 铜转运通路中的新相互作用。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否将 AlphaFold-Multimer（AFM）从「已知复合物结构预测器」重新定位为「未知蛋白对是否相互作用的分类器」，并应用于整个线粒体蛋白质组的无偏筛选？</li>
+<li><strong>为什么重要</strong>：线粒体约 10% 的蛋白质（约 100 个）完全缺乏通路注释或生化功能；现有 PPI 实验方法（酵母双杂交、Co-IP、complexome profiling）耗时、易产生假阳性，且难以覆盖瞬时或弱相互作用。若能以计算方式先预测再验证，可大幅加速线粒体蛋白质功能注释。</li>
+<li><strong>现有方法为何不足</strong>：酵母双杂交和 Co-IP 依赖实验条件、易受膜蛋白和瞬时相互作用限制；complexome profiling 需要特定设备和专业知识；已有 AFM 应用研究多限于小规模（数十到数百对）或已知复合物，缺乏对全蛋白质组的系统评估。</li>
+<li><strong>精确研究问题</strong>：Can AlphaFold-Multimer, when applied to all pairwise combinations of a subcellular proteome, achieve sufficient precision to serve as a discovery tool for protein-protein interactions?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」——基于文中引用及领域常识，但具体分期表述为本文框架）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验 PPI 筛选（~2000-2020）</td>
+<td>酵母双杂交、Co-IP、AP-MS</td>
+<td>直接检测体内相互作用</td>
+<td>假阳性率高、耗时、难以覆盖瞬时/弱相互作用</td>
+<td>本文作为对比基线</td>
+</tr>
+<tr>
+<td>计算 PPI 预测（~2010-2020）</td>
+<td>序列共进化、基因共表达、结构模板比对</td>
+<td>可大规模运行</td>
+<td>精度有限、缺乏结构信息</td>
+<td>本文未直接对比</td>
+</tr>
+<tr>
+<td>结构预测驱动的 PPI（2021-2024）</td>
+<td>AlphaFold-Multimer 应用于已知复合物或小规模筛选</td>
+<td>提供原子级结构模型</td>
+<td>计算成本高、未系统评估分类性能</td>
+<td>本文扩展至全蛋白质组规模</td>
+</tr>
+<tr>
+<td>大规模 AFM 筛选（本文，2026）</td>
+<td>AFM + ipTM 均值分类 + 亚细胞限定</td>
+<td>85% 精度、覆盖 85% 孤儿蛋白</td>
+<td>无法提供结合亲和力、依赖 MSA 深度</td>
+<td>本文为当前代表</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在「结构预测驱动的 PPI 发现」谱系中，本文是首个将 AFM 应用于完整亚细胞蛋白质组（线粒体）并系统评估其分类性能的工作，同时提供了实验验证范例。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>线粒体蛋白功能注释缺失</td>
+<td>约 10% 线粒体蛋白（~100 个）无通路注释</td>
+<td>传统实验方法通量低、难以覆盖所有蛋白</td>
+<td>Introduction 第 2 段</td>
+</tr>
+<tr>
+<td>实验 PPI 方法假阳性高</td>
+<td>酵母双杂交、Co-IP 结果重复性差</td>
+<td>实验条件敏感、非特异性结合</td>
+<td>Introduction 第 3 段（作者主张）</td>
+</tr>
+<tr>
+<td>AFM 计算成本高</td>
+<td>全蛋白质组筛选需数百万次预测</td>
+<td>每对蛋白需独立运行 MSA 和结构预测</td>
+<td>Methods 节（作者描述其分步策略）</td>
+</tr>
+<tr>
+<td>AFM 分类阈值不明确</td>
+<td>原始 ipTM 用于结构评估，非分类指标</td>
+<td>需重新校准分类阈值</td>
+<td>Results 图 1b-c（作者通过 PDB 数据集校准）</td>
+</tr>
+<tr>
+<td>MSA 深度不足导致预测失败</td>
+<td>部分蛋白对无法获得可靠预测</td>
+<td>同源序列少、进化信号弱</td>
+<td>Supplementary Fig. 1a-b（作者分析）</td>
+</tr>
+<tr>
+<td>预测无法区分直接/间接相互作用</td>
+<td>Co-IP 检测到复合物内多个蛋白，但无法确定直接结合</td>
+<td>实验方法本身限制</td>
+<td>Discussion 第 2 段（作者承认）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：将 AlphaFold-Multimer 作为二分类器，对线粒体蛋白质组中所有蛋白对进行结构预测，以平均 ipTM ≥ 0.5 为阈值判定相互作用，构建 MitoMatch 数据库，并通过 Co-IP、CRISPR 敲除、ICP-MS 等实验验证关键预测。</li>
+<li><strong>核心洞察</strong>：
+   - AFM 的 ipTM 分数在相互作用与非相互作用蛋白对之间呈双峰分布，可被重新校准为分类阈值（而非仅用于结构质量评估）。
+   - 使用 5 个模型平均 ipTM（而非最大值）可显著降低假阳性，因为非相互作用对的低分模型无法通过取平均被「拉高」。
+   - 将搜索空间限定在亚细胞蛋白质组（线粒体）而非全蛋白质组，实现约 20 倍的先验富集，使 AFM 筛选在计算上可行且精度更高。
+   - 进化保守性可作为交叉验证信号：在 11 个物种中保守的相互作用更可能是真实的。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：
+   - 结构预测模型的置信度分数可被重新利用为分类特征，但需针对新任务重新校准阈值，而非直接沿用原始用途的阈值。
+   - 对预测模型进行「集成平均」比「取最优」更稳健，尤其在高通量筛选场景中。
+   - 生物学先验（亚细胞定位、共表达）可显著提升计算筛选的精度，是「纯计算」与「计算+先验」的分水岭。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：MitoCarta3.0 中 1,123 个人类线粒体蛋白序列（排除 &gt;2000 aa 和非标准氨基酸的蛋白）</li>
+<li><strong>输出</strong>：2,895 个预测相互作用（含结构模型、ipTM 分数、物种保守性评分）</li>
+<li><strong>模块</strong>：
+  1. <strong>PDB 基准测试模块</strong>：从 2018-04-30 后沉积的 PDB 结构中构建 1,338 个相互作用对和 15,005 个非相互作用对，用于校准分类阈值
+  2. <strong>MSA 生成模块</strong>：使用默认 AFM pipeline 为每个蛋白独立生成 MSA（分步策略，避免重复计算）
+  3. <strong>结构预测模块</strong>：对 630,003 个蛋白对运行 5 个 AFM 模型，记录每个模型的 ipTM
+  4. <strong>分类模块</strong>：以平均 ipTM ≥ 0.5 为阈值判定相互作用
+  5. <strong>保守性分析模块</strong>：将人类蛋白对映射到 11 个真核生物（黑猩猩、小鼠、大鼠、爪蟾、斑马鱼、果蝇、线虫、盘基网柄菌、拟南芥、裂殖酵母、酿酒酵母），计算物种保守性评分
+  6. <strong>实验验证模块</strong>：Co-IP（酵母和人类细胞）、CRISPR-Cas9 敲除、ICP-MS、Seahorse 呼吸测量</li>
+<li><strong>流程</strong>：PDB 校准 → 全蛋白质组筛选 → 阈值分类 → 保守性分析 → 实验验证（辅酶Q代谢物 + 铜转运通路）</li>
+<li><strong>工具</strong>：AlphaFold-Multimer v2.2、MMseqs2（序列搜索）、BioPython（界面残基计算）、Cytoscape（网络可视化）、ChimeraX（结构可视化）</li>
+<li><strong>假设</strong>：(1) 共定位蛋白对更可能相互作用；(2) ipTM 分数可区分相互作用与非相互作用；(3) 进化保守的相互作用更可能是真实的</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PDB 基准测试</td>
+<td>校准 ipTM 分类阈值</td>
+<td>AFM 原始 ipTM 用于结构评估，需重新定义分类阈值</td>
+<td>输入：PDB 中相互作用/非相互作用对；输出：ipTM 分布和精度-召回曲线</td>
+<td>Results 图 1b-c：相互作用对呈双峰分布，非相互作用对集中在低 ipTM</td>
+<td>无法确定合理阈值，筛选结果不可信</td>
+</tr>
+<tr>
+<td>分步 MSA 生成</td>
+<td>为每个蛋白独立生成 MSA 并存储</td>
+<td>避免对每个蛋白对重复生成 MSA，节省计算时间</td>
+<td>输入：蛋白序列；输出：预计算 MSA 特征（pickle 文件）</td>
+<td>Methods 节（作者描述）</td>
+<td>计算时间增加数倍，全蛋白质组筛选不可行</td>
+</tr>
+<tr>
+<td>5 模型平均 ipTM</td>
+<td>取 5 个 AFM 模型的平均 ipTM 作为分类分数</td>
+<td>减少单模型随机性，降低假阳性</td>
+<td>输入：5 个模型输出；输出：平均 ipTM</td>
+<td>Results 图 1b-c：平均 ipTM 比最大 ipTM 更有效区分（图 1c 精度-召回曲线）</td>
+<td>假阳性增加，精度下降（作者在 Results 中比较）</td>
+</tr>
+<tr>
+<td>亚细胞限定筛选</td>
+<td>仅筛选线粒体蛋白对</td>
+<td>实现约 20 倍先验富集，使计算可行</td>
+<td>输入：MitoCarta3.0 蛋白列表；输出：630,003 个蛋白对</td>
+<td>Discussion 第 3 段（作者计算）</td>
+<td>全蛋白质组筛选需 ~6 亿对，计算不可行</td>
+</tr>
+<tr>
+<td>保守性评分</td>
+<td>计算相互作用在 11 个物种中的保守性</td>
+<td>提供交叉验证信号，优先排序实验验证</td>
+<td>输入：人类蛋白对 + 11 个物种同源蛋白；输出：物种保守性评分</td>
+<td>Results 图 2a-b：93%（黑猩猩）、87%（小鼠）、44%（酵母）的保守率</td>
+<td>无法区分物种特异性和保守相互作用</td>
+</tr>
+<tr>
+<td>实验验证（Co-IP/CRISPR/ICP-MS）</td>
+<td>验证预测的辅酶Q代谢物和铜转运通路相互作用</td>
+<td>将计算预测转化为生物学功能注释</td>
+<td>输入：预测的相互作用对；输出：实验验证的相互作用</td>
+<td>Results 图 3b-g、4e-m</td>
+<td>预测仅停留在计算层面，无法确认生物学相关性</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>本文核心方法为 AFM 的 ipTM 分数，无显式数学公式。关键概念定义如下：</p>
+<ul>
+<li><strong>ipTM</strong>（interface predicted Template Modeling score）：AFM 输出的界面预测模板建模分数，范围 [0, 1]，用于评估预测复合物界面的准确性。本文将其重新定义为分类分数。</li>
+<li><strong>平均 ipTM</strong>：$\text{mean ipTM} = \frac{1}{5} \sum_{i=1}^{5} \text{ipTM}_i$，其中 $i$ 为 5 个 AFM 模型索引。本文使用该值作为分类阈值。</li>
+<li><strong>分类规则</strong>：$\text{Interaction} = \begin{cases} \text{Yes} &amp; \text{if mean ipTM} \geq 0.5 \ \text{No} &amp; \text{otherwise} \end{cases}$</li>
+<li><strong>精度</strong>：$\text{Precision} = \frac{TP}{TP + FP}$（在 PDB 基准测试中计算）</li>
+<li><strong>召回率</strong>：$\text{Recall} = \frac{TP}{TP + FN}$（同上）</li>
+<li><strong>物种保守性评分</strong>：$\text{Species Score} = \sum_{s \in S} \text{ipTM}_s$，其中 $S$ 为含两个蛋白同源物的物种集合。</li>
+<li><strong>保守性评分</strong>：$\text{Conservation Score} = \frac{\text{Number of species with ipTM} \geq 0.5}{\text{Total number of species with both homologs}}$</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：</li>
+<li>PDB 基准测试集：1,338 个相互作用对 + 15,005 个非相互作用对（2018-04-30 后沉积，未用于 AFM 训练）</li>
+<li>线粒体蛋白质组：MitoCarta3.0 中 1,123 个蛋白，630,003 个蛋白对</li>
+<li>11 个真核生物：黑猩猩、小鼠、大鼠、爪蟾、斑马鱼、果蝇、线虫、盘基网柄菌、拟南芥、裂殖酵母、酿酒酵母</li>
+<li>实验验证：酵母（S. cerevisiae）和人类细胞系（MCH58 成纤维细胞、293T）</li>
+<li><strong>指标</strong>：精度、召回率、FDR（15%）、ipTM 分数分布</li>
+<li><strong>基线</strong>：与已知 PPI 数据库（STRING、BioGRID、IntAct、BioPlex、HuRI、PDB）的映射比较</li>
+<li><strong>评测协议</strong>：PDB 基准测试用于阈值校准；实验验证采用 Co-IP、CRISPR-Cas9 敲除、ICP-MS、Seahorse 呼吸测量</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PDB 基准测试</td>
+<td>ipTM 可区分相互作用/非相互作用对</td>
+<td>1,338 正对 vs 15,005 负对；比较平均 vs 最大 ipTM</td>
+<td>平均 ipTM 在 90% 精度时召回率约 40%，优于最大 ipTM（约 30%）</td>
+<td>平均 ipTM 是更好的分类指标</td>
+<td>无法证明 ipTM 可推广到所有蛋白质类型</td>
+<td>Results 图 1b-c</td>
+</tr>
+<tr>
+<td>全蛋白质组筛选</td>
+<td>线粒体蛋白质组中存在大量未表征的相互作用</td>
+<td>630,003 对中 2,895 对（0.46%）通过阈值</td>
+<td>2,895 个预测相互作用，涉及 1,004 个蛋白</td>
+<td>AFM 可在大规模筛选中发现新相互作用</td>
+<td>无法确定假阳性率在真实环境中的表现</td>
+<td>Results 图 1d</td>
+</tr>
+<tr>
+<td>数据库映射</td>
+<td>预测相互作用与已知数据库重叠</td>
+<td>与 STRING、BioGRID 等 6 个数据库比较</td>
+<td>43% 预测在已知数据库中，57% 为新发现</td>
+<td>MitoMatch 包含大量新相互作用</td>
+<td>新相互作用可能包含假阳性</td>
+<td>Results 图 1e</td>
+</tr>
+<tr>
+<td>保守性分析</td>
+<td>进化保守的相互作用更可靠</td>
+<td>11 个物种的同源映射</td>
+<td>93%（黑猩猩）、87%（小鼠）、44%（酵母）保守</td>
+<td>保守性可优先排序实验验证</td>
+<td>物种特异性相互作用可能被低估</td>
+<td>Results 图 2a-b</td>
+</tr>
+<tr>
+<td>辅酶Q代谢物 Co-IP</td>
+<td>预测的 Coq 蛋白相互作用在体内存在</td>
+<td>酵母内源标签 Coq1-11，Co-IP-MS</td>
+<td>Coq3-7、Coq9、Coq11 形成核心复合物</td>
+<td>预测的辅酶Q代谢物相互作用得到验证</td>
+<td>Co-IP 无法区分直接/间接相互作用</td>
+<td>Results 图 3b-g</td>
+</tr>
+<tr>
+<td>COA4-COX11 验证</td>
+<td>COA4 与 COX11 直接相互作用</td>
+<td>酵母 Co-IP-MS + 人类 293T Co-IP</td>
+<td>双向 Co-IP 验证 COA4-COX11 相互作用</td>
+<td>COA4 定位于铜转运通路的 COX11 步骤</td>
+<td>未证明 COA4 是铜转运的直接调节因子</td>
+<td>Results 图 4e-g</td>
+</tr>
+<tr>
+<td>COA4 敲除表型</td>
+<td>COA4 参与铜稳态</td>
+<td>CRISPR-Cas9 敲除 + ICP-MS + Seahorse</td>
+<td>COA4-KO 细胞铜含量降低、复合物 IV 减少、呼吸受损</td>
+<td>COA4 在铜稳态中发挥功能</td>
+<td>未证明 COA4 直接结合铜</td>
+<td>Results 图 4h-m</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅预测「两个蛋白是否能形成直接物理相互作用」，不预测相互作用的亲和力、动力学、细胞条件依赖性、翻译后修饰调控或竞争性结合。</li>
+<li><strong>真值输入</strong>：PDB 基准测试中的「相互作用」定义为晶体结构中原子接触 &lt; 4Å；这不等同于生理条件下的稳定相互作用。</li>
+<li><strong>端到端状态</strong>：MitoMatch 是纯计算预测数据库，实验验证仅覆盖辅酶Q代谢物和铜转运通路中的少数相互作用，不代表全部 2,895 个预测均经过验证。</li>
+<li><strong>算力成本</strong>：作者通过分步 MSA 策略降低计算成本，但未提供具体 GPU 时数或成本估算。</li>
+<li><strong>历史数据依赖</strong>：AFM 训练数据截止 2018-04-30，PDB 基准测试使用其后沉积的结构，但训练集与测试集之间可能存在同源蛋白泄漏。</li>
+<li><strong>模型依赖</strong>：结果完全依赖 AFM v2.2 的性能；其他结构预测模型（如 RoseTTAFold）可能产生不同结果。</li>
+<li><strong>最难情形</strong>：膜蛋白复合物、瞬时相互作用、依赖翻译后修饰的相互作用、低 MSA 深度的蛋白对。</li>
+<li><strong>群体/领域边界</strong>：仅覆盖人类线粒体蛋白质组（1,123 个蛋白），不适用于其他物种或亚细胞区室。</li>
+<li><strong>不确定性</strong>：作者报告 85% 精度（FDR 15%），但该精度基于 PDB 基准测试，真实线粒体环境中的精度可能不同。</li>
+<li><strong>有边界的复述</strong>：在人类线粒体蛋白质组中，以平均 ipTM ≥ 0.5 为阈值，AFM 可预测约 2,895 个直接物理相互作用，其中约 43% 在已知数据库中有证据，实验验证支持辅酶Q代谢物和 COA4-COX11 相互作用的生物学相关性；但该结果不提供亲和力、动力学或细胞条件信息，且未经验证的预测需谨慎使用。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无法提供结合亲和力</td>
+<td>AFM 预测仅指示是否可形成界面，不提供定量结合强度</td>
+<td>未明确提及</td>
+<td>Discussion 第 2 段（作者承认）</td>
+</tr>
+<tr>
+<td>无法确定生物学条件</td>
+<td>预测不指示相互作用发生的细胞条件、时间或组织特异性</td>
+<td>未明确提及</td>
+<td>Discussion 第 2 段（作者承认）</td>
+</tr>
+<tr>
+<td>无法区分直接/间接相互作用</td>
+<td>预测针对二元直接相互作用，但细胞中可能以更大复合物形式存在</td>
+<td>未明确提及</td>
+<td>Discussion 第 2 段（作者承认）</td>
+</tr>
+<tr>
+<td>依赖 MSA 深度</td>
+<td>低 MSA 深度的蛋白对预测可靠性降低</td>
+<td>未明确提及</td>
+<td>Supplementary Fig. 1a-b（作者分析）</td>
+</tr>
+<tr>
+<td>计算成本限制</td>
+<td>全蛋白质组筛选需分步策略，仍可能遗漏部分蛋白对</td>
+<td>未明确提及</td>
+<td>Methods 节（作者描述）</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PDB 基准测试的「非相互作用对」可能包含真实相互作用</td>
+<td>15,005 个非相互作用对来自不同 PDB 结构中的蛋白，但未共定位于同一复合物不代表不相互作用</td>
+<td>若负集包含假阴性，则精度估计偏高</td>
+<td>用实验验证的负集（如 BioPlex 中明确不相互作用的蛋白对）重新评估</td>
+<td>Results 图 1b-c；Methods 节</td>
+</tr>
+<tr>
+<td>85% 精度可能高估真实性能</td>
+<td>PDB 基准测试中的蛋白对偏向高 MSA 深度、可结晶蛋白，线粒体蛋白中膜蛋白比例高，预测难度更大</td>
+<td>真实应用中的精度可能低于 85%</td>
+<td>按蛋白类型（膜蛋白 vs 可溶蛋白）分层评估精度</td>
+<td>Results 图 1b-c；作者未提供分层分析</td>
+</tr>
+<tr>
+<td>43% 数据库重叠可能受数据库偏差影响</td>
+<td>STRING 等数据库本身包含计算预测，与 AFM 预测重叠可能反映方法偏差而非真实生物学</td>
+<td>新发现的 57% 可能包含大量假阳性</td>
+<td>对未重叠预测进行随机抽样实验验证</td>
+<td>Results 图 1e</td>
+</tr>
+<tr>
+<td>保守性分析存在循环论证风险</td>
+<td>同源蛋白的 MSA 深度与 AFM 预测质量相关，保守性评分可能反映预测质量而非生物学保守性</td>
+<td>高保守性评分可能仅表示预测更可靠</td>
+<td>控制 MSA 深度后重新分析保守性</td>
+<td>Results 图 2a-b；作者未控制此变量</td>
+</tr>
+<tr>
+<td>实验验证仅覆盖少数通路</td>
+<td>辅酶Q和铜转运是线粒体研究较充分的通路，可能偏向验证成功</td>
+<td>对其他通路的预测验证可能成功率较低</td>
+<td>对随机选择的未表征蛋白进行系统验证</td>
+<td>Results 图 3-4；作者未提供系统验证</td>
+</tr>
+<tr>
+<td>未与现有 PPI 预测方法（如 RoseTTAFold、D-SCRIPT）对比</td>
+<td>未报告与其他计算 PPI 预测器的性能比较</td>
+<td>无法判断 AFM 是否优于现有方法</td>
+<td>在相同基准上运行其他方法并比较</td>
+<td>全文未提及对比实验</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>ipTM 均值作为分类器的策略</strong>：AFM 的 ipTM 分数可被重新校准为 PPI 分类阈值，且使用 5 个模型的平均值比最大值更稳健。可迁移到其他结构预测模型（如 RoseTTAFold、AlphaFold3）的 PPI 筛选任务中。</p>
+</li>
+<li>
+<p><strong>亚细胞空间限定策略</strong>：将搜索空间从全蛋白质组（~2 万蛋白，~2 亿对）缩小到亚细胞蛋白质组（~1,100 蛋白，~63 万对），实现约 20 倍先验富集。这一「先定位、再筛选」的策略可推广到其他细胞器（如过氧化物酶体、内质网）或亚细胞区室（如线粒体基质 vs 膜间隙）。</p>
+</li>
+<li>
+<p><strong>分步 MSA 生成架构</strong>：将 AFM pipeline 拆分为「MSA 生成」和「结构预测」两步，MSA 结果可复用，避免对每个蛋白对重复计算。对大规模筛选任务的计算优化有直接借鉴意义。</p>
+</li>
+<li>
+<p><strong>PDB 基准测试的构建方法</strong>：利用训练截止日期后的 PDB 结构构建正负集，通过序列聚类去冗余，并考虑全局化学计量比（1:100 正负比）模拟真实筛选环境。这一基准测试设计可复用于其他蛋白质组的 PPI 预测评估。</p>
+</li>
+<li>
+<p><strong>保守性评分作为优先排序工具</strong>：通过跨物种同源映射计算保守性评分，可优先排序实验验证目标。对「预测-验证」闭环研究设计有直接参考价值。</p>
+</li>
+<li>
+<p><strong>实验验证的层次化设计</strong>：从 Co-IP（验证物理相互作用）→ CRISPR 敲除（验证功能相关性）→ ICP-MS/Seahorse（验证生理后果），形成从分子到功能的完整验证链条。这种层次化验证设计可迁移到其他 PPI 预测研究中。</p>
+</li>
+<li>
+<p><strong>「统计复合物」概念</strong>：作者提出辅酶Q代谢物可能以「统计复合物」形式存在，即多个二元相互作用动态组合而非固定化学计量复合物。这一概念对理解瞬时/动态蛋白复合物有启发意义。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold-Multimer 原始论文</strong>：Evans et al., 2022, "Protein complex prediction with AlphaFold-Multimer"——本文将其从结构预测工具扩展为 PPI 分类器，属于方法重定位。</li>
+<li><strong>MitoCarta3.0</strong>：Rath et al., 2021, "MitoCarta3.0: an updated inventory of mitochondrial proteins"——本文的输入蛋白质列表来源。</li>
+<li><strong>AlphaFold 大规模 PPI 筛选先例</strong>：Humphreys et al., 2021, "Computed structures of core eukaryotic protein complexes"（Science）——本文将其扩展到完整亚细胞蛋白质组规模。</li>
+<li><strong>PPI 预测计算方法</strong>：D-SCRIPT (Sledzieski et al., 2021)、RoseTTAFold (Baek et al., 2021)——本文未直接对比，但属于同一任务的不同方法路线。</li>
+<li><strong>辅酶Q代谢物研究</strong>：Stefely &amp; Pagliarini, 2017, "Biochemistry of mitochondrial coenzyme Q biosynthesis"——本文的辅酶Q代谢物预测与此领域直接相关。</li>
+<li><strong>铜转运通路</strong>：Cobine et al., 2021, "Copper in mitochondrial function"——本文的 COA4-COX11 预测与此领域直接相关。</li>
+<li><strong>复杂体分析（complexome profiling）</strong>：Heinemeyer et al., 2017——本文将其作为实验方法的对比基线。</li>
+<li><strong>[Analysis] 潜在连接</strong>：本文的「统计复合物」概念与「相分离」（phase separation）和「动态复合物」研究（如 Mallam et al., 2019, Science）存在概念交叉，但作者未展开讨论。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：跨细胞器 PPI 预测的泛化性评估
+   - <strong>来源局限/观察</strong>：本文仅覆盖线粒体蛋白质组，其 85% 精度可能受线粒体蛋白特性（高 MSA 深度、较多可溶蛋白）影响。
+   - <strong>核心假设</strong>：AFM 作为 PPI 分类器的精度在不同亚细胞区室（如内质网、过氧化物酶体、细胞核）间存在显著差异，且与膜蛋白比例、MSA 深度分布相关。
+   - <strong>初步方法</strong>：对 3-5 个亚细胞蛋白质组重复本文的筛选流程，按蛋白类型分层评估精度，建立「区室-精度」映射。
+   - <strong>验证方式</strong>：与已知 PPI 数据库（BioPlex、HuRI）比较，并对每个区室随机抽样 20-30 个预测进行 Co-IP 验证。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：ipTM 阈值自适应校准框架
+   - <strong>来源局限/观察</strong>：本文使用固定阈值 0.5，但 PDB 基准测试显示不同蛋白类型的最佳阈值可能不同。
+   - <strong>核心假设</strong>：基于蛋白对特征（序列长度、MSA 深度、预测界面残基数）的自适应阈值可显著提升 PPI 分类的 F1 分数。
+   - <strong>初步方法</strong>：在本文的 PDB 基准测试集上训练一个轻量级分类器（如 logistic regression 或 gradient boosting），输入为蛋白对特征，输出为最优 ipTM 阈值。
+   - <strong>验证方式</strong>：在独立测试集（如未用于训练的 PDB 结构）上比较固定阈值与自适应阈值的精度-召回曲线。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：低 MSA 深度蛋白对的 PPI 预测增强
+   - <strong>来源局限/观察</strong>：本文发现 MSA 深度是 AFM 预测质量的主要决定因素，但未提出解决方案。
+   - <strong>核心假设</strong>：通过 metagenomic 数据库扩展 MSA 或使用单序列模型（如 ESMFold）的嵌入特征，可恢复低 MSA 深度蛋白对的 PPI 预测能力。
+   - <strong>初步方法</strong>：对 MSA 深度 &lt;25 的蛋白对，比较 (a) 扩展 MSA 后 AFM 预测、(b) ESMFold 嵌入 + 轻量级分类器、(c) 两者集成 的 PPI 分类性能。
+   - <strong>验证方式</strong>：在本文的线粒体蛋白质组中识别低 MSA 深度蛋白对，用 Co-IP 验证 Top-20 预测。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：从二元 PPI 到统计复合物的结构建模
+   - <strong>来源局限/观察</strong>：本文提出辅酶Q代谢物可能以「统计复合物」形式存在，但未进行结构建模。
+   - <strong>核心假设</strong>：基于多个二元 AFM 预测结构，通过聚类和叠加可重建统计复合物的构象系综，揭示动态组装机制。
+   - <strong>初步方法</strong>：对辅酶Q代谢物中所有预测的二元相互作用进行 AFM 结构预测，使用结构比对和聚类算法识别共享界面和互斥界面，构建构象系综。
+   - <strong>验证方式</strong>：与交联质谱（XL-MS）数据比较，评估预测构象系综是否与实验交联距离一致。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：PPI 预测引导的线粒体孤儿蛋白功能注释流程
+   - <strong>来源局限/观察</strong>：本文为 85 个孤儿蛋白预测了相互作用伙伴，但未系统评估这些预测对功能注释的贡献。
+   - <strong>核心假设</strong>：将 PPI 预测与共表达、遗传相互作用、药物敏感性数据整合，可显著提高孤儿蛋白功能注释的准确率和覆盖率。
+   - <strong>初步方法</strong>：对 85 个孤儿蛋白的预测伙伴进行功能富集分析，与共表达网络和 CRISPR 筛选数据交叉验证，构建「预测-功能」关联评分。
+   - <strong>验证方式</strong>：对 Top-10 功能注释进行实验验证（如线粒体呼吸测量、代谢物分析）。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：跨物种保守 PPI 的进化稳定性分析
+   - <strong>来源局限/观察</strong>：本文的保守性分析仅用于优先排序，未深入分析保守 PPI 的进化特征。
+   - <strong>核心假设</strong>：跨物种高度保守的线粒体 PPI 在进化上受纯化选择，其界面残基的突变致病性显著高于非保守 PPI。
+   - <strong>初步方法</strong>：对保守 PPI 和非保守 PPI 的界面残基进行 dN/dS 分析和 ClinVar 致病性富集分析。
+   - <strong>验证方式</strong>：比较两组 PPI 的界面残基突变频率和致病性评分分布。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, introduction, results, discussion, methods, and supplementary information descriptions</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological rigor, claims substantiation, and presentation quality of the reported work</li>
+<li><strong>Shared manuscript claim summary</strong> The authors repurpose AlphaFold Multimer (AFM) as a classification model to predict protein-protein interactions across the entire human mitochondrial proteome, generating a compendium of 2,895 predicted interactions (MitoMatch). They report 85% precision, link 85 uncharacterized proteins to potential pathways, extend predictions to 11 eukaryotic organisms, and experimentally validate selected predictions in the coenzyme Q metabolon and mitochondrial copper delivery pathway, including a novel COA4-COX11 interaction.</li>
+<li><strong>Visible evidence base</strong> Abstract, full introduction, full results section with figure descriptions, full discussion, full methods section, supplementary information descriptions</li>
+<li><strong>Missing materials affecting confidence</strong> Actual figures and supplementary data files (Supplementary Data 1-3, Supplementary Tables 1-2, Supplementary Figures 1-13) are not provided; detailed statistical outputs and quality metrics for AFM predictions are not fully visible; raw mass spectrometry data and complete volcano plot results are not accessible</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This manuscript presents a large-scale computational screen using AlphaFold Multimer to predict mitochondrial protein-protein interactions, with experimental validation for selected predictions. The scale of the screen (630,003 pairs) and the focus on a well-defined organellar proteome are commendable. The experimental follow-up on COA4-COX11 is a strong feature that elevates the work beyond a purely computational resource. However, several methodological concerns regarding the validation of the classification approach, the handling of false positives, and the interpretation of conservation analyses need to be addressed. The manuscript is potentially important for the mitochondrial biology community, but the current evidence does not fully establish the reliability of the full interactome resource.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Mitochondrial biologists studying uncharacterized proteins, bioinformaticians developing protein-protein interaction prediction methods, researchers studying coenzyme Q biosynthesis, and investigators working on cytochrome c oxidase assembly and mitochondrial copper metabolism. The resource could accelerate functional annotation of orphan mitochondrial proteins.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong>
+  1. The scale and systematic nature of the screen across the entire mitochondrial proteome is ambitious and potentially valuable.
+  2. The use of a recent PDB dataset for benchmarking the classification approach is appropriate and addresses training contamination concerns.
+  3. The experimental validation of the COA4-COX11 interaction, including reciprocal co-IP in both yeast and human cells, provides strong evidence for at least one novel prediction.
+  4. The demonstration that AFM can recover known interactions and predict structures consistent with experimental data adds credibility.
+  5. The resource is made publicly available through a web portal, which will facilitate community use.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors claim 85% precision for their AFM-based classification approach and use an ipTM cutoff of 0.5 to define interactions.</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 1b-c, Supplementary Figure 2b-c</li>
+<li><strong>Concern</strong> The precision estimate of 85% is derived from a small curated test set of 12 experimentally validated mitochondrial interactions. This is an extremely small sample size for estimating a precision rate, and the confidence interval around this estimate must be very wide. The authors do not report the number of true positives and false positives at the chosen cutoff in this test set, nor do they provide confidence intervals. Furthermore, the test set is limited to copper delivery pathway proteins, which may not be representative of the diverse interaction types across the entire mitochondrial proteome.</li>
+<li><strong>Why it matters</strong> The entire resource is predicated on the reliability of the classification. If the precision estimate is not robust, the 2,895 predicted interactions may contain a substantial number of false positives, undermining the utility of MitoMatch for hypothesis generation.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the full confusion matrix for the test set at the chosen cutoff, report confidence intervals for the precision estimate, and ideally validate the cutoff on a larger, more diverse set of experimentally confirmed mitochondrial interactions from multiple pathways.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors state that "using the mean ipTM as a classifier metric yielded ~40% of all true positives at 90% precision whereas the best ipTM score yielded only 30% of the true hits at the same precision."</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 1c</li>
+<li><strong>Concern</strong> The precision-recall analysis is performed on a dataset with a 1:100 true:false ratio, which is an artificial construct. The actual ratio of true to false interactions in the mitochondrial proteome is unknown and likely much lower than 1:100. The performance metrics derived from this artificial ratio may not translate to the actual screening conditions. Additionally, the authors do not report the area under the precision-recall curve or other summary statistics that would allow comparison with other methods.</li>
+<li><strong>Why it matters</strong> The choice of the mean over the max ipTM score is justified based on this analysis. If the analysis is not representative of real screening conditions, the justification for this methodological choice is weakened.</li>
+<li>
+<p><strong>Resolution test</strong> Perform a sensitivity analysis varying the true:false ratio across a plausible range and show that the superiority of the mean ipTM score is robust. Report additional performance metrics such as the area under the precision-recall curve.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> The authors state that "MitoMatch provides a resource for annotating uncharacterized mitochondrial proteins by identifying the proteins they interact with."</li>
+<li><strong>Evidence pointer</strong> Discussion section</li>
+<li><strong>Concern</strong> While the resource is potentially useful, the manuscript does not provide a systematic assessment of how many of the 85 uncharacterized proteins with predicted partners have predictions that are likely to be biologically meaningful. The authors show a heatmap of predicted interactions across pathways, but do not discuss whether the predicted partners for orphan proteins are enriched in specific pathways or functional categories in a way that would support specific functional hypotheses. The experimental validation focuses on only one protein (COA4).</li>
+<li><strong>Why it matters</strong> The claim that this resource will "greatly accelerate the functionalization of the human mitochondrial proteome" is strong. To support this, the authors should demonstrate that the predictions for orphan proteins are not random and provide some prioritization or functional enrichment analysis.</li>
+<li>
+<p><strong>Resolution test</strong> Perform a functional enrichment analysis on the predicted interaction partners of the 85 uncharacterized proteins. Show that the predicted partners are enriched in specific pathways or complexes beyond what would be expected by chance.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors claim that "extending the AFM-based analysis to 11 diverse eukaryotes identifies evolutionarily conserved interactions among human hits, including regulators of core bioenergetic pathways."</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 2</li>
+<li><strong>Concern</strong> The conservation analysis relies on reciprocal best-hit searches to identify orthologs. This approach can miss paralogous relationships and may not accurately reflect functional conservation. The authors report that 93%, 87%, and 44% of homologous hits are predicted to be interacting in chimpanzee, mouse, and yeast, respectively, but do not provide a statistical framework for assessing whether these rates are significantly higher than expected by chance. A proper null model is needed to establish that conservation rates are meaningful.</li>
+<li><strong>Why it matters</strong> The conservation analysis is presented as a key feature of the resource, providing cross-species validation. Without a statistical framework, the observed conservation rates could be trivially high or low.</li>
+<li>
+<p><strong>Resolution test</strong> Generate a null distribution of conservation rates by shuffling interaction labels or using randomized protein pairs matched for expression or other properties. Show that the observed conservation rates are significantly higher than the null.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors state that "our analysis further revealed that a total number of interface residues of greater than 20 and lower global stoichiometry... also increased the ipTM score."</li>
+<li><strong>Evidence pointer</strong> Results section, Supplementary Figure 1c-f</li>
+<li><strong>Concern</strong> This analysis identifies factors that influence ipTM scores, but the authors do not incorporate these factors into their screening pipeline or use them to adjust confidence in individual predictions. If certain types of interactions are systematically more likely to receive high ipTM scores, the resource may be biased toward those interaction types.</li>
+<li><strong>Why it matters</strong> Understanding the biases in the prediction method is important for users of the resource. If the authors have identified factors that influence scores, they should either account for them in the scoring or clearly communicate these biases to users.</li>
+<li>
+<p><strong>Resolution test</strong> Discuss how the identified factors affect the interpretation of predictions. Consider providing per-interaction confidence metrics that account for these factors, or at minimum, provide guidance to users on how to interpret predictions for different interaction types.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Introduction</li>
+<li><strong>Evidence pointer</strong> Introduction section</li>
+<li><strong>Issue</strong> The introduction moves quickly from the general problem of uncharacterized mitochondrial proteins to the specific approach of using AFM. A brief explanation of how AFM works and why ipTM scores are suitable for interaction prediction would help nonspecialist readers understand the methodological foundation.</li>
+<li>
+<p><strong>Required correction</strong> Add 2-3 sentences in the introduction explaining the basic principle of AFM and the meaning of ipTM scores in the context of interaction prediction.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Methods, AlphaFold Multimer pipeline</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The description of the AFM pipeline is brief. Details on model versions, number of recycles, and any filtering of predictions based on confidence beyond the ipTM cutoff are not provided.</li>
+<li>
+<p><strong>Required correction</strong> Provide additional details on the AFM version used, the number of seeds or models averaged, and any additional filtering criteria applied to the predictions.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Results, MitoMatch resource</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 1e</li>
+<li><strong>Concern</strong> The comparison with existing databases (STRING, BioGRID, IntAct, BioPlex, HuRI, PDB) is presented as a single percentage (43% recovery). It would be informative to know the recovery rate for each database individually, as they have different coverage and reliability.</li>
+<li>
+<p><strong>Required correction</strong> Provide a breakdown of the recovery rate for each database separately, perhaps as a supplementary table or additional panel in Figure 1.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Results, Coenzyme Q section</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 3</li>
+<li><strong>Concern</strong> The description of the coenzyme Q metabolon experiments is dense and assumes significant background knowledge of the CoQ biosynthesis pathway. Nonspecialist readers may struggle to understand the significance of the identified interactions.</li>
+<li>
+<p><strong>Required correction</strong> Add a brief introductory sentence in this section explaining the CoQ biosynthesis pathway and why identifying the metabolon components is important.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Methods, Statistical analysis</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The statistical analysis section is very brief. Details on multiple testing corrections for the mass spectrometry data, normalization methods, and criteria for defining significant interactors are not fully described.</li>
+<li>
+<p><strong>Required correction</strong> Expand the statistical analysis section to include details on data normalization, significance thresholds, and multiple testing corrections.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Results, Copper delivery pathway</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 4</li>
+<li><strong>Concern</strong> The manuscript states that COA4-KO cells show reduced COX11 abundance and reduced mitochondrial copper content, but the mechanistic link between COA4 and COX11 function is not fully explored. The authors suggest a role in copper delivery but do not directly demonstrate a defect in copper transfer to COX11 or downstream targets.</li>
+<li>
+<p><strong>Required correction</strong> Acknowledge this limitation explicitly in the discussion and suggest future experiments to directly test the mechanistic role of COA4 in copper transfer.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong>
+  R1-M1 (precision estimate based on 12 interactions), R1-M2 (artificial true:false ratio in precision-recall analysis), R1-M4 (lack of statistical framework for conservation analysis)</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong></p>
+</li>
+<li><strong>Originality</strong>: The application of AFM to a complete organellar proteome is a novel and potentially valuable contribution. The focus on the mitochondrial proteome is well-chosen given its biological importance and the number of uncharacterized proteins. The experimental validation of a specific prediction (COA4-COX11) adds originality beyond purely computational work.</li>
+<li><strong>Scientific importance</strong>: The resource has the potential to accelerate functional annotation of mitochondrial proteins, which is an important goal. The experimental validation of COA4 provides a proof-of-concept that could inspire similar approaches. However, the full impact will depend on the reliability of the predictions, which is not fully established.</li>
+<li><strong>Interdisciplinary readership</strong>: The work bridges computational biology, structural biology, and mitochondrial biochemistry. The resource could be of interest to a broad audience, but the presentation is somewhat specialized and may not fully engage nonspecialists.</li>
+<li><strong>Technical soundness</strong>: The core methodology is sound in principle, but the validation of the classification approach is based on a very small test set, and the precision-recall analysis uses an artificial ratio. The conservation analysis lacks a statistical framework. These issues need to be addressed to establish technical reliability.</li>
+<li>
+<p><strong>Readability for nonspecialists</strong>: The manuscript is generally well-written but assumes significant background knowledge in both computational biology and mitochondrial biology. Some sections, particularly the coenzyme Q and copper delivery experiments, are dense and may be challenging for nonspecialist readers.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The manuscript presents a potentially valuable resource with a strong experimental validation component. However, the reliability of the full interactome is not fully established due to the small validation set and the lack of statistical rigor in the conservation analysis. These issues should be addressed before the resource can be recommended for broad use.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of 85% precision for the AFM-based classification is not robustly supported given the small test set (12 interactions) and the lack of confidence intervals.</li>
+<li>The claim that the mean ipTM score is superior to the max ipTM score is based on an artificial 1:100 true:false ratio and may not hold under real screening conditions.</li>
+<li>The claim that conserved interactions are "evolutionarily conserved" is based on reciprocal best-hit analysis without a statistical framework to rule out chance.</li>
+<li>The claim that MitoMatch "will greatly accelerate the functionalization of the human mitochondrial proteome" is speculative and not directly supported by the data presented.</li>
+<li>The statement that the COA4-COX11 interaction places COA4 "at a specific step in the mitochondrial copper delivery pathway" is partially supported by the data, but the mechanistic details of COA4 function remain unclear.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

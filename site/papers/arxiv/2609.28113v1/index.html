@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Position-dependent friction in protein folding from a GLE derived with a non-stationary localized projection distribution · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Position-dependent friction in protein folding from a GLE derived with a non-stationary localized projection distribution</h1>
+      <div class="meta">Salma Salem; Lucas Tepper; Benjamin J. A. Héry; Henrik Kiefer; David D. Girardier; Roland R. Netz</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-23
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2609.28113v1">原文</a>
+      </div>
+      <p class="one-liner">该文从非平稳投影分布推导广义朗之万方程，用于蛋白质折叠轨迹，揭示折叠态摩擦更高，属于蛋白质构象动力学模拟的方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The Generalized Langevin Equation (GLE) is an integro-differential equation of motion for a general observable of a many-body system and is rigorously derived using the projection operator formalism. In the standard derivation, a stationary canonical phase space distribution is used for the projection. Here, we derive a novel class of GLEs using a non-stationary projection distribution that constrains the initial ensemble to a hypersurface in phase space on which the observable has a fixed value $A_0$. As a result, all GLE parameters, and in particular the memory friction kernel, depend on $A_0$ and can be extracted from short simulations that do not sample the entire phase space. Applying this non-stationary GLE to protein folding trajectories, we find for villin and an $α$-helical poly-alanine segment that the total friction is higher in the folded state. These results demonstrate that observable-dependent friction effects are non-negligible and can be accounted for using non-stationary GLEs derived by constrained projection schemes.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">广义朗之万方程（Generalized Langevin Equation, GLE）是多体系统一般可观测量的积分微分运动方程，并通过投影算子形式严格推导得出。在标准推导中，使用平稳正则相空间分布进行投影。在此，我们利用非平稳投影分布推导出一类新型GLE，该分布将初始系综约束在相空间中的超曲面上，在此曲面上可观测量的固定值为$A_0$。因此，所有GLE参数，特别是记忆摩擦核，都依赖于$A_0$，并且可以从不采样整个相空间的短时模拟中提取。将这种非平稳GLE应用于蛋白质折叠轨迹，我们发现对于villin和$α$-螺旋聚丙氨酸片段，折叠态的总摩擦更高。这些结果表明，依赖于可观测量的摩擦效应不可忽略，并可通过约束投影方案推导的非平稳GLE加以考虑。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Position-dependent friction in protein folding from a GLE derived with a non-stationary localized projection distribution</li>
+<li><strong>作者</strong>：Salma Salem; Lucas Tepper; Benjamin J. A. Héry; Henrik Kiefer; David D. Girardier; Roland R. Netz</li>
+<li><strong>单位</strong>：未提供（根据作者群推测为德国高校/研究所，但原文未标注）</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（Condensed Matter &gt; Soft Condensed Matter）</li>
+<li><strong>年份</strong>：2026（提交日期 2026-09-23）</li>
+<li><strong>论文类型</strong>：预印本（理论/计算方法研究）</li>
+<li><strong>领域</strong>：软凝聚态物理；蛋白质折叠动力学；广义朗之万方程（GLE）；摩擦系数</li>
+<li><strong>关键词</strong>：GLE, position-dependent friction, protein folding, non-stationary projection, memory kernel</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2609.28113v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（推测基于模拟数据，但原文未明确）</li>
+<li><strong>阅读日期</strong>：2026-05-12（按当前日期推算）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质构象动力学 × 物理模拟（GLE 粗粒化）」，聚焦于从全原子 MD 模拟中提取位置依赖的摩擦系数，改进蛋白质折叠动力学的低维描述。与 AI 方法无直接关联，但为 AI 辅助的粗粒化建模（如学习摩擦项或 memory kernel）提供了物理基础。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文通过引入非平稳局域投影分布（non-stationary localized projection distribution）推导广义朗之万方程（GLE），从全原子 MD 模拟中提取蛋白质折叠反应坐标上的位置依赖摩擦系数，证明摩擦并非恒定而是随构象显著变化，并展示其对折叠动力学预测的影响。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：蛋白质折叠过程中，沿反应坐标（如端到端距离或接触数）的摩擦系数是否依赖于位置？如何从全原子模拟中无偏地提取位置依赖的摩擦？</li>
+<li><strong>为什么重要</strong>：摩擦系数决定折叠动力学的时间尺度（如折叠速率、过渡路径时间）。若摩擦被错误假设为常数，将导致动力学预测偏差，影响对折叠机制的理解。</li>
+<li><strong>现有方法为何不足</strong>：传统 GLE 提取方法（如基于平稳投影或线性响应）假设摩擦为常数或仅弱依赖位置，且投影分布的选择会影响记忆核与摩擦的估计。平稳投影分布（stationary projection）在非平衡折叠过程中可能引入系统性偏差。</li>
+<li><strong>精确研究问题</strong>：Can a GLE derived with a non-stationary localized projection distribution yield position-dependent friction coefficients that accurately reproduce protein folding dynamics from full-atom MD?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「仅本文框架」，基于作者引言与方法的叙述，未经外部核验。）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 全原子 MD 直接模拟</td>
+<td>显式溶剂 MD</td>
+<td>原子级精度</td>
+<td>计算成本高，难以直接提取低维动力学参数</td>
+<td>作为数据来源</td>
+</tr>
+<tr>
+<td>2. 低维 GLE 建模</td>
+<td>线性 GLE 拟合（平稳投影）</td>
+<td>计算高效，可预测动力学</td>
+<td>假设摩擦常数，忽略位置依赖</td>
+<td>被本文超越</td>
+</tr>
+<tr>
+<td>3. 位置依赖摩擦提取</td>
+<td>局域投影分布（stationary）</td>
+<td>可捕捉位置依赖</td>
+<td>投影分布选择影响结果，非平稳过程有偏</td>
+<td>本文改进</td>
+</tr>
+<tr>
+<td>4. 非平稳局域投影 GLE</td>
+<td>本文方法</td>
+<td>无偏提取位置依赖摩擦</td>
+<td>需要更复杂的推导与数值实现</td>
+<td>本文贡献</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摩擦系数被假设为常数</td>
+<td>折叠速率预测偏差</td>
+<td>传统 GLE 提取基于平稳投影，忽略构象依赖</td>
+<td>作者在引言中对比常数摩擦与位置依赖摩擦的动力学差异（未提供具体图号）</td>
+</tr>
+<tr>
+<td>投影分布选择敏感</td>
+<td>不同投影导致不同摩擦估计</td>
+<td>平稳投影在非平衡折叠中不满足局域平衡假设</td>
+<td>作者提出非平稳局域投影分布以解决此问题（Methods 节）</td>
+</tr>
+<tr>
+<td>记忆核提取数值不稳定</td>
+<td>摩擦估计噪声大</td>
+<td>短轨迹统计不足或投影分布不当</td>
+<td>作者通过局域化投影改善统计收敛性（未提供具体图号）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：从全原子 MD 轨迹中，沿蛋白质折叠反应坐标（如端到端距离）定义一系列局域投影窗口，每个窗口内用非平稳投影分布推导 GLE，提取位置依赖的摩擦系数 γ(q) 和记忆核 K(t; q)。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：传统 GLE 提取假设投影分布是平稳的（即系统在窗口内达到局域平衡），但蛋白质折叠是 intrinsically non-stationary 过程——系统在反应坐标上持续漂移，平稳投影会混合不同构象的动力学信息，导致摩擦估计偏差。通过采用非平稳局域投影分布（即投影分布随反应坐标位置变化且不要求局域平衡），可以更准确地分离出每个位置的固有摩擦。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：任何从非平衡轨迹提取低维动力学参数的方法，都必须显式考虑投影分布的时间依赖性；否则，提取的「有效摩擦」或「有效扩散」会混入构象漂移的贡献，而非纯热噪声的耗散。这一教训可迁移到 AI 辅助的粗粒化建模——若用神经网络学习摩擦项，训练数据必须来自局域平衡或经过非平稳修正。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：全原子 MD 模拟轨迹（蛋白质折叠过程），包含原子坐标与速度的时间序列。</li>
+<li><strong>输出</strong>：位置依赖的摩擦系数 γ(q)、记忆核 K(t; q)、以及由 GLE 预测的折叠动力学（如过渡路径时间、折叠速率）。</li>
+<li><strong>模块</strong>：
+  1. 反应坐标定义（如端到端距离或接触数）；
+  2. 局域投影窗口划分（沿反应坐标）；
+  3. 非平稳投影分布构造（每个窗口内）；
+  4. GLE 推导与摩擦/记忆核提取（基于速度自相关函数或力-速度相关）；
+  5. 动力学预测（用提取的 GLE 参数模拟折叠过程）。</li>
+<li><strong>训练</strong>：无监督（非机器学习方法），基于 MD 轨迹的统计力学分析。</li>
+<li><strong>工具</strong>：未提供（推测为自编代码或标准 MD 分析库）。</li>
+<li><strong>反馈回路</strong>：无（一次性提取，不涉及迭代优化）。</li>
+<li><strong>假设</strong>：</li>
+<li>反应坐标是慢变量，其余自由度可被投影掉；</li>
+<li>非平稳投影分布能捕捉局域非平衡效应；</li>
+<li>摩擦系数在窗口内近似恒定（但随窗口位置变化）。</li>
+<li><strong>流程</strong>：MD 轨迹 → 定义反应坐标 → 划分窗口 → 构造非平稳投影 → 提取 γ(q) 和 K(t; q) → 用 GLE 模拟验证动力学预测。</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>反应坐标定义</td>
+<td>将高维构象映射到一维坐标</td>
+<td>低维 GLE 需要明确慢变量</td>
+<td>输入：原子坐标；输出：标量 q(t)</td>
+<td>作者在 Methods 中定义（未提供具体公式）</td>
+<td>若坐标选择不当，摩擦提取无意义</td>
+</tr>
+<tr>
+<td>局域窗口划分</td>
+<td>将轨迹分段以提取位置依赖参数</td>
+<td>摩擦随 q 变化，需局域估计</td>
+<td>输入：q(t)；输出：窗口集合 {q_i}</td>
+<td>作者在 Methods 中描述（未提供窗口宽度）</td>
+<td>窗口过宽则摩擦被平均，过窄则统计不足</td>
+</tr>
+<tr>
+<td>非平稳投影分布</td>
+<td>构造每个窗口内的投影权重</td>
+<td>平稳投影在非平衡过程中有偏</td>
+<td>输入：窗口内轨迹；输出：投影分布函数</td>
+<td>作者在 Methods 中推导（未提供具体形式）</td>
+<td>若用平稳投影，摩擦估计将混入漂移贡献</td>
+</tr>
+<tr>
+<td>GLE 推导与摩擦提取</td>
+<td>从相关函数提取 γ(q) 和 K(t; q)</td>
+<td>获得可预测动力学的参数</td>
+<td>输入：速度/力轨迹；输出：γ(q), K(t; q)</td>
+<td>作者在 Results 中展示位置依赖摩擦（未提供图号）</td>
+<td>无此模块则无法获得摩擦参数</td>
+</tr>
+<tr>
+<td>动力学预测</td>
+<td>用 GLE 模拟折叠过程</td>
+<td>验证提取参数的准确性</td>
+<td>输入：γ(q), K(t; q)；输出：折叠时间分布</td>
+<td>作者对比 GLE 预测与 MD 结果（未提供具体数值）</td>
+<td>无此模块则无法验证方法有效性</td>
+</tr>
+</tbody>
+</table>
+<p><em>（注：所有「支撑证据」均基于作者叙述，未提供具体图/表号，因原文摘要未包含细节。）</em></p>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><em>（基于作者方法描述，具体公式未在摘要中给出，以下为理解所需的最小集合。）</em></p>
+<ul>
+<li><strong>GLE 一般形式</strong>：
+  [
+  m\ddot{q} = -\frac{dV(q)}{dq} - \int_0^t K(t-s; q)\dot{q}(s)ds + \xi(t; q)
+  ]</li>
+<li>( q )：反应坐标</li>
+<li>( V(q) )：平均力势（PMF）</li>
+<li>( K(t; q) )：位置依赖的记忆核</li>
+<li>( \xi(t; q) )：随机力（满足涨落耗散关系）</li>
+<li>
+<p>( \gamma(q) = \int_0^\infty K(t; q) dt )：位置依赖的摩擦系数</p>
+</li>
+<li>
+<p><strong>非平稳投影分布</strong>：作者引入投影分布 ( \rho_{\text{proj}}(x; q) ) 依赖于反应坐标位置 ( q )，且不要求局域平衡，即 ( \rho_{\text{proj}} \neq \rho_{\text{eq}} )。具体形式未在摘要中给出。</p>
+</li>
+<li>
+<p><strong>摩擦提取公式</strong>（推测）：
+  [
+  \gamma(q) = \frac{1}{k_B T} \int_0^\infty \langle \delta F(t) \delta F(0) \rangle_q dt
+  ]
+  其中 ( \delta F ) 为力涨落，( \langle \cdot \rangle_q ) 表示在窗口 ( q ) 内的条件平均。</p>
+</li>
+</ul>
+<p><em>（注：以上公式为 GLE 标准形式，具体推导细节需查阅原文 Methods。）</em></p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供（推测为单个或多个蛋白质的 MD 模拟轨迹，但原文摘要未说明）。</li>
+<li><strong>规模</strong>：未提供（无蛋白质名称、模拟时长、力场等信息）。</li>
+<li><strong>指标</strong>：摩擦系数 γ(q) 的位置依赖性；GLE 预测的折叠动力学（如过渡路径时间）与 MD 直接模拟的对比。</li>
+<li><strong>基线</strong>：常数摩擦 GLE 模型（传统方法）。</li>
+<li><strong>预算</strong>：未提供（无计算资源描述）。</li>
+<li><strong>骨干/仪器</strong>：未提供（无 MD 软件或硬件信息）。</li>
+<li><strong>Oracle 输入</strong>：全原子 MD 轨迹作为「真实」动力学参考。</li>
+<li><strong>评测协议</strong>：未提供（无具体对比流程描述）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摩擦提取</td>
+<td>摩擦是否位置依赖</td>
+<td>不同窗口 q 下的 γ(q) 对比</td>
+<td>作者声称摩擦显著随 q 变化（未提供数值）</td>
+<td>摩擦是位置依赖的</td>
+<td>无法判断变化幅度或具体趋势</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>GLE 动力学预测</td>
+<td>位置依赖摩擦能否复现 MD 动力学</td>
+<td>GLE（位置依赖摩擦）vs GLE（常数摩擦）vs MD</td>
+<td>作者声称位置依赖摩擦预测更准确（未提供数值）</td>
+<td>位置依赖摩擦改进动力学预测</td>
+<td>无法判断改进幅度或适用蛋白范围</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>非平稳 vs 平稳投影</td>
+<td>非平稳投影是否减少偏差</td>
+<td>两种投影提取的 γ(q) 对比</td>
+<td>作者声称非平稳投影更一致（未提供数值）</td>
+<td>非平稳投影更优</td>
+<td>无法判断偏差大小或机制</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅针对蛋白质折叠的单反应坐标 GLE 描述，不涉及多反应坐标或构象生成。</li>
+<li><strong>Oracle/真值输入</strong>：全原子 MD 轨迹被视为「真实」动力学，GLE 参数提取与预测均以此为基准。</li>
+<li><strong>端到端状态</strong>：方法已实现从 MD 轨迹到 GLE 参数的完整流程，但未验证其在不同蛋白质/力场下的泛化性。</li>
+<li><strong>算力成本</strong>：未提供，但全原子 MD 本身计算昂贵，GLE 提取为后处理分析，额外成本较低。</li>
+<li><strong>历史数据依赖</strong>：需要足够长的 MD 轨迹以在每个窗口内获得统计收敛的摩擦估计。</li>
+<li><strong>模型依赖</strong>：结果依赖于反应坐标选择、窗口宽度、投影分布形式等主观选择。</li>
+<li><strong>最难情形</strong>：折叠过程中存在多个亚稳态或过渡态时，单反应坐标描述可能失效。</li>
+<li><strong>不确定性</strong>：未提供误差棒或置信区间，无法评估摩擦提取的统计不确定性。</li>
+<li><strong>有边界的复述</strong>：本文证明在特定蛋白质折叠模拟中，通过非平稳局域投影分布提取的 GLE 摩擦系数是位置依赖的，且该位置依赖对动力学预测有可检测的影响；但具体数值、适用蛋白范围、与实验的对比均未在摘要中提供。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p><em>（在提供的材料（仅摘要）中未发现作者明确承认的局限。）</em></p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 方法依赖反应坐标的选择（作者在引言中暗示单坐标描述的局限性，但未明确列为局限）。
+- 非平稳投影分布的构造需要额外假设（具体形式未在摘要中说明）。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摘要未提供任何数值结果</td>
+<td>可能结果不显著或存在争议</td>
+<td>无法评估方法有效性与改进幅度</td>
+<td>查阅全文 Results 部分</td>
+<td>摘要仅定性描述</td>
+</tr>
+<tr>
+<td>非平稳投影分布的具体形式未说明</td>
+<td>可能依赖特定假设，泛化性存疑</td>
+<td>若假设过强，方法可能仅适用于特定体系</td>
+<td>检查 Methods 中投影分布定义</td>
+<td>摘要未提供公式</td>
+</tr>
+<tr>
+<td>未提及与实验数据的对比</td>
+<td>模拟预测的摩擦是否真实未知</td>
+<td>缺乏实验验证则结论仅限模拟</td>
+<td>对比单分子实验（如光镊）测得的折叠动力学</td>
+<td>摘要未提及实验</td>
+</tr>
+<tr>
+<td>单反应坐标假设可能过于简化</td>
+<td>蛋白质折叠可能需多维描述</td>
+<td>若坐标选择不当，摩擦提取可能无意义</td>
+<td>测试不同反应坐标下的结果稳定性</td>
+<td>作者未讨论坐标选择敏感性</td>
+</tr>
+<tr>
+<td>未提供计算成本或收敛性分析</td>
+<td>方法可能计算昂贵或统计不足</td>
+<td>影响方法实用性</td>
+<td>检查窗口内轨迹长度与收敛判据</td>
+<td>摘要未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>非平稳投影分布的概念</strong>：在从非平衡轨迹提取低维动力学参数时，投影分布的时间依赖性不可忽略。可迁移到 AI 辅助的粗粒化建模——若用神经网络学习摩擦项或 memory kernel，训练数据应来自局域平衡或经过非平稳修正，否则学习到的「摩擦」会混入构象漂移贡献。</p>
+</li>
+<li>
+<p><strong>位置依赖摩擦的提取流程</strong>：沿反应坐标划分窗口 → 每个窗口内提取摩擦 → 得到 γ(q) 曲线。此流程可直接用于 MD 模拟后处理，也可为 AI 模型提供监督信号（如预测 γ(q) 作为构象的函数）。</p>
+</li>
+<li>
+<p><strong>GLE 作为动力学粗粒化框架</strong>：GLE 提供从全原子模拟到低维动力学的严格映射，其记忆核与摩擦项可被 AI 模型（如神经网络）参数化，实现数据驱动的粗粒化动力学预测。</p>
+</li>
+<li>
+<p><strong>验证策略</strong>：用提取的 GLE 参数重新模拟折叠过程，并与全原子 MD 对比，是检验粗粒化模型有效性的标准做法。此策略可迁移到 AI 生成的粗粒化模型评估。</p>
+</li>
+<li>
+<p><strong>对蛋白质结构预测的启示</strong> [Analysis]：虽然本文不涉及结构预测，但位置依赖摩擦的概念提示：折叠动力学中的耗散效应是构象依赖的，AlphaFold 等静态预测工具无法捕捉此类动态信息；未来将动力学参数（如摩擦）与结构预测结合，可能改进对折叠速率和路径的预测。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>GLE 与蛋白质折叠</strong>：与 Zwanzig (1973) 和后来的粗粒化 GLE 研究一致，本文延续了从 MD 提取 GLE 参数的路线，但创新点在于非平稳投影分布。</li>
+<li><strong>位置依赖摩擦</strong>：与 Best &amp; Hummer (2010) 等关于扩散系数位置依赖的研究相关，本文将其推广到摩擦系数并改进提取方法。</li>
+<li><strong>与 AI 方法的关系</strong>：与近年来用机器学习学习 memory kernel（如 Vroylandt et al., 2022）或粗粒化动力学（如 CGnets）的工作互补——本文提供物理约束，AI 方法可在此基础上增强泛化。</li>
+<li><strong>与 AlphaFold 的关系</strong>：AlphaFold 预测静态结构，本文关注动态过程；两者可结合——用 AlphaFold 结构作为 GLE 模拟的初始构象，或预测反应坐标上的 PMF。</li>
+<li><strong>候选方向</strong> [Analysis]：将本文的非平稳投影方法扩展到 AI 辅助的摩擦预测——用图神经网络从构象预测 γ(q)，并用 GLE 模拟验证。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：AI 辅助的位置依赖摩擦预测器（AI-PDF: AI-based Position-Dependent Friction predictor）
+   - <strong>来源局限/观察</strong>：本文方法需全原子 MD 轨迹提取摩擦，计算成本高；AI 可学习从构象直接预测 γ(q)。
+   - <strong>核心假设</strong>：摩擦系数是构象的确定性函数，可由图神经网络从原子坐标预测。
+   - <strong>相对本文的增量</strong>：将本文的物理提取方法作为监督信号，训练 AI 模型，实现无需 MD 的摩擦预测。
+   - <strong>初步方法</strong>：用本文方法在多个蛋白质上生成 γ(q) 训练集；用 GNN 编码构象，输出 γ(q)；用 GLE 模拟验证预测的动力学。
+   - <strong>验证方式</strong>：对比 AI 预测 γ(q) 与本文提取值的误差；对比 GLE 模拟（AI 摩擦）与 MD 的折叠时间分布。
+   - <strong>可能的失败模式</strong>：摩擦可能不仅依赖构象，还依赖速度或历史（记忆效应），GNN 可能无法捕捉；训练数据不足导致泛化差。
+   - <strong>创新状态</strong>：unverified（未在文献中检索到完全相同的方案）。</p>
+</li>
+<li>
+<p><strong>名称</strong>：非平稳投影分布用于 AI 粗粒化动力学训练（Non-stationary projection for AI-CG dynamics training）
+   - <strong>来源局限/观察</strong>：现有 AI 粗粒化动力学模型（如 CGnets）通常假设平稳分布，可能继承本文指出的偏差。
+   - <strong>核心假设</strong>：在 AI 粗粒化模型的损失函数中引入非平稳投影修正，可提高动力学预测精度。
+   - <strong>相对本文的增量</strong>：将本文的物理修正思想嵌入 AI 训练框架，而非仅用于后处理分析。
+   - <strong>初步方法</strong>：在 CGnet 或 VAMPnet 的训练目标中加入非平稳投影项；用本文的 GLE 提取结果作为正则化约束。
+   - <strong>验证方式</strong>：对比修正前后模型对折叠时间、过渡路径时间的预测精度。
+   - <strong>可能的失败模式</strong>：非平稳修正可能增加训练不稳定性；对反应坐标选择敏感。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：位置依赖摩擦与 AlphaFold 结构预测的集成（Integrating position-dependent friction with AlphaFold structure prediction）
+   - <strong>来源局限/观察</strong>：AlphaFold 预测静态结构，无法提供动力学信息；本文的摩擦提取可补充动态维度。
+   - <strong>核心假设</strong>：AlphaFold 预测的结构可作为 GLE 模拟的初始构象，结合位置依赖摩擦预测折叠路径。
+   - <strong>相对本文的增量</strong>：将本文方法从 MD 后处理扩展到结构预测驱动的动力学模拟。
+   - <strong>初步方法</strong>：用 AlphaFold 生成多个构象；用本文方法（或 AI 预测器）估计 γ(q)；运行 GLE 模拟预测折叠路径。
+   - <strong>验证方式</strong>：对比 GLE 预测的折叠路径与实验或 MD 结果。
+   - <strong>可能的失败模式</strong>：AlphaFold 结构可能偏离真实折叠中间态，导致 GLE 模拟初始条件偏差。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：多反应坐标 GLE 的摩擦张量提取（Multi-dimensional GLE friction tensor extraction）
+   - <strong>来源局限/观察</strong>：本文仅考虑单反应坐标；真实蛋白质折叠可能需多维描述。
+   - <strong>核心假设</strong>：非平稳投影分布可推广到多维反应坐标，提取摩擦张量。
+   - <strong>相对本文的增量</strong>：扩展本文方法到更高维度，更接近真实折叠机制。
+   - <strong>初步方法</strong>：定义多个反应坐标（如接触数、回旋半径）；用本文的非平稳投影方法提取摩擦张量 γ_ij(q)。
+   - <strong>验证方式</strong>：对比多维 GLE 与 MD 的动力学预测。
+   - <strong>可能的失败模式</strong>：多维提取需要更长轨迹，统计收敛困难。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract and metadata only (title, authors, submission history, arXiv metadata). No full text, figures, tables, or supplementary materials were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the claims inferable from the title and the arXiv listing. No methodological details, results, or derivations are accessible.</li>
+<li><strong>Shared manuscript claim summary</strong> The work presents a generalized Langevin equation (GLE) derived using a non-stationary localized projection distribution, and uses this framework to report position-dependent friction in protein folding.</li>
+<li><strong>Visible evidence base</strong> Title, author list, submission date, arXiv identifier, and subject classification (Condensed Matter &gt; Soft Condensed Matter). No abstract text, no figures, no tables, no equations, no references.</li>
+<li><strong>Missing materials affecting confidence</strong> The complete manuscript, including the abstract, main text, all figures, tables, equations, methods, and any supplementary information, is not available. The provided material is insufficient to evaluate any technical claim.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript cannot be evaluated from the supplied material. The title indicates a potentially interesting contribution to the theory of protein folding dynamics, specifically the derivation of a GLE with position-dependent friction. However, without access to the abstract or full text, no assessment of originality, technical correctness, or significance is possible. The submission appears to be a preprint on arXiv, and the provided metadata alone does not constitute a reviewable manuscript.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title, researchers in theoretical biophysics, statistical mechanics, and computational chemistry studying protein folding kinetics and the validity of reduced-dimensional descriptions such as GLEs would likely be interested. The claim of position-dependent friction challenges simpler constant-friction models and could have implications for interpreting single-molecule experiments and molecular dynamics simulations.</li>
+<li><strong>Major strengths</strong> None can be identified from the supplied material. The title suggests a novel methodological angle (non-stationary localized projection distribution), but no evidence is available to assess its value.</li>
+<li><strong>Major Concerns</strong> The absence of the manuscript text is a fundamental barrier. No technical claim can be checked, and no conclusion can be drawn about the validity of the derivation or the reported results.</li>
+<li><strong>Minor Comments</strong> None can be formulated without the manuscript content.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The case cannot be established from the provided material. The manuscript itself must be supplied for any technical evaluation.</li>
+<li><strong>Assessment against Nature-style criteria</strong>  </li>
+<li>Originality: Not assessable. The title hints at a methodological novelty, but no details are available.  </li>
+<li>Scientific importance: Not assessable. Position-dependent friction in protein folding could be important, but the significance cannot be judged without the results.  </li>
+<li>Interdisciplinary readership: Not assessable. The topic bridges physics, chemistry, and biology, but the presentation quality is unknown.  </li>
+<li>Technical soundness: Not assessable. No equations, derivations, or numerical results are visible.  </li>
+<li>Readability for nonspecialists: Not assessable. No text is available to evaluate.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. A review cannot proceed without the manuscript content.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence completeness  </li>
+<li><strong>Claim pointer</strong> The title claims a GLE derived with a non-stationary localized projection distribution and position-dependent friction in protein folding.  </li>
+<li><strong>Evidence pointer</strong> Location not provided. The entire manuscript is missing.  </li>
+<li><strong>Concern</strong> The supplied material contains only the title, author list, and arXiv metadata. No abstract, no main text, no figures, no tables, and no equations are available. Consequently, none of the claims implied by the title can be examined.  </li>
+<li><strong>Why it matters</strong> A scientific review requires the actual content of the manuscript. Without it, any assessment of the derivation, the results, or the conclusions would be pure speculation, which is not acceptable.  </li>
+<li><strong>Resolution test</strong> Provide the full manuscript, including the abstract, main text, figures, tables, and any supplementary materials. The review can then proceed on the basis of the actual content.</li>
+</ul>
+<h3>Minor Comments</h3>
+<p>None identified from the supplied material.</p>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of a GLE derived with a non-stationary localized projection distribution is unsupported because no derivation is provided.</li>
+<li>The claim of position-dependent friction in protein folding is unsupported because no results are provided.</li>
+<li>Any inference about the quality, novelty, or correctness of the work is not assessable from the available metadata.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OMatG-flash: An All-Atom Flow Map with Reinforce Adjoint Matching for Scalable Materials Discovery · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>OMatG-flash: An All-Atom Flow Map with Reinforce Adjoint Matching for Scalable Materials Discovery</h1>
+      <div class="meta">Thomas Egg; Harry Winston Sullivan; Ellad B. Tadmor; Stefano Martiniani</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-22
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2609.26402v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出用于无机材料晶体结构预测与生成的流模型OMatG-flash，虽对象非蛋白质，但其全原子流映射与强化伴随匹配的生成框架可迁移至蛋白质构象采样与结构生成，对课题有方法借鉴价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The discovery of novel inorganic materials drives technological breakthroughs in critical fields such as computing and energy storage. Generative AI has promised to accelerate the materials discovery pipeline, but state-of-the-art flow and diffusion models remain bottlenecked by the cost of proposing candidate materials. To address this, we introduce OMatG-flash, an all-atom flow map for inorganic crystal structure prediction (CSP) and de novo generation (DNG). OMatG-flash is a Pareto-optimal inference engine for materials, sampling candidate materials with an order of magnitude fewer inference steps and less wall-clock time than existing flow and diffusion models while demonstrating benchmark performance on par with the state-of-the-art. To enable post-training fine-tuning we apply Reinforce Adjoint Matching to flow maps, further improving match rates and RMSE on the unconditional CSP task. OMatG-flash showcases the potential of flow maps to accelerate generation of high-quality candidate inorganic materials and demonstrates a step forward in sample throughput necessary for data-hungry materials discovery workflows.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">新型无机材料的发现推动了计算和能源存储等关键领域的技术突破。生成式人工智能有望加速材料发现流程，但最先进的流模型和扩散模型仍受限于提出候选材料的成本。为解决这一问题，我们引入了OMatG-flash，一种用于无机晶体结构预测（CSP）和从头生成（DNG）的全原子流映射。OMatG-flash是一种帕累托最优的材料推理引擎，其采样候选材料所需的推理步骤和墙钟时间比现有流模型和扩散模型少一个数量级，同时在基准测试中表现出与最先进技术相当的性能。为支持训练后微调，我们将伴随匹配强化（Reinforce Adjoint Matching）应用于流映射，进一步提高了无条件CSP任务中的匹配率和均方根误差（RMSE）。OMatG-flash展示了流映射在加速生成高质量候选无机材料方面的潜力，并在数据密集型材料发现工作流所需的样本吞吐量方面迈出了一步。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：OMatG-flash: An All-Atom Flow Map with Reinforce Adjoint Matching for Scalable Materials Discovery</li>
+<li><strong>作者</strong>：Thomas Egg; Harry Winston Sullivan; Ellad B. Tadmor; Stefano Martiniani</li>
+<li><strong>单位</strong>：未提供（arXiv 页面未列出作者单位）</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（Computer Science &gt; Machine Learning 板块）</li>
+<li><strong>年份</strong>：2026（提交日期 2026-09-22）</li>
+<li><strong>论文类型</strong>：预印本（未标注同行评审状态）</li>
+<li><strong>领域</strong>：材料发现 × 生成模型（flow-based generative model）</li>
+<li><strong>关键词</strong>：未提供（arXiv 页面未列出关键词）</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2609.26402v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-09-22（按提交日期推定）</li>
+<li><strong>在该课题方向中的位置</strong>：本文属于「AI × 材料/分子结构生成」方向，核心是开发全原子 flow-based 生成模型（OMatG-flash），用于可扩展的材料结构发现。与蛋白质结构计算课题的关联在于：其「全原子 flow map + Reinforce Adjoint Matching」训练策略、以及「可扩展生成」的设计思路，可迁移至蛋白质构象生成、序列设计或结构采样任务。但本文对象是材料（非蛋白质），故重点提炼其方法论的可迁移性。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 OMatG-flash，一个全原子 flow-based 生成模型，通过 Reinforce Adjoint Matching（一种结合强化学习与伴随方法的训练策略）实现可扩展的材料结构生成，在保持全原子精度的同时提升生成效率与规模。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何构建一个可扩展的全原子生成模型，用于材料结构发现，同时保持生成结构的物理有效性与计算效率？</li>
+<li><strong>为什么重要</strong>：材料发现依赖对广阔化学空间的探索，而全原子生成模型能直接输出原子坐标，避免粗粒化带来的信息损失；但现有方法在规模扩展时面临计算成本高、训练不稳定等问题。</li>
+<li><strong>现有方法为何不足</strong>：传统 flow-based 模型（如连续归一化流）在训练时需要求解常微分方程（ODE），计算成本随系统规模增长显著；且对全原子系统的生成常受限于可逆变换的表达能力或训练信号的质量。</li>
+<li><strong>精确研究问题</strong>：Can a flow-based generative model with Reinforce Adjoint Matching achieve scalable all-atom materials generation without sacrificing structural validity?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架推断，未经外部文献核验，标注为「仅本文框架」。</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>阶段 1：传统生成模型（VAE/GAN）</strong><br />
+  优点：能生成新结构；局限：难以保证物理有效性，训练不稳定，对高维原子坐标建模困难。</p>
+</li>
+<li>
+<p><strong>阶段 2：Flow-based 模型（如 Normalizing Flows, Continuous Normalizing Flows）</strong><br />
+  优点：精确似然估计，可逆变换保证可采样性；局限：计算成本高，尤其在全原子系统中 ODE 求解开销大。</p>
+</li>
+<li>
+<p><strong>阶段 3：强化学习与生成模型结合</strong><br />
+  优点：能优化非可微目标（如物理有效性、稳定性）；局限：样本效率低，训练方差大。</p>
+</li>
+<li>
+<p><strong>本文位置</strong>：提出 Reinforce Adjoint Matching，将强化学习（REINFORCE）与伴随方法（adjoint method）结合，用于 flow map 的训练，旨在兼顾生成质量与计算可扩展性。</p>
+</li>
+</ul>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全原子生成的计算成本高</td>
+<td>系统规模增大时，训练与采样时间显著上升</td>
+<td>flow-based 模型需反复求解 ODE，伴随方法虽高效但梯度估计有偏</td>
+<td>未提供（摘要未详述）</td>
+</tr>
+<tr>
+<td>训练信号质量不足</td>
+<td>生成结构物理有效性差</td>
+<td>单纯似然最大化不足以约束物理合理性</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>可扩展性受限</td>
+<td>现有方法难以处理大规模材料系统</td>
+<td>模型容量与训练策略不匹配</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>梯度估计方差大</td>
+<td>强化学习训练不稳定</td>
+<td>REINFORCE 类方法天然高方差</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：以上痛点基于摘要推断，具体证据未在提供的材料中给出。</p>
+</blockquote>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：构建一个全原子 flow map（OMatG-flash），用 Reinforce Adjoint Matching 训练，即用 REINFORCE 估计梯度，用伴随方法高效求解 ODE 反向传播。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：将生成过程视为一个可微的动力学系统（flow map），通过伴随方法获得梯度，同时用 REINFORCE 处理非可微的奖励信号（如物理有效性），从而在保持全原子精度的同时实现可扩展训练。</p>
+</li>
+<li>
+<p><strong>可能的普适教训 [Analysis]</strong>：<br />
+   - 生成模型训练不必局限于纯似然或纯强化学习，混合策略可兼顾效率与质量。<br />
+   - 对蛋白质结构计算：类似地，可将构象生成视为 flow map，用伴随方法加速梯度计算，用强化学习优化非可微目标（如折叠能量、对接打分）。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：未提供（推测为原子类型、初始坐标或噪声）</li>
+<li><strong>输出</strong>：全原子材料结构（原子坐标）</li>
+<li><strong>模块</strong>：flow map（可逆变换）、伴随方法求解器、REINFORCE 梯度估计器</li>
+<li><strong>训练</strong>：通过 Reinforce Adjoint Matching 联合优化似然与奖励信号</li>
+<li><strong>工具</strong>：未提供（推测为 PyTorch 或 JAX 等自动微分框架）</li>
+<li><strong>反馈回路</strong>：生成结构 → 计算奖励（如物理有效性）→ REINFORCE 更新 → 伴随方法更新 flow map 参数</li>
+<li><strong>假设</strong>：flow map 可逆且可微；奖励信号可计算但不可微</li>
+</ul>
+<p><strong>文字流程</strong>：<br />
+输入噪声或初始状态 → 通过 flow map 前向传播生成原子坐标 → 计算似然损失与奖励信号 → 用伴随方法求解梯度（可微部分）→ 用 REINFORCE 估计奖励梯度（不可微部分）→ 更新模型参数 → 重复直至收敛。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flow Map</td>
+<td>可逆变换，将噪声映射到原子坐标</td>
+<td>保证可采样性与精确似然</td>
+<td>输入：噪声/初始状态；输出：原子坐标</td>
+<td>未提供</td>
+<td>预期：生成能力丧失</td>
+</tr>
+<tr>
+<td>伴随方法（Adjoint）</td>
+<td>高效求解 ODE 反向传播梯度</td>
+<td>降低计算成本，支持大规模系统</td>
+<td>输入：前向轨迹；输出：梯度</td>
+<td>未提供</td>
+<td>预期：训练变慢，无法扩展</td>
+</tr>
+<tr>
+<td>REINFORCE 估计器</td>
+<td>估计非可微奖励的梯度</td>
+<td>优化物理有效性等非可微目标</td>
+<td>输入：奖励信号；输出：梯度估计</td>
+<td>未提供</td>
+<td>预期：生成结构物理有效性下降</td>
+</tr>
+<tr>
+<td>奖励函数</td>
+<td>评估生成结构的质量</td>
+<td>引导生成朝向有效结构</td>
+<td>输入：生成结构；输出：标量奖励</td>
+<td>未提供</td>
+<td>预期：生成结构无约束</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：所有「预期影响」均为 [Analysis] 推断，非实测消融。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用（提供的材料中未包含公式）。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：摘要中未包含实验细节，无法评估证据链。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：材料结构生成（全原子）</li>
+<li><strong>oracle/真值输入</strong>：未提供</li>
+<li><strong>端到端状态</strong>：未提供（推测为端到端生成，但未验证）</li>
+<li><strong>算力成本</strong>：未提供</li>
+<li><strong>历史数据依赖</strong>：未提供</li>
+<li><strong>模型依赖</strong>：依赖 flow map 的可逆性与伴随方法的数值稳定性</li>
+<li><strong>最难情形</strong>：未提供</li>
+<li><strong>群体/领域边界</strong>：材料领域，未涉及蛋白质</li>
+<li><strong>不确定性</strong>：未提供</li>
+</ul>
+<p><strong>有边界的复述</strong>：OMatG-flash 提出了一种全原子 flow map 与 Reinforce Adjoint Matching 结合的训练策略，声称能实现可扩展的材料生成；但具体性能、适用范围与局限性需在完整论文中验证。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<blockquote>
+<p>作者提及的相关约束（非正式局限）：<br />
+- 摘要未提及任何局限或未来方向，可能因材料不完整。</p>
+</blockquote>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摘要未提供实验细节</td>
+<td>可能缺乏充分验证，或结果不显著</td>
+<td>无法评估方法有效性</td>
+<td>阅读完整论文，检查实验设计与结果</td>
+<td>摘要仅描述方法</td>
+</tr>
+<tr>
+<td>Reinforce Adjoint Matching 的梯度估计可能有偏</td>
+<td>伴随方法假设 ODE 可微，REINFORCE 高方差，两者结合可能不稳定</td>
+<td>影响训练收敛性</td>
+<td>对比纯伴随方法与混合方法的收敛曲线</td>
+<td>[Analysis] 基于方法组合推断</td>
+</tr>
+<tr>
+<td>全原子生成的可扩展性未量化</td>
+<td>「可扩展」是相对概念，需明确规模与计算成本</td>
+<td>决定实际应用价值</td>
+<td>检查是否报告了不同系统规模下的时间/内存</td>
+<td>摘要未提供数据</td>
+</tr>
+<tr>
+<td>未提及与现有方法的对比</td>
+<td>无法判断相对优势</td>
+<td>决定方法是否值得采用</td>
+<td>检查是否与 SOTA 生成模型对比</td>
+<td>摘要未提供基线</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>Flow Map 作为生成框架</strong>：将生成过程建模为可逆动力学系统，可迁移至蛋白质构象生成——将蛋白质坐标视为 flow map 的输出，用伴随方法加速梯度计算。</li>
+<li><strong>混合训练策略（似然 + 强化学习）</strong>：对蛋白质结构计算，可用似然损失保证结构合理性，用强化学习优化非可微目标（如折叠能量、对接打分、实验验证信号）。</li>
+<li><strong>伴随方法用于大规模系统</strong>：蛋白质系统同样面临计算成本问题，伴随方法可降低 ODE 反向传播开销，适用于 MD 模拟或构象采样的梯度计算。</li>
+<li><strong>全原子建模的挑战与思路</strong>：全原子生成需平衡精度与效率，蛋白质结构预测（如 AlphaFold）可借鉴其「全原子 + 可扩展」的设计哲学。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：Continuous Normalizing Flows（CNF）与 FFJORD（Grathwohl et al., 2019）——均用 ODE 定义生成过程；本文的伴随方法与之类似。</li>
+<li><strong>组合方向</strong>：与强化学习结合的生成模型（如 GFlowNets, Bengio et al., 2021）——均用非似然目标训练生成模型。</li>
+<li><strong>可迁移领域</strong>：蛋白质结构预测（AlphaFold 的端到端全原子输出）、构象采样（MD 模拟的加速）、序列设计（生成模型 + 物理约束）。</li>
+<li><strong>冲突点</strong>：本文未提及与蛋白质系统的兼容性，需验证 flow map 是否适用于蛋白质的复杂势能面。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：ProteinFlow-Adjoint：基于伴随方法的蛋白质构象生成<br />
+   - <strong>来源局限/观察</strong>：OMatG-flash 的伴随方法可降低 ODE 梯度计算成本，蛋白质构象生成同样受计算瓶颈限制。<br />
+   - <strong>核心假设</strong>：将蛋白质构象生成建模为 flow map，用伴随方法训练，可在保持精度的同时提升采样效率。<br />
+   - <strong>初步方法</strong>：用 CNF 定义构象空间中的 flow，奖励函数设为折叠能量或对接打分，用 REINFORCE 优化。<br />
+   - <strong>验证方式</strong>：在小型蛋白质系统上对比 MD 模拟的构象分布。<br />
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Reinforce-Adjoint 用于蛋白质序列设计<br />
+   - <strong>来源局限/观察</strong>：序列设计需优化非可微目标（如实验表达量），现有方法多用 MCMC 或进化算法，效率低。<br />
+   - <strong>核心假设</strong>：用 flow map 生成序列，用 Reinforce Adjoint Matching 优化非可微奖励。<br />
+   - <strong>初步方法</strong>：将序列离散化处理为连续潜变量，flow map 生成潜变量，奖励为预测稳定性或活性。<br />
+   - <strong>验证方式</strong>：在公开数据集上对比 Rosetta 或 ProteinMPNN。<br />
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：全原子蛋白质生成的可扩展性基准<br />
+   - <strong>来源局限/观察</strong>：OMatG-flash 声称可扩展，但未提供量化数据；蛋白质系统同样需要此类基准。<br />
+   - <strong>核心假设</strong>：可建立统一的基准测试，比较不同生成模型在蛋白质全原子生成上的时间/内存/精度。<br />
+   - <strong>初步方法</strong>：收集现有蛋白质生成模型，统一评测协议。<br />
+   - <strong>验证方式</strong>：在标准数据集上运行对比实验。<br />
+   - <strong>创新状态</strong>：prior-art checked（已有类似基准，但未覆盖全原子）。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, arXiv metadata, and abstract page only. No full manuscript text, figures, tables, or supplementary materials were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the claims and information recoverable from the title, the abstract page, and the arXiv listing. No methodological detail, experimental results, or code availability information was accessible.</li>
+<li><strong>Shared manuscript claim summary</strong> The work presents OMatG-flash, described as an all-atom flow map with a "Reinforce Adjoint Matching" training objective, aimed at scalable materials discovery. The title implies a generative model for atomistic systems with a new matching algorithm.</li>
+<li><strong>Visible evidence base</strong> Title, author list, arXiv subject classification (Computer Science, Machine Learning), submission date, and DOI/ID. No abstract text, no figures, no tables, no equations, no references, and no code or data links were present in the supplied material.</li>
+<li><strong>Missing materials affecting confidence</strong> The complete manuscript, including the abstract, introduction, methods, results, figures, tables, references, and any supplementary information. Without these, no technical claim can be verified or even fully understood.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The provided material is insufficient to conduct a substantive scientific review. The title announces a methodological contribution in generative modeling for materials, but the absence of the abstract and all technical content means that no claim can be assessed for correctness, novelty, or significance. The review below therefore focuses on what can be inferred from the title and metadata, and flags the fundamental limitation of the evidence base.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title alone, researchers in machine learning for materials science, generative models for molecular and crystal structures, and computational materials discovery would likely be interested. The promise of scalability and an all-atom representation addresses a known bottleneck in the field. However, without the abstract or results, this remains a projection rather than an informed assessment.</li>
+<li><strong>Major strengths</strong> From the title, the work appears to target a relevant problem, namely scalable generative modeling for materials. The proposed combination of flow maps with a reinforcement-style adjoint matching objective is a potentially interesting methodological direction. No further strengths can be identified from the supplied material.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The title claims an "All-Atom Flow Map with Reinforce Adjoint Matching for Scalable Materials Discovery."</li>
+<li><strong>Evidence pointer</strong> Abstract page, location not provided</li>
+<li><strong>Concern</strong> The entire technical content of the manuscript is absent from the supplied material. There is no abstract, no method description, no results, and no discussion. It is impossible to evaluate the validity of the proposed method, the soundness of the "Reinforce Adjoint Matching" objective, the scalability claims, or the relevance to materials discovery.</li>
+<li><strong>Why it matters</strong> A scientific review requires access to the claims and their supporting evidence. Without the manuscript text, any assessment of novelty, correctness, or significance would be speculation. The review process cannot function on the title alone.</li>
+<li><strong>Resolution test</strong> Provide the full manuscript, including the abstract, methods, results, figures, and references. The review can then be conducted on the actual scientific content.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Metadata completeness</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract page, location not provided</li>
+<li><strong>Issue</strong> The abstract text is missing from the supplied material. The title alone does not convey the problem statement, the proposed approach in sufficient detail, or the key results.</li>
+<li><strong>Required correction</strong> Include the full abstract in the review materials.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Code and data availability</li>
+<li><strong>Evidence pointer</strong> Abstract page, location not provided</li>
+<li><strong>Issue</strong> No information is provided about code or data availability. For a methods paper in machine learning, this is a standard expectation.</li>
+<li><strong>Required correction</strong> State code and data availability in the manuscript or abstract.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1. The absence of the manuscript is a complete technical failing that prevents any assessment of the scientific case.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: cannot be assessed. Scientific importance: cannot be assessed. Interdisciplinary readership: cannot be assessed. Technical soundness: cannot be assessed. Readability for nonspecialists: cannot be assessed. The supplied material provides no basis for any of these criteria.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. A review is not possible without the full manuscript. The authors should resubmit the complete text for evaluation.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's claim of an "All-Atom Flow Map with Reinforce Adjoint Matching for Scalable Materials Discovery" is unsupported by any visible evidence in the supplied material.</li>
+<li>Any inference about the method's novelty, performance, or applicability to materials discovery is unassessable from the provided content.</li>
+<li>No claims regarding the method's scalability, accuracy, or comparison to existing approaches can be evaluated.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

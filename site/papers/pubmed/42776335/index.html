@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Quantum-Classical Analysis of Variability in Peptide Energies and Conformations. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>A Quantum-Classical Analysis of Variability in Peptide Energies and Conformations.</h1>
+      <div class="meta">Ayushi; Shakya, Madhvi</div>
+      <div class="meta muted">
+        
+        <span class="journal">The protein journal</span>
+        · 2026-09-23
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42776335/">原文</a>
+      </div>
+      <p class="one-liner">该研究使用量子变分特征求解器（VQE）结合经典分子动力学模拟，对15个八肽进行构象能量与结构分析，并与AlphaFold预测对比，属于蛋白质构象采样与结构预测的计算建模研究，方法新颖且直接相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The exploration of protein structure and folding mechanisms is a cornerstone of molecular biology, with significant implications for understanding biological functions and advancing drug discovery. Traditional computational methods, such as AlphaFold, RoseTTAFold and I-TASSER, have been instrumental in this field. However, these methods are often constrained by extensive challenges in predicting structures for proteins lacking significant homologous sequences in the training data, impacting accuracy in novel or less well-characterized proteins. In contrast, quantum computing offers a promising avenue for overcoming these limitations through algorithms like the Variational Quantum Eigensolver (VQE). Quantum computing is in an early stage for optimization problems, particularly for protein folding. This study harnesses the power of VQE to explore the folding behavior and low-energy conformational landscape of 15 peptides, each comprising eight amino acids, selected from the RCSB Protein Data Bank (PDB). Classical 100-ns molecular dynamics (MD) simulations are used to characterize the structural stability and relative energetic trends of the corresponding atomistic conformations. These results are then contrasted with energies obtained from a lattice-based Hamiltonian optimization using the VQE algorithm, executed on the IBM quantum simulator. Although the absolute energy scales differ between MD and lattice Hamiltonian models, this comparison enables a correlation-based evaluation of how effectively VQE identifies physically plausible low-energy folded states. The results demonstrate that VQE consistently converges to competitive low-energy conformations. Further investigation was carried out by converting the PDB structure into a lattice model using the LatFit tool for visual comparison with the VQE-predicted structure. In addition, quantitative evaluation was performed by comparing the VQE-predicted structure with the original PDB structure using Calpha Root Mean Square Deviation (RMSD) and Template Modeling (TM) score. Furthermore, the TM-scores obtained from the VQE predictions were compared with those obtained from the AlphaFold predictions. This work highlights the benefits of utilizing quantum algorithms to examine protein folding and also paves the road for future quantum biology studies.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质结构与折叠机制的探索是分子生物学的基石，对理解生物功能和推进药物发现具有重要意义。传统计算方法，如AlphaFold、RoseTTAFold和I-TASSER，在该领域发挥了重要作用。然而，这些方法在预测训练数据中缺乏显著同源序列的蛋白质结构时，常面临广泛挑战，影响了对新型或特征不明确蛋白质的预测准确性。相比之下，量子计算通过变分量子本征求解器（VQE）等算法，为克服这些限制提供了一条有前景的途径。量子计算在优化问题（尤其是蛋白质折叠）方面仍处于早期阶段。本研究利用VQE的力量，探索了从RCSB蛋白质数据银行（PDB）中选取的15个肽段（每个由八个氨基酸组成）的折叠行为和低能构象景观。采用经典的100纳秒分子动力学（molecular dynamics, MD）模拟来表征相应原子构象的结构稳定性和相对能量趋势。这些结果随后与使用VQE算法在IBM量子模拟器上执行的基于格点哈密顿量优化所得能量进行对比。尽管MD和格点哈密顿量模型之间的绝对能量尺度不同，但这种比较能够基于相关性评估VQE在识别物理上合理的低能折叠状态方面的有效性。结果表明，VQE始终收敛于具有竞争力的低能构象。进一步研究通过使用LatFit工具将PDB结构转换为格点模型，以便与VQE预测结构进行视觉比较。此外，通过使用Cα均方根偏差（RMSD）和模板建模（TM）分数，将VQE预测结构与原始PDB结构进行比较，进行了定量评估。进一步地，将VQE预测获得的TM分数与AlphaFold预测获得的TM分数进行了比较。这项工作突显了利用量子算法研究蛋白质折叠的优势，也为未来的量子生物学研究铺平了道路。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：A Quantum-Classical Analysis of Variability in Peptide Energies and Conformations</li>
+<li><strong>作者</strong>：Ayushi; Shakya, Madhvi</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：The Protein Journal</li>
+<li><strong>年份</strong>：2026（在线日期 2026-09-23）</li>
+<li><strong>论文类型</strong>：研究论文（计算研究）</li>
+<li><strong>领域</strong>：蛋白质折叠、量子计算（VQE）、分子动力学模拟、结构预测</li>
+<li><strong>关键词</strong>：VQE、蛋白质折叠、量子计算、分子动力学、肽构象、晶格模型</li>
+<li><strong>DOI/arXiv 号</strong>：10.1007/s10930-026-10352-6</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：15 个八肽，选自 RCSB PDB；使用 IBM 量子模拟器；LatFit 工具用于 PDB 到晶格模型转换</li>
+<li><strong>阅读日期</strong>：2026-09-23</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构预测/构象采样 × 量子计算（VQE）」交叉方向，将量子优化算法（VQE）与经典 MD 模拟结合，用于小肽的低能构象搜索与折叠行为分析，并与 AlphaFold 预测进行对比。该文处于量子计算应用于蛋白质折叠的早期探索阶段，属于概念验证型研究。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文使用 VQE 算法在 IBM 量子模拟器上对 15 个八肽进行晶格模型哈密顿量优化，结合经典 100-ns MD 模拟表征构象稳定性，通过相关性分析、Cα-RMSD 和 TM-score 评估 VQE 预测的低能折叠态与 PDB 结构的吻合程度，并对比 AlphaFold 的 TM-score，表明 VQE 能收敛到物理上合理的低能构象。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：VQE 算法能否在晶格模型上有效识别八肽的物理上合理的低能折叠构象？其预测质量与经典 MD 模拟和 AlphaFold 相比如何？</li>
+<li><strong>为什么重要</strong>：蛋白质折叠预测对理解生物功能和药物发现至关重要；现有方法（AlphaFold、RoseTTAFold、I-TASSER）对缺乏同源序列的新蛋白预测精度受限；量子计算可能提供新的优化途径。</li>
+<li><strong>现有方法为何不足</strong>：深度学习方法依赖训练数据中的同源序列，对 novel 或低同源性蛋白泛化能力有限；经典构象搜索方法计算成本高，且可能陷入局部极小。</li>
+<li><strong>精确研究问题</strong>：Can VQE, executed on a quantum simulator with a lattice-based Hamiltonian, identify low-energy folded conformations of 8-residue peptides that are physically plausible as judged by correlation with MD-derived energetics and structural similarity to PDB reference structures?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络主要基于本文引言，标注为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经典结构预测</td>
+<td>AlphaFold, RoseTTAFold, I-TASSER</td>
+<td>高精度（尤其 AlphaFold）；端到端可训练</td>
+<td>对无同源序列的新蛋白精度下降；依赖大规模训练数据</td>
+<td>本文对比基准之一</td>
+</tr>
+<tr>
+<td>经典 MD 模拟</td>
+<td>全原子力场 MD</td>
+<td>物理原理驱动；可表征动力学与热力学</td>
+<td>计算成本高；采样受限；对力场敏感</td>
+<td>本文用于生成参考构象与能量趋势</td>
+</tr>
+<tr>
+<td>量子优化算法</td>
+<td>VQE</td>
+<td>可处理组合优化问题；对哈密顿量基态求解有理论优势</td>
+<td>量子硬件噪声；比特数限制；早期阶段</td>
+<td>本文核心方法</td>
+</tr>
+<tr>
+<td>晶格模型折叠</td>
+<td>晶格哈密顿量 + 优化</td>
+<td>简化问题；适合量子算法</td>
+<td>分辨率低；丢失原子细节</td>
+<td>本文采用 LatFit 将 PDB 结构映射到晶格</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经典预测方法对低同源性蛋白精度不足</td>
+<td>AlphaFold 等对 novel 蛋白预测精度下降</td>
+<td>训练数据中缺乏同源序列，模型无法有效泛化</td>
+<td>引言部分（未提供具体数据）</td>
+</tr>
+<tr>
+<td>量子计算在蛋白质折叠中处于早期阶段</td>
+<td>优化问题求解受限于硬件与算法成熟度</td>
+<td>量子比特数有限、噪声影响、算法收敛性未充分验证</td>
+<td>引言部分（未提供具体数据）</td>
+</tr>
+<tr>
+<td>MD 与晶格模型能量尺度不一致</td>
+<td>MD 能量与晶格哈密顿量能量无法直接比较</td>
+<td>两种模型采用不同的能量函数与表示</td>
+<td>Methods/Results 部分（未提供具体数据）</td>
+</tr>
+<tr>
+<td>晶格模型分辨率低</td>
+<td>无法直接比较原子级结构</td>
+<td>晶格表示丢失原子细节</td>
+<td>作者使用 Cα-RMSD 和 TM-score 进行间接比较</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：对 15 个八肽，使用经典 100-ns MD 模拟获得原子级构象与能量趋势；同时将 PDB 结构转换为晶格模型，使用 VQE 在 IBM 量子模拟器上优化晶格哈密顿量，获得低能构象；最后通过相关性分析、Cα-RMSD 和 TM-score 进行定量比较。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：尽管 MD 与晶格模型的能量尺度不同，但通过相关性分析可以评估 VQE 是否识别出物理上合理的低能折叠态。VQE 在晶格模型上的收敛结果与 MD 能量趋势存在相关性，且 TM-score 与 AlphaFold 相当，表明量子优化算法在小肽折叠问题上具有可行性。</p>
+</li>
+<li>
+<p><strong>可能的普适教训 [Analysis]</strong>：量子算法（如 VQE）在简化表示（晶格模型）下可以捕捉蛋白质折叠的粗粒化能量景观；将量子优化与经典模拟结合，可能为低同源性蛋白的构象搜索提供互补路径。但当前结果仅限于 8 残基肽，扩展到更大蛋白需克服量子资源限制。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：15 个八肽的 PDB 结构（来自 RCSB PDB）</li>
+<li><strong>输出</strong>：VQE 预测的低能晶格构象；MD 模拟的构象集合与能量；Cα-RMSD 和 TM-score 评估结果</li>
+<li><strong>模块</strong>：
+  1. MD 模拟模块：100-ns 全原子 MD，表征结构稳定性与能量趋势
+  2. 晶格转换模块：LatFit 工具将 PDB 结构转换为晶格模型
+  3. VQE 优化模块：在 IBM 量子模拟器上执行晶格哈密顿量优化
+  4. 比较评估模块：相关性分析、Cα-RMSD、TM-score 计算</li>
+<li><strong>训练</strong>：无监督训练（VQE 为变分优化，非数据驱动训练）</li>
+<li><strong>工具</strong>：IBM 量子模拟器、LatFit、MD 模拟软件（未指定）</li>
+<li><strong>假设</strong>：晶格模型能保留足够的折叠信息；VQE 收敛到全局或近全局最优；MD 能量趋势可作为物理合理性参考</li>
+<li><strong>流程</strong>：PDB 结构 → MD 模拟（获得能量与构象）→ LatFit 转换晶格 → VQE 优化（获得低能构象）→ 与 PDB 结构比较（Cα-RMSD、TM-score）→ 与 MD 能量相关性分析 → 与 AlphaFold TM-score 对比</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MD 模拟</td>
+<td>表征原子级构象稳定性与能量趋势</td>
+<td>提供物理参考，评估 VQE 结果的合理性</td>
+<td>输入：PDB 结构；输出：100-ns 轨迹、能量</td>
+<td>作者用于对比 VQE 能量</td>
+<td>预期影响：失去物理合理性参照 [Analysis]</td>
+</tr>
+<tr>
+<td>LatFit 晶格转换</td>
+<td>将 PDB 结构映射到晶格表示</td>
+<td>晶格模型是 VQE 的输入表示</td>
+<td>输入：PDB 结构；输出：晶格坐标</td>
+<td>作者用于 VQE 输入</td>
+<td>预期影响：VQE 无法执行 [Analysis]</td>
+</tr>
+<tr>
+<td>VQE 优化</td>
+<td>求解晶格哈密顿量基态</td>
+<td>核心量子算法，识别低能构象</td>
+<td>输入：晶格哈密顿量；输出：低能构象</td>
+<td>作者报告收敛到低能态</td>
+<td>预期影响：核心方法缺失 [Analysis]</td>
+</tr>
+<tr>
+<td>比较评估</td>
+<td>计算 Cα-RMSD、TM-score、相关性</td>
+<td>定量评估 VQE 预测质量</td>
+<td>输入：VQE 构象、PDB 结构、MD 能量；输出：指标</td>
+<td>作者报告 TM-score 与 AlphaFold 相当</td>
+<td>预期影响：无法判断预测质量 [Analysis]</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：以上「移除后的影响」均为 [Analysis] 推断，原文未提供消融实验。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。原文摘要未提供具体公式。VQE 的一般框架（变分量子本征求解器）涉及哈密顿量期望值最小化，但原文未给出具体数学表达式。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：15 个八肽（8 个氨基酸），选自 RCSB PDB</li>
+<li><strong>规模</strong>：15 个肽；每个肽 100-ns MD 模拟</li>
+<li><strong>指标</strong>：Cα-RMSD、TM-score、能量相关性</li>
+<li><strong>基线</strong>：AlphaFold 预测的 TM-score</li>
+<li><strong>评测协议</strong>：VQE 预测构象 vs. PDB 参考结构（Cα-RMSD、TM-score）；VQE 能量 vs. MD 能量（相关性）；VQE TM-score vs. AlphaFold TM-score</li>
+<li><strong>oracle 输入</strong>：PDB 结构作为参考真值</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VQE 能量 vs. MD 能量相关性</td>
+<td>VQE 能识别物理上合理的低能态</td>
+<td>15 个肽的 VQE 能量与 MD 能量</td>
+<td>存在相关性（具体数值未提供）</td>
+<td>VQE 收敛到合理低能构象</td>
+<td>不能证明 VQE 优于 MD 或经典方法</td>
+<td>Results（未提供具体数值）</td>
+</tr>
+<tr>
+<td>VQE 构象 vs. PDB 结构（Cα-RMSD、TM-score）</td>
+<td>VQE 预测结构接近实验结构</td>
+<td>VQE 晶格构象 vs. PDB 参考</td>
+<td>具体数值未提供</td>
+<td>VQE 能产生与 PDB 相似的结构</td>
+<td>不能证明原子级精度</td>
+<td>Results（未提供具体数值）</td>
+</tr>
+<tr>
+<td>VQE TM-score vs. AlphaFold TM-score</td>
+<td>VQE 与 AlphaFold 预测质量相当</td>
+<td>同一组肽的 TM-score 对比</td>
+<td>具体数值未提供</td>
+<td>VQE 在晶格模型上具有竞争力</td>
+<td>不能证明 VQE 优于 AlphaFold</td>
+<td>Results（未提供具体数值）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限 8 残基肽的晶格模型折叠；不涉及全长蛋白或原子级精度预测</li>
+<li><strong>oracle/真值输入</strong>：PDB 结构作为参考；MD 能量作为物理合理性参考</li>
+<li><strong>端到端状态</strong>：非端到端；VQE 依赖晶格转换（LatFit），且使用量子模拟器而非真实量子硬件</li>
+<li><strong>算力成本</strong>：未提供具体计算资源信息</li>
+<li><strong>历史数据依赖</strong>：不依赖训练数据（VQE 为无监督优化）；但 AlphaFold 对比依赖其训练模型</li>
+<li><strong>模型依赖</strong>：依赖晶格哈密顿量的选择、VQE 电路设计、MD 力场</li>
+<li><strong>最难情形</strong>：低同源性蛋白、长肽、真实量子硬件噪声</li>
+<li><strong>不确定性</strong>：未提供统计显著性检验、误差条或多次运行的标准差</li>
+<li><strong>有边界的复述</strong>：在 15 个八肽上，VQE 在晶格模型上收敛的低能构象与 MD 能量趋势相关，且 TM-score 与 AlphaFold 相当；该结论仅限于晶格表示、8 残基肽、量子模拟器环境，不能推广到更大蛋白或真实量子硬件。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 量子计算在蛋白质折叠优化问题中仍处于早期阶段（引言）
+- MD 与晶格模型能量尺度不同，需通过相关性间接比较（Methods/Results 推断）</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅 15 个八肽，样本量小</td>
+<td>结果可能不具统计代表性；可能只对特定序列有效</td>
+<td>影响结论的泛化性</td>
+<td>扩大肽库规模，增加序列多样性</td>
+<td>摘要中明确 15 个肽</td>
+</tr>
+<tr>
+<td>使用量子模拟器而非真实硬件</td>
+<td>模拟器无噪声，真实硬件可能无法复现结果</td>
+<td>影响实际应用可行性</td>
+<td>在 IBM 真实量子设备上重复实验</td>
+<td>摘要中「IBM quantum simulator」</td>
+</tr>
+<tr>
+<td>晶格模型分辨率低</td>
+<td>Cα-RMSD 和 TM-score 可能对晶格构象不敏感</td>
+<td>可能高估或低估预测质量</td>
+<td>与全原子构象比较；使用更细粒度晶格</td>
+<td>摘要中「lattice-based Hamiltonian」</td>
+</tr>
+<tr>
+<td>未提供具体数值和统计检验</td>
+<td>无法评估相关性的强度和显著性</td>
+<td>影响结论的可信度</td>
+<td>补充数值、置信区间和显著性检验</td>
+<td>摘要未提供具体数据</td>
+</tr>
+<tr>
+<td>与 AlphaFold 比较的公平性</td>
+<td>AlphaFold 预测全原子结构，VQE 预测晶格构象，比较基础不同</td>
+<td>可能产生误导性结论</td>
+<td>统一比较协议；使用相同评价指标</td>
+<td>摘要中「TM-scores obtained from VQE predictions were compared with those obtained from AlphaFold」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>量子-经典混合工作流</strong>：将经典 MD 模拟与量子优化（VQE）结合，MD 提供物理参考，VQE 提供快速低能构象搜索。可迁移到本课题：在构象采样任务中，使用量子优化作为粗粒化预筛选，再用 MD 或全原子方法精化。</p>
+</li>
+<li>
+<p><strong>晶格模型作为量子算法的输入表示</strong>：通过 LatFit 将 PDB 结构转换为晶格模型，降低问题维度以适应量子比特限制。可迁移到本课题：对于大规模构象搜索，可先做晶格粗粒化，再用深度学习或 MD 精化。</p>
+</li>
+<li>
+<p><strong>相关性分析作为跨模型比较策略</strong>：当两种模型能量尺度不一致时，用相关性而非绝对值比较。可迁移到本课题：在比较不同力场或不同分辨率模型的能量时，采用秩相关或 Pearson 相关。</p>
+</li>
+<li>
+<p><strong>TM-score 作为跨模型结构比较指标</strong>：即使模型分辨率不同，TM-score 仍可用于评估结构相似性。可迁移到本课题：在评估生成构象质量时，使用 TM-score 而非仅 RMSD。</p>
+</li>
+<li>
+<p><strong>VQE 在蛋白质折叠中的可行性验证</strong>：VQE 在小肽晶格模型上能收敛到合理低能态，为量子计算在结构生物学中的应用提供概念验证。可迁移到本课题：探索 VQE 在更复杂构象搜索问题（如 loop 建模、对接后优化）中的应用。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold / RoseTTAFold / I-TASSER</strong>：本文将其作为经典基线，指出其对低同源性蛋白的局限。这与已知的 AlphaFold 泛化性讨论一致（如 CASP 中 novel fold 预测挑战）。</li>
+<li><strong>VQE 算法</strong>：VQE 是量子化学中常用的变分量子算法，本文将其扩展到蛋白质折叠的晶格模型，与量子化学中 VQE 用于分子基态求解的工作（如 Peruzzo et al., 2014）形成类比。</li>
+<li><strong>晶格模型蛋白质折叠</strong>：晶格模型是蛋白质折叠研究的经典简化表示（如 HP 模型、Go-like 模型），本文将其与量子优化结合，属于该方向的量子计算延伸。</li>
+<li><strong>MD 模拟</strong>：100-ns 全原子 MD 是常规构象采样方法，本文将其作为物理参考，与增强采样方法（如 replica exchange、metadynamics）形成对比。</li>
+<li><strong>TM-score</strong>：TM-score 是结构比较的标准指标（Zhang &amp; Skolnick, 2004），本文用于跨模型比较，与结构预测评估（如 CASP 评估）一致。</li>
+<li><strong>[Analysis] 候选方向</strong>：量子生成模型（如量子 GAN、量子玻尔兹曼机）用于构象分布建模，可能与本工作互补。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：VQE 增强的构象预筛选管道（VQE-Enhanced Conformational Pre-screening Pipeline）
+   - <strong>来源局限/观察</strong>：本文 VQE 仅用于 8 残基肽晶格模型，未与全原子精化结合
+   - <strong>核心假设</strong>：VQE 晶格构象可作为 MD 或深度学习精化的初始点，减少采样时间
+   - <strong>初步方法</strong>：对更大肽库（10-20 残基）执行 VQE 晶格优化，将低能构象映射回全原子表示，作为 MD 或扩散模型的初始构象
+   - <strong>验证方式</strong>：比较 VQE 初始化 vs. 随机初始化的 MD 采样效率（如达到最低能量态的时间）
+   - <strong>可能的失败模式</strong>：晶格到全原子的映射引入较大误差，抵消 VQE 的加速优势
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：量子-经典混合能量函数校准（Hybrid Quantum-Classical Energy Function Calibration）
+   - <strong>来源局限/观察</strong>：MD 与晶格模型能量尺度不一致，本文仅用相关性间接比较
+   - <strong>核心假设</strong>：通过回归或机器学习将晶格哈密顿量能量映射到全原子能量，可提高 VQE 预测的物理合理性
+   - <strong>初步方法</strong>：对同一组肽收集 MD 能量和 VQE 晶格能量，训练映射函数（如线性回归或小规模神经网络），用于校正 VQE 输出
+   - <strong>验证方式</strong>：在校准后的 VQE 能量排序与 MD 能量排序的一致性（Spearman 相关）
+   - <strong>可能的失败模式</strong>：映射关系因序列而异，无法泛化
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：VQE 与 AlphaFold 的互补性分析（Complementarity Analysis of VQE and AlphaFold）
+   - <strong>来源局限/观察</strong>：本文仅比较 TM-score，未分析 VQE 与 AlphaFold 预测的构象差异模式
+   - <strong>核心假设</strong>：VQE 在 AlphaFold 低置信度区域（如 loop、无同源序列区域）可能提供互补的构象假设
+   - <strong>初步方法</strong>：对 AlphaFold pLDDT 低的区域，使用 VQE 晶格优化生成候选构象，评估是否能改善整体结构质量
+   - <strong>验证方式</strong>：在已知结构上，比较 AlphaFold 单独 vs. AlphaFold+VQE 精化的 TM-score 和 RMSD
+   - <strong>可能的失败模式</strong>：VQE 晶格分辨率不足以改善全原子结构
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：量子模拟器上的构象系综采样（Conformational Ensemble Sampling on Quantum Simulators）
+   - <strong>来源局限/观察</strong>：本文 VQE 仅输出单一低能态，未探索构象系综
+   - <strong>核心假设</strong>：通过 VQE 的多次运行或变分量子态的叠加性质，可以采样多个低能构象，近似构象系综
+   - <strong>初步方法</strong>：对同一肽多次运行 VQE（不同初始参数），收集多个低能晶格构象，分析多样性
+   - <strong>验证方式</strong>：比较 VQE 采样构象的多样性（如 pairwise RMSD 分布）与 MD 采样的构象多样性
+   - <strong>可能的失败模式</strong>：VQE 收敛到相同或高度相似的构象，无法提供系综多样性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：量子生成模型用于构象分布学习（Quantum Generative Models for Conformational Distribution Learning）
+   - <strong>来源局限/观察</strong>：本文使用 VQE 优化而非生成模型，未利用量子态的概率性质
+   - <strong>核心假设</strong>：量子玻尔兹曼机或量子 GAN 可以学习肽的构象分布，生成多样化的低能构象
+   - <strong>初步方法</strong>：使用量子生成模型训练晶格构象分布，采样生成新构象，用 MD 能量验证
+   - <strong>验证方式</strong>：生成构象的能量分布与 MD 采样能量分布的重叠度
+   - <strong>可能的失败模式</strong>：量子生成模型训练不稳定，或生成构象物理不合理
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors report a hybrid quantum-classical study of 15 octapeptides from the RCSB PDB, using classical 100-ns MD simulations to characterize structural stability and energetic trends, and a lattice-based Hamiltonian optimized with VQE on the IBM quantum simulator to identify low-energy folded states. They report that VQE consistently converges to competitive low-energy conformations, and that quantitative comparisons using Cα RMSD and TM-score were performed against original PDB structures, with TM-scores also compared against AlphaFold predictions.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no numerical results, figures, tables, or methodological details are available</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, numerical data (energies, RMSD values, TM-scores), details of the VQE implementation (ansatz, number of qubits, error mitigation), MD simulation parameters, the list of 15 peptides and their PDB IDs, and the AlphaFold comparison protocol</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially interesting proof-of-concept application of VQE to peptide folding on a lattice model, benchmarked against classical MD and AlphaFold. However, the abstract alone provides insufficient quantitative evidence to evaluate the validity of the central claims. The comparison between MD and lattice Hamiltonian energies is acknowledged to be on different absolute scales, and the correlation-based evaluation is not described with any numerical support. The claim that VQE "consistently converges to competitive low-energy conformations" is not substantiated by any data in the abstract. The comparison with AlphaFold is mentioned but no results are given. The work may be of interest to the quantum biology and computational biophysics communities, but the case is not established from the provided material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in quantum computing applied to biology, particularly those working on VQE and quantum optimization for protein folding; computational biophysicists interested in hybrid quantum-classical methods; and method developers in structural biology who follow alternative approaches to structure prediction beyond deep learning methods.</li>
+<li><strong>Major strengths</strong> The study addresses a timely and important problem, namely the limitations of homology-based structure prediction methods for novel proteins, and proposes a quantum computing alternative. The use of a well-defined benchmark set of 15 octapeptides from the PDB is a reasonable design. The combination of classical MD, lattice Hamiltonian modeling, and comparison with AlphaFold provides a multi-method evaluation framework. The acknowledgment that absolute energy scales differ between MD and lattice models is honest and indicates awareness of the modeling limitations.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "The results demonstrate that VQE consistently converges to competitive low-energy conformations."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The central claim of the study is that VQE converges to competitive low-energy conformations, but no numerical data are presented in the abstract to support this. No energies, convergence metrics, or comparisons against any baseline are given. The phrase "competitive" is undefined.</li>
+<li><strong>Why it matters</strong> Without quantitative evidence, the reader cannot assess whether VQE actually performs well, how it compares to classical methods, or whether the results are statistically meaningful across the 15 peptides. This is the core contribution of the paper.</li>
+<li><strong>Resolution test</strong> Provide the numerical results, such as the VQE-obtained ground state energies, the correlation coefficients between MD and lattice energies, and a clear definition of "competitive" with respect to a defined baseline.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological clarity</li>
+<li><strong>Claim pointer</strong> "These results are then contrasted with energies obtained from a lattice-based Hamiltonian optimization using the VQE algorithm, executed on the IBM quantum simulator."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe the lattice model, the mapping from PDB structures to the lattice, the Hamiltonian construction, the VQE ansatz, the number of qubits, or the error mitigation strategy. Without these details, the method cannot be reproduced or evaluated for correctness.</li>
+<li><strong>Why it matters</strong> VQE results are highly sensitive to the ansatz, the Hamiltonian encoding, and the classical optimizer. The absence of these details prevents any assessment of whether the implementation is sound and whether the results are meaningful.</li>
+<li><strong>Resolution test</strong> Include a description of the lattice model, the Hamiltonian terms, the ansatz used, the number of qubits, the simulator settings, and any error mitigation techniques in the full manuscript.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Comparative validity</li>
+<li><strong>Claim pointer</strong> "Furthermore, the TM-scores obtained from the VQE predictions were compared with those obtained from the AlphaFold predictions."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The comparison with AlphaFold is mentioned but no results are given. It is unclear whether AlphaFold was run on the same 15 peptides, what version was used, and whether the comparison is favorable or unfavorable to VQE.</li>
+<li><strong>Why it matters</strong> The comparison with AlphaFold is a key differentiator of this work, as it positions VQE against a state-of-the-art classical method. Without results, the reader cannot judge whether the quantum approach offers any advantage or is merely a proof of concept.</li>
+<li><strong>Resolution test</strong> Provide the TM-score distributions for both VQE and AlphaFold predictions, with statistical tests if appropriate, and describe the AlphaFold protocol.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Title</li>
+<li><strong>Evidence pointer</strong> Title</li>
+<li><strong>Issue</strong> The title "A Quantum-Classical Analysis of Variability in Peptide Energies and Conformations" suggests a focus on variability, but the abstract does not describe any analysis of variability across peptides or across methods.</li>
+<li><strong>Required correction</strong> Either adjust the title to reflect the actual scope, or add a brief statement in the abstract about how variability is assessed.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Abstract text</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The phrase "paves the road" is non-standard English; the common expression is "paves the way."</li>
+<li><strong>Required correction</strong> Replace "paves the road" with "paves the way."</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Abstract text</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract states that 15 peptides were selected from the RCSB PDB, but no criteria for selection are given. It is unclear whether the selection was random, representative, or biased toward certain structural classes.</li>
+<li><strong>Required correction</strong> Add a sentence describing the selection criteria, such as sequence diversity, structural class, or absence of homologous sequences.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Abstract text</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract reports that VQE "consistently converges" but does not state how many of the 15 peptides showed convergence, or whether convergence was defined by a threshold.</li>
+<li><strong>Required correction</strong> Report the number of peptides for which VQE converged, and define the convergence criterion.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The absence of quantitative results, methodological details, and comparative data means the central claims cannot be evaluated.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The application of VQE to peptide folding on a lattice is not entirely new, but the combination with MD and AlphaFold comparison on a defined peptide set has some novelty. However, the abstract does not demonstrate a clear advance over existing work.</li>
+<li>Scientific importance: The problem of structure prediction for proteins without homologs is important, but the abstract does not show that VQE offers a practical advantage. The importance of the work is therefore not established.</li>
+<li>Interdisciplinary readership: The topic bridges quantum computing and structural biology, which could attract a broad readership, but the abstract is too thin to engage either community deeply.</li>
+<li>Technical soundness: Cannot be assessed from the abstract. The lack of methodological detail and numerical results prevents any evaluation of technical correctness.</li>
+<li>Readability for nonspecialists: The abstract is generally readable, but terms such as "lattice-based Hamiltonian" and "VQE" are used without explanation, which may hinder nonspecialist understanding.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents a plausible research direction but lacks the quantitative and methodological substance required to support the claims. A revised manuscript with full results, detailed methods, and a clear comparative analysis would be needed to assess the contribution.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that VQE "consistently converges to competitive low-energy conformations" is unsupported by any data in the abstract.</li>
+<li>The claim that the comparison between MD and lattice Hamiltonian energies enables a "correlation-based evaluation" is not supported by any reported correlation coefficient or statistical measure.</li>
+<li>The comparison with AlphaFold is mentioned but no results are provided, making the claim of a comparison unsupported.</li>
+<li>The statement that the work "paves the road for future quantum biology studies" is an overstatement given the lack of demonstrated results.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

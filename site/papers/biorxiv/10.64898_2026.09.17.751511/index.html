@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SurfGraphPro: Integrating Protein Language Models with Geometric Deep Learning On Coarse Protein Surfaces for Binding Site Prediction · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>SurfGraphPro: Integrating Protein Language Models with Geometric Deep Learning On Coarse Protein Surfaces for Binding Site Prediction</h1>
+      <div class="meta">Adela Habib; Li-Wei Hung; Kaetlyn Gibson; Martha Dix; Patrick Sum Guy Chain; Bin Hu</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-24
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.17.751511">原文</a>
+      </div>
+      <p class="one-liner">该文提出SurfGraphPro，将蛋白语言模型嵌入与粗粒化三角化蛋白表面几何深度学习结合，用于快速准确的结合位点预测，属于蛋白质结构计算问题，方法创新且可迁移，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Accurate and fast prediction of protein binding sites remains essential for understanding molecular interactions and facilitating protein engineering. Here, we present SurfGraphPro, a geometric deep learning approach that bridges protein language models with surface-based structural representations for a rapid binding interface prediction. Our method operates on coarse-graphed triangulated protein surfaces, utilizing solvent-excluded surface meshes downsampled into amino acid residue centered patches. Unlike existing approaches that rely on extensive physicochemical feature engineering, we leverage evolutionary information directly from protein language model embeddings, eliminating the need for computationally expensive multiple sequence alignments and hand-crafted features. This integration achieves on average $\sim18-28 \times$ speedup for proteins of $\sim$100 to a few 1000s of amino acids over current state-of-the-art surface-based model while maintaining comparable accuracy on diverse binding interfaces, including challenging antibody-antigen complexes. To our knowledge, this represents the first approach to integrate protein language model embeddings with coarse geometric surface representations for binding site prediction, demonstrating that learned evolutionary features coupled with geometric transformers can replace traditional feature engineering without sacrificing performance.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质结合位点的准确快速预测对于理解分子相互作用和促进蛋白质工程仍然至关重要。在此，我们提出SurfGraphPro，一种几何深度学习方法，将蛋白质语言模型与基于表面的结构表示相结合，用于快速结合界面预测。我们的方法在粗粒化三角化蛋白质表面上运行，利用溶剂排除表面网格，将其下采样为以氨基酸残基为中心的斑块。与依赖广泛物理化学特征工程的现有方法不同，我们直接利用蛋白质语言模型嵌入中的进化信息，从而无需计算成本高昂的多序列比对和手工设计特征。这种整合在约100到数千个氨基酸的蛋白质上，平均实现了比现有最先进的基于表面的模型约$\sim18-28 \times$的加速，同时在多样化的结合界面上（包括具有挑战性的抗体-抗原复合物）保持了相当的准确性。据我们所知，这是首次将蛋白质语言模型嵌入与粗几何表面表示相结合用于结合位点预测的方法，表明学习到的进化特征与几何变换器相结合可以替代传统特征工程而不牺牲性能。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：SurfGraphPro: Integrating Protein Language Models with Geometric Deep Learning On Coarse Protein Surfaces for Binding Site Prediction</li>
+<li><strong>作者</strong>：Adela Habib; Li-Wei Hung; Kaetlyn Gibson; Martha Dix; Patrick Sum Guy Chain; Bin Hu</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026（预印本日期 2026-09-24）</li>
+<li><strong>论文类型</strong>：预印本（方法学/算法研究）</li>
+<li><strong>领域</strong>：蛋白质结合位点预测 × 几何深度学习 × 蛋白质语言模型</li>
+<li><strong>关键词</strong>：binding site prediction, protein language model, geometric deep learning, protein surface, coarse-graining</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.09.17.751511</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（文中提及使用溶剂排除表面网格，具体数据集未在摘要中列出）</li>
+<li><strong>阅读日期</strong>：2026-09-24（基于预印本日期）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的结合位点预测子方向，首次将蛋白质语言模型（PLM）嵌入与粗粒化三角化蛋白表面几何表示结合，替代传统手工特征工程与 MSA 计算，面向快速结合界面预测。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>SurfGraphPro 通过将蛋白质语言模型嵌入与粗粒化三角化蛋白表面（残基中心 patch）结合，利用几何 transformer 在无需 MSA 和手工特征的情况下实现结合位点预测，在保持与现有最先进表面模型相当精度的同时获得约 18–28 倍加速。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在不依赖昂贵 MSA 和手工特征工程的前提下，快速且准确地预测蛋白质结合位点（binding interface）？</li>
+<li><strong>为什么重要</strong>：结合位点预测是理解分子相互作用、指导蛋白质工程的关键步骤；现有方法依赖计算昂贵的多序列比对（MSA）和大量物理化学特征工程，限制了高通量应用。</li>
+<li><strong>现有方法为何不足</strong>：现有最先进的表面模型（surface-based models）需要大量手工特征（如理化性质、几何描述符）和/或 MSA 计算，导致推理速度慢，难以扩展到大规模蛋白质组或工程筛选场景。</li>
+<li><strong>精确研究问题</strong>：Can protein language model embeddings, when integrated with coarse geometric surface representations, replace traditional feature engineering and MSA-based evolutionary information in binding site prediction without sacrificing accuracy?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文摘要框架，未经外部核验，标记为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列/进化信息方法</td>
+<td>PSSM、MSA-based 特征</td>
+<td>捕获进化保守性</td>
+<td>计算昂贵，需多序列比对</td>
+<td>本文用 PLM 嵌入替代</td>
+</tr>
+<tr>
+<td>手工特征工程 + 表面几何</td>
+<td>传统 surface-based models（如 dMaSIF 等）</td>
+<td>结构信息丰富</td>
+<td>特征工程繁琐，推理慢</td>
+<td>本文去除手工特征</td>
+</tr>
+<tr>
+<td>几何深度学习 + 表面网格</td>
+<td>三角化表面 + 几何 transformer</td>
+<td>直接利用 3D 结构</td>
+<td>依赖输入特征质量</td>
+<td>本文引入 PLM 嵌入作为特征</td>
+</tr>
+<tr>
+<td>PLM + 结构表示（本文）</td>
+<td>SurfGraphPro</td>
+<td>快速、无需 MSA、精度相当</td>
+<td>首次尝试，需验证泛化性</td>
+<td>本文主张的位置</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSA 计算昂贵</td>
+<td>多序列比对耗时，限制高通量</td>
+<td>传统方法依赖进化信息，需大量同源序列搜索</td>
+<td>摘要：「eliminating the need for computationally expensive multiple sequence alignments」</td>
+</tr>
+<tr>
+<td>手工特征工程繁琐</td>
+<td>需设计大量理化/几何特征</td>
+<td>表面模型依赖手工特征描述蛋白性质</td>
+<td>摘要：「Unlike existing approaches that rely on extensive physicochemical feature engineering」</td>
+</tr>
+<tr>
+<td>推理速度慢</td>
+<td>现有 SOTA 表面模型对 100–1000s 残基蛋白推理慢</td>
+<td>特征计算与模型复杂度高</td>
+<td>摘要：「~18–28× speedup ... over current state-of-the-art surface-based model」</td>
+</tr>
+<tr>
+<td>精度与速度难以兼得</td>
+<td>快速方法精度不足，高精度方法慢</td>
+<td>特征质量与计算成本权衡</td>
+<td>摘要：「maintaining comparable accuracy on diverse binding interfaces」</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：将蛋白溶剂排除表面（solvent-excluded surface）三角化网格下采样为以氨基酸残基为中心的 patch，每个 patch 使用蛋白质语言模型（PLM）嵌入作为节点特征，通过几何 transformer 在粗粒化表面上进行消息传递，输出每个残基的结合位点概率。</li>
+<li><strong>核心洞察</strong>：PLM 嵌入（如 ESM 系列）已隐式编码进化信息，可替代显式 MSA 计算；粗粒化表面（残基中心 patch）在保留几何信息的同时大幅降低计算复杂度，使几何 transformer 能在更小图上高效运行。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：对于结构相关预测任务，预训练语言模型的隐式进化知识可作为通用特征源，替代昂贵的多序列比对；粗粒化几何表示（如残基级 patch）是平衡精度与速度的有效策略，可能迁移到其他表面相关任务（如蛋白-蛋白对接、抗原表位预测）。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质结构（PDB 格式或等效），生成溶剂排除表面网格；PLM 嵌入（从序列直接计算）。</li>
+<li><strong>输出</strong>：每个残基的结合位点预测概率/标签。</li>
+<li><strong>模块</strong>：
+  1. 表面生成与粗粒化：计算溶剂排除表面，三角化网格，下采样为残基中心 patch。
+  2. 特征提取：从蛋白序列通过 PLM 生成嵌入，作为 patch 节点特征。
+  3. 几何 transformer：在粗粒化表面上进行消息传递，聚合几何与序列信息。
+  4. 预测头：输出残基级结合位点概率。</li>
+<li><strong>训练</strong>：监督学习，使用已知结合界面标签（具体损失函数、优化器未在摘要中提供）。</li>
+<li><strong>工具</strong>：未提供具体框架（如 PyTorch Geometric、dMaSIF 等未提及）。</li>
+<li><strong>反馈回路</strong>：未提及（无主动学习或迭代优化）。</li>
+<li><strong>假设</strong>：PLM 嵌入足以替代 MSA 提供的进化信息；残基中心 patch 保留足够几何信息用于结合位点识别。</li>
+<li><strong>流程</strong>：输入蛋白结构 → 生成溶剂排除表面 → 三角化并下采样为残基中心 patch → 从序列计算 PLM 嵌入作为节点特征 → 几何 transformer 消息传递 → 输出残基级结合位点预测。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>溶剂排除表面生成与三角化</td>
+<td>生成蛋白表面几何表示</td>
+<td>结合位点位于表面，需几何信息</td>
+<td>输入：蛋白结构；输出：三角化表面网格</td>
+<td>摘要：「utilizing solvent-excluded surface meshes」</td>
+<td>预期：无表面则无法进行几何建模（预期效应）</td>
+</tr>
+<tr>
+<td>粗粒化下采样（残基中心 patch）</td>
+<td>将密集网格简化为残基级 patch</td>
+<td>降低计算复杂度，加速推理</td>
+<td>输入：三角化网格；输出：残基中心 patch 图</td>
+<td>摘要：「downsampled into amino acid residue centered patches」</td>
+<td>预期：移除则计算量增大，可能降低加速效果（预期效应）</td>
+</tr>
+<tr>
+<td>PLM 嵌入特征</td>
+<td>提供进化信息替代 MSA</td>
+<td>避免昂贵 MSA 计算</td>
+<td>输入：蛋白序列；输出：每残基嵌入向量</td>
+<td>摘要：「leverage evolutionary information directly from protein language model embeddings」</td>
+<td>预期：移除则需回退到 MSA 或手工特征，速度优势丧失（预期效应）</td>
+</tr>
+<tr>
+<td>几何 transformer</td>
+<td>在粗粒化表面上聚合信息</td>
+<td>学习几何与序列联合表示</td>
+<td>输入：patch 图 + 节点特征；输出：残基级表示</td>
+<td>摘要：「geometric transformers」</td>
+<td>预期：移除则无法进行几何感知预测（预期效应）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：摘要未提供消融实验数据，以上影响均为预期效应，非实测消融结果。</p>
+</blockquote>
+<h2>09 关键公式符号</h2>
+<p>不适用（摘要中未提供具体公式或符号定义）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供（摘要未列出具体数据集名称、规模）。</li>
+<li><strong>指标</strong>：未提供（摘要提及「comparable accuracy」，但未给出具体指标如 AUC、DCC 等）。</li>
+<li><strong>基线</strong>：未提供（提及「current state-of-the-art surface-based model」，但未指明具体模型）。</li>
+<li><strong>评测协议</strong>：未提供。</li>
+<li><strong>算力/硬件</strong>：未提供。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>速度对比</td>
+<td>加速效果</td>
+<td>与 SOTA 表面模型对比，蛋白规模 100–1000s 残基</td>
+<td>~18–28× 加速</td>
+<td>方法显著更快</td>
+<td>未提供具体基准配置、硬件、实现细节</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>精度对比</td>
+<td>精度保持</td>
+<td>多种结合界面，含抗体-抗原复合物</td>
+<td>「comparable accuracy」</td>
+<td>精度与 SOTA 相当</td>
+<td>未提供具体数值、统计显著性、误差范围</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：摘要信息有限，无法评估更多实验细节。</p>
+</blockquote>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：结合位点预测（binding interface prediction），非全原子对接或构象生成。</li>
+<li><strong>输入依赖</strong>：需要蛋白结构（表面生成）和序列（PLM 嵌入），结构质量影响表面计算。</li>
+<li><strong>oracle/真值输入</strong>：未提及（可能使用已知结合界面标签，但未说明来源）。</li>
+<li><strong>端到端状态</strong>：非端到端，需先有结构；PLM 嵌入从序列计算，但表面生成依赖结构。</li>
+<li><strong>算力成本</strong>：推理加速显著（18–28×），但训练成本未提及。</li>
+<li><strong>历史数据依赖</strong>：PLM 预训练数据隐含进化信息，可能受训练分布影响。</li>
+<li><strong>模型依赖</strong>：依赖 PLM 嵌入质量，不同 PLM 可能影响结果。</li>
+<li><strong>最难情形</strong>：抗体-抗原复合物被提及为挑战性案例，但未提供具体性能。</li>
+<li><strong>不确定性</strong>：未提供置信度校准、误差分析或失败案例。</li>
+<li><strong>有边界的复述</strong>：SurfGraphPro 在给定蛋白结构时，通过 PLM 嵌入 + 粗粒化表面几何 transformer，可在保持与现有表面模型相当精度的前提下实现约 18–28 倍推理加速，适用于 100–1000s 残基蛋白，但具体精度数值、数据集和基线未在摘要中披露。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<blockquote>
+<p>作者提及的相关约束（非正式局限）：
+- 方法需要蛋白结构作为输入（表面生成依赖结构），不适用于仅序列信息场景。
+- 加速效果针对 100–1000s 残基蛋白，极端大小蛋白的扩展性未提及。</p>
+</blockquote>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摘要未提供具体精度数值</td>
+<td>「comparable accuracy」可能掩盖特定界面类型上的性能下降</td>
+<td>无法评估方法在难例（如抗体-抗原）上的真实表现</td>
+<td>要求作者提供分界面类型的 AUC/PRC 及与基线的统计检验</td>
+<td>摘要仅定性描述</td>
+</tr>
+<tr>
+<td>加速对比未说明硬件与实现细节</td>
+<td>18–28× 可能受实现优化、GPU 型号、批处理策略影响</td>
+<td>影响结果可复现性与公平性</td>
+<td>要求提供基准测试配置、代码、运行日志</td>
+<td>摘要未提供实验设置</td>
+</tr>
+<tr>
+<td>PLM 嵌入替代 MSA 的假设未验证</td>
+<td>对低同源性蛋白或孤儿蛋白，PLM 隐式进化信息可能不足</td>
+<td>影响方法泛化性</td>
+<td>在低同源性数据集上对比 PLM vs MSA 特征</td>
+<td>摘要仅声称「eliminating the need for MSA」</td>
+</tr>
+<tr>
+<td>粗粒化 patch 的几何信息损失未量化</td>
+<td>残基中心 patch 可能丢失精细几何细节，影响小分子或离子结合位点</td>
+<td>影响方法适用范围</td>
+<td>在不同结合位点类型（小分子、肽、蛋白）上分别评测</td>
+<td>摘要仅提及「diverse binding interfaces」</td>
+</tr>
+<tr>
+<td>未提供与序列-only 方法或 PLM-only 方法的对比</td>
+<td>加速优势可能主要来自粗粒化而非 PLM 集成</td>
+<td>无法分离各组件贡献</td>
+<td>消融实验：移除 PLM 或移除几何模块</td>
+<td>摘要未提供消融</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>PLM 嵌入替代 MSA</strong>：在结构相关预测任务中，预训练 PLM 的嵌入可直接作为进化信息源，避免 MSA 计算。可迁移到本课题的蛋白-蛋白对接、抗原表位预测等任务，减少预处理开销。
+2. <strong>粗粒化表面表示</strong>：将密集三角化表面下采样为残基中心 patch，在保留关键几何信息的同时大幅降低图规模。可迁移到构象采样或结合位点预测中，加速图神经网络推理。
+3. <strong>几何 transformer 与 PLM 特征融合</strong>：将序列级 PLM 嵌入与结构几何特征在图上联合建模，是处理「序列-结构」双模态信息的有效范式。可迁移到结构设计或功能预测任务。
+4. <strong>速度-精度权衡设计</strong>：通过粗粒化 + 预训练特征实现 18–28× 加速而不牺牲精度，提示在计算密集型任务中可优先考虑「预训练特征 + 简化几何」的组合策略。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与 dMaSIF（表面几何深度学习）和 ESM-IF（PLM 用于结构）等方向相关；本文结合两者，但用 PLM 替代手工特征。</li>
+<li><strong>组合方向</strong>：与 AlphaFold 的 PLM 嵌入（如 ESM 嵌入用于结构预测）思路一致，可组合用于端到端结构-功能预测管线。</li>
+<li><strong>冲突点</strong>：与依赖 MSA 的经典方法（如 PSSM-based 特征）形成对比，本文主张 PLM 可完全替代 MSA，需在低同源性场景验证。</li>
+<li><strong>可迁移领域</strong>：蛋白-蛋白相互作用预测、抗体设计、酶工程中的底物结合位点识别、虚拟筛选中的口袋检测。</li>
+<li><strong>候选方向</strong>：将 SurfGraphPro 的粗粒化表面 + PLM 策略迁移到构象采样中的结合口袋动态检测，或用于 MD 模拟轨迹上的结合位点演化分析。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：PLM-Enhanced Coarse Surface for Dynamic Binding Pocket Detection in MD Trajectories
+   - <strong>来源局限/观察</strong>：SurfGraphPro 仅用静态结构；MD 模拟可提供构象 ensemble，但现有结合位点预测多为单结构。
+   - <strong>核心假设</strong>：在 MD 轨迹的多个帧上应用粗粒化表面 + PLM 嵌入，可捕捉结合口袋的动态变化，提高预测鲁棒性。
+   - <strong>相对本文的增量</strong>：将静态预测扩展到动态构象，利用时间信息。
+   - <strong>初步方法</strong>：对 MD 轨迹每帧生成表面 patch，用 SurfGraphPro 式模型预测，聚合时间序列结果。
+   - <strong>验证方式</strong>：在 apo/holo 构象数据集上对比单帧 vs 多帧预测精度。
+   - <strong>可能的失败模式</strong>：MD 采样不足或构象变化过大导致表面 patch 不稳定。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Cross-Modal PLM-Surface Pretraining for Generalizable Binding Site Prediction
+   - <strong>来源局限/观察</strong>：SurfGraphPro 使用冻结 PLM 嵌入，未针对表面任务微调；PLM 与几何模块可能未充分对齐。
+   - <strong>核心假设</strong>：在大型蛋白-配体复合物数据集上联合预训练 PLM 与表面几何编码器，可提升泛化性。
+   - <strong>相对本文的增量</strong>：引入跨模态预训练，而非简单拼接特征。
+   - <strong>初步方法</strong>：设计对比学习目标，对齐 PLM 序列嵌入与表面几何嵌入。
+   - <strong>验证方式</strong>：在低同源性测试集和抗体-抗原集上评测。
+   - <strong>可能的失败模式</strong>：预训练数据偏差或模态对齐困难。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Uncertainty-Aware Binding Site Prediction with Ensemble of Coarse Surfaces
+   - <strong>来源局限/观察</strong>：摘要未提及预测不确定性；结合位点预测在难例（如抗体-抗原）上可能不可靠。
+   - <strong>核心假设</strong>：通过多尺度粗粒化（不同 patch 大小）集成，可提供不确定性估计并提升精度。
+   - <strong>相对本文的增量</strong>：增加不确定性量化，提升决策可靠性。
+   - <strong>初步方法</strong>：训练多个不同粗粒化尺度的模型，用 MC-dropout 或 deep ensemble 估计不确定性。
+   - <strong>验证方式</strong>：在难例子集上评估校准误差和精度。
+   - <strong>可能的失败模式</strong>：多尺度集成增加计算成本，抵消加速优势。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Transferring SurfGraphPro Features to Protein-Protein Docking Scoring
+   - <strong>来源局限/观察</strong>：结合位点预测是对接的前置步骤；SurfGraphPro 的粗粒化表面特征可能直接用于对接打分。
+   - <strong>核心假设</strong>：PLM + 表面几何特征可作为 docking scoring 的输入，替代手工能量项。
+   - <strong>相对本文的增量</strong>：将预测特征迁移到对接任务，扩展应用范围。
+   - <strong>初步方法</strong>：用 SurfGraphPro 的中间层特征训练 docking 排序模型。
+   - <strong>验证方式</strong>：在标准 docking benchmark 上对比传统打分函数。
+   - <strong>可能的失败模式</strong>：特征缺乏物理化学信息，难以捕捉结合亲和力。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present SurfGraphPro, a geometric deep learning method that integrates protein language model embeddings with coarse-grained triangulated protein surface representations for binding site prediction. They claim an average 18 to 28 fold speedup over a current state-of-the-art surface-based model for proteins ranging from approximately 100 to a few thousand amino acids, while maintaining comparable accuracy across diverse binding interfaces including antibody-antigen complexes. They further claim this is the first approach to combine protein language model embeddings with coarse geometric surface representations for this task, and that learned evolutionary features can replace traditional feature engineering without performance loss.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, benchmark definitions, baseline specifications, or methodological details are available</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, benchmark datasets, baseline model specifications, performance tables, figures, ablation studies, and code availability</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially interesting methodological direction, namely the combination of protein language model embeddings with coarse surface representations for binding site prediction. However, the claims of speedup, accuracy parity, and novelty cannot be evaluated from the abstract alone. The speedup figures are presented without benchmark conditions, hardware specifications, or baseline versions. The accuracy claim is qualitative and lacks numerical support. The novelty claim is strong and would require a thorough literature comparison. The abstract is well written and the motivation is clear, but the evidence base is insufficient to assess technical soundness or establish the core claims.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians working on protein function prediction, structural bioinformatics researchers developing geometric deep learning methods, and experimentalists who require fast and accurate binding site annotations for protein engineering or drug discovery. The potential speed advantage would be of particular interest to those working on large-scale proteomic screens or high-throughput annotation pipelines.</li>
+<li><strong>Major strengths</strong> The methodological concept is clear and well motivated. The use of protein language model embeddings to replace multiple sequence alignments and hand-crafted features is a sensible direction given the current trajectory of the field. The focus on coarse-grained surfaces for computational efficiency is pragmatic. The abstract is concise and readable for a broad audience.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The method achieves on average 18 to 28 fold speedup for proteins of approximately 100 to a few thousand amino acids over current state-of-the-art surface-based model while maintaining comparable accuracy.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The speedup and accuracy claims are presented without any numerical data, benchmark definitions, or experimental conditions. No baseline model is named, no dataset is specified, and no performance metrics are reported. The range of 18 to 28 fold is stated but the conditions under which these values were obtained are entirely unclear.</li>
+<li><strong>Why it matters</strong> Speedup claims are highly sensitive to implementation details, hardware, batch sizes, and the specific baseline chosen. Without these details, the claim cannot be verified or reproduced. Similarly, comparable accuracy is a qualitative statement that requires quantitative metrics such as precision, recall, DCC, or area under the precision recall curve on defined benchmark sets.</li>
+<li><strong>Resolution test</strong> Provide a benchmark table with named datasets, baseline models, hardware specifications, and full performance metrics. Report runtime measurements with standard deviations and specify the exact versions of all software and models used.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Novelty substantiation</li>
+<li><strong>Claim pointer</strong> To our knowledge, this represents the first approach to integrate protein language model embeddings with coarse geometric surface representations for binding site prediction.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The novelty claim is stated without any literature comparison. The abstract does not reference prior work that may have combined language model features with surface representations, nor does it explain how the proposed integration differs from existing methods that use language model embeddings with other structural encodings such as graphs or voxels.</li>
+<li><strong>Why it matters</strong> Novelty claims are central to the contribution of the work. Without a systematic comparison to prior art, the claim cannot be assessed. The phrase to our knowledge is insufficient for a strong novelty assertion in a field with rapid publication activity.</li>
+<li><strong>Resolution test</strong> Include a dedicated related work section that surveys existing methods combining language model embeddings with structural representations, and clearly articulate the specific differences and advantages of the proposed approach.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical reproducibility</li>
+<li><strong>Claim pointer</strong> The method operates on coarse-grained triangulated protein surfaces, utilizing solvent-excluded surface meshes downsampled into amino acid residue centered patches.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The methodological description is too brief to assess technical soundness. Key details such as the surface mesh generation algorithm, the downsampling procedure, the patch construction, the geometric transformer architecture, and the integration mechanism for language model embeddings are not described.</li>
+<li><strong>Why it matters</strong> Without these details, the method cannot be evaluated for correctness, efficiency, or generalizability. The claim that learned evolutionary features can replace traditional feature engineering requires an understanding of how the language model embeddings are incorporated and whether information loss occurs during surface coarsening.</li>
+<li><strong>Resolution test</strong> Provide a complete methods section with architectural diagrams, hyperparameter settings, training procedures, and a clear description of how surface meshes are generated and downsampled.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract wording</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The phrase coarse-graphed is likely a typographical error for coarse-grained.</li>
+<li><strong>Required correction</strong> Correct the spelling to coarse-grained.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Scope clarity</li>
+<li><strong>Affected element</strong> Benchmark scope</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract mentions diverse binding interfaces including challenging antibody-antigen complexes but does not specify what other types of interfaces were evaluated.</li>
+<li><strong>Required correction</strong> List the categories of binding interfaces included in the evaluation, such as protein protein, protein peptide, protein nucleic acid, or small molecule binding sites.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Comparison fairness</li>
+<li><strong>Affected element</strong> Baseline comparison</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The comparison is made to a single state-of-the-art surface-based model. It is unclear whether comparisons to non surface based methods were performed.</li>
+<li><strong>Required correction</strong> Clarify whether additional baselines were evaluated and, if so, report those results. If only one baseline was used, justify this choice.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, and R1-M3 are all blocking. The speedup and accuracy claims require quantitative evidence, the novelty claim requires a literature survey, and the method description requires full technical detail. None of these can be resolved from the abstract alone.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: the direction is plausible but the novelty claim is unsubstantiated. Scientific importance: potentially high if the speed and accuracy claims hold, but this cannot be determined. Interdisciplinary readership: the abstract is accessible to a broad audience, but the lack of quantitative results limits its impact. Technical soundness: not assessable from the abstract. Readability for nonspecialists: the abstract is well written and understandable, though the term geometric transformer may require familiarity with the field.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract describes a promising direction, but the core claims of speedup, accuracy parity, and novelty require the full manuscript for evaluation. A supportive assessment would be possible if the technical concerns are resolved with quantitative results and complete methodological details.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The 18 to 28 fold speedup claim is unsupported without benchmark conditions and baseline specifications.</li>
+<li>The comparable accuracy claim is unsupported without quantitative performance metrics.</li>
+<li>The first approach novelty claim is unverifiable without a literature comparison.</li>
+<li>The claim that learned evolutionary features can replace traditional feature engineering without sacrificing performance is unsupported without ablation studies or comparative feature analysis.</li>
+<li>The generalizability across diverse binding interfaces is unverifiable without a description of the evaluation datasets.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

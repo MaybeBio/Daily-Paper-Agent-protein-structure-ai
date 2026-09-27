@@ -1,0 +1,68 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full-text methods, figures, or supplementary materials were available for evaluation
+- **Shared manuscript claim summary** The authors report that fecal microbiota transplantation (FMT) from children with ASD into antibiotic-treated mice induces ASD-like behaviors, neuroinflammation, impaired neurogenesis, synaptic and BBB protein changes, and phosphoproteomic alterations enriched in synapse-related pathways. In silico simulations (AF3, HADDOCK) suggest phosphorylation-induced conformational changes in SHANK3 and SRRM2 and reduced SHANK3 binding affinity. Integrative screening identifies FNDC3A as a candidate susceptibility protein, verified in mouse hippocampus and human plasma. The authors propose a framework combining in silico and wet-lab approaches to implicate gut microbiota-driven phosphorylation remodeling in ASD pathogenesis.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, statistical details, or supplementary data provided
+- **Missing materials affecting confidence** Full methods, all experimental figures and tables, statistical analyses, sample sizes, animal model details, FMT protocol specifics, phosphoproteomic data processing, AF3/HADDOCK parameters, validation data, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents a broad and ambitious claim linking gut microbiota to ASD pathogenesis via phosphorylation-induced protein structural changes. The conceptual framework is interesting and potentially novel, but the abstract alone provides insufficient evidence to evaluate the rigor of the experimental design, the validity of the in silico predictions, or the strength of the causal claims. Several statements appear to overreach relative to what can be supported by the described experiments, particularly regarding structural remodeling and binding affinity changes inferred from simulations without experimental validation.
+- **Who would be interested in the results, and why** Researchers in gut-brain axis biology, autism neurobiology, phosphoproteomics, and computational structural biology would find the integrative approach of interest. The potential link between microbiota-driven post-translational modifications and synaptic protein structure could attract those studying environmental modifiers of neurodevelopmental disorders.
+- **Major strengths** The study addresses an important and timely question regarding microbiota-host interactions in ASD. The combination of FMT, phosphoproteomics, behavioral assays, and in silico structural prediction represents a multidisciplinary approach. The identification of FNDC3A as a candidate protein with validation in both mouse and human samples adds translational relevance.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Causal inference
+  - **Claim pointer** The abstract states that "ASD pathogenesis may be attributable not only to the dysregulation of classical ASD susceptibility genes but also to gut microbiota-driven post-translational phosphorylation remodeling of multiple protein structures."
+  - **Evidence pointer** Abstract, Results section (location not provided)
+  - **Concern** The causal chain from ASD-derived microbiota to phosphorylation changes to structural remodeling to behavioral phenotypes is asserted but not demonstrated. The abstract describes correlations and in silico predictions, but no experiments are described that directly test whether the observed phosphorylation changes cause the structural anomalies or the behavioral outcomes.
+  - **Why it matters** The central thesis of the paper rests on a causal mechanism. Without direct experimental manipulation (e.g., phospho-mimetic or phospho-dead mutants, kinase inhibition, or rescue experiments), the claim that phosphorylation remodeling is a "pathogenic driver" is not established.
+  - **Resolution test** Provide experimental evidence where blocking or mimicking specific phosphorylation events alters protein structure, binding, or ASD-related phenotypes in vivo or in vitro.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Structural prediction validity
+  - **Claim pointer** The abstract states that "in silico structural simulations using AlphaFold3 (AF3) and HADDOCK further supported that ASD-FMT may promote abnormal phosphorylation, potentially remodeling SHANK3 and SRRM2 conformations and weakening the binding affinity of SHANK3."
+  - **Evidence pointer** Abstract, Results section (location not provided)
+  - **Concern** The use of AF3 and HADDOCK to predict phosphorylation-induced conformational changes and binding affinity alterations is presented as supportive evidence, but no experimental validation (e.g., circular dichroism, NMR, X-ray crystallography, surface plasmon resonance, or cellular binding assays) is described. The phrase "may promote" and "potentially remodeling" indicates uncertainty, yet the conclusion section elevates this to a plausible molecular mechanism.
+  - **Why it matters** Computational predictions of phosphorylation effects on protein structure are notoriously unreliable without experimental confirmation. The abstract does not disclose whether the simulations were benchmarked, whether multiple phosphorylation sites were considered, or whether the predicted affinity changes are within biologically meaningful ranges.
+  - **Resolution test** Provide experimental validation of at least one predicted structural or binding change, or clearly reframe the in silico results as hypothesis-generating rather than supportive evidence.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical and methodological transparency
+  - **Claim pointer** The abstract reports "differentially phosphorylated proteins were predominantly enriched in synapse-related pathways" and "ASD-derived microbiota markedly reduced synaptic density, downregulated the synaptic proteins SYP and PSD-95, and inhibited the expression of BBB tight junction proteins."
+  - **Evidence pointer** Abstract, Results section (location not provided)
+  - **Concern** No statistical details, effect sizes, sample sizes, or multiple-testing corrections are provided for any of the reported differences. The term "markedly" is used without quantitative support. The phosphoproteomic analysis criteria (fold-change threshold, FDR, number of replicates) are not stated.
+  - **Why it matters** Without these details, the robustness of the reported differences cannot be assessed. The abstract's claims of enrichment and downregulation may be driven by a small number of outliers or inadequate statistical power.
+  - **Resolution test** Include key statistical parameters in the abstract or indicate where they are available in the full text, and ensure all reported differences meet pre-specified significance thresholds.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of terminology
+  - **Affected element** "aberrant phosphorylation" and "protein structural anomalies"
+  - **Evidence pointer** Abstract, Title and Introduction (location not provided)
+  - **Issue** The terms "aberrant phosphorylation" and "protein structural anomalies" are used without operational definitions. It is unclear what constitutes "aberrant" (site-specific? stoichiometric? temporal?) and what magnitude of structural change qualifies as an "anomaly."
+  - **Required correction** Define these terms operationally in the abstract or indicate where definitions are provided in the full text.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Generalizability
+  - **Affected element** "plasma samples from children with ASD"
+  - **Evidence pointer** Abstract, Results section (location not provided)
+  - **Issue** The validation of FNDC3A in human plasma is mentioned, but the sample size, ASD subgroup characteristics, and control group composition are not described. It is unclear whether the finding is specific to certain ASD subtypes or confounded by medication or comorbidity.
+  - **Required correction** Provide sample characteristics and indicate whether the finding was replicated across ASD subgroups.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Integration of in silico and wet-lab data
+  - **Affected element** "established an innovative research framework that integrates in silico analyses with wet-lab experiments"
+  - **Evidence pointer** Abstract, Conclusion (location not provided)
+  - **Issue** The claim of an "innovative framework" is not substantiated by a description of how the in silico and wet-lab components were iteratively integrated. It is unclear whether the simulations guided the experiments or were performed post hoc.
+  - **Required correction** Briefly describe the integration workflow or temper the claim of innovation.
+
+## Risk / unsupported claims
+- The causal claim that gut microbiota-driven phosphorylation remodeling is a "pathogenic driver" of ASD is not supported by the described experimental design.
+- The assertion that AF3 and HADDOCK simulations "supported" the mechanism is overstated given the lack of experimental validation of structural or binding changes.
+- The claim that FNDC3A is a "susceptibility-associated protein" is not supported by genetic or functional evidence; the abstract only reports differential expression.
+- The statement that the study "reveals a plausible molecular mechanism underlying ASD" is premature given the correlational nature of the data and the speculative in silico component.
+- The generalizability of findings from a single FMT model to human ASD pathogenesis is not established.

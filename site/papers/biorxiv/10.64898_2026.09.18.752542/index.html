@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NeoToxPred: a fine-tuned protein language model with orthologous and length-stratified negative controls for robust toxicity classification · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">5</span>
+    <div>
+      <h1>NeoToxPred: a fine-tuned protein language model with orthologous and length-stratified negative controls for robust toxicity classification</h1>
+      <div class="meta">Seongmin Kim; Min-Seok Kim; Chungoo PARK</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-24
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.18.752542">原文</a>
+      </div>
+      <p class="one-liner">该文开发了基于ESM-C蛋白语言模型的毒素毒性分类器NeoToxPred，虽以蛋白质序列为对象并采用AI方法，但核心问题是毒性分类而非蛋白质结构计算（如结构预测、构象采样或设计），结构仅作为背景提及，故与本课题关联较弱。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Although protein toxins represent valuable pharmacological templates, predicting toxicity directly from primary sequences is inherently challenging because of their evolutionary dynamics. Active toxins and their benign homologues frequently share identical structural scaffolds and differ by only a few key residue substitutions, making global sequence similarity an unreliable indicator of function. Conventional predictors compound this challenge through flawed negative-set designs that sample non-toxic controls from arbitrary background proteins and reduce redundancy through identity-based clustering under random partitioning. This practice introduces global confounding shortcuts that inflate benchmark performance while failing to capture true functional boundaries. To address these limitations, we developed NeoToxPred, a sequence-only binary classifier that fine-tunes the pretrained ESM-C 600M protein language model end-to-end with a six-layer feed-forward classification head. Although the neural architecture is intentionally standard to ensure computational scalability, the core novelty of the framework lies in its rigorous training-data curation: (i) an orthologous negative set drawn from the same InterPro families under controlled taxonomic proximity to eliminate phylogenetic shortcuts, (ii) a length-stratified negative control set to eliminate sequence length as a predictive cue, and (iii) a strict family-disjoint splitting strategy to prevent performance inflation caused by pattern memorization. On held-out internal benchmarks, NeoToxPred achieved a Matthews correlation coefficient (MCC) of 0.897 and an F1-score of 0.949 on long sequences and an MCC of 0.869 on short peptides, decisively outperforming five recent predictors while maintaining stable performance across varying sequence lengths and evolutionary distances. In a genome-scale external validation using the previously unseen proteome of the redfin waspfish (Paracentropogon rubripinnis), NeoToxPred successfully recovered 11 of 16 empirically validated toxins without collapsing into a single-class prediction, whereas structure-dependent baselines identified substantially fewer positives. Computational alanine scanning further confirmed that the framework contextually localizes its predictions to functionally active residues. Taken together, these findings suggest that systematic negative-set design should be prioritized alongside algorithmic complexity in biological sequence classification.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">尽管蛋白质毒素代表了有价值的药理学模板，直接从初级序列预测毒性因其进化动态而固有挑战。活性毒素与其良性同源物通常共享相同的结构支架，仅因少数关键残基替换而不同，使得全局序列相似性成为功能不可靠的指标。传统预测器通过有缺陷的负集设计加剧了这一挑战，这些设计从任意背景蛋白质中采样非毒性对照，并在随机划分下通过基于同一性的聚类减少冗余。这种做法引入了全局混淆捷径，虚增基准性能，同时未能捕捉真实的功能边界。为解决这些局限性，我们开发了NeoToxPred，一种仅基于序列的二元分类器，通过六层前馈分类头对预训练的ESM-C 600M蛋白质语言模型进行端到端微调。尽管神经架构有意保持标准以确保计算可扩展性，该框架的核心创新在于其严格的训练数据整理：（i）从相同InterPro家族中在受控分类邻近性下抽取的正直同源负集，以消除系统发育捷径，（ii）长度分层负对照集，以消除序列长度作为预测线索，以及（iii）严格的家族不相交分割策略，以防止模式记忆导致的性能膨胀。在保留的内部基准上，NeoToxPred在长序列上实现了马修斯相关系数（MCC）为0.897和F1分数为0.949，在短肽上实现了MCC为0.869，显著优于五种近期预测器，同时在不同序列长度和进化距离下保持稳定性能。在使用先前未见过的红鳍鲉（Paracentropogon rubripinnis）蛋白质组进行的基因组规模外部验证中，NeoToxPred成功恢复了16个经验验证毒素中的11个，而未坍缩为单类预测，而依赖结构的基线识别出的阳性显著较少。计算丙氨酸扫描进一步确认，该框架将其预测上下文定位到功能活性残基。综合来看，这些发现表明，在生物序列分类中，系统负集设计应优先于算法复杂性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：NeoToxPred: a fine-tuned protein language model with orthologous and length-stratified negative controls for robust toxicity classification</li>
+<li><strong>作者</strong>：Seongmin Kim; Min-Seok Kim; Chungoo PARK</li>
+<li><strong>单位</strong>：未提供（推测为韩国机构，作者姓名拼写为韩国姓名）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026（预印本日期 2026-09-24）</li>
+<li><strong>论文类型</strong>：方法学/基准测试研究（预印本）</li>
+<li><strong>领域</strong>：蛋白质毒性预测 × 蛋白质语言模型（PLM）微调 × 训练数据设计</li>
+<li><strong>关键词</strong>：toxicity prediction, protein language model, ESM-C, negative-set design, orthologous controls, length stratification, family-disjoint splitting</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.18.752542</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（提及 InterPro families、红鳍鲉（Paracentropogon rubripinnis）蛋白组作为外部验证集）</li>
+<li><strong>阅读日期</strong>：2026-10-05（假设）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质序列功能预测 × 深度学习」交叉方向，核心贡献不在模型架构而在训练数据负样本设计策略。对蛋白质结构相关计算研究（结构预测、构象采样、分子对接等）的可迁移点在于：负样本/训练集设计中的混淆因子控制（如长度、进化距离、家族重叠）同样适用于结构预测中的训练集构建、构象采样中的能量函数训练数据平衡、以及分子对接中的诱饵集设计。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对蛋白质毒性预测中负样本设计缺陷导致的性能虚高问题，NeoToxPred 通过微调 ESM-C 600M 蛋白语言模型，并采用直系同源负样本、长度分层负对照和家族不相交划分三种数据策展策略，在内部基准和外部基因组规模验证中取得优于五个现有预测器的分类性能（MCC 0.897/0.869），且预测定位到功能活性残基。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否仅从蛋白质一级序列可靠地预测毒性，同时避免因训练数据设计缺陷导致的性能虚高和泛化失败？</li>
+<li><strong>为什么重要</strong>：蛋白质毒素是药理学模板的重要来源，但活性毒素与其良性同源物常共享结构支架、仅差少数关键残基，全局序列相似性无法可靠区分功能。准确预测毒性对药物开发、毒理学评估和基因组功能注释有直接价值。</li>
+<li><strong>现有方法为何不足</strong>：现有预测器（1）负样本从任意背景蛋白中采样，引入全局混淆捷径（如序列长度、氨基酸组成、进化距离等非功能特征）；（2）冗余去除采用基于序列一致性的聚类后随机划分，导致训练/测试集间存在家族重叠，模型可通过模式记忆而非功能理解获得高分。</li>
+<li><strong>精确研究问题</strong>：Can a sequence-only toxicity classifier trained with orthologous and length-stratified negative controls, under family-disjoint splitting, achieve robust performance on unseen proteomes without collapsing into single-class predictions?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文引言和讨论的框架，标注为「仅本文框架」，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期序列比对方法</td>
+<td>BLAST、HMMER 基于同源搜索</td>
+<td>可解释、计算快</td>
+<td>无法区分同源但功能不同的蛋白（毒素 vs 良性同源物）</td>
+<td>本文指出其根本局限</td>
+</tr>
+<tr>
+<td>传统机器学习</td>
+<td>SVM、随机森林基于手工特征（组成、理化性质）</td>
+<td>可解释、轻量</td>
+<td>特征工程有限，无法捕捉深层序列模式</td>
+<td>本文未直接对比</td>
+</tr>
+<tr>
+<td>深度学习序列模型</td>
+<td>CNN、LSTM 基于 one-hot 或 embedding</td>
+<td>自动特征学习</td>
+<td>数据需求大，易过拟合小数据集</td>
+<td>本文未直接对比</td>
+</tr>
+<tr>
+<td>蛋白质语言模型</td>
+<td>ESM 系列、ProtTrans 等预训练后微调</td>
+<td>利用大规模无监督预训练知识</td>
+<td>微调数据质量决定上限；负样本设计缺陷仍存在</td>
+<td>本文采用 ESM-C 600M 微调</td>
+</tr>
+<tr>
+<td>结构依赖方法</td>
+<td>AlphaFold 结构 + 结构特征分类</td>
+<td>利用结构信息</td>
+<td>计算成本高；结构预测误差传播；对短肽不适用</td>
+<td>本文对比中作为基线，性能低于 NeoToxPred</td>
+</tr>
+<tr>
+<td>本文方法</td>
+<td>ESM-C 微调 + 严格负样本设计</td>
+<td>序列唯一输入、数据策展为核心创新</td>
+<td>依赖预训练模型；负样本设计需领域知识</td>
+<td>本文位置：强调数据设计优先于架构复杂度</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>负样本采样偏差</td>
+<td>从任意背景蛋白采样非毒性蛋白，引入非功能混淆特征</td>
+<td>任意背景蛋白与毒素在序列长度、氨基酸组成、进化起源上系统性不同，模型可学习这些捷径而非功能边界</td>
+<td>摘要：「conventional predictors compound this challenge through flawed negative-set designs that sample non-toxic controls from arbitrary background proteins」</td>
+</tr>
+<tr>
+<td>冗余去除不当</td>
+<td>基于序列一致性聚类后随机划分，训练/测试集家族重叠</td>
+<td>同家族蛋白共享模式，模型可记忆家族特征而非学习功能决定因素</td>
+<td>摘要：「reduce redundancy through identity-based clustering under random partitioning」</td>
+</tr>
+<tr>
+<td>性能虚高</td>
+<td>基准测试 MCC/F1 高但外部泛化差</td>
+<td>全局混淆捷径（长度、组成、进化距离）在随机划分下被模型利用</td>
+<td>摘要：「inflate benchmark performance while failing to capture true functional boundaries」</td>
+</tr>
+<tr>
+<td>单类崩溃</td>
+<td>外部验证中模型倾向预测单一类别</td>
+<td>负样本设计缺陷导致决策边界偏移</td>
+<td>摘要：「without collapsing into a single-class prediction」暗示现有方法存在此问题</td>
+</tr>
+<tr>
+<td>短肽预测困难</td>
+<td>短肽（&lt;30 aa）毒性预测精度低</td>
+<td>短肽缺乏足够序列上下文，结构信息有限</td>
+<td>摘要：「MCC of 0.869 on short peptides」低于长序列的 0.897，但作者声称仍优于基线</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<ul>
+<li>使用预训练 ESM-C 600M 蛋白语言模型，微调一个六层前馈分类头，进行端到端二分类（毒性/非毒性）。</li>
+<li>训练数据策展包含三个关键设计：直系同源负样本、长度分层负对照、家族不相交划分。</li>
+</ul>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>数据设计 &gt; 架构复杂度</strong>：作者的核心主张是，在生物序列分类中，训练数据的负样本设计质量对泛化性能的影响远大于模型架构的复杂度。通过消除进化距离、序列长度和家族重叠三个混淆因子，即使使用标准架构也能获得鲁棒性能。</li>
+<li><strong>直系同源负样本</strong>：从同一 InterPro 家族中选取直系同源蛋白作为负样本，确保正负样本共享结构支架，迫使模型学习真正区分毒性的关键残基而非家族特征。</li>
+<li><strong>长度分层</strong>：控制正负样本的长度分布，消除长度作为预测线索。</li>
+<li><strong>家族不相交划分</strong>：确保训练/验证/测试集在家族层面完全分离，防止模式记忆。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>对于蛋白质结构相关计算研究（结构预测、构象采样、分子对接），本文的核心教训可迁移为：<strong>训练数据的负样本/困难样本设计决定了模型学习到的物理/生物化学边界</strong>。例如，在分子对接中，诱饵集（decoys）的设计质量直接影响打分函数的区分能力；在构象采样中，负构象（非天然态）的采样策略影响能量面的学习质量。本文的「直系同源负样本」思路可类比为「近同源诱饵」——选择与正确解结构相似但功能/结合模式不同的样本作为负样本，迫使模型学习更精细的判别特征。</li>
+</ul>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质一级序列（氨基酸序列）</li>
+<li><strong>输出</strong>：二分类概率（毒性/非毒性）</li>
+<li><strong>模型</strong>：ESM-C 600M（预训练蛋白语言模型）+ 六层前馈分类头</li>
+<li><strong>训练策略</strong>：端到端微调（fine-tuning）</li>
+<li><strong>数据策展流程</strong>：
+  1. 正样本：已知毒性蛋白（来源未详述）
+  2. 负样本集 1（直系同源）：从正样本所属 InterPro 家族中选取直系同源非毒性蛋白，控制分类学距离
+  3. 负样本集 2（长度分层）：从背景蛋白中按长度分布匹配采样，确保正负样本长度分布一致
+  4. 划分策略：家族不相交（family-disjoint）划分训练/验证/测试集</li>
+<li><strong>评估</strong>：</li>
+<li>内部基准：与五个现有预测器对比，指标包括 MCC、F1-score</li>
+<li>外部验证：红鳍鲉（Paracentropogon rubripinnis）全蛋白组，16 个经验验证毒素</li>
+<li>可解释性：计算丙氨酸扫描（computational alanine scanning）定位功能活性残基</li>
+<li><strong>假设</strong>：</li>
+<li>序列包含足够信息区分毒性与非毒性（在控制混淆因子后）</li>
+<li>ESM-C 预训练表示可被微调适应毒性分类任务</li>
+<li>直系同源负样本能有效消除进化距离混淆</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESM-C 600M 预训练模型</td>
+<td>提取序列的深层语义表示</td>
+<td>预训练捕获了广泛的蛋白质序列-结构-功能关系，为下游分类提供丰富特征</td>
+<td>输入：氨基酸序列；输出：每残基/序列级 embedding</td>
+<td>摘要：「fine-tunes the pretrained ESM-C 600M protein language model」</td>
+<td>预期：替换为更小模型或非预训练模型将显著降低性能（未提供消融实验）</td>
+</tr>
+<tr>
+<td>六层前馈分类头</td>
+<td>将 embedding 映射为二分类 logits</td>
+<td>简单分类头足以在高质量表示上完成分类，验证「数据设计 &gt; 架构」主张</td>
+<td>输入：ESM-C 输出 embedding；输出：毒性概率</td>
+<td>摘要：「six-layer feed-forward classification head」</td>
+<td>预期：增加复杂度不会显著提升性能（作者主张，未提供消融）</td>
+</tr>
+<tr>
+<td>直系同源负样本集</td>
+<td>提供与正样本共享结构支架但功能不同的负样本</td>
+<td>消除进化距离混淆，迫使模型学习功能决定残基</td>
+<td>输入：InterPro 家族成员序列；输出：负样本序列集</td>
+<td>摘要：「orthologous negative set drawn from the same InterPro families under controlled taxonomic proximity」</td>
+<td>预期：移除后模型将依赖进化距离捷径，外部泛化下降（核心主张，未提供单独消融）</td>
+</tr>
+<tr>
+<td>长度分层负对照</td>
+<td>匹配正负样本长度分布</td>
+<td>消除序列长度作为预测线索</td>
+<td>输入：背景蛋白序列；输出：长度匹配的负样本集</td>
+<td>摘要：「length-stratified negative control set to eliminate sequence length as a predictive cue」</td>
+<td>预期：移除后模型可能学习长度特征，短肽预测性能下降（未提供单独消融）</td>
+</tr>
+<tr>
+<td>家族不相交划分</td>
+<td>训练/测试集在家族层面分离</td>
+<td>防止模式记忆导致的性能虚高</td>
+<td>输入：全部样本；输出：划分后的训练/验证/测试集</td>
+<td>摘要：「strict family-disjoint splitting strategy to prevent performance inflation caused by pattern memorization」</td>
+<td>预期：移除后内部基准虚高，外部验证失败（未提供单独消融）</td>
+</tr>
+<tr>
+<td>计算丙氨酸扫描</td>
+<td>逐残基突变评估对预测的影响</td>
+<td>验证模型是否学习到功能相关残基而非表面模式</td>
+<td>输入：序列 + 模型；输出：残基重要性分数</td>
+<td>摘要：「Computational alanine scanning further confirmed that the framework contextually localizes its predictions to functionally active residues」</td>
+<td>预期：移除后无法验证模型的可解释性（非核心模块）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：所有「预期影响」均为 [Analysis] 推断，作者未提供逐模块消融实验。</p>
+</blockquote>
+<h2>09 关键公式符号</h2>
+<p>不适用。本文为深度学习分类方法，未提供数学公式。核心指标为 MCC（Matthews correlation coefficient）和 F1-score，均为标准定义，无需额外公式说明。</p>
+<h2>10 实验设计与证据链</h2>
+<h3>数据集与评测协议</h3>
+<ul>
+<li><strong>训练数据</strong>：正样本为已知毒性蛋白；负样本包含直系同源（InterPro 同家族）和长度分层对照（具体数量未提供）</li>
+<li><strong>内部基准</strong>：与五个现有毒性预测器对比（具体名称未提供）</li>
+<li><strong>外部验证</strong>：红鳍鲉（Paracentropogon rubripinnis）全蛋白组，含 16 个经验验证毒素</li>
+<li><strong>指标</strong>：MCC、F1-score</li>
+<li><strong>长/短序列分组</strong>：长序列（具体阈值未提供）与短肽分别评估</li>
+<li><strong>可解释性</strong>：计算丙氨酸扫描</li>
+</ul>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内部基准测试（长序列）</td>
+<td>NeoToxPred 优于现有预测器</td>
+<td>与五个现有预测器对比</td>
+<td>MCC 0.897，F1 0.949</td>
+<td>数据策展策略提升分类性能</td>
+<td>未提供各基线具体数值，无法判断优势幅度</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>内部基准测试（短肽）</td>
+<td>短肽预测同样鲁棒</td>
+<td>与五个现有预测器对比</td>
+<td>MCC 0.869</td>
+<td>长度分层负对照有效消除长度混淆</td>
+<td>未提供基线短肽性能，无法确认相对优势</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>外部基因组验证</td>
+<td>模型泛化到未见蛋白组</td>
+<td>红鳍鲉全蛋白组，16 个经验验证毒素</td>
+<td>成功恢复 11/16 毒素，未坍缩为单类预测</td>
+<td>训练数据设计带来真实泛化能力</td>
+<td>未提供假阳性率/全蛋白组预测分布</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>计算丙氨酸扫描</td>
+<td>模型定位到功能活性残基</td>
+<td>对预测为毒性的序列逐残基突变</td>
+<td>确认预测定位到功能活性残基</td>
+<td>模型学习到功能相关特征而非表面模式</td>
+<td>未提供与实验突变数据的定量对比</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限蛋白质毒性二分类（毒性/非毒性），不涉及毒性强度、毒性机制或物种特异性。</li>
+<li><strong>输入限制</strong>：仅使用一级序列，不利用结构信息。作者声称序列信息足够，但未与结构信息融合方法对比。</li>
+<li><strong>oracle/真值输入</strong>：训练正样本为已知毒性蛋白（具体数据库/实验验证标准未提供）；外部验证的 16 个毒素为经验验证（具体实验方法未提供）。</li>
+<li><strong>端到端状态</strong>：模型为端到端序列到分类，但数据策展流程（InterPro 家族注释、分类学距离控制）依赖外部数据库和领域知识，非全自动。</li>
+<li><strong>算力成本</strong>：ESM-C 600M 微调需要 GPU 资源，但作者声称「计算可扩展性」是设计目标之一（具体训练时间/硬件未提供）。</li>
+<li><strong>历史数据依赖</strong>：依赖 InterPro 家族注释的完整性和准确性；分类学距离控制依赖物种分类学数据库。</li>
+<li><strong>最难情形</strong>：短肽（&lt;30 aa）性能低于长序列（MCC 0.869 vs 0.897），但作者声称仍优于基线；高度趋同进化的毒素（不同家族共享相似结构）可能仍具挑战。</li>
+<li><strong>群体/领域边界</strong>：训练数据覆盖的物种/毒素类型未详述；对植物毒素、细菌毒素等的泛化能力未验证。</li>
+<li><strong>不确定性</strong>：预印本未经同行评审；未提供置信区间或多次运行的标准差；外部验证仅一个物种（红鳍鲉），样本量有限（16 个毒素）。</li>
+<li><strong>有边界的复述</strong>：在直系同源负样本、长度分层和家族不相交划分的训练策略下，微调 ESM-C 600M 的序列分类器在内部基准（长序列 MCC 0.897，短肽 MCC 0.869）和红鳍鲉蛋白组外部验证（11/16 毒素恢复）中表现优于五个现有预测器，且计算丙氨酸扫描显示预测定位到功能活性残基。该结论限于所测试的毒素类型、物种范围和评测协议。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中，作者未明确列出局限性。摘要仅提及「although the neural architecture is intentionally standard to ensure computational scalability」，这暗示作者承认架构非创新点，但未将其表述为局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 模型为序列-only，未利用结构信息（摘要：「sequence-only binary classifier」）
+- 外部验证仅一个物种（红鳍鲉），样本量有限（16 个毒素）
+- 预印本状态，未经同行评审</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>外部验证仅一个物种（红鳍鲉）</td>
+<td>单物种验证不足以证明泛化能力；红鳍鲉毒素可能具有特定序列特征</td>
+<td>泛化性是本文核心主张，单物种证据薄弱</td>
+<td>在多个物种（如蛇、蝎子、植物、细菌）的全蛋白组上验证</td>
+<td>摘要：「using the previously unseen proteome of the redfin waspfish」</td>
+</tr>
+<tr>
+<td>未提供各基线预测器的具体性能数值</td>
+<td>无法判断优势幅度是否显著；可能仅小幅优于基线</td>
+<td>影响对方法实际价值的评估</td>
+<td>要求作者提供完整对比表格和统计检验</td>
+<td>摘要仅给出 NeoToxPred 的 MCC/F1，未给出基线数值</td>
+</tr>
+<tr>
+<td>未提供消融实验</td>
+<td>无法确认三个数据策展策略各自的贡献；可能只有其中一个策略起主要作用</td>
+<td>核心主张是「数据设计优先」，但缺乏因果证据</td>
+<td>分别移除直系同源、长度分层、家族不相交划分进行消融</td>
+<td>摘要未提及消融实验</td>
+</tr>
+<tr>
+<td>计算丙氨酸扫描的验证力度有限</td>
+<td>「定位到功能活性残基」未与实验突变数据定量对比；可能只是定性吻合</td>
+<td>影响对模型可解释性的信任</td>
+<td>与已知毒性关键残基的突变实验数据（如 IC50 变化）定量对比</td>
+<td>摘要：「confirmed that the framework contextually localizes its predictions」——「confirmed」措辞可能过强</td>
+</tr>
+<tr>
+<td>训练数据规模与组成未披露</td>
+<td>正样本数量、物种覆盖、InterPro 家族数量未知；可能数据量小导致过拟合</td>
+<td>影响结果可重复性和泛化评估</td>
+<td>要求作者提供数据统计和分布</td>
+<td>摘要未提供</td>
+</tr>
+<tr>
+<td>与结构依赖方法对比不充分</td>
+<td>摘要仅提及「structure-dependent baselines identified substantially fewer positives」，但未说明具体方法</td>
+<td>无法判断序列-only 方法是否真的优于结构方法，或只是基线选择偏差</td>
+<td>与 AlphaFold 结构 + 结构特征分类器在相同数据集上对比</td>
+<td>摘要：「structure-dependent baselines」未具名</td>
+</tr>
+<tr>
+<td>预印本未经同行评审</td>
+<td>方法细节、数据可用性、代码可用性均未验证</td>
+<td>影响结果可信度</td>
+<td>等待同行评审或复现实验</td>
+<td>预印本状态</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>负样本设计的三原则</strong>（直系同源控制、长度分层、家族不相交划分）可迁移至蛋白质结构相关计算研究中的任何判别任务：
+   - <strong>结构预测</strong>：训练集构建时，同源但不同构象的蛋白对可作为困难负样本，迫使模型学习构象决定因素而非序列相似性。
+   - <strong>分子对接</strong>：诱饵集设计可借鉴「直系同源」思路——选择与正确结合模式结构相似但结合亲和力不同的构象作为负样本，提高打分函数的判别力。
+   - <strong>构象采样</strong>：负构象（非天然态）的采样应控制与天然态的结构距离和序列长度，避免模型学习「非天然态 = 短序列」等捷径。</p>
+</li>
+<li>
+<p><strong>「数据设计 &gt; 架构复杂度」的验证思路</strong>：使用标准架构（六层前馈头）配合精心设计的数据，即可超越复杂模型。这提示在蛋白质结构研究中，训练数据质量（如 PDB 筛选标准、负样本采样策略）可能比模型创新更重要。</p>
+</li>
+<li>
+<p><strong>计算丙氨酸扫描作为可解释性验证</strong>：对训练好的分类器逐残基突变，验证预测是否定位到功能关键残基。此方法可迁移至结构预测模型的残基重要性分析，或对接模型的结合热点预测。</p>
+</li>
+<li>
+<p><strong>外部基因组规模验证的必要性</strong>：在未见过的全蛋白组上验证，且检查是否坍缩为单类预测。这提示结构预测模型应在全新蛋白组（如未参与训练的物种）上评估泛化性。</p>
+</li>
+<li>
+<p><strong>混淆因子清单</strong>：序列长度、进化距离、家族重叠是生物序列分类的三大混淆因子。在蛋白质结构研究中，类似的混淆因子可能包括：结构域组成、二级结构含量、溶剂可及性分布等。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>ESM 系列</strong>：本文使用 ESM-C 600M，与 ESM-2、ESMFold 等属于同一预训练模型家族。ESMFold 已展示 PLM 可直接预测结构，本文进一步展示 PLM 微调可用于功能分类，两者互补。</li>
+<li><strong>负样本设计文献</strong>：与「decoy generation」在蛋白质结构预测中的角色类似——CASP 评估中诱饵集的设计直接影响打分函数排名。本文的「直系同源负样本」可类比为「近天然态诱饵」（near-native decoys）。</li>
+<li><strong>AlphaFold 相关</strong>：本文对比了「structure-dependent baselines」但未具名。AlphaFold 预测的结构可作为特征输入分类器，本文主张序列-only 方法在毒性预测上更优，这与「序列包含足够信息」的假设一致，但需更多证据。</li>
+<li><strong>蛋白质语言模型微调范式</strong>：与 ProtTrans、ESM 微调用于功能注释（如 DeepFRI）的工作一致，本文贡献在于数据策展而非架构。</li>
+<li><strong>可迁移领域</strong>：本文的「直系同源负样本」策略与蛋白质设计中的「负设计」（negative design）概念相通——在序列设计中，明确排除不希望出现的构象/功能状态。本文的家族不相交划分与蛋白质工程中的「leakage-free」数据集划分原则一致。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：OrthoDecoy——基于直系同源诱饵的对接打分函数训练
+   - <strong>来源局限/观察</strong>：本文证明直系同源负样本可消除进化距离混淆；分子对接中诱饵集通常从随机构象采样，缺乏与正确结合模式结构相似但亲和力低的困难诱饵。
+   - <strong>核心假设</strong>：使用与天然结合模式结构相似（RMSD &lt; 2Å）但实验结合亲和力显著更低的构象作为负样本，可训练出判别力更强的打分函数。
+   - <strong>初步方法</strong>：从 PDBbind 中提取同源复合物对（同一受体、不同配体或同一配体不同构象），构建结构相似但亲和力不同的诱饵集；微调 PLM 或图神经网络打分函数。
+   - <strong>验证方式</strong>：在 CASF 基准上对比传统诱饵集与 OrthoDecoy 训练的打分函数；检查是否避免坍缩为单一打分区间。
+   - <strong>可能的失败模式</strong>：结构相似但亲和力不同的构象对数量有限；实验亲和力噪声可能掩盖结构信号。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：LengthStratifiedFold——长度分层策略在蛋白质结构预测训练集中的应用
+   - <strong>来源局限/观察</strong>：本文证明长度分层可消除长度作为预测线索；结构预测中，短蛋白和长蛋白的结构预测难度差异大，训练集长度分布不均可能导致模型偏向。
+   - <strong>核心假设</strong>：在结构预测训练集中按长度分层采样，可提升短蛋白和长蛋白的预测一致性。
+   - <strong>初步方法</strong>：从 PDB 中按长度分箱（&lt;50, 50-100, 100-200, &gt;200 aa）分别采样，确保每箱中天然态与非天然态（或不同折叠类型）比例一致；训练 ESMFold 或 AlphaFold 变体。
+   - <strong>验证方式</strong>：在 CAMEO 和 CASP 的短肽/长蛋白子集上对比长度分层训练与随机训练的性能。
+   - <strong>可能的失败模式</strong>：长度分层可能减少长蛋白的训练样本量，反而降低长蛋白性能。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：FamilyDisjointBench——家族不相交划分的结构预测基准
+   - <strong>来源局限/观察</strong>：本文证明家族不相交划分可防止模式记忆；结构预测中，训练集与测试集的序列同源性控制（如 &lt;30% 序列一致性）是标准做法，但家族层面（如 CATH 拓扑级别）的划分较少见。
+   - <strong>核心假设</strong>：在 CATH 拓扑级别上做训练/测试划分，可更严格地评估结构预测模型的泛化能力。
+   - <strong>初步方法</strong>：构建 CATH 拓扑不相交的训练/测试集，重新评估 AlphaFold2/ESMFold 的性能；对比传统序列一致性划分与拓扑级别划分的性能差异。
+   - <strong>验证方式</strong>：报告 TM-score 和 GDT-TS 在两种划分下的差异；分析性能下降是否集中在特定拓扑类型。
+   - <strong>可能的失败模式</strong>：CATH 拓扑级别划分可能过于严格，导致训练集代表性不足。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AlanineScanInterpret——计算丙氨酸扫描作为结构预测模型的可解释性工具
+   - <strong>来源局限/观察</strong>：本文用计算丙氨酸扫描验证毒性预测的残基定位；结构预测模型（如 AlphaFold 的 pLDDT）缺乏逐残基功能归因。
+   - <strong>核心假设</strong>：对结构预测模型进行计算丙氨酸扫描（逐残基突变后重新预测），可识别对折叠贡献最大的残基，与实验突变数据（ΔΔG）相关。
+   - <strong>初步方法</strong>：对 AlphaFold2 预测的蛋白进行逐残基丙氨酸突变，重新运行模型，记录 pLDDT 或预测结构的变化；与实验 ΔΔG 数据对比。
+   - <strong>验证方式</strong>：在 ProTherm 数据库上计算预测稳定性变化与实验 ΔΔG 的相关性。
+   - <strong>可能的失败模式</strong>：AlphaFold 对单点突变不敏感（训练数据中突变体有限），可能导致扫描结果无信号。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>（补充）：ToxinFoldPrior——将毒性预测先验注入结构预测
+   - <strong>来源局限/观察</strong>：本文证明序列-only 分类可定位功能残基；结构预测模型（如 AlphaFold）不直接输出功能信息。
+   - <strong>核心假设</strong>：将 NeoToxPred 的残基重要性分数作为先验特征注入结构预测模型，可提升毒性相关蛋白的结构预测精度（特别是活性位点区域）。
+   - <strong>初步方法</strong>：在 ESMFold 的输入中拼接 NeoToxPred 的残基级注意力分数作为额外特征；或在结构预测损失函数中加入残基重要性加权。
+   - <strong>验证方式</strong>：在毒性蛋白测试集上对比有/无先验注入的 TM-score 和活性位点 RMSD。
+   - <strong>可能的失败模式</strong>：先验噪声可能干扰结构预测；毒性残基不一定与结构预测难度相关。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present NeoToxPred, a sequence-only binary toxicity classifier built by fine-tuning the ESM-C 600M protein language model with a six-layer feed-forward head. The claimed novelty resides in training-data curation, specifically orthologous negatives from the same InterPro families under taxonomic proximity control, length-stratified negatives, and family-disjoint splitting. Reported internal performance includes MCC 0.897 and F1 0.949 on long sequences, MCC 0.869 on short peptides, outperforming five recent predictors. External validation on the redfin waspfish proteome recovered 11 of 16 empirically validated toxins. Computational alanine scanning is claimed to localize predictions to functional residues.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or supplementary data</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, training and validation dataset descriptions, benchmark details, baseline predictor specifications, external validation protocol, alanine scanning methodology, statistical significance tests, and all numerical results beyond those stated in the abstract</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a plausible and potentially valuable contribution to the toxicity prediction literature, with a sensible emphasis on negative-set construction. However, the evidence base available for review is limited to the abstract, and several claims cannot be verified without access to the full manuscript. The central methodological claims are reasonable in principle, but the reported performance metrics and external validation results require detailed scrutiny of the underlying protocols. The framing of the contribution as primarily data-centric rather than architectural is refreshing and aligns with current concerns in the field, but the abstract alone does not establish the robustness of the approach.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in protein function prediction, toxin discovery, and computational toxicology would find this work relevant. The emphasis on negative-set design has broader implications for any sequence classification task where homology-based confounding is a concern. The external validation on a venomous fish proteome may interest toxinology and drug discovery communities seeking sequence-based screening tools.</li>
+<li><strong>Major strengths</strong> The explicit focus on negative-set design as a source of performance inflation is timely and addresses a recognized weakness in the field. The use of orthologous negatives under taxonomic proximity control and length stratification targets specific confounding variables. The family-disjoint splitting strategy is a sound response to pattern memorization concerns. The external validation on a previously unseen proteome is a meaningful step beyond internal benchmarks.</li>
+<li><strong>Major Concerns</strong> </li>
+<li>R1-M1</li>
+<li>R1-M2</li>
+<li>R1-M3</li>
+<li>R1-M4</li>
+<li><strong>Minor Comments</strong> </li>
+<li>R1-m1</li>
+<li>R1-m2</li>
+<li>R1-m3</li>
+<li>R1-m4</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The abstract does not provide sufficient detail to assess whether the negative-set construction fully eliminates the claimed confounds. The external validation recovery rate of 11 of 16 requires context on the baseline false-positive rates and the statistical significance of the recovery. The alanine scanning claim lacks methodological detail. The comparison with five recent predictors is unverifiable without specification of the baselines and evaluation protocols.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality is moderate to high, as the data-centric framing is not entirely new but the specific combination of orthologous and length-stratified negatives is a distinctive contribution. Scientific importance is potentially high for the toxicity prediction community, though the broader impact beyond this niche is unclear. Interdisciplinary readership is plausible given the intersection of machine learning, evolutionary biology, and toxinology. Technical soundness cannot be fully assessed from the abstract alone, but the described methodology is reasonable. Readability for nonspecialists is adequate, though the abstract assumes familiarity with protein language models and MCC.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved upon full manuscript review. The core idea is sound and the reported results are promising, but the abstract-level evidence is insufficient to establish the case definitively.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The orthologous negative set drawn from the same InterPro families under controlled taxonomic proximity eliminates phylogenetic shortcuts.</li>
+<li><strong>Evidence pointer</strong> Abstract, methods not provided</li>
+<li><strong>Concern</strong> The abstract states that orthologous negatives are drawn from the same InterPro families under controlled taxonomic proximity, but no details are given on how taxonomic proximity is defined, how the threshold is set, or how the risk of residual phylogenetic signal is quantified. Without this information, it is unclear whether the negative set truly eliminates phylogenetic shortcuts or merely reduces them.</li>
+<li><strong>Why it matters</strong> The central claim of the paper is that negative-set design is the key innovation. If the orthologous negative construction is not rigorously defined and validated, the entire contribution is weakened.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed description of the taxonomic proximity metric, the selection thresholds, and an analysis demonstrating that the resulting negative set does not retain phylogenetic confounding, for example by showing that model performance is stable across taxonomic distance bins.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> Length-stratified negative control set eliminates sequence length as a predictive cue.</li>
+<li><strong>Evidence pointer</strong> Abstract, methods not provided</li>
+<li><strong>Concern</strong> The abstract claims that length stratification eliminates sequence length as a predictive cue, but no information is provided on how the stratification was performed, whether the length distributions of positives and negatives are matched, or whether the model was tested for residual length dependence beyond the reported stability across sequence lengths.</li>
+<li><strong>Why it matters</strong> If length remains a predictive cue, the model may be exploiting a trivial feature rather than learning functional determinants of toxicity, which would undermine the biological interpretability of the predictions.</li>
+<li>
+<p><strong>Resolution test</strong> Show the length distributions of the training and test sets, demonstrate that the model's performance does not vary systematically with sequence length, and provide an analysis of the model's reliance on length as a feature, for example through ablation or feature attribution.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> External validation on the redfin waspfish proteome recovered 11 of 16 empirically validated toxins without collapsing into a single-class prediction.</li>
+<li><strong>Evidence pointer</strong> Abstract, external validation details not provided</li>
+<li><strong>Concern</strong> The recovery of 11 of 16 toxins is reported without context on the total number of predictions made, the false-positive rate, the threshold used for calling a toxin, or the statistical significance of the recovery compared to random expectation. The statement that structure-dependent baselines identified substantially fewer positives is also vague without specifying which baselines and what their false-positive rates were.</li>
+<li><strong>Why it matters</strong> A recovery rate of 11 of 16 is only meaningful if the model is not simply predicting many positives, which would trivially increase recall at the cost of precision. The comparison with baselines is essential to establish that the model provides added value.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the full confusion matrix for the external validation, the precision-recall trade-off, the threshold selection procedure, and a statistical test comparing the recovery rate to a random or baseline model.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> Computational alanine scanning confirmed that the framework contextually localizes its predictions to functionally active residues.</li>
+<li><strong>Evidence pointer</strong> Abstract, alanine scanning methods not provided</li>
+<li><strong>Concern</strong> The alanine scanning claim is presented as a validation of the model's interpretability, but no details are given on how the scanning was performed, how the functional residues were defined, or how the localization was quantified. Without this information, the claim is not assessable.</li>
+<li><strong>Why it matters</strong> Interpretability claims are increasingly important for model acceptance, but they require rigorous validation. If the alanine scanning is not properly benchmarked, the claim may overstate the model's biological insight.</li>
+<li><strong>Resolution test</strong> Describe the alanine scanning protocol, define the ground truth for functional residues, and provide a quantitative comparison of the model's predicted importance scores against experimental or structural data.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract wording</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The phrase "decisively outperforming five recent predictors" is vague without naming the predictors or providing the comparison metrics.</li>
+<li>
+<p><strong>Required correction</strong> Specify the names of the five predictors and the metrics used for comparison, or refer to a table in the full manuscript.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Model availability</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract does not state whether the model, code, or training data will be made publicly available.</li>
+<li>
+<p><strong>Required correction</strong> Add a data and code availability statement to the abstract or the full manuscript.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Performance metrics</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The reported MCC and F1 values are presented without confidence intervals or significance tests against the baselines.</li>
+<li>
+<p><strong>Required correction</strong> Provide confidence intervals or statistical tests for the reported metrics, or state that they are point estimates from a single split.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Affected element</strong> External validation scope</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The external validation is limited to a single proteome, which limits the generalizability of the claim.</li>
+<li><strong>Required correction</strong> Acknowledge this limitation in the abstract or full manuscript, or provide additional external validation on multiple proteomes.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that orthologous negatives eliminate phylogenetic shortcuts is unsupported without detailed methods and validation.</li>
+<li>The claim that length stratification eliminates sequence length as a predictive cue is unsupported without distribution matching and residual analysis.</li>
+<li>The external validation recovery rate of 11 of 16 is uninterpretable without false-positive context and baseline comparison.</li>
+<li>The alanine scanning localization claim is not assessable without methodological detail.</li>
+<li>The comparison with five recent predictors is unverifiable without specification of the baselines and evaluation protocols.</li>
+<li>The statement that structure-dependent baselines identified substantially fewer positives is vague and unsupported without specific numbers.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

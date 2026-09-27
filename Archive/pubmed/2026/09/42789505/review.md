@@ -1,0 +1,79 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full manuscript, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose that the RcsD periplasmic domain and the outer membrane lipoprotein RcsF co-evolved in Enterobacteriaceae, that they physically interact, and that this interaction confers a dual regulatory role on the RcsD periplasmic domain, namely repression of basal Rcs activity and facilitation of stress-induced activation.
+- **Visible evidence base** Co-evolutionary analysis (partial Mantel test), structure-guided docking, 500-ns molecular dynamics simulations with MM-GBSA binding free energy, and functional assays in *Escherichia coli* K12 MG1655, all as summarized in the abstract
+- **Missing materials affecting confidence** Full methods, statistical details, sequence alignments, docking and simulation parameters, strain and plasmid construction details, raw data, and all figures and tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting evolutionary and functional hypothesis for the Rcs phosphorelay, with a combination of computational and experimental approaches. However, the evidence as summarized is insufficient to establish the central claims of co-evolution, physical interaction, and functional coupling. Several key controls and quantitative details are absent, and the abstract does not provide enough information to assess the robustness of the statistical and simulation results. The work may be of interest to prokaryotic signal transduction and evolutionary biology communities, but the case is not fully established from the supplied material.
+- **Who would be interested in the results, and why** Researchers studying two-component signal transduction systems, particularly the Rcs phosphorelay, as well as those interested in the evolution of regulatory complexity in bacteria. The proposed co-evolutionary coupling between an auxiliary lipoprotein and a membrane-bound phosphotransfer protein could inform broader questions about how accessory proteins shape signaling specificity and regulation.
+- **Major strengths** The study combines evolutionary analysis with structural prediction and functional validation, which is a commendable integrative approach. The specific focus on the RcsD periplasmic domain, whose role has been unclear, addresses a genuine gap in the field. The finding that the periplasmic domain both represses basal activity and is required for stress activation suggests a nuanced regulatory mechanism.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical robustness and interpretation
+  - **Claim pointer** "RcsF and RcsD exhibit strong co-evolutionary coupling independent of host speciation (partial Mantel r = 0.950, p < 0.0001)"
+  - **Evidence pointer** Abstract, co-evolutionary analysis
+  - **Concern** The partial Mantel test result is reported with a single r and p value, but no details are given on the number of species compared, the sequence alignment methods, the evolutionary model used, or how host speciation was accounted for. A partial Mantel test can be sensitive to phylogenetic non-independence and alignment quality, and the extremely high r value of 0.950 warrants scrutiny.
+  - **Why it matters** The co-evolutionary claim is foundational to the paper's thesis. If the statistical support is weak or the method is inappropriate, the entire evolutionary narrative collapses.
+  - **Resolution test** Provide full details of the species set, alignment methods, tree construction, and the partial Mantel test procedure, including confidence intervals and a demonstration that the result is robust to alternative phylogenetic corrections.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Structural evidence and simulation validity
+  - **Claim pointer** "Structure-guided docking and 500-ns molecular dynamics simulations predicted a stable interaction between RcsF and RcsD (MM-GBSA DeltaG approximately -95 kcal/mol)"
+  - **Evidence pointer** Abstract, docking and simulation
+  - **Concern** The abstract reports a single MM-GBSA binding free energy value without specifying the docking method, the starting structures, the force field, the simulation conditions, or the convergence of the simulations. A 500-ns simulation may be insufficient to sample the full conformational space of a membrane-associated complex, and MM-GBSA values can be highly dependent on the protocol used.
+  - **Why it matters** The predicted interaction is central to the proposed functional coupling. Without evidence of simulation convergence and methodological rigor, the interaction remains speculative.
+  - **Resolution test** Provide detailed methods for docking and MD simulations, including convergence analysis, replicate simulations, and a comparison of MM-GBSA values across multiple independent runs.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Functional assay interpretation
+  - **Claim pointer** "Functional assays in Escherichia coli K12 MG1655 revealed that RcsD periplasmic domain represses basal Rcs activity in unstressed cells (~5-fold derepression) yet is essential for stress-induced activation (1.9-2.5-fold)"
+  - **Evidence pointer** Abstract, functional assays
+  - **Concern** The abstract reports fold changes but does not specify the reporter system, the nature of the stress stimulus, the strains used, or the controls. The claim that the periplasmic domain is "essential" for stress-induced activation is strong, but the abstract does not show whether the residual activation in its absence is statistically significant or biologically meaningful.
+  - **Why it matters** The dual regulatory role is the main functional conclusion. If the assays lack appropriate controls or the fold changes are not robust, the conclusion is not supported.
+  - **Resolution test** Provide full details of the reporter assays, including strain genotypes, stress conditions, replicate numbers, statistical tests, and a demonstration that the observed effects are specific to the periplasmic domain.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Overexpression claim
+  - **Claim pointer** "Overexpression of rcsF beyond the chromosomal level induces Rcs signal activation only when the RcsD periplasmic domain is present"
+  - **Evidence pointer** Abstract, overexpression experiments
+  - **Concern** The abstract does not specify the overexpression system, the level of overexpression achieved, or the controls used to rule out non-specific effects. The claim that activation occurs "only" in the presence of the periplasmic domain is absolute and requires careful demonstration.
+  - **Why it matters** This result is used to link the co-evolutionary and structural findings to a functional mechanism. If the overexpression experiments are not well controlled, the conclusion is weakened.
+  - **Resolution test** Provide details of the overexpression constructs, induction levels, and appropriate negative controls, including a periplasmic domain deletion mutant and a non-interacting control protein.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of terminology
+  - **Affected element** "Co-evolutionary coupling"
+  - **Evidence pointer** Abstract, first results sentence
+  - **Issue** The term "co-evolutionary coupling" is used without a precise definition. It is unclear whether this refers to correlated evolutionary rates, co-phylogeny, or residue co-variation.
+  - **Required correction** Define the term explicitly and state the specific evolutionary metric used.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Quantitative detail
+  - **Affected element** MM-GBSA value
+  - **Evidence pointer** Abstract, docking and simulation
+  - **Issue** The MM-GBSA value is reported as "approximately -95 kcal/mol" without an error estimate or a comparison to a negative control complex.
+  - **Required correction** Report the mean and standard deviation across replicates and include a control interaction to contextualize the value.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Biological relevance
+  - **Affected element** "Stress-induced activation"
+  - **Evidence pointer** Abstract, functional assays
+  - **Issue** The nature of the stress stimulus is not specified, making it difficult to assess the physiological relevance of the findings.
+  - **Required correction** State the specific stress condition used and justify its relevance to the Rcs system.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4
+- **Assessment against Nature-style criteria** Originality is moderate, as the study addresses a specific gap in Rcs biology but does not introduce a conceptually new paradigm. Scientific importance is limited by the narrow taxonomic focus and the lack of mechanistic depth in the abstract. Interdisciplinary readership is possible, but the abstract does not frame the findings for a broad audience. Technical soundness cannot be fully assessed from the abstract alone, but the reported methods lack sufficient detail to establish robustness. Readability for nonspecialists is adequate, though the abstract assumes familiarity with the Rcs system.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting hypothesis, but the key claims require substantial additional methodological detail and controls. I would be supportive if the technical concerns are resolved in the full manuscript.
+
+## Risk / unsupported claims
+- The claim of "strong co-evolutionary coupling" is unsupported without details on the species set, alignment, and statistical method.
+- The predicted stable interaction between RcsD and RcsF is unsupported without evidence of simulation convergence and methodological rigor.
+- The dual regulatory role of the RcsD periplasmic domain is unsupported without full assay details and statistical analysis.
+- The claim that RcsF overexpression activates Rcs "only" in the presence of the periplasmic domain is unsupported without appropriate controls.

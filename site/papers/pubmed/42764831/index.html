@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Step-by-Step Protocol for Efficient Global Accuracy Estimation of Protein Complex Structural Models with MViewEMA. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>A Step-by-Step Protocol for Efficient Global Accuracy Estimation of Protein Complex Structural Models with MViewEMA.</h1>
+      <div class="meta">Xie, Lei; Ye, Enjia; Liu, Dong; Zhang, Guijun</div>
+      <div class="meta muted">
+        
+        <span class="journal">Bio-protocol</span>
+        · 2026-09-21
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42764831/">原文</a>
+      </div>
+      <p class="one-liner">该文提出MViewEMA协议，利用多视图表示学习从单一输入结构估计蛋白质复合物模型的全局精度，属于蛋白质结构预测中的模型质量评估方法，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Estimation of model accuracy (EMA) is a critical step in protein structure prediction, enabling the ranking and selection of models in the absence of experimental structures. EMA methods aim to function independently of modeling approaches, ensuring broad applicability across diverse prediction workflows. Recent state-of-the-art EMA methods often improve estimation accuracy by incorporating consensus information from model pools, multiple sequence alignments (MSAs), structural templates, or protein language model representations. However, these strategies typically incur substantial computational cost or rely on information derived from the modeling process itself, which may introduce bias and compromise the independence of the assessment. This protocol describes the use of MViewEMA for global accuracy estimation of protein complex models from a single input structure. MViewEMA extracts residue-residue interaction features from complementary micro-, meso-, and macro-environmental perspectives and integrates multi-scale structural representations through a multi-view representation learning framework to predict global confidence scores. The protocol provides detailed procedures for input structure preparation, feature extraction, model inference, and global confidence score output, together with a tutorial for using the MViewEMA web server. The protocol provides a workflow based solely on structural information from the input model, achieving a balance between computational efficiency and estimation accuracy. It enables large-scale evaluation and selection of predicted models for protein structure prediction and downstream structural analysis applications. Key features * Provides an efficient and accurate single-model EMA framework for protein complex accuracy estimation. * Integrates residue-residue interaction features across micro-, meso-, and macro-environmental views through multi-view representation learning. * Performs independent protein structural model assessment without requiring MSAs, templates, protein language models, or consensus information from model ensembles. * Supports large-scale protein complex model ranking and selection for downstream structural analysis applications.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">模型精度估计（EMA）是蛋白质结构预测中的关键步骤，可在缺乏实验结构的情况下对模型进行排序和选择。EMA方法旨在独立于建模方法运行，确保在多样化的预测工作流程中具有广泛适用性。近年来，最先进的EMA方法通常通过整合模型池中的共识信息、多序列比对（MSAs）、结构模板或蛋白质语言模型表示来提高估计精度。然而，这些策略通常会产生大量计算成本，或依赖于从建模过程本身获取的信息，这可能引入偏差并损害评估的独立性。本协议描述了使用MViewEMA从单一输入结构对蛋白质复合物模型进行全局精度估计的方法。MViewEMA从互补的微观、中观和宏观环境视角提取残基-残基相互作用特征，并通过多视图表示学习框架整合多尺度结构表示，以预测全局置信度分数。该协议提供了输入结构准备、特征提取、模型推理和全局置信度分数输出的详细步骤，以及使用MViewEMA网络服务器的教程。该协议提供了一种仅基于输入模型结构信息的工作流程，在计算效率和估计精度之间实现了平衡。它支持对蛋白质结构预测及下游结构分析应用中的预测模型进行大规模评估和选择。关键特性 * 为蛋白质复合物精度估计提供高效且准确的单模型EMA框架。 * 通过多视图表示学习整合微观、中观和宏观环境视角下的残基-残基相互作用特征。 * 执行独立的蛋白质结构模型评估，无需MSAs、模板、蛋白质语言模型或模型集合的共识信息。 * 支持大规模蛋白质复合物模型排序和选择，用于下游结构分析应用。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：A Step-by-Step Protocol for Efficient Global Accuracy Estimation of Protein Complex Structural Models with MViewEMA</li>
+<li><strong>作者与单位</strong>：Xie, Lei; Ye, Enjia; Liu, Dong; Zhang, Guijun（浙江工业大学信息工程学院，Guijun Zhang 实验室）</li>
+<li><strong>期刊/预印本平台</strong>：Bio-protocol</li>
+<li><strong>年份</strong>：2026-09-21</li>
+<li><strong>论文类型</strong>：实验协议（Protocol）</li>
+<li><strong>领域</strong>：蛋白质结构预测、模型精度评估（EMA/MQA）、深度学习</li>
+<li><strong>关键词</strong>：MViewEMA、模型精度估计、蛋白质复合物、多视图表示学习、全局置信度评分</li>
+<li><strong>DOI/arXiv 号</strong>：10.21769/BioProtoc.5785</li>
+<li><strong>代码</strong>：https://github.com/iobio-zjut/MViewEMA</li>
+<li><strong>数据</strong>：未提供（协议中未包含训练/测试数据集）</li>
+<li><strong>阅读日期</strong>：2026-07-06（文中访问日期）</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × 深度学习」方向中的模型质量评估（EMA）子领域。MViewEMA 是一种单模型（single-model）全局精度估计方法，不依赖 MSA、模板、蛋白质语言模型或模型集成共识信息，直接从单一输入结构提取多尺度残基-残基相互作用特征，通过多视图表示学习框架预测全局置信度分数。该协议为方法的使用提供了标准化操作流程，适用于蛋白质复合物结构预测结果的大规模筛选与排序。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提供 MViewEMA 的分步操作协议，该方法从单一蛋白质复合物结构输入中提取微环境（MiE）、中环境（MeE）、宏环境（MaE）三种尺度的残基-残基相互作用特征，经图注意力、卷积和 Transformer 三种架构的多视图表示学习融合后，输出基于 TM-score 的全局置信度分数，实现不依赖 MSA/模板/语言模型/模型集成的单模型全局精度估计。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在不依赖 MSA、模板、蛋白质语言模型或模型池共识信息的前提下，从单一蛋白质复合物结构出发高效估计其全局模型精度？</li>
+<li><strong>为什么重要</strong>：蛋白质结构预测方法（尤其复合物预测）产生大量候选模型，在缺乏实验参考结构时，需要可靠的精度估计方法对模型进行排序和筛选。现有高精度 EMA 方法往往依赖计算昂贵的特征生成（如 MSA、模板搜索、语言模型）或模型池共识，限制了大规模应用。</li>
+<li><strong>现有方法为何不足</strong>：共识类方法依赖模型池的多样性和质量；准单模型方法依赖外部结构参考；许多单模型方法依赖 MSA 或语言模型特征，计算成本高且可能引入建模过程偏差，损害评估独立性。</li>
+<li><strong>精确研究问题</strong>：Can a single-model EMA method based solely on structural information from the input model achieve efficient and accurate global accuracy estimation for protein complex models without requiring MSA, templates, language models, or consensus information?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文 Background 节整理，属「仅本文框架」，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>共识类方法</td>
+<td>利用模型池中结构一致性估计精度</td>
+<td>模型池充分时精度高</td>
+<td>依赖模型池质量与多样性，性能受输入模型影响</td>
+</tr>
+<tr>
+<td>准单模型方法</td>
+<td>结合外部结构参考增强单模型特征</td>
+<td>比纯单模型更鲁棒</td>
+<td>依赖外部参考质量，增加计算成本</td>
+</tr>
+<tr>
+<td>单模型方法（传统）</td>
+<td>直接从单一结构提取特征</td>
+<td>独立于建模流程</td>
+<td>精度相对有限</td>
+</tr>
+<tr>
+<td>单模型方法（深度特征）</td>
+<td>使用 MSA、模板、语言模型特征</td>
+<td>精度提升显著</td>
+<td>计算成本高，可能引入建模过程偏差</td>
+</tr>
+<tr>
+<td>MViewEMA（本文）</td>
+<td>多视图表示学习，仅用结构信息</td>
+<td>高效、独立、无需外部信息</td>
+<td>仅适用于蛋白质复合物全局精度估计，不覆盖局部/界面精度</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算成本高</td>
+<td>现有高精度 EMA 方法需 MSA、模板搜索或语言模型特征生成</td>
+<td>这些特征生成过程计算密集</td>
+<td>Abstract: "these strategies typically incur substantial computational cost"</td>
+</tr>
+<tr>
+<td>评估独立性受损</td>
+<td>依赖建模过程信息（如 MSA、模板）可能引入偏差</td>
+<td>评估方法使用了建模过程的中间产物，独立性被削弱</td>
+<td>Abstract: "rely on information derived from the modeling process itself, which may introduce bias and compromise the independence of the assessment"</td>
+</tr>
+<tr>
+<td>共识方法依赖模型池</td>
+<td>无模型池或模型池质量差时性能下降</td>
+<td>共识类方法本质依赖模型池的多样性和质量</td>
+<td>Background: "consensus-based approaches...their performance is influenced by the quality of the input models"</td>
+</tr>
+<tr>
+<td>适用性受限</td>
+<td>现有方法多针对单链蛋白，复合物评估需专门设计</td>
+<td>复合物结构更复杂，残基-残基相互作用是关键</td>
+<td>全文：MViewEMA 专门针对蛋白质复合物设计，提取残基-残基相互作用特征</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：MViewEMA 是一个单模型 EMA 框架，从单一蛋白质复合物结构中提取三种尺度的残基-残基相互作用特征（微环境 MiE、中环境 MeE、宏环境 MaE），分别用图注意力网络、卷积网络和 Transformer 处理，通过多视图表示学习融合后输出全局置信度分数（基于 TM-score）。</p>
+<p><strong>2) 核心洞察</strong>：蛋白质复合物的全局精度可以从残基-残基相互作用的局部到全局多尺度信息中有效推断，无需外部序列或结构信息。通过互补的多视图特征提取和融合，单模型方法可以达到与依赖外部信息方法相当的精度，同时保持计算高效性和评估独立性。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：对于结构相关计算任务，多尺度特征提取（局部到全局）与多架构融合（图、卷积、Transformer）是一种可迁移的设计范式。当外部信息（MSA、模板）不可用或计算受限时，从结构本身提取互补的多视图特征可能是一种有效的替代策略。这一思路可迁移到其他结构相关任务，如蛋白质-配体结合位点预测、构象采样中的候选结构筛选等。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：一个或多个蛋白质复合物结构文件（PDB 格式），每个文件需包含标准 ATOM 记录、完整残基和原子信息、有效链标识符、残基名称、残基序号、原子名称和笛卡尔坐标；仅含蛋白质链（去除配体、核酸、水分子）；保留单一构象（去除交替原子坐标）；不同链用 TER 记录分隔。</li>
+<li><strong>输出</strong>：CSV 文件，每行对应一个输入模型，包含 PDB 文件名和预测的全局精度分数（基于 TM-score 的置信度）。</li>
+<li><strong>处理流程</strong>：
+  1. 准备输入文件列表（每行一个 PDB 路径）
+  2. 加载预训练 MViewEMA 模型检查点（.ckpt）
+  3. 执行推理：<code>python run_inf.py --test_fpath INPUT_PDBS_LIST --ckpt_path TM_CKPT --output OUT_DIR</code>
+  4. 可选：使用 Singularity 容器（含 Conda 环境，PyTorch 及相关依赖）确保可复现性</li>
+<li><strong>特征提取</strong>：从输入结构中提取 MiE、MeE、MaE 三种尺度的残基-残基相互作用特征</li>
+<li><strong>模型架构</strong>：三种视图分别由图注意力、卷积、Transformer 架构处理，经多视图表示学习融合</li>
+<li><strong>运行环境</strong>：Linux（Ubuntu 18.04+），x86-64 CPU（≥8 核，推荐用于 &gt;2000 残基复合物），NVIDIA GPU（≥16 GB VRAM，推荐用于 ≤2000 残基复合物），系统内存 ≥16 GB</li>
+<li><strong>Web 服务器</strong>：支持单文件、多文件（≤10 个模型）或 ZIP 压缩包提交，可选填邮箱接收通知</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入预处理</td>
+<td>验证和标准化 PDB 文件格式</td>
+<td>确保特征提取正确性</td>
+<td>输入：PDB 文件；输出：标准化结构</td>
+<td>Procedure A2 节详细列出格式要求</td>
+<td>预期影响：格式错误导致解析或特征提取失败（Troubleshooting Problem 2）</td>
+</tr>
+<tr>
+<td>微环境（MiE）特征提取</td>
+<td>捕获残基局部化学环境的相互作用特征</td>
+<td>局部相互作用是复合物结构精度的基础信号</td>
+<td>输入：结构坐标；输出：MiE 特征</td>
+<td>Graphical overview</td>
+<td>预期影响：丧失局部精度判别能力 [Analysis]</td>
+</tr>
+<tr>
+<td>中环境（MeE）特征提取</td>
+<td>捕获中等尺度残基-残基相互作用模式</td>
+<td>中尺度信息补充局部和全局之间的信息缺口</td>
+<td>输入：结构坐标；输出：MeE 特征</td>
+<td>Graphical overview</td>
+<td>预期影响：中尺度模式信息缺失，精度估计可能偏向局部或全局极端 [Analysis]</td>
+</tr>
+<tr>
+<td>宏环境（MaE）特征提取</td>
+<td>捕获全局结构拓扑特征</td>
+<td>全局折叠正确性是复合物模型质量的核心指标</td>
+<td>输入：结构坐标；输出：MaE 特征</td>
+<td>Graphical overview</td>
+<td>预期影响：全局折叠错误难以被检测 [Analysis]</td>
+</tr>
+<tr>
+<td>图注意力网络模块</td>
+<td>处理 MiE 视图</td>
+<td>图结构适合编码残基-残基相互作用网络</td>
+<td>输入：MiE 特征；输出：MiE 表示</td>
+<td>Graphical overview</td>
+<td>预期影响：局部相互作用编码能力下降 [Analysis]</td>
+</tr>
+<tr>
+<td>卷积网络模块</td>
+<td>处理 MeE 视图</td>
+<td>卷积适合提取局部到中程的空间模式</td>
+<td>输入：MeE 特征；输出：MeE 表示</td>
+<td>Graphical overview</td>
+<td>预期影响：中程空间模式提取能力下降 [Analysis]</td>
+</tr>
+<tr>
+<td>Transformer 模块</td>
+<td>处理 MaE 视图</td>
+<td>Transformer 适合捕获长程全局依赖</td>
+<td>输入：MaE 特征；输出：MaE 表示</td>
+<td>Graphical overview</td>
+<td>预期影响：全局拓扑关系建模能力下降 [Analysis]</td>
+</tr>
+<tr>
+<td>多视图融合与预测头</td>
+<td>整合三种视图表示，输出全局置信度分数</td>
+<td>多视图互补信息融合是方法核心</td>
+<td>输入：三种视图表示；输出：TM-score 置信度</td>
+<td>Graphical overview</td>
+<td>预期影响：多视图互补性丧失，精度估计退化 [Analysis]</td>
+</tr>
+<tr>
+<td>推理脚本（run_inf.py）</td>
+<td>执行特征提取和模型推理</td>
+<td>提供命令行接口</td>
+<td>输入：PDB 列表、检查点、输出目录；输出：CSV 结果</td>
+<td>Procedure A3 节</td>
+<td>预期影响：无法执行推理流程</td>
+</tr>
+<tr>
+<td>Singularity 容器</td>
+<td>提供依赖完整的可复现环境</td>
+<td>简化环境配置，确保可复现性</td>
+<td>输入：容器镜像；输出：可执行环境</td>
+<td>Procedure A4 节</td>
+<td>预期影响：环境配置复杂化，可复现性下降</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用。本文为实验协议（Protocol），未包含数学公式或算法推导。核心方法（MViewEMA）的模型架构和损失函数细节需参考原始研究论文（文献 [20]），该协议中未提供。</p>
+<h2>10 实验设计与证据链</h2>
+<p>本文为协议类论文，未包含新的实验验证。协议中提及的验证信息如下：</p>
+<ul>
+<li><strong>验证来源</strong>：该协议已在原始研究论文 [20] 中经过验证和使用（Validation of protocol 节），但协议中未提供该论文的具体验证数据、数据集规模、评估指标或基线对比。</li>
+<li><strong>数据集</strong>：未提供</li>
+<li><strong>评估指标</strong>：全局精度分数基于 TM-score 置信度</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原始研究验证</td>
+<td>MViewEMA 可高效准确估计蛋白质复合物全局精度</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>方法有效（作者声明）</td>
+<td>无法评估具体精度、效率、与基线对比</td>
+<td>Validation of protocol 节</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅覆盖蛋白质复合物（protein-only）的全局模型精度估计，不涉及残基级（residue-level）或界面级（interface-level）局部质量评估，也不适用于蛋白质-配体或蛋白质-核酸复合物。</li>
+<li><strong>输入限制</strong>：输入必须是标准 PDB 格式的蛋白质复合物结构，需去除配体、核酸、水分子和非标准构象。</li>
+<li><strong>输出范围</strong>：输出为全局置信度分数（TM-score 基准），用于模型排序和选择，不提供局部误差信息。</li>
+<li><strong>独立性声明</strong>：方法声称不依赖 MSA、模板、语言模型或模型池共识，仅从输入结构本身提取特征。</li>
+<li><strong>计算规模</strong>：GPU 推荐用于 ≤2000 残基复合物，&gt;2000 残基推荐 CPU 推理以避免显存溢出。</li>
+<li><strong>端到端状态</strong>：协议提供从输入 PDB 到输出 CSV 的完整操作流程，包括本地执行和 Web 服务器两种模式。</li>
+<li><strong>边界总结</strong>：MViewEMA 适用于蛋白质复合物模型的全局精度排序和筛选，在计算效率和评估独立性方面具有优势，但不提供局部质量信息，且不适用于非蛋白质复合物。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 适用范围限于蛋白质复合物（protein-only），不覆盖蛋白质-配体或蛋白质-核酸复合物（General notes 第 8 条）。
+- 仅提供全局精度估计，不提供残基级或界面级局部质量评估（General notes 第 8 条）。
+- 输入 PDB 文件需严格符合标准格式，否则可能导致解析或特征提取失败（Troubleshooting Problem 2）。
+- 对于 &gt;2000 残基的复合物，GPU 推理可能面临显存溢出，需改用 CPU（General notes 第 5 条）。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>协议未提供 MViewEMA 与基线方法的定量对比数据</td>
+<td>无法独立评估方法相对现有 EMA 方法的实际精度和效率优势</td>
+<td>方法声称"高效且准确"，但缺乏可核验的量化证据</td>
+<td>查阅原始研究论文 [20] 中的基准测试结果，或独立在标准数据集（如 CASP/CAPRI 目标）上复现对比</td>
+<td>Validation of protocol 节仅引用 [20]，未提供数据</td>
+</tr>
+<tr>
+<td>协议未说明模型训练数据和训练流程</td>
+<td>无法评估方法的泛化能力和潜在偏差</td>
+<td>训练数据分布可能影响方法在不同类型复合物上的表现</td>
+<td>查阅 [20] 中的训练集构成，或在不同复合物类型上测试</td>
+<td>全文未提及训练数据</td>
+</tr>
+<tr>
+<td>方法声称"不依赖建模过程信息"但未讨论输入结构本身的建模偏差</td>
+<td>输入模型的质量偏差可能影响特征提取和精度估计</td>
+<td>评估独立性声明需要更严格的论证</td>
+<td>在不同质量的输入模型上测试方法稳定性</td>
+<td>Abstract 的独立性声明</td>
+</tr>
+<tr>
+<td>协议未提供运行时间的具体基准</td>
+<td>"高效"声明缺乏量化支撑</td>
+<td>计算效率是方法的核心卖点之一</td>
+<td>在标准硬件上测量不同规模复合物的推理时间</td>
+<td>全文未提供运行时间数据</td>
+</tr>
+<tr>
+<td>未讨论方法在极端情况（如高度错误模型、非常规折叠）下的行为</td>
+<td>精度估计方法在极端输入下可能失效</td>
+<td>实际应用中可能遇到低质量模型，需要了解方法的行为边界</td>
+<td>在人为构造的低质量模型上测试</td>
+<td>全文未讨论</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>多视图特征提取范式</strong>：从同一结构输入中提取互补的多尺度特征（微环境、中环境、宏环境），分别用不同架构（图注意力、卷积、Transformer）处理，再融合预测。这一范式可迁移到蛋白质结构相关任务中，如构象采样中的候选结构筛选、分子对接中的结合构象排序等。</p>
+</li>
+<li>
+<p><strong>单模型评估的独立性价值</strong>：不依赖 MSA、模板、语言模型或模型池共识的评估方法具有计算高效性和评估独立性优势。在需要大规模筛选结构模型但计算资源受限的场景中，这种设计思路值得借鉴。</p>
+</li>
+<li>
+<p><strong>残基-残基相互作用作为核心特征</strong>：蛋白质复合物的全局质量可以从残基-残基相互作用的局部到全局多尺度信息中推断。这一特征选择思路可迁移到蛋白质-蛋白质相互作用预测、结合亲和力估计等任务。</p>
+</li>
+<li>
+<p><strong>协议化方法传播</strong>：将深度学习方法封装为标准化协议（含 Web 服务器、Singularity 容器、详细故障排除）有助于方法在社区中的采用和复现。对于计算生物学工具的开发，提供可复现的运行环境（如容器）和用户友好的接口（如 Web 服务器）是重要的工程实践。</p>
+</li>
+<li>
+<p><strong>TM-score 作为全局精度基准</strong>：使用 TM-score 作为全局置信度的基准指标，与结构生物学社区的标准评估指标对齐，便于方法间的比较和结果解读。</p>
+</li>
+<li>
+<p><strong>输入预处理的重要性</strong>：协议详细规定了 PDB 输入格式要求（去除配体/核酸/水、保留单一构象、TER 分隔链），提示在结构相关计算任务中，输入数据的标准化和清洗对方法性能有重要影响。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>EMA/MQA 方法分类</strong>：本文 Background 节将现有 EMA 方法分为共识类、准单模型类和单模型类，这一分类框架与蛋白质结构预测社区（如 CASP 评估）中的 MQA 方法分类一致。可进一步参考 CASP 历届评估中 MQA 方法的性能对比。</li>
+<li><strong>多视图学习</strong>：MViewEMA 的多视图表示学习框架与深度学习中多模态/多视图融合的一般范式一致，可参考多视图学习在结构生物学中的其他应用。</li>
+<li><strong>TM-score</strong>：TM-score 是结构生物学中广泛使用的全局结构相似性指标，由 Zhang &amp; Skolnick 提出，是 CASP 评估中模型精度的核心指标之一。</li>
+<li><strong>AlphaFold 相关</strong>：AlphaFold 及其后续版本（AlphaFold-Multimer）也输出 per-residue 的 pLDDT 和 PAE 作为置信度估计。MViewEMA 作为独立的单模型 EMA 方法，可对 AlphaFold 等预测方法产生的模型进行独立评估，两者可形成互补。</li>
+<li><strong>DeepUMQA-X</strong>：文中提到的 Singularity 容器来自 DeepUMQA-X 项目（zhanglab-bioinf.com/DeepUMQA-X/），表明 MViewEMA 与 DeepUMQA 系列方法存在技术关联，可追溯该系列方法的发展脉络。</li>
+<li><strong>蛋白质复合物预测</strong>：本文针对蛋白质复合物模型，与 AlphaFold-Multimer、RoseTTAFold 等复合物预测方法的评估需求直接相关，可用于这些方法输出模型的独立质量评估。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：MViewEMA 与 AlphaFold-Multimer 置信度指标的互补性分析
+   - <strong>来源局限/观察</strong>：AlphaFold-Multimer 输出 pLDDT/PAE 作为内部置信度，但这些指标可能受训练数据偏差影响；MViewEMA 提供独立的单模型评估，不依赖建模过程信息。
+   - <strong>核心假设</strong>：MViewEMA 的全局置信度与 AlphaFold-Multimer 的 pLDDT/PAE 在模型排序上存在互补性，两者结合可提高模型选择的准确性。
+   - <strong>初步方法</strong>：在标准复合物数据集上，比较 MViewEMA 分数、AlphaFold pLDDT/PAE 与真实 TM-score 的相关性；测试两种指标的加权组合是否优于单一指标。
+   - <strong>验证方式</strong>：在 CASP/CAPRI 复合物目标上评估排序性能（如 AUC、Spearman 相关）。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：多视图特征提取在构象采样候选筛选中的应用
+   - <strong>来源局限/观察</strong>：MViewEMA 的多视图特征提取（MiE/MeE/MaE）有效编码了结构质量信息；构象采样（如 MD 模拟、增强采样）产生大量候选构象，需要高效筛选。
+   - <strong>核心假设</strong>：MViewEMA 的多视图特征提取框架可迁移到构象采样候选的全局质量评估，替代或补充基于能量的打分函数。
+   - <strong>初步方法</strong>：将 MViewEMA 的特征提取模块适配为通用结构质量编码器，在构象采样轨迹上训练全局质量预测器。
+   - <strong>验证方式</strong>：在标准构象采样基准（如蛋白质折叠/构象变化体系）上比较与能量打分函数的筛选性能。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：MViewEMA 对蛋白质-配体复合物的扩展
+   - <strong>来源局限/观察</strong>：MViewEMA 目前仅适用于蛋白质-only 复合物，不覆盖蛋白质-配体体系；但配体结合构象的质量评估是药物发现中的关键问题。
+   - <strong>核心假设</strong>：MViewEMA 的多视图框架可扩展至蛋白质-配体复合物，通过引入配体原子特征实现全局精度估计。
+   - <strong>初步方法</strong>：扩展特征提取模块以包含配体原子和蛋白质-配体相互作用特征，在蛋白质-配体对接基准上训练和评估。
+   - <strong>验证方式</strong>：在标准对接基准（如 PDBbind、DUD-E）上比较与现有打分函数的排序性能。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：基于 MViewEMA 的蛋白质复合物模型集成选择策略
+   - <strong>来源局限/观察</strong>：MViewEMA 支持单模型独立评估，适合对多个预测方法（AlphaFold-Multimer、RoseTTAFold 等）产生的模型进行统一排序和选择。
+   - <strong>核心假设</strong>：使用 MViewEMA 对多方法产生的复合物模型进行统一排序，可优于各方法内部置信度指标的排序。
+   - <strong>初步方法</strong>：收集多个预测方法对同一复合物目标的模型，用 MViewEMA 统一评分，比较与各方法内部评分的排序性能。
+   - <strong>验证方式</strong>：在复合物预测基准上评估模型选择的成功率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (protocol article)</li>
+<li><strong>Assessment boundary</strong> Scientific and technical soundness of the protocol as described, clarity and reproducibility of the procedures, and alignment with the stated claims. No assessment of the underlying MViewEMA method's performance beyond what is stated in the protocol.</li>
+<li><strong>Shared manuscript claim summary</strong> The manuscript presents a step-by-step protocol for using MViewEMA, a single-model deep learning framework, to estimate the global accuracy (TM-score-based confidence) of protein complex structural models from a single input structure. The protocol claims efficiency, independence from prediction pipelines, and applicability to large-scale model ranking and selection.</li>
+<li><strong>Visible evidence base</strong> Full protocol text including Abstract, Background, Equipment, Software and datasets, Procedure, Validation of protocol, General notes and troubleshooting, and Acknowledgements. No figures, tables, or supplementary data were provided.</li>
+<li><strong>Missing materials affecting confidence</strong> The "Validation of protocol" section is empty; no reference to the original research article is provided. No benchmark results, performance metrics, or comparative analyses are included. Figures referenced in the Procedure (Figures 1–6) are not available. The Graphical overview is mentioned but not shown.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This protocol describes a practical workflow for a potentially useful tool in protein structure model quality assessment. The writing is clear and the procedural steps are logically organized. However, the manuscript lacks any validation data or performance benchmarks, which is a critical omission for a protocol claiming efficiency and accuracy. The empty "Validation of protocol" section and the absence of any quantitative evidence make it impossible to assess whether the protocol delivers on its stated claims. The protocol is technically plausible but currently not established from the provided evidence.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational structural biologists, bioinformaticians, and researchers involved in protein structure prediction and model selection. The protocol offers a potentially fast, pipeline-independent method for ranking protein complex models, which would be valuable in high-throughput settings and for downstream functional annotation.</li>
+<li><strong>Major strengths</strong> The protocol is clearly written with a logical step-by-step structure. The distinction between local and web-server execution is practical. The troubleshooting section addresses common user issues. The claim of independence from MSAs, templates, and language models is a potentially significant advantage in terms of computational cost.</li>
+<li><strong>Major Concerns</strong> The absence of any validation data or performance benchmarks is a major issue. The protocol cannot be assessed for its claimed efficiency or accuracy without quantitative evidence. The empty "Validation of protocol" section is a critical gap. Additionally, the protocol does not provide any guidance on expected runtime, accuracy ranges, or how to interpret the output scores in practice.</li>
+<li><strong>Minor Comments</strong> The Equipment section could benefit from more specific hardware recommendations. The Procedure section would be improved by including example input/output files. The troubleshooting section could be expanded to cover common errors in the local execution workflow.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The lack of validation data and performance benchmarks is the primary technical failing. Without this, the protocol's claims of efficiency and accuracy cannot be verified.</li>
+<li><strong>Assessment against Nature-style criteria</strong>  </li>
+<li>Originality: The multi-view representation learning approach is a novel contribution to the EMA field, but the protocol itself does not present new scientific findings.  </li>
+<li>Scientific importance: The topic is relevant and timely, but the importance cannot be fully assessed without validation data.  </li>
+<li>Interdisciplinary readership: The protocol is primarily of interest to computational biologists and bioinformaticians; broader interdisciplinary appeal is limited.  </li>
+<li>Technical soundness: The described workflow is technically plausible, but the lack of validation undermines confidence in its soundness.  </li>
+<li>Readability for nonspecialists: The protocol is generally readable, but some sections assume familiarity with deep learning and structural biology terminology.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The protocol requires the addition of validation data and performance benchmarks before it can be considered for publication.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence</li>
+<li><strong>Claim pointer</strong> The protocol claims to provide an "efficient and accurate" method for global accuracy estimation of protein complex models.</li>
+<li><strong>Evidence pointer</strong> "Validation of protocol" section; location not provided</li>
+<li><strong>Concern</strong> The "Validation of protocol" section is empty. No benchmark results, performance metrics, or comparisons with existing methods are provided. The protocol's claims of efficiency and accuracy are therefore unsupported.</li>
+<li><strong>Why it matters</strong> A protocol for a computational method must demonstrate that the method works as described. Without validation data, readers cannot assess the reliability of the output scores or the practical utility of the protocol.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a summary of the validation results from the original research article, including benchmark datasets, performance metrics (e.g., correlation with true TM-scores), and comparisons with existing EMA methods.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The protocol states that MViewEMA "extracts residue–residue interaction features from complementary micro-, meso-, and macro-environmental perspectives" and integrates them via "multi-view representation learning."</li>
+<li><strong>Evidence pointer</strong> "Procedure" section; location not provided</li>
+<li><strong>Concern</strong> The protocol does not provide any details on the feature extraction algorithms, the neural network architectures, or the training procedure. A user following the protocol would not be able to understand or modify the underlying method.</li>
+<li><strong>Why it matters</strong> For a protocol to be reproducible and adaptable, it must provide sufficient technical detail. The current description is too high-level for a user to troubleshoot or extend the method.</li>
+<li>
+<p><strong>Resolution test</strong> Add a detailed description of the feature extraction and model architecture, or provide a reference to a peer-reviewed publication that contains these details.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Claim pointer</strong> The protocol states that it "enables large-scale evaluation and selection of predicted models."</li>
+<li><strong>Evidence pointer</strong> "Procedure" section, "General notes and troubleshooting" section; location not provided</li>
+<li><strong>Concern</strong> The protocol does not provide any information on expected runtime, memory usage, or scalability. The troubleshooting section mentions "long waiting time" and "memory or sequence-length limitations" but does not quantify these or provide guidance on system requirements for large-scale use.</li>
+<li><strong>Why it matters</strong> The claim of large-scale applicability cannot be assessed without information on computational requirements. Users need to know whether the method is feasible for their hardware and dataset sizes.</li>
+<li><strong>Resolution test</strong> Provide benchmark runtime and memory usage for representative protein complex sizes, and specify minimum and recommended hardware requirements.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Equipment section</li>
+<li><strong>Evidence pointer</strong> "Equipment" section; location not provided</li>
+<li><strong>Issue</strong> The hardware recommendations are vague. For example, "x86-64 architecture CPU (≥8 cores)" does not specify clock speed or generation, and "NVIDIA GPU with CUDA support (≥16 GB VRAM)" does not specify a minimum compute capability.</li>
+<li>
+<p><strong>Required correction</strong> Provide more specific hardware recommendations, including minimum and recommended specifications.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Usability</li>
+<li><strong>Affected element</strong> Procedure section, Step A.2.a</li>
+<li><strong>Evidence pointer</strong> "Procedure" section; location not provided</li>
+<li><strong>Issue</strong> The protocol states that input files must be in "standard PDB format" but does not provide an example or a link to the PDB format specification.</li>
+<li>
+<p><strong>Required correction</strong> Include a link to the PDB format specification or provide a minimal example PDB file.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Procedure section, Step B.1.b</li>
+<li><strong>Evidence pointer</strong> "Procedure" section; location not provided</li>
+<li><strong>Issue</strong> The protocol mentions that the web server accepts "up to 10 models per submission" but does not specify a maximum file size or total size limit for ZIP uploads.</li>
+<li>
+<p><strong>Required correction</strong> Specify file size limits for individual files and ZIP archives.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Output format, Step A.5</li>
+<li><strong>Evidence pointer</strong> "Procedure" section; location not provided</li>
+<li><strong>Issue</strong> The protocol states that the output is a "TM-score-based confidence" but does not explain how this score should be interpreted or what range of values is expected.</li>
+<li><strong>Required correction</strong> Add a brief explanation of the output score, including its range and how to interpret it for model ranking.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "efficient and accurate" estimation is unsupported due to the absence of validation data.</li>
+<li>The claim of "large-scale evaluation" is unsupported due to the lack of runtime and scalability benchmarks.</li>
+<li>The claim of independence from "MSAs, templates, protein language models, or consensus information" is stated but not demonstrated with comparative data.</li>
+<li>The "Validation of protocol" section is empty, making it impossible to verify that the protocol has been used successfully in any research context.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

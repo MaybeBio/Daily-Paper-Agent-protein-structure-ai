@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present SurfGraphPro, a geometric deep learning method that integrates protein language model embeddings with coarse-grained triangulated protein surface representations for binding site prediction. They claim an average 18 to 28 fold speedup over a current state-of-the-art surface-based model for proteins ranging from approximately 100 to a few thousand amino acids, while maintaining comparable accuracy across diverse binding interfaces including antibody-antigen complexes. They further claim this is the first approach to combine protein language model embeddings with coarse geometric surface representations for this task, and that learned evolutionary features can replace traditional feature engineering without performance loss.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark definitions, baseline specifications, or methodological details are available
+- **Missing materials affecting confidence** Full manuscript, methods section, benchmark datasets, baseline model specifications, performance tables, figures, ablation studies, and code availability
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting methodological direction, namely the combination of protein language model embeddings with coarse surface representations for binding site prediction. However, the claims of speedup, accuracy parity, and novelty cannot be evaluated from the abstract alone. The speedup figures are presented without benchmark conditions, hardware specifications, or baseline versions. The accuracy claim is qualitative and lacks numerical support. The novelty claim is strong and would require a thorough literature comparison. The abstract is well written and the motivation is clear, but the evidence base is insufficient to assess technical soundness or establish the core claims.
+- **Who would be interested in the results, and why** Computational biologists and bioinformaticians working on protein function prediction, structural bioinformatics researchers developing geometric deep learning methods, and experimentalists who require fast and accurate binding site annotations for protein engineering or drug discovery. The potential speed advantage would be of particular interest to those working on large-scale proteomic screens or high-throughput annotation pipelines.
+- **Major strengths** The methodological concept is clear and well motivated. The use of protein language model embeddings to replace multiple sequence alignments and hand-crafted features is a sensible direction given the current trajectory of the field. The focus on coarse-grained surfaces for computational efficiency is pragmatic. The abstract is concise and readable for a broad audience.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The method achieves on average 18 to 28 fold speedup for proteins of approximately 100 to a few thousand amino acids over current state-of-the-art surface-based model while maintaining comparable accuracy.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The speedup and accuracy claims are presented without any numerical data, benchmark definitions, or experimental conditions. No baseline model is named, no dataset is specified, and no performance metrics are reported. The range of 18 to 28 fold is stated but the conditions under which these values were obtained are entirely unclear.
+  - **Why it matters** Speedup claims are highly sensitive to implementation details, hardware, batch sizes, and the specific baseline chosen. Without these details, the claim cannot be verified or reproduced. Similarly, comparable accuracy is a qualitative statement that requires quantitative metrics such as precision, recall, DCC, or area under the precision recall curve on defined benchmark sets.
+  - **Resolution test** Provide a benchmark table with named datasets, baseline models, hardware specifications, and full performance metrics. Report runtime measurements with standard deviations and specify the exact versions of all software and models used.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Novelty substantiation
+  - **Claim pointer** To our knowledge, this represents the first approach to integrate protein language model embeddings with coarse geometric surface representations for binding site prediction.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The novelty claim is stated without any literature comparison. The abstract does not reference prior work that may have combined language model features with surface representations, nor does it explain how the proposed integration differs from existing methods that use language model embeddings with other structural encodings such as graphs or voxels.
+  - **Why it matters** Novelty claims are central to the contribution of the work. Without a systematic comparison to prior art, the claim cannot be assessed. The phrase to our knowledge is insufficient for a strong novelty assertion in a field with rapid publication activity.
+  - **Resolution test** Include a dedicated related work section that surveys existing methods combining language model embeddings with structural representations, and clearly articulate the specific differences and advantages of the proposed approach.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical reproducibility
+  - **Claim pointer** The method operates on coarse-grained triangulated protein surfaces, utilizing solvent-excluded surface meshes downsampled into amino acid residue centered patches.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The methodological description is too brief to assess technical soundness. Key details such as the surface mesh generation algorithm, the downsampling procedure, the patch construction, the geometric transformer architecture, and the integration mechanism for language model embeddings are not described.
+  - **Why it matters** Without these details, the method cannot be evaluated for correctness, efficiency, or generalizability. The claim that learned evolutionary features can replace traditional feature engineering requires an understanding of how the language model embeddings are incorporated and whether information loss occurs during surface coarsening.
+  - **Resolution test** Provide a complete methods section with architectural diagrams, hyperparameter settings, training procedures, and a clear description of how surface meshes are generated and downsampled.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase coarse-graphed is likely a typographical error for coarse-grained.
+  - **Required correction** Correct the spelling to coarse-grained.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scope clarity
+  - **Affected element** Benchmark scope
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions diverse binding interfaces including challenging antibody-antigen complexes but does not specify what other types of interfaces were evaluated.
+  - **Required correction** List the categories of binding interfaces included in the evaluation, such as protein protein, protein peptide, protein nucleic acid, or small molecule binding sites.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Comparison fairness
+  - **Affected element** Baseline comparison
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The comparison is made to a single state-of-the-art surface-based model. It is unclear whether comparisons to non surface based methods were performed.
+  - **Required correction** Clarify whether additional baselines were evaluated and, if so, report those results. If only one baseline was used, justify this choice.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, and R1-M3 are all blocking. The speedup and accuracy claims require quantitative evidence, the novelty claim requires a literature survey, and the method description requires full technical detail. None of these can be resolved from the abstract alone.
+- **Assessment against Nature-style criteria** Originality: the direction is plausible but the novelty claim is unsubstantiated. Scientific importance: potentially high if the speed and accuracy claims hold, but this cannot be determined. Interdisciplinary readership: the abstract is accessible to a broad audience, but the lack of quantitative results limits its impact. Technical soundness: not assessable from the abstract. Readability for nonspecialists: the abstract is well written and understandable, though the term geometric transformer may require familiarity with the field.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a promising direction, but the core claims of speedup, accuracy parity, and novelty require the full manuscript for evaluation. A supportive assessment would be possible if the technical concerns are resolved with quantitative results and complete methodological details.
+
+## Risk / unsupported claims
+- The 18 to 28 fold speedup claim is unsupported without benchmark conditions and baseline specifications.
+- The comparable accuracy claim is unsupported without quantitative performance metrics.
+- The first approach novelty claim is unverifiable without a literature comparison.
+- The claim that learned evolutionary features can replace traditional feature engineering without sacrificing performance is unsupported without ablation studies or comparative feature analysis.
+- The generalizability across diverse binding interfaces is unverifiable without a description of the evaluation datasets.

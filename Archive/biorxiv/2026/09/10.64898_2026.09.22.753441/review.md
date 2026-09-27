@@ -1,0 +1,85 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose TopoFlow, a flow-matching framework that integrates evolutionary representations from multiple sequence alignments (MSAs) with structural latent variables from a variational autoencoder (VAE) to generate protein conformational ensembles. They report improved performance over BioEmu on the ATLAS molecular dynamics benchmark across three metrics (JS-PwD, JS-Rg, JS-TIC), generalization to experimental observables (chemical shifts, SAXS), and complementary contributions from the two representation types based on ablation analyses.
+- **Visible evidence base** Abstract text only; no numerical values beyond the reported percentage improvements, no statistical details, no methodological descriptions, no figure or table references
+- **Missing materials affecting confidence** Full manuscript, methods section, benchmark details, baseline implementation specifics, ablation results, experimental data comparison details, code or data availability statements
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting approach to a challenging problem in structural biology, namely the generation of protein conformational ensembles. The combination of evolutionary and structural latent information is a plausible and potentially valuable idea. However, the evidence provided in the abstract is insufficient to evaluate the technical soundness, statistical robustness, or generalizability of the claims. The reported improvements are modest and lack uncertainty estimates or significance testing. The abstract does not describe the model architecture, training procedure, or evaluation protocol in sufficient detail to assess reproducibility or to determine whether the comparison to BioEmu is fair. The claim of generalization to experimental observables is stated without quantitative support. Overall, the work may be of interest to the computational biology community, but the case is not established from the provided material.
+- **Who would be interested in the results, and why** Computational biologists and biophysicists working on protein dynamics, conformational ensembles, and generative models for biomolecular structures. Researchers developing flow-matching or other generative approaches for molecular systems would also find the methodological combination of evolutionary and structural representations relevant. Experimental structural biologists interested in integrating computational predictions with solution-state observables such as chemical shifts and SAXS may find the reported agreement of interest.
+- **Major strengths** The conceptual framing is clear and addresses a recognized limitation in protein structure prediction, namely the need for ensembles rather than single static structures. The proposed integration of evolutionary information with structural latent variables is a reasonable and potentially novel combination. The use of multiple evaluation metrics and the inclusion of experimental observables suggest an awareness of the need for diverse validation. The reported ablation analyses indicate a systematic attempt to attribute contributions to each component.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "TopoFlow improved the Jensen Shannon metrics for pairwise distances (JS-PwD), radius of gyration (JS-Rg), and time-lagged independent components (JS-TIC) by 10.73%, 5.78% and 7.75%, respectively, relative to BioEmu."
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The reported improvements are presented as single point estimates without any measure of uncertainty, statistical significance, or variability across replicates or independent runs. The abstract does not state how many test systems were used, whether the improvements are consistent across systems, or whether the differences are within noise.
+  - **Why it matters** Without uncertainty quantification or significance testing, the reported percentage improvements cannot be distinguished from random variation. This is particularly important given the modest magnitude of the improvements (5.78% to 10.73%) and the known variability in generative model performance across protein systems.
+  - **Resolution test** Provide confidence intervals, standard errors, or p-values for the reported improvements. State the number of test systems and whether improvements are consistent across all systems. If possible, show per-system results to demonstrate robustness.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and methodological clarity
+  - **Claim pointer** "TopoFlow uses evolutionary representations from multiple sequence alignments (MSAs) to encode global conformational heterogeneity. It combines this with structural variables from a variational autoencoder (VAE) to capture local flexibility. These complementary representations are then adaptively fused through a conditional modulation module."
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract provides no details on the model architecture, the nature of the evolutionary representations, the VAE training procedure, the fusion mechanism, or the flow-matching framework. Key questions include how MSAs are converted into representations, how the VAE is trained and what its latent space represents, how the conditional modulation module operates, and how the flow-matching objective is defined and optimized.
+  - **Why it matters** Without these details, the method cannot be reproduced or evaluated for novelty relative to existing approaches. The claim of a novel integration cannot be assessed without understanding what is new compared to prior work in flow matching, protein ensemble generation, and representation learning.
+  - **Resolution test** Provide a complete methods section describing all components, training procedures, hyperparameters, and the flow-matching formulation. Clarify what is novel relative to existing methods such as BioEmu and other generative models for protein ensembles.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Notably, this performance generalizes to experiment-based evaluation, where TopoFlow exhibits strong agreement with experimental observables, including chemical shifts (CS) and small-angle X-ray scattering (SAXS)."
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The claim of strong agreement with experimental observables is made without any quantitative results. No correlation coefficients, error metrics, or comparisons to baselines are provided. The abstract does not state how many proteins were evaluated, which experimental datasets were used, or how the agreement was quantified.
+  - **Why it matters** The generalization to experimental observables is a key selling point of the work, as it suggests practical utility beyond simulation benchmarks. Without quantitative support, this claim is unverifiable and cannot be distinguished from anecdotal or cherry-picked results.
+  - **Resolution test** Provide quantitative metrics for the agreement with chemical shifts and SAXS data, including comparisons to relevant baselines. State the number of test proteins and the source of experimental data. Show that the agreement is statistically robust and not driven by a small number of favorable cases.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Fairness of comparison
+  - **Claim pointer** "TopoFlow improved the Jensen Shannon metrics ... relative to BioEmu."
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not describe the BioEmu baseline configuration, whether it was retrained or used as provided, whether hyperparameters were tuned for either method, or whether the evaluation protocol was identical for both methods. The comparison may be unfair if, for example, TopoFlow was optimized on the ATLAS benchmark while BioEmu was used with default settings.
+  - **Why it matters** A fair comparison is essential for the claim of improvement. If the baseline is not optimally configured, the reported improvements may reflect tuning artifacts rather than genuine methodological advances.
+  - **Resolution test** Describe the baseline configuration, training and evaluation protocols, and any hyperparameter tuning performed for both methods. If possible, show that TopoFlow also outperforms BioEmu under multiple reasonable baseline configurations.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity and completeness
+  - **Affected element** Abstract, description of ablation analyses
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract states that "ablation analyses further indicated that the evolutionary representations and structural latent variables contributed complementary information" but provides no details on what was ablated, how complementarity was measured, or the magnitude of the effect.
+  - **Required correction** Provide a brief description of the ablation setup and the key quantitative results, or refer to a specific figure or table in the full manuscript.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Abstract, use of "evolutionarily conditioned"
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The term "evolutionarily conditioned" is used in the title and abstract but is not defined. It is unclear whether this refers to conditioning on evolutionary information in the generative model, a specific training strategy, or something else.
+  - **Required correction** Define the term clearly in the abstract or methods, or use more standard terminology such as "evolutionary information" or "MSA-based conditioning."
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Abstract, data and code availability
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract does not mention whether code, trained models, or data will be made available, which is important for reproducibility and community adoption.
+  - **Required correction** Add a data and code availability statement in the full manuscript and mention it in the abstract if space permits.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (lack of uncertainty quantification), R1-M2 (insufficient methodological detail), R1-M3 (unsupported claim of experimental agreement), R1-M4 (unclear fairness of baseline comparison)
+- **Assessment against Nature-style criteria** 
+  - Originality: The combination of evolutionary representations with structural latent variables in a flow-matching framework is a plausible and potentially novel idea, but the abstract does not provide enough context to assess novelty relative to existing work. The originality claim is therefore not established from the supplied material.
+  - Scientific importance: The problem of generating conformational ensembles is important for understanding protein function and for applications in drug discovery and biophysics. If the method delivers robust improvements, it would be of significant interest. However, the importance of the specific contribution cannot be fully assessed without more evidence.
+  - Interdisciplinary readership: The work is likely to appeal to computational biologists, biophysicists, and possibly experimental structural biologists. The abstract is written in a way that is accessible to these audiences, though some terms may require domain knowledge.
+  - Technical soundness: The technical soundness cannot be evaluated from the abstract alone. The lack of methodological detail and uncertainty quantification is a major limitation.
+  - Readability for nonspecialists: The abstract is reasonably clear for a specialist audience but uses technical terms (e.g., flow matching, variational autoencoder, time-lagged independent components) that would be challenging for nonspecialists. The writing is concise and direct.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual approach is interesting and the problem is important, but the abstract does not provide sufficient evidence to support the claims of improved performance, generalization to experimental data, or complementary contributions from the two representation types. A full manuscript with detailed methods, statistical analysis, and fair baseline comparisons would be needed to assess whether the case can be made.
+
+## Risk / unsupported claims
+- The claim of improved performance over BioEmu is unsupported due to lack of uncertainty quantification and unclear fairness of comparison.
+- The claim of strong agreement with experimental observables (chemical shifts, SAXS) is unsupported as no quantitative results are provided.
+- The claim that evolutionary representations and structural latent variables contribute complementary information is unsupported without details on the ablation setup and results.
+- The novelty of the approach relative to existing methods cannot be assessed from the abstract alone.
+- The generalizability of the method beyond the ATLAS benchmark is not established.

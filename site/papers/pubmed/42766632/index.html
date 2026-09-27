@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlloPool is a deep learning framework that infers protein allostery from molecular dynamics simulations. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>AlloPool is a deep learning framework that infers protein allostery from molecular dynamics simulations.</h1>
+      <div class="meta">Marfoglia, Matthieu; Pedraza-Joya, Miguel A; Guirardel, Lucas; Chatzi Souleiman, Aisima; Barth, Patrick</div>
+      <div class="meta muted">
+        
+        <span class="journal">PLoS biology</span>
+        · 2026-09-21
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42766632/">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于图神经网络的AlloPool框架，从分子动力学模拟中推断蛋白质变构通讯网络与构象动态，属于蛋白质构象动态与结构计算建模的核心课题，方法创新且应用广泛。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Recent advances in artificial intelligence have transformed protein structure prediction and design. However, protein function is governed not only by static structures but also by the conformational dynamics that allow proteins to access distinct functional states. Predicting these dynamic transitions, central to many biological processes, remains challenging due to the scarcity of high-resolution experimental data, which limits the training of machine-learning models for dynamic and energetic property prediction. Here, we present AlloPool, a graph neural network (GNN)-based framework that interprets molecular dynamics simulations by iteratively pruning residue-residue interactions to uncover minimal, time-resolved interaction networks that govern protein conformational dynamics and structural responses to chemical or mechanical perturbations, collectively known as allostery. By integrating temporal attention with graph aggregation, AlloPool learns evolving interaction graphs from equilibrium and non-equilibrium molecular dynamics simulations, enabling accurate reconstruction of dynamic trajectories and the interaction networks that drive conformational transitions. Validated across diverse dynamic protein systems, including binding domains, mechanosensors, signaling receptors, and enzymes, AlloPool maps allosteric communication pathways, predicts the effects of ligand binding, mechanical forces, and mutations, discovers transient dynamic states and outperforms existing machine-learning approaches in dynamic trajectory reconstruction. This advance provides a general framework for interpreting protein dynamics with broad implications for drug discovery, synthetic biology, and protein engineering.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">人工智能的最新进展已经改变了蛋白质结构预测与设计。然而，蛋白质功能不仅受静态结构控制，还受构象动力学影响，后者使蛋白质能够进入不同的功能状态。预测这些动态转变（许多生物过程的核心）仍然具有挑战性，因为高分辨率实验数据稀缺，限制了用于动态和能量性质预测的机器学习模型的训练。在此，我们提出AlloPool，一种基于图神经网络（GNN）的框架，通过迭代修剪残基-残基相互作用来解读分子动力学模拟，揭示控制蛋白质构象动力学及其对化学或机械扰动结构响应的最小时间分辨相互作用网络，这些响应统称为变构（allostery）。通过将时间注意力与图聚合相结合，AlloPool从平衡和非平衡分子动力学模拟中学习演化相互作用图，从而能够准确重建动态轨迹及驱动构象转变的相互作用网络。在多种动态蛋白质系统（包括结合域、机械传感器、信号受体和酶）中验证后，AlloPool绘制变构通信通路，预测配体结合、机械力和突变的影响，发现瞬态动态状态，并在动态轨迹重建方面优于现有机器学习方法。这一进展为解读蛋白质动力学提供了通用框架，对药物发现、合成生物学和蛋白质工程具有广泛意义。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: AlloPool is a deep learning framework that infers protein allostery from molecular dynamics simulations</li>
+<li><strong>作者</strong>: Marfoglia, Matthieu; Pedraza-Joya, Miguel A; Guirardel, Lucas; Chatzi Souleiman, Aisima; Barth, Patrick</li>
+<li><strong>单位</strong>: 未提供（Barth lab，具体机构未在摘要中给出）</li>
+<li><strong>期刊/平台</strong>: PLoS Biology</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-09-21）</li>
+<li><strong>论文类型</strong>: 方法学/工具类研究论文</li>
+<li><strong>领域</strong>: 蛋白质变构（allostery）预测 × 深度学习（GNN）× 分子动力学模拟</li>
+<li><strong>关键词</strong>: AlloPool, graph neural network, allostery, molecular dynamics, conformational dynamics, force propagation, GPCR, mechanosensor</li>
+<li><strong>DOI/arXiv</strong>: 10.1371/journal.pbio.3004002</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供（提及使用已发表的 Pin-1 模拟数据集 [31]）</li>
+<li><strong>阅读日期</strong>: 2026-09-21（以在线日期为准）</li>
+<li><strong>在课题方向中的位置</strong>: 该文属于「蛋白质结构相关计算研究 × AI/深度学习」方向，聚焦于从 MD 模拟轨迹中学习动态相互作用网络以推断变构通路，与结构预测（AlphaFold）互补，强调动态构象变化而非静态结构。其核心创新在于将 GNN 与时间注意力结合，实现时间分辨的变构网络推断，可迁移至构象采样、变构位点预测、力传导通路分析等子方向。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>AlloPool 是一个基于图神经网络（GNN）的无监督学习框架，通过迭代剪枝残基-残基相互作用边，从平衡和非平衡 MD 模拟轨迹中学习最小时间分辨相互作用网络，以推断蛋白质变构通路和构象转变机制，并在多种动态蛋白系统（Pin-1、GAIN 结构域、D2 受体、B1AR、SdrG、PDZ）上实现了亚埃级轨迹重建精度，优于 NRI 基线模型。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何从 MD 模拟轨迹中自动、无监督地推断驱动蛋白质构象转变和变构信号传导的最小残基相互作用网络？</li>
+<li><strong>为什么重要</strong>: 蛋白质功能由构象动态而非静态结构决定；变构调控是药物设计、信号转导和机械传导的核心机制。现有结构预测方法（如 AlphaFold）无法捕捉动态转变和时间演化信息。</li>
+<li><strong>现有方法不足</strong>:</li>
+<li>传统方法（PRS、Mutual Information）依赖线性假设或复杂后处理，缺乏因果推断能力</li>
+<li>PRS 基于线性响应理论，在诱导契合或机械去折叠等强非线性过程中失效</li>
+<li>NRI 等现有 GNN 方法使用静态全连接图，无法建模时间依赖的构象变化</li>
+<li><strong>精确研究问题</strong>: Can a graph neural network with temporal attention and iterative edge pooling learn minimal, time-resolved interaction networks from MD trajectories that accurately reconstruct conformational dynamics and identify allosteric pathways?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文 Introduction 和 Discussion 的框架，未经外部系统核验，标记为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态结构预测</td>
+<td>AlphaFold2/3 [1-4]</td>
+<td>高精度结构预测</td>
+<td>无法捕捉动态构象变化和变构转变</td>
+<td>本文补充动态维度</td>
+</tr>
+<tr>
+<td>动态构象分布建模</td>
+<td>扩散模型、flow-based 方法 [14-16]</td>
+<td>可生成多构象状态</td>
+<td>忽略状态间动态耦合，不学习物理相互作用</td>
+<td>本文学习时间演化网络</td>
+</tr>
+<tr>
+<td>相关性分析</td>
+<td>PRS [22-24]、Mutual Information [25]</td>
+<td>可识别长程相互作用</td>
+<td>线性假设、后处理复杂、缺乏因果性</td>
+<td>本文提供非线性、时间分辨替代</td>
+</tr>
+<tr>
+<td>图神经网络推断</td>
+<td>NRI [30,31]</td>
+<td>可学习相互作用图</td>
+<td>静态全连接图，无法建模时间依赖</td>
+<td>本文引入时间注意力和迭代边剪枝</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>: AlloPool 填补了「静态结构预测」与「动态构象采样」之间的空白，通过时间分辨的相互作用网络推断，统一了变构通路映射、力传导分析和构象状态分类。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态结构不足以解释功能</td>
+<td>AlphaFold 预测的结构无法区分功能状态</td>
+<td>蛋白质功能由动态构象转变驱动，而非单一静态结构</td>
+<td>Introduction 第 1-2 段</td>
+</tr>
+<tr>
+<td>现有动态建模忽略状态耦合</td>
+<td>扩散模型生成离散构象，不学习状态间转变机制</td>
+<td>缺乏对驱动转变的物理相互作用的显式建模</td>
+<td>Introduction 第 2 段</td>
+</tr>
+<tr>
+<td>PRS 线性假设失效</td>
+<td>在机械去折叠等强非线性过程中预测不准</td>
+<td>线性响应理论不适用于诱导契合或大尺度构象重排</td>
+<td>Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>Mutual Information 后处理偏差</td>
+<td>复杂后处理引入主观偏差</td>
+<td>需要人工设定阈值和通路提取规则</td>
+<td>Introduction 第 3 段</td>
+</tr>
+<tr>
+<td>NRI 静态图限制</td>
+<td>无法捕捉时间依赖的相互作用变化</td>
+<td>全连接静态图忽略了构象变化过程中的边动态演化</td>
+<td>Introduction 第 4 段</td>
+</tr>
+<tr>
+<td>缺乏时间分辨的变构网络</td>
+<td>现有方法无法区分不同构象状态下的相互作用差异</td>
+<td>变构信号传导本质上是时间演化过程</td>
+<td>Results 图 2F-2I</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>AlloPool 是一个编码器-解码器架构的 GNN，输入 MD 模拟轨迹的连续帧，通过时间注意力机制聚合时间信息，再通过多个 Edge-TopK 块迭代剪枝低重要性边，最终输出：(a) 重建的未来帧坐标；(b) 最小相互作用图（pooled edges）；(c) 基于 PCA 和谱聚类的动态状态分类。</p>
+<h3>2) 核心洞察</h3>
+<p><strong>变构信息编码在稀疏的、时间演化的边集合中，而非全连接图或静态结构中。</strong> 通过迭代剪枝边，模型被迫保留对动力学重建最关键的相互作用，这些边自然对应变构通路和力传导路径。时间注意力使模型能够区分不同构象状态下的相互作用模式，从而实现无监督的状态发现。</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>稀疏性作为归纳偏置</strong>：在生物物理系统中，关键相互作用往往是稀疏的。通过显式强制稀疏性（边剪枝），模型自动聚焦于功能相关残基，避免了全连接图的信息冗余。</li>
+<li><strong>重建任务作为自监督信号</strong>：以未来帧坐标重建为训练目标，无需标签即可学习物理上有意义的相互作用网络，这种范式可迁移到其他动态系统。</li>
+<li><strong>时间注意力捕捉状态转换</strong>：将时间维度显式建模为注意力权重，使模型能够识别构象状态间的转换时刻，这是静态图方法无法实现的。</li>
+</ul>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: MD 或 SMD 模拟轨迹，按固定时间窗口（T 帧）切分；每帧转换为图 Gt(V,Et)，节点为 Cα 原子，边基于距离阈值（d &lt; 15 Å，至少 30% 帧满足）构建</li>
+<li><strong>输出</strong>: (1) 重建的未来帧坐标 x̂_θ^T；(2) 剪枝后的最小相互作用图（pooled edges）；(3) 基于边 PCA 的动态状态分类</li>
+<li><strong>模块</strong>:
+  1. <strong>图构建</strong>: 距离阈值定义初始边集，13 维节点特征（Cα/Cβ 坐标、二面角正弦/余弦、Cα 位移）+ 64 维位置编码
+  2. <strong>结构注意力模块</strong>: Point Transformer [35] 处理 3D 点云，自注意力更新节点特征
+  3. <strong>时间注意力模块</strong>: GRU [36] 递归聚合时间窗口内的图表示，更新门控制新旧信息权重
+  4. <strong>Edge-TopK 块</strong>: 多个堆叠块，每块计算边重要性分数，保留 TopK 边，剪枝低分边
+  5. <strong>解码器</strong>: Multi-Component Spatial-Temporal Graph Convolution [37] 预测目标帧坐标</li>
+<li><strong>训练</strong>: 无监督，最小化对齐后的 RMSD（Kabsch-Umeyama 算法去除刚体变换）；Adam 优化器，初始学习率 10⁻⁴，权重衰减 0.1，学习率衰减因子 2（100 步无改善时）</li>
+<li><strong>假设</strong>: 关键变构相互作用在时间上具有持续性，可通过边剪枝识别；重建任务足以学习物理上有意义的相互作用</li>
+<li><strong>流程</strong>: 轨迹 → 窗口切分 → 图构建 → 结构注意力 → 时间注意力 → 迭代边剪枝 → 解码重建 → 边 PCA/聚类 → 状态分类</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图构建（距离阈值）</td>
+<td>将 MD 帧转换为稀疏图</td>
+<td>全连接图计算复杂且包含无关边</td>
+<td>输入：Cα 坐标；输出：Gt(V,Et)，d&lt;15Å 且 30% 帧满足</td>
+<td>Methods「Graph construction」</td>
+<td>预期：阈值过大引入噪声边，过小丢失长程相互作用 [预期效应]</td>
+</tr>
+<tr>
+<td>结构注意力（Point Transformer）</td>
+<td>编码局部 3D 结构特征</td>
+<td>捕获残基间空间关系</td>
+<td>输入：节点特征；输出：更新后的节点表示</td>
+<td>Methods「Encoder」</td>
+<td>预期：移除后无法区分不同残基的结构角色 [预期效应]</td>
+</tr>
+<tr>
+<td>时间注意力（GRU）</td>
+<td>聚合时间窗口信息</td>
+<td>捕获构象演化的时间依赖性</td>
+<td>输入：逐帧图表示序列；输出：时间聚合表示 H_T</td>
+<td>Results 图 S3（消融实验）</td>
+<td>实测：移除后 RMSD 从 0.89 Å 升至 1.3 Å，RMSF 预测失败 [实测消融]</td>
+</tr>
+<tr>
+<td>Edge-TopK 块</td>
+<td>迭代剪枝低重要性边</td>
+<td>识别最小驱动相互作用的边集</td>
+<td>输入：全连接图；输出：稀疏图（pooled edges）</td>
+<td>Results 图 2D-2E</td>
+<td>实测：移除后模型退化为 NRI 水平，无法识别精确变构网络 [实测消融]</td>
+</tr>
+<tr>
+<td>解码器（Spatial-Temporal GCN）</td>
+<td>从稀疏图重建未来坐标</td>
+<td>验证学习到的图是否足以驱动动力学</td>
+<td>输入：pooled graph；输出：x̂_θ^T</td>
+<td>Results 表 1</td>
+<td>预期：移除后无法评估图质量 [预期效应]</td>
+</tr>
+<tr>
+<td>PCA + 谱聚类</td>
+<td>对 pooled edges 降维分类</td>
+<td>无监督发现动态状态</td>
+<td>输入：边集合；输出：状态标签</td>
+<td>Results 图 2F-2I</td>
+<td>预期：移除后无法区分构象状态 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1. 损失函数（RMSD with Kabsch-Umeyama alignment）</strong>:
+[
+\mathcal{L} = \text{RMSD}(x_T, \hat{x}<em>\theta^T) = \min</em>{R, t} \sqrt{\frac{1}{N} \sum_{i=1}^{N} | R x_{T,i} + t - \hat{x}<em>{\theta,T,i} |^2}
+]
+- (x_T): 目标帧的真实坐标
+- (\hat{x}</em>\theta^T): 模型预测坐标
+- (R, t): 旋转矩阵和平移向量（KU 算法求解）
+- (N): 残基数量</p>
+<p><strong>2. 边重要性分数</strong>:
+[
+s_e = \begin{cases} S_e / P_e &amp; \text{if } P_e &gt; P_{\min} \ 0 &amp; \text{if } P_e \leq P_{\min} \end{cases}
+]
+- (S_e): 边 e 被选中的训练窗口数
+- (P_e): 边 e 为持久边的训练窗口数
+- (P_{\min} = B/10): 总训练窗口数的 10%</p>
+<p><strong>3. 边权重转换</strong>:
+[
+w_e = \begin{cases} -\log(s_e) &amp; \text{if } s_e &gt; 0 \ \infty &amp; \text{otherwise} \end{cases}
+]</p>
+<p><strong>4. 路径分数</strong>:
+[
+s_P = \exp\left(-\frac{1}{n} \sum_{e \in P} w_e\right) = \left(\prod_{e \in P} s_e\right)^{1/n}
+]
+- (P = (e_1, \ldots, e_n)): 长度为 n 的路径</p>
+<p><strong>5. 邻接矩阵重建</strong>（用于 PCA/聚类）:
+[
+A \in \mathbb{R}^{N \times N}, \quad A_{ij} = \text{pooled edge weight between residue } i \text{ and } j
+]</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集与规模</strong>:
+- Pin-1: 3 个状态（apo, agonist-bound, antagonist-bound），已发表模拟数据 [31]，1.2-2.5 μs 全原子 MD
+- GAIN 结构域（ADGRG1）: SMD 模拟，拉力速度 0.1 和 1 nm/ns
+- SdrG-fibrinogen 复合物: SMD 模拟，拉力速度 0.25 nm/ns
+- D2 受体: 2 μs 累积 MD，从活性态自发松弛至非活性态
+- B1AR: 5 个配体结合状态（alp, cvd, cyn, dbt, iso）
+- PDZ3: 8 个突变体 + WT</p>
+<p><strong>指标</strong>: 重建 RMSD（Å）、RMSF 匹配度、边选择频率分布、力-延伸曲线、破裂力分布、配体效能相关性（R²）</p>
+<p><strong>基线</strong>: NRI [31]（静态全连接图 GNN）</p>
+<p><strong>评测协议</strong>: 每个系统独立训练/测试，测试集为未见过的模拟轨迹（独立重复）</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>轨迹重建精度（5 个系统）</td>
+<td>AlloPool 优于 NRI</td>
+<td>相同训练/测试数据</td>
+<td>AlloPool 达亚埃级 RMSD（如 GAIN 0.89 Å），NRI 为 1.4-5.72 Å</td>
+<td>AlloPool 更准确重建动态轨迹</td>
+<td>未证明在更长时间尺度上的泛化</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>消融实验（GAIN）</td>
+<td>时间注意力和 pair attention 均必要</td>
+<td>移除各模块</td>
+<td>移除时间注意力：RMSD 0.89→1.3 Å；移除 pair attention：RMSD→2.1 Å</td>
+<td>两个模块对性能均有贡献</td>
+<td>未测试其他模块组合</td>
+<td>Results 图 S3</td>
+</tr>
+<tr>
+<td>力传播通路预测（GAIN, SdrG）</td>
+<td>AlloPool 识别物理相关通路</td>
+<td>与 PRS 和相关性方法对比</td>
+<td>通路与已知力学热点一致，且捕获非平衡态特有通路</td>
+<td>AlloPool 捕获非线性力传导</td>
+<td>未与实验突变数据直接验证</td>
+<td>Results 图 2D-2E, 图 3</td>
+</tr>
+<tr>
+<td>动态状态发现（D2 受体）</td>
+<td>无监督识别构象状态</td>
+<td>PCA + 谱聚类 vs 已知活性/非活性态</td>
+<td>识别出活性、非活性和中间态，与结构标记一致</td>
+<td>AlloPool 可无监督分类构象状态</td>
+<td>未验证中间态的生物学功能</td>
+<td>Results 图 4A-4E</td>
+</tr>
+<tr>
+<td>配体效能预测（B1AR）</td>
+<td>pooled edges 预测配体效能</td>
+<td>线性回归 vs 实验效能值</td>
+<td>多个边 R² &gt; 0.9，优于持久性指标</td>
+<td>AlloPool 特征编码药理学信息</td>
+<td>样本量小（5 配体），需更大验证</td>
+<td>Results 图 5D-5G</td>
+</tr>
+<tr>
+<td>突变效应预测（PDZ3）</td>
+<td>预测变构突变影响</td>
+<td>8 个突变体 vs WT</td>
+<td>功能丧失突变体显示减弱 coupling</td>
+<td>AlloPool 可预测突变效应</td>
+<td>未与实验结合亲和力数据直接比较</td>
+<td>Results 图 6</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: AlloPool 仅从 MD 轨迹学习，不进行结构预测或序列设计；其输出是相互作用网络和状态分类，而非能量或自由能计算</li>
+<li><strong>Oracle/真值输入</strong>: 训练数据为 MD 模拟轨迹，无实验标签；验证时使用已知结构状态（如 D2 活性/非活性）和文献报道的变构残基作为间接真值</li>
+<li><strong>端到端状态</strong>: 非端到端；需要先运行 MD 模拟获取轨迹，AlloPool 仅作为轨迹分析工具</li>
+<li><strong>算力成本</strong>: 作者未提供详细训练时间/硬件信息；但边剪枝使图规模线性缩小，相比全连接图有计算优势</li>
+<li><strong>历史数据依赖</strong>: 模型对每个蛋白系统独立训练，不跨蛋白泛化；作者明确承认模型是系统特异的</li>
+<li><strong>最难情形</strong>: 非平衡态（SMD）下的力传导通路预测，以及多域蛋白的域间变构</li>
+<li><strong>群体/领域边界</strong>: 验证系统限于可溶性结构域、GPCR、机械敏感蛋白；未测试 intrinsically disordered proteins 或膜蛋白在更复杂脂质环境中的表现</li>
+<li><strong>有边界的复述</strong>: AlloPool 能在训练过的蛋白系统上，从 MD 轨迹中无监督识别驱动构象转变的稀疏相互作用网络，并在轨迹重建精度上优于 NRI；其预测的变构通路与已知生物学一致，但模型不可跨蛋白迁移，且未与实验直接验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模型不编码序列/化学信息</td>
+<td>仅使用空间坐标和二面角，忽略氨基酸类型和化学性质</td>
+<td>整合蛋白语言模型嵌入和原子级分辨率表示</td>
+<td>Discussion 第 4 段</td>
+</tr>
+<tr>
+<td>系统特异性</td>
+<td>每个蛋白需独立训练，不跨蛋白泛化</td>
+<td>设计更通用的架构，整合序列和结构信息</td>
+<td>Discussion 第 4 段</td>
+</tr>
+<tr>
+<td>缺乏因果推断</td>
+<td>边选择基于重建贡献，不直接等价于因果驱动</td>
+<td>引入因果推断框架强化方向性通路识别</td>
+<td>Discussion 第 4 段</td>
+</tr>
+<tr>
+<td>未整合实验约束</td>
+<td>纯计算框架，未使用突变实验或 NMR 数据</td>
+<td>整合实验约束提升预测精度</td>
+<td>Discussion 第 4 段</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>重建精度高不等于物理正确</td>
+<td>模型可能通过记忆训练轨迹模式而非学习真实物理相互作用实现低 RMSD</td>
+<td>变构通路预测的生物学有效性取决于物理真实性</td>
+<td>在未见过的模拟条件（不同温度、力场）下测试泛化</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>边剪枝标准依赖重建任务</td>
+<td>对重建最优的边集不一定对应变构功能关键残基</td>
+<td>可能遗漏功能重要但动力学贡献小的相互作用</td>
+<td>与实验突变数据（丙氨酸扫描）系统比较</td>
+<td>Results 图 6</td>
+</tr>
+<tr>
+<td>与 NRI 比较的公平性</td>
+<td>NRI 为通用模型，未针对 MD 轨迹优化；比较可能偏向 AlloPool</td>
+<td>需要与更多专用基线（如 VAMPNet、SRV）比较</td>
+<td>在相同数据上运行多种方法</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>无监督状态发现的验证不足</td>
+<td>D2 受体状态分类与已知结构一致，但中间态未验证</td>
+<td>中间态可能是伪影而非真实生物学状态</td>
+<td>用 Markov state model 或实验探针验证中间态</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>配体效能预测样本量小</td>
+<td>仅 5 个配体，R² &gt; 0.9 可能过拟合</td>
+<td>药理学预测需要更大配体集验证</td>
+<td>扩展至更多配体，使用交叉验证</td>
+<td>Results 图 5</td>
+</tr>
+<tr>
+<td>缺乏不确定性量化</td>
+<td>未报告预测置信区间或边选择的稳定性</td>
+<td>实际应用中需要知道预测可靠性</td>
+<td>多次随机初始化训练，评估边选择稳定性</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>稀疏边剪枝作为变构通路发现的通用策略</strong>：将「最小驱动子图」作为学习目标，可迁移到其他动态系统（如 RNA 变构、蛋白-核酸复合物），只需将节点/边定义替换为对应残基/核苷酸。</p>
+</li>
+<li>
+<p><strong>时间注意力 + 图聚合的组合模式</strong>：先时间聚合再空间剪枝的两阶段架构，可迁移到 MD 轨迹分析的其他任务（如自由能景观分类、构象状态分割），也可用于增强现有变构位点预测工具。</p>
+</li>
+<li>
+<p><strong>重建任务作为自监督物理特征学习</strong>：以未来帧预测为代理任务，无需标签即可学习物理上有意义的相互作用，这一范式可迁移到小样本体系（如孤儿受体、新突变体），避免依赖大量实验标注。</p>
+</li>
+<li>
+<p><strong>PCA + 谱聚类在边空间的无监督状态发现</strong>：在边集合而非坐标空间做降维聚类，对构象状态识别更敏感，可迁移到 MD 模拟的自动状态分割，替代传统 RMSD-based 聚类。</p>
+</li>
+<li>
+<p><strong>路径分析框架</strong>：基于边权重的加权最短路径提取力传播通路，可迁移到机械传导蛋白（如整合素、talin）的力通路预测，或用于设计机械敏感蛋白的突变实验。</p>
+</li>
+<li>
+<p><strong>与结构预测的互补性</strong>：AlphaFold 无法捕捉的突变效应（如 L16A）可通过动力学边网络检测，提示「静态结构 + 动态网络」联合分析策略，可迁移到致病突变效应预测管道。</p>
+</li>
+<li>
+<p><strong>系统特异性作为特征而非缺陷</strong>：虽然模型不跨蛋白泛化，但每个系统的边网络可作为该蛋白的「动态指纹」，用于比较同源蛋白的变构差异，或追踪进化中变构位点的保守性。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, discussion, methods, supporting information references)</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, claims versus evidence, and suitability for a general biological audience</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present AlloPool, a graph neural network framework that learns time-resolved, minimal interaction networks from molecular dynamics simulations to infer protein allostery, predict conformational transitions, and capture effects of ligands, mutations, and mechanical force across diverse protein systems.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Figs 1–8), tables (Table 1), supplementary figures (S1–S6), supplementary tables (S1–S2), methods section</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures and tables referenced but not provided; code and model weights not provided; detailed hyperparameter settings and architecture dimensions not fully specified; statistical details for some comparisons not provided</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a technically sophisticated deep learning framework with a clear motivation and a broad set of application domains. The core idea of iteratively pruning interaction graphs from MD trajectories to reveal allosteric networks is novel and potentially impactful. However, the evidence provided is insufficient to fully establish the claimed advantages over existing methods. Several key comparisons lack statistical rigor, the generalizability claims are not fully supported, and important methodological details are missing. The framework shows promise, but the current manuscript does not convincingly demonstrate that AlloPool provides a general and mechanistically informative tool beyond what existing correlation-based or graph-based methods already offer.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and structural biologists studying protein allostery, conformational dynamics, and signal transduction would be the primary audience. Researchers developing deep learning methods for molecular dynamics analysis would also find the architectural innovations relevant. The potential applications in drug discovery and protein engineering could attract a broader readership in pharmaceutical and biotechnology research.</li>
+<li><strong>Major strengths</strong> The manuscript addresses a timely and important problem: extracting mechanistic insight from MD simulations using deep learning. The architectural innovations (temporal attention, iterative edge pooling) are well motivated and represent a genuine advance over static graph approaches. The diversity of validation systems, from mechanosensors to GPCRs to PDZ domains, demonstrates the potential breadth of the framework. The comparison with NRI, a relevant baseline, is appropriate. The authors also make a commendable effort to connect learned features to experimentally known allosteric sites and pathways.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "AlloPool outperformed the NRI in both fluctuation and structural accuracy categories, achieving subangstrom accuracy in reconstruction RMSD."</li>
+<li><strong>Evidence pointer</strong> Table 1, S2 Fig, S3 Fig</li>
+<li><strong>Concern</strong> The comparison with NRI is presented as a central result, but the statistical basis is unclear. The manuscript reports average RMSD and RMSF values but does not provide error bars, confidence intervals, or statistical tests comparing AlloPool and NRI across the different systems. The claim of "outperforming" is therefore not rigorously established. Additionally, the choice of NRI as the sole baseline is limited; other graph-based or correlation-based methods (e.g., mutual information, dynamic network analysis) should be compared to demonstrate a clear advantage.</li>
+<li><strong>Why it matters</strong> Without statistical rigor, the central performance claim is not convincing. The reader cannot assess whether the observed differences are meaningful or within noise. A stronger baseline comparison is also needed to position AlloPool within the existing methodological landscape.</li>
+<li><strong>Resolution test</strong> Provide per-system error bars (e.g., standard deviation across training seeds or test trajectories) and perform appropriate statistical tests (e.g., paired t-test or Wilcoxon signed-rank test) for RMSD and RMSF comparisons. Include at least one additional baseline method, such as dynamic network analysis or a correlation-based approach, to contextualize the performance gains.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> "AlloPool accurately predicts the impact of ligand binding on GPCR allosteric regulation, accurately predicting the dynamic signatures of distinct signaling states."</li>
+<li><strong>Evidence pointer</strong> Fig 5, Methods "Ligand efficacy correlation"</li>
+<li><strong>Concern</strong> The prediction of ligand efficacy from pooled edge features is a strong claim, but the validation is incomplete. The manuscript reports high Pearson correlation coefficients (R2 &gt; 0.9) for some edges, but the number of ligands tested (five) is very small, and the statistical significance of the correlation is not reported. The partial least squares regression model is described, but the cross-validation procedure, if any, is not detailed. The claim that AlloPool "predicts" ligand efficacy is overstated given the limited dataset and lack of out-of-sample validation.</li>
+<li><strong>Why it matters</strong> The ability to predict pharmacological properties from dynamics would be a major advance, but the current evidence is insufficient to support this claim. Overstating predictive power based on a small, potentially overfit dataset undermines the credibility of the framework.</li>
+<li><strong>Resolution test</strong> Provide a clear description of the cross-validation scheme (e.g., leave-one-ligand-out) and report prediction accuracy for held-out ligands. Report the number of edges used in the regression and the stability of the selected features. If possible, include additional ligands to increase the statistical power of the correlation analysis.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "AlloPool can effectively resolve complex allosteric transitions and unbiasedly identify multiple relevant functional and transient states from dynamic data alone."</li>
+<li><strong>Evidence pointer</strong> Fig 4, Methods "Edge PCA and clustering"</li>
+<li><strong>Concern</strong> The clustering of pooled edges to identify dynamic states is a key methodological contribution, but the validation is largely qualitative. The manuscript shows that three clusters correspond to inactive, active, and intermediate states, but it is not clear how the number of clusters was chosen beyond silhouette score analysis, nor whether the clusters are stable across different random seeds or trajectory subsets. The claim of "unbiased" identification is also questionable, as the clustering procedure involves several user-defined choices (e.g., PCA dimensionality, clustering algorithm, distance metric).</li>
+<li><strong>Why it matters</strong> The ability to discover functional states from dynamics is a central promise of the framework. If the clustering is not robust or is sensitive to arbitrary choices, the claim of unbiased discovery is weakened.</li>
+<li><strong>Resolution test</strong> Perform a sensitivity analysis of the clustering results to the number of PCA components, clustering parameters, and random seeds. Report cluster stability metrics (e.g., adjusted Rand index) across repeated runs. Clarify what "unbiased" means in this context and acknowledge the user-defined choices in the procedure.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> "AlloPool can uncover subtle mutational effects encoded in protein dynamics before they manifest as large-scale structural changes."</li>
+<li><strong>Evidence pointer</strong> Fig 7</li>
+<li><strong>Concern</strong> The Engrailed homeodomain example is compelling, but the evidence is limited to a single mutation in a single protein. The claim that AlloPool can "uncover subtle mutational effects" is a general statement that requires broader validation. The manuscript does not provide a quantitative metric for the "reduced interaction density" observed in the mutant, nor does it compare this metric to simpler measures such as RMSF differences or contact map changes.</li>
+<li><strong>Why it matters</strong> The ability to detect mutational effects that structure prediction tools miss is a potentially transformative application. However, a single case study is insufficient to establish this as a general capability of the framework.</li>
+<li><strong>Resolution test</strong> Provide a quantitative comparison of interaction density between wild-type and mutant, with appropriate statistical testing. Include additional mutations or proteins to demonstrate generalizability. Compare the AlloPool-based metric to simpler, established measures of dynamic change.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Abstract and Introduction</li>
+<li><strong>Evidence pointer</strong> Abstract, Introduction</li>
+<li><strong>Issue</strong> The abstract and introduction use technical jargon (e.g., "iteratively pruning residue–residue interactions," "temporal attention with graph aggregation") without sufficient context for a general biological audience. The significance of allostery and the limitations of existing methods could be explained more clearly.</li>
+<li><strong>Required correction</strong> Provide a brief, accessible explanation of why allostery is important and why existing computational methods are limited. Define key terms such as "graph neural network" and "temporal attention" in plain language.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Methods "Molecular dynamics simulations"</li>
+<li><strong>Evidence pointer</strong> Methods</li>
+<li><strong>Issue</strong> The simulation parameters are described, but the equilibration protocol is incomplete. The manuscript states "two rounds of equilibration were carried out, the first in an NVT ensemble for 100 ps" but does not describe the second round. Additionally, the total simulation time per system is not clearly stated (5 trajectories of 200–400 ns each, but the total per system is ambiguous).</li>
+<li><strong>Required correction</strong> Specify the second equilibration round (ensemble, duration, and any restraints). State the total simulation time per system and the number of systems used for training and testing.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Methods "Model architecture"</li>
+<li><strong>Evidence pointer</strong> Methods, Fig 1</li>
+<li><strong>Issue</strong> The model architecture is described at a high level, but key details are missing: the number of layers, hidden dimensions, number of attention heads, dropout rates, and the specific implementation of the edge pooling operation. The loss function is mentioned but not fully defined.</li>
+<li><strong>Required correction</strong> Provide a complete architectural specification, including all hyperparameters, in the Methods or Supplementary Information. Define the loss function explicitly.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interdisciplinary readership</li>
+<li><strong>Affected element</strong> Results sections on GPCRs and mechanosensors</li>
+<li><strong>Evidence pointer</strong> Figs 2, 4, 5</li>
+<li><strong>Issue</strong> The biological significance of the findings for GPCR signaling and mechanosensing is not fully contextualized. For example, the relevance of the identified allosteric networks to known signaling mechanisms could be discussed more explicitly.</li>
+<li><strong>Required correction</strong> Add brief statements connecting the computational findings to established biological knowledge, such as known allosteric sites or signaling pathways, to make the results more accessible to biologists.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (statistical rigor of performance comparison), R1-M2 (validation of ligand efficacy prediction), R1-M3 (robustness of clustering), R1-M4 (generalizability of mutational effect detection)</li>
+<li><strong>Assessment against Nature-style criteria</strong></li>
+<li><strong>Originality</strong> The iterative edge-pooling approach with temporal attention is a novel contribution to the analysis of MD simulations. The application to diverse systems, including non-equilibrium processes, is innovative. However, the core idea of using graph-based methods for allostery is not entirely new, and the novelty lies primarily in the specific architectural choices.</li>
+<li><strong>Scientific importance</strong> The problem of extracting mechanistic insight from MD simulations is of high importance. If the claims are fully validated, the framework could have broad impact on understanding allostery, drug design, and protein engineering. However, the current evidence is insufficient to establish this impact.</li>
+<li><strong>Interdisciplinary readership</strong> The topic is relevant to computational biologists, structural biologists, and biophysicists. The potential applications in drug discovery could attract a broader audience, but the technical presentation may limit accessibility.</li>
+<li><strong>Technical soundness</strong> The methodology is well motivated, but several technical aspects require clarification and additional validation, as detailed in the major concerns. The lack of statistical rigor and limited baseline comparisons are significant weaknesses.</li>
+<li><strong>Readability for nonspecialists</strong> The manuscript is generally well written, but the abstract and introduction could be more accessible. The results sections are dense and may be challenging for readers without a strong computational background.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The framework is promising and addresses an important problem, but the current evidence does not fully support the central claims. The authors should address the statistical rigor of the performance comparisons, provide more robust validation of the predictive claims, and clarify the methodological details. With these revisions, the manuscript could make a significant contribution to the field.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that AlloPool "outperforms" NRI is not statistically supported without error bars and significance tests.</li>
+<li>The claim that AlloPool "predicts ligand efficacy" is overstated given the small number of ligands and lack of out-of-sample validation.</li>
+<li>The claim of "unbiased" identification of dynamic states is not fully supported, as the clustering procedure involves user-defined choices.</li>
+<li>The general claim that AlloPool can "uncover subtle mutational effects" is based on a single case study and requires broader validation.</li>
+<li>The computational complexity analysis in the "Computational advantage" section is theoretical and not empirically validated across a range of system sizes.</li>
+<li>The claim that AlloPool captures "causal relationships" in allosteric signaling is not supported by the presented analyses, which are correlational in nature.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

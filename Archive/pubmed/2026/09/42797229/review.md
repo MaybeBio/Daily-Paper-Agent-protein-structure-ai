@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to full methods, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors propose a pH-resolved structural framework linking 5-fold pore dynamics in AAV8 and AAV9 capsids to peptide-ligand recognition, supported by 500 ns molecular dynamics simulations at three pH conditions and affinity chromatography experiments with three mixed-mode peptide ligands. They report serotype-specific pore conformational behavior, differential ligand performance, and derive sequence-based design rules for affinity capture of gene therapy vectors.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or numerical data beyond those cited in the abstract
+- **Missing materials affecting confidence** Full methods, simulation parameters and validation, experimental protocols, all figures and tables, statistical analyses, raw data, and supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents an ambitious integration of computational and experimental approaches to address a relevant question in AAV vector manufacturing. The central hypothesis, that pH-dependent 5-fold pore dynamics influence peptide ligand recognition, is plausible and of potential interest to the gene therapy community. However, the abstract alone provides insufficient detail to evaluate the technical soundness of either the simulation or experimental components. Several claims appear to exceed what can be supported by the data as described, particularly the translation from structural dynamics to sequence-design rules. The work may have merit, but the case is not established from the provided material.
+- **Who would be interested in the results, and why** Researchers and process developers in gene therapy vector manufacturing, particularly those working on AAV purification and affinity chromatography. The potential to derive sequence-based design rules for peptide ligands targeting AAV capsids would interest bioprocess engineers and protein engineers. Structural biologists studying viral capsid dynamics may also find the pH-gating framework relevant.
+- **Major strengths** The study addresses a clinically relevant problem, namely the need for improved affinity ligands for AAV purification. The combination of molecular dynamics and experimental chromatography is a potentially powerful approach. The focus on AAV8 and AAV9, two serotypes of high clinical relevance, strengthens the translational relevance. The reported enrichment factors for transduction activity suggest a functionally meaningful outcome.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness of computational methods
+  - **Claim pointer** The claim that 500 ns molecular dynamics simulations under acidic, neutral, and basic conditions reveal pH-dependent conformational gating and distinct pore dynamics for AAV8 and AAV9
+  - **Evidence pointer** Methods section as described in abstract; location not provided
+  - **Concern** The abstract provides no information on the simulation setup, including force field parameters, protonation state treatment at different pH values, system size, equilibration protocols, or convergence assessment. A 500 ns timescale may be insufficient to sample the conformational landscape of a large capsid assembly, and the treatment of pH in molecular dynamics is nontrivial. Without details on how protonation states were assigned and whether simulations were replicated, the reliability of the reported conformational differences cannot be assessed.
+  - **Why it matters** The central structural claims rest entirely on the simulation results. If the simulations are not technically sound or adequately converged, the proposed framework linking pore dynamics to ligand recognition collapses.
+  - **Resolution test** Provide full simulation methods, including force field, water model, protonation assignment strategy, system composition, simulation length per replicate, number of replicates, and convergence metrics such as root-mean-square deviation stability and free-energy profile convergence.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Experimental evidence and statistical support
+  - **Claim pointer** The claim that TYHHHHII achieved the highest selectivity for genome-containing capsids at pH 7 with transduction activity enrichment factors of 2.82 for AAV8 and 5.61 for AAV9, and that TTFRAHHI provided the broadest operational pH range
+  - **Evidence pointer** Results section as described in abstract; location not provided
+  - **Concern** The abstract reports enrichment factors and qualitative comparisons between ligands but provides no information on experimental replicates, variability, statistical significance, or controls. It is unclear how selectivity was defined and measured, whether the reported enrichment factors are statistically distinguishable from each other or from other ligands, and what the error bars or confidence intervals are. The claim that TTFRAHHI provided the broadest operational pH range is not supported by any quantitative data in the abstract.
+  - **Why it matters** Without statistical support, the differential performance of the three ligands cannot be established. The conclusions regarding which ligand is superior for which purpose are central to the practical recommendations.
+  - **Resolution test** Provide replicate numbers, statistical tests, effect sizes with confidence intervals, and a clear definition of selectivity and operational pH range. Show that the reported enrichment factors are significantly different from those of other ligands and from negative controls.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Logical link between computational and experimental results
+  - **Claim pointer** The claim that the experimental ligand performance can be explained by the simulated pH-dependent pore dynamics, and that sequence-based design rules can be derived from this framework
+  - **Evidence pointer** Conclusions section as described in abstract; location not provided
+  - **Concern** The abstract does not describe any direct mechanistic connection between the simulated pore dynamics and the experimentally observed ligand binding behavior. It is not shown that the ligands bind at or near the 5-fold pore, that their binding is pH-dependent in a manner consistent with the simulations, or that mutations or variants predicted by the design rules behave as expected. The design rules appear to be inferred from the ligand sequences and the simulated pore properties without a demonstrated causal link.
+  - **Why it matters** The stated aim is to translate the structural framework into sequence-based design principles. Without a demonstrated connection between pore dynamics and ligand binding, the design rules are speculative and not validated.
+  - **Resolution test** Provide experimental evidence that the ligands interact with the 5-fold pore region, such as mutagenesis, cryo-electron microscopy, or competitive binding data. Show that ligand variants designed according to the proposed rules exhibit the predicted pH-dependent binding behavior.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of terminology
+  - **Affected element** The term "mixed-mode peptide ligands"
+  - **Evidence pointer** Methods section as described in abstract; location not provided
+  - **Issue** The term "mixed-mode" is not defined in the abstract. It is unclear whether this refers to a combination of electrostatic and hydrophobic interactions, or to some other combination of binding modes.
+  - **Required correction** Define "mixed-mode" in the context of the peptide ligands and their intended interaction mechanism with the capsid.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness of reporting
+  - **Affected element** The statement that AAV8 displayed a "heterogeneous, bimodal pore conformational landscape" and AAV9 exhibited a "discrete gate-like transition"
+  - **Evidence pointer** Results section as described in abstract; location not provided
+  - **Issue** These qualitative descriptors are not accompanied by any quantitative metrics, such as pore radius distributions, free-energy differences between states, or populations of each conformational state.
+  - **Required correction** Provide quantitative descriptors of the conformational states, such as pore radius distributions, population fractions, and free-energy differences, to support the qualitative characterization.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** The cell line and production system for AAV
+  - **Evidence pointer** Methods section as described in abstract; location not provided
+  - **Issue** The abstract states that clarified HEK293 lysates were used but does not specify the transfection method, the AAV production system, or the serotype-specific constructs used.
+  - **Required correction** Specify the AAV production method, including transfection reagents, helper plasmid details, and any purification steps prior to affinity chromatography.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interpretation of transduction assay
+  - **Affected element** The transduction activity enrichment factors
+  - **Evidence pointer** Results section as described in abstract; location not provided
+  - **Issue** The abstract does not specify the cell type used for transduction assays, the multiplicity of infection, or the time point at which transduction was measured. These factors can substantially influence the reported enrichment factors.
+  - **Required correction** Provide details of the transduction assay, including cell type, infection conditions, and measurement time point.
+
+## Risk / unsupported claims
+- The claim that a "pH-resolved structural framework" has been established is not supported by the abstract alone, as no structural data are presented and the simulation methodology cannot be evaluated.
+- The claim that sequence-based design rules can be derived from the framework is unsupported, as no validation of these rules is described.
+- The claim that TYHHHHII achieved the "highest selectivity for genome-containing capsids" is unsupported without statistical comparison to other ligands and a clear definition of selectivity.
+- The claim that TTFRAHHI provided the "broadest operational pH range" is unsupported by any quantitative data in the abstract.
+- The qualitative distinction between AAV8 "bimodal" and AAV9 "discrete gate-like" pore behavior is not quantitatively supported.
+- The mechanistic link between simulated pore dynamics and experimental ligand binding is not established from the provided material.

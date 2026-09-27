@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the supplied abstract
+- **Shared manuscript claim summary** The authors propose Cerebra-Epistasis, an end-to-end framework coupling a single-sequence structure predictor with a downstream fitness prediction network that explicitly models non-linear epistatic effects. They claim state-of-the-art performance in multi-mutant fitness prediction across diverse assays, increasing advantage with mutation order, reliable extrapolation from low-order to higher-order mutants, and approximately three orders of magnitude acceleration in landscape-scale prediction.
+- **Visible evidence base** Abstract text only. No figures, tables, methods, datasets, or benchmark details are provided.
+- **Missing materials affecting confidence** Full manuscript, benchmark datasets, baseline definitions, evaluation metrics, statistical significance tests, computational cost measurements, and any ablation studies are not available.
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually appealing framework that addresses a genuine gap in protein fitness prediction, namely the explicit integration of structural information and epistatic effects for higher-order mutants. However, the evidence base is limited to a summary of claims without quantitative results, methodological details, or comparisons. The central claims of performance superiority, extrapolation capability, and computational acceleration cannot be verified from the supplied material. The work is potentially interesting to the protein engineering and computational biology communities, but the case is not established from the abstract alone.
+- **Who would be interested in the results, and why** Protein engineers and directed evolution practitioners would be interested in improved multi-mutant fitness prediction. Computational biologists working on fitness landscapes, epistasis modeling, and structure-function relationships would also find the framework relevant. The claimed acceleration in landscape-scale prediction could appeal to those performing high-throughput in silico screening.
+- **Major strengths** The conceptual framing is clear and addresses a recognized limitation in existing fitness predictors. The explicit coupling of structure prediction with epistasis-aware fitness modeling is a sensible design choice. The claim of extrapolation from low-order to higher-order mutants, if substantiated, would represent a meaningful advance.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The claim that Cerebra-Epistasis outperforms other state-of-the-art baselines in multi-mutant fitness prediction with enhanced advantage over increasing mutation orders.  
+  - **Evidence pointer** Abstract, no quantitative results provided  
+  - **Concern** The abstract states superior performance but provides no numerical results, no benchmark names, no baseline identifiers, and no statistical measures. Without these, the performance claim is unverifiable.  
+  - **Why it matters** Performance superiority is the central claim of the work. If it cannot be assessed, the primary contribution of the framework remains unsupported.  
+  - **Resolution test** Provide benchmark datasets, baseline methods, evaluation metrics, and effect sizes with confidence intervals or significance tests in the full manuscript.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The claim that the special epistasis design allows reliable extrapolation from low-order mutant data to unseen higher-order combinations.  
+  - **Evidence pointer** Abstract, no experimental or validation details  
+  - **Concern** Extrapolation capability is a strong claim that requires demonstration on held-out higher-order mutants not seen during training. The abstract does not describe the validation protocol or the degree of extrapolation achieved.  
+  - **Why it matters** If extrapolation is not rigorously demonstrated, the practical utility of the framework for landscape-scale prediction is questionable.  
+  - **Resolution test** Describe the train-test split, the mutation order ranges used for training versus evaluation, and quantitative extrapolation performance compared to baselines.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The claim of three orders of magnitude acceleration in landscape-scale prediction.  
+  - **Evidence pointer** Abstract, no computational cost data  
+  - **Concern** The acceleration factor is presented without any timing measurements, hardware specifications, or comparison to alternative approaches.  
+  - **Why it matters** Computational efficiency is a stated benefit and a potential differentiator. Without supporting data, this claim cannot be evaluated.  
+  - **Resolution test** Provide wall-clock time comparisons against baselines for equivalent prediction tasks, including hardware and software details.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Framework description  
+  - **Evidence pointer** Abstract  
+  - **Issue** The term "single-sequence structure predictor" is used but not clarified. It is unclear whether this refers to a specific existing model or a novel component.  
+  - **Required correction** Specify the structure prediction model used and its role in the pipeline.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Reproducibility  
+  - **Affected element** Evaluation scope  
+  - **Evidence pointer** Abstract  
+  - **Issue** The phrase "diverse assays" is vague. The number and types of datasets are not specified.  
+  - **Required correction** List the datasets used, their sizes, and the fitness readouts.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Terminology  
+  - **Affected element** "one-shot inference"  
+  - **Evidence pointer** Abstract  
+  - **Issue** The term "one-shot inference" is not defined in the context of this framework. It is unclear what is inferred in one shot and how this differs from standard prediction.  
+  - **Required correction** Define the term and explain the inference procedure.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. All three major concerns must be resolved with quantitative evidence before the central claims can be considered supported.
+- **Assessment against Nature-style criteria**  
+  - Originality: The conceptual combination of structure prediction with epistasis-aware fitness modeling appears novel, but originality cannot be fully assessed without a literature comparison in the full manuscript.  
+  - Scientific importance: The problem addressed is important for protein engineering. The potential for landscape-scale prediction is significant if substantiated.  
+  - Interdisciplinary readership: The work bridges structural biology, machine learning, and protein engineering, which could attract a broad readership.  
+  - Technical soundness: Cannot be evaluated from the abstract. The absence of methodological and validation details prevents assessment.  
+  - Readability for nonspecialists: The abstract is generally readable, but terms such as "epistasis-aware mutation atlas" and "single-sequence structure predictor" may require more context for a general audience.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising, but the abstract lacks the quantitative and methodological detail required to support the central claims. A full manuscript with rigorous benchmarking, extrapolation validation, and computational cost analysis would be needed to assess the work properly.
+
+## Risk / unsupported claims
+- Superior performance over state-of-the-art baselines is unsupported without quantitative results.
+- Reliable extrapolation from low-order to higher-order mutants is unsupported without validation details.
+- Three orders of magnitude acceleration is unsupported without timing measurements.
+- The claim of "enhanced advantage over increasing mutation orders" is unsupported without performance breakdowns by mutation order.
+- The generalizability implied by "diverse assays" is unverifiable without dataset descriptions.

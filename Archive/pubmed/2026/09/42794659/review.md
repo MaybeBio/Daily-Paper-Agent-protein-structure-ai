@@ -1,0 +1,66 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions presented in the abstract; full text, figures, tables, and supplementary materials not provided
+- **Shared manuscript claim summary** The abstract presents a narrative review of aptamer-based therapeutic strategies for glioblastoma multiforme (GBM), covering early unmodified aptamers, chemical modifications, multivalent architectures, and computational/AI-driven design approaches, concluding that these advances collectively address key therapeutic barriers and that computational tools hold potential to reshape future GBM therapeutics.
+- **Visible evidence base** Abstract text only; no figures, tables, references, or detailed methodological descriptions provided
+- **Missing materials affecting confidence** Full manuscript text, reference list, figure/table content, detailed descriptions of specific aptamer examples, computational methods, and any comparative efficacy data
+
+## Reviewer
+- **Overall assessment** The abstract provides a coherent and well-structured overview of the evolution of aptamer-based GBM therapeutics, from simple antagonists to AI-driven design. The narrative arc is logical and the scope is appropriate for a review article. However, the abstract is largely descriptive and lacks critical evaluation of the evidence base, quantitative comparisons, or discussion of limitations in the cited studies. The claims regarding the potential of computational tools are forward-looking but not substantiated with specific examples or outcomes within the abstract. The review appears to be a useful synthesis for researchers in the field, but its scientific impact is limited by the absence of critical analysis and the lack of supporting data in the provided material.
+- **Who would be interested in the results, and why** Researchers in neuro-oncology, nucleic acid therapeutics, drug delivery, and computational biology would find this review relevant. Specifically, those working on GBM treatment strategies, aptamer development, blood-brain barrier penetration, and AI-driven drug design would benefit from the consolidated overview of recent advances and remaining challenges. The review could serve as a reference point for interdisciplinary teams seeking to integrate computational approaches into aptamer-based therapeutic development.
+- **Major strengths** The abstract presents a clear and logical progression from early aptamer limitations to modern solutions, effectively framing the field's evolution. The inclusion of multiple therapeutic strategies (chemical modifications, multivalent architectures, ApDCs, computational design) demonstrates comprehensive coverage. The emphasis on GBM-specific challenges (BBB, GSCs, heterogeneity) provides a focused context that enhances relevance.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that chemical modifications and multivalent architectures "resulted in improved stability, specificity, and pharmacokinetic properties" and "enhance binding avidity, address tumor heterogeneity, and facilitate BBB transcytosis."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract makes definitive claims about the efficacy of these strategies without providing quantitative data, comparative outcomes, or references to specific studies. The statements are presented as established facts rather than as a synthesis of evidence with varying degrees of support.
+  - **Why it matters** For a review article, the abstract should reflect the strength of the underlying evidence. Overly definitive claims without qualification may mislead readers about the maturity of these approaches and could overstate the current state of the field.
+  - **Resolution test** The full manuscript should provide specific data points (e.g., binding affinities, in vivo efficacy, BBB penetration rates) and clearly indicate which claims are well-supported versus preliminary. The abstract should be revised to reflect the level of evidence, using qualifiers such as "reported" or "suggested" where appropriate.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim substantiation
+  - **Claim pointer** The abstract states that "computational strategies ranging from machine learning-guided sequence optimization to structure prediction and generative AI have accelerated the rational design of aptamers tailored to GBM specific challenges."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The claim that computational strategies have "accelerated" aptamer design is presented without specific examples, metrics, or comparison to traditional methods. The abstract does not indicate whether these computational approaches have led to validated aptamers in GBM models or remain largely theoretical.
+  - **Why it matters** The potential of AI-driven approaches is a central theme of the review, but the abstract does not provide evidence that this potential has been realized. Without concrete examples or outcomes, the claim is speculative and may overstate the current impact of computational methods.
+  - **Resolution test** The full manuscript should include case studies or examples where computational design led to functional aptamers, with details on validation steps and performance compared to conventional approaches. The abstract should be revised to distinguish between demonstrated achievements and future potential.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The term "aptamer guided nanostructures" is used without definition or examples, which may be unclear to nonspecialist readers.
+  - **Required correction** Provide a brief explanation or example of what constitutes an aptamer-guided nanostructure in the abstract or ensure the full manuscript defines this term early.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Scope statement
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract mentions "remaining pharmacological limitations" but does not specify what these are, leaving the reader without a sense of the key unresolved challenges.
+  - **Required correction** Briefly list the main limitations (e.g., immunogenicity, off-target effects, manufacturing costs) in the abstract to provide a more complete picture.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Sentence structure
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The final sentence is somewhat vague, stating that computational tools have "potential to reshape the future" without indicating how or when this might occur.
+  - **Required correction** Specify the anticipated impact (e.g., faster development cycles, higher success rates) or the timeframe for expected integration into clinical pipelines.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking concerns. The abstract's definitive claims about therapeutic improvements and computational acceleration are not substantiated with evidence in the provided material. The full manuscript must provide supporting data and references to establish these claims. Without this, the review's central assertions remain unverified.
+- **Assessment against Nature-style criteria** 
+  - **Originality** The abstract does not clearly indicate novel insights or a unique perspective beyond summarizing existing literature. The narrative is standard for a review in this field.
+  - **Scientific importance** The topic is clinically relevant and timely, but the abstract does not demonstrate that the review offers new understanding or resolves existing controversies.
+  - **Interdisciplinary readership** The abstract bridges oncology, nucleic acid chemistry, and computational biology, which could appeal to a broad audience, but the lack of technical detail limits accessibility.
+  - **Technical soundness** The abstract is logically coherent, but the absence of evidence and critical analysis prevents assessment of technical rigor.
+  - **Readability for nonspecialists** The abstract is generally clear but uses field-specific terms (e.g., BATEs, ApDCs) without explanation, which may hinder nonspecialist comprehension.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible narrative but lacks the substantiation required to support its definitive claims. The full manuscript may address these gaps, but based on the abstract alone, the case for the review's conclusions is not made.
+
+## Risk / unsupported claims
+- The claim that chemical modifications and multivalent architectures "resulted in improved" properties is unsupported without specific data or references.
+- The claim that computational strategies have "accelerated" aptamer design is unsupported without examples or metrics.
+- The statement that these approaches collectively "address" GBM barriers is an overgeneralization that is not evidenced in the abstract.
+- The potential of computational tools to "reshape the future" is speculative and not grounded in demonstrated outcomes.

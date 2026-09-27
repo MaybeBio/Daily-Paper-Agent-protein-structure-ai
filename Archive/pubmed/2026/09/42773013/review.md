@@ -1,0 +1,64 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The abstract argues that kinesins are promising therapeutic targets, that past pharmacology has been narrow in both target selection and domain focus, that cryo-EM and AI-based structure prediction now reveal new opportunities for selective modulation, and that these insights reframe kinesins as dynamic multidomain machines enabling mechanism-guided therapeutic strategies
+- **Visible evidence base** Abstract text only; no experimental data, structural coordinates, computational details, or clinical or preclinical pharmacology results are available
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, methods, structural validation statistics, computational prediction parameters, pharmacological assay details, and any in vivo or clinical data
+
+## Reviewer
+- **Overall assessment** The abstract presents a forward-looking perspective on kinesin pharmacology that is timely and conceptually appealing. The central thesis, that structural dynamics and regulatory domains beyond the motor should inform drug design, is plausible and consistent with trends in the field. However, the abstract is largely programmatic and does not provide sufficient evidence to evaluate the strength of the underlying claims. The specific examples of conformational-state targeting and regulatory-site modulation are asserted without supporting data or citations. As a review-style contribution, the framing is reasonable, but the current evidence base is too thin to assess technical soundness or the novelty of the proposed strategies relative to existing literature.
+- **Who would be interested in the results, and why** Structural biologists studying cytoskeletal motor proteins, medicinal chemists and drug discovery researchers focused on mitotic or intracellular transport targets, and cell biologists interested in kinesin regulation and disease mechanisms. The abstract also speaks to the growing community applying AI-based structure prediction to therapeutic target identification.
+- **Major strengths** The abstract identifies a genuine gap in kinesin pharmacology, namely the historical overemphasis on the motor domain and a small subset of family members. The emphasis on conformational states and regulatory interfaces as alternative drug targets is conceptually sound and aligns with emerging trends in allosteric and protein-protein interaction inhibitor design. The writing is clear and accessible to a broad biomedical audience.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that cryo-EM and AI-based structure prediction are revealing new opportunities for selective modulation and that specific kinesin families may be inhibited by targeting conformational states induced by nucleotide and microtubule binding
+  - **Evidence pointer** Abstract only; no figures, tables, or structural data provided
+  - **Concern** The abstract asserts that specific structural insights have been obtained but provides no examples, no structural details, and no indication of which kinesin families or which conformational states are meant. No cryo-EM reconstructions, prediction models, or validation metrics are referenced.
+  - **Why it matters** The central scientific claim of the abstract rests on these structural advances. Without any concrete evidence, the reader cannot judge whether the proposed opportunities are real, novel, or technically feasible. The claim is currently unfalsifiable from the provided material.
+  - **Resolution test** Provide at least one concrete example of a kinesin family and a specific conformational state or regulatory interface that has been structurally characterized, with supporting data in the full manuscript.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that regulatory sites outside the motor domain, including stalk and tail interfaces, control autoinhibition, cargo binding, and localization, and that these can be targeted therapeutically
+  - **Evidence pointer** Abstract only; no functional or pharmacological data provided
+  - **Concern** The abstract states that these regulatory sites have been identified and that they present therapeutic opportunities, but no functional validation, no pharmacological proof of concept, and no specific examples are given. The claim that these sites are druggable is asserted rather than demonstrated.
+  - **Why it matters** The proposed shift toward regulatory-site targeting is a key part of the abstract's thesis. Without evidence that such sites can be modulated selectively and with functional consequences, the therapeutic promise remains speculative.
+  - **Resolution test** Include at least one example where a stalk or tail interface has been targeted by a small molecule or peptide, with demonstrated functional effects in a relevant assay.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Novelty and positioning
+  - **Claim pointer** The abstract implies that these structural insights redefine kinesins as dynamic multidomain machines and highlight opportunities for selective, mechanism-guided therapeutic strategies
+  - **Evidence pointer** Abstract only; no comparison to prior reviews or existing literature
+  - **Concern** The abstract does not situate its claims within the existing literature on kinesin pharmacology or allosteric regulation. It is unclear what is genuinely new here relative to prior reviews on kinesin inhibitors or on conformational targeting of motor proteins.
+  - **Why it matters** For a review-style article, positioning against prior work is essential to establish the incremental contribution. Without this, the novelty claim cannot be assessed.
+  - **Resolution test** Add explicit discussion of prior kinesin pharmacology reviews and structural studies, and state clearly what new insights or syntheses this article provides.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract, sentence on conformational states
+  - **Issue** The phrase "conformational states induced by nucleotide and microtubule binding" is vague. It is unclear whether the authors refer to ATP-like, ADP-like, or nucleotide-free states, or to microtubule-bound versus unbound conformations.
+  - **Required correction** Specify the relevant nucleotide states and microtubule binding conditions, or state that the article covers multiple states.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scope
+  - **Affected element** Disease relevance
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The abstract mentions "involvement in disease" but does not specify which diseases or which kinesins are implicated. This weakens the motivation for therapeutic interest.
+  - **Required correction** Name representative diseases and kinesin family members in the abstract or early in the full text.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Therapeutic strategies
+  - **Evidence pointer** Abstract, final sentence
+  - **Issue** The abstract refers to "emerging therapeutic strategies" but gives no indication of what these strategies are, such as small molecules, peptides, PROTACs, or antibody-based approaches.
+  - **Required correction** Briefly indicate the types of therapeutic modalities discussed in the article.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the core claims of structural insight and therapeutic opportunity are not supported by any visible evidence. The abstract alone cannot establish the case for a paradigm shift in kinesin pharmacology.
+- **Assessment against Nature-style criteria** Originality: the conceptual angle is moderately original, but the abstract does not demonstrate what is new relative to prior reviews. Scientific importance: high, given the role of kinesins in cell division and disease, but the importance is asserted rather than evidenced. Interdisciplinary readership: the abstract is written accessibly and should appeal to structural biologists, pharmacologists, and cell biologists. Technical soundness: cannot be assessed from the abstract alone; no methods or data are visible. Readability for nonspecialists: good, the abstract is clear and jargon is limited.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract is promising as a perspective piece, but the blocking concerns must be resolved by providing concrete structural and pharmacological examples in the full manuscript. If the full text supplies the missing evidence, the article could be a valuable contribution to the field.

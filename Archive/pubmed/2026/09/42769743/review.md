@@ -1,0 +1,83 @@
+## Review setup
+- **Input scope** Full manuscript text
+- **Assessment boundary** Technical and methodological soundness of the described cryo-EM pipeline, clarity and reproducibility of the protocol, and alignment with the stated claims in the abstract and background
+- **Shared manuscript claim summary** The authors present a standardized cryo-EM workflow for determining structures of actin filament ends, covering sample preparation (short filament generation via capping, severing, or shearing), vitrification, data collection on a 300 kV Titan Krios G3i, and a data processing pipeline using machine learning-based particle picking, masking, and classification in cryoSPARC. They state this protocol has enabled determination of multiple high-resolution structures of free, capped, elongating, and depolymerizing actin filament ends.
+- **Visible evidence base** Full protocol text including Materials, Procedure (Sections A through F), Validation of protocol, General notes and troubleshooting, and References. Figures are referenced but not provided. Video 1 is referenced but not provided.
+- **Missing materials affecting confidence** Figures 1 through 4 are cited but not included in the supplied material. Video 1 is cited but not included. The specific published structures referenced as outcomes of this protocol [11,13-15] are not described in detail. No representative micrographs, 2D class averages, 3D reconstructions, or resolution statistics are shown. The EMPIAR and EMDB accession codes are listed but the associated data are not accessible within the supplied scope.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a detailed and potentially valuable protocol for a challenging cryo-EM application, namely structural determination of actin filament ends. The procedural steps are described with a level of specificity that is generally commendable for a methods paper, including concrete parameters for grid preparation, microscope operation, and data processing jobs. The authors also address common pitfalls such as preferred orientation, particle picking bias, and filament reannealing, which will be useful to practitioners. However, the protocol's central claim, that it reliably produces high-resolution structures of diverse actin filament end complexes, is not directly evidenced within the supplied material. The absence of representative results, validation metrics, and the referenced figures limits the ability to assess whether the described pipeline is indeed robust and broadly applicable. The manuscript would be strengthened by including example outputs at key stages and by clarifying certain steps that currently rely on anecdotal or underspecified guidance.
+- **Who would be interested in the results, and why** Structural biologists studying the actin cytoskeleton, particularly those interested in filament dynamics, end-binding proteins, and the molecular mechanisms of polymerization and depolymerization. Researchers in the broader cryo-EM community working on filamentous systems or challenging particle geometries will also find the described approaches to particle picking, masking, and classification relevant. The protocol is likely to be of practical use to laboratories seeking to establish similar structural studies.
+- **Major strengths** The protocol addresses a technically demanding and biologically important problem. The step-by-step format is clear and logical, progressing from sample preparation through data collection to processing and validation. The inclusion of specific parameters, such as pixel size, dose, defocus range, and box size, provides a useful starting point for replication. The troubleshooting section is practical and addresses issues that are commonly encountered in cryo-EM of filamentous samples. The authors also demonstrate awareness of the limitations of their approach, such as the need for large datasets and the challenges of conformational heterogeneity.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence for core claim
+  - **Claim pointer** The abstract and validation section state that this protocol "has enabled the determination of multiple high-resolution structures of free, capped, elongating, and depolymerizing actin filament ends."
+  - **Evidence pointer** Validation of protocol section; Figures 1 and 4 (not provided)
+  - **Concern** The central claim of the protocol's success is not supported by any direct evidence within the supplied material. The referenced figures, which presumably show 2D classes, final reconstructions, FSC curves, and orientation distributions, are not included. The validation section merely states that the protocol has been applied successfully in prior publications [11,13-15] without providing any quantitative or qualitative results from those applications.
+  - **Why it matters** A methods paper's value rests on the demonstrated effectiveness of the described procedure. Without representative results, the reader cannot judge whether the pipeline works as claimed, what typical resolutions are achievable, or whether the described challenges (e.g., low end abundance, heterogeneity) are adequately overcome. This is a fundamental issue for a protocol whose stated purpose is to enable high-resolution structure determination.
+  - **Resolution test** Include representative figures showing (a) example micrographs with picked filament ends, (b) 2D class averages distinguishing ends from middles, (c) final 3D reconstructions for at least one end complex, and (d) validation plots (FSC, orientation distribution, local resolution) with resolution values stated in the text or figure legends.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility of data processing
+  - **Claim pointer** Section E describes a multi-step data processing pipeline involving Topaz training, extraction, heterogeneous refinement, and 3D classification, with the expectation that this yields separable end and middle classes.
+  - **Evidence pointer** Section E, steps E5 through E17; Figure 1 (not provided)
+  - **Concern** Several steps in the data processing pipeline rely on subjective judgment or underspecified criteria. For example, the selection of 2D classes that "resemble filaments" (E10) and the identification of "junk" classes (E10) are not defined with objective criteria. The number of classes for 3D classification (E13) is stated as 5, but the rationale for this choice is not given. The criteria for determining when "junk particles are removed" (E13) are not specified. The troubleshooting section offers some guidance, but the decision-making process remains largely qualitative.
+  - **Why it matters** Reproducibility is a core requirement for a protocol. If key classification and selection steps depend on unstated or subjective criteria, different users may obtain different results even when following the text exactly. This is particularly critical in this pipeline, where the distinction between end and middle particles is the central sorting problem.
+  - **Resolution test** Provide more explicit guidance on how to distinguish end from middle classes in 2D and 3D classifications, including specific visual features to look for. Where possible, suggest quantitative metrics (e.g., class occupancy, resolution estimates) to guide decisions. Justify the choice of the number of 3D classes.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability of the protocol
+  - **Claim pointer** The abstract and background suggest the protocol is "standardized" and can be extended to "other end-binding proteins" and potentially "other classes of filamentous proteins."
+  - **Evidence pointer** Abstract; Background; General notes and troubleshooting, note 5
+  - **Concern** The protocol is described as standardized, but the authors note that parameters such as the concentration of end-binding protein, incubation time, and the need for detergents to address preferred orientation must be optimized for each new protein. The example given (CAP) is a specific case with particular biochemical properties. The extent to which the described parameters and workflow can be directly transferred to other systems is unclear. The statement that the protocol "may also be applicable to other filamentous protein systems" is speculative and not supported by examples.
+  - **Why it matters** The claimed generality is a key part of the protocol's potential impact. If the workflow requires extensive re-optimization for each new system, its value as a standardized pipeline is diminished. The authors should clarify which steps are universal and which are system-specific.
+  - **Resolution test** Provide a clearer discussion of which parameters are expected to be transferable and which will require case-by-case optimization. If possible, mention any other systems (filamentous or otherwise) to which the pipeline has been successfully applied, even if only in preliminary form.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of sample preparation
+  - **Affected element** Section A1, step A1.2
+  - **Evidence pointer** Section A1, step A1.2
+  - **Issue** The step states to add CP to a final concentration of 5 µM and then add G-actin to 25 µM. The order of addition and the mixing procedure are not described. It is also unclear whether the CP is pre-incubated with G-actin before polymerization is initiated, or whether polymerization and capping occur simultaneously.
+  - **Required correction** Specify the order of addition, whether mixing is performed by pipetting or vortexing, and whether any pre-incubation step is included before the polymerization is initiated.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness of data collection parameters
+  - **Affected element** Section C
+  - **Evidence pointer** Section C, paragraph 1
+  - **Issue** The text states that data were collected at 81,000x magnification with a pixel size of 0.54 Å, but does not specify the energy filter slit width, the use of a phase plate, or the exact exposure time per frame. These parameters can significantly affect data quality and are typically reported in cryo-EM methods.
+  - **Required correction** Add the missing parameters, including energy filter settings, exposure time, and any other relevant microscope configuration details.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Justification of mask generation
+  - **Affected element** Section D
+  - **Evidence pointer** Section D, steps D1 through D10
+  - **Issue** The protocol describes generating a mask from a PDB model using ChimeraX and then processing it in cryoSPARC. However, the rationale for choosing a 16 Å resolution for the molmap command is not explained. The relationship between the mask and the subsequent classification steps could be clarified.
+  - **Required correction** Briefly justify the choice of 16 Å for the molmap resolution and explain how the mask is expected to influence the classification outcomes.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Validation metrics
+  - **Affected element** Section F
+  - **Evidence pointer** Section F, steps F1 through F3
+  - **Issue** The section describes which plots to generate but does not provide guidance on what constitutes acceptable values for these metrics. For example, what is a good cFAR value? What does a "good" FSC curve look like beyond reaching zero?
+  - **Required correction** Add brief interpretive guidance for each validation metric, including typical or acceptable ranges where applicable.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Reference to prior work
+  - **Affected element** Validation of protocol section
+  - **Evidence pointer** Validation of protocol section
+  - **Issue** The validation section cites references [11,13-15] as evidence of the protocol's success but does not summarize what was achieved in those studies. A reader unfamiliar with those papers cannot assess the relevance or quality of the prior results.
+  - **Required correction** Briefly describe the outcomes of the cited studies, including the number of structures determined, their resolutions, and the specific end-binding proteins studied.
+- **Technical failings that need to be addressed before the case is established** The absence of representative results (figures, resolution statistics, validation plots) is the primary technical failing that prevents the protocol's effectiveness from being established. The subjective nature of several classification and selection steps also needs to be addressed to ensure reproducibility.
+- **Assessment against Nature-style criteria** 
+  - Originality: The protocol addresses a niche but important problem. While individual components (e.g., Topaz picking, cryoSPARC classification) are established, their combination for the specific purpose of actin filament end structure determination appears to be a novel contribution. However, the degree of novelty is moderate, as the workflow largely repurposes existing tools.
+  - Scientific importance: The ability to determine structures of actin filament ends is of significant importance for understanding cytoskeletal dynamics and the molecular mechanisms of end-binding proteins. The protocol, if effective, would be a valuable resource for the field.
+  - Interdisciplinary readership: The primary audience is structural biologists and cell biologists with expertise in cryo-EM and actin biochemistry. The protocol is unlikely to attract a broad interdisciplinary readership beyond these fields.
+  - Technical soundness: The described steps are generally technically sound and reflect established cryo-EM practice. However, the lack of demonstrated results and the subjective elements in the processing pipeline weaken the case for technical robustness.
+  - Readability for nonspecialists: The manuscript is written for a specialist audience. Terms such as "cFAR," "Ewald sphere curvature," and "reference-based motion correction" are used without definition, which is appropriate for a methods paper in a specialized journal but would be challenging for nonspecialists.
+- **Recommendation posture** Supportive if technical concerns are resolved. The protocol addresses a real need and is described in considerable detail. However, the central claim of effectiveness is not currently established from the provided evidence. Inclusion of representative results and clarification of subjective steps are required before the protocol can be recommended for adoption.

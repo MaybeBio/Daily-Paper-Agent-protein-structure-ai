@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as stated in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors introduce PLABench, a leakage-controlled and target-centric benchmarking framework for protein–ligand binding affinity prediction. They benchmark nine deep learning methods on blind CASP16 targets, leakage-controlled ChEMBL35 sets, and Davis and KIBA datasets. They report that pretrained structure-based models achieve the highest overall accuracy but show severe target-dependent variability, that increasing structural fidelity from predicted to experimental conformations yields no consistent gains, that sequence-based approaches surpass some structure-based methods on select targets, and that protein family-level evaluations reveal uneven performance and inter-model complementarity obscured by aggregate metrics. They conclude that training scale and structural input alone cannot guarantee cross-target generalization and that context-aware interaction modeling is needed.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or numerical results
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, dataset construction details, model configurations, hyperparameters, statistical analyses, and code availability
+
+## Reviewer
+- **Overall assessment** The abstract presents a timely and potentially valuable contribution to the benchmarking of protein–ligand affinity prediction methods. The emphasis on leakage control and target-centric evaluation addresses a recognized weakness in the field. However, the abstract alone provides insufficient detail to assess the rigor of the benchmarking protocol, the validity of the statistical comparisons, or the robustness of the conclusions. Several claims, particularly those regarding structural fidelity and inter-model complementarity, require substantial methodological support that is not visible in the supplied material. The work is of interest to the computational drug discovery community, but the case for its central conclusions is not yet established from the abstract alone.
+- **Who would be interested in the results, and why** Computational biologists, medicinal chemists, and machine learning researchers working on drug discovery and protein–ligand interaction prediction. The benchmarking framework and the comparative results across model classes would inform model selection and future method development. The finding that structural fidelity does not consistently improve performance challenges common assumptions and would interest researchers developing structure-based prediction methods.
+- **Major strengths** The focus on leakage control and target-centric evaluation addresses a well-documented problem in the field. The inclusion of blind CASP16 targets provides a realistic generalization test. The comparison across sequence-based and structure-based models under standardized conditions is a useful contribution. The observation of inter-model complementarity suggests practical ensemble strategies.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that the benchmarking framework is "leakage-controlled" and enables "standardized comparison" across models
+  - **Evidence pointer** Abstract only; dataset construction and split details not provided
+  - **Concern** The abstract states that leakage-controlled and rigorous data split settings were used, but no details are given on how leakage was defined, how sequence similarity thresholds were set, how temporal splits were handled, or how target-centric splits were constructed. Without this information, the central claim of leakage control cannot be verified.
+  - **Why it matters** The entire contribution rests on the assertion that previous evaluations suffered from leakage and that PLABench fixes this. If the leakage control protocol is not described and validated, the framework's advantage over existing benchmarks is unsubstantiated.
+  - **Resolution test** Provide a detailed description of the data splitting protocol, including sequence identity thresholds, temporal cutoffs, and target-centric partitioning. Show that no training sequences share above-threshold identity with test targets. Demonstrate that the protocol prevents both compound-level and protein-level leakage.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that "increasing structural fidelity from predicted to experimental conformations yields no consistent gains"
+  - **Evidence pointer** Abstract only; no figures or tables showing the comparison
+  - **Concern** This is a strong negative claim that depends on the specific models tested, the metric used, and the statistical power of the comparison. The abstract provides no numerical results, no effect sizes, and no indication of how many targets were compared. A null result of this kind requires careful statistical treatment to rule out insufficient power or ceiling effects.
+  - **Why it matters** This claim challenges a common assumption in the field that better structures lead to better predictions. If the claim is not rigorously supported, it could mislead practitioners. Conversely, if it is true, it is an important finding that needs robust evidence.
+  - **Resolution test** Provide per-target performance comparisons between AlphaFold3-predicted and experimental structures, with confidence intervals and appropriate statistical tests. Report the number of targets where experimental structures improve, worsen, or do not change performance. Discuss potential ceiling effects and whether the models are sensitive to structural input at all.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** The claim that PLABench is an "extensible open-source platform"
+  - **Evidence pointer** Abstract only; no repository or availability statement
+  - **Concern** The abstract states that the platform is open-source but provides no repository URL, license information, or description of the software architecture. The reproducibility of the benchmarking results depends on the availability of the code, the exact model versions, and the inference pipelines.
+  - **Why it matters** A benchmarking framework that is not fully reproducible has limited value to the community. The claim of extensibility requires that others can add new models and datasets with reasonable effort.
+  - **Resolution test** Provide a public repository with documented code, model configuration files, and instructions for reproducing all reported results. Include a clear license and a description of how new models and datasets can be integrated.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, sentence on "pretrained structure-based models"
+  - **Issue** The term "pretrained structure-based models" is ambiguous. It is unclear whether "pretrained" refers to pretraining on large protein structure datasets, pretraining on affinity data, or both. The distinction matters for interpreting the results.
+  - **Required correction** Specify the pretraining paradigm for each model class, for example "models pretrained on protein structure prediction tasks" or "models pretrained on large-scale affinity data."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Dataset description
+  - **Evidence pointer** Abstract, mention of "leakage-controlled ChEMBL35 sets"
+  - **Issue** The abstract does not explain what "ChEMBL35" refers to. It is unclear whether this is a subset of ChEMBL version 35, a custom selection of 35 targets, or something else.
+  - **Required correction** Define "ChEMBL35" explicitly, including the version, the selection criteria, and the number of targets and compounds.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Performance claims
+  - **Evidence pointer** Abstract, claims of "highest overall accuracy" and "severe target-dependent variability"
+  - **Issue** No quantitative measures are reported. The abstract does not state which metric was used, what the performance gap was, or how variability was quantified.
+  - **Required correction** Report the primary metric, the aggregate performance values, and a measure of variability such as standard deviation or interquartile range across targets.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The leakage control protocol must be fully described and validated, and the structural fidelity claim must be supported with per-target statistical analysis. Without these, the central conclusions of the paper are not established from the provided evidence.
+- **Assessment against Nature-style criteria** Originality: the target-centric and leakage-controlled benchmarking approach is a valuable and timely contribution, though benchmarking studies are common in this field. Scientific importance: the findings, if rigorously supported, would inform model selection and highlight limitations of current approaches, which is of moderate to high importance for the computational drug discovery community. Interdisciplinary readership: the work bridges machine learning, structural biology, and medicinal chemistry, and would appeal to a broad readership if the methods are clearly explained. Technical soundness: not assessable from the abstract alone; the blocking concerns above must be resolved. Readability for nonspecialists: the abstract is concise and accessible, but the ambiguity in terminology and lack of quantitative context reduce clarity for readers outside the immediate field.
+- **Recommendation posture** Currently not established from the provided evidence. The topic is appropriate and the framework is potentially valuable, but the abstract does not provide sufficient methodological detail to verify the central claims. A full review of the manuscript would be required to determine whether the technical concerns can be resolved. If the leakage control protocol and the structural fidelity analysis are rigorously supported in the full manuscript, the work would be a solid contribution to the field.
+
+## Risk / unsupported claims
+- The claim that the framework is "leakage-controlled" is unsupported without a description of the splitting protocol.
+- The claim that "increasing structural fidelity from predicted to experimental conformations yields no consistent gains" is unsupported without per-target numerical results and statistical analysis.
+- The claim that "protein family-level evaluations reveal uneven performance and substantial inter-model complementarity" is unsupported without the relevant figures or tables.
+- The claim that "training scale and structural input alone cannot guarantee cross-target generalization" is a broad conclusion that cannot be evaluated from the abstract alone.
+- The claim that PLABench is an "extensible open-source platform" is unverifiable without a repository or availability statement.

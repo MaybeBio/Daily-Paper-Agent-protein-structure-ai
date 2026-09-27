@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no methods, figures, or data tables were available for evaluation
+- **Shared manuscript claim summary** The authors report that carnosic acid (CA) selectively activates Kv7.3 over Kv7.2 and Kv7.2/3 heteromers by binding to an extracellular VSD pocket, enabled by a Kv7.3-specific conformation and a hydrophobic latch residue (L226), and that CA positively modulates retigabine action via VSD-pore coupling
+- **Visible evidence base** Abstract text only; no experimental details, numerical data, or statistical analyses provided
+- **Missing materials affecting confidence** Full methods, all figures and tables, statistical reporting, molecular dynamics simulation parameters, mutagenesis validation data, and radioligand binding results
+
+## Reviewer
+- **Overall assessment** The abstract presents a mechanistically novel and potentially impactful framework for isoform-selective Kv channel modulation. The central claim that selectivity arises from VSD conformational microenvironments rather than canonical binding determinants is intellectually compelling and would be of broad interest. However, the abstract alone provides insufficient evidence to evaluate the rigor of the experimental support. The claim of a "binding-competent VSD conformation absent in Kv7.2" requires structural or dynamic evidence that cannot be assessed from the text. The positive allosteric coupling between VSD and pore is an unexpected finding that, if well-supported, would be a significant contribution. Overall, the work is promising but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Ion channel biophysicists and structural biologists studying voltage-gated channels; pharmacologists and medicinal chemists developing isoform-selective modulators for neurological disorders, particularly epilepsy; researchers interested in allosteric mechanisms in membrane proteins. The framework proposed could inform rational design of selective Kv openers, which is a long-standing therapeutic goal.
+- **Major strengths** The proposed mechanism is conceptually novel, moving beyond canonical orthosteric binding site descriptions. The combination of multiple orthogonal approaches (mutagenesis, electrophysiology, binding, simulations) is appropriate for the question. The finding of ligand-initiated positive allosteric coupling between VSD and pore is unexpected and mechanistically interesting. The identification of a specific residue (L226) as a functional latch provides a concrete molecular handle.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Kv7.3 samples a binding-competent VSD conformation absent in Kv7.2, characterized by an expanded extracellular pocket and a favorable electrostatic environment"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract asserts a conformationally distinct state in Kv7.3 that is absent in Kv7.2, but no structural or dynamic data are presented to substantiate this. Molecular dynamics simulations are mentioned but no details on sampling, convergence, or free energy calculations are given. The claim of an "expanded extracellular pocket" implies a quantitative comparison that is not visible.
+  - **Why it matters** This conformational difference is the mechanistic core of the paper. If the evidence is limited to a single simulation trajectory or lacks statistical rigor, the central conclusion would be overinterpreted. The claim of "absence" in Kv7.2 is particularly strong and requires robust negative evidence.
+  - **Resolution test** Provide simulation convergence metrics, replicate trajectories, and quantitative pocket volume or electrostatic potential comparisons between Kv7.2 and Kv7.3. If possible, include experimental validation such as voltage-clamp fluorometry or cryo-EM structures of both isoforms.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic causality
+  - **Claim pointer** "Kv7.3-L226 functions as a hydrophobic latch that tunes the energetic landscape of the voltage sensor to control ligand efficacy"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that L226 controls ligand efficacy via tuning the voltage sensor energetic landscape, but no data are shown to distinguish between effects on ligand binding affinity versus gating efficacy. The term "energetic landscape" implies a quantitative thermodynamic analysis that is not described.
+  - **Why it matters** The distinction between binding and gating is fundamental for understanding the mechanism. If L226 mutations alter gating independently of CA binding, the "latch" interpretation may be incomplete. Without free energy perturbation calculations or mutant cycle analysis, the causal link is not established.
+  - **Resolution test** Provide mutant cycle analysis for L226 with CA binding and gating measurements. Include thermodynamic mutant cycle analysis or single-channel recordings to separate binding from gating effects. If simulations are used, show free energy profiles for VSD activation in wild-type versus mutant.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Quantitative support
+  - **Claim pointer** "CA potentiates Kv7.2/3 activation by retigabine via ligand-initiated positive allosteric coupling between the VSD and pore, thus enhancing the anticonvulsant action of retigabine"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims potentiation of retigabine action and enhancement of anticonvulsant activity, but no quantitative data are provided. The magnitude of potentiation, the concentration dependence, and the in vivo evidence for enhanced anticonvulsant action are all absent. The phrase "ligand-initiated positive allosteric coupling" implies a specific mechanistic model that requires supporting data.
+  - **Why it matters** This is a translational claim with therapeutic implications. If the potentiation is modest or occurs only at non-physiological concentrations, the conclusion would be overstated. The in vivo claim requires behavioral data that are not described.
+  - **Resolution test** Provide dose-response curves for CA alone, retigabine alone, and the combination in Kv7.2/3. Show statistical comparison of EC50 and efficacy. For the anticonvulsant claim, provide in vivo seizure model data with appropriate controls and effect sizes.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "high-efficacy opener" is used for CA on Kv7.3, but the abstract does not define what "high-efficacy" means quantitatively relative to known openers such as retigabine.
+  - **Required correction** Define efficacy in terms of current potentiation magnitude or open probability change, and compare to a reference compound.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Mutagenesis scope
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** Alanine-scanning mutagenesis is mentioned, but the abstract does not indicate the extent of the scan or whether the entire VSD was covered.
+  - **Required correction** State the number of residues mutated and the region covered, or refer to a supplementary table.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretive caution
+  - **Affected element** Structural interpretation
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states CA binds "at the extracellular cap of the VSD," but without structural data, this is an inference from mutagenesis and simulations. The wording could be interpreted as a definitive structural assignment.
+  - **Required correction** Use phrasing such as "suggested to bind" or "consistent with binding at" unless a high-resolution structure is presented.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient quantitative or structural evidence to support the central mechanistic claims. The distinction between binding and gating effects, the conformational difference between isoforms, and the allosteric coupling model all require direct experimental support that is not visible in the abstract.
+- **Assessment against Nature-style criteria** Originality: High. The concept of isoform selectivity arising from VSD conformational microenvironments rather than canonical binding sites is a fresh perspective that could shift thinking in the field. Scientific importance: Potentially high, given the therapeutic relevance of isoform-selective Kv openers and the general interest in allosteric modulation mechanisms. Interdisciplinary readership: The work would appeal to ion channel biophysicists, pharmacologists, and medicinal chemists, and the conceptual framework could attract a broader neuroscience audience. Technical soundness: Cannot be assessed from the abstract alone. The combination of methods is appropriate, but the absence of quantitative details and statistical reporting prevents evaluation. Readability for nonspecialists: The abstract is well-written and accessible, with clear logical flow from observation to mechanism to implication. However, the mechanistic claims are stated with more certainty than the visible evidence supports.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising and the work could be suitable for a high-impact venue if the full manuscript provides rigorous quantitative support for the conformational and allosteric claims. I would be supportive if the technical concerns are resolved with robust data.
+
+## Risk / unsupported claims
+- The claim that Kv7.3 samples a "binding-competent VSD conformation absent in Kv7.2" is unsupported without structural or dynamic evidence.
+- The claim that L226 "tunes the energetic landscape" is unsupported without thermodynamic or free energy data.
+- The claim that CA "enhances the anticonvulsant action of retigabine" is unsupported without in vivo data.
+- The claim that CA binds at the "extracellular cap of the VSD" is an inference that cannot be verified from the abstract.
+- The statement that CA lacks "standalone anticonvulsant activity" is presented as a fact but no supporting data are shown.

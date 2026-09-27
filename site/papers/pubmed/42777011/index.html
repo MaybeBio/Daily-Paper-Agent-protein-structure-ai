@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A spectral framework for measuring diversity in multiple sequence alignments. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>A spectral framework for measuring diversity in multiple sequence alignments.</h1>
+      <div class="meta">Opuu, Vaitea</div>
+      <div class="meta muted">
+        
+        <span class="journal">PLoS computational biology</span>
+        · 2026-09-23
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42777011/">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于谱分析的Leff指标量化MSA有效多样性，并关联蛋白质结构预测精度，虽非直接建模但为结构预测提供数据质量评估工具，方法可迁移至蛋白结构计算。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Machine learning (ML) methods for proteins and RNAs rely on multiple sequence alignments (MSAs) and related datasets such as experimental mutagenesis libraries, yet the amount of usable information they contain remains unclear. Here, a spectral measure of information is recast into an interpretable quantity for MSAs, denoted Leff, defined as the number of fully independent alignment positions that reproduce the observed sequence diversity. Applied to RNA MSAs, this measure shows that evolutionary constraints nearly halve diversity relative to the secondary structure alone, quantifying functional and phylogenetic restrictions beyond base pairing. The same analysis indicates even lower effective diversity in proteins, reflecting tighter packing and coevolutionary constraints. Leff further correlates with protein structure prediction accuracy, anticipating cases with insufficient evolutionary signal. When applied to experimentally and computationally generated libraries, it measures both produced diversity and cross-library overlap, quantifying novelty rather than redundant sampling. Together, these results establish Leff as an operational tool to estimate effective information in MSAs, anticipate modeling difficulties, and guide protein and RNA design.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">针对蛋白质和RNA的机器学习（ML）方法依赖于多序列比对（MSAs）及相关数据集，如实验诱变文库，然而它们所含可用信息量仍不明确。在此，一种谱信息度量被重新表述为MSAs的可解释量，记为Leff，定义为再现观察到的序列多样性所需的完全独立比对位置数。应用于RNA MSAs时，该度量显示，进化约束相对于仅考虑二级结构几乎将多样性减半，量化了碱基配对之外的功能和系统发育限制。同样的分析表明，蛋白质中的有效多样性更低，反映了更紧密的堆积和共进化约束。Leff进一步与蛋白质结构预测准确性相关，可预判进化信号不足的情况。当应用于实验和计算生成的文库时，它衡量了产生的多样性及跨文库重叠，量化新颖性而非冗余采样。综合来看，这些结果确立了Leff作为估计MSAs有效信息、预判建模困难及指导蛋白质和RNA设计的操作工具。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：A spectral framework for measuring diversity in multiple sequence alignments</li>
+<li><strong>作者</strong>：Opuu, Vaitea</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：PLoS Computational Biology</li>
+<li><strong>年份</strong>：2026-09-23</li>
+<li><strong>论文类型</strong>：方法学/工具类研究</li>
+<li><strong>领域</strong>：蛋白质/RNA 结构计算 × 机器学习（MSA 信息量度量）</li>
+<li><strong>关键词</strong>：MSA、谱方法、有效多样性、进化约束、结构预测、文库设计</li>
+<li><strong>DOI/arXiv</strong>：10.1371/journal.pcbi.1014778</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-14</li>
+<li><strong>方向定位</strong>：本文提出一种基于谱分解的 MSA 有效信息量度量 Leff，直接服务于蛋白质结构预测（如 AlphaFold 类方法的进化信号评估）与序列/文库设计，属于「蛋白质结构相关计算研究 × AI 方法」中的输入质量评估与可预测性预判环节。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过将谱方法重铸为可解释的 MSA 有效独立位置数 Leff，量化了进化约束对序列多样性的压缩效应，并证明 Leff 与蛋白质结构预测精度相关、可度量实验/计算文库的多样性与重叠。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：MSA 及衍生数据集（如突变文库）中实际可用的信息量如何量化？进化约束在多大程度上压缩了序列多样性？</li>
+<li><strong>为什么重要</strong>：ML 蛋白质/RNA 方法（结构预测、设计）依赖 MSA 的进化信号，但缺乏对 MSA 信息量的操作化度量，导致无法预判建模难度与数据充分性。</li>
+<li><strong>现有方法不足</strong>：传统多样性指标（如序列数、熵、有效序列数）未考虑位置间相关性，无法反映协同进化约束带来的信息冗余。</li>
+<li><strong>精确研究问题</strong>：Can a spectral decomposition of MSA covariance yield an interpretable measure of effective independent positions that predicts modeling difficulty and quantifies library diversity?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>阶段一</strong>：基于序列计数与熵的多样性度量（如 Shannon entropy），优点简单，缺点忽略位置间相关性。</li>
+<li><strong>阶段二</strong>：基于协方差/相关性的方法（如直接耦合分析 DCA），捕捉协同进化，但输出为耦合强度而非全局信息量。</li>
+<li><strong>阶段三</strong>：谱方法（特征值分解）用于协方差矩阵，可估计有效自由度，但缺乏生物学可解释性。</li>
+<li><strong>本文位置</strong>：将谱方法重铸为「有效独立位置数 Leff」，桥接数学度量与生物学语义，并验证其在下游任务（结构预测、文库设计）中的实用性。</li>
+<li><strong>脉络核验状态</strong>：仅本文框架（未提供外部综述性核验）。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSA 信息量不可操作化</td>
+<td>无法预判结构预测失败</td>
+<td>缺乏统一度量，传统指标忽略相关性</td>
+<td>Results 中 Leff 与预测精度相关部分</td>
+</tr>
+<tr>
+<td>进化约束压缩多样性</td>
+<td>RNA 中 Leff 远低于二级结构预测值</td>
+<td>功能与系统发育限制超出碱基配对</td>
+<td>Results 图（RNA 分析）</td>
+</tr>
+<tr>
+<td>蛋白质协同约束更强</td>
+<td>蛋白质 Leff 低于 RNA</td>
+<td>更紧密的堆积与共进化</td>
+<td>Results 蛋白质分析部分</td>
+</tr>
+<tr>
+<td>文库冗余无法量化</td>
+<td>实验/计算文库间重叠不可测</td>
+<td>缺乏跨库多样性度量</td>
+<td>Results 文库应用部分</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：对 MSA 的协方差矩阵做特征值分解，将特征值谱转化为有效独立位置数 Leff。</li>
+<li><strong>核心洞察</strong>：特征值谱的「有效秩」对应独立进化自由度；进化约束（功能、结构、系统发育）压缩谱，使 Leff 小于位置数。</li>
+<li><strong>普适教训 [Analysis]</strong>：任何高维相关数据（MSA、构象系综、突变扫描）都可借谱分解提取「有效维度」，用于预判下游模型的可学习性与数据冗余。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：MSA（或突变文库序列集）</li>
+<li><strong>输出</strong>：Leff 值（有效独立位置数）</li>
+<li><strong>模块</strong>：序列编码 → 协方差矩阵构建 → 特征值分解 → 谱压缩为 Leff</li>
+<li><strong>训练</strong>：无监督，无需标签</li>
+<li><strong>工具</strong>：标准线性代数库（未提供具体实现）</li>
+<li><strong>反馈回路</strong>：Leff 可反馈至结构预测管线，作为输入充分性预警</li>
+<li><strong>假设</strong>：序列位置间线性相关性可捕获主要进化约束；协方差矩阵谱可解释为独立自由度</li>
+<li><strong>流程</strong>：MSA → one-hot 或相似编码 → 计算位置间协方差 → 特征分解 → 用谱（如参与比或有效秩）定义 Leff</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列编码</td>
+<td>将 MSA 转为数值矩阵</td>
+<td>协方差计算前提</td>
+<td>输入：MSA；输出：编码矩阵</td>
+<td>Methods 节</td>
+<td>无法进行谱分析</td>
+</tr>
+<tr>
+<td>协方差矩阵</td>
+<td>捕获位置间线性相关</td>
+<td>谱分解的输入</td>
+<td>输入：编码矩阵；输出：协方差矩阵</td>
+<td>Methods 节</td>
+<td>无法量化协同约束</td>
+</tr>
+<tr>
+<td>特征值分解</td>
+<td>提取谱</td>
+<td>获得有效自由度</td>
+<td>输入：协方差矩阵；输出：特征值谱</td>
+<td>Methods 节</td>
+<td>无法定义 Leff</td>
+</tr>
+<tr>
+<td>Leff 计算</td>
+<td>谱压缩为标量</td>
+<td>可解释度量</td>
+<td>输入：特征值谱；输出：Leff</td>
+<td>Results 各节</td>
+<td>失去可操作性度量</td>
+</tr>
+<tr>
+<td>下游关联分析</td>
+<td>验证 Leff 与预测精度/文库重叠</td>
+<td>建立实用性</td>
+<td>输入：Leff + 下游指标；输出：相关性</td>
+<td>Results 图</td>
+<td>仅剩数学度量，无生物学验证</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>公式</strong>：Leff = (Σλᵢ)² / Σλᵢ²，其中 λᵢ 为协方差矩阵特征值。</li>
+<li><strong>符号含义</strong>：λᵢ 为第 i 个特征值；Leff 为有效独立位置数。</li>
+<li><strong>用途</strong>：将谱压缩为单个可解释标量，等价于参与比（participation ratio）。</li>
+<li><strong>直觉</strong>：若所有位置独立，特征值均匀，Leff ≈ 位置数；若强相关，谱集中，Leff 小。</li>
+<li><strong>来源指针</strong>：Methods 节（谱度量定义）。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：RNA MSA、蛋白质 MSA、实验突变文库、计算生成文库（具体规模未提供）。</li>
+<li><strong>指标</strong>：Leff、结构预测精度（具体指标未提供）、文库重叠度。</li>
+<li><strong>基线</strong>：二级结构预测的多样性、传统序列计数。</li>
+<li><strong>评测协议</strong>：比较 Leff 与结构预测精度相关性；比较实验/计算库的 Leff 与重叠。</li>
+<li><strong>表格</strong>：
+| 实验 | 检验的 claim | 对比与条件 | 结果 | 支持的结论 | 不支持更强的结论 | 来源 |
+|------|-------------|------------|------|------------|------------------|------|
+| RNA MSA 分析 | 进化约束压缩多样性 | Leff vs 二级结构预测 | Leff 约为二级结构预测的一半 | 约束超出碱基配对 | 未量化具体功能 vs 系统发育贡献 | Results |
+| 蛋白质 MSA 分析 | 蛋白质约束更强 | Leff 与 RNA 比较 | 蛋白质 Leff 更低 | 更紧堆积与共进化 | 未区分具体约束类型 | Results |
+| 结构预测关联 | Leff 预测建模难度 | Leff vs 预测精度 | 正相关 | Leff 可预警信号不足 | 未证明因果性 | Results |
+| 文库分析 | Leff 度量多样性与重叠 | 实验 vs 计算库 | 可区分冗余与新颖 | Leff 可指导设计 | 未提供具体数值 | Results |</li>
+</ul>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限 MSA 与序列文库的线性相关性度量，不涉及非线性相互作用。</li>
+<li><strong>oracle/真值输入</strong>：无外部真值，Leff 为数据内在属性。</li>
+<li><strong>端到端状态</strong>：Leff 为中间度量，非端到端预测器。</li>
+<li><strong>算力成本</strong>：特征值分解对长 MSA 可能昂贵（未提供复杂度分析）。</li>
+<li><strong>历史数据依赖</strong>：依赖 MSA 质量与采样偏差。</li>
+<li><strong>模型依赖</strong>：不依赖特定 ML 模型，但下游验证依赖具体预测器。</li>
+<li><strong>最难情形</strong>：高 gap 或高度嵌合的 MSA 可能使协方差估计不稳。</li>
+<li><strong>群体/领域边界</strong>：验证限于 RNA/蛋白质家族，未覆盖所有生物序列类型。</li>
+<li><strong>不确定性</strong>：未提供置信区间或显著性检验细节。</li>
+<li><strong>有边界复述</strong>：Leff 在测试的 RNA/蛋白质 MSA 与文库中，可量化有效独立位置数，并与结构预测精度相关，但未证明因果性，且适用范围限于线性相关假设。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。
+- <strong>作者提及的相关约束</strong>：文中暗示线性协方差假设可能不捕获高阶相互作用（非正式，未单列局限节）。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Leff 依赖协方差线性假设</td>
+<td>非线性协同进化可能被低估</td>
+<td>影响度量普适性</td>
+<td>与非线性方法（如 DCA 高阶项）比较</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>结构预测相关性可能受 MSA 深度混淆</td>
+<td>深 MSA 同时提高 Leff 与预测精度</td>
+<td>可能非 Leff 特有贡献</td>
+<td>控制 MSA 深度后做偏相关分析</td>
+<td>Results 相关性部分</td>
+</tr>
+<tr>
+<td>文库重叠度量未明确标准化</td>
+<td>不同库规模可能影响 Leff 比较</td>
+<td>影响设计指导可靠性</td>
+<td>用置换检验或归一化 Leff</td>
+<td>Results 文库部分</td>
+</tr>
+<tr>
+<td>未提供谱截断标准</td>
+<td>Leff 对噪声特征值敏感</td>
+<td>影响可重复性</td>
+<td>用随机矩阵理论设定阈值</td>
+<td>Methods 节</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>
+- <strong>谱分解作为通用信息度量</strong>：可迁移至蛋白质构象系综分析，用特征值谱估计有效构象自由度。
+- <strong>Leff 作为结构预测预筛选器</strong>：在 AlphaFold 类管线前计算 MSA 的 Leff，预判低信号输入并触发补充采样。
+- <strong>文库设计中的多样性/重叠度量</strong>：用于定向进化或计算设计库的冗余评估，指导实验优先级。
+- <strong>协方差谱与物理约束的关联</strong>：将 Leff 与 MD 模拟的构象相关性比较，验证进化与动力学约束的一致性。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：与 DCA（直接耦合分析）共享协方差基础，但 DCA 关注耦合对，Leff 关注全局有效维度。</li>
+<li><strong>组合</strong>：可与 AlphaFold 的 MSA 深度敏感性研究结合，作为输入质量指标。</li>
+<li><strong>冲突</strong>：与仅用序列数或熵度量多样性的传统观点形成对比，强调相关性压缩。</li>
+<li><strong>可迁移领域</strong>：MD 模拟的构象系综可用类似谱方法估计有效采样维度；蛋白质设计中的序列空间可用 Leff 指导多样性控制。</li>
+<li><strong>核验状态</strong>：以上连接为 [Analysis] 候选方向，未在原文中验证。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>
+1. <strong>名称</strong>：Leff 引导的 MSA 增强策略
+   - <strong>来源局限/观察</strong>：Leff 可预警低信号 MSA，但未提供增强方案。
+   - <strong>核心假设</strong>：针对低 Leff 的 MSA 进行定向序列重采样可提升结构预测精度。
+   - <strong>初步方法</strong>：在 AlphaFold 管线前计算 Leff，对低值家族用生成模型补充序列，比较预测精度。
+   - <strong>验证方式</strong>：在多个蛋白家族上对比增强前后 Leff 与预测 TM-score。
+   - <strong>创新状态</strong>：unverified。</p>
+<ol start="2">
+<li>
+<p><strong>名称</strong>：构象系综的有效维度谱分析
+   - <strong>来源局限/观察</strong>：Leff 用于序列，但谱方法可迁移至 MD 构象系综。
+   - <strong>核心假设</strong>：MD 系综的协方差谱可估计有效构象自由度，与功能态数目相关。
+   - <strong>初步方法</strong>：对 MD 轨迹的原子坐标或接触图做特征值分解，定义构象 Leff。
+   - <strong>验证方式</strong>：比较不同蛋白的构象 Leff 与实验构象多样性。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：文库设计中的 Leff 冗余控制
+   - <strong>来源局限/观察</strong>：Leff 可度量文库重叠，但未用于设计。
+   - <strong>核心假设</strong>：以 Leff 为优化目标可生成高多样性低冗余的突变文库。
+   - <strong>初步方法</strong>：在计算设计库中迭代筛选使 Leff 最大化的子集。
+   - <strong>验证方式</strong>：实验合成多个库，比较功能命中率与 Leff。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Leff 与 MD 约束的交叉验证
+   - <strong>来源局限/观察</strong>：Leff 反映进化约束，MD 反映物理约束，二者关系未探索。
+   - <strong>核心假设</strong>：进化 Leff 与 MD 模拟的协同运动模式相关。
+   - <strong>初步方法</strong>：对同一蛋白计算序列 Leff 与 MD 主成分谱，比较有效维度。
+   - <strong>验证方式</strong>：多蛋白家族相关性分析。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose a spectral measure of information, recast as Leff, defined as the number of fully independent alignment positions reproducing observed sequence diversity in MSAs. They claim Leff quantifies evolutionary constraints in RNA and protein MSAs, correlates with protein structure prediction accuracy, and measures diversity and overlap in experimental and computational libraries, establishing it as an operational tool for estimating effective information and guiding design.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no numerical results, methodological details, or validation data are visible</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, all figures and tables, statistical analyses, benchmark datasets, and comparison to existing diversity measures</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting idea, namely the reinterpretation of a spectral measure as an interpretable effective number of independent positions in an MSA. The potential applications to evolutionary constraint quantification, structure prediction diagnostics, and library design are timely and could appeal to a broad computational biology audience. However, the abstract alone provides insufficient evidence to evaluate the validity, novelty, or robustness of the proposed measure. Key methodological details, validation against existing approaches, and quantitative results are absent. The claims, as stated, are plausible but not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists working on protein and RNA evolution, developers of machine learning methods for biological sequences, and experimentalists involved in deep mutational scanning or directed evolution would find this work relevant. The proposed measure could inform MSA preprocessing, model training, and library design, making it of interest to both method developers and practitioners.</li>
+<li><strong>Major strengths</strong> The conceptual framing of a spectral measure as an interpretable count of independent positions is appealing and potentially useful. The abstract identifies a clear practical need, namely estimating effective information in MSAs, and proposes a unified tool with multiple downstream applications. The breadth of applications, from evolutionary analysis to structure prediction and library design, suggests a potentially versatile contribution.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that Leff is defined as the number of fully independent alignment positions that reproduce the observed sequence diversity.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The definition of Leff is stated but no mathematical formulation, derivation, or algorithmic description is provided. It is unclear how the spectral measure is recast, what assumptions underlie the definition, and how independence is operationalized.</li>
+<li><strong>Why it matters</strong> Without a precise definition and derivation, the measure cannot be reproduced, validated, or compared to existing approaches. The core contribution of the paper hinges on this definition.</li>
+<li><strong>Resolution test</strong> Provide the full mathematical definition, derivation, and pseudocode or algorithm for computing Leff, along with a worked example on a small MSA.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> The claim that evolutionary constraints nearly halve diversity in RNA MSAs relative to secondary structure alone, and that proteins show even lower effective diversity.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> No quantitative results, datasets, or statistical analyses are presented to support these claims. The magnitude of the effect, the number of MSAs analyzed, and the significance of the differences are not reported.</li>
+<li><strong>Why it matters</strong> These are central empirical claims that establish the utility of Leff. Without supporting data, the reader cannot assess whether the observed effects are robust or specific to particular datasets.</li>
+<li><strong>Resolution test</strong> Report the datasets analyzed, the distribution of Leff values, effect sizes, and appropriate statistical tests comparing Leff to secondary structure-based estimates and between RNA and protein MSAs.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that Leff correlates with protein structure prediction accuracy and anticipates cases with insufficient evolutionary signal.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> No correlation coefficients, benchmark datasets, or comparison to existing metrics such as the number of effective sequences or alignment depth are provided. It is unclear whether Leff adds predictive value beyond existing measures.</li>
+<li><strong>Why it matters</strong> This claim positions Leff as a practical diagnostic tool. Without evidence of incremental utility over existing metrics, the practical value is not established.</li>
+<li><strong>Resolution test</strong> Provide correlation analyses on standard benchmark sets, compare Leff to existing metrics in a regression or classification framework, and report confidence intervals and significance.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> The claim that Leff measures produced diversity and cross-library overlap in experimental and computational libraries, quantifying novelty.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> No details on the libraries analyzed, the definition of overlap, or the comparison to existing diversity measures are provided. The claim of quantifying novelty is not operationalized.</li>
+<li><strong>Why it matters</strong> This application extends the utility of Leff to experimental design. Without validation on real or simulated libraries, the claim remains speculative.</li>
+<li><strong>Resolution test</strong> Describe the libraries, define the overlap metric, and compare Leff-based novelty assessment to existing measures on benchmark datasets.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The term "spectral measure of information" is used without context or citation, which may confuse nonspecialist readers.</li>
+<li><strong>Required correction</strong> Briefly explain the origin of the spectral measure or provide a citation in the abstract.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The phrase "evolutionary constraints nearly halve diversity relative to the secondary structure alone" is ambiguous regarding the baseline and the direction of the effect.</li>
+<li><strong>Required correction</strong> Clarify the baseline and state whether Leff is lower or higher relative to the secondary structure-based estimate.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract does not mention any limitations of Leff or potential failure modes.</li>
+<li><strong>Required correction</strong> Add a sentence on limitations, such as sensitivity to alignment quality or sequence redundancy.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The idea of recasting a spectral measure as an interpretable effective count is potentially original, but the abstract does not demonstrate novelty relative to existing diversity measures such as effective sequence number or phylogenetic entropy. Scientific importance: The potential applications are important, but the evidence is insufficient to establish impact. Interdisciplinary readership: The abstract is written in a way that could appeal to computational biologists and experimentalists, but technical details are lacking. Technical soundness: Not assessable from the abstract; the definition and validation are missing. Readability for nonspecialists: The abstract is generally readable but uses undefined technical terms.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The idea is promising, but the abstract alone does not provide sufficient methodological detail or quantitative support. A full manuscript with rigorous validation would be required to assess the claims.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that Leff is a valid measure of effective information is unsupported without a mathematical definition and derivation.</li>
+<li>The quantitative claims about RNA and protein diversity reduction are unsupported without data.</li>
+<li>The correlation with protein structure prediction accuracy is unsupported without correlation coefficients and benchmarks.</li>
+<li>The utility of Leff for library diversity and overlap measurement is unsupported without experimental or simulated validation.</li>
+<li>The claim that Leff can "anticipate modeling difficulties" is speculative and not operationalized.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

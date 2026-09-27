@@ -1,0 +1,84 @@
+## Review setup
+- **Input scope** Full manuscript text
+- **Assessment boundary** Scientific content, methodological rigor, and completeness of the review as presented
+- **Shared manuscript claim summary** The manuscript presents a narrative review of the evolution of computational antibody engineering, from early structure-based methods to modern AI-driven generative approaches, covering historical developments, key tools, databases, and current limitations.
+- **Visible evidence base** Full text including abstract, introduction, methods, results sections, discussion, and conclusions; tables referenced but not provided
+- **Missing materials affecting confidence** Tables 1-5 referenced in text but not included; reference list not provided; figure content not available
+
+## Reviewer
+- **Overall assessment** This manuscript provides a broad narrative overview of AI applications in antibody design, tracing the field from phage display through structure-based methods to contemporary generative models. The scope is ambitious and the topic is timely. However, the review suffers from a lack of critical depth, relies heavily on a limited set of primary sources, and does not provide sufficient quantitative or comparative analysis to distinguish it from existing reviews in this rapidly evolving field. The absence of tables and figures makes full evaluation impossible. The discussion sections on failure modes are thoughtful but largely generic and not well-integrated with specific examples from the literature.
+- **Who would be interested in the results, and why** Researchers entering the field of computational antibody engineering would find this a useful orientation document. Scientists working on protein structure prediction, generative models for biologics, and AI-driven drug discovery may also find value in the historical framing. However, experts in the field are unlikely to encounter novel insights or comprehensive coverage beyond what is available in more specialized reviews.
+- **Major strengths** The historical framing from phage display to generative AI provides useful context. The manuscript covers a wide range of topics including structure prediction, language models, and generative approaches. The discussion of failure modes and limitations in Section 5.5 is a welcome addition that addresses important methodological concerns. The inclusion of specific quantitative benchmarks (e.g., CDR-H3 RMSD values) in Section 4.10 adds concrete data points.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance and novelty
+  - **Claim pointer** The review claims to present "the historical evolution of computational antibody engineering" and highlights "major computational tools, publicly available databases, current limitations, and future directions"
+  - **Evidence pointer** Sections 1, 2, 4, 5
+  - **Concern** The manuscript does not establish what new perspective or synthesis it offers beyond existing reviews. The field has seen multiple comprehensive reviews in recent years covering AI for antibody design, and this manuscript does not clearly differentiate its contribution. The narrative is largely descriptive rather than analytical, and the selection of topics and tools appears somewhat arbitrary without clear inclusion criteria beyond the broad scope statement.
+  - **Why it matters** For a review to be publishable in a competitive venue, it must offer either comprehensive coverage, novel synthesis, or critical analysis that advances understanding. This manuscript provides none of these distinctly. The lack of a clear analytical framework or comparative evaluation of methods limits its utility for researchers seeking guidance on tool selection or methodological direction.
+  - **Resolution test** The authors should clearly articulate what new insights or framework this review provides. A comparative analysis of method performance across tasks, a critical evaluation of current limitations with specific examples, or a forward-looking synthesis of emerging trends would strengthen the contribution.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness and completeness
+  - **Claim pointer** The manuscript states "Approximately 110 publications were ultimately included in the review" and describes a systematic search strategy
+  - **Evidence pointer** Section 3
+  - **Concern** The methodology describes a narrative review with iterative searching but provides no details on how many records were screened, how many were excluded and why, or how the final 110 publications were selected from the initial search results. The search dates (April-July 2026) and publication range (1985-2026) are stated, but no PRISMA-style flow diagram or equivalent transparency measure is provided. This makes the review's comprehensiveness impossible to assess.
+  - **Why it matters** Without transparent methodology, readers cannot evaluate whether the review is comprehensive or biased toward particular methods, tools, or research groups. The claim of covering the "evolution" of the field requires confidence that the literature coverage is representative.
+  - **Resolution test** Provide a flow diagram showing search results, screening steps, and exclusion criteria. Alternatively, clearly state that this is a non-systematic narrative review and adjust claims accordingly.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** Section 4.10 states "On the 49-antibody Rosetta Antibody Benchmark, mean CDR-H3 RMSD values were 2.87 Å for AlphaFold2, 2.77 Å for ABodyBuilder, 2.44 Å for DeepAb, and 2.49 Å for ABlooper [18]"
+  - **Evidence pointer** Section 4.10, reference [18]
+  - **Concern** The quantitative results presented in Section 4.10 are not contextualized with information about the benchmark conditions, model versions, or evaluation protocols. For example, AlphaFold2 results on antibody benchmarks are known to vary substantially depending on whether templates are used, whether the model is fine-tuned, and how CDR-H3 is defined. The manuscript presents these numbers as if they are directly comparable, which is misleading without methodological context.
+  - **Why it matters** Readers may use these numbers to make method selection decisions. Presenting benchmark results without appropriate caveats about evaluation conditions could lead to incorrect conclusions about relative model performance.
+  - **Resolution test** Add context about benchmark conditions, model versions, and evaluation protocols for each cited result. Discuss the comparability of results across different studies.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interdisciplinary readership and readability
+  - **Claim pointer** The manuscript claims to present "current limitations and future directions of the field"
+  - **Evidence pointer** Sections 5.3, 5.5, 5.6
+  - **Concern** The discussion sections are largely generic and do not provide specific, actionable insights. For example, Section 5.5 discusses data leakage and benchmark contamination but does not provide specific examples from the antibody design literature or propose concrete solutions. The discussion of future directions in Section 5.4 is brief and does not engage with specific technical challenges or emerging approaches in depth.
+  - **Why it matters** A review's value lies partly in its ability to guide future research. Generic statements about limitations without specific examples or proposed solutions do not provide this guidance.
+  - **Resolution test** Provide specific examples of benchmark contamination or data leakage in antibody design. Discuss concrete approaches to address identified limitations. Expand the future directions section with specific technical predictions or recommendations.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Section 4.7.3
+  - **Evidence pointer** Section 4.7.3
+  - **Issue** The description of diffusion models assumes familiarity with the technical details of these architectures. A brief intuitive explanation of how diffusion models work would improve accessibility.
+  - **Required correction** Add one or two sentences explaining the basic principle of diffusion models in accessible terms before discussing specific implementations.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Section 4.2.3
+  - **Evidence pointer** Section 4.2.3, Table 1
+  - **Issue** The text states that databases are "summarized in Table 1" but the table is not provided. This makes it impossible to verify the completeness and accuracy of the database descriptions.
+  - **Required correction** Ensure all tables are included in the submission. If tables cannot be provided, the text should be self-sufficient.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Section 4.9.5
+  - **Evidence pointer** Section 4.9.5
+  - **Issue** The discussion of inverse folding and sequence-structure co-design is brief and does not adequately address the limitations of these approaches for antibodies, such as the challenge of modeling CDR-H3 conformations in the absence of antigen context.
+  - **Required correction** Expand this section to discuss specific challenges and limitations of inverse folding for antibody design, with reference to relevant literature.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Section 4.5.2
+  - **Evidence pointer** Section 4.5.2
+  - **Issue** The discussion of AlphaFold's impact on antibody modeling is brief and does not clearly explain why AlphaFold's general protein structure prediction capabilities do not directly translate to accurate antibody modeling, particularly for CDR-H3.
+  - **Required correction** Add a brief explanation of why antibody modeling presents unique challenges that general protein structure prediction tools may not fully address.
+
+## Risk / unsupported claims
+- The claim that "AI-driven approaches will play an increasingly central role in the discovery and optimization of next-generation therapeutic antibodies" is a reasonable projection but is presented as a conclusion without supporting evidence from clinical outcomes or regulatory approvals.
+- The statement that "no single model demonstrated uniformly strong performance across all properties" in the FLAb2 benchmark is presented without the specific data supporting this conclusion.
+- The claim that BoltzGen "can generate nanobody CDRs while maintaining a predefined framework" is presented without details on the evaluation methodology or success rate.
+- The assertion that "computational design reduced the number of candidate variants by focusing on mutations with the highest predicted probability of success" is presented as a general statement without specific examples or quantitative evidence.
+- The manuscript's claim to cover "current limitations" is only partially supported, as the discussion of limitations in Section 5.5 is largely generic and not tied to specific tools or methods discussed earlier in the review.

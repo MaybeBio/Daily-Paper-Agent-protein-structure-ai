@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.09.18.752542",
+  "title": "NeoToxPred: a fine-tuned protein language model with orthologous and length-stratified negative controls for robust toxicity classification",
+  "authors": "Seongmin Kim; Min-Seok Kim; Chungoo PARK",
+  "journal": "bioRxiv",
+  "published_date": "2026-09-24",
+  "window": {
+    "start": "2026-09-20",
+    "end": "2026-09-26"
+  },
+  "score": 5,
+  "one_liner_zh": "该文开发了基于ESM-C蛋白语言模型的毒素毒性分类器NeoToxPred，虽以蛋白质序列为对象并采用AI方法，但核心问题是毒性分类而非蛋白质结构计算（如结构预测、构象采样或设计），结构仅作为背景提及，故与本课题关联较弱。",
+  "abstract": "Although protein toxins represent valuable pharmacological templates, predicting toxicity directly from primary sequences is inherently challenging because of their evolutionary dynamics. Active toxins and their benign homologues frequently share identical structural scaffolds and differ by only a few key residue substitutions, making global sequence similarity an unreliable indicator of function. Conventional predictors compound this challenge through flawed negative-set designs that sample non-toxic controls from arbitrary background proteins and reduce redundancy through identity-based clustering under random partitioning. This practice introduces global confounding shortcuts that inflate benchmark performance while failing to capture true functional boundaries. To address these limitations, we developed NeoToxPred, a sequence-only binary classifier that fine-tunes the pretrained ESM-C 600M protein language model end-to-end with a six-layer feed-forward classification head. Although the neural architecture is intentionally standard to ensure computational scalability, the core novelty of the framework lies in its rigorous training-data curation: (i) an orthologous negative set drawn from the same InterPro families under controlled taxonomic proximity to eliminate phylogenetic shortcuts, (ii) a length-stratified negative control set to eliminate sequence length as a predictive cue, and (iii) a strict family-disjoint splitting strategy to prevent performance inflation caused by pattern memorization. On held-out internal benchmarks, NeoToxPred achieved a Matthews correlation coefficient (MCC) of 0.897 and an F1-score of 0.949 on long sequences and an MCC of 0.869 on short peptides, decisively outperforming five recent predictors while maintaining stable performance across varying sequence lengths and evolutionary distances. In a genome-scale external validation using the previously unseen proteome of the redfin waspfish (Paracentropogon rubripinnis), NeoToxPred successfully recovered 11 of 16 empirically validated toxins without collapsing into a single-class prediction, whereas structure-dependent baselines identified substantially fewer positives. Computational alanine scanning further confirmed that the framework contextually localizes its predictions to functionally active residues. Taken together, these findings suggest that systematic negative-set design should be prioritized alongside algorithmic complexity in biological sequence classification.",
+  "abstract_zh": "尽管蛋白质毒素代表了有价值的药理学模板，直接从初级序列预测毒性因其进化动态而固有挑战。活性毒素与其良性同源物通常共享相同的结构支架，仅因少数关键残基替换而不同，使得全局序列相似性成为功能不可靠的指标。传统预测器通过有缺陷的负集设计加剧了这一挑战，这些设计从任意背景蛋白质中采样非毒性对照，并在随机划分下通过基于同一性的聚类减少冗余。这种做法引入了全局混淆捷径，虚增基准性能，同时未能捕捉真实的功能边界。为解决这些局限性，我们开发了NeoToxPred，一种仅基于序列的二元分类器，通过六层前馈分类头对预训练的ESM-C 600M蛋白质语言模型进行端到端微调。尽管神经架构有意保持标准以确保计算可扩展性，该框架的核心创新在于其严格的训练数据整理：（i）从相同InterPro家族中在受控分类邻近性下抽取的正直同源负集，以消除系统发育捷径，（ii）长度分层负对照集，以消除序列长度作为预测线索，以及（iii）严格的家族不相交分割策略，以防止模式记忆导致的性能膨胀。在保留的内部基准上，NeoToxPred在长序列上实现了马修斯相关系数（MCC）为0.897和F1分数为0.949，在短肽上实现了MCC为0.869，显著优于五种近期预测器，同时在不同序列长度和进化距离下保持稳定性能。在使用先前未见过的红鳍鲉（Paracentropogon rubripinnis）蛋白质组进行的基因组规模外部验证中，NeoToxPred成功恢复了16个经验验证毒素中的11个，而未坍缩为单类预测，而依赖结构的基线识别出的阳性显著较少。计算丙氨酸扫描进一步确认，该框架将其预测上下文定位到功能活性残基。综合来看，这些发现表明，在生物序列分类中，系统负集设计应优先于算法复杂性。",
+  "has_fulltext": false,
+  "fulltext_source": "abstract",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.18.752542",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.09.18.752542",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.09.18.752542/index.html"
+}

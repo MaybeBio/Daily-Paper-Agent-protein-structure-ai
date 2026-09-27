@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Knowledge-as-Skill: A Structural Design for Autonomous Knowledge-Base Use by LLM Agents · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-low">0</span>
+    <div>
+      <h1>Knowledge-as-Skill: A Structural Design for Autonomous Knowledge-Base Use by LLM Agents</h1>
+      <div class="meta">Jiangxu Wu</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-22
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2609.25991v1">原文</a>
+      </div>
+      <p class="one-liner">该文研究LLM智能体的知识库组织设计，不涉及蛋白质结构计算，与课题无关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Retrieval-augmented generation (RAG) gives large language models (LLMs) access to external knowledge, but its conventional retrieve-concatenate-generate pipeline makes retrieval decisions on behalf of the model. As tool use and agent loops become more reliable, an agent can decide whether to retrieve, what to inspect, and when to stop. This shift exposes a new bottleneck: the agent may not know what a knowledge base contains. Traditional knowledge bases expose documents as anonymous text chunks with limited information about scope, purpose, provenance, or relations. We propose Knowledge-as-Skill, an organization scheme that makes a knowledge base discoverable, navigable, and self-descriptive. It has three layers: a discovery layer centered on SKILL.md; a navigation layer with one index.md per directory; and a knowledge layer containing documents with YAML frontmatter for topic, type, provenance, and lifecycle. The design follows the Open Knowledge Format (OKF) and the Skill protocol without modifying the agent framework. We also provide knowledge-as-skill, a pipeline for converting heterogeneous collections of PDFs, Word files, web exports, and notes into this structure. In a preliminary evaluation on the WixQA enterprise customer-support benchmark, our setup obtains 0.889 Factuality and 0.816 Context Recall, compared with reported Corpus2Skill values of 0.767 and 0.708. It obtains slightly lower Faithfulness, lower Context Precision, and more interaction turns. Because the models, prompts, and knowledge-package construction differ, these results are directional cross-work evidence rather than a controlled comparison.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">检索增强生成（retrieval-augmented generation, RAG）使大型语言模型（large language models, LLMs）能够访问外部知识，但其传统的检索-拼接-生成流程替模型做出了检索决策。随着工具使用和智能体循环变得更加可靠，智能体可以决定是否检索、检查什么以及何时停止。这种转变暴露了一个新的瓶颈：智能体可能不知道知识库中包含什么。传统知识库将文档暴露为匿名文本块，关于范围、目的、来源或关系的信息有限。我们提出知识即技能（Knowledge-as-Skill），一种使知识库可发现、可导航且自描述的组织方案。它包含三层：以SKILL.md为中心的发现层；每个目录包含一个index.md的导航层；以及包含带有YAML前置元数据（涵盖主题、类型、来源和生命周期）的文档的知识层。该设计遵循开放知识格式（Open Knowledge Format, OKF）和技能协议，无需修改智能体框架。我们还提供了知识即技能（knowledge-as-skill），一个将异构的PDF、Word文件、网页导出和笔记集合转换为这种结构的流水线。在WixQA企业客户支持基准的初步评估中，我们的设置获得了0.889的事实性和0.816的上下文召回率，而报告的Corpus2Skill值分别为0.767和0.708。它在忠实度上略低，上下文精确度较低，且交互轮次更多。由于模型、提示和知识包构建不同，这些结果是跨工作的方向性证据，而非受控比较。</div>
+  </section>
+  
+  
+  
+</article>
+</main>
+</body>
+</html>

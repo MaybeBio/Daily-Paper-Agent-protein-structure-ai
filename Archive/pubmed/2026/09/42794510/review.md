@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report a computational drug repurposing screen of approximately 9000 FDA-preapproved ligands against the light chain of botulinum neurotoxin serotype A (BoNT/A), using drug-likeness filtering, quantitative estimation of drug-likeness (QED), molecular docking, and molecular dynamics simulations. They identify 16 ligands with binding affinities greater in magnitude than co-crystallized hydroxamate inhibitors, and propose dinoprost and 15 other clinically investigated ligands as candidate scaffolds for BoNT/A light chain inhibition, pending experimental validation.
+- **Visible evidence base** Abstract text only; no numerical data, docking scores, simulation parameters, structural figures, or statistical analyses are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, docking scoring functions, simulation protocols, force field parameters, binding free energy calculation methods, compound identities beyond dinoprost, and any experimental validation data
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible computational workflow for identifying potential BoNT/A light chain inhibitors through drug repurposing. The methodological sequence of drug-likeness screening, QED, docking, and molecular dynamics is standard and appropriate for the stated goal. However, the abstract lacks quantitative results, detailed methodological transparency, and any form of experimental validation, which severely limits the ability to assess the robustness and significance of the claims. The central claim that 16 ligands outperform co-crystallized hydroxamate inhibitors is presented without supporting numerical data or statistical context. The conclusion that these compounds "may serve as candidate scaffolds" is appropriately cautious, but the evidence base is insufficient to establish the case from the supplied material.
+- **Who would be interested in the results, and why** Researchers in toxinology, drug repurposing, and computational drug discovery would find the approach relevant. Those working on botulinum neurotoxin countermeasures, particularly medical countermeasure development for biodefense, would be interested in potential new inhibitor scaffolds. Computational chemists focused on metalloprotease inhibition and structure-based virtual screening may also find the methodological framework of interest, though the lack of experimental validation limits broader appeal.
+- **Major strengths** The study addresses a clinically and biodefense-relevant target with a practical drug repurposing strategy. The use of FDA-preapproved drugs as a screening library is a pragmatic approach that could accelerate translation if validated. The combination of multiple computational filters, including docking and molecular dynamics, represents a reasonable tiered screening strategy. The identification of specific functional groups, such as fluorine, carboxylic, and phosphate moieties, that enhance active site interactions provides chemically actionable information.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "16 ligands exhibit a binding affinity greater (in magnitude) than that of the hydroxamate inhibitors that are co-crystallized in the X-ray structure"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract provides no numerical binding affinity values, no docking scores, no binding free energy estimates, and no statistical comparison to the co-crystallized hydroxamate inhibitors. The claim of superiority is presented as a qualitative statement without any quantitative support.
+  - **Why it matters** Without specific affinity values and a defined comparison metric, the reader cannot evaluate whether the observed differences are meaningful, within error, or an artifact of the scoring function. This claim is central to the paper's significance and must be substantiated with data.
+  - **Resolution test** Provide a table or figure with docking scores and binding free energies for all 16 ligands and the reference hydroxamate inhibitors, including error estimates and statistical significance tests.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** "we employed drug-likeness screening, quantitative estimation of drug-likeness (QED), and molecular docking to screen about 9000 ligands from the FDA-preapproved drug library using the known crystal structures of the toxin's light chain"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not specify which crystal structures were used, which docking software and scoring function were employed, what criteria defined "drug-likeness," what QED threshold was applied, or how the molecular dynamics simulations were configured. These details are essential for reproducibility and for assessing whether the screening was conducted appropriately.
+  - **Why it matters** Computational screening results are highly sensitive to methodological choices. Without this information, the validity of the screening pipeline cannot be assessed, and the results cannot be reproduced or compared to other studies.
+  - **Resolution test** Include a detailed methods section specifying PDB identifiers, software versions, scoring functions, filter criteria, simulation parameters, and analysis protocols.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Validation
+  - **Claim pointer** "Our results suggest that dinoprost and 15 other clinically investigated ligands may serve as candidate scaffolds for further evaluation as potential BoNT/A LC inhibitors, pending experimental validation"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract explicitly acknowledges that experimental validation is pending. While this is an honest statement, it means the central conclusion of the paper is not yet established. Computational predictions alone, without any in vitro or in vivo confirmation, are insufficient to support the claim that these compounds are viable candidate scaffolds.
+  - **Why it matters** The value of a drug repurposing screen lies in its ability to identify compounds that actually inhibit the target. Without experimental data, the risk of false positives from computational screening remains high, and the practical significance of the findings is unproven.
+  - **Resolution test** Provide experimental validation data, such as enzymatic inhibition assays, or clearly reframe the paper as a purely computational prediction with no claim of biological activity.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Compound identification
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** Only one of the 16 identified ligands, dinoprost, is named. The identities of the other 15 ligands are not disclosed in the abstract.
+  - **Required correction** List all 16 compound names in the abstract or state that they are provided in the main text or supplementary materials.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Contextual accuracy
+  - **Affected element** Background statement on thermolysin
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The statement that the BoNT/A catalytic domain "exhibits similar structural features and zinc-dependent activity as thermolysin, a key bacterial enzyme, which provides a foundation for designing antibacterial agents targeting related protease mechanisms" is confusing. The relevance of antibacterial agent design to BoNT inhibition is not clearly articulated.
+  - **Required correction** Clarify the connection between thermolysin similarity and the drug repurposing strategy, or remove the reference to antibacterial agent design if it is not directly relevant.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Precision
+  - **Affected element** Binding affinity comparison
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The phrase "binding affinity greater (in magnitude)" is imprecise. It is unclear whether this refers to more negative docking scores, more favorable binding free energies, or some other metric.
+  - **Required correction** Specify the exact metric used for the comparison and provide the numerical values.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative data, methodological details, and experimental validation collectively prevent the case from being established from the supplied material.
+- **Assessment against Nature-style criteria** 
+  - Originality: The application of drug repurposing to BoNT/A is not entirely novel, as similar computational approaches have been reported for other BoNT serotypes and metalloproteases. The specific combination of filters and the focus on FDA-approved drugs adds some incremental value, but the originality is moderate.
+  - Scientific importance: The potential identification of new BoNT/A inhibitors is of scientific and public health importance, particularly for biodefense applications. However, the importance is contingent on experimental validation, which is not provided.
+  - Interdisciplinary readership: The work bridges computational chemistry, toxinology, and drug discovery, which could attract readers from multiple disciplines. However, the abstract is written in a way that is accessible to computational chemists but may be less clear to experimental biologists or clinicians.
+  - Technical soundness: The methodological approach is standard and generally sound in principle, but the lack of detail prevents a full assessment of technical rigor. The absence of error analysis and statistical validation is a concern.
+  - Readability for nonspecialists: The abstract is reasonably readable but uses technical terms without sufficient explanation. The logical flow from screening to simulation to candidate identification is clear, but the significance of the findings is not well contextualized for a general audience.
+- **Recommendation posture** Currently not established from the provided evidence. The computational workflow is reasonable, but the absence of quantitative results, methodological transparency, and experimental validation means the central claims cannot be evaluated. The paper could become publishable if the full manuscript provides the missing data and if the authors either include experimental validation or appropriately limit their claims to computational predictions.
+
+## Risk / unsupported claims
+- The claim that 16 ligands exhibit binding affinity greater than co-crystallized hydroxamate inhibitors is unsupported without numerical data.
+- The claim that dinoprost and 15 other ligands "may serve as candidate scaffolds" is unsupported without experimental validation.
+- The relevance of thermolysin similarity to antibacterial agent design is unclear and not substantiated.
+- The overall effectiveness of the screening pipeline cannot be assessed without methodological details.
+- The statement that the identified ligands "enhance their interactions with key residues" is not verifiable without structural analysis figures or interaction data.

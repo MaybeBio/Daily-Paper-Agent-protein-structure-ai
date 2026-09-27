@@ -1,0 +1,103 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, materials and methods) as provided
+- **Assessment boundary** Scientific content, methodological soundness, internal consistency, and support of claims by presented evidence. No assessment of editorial fit or publication decision.
+- **Shared manuscript claim summary** The authors propose that the intrinsic conformational stability of tumor-associated autoantigens determines whether patient autoantibodies preferentially recognize linear or conformational epitopes. They use a dual-antigen Luminex bead assay comparing native versus S-cationized denatured antigen forms across 11 autoantigens, and support their findings with E. coli solubility data and AlphaFold3-derived Rosetta energy unit (REU) per solvent-accessible surface area (SASA) calculations.
+- **Visible evidence base** Results text describing Figures 1a, 1b, 2a, 2b, 3a, 3b, 4, 5a, 5b; Supplementary Figures S1a, S1b, S1c, S2a, S2b, S3, S4; Supplementary Table S1; Materials and Methods section
+- **Missing materials affecting confidence** Figures and tables themselves were not provided; only figure legends and in-text descriptions. No raw data, statistical outputs, or patient cohort details (sample size, demographics, clinical characteristics) were available. No information on antibody validation, bead coupling efficiency, or assay reproducibility beyond prior citation.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a relevant and underexplored question in cancer autoantibody diagnostics: whether the structural state of an autoantigen dictates the epitope class recognized by patient autoantibodies. The dual-antigen bead approach is conceptually sound and the inclusion of both experimental solubility and computational stability metrics is commendable. However, the evidence as presented is incomplete. Key figures and tables are not available for inspection, patient cohort details are absent, and the statistical framework for the central L/C ratio comparisons is not described. The claim that epitope propensity is "regulated" by conformational stability is supported by correlative data only, and the mechanistic interpretation, particularly for WT-1, requires additional experimental support. The manuscript is potentially interesting to the cancer immunodiagnostics community, but the current evidence base is insufficient to fully establish the central claims.
+- **Who would be interested in the results, and why** Researchers and clinicians developing autoantibody-based cancer diagnostics, particularly those working on biomarker assay design and antigen presentation strategies. The findings may also interest structural biologists studying the immunogenicity of intrinsically disordered proteins and protein domains, as well as immunologists investigating the determinants of B-cell epitope selection in tumor immunity.
+- **Major strengths** 1. The study addresses a clinically relevant and mechanistically underexplored question. 2. The dual-antigen bead format allowing direct comparison of conformational versus linear epitope reactivity in a single assay is a practical and potentially powerful design. 3. The integration of experimental solubility data with computational stability metrics (REU/SASA) provides a multi-pronged approach to estimating conformational stability. 4. The inclusion of both disordered (NY-ESO-1, XAGE-1b) and partially ordered (p53, WT-1) autoantigens allows for informative comparisons.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence completeness
+  - **Claim pointer** The manuscript claims systematic comparison of autoantibody reactivity across 11 autoantigens, with quantitative L/C ratios and statistically significant differences (e.g., p < 0.0001 for NY-ESO-1).
+  - **Evidence pointer** Figures 1a, 1b, 2a, 2b, 3a, 3b, 4, 5a, 5b; Table S1; location not provided for raw data
+  - **Concern** The actual figures and tables are not included in the provided material. Without visual inspection of the data, it is impossible to assess the quality of the bead assay results, the distribution of reactivity values, the magnitude of differences, or the appropriateness of the statistical tests. The in-text descriptions are insufficient to evaluate whether the data support the stated conclusions.
+  - **Why it matters** The central claims of the manuscript rest entirely on the quantitative comparisons shown in these figures. If the figures contain artifacts, outliers, or inappropriate normalizations, the conclusions could be substantially altered. The absence of this evidence prevents any meaningful evaluation of the manuscript's core findings.
+  - **Resolution test** Provide all figures and tables with full axis labels, error bars, individual data points where appropriate, and clear annotations. Include statistical test names, sample sizes, and effect sizes for each comparison.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Patient cohort and assay validation
+  - **Claim pointer** The manuscript reports autoantibody reactivity in patients with non-small cell lung cancer (NSCLC) and healthy donors, and uses these data to draw conclusions about epitope propensity.
+  - **Evidence pointer** Materials and Methods, "IgG autoantibody binding assay"; Ethics declarations; location not provided for cohort details
+  - **Concern** No information is provided on the number of NSCLC patients or healthy donors, their clinical characteristics (stage, histology, treatment status), or how they were selected. The assay validation is limited to a citation of prior work (Sakaguchi et al., 2026) and a statement that MFI > 100 ensures CV < 20%. No data on inter-assay variability, batch effects, or the reproducibility of the L/C ratio measurements are presented.
+  - **Why it matters** The conclusions about epitope propensity are based on comparisons of autoantibody reactivity between patient groups and across antigens. Without knowing the cohort size and composition, it is impossible to assess the statistical power or generalizability of the findings. Poorly characterized cohorts can lead to spurious associations.
+  - **Resolution test** Provide a detailed description of the patient and healthy donor cohorts, including sample sizes, demographic and clinical characteristics, and inclusion/exclusion criteria. Present assay validation data, including reproducibility across batches and the dynamic range of the assay.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Causal interpretation
+  - **Claim pointer** The manuscript states that "the autoantibody epitope propensity is closely associated with the thermodynamic stability of the target autoantigen" and uses language such as "regulate" in the title.
+  - **Evidence pointer** Results, "Correlation between structural stability and epitope propensity of autoantigens"; Discussion
+  - **Concern** The data presented are correlative: the authors observe a relationship between solubility/stability metrics and epitope class preference. However, the title and portions of the discussion imply a regulatory or causal relationship. The manuscript does not provide experimental evidence that altering the conformational stability of an autoantigen changes the epitope class of the resulting autoantibody response. The WT-1 case, where the protein is insoluble in E. coli yet elicits conformational epitope-directed antibodies, is presented as an exception but the explanation (zinc-finger domain autonomy) is speculative and not directly tested.
+  - **Why it matters** The distinction between correlation and causation is critical for the scientific claims of the paper. If the authors wish to claim that stability regulates epitope propensity, they need to demonstrate this through perturbation experiments, such as stabilizing or destabilizing specific autoantigens and measuring the effect on antibody epitope class.
+  - **Resolution test** Either temper the language to reflect association rather than regulation, or provide experimental evidence (e.g., site-directed mutagenesis to alter stability, or comparative analysis of autoantibody responses to stabilized versus destabilized variants of the same antigen) that directly tests the causal relationship.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Computational methodology
+  - **Claim pointer** The manuscript claims that "AlphaFold3-derived Rosetta energy unit/solvent-accessible surface area values" provide "independent computational validation" of the experimental solubility data.
+  - **Evidence pointer** Materials and Methods, "Computational prediction of protein structure and stability"; Figure 5a
+  - **Concern** The description of the computational methodology is insufficient. No details are provided on the AlphaFold3 input parameters, the number of predicted models generated, the selection criteria for the final model, or the specific Rosetta relaxation protocol used. The REU/SASA metric is described as a "proxy" for thermodynamic stability, but its validation as such is not established. The correlation between solubility and REU/SASA is presented as confirmation, but this is circular if the same data are used to define the metric's validity.
+  - **Why it matters** The computational analysis is presented as a key pillar of the manuscript's evidence. Without sufficient methodological detail, the results cannot be reproduced or independently evaluated. If the REU/SASA metric is not a reliable proxy for stability, the correlation with solubility may be coincidental.
+  - **Resolution test** Provide a detailed description of the computational pipeline, including all parameters, model selection criteria, and the specific Rosetta commands used. Include a validation of the REU/SASA metric against known protein stability data, or acknowledge its limitations more explicitly.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** The manuscript states that "the autoantibody epitope propensity is closely associated with the thermodynamic stability of the target autoantigen" as a general principle.
+  - **Evidence pointer** Results, "Correlation between structural stability and epitope propensity of autoantigens"; Figure 5b
+  - **Concern** The analysis is based on 11 autoantigens, which is a limited sample. The two-cluster pattern in Figure 5b is based on a small number of data points, and the manuscript does not report confidence intervals or the robustness of the clustering. The authors do not discuss whether the relationship holds for a broader set of autoantigens, or whether other factors (e.g., post-translational modifications, subcellular localization, expression levels) might confound the observed association.
+  - **Why it matters** The manuscript aims to establish a general principle. A sample size of 11 antigens, with no external validation, is insufficient to support a broad claim. The observed pattern could be driven by a few outliers or by confounding variables.
+  - **Resolution test** Increase the number of autoantigens analyzed, or clearly state the limitations of the current sample size. Provide a sensitivity analysis to show that the clustering is robust to the inclusion or exclusion of individual data points.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Title and abstract
+  - **Evidence pointer** Title; Abstract
+  - **Issue** The term "regulate" in the title implies a causal mechanism that is not directly demonstrated in the study. The abstract uses "closely associated," which is more appropriate.
+  - **Required correction** Consider revising the title to reflect association rather than regulation, e.g., "Conformational stability and domain-specific structural features of tumor autoantigens are associated with autoantibody epitope propensity."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Results, "Comparative analysis of epitope propensity for IgG autoantibody binding"
+  - **Evidence pointer** Figure 2a, 2b; location not provided for statistical details
+  - **Issue** The p-values are reported (e.g., p < 0.0001, p = 0.0004, p = 0.2826), but the statistical test used is not named, and no effect sizes or confidence intervals are provided.
+  - **Required correction** Specify the statistical test used for each comparison and report effect sizes or confidence intervals alongside p-values.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Data availability
+  - **Affected element** Data Availability Statement
+  - **Evidence pointer** Data Availability Statement
+  - **Issue** The statement says data are "available from the corresponding author on reasonable request." For a study making quantitative claims, this is insufficient. Raw data should be deposited in a public repository.
+  - **Required correction** Deposit raw MFI values, solubility measurements, and computational outputs in a public repository (e.g., Zenodo, Figshare) and provide accession numbers.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Figure quality
+  - **Affected element** Figures 1a, 1b, 2a, 2b, 3a, 3b, 4, 5a, 5b
+  - **Evidence pointer** Figure legends; location not provided
+  - **Issue** The figure legends are brief and do not describe the statistical comparisons, the number of replicates, or the meaning of error bars. The figures themselves were not available for inspection.
+  - **Required correction** Expand figure legends to include full statistical details, sample sizes, and the definition of all error bars and symbols.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Literature context
+  - **Affected element** Introduction and Discussion
+  - **Evidence pointer** Introduction; Discussion
+  - **Issue** The manuscript does not discuss alternative explanations for epitope class preference, such as antigen processing and presentation pathways, or the role of antibody maturation and affinity selection.
+  - **Required correction** Add a brief discussion of alternative or contributing factors to epitope class selection, and how the proposed model fits with existing literature.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (missing figures and tables), R1-M2 (incomplete cohort and assay validation details), R1-M4 (insufficient computational methodology description)
+- **Assessment against Nature-style criteria** Originality: The question of whether autoantigen conformational stability dictates epitope class is relatively underexplored, and the dual-antigen bead approach is a practical innovation. However, the concept that protein stability influences immunogenicity is not entirely new. Scientific importance: The findings could have practical implications for diagnostic assay design, but the limited sample size and correlative nature of the data limit the broader significance. Interdisciplinary readership: The topic sits at the interface of structural biology, immunology, and clinical diagnostics, and could appeal to readers in all three fields. Technical soundness: The experimental design is reasonable, but the lack of methodological detail for the computational analysis and the absence of the actual data figures prevent a full assessment of technical rigor. Readability for nonspecialists: The manuscript is generally well-written and accessible, though some sections (e.g., the computational methods) assume familiarity with specialized terminology.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript addresses an interesting question with a potentially useful experimental approach, but the absence of the primary data figures, incomplete cohort and assay validation details, and insufficient computational methodology prevent a full evaluation of the claims. The correlative nature of the data also does not support the causal language used in the title. The authors should be encouraged to resubmit after providing the missing evidence and tempering their claims.
+
+## Risk / unsupported claims
+- The claim that "the autoantibody epitope propensity is closely associated with the thermodynamic stability of the target autoantigen" is supported only by correlative data from 11 antigens; the causal language in the title ("regulate") is not supported.
+- The claim that "recombinant solubility in E. coli broadly correlated with epitope class" is presented without quantitative correlation coefficients or statistical significance values.
+- The claim that "AlphaFold3-derived Rosetta energy unit/solvent-accessible surface area values" provide "independent computational validation" is not fully supported, as the methodology is insufficiently described and the validation of the REU/SASA metric as a stability proxy is not established.
+- The mechanistic explanation for WT-1's exceptional behavior (zinc-finger domain autonomy) is speculative and not directly tested.
+- The statement that "the immune response is strictly guided by domain-specific biophysics" is an overstatement given the limited number of antigens examined and the lack of direct mechanistic evidence.

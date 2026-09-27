@@ -1,0 +1,93 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, methods, supporting information references)
+- **Assessment boundary** Scientific validity, methodological soundness, claims versus evidence, and suitability for a general biological audience
+- **Shared manuscript claim summary** The authors present AlloPool, a graph neural network framework that learns time-resolved, minimal interaction networks from molecular dynamics simulations to infer protein allostery, predict conformational transitions, and capture effects of ligands, mutations, and mechanical force across diverse protein systems.
+- **Visible evidence base** Main text figures (Figs 1–8), tables (Table 1), supplementary figures (S1–S6), supplementary tables (S1–S2), methods section
+- **Missing materials affecting confidence** Supplementary figures and tables referenced but not provided; code and model weights not provided; detailed hyperparameter settings and architecture dimensions not fully specified; statistical details for some comparisons not provided
+
+## Reviewer
+- **Overall assessment** The manuscript presents a technically sophisticated deep learning framework with a clear motivation and a broad set of application domains. The core idea of iteratively pruning interaction graphs from MD trajectories to reveal allosteric networks is novel and potentially impactful. However, the evidence provided is insufficient to fully establish the claimed advantages over existing methods. Several key comparisons lack statistical rigor, the generalizability claims are not fully supported, and important methodological details are missing. The framework shows promise, but the current manuscript does not convincingly demonstrate that AlloPool provides a general and mechanistically informative tool beyond what existing correlation-based or graph-based methods already offer.
+- **Who would be interested in the results, and why** Computational biophysicists and structural biologists studying protein allostery, conformational dynamics, and signal transduction would be the primary audience. Researchers developing deep learning methods for molecular dynamics analysis would also find the architectural innovations relevant. The potential applications in drug discovery and protein engineering could attract a broader readership in pharmaceutical and biotechnology research.
+- **Major strengths** The manuscript addresses a timely and important problem: extracting mechanistic insight from MD simulations using deep learning. The architectural innovations (temporal attention, iterative edge pooling) are well motivated and represent a genuine advance over static graph approaches. The diversity of validation systems, from mechanosensors to GPCRs to PDZ domains, demonstrates the potential breadth of the framework. The comparison with NRI, a relevant baseline, is appropriate. The authors also make a commendable effort to connect learned features to experimentally known allosteric sites and pathways.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "AlloPool outperformed the NRI in both fluctuation and structural accuracy categories, achieving subangstrom accuracy in reconstruction RMSD."
+  - **Evidence pointer** Table 1, S2 Fig, S3 Fig
+  - **Concern** The comparison with NRI is presented as a central result, but the statistical basis is unclear. The manuscript reports average RMSD and RMSF values but does not provide error bars, confidence intervals, or statistical tests comparing AlloPool and NRI across the different systems. The claim of "outperforming" is therefore not rigorously established. Additionally, the choice of NRI as the sole baseline is limited; other graph-based or correlation-based methods (e.g., mutual information, dynamic network analysis) should be compared to demonstrate a clear advantage.
+  - **Why it matters** Without statistical rigor, the central performance claim is not convincing. The reader cannot assess whether the observed differences are meaningful or within noise. A stronger baseline comparison is also needed to position AlloPool within the existing methodological landscape.
+  - **Resolution test** Provide per-system error bars (e.g., standard deviation across training seeds or test trajectories) and perform appropriate statistical tests (e.g., paired t-test or Wilcoxon signed-rank test) for RMSD and RMSF comparisons. Include at least one additional baseline method, such as dynamic network analysis or a correlation-based approach, to contextualize the performance gains.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** "AlloPool accurately predicts the impact of ligand binding on GPCR allosteric regulation, accurately predicting the dynamic signatures of distinct signaling states."
+  - **Evidence pointer** Fig 5, Methods "Ligand efficacy correlation"
+  - **Concern** The prediction of ligand efficacy from pooled edge features is a strong claim, but the validation is incomplete. The manuscript reports high Pearson correlation coefficients (R2 > 0.9) for some edges, but the number of ligands tested (five) is very small, and the statistical significance of the correlation is not reported. The partial least squares regression model is described, but the cross-validation procedure, if any, is not detailed. The claim that AlloPool "predicts" ligand efficacy is overstated given the limited dataset and lack of out-of-sample validation.
+  - **Why it matters** The ability to predict pharmacological properties from dynamics would be a major advance, but the current evidence is insufficient to support this claim. Overstating predictive power based on a small, potentially overfit dataset undermines the credibility of the framework.
+  - **Resolution test** Provide a clear description of the cross-validation scheme (e.g., leave-one-ligand-out) and report prediction accuracy for held-out ligands. Report the number of edges used in the regression and the stability of the selected features. If possible, include additional ligands to increase the statistical power of the correlation analysis.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "AlloPool can effectively resolve complex allosteric transitions and unbiasedly identify multiple relevant functional and transient states from dynamic data alone."
+  - **Evidence pointer** Fig 4, Methods "Edge PCA and clustering"
+  - **Concern** The clustering of pooled edges to identify dynamic states is a key methodological contribution, but the validation is largely qualitative. The manuscript shows that three clusters correspond to inactive, active, and intermediate states, but it is not clear how the number of clusters was chosen beyond silhouette score analysis, nor whether the clusters are stable across different random seeds or trajectory subsets. The claim of "unbiased" identification is also questionable, as the clustering procedure involves several user-defined choices (e.g., PCA dimensionality, clustering algorithm, distance metric).
+  - **Why it matters** The ability to discover functional states from dynamics is a central promise of the framework. If the clustering is not robust or is sensitive to arbitrary choices, the claim of unbiased discovery is weakened.
+  - **Resolution test** Perform a sensitivity analysis of the clustering results to the number of PCA components, clustering parameters, and random seeds. Report cluster stability metrics (e.g., adjusted Rand index) across repeated runs. Clarify what "unbiased" means in this context and acknowledge the user-defined choices in the procedure.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** "AlloPool can uncover subtle mutational effects encoded in protein dynamics before they manifest as large-scale structural changes."
+  - **Evidence pointer** Fig 7
+  - **Concern** The Engrailed homeodomain example is compelling, but the evidence is limited to a single mutation in a single protein. The claim that AlloPool can "uncover subtle mutational effects" is a general statement that requires broader validation. The manuscript does not provide a quantitative metric for the "reduced interaction density" observed in the mutant, nor does it compare this metric to simpler measures such as RMSF differences or contact map changes.
+  - **Why it matters** The ability to detect mutational effects that structure prediction tools miss is a potentially transformative application. However, a single case study is insufficient to establish this as a general capability of the framework.
+  - **Resolution test** Provide a quantitative comparison of interaction density between wild-type and mutant, with appropriate statistical testing. Include additional mutations or proteins to demonstrate generalizability. Compare the AlloPool-based metric to simpler, established measures of dynamic change.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract and Introduction
+  - **Evidence pointer** Abstract, Introduction
+  - **Issue** The abstract and introduction use technical jargon (e.g., "iteratively pruning residue–residue interactions," "temporal attention with graph aggregation") without sufficient context for a general biological audience. The significance of allostery and the limitations of existing methods could be explained more clearly.
+  - **Required correction** Provide a brief, accessible explanation of why allostery is important and why existing computational methods are limited. Define key terms such as "graph neural network" and "temporal attention" in plain language.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Methods "Molecular dynamics simulations"
+  - **Evidence pointer** Methods
+  - **Issue** The simulation parameters are described, but the equilibration protocol is incomplete. The manuscript states "two rounds of equilibration were carried out, the first in an NVT ensemble for 100 ps" but does not describe the second round. Additionally, the total simulation time per system is not clearly stated (5 trajectories of 200–400 ns each, but the total per system is ambiguous).
+  - **Required correction** Specify the second equilibration round (ensemble, duration, and any restraints). State the total simulation time per system and the number of systems used for training and testing.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Methods "Model architecture"
+  - **Evidence pointer** Methods, Fig 1
+  - **Issue** The model architecture is described at a high level, but key details are missing: the number of layers, hidden dimensions, number of attention heads, dropout rates, and the specific implementation of the edge pooling operation. The loss function is mentioned but not fully defined.
+  - **Required correction** Provide a complete architectural specification, including all hyperparameters, in the Methods or Supplementary Information. Define the loss function explicitly.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interdisciplinary readership
+  - **Affected element** Results sections on GPCRs and mechanosensors
+  - **Evidence pointer** Figs 2, 4, 5
+  - **Issue** The biological significance of the findings for GPCR signaling and mechanosensing is not fully contextualized. For example, the relevance of the identified allosteric networks to known signaling mechanisms could be discussed more explicitly.
+  - **Required correction** Add brief statements connecting the computational findings to established biological knowledge, such as known allosteric sites or signaling pathways, to make the results more accessible to biologists.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (statistical rigor of performance comparison), R1-M2 (validation of ligand efficacy prediction), R1-M3 (robustness of clustering), R1-M4 (generalizability of mutational effect detection)
+- **Assessment against Nature-style criteria**
+  - **Originality** The iterative edge-pooling approach with temporal attention is a novel contribution to the analysis of MD simulations. The application to diverse systems, including non-equilibrium processes, is innovative. However, the core idea of using graph-based methods for allostery is not entirely new, and the novelty lies primarily in the specific architectural choices.
+  - **Scientific importance** The problem of extracting mechanistic insight from MD simulations is of high importance. If the claims are fully validated, the framework could have broad impact on understanding allostery, drug design, and protein engineering. However, the current evidence is insufficient to establish this impact.
+  - **Interdisciplinary readership** The topic is relevant to computational biologists, structural biologists, and biophysicists. The potential applications in drug discovery could attract a broader audience, but the technical presentation may limit accessibility.
+  - **Technical soundness** The methodology is well motivated, but several technical aspects require clarification and additional validation, as detailed in the major concerns. The lack of statistical rigor and limited baseline comparisons are significant weaknesses.
+  - **Readability for nonspecialists** The manuscript is generally well written, but the abstract and introduction could be more accessible. The results sections are dense and may be challenging for readers without a strong computational background.
+- **Recommendation posture** Supportive if technical concerns are resolved. The framework is promising and addresses an important problem, but the current evidence does not fully support the central claims. The authors should address the statistical rigor of the performance comparisons, provide more robust validation of the predictive claims, and clarify the methodological details. With these revisions, the manuscript could make a significant contribution to the field.
+
+## Risk / unsupported claims
+- The claim that AlloPool "outperforms" NRI is not statistically supported without error bars and significance tests.
+- The claim that AlloPool "predicts ligand efficacy" is overstated given the small number of ligands and lack of out-of-sample validation.
+- The claim of "unbiased" identification of dynamic states is not fully supported, as the clustering procedure involves user-defined choices.
+- The general claim that AlloPool can "uncover subtle mutational effects" is based on a single case study and requires broader validation.
+- The computational complexity analysis in the "Computational advantage" section is theoretical and not empirically validated across a range of system sizes.
+- The claim that AlloPool captures "causal relationships" in allosteric signaling is not supported by the presented analyses, which are correlational in nature.
