@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DreamFold: A World Model to efficiently generate protein folding pathways in the latent space. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>DreamFold: A World Model to efficiently generate protein folding pathways in the latent space.</h1>
+      <div class="meta">Ianeselli, Alan; Im, Jewon; Cavallin, Eddie; Gerstein, Mark B</div>
+      <div class="meta muted">
+        
+        <span class="journal">Protein science : a publication of the Protein Society</span>
+        · 2026-09-30
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42813590/">原文</a>
+      </div>
+      <p class="one-liner">DreamFold 提出基于世界模型的生成式框架，在潜空间高效生成蛋白质折叠路径，比MD快四个数量级，并识别具有治疗价值的折叠中间体，核心贡献于蛋白质构象采样与动力学计算。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">While there is an abundance of static data for the structure of biological macromolecules, the data regarding their folding mechanisms and dynamics is scarce, posing a challenge to the training of AI models. The World Model approach, which has been very successful in robotics, can come in handy in this regard. From limited data, it can build a latent, approximated representation of the spatio-temporal folding environment that can be used to train downstream AI models. Here, we developed DreamFold, a World Model-based generative framework to perform biomolecular simulations. DreamFold encodes protein structures and dihedral angle moves into latent vectors using variational autoencoders. Then, it uses another neural network to rapidly predict the next latent structure after a latent move, allowing the model to develop its own understanding of protein dynamics. Finally, in a &#34;hallucinated&#34; latent environment, an agent learns, through evolutionary algorithms, a policy to drive folding simulations toward a target. Latent configurations can then be decoded back into atomistic structures. DreamFold can compute protein folding pathways four orders of magnitude faster than molecular dynamics (MD), up to ~30,000x. Furthermore, for the monomeric proteins tested here (up to 449 aa), the computational cost scales linearly with the number of atoms (N) as O(N) (in comparison, MD scales as O(NlogN)). We have validated our results against established MD benchmarks and other available experimental data. Finally, we show how DreamFold allows us to identify folding intermediates with cryptic binding sites that are therapeutically valuable. Overall, DreamFold facilitates the study of protein dynamics by generative AI with applications in structure-based drug discovery.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">尽管生物大分子结构的静态数据丰富，但其折叠机制和动力学数据稀缺，这对AI模型的训练构成了挑战。在机器人领域非常成功的世界模型（World Model）方法在这方面可以派上用场。从有限数据中，它可以构建一个潜在、近似的时空折叠环境表示，用于训练下游AI模型。在此，我们开发了DreamFold，一种基于世界模型的生成框架，用于执行生物分子模拟。DreamFold使用变分自编码器将蛋白质结构和二面角移动编码为潜在向量。然后，它利用另一个神经网络在潜在移动后快速预测下一个潜在结构，使模型能够发展自己对蛋白质动力学的理解。最后，在“幻觉”潜在环境中，一个智能体通过进化算法学习策略，将折叠模拟驱动至目标状态。潜在配置随后可解码回原子级结构。DreamFold计算蛋白质折叠路径的速度比分子动力学（molecular dynamics, MD）快四个数量级，最高可达约30,000倍。此外，对于此处测试的单体蛋白质（最长449个氨基酸），计算成本随原子数（N）线性扩展为O(N)（相比之下，MD扩展为O(NlogN)）。我们已针对已建立的MD基准和其他可用实验数据验证了我们的结果。最后，我们展示了DreamFold如何使我们识别具有治疗价值的隐秘结合位点的折叠中间体。总体而言，DreamFold通过生成式AI促进了蛋白质动力学研究，并在基于结构的药物发现中具有应用前景。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：DreamFold: A World Model to efficiently generate protein folding pathways in the latent space</li>
+<li><strong>作者</strong>：Ianeselli, Alan; Im, Jewon; Cavallin, Eddie; Gerstein, Mark B</li>
+<li><strong>单位</strong>：Yale University（由致谢与计算资源部分推断，具体作者单位未在摘要中提供）</li>
+<li><strong>期刊/平台</strong>：Protein Science（Protein Society 官方期刊）</li>
+<li><strong>年份</strong>：2026（在线日期 2026-09-30）</li>
+<li><strong>论文类型</strong>：方法学原创研究</li>
+<li><strong>领域</strong>：蛋白质折叠路径计算 × 生成式 AI（World Model）/ 隐空间建模</li>
+<li><strong>关键词</strong>：World Model、蛋白质折叠路径、隐空间、变分自编码器、进化策略、生成式 AI</li>
+<li><strong>DOI/arXiv</strong>：10.1002/pro.70794</li>
+<li><strong>代码</strong>：未提供（提及 GitHub 仓库存放 GROMACS 协议文件，但未给出具体地址）</li>
+<li><strong>数据</strong>：Zenodo，https://doi.org/10.5281/zenodo.17369796</li>
+<li><strong>阅读日期</strong>：2026-05-14</li>
+<li><strong>在该方向中的位置</strong>：本文属于「AI 驱动的蛋白质构象采样/路径生成」子方向，首次将 World Model 范式（源自机器人/游戏领域）引入蛋白质折叠路径计算，在隐空间中完成折叠策略学习，实现比 MD 快 4 个数量级的折叠路径生成，并保持原子级分辨率输出。与 AlphaFold 等静态结构预测方法互补，聚焦动态过程；与基于物理的 MD 模拟相比，绕开了逐帧积分的高昂计算成本。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>DreamFold 使用变分自编码器将蛋白质结构（Φ/Ψ 二面角 + Cα 距离）和动作（二面角旋转）压缩到 10 维隐空间，训练前馈神经网络作为隐空间动力学模型，再用 CMA 进化策略在"梦境环境"中学习折叠策略，以比 MD 快 3,800–30,000 倍的速度生成从展开态到天然态的折叠路径，并在 7 个测试蛋白上验证了折叠中间体和过渡态的原子级结构准确性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否用 World Model 范式在隐空间中高效生成蛋白质折叠路径，避免 MD 模拟中逐帧积分的高昂计算成本？</li>
+<li><strong>为什么重要</strong>：蛋白质折叠路径、中间体和过渡态结构是理解蛋白质功能、错误折叠疾病机制以及进行基于结构的药物设计（尤其是靶向隐蔽口袋）的关键信息。但 MD 模拟受限于时间尺度和计算资源，难以覆盖中等大小蛋白的完整折叠过程。</li>
+<li><strong>现有方法不足</strong>：</li>
+<li>MD 模拟计算成本高（O(NlogN)），且需要预先指定力场和长时间平衡；</li>
+<li>增强采样方法（如 rMDBF、D&amp;R）虽加速采样，但仍需大量 MD 计算；</li>
+<li>现有 AI 方法多聚焦静态结构预测（如 AlphaFold）或构象集合生成，缺乏对折叠路径（时间有序的构象转变序列）的高效生成能力；</li>
+<li>直接在高维原子坐标空间训练强化学习/进化策略不可行，需要降维。</li>
+<li><strong>精确研究问题</strong>：Can a World Model trained on limited Monte Carlo trajectory data build a latent spatio-temporal representation of protein dynamics that enables efficient generation of physically plausible folding pathways at atomistic resolution?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」——基于摘要中引用的文献与领域常识，但具体细节以本文框架为主）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理模拟时代</td>
+<td>全原子 MD（Shaw et al., 2010）</td>
+<td>高精度、物理严格</td>
+<td>计算成本极高，难以跨越毫秒级折叠时间尺度</td>
+</tr>
+<tr>
+<td>增强采样</td>
+<td>rMDBF（Ianeselli et al., 2018）、D&amp;R（Ianeselli et al., 2024）</td>
+<td>加速路径采样</td>
+<td>仍需大量 MD 计算，计算复杂度仍为 O(NlogN)</td>
+</tr>
+<tr>
+<td>降维建模</td>
+<td>VAE 用于蛋白质构象（Mansoor et al., 2024; Tian et al., 2021）</td>
+<td>压缩高维构象空间</td>
+<td>多用于静态构象集合分析，未用于路径生成</td>
+</tr>
+<tr>
+<td>AI 结构预测</td>
+<td>AlphaFold 等</td>
+<td>静态结构高精度</td>
+<td>不提供折叠路径/动力学信息</td>
+</tr>
+<tr>
+<td>World Model（机器人领域）</td>
+<td>Ha &amp; Schmidhuber (2018)</td>
+<td>从有限数据学习环境动力学，支持策略训练</td>
+<td>尚未应用于分子模拟</td>
+</tr>
+<tr>
+<td><strong>本文位置</strong></td>
+<td><strong>DreamFold</strong></td>
+<td><strong>首次将 World Model 用于蛋白质折叠路径生成，隐空间策略学习，O(N) 扩展性</strong></td>
+<td><strong>不提供热力学/动力学量，路径非平衡态</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>折叠动态数据稀缺</td>
+<td>静态结构数据丰富，但折叠机制和动力学数据极少</td>
+<td>实验难以捕捉折叠中间态；MD 模拟成本高导致公开数据有限</td>
+<td>Abstract: "data regarding their folding mechanisms and dynamics is scarce, posing a challenge to the training of AI models"</td>
+</tr>
+<tr>
+<td>MD 计算成本高</td>
+<td>模拟中等蛋白（&gt;100 aa）折叠需要超长轨迹</td>
+<td>逐帧积分 + 长程静电计算（PME）导致 O(NlogN) 复杂度</td>
+<td>Performance 节: "MD scales as O(NlogN)"</td>
+</tr>
+<tr>
+<td>高维空间策略学习不可行</td>
+<td>直接在原子坐标空间训练控制器计算量爆炸</td>
+<td>蛋白质构象空间维度极高（3N 自由度）</td>
+<td>方法设计：先 VAE 压缩到 10 维隐空间再训练控制器</td>
+</tr>
+<tr>
+<td>现有 AI 方法缺乏时间维度</td>
+<td>AlphaFold 等只预测静态结构</td>
+<td>训练目标为结构映射，不包含动力学信息</td>
+<td>Introduction: 现有方法聚焦静态结构预测</td>
+</tr>
+<tr>
+<td>折叠路径验证困难</td>
+<td>缺乏实验级折叠路径参考数据</td>
+<td>实验手段难以追踪逐残基折叠顺序</td>
+<td>使用 DESRES 超长 MD 轨迹作为参考基准</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>DreamFold 是一个三模块流水线：(a) VAE1 将蛋白质结构（Φ/Ψ 二面角 + Cα 距离）编码为 10 维隐向量 ς；(b) VAE2 将动作（ΔΦ/ΔΨ 旋转）编码为 10 维隐向量 α；(c) 前馈神经网络学习隐空间动力学 ς(t+1) = f(ς(t), α(t))；(d) 在训练好的"梦境环境"中，用 CMA 进化策略训练控制器 α(t) = π(ς(t))，以最小化到目标态（天然态）的隐空间距离为奖励。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>隐空间作为"梦境环境"</strong>：World Model 的核心思想是——不需要在真实环境中训练策略，而是在模型自己学到的环境表征中训练。蛋白质折叠的"真实环境"是原子坐标空间，计算成本极高；但折叠的"本质"可能存在于低维流形上（二面角空间本身就只有 2N 维，且折叠协同性进一步降低有效维度）。</li>
+<li><strong>能量最小化作为隐式物理约束</strong>：训练数据中的每一步都经过 Rosetta FastRelax 能量最小化，这相当于在数据生成层面嵌入了物理约束，使得 VAE 学到的隐空间天然偏向物理合理的构象。</li>
+<li><strong>"反向摊销"计算成本</strong>：训练集生成需要大量能量最小化计算，但这是一次性投入；训练完成后，推理阶段只需前向传播神经网络，将计算成本从逐帧积分转为单次前向传播。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>"先学环境，再学策略"的两阶段范式</strong>可迁移到其他分子模拟任务（如配体结合路径、构象转换），关键是找到一个可微分的低维表征。</li>
+<li><strong>用生成模型替代物理模拟器</strong>：当物理模拟器太慢而数据可以离线生成时，World Model 提供了一种"模拟器蒸馏"的路径。</li>
+<li><strong>正则化项可以编码物理先验</strong>：Ramachandran 评分作为奖励正则项，比直接约束隐空间更灵活，因为它只在策略学习阶段起作用，不影响表征学习。</li>
+</ul>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：蛋白质氨基酸序列对应的初始构象（展开态或任意非天然构象），以及目标天然态结构（PDB）。</p>
+<p><strong>输出</strong>：从初始构象到天然态的折叠路径，即一系列原子级结构（通过 VAE1 解码器从隐空间重建），以及路径上的中间体和过渡态构象。</p>
+<p><strong>模块</strong>：
+1. <strong>数据生成模块</strong>：使用 pyRosetta 进行随机二面角旋转（±30°）+ FastRelax 能量最小化，生成训练轨迹（50 条 × 500 步/蛋白）。
+2. <strong>VAE1（结构编码器）</strong>：输入 S = [Φ, Ψ, Cα距离]，输出 10 维隐向量 ς。编码器和解码器均为神经网络。
+3. <strong>VAE2（动作编码器）</strong>：输入 A = [ΔΦ, ΔΨ]，输出 10 维隐向量 α。
+4. <strong>FFN（未来状态预测器）</strong>：输入 [ς(t), α(t)]，输出 ς(t+1) 的预测。这是 World Model 的"环境模拟器"。
+5. <strong>控制器（策略网络）</strong>：输入 ς(t)，输出 α(t)。使用 CMA 进化策略训练，奖励 = 路径累积 Ramachandran 评分 + 终点隐空间距离。
+6. <strong>解码与验证模块</strong>：将隐空间轨迹解码回原子结构，与 DESRES MD 轨迹进行路径相似性比较。</p>
+<p><strong>训练流程</strong>：
+- Step 1: 生成随机 rollout 数据（50 轨迹 × 500 步）
+- Step 2: 训练 VAE1（结构压缩）
+- Step 3: 训练 VAE2（动作压缩）
+- Step 4: 训练 FFN（隐空间动力学）
+- Step 5: 固定 VAE1/VAE2/FFN，用 CMA 训练控制器</p>
+<p><strong>关键假设</strong>：
+- 隐空间中的欧氏距离近似反映构象相似性；
+- FFN 学到的隐空间动力学足以捕捉折叠的关键中间态；
+- 能量最小化步骤保证了训练数据的物理合理性。</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VAE1（结构编码器）</td>
+<td>将高维结构特征压缩为 10 维隐向量</td>
+<td>降低策略学习维度，使 CMA 可行</td>
+<td>输入：Φ/Ψ 二面角 + Cα 距离（~3N 维）；输出：ς ∈ R^10</td>
+<td>方法节 Step 2；重建误差作为训练损失</td>
+<td>移除后控制器需在高维空间学习，CMA 不可行 [预期]</td>
+</tr>
+<tr>
+<td>VAE2（动作编码器）</td>
+<td>压缩动作空间</td>
+<td>动作空间同样高维（2N 个二面角变化）</td>
+<td>输入：ΔΦ/ΔΨ；输出：α ∈ R^10</td>
+<td>方法节 Step 3</td>
+<td>移除后 FFN 输入维度爆炸，训练数据需求剧增 [预期]</td>
+</tr>
+<tr>
+<td>FFN（未来状态预测器）</td>
+<td>学习隐空间动力学 ς(t+1)|ς(t),α(t)</td>
+<td>构建"梦境环境"，使控制器训练无需真实 MD</td>
+<td>输入：[ς(t), α(t)]；输出：ς(t+1) 预测</td>
+<td>方法节 Step 4；MAE 损失</td>
+<td>移除后控制器无法在梦境中训练，需回到真实环境 [预期]</td>
+</tr>
+<tr>
+<td>控制器（策略网络）</td>
+<td>学习折叠策略 α(t)|ς(t)</td>
+<td>生成从展开态到天然态的路径</td>
+<td>输入：ς(t)；输出：α(t)</td>
+<td>方法节 Step 5；CMA 训练</td>
+<td>移除后无法生成路径 [预期]</td>
+</tr>
+<tr>
+<td>Ramachandran 正则化</td>
+<td>惩罚不合理的 Φ/Ψ 组合</td>
+<td>防止隐空间解码产生立体化学不合理构象</td>
+<td>输入：解码后的 Φ/Ψ；输出：惩罚分数</td>
+<td>Results 图 2a-d；正则化降低路径能量</td>
+<td>移除后路径可能包含高能不合理构象 [预期]</td>
+</tr>
+<tr>
+<td>解码器（VAE1 的 decoder）</td>
+<td>将隐向量重建为原子结构</td>
+<td>输出原子级分辨率路径</td>
+<td>输入：ς；输出：S（Φ/Ψ + Cα 距离）</td>
+<td>方法节 Step 2</td>
+<td>移除后无法获得原子结构 [预期]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1. VAE 损失函数</strong>（VAE1 和 VAE2 共用形式）：</p>
+<pre><code>L_VAE = MAE(S, Ŝ) + β · KL(q(ς|S) || N(0, I))
+</code></pre>
+<ul>
+<li>S：输入结构特征；Ŝ：解码重建</li>
+<li>MAE：平均绝对误差（重建损失）</li>
+<li>KL：Kullback-Leibler 散度，确保隐空间接近标准正态分布</li>
+<li>β：KL 项权重（具体值未提供）</li>
+</ul>
+<p><strong>2. FFN 预测损失</strong>：</p>
+<pre><code>L_FFN = MAE(ς(t+1), ς̂(t+1))
+</code></pre>
+<ul>
+<li>ς(t+1)：真实下一时刻隐向量（由 VAE1 编码得到）</li>
+<li>ς̂(t+1)：FFN 预测值</li>
+</ul>
+<p><strong>3. 控制器总奖励</strong>（最小化目标）：</p>
+<pre><code>R_total = Σ_{t=1}^{T} Σ_{i=1}^{N} R(Φ_i(t), Ψ_i(t)) + (1/L) · ||ς(t+n) - ς_target||
+</code></pre>
+<ul>
+<li>R(Φ,Ψ)：Ramachandran 评分矩阵（基于 ~8000 个高分辨率 PDB 统计）</li>
+<li>N：残基数；T：路径长度（100 步）；L：隐向量维度（10）</li>
+<li>ς_target：目标态（天然态）的隐向量</li>
+<li>第一项：路径全程的立体化学合理性；第二项：终点接近目标态的程度</li>
+</ul>
+<p><strong>4. 计算复杂度</strong>：
+- MD：O(NlogN)（N 为原子数）
+- DreamFold：O(N)（线性扩展，主要来自能量最小化步骤）</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>：
+- 7 个测试蛋白：TrpCage（20 aa, PDB: 1L2Y）、Fip35 WW domain（35 aa, PDB: 2F21）、Protein G（56 aa, PDB: 1MI0）、λ-repressor（80 aa, PDB: 1LMB）、PrP（124 aa, PDB: 1QLX）、Ubiquitin（76 aa, PDB: 1UBQ）、hCRBP2（133 aa, PDB: 4ZGU）
+- 训练数据：每个蛋白 50 条随机 rollout 轨迹 × 500 步 = 25,000 个构象-动作对；验证/测试集各 5 条轨迹（2,500 对）
+- 参考数据：DESRES 超长平衡 MD 轨迹（Lindorff-Larsen et al., 2011）</p>
+<p><strong>基线/对比方法</strong>：
+- 平衡 MD（DESRES 数据）
+- rMDBF（增强采样方法）
+- D&amp;R（Discard-and-Restart MD）
+- 随机折叠路径（作为下界基线）</p>
+<p><strong>评测协议</strong>：
+- 路径相似性（path similarity, Camilloni et al., 2011）
+- 折叠指纹（order of formation of local native structures）的 Spearman 相关系数
+- 折叠中间体/过渡态结构的 RMSD 与已知结构比对
+- 计算速度对比（DreamFold vs. MD）</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>折叠路径生成（Fip35）</td>
+<td>DreamFold 能生成与 MD 一致的折叠路径</td>
+<td>50 条 DreamFold 轨迹 vs. DESRES 轨迹的路径相似性</td>
+<td>路径相似性高，与 DESRES 不可区分</td>
+<td>DreamFold 路径在折叠顺序上与 MD 一致</td>
+<td>不能证明路径的动力学时间尺度正确</td>
+<td>Results 图 4a</td>
+</tr>
+<tr>
+<td>折叠路径生成（TrpCage）</td>
+<td>DreamFold 能复现双路径折叠机制</td>
+<td>路径相似性 + 折叠指纹对比</td>
+<td>路径相似性略低于 Fip35，但折叠指纹 Spearman ρ &gt; 0</td>
+<td>折叠机制定性一致</td>
+<td>定量折叠比例可能不准确</td>
+<td>Results 图 4b</td>
+</tr>
+<tr>
+<td>折叠路径生成（Protein G, λ-repressor）</td>
+<td>DreamFold 适用于更大蛋白</td>
+<td>与 DESRES 对比</td>
+<td>路径与 DESRES 不可区分</td>
+<td>方法可扩展到 80 aa 蛋白</td>
+<td>未测试 &gt;133 aa 蛋白的折叠</td>
+<td>Results 图 4c-d</td>
+</tr>
+<tr>
+<td>Ramachandran 正则化效果</td>
+<td>正则化降低路径能量</td>
+<td>有/无正则化的 DreamFold 轨迹对比</td>
+<td>正则化显著降低累积 Ramachandran 评分（除 Protein G 外）</td>
+<td>正则化提升路径物理合理性</td>
+<td>Protein G 上效果不显著</td>
+<td>Results 图 2d-e</td>
+</tr>
+<tr>
+<td>计算速度</td>
+<td>DreamFold 比 MD 快 4 个数量级</td>
+<td>相同蛋白、相同路径长度</td>
+<td>TrpCage: 3,800×；Fip35: 8,000×；Protein G: 30,000×</td>
+<td>DreamFold 计算效率远高于 MD</td>
+<td>速度优势随蛋白大小变化</td>
+<td>Performance 节</td>
+</tr>
+<tr>
+<td>PrP 折叠中间体识别</td>
+<td>DreamFold 能识别已知治疗相关中间体</td>
+<td>DreamFold 轨迹中的中间态 vs. 文献报道结构</td>
+<td>7/50 轨迹通过已知中间体，RMSD &lt; 0.5 nm</td>
+<td>DreamFold 可发现药物靶向构象</td>
+<td>中间体群体比例可能不代表真实热力学权重</td>
+<td>Results 图 6</td>
+</tr>
+<tr>
+<td>Ubiquitin 过渡态结构</td>
+<td>DreamFold 过渡态与实验 Ψ 值分析一致</td>
+<td>DreamFold TS 结构 vs. Sosnick et al. (2004) 实验</td>
+<td>短程接触的 Ψ 值高度一致</td>
+<td>DreamFold TS 结构准确</td>
+<td>长程接触预测精度较低</td>
+<td>Results 图 7</td>
+</tr>
+<tr>
+<td>hCRBP2 功能构象</td>
+<td>DreamFold 能发现配体可及构象</td>
+<td>DreamFold 轨迹中的构象 vs. 已知功能态</td>
+<td>发现 3 种天然态样构象，配体可及</td>
+<td>DreamFold 可用于隐蔽口袋发现</td>
+<td>未做配体结合自由能验证</td>
+<td>Results 图 9</td>
+</tr>
+<tr>
+<td>MSM 重建热力学</td>
+<td>DreamFold + 短 MD 可重建平衡态</td>
+<td>MSM 稳态分布 vs. 平衡 MD</td>
+<td>三态折叠（天然/中间/展开）被识别，分布形状相似</td>
+<td>定性热力学信息可恢复</td>
+<td>定量自由能差不准确</td>
+<td>Results 图 5c-d</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>：DreamFold 解决的是"给定目标天然态，生成从展开态到天然态的折叠路径"这一条件生成问题，而非无偏的构象采样或热力学性质计算。</p>
+<p><strong>输入依赖</strong>：需要已知目标天然态结构（PDB），因此无法用于预测未知蛋白的折叠路径；本质上是"条件路径生成"而非"折叠预测"。</p>
+<p><strong>输出性质</strong>：生成的路径是"物理合理的"（经 Ramachandran 正则化和能量最小化数据训练），但<strong>不是</strong>真实动力学轨迹——路径上的构象序列不等同于时间演化的 MD 轨迹，缺乏真实的时间尺度。</p>
+<p><strong>验证边界</strong>：
+- 路径相似性高 ≠ 动力学正确：DreamFold 路径在折叠顺序（哪些结构先形成）上与 MD 一致，但无法给出折叠速率或中间体寿命；
+- 中间体识别是"存在性"而非"群体性"：找到中间体构象 ≠ 知道其热力学稳定性或群体比例；
+- 速度优势（30,000×）是端到端路径生成 vs. MD 模拟的对比，不包括训练数据生成（MD/MC 采样）的一次性成本。</p>
+<p><strong>适用边界</strong>：测试蛋白 ≤133 aa（Ubiquitin 76 aa 用于 TS 分析，hCRBP2 133 aa 为最大折叠测试）；449 aa 的 α-tubulin 仅做了可行性演示，无验证。方法依赖训练数据的力场（Rosetta），继承了力场的系统误差。</p>
+<p><strong>正确表述</strong>：DreamFold 是一种高效的蛋白质折叠路径生成器，能在保持原子级分辨率的同时，以远低于 MD 的计算成本生成与 MD 在折叠顺序上一致的路径，可用于发现药物靶向的中间体构象；但它不提供热力学/动力学定量信息，且路径的物理真实性受限于训练力场。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无法直接计算热力学/动力学量</td>
+<td>路径不满足细致平衡，不能提取自由能、速率常数等</td>
+<td>结合短 MD 松弛 + MSM 重建热力学（已在本文演示）</td>
+<td>Limitations 节</td>
+</tr>
+<tr>
+<td>路径非平衡态</td>
+<td>控制器只被奖励向前折叠，不保证路径可逆</td>
+<td>未明确提及</td>
+<td>Limitations 节</td>
+</tr>
+<tr>
+<td>继承力场偏差</td>
+<td>训练数据来自 Rosetta 力场，路径受力场系统误差影响</td>
+<td>未明确提及</td>
+<td>Limitations 节（"inherits the biases of atomistic force fields from the training data"）</td>
+</tr>
+<tr>
+<td>长程接触预测精度低</td>
+<td>Ubiquitin TS 分析中长程接触的 Ψ 值一致性较差</td>
+<td>未明确提及</td>
+<td>Results 图 7 讨论</td>
+</tr>
+<tr>
+<td>需要目标态信息</td>
+<td>必须提供天然态结构作为目标</td>
+<td>未来可发展无目标引导的探索模式</td>
+<td>Conclusions 节（"unguided molecular simulations"）</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练数据仅 25,000 步/蛋白</td>
+<td>数据量远小于 MD 轨迹的典型规模，可能不足以覆盖完整构象空间</td>
+<td>隐空间动力学模型的泛化能力存疑，可能只学到训练分布内的转移</td>
+<td>增加训练轨迹数量，测试路径质量是否提升；用未见过的起始构象测试</td>
+<td>Methods 节 Step 1</td>
+</tr>
+<tr>
+<td>路径相似性以 DESRES 为参考，但 DESRES 本身只是 MD 的一种实现</td>
+<td>高相似性可能反映的是"与 MD 一致"而非"与真实折叠一致"</td>
+<td>力场误差可能被共同继承，造成虚假验证</td>
+<td>与实验数据（如 Ψ 分析、H/D 交换）对比，而非仅与 MD 对比</td>
+<td>Results 图 4, 7</td>
+</tr>
+<tr>
+<td>10 维隐空间对 449 aa 蛋白的压缩比</td>
+<td>449 aa 蛋白有 ~900 个二面角，压缩到 10 维可能丢失关键自由度</td>
+<td>大蛋白折叠可能需要更高维隐空间</td>
+<td>对不同大小蛋白做隐空间维度扫描，测试重构误差和路径质量</td>
+<td>方法节 VAE 设计；Results 提及 α-tubulin 演示</td>
+</tr>
+<tr>
+<td>CMA 进化策略的收敛性</td>
+<td>1000 代 × 20 群体的搜索是否充分未知；不同随机种子可能给出不同路径</td>
+<td>路径生成的可重复性未系统评估</td>
+<td>多次独立运行 CMA，评估路径多样性</td>
+<td>Methods 节 Step 5</td>
+</tr>
+<tr>
+<td>Ramachandran 正则化在 Protein G 上无显著效果</td>
+<td>可能因为 Protein G 的折叠路径本身不经过高 Φ/Ψ 能量区域，或正则化权重不足</td>
+<td>正则化的必要性因蛋白而异，需自适应权重</td>
+<td>对不同蛋白扫描正则化权重</td>
+<td>Results 图 2d-e</td>
+</tr>
+<tr>
+<td>与 MD 的速度对比未包含训练成本</td>
+<td>训练数据生成（50×500 步 Rosetta 能量最小化）本身需要大量计算</td>
+<td>"30,000×"可能高估了端到端优势</td>
+<td>报告包含训练数据生成的总时间对比</td>
+<td>Performance 节</td>
+</tr>
+<tr>
+<td>中间体"发现"的验证标准</td>
+<td>仅以 RMSD &lt; 0.5 nm 判定中间体，未做结构聚类或稳定性分析</td>
+<td>可能将瞬态构象误判为稳定中间体</td>
+<td>对中间体做 MD 松弛验证其稳定性</td>
+<td>Results 图 6</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>World Model 两阶段范式可迁移到分子模拟</strong>：先离线生成数据训练"环境模型"（VAE + 动力学预测器），再在隐空间中训练策略/控制器。这一范式可迁移到配体结合路径生成、蛋白质-蛋白质对接构象搜索、酶催化构象转换等任务。关键设计选择是：用能量最小化（而非 MD）生成训练数据，大幅降低数据收集成本。</p>
+</li>
+<li>
+<p><strong>隐空间维度选择与物理自由度匹配</strong>：10 维隐空间对 ≤133 aa 蛋白有效，但大蛋白可能需要更高维度。可迁移经验：隐空间维度应大致匹配蛋白的慢变量/反应坐标数量，而非原子坐标维度。</p>
+</li>
+<li>
+<p><strong>物理正则化嵌入奖励函数</strong>：将 Ramachandran 评分作为策略训练的奖励项，比在 VAE 损失中加约束更有效——因为正则化只影响策略搜索方向，不影响表征学习。可迁移到其他任务：用已知物理先验（如 Ramachandran、接触图、二级结构偏好）作为策略奖励的软约束。</p>
+</li>
+<li>
+<p><strong>"反向摊销"计算策略</strong>：训练阶段集中计算（能量最小化），推理阶段极快（神经网络前向传播）。对于需要大量重复采样的任务（如虚拟筛选、构象库生成），这种"一次性训练成本 + 极低推理成本"的模式值得借鉴。</p>
+</li>
+<li>
+<p><strong>路径相似性 + 折叠指纹的双重验证协议</strong>：用 path similarity 衡量整体路径一致性，用折叠指纹的 Spearman 相关衡量局部结构形成顺序，两者互补。可迁移到其他路径生成方法的评估。</p>
+</li>
+<li>
+<p><strong>中间体发现作为药物靶点</strong>：DreamFold 在 PrP 和 hCRP2 中发现的中间体具有隐蔽口袋，说明"路径生成 → 中间体结构 → 隐蔽口袋筛选"是可行的药物发现管线。可迁移到其他含隐蔽口袋的靶蛋白。</p>
+</li>
+<li>
+<p><strong>MD 松弛作为后处理</strong>：DreamFold 路径 + 短 MD 松弛 + MSM 重建，可以在保持计算效率的同时恢复部分热力学信息。这种"粗路径 + 局部精修"的组合策略可迁移到其他构象采样任务。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>World Model 原始文献</strong>：Ha &amp; Schmidhuber (2018) "World Models"——本文直接继承其"梦境环境"训练范式，但将视觉像素替换为蛋白质结构特征，将 RNN 替换为 FFN，将强化学习替换为 CMA 进化策略。</li>
+<li><strong>VAE 用于蛋白质构象</strong>：Mansoor et al. (2024)、Tian et al. (2021) 等已用 VAE 压缩蛋白质构象空间，本文在此基础上增加了"动作编码"和"动力学预测"，从静态表征扩展到动态预测。</li>
+<li><strong>增强采样方法</strong>：rMDBF（Ianeselli et al., 2018）和 D&amp;R（Ianeselli et al., 2024）是本文的直接对比方法，本文声称在保持路径质量的同时大幅提升速度。</li>
+<li><strong>DESRES 超长 MD</strong>：Lindorff-Larsen et al. (2011) 的百年尺度 MD 模拟是本文验证的黄金标准，路径相似性和折叠指纹分析均以其为参考。</li>
+<li><strong>蛋白质折叠实验数据</strong>：Fip35 的双路径折叠（Beccara et al., 2012; Ensign &amp; Pande, 2009）、TrpCage 的中间体（Meuzelaar et al., 2013; Zhou, 2003）等实验/计算研究为本文的折叠机制验证提供了依据。</li>
+<li><strong>隐蔽口袋与药物发现</strong>：Spagnolli et al. (2021) 对 PrP 折叠中间体的研究是本文药物应用场景的直接先例。</li>
+<li><strong>力场偏差问题</strong>：本文承认继承 Rosetta 力场偏差，与 Skinner et al. (2014) 关于 MD 力场过度塌缩无序态的观察一致。</li>
+<li><strong>候选连接方向</strong>：与 AlphaFold 的静态预测互补——AlphaFold 给出终态结构，DreamFold 给出到达终态的路径；两者结合可用于"结构预测 + 折叠机制"的完整描述。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：DreamDock——World Model 用于配体结合路径生成
+   - <strong>来源局限/观察</strong>：DreamFold 证明 World Model 可生成蛋白质折叠路径；配体结合是类似的构象搜索问题，但涉及蛋白质-配体双体自由度
+   - <strong>核心假设</strong>：将蛋白质-配体复合物结构编码到隐空间，训练动力学模型预测结合/解离路径，可在隐空间中高效生成结合路径
+   - <strong>增量</strong>：将 World Model 从单链折叠扩展到双分子结合；引入相对平移/旋转自由度编码
+   - <strong>初步方法</strong>：VAE 编码复合物结构（蛋白质 + 配体 + 界面特征），FFN 预测隐空间动力学，CMA 学习结合策略
+   - <strong>验证</strong>：与 MD 和实验结合速率常数对比；路径相似性分析
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：FoldFlow——基于流的隐空间折叠路径生成
+   - <strong>来源局限/观察</strong>：DreamFold 的 FFN 是确定性预测，无法表达折叠路径的随机性；真实折叠是随机过程
+   - <strong>核心假设</strong>：用随机微分方程/归一化流替代 FFN，可生成多样化的折叠路径集合，更好捕捉折叠异质性
+   - <strong>增量</strong>：从确定性路径到随机路径分布；可计算路径概率
+   - <strong>初步方法</strong>：在 DreamFold 的 VAE 隐空间上训练条件扩散模型或连续归一化流，以目标态为条件生成路径
+   - <strong>验证</strong>：路径多样性评估；与单分子实验（如 FRET）对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：DreamFold-ΔG——从折叠路径提取自由能信息
+   - <strong>来源局限/观察</strong>：DreamFold 明确不提供热力学量；但路径上的构象序列 + 能量最小化信息可能包含自由能信息
+   - <strong>核心假设</strong>：通过路径集合的 Boltzmann 重加权或 Jarzynski 等式，可以从 DreamFold 生成的路径中恢复自由能面
+   - <strong>增量</strong>：在保持速度优势的同时提供热力学信息
+   - <strong>初步方法</strong>：生成大量路径，对路径上的构象做短 MD 松弛，用 MBAR 或多态 Bennett 接受率方法计算自由能
+   - <strong>验证</strong>：与实验 ΔG_folding 对比；与伞形采样结果对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：DreamFold-Multi——多状态目标引导的折叠路径生成
+   - <strong>来源局限/观察</strong>：DreamFold 只以天然态为目标；许多蛋白有多个功能态（如激酶的活性/非活性态）
+   - <strong>核心假设</strong>：将目标从单一态扩展为多个功能态，可生成态间转换路径
+   - <strong>增量</strong>：从折叠扩展到构象转换/变构
+   - <strong>初步方法</strong>：修改奖励函数为多目标距离加权和，或使用条件 VAE 编码目标态
+   - <strong>验证</strong>：与变构路径的实验数据对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：DreamDesign——折叠路径引导的蛋白质设计
+   - <strong>来源局限/观察</strong>：DreamFold 能识别折叠中间体和隐蔽口袋；这些信息可用于设计稳定中间体或靶向中间体的药物
+   - <strong>核心假设</strong>：折叠路径上的关键中间体可作为设计目标，设计序列以稳定特定中间体
+   - <strong>增量</strong>：从"设计终态结构"扩展到"设计折叠路径"
+   - <strong>初步方法</strong>：用 DreamFold 生成路径，识别关键中间体，用序列设计工具（如 ProteinMPNN）设计稳定中间体的序列
+   - <strong>验证</strong>：实验表达和折叠验证
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, conclusions, limitations, data availability statement)</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, claims versus evidence, clarity, and alignment with Nature-style criteria. No line numbers were provided; references to sections and figures are based on the manuscript structure.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present DreamFold, a generative World Model framework that learns protein folding pathways in a latent space. The model encodes protein structures and dihedral angle moves into latent vectors using variational autoencoders, predicts future latent states with a feedforward neural network, and trains a controller via evolutionary strategies (CMA-ES) to drive folding toward a target native state. The authors claim speedups of up to ~30,000× over molecular dynamics, linear scaling O(N) with system size, and accurate identification of folding intermediates and transition states validated against MD simulations and experimental data.</li>
+<li><strong>Visible evidence base</strong> Abstract, full methods description, results sections for regularization, folding pathway computation, performance benchmarks, path similarity analysis, thermodynamics reconstruction, and case studies for Fip35, TrpCage, Protein G, λ-repressor, PrP, Ubiquitin, and hCRBP2. Figures referenced but not provided. Supporting Information referenced but not provided.</li>
+<li><strong>Missing materials affecting confidence</strong> Figures 1–9, all Supporting Information sections (including model architecture details, hyperparameters, training procedures, and additional validation), the Zenodo data repository contents, and the GitHub repository with protocol files. Without these, quantitative claims about performance, accuracy, and scaling cannot be independently verified.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a conceptually interesting application of World Models to protein folding, with a plausible pipeline combining VAEs, a forward dynamics model, and evolutionary policy optimization. The claimed computational speedups are striking and, if reproducible, would be of practical value. However, the evidence base as provided is insufficient to establish the central claims. Key validation metrics, benchmark details, and comparisons are described qualitatively or deferred to Supporting Information and figures that were not available for review. The thermodynamic reconstruction via MSM is acknowledged as approximate, but the limitations of this approach are understated. The manuscript would benefit from clearer reporting of error bars, statistical significance, and direct comparisons to baseline methods.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and structural biologists interested in fast generative approaches for conformational sampling; AI researchers working on World Models and latent-space dynamics; drug discovery scientists targeting cryptic pockets and folding intermediates. The promise of orders-of-magnitude speedup over MD would attract a broad interdisciplinary audience if the claims are substantiated.</li>
+<li><strong>Major strengths</strong> 1. Novel application of World Models to protein folding, extending a successful AI paradigm from robotics/games to molecular simulations. 2. The pipeline is modular and clearly described, with each component (VAE, FFN, CMA-ES) justified. 3. The authors address a real bottleneck (computational cost of MD) and propose a principled alternative. 4. Validation against multiple reference datasets (DESRS, experimental data) is attempted, and the authors acknowledge the out-of-equilibrium nature of their trajectories.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "DreamFold can compute protein folding pathways four orders of magnitude faster than molecular dynamics (MD), up to ~30,000×."</li>
+<li><strong>Evidence pointer</strong> Results section "Performance"; Figure 4 (not provided); Supporting Information S1: section 5 (not provided)</li>
+<li><strong>Concern</strong> The speedup claim is central to the paper's impact, but the provided text does not include the actual benchmark data, hardware specifications, or the MD baseline used for comparison. The scaling argument (O(N) vs O(N log N)) is presented theoretically, but no empirical scaling plots or wall-clock measurements are shown in the manuscript text. The comparison to MD is also complicated by the fact that DreamFold trajectories are not physical dynamics and lack a time axis, making "speedup" ambiguous.</li>
+<li><strong>Why it matters</strong> Without reproducible benchmark details, the headline performance claim cannot be assessed. If the speedup is not robust across systems or is sensitive to hyperparameters, the practical utility of DreamFold is diminished.</li>
+<li><strong>Resolution test</strong> Provide a table or figure with wall-clock times for DreamFold vs MD for all tested proteins, including hardware details, number of MD replicates, and statistical variability. Clarify what "speedup" means in the absence of a physical time scale.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Validation rigor</li>
+<li><strong>Claim pointer</strong> "We have validated our results against established MD benchmarks and other available experimental data."</li>
+<li><strong>Evidence pointer</strong> Results sections "Computation of folding pathways and validation", "Path similarity and structure formation analysis"; Figures 3, 4 (not provided)</li>
+<li><strong>Concern</strong> The validation is described qualitatively. For Fip35, the authors report 94% pathway I prevalence, but no confidence intervals, number of replicates, or statistical test are given. For TrpCage, the two pathways are described as "almost equiprobable," but the 48/52 split is not tested for significance. The path similarity analysis is mentioned, but the actual similarity values, the choice of reference trajectories, and the interpretation of "indistinguishable" are not provided in the text.</li>
+<li><strong>Why it matters</strong> The central claim of accuracy rests on these comparisons. Without quantitative metrics and statistical rigor, the reader cannot distinguish genuine agreement from chance or systematic bias.</li>
+<li><strong>Resolution test</strong> Report mean and standard deviation (or confidence intervals) for pathway fractions, path similarity scores, and structural metrics across replicates. Include a statistical test (e.g., bootstrap or permutation test) for pathway preference. Provide the actual similarity values and the criteria for "indistinguishable."</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> "DreamFold has been built via custom-made code written in Python using Keras and tensorflow."</li>
+<li><strong>Evidence pointer</strong> Methods section; Data Availability Statement; GitHub repository (URL not provided in text)</li>
+<li><strong>Concern</strong> The manuscript states that code and data are available, but the specific repository URLs and the Zenodo DOI are only mentioned in the Data Availability Statement. The Supporting Information is referenced extensively but was not provided for review. Key details such as VAE architecture (layer sizes, latent dimension), training hyperparameters (learning rate, batch size, epochs), and the exact reward function formulation are deferred to Supporting Information S1.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for computational papers. Without full architectural and training details, other groups cannot implement or benchmark DreamFold.</li>
+<li><strong>Resolution test</strong> Include the full model architecture, hyperparameters, and training procedures in the main text or ensure the Supporting Information is accessible. Provide the GitHub and Zenodo links in the main text.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Conceptual clarity</li>
+<li><strong>Claim pointer</strong> "DreamFold can be used to compute the folding pathway of biomolecules and obtain the atomistic structure of therapeutically relevant intermediate states."</li>
+<li><strong>Evidence pointer</strong> Results sections "PrP folding intermediate", "Structural ensemble of hCRBP2"; Figures 6, 9 (not provided)</li>
+<li><strong>Concern</strong> The identification of folding intermediates and cryptic pockets is presented as a key application, but the criteria for "identifying" an intermediate are not defined. For PrP, 7 out of 50 trajectories passed through the intermediate, but the authors do not explain why the other 43 did not, or whether this fraction is expected. For hCRBP2, the "open monomer" intermediate is described as "transient," but the frequency and structural variability of this state are not quantified.</li>
+<li><strong>Why it matters</strong> The biological and therapeutic relevance of the method depends on the reliability and reproducibility of intermediate identification. Without clear criteria and statistics, the claim is anecdotal.</li>
+<li><strong>Resolution test</strong> Define a quantitative criterion for intermediate detection (e.g., structural similarity threshold, residence time). Report the fraction of trajectories that populate each intermediate, with variability across independent runs. Compare the identified intermediates to experimental structures where available.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, first sentence</li>
+<li><strong>Issue</strong> The phrase "data regarding their folding mechanisms and dynamics is scarce" is grammatically incorrect ("data" is plural) and could be rephrased for clarity.</li>
+<li><strong>Required correction</strong> Change to "data regarding folding mechanisms and dynamics are scarce" or "are limited."</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Results section "Ubiquitin's transition state"</li>
+<li><strong>Evidence pointer</strong> Results, "Ubiquitin's transition state" paragraph</li>
+<li><strong>Issue</strong> The authors use "Ψ and Φ analyses" to refer to phi-value analysis, which is standard, but the notation is confusing because Ψ and Φ are also used for dihedral angles earlier in the text. This dual use could confuse readers.</li>
+<li><strong>Required correction</strong> Clarify the distinction, e.g., "phi-value analysis (Ψ-value analysis)" and avoid using Ψ/Φ for both dihedral angles and phi-values without explicit definition.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Methods section</li>
+<li><strong>Evidence pointer</strong> Methods, "Molecular dynamics simulations" paragraph</li>
+<li><strong>Issue</strong> The MD simulation protocol is described, but the temperature for each system is not specified in the text; it is only stated that "Temperature was chosen to match available MD data and is shown in Figure 5."</li>
+<li><strong>Required correction</strong> State the temperatures explicitly in the text or in a table.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Results section "Performance"</li>
+<li><strong>Evidence pointer</strong> Results, "Performance" paragraph</li>
+<li><strong>Issue</strong> The speedup factors (3800×, 8000×, 30,000×) are reported as single numbers without error bars or variability across runs.</li>
+<li><strong>Required correction</strong> Report mean and standard deviation across multiple independent runs, or state that these are representative values.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (speedup claim without benchmark data), R1-M2 (validation without quantitative metrics), R1-M3 (reproducibility details missing), R1-M4 (intermediate identification criteria undefined).</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li><strong>Originality</strong> The application of World Models to protein folding is novel and extends a successful AI paradigm to a new domain. This is a creative contribution.</li>
+<li><strong>Scientific importance</strong> If the claims are substantiated, the method could significantly accelerate conformational sampling and enable studies of larger systems than currently feasible with MD. The identification of cryptic pockets has direct therapeutic relevance.</li>
+<li><strong>Interdisciplinary readership</strong> The work bridges AI, biophysics, and drug discovery, and would appeal to readers across these fields. The conceptual framing is accessible.</li>
+<li><strong>Technical soundness</strong> The pipeline is plausible, but the evidence provided is insufficient to assess technical soundness. Key benchmarks, statistical analyses, and implementation details are missing or deferred to Supporting Information.</li>
+<li><strong>Readability for nonspecialists</strong> The manuscript is generally well-written and the World Model concept is explained clearly. However, some sections (e.g., the MSM reconstruction) assume familiarity with specialized methods. The dual use of Ψ/Φ notation is a minor readability issue.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea is promising and the application is timely, but the current manuscript does not provide sufficient evidence to establish the central claims of speed, accuracy, and biological utility. The authors should provide the missing benchmark data, statistical rigor, and implementation details.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The speedup claim (up to ~30,000×) is unsupported without benchmark data and a clear definition of "speedup" in the absence of a physical time scale.</li>
+<li>The claim of linear scaling O(N) is presented theoretically but not empirically demonstrated in the text.</li>
+<li>The validation against MD and experimental data is described qualitatively; no quantitative similarity metrics or statistical tests are provided.</li>
+<li>The identification of folding intermediates (PrP, hCRPB2) and the cryptic pocket is based on a small number of trajectories (7/50 for PrP) without defined criteria or statistical confidence.</li>
+<li>The MSM reconstruction is acknowledged as approximate, but the limitations of this approach for recovering true kinetics are understated.</li>
+<li>The claim that DreamFold is "the first application of generative World Models in the context of biomolecular simulations" is a strong priority claim that would require a thorough literature search to verify.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

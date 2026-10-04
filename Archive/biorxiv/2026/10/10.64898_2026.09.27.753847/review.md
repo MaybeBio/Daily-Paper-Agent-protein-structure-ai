@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract and main text as provided)
+- **Assessment boundary** Scientific claims, methodology, statistical analysis, and interpretation as presented in the supplied material
+- **Shared manuscript claim summary** The authors propose that downstream mRNA secondary structure stability, rather than codon supply metrics (tAI, CAI), coordinates co-translational protein folding across the human ribosomal exit tunnel, based on a bioinformatic analysis of 1,270 human crystal structures.
+- **Visible evidence base** Abstract text only; no figures, tables, methods section, or supplementary materials provided
+- **Missing materials affecting confidence** Full methods, statistical code, data processing pipeline, structure-to-transcript mapping details, permutation methodology, and all figures/tables
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a significant and timely question in co-translational folding, namely whether synonymous codon usage or mRNA secondary structure governs translation kinetics in a structure-relevant manner. The central claim, that downstream mRNA secondary structure stability correlates with protein structural properties at a +15 to +16 codon offset, is intriguing and mechanistically plausible given ribosome geometry. However, the provided material is insufficient to evaluate the rigor of the analysis. Critical methodological details, including the orthogonal linear projection procedure, the amino acid control strategy, the structure-to-mRNA mapping pipeline, and the permutation scheme, are not described. The reported effect sizes are very small (r values around 0.05 to 0.07), and the biological significance of approximately 0.49% variance explained requires careful justification. The manuscript has potential but the case is not established from the supplied evidence.
+- **Who would be interested in the results, and why** Researchers in co-translational protein folding, ribosome biology, mRNA structure-function relationships, and synonymous codon usage evolution would find these results relevant. The proposed mechanistic link between mRNA secondary structure and ribosome geometry could inform models of translation kinetics and folding fidelity. Computational biologists developing predictors of protein folding or translation efficiency may also be interested.
+- **Major strengths** The study addresses a well-recognized confound in the field, namely the difficulty of separating synonymous codon effects from amino acid composition. The use of a large structural dataset (1,270 structures, 410,151 residues) provides substantial statistical power. The spatial offset hypothesis tied to ribosome dimensions is a creative and testable framework. The use of multiple independent structural metrics (packing density, B-factor, SASA) to cross-validate the signal is commendable.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodology
+  - **Claim pointer** The authors claim that "orthogonal linear projection" mathematically isolates synonymous codon choices from amino acid identity, and that tAI and CAI show negligible independent spatial coupling after this correction.
+  - **Evidence pointer** Methods section not provided; location not provided
+  - **Concern** The orthogonal linear projection procedure is not described. It is unclear how the projection was constructed, what variables were included, whether the projection was applied to codon frequencies or to the correlation analysis, and how residual variance was computed. Without this detail, the validity of the claim that tAI and CAI effects are "negligible" cannot be assessed.
+  - **Why it matters** The entire negative result for tAI and CAI depends on the adequacy of this statistical control. If the projection is misspecified or overcorrects, the conclusion that codon supply metrics are irrelevant could be an artifact.
+  - **Resolution test** Provide a detailed mathematical description of the projection, including the variable space, the projection matrix construction, and validation of the procedure on simulated data with known codon and amino acid effects.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical analysis
+  - **Claim pointer** The authors report correlations between MFE and structural properties at a +15 to +16 codon offset with Z-scores ranging from +13.74 to -23.64 and p < 10-5.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The permutation procedure is described only as "100,000 whole-proteome permutations per pair." It is unclear what exactly was permuted (codon positions, structure assignments, gene identities), how the null distribution was constructed, and whether the permutations preserve the correlation structure between structural properties and amino acid composition. The reported Z-scores are extremely large, which may reflect a very narrow null distribution rather than a robust signal.
+  - **Why it matters** The statistical significance claim underpins the entire positive result. If the permutation scheme is inappropriate, the reported p-values and Z-scores may be inflated, and the +15 codon offset could be a statistical artifact.
+  - **Resolution test** Describe the permutation scheme in full, including what is permuted, how the null distribution is generated, and whether the null preserves amino acid composition and sequence length. Provide a null distribution plot and a sensitivity analysis with alternative permutation schemes.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Data and mapping
+  - **Claim pointer** The authors state that 1,270 high-resolution human crystal structures (410,151 residues) were mapped to their native mRNA transcripts.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The mapping procedure from protein structure to mRNA transcript is not described. Key questions include: how were structures selected, how were sequence mismatches between the crystal structure and the reference proteome handled, how were alternative transcripts and isoforms resolved, and how were codon positions aligned to residue positions? The choice of transcript isoform could substantially affect the computed MFE and codon metrics.
+  - **Why it matters** Errors or biases in the structure-to-transcript mapping could introduce systematic artifacts in the correlation analysis. The +15 codon offset could be influenced by mapping inconsistencies.
+  - **Resolution test** Provide a detailed description of the mapping pipeline, including database versions, sequence alignment methods, isoform selection criteria, and a validation of the mapping on a subset of structures with known transcripts.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretation
+  - **Claim pointer** The authors interpret the +15 codon offset as corresponding to the physical dimensions of the eukaryotic 80S ribosome, specifically the path from the peptidyl transferase center to the uL4/uL22 constriction neck plus the mRNA helicase entry channel.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The geometric interpretation is plausible but speculative. The correspondence between a codon offset and physical distance depends on assumptions about the average number of residues per codon (which is fixed at 1) and the translation of physical distance in angstroms to codon counts. The authors state approximately 10 amino acids for the exit tunnel and approximately 5 codons for the helicase entry, but the basis for these estimates is not provided.
+  - **Why it matters** The mechanistic claim is a central part of the paper's significance. If the geometric correspondence is not rigorously justified, the interpretation remains a hypothesis rather than a supported conclusion.
+  - **Resolution test** Provide a structural model or reference to published measurements that support the distance-to-codon conversion. Discuss alternative interpretations of the offset, such as the average distance between the P-site and the mRNA entry channel.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Reporting
+  - **Affected element** Effect size interpretation
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The authors state that the MFE signal accounts for approximately 0.49% of local packing variance. This is a very small effect, and the biological relevance is not discussed in the context of other known determinants of folding.
+  - **Required correction** Add a discussion of whether 0.49% variance explained is biologically meaningful, and compare this to effect sizes of other known co-translational folding determinants.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The term "codon elongation supply" in the title is not defined in the abstract. It appears to refer to tRNA supply or codon usage metrics, but the phrasing is ambiguous.
+  - **Required correction** Define the term clearly in the abstract or use more standard terminology such as "codon usage" or "tRNA adaptation."
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Correlation values
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The reported r values are very small (e.g., r = -0.0699, r = +0.0614, r = +0.0492). The authors do not report confidence intervals or the distribution of correlations across the 1,270 structures.
+  - **Required correction** Report confidence intervals for the correlation coefficients and, if possible, the distribution of correlations across individual structures to show consistency.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Literature context
+  - **Affected element** Prior work
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract does not cite or discuss prior work on mRNA secondary structure and translation kinetics, which is relevant to the novelty claim.
+  - **Required correction** Add a brief discussion of prior studies on mRNA structure and translation speed, and clarify how this work differs.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (projection methodology), R1-M2 (permutation scheme), R1-M3 (structure-to-transcript mapping)
+- **Assessment against Nature-style criteria** 
+  - Originality: The idea of linking downstream mRNA secondary structure to ribosome geometry via a specific codon offset is novel and potentially original. However, the abstract does not sufficiently distinguish this from prior work on mRNA structure and translation.
+  - Scientific importance: The question of how translation kinetics coordinate folding is of broad importance. If the claims are robust, the findings could influence models of co-translational folding and synonymous codon evolution. However, the small effect size raises questions about the practical importance.
+  - Interdisciplinary readership: The topic bridges structural biology, RNA biology, and computational biology, and would appeal to a broad readership if the methods are accessible.
+  - Technical soundness: Not assessable from the provided material. The statistical methods are not described in sufficient detail to evaluate their validity.
+  - Readability for nonspecialists: The abstract is reasonably clear but uses specialized terms (e.g., tAI, CAI, MFE, uL4/uL22) without full explanation. The geometric interpretation is accessible but the statistical details are not.
+- **Recommendation posture** Currently not established from the provided evidence. The central claims are interesting and potentially important, but the lack of methodological detail prevents evaluation of the statistical rigor. The manuscript could become supportive if the methods are fully described and the analyses are shown to be robust.
+
+## Risk / unsupported claims
+- The claim that tAI and CAI show "negligible independent spatial coupling" is unsupported without a description of the orthogonal projection method.
+- The claim that the +15 to +16 codon offset corresponds to ribosome geometry is speculative and not supported by direct structural measurements.
+- The biological significance of 0.49% variance explained is not established.
+- The permutation-based p-values and Z-scores are not verifiable without a description of the permutation scheme.
+- The generalizability of the findings beyond the specific dataset of 1,270 human crystal structures is not discussed.

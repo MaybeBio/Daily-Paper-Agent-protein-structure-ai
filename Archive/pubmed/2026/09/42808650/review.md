@@ -1,0 +1,91 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors report a bioinformatics survey of UniProt showing that proteins composed of reduced amino acid alphabets are extremely rare; they computationally designed 100-residue proteins across all 1013 possible alphabets of 2 to 10 early amino acids; they experimentally verified an 8-amino-acid design adopting a fibronectin type III domain; attempts to verify 6- and 4-amino-acid designs failed; they used ProteinMPNN(sol) to stabilize a designed protein within the same 8-amino-acid alphabet; they conclude that globular proteins may have formed early in evolution with a minimal alphabet and that such designs have biotechnological potential
+- **Visible evidence base** Abstract text only; no sequence data, structural validation, experimental protocols, or statistical details are available
+- **Missing materials affecting confidence** Full methods, sequence design details, experimental characterization data (e.g., circular dichroism, NMR, crystallography, or biophysical assays), computational validation metrics, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting question about minimal amino acid alphabets in protein design and evolution. The scope of the computational survey is impressive, and the experimental verification of an 8-amino-acid fibronectin type III domain is a notable result. However, the abstract lacks sufficient detail to assess the robustness of the computational design pipeline, the statistical significance of the bioinformatics survey, or the quality of experimental validation. The failures of 6- and 4-amino-acid designs are mentioned but not contextualized, and the claim about early evolution is speculative given the evidence presented. The manuscript may have merit, but the current abstract does not establish the case convincingly.
+- **Who would be interested in the results, and why** Protein engineers and synthetic biologists interested in reduced-alphabet proteins for novel biomaterials or minimal-cell applications; evolutionary biologists studying the origins of protein folding and the early genetic code; computational biologists developing inverse folding models and testing their generalizability
+- **Major strengths** The systematic enumeration of all 1013 possible alphabets from 2 to 10 early amino acids is a comprehensive and rigorous computational approach. The experimental verification of an 8-amino-acid design adopting a specific beta-sheet-rich architecture provides a concrete proof-of-principle. The use of a large-scale UniProt survey adds an evolutionary perspective that broadens the relevance beyond pure design
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The claim that "small amino acid alphabets preferred simple helices or helix bundles, while larger amino acid alphabets allowed for the design of more complex structures"  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract provides no quantitative metrics for how "preferred" or "allowed" were determined. There is no information on success rates, structural diversity measures, or how complexity was scored. Without these details, the trend described could be an artifact of the design algorithm or scoring function rather than a general property of reduced alphabets.  
+  - **Why it matters** This trend is central to the evolutionary argument and the practical utility of reduced alphabets. If the relationship between alphabet size and structural complexity is not rigorously established, the conclusion that minimal alphabets could support early globular proteins is weakened.  
+  - **Resolution test** Provide a clear definition of structural complexity (e.g., number of secondary structure elements, contact order, or fold diversity) and report success rates and statistical comparisons across alphabet sizes, ideally with error bars or confidence intervals.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The claim that "attempts to experimentally verify designs composed of 6 and 4 amino acid types were unsuccessful"  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract does not specify the nature of the failures. Were the proteins insoluble, misfolded, aggregated, or simply not adopting the intended fold? Without this information, it is impossible to judge whether the failures reflect fundamental limitations of reduced alphabets or specific design flaws that could be corrected.  
+  - **Why it matters** The failures are as informative as the successes for understanding the limits of minimal alphabets. If the failures are due to poor solubility or expression, they may not be alphabet-related. If they are due to inability to fold, that would directly challenge the evolutionary claim.  
+  - **Resolution test** Describe the experimental outcomes for the 6- and 4-amino-acid designs in detail, including biophysical characterization (e.g., circular dichroism, size-exclusion chromatography, or aggregation assays) and any troubleshooting steps taken.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Scientific importance  
+  - **Claim pointer** The claim that "globular proteins may have formed early in evolution using a minimal amino acid alphabet"  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract presents this as a conclusion, but the evidence is indirect. The rarity of reduced-alphabet proteins in UniProt and the successful design of one 8-amino-acid protein do not establish that early evolution used such alphabets. The failure of smaller alphabets to produce verified designs actually argues against this possibility, yet this tension is not addressed.  
+  - **Why it matters** This is the most broadly interesting claim in the abstract, but it is also the most speculative. Overstating the evolutionary implications without direct evidence could mislead readers and reduce the credibility of the work.  
+  - **Resolution test** Either temper the evolutionary claim to a hypothesis or provide additional evidence, such as phylogenetic analysis of ancient protein sequences or a more systematic demonstration that minimal alphabets can support diverse folds.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The claim that "inverse folding models, namely ProteinMPNN(sol), can stabilize a designed protein within the same eight-amino-acid alphabet"  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract does not specify what "stabilize" means in this context. Was the protein experimentally characterized before and after ProteinMPNN(sol) redesign? Were melting temperatures, free energies, or other stability metrics measured? The phrase "computational experiment with experimental validation" is vague.  
+  - **Why it matters** This is a potentially valuable demonstration of the utility of inverse folding models for reduced-alphabet proteins, but without clear metrics, the claim is not assessable.  
+  - **Resolution test** Provide quantitative stability data (e.g., thermal denaturation midpoint, chemical denaturation, or protease resistance) for the original and redesigned proteins, and clarify the experimental validation steps.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Readability for nonspecialists  
+  - **Affected element** Abstract text  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The term "early amino acids" is used without definition. Readers unfamiliar with the prebiotic chemistry literature may not know which amino acids are considered "early" and why.  
+  - **Required correction** Define "early amino acids" explicitly, either by listing them in the abstract or by referencing the relevant hypothesis (e.g., the co-evolution theory of the genetic code).  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Technical soundness  
+  - **Affected element** Bioinformatics survey  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The abstract states that reduced-alphabet proteins are "extremely rare" in UniProt but does not provide a quantitative threshold for "reduced" or a count of such proteins.  
+  - **Required correction** Specify the definition of a reduced-alphabet protein (e.g., number of amino acid types used) and report the number or fraction of UniProt sequences meeting that criterion.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Interdisciplinary readership  
+  - **Affected element** Abstract text  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The abstract does not explain why the specific set of 10 amino acids was chosen for the design space. This choice is likely motivated by prebiotic chemistry, but the rationale is not stated.  
+  - **Required correction** Add a brief justification for the chosen amino acid set, linking it to the "early amino acids" concept.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Readability for nonspecialists  
+  - **Affected element** Abstract text  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The phrase "all 1013 possible alphabets" is stated without explaining how this number is derived. Nonspecialists may not immediately see that this is the number of non-empty subsets of a 10-element set.  
+  - **Required correction** Briefly clarify that this is the number of possible subsets of the 10 amino acids, or rephrase to "all possible combinations of 2 to 10 amino acids from the set of 10."
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The lack of quantitative detail on the computational design outcomes, the unspecified nature of the experimental failures, and the overreach of the evolutionary claim are the primary issues. R1-M4 is important but not blocking if the stability claim is supported by data in the full manuscript.
+- **Assessment against Nature-style criteria**  
+  - Originality: The systematic enumeration of all reduced alphabets and the combination of bioinformatics, design, and experimental validation is a fresh approach to a long-standing question. The work is original in scope, though the concept of reduced-alphabet proteins is not new.  
+  - Scientific importance: The potential implications for early evolution and for synthetic biology are significant, but the current evidence does not fully support the strongest claims. The importance is real but not yet fully demonstrated.  
+  - Interdisciplinary readership: The topic bridges evolutionary biology, protein engineering, and computational biology, which could attract a broad audience. However, the abstract assumes familiarity with protein design terminology and prebiotic chemistry concepts.  
+  - Technical soundness: The computational enumeration is sound in principle, but the lack of metrics and the unexplained experimental failures prevent a full assessment. The use of ProteinMPNN(sol) is a reasonable choice, but the stability claim is under-specified.  
+  - Readability for nonspecialists: The abstract is generally clear but uses jargon without definition (e.g., "early amino acids," "inverse folding models"). The logical flow from survey to design to validation is understandable, but the evolutionary conclusion is presented too strongly relative to the evidence.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is interesting and the 8-amino-acid verification is promising, but the abstract as written does not provide enough evidence to establish the central claims about structural complexity trends, the reasons for failures at smaller alphabet sizes, or the evolutionary implications. The manuscript could be compelling after revision and with full data.
+
+## Risk / unsupported claims
+- The claim that "small amino acid alphabets preferred simple helices or helix bundles, while larger amino acid alphabets allowed for the design of more complex structures" is unsupported without quantitative definitions and success rates.
+- The claim that "globular proteins may have formed early in evolution using a minimal amino acid alphabet" is unsupported by the evidence presented, especially given the failures at 6- and 4-amino-acid alphabets.
+- The claim that ProteinMPNN(sol) "can stabilize" a designed protein is not assessable without stability metrics and experimental details.
+- The rarity of reduced-alphabet proteins in UniProt is stated without a quantitative threshold or count, making the claim unverifiable from the abstract.

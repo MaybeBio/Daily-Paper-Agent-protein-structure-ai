@@ -2,6 +2,921 @@
   "version": 1,
   "documents": [
     {
+      "id": "biorxiv:10.64898/2026.09.26.754739",
+      "title": "EnsPlex: Integrative Protein Complex Prediction through Multi-source Complementary Structural Sampling and Topology-Aware Candidate Selection",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.26.754739/index.html",
+      "meta": [
+        "Hu B; Lu Z; Zaman K; Sun Z; He X",
+        "bioRxiv",
+        "2026-10-02"
+      ],
+      "tags": [],
+      "summary": "该文提出EnsPlex多源框架，整合多种结构采样方法（对接、AlphaFold系列）与拓扑感知候选选择模型FACET，用于蛋白质复合物结构预测，在抗原-抗体体系上显著提升预测成功率，核心贡献在蛋白质结构计算建模。",
+      "abstract": "Protein complex structure prediction depends on both the breadth of candidate coverage and the ability to select accurate models within a limited output budget. Most existing approaches emphasize only one stage. End-to-end models and molecular docking workflows generate candidate structures, whereas quality-assessment models primarily rerank a predefined candidate pool. A complete strategy must account for complementary sampling across generators, differences among scoring scales and the allocation of final candidate quotas. Here, EnsPlex is presented as a multi-source framework that couples structural sampling with candidate selection for protein-protein interaction complex prediction. EnsPlex combines conformation-expanded docking, AlphaFold-Multimer, AlphaFold3 and Boltz-1 to expand the sampled conformational space. Conformation-expanded docking comprises monomer conformational expansion followed by flexible HADDOCK docking. FACET is trained to predict candidate quality using DockQ and its component metrics as supervision. Across 102 antigen-antibody systems, EnsPlex achieved up to a 27.8% relative improvement in target success rate over AlphaFold3 with its built-in ranking under matched output budgets. FACET also improved within-source ranking in the internal candidate pools and in homology-filtered external data. These findings support the utility of EnsPlex for structure prediction in the evaluated antigen-antibody systems. 蛋白质复合物结构预测既依赖于候选覆盖范围的广度，也依赖于在有限输出预算内选择准确模型的能力。大多数现有方法仅强调其中一个阶段。端到端模型和分子对接工作流生成候选结构，而质量评估模型主要对预定义的候选池进行重新排序。一个完整的策略必须考虑跨生成器的互补采样、评分尺度之间的差异以及最终候选配额的分配。在此，EnsPlex被提出作为一个多源框架，将结构采样与候选选择相结合，用于蛋白质-蛋白质相互作用复合物预测。EnsPlex结合了构象扩展对接、AlphaFold-Multimer、AlphaFold3和Boltz-1，以扩展采样的构象空间。构象扩展对接包括单体构象扩展，随后进行灵活的HADDOCK对接。FACET被训练用于使用DockQ及其组分指标作为监督来预测候选质量。在102个抗原-抗体系统中，EnsPlex在匹配输出预算下，相对于使用内置排序的AlphaFold3，目标成功率实现了高达27.8%的相对提升。FACET还改善了内部候选池和同源过滤外部数据中的源内排序。这些发现支持EnsPlex在所评估的抗原-抗体系统中用于结构预测的实用性。",
+      "date": "2026-10-02"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.27.753847",
+      "title": "Downstream mRNA Secondary Structure, Not Codon Elongation Supply, Coordinates Co-Translational Protein Folding Across the Human Ribosomal Exit Tunnel",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.27.753847/index.html",
+      "meta": [
+        "Muhammad Saad Ul Hassan; Ishrat Jabeen; Yusra Sajid Kiani",
+        "bioRxiv",
+        "2026-10-02"
+      ],
+      "tags": [],
+      "summary": "该文通过大规模人类晶体结构与mRNA序列关联分析，发现下游mRNA二级结构稳定性而非密码子供应在核糖体出口通道协调共翻译蛋白折叠，虽以蛋白结构为核心但主要依赖统计关联而非AI/物理模拟方法，方法贡献较弱。",
+      "abstract": "How ribosomes pace translation to assist nascent protein folding remains an open question in molecular biology. While synonymous codon selection is widely hypothesized to regulate elongation rates to facilitate domain organization, distinguishing genuine translational kinetics from baseline amino acid preferences has proven technically difficult. Here, we analyze a non-redundant cohort of 1,270 high-resolution human crystal structures (410,151 residues) mapped to their native mRNA transcripts. When we mathematically isolate synonymous codon choices from amino acid identity using orthogonal linear projection, standard codon-supply metrics i.e. the tRNA Adaptation Index (tAI) and the Codon Adaptation Index (CAI), show negligible independent spatial coupling with downstream protein structure. Their uncorrected correlations predominantly reflect local amino acid chemistry rather than physical translation pacing. In contrast, downstream mRNA secondary structure stability (minimum free energy, MFE) displays a subtle but consistent correlation that survives amino acid control. Across 100,000 whole-proteome permutations per pair, this MFE signal centers at an offset of +15 to +16 codons across multiple independent physical properties, including residue packing density (r = -0.0699, Z = -23.64, p < 10-5), crystallographic rigidity (B-factor, r = +0.0614, Z = +13.74, p < 10-5), and solvent burial (SASA, r = +0.0492, Z = +18.98, p < 10-5). This +15 codon offset corresponds directly to the physical dimensions of the eukaryotic 80S ribosome: the path from the peptidyl transferase center to the internal uL4/uL22 constriction neck (~10 amino acids) plus the downstream mRNA helicase entry channel (~5 codons). While the overall effect size is modest, accounting for approximately 0.49% of local packing variance, its spatial specificity and consistency across independent structural metrics suggest that downstream mRNA stability acts as a localized mechanical brake during early chain compaction. 核糖体如何调控翻译速率以协助新生蛋白质折叠，仍是分子生物学中的一个未解问题。尽管同义密码子选择被广泛假设为通过调节延伸速率来促进结构域组织，但将真实的翻译动力学与基线氨基酸偏好区分开来，在技术上已被证明颇具难度。在此，我们分析了一个包含1,270个高分辨率人类晶体结构（410,151个残基）的非冗余队列，并将其映射到对应的天然mRNA转录本。当我们使用正交线性投影从数学上分离同义密码子选择与氨基酸身份时，标准密码子供应指标，即tRNA适应指数（tAI）和密码子适应指数（CAI），显示出与下游蛋白质结构的可忽略的独立空间耦合。其未校正的相关性主要反映局部氨基酸化学性质，而非物理翻译节奏。相比之下，下游mRNA二级结构稳定性（最小自由能，MFE）显示出一种微妙但一致的相关性，且该相关性在氨基酸控制下依然存在。在每对组合的100,000次全蛋白质组排列中，此MFE信号在多个独立物理性质上集中于+15至+16个密码子的偏移处，包括残基堆积密度（r = -0.0699，Z = -23.64，p < 10-5）、晶体学刚性（B因子，r = +0.0614，Z = +13.74，p < 10-5）和溶剂埋藏（SASA，r = +0.0492，Z = +18.98，p < 10-5）。此+15密码子偏移直接对应于真核80S核糖体的物理尺寸：从肽基转移酶中心到内部uL4/uL22收缩颈部的路径（约10个氨基酸）加上下游mRNA解旋酶入口通道（约5个密码子）。尽管总体效应量适中，约占局部堆积方差的0.49%，但其空间特异性和跨独立结构指标的一致性表明，下游mRNA稳定性在早期链压缩过程中充当局部机械制动器。",
+      "date": "2026-10-02"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.27.754816",
+      "title": "Protein Language Model-Conditioned Graph Neural Networks for Multitask GPCR Ligand Activity Prediction",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.27.754816/index.html",
+      "meta": [
+        "Manashi De; Ekarsi Lodh; Shalini Majumder; Tapan Chowdhury",
+        "bioRxiv",
+        "2026-10-02"
+      ],
+      "tags": [],
+      "summary": "该文用蛋白语言模型嵌入GPCR序列并联合配体分子图进行多任务活性预测，虽以配体-受体活性为核心而非直接蛋白质结构计算，但方法可迁移至蛋白结构相关建模，故评6分。",
+      "abstract": "Predicting ligand activity across G protein-coupled receptors (GPCRs) requires models that capture both molecular structure and receptor-specific information while remaining robust to chemical and target-domain shifts. We developed a multimodal graph neural network that combines explicit ligand molecular graphs with frozen protein language model representations of GPCR sequences and jointly predicts quantitative pActivity and binary activity. The model was trained on 271,739 curated ligand-GPCR pairs spanning 183,694 ligands and 216 human GPCRs and evaluated using random, Bemis-Murcko scaffold, and strict cold-ligand partitions. With ESM-2 650M receptor embeddings, the selected model achieved mean absolute errors of 0.513 ± 0.006, 0.540 ± 0.006, and 0.641 ± 0.005 pActivity units under random, cold-ligand, and scaffold evaluation, respectively, substantially outperforming a protein-aware fixed-feature multilayer perceptron and consistently improving quantitative prediction over a matched GINE reference. Removing receptor embeddings markedly degraded both regression and classification, whereas differences among ESM-2 35M, ESM-2 650M, and ProtT5 were comparatively small. Independent evaluation on 6,319 ChEMBL 37/BindingDB pairs revealed a substantial external domain shift, with mean absolute error increasing to approximately 0.94-0.95 despite chemically stringent internal validation. Nevertheless, receptor-specific information remained highly informative in a DRD2-DRD3 selectivity analysis: the cold-ligand ensemble achieved R^2 = 0.853, Spearman ρ = 0.916, and ROC-AUC = 0.966 for strong DRD3 selectivity, whereas the receptor-independent ablation approached chance-level discrimination. These results establish protein-language-model-conditioned molecular graph learning as a scalable strategy for GPCR bioactivity prediction while identifying chemotype novelty, external-domain transfer, and richer ligand-receptor interaction representations as key remaining challenges. 预测G蛋白偶联受体（GPCRs）的配体活性需要模型同时捕捉分子结构和受体特异性信息，并保持对化学和靶点域偏移的鲁棒性。我们开发了一种多模态图神经网络，将显式配体分子图与GPCR序列的冻结蛋白质语言模型表示相结合，并联合预测定量pActivity和二元活性。该模型在271,739个精选配体-GPCR对上训练，涵盖183,694个配体和216个人类GPCR，并使用随机、Bemis-Murcko骨架和严格冷配体划分进行评估。采用ESM-2 650M受体嵌入，所选模型在随机、冷配体和骨架评估下分别实现了0.513 ± 0.006、0.540 ± 0.006和0.641 ± 0.005 pActivity单位的平均绝对误差，显著优于蛋白质感知的固定特征多层感知器，并在定量预测上持续优于匹配的GINE参考模型。移除受体嵌入显著降低了回归和分类性能，而ESM-2 35M、ESM-2 650M和ProtT5之间的差异相对较小。在6,319个ChEMBL 37/BindingDB对上的独立评估揭示了显著的外部域偏移，尽管内部验证在化学上严格，平均绝对误差仍增加至约0.94-0.95。然而，在DRD2-DRD3选择性分析中，受体特异性信息仍高度有效：冷配体集成实现了R^2 = 0.853、Spearman ρ = 0.916和ROC-AUC = 0.966的强DRD3选择性，而受体无关的消融接近随机判别水平。这些结果确立了蛋白质语言模型条件化的分子图学习作为GPCR生物活性预测的可扩展策略，同时识别出化学型新颖性、外部域转移和更丰富的配体-受体相互作用表示作为关键剩余挑战。",
+      "date": "2026-10-02"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.10.01.754751",
+      "title": "Design-Evolution Synergy Enables New-to-Nature Enzyme Chemistry",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.10.01.754751/index.html",
+      "meta": [
+        "Li Z; Zhang RK; Xie P; Kelly J; Zhang Y; Qin Z; Lambert T; Mukhopadhyay O; Hanley D; Danson AE; Abramson J; Singh S; Wu Z; Kohli P; Liu P; Wang J; Arnold FH",
+        "bioRxiv",
+        "2026-10-02"
+      ],
+      "tags": [],
+      "summary": "该文结合从头蛋白设计与定向进化，利用计算重设计实现新酶催化C-H胺化反应，虽以酶功能为核心，但涉及蛋白结构计算设计，与蛋白质结构计算课题相关。",
+      "abstract": "Directed evolution and machine-learning-assisted evolution have transformed biocatalysis by enabling rapid optimisation of catalytic performance within compatible protein scaffolds. In parallel, advances in deep-learning-driven de novo protein design have expanded accessible protein architectural space, enabling the generation of functional catalysts for increasingly challenging transformations. We herein report a synergistic design-evolution strategy to encode new-to-nature regio- and enantioselective C-H amination reactions using engineered de novo haemproteins to synthesise chiral piperidines, a privileged pharmacophore in drug discovery. By integrating motif scaffolding, computational re-design, and directed evolution, we demonstrate de novo enzyme design can enable challenging, high-energy-barrier enzyme chemistry with programmable regio- and enantioselectivity, high catalytic efficiency, excellent enzyme stability, and scaffold diversity. 定向进化和机器学习辅助进化通过能够在兼容的蛋白质支架内快速优化催化性能，已彻底改变了生物催化领域。与此同时，深度学习驱动的从头蛋白质设计方面的进展扩展了可及的蛋白质架构空间，使得能够为日益具有挑战性的转化生成功能性催化剂。我们在此报告了一种协同的设计-进化策略，利用工程化的从头血红素蛋白编码新至自然的区域选择性和对映选择性C-H胺化反应，以合成手性哌啶，这是药物发现中的一种特权药效团。通过整合基序支架、计算重设计和定向进化，我们证明了从头酶设计能够实现具有可编程区域选择性和对映选择性、高催化效率、优异酶稳定性和支架多样性的挑战性高能垒酶化学。",
+      "date": "2026-10-02"
+    },
+    {
+      "id": "pubmed:42825582",
+      "title": "Assessing sequence reversal effects on coiled-coil stability using AI-based structure prediction and enhanced sampling atomistic simulations.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42825582/index.html",
+      "meta": [
+        "Arnittali, Maria; Markopoulou, Elena; Harmandaris, Vagelis; Rissanou, Anastassia N",
+        "Physical chemistry chemical physics : PCCP",
+        "2026-10-02"
+      ],
+      "tags": [],
+      "summary": "该研究结合AI结构预测与增强采样分子动力学模拟，系统评估序列反转对卷曲螺旋蛋白wtRop结构稳定性与自由能景观的影响，是蛋白质结构计算与AI/物理模拟方法深度融合的典型工作。",
+      "abstract": "This study investigates the impact of sequence inversion on the structural integrity and thermodynamic stability of the wtRop protein, a prototypical coiled-coil motif. We utilized AI-driven structure prediction (ColabFold) to generate initial models for the unknown rRop sequence, which yielded both parallel and antiparallel monomeric orientations. These models were subjected to classical molecular dynamics simulations and well-tempered metadynamics. The combination of atomistic simulations and enhanced sampling techniques allowed for the calculation of the free energy surface across four collective variables: (i) angle between the monomers, (ii) distance between the monomer's center of mass, (iii) helicity and (iv) torsion angle similarity, characterizing the energetic barriers and conformational transitions of the parallel rRop, the antiparallel rRop, and the parent wtRop systems. Free energy analysis reveals that both rRop models deviate from the native antiparallel orientation to stabilize at an intermediate angle. Notably, the antiparallel variant exhibits the most significant instability, characterized by increased monomer separation and a more pronounced loss of secondary structure relative to the wild-type and the parallel model. While both reversed sequences show a reduction in alpha-helicity compared to wtRop, the antiparallel model demonstrates a more pronounced loss of structural integrity, characterized by a disrupted hydrogen bond network, increased solvent-accessible surface area, and the failure to maintain a robust hydrophobic core. Free energy calculations further confirmed that the parallel variant shares greater conformational similarity with the parent protein. 本研究探讨了序列倒置对wtRop蛋白（一种典型的卷曲螺旋基序）结构完整性和热力学稳定性的影响。我们利用AI驱动的结构预测（ColabFold）为未知的rRop序列生成初始模型，这些模型产生了平行和反平行的单体取向。这些模型随后进行了经典分子动力学模拟和well-tempered metadynamics模拟。原子级模拟与增强采样技术的结合使我们能够计算四个集体变量下的自由能面：（i）单体之间的角度，（ii）单体质心之间的距离，（iii）螺旋度，以及（iv）扭转角相似性，从而表征平行rRop、反平行rRop和亲本wtRop系统的能垒及构象转变。自由能分析揭示，两种rRop模型均偏离天然的反平行取向，稳定在中间角度。值得注意的是，反平行变体表现出最显著的不稳定性，其特征为单体分离增加和相对于野生型及平行模型更明显的二级结构丧失。尽管两种反向序列相比wtRop均显示α-螺旋度降低，但反平行模型表现出更明显的结构完整性丧失，其特征为氢键网络破坏、溶剂可及表面积增加，以及未能维持稳健的疏水核心。自由能计算进一步证实，平行变体与亲本蛋白在构象上具有更大的相似性。",
+      "date": "2026-10-02"
+    },
+    {
+      "id": "pubmed:42826131",
+      "title": "A structure-aware generative AI framework for revealing functional relationships in protein families.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42826131/index.html",
+      "meta": [
+        "Shukla, Divyanshu; Martin, Jonathan; Morcos, Faruck; Potoyan, Davit A",
+        "Proceedings of the National Academy of Sciences of the United States of America",
+        "2026-10-02"
+      ],
+      "tags": [],
+      "summary": "该文提出一个结合3Di结构字母与变分自编码器及直接耦合分析的生成式AI框架，在蛋白质家族中构建序列与结构共进化潜变量景观，用于揭示序列-结构-功能关系并指导蛋白设计，核心对象、问题与方法均聚焦蛋白质结构计算建模。",
+      "abstract": "Proteins can be studied through their sequence statistics or structural properties. These represent complementary views that are useful but lack a quantitative framework to tell, family by family, which is most informative and how to combine them. We introduce a framework that builds both views in parallel: amino acid (AA) alignments are translated into parallel alignments over a 3D interaction (3Di) structure-informed alphabet. Variational autoencoders compress each into a two-dimensional map, and direct coupling analysis places a shared coevolutionary energy on both maps, turning them into latent generative landscapes. On these landscapes, we define information-theoretic distance metrics that quantify how sequence changes drive structural and functional variation in protein families. We demonstrate the framework on five families: in malate dehydrogenases, the 3Di landscape identifies the structurally conserved scaffold that this family uses to encode thermal adaptation via sequence variability revealed in the AA landscape. In globins and transient receptor potential melastatin (TRPM), the 3Di landscape recovers known functional subfamilies. In the Flaviviridae E1 and E2 glycoproteins, structure reveals evolutionary relationships invisible at the sequence level. Because many sequences encode the same fold, our framework lets us disentangle family-sequence variability from structural and functional variation. These generative landscapes allow sampling near functional regions, and we show they can help us gain mechanistic insight into the evolutionary forces shaping sequence-structure-function variation and guide the design of new proteins. 蛋白质可以通过其序列统计或结构特性来研究。这些代表了互补的视角，虽有用，但缺乏一个定量框架来逐一家族地判断哪种视角信息量最大以及如何结合它们。我们引入了一个并行构建这两种视角的框架：氨基酸（AA）比对被转化为基于3D相互作用（3Di）结构感知字母表的平行比对。变分自编码器将每种压缩成二维图谱，直接耦合分析在两个图谱上施加共享的共进化能量，将它们转变为潜在生成景观。在这些景观上，我们定义了信息论距离度量，量化序列变化如何驱动蛋白质家族的结构和功能变异。我们在五个家族上展示了该框架：在苹果酸脱氢酶中，3Di景观识别出该家族用于通过AA景观中揭示的序列变异性编码热适应的结构保守支架。在珠蛋白和瞬时受体电位美拉司他汀（TRPM）中，3Di景观恢复了已知的功能亚家族。在黄病毒科E1和E2糖蛋白中，结构揭示了序列水平上不可见的进化关系。由于许多序列编码相同的折叠，我们的框架使我们能够将家族序列变异性与结构和功能变异区分开来。这些生成景观允许在功能区域附近采样，我们表明它们可以帮助我们深入了解塑造序列-结构-功能变异的进化力量，并指导新蛋白质的设计。",
+      "date": "2026-10-02"
+    },
+    {
+      "id": "pubmed:42826183",
+      "title": "Structural and kinetic mechanisms of state-dependent potassium channel inhibition.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42826183/index.html",
+      "meta": [
+        "Kyriakis, Efthimios; Roscioni, Agnese; Eldstrom, Jodene; Sastre, Daniel; Dou, Ying; Taddei, Alice; Molinarolo, Steven; Tian, Michael; Maragliano, Luca; Van Petegem, Filip; Fedida, David",
+        "Science advances",
+        "2026-10-02"
+      ],
+      "tags": [],
+      "summary": "该文通过冷冻电镜结构和MD模拟揭示KCNQ1钾通道状态依赖性抑制机制，虽以离子通道为对象，但其结构-动力学-药物结合的计算建模方法可迁移至蛋白质构象状态与配体结合研究。",
+      "abstract": "The KCNQ1 (Kv7.1) potassium ion (K(+)) channel plays a critical role in cardiac repolarization, while loss- or gain-of-function mutations increase the risk of life-threatening arrythmias and sudden death. Like many channels, KCNQ1 exhibits state-dependent pharmacological properties with inhibitors such as UCL2077 displaying higher potency for intermediate over activated states. Here, we report cryo-EM structures and MD simulations of KCNQ1 in complex with UCL2077 in two activation states. UCL2077 breaks tetrameric symmetry and binds in diagonally opposed protomers in pockets formed by the S5-S6 helices from one protomer and the S6 of an adjacent protomer. UCL2077 binding drives distortion of the S6 helix and causes an allosteric collapse of the pore. Specificity arises via structural configurations in the pore that occur with greater frequency in the intermediate state and are stabilized upon drug binding. KCNQ1（Kv7.1）钾离子（K(+)）通道在心脏复极中发挥关键作用，而功能缺失或功能获得性突变会增加危及生命的心律失常和猝死风险。与许多通道类似，KCNQ1表现出状态依赖性药理学特性，其中如UCL2077等抑制剂对中间态相较于激活态具有更高的效力。在此，我们报告了KCNQ1与UCL2077复合物在两种激活状态下的冷冻电镜结构和分子动力学 (molecular dynamics) 模拟。UCL2077打破四聚体对称性，并以对角相对的亚基结合于由一个亚基的S5-S6螺旋和相邻亚基的S6形成的口袋中。UCL2077结合驱动S6螺旋的扭曲，并导致孔道发生变构塌陷。特异性源于孔道中在中间态更频繁出现且药物结合后得以稳定的结构构型。",
+      "date": "2026-10-02"
+    },
+    {
+      "id": "pubmed:42826717",
+      "title": "FLIGHTED: Inferring fitness landscapes from noisy high-throughput experimental data.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42826717/index.html",
+      "meta": [
+        "Sundar, Vikram; Tu, Boqiang; Guan, Lindsey; Esvelt, Kevin",
+        "Cell systems",
+        "2026-10-02"
+      ],
+      "tags": [],
+      "summary": "该文提出贝叶斯方法FLIGHTED，从噪声高通量实验数据推断蛋白质适应度景观，以提升蛋白质设计ML模型性能，虽不直接做结构计算，但适应度景观与蛋白质序列-功能关系紧密，方法可辅助结构相关设计任务。",
+      "abstract": "Machine learning (ML) for protein design requires large protein fitness datasets generated by high-throughput experiments for training and benchmarking models. However, most models do not account for experimental noise inherent in these datasets, thereby harming model performance. Here, we develop fitness landscape inference generated by high-throughput experimental data (FLIGHTED), a Bayesian method of accounting for uncertainty by generating probabilistic fitness landscapes from noisy experiments. We demonstrate how FLIGHTED can improve model performance on two experiments: single-step selection assays, such as phage display, and a high-throughput assay that ties activity to base editing. We compare the performance of standard ML models on fitness landscapes with and without FLIGHTED. Accounting for noise statistically significantly improves model performance. Based on our new benchmarking with FLIGHTED, data size, not model scale, is limiting protein fitness model performance. Our results indicate that FLIGHTED can be applied to any high-throughput assay and any ML model, making it straightforward for protein designers to account for noise. 用于蛋白质设计的机器学习（ML）需要由高通量实验生成的大型蛋白质适应度数据集，以训练和基准测试模型。然而，大多数模型未考虑这些数据集中固有的实验噪声，从而损害了模型性能。在此，我们开发了由高通量实验数据生成的适应度景观推断（FLIGHTED），这是一种贝叶斯方法，通过从噪声实验中生成概率性适应度景观来考虑不确定性。我们展示了FLIGHTED如何改善两个实验中的模型性能：单步选择实验，如噬菌体展示，以及将活性与碱基编辑关联的高通量实验。我们比较了标准ML模型在有无FLIGHTED的适应度景观上的性能。考虑噪声在统计上显著提高了模型性能。基于我们使用FLIGHTED的新基准测试，数据规模而非模型规模限制了蛋白质适应度模型的性能。我们的结果表明，FLIGHTED可应用于任何高通量实验和任何ML模型，使蛋白质设计者能够直接考虑噪声。",
+      "date": "2026-10-02"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.25.754455",
+      "title": "AmyloCore-ML: AI/Machine Learning Enabled Identification of Amyloid Fibril Core Regions Using Protein Language Models",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.25.754455/index.html",
+      "meta": [
+        "Jasdeep Singh; Raunak Jangid; Ankit Srivastava",
+        "bioRxiv",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文利用蛋白语言模型（ESM-2、ANKH、ProtT5）从序列预测淀粉样纤维核心区域，属于蛋白质结构相关计算建模，方法有AI创新，但对象为淀粉样聚集区域而非完整蛋白结构，问题聚焦于序列-结构映射，整体相关且具参考价值。",
+      "abstract": "In many neurodegenerative and systemic disorders, proteins can form insoluble protein aggregates called amyloids. Identification of amyloid forming regions in a protein remains central to understanding of its aggregation behaviour. Many predictors have been formed in the past and until recently which to estimate the aggregation-prone regions, which may not correspond to total residues found in actual disease associated fibril structures. To address this, we formed a sequence-based based predictor to ascertain structural amyloid-core propensity. The predictor was developed using experimentally determined fibril structures obtained from Amyloid Atlas. Ordered residues in the experimental structures were designated as core, and unresolved sampled from the same proteins as matched controls as non-core. Core and non-core regions were encoded using various physicochemical descriptors and protein language model (PLM) embeddings (ESM-2, ANKH, ProtT5) and evaluated using protein-grouped cross-validation. PLMs consistently outperformed physicochemical descriptors, with the best models reaching AUROC values of ~0.88 and AUPRC values of ~0.85. Locked full-length protein scans further localized experimental cores, with ESM-2/ExtraTrees W21 achieving AUROC 0.833, AUPRC 0.751, and a mean peak distance of 12.4 residues. In comparative benchmarking, our predictor showed better performance metrics than CrossBeta and AggrescanAI. The framework therefore provides residue-resolved prediction of structurally incorporated amyloid-core regions directly from sequence. AmyloCore-ML is easily accessible through an interactive Google Colab notebook, enabling sequence-based amyloid fibril-core prediction without local installation or dedicated computing infrastructure. 在许多神经退行性和系统性疾病中，蛋白质可形成称为淀粉样蛋白（amyloids）的不溶性蛋白聚集体。识别蛋白质中形成淀粉样蛋白的区域，对于理解其聚集行为仍至关重要。过去及近期已开发出许多预测器，用于估计易聚集区域，但这些区域可能与实际疾病相关纤维结构中的总残基不完全对应。为解决此问题，我们构建了一种基于序列的预测器，以确定结构淀粉样核心倾向性。该预测器利用从Amyloid Atlas获得的实验确定的纤维结构进行开发。实验结构中的有序残基被指定为核心，而来自相同蛋白质的未解析采样作为匹配对照，被指定为非核心。核心和非核心区域使用多种物理化学描述符和蛋白质语言模型（PLM）嵌入（ESM-2、ANKH、ProtT5）进行编码，并通过蛋白质分组交叉验证进行评估。PLMs在性能上始终优于物理化学描述符，最佳模型的AUROC值约为0.88，AUPRC值约为0.85。锁定全长蛋白质扫描进一步定位了实验核心，其中ESM-2/ExtraTrees W21达到AUROC 0.833、AUPRC 0.751，平均峰距离为12.4个残基。在比较基准测试中，我们的预测器在性能指标上优于CrossBeta和AggrescanAI。因此，该框架可直接从序列提供结构整合的淀粉样核心区域的残基级预测。AmyloCore-ML通过交互式Google Colab笔记本易于访问，无需本地安装或专用计算基础设施即可实现基于序列的淀粉样纤维核心预测。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.26.754618",
+      "title": "Ultrafast and Accurate Selection of High-Quality Protein Complex Models from Large-Scale Prediction",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.26.754618/index.html",
+      "meta": [
+        "Liang F; Xie L; Ye E; Pan Z; Xu T; Wang H; Wei P; Liu J; Zhang G",
+        "bioRxiv",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文提出DeepUMQA-Selection两阶段框架，结合单模型精度估计与基于USR的超快结构比对，从大规模候选池中高效准确筛选高质量蛋白复合物模型，属于蛋白质结构预测后处理与模型选择的核心计算问题，方法创新且性能显著。",
+      "abstract": "In the post-AlphaFold era, advances in protein complex structure prediction have enabled the generation of thousands of candidate models per target, making the accurate and efficient selection of high-quality models from large candidate pools a critical challenge. Existing model-selection approaches commonly employ estimated model accuracy (EMA) methods, which include single-model and consensus-based methods. The former lack cross-model comparative information, whereas the latter often incur high computational costs from pairwise structural alignments and are influenced by candidate-pool quality. Here, we present DeepUMQA-Selection, a two-stage framework combining single-model accuracy estimators for preliminary selection with Ultrafast Shape Recognition (USR)-based structural alignment for consensus selection. Preliminary selection enriches the candidate pool with high-quality models and reduces subsequent structural comparisons, while USR-based structural alignment enables efficient consensus selection without explicit structural superposition. On the retrospective CASP16 QMODE3 benchmark dataset, DeepUMQA-Selection outperformed all participating methods and predictor-derived confidence metrics, as measured by mean Top-5 weighted penalty. The advantage was particularly pronounced for heteromeric targets, with a 13.9% improvement in model-selection performance relative to the best-performing CASP16 participating method. Furthermore, a confidence-assisted strategy enabled the framework to accommodate larger protein complexes while maintaining superior model-selection performance over competing methods, supporting its scalability. Runtime benchmarking showed that the proposed USR-based structural alignment achieved a substantial 317-fold speedup over US-align for candidate pools containing 1,000 models, demonstrating its computational efficiency for large-scale model selection. Our results demonstrate that DeepUMQA-Selection enables accurate and computationally efficient selection of high-quality protein complex models from large-scale candidate pools. 在后AlphaFold时代，蛋白质复合物结构预测的进展使得每个靶标能够生成数千个候选模型，因此从大型候选池中准确且高效地选择高质量模型成为一项关键挑战。现有的模型选择方法通常采用估计模型精度（EMA）方法，包括单模型方法和基于共识的方法。前者缺乏跨模型的比较信息，而后者往往因成对结构比对而产生高昂的计算成本，并受候选池质量的影响。在此，我们提出DeepUMQA-Selection，这是一个两阶段框架，结合了单模型精度估计器用于初步筛选，以及基于超快形状识别（USR）的结构比对用于共识选择。初步筛选丰富了候选池中的高质量模型并减少了后续的结构比较，而基于USR的结构比对则无需显式结构叠加即可实现高效的共识选择。在回顾性CASP16 QMODE3基准数据集上，DeepUMQA-Selection在平均Top-5加权惩罚方面优于所有参与方法及预测器衍生的置信度指标。这一优势在异源多聚体靶标中尤为显著，相对于表现最佳的CASP16参与方法，模型选择性能提升了13.9%。此外，一种置信度辅助策略使该框架能够适应更大的蛋白质复合物，同时保持优于竞争方法的模型选择性能，支持其可扩展性。运行时基准测试表明，所提出的基于USR的结构比对在包含1000个模型的候选池中，相对于US-align实现了显著的317倍加速，展示了其在大规模模型选择中的计算效率。我们的结果表明，DeepUMQA-Selection能够从大规模候选池中准确且计算高效地选择高质量蛋白质复合物模型。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.29.755481",
+      "title": "SMartini: automated small molecule parametrization for Martini 3 force field",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.29.755481/index.html",
+      "meta": [
+        "Yangaliev D; Ozkan SB",
+        "bioRxiv",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文开发了Martini 3粗粒化力场小分子自动参数化流程，虽对象为小分子而非蛋白质，但其自动化参数化方法可迁移至蛋白质配体复合物的粗粒化模拟，对蛋白结构计算有借鉴价值。",
+      "abstract": "We present SMartini, an automated pipeline for deriving Martini 3 coarse-grained force-field parameters for arbitrary small molecules. Starting from a molecular structure or a SMILES string, the pipeline maps the all-atom molecule onto a coarse-grained bead representation and automatically fits both bonded and non-bonded parameters. Bonded parameters are obtained via Boltzmann inversion of atomistic molecular dynamics trajectories; successive rounds of coarse-grained simulation and distribution-matching updates then refine these estimates until the coarse-grained conformational ensemble reproduces the all-atom reference within tolerance. We validate the pipeline on a diverse set of small molecules including drug-like compounds, metabolites, and cofactors. Implemented as a modular sequence of scripts that can be orchestrated on high-performance computing clusters, SMartini makes automated parametrization of large ligand libraries practical and reduces the manual effort required for coarse-grained model development, enabling high-throughput coarse-grained simulations of protein--ligand systems within the Martini 3 ecosystem 我们提出SMartini，这是一个自动化流程，用于为任意小分子推导Martini 3粗粒化力场参数。从分子结构或SMILES字符串出发，该流程将全原子分子映射到粗粒化珠子表示，并自动拟合键合和非键合参数。键合参数通过原子级分子动力学轨迹的玻尔兹曼反演获得；随后，通过多轮粗粒化模拟和分布匹配更新来细化这些估计，直到粗粒化构象系综在容差范围内再现全原子参考。我们在包括药物样化合物、代谢物和辅因子在内的多样化小分子集合上验证了该流程。SMartini作为一系列模块化脚本实现，可在高性能计算集群上编排，使大型配体库的自动化参数化变得实用，并减少了粗粒化模型开发所需的手动工作，从而在Martini 3生态系统中实现蛋白质-配体系统的高通量粗粒化模拟。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "pubmed:42816606",
+      "title": "Function-preserving watermarking of AI-generated proteins.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42816606/index.html",
+      "meta": [
+        "Stutz, David; Cowen-Rivers, Alexander I; Ortiz-Jimenez, Guillermo; Ratcliff, Jeremy; Zambaldi, Vinicius; Willmore, Lindsay; Abramson, Josh; Patani, Harshnira; Kouridi, Christina; Stimberg, Florian; Vecerik, Mel; Chu, Alex; Singh, Sukhdeep; Dathathri, Sumanth; Papa, Eliseo; De Bortoli, Valentin; Doucet, Arnaud; Hassabis, Demis; Wang, Jue; Gowal, Sven; Kohli, Pushmeet",
+        "Nature",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文提出SynthIDBio方法，在AI生成的蛋白质序列和结构中嵌入保持功能的数字水印，涉及蛋白质结构预测与设计，并利用微调AlphaFold3模型，属于蛋白质结构计算与AI方法创新。",
+      "abstract": "Generative artificial intelligence (AI) models are revolutionizing biology, with tools such as AlphaFold 3 and protein design models accelerating breakthroughs in protein structure prediction and the creation of new functional proteins(1). Tracking and establishing the provenance of AI-generated protein sequences and structures is becoming increasingly important to tackle a range of emerging challenges, including biosecurity and concerns about information veracity(2-4). Here we introduce SynthIDBio, a family of methods for watermarking protein sequences and structures to establish the provenance of those generated with AI. SynthIDBio-sequence actively embeds a watermark into protein sequences while preserving function. We demonstrate this by creating watermarked, functional designed protein binders with binding affinity comparable with non-watermarked counterparts and near-perfect watermark detection accuracy. Furthermore, SynthIDBio-structure, a fine-tuned AlphaFold3 model, embeds an imperceptible watermark into biomolecular structures. Our work is a proof-of-concept that function-preserving biological watermarking is feasible, introducing a potential tool for provenance in the rapidly expanding era of AI-driven biological engineering. 生成式人工智能（AI）模型正在彻底改变生物学领域，诸如AlphaFold 3和蛋白质设计模型等工具加速了蛋白质结构预测及新型功能蛋白质创造方面的突破(1)。追踪并确立AI生成蛋白质序列和结构的来源，对于应对一系列新兴挑战（包括生物安全及信息真实性担忧）正变得日益重要(2-4)。在此，我们介绍SynthIDBio，这是一系列用于对蛋白质序列和结构进行水印标记的方法，旨在确立AI生成内容的来源。SynthIDBio-sequence在保留功能的同时，主动将水印嵌入蛋白质序列中。我们通过创建带水印的功能性设计蛋白质结合剂来证明这一点，其结合亲和力与未加水印的对应物相当，且水印检测准确率近乎完美。此外，SynthIDBio-structure，一个微调后的AlphaFold3模型，将不可察觉的水印嵌入生物分子结构中。我们的工作是一个概念验证，表明保留功能的生物水印是可行的，为快速扩张的AI驱动生物工程时代引入了一种潜在的来源追踪工具。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "pubmed:42817087",
+      "title": "Revolution of Computer-assisted Drug Design: The Transformative Role of Artificial Intelligence.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42817087/index.html",
+      "meta": [
+        "Rawat, Uma; Singh, Anita",
+        "Current computer-aided drug design",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "这是一篇综述AI在计算机辅助药物设计（CADD）中应用的叙述性文章，涵盖蛋白质结构预测、对接等环节，但缺乏具体方法创新，且对象偏向药物发现而非纯蛋白质结构计算。",
+      "abstract": "Artificial intelligence (AI) is transforming computer-aided drug design (CADD) by enabling more rapid, efficient, and data-driven approaches to drug discovery. This narrative review examines recent applications of AI, machine learning (ML), deep learning (DL), reinforcement learning (RL), natural language processing (NLP), and generative AI across major stages of the drug discovery pipeline. Literature published primarily between 2021 and 2026 was reviewed to describe advances in AI-assisted target identification, protein structure and protein- protein interaction prediction, virtual screening, molecular docking, quantitative structure- activity relationship (QSAR) modelling, drug repurposing, ADMET prediction, biomarker discovery, lead optimization, and de novo molecular design. The review also highlights AI-enabled computational tools, databases, and predictive models that support the analysis of large chemical and biological datasets. AI-based approaches can improve prediction accuracy, accelerate candidate identification and optimization, and reduce the time and cost associated with conventional drug discovery workflows. However, widespread implementation remains limited by challenges including data quality and bias, limited model generalizability, insufficient interpretability and reproducibility, computational demands, and regulatory and ethical concerns. AI should therefore be considered a complementary technology that supports, rather than replaces, experimental and clinical validation. Future research should focus on developing standardized and diverse datasets, explainable and transparent AI models, robust external validation strategies, and improved integration of multimodal and multi-omics data. Furthermore, the convergence of AI with emerging technologies, including quantum computing, generative models, automated laboratories, and precision medicine, may further advance CADD. Collaborative efforts among computational scientists, medicinal chemists, biologists, clinicians, and regulatory agencies will be essential to translate AI-driven discoveries into safe, effective, and clinically relevant therapeutic candidates. 人工智能（AI）正在通过实现更快速、高效和数据驱动的药物发现方法，变革计算机辅助药物设计（CADD）。本叙述性综述考察了AI、机器学习（ML）、深度学习（DL）、强化学习（RL）、自然语言处理（NLP）和生成式AI在药物发现流程主要阶段的最新应用。综述了主要发表于2021年至2026年间的文献，以描述AI辅助靶点识别、蛋白质结构及蛋白质-蛋白质相互作用预测、虚拟筛选、分子对接、定量构效关系（QSAR）建模、药物重定位、ADMET预测、生物标志物发现、先导化合物优化和从头分子设计方面的进展。综述还重点介绍了支持大规模化学和生物数据集分析的AI驱动计算工具、数据库和预测模型。基于AI的方法可以提高预测准确性，加速候选药物的识别和优化，并减少与传统药物发现工作流程相关的时间和成本。然而，广泛实施仍受到数据质量和偏差、模型泛化能力有限、可解释性和可重复性不足、计算需求以及监管和伦理问题的限制。因此，AI应被视为一种互补技术，支持而非替代实验和临床验证。未来研究应侧重于开发标准化和多样化的数据集、可解释且透明的AI模型、稳健的外部验证策略，以及改进多模态和多组学数据的整合。此外，AI与量子计算、生成模型、自动化实验室和精准医学等新兴技术的融合，可能进一步推进CADD。计算科学家、药物化学家、生物学家、临床医生和监管机构之间的协作努力，对于将AI驱动的发现转化为安全、有效且临床相关的治疗候选药物至关重要。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "pubmed:42818193",
+      "title": "Predicting Supramolecular Self-Assembly of Peptide Structures with AlphaFold3.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42818193/index.html",
+      "meta": [
+        "Sklar, Claire; Huh, Jessie; Chen, Sabrina; Gray, Jeffrey J",
+        "bioRxiv : the preprint server for biology",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文评估AlphaFold3在预测肽超分子自组装纳米结构（如胶束、纳米管）中的应用，属于蛋白质结构预测工具在肽组装计算建模上的直接应用，虽偏工程化但方法明确、对象相关，对肽结构设计有参考价值。",
+      "abstract": "Self-assembled peptide-based nanostructures have diverse applications in the pharmaceutical and materials fields, but accurately predicting their self-assembly behavior without time-intensive organic synthesis and characterization remains a significant challenge. Here, we assess the effectiveness of AlphaFold3 (AF3), a deep learning model for protein structure prediction, in modeling peptide-based nanostructures and the interactions driving supramolecular self-assembly. We designed amphiphilic peptides composed of alternating hydrophobic residues (valine, leucine, isoleucine, phenylalanine) and hydrophilic residues (glutamic acid), varying both sequence length and residue order. Using AF3's multimer mode, we modeled assemblies with copy numbers ranging from 10 to 1000, generating diverse morphologies such as micelles and nanotubes. We qualitatively analyzed hydrophobic regions, secondary structures, and intermolecular interactions, while also calculating radii of gyration, packing scores, and aspect ratios using PyRosetta. Our results indicate that AF3 predicts morphologies consistent with hydrophobic driving forces and steric constraints. Increased hydrophobicity correlates with smaller radii of gyration, while higher copy numbers correspond to smaller aspect ratios (more compact structures). Longer hydrophobic segments lead to disordered structures, whereas longer hydrophilic segments promote organization. While AF3 captures systemic trends consistent with biophysical principles, comparisons to literature reveal discrepancies driven by charge effects and secondary structure bias, including an overemphasis on helical propensity (e.g., alanine-rich sequences) and sensitivity to terminal charge repulsion. Additionally, since AF3 is predisposed to predict a single assembled entity rather than higher-order assemblies such as multiple micelles or fibers, finding the optimal copy number for the best prediction requires system-specific iteration. These limitations highlight the need for complementary approaches with controlled chemical potential and environmental conditions, though qualitative agreement with experimental trends in morphology and compactness supports AF3's utility for initial structure generation. Our findings highlight AF3's potential as a user-friendly first pass screening tool for peptide design, enabling rapid generation and prioritization of candidate assemblies for subsequent evaluation using coarse-grained or all-atom molecular simulations toward the efficient development of functional self-assembled peptide nanomaterials. 基于自组装肽的纳米结构在制药和材料领域具有广泛的应用，但准确预测其自组装行为而不进行耗时有机合成和表征仍是一个重大挑战。在此，我们评估了AlphaFold3 (AF3)（一种用于蛋白质结构预测的深度学习模型）在模拟肽基纳米结构及驱动超分子自组装的相互作用方面的有效性。我们设计了由交替疏水残基（缬氨酸、亮氨酸、异亮氨酸、苯丙氨酸）和亲水残基（谷氨酸）组成的双亲性肽，并变化序列长度和残基顺序。利用AF3的多聚体模式，我们模拟了拷贝数从10到1000的组装体，生成了如胶束和纳米管等多种形态。我们定性分析了疏水区域、二级结构和分子间相互作用，同时使用PyRosetta计算了回转半径、堆积分数和长径比。我们的结果表明，AF3预测的形态与疏水驱动力和空间约束一致。疏水性的增加与较小的回转半径相关，而较高的拷贝数对应较小的长径比（更紧凑的结构）。较长的疏水段导致无序结构，而较长的亲水段促进有序性。尽管AF3捕捉到了与生物物理原理一致的系统性趋势，但与文献的比较揭示了由电荷效应和二级结构偏差引起的差异，包括对螺旋倾向的过度强调（例如，富含丙氨酸的序列）以及对末端电荷排斥的敏感性。此外，由于AF3倾向于预测单一组装实体而非高阶组装体（如多个胶束或纤维），找到最佳预测的拷贝数需要系统特异性迭代。这些局限性强调了需要具有受控化学势和环境条件的互补方法，尽管与实验趋势在形态和紧凑性上的定性一致性支持了AF3在初始结构生成中的实用性。我们的发现突出了AF3作为肽设计用户友好型初筛工具的潜力，能够快速生成和优先排序候选组装体，以便后续使用粗粒化或全原子分子模拟进行评估，从而高效开发功能性自组装肽纳米材料。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "pubmed:42818266",
+      "title": "Agentic campaign control for high-throughput de novo binder design.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42818266/index.html",
+      "meta": [
+        "Jeon, Minkyu; Song, Jinyeop; Kim, Jina; Zhong, Ellen D",
+        "bioRxiv : the preprint server for biology",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文提出T-REX智能体框架，通过LLM代理编排多种蛋白生成模型和结构评估器，实现高通量从头设计蛋白结合物，核心聚焦蛋白质结构生成与设计，方法创新且直接相关。",
+      "abstract": "Progress in artificial intelligence has produced a rapidly growing ecosystem of methods for de novo protein design. With access to many specialized and often complementary tools, how does one use them effectively, especially with a finite compute budget? Here, we introduce Target-adaptive Rescue-Explore-eXploit (T-REX) , an agentic protein binder design framework that orchestrates multiple state-of-the-art protein generative models and structure evaluators. Over the course of a design campaign, T-REX leverages large language model (LLM) agents to reason over accumulating outcomes and decide whether to rescue promising candidates, explore alternative settings, or exploit productive routes, while a deterministic controller validates and schedules proposed actions. Across seven targets, we find that T-REX adaptively allocates its compute across methods in a target-dependent manner and achieves the highest throughput of structurally distinct hits compared to all baselines. These results suggest that adaptive orchestration can complement increasingly powerful protein design models, and we openly release T-REX to support compute-efficient binder design workflows. 人工智能的进步催生了一个快速增长的蛋白质从头设计方法生态系统。面对众多专门且往往互补的工具，如何有效利用它们，尤其是在有限的计算预算下？在此，我们引入目标自适应救援-探索-利用（T-REX），一种智能体蛋白质结合剂设计框架，它协调多种最先进的蛋白质生成模型和结构评估器。在设计活动过程中，T-REX利用大型语言模型（LLM）智能体对累积结果进行推理，并决定是救援有希望的候选方案、探索替代设置，还是利用高效路径，同时一个确定性控制器验证并调度提议的行动。在七个目标上，我们发现T-REX以目标依赖的方式跨方法自适应分配计算资源，并相比所有基线实现了最高的结构不同命中率。这些结果表明，自适应编排可以补充日益强大的蛋白质设计模型，我们公开发布T-REX以支持计算高效的结合剂设计工作流程。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "pubmed:42818501",
+      "title": "dictyBase 2026: a reimplementation of the Dictyostelium model organism database on minimal infrastructure.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42818501/index.html",
+      "meta": [
+        "Mendieta, Maddox; Dodson, Robert J; Basu, Siddhartha; Chisholm, Rex L; Scaglione, K",
+        "Research square",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文介绍Dictyostelium模式生物数据库dictyBase的重实现，虽包含蛋白结构信息但以数据管理和文献注释为主，缺乏蛋白质结构计算建模或AI/物理模拟方法贡献，与本课题关联较弱。",
+      "abstract": "Dictyostelium discoideum is a model organism used to investigate a wide array of biological processes including chemotaxis, cell motility, phagocytosis, multicellular development, and autophagy. Many of its genes have human orthologs implicated in disease, making it a useful model organism for studying conditions ranging from cancer to neurodegeneration. dictyBase has served this community for two decades as a home for genomic data, protocols, a stock center, and community news. Here we describe a complete reimplementation of dictyBase as a self-contained service that uses static data files rather than a database server. Each gene record gathers curated function, human-disease context, developmental expression, and protein structure in a single webpage. The site also provides tools for sequence search, genome browsing, enrichment analysis, and experimental design. The complete Dicty Stock Center (DSC) catalog of 7,055 strains and 1,265 plasmids is included, and both can be ordered from the site. New literature is curated by an author-in-the-loop pipeline. A language model drafts the annotations, the authors of the paper correct them, and a curator approves them. Analyses can be run on curator-approved annotations alone or extended to include those still awaiting review. dictyBase is freely available at https://dicty.org. 盘基网柄菌（Dictyostelium discoideum）是一种模式生物，用于研究多种生物过程，包括趋化性、细胞运动、吞噬作用、多细胞发育和自噬。其许多基因具有与人类疾病相关的人类同源基因，使其成为研究从癌症到神经退行性疾病等多种病症的有用模式生物。dictyBase 二十年来一直为该社区服务，作为基因组数据、实验方案、菌株中心和社区新闻的基地。在此，我们描述了 dictyBase 的完全重新实现，作为一个自包含服务，使用静态数据文件而非数据库服务器。每个基因记录在单个网页中汇集了精选功能、人类疾病背景、发育表达和蛋白质结构。该网站还提供序列搜索、基因组浏览、富集分析和实验设计工具。完整的 Dicty 菌株中心（DSC）目录包含 7,055 株菌株和 1,265 个质粒，均可从该网站订购。新文献通过作者参与流程进行精选。语言模型起草注释，论文作者进行修正，策展人批准。分析可仅基于策展人批准的注释运行，或扩展至包括待审注释。dictyBase 可在 https://dicty.org 免费获取。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "pubmed:42818576",
+      "title": "Inverse FoldDir: Structure-conditioned Protein Sequence Design by Dirichlet Flow Matching.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42818576/index.html",
+      "meta": [
+        "Tartici, Alp; Stojkovic, Mihajlo; Tian, Anru; Jewett, Michael C; Altman, Russ B; Wittmann, Bruce J",
+        "bioRxiv : the preprint server for biology",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文提出基于Dirichlet流匹配的结构条件蛋白逆折叠方法Inverse FoldDir，实现序列生成、固定残基修复和软先验控制，并在实验验证中展现高序列恢复率，直接命中蛋白结构计算与序列设计核心课题。",
+      "abstract": "1 Protein engineering has important implications in the bioeconomy, enabling applications in materials, medicine, and energy. A key challenge is designing protein sequences that have a specific form and function. Protein inverse folding seeks to address this challenge by identifying amino acid sequences compatible with a desired protein backbone. This task is central to protein redesign and can provide a sequence-design capability for de novo backbones produced by structure-generation methods. Ideally, inverse folding can provide diverse sequence alternatives, fixed residues or motifs, soft biochemical preferences at selected positions, and candidates that remain experimentally useful. We developed Inverse FoldDir, a controllable inverse-folding method that performs iterative denoising on the amino acid probability simplex. Given a backbone structure, the model updates all positions jointly through a learned Dirichlet flow, supporting full sequence generation, fixed-residue inpainting, and user-defined soft residue priors. On the held-out CATH 4.2 test set, Inverse FoldDir achieved a mean TM-score of 84.5 (on a 0-100 scale) and a mean C alpha RMSD of 1.76 A, compared with 83.3 and 1.86 A, respectively, for ESM-IF1, the strongest evaluated baseline on both metrics. Denoising trajectory analyses showed that positions commit at different rates and that some residues change identity late in generation, illustrating whole-sequence refinement rather than one-shot prediction or irreversible sequential decoding. We experimentally tested Inverse FoldDir in an anti-GFP nanobody redesign task, where two of 35 redesigned sequences retained reproducible sfGFP-binding signal across independent assay runs with approximately 43% sequence divergence from the native nanobody. Inverse FoldDir is a structure-conditioned protein redesign method that combines structural recovery, user control, experimental validation, and a natural route toward future property-guided sampling. 蛋白质工程在生物经济中具有重要意义，推动了材料、医学和能源领域的应用。一个关键挑战是设计具有特定形态和功能的蛋白质序列。蛋白质逆折叠旨在通过识别与所需蛋白质骨架兼容的氨基酸序列来应对这一挑战。该任务对于蛋白质重新设计至关重要，并能为由结构生成方法产生的从头骨架提供序列设计能力。理想情况下，逆折叠可以提供多样的序列替代方案、固定残基或基序、在选定位置上的软生化偏好，以及保持实验可用性的候选序列。我们开发了Inverse FoldDir，一种可控的逆折叠方法，在氨基酸概率单纯形上执行迭代去噪。给定一个骨架结构，该模型通过学习的Dirichlet流联合更新所有位置，支持全序列生成、固定残基修复和用户定义的软残基先验。在保留的CATH 4.2测试集上，Inverse FoldDir实现了平均TM分数84.5（0-100尺度）和平均Cα RMSD 1.76 Å，而ESM-IF1在这两项指标上分别达到83.3和1.86 Å，后者是两项指标上最强的评估基线。去噪轨迹分析显示，不同位置以不同速率提交，且某些残基在生成后期改变身份，这表明了全序列细化，而非一次性预测或不可逆的序列解码。我们在抗GFP纳米抗体重新设计任务中实验测试了Inverse FoldDir，其中35个重新设计的序列中有2个在独立测定运行中保留了可重复的sfGFP结合信号，与天然纳米抗体的序列差异约为43%。Inverse FoldDir是一种结构条件的蛋白质重新设计方法，结合了结构恢复、用户控制、实验验证以及面向未来性质引导采样的自然途径。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "pubmed:42818981",
+      "title": "Protein eXplosion Imaging (PXI): Protein Structures from Laser-Driven Explosions.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42818981/index.html",
+      "meta": [
+        "Bellisario, Alfredo; Andre, Tomas; Caleman, Carl; Timneanu, Nicusor",
+        "ArXiv",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文利用分子动力学模拟和卷积神经网络从激光爆炸离子轨迹中重建蛋白质低分辨率结构（回转半径和椭球包络），属于蛋白质结构计算建模与AI方法结合，对无大型设施的单分子结构测定有启发。",
+      "abstract": "We investigate the structural information retained in the distribution of explosion ion trajectories from proteins subjected to strong ionization. Using molecular-dynamics simulations and machine-learning analysis benchmarked against an analytical approach, we show that low-resolution structural information can be retrieved from the explosion distributions alone. An ensemble of convolutional neural networks trained on simulated spherical ion maps recovers the radius of gyration and the three semi-axes of an ellipsoidal molecular envelope with prediction errors of 1.2 A and 1.5 A, respectively, while an analytical ellipsoid charge model returns similar estimates and performs best for globular structures. We further investigate how higher-level structural information and symmetries can be extrapolated from ion measurements. This study supports the viability for structural determination of single proteins without large-scale X-ray facilities. 我们研究了强电离蛋白质产生的爆炸离子轨迹分布中所保留的结构信息。利用分子动力学模拟和机器学习分析，并以解析方法为基准，我们表明仅从爆炸分布中即可检索到低分辨率的结构信息。一组在模拟球形离子图上训练的卷积神经网络能够恢复回旋半径和椭球形分子包络的三个半轴，预测误差分别为1.2 Å和1.5 Å，而解析椭球电荷模型则给出类似估计，并对球状结构表现最佳。我们进一步探讨了如何从离子测量中外推更高层次的结构信息和对称性。本研究支持了无需大规模X射线设施即可实现单蛋白质结构测定的可行性。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "pubmed:42819252",
+      "title": "Enhanced Sampling of Protein Conformations in AlphaFold3 with Repulsive Bias in the Diffusion Generative Model.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42819252/index.html",
+      "meta": [
+        "Ohnuki, Jun; Okazaki, Kei-Ichi",
+        "JACS Au",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文在AlphaFold3的扩散生成模型中引入排斥偏置实现增强采样，以预测配体诱导的蛋白质构象变化，属于蛋白质构象采样与结构预测的核心计算研究，方法创新且与课题高度相关。",
+      "abstract": "Conformational changes in proteins are vital to their function yet remain challenging for state-of-the-art artificial intelligence, such as AlphaFold3 (AF3), to predict. It has been observed that AF3 sometimes fails to capture ligand-induced conformational changes, even though it explicitly includes ligand molecules that induce such changes. To address this challenge, we develop an enhanced sampling scheme that leverages the diffusion-based generative model used in AF3 to predict protein structures. Interpreting the diffusion generative model as a stochastic sampling process analogous to molecular dynamics (MD) simulations, we introduce here a repulsive biasing potential between predicted structures to explore wider conformational space. We demonstrate that the developed sampling scheme, AF3-ReD, successfully samples multiple conformational states in the AF3 distribution, including ligand-bound conformations of motor, kinase, and transporter proteins, which are rarely captured by the default AF3 settings. Consistency with experimentally determined structures not only at the global structural level but also in local ligand-binding poses confirms reliable conformational sampling with AF3-ReD. Notably, AF3-ReD succeeded in sampling conformational states of transporters that were unresolved at the AF3 training cutoff. Compared to another strategy based on multiple sequence alignment (MSA), AF3-ReD predicted intermediate conformations that are relatively closer to the stable states. Thus, AF3-ReD provides a promising approach to predicting dynamic conformational changes of proteins associated with ligand binding, which could be further extended to other diffusion-based generative models, such as those for protein design, potentially expanding their accessible design space. 蛋白质的构象变化对其功能至关重要，但对于最先进的人工智能（如AlphaFold3 (AF3)）而言，预测这些变化仍具挑战性。已有观察表明，即使AF3明确包含了诱导构象变化的配体分子，它有时仍无法捕捉配体诱导的构象变化。为应对这一挑战，我们开发了一种增强采样方案，利用AF3中用于预测蛋白质结构的基于扩散的生成模型。将扩散生成模型解释为类似于分子动力学 (molecular dynamics) 模拟的随机采样过程，我们在此引入预测结构之间的排斥偏置势，以探索更广泛的构象空间。我们证明，所开发的采样方案AF3-ReD成功地在AF3分布中采样了多种构象状态，包括运动蛋白、激酶和转运蛋白的配体结合构象，而这些在默认AF3设置下很少被捕获。与实验确定的结构不仅在整体结构水平上，而且在局部配体结合姿态上的一致性，证实了AF3-ReD的可靠构象采样。值得注意的是，AF3-ReD成功采样了在AF3训练截止时间点尚未解析的转运蛋白构象状态。与基于多序列比对 (multiple sequence alignment, MSA) 的另一种策略相比，AF3-ReD预测的中间构象相对更接近稳定状态。因此，AF3-ReD为预测与配体结合相关的蛋白质动态构象变化提供了一种有前景的方法，该方法可进一步扩展到其他基于扩散的生成模型，例如用于蛋白质设计的模型，从而可能扩大其可访问的设计空间。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "pubmed:42819288",
+      "title": "Biosynthesis of Complex Phenazines Involves Dimerization and Amination Catalyzed by a Versatile Nuclear Transport Factor 2‑like Superfamily Protein.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42819288/index.html",
+      "meta": [
+        "Dong, Jun-Li; Dan, Ying; Xu, Xin; He, Bei-Bei; Huang, Yi; Xu, Jing-Jing; Liang, Qing-Bo; Li, Yi-Qing; Han, Li; Huang, Xue-Shi; He, Jing",
+        "JACS Au",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文研究吩嗪类天然产物的生物合成酶学机制，虽涉及基于建模蛋白结构的对接分析，但核心是酶催化反应而非蛋白质结构计算建模，与课题方向关联较弱。",
+      "abstract": "Phenazine natural products represent a structurally diverse class of aromatic alkaloids with broad-spectrum biological activities. Among these compounds, phenazine dimers have attracted considerable attention owing to their intricate molecular architectures and potent antibacterial and anticancer properties. Although the biosynthesis of the core phenazine scaffold is well characterized, the enzymatic postmodifications, especially those governing dimerization processes that yield structurally varied diphenazines, remain poorly understood. In this study, we elucidate the complete biosynthesis of diverse dimeric and aminated phenazines. Following core assembly, the flavoprotein DapS initiates postmodification by catalyzing the C6-selective decarboxylative hydroxylation of phenazine-1,6-dicarboxylic acid (PDC). We further uncover Dap5, a nuclear transport factor 2 (NTF2)-like protein, as a multifunctional enzyme that catalyzes hydroxylation, dimerization, and amination of phenazines. Strikingly, Dap5 operates independently of flavin or metal cofactors, instead activating oxygen by exploiting the redox cycling of its phenazine substrate within the enzyme-substrate complex. Structural and docking analyses based on a modeled protein structure suggest that these reactions likely share a common predicted active-site cavity but employ distinct residue networks for substrate binding and catalysis. This study solves a long-standing puzzle in the biosynthesis of dimeric phenazines and demonstrates a unique substrate-assisted radical strategy, offering new insights into the evolution of multifunctional enzymes. 吩嗪天然产物代表了一类结构多样的芳香族生物碱，具有广谱生物活性。在这些化合物中，吩嗪二聚体因其复杂的分子架构和强效的抗菌及抗癌特性而受到广泛关注。尽管核心吩嗪骨架的生物合成已被充分表征，但酶促后修饰，尤其是那些控制产生结构多样的二吩嗪的二聚化过程，仍知之甚少。在本研究中，我们阐明了多种二聚化和胺化吩嗪的完整生物合成途径。在核心组装之后，黄素蛋白DapS通过催化吩嗪-1,6-二甲酸（PDC）的C6选择性脱羧羟基化反应启动后修饰。我们进一步发现Dap5，一种核转运因子2（NTF2）样蛋白，是一种多功能酶，可催化吩嗪的羟基化、二聚化和胺化反应。引人注目的是，Dap5独立于黄素或金属辅因子发挥作用，而是通过利用其吩嗪底物在酶-底物复合物中的氧化还原循环来激活氧气。基于建模蛋白质结构的结构和对接分析表明，这些反应可能共享一个共同的预测活性位点腔，但采用不同的残基网络进行底物结合和催化。本研究解决了二聚吩嗪生物合成中长期存在的谜团，并展示了一种独特的底物辅助自由基策略，为多功能酶的进化提供了新见解。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "pubmed:42820154",
+      "title": "GenUnfold: Rapidly Predict Protein Mechanical Unfolding Trajectory via a Physics-Guided Diffusion Model.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42820154/index.html",
+      "meta": [
+        "Zhang, Yiyuan; Hua, Cailong; Singh, Vinitendra; Muretta, Joseph M; Ervasti, James M; Salapaka, Murti V",
+        "Proceedings of machine learning research",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文提出物理引导的扩散模型GenUnfold，结合蛋白编码器与力学表征预测蛋白质机械去折叠轨迹，属于蛋白质结构相关计算建模与生成方法，与课题高度契合。",
+      "abstract": "Many fundamental biological processes are governed by mechanical forces, with proteins acting as the key molecular mediators. Elucidating how protein unfolding responds to force is critical for understanding the mechano-pathologies, such as cardiomyopathy and muscular dystrophy. While the unfolding trajectories measured by Single-Molecule Force Spectroscopy (SMFS) map the instantaneous force response against molecular extension, its broader application is limited by time-consuming data collection and high operational costs. Here, we present the first scalable generative diffusion framework for full unfolding trajectory prediction, which integrates protein encoders for multi-scale conditioning. Beyond establishing the field's first systematic benchmark using existing models, we propose GenUnfold, a novel physics-guided diffusion model that combines global coevolutionary context with a local mechanical representation of the protein. The representation is derived from a novel physics-biased attention mechanism, which steers the generative diffusion process by modeling dynamic residue dependencies as a function of both structural topology and interaction stiffness. The benchmark for this task is built upon the biomolecule stretching database and several representative baseline models. Empirical results demonstrate that GenUnfold achieves state-of-the-art performance, reducing distributional error (FID) by 30% and 54% compared to pretrained Evolutionary Scale Model (ESM)-2 and standard transformer, respectively. Beyond statistical curve similarity, GenUnfold demonstrates superior physical consistency; in downstream mechanical property prediction, it reduces prediction errors for unfolding force and energy distributions by 6% and 36% over the ESM-2 baseline. These results indicate that while existing generative AI approaches can alleviate the need for predicting representative force curves, GenUnfold further improves performance by leveraging the synergy between protein structure and evolutionary information. By enabling proteome-wide screening to identify mechanical candidates before costly physical validation, our approach is promising to accelerate the discovery of force-targeted therapeutics. 许多基本生物学过程受机械力调控，蛋白质作为关键分子介导者发挥作用。阐明蛋白质解折叠如何响应力，对于理解心肌病和肌营养不良等机械病理至关重要。虽然单分子力谱 (Single-Molecule Force Spectroscopy, SMFS) 测量的解折叠轨迹将瞬时力响应映射为分子延伸，但其广泛应用受限于耗时的数据采集和高昂的操作成本。在此，我们提出了首个用于完整解折叠轨迹预测的可扩展生成扩散框架，该框架整合了蛋白质编码器以实现多尺度条件化。在建立该领域首个基于现有模型的系统基准之外，我们提出了GenUnfold，一种新颖的物理引导扩散模型，结合了全局共进化上下文与蛋白质的局部机械表示。该表示源自一种新颖的物理偏置注意力机制，通过将动态残基依赖性建模为结构拓扑和相互作用刚度的函数，来引导生成扩散过程。此任务的基准建立在生物分子拉伸数据库及若干代表性基线模型之上。实证结果表明，GenUnfold达到了最先进性能，与预训练进化尺度模型 (Evolutionary Scale Model, ESM)-2 和标准变换器相比，分别将分布误差 (FID) 降低了30%和54%。除统计曲线相似性外，GenUnfold展现出更优的物理一致性；在下游机械性质预测中，与ESM-2基线相比，它将解折叠力和能量分布的预测误差分别降低了6%和36%。这些结果表明，虽然现有生成式AI方法能缓解预测代表性力曲线的需求，但GenUnfold通过利用蛋白质结构与进化信息之间的协同作用进一步提升了性能。通过实现蛋白质组范围的筛选，在昂贵的物理验证之前识别机械候选分子，我们的方法有望加速力靶向治疗药物的发现。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "pubmed:42820442",
+      "title": "Probing mechanisms of allosteric regulation in AAA+ ATPases for microtubule severing and protein disaggregation.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42820442/index.html",
+      "meta": [
+        "Irshad, Maryum; Walpalage, Krishan; Zhang, Zhaocheng; Gillen, Maria S; Dima, Ruxandra I; Stan, George",
+        "The Journal of chemical physics",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文通过分子动力学模拟结合机器学习与生物信息学分析，系统探究AAA+ ATP酶（katanin和ClpB）中核苷酸和底物结合调控的变构机制，核心聚焦蛋白质构象采样与变构通讯的结构计算问题，方法创新且与蛋白质结构计算课题高度相关。",
+      "abstract": "Ring-like AAA+ (ATPases associated with diverse cellular activities) biological machines mediate protein remodeling to assist a broad range of essential cellular functions. The nucleotide-dependent remodeling action involves intra- and inter-ring allosteric communication to generate mechanical force applied onto the substrate by a set of loops that protrude into the central channel. In this study, we probe these allosteric mechanisms through a comparative study of the katanin, a microtubule severing protein including a clade 3 AAA domain, and the double-ring ClpB, a protein disaggregase including both a clade 3 and a clade 5 AAA domain. Our molecular dynamics simulations, combined with machine learning and bioinformatic analysis, reveal both similar mechanisms involving the clade 3 domain and ClpB-specific ones involving communication with the clade 5 domain. We find that both nucleotide and substrate polypeptide binding restrict the conformational landscape sampled by katanin and ClpB, with ligand-specific conformations observed in the latter case. Allosteric contributions of secondary structure elements, ranked using SHapley Additive exPlanations analysis in machine learning approaches and binary classification of features in ligand states, highlight the important role of regions adjacent to the nucleotide-binding site and the pore loops. Amino acid-level analysis of the allosteric paths reveals that intra-ring cooperativity modulates long-distance communication within the AAA+ protomers. 环状AAA+（与多种细胞活动相关的ATP酶）生物机器介导蛋白质重塑，以支持一系列基本的细胞功能。核苷酸依赖的重塑作用涉及环内和环间变构通讯，通过一组伸入中央通道的环状结构将机械力施加于底物上。在本研究中，我们通过比较研究katanin（一种微管切割蛋白，包含clade 3 AAA结构域）和双环ClpB（一种蛋白质解聚酶，包含clade 3和clade 5 AAA结构域）来探讨这些变构机制。我们的分子动力学模拟，结合机器学习和生物信息学分析，揭示了涉及clade 3结构域的相似机制以及涉及与clade 5结构域通讯的ClpB特异性机制。我们发现，核苷酸和底物多肽的结合均限制了katanin和ClpB所采样的构象空间，在后一种情况下观察到配体特异性构象。使用机器学习方法中的SHapley Additive exPlanations分析和配体状态特征的二元分类对二级结构元素的变构贡献进行排序，突出了核苷酸结合位点附近区域和孔环的重要作用。对变构路径的氨基酸水平分析揭示，环内协同性调节AAA+原聚体内的长距离通讯。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "pubmed:42821008",
+      "title": "Uncovering hidden druggable sites: computational approaches to allosteric and cryptic pocket discovery-from molecular dynamics to AI.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42821008/index.html",
+      "meta": [
+        "Lakkaraju, Sirish Kaushik; Pierce, Olivia; Mentes, Ahmet; Zhang, Ivy; Tokarski, John; Chalkley, Matthew; Kuriappan, Jissy; Mukherjee, Goutam; Palmeri, Antonio; Johnson, Theresa; Shanmugasundaram, Veerabahu",
+        "Journal of computer-aided molecular design",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该综述系统梳理了从分子动力学到AI/ML（如PocketMiner、AlphaFold3）的变构和隐蔽口袋计算方法，虽为综述且对象偏向药物发现，但核心聚焦蛋白质结构中的隐蔽位点识别，对蛋白质结构计算建模有直接参考价值。",
+      "abstract": "Allosteric and cryptic binding pockets represent a vast underexploited frontier in drug discovery, offering routes to biological targets historically considered undruggable. The absence of apparent binding pockets in the global conformations of apo structures, together with limitations in availability of chemical probes and experimental structures for novel targets, makes the identification of allosteric and cryptic sites particularly challenging. Despite their ability to reveal transient and otherwise inaccessible pockets, computational methods remain underutilized for allosteric and cryptic site discovery. In this perspective, we present the current state-of-the-art of computational strategies that are available in a computational scientists' toolbox to evaluate the possibility of finding such pockets when assessing a new target in a drug discovery project. Computational approaches span a spectrum from physics-based methods grounded in molecular thermodynamics to AI/ML techniques for identifying allosteric and cryptic binding sites. Physics-based approaches encompass methods operating across multiple scales, from single-conformation analyses that identify pockets based on geometry and energetics (e.g., Fpocket, SiteMap) to molecular simulations that reveal cryptic states and transient binding sites, as well as mixed-solvent and probe-based approaches (e.g., SILCS, MixMD) that delineate druggable hotspots through enhanced sampling. AI/ML methods such as PocketMiner and deep learning cofolding models (AlphaFold3, Boltz) that rapidly predict cryptic sites are discussed in the context of them being over 1,000-fold faster than classical simulations. By surveying current methods and benchmark studies, we aim to define their domains of applicability, highlight their strengths and limitations, and identify opportunities for their integration in prospective drug discovery. 变构和隐蔽结合口袋代表了药物发现中一个尚未充分开发的广阔前沿，为历史上被认为不可成药的生物靶点提供了途径。脱辅基结构全局构象中缺乏明显的结合口袋，加上新型靶点的化学探针和实验结构可用性有限，使得变构和隐蔽位点的识别尤为具有挑战性。尽管计算方法能够揭示瞬态且其他方式无法触及的口袋，但在变构和隐蔽位点发现中仍未被充分利用。在本展望中，我们介绍了计算科学家工具箱中当前最先进的计算策略，以评估在药物发现项目中评估新靶点时发现此类口袋的可能性。计算方法涵盖从基于分子热力学的物理方法到用于识别变构和隐蔽结合位点的AI/ML技术。基于物理的方法包括跨多个尺度运作的手段，从基于几何和能量识别口袋的单构象分析（如Fpocket、SiteMap）到揭示隐蔽状态和瞬态结合位点的分子模拟，以及通过增强采样描绘可成药热点的混合溶剂和探针方法（如SILCS、MixMD）。AI/ML方法如PocketMiner和深度学习共折叠模型（AlphaFold3、Boltz）能够快速预测隐蔽位点，本文讨论了这些方法相较于经典模拟快逾1000倍的优势。通过调研现有方法和基准研究，我们旨在界定其适用领域，突出其优势与局限，并识别在前瞻性药物发现中整合这些方法的机会。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "pubmed:42821695",
+      "title": "Keep AI-augmented science contestable.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42821695/index.html",
+      "meta": [
+        "Trattner, Christoph",
+        "Science (New York, N.Y.)",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文讨论AI在科学中的可争议性，以AlphaFold为例但聚焦于科学伦理与治理，未涉及蛋白质结构计算建模方法本身。",
+      "abstract": "Artificial intelligence (AI) is moving upstream in science. Systems such as AlphaFold have already transformed protein-structure prediction, while newer agentic systems can search literatures, generate hypotheses, write and execute code, interpret results, and automate much of the path from idea to paper. Recent debates have asked how such systems may change scientific progress, surprise, and human understanding. Yet they also change something more fundamental: who-or what-participates in deciding which questions are asked, which evidence is surfaced, and which alternatives survive. As machine intelligence becomes part of science's epistemic infrastructure, steps must be taken to ensure that researchers who did not build, own, or operate the system can still contest how ideas and evidence became a claim. 人工智能（AI）正朝着科学的上游迈进。诸如AlphaFold之类的系统已经变革了蛋白质结构预测，而更新的智能体系统能够检索文献、生成假设、编写并执行代码、解释结果，并自动化从想法到论文的许多路径。近期的讨论关注这些系统可能如何改变科学进展、意外发现和人类理解。然而，它们还改变了更为根本的东西：谁——或什么——参与决定哪些问题被提出、哪些证据被呈现、哪些替代方案得以存续。随着机器智能成为科学认识论基础设施的一部分，必须采取措施，确保未构建、拥有或操作该系统的研究人员仍能对想法和证据如何转化为主张提出质疑。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "pubmed:42823192",
+      "title": "Fast and accurate construction of multiple sequence alignments from protein language embeddings with ARIES.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42823192/index.html",
+      "meta": [
+        "Hoang, Minh; Armour-Garb, Isabel; Singh, Mona",
+        "Genome research",
+        "2026-10-01"
+      ],
+      "tags": [],
+      "summary": "该文利用蛋白语言模型嵌入构建多序列比对（ARIES），在低同源性区域提升比对精度，为蛋白质结构预测等下游任务提供更优的序列输入，与蛋白质结构计算课题紧密相关。",
+      "abstract": "Multiple sequence alignment (MSA) is a foundational task in computational biology, underpinning protein structure prediction, evolutionary analysis, and domain annotation. Traditional MSA algorithms rely on pairwise amino acid substitution matrices derived from conserved protein families. While effective for aligning closely related sequences, these scoring schemes struggle in the low-identity \"twilight zone\". Here, we present a new approach for constructing MSAs leveraging amino acid embeddings generated by protein language models (PLMs), which capture rich evolutionary and contextual information from massive and diverse sequence datasets. We introduce a windowed reciprocal-weighted embedding similarity metric that is surprisingly effective in identifying corresponding amino acids across sequences. Building on this metric, we develop ARIES (Alignment via Reciprocal Embedding Similarity), an algorithm that constructs a PLM-generated template embedding and aligns each sequence to this template via dynamic time warping in order to build a global MSA. Across diverse benchmark datasets, ARIES achieves higher accuracies than existing state-of-the-art approaches, especially in low-identity regimes where traditional methods degrade, while scaling almost linearly with the number of sequences to be aligned. Together, these results provide the first large-scale demonstration of the power of PLMs for accurate and scalable MSA construction across protein families of varying sizes and levels of similarity, highlighting the potential of PLMs to transform comparative sequence analysis. 多序列比对（MSA）是计算生物学中的一项基础任务，支撑着蛋白质结构预测、进化分析和结构域注释。传统的MSA算法依赖于从保守蛋白质家族中推导出的成对氨基酸替换矩阵。虽然这些评分方案在比对紧密相关的序列时有效，但在低同一性的“模糊区”中却表现不佳。在此，我们提出了一种新方法，利用蛋白质语言模型（PLMs）生成的氨基酸嵌入来构建MSA，这些嵌入从大规模多样化的序列数据集中捕获了丰富的进化和上下文信息。我们引入了一种窗口化互反加权嵌入相似性度量，该度量在识别跨序列的对应氨基酸方面出奇地有效。基于这一度量，我们开发了ARIES（通过互反嵌入相似性进行比对），该算法生成一个PLM生成的模板嵌入，并通过动态时间规整将每条序列与该模板比对，以构建全局MSA。在多个基准数据集上，ARIES达到了比现有最先进方法更高的准确性，尤其是在传统方法性能下降的低同一性区域，同时其扩展性几乎与待比对序列数量呈线性关系。这些结果共同首次大规模展示了PLMs在跨不同大小和相似性水平的蛋白质家族中实现准确且可扩展的MSA构建方面的能力，突显了PLMs在变革比较序列分析方面的潜力。",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.24.754079",
+      "title": "Bridging the gap between omics and structural data: A framework for interpreting protein-RNA interaction specificity",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.24.754079/index.html",
+      "meta": [
+        "Fauconnet Y; Deng S; Koundri R; Pagani M; Quignot C; Antonio D; Andreani J",
+        "bioRxiv",
+        "2026-09-30"
+      ],
+      "tags": [],
+      "summary": "该文结合组学数据与实验结构，提出评分框架评估蛋白-RNA结合特异性，并系统评测AlphaFold3在蛋白-RNA复合物结构预测中的表现，虽对象为蛋白-RNA复合物，但方法框架和评测思路对蛋白质结构计算研究有借鉴价值。",
+      "abstract": "Protein-RNA interactions play a central role in many cellular processes, such as gene regulation, protein synthesis and viral infections. Although a few thousand protein-RNA complexes have been structurally characterized, they represent only a small fraction of all interactions. This lack of experimental data limits the ability of deep-learning based approaches such as AlphaFold3 to predict structures of protein-RNA interactions. In this study, we investigate protein-RNA binding specificity by enriching experimental structures with omics data. To this end, we present a scoring approach and associated web resource quantifying the agreement between experimental structures of protein-RNA interfaces and their omics-derived binding preferences, allowing us to identify interaction motif cores. Through key structural and evolutionary features, we further highlight that these motif cores correspond to important interface regions. We then leverage the dataset of protein-RNA complexes for which structural information can be combined with binding preferences in order to benchmark the ability of AlphaFold3 to predict protein-RNA interaction specificity. To this aim, we run AlphaFold3 predictions using different RNA inputs, from the exact sequence present in the experimental structure to a non-specific sequence, including sequences embedding the consensus binding motif from in vitro experiments. We show that despite good prediction quality, the sensitivity of AlphaFold3 to the exact RNA sequence used as input indicates signs of memorization. We examine some particular complexes and uncover challenges encountered by our scoring workflow and AlphaFold3, especially in the case of alternative binding modes. Altogether, this work evidences both the promise and current limitations of deep learning approaches for protein-RNA structure prediction, and provides a resource to guide their further development. 蛋白质-RNA相互作用在许多细胞过程中发挥核心作用，例如基因调控、蛋白质合成和病毒感染。尽管已有数千个蛋白质-RNA复合物的结构被解析，但它们仅代表所有相互作用的一小部分。实验数据的缺乏限制了基于深度学习的方法（如AlphaFold3）预测蛋白质-RNA相互作用结构的能力。在本研究中，我们通过利用组学数据丰富实验结构来探究蛋白质-RNA结合特异性。为此，我们提出了一种评分方法及相关的网络资源，用于量化蛋白质-RNA界面实验结构与其组学衍生的结合偏好之间的一致性，从而识别相互作用基序核心。通过关键的结构和进化特征，我们进一步强调这些基序核心对应于重要的界面区域。随后，我们利用结构信息可与结合偏好相结合的数据集，来评估AlphaFold3预测蛋白质-RNA相互作用特异性的能力。为此，我们使用不同的RNA输入运行AlphaFold3预测，从实验结构中的精确序列到非特异性序列，包括嵌入体外实验共识结合基序的序列。我们表明，尽管预测质量良好，但AlphaFold3对输入RNA精确序列的敏感性显示出记忆化的迹象。我们检查了一些特定复合物，并揭示了我们的评分流程和AlphaFold3所遇到的挑战，尤其是在替代结合模式的情况下。总体而言，这项工作证明了深度学习方法在蛋白质-RNA结构预测中的潜力及当前局限性，并提供了指导其进一步发展的资源。",
+      "date": "2026-09-30"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.29.755338",
+      "title": "Repurposing PeTriBERT for Protein Protein Interaction Prediction with Sequence Structure Fusion",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.29.755338/index.html",
+      "meta": [
+        "Arthur Wavreille; Gabriel Krouk; Baldwin Dumortier",
+        "bioRxiv",
+        "2026-09-30"
+      ],
+      "tags": [],
+      "summary": "该文将逆折叠编码器PeTriBERT与ESM-2序列嵌入融合，用于蛋白质-蛋白质相互作用预测，属于蛋白质结构相关计算建模的工程应用，方法有一定创新但问题聚焦于PPI预测而非结构生成/采样。",
+      "abstract": "Recent advances in artificial intelligence have enabled models to capture protein sequence and structural features. We present PeTriPPI2, a hybrid framework for protein--protein interaction (PPI) prediction that combines sequence embeddings from ESM-2 with structural representations from PeTriBERT, an encoder originally designed for inverse folding. We evaluate this sequence--structure approach on the Pinder dataset. On a test set of 2,342 protein pairs, the selected checkpoint achieves 0.898 accuracy, 0.917 precision, 0.876 recall, and 0.896 F1 score for the interacting class (AUROC 0.963). Compared with SpatialPPIv2 on the same test data, PeTriPPI2 has higher precision (0.917 versus 0.886) but lower recall (0.876 versus 0.942) and F1 score (0.896 versus 0.913). Component ablations indicate that both the sequence and structural pathways contribute to this configuration. 人工智能的最新进展使模型能够捕捉蛋白质序列和结构特征。我们提出了PeTriPPI2，一个用于蛋白质-蛋白质相互作用（PPI）预测的混合框架，它结合了来自ESM-2的序列嵌入与来自PeTriBERT的结构表示，后者是一种最初为逆折叠设计的编码器。我们在Pinder数据集上评估了这种序列-结构方法。在一个包含2,342对蛋白质的测试集上，所选检查点对于相互作用类别达到了0.898的准确率、0.917的精确率、0.876的召回率和0.896的F1分数（AUROC为0.963）。与同一测试数据上的SpatialPPIv2相比，PeTriPPI2具有更高的精确率（0.917对0.886），但召回率（0.876对0.942）和F1分数（0.896对0.913）较低。组件消融实验表明，序列和结构通路均对该配置有所贡献。",
+      "date": "2026-09-30"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.29.755381",
+      "title": "Beyond Structure: Protein and Solution Dynamics Shape Ligand-Binding Thermodynamics",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.29.755381/index.html",
+      "meta": [
+        "Kacie A. Evans; Morgan Powers; Robert L. Rider; Carter Lantz; Arthur Laganowsky; Hays S. Rye; David H. Russell",
+        "bioRxiv",
+        "2026-09-30"
+      ],
+      "tags": [],
+      "summary": "该文用变温电喷雾质谱研究GroEL配体结合热力学，虽涉及蛋白构象动态，但核心是实验质谱方法，未采用AI或物理模拟计算建模，与蛋白质结构计算课题关联较弱。",
+      "abstract": "Variable-temperature electrospray ionization native mass spectrometry (vT-ESI nMS) provides a means to determine how temperature-dependent changes in protein and solution dynamics influence individual ligand-binding reactions within multiligand protein complexes. Here, the GroEL single-ring mutant (SR1), which binds up to seven nucleotides, serves as a model system due to its sensitivity to solution conditions. Native MS resolves individual ligand-bound populations, while vT-ESI extends these measurements across temperature (3-43 °C), enabling determination of binding affinities and the associated Gibbs free energy, enthalpy, entropy, heat capacity changes (ΔC p ), and enthalpy-entropy compensation (EEC) for each binding reaction. Temperature-dependent changes in van’t Hoff curvature produce distinct ΔC p profiles, indicating changes in the dynamics governing ligand binding that may reflect contributions from protein conformational and protonation microstates. Temperature-dependent shifts in average charge state, consistent with changes in solvent-accessible surface area, indicate corresponding changes in protein conformation. Binding is predominantly enthalpy-driven below ∼23 °C, with increasing entropic contributions at higher temperatures, while the seventh ADP binding reaction exhibits a distinct EEC profile. Comparison of the seventh ADP binding reaction in H 2 O and D 2 O reveals pronounced differences in van’t Hoff curvature, ΔC p , and EEC, demonstrating that changes in the hydration environment alter the thermodynamic response. Collectively, these measurements show that temperature-dependent changes in protein and solution dynamics alter the distributions and thermodynamics of individual ligand-bound states and demonstrate the utility of vT-ESI nMS for resolving these effects in complex multiligand systems. 变温电喷雾电离原生质谱（vT-ESI nMS）提供了一种手段，用于确定蛋白质和溶液动力学中温度依赖性变化如何影响多配体蛋白质复合物内的单个配体结合反应。在此，GroEL单环突变体（SR1）能结合多达七个核苷酸，因其对溶液条件的敏感性而作为模型系统。原生质谱解析单个配体结合群体，而vT-ESI将这些测量扩展到温度范围（3-43°C），从而能够确定每个结合反应的结合亲和力及相关的吉布斯自由能、焓、熵、热容变化（ΔC p ）和焓-熵补偿（EEC）。范特霍夫曲率中的温度依赖性变化产生不同的ΔC p 谱，表明调控配体结合的动力学变化，这可能反映蛋白质构象和质子化微态的贡献。平均电荷态的温度依赖性偏移与溶剂可及表面积的变化一致，指示蛋白质构象的相应变化。在约23°C以下，结合主要由焓驱动，在较高温度下熵贡献增加，而第七个ADP结合反应表现出独特的EEC谱。在H 2 O和D 2 O中比较第七个ADP结合反应，揭示了范特霍夫曲率、ΔC p 和EEC的显著差异，表明水合环境的变化改变了热力学响应。总体而言，这些测量表明，蛋白质和溶液动力学中的温度依赖性变化改变了单个配体结合状态的分布和热力学，并展示了vT-ESI nMS在解析复杂多配体系统中这些效应的实用性。",
+      "date": "2026-09-30"
+    },
+    {
+      "id": "pubmed:42812786",
+      "title": "Structural and functional perspectives on DEAD-box RNA helicases in the rubber tree cold stress response.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42812786/index.html",
+      "meta": [
+        "Gao, Baocai; Xiao, Mingxia; Mao, Changli; Liu, Jin",
+        "Frontiers in plant science",
+        "2026-09-30"
+      ],
+      "tags": [],
+      "summary": "该综述结合AlphaFold2结构预测与冷胁迫多组学数据，分析橡胶树DEAD-box RNA解旋酶的结构与功能，虽以非模式植物蛋白为对象，但展示了计算结构预测在蛋白结构功能研究中的可迁移应用，对蛋白质结构计算课题有参考价值。",
+      "abstract": "DExD/H-box RNA helicases constitute one of the largest families of adenosine triphosphate (ATP)-dependent nucleic-acid enzymes, with roles spanning the full breadth of RNA metabolism, from transcription to turnover. Their defining architectural feature is a conserved helicase core comprising two tandem RecA-like domains that couples ATP hydrolysis to duplex unwinding and ribonucleoprotein remodeling. Structural investigations have historically focused on human and yeast model systems, but recent methodological advances, particularly cryo-electron microscopy and deep learning-based structure prediction, have broadened the structural coverage of the DDX family, including full-length constructs and their incorporation into multiprotein assemblies. In plants, DDX helicases remain far less characterized despite their essential functions in development and stress adaptation. This review integrates structural biology insights with recent multi-omics datasets from cold-stressed rubber tree (Hevea brasiliensis), a tropical crop highly susceptible to chilling injury. Quantitative profiling has identified nine differentially abundant DDX proteins under cold stress, among which DDX39B shows the most pronounced response. Rubber tree DDX39B shares >95% sequence identity with orthologs from other tropical species and ~73% identity with human DDX39B; AlphaFold2 predictions reveal near-identical core helicase folds, consistent with strong functional constraint across vast evolutionary distances. These predictions also reveal plant-specific domain arrangements, including a putative DDX39B isoform bearing additional LysM and protein kinase domains. This work illustrates how computational structure prediction can bridge the sequence-to-function gap for stress-responsive proteins in non-model plant species and provides a conceptual framework for dissecting DDX helicase roles in plant abiotic stress tolerance. DExD/H-box RNA解旋酶构成腺苷三磷酸（ATP）依赖性核酸酶中最大的家族之一，其作用涵盖RNA代谢的整个范围，从转录到降解。其定义性结构特征是保守的解旋酶核心，包含两个串联的RecA样结构域，将ATP水解与双链解旋及核糖核蛋白重塑偶联起来。结构研究历来集中于人类和酵母模型系统，但近期方法学进展，特别是冷冻电子显微镜和基于深度学习的结构预测，拓宽了DDX家族的结构覆盖范围，包括全长构建体及其在多蛋白复合物中的整合。在植物中，DDX解旋酶尽管在发育和胁迫适应中具有关键功能，但其表征仍远不充分。本综述将结构生物学见解与来自冷胁迫橡胶树（Hevea brasiliensis）的近期多组学数据集相结合，该热带作物对冷害高度敏感。定量分析已鉴定出冷胁迫下九个差异丰度的DDX蛋白，其中DDX39B表现出最显著的反应。橡胶树DDX39B与其他热带物种的直系同源物共享>95%的序列同一性，与人类DDX39B共享约73%的同一性；AlphaFold2预测揭示近乎相同的核心解旋酶折叠，与跨越巨大进化距离的强功能约束一致。这些预测还揭示了植物特异性结构域排列，包括一个带有额外LysM和蛋白激酶结构域的推定DDX39B异构体。本工作展示了计算结构预测如何弥合非模式植物物种中胁迫响应蛋白的序列到功能差距，并为解析DDX解旋酶在植物非生物胁迫耐受性中的作用提供了概念框架。",
+      "date": "2026-09-30"
+    },
+    {
+      "id": "pubmed:42813386",
+      "title": "Loop-Centric Engineering of Terminal Deoxynucleotidyl Transferase for Enhanced Catalysis of 3'-Modified Nucleotides.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42813386/index.html",
+      "meta": [
+        "Shi, Kun; Li, An-Na; Xu, Jian-He; Yu, Hui-Lei",
+        "Biotechnology and bioengineering",
+        "2026-09-30"
+      ],
+      "tags": [],
+      "summary": "该文结合深度学习结构预测与分子动力学模拟，对末端脱氧核苷酸转移酶进行环区工程改造，提升其对3'-修饰核苷酸的催化活性，属于蛋白质结构计算指导的酶工程研究，与课题高度相关。",
+      "abstract": "Efficient enzymatic DNA synthesis requires terminal deoxynucleotidyl transferases (TdTs) that can accept reversibly blocked nucleotides, but improving wild-type enzymes has traditionally depended on labor-intensive screening. Here, we combine deep learning-based structure prediction with molecular dynamics simulations to guide loop-centric engineering of a TdT from Crocodylus porosus. The resulting variant M3 (V253E/L256M/N338R) showed a 26-fold increase in specific activity toward 3'-ONH(2)-dCTP while maintaining expression and thermostability. Simulations indicated that the mutations reorganized Loop1 dynamics and reproducibly biased the incoming nucleotide toward a more favorable in-line attack orientation. The key N338R change also improved a second TdT scaffold, supporting N338 as a potentially transferable engineering hotspot. These results provide a practical computational strategy for improving terminal deoxynucleotidyl transferases for incorporation of 3'-modified nucleotides, reducing reliance on large-scale screening. 高效的酶促DNA合成需要能够接受可逆封闭核苷酸的末端脱氧核苷酸转移酶（TdTs），但传统上改善野生型酶依赖于劳动密集型的筛选。在此，我们结合基于深度学习的结构预测与分子动力学模拟，以指导来自湾鳄（Crocodylus porosus）的TdT进行以环为中心的工程改造。所得变体M3（V253E/L256M/N338R）对3'-ONH(2)-dCTP的比活性提高了26倍，同时保持了表达和热稳定性。模拟表明，这些突变重排了Loop1的动态，并可重复地将进入的核苷酸偏向更有利的在线攻击取向。关键的N338R变化也改善了第二种TdT支架，支持N338作为潜在可转移的工程热点。这些结果为改进末端脱氧核苷酸转移酶以掺入3'-修饰核苷酸提供了一种实用的计算策略，减少了对大规模筛选的依赖。",
+      "date": "2026-09-30"
+    },
+    {
+      "id": "pubmed:42813590",
+      "title": "DreamFold: A World Model to efficiently generate protein folding pathways in the latent space.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42813590/index.html",
+      "meta": [
+        "Ianeselli, Alan; Im, Jewon; Cavallin, Eddie; Gerstein, Mark B",
+        "Protein science : a publication of the Protein Society",
+        "2026-09-30"
+      ],
+      "tags": [],
+      "summary": "DreamFold 提出基于世界模型的生成式框架，在潜空间高效生成蛋白质折叠路径，比MD快四个数量级，并识别具有治疗价值的折叠中间体，核心贡献于蛋白质构象采样与动力学计算。",
+      "abstract": "While there is an abundance of static data for the structure of biological macromolecules, the data regarding their folding mechanisms and dynamics is scarce, posing a challenge to the training of AI models. The World Model approach, which has been very successful in robotics, can come in handy in this regard. From limited data, it can build a latent, approximated representation of the spatio-temporal folding environment that can be used to train downstream AI models. Here, we developed DreamFold, a World Model-based generative framework to perform biomolecular simulations. DreamFold encodes protein structures and dihedral angle moves into latent vectors using variational autoencoders. Then, it uses another neural network to rapidly predict the next latent structure after a latent move, allowing the model to develop its own understanding of protein dynamics. Finally, in a \"hallucinated\" latent environment, an agent learns, through evolutionary algorithms, a policy to drive folding simulations toward a target. Latent configurations can then be decoded back into atomistic structures. DreamFold can compute protein folding pathways four orders of magnitude faster than molecular dynamics (MD), up to ~30,000x. Furthermore, for the monomeric proteins tested here (up to 449 aa), the computational cost scales linearly with the number of atoms (N) as O(N) (in comparison, MD scales as O(NlogN)). We have validated our results against established MD benchmarks and other available experimental data. Finally, we show how DreamFold allows us to identify folding intermediates with cryptic binding sites that are therapeutically valuable. Overall, DreamFold facilitates the study of protein dynamics by generative AI with applications in structure-based drug discovery. 尽管生物大分子结构的静态数据丰富，但其折叠机制和动力学数据稀缺，这对AI模型的训练构成了挑战。在机器人领域非常成功的世界模型（World Model）方法在这方面可以派上用场。从有限数据中，它可以构建一个潜在、近似的时空折叠环境表示，用于训练下游AI模型。在此，我们开发了DreamFold，一种基于世界模型的生成框架，用于执行生物分子模拟。DreamFold使用变分自编码器将蛋白质结构和二面角移动编码为潜在向量。然后，它利用另一个神经网络在潜在移动后快速预测下一个潜在结构，使模型能够发展自己对蛋白质动力学的理解。最后，在“幻觉”潜在环境中，一个智能体通过进化算法学习策略，将折叠模拟驱动至目标状态。潜在配置随后可解码回原子级结构。DreamFold计算蛋白质折叠路径的速度比分子动力学（molecular dynamics, MD）快四个数量级，最高可达约30,000倍。此外，对于此处测试的单体蛋白质（最长449个氨基酸），计算成本随原子数（N）线性扩展为O(N)（相比之下，MD扩展为O(NlogN)）。我们已针对已建立的MD基准和其他可用实验数据验证了我们的结果。最后，我们展示了DreamFold如何使我们识别具有治疗价值的隐秘结合位点的折叠中间体。总体而言，DreamFold通过生成式AI促进了蛋白质动力学研究，并在基于结构的药物发现中具有应用前景。",
+      "date": "2026-09-30"
+    },
+    {
+      "id": "pubmed:42813594",
+      "title": "Radiation damage in serial femtosecond crystallography studied in hemoglobin.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42813594/index.html",
+      "meta": [
+        "Galchenkova, Marina; Dawod, Ibrahim; Cardoch, Sebastian; Sprenger, Janina; Oberthur, Dominik; Awel, Salah; De Santis, Emiliano; Granas, Oscar; Knoska, Juraj; Metz, Markus; Passmore, Spencer; Pena, Gisel; Sarrou, Iosifina; Wiedorn, Max; Timneanu, Nicusor; Chapman, Henry; Yefanov, Oleksandr; Caleman, Carl",
+        "Acta crystallographica. Section D, Structural biology",
+        "2026-09-30"
+      ],
+      "tags": [],
+      "summary": "该文通过血红蛋白的飞秒晶体学实验和分子动力学模拟，研究X射线脉冲时长对蛋白质结构损伤的影响，涉及蛋白质结构计算模拟但非AI方法，且核心是实验验证。",
+      "abstract": "A central question in macromolecular crystallography is what X-ray free-electron laser pulse duration is required to obtain damage-free structural information. We compare serial femtosecond crystallography data from hemoglobin crystals using 3 and 10 fs pulses at comparable peak intensities ( approximately 3 x 10(17) W cm(-2)) and fixed photon energy (7.15 keV). Structural refinement produced very similar models and resolution-dependent data-quality indicators remained comparable. Both datasets also retained sufficient anomalous signal for phasing. These observations support the conclusion that high-resolution scattering was preserved under both pulse durations. Hybrid collisional-radiative and molecular-dynamics simulations show that under typical experimental conditions, atomic form-factor changes are negligible (<1%) and atomic displacements fall below the resolution limit imposed by the X-ray photon energy and the geometry of the detector. The combined experimental and theoretical results indicate that 10 fs pulses are adequate to obtain damage-free protein structures using femtosecond crystallography under the intensity conditions explored. 大分子晶体学中的一个核心问题是，需要多长的X射线自由电子激光脉冲持续时间才能获得无损伤的结构信息。我们比较了使用3和10飞秒脉冲、在相近峰值强度（约3 x 10(17) W cm(-2)）和固定光子能量（7.15 keV）下，血红蛋白晶体的串行飞秒晶体学数据。结构精修产生了非常相似的模型，且分辨率相关的数据质量指标保持可比。两个数据集也保留了足够的反常信号用于定相。这些观察支持了在两种脉冲持续时间下高分辨率散射均得以保留的结论。混合碰撞辐射和分子动力学模拟表明，在典型实验条件下，原子形状因子变化可忽略不计（<1%），原子位移低于由X射线光子能量和探测器几何结构所决定的分辨率极限。综合实验和理论结果表明，在所探索的强度条件下，使用飞秒晶体学获得无损伤蛋白质结构时，10飞秒脉冲是足够的。",
+      "date": "2026-09-30"
+    },
+    {
+      "id": "pubmed:42814095",
+      "title": "Orthogonal Decoupling of First- and Second-Shell Contributions in Protein-Supported Single-Atom Catalysis.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42814095/index.html",
+      "meta": [
+        "Li, Haiyan; Xu, Ruishu; Cai, Jiangtao; Liu, Zhennian; Tao, Hongwen; Huang, Haowen",
+        "Small (Weinheim an der Bergstrasse, Germany)",
+        "2026-09-30"
+      ],
+      "tags": [],
+      "summary": "该文研究蛋白支架支撑的单原子催化，利用MD模拟辅助分析蛋白构象对底物亲和力的调控，虽涉及蛋白构象与MD，但核心是催化而非蛋白质结构计算建模，算法可迁移性有限。",
+      "abstract": "Single-atom catalysis is predominantly interpreted through the electronic structure of the metal center and its first coordination sphere, whereas the independent contribution of the second shell remains difficult to isolate experimentally. Here, we report a protein-supported single-atom catalytic platform that enables orthogonal decoupling of first- and second-shell effects. Structurally invariant Pt(Glu)(2) units were covalently anchored onto protein scaffolds, while protein conformational transitions selectively modulated the surrounding spatial microenvironment without perturbing the metal active site. Reversible catalytic modulation spanning  approximately 65% activity range was achieved solely through conformational cycling, without any detectable change to the metal coordination environment. Kinetic analysis revealed that activity changes were dominated by variations in substrate affinity (Km) rather than intrinsic turnover, as confirmed by nearly identical activation energies between folded and unfolded states from Arrhenius analysis. Fluorescence tracking and molecular dynamics simulations further supported that protein folding enhances substrate accessibility and spatial preorganization around the catalytic center. These findings provide an experimentally grounded basis for second-shell design in artificial catalysts, offering a rational strategy to bridge the activity gap between synthetic single-atom systems and natural metalloenzymes. 单原子催化主要通过金属中心及其第一配位层的电子结构来解释，而第二壳层的独立贡献在实验上仍难以分离。在此，我们报道了一种蛋白质支撑的单原子催化平台，能够实现第一壳层与第二壳层效应的正交解耦。结构不变的Pt(Glu)₂单元被共价锚定在蛋白质支架上，而蛋白质构象转变选择性地调节周围空间微环境，而不扰动金属活性位点。仅通过构象循环即可实现约65%活性范围的可逆催化调节，且金属配位环境无任何可检测变化。动力学分析表明，活性变化主要由底物亲和力（Km）的变异主导，而非内在转化率，这通过Arrhenius分析中折叠与去折叠状态间几乎相同的活化能得以证实。荧光追踪和分子动力学模拟进一步支持蛋白质折叠增强底物可及性和催化中心周围的空间预组织。这些发现为人工催化剂中的第二壳层设计提供了实验基础，为弥合合成单原子系统与天然金属酶之间的活性差距提供了合理策略。",
+      "date": "2026-09-30"
+    },
+    {
+      "id": "pubmed:42814775",
+      "title": "GeoEPred: A multimodal structure-aware geometric deep learning framework for Gram-negative bacterial secreted effector prediction with sequence semantics.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42814775/index.html",
+      "meta": [
+        "Song, Shouzhen; Shi, Hua; Wu, Hongfeng; Liu, Dachen; Lin, Yihang; Mat Isa, Nor Ashidi; Zou, Quan; Wei, Leyi",
+        "PLoS computational biology",
+        "2026-09-30"
+      ],
+      "tags": [],
+      "summary": "该文提出GeoEPred，融合蛋白语言模型序列嵌入与ESMFold预测结构，通过几何深度学习预测细菌效应蛋白，虽对象非典型蛋白结构计算问题，但结构感知建模方法可迁移至蛋白质结构相关任务。",
+      "abstract": "Accurate prediction of effector proteins secreted by Gram-negative bacteria is important for elucidating bacterial pathogenic mechanisms and developing precise anti-infective strategies. Although existing methods have benefited from the strong sequence feature extraction capacity of pretrained protein language models, reliance on linear sequence information alone often fails to fully capture the three-dimensional conformational signals required for virulence functions. Meanwhile, conventional structure-based methods are limited by the scarcity of experimentally resolved protein structures. To address these challenges, we propose GeoEPred, a multimodal deep learning framework designed for the synergistic modeling of protein sequence and structure to identify Gram-negative bacterial effector proteins. Specifically, the model integrates sequence-contextual embeddings from a pretrained protein language model with three-dimensional structural representations predicted by ESMFold. A feature projection network refines fine-grained sequence signals associated with effector functions, while geometric vector perceptrons characterize inter-residue orientations, distances, and local spatial topology to capture potential structural conformational motifs. To further enable effective cross-modal fusion, we design a cross-modal alignment and feature-tokenized self-attention module. This module enhances consistency between the sequence-semantic and structural-geometric spaces through contrastive learning and models associations between linear functional motifs and spatial conformational patterns at a fine-grained token level. Extensive evaluations on multiple benchmark datasets show that GeoEPred achieves better predictive performance than existing leading models in T3SE, T4SE, and T6SE prediction tasks, while maintaining stable performance in remote homolog recognition scenarios. Moreover, the modular and extensible architecture of GeoEPred demonstrates strong generalization ability and substantial application potential for genome-scale effector protein discovery. 准确预测革兰氏阴性细菌分泌的效应蛋白，对于阐明细菌致病机制和开发精准抗感染策略具有重要意义。尽管现有方法受益于预训练蛋白质语言模型强大的序列特征提取能力，但仅依赖线性序列信息往往无法充分捕捉毒力功能所需的三维构象信号。同时，传统基于结构的方法受限于实验解析蛋白质结构的稀缺性。为应对这些挑战，我们提出了GeoEPred，一种多模态深度学习框架，旨在协同建模蛋白质序列和结构以识别革兰氏阴性细菌效应蛋白。具体而言，该模型整合了来自预训练蛋白质语言模型的序列上下文嵌入与ESMFold预测的三维结构表示。特征投影网络细化与效应功能相关的细粒度序列信号，而几何向量感知器则表征残基间方向、距离和局部空间拓扑，以捕捉潜在的结构构象基序。为进一步实现有效的跨模态融合，我们设计了一个跨模态对齐和特征令牌化自注意力模块。该模块通过对比学习增强序列语义空间与结构几何空间之间的一致性，并在细粒度令牌级别建模线性功能基序与空间构象模式之间的关联。在多个基准数据集上的广泛评估表明，GeoEPred在T3SE、T4SE和T6SE预测任务中取得了优于现有领先模型的预测性能，同时在远程同源识别场景中保持稳定表现。此外，GeoEPred的模块化和可扩展架构展示了强大的泛化能力，并在基因组规模效应蛋白发现方面具有显著的应用潜力。",
+      "date": "2026-09-30"
+    },
+    {
+      "id": "pubmed:42815447",
+      "title": "What deep learning can and cannot (yet) do for enzyme design.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42815447/index.html",
+      "meta": [
+        "Ahr, Judith A; de Waal, Moor M; Cotet, Tudor-Stefan; Howell, Daniel C; Bunzel, H Adrian",
+        "Current opinion in chemical biology",
+        "2026-09-30"
+      ],
+      "tags": [],
+      "summary": "该文综述了深度学习在基于结构的酶设计中的进展与局限，聚焦扩散模型生成支架和序列设计，虽为综述且方法创新有限，但紧密围绕蛋白质结构计算设计问题，对课题有参考价值。",
+      "abstract": "Deep learning has substantially advanced structure-based enzyme design, yet reliably creating highly efficient enzymes remains out of reach. One emerging enzyme design strategy combines diffusion-based scaffold generation around active-site models with sequence design. Such structure-based approaches have expanded the accessible reaction space and enabled the emergence of enzymes with diverse catalytic functions and complex catalytic motifs. Despite notable catalytic efficiencies (k(cat)/K(M)), turnover rates (k(cat)) often remain limited, suggesting that current approaches typically yield tight substrate binders rather than enzymes that selectively stabilize the chemical transition state. Computational design of electrostatic catalysis, multistate behavior, and conformational dynamics could potentially enhance transition-state stabilization and improve catalytic activity. More reliable activity oracles, integration of evolutionary information, protein language models, and lab-in-the-loop optimization could further enhance design performance. Ultimately, advancing structure-based enzyme design will require directly targeting the physicochemical drivers of catalysis to move beyond substrate binding toward the reliable design of efficient catalysts. 深度学习已大幅推进了基于结构的酶设计，但可靠地创造高效酶仍难以实现。一种新兴的酶设计策略将基于扩散的支架生成与活性位点模型及序列设计相结合。此类基于结构的方法扩展了可及的反应空间，并促成了具有多样催化功能和复杂催化基序的酶的出现。尽管催化效率（k(cat)/K(M)）显著，但周转率（k(cat)）往往仍受限，这表明当前方法通常产生紧密底物结合体，而非选择性稳定化学过渡态的酶。静电催化、多态行为和构象动力学的计算设计可能增强过渡态稳定化并提升催化活性。更可靠的活性预测器、进化信息的整合、蛋白质语言模型及实验室闭环优化可进一步提升设计性能。最终，推进基于结构的酶设计需直接针对催化的物理化学驱动因素，以超越底物结合，迈向高效催化剂的可靠设计。",
+      "date": "2026-09-30"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.24.752146",
+      "title": "The novel viper FETUA-3 protein evolved a unique mode of inhibiting snake venom metalloproteinases",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.24.752146/index.html",
+      "meta": [
+        "Dowell NL; Vázquez Torres S; Ukken FP; Andjelkovic M; Hajra M; Cahill E; Höcker B; Fernández-Leiro R; Carroll SB",
+        "bioRxiv",
+        "2026-09-29"
+      ],
+      "tags": [],
+      "summary": "该文结合结构预测与分子动力学，解析蛇毒金属蛋白酶抑制剂FETUA-3的进化机制与抑制模式，虽以蛋白-蛋白相互作用为核心，但结构计算为辅助手段，方法创新性有限。",
+      "abstract": "Molecular innovation and coevolution play major roles in the evolution of biological diversity, yet we have few instances in which we understand the biological and molecular bases of coevolution. Rattlesnakes and other vipers have evolved resistance to their own novel venom metalloproteinase (MP) toxins through the invention and coevolution of serum-borne inhibitors (FETUAs) derived from the ancestral, non-inhibitory, serum glycoprotein Fetuin-A. However, how FETUAs acquired their function and mechanism of action are unknown. Here, we use a combination of structure prediction, site-directed mutagenesis, functional analyses, and molecular dynamics to elucidate how the rattlesnake FETUA-3 protein evolved to inhibit three classes of venom MP toxins. We show that FETUA-3 uses a combination of structural motifs to bind multiple MPs with high-affinity and acts as a potent noncompetitive inhibitor by inserting its N-terminus into MP active sites and directly disrupting substrate cleavage. We also find strong selective constraints on key N-terminal residues that maintain FETUA-3 specificity for multiple MP targets. These results reveal that FETUA-3 evolved a unique mechanism of action distinct from other vertebrate metalloproteinase inhibitors and how a small number of FETUA proteins controls the activities of a large family of venom toxins. 分子创新与协同进化在生物多样性的演化中扮演重要角色，然而我们对于协同进化的生物学和分子基础知之甚少的实例寥寥无几。响尾蛇和其他蝰蛇通过发明和协同进化源自祖先非抑制性血清糖蛋白Fetuin-A的血清源性抑制剂（FETUAs），从而进化出对自身新型毒液金属蛋白酶（MP）毒素的抗性。然而，FETUAs如何获得其功能及作用机制尚不清楚。在此，我们结合结构预测、定点突变、功能分析和分子动力学 (molecular dynamics)，阐明响尾蛇FETUA-3蛋白如何进化以抑制三类毒液MP毒素。我们表明，FETUA-3利用结构基序的组合以高亲和力结合多种MPs，并通过将其N端插入MP活性位点直接破坏底物裂解，从而作为强效非竞争性抑制剂发挥作用。我们还发现，关键N端残基受到强烈选择约束，这些残基维持FETUA-3对多种MP靶标的特异性。这些结果揭示，FETUA-3进化出一种不同于其他脊椎动物金属蛋白酶抑制剂的独特作用机制，并阐明少数FETUA蛋白如何控制一大类毒液毒素的活性。",
+      "date": "2026-09-29"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.28.754888",
+      "title": "Probing the sequence variability tolerance in a de novo α-helical barrel biocatalyst",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.28.754888/index.html",
+      "meta": [
+        "Elaily W; Braun M; Stoll D; Chakatok M; Aleotti M; Grill B; Bijelic A; Hall M; Oberdorfer G",
+        "bioRxiv",
+        "2026-09-29"
+      ],
+      "tags": [],
+      "summary": "该文结合AlphaFold2引导的RosettaRemodel和ProteinMPNN对de novo α-螺旋桶生物催化剂进行结构截短与序列重设计，并验证了结构、稳定性和催化活性，属于蛋白质结构设计与序列设计的核心计算研究。",
+      "abstract": "De novo-designed enzymes have recently achieved high catalytic activity and stereoselectivity while demonstrating exceptional thermostability in entirely novel protein scaffolds. Among these, α-helical barrel protein scaffolds are attractive structures for biocatalysis due to their structural simplicity, high thermostability, and rationalizable sequence patterning. However, enabling major structural reengineering of these scaffolds while maintaining the structure, stability and catalytic activity while also improving soluble protein production remain major challenges and pose the fundamental question how engineerable a de novo backbone-sequence pair is. Here, we combine deep learning based and classic computational protein design to modify and optimize de novo α-helical barrel biocatalysts. Using the previously reported six-helical barrel 6H5L as a model scaffold, AlphaFold2-guided RosettaRemodel enabled the design of a truncated variant, whose crystal structure closely matches the design model. Additional sequence-redesign using ProteinMPNN generated a variant with a tenfold increase of soluble protein yield in Escherichia coli. Biochemical, biophysical, and structural analyses showed that both variants retained the overall barrel architecture, high thermal stability, and catalytic activity for both purified protein and whole-cell systems. Detailed kinetic analysis on the variants showed both variation in k cat and K m , reflecting changes in catalytic turnover and substrate binding. Together, these approaches provide new insights and possibilities for the further engineering of functional de novo α-helical barrels, their ability to withstand dramatically large sequence changes and their broader application in biocatalysis and biotechnology. 从头设计（de novo-designed）的酶近年来已在全新的蛋白质支架中实现了高催化活性和立体选择性，同时展现出卓越的热稳定性。其中，α-螺旋桶状蛋白质支架因其结构简单、高热稳定性以及可合理化的序列模式，成为生物催化中具有吸引力的结构。然而，在保持结构、稳定性和催化活性的同时，实现这些支架的重大结构重构，并提高可溶性蛋白产量，仍是主要挑战，并提出了从头设计的骨架-序列对可工程化程度的基本问题。在此，我们结合基于深度学习的方法和经典计算蛋白质设计，来修改和优化从头设计的α-螺旋桶状生物催化剂。以先前报道的六螺旋桶状结构6H5L作为模型支架，AlphaFold2引导的RosettaRemodel成功设计了一个截短变体，其晶体结构与设计模型高度吻合。进一步使用ProteinMPNN进行序列重设计，生成了一个在大肠杆菌（Escherichia coli）中可溶性蛋白产量提高十倍以上的变体。生化、生物物理和结构分析表明，两个变体均保留了整体桶状架构、高热稳定性以及纯化蛋白和全细胞系统中的催化活性。对变体的详细动力学分析显示，k_cat和K_m均有所变化，反映了催化周转和底物结合的改变。综合来看，这些方法为功能性从头设计α-螺旋桶状结构的进一步工程化、其承受大幅序列变化的能力以及在生物催化和生物技术中的更广泛应用提供了新见解和可能性。",
+      "date": "2026-09-29"
+    },
+    {
+      "id": "pubmed:42806706",
+      "title": "iORbase 2.0: Comprehensive analysis platform for insect odorant receptors from genome to structure and function.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42806706/index.html",
+      "meta": [
+        "Zhang, Yifeng; Gao, Chenxi; Xue, Jiameng; Guo, Yi; Duan, Suyang; Zhang, Tianmin; Xue, Wei; Yao, Xiang; Yin, Yangming; Sun, Qingbin; Li, Gang; Xu, Chang; Lu, Huimeng",
+        "Insect science",
+        "2026-09-29"
+      ],
+      "tags": [],
+      "summary": "该文介绍昆虫嗅觉受体综合数据库平台，涵盖结构预测、对接和MD分析，虽非蛋白质结构核心方法创新，但涉及结构计算且可迁移至蛋白体系。",
+      "abstract": "iORbase 2.0 is an analysis platform for insect odorant receptors that covers sequence, structure, and function analyses. It provides functionalities such as gene annotation, structure prediction, molecular docking, and analysis of molecular dynamics simulation results, along with large-scale sequence, structure, and functional data, thereby assisting research on insect odorant receptors. iORbase 2.0是一个昆虫嗅觉受体分析平台，涵盖序列、结构和功能分析。它提供基因注释、结构预测、分子对接及分子动力学模拟结果分析等功能，并包含大规模序列、结构和功能数据，从而辅助昆虫嗅觉受体的研究。",
+      "date": "2026-09-29"
+    },
+    {
+      "id": "pubmed:42806979",
+      "title": "Antigenic remodeling of the SARS-CoV-2 Spike N-terminal domain links sequence variability to structural reorganization of a neutralizing antibody supersite.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42806979/index.html",
+      "meta": [
+        "Ardisson, Juliana Santa; Athaydes, Brena Ramos; Monfardini Sagrillo, Mariane Vedovatti; de Almeida, Raphaella Luisa Fernandes; Paneto, Greiciane Gaburro; de Paula, Hebert; Nunes, Gabriela Ferreira; Spano, Liliana Cruz; von Zeidler, Sandra Ventorin; Bastos-Filho, Teodiano Freire",
+        "Frontiers in cellular and infection microbiology",
+        "2026-09-29"
+      ],
+      "tags": [],
+      "summary": "该文结合基因组监测、结构建模与分子动力学，分析SARS-CoV-2 Spike NTD序列变异对抗体超位点界面结构重组的影响，属于蛋白质结构计算与序列变异关联研究，但对象为病毒蛋白且方法偏应用，创新性中等。",
+      "abstract": "INTRODUCTION: The N-terminal domain (NTD) of the Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2) Spike harbors a neutralizing antibody supersite and is a recurrent site of antigenic change. However, how sequence variability across pre- and post-vaccination immune landscapes reshapes antibody recognition remains incompletely characterized. METHODS: Clinical-genomic surveillance was combined with structural modeling and molecular dynamics to identify antigenically relevant NTD changes and probe their structural impact on the neutralizing antibody interface. SARS-CoV-2 profiles were compared across two periods reflecting contrasting immune contexts: a pre-vaccination period dominated by B.1.1.33 and a post-vaccination period dominated by the Omicron sublineage BQ.1.1. A local cohort (n=126) supported descriptive characterization. An expanded cohort integrating local and GISAID genomes with harmonized clinical metadata (n=534; 401 pre-vaccination, 133 post-vaccination) was used to prioritize candidate loci by their association with clinical severity. RESULTS: In adjusted models, age remained independently associated with severity in both periods, whereas sex did not. In the pre-vaccination cohort, Spike S in the NTD was associated with greater severity, without phylogenetic segregation by outcome. This association is exploratory and was used to prioritize an antigenically located NTD change for structural analysis. Q23K was regionally concentrated in Espirito Santo (57.4%) relative to other Brazilian states (2.7%) and international genomes (1.4%). In the post-vaccination cohort, an overlapping deletion event (ORF9b -29/N -33) was associated with non-severe disease, but should be interpreted cautiously given metadata heterogeneity, cohort structure, and the nature of the locus. However, in this period clinical outcome and sequencing source were partially confounded. A source-stratified sensitivity analysis restricted to GISAID-only samples showed the association persisted, but could not rule out a source- or pipeline-dependent indel-calling artifact, so the finding is reported as exploratory. Although Q23K itself did not persist, adjacent NTD changes (T19I/A27S/D24 -26) became recurrent post-vaccination, indicating remodeling of the same antigenic neighborhood rather than persistence of a single mutation. Structural modeling and molecular dynamics of the NTD-antibody 1 -87 complex supported reorganization of the modeled antibody-antigen interface, with redistribution of supersite contacts rather than loss of structural compatibility. DISCUSSION: These findings link NTD variability across immune contexts to structural reorganization of the modeled antibody-antigen interface and support integrating genomic surveillance with structural analysis to prioritize antigenically relevant changes for functional testing. 引言：严重急性呼吸综合征冠状病毒2型（SARS-CoV-2）刺突蛋白的N端结构域（NTD）含有一个中和抗体超位点，并且是抗原性变化的频繁发生位点。然而，在疫苗接种前和疫苗接种后的免疫背景下，序列变异如何重塑抗体识别仍未被完全表征。方法：将临床基因组监测与结构建模和分子动力学相结合，以识别抗原相关的NTD变化，并探究其对中和抗体界面的结构影响。比较了两个反映不同免疫背景时期的SARS-CoV-2谱系：一个以B.1.1.33为主的疫苗接种前时期，以及一个以Omicron亚谱系BQ.1.1为主的疫苗接种后时期。一个本地队列（n=126）支持描述性表征。一个整合了本地和GISAID基因组及统一临床元数据的扩展队列（n=534；401例疫苗接种前，133例疫苗接种后）用于根据与临床严重程度的关联来优先排序候选位点。结果：在调整模型中，年龄在两个时期均与严重程度独立相关，而性别则无此关联。在疫苗接种前队列中，NTD中的刺突蛋白S与更严重的疾病相关，但未观察到按结局的系统发育分离。该关联为探索性发现，用于优先选择位于抗原区域的NTD变化进行结构分析。Q23K在圣埃斯皮里图州（57.4%）相对于巴西其他州（2.7%）和国际基因组（1.4%）呈区域性集中。在疫苗接种后队列中，一个重叠缺失事件（ORF9b -29/N -33）与非严重疾病相关，但鉴于元数据异质性、队列结构及该位点的性质，应谨慎解读。然而，在该时期，临床结局和测序来源部分混杂。一项仅限于GISAID样本的来源分层敏感性分析显示该关联持续存在，但无法排除来源或流程依赖的插入缺失调用伪影，因此该发现被报告为探索性结果。尽管Q23K本身未持续存在，但邻近的NTD变化（T19I/A27S/D24 -26）在疫苗接种后变得频繁出现，表明同一抗原邻域发生重塑而非单一突变的持续存在。NTD-抗体1 -87复合物的结构建模和分子动力学支持所建模的抗体-抗原界面发生重组，超位点接触重新分布而非结构兼容性丧失。讨论：这些发现将不同免疫背景下的NTD变异与所建模的抗体-抗原界面的结构重组联系起来，并支持将基因组监测与结构分析相结合，以优先选择抗原相关变化进行功能测试。",
+      "date": "2026-09-29"
+    },
+    {
+      "id": "pubmed:42807424",
+      "title": "AI-assisted crop improvement: new design tools within established regulatory frameworks.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42807424/index.html",
+      "meta": [
+        "Keiper, Felicity; Sanches da Rocha, Mitscheli; Beeckman, Delphine Sylvie Anne; Atanassova, Ana",
+        "Frontiers in plant science",
+        "2026-09-29"
+      ],
+      "tags": [],
+      "summary": "该文探讨AI辅助作物改良的监管框架，涉及深度学习用于蛋白质序列/结构预测和蛋白设计，但核心是政策视角而非蛋白质结构计算方法创新，对象为作物非蛋白体系，算法可迁移性有限。",
+      "abstract": "The integration of Artificial intelligence (AI) into crop improvement offers the potential to enhance the precision, efficiency, and speed of development of new varieties. Accelerated genetic gain is promised by an increasing repertoire of AI tools for analyzing large and complex genetic and phenotypic datasets to discover and elucidate traits and predict functional variants that can be realized with the use of, inter alia, genome editing tools. This power, in combination with parallel AI tool development for optimization of genome editing processes, has generated optimism for a new era of smart breeding. This Perspective examines the regulatory implications of AI-assisted crop improvement, using illustrative examples where deep learning models have been integrated for protein sequence and structure prediction, and the optimization or design of proteins for improved or novel functionalities. The examples represent either end of a spectrum of current and emerging genome editing applications: (i) editing of endogenous genes to enhance beneficial alleles and optimize functionality; and (ii) the design and engineering of new (\"de novo\") protein domains for customized or new functionality. This range of outcomes can also be achieved without guidance from AI tools, albeit less efficiently, and their regulatory status is generally established. We consider relevant risks associated with these applications and contend that the regulatory status of the potential outcomes should not change, nor should they challenge the foundational applicability of existing regulatory frameworks and approaches for biotech crops. We also briefly discuss some current limitations of AI tools, and broader regulatory and governance considerations. 人工智能（AI）融入作物改良，有望提升新品种开发的精准度、效率和速度。日益增多的AI工具用于分析庞大而复杂的遗传和表型数据集，以发现和阐明性状、预测功能性变异，并可通过基因组编辑等工具实现，从而承诺加速遗传增益。这种能力，结合并行开发的用于优化基因组编辑过程的AI工具，为智能育种的新时代带来了乐观情绪。本视角文章探讨了AI辅助作物改良的监管影响，并以深度学习模型已整合用于蛋白质序列和结构预测，以及优化或设计蛋白质以增强或新功能的实例进行说明。这些实例代表了当前和新兴基因组编辑应用谱系的两端：（i）编辑内源基因以增强有利等位基因并优化功能；（ii）设计并工程化新的（“从头”）蛋白质结构域以实现定制或新功能。这些结果范围也可在没有AI工具指导的情况下实现，尽管效率较低，且其监管状态通常已确立。我们认为，与这些应用相关的风险应予以考虑，并主张潜在结果的监管状态不应改变，也不应挑战现有生物技术作物监管框架和方法的根本适用性。我们还简要讨论了AI工具当前的一些局限性，以及更广泛的监管和治理考量。",
+      "date": "2026-09-29"
+    },
+    {
+      "id": "pubmed:42808009",
+      "title": "ProNA3D: Distance-Based Analysis of Nucleic Acid-Containing Interfaces.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42808009/index.html",
+      "meta": [
+        "Genz, Luca R; Topf, Maya",
+        "Computational and structural biotechnology journal",
+        "2026-09-29"
+      ],
+      "tags": [],
+      "summary": "该文开发了ProNA3D工具，用于分析蛋白-核酸复合物界面，虽非纯蛋白质结构计算，但涉及结构预测结果评估和界面分析，方法可迁移至蛋白质体系。",
+      "abstract": "Biomolecular interactions are central to many essential cellular processes, but RNA-containing complexes remain challenging to resolve structurally, even as experimental methods and AI-based prediction have expanded structural coverage. Tools for the integrated analysis of interfaces within such complexes remain limited. We present ProNA3D, a tool that provides a unified platform for analyzing protein-nucleic acid and nucleic acid-only complexes, bridging the gap between structure prediction and functional interpretation. ProNA3D supports both experimental and computationally predicted structures, incorporating scoring metrics for AlphaFold 3 predictions. It also offers interactive 2-dimensional interface visualization and secondary-structure topology plots for RNA and DNA. An interface-based density zoning feature facilitates structure analysis of cryo-electron microscopy maps, allowing the evaluation of dynamic complexes in the context of heterogeneous density. We demonstrate ProNA3D on diverse complexes solved by x-ray crystallography or cryo-electron microscopy, as well as on computational models. In one example, ProNA3D identified a high-connectivity nucleotide with potential functional relevance in a trimeric complex of HIV-1 RNA and a human antibody. Applying ProNA3D to the entire Protein Data Bank revealed distinct interface connectivity trends and interaction modes characteristic of specific classes of nucleic acid-containing complexes (e.g., methyltransferase-DNA and CRISPR-associated). The method is available as both a UCSF ChimeraX plug-in for visualization and a command-line tool at https://gitlab.com/topf-lab/ProNA3D. In addition, the repository contains the results of the large-scale analyses. 生物分子相互作用是许多基本细胞过程的核心，但含有RNA的复合物在结构解析上仍具挑战性，即便实验方法和基于AI的预测已扩展了结构覆盖范围。用于此类复合物内界面整合分析的工具仍然有限。我们提出ProNA3D，一个提供统一平台用于分析蛋白质-核酸和仅核酸复合物的工具，弥合了结构预测与功能解释之间的差距。ProNA3D支持实验结构和计算预测结构，并整合了AlphaFold 3预测的评分指标。它还提供RNA和DNA的交互式二维界面可视化和二级结构拓扑图。基于界面的密度分区功能有助于冷冻电子显微镜图谱的结构分析，允许在异质密度背景下评估动态复合物。我们展示了ProNA3D在通过X射线晶体学或冷冻电子显微镜解析的多种复合物以及计算模型上的应用。在一个例子中，ProNA3D在HIV-1 RNA和人抗体的三聚体复合物中识别出一个具有潜在功能相关性的高连接性核苷酸。将ProNA3D应用于整个蛋白质数据银行，揭示了特定类别含核酸复合物（如甲基转移酶-DNA和CRISPR相关）特有的不同界面连接趋势和相互作用模式。该方法可作为UCSF ChimeraX插件用于可视化，也可作为命令行工具在https://gitlab.com/topf-lab/ProNA3D获取。此外，该存储库包含大规模分析的结果。",
+      "date": "2026-09-29"
+    },
+    {
+      "id": "pubmed:42808273",
+      "title": "Computational Insights Into the Conformational Dynamics of the Dengue Virus Capsid Protein.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42808273/index.html",
+      "meta": [
+        "Chaudhuri, Dwaipayan; Giri, Kalyan",
+        "Journal of molecular recognition : JMR",
+        "2026-09-29"
+      ],
+      "tags": [],
+      "summary": "该文利用分子动力学模拟和增强采样方法研究登革病毒衣壳蛋白疏水口袋的开闭构象转变机制，属于蛋白质构象动态的计算模拟研究，与本课题高度相关。",
+      "abstract": "The Dengue virus (DENV) capsid protein plays an important role in the viral lifecycle, including encapsidation of the genome, recruitment of lipid droplets, and assembly of particles. Capsid protein includes a hydrophobic pocket, which plays a central role in these functions and switches between closed and open conformations. This work studies the conformational change pathway of the capsid protein, specifically how the molecular mechanisms controlling the opening and closing of the hydrophobic pocket are controlled. By using a combination of different types of molecular dynamics simulations and enhanced sampling methods, we share insights on the structural rearrangements that play a crucial role in governing these transitions. Our results show that lipid binding modulates the accessibility of the hydrophobic pocket through environmental cues. In the open conformation, the pocket is involved in the interaction with lipids, stabilization of capsid dimers, and the promotion of immature virus assembly. Conversely, the closed conformation protects the hydrophobic pocket from the surrounding aqueous media as also preventing premature interactions in the solution phase that might disrupt protein stability. Such insights allow a deep understanding of capsid protein's conformational dynamics and represent a promising set of potent targets for antiviral strategies aiming to interfere with its functional transitions. 登革病毒（DENV）衣壳蛋白在病毒生命周期中扮演重要角色，包括基因组的包装、脂滴的募集以及颗粒的组装。衣壳蛋白包含一个疏水口袋，该口袋在这些功能中起核心作用，并在闭合与开放构象之间切换。本研究探讨衣壳蛋白的构象变化路径，特别是控制疏水口袋开放与闭合的分子机制。通过结合不同类型的分子动力学模拟和增强采样方法，我们揭示了在调控这些转变中起关键作用的结构重排。我们的结果表明，脂质结合通过环境线索调节疏水口袋的可及性。在开放构象中，口袋参与与脂质的相互作用、稳定衣壳二聚体，并促进未成熟病毒的组装。相反，闭合构象保护疏水口袋免受周围水介质的影响，同时防止溶液相中可能破坏蛋白质稳定性的过早相互作用。这些见解有助于深入理解衣壳蛋白的构象动力学，并为旨在干扰其功能转变的抗病毒策略提供了一系列有前景的靶点。",
+      "date": "2026-09-29"
+    },
+    {
+      "id": "pubmed:42808410",
+      "title": "alpha-Chaconine as a Potential Inhibitor of Mutant Phosphatidylinositol 3-Kinase Alpha in Breast Cancer Stem Cells: Insights from Structure Prediction and Molecular Dynamics.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42808410/index.html",
+      "meta": [
+        "Saputra, Bakti Wahyu; Ujiantari, Navista Sri Octa; Rattyananda, Badra Sanditya; Alwi, Ratna Surya; Setiawati, Agustina; Hermawan, Adam",
+        "Asian Pacific journal of cancer prevention : APJCP",
+        "2026-09-29"
+      ],
+      "tags": [],
+      "summary": "该文通过同源建模、分子对接和分子动力学模拟，评估alpha-Chaconine对突变PI3Kα的抑制潜力，属于蛋白质结构预测与MD模拟的工程化应用，方法常规但对象和问题明确。",
+      "abstract": "INTRODUCTION: Breast cancer stem cells (BCSCs) promote chemoresistance and metastasis by activating aberrant signaling pathways such as phosphatidylinositol 3-kinase/protein kinase B (PI3K/Akt). alpha-Chaconine (CHA) is a steroidal glycoalkaloid that has demonstrated cytotoxic and antiproliferative activity in various cancer models, possibly through modulation of the PI3K/Akt pathway. However, its direct interaction with PI3Kalpha and related alterations has not yet been elucidated. This study aimed to assess CHA as a potential BCSC-targeting agent, particularly as a PI3K inhibitor targeting both wild-type and mutant PI3Kalpha, using an in silico approach. METHODS: Mutation data were retrieved from cBioPortal and analyzed using MutPred2. SWISS-MODEL was used to generate homology models of the wild-type and mutant PI3Kalpha structures. Structural validation was performed using PROCHECK and ERRAT. Molecular docking was employed to evaluate the binding affinity of the PI3Kalpha-CHA complex. Molecular dynamics simulations were conducted to assess the stability of the interaction between CHA and PI3Kalpha. RESULTS: Three PIK3CA mutations were identified as pathogenic: E542K, E545K, and H1047R. Molecular docking revealed a strong binding affinity of alpelisib to both wild-type and mutant (E542K, E545K, and H1047R) forms of p110 alpha. CHA exhibited the lowest binding energy with the H1047R mutant, with a docking score of -9.93 kcal/mol. Molecular dynamics simulations demonstrated stable interactions of alpelisib with wild-type, E542K, and E545K mutants, whereas CHA showed stable interaction only with the H1047R mutant. MM-PBSA calculations confirmed the lowest binding free energies for alpelisib-wild-type p110alpha and CHA-H1047R complexes, with values of -29.21 kcal/mol and -25.88 kcal/mol, respectively. CONCLUSION: These findings provide a basis for further in vitro and in vivo studies to evaluate CHA as a selective PI3K inhibitor targeting the H1047R PIK3CA mutation in breast cancer stem cells. 引言：乳腺癌干细胞（BCSCs）通过激活异常信号通路（如磷脂酰肌醇3-激酶/蛋白激酶B（PI3K/Akt））促进化疗耐药和转移。α-查茄碱（CHA）是一种甾体糖生物碱，已在多种癌症模型中显示出细胞毒性和抗增殖活性，可能通过调节PI3K/Akt通路实现。然而，其与PI3Kα的直接相互作用及相关改变尚未阐明。本研究旨在通过计算机模拟方法评估CHA作为潜在的靶向BCSCs药物，特别是作为靶向野生型和突变型PI3Kα的PI3K抑制剂。方法：从cBioPortal获取突变数据，并使用MutPred2进行分析。使用SWISS-MODEL生成野生型和突变型PI3Kα结构的同源模型。使用PROCHECK和ERRAT进行结构验证。采用分子对接评估PI3Kα-CHA复合物的结合亲和力。进行分子动力学模拟以评估CHA与PI3Kα之间相互作用的稳定性。结果：三个PIK3CA突变被鉴定为致病性：E542K、E545K和H1047R。分子对接显示alpelisib对野生型和突变型（E542K、E545K和H1047R）p110α形式均具有强结合亲和力。CHA与H1047R突变体表现出最低结合能，对接评分为-9.93 kcal/mol。分子动力学模拟显示alpelisib与野生型、E542K和E545K突变体具有稳定相互作用，而CHA仅与H1047R突变体表现出稳定相互作用。MM-PBSA计算确认alpelisib-野生型p110α和CHA-H1047R复合物的结合自由能最低，分别为-29.21 kcal/mol和-25.88 kcal/mol。结论：这些发现为进一步的体外和体内研究提供了基础，以评估CHA作为靶向乳腺癌干细胞中H1047R PIK3CA突变的选择性PI3K抑制剂。",
+      "date": "2026-09-29"
+    },
+    {
+      "id": "pubmed:42808650",
+      "title": "Toward a minimal amino acid alphabet for protein design.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42808650/index.html",
+      "meta": [
+        "Pubal, Karel; Kushnir, Kseniia; Spiwok, Vojtech; Louzecka, Karolina; Setnicka, Vladimir; Lipovova, Petra",
+        "The FEBS journal",
+        "2026-09-29"
+      ],
+      "tags": [],
+      "summary": "该文通过计算蛋白设计和逆折叠模型（ProteinMPNN）探索最小氨基酸字母表对蛋白质结构设计的影响，核心聚焦蛋白质结构设计问题，并采用AI方法，与课题高度相关。",
+      "abstract": "While proteins are built from 20 canonical amino acids, it is interesting to explore whether proteins can be formed from significantly reduced amino acid alphabets. Our bioinformatics survey of UniProt (more than 250 m sequences) revealed that proteins composed of reduced amino acid alphabets are extremely rare among existing proteins. Next, we used computational protein design to design proteins 100 amino acid residues in length composed of all 1013 possible alphabets of 2-10 early amino acids (Ala, Asp, Glu, Gly, Ile, Leu, Pro, Ser, Thr, and Val). Our findings show that small amino acid alphabets preferred simple helices or helix bundles, while larger amino acid alphabets allowed for the design of more complex structures. We verified a protein composed of 8 amino acid types (Ala, Asp, Gly, Leu, Val, Ser, Thr, and Pro) finding it adopts the beta-sheet-rich fibronectin type III domain architecture. However, attempts to experimentally verify designs composed of 6 and 4 amino acid types were unsuccessful. Furthermore, we show by computational experiment with experimental validation that inverse folding models, namely ProteinMPNN(sol), can stabilize a designed protein within the same eight-amino-acid alphabet. Ultimately, our results show that globular proteins may have formed early in evolution using a minimal amino acid alphabet and that it is possible to design such proteins with interesting properties for biotechnology and synthetic biology. 虽然蛋白质由20种经典氨基酸构建而成，探索蛋白质是否能由显著简化的氨基酸字母表形成颇具趣味。我们对UniProt（超过2.5亿条序列）进行的生物信息学调查显示，在现有蛋白质中，由简化氨基酸字母表组成的蛋白质极为罕见。接下来，我们利用计算蛋白质设计方法，设计了长度为100个氨基酸残基的蛋白质，这些蛋白质由2-10种早期氨基酸（丙氨酸、天冬氨酸、谷氨酸、甘氨酸、异亮氨酸、亮氨酸、脯氨酸、丝氨酸、苏氨酸和缬氨酸）的所有1013种可能字母表组成。我们的发现表明，小氨基酸字母表偏好简单的螺旋或螺旋束结构，而较大的氨基酸字母表则允许设计更复杂的结构。我们验证了一种由8种氨基酸类型（丙氨酸、天冬氨酸、甘氨酸、亮氨酸、缬氨酸、丝氨酸、苏氨酸和脯氨酸）组成的蛋白质，发现其采用富含β-折叠的纤连蛋白III型结构域架构。然而，尝试实验验证由6种和4种氨基酸类型组成的设计未获成功。此外，我们通过计算实验并结合实验验证表明，逆折叠模型，即ProteinMPNN(sol)，可以在相同的八氨基酸字母表内稳定所设计的蛋白质。最终，我们的结果表明，球状蛋白质可能在进化早期使用最小氨基酸字母表形成，并且设计具有生物技术和合成生物学有趣特性的此类蛋白质是可能的。",
+      "date": "2026-09-29"
+    },
+    {
+      "id": "pubmed:42810331",
+      "title": "Reconstructing hidden GPCR conformations and ligand binding modes through integrative DEER modeling.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42810331/index.html",
+      "meta": [
+        "Belyaeva, Julia; Elgeti, Matthias",
+        "Structure (London, England : 1993)",
+        "2026-09-29"
+      ],
+      "tags": [],
+      "summary": "该文整合DEER实验数据、深度学习结构预测和分子动力学模拟，重建GPCR隐藏构象及配体结合模式，核心聚焦蛋白质构象采样与结构计算建模，方法创新且可迁移至其他蛋白体系。",
+      "abstract": "Binding of biased ligands to a G protein-coupled receptor (GPCR) stabilizes specific receptor conformations, leading to distinct physiological responses. Recently, intra-transducer bias has emerged as an additional mechanism that fine-tunes receptor function by stabilizing specific architectures of the receptor-transducer complex. This mechanism was demonstrated for the angiotensin receptor (AT1R) and its beta-arrestin-biased ligand TRV026, which selectively promotes beta-arrestin-1 engagement via the receptor C terminus while preventing interaction with the receptor core. Here, we present a computational protocol integrating double electron-electron resonance (DEER) data with deep learning-based structure prediction and molecular dynamics simulations to reconstruct all-atom models of TRV026-bound AT1R. Using a new clustering method, we identify key ligand-receptor interactions underlying high-affinity binding, localized receptor flexibility, and ligand bias. Our results provide a framework for validating neural-network predictions and physics-based simulations to capture rare signaling states of membrane proteins and identify target conformations for designing more functionally selective, efficacious therapeutics. 偏向性配体与G蛋白偶联受体（GPCR）的结合稳定了特定的受体构象，从而引发不同的生理反应。近期，转导子内偏向性（intra-transducer bias）作为一种额外机制出现，通过稳定受体-转导子复合物的特定结构来微调受体功能。该机制已在血管紧张素受体（AT1R）及其β-arrestin偏向性配体TRV026上得到证实，后者通过受体C末端选择性促进β-arrestin-1结合，同时阻止与受体核心的相互作用。在此，我们提出一种计算协议，整合双电子-电子共振（DEER）数据、基于深度学习的结构预测和分子动力学模拟，以重建TRV026结合的AT1R的全原子模型。利用一种新的聚类方法，我们识别了高亲和力结合、局部受体灵活性和配体偏向性背后的关键配体-受体相互作用。我们的结果为验证神经网络预测和基于物理的模拟提供了框架，以捕获膜蛋白的稀有信号状态，并识别用于设计更具功能选择性和高效治疗药物的靶向构象。",
+      "date": "2026-09-29"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.23.753608",
+      "title": "AtomWeaver: Multi-Component Flow Matching with a Structured Geometric Prior Facilitates Non-Canonical Peptide Design",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.23.753608/index.html",
+      "meta": [
+        "Kitaygorodsky A; Hostallero DE; Broom A; Layne E; Hwang S; Kanawaty AK; Babej T; Butterfoss GL; Fingerhuth M",
+        "bioRxiv",
+        "2026-09-28"
+      ],
+      "tags": [],
+      "summary": "该文提出AtomWeaver，利用多组件流匹配和结构化几何先验，在固定骨架条件下生成非规范氨基酸肽序列，实现可扩展的推理时残基词汇选择，属于蛋白质序列设计领域的创新方法。",
+      "abstract": "Fixed-backbone sequence discovery, or inverse folding , is a critical recurring task in the development of new polypeptide therapeutics. Once promising backbones are established for a target pocket, computational inverse folding methods greatly help accelerate generation of candidate sequences. Such methods are mature for the traditional case of limiting to the fixed twenty-letter canonical vocabulary; however, they cannot access the broader space of non-canonical amino acids (NCAAs). This design constraint is exacerbated for peptide binders, a fast-growing modality that readily incorporates NCAAs, though in practice non-canonical design frequently depends on laborious medicinal-chemistry campaigns. An extension of inverse folding to NCAAs is thus critical to accelerating design of novel therapeutic peptides. AtomWeaver uses a joint all-site, atom-level generative scheme that does not restrict side-chain categorical assignment by either predetermined or co-resolving residue identity. Conditioned only on a fixed peptide backbone and its target protein, its multi-component flow guides side-chain atoms as unlabeled points in R 3 from a nested shell prior to a variable-count final atom cloud. Identity is then read by matching each predicted cloud against a reference library of canonical and non-canonical templates. Since identity is decided only at decode time, the addressable vocabulary is a property of the library rather than of the trained weights: a new NCAA costs one reference structure and no retraining, and the model can select residues it was never prompted for and never saw in training. On a deep mutational scan of two peptide–target systems, AtomWeaver’s canonical readout shows high observed mean agreement with experimental values among the compared inverse-folding methods. In the mixed canonical–noncanonical setting that canonical-only baselines cannot support at all, it likewise retains ranking signal across both systems. AtomWeaver also displayed self-consistent designs on de novo binder backbones, with the highest interface confidence among compared methods. Notably, it reached these metrics while achieving broad empirical coverage of our 300-residue vocabulary, including four non-canonical types never visible in training. AtomWeaver thus serves canonical and non-canonical peptide design alike, while transforming residue vocabulary to an expandable inference-time choice. 固定骨架序列发现，或称逆折叠，是新型多肽治疗药物开发中的一个关键重复性任务。一旦为目标口袋确定了有前景的骨架，计算逆折叠方法便大大加速候选序列的生成。这些方法在传统上仅限于固定二十字母标准氨基酸词汇的情况下已相当成熟；然而，它们无法触及更广泛的非标准氨基酸（NCAAs）空间。这一设计限制对肽结合剂尤为突出，这是一种快速增长的模式，易于整合NCAAs，尽管在实践中非标准设计常依赖于繁琐的药物化学活动。因此，将逆折叠扩展到NCAAs对于加速新型治疗性肽的设计至关重要。AtomWeaver采用联合全位点、原子级生成方案，不通过预定或共解析残基身份限制侧链类别分配。仅以固定肽骨架及其靶蛋白为条件，其多组件流引导侧链原子作为R³中的未标记点，从嵌套壳先验到可变计数的最终原子云。随后，通过将每个预测云与标准和非标准模板的参考库匹配来读取身份。由于身份仅在解码时决定，可寻址词汇是库的属性而非训练权重的属性：一种新的NCAA只需一个参考结构且无需重新训练，模型能选择从未被提示过且训练中未见过的残基。在对两个肽-靶系统的深度突变扫描中，AtomWeaver的标准读取在比较的逆折叠方法中显示出与实验值的高观测平均一致性。在仅标准基线完全无法支持的混合标准-非标准设置中，它同样在两个系统中保留了排序信号。AtomWeaver还在从头设计的结合子骨架上展示了自洽设计，其界面置信度在比较方法中最高。值得注意的是，它在达到这些指标的同时，实现了对我们300残基词汇的广泛经验覆盖，包括四种训练中从未出现的非标准类型。因此，AtomWeaver同时服务于标准和非标准肽设计，同时将残基词汇转变为可扩展的推理时选择。",
+      "date": "2026-09-28"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.23.753693",
+      "title": "Coupling of oceanographic state to the dark proteome: a foundation for genome-informed marine productivity modeling",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.23.753693/index.html",
+      "meta": [
+        "Nelson DR; Plouviez M; Daakour S; Jaiswal A; Fu W; Amin SA; Salehi-Ashtiani K",
+        "bioRxiv",
+        "2026-09-28"
+      ],
+      "tags": [],
+      "summary": "该文用蛋白语言模型和AlphaFold 3分析海洋浮游植物蛋白组与环境耦合，虽涉及蛋白质结构预测，但核心是生态学建模而非蛋白质结构计算问题。",
+      "abstract": "<h4>ABSTRACT</h4> Phytoplankton drive ∼ 46% of global primary production, yet whether their protein repertoires encode ocean conditions—and whether reference databases capture the environmentally responsive fraction—is unknown. We used a protein language model to classify 447.7 million proteins from 2,357 samples and analyzed domain profiles for 231.7 million algal proteins across 2,044 samples. Under spatial block cross-validation, environment predicted individual domain abundances at R 2 up to 0.59, while domain profiles predicted sea surface temperature at R 2 = 0.38. The strongest coupling lay beyond annotated sequence space: 33,950 families clustered from 201 million Pfam-dark proteins coupled to environment 2.29-fold more strongly than Pfam domains. Cross-taxonomic selection, protein language modeling, and AlphaFold 3 predictions of 138 well-folded, InterPro-unannotated representatives support the Pfam-dark proteome as a biologically structured evolutionary compartment. Thus, the proteins most tightly coupled to ocean state are those least represented in reference databases. <h4>GRAPHICAL ABSTRACT</h4> Language modeling with AI for algal amino acid Sequence Representation (LA 4 SR) classified 447.7 million proteins from a 2,357-sample input collection; the 2,044-sample domain-analysis set contained 231.7 million proteins classified as algal. Protein domain composition and ocean state predict each other, and 33,950 Pfam-dark protein families show 2.29-fold stronger environmental coupling than Pfam domains. <h4>摘要</h4> 浮游植物驱动约46%的全球初级生产力，但其蛋白质组库是否编码海洋状况——以及参考数据库是否捕获环境响应部分——尚属未知。我们使用蛋白质语言模型对来自2,357个样本的4.477亿个蛋白质进行分类，并分析了来自2,044个样本的2.317亿个藻类蛋白质的结构域谱。在空间块交叉验证下，环境预测单个结构域丰度的R²最高达0.59，而结构域谱预测海表温度的R²为0.38。最强的耦合存在于注释序列空间之外：从2.01亿个Pfam-dark蛋白质中聚类出的33,950个家族，其与环境耦合强度比Pfam结构域高2.29倍。跨分类选择、蛋白质语言建模以及对138个折叠良好、InterPro未注释代表的AlphaFold 3预测，支持Pfam-dark蛋白质组作为生物学结构化的进化区室。因此，与海洋状态耦合最紧密的蛋白质，恰恰是参考数据库中代表性最差的那些。<h4>图形摘要</h4> 使用AI进行藻类氨基酸序列表示的语言建模（LA⁴SR）对来自2,357个样本输入集合的4.477亿个蛋白质进行了分类；2,044个样本的结构域分析集包含2.317亿个被分类为藻类的蛋白质。蛋白质结构域组成与海洋状态相互预测，且33,950个Pfam-dark蛋白质家族显示出比Pfam结构域强2.29倍的环境耦合。",
+      "date": "2026-09-28"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.24.754173",
+      "title": "RNASeek: A Cross-Phyla Generative Foundation Model for Multipurpose RNA Modeling and Reinforcement Learning-Based Design",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.24.754173/index.html",
+      "meta": [
+        "Shiyuan Chen; Neil R. Fernandes; Wei Vivian Li; Lili Wang; Zhenyu Jia; Joy S. Xiang",
+        "bioRxiv",
+        "2026-09-28"
+      ],
+      "tags": [],
+      "summary": "该文提出RNA生成式基础模型RNASeek，用于RNA序列建模与功能设计，虽对象为RNA而非蛋白质，但其预训练-预测-强化学习优化框架可迁移至蛋白质结构/序列设计，对课题有借鉴价值。",
+      "abstract": "RNA plays central roles in regulating information flow and provides a versatile substrate for engineering biological functions. While large language models (LLMs) have transformed natural language processing and protein design, a general framework connecting RNA foundation models to functional sequence design remains limited. Here, we present RNASeek, a 1.6-billion-parameter generative foundation model built on a DeepSeek architecture and trained on a cross-phyla transcriptomic corpus for RNA sequence representation and generation. Natural-language tokens enable flexible conditional prediction and sequence design using a unified backbone. RNASeek captures species-specific transcript features and intron–exon boundaries in a zero-shot setting. We then fine-tune RNASeek to predict ribozyme self-cleavage activity and viral mRNA stability, revealing interpretable sequence features associated with function, including ribozyme loop flexibility and stem stability, as well as AU-rich motifs associated with mRNA stability. We use these functional predictors as reward models and apply Group Relative Policy Optimization (GRPO) to update RNASeek’s generation policy toward sequences with desired properties. GRPO-guided generation produces faster-cleaving ribozymes and stability-enhancing 3′ UTRs while satisfying user-specified IUPAC constraints. Experimentally validated RNASeek-generated ribozymes achieve wild-type levels of activity, while RNASeek-generated 3′ UTR sequences exceed the performance of the training data and benchmarked AI-generated 3′ UTRs. Together, RNASeek establishes a unified pretrain–predict–optimize framework that connects learned RNA function to controllable de novo sequence design and provides a general strategy for engineering regulatory RNAs with desired properties. RNA在调控信息流动中发挥核心作用，并为工程化生物功能提供了多功能底物。尽管大型语言模型（LLMs）已变革自然语言处理和蛋白质设计，但将RNA基础模型与功能性序列设计相连接的一般框架仍较为有限。在此，我们提出RNASeek，一个基于DeepSeek架构构建的16亿参数生成式基础模型，并在跨门类转录组语料库上训练，用于RNA序列表示和生成。自然语言标记使得通过统一骨干网络实现灵活的条件预测和序列设计成为可能。RNASeek在零样本设置下捕获物种特异性转录特征和内含子-外显子边界。随后，我们对RNASeek进行微调，以预测核酶自切割活性和病毒mRNA稳定性，揭示与功能相关的可解释序列特征，包括核酶环灵活性和茎稳定性，以及与mRNA稳定性相关的AU富集基序。我们使用这些功能预测器作为奖励模型，并应用组相对策略优化（GRPO）更新RNASeek的生成策略，以朝向具有所需特性的序列。GRPO引导的生成产生更快切割的核酶和增强稳定性的3′ UTR，同时满足用户指定的IUPAC约束。实验验证的RNASeek生成核酶达到野生型水平的活性，而RNASeek生成的3′ UTR序列超过训练数据和基准测试的AI生成3′ UTR的性能。综上，RNASeek建立了一个统一的预训练-预测-优化框架，将学习的RNA功能与可控的从头序列设计相连接，并为工程化具有所需特性的调控RNA提供了一般策略。",
+      "date": "2026-09-28"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.25.754499",
+      "title": "Quantitative machine learning of protein interactions reveals the multiscale organization and molecular syntax of signaling networks",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.25.754499/index.html",
+      "meta": [
+        "Julia R. Rogers; Loren P. Cardani; Neel H. Shah; Mohammed AlQuraishi",
+        "bioRxiv",
+        "2026-09-28"
+      ],
+      "tags": [],
+      "summary": "该文用统计力学建模和神经网络预测蛋白-肽段结合亲和力，构建信号网络定量图谱，虽非直接结构预测/采样，但以蛋白相互作用结构机制为核心，方法可迁移至蛋白结构计算。",
+      "abstract": "Cells employ dense networks of transient protein–protein interactions mediated by modular peptide-binding domains and unstructured peptidic motifs for high-fidelity information processing. How these networks physically execute computations through protein interactions governed by complex intra- and intermolecular mechanisms remains indiscernible from current, sparse and non-quantitative, maps of the human interactome. Here, we introduce a quantitative statistical mechanical modeling (QSM) approach for machine learning domain–peptide affinities with experimental-level accuracy. Leveraging a new, principled algorithm for data harmonization and a biophysically informed neural network architecture, QSM learns to predict dissociation constants directly from amino acid sequences with calibrated confidence. We use QSM to construct the first quantitative drafts of human signaling networks and study these networks across three physical scales—recognition mechanisms of modular binding domains, combinatorial logic of multi-dentate proteins, and pathways inferred from de novo inference of protein interaction networks. We find that (i) modular domains, based on their binding preferences, selectivities, and strengths, fall into a limited number of biophysical equivalence groups, (ii) those domains, along with peptidic motifs, are “syntactically” combined within proteins to yield multivalent recognition mechanisms, and (iii) the organization of cellular function can be traced back to algorithmically detectable modules induced by domain-mediated interactions. In aggregate, these analyses instantiate a tractable roadmap towards a comprehensive, mechanistic, and simulatable articulation of the systems biology of signaling. 细胞利用由模块化肽结合结构域和非结构化肽基序介导的瞬时蛋白-蛋白相互作用密集网络，进行高保真信息处理。这些网络如何通过受复杂分子内和分子间机制调控的蛋白质相互作用物理地执行计算，目前仍无法从现有稀疏且非定量的人类互作组图谱中辨别。在此，我们引入一种定量统计力学建模（QSM）方法，用于以实验级精度机器学习结构域-肽亲和力。利用一种新的、有原则的数据协调算法和生物物理信息化的神经网络架构，QSM学习直接从氨基酸序列预测解离常数，并带有校准的置信度。我们使用QSM构建人类信号网络的首次定量草图，并在三个物理尺度上研究这些网络——模块化结合结构域的识别机制、多齿蛋白的组合逻辑，以及从头推断蛋白相互作用网络所推导的路径。我们发现：（i）模块化结构域，基于其结合偏好、选择性和强度，归入有限数量的生物物理等价组；（ii）这些结构域连同肽基序，在蛋白质内以“句法”方式组合，产生多价识别机制；（iii）细胞功能的组织可追溯至由结构域介导相互作用诱导的算法可检测模块。总体而言，这些分析为实现信号系统生物学的全面、机制性和可模拟化阐述提供了一条可行的路线图。",
+      "date": "2026-09-28"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.25.754509",
+      "title": "Discriminating betacoronavirus receptor usage across subgenera using protein structure prediction and molecular dynamics",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.25.754509/index.html",
+      "meta": [
+        "Shruthi S. Garimella; Guadalupe Lauro; Vardhan Peddamallu; Parth R. Bandivadekar; Anugraha Thyagatur; Roland Faller; Surl-Hee Ahn; Priya S. Shah",
+        "bioRxiv",
+        "2026-09-28"
+      ],
+      "tags": [],
+      "summary": "该文利用AlphaFold结构预测与分子动力学模拟，区分不同亚属β冠状病毒与ACE2受体的结合能力，属于蛋白质结构预测与动态模拟在病毒-受体相互作用中的计算应用，方法创新且直接相关。",
+      "abstract": "A critical step in the emergence of a virus is the ability of the viral protein to bind a host receptor and mediate cell entry. For many coronaviruses, this interaction occurs between the Spike S1 subunit and the human ACE2 receptor. Whether this binding interface can be computationally distinguished across unstudied viruses without experimentally resolved protein structures remains an open question. We predicted how 28 emerging coronaviruses may bind to human ACE2 using structural predictions, static interaction prediction programs, and molecular dynamics simulations. To screen the emerging coronaviruses, we predicted a library of S1 structures using AlphaFold. These predicted structures were then used to model the S1-ACE2 interaction with AlphaFold, ClusPro, and HADDOCK. We used known ACE2-binding sarbecoviruses as positive controls and coronaviruses that bind other receptors as negative controls to threshold predicted binding. Contact analysis quantified the predicted binding and revealed that these static interaction prediction methods varied in discriminative power. Less restrained static predictions separated binders from non-binders, whereas heavily restrained docking did not, potentially forcing an interaction where none should exist. This analysis highlighted an emerging coronavirus, Zhejiang2013, as a potential ACE2 binder. We used molecular dynamics simulations to further assess the static predictions and model the interaction over time. Overall, our results indicate that Zhejiang2013 exhibits dynamic interaction patterns consistent with ACE2 binding. Given that two ACE2-binding coronaviruses have caused global pandemics within the past two decades, identifying potential ACE2 binders is critical for early warning and pandemic preparedness. 病毒出现的一个关键步骤是病毒蛋白结合宿主受体并介导细胞进入的能力。对于许多冠状病毒而言，这种相互作用发生在Spike S1亚基与人类ACE2受体之间。在没有实验解析蛋白质结构的情况下，这一结合界面能否通过计算方法在未研究的病毒中区分，仍是一个未解问题。我们利用结构预测、静态相互作用预测程序和分子动力学模拟，预测了28种新兴冠状病毒可能如何与人类ACE2结合。为筛选这些新兴冠状病毒，我们使用AlphaFold预测了一个S1结构库。这些预测结构随后用于通过AlphaFold、ClusPro和HADDOCK模拟S1-ACE2相互作用。我们以已知的ACE2结合型sarbecoviruses作为阳性对照，以结合其他受体的冠状病毒作为阴性对照，来设定预测结合阈值。接触分析量化了预测结合，并揭示这些静态相互作用预测方法在区分能力上存在差异。约束较少的静态预测能区分结合者与非结合者，而高度约束的对接则未能做到，可能强制产生了本不存在的相互作用。该分析突出了一种新兴冠状病毒Zhejiang2013，作为潜在的ACE2结合者。我们使用分子动力学模拟进一步评估静态预测，并随时间模拟相互作用。总体而言，我们的结果表明，Zhejiang2013表现出与ACE2结合一致的动态相互作用模式。鉴于两种ACE2结合型冠状病毒在过去二十年内引发了全球大流行，识别潜在的ACE2结合者对于早期预警和大流行防范至关重要。",
+      "date": "2026-09-28"
+    },
+    {
+      "id": "biorxiv:10.64898/2026.09.27.754145",
+      "title": "De novo design of flexible protein interactions with GuideFlip",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/biorxiv/10.64898_2026.09.27.754145/index.html",
+      "meta": [
+        "Kai Yi; Qingchao Chen; Dongqi Zhang; Pengfei Tian; Jane L. Wagstaff; Stephen H. McLaughlin; Christopher G. Tate; Kiarash Jamali; Sjors H. W. Scheres",
+        "bioRxiv",
+        "2026-09-28"
+      ],
+      "tags": [],
+      "summary": "该文提出GuideFlip，通过引导式离散流匹配协同设计蛋白质结构与序列，针对柔性靶标（如无序蛋白）实现从头设计蛋白结合剂，并实验验证了高命中率，属于蛋白质结构计算设计的前沿方法创新。",
+      "abstract": "De novo design of protein binders requires a target structure. However, for flexible targets, such as intrinsically disordered proteins, this structure does not exist until the binder has stabilized the interaction. Such targets are therefore difficult for methods that separate structure generation from sequence design. We introduce GuideFlip, which co-designs structure and sequence through guided discrete flow matching: binder residues are assigned progressively while the complex is re-predicted at each step, allowing the evolving interface to affect the design process. GuideFlip reduces the hydrophobic bias of direct AlphaFold optimization and improves in silico success rates over existing approaches. We release a database of binder candidates for 177 human disordered proteins. Experimentally, we obtain de novo binders to the carboxy terminus of α -synuclein and the disordered amino terminus of RBX1 with hit rates of 13.5% and 41.7%, respectively, and we confirm the epitopes of selected binders by NMR and mutagenesis. Applying GuideFlip to flexibility on the binder side, we design a nanobody that binds the agonist-bound β 1 -adrenergic receptor in its active state, but not the receptor in its inactive state, with a 75% hit rate and a cryo-EM structure confirming the design. GuideFlip enables protein design where bound structures emerge only upon binding. 蛋白结合物的从头设计需要目标结构。然而，对于柔性目标，例如固有无序蛋白，这种结构在结合物稳定相互作用之前并不存在。因此，这类目标对于将结构生成与序列设计分离的方法而言是困难的。我们引入了GuideFlip，它通过引导式离散流匹配协同设计结构和序列：结合物残基逐步分配，同时每一步重新预测复合物，使不断演化的界面影响设计过程。GuideFlip减少了直接AlphaFold优化的疏水偏好，并提高了现有方法的计算机模拟成功率。我们发布了一个包含177个人类无序蛋白结合物候选物的数据库。实验上，我们获得了针对α-突触核蛋白羧基末端和RBX1无序氨基末端的从头结合物，命中率分别为13.5%和41.7%，并通过核磁共振和突变实验确认了选定结合物的表位。将GuideFlip应用于结合物侧的柔性，我们设计了一种纳米抗体，它能结合激动剂结合的β1-肾上腺素能受体处于活性状态，但不结合非活性状态的受体，命中率为75%，冷冻电镜结构确认了该设计。GuideFlip使得在结合结构仅于结合时出现的蛋白质设计成为可能。",
+      "date": "2026-09-28"
+    },
+    {
+      "id": "chemrxiv:10.26434/chemrxiv.15009523/v1",
+      "title": "Target-Specific De Novo Drug Design via Fine-Tuned Language Models and Molecular Docking, Molecular Dynamics Simulation Validation",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/chemrxiv/10.26434_chemrxiv.15009523_v1/index.html",
+      "meta": [
+        "Phuong Nguyen",
+        "ChemRxiv",
+        "2026-09-28"
+      ],
+      "tags": [],
+      "summary": "该文用微调语言模型从蛋白序列生成配体SELFIES，并结合分子对接和MD验证，虽以配体设计为核心，但涉及蛋白-配体结构相互作用计算，算法框架对蛋白结构相关计算有借鉴意义。",
+      "abstract": "De novo drug design remains an expensive and low-yield process, particularly for targets with limited bioactivity data. In this study, we fine-tuned the Qwen 2.5 0.5B model to treat ligand design as a sequence-to-sequence task from protein amino acid sequences to molecular SELFIES representations. A curated and balanced dataset derived from ChEMBL was used to reduce target-level data imbalance, followed by systematic evaluation using beam search and stochastic sampling. The fine-tuned model demonstrated strong ligand generation capability across multiple targets, achieving high validity, uniqueness, and novelty. Comparative analysis revealed that beam search favored conservative exploitation of learned chemical space, whereas sampling enabled broader exploration and higher novelty. Molecular docking, molecular dynamics simulations, and MM/PBSA binding free-energy calculations for representative targets showed that generated compounds formed stable complexes with energetically favorable binding profiles comparable to known inhibitors. Notably, target-specific fine-tuning under extreme low data conditions, enabled through molecular representation augmentation, successfully guided ligand generation toward relevant structural frameworks. Our work suggests that small language models can be effectively fine-tuned for structure-aware, target-specific ligand design, even under limited bioactivity information. 从头设计药物仍然是一个昂贵且低产出的过程，尤其是对于生物活性数据有限的目标靶点。在本研究中，我们对Qwen 2.5 0.5B模型进行了微调，将配体设计视为从蛋白质氨基酸序列到分子SELFIES表示的序列到序列任务。使用源自ChEMBL的精选且平衡的数据集来减少靶点层面的数据不平衡，随后通过束搜索和随机采样进行系统评估。微调后的模型在多个靶点上展现出强大的配体生成能力，实现了高有效性、独特性和新颖性。比较分析显示，束搜索倾向于对已学习化学空间进行保守性利用，而采样则能够实现更广泛的探索和更高的新颖性。针对代表性靶点的分子对接、分子动力学模拟以及MM/PBSA结合自由能计算表明，生成的化合物形成了稳定的复合物，其结合特征在能量上有利，与已知抑制剂相当。值得注意的是，在极端低数据条件下，通过分子表示增强实现的靶点特异性微调，成功引导了配体生成朝向相关的结构框架。我们的工作表明，即使生物活性信息有限，小型语言模型也能被有效微调用于结构感知的、靶点特异性的配体设计。",
+      "date": "2026-09-28"
+    },
+    {
+      "id": "pubmed:42802164",
+      "title": "Atomic resolution structure of human papillomavirus bound to heparin.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42802164/index.html",
+      "meta": [
+        "Langley, Caroline H; Goetschius, Daniel J; Antolinez, Santiago; Orji, Ebere Precious; Bator, Carol M; Brendle, Sarah A; Christensen, Neil D; Hadden-Perilla, Jodi A; Hafenstein, Susan L",
+        "Nature communications",
+        "2026-09-28"
+      ],
+      "tags": [],
+      "summary": "该文通过冷冻电镜解析HPV与肝素复合物的原子分辨率结构，并辅以分子动力学模拟预测氢键，虽以病毒蛋白结构为核心且涉及MD方法，但主要贡献在结构解析而非蛋白质结构计算建模的方法创新。",
+      "abstract": "Human papillomavirus (HPV) is a significant health burden and leading cause of virus-induced cancers. The mechanisms of HPV receptor binding and host entry are not completely understood, although it is known that heparan sulfate proteoglycans (HSPGs) mediate entry. HPV16 quasivirus, composed of L1 and L2 capsid proteins with a packaged cottontail rabbit papillomavirus genome was incubated with heparin. The complex was vitrified, and data were collected for cryoEM single particle analysis. Subparticles were extracted and hexavalent and pentavalent capsomers were refined separately. Here we present the resulting 1.9 A resolution structure, with heparin visualized around the capsomer at the icosahedral fivefold vertex. A model of the asymmetric unit was built unambiguously into the atomic resolution cryoEM map. Hydrogen bonds are predicted between L1 N-terminal regions, which are supported by molecular dynamics. The heparin binding site was identified, along with local L1 conformational changes and global flexibility changes. These changes induced by heparin binding likely reflect the structure of HPV during early stages of entry and provide a framework for future HPV biochemical, genetic, and biophysical studies. 人乳头瘤病毒（HPV）是一种重大的健康负担，也是病毒诱导癌症的主要原因。尽管已知硫酸乙酰肝素蛋白聚糖（HSPGs）介导病毒进入，但HPV受体结合和宿主进入的机制尚未完全明了。将含有L1和L2衣壳蛋白并包装有棉尾兔乳头瘤病毒基因组的HPV16准病毒与肝素孵育。复合物经玻璃化处理，并收集数据用于冷冻电镜单颗粒分析。提取亚颗粒，并分别精修六价和五价衣壳粒。本文展示了由此得到的1.9 Å分辨率结构，其中肝素在二十面体五重顶点处的衣壳粒周围可见。不对称单元模型被明确构建到原子分辨率的冷冻电镜图谱中。预测了L1 N端区域之间的氢键，这些氢键得到分子动力学支持。鉴定了肝素结合位点，以及局部L1构象变化和整体灵活性变化。这些由肝素结合诱导的变化可能反映了HPV进入早期阶段的结构，并为未来HPV生化、遗传和生物物理研究提供了框架。",
+      "date": "2026-09-28"
+    },
+    {
+      "id": "pubmed:42802474",
+      "title": "Thermodynamics and Kinetics of Dimerization-Coupled Fold Switching in the Chemokine XCL1.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42802474/index.html",
+      "meta": [
+        "Seifi, Bahman; de Souza, Greg; Wallin, Stefan",
+        "Proteins",
+        "2026-09-28"
+      ],
+      "tags": [],
+      "summary": "该文用粗粒化结构模型研究XCL1蛋白二聚化耦合的折叠转换热力学与动力学，属于蛋白质构象采样与结构计算问题，方法为物理模拟，与课题高度相关。",
+      "abstract": "Metamorphic proteins challenge the classical view of protein folding by reversibly interconverting between two distinct, stable native structures. XCL1 (lymphotactin) is a prototypical example, transitioning between a monomeric mixed- alpha/beta chemokine fold and an alternate all- beta fold that forms a stable dimer. Here we develop and apply a coarse-grained, structure-based model to investigate how temperature and electrostatic screening control this fold switch. By tuning the relative interaction strength of native contacts in the two folds, we show that the model qualitatively reproduces the experimentally observed temperature dependence of XCL1 fold populations, including an increasing alternate-fold population with increasing temperature. We introduce a sequence-dependent treatment of salt effects, which reveals a strong sensitivity of the fold equilibrium to salt concentration and yields a temperature-salt phase diagram with a broad coexistence region. Focusing on conditions near coexistence, kinetic simulations of the chemokine-to-alternate fold transition show that productive dimerization tends to occur when both chains are at least partially unfolded, and that formation of the final alternate dimer may proceed via an intermediate state characterized by a partially formed dimer interface. Finally, we use the model to examine how charge patterning in ancestral variants of XCL1 modulates the population balance between the two folds. 变形蛋白通过两种不同且稳定的天然结构之间的可逆互变，挑战了蛋白质折叠的经典观点。XCL1（淋巴细胞趋化因子）是一个典型例子，它在单体混合α/β趋化因子折叠与形成稳定二聚体的替代全β折叠之间转换。在此，我们开发并应用一种粗粒化、基于结构的模型，以研究温度和静电屏蔽如何控制这一折叠开关。通过调节两种折叠中天然接触的相对相互作用强度，我们表明该模型定性地重现了实验观察到的XCL1折叠群体随温度的变化，包括随温度升高替代折叠群体增加的现象。我们引入了一种序列依赖的盐效应处理方法，揭示了折叠平衡对盐浓度的强烈敏感性，并生成了一个具有宽共存区域的温度-盐相图。聚焦于接近共存的条件，趋化因子到替代折叠转变的动力学模拟显示，当两条链至少部分解折叠时，生产性二聚化往往发生，且最终替代二聚体的形成可能通过一个以部分形成二聚体界面为特征的中间状态进行。最后，我们利用该模型检验XCL1祖先变体中电荷模式如何调节两种折叠之间的群体平衡。",
+      "date": "2026-09-28"
+    },
+    {
+      "id": "pubmed:42803367",
+      "title": "Bifunctional architecture enables substrate catalysis and channeling in Paracoccus TMAO demethylase.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42803367/index.html",
+      "meta": [
+        "Thach, Trung; Dhanabalan, KanagaVijayan; Maurya, Shiwangi; Han-Hallett, Yu; Quan, Senwei; Allison, Jane; Ramanathan, Gurunath; Subramanian, Ramaswamy",
+        "eLife",
+        "2026-09-28"
+      ],
+      "tags": [],
+      "summary": "该文通过冷冻电镜结构和靶向分子动力学揭示TDM酶底物通道化机制，虽以酶结构为核心但侧重实验表征，计算模拟仅辅助验证，方法贡献较弱。",
+      "abstract": "Substrate channeling enhances efficiency and prevents toxicity by directing unstable intermediates between active sites. Trimethylamine N-oxide demethylase (TDM) degrades trimethylamine N-oxide (TMAO) to dimethylamine and formaldehyde (HCHO), but the fate of HCHO has remained unclear. We report cryo-EM structures of TDM in apo, substrate-, and product-bound states that reveal a previously unknown channeling pathway. Combined structural, biochemical, and target molecular dynamics analyses show that HCHO is generated in a catalytic core and guided through a tunnel to a remote tetrahydrofolate (THF)-binding site, where it forms methylene-THF. Thus, TDM emerges as a bifunctional enzyme that unites TMAO demethylation with one-carbon transfer, providing a mechanistic explanation for its role in metabolic efficiency and detoxification. 底物通道化通过将不稳定中间体引导至活性位点之间，提高了效率并防止毒性。三甲胺N-氧化物脱甲基酶（TDM）将三甲胺N-氧化物（TMAO）降解为二甲胺和甲醛（HCHO），但HCHO的去向此前尚不清楚。我们报道了TDM在脱辅基、底物结合和产物结合状态下的冷冻电镜结构，揭示了一条此前未知的通道化途径。结合结构、生化和靶向分子动力学分析表明，HCHO在催化核心中生成，并通过隧道引导至远端四氢叶酸（THF）结合位点，在那里形成亚甲基-THF。因此，TDM显现为一种双功能酶，将TMAO脱甲基与一碳转移相结合，为其在代谢效率和解毒中的作用提供了机制解释。",
+      "date": "2026-09-28"
+    },
+    {
+      "id": "pubmed:42804478",
+      "title": "Attribution assignment for deep-generative sequence models enables interpretability analysis using positive-only data.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42804478/index.html",
+      "meta": [
+        "Frank, Robert; Widrich, Michael; Akbar, Rahmad; Klambauer, Gunter; Sandve, Geir Kjetil; Robert, Philippe A; Greiff, Victor",
+        "PLoS computational biology",
+        "2026-09-28"
+      ],
+      "tags": [],
+      "summary": "该文提出针对自回归生成序列模型的可解释性归因方法GAMA，虽以抗体序列为对象且不直接涉及蛋白质结构计算，但其生成模型归因框架可迁移至蛋白质序列设计中的结构相关分析。",
+      "abstract": "Generative machine learning models offer a powerful framework for therapeutic design, by efficiently exploring large spaces of biological sequences enriched for desirable properties. Unlike supervised learning methods, which require both positive and negative labeled data, generative models such as LSTMs can be trained solely on positively labeled sequences, for example, high-affinity antibodies. This is particularly advantageous in biological settings where negative data are scarce, unreliable, or biologically ill-defined. However, the lack of attribution methods for generative models has hindered the ability to extract interpretable biological insights from such models. To address this gap, we developed Generative Attribution Metric Analysis (GAMA), an attribution method for autoregressive generative models based on Integrated Gradients. We assessed GAMA using synthetic datasets with known ground truths to characterize its statistical behavior and validate its ability to recover biologically relevant features. We further demonstrated the utility of GAMA by applying it to experimental antibody-antigen binding data. GAMA enables model interpretability and the validation of generative sequence design strategies without the need for negative training data. 生成式机器学习模型为治疗设计提供了一个强大的框架，能够高效探索富含理想特性的广阔生物序列空间。与需要正负标记数据的监督学习方法不同，诸如LSTM之类的生成模型可以仅使用正标记序列（例如高亲和力抗体）进行训练。这在负数据稀缺、不可靠或生物学定义不清的生物环境中尤为有利。然而，生成模型缺乏归因方法，阻碍了从这些模型中提取可解释的生物学见解。为弥补这一空白，我们开发了生成归因度量分析（Generative Attribution Metric Analysis, GAMA），这是一种基于集成梯度（Integrated Gradients）的自回归生成模型归因方法。我们使用具有已知真实标签的合成数据集评估了GAMA，以刻画其统计行为并验证其恢复生物学相关特征的能力。我们进一步通过将GAMA应用于实验性抗体-抗原结合数据，展示了其实用性。GAMA使得模型可解释性及生成序列设计策略的验证成为可能，而无需负训练数据。",
+      "date": "2026-09-28"
+    },
+    {
+      "id": "pubmed:42799598",
+      "title": "Aspects of plant intelligence (ii).",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42799598/index.html",
+      "meta": [
+        "Trewavas, Anthony",
+        "Plant signaling & behavior",
+        "2026-09-27"
+      ],
+      "tags": [],
+      "summary": "该文讨论植物智能的哲学与生物学定义，仅提及钙信号通过蛋白结构转导，未涉及蛋白质结构计算建模或AI/物理模拟方法，与本课题关系微弱。",
+      "abstract": "Plant intelligence was earlier described as adaptively variable behavior during the lifetime of the individual plant (Trewavas 2003). This general definition for animals and plants (biological intelligence) is now justified from generic terms and emphasis on adaptive behavior. Plant intelligence can also be defined from dictionary definitions of intelligence. Artificial intelligence has been indicated as adaptive behavior. Prominent psychological opinion now indicates that human intelligence is adaptive: IQ does not measure human intelligence. The uniformity of intelligence definitions negates views that plant intelligence is controversial. It is suggested that the early stages of transduction through calcium are interpreted through complex protein structures attached to mobile lipid rafts. Cell signaling acting as a cognitive process is investigated and evidence supports a relationship. Plants are biologically purposeful; they express goal-directed behavior throughout their life cycle and act as biologically purposeful agents in the wilderness. The demise of the Modern Synthesis of Evolution is indicated and could be replaced by one that correctly emphasizes biological purpose. Two sensory mechanisms are described for gravitropism as an illustration of the fail-safe mechanisms needed for all forms of behavior because true wilderness is often environmentally uncertain. Definitions of learning and memory are suggested and five kinds of plant biological memories are described. 植物智能早前被描述为个体植物在其生命周期中表现出的适应性可变行为（Trewavas 2003）。这一对动物和植物的通用定义（生物智能）现基于通用术语及对适应性行为的强调而得到合理阐述。植物智能也可依据词典中对智能的定义来界定。人工智能已被指为适应性行为。当前重要的心理学观点表明，人类智能是适应性的：智商并不衡量人类智能。智能定义的统一性否定了植物智能具有争议性的观点。有人提出，通过钙进行的信号转导早期阶段是由附着于流动脂筏上的复杂蛋白质结构所介导的。细胞信号传导作为认知过程被研究，证据支持二者之间存在关联。植物具有生物目的性；它们在整个生命周期中表现出目标导向行为，并在荒野中作为具有生物目的性的主体行动。现代综合进化论的衰落已被指出，可能被一个正确强调生物目的性的理论所取代。本文描述了向地性的两种感觉机制，作为所有行为所需故障安全机制的例证，因为真正的荒野环境往往具有不确定性。文中提出了学习与记忆的定义，并描述了五种植物生物记忆类型。",
+      "date": "2026-09-27"
+    },
+    {
+      "id": "pubmed:42799835",
+      "title": "Granaticin biosynthesis and engineering: mechanistic understanding, production bottlenecks, and computational opportunities.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42799835/index.html",
+      "meta": [
+        "Chen, Chang; Zhao, Bingyu; Zhu, Qiaolei; Wang, Xiaodi; Ji, Nairu; Zhu, Yunping",
+        "World journal of microbiology & biotechnology",
+        "2026-09-27"
+      ],
+      "tags": [],
+      "summary": "该综述聚焦天然产物granaticin的生物合成与工程改造，虽提及蛋白结构预测等计算机会，但核心对象非蛋白质结构计算，方法贡献较弱，仅边缘相关。",
+      "abstract": "Granaticin, as a member of the benzoisochromanequinone (BIQ) family, exhibits a range of biological activities, including antibacterial, antitumor, and antibiofilm effects. Notably, this compound displays a bright blue color under alkaline conditions, highlighting its potential application as a functional pigment.Although its biosynthetic gene cluster has been identified and partially characterized, efficient production of granaticin remains significantly constrained by an incomplete understanding of pathway regulation, enzymatic specificity, and metabolic flux distribution. Despite these advances, strategies for improving granaticin yield still rely largely on empirical approaches and lack predictive capability within complex biosynthetic systems. With the advancement of computational approaches-such as protein structure prediction, metabolic flux analysis, and data-driven optimization of fermentation processes-granaticin research is shifting from empirical optimization toward system-level and predictive engineering.This review systematically summarizes recent progress in granaticin research, with particular emphasis on biosynthetic mechanisms, pathway regulation, metabolic engineering strategies, tailoring enzyme functions, heterologous expression systems, and emerging computational approaches. In addition, the limitations of current engineering strategies and the major challenges associated with achieving scalable and controllable production are critically discussed. Granaticin作为苯并异色烷醌（BIQ）家族的一员，展现出多种生物活性，包括抗菌、抗肿瘤和抗生物膜作用。值得注意的是，该化合物在碱性条件下呈现亮蓝色，凸显其作为功能性色素的潜在应用价值。尽管其生物合成基因簇已被鉴定并部分表征，但granaticin的高效生产仍受到对途径调控、酶特异性和代谢通量分布理解不足的显著制约。尽管取得了这些进展，提高granaticin产量的策略仍主要依赖经验方法，在复杂生物合成系统中缺乏预测能力。随着计算方法（如蛋白质结构预测、代谢通量分析和发酵过程的数据驱动优化）的进步，granaticin研究正从经验优化转向系统级和预测性工程。本综述系统总结了granaticin研究的最新进展，特别强调生物合成机制、途径调控、代谢工程策略、修饰酶功能、异源表达系统以及新兴计算方法。此外，本文还批判性地讨论了当前工程策略的局限性以及实现可扩展和可控生产所面临的主要挑战。",
+      "date": "2026-09-27"
+    },
+    {
+      "id": "pubmed:42800887",
+      "title": "Role of ligand-dependent conformational modulation of TNPO3 HEAT-repeat solenoid in nuclear import.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42800887/index.html",
+      "meta": [
+        "Chatterjee, Sonali; Maity, Atanu; Bahadur, Ranjit Prasad",
+        "Biophysical journal",
+        "2026-09-27"
+      ],
+      "tags": [],
+      "summary": "该文通过微秒级分子动力学模拟和伞形采样自由能计算，系统研究了配体（SR货物、Ran核苷酸状态及磷酸化）如何调控TNPO3 HEAT重复螺线管的构象景观，揭示了核转运周期中配体依赖的构象通路，属于蛋白质构象采样的核心计算研究，与课题高度相关。",
+      "abstract": "Transportin-3 (TNPO3) is a HEAT-repeat nuclear transport receptor that mediates nuclear import of serine/arginine-rich (SR) proteins and interacts with Ran GTPase during nuclear transport cycle. Although structures of several TNPO3 complexes are available, how ligand binding modulates the conformational landscape of the receptor remains poorly understood. Here, we combine microsecond-scale molecular dynamics simulations with umbrella sampling free-energy calculations to investigate how SR cargo binding, Ran nucleotide state and cargo phosphorylation regulate TNPO3 conformational dynamics. Equilibrium simulations show that apo TNPO3 samples a broad conformational ensemble, while ligand binding substantially reshapes the conformational landscape. SR cargo protein stabilizes a partially extended solenoid architecture and introduces an energetic penalty to prevent further opening. Ran binding favours compact conformations of TNPO3 scaffold. Among these states, Ran-GTP produces the strongest confined conformational ensemble, while Ran-GDP allows broader structural variability. State-resolved structural analysis indicates that these energetic differences arise from ligand-dependent modulation of interface packing and hydrogen-bond networks. The modulation propagates across the HEAT-repeat array and alters global solenoid curvature. Reduction in phosphorylation of SR cargo weakens binding and increases conformational heterogeneity, highlighting the role of phosphorylation in stabilizing the TNPO3-cargo interface. These findings support a ligand-dependent conformational pathway, in which TNPO3 shifts from a flexible apo ensemble to an SR-bound extended state. This is followed by a structurally compatible intermediate shared with Ran-GTP-bound form before reaching compact Ran-GTP-stabilized state associated with cargo release. Together, these results provide a quantitative framework for understanding how ligand binding reshapes TNPO3 conformations during nuclear transport cycle. Transportin-3 (TNPO3) 是一种 HEAT 重复核转运受体，介导富含丝氨酸/精氨酸 (SR) 蛋白的核输入，并在核转运循环中与 Ran GTPase 相互作用。尽管已有若干 TNPO3 复合物的结构可用，但配体结合如何调节该受体的构象景观仍知之甚少。在此，我们结合微秒级分子动力学 (molecular dynamics) 模拟与伞形采样自由能计算，研究 SR 货物结合、Ran 核苷酸状态及货物磷酸化如何调控 TNPO3 构象动力学。平衡模拟显示，无配体 (apo) 的 TNPO3 采样广泛的构象系综，而配体结合显著重塑构象景观。SR 货物蛋白稳定部分延伸的螺线管架构，并引入能量惩罚以防止进一步打开。Ran 结合有利于 TNPO3 支架的紧凑构象。在这些状态中，Ran-GTP 产生最强限制的构象系综，而 Ran-GDP 允许更广泛的结构变异性。状态分辨的结构分析表明，这些能量差异源于配体依赖的界面堆积和氢键网络调节。该调节跨 HEAT 重复阵列传播，并改变整体螺线管曲率。SR 货物磷酸化减少会削弱结合并增加构象异质性，突显磷酸化在稳定 TNPO3-货物界面中的作用。这些发现支持一种配体依赖的构象途径，其中 TNPO3 从灵活的 apo 系综转变为 SR 结合的延伸状态，随后经历与 Ran-GTP 结合形式共享的结构兼容中间态，最终达到与货物释放相关的紧凑 Ran-GTP 稳定状态。综合这些结果，为理解配体结合如何在核转运循环中重塑 TNPO3 构象提供了定量框架。",
+      "date": "2026-09-27"
+    },
+    {
+      "id": "pubmed:42801907",
+      "title": "Staged computational prioritization of lanmodulin binding-site designs for dysprosium-focused rare-earth separation.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42801907/index.html",
+      "meta": [
+        "Rahatul Ashakin, M D; Mahata, Avik; Khan, Raiyan; Andriotakis, Gregory; Provencher, Brian; Stuetzle, Christopher; Roosan, Don",
+        "Journal of molecular graphics & modelling",
+        "2026-09-27"
+      ],
+      "tags": [],
+      "summary": "该文开发了一个结合ProteinMPNN/LigandMPNN采样、Rosetta筛选和OpenMM几何筛查的分阶段计算流程，用于优先排序镧调素结合位点设计以实现稀土分离，虽对象涉及金属离子但核心是蛋白质结构计算设计，方法有创新但验证有限。",
+      "abstract": "Rare-earth separations are energy- and solvent-intensive, motivating aqueous protein-based alternatives. We developed a staged computational workflow combining four experimental lanmodulin templates, constrained ProteinMPNN and LigandMPNN sampling, score-only Rosetta triage, and an exploratory OpenMM geometry screen to prioritize a candidate for future reduced-cluster multireference characterization. The residue-role inventory comprised 70 category memberships representing 66 unique positions because four positions belonged to two roles. Fixed-seed sequence generation and subsequent triage yielded three finalist models. Three 100 ps OpenMM replicas were evaluated for each candidate-metal combination, yielding 45 simulations. Audit of the retained systems showed that amber19-all.xml and amber19/opc3.xml were loaded, but no explicit bulk-solvent molecules or counterions were present. The retained system XMLs and execution code contained a standard NonbondedForce and no verified C4/r4 implementation; the calculations therefore cannot be described as verified 12-6-4 simulations. Every replica produced a 3.2 A any-oxygen occupancy fraction of 1.000 using oxygen atoms present in the retained topology, making this descriptor non-discriminating. The Hans pocket and AM1/Mex descriptors each averaged four target-metal sites, whereas the Hans interface descriptor averaged 14 sites, including 10 on fixed chains B-D. Cross-topology distance comparisons were therefore not site matched. Within each topology, Al(III) and Fe(III) produced shorter model-dependent distances than Dy(III), Nd(III), and Y(III), but these observations are not binding free energies or evidence of selectivity. A dimensionless Composite Quality Index, CQI = 0.7L + 0.3G, ranked the Hans chain-A pocket model highest at 0.802 and was used solely for candidate prioritization. The workflow therefore identifies a model-prioritized candidate for further computation and experiment. 稀土分离是能源和溶剂密集型的，这促使了基于水性蛋白质的替代方案的发展。我们开发了一个分阶段的计算工作流程，结合了四种实验性兰莫杜林模板、受限的ProteinMPNN和LigandMPNN采样、仅基于评分的Rosetta筛选，以及探索性的OpenMM几何筛查，以优先选择候选物用于未来的减少簇多参考表征。残基角色清单包含70个类别成员资格，代表66个独特位置，因为四个位置属于两个角色。固定种子序列生成及后续筛选产生了三个决赛模型。对每个候选金属组合评估了三个100皮秒的OpenMM副本，共进行了45次模拟。对保留系统的审计显示，加载了amber19-all.xml和amber19/opc3.xml，但不存在显式的体相溶剂分子或抗衡离子。保留的系统XML和执行代码包含标准的NonbondedForce，且没有经过验证的C4/r4实现；因此，这些计算不能描述为经过验证的12-6-4模拟。每个副本使用保留拓扑中存在的氧原子，产生了3.2埃任意氧占据分数为1.000，使得该描述符不具有区分性。Hans口袋和AM1/Mex描述符各平均了四个目标金属位点，而Hans界面描述符平均了14个位点，包括固定链B-D上的10个。因此，跨拓扑距离比较未进行位点匹配。在每个拓扑内，Al(III)和Fe(III)产生的模型依赖距离比Dy(III)、Nd(III)和Y(III)短，但这些观察结果并非结合自由能或选择性证据。一个无量纲的综合质量指数，CQI = 0.7L + 0.3G，将Hans链A口袋模型排名最高，为0.802，并仅用于候选物优先排序。因此，该工作流程确定了一个模型优先的候选物，用于进一步的计算和实验。",
+      "date": "2026-09-27"
+    },
+    {
+      "id": "pubmed:42801963",
+      "title": "Cytochrome P450 enzymes in the biosynthesis of bioactive diterpenoids from traditional chinese medicinal plants.",
+      "subtitle": "",
+      "url": "/Daily-Paper-Agent-protein-structure-ai/papers/pubmed/42801963/index.html",
+      "meta": [
+        "Zhang, Zheng; Li, Wei; Li, Hong",
+        "Fitoterapia",
+        "2026-09-27"
+      ],
+      "tags": [],
+      "summary": "综述P450酶在中药二萜生物合成中的催化机制，并展望AI辅助蛋白设计，但核心是生物合成而非蛋白质结构计算建模，仅部分涉及结构预测和设计。",
+      "abstract": "Cytochrome P450 enzymes play key catalytic roles in the biosynthesis of diterpenoid natural products from traditional Chinese medicinal plants. Operating through a conserved heme-thiolate catalytic cycle and Compound I-driven oxidation, these enzymes mediate most post-cyclization oxidative tailoring of diterpene scaffolds, including hydroxylation, epoxidation, carbon-skeleton rearrangement, and lactone formation. This review surveys the biosynthetic pathways of seven representative diterpenoids, namely tanshinones, paclitaxel, triptolide, andrographolide, ginkgolides, forskolin, and oridonin, in which sequential site-selective hydroxylation and multifunctional catalysis are recurring features, whereas carbon-skeleton remodeling proceeds through pathway-specific modes, including Wagner-Meerwein methyl migration in triptolide, NIH-shift alkyl migration and dual C-C bond cleavage in ginkgolides, and oxidative oxetane-ring formation in paclitaxel, with lactone ring construction observed in the andrographolide, triptolide, and ginkgolide pathways. Atomic-level studies of representative enzymes CYP76AH1, CYP725A4, TOT1, and TmCYP1 further clarify how substrate recognition, regioselectivity, and catalytic trajectories are governed within the active site, providing a basis for rational enzyme engineering. Finally, the prospects of artificial intelligence-assisted protein design for engineering P450 catalytic elements are discussed, encompassing structure prediction, protein language model-based mutational prescreening, and de novo catalytic-pocket design, along with their potential to facilitate heterologous biosynthesis and the sustainable production of bioactive diterpenoids from medicinal plants. 细胞色素P450酶在传统药用植物二萜类天然产物的生物合成中发挥关键催化作用。通过保守的血红素-硫醇盐催化循环和化合物I驱动的氧化机制，这些酶介导了二萜骨架环化后的大部分氧化修饰，包括羟基化、环氧化、碳骨架重排和内酯形成。本综述考察了七种代表性二萜类化合物的生物合成途径，即丹参酮 (tanshinones)、紫杉醇 (paclitaxel)、雷公藤甲素 (triptolide)、穿心莲内酯 (andrographolide)、银杏内酯 (ginkgolides)、毛喉素 (forskolin) 和冬凌草甲素 (oridonin)，其中连续位点选择性羟基化和多功能催化是反复出现的特征，而碳骨架重塑则通过途径特异性模式进行，包括雷公藤甲素中的Wagner-Meerwein甲基迁移、银杏内酯中的NIH-移位烷基迁移和双C-C键断裂，以及紫杉醇中的氧化性氧杂环丁烷环形成，同时在穿心莲内酯、雷公藤甲素和银杏内酯途径中观察到内酯环构建。对代表性酶CYP76AH1、CYP725A4、TOT1和TmCYP1的原子水平研究进一步阐明了底物识别、区域选择性和催化轨迹如何在活性位点内被调控，为理性酶工程提供了基础。最后，讨论了人工智能辅助蛋白质设计用于工程化P450催化元件的前景，涵盖结构预测、基于蛋白质语言模型的突变预筛选和从头催化口袋设计，及其促进药用植物生物活性二萜类化合物异源生物合成和可持续生产的潜力。",
+      "date": "2026-09-27"
+    },
+    {
       "id": "pubmed:42792956",
       "title": "Cross-Model Uncertainty-Aware Minimal Editing of Cis-Regulatory Elements for Cell-Type-Selective Design.",
       "subtitle": "",

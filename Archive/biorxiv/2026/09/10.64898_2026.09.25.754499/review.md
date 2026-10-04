@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors introduce a quantitative statistical mechanical modeling (QSM) approach that uses machine learning to predict domain–peptide dissociation constants from amino acid sequences with experimental-level accuracy and calibrated confidence. They use QSM to construct quantitative drafts of human signaling networks and report findings at three scales: biophysical equivalence groups among modular domains, multivalent recognition mechanisms from syntactic combination of domains and motifs, and network modules induced by domain-mediated interactions. They propose this as a roadmap toward mechanistic and simulatable systems biology of signaling.
+- **Visible evidence base** Abstract text only; no methodological details, performance metrics, validation datasets, or network analyses are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, supplementary information, code availability, benchmark datasets, and any quantitative results supporting the stated claims
+
+## Reviewer
+- **Overall assessment** The abstract presents an ambitious and potentially impactful framework for quantitative modeling of domain–peptide interactions and their use in reconstructing signaling networks. The conceptual scope is broad and the proposed three-scale analysis is intellectually appealing. However, the abstract provides no quantitative evidence, no methodological specifics, and no validation details. As such, the core claims of experimental-level accuracy, calibrated confidence, and the three biological findings are currently unverifiable from the supplied material. The work may be of high interest if the technical claims hold, but the evidence base is insufficient to assess technical soundness or establish the case.
+- **Who would be interested in the results, and why** Researchers in systems biology, computational biology, and signaling network modeling would be interested in a method that promises quantitative affinity prediction and network-scale inference. Those studying modular protein interaction domains, peptide recognition, and multivalent signaling mechanisms would also find the proposed equivalence groups and syntactic rules relevant. The broader machine learning for biology community may be interested in the biophysically informed architecture and data harmonization algorithm.
+- **Major strengths** The conceptual framing is clear and ambitious, spanning from molecular recognition to network-level organization. The proposed integration of statistical mechanical modeling with machine learning is a potentially novel direction. The three-scale analysis provides a coherent narrative that could yield broadly useful biological insights if the underlying predictions are accurate.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** QSM learns to predict dissociation constants directly from amino acid sequences with experimental-level accuracy and calibrated confidence
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims experimental-level accuracy and calibrated confidence but provides no quantitative metrics, no benchmark comparisons, no error analysis, and no description of the training or test data. No evidence is shown that the predictions match experimental measurements within any stated tolerance.
+  - **Why it matters** The entire downstream analysis, including the three biological findings, depends on the reliability of the predicted affinities. Without demonstrated accuracy, the network drafts and derived conclusions cannot be trusted.
+  - **Resolution test** Provide quantitative performance metrics on held-out experimental datasets, including correlation coefficients, error distributions, and calibration plots, with comparisons to existing methods.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and methodological transparency
+  - **Claim pointer** A new, principled algorithm for data harmonization and a biophysically informed neural network architecture
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No details are given on the data harmonization algorithm, the neural network architecture, the biophysical constraints incorporated, or the training procedure. The abstract does not specify what data were used, how they were curated, or how the model was validated.
+  - **Why it matters** Reproducibility is a core requirement for computational methods. Without methodological specifics, other groups cannot implement or evaluate the approach, and reviewers cannot assess whether the design is sound.
+  - **Resolution test** Provide a full methods section with architectural diagrams, hyperparameters, training details, data sources, and code availability.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Support for biological conclusions
+  - **Claim pointer** (i) modular domains fall into a limited number of biophysical equivalence groups, (ii) domains and motifs are syntactically combined to yield multivalent recognition mechanisms, and (iii) cellular function organization can be traced to algorithmically detectable modules
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The three findings are stated as results but no supporting data, statistical tests, or examples are provided. It is unclear how equivalence groups were defined, what criteria were used for syntactic combination, or how network modules were detected and validated.
+  - **Why it matters** These are the main biological contributions of the work. Without evidence, they remain assertions rather than established findings, and their significance cannot be evaluated.
+  - **Resolution test** Provide figures and tables showing the equivalence groups with supporting statistics, examples of multivalent mechanisms with experimental or structural validation, and network module analyses with significance assessments.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity and precision
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "quantitative drafts" is vague and could be misinterpreted. It is unclear whether these are complete networks, partial maps, or predictions with confidence intervals.
+  - **Required correction** Define what a "quantitative draft" means in terms of coverage, confidence, and completeness.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scope justification
+  - **Affected element** Claim of "first quantitative drafts"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The claim of being "first" is not substantiated with any comparison to prior quantitative interaction maps or existing affinity prediction efforts.
+  - **Required correction** Provide a brief comparison to prior work to justify the novelty claim.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract structure
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract is dense and uses specialized terms such as "multi-dentate proteins" and "de novo inference" without brief explanations, which may limit accessibility.
+  - **Required correction** Add brief clarifications or rephrase for a broader scientific audience.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative validation, methodological detail, and supporting evidence for the biological findings means the case is not currently established.
+- **Assessment against Nature-style criteria** Originality is potentially high, as the integration of statistical mechanical modeling with machine learning for network-scale affinity prediction appears novel. Scientific importance is potentially high given the relevance to signaling systems biology. Interdisciplinary readership is plausible, spanning machine learning, biophysics, and cell biology. Technical soundness is not assessable from the abstract alone, and the lack of evidence is a major barrier. Readability for nonspecialists is moderate but could be improved with clearer definitions.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising, but the abstract does not provide sufficient technical or biological evidence to support the claims. A supportive posture would require full manuscript review with demonstrated accuracy, methodological transparency, and validated biological findings.
+
+## Risk / unsupported claims
+- Experimental-level accuracy of QSM predictions is unsupported by any quantitative data.
+- Calibrated confidence of predictions is unsupported.
+- The three biological findings (equivalence groups, syntactic combination, network modules) are unsupported assertions without evidence.
+- The claim of "first quantitative drafts" of human signaling networks is unsubstantiated.
+- The roadmap toward mechanistic and simulatable systems biology is a forward-looking statement, not a demonstrated outcome.

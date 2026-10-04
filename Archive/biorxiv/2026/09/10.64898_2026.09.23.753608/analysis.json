@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.09.23.753608",
+  "title": "AtomWeaver: Multi-Component Flow Matching with a Structured Geometric Prior Facilitates Non-Canonical Peptide Design",
+  "authors": "Kitaygorodsky A; Hostallero DE; Broom A; Layne E; Hwang S; Kanawaty AK; Babej T; Butterfoss GL; Fingerhuth M",
+  "journal": "bioRxiv",
+  "published_date": "2026-09-28",
+  "window": {
+    "start": "2026-09-27",
+    "end": "2026-10-03"
+  },
+  "score": 9,
+  "one_liner_zh": "该文提出AtomWeaver，利用多组件流匹配和结构化几何先验，在固定骨架条件下生成非规范氨基酸肽序列，实现可扩展的推理时残基词汇选择，属于蛋白质序列设计领域的创新方法。",
+  "abstract": "Fixed-backbone sequence discovery, or inverse folding , is a critical recurring task in the development of new polypeptide therapeutics. Once promising backbones are established for a target pocket, computational inverse folding methods greatly help accelerate generation of candidate sequences. Such methods are mature for the traditional case of limiting to the fixed twenty-letter canonical vocabulary; however, they cannot access the broader space of non-canonical amino acids (NCAAs). This design constraint is exacerbated for peptide binders, a fast-growing modality that readily incorporates NCAAs, though in practice non-canonical design frequently depends on laborious medicinal-chemistry campaigns. An extension of inverse folding to NCAAs is thus critical to accelerating design of novel therapeutic peptides. AtomWeaver uses a joint all-site, atom-level generative scheme that does not restrict side-chain categorical assignment by either predetermined or co-resolving residue identity. Conditioned only on a fixed peptide backbone and its target protein, its multi-component flow guides side-chain atoms as unlabeled points in R 3 from a nested shell prior to a variable-count final atom cloud. Identity is then read by matching each predicted cloud against a reference library of canonical and non-canonical templates. Since identity is decided only at decode time, the addressable vocabulary is a property of the library rather than of the trained weights: a new NCAA costs one reference structure and no retraining, and the model can select residues it was never prompted for and never saw in training. On a deep mutational scan of two peptide–target systems, AtomWeaver’s canonical readout shows high observed mean agreement with experimental values among the compared inverse-folding methods. In the mixed canonical–noncanonical setting that canonical-only baselines cannot support at all, it likewise retains ranking signal across both systems. AtomWeaver also displayed self-consistent designs on de novo binder backbones, with the highest interface confidence among compared methods. Notably, it reached these metrics while achieving broad empirical coverage of our 300-residue vocabulary, including four non-canonical types never visible in training. AtomWeaver thus serves canonical and non-canonical peptide design alike, while transforming residue vocabulary to an expandable inference-time choice.",
+  "abstract_zh": "固定骨架序列发现，或称逆折叠，是新型多肽治疗药物开发中的一个关键重复性任务。一旦为目标口袋确定了有前景的骨架，计算逆折叠方法便大大加速候选序列的生成。这些方法在传统上仅限于固定二十字母标准氨基酸词汇的情况下已相当成熟；然而，它们无法触及更广泛的非标准氨基酸（NCAAs）空间。这一设计限制对肽结合剂尤为突出，这是一种快速增长的模式，易于整合NCAAs，尽管在实践中非标准设计常依赖于繁琐的药物化学活动。因此，将逆折叠扩展到NCAAs对于加速新型治疗性肽的设计至关重要。AtomWeaver采用联合全位点、原子级生成方案，不通过预定或共解析残基身份限制侧链类别分配。仅以固定肽骨架及其靶蛋白为条件，其多组件流引导侧链原子作为R³中的未标记点，从嵌套壳先验到可变计数的最终原子云。随后，通过将每个预测云与标准和非标准模板的参考库匹配来读取身份。由于身份仅在解码时决定，可寻址词汇是库的属性而非训练权重的属性：一种新的NCAA只需一个参考结构且无需重新训练，模型能选择从未被提示过且训练中未见过的残基。在对两个肽-靶系统的深度突变扫描中，AtomWeaver的标准读取在比较的逆折叠方法中显示出与实验值的高观测平均一致性。在仅标准基线完全无法支持的混合标准-非标准设置中，它同样在两个系统中保留了排序信号。AtomWeaver还在从头设计的结合子骨架上展示了自洽设计，其界面置信度在比较方法中最高。值得注意的是，它在达到这些指标的同时，实现了对我们300残基词汇的广泛经验覆盖，包括四种训练中从未出现的非标准类型。因此，AtomWeaver同时服务于标准和非标准肽设计，同时将残基词汇转变为可扩展的推理时选择。",
+  "has_fulltext": true,
+  "fulltext_source": "europepmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.23.753608",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.09.23.753608",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.09.23.753608/index.html"
+}

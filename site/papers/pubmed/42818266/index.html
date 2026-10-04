@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agentic campaign control for high-throughput de novo binder design. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Agentic campaign control for high-throughput de novo binder design.</h1>
+      <div class="meta">Jeon, Minkyu; Song, Jinyeop; Kim, Jina; Zhong, Ellen D</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv : the preprint server for biology</span>
+        · 2026-10-01
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42818266/">原文</a>
+      </div>
+      <p class="one-liner">该文提出T-REX智能体框架，通过LLM代理编排多种蛋白生成模型和结构评估器，实现高通量从头设计蛋白结合物，核心聚焦蛋白质结构生成与设计，方法创新且直接相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Progress in artificial intelligence has produced a rapidly growing ecosystem of methods for de novo protein design. With access to many specialized and often complementary tools, how does one use them effectively, especially with a finite compute budget? Here, we introduce Target-adaptive Rescue-Explore-eXploit (T-REX) , an agentic protein binder design framework that orchestrates multiple state-of-the-art protein generative models and structure evaluators. Over the course of a design campaign, T-REX leverages large language model (LLM) agents to reason over accumulating outcomes and decide whether to rescue promising candidates, explore alternative settings, or exploit productive routes, while a deterministic controller validates and schedules proposed actions. Across seven targets, we find that T-REX adaptively allocates its compute across methods in a target-dependent manner and achieves the highest throughput of structurally distinct hits compared to all baselines. These results suggest that adaptive orchestration can complement increasingly powerful protein design models, and we openly release T-REX to support compute-efficient binder design workflows.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">人工智能的进步催生了一个快速增长的蛋白质从头设计方法生态系统。面对众多专门且往往互补的工具，如何有效利用它们，尤其是在有限的计算预算下？在此，我们引入目标自适应救援-探索-利用（T-REX），一种智能体蛋白质结合剂设计框架，它协调多种最先进的蛋白质生成模型和结构评估器。在设计活动过程中，T-REX利用大型语言模型（LLM）智能体对累积结果进行推理，并决定是救援有希望的候选方案、探索替代设置，还是利用高效路径，同时一个确定性控制器验证并调度提议的行动。在七个目标上，我们发现T-REX以目标依赖的方式跨方法自适应分配计算资源，并相比所有基线实现了最高的结构不同命中率。这些结果表明，自适应编排可以补充日益强大的蛋白质设计模型，我们公开发布T-REX以支持计算高效的结合剂设计工作流程。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Agentic campaign control for high-throughput de novo binder design</li>
+<li><strong>作者</strong>：Jeon, Minkyu; Song, Jinyeop; Kim, Jina; Zhong, Ellen D</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：bioRxiv : the preprint server for biology</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（preprint）</li>
+<li><strong>领域</strong>：蛋白质设计 × AI 方法（生成模型 + LLM 智能体编排）</li>
+<li><strong>关键词</strong>：de novo binder design, agentic orchestration, LLM agents, generative models, structure evaluators, compute-efficient design</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.09.22.753604</li>
+<li><strong>代码</strong>：作者声明公开释放 T-REX（具体链接未提供）</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-10-01</li>
+<li><strong>方向定位</strong>：本文处于「蛋白质结构相关计算研究 × AI 方法」中「结构/序列设计」子方向，聚焦于多模型协同编排（orchestration）而非单一模型改进，属于方法学/工作流层面的贡献，与 AlphaFold 等结构预测工具互补而非竞争。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>T-REX 通过 LLM 智能体在多个蛋白质生成模型与结构评估器之间进行自适应决策（rescue/explore/exploit），在有限算力预算下实现跨七个靶点的最高结构新颖 hit 吞吐量。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：面对日益增多的蛋白质设计工具（生成模型 + 结构评估器），如何在有限算力预算下自动、高效地编排这些工具以最大化设计产出（尤其是结构新颖的 hit）？</li>
+<li><strong>为什么重要</strong>：单一模型各有优劣，但手动组合多个工具需要大量专家经验和试错；算力有限时，如何分配资源成为实际瓶颈。</li>
+<li><strong>现有方法不足</strong>：现有工作多聚焦于改进单一生成模型或评估器，缺乏系统性的多工具编排策略；固定流水线（pipeline）无法根据中间结果动态调整资源分配。</li>
+<li><strong>精确研究问题</strong>：Can an LLM-driven agentic controller adaptively allocate compute across diverse generative models and evaluators to achieve higher throughput of structurally distinct hits than any fixed orchestration baseline?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「仅本文框架」，基于摘要推断，未经外部核验）</em>
+- <strong>阶段一：单模型设计</strong>——早期 de novo binder 设计依赖单一生成模型（如 RFdiffusion 类方法），优点：简单直接；局限：模型能力有限，hit 率低。
+- <strong>阶段二：生成 + 评估流水线</strong>——引入结构评估器（如 AlphaFold 或能量函数）对生成候选进行筛选，优点：提高 hit 精度；局限：流水线固定，无法根据中间结果调整。
+- <strong>阶段三：多模型集成</strong>——组合多个生成模型与评估器，优点：覆盖更广序列/结构空间；局限：资源分配静态，缺乏目标适应性。
+- <strong>本文位置</strong>：提出 T-REX，将 LLM 智能体作为「编排层」，在生成-评估循环中动态决策，实现目标自适应的算力分配，代表从「静态流水线」向「agentic campaign control」的转变。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工具碎片化</td>
+<td>多种生成模型与评估器并存，但缺乏统一调度</td>
+<td>AI 方法快速涌现，各自为战</td>
+<td>摘要： "rapidly growing ecosystem of methods"</td>
+</tr>
+<tr>
+<td>算力预算有限</td>
+<td>无法对所有方法穷举尝试</td>
+<td>计算资源是硬约束</td>
+<td>摘要： "finite compute budget"</td>
+</tr>
+<tr>
+<td>静态编排低效</td>
+<td>固定流水线无法根据中间结果调整</td>
+<td>缺乏反馈机制</td>
+<td>摘要： T-REX "reason over accumulating outcomes"</td>
+</tr>
+<tr>
+<td>目标依赖性</td>
+<td>不同靶点适合不同方法组合</td>
+<td>靶点结构/序列特征差异大</td>
+<td>摘要： "adaptively allocates its compute across methods in a target-dependent manner"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：构建一个 agentic 框架 T-REX，包含 LLM 智能体（负责决策）和确定性控制器（负责验证与调度），在生成-评估循环中执行 rescue/explore/exploit 三种动作。</li>
+<li><strong>核心洞察</strong>：设计工作流不应是静态的，而应像「科学实验」一样根据累积结果动态调整策略；LLM 的推理能力可以充当「策略制定者」，而确定性控制器保证动作的可行性与安全性。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：在计算生物学中，模型性能的提升不仅来自更好的单一模型，也可能来自更聪明的「模型使用策略」；LLM 作为编排层可以低成本地桥接多个专用工具，这一思路可迁移到其他多步骤计算任务（如 MD 模拟 + 对接 + 结构预测的组合）。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：目标蛋白结构（靶点）、算力预算、可用工具集（多个生成模型 + 结构评估器）</li>
+<li><strong>输出</strong>：结构新颖的 binder 候选集合（hits）</li>
+<li><strong>模块</strong>：
+  1. LLM 智能体（决策模块）：根据历史结果推理，选择 rescue/explore/exploit
+  2. 确定性控制器（执行模块）：验证智能体提议的动作，调度具体工具
+  3. 生成模型池：多个 SOTA 蛋白质生成模型
+  4. 结构评估器池：多个结构评估工具</li>
+<li><strong>训练</strong>：未提及显式训练；LLM 可能为预训练模型，控制器为规则驱动</li>
+<li><strong>工具</strong>：LLM（具体型号未提供）、生成模型与评估器（具体名称未提供）</li>
+<li><strong>反馈回路</strong>：生成候选 → 评估 → 结果反馈给 LLM 智能体 → 智能体调整下一步动作</li>
+<li><strong>假设</strong>：LLM 能基于累积结果做出优于固定策略的决策；确定性控制器能保证动作合法性</li>
+<li><strong>流程</strong>：初始化 → LLM 根据当前状态选择动作（rescue 失败但接近的候选 / explore 新设置 / exploit 成功路线）→ 控制器验证并调度工具 → 生成与评估 → 更新状态 → 循环直至算力耗尽</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM 智能体</td>
+<td>基于累积结果做策略决策</td>
+<td>动态适应靶点与中间结果</td>
+<td>输入：历史结果+状态；输出：动作提议</td>
+<td>摘要： "reason over accumulating outcomes"</td>
+<td>预期：退化为固定策略，失去目标适应性 [预期效应]</td>
+</tr>
+<tr>
+<td>确定性控制器</td>
+<td>验证与调度动作</td>
+<td>防止 LLM 幻觉导致非法操作</td>
+<td>输入：动作提议；输出：可执行计划</td>
+<td>摘要： "validates and schedules proposed actions"</td>
+<td>预期：系统稳定性下降，可能执行无效操作 [预期效应]</td>
+</tr>
+<tr>
+<td>生成模型池</td>
+<td>产生候选 binder</td>
+<td>提供序列/结构多样性</td>
+<td>输入：靶点+设置；输出：候选</td>
+<td>摘要： "multiple state-of-the-art protein generative models"</td>
+<td>预期：多样性下降，hit 率降低 [预期效应]</td>
+</tr>
+<tr>
+<td>结构评估器池</td>
+<td>筛选候选</td>
+<td>识别高概率 hit</td>
+<td>输入：候选；输出：评分</td>
+<td>摘要： "structure evaluators"</td>
+<td>预期：无法区分好坏候选 [预期效应]</td>
+</tr>
+<tr>
+<td>Rescue/Explore/Exploit 机制</td>
+<td>定义动作空间</td>
+<td>结构化策略选择</td>
+<td>输入：状态；输出：动作类型</td>
+<td>摘要： "rescue promising candidates, explore alternative settings, or exploit productive routes"</td>
+<td>预期：策略空间受限，但可解释性增强 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（摘要未提供具体公式或符号定义）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：7 个靶点（具体靶点信息未提供）</li>
+<li><strong>规模</strong>：未提供（候选数量、算力预算等未说明）</li>
+<li><strong>指标</strong>：结构新颖 hit 的吞吐量（throughput of structurally distinct hits）</li>
+<li><strong>基线</strong>：多个基线（具体基线方法未提供）</li>
+<li><strong>评测协议</strong>：未提供（如何定义 hit、如何判定结构新颖等未说明）</li>
+<li><strong>oracle 输入</strong>：未提供（是否使用实验验证或仅计算评估未说明）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>跨 7 靶点设计</td>
+<td>T-REX 能自适应分配算力</td>
+<td>对比所有基线</td>
+<td>T-REX 达到最高 hit 吞吐量</td>
+<td>自适应编排优于固定策略</td>
+<td>无法证明 T-REX 在任意靶点/预算下最优</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>目标依赖性分析</td>
+<td>算力分配随靶点变化</td>
+<td>观察 T-REX 内部决策</td>
+<td>分配方式因靶点而异</td>
+<td>编排具有目标适应性</td>
+<td>未量化适应性程度与收益关系</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖 de novo binder 设计，不涉及其他蛋白质设计任务（如酶设计、疫苗设计）。</li>
+<li><strong>oracle/真值输入</strong>：未说明 hit 判定是否依赖实验验证；若仅计算评估，则结论受评估器准确性限制。</li>
+<li><strong>端到端状态</strong>：T-REX 是计算框架，未提及湿实验验证；「hit」可能仅为计算预测。</li>
+<li><strong>算力成本</strong>：未提供具体算力消耗数据，无法评估「高效」的绝对程度。</li>
+<li><strong>历史数据依赖</strong>：LLM 智能体依赖预训练知识，可能对未见过的靶点类型存在偏差。</li>
+<li><strong>模型依赖</strong>：结论受限于所用生成模型与评估器的具体选择。</li>
+<li><strong>最难情形</strong>：未说明 T-REX 在哪些靶点上表现不佳或失败。</li>
+<li><strong>不确定性</strong>：未提供统计显著性检验或置信区间。</li>
+<li><strong>有边界复述</strong>：在 7 个测试靶点上，T-REX 的自适应编排策略相比固定基线实现了更高的计算预测 hit 吞吐量，但未证明其优于所有可能的策略，也未涉及实验验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中未发现作者明确承认的局限。</p>
+<p><em>作者提及的相关约束（非正式局限）</em>：
+- 摘要提及 "finite compute budget" 为约束条件，暗示 T-REX 的优化目标是在预算内最大化产出，而非无限追求最优。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基线选择未披露</td>
+<td>若基线较弱，T-REX 优势可能被夸大</td>
+<td>影响结论的公平性</td>
+<td>要求作者提供基线细节与超参数</td>
+<td>摘要仅称 "all baselines"</td>
+</tr>
+<tr>
+<td>hit 定义依赖计算评估</td>
+<td>计算 hit 不等于实验 hit</td>
+<td>高估实际设计成功率</td>
+<td>进行湿实验验证或使用已知实验数据回测</td>
+<td>摘要未提及实验验证</td>
+</tr>
+<tr>
+<td>LLM 决策的可解释性</td>
+<td>智能体决策可能难以追溯</td>
+<td>影响可复现性与调试</td>
+<td>要求提供决策日志与案例分析</td>
+<td>摘要未提及可解释性分析</td>
+</tr>
+<tr>
+<td>7 个靶点的代表性</td>
+<td>样本量小，可能过拟合特定靶点类型</td>
+<td>限制泛化性结论</td>
+<td>扩展至更多样化的靶点集</td>
+<td>摘要仅提及 7 个靶点</td>
+</tr>
+<tr>
+<td>算力预算的设定</td>
+<td>预算大小可能影响策略优劣</td>
+<td>结论可能依赖特定预算范围</td>
+<td>进行预算敏感性分析</td>
+<td>摘要未提供预算具体数值</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>LLM 作为编排层</strong>：将 LLM 智能体用于多工具调度，而非直接生成结构，可低成本桥接多个专用模型——可迁移至「AlphaFold + MD 模拟 + 对接」的复合工作流，用 LLM 决定何时运行哪个工具。
+2. <strong>Rescue/Explore/Exploit 动作空间</strong>：将设计过程显式建模为三类动作，结构清晰且可解释，可迁移至其他蛋白质设计任务（如序列设计中的局部优化）。
+3. <strong>目标自适应算力分配</strong>：不同靶点可能需要不同方法组合，这一思想可迁移至「结构预测中的多模型集成」，根据输入序列特征动态选择预测器。
+4. <strong>确定性控制器 + 智能体决策分离</strong>：用规则层保证安全性、用 LLM 层保证灵活性，这一架构可迁移至任何需要「AI 决策 + 物理约束」结合的场景（如 MD 模拟中的自适应步长控制）。
+5. <strong>吞吐量作为核心指标</strong>：在算力受限时，以「单位算力的结构新颖 hit 数」为优化目标，而非单纯追求 hit 率，这一指标设计可迁移至高通量筛选任务。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与 AutoML 中的神经架构搜索（NAS）思想相似，但此处搜索的是「工具组合策略」而非网络架构；与 LLM-based agent 在科学发现中的应用（如 ChemCrow、Coscientist）同属「AI 科学家」范式。</li>
+<li><strong>组合关系</strong>：可与 RFdiffusion、AlphaFold 等具体工具组合使用，T-REX 作为上层调度器；与主动学习（active learning）互补，T-REX 的 explore 动作可视为主动采样的变体。</li>
+<li><strong>冲突观点</strong>：若固定流水线经过精心调优，可能在某些靶点上优于 T-REX；本文未提供此类对比。</li>
+<li><strong>可迁移领域</strong>：分子对接中的多打分函数融合、MD 模拟中的多力场选择、蛋白质结构预测中的多模型集成，均可借鉴「agentic orchestration」思路。</li>
+<li><strong>候选方向</strong> [Analysis]：将 T-REX 的编排思想应用于「AlphaFold 预测 + MD 精修」的循环，用 LLM 决定何时停止预测、何时启动模拟，可能提升结构预测精度。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：LLM 驱动的 MD 模拟自适应协议选择
+   - <strong>来源局限/观察</strong>：MD 模拟中力场、步长、溶剂模型的选择依赖经验，且不同体系最优设置不同。
+   - <strong>核心假设</strong>：LLM 能基于体系特征与中间模拟结果，动态选择/调整 MD 协议，优于固定协议。
+   - <strong>相对本文增量</strong>：将 T-REX 的 orchestration 思想从「生成模型」迁移至「物理模拟参数空间」。
+   - <strong>初步方法</strong>：构建 LLM 智能体，输入体系信息+模拟轨迹摘要，输出力场/步长调整建议；确定性控制器验证参数合法性。
+   - <strong>验证方式</strong>：在多个蛋白-配体体系上对比固定协议与自适应协议的采样效率与结构精度。
+   - <strong>可能的失败模式</strong>：LLM 建议可能过于保守或激进，导致模拟不稳定；参数空间过大时决策质量下降。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：多结构预测器集成中的目标自适应选择
+   - <strong>来源局限/观察</strong>：AlphaFold 等预测器在不同靶点类型上表现各异，固定集成策略未充分利用各自优势。
+   - <strong>核心假设</strong>：基于输入序列特征与中间预测置信度，LLM 可动态选择最优预测器或组合方式。
+   - <strong>相对本文增量</strong>：将 T-REX 的 target-adaptive 思想应用于结构预测而非 binder 设计。
+   - <strong>初步方法</strong>：训练/使用 LLM 分类器，输入序列特征+各预测器置信度，输出预测器选择或加权方案。
+   - <strong>验证方式</strong>：在 CAMEO 或 CASP 基准上对比自适应集成与固定集成的预测精度。
+   - <strong>可能的失败模式</strong>：特征与预测器性能的关联性弱，LLM 决策无实质增益。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Rescue-Explore-Exploit 框架用于构象采样
+   - <strong>来源局限/观察</strong>：构象采样中，局部优化（rescue）、新构象探索（explore）与已知通路利用（exploit）的平衡难以手动调优。
+   - <strong>核心假设</strong>：将采样过程显式建模为三类动作，由 LLM 根据累积能量/多样性指标决策，可提升采样效率。
+   - <strong>相对本文增量</strong>：将 T-REX 的动作空间直接映射至构象采样任务。
+   - <strong>初步方法</strong>：在 MD 或蒙特卡洛采样中嵌入 LLM 决策层，周期性选择 rescue/explore/exploit 动作。
+   - <strong>验证方式</strong>：在标准构象采样基准（如迪拉克肽）上对比自适应采样与固定策略的构象覆盖度。
+   - <strong>可能的失败模式</strong>：LLM 决策延迟过高，无法实时响应；动作空间定义不匹配采样动力学。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：算力预算感知的蛋白质设计工作流优化
+   - <strong>来源局限/观察</strong>：T-REX 强调有限算力下的分配，但未提供预算-收益的定量模型。
+   - <strong>核心假设</strong>：可建立预算-收益函数，指导 LLM 智能体在给定预算下做出更优的资源配置决策。
+   - <strong>相对本文增量</strong>：为 T-REX 类框架增加理论化的预算优化层。
+   - <strong>初步方法</strong>：收集不同靶点/方法组合的算力-收益数据，拟合预算-收益曲线，嵌入 LLM 决策提示。
+   - <strong>验证方式</strong>：在固定预算下对比有/无预算模型的 hit 产出。
+   - <strong>可能的失败模式</strong>：收益函数难以泛化，过拟合特定靶点。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce T-REX, an agentic framework that orchestrates multiple protein generative models and structure evaluators via LLM agents and a deterministic controller. They claim that across seven targets, T-REX adaptively allocates compute in a target-dependent manner and achieves the highest throughput of structurally distinct hits compared to all baselines, suggesting that adaptive orchestration complements existing protein design models.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, benchmark definitions, baseline descriptions, or implementation details are available</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, all figures and tables, baseline specifications, target descriptions, compute budget details, and code repository contents</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually appealing idea, namely the use of LLM-driven agents to orchestrate a portfolio of protein design tools under a finite compute budget. The framing is timely and the potential for practical impact is real. However, the abstract provides no quantitative evidence, no clear definition of key metrics, and no description of the baselines or targets. As such, the central claims of adaptive allocation and superior throughput cannot be evaluated from the supplied material. The work may be of interest to the protein design and AI-for-science communities, but the evidence base is currently insufficient to assess technical soundness or scientific significance.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational protein design, AI-driven drug discovery, and automated scientific discovery would be interested. The idea of using LLM agents to manage complex design pipelines addresses a practical bottleneck, namely how to combine multiple specialized tools effectively. Those working on binder design for therapeutic or diagnostic applications would also find the framework relevant if the claims hold.</li>
+<li><strong>Major strengths</strong> The conceptual framing is clear and addresses a genuine problem in the field. The proposed architecture, combining LLM agents for reasoning with a deterministic controller for validation, is sensible and potentially generalizable. The commitment to open release is commendable and would facilitate adoption and benchmarking by the community.</li>
+<li><strong>Major Concerns</strong> The abstract lacks any quantitative results, making the central claims unverifiable. The term "highest throughput of structurally distinct hits" is undefined, and no comparison details are given. The seven targets are not described, and the baselines are not named. The compute budget and its allocation are not specified. Without these elements, the claims of adaptivity and superiority are not established.</li>
+<li><strong>Minor Comments</strong> The abstract would benefit from a brief description of the controller's role and the types of actions the agents can take. The phrase "target-dependent manner" is vague and could be clarified with an example. The relationship between "throughput" and "structurally distinct hits" should be defined more precisely.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality is moderate to high, as the application of LLM agents to orchestrate protein design tools appears novel. Scientific importance is potentially high, but it cannot be assessed without evidence. Interdisciplinary readership is plausible, given the intersection of AI, protein engineering, and automation. Technical soundness is not assessable from the abstract alone. Readability for nonspecialists is adequate, though some terms such as "rescue, explore, exploit" are introduced without explanation.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The concept is promising, but the abstract does not provide sufficient data or methodological detail to support the claims. A full manuscript with quantitative results and clear benchmarking would be required to assess the work properly.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "T-REX achieves the highest throughput of structurally distinct hits compared to all baselines"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract states that T-REX outperforms all baselines on throughput of structurally distinct hits, but no numerical data, statistical measures, or comparison details are provided. The baselines are not named, and the metric is not defined.</li>
+<li><strong>Why it matters</strong> A central claim of superiority cannot be evaluated without quantitative evidence. The reader cannot determine whether the difference is meaningful, whether it is consistent across targets, or whether the metric is appropriate.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a table or figure showing throughput values for T-REX and each baseline across all seven targets, with definitions of "throughput" and "structurally distinct hits," and appropriate statistical analysis.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> "T-REX adaptively allocates its compute across methods in a target-dependent manner"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The claim of adaptive compute allocation is central to the framework's value proposition, but the abstract provides no details on how allocation is measured, what the compute budget is, or how adaptivity is demonstrated. No examples of target-dependent behavior are given.</li>
+<li><strong>Why it matters</strong> Without a clear definition of compute allocation and evidence of its variation across targets, the claim is unfalsifiable. The reader cannot assess whether the adaptivity is a genuine feature or a trivial consequence of the experimental setup.</li>
+<li>
+<p><strong>Resolution test</strong> Include a figure showing compute allocation across methods for each target, with a description of the budget and a quantitative measure of adaptivity, such as a diversity or entropy metric.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scope and generalizability</li>
+<li><strong>Claim pointer</strong> "Across seven targets, T-REX ... achieves the highest throughput"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The seven targets are not described, and no information is given about their diversity, difficulty, or relevance. Without this context, the generalizability of the results cannot be assessed.</li>
+<li><strong>Why it matters</strong> The choice of targets strongly influences the outcome. If the targets are all similar or easy, the results may not generalize. The reader needs to know the target characteristics to judge the significance of the findings.</li>
+<li><strong>Resolution test</strong> Provide a table listing the seven targets, their source, their structural features, and any known difficulty metrics. Discuss how the target set was chosen and whether it represents a diverse range of binder design challenges.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract, description of T-REX components</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The roles of the LLM agents and the deterministic controller are described only briefly. The reader does not know what types of actions the agents can propose or how the controller validates them.</li>
+<li>
+<p><strong>Required correction</strong> Add one or two sentences explaining the action space of the agents and the validation logic of the controller, with a concrete example if possible.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Abstract, term "rescue, explore, exploit"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The terms "rescue, explore, exploit" are introduced without definition. While they are intuitive, their precise meaning in the context of binder design is unclear.</li>
+<li>
+<p><strong>Required correction</strong> Define each term in the context of the framework, for example by specifying what a "rescue" action entails versus an "explore" action.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Abstract, phrase "target-dependent manner"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The phrase is vague and could be interpreted in multiple ways, such as different compute splits, different method preferences, or different numbers of iterations.</li>
+<li><strong>Required correction</strong> Specify what aspect of allocation is target-dependent and provide a brief example of how allocation differs between two targets.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "highest throughput of structurally distinct hits compared to all baselines" is unsupported due to the absence of quantitative data and baseline descriptions.</li>
+<li>The claim of "adaptively allocates its compute across methods in a target-dependent manner" is unsupported due to the lack of allocation measurements and target descriptions.</li>
+<li>The general statement that "adaptive orchestration can complement increasingly powerful protein design models" is a reasonable hypothesis but is not substantiated by the evidence presented in the abstract.</li>
+<li>The open release of T-REX is stated but cannot be verified from the abstract alone.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

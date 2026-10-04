@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present Inverse FoldDir, a Dirichlet flow matching method for structure-conditioned protein sequence design. They claim state-of-the-art structural recovery on CATH 4.2, controllable generation features (fixed-residue inpainting, soft priors), evidence of iterative refinement via denoising trajectory analysis, and experimental validation in an anti-GFP nanobody redesign task with two functional hits at approximately 43% sequence divergence.
+- **Visible evidence base** Abstract text only; no numerical distributions, statistical tests, method details, or experimental protocols are visible
+- **Missing materials affecting confidence** Full methods, model architecture and training details, baseline comparison protocols, CATH 4.2 evaluation setup, denoising trajectory analysis methodology, nanobody redesign experimental design (expression, purification, binding assay conditions, replicates), sequence diversity metrics, and any supplementary figures or tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful contribution to protein inverse folding, with a novel methodological angle (Dirichlet flow matching on the probability simplex) and an encouraging combination of computational benchmarks and experimental validation. However, the evidence as presented is insufficient to establish the core claims. Key weaknesses include the absence of statistical significance testing for the modest TM-score and RMSD improvements over ESM-IF1, lack of detail on the experimental validation (including how "reproducible" binding was defined and whether negative controls were adequate), and no information on sequence diversity or design success rates beyond a single functional hit rate. The trajectory analysis claim is intriguing but unsupported by any quantitative description. The work may be of interest to the protein design community, but the case is not currently established from the supplied material.
+- **Who would be interested in the results, and why** Computational protein design researchers, particularly those working on inverse folding and generative models for sequences; experimental protein engineers seeking controllable design tools; and developers of flow-based generative methods applied to biological sequences. The controllable features (inpainting, soft priors) and experimental validation would appeal to practitioners needing practical design tools.
+- **Major strengths** 1) The methodological novelty of applying Dirichlet flow matching to the amino acid probability simplex is a clear conceptual advance over autoregressive or one-shot approaches. 2) The inclusion of experimental validation in a real redesign task, with functional hits at high sequence divergence, is a significant strength that many computational papers lack. 3) The emphasis on controllability (fixed residues, soft priors) addresses a practical need in protein engineering. 4) The trajectory analysis, if properly quantified, could provide mechanistic insight into the generation process.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Statistical rigor  
+  - **Claim pointer** "Inverse FoldDir achieved a mean TM-score of 84.5 (on a 0-100 scale) and a mean Cα RMSD of 1.76 Å, compared with 83.3 and 1.86 Å, respectively, for ESM-IF1, the strongest evaluated baseline on both metrics."  
+  - **Evidence pointer** Abstract, results section (location not provided)  
+  - **Concern** The reported improvements over ESM-IF1 are numerically small (TM-score +1.2 points, RMSD -0.10 Å). No standard deviations, confidence intervals, or statistical tests are reported. It is unclear whether these differences are significant given the expected variance across a test set like CATH 4.2.  
+  - **Why it matters** The central claim of improved structural recovery rests on these numbers. Without statistical support, the difference could be within noise, undermining the primary computational result.  
+  - **Resolution test** Provide per-target distributions, standard errors, and a paired statistical test (e.g., Wilcoxon signed-rank) comparing Inverse FoldDir to ESM-IF1 on the same test set. Report effect sizes and confidence intervals.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Experimental validation  
+  - **Claim pointer** "two of 35 redesigned sequences retained reproducible sfGFP-binding signal across independent assay runs with approximately 43% sequence divergence from the native nanobody."  
+  - **Evidence pointer** Abstract, experimental validation section (location not provided)  
+  - **Concern** The experimental claim lacks critical context. What constitutes "reproducible" signal is undefined. No information is provided on the assay type, detection threshold, positive and negative controls, or how the 35 sequences were selected. The 43% sequence divergence is reported as approximate, and it is unclear whether this refers to the two hits or the full set.  
+  - **Why it matters** Experimental validation is a key differentiator for this work. Without clear protocols and controls, the functional claim cannot be assessed, and the reader cannot determine whether the hits are genuine or artifacts of the assay.  
+  - **Resolution test** Provide full experimental methods, including construct design, expression and purification details, assay protocol, definition of positive signal, replicate structure, and negative controls (e.g., non-binding nanobody or scrambled sequence). Report the sequence divergence for the two hits specifically and for the full set.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Methodological detail  
+  - **Claim pointer** "Denoising trajectory analyses showed that positions commit at different rates and that some residues change identity late in generation, illustrating whole-sequence refinement rather than one-shot prediction or irreversible sequential decoding."  
+  - **Evidence pointer** Abstract, trajectory analysis section (location not provided)  
+  - **Concern** The trajectory analysis is described qualitatively. No metrics are provided to quantify "commitment rates" or "late changes," and no comparison is made to alternative generation paradigms (e.g., autoregressive decoding) under the same framework.  
+  - **Why it matters** This claim is used to argue for a mechanistic advantage of the flow-based approach. Without quantitative support, it remains an anecdotal observation rather than a demonstrated property.  
+  - **Resolution test** Define and report quantitative metrics for position commitment (e.g., time to convergence of the marginal distribution) and late-stage identity changes (e.g., fraction of positions changing identity after a given denoising step). Compare these to a sequential decoding baseline.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Baseline completeness  
+  - **Claim pointer** "ESM-IF1, the strongest evaluated baseline on both metrics."  
+  - **Evidence pointer** Abstract, results section (location not provided)  
+  - **Concern** Only one baseline is mentioned. The abstract does not state how many baselines were evaluated or which ones were included. It is unclear whether the comparison set is comprehensive or cherry-picked.  
+  - **Why it matters** The claim of superiority is only meaningful relative to a well-defined baseline set. Without knowing the full comparison, the reader cannot judge the significance of the result.  
+  - **Resolution test** List all baselines evaluated, their versions, and the evaluation protocol. Justify the baseline selection in the methods.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Abstract, first sentence  
+  - **Evidence pointer** Abstract, introduction (location not provided)  
+  - **Issue** The opening sentence on the bioeconomy is generic and does not add specific context for the method.  
+  - **Required correction** Replace with a more specific statement about the gap in current inverse folding methods that this work addresses.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Reproducibility  
+  - **Affected element** Model availability  
+  - **Evidence pointer** Abstract (location not provided)  
+  - **Issue** No mention of code or model availability, which is important for a methods paper.  
+  - **Required correction** State whether code, trained models, and data will be made publicly available.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Metric interpretation  
+  - **Affected element** TM-score scale  
+  - **Evidence pointer** Abstract, results section (location not provided)  
+  - **Issue** The TM-score is reported on a 0-100 scale, which is non-standard (typically 0-1). This could cause confusion.  
+  - **Required correction** Clarify the scaling convention or report in the standard 0-1 range.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Sequence diversity  
+  - **Evidence pointer** Abstract, experimental validation section (location not provided)  
+  - **Issue** The abstract emphasizes diversity as a design goal but does not report any diversity metrics for the generated sequences.  
+  - **Required correction** Add a measure of sequence diversity (e.g., average pairwise identity) for the designed sequences relative to the native.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (statistical support for benchmark improvements), R1-M2 (experimental protocol and controls), R1-M3 (quantitative trajectory analysis)
+- **Assessment against Nature-style criteria**  
+  - Originality: The Dirichlet flow matching approach is a novel application to inverse folding, distinct from autoregressive or diffusion-based methods. This is a genuine methodological contribution.  
+  - Scientific importance: Inverse folding is a central problem in protein design, and controllable generation with experimental validation addresses a practical need. The importance is moderate to high, but the modest benchmark improvements over a strong baseline temper the significance.  
+  - Interdisciplinary readership: The work bridges machine learning, structural biology, and protein engineering. The abstract is accessible to a broad audience, though the experimental section lacks detail for non-specialists.  
+  - Technical soundness: The core idea is sound, but the evidence presented is insufficient to verify the claims. Statistical rigor and experimental controls are missing.  
+  - Readability for nonspecialists: The abstract is generally clear, but terms like "Dirichlet flow" and "probability simplex" are used without brief explanation, which may hinder non-specialist readers.
+- **Recommendation posture** Currently not established from the provided evidence. The methodological novelty and experimental ambition are promising, but the abstract alone does not provide sufficient statistical, methodological, or experimental detail to support the central claims. I would be supportive if the technical concerns are resolved with full methods, statistical analyses, and complete experimental protocols.
+
+## Risk / unsupported claims
+- The claim of improved structural recovery over ESM-IF1 is unsupported without statistical testing and variance reporting.
+- The experimental validation claim is unsupported without assay details, controls, and replicate definitions.
+- The trajectory analysis claim is unsupported without quantitative metrics.
+- The claim of "natural route toward future property-guided sampling" is speculative and not evidenced in the abstract.
+- The statement that Inverse FoldDir "combines structural recovery, user control, experimental validation" is only partially supported; user control is mentioned but not demonstrated with results.

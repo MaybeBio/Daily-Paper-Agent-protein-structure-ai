@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose that alpha-chaconine (CHA), a steroidal glycoalkaloid, may act as a selective inhibitor of mutant PI3Kalpha (specifically the H1047R variant) in breast cancer stem cells, based on in silico predictions including homology modelling, molecular docking, and molecular dynamics simulations
+- **Visible evidence base** Abstract text only; no structural validation data, docking scores beyond one value, simulation parameters, or statistical analyses are visible
+- **Missing materials affecting confidence** Full methods, all docking scores, simulation trajectories, validation metrics (PROCHECK, ERRAT values), MM-PBSA details, and any comparative data for other mutants or controls
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible computational workflow but the evidence as reported is insufficient to establish the central claim that CHA is a selective inhibitor of the H1047R mutant. Key quantitative results are selectively reported, and the absence of methodological detail prevents independent evaluation of the docking and simulation procedures. The conclusion is appropriately cautious regarding further experimental validation, but the computational case itself is not fully supported from the supplied material.
+- **Who would be interested in the results, and why** Researchers in computational drug discovery, PI3K signalling biology, and breast cancer therapeutics may find the hypothesis of a natural product targeting a common oncogenic mutation of interest. The work could also appeal to those studying steroidal glycoalkaloids as anticancer leads, though the in silico nature limits immediate translational relevance.
+- **Major strengths** The study addresses a clinically relevant target (PI3Kalpha H1047R) with a natural product of known bioactivity. The use of multiple computational methods (mutation prediction, homology modelling, docking, MD, MM-PBSA) is appropriate for an initial screening study. The conclusion is appropriately framed as a basis for further experimental work rather than overstating therapeutic potential.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract states that CHA exhibited the lowest binding energy with the H1047R mutant, with a docking score of -9.93 kcal/mol, and that MD simulations demonstrated stable interaction only with the H1047R mutant
+  - **Evidence pointer** Results section, abstract; location not provided
+  - **Concern** Only a single docking score for CHA-H1047R is reported. No scores for CHA with wild-type, E542K, or E545K are given, nor are alpelisib scores for any target reported, despite the claim that alpelisib showed strong binding to all forms. The MD stability claim is presented without any quantitative metrics such as RMSD, RMSF, or hydrogen bond occupancy.
+  - **Why it matters** Without comparative docking scores and stability metrics, the selectivity claim for H1047R cannot be evaluated. The reader cannot determine whether the difference between CHA-H1047R and other complexes is meaningful or within docking error.
+  - **Resolution test** Provide a full table of docking scores for CHA and alpelisib against all four PI3Kalpha variants, and report MD stability metrics (e.g., RMSD over time, RMSF per residue, hydrogen bond persistence) for all complexes, with appropriate statistical comparison.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** The methods state that SWISS-MODEL was used to generate homology models and that PROCHECK and ERRAT were used for validation, but no validation results are reported
+  - **Evidence pointer** Methods section, abstract; location not provided
+  - **Concern** The abstract mentions structural validation but provides no values (e.g., Ramachandran plot percentages, ERRAT overall quality factor). Without these, the reliability of the modelled structures, which underpin all subsequent docking and simulation results, is unknown.
+  - **Why it matters** Homology models of varying quality can produce artefactual docking results. If the models are not adequately validated, the entire computational pipeline is compromised.
+  - **Resolution test** Report PROCHECK and ERRAT scores for each modelled structure, and state whether the models meet accepted quality thresholds for docking studies.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Comparative analysis
+  - **Claim pointer** The abstract states that alpelisib showed strong binding affinity to both wild-type and mutant forms, and that MM-PBSA confirmed the lowest binding free energies for alpelisib-wild-type and CHA-H1047R complexes
+  - **Evidence pointer** Results section, abstract; location not provided
+  - **Concern** The MM-PBSA values are reported for only two complexes (-29.21 and -25.88 kcal/mol). No values are given for alpelisib with mutants or CHA with wild-type or other mutants, so the comparative claim of "lowest" cannot be verified.
+  - **Why it matters** The selectivity argument depends on showing that CHA binds more favourably to H1047R than to other variants, and that alpelisib binds more favourably to wild-type. Without the full matrix of MM-PBSA values, the conclusion is unsupported.
+  - **Resolution test** Provide MM-PBSA binding free energies for all eight complexes (two ligands x four targets) with standard deviations and, if possible, per-residue decomposition to support the selectivity claim.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Methods description
+  - **Evidence pointer** Methods section, abstract; location not provided
+  - **Issue** The abstract does not specify the force field, water model, simulation length, or temperature/pressure conditions for the MD simulations.
+  - **Required correction** Add one sentence specifying the MD simulation parameters, including force field, simulation time, and ensemble.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Results description
+  - **Evidence pointer** Results section, abstract; location not provided
+  - **Issue** The term "stable interaction" is used without definition. Stability in MD is typically quantified by RMSD convergence, hydrogen bond occupancy, or binding free energy, none of which are reported.
+  - **Required correction** Define what constitutes a stable interaction in this study and report the corresponding quantitative criteria.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Mutation analysis
+  - **Evidence pointer** Methods section, abstract; location not provided
+  - **Issue** The abstract states that three mutations were identified as pathogenic using MutPred2, but the pathogenicity scores or thresholds are not given.
+  - **Required correction** Report the MutPred2 scores and the threshold used to classify mutations as pathogenic.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (missing comparative docking and MD metrics), R1-M2 (missing structural validation results), R1-M3 (incomplete MM-PBSA data)
+- **Assessment against Nature-style criteria** 
+  - Originality: Moderate. The application of a known natural product to a specific PI3K mutant is a reasonable extension, but the approach is not methodologically novel.
+  - Scientific importance: Limited at this stage. The work is hypothesis-generating and does not provide functional or clinical evidence.
+  - Interdisciplinary readership: Narrow. The abstract is likely to appeal mainly to computational biologists and PI3K researchers, not a broad scientific audience.
+  - Technical soundness: Not assessable from the abstract alone. Key validation and comparative data are missing.
+  - Readability for nonspecialists: The abstract is generally clear but uses domain-specific terms (e.g., MM-PBSA, RMSD) without explanation, which may hinder nonspecialist comprehension.
+- **Recommendation posture** Currently not established from the provided evidence. The computational case for CHA as a selective H1047R inhibitor requires the missing comparative data and validation metrics to be supplied. If those are provided and support the claims, the work could be considered a preliminary in silico screen, but it would still require experimental validation to have broader impact.
+
+## Risk / unsupported claims
+- The claim that CHA is a "potential inhibitor" of mutant PI3Kalpha is unsupported because no functional or binding assay data are presented.
+- The claim that CHA showed "stable interaction" only with H1047R is unsupported without MD stability metrics for all complexes.
+- The claim that alpelisib showed "strong binding affinity" to all forms is unsupported because no alpelisib docking scores are reported.
+- The claim that the three mutations are pathogenic is not verifiable without MutPred2 scores.
+- The overall conclusion that CHA could be a selective PI3K inhibitor targeting H1047R in breast cancer stem cells is not established from the abstract-level evidence.

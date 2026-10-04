@@ -1,0 +1,87 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present AmyloCore-ML, a sequence-based machine learning predictor that identifies structurally incorporated amyloid fibril core regions. The predictor was trained on experimentally determined fibril structures from Amyloid Atlas, using ordered residues as core and unresolved residues from the same proteins as matched non-core controls. Features included physicochemical descriptors and protein language model embeddings (ESM-2, ANKH, ProtT5). The authors report that PLM-based models outperformed physicochemical descriptors, achieving AUROC ~0.88 and AUPRC ~0.85 in protein-grouped cross-validation. A locked full-length protein scan with ESM-2/ExtraTrees W21 achieved AUROC 0.833, AUPRC 0.751, and mean peak distance 12.4 residues. The predictor reportedly outperformed CrossBeta and AggrescanAI in comparative benchmarking. The tool is distributed as a Google Colab notebook.
+- **Visible evidence base** Abstract text only. No figures, tables, methods details, dataset descriptions, or benchmark protocols were provided.
+- **Missing materials affecting confidence** Full manuscript, methods section, dataset construction details, cross-validation scheme specifics, benchmark protocols, performance curves, statistical significance tests, and code availability details. The absence of these materials prevents independent verification of any reported performance metric.
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially useful tool for amyloid fibril core prediction, addressing a real gap between sequence-based aggregation propensity predictors and experimentally observed fibril structures. The use of protein language model embeddings is timely and the reported performance is promising. However, the abstract alone provides insufficient detail to evaluate the methodological rigor, the validity of the training label construction, the fairness of the comparative benchmarking, or the generalizability of the approach. Several claims are presented without supporting evidence, and the distinction between this work and existing predictors is not quantitatively established from the supplied material.
+- **Who would be interested in the results, and why** Researchers studying protein aggregation, amyloid formation, and neurodegenerative disease mechanisms would be interested. Computational biologists developing sequence-based predictors for protein structural properties would also find the PLM-based approach relevant. Clinicians or pharmaceutical researchers targeting amyloidogenic proteins might use the tool for candidate prioritization, though clinical application would require further validation.
+- **Major strengths** The problem addressed is well defined and practically important. The use of experimentally determined fibril structures as ground truth is a conceptually sound choice that distinguishes this work from predictors trained on aggregation propensity alone. The comparison of multiple PLM architectures and physicochemical descriptors is a reasonable design. The reported performance metrics are competitive with existing tools. The distribution via Google Colab lowers the barrier for adoption.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The predictor was developed using experimentally determined fibril structures obtained from Amyloid Atlas, with ordered residues designated as core and unresolved residues from the same proteins as matched non-core controls.
+  - **Evidence pointer** Abstract, dataset description. Location not provided.
+  - **Concern** The label construction strategy is described only at a high level. It is unclear how "ordered residues" were defined, what structural resolution threshold was applied, how disordered or flexible regions within otherwise ordered fibrils were handled, and whether the non-core controls were truly matched for sequence context, length, and physicochemical properties. If the non-core set is biased toward certain sequence features, the classifier may learn artifacts rather than genuine amyloid core determinants.
+  - **Why it matters** The validity of the entire supervised learning framework depends on the quality and unbiasedness of the labels. If the core and non-core sets are not well matched, the reported AUROC and AUPRC values may reflect dataset construction artifacts rather than true predictive power. This is the foundational claim on which all subsequent results rest.
+  - **Resolution test** Provide a detailed description of the structural criteria used to define ordered residues, the exact matching procedure for non-core controls, and a statistical comparison of sequence and physicochemical properties between core and non-core sets. Show that the classifier performance is robust to alternative label definitions and matching strategies.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** PLMs consistently outperformed physicochemical descriptors, with the best models reaching AUROC values of ~0.88 and AUPRC values of ~0.85.
+  - **Evidence pointer** Abstract, performance results. Location not provided.
+  - **Concern** The abstract reports aggregate performance metrics without specifying which PLM architecture produced the best results, what the variance across protein groups was, how many proteins were included in the evaluation, or whether the performance difference between PLMs and physicochemical descriptors was statistically significant. The term "consistently" implies a pattern across multiple comparisons, but no data are shown to support this.
+  - **Why it matters** Without variance estimates, sample sizes, and significance testing, the reader cannot assess whether the reported advantage of PLMs is robust or could be due to chance, overfitting, or favorable dataset splits. The claim of consistent superiority is a key selling point of the method and must be substantiated.
+  - **Resolution test** Report per-protein-group performance distributions, confidence intervals, and statistical tests comparing PLM-based and descriptor-based models. Specify the number of proteins and the cross-validation scheme in full detail.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** In comparative benchmarking, our predictor showed better performance metrics than CrossBeta and AggrescanAI.
+  - **Evidence pointer** Abstract, benchmarking results. Location not provided.
+  - **Concern** The benchmarking claim is presented without any description of the evaluation protocol. It is unclear whether the same test set was used for all tools, whether the comparison was performed on the same proteins, what metric was used for comparison, and whether the difference was statistically significant. CrossBeta and AggrescanAI are fundamentally different types of predictors, and a fair comparison requires careful alignment of inputs, outputs, and evaluation criteria.
+  - **Why it matters** A claim of superiority over existing tools is a central contribution of the paper. If the benchmarking protocol is biased or incomplete, the claim is not credible. The reader cannot judge whether the reported advantage is meaningful without knowing the exact conditions of the comparison.
+  - **Resolution test** Provide the full benchmarking protocol, including the test set composition, the exact version of each comparator tool, the thresholding or post-processing applied to each tool's output, and statistical significance testing of the performance differences.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Generalizability
+  - **Claim pointer** Locked full-length protein scans further localized experimental cores, with ESM-2/ExtraTrees W21 achieving AUROC 0.833, AUPRC 0.751, and a mean peak distance of 12.4 residues.
+  - **Evidence pointer** Abstract, full-length scan results. Location not provided.
+  - **Concern** The full-length scan results are reported for a single model configuration, but the abstract does not explain what "locked" means, how the scan was performed, how peaks were defined, or how the mean peak distance was calculated. The relationship between the cross-validation performance and the full-length scan performance is unclear. The mean peak distance of 12.4 residues is presented without a baseline or comparison, so its significance cannot be assessed.
+  - **Why it matters** The full-length scan is the practical use case of the tool. If the localization accuracy is not well characterized, users cannot interpret the tool's output in real applications. The lack of a baseline for peak distance makes the reported value uninterpretable.
+  - **Resolution test** Describe the full-length scan procedure in detail, define peak calling criteria, report the distribution of peak distances, and compare against a random or naive baseline to establish the significance of the 12.4 residue value.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, first sentence
+  - **Evidence pointer** Abstract, opening statement. Location not provided.
+  - **Issue** The phrase "proteins can form insoluble protein aggregates called amyloids" is redundant. The term "protein" appears twice in close proximity.
+  - **Required correction** Rephrase to "proteins can form insoluble aggregates called amyloids" or similar.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, methods description
+  - **Evidence pointer** Abstract, predictor development. Location not provided.
+  - **Issue** The phrase "we formed a sequence-based based predictor" contains a typographical error with the duplicated word "based".
+  - **Required correction** Correct to "we developed a sequence-based predictor".
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Abstract, tool availability
+  - **Evidence pointer** Abstract, final sentence. Location not provided.
+  - **Issue** The abstract states the tool is accessible via Google Colab but does not provide a URL, version information, or a persistent identifier. This limits reproducibility.
+  - **Required correction** Provide a stable link or DOI for the Colab notebook and specify the software versions of the underlying libraries.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract, performance reporting
+  - **Evidence pointer** Abstract, performance metrics. Location not provided.
+  - **Issue** The abstract reports AUROC and AUPRC but does not report precision, recall, F1, or specificity at any operating point. These metrics would help users understand the practical trade-offs of the predictor.
+  - **Required correction** Add a brief mention of additional performance metrics or state that they are provided in the full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The label construction validity, the statistical robustness of the PLM advantage, the fairness of the benchmarking, and the interpretability of the full-length scan results are all unresolved from the supplied material.
+- **Assessment against Nature-style criteria** Originality: The use of experimentally determined fibril structures as ground truth combined with PLM embeddings is a reasonable incremental advance over existing predictors, but the abstract does not demonstrate a fundamentally new conceptual contribution. Scientific importance: The problem is important for understanding amyloid biology and for potential therapeutic targeting, but the abstract does not show how the tool changes biological insight beyond what existing predictors offer. Interdisciplinary readership: The work is relevant to structural biology, computational biology, and protein chemistry, but the abstract is written in a way that is accessible to specialists only. Technical soundness: Cannot be assessed from the abstract alone. The reported metrics are promising but unverifiable without methods details and statistical analysis. Readability for nonspecialists: The abstract is concise but assumes familiarity with machine learning terminology and amyloid biology. It would benefit from a brief explanation of why structural amyloid cores differ from aggregation-prone regions.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a plausible and potentially useful tool, but the core claims regarding label validity, model performance, and benchmarking superiority cannot be verified without the full manuscript. The authors should be encouraged to resubmit with complete methods, dataset descriptions, and statistical analyses.
+
+## Risk / unsupported claims
+- The claim that PLMs "consistently" outperformed physicochemical descriptors is unsupported without variance estimates and significance testing.
+- The claim of superior performance over CrossBeta and AggrescanAI is unsupported without a described benchmarking protocol.
+- The mean peak distance of 12.4 residues is presented without a baseline, making it uninterpretable.
+- The generalizability of the predictor to proteins beyond those in the training set is not addressed.
+- The practical utility of the Google Colab notebook for large-scale or high-throughput applications is not discussed.

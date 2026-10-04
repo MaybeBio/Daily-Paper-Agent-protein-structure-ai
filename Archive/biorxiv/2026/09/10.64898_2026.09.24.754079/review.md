@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to figures, tables, methods, or supplementary materials
+- **Shared manuscript claim summary** The authors propose a scoring framework and web resource that integrates experimental protein-RNA complex structures with omics-derived binding preferences to identify interaction motif cores, characterize these cores via structural and evolutionary features, and benchmark AlphaFold3's ability to predict protein-RNA interaction specificity using different RNA input sequences. They report good prediction quality but signs of memorization in AlphaFold3, and highlight challenges with alternative binding modes.
+- **Visible evidence base** Abstract text only; no quantitative results, methodological details, or validation data are provided
+- **Missing materials affecting confidence** Full manuscript, methods section, figures, tables, supplementary data, web resource details, and AlphaFold3 prediction configurations
+
+## Reviewer
+- **Overall assessment** The abstract presents a timely and potentially valuable framework for integrating omics and structural data to study protein-RNA interaction specificity, with a clear translational goal of benchmarking AlphaFold3. However, the abstract lacks quantitative evidence, methodological specificity, and validation details, making it impossible to assess the technical soundness or robustness of the claims. The concept is promising, but the current evidence base is insufficient to establish the case.
+- **Who would be interested in the results, and why** Computational biologists and bioinformaticians working on protein-RNA interactions, structural biologists using deep learning tools like AlphaFold3, and researchers developing or benchmarking prediction methods for macromolecular complexes. The web resource could also be of interest to experimentalists seeking to interpret binding data in structural contexts.
+- **Major strengths** The abstract addresses a clear gap in the field, namely the limited structural coverage of protein-RNA complexes and the consequent challenges for deep learning prediction. The proposed integration of omics data with structural information is conceptually novel and practically motivated. The benchmarking of AlphaFold3 with different RNA inputs is a relevant and timely contribution.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The scoring approach and web resource quantify agreement between experimental structures and omics-derived binding preferences, allowing identification of interaction motif cores.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract provides no details on the scoring methodology, the nature of the omics data used, how agreement is quantified, or how motif cores are defined and validated. Without this information, the technical validity of the framework cannot be assessed.
+  - **Why it matters** The central contribution of the work is the scoring framework and its ability to identify meaningful motif cores. If the methodology is not transparent or robust, the downstream analyses and benchmarking conclusions are undermined.
+  - **Resolution test** Provide a detailed methods description, including the scoring function, data sources, normalization procedures, and validation against known or independent datasets. Show that motif cores are statistically and biologically meaningful.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** AlphaFold3 shows good prediction quality but signs of memorization, evidenced by sensitivity to the exact RNA sequence used as input.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The claim of memorization is based on sensitivity to input RNA sequence, but no quantitative metrics, controls, or statistical comparisons are provided. It is unclear how "good prediction quality" is measured, what constitutes "sensitivity," and how memorization is distinguished from legitimate sequence-dependent binding specificity.
+  - **Why it matters** The benchmarking of AlphaFold3 is a key contribution. If the evidence for memorization is not rigorously established, the conclusions about deep learning limitations may be overstated or misinterpreted.
+  - **Resolution test** Present quantitative prediction quality metrics (e.g., RMSD, TM-score, interface accuracy) for each input condition, with appropriate controls and statistical tests. Define a clear criterion for memorization and show that it is not confounded by genuine specificity.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and resource availability
+  - **Claim pointer** The work provides a web resource to guide further development of deep learning approaches.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract mentions a web resource but provides no URL, access details, or description of its functionality, data coverage, or user interface. The resource is a claimed deliverable, but its existence and utility cannot be verified.
+  - **Why it matters** A web resource is a tangible output that supports the community. Without details, the claim of providing a resource is unverifiable and the practical impact is unclear.
+  - **Resolution test** Provide the resource URL, a description of its features, data content, and usage examples. Ensure it is publicly accessible and functional at the time of publication.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "enriching experimental structures with omics data" is vague and could be interpreted in multiple ways, such as adding sequence information, integrating binding data, or augmenting structural datasets.
+  - **Required correction** Clarify what "enriching" means operationally, for example, by specifying the type of omics data and how it is combined with structural information.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Benchmarking description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that AlphaFold3 predictions were run with different RNA inputs, but does not specify the number of complexes, the diversity of the dataset, or the range of conditions tested.
+  - **Required correction** Include basic dataset statistics and the number of prediction conditions to give readers a sense of the benchmarking scale.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Discussion of alternative binding modes
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The mention of "alternative binding modes" is introduced without context or explanation of how they challenge the scoring workflow and AlphaFold3.
+  - **Required correction** Briefly define what constitutes an alternative binding mode and why it is problematic, to help readers understand the significance of this finding.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, and R1-M3 are blocking. The abstract does not provide sufficient methodological detail, quantitative evidence, or resource verification to support the central claims. Without these, the technical soundness and reproducibility of the work cannot be established.
+- **Assessment against Nature-style criteria** 
+  - Originality: The integration of omics data with structural information for benchmarking deep learning predictors is a fresh angle, but the abstract does not demonstrate how this differs from existing approaches in practice.
+  - Scientific importance: The topic is important, given the growing reliance on AlphaFold3 and the need for benchmarks that reflect real-world binding specificity. However, the significance is asserted rather than evidenced.
+  - Interdisciplinary readership: The work bridges structural biology, bioinformatics, and machine learning, which could appeal to a broad audience, but the abstract is too technical in places and lacks context for nonspecialists.
+  - Technical soundness: Not assessable from the abstract; the lack of methodological and quantitative detail is a major limitation.
+  - Readability for nonspecialists: The abstract is generally clear but uses jargon (e.g., "omics-derived binding preferences," "motif cores") without sufficient explanation, which may hinder accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The concept is promising and the direction is relevant, but the abstract alone does not provide enough information to evaluate the technical validity, robustness, or impact of the work. A full manuscript with detailed methods, results, and resource access would be required to assess whether the claims are supported.
+
+## Risk / unsupported claims
+- The claim that the scoring approach identifies interaction motif cores is unsupported without methodological details and validation.
+- The claim that AlphaFold3 shows signs of memorization is unsupported without quantitative metrics and controls.
+- The claim that the web resource exists and is useful is unverifiable without a URL or description.
+- The claim that motif cores correspond to important interface regions is unsupported without structural and evolutionary feature analysis details.
+- The general statement that deep learning approaches have "promise and current limitations" is a reasonable inference but is not substantiated with specific evidence in the abstract.

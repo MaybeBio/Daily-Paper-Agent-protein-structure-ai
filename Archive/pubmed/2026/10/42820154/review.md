@@ -1,0 +1,94 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose GenUnfold, a physics-guided diffusion model for predicting full protein mechanical unfolding trajectories from sequence and structure. They claim state-of-the-art performance against baselines including ESM-2 and a standard transformer, with reduced distributional error (FID) and improved downstream mechanical property prediction. They also claim this is the first scalable generative framework and the first systematic benchmark for this task.
+- **Visible evidence base** Abstract text only; no quantitative details beyond reported percentages, no dataset description, no model architecture specifics, no baseline implementation details, no statistical significance measures
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, benchmark dataset details, baseline model configurations, hyperparameters, training and evaluation protocols, error bars or confidence intervals, code availability, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable contribution to computational biophysics and protein mechanics, addressing a real bottleneck in SMFS data collection. The core idea of combining diffusion models with physics-informed attention is conceptually interesting. However, the abstract alone provides insufficient evidence to evaluate the validity of the claims. Key technical details are absent, and the reported improvements lack statistical context. The claim of being "first" in two respects is strong and requires careful verification against existing literature. The downstream property prediction improvements are modest and their significance is unclear. The manuscript may have merit, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in single-molecule biophysics, computational protein science, and mechanobiology would be interested. Those developing generative models for biological sequences and structures would also find the approach relevant. The potential for proteome-wide screening of mechanical candidates could attract researchers studying mechano-pathologies such as cardiomyopathy and muscular dystrophy, as well as those in force-targeted drug discovery.
+- **Major strengths** The problem addressed is important and timely, with clear practical relevance. The proposed approach of integrating physics-guided attention into a diffusion framework is novel in concept. The inclusion of a benchmark and comparison against strong baselines such as ESM-2 is commendable. The reported improvements in both distributional fidelity and downstream physical property prediction suggest the method may offer genuine advantages.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** "GenUnfold achieves state-of-the-art performance, reducing distributional error (FID) by 30% and 54% compared to pretrained ESM-2 and standard transformer, respectively."  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract reports FID reductions but provides no details on how FID is computed for trajectory data, what the absolute FID values are, or whether these differences are statistically significant. No error bars, confidence intervals, or replication details are given.  
+  - **Why it matters** Without statistical context, the reported improvements could be within noise. FID is a distributional metric originally designed for images; its adaptation to force-extension trajectories requires careful justification. The reader cannot assess whether the 30% and 54% reductions are meaningful.  
+  - **Resolution test** Provide absolute FID values with standard deviations across multiple runs, describe the FID computation protocol for trajectory data, and report statistical significance tests (e.g., paired tests across the same test set).  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** "it reduces prediction errors for unfolding force and energy distributions by 6% and 36% over the ESM-2 baseline."  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The downstream property prediction improvements are reported as percentage reductions in error, but the error metric is not defined. It is unclear whether these are mean absolute errors, root mean square errors, or something else. The 6% improvement for unfolding force is modest and may not be practically significant. No details on the downstream prediction model or how it uses the generated trajectories are provided.  
+  - **Why it matters** The physical consistency claim rests on these numbers. Without a defined metric and context for what constitutes a meaningful improvement, the reader cannot judge whether GenUnfold truly offers superior physical consistency.  
+  - **Resolution test** Define the error metric, report absolute errors for all methods, include confidence intervals, and describe the downstream prediction model and its training protocol.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Originality  
+  - **Claim pointer** "we present the first scalable generative diffusion framework for full unfolding trajectory prediction" and "the field's first systematic benchmark using existing models."  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract makes two "first" claims without citing or discussing prior work that may have addressed similar problems. It is possible that other generative models or benchmarks exist for force spectroscopy data or related trajectory prediction tasks.  
+  - **Why it matters** Originality is a core criterion for high-impact publication. Unsubstantiated "first" claims can mislead readers and may not withstand scrutiny from reviewers familiar with the field.  
+  - **Resolution test** Provide a thorough literature review in the full manuscript that demonstrates the absence of prior scalable generative frameworks and systematic benchmarks for this specific task, and temper the claims if any related work exists.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Reproducibility  
+  - **Claim pointer** "The benchmark for this task is built upon the biomolecule stretching database and several representative baseline models."  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract mentions a "biomolecule stretching database" but does not specify its contents, size, diversity, or how it was curated. The baseline models are named only as "pretrained ESM-2 and standard transformer," with no details on their configurations or training.  
+  - **Why it matters** Reproducibility is fundamental. Without a clear description of the dataset and baselines, other researchers cannot replicate the benchmark or verify the claims.  
+  - **Resolution test** In the full manuscript, provide a detailed description of the database, including accession numbers or download links, and specify all baseline model architectures, hyperparameters, and training procedures.  
+  - **Concern ID** R1-M5  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Scientific importance  
+  - **Claim pointer** "By enabling proteome-wide screening to identify mechanical candidates before costly physical validation, our approach is promising to accelerate the discovery of force-targeted therapeutics."  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract claims proteome-wide screening capability, but no evidence is presented that the model scales to proteome-wide applications. The computational cost of the diffusion model and the encoder is not discussed.  
+  - **Why it matters** The stated practical impact depends on scalability. If the model is too slow or memory-intensive for proteome-wide use, the claimed benefit is overstated.  
+  - **Resolution test** Provide runtime and memory benchmarks for the model on representative proteins, and discuss feasibility for proteome-wide screening in the full manuscript.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Readability for nonspecialists  
+  - **Affected element** Abstract  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The abstract uses terms such as "physics-biased attention mechanism" and "global coevolutionary context" without explaining them for readers outside the immediate field.  
+  - **Required correction** Add brief clarifications or intuitive descriptions of these terms in the abstract or introduction.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Technical soundness  
+  - **Affected element** Evaluation methodology  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The abstract does not specify how the train-test split was performed, whether proteins in the test set were seen during training, or whether the evaluation accounts for sequence similarity.  
+  - **Required correction** Describe the data splitting strategy and any sequence-identity-based filtering in the full manuscript.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Interdisciplinary readership  
+  - **Affected element** Abstract  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The abstract does not mention the range of protein sizes or mechanical contexts covered in the benchmark, which limits the reader's ability to gauge generalizability.  
+  - **Required correction** Include a brief description of the benchmark's protein diversity in the abstract or results section.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. These concerns relate to missing statistical context, undefined metrics, unsubstantiated originality claims, and insufficient reproducibility details. Without addressing these, the core claims of state-of-the-art performance and physical consistency cannot be verified.
+- **Assessment against Nature-style criteria**  
+  - Originality: The concept of a physics-guided diffusion model for unfolding trajectories appears novel, but the "first" claims require verification against prior literature. Not fully assessable from the abstract.  
+  - Scientific importance: The problem is important for mechanobiology and drug discovery. The potential for proteome-wide screening is significant, but scalability is not demonstrated.  
+  - Interdisciplinary readership: The work bridges machine learning, biophysics, and molecular biology. The abstract is accessible but lacks some context for nonspecialists.  
+  - Technical soundness: Not assessable from the abstract alone. The reported improvements lack statistical context and metric definitions.  
+  - Readability for nonspecialists: The abstract is generally clear but uses field-specific jargon without explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a promising idea, but the lack of methodological detail, statistical context, and verification of originality claims prevents a supportive recommendation. The authors should provide the full manuscript with detailed methods, results, and a thorough literature review to address the concerns raised.
+
+## Risk / unsupported claims
+- The claim of being the "first scalable generative diffusion framework" and the "first systematic benchmark" is unsupported without a literature review.
+- The reported FID reductions of 30% and 54% are unsupported without absolute values, statistical significance, and a description of the FID adaptation to trajectory data.
+- The downstream error reductions of 6% and 36% are unsupported without defined error metrics and confidence intervals.
+- The claim of "proteome-wide screening" capability is unsupported without runtime or scalability data.
+- The "superior physical consistency" claim is unsupported without details on the downstream prediction model and its evaluation.

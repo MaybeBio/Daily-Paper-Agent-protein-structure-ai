@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AmyloCore-ML: AI/Machine Learning Enabled Identification of Amyloid Fibril Core Regions Using Protein Language Models · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>AmyloCore-ML: AI/Machine Learning Enabled Identification of Amyloid Fibril Core Regions Using Protein Language Models</h1>
+      <div class="meta">Jasdeep Singh; Raunak Jangid; Ankit Srivastava</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-01
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.25.754455">原文</a>
+      </div>
+      <p class="one-liner">该文利用蛋白语言模型（ESM-2、ANKH、ProtT5）从序列预测淀粉样纤维核心区域，属于蛋白质结构相关计算建模，方法有AI创新，但对象为淀粉样聚集区域而非完整蛋白结构，问题聚焦于序列-结构映射，整体相关且具参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">In many neurodegenerative and systemic disorders, proteins can form insoluble protein aggregates called amyloids. Identification of amyloid forming regions in a protein remains central to understanding of its aggregation behaviour. Many predictors have been formed in the past and until recently which to estimate the aggregation-prone regions, which may not correspond to total residues found in actual disease associated fibril structures. To address this, we formed a sequence-based based predictor to ascertain structural amyloid-core propensity. The predictor was developed using experimentally determined fibril structures obtained from Amyloid Atlas. Ordered residues in the experimental structures were designated as core, and unresolved sampled from the same proteins as matched controls as non-core. Core and non-core regions were encoded using various physicochemical descriptors and protein language model (PLM) embeddings (ESM-2, ANKH, ProtT5) and evaluated using protein-grouped cross-validation. PLMs consistently outperformed physicochemical descriptors, with the best models reaching AUROC values of ~0.88 and AUPRC values of ~0.85. Locked full-length protein scans further localized experimental cores, with ESM-2/ExtraTrees W21 achieving AUROC 0.833, AUPRC 0.751, and a mean peak distance of 12.4 residues. In comparative benchmarking, our predictor showed better performance metrics than CrossBeta and AggrescanAI. The framework therefore provides residue-resolved prediction of structurally incorporated amyloid-core regions directly from sequence. AmyloCore-ML is easily accessible through an interactive Google Colab notebook, enabling sequence-based amyloid fibril-core prediction without local installation or dedicated computing infrastructure.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">在许多神经退行性和系统性疾病中，蛋白质可形成称为淀粉样蛋白（amyloids）的不溶性蛋白聚集体。识别蛋白质中形成淀粉样蛋白的区域，对于理解其聚集行为仍至关重要。过去及近期已开发出许多预测器，用于估计易聚集区域，但这些区域可能与实际疾病相关纤维结构中的总残基不完全对应。为解决此问题，我们构建了一种基于序列的预测器，以确定结构淀粉样核心倾向性。该预测器利用从Amyloid Atlas获得的实验确定的纤维结构进行开发。实验结构中的有序残基被指定为核心，而来自相同蛋白质的未解析采样作为匹配对照，被指定为非核心。核心和非核心区域使用多种物理化学描述符和蛋白质语言模型（PLM）嵌入（ESM-2、ANKH、ProtT5）进行编码，并通过蛋白质分组交叉验证进行评估。PLMs在性能上始终优于物理化学描述符，最佳模型的AUROC值约为0.88，AUPRC值约为0.85。锁定全长蛋白质扫描进一步定位了实验核心，其中ESM-2/ExtraTrees W21达到AUROC 0.833、AUPRC 0.751，平均峰距离为12.4个残基。在比较基准测试中，我们的预测器在性能指标上优于CrossBeta和AggrescanAI。因此，该框架可直接从序列提供结构整合的淀粉样核心区域的残基级预测。AmyloCore-ML通过交互式Google Colab笔记本易于访问，无需本地安装或专用计算基础设施即可实现基于序列的淀粉样纤维核心预测。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：AmyloCore-ML: AI/Machine Learning Enabled Identification of Amyloid Fibril Core Regions Using Protein Language Models</li>
+<li><strong>作者</strong>：Jasdeep Singh; Raunak Jangid; Ankit Srivastava</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学/预测工具开发（预印本）</li>
+<li><strong>领域</strong>：蛋白质淀粉样聚集预测 × 蛋白质语言模型（PLM）</li>
+<li><strong>关键词</strong>：amyloid fibril core, protein language models, ESM-2, ANKH, ProtT5, sequence-based prediction, Amyloid Atlas</li>
+<li><strong>DOI/arXiv</strong>：10.64898/2026.09.25.754455</li>
+<li><strong>代码</strong>：Google Colab notebook（交互式，无需本地安装）</li>
+<li><strong>数据</strong>：Amyloid Atlas 实验解析的 fibril 结构</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/深度学习」中「结构/序列特征预测」子方向，具体为从序列直接预测淀粉样纤维核心区域（amyloid fibril core regions），与结构预测（AlphaFold 类）和构象采样不同，聚焦于序列-结构功能片段的映射，使用 PLM 嵌入替代传统手工特征，属于可迁移的序列编码方法在结构相关预测任务中的应用。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文利用蛋白质语言模型（ESM-2、ANKH、ProtT5）嵌入编码实验解析的淀粉样纤维结构中有序核心残基与无序对照残基，训练机器学习分类器（ExtraTrees 等），实现从序列直接预测淀粉样纤维核心区域，最佳模型 AUROC ~0.88、AUPRC ~0.85，并在全蛋白扫描中优于 CrossBeta 和 AggrescanAI。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否从蛋白质一级序列直接预测哪些残基会形成淀粉样纤维的<strong>结构核心</strong>（即实验结构中有序、参与纤维核心组装的区域），而非仅预测一般性的聚集倾向区域？</li>
+<li><strong>为什么重要</strong>：淀粉样聚集与多种神经退行性疾病和系统性疾病相关。已有预测器（如 AggrescanAI、CrossBeta 等）主要预测聚集倾向区域（aggregation-prone regions），但这些区域不一定对应疾病相关纤维结构中的实际核心残基。准确识别结构核心对理解聚集机制、设计抑制剂、以及疾病干预靶点选择至关重要。</li>
+<li><strong>现有方法不足</strong>：传统预测器基于理化性质或短序列模式，未充分利用实验解析的纤维结构信息；且训练标签多为"聚集倾向"而非"结构核心"，导致预测结果与真实纤维结构不一致。</li>
+<li><strong>精确研究问题</strong>：Can a sequence-based predictor using protein language model embeddings accurately identify structurally incorporated amyloid fibril core residues, as defined by ordered residues in experimentally determined fibril structures?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文引言与相关工作描述，标注为「仅本文框架」，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期理化性质预测</td>
+<td>基于氨基酸理化性质（疏水性、电荷、β-折叠倾向）的滑动窗口方法</td>
+<td>计算简单、可解释</td>
+<td>精度有限，忽略序列上下文</td>
+<td>被超越</td>
+</tr>
+<tr>
+<td>机器学习/深度学习预测器</td>
+<td>AggrescanAI、CrossBeta、PASTA 等</td>
+<td>利用序列模式，精度提升</td>
+<td>标签为聚集倾向而非结构核心；训练数据非结构解析</td>
+<td>本文对比基准</td>
+</tr>
+<tr>
+<td>结构引导的预测</td>
+<td>基于实验纤维结构的核心注释</td>
+<td>标签更接近生物学真实</td>
+<td>数据量有限，需有效编码</td>
+<td>本文核心创新</td>
+</tr>
+<tr>
+<td>PLM 嵌入时代</td>
+<td>ESM-2、ProtT5、ANKH 等</td>
+<td>捕获远距离序列上下文与进化信息</td>
+<td>嵌入维度高，需降维/特征选择</td>
+<td>本文采用并系统比较</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：首个（据作者声称）使用 PLM 嵌入 + 实验结构核心标签的序列级淀粉样核心预测器，填补"聚集倾向预测"与"结构核心识别"之间的空白。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预测标签与结构真实不一致</td>
+<td>已有预测器输出的聚集区域与实验纤维结构中的核心残基不匹配</td>
+<td>训练标签基于序列特征或体外聚集实验，而非疾病相关纤维结构</td>
+<td>引言部分描述（未提供具体图/表编号）</td>
+</tr>
+<tr>
+<td>结构核心数据未充分利用</td>
+<td>实验解析的纤维结构中"有序 vs 无序"信息未被系统用于训练</td>
+<td>缺乏将结构注释转化为序列标签的标准化流程</td>
+<td>方法部分描述（未提供具体编号）</td>
+</tr>
+<tr>
+<td>传统特征编码信息不足</td>
+<td>理化描述符无法捕获长程序列上下文</td>
+<td>淀粉样核心形成依赖全局序列环境，非局部特征可捕捉</td>
+<td>Results 中 PLM 优于理化描述符的对比（AUROC 差异）</td>
+</tr>
+<tr>
+<td>预测分辨率不足</td>
+<td>多数预测器给出区域级而非残基级预测</td>
+<td>滑动窗口或区域打分机制</td>
+<td>本文提出残基级预测框架（Results 图/表未提供编号）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+- 从 Amyloid Atlas 获取实验解析的纤维结构，将有序残基标注为"core"，同一蛋白中未解析/无序残基作为"non-core"对照。
+- 使用三种 PLM（ESM-2、ANKH、ProtT5）生成残基级嵌入，同时计算理化描述符作为对比。
+- 训练机器学习分类器（ExtraTrees 等），用蛋白分组交叉验证评估。
+- 对全蛋白序列进行锁定扫描（locked full-length scan），输出残基级核心概率。</p>
+<p><strong>2) 核心洞察</strong>：
+- <strong>结构标签优于序列标签</strong>：以实验结构中的有序/无序作为训练标签，比传统"聚集倾向"标签更接近生物学真实，因此预测结果能定位到实际纤维核心。
+- <strong>PLM 嵌入捕获非局部上下文</strong>：PLM 的注意力机制隐式编码了长程序列相互作用，这对淀粉样核心形成（通常依赖远距离残基协同）至关重要，因此显著优于理化描述符。
+- <strong>残基级分辨率可行</strong>：通过 PLM 嵌入 + 树模型，可以在残基水平上实现高精度分类，无需显式结构信息。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 在结构相关预测任务中，<strong>标签的定义质量</strong>往往比模型复杂度更重要——使用实验结构注释作为标签可以显著提升预测的生物学相关性。
+- PLM 嵌入作为通用序列编码器，可迁移到多种结构/功能预测任务（如本课题中的构象采样、对接热点预测等），其优势在于无需任务特定的手工特征工程。
+- 蛋白分组交叉验证是评估泛化能力的关键，避免同源蛋白泄漏导致的性能高估。</p>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质氨基酸序列（FASTA 格式）</li>
+<li><strong>输出</strong>：每个残基的"淀粉样核心"概率分数，以及预测的核心区域</li>
+<li><strong>模块</strong>：
+  1. 数据构建模块：从 Amyloid Atlas 提取实验纤维结构，标注有序/无序残基
+  2. 特征编码模块：PLM 嵌入（ESM-2、ANKH、ProtT5）或理化描述符
+  3. 分类器模块：ExtraTrees（最佳）、其他 ML 模型
+  4. 全蛋白扫描模块：锁定窗口扫描，输出残基级概率
+  5. 部署模块：Google Colab 交互式 notebook</li>
+<li><strong>训练</strong>：蛋白分组交叉验证（grouped by protein），避免同源泄漏</li>
+<li><strong>工具</strong>：未提供具体框架版本（如 PyTorch、scikit-learn 等）</li>
+<li><strong>假设</strong>：</li>
+<li>实验结构中有序残基 = 纤维核心（ground truth 标签）</li>
+<li>同一蛋白中未解析残基可作为合理的 non-core 对照</li>
+<li>PLM 嵌入能捕获与淀粉样核心形成相关的序列特征</li>
+<li><strong>流程</strong>：序列输入 → PLM 嵌入生成 → 分类器预测残基概率 → 阈值化得到核心区域 → 输出可视化结果</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据标注模块</td>
+<td>从 Amyloid Atlas 结构中有序/无序残基生成二分类标签</td>
+<td>提供结构真实的训练标签</td>
+<td>输入：PDB/结构文件；输出：残基级 core/non-core 标签</td>
+<td>方法部分描述（未提供编号）</td>
+<td>移除后无法区分"聚集倾向"与"结构核心"，回归传统预测</td>
+</tr>
+<tr>
+<td>PLM 嵌入模块</td>
+<td>生成残基级上下文感知的向量表示</td>
+<td>捕获长程序列上下文，优于理化特征</td>
+<td>输入：序列；输出：每残基嵌入向量</td>
+<td>Results 中 PLM vs 理化描述符对比（AUROC ~0.88 vs 较低）</td>
+<td>替换为理化描述符后性能显著下降（作者对比结果）</td>
+</tr>
+<tr>
+<td>分类器模块</td>
+<td>将嵌入映射为 core/non-core 概率</td>
+<td>实现残基级二分类</td>
+<td>输入：嵌入向量；输出：概率分数</td>
+<td>最佳模型 AUROC ~0.88, AUPRC ~0.85</td>
+<td>替换为线性模型可能降低非线性拟合能力 [Analysis]</td>
+</tr>
+<tr>
+<td>全蛋白扫描模块</td>
+<td>对全长序列进行锁定窗口预测</td>
+<td>从单序列定位核心区域，模拟实际应用</td>
+<td>输入：全长序列；输出：残基级概率曲线</td>
+<td>ESM-2/ExtraTrees W21: AUROC 0.833, AUPRC 0.751, 平均峰距 12.4 残基</td>
+<td>移除后仅能评估片段，无法直接应用于全长蛋白</td>
+</tr>
+<tr>
+<td>Colab 部署模块</td>
+<td>提供交互式预测界面</td>
+<td>降低使用门槛，无需本地计算资源</td>
+<td>输入：用户序列；输出：预测结果可视化</td>
+<td>摘要描述</td>
+<td>移除后工具可及性下降，但核心方法不受影响</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。本文为机器学习应用型方法论文，未提供数学公式或算法推导。核心方法为 PLM 嵌入 + 树模型分类，不涉及需要符号化表达的公式。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：
+- 来源：Amyloid Atlas（实验解析的淀粉样纤维结构）
+- 规模：未提供具体蛋白数量/残基数量
+- 标签：有序残基 = core；同一蛋白中未解析残基 = non-core
+- 特征：ESM-2、ANKH、ProtT5 嵌入；理化描述符（具体种类未提供）</p>
+<p><strong>评估协议</strong>：
+- 蛋白分组交叉验证（protein-grouped cross-validation）
+- 指标：AUROC、AUPRC
+- 全蛋白锁定扫描：窗口大小 W21（21 残基窗口）为最佳</p>
+<p><strong>对比基准</strong>：CrossBeta、AggrescanAI</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PLM vs 理化描述符</td>
+<td>PLM 嵌入优于手工特征</td>
+<td>三种 PLM vs 理化描述符，相同分类器</td>
+<td>PLM 最佳 AUROC ~0.88, AUPRC ~0.85</td>
+<td>PLM 捕获更有效的序列特征</td>
+<td>未说明具体哪种 PLM 最佳、差异是否统计显著</td>
+<td>Results（未提供图/表编号）</td>
+</tr>
+<tr>
+<td>全蛋白锁定扫描</td>
+<td>模型可定位全长序列中的核心区域</td>
+<td>ESM-2/ExtraTrees W21</td>
+<td>AUROC 0.833, AUPRC 0.751, 平均峰距 12.4 残基</td>
+<td>残基级预测在全长序列上有效</td>
+<td>峰距 12.4 残基的生物学可接受性未讨论</td>
+<td>Results（未提供编号）</td>
+</tr>
+<tr>
+<td>与已有预测器对比</td>
+<td>优于 CrossBeta 和 AggrescanAI</td>
+<td>相同测试集</td>
+<td>本文方法指标更优</td>
+<td>结构核心预测优于聚集倾向预测</td>
+<td>对比条件（阈值、数据集划分）未详细说明</td>
+<td>Results（未提供编号）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限淀粉样纤维核心区域的序列预测，不涉及纤维结构的三维建模、聚集动力学或致病机制。</li>
+<li><strong>标签定义</strong>：core = 实验结构中有序残基。此定义依赖 Amyloid Atlas 中结构的解析质量——未解析区域可能是柔性 loop 而非非核心，存在标签噪声。</li>
+<li><strong>端到端状态</strong>：非端到端。PLM 嵌入是预训练模型（ESM-2 等），分类器是独立训练的；整个流程是"预训练嵌入 + 监督分类"的级联。</li>
+<li><strong>算力成本</strong>：PLM 嵌入生成需要 GPU（尤其 ESM-2 大模型），但 Colab 部署降低了使用门槛；训练分类器本身算力需求低。</li>
+<li><strong>oracle 输入</strong>：训练时使用实验结构作为标签来源，属于 oracle 监督；推理时仅需序列。</li>
+<li><strong>历史数据依赖</strong>：依赖 Amyloid Atlas 当前收录的结构，覆盖的蛋白家族有限，可能偏向特定序列空间。</li>
+<li><strong>最难情形</strong>：同源蛋白少、纤维结构未解析的蛋白；以及核心区域较短或分散的蛋白。</li>
+<li><strong>不确定性</strong>：未报告置信区间、校准曲线或预测不确定性的量化。</li>
+<li><strong>边界化复述</strong>：在 Amyloid Atlas 现有结构定义的标签下，PLM 嵌入 + 树模型可以从序列中识别与实验纤维核心一致的残基，性能优于传统聚集倾向预测器；但该结论受限于标签定义、数据覆盖和对比条件的透明度。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。作者仅提及工具的可及性优势，未讨论方法学局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 训练数据来自 Amyloid Atlas，其覆盖范围有限（隐含约束，未明确表述为局限）
+- 对比实验的详细条件未在摘要中展开（透明度约束）</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标签定义依赖结构解析质量</td>
+<td>未解析区域可能因技术限制而非生物学无序，导致 non-core 标签含假阴性</td>
+<td>标签噪声直接影响模型学习上限</td>
+<td>对比不同分辨率结构的标签一致性；用分子动力学模拟验证未解析区域的构象有序性</td>
+<td>方法部分描述（未提供编号）</td>
+</tr>
+<tr>
+<td>对比基准的选择</td>
+<td>CrossBeta 和 AggrescanAI 是聚集倾向预测器，任务定义不同，直接比较可能不公平</td>
+<td>若任务不同，指标优势可能来自标签差异而非模型能力</td>
+<td>在同一标签定义下重训基准模型进行比较</td>
+<td>Results 对比描述</td>
+</tr>
+<tr>
+<td>蛋白分组交叉验证的严格性</td>
+<td>未说明分组是否基于序列相似性聚类，若仅按蛋白名分组，同源片段仍可能泄漏</td>
+<td>泄漏会导致泛化性能高估</td>
+<td>使用序列相似性阈值（如 30% 聚类）重新分组验证</td>
+<td>方法部分未提供细节</td>
+</tr>
+<tr>
+<td>PLM 嵌入的维度与特征选择</td>
+<td>未说明嵌入如何降维/选择特征，树模型对高维稀疏特征可能过拟合</td>
+<td>影响模型可解释性和泛化</td>
+<td>报告特征重要性分析、嵌入层选择实验</td>
+<td>方法部分未提供细节</td>
+</tr>
+<tr>
+<td>峰距 12.4 残基的评估标准</td>
+<td>未说明该距离是否在生物学可接受范围内，不同蛋白核心长度差异大</td>
+<td>影响实际应用价值判断</td>
+<td>按蛋白长度归一化峰距，与实验核心边界误差对比</td>
+<td>Results 中峰距数据</td>
+</tr>
+<tr>
+<td>预印本阶段</td>
+<td>未经同行评审，方法细节和代码验证可能不完整</td>
+<td>影响结果可复现性</td>
+<td>等待正式发表或联系作者获取完整代码/数据</td>
+<td>期刊类型（bioRxiv）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>结构标签优于序列标签</strong>：在蛋白质结构相关预测任务中，使用实验结构注释（如有序/无序、核心/表面）作为训练标签，比基于序列特征或体外实验的标签更接近生物学真实。可迁移到本课题的构象采样或对接热点预测中，用 MD 模拟或实验结构定义"功能相关构象"标签。</p>
+</li>
+<li>
+<p><strong>PLM 嵌入作为通用序列编码器</strong>：ESM-2、ANKH、ProtT5 等 PLM 嵌入可替代手工特征工程，在多种结构相关预测任务中表现优异。本课题中可迁移到：蛋白-蛋白相互作用界面预测、构象变化残基识别、分子对接 pose 评分等任务。</p>
+</li>
+<li>
+<p><strong>蛋白分组交叉验证是泛化评估的关键</strong>：按蛋白而非残基/片段分组，避免同源序列泄漏，是序列预测任务中评估泛化能力的必要设计。本课题中所有序列-结构映射任务都应采用此协议。</p>
+</li>
+<li>
+<p><strong>锁定全蛋白扫描的实用范式</strong>：训练片段级分类器后，用滑动窗口对全长序列扫描，输出残基级概率曲线，是连接"片段训练"与"全长应用"的有效桥梁。可迁移到本课题的构象生成或结构域边界预测。</p>
+</li>
+<li>
+<p><strong>Colab 部署降低工具使用门槛</strong>：将预测工具封装为交互式 notebook，无需本地安装，提高可及性和可复现性。本课题中开发的任何预测工具均可采用此部署模式。</p>
+</li>
+<li>
+<p><strong>对比基准需任务对齐</strong>：与已有工具比较时，需确保任务定义一致（如聚集倾向 vs 结构核心），否则指标差异可能来自标签而非模型能力。本课题中与 AlphaFold 等结构预测工具对比时需明确任务边界。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Amyloid Atlas</strong>：实验解析的淀粉样纤维结构数据库，本文标签来源。与本课题中结构数据的获取和标注直接相关。</li>
+<li><strong>ESM-2</strong>：Meta 发布的蛋白质语言模型，基于进化尺度建模，已广泛用于结构预测（如 ESMFold）和功能预测。本课题中可作为序列编码器用于多种下游任务。</li>
+<li><strong>ANKH</strong>：面向蛋白质的 transformer 模型，基于氨基酸和原子级别 token 训练，在多种蛋白质预测任务中表现优异。</li>
+<li><strong>ProtT5</strong>：基于 T5 架构的蛋白质语言模型，在接触图预测、二级结构预测等任务中表现良好。</li>
+<li><strong>AggrescanAI</strong>：基于深度学习的聚集倾向预测器，本文对比基准之一。代表"序列特征驱动"的传统路径。</li>
+<li><strong>CrossBeta</strong>：基于交叉 β 结构特征的聚集预测方法，本文对比基准之一。</li>
+<li><strong>AlphaFold 相关</strong>：虽然本文未直接涉及，但 PLM 嵌入的成功应用与 AlphaFold 中 Evoformer 使用 MSA 信息的思路一致——都利用进化/序列上下文捕获结构相关信息。本课题中可探索 PLM 嵌入与 AlphaFold 结构预测的联合使用。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：AmyloCore-MD——将 MD 模拟构象系综纳入淀粉样核心标签定义
+   - <strong>来源局限/观察</strong>：本文标签仅依赖单一实验结构的有序/无序，未考虑构象动态性。MD 模拟可揭示实验结构中未解析区域是否在系综中形成瞬时有序结构。
+   - <strong>核心假设</strong>：MD 模拟中残基的构象稳定性（如 RMSF、二级结构保持率）可作为比单一结构更鲁棒的 core/non-core 标签。
+   - <strong>初步方法</strong>：对 Amyloid Atlas 中蛋白进行 MD 模拟，计算残基级构象有序度指标，与实验标签融合后重新训练分类器。
+   - <strong>验证方式</strong>：与本文模型对比 AUROC/AUPRC，并在独立测试集上验证。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：PLM-Embedding 迁移到蛋白-蛋白相互作用热点预测
+   - <strong>来源局限/观察</strong>：本文证明 PLM 嵌入在淀粉样核心预测中优于理化特征，该结论可能泛化到其他结构相关预测任务。
+   - <strong>核心假设</strong>：PLM 嵌入可有效预测蛋白-蛋白相互作用界面中的热点残基（对结合自由能贡献大的残基）。
+   - <strong>初步方法</strong>：使用本文的"PLM 嵌入 + ExtraTrees"框架，替换标签为实验测定的热点残基数据（如 alanine scanning 数据）。
+   - <strong>验证方式</strong>：与现有热点预测工具（如 Robetta、KFC2）对比，使用留一蛋白交叉验证。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：多 PLM 集成与注意力融合的淀粉样核心预测
+   - <strong>来源局限/观察</strong>：本文分别评估三种 PLM，但未探索集成策略。不同 PLM 捕获的序列特征可能互补。
+   - <strong>核心假设</strong>：多 PLM 嵌入的注意力加权融合可进一步提升预测精度，尤其在低同源性蛋白上。
+   - <strong>初步方法</strong>：设计可学习的注意力层，对 ESM-2、ANKH、ProtT5 嵌入进行加权融合，端到端训练分类器。
+   - <strong>验证方式</strong>：与单 PLM 最佳模型对比，分析不同序列相似性分层上的增益。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：淀粉样核心预测与 AlphaFold 结构置信度联合分析
+   - <strong>来源局限/观察</strong>：本文仅用序列预测核心，未利用预测结构信息。AlphaFold 的 pLDDT 分数可反映残基结构有序性。
+   - <strong>核心假设</strong>：AlphaFold pLDDT 与 PLM 嵌入的联合特征可提升核心预测精度，尤其在无实验结构的蛋白上。
+   - <strong>初步方法</strong>：对目标蛋白运行 AlphaFold，将 pLDDT 分数作为附加特征与 PLM 嵌入拼接，训练分类器。
+   - <strong>验证方式</strong>：在 Amyloid Atlas 测试集上对比有无 pLDDT 特征的性能差异。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：构象采样驱动的淀粉样核心动态预测
+   - <strong>来源局限/观察</strong>：本文为静态预测，未考虑核心区域在不同环境条件（pH、温度、突变）下的动态变化。
+   - <strong>核心假设</strong>：结合增强采样 MD（如 replica exchange）可预测核心区域的构象可塑性，从而识别"条件依赖性"核心。
+   - <strong>初步方法</strong>：对已知淀粉样蛋白进行多条件 MD 模拟，构建残基级有序度矩阵，训练条件感知预测模型。
+   - <strong>验证方式</strong>：在不同溶液条件下实验验证预测的核心区域变化。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present AmyloCore-ML, a sequence-based machine learning predictor that identifies structurally incorporated amyloid fibril core regions. The predictor was trained on experimentally determined fibril structures from Amyloid Atlas, using ordered residues as core and unresolved residues from the same proteins as matched non-core controls. Features included physicochemical descriptors and protein language model embeddings (ESM-2, ANKH, ProtT5). The authors report that PLM-based models outperformed physicochemical descriptors, achieving AUROC ~0.88 and AUPRC ~0.85 in protein-grouped cross-validation. A locked full-length protein scan with ESM-2/ExtraTrees W21 achieved AUROC 0.833, AUPRC 0.751, and mean peak distance 12.4 residues. The predictor reportedly outperformed CrossBeta and AggrescanAI in comparative benchmarking. The tool is distributed as a Google Colab notebook.</li>
+<li><strong>Visible evidence base</strong> Abstract text only. No figures, tables, methods details, dataset descriptions, or benchmark protocols were provided.</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, dataset construction details, cross-validation scheme specifics, benchmark protocols, performance curves, statistical significance tests, and code availability details. The absence of these materials prevents independent verification of any reported performance metric.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially useful tool for amyloid fibril core prediction, addressing a real gap between sequence-based aggregation propensity predictors and experimentally observed fibril structures. The use of protein language model embeddings is timely and the reported performance is promising. However, the abstract alone provides insufficient detail to evaluate the methodological rigor, the validity of the training label construction, the fairness of the comparative benchmarking, or the generalizability of the approach. Several claims are presented without supporting evidence, and the distinction between this work and existing predictors is not quantitatively established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers studying protein aggregation, amyloid formation, and neurodegenerative disease mechanisms would be interested. Computational biologists developing sequence-based predictors for protein structural properties would also find the PLM-based approach relevant. Clinicians or pharmaceutical researchers targeting amyloidogenic proteins might use the tool for candidate prioritization, though clinical application would require further validation.</li>
+<li><strong>Major strengths</strong> The problem addressed is well defined and practically important. The use of experimentally determined fibril structures as ground truth is a conceptually sound choice that distinguishes this work from predictors trained on aggregation propensity alone. The comparison of multiple PLM architectures and physicochemical descriptors is a reasonable design. The reported performance metrics are competitive with existing tools. The distribution via Google Colab lowers the barrier for adoption.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The predictor was developed using experimentally determined fibril structures obtained from Amyloid Atlas, with ordered residues designated as core and unresolved residues from the same proteins as matched non-core controls.</li>
+<li><strong>Evidence pointer</strong> Abstract, dataset description. Location not provided.</li>
+<li><strong>Concern</strong> The label construction strategy is described only at a high level. It is unclear how "ordered residues" were defined, what structural resolution threshold was applied, how disordered or flexible regions within otherwise ordered fibrils were handled, and whether the non-core controls were truly matched for sequence context, length, and physicochemical properties. If the non-core set is biased toward certain sequence features, the classifier may learn artifacts rather than genuine amyloid core determinants.</li>
+<li><strong>Why it matters</strong> The validity of the entire supervised learning framework depends on the quality and unbiasedness of the labels. If the core and non-core sets are not well matched, the reported AUROC and AUPRC values may reflect dataset construction artifacts rather than true predictive power. This is the foundational claim on which all subsequent results rest.</li>
+<li><strong>Resolution test</strong> Provide a detailed description of the structural criteria used to define ordered residues, the exact matching procedure for non-core controls, and a statistical comparison of sequence and physicochemical properties between core and non-core sets. Show that the classifier performance is robust to alternative label definitions and matching strategies.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> PLMs consistently outperformed physicochemical descriptors, with the best models reaching AUROC values of ~0.88 and AUPRC values of ~0.85.</li>
+<li><strong>Evidence pointer</strong> Abstract, performance results. Location not provided.</li>
+<li><strong>Concern</strong> The abstract reports aggregate performance metrics without specifying which PLM architecture produced the best results, what the variance across protein groups was, how many proteins were included in the evaluation, or whether the performance difference between PLMs and physicochemical descriptors was statistically significant. The term "consistently" implies a pattern across multiple comparisons, but no data are shown to support this.</li>
+<li><strong>Why it matters</strong> Without variance estimates, sample sizes, and significance testing, the reader cannot assess whether the reported advantage of PLMs is robust or could be due to chance, overfitting, or favorable dataset splits. The claim of consistent superiority is a key selling point of the method and must be substantiated.</li>
+<li><strong>Resolution test</strong> Report per-protein-group performance distributions, confidence intervals, and statistical tests comparing PLM-based and descriptor-based models. Specify the number of proteins and the cross-validation scheme in full detail.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> In comparative benchmarking, our predictor showed better performance metrics than CrossBeta and AggrescanAI.</li>
+<li><strong>Evidence pointer</strong> Abstract, benchmarking results. Location not provided.</li>
+<li><strong>Concern</strong> The benchmarking claim is presented without any description of the evaluation protocol. It is unclear whether the same test set was used for all tools, whether the comparison was performed on the same proteins, what metric was used for comparison, and whether the difference was statistically significant. CrossBeta and AggrescanAI are fundamentally different types of predictors, and a fair comparison requires careful alignment of inputs, outputs, and evaluation criteria.</li>
+<li><strong>Why it matters</strong> A claim of superiority over existing tools is a central contribution of the paper. If the benchmarking protocol is biased or incomplete, the claim is not credible. The reader cannot judge whether the reported advantage is meaningful without knowing the exact conditions of the comparison.</li>
+<li><strong>Resolution test</strong> Provide the full benchmarking protocol, including the test set composition, the exact version of each comparator tool, the thresholding or post-processing applied to each tool's output, and statistical significance testing of the performance differences.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> Locked full-length protein scans further localized experimental cores, with ESM-2/ExtraTrees W21 achieving AUROC 0.833, AUPRC 0.751, and a mean peak distance of 12.4 residues.</li>
+<li><strong>Evidence pointer</strong> Abstract, full-length scan results. Location not provided.</li>
+<li><strong>Concern</strong> The full-length scan results are reported for a single model configuration, but the abstract does not explain what "locked" means, how the scan was performed, how peaks were defined, or how the mean peak distance was calculated. The relationship between the cross-validation performance and the full-length scan performance is unclear. The mean peak distance of 12.4 residues is presented without a baseline or comparison, so its significance cannot be assessed.</li>
+<li><strong>Why it matters</strong> The full-length scan is the practical use case of the tool. If the localization accuracy is not well characterized, users cannot interpret the tool's output in real applications. The lack of a baseline for peak distance makes the reported value uninterpretable.</li>
+<li><strong>Resolution test</strong> Describe the full-length scan procedure in detail, define peak calling criteria, report the distribution of peak distances, and compare against a random or naive baseline to establish the significance of the 12.4 residue value.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract, first sentence</li>
+<li><strong>Evidence pointer</strong> Abstract, opening statement. Location not provided.</li>
+<li><strong>Issue</strong> The phrase "proteins can form insoluble protein aggregates called amyloids" is redundant. The term "protein" appears twice in close proximity.</li>
+<li><strong>Required correction</strong> Rephrase to "proteins can form insoluble aggregates called amyloids" or similar.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract, methods description</li>
+<li><strong>Evidence pointer</strong> Abstract, predictor development. Location not provided.</li>
+<li><strong>Issue</strong> The phrase "we formed a sequence-based based predictor" contains a typographical error with the duplicated word "based".</li>
+<li><strong>Required correction</strong> Correct to "we developed a sequence-based predictor".</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Abstract, tool availability</li>
+<li><strong>Evidence pointer</strong> Abstract, final sentence. Location not provided.</li>
+<li><strong>Issue</strong> The abstract states the tool is accessible via Google Colab but does not provide a URL, version information, or a persistent identifier. This limits reproducibility.</li>
+<li><strong>Required correction</strong> Provide a stable link or DOI for the Colab notebook and specify the software versions of the underlying libraries.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Abstract, performance reporting</li>
+<li><strong>Evidence pointer</strong> Abstract, performance metrics. Location not provided.</li>
+<li><strong>Issue</strong> The abstract reports AUROC and AUPRC but does not report precision, recall, F1, or specificity at any operating point. These metrics would help users understand the practical trade-offs of the predictor.</li>
+<li><strong>Required correction</strong> Add a brief mention of additional performance metrics or state that they are provided in the full manuscript.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4. The label construction validity, the statistical robustness of the PLM advantage, the fairness of the benchmarking, and the interpretability of the full-length scan results are all unresolved from the supplied material.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The use of experimentally determined fibril structures as ground truth combined with PLM embeddings is a reasonable incremental advance over existing predictors, but the abstract does not demonstrate a fundamentally new conceptual contribution. Scientific importance: The problem is important for understanding amyloid biology and for potential therapeutic targeting, but the abstract does not show how the tool changes biological insight beyond what existing predictors offer. Interdisciplinary readership: The work is relevant to structural biology, computational biology, and protein chemistry, but the abstract is written in a way that is accessible to specialists only. Technical soundness: Cannot be assessed from the abstract alone. The reported metrics are promising but unverifiable without methods details and statistical analysis. Readability for nonspecialists: The abstract is concise but assumes familiarity with machine learning terminology and amyloid biology. It would benefit from a brief explanation of why structural amyloid cores differ from aggregation-prone regions.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract describes a plausible and potentially useful tool, but the core claims regarding label validity, model performance, and benchmarking superiority cannot be verified without the full manuscript. The authors should be encouraged to resubmit with complete methods, dataset descriptions, and statistical analyses.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that PLMs "consistently" outperformed physicochemical descriptors is unsupported without variance estimates and significance testing.</li>
+<li>The claim of superior performance over CrossBeta and AggrescanAI is unsupported without a described benchmarking protocol.</li>
+<li>The mean peak distance of 12.4 residues is presented without a baseline, making it uninterpretable.</li>
+<li>The generalizability of the predictor to proteins beyond those in the training set is not addressed.</li>
+<li>The practical utility of the Google Colab notebook for large-scale or high-throughput applications is not discussed.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose a multimodal graph neural network that combines ligand molecular graphs with frozen protein language model (ESM-2, ProtT5) embeddings of GPCR sequences to predict quantitative pActivity and binary activity. The model is trained on 271,739 curated ligand-GPCR pairs and evaluated under random, scaffold, and cold-ligand partitions. The authors report strong internal performance, substantial degradation without receptor embeddings, and a notable external domain shift on ChEMBL 37/BindingDB data. A DRD2-DRD3 selectivity analysis shows high predictive performance with receptor information and near-chance performance without it.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or supplementary information
+- **Missing materials affecting confidence** Full methods, model architecture details, hyperparameters, training and evaluation protocols, dataset curation criteria, baseline specifications, statistical test details, external dataset composition, and all numerical results beyond those cited in the abstract
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially valuable approach for GPCR ligand activity prediction by integrating protein language model embeddings with graph neural networks. The internal validation results are encouraging, and the ablation and selectivity analyses support the utility of receptor information. However, the abstract alone does not provide sufficient detail to assess methodological rigor, reproducibility, or the robustness of the reported performance. The external domain shift result, while honestly reported, raises questions about generalizability that are not addressed within the provided scope. The work is of interest to computational chemists and GPCR biologists, but the case for broad impact is not fully established from the abstract alone.
+- **Who would be interested in the results, and why** Computational drug discovery researchers, medicinal chemists, and GPCR biologists would be interested in this work because it addresses a practical challenge in ligand activity prediction, namely incorporating receptor-specific context. The use of protein language models as a scalable source of receptor information is timely and could inform future model designs for target-aware bioactivity prediction. The selectivity analysis for DRD2 versus DRD3 is particularly relevant for CNS drug discovery programs.
+- **Major strengths** The approach is conceptually well motivated, combining explicit molecular graphs with protein language model embeddings in a multitask framework. The evaluation design includes multiple partition schemes, including a strict cold-ligand split, which is more realistic than random splits. The ablation study on receptor embeddings is informative and supports the central claim that receptor information is essential. The external validation on independent data is a commendable practice, even though it reveals a performance drop. The selectivity analysis provides a concrete application demonstrating the value of receptor conditioning.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The model achieved mean absolute errors of 0.513, 0.540, and 0.641 pActivity units under random, cold-ligand, and scaffold partitions, respectively, and substantially outperformed a protein-aware fixed-feature multilayer perceptron and a matched GINE reference.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The abstract reports performance metrics but provides no information on variance across replicates, statistical significance of differences between models, or the criteria for model selection. It is unclear whether the reported means and standard deviations are derived from multiple seeds, cross-validation folds, or a single run. Without this information, the claimed superiority over baselines cannot be rigorously assessed.  
+  - **Why it matters** Reproducibility and statistical rigor are essential for establishing that the proposed model genuinely outperforms baselines. If the differences are within noise, the central technical claim is weakened.  
+  - **Resolution test** Provide details on the number of independent runs, the variance across runs, and statistical tests (e.g., paired t-tests or Wilcoxon signed-rank tests) comparing the proposed model against each baseline for each partition.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** External validity  
+  - **Claim pointer** Independent evaluation on 6,319 ChEMBL 37/BindingDB pairs revealed a substantial external domain shift, with mean absolute error increasing to approximately 0.94-0.95 despite chemically stringent internal validation.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The abstract reports a large performance drop on external data but does not explain the source of the domain shift or whether any adaptation strategies were attempted. The phrase "chemically stringent internal validation" is not defined, and it is unclear how the external dataset differs from the training distribution in terms of chemotypes, receptor coverage, or assay types.  
+  - **Why it matters** The external result directly challenges the generalizability of the model. Without an analysis of the domain shift or a discussion of potential remedies, the practical utility of the approach for real-world screening remains uncertain.  
+  - **Resolution test** Provide a detailed comparison of the training and external datasets in terms of chemical space, receptor families, and activity ranges. Discuss whether the performance drop is attributable to novel chemotypes, unseen receptors, or assay protocol differences, and report any attempts to mitigate the shift (e.g., fine-tuning, domain adaptation, or uncertainty estimation).  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Reproducibility  
+  - **Claim pointer** The model was trained on 271,739 curated ligand-GPCR pairs spanning 183,694 ligands and 216 human GPCRs.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The curation process for the training dataset is not described. It is unclear how ligand-GPCR pairs were assembled, how activity values were standardized, how conflicts between sources were resolved, and what thresholds were used for binary classification.  
+  - **Why it matters** Dataset curation is a major source of variability in bioactivity modeling. Without a clear description, the results cannot be reproduced or compared with other studies.  
+  - **Resolution test** Provide a detailed description of the data collection, filtering, standardization, and labeling procedures, including source databases, version numbers, and any manual curation steps.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Technical soundness  
+  - **Claim pointer** Removing receptor embeddings markedly degraded both regression and classification, whereas differences among ESM-2 35M, ESM-2 650M, and ProtT5 were comparatively small.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The abstract states that receptor embeddings are essential but does not quantify the degradation or describe the classification metrics used. It is also unclear whether the ablation was performed under all partition schemes or only a subset.  
+  - **Why it matters** The strength of the ablation claim depends on the magnitude of the performance drop and the consistency across evaluation settings. Without these details, the importance of receptor information is not fully established.  
+  - **Resolution test** Report the full set of regression and classification metrics for the full model and the receptor-ablated variant under each partition, including confidence intervals. Specify which classification threshold and metric (e.g., ROC-AUC, PR-AUC) were used.  
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Model description  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Issue** The term "protein language model-conditioned graph neural networks" is used in the title and abstract, but the exact mechanism of conditioning is not described. It is unclear whether the protein embeddings are concatenated with molecular features, used as a global context vector, or integrated via attention.  
+  - **Required correction** Clarify the architectural integration of protein embeddings in the full manuscript, ideally with a schematic figure.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Baseline comparison  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Issue** The abstract mentions a "protein-aware fixed-feature multilayer perceptron" and a "matched GINE reference" but does not describe their feature sets or architectures.  
+  - **Required correction** Provide full descriptions of all baselines, including feature types, model architectures, and hyperparameter tuning procedures, to ensure fair comparison.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Reporting  
+  - **Affected element** Selectivity analysis  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Issue** The DRD2-DRD3 selectivity analysis reports R^2, Spearman rho, and ROC-AUC, but the sample size and the definition of "strong DRD3 selectivity" are not provided.  
+  - **Required correction** Report the number of compounds and ligand-GPCR pairs used in the selectivity analysis, the threshold for defining strong selectivity, and the composition of the positive and negative classes.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** External evaluation  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Issue** The external evaluation combines ChEMBL 37 and BindingDB data, but the rationale for merging these sources and the potential for duplicate or conflicting entries are not discussed.  
+  - **Required correction** Describe the merging procedure, including duplicate handling and any cross-source validation, and report the number of unique ligands and receptors in the external set.  
+- **Technical failings that need to be addressed before the case is established** R1-M1 (statistical rigor of performance comparisons), R1-M2 (analysis of external domain shift), R1-M3 (dataset curation transparency), R1-M4 (quantification of ablation effects)
+- **Assessment against Nature-style criteria**  
+  - Originality: The combination of protein language model embeddings with graph neural networks for GPCR ligand activity prediction is a reasonable extension of existing work, but the abstract does not clearly differentiate it from prior multimodal approaches. The originality is moderate and would need a more explicit comparison with existing methods to be fully assessed.  
+  - Scientific importance: GPCR ligand activity prediction is a relevant problem in drug discovery, and the integration of receptor context is a meaningful step. However, the external domain shift result tempers the claim of broad applicability.  
+  - Interdisciplinary readership: The work bridges machine learning, cheminformatics, and pharmacology, and the abstract is written in a way that is accessible to nonspecialists. The selectivity analysis adds a concrete biological application.  
+  - Technical soundness: The evaluation design is thoughtful, but the lack of statistical detail and the unexplained external performance drop prevent a full assessment of technical soundness.  
+  - Readability for nonspecialists: The abstract is clear and well structured, with key metrics and comparisons presented in an understandable manner.  
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is promising and the internal results are encouraging, but the abstract does not provide enough evidence to fully establish the claims. The authors should address the statistical rigor, dataset transparency, and external domain shift analysis in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that the model "substantially outperforming" baselines is not supported without statistical significance testing and variance reporting.
+- The claim that receptor embeddings are "markedly" important is not quantified, so the magnitude of the effect is unknown.
+- The external domain shift result is reported but not explained, so the generalizability claim is not established.
+- The selectivity analysis results are presented without sample size or class composition, making them difficult to interpret.
+- The overall claim that this is a "scalable strategy" is not supported by any runtime, memory, or scalability analysis.

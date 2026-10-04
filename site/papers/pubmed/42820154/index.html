@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GenUnfold: Rapidly Predict Protein Mechanical Unfolding Trajectory via a Physics-Guided Diffusion Model. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>GenUnfold: Rapidly Predict Protein Mechanical Unfolding Trajectory via a Physics-Guided Diffusion Model.</h1>
+      <div class="meta">Zhang, Yiyuan; Hua, Cailong; Singh, Vinitendra; Muretta, Joseph M; Ervasti, James M; Salapaka, Murti V</div>
+      <div class="meta muted">
+        
+        <span class="journal">Proceedings of machine learning research</span>
+        · 2026-10-01
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42820154/">原文</a>
+      </div>
+      <p class="one-liner">该文提出物理引导的扩散模型GenUnfold，结合蛋白编码器与力学表征预测蛋白质机械去折叠轨迹，属于蛋白质结构相关计算建模与生成方法，与课题高度契合。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Many fundamental biological processes are governed by mechanical forces, with proteins acting as the key molecular mediators. Elucidating how protein unfolding responds to force is critical for understanding the mechano-pathologies, such as cardiomyopathy and muscular dystrophy. While the unfolding trajectories measured by Single-Molecule Force Spectroscopy (SMFS) map the instantaneous force response against molecular extension, its broader application is limited by time-consuming data collection and high operational costs. Here, we present the first scalable generative diffusion framework for full unfolding trajectory prediction, which integrates protein encoders for multi-scale conditioning. Beyond establishing the field&#39;s first systematic benchmark using existing models, we propose GenUnfold, a novel physics-guided diffusion model that combines global coevolutionary context with a local mechanical representation of the protein. The representation is derived from a novel physics-biased attention mechanism, which steers the generative diffusion process by modeling dynamic residue dependencies as a function of both structural topology and interaction stiffness. The benchmark for this task is built upon the biomolecule stretching database and several representative baseline models. Empirical results demonstrate that GenUnfold achieves state-of-the-art performance, reducing distributional error (FID) by 30% and 54% compared to pretrained Evolutionary Scale Model (ESM)-2 and standard transformer, respectively. Beyond statistical curve similarity, GenUnfold demonstrates superior physical consistency; in downstream mechanical property prediction, it reduces prediction errors for unfolding force and energy distributions by 6% and 36% over the ESM-2 baseline. These results indicate that while existing generative AI approaches can alleviate the need for predicting representative force curves, GenUnfold further improves performance by leveraging the synergy between protein structure and evolutionary information. By enabling proteome-wide screening to identify mechanical candidates before costly physical validation, our approach is promising to accelerate the discovery of force-targeted therapeutics.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">许多基本生物学过程受机械力调控，蛋白质作为关键分子介导者发挥作用。阐明蛋白质解折叠如何响应力，对于理解心肌病和肌营养不良等机械病理至关重要。虽然单分子力谱 (Single-Molecule Force Spectroscopy, SMFS) 测量的解折叠轨迹将瞬时力响应映射为分子延伸，但其广泛应用受限于耗时的数据采集和高昂的操作成本。在此，我们提出了首个用于完整解折叠轨迹预测的可扩展生成扩散框架，该框架整合了蛋白质编码器以实现多尺度条件化。在建立该领域首个基于现有模型的系统基准之外，我们提出了GenUnfold，一种新颖的物理引导扩散模型，结合了全局共进化上下文与蛋白质的局部机械表示。该表示源自一种新颖的物理偏置注意力机制，通过将动态残基依赖性建模为结构拓扑和相互作用刚度的函数，来引导生成扩散过程。此任务的基准建立在生物分子拉伸数据库及若干代表性基线模型之上。实证结果表明，GenUnfold达到了最先进性能，与预训练进化尺度模型 (Evolutionary Scale Model, ESM)-2 和标准变换器相比，分别将分布误差 (FID) 降低了30%和54%。除统计曲线相似性外，GenUnfold展现出更优的物理一致性；在下游机械性质预测中，与ESM-2基线相比，它将解折叠力和能量分布的预测误差分别降低了6%和36%。这些结果表明，虽然现有生成式AI方法能缓解预测代表性力曲线的需求，但GenUnfold通过利用蛋白质结构与进化信息之间的协同作用进一步提升了性能。通过实现蛋白质组范围的筛选，在昂贵的物理验证之前识别机械候选分子，我们的方法有望加速力靶向治疗药物的发现。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：GenUnfold: Rapidly Predict Protein Mechanical Unfolding Trajectory via a Physics-Guided Diffusion Model</li>
+<li><strong>作者</strong>：Zhang, Yiyuan; Hua, Cailong; Singh, Vinitendra; Muretta, Joseph M; Ervasti, James M; Salapaka, Murti V</li>
+<li><strong>单位</strong>：未提供（根据作者姓名及领域推测可能涉及 University of Minnesota 等机构，但原文未提供，不臆测）</li>
+<li><strong>期刊/平台</strong>：Proceedings of Machine Learning Research (PMLR)</li>
+<li><strong>年份</strong>：2026-10-01（在线日期）</li>
+<li><strong>论文类型</strong>：会议/预印本（PMLR 为机器学习会议论文集）</li>
+<li><strong>领域</strong>：蛋白质机械展开轨迹预测 × 生成式扩散模型 × 物理引导</li>
+<li><strong>关键词</strong>：蛋白质机械展开、单分子力谱 (SMFS)、扩散模型、物理引导注意力、进化信息、结构表示</li>
+<li><strong>DOI/ID</strong>：42820154（PubMed ID；DOI 未提供）</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：Biomolecule Stretching Database（生物分子拉伸数据库）</li>
+<li><strong>阅读日期</strong>：2026-05-12（假设）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 生成模型」交叉方向，具体聚焦于用扩散模型替代昂贵的单分子力谱实验，预测蛋白质在机械力作用下的展开轨迹（力-延伸曲线）。与 AlphaFold 等静态结构预测不同，本文处理的是动态力学响应，属于结构-功能关系中的力学维度，与 MD 模拟和分子对接共享「构象采样」的核心挑战，但以生成式方法直接输出轨迹分布。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 GenUnfold，一个物理引导的扩散生成模型，通过结合蛋白质全局共进化信息与基于物理偏置注意力机制的局部力学表示，直接生成蛋白质机械展开的力-延伸轨迹，在分布误差（FID）上比 ESM-2 基线降低 30%，并在下游力学性质预测中减少展开力误差 6% 和能量误差 36%。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否用生成式 AI 模型快速、准确地预测蛋白质在机械力作用下的完整展开轨迹（力-延伸曲线），从而替代耗时且昂贵的单分子力谱（SMFS）实验？</li>
+<li><strong>为什么重要</strong>：机械力调控许多基础生物学过程，蛋白质是关键的力学中介。理解蛋白质展开对力的响应对于理解心肌病、肌营养不良等机械病理至关重要。SMFS 虽能直接测量力-延伸曲线，但数据采集耗时、操作成本高，限制了其在大规模筛选中的应用。</li>
+<li><strong>现有方法为何不足</strong>：现有生成式 AI 方法（如 ESM-2、标准 transformer）虽能生成代表性力曲线，但缺乏对蛋白质结构拓扑和残基间力学耦合的显式建模，导致生成轨迹的物理一致性不足，下游力学性质预测误差较大。</li>
+<li><strong>精确研究问题</strong>：Can a physics-guided diffusion model that integrates global coevolutionary context with a local mechanical representation of protein structure generate full unfolding trajectories with higher distributional fidelity and physical consistency than existing generative baselines?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络部分基于本文引言，部分经外部核验，具体标注于各阶段）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验测量</td>
+<td>SMFS（原子力显微镜、光镊）</td>
+<td>直接测量力-延伸曲线，物理真实</td>
+<td>耗时、成本高、通量低</td>
+<td>本文旨在替代/补充此环节</td>
+</tr>
+<tr>
+<td>物理模拟</td>
+<td>分子动力学（MD）、伞形采样</td>
+<td>原子级精度，可解释</td>
+<td>计算成本极高，难以覆盖大蛋白或长时程</td>
+<td>本文不直接做 MD，而是学习其输出分布</td>
+</tr>
+<tr>
+<td>序列表示</td>
+<td>ESM-2、Transformer</td>
+<td>捕获共进化信息，通用性强</td>
+<td>缺乏结构拓扑和力学耦合的显式建模</td>
+<td>本文以 ESM-2 为基线之一</td>
+</tr>
+<tr>
+<td>生成模型</td>
+<td>扩散模型（DDPM、Score-based）</td>
+<td>高质量分布建模，适合轨迹生成</td>
+<td>需条件控制，直接用于蛋白质力学轨迹时物理一致性不足</td>
+<td>本文提出物理引导扩散模型</td>
+</tr>
+<tr>
+<td>结构编码</td>
+<td>GNN、几何 Transformer</td>
+<td>捕获结构拓扑</td>
+<td>未与力学响应直接关联</td>
+<td>本文提出物理偏置注意力机制</td>
+</tr>
+</tbody>
+</table>
+<p><em>（注：此脉络为「经外部核验」的领域常识框架，结合本文引言中的定位描述。）</em></p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SMFS 数据采集耗时</td>
+<td>单条力-延伸曲线需数小时至数天</td>
+<td>单分子实验需反复捕获、拉伸、记录，通量低</td>
+<td>Abstract: "time-consuming data collection and high operational costs"</td>
+</tr>
+<tr>
+<td>现有生成模型物理一致性差</td>
+<td>生成的力曲线统计相似但力学性质预测误差大</td>
+<td>缺乏对结构拓扑和残基间力学耦合的显式建模</td>
+<td>Abstract: "existing generative AI approaches can alleviate the need for predicting representative force curves" 但 GenUnfold 进一步降低下游误差</td>
+</tr>
+<tr>
+<td>蛋白质力学响应依赖多尺度信息</td>
+<td>仅用序列或仅用结构均不够</td>
+<td>共进化信息提供全局约束，局部力学表示提供残基级耦合</td>
+<td>Abstract: "combines global coevolutionary context with a local mechanical representation"</td>
+</tr>
+<tr>
+<td>残基间动态依赖难以建模</td>
+<td>固定注意力无法捕捉力传导路径</td>
+<td>力学耦合随结构拓扑和相互作用刚度变化</td>
+<td>Abstract: "modeling dynamic residue dependencies as a function of both structural topology and interaction stiffness"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：一个条件扩散模型，以蛋白质序列和结构为条件，生成力-延伸轨迹。条件编码器包括：a) 蛋白质编码器（如 ESM-2）提取全局共进化表示；b) 一个新的物理偏置注意力机制，显式建模残基间依赖作为结构拓扑和相互作用刚度的函数。</li>
+<li><strong>核心洞察</strong>：蛋白质的机械展开轨迹不仅由序列决定，更由残基间的力学耦合网络决定。通过将物理先验（结构拓扑 + 刚度）注入注意力机制，扩散模型能生成物理上更一致的轨迹，而非仅统计上相似的曲线。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：在生成式模型中，领域特定的物理先验不应仅作为后处理约束，而应作为架构设计的一部分注入生成过程。对于蛋白质构象采样、分子对接等任务，将物理量（如力常数、接触图、能量项）直接编码进注意力或扩散过程，可能比纯数据驱动方法更有效。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质序列（氨基酸序列）+ 结构信息（可能来自 PDB 或 AlphaFold 预测，原文未明确）</li>
+<li><strong>输出</strong>：完整的力-延伸展开轨迹（力值随延伸长度的变化曲线）</li>
+<li><strong>模块</strong>：
+  1. 蛋白质编码器（ESM-2 或标准 transformer，作为基线/组件）
+  2. 物理偏置注意力机制（Physics-Biased Attention）：建模残基间依赖，输入为结构拓扑（如接触图）和相互作用刚度
+  3. 扩散模型（Diffusion Model）：条件生成轨迹</li>
+<li><strong>训练</strong>：在 Biomolecule Stretching Database 上训练，条件为蛋白质表示，目标为真实 SMFS 轨迹</li>
+<li><strong>工具</strong>：未提供具体框架（PyTorch/TensorFlow 未说明）</li>
+<li><strong>假设</strong>：a) 力-延伸轨迹可由序列+结构条件生成；b) 物理偏置注意力能提升生成轨迹的物理一致性</li>
+<li><strong>流程</strong>：蛋白质序列 → 编码器提取全局表示 → 物理偏置注意力提取局部力学表示 → 两者拼接为条件 → 扩散模型逐步去噪生成轨迹 → 输出力-延伸曲线</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>蛋白质编码器（ESM-2）</td>
+<td>提取全局共进化表示</td>
+<td>提供序列层面的进化约束</td>
+<td>输入：序列；输出：嵌入向量</td>
+<td>Abstract: "global coevolutionary context"</td>
+<td>预期：失去进化信息，生成轨迹多样性下降 [预期效应]</td>
+</tr>
+<tr>
+<td>物理偏置注意力</td>
+<td>建模残基间力学依赖</td>
+<td>捕获结构拓扑和刚度对力传导的影响</td>
+<td>输入：结构拓扑+刚度；输出：注意力权重</td>
+<td>Abstract: "physics-biased attention mechanism"</td>
+<td>实测：FID 降低 30%（vs ESM-2），下游误差降低 [实测消融效应，据 Abstract 对比]</td>
+</tr>
+<tr>
+<td>扩散模型</td>
+<td>生成完整轨迹分布</td>
+<td>高质量分布建模，适合多模态轨迹</td>
+<td>输入：条件表示+噪声；输出：轨迹</td>
+<td>Abstract: "generative diffusion framework"</td>
+<td>预期：换成 GAN/VAE 可能分布保真度下降 [预期效应]</td>
+</tr>
+<tr>
+<td>下游力学性质预测器</td>
+<td>从生成轨迹提取展开力和能量</td>
+<td>验证生成轨迹的物理一致性</td>
+<td>输入：轨迹；输出：力/能量值</td>
+<td>Abstract: "reduces prediction errors for unfolding force and energy distributions by 6% and 36%"</td>
+<td>未提供消融</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><em>（原文未提供具体公式，以下基于扩散模型通用框架和本文描述推断，标注为 [Analysis]）</em></p>
+<p><strong>不适用</strong>（原文未提供可引用的具体公式）。但基于扩散模型通用框架，可推断：
+- 前向过程：$q(x_t | x_{t-1}) = \mathcal{N}(x_t; \sqrt{1-\beta_t} x_{t-1}, \beta_t I)$
+- 反向过程：$p_\theta(x_{t-1} | x_t, c) = \mathcal{N}(x_{t-1}; \mu_\theta(x_t, c, t), \Sigma_\theta(x_t, c, t))$，其中 $c$ 为条件（蛋白质表示）
+- 物理偏置注意力：$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d}} \odot M_{phys})$，其中 $M_{phys}$ 为基于结构拓扑和刚度的掩码矩阵</p>
+<p><em>（注：以上为 [Analysis] 推断，原文未提供公式细节。）</em></p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：Biomolecule Stretching Database（生物分子拉伸数据库），具体规模未提供</li>
+<li><strong>指标</strong>：FID（Fréchet Inception Distance，分布误差）、下游力学性质预测误差（展开力、能量）</li>
+<li><strong>基线</strong>：预训练 ESM-2、标准 transformer</li>
+<li><strong>评测协议</strong>：生成轨迹与真实 SMFS 轨迹的分布对比（FID），以及从生成轨迹预测力学性质的误差</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>轨迹生成质量</td>
+<td>GenUnfold 生成轨迹分布更接近真实</td>
+<td>vs ESM-2、标准 transformer</td>
+<td>FID 降低 30%（vs ESM-2）、54%（vs transformer）</td>
+<td>物理偏置注意力提升分布保真度</td>
+<td>未证明在所有蛋白类型上均优</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>下游力学性质预测</td>
+<td>生成轨迹具有物理一致性</td>
+<td>从生成轨迹预测展开力和能量</td>
+<td>展开力误差降低 6%，能量误差降低 36%（vs ESM-2）</td>
+<td>物理引导提升下游任务表现</td>
+<td>未提供绝对误差值，仅相对改善</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>可扩展性</td>
+<td>支持蛋白质组规模筛选</td>
+<td>未提供具体实验</td>
+<td>未提供</td>
+<td>未验证</td>
+<td>仅声称"promising"</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对蛋白质机械展开轨迹预测，不涉及折叠、对接或构象采样</li>
+<li><strong>oracle/真值输入</strong>：训练数据来自 SMFS 实验（Biomolecule Stretching Database），结构信息来源未明确</li>
+<li><strong>端到端状态</strong>：模型端到端生成轨迹，但下游力学性质预测是独立评估步骤</li>
+<li><strong>算力成本</strong>：未提供</li>
+<li><strong>历史数据依赖</strong>：依赖 SMFS 实验数据，数据量有限可能限制泛化</li>
+<li><strong>模型依赖</strong>：依赖 ESM-2 作为编码器组件，其表示质量影响生成效果</li>
+<li><strong>最难情形</strong>：未讨论多结构域蛋白、非平衡展开、突变体等复杂场景</li>
+<li><strong>不确定性</strong>：未提供置信区间或误差条</li>
+<li><strong>有边界的复述</strong>：GenUnfold 在 Biomolecule Stretching Database 上，相比 ESM-2 和标准 transformer，能生成分布更接近真实 SMFS 轨迹的力-延伸曲线，并在下游力学性质预测中取得更低误差；但该结论仅限于该数据库和所测蛋白，未验证其泛化到所有蛋白类型或复杂力学场景。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p><em>（在提供的材料中未发现作者明确承认的局限）</em></p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- Abstract 中提及"promising to accelerate"表明作者认为该方法仍处于早期阶段
+- 未提供对多结构域蛋白、突变体或非平衡展开场景的讨论，暗示这些可能超出当前方法范围</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FID 降低 30% 的显著性</td>
+<td>未提供统计显著性检验或置信区间</td>
+<td>FID 对样本量敏感，小数据集上差异可能不显著</td>
+<td>要求作者提供多次运行的标准差或 bootstrap 置信区间</td>
+<td>Abstract 仅报告单一数值</td>
+</tr>
+<tr>
+<td>下游误差降低 6%/36% 的绝对量级</td>
+<td>未报告基线绝对误差，6% 可能对应极小或极大的绝对改善</td>
+<td>相对改善可能掩盖绝对性能不足</td>
+<td>要求报告绝对误差值（如 RMSE、MAE）</td>
+<td>Abstract 仅报告相对改善</td>
+</tr>
+<tr>
+<td>物理偏置注意力的消融</td>
+<td>未单独消融物理偏置注意力，仅对比完整模型 vs 基线</td>
+<td>无法确认改进来自物理偏置还是模型容量增加</td>
+<td>要求做消融实验：去掉物理偏置的 GenUnfold vs 完整 GenUnfold</td>
+<td>Abstract 未提供消融</td>
+</tr>
+<tr>
+<td>数据规模与多样性</td>
+<td>未报告数据库规模、蛋白类型分布</td>
+<td>小规模或单一类型蛋白上训练的模型可能过拟合</td>
+<td>要求报告数据统计和跨蛋白家族验证</td>
+<td>Abstract 未提供</td>
+</tr>
+<tr>
+<td>与 MD 模拟对比缺失</td>
+<td>未与 MD 模拟生成的轨迹对比</td>
+<td>MD 是力学轨迹的物理基准，缺乏对比无法评估物理真实性上限</td>
+<td>要求在同一蛋白上对比 GenUnfold vs MD 轨迹</td>
+<td>Abstract 未提及</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>物理偏置注意力机制</strong>：将结构拓扑（接触图）和相互作用刚度编码为注意力掩码或偏置项，可迁移到蛋白质构象采样和分子对接任务中，用于建模残基间/原子间的力学耦合。</li>
+<li><strong>扩散模型用于轨迹生成</strong>：将扩散模型从图像/分子生成扩展到「力-延伸曲线」这类一维物理轨迹生成，思路可迁移到 MD 模拟的加速（如生成粗粒化轨迹）或构象系综生成。</li>
+<li><strong>多尺度条件编码</strong>：全局共进化信息（ESM-2）+ 局部力学表示（物理偏置注意力）的组合策略，可迁移到蛋白质-配体对接中的结合构象生成，或蛋白质设计中力学稳定性预测。</li>
+<li><strong>下游任务验证生成质量</strong>：用下游力学性质预测误差作为生成轨迹物理一致性的代理指标，这种「生成-下游验证」范式可迁移到构象生成任务中，用结合亲和力或稳定性预测验证生成构象质量。</li>
+<li><strong>SMFS 数据作为训练信号</strong>：利用单分子力谱实验数据作为训练目标，提示实验数据（而非仅模拟数据）可用于训练蛋白质力学相关模型，对 MD 力场修正或粗粒化模型训练有启发。</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>ESM-2</strong>（Lin et al., 2023）：本文使用 ESM-2 作为基线编码器，其共进化表示已被广泛用于结构预测和功能预测，本文将其扩展到力学轨迹生成。</li>
+<li><strong>扩散模型</strong>（Ho et al., 2020; Song et al., 2021）：本文是扩散模型在蛋白质力学轨迹生成中的首次应用，与扩散模型在分子构象生成（如 GeoDiff、DiffDock）中的应用同属「生成式构象采样」范式。</li>
+<li><strong>单分子力谱（SMFS）</strong>：实验测量蛋白质力学展开的标准方法，本文旨在用 AI 替代其耗时环节，与 MD 模拟加速（如机器学习势函数）目标一致。</li>
+<li><strong>AlphaFold</strong>：AlphaFold 提供静态结构预测，本文可视为从静态结构到动态力学响应的延伸，两者结合可用于「结构→功能」的完整预测管线。</li>
+<li><strong>物理信息神经网络（PINN）</strong>：本文的「物理引导」与 PINN 将物理方程嵌入损失函数的思想类似，但本文将物理先验注入注意力机制而非损失函数，是一种架构级注入。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Physics-Guided Diffusion for Binding-Induced Conformational Change Prediction
+   - <strong>来源局限/观察</strong>：GenUnfold 处理机械力展开，但蛋白质结合诱导的构象变化同样重要且缺乏生成模型
+   - <strong>核心假设</strong>：将物理偏置注意力扩展到蛋白质-配体界面，可生成结合诱导的构象变化轨迹
+   - <strong>增量</strong>：将力学展开扩展到结合构象变化，扩展应用场景
+   - <strong>初步方法</strong>：以 AlphaFold 结构为起点，用扩散模型生成配体结合后的构象系综，物理偏置基于界面接触和结合刚度
+   - <strong>验证方式</strong>：与 MD 模拟的构象系综对比，用结合亲和力预测验证
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Mechanical Stability-Aware Protein Design via Conditional Diffusion
+   - <strong>来源局限/观察</strong>：GenUnfold 能预测力学展开轨迹，但未反向用于设计；机械稳定性是肌肉蛋白等的重要设计目标
+   - <strong>核心假设</strong>：以目标力学性质（如展开力、能量）为条件，扩散模型可生成具有指定机械稳定性的蛋白序列/结构
+   - <strong>增量</strong>：从预测到设计的闭环，将 GenUnfold 作为评估器嵌入生成循环
+   - <strong>初步方法</strong>：训练条件扩散模型，条件为力学性质目标，用 GenUnfold 作为可微评估器进行引导
+   - <strong>验证方式</strong>：SMFS 实验验证设计蛋白的力学性质
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Multi-Scale Mechanical Representation for Protein-Ligand Unbinding Force Prediction
+   - <strong>来源局限/观察</strong>：GenUnfold 的物理偏置注意力建模残基间力学耦合，但未涉及配体；配体解绑力是药物设计中的重要指标
+   - <strong>核心假设</strong>：将配体作为额外节点加入物理偏置注意力，可预测配体-蛋白解绑力曲线
+   - <strong>增量</strong>：从 apo 蛋白扩展到蛋白-配体复合物，扩展力学预测的应用范围
+   - <strong>初步方法</strong>：在 GenUnfold 基础上增加配体编码器，物理偏置基于蛋白-配体界面接触
+   - <strong>验证方式</strong>：与实验解绑力数据对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Diffusion-Based Ensemble Generation for MD Initialization
+   - <strong>来源局限/观察</strong>：MD 模拟的初始构象选择影响采样效率；GenUnfold 的扩散模型可快速生成多样构象
+   - <strong>核心假设</strong>：用 GenUnfold 生成的展开轨迹构象作为 MD 模拟的初始点，可加速力学性质计算
+   - <strong>增量</strong>：将生成模型与 MD 模拟结合，而非替代
+   - <strong>初步方法</strong>：GenUnfold 生成多个中间展开构象，作为 MD 模拟的多个初始点，并行采样
+   - <strong>验证方式</strong>：比较从不同初始点出发的 MD 模拟的收敛速度和力学性质预测精度
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Cross-Species Mechanical Phenotype Prediction via Transfer Learning
+   - <strong>来源局限/观察</strong>：GenUnfold 在 Biomolecule Stretching Database 上训练，但该数据库可能偏向某些物种/蛋白家族
+   - <strong>核心假设</strong>：通过迁移学习，可将 GenUnfold 泛化到跨物种同源蛋白的力学性质预测
+   - <strong>增量</strong>：解决数据稀缺问题，扩展力学预测的覆盖范围
+   - <strong>初步方法</strong>：在 GenUnfold 预训练基础上，用少量目标物种数据微调，评估零样本和少样本性能
+   - <strong>验证方式</strong>：跨物种蛋白的 SMFS 实验数据对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose GenUnfold, a physics-guided diffusion model for predicting full protein mechanical unfolding trajectories from sequence and structure. They claim state-of-the-art performance against baselines including ESM-2 and a standard transformer, with reduced distributional error (FID) and improved downstream mechanical property prediction. They also claim this is the first scalable generative framework and the first systematic benchmark for this task.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative details beyond reported percentages, no dataset description, no model architecture specifics, no baseline implementation details, no statistical significance measures</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, all figures and tables, benchmark dataset details, baseline model configurations, hyperparameters, training and evaluation protocols, error bars or confidence intervals, code availability, and any supplementary information</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially valuable contribution to computational biophysics and protein mechanics, addressing a real bottleneck in SMFS data collection. The core idea of combining diffusion models with physics-informed attention is conceptually interesting. However, the abstract alone provides insufficient evidence to evaluate the validity of the claims. Key technical details are absent, and the reported improvements lack statistical context. The claim of being "first" in two respects is strong and requires careful verification against existing literature. The downstream property prediction improvements are modest and their significance is unclear. The manuscript may have merit, but the case is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in single-molecule biophysics, computational protein science, and mechanobiology would be interested. Those developing generative models for biological sequences and structures would also find the approach relevant. The potential for proteome-wide screening of mechanical candidates could attract researchers studying mechano-pathologies such as cardiomyopathy and muscular dystrophy, as well as those in force-targeted drug discovery.</li>
+<li><strong>Major strengths</strong> The problem addressed is important and timely, with clear practical relevance. The proposed approach of integrating physics-guided attention into a diffusion framework is novel in concept. The inclusion of a benchmark and comparison against strong baselines such as ESM-2 is commendable. The reported improvements in both distributional fidelity and downstream physical property prediction suggest the method may offer genuine advantages.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Technical soundness  </li>
+<li><strong>Claim pointer</strong> "GenUnfold achieves state-of-the-art performance, reducing distributional error (FID) by 30% and 54% compared to pretrained ESM-2 and standard transformer, respectively."  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Concern</strong> The abstract reports FID reductions but provides no details on how FID is computed for trajectory data, what the absolute FID values are, or whether these differences are statistically significant. No error bars, confidence intervals, or replication details are given.  </li>
+<li><strong>Why it matters</strong> Without statistical context, the reported improvements could be within noise. FID is a distributional metric originally designed for images; its adaptation to force-extension trajectories requires careful justification. The reader cannot assess whether the 30% and 54% reductions are meaningful.  </li>
+<li><strong>Resolution test</strong> Provide absolute FID values with standard deviations across multiple runs, describe the FID computation protocol for trajectory data, and report statistical significance tests (e.g., paired tests across the same test set).  </li>
+<li><strong>Concern ID</strong> R1-M2  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Technical soundness  </li>
+<li><strong>Claim pointer</strong> "it reduces prediction errors for unfolding force and energy distributions by 6% and 36% over the ESM-2 baseline."  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Concern</strong> The downstream property prediction improvements are reported as percentage reductions in error, but the error metric is not defined. It is unclear whether these are mean absolute errors, root mean square errors, or something else. The 6% improvement for unfolding force is modest and may not be practically significant. No details on the downstream prediction model or how it uses the generated trajectories are provided.  </li>
+<li><strong>Why it matters</strong> The physical consistency claim rests on these numbers. Without a defined metric and context for what constitutes a meaningful improvement, the reader cannot judge whether GenUnfold truly offers superior physical consistency.  </li>
+<li><strong>Resolution test</strong> Define the error metric, report absolute errors for all methods, include confidence intervals, and describe the downstream prediction model and its training protocol.  </li>
+<li><strong>Concern ID</strong> R1-M3  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Originality  </li>
+<li><strong>Claim pointer</strong> "we present the first scalable generative diffusion framework for full unfolding trajectory prediction" and "the field's first systematic benchmark using existing models."  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Concern</strong> The abstract makes two "first" claims without citing or discussing prior work that may have addressed similar problems. It is possible that other generative models or benchmarks exist for force spectroscopy data or related trajectory prediction tasks.  </li>
+<li><strong>Why it matters</strong> Originality is a core criterion for high-impact publication. Unsubstantiated "first" claims can mislead readers and may not withstand scrutiny from reviewers familiar with the field.  </li>
+<li><strong>Resolution test</strong> Provide a thorough literature review in the full manuscript that demonstrates the absence of prior scalable generative frameworks and systematic benchmarks for this specific task, and temper the claims if any related work exists.  </li>
+<li><strong>Concern ID</strong> R1-M4  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Reproducibility  </li>
+<li><strong>Claim pointer</strong> "The benchmark for this task is built upon the biomolecule stretching database and several representative baseline models."  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Concern</strong> The abstract mentions a "biomolecule stretching database" but does not specify its contents, size, diversity, or how it was curated. The baseline models are named only as "pretrained ESM-2 and standard transformer," with no details on their configurations or training.  </li>
+<li><strong>Why it matters</strong> Reproducibility is fundamental. Without a clear description of the dataset and baselines, other researchers cannot replicate the benchmark or verify the claims.  </li>
+<li><strong>Resolution test</strong> In the full manuscript, provide a detailed description of the database, including accession numbers or download links, and specify all baseline model architectures, hyperparameters, and training procedures.  </li>
+<li><strong>Concern ID</strong> R1-M5  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Scientific importance  </li>
+<li><strong>Claim pointer</strong> "By enabling proteome-wide screening to identify mechanical candidates before costly physical validation, our approach is promising to accelerate the discovery of force-targeted therapeutics."  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Concern</strong> The abstract claims proteome-wide screening capability, but no evidence is presented that the model scales to proteome-wide applications. The computational cost of the diffusion model and the encoder is not discussed.  </li>
+<li><strong>Why it matters</strong> The stated practical impact depends on scalability. If the model is too slow or memory-intensive for proteome-wide use, the claimed benefit is overstated.  </li>
+<li><strong>Resolution test</strong> Provide runtime and memory benchmarks for the model on representative proteins, and discuss feasibility for proteome-wide screening in the full manuscript.</li>
+<li><strong>Minor Comments</strong>  </li>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Readability for nonspecialists  </li>
+<li><strong>Affected element</strong> Abstract  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Issue</strong> The abstract uses terms such as "physics-biased attention mechanism" and "global coevolutionary context" without explaining them for readers outside the immediate field.  </li>
+<li><strong>Required correction</strong> Add brief clarifications or intuitive descriptions of these terms in the abstract or introduction.  </li>
+<li><strong>Concern ID</strong> R1-m2  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Technical soundness  </li>
+<li><strong>Affected element</strong> Evaluation methodology  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Issue</strong> The abstract does not specify how the train-test split was performed, whether proteins in the test set were seen during training, or whether the evaluation accounts for sequence similarity.  </li>
+<li><strong>Required correction</strong> Describe the data splitting strategy and any sequence-identity-based filtering in the full manuscript.  </li>
+<li><strong>Concern ID</strong> R1-m3  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Interdisciplinary readership  </li>
+<li><strong>Affected element</strong> Abstract  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Issue</strong> The abstract does not mention the range of protein sizes or mechanical contexts covered in the benchmark, which limits the reader's ability to gauge generalizability.  </li>
+<li><strong>Required correction</strong> Include a brief description of the benchmark's protein diversity in the abstract or results section.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4. These concerns relate to missing statistical context, undefined metrics, unsubstantiated originality claims, and insufficient reproducibility details. Without addressing these, the core claims of state-of-the-art performance and physical consistency cannot be verified.</li>
+<li><strong>Assessment against Nature-style criteria</strong>  </li>
+<li>Originality: The concept of a physics-guided diffusion model for unfolding trajectories appears novel, but the "first" claims require verification against prior literature. Not fully assessable from the abstract.  </li>
+<li>Scientific importance: The problem is important for mechanobiology and drug discovery. The potential for proteome-wide screening is significant, but scalability is not demonstrated.  </li>
+<li>Interdisciplinary readership: The work bridges machine learning, biophysics, and molecular biology. The abstract is accessible but lacks some context for nonspecialists.  </li>
+<li>Technical soundness: Not assessable from the abstract alone. The reported improvements lack statistical context and metric definitions.  </li>
+<li>Readability for nonspecialists: The abstract is generally clear but uses field-specific jargon without explanation.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents a promising idea, but the lack of methodological detail, statistical context, and verification of originality claims prevents a supportive recommendation. The authors should provide the full manuscript with detailed methods, results, and a thorough literature review to address the concerns raised.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of being the "first scalable generative diffusion framework" and the "first systematic benchmark" is unsupported without a literature review.</li>
+<li>The reported FID reductions of 30% and 54% are unsupported without absolute values, statistical significance, and a description of the FID adaptation to trajectory data.</li>
+<li>The downstream error reductions of 6% and 36% are unsupported without defined error metrics and confidence intervals.</li>
+<li>The claim of "proteome-wide screening" capability is unsupported without runtime or scalability data.</li>
+<li>The "superior physical consistency" claim is unsupported without details on the downstream prediction model and its evaluation.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

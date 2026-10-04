@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.09.27.754816",
+  "title": "Protein Language Model-Conditioned Graph Neural Networks for Multitask GPCR Ligand Activity Prediction",
+  "authors": "Manashi De; Ekarsi Lodh; Shalini Majumder; Tapan Chowdhury",
+  "journal": "bioRxiv",
+  "published_date": "2026-10-02",
+  "window": {
+    "start": "2026-09-27",
+    "end": "2026-10-03"
+  },
+  "score": 6,
+  "one_liner_zh": "该文用蛋白语言模型嵌入GPCR序列并联合配体分子图进行多任务活性预测，虽以配体-受体活性为核心而非直接蛋白质结构计算，但方法可迁移至蛋白结构相关建模，故评6分。",
+  "abstract": "Predicting ligand activity across G protein-coupled receptors (GPCRs) requires models that capture both molecular structure and receptor-specific information while remaining robust to chemical and target-domain shifts. We developed a multimodal graph neural network that combines explicit ligand molecular graphs with frozen protein language model representations of GPCR sequences and jointly predicts quantitative pActivity and binary activity. The model was trained on 271,739 curated ligand-GPCR pairs spanning 183,694 ligands and 216 human GPCRs and evaluated using random, Bemis-Murcko scaffold, and strict cold-ligand partitions. With ESM-2 650M receptor embeddings, the selected model achieved mean absolute errors of 0.513 ± 0.006, 0.540 ± 0.006, and 0.641 ± 0.005 pActivity units under random, cold-ligand, and scaffold evaluation, respectively, substantially outperforming a protein-aware fixed-feature multilayer perceptron and consistently improving quantitative prediction over a matched GINE reference. Removing receptor embeddings markedly degraded both regression and classification, whereas differences among ESM-2 35M, ESM-2 650M, and ProtT5 were comparatively small. Independent evaluation on 6,319 ChEMBL 37/BindingDB pairs revealed a substantial external domain shift, with mean absolute error increasing to approximately 0.94-0.95 despite chemically stringent internal validation. Nevertheless, receptor-specific information remained highly informative in a DRD2-DRD3 selectivity analysis: the cold-ligand ensemble achieved R^2 = 0.853, Spearman ρ = 0.916, and ROC-AUC = 0.966 for strong DRD3 selectivity, whereas the receptor-independent ablation approached chance-level discrimination. These results establish protein-language-model-conditioned molecular graph learning as a scalable strategy for GPCR bioactivity prediction while identifying chemotype novelty, external-domain transfer, and richer ligand-receptor interaction representations as key remaining challenges.",
+  "abstract_zh": "预测G蛋白偶联受体（GPCRs）的配体活性需要模型同时捕捉分子结构和受体特异性信息，并保持对化学和靶点域偏移的鲁棒性。我们开发了一种多模态图神经网络，将显式配体分子图与GPCR序列的冻结蛋白质语言模型表示相结合，并联合预测定量pActivity和二元活性。该模型在271,739个精选配体-GPCR对上训练，涵盖183,694个配体和216个人类GPCR，并使用随机、Bemis-Murcko骨架和严格冷配体划分进行评估。采用ESM-2 650M受体嵌入，所选模型在随机、冷配体和骨架评估下分别实现了0.513 ± 0.006、0.540 ± 0.006和0.641 ± 0.005 pActivity单位的平均绝对误差，显著优于蛋白质感知的固定特征多层感知器，并在定量预测上持续优于匹配的GINE参考模型。移除受体嵌入显著降低了回归和分类性能，而ESM-2 35M、ESM-2 650M和ProtT5之间的差异相对较小。在6,319个ChEMBL 37/BindingDB对上的独立评估揭示了显著的外部域偏移，尽管内部验证在化学上严格，平均绝对误差仍增加至约0.94-0.95。然而，在DRD2-DRD3选择性分析中，受体特异性信息仍高度有效：冷配体集成实现了R^2 = 0.853、Spearman ρ = 0.916和ROC-AUC = 0.966的强DRD3选择性，而受体无关的消融接近随机判别水平。这些结果确立了蛋白质语言模型条件化的分子图学习作为GPCR生物活性预测的可扩展策略，同时识别出化学型新颖性、外部域转移和更丰富的配体-受体相互作用表示作为关键剩余挑战。",
+  "has_fulltext": false,
+  "fulltext_source": "abstract",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.09.27.754816",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.09.27.754816",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.09.27.754816/index.html"
+}

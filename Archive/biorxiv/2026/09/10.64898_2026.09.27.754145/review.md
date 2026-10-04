@@ -1,0 +1,85 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors introduce GuideFlip, a method for de novo design of protein binders against flexible targets, using guided discrete flow matching to co-design structure and sequence. They report improved in silico success rates over existing approaches, a database of binder candidates for 177 human disordered proteins, experimental hit rates for binders to α-synuclein and RBX1, and a conformation-selective nanobody against the β1-adrenergic receptor with a cryo-EM structure.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary data
+- **Missing materials affecting confidence** Full methods, all experimental protocols, NMR and mutagenesis data, cryo-EM maps and validation statistics, database contents and access details, computational benchmarks with baselines, and statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially significant advance in protein binder design for flexible targets, a problem of considerable interest. The core idea of co-designing structure and sequence via guided discrete flow matching is conceptually appealing and the reported experimental hit rates are encouraging. However, the abstract alone provides insufficient detail to evaluate the technical soundness of the method, the rigor of the experimental validations, or the robustness of the claimed improvements over existing approaches. The claim of a 75% hit rate for a conformation-selective nanobody is striking and would require strong structural and biophysical evidence to be credible. The manuscript may be of high interest if the full data support the claims, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational protein designers and structural biologists working on intrinsically disordered proteins, flexible complexes, and conformation-selective binders. The method addresses a known limitation of structure-first design pipelines, so researchers developing generative models for biomolecular interactions would find the approach relevant. The experimental demonstrations against α-synuclein and GPCRs would interest those studying neurodegeneration and receptor signaling.
+- **Major strengths** The problem addressed is well-defined and important. The method conceptually integrates structure prediction and sequence design in a way that could overcome the static-structure limitation. The inclusion of multiple experimental validations, including NMR, mutagenesis, and cryo-EM, suggests an effort to go beyond purely computational claims. The release of a candidate database for 177 disordered proteins is a useful community resource.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "GuideFlip reduces the hydrophobic bias of direct AlphaFold optimization and improves in silico success rates over existing approaches."
+  - **Evidence pointer** location not provided
+  - **Concern** The abstract claims improved in silico success rates over existing approaches, but no details are given on the benchmark set, the baselines compared, the evaluation metrics, or the statistical significance of the improvements. Without this information, the claim cannot be assessed.
+  - **Why it matters** The central value proposition of the method rests on its computational performance relative to prior work. If the benchmark is narrow or the baselines are weak, the improvement may not be general.
+  - **Resolution test** Provide a benchmark description with target diversity, baseline methods, success criteria, and error bars or significance tests.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Experimental validation
+  - **Claim pointer** "we confirm the epitopes of selected binders by NMR and mutagenesis"
+  - **Evidence pointer** location not provided
+  - **Concern** The abstract states that epitopes were confirmed, but no data are shown. For α-synuclein, a disordered protein, epitope mapping by NMR requires careful assignment and titration experiments. For RBX1, mutagenesis must rule out allosteric effects. The abstract does not indicate how many binders were validated, what fraction of the hits were confirmed, or whether the epitopes match the design predictions.
+  - **Why it matters** Epitope confirmation is essential to demonstrate that the binders engage the intended target region, not just that they bind somewhere on the protein. Without this, the design success rate is not meaningful.
+  - **Resolution test** Show representative NMR spectra with assignments, mutagenesis data with controls, and a clear statement of how many binders were tested and confirmed.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Structural validation
+  - **Claim pointer** "a cryo-EM structure confirming the design"
+  - **Evidence pointer** location not provided
+  - **Concern** The abstract claims a cryo-EM structure confirms the design of a nanobody against the active β1-adrenergic receptor. No resolution, map quality metrics, or model validation statistics are provided. For a conformation-selective binder, the structure must demonstrate that the nanobody contacts the receptor in a way that is specific to the active state, and that the design model matches the experimental structure.
+  - **Why it matters** A cryo-EM structure is a strong piece of evidence, but only if it is of sufficient quality and if the comparison to the design model is rigorous. Without these details, the claim is unverifiable.
+  - **Resolution test** Provide the cryo-EM resolution, map-to-model FSC curves, and a structural alignment between the design model and the experimental complex with RMSD values.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Hit rate definition
+  - **Claim pointer** "we obtain de novo binders to the carboxy terminus of α-synuclein and the disordered amino terminus of RBX1 with hit rates of 13.5% and 41.7%, respectively"
+  - **Evidence pointer** location not provided
+  - **Concern** The hit rates are reported without defining what constitutes a hit. Is a hit a binder confirmed by a specific biochemical assay, a sequence that passes a computational filter, or something else? The denominator is also unclear. For α-synuclein, a 13.5% hit rate could mean 5 out of 37 or 50 out of 370, which changes the interpretation substantially.
+  - **Why it matters** Hit rates are only meaningful with a clear definition of the assay, the threshold for positivity, and the number of candidates tested. Without this, the reported rates cannot be compared to other design studies.
+  - **Resolution Test** Define the hit criteria, the assay used, the number of candidates tested, and the number of confirmed binders.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Method description
+  - **Evidence pointer** Abstract, first paragraph
+  - **Issue** The phrase "guided discrete flow matching" is not explained. A reader unfamiliar with flow matching methods will not understand what is being guided or how the guidance works.
+  - **Required correction** Add a brief explanation of the guidance mechanism, or refer to a methods section where this is defined.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Database release
+  - **Evidence pointer** Abstract, second paragraph
+  - **Issue** The abstract states that a database of binder candidates is released, but no URL, accession code, or description of the database contents is given.
+  - **Required correction** Provide the database location and a brief description of the format and contents.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Experimental details
+  - **Evidence pointer** Abstract, second paragraph
+  - **Issue** The abstract does not state the number of binders tested for the nanobody design, only the hit rate of 75%. It is unclear how many candidates were screened.
+  - **Required correction** Report the number of candidates tested and the number of confirmed binders.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Specificity
+  - **Affected element** Conformation selectivity claim
+  - **Evidence pointer** Abstract, second paragraph
+  - **Issue** The claim that the nanobody binds the active state but not the inactive state is stated without specifying how the inactive state was tested or what assay was used.
+  - **Required correction** Specify the assay and the receptor construct used for the inactive state test.
+
+## Risk / unsupported claims
+- The claim of improved in silico success rates over existing approaches is unsupported without benchmark details.
+- The hit rates for α-synuclein and RBX1 are uninterpretable without a definition of the hit criteria and the number of candidates tested.
+- The epitope confirmation by NMR and mutagenesis is unverifiable without data.
+- The cryo-EM structure confirming the design is unverifiable without resolution and validation metrics.
+- The claim that GuideFlip "enables protein design where bound structures emerge only upon binding" is a general statement that cannot be evaluated from the abstract alone.
+- The database of binder candidates for 177 disordered proteins is mentioned but not accessible or described.

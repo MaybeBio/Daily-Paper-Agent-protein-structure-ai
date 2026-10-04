@@ -1,0 +1,83 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, introduction, experimental and computational methods, results, discussion, and data availability statements.
+- **Assessment boundary** Scientific claims, methodological soundness, internal consistency, and adequacy of evidence as presented in the supplied text. No external validation or replication was performed.
+- **Shared manuscript claim summary** The authors report that protein structures of equine hemoglobin determined by serial femtosecond crystallography (SFX) at the LCLS are indistinguishable when measured with 3 fs versus 10 fs X-ray pulses of similar intensity, and that collisional-radiative and molecular-dynamics simulations support the conclusion that no significant electronic or structural damage occurs under these conditions. They further argue that shortening pulse duration below 10 fs offers no structural benefit at the studied intensity.
+- **Visible evidence base** Experimental diffraction data statistics (Table 1, Fig. 2, Supplementary Figs. S3, S4, S7), refined structures (PDB 9tli, 9tlj), electron density maps (Fig. 3, Supplementary Figs. S6, S9, S10), and simulation results (Figs. 4, 5, Supplementary Figs. S11–S13).
+- **Missing materials affecting confidence** The manuscript does not provide explicit pulse-energy measurements, per-shot intensity distributions, crystal size distributions, or detailed beam geometry parameters. The exact fluence values used in simulations are not stated numerically. The criteria for "indistinguishable" structures are not quantitatively defined beyond R-factor and visual map inspection. The full refinement statistics (e.g., Ramachandran plot, B-factor distributions) are not shown in the main text.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a relevant question in SFX: whether pulse duration affects radiation damage in protein crystals. The experimental comparison between 3 fs and 10 fs pulses is straightforward and the conclusion that no significant structural difference is observed is supported by the presented data. However, the study's scope is narrow, the evidence for "no damage" is largely based on null results with limited statistical power, and the simulation component, while useful, is not directly tied to the experimental conditions. The claim that there is "no structural benefit from further shortening the pulse duration" is only established for the specific intensity and crystal system studied, and the manuscript does not fully address the generalizability of this conclusion. The work is technically sound but incremental, and the presentation could be improved for a broader readership.
+- **Who would be interested in the results, and why** Researchers in serial femtosecond crystallography, X-ray free-electron laser applications, and radiation damage in biological samples. The results are relevant for designing SFX experiments, particularly for choosing pulse durations at existing and future XFEL facilities. The simulation methodology may also interest computational groups studying radiation damage in matter.
+- **Major strengths** The study uses a well-characterized model system (hemoglobin) with a clear biological relevance. The experimental design is simple and directly addresses the question of pulse-duration effects. The combination of experimental data with collisional-radiative and molecular-dynamics simulations provides a multi-scale perspective. The data availability statement is commendable, with deposited structures and raw data links.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency for the central claim
+  - **Claim pointer** "Protein structures determined by serial femtosecond crystallography are indistinguishable when measured with 3 and 10 fs X-ray pulses, indicating no structural benefit from further shortening the pulse duration under the studied conditions."
+  - **Evidence pointer** Table 1, Fig. 2, Fig. 3, Supplementary Figs. S6, S9, S10
+  - **Concern** The claim of "indistinguishable" structures is based on visual inspection of electron density maps and similar R-factors. No quantitative structural comparison (e.g., root-mean-square deviation of atomic positions, coordinate error estimates, or difference distance matrices) is provided. The resolution of 2.46 Å may not be sufficient to detect subtle but real differences in side-chain conformations or metal coordination geometry. The authors do not report the uncertainty in their structural parameters, making it impossible to assess whether the lack of observed difference is meaningful or simply a consequence of limited precision.
+  - **Why it matters** The central conclusion of the paper rests on the assertion that the two structures are the same. Without a quantitative metric for structural similarity and an estimate of the detectable difference at this resolution, the claim is not rigorously established. A null result requires a demonstration that the experiment was sensitive enough to detect the expected damage if it occurred.
+  - **Resolution test** Provide a quantitative structural comparison (e.g., r.m.s.d. between the two refined models, coordinate error estimates from Luzzati or cross-validated methods) and a power analysis or sensitivity estimate showing that the experiment could detect damage at the level predicted by simulations or expected from radiation chemistry.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Simulation-experiment alignment
+  - **Claim pointer** "Simulations corroborated experimental findings and showed no difference in electronic damage caused by the two pulse durations around the heme group."
+  - **Evidence pointer** Figs. 4, 5, Supplementary Figs. S11–S13
+  - **Concern** The simulations are run at fluence values "beyond those used in our experiments" and the authors state they "do not simulate the exact experimental intensities." This disconnect means the simulations do not directly test the experimental conditions. The threshold for damage onset is extrapolated from higher fluence data, and the behavior at the experimental intensity is inferred rather than computed. The manuscript does not state the actual fluence values used in the simulations or the experimental fluence, making it impossible to judge the validity of the extrapolation.
+  - **Why it matters** The claim that simulations corroborate the experimental findings is weakened if the simulations were not performed at the experimental conditions. The extrapolation from higher fluence to lower fluence assumes a monotonic relationship that may not hold if nonlinear effects (e.g., transparency, plasma shielding) become relevant at higher intensities.
+  - **Resolution test** State the numerical fluence values for both experiments and simulations. Perform simulations at the experimental fluence to directly compare predicted damage with observed structures. If this is not feasible, provide a clear justification for why the extrapolation is valid.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability of the conclusion
+  - **Claim pointer** "We see that there is no advantage in decreasing the pulse duration in protein crystallography measurements without increasing the intensity to compensate for the lower fluence."
+  - **Evidence pointer** Discussion section
+  - **Concern** This conclusion is drawn from a single protein (hemoglobin) at a single intensity and a narrow range of pulse durations (3 and 10 fs). The authors do not discuss how their results might depend on crystal size, composition, or the presence of heavy atoms. The behavior of hemoglobin, which contains iron, may not be representative of proteins without metal centers or with different absorption cross-sections. The conclusion is stated as a general principle but is only supported for the specific conditions studied.
+  - **Why it matters** The stated conclusion has practical implications for the design of SFX experiments. If it is overgeneralized, it could mislead researchers working with different systems or at different XFEL facilities. The manuscript should either temper the claim or provide a broader context for its applicability.
+  - **Resolution test** Revise the conclusion to explicitly state the conditions under which the finding applies, or add a discussion of how the results might scale with crystal properties and beam parameters. Alternatively, provide additional data or simulations for a different protein or a range of intensities to support the general claim.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of methods
+  - **Affected element** Experimental methods, Data collection and processing
+  - **Evidence pointer** Section 2.2
+  - **Issue** The manuscript states that pulse energies were "estimated" and that the authors "rely on information provided by the beamline diagnostics," but does not describe the calibration procedure or the uncertainty in these estimates. The intensity values quoted in the abstract and results are presented without error bars.
+  - **Required correction** Provide a brief description of how pulse energies were calibrated and the estimated uncertainty. If this information is not available, state this explicitly and discuss the potential impact on the conclusions.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Presentation of simulation parameters
+  - **Affected element** Computational methods, Collisional-radiative simulations
+  - **Evidence pointer** Section 3.2
+  - **Issue** The manuscript does not specify the number of simulation runs, the statistical uncertainty in the simulation outputs, or the convergence criteria. The r.m.s.d. values in Fig. 5 are presented as averages over 20 replicas, but the spread or standard error is not shown.
+  - **Required correction** Add error bars or confidence intervals to the simulation results in Fig. 5 and state the convergence criteria used for the molecular-dynamics simulations.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology precision
+  - **Affected element** Abstract and Discussion
+  - **Evidence pointer** Abstract, Discussion
+  - **Issue** The term "indistinguishable" is used without a formal definition. In crystallography, structures are often compared using metrics like the coordinate error or the correlation coefficient of structure factors. The manuscript uses Rsplit and CC* but does not define a threshold for "indistinguishable."
+  - **Required correction** Define the criterion used to conclude that the structures are indistinguishable, or replace the term with a more precise description (e.g., "no statistically significant differences were detected").
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Figure readability
+  - **Affected element** Fig. 4
+  - **Evidence pointer** Fig. 4
+  - **Issue** The figure caption does not explain the meaning of the shaded regions or the dashed lines. The reader cannot determine what the error bars represent or whether the differences between the 3 fs and 10 fs curves are statistically significant.
+  - **Required correction** Expand the figure caption to explain all graphical elements and state the statistical treatment of the data.
+- **Technical failings that need to be addressed before the case is established** The lack of a quantitative structural comparison between the two refined models (R1-M1) is the primary technical failing. Without this, the central claim of "no difference" is not rigorously supported. The disconnect between simulation and experimental conditions (R1-M2) is a secondary issue that weakens the corroborative value of the simulations.
+- **Assessment against Nature-style criteria** 
+  - Originality: The question of pulse-duration effects in SFX is not new, and the study does not introduce a novel methodology. The combination of experiment and simulation is standard in this field. The originality is limited.
+  - Scientific importance: The result is of practical interest for SFX practitioners but does not fundamentally change the understanding of radiation damage. The finding that 3 fs and 10 fs pulses give similar results is useful but incremental.
+  - Interdisciplinary readership: The topic is relevant to structural biology, X-ray physics, and radiation chemistry, but the presentation is heavily focused on crystallographic details, which may limit accessibility to non-specialists.
+  - Technical soundness: The experimental and computational methods are generally sound, but the lack of quantitative structural comparison and the simulation-experiment gap are significant weaknesses.
+  - Readability for nonspecialists: The manuscript assumes familiarity with SFX terminology and crystallographic metrics. The abstract is clear, but the methods and results sections would be difficult for a general scientific audience.
+- **Recommendation posture** Supportive if technical concerns are resolved. The experimental data are potentially valuable, but the central claim requires a quantitative structural comparison and a clearer link between simulations and experiments. If these are addressed, the manuscript could be suitable for publication in a specialized structural biology or X-ray science journal. The current form does not establish the case at the level required for a high-impact general journal.
+
+## Risk / unsupported claims
+- The claim that the two structures are "indistinguishable" is not supported by a quantitative comparison metric.
+- The claim that simulations "corroborated experimental findings" is weakened by the fact that simulations were not run at experimental conditions.
+- The general statement that "there is no advantage in decreasing the pulse duration" is not supported beyond the specific conditions studied.
+- The statement that "no significant electronic or structural damage" occurs is based on a null result without a stated sensitivity analysis.
+- The manuscript does not provide evidence that the beamline diagnostics accurately reflect the actual pulse intensity delivered to the crystals, given the stated shot-to-shot variation and crystal size distribution.

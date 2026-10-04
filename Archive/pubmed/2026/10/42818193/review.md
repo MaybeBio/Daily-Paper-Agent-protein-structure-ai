@@ -1,0 +1,73 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors assess AlphaFold3 (AF3) multimer mode for predicting supramolecular self-assembly of designed amphiphilic peptides, reporting qualitative agreement with biophysical principles (hydrophobic driving forces, steric constraints) and experimental trends in morphology and compactness, while identifying limitations including helical propensity bias, terminal charge repulsion sensitivity, and a predisposition to predict single assembled entities rather than higher-order assemblies.
+- **Visible evidence base** Abstract text only; no quantitative data, figures, tables, or methodological details are available
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, quantitative metrics (radii of gyration, packing scores, aspect ratios), sequence design details, AF3 version and settings, comparison datasets from literature, and any statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful evaluation of AF3 for peptide nanostructure prediction, with a reasonable hypothesis and a systematic design strategy. However, the claims are largely qualitative and the evidence base is not visible from the abstract alone. The stated limitations are plausible and align with known AF3 behavior, but the absence of quantitative results, methodological detail, and direct experimental comparisons prevents a rigorous assessment of the central claims. The work may be of interest to the peptide design and computational biology communities, but the current evidence does not establish the predictive utility claimed.
+- **Who would be interested in the results, and why** Researchers in peptide self-assembly, biomaterials design, and computational structural biology would be interested. The work addresses a practical need for rapid screening tools in peptide nanomaterial development, and the identification of AF3 limitations is relevant to those using deep learning models for supramolecular systems.
+- **Major strengths** The study addresses a timely and practical question regarding AF3 applicability beyond monomeric protein structure prediction. The systematic variation of sequence hydrophobicity, length, and copy number is a sensible approach. The authors acknowledge limitations and position AF3 as a first-pass screening tool rather than a definitive predictor, which is a measured and appropriate framing.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that AF3 predicts morphologies consistent with hydrophobic driving forces and steric constraints, and that qualitative agreement with experimental trends supports AF3 utility for initial structure generation.
+  - **Evidence pointer** Abstract only; no figures, tables, or quantitative data provided
+  - **Concern** The central claims of predictive accuracy and qualitative agreement with experimental trends are presented without any visible quantitative data. No metrics, error bars, statistical tests, or direct comparisons to experimental structures are shown. The terms "consistent with" and "qualitative agreement" are used without operational definitions or supporting numbers.
+  - **Why it matters** Without quantitative evidence, the reader cannot evaluate the strength of the claimed agreement or the significance of the observed trends. The abstract does not establish that AF3 predictions are sufficiently reliable for the proposed screening use case.
+  - **Resolution test** Provide quantitative results including numerical values for radii of gyration, packing scores, and aspect ratios across conditions, with statistical comparisons. Include direct comparisons to experimental structures or literature data with defined agreement metrics.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** The abstract states that AF3 multimer mode was used with copy numbers from 10 to 1000, and that PyRosetta was used for analysis.
+  - **Evidence pointer** Abstract only; methods section not provided
+  - **Concern** Critical methodological details are absent. The AF3 version, model weights, confidence filtering criteria, number of seeds or replicates, and the specific protocol for modeling assemblies of 10 to 1000 copies are not described. The criteria for classifying morphologies as micelles or nanotubes are not defined. The PyRosetta analysis parameters are unspecified.
+  - **Why it matters** AF3 predictions are stochastic and highly sensitive to input settings and version. Without this information, the results cannot be reproduced or independently verified, and the validity of the morphological classifications cannot be assessed.
+  - **Resolution test** Provide a complete methods section detailing AF3 version, input construction, sampling protocol, filtering criteria, morphology classification rules, and PyRosetta analysis parameters.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim substantiation
+  - **Claim pointer** The abstract claims that comparisons to literature reveal discrepancies driven by charge effects and secondary structure bias, including overemphasis on helical propensity and sensitivity to terminal charge repulsion.
+  - **Evidence pointer** Abstract only; no literature comparison data provided
+  - **Concern** The claimed discrepancies with literature are stated without specific examples, quantitative comparisons, or references. The reader cannot assess which literature was used, how comparisons were made, or whether the identified discrepancies are systematic or anecdotal.
+  - **Why it matters** These limitations are central to the paper's contribution, as they define the boundaries of AF3 applicability. Without documented evidence, these claims remain assertions rather than findings.
+  - **Resolution test** Provide a dedicated comparison section with specific literature examples, quantitative agreement or disagreement metrics, and a clear description of how charge effects and secondary structure bias were identified.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract, morphology descriptions
+  - **Issue** The terms "micelles" and "nanotubes" are used without structural definitions or validation criteria.
+  - **Required correction** Define the structural criteria used to classify predicted assemblies into these morphological categories.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scope justification
+  - **Affected element** Sequence design
+  - **Evidence pointer** Abstract, peptide design description
+  - **Issue** The abstract states that amphiphilic peptides with alternating hydrophobic and hydrophilic residues were designed, but the rationale for the specific residue choices and the range of sequence lengths is not explained.
+  - **Required correction** Briefly justify the sequence design space and explain how it covers the relevant parameter space for testing the hypotheses.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Trend interpretation
+  - **Evidence pointer** Abstract, results summary
+  - **Issue** The statement that "longer hydrophobic segments lead to disordered structures, whereas longer hydrophilic segments promote organization" is presented without a mechanistic explanation or connection to known self-assembly principles.
+  - **Required correction** Provide a brief interpretation of why these trends are expected based on established biophysical principles.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative evidence, methodological detail, and documented literature comparisons means the central claims cannot be evaluated from the provided material.
+- **Assessment against Nature-style criteria** Originality: moderate. Applying AF3 to supramolecular peptide assembly is a reasonable extension of existing work, but the abstract does not demonstrate a novel conceptual advance. Scientific importance: potentially relevant to peptide biomaterials design, but the significance depends on the strength of the validation, which is not visible. Interdisciplinary readership: the topic bridges computational biology and materials science, but the abstract is written in a way that assumes familiarity with both fields. Technical soundness: cannot be assessed from the abstract alone; the described approach is plausible but unverifiable without methods and data. Readability for nonspecialists: the abstract is generally clear but uses field-specific terms without definition, and the qualitative nature of the claims makes the take-home message difficult to evaluate.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a potentially useful study, but the absence of quantitative results, methodological transparency, and documented comparisons means the claims cannot be verified. A full manuscript with complete data and methods would be required to assess whether the case is established.
+
+## Risk / unsupported claims
+- The claim that AF3 predicts morphologies consistent with hydrophobic driving forces and steric constraints is unsupported without quantitative data.
+- The claim of qualitative agreement with experimental trends is unsupported without specific comparisons.
+- The claim that increased hydrophobicity correlates with smaller radii of gyration is unsupported without numerical values.
+- The claim that higher copy numbers correspond to smaller aspect ratios is unsupported without numerical values.
+- The claims regarding helical propensity bias and terminal charge repulsion sensitivity are unsupported without documented literature comparisons.
+- The claim that AF3 is predisposed to predict a single assembled entity is unsupported without systematic evidence.
+- The overall utility claim for AF3 as a first-pass screening tool is not established from the abstract alone.

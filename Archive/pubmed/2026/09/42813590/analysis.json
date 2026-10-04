@@ -1,0 +1,24 @@
+{
+  "source": "pubmed",
+  "id": "42813590",
+  "title": "DreamFold: A World Model to efficiently generate protein folding pathways in the latent space.",
+  "authors": "Ianeselli, Alan; Im, Jewon; Cavallin, Eddie; Gerstein, Mark B",
+  "journal": "Protein science : a publication of the Protein Society",
+  "published_date": "2026-09-30",
+  "window": {
+    "start": "2026-09-27",
+    "end": "2026-10-03"
+  },
+  "score": 9,
+  "one_liner_zh": "DreamFold 提出基于世界模型的生成式框架，在潜空间高效生成蛋白质折叠路径，比MD快四个数量级，并识别具有治疗价值的折叠中间体，核心贡献于蛋白质构象采样与动力学计算。",
+  "abstract": "While there is an abundance of static data for the structure of biological macromolecules, the data regarding their folding mechanisms and dynamics is scarce, posing a challenge to the training of AI models. The World Model approach, which has been very successful in robotics, can come in handy in this regard. From limited data, it can build a latent, approximated representation of the spatio-temporal folding environment that can be used to train downstream AI models. Here, we developed DreamFold, a World Model-based generative framework to perform biomolecular simulations. DreamFold encodes protein structures and dihedral angle moves into latent vectors using variational autoencoders. Then, it uses another neural network to rapidly predict the next latent structure after a latent move, allowing the model to develop its own understanding of protein dynamics. Finally, in a \"hallucinated\" latent environment, an agent learns, through evolutionary algorithms, a policy to drive folding simulations toward a target. Latent configurations can then be decoded back into atomistic structures. DreamFold can compute protein folding pathways four orders of magnitude faster than molecular dynamics (MD), up to ~30,000x. Furthermore, for the monomeric proteins tested here (up to 449 aa), the computational cost scales linearly with the number of atoms (N) as O(N) (in comparison, MD scales as O(NlogN)). We have validated our results against established MD benchmarks and other available experimental data. Finally, we show how DreamFold allows us to identify folding intermediates with cryptic binding sites that are therapeutically valuable. Overall, DreamFold facilitates the study of protein dynamics by generative AI with applications in structure-based drug discovery.",
+  "abstract_zh": "尽管生物大分子结构的静态数据丰富，但其折叠机制和动力学数据稀缺，这对AI模型的训练构成了挑战。在机器人领域非常成功的世界模型（World Model）方法在这方面可以派上用场。从有限数据中，它可以构建一个潜在、近似的时空折叠环境表示，用于训练下游AI模型。在此，我们开发了DreamFold，一种基于世界模型的生成框架，用于执行生物分子模拟。DreamFold使用变分自编码器将蛋白质结构和二面角移动编码为潜在向量。然后，它利用另一个神经网络在潜在移动后快速预测下一个潜在结构，使模型能够发展自己对蛋白质动力学的理解。最后，在“幻觉”潜在环境中，一个智能体通过进化算法学习策略，将折叠模拟驱动至目标状态。潜在配置随后可解码回原子级结构。DreamFold计算蛋白质折叠路径的速度比分子动力学（molecular dynamics, MD）快四个数量级，最高可达约30,000倍。此外，对于此处测试的单体蛋白质（最长449个氨基酸），计算成本随原子数（N）线性扩展为O(N)（相比之下，MD扩展为O(NlogN)）。我们已针对已建立的MD基准和其他可用实验数据验证了我们的结果。最后，我们展示了DreamFold如何使我们识别具有治疗价值的隐秘结合位点的折叠中间体。总体而言，DreamFold通过生成式AI促进了蛋白质动力学研究，并在基于结构的药物发现中具有应用前景。",
+  "has_fulltext": true,
+  "fulltext_source": "pmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42813590/",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/42813590/",
+  "paper_page_path": "papers/pubmed/42813590/index.html"
+}

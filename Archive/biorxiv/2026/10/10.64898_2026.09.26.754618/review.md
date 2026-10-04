@@ -1,0 +1,101 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present DeepUMQA-Selection, a two-stage framework for selecting high-quality protein complex models from large candidate pools. Stage one uses single-model accuracy estimators for preliminary enrichment; stage two uses Ultrafast Shape Recognition (USR)-based structural alignment for consensus selection. The authors claim superior performance over all CASP16 QMODE3 participating methods and predictor-derived confidence metrics on a retrospective benchmark, a 13.9% improvement for heteromeric targets, scalability to larger complexes via a confidence-assisted strategy, and a 317-fold speedup over US-align for pools of 1,000 models.
+- **Visible evidence base** Abstract text only. No figures, tables, methods details, dataset descriptions, or statistical analyses were provided.
+- **Missing materials affecting confidence** Full manuscript, methods section, benchmark dataset details, CASP16 QMODE3 target list, baseline method descriptions, statistical significance tests, runtime benchmarking protocols, and any supplementary information.
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially useful two-stage framework for protein complex model selection, combining single-model accuracy estimation with a fast shape-based consensus approach. The reported performance gains on CASP16 QMODE3 and the substantial runtime improvement are notable. However, the abstract alone provides insufficient detail to evaluate the validity of the claims. Key methodological aspects, benchmark construction, statistical rigor, and comparison fairness cannot be assessed from the supplied material. The work addresses a relevant problem in structural biology, but the evidence base is too limited to establish the case.
+- **Who would be interested in the results, and why** Researchers in computational structural biology, particularly those working on protein complex prediction, model quality assessment, and large-scale structural modeling pipelines. The claimed speedup and accuracy improvements would be relevant to developers of high-throughput prediction workflows and to experimentalists who need reliable model selection from large candidate pools.
+- **Major strengths** The two-stage design is conceptually reasonable, combining complementary information sources. The use of USR-based alignment to avoid explicit structural superposition is an interesting approach to reduce computational cost. The reported 317-fold speedup over US-align is substantial and, if reproducible, would be practically valuable. The focus on heteromeric targets, where model selection is particularly challenging, is appropriate.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The framework outperformed all CASP16 QMODE3 participating methods and predictor-derived confidence metrics as measured by mean Top-5 weighted penalty.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The abstract reports a single performance metric (mean Top-5 weighted penalty) without providing the actual values, the number of targets, the distribution of results, or any statistical significance testing. It is unclear whether the reported advantage is consistent across targets or driven by a few outliers.  
+  - **Why it matters** Without statistical context, the claimed superiority over all participating methods cannot be evaluated. A single aggregate metric can mask high variance, and the absence of error bars or significance tests prevents assessment of reliability.  
+  - **Resolution test** Provide the full benchmark results, including per-target scores, the distribution of Top-5 weighted penalty values, and appropriate statistical tests (e.g., paired tests or bootstrap confidence intervals) comparing DeepUMQA-Selection against each baseline method.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The 13.9% improvement in model-selection performance for heteromeric targets relative to the best-performing CASP16 participating method.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The abstract does not specify the baseline for this improvement, the number of heteromeric targets, or the metric used. It is also unclear whether this improvement is statistically significant and whether it holds across different heteromeric target categories.  
+  - **Why it matters** Heteromeric complexes are diverse in size, stoichiometry, and difficulty. A single percentage improvement without context does not establish generalizable advantage.  
+  - **Resolution test** Report the number of heteromeric targets, the specific baseline method and metric, per-target results, and statistical significance testing for the heteromeric subset.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The USR-based structural alignment achieved a 317-fold speedup over US-align for candidate pools containing 1,000 models.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The runtime comparison is reported as a single speedup factor without details on hardware, implementation, number of replicates, variance, or whether the comparison is apples-to-apples in terms of alignment quality. It is unclear whether the speedup comes at the cost of alignment accuracy.  
+  - **Why it matters** Runtime claims are only meaningful with clear benchmarking conditions. If the speedup is accompanied by reduced alignment fidelity, the consensus selection quality could be compromised.  
+  - **Resolution test** Provide detailed runtime benchmarking protocols, including hardware specifications, software versions, number of runs, standard deviations, and a quality comparison of USR-based alignment versus US-align on the same structural pairs.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Reproducibility  
+  - **Claim pointer** The two-stage framework combining single-model accuracy estimators with USR-based consensus selection.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The abstract does not specify which single-model accuracy estimators are used, how the preliminary selection threshold is set, how USR descriptors are computed and compared, or how the confidence-assisted strategy works. None of these components can be reproduced or evaluated from the abstract.  
+  - **Why it matters** Reproducibility is a core requirement for computational methods. Without methodological detail, the framework cannot be implemented, tested, or compared by other groups.  
+  - **Resolution test** Provide a complete methods section describing all components, parameters, and the confidence-assisted strategy, along with code or pseudocode.  
+  - **Concern ID** R1-M5  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Benchmark validity  
+  - **Claim pointer** On the retrospective CASP16 QMODE3 benchmark dataset, DeepUMQA-Selection outperformed all participating methods.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The abstract does not describe how the retrospective benchmark was constructed, whether the same target set and evaluation protocol as CASP16 were used, or whether any information leakage could occur from using CASP16 data for method development.  
+  - **Why it matters** Retrospective benchmarks can be biased if the method was tuned on the same data. The absence of a clear separation between development and evaluation compromises the validity of the comparison.  
+  - **Resolution test** Describe the benchmark construction, confirm that no CASP16 data were used for method development or parameter tuning, and provide the full target list and evaluation protocol.  
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Abstract text  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract does not define "mean Top-5 weighted penalty" or explain why this metric is appropriate for model selection evaluation.  
+  - **Required correction** Define the metric and justify its use in the context of CASP16 QMODE3.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Abstract text  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract mentions a "confidence-assisted strategy" but does not explain what confidence information is used or how it is integrated.  
+  - **Required correction** Briefly describe the confidence source and integration mechanism.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Generalizability  
+  - **Affected element** Abstract text  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract reports results only on CASP16 QMODE3 data. It is unclear whether the method generalizes to other benchmarks or real-world use cases.  
+  - **Required correction** Add results on additional benchmarks or discuss generalizability limitations explicitly.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Comparison fairness  
+  - **Affected element** Abstract text  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract states the method outperformed "predictor-derived confidence metrics" but does not specify which metrics were compared.  
+  - **Required correction** List the specific confidence metrics used as baselines.  
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4, R1-M5. The abstract does not provide sufficient methodological detail, statistical context, or benchmark validation to establish the core claims.
+- **Assessment against Nature-style criteria**  
+  - Originality: The two-stage combination of single-model estimators with USR-based consensus is a reasonable incremental contribution, but the abstract does not demonstrate conceptual novelty beyond existing EMA methods.  
+  - Scientific importance: The problem of efficient model selection from large candidate pools is relevant and timely. If the claims hold, the work would be practically useful.  
+  - Interdisciplinary readership: The topic is of interest to structural biologists and computational biologists, but the abstract is written in a way that assumes familiarity with CASP and model quality assessment terminology.  
+  - Technical soundness: Not assessable from the abstract. The absence of methods details, statistical tests, and benchmark descriptions prevents evaluation.  
+  - Readability for nonspecialists: The abstract is concise and generally clear, but terms such as "USR," "QMODE3," and "Top-5 weighted penalty" are not explained for a broader audience.  
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents interesting claims, but the lack of methodological detail, statistical context, and benchmark validation means the case is not made. A full manuscript with complete methods, results, and statistical analyses would be required to evaluate the work properly.
+
+## Risk / unsupported claims
+- The claim of outperforming all CASP16 QMODE3 participating methods is unsupported without per-target results and statistical testing.
+- The 13.9% improvement for heteromeric targets is unsupported without specifying the baseline, target count, and significance.
+- The 317-fold speedup is unsupported without detailed benchmarking protocols and quality comparison.
+- The scalability claim via the confidence-assisted strategy is unsupported without description of the strategy and supporting results.
+- The general claim of "accurate and computationally efficient selection" is not assessable from the abstract alone.

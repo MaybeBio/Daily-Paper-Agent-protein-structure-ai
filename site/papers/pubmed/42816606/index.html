@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Function-preserving watermarking of AI-generated proteins. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Function-preserving watermarking of AI-generated proteins.</h1>
+      <div class="meta">Stutz, David; Cowen-Rivers, Alexander I; Ortiz-Jimenez, Guillermo; Ratcliff, Jeremy; Zambaldi, Vinicius; Willmore, Lindsay; Abramson, Josh; Patani, Harshnira; Kouridi, Christina; Stimberg, Florian; Vecerik, Mel; Chu, Alex; Singh, Sukhdeep; Dathathri, Sumanth; Papa, Eliseo; De Bortoli, Valentin; Doucet, Arnaud; Hassabis, Demis; Wang, Jue; Gowal, Sven; Kohli, Pushmeet</div>
+      <div class="meta muted">
+        
+        <span class="journal">Nature</span>
+        · 2026-10-01
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42816606/">原文</a>
+      </div>
+      <p class="one-liner">该文提出SynthIDBio方法，在AI生成的蛋白质序列和结构中嵌入保持功能的数字水印，涉及蛋白质结构预测与设计，并利用微调AlphaFold3模型，属于蛋白质结构计算与AI方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Generative artificial intelligence (AI) models are revolutionizing biology, with tools such as AlphaFold 3 and protein design models accelerating breakthroughs in protein structure prediction and the creation of new functional proteins(1). Tracking and establishing the provenance of AI-generated protein sequences and structures is becoming increasingly important to tackle a range of emerging challenges, including biosecurity and concerns about information veracity(2-4). Here we introduce SynthIDBio, a family of methods for watermarking protein sequences and structures to establish the provenance of those generated with AI. SynthIDBio-sequence actively embeds a watermark into protein sequences while preserving function. We demonstrate this by creating watermarked, functional designed protein binders with binding affinity comparable with non-watermarked counterparts and near-perfect watermark detection accuracy. Furthermore, SynthIDBio-structure, a fine-tuned AlphaFold3 model, embeds an imperceptible watermark into biomolecular structures. Our work is a proof-of-concept that function-preserving biological watermarking is feasible, introducing a potential tool for provenance in the rapidly expanding era of AI-driven biological engineering.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">生成式人工智能（AI）模型正在彻底改变生物学领域，诸如AlphaFold 3和蛋白质设计模型等工具加速了蛋白质结构预测及新型功能蛋白质创造方面的突破(1)。追踪并确立AI生成蛋白质序列和结构的来源，对于应对一系列新兴挑战（包括生物安全及信息真实性担忧）正变得日益重要(2-4)。在此，我们介绍SynthIDBio，这是一系列用于对蛋白质序列和结构进行水印标记的方法，旨在确立AI生成内容的来源。SynthIDBio-sequence在保留功能的同时，主动将水印嵌入蛋白质序列中。我们通过创建带水印的功能性设计蛋白质结合剂来证明这一点，其结合亲和力与未加水印的对应物相当，且水印检测准确率近乎完美。此外，SynthIDBio-structure，一个微调后的AlphaFold3模型，将不可察觉的水印嵌入生物分子结构中。我们的工作是一个概念验证，表明保留功能的生物水印是可行的，为快速扩张的AI驱动生物工程时代引入了一种潜在的来源追踪工具。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Function-preserving watermarking of AI-generated proteins</li>
+<li><strong>作者</strong>：Stutz, David; Cowen-Rivers, Alexander I; Ortiz-Jimenez, Guillermo; Ratcliff, Jeremy; Zambaldi, Vinicius; Willmore, Lindsay; Abramson, Josh; Patani, Harshnira; Kouridi, Christina; Stimberg, Florian; Vecerik, Mel; Chu, Alex; Singh, Sukhdeep; Dathathri, Sumanth; Papa, Eliseo; De Bortoli, Valentin; Doucet, Arnaud; Hassabis, Demis; Wang, Jue; Gowal, Sven; Kohli, Pushmeet</li>
+<li><strong>单位</strong>：Google DeepMind（未提供具体部门列表）</li>
+<li><strong>期刊/平台</strong>：Nature</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学（proof-of-concept）</li>
+<li><strong>领域</strong>：AI 生成蛋白质的可溯源水印（provenance / watermarking）</li>
+<li><strong>关键词</strong>：SynthIDBio, watermarking, protein design, AlphaFold 3, provenance, biosecurity</li>
+<li><strong>DOI/arXiv</strong>：10.1038/s41586-026-10965-y</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-10-01（以 URL 访问日期为准）</li>
+<li><strong>在课题方向中的位置</strong>：该文属于「AI 生成蛋白质序列/结构的可溯源标记」这一新兴子方向，与蛋白质结构预测（AlphaFold 3 微调）、蛋白质设计（binder 设计）直接相关，但核心目标不是提升功能，而是嵌入可检测水印并保持功能不变。对课题读者而言，其可迁移点在于「功能保持的隐式扰动」与「结构域水印嵌入」思路。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>该文提出 SynthIDBio 系列方法，通过在蛋白质序列中主动嵌入水印（SynthIDBio-sequence）或通过微调 AlphaFold3 在结构中嵌入不可感知水印（SynthIDBio-structure），在保持设计蛋白结合亲和力与未水印版本相当的前提下，实现近完美的水印检测准确率。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在不损害蛋白质功能（如结合亲和力）的前提下，为 AI 生成的蛋白质序列和结构嵌入可检测的水印，以建立来源追踪（provenance）？</li>
+<li><strong>为什么重要</strong>：AI 生成蛋白质工具（如 AlphaFold 3、蛋白设计模型）加速了功能蛋白的创造，但随之而来的是生物安全（biosecurity）与信息真实性（veracity）问题，需要可靠的手段追踪 AI 生成内容的来源。</li>
+<li><strong>现有方法不足</strong>：现有水印方法多针对文本或图像，不适用于生物序列；直接对序列加扰动可能破坏功能；结构层面的水印尚未有系统方案。</li>
+<li><strong>精确研究问题</strong>：Can we embed a watermark into AI-generated protein sequences and structures while preserving their biological function (e.g., binding affinity)?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>阶段一</strong>：传统蛋白质设计（理性设计、定向进化）——无 AI 生成，无溯源需求。</li>
+<li><strong>阶段二</strong>：AI 生成模型（AlphaFold 3、RFdiffusion 等）——可快速生成功能蛋白，但缺乏来源标记。</li>
+<li><strong>阶段三</strong>：数字水印技术（文本/图像）——不可直接迁移至生物序列，因序列功能约束强。</li>
+<li><strong>本文位置</strong>：首次提出「功能保持的蛋白质水印」概念，分为序列级（主动嵌入）与结构级（微调 AlphaFold3 嵌入）两条路径。</li>
+<li><strong>脉络标注</strong>：此脉络为「仅本文框架」——作者在摘要中未提供详细历史综述，仅提及 AlphaFold 3 与设计模型作为背景。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>溯源缺失</td>
+<td>AI 生成蛋白无法区分于天然蛋白</td>
+<td>生成模型不输出来源信息</td>
+<td>摘要：provenance 重要性（ref 2-4）</td>
+</tr>
+<tr>
+<td>功能保持困难</td>
+<td>直接加扰动会破坏结合亲和力</td>
+<td>序列-功能映射高度敏感</td>
+<td>摘要：watermarked binders 与未水印版本亲和力相当</td>
+</tr>
+<tr>
+<td>结构水印空白</td>
+<td>无现成结构级水印方法</td>
+<td>结构空间连续且功能约束强</td>
+<td>摘要：SynthIDBio-structure 为微调 AlphaFold3</td>
+</tr>
+<tr>
+<td>检测可靠性</td>
+<td>需近完美检测率</td>
+<td>水印需可区分且不可感知</td>
+<td>摘要：near-perfect watermark detection accuracy</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：
+   - SynthIDBio-sequence：在序列生成过程中主动嵌入水印（如特定密码子/氨基酸模式），同时优化功能保持。
+   - SynthIDBio-structure：微调 AlphaFold3 模型，使其在预测结构时嵌入不可感知的几何水印。</li>
+<li><strong>核心洞察</strong>：
+   - 功能保持的关键在于「水印嵌入与功能优化联合进行」，而非事后扰动。
+   - 结构水印利用生成模型的隐空间，通过微调使水印成为模型输出的固有属性。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：
+   - 任何「功能保持的隐式标记」问题，都可考虑「在生成过程中嵌入」而非「事后修改」。
+   - 微调预训练生成模型（如 AlphaFold3）可同时实现功能保持与标记嵌入，这一思路可迁移至其他生物分子生成任务。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质序列（SynthIDBio-sequence）或结构（SynthIDBio-structure，输入为序列/结构对）。</li>
+<li><strong>输出</strong>：带水印的序列或结构，以及对应的检测器输出（水印存在与否）。</li>
+<li><strong>模块</strong>：
+  1. 水印编码器（序列级：嵌入模式；结构级：微调 AlphaFold3）
+  2. 功能保持优化器（结合亲和力预测/实验验证）
+  3. 水印检测器（序列模式匹配或结构特征提取）</li>
+<li><strong>训练</strong>：序列级可能使用强化学习或监督微调；结构级为 AlphaFold3 微调（未提供细节）。</li>
+<li><strong>工具</strong>：AlphaFold 3（微调）、蛋白设计模型（未指定）。</li>
+<li><strong>反馈回路</strong>：功能评估（结合亲和力）反馈至水印嵌入过程，确保功能不降。</li>
+<li><strong>假设</strong>：水印嵌入不影响蛋白折叠与结合；检测器可区分水印与天然变异。</li>
+<li><strong>流程</strong>：序列/结构生成 → 水印嵌入（联合优化）→ 功能验证 → 水印检测。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列水印嵌入器</td>
+<td>在序列中嵌入可检测模式</td>
+<td>建立序列级溯源</td>
+<td>输入：设计序列；输出：带水印序列</td>
+<td>摘要：watermarked binders 功能保持</td>
+<td>预期：水印不可检测或功能下降（未实测）</td>
+</tr>
+<tr>
+<td>结构水印嵌入器（微调 AlphaFold3）</td>
+<td>在预测结构中嵌入几何水印</td>
+<td>建立结构级溯源</td>
+<td>输入：序列；输出：带水印结构</td>
+<td>摘要：imperceptible watermark</td>
+<td>预期：结构预测精度下降（未实测）</td>
+</tr>
+<tr>
+<td>功能保持优化器</td>
+<td>确保结合亲和力不降</td>
+<td>水印不能以功能为代价</td>
+<td>输入：候选序列/结构；输出：功能评分</td>
+<td>摘要：亲和力与未水印相当</td>
+<td>预期：无优化则功能显著下降（未实测）</td>
+</tr>
+<tr>
+<td>水印检测器</td>
+<td>判定水印存在</td>
+<td>溯源验证</td>
+<td>输入：序列/结构；输出：二分类</td>
+<td>摘要：near-perfect accuracy</td>
+<td>预期：检测率下降（未实测）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>不适用</strong>：摘要中未提供任何数学公式或符号定义。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：未提供具体数据集（可能为内部设计蛋白库）。</li>
+<li><strong>规模</strong>：未提供（如 binder 数量、序列长度）。</li>
+<li><strong>指标</strong>：结合亲和力（binding affinity）、水印检测准确率（detection accuracy）。</li>
+<li><strong>基线</strong>：未提供（可能为未水印蛋白）。</li>
+<li><strong>预算/骨干/仪器</strong>：未提供（可能为实验结合测量，但未说明）。</li>
+<li><strong>oracle 输入</strong>：未提供（可能为实验亲和力数据）。</li>
+<li><strong>评测协议</strong>：未提供（如交叉验证、独立测试集）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列水印 binder 功能测试</td>
+<td>水印不破坏结合亲和力</td>
+<td>水印 vs 未水印 binder</td>
+<td>亲和力相当</td>
+<td>功能保持可行</td>
+<td>未证明所有蛋白类型适用</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>水印检测准确率</td>
+<td>水印可可靠检测</td>
+<td>检测器 vs 随机猜测</td>
+<td>near-perfect</td>
+<td>检测可行</td>
+<td>未提供误报率/鲁棒性</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>结构水印不可感知性</td>
+<td>结构水印不改变功能</td>
+<td>水印 vs 未水印结构</td>
+<td>imperceptible</td>
+<td>结构水印可行</td>
+<td>未提供结构精度对比</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对 AI 生成的蛋白质（binder 设计），未覆盖天然蛋白或所有蛋白类型。</li>
+<li><strong>oracle/真值输入</strong>：功能评估可能依赖实验或预测，未明确。</li>
+<li><strong>端到端状态</strong>：proof-of-concept，未提供大规模部署或鲁棒性测试。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：未提供。</li>
+<li><strong>模型依赖</strong>：依赖 AlphaFold 3 微调，可能受限于其结构预测能力。</li>
+<li><strong>最难情形</strong>：未测试水印在进化压力或突变下的持久性。</li>
+<li><strong>群体/领域边界</strong>：仅限蛋白质，未扩展至核酸或其他生物分子。</li>
+<li><strong>不确定性</strong>：检测准确率在真实场景（噪声、突变）下未知。</li>
+<li><strong>有边界复述</strong>：SynthIDBio 在受控条件下，对设计 binder 实现了功能保持的水印嵌入与近完美检测，但未证明在更广蛋白空间或真实环境中的鲁棒性。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。作者仅称其为「proof-of-concept」，暗示未全面验证，但未列出具体局限。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>功能保持仅以结合亲和力衡量</td>
+<td>其他功能（稳定性、表达量、特异性）可能受损</td>
+<td>亲和力非唯一功能指标</td>
+<td>测试热稳定性、表达水平</td>
+<td>摘要仅提及 affinity</td>
+</tr>
+<tr>
+<td>水印检测未测试对抗攻击</td>
+<td>恶意用户可能移除水印</td>
+<td>溯源需抗篡改</td>
+<td>模拟突变/优化攻击</td>
+<td>未提供鲁棒性数据</td>
+</tr>
+<tr>
+<td>结构水印依赖 AlphaFold3 微调</td>
+<td>可能过拟合特定结构分布</td>
+<td>泛化性存疑</td>
+<td>测试不同蛋白家族</td>
+<td>未提供泛化实验</td>
+</tr>
+<tr>
+<td>未提供数据集与基线细节</td>
+<td>无法复现或比较</td>
+<td>科学可复现性</td>
+<td>公开数据与代码</td>
+<td>摘要无方法细节</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+- <strong>可迁移概念</strong>：功能保持的隐式标记（function-preserving watermarking）——在生成过程中嵌入标记，而非事后修改。
+- <strong>可迁移方法</strong>：微调预训练生成模型（如 AlphaFold3）以嵌入结构水印——适用于其他结构生成任务（如 RNA、配体）。
+- <strong>可迁移实验设计</strong>：功能保持验证需多维度（亲和力+稳定性+特异性），而非单一指标。
+- <strong>对课题的迁移</strong>：在蛋白质设计或 MD 模拟中，可考虑「生成时嵌入可检测特征」用于追踪或版本控制；结构水印思路可扩展至构象采样标记。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：数字水印技术（图像/文本）——但本文首次迁移至生物序列。</li>
+<li><strong>组合</strong>：AlphaFold 3（结构预测）与蛋白设计模型（生成）——本文结合两者用于水印。</li>
+<li><strong>冲突</strong>：传统观点认为任何序列扰动都会破坏功能，本文证明联合优化可避免。</li>
+<li><strong>可迁移领域</strong>：核酸设计、小分子生成、抗体工程。</li>
+<li><strong>候选方向</strong>：将 SynthIDBio 思路用于 MD 模拟轨迹的溯源标记（未验证）。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：抗突变鲁棒的水印嵌入
+   - <strong>来源局限/观察</strong>：本文未测试水印在突变或进化压力下的持久性。
+   - <strong>核心假设</strong>：在序列水印中加入冗余或纠错编码，可提高突变下的检测率。
+   - <strong>相对本文的增量</strong>：增强水印鲁棒性，扩展至真实进化场景。
+   - <strong>初步方法</strong>：设计纠错水印模式，模拟随机突变测试检测率。
+   - <strong>验证方式</strong>：计算模拟 + 实验突变体检测。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：结构水印的泛化性测试
+   - <strong>来源局限/观察</strong>：SynthIDBio-structure 仅测试 binder，未覆盖其他蛋白类型。
+   - <strong>核心假设</strong>：微调 AlphaFold3 的水印可泛化至酶、抗体等。
+   - <strong>相对本文的增量</strong>：验证结构水印的通用性。
+   - <strong>初步方法</strong>：在多种蛋白家族上微调与检测。
+   - <strong>验证方式</strong>：跨家族检测准确率与功能保持。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：多维度功能保持评估
+   - <strong>来源局限/观察</strong>：本文仅用结合亲和力衡量功能。
+   - <strong>核心假设</strong>：水印可能影响稳定性或表达量。
+   - <strong>相对本文的增量</strong>：建立更全面的功能保持标准。
+   - <strong>初步方法</strong>：测量 Tm、表达量、特异性。
+   - <strong>验证方式</strong>：实验对比水印 vs 未水印蛋白。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：水印对抗攻击的防御
+   - <strong>来源局限/观察</strong>：未测试恶意移除水印。
+   - <strong>核心假设</strong>：对抗优化可移除水印，需设计不可逆嵌入。
+   - <strong>相对本文的增量</strong>：提升水印安全性。
+   - <strong>初步方法</strong>：模拟优化攻击，设计鲁棒嵌入策略。
+   - <strong>验证方式</strong>：攻击-防御对抗测试。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce SynthIDBio, a family of methods for watermarking AI-generated protein sequences and structures. They claim that SynthIDBio-sequence embeds watermarks into protein sequences while preserving function, demonstrated by watermarked functional designed protein binders with binding affinity comparable to non-watermarked counterparts and near-perfect watermark detection accuracy. They further claim that SynthIDBio-structure, a fine-tuned AlphaFold3 model, embeds an imperceptible watermark into biomolecular structures. The work is presented as a proof-of-concept that function-preserving biological watermarking is feasible.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative data, methodological details, or experimental descriptions are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, all figures and tables, supplementary information, statistical analyses, and any detailed experimental protocols</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting and timely idea with potential relevance to biosecurity and provenance tracking in AI-driven biology. However, the claims are broad and the evidence base is entirely absent from the supplied material. Key assertions regarding functional preservation, watermark detection accuracy, and imperceptibility of structural watermarks cannot be evaluated without quantitative data and methodological detail. The work may be of interest to the community, but the current evidence does not establish the case.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in AI for biology, protein engineering, and biosecurity policy would be interested. The work addresses provenance of AI-generated biological sequences and structures, which is relevant to those developing generative models for proteins, those concerned with dual-use risks, and policymakers working on responsible AI deployment in biotechnology.</li>
+<li><strong>Major strengths</strong> The problem addressed is timely and important. The idea of embedding watermarks in both sequences and structures is novel and potentially impactful. The proof-of-concept framing is appropriate for an initial demonstration.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li>R1-M1  </li>
+<li>R1-M2  </li>
+<li>R1-M3  </li>
+<li>R1-M4</li>
+<li><strong>Minor Comments</strong>  </li>
+<li>R1-m1  </li>
+<li>R1-m2  </li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4</li>
+<li><strong>Assessment against Nature-style criteria</strong><br />
+  Originality: The concept of function-preserving watermarking for proteins appears novel, but the abstract does not provide enough context to assess novelty relative to prior watermarking work in other domains.<br />
+  Scientific importance: The potential importance is high given biosecurity concerns, but the abstract does not demonstrate that the methods are robust or generalizable.<br />
+  Interdisciplinary readership: The topic bridges AI, structural biology, and biosecurity, which could attract broad interest, but the abstract lacks sufficient technical detail for specialists and clarity for nonspecialists.<br />
+  Technical soundness: Not assessable from the abstract alone. No quantitative results, statistical measures, or methodological descriptions are provided.<br />
+  Readability for nonspecialists: The abstract is generally clear but uses terms such as "imperceptible watermark" and "fine-tuned AlphaFold3" without explanation, which may hinder nonspecialist understanding.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract is promising, but the claims require full manuscript review with detailed methods and data.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> "SynthIDBio-sequence actively embeds a watermark into protein sequences while preserving function. We demonstrate this by creating watermarked, functional designed protein binders with binding affinity comparable with non-watermarked counterparts and near-perfect watermark detection accuracy."  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The claim of functional preservation is supported only by a qualitative statement of "comparable" binding affinity. No quantitative values, statistical comparisons, or error bars are provided. The claim of "near-perfect watermark detection accuracy" is similarly unsupported by any numerical metric.  </li>
+<li><strong>Why it matters</strong> Functional preservation is the central claim of the work. Without quantitative evidence, the reader cannot assess whether the watermarking method truly preserves function or whether the observed performance is within acceptable biological variability. Detection accuracy is also critical for practical utility.  </li>
+<li>
+<p><strong>Resolution test</strong> Provide quantitative binding affinity measurements for watermarked and non-watermarked binders, including replicates, statistical tests, and effect sizes. Provide watermark detection accuracy with confidence intervals and describe the detection threshold.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Methodological transparency  </li>
+<li><strong>Claim pointer</strong> "SynthIDBio-structure, a fine-tuned AlphaFold3 model, embeds an imperceptible watermark into biomolecular structures."  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The abstract does not describe how the watermark is embedded in structures, what "imperceptible" means quantitatively, or how the fine-tuning of AlphaFold3 was performed. No validation of structural fidelity or watermark detectability is provided.  </li>
+<li><strong>Why it matters</strong> The structural watermarking claim is a major component of the work. Without methodological detail and validation, the claim is not assessable and the approach cannot be reproduced or evaluated for potential structural perturbations.  </li>
+<li>
+<p><strong>Resolution test</strong> Describe the watermarking algorithm for structures, define imperceptibility with quantitative metrics such as RMSD or per-residue distance changes, and provide detection accuracy on a test set.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Generalizability and scope  </li>
+<li><strong>Claim pointer</strong> "Our work is a proof-of-concept that function-preserving biological watermarking is feasible."  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The abstract demonstrates the method on one class of proteins, designed binders. The claim of general feasibility is broader than the evidence presented. It is unclear whether the method works across diverse protein families, functions, or sequence lengths.  </li>
+<li><strong>Why it matters</strong> A proof-of-concept should clearly state the scope of demonstration. Overgeneralization from a single protein class could mislead readers about the maturity and applicability of the method.  </li>
+<li>
+<p><strong>Resolution test</strong> Clarify the scope of the demonstration in the abstract and provide evidence from multiple protein classes or discuss limitations explicitly.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Robustness and security  </li>
+<li><strong>Claim pointer</strong> "SynthIDBio-sequence actively embeds a watermark into protein sequences while preserving function."  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The abstract does not address the robustness of the watermark to common sequence modifications such as mutations, truncations, or re-synthesis. It also does not discuss potential adversarial attempts to remove the watermark.  </li>
+<li><strong>Why it matters</strong> For provenance tracking to be useful in real-world settings, the watermark must survive typical sequence manipulations and be resistant to removal. Without this information, the practical utility of the method is unclear.  </li>
+<li><strong>Resolution test</strong> Provide robustness tests against sequence edits, including point mutations, insertions, deletions, and re-synthesis, and discuss adversarial robustness.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Abstract terminology  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The term "imperceptible watermark" is used without definition. For structures, imperceptibility is not self-explanatory.  </li>
+<li>
+<p><strong>Required correction</strong> Define imperceptibility in the abstract or refer to a quantitative metric.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Reproducibility  </li>
+<li><strong>Affected element</strong> Method description  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The abstract does not mention whether the methods or code will be made available, which is important for reproducibility.  </li>
+<li>
+<p><strong>Required correction</strong> State data and code availability in the abstract or main text.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Context  </li>
+<li><strong>Affected element</strong> Related work  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The abstract does not discuss prior watermarking approaches in other domains or for biological sequences, which would help position the novelty.  </li>
+<li><strong>Required correction</strong> Add a brief statement on prior work and how SynthIDBio differs.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "binding affinity comparable with non-watermarked counterparts" is unsupported by quantitative data.</li>
+<li>The claim of "near-perfect watermark detection accuracy" is unsupported by any numerical metric.</li>
+<li>The claim of "imperceptible watermark" in structures is undefined and unvalidated.</li>
+<li>The claim that "function-preserving biological watermarking is feasible" is overgeneralized from a single protein class demonstration.</li>
+<li>The robustness of the watermark to sequence or structure modifications is not addressed and cannot be assessed.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

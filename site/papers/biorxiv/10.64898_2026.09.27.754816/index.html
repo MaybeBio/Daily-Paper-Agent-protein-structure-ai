@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protein Language Model-Conditioned Graph Neural Networks for Multitask GPCR Ligand Activity Prediction · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Protein Language Model-Conditioned Graph Neural Networks for Multitask GPCR Ligand Activity Prediction</h1>
+      <div class="meta">Manashi De; Ekarsi Lodh; Shalini Majumder; Tapan Chowdhury</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-02
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.27.754816">原文</a>
+      </div>
+      <p class="one-liner">该文用蛋白语言模型嵌入GPCR序列并联合配体分子图进行多任务活性预测，虽以配体-受体活性为核心而非直接蛋白质结构计算，但方法可迁移至蛋白结构相关建模，故评6分。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Predicting ligand activity across G protein-coupled receptors (GPCRs) requires models that capture both molecular structure and receptor-specific information while remaining robust to chemical and target-domain shifts. We developed a multimodal graph neural network that combines explicit ligand molecular graphs with frozen protein language model representations of GPCR sequences and jointly predicts quantitative pActivity and binary activity. The model was trained on 271,739 curated ligand-GPCR pairs spanning 183,694 ligands and 216 human GPCRs and evaluated using random, Bemis-Murcko scaffold, and strict cold-ligand partitions. With ESM-2 650M receptor embeddings, the selected model achieved mean absolute errors of 0.513 ± 0.006, 0.540 ± 0.006, and 0.641 ± 0.005 pActivity units under random, cold-ligand, and scaffold evaluation, respectively, substantially outperforming a protein-aware fixed-feature multilayer perceptron and consistently improving quantitative prediction over a matched GINE reference. Removing receptor embeddings markedly degraded both regression and classification, whereas differences among ESM-2 35M, ESM-2 650M, and ProtT5 were comparatively small. Independent evaluation on 6,319 ChEMBL 37/BindingDB pairs revealed a substantial external domain shift, with mean absolute error increasing to approximately 0.94-0.95 despite chemically stringent internal validation. Nevertheless, receptor-specific information remained highly informative in a DRD2-DRD3 selectivity analysis: the cold-ligand ensemble achieved R^2 = 0.853, Spearman ρ = 0.916, and ROC-AUC = 0.966 for strong DRD3 selectivity, whereas the receptor-independent ablation approached chance-level discrimination. These results establish protein-language-model-conditioned molecular graph learning as a scalable strategy for GPCR bioactivity prediction while identifying chemotype novelty, external-domain transfer, and richer ligand-receptor interaction representations as key remaining challenges.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">预测G蛋白偶联受体（GPCRs）的配体活性需要模型同时捕捉分子结构和受体特异性信息，并保持对化学和靶点域偏移的鲁棒性。我们开发了一种多模态图神经网络，将显式配体分子图与GPCR序列的冻结蛋白质语言模型表示相结合，并联合预测定量pActivity和二元活性。该模型在271,739个精选配体-GPCR对上训练，涵盖183,694个配体和216个人类GPCR，并使用随机、Bemis-Murcko骨架和严格冷配体划分进行评估。采用ESM-2 650M受体嵌入，所选模型在随机、冷配体和骨架评估下分别实现了0.513 ± 0.006、0.540 ± 0.006和0.641 ± 0.005 pActivity单位的平均绝对误差，显著优于蛋白质感知的固定特征多层感知器，并在定量预测上持续优于匹配的GINE参考模型。移除受体嵌入显著降低了回归和分类性能，而ESM-2 35M、ESM-2 650M和ProtT5之间的差异相对较小。在6,319个ChEMBL 37/BindingDB对上的独立评估揭示了显著的外部域偏移，尽管内部验证在化学上严格，平均绝对误差仍增加至约0.94-0.95。然而，在DRD2-DRD3选择性分析中，受体特异性信息仍高度有效：冷配体集成实现了R^2 = 0.853、Spearman ρ = 0.916和ROC-AUC = 0.966的强DRD3选择性，而受体无关的消融接近随机判别水平。这些结果确立了蛋白质语言模型条件化的分子图学习作为GPCR生物活性预测的可扩展策略，同时识别出化学型新颖性、外部域转移和更丰富的配体-受体相互作用表示作为关键剩余挑战。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Protein Language Model-Conditioned Graph Neural Networks for Multitask GPCR Ligand Activity Prediction</li>
+<li><strong>作者</strong>：Manashi De; Ekarsi Lodh; Shalini Majumder; Tapan Chowdhury</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 基准评测）</li>
+<li><strong>领域</strong>：蛋白质结构相关计算研究 × AI/深度学习（GPCR 配体活性预测、蛋白质语言模型、图神经网络）</li>
+<li><strong>关键词</strong>：GPCR、ligand activity prediction、protein language model、graph neural network、multitask learning、domain shift</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.27.754816</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：271,739 条配体-GPCR 配对（183,694 配体，216 个人类 GPCR）；外部验证集 6,319 条 ChEMBL 37/BindingDB 配对</li>
+<li><strong>阅读日期</strong>：2026-05-14（按当前日期推算）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质序列信息（PLM 嵌入）× 配体分子图」多模态融合用于 GPCR 配体活性预测的端到端方法，与结构预测/构象采样课题的交叉点在于：GPCR 序列嵌入作为受体表征的替代方案，可迁移至结构未知受体的对接打分或活性预测任务。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出一个将配体分子图（GINE）与冻结的蛋白质语言模型（ESM-2/ProtT5）GPCR 序列嵌入拼接的多任务图神经网络，在 271,739 对数据上同时预测定量 pActivity 和二元活性，随机/冷配体/骨架划分下 MAE 分别为 0.513/0.540/0.641，但外部 ChEMBL/BindingDB 域迁移时 MAE 升至约 0.94-0.95，表明化学新颖性和外部域泛化仍是主要瓶颈。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何同时利用配体分子结构和 GPCR 受体序列信息，构建一个对化学域偏移（scaffold/cold-ligand）和靶标域偏移（外部数据集）均稳健的 GPCR 配体活性预测模型？</li>
+<li><strong>为什么重要</strong>：GPCR 是最大药物靶标家族，配体活性预测可加速先导化合物发现和选择性优化；现有方法要么只用配体分子图（忽略受体特异性），要么用固定蛋白特征（如 one-hot、手工描述符）无法捕捉序列深度语义。</li>
+<li><strong>现有方法不足</strong>：</li>
+<li>配体-only GNN 无法区分不同受体上的活性差异；</li>
+<li>蛋白固定特征 MLP 表达力有限，无法泛化到新受体序列；</li>
+<li>缺乏对化学新颖性（scaffold/cold-ligand）和外部域迁移的系统评测。</li>
+<li><strong>精确研究问题</strong>：Can a protein language model-conditioned graph neural network jointly predict quantitative and binary GPCR ligand activity with robustness to chemical and target-domain shifts?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文引言与相关工作，标注为「仅本文框架」——未逐一外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>配体-only 描述符/指纹 + ML</td>
+<td>Morgan fingerprint + RF/SVM</td>
+<td>简单、可解释</td>
+<td>无受体信息，无法跨靶标</td>
+<td>被超越</td>
+</tr>
+<tr>
+<td>配体分子图 GNN</td>
+<td>GINE、MPNN</td>
+<td>端到端学习分子拓扑</td>
+<td>仍无受体特异性</td>
+<td>作为基线（matched GINE）</td>
+</tr>
+<tr>
+<td>蛋白固定特征 + 配体特征拼接</td>
+<td>蛋白 one-hot/AAindex + 配体指纹 MLP</td>
+<td>引入受体信息</td>
+<td>特征表达力有限，无法捕捉序列深度语义</td>
+<td>作为蛋白感知固定特征 MLP 基线</td>
+</tr>
+<tr>
+<td>蛋白语言模型嵌入</td>
+<td>ESM-2、ProtT5</td>
+<td>捕捉序列进化/结构语义，冻结即用</td>
+<td>嵌入维度高、计算开销大</td>
+<td>本文核心：PLM 嵌入作为受体条件</td>
+</tr>
+<tr>
+<td>多模态 GNN + PLM 条件</td>
+<td><strong>本文方法</strong></td>
+<td>同时建模配体图 + 受体序列语义，多任务输出</td>
+<td>外部域迁移仍差（MAE≈0.94）</td>
+<td>本文</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>化学新颖性泛化差</td>
+<td>冷配体划分 MAE 0.540 vs 随机 0.513；骨架划分 0.641</td>
+<td>新骨架/新配体的分子图模式在训练集中未见或稀疏</td>
+<td>Results 节（MAE 数值）</td>
+</tr>
+<tr>
+<td>外部域迁移显著退化</td>
+<td>ChEMBL 37/BindingDB 外部验证 MAE≈0.94-0.95</td>
+<td>外部数据集的配体化学空间、测定类型/条件与训练集存在系统性差异</td>
+<td>Results 节（外部验证段）</td>
+</tr>
+<tr>
+<td>受体信息缺失时性能崩溃</td>
+<td>移除受体嵌入后回归和分类均显著退化</td>
+<td>受体序列嵌入提供了靶标特异性的关键信号</td>
+<td>Results 节（消融段）</td>
+</tr>
+<tr>
+<td>不同 PLM 嵌入差异小</td>
+<td>ESM-2 35M vs 650M vs ProtT5 性能差异较小</td>
+<td>对 GPCR 序列而言，较小 PLM 已捕获足够判别信息；或任务本身对嵌入细节不敏感</td>
+<td>Results 节（PLM 比较段）</td>
+</tr>
+<tr>
+<td>选择性预测依赖受体信息</td>
+<td>DRD2-DRD3 选择性分析中，无受体消融接近随机</td>
+<td>选择性本质上需要受体间差异信息，配体图单独无法区分</td>
+<td>Results 节（DRD2-DRD3 分析）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：将配体分子图（GINE 编码）与冻结的 PLM（ESM-2 650M/35M 或 ProtT5）对 GPCR 序列的嵌入向量拼接，送入多层感知机头，同时输出 pActivity 回归值和二元活性分类概率。</p>
+<p><strong>2) 核心洞察</strong>：
+- 受体序列的 PLM 嵌入可作为「蛋白质条件」直接注入配体图模型，无需显式结构或对接，即可提供靶标特异性信号；
+- 多任务（回归 + 分类）联合训练可共享表征，提升两个任务的泛化；
+- 冻结 PLM 嵌入避免了端到端微调的高计算成本，且性能与微调相当（作者主张）。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 对 GPCR 这类序列-配体关系任务，PLM 嵌入的「条件化」比「端到端微调」更具性价比；
+- 化学新颖性和外部域迁移是比模型架构更关键的瓶颈——评测协议应包含 scaffold/cold-ligand/外部数据集三层；
+- 受体信息在选择性任务中不可替代，但外部域迁移时受体嵌入的增益可能被化学空间偏移掩盖。</p>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：</li>
+<li>配体 SMILES → 分子图（原子/键特征）</li>
+<li>GPCR 氨基酸序列 → PLM 嵌入（ESM-2 650M/35M 或 ProtT5，冻结）</li>
+<li><strong>输出</strong>：pActivity 回归值（标量）+ 二元活性概率（0/1）</li>
+<li><strong>模块</strong>：
+  1. GINE 图编码器（配体分子图）
+  2. PLM 编码器（冻结，受体序列 → 嵌入向量）
+  3. 拼接层（图读出向量 ⊕ 序列嵌入）
+  4. 多任务 MLP 头（回归头 + 分类头）</li>
+<li><strong>训练</strong>：多任务损失（MSE + BCE），数据集 271,739 对，划分方式：随机 / Bemis-Murcko scaffold / 严格冷配体</li>
+<li><strong>工具</strong>：未提供具体框架（推测 PyTorch + DGL/PyG，未提供）</li>
+<li><strong>假设</strong>：</li>
+<li>PLM 嵌入能捕捉 GPCR 序列中与配体活性相关的功能语义；</li>
+<li>拼接融合足以让模型利用受体信息（而非更复杂的交叉注意力）；</li>
+<li>多任务学习可提升两个任务的泛化。</li>
+<li><strong>流程</strong>：SMILES → 分子图 → GINE 编码 → 图读出向量；序列 → PLM → 嵌入向量；两者拼接 → MLP → 同时输出 pActivity 和活性概率。</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GINE 图编码器</td>
+<td>学习配体分子拓扑表征</td>
+<td>分子图是配体结构的最自然表示，GINE 可捕捉原子/键局部模式</td>
+<td>输入：分子图；输出：图读出向量</td>
+<td>匹配 GINE 基线在随机划分下表现良好（作者对比）</td>
+<td>移除则无配体表征，任务不可行</td>
+</tr>
+<tr>
+<td>PLM 编码器（冻结）</td>
+<td>将 GPCR 序列转为稠密语义嵌入</td>
+<td>提供受体特异性条件，无需显式结构</td>
+<td>输入：氨基酸序列；输出：嵌入向量（如 1280 维 ESM-2 650M）</td>
+<td>消融实验显示移除后性能显著下降</td>
+<td>移除后回归/分类均显著退化（实测消融）</td>
+</tr>
+<tr>
+<td>拼接层</td>
+<td>融合配体图向量与序列嵌入</td>
+<td>简单有效的多模态融合策略</td>
+<td>输入：图向量 ⊕ 序列嵌入；输出：融合向量</td>
+<td>整体模型性能优于固定特征 MLP</td>
+<td>若替换为交叉注意力可能提升但计算增加（预期）</td>
+</tr>
+<tr>
+<td>多任务 MLP 头</td>
+<td>同时输出 pActivity 和二元活性</td>
+<td>共享表征，提升泛化</td>
+<td>输入：融合向量；输出：回归值 + 分类概率</td>
+<td>多任务联合训练优于单任务（作者主张）</td>
+<td>移除分类头可能降低回归泛化（预期）</td>
+</tr>
+<tr>
+<td>数据划分协议</td>
+<td>随机/scaffold/冷配体三种评测</td>
+<td>评估化学新颖性泛化</td>
+<td>输入：数据集；输出：三种划分</td>
+<td>冷配体 MAE 0.540 vs 随机 0.513</td>
+<td>无严格划分则高估泛化能力</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用——本文为方法学/基准评测论文，正文未提供显式数学公式（损失函数、GINE 更新式等均未在摘要/正文中给出）。若需损失函数细节，需查阅全文 Methods 节（未提供）。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：
+- 训练/内部评测：271,739 条配体-GPCR 配对，183,694 个配体，216 个人类 GPCR
+- 外部验证：6,319 条 ChEMBL 37/BindingDB 配对
+- 选择性分析：DRD2-DRD3 配对数据（具体数量未提供）</p>
+<p><strong>指标</strong>：MAE（pActivity）、ROC-AUC（分类）、R² 和 Spearman ρ（选择性分析）</p>
+<p><strong>基线</strong>：
+- 蛋白感知固定特征 MLP（蛋白 one-hot/手工特征 + 配体特征）
+- 匹配 GINE 参考模型（无受体嵌入）</p>
+<p><strong>评测协议</strong>：随机划分、Bemis-Murcko scaffold 划分、严格冷配体划分；外部域验证</p>
+<p><strong>骨干/仪器</strong>：ESM-2 650M、ESM-2 35M、ProtT5（均为冻结嵌入）</p>
+<p><strong>oracle 输入</strong>：无（监督学习，使用实验测定的 pActivity/活性标签）</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>随机划分评测</td>
+<td>模型在 i.i.d. 数据上预测准确</td>
+<td>本文模型 vs 固定特征 MLP vs GINE 参考</td>
+<td>MAE 0.513 ± 0.006</td>
+<td>本文模型优于固定特征 MLP 和 GINE 参考</td>
+<td>未提供具体基线数值，无法量化优势幅度</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>冷配体划分评测</td>
+<td>模型对全新配体泛化</td>
+<td>冷配体 vs 随机</td>
+<td>MAE 0.540 ± 0.006</td>
+<td>冷配体性能略降但保持可用</td>
+<td>无法判断是否显著优于基线</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>骨架划分评测</td>
+<td>模型对新骨架泛化</td>
+<td>Bemis-Murcko scaffold</td>
+<td>MAE 0.641 ± 0.005</td>
+<td>骨架新颖性带来更大性能下降</td>
+<td>未与基线对比</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>消融：移除受体嵌入</td>
+<td>受体嵌入的必要性</td>
+<td>有 vs 无 PLM 嵌入</td>
+<td>回归和分类均显著退化</td>
+<td>受体嵌入是关键信息源</td>
+<td>未提供具体数值</td>
+<td>Results 节（消融段）</td>
+</tr>
+<tr>
+<td>PLM 规模比较</td>
+<td>更大 PLM 是否更好</td>
+<td>ESM-2 35M vs 650M vs ProtT5</td>
+<td>差异较小</td>
+<td>较小 PLM 已足够</td>
+<td>无法判断是否任务饱和</td>
+<td>Results 节（PLM 比较）</td>
+</tr>
+<tr>
+<td>外部域验证</td>
+<td>跨数据集泛化</td>
+<td>训练集 vs ChEMBL/BindingDB</td>
+<td>MAE≈0.94-0.95</td>
+<td>存在显著外部域偏移</td>
+<td>未分析偏移来源</td>
+<td>Results 节（外部验证）</td>
+</tr>
+<tr>
+<td>DRD2-DRD3 选择性</td>
+<td>受体信息对选择性预测的必要性</td>
+<td>完整模型 vs 无受体消融</td>
+<td>R²=0.853, ρ=0.916, AUC=0.966；消融接近随机</td>
+<td>受体嵌入对选择性预测至关重要</td>
+<td>未提供消融具体数值</td>
+<td>Results 节（选择性分析）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖 GPCR 配体活性预测（pActivity 回归 + 二元分类），不涉及结构预测、构象采样或对接。</li>
+<li><strong>oracle/真值输入</strong>：使用实验测定的活性标签，无结构或对接 oracle。</li>
+<li><strong>端到端状态</strong>：PLM 嵌入为冻结特征，非端到端微调；配体图编码为端到端学习。</li>
+<li><strong>算力成本</strong>：未提供训练时间、GPU 型号等。</li>
+<li><strong>历史数据依赖</strong>：训练数据来自特定来源（未明确说明，推测 ChEMBL 等公共库），外部验证显示数据分布偏移显著。</li>
+<li><strong>模型依赖</strong>：GINE 架构 + 拼接融合 + 多任务头；未探索更复杂融合（如交叉注意力）。</li>
+<li><strong>最难情形</strong>：骨架新颖性（MAE 0.641）和外部域迁移（MAE≈0.94-0.95）是最难场景；冷配体次之（0.540）。</li>
+<li><strong>群体/领域边界</strong>：仅人类 GPCR（216 个），不覆盖其他物种或非 GPCR 靶标。</li>
+<li><strong>不确定性</strong>：未提供置信区间（除 MAE 的 ± 值）、预测不确定性估计或校准分析。</li>
+<li><strong>有边界的复述</strong>：在 271,739 对人类 GPCR-配体对上，PLM 条件化 GNN 在随机/冷配体/骨架划分下分别达到 MAE 0.513/0.540/0.641，优于固定特征 MLP 和 GINE 参考；但外部 ChEMBL/BindingDB 验证 MAE 升至约 0.94-0.95，表明模型对化学新颖性和外部域偏移的鲁棒性有限；在 DRD2-DRD3 选择性任务中，受体嵌入不可或缺。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>化学新颖性泛化不足</td>
+<td>骨架划分 MAE 0.641，高于随机划分</td>
+<td>未明确给出具体方案</td>
+<td>Results 节（骨架划分段）</td>
+</tr>
+<tr>
+<td>外部域迁移显著退化</td>
+<td>ChEMBL/BindingDB 外部验证 MAE≈0.94-0.95</td>
+<td>未明确给出具体方案</td>
+<td>Results 节（外部验证段）</td>
+</tr>
+<tr>
+<td>配体-受体交互表征有限</td>
+<td>拼接融合未建模原子-残基级交互</td>
+<td>作者提及「richer ligand-receptor interaction representations」为关键挑战</td>
+<td>摘要末句</td>
+</tr>
+<tr>
+<td>不同 PLM 嵌入差异小</td>
+<td>ESM-2 35M/650M/ProtT5 性能接近</td>
+<td>未明确说明是否需更大 PLM 或微调</td>
+<td>Results 节（PLM 比较段）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基线对比不完整</td>
+<td>未提供固定特征 MLP 和 GINE 参考的具体 MAE/AUC 数值，仅称「substantially outperforming」</td>
+<td>无法量化优势幅度，难以判断是否统计显著</td>
+<td>要求作者提供完整基线数值和显著性检验</td>
+<td>Results 节（对比描述模糊）</td>
+</tr>
+<tr>
+<td>外部域验证仅报告 MAE 增加</td>
+<td>未分析偏移来源（化学空间、测定类型、标签分布）</td>
+<td>无法指导领域自适应策略</td>
+<td>对外部数据集进行化学空间 PCA/t-SNE 对比和标签分布分析</td>
+<td>Results 节（外部验证段）</td>
+</tr>
+<tr>
+<td>拼接融合过于简单</td>
+<td>可能未充分利用 PLM 嵌入的残基级信息</td>
+<td>更复杂的融合（如注意力）可能提升外部域泛化</td>
+<td>实现交叉注意力或图-序列对齐并对比</td>
+<td>摘要末句（作者自认）</td>
+</tr>
+<tr>
+<td>选择性分析仅限 DRD2-DRD3</td>
+<td>单一受体对不足以泛化结论</td>
+<td>其他 GPCR 亚型选择性可能表现不同</td>
+<td>在多个亚型对（如 5-HT2A/2C、M1/M3）上重复分析</td>
+<td>Results 节（选择性分析）</td>
+</tr>
+<tr>
+<td>未报告不确定性校准</td>
+<td>预测置信度可能不可靠</td>
+<td>药物发现中需知道何时信任预测</td>
+<td>计算预期校准误差（ECE）或可靠性图</td>
+<td>全文未提及</td>
+</tr>
+<tr>
+<td>数据来源和预处理细节缺失</td>
+<td>未说明数据来自哪个数据库、如何清洗/去重</td>
+<td>影响可复现性和与其他工作的公平对比</td>
+<td>要求提供数据构建流程和去重标准</td>
+<td>摘要/正文未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>PLM 嵌入作为受体条件的通用范式</strong>：将冻结的蛋白质语言模型嵌入（ESM-2/ProtT5）作为靶标条件注入配体模型，可迁移至结构未知受体的活性预测、虚拟筛选或对接打分重排序。本课题中，可将此思路用于 AlphaFold 预测结构不可靠的 GPCR 突变体或孤儿受体的配体活性预测。</p>
+</li>
+<li>
+<p><strong>三层评测协议</strong>：随机 / scaffold / 冷配体划分是评估化学泛化的标准协议，本课题的构象生成或对接打分模型应同样采用此协议，避免高估泛化能力。</p>
+</li>
+<li>
+<p><strong>多任务学习（回归 + 分类）的共享表征</strong>：同时预测定量活性和二元活性可提升泛化，本课题的构象打分模型可同时预测 pIC50 和活性类别，共享表征可能提升小样本场景下的性能。</p>
+</li>
+<li>
+<p><strong>外部域验证的必要性</strong>：内部严格划分仍可能高估外部泛化（MAE 0.641 → 0.94），本课题的 MD 模拟或对接打分模型应始终包含跨数据集验证。</p>
+</li>
+<li>
+<p><strong>受体信息在选择性任务中的不可替代性</strong>：DRD2-DRD3 分析显示无受体信息时选择性预测接近随机，本课题的亚型选择性构象采样或设计任务应显式编码受体差异。</p>
+</li>
+<li>
+<p><strong>PLM 规模与任务饱和</strong>：35M 与 650M 嵌入性能差异小，提示对 GPCR 序列任务，较小 PLM 可能已足够，可降低计算成本——本课题中可先测试小 PLM 再决定是否升级。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与「PLM 条件化药物发现」方向一致，如 PEER（Protein Engineering and Evolution Research）基准、ESM 系列在功能预测中的应用；与 GPCR 专用模型（如 GPCR-Bench、ReceptorNet）可对比。</li>
+<li><strong>组合方向</strong>：本文的 PLM 嵌入可替换为结构感知嵌入（如 ESM-IF、AlphaFold 潜变量），与结构预测课题直接交叉；配体图编码可替换为 3D 等变图神经网络（如 EGNN、SE(3)-Transformer），与构象生成课题交叉。</li>
+<li><strong>冲突/张力</strong>：本文主张拼接融合足够，但图-序列交叉注意力在分子对接/共价对接中已被证明更有效（如 HoloProt、SiteBind），存在方法选择张力。</li>
+<li><strong>可迁移领域</strong>：本文的「PLM 条件化 + 多任务 + 三层评测」框架可迁移至酶-底物活性预测、抗体-抗原结合预测、离子通道配体预测等蛋白质-配体相互作用任务。</li>
+<li><strong>候选方向（未验证）</strong>：将本文的 PLM 条件化 GNN 与 AlphaFold 的 pLDDT/PAE 结构置信度结合，可能提升对结构柔性区域的活性预测；或将 PLM 嵌入用于 MD 模拟的增强采样偏置势设计。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：PLM-Conditioned 3D Equivariant GNN for GPCR-Ligand Binding Pose Scoring
+   - <strong>来源局限/观察</strong>：本文仅用 2D 分子图 + 序列嵌入，未利用 3D 结构信息；对接打分需 3D 感知。
+   - <strong>核心假设</strong>：将 PLM 序列嵌入注入 3D 等变图神经网络（如 EGNN），可同时利用序列语义和几何信息，提升对接 pose 排序准确率。
+   - <strong>初步方法</strong>：配体 3D 构象 + 受体结合口袋（由 AlphaFold 预测或实验结构）→ EGNN 编码 → 拼接 PLM 嵌入 → 输出 pose 打分。
+   - <strong>验证方式</strong>：在 GPCR-Bench 或 DOCK 基准上对比本文 2D 方法、传统对接打分函数和 3D GNN。
+   - <strong>可能的失败模式</strong>：3D 结构噪声（AlphaFold 预测误差）可能抵消 PLM 嵌入增益；口袋定义不准确导致特征泄漏。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Cross-Attention Fusion of PLM Embeddings and Molecular Graphs for GPCR Selectivity
+   - <strong>来源局限/观察</strong>：本文拼接融合未建模残基-原子交互；DRD2-DRD3 选择性分析显示受体信息关键但融合方式粗糙。
+   - <strong>核心假设</strong>：交叉注意力机制可显式对齐配体原子与受体残基，提升亚型选择性预测。
+   - <strong>初步方法</strong>：GINE 原子表征作为 query，PLM 残基嵌入作为 key/value，交叉注意力层输出交互感知表征。
+   - <strong>验证方式</strong>：在多个 GPCR 亚型对（5-HT2A/2C、M1/M3、D2/D3）上对比拼接融合与交叉注意力。
+   - <strong>可能的失败模式</strong>：PLM 嵌入缺乏残基级结构信息，注意力对齐可能学到虚假关联；计算开销增加。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Domain-Adaptive PLM Conditioning for External GPCR Activity Transfer
+   - <strong>来源局限/观察</strong>：外部 ChEMBL/BindingDB 验证 MAE≈0.94-0.95，表明域偏移严重。
+   - <strong>核心假设</strong>：通过域对抗训练或 PLM 嵌入的域自适应（如 CORAL、MMD），可提升外部泛化。
+   - <strong>初步方法</strong>：在训练时加入域判别器（对抗损失），或对 PLM 嵌入做域归一化/适配层。
+   - <strong>验证方式</strong>：在多个外部数据集（ChEMBL 不同版本、BindingDB、PubChem）上评估域自适应增益。
+   - <strong>可能的失败模式</strong>：域偏移可能主要来自测定条件差异而非嵌入分布，域自适应收益有限。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Uncertainty-Aware Multitask GPCR Activity Prediction with PLM Ensembles
+   - <strong>来源局限/观察</strong>：本文未报告预测不确定性，药物发现中需知道何时信任预测。
+   - <strong>核心假设</strong>：深度集成或 MC-dropout 可提供可靠的预测不确定性，且与 PLM 嵌入维度相关。
+   - <strong>初步方法</strong>：训练多个种子模型，计算预测方差作为不确定性；评估不确定性校准（ECE）和选择性预测（在低不确定性子集上提升精度）。
+   - <strong>验证方式</strong>：在冷配体和外部数据集上评估不确定性-误差相关性。
+   - <strong>可能的失败模式</strong>：集成模型计算成本高；不确定性可能无法捕捉化学新颖性导致的系统性偏差。</p>
+</li>
+<li>
+<p><strong>名称</strong>：PLM Embedding-Guided Enhanced Sampling for GPCR Conformational Ensembles
+   - <strong>来源局限/观察</strong>：本文 PLM 嵌入捕捉序列功能语义，但未用于构象采样；GPCR 构象状态（激活/非激活）影响配体结合。
+   - <strong>核心假设</strong>：PLM 嵌入可作为偏置势（bias potential）指导 MD 模拟采样 GPCR 功能相关构象。
+   - <strong>初步方法</strong>：将 PLM 嵌入映射为低维集体变量（如 autoencoder），在 MD 模拟中施加 harmonic bias 或 metadynamics。
+   - <strong>验证方式</strong>：在 β2-AR、A2A 等有实验构象的 GPCR 上，比较采样到的构象与实验结构的 RMSD 和功能状态分布。
+   - <strong>可能的失败模式</strong>：PLM 嵌入可能不编码构象状态信息（仅序列），偏置势可能无效或误导采样。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose a multimodal graph neural network that combines ligand molecular graphs with frozen protein language model (ESM-2, ProtT5) embeddings of GPCR sequences to predict quantitative pActivity and binary activity. The model is trained on 271,739 curated ligand-GPCR pairs and evaluated under random, scaffold, and cold-ligand partitions. The authors report strong internal performance, substantial degradation without receptor embeddings, and a notable external domain shift on ChEMBL 37/BindingDB data. A DRD2-DRD3 selectivity analysis shows high predictive performance with receptor information and near-chance performance without it.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods details, or supplementary information</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, model architecture details, hyperparameters, training and evaluation protocols, dataset curation criteria, baseline specifications, statistical test details, external dataset composition, and all numerical results beyond those cited in the abstract</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a plausible and potentially valuable approach for GPCR ligand activity prediction by integrating protein language model embeddings with graph neural networks. The internal validation results are encouraging, and the ablation and selectivity analyses support the utility of receptor information. However, the abstract alone does not provide sufficient detail to assess methodological rigor, reproducibility, or the robustness of the reported performance. The external domain shift result, while honestly reported, raises questions about generalizability that are not addressed within the provided scope. The work is of interest to computational chemists and GPCR biologists, but the case for broad impact is not fully established from the abstract alone.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational drug discovery researchers, medicinal chemists, and GPCR biologists would be interested in this work because it addresses a practical challenge in ligand activity prediction, namely incorporating receptor-specific context. The use of protein language models as a scalable source of receptor information is timely and could inform future model designs for target-aware bioactivity prediction. The selectivity analysis for DRD2 versus DRD3 is particularly relevant for CNS drug discovery programs.</li>
+<li><strong>Major strengths</strong> The approach is conceptually well motivated, combining explicit molecular graphs with protein language model embeddings in a multitask framework. The evaluation design includes multiple partition schemes, including a strict cold-ligand split, which is more realistic than random splits. The ablation study on receptor embeddings is informative and supports the central claim that receptor information is essential. The external validation on independent data is a commendable practice, even though it reveals a performance drop. The selectivity analysis provides a concrete application demonstrating the value of receptor conditioning.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Technical soundness  </li>
+<li><strong>Claim pointer</strong> The model achieved mean absolute errors of 0.513, 0.540, and 0.641 pActivity units under random, cold-ligand, and scaffold partitions, respectively, and substantially outperformed a protein-aware fixed-feature multilayer perceptron and a matched GINE reference.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The abstract reports performance metrics but provides no information on variance across replicates, statistical significance of differences between models, or the criteria for model selection. It is unclear whether the reported means and standard deviations are derived from multiple seeds, cross-validation folds, or a single run. Without this information, the claimed superiority over baselines cannot be rigorously assessed.  </li>
+<li><strong>Why it matters</strong> Reproducibility and statistical rigor are essential for establishing that the proposed model genuinely outperforms baselines. If the differences are within noise, the central technical claim is weakened.  </li>
+<li><strong>Resolution test</strong> Provide details on the number of independent runs, the variance across runs, and statistical tests (e.g., paired t-tests or Wilcoxon signed-rank tests) comparing the proposed model against each baseline for each partition.  </li>
+<li><strong>Concern ID</strong> R1-M2  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> External validity  </li>
+<li><strong>Claim pointer</strong> Independent evaluation on 6,319 ChEMBL 37/BindingDB pairs revealed a substantial external domain shift, with mean absolute error increasing to approximately 0.94-0.95 despite chemically stringent internal validation.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The abstract reports a large performance drop on external data but does not explain the source of the domain shift or whether any adaptation strategies were attempted. The phrase "chemically stringent internal validation" is not defined, and it is unclear how the external dataset differs from the training distribution in terms of chemotypes, receptor coverage, or assay types.  </li>
+<li><strong>Why it matters</strong> The external result directly challenges the generalizability of the model. Without an analysis of the domain shift or a discussion of potential remedies, the practical utility of the approach for real-world screening remains uncertain.  </li>
+<li><strong>Resolution test</strong> Provide a detailed comparison of the training and external datasets in terms of chemical space, receptor families, and activity ranges. Discuss whether the performance drop is attributable to novel chemotypes, unseen receptors, or assay protocol differences, and report any attempts to mitigate the shift (e.g., fine-tuning, domain adaptation, or uncertainty estimation).  </li>
+<li><strong>Concern ID</strong> R1-M3  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Reproducibility  </li>
+<li><strong>Claim pointer</strong> The model was trained on 271,739 curated ligand-GPCR pairs spanning 183,694 ligands and 216 human GPCRs.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The curation process for the training dataset is not described. It is unclear how ligand-GPCR pairs were assembled, how activity values were standardized, how conflicts between sources were resolved, and what thresholds were used for binary classification.  </li>
+<li><strong>Why it matters</strong> Dataset curation is a major source of variability in bioactivity modeling. Without a clear description, the results cannot be reproduced or compared with other studies.  </li>
+<li><strong>Resolution test</strong> Provide a detailed description of the data collection, filtering, standardization, and labeling procedures, including source databases, version numbers, and any manual curation steps.  </li>
+<li><strong>Concern ID</strong> R1-M4  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Technical soundness  </li>
+<li><strong>Claim pointer</strong> Removing receptor embeddings markedly degraded both regression and classification, whereas differences among ESM-2 35M, ESM-2 650M, and ProtT5 were comparatively small.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The abstract states that receptor embeddings are essential but does not quantify the degradation or describe the classification metrics used. It is also unclear whether the ablation was performed under all partition schemes or only a subset.  </li>
+<li><strong>Why it matters</strong> The strength of the ablation claim depends on the magnitude of the performance drop and the consistency across evaluation settings. Without these details, the importance of receptor information is not fully established.  </li>
+<li><strong>Resolution test</strong> Report the full set of regression and classification metrics for the full model and the receptor-ablated variant under each partition, including confidence intervals. Specify which classification threshold and metric (e.g., ROC-AUC, PR-AUC) were used.  </li>
+<li><strong>Minor Comments</strong>  </li>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Model description  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Issue</strong> The term "protein language model-conditioned graph neural networks" is used in the title and abstract, but the exact mechanism of conditioning is not described. It is unclear whether the protein embeddings are concatenated with molecular features, used as a global context vector, or integrated via attention.  </li>
+<li><strong>Required correction</strong> Clarify the architectural integration of protein embeddings in the full manuscript, ideally with a schematic figure.  </li>
+<li><strong>Concern ID</strong> R1-m2  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Completeness  </li>
+<li><strong>Affected element</strong> Baseline comparison  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Issue</strong> The abstract mentions a "protein-aware fixed-feature multilayer perceptron" and a "matched GINE reference" but does not describe their feature sets or architectures.  </li>
+<li><strong>Required correction</strong> Provide full descriptions of all baselines, including feature types, model architectures, and hyperparameter tuning procedures, to ensure fair comparison.  </li>
+<li><strong>Concern ID</strong> R1-m3  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Reporting  </li>
+<li><strong>Affected element</strong> Selectivity analysis  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Issue</strong> The DRD2-DRD3 selectivity analysis reports R^2, Spearman rho, and ROC-AUC, but the sample size and the definition of "strong DRD3 selectivity" are not provided.  </li>
+<li><strong>Required correction</strong> Report the number of compounds and ligand-GPCR pairs used in the selectivity analysis, the threshold for defining strong selectivity, and the composition of the positive and negative classes.  </li>
+<li><strong>Concern ID</strong> R1-m4  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> External evaluation  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Issue</strong> The external evaluation combines ChEMBL 37 and BindingDB data, but the rationale for merging these sources and the potential for duplicate or conflicting entries are not discussed.  </li>
+<li><strong>Required correction</strong> Describe the merging procedure, including duplicate handling and any cross-source validation, and report the number of unique ligands and receptors in the external set.  </li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (statistical rigor of performance comparisons), R1-M2 (analysis of external domain shift), R1-M3 (dataset curation transparency), R1-M4 (quantification of ablation effects)</li>
+<li><strong>Assessment against Nature-style criteria</strong>  </li>
+<li>Originality: The combination of protein language model embeddings with graph neural networks for GPCR ligand activity prediction is a reasonable extension of existing work, but the abstract does not clearly differentiate it from prior multimodal approaches. The originality is moderate and would need a more explicit comparison with existing methods to be fully assessed.  </li>
+<li>Scientific importance: GPCR ligand activity prediction is a relevant problem in drug discovery, and the integration of receptor context is a meaningful step. However, the external domain shift result tempers the claim of broad applicability.  </li>
+<li>Interdisciplinary readership: The work bridges machine learning, cheminformatics, and pharmacology, and the abstract is written in a way that is accessible to nonspecialists. The selectivity analysis adds a concrete biological application.  </li>
+<li>Technical soundness: The evaluation design is thoughtful, but the lack of statistical detail and the unexplained external performance drop prevent a full assessment of technical soundness.  </li>
+<li>Readability for nonspecialists: The abstract is clear and well structured, with key metrics and comparisons presented in an understandable manner.  </li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea is promising and the internal results are encouraging, but the abstract does not provide enough evidence to fully establish the claims. The authors should address the statistical rigor, dataset transparency, and external domain shift analysis in the full manuscript.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the model "substantially outperforming" baselines is not supported without statistical significance testing and variance reporting.</li>
+<li>The claim that receptor embeddings are "markedly" important is not quantified, so the magnitude of the effect is unknown.</li>
+<li>The external domain shift result is reported but not explained, so the generalizability claim is not established.</li>
+<li>The selectivity analysis results are presented without sample size or class composition, making them difficult to interpret.</li>
+<li>The overall claim that this is a "scalable strategy" is not supported by any runtime, memory, or scalability analysis.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>De novo design of flexible protein interactions with GuideFlip · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>De novo design of flexible protein interactions with GuideFlip</h1>
+      <div class="meta">Kai Yi; Qingchao Chen; Dongqi Zhang; Pengfei Tian; Jane L. Wagstaff; Stephen H. McLaughlin; Christopher G. Tate; Kiarash Jamali; Sjors H. W. Scheres</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-28
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.27.754145">原文</a>
+      </div>
+      <p class="one-liner">该文提出GuideFlip，通过引导式离散流匹配协同设计蛋白质结构与序列，针对柔性靶标（如无序蛋白）实现从头设计蛋白结合剂，并实验验证了高命中率，属于蛋白质结构计算设计的前沿方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">De novo design of protein binders requires a target structure. However, for flexible targets, such as intrinsically disordered proteins, this structure does not exist until the binder has stabilized the interaction. Such targets are therefore difficult for methods that separate structure generation from sequence design. We introduce GuideFlip, which co-designs structure and sequence through guided discrete flow matching: binder residues are assigned progressively while the complex is re-predicted at each step, allowing the evolving interface to affect the design process. GuideFlip reduces the hydrophobic bias of direct AlphaFold optimization and improves in silico success rates over existing approaches. We release a database of binder candidates for 177 human disordered proteins. Experimentally, we obtain de novo binders to the carboxy terminus of α -synuclein and the disordered amino terminus of RBX1 with hit rates of 13.5% and 41.7%, respectively, and we confirm the epitopes of selected binders by NMR and mutagenesis. Applying GuideFlip to flexibility on the binder side, we design a nanobody that binds the agonist-bound β 1 -adrenergic receptor in its active state, but not the receptor in its inactive state, with a 75% hit rate and a cryo-EM structure confirming the design. GuideFlip enables protein design where bound structures emerge only upon binding.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白结合物的从头设计需要目标结构。然而，对于柔性目标，例如固有无序蛋白，这种结构在结合物稳定相互作用之前并不存在。因此，这类目标对于将结构生成与序列设计分离的方法而言是困难的。我们引入了GuideFlip，它通过引导式离散流匹配协同设计结构和序列：结合物残基逐步分配，同时每一步重新预测复合物，使不断演化的界面影响设计过程。GuideFlip减少了直接AlphaFold优化的疏水偏好，并提高了现有方法的计算机模拟成功率。我们发布了一个包含177个人类无序蛋白结合物候选物的数据库。实验上，我们获得了针对α-突触核蛋白羧基末端和RBX1无序氨基末端的从头结合物，命中率分别为13.5%和41.7%，并通过核磁共振和突变实验确认了选定结合物的表位。将GuideFlip应用于结合物侧的柔性，我们设计了一种纳米抗体，它能结合激动剂结合的β1-肾上腺素能受体处于活性状态，但不结合非活性状态的受体，命中率为75%，冷冻电镜结构确认了该设计。GuideFlip使得在结合结构仅于结合时出现的蛋白质设计成为可能。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：De novo design of flexible protein interactions with GuideFlip</li>
+<li><strong>作者</strong>：Kai Yi; Qingchao Chen; Dongqi Zhang; Pengfei Tian; Jane L. Wagstaff; Stephen H. McLaughlin; Christopher G. Tate; Kiarash Jamali; Sjors H. W. Scheres</li>
+<li><strong>单位</strong>：未提供（根据作者姓名推测可能涉及MRC Laboratory of Molecular Biology，但原文未明确标注，故写「未提供」）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 实验验证）</li>
+<li><strong>领域</strong>：蛋白质设计 × 深度学习（discrete flow matching）、柔性蛋白相互作用</li>
+<li><strong>关键词</strong>：de novo binder design, intrinsically disordered proteins, flow matching, AlphaFold, co-design, conformational selection</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.27.754145</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：177 个人类 disordered proteins 的 binder 候选数据库（已发布）</li>
+<li><strong>阅读日期</strong>：2026-09-28（按正文日期推断）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的 <strong>de novo binder 设计</strong> 子方向，针对 <strong>柔性靶标（IDP）</strong> 这一此前难以处理的场景，提出 <strong>结构-序列协同设计</strong> 的新范式，与 AlphaFold 直接优化、RFdiffusion 等现有方法形成对比。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对柔性靶标（如 intrinsically disordered proteins）缺乏预存结构的问题，GuideFlip 通过 guided discrete flow matching 在每一步重新预测复合物结构的同时逐步分配 binder 残基，实现结构与序列的协同设计，在 α-synuclein C 端、RBX1 N 端及 β1-adrenergic receptor 活性态上分别获得 13.5%、41.7% 和 75% 的实验 hit rates。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何为没有稳定预存结构的柔性靶标（如 IDPs）设计 de novo protein binders？</li>
+<li><strong>为什么重要</strong>：许多疾病相关蛋白（如 α-synuclein、RBX1）本质上是 disordered 的，其功能构象仅在结合配体时才被稳定。传统 binder 设计方法（如 RFdiffusion、AlphaFold 优化）依赖靶标结构作为输入，对柔性靶标不适用。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>结构生成与序列设计分离的方法（如 RFdiffusion → 序列设计）需要靶标结构，而柔性靶标无此结构。</li>
+<li>直接对 AlphaFold 输出进行序列优化（如 AF2 反向传播）会产生疏水偏置，导致设计序列聚集或非特异结合。</li>
+<li><strong>精确研究问题</strong>：Can we co-design structure and sequence for flexible targets by iteratively re-predicting the complex while assigning binder residues, such that the evolving interface guides the design process?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络为「仅本文框架」——基于本文引言与讨论的叙述，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 基于物理的 binder 设计</td>
+<td>Rosetta（柔性对接 + 序列设计）</td>
+<td>可处理一定柔性</td>
+<td>计算昂贵、成功率低、需专家知识</td>
+<td>被超越</td>
+</tr>
+<tr>
+<td>2. 深度生成模型</td>
+<td>RFdiffusion（扩散模型生成结构）</td>
+<td>高成功率、可设计复杂拓扑</td>
+<td>需要靶标结构；对 IDP 无输入结构可用</td>
+<td>被超越</td>
+</tr>
+<tr>
+<td>3. 序列-结构联合优化</td>
+<td>AlphaFold 反向传播 / 直接序列优化</td>
+<td>无需预存结构</td>
+<td>疏水偏置、易陷入局部最优、in silico 成功率低</td>
+<td>被超越</td>
+</tr>
+<tr>
+<td>4. 协同设计（本文）</td>
+<td>GuideFlip（guided discrete flow matching）</td>
+<td>结构-序列逐步协同、无疏水偏置、适用于柔性靶标</td>
+<td>计算成本较高、需每步重预测</td>
+<td><strong>本文位置</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>柔性靶标无预存结构</td>
+<td>IDP 在游离态无稳定构象，传统方法无输入结构可用</td>
+<td>结构生成与序列设计分离的范式假设靶标有固定结构</td>
+<td>摘要：「this structure does not exist until the binder has stabilized the interaction」</td>
+</tr>
+<tr>
+<td>AlphaFold 直接优化产生疏水偏置</td>
+<td>设计序列富含疏水残基，易聚集或非特异结合</td>
+<td>直接优化 AF2 损失函数倾向于用疏水核心补偿界面互补性</td>
+<td>摘要：「reduces the hydrophobic bias of direct AlphaFold optimization」</td>
+</tr>
+<tr>
+<td>现有方法 in silico 成功率低</td>
+<td>对柔性靶标的计算筛选命中率低</td>
+<td>结构-序列分离导致界面演化无法反馈到设计过程</td>
+<td>摘要：「improves in silico success rates over existing approaches」</td>
+</tr>
+<tr>
+<td>柔性不仅限于靶标侧</td>
+<td>binder 自身柔性（如 nanobody CDR 环）也影响设计</td>
+<td>现有方法难以同时处理两侧柔性</td>
+<td>摘要：「Applying GuideFlip to flexibility on the binder side」</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：GuideFlip 使用 guided discrete flow matching——在离散残基类型空间上执行 flow，每一步将部分 binder 残基从「未知」状态翻转为具体氨基酸，同时用 AlphaFold（或类似结构预测器）重新预测当前部分序列的复合物结构，使结构预测结果作为 guide 影响下一步残基分配。</li>
+<li><strong>核心洞察</strong>：结构与序列不应分离设计——当靶标是柔性的，结构本身就是设计的产物而非输入。通过「逐步分配残基 + 每步重预测结构」的迭代过程，界面在设计中逐渐「结晶」出来，而非预先假定。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：对于任何「结构依赖序列、序列依赖结构」的耦合问题，交替优化（alternating optimization）优于端到端分离；且用结构预测器作为可微分的「结构 oracle」可以引导序列空间搜索，避免显式物理模拟的高成本。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：靶标氨基酸序列（无需结构）；可选：靶标已知部分结构（如 β1-AR 的活性态结构）</li>
+<li><strong>输出</strong>：binder 候选序列（及预测复合物结构）</li>
+<li><strong>模块</strong>：
+  1. <strong>Discrete flow matching 模块</strong>：在 binder 残基类型空间上定义 flow，从「masked」状态逐步去噪为具体氨基酸
+  2. <strong>结构重预测模块</strong>：每步用 AlphaFold（或变体）预测当前部分 binder + 靶标的复合物结构
+  3. <strong>Guide 模块</strong>：将结构预测的置信度/能量信号作为 guide 输入 flow，影响下一步残基分配</li>
+<li><strong>训练</strong>：未提供详细训练协议（预印本可能未含完整方法）</li>
+<li><strong>工具</strong>：AlphaFold（结构预测）、discrete flow matching（序列生成）</li>
+<li><strong>反馈回路</strong>：残基分配 → 结构重预测 → guide 信号 → 下一步残基分配</li>
+<li><strong>假设</strong>：结构预测器能对部分序列的复合物给出有意义的构象采样；逐步分配残基可避免局部最优</li>
+<li><strong>文字流程</strong>：从全 masked binder 序列开始 → 每步用 flow 分配一部分残基 → 用 AlphaFold 预测当前复合物结构 → 提取结构特征（如 pLDDT、界面接触）作为 guide → 更新 flow 的引导方向 → 重复直到所有残基被分配 → 输出最终 binder 序列</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discrete flow matching</td>
+<td>在残基类型空间逐步去噪，生成 binder 序列</td>
+<td>提供序列生成的概率框架，支持引导</td>
+<td>输入：masked 序列 + guide 信号；输出：部分/完整序列</td>
+<td>摘要：「guided discrete flow matching」</td>
+<td>预期：退化为无引导的随机序列生成，成功率下降</td>
+</tr>
+<tr>
+<td>结构重预测（AlphaFold）</td>
+<td>每步预测当前复合物结构</td>
+<td>使界面演化可见并影响设计</td>
+<td>输入：部分 binder + 靶标序列；输出：预测结构</td>
+<td>摘要：「complex is re-predicted at each step」</td>
+<td>预期：失去结构引导，退化为纯序列设计，无法处理柔性靶标</td>
+</tr>
+<tr>
+<td>Guide 模块</td>
+<td>将结构预测信号转化为 flow 引导</td>
+<td>实现「结构影响序列」的闭环</td>
+<td>输入：结构预测输出；输出：flow 的引导向量</td>
+<td>摘要：「allowing the evolving interface to affect the design process」</td>
+<td>预期：失去引导后，疏水偏置回归，in silico 成功率下降</td>
+</tr>
+<tr>
+<td>实验验证流程</td>
+<td>表达、结合实验（NMR、mutagenesis、cryo-EM）</td>
+<td>验证设计 binder 的真实功能</td>
+<td>输入：候选序列；输出：结合数据</td>
+<td>摘要：「confirmed by NMR and mutagenesis」「cryo-EM structure」</td>
+<td>不可移除（验证必需）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：以上「预期影响」均为 [Analysis] 推断，原文未提供消融实验数据。</p>
+</blockquote>
+<h2>09 关键公式符号</h2>
+<p>不适用——原文为预印本摘要，未提供具体数学公式。方法部分（若存在）未在提供材料中。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：</li>
+<li>计算：177 个人类 disordered proteins（binder 候选数据库）</li>
+<li>实验：α-synuclein C 端、RBX1 N 端（disordered 靶标）；β1-adrenergic receptor（binder 侧柔性）</li>
+<li><strong>规模</strong>：未提供具体候选数量（除数据库 177 个蛋白外）</li>
+<li><strong>指标</strong>：hit rate（实验验证阳性率）</li>
+<li><strong>基线</strong>：现有 de novo binder 设计方法（未具体点名，推测为 RFdiffusion 等）</li>
+<li><strong>评测协议</strong>：in silico 成功率 + 实验验证（NMR、mutagenesis、cryo-EM）</li>
+<li><strong>oracle 输入</strong>：AlphaFold 结构预测（作为 guide）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>α-synuclein C 端 binder 设计</td>
+<td>GuideFlip 可为 IDP 设计 binder</td>
+<td>与现有方法对比（in silico）</td>
+<td>hit rate 13.5%</td>
+<td>GuideFlip 能处理柔性靶标</td>
+<td>未证明优于所有现有方法（无头对头实验数据）</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>RBX1 N 端 binder 设计</td>
+<td>GuideFlip 可推广至其他 IDP</td>
+<td>独立靶标验证</td>
+<td>hit rate 41.7%</td>
+<td>方法具有泛化性</td>
+<td>样本量小（2 个靶标）</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>β1-AR 活性态 nanobody 设计</td>
+<td>GuideFlip 可处理 binder 侧柔性</td>
+<td>靶标有结构，binder 柔性</td>
+<td>hit rate 75%，cryo-EM 确认</td>
+<td>方法适用于 binder 侧柔性</td>
+<td>仅一个 binder 有结构验证</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>疏水偏置对比</td>
+<td>GuideFlip 减少疏水偏置</td>
+<td>与直接 AlphaFold 优化对比</td>
+<td>摘要声称「reduces hydrophobic bias」</td>
+<td>引导机制有效</td>
+<td>未提供定量疏水残基比例数据</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：de novo binder 设计，靶标为柔性蛋白（IDP）或 binder 自身柔性（nanobody CDR）</li>
+<li><strong>oracle/真值输入</strong>：AlphaFold 结构预测作为 guide，非实验结构</li>
+<li><strong>端到端状态</strong>：计算设计 → 实验验证全流程完成，但实验验证仅覆盖 3 个靶标系统</li>
+<li><strong>算力成本</strong>：未提供</li>
+<li><strong>历史数据依赖</strong>：依赖 AlphaFold 预训练模型，未提供微调细节</li>
+<li><strong>模型依赖</strong>：强依赖 AlphaFold 对部分序列复合物的预测质量；若 AF 对中间态预测不准，引导可能失效</li>
+<li><strong>最难情形</strong>：完全无结构信息的 IDP 长片段、多结构域柔性连接区</li>
+<li><strong>不确定性</strong>：hit rate 的置信区间未提供；实验验证的 binder 数量未明确（仅百分比）</li>
+<li><strong>有边界的复述</strong>：GuideFlip 在 3 个测试系统上展示了针对柔性靶标的 de novo binder 设计能力，hit rates 介于 13.5%–75%，但方法对 AlphaFold 预测质量的依赖程度、与现有方法的大规模头对头比较、以及计算成本均未在提供材料中说明。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限，[Analysis] 推断）：
+- 方法依赖 AlphaFold 每步重预测，计算成本可能较高
+- 实验验证仅覆盖 3 个靶标，统计功效有限
+- 未提供与现有方法（如 RFdiffusion）的直接实验对比</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hit rate 仅报告百分比，未报告绝对数量</td>
+<td>若测试的候选总数很少（如 &lt;20），13.5% 可能仅代表 2-3 个阳性</td>
+<td>影响对方法效力的判断</td>
+<td>要求作者提供测试总数和阳性数</td>
+<td>摘要仅给百分比</td>
+</tr>
+<tr>
+<td>未与现有方法头对头比较</td>
+<td>GuideFlip 可能仅在小规模测试中表现好，未必优于 RFdiffusion 等</td>
+<td>影响方法定位</td>
+<td>在相同靶标集上运行 RFdiffusion 等基线</td>
+<td>摘要仅称「improves over existing approaches」</td>
+</tr>
+<tr>
+<td>依赖 AlphaFold 作为 guide</td>
+<td>若 AF 对部分序列复合物预测不准，引导可能引入偏置</td>
+<td>影响方法鲁棒性</td>
+<td>测试不同结构预测器（如 ESMFold）作为 guide 的敏感性</td>
+<td>摘要未讨论</td>
+</tr>
+<tr>
+<td>177 个蛋白的数据库未说明筛选标准</td>
+<td>数据库可能包含大量低置信度候选</td>
+<td>影响数据库实用性</td>
+<td>检查数据库的置信度分布</td>
+<td>摘要仅提及数据库存在</td>
+</tr>
+<tr>
+<td>β1-AR 实验有已知结构输入</td>
+<td>该案例可能部分规避了「无结构」挑战</td>
+<td>影响「柔性 binder」claim 的纯度</td>
+<td>确认 β1-AR 实验中是否使用了靶标结构信息</td>
+<td>摘要称「binder side」柔性，暗示靶标有结构</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>交替优化范式</strong>：对于「结构-序列」耦合问题，逐步分配 + 每步重预测的交替优化可替代端到端联合优化，避免局部最优。→ 可迁移到 <strong>构象采样</strong> 任务：在 MD 模拟中逐步固定部分二面角并重新平衡，可能加速稀有构象采样。</p>
+</li>
+<li>
+<p><strong>结构预测器作为可微 oracle</strong>：用 AlphaFold 作为「结构评分函数」引导序列生成，而非仅作为最终验证工具。→ 可迁移到 <strong>分子对接</strong>：用 AF 预测的复合物置信度作为对接 pose 的排序特征，或作为生成式对接模型的训练信号。</p>
+</li>
+<li>
+<p><strong>疏水偏置的显式规避</strong>：直接优化 AF 损失会产生疏水偏置，引导机制可缓解。→ 可迁移到 <strong>序列设计</strong>：在设计损失中显式加入疏水残基比例约束或极性界面偏好项。</p>
+</li>
+<li>
+<p><strong>柔性靶标的「结构涌现」视角</strong>：结构不是设计的输入而是输出——这一视角可推广到 <strong>构象生成</strong>：为 IDP 生成 ensemble 而非单一结构，用 binding 作为 ensemble 的筛选条件。</p>
+</li>
+<li>
+<p><strong>实验验证的层次化设计</strong>：NMR（表位确认）→ mutagenesis（关键残基验证）→ cryo-EM（结构确认），从低到高分辨率逐步验证。→ 可迁移到 <strong>MD 模拟</strong> 的验证：先用 ensemble 性质（如 Rg）粗验证，再用关键接触/氢键精细验证。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与 <strong>RFdiffusion</strong>（扩散模型生成 binder 结构）目标相似，但 GuideFlip 针对柔性靶标，且采用离散 flow 而非连续扩散。可对比：RFdiffusion 需要靶标结构，GuideFlip 不需要。</li>
+<li><strong>组合方向</strong>：GuideFlip 的「结构重预测引导」思想可与 <strong>AlphaFold 的 multiple sequence alignment (MSA) 信息</strong> 结合，利用共进化信号增强对柔性界面的预测。</li>
+<li><strong>冲突/对比</strong>：与 <strong>直接 AlphaFold 反向传播优化</strong>（如 ColabDesign 思路）形成对比——后者易产生疏水偏置，GuideFlip 声称缓解此问题。</li>
+<li><strong>可迁移领域</strong>：<strong>MD 模拟</strong> 中，GuideFlip 的「逐步固定 + 重预测」可类比为 <strong>steered MD 或 metadynamics</strong> 的集体变量逐步增强策略；<strong>构象生成</strong> 中，其「结构涌现」视角与 <strong>IDP ensemble 生成</strong> 方法（如 IDPConformerGenerator）互补。</li>
+<li><strong>候选方向</strong>：将 GuideFlip 的 flow matching 框架扩展到 <strong>核酸-蛋白相互作用</strong> 设计，或 <strong>构象特异性 binder</strong>（如激酶活性态 vs 非活性态）设计。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：GuideFlip-MD：用离散 flow 引导 MD 模拟的稀有构象采样
+   - <strong>来源局限/观察</strong>：GuideFlip 的「逐步分配 + 重预测」在序列空间有效，但 MD 模拟的构象空间是连续的
+   - <strong>核心假设</strong>：将 flow matching 扩展到二面角空间，逐步固定部分二面角并重新平衡，可加速 IDP 的折叠-结合耦合构象采样
+   - <strong>初步方法</strong>：在 MD 模拟中，每 N 步用 flow 选择一组二面角进行约束，其余自由演化；用重预测的结构置信度作为约束选择的 guide
+   - <strong>验证方式</strong>：在 α-synuclein C 端 + 已知 binder 系统上测试，比较采样到的结合构象与实验结构（NMR/cryo-EM）的 RMSD
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：GuideFlip-Dock：面向柔性靶标的生成式分子对接
+   - <strong>来源局限/观察</strong>：现有对接工具（如 HADDOCK、ClusPro）对 IDP 靶标效果差，因缺乏刚性结构
+   - <strong>核心假设</strong>：GuideFlip 的协同设计框架可改造为「协同对接」——逐步分配配体原子位置 + 重预测复合物，而非仅设计 binder 序列
+   - <strong>初步方法</strong>：将 flow 从残基类型空间扩展到配体原子坐标空间，用 AF 预测的界面置信度作为 guide
+   - <strong>验证方式</strong>：在 benchmark 上（如 IDP-protein complex 数据集）比较 docking 成功率与现有工具
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：GuideFlip-Ensemble：为 IDP 生成结合态构象 ensemble
+   - <strong>来源局限/观察</strong>：GuideFlip 输出单一 binder 序列，但 IDP 结合态本质是 ensemble
+   - <strong>核心假设</strong>：在 flow 过程中保留多个轨迹（而非贪心选择最优），可生成结合态构象 ensemble，更真实反映 IDP 结合机制
+   - <strong>初步方法</strong>：修改 flow 的 guide 策略，在每步保留 top-K 个部分序列分支，最终输出 ensemble
+   - <strong>验证方式</strong>：比较 ensemble 的构象多样性 vs 实验 NMR 的 RDC/NOE 数据
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：GuideFlip-Selectivity：构象特异性 binder 设计
+   - <strong>来源局限/观察</strong>：β1-AR 案例展示了 binder 侧柔性处理，但未涉及构象选择性（活性态 vs 非活性态）
+   - <strong>核心假设</strong>：通过在 guide 中加入构象状态标签，可设计仅结合特定构象态的 binder
+   - <strong>初步方法</strong>：在 flow 的 guide 信号中编码靶标构象状态（如活性态 vs 非活性态），训练时使用状态标签
+   - <strong>验证方式</strong>：在 GPCR 系统上设计活性态特异性 nanobody，用 cryo-EM 验证构象选择性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：GuideFlip-X：扩展到核酸-蛋白相互作用设计
+   - <strong>来源局限/观察</strong>：GuideFlip 仅处理蛋白 binder，但许多柔性靶标是 RNA/DNA
+   - <strong>核心假设</strong>：flow matching 框架可扩展到核酸残基类型空间，设计核酸 binder 或蛋白 binder 靶向核酸
+   - <strong>初步方法</strong>：将残基类型空间扩展为核酸碱基类型，修改结构重预测器为 RNA 复合物预测器（如 AlphaFold3）
+   - <strong>验证方式</strong>：在 RNA-binding protein 靶标上测试，用 ITC/EMSA 验证结合
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce GuideFlip, a method for de novo design of protein binders against flexible targets, using guided discrete flow matching to co-design structure and sequence. They report improved in silico success rates over existing approaches, a database of binder candidates for 177 human disordered proteins, experimental hit rates for binders to α-synuclein and RBX1, and a conformation-selective nanobody against the β1-adrenergic receptor with a cryo-EM structure.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or supplementary data</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, all experimental protocols, NMR and mutagenesis data, cryo-EM maps and validation statistics, database contents and access details, computational benchmarks with baselines, and statistical analyses</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially significant advance in protein binder design for flexible targets, a problem of considerable interest. The core idea of co-designing structure and sequence via guided discrete flow matching is conceptually appealing and the reported experimental hit rates are encouraging. However, the abstract alone provides insufficient detail to evaluate the technical soundness of the method, the rigor of the experimental validations, or the robustness of the claimed improvements over existing approaches. The claim of a 75% hit rate for a conformation-selective nanobody is striking and would require strong structural and biophysical evidence to be credible. The manuscript may be of high interest if the full data support the claims, but the case is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational protein designers and structural biologists working on intrinsically disordered proteins, flexible complexes, and conformation-selective binders. The method addresses a known limitation of structure-first design pipelines, so researchers developing generative models for biomolecular interactions would find the approach relevant. The experimental demonstrations against α-synuclein and GPCRs would interest those studying neurodegeneration and receptor signaling.</li>
+<li><strong>Major strengths</strong> The problem addressed is well-defined and important. The method conceptually integrates structure prediction and sequence design in a way that could overcome the static-structure limitation. The inclusion of multiple experimental validations, including NMR, mutagenesis, and cryo-EM, suggests an effort to go beyond purely computational claims. The release of a candidate database for 177 disordered proteins is a useful community resource.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "GuideFlip reduces the hydrophobic bias of direct AlphaFold optimization and improves in silico success rates over existing approaches."</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Concern</strong> The abstract claims improved in silico success rates over existing approaches, but no details are given on the benchmark set, the baselines compared, the evaluation metrics, or the statistical significance of the improvements. Without this information, the claim cannot be assessed.</li>
+<li><strong>Why it matters</strong> The central value proposition of the method rests on its computational performance relative to prior work. If the benchmark is narrow or the baselines are weak, the improvement may not be general.</li>
+<li><strong>Resolution test</strong> Provide a benchmark description with target diversity, baseline methods, success criteria, and error bars or significance tests.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Experimental validation</li>
+<li><strong>Claim pointer</strong> "we confirm the epitopes of selected binders by NMR and mutagenesis"</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Concern</strong> The abstract states that epitopes were confirmed, but no data are shown. For α-synuclein, a disordered protein, epitope mapping by NMR requires careful assignment and titration experiments. For RBX1, mutagenesis must rule out allosteric effects. The abstract does not indicate how many binders were validated, what fraction of the hits were confirmed, or whether the epitopes match the design predictions.</li>
+<li><strong>Why it matters</strong> Epitope confirmation is essential to demonstrate that the binders engage the intended target region, not just that they bind somewhere on the protein. Without this, the design success rate is not meaningful.</li>
+<li><strong>Resolution test</strong> Show representative NMR spectra with assignments, mutagenesis data with controls, and a clear statement of how many binders were tested and confirmed.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Structural validation</li>
+<li><strong>Claim pointer</strong> "a cryo-EM structure confirming the design"</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Concern</strong> The abstract claims a cryo-EM structure confirms the design of a nanobody against the active β1-adrenergic receptor. No resolution, map quality metrics, or model validation statistics are provided. For a conformation-selective binder, the structure must demonstrate that the nanobody contacts the receptor in a way that is specific to the active state, and that the design model matches the experimental structure.</li>
+<li><strong>Why it matters</strong> A cryo-EM structure is a strong piece of evidence, but only if it is of sufficient quality and if the comparison to the design model is rigorous. Without these details, the claim is unverifiable.</li>
+<li><strong>Resolution test</strong> Provide the cryo-EM resolution, map-to-model FSC curves, and a structural alignment between the design model and the experimental complex with RMSD values.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Hit rate definition</li>
+<li><strong>Claim pointer</strong> "we obtain de novo binders to the carboxy terminus of α-synuclein and the disordered amino terminus of RBX1 with hit rates of 13.5% and 41.7%, respectively"</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Concern</strong> The hit rates are reported without defining what constitutes a hit. Is a hit a binder confirmed by a specific biochemical assay, a sequence that passes a computational filter, or something else? The denominator is also unclear. For α-synuclein, a 13.5% hit rate could mean 5 out of 37 or 50 out of 370, which changes the interpretation substantially.</li>
+<li><strong>Why it matters</strong> Hit rates are only meaningful with a clear definition of the assay, the threshold for positivity, and the number of candidates tested. Without this, the reported rates cannot be compared to other design studies.</li>
+<li><strong>Resolution Test</strong> Define the hit criteria, the assay used, the number of candidates tested, and the number of confirmed binders.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Method description</li>
+<li><strong>Evidence pointer</strong> Abstract, first paragraph</li>
+<li><strong>Issue</strong> The phrase "guided discrete flow matching" is not explained. A reader unfamiliar with flow matching methods will not understand what is being guided or how the guidance works.</li>
+<li><strong>Required correction</strong> Add a brief explanation of the guidance mechanism, or refer to a methods section where this is defined.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Database release</li>
+<li><strong>Evidence pointer</strong> Abstract, second paragraph</li>
+<li><strong>Issue</strong> The abstract states that a database of binder candidates is released, but no URL, accession code, or description of the database contents is given.</li>
+<li><strong>Required correction</strong> Provide the database location and a brief description of the format and contents.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Experimental details</li>
+<li><strong>Evidence pointer</strong> Abstract, second paragraph</li>
+<li><strong>Issue</strong> The abstract does not state the number of binders tested for the nanobody design, only the hit rate of 75%. It is unclear how many candidates were screened.</li>
+<li><strong>Required correction</strong> Report the number of candidates tested and the number of confirmed binders.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Specificity</li>
+<li><strong>Affected element</strong> Conformation selectivity claim</li>
+<li><strong>Evidence pointer</strong> Abstract, second paragraph</li>
+<li><strong>Issue</strong> The claim that the nanobody binds the active state but not the inactive state is stated without specifying how the inactive state was tested or what assay was used.</li>
+<li><strong>Required correction</strong> Specify the assay and the receptor construct used for the inactive state test.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of improved in silico success rates over existing approaches is unsupported without benchmark details.</li>
+<li>The hit rates for α-synuclein and RBX1 are uninterpretable without a definition of the hit criteria and the number of candidates tested.</li>
+<li>The epitope confirmation by NMR and mutagenesis is unverifiable without data.</li>
+<li>The cryo-EM structure confirming the design is unverifiable without resolution and validation metrics.</li>
+<li>The claim that GuideFlip "enables protein design where bound structures emerge only upon binding" is a general statement that cannot be evaluated from the abstract alone.</li>
+<li>The database of binder candidates for 177 disordered proteins is mentioned but not accessible or described.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

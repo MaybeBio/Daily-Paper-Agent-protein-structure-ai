@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary materials provided
+- **Shared manuscript claim summary** The authors present FLIGHTED, a Bayesian method for generating probabilistic fitness landscapes from noisy high-throughput experimental data, and claim that applying this method statistically significantly improves the performance of standard machine learning models on two experimental systems (single-step selection assays and a base-editing activity assay). They further claim that data size, not model scale, is the limiting factor for protein fitness model performance, and that FLIGHTED is applicable to any high-throughput assay and any ML model.
+- **Visible evidence base** Abstract text only; no quantitative results, statistical details, model descriptions, or experimental protocols are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, supplementary information, statistical analysis details, model architectures, hyperparameters, dataset descriptions, and code availability
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful methodological contribution, namely a Bayesian approach to noise-aware fitness landscape inference. The motivation is clear and the claimed applicability is broad. However, the abstract provides no quantitative evidence, no statistical details, and no methodological specifics. The central claims of statistically significant improvement and the data-size conclusion cannot be evaluated from the supplied material. The claim of universal applicability to any assay and any ML model is stated without supporting evidence or caveats.
+- **Who would be interested in the results, and why** Protein engineers, computational biologists, and machine learning practitioners working on protein fitness prediction and directed evolution would be interested. The method addresses a recognized problem of experimental noise in high-throughput fitness data, which is relevant to anyone building or benchmarking protein fitness models.
+- **Major strengths** The problem addressed is important and widely recognized. The proposed approach, using Bayesian inference to propagate uncertainty into fitness landscapes, is conceptually sound and potentially general. The choice of two distinct experimental paradigms (selection-based and activity-based) suggests an attempt at demonstrating breadth.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Accounting for noise statistically significantly improves model performance"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that accounting for noise statistically significantly improves model performance, but no effect sizes, p-values, confidence intervals, or comparison metrics are provided. The term "statistically significantly" is used without any supporting statistical evidence.
+  - **Why it matters** This is the central quantitative claim of the work. Without any reported statistics, the reader cannot assess the magnitude of the improvement, its consistency across conditions, or whether the improvement is practically meaningful.
+  - **Resolution test** Provide effect sizes, confidence intervals, and significance tests for the comparison between models with and without FLIGHTED, across both experimental systems and multiple datasets or replicates.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim scope
+  - **Claim pointer** "FLIGHTED can be applied to any high-throughput assay and any ML model"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The claim of universal applicability is stated without any demonstration across diverse assay types or model families. Only two experimental systems and "standard ML models" are mentioned, which is insufficient to support a claim of universality.
+  - **Why it matters** Overgeneralized claims can mislead practitioners into applying the method in contexts where it may not work, and they weaken the scientific credibility of the work.
+  - **Resolution test** Either restrict the claim to the demonstrated contexts or provide evidence from a broader range of assay types and model architectures, including cases where the method may fail or underperform.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Data size, not model scale, is limiting protein fitness model performance"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** This is a strong and general conclusion drawn from what appears to be a limited benchmarking study. The abstract does not describe the range of data sizes tested, the model scales compared, or the analysis that led to this conclusion.
+  - **Why it matters** This claim has broad implications for resource allocation in the field. If it is not rigorously supported, it could misdirect research efforts.
+  - **Resolution test** Provide a detailed benchmarking analysis showing performance as a function of data size and model scale, with clear methodology for how the conclusion was derived, including any statistical tests or model fitting used to support the claim.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Method description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not explain how FLIGHTED works at a conceptual level beyond "Bayesian method of accounting for uncertainty." A reader cannot understand what the method actually does.
+  - **Required correction** Add a brief description of the Bayesian approach, such as how priors are defined, how noise is modeled, and how the probabilistic landscape is generated.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Code and data availability
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No mention of code or data availability, which is essential for a methods paper.
+  - **Required correction** State where code and data will be made available, or note that they are available upon request.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Use of "fitness landscape"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "fitness landscape" is used in a specific way, but the abstract does not clarify whether this refers to a point estimate, a distribution, or a generative model. The phrase "probabilistic fitness landscapes" is introduced but not defined.
+  - **Required correction** Define what is meant by a probabilistic fitness landscape in this context and how it differs from a standard fitness landscape.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The central quantitative claim lacks any reported statistics, and the universality claim exceeds the demonstrated scope. R1-M3 is also blocking because the data-size conclusion is a major finding that cannot be evaluated without the underlying analysis.
+- **Assessment against Nature-style criteria** Originality: The idea of applying Bayesian noise modeling to fitness landscapes is not entirely new, but the specific framing and the claimed generality may offer a novel contribution. This cannot be fully assessed from the abstract. Scientific importance: The problem is important, and if the claims hold, the method could be widely used. However, the importance is diminished by the lack of quantitative evidence. Interdisciplinary readership: The work sits at the intersection of machine learning, protein engineering, and experimental biology, and the abstract is written in a way that is broadly accessible. Technical soundness: Cannot be assessed from the abstract alone. The statistical claim is unsupported, and the methodology is not described. Readability for nonspecialists: The abstract is readable and the motivation is clear, but the lack of methodological detail limits its usefulness to a general audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract alone does not provide sufficient quantitative or methodological detail to support the central claims. I would be supportive if the full manuscript provides the missing statistical evidence, restricts or properly supports the universality claim, and substantiates the data-size conclusion.
+
+## Risk / unsupported claims
+- The claim of statistically significant improvement is unsupported by any reported statistics.
+- The claim that FLIGHTED can be applied to any high-throughput assay and any ML model is unsupported and likely overgeneralized.
+- The conclusion that data size, not model scale, is limiting performance is a broad claim that cannot be evaluated from the abstract.
+- The implicit claim that FLIGHTED is straightforward to use is not supported by any usability or implementation details.

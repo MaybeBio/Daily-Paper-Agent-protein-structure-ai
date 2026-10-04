@@ -1,0 +1,77 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the supplied abstract
+- **Shared manuscript claim summary** The authors present PeTriPPI2, a hybrid framework combining ESM-2 sequence embeddings with PeTriBERT structural representations for protein–protein interaction prediction. On a Pinder test set of 2,342 protein pairs, the model achieves 0.898 accuracy, 0.917 precision, 0.876 recall, 0.896 F1 for the interacting class, and 0.963 AUROC. Compared with SpatialPPIv2, PeTriPPI2 shows higher precision but lower recall and F1. Ablations suggest both pathways contribute.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided
+- **Missing materials affecting confidence** Full methods, dataset construction details, hyperparameters, training procedure, ablation results, baseline implementation details, statistical significance tests, and any code or data availability statements
+
+## Reviewer
+- **Overall assessment** The abstract reports a plausible hybrid architecture for PPI prediction and provides a limited set of performance metrics on a standard benchmark. However, the evidence base is insufficient to evaluate the technical soundness of the approach, the validity of the comparison, or the robustness of the claimed contributions. The core claims are not established from the supplied material.
+- **Who would be interested in the results, and why** Computational biologists and machine learning researchers working on protein function prediction, particularly those interested in sequence–structure fusion methods and inverse folding representations. The work may also appeal to researchers developing PPI prediction tools for drug discovery or systems biology.
+- **Major strengths** The combination of a large language model (ESM-2) with an inverse folding encoder (PeTriBERT) is a reasonable and timely design choice. Reporting performance on the Pinder dataset, a recent and challenging benchmark, is appropriate. The inclusion of a direct comparison with SpatialPPIv2 and component ablations indicates awareness of standard evaluation practices.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The hybrid framework achieves the reported performance metrics on the Pinder test set.
+  - **Evidence pointer** Abstract, performance metrics section; location not provided
+  - **Concern** The abstract provides no details on how the sequence and structural representations are fused, how the model is trained, what the selected checkpoint corresponds to, or how the test set is constructed. Without this information, the reported metrics cannot be interpreted or reproduced.
+  - **Why it matters** Reproducibility and interpretability are fundamental to any machine learning claim. The absence of architectural and training details prevents assessment of whether the reported performance is genuine or an artifact of data leakage, overfitting, or evaluation bias.
+  - **Resolution test** Provide a full methods section describing the fusion mechanism, training protocol, checkpoint selection criteria, and dataset split. Report metrics with confidence intervals and statistical significance tests.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Comparative validity
+  - **Claim pointer** Compared with SpatialPPIv2 on the same test data, PeTriPPI2 has higher precision but lower recall and F1.
+  - **Evidence pointer** Abstract, comparison section; location not provided
+  - **Concern** The comparison with SpatialPPIv2 is presented without any details on how the baseline was run, whether it was retrained or used as a pretrained model, whether hyperparameters were tuned, or whether the same data splits were used. The claim of "same test data" is not verifiable.
+  - **Why it matters** A fair comparison is essential for the claim that PeTriPPI2 offers any advantage. Without controlled conditions, the observed differences in precision and recall could be due to implementation details rather than architectural merit.
+  - **Resolution test** Describe the baseline setup in full, including training data, hyperparameters, and evaluation protocol. Provide per-pair error analysis and statistical tests for metric differences.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** Component ablations indicate that both the sequence and structural pathways contribute to this configuration.
+  - **Evidence pointer** Abstract, ablation statement; location not provided
+  - **Concern** The ablation result is stated in a single sentence with no quantitative data. It is unclear which components were removed, how performance changed, or whether the contribution is statistically meaningful.
+  - **Why it matters** The central claim of the paper is that sequence–structure fusion is beneficial. Without quantitative ablation results, this claim is unsupported.
+  - **Resolution test** Report ablation results in a table or figure with metrics for each variant, including confidence intervals and significance tests.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Model naming
+  - **Evidence pointer** Abstract, title and first sentence
+  - **Issue** The title refers to "PeTriBERT" while the model is named "PeTriPPI2". The relationship between the two is not explained.
+  - **Required correction** Clarify whether PeTriPPI2 is a new model or a repurposed version of PeTriBERT, and define the naming convention in the abstract.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Metric reporting
+  - **Affected element** Performance metrics
+  - **Evidence pointer** Abstract, performance metrics section
+  - **Issue** Metrics are reported for the interacting class only. No information is given for the non-interacting class or for class balance in the test set.
+  - **Required correction** Report class-wise metrics and the distribution of labels in the test set to allow interpretation of precision and recall values.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Dataset version
+  - **Evidence pointer** Abstract, dataset mention
+  - **Issue** The Pinder dataset has multiple versions and splits. The specific version and split used are not stated.
+  - **Required correction** Specify the Pinder version and the exact split used for training and testing.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Availability statement
+  - **Evidence pointer** Abstract, no availability section
+  - **Issue** No statement on code or data availability is provided.
+  - **Required correction** Include a data and code availability statement in the full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3
+- **Assessment against Nature-style criteria** Originality: The combination of ESM-2 and PeTriBERT is a reasonable incremental contribution, but the abstract does not demonstrate conceptual novelty beyond existing sequence–structure fusion methods. Scientific importance: PPI prediction is an important problem, and improved precision could be useful, but the reported F1 is lower than the baseline, weakening the case for practical impact. Interdisciplinary readership: The topic is of interest to computational biology and machine learning audiences, but the abstract is too technical and lacks context for nonspecialists. Technical soundness: Not assessable from the abstract alone; critical details on architecture, training, and evaluation are missing. Readability for nonspecialists: The abstract assumes familiarity with PPI benchmarks and model architectures; a brief explanation of the problem and the significance of the metrics would improve accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract reports plausible results, but the absence of methodological detail and quantitative ablation data prevents verification of the core claims. A full manuscript with complete methods, controlled comparisons, and statistical analysis would be required to assess the work fairly.
+
+## Risk / unsupported claims
+- The reported performance metrics (accuracy, precision, recall, F1, AUROC) are unsupported without details on data splits, evaluation protocol, and checkpoint selection.
+- The comparison with SpatialPPIv2 is unsupported without details on baseline configuration and controlled conditions.
+- The claim that both sequence and structural pathways contribute is unsupported without quantitative ablation data.
+- The generalizability of the model beyond the Pinder test set is not addressed and cannot be assessed.

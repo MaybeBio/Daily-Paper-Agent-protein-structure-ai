@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bridging the gap between omics and structural data: A framework for interpreting protein-RNA interaction specificity · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Bridging the gap between omics and structural data: A framework for interpreting protein-RNA interaction specificity</h1>
+      <div class="meta">Fauconnet Y; Deng S; Koundri R; Pagani M; Quignot C; Antonio D; Andreani J</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-30
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.24.754079">原文</a>
+      </div>
+      <p class="one-liner">该文结合组学数据与实验结构，提出评分框架评估蛋白-RNA结合特异性，并系统评测AlphaFold3在蛋白-RNA复合物结构预测中的表现，虽对象为蛋白-RNA复合物，但方法框架和评测思路对蛋白质结构计算研究有借鉴价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein-RNA interactions play a central role in many cellular processes, such as gene regulation, protein synthesis and viral infections. Although a few thousand protein-RNA complexes have been structurally characterized, they represent only a small fraction of all interactions. This lack of experimental data limits the ability of deep-learning based approaches such as AlphaFold3 to predict structures of protein-RNA interactions. In this study, we investigate protein-RNA binding specificity by enriching experimental structures with omics data. To this end, we present a scoring approach and associated web resource quantifying the agreement between experimental structures of protein-RNA interfaces and their omics-derived binding preferences, allowing us to identify interaction motif cores. Through key structural and evolutionary features, we further highlight that these motif cores correspond to important interface regions. We then leverage the dataset of protein-RNA complexes for which structural information can be combined with binding preferences in order to benchmark the ability of AlphaFold3 to predict protein-RNA interaction specificity. To this aim, we run AlphaFold3 predictions using different RNA inputs, from the exact sequence present in the experimental structure to a non-specific sequence, including sequences embedding the consensus binding motif from in vitro experiments. We show that despite good prediction quality, the sensitivity of AlphaFold3 to the exact RNA sequence used as input indicates signs of memorization. We examine some particular complexes and uncover challenges encountered by our scoring workflow and AlphaFold3, especially in the case of alternative binding modes. Altogether, this work evidences both the promise and current limitations of deep learning approaches for protein-RNA structure prediction, and provides a resource to guide their further development.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质-RNA相互作用在许多细胞过程中发挥核心作用，例如基因调控、蛋白质合成和病毒感染。尽管已有数千个蛋白质-RNA复合物的结构被解析，但它们仅代表所有相互作用的一小部分。实验数据的缺乏限制了基于深度学习的方法（如AlphaFold3）预测蛋白质-RNA相互作用结构的能力。在本研究中，我们通过利用组学数据丰富实验结构来探究蛋白质-RNA结合特异性。为此，我们提出了一种评分方法及相关的网络资源，用于量化蛋白质-RNA界面实验结构与其组学衍生的结合偏好之间的一致性，从而识别相互作用基序核心。通过关键的结构和进化特征，我们进一步强调这些基序核心对应于重要的界面区域。随后，我们利用结构信息可与结合偏好相结合的数据集，来评估AlphaFold3预测蛋白质-RNA相互作用特异性的能力。为此，我们使用不同的RNA输入运行AlphaFold3预测，从实验结构中的精确序列到非特异性序列，包括嵌入体外实验共识结合基序的序列。我们表明，尽管预测质量良好，但AlphaFold3对输入RNA精确序列的敏感性显示出记忆化的迹象。我们检查了一些特定复合物，并揭示了我们的评分流程和AlphaFold3所遇到的挑战，尤其是在替代结合模式的情况下。总体而言，这项工作证明了深度学习方法在蛋白质-RNA结构预测中的潜力及当前局限性，并提供了指导其进一步发展的资源。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Bridging the gap between omics and structural data: A framework for interpreting protein-RNA interaction specificity</li>
+<li><strong>作者与单位</strong>：Fauconnet Y; Deng S; Koundri R; Pagani M; Quignot C; Antonio D; Andreani J（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学 + 基准评测研究（含 web resource 开发）</li>
+<li><strong>领域</strong>：蛋白质-RNA 相互作用；结构预测；深度学习（AlphaFold3）；组学数据整合</li>
+<li><strong>关键词</strong>：protein-RNA interaction, binding specificity, omics data, AlphaFold3, motif core, structure prediction</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.24.754079</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（web resource 已提及，但 URL 未给出）</li>
+<li><strong>阅读日期</strong>：2026-10-05（假设）</li>
+<li><strong>在课题方向中的位置</strong>：本文聚焦蛋白质-RNA 复合物结构预测（AlphaFold3）的特异性评估，属于「结构预测 × 深度学习」方向，同时引入组学数据（omics）作为结构-功能桥接的辅助信号，与「构象采样/分子对接」中的打分函数设计有方法学交叉。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出一个整合实验结构与组学结合偏好（omics-derived binding preferences）的打分框架，用于识别蛋白-RNA 互作 motif core，并以此基准评测 AlphaFold3 在不同 RNA 输入序列下的特异性预测能力，发现其存在对输入序列的记忆化（memorization）迹象。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何利用组学数据弥补蛋白-RNA 复合物实验结构稀缺的不足，从而评估和提升深度学习结构预测模型（如 AlphaFold3）对蛋白-RNA 结合特异性的预测能力？</li>
+<li><strong>为什么重要</strong>：蛋白-RNA 相互作用在基因调控、蛋白合成、病毒感染等过程中至关重要，但实验结构仅覆盖少数复合物，限制了 AI 结构预测方法的训练与验证。</li>
+<li><strong>现有方法不足</strong>：AlphaFold3 等模型在蛋白-RNA 预测上表现良好，但其对输入 RNA 序列的敏感性未被系统评估；且缺乏将组学结合偏好与结构信息整合的框架来量化特异性。</li>
+<li><strong>精确研究问题</strong>：Can a scoring framework that integrates omics-derived binding preferences with experimental structures identify interaction motif cores and reveal whether AlphaFold3's protein-RNA specificity predictions are reliable or merely memorized?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：以下脉络为「仅本文框架」，基于摘要推断，未经外部核验）
+- <strong>阶段 1：实验结构解析</strong>——代表性方法：X-ray crystallography, cryo-EM；优点：高精度；局限：通量低，仅覆盖少数蛋白-RNA 复合物。
+- <strong>阶段 2：序列/进化保守性分析</strong>——代表性方法：保守性打分、共进化分析；优点：可扩展至全基因组；局限：缺乏结构上下文，无法直接映射到界面残基。
+- <strong>阶段 3：深度学习结构预测</strong>——代表性方法：AlphaFold3；优点：端到端预测，无需模板；局限：对 RNA 序列输入敏感，可能记忆训练数据，且缺乏特异性评估工具。
+- <strong>本文位置</strong>：在阶段 2 与阶段 3 之间架桥——用组学数据（如 in vitro 结合偏好）增强结构解释，并反向评测深度学习模型的预测特异性。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验结构稀缺</td>
+<td>仅数千个蛋白-RNA 复合物被解析，远少于实际相互作用</td>
+<td>实验成本高、技术难度大</td>
+<td>摘要第 2-3 句</td>
+</tr>
+<tr>
+<td>深度学习模型缺乏特异性评估</td>
+<td>AlphaFold3 预测质量好但对输入 RNA 序列敏感</td>
+<td>模型可能记忆训练数据中的序列-结构关联</td>
+<td>摘要第 8-9 句</td>
+</tr>
+<tr>
+<td>组学数据与结构数据脱节</td>
+<td>结合偏好（如 motif）难以映射到具体界面残基</td>
+<td>缺乏统一打分框架</td>
+<td>摘要第 4-5 句</td>
+</tr>
+<tr>
+<td>替代结合模式（alternative binding modes）</td>
+<td>某些复合物存在多种结合方式，打分与预测均易出错</td>
+<td>结构动态性或数据噪声</td>
+<td>摘要第 10 句</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：构建一个打分框架，将实验结构的蛋白-RNA 界面与组学衍生的结合偏好（如 in vitro 的 consensus motif）进行定量比对，识别 motif core；随后用该数据集基准测试 AlphaFold3 在不同 RNA 输入（精确序列、非特异序列、含 motif 序列）下的预测。</li>
+<li><strong>核心洞察</strong>：组学数据可作为「弱标签」来桥接结构信息与功能特异性；AlphaFold3 对输入序列的敏感性可能反映记忆化而非真正的物理化学理解。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：在结构预测评测中，输入变体的敏感性分析（如序列扰动）是检测模型泛化能力的关键手段；整合多源生物数据（如组学）可增强结构解释的生物学可解释性。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：实验解析的蛋白-RNA 复合物结构（PDB 格式）；组学数据（如 in vitro 结合偏好、consensus motif）；AlphaFold3 预测的 RNA 序列变体。</li>
+<li><strong>输出</strong>：每个复合物的 motif core 识别；AlphaFold3 预测结构与实验结构的一致性打分；特异性评估报告。</li>
+<li><strong>模块</strong>：
+  1. 结构-组学整合打分模块（计算界面残基与结合偏好的匹配度）
+  2. Motif core 识别模块（基于打分阈值）
+  3. AlphaFold3 预测模块（不同 RNA 输入）
+  4. 一致性评估模块（预测 vs 实验结构）</li>
+<li><strong>训练</strong>：未提及训练过程（打分框架可能基于统计或启发式规则）。</li>
+<li><strong>工具</strong>：AlphaFold3（外部工具）；web resource（自建）。</li>
+<li><strong>反馈回路</strong>：无显式反馈回路；打分结果用于指导模型改进。</li>
+<li><strong>假设</strong>：组学结合偏好可映射到结构界面；AlphaFold3 的预测质量可通过序列扰动来评估。</li>
+<li><strong>流程</strong>：收集实验结构 → 提取界面残基 → 与组学偏好比对 → 识别 motif core → 构建测试集 → 运行 AlphaFold3（不同 RNA 输入）→ 计算预测-实验一致性 → 分析敏感性。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构-组学整合打分</td>
+<td>量化界面与结合偏好的匹配度</td>
+<td>桥接结构与功能数据</td>
+<td>输入：结构、组学偏好；输出：打分值</td>
+<td>摘要第 4-5 句</td>
+<td>预期影响：无法识别 motif core（[Analysis] 预期效应）</td>
+</tr>
+<tr>
+<td>Motif core 识别</td>
+<td>定位关键界面残基</td>
+<td>提供生物学可解释的靶点</td>
+<td>输入：打分值；输出：motif core 区域</td>
+<td>摘要第 5 句</td>
+<td>预期影响：失去结构-功能关联的锚点</td>
+</tr>
+<tr>
+<td>AlphaFold3 预测</td>
+<td>生成不同 RNA 输入下的结构</td>
+<td>测试模型特异性</td>
+<td>输入：蛋白序列、RNA 序列变体；输出：预测结构</td>
+<td>摘要第 7-8 句</td>
+<td>实测影响：无法评估序列敏感性（作者未提供消融数据）</td>
+</tr>
+<tr>
+<td>一致性评估</td>
+<td>比较预测与实验结构</td>
+<td>量化预测质量</td>
+<td>输入：预测结构、实验结构；输出：一致性指标</td>
+<td>摘要第 9 句</td>
+<td>预期影响：无法判断预测可靠性</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（摘要中未提供具体公式或符号定义）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：数千个已解析的蛋白-RNA 复合物结构（具体数量未提供）；组学数据来源（如 in vitro 结合实验）未详细说明。</li>
+<li><strong>规模</strong>：未提供。</li>
+<li><strong>指标</strong>：打分一致性、预测-实验结构相似性（具体指标如 RMSD、TM-score 等未提供）。</li>
+<li><strong>基线</strong>：未提供（可能对比随机序列或非特异序列）。</li>
+<li><strong>预算/骨干/仪器</strong>：未提供。</li>
+<li><strong>Oracle 输入</strong>：实验结构作为真值；组学偏好作为 oracle 标签。</li>
+<li><strong>评测协议</strong>：AlphaFold3 使用三种 RNA 输入（精确序列、非特异序列、含 motif 序列），比较预测结果。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Motif core 识别</td>
+<td>组学偏好可映射到结构界面</td>
+<td>打分框架 vs 无打分</td>
+<td>成功识别 motif core</td>
+<td>组学-结构整合有效</td>
+<td>未证明 motif core 的功能重要性</td>
+<td>摘要第 5 句</td>
+</tr>
+<tr>
+<td>AlphaFold3 敏感性测试</td>
+<td>模型对输入序列敏感</td>
+<td>精确 vs 非特异 vs motif 序列</td>
+<td>预测质量好但敏感性高</td>
+<td>存在记忆化迹象</td>
+<td>未量化记忆化程度</td>
+<td>摘要第 8-9 句</td>
+</tr>
+<tr>
+<td>替代结合模式分析</td>
+<td>打分与预测在复杂情况下失效</td>
+<td>特定复合物案例</td>
+<td>发现挑战</td>
+<td>方法有边界</td>
+<td>未提供系统性统计</td>
+<td>摘要第 10 句</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限蛋白-RNA 复合物，不涉及蛋白-蛋白或蛋白-DNA。</li>
+<li><strong>Oracle/真值输入</strong>：实验结构作为真值；组学偏好作为辅助标签，但可能受实验条件影响。</li>
+<li><strong>端到端状态</strong>：打分框架非端到端训练，AlphaFold3 为外部模型。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：依赖已解析结构，存在结构库偏差。</li>
+<li><strong>模型依赖</strong>：结论受 AlphaFold3 版本影响。</li>
+<li><strong>最难情形</strong>：替代结合模式、低复杂度 RNA 序列。</li>
+<li><strong>群体/领域边界</strong>：结果适用于有组学数据的复合物，不适用于无偏好数据的系统。</li>
+<li><strong>不确定性</strong>：记忆化迹象基于敏感性分析，但未排除物理化学因素。</li>
+<li><strong>有边界的复述</strong>：本文证明，在已有组学结合偏好的蛋白-RNA 复合物中，整合打分可识别 motif core，且 AlphaFold3 的预测对输入 RNA 序列敏感，提示其可能记忆训练数据，但该结论限于测试集和模型版本。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。
+- <strong>作者提及的相关约束</strong>（非正式局限）：摘要提到「挑战」在替代结合模式中，但未明确列为局限；也未提及数据规模或模型版本限制。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>记忆化迹象基于敏感性分析</td>
+<td>敏感性可能反映真实物理化学差异（如序列特异性结合）而非记忆</td>
+<td>区分记忆与泛化是 AI 模型评估核心</td>
+<td>对比训练集序列与测试序列的相似性；使用序列无关的扰动</td>
+<td>摘要第 8-9 句</td>
+</tr>
+<tr>
+<td>组学偏好映射到结构界面的假设</td>
+<td>组学数据可能来自不同实验条件，与结构环境不匹配</td>
+<td>影响打分框架的可靠性</td>
+<td>交叉验证不同组学来源</td>
+<td>摘要第 4-5 句</td>
+</tr>
+<tr>
+<td>未提供量化指标</td>
+<td>无法评估打分框架的统计显著性</td>
+<td>方法可复现性存疑</td>
+<td>要求作者提供具体指标和数据集</td>
+<td>摘要全文</td>
+</tr>
+<tr>
+<td>替代结合模式案例有限</td>
+<td>可能仅代表少数特例</td>
+<td>影响结论普适性</td>
+<td>扩大案例集并统计失败率</td>
+<td>摘要第 10 句</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>组学-结构整合打分</strong>：可迁移到蛋白-蛋白或蛋白-DNA 相互作用，用结合偏好（如 motif、保守性）作为弱标签来增强结构解释。
+2. <strong>输入序列敏感性分析</strong>：在结构预测模型评测中，通过扰动输入序列（如突变、非特异序列）来检测模型是否真正理解物理化学规则，而非记忆训练数据。
+3. <strong>Motif core 识别</strong>：可作为下游实验验证的靶点，适用于药物设计或突变分析。
+4. <strong>替代结合模式处理</strong>：在打分框架中需考虑多构象或多结合位点，可借鉴到构象采样或分子对接中的多态性处理。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：AlphaFold3 的蛋白-RNA 预测能力（Abramson et al., 2024, Nature）；蛋白-RNA 结合偏好数据库（如 RNAcompete, Ray et al., 2013）。</li>
+<li><strong>组合</strong>：将组学数据（如 eCLIP、RNAcompete）与结构预测结合，类似「integrative modeling」思路（Rout &amp; Sali, 2019）。</li>
+<li><strong>冲突</strong>：若 AlphaFold3 的记忆化被证实，则与「深度学习可泛化至新序列」的假设冲突。</li>
+<li><strong>可迁移领域</strong>：蛋白-核酸对接打分函数设计；MD 模拟中的结合自由能计算（可用组学偏好作为先验）。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：
+1. <strong>候选名称</strong>：组学引导的蛋白-RNA 对接打分优化
+   - <strong>来源局限/观察</strong>：本文打分框架仅用于评估，未用于指导预测。
+   - <strong>核心假设</strong>：将组学偏好作为先验加入对接打分，可提高蛋白-RNA 复合物预测准确性。
+   - <strong>初步方法</strong>：在 AlphaFold3 或 MD 模拟中引入 motif 约束项。
+   - <strong>验证方式</strong>：在独立测试集上比较有无先验的预测成功率。
+   - <strong>创新状态</strong>：unverified</p>
+<ol start="2">
+<li>
+<p><strong>候选名称</strong>：AlphaFold3 记忆化检测协议
+   - <strong>来源局限/观察</strong>：本文敏感性分析未量化记忆化程度。
+   - <strong>核心假设</strong>：通过序列相似性聚类和扰动测试，可区分记忆与泛化。
+   - <strong>初步方法</strong>：构建训练集-测试集序列相似性矩阵，分析预测误差与相似性的相关性。
+   - <strong>验证方式</strong>：在多个蛋白-RNA 数据集上复现。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：多结合模式感知的蛋白-RNA 结构预测
+   - <strong>来源局限/观察</strong>：替代结合模式导致打分与预测失败。
+   - <strong>核心假设</strong>：显式建模多构象可提高预测鲁棒性。
+   - <strong>初步方法</strong>：使用扩散模型或多状态 AlphaFold3 变体。
+   - <strong>验证方式</strong>：在已知多构象复合物上测试。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：组学-结构一致性作为模型选择标准
+   - <strong>来源局限/观察</strong>：本文打分框架可识别 motif core，但未用于模型选择。
+   - <strong>核心假设</strong>：在多个预测模型中，与组学偏好一致性最高的模型更可靠。
+   - <strong>初步方法</strong>：对同一复合物运行多个预测模型，用打分框架排序。
+   - <strong>验证方式</strong>：与实验验证数据对比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no access to figures, tables, methods, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose a scoring framework and web resource that integrates experimental protein-RNA complex structures with omics-derived binding preferences to identify interaction motif cores, characterize these cores via structural and evolutionary features, and benchmark AlphaFold3's ability to predict protein-RNA interaction specificity using different RNA input sequences. They report good prediction quality but signs of memorization in AlphaFold3, and highlight challenges with alternative binding modes.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, methodological details, or validation data are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, figures, tables, supplementary data, web resource details, and AlphaFold3 prediction configurations</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a timely and potentially valuable framework for integrating omics and structural data to study protein-RNA interaction specificity, with a clear translational goal of benchmarking AlphaFold3. However, the abstract lacks quantitative evidence, methodological specificity, and validation details, making it impossible to assess the technical soundness or robustness of the claims. The concept is promising, but the current evidence base is insufficient to establish the case.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians working on protein-RNA interactions, structural biologists using deep learning tools like AlphaFold3, and researchers developing or benchmarking prediction methods for macromolecular complexes. The web resource could also be of interest to experimentalists seeking to interpret binding data in structural contexts.</li>
+<li><strong>Major strengths</strong> The abstract addresses a clear gap in the field, namely the limited structural coverage of protein-RNA complexes and the consequent challenges for deep learning prediction. The proposed integration of omics data with structural information is conceptually novel and practically motivated. The benchmarking of AlphaFold3 with different RNA inputs is a relevant and timely contribution.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The scoring approach and web resource quantify agreement between experimental structures and omics-derived binding preferences, allowing identification of interaction motif cores.</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract provides no details on the scoring methodology, the nature of the omics data used, how agreement is quantified, or how motif cores are defined and validated. Without this information, the technical validity of the framework cannot be assessed.</li>
+<li><strong>Why it matters</strong> The central contribution of the work is the scoring framework and its ability to identify meaningful motif cores. If the methodology is not transparent or robust, the downstream analyses and benchmarking conclusions are undermined.</li>
+<li><strong>Resolution test</strong> Provide a detailed methods description, including the scoring function, data sources, normalization procedures, and validation against known or independent datasets. Show that motif cores are statistically and biologically meaningful.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> AlphaFold3 shows good prediction quality but signs of memorization, evidenced by sensitivity to the exact RNA sequence used as input.</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The claim of memorization is based on sensitivity to input RNA sequence, but no quantitative metrics, controls, or statistical comparisons are provided. It is unclear how "good prediction quality" is measured, what constitutes "sensitivity," and how memorization is distinguished from legitimate sequence-dependent binding specificity.</li>
+<li><strong>Why it matters</strong> The benchmarking of AlphaFold3 is a key contribution. If the evidence for memorization is not rigorously established, the conclusions about deep learning limitations may be overstated or misinterpreted.</li>
+<li><strong>Resolution test</strong> Present quantitative prediction quality metrics (e.g., RMSD, TM-score, interface accuracy) for each input condition, with appropriate controls and statistical tests. Define a clear criterion for memorization and show that it is not confounded by genuine specificity.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility and resource availability</li>
+<li><strong>Claim pointer</strong> The work provides a web resource to guide further development of deep learning approaches.</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract mentions a web resource but provides no URL, access details, or description of its functionality, data coverage, or user interface. The resource is a claimed deliverable, but its existence and utility cannot be verified.</li>
+<li><strong>Why it matters</strong> A web resource is a tangible output that supports the community. Without details, the claim of providing a resource is unverifiable and the practical impact is unclear.</li>
+<li><strong>Resolution test</strong> Provide the resource URL, a description of its features, data content, and usage examples. Ensure it is publicly accessible and functional at the time of publication.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract wording</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The phrase "enriching experimental structures with omics data" is vague and could be interpreted in multiple ways, such as adding sequence information, integrating binding data, or augmenting structural datasets.</li>
+<li><strong>Required correction</strong> Clarify what "enriching" means operationally, for example, by specifying the type of omics data and how it is combined with structural information.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Benchmarking description</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract states that AlphaFold3 predictions were run with different RNA inputs, but does not specify the number of complexes, the diversity of the dataset, or the range of conditions tested.</li>
+<li><strong>Required correction</strong> Include basic dataset statistics and the number of prediction conditions to give readers a sense of the benchmarking scale.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Discussion of alternative binding modes</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The mention of "alternative binding modes" is introduced without context or explanation of how they challenge the scoring workflow and AlphaFold3.</li>
+<li><strong>Required correction</strong> Briefly define what constitutes an alternative binding mode and why it is problematic, to help readers understand the significance of this finding.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, and R1-M3 are blocking. The abstract does not provide sufficient methodological detail, quantitative evidence, or resource verification to support the central claims. Without these, the technical soundness and reproducibility of the work cannot be established.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The integration of omics data with structural information for benchmarking deep learning predictors is a fresh angle, but the abstract does not demonstrate how this differs from existing approaches in practice.</li>
+<li>Scientific importance: The topic is important, given the growing reliance on AlphaFold3 and the need for benchmarks that reflect real-world binding specificity. However, the significance is asserted rather than evidenced.</li>
+<li>Interdisciplinary readership: The work bridges structural biology, bioinformatics, and machine learning, which could appeal to a broad audience, but the abstract is too technical in places and lacks context for nonspecialists.</li>
+<li>Technical soundness: Not assessable from the abstract; the lack of methodological and quantitative detail is a major limitation.</li>
+<li>Readability for nonspecialists: The abstract is generally clear but uses jargon (e.g., "omics-derived binding preferences," "motif cores") without sufficient explanation, which may hinder accessibility.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The concept is promising and the direction is relevant, but the abstract alone does not provide enough information to evaluate the technical validity, robustness, or impact of the work. A full manuscript with detailed methods, results, and resource access would be required to assess whether the claims are supported.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the scoring approach identifies interaction motif cores is unsupported without methodological details and validation.</li>
+<li>The claim that AlphaFold3 shows signs of memorization is unsupported without quantitative metrics and controls.</li>
+<li>The claim that the web resource exists and is useful is unverifiable without a URL or description.</li>
+<li>The claim that motif cores correspond to important interface regions is unsupported without structural and evolutionary feature analysis details.</li>
+<li>The general statement that deep learning approaches have "promise and current limitations" is a reasonable inference but is not substantiated with specific evidence in the abstract.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

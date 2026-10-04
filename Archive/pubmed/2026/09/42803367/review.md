@@ -1,0 +1,101 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results and discussion, materials and methods, data availability)
+- **Assessment boundary** Scientific claims, structural evidence, biochemical validation, computational support, and consistency with the stated conclusions
+- **Shared manuscript claim summary** The authors report cryo-EM structures of Paracoccus TMAO demethylase (TDM) in apo, substrate-bound, and product-bound states, revealing a 2+2½ oligomeric assembly with a Zn2+-dependent catalytic core and a THF-binding domain connected by a negatively charged channel. They propose that HCHO generated from TMAO demethylation is channeled through this tunnel to the THF site, where it forms methylene-THF, establishing TDM as a bifunctional enzyme coupling demethylation to one-carbon transfer.
+- **Visible evidence base** Cryo-EM structures (three deposited maps/models), kinetic assays, HPLC-MS product detection, ITC binding measurements, ICP-MS and EDS metal analysis, mutagenesis data, CG-MD simulations, sequence alignments, and structural comparisons
+- **Missing materials affecting confidence** Figure files and supplementary figure panels referenced throughout (Figure 1—figure supplement 1, Figure 2—figure supplements, Figure 3—figure supplements, Figure 4—figure supplement 1, Figure 5—figure supplement 1, Figure 5—video 1) were not provided. Table 1 (cryo-EM refinement statistics) was not provided. Scheme 1 was not provided. Specific numerical values for ITC fits, MD trajectory statistics, and channel dimensions beyond a single radius range are not stated in the text.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a substantial structural and biochemical characterization of TDM from Paracoccus, with the notable claim of a bifunctional architecture enabling substrate channeling of HCHO to a THF-binding site. The cryo-EM work appears technically sound based on the described workflow, and the identification of a 2+2½ oligomeric assembly is unusual and potentially interesting. However, the central claim of channeling and methylene-THF formation rests on evidence that is incompletely presented in the text provided. The kinetic data, product detection, and MD simulations are described qualitatively, and the absence of figures, supplementary data, and refinement statistics prevents full evaluation of the structural conclusions. The manuscript is likely to be of interest to enzymologists, structural biologists, and microbiologists, but the case for bifunctionality and channeling is not fully established from the supplied material.
+- **Who would be interested in the results, and why** Structural biologists studying multi-domain enzymes and substrate channeling mechanisms; microbiologists and metabolic biochemists interested in TMAO metabolism in marine bacteria and the human gut microbiome; researchers working on one-carbon metabolism and THF-dependent enzymes; and those interested in enzyme engineering for biocatalysis or synthetic biology applications involving reactive intermediate management.
+- **Major strengths** The study addresses a previously unresolved question regarding the fate of HCHO produced by TDM. The cryo-EM structures provide the first high-resolution view of TDM architecture, including an unexpected oligomeric assembly. The combination of structural, biochemical, and computational approaches is appropriate for investigating channeling. The identification of a single Zn2+ site with careful metal analysis addresses a discrepancy with prior proposals of Fe2+ involvement. The channel dimensions and electrostatic properties are consistent with selective HCHO passage.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency for central claim
+  - **Claim pointer** "HCHO is generated in a catalytic core and guided through a tunnel to a remote tetrahydrofolate (THF)-binding site, where it forms methylene-THF"
+  - **Evidence pointer** Results section "A substrate channel for HCHO transfer"; Figure 4; Materials and methods "TDM activity assay"
+  - **Concern** The claim that HCHO is channeled to the THF site and converted to methylene-THF is central to the bifunctionality conclusion. The text states that "HCHO concentrations decreased upon addition of THF" and that HPLC-MS confirmed production of DMA and CH2-THF, but no quantitative data, chromatograms, mass spectra, or kinetic parameters for the THF-dependent reaction are provided in the text. The MD simulations are described as showing "persistent tunnels" and HCHO transit, but trajectory statistics, replicate numbers, and quantitative analysis of channel occupancy or gating events are not reported.
+  - **Why it matters** The bifunctional channeling model depends on demonstrating both (a) that HCHO produced at the catalytic site reaches the THF site through the identified tunnel rather than by diffusion, and (b) that methylene-THF is actually formed. Without quantitative biochemical evidence and detailed simulation analysis, the channeling claim remains speculative.
+  - **Resolution test** Provide quantitative kinetic data showing THF-dependent HCHO consumption with stoichiometric methylene-THF formation, ideally with a rate enhancement relative to free HCHO diffusion. Include representative HPLC-MS traces with internal standard quantification. Report MD simulation statistics including channel occupancy times, transit frequencies, free energy profiles, and replicate convergence.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Structural evidence completeness
+  - **Claim pointer** "cryo-EM structures of TDM in apo, substrate-, and product-bound states that reveal a previously unknown channeling pathway" and "local resolution of 2.0 Å"
+  - **Evidence pointer** Results section "Cryo-EM structures reveal an unusual oligomeric assembly"; Table 1; Figure 2 and supplements
+  - **Concern** The manuscript claims a global resolution of 2.0 Å and describes three distinct states, but Table 1 (refinement statistics) and the supplementary figures showing map quality, FSC curves, and local resolution estimates were not provided. The text does not report particle numbers, map resolution for each state, model-to-map fit metrics, or validation statistics beyond a general mention of MolProbity. The description of the 2+2½ oligomeric assembly lacks a clear explanation of how this stoichiometry was determined and validated.
+  - **Why it matters** The structural models are the foundation for all downstream claims about active site architecture, channel geometry, and ligand binding. Without access to refinement statistics and map quality assessments, the reliability of the models cannot be evaluated.
+  - **Resolution test** Provide Table 1 with complete cryo-EM data collection, refinement, and validation statistics for all three states. Include representative density for key regions (active site, channel lining, THF site, oligomeric interfaces) and a clear description of how the 2+2½ stoichiometry was established (e.g., symmetry analysis, focused classification, mass spectrometry of the assembly).
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Functional evidence for channeling vs. alternative explanations
+  - **Claim pointer** "no alternative solvent-accessible exits were detected, indicating that HCHO is obligatorily channeled to the THF site rather than diffusing freely"
+  - **Evidence pointer** Results section "A substrate channel for HCHO transfer"; Figure 4A and B
+  - **Concern** The assertion that HCHO is "obligatorily channeled" is based on the absence of detected alternative exits in the static cryo-EM structure and CG-MD simulations. However, the text does not describe control experiments testing whether HCHO can escape the enzyme under turnover conditions, whether the channel is required for methylene-THF formation (e.g., via mutagenesis of channel-lining residues), or whether the enzyme can use exogenous HCHO as a substrate. The distinction between channeling and facilitated diffusion through a tunnel is not experimentally addressed.
+  - **Why it matters** The term "obligatorily channeled" implies a mechanistic requirement that has not been demonstrated. If HCHO can diffuse through the protein or escape and rebind, the functional significance of the tunnel is diminished.
+  - **Resolution test** Perform mutagenesis of channel-lining residues predicted to disrupt the tunnel and measure effects on methylene-THF formation and HCHO escape. Test whether exogenous HCHO can compete with channeled HCHO. Compare rates of methylene-THF formation from TMAO versus free HCHO to assess channeling efficiency.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Metal site assignment
+  - **Claim pointer** "Each catalytic core domain contains a conserved 3Cys:Zn2+ motif (C285, C301, C365) essential for protein stability"
+  - **Evidence pointer** Results section "Zn2+-dependent organization at the core catalytic domain"; Figure 2D; Figure 2—figure supplement 4
+  - **Concern** The text states that ICP-MS and EDS confirmed zinc incorporation with a Zn:protein ratio of ~1:2, but the stoichiometry is unusual for a dimeric assembly with two catalytic cores. The text does not clarify whether the Zn:protein ratio refers to the monomer or the 2+2½ assembly, and whether the half-subunits (which lack catalytic cores) contribute to the metal count. Additionally, the claim that the 3Cys:Zn2+ motif is "essential for protein stability" is based on cysteine-to-alanine mutants that caused aggregation, but the text does not specify which mutants were tested or whether the aggregation phenotype was characterized beyond visual inspection.
+  - **Why it matters** The metal stoichiometry and its role in stability versus catalysis are important for understanding the enzyme mechanism and for reconciling differences with the previously proposed Fe2+ involvement.
+  - **Resolution test** Clarify the Zn:protein stoichiometry with respect to the oligomeric assembly. Provide quantitative aggregation data (e.g., SEC profiles, light scattering) for the cysteine mutants. Test whether zinc is required for catalytic activity or solely for structural integrity.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of kinetic parameters
+  - **Affected element** Results section "Optimization of TDM activity and evidence for bifunctionality"
+  - **Evidence pointer** Figure 1A
+  - **Issue** The Vmax of 156 nmol/min/mg and Km of 1.33 mM are reported, but the text does not state the substrate concentration range used, the number of replicates for the Michaelis-Menten fit, or the error estimates for these parameters.
+  - **Required correction** Report the full kinetic analysis details including substrate concentration range, replicate numbers, and standard errors for Km and Vmax.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** THF binding affinity
+  - **Affected element** Results section "Architecture and binding properties at THF-binding domain"
+  - **Evidence pointer** Figure 3, Figure 3—figure supplement 2
+  - **Issue** The ITC-derived Kd of approximately 149 nM is reported, but the text does not provide the stoichiometry (n value), enthalpy and entropy contributions, or the fitting model used.
+  - **Required correction** Include the full ITC fitting parameters, including stoichiometry, ΔH, ΔS, and the binding model.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Channel dimensions
+  - **Affected element** Results section "A substrate channel for HCHO transfer"
+  - **Evidence pointer** Figure 4B
+  - **Issue** The text states the tunnel radius ranges from 2.6 to 5.0 Å, but does not specify how these values were calculated (e.g., CAVER default parameters, probe radius) or whether the narrowest point is static or dynamic.
+  - **Required correction** Describe the tunnel calculation parameters and whether the reported radius range reflects static structure or ensemble averages from MD.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** N-terminal deletion phenotype
+  - **Affected element** Results section "Role of the N-terminal domain in TDM assembly and function"
+  - **Evidence pointer** Figure 5C
+  - **Issue** The text states that deletion of the N-terminal region led to "severe aggregation and loss of soluble protein," but the specific assay (e.g., SEC, native gel, centrifugation) and quantitative comparison to wild-type are not described.
+  - **Required correction** Provide quantitative solubility or aggregation data for the deletion mutants compared to wild-type.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** MD simulation temperature
+  - **Affected element** Materials and methods "MD simulations of enzyme tunneling"
+  - **Evidence pointer** Materials and methods
+  - **Issue** The simulation temperature is stated as 316.16 K, which is above the physiological range for Paracoccus and above the optimal activity range reported (35–45°C, i.e., 308–318 K). The rationale for this temperature is not explained.
+  - **Required correction** Justify the simulation temperature or clarify whether it was chosen to match the activity assay conditions.
+  - **Concern ID** R1-m6
+  - **Severity** Minor
+  - **Axis** Figure accessibility
+  - **Affected element** All figures
+  - **Evidence pointer** Not applicable
+  - **Issue** The manuscript text references multiple supplementary figures and videos that were not provided for review, limiting the ability to assess the presented data.
+  - **Required correction** Ensure all supplementary materials are available to reviewers and readers.
+
+## Risk / unsupported claims
+- The claim that HCHO is "obligatorily channeled" to the THF site is not supported by direct experimental evidence; the absence of alternative exits in static and CG-MD structures does not rule out diffusion through the protein matrix or transient channel opening.
+- The claim that methylene-THF is formed as a product is supported only by a qualitative statement that HCHO concentrations decreased upon THF addition; no quantitative product identification data are presented in the text.
+- The claim of a "previously unknown channeling pathway" is contingent on the structural interpretation, which cannot be fully evaluated without the cryo-EM maps and refinement statistics.
+- The functional significance of the 2+2½ oligomeric assembly is not experimentally addressed; the text does not test whether this architecture is required for activity or channeling.
+- The statement that the 3Cys:Zn2+ motif is "essential for protein stability" is based on aggregation phenotypes of alanine mutants, but the text does not provide quantitative characterization or rule out misfolding artifacts.
+- The comparison of kinetic parameters to the previously reported M. silvestris enzyme is presented without discussion of assay condition differences, which may confound the comparison.
+- The claim that the channel is "negatively charged" is stated without quantitative electrostatic potential calculations or figures showing the surface potential.
+- The MD simulation results are described qualitatively; no convergence metrics, free energy profiles, or statistical analyses are reported, making the "persistent tunnel" claim difficult to assess.

@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What deep learning can and cannot (yet) do for enzyme design. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>What deep learning can and cannot (yet) do for enzyme design.</h1>
+      <div class="meta">Ahr, Judith A; de Waal, Moor M; Cotet, Tudor-Stefan; Howell, Daniel C; Bunzel, H Adrian</div>
+      <div class="meta muted">
+        
+        <span class="journal">Current opinion in chemical biology</span>
+        · 2026-09-30
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42815447/">原文</a>
+      </div>
+      <p class="one-liner">该文综述了深度学习在基于结构的酶设计中的进展与局限，聚焦扩散模型生成支架和序列设计，虽为综述且方法创新有限，但紧密围绕蛋白质结构计算设计问题，对课题有参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Deep learning has substantially advanced structure-based enzyme design, yet reliably creating highly efficient enzymes remains out of reach. One emerging enzyme design strategy combines diffusion-based scaffold generation around active-site models with sequence design. Such structure-based approaches have expanded the accessible reaction space and enabled the emergence of enzymes with diverse catalytic functions and complex catalytic motifs. Despite notable catalytic efficiencies (k(cat)/K(M)), turnover rates (k(cat)) often remain limited, suggesting that current approaches typically yield tight substrate binders rather than enzymes that selectively stabilize the chemical transition state. Computational design of electrostatic catalysis, multistate behavior, and conformational dynamics could potentially enhance transition-state stabilization and improve catalytic activity. More reliable activity oracles, integration of evolutionary information, protein language models, and lab-in-the-loop optimization could further enhance design performance. Ultimately, advancing structure-based enzyme design will require directly targeting the physicochemical drivers of catalysis to move beyond substrate binding toward the reliable design of efficient catalysts.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">深度学习已大幅推进了基于结构的酶设计，但可靠地创造高效酶仍难以实现。一种新兴的酶设计策略将基于扩散的支架生成与活性位点模型及序列设计相结合。此类基于结构的方法扩展了可及的反应空间，并促成了具有多样催化功能和复杂催化基序的酶的出现。尽管催化效率（k(cat)/K(M)）显著，但周转率（k(cat)）往往仍受限，这表明当前方法通常产生紧密底物结合体，而非选择性稳定化学过渡态的酶。静电催化、多态行为和构象动力学的计算设计可能增强过渡态稳定化并提升催化活性。更可靠的活性预测器、进化信息的整合、蛋白质语言模型及实验室闭环优化可进一步提升设计性能。最终，推进基于结构的酶设计需直接针对催化的物理化学驱动因素，以超越底物结合，迈向高效催化剂的可靠设计。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：What deep learning can and cannot (yet) do for enzyme design</li>
+<li><strong>作者</strong>：Ahr, Judith A; de Waal, Moor M; Cotet, Tudor-Stefan; Howell, Daniel C; Bunzel, H Adrian</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：Current Opinion in Chemical Biology</li>
+<li><strong>年份</strong>：2026-09-30</li>
+<li><strong>论文类型</strong>：综述（Review / Opinion）</li>
+<li><strong>领域</strong>：酶设计 × 深度学习（结构预测、序列设计、扩散模型）</li>
+<li><strong>关键词</strong>：enzyme design, deep learning, diffusion models, sequence design, transition-state stabilization, catalytic efficiency</li>
+<li><strong>DOI/arXiv</strong>：10.1016/j.cbpa.2026.102770</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在该方向中的位置</strong>：本文是面向「蛋白质结构相关计算研究 × AI 方法」领域的批判性综述，聚焦于基于结构的酶设计（structure-based enzyme design）中深度学习的成就与瓶颈。其核心关切——「当前方法优化的是底物结合而非过渡态稳定」——直接关联结构预测、构象采样、序列设计及 MD/物理模拟在催化功能设计中的角色，可作为该领域方法评估与未来方向的框架性参考。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文综述了基于结构的深度学习酶设计（扩散模型生成 scaffold + 序列设计）在扩展反应空间和催化功能方面的进展，并指出其核心瓶颈在于 k(cat) 受限——当前方法倾向于产生强底物结合而非选择性稳定化学过渡态的酶，因此需要直接靶向催化的物理化学驱动因素。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：深度学习在基于结构的酶设计中究竟能做什么、不能做什么？为什么当前方法难以可靠地设计出高效酶？</li>
+<li><strong>为什么重要</strong>：酶设计是蛋白质工程的终极目标之一，高效催化对工业、医药和合成生物学有重大价值；深度学习虽已大幅推进结构设计，但催化效率仍远低于天然酶。</li>
+<li><strong>现有方法为何不足</strong>：现有结构导向方法（扩散模型 + 序列设计）主要优化底物结合（K_M），而非过渡态稳定（k_cat），导致 turnover rate 受限；对静电催化、多态行为、构象动力学的计算设计尚未成熟。</li>
+<li><strong>精确研究问题</strong>：Can current deep learning-based structure-guided enzyme design methods reliably produce enzymes that selectively stabilize the chemical transition state, rather than merely tight substrate binders?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：此脉络为「仅本文框架」，基于综述叙述，未经外部核验）</em>
+- <strong>阶段一：基于活性位点模型的扩散 scaffold 生成</strong>——利用扩散模型在活性位点周围生成蛋白质骨架，扩展可及的反应空间。优点：可设计复杂催化基序和多样催化功能；局限：生成结构未必具备催化所需的电子/几何性质。
+- <strong>阶段二：序列设计</strong>——对生成的 scaffold 进行氨基酸序列设计，稳定目标结构。优点：可计算实现结构到序列的映射；局限：序列设计常优化折叠稳定性而非催化活性。
+- <strong>阶段三：当前瓶颈识别</strong>——尽管 k(cat)/K_M 有显著提升，k(cat) 仍有限，提示方法学上「底物结合 vs 过渡态稳定」的错位。
+- <strong>本文主张的位置</strong>：未来需将静电催化、多态行为、构象动力学的计算设计纳入流程，并整合进化信息、蛋白质语言模型、lab-in-the-loop 优化，以直接靶向催化的物理化学驱动因素。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>k(cat) 受限</td>
+<td>尽管 k(cat)/K_M 可观，turnover rate 仍低</td>
+<td>当前方法优化底物结合而非过渡态稳定</td>
+<td>原文摘要：「turnover rates (k(cat)) often remain limited, suggesting that current approaches typically yield tight substrate binders rather than enzymes that selectively stabilize the chemical transition state」</td>
+</tr>
+<tr>
+<td>过渡态稳定未被直接靶向</td>
+<td>设计流程缺乏对化学过渡态的显式优化</td>
+<td>计算设计静电催化、多态行为、构象动力学尚未成熟</td>
+<td>原文摘要：「Computational design of electrostatic catalysis, multistate behavior, and conformational dynamics could potentially enhance transition-state stabilization」</td>
+</tr>
+<tr>
+<td>活性预测 oracle 不可靠</td>
+<td>设计筛选依赖不可靠的活性预测</td>
+<td>缺乏可靠活性 oracle</td>
+<td>原文摘要：「More reliable activity oracles ... could further enhance design performance」</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：基于结构的酶设计流程 = 扩散模型生成 scaffold（围绕活性位点模型）+ 序列设计；辅以进化信息、蛋白质语言模型、lab-in-the-loop 优化。</li>
+<li><strong>核心洞察</strong>：当前深度学习方法在结构生成和序列设计上已成功，但其优化目标（结构稳定性、底物结合）与催化本质（过渡态稳定）之间存在系统性错位；高效催化的关键在于选择性稳定化学过渡态，而这需要直接靶向静电、多态和动力学因素。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：在 AI 驱动的生物分子设计中，「可生成 ≠ 有功能」——生成模型擅长满足几何/序列约束，但功能（尤其催化）依赖超越静态结构的物理化学性质；因此，设计流程必须显式建模功能相关的物理量（如过渡态、静电势、构象系综），而非仅依赖结构代理指标。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：活性位点模型（含催化残基/几何约束）、目标反应类型、可能的进化信息</li>
+<li><strong>输出</strong>：候选酶序列（及对应结构）</li>
+<li><strong>模块</strong>：
+  1. 扩散模型 scaffold 生成（围绕活性位点）
+  2. 序列设计（稳定 scaffold 结构）
+  3. 活性评估/筛选（oracle）
+  4. 可选：lab-in-the-loop 迭代优化</li>
+<li><strong>训练</strong>：扩散模型和序列设计模型基于蛋白质结构/序列数据训练（具体细节未提供）</li>
+<li><strong>工具</strong>：深度学习模型（扩散模型、蛋白质语言模型）、计算设计工具（未具体列出）</li>
+<li><strong>反馈回路</strong>：lab-in-the-loop 优化——实验评估反馈至设计迭代</li>
+<li><strong>假设</strong>：结构决定功能；稳定 scaffold + 正确活性位点几何足以产生催化活性（本文质疑此假设的充分性）</li>
+<li><strong>文字流程</strong>：定义活性位点模型 → 扩散模型生成候选 scaffold → 序列设计稳定结构 → 计算/实验评估催化活性 → 若活性不足，迭代优化（引入进化信息、语言模型、实验反馈）</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>扩散模型 scaffold 生成</td>
+<td>在活性位点周围生成蛋白质骨架</td>
+<td>扩展可及反应空间，设计复杂催化基序</td>
+<td>输入：活性位点模型；输出：候选骨架</td>
+<td>原文摘要：「diffusion-based scaffold generation around active-site models ... expanded the accessible reaction space and enabled the emergence of enzymes with diverse catalytic functions and complex catalytic motifs」</td>
+<td>预期影响：移除后反应空间受限，难以设计新催化功能（[Analysis] 基于原文「expanded」推断，非实测消融）</td>
+</tr>
+<tr>
+<td>序列设计</td>
+<td>为 scaffold 分配氨基酸序列</td>
+<td>将结构映射到可表达序列，稳定折叠</td>
+<td>输入：scaffold 结构；输出：候选序列</td>
+<td>原文摘要：「sequence design」作为策略组成部分</td>
+<td>预期影响：移除后无法获得可实验测试的序列（[Analysis] 推断）</td>
+</tr>
+<tr>
+<td>活性 oracle</td>
+<td>评估候选酶催化活性</td>
+<td>筛选高效变体，指导迭代</td>
+<td>输入：候选序列/结构；输出：活性预测</td>
+<td>原文摘要：「More reliable activity oracles ... could further enhance design performance」</td>
+<td>预期影响：oracle 不可靠时筛选效率低，限制设计质量（原文明确为改进方向）</td>
+</tr>
+<tr>
+<td>进化信息/蛋白质语言模型</td>
+<td>提供序列-功能先验</td>
+<td>增强序列设计的进化合理性</td>
+<td>输入：序列/结构；输出：增强的序列设计</td>
+<td>原文摘要：「integration of evolutionary information, protein language models ... could further enhance design performance」</td>
+<td>预期影响：移除后可能降低序列可表达性和功能成功率（[Analysis] 推断）</td>
+</tr>
+<tr>
+<td>lab-in-the-loop 优化</td>
+<td>实验反馈迭代设计</td>
+<td>弥补计算 oracle 不足，实现闭环优化</td>
+<td>输入：实验活性数据；输出：改进的设计参数</td>
+<td>原文摘要：「lab-in-the-loop optimization could further enhance design performance」</td>
+<td>预期影响：移除后无法利用实验信息修正计算偏差（[Analysis] 推断）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用。本文为综述，未提供具体数学模型或公式。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：未提供（综述，无原始实验）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：k(cat)/K_M（催化效率）、k(cat)（turnover rate）</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无（综述）</td>
+<td>当前方法产生 tight substrate binders 而非过渡态稳定酶</td>
+<td>基于文献汇总的观察</td>
+<td>k(cat) 普遍受限</td>
+<td>当前方法优化底物结合而非过渡态稳定</td>
+<td>不能证明所有方法均如此，缺乏定量对比</td>
+<td>原文摘要</td>
+</tr>
+<tr>
+<td>无（综述）</td>
+<td>扩散模型扩展了反应空间</td>
+<td>基于文献汇总</td>
+<td>出现多样催化功能和复杂催化基序</td>
+<td>结构生成方法有效扩展可设计空间</td>
+<td>不能证明反应空间扩展的边界</td>
+<td>原文摘要</td>
+</tr>
+<tr>
+<td>无（综述）</td>
+<td>静电/多态/动力学设计可提升活性</td>
+<td>作者主张</td>
+<td>未提供实验证据</td>
+<td>这些方向有潜力</td>
+<td>不能证明其有效性</td>
+<td>原文摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖基于结构的酶设计（structure-based enzyme design），不涉及非结构导向方法（如定向进化）的全面比较。</li>
+<li><strong>oracle/真值输入</strong>：综述依赖文献中已报道的酶设计案例，其活性数据来自各原始研究的实验测量，但本文未提供统一评测协议。</li>
+<li><strong>端到端状态</strong>：当前方法尚未实现端到端的高效酶设计——结构生成和序列设计可计算完成，但高效催化仍不可靠。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：扩散模型和序列设计模型依赖已有蛋白质结构/序列数据，但本文未讨论数据偏差。</li>
+<li><strong>模型依赖</strong>：结论基于对现有深度学习方法的汇总观察，不针对特定模型。</li>
+<li><strong>最难情形</strong>：高效催化（高 k(cat)）是当前最难实现的目标，尤其涉及静电催化和构象动力学的体系。</li>
+<li><strong>群体/领域边界</strong>：结论适用于基于结构的酶设计领域，不直接推广至其他蛋白质设计任务（如结合蛋白设计）。</li>
+<li><strong>不确定性</strong>：作者对「静电/多态/动力学设计可提升活性」的论断为前瞻性主张，缺乏直接实验证据。</li>
+<li><strong>有边界的复述</strong>：在基于结构的深度学习酶设计框架下，现有方法能有效生成结构多样的候选酶并实现可观的 k(cat)/K_M，但 k(cat) 普遍受限，表明这些方法主要优化底物结合而非过渡态稳定；因此，要可靠设计高效酶，需将催化的物理化学驱动因素（静电、多态、动力学）显式纳入计算设计流程。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>当前方法难以设计高效酶</td>
+<td>k(cat) 受限，产生 tight substrate binders 而非过渡态稳定酶</td>
+<td>直接靶向催化的物理化学驱动因素（静电、多态、动力学）</td>
+<td>原文摘要</td>
+</tr>
+<tr>
+<td>活性 oracle 不可靠</td>
+<td>缺乏可靠活性预测工具</td>
+<td>开发更可靠的活性 oracle</td>
+<td>原文摘要</td>
+</tr>
+<tr>
+<td>静电/多态/动力学设计未成熟</td>
+<td>计算设计这些因素尚不可行</td>
+<td>发展相关计算方法</td>
+<td>原文摘要</td>
+</tr>
+</tbody>
+</table>
+<p><em>作者提及的相关约束（非正式局限）</em>：本文为综述，未提供原始实验数据；作者对「未来方向」的论述为前瞻性主张，非已验证结论。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>作者将 k(cat) 受限归因于「优化底物结合而非过渡态稳定」</td>
+<td>可能也存在其他因素：如 scaffold 生成的结构多样性不足、序列设计对催化残基 pKa 的破坏、或实验筛选条件不匹配</td>
+<td>归因决定未来方法学方向；若归因错误，靶向过渡态稳定可能仍无法提升 k(cat)</td>
+<td>系统比较不同设计方法在相同反应上的 k(cat) 与 K_M，并测量过渡态结合亲和力（如通过动力学同位素效应或 QM/MM 计算）</td>
+<td>原文摘要的推断性表述「suggesting」</td>
+</tr>
+<tr>
+<td>作者主张「静电/多态/动力学设计可提升活性」</td>
+<td>该主张缺乏直接证据，可能过于乐观；这些因素的计算设计在天然酶中已证明困难</td>
+<td>若该方向无效，资源可能被错误分配</td>
+<td>在简单模型体系（如酯酶）中测试静电设计的可计算预测与实验 k(cat) 的相关性</td>
+<td>原文摘要的前瞻性表述「could potentially」</td>
+</tr>
+<tr>
+<td>综述未讨论生成模型的泛化边界</td>
+<td>扩散模型可能仅在训练分布附近的活性位点有效，对全新反应类型可能失效</td>
+<td>影响方法适用范围判断</td>
+<td>测试模型在远离训练分布的反应（如非天然底物）上的 scaffold 生成成功率</td>
+<td>原文未提供相关讨论</td>
+</tr>
+<tr>
+<td>未讨论序列设计对催化残基动态行为的影响</td>
+<td>序列设计可能过度稳定结构，限制催化所需的构象采样</td>
+<td>构象动力学是催化的关键，静态稳定可能适得其反</td>
+<td>比较设计酶与天然酶的 MD 模拟构象系综差异</td>
+<td>原文仅提及「conformational dynamics」为未来方向，未深入分析</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>（面向蛋白质结构相关计算研究 × AI/物理模拟）：
+1. <strong>「底物结合 ≠ 过渡态稳定」的评估框架</strong>：在设计酶时，应同时报告 k(cat) 和 K_M，而非仅 k(cat)/K_M；高 k(cat)/K_M 可能掩盖低 k(cat)。可迁移至任何酶设计评估流程。
+2. <strong>扩散模型 scaffold 生成 + 序列设计的组合策略</strong>：该流程可扩展反应空间并设计复杂催化基序，适用于结构预测和构象生成任务中「围绕功能位点生成骨架」的通用思路。
+3. <strong>将物理化学驱动因素（静电、多态、动力学）纳入设计目标</strong>：提示在 AI 设计流程中，不应仅以结构稳定性为优化目标，应引入 QM/MM 或 MD 模拟计算过渡态稳定能、静电势等物理量作为损失函数或筛选标准。
+4. <strong>lab-in-the-loop 优化范式</strong>：计算设计 + 实验反馈的闭环可弥补 oracle 不可靠问题，适用于任何计算-实验结合的研究。
+5. <strong>进化信息与蛋白质语言模型作为先验</strong>：可增强序列设计的进化合理性，适用于序列设计任务中引入进化约束。
+6. <strong>批判性评估生成模型的功能边界</strong>：生成模型擅长几何约束满足，但功能验证需超越静态结构，需结合 MD/物理模拟评估构象系综和动力学性质。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：与 AlphaFold 等结构预测工作互补——AlphaFold 预测静态结构，本文强调催化功能需超越静态结构，与 MD 模拟和构象采样研究（如 Markov state models）关注动力学一致。</li>
+<li><strong>组合</strong>：与 QM/MM 方法（如过渡态理论计算）结合，可验证「过渡态稳定」假设；与定向进化（directed evolution）结合，可形成「计算设计 + 实验进化」的混合策略。</li>
+<li><strong>冲突</strong>：与「结构稳定即功能」的简化假设存在张力——本文指出结构稳定的酶未必是高效催化剂，与部分基于稳定性的设计方法（如 consensus design）形成对比。</li>
+<li><strong>可迁移领域</strong>：扩散模型 scaffold 生成策略可迁移至其他功能位点设计（如结合位点、金属中心）；「oracle 可靠性」问题同样存在于配体对接和结合亲和力预测中。</li>
+<li><strong>候选方向（未验证）</strong>：将过渡态静电势作为扩散模型的条件输入，或可提升设计酶 k(cat)；该方向在原文中未被直接提出，[Analysis] 推断。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：过渡态感知的扩散模型酶设计（Transition-State-Aware Diffusion for Enzyme Design）
+   - <strong>来源局限/观察</strong>：本文指出当前方法优化底物结合而非过渡态稳定，k(cat) 受限。
+   - <strong>核心假设</strong>：将过渡态几何/静电势作为扩散模型的条件输入，可生成更倾向稳定过渡态的 scaffold。
+   - <strong>初步方法</strong>：用 QM/MM 计算目标反应的过渡态结构，提取静电势图，作为扩散模型条件；序列设计后以 MD 模拟验证过渡态结合。
+   - <strong>验证方式</strong>：在已知酶（如酯酶）上比较条件/非条件扩散模型的 k(cat)。
+   - <strong>创新状态</strong>：unverified（原文未提出此具体方案）。</p>
+</li>
+<li>
+<p><strong>名称</strong>：多态系综酶设计（Multistate Ensemble Enzyme Design）
+   - <strong>来源局限/观察</strong>：本文强调多态行为和构象动力学是催化关键，但现有方法多针对单一静态结构。
+   - <strong>核心假设</strong>：以构象系综（而非单一结构）为设计目标，可提升设计酶的催化活性。
+   - <strong>初步方法</strong>：用 MD 模拟生成活性位点构象系综，以系综平均静电势为设计目标；序列设计时考虑系综稳定性。
+   - <strong>验证方式</strong>：比较单结构设计与系综设计的 k(cat) 和构象采样范围。
+   - <strong>创新状态</strong>：unverified（原文仅提及「multistate behavior」为未来方向，未给方案）。</p>
+</li>
+<li>
+<p><strong>名称</strong>：活性 oracle 的物理增强（Physics-Enhanced Activity Oracle）
+   - <strong>来源局限/观察</strong>：本文指出 oracle 不可靠是设计瓶颈。
+   - <strong>核心假设</strong>：将 QM/MM 计算的过渡态稳定能作为 oracle 特征，可提升活性预测准确性。
+   - <strong>初步方法</strong>：训练一个混合模型，输入序列/结构特征 + QM/MM 计算的静电/几何特征，预测 k(cat)。
+   - <strong>验证方式</strong>：在公开酶设计数据集上比较混合模型与纯结构模型的预测精度。
+   - <strong>创新状态</strong>：unverified（原文仅提及「more reliable activity oracles」为需求，未给方案）。</p>
+</li>
+<li>
+<p><strong>名称</strong>：进化先验约束的序列设计（Evolutionary-Prior-Constrained Sequence Design）
+   - <strong>来源局限/观察</strong>：本文建议整合进化信息与蛋白质语言模型。
+   - <strong>核心假设</strong>：在序列设计中引入进化保守性约束，可提高设计酶的可表达性和催化成功率。
+   - <strong>初步方法</strong>：用蛋白质语言模型生成候选序列，以进化保守性（如 EVcouplings）为约束过滤，实验验证。
+   - <strong>验证方式</strong>：比较有无进化约束的序列设计在相同 scaffold 上的表达率和活性。
+   - <strong>创新状态</strong>：partially checked（原文明确提及整合进化信息为改进方向，但未给具体方法）。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and conclusions as presented in the abstract; no methods, figures, or full-text data were available for evaluation</li>
+<li><strong>Shared manuscript claim summary</strong> The abstract argues that deep learning has advanced structure-based enzyme design, particularly via diffusion-based scaffold generation and sequence design, but that current methods yield enzymes with limited turnover rates because they optimize substrate binding rather than transition-state stabilization. It proposes that targeting electrostatic catalysis, multistate behavior, and conformational dynamics, alongside improved activity oracles, evolutionary information, protein language models, and lab-in-the-loop optimization, could enhance catalytic efficiency.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative data, benchmark comparisons, case studies, or methodological details are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, figures, tables, methods, specific enzyme examples, quantitative performance metrics, and any comparative analyses against alternative design strategies</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a coherent and timely perspective on the current state and limitations of deep learning in enzyme design. The central thesis, that current structure-based approaches often produce tight substrate binders rather than efficient catalysts due to insufficient transition-state stabilization, is plausible and aligns with trends in the field. However, the abstract provides no empirical evidence, case examples, or quantitative support for this claim, and the proposed solutions are listed without critical evaluation of their feasibility or expected impact. As a perspective piece, the abstract is readable and logically structured, but its scientific depth is limited by the absence of supporting data and the lack of engagement with counterarguments or alternative frameworks.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists, protein engineers, and enzymologists working on enzyme design and directed evolution would find this perspective relevant. Researchers developing generative models for protein design, particularly those using diffusion models or language models, would also be interested in the critique of current limitations and the proposed future directions. The abstract could inform research prioritization in both academic and industrial settings focused on biocatalysis.</li>
+<li><strong>Major strengths</strong> The abstract clearly identifies a specific and important gap in current enzyme design, namely the distinction between substrate binding and transition-state stabilization. It offers a focused set of proposed improvements that are grounded in established physicochemical principles. The writing is concise and accessible to a broad scientific audience.</li>
+<li><strong>Major Concerns</strong> The central claim that current methods yield tight substrate binders rather than transition-state stabilizers is presented without supporting evidence, such as comparative kinetic data or structural analyses. The proposed solutions, including electrostatic catalysis design and multistate modeling, are not critically assessed for their current maturity or practical challenges. The abstract does not acknowledge potential counterexamples where deep learning has achieved high turnover rates, nor does it discuss the role of directed evolution in complementing computational design.</li>
+<li><strong>Minor Comments</strong> The abstract would benefit from a brief mention of specific enzyme classes or reactions where the described limitations are most pronounced. The phrase "lab-in-the-loop optimization" is used without definition, which may confuse nonspecialist readers. The final sentence is somewhat repetitive of the opening, and the abstract could end with a more forward-looking or actionable statement.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The abstract does not provide any quantitative or qualitative evidence to support the claim that current approaches yield tight substrate binders. Without such evidence, the central thesis remains an assertion rather than an established observation. Additionally, the proposed improvements are not linked to any preliminary results or feasibility assessments, leaving their potential impact unsubstantiated.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The perspective is not entirely novel, as the limitation of computational enzyme design in achieving high turnover is a known challenge, but the specific framing around transition-state stabilization versus substrate binding is a useful synthesis. Scientific importance: The topic is of high importance to the enzyme design community, and the abstract addresses a critical bottleneck. Interdisciplinary readership: The abstract is written in a way that should be accessible to computational scientists, biochemists, and enzymologists, though some terms may require prior knowledge. Technical soundness: The abstract is technically plausible but lacks the evidence needed to assess soundness of the claims. Readability for nonspecialists: The abstract is generally clear, but the lack of definitions for some terms and the absence of concrete examples reduce accessibility.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The perspective is potentially valuable, but the abstract must be supported by evidence from the full manuscript, including specific examples, quantitative data, and a more critical discussion of the proposed solutions.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The abstract claims that current structure-based enzyme design approaches "typically yield tight substrate binders rather than enzymes that selectively stabilize the chemical transition state."</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> The claim that current methods yield tight substrate binders rather than transition-state stabilizers is presented as a general observation, but no data, examples, or references are provided to support this assertion. The abstract does not cite specific enzymes, kinetic measurements, or structural comparisons that would substantiate this pattern.</li>
+<li><strong>Why it matters</strong> This claim is the central thesis of the perspective. If it is not supported by evidence, the entire argument for redirecting design efforts toward transition-state stabilization loses its foundation. Readers cannot assess whether this is a well-established trend or an anecdotal impression.</li>
+<li>
+<p><strong>Resolution test</strong> The full manuscript must provide specific examples of designed enzymes with high k(cat)/K(M) but low k(cat), along with comparative data or structural evidence showing that these enzymes bind substrates tightly without stabilizing the transition state. Alternatively, the authors should cite published studies that systematically demonstrate this pattern.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Completeness of proposed solutions</li>
+<li><strong>Claim pointer</strong> The abstract proposes that "computational design of electrostatic catalysis, multistate behavior, and conformational dynamics could potentially enhance transition-state stabilization and improve catalytic activity."</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> The proposed solutions are listed without any assessment of their current feasibility, limitations, or expected impact. For example, computational design of electrostatic catalysis is a long-standing challenge, and it is unclear how deep learning would address it beyond existing methods. Similarly, multistate design and conformational dynamics are computationally demanding and not yet routine.</li>
+<li><strong>Why it matters</strong> A perspective piece should not only identify gaps but also critically evaluate the promise and challenges of proposed directions. Without this, the abstract reads as a wish list rather than a scientifically grounded roadmap.</li>
+<li>
+<p><strong>Resolution test</strong> The full manuscript should include a discussion of the current state of each proposed approach, including any preliminary results, known bottlenecks, and how deep learning specifically would advance these areas.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Consideration of alternative perspectives</li>
+<li><strong>Claim pointer</strong> The abstract implies that structure-based design is the primary path forward, with improvements in activity oracles, evolutionary information, and language models as supporting tools.</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> The abstract does not acknowledge the substantial role of directed evolution in achieving high catalytic efficiency in practice. Many successful enzyme engineering campaigns combine computational design with laboratory evolution, and the abstract does not discuss how the proposed deep learning approaches would integrate with or replace this paradigm.</li>
+<li><strong>Why it matters</strong> The perspective may overstate the potential of purely computational approaches and understate the practical importance of experimental optimization. A balanced view would strengthen the credibility of the perspective.</li>
+<li><strong>Resolution test</strong> The full manuscript should include a discussion of the complementary roles of computational design and directed evolution, and how the proposed deep learning methods would fit into existing workflows.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity for nonspecialists</li>
+<li><strong>Affected element</strong> Term "lab-in-the-loop optimization"</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The term is used without definition, and nonspecialist readers may not understand what it entails.</li>
+<li>
+<p><strong>Required correction</strong> Provide a brief explanation, such as "iterative cycles of computational design and experimental testing guided by machine learning," or use a more self-explanatory phrase.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Specificity</li>
+<li><strong>Affected element</strong> General claim about "diverse catalytic functions and complex catalytic motifs"</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The abstract states that structure-based approaches have "enabled the emergence of enzymes with diverse catalytic functions and complex catalytic motifs," but no examples are given.</li>
+<li>
+<p><strong>Required correction</strong> Mention one or two specific enzyme classes or reactions to illustrate the claim, or refer to a figure or table in the full manuscript.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Redundancy</li>
+<li><strong>Affected element</strong> Final sentence</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The final sentence largely restates the opening claim about the need to move beyond substrate binding toward efficient catalysis.</li>
+<li><strong>Required correction</strong> Replace with a more specific or forward-looking statement, such as a call for benchmarking standards or a particular technical milestone.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that current methods "typically yield tight substrate binders rather than enzymes that selectively stabilize the chemical transition state" is unsupported in the abstract and requires evidence from the full manuscript.</li>
+<li>The assertion that "computational design of electrostatic catalysis, multistate behavior, and conformational dynamics could potentially enhance transition-state stabilization" is speculative and not backed by preliminary data or feasibility analysis.</li>
+<li>The statement that "more reliable activity oracles, integration of evolutionary information, protein language models, and lab-in-the-loop optimization could further enhance design performance" is a list of possibilities without critical evaluation or evidence of expected impact.</li>
+<li>The overall claim that "deep learning has substantially advanced structure-based enzyme design" is plausible but not quantified or exemplified in the abstract.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no methods, figures, tables, or supplementary material were available for evaluation
+- **Shared manuscript claim summary** The authors use molecular dynamics simulations and enhanced sampling methods to study the conformational transition of the dengue virus capsid protein hydrophobic pocket between open and closed states. They report that lipid binding modulates pocket accessibility, that the open conformation supports lipid interaction, capsid dimer stabilization, and immature virus assembly, and that the closed conformation protects the pocket from aqueous solvent and prevents premature interactions. They further suggest that these insights identify potential antiviral targets.
+- **Visible evidence base** Abstract text only; no quantitative results, methodological details, or validation data are provided
+- **Missing materials affecting confidence** Full manuscript, methods section, simulation parameters, force field choices, convergence criteria, free energy profiles, structural validation data, and any experimental corroboration
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially interesting computational study of conformational dynamics in the dengue virus capsid protein. The biological context is relevant, and the proposed functional implications of the open and closed states are reasonable. However, the abstract provides no quantitative evidence, no methodological specifics, and no validation of the simulation results. The central claims regarding lipid-modulated pocket accessibility and the functional consequences of each conformation are stated as conclusions without supporting data. As presented, the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Structural biologists and computational biophysicists studying viral capsid proteins and their conformational dynamics would be the primary audience. Researchers working on dengue virus biology and antiviral drug discovery targeting capsid functions may also find the proposed mechanistic insights relevant, particularly if the open and closed states represent druggable conformations.
+- **Major strengths** The biological question is well motivated, given the established role of the capsid protein in dengue virus assembly and lipid recruitment. The use of multiple simulation approaches, including enhanced sampling, is appropriate for studying rare conformational transitions. The proposed functional distinction between open and closed states is conceptually clear and testable.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that lipid binding modulates the accessibility of the hydrophobic pocket through environmental cues.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states this as a finding, but no data are presented to support the claim. There is no indication of which simulations were performed, how lipid binding was modeled, what environmental cues were varied, or how pocket accessibility was quantified.
+  - **Why it matters** This is the central mechanistic claim of the study. Without evidence showing a causal relationship between lipid presence and conformational preference, the conclusion is unsupported.
+  - **Resolution test** Provide quantitative comparison of pocket accessibility or conformational populations in simulations with and without lipid, including error estimates and convergence assessment.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that the open conformation is involved in lipid interaction, stabilization of capsid dimers, and promotion of immature virus assembly, and that the closed conformation protects the pocket from aqueous media and prevents premature interactions.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** These functional assignments are presented as conclusions, but the abstract provides no structural, energetic, or dynamical data linking specific conformations to these biological outcomes. The connection between simulation-derived conformations and assembly-related functions is inferred rather than demonstrated.
+  - **Why it matters** These claims extend beyond the simulation data into biological function. Without evidence such as binding free energies, interaction contacts, or comparative analysis of dimer stability in open versus closed states, the functional interpretation is speculative.
+  - **Resolution test** Show quantitative measures of lipid binding affinity or contact persistence in the open state, dimer interface stability across conformations, and any evidence linking the open state to assembly competence.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** The authors state that a combination of different types of molecular dynamics simulations and enhanced sampling methods was used.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No specific methods are named. It is unclear which enhanced sampling techniques were applied, what force field was used, what the simulation timescales were, or how convergence was assessed. Without this information, the technical validity of the approach cannot be evaluated.
+  - **Why it matters** The reliability of conformational transition studies depends critically on sampling adequacy and force field accuracy. The absence of methodological detail prevents assessment of whether the observed transitions are physically meaningful or artifacts of insufficient sampling.
+  - **Resolution test** Provide a detailed methods section specifying simulation software, force field, water model, temperature and pressure control, enhanced sampling method, simulation length, number of replicas, and convergence metrics.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "environmental cues" is vague and undefined.
+  - **Required correction** Specify which environmental factors were varied, such as lipid concentration, solvent composition, or temperature.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scope
+  - **Affected element** Antiviral claim
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The statement that these insights represent "a promising set of potent targets for antiviral strategies" is an extrapolation beyond the presented data.
+  - **Required correction** Soften the claim to indicate that the conformational states may represent potential targets for further investigation, rather than asserting potency.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Comparison to prior work
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No reference is made to previous experimental or computational studies of dengue capsid conformational dynamics, so the novelty of the findings is unclear.
+  - **Required correction** Include a brief statement in the abstract or introduction situating this work relative to existing knowledge.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, and R1-M3 are blocking. The central mechanistic and functional claims are not supported by the abstract alone, and the methodological details necessary for technical evaluation are absent.
+- **Assessment against Nature-style criteria** Originality cannot be assessed from the abstract alone, as no comparison to prior work is provided. Scientific importance is potentially high given the relevance to dengue virus biology and antiviral development, but the significance of the findings depends on evidence not presented. Interdisciplinary readership is plausible, as the topic bridges virology, structural biology, and computational biophysics. Technical soundness cannot be evaluated without methodological detail and validation data. Readability for nonspecialists is adequate, with clear language and logical flow, though some terms such as "enhanced sampling" and "hydrophobic pocket" could benefit from brief clarification.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a potentially valuable study, but the absence of quantitative results, methodological transparency, and validation means the claims cannot be assessed. A revised submission with full methods and results would be required for a supportive recommendation.
+
+## Risk / unsupported claims
+- The claim that lipid binding modulates pocket accessibility is unsupported by any presented data.
+- The functional assignments of the open conformation to lipid interaction, dimer stabilization, and assembly promotion are unsupported.
+- The functional assignment of the closed conformation to solvent protection and prevention of premature interactions is unsupported.
+- The suggestion that the findings represent potent antiviral targets is an extrapolation beyond the evidence.
+- The overall conclusion that the study provides "deep understanding" of capsid conformational dynamics is not verifiable from the abstract.

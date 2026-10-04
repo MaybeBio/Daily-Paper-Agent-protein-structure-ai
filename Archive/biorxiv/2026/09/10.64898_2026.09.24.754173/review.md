@@ -1,0 +1,81 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors present RNASeek, a 1.6-billion-parameter generative foundation model based on a DeepSeek architecture, trained on a cross-phyla transcriptomic corpus. The model integrates natural-language tokens for conditional prediction and sequence design. Claims include zero-shot capture of species-specific transcript features and intron–exon boundaries; fine-tuned performance in predicting ribozyme self-cleavage activity and viral mRNA stability; interpretable sequence features linked to function; GRPO-based reinforcement learning for sequence generation; and experimental validation showing wild-type-level ribozyme activity and superior 3′ UTR stability compared to training data and benchmarked AI-generated sequences.
+- **Visible evidence base** Abstract text only; no quantitative results, figures, tables, or methodological details provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, training data description, model architecture details, fine-tuning protocols, GRPO implementation specifics, experimental methods, statistical analyses, and benchmark definitions
+
+## Reviewer
+- **Overall assessment** The abstract presents an ambitious and potentially impactful framework that unifies pretraining, prediction, and optimization for RNA sequence design. The conceptual integration of a generative foundation model with reinforcement learning for functional RNA engineering is timely and of broad interest. However, the abstract provides no quantitative evidence, no comparative baselines with numerical outcomes, and no methodological specifics that would allow assessment of technical soundness. The experimental validation claims are stated without effect sizes, statistical significance, or replication details. As presented, the case is conceptually compelling but not technically established.
+- **Who would be interested in the results, and why** Researchers in RNA biology, computational biology, and synthetic biology would be interested. Those working on RNA-based therapeutics, ribozyme engineering, mRNA vaccine design, and regulatory RNA design would find the pretrain–predict–optimize framework directly relevant. The cross-phyla training and zero-shot capabilities may also attract researchers studying transcriptome evolution and species-specific RNA processing.
+- **Major strengths** The proposed framework addresses a clear gap in connecting RNA foundation models to functional sequence design. The use of natural-language tokens for unified conditional generation is an innovative approach. The integration of interpretable feature analysis with reinforcement learning-based optimization is a coherent and potentially generalizable strategy. The inclusion of experimental validation, if robust, would substantially strengthen the practical relevance of the work.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** RNASeek captures species-specific transcript features and intron–exon boundaries in a zero-shot setting.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The claim of zero-shot capability is stated without any quantitative metric, comparison to existing models, or definition of the evaluation task. It is unclear what specific features were assessed, how accuracy was measured, and against which baselines the performance was compared.
+  - **Why it matters** Zero-shot performance is a strong claim that requires rigorous benchmarking. Without defined tasks, metrics, and comparators, the claim cannot be evaluated or reproduced.
+  - **Resolution test** Provide quantitative results for zero-shot tasks, including task definitions, evaluation metrics, baseline comparisons, and statistical significance.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** Fine-tuned RNASeek predicts ribozyme self-cleavage activity and viral mRNA stability, revealing interpretable sequence features.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No predictive performance metrics are reported. It is unclear how well the fine-tuned models perform, what datasets were used for training and evaluation, and how interpretability was established. The link between identified features and functional outcomes is asserted without supporting data.
+  - **Why it matters** Predictive accuracy and interpretability are central to the utility of the fine-tuned models. Without performance numbers and validation of feature importance, the claims are unsupported.
+  - **Resolution test** Report predictive metrics such as correlation coefficients, AUC, or accuracy, along with dataset sizes, train–test splits, and feature importance analyses with statistical support.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** GRPO-guided generation produces faster-cleaving ribozymes and stability-enhancing 3′ UTRs while satisfying user-specified IUPAC constraints.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The outcomes of GRPO-guided generation are described qualitatively. No quantitative improvements are given, and the success rate for satisfying IUPAC constraints is not reported. The comparison to baseline generation methods is absent.
+  - **Why it matters** The core contribution is the optimization framework. Without quantitative gains and constraint satisfaction rates, the effectiveness of the approach cannot be assessed.
+  - **Resolution test** Provide numerical results for generated sequences, including activity or stability improvements, constraint satisfaction rates, and comparisons to non-RL baselines.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** Experimentally validated RNASeek-generated ribozymes achieve wild-type levels of activity, while RNASeek-generated 3′ UTR sequences exceed the performance of the training data and benchmarked AI-generated 3′ UTRs.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** Experimental validation is stated without any quantitative details. No activity measurements, stability values, number of replicates, statistical tests, or comparison specifics are provided. The benchmarked AI-generated 3′ UTRs are not identified.
+  - **Why it matters** Experimental validation is the strongest evidence for practical utility. Without quantitative results and statistical rigor, the claims cannot be verified or compared to existing work.
+  - **Resolution test** Report experimental data with effect sizes, confidence intervals, replicate numbers, and statistical analyses. Clearly identify benchmark methods and datasets.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Model description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states the model is built on a DeepSeek architecture but does not specify which variant or how it was adapted for RNA sequences.
+  - **Required correction** Specify the DeepSeek architecture version and describe key adaptations for RNA tokenization and sequence modeling.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Training data
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The cross-phyla transcriptomic corpus is mentioned but not described in terms of species coverage, sequence types, or data volume.
+  - **Required correction** Provide details on the training corpus, including number of species, sequence categories, and total token count.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Reinforcement learning setup
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The use of GRPO is mentioned but the reward modeling process and policy update details are not described.
+  - **Required correction** Briefly describe how reward models were constructed from fine-tuned predictors and how GRPO was applied.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The absence of quantitative results and methodological details across all major claims prevents technical evaluation.
+- **Assessment against Nature-style criteria** Originality is high, as the integration of a generative foundation model with RL for RNA design appears novel. Scientific importance is potentially high given the broad applicability to RNA engineering. Interdisciplinary readership is likely, spanning computational biology, RNA biochemistry, and synthetic biology. Technical soundness cannot be assessed from the abstract alone due to missing quantitative evidence. Readability for nonspecialists is adequate, though some terms such as GRPO and IUPAC constraints may require brief explanation in the full text.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising and warrants full review, but the abstract alone does not provide sufficient quantitative or methodological support for the claims. Supportive if technical concerns are resolved in the full manuscript.
+
+## Risk / unsupported claims
+- Zero-shot capture of species-specific transcript features and intron–exon boundaries is unsupported without task definitions and metrics.
+- Predictive performance of fine-tuned models for ribozyme activity and mRNA stability is unquantified.
+- Interpretable sequence features associated with function are asserted without supporting analysis.
+- GRPO-guided generation improvements are described qualitatively without numerical outcomes.
+- Experimental validation claims lack all quantitative details, including effect sizes, replicates, and statistical tests.
+- The claim that generated 3′ UTRs exceed benchmarked AI-generated sequences is unverifiable without benchmark identification and comparison data.

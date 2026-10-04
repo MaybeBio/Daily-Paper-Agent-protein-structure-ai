@@ -1,0 +1,93 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, methods, results, conclusions, limitations, data availability statement)
+- **Assessment boundary** Scientific validity, methodological soundness, claims versus evidence, clarity, and alignment with Nature-style criteria. No line numbers were provided; references to sections and figures are based on the manuscript structure.
+- **Shared manuscript claim summary** The authors present DreamFold, a generative World Model framework that learns protein folding pathways in a latent space. The model encodes protein structures and dihedral angle moves into latent vectors using variational autoencoders, predicts future latent states with a feedforward neural network, and trains a controller via evolutionary strategies (CMA-ES) to drive folding toward a target native state. The authors claim speedups of up to ~30,000× over molecular dynamics, linear scaling O(N) with system size, and accurate identification of folding intermediates and transition states validated against MD simulations and experimental data.
+- **Visible evidence base** Abstract, full methods description, results sections for regularization, folding pathway computation, performance benchmarks, path similarity analysis, thermodynamics reconstruction, and case studies for Fip35, TrpCage, Protein G, λ-repressor, PrP, Ubiquitin, and hCRBP2. Figures referenced but not provided. Supporting Information referenced but not provided.
+- **Missing materials affecting confidence** Figures 1–9, all Supporting Information sections (including model architecture details, hyperparameters, training procedures, and additional validation), the Zenodo data repository contents, and the GitHub repository with protocol files. Without these, quantitative claims about performance, accuracy, and scaling cannot be independently verified.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a conceptually interesting application of World Models to protein folding, with a plausible pipeline combining VAEs, a forward dynamics model, and evolutionary policy optimization. The claimed computational speedups are striking and, if reproducible, would be of practical value. However, the evidence base as provided is insufficient to establish the central claims. Key validation metrics, benchmark details, and comparisons are described qualitatively or deferred to Supporting Information and figures that were not available for review. The thermodynamic reconstruction via MSM is acknowledged as approximate, but the limitations of this approach are understated. The manuscript would benefit from clearer reporting of error bars, statistical significance, and direct comparisons to baseline methods.
+- **Who would be interested in the results, and why** Computational biophysicists and structural biologists interested in fast generative approaches for conformational sampling; AI researchers working on World Models and latent-space dynamics; drug discovery scientists targeting cryptic pockets and folding intermediates. The promise of orders-of-magnitude speedup over MD would attract a broad interdisciplinary audience if the claims are substantiated.
+- **Major strengths** 1. Novel application of World Models to protein folding, extending a successful AI paradigm from robotics/games to molecular simulations. 2. The pipeline is modular and clearly described, with each component (VAE, FFN, CMA-ES) justified. 3. The authors address a real bottleneck (computational cost of MD) and propose a principled alternative. 4. Validation against multiple reference datasets (DESRS, experimental data) is attempted, and the authors acknowledge the out-of-equilibrium nature of their trajectories.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "DreamFold can compute protein folding pathways four orders of magnitude faster than molecular dynamics (MD), up to ~30,000×."
+  - **Evidence pointer** Results section "Performance"; Figure 4 (not provided); Supporting Information S1: section 5 (not provided)
+  - **Concern** The speedup claim is central to the paper's impact, but the provided text does not include the actual benchmark data, hardware specifications, or the MD baseline used for comparison. The scaling argument (O(N) vs O(N log N)) is presented theoretically, but no empirical scaling plots or wall-clock measurements are shown in the manuscript text. The comparison to MD is also complicated by the fact that DreamFold trajectories are not physical dynamics and lack a time axis, making "speedup" ambiguous.
+  - **Why it matters** Without reproducible benchmark details, the headline performance claim cannot be assessed. If the speedup is not robust across systems or is sensitive to hyperparameters, the practical utility of DreamFold is diminished.
+  - **Resolution test** Provide a table or figure with wall-clock times for DreamFold vs MD for all tested proteins, including hardware details, number of MD replicates, and statistical variability. Clarify what "speedup" means in the absence of a physical time scale.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Validation rigor
+  - **Claim pointer** "We have validated our results against established MD benchmarks and other available experimental data."
+  - **Evidence pointer** Results sections "Computation of folding pathways and validation", "Path similarity and structure formation analysis"; Figures 3, 4 (not provided)
+  - **Concern** The validation is described qualitatively. For Fip35, the authors report 94% pathway I prevalence, but no confidence intervals, number of replicates, or statistical test are given. For TrpCage, the two pathways are described as "almost equiprobable," but the 48/52 split is not tested for significance. The path similarity analysis is mentioned, but the actual similarity values, the choice of reference trajectories, and the interpretation of "indistinguishable" are not provided in the text.
+  - **Why it matters** The central claim of accuracy rests on these comparisons. Without quantitative metrics and statistical rigor, the reader cannot distinguish genuine agreement from chance or systematic bias.
+  - **Resolution test** Report mean and standard deviation (or confidence intervals) for pathway fractions, path similarity scores, and structural metrics across replicates. Include a statistical test (e.g., bootstrap or permutation test) for pathway preference. Provide the actual similarity values and the criteria for "indistinguishable."
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** "DreamFold has been built via custom-made code written in Python using Keras and tensorflow."
+  - **Evidence pointer** Methods section; Data Availability Statement; GitHub repository (URL not provided in text)
+  - **Concern** The manuscript states that code and data are available, but the specific repository URLs and the Zenodo DOI are only mentioned in the Data Availability Statement. The Supporting Information is referenced extensively but was not provided for review. Key details such as VAE architecture (layer sizes, latent dimension), training hyperparameters (learning rate, batch size, epochs), and the exact reward function formulation are deferred to Supporting Information S1.
+  - **Why it matters** Reproducibility is a core requirement for computational papers. Without full architectural and training details, other groups cannot implement or benchmark DreamFold.
+  - **Resolution test** Include the full model architecture, hyperparameters, and training procedures in the main text or ensure the Supporting Information is accessible. Provide the GitHub and Zenodo links in the main text.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Conceptual clarity
+  - **Claim pointer** "DreamFold can be used to compute the folding pathway of biomolecules and obtain the atomistic structure of therapeutically relevant intermediate states."
+  - **Evidence pointer** Results sections "PrP folding intermediate", "Structural ensemble of hCRBP2"; Figures 6, 9 (not provided)
+  - **Concern** The identification of folding intermediates and cryptic pockets is presented as a key application, but the criteria for "identifying" an intermediate are not defined. For PrP, 7 out of 50 trajectories passed through the intermediate, but the authors do not explain why the other 43 did not, or whether this fraction is expected. For hCRBP2, the "open monomer" intermediate is described as "transient," but the frequency and structural variability of this state are not quantified.
+  - **Why it matters** The biological and therapeutic relevance of the method depends on the reliability and reproducibility of intermediate identification. Without clear criteria and statistics, the claim is anecdotal.
+  - **Resolution test** Define a quantitative criterion for intermediate detection (e.g., structural similarity threshold, residence time). Report the fraction of trajectories that populate each intermediate, with variability across independent runs. Compare the identified intermediates to experimental structures where available.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The phrase "data regarding their folding mechanisms and dynamics is scarce" is grammatically incorrect ("data" is plural) and could be rephrased for clarity.
+  - **Required correction** Change to "data regarding folding mechanisms and dynamics are scarce" or "are limited."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Results section "Ubiquitin's transition state"
+  - **Evidence pointer** Results, "Ubiquitin's transition state" paragraph
+  - **Issue** The authors use "Ψ and Φ analyses" to refer to phi-value analysis, which is standard, but the notation is confusing because Ψ and Φ are also used for dihedral angles earlier in the text. This dual use could confuse readers.
+  - **Required correction** Clarify the distinction, e.g., "phi-value analysis (Ψ-value analysis)" and avoid using Ψ/Φ for both dihedral angles and phi-values without explicit definition.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Methods section
+  - **Evidence pointer** Methods, "Molecular dynamics simulations" paragraph
+  - **Issue** The MD simulation protocol is described, but the temperature for each system is not specified in the text; it is only stated that "Temperature was chosen to match available MD data and is shown in Figure 5."
+  - **Required correction** State the temperatures explicitly in the text or in a table.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Results section "Performance"
+  - **Evidence pointer** Results, "Performance" paragraph
+  - **Issue** The speedup factors (3800×, 8000×, 30,000×) are reported as single numbers without error bars or variability across runs.
+  - **Required correction** Report mean and standard deviation across multiple independent runs, or state that these are representative values.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (speedup claim without benchmark data), R1-M2 (validation without quantitative metrics), R1-M3 (reproducibility details missing), R1-M4 (intermediate identification criteria undefined).
+- **Assessment against Nature-style criteria** 
+  - **Originality** The application of World Models to protein folding is novel and extends a successful AI paradigm to a new domain. This is a creative contribution.
+  - **Scientific importance** If the claims are substantiated, the method could significantly accelerate conformational sampling and enable studies of larger systems than currently feasible with MD. The identification of cryptic pockets has direct therapeutic relevance.
+  - **Interdisciplinary readership** The work bridges AI, biophysics, and drug discovery, and would appeal to readers across these fields. The conceptual framing is accessible.
+  - **Technical soundness** The pipeline is plausible, but the evidence provided is insufficient to assess technical soundness. Key benchmarks, statistical analyses, and implementation details are missing or deferred to Supporting Information.
+  - **Readability for nonspecialists** The manuscript is generally well-written and the World Model concept is explained clearly. However, some sections (e.g., the MSM reconstruction) assume familiarity with specialized methods. The dual use of Ψ/Φ notation is a minor readability issue.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is promising and the application is timely, but the current manuscript does not provide sufficient evidence to establish the central claims of speed, accuracy, and biological utility. The authors should provide the missing benchmark data, statistical rigor, and implementation details.
+
+## Risk / unsupported claims
+- The speedup claim (up to ~30,000×) is unsupported without benchmark data and a clear definition of "speedup" in the absence of a physical time scale.
+- The claim of linear scaling O(N) is presented theoretically but not empirically demonstrated in the text.
+- The validation against MD and experimental data is described qualitatively; no quantitative similarity metrics or statistical tests are provided.
+- The identification of folding intermediates (PrP, hCRPB2) and the cryptic pocket is based on a small number of trajectories (7/50 for PrP) without defined criteria or statistical confidence.
+- The MSM reconstruction is acknowledged as approximate, but the limitations of this approach for recovering true kinetics are understated.
+- The claim that DreamFold is "the first application of generative World Models in the context of biomolecular simulations" is a strong priority claim that would require a thorough literature search to verify.

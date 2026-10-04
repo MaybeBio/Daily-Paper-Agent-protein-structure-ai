@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enhanced Sampling of Protein Conformations in AlphaFold3 with Repulsive Bias in the Diffusion Generative Model. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Enhanced Sampling of Protein Conformations in AlphaFold3 with Repulsive Bias in the Diffusion Generative Model.</h1>
+      <div class="meta">Ohnuki, Jun; Okazaki, Kei-Ichi</div>
+      <div class="meta muted">
+        
+        <span class="journal">JACS Au</span>
+        · 2026-10-01
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42819252/">原文</a>
+      </div>
+      <p class="one-liner">该文在AlphaFold3的扩散生成模型中引入排斥偏置实现增强采样，以预测配体诱导的蛋白质构象变化，属于蛋白质构象采样与结构预测的核心计算研究，方法创新且与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Conformational changes in proteins are vital to their function yet remain challenging for state-of-the-art artificial intelligence, such as AlphaFold3 (AF3), to predict. It has been observed that AF3 sometimes fails to capture ligand-induced conformational changes, even though it explicitly includes ligand molecules that induce such changes. To address this challenge, we develop an enhanced sampling scheme that leverages the diffusion-based generative model used in AF3 to predict protein structures. Interpreting the diffusion generative model as a stochastic sampling process analogous to molecular dynamics (MD) simulations, we introduce here a repulsive biasing potential between predicted structures to explore wider conformational space. We demonstrate that the developed sampling scheme, AF3-ReD, successfully samples multiple conformational states in the AF3 distribution, including ligand-bound conformations of motor, kinase, and transporter proteins, which are rarely captured by the default AF3 settings. Consistency with experimentally determined structures not only at the global structural level but also in local ligand-binding poses confirms reliable conformational sampling with AF3-ReD. Notably, AF3-ReD succeeded in sampling conformational states of transporters that were unresolved at the AF3 training cutoff. Compared to another strategy based on multiple sequence alignment (MSA), AF3-ReD predicted intermediate conformations that are relatively closer to the stable states. Thus, AF3-ReD provides a promising approach to predicting dynamic conformational changes of proteins associated with ligand binding, which could be further extended to other diffusion-based generative models, such as those for protein design, potentially expanding their accessible design space.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质的构象变化对其功能至关重要，但对于最先进的人工智能（如AlphaFold3 (AF3)）而言，预测这些变化仍具挑战性。已有观察表明，即使AF3明确包含了诱导构象变化的配体分子，它有时仍无法捕捉配体诱导的构象变化。为应对这一挑战，我们开发了一种增强采样方案，利用AF3中用于预测蛋白质结构的基于扩散的生成模型。将扩散生成模型解释为类似于分子动力学 (molecular dynamics) 模拟的随机采样过程，我们在此引入预测结构之间的排斥偏置势，以探索更广泛的构象空间。我们证明，所开发的采样方案AF3-ReD成功地在AF3分布中采样了多种构象状态，包括运动蛋白、激酶和转运蛋白的配体结合构象，而这些在默认AF3设置下很少被捕获。与实验确定的结构不仅在整体结构水平上，而且在局部配体结合姿态上的一致性，证实了AF3-ReD的可靠构象采样。值得注意的是，AF3-ReD成功采样了在AF3训练截止时间点尚未解析的转运蛋白构象状态。与基于多序列比对 (multiple sequence alignment, MSA) 的另一种策略相比，AF3-ReD预测的中间构象相对更接近稳定状态。因此，AF3-ReD为预测与配体结合相关的蛋白质动态构象变化提供了一种有前景的方法，该方法可进一步扩展到其他基于扩散的生成模型，例如用于蛋白质设计的模型，从而可能扩大其可访问的设计空间。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Enhanced Sampling of Protein Conformations in AlphaFold3 with Repulsive Bias in the Diffusion Generative Model</li>
+<li><strong>作者与单位</strong>：Ohnuki, Jun; Okazaki, Kei-Ichi（单位未在提供材料中明确给出，推测为日本研究机构）</li>
+<li><strong>期刊/预印本平台</strong>：JACS Au</li>
+<li><strong>年份</strong>：2026-10-01（在线发表日期）</li>
+<li><strong>论文类型</strong>：方法学研究（enhanced sampling 方法开发 + 应用验证）</li>
+<li><strong>领域</strong>：蛋白质结构预测 × 构象采样 × 扩散生成模型 × 增强采样</li>
+<li><strong>关键词</strong>：AlphaFold3, diffusion generative model, enhanced sampling, conformational change, repulsive bias, metadynamics, ligand-induced conformational change</li>
+<li><strong>DOI/arXiv 号</strong>：10.1021/jacsau.6c00596</li>
+<li><strong>代码</strong>：基于 AF3 开源代码（commit ID: 8151373，2025-03-17 版本）修改实现，未提供独立代码仓库</li>
+<li><strong>数据</strong>：使用 UniProt 序列（P07677, P00558, P24941, Q51330, P10903, B7IE18, Q96SW2, Q16531）及 PDB 结构（1AVS, 2X2E, 1LF4）；未提供独立数据集</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构预测 × 构象采样」交叉方向，首次将 metadynamics 启发的排斥偏置势引入 AlphaFold3 的扩散生成模型，实现无需重训练的构象增强采样，与 MSA 亚采样方法形成互补，是该方向的前沿方法学工作。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对 AlphaFold3 难以预测配体诱导的蛋白质构象变化的问题，本文在 AF3 扩散模型的去噪过程中引入基于 RMSD 的高斯排斥偏置势（AF3-ReD），通过历史依赖的排斥力驱动采样器探索更广泛的构象空间，在 motor、kinase、transporter 蛋白上成功采样到默认 AF3 难以捕获的配体结合构象，且无需重训练、计算开销可忽略。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：AlphaFold3 虽然能高精度预测蛋白质静态结构，但在配体存在时往往只预测单一优势构象（如开放态），无法捕获配体诱导的构象变化（如开放→闭合转变），限制了其在构象动态研究中的应用。</li>
+<li><strong>为何重要</strong>：蛋白质功能（酶催化、转运、信号传导）依赖于构象变化；若能直接从 AF3 中采样多种构象态，将极大推动构象动态的预测研究，无需昂贵的 MD 模拟或实验数据。</li>
+<li><strong>现有方法不足</strong>：</li>
+<li>默认 AF3 预测单一构象，对配体诱导的构象变化不敏感；</li>
+<li>MSA 亚采样（降低 MSA 深度）虽可增加构象多样性，但会降低预测精度，且对某些蛋白（如 transporter）效果有限；</li>
+<li>已有引导扩散方法多依赖外部实验数据（如 cryo-EM 密度图、NMR 距离约束），不适用于无实验数据的情况。</li>
+<li><strong>精确研究问题</strong>：能否在 AF3 扩散模型的采样过程中引入 metadynamics 启发的排斥偏置势，在不重训练、不依赖外部实验数据的条件下，增强对配体诱导的替代构象态的采样？</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文 Introduction 与 Discussion 的叙述框架整理，标注为「仅本文框架」，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期：单结构预测</td>
+<td>AlphaFold2 (AF2)</td>
+<td>高精度静态结构预测</td>
+<td>仅预测单一构象，无法捕获构象变化</td>
+</tr>
+<tr>
+<td>扩展：构象采样尝试</td>
+<td>MSA 亚采样（AF2 中）</td>
+<td>可增加构象多样性</td>
+<td>精度下降；对某些蛋白效果有限；不适用于配体诱导变化</td>
+</tr>
+<tr>
+<td>扩展：模板/实验信息引导</td>
+<td>模板相关方法、实验信息整合</td>
+<td>可引导特定构象</td>
+<td>依赖外部数据，泛化受限</td>
+</tr>
+<tr>
+<td>最新：扩散生成模型</td>
+<td>AlphaFold3 (AF3)</td>
+<td>显式包含配体、共价修饰；扩散模型天然支持采样</td>
+<td>默认采样仍偏向单一构象态</td>
+</tr>
+<tr>
+<td>本文位置</td>
+<td>AF3-ReD（排斥偏置势）</td>
+<td>无需重训练、无外部数据、计算开销可忽略</td>
+<td>对超大构象变化（如 E3 泛素连接酶复合物）仍不足</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AF3 默认预测单一构象态</td>
+<td>配体结合条件下仍只预测开放态，无法捕获闭合态</td>
+<td>训练数据分布不平衡，扩散模型采样偏向高概率区域</td>
+<td>Results 图 2B（TF1β 默认 AF3 仅预测开放态）</td>
+</tr>
+<tr>
+<td>MSA 亚采样精度下降</td>
+<td>降低 MSA 深度后构象远离实验结构（RMSD &gt; 3 Å）</td>
+<td>减少共进化信号导致结构退化，甚至全局折叠崩溃</td>
+<td>Results 图 2B、图 S2D（MSA 深度 16/32 时折叠崩溃）</td>
+</tr>
+<tr>
+<td>MSA 亚采样对 transporter 效果有限</td>
+<td>OxlT/NarK 的 occluded 态无法被 MSA 亚采样捕获</td>
+<td>构象采样困难源于扩散模型本身而非 MSA 信息</td>
+<td>Results 图 4B、图 5G（MSA 亚采样无 occluded 态）</td>
+</tr>
+<tr>
+<td>已有引导扩散方法依赖外部数据</td>
+<td>需 cryo-EM 密度图或 NMR 约束</td>
+<td>引导信号来自实验观测，非模型内在能力</td>
+<td>Introduction 节（引导方法综述）</td>
+</tr>
+<tr>
+<td>排斥偏置势可能产生非物理构象</td>
+<td>过大权重时出现远离稳定态的异常结构</td>
+<td>偏置势过强导致过度排斥，偏离能量面合理区域</td>
+<td>Results 图 S2E（局部螺旋位移）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>在 AF3 扩散模型的去噪过程中，对每个采样步骤的坐标更新添加一个额外的排斥力项。该排斥力基于当前采样结构与所有先前已采样最终结构之间的 Cα RMSD，以高斯势形式定义，使采样器在去噪过程中被推离已探索的构象区域，从而探索新的构象空间。排斥势的宽度随时间（去噪步）线性衰减，强度由参数 w 控制。</p>
+<h3>2) 核心洞察</h3>
+<p>将 AF3 的扩散去噪过程类比为 MD 模拟中的构象采样过程：扩散模型中的随机噪声注入/去除对应 MD 中的热涨落，而采样器在有效能量面（即负对数概率密度）上的演化类似于 MD 中的轨迹演化。因此，MD 中成熟的增强采样技术（如 metadynamics 的排斥偏置）可以直接迁移到扩散模型的采样过程中。关键区别在于：MD 中排斥偏置作用于物理坐标，而 AF3-ReD 中排斥偏置作用于去噪过程中的中间坐标，且不需要重训练模型。</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>跨域方法迁移</strong>：将 MD 增强采样思想迁移到生成模型采样中，说明「采样困难」是物理模拟和生成模型共有的核心问题，方法可以互相借鉴。</li>
+<li><strong>无需重训练的引导</strong>：通过修改采样过程而非模型参数来实现引导，是一种轻量级、可迁移的干预方式，适用于任何基于扩散的生成模型。</li>
+<li><strong>历史依赖的采样策略</strong>：利用已采样结果动态调整后续采样，类似于自适应采样，可推广到其他生成任务（如小分子构象生成、序列设计）。</li>
+</ul>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质氨基酸序列（+配体 SMILES/结构信息，由 AF3 处理）；可选：MSA（默认深度 16,384，可调）</li>
+<li><strong>输出</strong>：多个预测的蛋白质三维结构（默认 100 个 = 20 seeds × 5 models）</li>
+<li><strong>核心模块</strong>：
+  1. <strong>AF3 扩散模型</strong>：标准 AF3 前向/反向扩散过程，条件化于序列、MSA、配体信息
+  2. <strong>排斥偏置势模块</strong>：在去噪过程中计算当前中间结构（Cα 原子坐标）与所有已采样最终结构之间的 RMSD，施加高斯排斥力
+  3. <strong>参数控制</strong>：排斥势强度 w、宽度 σ、截止距离 r_cut、力平滑范围 n_smooth、偏置关闭时间 t_lim</li>
+<li><strong>训练</strong>：无（使用预训练 AF3 权重，不进行任何微调或重训练）</li>
+<li><strong>工具</strong>：AF3 开源代码（commit 8151373）、Kabsch 算法（结构叠加）、MDAnalysis（RMSD 分析）、Chimera/ChimeraX（可视化）</li>
+<li><strong>流程</strong>：
+  1. 输入序列 → AF3 生成 MSA 和模板特征
+  2. 对每个 seed，运行扩散去噪过程（t = 160 → 0）
+  3. 在去噪过程中，每步计算排斥力并添加到坐标更新中
+  4. 排斥力基于当前中间结构与先前已完成采样的最终结构之间的 RMSD
+  5. 最终结构保存并加入排斥势的参考结构集合
+  6. 重复直至生成所需数量的结构</li>
+<li><strong>假设</strong>：</li>
+<li>AF3 扩散模型的去噪过程可类比为 MD 中的构象搜索</li>
+<li>Cα RMSD 是区分构象态的有效集体变量</li>
+<li>排斥偏置不会破坏配体结合位点的局部几何</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AF3 扩散模型（基础）</td>
+<td>生成蛋白质三维结构</td>
+<td>提供高精度结构预测能力</td>
+<td>输入：序列、MSA、配体；输出：Cα 坐标轨迹</td>
+<td>原 AF3 论文（引用）</td>
+<td>无 AF3 则整个方法不成立</td>
+</tr>
+<tr>
+<td>排斥偏置势计算</td>
+<td>计算当前结构与已采样结构的 RMSD 并施加排斥力</td>
+<td>驱动采样器探索新构象区域</td>
+<td>输入：当前中间坐标、已采样最终坐标；输出：排斥力向量</td>
+<td>Results 图 2C,D（TF1β 闭合态被采样）</td>
+<td>移除后等同于默认 AF3，仅预测单一构象</td>
+</tr>
+<tr>
+<td>高斯势宽度时间衰减</td>
+<td>从 σ + t_max 线性衰减至 σ</td>
+<td>早期宽势促进全局探索，后期窄势允许精细调整</td>
+<td>输入：去噪时间 t；输出：势宽度参数</td>
+<td>Methods 节（公式 5）</td>
+<td>无衰减可能导致后期结构不稳定或过度排斥</td>
+</tr>
+<tr>
+<td>力平滑（n_smooth）</td>
+<td>将排斥力在相邻残基间平滑</td>
+<td>避免单原子受力过大导致局部结构畸变</td>
+<td>输入：原始排斥力；输出：平滑后力</td>
+<td>Methods 节（公式 6）；Results 图 S4（参数敏感性）</td>
+<td>移除后可能导致局部结构异常（预期）</td>
+</tr>
+<tr>
+<td>第一 seed 锚定（r_cut）</td>
+<td>仅对与第一 seed 结构接近的已采样结构施加排斥</td>
+<td>避免排斥替代构象态</td>
+<td>输入：已采样结构集合、r_cut 阈值；输出：有效排斥结构子集</td>
+<td>Methods 节（公式 8）</td>
+<td>移除后可能过度排斥，导致采样到非物理构象</td>
+</tr>
+<tr>
+<td>MSA 亚采样（对比基线）</td>
+<td>降低 MSA 深度以增加构象多样性</td>
+<td>作为对比方法，评估 AF3-ReD 的相对优势</td>
+<td>输入：MSA 深度参数；输出：结构预测</td>
+<td>Results 图 2B、图 4B、图 5G</td>
+<td>不适用（对比基线）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>公式 1（score 函数定义）</strong>：
+s(X(t); σ_d(t), C) = ∇_X log p(X(t); σ_d(t), C)</p>
+<ul>
+<li>X(t)：t 时刻的蛋白质结构坐标</li>
+<li>σ_d(t)：去噪过程中的噪声水平</li>
+<li>C：条件嵌入（序列、MSA、配体等）</li>
+<li>p：给定噪声水平下的概率密度</li>
+</ul>
+<p><strong>公式 2（有效能量面）</strong>：
+s(X(t); σ_d(t), C) = -∇_X E(X(t); σ_d(t), C)</p>
+<ul>
+<li>E：AF 有效能量（负对数概率密度），非物理能量</li>
+</ul>
+<p><strong>公式 3（RMSD 定义）</strong>：
+R(X̃(t), X̃<em>f^(s,m)) = sqrt( (1/N_eff) Σ_i ||x_i(t) - x</em>{i,f}^(s,m)||² )</p>
+<ul>
+<li>X̃(t)：当前中间结构坐标</li>
+<li>X̃_f^(s,m)：第 s 个 seed、第 m 个模型的最终结构坐标</li>
+<li>N_eff：有效原子数（pLDDT &gt; 60 的 Cα 原子）</li>
+</ul>
+<p><strong>公式 4（原子选择）</strong>：
+A = {i | pLDDT(i) &gt; 60}</p>
+<ul>
+<li>pLDDT(i)：第 i 个残基的预测局部距离差异测试分数</li>
+</ul>
+<p><strong>公式 5（排斥偏置势）</strong>：
+V(X̃(t)) = w Σ_(s,m) exp{ -R²(X̃(t), X̃_f^(s,m)) / (2[σ + (t_max - t)]²) }</p>
+<ul>
+<li>w：排斥势强度</li>
+<li>σ：高斯势宽度参数</li>
+<li>t_max：最大去噪时间（= 160）</li>
+<li>势宽度随时间线性衰减：σ + (t_max - t)</li>
+</ul>
+<p><strong>公式 6（力平滑）</strong>：
+F̃<em>i^ReD(X̃(t)) = -(1/N_i) Σ</em>{|j-i|≤n_smooth} ∇_j V(X̃(t))</p>
+<ul>
+<li>n_smooth：平滑范围（= 10）</li>
+<li>N_i：平滑窗口内原子数</li>
+</ul>
+<p><strong>公式 7（位置更新）</strong>：
+X(t+Δt) = X(t) + η{ F(X(t); σ_d(t), C) + F^ReD(X(t)) }Δt</p>
+<ul>
+<li>η：步长参数（= 1.5）</li>
+<li>F：原始 AF3 有效力（score 的负梯度）</li>
+<li>F^ReD：排斥偏置力</li>
+</ul>
+<p><strong>公式 8（排斥势参考集合）</strong>：
+S = ∪_n { (s,m) | R(X̃_f^(s,m), X̃_f^(1,n)) &lt; r_cut }</p>
+<ul>
+<li>r_cut：截止距离（= 0.5 Å）</li>
+<li>仅对与第一 seed 结构接近的已采样结构施加排斥</li>
+</ul>
+<p><strong>公式 9-10（多样性度量）</strong>：
+D = exp(S)，S = -∫ p(x,y) ln p(x,y) dx dy</p>
+<ul>
+<li>x, y：分别相对于两个参考结构的 RMSD</li>
+<li>p(x,y)：二维直方图估计的概率密度（bin 宽 0.2 Å，范围 0-50 Å）</li>
+<li>Miller-Madow 校正用于有限样本偏差修正</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/体系</strong>：
+- 马达蛋白：F1-ATPase β 亚基（TF1β，UniProt P07677），配体 ATP
+- 激酶：磷酸甘油酸激酶（PGK，UniProt P00558），配体 3PG/ADP
+- 周期蛋白依赖性激酶 2（CDK2，UniProt P24941）
+- 转运蛋白：草酸转运蛋白 OxlT（UniProt Q51330），配体草酸；硝酸盐转运蛋白 NarK（UniProt P10903），配体硝酸盐；脂质 II 翻转酶 MurJ（UniProt B7IE18）
+- E3 泛素连接酶复合物：CRBN-DDB1（UniProt Q96SW2, Q16531），配体 mezigdomide</p>
+<p><strong>规模</strong>：每个条件生成 100 个结构（20 seeds × 5 models）</p>
+<p><strong>指标</strong>：
+- 采样精度：预测结构与实验结构的 RMSD 低于阈值的比例
+- 采样多样性：基于 Shannon 熵的多样性指数（公式 9-10）
+- 配体结合姿态：与实验结构的 RMSD 一致性</p>
+<p><strong>基线</strong>：
+- 默认 AF3（MSA 深度 16,384）
+- AF3-MSA 亚采样（MSA 深度 16-512）</p>
+<p><strong>评测协议</strong>：将预测结构与实验确定的构象态（开放/闭合/occluded）进行 RMSD 比较</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TF1β ATP 结合</td>
+<td>AF3-ReD 能采样闭合态</td>
+<td>默认 AF3 vs AF3-ReD（不同 w, σ）</td>
+<td>默认 AF3 仅预测开放态；AF3-ReD 随 w 增大逐步采样到闭合态</td>
+<td>AF3-ReD 有效增强构象采样</td>
+<td>未证明能采样所有中间态</td>
+<td>Results 图 2B-D</td>
+</tr>
+<tr>
+<td>TF1β 参数敏感性</td>
+<td>排斥势参数影响采样效率</td>
+<td>不同 w、σ、r_cut、t_lim、n_smooth 组合</td>
+<td>存在最优参数区间；过大 w 导致异常结构</td>
+<td>参数需针对体系调优</td>
+<td>未提供系统调参策略</td>
+<td>Results 图 S4</td>
+</tr>
+<tr>
+<td>PGK 配体结合</td>
+<td>AF3-ReD 对激酶同样有效</td>
+<td>AF3-MSA 亚采样 vs AF3-ReD</td>
+<td>AF3-ReD 采样到闭合态且配体姿态正确</td>
+<td>方法可推广至激酶</td>
+<td>仅测试单一激酶</td>
+<td>Results 图 3</td>
+</tr>
+<tr>
+<td>CDK2 构象采样</td>
+<td>AF3-ReD 能采样非活性态</td>
+<td>AF3-MSA 亚采样 vs AF3-ReD</td>
+<td>AF3-MSA 仅预测 DFG-in；AF3-ReD 采样到 DFG-out</td>
+<td>AF3-ReD 优于 MSA 亚采样</td>
+<td>A-loop 仍保持伸展</td>
+<td>Results 图 S11</td>
+</tr>
+<tr>
+<td>OxlT 转运蛋白</td>
+<td>AF3-ReD 能采样 occluded 态</td>
+<td>默认 AF3、AF3-MSA vs AF3-ReD</td>
+<td>默认 AF3 和 MSA 亚采样均无 occluded 态；AF3-ReD 成功采样</td>
+<td>AF3-ReD 对 transporter 有效</td>
+<td>预测结构在 MD 模拟中稳定性未验证</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>NarK 转运蛋白</td>
+<td>AF3-ReD 能采样 occluded 态</td>
+<td>AF3-MSA vs AF3-ReD</td>
+<td>AF3-ReD 采样到 occluded 态，配体姿态正确</td>
+<td>跨体系可重复</td>
+<td>未测试其他 transporter</td>
+<td>Results 图 5</td>
+</tr>
+<tr>
+<td>MurJ 转运蛋白</td>
+<td>AF3-ReD 跨超家族适用</td>
+<td>默认 AF3 vs AF3-ReD</td>
+<td>AF3-ReD 采样到外向开放态和中间态</td>
+<td>方法适用于不同 transporter 超家族</td>
+<td>采样效率未定量比较</td>
+<td>Results 图 S20</td>
+</tr>
+<tr>
+<td>CRBN-DDB1 复合物</td>
+<td>AF3-ReD 对大型复合物有效</td>
+<td>默认 AF3 vs AF3-ReD</td>
+<td>AF3-ReD 部分采样到开放构象，但未达实验开放态 RMSD</td>
+<td>方法可扩展至复合物</td>
+<td>大尺度构象变化仍具挑战</td>
+<td>Results 图 6</td>
+</tr>
+<tr>
+<td>采样精度 vs 多样性</td>
+<td>AF3-ReD 同时保持精度和多样性</td>
+<td>AF3-MSA vs AF3-ReD 的精度-多样性权衡</td>
+<td>AF3-ReD 在保持高精度（&gt;0.9）的同时显著提高多样性</td>
+<td>AF3-ReD 优于 MSA 亚采样的权衡</td>
+<td>精度-多样性度量依赖 RMSD 阈值选择</td>
+<td>Results 图 5</td>
+</tr>
+<tr>
+<td>计算成本</td>
+<td>AF3-ReD 计算开销可忽略</td>
+<td>AF3 vs AF3-ReD 运行时间</td>
+<td>100 个结构生成时间：12 min 13 s (AF3) vs 12 min 24 s (AF3-ReD)</td>
+<td>排斥势计算开销极小</td>
+<td>未测试大规模并行场景</td>
+<td>Results 节（TF1β 部分）</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文方法针对的是配体诱导的构象变化采样，适用于单体蛋白和部分蛋白复合物；不适用于无配体的 apo 蛋白构象采样（虽然也可用，但未系统验证）。</li>
+<li><strong>oracle/真值输入</strong>：方法不依赖任何实验结构作为 oracle；仅使用 AF3 预训练权重和输入序列/配体信息。实验结构仅用于事后验证。</li>
+<li><strong>端到端状态</strong>：方法完全端到端，从序列直接生成构象集合，无需 MD 模拟或实验数据辅助。</li>
+<li><strong>算力成本</strong>：与默认 AF3 几乎相同（增加 &lt;1% 时间），因为排斥势计算仅涉及 RMSD 和简单梯度计算。</li>
+<li><strong>历史数据依赖</strong>：依赖 AF3 训练数据中的构象分布；对训练数据中未充分代表的构象态（如某些 transporter 的 occluded 态），AF3-ReD 仍能采样，说明其超越了简单的记忆检索。</li>
+<li><strong>模型依赖</strong>：方法依赖 AF3 扩散模型的 score 网络质量；若 score 网络本身无法区分构象态，排斥势可能无效。</li>
+<li><strong>最难情形</strong>：E3 泛素连接酶复合物的大尺度构象变化（RMSD &gt; 10 Å）仍无法完全捕获；侧链级别的构象变化（如 Trp41 翻转）因排斥势仅作用于 Cα 原子而无法增强采样。</li>
+<li><strong>边界化总结</strong>：AF3-ReD 在保持高精度的前提下，能有效增强配体诱导的构象采样，适用于马达蛋白、激酶、转运蛋白等体系；但对超大尺度构象变化和侧链级构象变化仍有局限；方法无需重训练、计算开销可忽略，可推广至其他扩散生成模型。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大尺度构象变化仍具挑战</td>
+<td>CRBN-DDB1 复合物的开放态无法完全采样（RMSD 未达 5 Å 以下）</td>
+<td>需要进一步改进方法以处理蛋白复合物的大尺度构象变化</td>
+<td>Results 图 6、Discussion 节</td>
+</tr>
+<tr>
+<td>排斥势仅作用于 Cα 原子</td>
+<td>无法增强侧链级构象变化（如 Plasmepsin-II 的 Trp41 翻转）</td>
+<td>扩展排斥势到侧链原子或使用更丰富的集体变量</td>
+<td>Discussion 节、Results 图 S24</td>
+</tr>
+<tr>
+<td>参数需针对体系调优</td>
+<td>最优 w、σ 等参数因蛋白体系而异</td>
+<td>未提供系统调参策略；未来可探索自适应参数方案</td>
+<td>Results 图 S4、Discussion 节</td>
+</tr>
+<tr>
+<td>对训练数据外构象的泛化未充分验证</td>
+<td>仅测试了有限数量的蛋白体系</td>
+<td>需要在更多样化的蛋白家族上验证</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>与 MD 模拟的结合未深入探索</td>
+<td>预测的中间态构象未通过 MD 模拟验证其动态可行性</td>
+<td>未来可与 MD 模拟结合，验证预测构象的动态真实性</td>
+<td>Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>排斥势基于 RMSD 可能过度简化构象空间</td>
+<td>RMSD 作为集体变量可能无法区分功能相关的构象变化（如 domain 旋转 vs 局部重排）</td>
+<td>若 RMSD 不能捕捉关键构象自由度，排斥势可能驱动采样到非功能相关区域</td>
+<td>使用其他集体变量（如 distance matrix、torsion angles）对比采样效率</td>
+<td>Methods 节（公式 3-5）</td>
+</tr>
+<tr>
+<td>参数选择缺乏理论指导</td>
+<td>w、σ、r_cut 等参数通过经验调优，可能过度拟合测试体系</td>
+<td>参数敏感性高可能限制方法的普适性</td>
+<td>在更多体系上系统扫描参数空间，评估参数-性能关系</td>
+<td>Results 图 S4</td>
+</tr>
+<tr>
+<td>与 MSA 亚采样的比较不够系统</td>
+<td>未在同一条件下公平比较两种方法的计算成本、采样效率和精度</td>
+<td>用户需要明确的方法选择指南</td>
+<td>设计统一的基准测试，比较两种方法在多个体系上的性能</td>
+<td>Results 图 2-5</td>
+</tr>
+<tr>
+<td>对「记忆」效应的排除不够充分</td>
+<td>虽然 OxlT/NarK 的 occluded 态在训练截止后发布，但 AF3 可能通过同源蛋白间接学习到类似构象</td>
+<td>若采样结果来自记忆而非真正的泛化，方法的创新性会降低</td>
+<td>使用训练截止后发布的更多新构象体系进行测试</td>
+<td>Results 表 S1</td>
+</tr>
+<tr>
+<td>排斥势的物理合理性未充分讨论</td>
+<td>排斥势可能驱动采样器越过能量壁垒，但无法保证采到的构象在物理上可达</td>
+<td>预测的构象若在物理上不可达，则对 MD 模拟的启发性有限</td>
+<td>对 AF3-ReD 预测的中间态构象进行 MD 模拟验证其稳定性</td>
+<td>Discussion 节（提及但未验证）</td>
+</tr>
+<tr>
+<td>多样性度量可能掩盖构象质量差异</td>
+<td>Shannon 熵只衡量分布广度，不区分功能相关和不相关的构象</td>
+<td>高多样性可能来自非功能相关的构象变异</td>
+<td>结合功能相关指标（如配体结合位点 RMSD、催化残基构象）评估采样质量</td>
+<td>Methods 节（公式 9-10）</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li>
+<p><strong>跨域方法迁移的范式</strong>：将 MD 模拟中成熟的增强采样技术（metadynamics）迁移到扩散生成模型的采样过程，这一思路可推广到其他生成模型（如小分子构象生成、RNA 结构预测、蛋白质设计）。核心是识别「采样困难」这一跨域共性问题。</p>
+</li>
+<li>
+<p><strong>无需重训练的引导策略</strong>：通过修改采样过程而非模型参数来实现引导，是一种轻量级干预方式。对于计算资源有限的研究场景，这种「推理时引导」比「训练时引导」更实用。</p>
+</li>
+<li>
+<p><strong>历史依赖的排斥势设计</strong>：利用已采样结果动态调整后续采样，类似于自适应采样。关键设计选择包括：(a) 排斥势的集体变量选择（本文用 RMSD）；(b) 势宽度的时间衰减策略（早期宽、后期窄）；(c) 参考结构集合的筛选（r_cut 限制）。这些设计选择可迁移到其他采样任务。</p>
+</li>
+<li>
+<p><strong>Cα 级粗粒化偏置的局限性</strong>：仅对 Cα 原子施加偏置无法处理侧链级构象变化。对于需要侧链精度的任务（如药物结合姿态预测），需要设计更细粒度的偏置策略。</p>
+</li>
+<li>
+<p><strong>精度-多样性权衡的量化方法</strong>：本文用「精度（距实验结构 RMSD &lt; 阈值的比例）+ 多样性（Shannon 熵）」两个指标联合评估采样质量，这一评估框架可迁移到其他构象采样方法比较中。</p>
+</li>
+<li>
+<p><strong>与 MD 模拟的互补性</strong>：AF3-ReD 生成的中间态构象可作为 MD 模拟的起始点，用于稀有事件采样（如 Markov state modeling、transition path sampling）。这种「生成模型 + MD」的双向整合是未来构象动态研究的重要方向。</p>
+</li>
+<li>
+<p><strong>MSA 亚采样的局限性</strong>：MSA 亚采样通过减少共进化信号来增加构象多样性，但会导致结构退化和精度下降。AF3-ReD 通过直接修改采样过程避免了这一问题，说明「采样过程干预」优于「输入信息干预」。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>
+<p><strong>AlphaFold3 扩散模型</strong>：本文基于 AF3 开源代码实现，与 Abramson et al. (2024, Nature) 的 AF3 原始方法直接相关。AF3 的扩散模型基于 score-based generative model (Song et al., 2021, ICLR)，本文的排斥偏置势是对该框架的推理时扩展。</p>
+</li>
+<li>
+<p><strong>Metadynamics</strong>：本文方法直接借鉴 Laio &amp; Parrinello (2002, PNAS) 的 metadynamics 思想，将历史依赖的排斥偏置势从 MD 模拟迁移到扩散模型。后续工作如 Valsson et al. (2016, Phys Rev Lett) 的 on-the-fly probability enhanced sampling (OPES) 也可能提供改进思路。</p>
+</li>
+<li>
+<p><strong>MSA 亚采样</strong>：本文与 Wallner et al. 和 Del Alamo et al. 在 AF2 上的 MSA 亚采样工作直接相关，本文将其扩展至 AF3 并作为对比基线。</p>
+</li>
+<li>
+<p><strong>引导扩散模型</strong>：本文属于「推理时引导扩散」这一新兴方向，与以下工作相关：</p>
+</li>
+<li>实验引导：cryo-EM 密度图引导（Terwilliger et al.）、NMR 约束引导</li>
+<li>物理引导：物理势能引导扩散（如 RFdiffusion 中的分子内相互作用）</li>
+<li>
+<p>本文的独特贡献在于「历史依赖」的引导，而非外部信息引导</p>
+</li>
+<li>
+<p><strong>BioEmu 与 MetaDiff</strong>：本文 Discussion 中提及 BioEmu (2024) 和 MetaDiff (Xie et al.) 作为独立并行工作。BioEmu 通过学习 MD 模拟和实验稳定性数据生成构象集成，MetaDiff 实现了 metadynamics 类排斥势。本文的独特优势在于支持配体结合场景。</p>
+</li>
+<li>
+<p><strong>构象采样评估框架</strong>：本文的精度-多样性评估框架与 MD 模拟中的构象采样评估（如 RMSD 分布、自由能面重建）相关，可参考 Tiwary &amp; Parrinello (2015, Phys Rev Lett) 的 spectral gap 方法进行更严格的采样收敛性评估。</p>
+</li>
+<li>
+<p><strong>候选方向（未验证）</strong>：本文方法可扩展到其他扩散生成模型，如 RFdiffusion（蛋白质设计）、Chroma、FrameDiff 等。排斥势的集体变量可从 RMSD 扩展到更丰富的结构描述符（如 distance matrix、contact map、torsion angles）。</p>
+</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<h3>候选 1：多集体变量排斥势增强采样</h3>
+<ul>
+<li><strong>名称</strong>：Multi-CV Repulsive Bias for Diffusion-based Conformational Sampling</li>
+<li><strong>来源局限/观察</strong>：本文仅使用 Cα RMSD 作为集体变量，无法区分 domain 旋转、局部重排等不同模式的构象变化；对侧链级变化完全无效</li>
+<li><strong>核心假设</strong>：使用多个互补的集体变量（如 RMSD + distance matrix + torsion angles）定义排斥势，可以更全面地覆盖构象空间，同时避免单一 CV 的盲区</li>
+<li><strong>初步方法</strong>：在 AF3-ReD 框架中，将排斥势定义为多个 CV 的加权组合；每个 CV 使用独立的宽度和强度参数；通过自适应权重调整平衡不同 CV 的贡献</li>
+<li><strong>验证方式</strong>：在本文的测试体系（TF1β, PGK, OxlT, NarK）上对比单 CV 与多 CV 的采样精度和多样性；额外测试侧链级构象变化体系（如 Plasmepsin-II）</li>
+<li><strong>可能的失败模式</strong>：多 CV 可能导致排斥势过于复杂，参数调优困难；不同 CV 之间的冲突可能降低采样效率</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：自适应排斥势强度调节</h3>
+<ul>
+<li><strong>名称</strong>：Adaptive Repulsive Bias with On-the-fly Parameter Tuning</li>
+<li><strong>来源局限/观察</strong>：本文参数（w, σ, r_cut）需针对每个体系手动调优，缺乏自适应机制；过大 w 导致非物理构象</li>
+<li><strong>核心假设</strong>：根据采样过程中的实时反馈（如构象多样性变化率、能量面探索进度）自动调节排斥势强度，可以在保持精度的同时最大化采样效率</li>
+<li><strong>初步方法</strong>：借鉴 OPES 的自适应偏置思想，在扩散采样过程中动态调整 w 和 σ；使用构象多样性指标作为反馈信号；引入「冷却」机制避免过度排斥</li>
+<li><strong>验证方式</strong>：在多个体系上对比固定参数与自适应参数的采样效率；评估自适应策略对参数初始值的鲁棒性</li>
+<li><strong>可能的失败模式</strong>：自适应策略可能引入额外计算开销；反馈信号的选择可能影响稳定性</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：AF3-ReD 与 MD 模拟的集成工作流</h3>
+<ul>
+<li><strong>名称</strong>：Integrated AF3-ReD-MD Workflow for Conformational Dynamics</li>
+<li><strong>来源局限/观察</strong>：本文仅生成静态构象集合，未验证这些构象在物理上的可达性和动态可行性；Discussion 中提及与 MD 结合的可能性但未实现</li>
+<li><strong>核心假设</strong>：AF3-ReD 生成的构象集合可作为 MD 模拟的高质量起始点，显著加速稀有事件采样和自由能计算</li>
+<li><strong>初步方法</strong>：1) 用 AF3-ReD 生成构象集合；2) 对代表性构象进行 MD 模拟验证稳定性；3) 用 Markov state modeling 构建构象状态网络；4) 用 transition path theory 分析构象转变路径</li>
+<li><strong>验证方式</strong>：在 OxlT/NarK 上比较 AF3-ReD-MD 工作流与纯 MD 模拟的采样效率和自由能面重建精度</li>
+<li><strong>可能的失败模式</strong>：AF3-ReD 生成的构象可能在 MD 模拟中不稳定，需要额外的平衡步骤；MD 模拟的计算成本可能抵消 AF3-ReD 的效率优势</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：排斥势扩展到蛋白质设计模型</h3>
+<ul>
+<li><strong>名称</strong>：Repulsive Bias for Diverse Protein Design with RFdiffusion</li>
+<li><strong>来源局限/观察</strong>：本文方法仅用于结构预测，但 Discussion 中提出可扩展到蛋白质设计模型（如 RFdiffusion）。设计任务同样面临采样多样性不足的问题</li>
+<li><strong>核心假设</strong>：将排斥势引入 RFdiffusion 的采样过程，可以生成更多样化的蛋白质设计候选，扩大设计空间</li>
+<li><strong>初步方法</strong>：在 RFdiffusion 的去噪过程中添加基于已生成设计结构的排斥势；使用序列多样性或结构多样性作为评估指标</li>
+<li><strong>验证方式</strong>：在蛋白质骨架设计任务上对比默认 RFdiffusion 与排斥势增强版本的多样性、可表达性和功能活性</li>
+<li><strong>可能的失败模式</strong>：设计任务对结构精度要求高，排斥势可能干扰精细结构；多样性增加可能伴随设计成功率下降</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 5：基于能量面的排斥势设计</h3>
+<ul>
+<li><strong>名称</strong>：Energy-landscape-informed Repulsive Bias for Diffusion Sampling</li>
+<li><strong>来源局限/观察</strong>：本文排斥势仅基于几何距离（RMSD），未利用 AF3 score 网络隐含的能量面信息；可能无法有效区分能量面上不同的 metastable 态</li>
+<li><strong>核心假设</strong>：将排斥势定义在 AF3 score 网络隐含的能量面上（而非几何空间），可以更有效地驱动采样器跨越能量壁垒</li>
+<li><strong>初步方法</strong>：利用 score 网络的梯度信息估计局部能量面曲率；在能量面上定义排斥势；结合几何排斥势形成混合偏置</li>
+<li><strong>验证方式</strong>：在多个体系上对比几何排斥势与能量面排斥势的采样效率；分析采样构象在能量面上的分布</li>
+<li><strong>可能的失败模式</strong>：score 网络的能量面解释可能不准确；能量面估计的计算开销可能较大</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, discussion, methods) with figure legends referenced but figures not provided; supplementary material referenced but not provided.</li>
+<li><strong>Assessment boundary</strong> Technical soundness of the AF3-ReD method, validity of claims regarding enhanced conformational sampling, comparison against MSA subsampling baseline, and generalizability across protein classes.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce AF3-ReD, a repulsive biasing potential applied during the diffusion denoising process of AlphaFold3, inspired by metadynamics, to enhance sampling of alternative protein conformations. They claim successful sampling of ligand-bound conformations for motor, kinase, and transporter proteins that default AF3 fails to capture, with improved precision and diversity relative to MSA subsampling.</li>
+<li><strong>Visible evidence base</strong> Full text of methods, results narrative, and discussion; figure and table legends; no actual figures, tables, or supplementary data provided.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures (main and supplementary), all tables (including Tables S1–S5), supplementary methods, MD simulation details, and the actual numerical data supporting precision/diversity calculations. Without these, quantitative claims cannot be independently verified.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The manuscript presents a conceptually interesting and timely approach to a recognized limitation of AlphaFold3, namely its tendency to predict a single dominant conformational state. The idea of borrowing enhanced sampling concepts from MD simulations and applying them to diffusion-based generative models is well motivated and the implementation appears technically plausible. However, the evidence presented in the text alone is insufficient to fully evaluate the strength of the claims. The authors report successes across multiple protein classes, but the absence of figures, quantitative data, and supplementary information limits verification of the central claims. The comparison with MSA subsampling is a useful baseline, but the reported advantages of AF3-ReD require closer scrutiny, particularly regarding the parameter sensitivity and the biological relevance of the sampled states.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians working on protein structure prediction and conformational sampling would find this work directly relevant. Researchers developing diffusion-based generative models for biomolecular applications, including protein design, would also be interested in the methodological contribution. Additionally, structural biologists studying conformational transitions in motor proteins, kinases, and transporters, particularly those interested in ligand-induced conformational changes, would benefit from a tool that can sample alternative states. The work also speaks to the broader community interested in integrating AI-based structure prediction with enhanced sampling methodologies.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> The manuscript addresses a well-recognized limitation of AlphaFold3 with a conceptually elegant solution that requires no retraining. The metadynamics-inspired approach is well justified and the implementation details are clearly described. The authors provide a thoughtful comparison with MSA subsampling, which is a relevant and commonly used baseline. The selection of diverse protein targets, including cases where conformational states were unresolved at the training cutoff, strengthens the generalizability claims. The discussion of limitations, particularly the failure on the E3 ubiquitin ligase complex and the side-chain sampling limitation, is honest and adds credibility.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors claim that AF3-ReD "successfully samples multiple conformational states in the AF3 distribution, including ligand-bound conformations of motor, kinase, and transporter proteins, which are rarely captured by the default AF3 settings."</li>
+<li><strong>Evidence pointer</strong> Figures 1–5, Tables S1–S5, Figures S1–S24; location not provided for specific data points</li>
+<li><strong>Concern</strong> The central claim of successful conformational sampling across multiple protein classes is presented without the actual figures and quantitative data needed for verification. The text describes distributions, RMSD values, and precision/diversity metrics, but the numerical values and visual representations are not available in the provided material. For example, the claim that AF3-ReD predicts closed conformations of TF1β with RMSDs near 2 Å to the experimental structure is stated but not substantiated with the actual distribution plots or RMSD values.</li>
+<li><strong>Why it matters</strong> The core contribution of this work is the demonstration that AF3-ReD enhances conformational sampling. Without access to the figures showing the conformational distributions, the RMSD plots, and the precision/diversity comparisons, the validity of this central claim cannot be assessed. The reader cannot determine whether the sampled conformations are truly distinct from the default AF3 predictions or whether the reported successes are robust across the parameter space.</li>
+<li>
+<p><strong>Resolution test</strong> Provide all main and supplementary figures with clear axis labels, legends, and statistical annotations. Include the numerical data for precision and diversity metrics with error bars from independent sampling runs. Show representative structures with ligand-binding site overlays for each protein class.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors state that "the repulsive force acting on the i-th Cα atom is smoothed over the adjacent n_smooth Cα atoms on each side" and that this smoothing is necessary because "the denoising process lacks constraints between adjacent atoms, such as covalent bonds."</li>
+<li><strong>Evidence pointer</strong> Methods section, "Repulsive Biasing Potential in AlphaFold3 Diffusion Model (AF3-ReD)"; location not provided</li>
+<li><strong>Concern</strong> The force smoothing approach is described but its necessity and effectiveness are not rigorously demonstrated. The authors state that raw repulsive forces are not effective at facilitating concerted motions, but no comparative data are shown between smoothed and unsmoothed forces. Furthermore, the choice of n_smooth = 10 is justified only by a statement that parameter dependence of a transporter protein was factored into the selection, without presenting the actual sensitivity analysis. The mechanism by which smoothing over 10 residues on each side preserves local structural integrity while enabling global conformational changes is not explained.</li>
+<li><strong>Why it matters</strong> The force smoothing is a critical component of the method. If the smoothing is not properly validated, the method's success could be attributed to an arbitrary parameter choice rather than a principled design. The claim that AF3-ReD maintains high precision while increasing diversity depends on this smoothing being effective across different protein sizes and topologies. Without comparative data, the technical soundness of the core methodological innovation is not fully established.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a systematic comparison of AF3-ReD performance with and without force smoothing, and with varying n_smooth values, for at least two protein targets. Show that the chosen n_smooth = 10 is optimal or near-optimal across targets, and explain the structural rationale for the smoothing length.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Comparison adequacy</li>
+<li><strong>Claim pointer</strong> The authors claim that "AF3-ReD provides a promising approach to predicting dynamic conformational changes of proteins associated with ligand binding" and that it outperforms MSA subsampling in terms of precision and diversity.</li>
+<li><strong>Evidence pointer</strong> Figures 5A–H, Figures S21; location not provided</li>
+<li><strong>Concern</strong> The comparison between AF3-ReD and MSA subsampling is presented as a key result, but the comparison framework has potential limitations. The precision metric uses a threshold of 50% of the RMSD between the two stable endpoint states, which may be overly generous or restrictive depending on the protein. The diversity metric based on Shannon entropy of a 2D RMSD histogram is reasonable but the choice of reference structures and the bin width (0.2 Å) could influence the results. More importantly, the comparison does not appear to account for the computational cost of the two methods in the precision/diversity trade-off, even though the authors note that AF3-ReD has negligible computational overhead.</li>
+<li><strong>Why it matters</strong> The claim that AF3-ReD is superior to MSA subsampling is a key selling point of the manuscript. If the comparison metrics are not robust or if the comparison does not fairly represent the trade-offs, the conclusion may be overstated. The authors do note that MSA subsampling can produce structurally degraded predictions at low MSA depths, which is a valid point, but the quantitative comparison should be carefully scrutinized.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the full precision-diversity curves for both methods across the entire parameter range tested, with confidence intervals. Discuss the sensitivity of the conclusions to the choice of threshold and bin width. Consider reporting the computational cost explicitly in the comparison.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> The authors state that "AF3-ReD provides a promising approach to predicting dynamic conformational changes of proteins associated with ligand binding, which could be further extended to other diffusion-based generative models."</li>
+<li><strong>Evidence pointer</strong> Results sections on motor, kinase, and transporter proteins; Discussion; location not provided</li>
+<li><strong>Concern</strong> The generalizability claim is supported by results on five protein targets across three classes, but the selection is limited. The E3 ubiquitin ligase complex, which represents a larger multisubunit system, was not successfully sampled, and the authors acknowledge this limitation. The manuscript does not discuss what characteristics of a protein system make AF3-ReD likely to succeed or fail. The extension to other diffusion models is speculative and not supported by any preliminary data.</li>
+<li><strong>Why it matters</strong> The broader impact of this work depends on its generalizability. If AF3-ReD only works for relatively small, single-domain proteins with well-defined open-closed transitions, its utility is more limited than the claims suggest. Understanding the failure modes and the system requirements would help the community apply the method appropriately.</li>
+<li>
+<p><strong>Resolution test</strong> Discuss the structural and dynamical features that correlate with AF3-ReD success or failure across the tested targets. If possible, include at least one additional target that represents a different type of conformational change or a larger complex to test the boundaries of the method.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Equation 5 and associated text</li>
+<li><strong>Evidence pointer</strong> Results section, "Repulsive Biasing Potential in AlphaFold3 Diffusion Model (AF3-ReD)"; location not provided</li>
+<li><strong>Issue</strong> The description of the Gaussian repulsive potential width decreasing linearly over the denoising process is clear, but the relationship between the time variable t and the noise level σ_d(t) is not explicitly defined. The authors mention that the denoising process runs from t = 0 to t_max = 160, but the mapping between t and the noise schedule used in AlphaFold3 is not described.</li>
+<li>
+<p><strong>Required correction</strong> Clarify the relationship between the denoising time t and the noise level σ_d(t) in the AlphaFold3 diffusion process, and specify how the Gaussian width parameter interpolates between its initial and final values.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods section, "Structure Prediction of Proteins"</li>
+<li><strong>Evidence pointer</strong> Methods section; location not provided</li>
+<li><strong>Issue</strong> The authors state that "no templates were used in any of the structure predictions" but do not specify whether the AlphaFold3 pipeline was run with its default settings for all other parameters, such as the number of diffusion steps, the random seed initialization, or the MSA depth for the default condition.</li>
+<li>
+<p><strong>Required correction</strong> Provide the complete list of AlphaFold3 parameters used for the default condition, including the number of diffusion steps, the random seed range, and any other relevant settings, to ensure reproducibility.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Sampling precision and diversity calculations</li>
+<li><strong>Evidence pointer</strong> Methods section, "Sampling Precision and Diversity"; location not provided</li>
+<li><strong>Issue</strong> The authors report that four independent samplings were used to estimate the average and standard error of precision and diversity for some targets, but it is unclear whether this was done for all targets and all conditions. The number of independent runs for the default AF3 and MSA subsampling conditions is not explicitly stated.</li>
+<li>
+<p><strong>Required correction</strong> Clearly state the number of independent sampling runs for each condition and target, and report the standard errors for all precision and diversity values, not just for selected cases.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Discussion of the E3 ubiquitin ligase complex results</li>
+<li><strong>Evidence pointer</strong> Results section, "Application of AF3-ReD to the E3 Ubiquitin Ligase Complex"; location not provided</li>
+<li><strong>Issue</strong> The authors state that AF3-ReD "extended the conformational distribution toward the open state" but did not achieve RMSD below 5 Å from the experimental open structure. The discussion of why the method failed to capture the full conformational change is brief and does not explore potential reasons, such as the size of the complex, the nature of the conformational change, or the choice of RMSD as the collective variable.</li>
+<li>
+<p><strong>Required correction</strong> Expand the discussion of the E3 ubiquitin ligase complex failure to include a more detailed analysis of the structural features that may have limited the sampling, and discuss whether alternative collective variables or parameter settings could potentially overcome this limitation.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Literature context</li>
+<li><strong>Affected element</strong> Introduction and Discussion</li>
+<li><strong>Evidence pointer</strong> Introduction, Discussion; location not provided</li>
+<li><strong>Issue</strong> The manuscript mentions several independent works exploring similar directions but does not provide a detailed comparison of AF3-ReD with these approaches. The Discussion mentions Richman et al., Hori et al., and Xie et al. but does not clearly articulate the methodological differences and potential advantages of AF3-ReD over these methods.</li>
+<li><strong>Required correction</strong> Provide a more detailed comparison with the related works, highlighting the specific methodological innovations of AF3-ReD and the situations in which it would be preferred over alternative approaches.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that AF3-ReD "successfully samples multiple conformational states" across protein classes cannot be fully verified without the figures and quantitative data.</li>
+<li>The claim that AF3-ReD achieves "high precision values of over 0.9" for all tested proteins is stated but not substantiated with the actual values.</li>
+<li>The claim that AF3-ReD's computational cost is "almost unchanged" relative to default AF3 is plausible but not quantified.</li>
+<li>The claim that AF3-ReD "could be further extended to other diffusion-based generative models" is speculative and not supported by any experimental evidence.</li>
+<li>The statement that the parameter set refined for TF1β "also worked well for OxT" is made without showing the actual results for the parameter sensitivity analysis on the transporter.</li>
+<li>The claim that AF3-ReD predicted conformations "along the transition pathway between the occluded and inward-open states" for OxT is not supported by the provided text alone, as the relevant figure is not available.</li>
+<li>The biological relevance of the "highly open" states predicted for PGK, which the authors suggest may correspond to SAXS-observed states, is presented as a possibility but not rigorously established.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

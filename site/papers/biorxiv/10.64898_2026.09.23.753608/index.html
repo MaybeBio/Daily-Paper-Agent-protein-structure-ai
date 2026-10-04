@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AtomWeaver: Multi-Component Flow Matching with a Structured Geometric Prior Facilitates Non-Canonical Peptide Design · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>AtomWeaver: Multi-Component Flow Matching with a Structured Geometric Prior Facilitates Non-Canonical Peptide Design</h1>
+      <div class="meta">Kitaygorodsky A; Hostallero DE; Broom A; Layne E; Hwang S; Kanawaty AK; Babej T; Butterfoss GL; Fingerhuth M</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-28
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.23.753608">原文</a>
+      </div>
+      <p class="one-liner">该文提出AtomWeaver，利用多组件流匹配和结构化几何先验，在固定骨架条件下生成非规范氨基酸肽序列，实现可扩展的推理时残基词汇选择，属于蛋白质序列设计领域的创新方法。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Fixed-backbone sequence discovery, or inverse folding , is a critical recurring task in the development of new polypeptide therapeutics. Once promising backbones are established for a target pocket, computational inverse folding methods greatly help accelerate generation of candidate sequences. Such methods are mature for the traditional case of limiting to the fixed twenty-letter canonical vocabulary; however, they cannot access the broader space of non-canonical amino acids (NCAAs). This design constraint is exacerbated for peptide binders, a fast-growing modality that readily incorporates NCAAs, though in practice non-canonical design frequently depends on laborious medicinal-chemistry campaigns. An extension of inverse folding to NCAAs is thus critical to accelerating design of novel therapeutic peptides. AtomWeaver uses a joint all-site, atom-level generative scheme that does not restrict side-chain categorical assignment by either predetermined or co-resolving residue identity. Conditioned only on a fixed peptide backbone and its target protein, its multi-component flow guides side-chain atoms as unlabeled points in R 3 from a nested shell prior to a variable-count final atom cloud. Identity is then read by matching each predicted cloud against a reference library of canonical and non-canonical templates. Since identity is decided only at decode time, the addressable vocabulary is a property of the library rather than of the trained weights: a new NCAA costs one reference structure and no retraining, and the model can select residues it was never prompted for and never saw in training. On a deep mutational scan of two peptide–target systems, AtomWeaver’s canonical readout shows high observed mean agreement with experimental values among the compared inverse-folding methods. In the mixed canonical–noncanonical setting that canonical-only baselines cannot support at all, it likewise retains ranking signal across both systems. AtomWeaver also displayed self-consistent designs on de novo binder backbones, with the highest interface confidence among compared methods. Notably, it reached these metrics while achieving broad empirical coverage of our 300-residue vocabulary, including four non-canonical types never visible in training. AtomWeaver thus serves canonical and non-canonical peptide design alike, while transforming residue vocabulary to an expandable inference-time choice.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">固定骨架序列发现，或称逆折叠，是新型多肽治疗药物开发中的一个关键重复性任务。一旦为目标口袋确定了有前景的骨架，计算逆折叠方法便大大加速候选序列的生成。这些方法在传统上仅限于固定二十字母标准氨基酸词汇的情况下已相当成熟；然而，它们无法触及更广泛的非标准氨基酸（NCAAs）空间。这一设计限制对肽结合剂尤为突出，这是一种快速增长的模式，易于整合NCAAs，尽管在实践中非标准设计常依赖于繁琐的药物化学活动。因此，将逆折叠扩展到NCAAs对于加速新型治疗性肽的设计至关重要。AtomWeaver采用联合全位点、原子级生成方案，不通过预定或共解析残基身份限制侧链类别分配。仅以固定肽骨架及其靶蛋白为条件，其多组件流引导侧链原子作为R³中的未标记点，从嵌套壳先验到可变计数的最终原子云。随后，通过将每个预测云与标准和非标准模板的参考库匹配来读取身份。由于身份仅在解码时决定，可寻址词汇是库的属性而非训练权重的属性：一种新的NCAA只需一个参考结构且无需重新训练，模型能选择从未被提示过且训练中未见过的残基。在对两个肽-靶系统的深度突变扫描中，AtomWeaver的标准读取在比较的逆折叠方法中显示出与实验值的高观测平均一致性。在仅标准基线完全无法支持的混合标准-非标准设置中，它同样在两个系统中保留了排序信号。AtomWeaver还在从头设计的结合子骨架上展示了自洽设计，其界面置信度在比较方法中最高。值得注意的是，它在达到这些指标的同时，实现了对我们300残基词汇的广泛经验覆盖，包括四种训练中从未出现的非标准类型。因此，AtomWeaver同时服务于标准和非标准肽设计，同时将残基词汇转变为可扩展的推理时选择。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：AtomWeaver: Multi-Component Flow Matching with a Structured Geometric Prior Facilitates Non-Canonical Peptide Design</li>
+<li><strong>作者</strong>：Kitaygorodsky A; Hostallero DE; Broom A; Layne E; Hwang S; Kanawaty AK; Babej T; Butterfoss GL; Fingerhuth M</li>
+<li><strong>单位</strong>：ProteinQure Inc.（所有作者均受雇于或曾受雇于 ProteinQure Inc.）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 基准评测）</li>
+<li><strong>领域</strong>：蛋白质 inverse folding × 非天然氨基酸（NCAA）设计 × flow matching</li>
+<li><strong>关键词</strong>：inverse folding, non-canonical amino acids (NCAAs), flow matching, geometric prior, peptide design, atom-level generation</li>
+<li><strong>DOI/arXiv</strong>：10.64898/2026.09.23.753608</li>
+<li><strong>代码</strong>：https://github.com/ProteinQure/atomweaver（含模型权重、推理代码、300残基参考库）；PeptideArena 基准：https://github.com/ProteinQure/peptidearena</li>
+<li><strong>数据</strong>：未提供独立数据集下载链接（训练数据来自 PDB，具体处理见补充材料）</li>
+<li><strong>阅读日期</strong>：2026-10-05</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的 inverse folding 子方向，核心创新在于将残基身份（identity）从生成过程中解耦——先以 flow matching 生成原子坐标云，再在解码时通过几何匹配赋予残基身份。这使得 NCAA 的扩展不需要重训生成模型，仅需在参考库中增加一个结构模板。与 ProteinMPNN、PeptideMPNN、FAMPNN 等身份先验方法形成对比，与 NCFlow、UNAAGI 等原子级方法同属一个技术谱系。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>AtomWeaver 将多肽 inverse folding 重构为坐标优先问题：以 flow matching 从嵌套壳先验（nested shell prior）生成侧链原子云（含坐标、元素、占据状态），再在解码时通过几何匹配从 300 残基参考库（20 规范 + 280 NCAA）中赋予残基身份，从而在不重训生成模型的前提下实现 NCAA 的开放词汇设计。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：固定骨架的 inverse folding 能否从 20 个规范氨基酸扩展到包含 NCAA 的开放词汇空间，且不需要为每个新残基重训生成模型？</li>
+<li><strong>为什么重要</strong>：多肽治疗药物中 NCAA 可赋予蛋白酶抗性、膜通透性、药代动力学调节等性质，但现有 inverse folding 方法（ProteinMPNN、PeptideMPNN、FAMPNN 等）的输出空间被锁定在 20 个规范氨基酸上。NCAA 的引入目前依赖劳动密集的 medicinal chemistry 迭代，缺乏计算方法的系统支持。</li>
+<li><strong>现有方法不足</strong>：</li>
+<li>基于分类的方法（ProteinMPNN 等）输出固定 20 类分布，无法表达 NCAA；</li>
+<li>潜在空间共生成方法（La-Proteina、PepGLAD、AnewOmni）虽可扩展，但 NCAA 可达性受限于训练时嵌入的覆盖范围；</li>
+<li>NCFlow 需要用户预先枚举候选残基，不构成联合的位点分布；</li>
+<li>UNAAGI 每次只采样一个局部侧链，不做全肽联合设计。</li>
+<li><strong>精确研究问题（Can ... ?）</strong>：Can an atom-level generative model, conditioned only on backbone and target, produce side-chain atom clouds from which residue identity (including NCAA) can be read at decode time, without any identity information entering the trained generative state?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架 + 外部核验（标注如下）。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分类式 inverse folding</td>
+<td>ProteinMPNN (Dauparas et al. 2022)、LigandMPNN、PeptideMPNN、FAMPNN</td>
+<td>高 WT recovery、训练稳定、推理快</td>
+<td>输出空间锁定 20 类；FAMPNN 虽产坐标但身份仍为分类</td>
+<td>本文明确对比对象</td>
+</tr>
+<tr>
+<td>潜在空间共生成</td>
+<td>La-Proteina (Cα flow + VAE embedding)、PepGLAD（多模态扩散）、AnewOmni（block-level latent + NCAA 化学图 prompt）</td>
+<td>可扩展词汇、联合建模</td>
+<td>NCAA 可达性受嵌入训练覆盖限制；AnewOmni 需用户提供化学图 prompt</td>
+<td>本文的「身份不进入生成状态」与之形成关键差异</td>
+</tr>
+<tr>
+<td>原子级局部替换</td>
+<td>NCFlow（固定位点打分）、UNAAGI（单侧链替换）</td>
+<td>原子级精度、支持 NCAA</td>
+<td>非全肽联合设计；NCFlow 需用户枚举候选</td>
+<td>本文做全肽联合设计，且身份在解码时决定</td>
+</tr>
+<tr>
+<td>坐标优先 + 解码时身份（本文）</td>
+<td><strong>AtomWeaver</strong></td>
+<td>词汇可扩展（+1 NCAA = +1 参考结构，无重训）；身份与几何解耦；支持 D-氨基酸、β-氨基酸</td>
+<td>原子几何精度受限于 flow 质量；身份读取依赖参考库质量</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在「身份先验 vs 坐标优先」的谱系中，AtomWeaver 位于坐标优先一端——生成过程完全不接触残基身份，身份是解码时的自由选择。这使得词汇表成为推理时的属性而非训练时的属性。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>固定 20 类词汇限制</td>
+<td>现有 inverse folding 无法提出 NCAA</td>
+<td>输出层为 20 类分类分布，训练目标为 WT recovery</td>
+<td>Introduction 第 1 段；Table 2 对比</td>
+</tr>
+<tr>
+<td>NCAA 扩展需重训</td>
+<td>新残基需要重新训练模型</td>
+<td>身份作为分类 token 或潜在嵌入的一部分被学习</td>
+<td>Introduction 第 2 段（RareFold 每残基一个 token）</td>
+</tr>
+<tr>
+<td>潜在空间 NCAA 可达性差</td>
+<td>嵌入未覆盖的 NCAA 无法生成</td>
+<td>潜在嵌入在训练时被规范数据主导</td>
+<td>Introduction 第 2 段（La-Proteina、PepGLAD、AnewOmni 的讨论）</td>
+</tr>
+<tr>
+<td>非全肽联合设计</td>
+<td>NCFlow、UNAAGI 只做局部替换或打分</td>
+<td>方法设计上不产生全序列联合分布</td>
+<td>Introduction 第 2 段（NCFlow、UNAAGI 描述）</td>
+</tr>
+<tr>
+<td>原子几何误差累积</td>
+<td>侧链原子离 Cα 越远误差越大</td>
+<td>训练数据偏向近端原子；flow 在远端自由度上约束弱</td>
+<td>Results 4.1 图 2B（角度偏差随键序增加）</td>
+</tr>
+<tr>
+<td>非规范残基数据稀疏</td>
+<td>NCAA 在 PDB 中稀少，训练信号弱</td>
+<td>PDB 以 WT 蛋白为主</td>
+<td>Results 4.3（ withheld NCAA 零样本性能下降）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>AtomWeaver 是一个双轨（two-track）生成模型：
+- <strong>坐标轨（coordinate track）</strong>：以 conditional flow matching (CFM) 训练连续归一化流，将侧链原子作为无标签点云在 R³ 中从先验分布流向数据分布。先验不是各向同性高斯，而是<strong>嵌套壳先验（nested shell prior）</strong>——每个 slot 从以 Cα 为球心、沿骨架衍生的伪 Cβ 射线方向、具有特征半径 r_k 和厚度 σ_k 的球壳中采样。
+- <strong>元素轨（element track）</strong>：以 absorbing masked diffusion（D3PM/SEDD 风格）在离散元素词汇 {GHOST, C, N, O, X} 上运行，其中 GHOST 表示该 slot 无原子，X 表示非 C/N/O 元素。
+- <strong>耦合机制</strong>：两轨共享时间表 t ∈ [0, 250]，在每一步通过 FiLM 调制将 GHOST/REAL 状态注入坐标轨的每 slot 表示。GHOST slot 流向 Cα，REAL slot 流向真实坐标。
+- <strong>解码时身份读取</strong>：采样完成后，将每个残基的预测原子云与参考库（300 残基的 rotamer 模板）做几何匹配（距离矩阵相关 + 元素/手性惩罚），输出残基身份分布。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>身份是解码时的选择，而非生成时的约束</strong>：将「这个位置是什么残基」从生成过程中完全剥离。生成器只负责回答「这个位置的原子如何排列」，身份由几何匹配决定。这使得词汇表成为参考库的属性，而非模型权重的属性。</li>
+<li><strong>先验应该携带结构信息</strong>：各向同性高斯先验对原子位置没有任何结构提示，导致 GHOST/REAL 决策和坐标生成必须从完全无信息的状态开始。嵌套壳先验让每个 slot 从它「应该」在的位置附近开始，把结构信息注入生成起点。</li>
+<li><strong>GHOST/REAL 是元素轨的一部分，而非独立存在轨</strong>：将原子存在性编码为元素词汇中的一个特殊 token，使存在性决策与元素类型决策共享同一个离散扩散过程，避免额外的存在性预测头。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>生成与识别解耦</strong>：当目标空间（残基类型）远大于训练时可见空间时，将生成目标从识别目标中分离是一种通用策略——生成器学习物理上可行的几何，识别器在推理时匹配到任意词汇。</li>
+<li><strong>先验分布是超参数而非默认值</strong>：flow matching 对先验分布的选择比通常认为的更敏感。嵌套壳先验的收益提示，在生成任务中，先验应该反映数据的粗粒度结构（如原子距 Cα 的典型距离），而不是无信息的高斯。</li>
+<li><strong>解码时词汇扩展</strong>：任何「生成几何 + 匹配模板」的框架都天然支持词汇扩展——新残基只需一个参考结构，不需要重训。这对数据稀疏的化学空间（NCAA、非天然聚合物）尤其有价值。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：
+- 固定多肽骨架（N、Cα、C、O 原子坐标）
+- 目标蛋白结构（作为上下文，通过交叉注意力和图节点直接参与）
+- 每残基原子预算 K（slot 数）</p>
+<p><strong>输出</strong>：
+- 每残基的身份分布（20 规范 + 280 NCAA）
+- 每残基的侧链原子坐标（点云形式）</p>
+<p><strong>模块</strong>：
+1. <strong>编码器</strong>：残基级编码器处理骨架和靶蛋白序列/结构，输出每残基上下文向量
+2. <strong>坐标轨</strong>：SE(3)-等变 denoiser（10 个等变块），预测 CFM 速度场 v_θ(x, t)
+3. <strong>元素轨</strong>：absorbing masked diffusion，预测元素类型分布 p_θ(e₀ | e_t, ctx)
+4. <strong>FiLM 耦合</strong>：每步将 GHOST/REAL 状态注入坐标轨
+5. <strong>解码时读取器</strong>：距离矩阵相关 + 元素/手性惩罚的几何匹配</p>
+<p><strong>训练</strong>：
+- 三阶段：小分子预训练 → 多肽迁移 → 联合微调（含 NCAA 增强数据）
+- 损失：CFM 速度场 MSE + 离散扩散交叉熵 + 辅助几何匹配损失（软版本）</p>
+<p><strong>推理流程</strong>：
+1. 从嵌套壳先验采样初始原子云
+2. 坐标轨和元素轨联合反向扩散 250 步
+3. 对每个残基的最终原子云，与参考库 rotamer 做几何匹配
+4. 输出残基身份分布</p>
+<p><strong>关键假设</strong>：
+- 侧链原子数 ≤ K（原子预算）
+- 参考库 rotamer 覆盖目标 NCAA 的构象空间
+- 骨架固定（不做 backbone 生成）</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>嵌套壳先验</strong></td>
+<td>从以 Cα 为中心、沿伪 Cβ 射线的球壳采样初始原子位置</td>
+<td>各向同性高斯对原子位置无结构提示，GHOST/REAL 决策和坐标生成需从无信息状态开始；壳先验让每 slot 从特征半径处开始</td>
+<td>输入：骨架坐标、每 slot 半径 r_k、厚度 σ_k；输出：初始原子云</td>
+<td>Results 4.1 图 1A,B；作者称「substantially more tractable」；σ_k=0 时原子钉在射线上</td>
+<td>[预期] 移除后退化为高斯先验，GHOST/REAL 决策和坐标生成难度显著增加，可能降低原子计数恢复精度</td>
+</tr>
+<tr>
+<td><strong>SE(3)-等变 denoiser</strong></td>
+<td>在 10 个等变块中预测 CFM 速度场</td>
+<td>坐标生成必须对旋转/平移等变，且需在稀疏图上传播信息</td>
+<td>输入：带噪原子云 + 上下文；输出：速度场 v_θ(x, t)</td>
+<td>Results 4.1 表 1（原子 RMSD 0.40 Å）</td>
+<td>[预期] 替换为非等变网络将破坏坐标生成的物理合理性</td>
+</tr>
+<tr>
+<td><strong>元素轨（absorbing diffusion）</strong></td>
+<td>在 {GHOST, C, N, O, X} 上运行离散扩散</td>
+<td>原子存在性（GHOST）和元素类型需联合决策，且需与坐标轨共享时间表</td>
+<td>输入：带噪元素数组 + 上下文；输出：元素类型分布</td>
+<td>Results 4.1 表 1（原子计数 MAE）；Results 4.3（元素恢复）</td>
+<td>[预期] 移除后需独立存在性预测头，增加模型复杂度且可能降低 GHOST/REAL 与坐标的耦合质量</td>
+</tr>
+<tr>
+<td><strong>FiLM 耦合</strong></td>
+<td>每步将 GHOST/REAL 状态调制坐标轨表示</td>
+<td>坐标生成需感知哪些 slot 是真实的、哪些是 ghost</td>
+<td>输入：slot 表示 + GHOST/REAL 状态；输出：调制后的 slot 表示</td>
+<td>Results 4.1（「healthy operational coupling」）</td>
+<td>[预期] 移除后坐标轨无法区分 ghost/real slot，原子计数恢复将显著退化</td>
+</tr>
+<tr>
+<td><strong>解码时几何匹配</strong></td>
+<td>将预测原子云与参考库 rotamer 匹配，输出残基身份</td>
+<td>身份不进入生成状态，必须在解码时通过几何匹配赋予</td>
+<td>输入：预测原子云 + 300 残基参考库；输出：残基身份分布</td>
+<td>Results 4.2 表 2；Results 4.3（NCAA 恢复）</td>
+<td>[预期] 移除后无法从原子云得到残基身份，模型退化为纯几何生成器</td>
+</tr>
+<tr>
+<td><strong>辅助几何匹配损失</strong></td>
+<td>训练中软版本匹配，引导 flow 产生可区分的原子构型</td>
+<td>纯速度场损失不保证原子云与参考 rotamer 可匹配</td>
+<td>输入：预测原子云 + GT 身份；输出：软匹配损失</td>
+<td>Methods §S7</td>
+<td>[预期] 移除后生成原子云可能几何合理但无法映射到参考 rotamer</td>
+</tr>
+<tr>
+<td><strong>三阶段训练</strong></td>
+<td>小分子预训练 → 多肽迁移 → 联合微调</td>
+<td>小分子数据丰富，多肽 NCAA 数据稀疏；分阶段可充分利用数据</td>
+<td>输入：各阶段数据集；输出：训练好的权重</td>
+<td>Methods §S10, §S14</td>
+<td>[预期] 移除预训练将降低 NCAA 泛化能力，尤其在 withheld 残基上</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>注：原文 Methods 部分指向补充材料，以下基于正文可推断内容 + 标准 CFM 框架。</p>
+</blockquote>
+<p><strong>CFM 目标</strong>（标准形式，Lipman et al. 2023）：
+L_CFM = E_{t, x₀, x_T} ‖ v_θ(x_t, t) − u_t(x_t | x₀, x_T) ‖²</p>
+<ul>
+<li>x_t = (1 − s(t)) x₀ + s(t) x_T：插值路径</li>
+<li>s(t)：时间表，s(0) = 0, s(T) = 1</li>
+<li>v_θ：学习的速度场</li>
+<li>u_t：条件速度场，闭式可得</li>
+</ul>
+<p><strong>嵌套壳先验</strong>：
+x_T^(l,k) = r_k · d^(l) + σ_k · η^(l,k)，η ~ N(0, I₃)</p>
+<ul>
+<li>r_k：slot k 的特征半径（训练数据中 slot k 距 Cα 的 RMS 距离）</li>
+<li>d^(l)：残基 l 的伪 Cβ 单位方向（由骨架 N、Cα、C 解析计算）</li>
+<li>σ_k：slot k 的壳厚度（训练数据中径向方差）</li>
+<li>推理时 σ_k 缩放 0.25</li>
+</ul>
+<p><strong>元素轨（absorbing diffusion）</strong>：
+- 前向：e_t ~ q(e_t | e₀)，以概率 t/T 将已解析 token 替换为 MASK
+- 反向：p_θ(e₀ | e_t, ctx)，从后验采样 e_{t−1}</p>
+<p><strong>解码时匹配</strong>：
+score(c, r) = ρ(D_c, D_r) + λ_e · 1[e_c = e_r] + λ_chiral · 1[χ_c = χ_r]</p>
+<ul>
+<li>D_c, D_r：预测原子云和参考 rotamer 的距离矩阵</li>
+<li>ρ：相关函数</li>
+<li>λ_e, λ_chiral：元素和手性惩罚权重</li>
+</ul>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：
+- 训练：PDB 子集（多肽-蛋白复合物），经聚类划分；小分子预训练数据（蛋白结合小分子）
+- 评测 1（DMS）：两个多肽-靶标系统——PUMA BH3 结合 MCL1（PDB 2ROC）和环肽 CP2 结合 KDM4A（PDB 5LY1），来自 Rogers et al. 的非蛋白源 DMS 扫描
+- 评测 2（PeptideArena）：12 个靶蛋白，353 个 de novo 多肽骨架（BoltzGen 生成），长度 8/16/24
+- 评测 3（Hirulog-3）：PDB 1ABI，20 残基凝血酶抑制剂</p>
+<p><strong>指标</strong>：
+- WT recovery（规范残基恢复率）
+- 与 DMS 实验 ΔΔG 的 Spearman 相关（符号反转，越大越好）
+- 自洽性 RMSD（scRMSD，&lt;2Å 和 &lt;5Å 阈值）
+- pDockQ2（界面置信度）
+- NCAA 恢复率（按残基类别分层）</p>
+<p><strong>基线</strong>：
+- ProteinMPNN、PeptideMPNN、ESM-IF1 (causal)、LM-Design、FAMPNN（规范残基比较）
+- NCFlow（NCAA 比较，参考性）</p>
+<p><strong>评测协议</strong>：
+- DMS：单点突变，每个位置独立打分，与实验 ΔΔG 比较
+- PeptideArena：每个骨架采样 10 个序列设计，用 OpenDDE 重折叠，计算 scRMSD
+- Hirulog-3：从固定复合物生成原子云，用 AtomWeaver-open（300 残基）和 AtomWeaver-DBeta（43 残基：20 规范 + 19 D-氨基酸 + 4 β-氨基酸）读取身份</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DMS 单点（CAA-only）</td>
+<td>规范残基排名与实验功能一致</td>
+<td>AtomWeaver-open vs ProteinMPNN/PeptideMPNN/ESM-IF1/LM-Design/FAMPNN</td>
+<td>AtomWeaver-open 数值最高（0.274 等权平均）</td>
+<td>坐标优先方法在规范残基排名上不逊于分类方法</td>
+<td>差异未做统计显著性检验；置信区间重叠</td>
+<td>Results 4.5 表 3</td>
+</tr>
+<tr>
+<td>DMS 单点（CAA+NCAA）</td>
+<td>混合残基排名</td>
+<td>AtomWeaver-DMS vs AtomWeaver-open</td>
+<td>AtomWeaver-DMS 在所有列数值最高</td>
+<td>针对实验残基集定制的读取器优于通用 300 残基读取器</td>
+<td>非零样本场景；读取器拟合了 DMS 残基集</td>
+<td>Results 4.5 表 3</td>
+</tr>
+<tr>
+<td>PeptideArena 自洽性</td>
+<td>de novo 骨架上的序列设计可重折叠</td>
+<td>8 方法 × 353 骨架 × 10 采样</td>
+<td>AtomWeaver 与基线相当；&lt;5Å 成功率最高</td>
+<td>坐标优先方法在自洽性上不牺牲</td>
+<td>scRMSD 是计算指标，非实验验证</td>
+<td>Results 4.4 图 3A</td>
+</tr>
+<tr>
+<td>NCAA 多样性</td>
+<td>开放词汇产生多样 NCAA 设计</td>
+<td>AtomWeaver-open 在 PeptideArena 上</td>
+<td>168 种独特 NCAA，覆盖 60% 允许集；中位 2 NCAA/序列</td>
+<td>开放词汇确实被利用，非装饰性</td>
+<td>未验证这些 NCAA 设计的实验功能</td>
+<td>Results 4.4 图 3B</td>
+</tr>
+<tr>
+<td>零样本 NCAA</td>
+<td>withheld 残基可被提出</td>
+<td>6 种 withheld NCAA</td>
+<td>中位百分位 ≈63</td>
+<td>零样本 NCAA 恢复可行但有限</td>
+<td>远低于 seen NCAA（95.7 百分位）</td>
+<td>Results 4.3 补充表 S2</td>
+</tr>
+<tr>
+<td>Hirulog-3 恢复</td>
+<td>临床相关多肽的 NCAA 恢复</td>
+<td>AtomWeaver-open vs AtomWeaver-DBeta</td>
+<td>DBeta 读取器恢复 HMR 和 DPN 更好</td>
+<td>聚焦读取器对已知化学更有效</td>
+<td>单案例，非泛化结论</td>
+<td>Results 4.6 补充图 S5</td>
+</tr>
+<tr>
+<td>Hirulog-3 类似物</td>
+<td>开放词汇产生可解释设计</td>
+<td>AtomWeaver-open 联合设计</td>
+<td>β-高色氨酸替换 HMR，Asn-Arg-Asp 基序，D-Ala 引入</td>
+<td>开放词汇可产生结构可解释的协同设计</td>
+<td>未实验验证；pDockQ2 是预测置信度</td>
+<td>Results 4.6 图 4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>：
+- 本文解决的是<strong>固定骨架</strong>的侧链设计（inverse folding），不涉及 backbone 生成或环区设计。
+- 多肽长度限制为 ≤32 残基（训练语料上限）。
+- 靶标为蛋白质（非核酸、非膜环境）。</p>
+<p><strong>输入/真值依赖</strong>：
+- 需要固定的多肽骨架和目标蛋白结构作为输入。
+- DMS 基准使用实验测定的 ΔΔG 作为真值；PeptideArena 使用 OpenDDE 重折叠作为自洽性代理。
+- 身份读取依赖参考库 rotamer 质量；rotamer 用 RDKit 构建。</p>
+<p><strong>端到端状态</strong>：
+- 本文是计算方法论文，<strong>无湿实验验证</strong>。所有结论基于计算指标（recovery、scRMSD、pDockQ2、DMS 相关性）。
+- 「设计」指序列建议，非合成或功能验证。</p>
+<p><strong>算力成本</strong>：
+- 未提供训练/推理的具体算力数据。
+- 推理时需为每个残基匹配 300 个 rotamer 模板，计算成本与词汇表大小线性相关。</p>
+<p><strong>历史数据依赖</strong>：
+- 训练数据来自 PDB，以 WT 蛋白为主，可能继承 PDB 的偏差（如可溶性蛋白偏好、晶体构象偏好）。
+- NCAA 数据通过合成增强生成，非实验来源。</p>
+<p><strong>最难情形</strong>：
+- 零样本 NCAA（训练中从未见过的残基）恢复率显著低于 seen NCAA（中位百分位 63 vs 95.7）。
+- 芳香环（需多原子协同排列）和长侧链（远端原子误差累积）是几何生成的主要挑战。
+- 溶剂暴露位点的身份不确定性最高（recovery ≈0.13）。</p>
+<p><strong>有边界的复述</strong>：
+AtomWeaver 在计算层面证明了「坐标优先 + 解码时身份」的 inverse folding 范式可行：在规范残基的 DMS 功能排名上与现有方法相当，在 NCAA 开放词汇上提供了无需重训的扩展路径，并在 de novo 骨架上保持了自洽性。但该方法尚未经过实验验证，其 NCAA 设计的实际功能性和可合成性未知；零样本 NCAA 恢复仍是短板；所有结论限于 ≤32 残基的固定骨架多肽-蛋白复合物。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原子几何误差随键距累积</td>
+<td>侧链远端原子角度偏差约为近端的两倍；芳香环组装困难</td>
+<td>直接惩罚角度误差的损失函数；更平衡的训练数据</td>
+<td>Results 4.1 图 2B,C；Discussion</td>
+</tr>
+<tr>
+<td>零样本 NCAA 恢复有限</td>
+<td>6 种 withheld NCAA 中位百分位 ≈63，远低于 seen NCAA 的 95.7</td>
+<td>改进参考库构建；更好的 rotamer 覆盖</td>
+<td>Results 4.3；补充表 S2</td>
+</tr>
+<tr>
+<td>多肽长度限制</td>
+<td>训练语料上限 32 残基</td>
+<td>扩展训练语料</td>
+<td>Discussion（「Peptide length is capped at 32 residues」）</td>
+</tr>
+<tr>
+<td>X 元素类别模糊</td>
+<td>X 作为非 C/N/O 的统称，无法区分硫、磷、卤素</td>
+<td>未来版本增加元素类别判别</td>
+<td>Discussion（「sparse data coverage preventing confident separation」）</td>
+</tr>
+<tr>
+<td>计算指标未经实验验证</td>
+<td>所有结论基于 recovery、scRMSD、pDockQ2 等计算指标</td>
+<td>湿实验验证 NCAA 设计的合成与功能</td>
+<td>Discussion（「not experimentally validated analogues」）</td>
+</tr>
+<tr>
+<td>读取器非零样本</td>
+<td>DMS 基准中的 AtomWeaver-DMS 读取器拟合了实验残基集</td>
+<td>真正的零样本读取器</td>
+<td>Results 4.5（「does not imply that the discriminative readout itself is zero-shot」）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 所有作者受雇于 ProteinQure Inc.，存在利益冲突。
+- PeptideArena 基准为本文新引入，未经第三方独立验证。
+- 与 baselines 的比较使用了不同的采样/解码协议（baselines 为分类分布采样，AtomWeaver 为几何匹配），严格可比性有限。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DMS 基准中 AtomWeaver 的数值优势未做统计显著性检验</td>
+<td>置信区间重叠；位点数量有限（39 位点）</td>
+<td>数值优势可能是噪声</td>
+<td>自助法重采样或更多 DMS 数据集</td>
+<td>Results 4.5；补充表 S5</td>
+</tr>
+<tr>
+<td>与 baselines 的比较协议不对称</td>
+<td>baselines 输出分类分布，AtomWeaver 输出几何匹配；baselines 的 T=1.0 采样可能不是其最优配置</td>
+<td>比较公平性影响结论强度</td>
+<td>对 baselines 做超参数扫描；统一评估协议</td>
+<td>Results 4.5；Methods §S17</td>
+</tr>
+<tr>
+<td>「嵌套壳先验贡献」缺乏消融实验</td>
+<td>作者称先验使优化「substantially more tractable」，但未提供量化消融（如高斯先验 vs 壳先验的 recovery 对比）</td>
+<td>核心创新点的证据强度不足</td>
+<td>运行高斯先验对照实验，比较收敛速度和最终指标</td>
+<td>Discussion（「ablations ... are ongoing」）</td>
+</tr>
+<tr>
+<td>零样本 NCAA 的「零样本」定义有限</td>
+<td>6 种 withheld NCAA 的 rotamer 仍由 RDKit 构建并加入参考库；模型虽未见过其身份标签，但参考库包含其几何</td>
+<td>真正的零样本应连 rotamer 也不提供</td>
+<td>测试完全不提供 withheld NCAA rotamer 的场景</td>
+<td>Results 4.3；补充表 S2</td>
+</tr>
+<tr>
+<td>PeptideArena 基准的区分度</td>
+<td>8 种方法在 scRMSD 上高度一致；区分度主要来自 &lt;5Å 成功率的细微差异</td>
+<td>基准可能不足以区分方法优劣</td>
+<td>增加更难的靶标/更长的多肽；引入实验验证</td>
+<td>Results 4.4 图 3A</td>
+</tr>
+<tr>
+<td>读取器与生成器的耦合度未量化</td>
+<td>读取器是 logistic regression + 几何匹配的简单组合；更复杂的读取器（如学习式）可能显著提升性能</td>
+<td>读取器可能是性能瓶颈</td>
+<td>替换读取器为学习式模型，比较 DMS 相关性</td>
+<td>Methods §S5</td>
+</tr>
+<tr>
+<td>训练数据中 NCAA 的分布未知</td>
+<td>作者称「synthetic NCAA-augmented」数据，但未报告 NCAA 类型和数量的分布</td>
+<td>数据分布决定泛化边界</td>
+<td>报告训练数据中 NCAA 的详细分布</td>
+<td>Methods §S10, §S14（未提供细节）</td>
+</tr>
+<tr>
+<td>计算成本未报告</td>
+<td>训练和推理的具体算力需求未提供</td>
+<td>影响方法的实际可用性评估</td>
+<td>报告训练时间、GPU 数量、推理延迟</td>
+<td>全文未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题：Agent 提炼的知识候选</p>
+</blockquote>
+<h3>可迁移的概念</h3>
+<ol>
+<li>
+<p><strong>身份-几何解耦（Identity-Geometry Decoupling）</strong>：将「残基是什么」从「原子如何排列」中分离。生成器只建模几何，身份由解码时的参考库匹配决定。这一范式可迁移到任何「生成结构 → 赋予身份」的任务，如核酸适体设计（碱基身份 vs 原子坐标）、配体设计（原子类型 vs 坐标）。</p>
+</li>
+<li>
+<p><strong>结构化先验（Structured Prior）</strong>：flow matching 的先验不必是各向同性高斯。嵌套壳先验利用「原子距 Cα 的典型距离」这一粗粒度结构信息，让每个 slot 从信息量更高的起点开始。这提示：<strong>先验应编码数据的粗粒度几何约束</strong>，而非默认无信息分布。可迁移到 loop 建模（先验从 Ramachandran 偏好区域采样）、侧链 packing（先验从 rotamer 库采样）。</p>
+</li>
+<li>
+<p><strong>解码时词汇扩展（Decode-time Vocabulary Expansion）</strong>：新残基 = 一个新参考结构 + 读取器重拟合，不触碰生成模型权重。这一「词汇是库的属性而非权重的属性」的思想，可迁移到任何数据稀疏的化学空间扩展任务。</p>
+</li>
+<li>
+<p><strong>双轨耦合（Two-Track Coupling）</strong>：连续坐标轨和离散元素轨共享时间表，通过 FiLM 在每步耦合。这种「连续 + 离散联合生成」的架构可迁移到其他需要同时决定「有无/类型」和「位置」的生成任务。</p>
+</li>
+</ol>
+<h3>可迁移的方法</h3>
+<ol>
+<li>
+<p><strong>伪 Cβ 射线（Pseudo-Cβ Ray）</strong>：从骨架 N、Cα、C 解析计算 Cβ 位置，作为侧链方向的先验锚点。这一几何构造不依赖侧链身份，可迁移到任何基于骨架的侧链生成任务。</p>
+</li>
+<li>
+<p><strong>辅助几何匹配损失（Auxiliary Geometric Matching Loss）</strong>：训练中引入软版本的距离矩阵匹配损失，引导 flow 产生可区分的原子构型，但不作为采样时的条件。这种「训练时引导、推理时自由」的策略可迁移到其他生成-匹配联合任务。</p>
+</li>
+<li>
+<p><strong>PeptideArena 基准设计</strong>：用 BoltzGen 生成 de novo 骨架，用 OpenDDE 重折叠计算 scRMSD，以靶标对齐方式测量多肽-蛋白复合物的自洽性。这一「生成 → 重折叠 → 对齐 → 评分」的流程可迁移到任何多肽/蛋白设计方法的评估。</p>
+</li>
+<li>
+<p><strong>读取器组合策略</strong>：几何匹配（距离矩阵相关）为主 + 学习式组件（logistic regression）为辅，按残基类别混合权重。这种「可解释几何 + 数据驱动」的混合评分可迁移到其他结构-序列映射任务。</p>
+</li>
+</ol>
+<h3>对课题方向的启示</h3>
+<ul>
+<li><strong>对 inverse folding 研究</strong>：本文提供了一个「坐标优先」的替代范式，与「身份优先」的分类方法形成互补。可探索将两者结合——用分类方法提供先验分布，用坐标优先方法探索分类方法无法表达的化学空间。</li>
+<li><strong>对 NCAA 设计</strong>：本文的「参考库 + 解码时匹配」框架是 NCAA 设计的高效路径，但零样本性能仍是瓶颈。可探索更好的 rotamer 库构建（如用生成模型预测 NCAA rotamer）或读取器架构（如图神经网络匹配）。</li>
+<li><strong>对 MD/对接研究</strong>：嵌套壳先验的思想可迁移到 MD 模拟的初始构象采样——从 rotamer 库或已知构象的壳分布中采样，而非均匀随机。</li>
+<li><strong>对 AlphaFold 类方法</strong>：本文的「身份不进入生成状态」与 AlphaFold 的「序列 → 结构」方向相反。可探索「结构 → 序列」的逆问题是否也能从身份-几何解耦中受益。</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, discussion, conclusion) as provided; supplementary materials referenced but not provided.</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodological soundness, evidence quality, and presentation as presented in the supplied text. No independent verification of data or code was performed.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present AtomWeaver, a flow-matching generative model for peptide inverse folding that generates side-chain atom coordinates conditioned on a fixed backbone and target protein, with residue identity assigned post-hoc by matching predicted atom clouds against a reference library of canonical and non-canonical amino acid templates. The central claims are: (i) the model can access a broad non-canonical vocabulary without retraining; (ii) it achieves competitive canonical recovery and superior functional ranking on a deep mutational scan benchmark; (iii) it maintains self-consistency on de novo binder backbones; and (iv) it can recover stereochemical and backbone-modified residues in a case study on Hirulog-3.</li>
+<li><strong>Visible evidence base</strong> Main text tables (Tables 1, 2, 3), figures (Figures 2, 3, 4), and benchmark descriptions. Supplementary figures and tables are referenced but not provided.</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary Methods (S1–S19), Supplementary Tables (S1, S2, S3, S5, S9), Supplementary Figures (S2, S3, S5, S6, S7, S8, S9), and the PeptideArena benchmark details are not provided. These are essential for evaluating model architecture, training details, benchmark construction, and statistical analyses.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a conceptually interesting approach to inverse folding that decouples atom generation from residue identity assignment, enabling a flexible and extensible vocabulary. The core idea of generating unlabeled atom clouds and reading identity post-hoc is novel and potentially impactful for non-canonical peptide design. However, the evidence provided in the main text is insufficient to fully evaluate the method's performance and the strength of the claims. Key benchmark details, statistical analyses, and ablation studies are relegated to supplementary materials that were not available for review. The reported numerical advantages over baselines are modest and accompanied by overlapping confidence intervals, which the authors appropriately acknowledge but do not fully resolve. The manuscript would benefit from clearer presentation of the benchmark methodology and a more critical discussion of the limitations of the current evidence.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational protein and peptide design, particularly those working on inverse folding, generative models for biomolecules, and non-canonical amino acid incorporation. The work is also relevant to medicinal chemists and therapeutic peptide developers interested in expanding the chemical space accessible to computational design. The methodological contribution of a coordinate-first generative approach with post-hoc identity assignment could influence future model designs in the broader generative chemistry community.</li>
+<li><strong>Major strengths</strong>
+  1. The conceptual novelty of separating atom generation from residue identity assignment is a genuine contribution. This design choice directly addresses a key limitation of existing inverse folding methods, namely their restriction to a fixed canonical vocabulary.
+  2. The use of a structured geometric prior (nested shells along a backbone-derived direction) is a thoughtful and physically motivated alternative to the ubiquitous isotropic Gaussian prior in flow matching.
+  3. The inclusion of a deep mutational scan benchmark with non-canonical substitutions is a valuable and relatively rare evaluation approach that goes beyond simple recovery metrics.
+  4. The authors are appropriately cautious in their interpretation of numerical results, explicitly noting overlapping confidence intervals and the distinction between point estimates and statistically resolved differences.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The manuscript claims that AtomWeaver achieves "high observed mean agreement with experimental values among the compared inverse-folding methods" on the deep mutational scan benchmark, and that it "retains ranking signal" in the mixed canonical/non-canonical setting.</li>
+<li><strong>Evidence pointer</strong> Table 3, Section 4.5, Supplementary Section S17, Supplementary Table S5</li>
+<li><strong>Concern</strong> The main text reports point estimates of agreement (mean ™ρ) but the associated uncertainty, provided only in Supplementary Table S5, is described as "overlapping" between methods. Without access to these intervals, it is impossible to assess whether the reported numerical advantages are meaningful or within noise. The authors state that the intervals are "not independent experimental-replication intervals," which further complicates interpretation. The claim of "high observed mean agreement" is therefore not adequately supported by the visible evidence.</li>
+<li><strong>Why it matters</strong> The central functional claim of the paper rests on this benchmark. If the differences between methods are not statistically resolvable, the claim of superiority, however cautiously worded, is not established. The reader cannot evaluate the strength of the evidence without the supplementary intervals.</li>
+<li><strong>Resolution test</strong> Provide the full bootstrap interval table in the main text or a clearly accessible supplementary file, and include a direct statistical comparison (e.g., paired bootstrap tests) between AtomWeaver and each baseline. If differences are not significant, the claims should be revised to reflect equivalence rather than advantage.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Benchmark validity</li>
+<li><strong>Claim pointer</strong> The manuscript introduces PeptideArena, a new benchmark of de novo designed peptide binders, and claims that AtomWeaver is "competitive with the field" on canonical self-consistency while maintaining self-consistency with non-canonical content.</li>
+<li><strong>Evidence pointer</strong> Section 4.4, Figure 3, Supplementary Table S3, Supplementary Figure S6</li>
+<li><strong>Concern</strong> The PeptideArena benchmark is new and not yet established in the field. The selection of targets, the generation of backbones via BoltzGen, and the use of OpenDDE for refolding are all described only briefly. The choice of OpenDDE over more established folding models (e.g., AlphaFold2) is justified only by its handling of non-canonical residues, but no validation of OpenDDE's accuracy on peptide-protein complexes is provided. The benchmark's ability to discriminate between methods is unclear without a more detailed description of its construction and validation.</li>
+<li><strong>Why it matters</strong> A new benchmark must be convincingly validated before its results can be used to support claims about method performance. If the benchmark is biased or noisy, the conclusions drawn from it are unreliable. The lack of detail on benchmark construction and validation is a significant gap.</li>
+<li><strong>Resolution test</strong> Provide a detailed description of PeptideArena's construction, including target selection criteria, backbone generation parameters, clustering and filtering thresholds, and a validation of OpenDDE's refolding accuracy on a set of known peptide-protein complexes. Ideally, include a comparison of OpenDDE's performance against other folding models on canonical peptides.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological clarity</li>
+<li><strong>Claim pointer</strong> The manuscript claims that the nested shell prior is a key technical innovation that makes the joint atom generation and identity readout tractable, and that it "appeared to make this optimization problem substantially more tractable."</li>
+<li><strong>Evidence pointer</strong> Section 3, Supplementary Methods S1–S4, Supplementary Figure S2, Supplementary Table S1</li>
+<li><strong>Concern</strong> The description of the nested shell prior in the main text is brief and qualitative. The formal definition of the prior, the derivation of the conditional flow matching objective with this non-Gaussian source, and the specific implementation details (e.g., how the shell radii and thicknesses are computed, how the prior is sampled at inference) are all in the supplementary methods, which were not provided. The claim that the prior improves optimization is presented as a hypothesis ("we offer two hypotheses for why") without supporting ablation data.</li>
+<li><strong>Why it matters</strong> The nested shell prior is presented as a central contribution of the work. Without a clear and complete description of its formulation and implementation, the method cannot be reproduced or fully evaluated. The lack of ablation evidence weakens the claim that this specific design choice is responsible for the method's performance.</li>
+<li><strong>Resolution test</strong> Provide the full mathematical formulation of the nested shell prior and the corresponding flow matching objective in the main text or a clearly accessible supplement. Include an ablation study that compares the nested shell prior against an isotropic Gaussian prior, holding all other components fixed, to quantitatively assess its contribution.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability of claims</li>
+<li><strong>Claim pointer</strong> The manuscript claims that AtomWeaver "serves canonical and non-canonical peptide design alike" and that the vocabulary is "an expandable inference-time choice."</li>
+<li><strong>Evidence pointer</strong> Sections 4.3, 4.6, 5, Supplementary Table S9</li>
+<li><strong>Concern</strong> The evidence for non-canonical design is limited to a single case study (Hirulog-3) and a benchmark where the non-canonical candidates are drawn from a fixed set of 21 substitutions. The claim of an "expandable" vocabulary is supported only by the six withheld types, which show the weakest performance (median percentile ≈63). The practical utility of adding a new non-canonical residue at inference time, without any retraining, is not demonstrated beyond this limited test.</li>
+<li><strong>Why it matters</strong> The central promise of the method is its ability to access non-canonical chemistry. If the performance on unseen non-canonical types is poor, the practical value of the approach is diminished. The current evidence is too limited to support the broad claim of serving non-canonical design "alike" to canonical design.</li>
+<li><strong>Resolution test</strong> Expand the evaluation of non-canonical design to include a larger and more diverse set of non-canonical types, including those with backbone modifications beyond β-amino acids. Provide a systematic analysis of how performance varies with the structural and chemical properties of the non-canonical types.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of presentation</li>
+<li><strong>Affected element</strong> Section 4.5, Table 3</li>
+<li><strong>Evidence pointer</strong> Table 3, Section 4.5</li>
+<li><strong>Issue</strong> The distinction between "single-site design" and "joint design" is described in the text but the implications for the reader are not immediately clear. The joint design setting is more realistic for de novo design but the results are presented without a clear explanation of why the joint setting is more challenging or how the baselines differ in their joint design procedures.</li>
+<li><strong>Required correction</strong> Add a brief explanation of the practical difference between single-site and joint design, and clarify why the joint setting is the more relevant test for de novo peptide design.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Section 4.5, Table 3</li>
+<li><strong>Evidence pointer</strong> Table 3, Section 4.5</li>
+<li><strong>Issue</strong> The manuscript reports mean ™ρ values but does not report the distribution of these values across positions. Given the small number of positions (39 total), the mean could be driven by a few positions with high agreement.</li>
+<li><strong>Required correction</strong> Report the per-position ™ρ values or a measure of dispersion (e.g., standard deviation, interquartile range) alongside the mean.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Section 8, Model availability</li>
+<li><strong>Evidence pointer</strong> Section 8</li>
+<li><strong>Issue</strong> The manuscript states that the model and code are released, but does not specify the exact version of the code, the dependencies, or the hardware requirements for inference. This limits reproducibility.</li>
+<li><strong>Required correction</strong> Provide a detailed README with installation instructions, dependency versions, and example commands for inference and benchmark evaluation.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Literature context</li>
+<li><strong>Affected element</strong> Section 1, Introduction</li>
+<li><strong>Evidence pointer</strong> Section 1</li>
+<li><strong>Issue</strong> The introduction mentions UNAAGI as a related non-canonical inverse folding method but does not provide a detailed comparison of the two approaches. Given that UNAAGI is the closest prior work, a more explicit discussion of similarities and differences would help position the contribution.</li>
+<li><strong>Required correction</strong> Add a paragraph in the introduction or discussion that directly compares AtomWeaver with UNAAGI in terms of methodology, vocabulary flexibility, and reported performance.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "high observed mean agreement with experimental values" on the deep mutational scan benchmark is not fully supported without the supplementary bootstrap intervals and a direct statistical comparison with baselines.</li>
+<li>The claim that the nested shell prior is responsible for the method's tractability and performance is not supported by any ablation data.</li>
+<li>The claim that AtomWeaver "serves canonical and non-canonical peptide design alike" is not fully supported given the limited evaluation of non-canonical design (one case study, one benchmark with a fixed non-canonical set, and weak performance on withheld types).</li>
+<li>The claim that the vocabulary is "an expandable inference-time choice" is not fully supported by the evidence, as the performance on unseen non-canonical types is the weakest reported result.</li>
+<li>The PeptideArena benchmark's validity as a discriminating evaluation tool is not established without a detailed description of its construction and validation.</li>
+<li>The use of OpenDDE for refolding is not validated against established folding models, which could affect the interpretation of self-consistency results.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

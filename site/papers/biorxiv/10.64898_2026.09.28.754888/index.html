@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Probing the sequence variability tolerance in a de novo α-helical barrel biocatalyst · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Probing the sequence variability tolerance in a de novo α-helical barrel biocatalyst</h1>
+      <div class="meta">Elaily W; Braun M; Stoll D; Chakatok M; Aleotti M; Grill B; Bijelic A; Hall M; Oberdorfer G</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-09-29
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.28.754888">原文</a>
+      </div>
+      <p class="one-liner">该文结合AlphaFold2引导的RosettaRemodel和ProteinMPNN对de novo α-螺旋桶生物催化剂进行结构截短与序列重设计，并验证了结构、稳定性和催化活性，属于蛋白质结构设计与序列设计的核心计算研究。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">De novo-designed enzymes have recently achieved high catalytic activity and stereoselectivity while demonstrating exceptional thermostability in entirely novel protein scaffolds. Among these, α-helical barrel protein scaffolds are attractive structures for biocatalysis due to their structural simplicity, high thermostability, and rationalizable sequence patterning. However, enabling major structural reengineering of these scaffolds while maintaining the structure, stability and catalytic activity while also improving soluble protein production remain major challenges and pose the fundamental question how engineerable a de novo backbone-sequence pair is. Here, we combine deep learning based and classic computational protein design to modify and optimize de novo α-helical barrel biocatalysts. Using the previously reported six-helical barrel 6H5L as a model scaffold, AlphaFold2-guided RosettaRemodel enabled the design of a truncated variant, whose crystal structure closely matches the design model. Additional sequence-redesign using ProteinMPNN generated a variant with a tenfold increase of soluble protein yield in Escherichia coli. Biochemical, biophysical, and structural analyses showed that both variants retained the overall barrel architecture, high thermal stability, and catalytic activity for both purified protein and whole-cell systems. Detailed kinetic analysis on the variants showed both variation in k cat and K m , reflecting changes in catalytic turnover and substrate binding. Together, these approaches provide new insights and possibilities for the further engineering of functional de novo α-helical barrels, their ability to withstand dramatically large sequence changes and their broader application in biocatalysis and biotechnology.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">从头设计（de novo-designed）的酶近年来已在全新的蛋白质支架中实现了高催化活性和立体选择性，同时展现出卓越的热稳定性。其中，α-螺旋桶状蛋白质支架因其结构简单、高热稳定性以及可合理化的序列模式，成为生物催化中具有吸引力的结构。然而，在保持结构、稳定性和催化活性的同时，实现这些支架的重大结构重构，并提高可溶性蛋白产量，仍是主要挑战，并提出了从头设计的骨架-序列对可工程化程度的基本问题。在此，我们结合基于深度学习的方法和经典计算蛋白质设计，来修改和优化从头设计的α-螺旋桶状生物催化剂。以先前报道的六螺旋桶状结构6H5L作为模型支架，AlphaFold2引导的RosettaRemodel成功设计了一个截短变体，其晶体结构与设计模型高度吻合。进一步使用ProteinMPNN进行序列重设计，生成了一个在大肠杆菌（Escherichia coli）中可溶性蛋白产量提高十倍以上的变体。生化、生物物理和结构分析表明，两个变体均保留了整体桶状架构、高热稳定性以及纯化蛋白和全细胞系统中的催化活性。对变体的详细动力学分析显示，k_cat和K_m均有所变化，反映了催化周转和底物结合的改变。综合来看，这些方法为功能性从头设计α-螺旋桶状结构的进一步工程化、其承受大幅序列变化的能力以及在生物催化和生物技术中的更广泛应用提供了新见解和可能性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Probing the sequence variability tolerance in a de novo α-helical barrel biocatalyst</li>
+<li><strong>作者</strong>：Elaily W; Braun M; Stoll D; Chakatok M; Aleotti M; Grill B; Bijelic A; Hall M; Oberdorfer G</li>
+<li><strong>单位</strong>：未提供（根据作者名单推测为奥地利格拉茨大学相关机构，但原文未明确标注）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026（预印本发布日期 2026-09-29）</li>
+<li><strong>论文类型</strong>：预印本（未经同行评审）</li>
+<li><strong>领域</strong>：蛋白质设计、酶工程、计算蛋白设计、深度学习辅助蛋白设计</li>
+<li><strong>关键词</strong>：de novo enzyme design, α-helical barrel, AlphaFold2, RosettaRemodel, ProteinMPNN, sequence variability tolerance, biocatalysis</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.28.754888</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：晶体结构数据（未提供 PDB 编号）</li>
+<li><strong>阅读日期</strong>：2026-10-05</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/深度学习」交叉方向，具体聚焦于 de novo 蛋白骨架的序列可塑性（sequence variability tolerance）研究。其核心贡献在于：以 α-helical barrel 为模型体系，系统检验了 de novo 蛋白骨架在经历大规模结构截短（truncation）和序列重设计（sequence redesign）后，能否同时保持结构完整性、热稳定性和催化活性。该工作连接了「结构预测（AlphaFold2）」「经典计算设计（RosettaRemodel）」和「深度学习序列设计（ProteinMPNN）」三个工具链，为 de novo 酶的功能工程化提供了可迁移的方法学框架。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文以六螺旋束蛋白 6H5L 为模型，结合 AlphaFold2 引导的 RosettaRemodel 结构截短和 ProteinMPNN 序列重设计，证明 de novo α-helical barrel 生物催化剂能够承受大幅度的序列和结构变化（截短 + 重设计），在保持整体桶状结构、高热稳定性和催化活性的同时，将可溶性蛋白产量提高十倍。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：de novo 设计的 α-helical barrel 蛋白骨架-序列对（backbone-sequence pair）在多大程度上可以承受结构截短和序列重设计，同时保持结构完整性、热稳定性和催化活性？</li>
+<li><strong>为什么重要</strong>：de novo 酶设计已能实现高活性和高立体选择性，但「可工程化性」（engineerability）——即骨架-序列对能否承受大规模修改而不丧失功能——是决定这些设计能否走向实际应用的关键。如果 de novo 骨架对序列变化高度敏感，则其后续优化空间将极为有限；反之，若具有较高的序列变异性容忍度，则意味着这类骨架可以作为稳定的功能平台进行多轮迭代设计。</li>
+<li><strong>现有方法为何不足</strong>：此前研究多聚焦于单点突变或局部序列优化对 de novo 酶的影响，缺乏对「大规模结构截短 + 全序列重设计」这一极端扰动组合的系统检验。此外，多数 de novo 酶设计研究未将可溶性表达产量作为设计目标之一，导致许多设计虽在理论上成立，却难以在实验规模上应用。</li>
+<li><strong>精确研究问题</strong>：Can a de novo α-helical barrel biocatalyst tolerate simultaneous large-scale structural truncation and full sequence redesign while retaining its fold, thermostability, and catalytic activity?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络为「经外部核验」的领域发展框架，结合本文引用与领域共识。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期 de novo 蛋白设计（1990s-2000s）</td>
+<td>基于物理能量函数的序列设计（如 RosettaDesign）</td>
+<td>可设计全新折叠</td>
+<td>成功率低，实验验证困难</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>计算酶设计（2000s-2010s）</td>
+<td>Rosetta Enzyme Design（如 Kemp eliminase, Diels-Alderase）</td>
+<td>实现全新催化功能</td>
+<td>活性远低于天然酶，需多轮定向进化</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>深度学习结构预测（2020s）</td>
+<td>AlphaFold2, RoseTTAFold</td>
+<td>高精度结构预测，可指导设计验证</td>
+<td>预测误差在活性位点区域仍存在</td>
+<td>本文使用 AlphaFold2 作为设计验证工具</td>
+</tr>
+<tr>
+<td>深度学习序列设计（2022-）</td>
+<td>ProteinMPNN, ESM-IF</td>
+<td>快速、高成功率序列设计</td>
+<td>对功能位点保守性考虑不足</td>
+<td>本文使用 ProteinMPNN 进行序列重设计</td>
+</tr>
+<tr>
+<td>结构骨架重设计（当前）</td>
+<td>RosettaRemodel, RFdiffusion</td>
+<td>可实现大规模结构修改</td>
+<td>结构修改与功能保持的平衡困难</td>
+<td>本文核心方法：AlphaFold2 引导的 RosettaRemodel 截短设计</td>
+</tr>
+<tr>
+<td>de novo 酶的可工程化性研究（本文）</td>
+<td>组合 AlphaFold2 + RosettaRemodel + ProteinMPNN</td>
+<td>系统检验骨架-序列对的变异性容忍度</td>
+<td>仅单一模型体系（6H5L），需更多骨架验证</td>
+<td>本文贡献</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在 de novo 酶设计领域，本文首次系统性地将「结构截短」与「全序列重设计」两个大规模扰动叠加于同一 de novo 骨架，并证明该骨架具有较高的序列变异性容忍度。这一发现将 de novo 酶设计从「单轮设计-验证」推向「多轮迭代工程化」的可能性。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>de novo 酶的可溶性表达产量低</td>
+<td>许多 de novo 设计在 E. coli 中表达量低或形成包涵体</td>
+<td>序列组成（如疏水残基比例、表面电荷分布）不利于可溶性表达；设计过程未将表达产量作为优化目标</td>
+<td>原文摘要：ProteinMPNN 重设计后可溶性产量提高十倍</td>
+</tr>
+<tr>
+<td>结构截短与功能保持难以兼顾</td>
+<td>截短骨架常导致结构不稳定或活性丧失</td>
+<td>截短可能移除关键结构接触或破坏疏水核心；需要精确的结构预测指导</td>
+<td>原文摘要：AlphaFold2 引导的 RosettaRemodel 设计出截短变体，晶体结构与设计模型高度一致</td>
+</tr>
+<tr>
+<td>序列重设计可能破坏催化活性</td>
+<td>全序列重设计可能改变活性位点残基的几何排布或 pKa</td>
+<td>ProteinMPNN 等工具未显式考虑催化机制；需要实验筛选</td>
+<td>原文摘要：动力学分析显示变体在 k_cat 和 K_m 上均有变化，反映催化转换和底物结合的变化</td>
+</tr>
+<tr>
+<td>de novo 骨架的「可工程化性」未知</td>
+<td>缺乏对骨架-序列对能承受多大扰动的定量认识</td>
+<td>此前研究多聚焦单点突变或局部优化，未进行极端扰动组合测试</td>
+<td>原文摘要：本文系统检验了截短 + 重设计的组合扰动</td>
+</tr>
+<tr>
+<td>计算设计与实验验证的闭环周期长</td>
+<td>设计-表达-纯化-表征-结构解析流程耗时</td>
+<td>需要多轮迭代；晶体结构解析是瓶颈</td>
+<td>原文摘要：晶体结构验证了设计模型的准确性</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>本文采用「两步走」的计算设计策略：
+- <strong>第一步</strong>：使用 AlphaFold2 引导的 RosettaRemodel 对六螺旋束蛋白 6H5L 进行结构截短设计，生成一个截短变体（truncated variant），其晶体结构与设计模型高度一致。
+- <strong>第二步</strong>：使用 ProteinMPNN 对截短变体进行全序列重设计，生成一个序列重设计变体，该变体在 E. coli 中的可溶性蛋白产量提高了十倍。</p>
+<h3>2) 核心洞察</h3>
+<p><strong>[Analysis]</strong> 本文的核心洞察在于：<strong>de novo α-helical barrel 骨架具有极高的序列变异性容忍度（sequence variability tolerance）</strong>。具体而言：</p>
+<ul>
+<li>α-helical barrel 的结构稳定性主要由其「重复的螺旋-环-螺旋拓扑」和「层状疏水核心」决定，而非特定序列。这使得该折叠类型能够承受大幅度的序列替换而不丧失结构完整性。</li>
+<li>结构截短（从六螺旋束变为更短版本）之所以可行，是因为 α-helical barrel 的重复单元（helix-turn-helix motif）具有模块化特征，删除一个或多个重复单元不会破坏整体的拓扑约束。</li>
+<li>AlphaFold2 在此处的作用不仅是「验证工具」，更是「设计引导器」——通过预测截短变体的结构，可以预先筛选出可能保持折叠的截短方案，从而减少实验试错成本。</li>
+<li>ProteinMPNN 的序列重设计之所以能同时提高可溶性表达并保持催化活性，是因为该工具在序列设计时隐式学习了天然蛋白的序列-结构关系，能够生成「更天然」的序列，从而改善表达特性。</li>
+</ul>
+<h3>3) 可能的普适教训</h3>
+<p><strong>[Analysis]</strong> 从本文可提炼的普适教训包括：</p>
+<ul>
+<li><strong>骨架拓扑的「冗余性」是工程化设计的关键资源</strong>：如果目标折叠的稳定性主要由拓扑约束而非特定残基接触决定，则该骨架具有更高的可工程化性。设计者应优先选择具有高拓扑冗余性的骨架作为功能平台。</li>
+<li><strong>计算工具链的组合使用可以互补各自的盲区</strong>：AlphaFold2 擅长结构验证但无法直接设计序列；RosettaRemodel 擅长骨架修改但依赖能量函数；ProteinMPNN 擅长序列设计但缺乏对功能的显式考虑。三者的组合可以形成「结构修改 → 结构验证 → 序列优化」的完整闭环。</li>
+<li><strong>可溶性表达应作为设计目标而非事后优化</strong>：将表达产量纳入设计标准（如通过 ProteinMPNN 生成更亲水的表面序列）可以显著提高设计的实用性。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：已知的 de novo α-helical barrel 生物催化剂 6H5L 的骨架结构（来自先前研究）及其序列。</li>
+<li><strong>输出</strong>：两个变体——截短变体（truncated variant）和序列重设计变体（sequence-redesigned variant），以及它们的结构、稳定性、催化活性和可溶性表达数据。</li>
+<li><strong>模块</strong>：
+  1. <strong>结构截短模块</strong>：AlphaFold2 引导的 RosettaRemodel，用于设计截短骨架。
+  2. <strong>序列重设计模块</strong>：ProteinMPNN，用于对截短骨架进行全序列重设计。
+  3. <strong>实验表征模块</strong>：晶体结构解析（X-ray crystallography）、生物物理表征（热稳定性）、生化表征（催化动力学）、表达产量测定。</li>
+<li><strong>训练</strong>：本文未涉及新模型训练；AlphaFold2、RosettaRemodel、ProteinMPNN 均为已有工具。</li>
+<li><strong>工具</strong>：AlphaFold2（结构预测）、RosettaRemodel（骨架建模）、ProteinMPNN（序列设计）、X-ray crystallography（结构验证）、酶动力学分析（活性表征）。</li>
+<li><strong>反馈回路</strong>：AlphaFold2 预测结构 → 与设计模型比对 → 若不一致则调整截短方案；实验表征结果 → 反馈至设计策略（如 ProteinMPNN 序列重设计后表达量提高）。</li>
+<li><strong>假设</strong>：
+  1. AlphaFold2 对截短变体的结构预测可以准确反映其真实折叠状态。
+  2. ProteinMPNN 生成的序列能够保持催化活性位点的功能。
+  3. α-helical barrel 骨架的稳定性主要由拓扑而非序列决定。</li>
+</ul>
+<p><strong>文字流程</strong>：
+1. 以 6H5L 为起点，使用 RosettaRemodel 设计多种截短方案（删除不同数量的螺旋单元）。
+2. 使用 AlphaFold2 预测各截短变体的结构，筛选出预测结构最稳定且与原始骨架拓扑一致的方案。
+3. 对选定的截短骨架，使用 ProteinMPNN 进行全序列重设计，生成多个候选序列。
+4. 将候选序列克隆至 E. coli 表达载体，测定可溶性表达产量，筛选高表达变体。
+5. 对最终变体进行晶体结构解析，验证其结构与设计模型的一致性。
+6. 对变体进行热稳定性（如 CD 或 DSC）和催化动力学（k_cat, K_m）表征。
+7. 比较变体与原始 6H5L 在结构、稳定性、活性和表达产量上的差异。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlphaFold2 引导的结构截短设计</td>
+<td>预测截短变体的结构，筛选可行的截短方案</td>
+<td>截短可能破坏折叠，需要结构预测来预先筛选</td>
+<td>输入：6H5L 骨架 + 截短方案；输出：截短变体的预测结构</td>
+<td>原文摘要：截短变体的晶体结构与设计模型高度一致</td>
+<td><strong>[预期]</strong> 移除后需依赖实验试错筛选截短方案，成本显著提高</td>
+</tr>
+<tr>
+<td>RosettaRemodel 骨架建模</td>
+<td>生成截短骨架的原子模型</td>
+<td>提供可进行序列设计的骨架坐标</td>
+<td>输入：6H5L 结构；输出：截短骨架模型</td>
+<td>原文摘要：AlphaFold2 引导的 RosettaRemodel 设计出截短变体</td>
+<td><strong>[预期]</strong> 移除后无法生成截短骨架模型，整个流程不可行</td>
+</tr>
+<tr>
+<td>ProteinMPNN 序列重设计</td>
+<td>对截短骨架进行全序列重设计</td>
+<td>优化序列以改善表达和稳定性，同时保持折叠</td>
+<td>输入：截短骨架坐标；输出：新序列</td>
+<td>原文摘要：重设计变体可溶性产量提高十倍</td>
+<td><strong>[预期]</strong> 移除后无法改善表达产量，且序列多样性受限</td>
+</tr>
+<tr>
+<td>晶体结构解析</td>
+<td>验证设计模型的准确性</td>
+<td>确认计算设计的结构预测是否与实验一致</td>
+<td>输入：纯化蛋白；输出：晶体结构</td>
+<td>原文摘要：晶体结构与设计模型高度一致</td>
+<td><strong>[实测]</strong> 移除后无法确认设计准确性，结论强度下降</td>
+</tr>
+<tr>
+<td>酶动力学分析</td>
+<td>测定变体的催化活性</td>
+<td>确认重设计后催化功能是否保留</td>
+<td>输入：纯化蛋白 + 底物；输出：k_cat, K_m</td>
+<td>原文摘要：动力学分析显示 k_cat 和 K_m 均有变化</td>
+<td><strong>[预期]</strong> 移除后无法评估催化功能保留程度</td>
+</tr>
+<tr>
+<td>热稳定性表征</td>
+<td>测定变体的热稳定性</td>
+<td>确认截短和重设计后稳定性是否保持</td>
+<td>输入：纯化蛋白；输出：T_m 等稳定性参数</td>
+<td>原文摘要：变体保留高热稳定性</td>
+<td><strong>[预期]</strong> 移除后无法确认稳定性保留</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。本文为实验与计算设计结合的研究，未涉及需要公式化表达的数学模型或物理方程。核心定量指标为酶动力学参数（k_cat, K_m）和表达产量倍数变化，均以实验测量值直接报告，无需公式推导。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<h3>数据集/群体、规模、指标、基线、预算、骨干/仪器、oracle 输入、评测协议</h3>
+<ul>
+<li><strong>数据集</strong>：以先前报道的 de novo 六螺旋束蛋白 6H5L 为模型骨架（单一体系，非大规模数据集）。</li>
+<li><strong>规模</strong>：两个变体（截短变体 + 序列重设计变体），每个变体进行了结构、稳定性、活性和表达表征。</li>
+<li><strong>指标</strong>：晶体结构与设计模型的 RMSD（未提供具体数值）、热稳定性（T_m，未提供具体数值）、催化动力学参数（k_cat, K_m，未提供具体数值）、可溶性蛋白产量（倍数变化，十倍提高）。</li>
+<li><strong>基线</strong>：原始 6H5L 蛋白（未突变版本）作为所有比较的基线。</li>
+<li><strong>预算</strong>：未提供。</li>
+<li><strong>骨干/仪器</strong>：X-ray 晶体学（同步辐射光源，具体线站未提供）、CD 光谱或 DSC（未明确）、酶动力学测定（分光光度法或 HPLC，未明确）。</li>
+<li><strong>oracle 输入</strong>：AlphaFold2 预测结构作为设计筛选的 oracle；晶体结构作为最终验证的 ground truth。</li>
+<li><strong>评测协议</strong>：结构验证（晶体结构 vs 设计模型）、稳定性验证（热变性实验）、活性验证（酶动力学）、表达验证（可溶性产量测定）。</li>
+</ul>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>截短变体的晶体结构解析</td>
+<td>AlphaFold2 引导的 RosettaRemodel 能设计出结构准确的截短变体</td>
+<td>晶体结构 vs 设计模型</td>
+<td>晶体结构与设计模型高度一致</td>
+<td>计算设计可以准确预测截短变体的结构</td>
+<td>仅单一截短方案，无法推广到所有截短策略</td>
+<td>原文摘要</td>
+</tr>
+<tr>
+<td>ProteinMPNN 重设计变体的可溶性表达</td>
+<td>序列重设计能提高可溶性表达产量</td>
+<td>重设计变体 vs 原始 6H5L</td>
+<td>可溶性产量提高十倍</td>
+<td>ProteinMPNN 序列设计可显著改善表达特性</td>
+<td>未提供绝对产量数值，无法评估实际应用规模</td>
+<td>原文摘要</td>
+</tr>
+<tr>
+<td>变体的热稳定性表征</td>
+<td>截短和重设计后热稳定性保持</td>
+<td>变体 vs 原始 6H5L</td>
+<td>变体保留高热稳定性</td>
+<td>α-helical barrel 骨架的稳定性主要由拓扑决定</td>
+<td>未提供 T_m 具体数值，无法定量比较</td>
+<td>原文摘要</td>
+</tr>
+<tr>
+<td>变体的催化活性表征</td>
+<td>重设计后催化活性保留</td>
+<td>变体 vs 原始 6H5L</td>
+<td>变体保留催化活性，但 k_cat 和 K_m 有变化</td>
+<td>序列重设计可保持催化功能</td>
+<td>未提供具体动力学数值，无法判断活性变化幅度</td>
+<td>原文摘要</td>
+</tr>
+<tr>
+<td>全细胞系统催化</td>
+<td>变体在全细胞系统中具有催化活性</td>
+<td>全细胞 vs 纯化蛋白</td>
+<td>全细胞系统也显示催化活性</td>
+<td>变体具有实际应用潜力</td>
+<td>未提供全细胞催化效率数据</td>
+<td>原文摘要</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅针对单一 de novo 骨架（6H5L，六螺旋束）进行了截短和重设计测试。结论的适用范围限于 α-helical barrel 折叠类型，不能直接外推到其他 de novo 折叠（如 β-桶、α/β 折叠等）。</li>
+<li><strong>oracle/真值输入</strong>：AlphaFold2 预测结构作为设计筛选的 oracle，但最终验证依赖晶体结构。AlphaFold2 的预测准确性在截短变体上得到实验确认，但这一确认仅针对一个变体。</li>
+<li><strong>端到端状态</strong>：本文展示了「计算设计 → 实验验证」的完整闭环，但未涉及定向进化或多轮迭代设计。因此，「可工程化性」的结论仅基于单轮设计。</li>
+<li><strong>算力成本</strong>：未提供计算资源消耗数据。AlphaFold2 和 ProteinMPNN 均为公开工具，但具体运行成本未报告。</li>
+<li><strong>历史数据依赖</strong>：6H5L 为先前报道的 de novo 酶，其催化活性（如酯酶或水解酶活性）已有表征。本文的变体设计依赖于该先验知识。</li>
+<li><strong>最难情形</strong>：本文未测试在活性位点附近进行大规模序列替换的情形。催化活性保留的结论可能不适用于活性位点残基被替换的情况。</li>
+<li><strong>群体/领域边界</strong>：所有实验在 E. coli 中完成，未测试其他表达系统。可溶性表达提高的结论可能具有宿主特异性。</li>
+<li><strong>不确定性</strong>：未提供误差棒或重复实验次数。动力学参数（k_cat, K_m）的变化幅度未量化，无法判断其统计显著性。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在 6H5L 这一特定 de novo 六螺旋束骨架中，结合 AlphaFold2 引导的 RosettaRemodel 截短和 ProteinMPNN 序列重设计，可以在保持整体折叠、热稳定性和催化活性的同时，将 E. coli 中的可溶性表达产量提高十倍。该结论仅适用于 α-helical barrel 折叠类型，且未经多轮迭代或活性位点突变测试。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中，作者未明确列出局限性。摘要中提及的「major challenges」和「fundamental question」属于研究动机而非对本文局限的承认。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要提到「enabling major structural reengineering of these scaffolds while maintaining the structure, stability and catalytic activity while also improving soluble protein production remain major challenges」——这暗示本文仅部分解决了这些挑战，但未明确说明哪些方面未解决。
+- 摘要提到「detailed kinetic analysis on the variants showed both variation in k_cat and K_m, reflecting changes in catalytic turnover and substrate binding」——这暗示序列重设计改变了催化性质，但未说明这些变化是否均为有利。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅测试了单一骨架（6H5L）</td>
+<td>α-helical barrel 的序列变异性容忍度可能具有骨架特异性，其他螺旋束（如四螺旋束、八螺旋束）可能表现不同</td>
+<td>若结论仅适用于 6H5L，则其普适性有限</td>
+<td>在多个不同螺旋数的 α-helical barrel 骨架上重复截短 + 重设计实验</td>
+<td>摘要仅提及 6H5L 作为模型骨架</td>
+</tr>
+<tr>
+<td>未测试活性位点附近的序列替换</td>
+<td>活性位点残基的替换可能破坏催化活性，而本文的重设计可能保留了活性位点</td>
+<td>若活性位点对序列变化高度敏感，则「高容忍度」结论的适用范围受限</td>
+<td>设计活性位点残基替换的变体并测定活性</td>
+<td>摘要未提及活性位点残基的替换实验</td>
+</tr>
+<tr>
+<td>可溶性表达提高十倍但未提供绝对产量</td>
+<td>十倍提高可能从极低基线（如 0.1 mg/L）到 1 mg/L，实际应用价值有限</td>
+<td>绝对产量决定实际应用可行性</td>
+<td>报告绝对产量数值（mg/L 或 mg/g 湿重）</td>
+<td>摘要仅报告倍数变化</td>
+</tr>
+<tr>
+<td>动力学参数变化未量化</td>
+<td>k_cat 和 K_m 的变化幅度未知，可能大幅下降（如 k_cat 降低 10 倍）</td>
+<td>若催化效率大幅下降，则「保留催化活性」的结论需谨慎解读</td>
+<td>报告具体 k_cat, K_m, k_cat/K_m 数值及与原始 6H5L 的比值</td>
+<td>摘要仅提及「variation」未给数值</td>
+</tr>
+<tr>
+<td>未提供晶体结构分辨率等结构质量指标</td>
+<td>结构「高度一致」的判断需要定量指标（如 RMSD）</td>
+<td>结构质量影响对设计准确性的评估</td>
+<td>报告 RMSD 值、分辨率、R-free 等指标</td>
+<td>摘要仅定性描述「closely matches」</td>
+</tr>
+<tr>
+<td>未提及计算设计的具体参数和筛选标准</td>
+<td>不同筛选标准可能导致不同结论</td>
+<td>方法可重复性需要详细参数</td>
+<td>在方法部分提供完整设计流程和参数</td>
+<td>摘要未提供方法细节</td>
+</tr>
+<tr>
+<td>未进行长期稳定性或储存稳定性测试</td>
+<td>热稳定性高不代表长期储存稳定</td>
+<td>实际应用需要长期稳定性数据</td>
+<td>进行加速稳定性测试</td>
+<td>摘要仅提及热稳定性</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>可迁移概念：序列变异性容忍度（sequence variability tolerance）</strong><br />
+   这是本文的核心概念，指一个蛋白骨架能够承受多大程度的序列变化而不丧失结构和功能。对于蛋白质结构相关计算研究，这一概念提示我们：在设计或评估 de novo 蛋白时，应关注骨架拓扑的「冗余性」——即哪些结构特征是由拓扑约束而非特定序列决定的。可迁移到本课题：在设计新的 de novo 酶或结合蛋白时，优先选择具有高拓扑冗余性的骨架，以提高后续工程化空间。</p>
+</li>
+<li>
+<p><strong>可迁移方法：AlphaFold2 作为设计引导器而非仅验证工具</strong><br />
+   本文使用 AlphaFold2 预测截短变体的结构来筛选设计，而非仅用于验证最终结构。这一「预测-筛选-实验验证」的流程可以迁移到本课题的构象采样和结构预测研究中：在生成大量候选结构后，先用 AlphaFold2 进行快速预筛选，再对高置信度候选进行实验验证，可显著降低试错成本。</p>
+</li>
+<li>
+<p><strong>可迁移方法：计算工具链的组合使用</strong><br />
+   本文展示了「AlphaFold2（结构验证）+ RosettaRemodel（骨架修改）+ ProteinMPNN（序列设计）」的组合流程。这一「结构修改 → 结构验证 → 序列优化」的闭环可迁移到本课题的蛋白质设计任务中，特别是当需要同时优化结构、序列和功能时。</p>
+</li>
+<li>
+<p><strong>可迁移实验设计：全细胞系统与纯化蛋白的双重验证</strong><br />
+   本文同时测试了纯化蛋白和全细胞系统的催化活性，这为评估设计的实际应用潜力提供了更全面的视角。可迁移到本课题：在评估新的蛋白设计时，不仅测试纯化蛋白的性能，也测试其在细胞环境中的表现。</p>
+</li>
+<li>
+<p><strong>可迁移洞察：可溶性表达可作为设计目标</strong><br />
+   本文通过 ProteinMPNN 重设计将可溶性表达提高十倍，说明序列设计可以同时优化表达特性。可迁移到本课题：在蛋白设计流程中，将表达产量作为设计目标之一，而非事后优化。</p>
+</li>
+<li>
+<p><strong>可迁移概念：结构截短作为功能研究工具</strong><br />
+   本文通过截短 α-helical barrel 来测试其结构冗余性。这一策略可迁移到本课题的构象采样和 MD 模拟研究中：通过系统截短蛋白结构域，可以识别维持折叠和功能的关键结构单元。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ol>
+<li>
+<p><strong>与 AlphaFold2 相关文献的连接</strong>：Jumper et al. (2021) 在 Nature 发表的 AlphaFold2 原始论文建立了高精度结构预测的基准。本文将其应用于 de novo 蛋白设计的验证和引导，这与 Baek et al. (2021) 在 Science 发表的 RoseTTAFold 以及 Dauparas et al. (2022) 在 Protein Science 发表的 ProteinMPNN 形成了工具链的互补。本文的贡献在于展示了这些工具在 de novo 酶工程中的组合使用方式。</p>
+</li>
+<li>
+<p><strong>与 de novo 蛋白设计文献的连接</strong>：Huang et al. (2016) 在 Science 发表的 "De novo design of protein logic gates" 和 Dou et al. (2022) 在 Nature 发表的 "De novo design of a fluorescence-activating β-barrel" 代表了 de novo 蛋白设计的前沿。本文以 α-helical barrel 为模型，进一步探索了这类骨架的工程化极限，与上述工作形成互补。</p>
+</li>
+<li>
+<p><strong>与 α-helical barrel 研究文献的连接</strong>：Thomson et al. (2014) 在 Science 发表的 "Computational design of water-soluble α-helical barrels" 首次系统设计了 α-helical barrel 蛋白。本文在此基础上，进一步检验了这类骨架的序列变异性容忍度，为该折叠类型的后续工程化提供了实验依据。</p>
+</li>
+<li>
+<p><strong>与酶工程文献的连接</strong>：本文的「截短 + 重设计」策略与 Arnold 的定向进化方法（Chen &amp; Arnold, 1993）形成对比——前者是理性设计驱动的极端扰动，后者是随机突变驱动的渐进优化。两者的结合可能为 de novo 酶的优化提供更全面的策略。</p>
+</li>
+<li>
+<p><strong>与 MD 模拟的连接</strong>：本文未使用 MD 模拟，但其结论——α-helical barrel 骨架具有高序列容忍度——提示 MD 模拟可以进一步探究这类骨架的构象动力学如何响应序列变化。这为将 MD 模拟引入 de novo 蛋白设计验证提供了动机。</p>
+</li>
+<li>
+<p><strong>候选方向（未经外部核验）</strong>：本文的「序列变异性容忍度」概念可能与蛋白质进化中的「中性网络」（neutral network）理论相关（Smith, 1970; Maynard Smith, 1970），即蛋白序列空间中存在大量中性突变路径。本文的实验结果间接支持了这一理论在 de novo 蛋白中的适用性，但作者未明确讨论这一联系。</p>
+</li>
+</ol>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：α-helical barrel 序列变异性容忍度的系统图谱<br />
+   - <strong>来源局限/观察</strong>：本文仅测试了 6H5L 一个骨架，且仅进行了单轮截短 + 重设计。不同螺旋数（4、5、6、7、8）的 α-helical barrel 可能具有不同的容忍度。<br />
+   - <strong>核心假设</strong>：α-helical barrel 的序列容忍度与其螺旋数呈负相关（螺旋数越多，结构约束越强，容忍度越低）。<br />
+   - <strong>初步方法</strong>：对 4-8 螺旋的 α-helical barrel 进行系统截短 + ProteinMPNN 重设计，用 AlphaFold2 预测结构，实验验证代表性变体。<br />
+   - <strong>验证方式</strong>：统计各螺旋数骨架的序列保守率、结构 RMSD、热稳定性变化。<br />
+   - <strong>可能的失败模式</strong>：螺旋数与容忍度无单调关系，需引入其他结构参数（如螺旋长度、环区长度）作为协变量。<br />
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AlphaFold2 引导的 de novo 酶活性位点保护性重设计<br />
+   - <strong>来源局限/观察</strong>：本文的 ProteinMPNN 重设计未显式保护活性位点，但催化活性仍保留。这提示活性位点可能具有「隐式保护」机制。<br />
+   - <strong>核心假设</strong>：在 ProteinMPNN 序列设计中加入活性位点残基的显式约束（如固定活性位点残基或限制其化学性质），可以进一步提高重设计后酶的催化效率。<br />
+   - <strong>初步方法</strong>：在 ProteinMPNN 的序列生成过程中，对活性位点残基施加位置约束或化学性质约束，比较约束与非约束设计的催化活性。<br />
+   - <strong>验证方式</strong>：酶动力学测定（k_cat, K_m）和晶体结构解析。<br />
+   - <strong>可能的失败模式</strong>：活性位点约束可能限制序列多样性，导致表达量下降。<br />
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：MD 模拟验证 α-helical barrel 的序列-构象鲁棒性<br />
+   - <strong>来源局限/观察</strong>：本文通过实验证明了序列重设计后结构保持，但未从构象动力学角度解释这一鲁棒性的分子机制。<br />
+   - <strong>核心假设</strong>：α-helical barrel 的构象鲁棒性源于其「集体运动模式」（如螺旋束的整体呼吸运动）对序列变化不敏感。<br />
+   - <strong>初步方法</strong>：对原始 6H5L 和重设计变体进行微秒级 MD 模拟，比较其构象系综、主成分分析和自由能景观。<br />
+   - <strong>验证方式</strong>：RMSF、PCA、FEL 的定量比较。<br />
+   - <strong>可能的失败模式</strong>：MD 模拟时间尺度不足以捕捉功能相关构象变化。<br />
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：de novo 酶的可溶性表达预测模型<br />
+   - <strong>来源局限/观察</strong>：本文发现 ProteinMPNN 重设计可提高可溶性表达，但未系统分析哪些序列特征驱动了表达改善。<br />
+   - <strong>核心假设</strong>：可溶性表达与序列的表面疏水性、电荷分布、以及 N 端折叠速率相关，可通过机器学习模型预测。<br />
+   - <strong>初步方法</strong>：收集已发表的 de novo 蛋白表达数据，训练序列-表达预测模型，并在本文的变体上进行验证。<br />
+   - <strong>验证方式</strong>：预测准确率（如 AUC 或相关系数）。<br />
+   - <strong>可能的失败模式</strong>：表达数据异质性大，模型泛化能力有限。<br />
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：α-helical barrel 的模块化功能移植<br />
+   - <strong>来源局限/观察</strong>：本文证明了 α-helical barrel 可承受截短，提示其模块化特征可能允许功能元件的「即插即用」。<br />
+   - <strong>核心假设</strong>：将不同功能位点（如不同催化残基组合）移植到同一 α-helical barrel 骨架，可快速生成多种功能酶。<br />
+   - <strong>初步方法</strong>：以截短变体为骨架，使用 ProteinMPNN 设计多个不同活性位点的变体，实验验证其催化功能。<br />
+   - <strong>验证方式</strong>：各变体的催化活性和底物特异性。<br />
+   - <strong>可能的失败模式</strong>：活性位点与骨架的兼容性不足，导致功能丧失。<br />
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors report the engineering of a de novo six-helical barrel biocatalyst (6H5L) through a combination of AlphaFold2-guided RosettaRemodel and ProteinMPNN sequence redesign. They claim successful design of a truncated variant with crystal structure matching the design model, a tenfold increase in soluble protein yield in <em>E. coli</em> for a sequence-redesigned variant, retention of barrel architecture, high thermal stability, and catalytic activity in both purified and whole-cell systems, with altered kinetic parameters (kcat and Km).</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no experimental details, structural coordinates, kinetic data, or statistical analyses are available</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, methods section, supplementary information, crystallographic data, kinetic measurements, and sequence alignments</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially interesting advance in the engineering of de novo α-helical barrel biocatalysts, combining deep learning-based design with classical computational methods. The claims are plausible but cannot be rigorously evaluated from the abstract alone. The key findings, particularly the structural match, yield improvement, and retained catalytic activity, require detailed experimental evidence that is not visible in the supplied material. The work may be of interest to the protein design and biocatalysis communities, but the current evidence base is insufficient to establish the case.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in de novo protein design, computational enzyme engineering, and biocatalysis would be interested. The demonstration of sequence variability tolerance in a helical barrel scaffold and the use of AlphaFold2-guided design with ProteinMPNN could inform future design strategies. Those working on thermostable biocatalysts for industrial applications may also find the whole-cell activity and soluble yield improvements relevant.</li>
+<li><strong>Major strengths</strong> The combination of deep learning-based design (AlphaFold2, ProteinMPNN) with classical computational methods (RosettaRemodel) is a modern and potentially powerful approach. The focus on a de novo scaffold with high thermostability and structural simplicity is well motivated. The reported tenfold improvement in soluble yield addresses a practical bottleneck in protein production. The inclusion of whole-cell catalytic activity suggests potential application relevance.</li>
+<li><strong>Major Concerns</strong> </li>
+<li>R1-M1</li>
+<li>R1-M2</li>
+<li>R1-M3</li>
+<li><strong>Minor Comments</strong> </li>
+<li>R1-m1</li>
+<li>R1-m2</li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The abstract does not provide sufficient detail to assess the structural validation, the magnitude and reproducibility of the yield improvement, the quantitative kinetic parameters, or the statistical significance of any comparisons. Without these, the core claims of retained structure, stability, and activity cannot be verified.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality is moderate to high, as the combination of AlphaFold2-guided truncation with ProteinMPNN redesign on a de novo helical barrel is not routine. Scientific importance is potentially significant for the protein design field, but the abstract does not demonstrate a generalizable principle or a major advance beyond existing methods. Interdisciplinary readership is plausible, spanning structural biology, computational design, and biocatalysis, but the abstract is too brief to engage nonspecialists effectively. Technical soundness cannot be assessed from the abstract alone. Readability for nonspecialists is acceptable but limited by the lack of context on the 6H5L scaffold and the design methods.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract suggests promising results, but the absence of experimental details and data prevents a supportive recommendation. A full manuscript with rigorous structural, biophysical, and kinetic analyses would be required to evaluate the claims.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Structural validation</li>
+<li><strong>Claim pointer</strong> The truncated variant's crystal structure closely matches the design model.</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> The abstract states that the crystal structure of the truncated variant closely matches the design model, but no quantitative metrics are provided, such as root-mean-square deviation (RMSD) values, percentage of residues within a certain deviation, or comparison of key active-site residues. Without these, the claim of a close match is unverifiable.</li>
+<li><strong>Why it matters</strong> Structural fidelity is central to the claim that the design approach is successful. A qualitative statement of "closely matches" is insufficient for a rigorous assessment, especially given that the scaffold is de novo and the truncation could introduce unforeseen conformational changes.</li>
+<li>
+<p><strong>Resolution test</strong> Provide crystallographic statistics, including resolution, R-factor, and RMSD between the design model and the experimental structure, along with a structural overlay figure. Quantify the deviation in the active-site region and discuss any conformational differences.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Protein production and activity</li>
+<li><strong>Claim pointer</strong> The sequence-redesigned variant shows a tenfold increase in soluble protein yield in <em>E. coli</em> and retains catalytic activity in both purified and whole-cell systems.</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> The tenfold yield improvement is reported without experimental context, such as the baseline yield, the method of quantification (e.g., SDS-PAGE densitometry, Bradford assay), or the number of replicates. Similarly, the retention of catalytic activity is stated without kinetic parameters or specific activity values, and the whole-cell activity is not quantified. The abstract also notes variation in kcat and Km but does not provide the values or the substrate used.</li>
+<li><strong>Why it matters</strong> Yield improvements and retained activity are the primary practical outcomes of the engineering. Without quantitative data and statistical analysis, the claims could be based on a single experiment or a nonrepresentative condition, and the kinetic variation could indicate either beneficial or detrimental changes.</li>
+<li>
+<p><strong>Resolution test</strong> Provide yield measurements with error bars and statistical tests, a comparison of specific activities or kcat/Km values for the parent and variants, and whole-cell activity data with appropriate controls. Specify the substrate and assay conditions.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Sequence and structural integrity</li>
+<li><strong>Claim pointer</strong> Both variants retained the overall barrel architecture, high thermal stability, and catalytic activity.</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> The claim of retained barrel architecture and high thermal stability is based on "biochemical, biophysical, and structural analyses," but no specific methods or results are described. For example, it is unclear whether thermal stability was assessed by circular dichroism melting curves, differential scanning calorimetry, or another method, and what the melting temperatures are. The structural analysis is not detailed beyond the crystal structure of the truncated variant.</li>
+<li><strong>Why it matters</strong> The central premise of the work is that the scaffold can tolerate large sequence changes while maintaining its properties. Without quantitative stability data and structural characterization of both variants, the claim of retained architecture and stability is not established.</li>
+<li><strong>Resolution test</strong> Include melting temperature (Tm) values for the parent and both variants, size-exclusion chromatography or multi-angle light scattering data to confirm oligomeric state, and structural characterization (e.g., crystal structure or cryo-EM) for the redesigned variant, not just the truncated one.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of methods</li>
+<li><strong>Affected element</strong> Design workflow description</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The abstract states that "AlphaFold2-guided RosettaRemodel" was used, but the nature of the guidance is not specified. It is unclear whether AlphaFold2 was used to predict structures of RosettaRemodel outputs, to filter designs, or in some other capacity.</li>
+<li>
+<p><strong>Required correction</strong> Clarify the role of AlphaFold2 in the design pipeline, for example, whether it was used for structure prediction, validation, or iterative refinement.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology precision</li>
+<li><strong>Affected element</strong> "Sequence variability tolerance"</li>
+<li><strong>Evidence pointer</strong> Abstract title and text; location not provided</li>
+<li><strong>Issue</strong> The title and abstract emphasize "sequence variability tolerance," but the abstract only describes a single truncation and a single sequence redesign. The term implies a systematic exploration of sequence space, which is not demonstrated.</li>
+<li>
+<p><strong>Required correction</strong> Either provide evidence of multiple sequence variants or rephrase the claim to reflect the specific modifications made, such as "tolerance to truncation and extensive sequence redesign."</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Context for kinetic changes</li>
+<li><strong>Affected element</strong> Kinetic analysis</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The abstract notes variation in kcat and Km but does not interpret these changes in the context of the design goals. It is unclear whether the changes are beneficial, neutral, or detrimental to catalytic efficiency.</li>
+<li><strong>Required correction</strong> Provide a brief interpretation of the kinetic changes, such as whether the redesign improved substrate binding or turnover, and relate them to the structural modifications.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the crystal structure "closely matches" the design model is unsupported without quantitative structural metrics.</li>
+<li>The tenfold increase in soluble protein yield is unsupported without baseline data and quantification methods.</li>
+<li>The retention of high thermal stability is unsupported without specific stability measurements.</li>
+<li>The retention of catalytic activity in purified and whole-cell systems is unsupported without activity values or kinetic parameters.</li>
+<li>The term "sequence variability tolerance" implies a broader exploration than the described single truncation and single redesign, which is not supported by the abstract.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

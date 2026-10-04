@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to methods, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors propose GeoEPred, a multimodal deep learning framework that integrates pretrained protein language model embeddings with ESMFold-predicted three-dimensional structures to predict Gram-negative bacterial effector proteins across T3SE, T4SE, and T6SE tasks, with claimed superior performance over existing methods and stable behavior in remote homolog recognition.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark details, or methodological specifics provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, benchmark dataset descriptions, baseline method details, statistical significance tests, ablation studies, and code availability
+
+## Reviewer
+- **Overall assessment** The abstract presents a technically plausible and potentially valuable approach to a biologically important problem. The integration of sequence semantics with predicted structural geometry is well motivated, and the modular architecture is described with reasonable clarity. However, the abstract provides no quantitative evidence, no benchmark specifications, and no statistical validation. The core claims of superior predictive performance and generalization cannot be assessed from the supplied material. The work may be of interest to the computational microbiology and protein function prediction communities, but the case is currently not established from the provided evidence.
+- **Who would be interested in the results, and why** Computational biologists and bioinformaticians working on bacterial pathogenesis, effector protein prediction, and protein function annotation. Researchers developing multimodal deep learning methods for protein analysis would also find the cross-modal fusion architecture relevant. The potential for genome-scale effector discovery may interest microbiologists studying host-pathogen interactions.
+- **Major strengths** The problem is well defined and biologically important. The motivation for combining sequence and predicted structure is sound, addressing a recognized limitation of sequence-only methods. The proposed architecture is modular and extensible, which is a practical advantage. The inclusion of remote homolog recognition as an evaluation scenario suggests attention to real-world applicability.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "GeoEPred achieves better predictive performance than existing leading models in T3SE, T4SE, and T6SE prediction tasks"
+  - **Evidence pointer** Abstract only; no figures, tables, or quantitative results provided
+  - **Concern** The central performance claim is made without any numerical data, baseline comparisons, or statistical measures. No metrics such as AUC, precision, recall, or F1 are reported. No information is given about the benchmark datasets used, the number of positive and negative samples, or the specific baseline methods compared.
+  - **Why it matters** Without quantitative evidence, the claim of superior performance is unverifiable. The reader cannot determine whether the improvement is marginal or substantial, whether it is consistent across tasks, or whether it is statistically significant. This is the core contribution of the paper and must be supported with data.
+  - **Resolution test** Provide performance metrics with confidence intervals or significance tests for each task, specify the benchmark datasets and their composition, and list the baseline methods with their reported or reproduced performance.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological reproducibility
+  - **Claim pointer** "The model integrates sequence-contextual embeddings from a pretrained protein language model with three-dimensional structural representations predicted by ESMFold"
+  - **Evidence pointer** Abstract only; no methods section or architecture details provided
+  - **Concern** The abstract describes the components of the framework but provides no details on implementation, hyperparameters, training procedures, or computational resources. The cross-modal alignment and feature-tokenized self-attention module is mentioned but not specified in terms of its design or training objective beyond "contrastive learning."
+  - **Why it matters** Reproducibility is a fundamental requirement for computational biology methods. Without implementation details, other researchers cannot apply or extend the method. The novelty of the architecture cannot be evaluated without understanding how it differs from existing multimodal fusion approaches.
+  - **Resolution test** Provide a complete methods section with architecture diagrams, hyperparameter settings, training details, and code availability. Clarify the specific design choices for the cross-modal alignment and self-attention modules.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Generalization claim support
+  - **Claim pointer** "GeoEPred demonstrates strong generalization ability and substantial application potential for genome-scale effector protein discovery"
+  - **Evidence pointer** Abstract only; no genome-scale experiments or external validation described
+  - **Concern** The claim of strong generalization is based on "remote homolog recognition scenarios" but no results are shown. The application potential for genome-scale discovery is asserted without any demonstration on whole-genome or large-scale datasets.
+  - **Why it matters** Generalization claims require evidence from held-out datasets, cross-species evaluation, or realistic application scenarios. Genome-scale applicability is a strong claim that needs validation on data with realistic class imbalance and diversity.
+  - **Resolution test** Show results for remote homolog recognition with appropriate metrics. Provide a case study or benchmark on genome-scale data, including runtime and scalability analysis.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, "feature-tokenized self-attention module"
+  - **Issue** The term "feature-tokenized" is not standard and its meaning is unclear without further explanation.
+  - **Required correction** Define this term explicitly or rephrase to describe the tokenization process more clearly.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Evaluation description
+  - **Evidence pointer** Abstract, "multiple benchmark datasets"
+  - **Issue** The number and nature of benchmark datasets are not specified, making it difficult to assess the breadth of evaluation.
+  - **Required correction** List the specific benchmark datasets used and briefly describe their characteristics.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Abstract, "geometric vector perceptrons"
+  - **Evidence pointer** Abstract
+  - **Issue** This term is used without citation or definition, which may confuse readers unfamiliar with the specific architecture.
+  - **Required correction** Provide a brief explanation or citation for this component.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative results, methodological details, and generalization evidence means the core claims cannot be evaluated.
+- **Assessment against Nature-style criteria** 
+  - Originality: The combination of language model embeddings with ESMFold-predicted structures for effector prediction appears novel, but the abstract does not clearly differentiate this from existing multimodal protein prediction methods. Assessment is limited by missing literature comparison.
+  - Scientific importance: The problem is important for understanding bacterial pathogenesis and developing therapeutic strategies. The potential for genome-scale discovery adds practical value.
+  - Interdisciplinary readership: The work bridges deep learning, structural biology, and microbiology, which could attract a broad audience. However, the abstract is written primarily for a computational audience.
+  - Technical soundness: Cannot be assessed from the abstract. The architecture is plausible but unverified.
+  - Readability for nonspecialists: The abstract is dense with technical terminology and would be challenging for readers without deep learning or structural biology background. The biological motivation is clear, but the methods description is not accessible.
+- **Recommendation posture** Currently not established from the provided evidence. The approach is promising and the problem is well chosen, but the abstract alone does not provide sufficient support for the performance and generalization claims. A full manuscript with quantitative results, methodological detail, and validation would be needed to assess whether the case can be made.
+
+## Risk / unsupported claims
+- The claim of "better predictive performance than existing leading models" is unsupported without quantitative comparisons.
+- The claim of "stable performance in remote homolog recognition scenarios" is unsupported without results.
+- The claim of "strong generalization ability and substantial application potential for genome-scale effector protein discovery" is unsupported without genome-scale validation.
+- The effectiveness of the cross-modal alignment and feature-tokenized self-attention module is unverifiable without ablation studies or component analysis.
+- The novelty of the architecture relative to existing multimodal protein prediction methods cannot be assessed from the abstract alone.

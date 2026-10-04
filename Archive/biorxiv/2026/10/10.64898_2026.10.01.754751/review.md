@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report a synergistic strategy combining de novo protein design and directed evolution to create haemprotein catalysts that perform new-to-nature regio- and enantioselective C-H amination, yielding chiral piperidines with high catalytic efficiency, stability, and scaffold diversity
+- **Visible evidence base** Abstract text only; no quantitative data, experimental details, or validation results are available
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, supplementary information, sequence and structural data, kinetic and selectivity measurements, stability assays, and any comparative benchmarks
+
+## Reviewer
+- **Overall assessment** The abstract presents an ambitious and potentially impactful claim: that a design-evolution synergy can enable de novo enzymes to catalyse a challenging new-to-nature reaction with programmable selectivity and high performance. The concept is timely and aligns with current frontiers in both computational protein design and directed evolution. However, the abstract provides no quantitative evidence, no methodological detail, and no comparative context. As such, the scientific case is not yet established from the supplied material. The work may be of high interest if the underlying data are robust, but the current evidence base is insufficient for a rigorous evaluation.
+- **Who would be interested in the results, and why** Researchers in biocatalysis, enzyme engineering, computational protein design, and synthetic chemistry would be interested. The claim of achieving new-to-nature C-H amination with programmable selectivity in de novo scaffolds speaks directly to efforts to expand biocatalytic scope beyond natural enzymes. The focus on chiral piperidines, a pharmacophore relevant to drug discovery, would also attract medicinal chemists and process chemists seeking sustainable synthetic routes.
+- **Major strengths** The conceptual integration of de novo design and directed evolution is well framed and represents a logical advance over approaches that treat these strategies separately. The target reaction, C-H amination to form chiral piperidines, is synthetically valuable and challenging, making the claim inherently significant if substantiated. The emphasis on scaffold diversity and enzyme stability suggests a broader applicability beyond a single catalyst.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The abstract claims "high catalytic efficiency, excellent enzyme stability, and scaffold diversity" for the engineered enzymes  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** No quantitative data are presented to support any performance metric. Catalytic efficiency, stability, and scaffold diversity are stated without numbers, benchmarks, or experimental conditions.  
+  - **Why it matters** These are central claims that determine whether the design-evolution synergy is genuinely effective. Without data, the reader cannot assess whether the catalysts are competitive with existing enzymes or whether the design strategy offers a real advantage.  
+  - **Resolution test** Provide turnover numbers, kcat/KM values, enantiomeric ratios, regioselectivity ratios, thermal or solvent stability measurements, and a description of the scaffold set with sequence or structural identifiers.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Reproducibility and methodological transparency  
+  - **Claim pointer** The abstract states the strategy integrates "motif scaffolding, computational re-design, and directed evolution"  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** No details are given on the design pipeline, the computational methods used, the evolution strategy, or the number of variants screened. The reader cannot evaluate the novelty or the technical soundness of the approach.  
+  - **Why it matters** Reproducibility is a core requirement for any methods-driven claim. Without methodological detail, the work cannot be replicated or independently verified, and the contribution to the field remains unclear.  
+  - **Resolution test** Include a full methods section describing the design algorithm, the re-design steps, the directed evolution protocol, and the screening throughput.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Validation and generalizability  
+  - **Claim pointer** The abstract claims "programmable regio- and enantioselectivity" and "scaffold diversity"  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** No evidence is shown that selectivity can be tuned across multiple substrates or that diverse scaffolds achieve the claimed performance. The term "programmable" implies a level of control that requires demonstration across a substrate panel and scaffold set.  
+  - **Why it matters** The broader significance of the work depends on generalizability. A single catalyst with one substrate would not support the claim of programmability or scaffold diversity.  
+  - **Resolution test** Present data for multiple substrates showing tunable regio- and enantioselectivity, and characterize at least several distinct scaffolds with comparable performance metrics.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Comparison to existing state of the art  
+  - **Claim pointer** The abstract implies the design-evolution synergy enables chemistry that is otherwise difficult to achieve  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** No comparison is made to existing enzymes, including natural haemproteins or previously engineered variants, that may catalyse similar C-H amination reactions.  
+  - **Why it matters** Without a benchmark, the reader cannot judge whether the new catalysts offer a meaningful advance or merely replicate known capabilities.  
+  - **Resolution test** Include comparative data against relevant existing catalysts, with performance metrics under matched conditions.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity of terminology  
+  - **Affected element** "new-to-nature"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The term is used without definition or context. It is unclear whether it refers to the reaction type, the enzyme function, or the selectivity pattern.  
+  - **Required correction** Define "new-to-nature" explicitly in the context of the reaction and the enzyme class.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Specificity of claims  
+  - **Affected element** "excellent enzyme stability"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** "Excellent" is subjective and not quantified.  
+  - **Required correction** Replace with specific stability metrics, such as half-life at defined temperature or in defined solvent conditions.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Contextual framing  
+  - **Affected element** Introduction of piperidines as "privileged pharmacophore"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The claim is well known but not referenced, and the relevance to the enzyme chemistry is not elaborated.  
+  - **Required correction** Add a brief citation and explain how the selectivity outcomes relate to pharmaceutical relevance.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Completeness of author contributions  
+  - **Affected element** Author list  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** No statement of author contributions or competing interests is provided.  
+  - **Required correction** Include standard declarations in the full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative performance data, methodological detail, and evidence of generalizability means the central claims cannot be verified from the supplied material.
+- **Assessment against Nature-style criteria**  
+  - Originality: The concept of combining de novo design with directed evolution for a new-to-nature reaction is potentially original, but the abstract does not distinguish it from prior work in either field. Assessment: not fully assessable.  
+  - Scientific importance: The target reaction and the potential for programmable selectivity are important if substantiated. Assessment: potentially high, but unverified.  
+  - Interdisciplinary readership: The work bridges protein engineering, computational design, and synthetic chemistry, which would appeal to a broad audience. Assessment: likely strong, but dependent on the clarity of the full manuscript.  
+  - Technical soundness: Cannot be evaluated from the abstract alone. Assessment: not assessable.  
+  - Readability for nonspecialists: The abstract is concise and accessible, but technical terms such as "motif scaffolding" and "new-to-nature" are not explained. Assessment: adequate for a specialist audience, but needs refinement for broader readership.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a promising concept, but the absence of data and methodological detail precludes a supportive recommendation. If the full manuscript provides robust quantitative evidence, the work could merit consideration, but the current submission does not meet the evidentiary standard.
+
+## Risk / unsupported claims
+- "High catalytic efficiency" is unsupported; no kinetic data are provided.
+- "Excellent enzyme stability" is unsupported; no stability measurements are provided.
+- "Scaffold diversity" is unsupported; no scaffold set or sequence data are provided.
+- "Programmable regio- and enantioselectivity" is unsupported; no selectivity data across substrates are provided.
+- The claim that the design-evolution synergy "enables" the reaction is not verifiable without comparative data showing that design or evolution alone would be insufficient.

@@ -1,0 +1,86 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors fine-tuned a small language model (Qwen 2.5 0.5B) for sequence-to-sequence generation of molecular SELFIES from protein amino acid sequences, using a curated ChEMBL-derived dataset. They report high validity, uniqueness, and novelty of generated ligands across multiple targets; comparative behavior of beam search versus stochastic sampling; validation via molecular docking, molecular dynamics simulations, and MM/PBSA calculations; and successful target-specific fine-tuning under extreme low-data conditions via molecular representation augmentation.
+- **Visible evidence base** Abstract text only; no quantitative results, dataset descriptions, model configurations, or validation metrics are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, dataset curation details, model training hyperparameters, evaluation metrics, docking and simulation protocols, and statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially useful approach to target-specific de novo drug design using a small language model. However, the absence of any quantitative results, methodological details, or comparative baselines in the provided material prevents assessment of the validity, robustness, and significance of the claims. The work may be of interest to computational drug discovery researchers, but the case is not established from the abstract alone.
+- **Who would be interested in the results, and why** Computational chemists and medicinal chemists working on generative models for drug discovery, particularly those interested in low-data scenarios, small language models, and structure-aware ligand design. The combination of sequence-to-sequence generation with docking and molecular dynamics validation is directly relevant to practical hit-finding efforts.
+- **Major strengths** The abstract identifies a clear problem (low-yield de novo design for targets with limited bioactivity data) and proposes a coherent solution (fine-tuning a small language model with molecular representation augmentation). The use of SELFIES and a small model is pragmatic and potentially accessible to broader research groups. The inclusion of multiple validation layers (docking, MD, MM/PBSA) is appropriate for the stated goal.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims "strong ligand generation capability across multiple targets, achieving high validity, uniqueness, and novelty" and "energetically favorable binding profiles comparable to known inhibitors."
+  - **Evidence pointer** Abstract only; no figures, tables, or quantitative values provided
+  - **Concern** No numerical results are presented. Validity, uniqueness, novelty, docking scores, binding free energies, and comparisons to known inhibitors are stated qualitatively without any supporting data.
+  - **Why it matters** Without quantitative evidence, the core claims cannot be evaluated for statistical significance, practical utility, or comparability to existing methods. The reader cannot determine whether the model outperforms baselines or random generation.
+  - **Resolution test** Provide specific metrics (e.g., validity percentage, uniqueness, novelty, docking scores, MM/PBSA values) with error bars or confidence intervals, and include comparisons to baseline models or known inhibitors.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** The abstract states "a curated and balanced dataset derived from ChEMBL was used to reduce target-level data imbalance" and "molecular representation augmentation" was used for low-data fine-tuning.
+  - **Evidence pointer** Abstract only; dataset details and augmentation methods not described
+  - **Concern** The dataset curation, balancing strategy, and augmentation technique are not specified. It is unclear how targets were selected, how data imbalance was quantified or corrected, and what augmentation methods were applied.
+  - **Why it matters** Reproducibility and generalizability depend on these details. Without them, the reader cannot assess whether the approach is broadly applicable or tailored to specific favorable cases.
+  - **Resolution test** Describe dataset size, target selection criteria, balancing procedure, augmentation methods, and provide code or detailed protocols.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Comparative validity
+  - **Claim pointer** The abstract claims "beam search favored conservative exploitation of learned chemical space, whereas sampling enabled broader exploration and higher novelty."
+  - **Evidence pointer** Abstract only; no comparative analysis shown
+  - **Concern** The comparative claim about beam search versus sampling is presented as a finding, but no data, statistical tests, or examples are provided to support the distinction.
+  - **Why it matters** This is a central methodological insight that could guide model usage. Without evidence, it remains an assertion rather than a demonstrated result.
+  - **Resolution test** Provide quantitative comparisons of generated molecule properties (e.g., validity, novelty, diversity, docking performance) under both decoding strategies, with appropriate statistical analysis.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Validation rigor
+  - **Claim pointer** The abstract claims "generated compounds formed stable complexes with energetically favorable binding profiles comparable to known inhibitors."
+  - **Evidence pointer** Abstract only; no docking or simulation results shown
+  - **Concern** The validation via docking, MD, and MM/PBSA is mentioned but no results are presented. It is unclear how many targets were validated, how stability was defined, and how "comparable" was assessed.
+  - **Why it matters** The biological relevance of generated compounds is a key selling point. Without quantitative binding data and comparison to known inhibitors, the claim is unsubstantiated.
+  - **Resolution test** Show docking scores, RMSD/RMSF profiles from MD, and MM/PBSA values for generated compounds and known inhibitors, with statistical comparisons.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, "extreme low data conditions"
+  - **Issue** The term "extreme low data" is not defined. It is unclear what number of training examples constitutes this condition.
+  - **Required correction** Define the data range used for low-data experiments (e.g., number of ligands per target).
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Model specification
+  - **Evidence pointer** Abstract, "Qwen 2.5 0.5B"
+  - **Issue** The model is identified, but fine-tuning details (e.g., learning rate, epochs, hardware) are not mentioned.
+  - **Required correction** Provide training hyperparameters or reference to a methods section.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scope
+  - **Affected element** Target selection
+  - **Evidence pointer** Abstract, "multiple targets"
+  - **Issue** The number and identity of targets are not specified, limiting the reader's ability to gauge generalizability.
+  - **Required correction** List the targets studied and their biological relevance.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The absence of quantitative results, methodological details, and comparative analyses means the core claims are currently unsupported.
+- **Assessment against Nature-style criteria** 
+  - Originality: The approach of fine-tuning a small language model for sequence-to-sequence ligand design is not entirely novel, but the combination with molecular representation augmentation for low-data scenarios may offer a modest contribution. Originality cannot be fully assessed without seeing the full manuscript.
+  - Scientific importance: If validated, the work could be useful for target-specific design in data-poor settings, which is a relevant problem. However, the importance relative to existing generative models is unclear from the abstract.
+  - Interdisciplinary readership: The topic bridges machine learning and computational drug discovery, which has broad appeal. The abstract is written accessibly, but the lack of quantitative detail limits its impact for specialists.
+  - Technical soundness: Cannot be evaluated from the abstract. The absence of metrics, baselines, and statistical analyses precludes any judgment of technical rigor.
+  - Readability for nonspecialists: The abstract is clear and well-structured, with technical terms (SELFIES, MM/PBSA) used appropriately. However, the lack of results makes it difficult for a nonspecialist to gauge significance.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a plausible workflow, but the absence of quantitative results and methodological transparency means the claims cannot be verified. A full manuscript with detailed methods, results, and comparisons would be required to assess the work's validity and significance.
+
+## Risk / unsupported claims
+- "Strong ligand generation capability" is unsupported without quantitative metrics.
+- "High validity, uniqueness, and novelty" are asserted without numbers.
+- "Energetically favorable binding profiles comparable to known inhibitors" is unsupported without docking or MM/PBSA data.
+- "Successful target-specific fine-tuning under extreme low data conditions" is unverifiable without dataset size and augmentation details.
+- The comparative behavior of beam search versus sampling is asserted without evidence.
+- The claim that the model is "structure-aware" is not substantiated, as the abstract does not describe how structural information is incorporated beyond sequence input.

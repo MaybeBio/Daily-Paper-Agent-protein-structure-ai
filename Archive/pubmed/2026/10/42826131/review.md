@@ -1,0 +1,80 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors propose a generative framework that combines amino acid sequence alignments and 3D interaction (3Di) structure-informed alignments via variational autoencoders and direct coupling analysis to produce latent generative landscapes. They define information-theoretic distance metrics on these landscapes and demonstrate the framework on five protein families, claiming that the 3Di landscape reveals structural conservation, functional subfamilies, and evolutionary relationships that are invisible at the sequence level, and that the framework enables sampling near functional regions for mechanistic insight and protein design.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary information were supplied
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, methods description, statistical analyses, validation procedures, and any quantitative results
+
+## Reviewer
+- **Overall assessment** The abstract presents an ambitious and potentially valuable conceptual framework that integrates sequence and structure information in a generative modeling context. The idea of using a 3Di alphabet to create parallel alignments and then coupling two latent representations through direct coupling analysis is novel and could be of broad interest. However, the abstract alone provides insufficient detail to evaluate the technical soundness, the validity of the claims, or the robustness of the demonstrations. Several claims, particularly those about recovering known functional subfamilies and revealing evolutionary relationships invisible at the sequence level, are stated without quantitative support or comparison to existing methods. The framework's utility for protein design is asserted but not substantiated. The manuscript may have merit, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational biologists, protein evolution researchers, structural biologists, and machine learning practitioners working on protein representation learning would be interested. The framework addresses a fundamental question about how to combine sequence and structure information, which is relevant to understanding sequence-structure-function relationships, predicting functional effects of mutations, and guiding protein engineering. The potential to disentangle sequence variability from structural and functional variation could appeal to those studying protein families with high sequence divergence but conserved folds.
+- **Major strengths** The conceptual framing of building sequence and structure views in parallel and coupling them through a shared coevolutionary energy is elegant and potentially powerful. The use of a 3Di alphabet to bridge sequence and structure is a creative approach that leverages recent advances in structure-aware sequence representations. The demonstration across five diverse protein families suggests broad applicability. The information-theoretic distance metrics provide a principled way to quantify sequence-structure-function relationships.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The framework "builds both views in parallel" and "direct coupling analysis places a shared coevolutionary energy on both maps, turning them into latent generative landscapes."
+  - **Evidence pointer** Methods section not provided
+  - **Concern** The abstract does not describe how the two latent maps are coupled, how the shared coevolutionary energy is defined, or how the generative landscapes are sampled. Without this information, it is impossible to assess whether the approach is technically sound, computationally feasible, or statistically principled.
+  - **Why it matters** The core methodological contribution is the coupling mechanism. If this is not clearly defined and validated, the entire framework rests on an unsubstantiated foundation. Reviewers and readers cannot evaluate whether the generative landscapes are meaningful or whether the distance metrics are well-defined.
+  - **Resolution test** Provide a detailed methods section describing the mathematical formulation of the coupling, the training procedure, the sampling strategy, and any convergence or stability analyses. Include benchmarks on synthetic or well-characterized systems to demonstrate that the framework behaves as expected.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "In globins and transient receptor potential melastatin (TRPM), the 3Di landscape recovers known functional subfamilies."
+  - **Evidence pointer** Figures not provided
+  - **Concern** The abstract claims recovery of known functional subfamilies but provides no quantitative measure of recovery, no comparison to sequence-based clustering or phylogenetic methods, and no statistical significance assessment. The claim is stated as a qualitative observation.
+  - **Why it matters** Recovery of known subfamilies is a key validation of the framework's utility. Without quantitative benchmarks, it is unclear whether the 3Di landscape adds value over existing sequence-based approaches or whether the recovery is trivial or coincidental.
+  - **Resolution test** Provide quantitative comparisons, such as adjusted mutual information or F1 scores, between the 3Di landscape clusters and known functional annotations. Compare against sequence-only latent representations and standard phylogenetic or clustering baselines. Include statistical tests for significance.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim support
+  - **Claim pointer** "In the Flaviviridae E1 and E2 glycoproteins, structure reveals evolutionary relationships invisible at the sequence level."
+  - **Evidence pointer** Figures not provided
+  - **Concern** This is a strong claim that structure-based analysis uncovers evolutionary relationships that sequence analysis cannot detect. The abstract provides no evidence for this, such as specific relationships discovered, how they were validated, or how they were shown to be invisible at the sequence level.
+  - **Why it matters** This claim is central to the framework's value proposition. If it cannot be substantiated with concrete examples and validation, the framework's advantage over sequence-based methods is not demonstrated.
+  - **Resolution test** Provide specific examples of evolutionary relationships revealed by the 3Di landscape, with supporting phylogenetic or structural evidence. Demonstrate explicitly that standard sequence-based methods fail to recover these relationships. Include a quantitative comparison of sequence versus structure-based signals.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim support
+  - **Claim pointer** "These generative landscapes allow sampling near functional regions, and we show they can help us gain mechanistic insight into the evolutionary forces shaping sequence-structure-function variation and guide the design of new proteins."
+  - **Evidence pointer** Figures not provided
+  - **Concern** The abstract asserts that the framework enables sampling near functional regions and guides protein design, but no examples, validation, or experimental confirmation are provided. The claim about mechanistic insight is vague and unsupported.
+  - **Why it matters** The utility for protein design and mechanistic insight is a major selling point. Without concrete demonstrations, such as designed proteins that are experimentally validated or mechanistic hypotheses that are tested, these claims are speculative.
+  - **Resolution test** Provide at least one case study where the framework was used to design or modify a protein, with experimental validation of function. For mechanistic insight, provide a specific hypothesis generated by the framework and a test of that hypothesis.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The phrase "lack a quantitative framework to tell, family by family, which is most informative and how to combine them" is somewhat ambiguous. It is unclear whether the authors mean that no framework exists at all or that existing frameworks are not quantitative.
+  - **Required correction** Clarify the statement to specify what existing approaches do and what specific gap this framework fills.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Framework description
+  - **Evidence pointer** Abstract, methods not provided
+  - **Issue** The abstract does not mention any software, code availability, or data availability. For a computational framework, this is important for reproducibility.
+  - **Required correction** State in the abstract or main text that code and data will be made available, and provide a repository link in the manuscript.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scope
+  - **Affected element** Demonstration set
+  - **Evidence pointer** Abstract, list of five families
+  - **Issue** The five families chosen are diverse, but the abstract does not explain why these families were selected or whether they represent a biased or unbiased test set.
+  - **Required correction** Briefly justify the choice of families and discuss any potential selection bias in the main text.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (coupling mechanism not described), R1-M2 (no quantitative validation of subfamily recovery), R1-M3 (no evidence for structure-revealed evolutionary relationships), R1-M4 (no demonstration of design utility)
+- **Assessment against Nature-style criteria** Originality: The concept of coupling sequence and 3Di structure latent spaces via direct coupling analysis appears novel and creative. Scientific importance: The question of how to integrate sequence and structure information is important, and the framework could have broad implications if validated. Interdisciplinary readership: The work bridges computational biology, structural biology, and evolutionary biology, which could attract a broad audience. Technical soundness: Cannot be assessed from the abstract alone; the lack of methodological detail is a major limitation. Readability for nonspecialists: The abstract is reasonably accessible but uses jargon (e.g., "3Di alphabet," "direct coupling analysis") without sufficient explanation for a general audience.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is intriguing, but the abstract does not provide sufficient technical detail or quantitative validation to support the major claims. The manuscript may be worthy of consideration if the full paper provides rigorous methods, benchmarks, and validation. I would be supportive if the technical concerns are resolved in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that the 3Di landscape "identifies the structurally conserved scaffold" in malate dehydrogenases is unsupported without figures or quantitative analysis.
+- The claim that the framework "lets us disentangle family-sequence variability from structural and functional variation" is not substantiated with any formal definition or demonstration.
+- The claim that the framework "can help us gain mechanistic insight into the evolutionary forces" is speculative and not supported by any specific example.
+- The claim that the framework can "guide the design of new proteins" is asserted without any experimental validation or even in silico demonstration.
+- The overall utility of the information-theoretic distance metrics is not demonstrated with any concrete application or comparison to existing metrics.

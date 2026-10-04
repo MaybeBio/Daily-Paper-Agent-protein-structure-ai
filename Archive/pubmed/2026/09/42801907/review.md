@@ -1,0 +1,77 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the supplied abstract
+- **Shared manuscript claim summary** The authors describe a staged computational workflow for prioritizing lanmodulin-based binding-site designs for dysprosium-focused rare-earth separation. The workflow combines four experimental templates, constrained ProteinMPNN and LigandMPNN sampling, Rosetta triage, and an OpenMM geometry screen. The authors report a residue-role inventory, three finalist models, 45 simulations, and a Composite Quality Index for candidate prioritization. They acknowledge limitations in the simulation setup and descriptor non-discrimination.
+- **Visible evidence base** Abstract text only; no figures, tables, or supplementary materials provided
+- **Missing materials affecting confidence** Full manuscript, figures, tables, methods details, simulation parameters, sequence generation outputs, and any experimental validation data
+
+## Reviewer
+- **Overall assessment** The abstract presents a computational workflow with a clear staged design and an honest acknowledgment of technical limitations. However, the evidence base is insufficient to establish the scientific case for the proposed prioritization. The workflow's output is a single candidate model, but the abstract does not demonstrate that this candidate is meaningfully better than alternatives or that the prioritization criteria are physically justified. The acknowledged absence of verified 12-6-4 parameters, lack of explicit solvent, and non-discriminating occupancy descriptors undermine the quantitative claims. The work may be of interest to computational protein design and rare-earth separation communities, but the current evidence does not support a strong conclusion.
+- **Who would be interested in the results, and why** Computational protein designers interested in lanmodulin engineering and metal-binding site design; researchers in rare-earth separation seeking aqueous, protein-based alternatives; method developers interested in staged prioritization workflows combining machine learning and molecular simulation.
+- **Major strengths** The staged workflow is logically structured and transparently described. The authors explicitly acknowledge technical limitations, including the absence of verified 12-6-4 parameters and the non-discriminating nature of the occupancy descriptor. The use of a dimensionless Composite Quality Index for prioritization is clearly defined. The honest reporting of simulation setup deficiencies is commendable.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The workflow "prioritize[s] a candidate for future reduced-cluster multireference characterization" and the CQI "ranked the Hans chain-A pocket model highest at 0.802 and was used solely for candidate prioritization."
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The prioritization relies on a Composite Quality Index defined as CQI = 0.7L + 0.3G, but the abstract does not define what L and G represent, how they are computed, or why these weights are chosen. The index is presented as a ranking tool, but its physical or statistical basis is not established. The claim that the Hans chain-A pocket model is the top candidate is therefore not interpretable or verifiable from the provided information.
+  - **Why it matters** Without a defined and justified scoring metric, the prioritization outcome cannot be assessed for validity. The reader cannot determine whether the ranking reflects meaningful physical differences or arbitrary weighting choices.
+  - **Resolution test** Provide explicit definitions of L and G, their computation methods, and a sensitivity analysis of the CQI to weight choices. Demonstrate that the ranking is robust to reasonable variations in the index formulation.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "The retained system XMLs and execution code contained a standard NonbondedForce and no verified C4/r4 implementation; the calculations therefore cannot be described as verified 12-6-4 simulations."
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The authors correctly acknowledge that the simulations do not implement verified 12-6-4 parameters, which are critical for accurate metal-ion interactions. However, the abstract still reports distance-based observations for Dy(III), Nd(III), and Y(III) and uses these in the prioritization workflow. The absence of appropriate metal parameters means the geometric results may be physically unreliable, yet the workflow proceeds to rank candidates based on these data.
+  - **Why it matters** Metal-binding simulations without verified parameters can produce artifacts in coordination geometry and distances. If the prioritization is based on such potentially flawed data, the final candidate selection may not reflect true binding-site quality.
+  - **Resolution test** Either implement and verify the 12-6-4 parameters before drawing conclusions, or clearly state that the geometric results are preliminary and not physically validated, and adjust the prioritization claims accordingly.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** "The workflow therefore identifies a model-prioritized candidate for further computation and experiment."
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not provide any experimental validation or comparison to known lanmodulin binding data. The workflow output is a single prioritized candidate, but there is no evidence that this candidate is likely to be functional or selective for dysprosium over other rare earths. The claim of "dysprosium-focused" separation is not supported by any binding or selectivity data.
+  - **Why it matters** The stated goal is dysprosium-focused rare-earth separation. Without any evidence of selectivity or binding affinity, the scientific importance of the prioritized candidate is unestablished. The workflow may be methodologically interesting, but its practical relevance is not demonstrated.
+  - **Resolution test** Provide experimental or high-level computational validation (e.g., multireference calculations, binding assays) showing that the prioritized candidate exhibits dysprosium selectivity or improved binding compared to controls.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Residue-role inventory
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract states "70 category memberships representing 66 unique positions because four positions belonged to two roles" but does not explain what categories or roles are defined.
+  - **Required correction** Define the residue-role categories and provide a brief explanation of why positions can belong to multiple roles.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Simulation details
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract mentions "three 100 ps OpenMM replicas" and "45 simulations" but does not specify the number of candidate-metal combinations or the metal ions tested beyond Dy(III), Nd(III), Y(III), Al(III), and Fe(III).
+  - **Required correction** Provide a clear breakdown of the simulation matrix, including the number of candidates, metals, and replicas per combination.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Distance observations
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The statement "Al(III) and Fe(III) produced shorter model-dependent distances than Dy(III), Nd(III), and Y(III)" is presented without context on whether these differences are expected or significant.
+  - **Required correction** Add a brief interpretation of why these distance differences might occur and whether they are consistent with known coordination chemistry.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Hans descriptors
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract mentions "Hans pocket and AM1/Mex descriptors" and "Hans interface descriptor" but does not define these terms or explain their relevance.
+  - **Required correction** Define the descriptors and explain their role in the prioritization workflow.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (undefined CQI), R1-M2 (unverified metal parameters), R1-M3 (no validation of dysprosium selectivity)
+- **Assessment against Nature-style criteria** Originality: The staged workflow combining multiple computational tools is somewhat novel, but the individual components are established methods. Scientific importance: The potential application to rare-earth separation is significant, but the current evidence does not demonstrate practical utility. Interdisciplinary readership: The work bridges protein design and separation science, which could attract a broad audience, but the abstract is too technical and lacks context for nonspecialists. Technical soundness: The authors are transparent about limitations, but the undefined CQI and unverified parameters are significant gaps. Readability for nonspecialists: The abstract assumes familiarity with computational protein design and simulation methods; it would benefit from clearer explanations of key terms and the overall significance.
+- **Recommendation posture** Currently not established from the provided evidence. The workflow is described transparently, but the prioritization outcome is not verifiable due to the undefined CQI, the simulations lack verified metal parameters, and no evidence of dysprosium selectivity is provided. The authors should address these technical gaps and provide validation before the case can be considered.
+
+## Risk / unsupported claims
+- The claim that the Hans chain-A pocket model is the top candidate is unsupported because the CQI components L and G are not defined.
+- The geometric distance observations are presented as meaningful but are based on simulations without verified metal parameters, making them unreliable for drawing conclusions.
+- The "dysprosium-focused" aspect of the work is not supported by any selectivity or binding data.
+- The statement that the workflow "identifies a model-prioritized candidate for further computation and experiment" is not verifiable without details on the prioritization criteria and their physical basis.

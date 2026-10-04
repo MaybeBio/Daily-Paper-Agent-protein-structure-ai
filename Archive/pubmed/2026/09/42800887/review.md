@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full manuscript, figures, tables, or supplementary materials provided
+- **Shared manuscript claim summary** The authors use microsecond-scale molecular dynamics simulations and umbrella sampling free-energy calculations to propose a ligand-dependent conformational pathway for TNPO3, in which SR cargo binding stabilizes a partially extended solenoid, Ran-GTP confines the receptor to compact conformations, and cargo phosphorylation stabilizes the TNPO3-cargo interface, collectively supporting a mechanism for cargo release during nuclear import.
+- **Visible evidence base** Abstract text only; no simulation details, system setup, convergence metrics, free-energy profiles, or structural analyses are available
+- **Missing materials affecting confidence** Full manuscript, simulation methods, force field parameters, system construction details, convergence and error analysis, free-energy calculation protocols, structural figures, and any statistical validation
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and mechanistically interesting hypothesis regarding ligand-dependent conformational modulation of TNPO3. However, the evidence base is limited to a summary of results without access to the underlying simulation data, convergence criteria, or quantitative free-energy values. The central claims, particularly the proposed conformational pathway and the energetic distinctions between Ran-GTP and Ran-GDP states, cannot be independently evaluated from the supplied material. The work has potential relevance to the nuclear transport field, but the current evidence is insufficient to establish the case.
+- **Who would be interested in the results, and why** Researchers studying nuclear transport receptors, particularly the importin-beta superfamily and HEAT-repeat proteins, would find these results relevant. Structural biologists and computational biophysicists interested in conformational ensembles and ligand-induced allostery in large solenoid proteins would also be engaged. The proposed phosphorylation-dependent modulation of cargo binding may interest cell biologists studying SR protein regulation.
+- **Major strengths** The abstract addresses a clear gap in understanding how ligand binding modulates TNPO3 conformational dynamics, moving beyond static structures. The combination of equilibrium simulations and free-energy calculations is appropriate for probing conformational landscapes. The proposed pathway, from apo flexibility to SR-bound extended state to Ran-GTP compact state, provides a testable framework. The inclusion of phosphorylation effects adds biological relevance.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "microsecond-scale molecular dynamics simulations with umbrella sampling free-energy calculations" provide quantitative results supporting the proposed pathway
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No simulation details are available, including force field, water model, salt concentration, system size, simulation length per state, number of replicas, or convergence metrics. Umbrella sampling results are mentioned but no free-energy values, error bars, or reaction coordinates are reported. Without these, the quantitative framework claimed in the abstract cannot be assessed.
+  - **Why it matters** Molecular dynamics results are only meaningful if simulations are demonstrably converged and free-energy calculations are statistically robust. The absence of any methodological detail prevents verification of the central quantitative claims.
+  - **Resolution test** Provide full methods, convergence analysis, free-energy profiles with uncertainties, and replica counts in the manuscript.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Support for conclusions
+  - **Claim pointer** "These findings support a ligand-dependent conformational pathway, in which TNPO3 shifts from a flexible apo ensemble to an SR-bound extended state. This is followed by a structurally compatible intermediate shared with Ran-GTP-bound form before reaching compact Ran-GTP-stabilized state associated with cargo release."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The proposed pathway is presented as a sequential mechanism, but the abstract does not provide evidence for the existence of a "structurally compatible intermediate" or for the temporal ordering of states. No free-energy barriers, transition rates, or pathway sampling are described. The pathway appears inferred from equilibrium populations rather than demonstrated dynamically.
+  - **Why it matters** A conformational pathway implies kinetic connectivity and ordering. Equilibrium simulations alone cannot establish that states are visited in a specific sequence or that an intermediate is on-pathway. Overinterpretation of equilibrium ensembles as pathways is a common pitfall.
+  - **Resolution test** Provide transition path sampling, Markov state model analysis, or explicit free-energy profiles connecting the proposed states, with barriers and committor probabilities.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Biological relevance
+  - **Claim pointer** "Reduction in phosphorylation of SR cargo weakens binding and increases conformational heterogeneity, highlighting the role of phosphorylation in stabilizing the TNPO3-cargo interface."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that reduced phosphorylation weakens binding, but no binding free-energy values or comparative data are provided. The claim that phosphorylation stabilizes the interface is plausible but unsupported without quantitative binding affinities or interaction energy decomposition.
+  - **Why it matters** The biological significance of the work depends on the phosphorylation effect being real and quantitatively characterized. Without numbers, the claim remains qualitative and unverifiable.
+  - **Resolution test** Report binding free energies for phosphorylated versus non-phosphorylated cargo, with uncertainties, and show interaction energy contributions.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "partially extended solenoid architecture" is vague. It is unclear what "partially" means quantitatively relative to the apo state.
+  - **Required correction** Define the extension metric, such as radius of gyration or end-to-end distance, and provide values for each state.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Ran nucleotide states
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions Ran-GTP and Ran-GDP but does not state whether Ran was in the GTP-bound or GDP-bound form in the cargo-bound simulations. The interplay between cargo and Ran states is unclear.
+  - **Required correction** Specify which combinations of ligand states were simulated, such as apo, cargo-bound, Ran-GTP-bound, Ran-GDP-bound, and ternary complexes.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Simulation length
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** "Microsecond-scale" is imprecise. Different systems may have been simulated for different lengths, and the number of independent replicates is not stated.
+  - **Required correction** Report exact simulation lengths per system and number of replicates in the methods.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The lack of methodological detail and the unsupported pathway inference prevent the case from being established. R1-M3 is significant but not blocking if binding data are provided.
+- **Assessment against Nature-style criteria** Originality is moderate, as the application of MD to nuclear transport receptors is not new, but the focus on TNPO3 conformational modulation is a specific contribution. Scientific importance is moderate, as the findings could inform understanding of HEAT-repeat protein allostery, but the impact is limited without experimental validation. Interdisciplinary readership is narrow, primarily computational biophysicists and nuclear transport specialists. Technical soundness cannot be assessed from the abstract alone, and the lack of convergence details is a concern. Readability for nonspecialists is adequate, but the abstract uses jargon such as "HEAT-repeat solenoid" without sufficient context.
+- **Recommendation posture** Currently not established from the provided evidence. The hypothesis is interesting and the approach is appropriate, but the abstract alone does not provide sufficient methodological or quantitative detail to support the claims. A full manuscript with rigorous convergence analysis, free-energy profiles, and pathway validation would be needed to assess the work properly.
+
+## Risk / unsupported claims
+- The proposed sequential conformational pathway is unsupported, as no kinetic or transition data are provided.
+- The claim that Ran-GTP produces the "strongest confined conformational ensemble" is unquantified and cannot be evaluated.
+- The statement that phosphorylation stabilizes the TNPO3-cargo interface is unsupported without binding free-energy values.
+- The "quantitative framework" mentioned in the abstract is not demonstrated, as no numbers are reported.
+- The existence of a "structurally compatible intermediate" is asserted without structural or energetic evidence.

@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors report a computational engineering strategy combining deep learning-based structure prediction and molecular dynamics simulations to generate a TdT variant (M3, V253E/L256M/N338R) from *Crocodylus porosus* with a 26-fold increase in specific activity toward 3'-ONH2-dCTP, retained expression and thermostability, and a proposed mechanistic basis involving Loop1 dynamics and in-line attack orientation. They further claim transferability of the N338R mutation to a second TdT scaffold.
+- **Visible evidence base** Abstract text only; no experimental details, sequence alignments, simulation parameters, activity assay conditions, or statistical analyses are available
+- **Missing materials affecting confidence** Full methods, all figures and tables, simulation trajectories and validation, raw activity data, thermostability measurements, expression data, and details of the second scaffold experiment
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting computational approach to TdT engineering, and the reported 26-fold activity improvement is notable. However, the evidence base is limited to the abstract, and several claims cannot be evaluated without access to the underlying data. The mechanistic interpretation, transferability claim, and practical significance require substantial additional support. The work may be of interest to the enzymatic DNA synthesis community, but the case is not fully established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in enzymatic DNA synthesis, protein engineering, and computational enzyme design would be interested. The potential to reduce screening burden and the identification of a transferable hotspot (N338) could inform future TdT engineering efforts for incorporation of modified nucleotides, which is relevant to emerging DNA synthesis technologies.
+- **Major strengths** The combination of deep learning-based structure prediction with molecular dynamics simulations is a modern and potentially efficient approach. The reported 26-fold improvement in specific activity is substantial. The identification of a potentially transferable mutation (N338R) adds generalizable value beyond a single variant.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The variant M3 showed a 26-fold increase in specific activity toward 3'-ONH2-dCTP while maintaining expression and thermostability.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract reports a single activity value (26-fold) without any indication of assay conditions, replicates, error margins, or comparison to appropriate controls. It is unclear whether this improvement is specific to 3'-ONH2-dCTP or generalizable to other 3'-modified nucleotides, and whether the activity increase is accompanied by changes in substrate specificity or fidelity.
+  - **Why it matters** Without experimental detail and statistical context, the magnitude of the improvement cannot be assessed for reliability or biological significance. The claim of maintained expression and thermostability is also unsupported by quantitative data.
+  - **Resolution test** Provide full activity assay data with replicates and error estimates, substrate specificity profiles, and quantitative thermostability and expression measurements (e.g., melting temperature, yield).
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic support
+  - **Claim pointer** Simulations indicated that the mutations reorganized Loop1 dynamics and reproducibly biased the incoming nucleotide toward a more favorable in-line attack orientation.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The mechanistic claim is based on simulations, but no details are given on simulation length, force field, convergence criteria, or how "reproducibly" was established. The link between Loop1 dynamics and catalytic orientation is asserted without direct experimental validation (e.g., structural or kinetic evidence).
+  - **Why it matters** The proposed mechanism is central to the paper's conceptual contribution. If the simulation evidence is not robust or is overinterpreted, the mechanistic narrative may not hold.
+  - **Resolution test** Provide simulation convergence metrics, replicate analyses, and ideally experimental validation such as kinetic isotope effects, mutant cycle analysis, or structural data supporting the proposed orientation change.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Generalizability
+  - **Claim pointer** The key N338R change also improved a second TdT scaffold, supporting N338 as a potentially transferable engineering hotspot.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The transferability claim is based on an unspecified second scaffold with no details on sequence identity, activity improvement magnitude, or whether the same assay conditions were used. Without this information, the claim of transferability is not assessable.
+  - **Why it matters** The transferable hotspot claim is a key selling point for broad applicability. If the second scaffold is closely related or the improvement is marginal, the claim may be overstated.
+  - **Resolution test** Provide sequence identity between scaffolds, activity data for the second scaffold with appropriate controls, and statistical comparison to the parent enzyme.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "loop-centric engineering" is not defined, and the significance of Loop1 is not explained for readers outside the TdT field.
+  - **Required correction** Briefly define the concept and state why Loop1 is a relevant target.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Activity measurement
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not specify whether the 26-fold improvement is in kcat, kcat/KM, or overall conversion, which affects interpretation.
+  - **Required correction** Specify the kinetic parameter measured and the substrate concentration range used.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Contextual framing
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not compare the achieved improvement to prior TdT engineering efforts, making it difficult to gauge relative significance.
+  - **Required correction** Add a brief comparison to previously reported TdT variants or engineering outcomes.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (activity and stability data), R1-M2 (simulation robustness and mechanistic validation), R1-M3 (transferability evidence)
+- **Assessment against Nature-style criteria** Originality: The computational approach is not entirely novel, but its application to TdT with a focus on loop dynamics is a reasonable contribution. Scientific importance: The work addresses a relevant bottleneck in enzymatic DNA synthesis, but the significance depends on the robustness of the activity improvement and transferability, which are not yet established. Interdisciplinary readership: The topic bridges computational biology, enzymology, and synthetic biology, but the abstract is too sparse to engage a broad audience. Technical soundness: Not assessable from the abstract; key experimental and computational details are missing. Readability for nonspecialists: The abstract is concise but uses field-specific terms without definition, limiting accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract is promising, but the core claims require full experimental and computational data to be verified. I would be supportive if the technical concerns are resolved with complete methods, quantitative data, and robust simulation analyses.
+
+## Risk / unsupported claims
+- The 26-fold activity improvement is reported without assay conditions, replicates, or error estimates; magnitude and reliability are not assessable.
+- The claim of maintained expression and thermostability is unsupported by quantitative data.
+- The mechanistic interpretation (Loop1 dynamics and in-line attack orientation) is based on simulations with no details on convergence or validation.
+- The transferability of N338R to a second scaffold is asserted without specifying the scaffold or providing comparative data.
+- The practical claim of "reducing reliance on large-scale screening" is a reasonable inference but is not directly demonstrated by the abstract.

@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EnsPlex: Integrative Protein Complex Prediction through Multi-source Complementary Structural Sampling and Topology-Aware Candidate Selection · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>EnsPlex: Integrative Protein Complex Prediction through Multi-source Complementary Structural Sampling and Topology-Aware Candidate Selection</h1>
+      <div class="meta">Hu B; Lu Z; Zaman K; Sun Z; He X</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-02
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.26.754739">原文</a>
+      </div>
+      <p class="one-liner">该文提出EnsPlex多源框架，整合多种结构采样方法（对接、AlphaFold系列）与拓扑感知候选选择模型FACET，用于蛋白质复合物结构预测，在抗原-抗体体系上显著提升预测成功率，核心贡献在蛋白质结构计算建模。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein complex structure prediction depends on both the breadth of candidate coverage and the ability to select accurate models within a limited output budget. Most existing approaches emphasize only one stage. End-to-end models and molecular docking workflows generate candidate structures, whereas quality-assessment models primarily rerank a predefined candidate pool. A complete strategy must account for complementary sampling across generators, differences among scoring scales and the allocation of final candidate quotas. Here, EnsPlex is presented as a multi-source framework that couples structural sampling with candidate selection for protein-protein interaction complex prediction. EnsPlex combines conformation-expanded docking, AlphaFold-Multimer, AlphaFold3 and Boltz-1 to expand the sampled conformational space. Conformation-expanded docking comprises monomer conformational expansion followed by flexible HADDOCK docking. FACET is trained to predict candidate quality using DockQ and its component metrics as supervision. Across 102 antigen-antibody systems, EnsPlex achieved up to a 27.8% relative improvement in target success rate over AlphaFold3 with its built-in ranking under matched output budgets. FACET also improved within-source ranking in the internal candidate pools and in homology-filtered external data. These findings support the utility of EnsPlex for structure prediction in the evaluated antigen-antibody systems.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质复合物结构预测既依赖于候选覆盖范围的广度，也依赖于在有限输出预算内选择准确模型的能力。大多数现有方法仅强调其中一个阶段。端到端模型和分子对接工作流生成候选结构，而质量评估模型主要对预定义的候选池进行重新排序。一个完整的策略必须考虑跨生成器的互补采样、评分尺度之间的差异以及最终候选配额的分配。在此，EnsPlex被提出作为一个多源框架，将结构采样与候选选择相结合，用于蛋白质-蛋白质相互作用复合物预测。EnsPlex结合了构象扩展对接、AlphaFold-Multimer、AlphaFold3和Boltz-1，以扩展采样的构象空间。构象扩展对接包括单体构象扩展，随后进行灵活的HADDOCK对接。FACET被训练用于使用DockQ及其组分指标作为监督来预测候选质量。在102个抗原-抗体系统中，EnsPlex在匹配输出预算下，相对于使用内置排序的AlphaFold3，目标成功率实现了高达27.8%的相对提升。FACET还改善了内部候选池和同源过滤外部数据中的源内排序。这些发现支持EnsPlex在所评估的抗原-抗体系统中用于结构预测的实用性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：EnsPlex: Integrative Protein Complex Prediction through Multi-source Complementary Structural Sampling and Topology-Aware Candidate Selection</li>
+<li><strong>作者</strong>：Hu B; Lu Z; Zaman K; Sun Z; He X</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv</li>
+<li><strong>年份</strong>：2026-10-02</li>
+<li><strong>论文类型</strong>：预印本（方法学/工具类）</li>
+<li><strong>领域</strong>：蛋白质复合物结构预测 × 多源采样 + 候选选择（AI/物理模拟混合）</li>
+<li><strong>关键词</strong>：protein complex prediction, multi-source sampling, candidate selection, docking, AlphaFold-Multimer, AlphaFold3, Boltz-1, DockQ, FACET</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.26.754739</li>
+<li><strong>代码</strong>：https://github.com/H18020306/EnsPlex</li>
+<li><strong>数据</strong>：https://doi.org/10.5281/zenodo.22857353；https://doi.org/10.5281/zenodo.22858234</li>
+<li><strong>阅读日期</strong>：2026-10-02</li>
+<li><strong>在该方向中的位置</strong>：本文处于「蛋白质复合物结构预测」中「采样-选择」两阶段整合的交叉点，连接了分子对接（HADDOCK）、深度端到端模型（AlphaFold-Multimer、AlphaFold3、Boltz-1）与质量评估模型（FACET），属于多源集成与候选排序方向。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>EnsPlex 通过将构象扩展对接（conformation-expanded docking）与 AlphaFold-Multimer、AlphaFold3、Boltz-1 四种生成器互补采样，并训练 FACET 质量评估器（以 DockQ 及其分量指标为监督）进行拓扑感知的候选选择，在 102 个抗原-抗体系统上，在匹配输出预算下相对 AlphaFold3 内置排序实现了最高 27.8% 的目标成功率相对提升。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：蛋白质复合物结构预测不仅依赖候选结构的覆盖广度，还依赖在有限输出预算内选择准确模型的能力。现有方法通常只优化其中一个阶段：端到端模型和分子对接流程生成候选结构，而质量评估模型仅对预定义候选池进行重排序。一个完整的策略必须同时考虑跨生成器的互补采样、不同评分尺度的差异以及最终候选配额的分配。</li>
+<li><strong>为什么重要</strong>：在真实应用中（如抗原-抗体相互作用研究），输出预算有限，候选池的多样性和选择准确性共同决定最终预测成功率。</li>
+<li><strong>现有方法为何不足</strong>：单一生成器（如 AlphaFold3）的采样空间有限；质量评估模型（如 DockQ 监督的排序器）通常只处理单一来源的候选池，未考虑跨源评分尺度不一致的问题。</li>
+<li><strong>精确研究问题</strong>：Can a multi-source sampling framework with topology-aware candidate selection outperform single-generator end-to-end models (e.g., AlphaFold3) in protein complex prediction under matched output budgets?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架整理，未做外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>端到端深度学习</td>
+<td>AlphaFold-Multimer、AlphaFold3、Boltz-1</td>
+<td>高精度、无需对接</td>
+<td>采样空间有限、内置排序非最优</td>
+<td>作为多源采样器之一</td>
+</tr>
+<tr>
+<td>分子对接</td>
+<td>HADDOCK、ClusPro 等</td>
+<td>可探索构象空间</td>
+<td>依赖单体构象、精度有限</td>
+<td>通过构象扩展增强采样</td>
+</tr>
+<tr>
+<td>质量评估/排序</td>
+<td>DockQ 监督的排序器、DeepRank 等</td>
+<td>可对候选池重排序</td>
+<td>通常只处理单一来源、评分尺度不一致</td>
+<td>FACET 作为跨源拓扑感知选择器</td>
+</tr>
+<tr>
+<td>集成框架</td>
+<td>本文 EnsPlex</td>
+<td>多源互补采样 + 统一选择</td>
+<td>计算成本高、依赖各生成器质量</td>
+<td>本文核心贡献</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>采样覆盖不足</td>
+<td>单一生成器（如 AlphaFold3）无法覆盖全部有效构象空间</td>
+<td>端到端模型采样空间有限，无法探索所有可能的结合模式</td>
+<td>Abstract：现有方法强调单一阶段</td>
+</tr>
+<tr>
+<td>候选选择不准确</td>
+<td>内置排序（如 AlphaFold3 的 ranking）在有限预算下成功率有限</td>
+<td>内置排序未针对跨源候选池优化，评分尺度不一致</td>
+<td>Abstract：FACET 提升目标成功率 27.8%</td>
+</tr>
+<tr>
+<td>跨源评分不一致</td>
+<td>不同生成器的评分不可直接比较</td>
+<td>各生成器使用不同的训练目标和输出分布</td>
+<td>Abstract：FACET 需处理跨源评分差异</td>
+</tr>
+<tr>
+<td>输出预算限制</td>
+<td>最终只能输出有限数量的候选结构</td>
+<td>实际应用（如实验验证）受资源约束</td>
+<td>Abstract：在匹配输出预算下评估</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>EnsPlex 是一个两阶段框架：第一阶段通过四种互补的生成器（构象扩展对接、AlphaFold-Multimer、AlphaFold3、Boltz-1）生成候选结构池；第二阶段用 FACET（一个以 DockQ 及其分量指标为监督训练的质量评估器）对候选进行拓扑感知的排序和选择，最终在有限预算内输出最优候选集。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>多源互补采样优于单源</strong>：不同生成器覆盖不同的构象空间区域，组合后能显著扩大有效采样范围。</li>
+<li><strong>跨源统一排序优于内置排序</strong>：FACET 通过 DockQ 监督学习，能够将不同来源的候选映射到统一的评分尺度，从而在有限预算内选择更准确的模型。</li>
+<li><strong>拓扑感知选择</strong>：FACET 不仅预测整体质量（DockQ），还利用其分量指标（如 interface 的 RMSD、Fnat 等）进行更细粒度的选择。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>在结构预测任务中，「采样多样性」与「选择准确性」是两个正交的优化维度，任何只优化其一的方法都会遇到瓶颈。</li>
+<li>跨源集成时，统一评分尺度比简单拼接各源分数更有效。</li>
+<li>质量评估器的训练监督（DockQ 及其分量）比单一标量指标提供更丰富的选择信号。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：目标蛋白复合物的序列信息（两条或多条链的氨基酸序列）。</li>
+<li><strong>输出</strong>：有限预算内的候选复合物结构列表（按 FACET 评分排序）。</li>
+<li><strong>模块</strong>：
+  1. <strong>构象扩展对接（Conformation-expanded docking）</strong>：对单体进行构象扩展（conformational expansion），随后用 HADDOCK 进行柔性对接。
+  2. <strong>AlphaFold-Multimer</strong>：端到端多聚体预测。
+  3. <strong>AlphaFold3</strong>：端到端复合物预测。
+  4. <strong>Boltz-1</strong>：开源端到端复合物预测。
+  5. <strong>FACET</strong>：质量评估器，以 DockQ 及其分量指标为监督，对候选进行拓扑感知排序。</li>
+<li><strong>训练</strong>：FACET 使用 DockQ 及其分量指标作为监督信号进行训练（具体训练集和架构未在摘要中详述）。</li>
+<li><strong>工具</strong>：HADDOCK（对接）、AlphaFold-Multimer、AlphaFold3、Boltz-1（生成）、FACET（选择）。</li>
+<li><strong>反馈回路</strong>：未明确提及（可能无显式反馈回路）。</li>
+<li><strong>假设</strong>：不同生成器的候选池具有互补性；DockQ 及其分量指标能有效反映候选质量。</li>
+</ul>
+<p><strong>文字流程</strong>：输入序列 → 四种生成器并行采样（构象扩展对接 + AF-Multimer + AF3 + Boltz-1）→ 合并候选池 → FACET 对每个候选进行质量评分（基于 DockQ 及其分量）→ 按评分排序 → 在预算内输出 Top-N 候选。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>构象扩展对接</td>
+<td>生成对接候选，覆盖端到端模型未探索的构象</td>
+<td>端到端模型采样空间有限，对接可探索更多结合模式</td>
+<td>输入：单体序列/结构；输出：对接候选结构</td>
+<td>Abstract：作为多源采样的一部分</td>
+<td>[预期] 移除后采样多样性下降，可能降低对端到端模型未覆盖构象的召回</td>
+</tr>
+<tr>
+<td>AlphaFold-Multimer</td>
+<td>端到端多聚体预测</td>
+<td>高精度预测复合物结构</td>
+<td>输入：序列；输出：候选结构</td>
+<td>Abstract：作为多源采样器之一</td>
+<td>[预期] 移除后失去一种高精度生成源</td>
+</tr>
+<tr>
+<td>AlphaFold3</td>
+<td>端到端复合物预测</td>
+<td>当前最先进的端到端模型之一</td>
+<td>输入：序列；输出：候选结构</td>
+<td>Abstract：作为多源采样器之一，且作为对比基线</td>
+<td>[预期] 移除后失去主要高精度生成源</td>
+</tr>
+<tr>
+<td>Boltz-1</td>
+<td>开源端到端复合物预测</td>
+<td>提供与 AF3 互补的采样</td>
+<td>输入：序列；输出：候选结构</td>
+<td>Abstract：作为多源采样器之一</td>
+<td>[预期] 移除后采样多样性下降</td>
+</tr>
+<tr>
+<td>FACET</td>
+<td>候选质量评估与排序</td>
+<td>统一跨源评分尺度，选择最优候选</td>
+<td>输入：候选结构；输出：DockQ 预测分数及分量</td>
+<td>Abstract：FACET 提升目标成功率 27.8%</td>
+<td>[实测] 移除后回退到内置排序，成功率下降（27.8% 相对提升）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用（摘要中未提供具体公式）。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：102 个抗原-抗体系统（antigen-antibody systems）。</li>
+<li><strong>规模</strong>：102 个系统。</li>
+<li><strong>指标</strong>：目标成功率（target success rate），DockQ 及其分量指标（作为 FACET 的监督）。</li>
+<li><strong>基线</strong>：AlphaFold3 内置排序（built-in ranking）。</li>
+<li><strong>预算</strong>：匹配输出预算（matched output budgets）。</li>
+<li><strong>评测协议</strong>：在相同输出预算下，比较 EnsPlex 与 AlphaFold3 内置排序的目标成功率。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主实验：102 个抗原-抗体系统</td>
+<td>EnsPlex 优于 AF3 内置排序</td>
+<td>EnsPlex vs AF3 内置排序，匹配输出预算</td>
+<td>最高 27.8% 相对提升</td>
+<td>多源采样 + FACET 选择优于单一生成器内置排序</td>
+<td>未提供具体成功率绝对值、统计显著性、误差棒</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>FACET 内部排序评估</td>
+<td>FACET 提升源内排序</td>
+<td>FACET 排序 vs 各生成器内部排序</td>
+<td>未提供具体数值</td>
+<td>FACET 在内部候选池中提升排序</td>
+<td>未提供具体提升幅度</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>FACET 外部数据评估</td>
+<td>FACET 泛化性</td>
+<td>同源过滤的外部数据</td>
+<td>未提供具体数值</td>
+<td>FACET 在外部数据上有效</td>
+<td>未提供具体指标</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限抗原-抗体系统（102 个），未覆盖其他蛋白-蛋白相互作用类型。</li>
+<li><strong>oracle/真值输入</strong>：FACET 训练使用 DockQ 及其分量指标作为监督，DockQ 本身依赖真实复合物结构计算。</li>
+<li><strong>端到端状态</strong>：EnsPlex 是「采样 + 选择」框架，不是端到端可微模型；FACET 是独立训练的质量评估器。</li>
+<li><strong>算力成本</strong>：未提供（多源采样 + 对接的计算成本可能显著高于单一端到端模型）。</li>
+<li><strong>历史数据依赖</strong>：FACET 依赖 DockQ 监督，DockQ 依赖已知复合物结构。</li>
+<li><strong>模型依赖</strong>：EnsPlex 依赖 AlphaFold-Multimer、AlphaFold3、Boltz-1 的生成质量；若这些模型更新，EnsPlex 需重新评估。</li>
+<li><strong>最难情形</strong>：未提供（如低同源性复合物、构象变化大的系统等）。</li>
+<li><strong>不确定性</strong>：未提供置信区间、统计检验或误差分析。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在 102 个抗原-抗体系统上，在匹配输出预算下，EnsPlex 的多源采样 + FACET 选择相对 AlphaFold3 内置排序实现了最高 27.8% 的目标成功率相对提升；该结论不推广到其他复合物类型，且未提供绝对成功率、统计显著性或计算成本分析。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 评估范围限于抗原-抗体系统（Abstract 中明确）。
+- 结果以「相对提升」表述，未提供绝对成功率（[Analysis] 摘要中仅给出相对值）。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅报告相对提升（27.8%），未报告绝对成功率</td>
+<td>若 AF3 基线成功率很低，相对提升可能被夸大</td>
+<td>相对提升不能反映实际预测能力</td>
+<td>要求作者提供绝对成功率及基线值</td>
+<td>Abstract：仅给出相对提升</td>
+</tr>
+<tr>
+<td>评估限于抗原-抗体系统</td>
+<td>其他复合物类型（如酶-抑制剂、信号复合物）可能表现不同</td>
+<td>泛化性未知</td>
+<td>在多样化的蛋白-蛋白相互作用数据集上评估</td>
+<td>Abstract：明确限定 102 个抗原-抗体系统</td>
+</tr>
+<tr>
+<td>未提供统计显著性</td>
+<td>27.8% 可能是噪声或单次运行结果</td>
+<td>无法判断提升是否可靠</td>
+<td>要求提供多次运行的标准差、置信区间或统计检验</td>
+<td>Abstract：未提及统计检验</td>
+</tr>
+<tr>
+<td>多源采样的计算成本未讨论</td>
+<td>四种生成器 + 对接的计算开销可能远高于单一模型</td>
+<td>实际应用中成本可能不可接受</td>
+<td>要求提供运行时间、GPU 小时数等</td>
+<td>Abstract：未提及计算成本</td>
+</tr>
+<tr>
+<td>FACET 的 DockQ 监督依赖真实结构</td>
+<td>在无真实结构的预测场景中，DockQ 不可得，FACET 的监督信号如何获取？</td>
+<td>训练数据依赖已知结构，可能限制对新靶标的适用性</td>
+<td>检查 FACET 训练集是否包含无同源结构的新靶标</td>
+<td>Abstract：FACET 以 DockQ 为监督</td>
+</tr>
+<tr>
+<td>未说明各生成器的候选配额分配策略</td>
+<td>配额分配可能显著影响最终结果</td>
+<td>若配额分配不当，可能低估某些生成器的贡献</td>
+<td>要求提供配额分配细节及敏感性分析</td>
+<td>Abstract：提及「候选配额分配」但未详述</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li><strong>多源采样互补性</strong>：不同生成器（端到端模型 vs 对接）覆盖不同的构象空间区域，组合使用可显著扩大采样覆盖。可迁移到本课题：在蛋白质结构预测或构象采样任务中，考虑组合多种生成器（如 AlphaFold 变体 + 对接 + MD 模拟）而非依赖单一模型。</li>
+<li><strong>跨源统一评分</strong>：不同生成器的评分尺度不一致，直接比较会引入偏差；训练一个统一的质量评估器（如 FACET）将不同来源的候选映射到同一评分空间，是有效的集成策略。可迁移到本课题：在分子对接或 MD 模拟的候选筛选中，训练统一的评分器而非直接比较不同来源的分数。</li>
+<li><strong>DockQ 分量指标作为监督</strong>：使用 DockQ 及其分量指标（如 interface RMSD、Fnat）作为质量评估器的监督信号，比单一标量提供更丰富的选择信息。可迁移到本课题：在训练质量评估模型时，考虑使用多分量指标而非单一全局指标。</li>
+<li><strong>拓扑感知选择</strong>：候选选择不仅依赖整体质量分数，还应考虑界面拓扑特征。可迁移到本课题：在构象生成或设计中，结合界面几何特征进行候选筛选。</li>
+<li><strong>预算约束下的集成</strong>：在有限输出预算下，采样多样性与选择准确性的平衡是关键设计维度。可迁移到本课题：在设计结构预测或设计流程时，明确输出预算并据此优化采样-选择策略。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold-Multimer</strong>（Evans et al., 2022）：端到端多聚体预测，本文将其作为多源采样器之一。</li>
+<li><strong>AlphaFold3</strong>（Abramson et al., 2024）：端到端复合物预测，本文将其作为生成器和基线。</li>
+<li><strong>Boltz-1</strong>（Wohlwend et al., 2024）：开源端到端复合物预测模型，本文将其作为多源采样器之一。</li>
+<li><strong>HADDOCK</strong>（Dominguez et al., 2003）：信息驱动对接，本文将其与构象扩展结合用于采样。</li>
+<li><strong>DockQ</strong>（Basu &amp; Wallner, 2016）：复合物预测质量评估指标，本文将其作为 FACET 的监督信号。</li>
+<li><strong>候选选择/质量评估方向</strong>：与 DeepRank（Renaud et al., 2021）等对接候选排序方法相关，但本文强调跨源统一评分。</li>
+<li><strong>[Analysis] 候选方向</strong>：本文与「集成学习在结构预测中的应用」相关，但多源采样 + 统一评分 + 预算约束的组合在现有文献中较少见。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<h3>候选 1：跨源统一评分器的泛化性研究</h3>
+<ul>
+<li><strong>名称</strong>：FACET 泛化性评估与改进</li>
+<li><strong>来源局限/观察</strong>：FACET 仅在 102 个抗原-抗体系统上评估，且未提供绝对成功率；其跨源评分能力是否适用于其他复合物类型未知。</li>
+<li><strong>核心假设</strong>：FACET 的 DockQ 监督训练可泛化到非抗原-抗体复合物，但需要调整特征表示。</li>
+<li><strong>初步方法</strong>：在多样化的蛋白-蛋白相互作用数据集（如 Dockground、CAPRI 靶标）上评估 FACET；比较不同复合物类型下的排序性能。</li>
+<li><strong>验证方式</strong>：与各生成器内置排序及单一源质量评估器对比，报告绝对成功率、NDCG 或 Top-N 召回率。</li>
+<li><strong>可能的失败模式</strong>：FACET 可能过拟合抗原-抗体界面的特征，在其他复合物类型上性能下降。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：动态配额分配策略</h3>
+<ul>
+<li><strong>名称</strong>：预算感知的动态采样配额分配</li>
+<li><strong>来源局限/观察</strong>：EnsPlex 的候选配额分配策略未详述；固定配额可能不适用于不同靶标。</li>
+<li><strong>核心假设</strong>：根据靶标特征（如序列同源性、界面保守性）动态调整各生成器的候选配额，可进一步提升有限预算下的成功率。</li>
+<li><strong>初步方法</strong>：训练一个轻量级分配器，输入靶标特征，输出各生成器的配额比例；在验证集上优化。</li>
+<li><strong>验证方式</strong>：与固定配额对比，在 102 个抗原-抗体系统上报告成功率提升。</li>
+<li><strong>可能的失败模式</strong>：分配器可能过拟合训练集，动态调整带来的收益有限。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：DockQ 分量指标的可解释性分析</h3>
+<ul>
+<li><strong>名称</strong>：DockQ 分量对候选选择的贡献分析</li>
+<li><strong>来源局限/观察</strong>：FACET 使用 DockQ 及其分量作为监督，但哪些分量对选择最有效未分析。</li>
+<li><strong>核心假设</strong>：不同 DockQ 分量（如 Fnat vs interface RMSD）在不同构象采样场景下对选择的贡献不同。</li>
+<li><strong>初步方法</strong>：对 FACET 进行消融实验，逐一移除 DockQ 分量监督，观察排序性能变化。</li>
+<li><strong>验证方式</strong>：报告各分量移除后的性能差异，识别关键监督信号。</li>
+<li><strong>可能的失败模式</strong>：各分量高度相关，消融实验无法区分贡献。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：多源采样 + MD 模拟的扩展</h3>
+<ul>
+<li><strong>名称</strong>：EnsPlex-MD：引入 MD 采样的多源框架</li>
+<li><strong>来源局限/观察</strong>：EnsPlex 的采样器均为静态预测或对接，未包含 MD 模拟的构象采样。</li>
+<li><strong>核心假设</strong>：将 MD 模拟（如增强采样）作为额外生成器，可覆盖端到端模型和对接无法探索的构象状态。</li>
+<li><strong>初步方法</strong>：在 EnsPlex 框架中加入 MD 采样模块（如 GaMD、REMD），生成候选后由 FACET 统一评分。</li>
+<li><strong>验证方式</strong>：在 102 个抗原-抗体系统上对比加入 MD 前后的成功率。</li>
+<li><strong>可能的失败模式</strong>：MD 采样计算成本过高，且生成的构象可能偏离天然态，降低选择精度。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 5：拓扑特征增强的候选选择</h3>
+<ul>
+<li><strong>名称</strong>：Topology-Enhanced FACET（TE-FACET）</li>
+<li><strong>来源局限/观察</strong>：FACET 的「拓扑感知」具体实现未在摘要中详述；界面拓扑特征可能未被充分利用。</li>
+<li><strong>核心假设</strong>：显式加入界面几何拓扑特征（如接触图、界面形状互补性）可提升候选选择的准确性。</li>
+<li><strong>初步方法</strong>：在 FACET 的特征表示中加入界面拓扑描述符，重新训练并评估。</li>
+<li><strong>验证方式</strong>：与原始 FACET 对比，在 102 个抗原-抗体系统上报告成功率提升。</li>
+<li><strong>可能的失败模式</strong>：拓扑特征与 DockQ 高度相关，增量信息有限。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract, with no access to full text, figures, tables, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present EnsPlex, a multi-source framework for protein complex structure prediction that combines conformation-expanded docking, AlphaFold-Multimer, AlphaFold3, and Boltz-1 for candidate generation, and a trained quality-assessment model (FACET) for candidate selection. They report up to a 27.8% relative improvement in target success rate over AlphaFold3 with built-in ranking across 102 antigen-antibody systems, and improved within-source ranking on internal and homology-filtered external data.</li>
+<li><strong>Visible evidence base</strong> Abstract text only. No figures, tables, methods descriptions, or numerical results beyond the single reported improvement percentage are provided.</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, all quantitative results, benchmark definitions, statistical analyses, and supplementary materials are unavailable. The abstract does not provide baseline absolute success rates, per-system breakdowns, or details of the FACET training and evaluation protocol.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a plausible and potentially valuable integrative approach to protein complex prediction, addressing a real gap in the field by coupling multi-source sampling with learned candidate selection. However, the evidence presented in the abstract is insufficient to evaluate the technical soundness of the method or the robustness of the reported improvement. The single headline metric, a 27.8% relative improvement over AlphaFold3, is not contextualized with absolute numbers, statistical significance, or comparison against other selection methods. The claim that FACET improves ranking in external data is stated without supporting detail. The abstract is well written and the conceptual framing is clear, but the scientific case is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Structural biologists, computational biologists, and researchers working on protein-protein interaction prediction, particularly those focused on antigen-antibody complexes. The work is also relevant to developers of deep learning-based structure prediction methods and to researchers interested in model quality assessment and ensemble methods. The potential to improve success rates beyond single-model approaches would be of broad interest to the structural bioinformatics community.</li>
+<li><strong>Major strengths</strong> The conceptual framing is clear and addresses a genuine limitation in the field, namely the separation of candidate generation from candidate selection. The multi-source sampling strategy is sensible and leverages existing state-of-the-art tools. The use of DockQ and its component metrics as supervision for the quality-assessment model is a reasonable and potentially effective design choice. The evaluation across 102 antigen-antibody systems is a substantial benchmark size.</li>
+<li><strong>Major Concerns</strong> The concerns below are based solely on the abstract. The absence of methodological detail and quantitative context prevents a full assessment.</li>
+<li><strong>Minor Comments</strong> The abstract is concise and readable, but several statements would benefit from additional context or qualification.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The integrative approach is not entirely novel in concept, as ensemble methods and reranking are established ideas, but the specific combination of diverse generators with a learned selector is a reasonable contribution. Scientific importance: Potentially high if the reported improvements are robust and generalizable, but this cannot be assessed from the abstract. Interdisciplinary readership: The work is primarily of interest to structural biology and computational biology audiences; broader appeal would depend on demonstrated generalizability beyond antigen-antibody systems. Technical soundness: Not assessable from the abstract. Readability for nonspecialists: The abstract is accessible and well structured, though some terms such as "conformation-expanded docking" and "homology-filtered external data" are not defined.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents a promising framework, but the lack of methodological detail and quantitative context means the core claims cannot be evaluated. A full manuscript with detailed methods, comprehensive results, and statistical analyses would be required to assess the validity and significance of the reported improvements.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "EnsPlex achieved up to a 27.8% relative improvement in target success rate over AlphaFold3 with its built-in ranking under matched output budgets."</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The headline result is reported as a single relative improvement percentage without absolute success rates, baseline values, or the number of systems for which improvement was observed. The phrase "up to" suggests variability across systems, but no distribution, confidence interval, or statistical test is reported.</li>
+<li><strong>Why it matters</strong> Without absolute numbers and statistical context, the reader cannot judge whether the improvement is meaningful, consistent, or within the range of expected variability. A 27.8% relative improvement could correspond to a small absolute gain if the baseline is low, and the practical significance would be unclear.</li>
+<li>
+<p><strong>Resolution test</strong> Provide absolute target success rates for EnsPlex and AlphaFold3, the per-system distribution of improvements, and appropriate statistical analyses such as paired tests or confidence intervals.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological transparency</li>
+<li><strong>Claim pointer</strong> "FACET is trained to predict candidate quality using DockQ and its component metrics as supervision."</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe the architecture, training data, feature set, or evaluation protocol for FACET. It is unclear whether FACET is a supervised regression model, a ranking model, or a classifier, and how its predictions are integrated into the final candidate selection.</li>
+<li><strong>Why it matters</strong> The quality-assessment model is a central component of the proposed framework. Without understanding its design and training, the reader cannot assess whether the reported improvements are attributable to the model or to other aspects of the pipeline, nor whether the approach is reproducible.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed description of FACET architecture, training data and labels, feature representation, and the selection algorithm that uses its predictions.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> "These findings support the utility of EnsPlex for structure prediction in the evaluated antigen-antibody systems."</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The evaluation is limited to 102 antigen-antibody systems. The abstract does not report results on other types of protein complexes, such as enzyme-inhibitor, signaling, or obligate complexes, nor does it discuss whether the method is expected to generalize beyond antibody-antigen interactions.</li>
+<li><strong>Why it matters</strong> The stated scope of the conclusion is appropriately limited to the evaluated systems, but the broader utility of the method for general protein complex prediction remains unknown. The title and framing suggest a general-purpose tool, which the evidence does not yet support.</li>
+<li>
+<p><strong>Resolution test</strong> Report results on additional benchmark sets covering diverse complex types, or explicitly discuss the expected scope and limitations of the method.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Comparative evaluation</li>
+<li><strong>Claim pointer</strong> "FACET also improved within-source ranking in the internal candidate pools and in homology-filtered external data."</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract does not specify which baselines FACET is compared against for within-source ranking, nor what "homology-filtered external data" refers to. It is unclear whether the comparison is against other quality-assessment methods, random selection, or the native ranking of each generator.</li>
+<li><strong>Why it matters</strong> Without defined baselines and dataset descriptions, the claim of improved ranking cannot be interpreted. The reader cannot determine whether the improvement is meaningful relative to existing approaches or whether the external data are representative of realistic use cases.</li>
+<li><strong>Resolution test</strong> Specify the baselines used for comparison, describe the external dataset and its filtering criteria, and report quantitative ranking metrics with statistical significance.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Terminology</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The term "conformation-expanded docking" is used without definition. It is described as comprising "monomer conformational expansion followed by flexible HADDOCK docking," but the nature of the expansion and the flexibility treatment are not specified.</li>
+<li>
+<p><strong>Required correction</strong> Provide a brief definition or reference for the conformation-expansion procedure and the flexible docking protocol.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Benchmark description</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract states that 102 antigen-antibody systems were used, but does not describe the source of these systems, the diversity of the antigen and antibody structures, or the criteria for inclusion.</li>
+<li>
+<p><strong>Required correction</strong> Include a brief description of the benchmark composition and selection criteria.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Code and data availability</li>
+<li><strong>Evidence pointer</strong> Footnotes, location not provided</li>
+<li><strong>Issue</strong> The abstract lists a GitHub repository and two Zenodo DOIs, but does not state what is contained in each resource or whether the code and data are sufficient to reproduce the reported results.</li>
+<li>
+<p><strong>Required correction</strong> Clarify the contents of the repository and the Zenodo deposits, and state the license and access conditions.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Result framing</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The phrase "up to a 27.8% relative improvement" is ambiguous regarding whether this is the best single system, the mean, or the median improvement. The abstract does not clarify the summary statistic used.</li>
+<li><strong>Required correction</strong> Specify the summary statistic and report the range or distribution of improvements across systems.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of a 27.8% relative improvement over AlphaFold3 is unsupported without absolute baseline values, per-system results, and statistical analyses.</li>
+<li>The claim that FACET improves within-source ranking is unsupported without defined baselines, dataset descriptions, and quantitative metrics.</li>
+<li>The general utility of EnsPlex for protein complex prediction beyond antigen-antibody systems is not supported by the evidence presented.</li>
+<li>The methodological details of FACET, including architecture, training data, and selection algorithm, are not described and therefore cannot be evaluated.</li>
+<li>The composition and filtering criteria of the "homology-filtered external data" are not described and the associated results cannot be interpreted.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

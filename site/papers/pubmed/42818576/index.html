@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inverse FoldDir: Structure-conditioned Protein Sequence Design by Dirichlet Flow Matching. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Inverse FoldDir: Structure-conditioned Protein Sequence Design by Dirichlet Flow Matching.</h1>
+      <div class="meta">Tartici, Alp; Stojkovic, Mihajlo; Tian, Anru; Jewett, Michael C; Altman, Russ B; Wittmann, Bruce J</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv : the preprint server for biology</span>
+        · 2026-10-01
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42818576/">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于Dirichlet流匹配的结构条件蛋白逆折叠方法Inverse FoldDir，实现序列生成、固定残基修复和软先验控制，并在实验验证中展现高序列恢复率，直接命中蛋白结构计算与序列设计核心课题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">1 Protein engineering has important implications in the bioeconomy, enabling applications in materials, medicine, and energy. A key challenge is designing protein sequences that have a specific form and function. Protein inverse folding seeks to address this challenge by identifying amino acid sequences compatible with a desired protein backbone. This task is central to protein redesign and can provide a sequence-design capability for de novo backbones produced by structure-generation methods. Ideally, inverse folding can provide diverse sequence alternatives, fixed residues or motifs, soft biochemical preferences at selected positions, and candidates that remain experimentally useful. We developed Inverse FoldDir, a controllable inverse-folding method that performs iterative denoising on the amino acid probability simplex. Given a backbone structure, the model updates all positions jointly through a learned Dirichlet flow, supporting full sequence generation, fixed-residue inpainting, and user-defined soft residue priors. On the held-out CATH 4.2 test set, Inverse FoldDir achieved a mean TM-score of 84.5 (on a 0-100 scale) and a mean C alpha RMSD of 1.76 A, compared with 83.3 and 1.86 A, respectively, for ESM-IF1, the strongest evaluated baseline on both metrics. Denoising trajectory analyses showed that positions commit at different rates and that some residues change identity late in generation, illustrating whole-sequence refinement rather than one-shot prediction or irreversible sequential decoding. We experimentally tested Inverse FoldDir in an anti-GFP nanobody redesign task, where two of 35 redesigned sequences retained reproducible sfGFP-binding signal across independent assay runs with approximately 43% sequence divergence from the native nanobody. Inverse FoldDir is a structure-conditioned protein redesign method that combines structural recovery, user control, experimental validation, and a natural route toward future property-guided sampling.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质工程在生物经济中具有重要意义，推动了材料、医学和能源领域的应用。一个关键挑战是设计具有特定形态和功能的蛋白质序列。蛋白质逆折叠旨在通过识别与所需蛋白质骨架兼容的氨基酸序列来应对这一挑战。该任务对于蛋白质重新设计至关重要，并能为由结构生成方法产生的从头骨架提供序列设计能力。理想情况下，逆折叠可以提供多样的序列替代方案、固定残基或基序、在选定位置上的软生化偏好，以及保持实验可用性的候选序列。我们开发了Inverse FoldDir，一种可控的逆折叠方法，在氨基酸概率单纯形上执行迭代去噪。给定一个骨架结构，该模型通过学习的Dirichlet流联合更新所有位置，支持全序列生成、固定残基修复和用户定义的软残基先验。在保留的CATH 4.2测试集上，Inverse FoldDir实现了平均TM分数84.5（0-100尺度）和平均Cα RMSD 1.76 Å，而ESM-IF1在这两项指标上分别达到83.3和1.86 Å，后者是两项指标上最强的评估基线。去噪轨迹分析显示，不同位置以不同速率提交，且某些残基在生成后期改变身份，这表明了全序列细化，而非一次性预测或不可逆的序列解码。我们在抗GFP纳米抗体重新设计任务中实验测试了Inverse FoldDir，其中35个重新设计的序列中有2个在独立测定运行中保留了可重复的sfGFP结合信号，与天然纳米抗体的序列差异约为43%。Inverse FoldDir是一种结构条件的蛋白质重新设计方法，结合了结构恢复、用户控制、实验验证以及面向未来性质引导采样的自然途径。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Inverse FoldDir: Structure-conditioned Protein Sequence Design by Dirichlet Flow Matching</li>
+<li><strong>作者</strong>：Tartici, Alp; Stojkovic, Mihajlo; Tian, Anru; Jewett, Michael C; Altman, Russ B; Wittmann, Bruce J</li>
+<li><strong>单位</strong>：未提供（作者单位未在摘要中列出）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本服务器）</li>
+<li><strong>年份</strong>：2026-10-01</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 实验验证）</li>
+<li><strong>领域</strong>：蛋白质逆折叠（inverse folding）、结构条件序列设计、生成模型</li>
+<li><strong>关键词</strong>：inverse folding, Dirichlet flow matching, protein sequence design, structure-conditioned generation, inpainting</li>
+<li><strong>DOI/arXiv</strong>：10.64898/2026.09.06.749733</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：CATH 4.2 测试集；anti-GFP nanobody 实验数据</li>
+<li><strong>阅读日期</strong>：2026-10-01</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的逆折叠任务，采用 Dirichlet flow matching 在氨基酸概率单纯形上迭代去噪，实现结构条件序列生成。与 ESM-IF1 等自回归/图神经网络方法形成对比，属于生成式（flow-based）逆折叠新范式，并包含实验验证环节。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 Inverse FoldDir，一种基于 Dirichlet flow matching 的逆折叠方法，在给定蛋白质骨架上对所有氨基酸位置联合迭代去噪，实现全序列生成、固定残基 inpainting 和软偏好先验控制，在 CATH 4.2 上达到 TM-score 84.5 和 Cα RMSD 1.76 Å，并在 anti-GFP nanobody 重设计中 2/35 序列保留实验结合信号。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何设计一个可控的逆折叠方法，使其不仅能从骨架恢复序列，还能支持固定残基、软生化偏好、多样序列输出，并保持实验可用性？</li>
+<li><strong>为什么重要</strong>：逆折叠是蛋白质重设计的关键步骤，也是 de novo 骨架生成后的必要配套能力，直接影响生物经济中材料、医药、能源等应用。</li>
+<li><strong>现有方法不足</strong>：现有逆折叠方法（如 ESM-IF1）多为自回归或一次性预测，缺乏对固定残基/软先验的灵活控制，且生成过程不可解释、难以进行属性引导采样。</li>
+<li><strong>精确研究问题</strong>：Can a Dirichlet flow matching model on the amino acid probability simplex achieve state-of-the-art structural recovery while supporting controllable generation (inpainting, soft priors) and producing experimentally valid sequences?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>标注：此脉络基于本文框架，未经外部系统核验。</em>
+- <strong>阶段一：基于物理/统计势的逆折叠</strong>（如 Rosetta 系列）— 优点：可解释、可加约束；局限：速度慢、搜索空间受限。
+- <strong>阶段二：基于深度学习的自回归逆折叠</strong>（如 ESM-IF1、ProteinMPNN）— 优点：速度快、精度高；局限：固定残基支持有限、生成过程不可逆、难以引入软偏好。
+- <strong>阶段三：基于生成模型的逆折叠</strong>（如扩散模型、flow matching）— 优点：联合建模、可控采样、可引导；局限：离散空间处理复杂、训练不稳定。
+- <strong>本文位置</strong>：在阶段三中引入 Dirichlet flow matching，直接在概率单纯形上操作，避免离散扩散的复杂性，同时保留生成模型的灵活性和可控性。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>固定残基支持不足</td>
+<td>现有方法难以在指定位置固定氨基酸同时生成其余位置</td>
+<td>自回归/一次性预测方法缺乏显式条件机制</td>
+<td>摘要提及 Inverse FoldDir 支持 fixed-residue inpainting</td>
+</tr>
+<tr>
+<td>软生化偏好缺失</td>
+<td>用户无法在特定位置施加氨基酸类型偏好</td>
+<td>现有方法多为硬约束或无约束生成</td>
+<td>摘要提及支持 user-defined soft residue priors</td>
+</tr>
+<tr>
+<td>生成过程不可控</td>
+<td>无法观察或引导序列生成轨迹</td>
+<td>一次性预测无中间状态</td>
+<td>摘要提及 denoising trajectory analyses</td>
+</tr>
+<tr>
+<td>实验可用性低</td>
+<td>生成序列在湿实验中常失效</td>
+<td>训练目标与实验功能不对齐</td>
+<td>2/35 序列保留结合信号，说明部分有效但仍有挑战</td>
+</tr>
+<tr>
+<td>多样性不足</td>
+<td>生成序列单一，缺乏替代方案</td>
+<td>确定性解码或低随机性采样</td>
+<td>摘要强调 diverse sequence alternatives 为目标</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：在氨基酸概率单纯形（simplex）上定义 Dirichlet flow，通过学习的向量场迭代去噪，从噪声分布逐步收敛到目标序列分布。所有位置联合更新，支持条件生成。</li>
+<li><strong>核心洞察</strong>：将逆折叠视为在概率单纯形上的连续生成过程，而非离散序列的一次性预测。这一视角天然支持：(a) 任意位置的固定（通过将对应维度设为 one-hot）；(b) 软偏好（通过调整初始分布或引导项）；(c) 生成轨迹的可视化与属性引导。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：将离散序列生成问题提升到连续概率空间，可以统一处理硬约束、软约束和引导采样，这一思路可迁移到其他生物序列设计任务（如 RNA 设计、抗体 CDR 设计）。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质骨架结构（Cα 坐标或全原子坐标）</li>
+<li><strong>输出</strong>：氨基酸序列（全序列或部分位置）</li>
+<li><strong>模块</strong>：
+  1. 结构编码器（提取几何特征）
+  2. Dirichlet flow 网络（学习概率单纯形上的向量场）
+  3. 条件机制（固定残基、软先验注入）
+  4. 采样/去噪过程（迭代更新所有位置）</li>
+<li><strong>训练</strong>：flow matching 目标，最小化预测向量场与真实向量场之间的差异</li>
+<li><strong>工具</strong>：未提供具体框架信息</li>
+<li><strong>反馈回路</strong>：去噪过程中可引入属性引导（作者提及 future property-guided sampling）</li>
+<li><strong>假设</strong>：骨架结构决定序列的分布；概率单纯形上的 flow 可以充分建模序列分布</li>
+<li><strong>流程</strong>：输入骨架 → 结构编码 → 初始化噪声分布（可含条件）→ 迭代去噪（Dirichlet flow）→ 输出序列</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构编码器</td>
+<td>提取骨架几何特征</td>
+<td>将结构信息转化为网络可用的表示</td>
+<td>输入：骨架坐标；输出：节点/边特征</td>
+<td>摘要未详述</td>
+<td>预期：移除后无法进行结构条件生成 [预期效应]</td>
+</tr>
+<tr>
+<td>Dirichlet flow 网络</td>
+<td>学习概率单纯形上的向量场</td>
+<td>核心生成机制，实现联合迭代去噪</td>
+<td>输入：当前概率分布+结构特征+时间；输出：速度场</td>
+<td>摘要提及 learned Dirichlet flow</td>
+<td>预期：移除后模型退化为一次性预测 [预期效应]</td>
+</tr>
+<tr>
+<td>条件机制</td>
+<td>注入固定残基/软先验</td>
+<td>实现可控生成</td>
+<td>输入：条件信息；输出：修改后的分布/引导项</td>
+<td>摘要提及支持 inpainting 和 soft priors</td>
+<td>预期：移除后丧失可控性 [预期效应]</td>
+</tr>
+<tr>
+<td>去噪采样器</td>
+<td>迭代更新所有位置</td>
+<td>从噪声收敛到目标序列</td>
+<td>输入：初始分布+flow；输出：最终序列</td>
+<td>摘要提及 iterative denoising</td>
+<td>预期：移除后无法生成 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<p><em>注：摘要未提供消融实验数据，以上影响均为预期推断 [Analysis]。</em></p>
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong> — 摘要中未提供具体数学公式。方法基于 Dirichlet flow matching，但具体损失函数、向量场参数化等细节未在摘要中给出。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：CATH 4.2 测试集（held-out）</li>
+<li><strong>规模</strong>：未提供具体序列数</li>
+<li><strong>指标</strong>：TM-score（0-100 尺度）、Cα RMSD（Å）</li>
+<li><strong>基线</strong>：ESM-IF1（最强基线）</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>Oracle 输入</strong>：真实骨架结构</li>
+<li><strong>评测协议</strong>：结构恢复指标对比</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CATH 4.2 结构恢复</td>
+<td>Inverse FoldDir 达到 SOTA 结构恢复</td>
+<td>与 ESM-IF1 对比</td>
+<td>TM-score 84.5 vs 83.3；RMSD 1.76 vs 1.86 Å</td>
+<td>结构恢复优于最强基线</td>
+<td>未证明统计显著性；未与其他方法全面对比</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>去噪轨迹分析</td>
+<td>生成过程是联合精炼而非一次性预测</td>
+<td>分析去噪轨迹</td>
+<td>位置以不同速率提交，部分残基后期改变身份</td>
+<td>支持联合精炼机制</td>
+<td>未量化轨迹特征</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>anti-GFP nanobody 重设计</td>
+<td>生成序列具有实验功能</td>
+<td>湿实验验证</td>
+<td>2/35 序列保留 sfGFP 结合信号，~43% 序列差异</td>
+<td>部分序列实验有效</td>
+<td>成功率低（5.7%），未与基线实验对比</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限逆折叠（结构→序列），不涉及结构预测或 de novo 骨架生成</li>
+<li><strong>Oracle 输入</strong>：使用真实骨架结构，未测试预测结构下的鲁棒性</li>
+<li><strong>端到端状态</strong>：方法端到端可运行，但实验验证仅限单一任务（anti-GFP nanobody）</li>
+<li><strong>算力成本</strong>：未提供</li>
+<li><strong>历史数据依赖</strong>：依赖 CATH 4.2 训练数据，泛化到非 CATH 折叠类型未验证</li>
+<li><strong>模型依赖</strong>：依赖 Dirichlet flow 框架，与其他 flow 变体对比未提供</li>
+<li><strong>最难情形</strong>：未测试多结构域蛋白、膜蛋白、非球状蛋白等</li>
+<li><strong>不确定性</strong>：2/35 实验成功率表明生成序列与实验功能之间存在显著差距</li>
+<li><strong>有边界的复述</strong>：Inverse FoldDir 在 CATH 4.2 上结构恢复指标优于 ESM-IF1，支持可控生成，并在一个 nanobody 重设计任务中产生少量实验有效序列；但其实验验证范围有限，泛化性和实际应用价值需进一步评估。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的摘要材料中未发现作者明确承认的局限。</p>
+<p><em>作者提及的相关约束（非正式局限）</em>：
+- 实验验证仅限单一任务（anti-GFP nanobody），成功率 2/35
+- 作者提及 future property-guided sampling 为后续方向，暗示当前版本尚无属性引导能力</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构恢复指标提升幅度小</td>
+<td>TM-score 84.5 vs 83.3（+1.2），RMSD 1.76 vs 1.86（-0.1 Å），可能无实际意义</td>
+<td>需判断是否值得引入更复杂生成框架</td>
+<td>进行统计显著性检验（如 bootstrap）</td>
+<td>摘要数值</td>
+</tr>
+<tr>
+<td>实验验证仅 2/35 成功</td>
+<td>成功率 5.7%，可能低于现有方法实验成功率</td>
+<td>实验可用性是逆折叠核心目标</td>
+<td>与 ESM-IF1/ProteinMPNN 在相同任务上平行实验对比</td>
+<td>摘要实验描述</td>
+</tr>
+<tr>
+<td>未与其他生成式逆折叠方法对比</td>
+<td>仅对比 ESM-IF1，未对比其他扩散/flow 方法</td>
+<td>无法判断在生成式方法中的相对位置</td>
+<td>补充对比实验</td>
+<td>摘要基线描述</td>
+</tr>
+<tr>
+<td>去噪轨迹分析缺乏量化指标</td>
+<td>仅定性描述"不同速率提交"</td>
+<td>无法评估轨迹分析的可复现性</td>
+<td>提供轨迹统计指标（如提交时间分布）</td>
+<td>摘要描述</td>
+</tr>
+<tr>
+<td>未报告多样性指标</td>
+<td>声称支持 diverse alternatives 但无量化</td>
+<td>多样性是可控生成的重要维度</td>
+<td>报告生成序列 pairwise identity 分布</td>
+<td>摘要目标描述</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>Dirichlet flow matching 作为离散序列生成新范式</strong>：在概率单纯形上定义连续 flow，避免离散扩散的复杂性，可迁移到其他生物序列生成任务（如 RNA 设计、抗体设计）。
+2. <strong>可控生成的三位一体设计</strong>：固定残基（硬约束）、软偏好（软约束）、属性引导（未来方向）可在同一框架内统一实现，这一设计思路可迁移到任何条件生成任务。
+3. <strong>去噪轨迹分析作为模型诊断工具</strong>：通过观察位置提交速率和残基变化，可理解生成过程动态，这一分析范式可迁移到其他生成模型评估。
+4. <strong>实验验证作为逆折叠方法的核心评价</strong>：结构恢复指标不足以证明方法实用价值，湿实验验证（如 nanobody 结合）是必要的补充，这一评价标准应推广到本课题所有方法比较。
+5. <strong>结构条件生成中的 oracle 输入问题</strong>：使用真实骨架 vs 预测骨架的差异是重要评估维度，本文未测试后者，提示本课题需关注结构预测误差对下游序列设计的影响。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与 ProteinMPNN (Dauparas et al., 2022) 和 ESM-IF1 (Hsu et al., 2022) 同属逆折叠任务，但采用生成式框架而非自回归/图神经网络。</li>
+<li><strong>理论关联</strong>：Dirichlet flow matching 与扩散模型（DDPM）和 flow matching (Lipman et al., 2023) 相关，属于连续生成模型在离散序列上的应用。</li>
+<li><strong>可迁移领域</strong>：该方法框架可迁移至抗体 CDR 设计、酶活性位点设计、多聚体界面设计等结构条件序列生成任务。</li>
+<li><strong>组合方向</strong>：与 AlphaFold 等结构预测方法组合，可实现"预测结构→设计序列→验证结构"的闭环。</li>
+<li><strong>冲突/对比</strong>：与自回归方法相比，本文方法支持联合精炼（后期残基可改变），这可能更接近天然蛋白的共进化特征。</li>
+<li><strong>候选方向 [Analysis]</strong>：将 Dirichlet flow 与实验属性（如结合亲和力、热稳定性）引导结合，实现属性条件序列生成，是自然的下一步。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：属性引导的 Dirichlet flow 逆折叠
+   - <strong>来源局限/观察</strong>：作者提及 future property-guided sampling 但未实现
+   - <strong>核心假设</strong>：在 flow 去噪过程中引入属性梯度引导，可生成满足特定生化属性的序列
+   - <strong>初步方法</strong>：训练属性预测器，在采样时计算梯度并修正速度场
+   - <strong>验证方式</strong>：在 nanobody 数据集上测试结合亲和力引导，与无引导基线对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：预测结构鲁棒性评估框架
+   - <strong>来源局限/观察</strong>：本文仅用真实骨架测试，未评估预测结构下的性能
+   - <strong>核心假设</strong>：逆折叠方法对结构预测误差的鲁棒性与其生成机制相关
+   - <strong>初步方法</strong>：用 AlphaFold 预测结构作为输入，对比不同逆折叠方法的结构恢复和实验成功率
+   - <strong>验证方式</strong>：在 CATH 测试集上引入噪声结构，测量性能衰减曲线
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：去噪轨迹特征作为蛋白设计可解释性指标
+   - <strong>来源局限/观察</strong>：本文定性描述轨迹特征但未量化
+   - <strong>核心假设</strong>：位置提交速率和残基变化模式可预测设计成功率
+   - <strong>初步方法</strong>：提取轨迹统计特征（提交时间、变化次数），与实验验证结果关联
+   - <strong>验证方式</strong>：在 nanobody 实验数据上训练分类器预测设计成功与否
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Dirichlet flow 在多聚体界面序列设计中的应用
+   - <strong>来源局限/观察</strong>：本文仅测试单体蛋白，未涉及多聚体界面
+   - <strong>核心假设</strong>：联合去噪机制天然适合多链协同设计
+   - <strong>初步方法</strong>：扩展模型输入为多链骨架，在采样时保持链间界面残基协同
+   - <strong>验证方式</strong>：在多聚体测试集上对比单链独立设计与联合设计
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present Inverse FoldDir, a Dirichlet flow matching method for structure-conditioned protein sequence design. They claim state-of-the-art structural recovery on CATH 4.2, controllable generation features (fixed-residue inpainting, soft priors), evidence of iterative refinement via denoising trajectory analysis, and experimental validation in an anti-GFP nanobody redesign task with two functional hits at approximately 43% sequence divergence.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no numerical distributions, statistical tests, method details, or experimental protocols are visible</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, model architecture and training details, baseline comparison protocols, CATH 4.2 evaluation setup, denoising trajectory analysis methodology, nanobody redesign experimental design (expression, purification, binding assay conditions, replicates), sequence diversity metrics, and any supplementary figures or tables</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially useful contribution to protein inverse folding, with a novel methodological angle (Dirichlet flow matching on the probability simplex) and an encouraging combination of computational benchmarks and experimental validation. However, the evidence as presented is insufficient to establish the core claims. Key weaknesses include the absence of statistical significance testing for the modest TM-score and RMSD improvements over ESM-IF1, lack of detail on the experimental validation (including how "reproducible" binding was defined and whether negative controls were adequate), and no information on sequence diversity or design success rates beyond a single functional hit rate. The trajectory analysis claim is intriguing but unsupported by any quantitative description. The work may be of interest to the protein design community, but the case is not currently established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational protein design researchers, particularly those working on inverse folding and generative models for sequences; experimental protein engineers seeking controllable design tools; and developers of flow-based generative methods applied to biological sequences. The controllable features (inpainting, soft priors) and experimental validation would appeal to practitioners needing practical design tools.</li>
+<li><strong>Major strengths</strong> 1) The methodological novelty of applying Dirichlet flow matching to the amino acid probability simplex is a clear conceptual advance over autoregressive or one-shot approaches. 2) The inclusion of experimental validation in a real redesign task, with functional hits at high sequence divergence, is a significant strength that many computational papers lack. 3) The emphasis on controllability (fixed residues, soft priors) addresses a practical need in protein engineering. 4) The trajectory analysis, if properly quantified, could provide mechanistic insight into the generation process.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Statistical rigor  </li>
+<li><strong>Claim pointer</strong> "Inverse FoldDir achieved a mean TM-score of 84.5 (on a 0-100 scale) and a mean Cα RMSD of 1.76 Å, compared with 83.3 and 1.86 Å, respectively, for ESM-IF1, the strongest evaluated baseline on both metrics."  </li>
+<li><strong>Evidence pointer</strong> Abstract, results section (location not provided)  </li>
+<li><strong>Concern</strong> The reported improvements over ESM-IF1 are numerically small (TM-score +1.2 points, RMSD -0.10 Å). No standard deviations, confidence intervals, or statistical tests are reported. It is unclear whether these differences are significant given the expected variance across a test set like CATH 4.2.  </li>
+<li><strong>Why it matters</strong> The central claim of improved structural recovery rests on these numbers. Without statistical support, the difference could be within noise, undermining the primary computational result.  </li>
+<li><strong>Resolution test</strong> Provide per-target distributions, standard errors, and a paired statistical test (e.g., Wilcoxon signed-rank) comparing Inverse FoldDir to ESM-IF1 on the same test set. Report effect sizes and confidence intervals.  </li>
+<li><strong>Concern ID</strong> R1-M2  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Experimental validation  </li>
+<li><strong>Claim pointer</strong> "two of 35 redesigned sequences retained reproducible sfGFP-binding signal across independent assay runs with approximately 43% sequence divergence from the native nanobody."  </li>
+<li><strong>Evidence pointer</strong> Abstract, experimental validation section (location not provided)  </li>
+<li><strong>Concern</strong> The experimental claim lacks critical context. What constitutes "reproducible" signal is undefined. No information is provided on the assay type, detection threshold, positive and negative controls, or how the 35 sequences were selected. The 43% sequence divergence is reported as approximate, and it is unclear whether this refers to the two hits or the full set.  </li>
+<li><strong>Why it matters</strong> Experimental validation is a key differentiator for this work. Without clear protocols and controls, the functional claim cannot be assessed, and the reader cannot determine whether the hits are genuine or artifacts of the assay.  </li>
+<li><strong>Resolution test</strong> Provide full experimental methods, including construct design, expression and purification details, assay protocol, definition of positive signal, replicate structure, and negative controls (e.g., non-binding nanobody or scrambled sequence). Report the sequence divergence for the two hits specifically and for the full set.  </li>
+<li><strong>Concern ID</strong> R1-M3  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Methodological detail  </li>
+<li><strong>Claim pointer</strong> "Denoising trajectory analyses showed that positions commit at different rates and that some residues change identity late in generation, illustrating whole-sequence refinement rather than one-shot prediction or irreversible sequential decoding."  </li>
+<li><strong>Evidence pointer</strong> Abstract, trajectory analysis section (location not provided)  </li>
+<li><strong>Concern</strong> The trajectory analysis is described qualitatively. No metrics are provided to quantify "commitment rates" or "late changes," and no comparison is made to alternative generation paradigms (e.g., autoregressive decoding) under the same framework.  </li>
+<li><strong>Why it matters</strong> This claim is used to argue for a mechanistic advantage of the flow-based approach. Without quantitative support, it remains an anecdotal observation rather than a demonstrated property.  </li>
+<li><strong>Resolution test</strong> Define and report quantitative metrics for position commitment (e.g., time to convergence of the marginal distribution) and late-stage identity changes (e.g., fraction of positions changing identity after a given denoising step). Compare these to a sequential decoding baseline.  </li>
+<li><strong>Concern ID</strong> R1-M4  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Baseline completeness  </li>
+<li><strong>Claim pointer</strong> "ESM-IF1, the strongest evaluated baseline on both metrics."  </li>
+<li><strong>Evidence pointer</strong> Abstract, results section (location not provided)  </li>
+<li><strong>Concern</strong> Only one baseline is mentioned. The abstract does not state how many baselines were evaluated or which ones were included. It is unclear whether the comparison set is comprehensive or cherry-picked.  </li>
+<li><strong>Why it matters</strong> The claim of superiority is only meaningful relative to a well-defined baseline set. Without knowing the full comparison, the reader cannot judge the significance of the result.  </li>
+<li><strong>Resolution test</strong> List all baselines evaluated, their versions, and the evaluation protocol. Justify the baseline selection in the methods.</li>
+<li><strong>Minor Comments</strong>  </li>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Abstract, first sentence  </li>
+<li><strong>Evidence pointer</strong> Abstract, introduction (location not provided)  </li>
+<li><strong>Issue</strong> The opening sentence on the bioeconomy is generic and does not add specific context for the method.  </li>
+<li><strong>Required correction</strong> Replace with a more specific statement about the gap in current inverse folding methods that this work addresses.  </li>
+<li><strong>Concern ID</strong> R1-m2  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Reproducibility  </li>
+<li><strong>Affected element</strong> Model availability  </li>
+<li><strong>Evidence pointer</strong> Abstract (location not provided)  </li>
+<li><strong>Issue</strong> No mention of code or model availability, which is important for a methods paper.  </li>
+<li><strong>Required correction</strong> State whether code, trained models, and data will be made publicly available.  </li>
+<li><strong>Concern ID</strong> R1-m3  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Metric interpretation  </li>
+<li><strong>Affected element</strong> TM-score scale  </li>
+<li><strong>Evidence pointer</strong> Abstract, results section (location not provided)  </li>
+<li><strong>Issue</strong> The TM-score is reported on a 0-100 scale, which is non-standard (typically 0-1). This could cause confusion.  </li>
+<li><strong>Required correction</strong> Clarify the scaling convention or report in the standard 0-1 range.  </li>
+<li><strong>Concern ID</strong> R1-m4  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Completeness  </li>
+<li><strong>Affected element</strong> Sequence diversity  </li>
+<li><strong>Evidence pointer</strong> Abstract, experimental validation section (location not provided)  </li>
+<li><strong>Issue</strong> The abstract emphasizes diversity as a design goal but does not report any diversity metrics for the generated sequences.  </li>
+<li><strong>Required correction</strong> Add a measure of sequence diversity (e.g., average pairwise identity) for the designed sequences relative to the native.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (statistical support for benchmark improvements), R1-M2 (experimental protocol and controls), R1-M3 (quantitative trajectory analysis)</li>
+<li><strong>Assessment against Nature-style criteria</strong>  </li>
+<li>Originality: The Dirichlet flow matching approach is a novel application to inverse folding, distinct from autoregressive or diffusion-based methods. This is a genuine methodological contribution.  </li>
+<li>Scientific importance: Inverse folding is a central problem in protein design, and controllable generation with experimental validation addresses a practical need. The importance is moderate to high, but the modest benchmark improvements over a strong baseline temper the significance.  </li>
+<li>Interdisciplinary readership: The work bridges machine learning, structural biology, and protein engineering. The abstract is accessible to a broad audience, though the experimental section lacks detail for non-specialists.  </li>
+<li>Technical soundness: The core idea is sound, but the evidence presented is insufficient to verify the claims. Statistical rigor and experimental controls are missing.  </li>
+<li>Readability for nonspecialists: The abstract is generally clear, but terms like "Dirichlet flow" and "probability simplex" are used without brief explanation, which may hinder non-specialist readers.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The methodological novelty and experimental ambition are promising, but the abstract alone does not provide sufficient statistical, methodological, or experimental detail to support the central claims. I would be supportive if the technical concerns are resolved with full methods, statistical analyses, and complete experimental protocols.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of improved structural recovery over ESM-IF1 is unsupported without statistical testing and variance reporting.</li>
+<li>The experimental validation claim is unsupported without assay details, controls, and replicate definitions.</li>
+<li>The trajectory analysis claim is unsupported without quantitative metrics.</li>
+<li>The claim of "natural route toward future property-guided sampling" is speculative and not evidenced in the abstract.</li>
+<li>The statement that Inverse FoldDir "combines structural recovery, user control, experimental validation" is only partially supported; user control is mentioned but not demonstrated with results.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

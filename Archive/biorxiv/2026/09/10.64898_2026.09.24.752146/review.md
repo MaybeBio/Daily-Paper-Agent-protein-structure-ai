@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no figures, tables, methods, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report that the rattlesnake protein FETUA-3, derived from the ancestral serum glycoprotein Fetuin-A, evolved to inhibit three classes of snake venom metalloproteinases (MPs). They propose a mechanism involving structural motifs that bind multiple MPs with high affinity, and noncompetitive inhibition achieved by insertion of the FETUA-3 N-terminus into MP active sites. They further claim strong selective constraints on key N-terminal residues that maintain multi-target specificity, and conclude that this mechanism is unique among vertebrate metalloproteinase inhibitors and that a small number of FETUA proteins control a large family of venom toxins.
+- **Visible evidence base** Abstract text only; no experimental data, structural models, sequence alignments, or statistical analyses are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, methods descriptions, structural prediction details, mutagenesis data, functional assay results, molecular dynamics parameters, and any phylogenetic or selection analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting evolutionary and biochemical story, but the evidence base available for review is limited to the summary claims. The central mechanistic assertions, particularly the noncompetitive inhibition model and the uniqueness of the mechanism, cannot be evaluated without the underlying data. The claim of selective constraints is stated without supporting statistical evidence. The work may be of interest to evolutionary biologists and toxinologists, but the current abstract alone does not establish the case.
+- **Who would be interested in the results, and why** Evolutionary biologists studying molecular innovation and coevolution, toxinologists and researchers working on snake venom biology, and structural biologists interested in protein-protein interactions and inhibitor mechanisms. The potential practical relevance to antivenom development may also attract biomedical researchers.
+- **Major strengths** The abstract identifies a clear and biologically significant question about the molecular basis of coevolution between vipers and their own toxins. The proposed mechanism, involving N-terminal insertion into MP active sites, is specific and testable. The evolutionary framing, linking protein invention to functional diversification, is conceptually appealing.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that FETUA-3 acts as a potent noncompetitive inhibitor by inserting its N-terminus into MP active sites and directly disrupting substrate cleavage.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The mechanistic model is presented as established, but no experimental or structural data are visible to support the proposed mode of inhibition. Noncompetitive inhibition with direct active-site insertion is an unusual combination that requires robust kinetic and structural evidence.
+  - **Why it matters** The central novelty of the paper rests on this mechanism. If the data do not clearly distinguish between competitive, noncompetitive, or mixed inhibition, or if the structural evidence for N-terminal insertion is indirect, the main conclusion would be substantially weakened.
+  - **Resolution test** Provide enzyme kinetics data showing noncompetitive inhibition across multiple MP classes, and structural or mutagenesis evidence that the N-terminus physically occupies the active site and that this insertion is required for inhibition.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim strong selective constraints on key N-terminal residues that maintain FETUA-3 specificity for multiple MP targets.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The claim of selective constraints implies a population-genetic or phylogenetic analysis, but no such data are described in the abstract. It is unclear whether the constraints are inferred from sequence conservation, dN/dS ratios, or functional mutagenesis.
+  - **Why it matters** This claim links the molecular mechanism to evolutionary process, which is a core part of the paper's significance. Without visible evidence, the claim is unsupported and cannot be assessed.
+  - **Resolution test** Present sequence alignment and selection analysis across viper species, or functional data showing that mutations at these residues reduce inhibition breadth or potency, with appropriate statistical support.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Claim scope
+  - **Claim pointer** The authors claim that FETUA-3 evolved a unique mechanism of action distinct from other vertebrate metalloproteinase inhibitors.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The claim of uniqueness requires a comparative analysis with known vertebrate metalloproteinase inhibitors, including TIMPs and other FETUA family members. No such comparison is described.
+  - **Why it matters** The claim of uniqueness is a strong statement that elevates the significance of the work. Without comparative data, it remains an assertion rather than a demonstrated finding.
+  - **Resolution test** Provide a systematic comparison of FETUA-3 mechanism with at least one other vertebrate metalloproteinase inhibitor, using structural or kinetic data to show distinct modes of action.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "FETUA-3 protein" is used without defining the FETUA family or explaining the numbering system. Readers unfamiliar with the field may not understand the relationship between FETUA-3, Fetuin-A, and other FETUA proteins.
+  - **Required correction** Briefly define the FETUA family and the numbering convention in the abstract or introduction.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Specificity
+  - **Affected element** Target description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that FETUA-3 inhibits "three classes of venom MP toxins" but does not specify which classes or how they differ. This limits the reader's ability to gauge the breadth of the claim.
+  - **Required correction** Name the three MP classes and, if space permits, indicate their structural or functional distinctions.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Quantitative support
+  - **Affected element** Affinity claim
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The claim of "high-affinity" binding is made without reporting any binding constants or affinity ranges.
+  - **Required correction** Include representative Kd or IC50 values in the abstract, or state the range observed across the three MP classes.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The mechanistic model and the selection claim are central to the paper's significance and cannot be evaluated from the abstract alone. R1-M3, while not blocking, requires comparative data to support the uniqueness claim.
+- **Assessment against Nature-style criteria** Originality: the proposed mechanism, if confirmed, would be novel and of broad interest. Scientific importance: the work addresses a fundamental question in molecular coevolution and has potential applied relevance. Interdisciplinary readership: the topic bridges evolutionary biology, structural biology, and toxinology, which could attract a wide audience. Technical soundness: cannot be assessed from the abstract; the methods are not described in sufficient detail. Readability for nonspecialists: the abstract is generally clear but uses field-specific terms without definition, which may limit accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a compelling hypothesis, but the central mechanistic and evolutionary claims require the full data set for evaluation. I would be supportive if the technical concerns are resolved with the complete manuscript.
+
+## Risk / unsupported claims
+- The noncompetitive inhibition mechanism with N-terminal active-site insertion is unsupported in the abstract.
+- The claim of strong selective constraints on N-terminal residues is unsupported.
+- The claim of a unique mechanism distinct from other vertebrate metalloproteinase inhibitors is unsupported.
+- The claim that a small number of FETUA proteins controls a large family of venom toxins is stated without quantitative or comparative evidence.
+- The high-affinity binding claim is unquantified and cannot be assessed.
