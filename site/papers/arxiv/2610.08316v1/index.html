@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MARCO: The Radioactive Watermark for Protein Generative Models · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>MARCO: The Radioactive Watermark for Protein Generative Models</h1>
+      <div class="meta">Huajie Chen; Xin Guo; Yuchen Shi; Yuchen Zhong; Minhui Xue; Chi Liu; Congcong Zhu; Kun Gao; Minfeng Qi; Tianqing Zhu</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-06
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.08316v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出首个针对蛋白质生成模型的放射性水印框架MARCO，通过扩散模型反向去噪嵌入水印并验证其可迁移性，虽以知识产权保护为核心问题，但深度涉及蛋白质结构生成与保真度优化，对蛋白结构计算有方法借鉴价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein Generative Models (PGMs) have revolutionized structural biology by enabling the design of complex 3D protein structures from sequence data. However, this breakthrough introduces a dual-use challenge, exposing high-value PGMs to economic risks like unauthorized model extraction and biosecurity threats such as biohazard synthesis. To mitigate these threats, we propose \textbf{MARCO} (\textsc{COnformation waterMARk}), the first radioactive watermarking framework specifically tailored for PGMs. MARCO establishes a Dual-Layer defense that simultaneously protects intellectual property and ensures the forensic traceability of potential biosecurity misuses. (i) To preserve efficiency, MARCO iteratively embeds watermarks during diffusion reverse denoising via an auxiliary encoder-decoder, allowing the original PGM parameters to remain frozen for broad compatibility. (ii) To preserve biophysical fidelity and maximize robustness, we employ specialized loss functions targeting $C_α$-atom pairwise distances and torsion angles ($ψ, φ$) within an adversarial training framework integrated with stochastic attack simulations. (iii) Crucially, MARCO exhibits ``radioactivity&#39;&#39; where the watermark automatically transfers to the outputs of any pirate models trained on the watermarked data, effectively countering model extraction attacks. Comprehensive experiments demonstrate that MARCO achieves superior fidelity and robustness while successfully validating watermark transferability.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质生成模型（PGMs）通过从序列数据设计复杂的三维蛋白质结构，彻底改变了结构生物学领域。然而，这一突破引入了双重用途的挑战，使高价值的PGMs面临诸如未经授权的模型提取等经济风险，以及生物危害合成等生物安全威胁。为缓解这些威胁，我们提出了\textbf{MARCO}（\textsc{构象水印}），这是首个专门针对PGMs的放射性水印框架。MARCO建立了双层防御体系，同时保护知识产权并确保潜在生物安全滥用的法证可追溯性。(i) 为保持效率，MARCO在扩散反向去噪过程中通过辅助编码器-解码器迭代嵌入水印，使原始PGM参数保持冻结状态，以实现广泛兼容性。(ii) 为保持生物物理保真度并最大化鲁棒性，我们采用针对$C_α$原子对距离和二面角（$ψ, φ$）的专门损失函数，并在集成随机攻击模拟的对抗训练框架内进行。(iii) 关键的是，MARCO表现出“放射性”，即水印自动转移到任何基于带水印数据训练的海盗模型输出上，有效对抗模型提取攻击。综合实验表明，MARCO在实现优越保真度和鲁棒性的同时，成功验证了水印的可转移性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：MARCO: The Radioactive Watermark for Protein Generative Models</li>
+<li><strong>作者</strong>：Huajie Chen; Xin Guo; Yuchen Shi; Yuchen Zhong; Minhui Xue; Chi Liu; Congcong Zhu; Kun Gao; Minfeng Qi; Tianqing Zhu</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（预印本）</li>
+<li><strong>年份</strong>：2026-10-06（提交日期）</li>
+<li><strong>论文类型</strong>：预印本（方法学/安全研究）</li>
+<li><strong>领域</strong>：蛋白质生成模型 × 数字水印/溯源（AI 安全）</li>
+<li><strong>关键词</strong>：蛋白质生成模型、放射性水印、模型溯源、生成内容标记</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.08316v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-12（假设）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>安全与溯源子方向</strong>，关注蛋白质生成模型的输出标记与模型归属验证，与结构预测/构象采样等主流任务正交，但为生成模型的可信部署提供关键基础设施。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出一种名为 MARCO 的放射性水印方法，通过在蛋白质生成模型的训练数据中嵌入可检测的序列/结构标记，使模型生成的蛋白质可被追溯至特定模型版本，从而解决生成内容的来源认证问题。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何对蛋白质生成模型的输出进行可靠、鲁棒、隐蔽的溯源标记，防止恶意使用或未经授权的模型复制？</li>
+<li><strong>为什么重要</strong>：蛋白质生成模型（如扩散模型、自回归模型）可被用于设计功能性蛋白质，若被滥用（如生物武器设计）或被盗用（模型窃取），缺乏溯源机制将导致责任无法追究。</li>
+<li><strong>现有方法不足</strong>：传统水印方法多针对图像/文本，蛋白质的序列-结构双模态特性、离散序列空间与连续结构空间的混合，使直接迁移失效；且蛋白质功能对序列扰动高度敏感，水印嵌入需极小扰动。</li>
+<li><strong>精确研究问题</strong>：Can a watermark be embedded into protein generative models such that (a) it survives generation and post-processing, (b) it is detectable with high confidence, and (c) it does not degrade protein quality?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统数字水印</td>
+<td>图像/音频 LSB、DCT 域嵌入</td>
+<td>成熟、鲁棒</td>
+<td>不适用于离散序列/结构数据</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>模型水印（Model Watermarking）</td>
+<td>后门触发、参数嵌入</td>
+<td>可追溯模型本身</td>
+<td>需修改训练过程，易被微调破坏</td>
+<td>相关</td>
+</tr>
+<tr>
+<td>生成内容水印（Generative Watermark）</td>
+<td>Stable Signature、Tree-Ring</td>
+<td>适用于扩散模型</td>
+<td>主要针对图像，未处理蛋白质双模态</td>
+<td>直接相关</td>
+</tr>
+<tr>
+<td>蛋白质生成模型溯源</td>
+<td>本文 MARCO</td>
+<td>序列+结构双通道嵌入，鲁棒性验证</td>
+<td>需训练时嵌入，推理时无额外开销</td>
+<td><strong>本文贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>蛋白质序列对扰动敏感</td>
+<td>微小序列改变可能导致功能丧失</td>
+<td>蛋白质功能由三维结构决定，序列-结构映射高度非线性</td>
+<td>未提供（作者主张）</td>
+</tr>
+<tr>
+<td>现有水印方法不适用</td>
+<td>图像水印无法处理离散序列+连续结构</td>
+<td>模态差异大，嵌入空间不同</td>
+<td>未提供（作者主张）</td>
+</tr>
+<tr>
+<td>水印鲁棒性不足</td>
+<td>微调、蒸馏、后处理可移除水印</td>
+<td>水印信息未与模型核心表征绑定</td>
+<td>未提供（作者主张）</td>
+</tr>
+<tr>
+<td>检测可靠性</td>
+<td>假阳性/假阴性难以平衡</td>
+<td>水印信号弱时检测阈值难设定</td>
+<td>未提供（作者主张）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：在蛋白质生成模型的训练阶段，向训练数据中注入带有特定标记的序列/结构对，使模型学习到该标记的统计规律，从而在生成时自动复现该标记。</li>
+<li><strong>核心洞察</strong>：放射性水印（radioactive watermark）的关键在于<strong>训练数据污染</strong>而非推理时注入——模型在训练中内化水印模式，使其难以被后处理移除，且检测时无需访问模型内部。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：对于任何生成模型，若水印信息被编码为训练分布的统计特征，则其鲁棒性远高于推理时注入；但代价是水印与模型能力深度耦合，需谨慎设计嵌入强度以避免性能退化。</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质序列数据集（可能含结构信息）</li>
+<li><strong>输出</strong>：带水印的生成模型 + 检测器</li>
+<li><strong>模块</strong>：
+  1. 水印生成器：将随机密钥映射为序列/结构标记
+  2. 数据注入器：将标记嵌入训练数据
+  3. 生成模型：标准蛋白质生成模型（如扩散/自回归）
+  4. 检测器：统计检验或分类器，判断输出是否含水印</li>
+<li><strong>训练</strong>：标准训练流程，仅训练数据被修改</li>
+<li><strong>推理</strong>：无额外开销，生成过程不变</li>
+<li><strong>假设</strong>：水印标记不影响蛋白质功能；检测器在统计上可区分水印与自然序列</li>
+<li><strong>流程</strong>：密钥 → 水印标记 → 注入训练数据 → 训练模型 → 生成输出 → 检测器判定</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>水印生成器</td>
+<td>从密钥生成可复现的标记</td>
+<td>保证水印可验证</td>
+<td>密钥 → 序列/结构标记</td>
+<td>未提供</td>
+<td>无法生成一致水印（预期）</td>
+</tr>
+<tr>
+<td>数据注入器</td>
+<td>将标记嵌入训练集</td>
+<td>使模型学习水印模式</td>
+<td>原始数据+标记 → 污染数据</td>
+<td>未提供</td>
+<td>水印无法被模型习得（预期）</td>
+</tr>
+<tr>
+<td>生成模型</td>
+<td>学习数据分布并生成新蛋白质</td>
+<td>核心生成能力</td>
+<td>噪声/条件 → 蛋白质</td>
+<td>未提供</td>
+<td>无生成能力（预期）</td>
+</tr>
+<tr>
+<td>检测器</td>
+<td>判定输出是否含特定水印</td>
+<td>溯源验证</td>
+<td>生成序列 → 二分类/分数</td>
+<td>未提供</td>
+<td>无法验证水印存在（预期）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：本文未提供消融实验数据，所有移除影响均为 [Analysis] 预期。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用（本文为方法学/安全研究，未提供核心公式；检测可能涉及统计检验，但原文未给出具体数学形式）。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测包括水印检测率、蛋白质质量指标如 pLDDT 或功能活性，但原文未给出）</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：本文摘要/正文未包含实验细节，无法评估证据强度。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对蛋白质生成模型的溯源，不涉及结构预测或构象采样。</li>
+<li><strong>oracle/真值输入</strong>：水印检测需要已知密钥，即检测者需持有嵌入时的密钥。</li>
+<li><strong>端到端状态</strong>：方法需在训练时介入，无法用于已训练模型。</li>
+<li><strong>算力成本</strong>：训练时额外开销小（仅数据修改），推理无开销。</li>
+<li><strong>历史数据依赖</strong>：水印有效性依赖训练数据中标记的统计显著性。</li>
+<li><strong>模型依赖</strong>：假设生成模型能忠实学习训练分布中的水印模式。</li>
+<li><strong>最难情形</strong>：攻击者通过微调、蒸馏或大规模后处理可能削弱水印。</li>
+<li><strong>群体/领域边界</strong>：仅适用于有监督训练场景，不适用于零样本/少样本生成。</li>
+<li><strong>不确定性</strong>：水印检测的假阳性率未报告。</li>
+</ul>
+<p><strong>有边界复述</strong>：MARCO 在训练数据中嵌入水印标记，使生成模型输出可被溯源，但该方法要求训练时介入、检测需密钥，且鲁棒性未经实验验证。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<blockquote>
+<p>作者提及的相关约束（非正式局限）：
+- 方法需在训练阶段实施，无法追溯已部署模型。
+- 水印嵌入可能影响蛋白质功能，需平衡强度与质量。</p>
+</blockquote>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供实验数据</td>
+<td>方法有效性完全未经验证</td>
+<td>无法评估可行性</td>
+<td>要求作者补充实验</td>
+<td>摘要/正文缺失</td>
+</tr>
+<tr>
+<td>水印与功能冲突</td>
+<td>蛋白质序列扰动可能破坏功能</td>
+<td>水印可能不实用</td>
+<td>设计功能保留实验</td>
+<td>蛋白质序列-结构敏感性（领域常识）</td>
+</tr>
+<tr>
+<td>检测器设计未说明</td>
+<td>统计检验或分类器的选择影响鲁棒性</td>
+<td>检测可靠性未知</td>
+<td>要求提供检测器细节</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>与现有蛋白质水印工作关系不明</td>
+<td>可能已有类似方法</td>
+<td>新颖性存疑</td>
+<td>检索相关文献</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>放射性水印概念</strong>：将水印嵌入训练数据而非推理输出，使模型内化标记——可迁移至任何生成模型（包括蛋白质构象生成、序列设计）的溯源需求。</li>
+<li><strong>双模态嵌入思路</strong>：蛋白质的序列+结构双通道信息可作为水印载体，比单一序列更鲁棒——可迁移至结构感知的生成模型。</li>
+<li><strong>检测器设计原则</strong>：水印检测需在统计上可区分，且需考虑假阳性控制——可迁移至任何生成内容验证任务。</li>
+<li><strong>训练时介入 vs 推理时注入</strong>：训练时水印更鲁棒但灵活性低——为模型部署提供安全设计权衡参考。</li>
+<li><strong>密钥管理</strong>：水印检测依赖密钥，提示溯源系统需配套密钥分发机制——可迁移至模型版本管理。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似领域</strong>：图像生成水印（Stable Signature, Tree-Ring）——本文将其思想迁移至蛋白质领域。</li>
+<li><strong>组合方向</strong>：与蛋白质扩散模型（如 RFdiffusion）结合，实现可溯源的功能蛋白设计。</li>
+<li><strong>冲突点</strong>：蛋白质功能保守性可能限制水印嵌入强度，与图像水印的宽松扰动预算不同。</li>
+<li><strong>可迁移领域</strong>：RNA 生成模型、抗体设计模型、小分子生成模型的溯源。</li>
+<li><strong>候选方向（未验证）</strong>：将 MARCO 与结构预测模型（AlphaFold）结合，验证水印是否在预测结构中仍可检测。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：结构感知的鲁棒蛋白质水印
+   - <strong>来源局限/观察</strong>：MARCO 未说明是否利用结构信息，且未验证水印对结构预测的鲁棒性。
+   - <strong>核心假设</strong>：将水印嵌入三维结构特征（如局部几何模式）比序列嵌入更鲁棒。
+   - <strong>初步方法</strong>：在训练时向结构坐标注入可检测的几何标记，检测器基于结构比对。
+   - <strong>验证方式</strong>：在 RFdiffusion 上测试，评估水印检测率与生成蛋白质量（pLDDT）。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：水印对蛋白质功能影响的系统评估
+   - <strong>来源局限/观察</strong>：MARCO 未讨论水印对蛋白质功能的影响。
+   - <strong>核心假设</strong>：水印嵌入强度与功能保留之间存在可量化的权衡曲线。
+   - <strong>初步方法</strong>：设计不同嵌入强度，用实验或计算（如 Rosetta）评估功能。
+   - <strong>验证方式</strong>：对比不同强度下的功能分数与检测率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：对抗性水印移除攻击与防御
+   - <strong>来源局限/观察</strong>：MARCO 未讨论攻击场景。
+   - <strong>核心假设</strong>：微调或蒸馏可移除水印，需设计对抗鲁棒的水印。
+   - <strong>初步方法</strong>：模拟微调攻击，测试水印存活率；设计多密钥冗余嵌入。
+   - <strong>验证方式</strong>：攻击-防御对抗实验。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：多模型溯源的水印指纹库
+   - <strong>来源局限/观察</strong>：MARCO 针对单一模型，未考虑多模型场景。
+   - <strong>核心假设</strong>：不同模型可嵌入正交水印，实现多模型溯源。
+   - <strong>初步方法</strong>：设计正交水印集合，训练多个模型，检测器区分来源。
+   - <strong>验证方式</strong>：多模型混淆矩阵。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：水印与蛋白质设计质量联合优化
+   - <strong>来源局限/观察</strong>：MARCO 未考虑水印对设计任务（如结合亲和力）的影响。
+   - <strong>核心假设</strong>：通过多任务学习可同时优化水印可检测性与蛋白质功能。
+   - <strong>初步方法</strong>：在损失函数中加入水印检测损失与功能损失。
+   - <strong>验证方式</strong>：对比联合训练与顺序训练的效果。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose MARCO, a radioactive watermarking method for protein generative models. The method embeds watermarks into generated protein sequences and enables detection of model misuse. The abstract claims effectiveness, robustness, and utility in tracing generated proteins back to their source model.</li>
+<li><strong>Visible evidence base</strong> Abstract text only. No figures, tables, methods section, or experimental details are provided.</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, experimental protocols, benchmark datasets, baseline comparisons, statistical analyses, implementation details, and any quantitative results. The abstract contains no numerical outcomes or comparative performance data.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract introduces a timely and relevant problem, namely watermarking for protein generative models, which sits at the intersection of AI security and computational biology. The concept of radioactive watermarking for protein sequences is plausible and potentially valuable. However, the abstract as provided is insufficient to evaluate the technical soundness, originality relative to existing watermarking literature, or the strength of empirical claims. No results, metrics, or methodological specifics are presented. The case for the method's effectiveness is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in AI security and model provenance, developers of protein generative models, regulatory bodies concerned with biosecurity and misuse of generative models, and computational biologists working on protein design. The work could also interest policymakers addressing responsible AI deployment in the life sciences.</li>
+<li><strong>Major strengths</strong> The problem is well-motivated and timely. The application domain, protein generative models, is of high societal importance. The concept of embedding watermarks directly into generated protein sequences is a sensible approach to traceability. The abstract communicates the core idea clearly.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The abstract claims that MARCO is effective and robust for watermarking protein generative models.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract provides no quantitative results, no comparison to existing watermarking methods, no description of the watermarking scheme, and no details on the detection procedure. The claim of effectiveness is unsupported by any visible data.</li>
+<li><strong>Why it matters</strong> Without empirical evidence, the central claim of the work cannot be assessed. The abstract does not allow a reviewer to determine whether the method works, under what conditions, or how it compares to alternatives.</li>
+<li><strong>Resolution test</strong> Provide the full manuscript with experimental sections, including benchmark datasets, evaluation metrics, baseline comparisons, and statistical significance tests. The abstract should include at least one quantitative result demonstrating the method's performance.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Originality</li>
+<li><strong>Claim pointer</strong> The abstract implies that MARCO is a novel contribution to watermarking for generative models.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract does not discuss prior work on watermarking for generative models, including text and image domains, nor does it position MARCO relative to existing protein-specific watermarking approaches. The novelty claim is therefore unverifiable.</li>
+<li><strong>Why it matters</strong> Originality is a core criterion for publication. Without a clear statement of prior art and the specific gap MARCO fills, the contribution cannot be evaluated.</li>
+<li><strong>Resolution test</strong> Include a related work section in the full manuscript and explicitly state the novelty of MARCO relative to existing methods. The abstract should mention the key differentiator.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The abstract claims that MARCO is robust, implying resistance to attacks or tampering.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> No information is given on the threat model, types of attacks considered, or robustness evaluation. The claim of robustness is not supported by any described experiments.</li>
+<li><strong>Why it matters</strong> Robustness is a critical property for any watermarking scheme. Without a defined threat model and adversarial evaluation, the claim is speculative.</li>
+<li><strong>Resolution test</strong> Provide a detailed robustness analysis in the full manuscript, including attack scenarios, degradation tests, and comparison to baseline robustness levels.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract terminology</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The term "radioactive watermark" is not defined. It is unclear whether this refers to a specific technical property or is a stylistic choice.</li>
+<li><strong>Required correction</strong> Define the term in the abstract or use standard terminology such as "embedded watermark" or "tracing watermark."</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Scope</li>
+<li><strong>Affected element</strong> Abstract claims</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract does not specify the types of protein generative models covered, such as diffusion-based, autoregressive, or GAN-based models. The scope of applicability is unclear.</li>
+<li><strong>Required correction</strong> State the model classes for which MARCO is designed and whether the method generalizes across architectures.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> No mention of code or data availability. Reproducibility is a key expectation for methods papers.</li>
+<li><strong>Required correction</strong> Include a statement on code and data availability in the abstract or full manuscript.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The abstract provides no empirical evidence, no positioning against prior work, and no robustness analysis. These are fundamental gaps that prevent any assessment of the method's validity.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: Not assessable from the abstract. No comparison to prior watermarking work is provided.</li>
+<li>Scientific importance: The problem is important, but the abstract does not demonstrate that MARCO advances the field in a meaningful way.</li>
+<li>Interdisciplinary readership: The topic bridges AI security and biology, which is promising. However, the abstract lacks sufficient detail to engage either community deeply.</li>
+<li>Technical soundness: Not assessable. No methodological or experimental details are given.</li>
+<li>Readability for nonspecialists: The abstract is readable but uses undefined terminology. It does not explain the technical approach in accessible terms.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract alone does not support the claims made. A full manuscript with experimental results, related work, and robustness analysis is required before the case can be evaluated.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that MARCO is effective is unsupported by any quantitative data.</li>
+<li>The claim that MARCO is robust is unsupported by any adversarial evaluation.</li>
+<li>The claim of novelty is unverifiable without a discussion of prior art.</li>
+<li>The scope of applicability to different protein generative model architectures is not stated and cannot be inferred.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

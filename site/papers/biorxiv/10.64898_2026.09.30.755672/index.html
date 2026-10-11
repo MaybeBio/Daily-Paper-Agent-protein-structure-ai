@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flock: A Negative-Enriched Protein-Protein Interaction Dataset · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Flock: A Negative-Enriched Protein-Protein Interaction Dataset</h1>
+      <div class="meta">Kashif-Khan N; Gregory H; Potterton AG</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-06
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.30.755672">原文</a>
+      </div>
+      <p class="one-liner">该文构建了大规模负富集的蛋白质-蛋白质相互作用数据集Flock及无泄漏基准，用于评估共折叠和蛋白语言模型在PPI预测上的泛化能力，虽聚焦数据集而非新方法，但直接服务于蛋白质结构相关计算建模的评估。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein-protein interactions (PPIs) govern fundamental biological processes and are central to therapeutic discovery, yet computational prediction methods remain severely limited by a lack of high-quality negative data (non-interacting PPIs). Existing models are trained almost exclusively on positive interactions or random pairs designated as negatives, while legacy negative datasets are limited in scale and contain correctness errors. To address this, we introduce Flock, a negative-enriched PPI dataset of unprecedented scale, containing 26,934 positive and 377,643 negative pairs. Flock integrates biological assemblies from the PDB with highly confident, curated negatives mined from scientific literature using a state-of-the-art agentic LLM workflow. To address the evaluation leakage seen in protein structure modelling, we also present Flock&#39;s Leakage-Free Set, a benchmark that strictly controls for sequence and interface similarity, and historical date-based cutoffs used in the training of co-folding models. Our evaluation reveals that the co-folding model ESMFold2 shows performance degradation on the Leakage-Free set, whereas the protein language model ESMC demonstrates stronger generalisation. Flock provides the most comprehensive and challenging PPI benchmark to date, establishing a rigorous new standard for evaluating the generalisability of protein structure and language models on this task.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质-蛋白质相互作用（PPIs）调控着基本生物过程，是治疗发现的核心，然而计算方法预测仍因缺乏高质量负数据（非相互作用PPIs）而严重受限。现有模型几乎完全基于正相互作用或随机配对作为负样本进行训练，而传统负数据集规模有限且包含正确性错误。为解决此问题，我们引入Flock，一个规模空前的负富集PPI数据集，包含26,934个正配对和377,643个负配对。Flock整合了来自PDB的生物组装体，并利用最先进的智能体LLM工作流从科学文献中挖掘高置信度、经人工审核的负样本。为解决蛋白质结构建模中常见的评估泄漏问题，我们还提出了Flock的无泄漏集（Leakage-Free Set），这是一个严格控制序列和界面相似性以及共折叠模型训练中历史日期截断的基准。我们的评估显示，共折叠模型ESMFold2在无泄漏集上性能下降，而蛋白质语言模型ESMC表现出更强的泛化能力。Flock提供了迄今最全面且最具挑战性的PPI基准，为评估蛋白质结构和语言模型在此任务上的泛化性确立了严格的新标准。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Flock: A Negative-Enriched Protein-Protein Interaction Dataset</li>
+<li><strong>作者</strong>：Kashif-Khan N; Gregory H; Potterton AG</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026-10-06</li>
+<li><strong>论文类型</strong>：数据集/基准（Dataset &amp; Benchmark）</li>
+<li><strong>领域</strong>：蛋白质-蛋白质相互作用（PPI）预测、结构建模、蛋白质语言模型</li>
+<li><strong>关键词</strong>：PPI、负样本、数据集、基准、泄漏控制、共折叠模型、蛋白质语言模型</li>
+<li><strong>DOI/arXiv</strong>：10.64898/2026.09.30.755672</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：Flock 数据集（26,934 正对 + 377,643 负对），Leakage-Free Set 基准</li>
+<li><strong>阅读日期</strong>：2026-10-06</li>
+<li><strong>方向定位</strong>：该文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>数据基础设施与基准构建</strong>分支，聚焦 PPI 预测中的负样本质量与评估泄漏问题，直接服务于结构预测（共折叠）与蛋白质语言模型的泛化性评测。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>为解决 PPI 预测中负样本稀缺且质量低、以及评估泄漏导致泛化性虚高的问题，作者构建了包含 26,934 正对与 377,643 负对的 Flock 数据集，并用严格序列/界面相似性与日期截断控制的 Leakage-Free Set 评测，发现 ESMFold2 性能下降而 ESMC 泛化更强。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何构建大规模、高质量、无泄漏的 PPI 负样本数据集，并据此建立严格的基准来评估 PPI 预测模型的真实泛化能力？</li>
+<li><strong>为什么重要</strong>：PPI 是治疗发现的核心，但计算预测受限于负样本（非互作对）的缺乏与错误；现有模型在正样本上过拟合，泛化性被高估。</li>
+<li><strong>现有方法不足</strong>：现有模型多基于正样本或随机配对作为负样本；legacy 负样本数据集规模小且含正确性错误；结构建模领域存在评估泄漏（训练/测试序列或界面相似、日期截断未控制）。</li>
+<li><strong>精确研究问题</strong>：Can a negative-enriched, leakage-controlled PPI dataset reveal significant performance degradation in co-folding models (e.g., ESMFold2) while exposing stronger generalization in protein language models (e.g., ESMC)?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>标注：此脉络为「仅本文框架」，基于摘要推断，未经外部核验。</em>
+- <strong>阶段 1：早期 PPI 预测</strong>——基于序列/结构特征的传统机器学习，负样本多为随机配对，规模小、噪声高。
+- <strong>阶段 2：深度学习 PPI 模型</strong>——GNN、Transformer 等，仍依赖正样本或简单负采样，泛化性差。
+- <strong>阶段 3：共折叠结构模型（如 AlphaFold-Multimer、ESMFold2）</strong>——直接预测复合物结构，但训练数据存在泄漏（同源序列/界面重复），评估虚高。
+- <strong>阶段 4：蛋白质语言模型（如 ESM 系列）</strong>——从序列进化信息中学习，可能对 PPI 有隐式泛化。
+- <strong>本文位置</strong>：在阶段 3→4 之间插入<strong>数据层创新</strong>——提供大规模负样本与泄漏控制基准，作为评测标准。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>负样本稀缺</td>
+<td>现有数据集正负比例严重失衡，负样本数量远不足</td>
+<td>实验验证非互作对成本高、文献记录少</td>
+<td>摘要：Flock 含 377,643 负对 vs 26,934 正对，说明此前缺乏</td>
+</tr>
+<tr>
+<td>负样本质量低</td>
+<td>随机配对或 legacy 数据含错误标注</td>
+<td>随机配对可能包含真实互作；legacy 数据未严格验证</td>
+<td>摘要：legacy 数据集「contain correctness errors」</td>
+</tr>
+<tr>
+<td>评估泄漏</td>
+<td>模型在测试集上表现虚高，泛化性被高估</td>
+<td>训练/测试序列或界面相似、日期截断未控制</td>
+<td>摘要：Flock 的 Leakage-Free Set 严格控制序列/界面相似性与日期截断</td>
+</tr>
+<tr>
+<td>模型泛化差异被掩盖</td>
+<td>不同模型（共折叠 vs 语言模型）的真实差距未暴露</td>
+<td>泄漏掩盖了模型在未见数据上的真实表现</td>
+<td>摘要：ESMFold2 在 Leakage-Free Set 上性能下降，ESMC 更强</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：构建大规模负样本数据集（Flock），整合 PDB 生物组装体与文献挖掘的负样本（用 agentic LLM 工作流），并设计 Leakage-Free Set 基准。</li>
+<li><strong>核心洞察</strong>：PPI 预测的瓶颈不在模型架构，而在<strong>数据质量与评估协议</strong>——负样本的可靠性与泄漏控制决定了模型泛化性的可信度；不同模型家族（共折叠 vs 语言模型）对数据泄漏的敏感度不同。</li>
+<li><strong>[Analysis] 可能的普适教训</strong>：任何结构预测/生成任务（如构象采样、对接）都应建立「负样本/难例 + 泄漏控制」的评测协议，否则模型对比结论不可靠；LLM 可用于自动化高质量数据标注，但需验证其正确性。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：PDB 生物组装体（正样本来源）、科学文献（负样本来源）</li>
+<li><strong>输出</strong>：Flock 数据集（正/负 PPI 对）、Leakage-Free Set 基准</li>
+<li><strong>模块</strong>：
+  1. 正样本构建：从 PDB 生物组装体提取互作对
+  2. 负样本挖掘：用 agentic LLM 工作流从文献中提取高置信非互作对
+  3. 泄漏控制：序列相似性、界面相似性、日期截断过滤</li>
+<li><strong>训练</strong>：不涉及模型训练，仅构建数据集与基准</li>
+<li><strong>工具</strong>：agentic LLM（具体模型未提供）、PDB 数据库、序列/结构比对工具（推断）</li>
+<li><strong>反馈回路</strong>：无（静态数据集）</li>
+<li><strong>假设</strong>：文献中明确标注的非互作对是可靠的负样本；PDB 组装体中的互作对是真实正样本</li>
+<li><strong>流程</strong>：PDB 组装体 → 正样本提取 → 文献挖掘（LLM 辅助）→ 负样本提取 → 相似性与日期过滤 → Flock 数据集 → 划分 Leakage-Free Set → 评测 ESMFold2 与 ESMC</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正样本提取（PDB 组装体）</td>
+<td>提供高置信互作对</td>
+<td>PDB 是实验验证的结构，互作关系可靠</td>
+<td>输入：PDB 组装体；输出：正 PPI 对</td>
+<td>摘要：整合 PDB 生物组装体</td>
+<td>预期：正样本数量减少，数据集不完整</td>
+</tr>
+<tr>
+<td>负样本挖掘（agentic LLM）</td>
+<td>从文献提取高置信非互作对</td>
+<td>解决负样本稀缺与质量问题</td>
+<td>输入：科学文献；输出：负 PPI 对</td>
+<td>摘要：用 agentic LLM 工作流挖掘</td>
+<td>预期：负样本数量骤降，模型训练数据不足</td>
+</tr>
+<tr>
+<td>泄漏控制（Leakage-Free Set）</td>
+<td>过滤序列/界面相似与日期泄漏</td>
+<td>防止评估虚高，暴露真实泛化</td>
+<td>输入：Flock 全量数据；输出：严格子集</td>
+<td>摘要：严格控制序列/界面相似性与日期截断</td>
+<td>预期：评测结果更保守但更可信；移除后 ESMFold2 表现虚高</td>
+</tr>
+<tr>
+<td>模型评测（ESMFold2 vs ESMC）</td>
+<td>对比共折叠模型与语言模型</td>
+<td>验证基准的区分度</td>
+<td>输入：Leakage-Free Set；输出：性能指标</td>
+<td>摘要：ESMFold2 下降，ESMC 更强</td>
+<td>预期：无评测则基准无意义</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（本文为数据集/基准论文，摘要中未提供任何数学公式或符号定义）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：Flock（26,934 正对 + 377,643 负对）；Leakage-Free Set（规模未提供）</li>
+<li><strong>模型</strong>：ESMFold2（共折叠模型）、ESMC（蛋白质语言模型）</li>
+<li><strong>指标</strong>：未提供（推测为 PPI 分类/结构预测指标，如 AUC、TM-score 等）</li>
+<li><strong>基线</strong>：未提供（推测为 legacy 数据集上的表现）</li>
+<li><strong>评测协议</strong>：Leakage-Free Set 控制序列相似性、界面相似性、日期截断</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESMFold2 在 Leakage-Free Set 上的评测</td>
+<td>共折叠模型泛化性受泄漏影响</td>
+<td>对比 legacy 数据集 vs Leakage-Free Set</td>
+<td>性能下降</td>
+<td>泄漏控制暴露了共折叠模型的泛化缺陷</td>
+<td>未提供具体下降幅度，无法量化</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>ESMC 在 Leakage-Free Set 上的评测</td>
+<td>语言模型泛化性更强</td>
+<td>对比 ESMFold2</td>
+<td>表现更强</td>
+<td>语言模型对未见数据更鲁棒</td>
+<td>未提供具体指标，无法比较幅度</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>Flock 数据集规模验证</td>
+<td>负样本规模与质量</td>
+<td>对比 legacy 数据集</td>
+<td>26,934 正 + 377,643 负</td>
+<td>数据集规模空前</td>
+<td>未提供负样本正确性验证细节</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限 PPI 二分类/结构预测的泛化性评测，不涉及新模型提出。</li>
+<li><strong>oracle/真值输入</strong>：正样本来自 PDB 实验结构，负样本来自文献挖掘（LLM 辅助），真值可靠性依赖文献标注质量。</li>
+<li><strong>端到端状态</strong>：数据集构建完成，但未提供下游任务端到端训练结果。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：日期截断用于模拟训练时点，但具体日期未提供。</li>
+<li><strong>模型依赖</strong>：评测仅覆盖 ESMFold2 与 ESMC，不代表所有共折叠/语言模型。</li>
+<li><strong>最难情形</strong>：Leakage-Free Set 中序列/界面相似性极低的 PPI 对，模型表现未知。</li>
+<li><strong>不确定性</strong>：负样本的 LLM 挖掘可能存在系统性错误，未提供人工验证率。</li>
+<li><strong>有边界复述</strong>：在 Flock 数据集与 Leakage-Free Set 协议下，ESMFold2 的泛化性显著低于其在 legacy 基准上的表现，而 ESMC 表现更稳定；该结论仅适用于所测模型与数据划分，不推广至所有 PPI 预测方法。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 负样本挖掘依赖 LLM 工作流，可能存在标注错误（摘要中未明确承认，但「highly confident」暗示有置信度筛选）。
+- Leakage-Free Set 的过滤标准（序列/界面相似性阈值、日期截断点）未在摘要中给出具体数值。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>负样本来自文献挖掘，LLM 可能引入系统性偏差</td>
+<td>文献中「非互作」的标注可能受实验条件限制（如未检测到互作≠不互作）</td>
+<td>负样本质量决定基准可信度</td>
+<td>对负样本子集进行人工实验验证或交叉数据库比对</td>
+<td>摘要：LLM 工作流挖掘，未提供验证率</td>
+</tr>
+<tr>
+<td>Leakage-Free Set 的过滤标准未公开</td>
+<td>不同阈值会导致不同结论，可能被操纵</td>
+<td>基准可复现性</td>
+<td>要求作者公开过滤代码与参数</td>
+<td>摘要：仅提及「严格控制」，无细节</td>
+</tr>
+<tr>
+<td>仅评测两个模型，结论外推有限</td>
+<td>ESMFold2 与 ESMC 不代表所有共折叠/语言模型</td>
+<td>基准的普适性</td>
+<td>扩展至 AlphaFold-Multimer、ESM-2 等</td>
+<td>摘要：仅提及两模型</td>
+</tr>
+<tr>
+<td>正样本仅来自 PDB，可能偏向高置信结构</td>
+<td>低分辨率或未解析的 PPI 被排除，数据集有偏</td>
+<td>影响模型在真实场景的泛化</td>
+<td>与其它 PPI 数据库（如 BioGRID）交叉验证</td>
+<td>摘要：整合 PDB 组装体</td>
+</tr>
+<tr>
+<td>日期截断模拟训练时点，但未说明具体日期</td>
+<td>不同截断点影响模型表现</td>
+<td>影响基准的公平性</td>
+<td>敏感性分析（不同日期截断）</td>
+<td>摘要：提及日期截断，无具体值</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>负样本工程</strong>：PPI 预测中，负样本的规模与质量比模型架构更关键；可用 LLM 自动化挖掘文献负样本，但需置信度筛选。
+2. <strong>泄漏控制协议</strong>：结构预测任务应严格过滤序列/界面相似性与日期截断，否则评估结果虚高；此协议可迁移至构象采样、分子对接等任务。
+3. <strong>模型家族差异</strong>：共折叠模型（如 ESMFold2）对数据泄漏敏感，而蛋白质语言模型（如 ESMC）泛化更稳；提示在结构预测中可考虑语言模型作为替代或补充。
+4. <strong>基准设计</strong>：数据集论文应提供「难例子集」（如 Leakage-Free Set）作为标准评测协议，增强模型对比的可信度。
+5. <strong>LLM 用于数据标注</strong>：agentic LLM 工作流可扩展到其他生物数据（如突变效应、结合亲和力）的自动化标注，但需人工验证。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：与 AlphaFold-Multimer（Evans et al., 2022）和 ESMFold（Lin et al., 2023）相关，本文提供其评测基准；与 DIPS（Townshend et al., 2019）等 PPI 数据集相比，Flock 在负样本规模与泄漏控制上更严格。</li>
+<li><strong>组合</strong>：可与「构象采样」结合——负样本 PPI 对可用于训练判别式模型，筛选构象生成中的非天然界面。</li>
+<li><strong>冲突</strong>：若 legacy 数据集（如 DIPS）的负样本含错误，则基于其训练的模型结论需重新审视。</li>
+<li><strong>可迁移领域</strong>：分子对接（负样本对接姿态）、序列设计（非互作序列对）、MD 模拟（非结合态采样）。</li>
+<li><strong>候选方向</strong>：将 Flock 的泄漏控制协议应用于蛋白质-配体对接基准；用 LLM 挖掘突变-表型负样本。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Leakage-Controlled Benchmark for Protein-Ligand Docking
+   - <strong>来源局限/观察</strong>：Flock 的泄漏控制仅针对 PPI，但分子对接同样存在训练/测试配体相似性泄漏。
+   - <strong>核心假设</strong>：对接模型在泄漏控制基准上的排名与现有基准显著不同。
+   - <strong>相对本文增量</strong>：将 Flock 协议扩展至蛋白-配体任务。
+   - <strong>初步方法</strong>：构建配体相似性过滤 + 日期截断的对接基准，评测现有模型。
+   - <strong>验证方式</strong>：对比泄漏 vs 非泄漏基准上的模型排名变化。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：LLM-Mined Negative Conformations for MD Sampling
+   - <strong>来源局限/观察</strong>：Flock 用 LLM 挖掘负样本，但 MD 模拟缺乏非天然构象的负样本。
+   - <strong>核心假设</strong>：LLM 可从文献提取非天然构象描述，用于训练构象生成模型的判别器。
+   - <strong>相对本文增量</strong>：将负样本概念从 PPI 对迁移至构象空间。
+   - <strong>初步方法</strong>：用 agentic LLM 从文献提取「非活性/非天然」构象描述，构建负样本集。
+   - <strong>验证方式</strong>：训练判别器并测试构象生成模型的真实性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Cross-Model Generalization Analysis on Flock
+   - <strong>来源局限/观察</strong>：本文仅评测 ESMFold2 与 ESMC，未覆盖 AlphaFold-Multimer 等。
+   - <strong>核心假设</strong>：不同共折叠模型在 Leakage-Free Set 上的退化程度不同，揭示架构差异。
+   - <strong>相对本文增量</strong>：扩展评测范围，提供更全面的基准结论。
+   - <strong>初步方法</strong>：在 Flock 上评测 AlphaFold-Multimer、RoseTTAFold 等。
+   - <strong>验证方式</strong>：统计各模型在泄漏控制前后的性能变化。
+   - <strong>创新状态</strong>：prior-art checked（基于本文数据，但未执行）</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Sequence-Design Negative Set for Non-Interacting Protein Pairs
+   - <strong>来源局限/观察</strong>：Flock 的负样本可用于序列设计，但未提供设计任务专用子集。
+   - <strong>核心假设</strong>：非互作序列对可作为序列设计模型的负训练信号，提升设计特异性。
+   - <strong>相对本文增量</strong>：将 Flock 负样本应用于生成式序列设计。
+   - <strong>初步方法</strong>：用 Flock 负对训练判别器，指导扩散模型生成非互作序列。
+   - <strong>验证方式</strong>：设计序列的实验互作率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce Flock, a negative-enriched protein-protein interaction (PPI) dataset containing 26,934 positive and 377,643 negative pairs, assembled from PDB biological assemblies and literature-derived negatives curated via an agentic LLM workflow. They also present a Leakage-Free Set benchmark controlling for sequence and interface similarity and historical date cutoffs. Evaluations reportedly show ESMFold2 performance degradation on the Leakage-Free Set while ESMC generalises better. The authors claim Flock is the most comprehensive and challenging PPI benchmark to date.</li>
+<li><strong>Visible evidence base</strong> Abstract text only. No dataset statistics beyond pair counts, no curation pipeline details, no benchmark construction methodology, no evaluation results, no figures or tables</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, dataset files, benchmark construction details, evaluation protocols, baseline model configurations, statistical analyses, and any supplementary information</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially valuable resource for the PPI prediction community, addressing a recognised gap in negative training data quality and scale. However, the evidence provided is insufficient to evaluate the core claims. The dataset construction methodology, the leakage control procedures, and the comparative model evaluations are all described at a level that prevents independent verification. The claim of being the "most comprehensive and challenging PPI benchmark to date" is not supportable from the abstract alone.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and machine learning researchers working on protein-protein interaction prediction, protein structure modelling, and protein language models. The dataset could serve as a training and evaluation resource for methods development. The leakage-free benchmark design addresses a recognised problem in the field and would interest researchers concerned with fair model evaluation.</li>
+<li><strong>Major strengths</strong> The problem addressed is well recognised and important. The scale of negative data (377,643 pairs) substantially exceeds typical legacy datasets. The explicit focus on leakage control through sequence, interface, and temporal cutoffs is a thoughtful design element. The use of an agentic LLM workflow for literature mining is a novel methodological approach.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "Flock integrates biological assemblies from the PDB with highly confident, curated negatives mined from scientific literature using a state-of-the-art agentic LLM workflow"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract provides no details on how the agentic LLM workflow was validated. There is no information on precision, recall, or error rates of the literature mining process. The term "highly confident" is undefined. No human validation statistics or inter-annotator agreement measures are reported.</li>
+<li><strong>Why it matters</strong> The entire value of the dataset depends on the correctness of the negative labels. If the LLM curation introduces systematic errors, the dataset could propagate false negatives into training and evaluation, undermining the benchmark's utility. Without validation metrics, the reliability of the core resource cannot be assessed.</li>
+<li><strong>Resolution test</strong> Provide precision and recall of the LLM curation against a manually annotated gold standard, including error analysis by literature source type and interaction type. Report human validation rates on a random sample.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "Flock's Leakage-Free Set, a benchmark that strictly controls for sequence and interface similarity, and historical date-based cutoffs used in the training of co-folding models"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract states that the Leakage-Free Set "strictly controls" for three factors but provides no thresholds, algorithms, or validation of these controls. The phrase "strictly controls" implies a rigorous protocol, yet no details are given on how sequence identity cutoffs were chosen, how interface similarity was computed, or how historical date cutoffs were applied to model training data.</li>
+<li><strong>Why it matters</strong> Leakage control is the central methodological contribution claimed. If the controls are not described precisely, other researchers cannot reproduce the benchmark or assess whether the controls are adequate. The claim of "strict" control is unverifiable without specific parameters.</li>
+<li><strong>Resolution test</strong> Provide exact thresholds for sequence and interface similarity, the structural alignment method used, the date cutoff values, and a demonstration that the controls effectively eliminate leakage using held-out validation.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "Our evaluation reveals that the co-folding model ESMFold2 shows performance degradation on the Leakage-Free set, whereas the protein language model ESMC demonstrates stronger generalisation"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> No evaluation metrics, effect sizes, statistical significance, or comparison baselines are reported. The terms "performance degradation" and "stronger generalisation" are qualitative and could mean different things depending on the metric used. No information is given on how many models were compared, what the training protocols were, or whether the results are robust across random seeds.</li>
+<li><strong>Why it matters</strong> The comparative evaluation is presented as evidence for the benchmark's utility. Without quantitative results, the reader cannot judge whether the observed differences are meaningful or artefactual. The claim that Flock is "challenging" rests entirely on this evaluation.</li>
+<li><strong>Resolution test</strong> Report full evaluation tables with metrics (e.g., AUC, precision-recall, TM-score), confidence intervals, statistical tests, and model training details. Show that the performance gap is consistent across multiple runs and settings.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Originality and positioning</li>
+<li><strong>Claim pointer</strong> "Flock provides the most comprehensive and challenging PPI benchmark to date, establishing a rigorous new standard"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract does not compare Flock against existing negative-enriched datasets or benchmarks in any quantitative way. No baseline dataset sizes, leakage properties, or evaluation results from prior work are cited. The claim of "most comprehensive" and "most challenging" is asserted without comparative evidence.</li>
+<li><strong>Why it matters</strong> The field already has several PPI datasets and benchmarks. Without a systematic comparison, the claimed novelty and superiority cannot be established. The phrase "rigorous new standard" implies a level of validation that is not demonstrated.</li>
+<li><strong>Resolution test</strong> Provide a comparative table of existing PPI datasets and benchmarks, including size, curation method, leakage controls, and evaluation results on the same models. Show where Flock improves on each prior resource.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Dataset composition</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract states 26,934 positive and 377,643 negative pairs but does not clarify whether these are unique protein pairs or include redundancy. The ratio of negatives to positives is approximately 14 to 1, which is unusual and may affect model training dynamics.</li>
+<li><strong>Required correction</strong> Clarify whether pairs are deduplicated and discuss the rationale for the negative-to-positive ratio.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Model evaluation</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The models evaluated, ESMFold2 and ESMC, are named but no versions, checkpoints, or inference settings are specified. This limits reproducibility of the reported comparison.</li>
+<li><strong>Required correction</strong> Provide exact model versions, download sources, and inference parameters in the methods.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> "agentic LLM workflow"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The term "agentic" is not defined. It is unclear whether this refers to a multi-step reasoning agent, a tool-using framework, or a specific prompting strategy. This affects the reader's ability to understand the curation method.</li>
+<li><strong>Required correction</strong> Define the term and describe the workflow architecture, including the specific LLM used, the number of reasoning steps, and any tool integrations.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Accessibility</li>
+<li><strong>Affected element</strong> Dataset availability</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> No information is given on how the dataset will be distributed, under what license, or whether it will be versioned. This affects the practical utility of the resource.</li>
+<li><strong>Required correction</strong> State the data repository, license, and versioning plan.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (LLM curation validation), R1-M2 (leakage control specifics), R1-M3 (quantitative evaluation), R1-M4 (comparative positioning)</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: the negative-enriched approach and LLM-based curation are potentially novel, but the abstract does not demonstrate how this differs from prior work beyond scale. Scientific importance: the problem is important and the resource could be valuable, but the importance claim is not yet evidenced. Interdisciplinary readership: the work bridges machine learning and structural biology, which is appropriate for a broad audience, but the abstract assumes familiarity with specific model names and evaluation concepts. Technical soundness: not assessable from the abstract; the core methodological claims lack supporting detail. Readability for nonspecialists: the abstract is generally clear but uses jargon such as "agentic LLM workflow" and "co-folding models" without definition.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract describes a potentially useful resource, but the core claims regarding curation quality, leakage control, and model evaluation cannot be verified without the full manuscript. Supportive if the technical concerns are resolved with detailed methods and quantitative results.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>"Highly confident, curated negatives" is unsupported without validation metrics</li>
+<li>"Strictly controls for sequence and interface similarity, and historical date-based cutoffs" is unsupported without specific thresholds and algorithms</li>
+<li>"ESMFold2 shows performance degradation" and "ESMC demonstrates stronger generalisation" are unsupported without quantitative results</li>
+<li>"Most comprehensive and challenging PPI benchmark to date" is unsupported without comparative analysis</li>
+<li>"Rigorous new standard" is unsupported without demonstrated validation</li>
+<li>The overall utility of the dataset for training and evaluation cannot be assessed from the abstract alone</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

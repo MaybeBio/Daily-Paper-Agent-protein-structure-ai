@@ -1,0 +1,88 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors introduce Flock, a negative-enriched protein-protein interaction (PPI) dataset containing 26,934 positive and 377,643 negative pairs, assembled from PDB biological assemblies and literature-derived negatives curated via an agentic LLM workflow. They also present a Leakage-Free Set benchmark controlling for sequence and interface similarity and historical date cutoffs. Evaluations reportedly show ESMFold2 performance degradation on the Leakage-Free Set while ESMC generalises better. The authors claim Flock is the most comprehensive and challenging PPI benchmark to date.
+- **Visible evidence base** Abstract text only. No dataset statistics beyond pair counts, no curation pipeline details, no benchmark construction methodology, no evaluation results, no figures or tables
+- **Missing materials affecting confidence** Full manuscript, methods section, dataset files, benchmark construction details, evaluation protocols, baseline model configurations, statistical analyses, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable resource for the PPI prediction community, addressing a recognised gap in negative training data quality and scale. However, the evidence provided is insufficient to evaluate the core claims. The dataset construction methodology, the leakage control procedures, and the comparative model evaluations are all described at a level that prevents independent verification. The claim of being the "most comprehensive and challenging PPI benchmark to date" is not supportable from the abstract alone.
+- **Who would be interested in the results, and why** Computational biologists and machine learning researchers working on protein-protein interaction prediction, protein structure modelling, and protein language models. The dataset could serve as a training and evaluation resource for methods development. The leakage-free benchmark design addresses a recognised problem in the field and would interest researchers concerned with fair model evaluation.
+- **Major strengths** The problem addressed is well recognised and important. The scale of negative data (377,643 pairs) substantially exceeds typical legacy datasets. The explicit focus on leakage control through sequence, interface, and temporal cutoffs is a thoughtful design element. The use of an agentic LLM workflow for literature mining is a novel methodological approach.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Flock integrates biological assemblies from the PDB with highly confident, curated negatives mined from scientific literature using a state-of-the-art agentic LLM workflow"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract provides no details on how the agentic LLM workflow was validated. There is no information on precision, recall, or error rates of the literature mining process. The term "highly confident" is undefined. No human validation statistics or inter-annotator agreement measures are reported.
+  - **Why it matters** The entire value of the dataset depends on the correctness of the negative labels. If the LLM curation introduces systematic errors, the dataset could propagate false negatives into training and evaluation, undermining the benchmark's utility. Without validation metrics, the reliability of the core resource cannot be assessed.
+  - **Resolution test** Provide precision and recall of the LLM curation against a manually annotated gold standard, including error analysis by literature source type and interaction type. Report human validation rates on a random sample.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Flock's Leakage-Free Set, a benchmark that strictly controls for sequence and interface similarity, and historical date-based cutoffs used in the training of co-folding models"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract states that the Leakage-Free Set "strictly controls" for three factors but provides no thresholds, algorithms, or validation of these controls. The phrase "strictly controls" implies a rigorous protocol, yet no details are given on how sequence identity cutoffs were chosen, how interface similarity was computed, or how historical date cutoffs were applied to model training data.
+  - **Why it matters** Leakage control is the central methodological contribution claimed. If the controls are not described precisely, other researchers cannot reproduce the benchmark or assess whether the controls are adequate. The claim of "strict" control is unverifiable without specific parameters.
+  - **Resolution test** Provide exact thresholds for sequence and interface similarity, the structural alignment method used, the date cutoff values, and a demonstration that the controls effectively eliminate leakage using held-out validation.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Our evaluation reveals that the co-folding model ESMFold2 shows performance degradation on the Leakage-Free set, whereas the protein language model ESMC demonstrates stronger generalisation"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** No evaluation metrics, effect sizes, statistical significance, or comparison baselines are reported. The terms "performance degradation" and "stronger generalisation" are qualitative and could mean different things depending on the metric used. No information is given on how many models were compared, what the training protocols were, or whether the results are robust across random seeds.
+  - **Why it matters** The comparative evaluation is presented as evidence for the benchmark's utility. Without quantitative results, the reader cannot judge whether the observed differences are meaningful or artefactual. The claim that Flock is "challenging" rests entirely on this evaluation.
+  - **Resolution test** Report full evaluation tables with metrics (e.g., AUC, precision-recall, TM-score), confidence intervals, statistical tests, and model training details. Show that the performance gap is consistent across multiple runs and settings.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Originality and positioning
+  - **Claim pointer** "Flock provides the most comprehensive and challenging PPI benchmark to date, establishing a rigorous new standard"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not compare Flock against existing negative-enriched datasets or benchmarks in any quantitative way. No baseline dataset sizes, leakage properties, or evaluation results from prior work are cited. The claim of "most comprehensive" and "most challenging" is asserted without comparative evidence.
+  - **Why it matters** The field already has several PPI datasets and benchmarks. Without a systematic comparison, the claimed novelty and superiority cannot be established. The phrase "rigorous new standard" implies a level of validation that is not demonstrated.
+  - **Resolution test** Provide a comparative table of existing PPI datasets and benchmarks, including size, curation method, leakage controls, and evaluation results on the same models. Show where Flock improves on each prior resource.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Dataset composition
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract states 26,934 positive and 377,643 negative pairs but does not clarify whether these are unique protein pairs or include redundancy. The ratio of negatives to positives is approximately 14 to 1, which is unusual and may affect model training dynamics.
+  - **Required correction** Clarify whether pairs are deduplicated and discuss the rationale for the negative-to-positive ratio.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Model evaluation
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The models evaluated, ESMFold2 and ESMC, are named but no versions, checkpoints, or inference settings are specified. This limits reproducibility of the reported comparison.
+  - **Required correction** Provide exact model versions, download sources, and inference parameters in the methods.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "agentic LLM workflow"
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The term "agentic" is not defined. It is unclear whether this refers to a multi-step reasoning agent, a tool-using framework, or a specific prompting strategy. This affects the reader's ability to understand the curation method.
+  - **Required correction** Define the term and describe the workflow architecture, including the specific LLM used, the number of reasoning steps, and any tool integrations.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Accessibility
+  - **Affected element** Dataset availability
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** No information is given on how the dataset will be distributed, under what license, or whether it will be versioned. This affects the practical utility of the resource.
+  - **Required correction** State the data repository, license, and versioning plan.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (LLM curation validation), R1-M2 (leakage control specifics), R1-M3 (quantitative evaluation), R1-M4 (comparative positioning)
+- **Assessment against Nature-style criteria** Originality: the negative-enriched approach and LLM-based curation are potentially novel, but the abstract does not demonstrate how this differs from prior work beyond scale. Scientific importance: the problem is important and the resource could be valuable, but the importance claim is not yet evidenced. Interdisciplinary readership: the work bridges machine learning and structural biology, which is appropriate for a broad audience, but the abstract assumes familiarity with specific model names and evaluation concepts. Technical soundness: not assessable from the abstract; the core methodological claims lack supporting detail. Readability for nonspecialists: the abstract is generally clear but uses jargon such as "agentic LLM workflow" and "co-folding models" without definition.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a potentially useful resource, but the core claims regarding curation quality, leakage control, and model evaluation cannot be verified without the full manuscript. Supportive if the technical concerns are resolved with detailed methods and quantitative results.
+
+## Risk / unsupported claims
+- "Highly confident, curated negatives" is unsupported without validation metrics
+- "Strictly controls for sequence and interface similarity, and historical date-based cutoffs" is unsupported without specific thresholds and algorithms
+- "ESMFold2 shows performance degradation" and "ESMC demonstrates stronger generalisation" are unsupported without quantitative results
+- "Most comprehensive and challenging PPI benchmark to date" is unsupported without comparative analysis
+- "Rigorous new standard" is unsupported without demonstrated validation
+- The overall utility of the dataset for training and evaluation cannot be assessed from the abstract alone

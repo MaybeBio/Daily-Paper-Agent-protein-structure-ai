@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors introduce NuCaliby, a structure-conditioned model that jointly designs amino acid, mRNA, and DNA sequences at nucleotide resolution. The model predicts a Potts model over a nucleotide graph, trained with amino acid supervision via marginalization over synonymous codons. Claims include preserved residue-level designability comparable to the original Caliby model, composable inference-time guidance for sequence-level objectives, improved host tRNA adaptation beyond synonymous sequence space, direct embedding of RNA motifs into coding sequences, and wet lab validation showing expressible and soluble proteins on par with state of the art methods.
+- **Visible evidence base** Abstract text only; no figures, tables, methods sections, or supplementary data were supplied
+- **Missing materials affecting confidence** Full manuscript, methods details, model architecture specifications, training data description, benchmark definitions, wet lab protocols, quantitative results, and code repository contents
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting extension of protein design to the nucleotide level, with a technically plausible training strategy based on marginalizing over synonymous codons. However, the evidence base is limited to the abstract, and several central claims, particularly regarding wet lab performance and the nature of the trade-off between tRNA adaptation and self-consistency, cannot be evaluated without the full manuscript. The work is likely to interest the protein design and synthetic biology communities, but the case for its significance and robustness is not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in computational protein design, mRNA therapeutics, synthetic biology, and codon optimization. The joint design of amino acid and nucleotide sequences addresses a practical bottleneck in gene synthesis and expression optimization, and the energy-based guidance framework may appeal to those working on constrained sequence design.
+- **Major strengths** The conceptual advance of designing at nucleotide resolution while preserving amino acid-level designability is timely and relevant. The training strategy using amino acid supervision with marginalization over synonymous codons is elegant and likely to be technically sound. The composable inference-time guidance framework is a flexible and potentially powerful feature. The inclusion of wet lab validation, even if only summarized, strengthens the practical relevance.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "In wet lab experiments, NuCaliby produces expressible and soluble proteins on par with state of the art methods"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract states wet lab results without any quantitative detail, experimental design description, or comparison metrics. No information is given on the number of proteins tested, the expression system, the solubility assay, or the statistical significance of the comparison to state of the art methods.
+  - **Why it matters** Wet lab validation is a central pillar of the claim that NuCaliby is practically useful. Without details, the claim is unverifiable and could range from a single successful construct to a comprehensive study.
+  - **Resolution test** Provide the full wet lab section with experimental protocols, sample sizes, quantitative expression and solubility measurements, and statistical comparisons to appropriate baselines.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim precision
+  - **Claim pointer** "NuCaliby improves adaptation to host tRNA pools beyond synonymous sequence space, trading-off self-consistency"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The nature and magnitude of the trade-off between tRNA adaptation and self-consistency are not specified. It is unclear whether the trade-off is acceptable in practice, how it scales with the strength of the guidance, or whether it undermines the designability claim.
+  - **Why it matters** A trade-off that degrades self-consistency could limit practical utility. The abstract does not clarify whether the trade-off is minor, context-dependent, or a fundamental limitation.
+  - **Resolution test** Quantify the trade-off with appropriate metrics, show how it varies with guidance strength, and discuss the practical implications for design success.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical detail
+  - **Claim pointer** "NuCaliby predicts a Potts model over a nucleotide graph, trained using amino acid supervision by marginalizing over synonymous codons"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not describe the nucleotide graph construction, the Potts model parameterization, the training objective, or the marginalization procedure. These details are essential for assessing the technical soundness and reproducibility of the approach.
+  - **Why it matters** The core methodological contribution is the nucleotide-level Potts model with amino acid supervision. Without technical details, the method cannot be evaluated or reproduced.
+  - **Resolution test** Provide a full methods section with model architecture, training details, and a clear description of the marginalization procedure.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The phrase "beyond synonymous sequence space" is ambiguous. It could mean that the model explores non-synonymous changes that improve tRNA adaptation, or that it optimizes codon choice more effectively than existing methods.
+  - **Required correction** Clarify the intended meaning with a precise definition or example.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Benchmark description
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The claim of "preserves residue-level designability on par with the original Caliby model" lacks any specification of the benchmark or metrics used.
+  - **Required correction** State the benchmark dataset and the specific designability metrics used for comparison.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Code availability
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The code repository link is provided, but the abstract does not state whether the repository contains the full model, training scripts, and wet lab data.
+  - **Required correction** Specify the contents of the repository and any access restrictions.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The wet lab claim and the trade-off characterization are central to the paper's contribution and cannot be assessed from the abstract alone. R1-M3, while not blocking, is necessary for technical evaluation.
+- **Assessment against Nature-style criteria** Originality is high, as the joint nucleotide-level design with amino acid supervision is a novel contribution. Scientific importance is potentially high for protein design and synthetic biology, but the significance depends on the wet lab results and the practical utility of the trade-off, which are not yet established. Interdisciplinary readership is plausible, spanning computational biology, molecular biology, and bioengineering. Technical soundness cannot be fully assessed without methods details, but the training strategy is conceptually sound. Readability for nonspecialists is adequate for an abstract, though some terms such as "Potts model" and "marginalizing over synonymous codons" may require prior knowledge.
+- **Recommendation posture** Supportive if technical concerns are resolved. The conceptual advance is promising, but the current evidence base is insufficient to establish the case. The authors should provide the full manuscript with detailed methods, quantitative wet lab results, and a clear characterization of the trade-off.
+
+## Risk / unsupported claims
+- The wet lab claim of expressible and soluble proteins on par with state of the art methods is unsupported without quantitative data and experimental details.
+- The claim of improved tRNA adaptation "beyond synonymous sequence space" is ambiguous and not supported by specific metrics.
+- The trade-off between tRNA adaptation and self-consistency is mentioned but not quantified or characterized.
+- The claim of preserving designability on par with Caliby is unverifiable without benchmark details.
+- The claim of avoiding combinatorial growth for RNA motif embedding is plausible but not demonstrated with complexity analysis or examples.

@@ -1,0 +1,24 @@
+{
+  "source": "pubmed",
+  "id": "42828804",
+  "title": "Quantum-compatible AutoDock grid scoring for multi-receptor, multi-ligand, and multi-pose protein-ligand evaluation.",
+  "authors": "Yang, Pei-Kun",
+  "journal": "Journal of molecular graphics & modelling",
+  "published_date": "2026-10-04",
+  "window": {
+    "start": "2026-10-04",
+    "end": "2026-10-10"
+  },
+  "score": 7,
+  "one_liner_zh": "该文将AutoDock网格打分重构为量子兼容的内积表示，用于多受体、多配体、多构象的蛋白-配体评估，属于对接打分计算建模，但对象侧重配体而非蛋白质结构本身，方法为量子模拟与经典验证，可迁移至蛋白结构计算。",
+  "abstract": "Structure-based virtual screening requires repeated evaluation of protein-ligand interaction energies across receptor conformations, ligand identities, translations, and rotations. Here, AutoDock receptor energy maps and ligand charge or atom-type occupancy grids were reformulated as an indexed quantum-compatible inner-product representation for grid-based protein-ligand scoring. Receptor maps and ligand grids were represented on a shared 32 x 32 x 32 Cartesian grid, allowing direct classical dot-product evaluation and quantum-compatible readout to be compared under the same energy model. A 32-qubit organization encoded spatial grid indices, energy channels, ligand translations, ligand rotations, and readout based on the Hadamard test. A 37-qubit organization added receptor and ligand selection registers, allowing two receptor conformations and 16 ligand entries to be indexed without changing the readout principle. Reduced Qiskit simulations and PyTorch calculations validated the rotation, translation, and probability-readout operations, and the probability-derived energies matched direct classical grid-based inner products. Finite-shot sampling and map truncation were examined as factors affecting energy recovery and ranking stability. Increasing the number of shots reduced the normalized root-mean-square error (nRMSE) and improved correlation-based and reference-configuration recovery. At the same time, the 37-qubit representation required a larger shot budget because probability mass was distributed over a larger indexed space. Among the three representative conditions examined in the main figures, U(max) = 1 gave the lowest nRMSE and the strongest Top 1% or Top 10% recovery, whereas no truncation and U(max) = 1000 better preserved correlation with the no-truncation reference at high shot numbers. These results establish a validated proof-of-concept molecular-modeling representation for quantum-compatible AutoDock grid scoring.",
+  "abstract_zh": "基于结构的虚拟筛选需要在受体构象、配体身份、平移和旋转之间反复评估蛋白质-配体相互作用能量。在此，AutoDock受体能量图谱和配体电荷或原子类型占据网格被重新表述为一种索引化的量子兼容内积表示，用于基于网格的蛋白质-配体评分。受体图谱和配体网格被表示在共享的32 x 32 x 32笛卡尔网格上，允许直接经典点积评估和量子兼容读出在同一能量模型下进行比较。一个32量子比特的组织编码了空间网格索引、能量通道、配体平移、配体旋转以及基于Hadamard测试的读出。一个37量子比特的组织添加了受体和配体选择寄存器，允许在不改变读出原理的情况下索引两个受体构象和16个配体条目。简化的Qiskit模拟和PyTorch计算验证了旋转、平移和概率读出操作，且概率衍生能量与直接经典网格基内积相匹配。有限次采样和图谱截断被考察为影响能量恢复和排序稳定性的因素。增加采样次数降低了归一化均方根误差（nRMSE），并改善了基于相关性和参考构象的恢复。同时，37量子比特表示需要更大的采样预算，因为概率质量分布在更大的索引空间上。在主图考察的三个代表性条件中，U(max)=1给出了最低的nRMSE和最强的Top 1%或Top 10%恢复，而在高采样次数下，无截断和U(max)=1000更好地保持了与无截断参考的相关性。这些结果建立了一个经过验证的概念验证分子建模表示，用于量子兼容的AutoDock网格评分。",
+  "has_fulltext": false,
+  "fulltext_source": "abstract",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42828804/",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/42828804/",
+  "paper_page_path": "papers/pubmed/42828804/index.html"
+}

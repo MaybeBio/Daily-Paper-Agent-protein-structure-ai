@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2610.04938v1",
+  "title": "D-DOIT: Training-free Adaptation of Discrete Diffusion via Doob's h-Transform",
+  "authors": "Jieke Wu; Qijie Zhu; Weimin Wu; Zeqi Ye; Minshuo Chen; Han Liu",
+  "journal": "",
+  "published_date": "2026-10-04",
+  "window": {
+    "start": "2026-10-04",
+    "end": "2026-10-10"
+  },
+  "score": 7,
+  "one_liner_zh": "该文提出一种基于Doob h变换的无训练离散扩散模型推理时适配方法D-DOIT，用于蛋白质逆折叠等序列设计任务，通过奖励重加权引导采样，虽非直接蛋白质结构建模，但算法框架可迁移至蛋白质结构生成与设计。",
+  "abstract": "We propose D-DOIT (Discrete Doob-Oriented Inference-time Transformation), a training-free and efficient adaptation method for discrete diffusion models with generic rewards. D-DOIT formulates adaptation as sampling from a reward-tilted target distribution and realizes this transport through Doob's h-transform of the discrete diffusion reverse kernel, using only reward values rather than reward gradients. Unlike continuous diffusion, masked discrete diffusion samples categorical token-reveal transitions rather than continuous state updates. D-DOIT derives the corresponding discrete Doob's h-transform, which guides sampling by reweighting reverse transition probabilities instead of adding a drift correction. To make this transformation practical, D-DOIT avoids expensive future rollouts. At each guided step, D-DOIT samples candidate next states, uses the model prediction head to complete each candidate into a clean sequence, evaluates each completion with the reward oracle, and resamples the next state with probabilities proportional to the rewards. An optional late-stage best-of-K refinement further improves sample quality by branching trajectories only near the end of denoising, avoiding the $K$-fold cost over the full trajectory. Empirically, across regulatory DNA design and protein inverse folding benchmarks, D-DOIT outperforms training-free guidance baselines. It improves enhancer activity and cell-type specificity while preserving sequence naturalness, and achieves the highest success rate in protein inverse folding.",
+  "abstract_zh": "我们提出D-DOIT（离散Doob导向推理时变换），一种针对具有通用奖励的离散扩散模型的免训练且高效的适应方法。D-DOIT将适应问题表述为从奖励倾斜的目标分布中采样，并通过离散扩散反向核的Doob h-变换实现这种传输，仅使用奖励值而非奖励梯度。与连续扩散不同，掩蔽离散扩散采样的是分类词元揭示转换，而非连续状态更新。D-DOIT推导出相应的离散Doob h-变换，通过重新加权反向转换概率而非添加漂移校正来引导采样。为使这种变换实用化，D-DOIT避免了昂贵的未来轨迹展开。在每个引导步骤中，D-DOIT采样候选下一状态，使用模型预测头将每个候选补全为干净序列，用奖励预言机评估每个补全结果，并按与奖励成比例的概率重新采样下一状态。可选的后期最佳K细化通过仅在去噪接近结束时分支轨迹，进一步改善样本质量，避免了整个轨迹上的$K$倍成本。在经验上，跨调控DNA设计和蛋白质逆折叠基准测试，D-DOIT优于免训练引导基线。它提高了增强子活性和细胞类型特异性，同时保持序列自然性，并在蛋白质逆折叠中实现了最高成功率。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2610.04938v1",
+  "source_url": "https://arxiv.org/abs/2610.04938v1",
+  "paper_page_path": "papers/arxiv/2610.04938v1/index.html"
+}

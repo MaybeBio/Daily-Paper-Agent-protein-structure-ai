@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or methods
+- **Shared manuscript claim summary** The authors combine the HyRes coarse-grained model with umbrella sampling to compute potentials of mean force for stages of IDP fibrillation (free-chain association, fibril-surface recruitment, multilayer growth) across three proteins (alpha-synuclein, TDP-43, FUS-FC). They report that sequence-encoded electrostatics dominate association free energies, with protein-specific salt sensitivity and charge-patterning effects, and that surface organization rather than fibril thickness governs recruitment.
+- **Visible evidence base** Abstract text only; no numerical data, simulation details, convergence criteria, or validation metrics provided
+- **Missing materials affecting confidence** Full methods, force-field parameters, system construction details, error estimates, convergence checks, comparison to experimental data, and all figures/tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible computational framework for studying IDP fibrillation thermodynamics, and the choice of three representative systems is sensible. However, the evidence base available for review is limited to the abstract, which precludes verification of the central quantitative claims. The qualitative conclusions are internally consistent but rest on simulation methodology whose accuracy and convergence cannot be assessed from the supplied material. The work may be of interest to the computational biophysics community, but the case for its broader significance is not fully established from the abstract alone.
+- **Who would be interested in the results, and why** Computational biophysicists and molecular simulators studying protein aggregation and intrinsically disordered proteins would be the primary audience. Researchers working on amyloid diseases (Parkinson, ALS, FTD) may also find the thermodynamic framing useful for interpreting experimental aggregation data. The methodological combination of HyRes with umbrella sampling could interest developers of coarse-grained models.
+- **Major strengths** The study addresses a relevant and under-explored question, namely how sequence and conformational ordering shape multi-chain free-energy landscapes in fibrillation. The use of three distinct IDP systems provides comparative power. The distinction between fibril-surface recruitment and multilayer growth is a useful conceptual decomposition. The finding that surface interaction-site accessibility, rather than fibril thickness, governs recruitment is a potentially non-obvious result.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that computed potentials of mean force "demonstrate" that sequence-encoded electrostatic interactions are a major determinant of association free energies, with specific rankings across proteins.
+  - **Evidence pointer** Abstract only; no figures, tables, or numerical values provided
+  - **Concern** The central quantitative claims (relative association free energies, salt sensitivity rankings) are presented without any numerical values, error bars, or convergence metrics. Umbrella sampling results are only meaningful with demonstrated sampling convergence and sufficient overlap between windows, none of which can be assessed.
+  - **Why it matters** Without convergence evidence and uncertainty quantification, the reported free-energy differences could be artifacts of insufficient sampling or force-field inaccuracies. The ranking of proteins by association strength is a key conclusion and must be robust to these technical factors.
+  - **Resolution test** Provide free-energy values with statistical uncertainties, histogram overlap analysis, and convergence plots for each system and condition. Show that the reported rankings are stable across simulation length and replicate runs.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract states that charge-neutralization simulations reveal the critical role of electrostatics and charge patterning in controlling association.
+  - **Evidence pointer** Abstract only; simulation protocol not described
+  - **Concern** The charge-neutralization protocol is not specified. It is unclear whether neutralization was applied to all charged residues, only specific ones, or via scaled charges. The interpretation of "charge patterning" effects requires a systematic mutation or scrambling protocol that is not described.
+  - **Why it matters** The conclusion that charge patterning controls association is only meaningful if the simulation design properly isolates patterning from net charge. Without protocol details, the claim cannot be evaluated or reproduced.
+  - **Resolution test** Describe the exact neutralization scheme, including which residues were modified and how patterning was varied. Show control simulations that separate net-charge effects from patterning effects.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that the HyRes model with umbrella sampling "reconstructs" potentials of mean force governing successive stages of IDP fibrillation.
+  - **Evidence pointer** Abstract only; no validation data
+  - **Concern** No validation of the HyRes model for these specific systems is presented. The accuracy of coarse-grained models for IDP fibrillation thermodynamics is not established, and no comparison to experimental free energies or known aggregation propensities is shown.
+  - **Why it matters** If the model systematically misrepresents IDP interactions, all reported free-energy landscapes would be unreliable. The claim of "reconstruction" implies quantitative accuracy that requires external validation.
+  - **Resolution test** Compare computed association free energies to experimental values where available (e.g., measured binding affinities or aggregation kinetics). Show that the model reproduces known qualitative differences in aggregation propensity among the three proteins.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract
+  - **Issue** The term "hybrid-resolution coarse-grained HyRes model" is used without explaining what "hybrid-resolution" means in this context or why it is advantageous.
+  - **Required correction** Add a brief parenthetical explanation of the model resolution scheme and its relevance to capturing IDP behavior.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Contextual framing
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract does not state how the findings differ from or advance beyond existing computational studies of IDP aggregation, making the novelty difficult to gauge.
+  - **Required correction** Add one sentence contrasting the present approach with prior simulation studies of IDP fibrillation.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** System description
+  - **Evidence pointer** Abstract
+  - **Issue** The FUS-FC construct is described as a "fibrillar-core construct," but the inclusion of "nonfibrillar regions" in some simulations is mentioned without specifying which construct was used for which simulation.
+  - **Required correction** Clarify which FUS constructs were simulated and how the full-length or nonfibrillar regions were modeled.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (sampling convergence and uncertainty), R1-M2 (charge-neutralization protocol), R1-M3 (model validation)
+- **Assessment against Nature-style criteria** Originality: The conceptual framing of fibrillation as a multi-stage thermodynamic landscape is not entirely new, but the specific decomposition into association, recruitment, and growth stages is a useful contribution. Scientific importance: The findings could inform understanding of IDP aggregation, but the significance is moderate and largely incremental within the computational biophysics subfield. Interdisciplinary readership: The abstract is written in a way that is accessible to biophysicists but may not attract readers outside the simulation community without clearer links to experimental or clinical relevance. Technical soundness: Cannot be assessed from the abstract; the absence of convergence and validation data is a serious limitation. Readability for nonspecialists: The abstract is generally clear but uses specialized terminology without sufficient explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The qualitative conclusions are plausible, but the absence of numerical results, convergence metrics, and model validation in the visible material prevents assessment of whether the central claims are supported. A full manuscript with detailed methods and results would be required to evaluate the work properly.
+
+## Risk / unsupported claims
+- The ranking of alpha-synuclein, TDP-43, and FUS-FC by association free energy is unsupported without numerical values and error estimates.
+- The claim that charge patterning controls association is unsupported without a described and validated neutralization protocol.
+- The claim that surface interaction-site accessibility governs recruitment over fibril thickness is unsupported without structural data or quantitative comparisons.
+- The general statement that the results provide "a thermodynamic framework connecting sequence, conformation, and surface organization" is an interpretation that cannot be verified from the abstract alone.

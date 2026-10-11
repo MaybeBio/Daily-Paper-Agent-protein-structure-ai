@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Constitutive-Set Mechanics: variational mechanics on an admissible set of constitutive laws · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-low">2</span>
+    <div>
+      <h1>Constitutive-Set Mechanics: variational mechanics on an admissible set of constitutive laws</h1>
+      <div class="meta">Altaf Ahmad Lone; R. T. Durai Prabhakaran; Tawqeer Nasir Tak; Timon Rabczuk; Xiaoying Zhuang</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-05
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.07151v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出本构集力学框架，用于结构模拟中处理本构律不确定性，核心对象是连续介质力学与有限元，不涉及蛋白质结构计算或AI/物理模拟方法，与课题无关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">A structural simulation needs a constitutive law, and experiments rarely determine one uniquely: several laws may fit the same data and satisfy the same physical constraints, yet differ where the structure is loaded in ways the tests never were. Constitutive-Set Mechanics (CSM) keeps all of those laws. It replaces the single law in the variational formulation by the admissible set, and lets the mechanics itself decide which members of the set affect the structural prediction. The framework rests on one observation: a finite element assembly consults the law only at the strains the structure reaches, so the incremental energy depends on the law through a weighted record of those strains, the occupation measure of the state. The energy of a state under the set is a support function on that measure, and the equilibrium solve one performs anyway supplies the information needed to bound the worst case. Equilibrium states become certificates on the robust response, rigorous on the upper side for any mechanics solver and two-sided under global minimisation; the certificate has at most one more state than the number of constitutive directions the structure interrogates; a coherence theorem identifies when the pointwise-worst material is one no single material can be; and constitutive inference acts on the same support function. The method is demonstrated on linear elasticity, a data-constrained constitutive function, phase-field fracture, an assembled finite-strain composite shell, and a membrane characterised by one-mode tests alone. On the shell the structure interrogates four of 226 constitutive directions; on the membrane the certified worst-case energy exceeds the reference more than fourfold, and the experiment that most contracts the certified prediction is not the one where the constitutive uncertainty is largest.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">结构仿真需要本构定律，而实验很少能唯一确定一个：多个定律可能拟合相同数据并满足相同物理约束，但在结构以测试从未涉及的方式加载时却有所不同。本构集合力学（Constitutive-Set Mechanics, CSM）保留所有这些定律。它在变分表述中用允许集合替代单一定律，并让力学本身决定集合中哪些成员影响结构预测。该框架基于一个观察：有限元装配仅在结构达到的应变处咨询定律，因此增量能量通过那些应变的加权记录（即状态的占据测度）依赖于定律。集合下状态的能量是该测度上的支撑函数，而无论如何都要执行的平衡求解提供了约束最坏情况所需的信息。平衡状态成为鲁棒响应的证书，对任何力学求解器在上侧严格，在全局最小化下双侧严格；该证书的状态数至多比结构询问的本构方向数多一个；相干性定理识别出逐点最差材料何时不是任何单一材料所能达到的；本构推断作用于同一支撑函数。该方法在线性弹性、数据约束本构函数、相场断裂、装配式有限应变复合壳以及仅通过单模态测试表征的膜上得到验证。在壳上，结构询问了226个本构方向中的四个；在膜上，认证的最坏情况能量超过参考值四倍以上，而最能收缩认证预测的实验并非本构不确定性最大的那个。</div>
+  </section>
+  
+  
+  
+</article>
+</main>
+</body>
+</html>

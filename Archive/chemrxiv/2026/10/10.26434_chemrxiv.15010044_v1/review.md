@@ -1,0 +1,80 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose a multistage computational framework combining MaSIF-PMP, a surface-centered geometric deep learning model for interfacial binding site (IBS) prediction, with a generative diffusion model to design protein binders targeting peripheral membrane protein (PMP) IBSs. Candidate binders are ranked by MaSIF-PMP scores and geometric descriptors, then validated by molecular dynamics and enhanced sampling simulations. The framework is applied to three disease-relevant PMPs and is claimed to identify selective binders that disrupt membrane association while minimizing off-target membrane interactions.
+- **Visible evidence base** Abstract text only; no quantitative results, model architecture details, simulation parameters, or validation metrics are provided
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, simulation trajectories, model training and evaluation details, benchmark comparisons, and any statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting integration of surface-aware deep learning with generative design for a challenging class of therapeutic targets. However, the current evidence base is insufficient to evaluate the technical soundness of the framework or the validity of the central claims. The abstract reports outcomes without quantitative support, and key methodological details are absent. The work may hold promise, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational protein designers and structural biologists working on membrane-associated proteins would be the primary audience. Researchers developing inhibitors for peripheral membrane proteins, particularly those involved in cancer signaling, may find the approach relevant. The work also speaks to the broader community interested in applying geometric deep learning to surface-centric drug discovery problems.
+- **Major strengths** The problem selection is well motivated, as PMPs represent a difficult and under-served class of therapeutic targets. The proposed integration of IBS prediction with generative design is a logical and potentially powerful combination. The emphasis on selectivity against off-target membrane interactions addresses a practical concern in this domain.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The framework "identified selective binders that disrupted membrane association while minimizing off-target membrane interactions"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The central claim of successful binder identification is presented without any quantitative results. No binding affinities, dissociation constants, simulation-derived free energies, or selectivity ratios are reported. The abstract states outcomes but provides no numerical evidence to support them.
+  - **Why it matters** Without quantitative validation, the claim that the framework "identified selective binders" is unverifiable. The scientific value of the work depends entirely on demonstrating that the designed binders actually disrupt membrane association with measurable selectivity, not merely that the pipeline produced candidates.
+  - **Resolution test** Provide quantitative metrics for each of the three PMP targets, including binding free energies or affinities for designed binders, membrane disruption efficacy compared to controls, and selectivity indices relative to off-target membrane interactions. Statistical significance and error estimates must be included.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "MaSIF-PMP, a surface-centered geometric deep learning model for IBS prediction"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** MaSIF-PMP is presented as a model component, but no information is given about its architecture, training data, performance benchmarks, or how it differs from or improves upon existing IBS prediction methods. The abstract does not clarify whether MaSIF-PMP is a novel contribution or an existing tool being repurposed.
+  - **Why it matters** The framework's predictive power rests on the accuracy of IBS prediction. If MaSIF-PMP has not been validated against known PMP IBSs or benchmarked against alternative methods, the reliability of downstream binder design is uncertain. Readers cannot assess whether the model is fit for purpose.
+  - **Resolution test** Describe MaSIF-PMP architecture and training procedure, report its performance on benchmark datasets for IBS prediction, and compare against at least one established baseline method. If the model is novel, include ablation studies demonstrating its contribution to the overall pipeline.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** "validated by molecular dynamics and enhanced sampling simulations"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The validation approach is named but not described. No information is provided on simulation lengths, force fields, system setup, enhanced sampling methods used, or convergence criteria. The abstract does not state how many independent simulations were performed or how reproducibility was ensured.
+  - **Why it matters** Molecular dynamics and enhanced sampling results are highly sensitive to simulation protocols. Without these details, the validation results cannot be reproduced or independently assessed. The scientific community requires sufficient methodological transparency to evaluate the robustness of simulation-based claims.
+  - **Resolution test** Provide complete simulation protocols in the methods section, including software versions, force field parameters, system construction details, simulation durations, enhanced sampling parameters, and convergence analysis. Report error bars or standard deviations across independent replicates.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** "the framework identified selective binders that disrupted membrane association while minimizing off-target membrane interactions, providing a potential strategy for designing PMP membrane-adsorption inhibitors"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not specify which three PMPs were studied, what disease contexts they represent, or how the results compare to existing inhibitor strategies for these targets. The claim of "potential strategy" is presented without context for whether this approach offers advantages over current methods.
+  - **Why it matters** The significance of the work depends on whether the framework succeeds on challenging, disease-relevant targets and whether it offers improvements over existing approaches. Without target identity and comparative context, the broader impact cannot be assessed.
+  - **Resolution test** Name the three PMPs and their disease associations, report baseline inhibition data for these targets from existing methods, and discuss how the framework's results compare in terms of efficacy, selectivity, or speed.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Abstract structure
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract moves from problem statement to method description to results without any indication of the scale of the study, such as number of candidate binders generated, hit rates, or computational cost.
+  - **Required correction** Add one or two sentences quantifying the scale of the computational campaign, such as the number of candidates generated and the number that passed each filtering stage.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Ranking criteria
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that candidates were ranked using "MaSIF-PMP prediction scores and geometric descriptors" but does not specify which geometric descriptors were used or how they were weighted relative to the prediction scores.
+  - **Required correction** Specify the geometric descriptors used and the ranking formula or weighting scheme in the methods section, and summarize this briefly in the abstract.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Model availability
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No statement is made about code or model availability, which is increasingly expected for computational biology work.
+  - **Required correction** Include a data and code availability statement in the full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The absence of quantitative results, model validation details, simulation protocols, and target identification collectively prevent the central claims from being evaluated.
+- **Assessment against Nature-style criteria** Originality is potentially high, as the integration of surface-aware IBS prediction with generative design for PMP inhibitors appears novel. Scientific importance cannot be fully assessed without knowing the specific targets and comparative performance, though the problem class is clearly significant. Interdisciplinary readership is plausible given the intersection of machine learning, biophysics, and drug discovery. Technical soundness is currently unevaluable due to missing methodological and quantitative details. Readability for nonspecialists is adequate at the abstract level, though the abstract assumes familiarity with both geometric deep learning and membrane biophysics terminology.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is interesting and the problem is well chosen, but the abstract alone does not provide sufficient quantitative or methodological support to assess whether the claims are valid. A full manuscript with detailed methods, results, and benchmarks would be required to evaluate the work properly.
+
+## Risk / unsupported claims
+- The claim that the framework "identified selective binders" is unsupported by any quantitative data in the abstract.
+- The claim that MaSIF-PMP is an effective IBS prediction model is unevaluable without training or benchmark information.
+- The claim that validation by molecular dynamics and enhanced sampling supports the binder efficacy is unevaluable without simulation details or results.
+- The claim that the framework "provides a potential strategy" for PMP inhibitor design is a reasonable inference from the described pipeline but is not substantiated by demonstrated success metrics.
+- The identity of the three PMPs and their disease relevance is not disclosed, making the claim of disease relevance unevaluable.

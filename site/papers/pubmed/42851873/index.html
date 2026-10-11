@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Examining Protein Residue-Level Stability Using Theory and Experiment. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Examining Protein Residue-Level Stability Using Theory and Experiment.</h1>
+      <div class="meta">Sanders, Andrew D; Yada, Rickey Y; Dee, Derek R</div>
+      <div class="meta muted">
+        
+        <span class="journal">ACS omega</span>
+        · 2026-10-09
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42851873/">原文</a>
+      </div>
+      <p class="one-liner">该文结合理论与实验，利用大规模深度突变扫描数据评估局部 frustration 等残基级稳定性度量，并对比 AI 工具（Pythia）与物理方法，虽以实验验证为主，但涉及蛋白质序列-结构-进化关系及计算模型评估，对蛋白质结构计算研究有参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein behavior, whether evolved in nature or intentionally designed, is governed by the energetics of amino acid interactions that bridge sequence to function. As an extension of the theory of protein folding funnels, local frustration quantifies the optimality of these residue-level interactions relative to alternatives. Although this framework has existed for decades, experimental validation has remained elusive. Past deep mutational scanning datasets enable experimental assessment across nearly 8,000 positions from 178 proteins. Results provide experimental evidence for theoretical predictions regarding the relationship between local frustration and protein sequence, structure, and evolution. An evaluation of three in silico methods shows modest agreement with benchmarks (r = 0.03 to 0.26), with the predominant local frustration predictor (Protein Frustratometer) capturing under 3% of the experimental variance. A recent deep learning model, Pythia, outperformed other tools across all evaluated metrics (r = 0.42). Finally, this scale of empirical data enables an evaluation of the strengths and limitations of energetic measures themselves, inspiring a complementary Sequence Probability INverse (SPIN) framework, which characterizes optimality through a Boltzmann-weighted selection probability within an ensemble of sequences. These findings help provide experimental grounding for the theoretical principles that govern protein sequence energetics.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质行为，无论是自然进化而来还是有意设计而成，均由连接序列与功能的氨基酸相互作用的能量学所支配。作为蛋白质折叠漏斗理论的延伸，局部挫折（local frustration）量化了这些残基水平相互作用相对于替代方案的最优性。尽管这一框架已存在数十年，其实验验证仍难以实现。过去的深度突变扫描数据集使得对来自178种蛋白质的近8,000个位点进行实验评估成为可能。结果提供了关于局部挫折与蛋白质序列、结构和进化之间关系的理论预测的实验证据。对三种计算方法的评估显示其与基准的吻合度适中（r = 0.03至0.26），其中主要的局部挫折预测工具（Protein Frustratometer）仅捕获了实验方差的不到3%。最近的一种深度学习模型Pythia在所有评估指标上均优于其他工具（r = 0.42）。最后，这一规模的实证数据使得对能量学度量本身优势与局限性的评估成为可能，并启发了互补的序列概率逆（Sequence Probability INverse, SPIN）框架，该框架通过序列集合中的玻尔兹曼加权选择概率来表征最优性。这些发现为支配蛋白质序列能量学的理论原理提供了实验基础。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Examining Protein Residue-Level Stability Using Theory and Experiment</li>
+<li><strong>作者</strong>: Sanders, Andrew D; Yada, Rickey Y; Dee, Derek R</li>
+<li><strong>单位</strong>: 未提供（推测为加拿大高校，受 NSERC 资助）</li>
+<li><strong>期刊/平台</strong>: ACS Omega</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-10-09）</li>
+<li><strong>论文类型</strong>: 研究论文（含理论框架提出 + 大规模实验数据验证）</li>
+<li><strong>领域</strong>: 蛋白质残基水平稳定性 / 局部挫折（local frustration）理论验证</li>
+<li><strong>关键词</strong>: local frustration, protein stability, deep mutational scanning, energy landscape, sequence optimization</li>
+<li><strong>DOI/arXiv</strong>: 10.1021/acsomega.6c05138</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: ProtaBank (ID: GwoS2haU3) — Gβ1 ΔΔG 数据；Zenodo (ID: 7992926) — 蛋白水解酶切稳定性数据</li>
+<li><strong>阅读日期</strong>: 2026-07-14（按当前日期）</li>
+<li><strong>方向定位</strong>: 本文属于「蛋白质结构相关计算研究 × 物理模拟/统计力学」交叉方向，聚焦于残基级能量最优性（local frustration）的实验验证，并提出了新的度量框架 SPIN。与 AlphaFold 等结构预测方法不同，本文关注的是序列-能量关系与进化约束，对蛋白质设计中的序列选择具有直接参考价值。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文利用约 8,000 个残基位点的深度突变扫描（DMS）实验数据，系统验证了局部挫折（local frustration）理论在天然蛋白中的预测模式，发现现有计算工具（Protein Frustratometer 等）对残基级能量最优性的预测能力有限（r = 0.03–0.26），并提出了基于玻尔兹曼加权的 SPIN 框架作为补充度量。</p>
+<hr />
+<h2>03 研究问题</h2>
+<p><strong>具体问题</strong>: 局部挫折（local frustration）理论预测的残基级能量最优性模式，能否在实验数据中得到验证？现有计算工具能否准确预测残基级挫折？</p>
+<p><strong>为什么重要</strong>: 
+- 局部挫折理论是能量景观理论的核心延伸，被广泛用于解释蛋白功能位点、进化保守性、疾病突变效应等
+- 该理论提出近 20 年，但缺乏大规模实验验证
+- 若理论预测与实验不符，将影响基于该理论的蛋白设计策略</p>
+<p><strong>现有方法为何不足</strong>:
+- 局部挫折计算依赖粗粒化力场（如 AWSEM），其准确性未经大规模实验检验
+- 以往验证局限于少量蛋白或特定功能位点
+- 缺乏对"挫折定义本身"的批判性审视</p>
+<p><strong>精确研究问题</strong>: Can experimental deep mutational scanning data validate the predicted patterns of local frustration in natural proteins, and do existing in silico tools accurately recapitulate residue-level frustration?</p>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<p><em>注: 以下脉络主要基于本文框架，部分经外部核验。</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法/工作</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>能量景观理论奠基</td>
+<td>Levinthal 悖论; spin-glass 物理引入 (Bryngelson &amp; Wolynes)</td>
+<td>解决折叠动力学与热力学矛盾</td>
+<td>全局视角，缺乏残基级分辨率</td>
+<td>理论基础</td>
+</tr>
+<tr>
+<td>全局最小挫折原则</td>
+<td>能量景观理论; funnel 概念</td>
+<td>解释蛋白可折叠性</td>
+<td>无法解释功能位点的局部去稳定化</td>
+<td>被扩展对象</td>
+</tr>
+<tr>
+<td>局部挫折理论</td>
+<td>Ferreiro et al. 提出 local frustration 框架</td>
+<td>残基级分辨率，连接序列-结构-功能</td>
+<td>缺乏大规模实验验证</td>
+<td>本文验证对象</td>
+</tr>
+<tr>
+<td>计算工具发展</td>
+<td>Protein Frustratometer (AWSEM), pSUFER (REF15)</td>
+<td>可计算残基级挫折</td>
+<td>力场依赖、粗粒化近似</td>
+<td>本文评估对象</td>
+</tr>
+<tr>
+<td>深度学习预测</td>
+<td>Pythia (序列-结构图神经网络)</td>
+<td>数据驱动、无需物理力场</td>
+<td>非专门设计用于挫折预测</td>
+<td>本文发现其意外有效</td>
+</tr>
+<tr>
+<td>高通量实验数据</td>
+<td>DMS 技术 (Gβ1, 蛋白水解酶切)</td>
+<td>大规模残基级稳定性数据</td>
+<td>覆盖有限、质量不均</td>
+<td>本文数据基础</td>
+</tr>
+<tr>
+<td><strong>本文贡献</strong></td>
+<td><strong>SPIN 框架</strong></td>
+<td>低能量竞争优先、对定性数据鲁棒</td>
+<td>新提出，需更多验证</td>
+<td><strong>本文核心创新</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>局部挫折理论缺乏实验验证</td>
+<td>理论提出近 20 年，无大规模实验检验</td>
+<td>需要大量残基级稳定性数据，实验成本高</td>
+<td>Introduction: "experimental validation has remained elusive"</td>
+</tr>
+<tr>
+<td>现有计算工具预测能力弱</td>
+<td>Protein Frustratometer 仅解释 &lt;3% 实验方差（Gβ1 约 7%）</td>
+<td>粗粒化力场（AWSEM）可能无法准确捕捉残基级能量差异</td>
+<td>Results: "capturing under 3% of the experimental variance"</td>
+</tr>
+<tr>
+<td>Z-score 对定性数据敏感</td>
+<td>大量突变导致蛋白错误折叠/不溶，无法获得定量 ΔG</td>
+<td>Z-score 依赖均值和标准差，定性数据无法纳入</td>
+<td>Results: "some mutations resulted in misfolding or insolubility"</td>
+</tr>
+<tr>
+<td>Z-score 忽略能量幅度</td>
+<td>相似 Z-score 可对应数量级不同的能量差</td>
+<td>Z-score 是标准化度量，丢失绝对能量信息</td>
+<td>Results 图 4A: "similar frustration values near 2 can represent energy distances spanning an order of magnitude"</td>
+</tr>
+<tr>
+<td>非高斯分布破坏 Z-score 解释</td>
+<td>14.4% 位点呈强非高斯突变能量分布</td>
+<td>Z-score 隐含正态假设</td>
+<td>Results: "14.4% of residue positions show strongly non-Gaussian mutational behavior"</td>
+</tr>
+<tr>
+<td>定性去稳定化突变被系统排除</td>
+<td>约 10% Gβ1 突变为定性去稳定化</td>
+<td>现有框架无法处理非定量数据</td>
+<td>Results: "over 1 in 10 mutations were qualitatively destabilizing"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>本文表面上是"用大规模 DMS 数据验证局部挫折理论"：
+- 从 Gβ1 的深度突变扫描数据计算实验性局部挫折 Z-score
+- 与 Protein Frustratometer、DeepDDG、PoPMuSC、Pythia 等计算工具比较
+- 扩展到 178 个蛋白、约 8,000 个位点的大规模验证
+- 提出 SPIN 作为替代度量</p>
+<h3>2) 核心洞察</h3>
+<p><strong>洞察一</strong>: 局部挫折理论的大尺度模式（如埋藏残基低挫折、表面残基高挫折）在实验数据中得到支持，但<strong>残基级定量预测</strong>远超出现有计算工具的能力。</p>
+<p><strong>洞察二</strong>: Z-score 作为挫折度量存在根本性局限——它强调平均能量差而非低能量竞争。这导致：
+- 对定性数据敏感（无法处理错误折叠突变）
+- 忽略能量绝对幅度（相似 Z-score 可对应 10 倍能量差）
+- 隐含正态分布假设（14.4% 位点违反）</p>
+<p><strong>洞察三</strong>: 从全局最小挫折到局部挫折的扩展中，<strong>"竞争对象"的选择</strong>是关键。全局理论关注低能量替代构象，而局部挫折关注替代序列。SPIN 将这一逻辑推向极致：直接计算 WT 在序列系综中的玻尔兹曼概率。</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>理论验证需要匹配的分辨率</strong>: 局部挫折理论预测的是统计模式，而计算工具试图预测单个残基——两者分辨率不匹配导致"理论正确但工具无效"的局面</li>
+<li><strong>度量选择决定结论</strong>: Z-score 和 SPIN 对同一数据的解读可能不同，选择度量时需明确"什么是最有意义的能量竞争"</li>
+<li><strong>深度学习可从大规模数据中隐式学习能量函数</strong>：Pythia 虽非为挫折设计，但表现最佳，提示数据驱动方法可能比物理力场更有效地捕捉残基级能量</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>:
+- Gβ1 DMS 数据（ProtaBank, ID: GwoS2haU3）：56 个残基 × 17 个突变体的 ΔΔG 值
+- 扩展数据集（Zenodo, ID: 7992926）：178 个蛋白、约 8,000 个位点的蛋白水解酶切推断 ΔG 数据
+- 蛋白结构数据（用于 burial 计算和结构分析）</p>
+<p><strong>输出</strong>:
+- 实验性局部挫折 Z-score（每个残基位点）
+- SPIN 值（每个残基位点）
+- 计算工具预测值与实验值的相关性比较</p>
+<p><strong>模块</strong>:</p>
+<ol>
+<li><strong>数据获取与过滤</strong>：从 ProtaBank 和 Zenodo 获取 DMS 数据；设定阈值（≥17/19 突变定量数据）；区分定量和定性突变</li>
+<li><strong>实验性挫折计算</strong>：基于 Z-score 公式（eq S1），使用 WT 稳定性与突变体 ΔG 分布</li>
+<li><strong>计算工具评估</strong>：Protein Frustratometer 2.0（默认设置，Debye-Hückel 静电）、DeepDDG（非集成模式）、PoPMuSiC 3.0（系统模式）、Pythia（标准自监督预测）、pSUFER（REF15 力场，阈值 ≥5 稳定突变）</li>
+<li><strong>SPIN 计算</strong>：SPIN = 1/p(WT)，其中 p(WT) 基于玻尔兹曼加权（298K），公式: SPIN = 1 + Σ_{≠WT} e^{ΔΔG/RT}</li>
+<li><strong>统计分析</strong>：Pearson 相关、线性回归、偏度/峰度分析（West et al. 1995 标准）</li>
+<li><strong>结构分析</strong>：ChimeraX 可视化；burial 分类（GetArea, 1.4Å 水探针）；ConSurf 序列保守性</li>
+</ol>
+<p><strong>文字流程</strong>:
+DMS 原始数据 → 过滤（定量/定性分类）→ 计算实验 Z-score → 与计算工具预测比较（Gβ1）→ 扩展到 178 蛋白数据集 → 验证理论模式（burial、保守性）→ 提出 SPIN 框架 → 比较 SPIN 与 Z-score 的行为差异 → 讨论理论意义</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DMS 数据获取与过滤</td>
+<td>获取残基级稳定性数据并分类</td>
+<td>实验验证的基础；区分定量/定性突变</td>
+<td>输入: 原始 DMS 数据；输出: 过滤后定量数据集</td>
+<td>Methods: "threshold of 15 mutations per position" 与 "all 17 ΔG values" 比较</td>
+<td>移除后无法计算实验 Z-score；过滤标准影响结果稳健性</td>
+</tr>
+<tr>
+<td>实验性 Z-score 计算</td>
+<td>量化残基级挫折</td>
+<td>将理论定义操作化</td>
+<td>输入: WT 和突变体 ΔG；输出: 每残基 Z-score</td>
+<td>eq S1; Results 图 2</td>
+<td>移除后无实验基准</td>
+</tr>
+<tr>
+<td>Protein Frustratometer 2.0</td>
+<td>计算预测挫折</td>
+<td>作为主流计算工具的代表</td>
+<td>输入: 结构+序列；输出: 挫折分类</td>
+<td>Results: "explaining approximately 7% of observed variance in Gβ1"</td>
+<td>移除后失去主要比较对象</td>
+</tr>
+<tr>
+<td>Pythia 评估</td>
+<td>测试深度学习方法的迁移能力</td>
+<td>探索非物理力场方法的潜力</td>
+<td>输入: 序列+结构图；输出: 稳定性预测</td>
+<td>Results: "Pythia achieved the highest overall accuracy... r = 0.42"</td>
+<td>移除后无法证明 DL 方法的优势</td>
+</tr>
+<tr>
+<td>SPIN 计算</td>
+<td>提供替代性最优性度量</td>
+<td>克服 Z-score 对定性数据和能量幅度的局限</td>
+<td>输入: ΔΔG 值集合；输出: SPIN 值</td>
+<td>Formula 1; Results 图 4</td>
+<td>移除后失去核心创新贡献</td>
+</tr>
+<tr>
+<td>扩展数据集验证</td>
+<td>检验结论的普适性</td>
+<td>Gβ1 可能不具代表性</td>
+<td>输入: 178 蛋白 DMS 数据；输出: 大规模模式验证</td>
+<td>Results: "nearly 8,000 local frustration values across 178 natural proteins"</td>
+<td>移除后结论局限于单一蛋白</td>
+</tr>
+<tr>
+<td>结构-进化关联分析</td>
+<td>连接挫折与已知生物学模式</td>
+<td>验证理论预测的进化模式</td>
+<td>输入: burial、保守性、挫折值；输出: 相关性</td>
+<td>Results 图 2H-I; "burial percentage... explains 36% of the variance"</td>
+<td>移除后无法建立生物学意义</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>1. 局部挫折 Z-score（eq S1）</strong></p>
+<p>Z = (E_WT − ⟨E_decoy⟩) / σ_decoy</p>
+<ul>
+<li>E_WT: 野生型残基的相互作用能量</li>
+<li>⟨E_decoy⟩: 替代序列（decoy）系综的平均能量</li>
+<li>σ_decoy: decoy 能量分布的标准差</li>
+<li>用途: 量化 WT 残基相对于替代序列的能量最优性</li>
+<li>直觉: Z &gt; 0.78 为最小挫折（稳定），Z &lt; −1 为高挫折（不稳定）</li>
+</ul>
+<p><strong>2. SPIN（Sequence Probability INverse, Formula 1）</strong></p>
+<p>SPIN = 1 / p(WT) = 1 + Σ_{i≠WT} e^{ΔΔG_i / RT}</p>
+<ul>
+<li>p(WT): 野生型残基在玻尔兹曼加权序列系综中的概率</li>
+<li>ΔΔG_i: 第 i 个突变体的稳定性变化 (ΔG_mut − ΔG_WT)</li>
+<li>R: 气体常数; T: 温度（本文用 298K）</li>
+<li>用途: 衡量 WT 在竞争序列中的相对最优性</li>
+<li>直觉: SPIN = 1 表示完美最优（WT 独占系综）；SPIN = 20 表示无选择（所有氨基酸等概率）</li>
+</ul>
+<p><strong>3. SPIN 调整公式（处理不完整数据）</strong></p>
+<p>SPIN_adjusted = 1 + (F/M) × (SPIN_measured − 1)</p>
+<ul>
+<li>F: 全部可能的突变体数（通常 19）</li>
+<li>M: 实际测得的定量突变体数</li>
+<li>用途: 当部分突变无法定量时，假设未知贡献为平均值</li>
+</ul>
+<p><strong>4. Pearson 相关系数</strong></p>
+<p>r = cov(X,Y) / (σ_X · σ_Y)</p>
+<ul>
+<li>用于评估计算工具与实验数据的一致性</li>
+</ul>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>:
+- Gβ1 结构域：56 个残基，每个残基 17 个突变体（排除 Cys/Trp），来自 ProtaBank (GwoS2haU3)
+- 扩展数据集：178 个自然蛋白，约 8,000 个位点，来自 Zenodo (7992926)，基于蛋白水解酶切推断 ΔG
+- 保守性数据：ConSurf 服务器（MAFFT-L-INS-i 比对 + 贝叶斯推断）</p>
+<p><strong>评测指标</strong>:
+- Pearson r（计算工具 vs 实验）
+- 方差解释率（r²）
+- Z-score 与 burial、保守性的关联</p>
+<p><strong>基线/对比工具</strong>:
+- Protein Frustratometer 2.0（AWSEM 力场）
+- DeepDDG（深度学习）
+- PoPMuSiC 3.0（统计势）
+- Pythia（图神经网络）
+- pSUFER（REF15 全原子力场）</p>
+<p><strong>关键实验</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gβ1 实验挫折 vs 理论模式</td>
+<td>埋藏残基应更低挫折</td>
+<td>按 burial 分组比较 Z-score</td>
+<td>埋藏残基显著更低挫折；burial 解释 36% 方差 (p &lt; 0.001)</td>
+<td>局部挫折理论的大尺度模式得到实验支持</td>
+<td>因果关系未确立；Gβ1 可能不具代表性</td>
+<td>Results 图 2H-I, S2A</td>
+</tr>
+<tr>
+<td>保守性与挫折关系</td>
+<td>保守残基应更低挫折</td>
+<td>序列保守性 vs Z-score 相关</td>
+<td>相关性 modest (r = 0.30)</td>
+<td>进化压力与挫折部分相关</td>
+<td>相关性弱，其他因素主导</td>
+<td>Results 图 S2B</td>
+</tr>
+<tr>
+<td>Frustratometer vs 实验</td>
+<td>计算工具能预测残基级挫折</td>
+<td>Gβ1 上比较预测与实验 Z-score</td>
+<td>仅解释约 7% 方差</td>
+<td>现有工具预测能力有限</td>
+<td>单一蛋白，可能低估</td>
+<td>Results 图 3A</td>
+</tr>
+<tr>
+<td>四工具比较</td>
+<td>不同方法学有差异</td>
+<td>Frustratometer, DeepDDG, PoPMuSiC, Pythia</td>
+<td>Pythia 最优 (r = 0.42)；Frustratometer 最弱 (&lt;3% 方差)</td>
+<td>深度学习方法优于物理力场方法</td>
+<td>数据集规模有限</td>
+<td>Results 图 3A</td>
+</tr>
+<tr>
+<td>扩展数据集验证</td>
+<td>模式在更多蛋白中成立</td>
+<td>178 蛋白、~8,000 位点</td>
+<td>Frustratometer 仅解释 2.6% 方差 (r = 0.16, p &lt; 0.001)</td>
+<td>计算预测能力弱是普遍现象</td>
+<td>数据来自单一实验方法</td>
+<td>Results 图 3B</td>
+</tr>
+<tr>
+<td>实验数据一致性</td>
+<td>不同实验方法结果一致</td>
+<td>Gβ1 两种 DMS 数据比较</td>
+<td>r = 0.92</td>
+<td>实验数据可靠</td>
+<td>仅一个蛋白</td>
+<td>Results: "strongly agree (r = 0.92)"</td>
+</tr>
+<tr>
+<td>SPIN vs Z-score 行为</td>
+<td>SPIN 提供不同信息</td>
+<td>178 蛋白上比较两者分布</td>
+<td>两者中等相关但部分分歧；SPIN 对定性数据鲁棒</td>
+<td>SPIN 是补充性度量</td>
+<td>未验证 SPIN 的生物学预测力</td>
+<td>Results 图 4, S3</td>
+</tr>
+<tr>
+<td>非高斯分布分析</td>
+<td>Z-score 假设是否合理</td>
+<td>偏度/峰度分析</td>
+<td>14.4% 位点强非高斯</td>
+<td>Z-score 在部分位点失效</td>
+<td>非高斯位点的功能意义未探索</td>
+<td>Results: "14.4% of residue positions show strongly non-Gaussian mutational behavior"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>: 本文仅评估了<strong>残基级单点突变</strong>的稳定性最优性，不涉及：
+- 多突变组合效应
+- 构象动态/别构效应
+- 蛋白-蛋白相互作用界面的挫折
+- 从头设计蛋白的验证</p>
+<p><strong>Oracle/真值输入</strong>: 实验 ΔΔG 值来自 DMS（Gβ1）和蛋白水解酶切推断（178 蛋白）。后者是间接测量，可能引入系统误差。</p>
+<p><strong>端到端状态</strong>: 本文<strong>不是</strong>端到端预测流程，而是理论验证 + 工具评估。SPIN 是描述性度量，不是预测工具。</p>
+<p><strong>算力成本</strong>: 未提供详细计算成本。Pythia 需要 GPU 训练但推理成本低；Frustratometer 需要结构输入。</p>
+<p><strong>历史数据依赖</strong>: 高度依赖 DMS 数据质量。Gβ1 数据较完整（17/19 突变），但扩展数据集可能有更多缺失。</p>
+<p><strong>模型依赖</strong>: 所有计算工具（Frustratometer, DeepDDG, PoPMuSiC, Pythia）均依赖其训练数据/力场参数，结果可能随版本变化。</p>
+<p><strong>最难情形</strong>: 
+- 定性去稳定化突变（无法定量）被排除，可能偏向"温和突变"位点
+- 小蛋白结构域为主，大蛋白/多结构域蛋白的挫折模式可能不同
+- 蛋白水解酶切推断 ΔG 的精度有限</p>
+<p><strong>群体/领域边界</strong>: 结论适用于<strong>自然进化的球状蛋白结构域</strong>，不直接适用于：
+- 膜蛋白
+-  intrinsically disordered proteins (IDPs)
+- 人工设计蛋白（可能具有不同的能量景观特征）</p>
+<p><strong>有边界的复述</strong>: 在 178 个自然球状蛋白结构域、约 8,000 个残基位点的范围内，实验数据支持局部挫折理论关于埋藏残基低挫折、表面残基高挫折的定性预测；但现有计算工具（包括主流 Frustratometer）无法在残基级别定量预测实验挫折，深度学习模型 Pythia 表现相对最优但仍仅达中等相关（r = 0.42）。SPIN 作为补充度量，对定性数据更鲁棒，但需进一步验证其生物学预测力。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据覆盖偏差</td>
+<td>扩展数据集仅含小蛋白结构域，表面残基比例高</td>
+<td>未明确提及</td>
+<td>Results: "this dataset contains only small protein domains, a higher proportion of solvent-exposed positions may influence predictions"</td>
+</tr>
+<tr>
+<td>定性数据排除</td>
+<td>约 10% Gβ1 突变为定性去稳定化，无法纳入 Z-score 计算</td>
+<td>SPIN 对此更鲁棒，但未完全解决</td>
+<td>Results: "over 1 in 10 mutations were qualitatively destabilizing"</td>
+</tr>
+<tr>
+<td>实验方法差异</td>
+<td>蛋白水解酶切推断 ΔG 与直接测量可能有系统差异</td>
+<td>未明确提及</td>
+<td>Methods: "with the same offset as previously used"</td>
+</tr>
+<tr>
+<td>保守性计算依赖</td>
+<td>ConSurf 结果依赖比对方法和进化模型</td>
+<td>未明确提及</td>
+<td>Methods: "alignment and evolutionary score calculations by MAFFT-L-INS-i and Bayesian inference methods"</td>
+</tr>
+<tr>
+<td>Gβ1 外推限制</td>
+<td>详细分析集中在单一蛋白</td>
+<td>作者建议扩展到更复杂蛋白</td>
+<td>Conclusions: "additional benchmarks will help clarify"</td>
+</tr>
+<tr>
+<td>非高斯分布问题</td>
+<td>14.4% 位点呈强非高斯分布，Z-score 解释力有限</td>
+<td>未提出具体解决方案</td>
+<td>Results: "strongly non-Gaussian mutational behavior"</td>
+</tr>
+</tbody>
+</table>
+<p><em>注: 作者未明确列出"局限性"章节，以上从文中推断。</em></p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>扩展数据集依赖单一实验方法（蛋白水解酶切）</td>
+<td>酶切敏感性可能受非稳定性因素影响（如蛋白酶偏好、构象动态）</td>
+<td>若系统误差存在，大规模结论可能偏差</td>
+<td>与直接测量的 DMS 数据子集交叉验证</td>
+<td>Methods: "ΔG values were inferred from proteolysis"</td>
+</tr>
+<tr>
+<td>Pythia 表现最优但非为挫折设计</td>
+<td>可能因为 Pythia 隐式学习了进化约束而非物理能量</td>
+<td>提示"能量"可能不是最优表征</td>
+<td>比较 Pythia 在非自然序列（如设计蛋白）上的表现</td>
+<td>Results: "Pythia achieved the highest overall accuracy"</td>
+</tr>
+<tr>
+<td>SPIN 与 Z-score 的相关性未充分量化</td>
+<td>文中仅定性描述"中等相关但部分分歧"</td>
+<td>若两者高度相关，SPIN 的增量价值有限</td>
+<td>报告完整相关性矩阵和分歧位点的功能富集</td>
+<td>Results 图 S3</td>
+</tr>
+<tr>
+<td>burial 解释 36% 方差但因果方向不明</td>
+<td>可能是进化保守性驱动 burial 和挫折的共变，而非 burial 直接降低挫折</td>
+<td>影响对"挫折-功能"关系的解读</td>
+<td>控制保守性后的偏相关分析</td>
+<td>Results: "burial percentage... explains 36% of the variance"</td>
+</tr>
+<tr>
+<td>未报告计算工具的超参数敏感性</td>
+<td>Frustratometer 默认设置可能非最优</td>
+<td>工具评估结论可能依赖特定配置</td>
+<td>进行参数扫描敏感性分析</td>
+<td>Methods: "default settings"</td>
+</tr>
+<tr>
+<td>定性去稳定化突变的处理</td>
+<td>排除定性突变可能系统偏向"稳定"位点</td>
+<td>高挫折位点可能被低估</td>
+<td>将定性突变作为有序分类变量纳入分析</td>
+<td>Results: "some mutations resulted in misfolding or insolubility"</td>
+</tr>
+<tr>
+<td>温度固定为 298K</td>
+<td>生理温度因生物体而异；SPIN 的温度依赖性可能改变结论</td>
+<td>影响 SPIN 的普适性</td>
+<td>在 273-323K 范围内计算 SPIN 敏感性</td>
+<td>Methods: "evaluated here at 298 K"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:</p>
+<ol>
+<li>
+<p><strong>理论验证的分辨率匹配原则</strong>: 当验证一个理论时，需明确理论预测的是统计模式还是个体预测。局部挫折理论预测的是分布特征（如 burial 与挫折的关联），而非单个残基的精确值。这解释了为何"理论正确但工具预测差"。</p>
+</li>
+<li>
+<p><strong>Z-score 的局限性与替代度量设计</strong>: Z-score 强调平均能量差，忽略低能量竞争。SPIN 通过玻尔兹曼加权直接计算 WT 在序列系综中的概率，对定性数据更鲁棒。<strong>可迁移到蛋白设计</strong>：在设计序列选择时，SPIN 可能比 Z-score 更好地捕捉"哪些位置必须保持特定氨基酸"。</p>
+</li>
+<li>
+<p><strong>深度学习隐式学习能量函数</strong>: Pythia（非为挫折设计）优于物理力场工具，提示大规模数据训练的模型可能隐式捕捉了残基级能量约束。<strong>可迁移到结构预测/设计</strong>：可探索将 Pythia 类模型的特征用于挫折预测或序列设计。</p>
+</li>
+<li>
+<p><strong>非高斯分布的处理</strong>: 14.4% 位点呈强非高斯突变能量分布，Z-score 在这些位点失效。<strong>可迁移到 MD 模拟/构象采样</strong>：分析能量分布形状（偏度/峰度）而非仅均值和方差，可能揭示更多生物学信息。</p>
+</li>
+<li>
+<p><strong>定性数据的价值</strong>: 大量"无法定量"的突变（错误折叠/不溶）本身携带信息。<strong>可迁移到实验设计</strong>：在设计 DMS 实验时，应记录定性结果而非仅丢弃。</p>
+</li>
+<li>
+<p><strong>SPIN 的温度依赖性作为额外维度</strong>: 通过改变温度，SPIN 可提供残基位点能量景观的"相图"式描述。<strong>可迁移到构象采样</strong>：类似思路可用于分析构象系综的温度依赖性。</p>
+</li>
+<li>
+<p><strong>工具评估的基准设计</strong>: 本文展示了如何用实验数据系统评估计算工具（多工具、多指标、扩展验证）。<strong>可迁移到方法开发</strong>：新方法应报告与实验数据的相关性、方差解释率，并在独立数据集上验证。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ol>
+<li>
+<p><strong>能量景观理论 (Energy Landscape Theory)</strong>:
+   - Bryngelson &amp; Wolynes (1987) 提出的 spin-glass 模型是本文理论基础
+   - Onuchic, Wolynes 等发展的 funnel 能量景观概念
+   - 本文是这一理论框架的<strong>实验验证延伸</strong></p>
+</li>
+<li>
+<p><strong>局部挫折理论 (Local Frustration)</strong>:
+   - Ferreiro, Wolynes 等 (2007-2009) 提出局部挫折概念
+   - 已有应用：蛋白折叠机制、功能位点识别、进化保守性分析
+   - 本文首次提供大规模实验验证</p>
+</li>
+<li>
+<p><strong>深度突变扫描 (Deep Mutational Scanning)</strong>:
+   - Fowler &amp; Fields (2014) 综述 DMS 技术
+   - 已有 DMS 数据集：Gβ1 (ProtaBank)、蛋白水解酶切 (Zenodo)
+   - 本文展示了 DMS 数据在理论验证中的新用途</p>
+</li>
+<li>
+<p><strong>蛋白稳定性预测工具</strong>:
+   - DeepDDG (Cao et al., 2021): 深度学习突变稳定性预测
+   - PoPMuSiC (Dehouck et al., 2011): 统计势方法
+   - 本文系统比较了这些工具在挫折预测中的表现</p>
+</li>
+<li>
+<p><strong>AlphaFold 相关进展</strong>:
+   - 本文提到 Pythia 的图表示与 AlphaFold2 的"放开物理约束"策略相似
+   - AlphaFold2 的成功表明深度学习可从序列-结构数据中隐式学习物理约束
+   - <strong>连接点</strong>: 类似策略可能适用于能量/稳定性预测</p>
+</li>
+<li>
+<p><strong>蛋白质设计</strong>:
+   - 本文的 SPIN 框架与 Rosetta 设计中的序列选择逻辑相关
+   - 局部挫折已被用于设计功能位点（如酶活性位点）
+   - <strong>连接点</strong>: SPIN 可作为设计目标函数的一部分</p>
+</li>
+<li>
+<p><strong>统计力学与玻尔兹曼系综</strong>:
+   - SPIN 基于玻尔兹曼加权，与 MD 模拟中的系综概念一致
+   - <strong>连接点</strong>: 可将 SPIN 扩展到构象系综分析</p>
+</li>
+</ol>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<h3>候选 1: SPIN 引导的蛋白设计目标函数</h3>
+<ul>
+<li><strong>名称</strong>: SPIN-guided sequence design</li>
+<li><strong>来源局限/观察</strong>: 本文提出 SPIN 但未验证其设计用途；Z-score 在设计中的应用受限于定性数据问题</li>
+<li><strong>核心假设</strong>: 将 SPIN 作为设计目标函数的一部分，可生成在残基级能量最优性上更接近天然蛋白的序列</li>
+<li><strong>初步方法</strong>: 在 Rosetta 或 ProteinMPNN 框架中，将 SPIN 作为正则化项；比较 SPIN 优化序列与仅稳定性优化序列的折叠率、功能保持率</li>
+<li><strong>验证方式</strong>: 实验表达+稳定性测量；与天然序列的 SPIN 分布比较</li>
+<li><strong>可能的失败模式</strong>: SPIN 可能过度惩罚"功能必需但能量次优"的位点；需要与功能约束平衡</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<h3>候选 2: 深度学习挫折预测器</h3>
+<ul>
+<li><strong>名称</strong>: DeepFrustration</li>
+<li><strong>来源局限/观察</strong>: 现有物理力场工具预测能力弱（r &lt; 0.3）；Pythia 表现最优但非专门设计</li>
+<li><strong>核心假设</strong>: 用大规模 DMS 数据训练的图神经网络可显著优于物理力场方法</li>
+<li><strong>初步方法</strong>: 以 Pythia 架构为基础，在 DMS 数据上微调；输入结构图+序列，输出残基级挫折 Z-score 和 SPIN</li>
+<li><strong>验证方式</strong>: 与本文 178 蛋白数据集比较；在独立 DMS 数据集上验证</li>
+<li><strong>可能的失败模式</strong>: 训练数据偏差（小蛋白为主）；可能过拟合特定实验方法</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<h3>候选 3: 非高斯能量分布的功能意义</h3>
+<ul>
+<li><strong>名称</strong>: Non-Gaussian mutational landscapes and protein function</li>
+<li><strong>来源局限/观察</strong>: 14.4% 位点呈强非高斯分布，但功能意义未探索</li>
+<li><strong>核心假设</strong>: 非高斯分布位点富集在功能关键区域（活性位点、结合界面），反映多态能量景观</li>
+<li><strong>初步方法</strong>: 对 178 蛋白的非高斯位点进行 GO 富集分析；与已知功能位点数据库（如 Catalytic Site Atlas）比较；结合 MD 模拟分析这些位点的构象动态</li>
+<li><strong>验证方式</strong>: 统计富集显著性；MD 模拟显示非高斯位点具有多构象态</li>
+<li><strong>可能的失败模式</strong>: 非高斯性可能仅反映实验噪声而非生物学信号</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<h3>候选 4: SPIN 与构象系综的整合</h3>
+<ul>
+<li><strong>名称</strong>: Ensemble-based SPIN (eSPIN)</li>
+<li><strong>来源局限/观察</strong>: 本文 SPIN 基于单一结构；但蛋白在溶液中存在构象系综</li>
+<li><strong>核心假设</strong>: 在构象系综（MD 模拟或 ENSEMBLE 方法生成）上计算 SPIN，可捕捉动态能量最优性</li>
+<li><strong>初步方法</strong>: 对 Gβ1 和 2-3 个其他蛋白运行 MD 模拟；在每个构象快照上计算 SPIN；分析 SPIN 的时间波动与功能位点的关联</li>
+<li><strong>验证方式</strong>: eSPIN 与实验突变数据的相关性优于单结构 SPIN</li>
+<li><strong>可能的失败模式</strong>: 计算成本高；构象采样不充分</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<h3>候选 5: 局部挫折与 AlphaFold 置信度的关联</h3>
+<ul>
+<li><strong>名称</strong>: Local frustration as an interpretability tool for AlphaFold</li>
+<li><strong>来源局限/观察</strong>: AlphaFold 的 pLDDT 与稳定性相关但缺乏物理解释；局部挫折提供能量视角</li>
+<li><strong>核心假设</strong>: 高挫折残基与 AlphaFold 低置信度区域（pLDDT &lt; 70）显著重叠，且挫折模式可解释 pLDDT 无法解释的序列-功能关系</li>
+<li><strong>初步方法</strong>: 在 178 蛋白上计算 AlphaFold pLDDT 与实验挫折 Z-score 的相关性；分析高挫折-高 pLDDT 和低挫折-低 pLDDT 的"不一致"位点的功能富集</li>
+<li><strong>验证方式</strong>: 相关性显著；不一致位点富集已知功能残基</li>
+<li><strong>可能的失败模式</strong>: pLDDT 与挫折可能反映不同性质，相关性弱</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<h3>候选 6: SPIN 在 MD 模拟力场评估中的应用</h3>
+<ul>
+<li><strong>名称</strong>: SPIN as a benchmark for force field accuracy</li>
+<li><strong>来源局限/观察</strong>: 本文显示物理力场（AWSEM, REF15）预测挫折能力弱；但可能是力场而非理论的问题</li>
+<li><strong>核心假设</strong>: 不同 MD 力场（AMBER, CHARMM, OPLS）在预测实验挫折 Z-score 上表现不同，SPIN 可作为力场评估的新指标</li>
+<li><strong>初步方法</strong>: 对 Gβ1 用 3-4 种力场运行 MD；从模拟轨迹计算残基级能量和 SPIN；与实验 DMS 数据比较</li>
+<li><strong>验证方式</strong>: 某力场显著优于其他力场；与已知力场基准（如侧链翻转率）一致</li>
+<li><strong>可能的失败模式</strong>: 力场差异可能被构象采样不足掩盖</li>
+<li><strong>创新状态</strong>: unverified</li>
+</ul>
+<hr />
+<p><strong>证据与来源规则说明</strong>: 本文所有引用均基于提供的全文/摘要内容。数值（如 r = 0.03–0.26, r = 0.42, 36% 方差, 14.4% 非高斯位点, r = 0.92）均直接来自原文。图表编号（图 2, 图 3, 图 4, 图 S1-S3）来自原文引用。未提供的信息（如作者单位、代码链接）标记为"未提供"。</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results and discussion, conclusions, methods) as provided</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodological soundness, internal consistency, and support of claims based solely on the supplied text</li>
+<li><strong>Shared manuscript claim summary</strong> The authors use deep mutational scanning datasets to experimentally evaluate local frustration in proteins, benchmark several in silico predictors, and propose a new metric (SPIN) for residue-level stability optimality</li>
+<li><strong>Visible evidence base</strong> Abstract, Introduction, Results and Discussion, Conclusions, Methods sections; references to figures (Figure 1, Figure S1-S3), tables (Table 1, Table S1), equations (eq S1, Formula 1), and supplementary data are mentioned but not provided</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, tables, supplementary data files, and the full equation derivations are not included in the supplied material; specific numerical results (e.g., correlation coefficients beyond those stated) are not fully detailed</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This manuscript addresses an important gap in the protein biophysics literature by attempting to provide experimental validation of local frustration theory using large-scale mutational datasets. The authors present a thoughtful analysis of existing computational tools and propose a novel metric (SPIN) that may offer complementary insights. However, the provided text lacks the detailed quantitative results, figures, and supplementary materials necessary to fully evaluate the strength of the claims. The conceptual framework is sound and the work is potentially significant, but the current evidence base is insufficient to establish the central conclusions with confidence.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Protein biophysicists and computational biologists studying protein stability, folding, and evolution would be the primary audience. Researchers developing or using deep mutational scanning approaches, those interested in protein design, and scientists working on energy landscape theory would also find this work relevant. The benchmarking of existing tools and the introduction of SPIN could inform method selection and development in these fields.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> The manuscript addresses a long-standing gap between theoretical predictions of local frustration and experimental validation. The use of large-scale deep mutational scanning datasets (nearly 8,000 positions across 178 proteins) provides substantial statistical power. The critical evaluation of multiple in silico methods is valuable, and the proposal of SPIN as a complementary metric is conceptually interesting. The authors appropriately acknowledge limitations of existing approaches and their own analysis.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The claim that "Results provide experimental evidence for theoretical predictions regarding the relationship between local frustration and protein sequence, structure, and evolution" (Abstract)</li>
+<li><strong>Evidence pointer</strong> Results and Discussion sections; Figure 1, Figure S2; location not provided for specific numerical values</li>
+<li><strong>Concern</strong> The abstract and results sections make broad claims about experimental evidence supporting theoretical predictions, but the specific quantitative results (correlation coefficients, statistical significance values, effect sizes) are not presented in the supplied text. The only numerical values mentioned are r = 0.30 for sequence conservation, r = 0.42 for Pythia, and 36% variance explained by burial, but these are scattered and not systematically reported.</li>
+<li><strong>Why it matters</strong> Without comprehensive quantitative results, the reader cannot assess the strength of the evidence or determine whether the conclusions are justified. The claim of "experimental evidence" for theoretical predictions requires clear presentation of the data supporting this assertion.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a systematic summary of all key statistical results, including correlation coefficients, confidence intervals, and p-values for each relationship examined, with corresponding figure references.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological validation</li>
+<li><strong>Claim pointer</strong> The claim that SPIN is a valid complementary measure of residue-level stability optimality (Results and Discussion, SPIN section)</li>
+<li><strong>Evidence pointer</strong> SPIN section; Formula 1; Table S1; location not provided for validation results</li>
+<li><strong>Concern</strong> The SPIN metric is introduced and its properties are described, but no validation is presented in the supplied text. The authors state that "the ability of the measure to capture energetic optimality at the amino acid level was examined" and report median SPIN values, but there is no comparison against independent experimental measurements, no assessment of predictive validity, and no demonstration that SPIN provides information beyond existing metrics.</li>
+<li><strong>Why it matters</strong> A new metric requires rigorous validation to establish its utility. Without evidence that SPIN captures meaningful biological information beyond what is already available, its introduction is premature and its claimed advantages cannot be evaluated.</li>
+<li>
+<p><strong>Resolution test</strong> Present validation analyses showing SPIN correlates with independent experimental measurements, demonstrates expected relationships with known biological features, and provides unique information not captured by existing metrics.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> The claim that findings from the expanded dataset of 178 proteins support general conclusions about local frustration patterns (Results and Discussion, Expanded Datasets section)</li>
+<li><strong>Evidence pointer</strong> Expanded Datasets section; Figure 2B; location not provided</li>
+<li><strong>Concern</strong> The authors acknowledge that the dataset contains "only small protein domains" and that "a higher proportion of solvent-exposed positions may influence predictions." This raises questions about whether the conclusions generalize to larger, multi-domain proteins that are more representative of the proteome. The authors note this limitation but do not address its implications for their broader claims.</li>
+<li><strong>Why it matters</strong> If the dataset is biased toward small, potentially atypical proteins, the conclusions about local frustration patterns and tool performance may not be generalizable. This is particularly important given the authors' stated goal of understanding "protein behavior...in nature."</li>
+<li>
+<p><strong>Resolution test</strong> Either demonstrate that the conclusions hold in a more diverse protein set, or explicitly limit the scope of claims to small, single-domain proteins and discuss the implications for broader applicability.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Definition of local frustration</li>
+<li><strong>Evidence pointer</strong> Introduction, Table 1</li>
+<li><strong>Issue</strong> The manuscript refers to multiple definitions of local frustration (single-residue, mutational, configurational) but the distinctions are not clearly explained in the main text. Table 1 is referenced but not provided.</li>
+<li>
+<p><strong>Required correction</strong> Provide a clear, concise explanation of the different local frustration definitions in the main text, with a summary table that is fully described.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Data filtering criteria</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The authors state that data were filtered using a threshold of 15 mutations per position and compared against a stricter criterion requiring all 17 ΔG values, but the rationale for these specific thresholds is not explained.</li>
+<li>
+<p><strong>Required correction</strong> Justify the chosen thresholds and describe the sensitivity of results to these choices.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Discussion of tool performance</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, Comparison section</li>
+<li><strong>Issue</strong> The authors report that Pythia outperformed other tools but do not discuss potential reasons for this beyond architectural differences. The discussion of why Pythia's graph-based approach might be advantageous is speculative.</li>
+<li>
+<p><strong>Required correction</strong> Provide a more balanced discussion of possible explanations for performance differences, including potential biases in training data or evaluation methodology.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Limitations section</li>
+<li><strong>Evidence pointer</strong> Conclusions</li>
+<li><strong>Issue</strong> The manuscript does not include a dedicated limitations section. While some limitations are acknowledged throughout, a consolidated discussion would help readers understand the scope and caveats of the work.</li>
+<li>
+<p><strong>Required correction</strong> Add a limitations paragraph or section that explicitly addresses dataset biases, methodological assumptions, and the generalizability of findings.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> The primary technical failing is the lack of comprehensive quantitative results in the supplied text. The manuscript makes strong claims about experimental validation and tool benchmarking, but the specific data supporting these claims are not visible. Additionally, the SPIN metric requires formal validation before its utility can be assessed. The authors should also clarify the relationship between their experimental approach and the theoretical definitions of local frustration, as the operationalization of the concept may differ from the original theoretical framework.</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong> </p>
+</li>
+<li>Originality: The work is conceptually original in its attempt to provide large-scale experimental validation of local frustration theory and in proposing SPIN as a new metric. However, the novelty of SPIN relative to existing approaches needs clearer articulation.</li>
+<li>Scientific importance: The question of whether theoretical predictions of local frustration hold experimentally is important for the field. The benchmarking of existing tools has practical value. The introduction of SPIN could be significant if validated.</li>
+<li>Interdisciplinary readership: The work bridges biophysics, computational biology, and evolutionary biology, and would appeal to a broad readership in these areas. The conceptual framework is accessible, though some technical details may be challenging for nonspecialists.</li>
+<li>Technical soundness: The methodological approach is reasonable, but the supplied text does not provide sufficient detail to fully assess technical soundness. The lack of visible quantitative results and validation analyses is a significant concern.</li>
+<li>
+<p>Readability for nonspecialists: The manuscript is generally well-written and the conceptual framework is explained clearly. However, the multiple definitions of local frustration and the introduction of SPIN may be confusing without the referenced figures and tables.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The conceptual framework is promising and the work addresses an important question, but the supplied text lacks the quantitative detail and validation necessary to support the central claims. The authors should be encouraged to resubmit with comprehensive results, validation of SPIN, and a clearer articulation of the relationship between their experimental approach and theoretical predictions.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "experimental evidence for theoretical predictions regarding the relationship between local frustration and protein sequence, structure, and evolution" is not supported by the visible quantitative results.</li>
+<li>The claim that SPIN is a useful complementary measure is unsupported without validation analyses.</li>
+<li>The claim that Pythia outperforms other tools is stated but not fully contextualized with statistical comparisons.</li>
+<li>The assertion that "results support overall predicted patterns of local frustration" is not verifiable from the supplied text.</li>
+<li>The generalizability of findings from small protein domains to broader protein populations is not established.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2610.05854v1",
+  "title": "TurboPairFormer: Fast and Stable Protein Folding Model Training with an Optimized Triangle Attention Kernel",
+  "authors": "Yide Ran; Chelsea Lowman; Jan Domański; David Hartmann; Jenke Scheen; Jennifer Wei; Chuan Li; Jianwen Xie; Zhaozhuo Xu",
+  "journal": "",
+  "published_date": "2026-10-05",
+  "window": {
+    "start": "2026-10-04",
+    "end": "2026-10-10"
+  },
+  "score": 8,
+  "one_liner_zh": "该文提出TurboPairFormer，针对AlphaFold3风格三角注意力计算优化GPU内核，提升蛋白质结构预测模型训练的速度与数值稳定性，属于蛋白质结构计算中的AI方法工程优化。",
+  "abstract": "Triangular attention is a core computation in AlphaFold3-style biomolecular models, with cubic cost in token count. Its shared pair bias adds a gradient reduction across attention slices to the usual reductions over queries and keys. The open-source backends we examine handle these reductions through repeated probability recomputation, floating-point atomics, or full score-gradient storage. Separately, computing the softmax backward correction from BF16-rounded forward outputs loses numerical precision. We present TurboPairFormer, a triangular attention implementation for NVIDIA Hopper GPUs that addresses both issues. Our key-tile-parallel backward algorithm recomputes each probability tile once for the query, key, value, and pair-bias gradients, using ordered partial reductions for deterministic accumulation without floating-point atomics or full score-gradient storage. Output-residual compensation retains a BF16 approximation of the output-rounding residual to compute the backward correction more accurately in FP32, without changing the BF16 output. With BF16 inputs at crop sizes 384, 640, and 768 and head dimensions 16 and 32, TurboPairFormer achieves the lowest mean query, key, and pair-bias gradient RMSE against an FP64 reference among the implementations compared in this paper. Residual compensation reduces these RMSE values by 28-47% in controlled ablations. All four gradients are bitwise identical across five repeated calls in all 600 input cases under fixed execution conditions. Integrated into OpenFold3 with our triangle multiplication kernels, TurboPairFormer achieves the lowest GPU computation time per optimizer step among the evaluated backend configurations on 16 H100 GPUs, with speedups of $1.73\\times$ over OpenFold3's Triton backend and $1.13\\times$ over cuEquivariance at crop size 768.",
+  "abstract_zh": "三角注意力是AlphaFold3风格生物分子模型中的核心计算，其代价随令牌数量呈立方增长。其共享的成对偏置在通常的查询和键归约之外，增加了跨注意力切片的梯度归约。我们检查的开源后端通过重复概率重计算、浮点原子操作或完整分数梯度存储来处理这些归约。另外，从BF16舍入的前向输出计算softmax反向修正会损失数值精度。我们提出TurboPairFormer，一种针对NVIDIA Hopper GPU的三角注意力实现，解决了这两个问题。我们的键块并行反向算法为查询、键、值和成对偏置梯度各重计算一次每个概率块，使用有序部分归约实现确定性累积，无需浮点原子操作或完整分数梯度存储。输出残差补偿保留输出舍入残差的BF16近似，以在FP32中更准确地计算反向修正，而不改变BF16输出。在裁剪尺寸384、640和768以及头维度16和32的BF16输入下，TurboPairFormer在本文比较的实现中，针对FP64参考实现了最低的查询、键和成对偏置梯度均方根误差。残差补偿在受控消融实验中将这些RMSE值降低了28-47%。在固定执行条件下，所有600个输入案例中，五次重复调用的四个梯度均逐位相同。集成到OpenFold3中，结合我们的三角乘法内核，TurboPairFormer在16个H100 GPU上评估的后端配置中实现了每个优化器步骤的最低GPU计算时间，在裁剪尺寸768下，比OpenFold3的Triton后端加速$1.73\\times$，比cuEquivariance加速$1.13\\times$。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2610.05854v1",
+  "source_url": "https://arxiv.org/abs/2610.05854v1",
+  "paper_page_path": "papers/arxiv/2610.05854v1/index.html"
+}

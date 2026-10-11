@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no figures, tables, methods, or supplementary material were provided
+- **Shared manuscript claim summary** The authors propose a quantum-compatible reformulation of AutoDock grid-based protein-ligand scoring, using indexed inner-product representations on a shared 32x32x32 Cartesian grid, validated via reduced Qiskit simulations and PyTorch calculations, with finite-shot sampling and map truncation effects examined.
+- **Visible evidence base** Abstract text only; no numerical results, figures, tables, or methodological details are available
+- **Missing materials affecting confidence** Full methods, all numerical results, figure/table contents, simulation parameters, hardware/software specifications, and any statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting approach to bridging classical molecular docking scoring with quantum computing architectures. The core idea of reformulating AutoDock grid maps as indexed inner products is plausible and potentially useful. However, the abstract alone provides insufficient detail to assess technical correctness, reproducibility, or the significance of the claimed validation. The results are described qualitatively without any quantitative data, making it impossible to evaluate the strength of the evidence. The claim of a "validated proof-of-concept" is not supported by the visible material.
+- **Who would be interested in the results, and why** Researchers in computational drug discovery, particularly those exploring quantum computing applications for structure-based virtual screening. Also relevant to developers of quantum-compatible molecular modeling tools and those interested in hybrid classical-quantum algorithms for biophysical simulations.
+- **Major strengths** The approach addresses a real bottleneck in virtual screening, namely repeated energy evaluation across many receptor-ligand configurations. The reformulation onto a shared grid with quantum-compatible readout is a creative and potentially scalable strategy. The explicit consideration of finite-shot sampling and map truncation effects shows awareness of practical quantum computing limitations.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Reduced Qiskit simulations and PyTorch calculations validated the rotation, translation, and probability-readout operations, and the probability-derived energies matched direct classical grid-based inner products."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract claims validation and matching of probability-derived energies with classical inner products, but provides no quantitative metrics, error values, or statistical tests. The term "matched" is undefined. Without specific numerical comparisons, the validity of this claim cannot be assessed.
+  - **Why it matters** The entire proof-of-concept rests on the equivalence between quantum-compatible readout and classical scoring. If this equivalence is not rigorously demonstrated with error bounds and statistical significance, the core claim is unsupported.
+  - **Resolution test** Provide quantitative comparison metrics (e.g., mean absolute error, correlation coefficients, nRMSE values) between probability-derived and classical energies across multiple test cases, with confidence intervals or statistical significance tests.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** "A 32-qubit organization encoded spatial grid indices, energy channels, ligand translations, ligand rotations, and readout based on the Hadamard test. A 37-qubit organization added receptor and ligand selection registers."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract describes qubit organizations but provides no circuit diagrams, encoding schemes, or implementation details. The Hadamard test readout is mentioned but not explained in the context of this specific encoding. Without these details, the work cannot be reproduced or independently verified.
+  - **Why it matters** Quantum computing results are notoriously sensitive to implementation details. The lack of any circuit-level or encoding-level information makes the technical claims unverifiable from the provided material.
+  - **Resolution test** Provide complete circuit diagrams, encoding tables, and pseudocode for both 32-qubit and 37-qubit organizations, including how grid indices, energy channels, translations, rotations, and selection registers are mapped to qubits.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** "These results establish a validated proof-of-concept molecular-modeling representation for quantum-compatible AutoDock grid scoring."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract reports results for "three representative conditions" but does not specify what these conditions are, how they were chosen, or why they are representative. The claim of a "validated proof-of-concept" is premature without a clear description of the validation scope and criteria.
+  - **Why it matters** The significance of the work depends on the breadth and rigor of validation. Without knowing the test conditions, the generalizability of the approach cannot be evaluated.
+  - **Resolution test** Clearly define the three representative conditions, justify their selection, and provide full results for each, including failure cases or limitations.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "quantum-compatible" is used repeatedly but never defined. It is unclear whether this means the representation can be directly executed on quantum hardware, or merely that it is formulated in a way that could be adapted.
+  - **Required correction** Define "quantum-compatible" explicitly in the abstract or introduction, specifying the intended relationship to quantum hardware execution.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Performance comparison
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions "reduced Qiskit simulations" but does not state the system size or the reduction strategy. It is unclear whether the simulations were performed on the full 32-qubit or 37-qubit systems or on smaller approximations.
+  - **Required correction** Specify the simulation system sizes and the nature of the reduction (e.g., qubit count, circuit depth, or state vector truncation).
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Context
+  - **Affected element** Related work
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not reference any prior work on quantum approaches to molecular docking or grid-based scoring, making it difficult to assess novelty.
+  - **Required correction** Add a brief statement in the abstract or introduction situating this work relative to existing quantum molecular modeling approaches.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (validation metrics missing), R1-M2 (implementation details absent), R1-M3 (validation scope undefined)
+- **Assessment against Nature-style criteria** 
+  - Originality: The approach appears novel in its specific combination of AutoDock grid scoring with quantum inner-product encoding, but the abstract does not provide enough context to fully assess novelty relative to prior quantum molecular modeling work.
+  - Scientific importance: Potentially significant for the field of quantum-enabled drug discovery, but the importance is not established from the abstract alone given the lack of quantitative results.
+  - Interdisciplinary readership: The work bridges computational chemistry, quantum computing, and drug discovery, which could attract a broad readership if the results are compelling.
+  - Technical soundness: Cannot be assessed from the abstract. The claims of validation and matching are unquantified, and implementation details are absent.
+  - Readability for nonspecialists: The abstract is reasonably accessible but uses quantum computing terminology (e.g., "Hadamard test," "qubit organization") without sufficient explanation for a general scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a promising concept, but the lack of quantitative results, implementation details, and clear validation criteria means the case for a validated proof-of-concept is not made. Supportive if the full manuscript provides the missing technical details and quantitative evidence.
+
+## Risk / unsupported claims
+- "Probability-derived energies matched direct classical grid-based inner products" is unsupported without quantitative comparison data.
+- "Validated proof-of-concept" is unsupported given the undefined validation scope and missing metrics.
+- The claim that increasing shots "improved correlation-based and reference-configuration recovery" is unquantified and cannot be evaluated.
+- The relative performance of U(max) = 1 versus no truncation and U(max) = 1000 is described but not supported with any numerical values.
+- The 32-qubit and 37-qubit organizations are described but their correctness and functionality cannot be verified without circuit or encoding details.

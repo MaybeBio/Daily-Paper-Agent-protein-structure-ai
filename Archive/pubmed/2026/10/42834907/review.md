@@ -1,0 +1,108 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, materials and methods, results, discussion, conclusion) without figures, tables, or supplementary material
+- **Assessment boundary** Scientific soundness, internal consistency, and support of claims based solely on the provided text; no assessment of figures, tables, or supplementary data that were not supplied
+- **Shared manuscript claim summary** The authors propose that computational structure prediction (AlphaFold2, PSIPRED) and charge analysis can guide the selection of peptides for fusion to bacteriophage lysins to enhance activity against Gram-negative bacteria under physiological conditions. They report that α-helical, positively charged fused peptides correlate with improved bactericidal activity of engineered lysins in high NaCl and serum, based on screening seven LysPd138 variants and validating with two LysPd149 variants.
+- **Visible evidence base** Text descriptions of experimental procedures and results; references to Figures 1–6, Supplementary Figures S1–S6, Supplementary Table S1; no actual data values, statistical outputs, or images were provided
+- **Missing materials affecting confidence** All figures, tables, and supplementary material; raw CFU data; statistical analysis outputs; SDS-PAGE images; AlphaFold structure predictions; PSIPRED outputs; NPN uptake fluorescence values; peptide sequences and charge calculations
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a relevant problem in lysin engineering against Gram-negative bacteria and proposes a computationally informed selection strategy that could reduce trial-and-error screening. The core hypothesis, that α-helical propensity and positive charge of fused peptides correlate with enhanced activity under physiological conditions, is plausible and supported by the described pattern of results. However, the evidence base as presented is incomplete. The manuscript relies heavily on figures and supplementary data that were not provided for review, making it impossible to verify the reported outcomes, statistical claims, or structural predictions. The correlational nature of the findings is acknowledged by the authors, but the mechanistic interpretation remains speculative. The study is a proof-of-concept with limited generalizability, and several methodological details require clarification. The writing is generally clear, though some results are described with insufficient quantitative detail.
+- **Who would be interested in the results, and why** Researchers in antimicrobial drug development, bacteriophage biology, and protein engineering would find this work relevant. The proposed workflow combining structure prediction and charge analysis for peptide selection could be of practical interest to groups working on lysin therapeutics against Gram-negative pathogens, particularly Acinetobacter baumannii. The study also contributes to the growing literature on computational approaches to guide protein engineering.
+- **Major strengths**
+  - Addresses a clinically relevant problem: loss of lysin activity against Gram-negative bacteria under physiological conditions.
+  - Proposes a rational, computationally informed strategy that could reduce the cost and labor of empirical screening.
+  - Includes a validation step using a second lysin (LysPd149), strengthening the generalizability of the observed correlation.
+  - Authors acknowledge limitations, including low pLDDT confidence scores and the correlational nature of the findings.
+  - Comparative assessment of engineered lysins versus free peptide in plasma provides useful translational information.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence completeness
+  - **Claim pointer** The authors claim that specific variants (Syn138, Pad138, CecA138) "eradicated the bacteria to below the detection limit" in 150 mM NaCl and sera, and that other variants "significantly lost their bactericidal effects."
+  - **Evidence pointer** Results section, Figures 2A, 2C, 2D, 3A, 3B, 3C; location not provided
+  - **Concern** The actual data supporting these claims are presented only in figures that were not supplied for review. No numerical CFU values, log reductions, or statistical test results are reported in the text. The reader cannot verify the magnitude of the reported effects, the variability between replicates, or whether the differences between active and inactive variants are statistically robust. The claim that certain variants "eradicated" bacteria to below detection limits requires confirmation of the detection limit of the assay and the consistency of this outcome across replicates.
+  - **Why it matters** The central conclusion of the manuscript, that α-helical positively charged peptides confer enhanced activity, rests entirely on the differential activity patterns of the variants. Without access to the underlying data, the validity of this conclusion cannot be assessed. The manuscript is not self-contained in its current form.
+  - **Resolution test** Provide the actual CFU data, log reduction values, and statistical comparisons for all variants under all tested conditions, either in the main text or as accessible supplementary data. Include detection limits and replicate numbers.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Structural evidence
+  - **Claim pointer** The authors claim that AlphaFold2 and PSIPRED predictions show that active variants are fused to peptides with predominantly α-helical structures, while inactive variants have loop-like structures.
+  - **Evidence pointer** Results section, Figures 2B, 2E, Supplementary Figures S2, S3, S4, S5; location not provided
+  - **Concern** The structural predictions are central to the manuscript's hypothesis, yet the actual prediction outputs are not shown in the provided text. The authors note that pLDDT scores for most fused peptide regions were below 50, indicating low confidence in the predicted structures. This is a significant caveat that undermines the reliability of the structural assignments. The agreement between AlphaFold2 and PSIPRED is mentioned but not demonstrated. For Buf149, the peptide is described as "partially α-helical" but this is not shown or quantified.
+  - **Why it matters** The manuscript proposes that structure prediction can guide peptide selection. If the predictions themselves are of low confidence, the practical utility of the approach is questionable. The authors need to demonstrate that the structural assignments are robust enough to be used as a screening criterion.
+  - **Resolution test** Show the predicted structures with confidence annotations, provide the PSIPRED secondary structure outputs for all seven peptides, and discuss how the low pLDLT scores were interpreted. If possible, provide experimental validation (e.g., circular dichroism) or at least a clear justification for relying on low-confidence predictions.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Mechanistic interpretation
+  - **Claim pointer** The authors suggest that the enhanced activity of α-helical positively charged peptide fusions is due to improved interaction with the negatively charged outer membrane, supported by NPN uptake assays.
+  - **Evidence pointer** Results section, Supplementary Figure S6; location not provided
+  - **Concern** The NPN uptake assay is presented as supporting the proposed mechanism, but the data are not shown. The authors report "2.6-, 2.3-, 2.8-, and 1-fold increases" in NPN uptake for specific variants, but the baseline, the statistical significance, and the comparison with native lysin are not described in the text. The correlation between NPN uptake and bactericidal activity is not quantitatively established.
+  - **Why it matters** The proposed mechanism linking α-helicity, charge, membrane permeabilization, and bactericidal activity is a key part of the manuscript's contribution. Without clear evidence for the membrane permeabilization step, the mechanistic claim remains speculative.
+  - **Resolution test** Provide the NPN uptake data with appropriate controls, statistical analysis, and a direct comparison between variants with high and low activity. Discuss whether the observed permeabilization is sufficient to explain the bactericidal effects.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** The authors propose that their computational strategy could be broadly applicable to engineering lysins against Gram-negative bacteria, stating it "may improve the efficiency of lysin engineering."
+  - **Evidence pointer** Discussion section; location not provided
+  - **Concern** The study uses only two lysins (LysPd138 and LysPd149) and a single bacterial strain (A. baumannii WHH40137). The authors acknowledge this limitation, but the claim of broader applicability is not supported by the data. The correlation between α-helicity, charge, and activity may be specific to these lysins or this bacterial strain.
+  - **Why it matters** The practical value of the proposed strategy depends on its generalizability. If the correlation does not hold for other lysins or bacterial species, the approach would have limited utility.
+  - **Resolution test** Acknowledge more explicitly that the findings are preliminary and require validation across a broader panel of lysins and Gram-negative species. Alternatively, provide additional data from other lysin-peptide combinations if available.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Methodological clarity
+  - **Affected element** Materials and methods, "In vitro antibacterial assays under different conditions"
+  - **Evidence pointer** Location not provided
+  - **Issue** The description of the CFU reduction assay lacks detail on the bacterial growth phase, the multiplicity of infection, the buffer composition for serum assays, and the exact incubation conditions. The final concentration of lysin is stated as 100 μg/mL for most assays, but the concentration-dependence experiment uses 85, 70, and 50 μg/mL without specifying which variants were tested.
+  - **Required correction** Provide a more detailed protocol, including all buffer compositions, incubation times, and the specific variants used in each experiment. Clarify whether the concentration-dependence experiment was performed for all variants or only a subset.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Results section, all subsections
+  - **Evidence pointer** Location not provided
+  - **Issue** The text states that experiments were repeated at least three times and that the Kruskal–Wallis test with Dunn's multiple comparisons was used, but no test statistics, p-values, or measures of variance are reported in the text. The figures presumably contain this information, but they were not available for review.
+  - **Required correction** Report key statistical outcomes in the text or figure legends, including p-values and error bars, to allow assessment without access to the figures.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Throughout
+  - **Evidence pointer** Location not provided
+  - **Issue** The term "physiological conditions" is used to describe both 150 mM NaCl and serum. While 150 mM NaCl is a component of physiological ionic strength, serum is a more complex milieu. The use of the term for both may be misleading.
+  - **Required correction** Use more specific terms, such as "high-salt conditions" and "serum conditions," to distinguish between the two experimental settings.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Data presentation
+  - **Affected element** Results section, "Construction and initial characterization of LysPd138 variants"
+  - **Evidence pointer** Location not provided
+  - **Issue** The authors state that protein concentrations measured by NanoDrop and BCA were similar, but no values are given. This is a minor point, but reporting the concentrations would improve reproducibility.
+  - **Required correction** Report the protein concentrations for the purified lysins and variants, or state that the values are provided in the supplementary material.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Figure referencing
+  - **Affected element** Results section, "Effect of the differences in the charge and structures of fused peptides on the differential bactericidal activity of Lyspd149"
+  - **Evidence pointer** Location not provided
+  - **Issue** The text refers to Figure 4A and 4B for the structure of the fusions, but the actual structures are not described in the text. The reader cannot assess the structural claims without the figure.
+  - **Required correction** Briefly describe the predicted structures in the text, or ensure the figure is accessible and clearly labeled.
+- **Technical failings that need to be addressed before the case is established**
+  - R1-M1: The primary experimental data are not available in the provided text, preventing verification of the central claims.
+  - R1-M2: The structural predictions are based on low-confidence AlphaFold2 models, and the PSIPRED outputs are not shown.
+  - R1-M3: The NPN uptake data supporting the proposed mechanism are not presented.
+  - The manuscript relies on figures and supplementary material that were not supplied, making a full technical assessment impossible.
+- **Assessment against Nature-style criteria**
+  - **Originality** Moderate. The application of AlphaFold2 and PSIPRED to guide peptide selection for lysin engineering is a reasonable extension of existing approaches, but the concept of using computational prediction to inform fusion design is not entirely novel. The specific focus on α-helicity and charge as predictive features is a useful contribution.
+  - **Scientific importance** Moderate. The problem of lysin activity against Gram-negative bacteria is important, and a rational design strategy would be valuable. However, the study is a proof-of-concept with limited data, and the clinical or practical impact is not yet demonstrated.
+  - **Interdisciplinary readership** Limited. The work is primarily of interest to researchers in antimicrobial development and protein engineering. It is unlikely to attract a broad interdisciplinary audience.
+  - **Technical soundness** Cannot be fully assessed. The described methods are generally appropriate, but the lack of accessible data and the low confidence of structural predictions raise concerns. The correlational design limits the strength of the conclusions.
+  - **Readability for nonspecialists** Adequate. The manuscript is generally well-written and explains the rationale clearly. However, some sections assume familiarity with lysin biology and structural prediction tools.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript presents an interesting hypothesis and a plausible workflow, but the evidence base is incomplete. The central claims cannot be verified without access to the figures and supplementary data. The low confidence of the structural predictions and the correlational nature of the findings further weaken the case. The authors should be encouraged to resubmit with full data availability and, ideally, experimental validation of the predicted structures.
+
+## Risk / unsupported claims
+- The claim that α-helical positively charged fused peptides are responsible for enhanced bactericidal activity is correlational and not causally established.
+- The claim that the computational workflow can reduce time and cost of lysin engineering is speculative and not supported by any comparative analysis.
+- The claim that mouse serum inhibits lysin activity more than human serum is reported without mechanistic explanation or supporting data in the text.
+- The structural assignments of the fused peptides are based on low-confidence predictions and are not experimentally validated.
+- The generalizability of the findings beyond the two lysins and one bacterial strain tested is not supported.

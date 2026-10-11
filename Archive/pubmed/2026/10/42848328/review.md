@@ -1,0 +1,82 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report cryo-EM structures of GSDME pores with 23 to 29 protomer stoichiometries, identify key residues for membrane binding, shallow insertion, and oligomerization via three interfaces, and use molecular dynamics simulations to show selective lipid recruitment (anionic TMCL2 and zwitterionic DPhPC). They propose a stepwise, time-dependent pore assembly mechanism and suggest therapeutic relevance for cancers and neurodegenerative diseases.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary data provided
+- **Missing materials affecting confidence** Full manuscript, cryo-EM density maps, structural coordinates, mutagenesis data, liposome leakage assay details, molecular dynamics simulation parameters, statistical analyses, and any validation metrics
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially significant structural and mechanistic study of GSDME pore formation. The reported cryo-EM structures with variable stoichiometry and the integration of mutagenesis, functional assays, and molecular dynamics simulations suggest a comprehensive approach. However, the abstract alone provides insufficient detail to evaluate the technical rigor, data quality, or the strength of the mechanistic conclusions. Several claims, particularly regarding lipid selectivity and the stepwise assembly mechanism, require supporting evidence that is not visible in the abstract.
+- **Who would be interested in the results, and why** Structural biologists studying pore-forming proteins and gasdermin family members; cell death researchers focused on pyroptosis and its regulation; cancer biologists interested in chemotherapy-induced cell death mechanisms; neuroscientists studying GSDME-linked neurodegenerative conditions; and drug developers targeting gasdermin-mediated pathways for therapeutic intervention.
+- **Major strengths** The study addresses a significant gap in understanding GSDME pore formation, which is less characterized than other gasdermins. The reported range of oligomeric stoichiometries (23 to 29) is notable and suggests a dynamic assembly process. The combination of structural, functional, and computational approaches is methodologically ambitious and potentially powerful. The identification of specific lipid interactions adds mechanistic depth.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that cryo-EM structures of GSDME pores with 23 to 29 protomer stoichiometries were determined.
+  - **Evidence pointer** Abstract only; no figures or validation metrics provided
+  - **Concern** The abstract does not provide any information about the resolution of the cryo-EM maps, the number of particles used, the symmetry imposed, or the validation statistics (e.g., gold-standard FSC curves, model-to-map fit). Without these details, the reliability of the structural models cannot be assessed.
+  - **Why it matters** Cryo-EM structures are only as credible as their resolution and validation. Variable stoichiometry across 23 to 29 protomers is unusual and could reflect genuine biological heterogeneity or artifacts of sample preparation or data processing. The absence of quality metrics undermines confidence in the structural claims.
+  - **Resolution test** Provide resolution estimates, particle numbers, symmetry handling, and validation statistics for each reported stoichiometry. Demonstrate that the different oligomeric states are reproducible and not processing artifacts.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that key residues responsible for membrane binding, shallow membrane insertion, and oligomerization through three distinct structural interfaces were identified using mutagenesis and liposome leakage assays.
+  - **Evidence pointer** Abstract only; no mutagenesis data, assay details, or statistical analyses provided
+  - **Concern** The abstract does not specify which residues were mutated, how the mutations were designed, the magnitude of functional effects, or the number of replicates. The liposome leakage assay conditions (lipid composition, protein concentration, time course) are not described. Without these details, the functional significance of the identified residues cannot be evaluated.
+  - **Why it matters** The mechanistic conclusions rest on the functional validation of structural observations. If the mutagenesis effects are modest or the assays are not well-controlled, the link between structure and function is weakened.
+  - **Resolution test** Provide a detailed description of mutagenesis strategy, assay conditions, quantitative results with error bars and statistical tests, and demonstrate that the observed effects are specific to the proposed functional roles.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that molecular dynamics simulations reveal dynamic lipid recruitment and specificity, with anionic TMCL2 selectively recruited by basic residues and zwitterionic DPhPC solvating polar regions.
+  - **Evidence pointer** Abstract only; no simulation parameters, system setup, or analysis details provided
+  - **Concern** The abstract does not describe the simulation length, force field, system size, number of replicates, or how lipid selectivity was quantified. The claim of "selective recruitment" requires a rigorous statistical comparison of lipid occupancy around specific residues versus bulk behavior. Without these details, the lipid specificity claim is not verifiable.
+  - **Why it matters** Lipid selectivity is a central mechanistic claim. If the simulations are under-sampled or the analysis is not statistically robust, the conclusion that specific lipids stabilize the pore could be overstated.
+  - **Resolution test** Provide simulation parameters, convergence metrics, replicate information, and a clear quantitative definition of lipid selectivity with appropriate statistical analysis.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim support
+  - **Claim pointer** The abstract claims that specific lipids act as structural stabilizers to reinforce the intermolecular hydrogen bond network within the assembled 25-mer pore.
+  - **Evidence pointer** Abstract only; no structural or simulation data showing lipid-mediated stabilization
+  - **Concern** The abstract asserts a stabilizing role for lipids but does not provide evidence that the hydrogen bond network is functionally dependent on lipid presence. No comparison is shown between simulations or structures with and without specific lipids, nor is there any mutational or functional test of the proposed stabilization.
+  - **Why it matters** This claim extends beyond lipid recruitment to a specific structural function. Without direct evidence, the statement is speculative and could mislead readers about the strength of the conclusion.
+  - **Resolution test** Provide comparative simulations or experimental data demonstrating that removal or alteration of specific lipids disrupts the hydrogen bond network or pore stability.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim support
+  - **Claim pointer** The abstract claims that the findings support a stepwise, time-dependent mechanism underlying GSDME pore assembly.
+  - **Evidence pointer** Abstract only; no time-resolved experiments or kinetic data provided
+  - **Concern** The abstract does not describe any time-dependent experiments, such as stopped-flow liposome leakage, single-particle time courses, or molecular dynamics assembly trajectories. The structural snapshots of different stoichiometries are suggestive but do not by themselves establish a temporal sequence.
+  - **Why it matters** A stepwise, time-dependent mechanism is a strong kinetic claim. Without direct temporal evidence, the interpretation of different oligomeric states as assembly intermediates is speculative.
+  - **Resolution test** Provide time-resolved experimental data or simulation trajectories that demonstrate the order and kinetics of pore assembly, or temper the claim to reflect that the structures are consistent with, but do not prove, a stepwise mechanism.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The opening sentence lists multiple disease associations and functions in a single clause, which is dense and may obscure the primary focus of the study.
+  - **Required correction** Consider restructuring the opening to state the primary research question more directly, with disease associations introduced as context.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Lipid nomenclature
+  - **Evidence pointer** Abstract, molecular dynamics sentence
+  - **Issue** The terms "TMCL2" and "DPhPC" are used without definition or context. Readers unfamiliar with these specific lipids may not understand their relevance.
+  - **Required correction** Provide full names or brief definitions for these lipids on first use, or add a phrase indicating their biological relevance.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scope
+  - **Affected element** Therapeutic claim
+  - **Evidence pointer** Abstract, final sentence
+  - **Issue** The statement that the study "may guide the development of targeted therapeutics" is broad and not directly supported by the data described in the abstract.
+  - **Required correction** Either temper the claim to be more modest or specify a concrete mechanistic insight that could plausibly inform therapeutic design.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (cryo-EM validation), R1-M2 (mutagenesis and assay details), R1-M3 (simulation rigor), R1-M4 (lipid stabilization evidence), R1-M5 (kinetic support for stepwise mechanism)
+- **Assessment against Nature-style criteria** Originality: The study addresses a less-characterized gasdermin family member and the variable stoichiometry is potentially novel, but the abstract does not clearly distinguish the findings from prior gasdermin pore studies. Scientific importance: GSDME is clinically relevant, and a mechanistic understanding could have broad impact, but the importance is asserted rather than demonstrated. Interdisciplinary readership: The topic bridges structural biology, cell death, and lipid biophysics, which could attract a broad audience, but the abstract is written in a specialized manner. Technical soundness: Cannot be assessed from the abstract alone; the absence of validation metrics and methodological details is a major limitation. Readability for nonspecialists: The abstract is dense and uses specialized terminology without sufficient context, which may limit accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible and potentially important study, but the absence of methodological detail and validation metrics prevents assessment of the core claims. The authors should provide the full manuscript with detailed methods, validation statistics, and quantitative results to support the mechanistic conclusions.

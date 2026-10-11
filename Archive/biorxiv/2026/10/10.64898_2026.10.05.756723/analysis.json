@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.10.05.756723",
+  "title": "Anneal-MaxCal: kinetic ensembles from a Markov model learned along a solute-tempering ladder",
+  "authors": "Brotzakis ZF; Rekatsinas N",
+  "journal": "bioRxiv",
+  "published_date": "2026-10-09",
+  "window": {
+    "start": "2026-10-04",
+    "end": "2026-10-10"
+  },
+  "score": 9,
+  "one_liner_zh": "该文提出Anneal-MaxCal方法，结合溶质升温阶梯上的马尔可夫模型与最大熵原理，从短时模拟中重构蛋白质构象动力学和速率常数，属于蛋白质构象采样与动力学建模的核心计算研究。",
+  "abstract": "A full characterisation of a molecular system requires its metastable states, their populations and their interconversion rates. Molecular Dynamics can in principle provide this characterisation but is limited by sampling and by force-field inaccuracies. Enhanced sampling addresses the first problem, but typically requires prior knowledge of reaction coordinates or metastable states and often sacrifices the kinetics, while maximum-caliber reweighting by Brotzakis, Vendruscolo and Bolhuis [Proc. Natl. Acad. Sci. U.S.A., 118(2):e2012423118, 2021] has been implemented to that matter on reweighting continuous pathways by imposing rate constants as kinetic constraints in two-state protein folding. Here, we introduce Anneal-MaxCal, which tackles both problems by imposing rate constants or time-resolved data on a Markov model learned along an annealed solute-tempering ladder spanning softer to physical interactions. MBAR assigns physical free energies to all 160 cells of a slow TICA subspace, against 79 visited at the physical coupling. The square-root approximation (SqRA), a discretised diffusion on this free-energy landscape, converts these populations into a detailed-balance rate matrix. Its prefactors, which act as a position-dependent diffusivity across each cell face, are learned from transitions at the softer couplings and extrapolated log-linearly to the physical coupling. This yields rates and a committor across the TICA space, although the physical rung contains a single barrier crossing. For alanine dipeptide, 665 ns of simulation give a relaxation time of 5430 ± 996 ps against 4413 ± 446 ps from 15.4 μs of unbiased dynamics, whereas a constant prefactor is 2.5 times too slow. Maximum caliber then minimally perturbs this prior, with the posterior populations following from a generalised Doob transform. A synthetic time-resolved density with a tenfold slower back-transition lowers ΔF from 5.191 to 2.885 kBT , raises the product-basin population from 0.0055 to 0.0529 and slows relaxation 9.47-fold, leaving the reactant basin unchanged. Forward and backward rates accelerated 3 and 20-fold raise ΔF by 1.892 kBT and shorten relaxation from 4818 to 289 ps.",
+  "abstract_zh": "分子系统的完整表征需要其亚稳态、这些态的数量及其相互转化速率。分子动力学（Molecular Dynamics）原则上能提供这种表征，但受限于采样和力场的不准确性。增强采样解决了第一个问题，但通常需要反应坐标或亚稳态的先验知识，并且常常牺牲动力学信息，而Brotzakis、Vendruscolo和Bolhuis [Proc. Natl. Acad. Sci. U.S.A., 118(2):e2012423118, 2021] 提出的最大熵重加权（maximum-caliber reweighting）已通过在两态蛋白质折叠中施加速率常数作为动力学约束，用于连续路径的重加权。在此，我们引入Anneal-MaxCal，它通过将速率常数或时间分辨数据施加到沿退火溶质调节阶梯（从较软到物理相互作用）学习的马尔可夫模型上，同时解决这两个问题。MBAR为慢TICA子空间的全部160个单元分配物理自由能，而物理耦合下仅访问了79个单元。平方根近似（square-root approximation, SqRA），即在此自由能景观上的离散化扩散，将这些数量转化为满足细致平衡的速率矩阵。其前置因子，作为每个单元界面上的位置依赖性扩散率，从较软耦合下的转变中学习，并通过对数线性外推至物理耦合。这产生了跨越TICA空间的速率和committor，尽管物理阶梯仅包含一次势垒穿越。对于丙氨酸二肽，665 ns的模拟给出弛豫时间为5430 ± 996 ps，而15.4 μs无偏动力学的结果为4413 ± 446 ps，而常数前置因子则慢2.5倍。最大熵随后对此先验进行最小扰动，后验数量通过广义Doob变换得出。一个合成的时间分辨密度，其反向转变慢十倍，将ΔF从5.191降至2.885 kBT，将产物盆地数量从0.0055提升至0.0529，并将弛豫减慢9.47倍，而反应物盆地保持不变。正向和反向速率分别加速3倍和20倍，使ΔF增加1.892 kBT，并将弛豫时间从4818 ps缩短至289 ps。",
+  "has_fulltext": false,
+  "fulltext_source": "abstract",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.05.756723",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.10.05.756723",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.10.05.756723/index.html"
+}

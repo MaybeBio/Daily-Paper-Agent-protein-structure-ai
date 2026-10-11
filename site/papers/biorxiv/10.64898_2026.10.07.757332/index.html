@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RNA3D-Decoy: A Large-Scale Benchmark Dataset of AI-Generated RNA Structure Models for Quality Assessment · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>RNA3D-Decoy: A Large-Scale Benchmark Dataset of AI-Generated RNA Structure Models for Quality Assessment</h1>
+      <div class="meta">Chen X; Yadi H; Cao R; Liu H</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-08
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.07.757332">原文</a>
+      </div>
+      <p class="one-liner">该文构建了AI生成RNA结构模型的基准数据集，用于质量评估，虽对象为RNA而非蛋白质，但其结构质量评估框架可迁移至蛋白质体系，对蛋白质结构计算有借鉴意义。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Recent advances in AI- RNA structure prediction have increased the availability of candidate models, but their accuracy remains variable. Developing reliable quality assessment (QA) methods requires datasets that represent contemporary prediction errors across diverse targets and molecular contexts. Here, we present RNA3D-Decoy, a large-scale benchmark dataset comprising 103,549 decoys for 677 experimentally determined targets, including 416 RNA-only structures,117 RNA structures with metal ions, and 144 RNA-protein complexes. Decoys were generated using five biomolecular predictors: AlphaFold 3, ESMFold2, Protenix, Chai-1, and Boltz-2.Each decoy is evaluated against its experimental reference us-ing TM-score, lDDT, and RMSD, with global and local quality annotations where applicable. DockQ scores additionally characterize RNA-protein interface quality. Target grouping incorporates both RNA and protein sequence relationships to support dataset partitioning. Analyses reveal distinct quality distributions across dataset levels and target-dependent differences among predictors, with each predictor contributing the highest-TM-score model for a subset of targets. Broad pooled score distributions also coexist with limited within-target score variation, particularly for RNA-protein complexes, emphasizing the importance of target-level characterization. By combining AI-generated decoys, standardized quality labels, and structured metadata, RNA3D-Decoy provides a resource for developing and evaluating methods for global quality estimation, local error prediction, and candidate-model ranking. The data set and accompanying code are available at: https://github.com/HamiltonChenLab/RNA3D-Decoy.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">近年来，AI在RNA结构预测方面的进展增加了候选模型的可用性，但其准确性仍然参差不齐。开发可靠的质量评估（QA）方法需要能够代表跨不同靶标和分子环境中当代预测误差的数据集。在此，我们介绍了RNA3D-Decoy，这是一个大规模基准数据集，包含677个实验确定靶标的103,549个诱饵，其中包括416个仅RNA结构、117个含金属离子的RNA结构，以及144个RNA-蛋白质复合物。诱饵是使用五种生物分子预测器生成的：AlphaFold 3、ESMFold2、Protenix、Chai-1和Boltz-2。每个诱饵均使用TM-score、lDDT和RMSD与其实验参考进行评估，并在适用情况下提供全局和局部质量注释。DockQ分数额外表征了RNA-蛋白质界面质量。靶标分组结合了RNA和蛋白质序列关系以支持数据集划分。分析揭示了跨数据集级别的不同质量分布以及预测器之间依赖靶标的差异，每个预测器为一部分靶标贡献了最高TM-score模型。广泛的合并分数分布也与有限的靶标内分数变化共存，特别是对于RNA-蛋白质复合物，强调了靶标级别表征的重要性。通过结合AI生成的诱饵、标准化质量标签和结构化元数据，RNA3D-Decoy为开发和评估全局质量估计、局部误差预测和候选模型排名方法提供了资源。数据集及附带代码可在以下网址获取：https://github.com/HamiltonChenLab/RNA3D-Decoy。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：RNA3D-Decoy: A Large-Scale Benchmark Dataset of AI-Generated RNA Structure Models for Quality Assessment</li>
+<li><strong>作者</strong>：Chen X; Yadi H; Cao R; Liu H</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：数据集/基准（Dataset &amp; Benchmark）</li>
+<li><strong>领域</strong>：RNA 结构预测、结构质量评估（QA）、AI 生成模型评估</li>
+<li><strong>关键词</strong>：RNA 结构预测、质量评估、decoy 数据集、AlphaFold 3、ESMFold2、Protenix、Chai-1、Boltz-2、TM-score、lDDT、RMSD、DockQ</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.10.07.757332</li>
+<li><strong>代码</strong>：https://github.com/HamiltonChenLab/RNA3D-Decoy</li>
+<li><strong>数据</strong>：https://github.com/HamiltonChenLab/RNA3D-Decoy</li>
+<li><strong>阅读日期</strong>：2026-10-08（预印本发布日）</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质/RNA 结构相关计算研究 × AI 方法」中的<strong>结构预测后处理与质量评估（QA）</strong>环节。它不提出新的预测或采样方法，而是提供一个<strong>标准化的 decoy 数据集</strong>，用于训练和评估全局质量估计、局部误差预测、候选模型排序等 QA 方法。该数据集覆盖多种 AI 预测器（AF3、ESMFold2、Protenix、Chai-1、Boltz-2）和多种分子环境（RNA-only、RNA-金属离子、RNA-蛋白复合物），可作为本课题中 QA 方法开发与验证的基准资源。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>为解决 AI RNA 结构预测模型质量参差不齐、缺乏统一 QA 基准的问题，作者用五种 AI 预测器对 677 个实验结构生成 103,549 个 decoy，并用 TM-score、lDDT、RMSD、DockQ 标注质量，构建了 RNA3D-Decoy 数据集，发现不同预测器在不同靶标上各有优势、且靶标内分数变化有限，强调靶标级表征对 QA 方法开发的重要性。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：AI RNA 结构预测模型（AF3、ESMFold2、Protenix、Chai-1、Boltz-2）生成的候选模型质量参差不齐，但缺乏一个大规模、覆盖多种预测器和分子环境、带有标准化质量标注的 decoy 数据集，来支撑 QA 方法的开发与评估。</li>
+<li><strong>为什么重要</strong>：QA 方法（全局质量估计、局部误差预测、候选模型排序）是结构预测流程中不可或缺的一环——没有可靠的 QA，用户无法从多个候选模型中选择最接近真实结构的那个。而 QA 方法的训练和评估高度依赖高质量、多样化的 decoy 数据集。</li>
+<li><strong>现有方法为何不足</strong>：现有 RNA decoy 数据集多基于传统物理采样方法（如 Rosetta、MD 模拟）生成，其误差模式与当代 AI 预测器的误差模式差异显著；且缺乏对 RNA-蛋白复合物界面质量、金属离子环境等分子上下文的覆盖；同时缺少统一的靶标分组策略（考虑 RNA 和蛋白序列关系）。</li>
+<li><strong>精确研究问题</strong>：Can a large-scale benchmark dataset of AI-generated RNA decoys, with standardized quality labels and target-level grouping, support the development and evaluation of RNA structure quality assessment methods across diverse molecular contexts?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络为「仅本文框架」——基于本文摘要与引言推断，未做外部文献核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统 RNA 结构预测与 decoy 生成</td>
+<td>Rosetta FARFAR、SimRNA、MD 模拟</td>
+<td>物理合理性高，采样可解释</td>
+<td>计算成本高，误差模式与 AI 预测器不同</td>
+<td>本文不采用此类 decoy</td>
+</tr>
+<tr>
+<td>深度学习 RNA 结构预测</td>
+<td>AlphaFold 3、ESMFold2、Protenix、Chai-1、Boltz-2</td>
+<td>预测速度快，精度显著提升</td>
+<td>误差模式多样且不可预测，缺乏统一 QA 基准</td>
+<td>本文使用这五种预测器生成 decoy</td>
+</tr>
+<tr>
+<td>蛋白质 QA 基准（如 CASP）</td>
+<td>基于蛋白质 decoy 的 QA 评估</td>
+<td>方法成熟，指标标准化</td>
+<td>不直接适用于 RNA，且未覆盖 RNA-蛋白复合物</td>
+<td>本文借鉴其指标（TM-score、lDDT、RMSD）但针对 RNA 定制</td>
+</tr>
+<tr>
+<td>RNA 专用 QA 数据集</td>
+<td>早期 RNA decoy 集（规模小、覆盖窄）</td>
+<td>提供初步基准</td>
+<td>规模小、预测器覆盖少、缺乏靶标级分组</td>
+<td>本文提出大规模、多预测器、多分子环境的 RNA3D-Decoy</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：填补「AI 生成的 RNA decoy + 标准化质量标注 + 靶标级分组」这一空白，为 QA 方法提供当代、大规模、多样化的训练与评估资源。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI 预测器输出质量参差不齐</td>
+<td>不同预测器在不同靶标上表现差异显著，每个预测器都只在部分靶标上产生最高 TM-score 模型</td>
+<td>各预测器的训练数据、架构、误差模式不同</td>
+<td>摘要：「each predictor contributing the highest-TM-score model for a subset of targets」</td>
+</tr>
+<tr>
+<td>缺乏覆盖当代 AI 误差模式的 decoy 数据集</td>
+<td>现有 RNA decoy 多来自传统物理采样，与 AI 预测器误差模式不匹配</td>
+<td>传统采样与 AI 预测的误差分布不同</td>
+<td>摘要：「requires datasets that represent contemporary prediction errors」</td>
+</tr>
+<tr>
+<td>靶标内分数变化有限</td>
+<td>同一靶标内多个 decoy 的分数差异小，尤其 RNA-蛋白复合物</td>
+<td>预测器对同一靶标的输出趋于相似，或 QA 指标对微小结构差异不敏感</td>
+<td>摘要：「limited within-target score variation, particularly for RNA-protein complexes」</td>
+</tr>
+<tr>
+<td>缺乏靶标级分组策略</td>
+<td>简单随机划分训练/测试集可能导致数据泄漏</td>
+<td>RNA 和蛋白序列关系未纳入分组考虑</td>
+<td>摘要：「Target grouping incorporates both RNA and protein sequence relationships」</td>
+</tr>
+<tr>
+<td>RNA-蛋白复合物界面质量缺乏标注</td>
+<td>全局质量指标无法反映界面质量</td>
+<td>界面质量需要专用指标（DockQ）</td>
+<td>摘要：「DockQ scores additionally characterize RNA-protein interface quality」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>构建一个大规模 RNA decoy 数据集：用五种 AI 预测器（AF3、ESMFold2、Protenix、Chai-1、Boltz-2）对 677 个实验结构生成 103,549 个 decoy，用 TM-score、lDDT、RMSD 标注全局质量，DockQ 标注 RNA-蛋白界面质量，并按 RNA 和蛋白序列关系进行靶标分组。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>当代 AI 预测器的误差模式是多样且靶标依赖的</strong>：没有单一预测器在所有靶标上最优，因此 QA 方法必须能够处理来自不同预测器的、误差模式各异的候选模型。</li>
+<li><strong>靶标级分析比全局池化分析更重要</strong>：虽然全局分数分布很宽，但同一靶标内的分数变化有限（尤其 RNA-蛋白复合物），这意味着 QA 方法需要在靶标级别进行校准和评估，而非仅依赖全局统计。</li>
+<li><strong>多分子环境覆盖是必要的</strong>：RNA-only、RNA-金属离子、RNA-蛋白复合物三种环境下的预测误差模式可能不同，QA 方法需要针对这些差异进行专门训练或适配。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>数据集构建应反映「当代方法」的误差模式</strong>：任何 QA 或后处理方法的数据集都应定期更新，以匹配当前预测器的能力与缺陷。</li>
+<li><strong>靶标级分组与评估是避免数据泄漏和过度乐观评估的关键</strong>：这在蛋白质结构预测领域已有共识（如 CASP 的靶标分组），本文将其系统化应用于 RNA。</li>
+<li><strong>多指标标注（全局 + 局部 + 界面）能支撑更丰富的 QA 任务</strong>：单一全局分数不足以刻画结构质量的全部维度。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：677 个实验确定的 RNA 结构（416 个 RNA-only、117 个含金属离子、144 个 RNA-蛋白复合物）</li>
+<li><strong>输出</strong>：103,549 个 decoy 结构，每个带有全局质量标注（TM-score、lDDT、RMSD）、局部质量标注（适用时）、界面质量标注（DockQ，仅复合物）、靶标分组信息</li>
+<li><strong>模块</strong>：
+  1. 靶标收集与分类（RNA-only / RNA-金属离子 / RNA-蛋白复合物）
+  2. Decoy 生成（五种 AI 预测器：AF3、ESMFold2、Protenix、Chai-1、Boltz-2）
+  3. 质量标注（TM-score、lDDT、RMSD、DockQ）
+  4. 靶标分组（基于 RNA 和蛋白序列关系）
+  5. 数据分布分析（全局 vs 靶标内分数分布、预测器间比较）</li>
+<li><strong>训练</strong>：本文不涉及模型训练，仅提供数据集</li>
+<li><strong>工具</strong>：未提供具体工具链（如结构比对工具版本）</li>
+<li><strong>反馈回路</strong>：不适用（静态数据集）</li>
+<li><strong>假设</strong>：</li>
+<li>实验结构可作为 ground truth</li>
+<li>TM-score、lDDT、RMSD、DockQ 能有效刻画 RNA 结构质量</li>
+<li>五种预测器覆盖了当代 AI RNA 结构预测的主要误差模式</li>
+</ul>
+<p><strong>文字流程</strong>：收集实验 RNA 结构 → 按分子环境分类 → 用五种 AI 预测器分别生成 decoy → 将每个 decoy 与实验参考结构比对，计算 TM-score、lDDT、RMSD（复合物额外计算 DockQ）→ 按 RNA 和蛋白序列关系对靶标分组 → 分析分数分布（全局 vs 靶标内、预测器间差异）→ 发布数据集与代码。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>靶标收集与分类</td>
+<td>收集 677 个实验结构并按分子环境分类</td>
+<td>覆盖不同分子上下文，确保数据集多样性</td>
+<td>输入：PDB/实验结构；输出：分类后的靶标列表</td>
+<td>摘要：「416 RNA-only, 117 with metal ions, 144 RNA-protein complexes」</td>
+<td>移除后数据集缺乏多样性，QA 方法无法泛化到特定分子环境</td>
+</tr>
+<tr>
+<td>Decoy 生成（五种预测器）</td>
+<td>用 AF3、ESMFold2、Protenix、Chai-1、Boltz-2 生成候选模型</td>
+<td>覆盖当代 AI 预测器的误差模式</td>
+<td>输入：靶标序列/结构；输出：103,549 个 decoy</td>
+<td>摘要：「Decoys were generated using five biomolecular predictors」</td>
+<td>移除后数据集无法代表当代 AI 预测误差，QA 方法训练效果受限</td>
+</tr>
+<tr>
+<td>质量标注</td>
+<td>计算 TM-score、lDDT、RMSD、DockQ</td>
+<td>提供标准化质量标签，支撑 QA 方法训练与评估</td>
+<td>输入：decoy + 实验参考；输出：全局/局部/界面质量分数</td>
+<td>摘要：「Each decoy is evaluated against its experimental reference」</td>
+<td>移除后数据集无法用于监督学习或基准评估</td>
+</tr>
+<tr>
+<td>靶标分组</td>
+<td>基于 RNA 和蛋白序列关系划分靶标</td>
+<td>避免数据泄漏，支持合理的训练/测试划分</td>
+<td>输入：序列信息；输出：分组标签</td>
+<td>摘要：「Target grouping incorporates both RNA and protein sequence relationships」</td>
+<td>移除后可能导致数据泄漏，QA 评估结果过于乐观</td>
+</tr>
+<tr>
+<td>数据分布分析</td>
+<td>分析全局 vs 靶标内分数分布、预测器间差异</td>
+<td>揭示数据集特性，指导 QA 方法设计</td>
+<td>输入：质量分数；输出：统计分析结果</td>
+<td>摘要：「Broad pooled score distributions...limited within-target score variation」</td>
+<td>移除后用户无法了解数据集特性，可能误用</td>
+</tr>
+</tbody>
+</table>
+<p><strong>消融效应说明</strong>：本文为数据集论文，未做模块消融实验。上述「移除后影响」为 [Analysis] 推断，非实测。</p>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>本文为数据集论文，摘要中未提供具体公式。涉及的指标（TM-score、lDDT、RMSD、DockQ）均为已有标准指标，其公式定义在各自原始文献中，本文未重新定义。</p>
+<p><strong>不适用</strong>（摘要中无公式）。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<h3>数据集与评测设置</h3>
+<ul>
+<li><strong>数据集规模</strong>：677 个实验靶标，103,549 个 decoy</li>
+<li><strong>靶标构成</strong>：416 RNA-only、117 RNA-金属离子、144 RNA-蛋白复合物</li>
+<li><strong>预测器</strong>：AlphaFold 3、ESMFold2、Protenix、Chai-1、Boltz-2（共 5 种）</li>
+<li><strong>质量指标</strong>：TM-score、lDDT、RMSD（全局）；DockQ（RNA-蛋白界面）</li>
+<li><strong>分组策略</strong>：基于 RNA 和蛋白序列关系</li>
+<li><strong>评测协议</strong>：未提供（数据集论文，未定义具体 QA 任务评测协议）</li>
+</ul>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据集规模统计</td>
+<td>数据集是大规模的</td>
+<td>677 靶标、103,549 decoy</td>
+<td>达到十万级 decoy</td>
+<td>数据集规模足够支撑 QA 方法训练</td>
+<td>未证明该规模是最优或充分的</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>预测器间比较</td>
+<td>不同预测器在不同靶标上各有优势</td>
+<td>五种预测器在 677 个靶标上的 TM-score 分布</td>
+<td>每个预测器都在部分靶标上产生最高 TM-score 模型</td>
+<td>无单一预测器全面最优，QA 方法需处理多预测器输出</td>
+<td>未量化各预测器的优势靶标比例</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>全局 vs 靶标内分数分布</td>
+<td>靶标内分数变化有限</td>
+<td>全局池化分布 vs 靶标内分布</td>
+<td>全局分布宽，靶标内变化有限（尤其 RNA-蛋白复合物）</td>
+<td>QA 方法需靶标级校准</td>
+<td>未提供具体数值或统计检验</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>分子环境间比较</td>
+<td>不同分子环境误差模式不同</td>
+<td>RNA-only vs RNA-金属离子 vs RNA-蛋白复合物</td>
+<td>未提供具体对比结果</td>
+<td>数据集覆盖多种分子环境</td>
+<td>未证明各环境间误差模式存在显著差异</td>
+<td>摘要（仅提及覆盖）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注</strong>：本文为数据集论文，未提供具体数值表格或统计检验结果。上述「结果」列基于摘要定性描述。</p>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅提供数据集，不提出新的 QA 方法。其结论限于「数据集可用于 QA 方法开发与评估」。</li>
+<li><strong>oracle/真值输入</strong>：实验确定的 RNA 结构作为 ground truth。假设实验结构是准确的（未讨论实验结构本身的不确定性）。</li>
+<li><strong>端到端状态</strong>：非端到端。数据集是中间资源，QA 方法需另行开发。</li>
+<li><strong>算力成本</strong>：未提供生成 decoy 的计算成本。</li>
+<li><strong>历史数据依赖</strong>：数据集基于当前五种 AI 预测器（2026 年时点），未来预测器更新后可能需要扩充。</li>
+<li><strong>模型依赖</strong>：decoy 质量分布依赖于所选五种预测器的能力；更换预测器集合会改变数据集特性。</li>
+<li><strong>最难情形</strong>：RNA-蛋白复合物（靶标内分数变化有限，QA 区分度低）；含金属离子的 RNA（可能引入额外的构象复杂性）。</li>
+<li><strong>不确定性</strong>：未提供 decoy 生成的具体参数、预测器版本、结构比对工具版本等细节。</li>
+<li><strong>群体/领域边界</strong>：数据集仅覆盖 RNA 相关结构，不适用于蛋白质-only 结构 QA；且仅覆盖五种 AI 预测器，不包含传统物理采样 decoy。</li>
+</ul>
+<p><strong>有边界的复述</strong>：RNA3D-Decoy 是一个包含 103,549 个 AI 生成 RNA decoy、覆盖 677 个实验靶标和三种分子环境的数据集，可用于训练和评估 RNA 结构 QA 方法；其 decoy 质量分布显示预测器间存在靶标依赖性差异，且靶标内分数变化有限，提示 QA 方法需在靶标级别进行校准。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中，作者未明确列出局限性。摘要中未出现「limitation」「caveat」「future work」等表述。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 数据集仅覆盖五种 AI 预测器（AF3、ESMFold2、Protenix、Chai-1、Boltz-2），未包含其他预测器或传统物理采样方法。
+- 靶标内分数变化有限（尤其 RNA-蛋白复合物），可能限制 QA 方法在靶标内的区分能力。
+- 数据集基于 2026 年时点的预测器能力，未来预测器更新后可能需要扩充。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据集仅覆盖五种 AI 预测器</td>
+<td>可能未覆盖所有主流 RNA 预测器（如 RoseTTAFold2NA、DeepFoldRNA 等）</td>
+<td>若 QA 方法仅在此数据集上训练，可能无法泛化到其他预测器的输出</td>
+<td>对比其他预测器生成的 decoy 在此数据集上的分布</td>
+<td>摘要仅提及五种预测器</td>
+</tr>
+<tr>
+<td>靶标内分数变化有限</td>
+<td>可能是预测器对同一靶标的输出趋于相似，也可能是 QA 指标（TM-score 等）对微小结构差异不敏感</td>
+<td>若指标不敏感，QA 方法无法区分同一靶标内的候选模型</td>
+<td>使用更细粒度的结构比对指标（如 GDT-TS、CAD-score）重新分析靶标内分数分布</td>
+<td>摘要：「limited within-target score variation」</td>
+</tr>
+<tr>
+<td>实验结构作为 ground truth 的准确性未讨论</td>
+<td>实验结构本身可能有误差（如分辨率限制、构象异质性）</td>
+<td>若 ground truth 有误，QA 标注的可靠性受影响</td>
+<td>检查实验结构的分辨率分布，排除低分辨率结构</td>
+<td>摘要未提及实验结构质量筛选</td>
+</tr>
+<tr>
+<td>靶标分组策略的具体实现未说明</td>
+<td>序列相似性阈值、聚类算法等细节缺失</td>
+<td>分组策略直接影响数据泄漏风险</td>
+<td>复现分组流程，测试不同阈值下的数据泄漏程度</td>
+<td>摘要仅提及「incorporates both RNA and protein sequence relationships」</td>
+</tr>
+<tr>
+<td>未提供 decoy 生成的具体参数</td>
+<td>各预测器的运行参数（如采样次数、随机种子）可能影响 decoy 多样性</td>
+<td>参数不透明导致数据集不可完全复现</td>
+<td>联系作者获取完整配置</td>
+<td>摘要未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li><strong>多预测器 decoy 集合的构建范式</strong>：用多种当代 AI 预测器对同一靶标生成 decoy，可系统性地覆盖不同误差模式。此思路可迁移到蛋白质结构 QA 数据集构建，或用于评估蛋白质-蛋白质/蛋白质-RNA 复合物预测器的多样性。</li>
+<li><strong>靶标级分组策略</strong>：基于序列关系（RNA 和蛋白）进行靶标分组，避免数据泄漏。此策略可直接迁移到蛋白质结构预测基准的划分（如按序列相似性聚类），也可用于 MD 模拟轨迹的构象聚类分组。</li>
+<li><strong>多指标标注体系</strong>：全局（TM-score、lDDT、RMSD）+ 界面（DockQ）的多层次标注，可支撑不同粒度的 QA 任务。迁移到蛋白质复合物 QA 时，可增加接触面残基级别的局部误差标注。</li>
+<li><strong>靶标内 vs 全局分数分布分析</strong>：区分「全局分数分布」与「靶标内分数变化」是评估 QA 方法区分度的关键。此分析框架可迁移到任何结构预测基准的评估协议中。</li>
+<li><strong>预测器-靶标交互分析</strong>：识别每个预测器在哪些靶标上表现最优，可指导 QA 方法的「预测器感知」设计（如根据输入序列特征预测哪个预测器更可靠）。此思路可迁移到蛋白质结构预测的集成策略中。</li>
+<li><strong>数据集发布规范</strong>：提供标准化质量标签 + 结构化元数据（分子环境、序列关系）+ 代码，是构建可复现基准的良好实践，可迁移到本课题其他数据集构建。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>CASP 基准</strong>：CASP（蛋白质结构预测关键评估）系列建立了蛋白质 QA 评估的标准协议，本文借鉴其指标（TM-score、lDDT）但针对 RNA 定制，并扩展了 RNA-蛋白复合物界面评估（DockQ）。[外部知识，非本文引用]</li>
+<li><strong>AlphaFold 3 / ESMFold2 / Protenix / Chai-1 / Boltz-2</strong>：这些是本文使用的五种预测器，均为当代 AI 结构预测模型。其中 AF3 支持 RNA 和蛋白-核酸复合物预测，ESMFold2 为 ESMFold 的 RNA 版本，Protenix 和 Chai-1 为开源结构预测模型，Boltz-2 为玻尔兹曼生成模型。[外部知识，非本文引用]</li>
+<li><strong>RNA-Puzzles</strong>：RNA 结构预测的社区基准，其评估协议与本文的 QA 标注有相似之处，但本文聚焦于 AI 生成 decoy 的 QA 数据集构建。[外部知识，非本文引用]</li>
+<li><strong>DockQ</strong>：蛋白质-蛋白质/核酸复合物界面质量评估的标准指标，本文将其用于 RNA-蛋白复合物界面质量标注。[外部知识，非本文引用]</li>
+<li><strong>候选模型排序（Model Ranking）</strong>：本文数据集可支撑「从多个候选模型中选择最优」的任务，这与蛋白质结构预测中的「模型选择」问题直接相关，可迁移到 AlphaFold 多模型输出的排序场景。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：RNA-QA-Bench：基于 RNA3D-Decoy 的 QA 方法系统评估协议
+   - <strong>来源局限/观察</strong>：RNA3D-Decoy 提供了数据集，但未定义标准化的 QA 任务评估协议（如训练/测试划分、评价指标、baseline 方法）。
+   - <strong>核心假设</strong>：在 RNA3D-Decoy 上定义标准 QA 任务（全局质量回归、局部误差预测、候选排序），可系统比较不同 QA 方法的性能。
+   - <strong>初步方法</strong>：基于 RNA3D-Decoy 的靶标分组，设计训练/测试划分；实现若干 baseline（如基于能量的评分、基于深度学习的 QA 模型）；定义评估指标（如 Pearson 相关、AUROC、top-1 选择准确率）。
+   - <strong>验证方式</strong>：在 RNA3D-Decoy 上运行 baseline，报告各方法在全局/局部/界面 QA 任务上的性能。
+   - <strong>创新状态</strong>：unverified（数据集已存在，但评估协议需自行设计）</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Cross-Predictor QA Generalization：跨预测器的 QA 方法泛化研究
+   - <strong>来源局限/观察</strong>：RNA3D-Decoy 包含五种预测器的 decoy，但未分析 QA 方法在「训练时未见过的预测器」上的泛化能力。
+   - <strong>核心假设</strong>：QA 方法在一种预测器的 decoy 上训练后，对另一种预测器的 decoy 评估时性能会下降；下降程度与预测器间误差模式差异相关。
+   - <strong>初步方法</strong>：留一预测器交叉验证（leave-one-predictor-out），训练 QA 模型并在未见过的预测器 decoy 上评估。
+   - <strong>验证方式</strong>：比较留一预测器验证与全预测器训练的性能差异，量化泛化损失。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Target-Aware QA Calibration：靶标级校准的 QA 方法
+   - <strong>来源局限/观察</strong>：RNA3D-Decoy 显示靶标内分数变化有限，提示 QA 方法需靶标级校准，但现有 QA 方法多为全局模型。
+   - <strong>核心假设</strong>：引入靶标级特征（如序列长度、GC 含量、预测器置信度）进行 QA 校准，可提升靶标内排序准确率。
+   - <strong>初步方法</strong>：在 QA 模型输出上增加靶标级校准层（如温度缩放、靶标特定偏置），或在特征中加入靶标级统计量。
+   - <strong>验证方式</strong>：在 RNA3D-Decoy 上比较校准前后 top-1 选择准确率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：RNA-Protein Interface QA Transfer：从 RNA3D-Decoy 到蛋白质复合物 QA 的迁移
+   - <strong>来源局限/观察</strong>：RNA3D-Decoy 包含 144 个 RNA-蛋白复合物，其 DockQ 标注可支撑界面 QA 研究，但该数据集未提供蛋白质-only 复合物 decoy。
+   - <strong>核心假设</strong>：在 RNA-蛋白复合物上训练的界面 QA 方法可迁移到蛋白质-only 复合物，或至少提供可迁移的特征表示。
+   - <strong>初步方法</strong>：在 RNA3D-Decoy 的复合物子集上训练界面 QA 模型，在蛋白质-only 复合物数据集（如 Dockground）上评估迁移性能。
+   - <strong>验证方式</strong>：比较迁移模型与直接在蛋白质复合物上训练的模型的 DockQ 预测准确率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Decoy Diversity-Aware Sampling：基于 RNA3D-Decoy 的构象采样策略评估
+   - <strong>来源局限/观察</strong>：RNA3D-Decoy 的 decoy 由五种 AI 预测器生成，其多样性可反映 AI 预测器的采样覆盖度，但未与物理采样（如 MD）的多样性对比。
+   - <strong>核心假设</strong>：AI 预测器生成的 decoy 在构象空间中的覆盖度与物理采样不同，QA 方法需适应这种多样性差异。
+   - <strong>初步方法</strong>：对 RNA3D-Decoy 的 decoy 进行构象聚类，计算多样性指标（如平均 pairwise TM-score、聚类数），与 MD 模拟轨迹的多样性对比。
+   - <strong>验证方式</strong>：定量比较 AI decoy 与 MD 采样的构象多样性，分析 QA 方法在两类 decoy 上的性能差异。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no figures, tables, methods text, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present RNA3D-Decoy, a benchmark dataset of 103,549 RNA structure decoys for 677 experimental targets, generated by five AI-based predictors and annotated with multiple quality metrics. They report distinct quality distributions across dataset levels, target-dependent predictor differences, and limited within-target score variation for RNA-protein complexes, and position the resource as suitable for developing and evaluating RNA structure quality assessment methods.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; dataset and code availability statement</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, dataset statistics tables, quality score distribution figures, target selection criteria, predictor version details, train/test split definitions, and any validation or benchmarking results</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially valuable community resource for RNA structure quality assessment. The scale of the dataset and the inclusion of diverse molecular contexts are commendable. However, the abstract alone does not provide sufficient methodological detail to assess the rigor of decoy generation, the validity of the quality annotations, or the practical utility of the dataset for benchmarking. Several claims about quality distributions and predictor behavior are stated without supporting quantitative evidence. The resource may be of interest to the RNA modeling community, but the case for its broad utility is not fully established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers developing or benchmarking RNA structure prediction and quality assessment methods, particularly those working on deep learning-based approaches. The dataset could also be useful for developers of scoring functions, error prediction models, and model ranking algorithms. The inclusion of RNA-protein complexes may attract researchers in structural biology and integrative modeling.</li>
+<li><strong>Major strengths</strong> The dataset is large in scale, covering over one hundred thousand decoys across several hundred targets. The inclusion of RNA-only structures, metal ion-containing RNAs, and RNA-protein complexes addresses a recognized gap in QA benchmark resources. The use of multiple contemporary AI predictors reflects the current state of the field. The provision of multiple quality metrics, including interface-specific DockQ scores, is appropriate for the intended applications.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "Decoys were generated using five biomolecular predictors: AlphaFold 3, ESMFold2, Protenix, Chai-1, and Boltz-2."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not specify the version, release date, or configuration of each predictor used. It is also unclear whether default settings were used, whether any post-processing or filtering was applied to the raw outputs, and how the decoys were selected or sampled from the predictor outputs. Without this information, the reproducibility of the decoy generation pipeline cannot be assessed.</li>
+<li><strong>Why it matters</strong> Predictor versions and settings materially affect output quality. If the versions are not pinned or the generation protocol is not fully described, users cannot interpret the quality distributions or compare against future predictors. The dataset's utility as a benchmark depends on the decoys being generated under well-defined, reproducible conditions.</li>
+<li><strong>Resolution test</strong> Provide a detailed methods section specifying predictor versions, runtime environments, input preparation, any filtering or selection steps, and the exact number of decoys contributed by each predictor per target.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "Each decoy is evaluated against its experimental reference using TM-score, lDDT, and RMSD, with global and local quality annotations where applicable."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe how the experimental reference structures were obtained, curated, or validated. It is also unclear which software or implementation was used to compute TM-score, lDDT, and RMSD, and whether local quality annotations are per-residue or per-nucleotide. The phrase "where applicable" is ambiguous and could mask inconsistent annotation coverage across the dataset.</li>
+<li><strong>Why it matters</strong> Quality scores are only meaningful if the reference structures are reliable and the metric implementations are standard and consistent. Inconsistent or undocumented annotation protocols could lead to systematic biases that propagate into any downstream QA method trained or evaluated on this dataset.</li>
+<li><strong>Resolution test</strong> Describe the source and curation of experimental references, specify the exact software and parameters for each metric, and report the fraction of decoys with local annotations and the definition of those annotations.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> "Broad pooled score distributions also coexist with limited within-target score variation, particularly for RNA-protein complexes, emphasizing the importance of target-level characterization."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> This is a central analytical claim, but no quantitative support is provided. The abstract does not report any statistics, such as variance components, interquartile ranges, or correlation coefficients, that would substantiate the coexistence of broad pooled distributions and limited within-target variation. The claim is presented as a finding but functions as an assertion.</li>
+<li><strong>Why it matters</strong> If within-target variation is indeed limited, this has direct implications for how the dataset should be split and how QA methods should be evaluated. However, without supporting numbers, readers cannot judge the magnitude of the effect or whether it is specific to certain target classes or predictors.</li>
+<li><strong>Resolution test</strong> Provide quantitative evidence, such as variance decomposition, per-target score ranges, or representative examples, that demonstrates the claimed distributional properties.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interdisciplinary readership</li>
+<li><strong>Claim pointer</strong> "RNA3D-Decoy provides a resource for developing and evaluating methods for global quality estimation, local error prediction, and candidate-model ranking."</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe any baseline experiments, example use cases, or comparisons against existing QA benchmarks. It is therefore unclear whether the dataset is immediately usable, whether it offers advantages over existing resources, or whether the quality labels are sufficiently discriminative for the proposed tasks.</li>
+<li><strong>Why it matters</strong> A benchmark dataset is most valuable when its properties are characterized in the context of existing methods. Without any demonstration of how the dataset performs in a realistic QA evaluation scenario, potential users cannot assess its practical utility or its added value relative to current resources.</li>
+<li><strong>Resolution test</strong> Include a small set of baseline QA experiments, such as ranking performance or error prediction accuracy, using the dataset and compare against existing benchmarks.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Abstract text</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract uses several acronyms without definition, including QA, TM-score, lDDT, RMSD, and DockQ. While these are standard in the structural biology community, the abstract may be read by a broader audience.</li>
+<li><strong>Required correction</strong> Define each acronym at first use, or add a brief parenthetical explanation.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Dataset composition</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract states that targets include 416 RNA-only structures, 117 RNA structures with metal ions, and 144 RNA-protein complexes. These numbers sum to 677, which is consistent, but it is unclear whether the categories are mutually exclusive and whether the metal ion category is a subset of the RNA-only category.</li>
+<li><strong>Required correction</strong> Clarify the relationship between the categories and confirm that the counts are mutually exclusive.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Target grouping</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Claim pointer</strong> "Target grouping incorporates both RNA and protein sequence relationships to support dataset partitioning."</li>
+<li><strong>Issue</strong> The abstract does not specify the sequence identity thresholds or clustering method used for grouping. This information is essential for users who wish to create non-redundant splits.</li>
+<li><strong>Required correction</strong> Report the clustering method and thresholds in the methods section.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Abstract text</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The phrase "AI- RNA structure prediction" contains a formatting artifact that may confuse readers.</li>
+<li><strong>Required correction</strong> Correct the spacing to "AI-based RNA structure prediction" or similar.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The decoy generation protocol, quality metric computation, and the central distributional claim all require additional detail and quantitative support before the dataset can be considered a reliable benchmark resource.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The dataset addresses a timely need and the combination of multiple predictors and target types is a useful contribution, though the concept of decoy benchmarks is not new. Scientific importance: Potentially high for the RNA modeling community, but the abstract does not yet demonstrate impact through baseline evaluations or comparisons. Interdisciplinary readership: The resource may appeal to structural biologists, computational biologists, and machine learning researchers, but the abstract is written primarily for specialists. Technical soundness: Not yet established from the abstract alone; key methodological details are missing. Readability for nonspecialists: The abstract is concise but relies on field-specific terminology without definition.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The dataset has clear potential, but the abstract does not provide sufficient methodological detail or quantitative support to validate the central claims. A revised manuscript with full methods, dataset statistics, and baseline experiments would be needed to assess the resource properly.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that "each predictor contributing the highest-TM-score model for a subset of targets" is stated without any supporting numbers or analysis.</li>
+<li>The claim of "distinct quality distributions across dataset levels" is not supported by any reported statistics.</li>
+<li>The claim of "limited within-target score variation, particularly for RNA-protein complexes" is not supported by quantitative evidence.</li>
+<li>The overall utility of the dataset for QA method development is asserted but not demonstrated through any example application or benchmark comparison.</li>
+<li>The reproducibility of the decoy generation pipeline cannot be assessed due to missing predictor version and configuration details.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

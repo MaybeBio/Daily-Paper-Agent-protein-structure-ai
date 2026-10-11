@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no evaluation of methods, figures, or statistical analyses
+- **Shared manuscript claim summary** The authors report a cryo-EM structure of the NPC1-NPC2 complex at lysosomal pH with a bis-sterol ligand, showing an expanded neck conformation with no sterol in the central tunnel. They propose that cholesterol occupancy, not pH, controls tunnel contraction, and integrate structures with MD simulations to propose a substrate-induced gating cycle resembling alternating access.
+- **Visible evidence base** Abstract text only; no figures, methods, or supplementary materials provided
+- **Missing materials affecting confidence** Full methods, structural statistics, MD simulation parameters, validation metrics, and all figures/tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially significant structural finding and a conceptual model for NPC1-mediated cholesterol transport. The claim that cholesterol occupancy rather than pH governs tunnel conformation is testable and interesting. However, the evidence base visible here is insufficient to evaluate the rigor of the structural assignments, the MD simulation methodology, or the strength of the proposed gating model. The conceptual leap from static structures and simulations to a full alternating access mechanism requires more direct experimental support than is visible in the abstract.
+- **Who would be interested in the results, and why** Structural biologists studying membrane proteins and transport mechanisms; researchers in the lysosomal storage disease field, particularly those working on Niemann-Pick disease type C; computational biologists interested in lipid transport simulations; and pharmaceutical scientists targeting NPC1 for therapeutic intervention.
+- **Major strengths** The work addresses a long-standing mechanistic gap in NPC1-mediated cholesterol transport. The use of a bis-sterol ligand to stabilize a functional complex is an innovative approach. The proposal that substrate occupancy rather than pH controls conformational state is a clear, falsifiable hypothesis. The integration of structural and computational approaches is appropriate for the question.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that cholesterol occupancy in the neck site is a key determinant of tunnel contraction
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract states that NPC1 purified from cholesterol-auxotrophic insect cells exhibits an expanded neck conformation, which is used to support the occupancy model. However, the abstract does not report whether this expanded conformation was observed in the presence or absence of the bis-sterol ligand, nor does it describe any direct manipulation of cholesterol occupancy to demonstrate causality. The comparison between the ligand-bound complex and the cholesterol-depleted protein is suggestive but does not establish that occupancy is the causal determinant.
+  - **Why it matters** The central mechanistic claim of the paper rests on this causal relationship. Without direct evidence that varying cholesterol occupancy alone produces the observed conformational change, the conclusion is correlative rather than causal.
+  - **Resolution test** Provide experiments where cholesterol occupancy is varied independently of pH and ligand presence, with clear structural readouts. Alternatively, show that the expanded conformation is reversed upon cholesterol addition to the purified protein.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Model overreach
+  - **Claim pointer** The proposal of a substrate-induced gating cycle with coordinated switching of luminal and membrane-facing openings, described as reminiscent of alternating access
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract presents a small number of static structures and MD simulations as the basis for a full transport cycle model. Alternating access mechanisms in transporters are typically supported by multiple conformational states captured along the transport pathway, often with functional validation. The abstract does not describe how many distinct states were observed, whether the proposed intermediate states were directly visualized, or whether the MD simulations sampled transitions between these states rather than merely exploring local fluctuations.
+  - **Why it matters** The alternating access model is a strong mechanistic claim that requires evidence of coordinated conformational changes, not just the observation of two or three static states. Overinterpretation of limited structural data could mislead the field.
+  - **Resolution test** Show that MD simulations capture spontaneous transitions between the proposed states, or provide additional structures representing intermediate conformations. Functional validation, such as mutagenesis of residues predicted to be critical for the gating transition, would strengthen the model.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical validation
+  - **Claim pointer** The structural characterization of the NPC1-NPC2 complex with the bis-sterol ligand JM046
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not report any structural validation metrics, such as resolution, map quality, or model refinement statistics. For a cryo-EM structure, these are essential for assessing whether the observed conformational differences are meaningful or could arise from model bias or limited resolution.
+  - **Why it matters** The conclusions depend on subtle conformational differences, particularly the expanded neck architecture. Without resolution information, it is impossible to determine whether the observed differences are statistically significant or within the noise of the density map.
+  - **Resolution test** Report resolution, local resolution estimates, and validation statistics for all structures. If the neck region is flexible, discuss how this was handled in model building and interpretation.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The phrase "lumen-to-membrane alternating access model" in the title is not clearly defined in the abstract. The abstract describes coordinated switching of openings but does not explain how this differs from or relates to canonical alternating access in secondary transporters.
+  - **Required correction** Define the proposed model more explicitly in the abstract, including how the NPC1 mechanism compares to and differs from classical alternating access.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Pathogenic variant mapping
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract states that the framework "may be used to map pathogenic NPC variants to their relevant transport steps" but provides no example or preliminary analysis showing this is feasible.
+  - **Required correction** Either remove this claim or provide a brief example of how a known pathogenic variant maps to a specific transport step in the proposed cycle.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Methodological transparency
+  - **Affected element** MD simulation description
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract mentions MD simulations exploring "directional cholesterol handoff" but does not specify the simulation timescale, force field, or whether the simulations were validated against experimental data.
+  - **Required correction** Provide key simulation parameters in the abstract or indicate where they are described in the full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 as described above. The causal claim regarding cholesterol occupancy and the full alternating access model are not established from the visible evidence.
+- **Assessment against Nature-style criteria** Originality is high, as the proposed occupancy-driven gating model is a novel conceptual framework for NPC1. Scientific importance is substantial given the disease relevance and the long-standing mechanistic question. Interdisciplinary readership is plausible, spanning structural biology, membrane transport, computational biology, and clinical genetics. Technical soundness cannot be fully assessed from the abstract alone, but the absence of structural validation metrics is concerning. Readability for nonspecialists is adequate, though the title and abstract use specialized terminology that may limit accessibility.
+- **Recommendation posture** Supportive if technical concerns are resolved. The conceptual model is interesting and the structural approach is appropriate, but the causal claim and the full transport cycle model require stronger evidence than is visible in the abstract.
+
+## Risk / unsupported claims
+- The claim that cholesterol occupancy is a key determinant of tunnel contraction is not established as causal from the visible evidence.
+- The full alternating access model with coordinated switching of luminal and membrane-facing openings is not supported by the visible evidence, which shows only a limited number of states.
+- The statement that the framework can be used to map pathogenic NPC variants to transport steps is speculative without demonstration.
+- The assertion that the tunnel geometry "may not be influenced by pH alone" is presented as a conclusion but the abstract does not describe a systematic pH titration experiment.

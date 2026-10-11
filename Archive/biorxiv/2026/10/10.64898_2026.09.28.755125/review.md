@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present GalaxyMemMD, an open-source Galaxy framework that integrates membrane embedding, system preparation, MD execution, and downstream analysis into a single reproducible pipeline. They claim high-throughput parallel simulation support across multiple membrane compositions and protein variants, compatibility with AlphaFold-derived structures and molecular docking workflows, and validation across six membrane proteins demonstrating consistent system preparation, stable embeddings, and reproducible trajectory-level production.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark details, or methodological descriptions are available
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, benchmark protocols, software documentation, code repository, and any statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially valuable software contribution that addresses a real gap in membrane protein MD simulation workflows. The integration of embedding, simulation, and analysis within a Galaxy framework is a sensible and potentially impactful approach. However, the abstract provides insufficient technical detail and quantitative evidence to evaluate the core claims of reproducibility, scalability, and equivalence to established tools. The validation across six proteins is mentioned but not substantiated with any metrics or comparisons. The manuscript cannot be assessed for technical soundness from the supplied material.
+- **Who would be interested in the results, and why** Computational biophysicists and structural biologists who use MD simulations to study membrane proteins would be the primary audience. Researchers seeking accessible, reproducible, and scalable simulation pipelines, particularly those without extensive HPC expertise, would benefit. The Galaxy community and developers of bioinformatics workflows may also find the integration approach of interest. The potential to incorporate AlphaFold structures and docking workflows broadens appeal to the structural biology community.
+- **Major strengths** The proposed tool addresses a clear and important bottleneck in membrane protein simulation, namely the lack of a complete end-to-end pipeline. The use of Galaxy provides a well-established framework for reproducibility and accessibility. The claimed support for high-throughput parallel simulations across multiple membrane compositions and protein variants is a meaningful capability extension beyond existing preparation-only tools. The integration of modern structure prediction and docking frameworks is forward-looking.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that GalaxyMemMD "matches the setup quality of established tools" and demonstrates "consistent system preparation, stable embeddings, and reproducible trajectory-level production workflow" across six membrane proteins.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states that validation was performed across six proteins and that benchmark analysis shows certain outcomes, but no quantitative data, comparison metrics, or statistical analyses are presented. The claim of matching established tools is made without any comparative results.
+  - **Why it matters** The central value proposition of this work is that GalaxyMemMD is a practical alternative to existing tools. Without quantitative evidence of equivalence or superiority, this claim is unsupported. Similarly, the reproducibility and stability claims require specific metrics such as RMSD, RMSF, lipid bilayer properties, or system preparation validation data.
+  - **Resolution test** Provide benchmark results comparing GalaxyMemMD output to established tools for the same systems, including quantitative metrics for system quality, simulation stability, and reproducibility across replicate runs.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that GalaxyMemMD "integrates every stage membrane embedding, system preparation, MD execution, and downstream analysis into a single reproducible pipeline" and "natively supports high-throughput parallel simulations."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No methodological details are provided regarding how the pipeline handles different membrane compositions, how parallelization is implemented, how reproducibility is ensured, or how the integration with AlphaFold and docking tools is achieved. The abstract mentions these features but does not describe the underlying implementation.
+  - **Why it matters** For a software tool, the technical implementation determines whether the claimed capabilities are actually feasible and whether the tool can be adopted by the community. Without details on architecture, dependencies, supported force fields, membrane builders, or MD engines, the claims cannot be evaluated.
+  - **Resolution test** Provide a detailed description of the pipeline architecture, including supported software packages, input and output formats, parallelization strategy, and the specific mechanisms for ensuring reproducibility.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and availability
+  - **Claim pointer** The authors describe GalaxyMemMD as "fully automated, open-source" and "reproducible."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No information is provided about the software repository, versioning, documentation, or test data availability. The abstract does not indicate where the tool can be accessed or how users can verify the reproducibility claims.
+  - **Why it matters** Reproducibility is a core claim of the work. Without access to the code, installation instructions, and example datasets, the community cannot independently verify the tool's functionality or reproduce the reported results.
+  - **Resolution test** Provide a public repository with versioned code, installation and usage documentation, and example datasets that reproduce the benchmark results described in the manuscript.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "every stage membrane embedding" appears to be missing a comma or conjunction, making the sentence grammatically awkward.
+  - **Required correction** Revise to "every stage, membrane embedding, system preparation, MD execution, and downstream analysis" or similar grammatically correct phrasing.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Protein selection rationale
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that validation was performed on "six structurally diverse membrane proteins four GPCRs, one ion channel, and one beta-barrel" but does not explain why these specific proteins were chosen or whether they represent a sufficient diversity of membrane protein topologies and simulation challenges.
+  - **Required correction** Add a brief justification for the selection of validation systems, including the range of membrane protein classes and simulation conditions covered.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "HPC-ready job scheduling"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "HPC-ready" is vague and could be interpreted in multiple ways. It is unclear whether this refers to specific scheduler support, cloud integration, or other HPC features.
+  - **Required correction** Clarify what "HPC-ready" means in the context of Galaxy's job scheduling, such as support for SLURM, PBS, or other schedulers, and describe any benchmarking of scalability.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative validation data, methodological details, and software availability information means the core claims of the work cannot be assessed from the supplied material.
+- **Assessment against Nature-style criteria** Originality: The concept of an end-to-end Galaxy-based pipeline for membrane protein MD simulation appears novel and addresses a genuine gap. Scientific importance: The work has potential importance for the membrane protein simulation community, but the significance cannot be fully evaluated without evidence of broad applicability and performance. Interdisciplinary readership: The tool could appeal to structural biologists, computational chemists, and bioinformaticians, but the abstract does not clearly articulate the broader impact beyond the immediate community. Technical soundness: Not assessable from the abstract alone; no implementation details or validation data are provided. Readability for nonspecialists: The abstract is generally readable but uses domain-specific terminology without sufficient context for a general scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a potentially valuable tool, but the absence of quantitative results, methodological detail, and software availability prevents assessment of the core claims. The manuscript would need to be reviewed in full with access to benchmark data and code before a supportive recommendation could be considered.
+
+## Risk / unsupported claims
+- The claim that GalaxyMemMD "matches the setup quality of established tools" is unsupported without comparative benchmark data.
+- The claim of "consistent system preparation, stable embeddings, and reproducible trajectory-level production workflow" is unsupported without quantitative metrics.
+- The claim of "high-throughput parallel simulations" is unsupported without scalability benchmarks or implementation details.
+- The claim of "fully automated" and "reproducible" is not verifiable without access to the software repository and documentation.
+- The claim of integration with "AlphaFold-derived structural inputs and downstream molecular docking workflows" is not assessable without technical details on how this integration is implemented.

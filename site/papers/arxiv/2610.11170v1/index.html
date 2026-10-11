@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SACQ: Structured Decoding with Memory-Conditioned Refinement for Long-Horizon Forecasting · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-low">0</span>
+    <div>
+      <h1>SACQ: Structured Decoding with Memory-Conditioned Refinement for Long-Horizon Forecasting</h1>
+      <div class="meta">Guo Cheng; Zhengzhuo Xu; Chenchen Jing; Jingyi Hou</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-08
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.11170v1">原文</a>
+      </div>
+      <p class="one-liner">该文研究长时间序列预测的结构化解码方法，对象为时间序列数据，不涉及蛋白质结构或相关计算建模，与本课题无关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Long-term time series forecasting (LTSF) models predominantly employ patch-based encoders terminated by a flatten readout head that maps the entire encoded historical memory to all future steps through a single shared projection. This implicit coupling of future positions obscures position-specific historical-to-future alignment and amplifies sensitivity to corrupted inputs and extreme supervision noise. We present SACQ, a plug-in structured prediction head that replaces flatten readout while keeping the encoder unchanged. SACQ adopts a two-stage decoding pipeline: it first establishes a coarse patch-grid forecast scaffold, then refines each future position through cross-attention over historical memory and merges the attention-derived correction with the coarse scaffold via a learned per-patch gate. To stabilize optimization under long horizons and noisy labels, we further propose a batch-adaptive scaled log-cosh loss that automatically calibrates robustness to the current residual scale, suppressing outlier gradients while preserving MSE-like sensitivity for typical errors. SACQ attains top-tier test MSE/MAE across PatchTST, DLinear, and patch-Mamba backbones with only modest incremental overhead in parameters and latency. Under inference-time input corruption and training-set label-noise stress tests, SACQ substantially outperforms flatten readouts, with ablation studies validating each architectural component.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">长期时间序列预测（LTSF）模型主要采用基于分块的编码器，其末端连接一个展平读出头，通过单一共享投影将整个编码后的历史记忆映射到所有未来步骤。这种对未来位置的隐式耦合模糊了位置特定的历史到未来的对齐关系，并放大了对损坏输入和极端监督噪声的敏感性。我们提出SACQ，一种即插即用的结构化预测头，在保持编码器不变的同时替代展平读出。SACQ采用两阶段解码流程：首先建立粗粒度分块网格预测框架，然后通过历史记忆上的交叉注意力细化每个未来位置，并利用学习到的逐分块门控将注意力派生的修正与粗框架融合。为在长预测区间和噪声标签下稳定优化，我们进一步提出批量自适应缩放log-cosh损失，该损失自动校准对当前残差尺度的鲁棒性，抑制异常值梯度，同时保留对典型误差的MSE类敏感性。SACQ在PatchTST、DLinear和patch-Mamba骨干网络上达到顶级测试MSE/MAE，且仅需适度的参数和延迟增量开销。在推理时输入损坏和训练集标签噪声压力测试下，SACQ显著优于展平读出，消融研究验证了每个架构组件的有效性。</div>
+  </section>
+  
+  
+  
+</article>
+</main>
+</body>
+</html>

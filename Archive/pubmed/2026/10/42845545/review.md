@@ -1,0 +1,93 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors introduce Pi-Ensemble, a sequence-guided framework that alternates inverse-folding and structure-prediction models to generate interpolated protein conformational ensembles between two anchor states without additional training. They claim the method recovers physically plausible intermediates, captures transition pathways seen in large-scale MD simulations, matches experimental DEER distance distributions, and provides effective starting seeds for parallel MD simulations that improve conformational exploration and accelerate convergence relative to endpoint-only initiation.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark details, or methodological descriptions are available
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, benchmark definitions, MD simulation protocols, DEER data sources, and any statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually appealing approach that leverages existing protein structure prediction tools in a novel alternating scheme to generate conformational ensembles. The idea of using inverse-folding and structure-prediction models iteratively to interpolate between known states is creative and potentially useful for the structural biology community. However, the abstract alone provides insufficient evidence to evaluate the core claims. No quantitative metrics, comparison baselines, or methodological details are presented. The claim of "no additional training" is interesting but requires clarification on how the alternating scheme avoids error accumulation. The reported successes across diverse systems are stated without supporting numbers, making the current evidence base inadequate to assess technical soundness or reproducibility. The potential impact is real if the method performs as described, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational structural biologists studying protein dynamics and conformational transitions would be the primary audience. Researchers using MD simulations for adaptive sampling or enhanced sampling methods would find the proposed seeding strategy relevant. Experimentalists using DEER or other distance-based techniques to probe conformational ensembles might also be interested in a method that generates structures consistent with their data. The approach could appeal to those developing machine learning methods for protein structure and dynamics, as it offers a training-free alternative to existing ensemble generation tools.
+- **Major strengths** The conceptual novelty of alternating inverse-folding and structure-prediction models for conformational interpolation is a clear strength. The claim of avoiding task-specific training, noising inputs, and experimental restraints distinguishes the approach from prior methods. The stated applicability to diverse systems including enzymes, transporters, receptors, and benchmark cases suggests broad utility. The proposed use of generated conformations as MD starting seeds is a practical and potentially impactful application that could lower the barrier to exploring conformational landscapes.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The abstract claims Pi-Ensemble "recovers physically plausible intermediate conformations, captures transition pathways observed in large-scale MD simulations, and generates structures consistent with experimental distance distributions."  
+  - **Evidence pointer** Abstract only; no figures, tables, or quantitative results provided  
+  - **Concern** The abstract states these outcomes without any numerical support. No metrics such as RMSD to reference structures, overlap with MD-derived ensembles, or DEER distance agreement values are given. The diversity of generated ensembles is not quantified. The benchmark systems are named but not described in terms of size, complexity, or expected transition difficulty.  
+  - **Why it matters** Without quantitative evidence, the reader cannot assess whether the method performs meaningfully better than random interpolation or existing approaches. The claims of physical plausibility and pathway capture are qualitative and could be based on favorable visual inspection rather than rigorous comparison.  
+  - **Resolution test** Provide quantitative comparisons against reference MD simulations and experimental data, including error bars and statistical significance. Report ensemble diversity metrics and show that generated intermediates are distinct from endpoints and from each other. Include comparisons to at least one baseline method, such as linear interpolation in structure space or an existing ensemble generation tool.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Methodological clarity  
+  - **Claim pointer** The abstract claims Pi-Ensemble "alternately leverages inverse-folding and structure-prediction models to propose intermediate conformations between known protein states, generating diverse ensembles without additional training."  
+  - **Evidence pointer** Abstract only; methods section not provided  
+  - **Concern** The alternating scheme is described in one sentence. It is unclear how the inverse-folding model generates sequences for intermediate structures, how the structure-prediction model is applied to those sequences, and how convergence or termination is determined. The number of intermediate steps, the criteria for accepting a proposed conformation, and the handling of sequence conservation or mutation effects are not specified. The claim of "no additional training" is plausible but requires confirmation that no fine-tuning or prompt engineering is used.  
+  - **Why it matters** Reproducibility is a core requirement for computational methods. Without methodological detail, other groups cannot implement or test the approach. The novelty claim depends on the specific design of the alternating scheme, which is currently opaque.  
+  - **Resolution test** Provide a detailed methods section describing the exact models used, the sequence generation protocol, the interpolation schedule, and any filtering or selection steps. Include pseudocode or a workflow diagram. Clarify whether any model parameters are adjusted during the process.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Claim support for MD acceleration  
+  - **Claim pointer** The abstract claims Pi-Ensemble-generated conformations "provide effective starting seeds for parallel MD simulations, improving conformational exploration and accelerating convergence relative to simulations initiated only from endpoint structures."  
+  - **Evidence pointer** Abstract only; no simulation details or convergence metrics provided  
+  - **Concern** This is a strong practical claim that requires careful benchmarking. The abstract does not specify which systems were tested, how many independent simulations were run, what metrics defined convergence, or the computational cost comparison. The improvement could be marginal or system-dependent, and the claim as stated implies general applicability.  
+  - **Why it matters** The seeding application is a key selling point for experimentalists and computational researchers who might adopt the method. If the acceleration is modest or inconsistent, the practical value is reduced. The claim also implies a comparison against a standard protocol, which is not described.  
+  - **Resolution test** Report convergence times or sampling efficiency metrics for Pi-Ensemble-seeded simulations versus endpoint-only simulations across multiple systems. Include the number of replicas, total simulation time, and statistical analysis of the differences. Specify the convergence criteria used.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Generalizability  
+  - **Claim pointer** The abstract claims Pi-Ensemble is evaluated "across diverse protein systems, including enzymes, transporters, receptors, and benchmark cases."  
+  - **Evidence pointer** Abstract only; system list not detailed  
+  - **Concern** The diversity claim is stated but not substantiated. The number of systems, their sizes, the types of conformational transitions, and the range of sequence identities between anchor states are not given. It is unclear whether the method works for large multi-domain proteins, membrane proteins, or intrinsically disordered regions.  
+  - **Why it matters** The stated extensibility of the framework depends on demonstrated performance across a broad range of protein classes. If the test set is small or biased toward easy cases, the generalizability claim is weakened.  
+  - **Resolution test** Provide a table listing all test systems with their size, transition type, and source of reference data. Include a discussion of any systems where the method failed or underperformed.  
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Abstract wording  
+  - **Evidence pointer** Abstract, first paragraph  
+  - **Issue** The phrase "sequence-guided structural interpolation" is introduced in the abstract but the term "sequence-guided" is not defined. It is unclear whether this refers to the use of sequence information from the inverse-folding model or something else.  
+  - **Required correction** Define "sequence-guided" explicitly in the abstract or methods, or rephrase to avoid ambiguity.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Reproducibility  
+  - **Affected element** Model specification  
+  - **Evidence pointer** Abstract, second paragraph  
+  - **Issue** The abstract does not name the specific inverse-folding and structure-prediction models used. This information is essential for reproducibility and for situating the work relative to existing tools.  
+  - **Required correction** Name the models in the abstract or methods section.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Comparison to prior work  
+  - **Affected element** Related work context  
+  - **Evidence pointer** Abstract, first paragraph  
+  - **Issue** The abstract lists limitations of prior methods but does not name any specific prior methods. This makes it difficult to assess the claimed novelty and the practical advantages over existing approaches.  
+  - **Required correction** Cite and briefly describe at least two prior methods for ensemble generation in the introduction or abstract.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Terminology  
+  - **Affected element** "Interpolated" definition  
+  - **Evidence pointer** Abstract, title and first paragraph  
+  - **Issue** The term "interpolated" is used in the title and abstract but its precise meaning in this context is not defined. It could refer to geometric interpolation in structure space, sequence interpolation, or something else.  
+  - **Required correction** Define what is being interpolated and how, either in the abstract or methods.  
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative results, methodological detail, and simulation benchmarking means the core claims cannot be evaluated. These are not minor omissions but fundamental gaps in the evidence base.
+- **Assessment against Nature-style criteria**  
+  - Originality: The alternating inverse-folding and structure-prediction scheme appears conceptually novel, but the abstract does not provide enough detail to distinguish it clearly from existing iterative or sampling-based approaches. The originality claim is plausible but not fully established.  
+  - Scientific importance: If the method works as described, it could provide a low-cost route to conformational ensembles, which would be valuable for understanding protein function and guiding experiments. The importance is potentially high, but the evidence does not yet demonstrate the impact.  
+  - Interdisciplinary readership: The method bridges machine learning, structural biology, and biophysics. The abstract is written accessibly for a broad audience, but the lack of quantitative results limits its appeal to specialists who would want to assess technical rigor.  
+  - Technical soundness: Cannot be assessed from the abstract. The absence of methodological detail and quantitative validation is a critical gap.  
+  - Readability for nonspecialists: The abstract is clear and well-structured, with jargon kept to a minimum. The conceptual description is accessible, though the term "sequence-guided" could be clarified.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual idea is promising and the writing is clear, but the abstract alone does not provide sufficient quantitative or methodological support for the core claims. A full manuscript with detailed methods, benchmark results, and statistical analyses would be required to assess whether the method performs as claimed. I would be supportive if the technical concerns are resolved in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that Pi-Ensemble "recovers physically plausible intermediate conformations" is unsupported without quantitative comparison to reference structures or experimental data.
+- The claim that Pi-Ensemble "captures transition pathways observed in large-scale MD simulations" is unsupported without pathway overlap metrics or trajectory analysis.
+- The claim that Pi-Ensemble "generates structures consistent with experimental distance distributions" is unsupported without specific DEER data and agreement statistics.
+- The claim that Pi-Ensemble-generated conformations "improve conformational exploration and accelerate convergence" is unsupported without simulation details and convergence metrics.
+- The claim of "no additional training" is unverifiable without a description of the exact models and any potential fine-tuning or prompt engineering.
+- The generalizability claim across "diverse protein systems" is unverifiable without a list of test systems and their characteristics.

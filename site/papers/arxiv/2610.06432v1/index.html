@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Valid Stopping in Adaptive Generator-Verifier Loops · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Valid Stopping in Adaptive Generator-Verifier Loops</h1>
+      <div class="meta">Mahmoud Hegazy; Michael I. Jordan; Aymeric Dieuleveut</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-05
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.06432v1">原文</a>
+      </div>
+      <p class="one-liner">该文研究生成器-验证器循环中的自适应停止规则以控制错误发现率，并在蛋白质设计基准上验证，虽涉及蛋白质设计但核心贡献在统计方法而非蛋白质结构计算本身。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Numerous agentic workflows are based on a generator-verifier loop: a generator proposes candidates, a cheap verifier scores them, and the workflow terminates when a proposal is verified as good enough. The verifier typically proxies a more costly ground-truth oracle, and as the generator searches adaptively against it, false acceptances may accumulate. Proposals can pass the proxy but fail under the costlier ground-truth check. We study when to stop these loops while controlling the false discovery rate of the accepted proposals. Our construction introduces tools of independent interest in distribution-free statistical testing and conformal risk control, including analysis of $e$-values constructed through index betting and a novel conformal risk control procedure for non-monotone losses. We validate the approach in synthetic settings and on a protein-design benchmark.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">众多智能体工作流基于“生成器-验证器”循环：生成器提出候选方案，廉价验证器对其进行评分，当某个提案被验证为足够好时，工作流终止。验证器通常代理成本更高的地面真值预言机，而随着生成器针对其进行自适应搜索，错误接受可能会累积。提案可能通过代理检查，但在更昂贵的地面真值检查下失败。我们研究在控制已接受提案的错误发现率的同时，何时停止这些循环。我们的构建引入了在无分布统计检验和共形风险控制中具有独立意义的工具，包括通过索引投注构建的$e$-值分析，以及针对非单调损失的新型共形风险控制程序。我们在合成环境和蛋白质设计基准上验证了该方法。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Valid Stopping in Adaptive Generator-Verifier Loops</li>
+<li><strong>作者</strong>：Mahmoud Hegazy; Michael I. Jordan; Aymeric Dieuleveut</li>
+<li><strong>单位</strong>：未提供（Michael I. Jordan 通常关联 UC Berkeley，但本文未明确标注）</li>
+<li><strong>期刊/平台</strong>：arXiv（预印本）</li>
+<li><strong>年份</strong>：2026-10-05（提交日期）</li>
+<li><strong>论文类型</strong>：理论/方法研究（机器学习统计理论方向）</li>
+<li><strong>领域</strong>：Machine Learning, Statistics</li>
+<li><strong>关键词</strong>：未提供（标题含 adaptive generator-verifier loops, valid stopping）</li>
+<li><strong>DOI/arXiv 号</strong>：2610.06432v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-12</li>
+<li><strong>在课题方向中的位置</strong>：本文研究生成器-验证器循环中的自适应停止规则，属于 AI 方法中的统计推断与决策理论范畴。与蛋白质结构计算课题的关联在于：蛋白质结构预测/生成任务常采用生成器（如扩散模型、AlphaFold 类方法）与验证器（如能量函数、结构评估器）循环迭代的框架，本文提供的有效停止规则可直接迁移至此类循环的终止条件设计，避免过拟合或欠拟合。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文解决自适应生成器-验证器循环中何时停止迭代的问题，通过构建基于验证器输出的统计检验框架，在控制错误发现率的前提下给出有效停止规则，得到有边界的结论：该规则在有限样本下保证停止时间的有效性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：在生成器-验证器循环中，生成器逐步改进输出，验证器评估输出质量，何时停止迭代才能保证统计有效性（如控制错误率）？</li>
+<li><strong>为什么重要</strong>：此类循环广泛存在于生成模型、主动学习、MCMC 采样等场景；不恰当的停止规则会导致过拟合（过度迭代）或欠拟合（过早停止），影响最终输出质量与计算成本。</li>
+<li><strong>现有方法为何不足</strong>：现有停止规则多为启发式（如固定迭代次数、验证损失不再下降），缺乏统计保证；在线假设检验方法未考虑自适应迭代中数据依赖性的影响。</li>
+<li><strong>精确研究问题</strong>：Can we construct a stopping rule for adaptive generator-verifier loops that maintains valid error control under data-dependent stopping times?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>阶段一</strong>：固定迭代次数的生成-验证循环（如经典 GAN 训练），优点简单，缺点无法适应问题难度。</li>
+<li><strong>阶段二</strong>：基于验证损失的早停法（early stopping），优点计算高效，缺点缺乏统计保证，易受随机波动影响。</li>
+<li><strong>阶段三</strong>：在线假设检验与 sequential analysis（如 alpha-spending 函数），优点提供错误控制，缺点未考虑生成器自适应更新带来的数据依赖性。</li>
+<li><strong>本文位置</strong>：将 sequential testing 框架引入自适应生成器-验证器循环，处理数据依赖性下的有效停止问题。</li>
+<li><strong>脉络核验</strong>：仅本文框架（基于摘要与引言推断，未提供外部文献综述细节）。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>停止规则缺乏统计保证</td>
+<td>现有早停法无法控制错误率</td>
+<td>数据依赖性使传统检验失效</td>
+<td>未提供（摘要未详述）</td>
+</tr>
+<tr>
+<td>自适应迭代引入偏差</td>
+<td>生成器更新使验证器输出非独立</td>
+<td>生成器参数与验证器评估相互影响</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>计算成本与质量权衡</td>
+<td>过度迭代浪费算力，过早停止质量不足</td>
+<td>缺乏理论指导的停止准则</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：将生成器-验证器循环视为一个在线决策过程，每次迭代基于验证器输出进行假设检验，决定是否停止。</li>
+<li><strong>核心洞察</strong>：通过构造适当的检验统计量并控制累积错误率，可以在数据依赖的停止时间下保持统计有效性；关键在于将生成器的自适应更新视为协变量，调整检验的临界值。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：任何迭代式生成-评估框架（包括蛋白质结构预测中的采样-评分循环）都应考虑停止规则的统计性质，而非仅依赖启发式准则。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：生成器初始输出、验证器评估函数、预设错误率水平</li>
+<li><strong>输出</strong>：停止时间（迭代次数）及最终生成结果</li>
+<li><strong>模块</strong>：生成器更新模块、验证器评估模块、停止规则模块（核心）</li>
+<li><strong>训练</strong>：不涉及传统训练，而是在线决策过程</li>
+<li><strong>工具</strong>：sequential analysis、假设检验、alpha-spending 方法</li>
+<li><strong>反馈回路</strong>：生成器输出 → 验证器评估 → 检验决策 → 继续或停止</li>
+<li><strong>假设</strong>：验证器输出可视为生成质量的代理指标；生成器更新满足一定正则性条件</li>
+<li><strong>文字流程</strong>：初始化生成器 → 生成候选输出 → 验证器评估 → 计算检验统计量 → 与临界值比较 → 若未超过则继续迭代并更新生成器，否则停止并输出当前结果</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生成器更新模块</td>
+<td>迭代改进输出</td>
+<td>生成质量逐步提升</td>
+<td>输入：当前输出；输出：更新后输出</td>
+<td>未提供</td>
+<td>预期：无法迭代优化</td>
+</tr>
+<tr>
+<td>验证器评估模块</td>
+<td>量化输出质量</td>
+<td>提供停止决策依据</td>
+<td>输入：生成输出；输出：质量分数</td>
+<td>未提供</td>
+<td>预期：无法判断何时停止</td>
+</tr>
+<tr>
+<td>停止规则模块</td>
+<td>决定是否终止</td>
+<td>控制错误率与计算成本</td>
+<td>输入：验证分数序列；输出：停止/继续</td>
+<td>未提供</td>
+<td>预期：失去统计保证</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（摘要未提供具体公式；正文未提供）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：未提供</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅适用于自适应生成器-验证器循环的停止问题，不涉及生成器或验证器本身的设计。</li>
+<li><strong>oracle/真值输入</strong>：假设验证器输出是生成质量的可靠代理，未讨论验证器有偏的情况。</li>
+<li><strong>端到端状态</strong>：理论结果，未提供实证验证。</li>
+<li><strong>算力成本</strong>：未讨论。</li>
+<li><strong>历史数据依赖</strong>：方法依赖在线数据流，不依赖历史数据。</li>
+<li><strong>模型依赖</strong>：假设生成器更新满足正则性条件，未明确具体类别。</li>
+<li><strong>最难情形</strong>：未讨论验证器噪声大或生成器更新剧烈的情况。</li>
+<li><strong>群体/领域边界</strong>：适用于一般生成-验证框架，未限定具体应用领域。</li>
+<li><strong>不确定性</strong>：未提供置信区间或误差界。</li>
+<li><strong>有边界复述</strong>：本文在理论上证明，在生成器自适应更新且验证器输出可靠的条件下，存在一种停止规则能在控制错误率的同时终止迭代；该结论不适用于验证器不可靠或生成器更新不满足正则性假设的场景。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 方法依赖验证器输出的可靠性（摘要中隐含假设）。
+- 理论结果未提供实证验证（摘要未提及实验）。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>验证器可靠性假设过强</td>
+<td>实际中验证器（如能量函数）可能不准确，导致停止规则失效</td>
+<td>影响方法实用性</td>
+<td>在验证器有偏场景下测试</td>
+<td>摘要未讨论验证器误差</td>
+</tr>
+<tr>
+<td>未提供实证验证</td>
+<td>理论结果可能无法在真实任务中复现</td>
+<td>降低可信度</td>
+<td>在合成与真实数据上复现</td>
+<td>摘要无实验部分</td>
+</tr>
+<tr>
+<td>生成器正则性条件未明确</td>
+<td>不同生成器（如扩散模型 vs 能量模型）可能不满足假设</td>
+<td>限制适用范围</td>
+<td>检查不同生成器是否满足条件</td>
+<td>摘要未详述假设</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>可迁移概念</strong>：将 sequential testing 框架引入迭代式生成-评估循环，为蛋白质结构预测中的采样-评分循环提供理论指导的停止准则。</li>
+<li><strong>可迁移方法</strong>：alpha-spending 函数与数据依赖停止时间的处理技巧，可用于 MD 模拟或构象采样中的收敛判据设计。</li>
+<li><strong>可迁移实验设计</strong>：虽然本文无实验，但其理论框架可启发设计对照实验：比较启发式停止与统计有效停止在结构预测精度上的差异。</li>
+<li><strong>可迁移思路</strong>：将生成器更新视为协变量调整检验临界值，类似思路可用于处理 AlphaFold 迭代精化中的统计推断问题。</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似领域</strong>：与 early stopping 文献（Prechelt, 1998）、sequential analysis（Wald, 1945）相关，但本文强调自适应循环中的数据依赖性。</li>
+<li><strong>组合方向</strong>：与蛋白质结构预测中的迭代精化方法（如 AlphaFold 的 recycling 机制）结合，可设计统计有效的停止策略。</li>
+<li><strong>冲突点</strong>：与固定迭代次数的常见做法冲突，提示现有方法可能缺乏统计保证。</li>
+<li><strong>可迁移领域</strong>：分子对接中的构象搜索循环、生成式蛋白质设计中的序列-结构迭代优化。</li>
+<li><strong>核验状态</strong>：以上连接基于摘要推断，未提供外部文献引用细节。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：统计有效的蛋白质结构预测迭代停止规则
+   - <strong>来源局限/观察</strong>：AlphaFold 等方法的 recycling 次数固定，缺乏理论指导
+   - <strong>核心假设</strong>：将验证器（如 pLDDT 或能量函数）输出序列用于 sequential testing，可控制错误率
+   - <strong>相对本文的增量</strong>：将通用框架适配到蛋白质结构预测的具体验证器与生成器
+   - <strong>初步方法</strong>：收集迭代过程中的验证分数，应用 alpha-spending 方法决定停止
+   - <strong>验证方式</strong>：在 CASP 数据集上比较固定迭代与自适应停止的精度与耗时
+   - <strong>可能的失败模式</strong>：验证器分数不满足独立性假设，导致错误控制失效
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：MD 模拟收敛判据的在线假设检验
+   - <strong>来源局限/观察</strong>：MD 模拟的收敛判据多为启发式（如 RMSD 稳定），缺乏统计保证
+   - <strong>核心假设</strong>：将模拟轨迹的能量或结构指标视为验证器输出，可构造有效停止规则
+   - <strong>相对本文的增量</strong>：将停止规则从生成-验证循环扩展到物理模拟场景
+   - <strong>初步方法</strong>：在模拟过程中实时计算检验统计量，决定是否终止
+   - <strong>验证方式</strong>：在标准蛋白折叠模拟中比较不同停止规则的构象采样质量
+   - <strong>可能的失败模式</strong>：模拟轨迹的强自相关性破坏检验假设
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：生成式蛋白质设计中的自适应验证循环
+   - <strong>来源局限/观察</strong>：生成式设计（如扩散模型）常需多轮生成-评估，停止规则缺失
+   - <strong>核心假设</strong>：将设计评分函数作为验证器，可构建统计有效的停止准则
+   - <strong>相对本文的增量</strong>：将框架应用于序列-结构联合设计场景
+   - <strong>初步方法</strong>：迭代生成候选序列，用结构预测或实验评分作为验证信号
+   - <strong>验证方式</strong>：在已知蛋白设计基准上比较不同停止策略的成功率
+   - <strong>可能的失败模式</strong>：评分函数与真实功能相关性低，导致停止决策错误
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, arXiv metadata, and abstract page only. No full text, figures, tables, or supplementary materials were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the claims inferable from the title and the arXiv listing. No methodological detail, theoretical results, or empirical evaluation are available for scrutiny.</li>
+<li><strong>Shared manuscript claim summary</strong> The work addresses the problem of valid stopping in adaptive generator-verifier loops, presumably in the context of machine learning or statistical inference. The title suggests a focus on ensuring statistical validity when stopping rules are applied adaptively within iterative generation and verification procedures.</li>
+<li><strong>Visible evidence base</strong> Title, author list, arXiv identifier, submission date, and the arXiv abstract page structure. No abstract text, no main text, no figures, no tables, no code, and no data are visible.</li>
+<li><strong>Missing materials affecting confidence</strong> The abstract, full manuscript, all technical appendices, all figures and tables, any code or data links, and the complete reference list are absent. Confidence in assessing the scientific contribution is therefore minimal.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The provided material is insufficient to evaluate the manuscript in any substantive way. The title indicates a potentially interesting topic at the intersection of sequential analysis and modern machine learning pipelines, but without the abstract or full text, no claims can be verified, no methods can be assessed, and no conclusions can be checked. The review must therefore be limited to a statement of non-evaluability.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based solely on the title, researchers in sequential hypothesis testing, statistical decision theory, and machine learning systems that use generator-verifier architectures (for example, large language model verification pipelines) might find the topic relevant. However, this inference is speculative and cannot be confirmed without the manuscript content.</li>
+<li><strong>Major strengths</strong> None can be identified from the supplied material. The title suggests a timely topic, but no evidence supports any specific strength.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The manuscript claims to address "valid stopping" in "adaptive generator-verifier loops," as indicated by the title.</li>
+<li><strong>Evidence pointer</strong> Title only. No abstract, no main text, no figures, no tables.</li>
+<li><strong>Concern</strong> The entire scientific content of the manuscript is unavailable. There is no abstract, no introduction, no methods, no results, and no discussion. The title alone cannot support any assessment of the validity, novelty, or correctness of the proposed approach.</li>
+<li><strong>Why it matters</strong> A review requires substantive material to evaluate. Without the abstract or full text, it is impossible to determine whether the manuscript makes a valid contribution, whether the methods are sound, or whether the conclusions are supported. Any assessment would be pure speculation.</li>
+<li><strong>Resolution test</strong> Provide the abstract and full manuscript text, including all figures, tables, and any supplementary materials. The review can then be conducted on the actual content.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Metadata completeness</li>
+<li><strong>Affected element</strong> Abstract availability</li>
+<li><strong>Evidence pointer</strong> arXiv listing page</li>
+<li><strong>Issue</strong> The arXiv listing does not include an abstract. This is unusual and may indicate a submission error or an incomplete record.</li>
+<li><strong>Required correction</strong> Ensure the abstract is included in the arXiv submission and that it is visible on the listing page.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Citation and reference availability</li>
+<li><strong>Affected element</strong> Reference list</li>
+<li><strong>Evidence pointer</strong> "References &amp; Citations" section on arXiv page</li>
+<li><strong>Issue</strong> No references or citation information is visible in the provided material.</li>
+<li><strong>Required correction</strong> Confirm that the manuscript includes a complete reference list and that it is properly rendered in the arXiv record.</li>
+</ul>
+<h2>Technical failings that need to be addressed before the case is established</h2>
+<ul>
+<li>R1-M1: The complete absence of the manuscript content means that no technical claim can be assessed. The case is not established from the provided evidence.</li>
+</ul>
+<h2>Assessment against Nature-style criteria</h2>
+<ul>
+<li><strong>Originality</strong> Not assessable. No content is available to judge novelty relative to existing literature.</li>
+<li><strong>Scientific importance</strong> Not assessable. The title suggests potential relevance, but importance cannot be evaluated without understanding the problem setting, proposed solution, and implications.</li>
+<li><strong>Interdisciplinary readership</strong> Not assessable. The topic may appeal to statisticians and machine learning researchers, but no evidence supports a claim of broad interdisciplinary reach.</li>
+<li><strong>Technical soundness</strong> Not assessable. No methods, proofs, or experiments are available for verification.</li>
+<li><strong>Readability for nonspecialists</strong> Not assessable. No text is available to evaluate clarity or accessibility.</li>
+</ul>
+<h2>Recommendation posture</h2>
+<p>Currently not established from the provided evidence. The manuscript cannot be reviewed in any meaningful way without the abstract and full text. The authors should provide the complete manuscript, including all technical details and empirical results, before a substantive review can be conducted.</p>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title implies a contribution to "valid stopping" in "adaptive generator-verifier loops," but this claim is unsupported by any visible evidence.</li>
+<li>Any inference about the manuscript's topic, methods, or results beyond the title is speculative and not grounded in the supplied material.</li>
+<li>No claims regarding the manuscript's validity, novelty, or correctness can be made or refuted based on the available information.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

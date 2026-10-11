@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rational Immunogenicity Modulation of Virus-Like Particles by VLPIM. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Rational Immunogenicity Modulation of Virus-Like Particles by VLPIM.</h1>
+      <div class="meta">Wang, Chufan; Chen, Yeyun; Wang, Ming-Wei; Ren, Lei; Zhou, Qingtong</div>
+      <div class="meta muted">
+        
+        <span class="journal">Computational and structural biotechnology journal</span>
+        · 2026-10-04
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42828399/">原文</a>
+      </div>
+      <p class="one-liner">该文提出VLPIM计算框架，整合AI蛋白设计、结构预测和免疫原性预测工具，对病毒样颗粒进行理性免疫调节，虽对象为VLP多聚体而非单体蛋白，但其结构-序列优化和虚拟筛选流程可迁移至蛋白质结构计算设计，具有方法学启发。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Virus-like particles (VLPs) are versatile platforms for drug delivery and vaccine development, but precisely customizing their immune profiles for specific clinical applications remains challenging. Here, we present a computational framework that integrates complementary artificial-intelligence-driven tools for protein design, structure prediction, and antigenicity assessment to enable rational immunogenicity modulation of VLPs while preserving their structural integrity. Leveraging the central role of CD4(+) T cells in adaptive immunity, this framework first combines class II major histocompatibility complex (MHC-II)-restricted epitope prediction with structure-guided sequence optimization to generate a focused mutation library. Subsequently, its virtual screening workflow combines immunogenicity predictions and structural modeling to pinpoint variants likely to attenuate or enhance CD4(+) T cell activation while preserving VLP integrity. This framework enables a broader and more efficient exploration of the mutation space to identify VLP structural variants with tailored immunogenicity profiles; hence, we term it the VLPIM (Virus-Like Particle Immunogenicity Modulation) platform. Using hepatitis B core VLPs as proof of concept, VLPIM generated a mutation library of 120 variants, computationally filtered down to 4 candidates, and ultimately identified 2 variants that retained native virus-like morphology, as confirmed by transmission electron microscopy. In vitro immunogenicity assays confirmed that epitope substitutions could either suppress or enhance CD4(+) T cell activation. This generalizable pipeline permits precise immunogenicity modulation of VLPs and other multimers, accelerating their development as targeted drug carriers and next-generation vaccine platforms. VLPIM is available as both a locally executable tool on GitHub (https://github.com/RuijinHospitalVNAR/VLPIM) and an online web server (https://ruijinhospitalvnar.github.io/Toolboxes/VLPIM_Web_services/).</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">病毒样颗粒（VLPs）是多功能平台，用于药物递送和疫苗开发，但精确定制其免疫特征以适用于特定临床应用仍具挑战性。在此，我们提出一个计算框架，整合了互补的人工智能驱动工具，用于蛋白质设计、结构预测和抗原性评估，以实现对VLPs的合理免疫原性调节，同时保持其结构完整性。利用CD4(+) T细胞在适应性免疫中的核心作用，该框架首先将II类主要组织相容性复合体（MHC-II）限制性表位预测与结构引导的序列优化相结合，生成聚焦突变文库。随后，其虚拟筛选流程结合免疫原性预测和结构建模，以识别可能减弱或增强CD4(+) T细胞激活同时保持VLP完整性的变体。该框架能够更广泛且高效地探索突变空间，以识别具有定制免疫原性特征的VLP结构变体；因此，我们将其命名为VLPIM（病毒样颗粒免疫原性调节）平台。使用乙型肝炎核心VLPs作为概念验证，VLPIM生成了包含120个变体的突变文库，经计算筛选至4个候选，最终鉴定出2个保留天然病毒样形态的变体，并通过透射电子显微镜确认。体外免疫原性测定证实，表位替换可抑制或增强CD4(+) T细胞激活。这一通用流程允许对VLPs及其他多聚体进行精确免疫原性调节，加速其作为靶向药物载体和下一代疫苗平台的开发。VLPIM可作为本地可执行工具在GitHub（https://github.com/RuijinHospitalVNAR/VLPIM）和在线网络服务器（https://ruijinhospitalvnar.github.io/Toolboxes/VLPIM_Web_services/）上获取。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Rational Immunogenicity Modulation of Virus-Like Particles by VLPIM</li>
+<li><strong>作者与单位</strong>：Wang, Chufan; Chen, Yeyun; Wang, Ming-Wei; Ren, Lei; Zhou, Qingtong（单位未提供，推测为上海交通大学医学院附属瑞金医院相关团队，依据 GitHub 组织名 RuijinHospitalVNAR）</li>
+<li><strong>期刊/预印本平台</strong>：Computational and Structural Biotechnology Journal</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-04）</li>
+<li><strong>论文类型</strong>：方法学 + 实验验证（计算框架开发 + 湿实验验证）</li>
+<li><strong>领域</strong>：蛋白质免疫原性工程 × AI 辅助设计（结构预测 + 逆折叠 + 免疫表位预测）</li>
+<li><strong>关键词</strong>：Virus-like particles (VLPs)、immunogenicity modulation、CD4⁺ T cell epitope、NetMHCIIpan、ProteinMPNN、AlphaFold3、Rosetta</li>
+<li><strong>DOI/arXiv 号</strong>：10.34133/csbj.0063</li>
+<li><strong>代码</strong>：https://github.com/RuijinHospitalVNAR/VLPIM</li>
+<li><strong>数据</strong>：未提供（湿实验数据未公开）</li>
+<li><strong>阅读日期</strong>：2026-05-13（按当前日期）</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>免疫原性工程</strong>子方向，核心创新在于将<strong>多聚体结构感知</strong>（AlphaFold3 多聚体预测 + Rosetta 界面分析）引入免疫原性调控流程，区别于传统单体蛋白去免疫化方法。对课题的可迁移点：多聚体组装约束下的序列设计、双向免疫调控（增强/减弱）框架、计算-实验闭环验证策略。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>开发了一个名为 VLPIM 的计算平台，通过 NetMHCIIpan 识别 CD4⁺ T 细胞表位、ProteinMPNN 生成突变库、AlphaFold3 预测多聚体结构、Rosetta 评估界面稳定性，实现了对乙肝核心蛋白（HBc）VLP 免疫原性的双向调控（增强或减弱），并湿实验验证了 4 个突变体中 2 个成功组装为完整 VLP。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在保持 VLP 多聚体组装完整性的前提下，精确调控其免疫原性（增强或减弱）？</li>
+<li><strong>为什么重要</strong>：VLP 是疫苗开发和药物递送的重要平台，但其固有免疫原性可能干扰特定应用——疫苗需要增强免疫原性，而药物递送需要降低免疫原性以避免清除。现有方法缺乏系统性的计算框架。</li>
+<li><strong>现有方法不足</strong>：(1) 传统去免疫化方法主要针对单体蛋白（如抗体人源化），不适用于多聚体 VLP；(2) 非人源蛋白缺乏对应的人源序列空间，无法用序列相似性引导；(3) 现有方法多为单向调控（仅降低免疫原性），缺乏双向调控能力；(4) 未显式考虑多聚体组装界面的结构约束。</li>
+<li><strong>精确研究问题</strong>：Can a computational pipeline integrating epitope prediction, inverse folding, and multimer-aware structure prediction enable rational bidirectional modulation of VLP immunogenicity while preserving capsid assembly?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引言及作者引用，标注为「经外部核验」部分仅限文中明确引用的文献。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经验性表位删除/替换</td>
+<td>定点突变、肽段删除 [17,18]</td>
+<td>直接有效</td>
+<td>劳动密集、耗时、难以系统化</td>
+<td>本文用计算替代经验</td>
+</tr>
+<tr>
+<td>序列相似性引导的人源化</td>
+<td>抗体人源化、序列打分 [26,27]</td>
+<td>对单体蛋白有效</td>
+<td>不适用于无同源人源序列的 VLP</td>
+<td>本文不依赖人源序列</td>
+</tr>
+<tr>
+<td>计算表位预测</td>
+<td>NetMHCIIpan [33]、IEDB [32]</td>
+<td>高通量、可扩展</td>
+<td>仅预测结合亲和力，不考虑结构背景</td>
+<td>本文将其作为第一步</td>
+</tr>
+<tr>
+<td>逆折叠序列设计</td>
+<td>ProteinMPNN [34]</td>
+<td>可生成多样化突变</td>
+<td>不考虑免疫原性</td>
+<td>本文将其用于突变库生成</td>
+</tr>
+<tr>
+<td>多聚体结构预测</td>
+<td>AlphaFold3 [31]</td>
+<td>可预测多聚体组装</td>
+<td>对 VLP 大组装体仍有局限</td>
+<td>本文将其用于结构筛选</td>
+</tr>
+<tr>
+<td><strong>本文 VLPIM</strong></td>
+<td>上述工具集成 + 多聚体感知筛选</td>
+<td>双向调控、多聚体感知、可扩展</td>
+<td>湿实验验证样本量小</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLP 免疫原性难以精确调控</td>
+<td>疫苗需增强免疫、药物递送需降低免疫，但缺乏系统方法</td>
+<td>现有方法多针对单体蛋白，未考虑多聚体组装约束</td>
+<td>Introduction 第 2 段</td>
+</tr>
+<tr>
+<td>非人源蛋白缺乏人源化参考</td>
+<td>VLP 多来自病毒，无对应人源序列空间</td>
+<td>人源化策略依赖序列相似性，不适用于病毒蛋白</td>
+<td>Introduction 第 2 段</td>
+</tr>
+<tr>
+<td>多聚体组装与突变冲突</td>
+<td>为改变免疫原性引入的突变可能破坏组装</td>
+<td>多亚基界面协同作用复杂，单体水平评估不足</td>
+<td>Introduction 第 3 段；Results 中 PMD-05/PMI-03 组装失败</td>
+</tr>
+<tr>
+<td>计算预测与实验验证脱节</td>
+<td>计算筛选出的候选在实验中失败率高</td>
+<td>缺乏多聚体结构约束的筛选标准</td>
+<td>Results 中 4 个候选仅 2 个成功组装</td>
+</tr>
+<tr>
+<td>免疫原性评估维度单一</td>
+<td>仅关注 MHC-II 结合亲和力</td>
+<td>实际免疫应答受抗原加工、递呈、共刺激等多因素影响</td>
+<td>Discussion 中作者承认 MHC-II 结合非唯一决定因素</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>一个四步流水线：IEDB/NetMHCIIpan 表位识别 → ProteinMPNN 逆折叠生成突变库 → NetMHCIIpan 再评估免疫原性变化 → AlphaFold3 多聚体结构预测 + Rosetta 界面能量评估筛选候选。</p>
+<h3>2) 核心洞察</h3>
+<p><strong>多聚体感知的免疫原性工程</strong>：VLP 的免疫原性调控不能仅在单体水平评估，必须同时考虑 (a) 表位序列改变对 MHC-II 结合的影响和 (b) 突变对多亚基组装界面的影响。作者将这两个维度整合为一个可计算的筛选流程，并引入双向设计模式（增强/减弱）。</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>工具集成 &gt; 单一模型</strong>：VLPIM 没有开发新模型，而是将现有最优工具（NetMHCIIpan、ProteinMPNN、AF3、Rosetta）按逻辑串联，这提示在蛋白质工程中，<strong>流程设计</strong>与<strong>模型选择</strong>同等重要。</li>
+<li><strong>结构约束是免疫工程的隐形瓶颈</strong>：传统去免疫化关注序列层面，但多聚体系统中结构约束可能比免疫原性本身更严格——PMD-05 和 PMI-03 的失败即源于组装破坏而非免疫原性预测错误。</li>
+<li><strong>双向设计验证了可调性</strong>：同一框架既能增强也能减弱免疫原性，说明免疫原性不是固定属性，而是可连续调节的设计变量。</li>
+</ul>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：VLP 蛋白序列（FASTA）、VLP 结构（PDB/CIF，可选）、设计模式（reduce/enhance）、NetMHCIIpan 等参数</p>
+<p><strong>输出</strong>：候选突变序列列表、免疫原性评分（Sim score）、AF3 预测结构、Rosetta 界面能量指标、排序后的推荐候选</p>
+<p><strong>模块</strong>：
+1. <strong>表位识别</strong>：IEDB 查询 + NetMHCIIpan 预测，识别 MHC-II 限制性 CD4⁺ T 细胞表位
+2. <strong>突变库生成</strong>：ProteinMPNN 逆折叠，固定非表位区域，对表位区域采样突变
+3. <strong>免疫原性再评估</strong>：NetMHCIIpan 预测突变后肽段结合亲和力，计算 Sim score
+4. <strong>结构筛选</strong>：AF3 预测多聚体结构 → RMSD 对齐 → Rosetta 界面分析（dG/dSASA、Packstat、BUNS）</p>
+<p><strong>流程</strong>：</p>
+<pre><code>序列 → 表位识别 → ProteinMPNN 突变库 → NetMHCIIpan 评分 → Top 10 → AF3 多聚体预测 → RMSD + Rosetta 筛选 → Top 3-4 → 湿实验验证
+</code></pre>
+<p><strong>训练</strong>：无新模型训练，全部使用预训练工具</p>
+<p><strong>假设</strong>：
+- NetMHCIIpan 预测的 MHC-II 结合亲和力可作为免疫原性的代理指标
+- AF3 预测的多聚体结构可用于评估组装可行性
+- Rosetta 界面能量指标可反映突变对组装稳定性的影响</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表位识别（IEDB + NetMHCIIpan）</td>
+<td>识别 MHC-II 限制性 CD4⁺ T 细胞表位</td>
+<td>确定突变靶点，聚焦免疫原性关键区域</td>
+<td>输入：蛋白序列；输出：表位列表及结合亲和力</td>
+<td>Results 图 3A-C；"WIRTPPAYR" 为核心表位</td>
+<td>预期影响：无法确定突变靶点，设计失去方向 [预期]</td>
+</tr>
+<tr>
+<td>突变库生成（ProteinMPNN）</td>
+<td>在表位区域生成多样化突变序列</td>
+<td>提供候选序列空间，探索免疫原性可调范围</td>
+<td>输入：结构 + 表位区域掩码；输出：突变序列库</td>
+<td>Methods 节；Table 1</td>
+<td>预期影响：无候选序列，流程终止 [预期]</td>
+</tr>
+<tr>
+<td>免疫原性评分（Sim score）</td>
+<td>量化突变对 MHC-II 结合的影响</td>
+<td>提供可排序的免疫原性指标</td>
+<td>输入：NetMHCIIpan 预测结果；输出：Sim score</td>
+<td>Eq. 1；Results 图 4A-B</td>
+<td>预期影响：无法区分候选序列的免疫原性差异 [预期]</td>
+</tr>
+<tr>
+<td>多聚体结构预测（AF3）</td>
+<td>预测突变体的多聚体组装结构</td>
+<td>评估突变是否破坏组装</td>
+<td>输入：突变序列；输出：多聚体结构 + pLTM/pTM/ipTM</td>
+<td>Results 图 5A-D；pLDDT &gt; 80</td>
+<td>实测影响：PMD-05/PMI-03 的组装失败可被预测 [实测]</td>
+</tr>
+<tr>
+<td>结构比对（RMSD）</td>
+<td>评估突变体与 WT 的结构偏差</td>
+<td>量化结构保守性</td>
+<td>输入：AF3 预测结构 + WT 结构；输出：RMSD 值</td>
+<td>Results 图 5E-F</td>
+<td>预期影响：无法筛选结构偏差过大的候选 [预期]</td>
+</tr>
+<tr>
+<td>界面能量分析（Rosetta）</td>
+<td>评估突变对亚基界面的影响</td>
+<td>补充结构比对无法捕捉的界面稳定性信息</td>
+<td>输入：AF3 结构；输出：dG/dSASA、Packstat、BUNS</td>
+<td>Results 图 5G-I</td>
+<td>预期影响：可能遗漏界面稳定性差的候选 [预期]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>Sim score（Eq. 1）</strong>：</p>
+<p>$$S_{im} = \begin{cases} \sum_i \frac{100 - x_i - x_{min}}{x_{max} - x_{min}} \times 100 &amp; \text{if mode = reduce} \ \sum_i \frac{x_i - x_{min}}{x_{max} - x_{min}} \times 100 &amp; \text{if mode = enhance} \end{cases}$$</p>
+<ul>
+<li>$S_{im}$：免疫原性评分（Sim score），越低表示免疫原性调控效果越好</li>
+<li>$i$：HLA 等位基因索引（推荐 8 个常见等位基因：HLA-DRB1<em>01:01, </em>04:01, <em>07:01, </em>08:01, <em>13:01, </em>15:01 等）</li>
+<li>$x_i$：候选突变序列在 HLA 等位基因 $i$ 下的 IC50 结合亲和力排名</li>
+<li>$x_{min}, x_{max}$：所有候选序列中 IC50 排名的最小值和最大值</li>
+</ul>
+<p><strong>直觉</strong>：将每个等位基因下的 IC50 排名归一化到 0-100，reduce 模式反转（排名高=弱结合=得分高），enhance 模式直接求和（排名低=强结合=得分高）。最终得分越低，表示调控效果越好。</p>
+<p><strong>其他指标</strong>：
+- RMSD：Cα 原子均方根偏差，通过 Kabsch 算法 + 最多 5 轮离群值剔除（&gt;2.0 Å）计算
+- pLDDT：AlphaFold3 预测的局部距离差异测试分数
+- pTM/ipTM：模板建模分数/链间预测 TM 分数
+- dG/dSASA：结合自由能变化/溶剂可及表面积
+- Packstat：界面堆积质量
+- BUNS：埋藏不饱和氢键数</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：
+- 计算阶段：HBc VLP 序列（UniProt P03146，去除 C 端 150-183 核苷酸结合区），结构 PDB ID 6HTX
+- 湿实验阶段：4 个突变体（PMD-02、PMD-05、PMI-01、PMI-03）+ WT 对照
+- 免疫原性评估：6 名健康供者 PBMC</p>
+<p><strong>指标</strong>：
+- 计算：Sim score、RMSD、pLDDT、pTM/ipTM、dG/dSASA、Packstat、BUNS
+- 实验：IL-2 分泌量（ELISA）、VLP 形态（TEM）、粒径分布</p>
+<p><strong>基线</strong>：WT HBc VLP</p>
+<p><strong>骨干/仪器</strong>：未提供（TEM 型号等未说明）</p>
+<p><strong>oracle 输入</strong>：NetMHCIIpan 预测的 IC50 值作为免疫原性 oracle；AF3 预测结构作为组装可行性 oracle</p>
+<p><strong>评测协议</strong>：计算筛选 → 湿实验验证的闭环；PBMC 实验采用 6 供者配对设计，每供者 4 个技术重复</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表位识别</td>
+<td>IEDB + NetMHCIIpan 可识别 HBc 优势表位</td>
+<td>23 个 IEDB 表位，20 个有效</td>
+<td>"WIRTPPAYR" 出现频率 ~20%</td>
+<td>确定了核心突变靶点</td>
+<td>未验证这些表位在体内是否免疫优势</td>
+<td>Results 图 3A</td>
+</tr>
+<tr>
+<td>NetMHCIIpan 预测</td>
+<td>PMD 系列降低、PMI 系列增强 MHC-II 结合</td>
+<td>8 个 HLA-DRB 等位基因</td>
+<td>PMD 最优突变体 ~19 倍降低；PMI ~33-52 倍增强</td>
+<td>双向调控可行</td>
+<td>预测结合亲和力 ≠ 实际免疫原性</td>
+<td>Results 图 4A-B</td>
+</tr>
+<tr>
+<td>AF3 结构预测</td>
+<td>突变体保持多聚体结构</td>
+<td>与 WT 6HTX 比对</td>
+<td>pLDDT &gt; 80；部分突变体 RMSD 较小</td>
+<td>计算筛选可识别结构保守突变</td>
+<td>AF3 对 VLP 大组装体预测精度有限</td>
+<td>Results 图 5A-D</td>
+</tr>
+<tr>
+<td>湿实验表达纯化</td>
+<td>4 个候选可表达并组装</td>
+<td>大肠杆菌 ClearColi 表达</td>
+<td>4/4 成功表达；2/4 形成 VLP</td>
+<td>计算筛选有预测力</td>
+<td>小样本（n=4）</td>
+<td>Results 图 6A</td>
+</tr>
+<tr>
+<td>TEM 形态</td>
+<td>VLP 形态与 WT 相似</td>
+<td>PMD-02、PMI-01 vs WT</td>
+<td>PMD-02 粒径 ~50 nm（更宽分布）；PMI-01 ~28 nm</td>
+<td>PMI-01 保持 WT 样形态</td>
+<td>PMD-02 粒径异常可能影响功能</td>
+<td>Results 图 6B-D</td>
+</tr>
+<tr>
+<td>PBMC 免疫原性</td>
+<td>PMD-02 降低、PMI-01 增强 IL-2 分泌</td>
+<td>6 供者配对设计</td>
+<td>PMI-01 在 5/6 供者中 IL-2 升高（最高 2.0-5.3 倍）；PMD-02 降低</td>
+<td>免疫原性双向调控在细胞水平验证</td>
+<td>IL-2 仅反映早期 T 细胞激活，未测其他细胞因子</td>
+<td>Results 图 6K</td>
+</tr>
+<tr>
+<td>热稳定性</td>
+<td>突变不影响热稳定性</td>
+<td>DSF + DSC</td>
+<td>PMI-01 主峰 ~88 °C 与 WT 相似；PMD-02 出现额外峰</td>
+<td>PMI-01 稳定性保持</td>
+<td>PMD-02 稳定性降低可能影响应用</td>
+<td>Results 图 6E-J</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅验证了 HBc VLP 一个系统，且突变位点集中在两个表位区域。VLPIM 的通用性（"scaffold-agnostic"）是作者主张，但未在其它 VLP 系统上验证。</li>
+<li><strong>oracle 输入</strong>：NetMHCIIpan 预测的 IC50 是免疫原性的代理指标，实际免疫应答受更多因素影响（作者在 Discussion 中承认）。AF3 对多聚体的预测精度有限（作者引用文献 [31] 承认）。</li>
+<li><strong>端到端状态</strong>：计算 → 湿实验闭环已跑通，但湿实验规模小（4 个突变体、6 个供者），统计功效有限。</li>
+<li><strong>算力成本</strong>：未提供具体算力需求。AF3 预测多聚体结构计算成本较高，但作者未量化。</li>
+<li><strong>历史数据依赖</strong>：依赖 IEDB 实验数据和 NetMHCIIpan 训练数据，对新 MHC-II 等位基因或非人源 MHC 的泛化能力未知。</li>
+<li><strong>模型依赖</strong>：结果高度依赖 NetMHCIIpan 和 AF3 的预测精度。若这些模型更新，VLPIM 流程可能需要重新校准。</li>
+<li><strong>最难情形</strong>：作者未讨论对低稳定性 VLP 或复杂多聚体（如二十面体）的适用性。HBc VLP 是相对简单的 T=4 二十面体。</li>
+<li><strong>群体/领域边界</strong>：PBMC 来自 6 名健康供者，未覆盖不同 HLA 背景、疾病状态或年龄群体。未进行 HLA 分型，无法分析等位基因特异性效应。</li>
+<li><strong>不确定性</strong>：IL-2 分泌的定量结果存在较大供者间变异（如 PMI-01 增强倍数 2.0-5.3 倍），作者未报告置信区间或统计显著性检验。</li>
+</ul>
+<p><strong>有边界的复述</strong>：VLPIM 在 HBc VLP 系统上，通过整合 NetMHCIIpan、ProteinMPNN、AF3 和 Rosetta，成功设计出 4 个候选突变体中的 2 个（PMD-02 和 PMI-01），分别实现免疫原性降低和增强，且保持 VLP 组装能力。该流程的通用性、预测精度上限和临床相关性仍需更大规模验证。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NetMHCIIpan 预测精度有限</td>
+<td>预测结合亲和力与实际免疫原性存在偏差</td>
+<td>整合更先进的 MHC-II 预测模型</td>
+<td>Discussion 第 1 段</td>
+</tr>
+<tr>
+<td>AF3 对多聚体预测不完美</td>
+<td>对 VLP 等大组装体预测精度有限</td>
+<td>引入冷冻电镜密度图或 SAXS 距离分布作为约束</td>
+<td>Discussion 第 2 段</td>
+</tr>
+<tr>
+<td>实验验证规模小</td>
+<td>仅 4 个突变体、6 个供者</td>
+<td>更大规模验证、更多 VLP 系统</td>
+<td>Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>免疫原性评估维度单一</td>
+<td>仅测 IL-2 分泌，未覆盖 T 细胞亚群、细胞因子谱</td>
+<td>抗原特异性 assay、T 细胞表型分析、MHC-II 阻断实验</td>
+<td>Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>未评估体液免疫</td>
+<td>未测抗体应答</td>
+<td>动物模型中的体液免疫评估</td>
+<td>Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>对初始表位选择的敏感性</td>
+<td>结果依赖 IEDB + NetMHCIIpan 的初始表位识别</td>
+<td>敏感性分析、多表位并行设计</td>
+<td>Discussion 第 4 段</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>湿实验验证仅 4 个候选，成功率 50%</td>
+<td>样本量太小，无法区分 VLPIM 的预测力与随机选择</td>
+<td>核心 claim 是"VLPIM 能有效筛选"，需更大样本</td>
+<td>增加候选数量（≥20），设置随机突变对照组</td>
+<td>Results 中 4 个候选 2 个成功</td>
+</tr>
+<tr>
+<td>IL-2 作为唯一免疫原性指标</td>
+<td>IL-2 由多种 T 细胞亚型分泌，不能区分 Th1/Th2/Treg；未做 MHC-II 阻断对照</td>
+<td>无法确认免疫原性变化确实通过 MHC-II 递呈途径</td>
+<td>增加 MHC-II 阻断抗体对照、检测 IFN-γ/IL-4/IL-10 等</td>
+<td>Results 图 6K；Discussion 中作者承认</td>
+</tr>
+<tr>
+<td>AF3 预测的 pLDDT &gt; 80 但 pTM/ipTM 仅 ~0.4/0.3</td>
+<td>多聚体预测置信度低，可能影响结构筛选可靠性</td>
+<td>结构筛选是 VLPIM 核心创新，若预测不可靠则流程失效</td>
+<td>与冷冻电镜结构对比，或使用多种结构预测工具交叉验证</td>
+<td>Results 图 5A-D</td>
+</tr>
+<tr>
+<td>PMD-02 粒径 ~50 nm vs WT ~28 nm</td>
+<td>粒径显著增大可能反映异常组装或聚集，作者未充分讨论</td>
+<td>粒径变化可能影响 VLP 的功能（如细胞摄取、免疫递呈）</td>
+<td>动态光散射、分析超速离心验证粒径；功能实验</td>
+<td>Results 图 6B-D</td>
+</tr>
+<tr>
+<td>未报告统计显著性</td>
+<td>IL-2 数据未给出 p 值或置信区间</td>
+<td>无法判断观察到的差异是否超出随机波动</td>
+<td>补充统计检验（配对 t 检验或 Wilcoxon）</td>
+<td>Results 图 6K</td>
+</tr>
+<tr>
+<td>未做 HLA 分型</td>
+<td>6 个供者的 HLA 背景未知，无法评估等位基因特异性效应</td>
+<td>免疫原性调控效果可能依赖特定 HLA 等位基因</td>
+<td>对供者进行 HLA 分型，按等位基因分层分析</td>
+<td>Methods 节未提及</td>
+</tr>
+<tr>
+<td>计算流程的"双向"设计未系统比较</td>
+<td>未比较 reduce 和 enhance 模式在相同位点的效果差异</td>
+<td>双向调控的机制是否对称未知</td>
+<td>对同一表位同时设计 reduce 和 enhance 突变体并比较</td>
+<td>Results 中 PMD/PMI 位点不同</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题：Agent 提炼的知识候选</p>
+</blockquote>
+<h3>可迁移概念</h3>
+<ol>
+<li><strong>多聚体感知的序列设计</strong>：在 VLP 等寡聚蛋白中，序列设计必须同时考虑单体折叠和多亚基组装。VLPIM 将 AF3 多聚体预测 + Rosetta 界面分析作为结构筛选层，这一思路可直接迁移到其他多聚体蛋白设计任务（如设计稳定的蛋白纳米颗粒、病毒衣壳修饰）。</li>
+<li><strong>双向免疫调控框架</strong>：同一平台支持免疫原性增强和减弱，通过 Sim score 的 mode 参数切换。这种"可调旋钮"设计理念可迁移到其他免疫相关蛋白工程（如细胞因子、抗体 Fc 工程）。</li>
+<li><strong>计算-实验闭环验证</strong>：计算筛选 → 湿实验验证 → 反馈优化。虽然本文未做迭代优化，但流程设计为闭环，可迁移到其他蛋白设计项目。</li>
+</ol>
+<h3>可迁移方法</h3>
+<ol>
+<li><strong>Sim score 归一化策略</strong>：将多等位基因预测结果通过 min-max 归一化聚合为单一分数，支持模式切换。这种"多维度评分聚合"方法可迁移到其他需要综合多个预测指标的筛选任务。</li>
+<li><strong>ProteinMPNN 位点掩码策略</strong>：固定非表位区域、仅对表位区域采样，在保持整体结构的同时探索局部序列空间。可迁移到其他"局部序列优化"任务（如酶活性位点改造、抗原表位工程）。</li>
+<li><strong>AF3 + Rosetta 组合筛选</strong>：AF3 提供结构预测，Rosetta 提供界面能量指标（dG/dSASA、Packstat、BUNS），两者互补。这种"预测 + 能量评估"的组合策略可迁移到其他多聚体设计任务。</li>
+</ol>
+<h3>可迁移实验设计</h3>
+<ol>
+<li><strong>配对供者设计</strong>：6 个供者、每供者 4 个技术重复的 PBMC 实验设计，适合小样本免疫学评估。</li>
+<li><strong>多维度验证</strong>：形态（TEM）+ 稳定性（DSF/DSC）+ 功能（IL-2）三层次验证，全面评估突变体质量。</li>
+</ol>
+<h3>对课题方向的启示</h3>
+<ul>
+<li><strong>结构预测工具的边界</strong>：AF3 对多聚体的预测精度有限（pTM/ipTM 仅 ~0.3-0.4），提示在类似任务中需要谨慎使用多聚体预测结果，或结合实验约束（如交联质谱、SAXS）。</li>
+<li><strong>免疫原性预测的局限</strong>：NetMHCIIpan 预测结合亲和力 ≠ 实际免疫原性，需要实验验证。这提示在计算免疫工程中，预测工具应作为筛选器而非最终裁决者。</li>
+<li><strong>序列-结构-功能三角验证</strong>：VLPIM 的成功在于将序列变化（ProteinMPNN）、结构验证（AF3/Rosetta）和功能验证（IL-2）三者串联，这种三角验证策略是计算蛋白设计的通用范式。</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, introduction, methods, results, discussion, conclusion, and data availability statements</li>
+<li><strong>Assessment boundary</strong> Scientific validity, technical soundness, methodological rigor, and claims substantiation based solely on the provided manuscript content</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present VLPIM, a computational pipeline integrating NetMHCIIpan, ProteinMPNN, AlphaFold3, and Rosetta to modulate CD4+ T cell epitope immunogenicity in virus-like particles while preserving structural integrity, with experimental validation on hepatitis B core VLPs demonstrating both immunogenicity reduction and enhancement</li>
+<li><strong>Visible evidence base</strong> In silico predictions (NetMHCIIpan IC50 values, AF3 structural models, Rosetta interface metrics), SDS-PAGE, TEM, DSF, DSC, and IL-2 ELISA from human PBMC assays</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures and tables referenced but not provided (Fig. S1, S2, Table S1), raw numerical data for IC50 predictions, statistical analysis details, HLA typing data, negative controls for immunogenicity assays, and quantitative TEM particle size distributions</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The manuscript describes a potentially useful computational workflow for modulating VLP immunogenicity, with a logical integration of established tools. The core concept of bidirectional immunogenicity modulation in multimeric assemblies addresses a genuine gap. However, the experimental validation is limited in scope and depth, with only two successfully assembled mutants characterized immunologically. The claim of "precise" immunogenicity modulation is not fully supported by the data presented, particularly given the small number of validated variants and the absence of mechanistic experiments demonstrating MHC-II-restricted presentation. The manuscript would benefit from more comprehensive validation, including quantitative dose-response analyses, additional structural characterization, and clearer evidence linking predicted epitope changes to observed T cell responses.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Vaccine developers and researchers in protein engineering would find this workflow relevant, as VLP immunogenicity tuning is a practical challenge in vaccine design and drug delivery. Computational biologists working on immunogenicity prediction and deimmunization of therapeutic proteins may also be interested in the integrated pipeline. The web server and standalone tool availability increases potential utility for applied researchers without deep computational expertise.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> 
+  1. Addresses a relevant problem: immunogenicity modulation of multimeric assemblies, which is underexplored compared to monomeric proteins
+  2. Integrates multiple state-of-the-art computational tools into a coherent, accessible pipeline
+  3. Bidirectional design capability (both reduction and enhancement) is a useful innovation
+  4. Experimental validation, while limited, does demonstrate proof of concept with two successfully assembled mutants
+  5. The multimer-aware structural filtering strategy is a thoughtful consideration often missing in deimmunization approaches</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "VLPIM permits precise immunogenicity modulation of VLPs and other multimers"</li>
+<li><strong>Evidence pointer</strong> Results section, Fig. 6K</li>
+<li><strong>Concern</strong> The claim of "precise" modulation is based on IL-2 secretion data from only 6 donors, with no dose-response curves, no time-course analysis, and no assessment of whether observed differences are statistically significant. The IL-2 data show substantial donor variability, with PMD-02 showing lower secretion than WT in some donors but the manuscript does not report statistical testing. Furthermore, only 2 of 4 designed mutants successfully assembled into VLPs, and only these 2 were tested immunologically. This limited dataset does not support the strong claim of precise modulation.</li>
+<li><strong>Why it matters</strong> The central conclusion of the paper rests on the demonstration that the computational predictions translate into predictable immunological outcomes. Without robust statistical analysis and a larger validation set, the precision of the approach cannot be established. The 50% success rate for assembly competence, while acknowledged, also tempers the claim of reliable structural preservation.</li>
+<li>
+<p><strong>Resolution test</strong> Provide statistical analysis of IL-2 data (e.g., mixed-effects models accounting for donor variability), include dose-response experiments, and either increase the number of validated mutants or temper the language to reflect proof-of-concept rather than established precision.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Mechanistic evidence</li>
+<li><strong>Claim pointer</strong> "epitope substitutions could either suppress or enhance CD4+ T cell activation"</li>
+<li><strong>Evidence pointer</strong> Results section, Fig. 6K</li>
+<li><strong>Concern</strong> The manuscript attributes observed IL-2 differences to altered CD4+ T cell epitope recognition, but no direct evidence for MHC-II-restricted presentation is provided. IL-2 secretion from PBMCs could reflect multiple mechanisms, including differential uptake, processing, or innate immune activation. The discussion acknowledges this limitation but does not resolve it. The claim that reduced structural stability of PMD-02 would facilitate degradation and therefore the reduced IL-2 is due to epitope changes is speculative and not directly tested.</li>
+<li><strong>Why it matters</strong> The mechanistic interpretation is central to the claim that the approach modulates immunogenicity through epitope-specific effects. Without blocking antibodies against MHC-II, CD4-depletion experiments, or antigen-presentation assays, alternative explanations cannot be excluded. This weakens the scientific foundation for the proposed mechanism.</li>
+<li>
+<p><strong>Resolution test</strong> Include MHC-II blocking experiments, CD4+ T cell depletion or enrichment assays, or use antigen-presenting cells with defined HLA types to demonstrate epitope-specific effects. Alternatively, present data showing that the mutated epitopes are no longer recognized by epitope-specific T cell lines or clones.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Structural validation</li>
+<li><strong>Claim pointer</strong> "VLPIM generated VLP variants that preserved the native virus-like morphology"</li>
+<li><strong>Evidence pointer</strong> Results section, Fig. 6A to D</li>
+<li><strong>Concern</strong> TEM images are shown for the assembled mutants, but quantitative analysis of particle size distribution is limited. PMD-02 shows a broader size distribution around 50 nm compared to WT at approximately 28 nm, which is a substantial difference. The manuscript does not discuss whether this size difference affects the validity of comparing these particles as "native-like" or whether the larger size reflects aberrant assembly. No cryo-EM or other high-resolution structural validation is provided.</li>
+<li><strong>Why it matters</strong> The claim of preserved native morphology is important for the utility of the approach. A 22 nm difference in diameter is significant and may affect immunogenicity through altered antigen display density or particle geometry. Without more detailed structural characterization, the relationship between the computational structural predictions and actual assembled particles remains unclear.</li>
+<li>
+<p><strong>Resolution test</strong> Provide quantitative particle size analysis with statistical comparison to WT, and ideally higher-resolution structural data (cryo-EM or negative-stain EM with 2D class averaging) to confirm icosahedral symmetry and T-number preservation.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> "VLPIM permits precise immunogenicity modulation of VLPs and other multimers"</li>
+<li><strong>Evidence pointer</strong> Discussion section</li>
+<li><strong>Concern</strong> The claim of generalizability to "other multimers" is not supported by any data. The workflow was applied to a single VLP system (HBc) with a limited set of mutations. The scaffold-agnostic claim is plausible given the tool integration, but no evidence is presented for application to other systems. The discussion acknowledges this but the abstract and conclusion state it as a capability.</li>
+<li><strong>Why it matters</strong> Overstating generalizability without evidence could mislead potential users. The performance of the pipeline on other scaffolds with different symmetries, sizes, or assembly mechanisms is unknown. The claim should be framed as a design principle rather than an established capability.</li>
+<li>
+<p><strong>Resolution test</strong> Either provide additional examples of application to other VLP systems or multimeric proteins, or revise the language to indicate that the framework is designed to be scaffold-agnostic but has only been validated on HBc VLPs to date.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Methodological clarity</li>
+<li><strong>Affected element</strong> Scoring function (Eq. 1)</li>
+<li><strong>Evidence pointer</strong> Materials and Methods, Results section</li>
+<li><strong>Issue</strong> The Sim score equation is described with a subscript "i" in the text but the equation shows "Siim" which appears to be a typographical error. The description of the normalization is somewhat confusing: it states "lower IC50 values receive lower rank values" but then describes min-max normalization without clearly specifying whether ranks or raw IC50 values are normalized. The equation notation is unclear.</li>
+<li>
+<p><strong>Required correction</strong> Clarify the equation notation, correct the typographical error, and provide a clear worked example of how the Sim score is calculated for a hypothetical variant.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data presentation</li>
+<li><strong>Affected element</strong> Fig. 4A and B</li>
+<li><strong>Evidence pointer</strong> Results section</li>
+<li><strong>Issue</strong> The manuscript states that the optimal PMD mutant showed a "~19-fold" decrease in antigen affinity and the PMI mutants showed "~33- and ~52-fold" increases. However, the figure panels are not described in sufficient detail to understand what exactly is plotted (predicted IC50 values? fold changes? individual alleles or averaged?). The y-axis labels are not described.</li>
+<li>
+<p><strong>Required correction</strong> Provide clear figure legends describing the exact metric plotted, the units, and whether data represent individual alleles or summary statistics. Include error bars or confidence intervals where applicable.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Experimental design</li>
+<li><strong>Affected element</strong> PBMC immunogenicity assay</li>
+<li><strong>Evidence pointer</strong> Materials and Methods, Results section</li>
+<li><strong>Issue</strong> The manuscript states PBMCs were obtained from 6 independent donors but does not report donor demographics, HLA typing, or whether the same donors were used across all experimental conditions. The concentration of VLP used (10 μg/ml) is stated but no justification or dose-response data are provided. The choice of IL-2 as the sole readout is not justified.</li>
+<li>
+<p><strong>Required correction</strong> Report donor characteristics and HLA types if available, justify the VLP concentration used, and consider additional readouts (e.g., proliferation, other cytokines) or at minimum discuss the rationale for IL-2 as the primary endpoint.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> All experimental data</li>
+<li><strong>Evidence pointer</strong> Results section</li>
+<li><strong>Issue</strong> No statistical methods are described in the Materials and Methods. The manuscript reports differences in IL-2 secretion and Tm values without indicating whether these differences are statistically significant or providing measures of variability (SD, SEM, confidence intervals).</li>
+<li>
+<p><strong>Required correction</strong> Add a statistical analysis subsection describing the tests used, and report measures of variability and significance levels for all quantitative comparisons.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Literature context</li>
+<li><strong>Affected element</strong> Introduction and Discussion</li>
+<li><strong>Evidence pointer</strong> Introduction, Discussion</li>
+<li><strong>Issue</strong> The introduction cites references for VLP applications and immunogenicity prediction tools but does not adequately contextualize prior deimmunization approaches for multimeric assemblies. The discussion mentions that most applications have focused on therapeutic proteins but does not cite specific prior work on VLP immunogenicity engineering beyond epitope insertion strategies.</li>
+<li>
+<p><strong>Required correction</strong> Add citations to prior computational deimmunization efforts for multimeric systems and discuss how VLPIM differs from or improves upon these approaches.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Software availability</li>
+<li><strong>Evidence pointer</strong> Data Availability, Materials and Methods</li>
+<li><strong>Issue</strong> The manuscript states the standalone tool is available on GitHub and the web server is accessible, but does not provide a version number, DOI, or specific instructions for installation beyond the pip command. The dependencies and system requirements are not fully specified.</li>
+<li><strong>Required correction</strong> Provide a versioned release with a DOI, list all dependencies with versions, and include a brief usage example or link to documentation.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "precise immunogenicity modulation" is not supported by the limited experimental dataset (2 successfully assembled mutants, 6 donors, single readout)</li>
+<li>The assertion that reduced IL-2 secretion in PMD-02 is attributable to altered epitope recognition rather than structural instability is not directly tested</li>
+<li>The generalizability claim to "other multimers" is asserted without supporting evidence</li>
+<li>The statement that "the success rate of deep-learning-designed mutants (PMI/PMD series, 50%) was remarkably high" lacks statistical context or comparison to baseline success rates from other approaches</li>
+<li>The claim that VLPIM "permits" bidirectional modulation is supported only for the specific HBc VLP system tested, not as a general capability</li>
+<li>The discussion of "cross-presentation via MHC-II molecules" is not directly demonstrated by the experimental data presented</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

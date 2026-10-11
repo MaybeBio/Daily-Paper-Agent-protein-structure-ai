@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report that biased Fab phage-display libraries, built from CDR H3 motifs of anti-matriptase antibodies, can generate potent inhibitors of matriptase and binders of homologous serine proteases (TMPRSS2, uPA). They further claim that computational co-folding methods outperform rigid-body docking in modeling antibody-protease complexes, and that ensemble DeltaDeltaG predictions identify key interactions validated by mutagenesis.
+- **Visible evidence base** Abstract text only; one PDB deposition (9PYF) is mentioned
+- **Missing materials affecting confidence** Full methods, library construction details, selection data, potency measurements, structural models, benchmarking statistics, mutagenesis data, and all figures/tables
+
+## Reviewer
+- **Overall assessment** The abstract describes a technically ambitious and potentially valuable framework combining biased antibody libraries with computational structure prediction for serine protease inhibition. The reported 100,000-fold improvement over circularized H3 loops is striking, and the benchmarking claim favoring co-folding is of interest. However, the abstract alone provides insufficient detail to evaluate the rigor of the selection, the quality of the structural models, the statistical basis of the benchmarking comparison, or the strength of the mutagenesis validation. The core claims are plausible but not fully established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in antibody engineering, protease biology, and computational structural biology. The work addresses a practical challenge in generating inhibitors against conserved protease active sites, which is relevant to therapeutic development for targets such as matriptase, TMPRSS2, and uPA. The benchmarking of co-folding methods will interest computational biologists seeking improved antibody-antigen docking protocols.
+- **Major strengths** The use of biased libraries based on known inhibitory motifs is a rational design strategy with clear translational logic. The reported potency improvement is substantial and suggests functional transfer of the H3 motif. The inclusion of a benchmarking component comparing co-folding and docking methods adds methodological value beyond the biological findings. The deposition of a new structure (9PYF) supports the structural claims.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** "Selection against matriptase identified 16 inhibitors with sub-100 nM potency, representing 100,000-fold improvement over circularized H3 loops alone."  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract reports a 100,000-fold improvement but provides no experimental details on how the circularized H3 loop comparator was measured, what assay format was used, or how the improvement factor was calculated. Without these data, the magnitude of the claim cannot be independently assessed.  
+  - **Why it matters** This is the central quantitative claim of the work. If the comparator was not assayed under identical conditions, the improvement factor could be misleading.  
+  - **Resolution test** Provide the full assay data for both the selected inhibitors and the circularized H3 loops, including dose-response curves, error estimates, and statistical comparison.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** "benchmarking of five co-folding methods and rigid-body docking showed that co-folding consistently achieved acceptable to high quality DockQ scores, outperforming traditional docking"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The benchmarking claim is stated without any quantitative results, number of test cases, statistical significance, or definition of "acceptable" and "high quality" DockQ thresholds. The abstract does not specify which five co-folding methods were tested or how the comparison was controlled.  
+  - **Why it matters** The claim that co-folding outperforms docking is a strong methodological assertion. Without a clear benchmarking protocol and statistical analysis, the conclusion is not verifiable.  
+  - **Resolution test** Provide a benchmarking table with DockQ scores for each method across all test cases, including standard deviations and significance tests. Specify the software versions and input preparation protocols.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** "Ensemble predictions of mutational binding energy changes (DeltaDeltaG) using these models identified key paratope-epitope interactions, with predictions validated through mutagenesis."  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract states that DeltaDeltaG predictions were validated by mutagenesis but provides no information on the number of mutations tested, the correlation between predicted and experimental values, or the criteria for "key" interactions.  
+  - **Why it matters** Validation through mutagenesis is only meaningful if the experimental data are quantitatively compared to predictions. Without this, the claim of successful validation is unsupported.  
+  - **Resolution test** Provide a parity plot or correlation coefficient between predicted and measured DeltaDeltaG values, along with the list of mutations and their functional effects.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Scope and generalizability  
+  - **Claim pointer** "This work establishes a framework integrating biased antibody libraries with computational structure prediction and analysis for targeting conserved protease epitopes."  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The framework is demonstrated on matriptase, TMPRSS2, and uPA, but the abstract does not report whether the selected TMPRSS2 and uPA binders were functionally characterized beyond inhibition potency, nor whether the computational models for these targets were experimentally validated.  
+  - **Why it matters** The generalizability claim requires evidence that the framework works across multiple targets, not just that binders were obtained.  
+  - **Resolution test** Provide functional data (e.g., inhibition constants, cellular assays) for TMPRSS2 and uPA binders, and experimental validation of at least one structural model for each target.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Library diversity statement  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract states "six synthetic libraries with 10(10) diversity" but does not clarify whether 10(10) refers to the diversity of each library or the combined diversity.  
+  - **Required correction** Specify the diversity per library and the total combined diversity.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Sequence identity context  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The sequence identity values (43% for TMPRSS2, 35% for uPA) are given relative to matriptase, but the domain boundaries used for the comparison are not stated.  
+  - **Required correction** Specify whether the identity is calculated over the full protease domain or the catalytic domain only.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Precision  
+  - **Affected element** Potency descriptor  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The term "micromolar inhibitory potency" for TMPRSS2 binders is vague; a range or representative value would be more informative.  
+  - **Required correction** Provide the range or median IC50 or Ki values for the TMPRSS2 binders.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Reproducibility  
+  - **Affected element** Structural model description  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract mentions "structural models" for uPA binders but does not specify whether these are experimentally determined or purely computational.  
+  - **Required correction** Clarify the origin of the structural models (e.g., X-ray, cryo-EM, or computational prediction).
+- **Technical failings that need to be addressed before the case is established** R1-M1 (potency improvement claim), R1-M2 (benchmarking claim), R1-M3 (DeltaDeltaG validation claim). These three concerns directly affect the core conclusions and cannot be resolved without additional data.
+- **Assessment against Nature-style criteria**  
+  - **Originality** The combination of biased Fab libraries with co-folding benchmarking is a novel integration, though each component is established individually. The abstract does not fully demonstrate that the framework yields insights beyond what separate approaches would provide.  
+  - **Scientific importance** The potential to generate inhibitors against conserved protease active sites is of high importance for therapeutic development. However, the abstract does not show that the framework succeeds where conventional approaches fail, beyond the matriptase case.  
+  - **Interdisciplinary readership** The work bridges antibody engineering, enzymology, and computational biology, which could attract a broad audience. The abstract is written accessibly but lacks quantitative detail that would engage specialists.  
+  - **Technical soundness** The technical claims are not verifiable from the abstract alone. The benchmarking and DeltaDeltaG validation require full methodological transparency.  
+  - **Readability for nonspecialists** The abstract is clear and logically structured, but terms such as "DockQ scores" and "DeltaDeltaG" are used without definition, which may hinder nonspecialist comprehension.
+- **Recommendation posture** Currently not established from the provided evidence. The framework is promising and the direction is sound, but the three blocking concerns (R1-M1, R1-M2, R1-M3) require full data presentation and statistical rigor before the claims can be accepted. I would be supportive if these technical concerns are resolved in the full manuscript.
+
+## Risk / unsupported claims
+- The 100,000-fold improvement over circularized H3 loops is unsupported without comparator assay details.
+- The benchmarking claim that co-folding outperforms rigid-body docking is unsupported without quantitative results and statistical analysis.
+- The DeltaDeltaG validation claim is unsupported without correlation data between predictions and mutagenesis experiments.
+- The generalizability of the framework to TMPRSS2 and uPA is not established, as functional and structural validation for these targets is not described.
+- The statement that uPA binders "adopted a substrate-like CDR H3 binding mode in our structural models" is not verifiable without model quality metrics or experimental confirmation.

@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and methods as presented in the abstract; no figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors report an integrated computational workflow combining deep learning-based virtual screening and molecular dynamics simulations to identify four structurally distinct FXIIa inhibitors (DR1-DR4) from a library of approximately 21 million compounds. They claim stable binding for all four compounds, more favorable binding free energies for DR1 and DR3 relative to a reference inhibitor, and favorable predicted pharmacokinetic properties.
+- **Visible evidence base** Abstract text only; no quantitative results, structural data, or validation experiments are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, docking scores, binding free energy values, simulation convergence metrics, compound structures, and any experimental validation data
+
+## Reviewer
+- **Overall assessment** The abstract describes a computationally intensive and methodologically reasonable workflow for identifying potential FXIIa inhibitors. The combination of deep learning-based docking tools with microsecond-scale molecular dynamics and binding free energy calculations is appropriate for the stated challenge of active-site flexibility. However, the abstract provides no quantitative results, no comparison metrics, and no experimental validation. The core claims of "stable binding" and "more favorable binding free energies" cannot be assessed without numerical data and statistical analysis. The work is potentially of interest to the anticoagulant discovery community, but the evidence presented in the abstract is insufficient to establish the case.
+- **Who would be interested in the results, and why** Researchers in thrombosis and hemostasis, medicinal chemists targeting coagulation factors, and computational chemists developing or applying deep learning-based virtual screening workflows. The potential for reduced bleeding risk anticoagulants is clinically relevant, and the methodological approach may interest those working on flexible active site targets.
+- **Major strengths** The workflow addresses a recognized challenge in FXIIa inhibitor discovery, namely active-site flexibility, by using ensemble-based screening with microsecond-scale simulations. The use of multiple docking and rescoring tools in a hierarchical manner is a sound strategy. The library scale of approximately 21 million compounds is substantial and appropriate for a high-throughput virtual screen.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Microsecond-scale molecular dynamics simulations suggested stable binding of all four compounds to FXIIa, and binding free energy calculations suggested that DR1 and DR3 exhibited more favorable binding free energies than the reference inhibitor 1303."
+  - **Evidence pointer** Abstract, results section not provided
+  - **Concern** The claim of stable binding is based on simulations, but no quantitative metrics are provided, such as root-mean-square deviation (RMSD), root-mean-square fluctuation (RMSF), or interaction energy values. Similarly, the binding free energy comparison with the reference inhibitor is stated without any numerical values, error estimates, or statistical significance testing. The abstract does not indicate how many replicates were used for the binding free energy calculations or whether the differences are within the expected error of the MM/GBSA method.
+  - **Why it matters** Without quantitative data, the reader cannot determine whether the observed binding stability is meaningful or whether the free energy differences are statistically significant. MM/GBSA methods are known to have substantial error, and claims of superiority over a reference compound require error bars and replicate analysis. This is the central claim of the paper and cannot be evaluated from the abstract alone.
+  - **Resolution test** Provide RMSD and RMSF plots for all four compounds and the reference, binding free energy values with standard deviations from multiple independent simulations, and a statistical test (e.g., t-test or bootstrap) comparing DR1 and DR3 to the reference inhibitor.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Validation
+  - **Claim pointer** "Four structurally distinct hits (DR1-DR4) were identified."
+  - **Evidence pointer** Abstract, results section not provided
+  - **Concern** The abstract reports identification of four hits from a virtual screen but provides no experimental validation, no orthogonal computational validation beyond the same docking/scoring family, and no comparison to known FXIIa inhibitors other than the single reference compound. The abstract does not state whether these compounds were tested in any biochemical or cellular assay.
+  - **Why it matters** Virtual screening hits frequently fail in experimental assays due to false positives, solubility issues, or off-target effects. Without any experimental validation, the claim that these are "hits" is premature. The term "hit" implies some level of confirmed activity, which is not demonstrated.
+  - **Resolution test** Provide experimental IC50 or Ki values for DR1-DR4 against FXIIa, or clearly rephrase the claim to "computationally predicted candidates" and add a statement that experimental validation is ongoing or planned.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Methodological transparency
+  - **Claim pointer** "A hierarchical screening workflow was carried out in DrugFlow using KarmaDock for primary screening, CarsiDock for redocking, and RTMScore for rescoring."
+  - **Evidence pointer** Abstract, methods section not provided
+  - **Concern** The abstract does not specify the scoring thresholds, the number of compounds retained at each stage, or the criteria for selecting the final four hits. The enrichment rate from 21 million to 4 compounds is not described, and no performance metrics for the docking tools on this specific target are provided.
+  - **Why it matters** Without knowing the selection criteria and the attrition at each stage, the reader cannot assess whether the workflow is reproducible or whether the final hits are the result of a reasonable filtering process. The lack of thresholds makes it impossible to evaluate the stringency of the screen.
+  - **Resolution test** Provide a flowchart or table showing the number of compounds at each stage, the scoring cutoffs used, and the rationale for the final selection.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Methods description
+  - **Evidence pointer** Abstract, methods section
+  - **Issue** The abstract states that "missing regions were modeled with MODELLER" but does not specify which regions of the FXIIa catalytic domain were missing or the confidence in the modeled structure.
+  - **Required correction** Specify the missing residues and provide a validation metric for the modeled regions, such as a Ramachandran plot or DOPE score.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Pharmacokinetic claims
+  - **Evidence pointer** Abstract, results section
+  - **Issue** The claim of "favorable predicted pharmacokinetic properties" is vague. The abstract does not state which properties were predicted (e.g., solubility, permeability, metabolic stability) or the specific values.
+  - **Required correction** List the specific pharmacokinetic parameters predicted and provide the values for each compound, with a brief comparison to the reference inhibitor.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Simulation details
+  - **Evidence pointer** Abstract, methods section
+  - **Issue** The abstract does not specify the number of replicates for the binding free energy calculations or the length of the production runs used for the MMPBSA analysis.
+  - **Required correction** State the number of independent simulations and the trajectory length used for the binding free energy calculations.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (lack of quantitative binding data and statistical analysis), R1-M2 (no experimental validation or clear rephrasing of the "hit" claim), R1-M3 (missing screening thresholds and attrition data)
+- **Assessment against Nature-style criteria** Originality: The application of deep learning-based docking to FXIIa with ensemble-based screening is moderately original, though similar workflows have been reported for other targets. Scientific importance: The potential for safer anticoagulants is clinically significant, but the abstract does not demonstrate that the identified compounds have any functional activity. Interdisciplinary readership: The work bridges computational chemistry and thrombosis research, which could attract a broad audience if the results are robust. Technical soundness: The methods are appropriate in principle, but the lack of quantitative results and validation prevents assessment of technical execution. Readability for nonspecialists: The abstract is generally clear, though the deep learning tool names and simulation details may be opaque to non-computational readers.
+- **Recommendation posture** Currently not established from the provided evidence. The workflow is reasonable and the target is clinically relevant, but the abstract lacks the quantitative data and validation needed to support the central claims. I would be supportive if the full manuscript provides binding free energy values with error analysis, simulation stability metrics, and at least preliminary experimental validation or a clear statement that these are computational predictions pending experimental testing.
+
+## Risk / unsupported claims
+- The claim that DR1 and DR3 exhibit "more favorable binding free energies" than the reference inhibitor is unsupported without numerical values and statistical analysis.
+- The claim of "stable binding" for all four compounds is unsupported without RMSD/RMSF data or interaction energy analysis.
+- The characterization of DR1-DR4 as "hits" is unsupported without experimental activity data.
+- The claim of "favorable predicted pharmacokinetic properties" is unverifiable without specific parameters and values.
+- The overall implication that these compounds are viable leads for anticoagulant discovery is premature without experimental validation.

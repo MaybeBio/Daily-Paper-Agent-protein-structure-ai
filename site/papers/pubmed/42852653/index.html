@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The structural context of mutations in proteins predicts their effect on antibiotic resistance. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>The structural context of mutations in proteins predicts their effect on antibiotic resistance.</h1>
+      <div class="meta">Green, Anna G; Tasmin, Mahbuba; Vargas, Roger Jr; Farhat, Maha Reda</div>
+      <div class="meta muted">
+        
+        <span class="journal">eLife</span>
+        · 2026-10-09
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42852653/">原文</a>
+      </div>
+      <p class="one-liner">该文利用蛋白质结构（含AlphaFold预测）上下文预测结核分枝杆菌耐药突变，虽以表型预测为核心，但结构聚类分析和3D距离分类器对蛋白质结构计算建模有方法学借鉴意义。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">In Mycobacterium tuberculosis, a prevalent and deadly pathogen, resistance to antibiotics evolves primarily through non-synonymous mutations in proteins. Sequence-based analyses can uncover the genetic basis of antibiotic resistance, but these methods focus on primary sequence and often neglect other biological signals, such as protein structural information. We hypothesize that integrating the structural context of mutations improves the prediction of effects on function and phenotype. We curate high-confidence structural annotations for the M. tuberculosis proteome from 1350 crystallography and 2337 AlphaFold predictions, and mutations from over 31,000 M. tuberculosis isolates. We demonstrate that mutations in proteins known to cause resistance are clustered in 3D space, even in proteins where inactivating mutations at any position are thought to cause resistance. We find over 450 proteins in the M. tuberculosis proteome that display signals of clustered mutations, many of which have a known relationship with antibiotic resistance. We show that a supervised classifier trained on 3D distance to known resistance sites alone has an F1 score of 96.5% at classifying mutations as resistance-conferring on a held-out test set. This work demonstrates that protein structure provides useful information for categorizing which variants may cause antibiotic resistance, even when the majority of structures are AI-predicted.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">在结核分枝杆菌（Mycobacterium tuberculosis）这一普遍且致命的病原体中，抗生素耐药性主要通过蛋白质中的非同义突变演化而来。基于序列的分析可以揭示抗生素耐药性的遗传基础，但这些方法侧重于一级序列，往往忽略其他生物学信号，如蛋白质结构信息。我们假设，整合突变的结构背景能改善对其功能和表型影响的预测。我们从1350个晶体学和2337个AlphaFold预测中，为结核分枝杆菌蛋白质组整理了高置信度的结构注释，并从超过31,000个结核分枝杆菌分离株中获取突变数据。我们证明，已知导致耐药性的蛋白质中的突变在三维空间中聚集，即使在那些被认为任何位置失活突变均可导致耐药性的蛋白质中也是如此。我们在结核分枝杆菌蛋白质组中发现超过450个蛋白质显示出聚集突变信号，其中许多与抗生素耐药性有已知关联。我们展示，仅基于到已知耐药位点的三维距离训练的监督分类器，在保留测试集上将突变分类为赋予耐药性时，F1分数达到96.5%。这项工作表明，蛋白质结构为分类哪些变异可能导致抗生素耐药性提供了有用信息，即使大多数结构是AI预测的。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：The structural context of mutations in proteins predicts their effect on antibiotic resistance</li>
+<li><strong>作者与单位</strong>：Green, Anna G; Tasmin, Mahbuba; Vargas, Roger Jr; Farhat, Maha Reda（哈佛医学院 Farhat 实验室；马萨诸塞大学阿默斯特分校 SAGE 实验室）</li>
+<li><strong>期刊/预印本平台</strong>：eLife</li>
+<li><strong>年份</strong>：2026-10-09</li>
+<li><strong>论文类型</strong>：研究论文（Research Article）</li>
+<li><strong>领域</strong>：计算生物学 / 结构生物信息学 / 抗生素耐药性预测</li>
+<li><strong>关键词</strong>：结核分枝杆菌、蛋白质结构、突变聚类、抗生素耐药性、AlphaFold、Getis–Ord 统计量</li>
+<li><strong>DOI/arXiv 号</strong>：10.7554/eLife.109450</li>
+<li><strong>代码</strong>：https://github.com/aggreen/MTB_Mut_Clust；https://github.com/aggreen/EVcouplings/tree/feature/structure_finder</li>
+<li><strong>数据</strong>：https://doi.org/10.5281/zenodo.20766452（预计算残基间距离）；https://doi.org/10.5281/zenodo.20766453（支持数据）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构 × 抗生素耐药性表型预测」交叉方向，核心贡献在于：(1) 将空间统计方法（Getis–Ord G 统计量）引入蛋白质三维结构上的突变聚类分析；(2) 系统验证了 AlphaFold 预测结构在突变功能预测中的可用性；(3) 证明结构邻近性（3D proximity）是比序列邻近性（1D proximity）更强的耐药性变异判别特征。对蛋白质结构相关计算研究（结构预测、构象采样、突变效应预测）具有直接的方法论参考价值。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文利用 31,428 株结核分枝杆菌临床分离株的同塑性突变数据与 3,687 个蛋白的晶体结构（N=1,350）或 AlphaFold 预测结构（N=2,337），通过 Getis–Ord 空间统计量识别三维空间中的突变聚类，并证明「到已知耐药突变的 3D 距离」作为单一特征即可在留出测试集上以 96.5% 的 F1 分数区分耐药相关与非耐药相关突变。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：蛋白质三维结构中的突变空间分布是否携带预测抗生素耐药性的信息？能否仅凭结构上下文（而非序列上下文）对突变的耐药性效应进行分类？</li>
+<li><strong>为什么重要</strong>：结核分枝杆菌耐药性主要通过非同义突变演化。现有序列-based 方法（GWAS、ML）需要大量表型标记数据，对新兴药物（bedaquiline、pretomanid）和新发突变预测能力有限。结构信息可能提供不依赖大样本表型数据的泛化信号。</li>
+<li><strong>现有方法为何不足</strong>：(1) 监督方法依赖大量表型标注数据，对稀有突变和新型药物效果差；(2) 无监督进化方法（如 dN/dS、同塑性分析）仅用序列信息，忽略残基在三维空间中的功能邻近性；(3) 已有结构-aware 研究局限于单个蛋白（RpoB、PncA、AtpE），缺乏蛋白质组规模的系统验证。</li>
+<li><strong>精确研究问题</strong>：Can protein structural context (3D proximity to known resistance mutations) alone classify missense mutations as resistance-conferring vs. non-resistance-conferring across the entire M. tuberculosis proteome, with performance exceeding sequence-based proximity?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文引言及参考文献，属于「经外部核验」的领域发展框架。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列-based 关联分析</td>
+<td>GWAS（Farhat et al., 2019）、随机森林（Gröschel et al., 2021; Coll et al., 2014）</td>
+<td>可发现新耐药位点</td>
+<td>需大量表型数据；对稀有变异统计功效不足</td>
+</tr>
+<tr>
+<td>进化信号方法</td>
+<td>同塑性分析（homoplasy）、dN/dS</td>
+<td>无需表型数据</td>
+<td>仅用序列，忽略结构上下文</td>
+</tr>
+<tr>
+<td>单蛋白结构-aware 分析</td>
+<td>RpoB（Portelli et al., 2020）、PncA（Karmakar et al., 2020）、AtpE（Karmakar et al., 2019）</td>
+<td>证明结构特征有效</td>
+<td>局限于已知耐药蛋白，无法泛化</td>
+</tr>
+<tr>
+<td>蛋白质组规模结构预测</td>
+<td>AlphaFold（Jumper et al., 2021）、AlphaFill（Hekkelman et al., 2023）</td>
+<td>覆盖全蛋白质组</td>
+<td>预测结构存在不确定性（pLDDT 低区域）</td>
+</tr>
+<tr>
+<td><strong>本文位置</strong></td>
+<td><strong>Getis–Ord 空间统计 + 蛋白质组规模结构</strong></td>
+<td><strong>无监督发现 + 监督分类验证；全蛋白质组覆盖</strong></td>
+<td><strong>依赖同塑性数据质量；对新型药物覆盖有限</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列方法忽略结构上下文</td>
+<td>1D 邻近性预测 F1 仅 89.1%，低于 3D 的 96.5%</td>
+<td>功能相关残基在序列上可能相距很远，但在三维空间中邻近</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>监督方法依赖大量表型数据</td>
+<td>对新兴药物（bedaquiline、pretomanid）耐药突变预测不准</td>
+<td>数据集中大部分菌株在广泛使用这些药物之前测序</td>
+<td>Results 第 2 段</td>
+</tr>
+<tr>
+<td>单蛋白结构分析无法泛化</td>
+<td>已有结构-aware 研究局限于 RpoB、PncA 等少数蛋白</td>
+<td>缺乏蛋白质组规模的结构注释与突变数据整合</td>
+<td>Introduction 第 3 段</td>
+</tr>
+<tr>
+<td>同塑性信号可能受非耐药因素干扰</td>
+<td>Cas10 蛋白有大量同塑性突变但非耐药相关</td>
+<td>重复序列区域可能产生相位变异（phase variation）而非耐药选择</td>
+<td>Results 第 2 段、Appendix 1—figure 1</td>
+</tr>
+<tr>
+<td>AlphaFold 预测结构存在不确定性</td>
+<td>低 pLDDT 区域可能引入噪声</td>
+<td>预测结构在柔性区域可靠性有限</td>
+<td>Methods「Using AlphaFold database」节</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：将地理空间分析中的 Getis–Ord G 统计量应用于蛋白质三维结构，计算每个残基是否比随机预期更接近高突变残基；随后用「到最近已知耐药突变的 3D 距离」训练逻辑回归分类器。</li>
+<li><strong>核心洞察</strong>：耐药性突变的效应具有<strong>三维空间局部性</strong>——功能上等效的突变倾向于聚集在相同的结构微环境（如药物结合口袋、蛋白-蛋白互作界面）中。因此，即使某个突变本身从未被观察到（新发突变），只要它位于已知耐药突变附近的三维空间邻域内，就很可能具有相似的耐药效应。这一洞察将「突变效应预测」从「需要大量该位点的观测」转化为「需要该位点的结构上下文」。</li>
+<li><strong>[Analysis] 可能的普适教训</strong>：结构上下文（3D proximity）作为一种<strong>归纳偏置（inductive bias）</strong>，可以显著降低监督学习对数据量的需求。这一思路可迁移到其他「稀有变异-表型关联」问题（如致病性变异预测、蛋白质稳定性预测），以及「构象采样-功能位点发现」等任务中——结构邻近性编码了功能耦合性，而序列邻近性不一定。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：(1) 31,428 株 MTBC 临床分离株的变异数据（含同塑性计数）；(2) M. tuberculosis H37Rv 蛋白质组的结构（1,350 个实验结构 + 2,337 个 AlphaFold 预测结构）；(3) WHO 耐药突变目录（Kulkarni et al., 2024 更新版）。</li>
+<li><strong>输出</strong>：(1) 蛋白质组范围的残基级 G 分数（聚类统计量）；(2) 499 个显著聚类蛋白列表；(3) 耐药性变异分类器（逻辑回归）。</li>
+<li><strong>模块</strong>：
+  1. <strong>突变数据模块</strong>：过滤 SNP/indel，计算每个位点的同塑性分数（独立突变事件数）。
+  2. <strong>结构数据模块</strong>：PDB 搜索（EVcouplings 管道）→ 选择 ≥90% 覆盖率的代表结构；其余用 AlphaFold 结构（pLDDT ≥70 过滤）。
+  3. <strong>距离计算模块</strong>：EVcouplings 包计算残基间最小原子距离（Å）。
+  4. <strong>G 分数模块</strong>：对每个残基计算 Getis–Ord 统计量（基于同塑性分数与 3D 距离权重矩阵）。
+  5. <strong>校准模块</strong>：对 9 个已知耐药蛋白生成正/负对照（下采样 vs. 均匀模拟），比较 5 种统计量（KS 统计量最优）。
+  6. <strong>分类模块</strong>：对 WHO 目录中 9,365 个变异提取特征（1D 邻近性、3D 邻近性、G 分数），训练逻辑回归（70-30 划分，加权采样处理类别不平衡）。</li>
+<li><strong>流程</strong>：变异数据 → 同塑性分数 → 结构映射 → 残基间距离 → G 分数 → 显著性检验（置换检验）→ 显著聚类蛋白 → 分类器训练与评估。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同塑性分数计算</td>
+<td>量化每个位点的独立突变事件数</td>
+<td>识别正选择信号（耐药驱动）</td>
+<td>输入：31,428 基因组变异；输出：每位点同塑性计数</td>
+<td>Results 第 1 段</td>
+<td>无同塑性则无法区分选择与中性漂变</td>
+</tr>
+<tr>
+<td>结构映射与距离计算</td>
+<td>将序列位点映射到 3D 坐标并计算残基间距离</td>
+<td>3D 邻近性是核心特征</td>
+<td>输入：突变位点 + 结构；输出：残基间最小原子距离矩阵</td>
+<td>Methods「Computing inter-residue distances」节</td>
+<td>移除后退化为纯序列方法（F1 降至 89.1%）</td>
+</tr>
+<tr>
+<td>Getis–Ord G 分数</td>
+<td>检测残基是否邻近高突变残基</td>
+<td>识别三维空间中的突变热点</td>
+<td>输入：同塑性分数 + 距离矩阵；输出：每位点 G 分数</td>
+<td>Results 图 2</td>
+<td>移除后无法进行无监督聚类发现</td>
+</tr>
+<tr>
+<td>正/负对照生成</td>
+<td>校准显著性阈值</td>
+<td>确定聚类统计量的判别力</td>
+<td>输入：9 个已知耐药蛋白；输出：100 正例 + 100 负例/蛋白</td>
+<td>Methods「Preparing GeO score calibration data」节</td>
+<td>无校准则显著性阈值不可靠</td>
+</tr>
+<tr>
+<td>逻辑回归分类器</td>
+<td>预测变异是否为耐药相关</td>
+<td>验证结构特征的预测价值</td>
+<td>输入：1D/3D 邻近性 + G 分数；输出：耐药概率</td>
+<td>Results 表 1</td>
+<td>移除后无法量化结构信息的增量价值</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>Getis–Ord G 统计量</strong>（Methods「Computing the Getis–Ord score」节）：</p>
+<p>$$G_i = \frac{\sum_{j=1}^{L} w_{i,j} x_j - \bar{X} \sum_{j=1}^{L} w_{i,j}}{S K}$$</p>
+<p>其中：
+- $G_i$：残基 $i$ 的 G 分数（z-score 形式）
+- $L$：蛋白质中残基总数
+- $x_j$：残基 $j$ 的同塑性分数
+- $\bar{X}$：所有残基同塑性分数的均值
+- $w_{i,j}$：权重矩阵元素，定义为 $w_{i,j} = 1/d_{i,j}$（若 $i \neq j$），$w_{i,j} = 0$（若 $i = j$）
+- $d_{i,j}$：残基 $i$ 与 $j$ 之间的最小原子间距离（Å）
+- $S = \sqrt{\frac{\sum_{j=1}^{L} x_j^2}{L} - \bar{X}^2}$：同塑性分数的标准差
+- $K = \sqrt{\frac{L \sum_{j=1}^{L} w_{i,j}^2 - (\sum_{j=1}^{L} w_{i,j})^2}{L-1}}$：权重矩阵的标准差</p>
+<p><strong>直觉</strong>：$G_i$ 衡量残基 $i$ 周围三维邻域内的同塑性分数是否显著高于全局均值。高 G 分数表示该残基位于突变热点区域。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：</li>
+<li>31,428 株 MTBC 临床分离株（含 6 个谱系：L1 2,815；L2 8,090；L3 3,398；L4 16,931；L5 98；L6 96）</li>
+<li>782,565 个 SNP + 47,425 个 indel → 过滤后 469,942 个错义 SNP + 5,104 个框内 indel</li>
+<li>3,687 个蛋白有结构（1,350 实验 + 2,337 AlphaFold）</li>
+<li>WHO 耐药突变目录：9,365 个变异（583 R-assoc + 58 S-assoc + 其余不确定）</li>
+<li><strong>指标</strong>：F1 分数、精确率、召回率、AUC（分类器）；精确率-召回率曲线（聚类统计量比较）</li>
+<li><strong>基线</strong>：1D 序列邻近性（最小序列距离到已知 R 变异）</li>
+<li><strong>评测协议</strong>：70-30 训练-测试划分；加权采样处理类别不平衡；逻辑回归 + 网格搜索超参数调优</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>耐药蛋白 G 分数可视化</td>
+<td>已知耐药蛋白存在 3D 突变聚类</td>
+<td>9 个已知耐药蛋白（RpoB、EmbB、KatG 等）</td>
+<td>所有 9 个蛋白均显示显著聚类（G 分数 &gt; 5 的残基簇）</td>
+<td>耐药突变在 3D 空间中非随机分布</td>
+<td>聚类≠因果，可能反映功能约束而非耐药选择</td>
+<td>Results 图 2</td>
+</tr>
+<tr>
+<td>全蛋白质组聚类扫描</td>
+<td>存在大量未表征的突变聚类蛋白</td>
+<td>3,592 个蛋白</td>
+<td>499 个蛋白显著聚类</td>
+<td>结构聚类可发现潜在耐药/适应相关蛋白</td>
+<td>聚类蛋白中许多与耐药无关（如 Cas10）</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>1D vs. 3D 邻近性分类</td>
+<td>3D 邻近性优于 1D 邻近性</td>
+<td>逻辑回归，单一特征</td>
+<td>3D：F1 96.5%；1D：F1 89.1%</td>
+<td>结构信息提供超越序列的判别力</td>
+<td>未测试多特征组合或更复杂模型</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>G 分数分类</td>
+<td>G 分数可单独预测耐药性</td>
+<td>逻辑回归，G 分数特征</td>
+<td>F1 80.8%，精确率 99.2%</td>
+<td>G 分数高精确率但低召回率（保守）</td>
+<td>G 分数对稀有突变可能漏报</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>聚类蛋白 GO 富集</td>
+<td>聚类蛋白富集于特定生物学通路</td>
+<td>452 个聚类蛋白 vs. 全蛋白质组</td>
+<td>富集于脂肪酸代谢、氨基酸糖代谢、宿主进入等通路</td>
+<td>聚类蛋白与细胞壁合成和宿主互作相关</td>
+<td>富集分析依赖 GO 注释完整性</td>
+<td>Results 图 4</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅针对 M. tuberculosis 的<strong>错义突变</strong>和<strong>框内 indel</strong>，不涵盖移码突变、启动子突变、基因缺失等耐药机制。结论不适用于其他物种或非蛋白编码区域。</li>
+<li><strong>oracle/真值输入</strong>：WHO 耐药突变目录（Kulkarni et al., 2024）作为监督标签。该目录本身基于实验表型数据，存在注释偏差（已知耐药突变被过度表征）。</li>
+<li><strong>端到端状态</strong>：分类器仅使用结构邻近性特征，未整合序列保守性、蛋白稳定性预测（如 ΔΔG）、系统发育信息等。96.5% F1 是在「已知耐药蛋白」范围内的表现，对全新蛋白的泛化能力未验证。</li>
+<li><strong>算力成本</strong>：方法计算开销低（残基间距离 + 置换检验），无需深度学习训练。AlphaFold 结构为预计算资源。</li>
+<li><strong>历史数据依赖</strong>：同塑性分数依赖系统发育树重建质量；数据集以 L2/L4 谱系为主（24,021/31,428），对 L5/L6 等稀有谱系的代表性有限。</li>
+<li><strong>最难情形</strong>：对仅有一个已知耐药突变的蛋白（如新药靶点），3D 邻近性特征可能失效；对 intrinsically disordered regions 或低 pLDDT 区域，结构坐标不可靠。</li>
+<li><strong>群体/领域边界</strong>：结论限于结核分枝杆菌复合群（MTBC）。其他细菌的耐药机制（如质粒介导的耐药、外排泵过表达）不在本文框架内。</li>
+<li><strong>有边界的复述</strong>：在 MTBC 蛋白质组范围内，对于有高质量结构（实验或 AlphaFold pLDDT≥70）的蛋白，突变的三维空间位置（到已知耐药突变的距离）能以 96.5% F1 区分耐药相关与非耐药相关变异，优于序列位置（89.1% F1）。该性能在留出测试集上获得，但未在独立前瞻队列中验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同塑性数据对新型药物覆盖不足</td>
+<td>数据集中大部分菌株在 bedaquiline、pretomanid 等新药广泛使用前测序，相关耐药突变可能未被充分采样</td>
+<td>纳入更多近期测序的菌株</td>
+<td>Results 第 2 段</td>
+</tr>
+<tr>
+<td>聚类≠耐药因果</td>
+<td>显著聚类的蛋白可能反映其他选择压力（如宿主适应、毒力）而非耐药</td>
+<td>结合功能实验验证聚类位点的耐药效应</td>
+<td>Discussion 第 2 段</td>
+</tr>
+<tr>
+<td>随机置换假设过于简化</td>
+<td>假设所有位点突变率相同，未考虑密码子偏好、突变偏倚、保守区域</td>
+<td>未来可模拟根据蛋白稳定性预测的突变积累过程</td>
+<td>Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>分类器未达到临床部署标准</td>
+<td>96.5% F1 虽高，但 S-assoc 样本仅 58 个，类别不平衡严重</td>
+<td>扩大 S-assoc 标注数据，多中心验证</td>
+<td>Methods「Fitting a classifier」节</td>
+</tr>
+<tr>
+<td>结构覆盖不完整</td>
+<td>3,687/3,996 蛋白有结构，部分蛋白仅有部分残基被覆盖</td>
+<td>随 AlphaFold 数据库更新持续扩展</td>
+<td>Methods「Using AlphaFold database」节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3D 邻近性可能只是 1D 邻近性的非线性变换</td>
+<td>蛋白质折叠使序列邻近残基在 3D 中通常也较近；3D 距离可能部分冗余于 1D 距离</td>
+<td>若 3D 优势主要来自折叠后的空间压缩，则「结构信息」的增量价值被高估</td>
+<td>控制 1D 距离后计算 3D 距离的偏相关；或在匹配 1D 距离的位点对上比较 3D 距离的判别力</td>
+<td>Results 表 1 中 3D F1 96.5% vs 1D 89.1%</td>
+</tr>
+<tr>
+<td>训练/测试划分可能泄漏</td>
+<td>WHO 目录中同一蛋白的多个突变可能共享结构域，导致测试集突变与训练集突变在 3D 上天然邻近</td>
+<td>若按蛋白而非按突变划分，性能可能下降</td>
+<td>按蛋白分组进行 leave-one-protein-out 交叉验证</td>
+<td>Methods「Fitting a classifier」节未说明划分层级</td>
+</tr>
+<tr>
+<td>G 分数的置换检验可能低估假阳性</td>
+<td>对 3,592 个蛋白进行多重检验，未报告多重比较校正</td>
+<td>499 个显著聚类蛋白中可能包含大量假阳性</td>
+<td>报告 FDR 校正后的显著蛋白数；使用 q-value 阈值</td>
+<td>Results 图 4 未显示校正后结果</td>
+</tr>
+<tr>
+<td>AlphaFold 结构在低 pLDDT 区域的坐标不可靠</td>
+<td>2,337 个蛋白为预测结构，柔性区域（pLDDT&lt;70）被移除，但 70-80 区间仍可能误差较大</td>
+<td>结构误差可能系统性影响距离计算，尤其在 loop 区域</td>
+<td>在实验结构子集上重复分析；比较 pLDDT 分层后的结果稳定性</td>
+<td>Methods「Using AlphaFold database」节</td>
+</tr>
+<tr>
+<td>S-assoc 样本量过小（58 个）</td>
+<td>逻辑回归在极端类别不平衡下可能过拟合</td>
+<td>96.5% F1 可能对 S-assoc 召回率极低</td>
+<td>报告混淆矩阵和类别别召回率；使用 PR-AUC 而非 F1</td>
+<td>Results 表 1 未报告类别别指标</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>空间统计量迁移</strong>：Getis–Ord G 统计量（地理学中的热点检测工具）可直接迁移到蛋白质三维结构上的突变/保守性分析。对于「构象采样-功能位点发现」类任务，可用类似的空间自相关统计量（如 Moran's I、Getis–Ord）在 MD 模拟轨迹或构象集合中识别功能相关残基簇。</p>
+</li>
+<li>
+<p><strong>3D 邻近性作为通用特征</strong>：在蛋白质结构相关计算研究中，「到已知功能位点的 3D 距离」是一个计算成本极低但信息量高的特征。可迁移到：(a) 蛋白质设计中的突变筛选（优先设计靠近活性位点的突变）；(b) 分子对接中的结合位点预测（以已知配体结合残基为锚点）；(c) MD 模拟中的构象相关性分析。</p>
+</li>
+<li>
+<p><strong>AlphaFold 结构的实用性验证框架</strong>：本文提供了一个「预测结构在多大程度上可用于下游任务」的验证范式——通过比较实验结构与预测结构上的分析结果一致性来评估。这对「结构预测 × 下游应用」类研究有直接参考价值。</p>
+</li>
+<li>
+<p><strong>无监督聚类 + 监督验证的两阶段设计</strong>：先用无监督方法（G 分数）发现候选蛋白/位点，再用监督方法（逻辑回归）量化预测价值。这种设计避免了纯监督方法对标注数据的依赖，适合「稀有变异-表型」关联研究。</p>
+</li>
+<li>
+<p><strong>同塑性分数作为进化信号</strong>：在缺乏表型数据时，同塑性（独立突变事件数）可作为正选择代理指标。可迁移到「构象采样-适应度景观」研究中，将同塑性分数与构象能或稳定性预测结合。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>方法来源</strong>：Getis–Ord 统计量源自空间统计学（Getis &amp; Ord, 1992; Ord &amp; Getis, 1992），本文将其从地理空间迁移到蛋白质结构空间。类似迁移见 PIVOTAL（Liang et al., 2020）用于人类致病性变异。</li>
+<li><strong>结构预测</strong>：AlphaFold（Jumper et al., 2021）提供蛋白质组规模结构覆盖；AlphaFill（Hekkelman et al., 2023）用于配体结合位点推断。本文验证了 AlphaFold 结构在突变聚类分析中的可用性。</li>
+<li><strong>耐药性预测</strong>：与现有 ML-based 耐药预测（Green et al., 2022; Chen et al., 2019; Wang et al., 2024）相比，本文不依赖大规模表型数据，而是利用结构先验。与 WHO 目录（Walker et al., 2022; Kulkarni et al., 2024）的整合提供了监督标签。</li>
+<li><strong>进化基因组学</strong>：同塑性分析（homoplasy）在细菌适应性进化研究中常用（Farhat et al., 2019; Vargas et al., 2023），本文将其与结构信息结合。</li>
+<li><strong>[Analysis] 可迁移领域</strong>：(a) 蛋白质设计中的「功能位点邻近性」约束；(b) 构象采样中的「功能相关构象子状态」识别；(c) 分子对接中的「结合口袋热点」预测；(d) 致病性变异注释（如 ClinVar 变异的结构上下文分析）。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Structure-Aware Few-Shot Mutation Effect Predictor
+   - <strong>来源局限/观察</strong>：本文 3D 邻近性特征在已知耐药蛋白上有效，但对全新蛋白（无已知耐药突变）失效；且仅用单一特征，未利用蛋白语言模型或结构编码器。
+   - <strong>核心假设</strong>：将 3D 邻近性与预训练蛋白语言模型（如 ESM-2）的嵌入结合，可在极少标注样本下预测突变效应。
+   - <strong>初步方法</strong>：对每个突变位点，提取 (a) 到已知功能位点的 3D 距离；(b) 周围残基的 ESM-2 嵌入均值；(c) AlphaFold pLDDT 作为置信度权重。训练轻量分类器（如梯度提升），在 M. tuberculosis 耐药突变和 ClinVar 致病性变异上评估。
+   - <strong>验证方式</strong>：与本文逻辑回归基线对比；在「新药靶点蛋白」上测试零样本/少样本泛化。
+   - <strong>可能的失败模式</strong>：3D 距离特征在无已知功能位点蛋白上无信息量；ESM-2 嵌入可能不编码结构邻近性。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Conformational Hotspot Detection via Getis–Ord on MD Ensembles
+   - <strong>来源局限/观察</strong>：本文 G 分数基于静态结构（晶体或 AlphaFold），未考虑蛋白构象动态。MD 模拟中的功能相关残基可能仅在特定构象子状态中聚类。
+   - <strong>核心假设</strong>：在 MD 模拟轨迹的每个构象快照上计算残基突变聚类 G 分数，可识别构象依赖的功能热点。
+   - <strong>初步方法</strong>：对目标蛋白（如激酶）运行 μs 级 MD，将轨迹聚类为构象子状态；在每个子状态上计算 G 分数；比较子状态间 G 分数差异，识别构象切换时暴露/隐藏的功能残基簇。
+   - <strong>验证方式</strong>：与已知变构位点、磷酸化位点比对；用突变实验数据验证预测热点。
+   - <strong>可能的失败模式</strong>：MD 采样不足导致构象子状态不完整；G 分数对构象噪声敏感。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Structure-Prioritized Active Learning for Resistance Mutation Discovery
+   - <strong>来源局限/观察</strong>：本文无监督聚类发现 499 个候选蛋白，但未设计实验验证优先级排序；现有耐药突变发现依赖全基因组关联，成本高。
+   - <strong>核心假设</strong>：结构聚类分数（G 分数 + 3D 邻近性）可作为主动学习的采样优先级，优先验证结构上聚类的未表征突变。
+   - <strong>初步方法</strong>：构建 M. tuberculosis 全蛋白质组突变-结构图谱，用 G 分数排序未表征突变；设计主动学习循环：优先对高 G 分数突变做表型实验，用结果迭代更新分类器。
+   - <strong>验证方式</strong>：模拟主动学习（用已有 WHO 目录做留一验证）；与随机采样和 1D 邻近性采样对比。
+   - <strong>可能的失败模式</strong>：高 G 分数突变可能富集于已知耐药基因，对发现全新耐药机制帮助有限。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Cross-Species Transfer of Structural Resistance Signatures
+   - <strong>来源局限/观察</strong>：本文方法局限于 MTBC；其他细菌（如肺炎克雷伯菌、铜绿假单胞菌）的耐药突变数据更稀疏，但结构信息可跨物种迁移。
+   - <strong>核心假设</strong>：耐药突变的三维空间聚类模式在不同细菌物种间保守，可跨物种迁移预测。
+   - <strong>初步方法</strong>：构建多物种耐药突变-结构数据库（CARD、MEGARes），对同源蛋白进行结构比对，测试在物种 A 训练的 3D 邻近性分类器在物种 B 上的迁移性能。
+   - <strong>验证方式</strong>：跨物种交叉验证；与序列同源性方法对比。
+   - <strong>可能的失败模式</strong>：不同物种耐药机制差异大（如外排泵 vs. 靶点突变），结构聚类模式可能不保守。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, main text, methods, and data availability statements</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodological soundness, evidence quality, and presentation as presented in the provided manuscript</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose that integrating protein structural context improves prediction of mutation effects on antibiotic resistance in Mycobacterium tuberculosis. They curate structural annotations for the M. tuberculosis proteome, analyze mutation clustering using the Getis–Ord statistic, and demonstrate that structural proximity to known resistance mutations predicts resistance association with high accuracy.</li>
+<li><strong>Visible evidence base</strong> Abstract, full main text, methods section, figure references, table references, supplementary file references, data availability statement</li>
+<li><strong>Missing materials affecting confidence</strong> Figures, tables, supplementary files, and appendices referenced in the text were not provided. Specific numerical results beyond those stated in the abstract and results text are not available for verification.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript presents a potentially valuable contribution to the field of antibiotic resistance prediction by integrating protein structural information with large-scale genomic data. The core idea, that 3D structural context improves prediction of mutation effects, is timely and relevant given recent advances in protein structure prediction. The authors demonstrate that mutations cluster in 3D space in known resistance genes and extend this to identify novel candidate genes. The supervised classification result, achieving 96.5% F1 score using 3D proximity alone, is striking and could have practical implications. However, several methodological concerns need to be addressed, particularly regarding the validation of the clustering statistic, the handling of potential confounding factors, and the generalizability of the classification approach. The manuscript would benefit from clearer presentation of the statistical framework and more rigorous benchmarking against existing methods.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in antimicrobial resistance genomics, clinical microbiologists developing resistance prediction tools, computational biologists working on protein structure-function relationships, and public health researchers interested in genomic surveillance of tuberculosis. The work is also relevant to the broader community studying the functional interpretation of genetic variants using structural information.</li>
+<li><strong>Major strengths</strong> The study leverages a large and well-characterized dataset of over 31,000 M. tuberculosis isolates. The integration of experimental and predicted structures across the proteome is comprehensive. The application of the Getis–Ord statistic to protein structures is novel in this context. The finding that structural proximity alone achieves high classification performance is potentially impactful. The authors acknowledge limitations of their approach and discuss alternative explanations for their findings.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical methodology</li>
+<li><strong>Claim pointer</strong> The authors claim that the Getis–Ord statistic identifies significant clustering of mutations in known resistance genes and across the proteome, using a permutation-based approach.</li>
+<li><strong>Evidence pointer</strong> Methods section "Computing the Getis–Ord score for clustering of homoplastic mutations"; Results section "Antibiotic resistance proteins demonstrate mutational clustering" and "Significant mutational clustering across the MTBC proteome"</li>
+<li><strong>Concern</strong> The statistical framework for determining significance of clustering is not fully described. The authors mention 10,000 random permutations for control examples, but the exact procedure for computing p-values for individual proteins in the whole proteome scan is unclear. Specifically, how is the null distribution generated for each protein? Is the permutation procedure accounting for the non-uniform mutability of sites (e.g., transition vs. transversion biases, codon structure)? The authors acknowledge in the Discussion that their random shuffling assumes equal mutability across sites, but this limitation is not addressed in the main results. The false discovery rate control for the 499 significant hits across 3,592 proteins is not described. Without a clear multiple testing correction, the number of significant hits may be inflated.</li>
+<li><strong>Why it matters</strong> The central claim of the paper, that mutations cluster in 3D space in resistance genes, depends entirely on the validity of the statistical test. If the null model is misspecified, the significance calls could be spurious. The identification of 499 significant proteins is a key result, and the reader needs to understand the error rate associated with this list.</li>
+<li><strong>Resolution test</strong> Provide a complete description of the null model, including how it accounts for site-specific mutation biases. Report the FDR or q-values for the 499 significant hits. Perform a sensitivity analysis using a null model that incorporates known mutation biases (e.g., based on trinucleotide context) to confirm that the significant hits are robust.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Validation and benchmarking</li>
+<li><strong>Claim pointer</strong> The authors claim that a classifier trained on 3D distance to known resistance sites alone achieves an F1 score of 96.5% at classifying mutations as resistance-conferring on a held-out test set.</li>
+<li><strong>Evidence pointer</strong> Results section "Structure supports the prediction of resistance-conferring variants"; Table 1</li>
+<li><strong>Concern</strong> The classification result is presented as a single F1 score without sufficient detail on the experimental setup. The train-test split is described as 70-30, but the authors do not specify whether the split was performed at the variant level or the protein level. If variants from the same protein appear in both training and test sets, the evaluation could be optimistically biased due to protein-level effects. Additionally, the comparison to 1D proximity (F1 of 89.1%) is informative, but the authors do not benchmark against existing state-of-the-art resistance prediction tools or against simpler baselines such as a model using only the identity of the mutated gene. The choice of logistic regression is reasonable, but the feature space is limited to a single distance value; the authors should demonstrate that adding structural information improves over a model that uses only gene identity or sequence conservation.</li>
+<li><strong>Why it matters</strong> The classification result is a major selling point of the paper, suggesting practical utility for interpreting novel variants. If the evaluation is biased or the comparison is not against appropriate baselines, the claimed advantage of structural information may not hold.</li>
+<li><strong>Resolution test</strong> Clarify the splitting strategy and report results with protein-level cross-validation. Benchmark against a baseline model that uses gene identity alone, and against published resistance prediction tools such as Mykrobe or TB-Profiler. Report precision-recall curves and area under the ROC curve in addition to F1 score.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Biological interpretation</li>
+<li><strong>Claim pointer</strong> The authors state that significant clustering in proteins not previously associated with resistance may indicate novel resistance determinants or targets of positive selection related to host adaptation.</li>
+<li><strong>Evidence pointer</strong> Results section "Significant mutational clustering across the MTBC proteome"; Discussion section</li>
+<li><strong>Concern</strong> The interpretation of clustering in novel proteins is speculative. The authors identify 499 proteins with significant clustering, but only a small fraction are known resistance genes. The biological meaning of clustering in other proteins is unclear. Clustering could arise from mutational hotspots unrelated to resistance (e.g., regions of low sequence complexity, sites under diversifying selection for immune evasion, or artifacts of the reference genome). The Gene Ontology enrichment analysis provides some functional context, but the link to antibiotic resistance is not established for most hits. The authors should temper their claims and provide additional evidence, such as comparison with known essential genes or with genes under positive selection in other datasets.</li>
+<li><strong>Why it matters</strong> The claim that novel clustered proteins may be resistance determinants is a significant extension of the work. If this claim is not well supported, it could mislead readers into pursuing false leads.</li>
+<li><strong>Resolution test</strong> Provide a more nuanced interpretation of the novel hits. Compare the list of 499 significant proteins with known essential genes, with genes under positive selection in M. tuberculosis, and with genes implicated in resistance in other studies. Discuss alternative explanations for clustering, such as mutational hotspots or immune evasion.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, first sentence</li>
+<li><strong>Issue</strong> The abstract states that "mutations in proteins known to cause resistance are clustered in 3D space, even in proteins where inactivating mutations at any position are thought to cause resistance." This is a strong claim that is not fully supported by the results presented, as the analysis of clustering in loss-of-function proteins is not described in detail.</li>
+<li><strong>Required correction</strong> Soften the claim or provide specific evidence for clustering in loss-of-function proteins in the main text.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Methodology</li>
+<li><strong>Affected element</strong> Methods section "Preparing GeO score calibration data"</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The downsampling procedure for positive controls uses a factor of 0.42 times the number of residues. The rationale for this specific value is not explained.</li>
+<li><strong>Required correction</strong> Provide a justification for the downsampling factor or cite a reference for this choice.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data availability</li>
+<li><strong>Affected element</strong> Data availability statement</li>
+<li><strong>Evidence pointer</strong> Data availability section</li>
+<li><strong>Issue</strong> The data availability statement mentions code repositories and a Zenodo dataset, but the link to the Zenodo dataset is not provided in the text.</li>
+<li><strong>Required correction</strong> Include the full DOI or URL for the Zenodo dataset.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Discussion section</li>
+<li><strong>Evidence pointer</strong> Discussion, paragraph on limitations</li>
+<li><strong>Issue</strong> The authors acknowledge the limitation of assuming equal mutability across sites but do not discuss potential solutions or the direction of the bias. It would be helpful to state whether the bias would lead to false positives or false negatives.</li>
+<li><strong>Required correction</strong> Add a sentence explaining the likely direction of bias and potential mitigation strategies.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The statistical framework for the clustering analysis needs to be fully specified, including the null model and multiple testing correction. The classification evaluation needs to be clarified with respect to the splitting strategy and benchmarked against appropriate baselines. The biological interpretation of novel hits needs to be tempered and supported with additional analyses.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The application of the Getis–Ord statistic to protein structures for resistance prediction is novel and represents a creative integration of structural biology and genomic epidemiology. Scientific importance: The work addresses a pressing need in tuberculosis diagnostics, namely improving the interpretation of novel mutations. The potential to expand the catalog of resistance-conferring mutations is clinically relevant. Interdisciplinary readership: The work bridges structural biology, genomics, and clinical microbiology, and should appeal to researchers in all three areas. Technical soundness: The underlying data resources are substantial and well-described, but the statistical validation of the clustering method and the benchmarking of the classifier need strengthening. Readability for nonspecialists: The manuscript is generally well-written and accessible, though the statistical details in the methods could be clearer for a general audience.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea is promising and the data resources are impressive, but the statistical framework and validation need to be strengthened before the claims can be fully accepted.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that clustering is observed "even in proteins where inactivating mutations at any position are thought to cause resistance" is not fully supported by the results presented.</li>
+<li>The biological interpretation of novel clustered proteins as potential resistance determinants is speculative and not directly tested.</li>
+<li>The classification performance of 96.5% F1 score cannot be fully evaluated without details on the cross-validation strategy and comparison to existing tools.</li>
+<li>The claim that structural information is "useful" for prediction is supported, but the magnitude of the improvement over simpler features (e.g., gene identity) is not quantified.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

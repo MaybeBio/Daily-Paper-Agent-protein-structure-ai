@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present ESMpI, a sequence-based predictor of protein isoelectric point (pI) that combines optimized pKa values for seven ionizable residue types and two termini with embeddings from a pretrained protein language model. They claim that ESMpI outperforms state-of-the-art methods, including structure-based approaches, when benchmarked against experimental pI values, and that its sequence-only requirement makes it suitable for high-throughput proteome-scale analyses and protein engineering.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark details, dataset descriptions, or methodological specifications are provided
+- **Missing materials affecting confidence** Full manuscript, methods section, benchmark datasets, performance metrics, comparison protocols, model architecture details, training and validation splits, and any figures or tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful application of protein language model embeddings to pI prediction, an under-served prediction task with practical relevance. However, the abstract provides no quantitative evidence, no benchmark details, and no methodological specifics. The central claim of outperforming state-of-the-art methods, including structure-based approaches, is entirely unsupported in the supplied material. The work may be of interest to the proteomics and protein engineering communities, but the case is not established from the abstract alone.
+- **Who would be interested in the results, and why** Researchers in proteomics, protein biophysics, and protein engineering would be interested in a fast, sequence-only pI predictor, particularly for applications in high-throughput proteome-scale analyses, protein purification design, and solubility engineering. The use of protein language model embeddings aligns with current trends in computational biology and may attract readers interested in transfer learning for protein property prediction.
+- **Major strengths** The problem is well motivated, as pI is a practically important biophysical property and sequence-based prediction would offer a clear advantage in throughput over structure-based approaches. The combination of pKa optimization with language model embeddings is a reasonable and potentially novel methodological direction. The stated applicability to high-throughput analyses is a meaningful practical contribution if the performance claims hold.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Benchmarked against experimental protein pI values, ESMpI outperforms other state-of-the-art methods, including structure-based approaches that derive the pI of a protein from residue-specific pKa calculations."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states that ESMpI outperforms state-of-the-art methods but provides no performance metrics, no comparison table, no statistical significance tests, and no description of the benchmark dataset. No quantitative results of any kind are presented.
+  - **Why it matters** The central claim of the manuscript is the superiority of ESMpI over existing methods. Without any numerical evidence, the claim cannot be evaluated, and the scientific contribution of the work is not established.
+  - **Resolution test** Provide benchmark results with specific metrics (e.g., mean absolute error, root mean square error, correlation coefficients) on a defined experimental dataset, with comparisons to named baseline methods and appropriate statistical tests.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** "ESMpI, a sequence-based protein pI predictor that combines optimized pKa values of seven ionizable residue types and two terminals with embeddings from a pre-trained protein language model."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract does not describe how the pKa values are optimized, which language model is used, how the embeddings are integrated with the pKa features, or how the final pI is computed from these components. The methodological details are entirely absent.
+  - **Why it matters** Reproducibility is a core requirement for computational methods. Without a clear description of the model architecture, feature integration, and training procedure, the method cannot be replicated or independently assessed.
+  - **Resolution test** Provide a full methods section detailing the language model choice, embedding extraction, pKa optimization procedure, feature fusion strategy, and the predictive model used to map features to pI.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Dataset and validation rigor
+  - **Claim pointer** "Benchmarked against experimental protein pI values"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No information is given about the experimental dataset used for benchmarking, including its size, source, sequence diversity, redundancy reduction, or whether the test set was separated from any training data. The risk of data leakage or overfitting cannot be assessed.
+  - **Why it matters** The validity of the performance claim depends entirely on the quality and independence of the benchmark dataset. Without this information, the reported superiority could be an artifact of dataset construction or evaluation protocol.
+  - **Resolution test** Describe the benchmark dataset in detail, including source, size, redundancy filtering, and explicit separation of training and test sets. Provide cross-validation or independent test results.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of scope
+  - **Affected element** Applicability claim
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract claims suitability for "high-throughput proteomescale analyses" but provides no runtime or scalability data.
+  - **Required correction** Add a statement on computational efficiency, such as prediction time per sequence or throughput benchmarks, to support the scalability claim.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Comparison completeness
+  - **Affected element** Baseline methods
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract mentions "other state-of-the-art methods" without naming them. The reader cannot assess whether the comparison set is appropriate or comprehensive.
+  - **Required correction** Name the baseline methods explicitly in the abstract or provide a comparison table in the full manuscript.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology precision
+  - **Affected element** "optimized pKa values"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The phrase "optimized pKa values" is ambiguous. It is unclear whether the pKa values are optimized against experimental data, derived from a physical model, or tuned as part of the machine learning pipeline.
+  - **Required correction** Clarify the meaning of "optimized" in the methods section and specify the source or fitting procedure for the pKa values.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative results, methodological detail, and dataset description means the core claims are currently unsupported.
+- **Assessment against Nature-style criteria** Originality: The combination of language model embeddings with pKa optimization for pI prediction is a plausible methodological novelty, but the abstract does not establish how this differs from prior pI predictors. Scientific importance: pI prediction is a useful but niche biophysical task; the importance is moderate and depends on demonstrated performance gains. Interdisciplinary readership: The work may appeal to computational biologists, proteomics researchers, and protein engineers, but the abstract does not frame the results in a way that would attract a broad interdisciplinary audience. Technical soundness: Cannot be assessed from the abstract; no methodological or validation details are provided. Readability for nonspecialists: The abstract is clear and accessible, but the lack of quantitative context limits its persuasive power for nonspecialist readers.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract alone does not support the central performance claims. A supportive assessment would require the full manuscript with quantitative benchmarks, methodological transparency, and dataset details.
+
+## Risk / unsupported claims
+- The claim that ESMpI outperforms state-of-the-art methods, including structure-based approaches, is unsupported by any quantitative evidence in the supplied material.
+- The claim that ESMpI is well suited for high-throughput proteome-scale analyses is unsupported by any runtime or scalability data.
+- The methodological description of ESMpI is too vague to assess its novelty or validity.
+- The benchmark dataset and evaluation protocol are not described, so the reliability of any reported performance cannot be evaluated.

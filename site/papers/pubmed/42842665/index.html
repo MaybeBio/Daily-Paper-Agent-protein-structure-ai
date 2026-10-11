@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Machine learning-assisted directed evolution of plant Rubisco. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Machine learning-assisted directed evolution of plant Rubisco.</h1>
+      <div class="meta">McDonald, Julie L; Lin, Jiacheng; Zhao, Yunlong; Hie, Brian L; Birch, Rosemary; Gehring, Mary; Bryson, Bryan D; Whitney, Spencer M; Shoulders, Matthew D; Wilson, Robert H</div>
+      <div class="meta muted">
+        
+        <span class="journal">Science advances</span>
+        · 2026-10-07
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42842665/">原文</a>
+      </div>
+      <p class="one-liner">该文利用结构感知的机器学习模型ESM-IF1辅助设计Rubisco大亚基突变文库，并通过定向进化筛选出催化效率提升的变体，属于蛋白质结构相关计算与AI方法在酶工程中的应用，但核心贡献偏向实验筛选而非结构计算建模本身。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Ribulose-1,5-bisphosphate carboxylase/oxygenase (Rubisco) is foundational to life on Earth, catalyzing carbon dioxide (CO(2)) fixation to generate biomass. However, Rubisco is a slow and inefficient enzyme that has proven challenging to engineer. We applied the structure-informed machine learning (ML) model ESM-IF1 to identify plausible amino acid sites in the large subunit of Nicotiana tabacum Rubisco to target for directed evolution. ML-assisted library design followed by selection in Rubisco-dependent Escherichia coli identified multiple enriched variants displaying improved catalytic efficiency. Several improved variants carried amino acid changes not found in the evolutionary lineage of plants, despite being assembly competent in plant chloroplasts, demonstrating that ML-assisted protein design can explore functional sequence space beyond what is observed from natural sequence diversity. Most prominently, the T391I substitution improved carboxylation rate by 29% and aerobic carboxylation efficiency by 43%. Our findings illustrate the utility of ML-assisted evolution for engineering Rubisco with improved carboxylation efficiency and potential for enhancing crop productivity.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">核酮糖-1,5-二磷酸羧化酶/加氧酶（Rubisco）是地球生命的基础，催化二氧化碳（CO(2)）固定以生成生物量。然而，Rubisco是一种缓慢且低效的酶，其工程改造一直颇具挑战。我们应用了结构信息引导的机器学习（ML）模型ESM-IF1，以识别烟草（Nicotiana tabacum）Rubisco大亚基中适合定向进化的潜在氨基酸位点。通过ML辅助的文库设计，随后在依赖Rubisco的大肠杆菌（Escherichia coli）中进行筛选，鉴定出多个显示催化效率提高的富集变体。几个改进的变体携带了在植物进化谱系中未发现的氨基酸变化，尽管它们在植物叶绿体中具备组装能力，这表明ML辅助的蛋白质设计可以探索超越自然序列多样性所观察到的功能序列空间。最显著的是，T391I替换使羧化速率提高了29%，有氧羧化效率提高了43%。我们的发现展示了ML辅助进化在工程改造Rubisco以提高羧化效率方面的实用性，并具有提升作物生产力的潜力。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Machine learning-assisted directed evolution of plant Rubisco</li>
+<li><strong>作者</strong>：McDonald, Julie L; Lin, Jiacheng; Zhao, Yunlong; Hie, Brian L; Birch, Rosemary; Gehring, Mary; Bryson, Bryan D; Whitney, Spencer M; Shoulders, Matthew D; Wilson, Robert H</li>
+<li><strong>单位</strong>：未提供（据作者信息推测含 MIT 及澳大利亚国立大学等，具体未在材料中列出）</li>
+<li><strong>期刊/平台</strong>：Science Advances</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：研究论文</li>
+<li><strong>领域</strong>：蛋白质工程 × 机器学习（结构感知蛋白语言模型） × 定向进化</li>
+<li><strong>关键词</strong>：Rubisco、ESM-IF1、机器学习辅助定向进化、羧化效率、CO₂固定</li>
+<li><strong>DOI/arXiv</strong>：10.1126/sciadv.aeh3246</li>
+<li><strong>代码</strong>：https://github.com/julielmcdonald/RubiscoMLDE；Zenodo: https://zenodo.org/records/21269162</li>
+<li><strong>数据</strong>：NCBI SRA BioProject PRJNA1476684；质粒 Addgene 253864, 253865, 239580, 253865</li>
+<li><strong>阅读日期</strong>：2026-05-14（按当前日期推算）</li>
+<li><strong>方向定位</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的典型案例——利用结构感知蛋白语言模型（ESM-IF1）指导植物 Rubisco 大亚基的定向进化文库设计，结合大肠杆菌体内筛选与体外动力学表征，实现酶催化效率提升。对课题方向的启示在于：结构感知 ML 模型可有效缩小序列搜索空间，发现自然进化未采样的功能性突变。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文使用结构感知蛋白语言模型 ESM-IF1 对烟草 Rubisco 大亚基进行计算机深度突变扫描，据此设计位点饱和突变文库，通过 Rubisco 依赖型大肠杆菌筛选系统（RDE2）富集功能增强突变体，获得多个羧化效率提升的变体，其中最优的 T391I 使 kcatc 提高 29%、kcatc/KCair 提高 43%，且这些突变在自然植物谱系中极为罕见或不存在。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否利用无监督结构感知蛋白语言模型（ESM-IF1）推荐植物 Rubisco 大亚基中值得定向进化的氨基酸位点，从而在极小文库规模下发现提升羧化效率的功能性突变？</li>
+<li><strong>重要性</strong>：Rubisco 是光合作用碳固定的限速酶，其催化速率慢、CO₂/O₂ 特异性低，是提高作物产量的关键改造靶点。然而植物 Rubisco 依赖多种分子伴侣组装，难以异源表达，传统随机突变文库筛选效率极低。</li>
+<li><strong>现有方法不足</strong>：随机突变（error-prone PCR）文库规模巨大（~50万），筛选成本高且阳性率极低（此前仅发现 1 个有效突变 M116L）；序列保守性分析推荐的位点多为自然进化中已固定的氨基酸，难以突破进化限制。</li>
+<li><strong>精确研究问题</strong>：Can a structure-informed protein language model (ESM-IF1) recommend amino acid sites in plant Rubisco large subunit that, when subjected to site-saturated mutagenesis and RDE2 selection, yield variants with improved carboxylation efficiency beyond natural sequence diversity?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」——基于 Rubisco 工程领域公开文献共识，结合本文引言所述）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期 Rubisco 工程（1990s-2000s）</td>
+<td>基于序列比对/系统发育的保守位点突变</td>
+<td>可操作性强</td>
+<td>突变多为中性或有害，难以突破催化-特异性权衡</td>
+</tr>
+<tr>
+<td>异源表达突破（2010s）</td>
+<td>大肠杆菌共表达分子伴侣（如 RbcX、RAF1）实现植物 Rubisco 重组表达</td>
+<td>使高通量筛选成为可能</td>
+<td>表达量低、组装效率差</td>
+</tr>
+<tr>
+<td>定向进化（2015-2020）</td>
+<td>随机突变 + RDE 筛选（如 M116L 的发现）</td>
+<td>无需结构信息</td>
+<td>文库规模大、阳性率极低（~0.01%）</td>
+</tr>
+<tr>
+<td>祖先序列重建（2017-2022）</td>
+<td>基于系统发育的祖先 Rubisco 重建</td>
+<td>可探索历史序列空间</td>
+<td>受限于现存序列多样性，难以发现全新突变</td>
+</tr>
+<tr>
+<td>机器学习辅助（2020-至今）</td>
+<td>蛋白语言模型（ESM-1bv、ESM-IF1）指导文库设计</td>
+<td>可探索非自然序列空间，文库规模缩小 1000 倍以上</td>
+<td>预测与功能相关性需实验验证</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文位置</strong>：首次将结构感知 pLM（ESM-IF1）应用于植物 Rubisco 的定向进化文库设计，证明 ML 推荐位点的富集效率比随机突变高 1700 倍，且能发现自然进化未采样的功能性突变。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>植物 Rubisco 难以异源表达</td>
+<td>依赖多种核编码分子伴侣（RbcX、RAF1 等）才能正确折叠组装</td>
+<td>大亚基折叠复杂，需特定伴侣网络</td>
+<td>引言部分：coexpression of chaperones 才可实现大肠杆菌表达</td>
+</tr>
+<tr>
+<td>随机突变文库筛选效率极低</td>
+<td>50 万突变体仅获 1 个有效突变（M116L）</td>
+<td>大多数突变有害或中性，功能增强突变极罕见</td>
+<td>Results 图 3B：随机突变阳性率 ~0.01%</td>
+</tr>
+<tr>
+<td>序列保守性分析难以指导功能增强</td>
+<td>高保守位点突变通常有害</td>
+<td>保守位点对结构/功能至关重要，突变耐受性低</td>
+<td>Results 图 1C：ESM-IF1 推荐位点保守性低于 ESM-1bv</td>
+</tr>
+<tr>
+<td>自然进化未采样的突变可能具有功能</td>
+<td>植物 Rubisco 序列空间高度受限</td>
+<td>进化速率慢、历史环境约束</td>
+<td>Results 图 4C：T391I 等突变在自然植物中几乎不存在</td>
+</tr>
+<tr>
+<td>催化-特异性权衡</td>
+<td>提高 kcatc 常伴随 SC/O 下降</td>
+<td>活性位点结构约束</td>
+<td>Results 表 1：所有变体 SC/O 与野生型无显著差异</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+- 使用 ESM-IF1（结构感知逆折叠模型）对烟草 Rubisco 大亚基（PDB: 1RLC 和 4RUB）进行计算机深度突变扫描（in silico DMS），计算每个位点每个氨基酸替代的 log-likelihood 分数。
+- 选取分数高于野生型的 49 个位点构建位点饱和突变文库（~400 个变体）。
+- 在 RDE2 系统中进行选择（0.05%-0.2% 阿拉伯糖梯度），通过 NGS 鉴定富集突变。
+- 对富集突变进行纯化、体外动力学表征（kcatc、KCair、SC/O）。</p>
+<p><strong>2) 核心洞察</strong>：
+- ESM-IF1 的 log-likelihood 分数虽不能直接预测最佳氨基酸，但能有效识别「可耐受突变」的位点——这些位点通常位于结构柔性区域（如 C 末端、环区），而非高度保守的活性位点。
+- 位点饱和突变 + 体内选择可以弥补 ML 预测精度的不足：ML 缩小搜索空间，选择系统负责功能筛选。
+- 自然进化未采样的突变（如 T391I）可以绕过进化约束，实现催化效率提升而不牺牲特异性。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 结构感知 pLM 的价值不在于「直接给出最优解」，而在于「高效缩小搜索空间」——将文库规模从 10⁵-10⁶ 降至 10²-10³，同时保持较高的功能突变富集率。
+- 对于高度保守的酶（如 Rubisco），进化约束可能阻碍了功能性突变的固定；ML 辅助设计可以「跳出」自然序列空间，探索「未走之路」。
+- 体内选择系统（如 RDE2）与 ML 预测的协同是成功的关键：ML 提供候选位点，选择系统提供功能验证，二者缺一不可。</p>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：
+- 烟草 Rubisco 大亚基氨基酸序列（Nicotiana tabacum）
+- 晶体结构：PDB 1RLC（未活化开放构象）和 4RUB（活化闭合构象）</p>
+<p><strong>输出</strong>：
+- 49 个推荐突变位点
+- 多个羧化效率提升的 Rubisco 变体（最优 T391I）</p>
+<p><strong>模块与流程</strong>：
+1. <strong>ESM-IF1 深度突变扫描</strong>：对每个位点的 19 种氨基酸替代计算 log-likelihood，筛选分数高于野生型的位点。
+2. <strong>文库构建</strong>：对 49 个位点进行位点饱和突变（NNS 密码子），获得 ~400 个变体的质粒文库。
+3. <strong>RDE2 选择</strong>：将文库转化至 Rubisco 依赖型大肠杆菌（含 pACYCprk:nptII 和 pCDF-NtAsmbl），在梯度阿拉伯糖浓度下进行 4 天选择。
+4. <strong>NGS 富集分析</strong>：对选择前后文库进行深度测序，计算每个突变的富集倍数。
+5. <strong>体外动力学表征</strong>：对富集突变进行 His6Ubq 标签纯化，测定 kcatc、KCair、SC/O。
+6. <strong>植物体内组装验证</strong>：通过农杆菌瞬时转化 NbrbcM 烟草（含 RbcM 替代），验证突变体在叶绿体中的组装能力。
+7. <strong>光合作用模型</strong>：使用 Farquhar 模型预测突变体对叶片光合速率的潜在影响。</p>
+<p><strong>关键工具</strong>：
+- ESM-IF1（结构感知逆折叠模型）
+- ESM-1bv（序列模型，用于对比）
+- RDE2 选择系统
+- [³H]-RuBP 消耗法测 SC/O
+- ¹⁴CO₂ 固定法测 kcatc 和 KCair</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESM-IF1 深度突变扫描</td>
+<td>计算每个位点氨基酸替代的 log-likelihood</td>
+<td>识别结构上可耐受突变的位点</td>
+<td>输入：序列+结构；输出：每位点 19 个替代分数</td>
+<td>Results 图 1A-B；表 S1</td>
+<td>无此模块则需随机突变，文库规模扩大 1000 倍以上</td>
+</tr>
+<tr>
+<td>位点饱和突变文库</td>
+<td>对推荐位点进行全氨基酸替代</td>
+<td>覆盖 ML 推荐位点的所有可能替代</td>
+<td>输入：49 个位点；输出：~400 个变体</td>
+<td>Results 图 3A</td>
+<td>移除后无法发现 ML 未预测到的最佳氨基酸</td>
+</tr>
+<tr>
+<td>RDE2 体内选择</td>
+<td>在 Rubisco 依赖型大肠杆菌中筛选功能增强突变</td>
+<td>提供功能选择压力，富集有益突变</td>
+<td>输入：突变文库；输出：富集突变体</td>
+<td>Results 图 2B-C；图 3B-C</td>
+<td>移除后需逐一纯化表征，通量极低</td>
+</tr>
+<tr>
+<td>NGS 富集分析</td>
+<td>定量每个突变在选择前后的频率变化</td>
+<td>识别显著富集的突变</td>
+<td>输入：选择前后文库 DNA；输出：富集倍数</td>
+<td>Results 图 3B-C；表 S5</td>
+<td>移除后无法区分真阳性与假阳性</td>
+</tr>
+<tr>
+<td>体外动力学表征</td>
+<td>测定纯化酶的 kcatc、KCair、SC/O</td>
+<td>定量评估突变对催化的影响</td>
+<td>输入：纯化蛋白；输出：动力学参数</td>
+<td>Results 表 1；图 4A-B</td>
+<td>移除后无法确认体内选择结果是否源于催化改进</td>
+</tr>
+<tr>
+<td>植物体内组装验证</td>
+<td>验证突变体在叶绿体中的组装能力</td>
+<td>排除大肠杆菌中可组装但植物中不可组装的突变</td>
+<td>输入：农杆菌浸润叶片；输出：组装检测</td>
+<td>Results 图 5C-D</td>
+<td>移除后无法评估突变体的实际应用潜力</td>
+</tr>
+<tr>
+<td>Farquhar 模型预测</td>
+<td>模拟突变体对叶片光合速率的影响</td>
+<td>将体外动力学参数转化为生理学意义</td>
+<td>输入：动力学参数；输出：A-Cc 曲线</td>
+<td>Results 图 6</td>
+<td>移除后无法评估突变体的农艺学价值</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1) ESM-IF1 log-likelihood 分数</strong>（Methods 节，ESM model implementation）：
+- 对每个位点 i 和每个替代氨基酸 a，计算：
+  log p(a|X, S) 
+  其中 X 为输入结构坐标，S 为野生型序列上下文。
+- 分数 &gt; 0 表示该替代比野生型氨基酸在该结构背景下更「合理」。</p>
+<p><strong>2) 羧化效率</strong>（Results 表 1）：
+- kcatc/KCair（mM⁻¹ s⁻¹）：在空气中（21% O₂）的羧化效率
+- 其中 kcatc 为 CO₂ 饱和时的最大羧化速率（s⁻¹）
+- KCair 为空气中 CO₂ 的表观米氏常数（μM）</p>
+<p><strong>3) Farquhar 模型</strong>（Methods 节，Modeling of photosynthetic rates）：
+- A = min(Ac, Aj)
+- Ac = Vcmax × (Cc - Γ<em>) / (Cc + Kc × (1 + O/Ko))
+- 其中 Vcmax = kcatc × [Rubisco]，Γ</em> 为 CO₂ 补偿点，Kc 和 Ko 分别为 CO₂ 和 O₂ 的米氏常数</p>
+<p><strong>4) 富集分数</strong>（Results 图 3B-C）：
+- 富集倍数 = (选择后频率) / (选择前频率)
+- 显著富集阈值：&gt; 2 倍且 FDR &lt; 0.05</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：
+- 烟草 Rubisco 大亚基（NtRbcL），49 个位点饱和突变文库，~400 个变体
+- RDE2 大肠杆菌选择系统（BL21 Star）
+- NbrbcM 转基因烟草（叶绿体基因组替换为 RbcM）</p>
+<p><strong>规模</strong>：
+- ESM-IF1 扫描：全蛋白 477 个位点 × 19 种替代
+- 文库：~400 个变体（每个位点平均 8 个替代）
+- 选择条件：0.05%-0.2% 阿拉伯糖梯度，4 天
+- 动力学表征：19 个纯化变体</p>
+<p><strong>指标</strong>：
+- 富集倍数（NGS 定量）
+- kcatc（s⁻¹）
+- KCair（μM）
+- kcatc/KCair（mM⁻¹ s⁻¹）
+- SC/O（[³H]-RuBP 消耗法）</p>
+<p><strong>基线</strong>：
+- 野生型 NtRbcL（V369A 背景）
+- 随机突变文库（此前研究，~50 万变体）</p>
+<p><strong>评测协议</strong>：
+- 每个变体至少 3 次独立动力学测量
+- SC/O 测量在 25°C、pH 8.0 条件下进行
+- 光合作用模型使用标准 C3 植物参数</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESM-IF1 vs ESM-1bv 推荐位点比较</td>
+<td>结构感知模型比序列模型更能发现非保守位点</td>
+<td>两模型推荐位点的保守性分数对比</td>
+<td>ESM-IF1 推荐位点保守性更低（37-55% vs 28%）</td>
+<td>结构信息可突破序列保守性限制</td>
+<td>保守性低不等于功能增强</td>
+<td>Results 图 1C-D</td>
+</tr>
+<tr>
+<td>RDE2 选择富集分析</td>
+<td>ML 推荐位点突变可富集功能增强变体</td>
+<td>选择前后 NGS 频率对比</td>
+<td>64 个突变显著富集，阳性率 16%</td>
+<td>ML 文库比随机突变高效 1700 倍</td>
+<td>富集不等于体外动力学改进</td>
+<td>Results 图 3B-C</td>
+</tr>
+<tr>
+<td>T391I 动力学表征</td>
+<td>T391I 提高羧化效率</td>
+<td>纯化酶 vs 野生型</td>
+<td>kcatc +29%，KCair -11%，kcatc/KCair +43%</td>
+<td>单点突变可显著提高羧化效率</td>
+<td>未测量 KO 和 kcatO</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>多突变体 SC/O 测量</td>
+<td>突变不牺牲 CO₂/O₂ 特异性</td>
+<td>19 个变体 vs 野生型</td>
+<td>所有变体 SC/O 与野生型无显著差异</td>
+<td>可绕过催化-特异性权衡</td>
+<td>SC/O 测量误差范围未报告</td>
+<td>Results 图 4B</td>
+</tr>
+<tr>
+<td>NbrbcM 植物组装</td>
+<td>突变体可在叶绿体中组装</td>
+<td>农杆菌瞬时表达</td>
+<td>T391I 和 A438R 可组装</td>
+<td>突变不影响植物体内组装</td>
+<td>未测量植物体内光合速率</td>
+<td>Results 图 5C-D</td>
+</tr>
+<tr>
+<td>Farquhar 模型预测</td>
+<td>T391I 提高叶片光合潜力</td>
+<td>模型模拟 vs 野生型</td>
+<td>T391I 预测光合速率 +15-25%</td>
+<td>体外改进可转化为生理学增益</td>
+<td>模型未考虑 Rubisco 含量变化</td>
+<td>Results 图 6</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>：本文仅针对烟草 Rubisco 大亚基（NtRbcL）的羧化效率优化，未涉及其他植物物种或其他 Rubisco 类型（如 C4 植物、蓝藻）。</p>
+<p><strong>oracle/真值输入</strong>：ESM-IF1 的 log-likelihood 分数是「结构合理性」的代理指标，并非催化活性的直接预测。最终功能验证依赖 RDE2 体内选择和体外动力学测量。</p>
+<p><strong>端到端状态</strong>：本文实现了「ML 推荐 → 文库构建 → 体内筛选 → 体外验证 → 植物组装验证」的完整流程，但未进行稳定转基因植物的光合速率测量。</p>
+<p><strong>算力成本</strong>：ESM-IF1 推理成本较低（单蛋白扫描可在数小时内完成），文库构建和筛选为主要时间成本。</p>
+<p><strong>历史数据依赖</strong>：ESM-IF1 训练数据包含大量蛋白质结构-序列对，但 Rubisco 大亚基在训练集中的代表性未知。</p>
+<p><strong>模型依赖</strong>：结果依赖于 ESM-IF1 的结构编码能力；其他结构感知模型（如 ESM-IF2、ProteinMPNN）可能给出不同推荐。</p>
+<p><strong>最难情形</strong>：T391I 等突变在自然植物中几乎不存在，说明 ML 成功探索了「未走之路」；但该突变在植物体内的长期稳定性、对 Rubisco 组装效率的影响未评估。</p>
+<p><strong>群体/领域边界</strong>：结果仅适用于烟草 Rubisco 及其近缘物种；不同 Rubisco 类型（如红藻型、蓝藻型）的结构差异可能影响 ML 推荐的适用性。</p>
+<p><strong>不确定性</strong>：动力学参数测量存在批次间变异（fig. S2），作者通过多次重复和纯化改进部分缓解，但未报告置信区间。</p>
+<p><strong>有边界的复述</strong>：在烟草 Rubisco 大亚基中，ESM-IF1 推荐位点的饱和突变文库经 RDE2 筛选后，可获得羧化效率提升 15-43% 的单点突变体，且这些突变在自然植物序列中极为罕见；该策略的普适性需在其他 Rubisco 类型中验证。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未进行稳定转基因植物验证</td>
+<td>仅通过瞬时表达验证组装，未测量稳定转化植物的光合速率</td>
+<td>构建稳定转基因烟草品系进行全生育期光合测量</td>
+<td>Discussion 末段</td>
+</tr>
+<tr>
+<td>未测量氧合动力学参数</td>
+<td>未测定 KO 和 kcatO，无法完整评估 SC/O 变化机制</td>
+<td>未来需进行完整的氧合动力学表征</td>
+<td>Discussion 中段</td>
+</tr>
+<tr>
+<td>ESM-IF1 预测与功能相关性有限</td>
+<td>T391I 并非 ESM-IF1 最高分推荐，需位点饱和突变弥补</td>
+<td>结合监督学习模型（输入动力学数据）提高预测精度</td>
+<td>Discussion 中段</td>
+</tr>
+<tr>
+<td>未探索 RbcS 亚基</td>
+<td>仅针对大亚基突变，小亚基对催化效率的影响未涉及</td>
+<td>将 ML 辅助设计扩展到 RbcS 亚基</td>
+<td>Discussion 末段</td>
+</tr>
+<tr>
+<td>突变组合效应未系统评估</td>
+<td>仅测试了 5/10/20 突变组合，未进行完整组合扫描</td>
+<td>未来需系统评估突变组合的加性与协同效应</td>
+<td>Results 图 S6</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RDE2 选择压力与植物叶绿体环境差异</td>
+<td>大肠杆菌中 Rubisco 功能需求可能与植物叶绿体不同，筛选出的突变可能仅适应细菌环境</td>
+<td>影响突变体的实际应用价值</td>
+<td>在体外模拟叶绿体条件（高 CO₂、特定氧化还原环境）下重新筛选</td>
+<td>Methods 节 RDE2 描述</td>
+</tr>
+<tr>
+<td>ESM-IF1 推荐位点偏向表面残基</td>
+<td>表面残基突变可能通过影响亚基组装或伴侣互作而非直接催化提高效率</td>
+<td>机制理解可能不完整</td>
+<td>对 T391I 进行分子动力学模拟或氢-氘交换质谱分析</td>
+<td>Results 图 4D-E</td>
+</tr>
+<tr>
+<td>未报告阴性对照</td>
+<td>未展示随机位点突变文库在 RDE2 中的富集率作为对照</td>
+<td>无法严格量化 ML 推荐的增益</td>
+<td>增加随机位点文库的平行筛选</td>
+<td>Results 图 3B</td>
+</tr>
+<tr>
+<td>动力学测量条件单一</td>
+<td>仅在 25°C、pH 8.0 下测量，未覆盖植物叶绿体的温度波动范围</td>
+<td>温度敏感性可能影响突变体实际表现</td>
+<td>在 15-35°C 范围内测量 Arrhenius 图</td>
+<td>Methods 节动力学测量</td>
+</tr>
+<tr>
+<td>光合模型参数未校准</td>
+<td>Farquhar 模型使用文献默认参数，未针对烟草进行校准</td>
+<td>预测的光合增益可能不准确</td>
+<td>使用烟草叶片实测 A-Cc 曲线校准模型</td>
+<td>Methods 节 Modeling of photosynthetic rates</td>
+</tr>
+<tr>
+<td>未讨论突变对 Rubisco 激活酶（Rca）互作的影响</td>
+<td>已知 Rca 对 Rubisco 激活至关重要，突变可能影响互作</td>
+<td>影响突变体在植物中的实际激活状态</td>
+<td>测定突变体与 Rca 的互作亲和力</td>
+<td>Discussion 中提及 Rca 但未深入</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>结构感知 pLM 用于文库设计的策略</strong>：ESM-IF1 的 log-likelihood 分数可作为「可突变性」的代理指标，将搜索空间从全序列（10⁵⁰⁰）缩小至数十个位点。此策略可迁移至其他难表达酶（如膜蛋白、多亚基复合物）的工程改造。</p>
+</li>
+<li>
+<p><strong>位点饱和突变 + 体内选择协同</strong>：ML 推荐位点后，不直接预测最优氨基酸，而是通过位点饱和突变覆盖所有可能替代，再以体内选择系统筛选功能增强突变。这种「ML 粗筛 + 实验精筛」的组合可提高成功率。</p>
+</li>
+<li>
+<p><strong>绕过进化约束的突变设计</strong>：T391I 等突变在自然植物中几乎不存在，说明 ML 可探索「未走之路」。对于进化上高度保守的酶，ML 辅助设计可能比基于序列保守性的理性设计更有效。</p>
+</li>
+<li>
+<p><strong>结构构象选择的重要性</strong>：作者使用开放（1RLC）和闭合（4RUB）两种构象进行扫描，说明输入结构的选择影响推荐结果。对构象动态的酶，建议使用多构象集合进行扫描。</p>
+</li>
+<li>
+<p><strong>体内组装验证的必要性</strong>：即使在大肠杆菌中功能增强，突变体在植物叶绿体中的组装能力仍需验证。这提示在酶工程中，异源表达系统的筛选结果需在目标宿主中二次验证。</p>
+</li>
+<li>
+<p><strong>催化-特异性权衡的可绕过性</strong>：本研究发现多个突变同时提高 kcatc 和降低 KCair 而不牺牲 SC/O，挑战了传统「催化-特异性权衡」观点。这可能为其他酶的工程改造提供新思路。</p>
+</li>
+<li>
+<p><strong>ML 模型选择依据</strong>：ESM-1bv（序列模型）推荐保守位点，ESM-IF1（结构模型）推荐非保守位点，说明结构信息对发现新功能突变至关重要。在类似任务中，优先选择结构感知模型。</p>
+</li>
+<li>
+<p><strong>实验流程的可复制性</strong>：从 ML 扫描 → 文库构建 → RDE2 选择 → NGS 分析 → 动力学表征 → 植物验证的完整流程，可作为蛋白质工程的标准范式，尤其适用于难以异源表达的真核酶。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, introduction, results, discussion, materials and methods, and supplementary figure/table references</li>
+<li><strong>Assessment boundary</strong> Scientific validity, technical soundness, claim support, and significance of the reported ML-assisted directed evolution of plant Rubisco</li>
+<li><strong>Shared manuscript claim summary</strong> The authors apply the structure-informed protein language model ESM-IF1 to recommend amino acid substitution sites in the large subunit of tobacco Rubisco, construct a site-saturated library at these sites, and use a Rubisco-dependent E. coli selection system to identify variants with improved carboxylation kinetics, including the T391I substitution that improves carboxylation rate by 29% and aerobic carboxylation efficiency by 43%, with several variants carrying substitutions absent from natural plant Rubisco sequences and assembly competence confirmed in planta.</li>
+<li><strong>Visible evidence base</strong> Main text figures 1-6 (referenced), tables 1 and S1-S8 (referenced), supplementary figures S1-S8 (referenced), methods descriptions, and data/code availability statements</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures and tables (S1-S8) not provided; raw NGS data not provided; detailed statistical analysis outputs not provided; plasmid maps and sequences not provided; full kinetic data for all variants not provided</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This manuscript presents a compelling application of structure-informed machine learning to a long-standing challenge in plant biotechnology: engineering Rubisco for improved carboxylation efficiency. The work is timely, technically ambitious, and the results, if fully supported by the data, would represent a meaningful advance in both directed evolution methodology and our understanding of Rubisco's catalytic plasticity. The combination of ML-guided library design with a high-throughput in vivo selection system is elegant, and the identification of multiple improved variants, including one with a substantial 43% improvement in aerobic carboxylation efficiency, is notable. However, the manuscript as presented has several gaps in evidence that prevent full assessment of the claims. The absence of the supplementary materials, which contain critical data on library composition, NGS analysis, and full kinetic characterization, is a significant limitation. Additionally, several methodological details and statistical considerations require clarification before the conclusions can be fully accepted. The phylogenetic analysis and the in planta assembly data are presented in a way that suggests they are confirmatory, but the depth of evidence is not fully visible. Overall, this is a promising and potentially important contribution, but the current evidence base is insufficient to fully establish all claims.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Plant biologists and crop scientists interested in improving photosynthetic efficiency for yield enhancement would find this work directly relevant. Synthetic biologists and protein engineers working on directed evolution methodologies would be interested in the demonstration that structure-informed ML models can effectively reduce the search space for beneficial mutations in a challenging enzyme system. Computational biologists developing and applying protein language models would find the application to a real-world engineering problem valuable. The work also speaks to the broader question of whether laboratory evolution can access sequence space beyond what natural selection has explored, which would interest evolutionary biologists. Finally, researchers working on Rubisco biology specifically, including those studying its biogenesis, assembly, and catalytic mechanism, would find the identification of new functional sites valuable.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> The study addresses a problem of high biological and agricultural significance with a well-reasoned approach. The use of ESM-IF1, a structure-informed model, is a thoughtful choice given the known limitations of sequence-only models for highly conserved proteins like Rubisco. The comparison between ESM-1bv and ESM-IF1 predictions provides useful insight into the value of structural information. The development of a streamlined library (~400 variants) that achieves a 1700-fold higher enrichment rate compared to error-prone PCR libraries is a compelling demonstration of the efficiency of ML-guided design. The identification of variants with improved kinetics, particularly T391I with a 29% increase in kcatc and 43% improvement in kcatc/KCair, is a significant result. The confirmation that several improved variants carry substitutions absent from natural plant Rubisco sequences is conceptually important, suggesting that ML can access rare or unexplored sequence solutions. The in planta assembly data, while preliminary, addresses a critical concern about whether mutations selected in E. coli would be compatible with the more complex chloroplast environment. The use of the Farquhar model to translate in vitro kinetic improvements into predicted photosynthetic gains provides a useful framework for assessing agricultural relevance.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence completeness</li>
+<li><strong>Claim pointer</strong> The claim that "ML-assisted library design followed by selection in Rubisco-dependent E. coli identified multiple enriched variants displaying improved catalytic efficiency" and the specific kinetic parameters reported in Table 1</li>
+<li><strong>Evidence pointer</strong> Table 1, Figures 2-4, Supplementary Tables S1-S5, Supplementary Figures S2-S3</li>
+<li><strong>Concern</strong> The supplementary materials, which contain the detailed data supporting the library composition, NGS analysis, enrichment calculations, and full kinetic characterization, are not provided. Without these data, it is impossible to verify the completeness of the library, the rigor of the selection, the statistical significance of the enrichment, or the accuracy of the reported kinetic parameters. The manuscript states that the library contained ~400 variants covering 49 sites, but the actual coverage per site, the number of replicates, and the criteria for defining "enriched" are not fully described in the main text. The kinetic measurements are reported for a subset of variants, but the number of independent measurements, the error bars, and the statistical comparisons to wild-type are not visible.</li>
+<li><strong>Why it matters</strong> The central claims of the paper rest on the quality and completeness of the library and the reliability of the kinetic measurements. If the library had poor coverage at key sites, or if the enrichment was not robustly reproduced, the conclusions about ML-guided design efficiency would be weakened. Similarly, if the kinetic improvements are not statistically robust or are based on a small number of measurements, the headline results could be overstated.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the supplementary materials, including full NGS data, library coverage statistics, enrichment calculations with replicates, and complete kinetic data with appropriate statistical analysis (e.g., number of replicates, standard errors, significance tests). The kinetic parameters in Table 1 should be accompanied by confidence intervals and the number of independent measurements.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that "the T391I substitution improved carboxylation rate by 29% and aerobic carboxylation efficiency by 43%"</li>
+<li><strong>Evidence pointer</strong> Table 1, Figure 4A, Supplementary Figure S2</li>
+<li><strong>Concern</strong> The kinetic characterization methodology raises several questions. The manuscript describes using soluble protein from E. coli lysates for initial measurements, with a purification protocol developed for more detailed analysis. The variability in kcatc measurements from lysates is acknowledged (Supplementary Figure S2), but the final values in Table 1 are presumably from purified protein. The purification method using His6Ubq-tagged RbcS is described, but the efficiency of assembly of the tagged complex, the yield, and the purity of the final product are not fully quantified. The manuscript states the purified Rubisco was "typically &gt;70% pure," which leaves room for contaminating proteins that could affect activity measurements. Additionally, the assay conditions for measuring kcatc and KCair are described briefly, but the CO2 concentration range, the number of data points, and the fitting procedure are not detailed. The manuscript also does not report measurements of kcatO or KO for the improved variants, which would be necessary to fully understand the mechanistic basis of the improved carboxylation efficiency.</li>
+<li><strong>Why it matters</strong> The quantitative claims about kinetic improvements are the core results of the paper. If the measurements are not sufficiently rigorous, the conclusions about the magnitude of improvement and the potential for agricultural impact would be undermined. The lack of KO data also limits the interpretation of whether the improvements are specific to carboxylation or reflect general changes in catalytic properties.</li>
+<li>
+<p><strong>Resolution test</strong> Provide detailed kinetic assay protocols, including CO2 and O2 concentration ranges, number of replicates, and fitting procedures. Report kcatO and KO values for the improved variants. Provide a more detailed characterization of the purified protein, including purity assessment (e.g., SDS-PAGE with densitometry) and confirmation of correct assembly (e.g., native PAGE or size exclusion chromatography with multi-angle light scattering).</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Claim pointer</strong> The claim that "several improved variants carried amino acid changes not found in the evolutionary lineage of plants, despite being assembly competent in plant chloroplasts, demonstrating that ML-assisted protein design can explore functional sequence space beyond what is observed from natural sequence diversity"</li>
+<li><strong>Evidence pointer</strong> Figure 4D-E, Supplementary Figure S7, Table 1</li>
+<li><strong>Concern</strong> The phylogenetic analysis presented in Supplementary Figure S7 is described as showing that some improved variants carry substitutions absent from natural plant Rubisco sequences. However, the analysis is not visible, and the criteria for "not found in the evolutionary lineage of plants" are not clearly defined. The manuscript states that T391I is "generally observed only in distantly related Rubisco from diatoms and bacteria," but the frequency of isoleucine at this position across the full diversity of Rubisco sequences is not quantified. The claim that these substitutions are "rare" or "absent" from plants needs to be supported by a clear description of the sequence database used, the search criteria, and the statistical significance of the rarity. Additionally, the in planta assembly data (Figure 5) is presented as evidence that these rare substitutions are compatible with chloroplast biogenesis, but the data appears to be from transient expression in N. benthamiana, which may not fully recapitulate stable transformation outcomes.</li>
+<li><strong>Why it matters</strong> The claim that ML can access sequence space beyond natural diversity is conceptually important and distinguishes this work from more conventional directed evolution approaches. If the rarity analysis is not rigorous, this claim would be weakened. The in planta assembly data is also critical for establishing the practical relevance of the findings.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the full phylogenetic analysis, including the sequence database used, the alignment methods, and the frequency of each improved substitution across major Rubisco lineages. Provide more detailed data on the in planta assembly experiments, including the number of biological replicates, the efficiency of assembly, and ideally, data from stable transformants.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that "ML-assisted library preparation is therefore effective for generating small, streamlined Rubisco libraries that successfully navigate the high degree of sequence conservation present in land plant isoforms"</li>
+<li><strong>Evidence pointer</strong> Figure 3B, Supplementary Table S5</li>
+<li><strong>Concern</strong> The comparison between the ML-guided library and error-prone PCR libraries is presented as a 1700-fold higher enrichment rate, but the details of this comparison are not fully visible. The error-prone PCR library from prior work (reference 12) may have used different selection conditions, different starting templates, or different definitions of "enriched." The manuscript does not describe how the enrichment rates were normalized or whether the comparison is apples-to-apples. Additionally, the library construction method using gene fragments from Twist Biosciences and Golden Gate Assembly is described, but the efficiency of the assembly, the number of transformants obtained, and the representation of all 49 sites in the final library are not quantified.</li>
+<li><strong>Why it matters</strong> The efficiency of the ML-guided library design is a key methodological contribution. If the comparison to error-prone PCR is not rigorous, the claim of superior efficiency would be overstated. The library quality also directly impacts the interpretation of the selection results.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed comparison of the ML-guided library and the error-prone PCR library, including the number of variants screened, the selection conditions, and the criteria for enrichment. Report the library coverage statistics, including the number of transformants, the representation of each target site, and the number of variants per site.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The claim that "we further confirmed that ML-recommended, catalytically improved NtRbcL variants could assemble correctly in chloroplasts"</li>
+<li><strong>Evidence pointer</strong> Figure 5, Supplementary Figure S8</li>
+<li><strong>Concern</strong> The in planta assembly experiments use a novel N. benthamiana line (NbrbcM) in which the native rbcL is replaced with R. rubrum rbcM. The manuscript describes the generation of this line but does not provide detailed characterization of its phenotype, growth characteristics, or the efficiency of the plastome transformation. The transient expression system using agroinfiltration is described, but the efficiency of transformation, the expression levels achieved, and the reproducibility of the assembly results are not quantified. The manuscript states that "detectable levels of assembled Rubisco" were observed at 5 days post-infiltration, but the sensitivity of the detection method and the quantification of assembly efficiency are not provided.</li>
+<li><strong>Why it matters</strong> The in planta assembly data is important for establishing that the improved variants are not only functional in E. coli but also compatible with the chloroplast environment. If the assembly data is not robust, the translational potential of the findings would be less certain.</li>
+<li>
+<p><strong>Resolution test</strong> Provide detailed characterization of the NbrbcM line, including confirmation of rbcL replacement, growth phenotypes, and Rubisco content. Provide quantitative data on the transient expression experiments, including transformation efficiency, expression levels, and assembly efficiency. Ideally, include data from stable transformants.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Introduction, paragraph 1</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The introduction states that Rubisco "has proven challenging to engineer" but does not provide a concise summary of the specific challenges (e.g., chloroplast genome transformation, complex assembly requirements, catalytic trade-offs) that have historically hindered engineering efforts. A brief overview of these challenges would help contextualize the significance of the authors' approach.</li>
+<li>
+<p><strong>Required correction</strong> Add 2-3 sentences in the introduction summarizing the key technical barriers to Rubisco engineering, with appropriate citations.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Results section "Preliminary screening and characterization"</li>
+<li><strong>Evidence pointer</strong> Figure 2C, location not provided</li>
+<li><strong>Issue</strong> The growth assays in Figure 2C appear to be qualitative (presence/absence of growth) rather than quantitative. The manuscript does not describe how growth was scored or whether the assays were performed in replicate.</li>
+<li>
+<p><strong>Required correction</strong> Provide a description of the growth assay methodology, including the number of replicates, the scoring criteria, and any statistical analysis. If the assays are qualitative, state this explicitly and discuss the limitations.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data presentation</li>
+<li><strong>Affected element</strong> Table 1</li>
+<li><strong>Evidence pointer</strong> Table 1</li>
+<li><strong>Issue</strong> Table 1 reports kinetic parameters for multiple variants, but the units for kcatc and KCair are not explicitly stated in the table. The reader must infer the units from the text.</li>
+<li>
+<p><strong>Required correction</strong> Add units to the table headers or footnotes.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Materials and Methods, "ESM model implementation"</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The methods state that ESM-1bv recommendations were generated "as described previously" and ESM-IF1 scoring was performed "as described previously," but the specific parameters, versions, and any modifications to the published protocols are not described. This makes it difficult to reproduce the computational analysis.</li>
+<li>
+<p><strong>Required correction</strong> Provide more detail on the specific model versions, any hyperparameters used, and the exact procedure for generating and scoring the recommendations.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Discussion, paragraph 2</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The discussion mentions that "reductions in chloroplast Rubisco content, increased XuBP production, and reduced activation state caused by these substitutions in planta may have prevented their evolutionary adoption in plants." This is speculative and not directly tested in the current work. While such speculation is appropriate for a discussion section, it should be clearly labeled as a hypothesis.</li>
+<li>
+<p><strong>Required correction</strong> Frame these potential limitations as hypotheses that require testing, and suggest specific experiments that could address them.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Materials and Methods, "Variant library generation and selection"</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The methods describe the construction of the site-saturated library but do not describe the selection conditions in detail. The concentration of arabinose, the CO2 and O2 levels, the duration of selection, and the number of passages are not fully specified.</li>
+<li>
+<p><strong>Required correction</strong> Provide a detailed description of the selection conditions, including the range of arabinose concentrations tested, the atmospheric conditions, and the selection timeline.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m7</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data availability</li>
+<li><strong>Affected element</strong> Data and code availability statement</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The statement says "All data and code needed to evaluate and reproduce the results in the paper are present in the paper and/or the Supplementary Materials." However, the supplementary materials are not provided with this submission, and the raw NGS data are only available through NCBI SRA. The statement should be more specific about what data are available where.</li>
+<li>
+<p><strong>Required correction</strong> Clarify the data availability statement to specify which data are in the main text, which are in the supplementary materials, and which are in external repositories.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (evidence completeness for library and kinetics), R1-M2 (kinetic characterization rigor), R1-M3 (phylogenetic analysis rigor), R1-M4 (library comparison methodology)</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong> </p>
+</li>
+<li>Originality: The application of a structure-informed protein language model to guide directed evolution of Rubisco is novel. While ML-guided protein engineering is an emerging field, this specific application to a challenging plant enzyme with a streamlined library design represents an original contribution. The finding that ML can identify substitutions absent from natural plant sequences is conceptually interesting.</li>
+<li>Scientific importance: The work addresses a problem of fundamental importance in photosynthesis research and has potential implications for crop improvement. The demonstration that Rubisco's catalytic properties can be improved through targeted mutations is significant, though the magnitude of improvement and its translation to whole-plant photosynthesis remains to be established.</li>
+<li>Interdisciplinary readership: The work bridges machine learning, protein engineering, plant biology, and photosynthesis research. The methods and findings would be of interest to researchers in all these fields, though the presentation assumes familiarity with both ML concepts and Rubisco biology.</li>
+<li>Technical soundness: The overall approach is sound, but the current evidence base is incomplete. The lack of supplementary materials, the limited detail on kinetic characterization, and the absence of key control experiments prevent full assessment of technical rigor. The statistical treatment of the data is not fully visible.</li>
+<li>
+<p>Readability for nonspecialists: The manuscript is generally well-written and accessible, but some sections assume significant background knowledge. The introduction and discussion are accessible to a broad scientific audience, but the results section may be challenging for readers not familiar with directed evolution or Rubisco kinetics. The use of abbreviations without always defining them clearly could be improved.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core concept is promising and the preliminary results are encouraging, but the current evidence base is insufficient to fully establish the claims. The manuscript would benefit from providing the supplementary materials, more detailed kinetic characterization, and a more rigorous phylogenetic analysis. If these concerns are addressed, this could be a valuable contribution to the field.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that ML-assisted library design achieves a 1700-fold higher enrichment rate compared to error-prone PCR is not fully supported without detailed comparison data.</li>
+<li>The claim that improved variants carry substitutions "not found in the evolutionary lineage of plants" is not fully supported without the complete phylogenetic analysis.</li>
+<li>The claim that variants are "assembly competent in plant chloroplasts" is based on transient expression data and may not fully predict stable transformation outcomes.</li>
+<li>The predicted photosynthetic improvements from the Farquhar model are based on in vitro kinetic parameters and assume equivalent Rubisco content and activation state in planta, which may not hold.</li>
+<li>The statement that "ML-assisted protein design can explore functional sequence space beyond what is observed from natural sequence diversity" is an interpretation that requires more evidence to be fully established.</li>
+<li>The mechanistic explanation for how T391I improves kcatc is speculative and not directly tested.</li>
+<li>The claim that the approach "sidesteps" natural constraints on Rubisco evolution is not fully supported, as the long-term stability and fitness consequences of these mutations in plants are unknown.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

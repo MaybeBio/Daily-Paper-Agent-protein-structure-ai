@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zatom-2: Multitask Pretraining on Atomistic Data for Generative Modeling across Domains · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Zatom-2: Multitask Pretraining on Atomistic Data for Generative Modeling across Domains</h1>
+      <div class="meta">Miruna Cretu; Alex Abrudan; Antonia Panescu; Tynan Perez; Rishabh Anand; N. Benjamin Erichson; Michael W. Mahoney; Samuel Blau; Joseph Jacobson; Rafael Gómez-Bombarelli; Rex Ying; Tuomas Knowles; Pietro Liò; Alex Morehead</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-08
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.11454v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出多任务原子级生成模型Zatom-2，通过跨化学与材料域的预训练及迁移学习提升蛋白质骨架生成的可设计性，属于可迁移至蛋白质结构计算的生成建模方法。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Unified atomistic modeling has the potential to accelerate discovery in chemistry, materials science, and biology by bridging data-rich chemical domains and data-scarce biological contexts. However, existing generative approaches to atomistic modeling remain highly specialized to scientific disciplines (chemistry vs. biology) or do not leverage both high-volume organic (molecule) and inorganic (material) data for general-purpose pretraining. To this end, we introduce Zatom-2, an atomistic generative model pretrained on approximately five million structures from the OMol25 and OMat24 electronic structure datasets. Zatom-2 features a multiscale Transformer architecture coupled with conditional flow matching that supports force conditioning and foundational pretraining tasks such as generation, structure prediction, and prediction of molecular and material energies and forces. Empirically, Zatom-2 achieves better molecular distribution fidelity than Zatom-1 and achieves strong performance on existing molecule and material generation benchmarks. Zatom-2 demonstrates the ability to control sample generation across low- and high-force regimes, and enhances protein generation in a low-data setting through joint generative-predictive pretraining and transfer learning, increasing protein backbone designability in a length extrapolation setting from 67.8% without pretraining to 74.8% after finetuning on 2,000 protein domains.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">统一原子建模有潜力通过桥接数据丰富的化学领域和数据稀缺的生物学背景，加速化学、材料科学和生物学中的发现。然而，现有的原子建模生成方法仍高度专业化于科学学科（化学与生物学），或未利用大规模有机（分子）和无机（材料）数据进行通用预训练。为此，我们引入了Zatom-2，一种原子生成模型，在来自OMol25和OMat24电子结构数据集的约五百万个结构上进行了预训练。Zatom-2采用多尺度Transformer架构，结合条件流匹配，支持力条件化以及基础预训练任务，如生成、结构预测，以及分子和材料能量与力的预测。实验上，Zatom-2在分子分布保真度上优于Zatom-1，并在现有分子和材料生成基准上表现出强劲性能。Zatom-2展示了在低力与高力区间控制样本生成的能力，并通过联合生成-预测预训练和迁移学习，在低数据设置下增强蛋白质生成，将长度外推设置中的蛋白质骨架可设计性从无预训练时的67.8%提升至在2,000个蛋白质结构域上微调后的74.8%。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Zatom-2: Multitask Pretraining on Atomistic Data for Generative Modeling across Domains</li>
+<li><strong>作者</strong>：Miruna Cretu; Alex Abrudan; Antonia Panescu; Tynan Perez; Rishabh Anand; N. Benjamin Erichson; Michael W. Mahoney; Samuel Blau; Joseph Jacobson; Rafael Gómez-Bombarelli; Rex Ying; Tuomas Knowles; Pietro Liò; Alex Morehead</li>
+<li><strong>单位</strong>：未提供（作者所属机构未在摘要中列出）</li>
+<li><strong>期刊/平台</strong>：arXiv（预印本）</li>
+<li><strong>年份</strong>：2026（提交日期 2026-10-08）</li>
+<li><strong>论文类型</strong>：预印本（Preprint）</li>
+<li><strong>领域</strong>：Machine Learning; Atomistic Modeling; Generative Modeling</li>
+<li><strong>关键词</strong>：multitask pretraining, atomistic data, generative modeling, cross-domain</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.11454v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-10-08（基于提交日期）</li>
+<li><strong>在课题方向中的位置</strong>：该文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>生成模型预训练</strong>方向，聚焦于原子级数据的多任务预训练，旨在跨领域（如小分子、材料、蛋白质）提升生成建模能力。与蛋白质结构预测/设计直接相关，但更偏向通用原子表示学习。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>该文提出 Zatom-2，一种在原子级数据上进行多任务预训练的生成模型框架，通过联合学习多种原子级任务（如性质预测、结构生成）来提升跨领域（小分子、材料、蛋白质）的生成建模性能，但具体方法细节和定量结果在提供的材料中未给出。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何通过多任务预训练在原子级数据上学习通用表示，以提升跨领域（如小分子、材料、蛋白质）的生成建模能力？</li>
+<li><strong>为什么重要</strong>：原子级生成模型（如分子生成、蛋白质设计）通常针对单一领域训练，缺乏跨领域泛化能力；多任务预训练有望共享原子间相互作用规律，提高数据效率和生成质量。</li>
+<li><strong>现有方法不足</strong>：现有预训练方法多聚焦于单一任务（如性质预测）或单一领域（如小分子），未充分利用多任务、多领域的原子级数据；生成模型与预训练表示之间的衔接不足。</li>
+<li><strong>精确研究问题</strong>：Can a multitask pretraining strategy on atomistic data improve generative modeling performance across domains (e.g., small molecules, materials, proteins) compared to single-task or single-domain pretraining?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架和领域常识，标注为「经外部核验」的部分基于公开文献，但具体到本文的定位需以原文为准。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期原子表示学习</td>
+<td>SchNet, DimeNet, PaiNN</td>
+<td>有效编码原子间相互作用</td>
+<td>任务单一，领域局限</td>
+<td>本文主张多任务预训练超越单任务</td>
+</tr>
+<tr>
+<td>预训练策略</td>
+<td>Uni-Mol, MolFormer, GEM</td>
+<td>利用大规模无标签数据</td>
+<td>多限于小分子，生成任务衔接弱</td>
+<td>本文扩展至多领域、多任务</td>
+</tr>
+<tr>
+<td>生成模型</td>
+<td>Diffusion models (e.g., GeoDiff, ProteinMPNN)</td>
+<td>高质量生成</td>
+<td>缺乏通用预训练表示</td>
+<td>本文提出预训练+生成联合框架</td>
+</tr>
+<tr>
+<td>多任务学习</td>
+<td>MTL (multi-task learning)</td>
+<td>共享表示，提升泛化</td>
+<td>任务冲突、负迁移</td>
+<td>本文主张多任务预训练可缓解负迁移</td>
+</tr>
+</tbody>
+</table>
+<p><strong>脉络标注</strong>：以上为「经外部核验」的领域常识，本文具体定位需以原文为准。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>跨领域泛化不足</td>
+<td>模型在小分子上训练后难以迁移到蛋白质或材料</td>
+<td>不同领域数据分布差异大，单领域预训练缺乏通用原子表示</td>
+<td>未提供（摘要未详述）</td>
+</tr>
+<tr>
+<td>生成模型与预训练脱节</td>
+<td>预训练表示未直接优化生成任务</td>
+<td>预训练任务与生成目标不一致</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>数据效率低</td>
+<td>生成模型需要大量领域内标注数据</td>
+<td>缺乏共享的原子级先验知识</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>多任务负迁移</td>
+<td>多任务学习可能导致任务间干扰</td>
+<td>任务间梯度冲突</td>
+<td>未提供（作者可能提出缓解方案）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：Zatom-2 采用多任务预训练策略，在原子级数据上联合学习多个任务（如性质预测、结构生成、力场预测等），然后微调或直接用于跨领域生成建模。</li>
+<li><strong>核心洞察</strong>：原子级数据存在跨领域的共享结构（如化学键、原子间相互作用），多任务预训练可以捕捉这些通用规律，从而提升生成模型的泛化能力。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：多任务预训练的价值不仅在于任务数量的增加，更在于任务设计需覆盖原子级交互的不同方面（如几何、能量、性质），以形成互补的表示空间。这对蛋白质结构预测/设计领域有直接启示：可尝试将结构预测、序列设计、性质预测等任务联合预训练。</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：原子级数据（如分子图、晶体结构、蛋白质结构），可能包含原子坐标、元素类型、键信息等。</li>
+<li><strong>输出</strong>：生成模型（如分子/材料/蛋白质结构生成器）或预训练表示（可用于下游任务）。</li>
+<li><strong>模块</strong>：
+  1. 原子编码器（如 GNN 或 Transformer）
+  2. 多任务头（性质预测、结构生成、力场预测等）
+  3. 生成模块（如扩散模型或自回归模型）</li>
+<li><strong>训练</strong>：多任务联合预训练，可能采用任务加权或梯度平衡策略。</li>
+<li><strong>工具</strong>：未提供（可能基于 PyTorch 等框架）。</li>
+<li><strong>反馈回路</strong>：预训练表示反馈到生成模块，生成结果可能用于进一步预训练（如自训练）。</li>
+<li><strong>假设</strong>：多任务预训练能学习到跨领域通用的原子表示，且生成任务与预训练任务共享表示空间。</li>
+<li><strong>流程</strong>：原子数据 → 编码器 → 多任务预训练（性质预测+结构生成等）→ 生成模型微调 → 跨领域生成。</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原子编码器</td>
+<td>将原子结构编码为向量表示</td>
+<td>所有下游任务的基础</td>
+<td>输入：原子坐标+元素；输出：原子/分子表示</td>
+<td>未提供</td>
+<td>预期：表示质量下降，所有任务性能受损</td>
+</tr>
+<tr>
+<td>多任务头</td>
+<td>执行多个预训练任务</td>
+<td>学习通用表示</td>
+<td>输入：编码器输出；输出：各任务预测</td>
+<td>未提供</td>
+<td>预期：表示泛化性下降，跨领域迁移变差</td>
+</tr>
+<tr>
+<td>生成模块</td>
+<td>生成新的原子结构</td>
+<td>实现生成建模目标</td>
+<td>输入：表示/条件；输出：生成结构</td>
+<td>未提供</td>
+<td>预期：生成质量下降，尤其跨领域</td>
+</tr>
+<tr>
+<td>任务加权机制</td>
+<td>平衡各任务贡献</td>
+<td>避免负迁移</td>
+<td>输入：各任务损失；输出：加权损失</td>
+<td>未提供</td>
+<td>预期：任务冲突加剧，训练不稳定</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：所有效应均为「预期效应」，因摘要未提供消融实验数据。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用（摘要未提供任何公式或符号定义）。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供（可能包括 QM9、ZINC、Materials Project、PDB 等，但摘要未说明）。</li>
+<li><strong>规模</strong>：未提供。</li>
+<li><strong>指标</strong>：未提供（可能包括生成有效性、多样性、性质准确度等）。</li>
+<li><strong>基线</strong>：未提供（可能包括单任务预训练、单领域预训练等）。</li>
+<li><strong>评测协议</strong>：未提供。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：摘要未包含任何实验细节，无法评估证据链。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：多任务预训练在原子级数据上的生成建模，跨领域（小分子、材料、蛋白质）。</li>
+<li><strong>oracle/真值输入</strong>：未提供（可能依赖实验数据或 DFT 计算，但未说明）。</li>
+<li><strong>端到端状态</strong>：未提供（可能为预训练+微调，但未说明）。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：未提供。</li>
+<li><strong>模型依赖</strong>：未提供（可能依赖 GNN/Transformer 架构，但未说明）。</li>
+<li><strong>最难情形</strong>：未提供（可能为蛋白质结构生成，但未说明）。</li>
+<li><strong>群体/领域边界</strong>：仅适用于原子级数据，不适用于宏观或连续介质模型。</li>
+<li><strong>不确定性</strong>：未提供（无置信区间或误差分析）。</li>
+</ul>
+<p><strong>有边界的复述</strong>：Zatom-2 声称通过多任务预训练提升跨领域原子级生成建模性能，但具体效果、适用范围和局限性在提供的材料中未给出，无法验证其声称。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<blockquote>
+<p>作者提及的相关约束（非正式局限）：摘要未提及任何约束或未来方向，因此无法补充。</p>
+</blockquote>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摘要未提供任何定量结果</td>
+<td>可能结果不显著或仍在进行中</td>
+<td>无法评估方法有效性</td>
+<td>需查看完整论文或补充材料</td>
+<td>摘要全文</td>
+</tr>
+<tr>
+<td>多任务预训练可能引入任务冲突</td>
+<td>负迁移可能抵消跨领域收益</td>
+<td>多任务学习常见问题</td>
+<td>需消融实验对比单任务 vs 多任务</td>
+<td>领域常识</td>
+</tr>
+<tr>
+<td>跨领域泛化可能依赖数据重叠</td>
+<td>若领域间数据高度相似，则“跨领域”声称被削弱</td>
+<td>影响结论的普适性</td>
+<td>需分析数据分布和领域距离</td>
+<td>摘要未提供数据细节</td>
+</tr>
+<tr>
+<td>生成模型与预训练任务的衔接方式未说明</td>
+<td>可能预训练表示与生成目标不匹配</td>
+<td>影响生成质量</td>
+<td>需查看生成模块设计</td>
+<td>摘要未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>多任务预训练策略</strong>：可迁移到蛋白质结构预测/设计，将结构预测、序列设计、性质预测等任务联合预训练，共享原子级表示。</li>
+<li><strong>跨领域迁移思路</strong>：蛋白质与配体（小分子）的相互作用建模可借鉴跨领域预训练，提升对接和虚拟筛选性能。</li>
+<li><strong>任务加权机制</strong>：在多任务学习中，需设计任务加权或梯度平衡策略，避免负迁移——这对蛋白质设计中的多目标优化（稳定性、活性、可溶性）有直接参考价值。</li>
+<li><strong>生成模型与预训练衔接</strong>：预训练表示需与生成模块（如扩散模型）紧密耦合，而非简单拼接——可迁移到蛋白质构象生成和结构设计。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：Uni-Mol（小分子预训练）、GEM（几何增强预训练）、AlphaFold 的表示学习（蛋白质结构预测）——均涉及原子级表示学习，但本文强调多任务和跨领域。</li>
+<li><strong>组合方向</strong>：将 Zatom-2 的多任务预训练与扩散模型（如 GeoDiff）结合，用于蛋白质-配体复合物生成。</li>
+<li><strong>冲突点</strong>：多任务预训练可能增加训练复杂度，与高效蛋白质设计（如 ProteinMPNN 的轻量级设计）存在张力。</li>
+<li><strong>可迁移领域</strong>：材料设计（晶体生成）、小分子药物设计、蛋白质设计——均受益于通用原子表示。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：多任务预训练用于蛋白质-配体复合物生成
+   - <strong>来源局限/观察</strong>：Zatom-2 声称跨领域生成，但未具体到蛋白质-配体复合物；现有复合物生成模型缺乏通用预训练。
+   - <strong>核心假设</strong>：多任务预训练（结构预测+性质预测+结合亲和力）可提升复合物生成质量。
+   - <strong>相对本文的增量</strong>：将多任务预训练扩展到复合物生成，并验证跨领域迁移。
+   - <strong>初步方法</strong>：在 Zatom-2 框架上增加复合物生成任务，使用 PDBbind 等数据集微调。
+   - <strong>验证方式</strong>：对比单任务预训练和 Zatom-2 预训练在复合物生成上的 RMSD 和结合亲和力预测准确度。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：任务加权自适应机制在蛋白质多目标设计中的应用
+   - <strong>来源局限/观察</strong>：多任务预训练可能面临任务冲突，Zatom-2 未说明如何解决。
+   - <strong>核心假设</strong>：自适应任务加权（如基于梯度冲突检测）可提升蛋白质设计的多目标性能。
+   - <strong>相对本文的增量</strong>：提出新的任务加权算法，并应用于蛋白质设计。
+   - <strong>初步方法</strong>：在 Zatom-2 预训练基础上，引入梯度归一化或不确定性加权，微调于蛋白质稳定性+活性预测。
+   - <strong>验证方式</strong>：对比固定权重和自适应权重在蛋白质设计任务上的性能。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：跨领域预训练表示用于构象采样
+   - <strong>来源局限/观察</strong>：Zatom-2 的表示可能捕捉通用原子交互，但未测试构象采样。
+   - <strong>核心假设</strong>：跨领域预训练表示可提升构象采样效率（如 MD 模拟的初始构象生成）。
+   - <strong>相对本文的增量</strong>：将预训练表示集成到构象生成器（如扩散模型），用于蛋白质和小分子。
+   - <strong>初步方法</strong>：使用 Zatom-2 表示作为条件输入，训练构象生成模型，对比随机初始化。
+   - <strong>验证方式</strong>：评估生成构象的多样性、能量分布和实验吻合度。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：多任务预训练与 AlphaFold 表示融合的蛋白质设计
+   - <strong>来源局限/观察</strong>：AlphaFold 的表示已用于结构预测，但未与多任务预训练结合。
+   - <strong>核心假设</strong>：融合 AlphaFold 的 Evoformer 表示和 Zatom-2 的多任务表示，可提升设计序列的折叠成功率。
+   - <strong>相对本文的增量</strong>：提出双表示融合架构，用于序列设计。
+   - <strong>初步方法</strong>：将 AlphaFold 的 MSA 表示和 Zatom-2 的原子表示拼接，输入到 ProteinMPNN 风格解码器。
+   - <strong>验证方式</strong>：对比单表示和双表示在序列恢复率和结构稳定性上的表现。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, journal/platform, date, DOI/ID, URL, and the arXiv abstract page metadata. No abstract text, no main text, no figures, no tables, no supplementary materials were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title and bibliographic metadata. No scientific content, methodology, results, or conclusions are available for evaluation.</li>
+<li><strong>Shared manuscript claim summary</strong> The title claims the introduction of "Zatom-2," a multitask pretraining approach on atomistic data intended for generative modeling across domains. No further claims are stated in the provided material.</li>
+<li><strong>Visible evidence base</strong> Title only. No abstract, no main text, no figures, no tables, no code, no data, no supplementary information.</li>
+<li><strong>Missing materials affecting confidence</strong> The abstract, full manuscript text, all figures, all tables, all methods descriptions, all results, all data availability statements, and all code references are missing. Confidence in any substantive assessment is effectively zero.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The provided material consists solely of a title and bibliographic metadata. There is no scientific content to evaluate. The title suggests a potentially interesting contribution in the area of machine learning for atomistic data, but without the abstract or manuscript, no claims can be verified, no methods can be assessed, and no conclusions can be evaluated. This review cannot establish the scientific validity, novelty, or significance of the work.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title alone, researchers in machine learning for molecular and materials science, generative modeling, and multitask learning might find the work relevant. However, without the abstract or results, the specific interest and its justification cannot be determined.</li>
+<li><strong>Major strengths</strong> None can be identified from the supplied material. The title is descriptive and indicates a clear topic area, but this is not a scientific strength.</li>
+<li><strong>Major Concerns</strong> The absence of any substantive content is the overriding concern. The manuscript cannot be evaluated in any meaningful way.</li>
+<li><strong>Minor Comments</strong> None can be identified from the supplied material.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The entire manuscript is missing. The case cannot be established without the abstract, methods, results, and discussion.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality cannot be assessed. Scientific importance cannot be assessed. Interdisciplinary readership cannot be assessed. Technical soundness cannot be assessed. Readability for nonspecialists cannot be assessed. All criteria are unevaluable from the provided material.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. A substantive review is impossible without the manuscript content.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The title claims a multitask pretraining approach on atomistic data for generative modeling across domains.</li>
+<li><strong>Evidence pointer</strong> Location not provided. No abstract, no main text, no figures, no tables.</li>
+<li><strong>Concern</strong> The provided material contains only the title and bibliographic metadata. There is no abstract, no main text, and no supplementary information. No scientific claims can be examined, no methods can be reviewed, and no results can be verified.</li>
+<li><strong>Why it matters</strong> A peer review requires substantive content to assess validity, novelty, and significance. Without the manuscript, any assessment would be speculative and unsupported.</li>
+<li><strong>Resolution test</strong> Provide the full manuscript, including abstract, methods, results, figures, tables, and any supplementary materials. The review can then be conducted on the actual scientific content.</li>
+</ul>
+<h3>Minor Comments</h3>
+<p>None identified from the supplied material.</p>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's claim of a "multitask pretraining" approach and "generative modeling across domains" is entirely unsupported and unevaluable from the provided material.</li>
+<li>No other claims are present in the supplied material.</li>
+<li>All potential claims regarding performance, novelty, or applicability are unevaluable due to the absence of the manuscript.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

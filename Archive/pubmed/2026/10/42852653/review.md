@@ -1,0 +1,77 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, main text, methods, and data availability statements
+- **Assessment boundary** Scientific claims, methodological soundness, evidence quality, and presentation as presented in the provided manuscript
+- **Shared manuscript claim summary** The authors propose that integrating protein structural context improves prediction of mutation effects on antibiotic resistance in Mycobacterium tuberculosis. They curate structural annotations for the M. tuberculosis proteome, analyze mutation clustering using the Getis–Ord statistic, and demonstrate that structural proximity to known resistance mutations predicts resistance association with high accuracy.
+- **Visible evidence base** Abstract, full main text, methods section, figure references, table references, supplementary file references, data availability statement
+- **Missing materials affecting confidence** Figures, tables, supplementary files, and appendices referenced in the text were not provided. Specific numerical results beyond those stated in the abstract and results text are not available for verification.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a potentially valuable contribution to the field of antibiotic resistance prediction by integrating protein structural information with large-scale genomic data. The core idea, that 3D structural context improves prediction of mutation effects, is timely and relevant given recent advances in protein structure prediction. The authors demonstrate that mutations cluster in 3D space in known resistance genes and extend this to identify novel candidate genes. The supervised classification result, achieving 96.5% F1 score using 3D proximity alone, is striking and could have practical implications. However, several methodological concerns need to be addressed, particularly regarding the validation of the clustering statistic, the handling of potential confounding factors, and the generalizability of the classification approach. The manuscript would benefit from clearer presentation of the statistical framework and more rigorous benchmarking against existing methods.
+- **Who would be interested in the results, and why** Researchers in antimicrobial resistance genomics, clinical microbiologists developing resistance prediction tools, computational biologists working on protein structure-function relationships, and public health researchers interested in genomic surveillance of tuberculosis. The work is also relevant to the broader community studying the functional interpretation of genetic variants using structural information.
+- **Major strengths** The study leverages a large and well-characterized dataset of over 31,000 M. tuberculosis isolates. The integration of experimental and predicted structures across the proteome is comprehensive. The application of the Getis–Ord statistic to protein structures is novel in this context. The finding that structural proximity alone achieves high classification performance is potentially impactful. The authors acknowledge limitations of their approach and discuss alternative explanations for their findings.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical methodology
+  - **Claim pointer** The authors claim that the Getis–Ord statistic identifies significant clustering of mutations in known resistance genes and across the proteome, using a permutation-based approach.
+  - **Evidence pointer** Methods section "Computing the Getis–Ord score for clustering of homoplastic mutations"; Results section "Antibiotic resistance proteins demonstrate mutational clustering" and "Significant mutational clustering across the MTBC proteome"
+  - **Concern** The statistical framework for determining significance of clustering is not fully described. The authors mention 10,000 random permutations for control examples, but the exact procedure for computing p-values for individual proteins in the whole proteome scan is unclear. Specifically, how is the null distribution generated for each protein? Is the permutation procedure accounting for the non-uniform mutability of sites (e.g., transition vs. transversion biases, codon structure)? The authors acknowledge in the Discussion that their random shuffling assumes equal mutability across sites, but this limitation is not addressed in the main results. The false discovery rate control for the 499 significant hits across 3,592 proteins is not described. Without a clear multiple testing correction, the number of significant hits may be inflated.
+  - **Why it matters** The central claim of the paper, that mutations cluster in 3D space in resistance genes, depends entirely on the validity of the statistical test. If the null model is misspecified, the significance calls could be spurious. The identification of 499 significant proteins is a key result, and the reader needs to understand the error rate associated with this list.
+  - **Resolution test** Provide a complete description of the null model, including how it accounts for site-specific mutation biases. Report the FDR or q-values for the 499 significant hits. Perform a sensitivity analysis using a null model that incorporates known mutation biases (e.g., based on trinucleotide context) to confirm that the significant hits are robust.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Validation and benchmarking
+  - **Claim pointer** The authors claim that a classifier trained on 3D distance to known resistance sites alone achieves an F1 score of 96.5% at classifying mutations as resistance-conferring on a held-out test set.
+  - **Evidence pointer** Results section "Structure supports the prediction of resistance-conferring variants"; Table 1
+  - **Concern** The classification result is presented as a single F1 score without sufficient detail on the experimental setup. The train-test split is described as 70-30, but the authors do not specify whether the split was performed at the variant level or the protein level. If variants from the same protein appear in both training and test sets, the evaluation could be optimistically biased due to protein-level effects. Additionally, the comparison to 1D proximity (F1 of 89.1%) is informative, but the authors do not benchmark against existing state-of-the-art resistance prediction tools or against simpler baselines such as a model using only the identity of the mutated gene. The choice of logistic regression is reasonable, but the feature space is limited to a single distance value; the authors should demonstrate that adding structural information improves over a model that uses only gene identity or sequence conservation.
+  - **Why it matters** The classification result is a major selling point of the paper, suggesting practical utility for interpreting novel variants. If the evaluation is biased or the comparison is not against appropriate baselines, the claimed advantage of structural information may not hold.
+  - **Resolution test** Clarify the splitting strategy and report results with protein-level cross-validation. Benchmark against a baseline model that uses gene identity alone, and against published resistance prediction tools such as Mykrobe or TB-Profiler. Report precision-recall curves and area under the ROC curve in addition to F1 score.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Biological interpretation
+  - **Claim pointer** The authors state that significant clustering in proteins not previously associated with resistance may indicate novel resistance determinants or targets of positive selection related to host adaptation.
+  - **Evidence pointer** Results section "Significant mutational clustering across the MTBC proteome"; Discussion section
+  - **Concern** The interpretation of clustering in novel proteins is speculative. The authors identify 499 proteins with significant clustering, but only a small fraction are known resistance genes. The biological meaning of clustering in other proteins is unclear. Clustering could arise from mutational hotspots unrelated to resistance (e.g., regions of low sequence complexity, sites under diversifying selection for immune evasion, or artifacts of the reference genome). The Gene Ontology enrichment analysis provides some functional context, but the link to antibiotic resistance is not established for most hits. The authors should temper their claims and provide additional evidence, such as comparison with known essential genes or with genes under positive selection in other datasets.
+  - **Why it matters** The claim that novel clustered proteins may be resistance determinants is a significant extension of the work. If this claim is not well supported, it could mislead readers into pursuing false leads.
+  - **Resolution test** Provide a more nuanced interpretation of the novel hits. Compare the list of 499 significant proteins with known essential genes, with genes under positive selection in M. tuberculosis, and with genes implicated in resistance in other studies. Discuss alternative explanations for clustering, such as mutational hotspots or immune evasion.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Presentation
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The abstract states that "mutations in proteins known to cause resistance are clustered in 3D space, even in proteins where inactivating mutations at any position are thought to cause resistance." This is a strong claim that is not fully supported by the results presented, as the analysis of clustering in loss-of-function proteins is not described in detail.
+  - **Required correction** Soften the claim or provide specific evidence for clustering in loss-of-function proteins in the main text.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Methodology
+  - **Affected element** Methods section "Preparing GeO score calibration data"
+  - **Evidence pointer** Methods section
+  - **Issue** The downsampling procedure for positive controls uses a factor of 0.42 times the number of residues. The rationale for this specific value is not explained.
+  - **Required correction** Provide a justification for the downsampling factor or cite a reference for this choice.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Data availability
+  - **Affected element** Data availability statement
+  - **Evidence pointer** Data availability section
+  - **Issue** The data availability statement mentions code repositories and a Zenodo dataset, but the link to the Zenodo dataset is not provided in the text.
+  - **Required correction** Include the full DOI or URL for the Zenodo dataset.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Discussion section
+  - **Evidence pointer** Discussion, paragraph on limitations
+  - **Issue** The authors acknowledge the limitation of assuming equal mutability across sites but do not discuss potential solutions or the direction of the bias. It would be helpful to state whether the bias would lead to false positives or false negatives.
+  - **Required correction** Add a sentence explaining the likely direction of bias and potential mitigation strategies.
+- **Technical failings that need to be addressed before the case is established** The statistical framework for the clustering analysis needs to be fully specified, including the null model and multiple testing correction. The classification evaluation needs to be clarified with respect to the splitting strategy and benchmarked against appropriate baselines. The biological interpretation of novel hits needs to be tempered and supported with additional analyses.
+- **Assessment against Nature-style criteria** Originality: The application of the Getis–Ord statistic to protein structures for resistance prediction is novel and represents a creative integration of structural biology and genomic epidemiology. Scientific importance: The work addresses a pressing need in tuberculosis diagnostics, namely improving the interpretation of novel mutations. The potential to expand the catalog of resistance-conferring mutations is clinically relevant. Interdisciplinary readership: The work bridges structural biology, genomics, and clinical microbiology, and should appeal to researchers in all three areas. Technical soundness: The underlying data resources are substantial and well-described, but the statistical validation of the clustering method and the benchmarking of the classifier need strengthening. Readability for nonspecialists: The manuscript is generally well-written and accessible, though the statistical details in the methods could be clearer for a general audience.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is promising and the data resources are impressive, but the statistical framework and validation need to be strengthened before the claims can be fully accepted.
+
+## Risk / unsupported claims
+- The claim that clustering is observed "even in proteins where inactivating mutations at any position are thought to cause resistance" is not fully supported by the results presented.
+- The biological interpretation of novel clustered proteins as potential resistance determinants is speculative and not directly tested.
+- The classification performance of 96.5% F1 score cannot be fully evaluated without details on the cross-validation strategy and comparison to existing tools.
+- The claim that structural information is "useful" for prediction is supported, but the magnitude of the improvement over simpler features (e.g., gene identity) is not quantified.

@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capturing Hu Antigen R Domain Closure Through Supervised Molecular Dynamics Simulations. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Capturing Hu Antigen R Domain Closure Through Supervised Molecular Dynamics Simulations.</h1>
+      <div class="meta">Cavastracci Strascia, Chiara; Dodaro, Andrea; Novello, Gianluca; Menin, Silvia; Sturlese, Mattia; Salmaso, Veronica; Moro, Stefano</div>
+      <div class="meta muted">
+        
+        <span class="journal">ChemMedChem</span>
+        · 2026-10-05
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42830633/">原文</a>
+      </div>
+      <p class="one-liner">该文利用监督分子动力学模拟研究HuR蛋白的域闭合构象转变，属于蛋白质构象采样计算问题，方法为物理模拟，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Hu antigen R (HuR), an RNA-binding protein implicated in cancer, inflammation, and neurodegenerative disorders, represents a challenging target for drug discovery due to its large solvent-exposed RNA-binding interface and pronounced conformational flexibility. HuR contains tandem RNA recognition motifs (RRM1 and RRM2) that undergo substantial rearrangements between an apo open state and an RNA-bound closed conformation. Here, we investigated both states using molecular dynamics (MD) simulations. While the RNA-bound complex maintained a stable closed architecture, the apo form displayed extensive interdomain motions, highlighting the intrinsic flexibility of HuR. Because conventional MD simulations failed to capture the open-to-closed transition, we developed a novel application of Supervised MD (SuMD), previously employed for intermolecular recognition processes, to characterize HuR intramolecular domain closure. Using a multistep supervision protocol based on selected interdomain residue pairs, SuMD reproduced a closed conformation resembling the experimental RNA-bound structure and identified a plausible reclosure pathway. Per-residue interaction analyses revealed key contributions from the RRM1-RRM2 linker region, particularly Arg97, together with Arg136 and Arg147 of RRM2, consistent with mutagenesis data. These findings extend the applicability of SuMD to intramolecular conformational transitions, provide mechanistic insight into HuR domain closure, and offer a structural framework for identifying druggable conformational states for future HuR-targeted drug discovery.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">Hu抗原R（HuR）是一种参与癌症、炎症和神经退行性疾病的RNA结合蛋白，由于其较大的溶剂暴露RNA结合界面和显著构象灵活性，成为药物发现中具有挑战性的靶点。HuR包含串联RNA识别基序（RRM1和RRM2），在apo开放状态与RNA结合闭合构象之间发生显著重排。在此，我们利用分子动力学 (molecular dynamics) 模拟研究了这两种状态。RNA结合复合物保持稳定的闭合架构，而apo形式则表现出广泛的域间运动，凸显了HuR的内在灵活性。由于常规分子动力学模拟未能捕捉开放到闭合的转变，我们开发了一种新的监督分子动力学 (Supervised MD, SuMD) 应用，该方法先前用于分子间识别过程，以表征HuR分子内结构域闭合。基于选定的域间残基对的多步监督协议，SuMD重现了类似于实验RNA结合结构的闭合构象，并识别出合理的再闭合路径。逐残基相互作用分析揭示了RRM1-RRM2连接区域的关键贡献，特别是Arg97，以及RRM2的Arg136和Arg147，这与突变数据一致。这些发现扩展了SuMD在分子内构象转变中的适用性，为HuR结构域闭合提供了机制性见解，并为未来针对HuR的药物发现提供了识别可成药构象状态的结构框架。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Capturing Hu Antigen R Domain Closure Through Supervised Molecular Dynamics Simulations</li>
+<li><strong>作者与单位</strong>: Cavastracci Strascia, Chiara; Dodaro, Andrea; Novello, Gianluca; Menin, Silvia; Sturlese, Mattia; Salmaso, Veronica; Moro, Stefano（意大利帕多瓦大学，Università degli Studi di Padova）</li>
+<li><strong>期刊/预印本平台</strong>: ChemMedChem</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-10-05）</li>
+<li><strong>论文类型</strong>: 研究论文（方法应用 + 机制研究）</li>
+<li><strong>领域</strong>: 蛋白质构象转变的增强采样模拟；RNA 结合蛋白；药物发现</li>
+<li><strong>关键词</strong>: HuR；Supervised MD (SuMD)；构象转变；RRM 结构域；RNA 结合；分子动力学</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1002/cmdc.70523</li>
+<li><strong>代码</strong>: https://github.com/molecularmodelingsection/SuMD（SuMD 代码，免费可用）</li>
+<li><strong>数据</strong>: 未提供（PDB 结构 4EGL 和 4ED5 为输入）</li>
+<li><strong>阅读日期</strong>: 2026-05-14（模拟日期）</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质构象采样 × 物理模拟（MD）」方向，将原本用于分子间识别（配体-靶标、蛋白-核酸）的 SuMD 方法首次拓展至<strong>分子内结构域闭合</strong>这一构象转变问题，为蛋白质构象采样提供了新的增强采样思路，并直接服务于 RNA 结合蛋白的变构/口袋发现。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对 HuR 蛋白 RRM1-RRM2 串联结构域从开放（apo）到闭合（RNA 结合）的构象转变，作者开发了基于残基对距离监督的多步 SuMD 协议，成功在纳秒时间尺度上重现了近晶体结构的闭合构象（RRM2 骨架 RMSD ≈ 9 Å），并揭示了 linker 区 Arg97 在闭合过程中的关键驱动作用。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: HuR 蛋白的 RRM1-RRM2 串联结构域如何从 apo 开放构象转变为 RNA 结合的闭合构象？能否用增强采样 MD 方法在可行计算成本内重现这一分子内构象转变？</li>
+<li><strong>为什么重要</strong>: HuR 是癌症、炎症和神经退行性疾病中的潜在药物靶点，但其 RNA 结合界面大且高度溶剂暴露、构象灵活，缺乏适合小分子结合的明确口袋。理解其开放-闭合转变机制有助于识别瞬时口袋，指导靶向 HuR 的药物设计。</li>
+<li><strong>现有方法为何不足</strong>: 常规 MD 模拟（3×500 ns）无法在微秒以下时间尺度捕获开放-闭合转变（apo 模拟中仅瞬态接近闭合构象，RMSD 最低 7.88 Å 但仅维持数帧）；单步 SuMD 监督（监督两个结构域界面的质心距离）也不足以驱动完整的构象重排。</li>
+<li><strong>精确研究问题</strong>: Can a multistep SuMD protocol, supervising selected interdomain residue pairs, reproduce the open-to-closed domain closure of HuR within nanosecond timescales and identify key residues driving this transition?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络主要基于本文框架，部分经外部核验（标注）。</p>
+</blockquote>
+<ol>
+<li><strong>HuR 结构与功能研究</strong>（外部核验）: HuR 含三个 RRM 结构域，RRM1-RRM2 串联负责 RNA 结合。PDB 中已有 apo（4EGL）和 RNA 结合（4ED5）两种构象，二者差异显著——RRM2 相对 RRM1 旋转约 180°。Wang et al. [1] 通过丙氨酸扫描鉴定 Arg97、Arg136、Arg147 为关键 RNA 结合残基。</li>
+<li><strong>MD 模拟在蛋白质构象转变中的应用</strong>（本文框架）: 常规 MD 受限于采样时间尺度，难以捕获大尺度构象重排；增强采样方法（如 metadynamics、replica exchange）虽可加速采样，但往往需要预先定义集体变量或大量计算资源。</li>
+<li><strong>SuMD 方法的发展</strong>（外部核验）: SuMD 由 Moro 课题组开发，最初用于配体-靶标结合路径模拟 [23-28]，通过短 MD 片段的监督筛选（监督分子间质心距离的下降趋势）显著加速结合事件采样。近期被拓展至蛋白-核酸识别（含无序蛋白）[22]。</li>
+<li><strong>本文位置</strong>: 首次将 SuMD 从分子间识别拓展至<strong>分子内结构域闭合</strong>，并引入「多步监督」策略（先监督 linker-RRM2 残基对，再监督跨结构域残基对），解决了单步监督无法驱动完整构象转变的问题。</li>
+</ol>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>常规 MD 无法采样开放→闭合转变</td>
+<td>3×500 ns apo MD 中 RRM2 RMSD 平均 33 Å，仅一次瞬态接近闭合（7.88 Å，数帧）</td>
+<td>构象转变涉及 linker 旋转和结构域重排，能垒高、时间尺度远超常规 MD 可达范围</td>
+<td>Results 图 2A-B、图 S3、表 1</td>
+</tr>
+<tr>
+<td>单步 SuMD 监督不足</td>
+<td>监督 RRM1/RRM2 RNA 结合界面质心距离的 4 次 SuMD 均失败（RMSD &gt; 44 Å）</td>
+<td>质心距离监督过于粗糙，无法引导 linker 旋转和结构域相对取向的精确调整</td>
+<td>Results 第 2 节、图 S4</td>
+</tr>
+<tr>
+<td>缺乏区分成功/失败 SuMD 轨迹的指标</td>
+<td>仅凭 RMSD 判断轨迹质量，但 RMSD 高时可能仍存在局部正确相互作用</td>
+<td>需要结合相互作用能、残基接触等多维度评估</td>
+<td>Results 表 2、表 3、图 S5-S6</td>
+</tr>
+<tr>
+<td>瞬时口袋难以捕捉</td>
+<td>闭合过程中可能暴露瞬时口袋，但终点构象（apo/闭合）中不可见</td>
+<td>构象转变路径上的中间态可能具有独特口袋特征</td>
+<td>Results 图 7、Conclusions</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 采用多步 SuMD 协议——第一步监督 linker 区残基 Ile103 与 RRM2 残基 Lys156 的距离（促进 linker 旋转），第二步监督 RRM1 残基 Lys92 与 RRM2 残基 Asn134 的距离（促进结构域闭合）。每步 4 次独立 SuMD 运行，从 apo 构象出发，在 RNA 存在下模拟闭合。</li>
+<li><strong>核心洞察</strong>: 
+   - 分子内构象转变的监督变量应选择<strong>在开放/闭合两态间距离变化最大且位于关键运动节点（如 linker）的残基对</strong>，而非简单的结构域质心距离。
+   - 多步监督（先局部后全局）比单步监督更有效，因为构象转变存在层级性——linker 旋转是结构域闭合的前提。
+   - 闭合路径中 linker 残基 Arg97 的侧链重取向（从朝外到朝内）是驱动闭合的关键事件，与突变数据一致。</li>
+<li><strong>[Analysis] 可能的普适教训</strong>: 对于任何涉及结构域重排的蛋白质构象转变（如激酶激活、转录因子 DNA 结合），SuMD 的监督变量设计应遵循「先识别两态间位移最大的残基对，再按运动层级分步监督」的原则。这一思路可迁移至其他柔性多结构域蛋白的构象采样问题。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: </li>
+<li>apo 构象（PDB 4EGL，开放态）</li>
+<li>RNA 结合构象（PDB 4ED5，闭合态，用于定义目标残基对距离）</li>
+<li>RNA 分子（来自 4ED5，放置在 RRM1 结合界面）</li>
+<li><strong>输出</strong>: </li>
+<li>闭合轨迹（近晶体构象，RRM2 RMSD ≈ 9 Å）</li>
+<li>闭合路径上的关键残基/相互作用</li>
+<li>瞬时口袋候选</li>
+<li><strong>模块</strong>:
+  1. 结构准备（MOE）：序列校正、缺失残基构建、加氢、质子化（pH 7.4）、linker 区（Arg97-Gly102）建模
+  2. 体系搭建（AmberTools22）：TIP3P 水盒子（20 Å 等距）、0.154 M NaCl、Amber14SB（蛋白）+ OL3（RNA）力场
+  3. 平衡（ACEMD 3.5）：两步平衡（NVT 1 ns + NPT 1 ns，5 kcal/mol·Å²  restraints）
+  4. 常规 MD：3×500 ns（apo、闭合、pseudo-apo）
+  5. SuMD 第一步：监督 Ile103-Lys156 距离（4 runs）
+  6. SuMD 第二步：监督 Lys92-Asn134 距离（4 runs，从第一步最优终点出发）
+  7. 轨迹分析：RMSD、RMSF、相互作用能（NAMD Energy plugin）、残基接触、Fpocket 口袋检测</li>
+<li><strong>流程</strong>: apo 结构 + RNA（置于 RRM1）→ 平衡 → SuMD 第一步（linker 旋转）→ 选取最优终点 → SuMD 第二步（结构域闭合）→ 近晶体闭合构象 → 100 ns 无偏 MD 验证稳定性 → 口袋分析</li>
+<li><strong>假设</strong>: </li>
+<li>RNA 首先结合 RRM1（高亲和位点），随后 RRM2 闭合</li>
+<li>监督残基对的距离变化能有效引导构象转变</li>
+<li>SuMD 产生的轨迹代表真实的闭合路径（而非人为强制路径）</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>残基对选择（Δ-distance 矩阵）</td>
+<td>从开放/闭合两态结构计算所有 Cα 对距离差，排序选出位移最大的残基对</td>
+<td>识别最能代表构象转变的监督变量</td>
+<td>输入：4EGL + 4ED5 结构；输出：排名残基对（Lys92-Asn134, Ile103-Lys156 等）</td>
+<td>Results 表 S2</td>
+<td>若选择不当，SuMD 可能无法驱动有效闭合（如质心距离监督失败，RMSD &gt; 44 Å）</td>
+</tr>
+<tr>
+<td>SuMD 第一步（Ile103-Lys156）</td>
+<td>监督 linker 区残基与 RRM2 残基的距离，驱动 linker 旋转</td>
+<td>linker 旋转是结构域闭合的前提，需先解决</td>
+<td>输入：apo+RNA 体系；输出：linker 旋转后的中间构象</td>
+<td>Results 表 3、图 S5A</td>
+<td>若跳过此步直接监督跨结构域距离，闭合失败（Case 1 单步监督 RMSD &gt; 40 Å）</td>
+</tr>
+<tr>
+<td>SuMD 第二步（Lys92-Asn134）</td>
+<td>监督 RRM1 与 RRM2 残基距离，驱动结构域闭合</td>
+<td>在 linker 旋转后进一步引导结构域靠近</td>
+<td>输入：第一步最优终点；输出：近晶体闭合构象（RMSD 9.04 Å）</td>
+<td>Results 图 5、表 3</td>
+<td>若仅执行第一步，无法达到闭合构象</td>
+</tr>
+<tr>
+<td>100 ns 无偏 MD 验证</td>
+<td>检验 SuMD 终点构象的稳定性</td>
+<td>排除 SuMD 人为强制路径的可能性</td>
+<td>输入：SuMD 终点；输出：RMSD 稳定性轨迹</td>
+<td>Results 图 S8</td>
+<td>若无此验证，无法确认 SuMD 构象的物理合理性</td>
+</tr>
+<tr>
+<td>相互作用能/残基接触分析</td>
+<td>分解闭合轨迹中蛋白-RNA 相互作用</td>
+<td>识别关键驱动残基，与突变数据对照</td>
+<td>输入：SuMD 轨迹；输出：残基能量贡献排名</td>
+<td>Results 图 6</td>
+<td>无法建立机制解释</td>
+</tr>
+<tr>
+<td>Fpocket 口袋检测</td>
+<td>在闭合轨迹中间态中检测瞬时口袋</td>
+<td>识别药物可靶向的瞬态构象</td>
+<td>输入：聚类代表结构；输出：口袋列表及 druggability 评分</td>
+<td>Results 图 7</td>
+<td>失去药物发现指导价值</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>本文为方法应用型论文，无新推导公式。核心算法（SuMD）的监督判据为：</p>
+<ul>
+<li><strong>SuMD 监督判据</strong>：在每个 SuMD step（500 ps）内，计算监督残基对质心距离 d(t) 的时间序列，线性拟合斜率 m = Δd/Δt。若 m &lt; 0（距离持续减小），则该 step 被接受并保留；若 m ≥ 0，则该 step 被丢弃并重新开始（重新分配速度）。</li>
+<li>符号：d = 残基对质心距离；t = 模拟时间；m = 拟合斜率</li>
+<li>用途：判断结构域是否在相互靠近</li>
+<li>直觉：将「接近」这一方向性要求转化为对短轨迹斜率的约束，从而在不引入偏执力的情况下引导构象转变</li>
+<li>
+<p>来源：Methods 节 SuMD 部分（基于文献 [23] 的原始 SuMD 算法）</p>
+</li>
+<li>
+<p><strong>Δ-distance 矩阵</strong>：ΔD(i,j) = d_open(i,j) − d_closed(i,j)，其中 d_open 和 d_closed 分别为 4EGL 和 4ED5 中残基 i、j 的 Cα 距离。用于排序选择监督残基对。</p>
+</li>
+<li>来源：Results 第 2 节、表 S2</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/体系</strong>: </li>
+<li>HuR 串联 RRM1-RRM2 结构域（残基 Gly18-Asn186，UniProt Q15717）</li>
+<li>三种体系：apo（4EGL）、RNA 结合（4ED5）、pseudo-apo（4ED5 去 RNA）</li>
+<li>RNA：11-nt AU 富集序列（来自 4ED5）</li>
+<li><strong>规模</strong>: 常规 MD 3×500 ns × 3 体系；SuMD 每步 4 runs × 2 步；验证 MD 100 ns</li>
+<li><strong>指标</strong>: RRM2 骨架 RMSD（相对 4ED5 闭合构象）、Cα-RMSF、蛋白-RNA 相互作用能（vdW + 静电）、残基接触频率（4.5 Å 截断）、Fpocket druggability score</li>
+<li><strong>基线</strong>: 常规 MD 模拟（无监督）；单步 SuMD（质心距离监督）</li>
+<li><strong>评测协议</strong>: 以能否达到 RMSD &lt; 10 Å 的闭合构象为成功标准；以 100 ns 无偏 MD 中 RMSD 是否维持 &lt; 10 Å 为稳定性标准</li>
+<li><strong>oracle 输入</strong>: 4ED5 闭合晶体结构作为目标构象（用于 RMSD 计算和残基对选择）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>常规 MD（apo）</td>
+<td>apo 构象的固有柔性</td>
+<td>3×500 ns，无监督</td>
+<td>RRM2 RMSD 平均 33 Å，最高 40+ Å；仅一次瞬态达 7.88 Å</td>
+<td>apo 态高度柔性，开放-闭合转变在常规 MD 时间尺度不可达</td>
+<td>不能排除更长模拟（μs）可达闭合</td>
+<td>Results 图 2A-B、表 1、图 S3</td>
+</tr>
+<tr>
+<td>常规 MD（RNA 结合）</td>
+<td>RNA 对闭合构象的稳定作用</td>
+<td>3×500 ns，含 RNA</td>
+<td>RRM2 RMSD 平均 2.65 Å</td>
+<td>RNA 结合稳定闭合构象</td>
+<td>不能证明 RNA 是闭合的唯一驱动因素</td>
+<td>Results 图 2A-B、表 1</td>
+</tr>
+<tr>
+<td>常规 MD（pseudo-apo）</td>
+<td>闭合构象在无 RNA 时的稳定性</td>
+<td>3×500 ns，去 RNA</td>
+<td>RRM2 RMSD 平均 48.76 Å</td>
+<td>无 RNA 时闭合构象不稳定，迅速开放</td>
+<td>不能排除其他条件（突变、配体）可稳定闭合态</td>
+<td>Results 图 2C、表 1</td>
+</tr>
+<tr>
+<td>单步 SuMD（质心距离）</td>
+<td>质心距离监督能否驱动闭合</td>
+<td>4 runs，监督 RRM1/RRM2 界面质心距离</td>
+<td>所有 runs RMSD &gt; 44 Å</td>
+<td>质心距离监督不足以驱动完整闭合</td>
+<td>不能排除其他单步监督变量可能有效</td>
+<td>Results 第 2 节、图 S4</td>
+</tr>
+<tr>
+<td>多步 SuMD（Ile103-Lys156 → Lys92-Asn134）</td>
+<td>多步残基对监督能否驱动闭合</td>
+<td>4 runs × 2 步</td>
+<td>1 run 达 RMSD 9.04 Å（成功）；其余 runs 部分接近</td>
+<td>多步监督可重现近晶体闭合构象</td>
+<td>成功率仅 1/4，需更多重复验证可重复性</td>
+<td>Results 表 3、图 5、图 S5</td>
+</tr>
+<tr>
+<td>100 ns 无偏 MD（从 SuMD 终点出发）</td>
+<td>SuMD 终点的稳定性</td>
+<td>单次模拟</td>
+<td>RMSD 未显著增加，闭合构象维持</td>
+<td>SuMD 终点是亚稳态，非人为强制构象</td>
+<td>100 ns 不足以证明热力学稳定性</td>
+<td>Results 图 S8</td>
+</tr>
+<tr>
+<td>相互作用能/残基分析</td>
+<td>闭合路径的关键驱动残基</td>
+<td>沿成功轨迹分解</td>
+<td>Arg97（linker）、Arg136、Arg147（RRM2）贡献最大</td>
+<td>与丙氨酸扫描突变数据一致，验证路径合理性</td>
+<td>未做突变模拟验证因果性</td>
+<td>Results 图 6</td>
+</tr>
+<tr>
+<td>Fpocket 口袋检测</td>
+<td>闭合路径存在瞬时可成药口袋</td>
+<td>3 个聚类代表结构</td>
+<td>1 个口袋 druggability 0.898（闭合前中间态）</td>
+<td>闭合路径存在瞬时口袋，值得进一步评估</td>
+<td>未做配体结合验证</td>
+<td>Results 图 7</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文仅针对 HuR 的 RRM1-RRM2 串联结构域（截短构建），不涉及全长 HuR（含 RRM3 和 hinge 区）的构象行为。</li>
+<li><strong>oracle/真值输入</strong>: 残基对选择依赖 4ED5 闭合晶体结构作为目标；若无闭合态结构，该方法需依赖其他先验知识（如交联质谱、FRET 数据）选择监督残基对。</li>
+<li><strong>端到端状态</strong>: 方法并非全自动——需要人工选择监督残基对、设计多步顺序、判断成功标准。SuMD 轨迹是方向性选择的非平衡路径，不能用于推断热力学平衡性质（自由能、群体分布）。</li>
+<li><strong>算力成本</strong>: SuMD 的加速效果以「有效采样时间」衡量，但丢弃 step 的机制意味着实际计算量可能高于名义模拟时间；本文未报告总 GPU 小时数。</li>
+<li><strong>历史数据依赖</strong>: 依赖已知的开放/闭合两态结构；对于仅有单态结构的体系，需通过其他方法（如弹性网络模型、PCA）预测闭合态。</li>
+<li><strong>最难情形</strong>: 涉及多个结构域、多个 linker 的协同重排；或闭合路径存在多个竞争性中间态时，两对残基的监督可能不足。</li>
+<li><strong>群体/领域边界</strong>: 结论仅适用于 HuR 这一体系；方法可迁移性需在其他多结构域蛋白上验证。</li>
+<li><strong>不确定性</strong>: 成功率 1/4（4 runs 中 1 次成功），表明 SuMD 对初始速度敏感，可重复性有限；100 ns 稳定性验证时间尺度较短。</li>
+<li><strong>有边界的复述</strong>: 本文证明，在已知开放/闭合两态结构、且闭合态有明确残基对距离特征的前提下，多步 SuMD 可在纳秒尺度上重现 HuR 的开放-闭合转变，并识别与突变数据一致的驱动残基；但该方法不提供热力学信息，成功率需通过更多重复评估。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺乏区分成功/失败轨迹的验证指标</td>
+<td>作者指出 SuMD 目前缺少一个经过验证的指标来判别模拟终点是否接近晶体结构</td>
+<td>未来需开发此类指标</td>
+<td>Conclusions 最后一段</td>
+</tr>
+<tr>
+<td>模拟的随机性</td>
+<td>初始速度的随机分配和 Langevin 恒温器的随机速度重标导致轨迹差异，仅 1/4 runs 成功</td>
+<td>作者未明确提及，但隐含在「需要多少重复」的讨论中</td>
+<td>Conclusions 最后一段</td>
+</tr>
+<tr>
+<td>瞬时口袋分析仅为初步</td>
+<td>Fpocket 检测到的口袋未经过配体结合验证，druggability 评分仅为几何/理化估计</td>
+<td>未来将进行结构研究和配体可及性评估</td>
+<td>Results 图 7 讨论、Conclusions</td>
+</tr>
+<tr>
+<td>截短构建的局限</td>
+<td>模拟体系为 RRM1-RRM2 串联构建，不含 RRM3 和 hinge 区</td>
+<td>未明确提及，但体系描述中说明</td>
+<td>Methods 结构准备部分</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>成功率 1/4 但未报告失败轨迹的详细分析</td>
+<td>失败轨迹可能揭示了监督变量选择的不足，或闭合路径存在多个分支；仅报告成功轨迹可能高估方法可靠性</td>
+<td>方法可重复性是增强采样技术的核心指标</td>
+<td>要求作者提供失败轨迹的 RMSD 轨迹和相互作用能分析，比较成功/失败轨迹的差异</td>
+<td>Results 表 3</td>
+</tr>
+<tr>
+<td>残基对选择依赖闭合态晶体结构</td>
+<td>对于无闭合态结构的体系，该方法无法直接应用；Δ-distance 矩阵需要两态结构</td>
+<td>限制了方法在新体系上的适用性</td>
+<td>测试仅用开放态结构 + 预测闭合态（如 AlphaFold 多聚体或 AF2 构象采样）时方法是否仍有效</td>
+<td>Methods 残基对选择部分</td>
+</tr>
+<tr>
+<td>100 ns 无偏 MD 验证时间过短</td>
+<td>100 ns 可能不足以排除 SuMD 终点是亚稳态陷阱的可能性；且仅 1 次验证模拟</td>
+<td>稳定性结论的强度有限</td>
+<td>延长验证模拟至 μs 级，或进行多次独立验证模拟</td>
+<td>Results 图 S8</td>
+</tr>
+<tr>
+<td>相互作用能分析未与突变体模拟对照</td>
+<td>作者将 Arg97/Arg136/Arg147 的贡献与文献突变数据对照，但未做这些残基的突变体 SuMD 模拟来验证因果性</td>
+<td>观察到的残基贡献可能是闭合的结果而非原因</td>
+<td>设计 Arg97A/Arg136A/Arg147A 突变体的 SuMD 模拟，检验闭合是否受阻</td>
+<td>Results 图 6</td>
+</tr>
+<tr>
+<td>Fpocket 分析保留核酸在体系中</td>
+<td>口袋检测时 RNA 仍在结合位点，可能掩盖了 RNA 结合后形成的口袋或高估了某些残基的可及性</td>
+<td>药物设计需考虑 apo 状态的可靶向口袋</td>
+<td>在无 RNA 的 SuMD 轨迹上重复 Fpocket 分析，比较口袋差异</td>
+<td>Results 图 7</td>
+</tr>
+<tr>
+<td>未报告 SuMD 的计算开销</td>
+<td>丢弃 step 的机制意味着实际计算量可能远高于名义模拟时间；未报告总 GPU 小时数或加速比</td>
+<td>方法实用性评估需要计算成本数据</td>
+<td>要求作者报告总模拟时间、丢弃 step 比例、有效采样时间</td>
+<td>Methods SuMD 部分</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>多步监督策略（可迁移性高）</strong>：对于涉及多个运动层级（如 linker 旋转 → 结构域闭合）的构象转变，单步监督一个距离量往往不足。可先监督局部运动节点（linker 残基对），再监督全局运动（跨结构域残基对），分步引导。→ 可迁移至其他多结构域蛋白（如激酶 N-lobe/C-lobe 闭合、转录因子 DNA 结合域闭合）的构象采样。</p>
+</li>
+<li>
+<p><strong>残基对选择原则（可迁移性高）</strong>：通过计算开放/闭合两态间的 Δ-distance 矩阵，选择位移大且在闭合态距离小的残基对作为监督变量，比选择结构域质心距离更有效。→ 可迁移至任何有两态结构的构象转变问题；若仅有单态结构，可尝试用 AlphaFold 预测的替代构象或正常模式分析（NMA）预测闭合态。</p>
+</li>
+<li>
+<p><strong>SuMD 的适用边界（方法认知）</strong>：SuMD 适合「已知起点和终点、需找路径」的问题，但不提供热力学信息（自由能、群体分布）。若目标是计算结合自由能或构象平衡，应使用 metadynamics 或 umbrella sampling。→ 在选择增强采样方法时需明确目标。</p>
+</li>
+<li>
+<p><strong>相互作用能分解验证路径合理性（可迁移性高）</strong>：将 SuMD 轨迹中的残基-核酸相互作用能与已知突变数据对照，可验证模拟路径的生物学合理性。→ 可迁移至任何蛋白-核酸/蛋白-蛋白结合路径模拟，作为路径验证的通用策略。</p>
+</li>
+<li>
+<p><strong>瞬时口袋检测（药物设计相关）</strong>：在构象转变轨迹的中间态上运行 Fpocket，可能发现终点构象中不存在的瞬时口袋。→ 可迁移至靶向构象动态蛋白（如 HuR、激酶）的药物发现，但需注意保留/去除配体对口袋检测的影响。</p>
+</li>
+<li>
+<p><strong>pseudo-apo 对照设计（实验设计）</strong>：通过模拟「闭合态去配体」的 pseudo-apo 体系，可区分配体对构象稳定的贡献与构象本身的内在稳定性。→ 可迁移至任何配体诱导构象变化的研究设计。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>HuR 结构与功能</strong>（外部核验）: Wang et al. [1] 的丙氨酸扫描鉴定 Arg97、Arg136、Arg147 为关键 RNA 结合残基，本文 SuMD 轨迹中的残基贡献分析与此一致，形成计算-实验互证。</li>
+<li><strong>SuMD 方法谱系</strong>（外部核验）: SuMD 由 Sabbadin 等 [23] 开发，已应用于 GPCR、激酶、蛋白-核酸识别等分子间过程 [24-28]。本文将其扩展至分子内构象转变，与 Novello 等 [22] 的蛋白-核酸识别应用形成方法家族。</li>
+<li><strong>增强采样方法比较</strong>（候选方向）: 与 metadynamics（需预定义集体变量）、replica exchange（计算成本高）相比，SuMD 的优势在于无需预定义反应坐标，但代价是失去热力学信息。可与其他增强采样方法（如 GaMD、REMD）在相同体系上比较采样效率和路径合理性。</li>
+<li><strong>与 AlphaFold 的互补</strong>（候选方向）: AlphaFold 可预测闭合态结构（如用多聚体模式预测 RRM1-RRM2-RNA 复合物），但无法提供转变路径和动力学信息；SuMD 可补充路径层面的机制理解。二者可形成「预测终点 + 模拟路径」的组合策略。</li>
+<li><strong>药物发现应用</strong>（外部核验）: HuR 的 RNA 结合界面被认为是难成药靶点 [5,9-17]，本文发现的瞬时口袋为变构位点发现提供了新思路，与「隐性口袋」（cryptic pocket）研究领域相关。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: 基于 Δ-distance 矩阵的自动监督残基对选择协议
+   - <strong>来源局限/观察</strong>: 本文人工选择监督残基对，依赖两态结构且需人工判断；成功率 1/4 表明监督变量选择仍有优化空间。
+   - <strong>核心假设</strong>: 通过图论/网络分析（如残基间相关性、社区检测）自动识别构象转变中的关键运动节点，可提高监督变量选择的系统性和成功率。
+   - <strong>初步方法</strong>: 对两态结构做弹性网络模型（ENM）或各向异性网络模型（ANM），识别低频模式中位移最大的残基簇；结合序列保守性和实验突变数据，自动生成候选监督残基对；在 SuMD 中测试不同候选对的成功率。
+   - <strong>验证方式</strong>: 在 HuR 及 2-3 个其他多结构域蛋白（如激酶、PDZ 域）上测试，比较自动选择 vs 人工选择的成功率和计算成本。
+   - <strong>可能的失败模式</strong>: 自动选择可能选出运动大但非路径关键的残基（如柔性 loop），导致监督无效；需引入功能/保守性约束。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: SuMD 轨迹的路径集合分析与中间态口袋系统表征
+   - <strong>来源局限/观察</strong>: 本文仅对 1 条成功轨迹做了 Fpocket 分析，未系统比较多条轨迹的中间态口袋；瞬时口袋的生物学意义未验证。
+   - <strong>核心假设</strong>: 多条 SuMD 轨迹（成功+失败）的中间态集合中，存在保守的瞬态口袋，且这些口袋在 apo 和闭合态中均不可见。
+   - <strong>初步方法</strong>: 收集所有 SuMD 轨迹（成功+失败）的中间态构象，用 Fpocket 或 DoGSite 检测口袋；对口袋残基做保守性分析；用 MD 模拟（无 RNA）验证口袋的稳定性；尝试对口袋进行虚拟筛选。
+   - <strong>验证方式</strong>: 口袋残基与已知突变数据（如 Arg97）重叠；虚拟筛选命中物在 SPR 或 NMR 实验中显示与 HuR 结合。
+   - <strong>可能的失败模式</strong>: 瞬态口袋可能过于溶剂暴露或高度动态，无法稳定结合小分子；虚拟筛选命中率低。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 结合 AlphaFold 预测闭合态与 SuMD 路径模拟的无结构先验构象采样协议
+   - <strong>来源局限/观察</strong>: 本文方法依赖实验闭合态结构（4ED5）作为目标；对于无闭合态结构的蛋白，方法无法直接应用。
+   - <strong>核心假设</strong>: AlphaFold 多聚体模式或 AF2 构象采样可提供足够接近实验闭合态的预测结构，作为 SuMD 的监督目标。
+   - <strong>初步方法</strong>: 对目标蛋白，用 AlphaFold 多聚体模式预测蛋白-RNA 复合物结构；将预测闭合态与实验 apo 态做 Δ-distance 分析，选择监督残基对；执行 SuMD 并评估终点 RMSD（相对预测闭合态和实验闭合态，如有）。
+   - <strong>验证方式</strong>: 在 HuR 上做回顾性测试（用 AF2 预测闭合态替代 4ED5）；在 2-3 个无实验闭合态结构的多结构域蛋白上做前瞻性测试。
+   - <strong>可能的失败模式</strong>: AlphaFold 预测的闭合态可能不准确（尤其对高度柔性蛋白），导致监督目标错误；需评估预测质量对 SuMD 成功率的影响。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: SuMD 与机器学习势函数（MLP）结合的构象转变采样
+   - <strong>来源局限/观察</strong>: 本文使用经典力场（Amber14SB），计算成本高且可能无法准确描述 linker 区域的构象偏好；SuMD 的丢弃-重试机制进一步增加成本。
+   - <strong>核心假设</strong>: 使用 MLP（如 ANI、MACE、Allegro）替代经典力场，可在保持精度的同时提高 SuMD 采样效率，尤其对 linker 区域的 torsional 分布。
+   - <strong>初步方法</strong>: 用 MLP 对 HuR 体系做短 MD 验证（与经典力场对比 RMSD 和残基波动）；将 MLP 集成至 SuMD 框架（需修改能量/力计算接口）；比较 MLP-SuMD vs 经典力场-SuMD 的成功率和计算成本。
+   - <strong>验证方式</strong>: 在 HuR 上对比两种力场的 SuMD 轨迹质量（RMSD、相互作用能、残基接触）；在 1-2 个其他体系上测试泛化性。
+   - <strong>可能的失败模式</strong>: MLP 对蛋白-RNA 相互作用的描述可能不准确（训练数据中蛋白-核酸复合物较少）；MLP 计算速度可能不足以抵消 SuMD 的重复计算开销。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于 SuMD 闭合路径的变构位点发现与配体设计
+   - <strong>来源局限/观察</strong>: 本文识别了闭合路径上的瞬态口袋，但未进行配体发现；HuR 的 RNA 结合界面难成药，变构位点可能是更可行的策略。
+   - <strong>核心假设</strong>: 闭合路径中间态暴露的瞬态口袋（特别是 linker 附近的疏水/极性残基簇）可被小分子配体稳定，从而影响 HuR 的 RNA 结合能力。
+   - <strong>初步方法</strong>: 对 SuMD 轨迹中检测到的高 druggability 口袋做分子对接（如 Glide、AutoDock）；对命中物做 MD 模拟验证结合稳定性；合成或购买候选化合物，用荧光偏振或 MST 实验验证与 HuR 的结合及对 RNA 结合的抑制。
+   - <strong>验证方式</strong>: 命中物在体外实验中显示与 HuR 结合（KD &lt; 100 μM）；在细胞实验中显示对 HuR 靶基因表达的影响。
+   - <strong>可能的失败模式</strong>: 瞬态口袋在无 RNA 条件下可能不稳定，配体无法有效结合；变构调节效应可能不足以抑制 RNA 结合。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including abstract, introduction, results and discussion, conclusions, and materials and methods. No figures, tables, or supplementary materials were provided for inspection.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the textual content of the manuscript. Claims regarding simulation results, structural analyses, and methodological outcomes are evaluated based on the descriptions provided in the text alone. No raw data, trajectory files, or structural coordinates were available for independent verification.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors report that (i) conventional MD simulations of the apo HuR tandem RRM1-RRM2 construct show extensive interdomain motions while the RNA-bound complex remains stable; (ii) a novel application of Supervised MD (SuMD) to an intramolecular conformational transition, using a multistep supervision protocol based on selected interdomain residue pairs, reproduces a closed conformation resembling the experimental RNA-bound structure; (iii) per-residue interaction analyses identify key contributions from the linker region, particularly Arg97, Arg136, and Arg147, consistent with published mutagenesis data; and (iv) the reclosure pathway transiently exposes putative druggable pockets not detectable in endpoint conformations.</li>
+<li><strong>Visible evidence base</strong> Textual descriptions of simulation protocols, RMSD and RMSF values, interaction energy analyses, residue-level contact patterns, and pocket detection results. Specific numerical values are reported for some quantities (e.g., RMSD values of 9.04 Å, 4.33 Å, 14.57 Å; interaction energy of −560.60 kcal/mol), but the corresponding figures, tables, and supplementary materials are not available for inspection.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures (Figures 1-7), tables (Tables 1-3, S1, S2), supplementary figures (Figures S1-S10), and Video S1 were not provided. These materials are essential for evaluating the validity of the reported structural analyses, the quality of the SuMD trajectories, the convergence assessments, and the pocket detection results. Without these, several key claims cannot be independently verified.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript presents a methodologically interesting application of SuMD to an intramolecular conformational transition in HuR, a target of therapeutic relevance. The authors are transparent about the limitations of their approach, including the stochastic nature of SuMD and the lack of a validated metric to distinguish productive from unproductive trajectories. However, the manuscript has several significant weaknesses that currently prevent a full endorsement. The central claim of reproducing a "closed conformation resembling the experimental RNA-bound structure" rests on a single successful trajectory out of multiple attempts, and the reported RMSD values (9.04 Å for the full construct) are high by structural biology standards. The mechanistic interpretation, while plausible, is derived from a single trajectory and lacks statistical support. The pocket detection analysis is explicitly preliminary and the authors appropriately caution against overinterpretation, but the inclusion of this material without more rigorous validation adds limited value. The manuscript would benefit from a more critical discussion of what constitutes "success" in this context, additional validation of the SuMD-derived pathway, and a clearer articulation of the practical utility of the identified transient pockets. The writing is generally clear, though some methodological details require clarification.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational chemists and biophysicists working on enhanced sampling methods, particularly those interested in extending SuMD-type approaches beyond intermolecular recognition to intramolecular conformational transitions. Researchers studying RNA-binding proteins, especially HuR, as a therapeutic target in oncology and neurodegeneration, may find the mechanistic insights into domain closure and the identification of transient pockets of interest for structure-based drug design efforts. Methodologists developing supervised or directed sampling techniques would also be interested in the multistep supervision protocol described here.</li>
+<li><strong>Major strengths</strong> (1) The manuscript addresses a biologically and therapeutically relevant question: the conformational transition of HuR between open and closed states, which is central to its RNA-binding function. (2) The extension of SuMD to an intramolecular transition is a novel methodological contribution, and the authors are appropriately cautious in framing this as a first application. (3) The multistep supervision protocol, inspired by prior work on protein-nucleic acid recognition, is a thoughtful adaptation that addresses the failure of single-step supervision. (4) The authors are transparent about the limitations of their approach, including the stochastic nature of SuMD, the lack of a validated success metric, and the preliminary nature of the pocket analysis. (5) The per-residue interaction analysis recovers experimentally validated key residues (Arg97, Arg136, Arg147), providing some confidence in the biological relevance of the simulated pathway.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness / Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors claim that the multistep SuMD protocol "succeeded in reproducing a nearly crystal-like conformation of closed RNA-bound HuR, with an RMSD of 9.04 Å for the RRM2 backbone."</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, "Simulations of HuR Conformational Transition" section; Figure 5; Figure S7; location not provided for specific figure panels</li>
+<li><strong>Concern</strong> The central success claim rests on a single trajectory (run1 of Supervision Step-2) out of four attempts. An RMSD of 9.04 Å for the RRM2 backbone relative to the crystal structure is substantial and does not constitute a "nearly crystal-like" conformation by conventional structural biology standards. The authors note that when aligning on the entire backbone the RMSD drops to 4.33 Å, but this is a global measure that may mask local structural deviations. The manuscript does not report whether the key interdomain contacts, hydrogen bonds, and salt bridges observed in the crystal structure are faithfully reproduced in the SuMD-derived closed state. Without a residue-level comparison of the simulated closed state to the experimental structure, the claim of "reproducing" the closed conformation is not adequately supported. Furthermore, the persistence assessment is based on a single 100 ns unbiased MD simulation, which is too short to establish stability.</li>
+<li><strong>Why it matters</strong> The entire methodological contribution hinges on the ability of the multistep SuMD protocol to generate a conformation that is meaningfully similar to the experimentally determined closed state. If the 9.04 Å RMSD reflects a conformation that is only superficially similar to the crystal structure, with incorrect interdomain contacts or an improperly formed RNA-binding cleft, then the claimed success is overstated and the mechanistic interpretations derived from this trajectory are unreliable.</li>
+<li><strong>Resolution test</strong> The authors should provide a detailed residue-level comparison between the SuMD-generated closed state and the crystal structure, including: (a) a per-residue RMSD plot with the secondary structure elements annotated; (b) a contact map comparison highlighting which native interdomain contacts are reproduced and which are not; (c) an analysis of the RNA-binding cleft geometry (e.g., width, depth, electrostatic potential) in the simulated closed state versus the crystal structure; and (d) a longer persistence simulation (at least 500 ns, ideally multiple replicates) demonstrating that the closed state is stable. If the simulated closed state deviates significantly from the crystal structure in functionally important regions, the claims should be revised accordingly.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness / Methodological rigor</li>
+<li><strong>Claim pointer</strong> The authors state that "the identified pathway should be regarded as one plausible route among potentially multiple closure mechanisms" and that the per-residue interaction analysis "recovered several residues previously reported in the literature as key residues for RNA recognition."</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, "Simulations of HuR Conformational Transition" section; Figure 6; location not provided for specific figure panels</li>
+<li><strong>Concern</strong> The mechanistic interpretation of the reclosure pathway is derived from a single successful trajectory. The authors acknowledge this limitation in the conclusions, but the Results section presents the pathway and the residue-level interactions as if they are robust findings. The per-residue interaction energy analysis is performed on one trajectory, and no error bars, replicate analyses, or statistical measures are reported. The claim that the analysis "confirmed the prominent role of Arg97" is based on a single simulation and cannot be considered a confirmation in any meaningful sense. Additionally, the selection of the "most productive" trajectory for further analysis introduces a selection bias that is not addressed.</li>
+<li><strong>Why it matters</strong> The mechanistic insights into HuR domain closure are presented as a key outcome of the study. If these insights are derived from a single stochastic trajectory, they may not be reproducible or representative of the ensemble of possible closure pathways. The authors' own acknowledgment that SuMD is stochastic and that different initial velocities can lead to markedly different trajectories undermines the confidence that can be placed in the specific pathway and residue interactions described.</li>
+<li><strong>Resolution test</strong> The authors should either (a) demonstrate that the key mechanistic features (e.g., the role of Arg97, the sequence of interdomain contact formation) are reproducible across multiple independent SuMD runs that yield productive closure, or (b) explicitly reframe the findings as observations from a single trajectory that require experimental validation, with appropriate caveats throughout the Results section rather than only in the Conclusions. If multiple productive trajectories are available, a statistical analysis of the conserved versus variable features of the closure pathway should be provided.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Scientific importance / Translational relevance</li>
+<li><strong>Claim pointer</strong> The authors state that "the pool of the collected trajectories also revealed novel conformational states accessible to the protein, which may represent valuable structural templates for future computer-aided drug design studies and for the identification of transiently druggable conformational states."</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, "Simulations of HuR Conformational Transition" section; Figure 7; location not provided for specific figure panels</li>
+<li><strong>Concern</strong> The pocket detection analysis is explicitly preliminary, and the authors appropriately note that the druggability score is a geometric and physicochemical estimator, not a demonstration of genuine druggability. However, the claim that these pockets "may represent valuable structural templates" is speculative and not supported by any functional validation. The manuscript does not assess whether the identified pockets could accommodate drug-like molecules in a manner that would disrupt HuR-RNA interactions, nor does it compare these pockets to known small-molecule binding sites on HuR. The inclusion of this analysis without more rigorous validation (e.g., molecular docking of known HuR ligands, comparison to experimental binding data) weakens the translational claims.</li>
+<li><strong>Why it matters</strong> The potential for targeting transient conformational states of HuR is a significant motivation for this work. If the identified pockets are artifacts of the simulation protocol or are not functionally relevant, the translational value of the study is diminished. Overstating the significance of preliminary computational predictions could mislead future drug discovery efforts.</li>
+<li><strong>Resolution test</strong> The authors should either (a) provide additional computational validation, such as docking known HuR ligands or drug-like fragments into the identified pockets and assessing their predicted binding affinities, or (b) temper the claims about the translational value of the pockets, explicitly stating that these are preliminary observations requiring experimental validation. If the pockets are not conserved across multiple trajectories or are not stable in longer simulations, this should be reported.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity / Reproducibility</li>
+<li><strong>Affected element</strong> Methods, "SuMD" section</li>
+<li><strong>Evidence pointer</strong> Materials and Methods, "SuMD" section; location not provided</li>
+<li><strong>Issue</strong> The description of the SuMD supervision protocol lacks specific details on how the "distance between the centers of mass" was computed for residue pairs. It is unclear whether this refers to the distance between the Cα atoms, the side-chain centroids, or the centers of mass of the entire residues. Additionally, the criteria for accepting or rejecting a SuMD step are described only in terms of the slope of the fitted line, but the specific threshold values and the length of each SuMD step are not clearly stated.</li>
+<li><strong>Required correction</strong> Provide a precise definition of the distance metric used for supervision, including the atoms or groups considered. Specify the exact acceptance criteria for SuMD steps (e.g., the slope threshold) and the duration of each SuMD step in simulation time. This information is essential for reproducibility.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity / Data presentation</li>
+<li><strong>Affected element</strong> Results and Discussion, "MD Simulations of HuR in the Open and Closed Conformation" section</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, "MD Simulations of HuR in the Open and Closed Conformation" section; Table 1; location not provided</li>
+<li><strong>Issue</strong> The manuscript reports average RMSD values for the apo and RNA-bound systems (e.g., 33.00 Å and 2.65 Å, respectively) but does not provide standard deviations or ranges across the three replicates. The text states that the apo form "displayed extensive interdomain motions," but without a measure of variability, it is difficult to assess the consistency of this observation across replicates.</li>
+<li><strong>Required correction</strong> Report the standard deviation or range for the average RMSD values across replicates. Consider showing the RMSD time series for each replicate in the supplementary materials to allow readers to assess the variability and convergence of the simulations.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity / Terminology</li>
+<li><strong>Affected element</strong> Results and Discussion, "Simulations of HuR Conformational Transition" section</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, "Simulations of HuR Conformational Transition" section; location not provided</li>
+<li><strong>Issue</strong> The term "Supervision Step-1" and "Supervision Step-2" is used to describe the two stages of the multistep protocol, but the relationship between these steps and the earlier "Case 1" and "Case 2" designations is not immediately clear. The text states that Case 1 and Case 2 were "described above as Supervision Step-1," but this connection could be made more explicit.</li>
+<li><strong>Required correction</strong> Use consistent terminology throughout the manuscript. Either refer to the two cases as "Supervision Step-1 (Case 1)" and "Supervision Step-1 (Case 2)" throughout, or introduce a clear mapping between the two naming schemes at the first mention.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness / Data availability</li>
+<li><strong>Affected element</strong> Results and Discussion, "Simulations of HuR Conformational Transition" section</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, "Simulations of HuR Conformational Transition" section; Figure S9; Figure S10; location not provided</li>
+<li><strong>Issue</strong> The manuscript mentions that a panel of images showing the last frame of all SuMD trajectories is provided in Figures S9 and S10, but the criteria for classifying trajectories as "Productive" versus "Unproductive" are not explicitly defined. The text implies that productivity is related to the final RMSD and interaction energy, but the specific thresholds are not stated.</li>
+<li><strong>Required correction</strong> Define the criteria used to classify trajectories as productive or unproductive. If the classification is based on RMSD or interaction energy thresholds, specify these values. If the classification is qualitative, state this explicitly.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> (1) The central claim of reproducing the closed conformation is based on a single trajectory with a high RMSD (9.04 Å) that is not rigorously compared to the crystal structure at the residue level. (2) The mechanistic interpretations are derived from one trajectory without statistical support or replicate analysis. (3) The pocket detection analysis is preliminary and lacks validation of functional relevance. (4) The manuscript does not provide sufficient details on the SuMD supervision protocol for reproducibility. (5) The persistence assessment is based on a single short (100 ns) simulation, which is insufficient to establish stability.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The application of SuMD to an intramolecular conformational transition is a novel methodological contribution. While the approach is an incremental extension of existing SuMD methodology, the specific application to HuR domain closure has not been previously reported. Scientific importance: The study addresses a biologically relevant question with therapeutic implications, but the significance of the findings is limited by the preliminary nature of the results and the lack of experimental validation. The mechanistic insights, while plausible, are derived from a single trajectory and require further support. Interdisciplinary readership: The manuscript is likely to appeal primarily to computational chemists and biophysicists specializing in enhanced sampling methods. The broader structural biology and drug discovery communities may find the results of interest, but the technical nature of the study limits its accessibility. Technical soundness: The simulation protocols are generally sound, and the authors demonstrate awareness of methodological limitations. However, the lack of statistical rigor in the analysis of the single successful trajectory and the insufficient validation of the claimed "nearly crystal-like" conformation are significant technical weaknesses. Readability for nonspecialists: The manuscript is clearly written and the authors make an effort to explain the SuMD methodology. However, the results section assumes familiarity with molecular dynamics simulation techniques and structural analysis methods, which may limit accessibility for readers outside the computational biophysics community.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The manuscript presents a novel methodological application with potential value for the computational biophysics community. However, the central claims require substantial additional analysis and validation before they can be fully endorsed. Specifically, the authors must provide a rigorous residue-level comparison of the SuMD-generated closed state to the crystal structure, demonstrate reproducibility of the key mechanistic findings across multiple trajectories, and either strengthen or temper the claims regarding druggable pockets. The manuscript would also benefit from a more critical discussion of what constitutes "success" in reproducing a conformational transition and the limitations of using a single trajectory for mechanistic interpretation.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the multistep SuMD protocol "succeeded in reproducing a nearly crystal-like conformation" is not fully supported by the reported RMSD value of 9.04 Å, which is high by structural biology standards, and the lack of a residue-level comparison to the crystal structure.</li>
+<li>The claim that the per-residue interaction analysis "confirmed" the role of Arg97, Arg136, and Arg147 is unsupported, as the analysis is based on a single trajectory and no statistical measures are provided.</li>
+<li>The claim that the identified pockets "may represent valuable structural templates for future computer-aided drug design studies" is speculative and not supported by any functional validation or comparison to known HuR ligand binding data.</li>
+<li>The statement that the closed state "persisted without undergoing a major reopening" during the 100 ns unbiased MD simulation is based on a single short simulation and cannot be considered evidence of stability.</li>
+<li>The claim that the identified pathway is "a plausible reclosure pathway" is reasonable as a hypothesis, but the manuscript does not provide sufficient evidence to distinguish this pathway from other possible mechanisms.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

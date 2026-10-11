@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no figures, tables, methods, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report a new method, CRISPR-guided PAM scanning, for mapping chimera-permissive insertion sites in living cells. They claim near-comprehensive coverage across proteins of diverse size and function in yeast, demonstrate application to a GPCR signaling pathway with 91 chimeras, show site-specific biophysical protection from protease probes, identify bifunctional GPCR chimeras retaining signaling with fluorescent or luminescent reporters, and validate selected insertion sites in human cells.
+- **Visible evidence base** Abstract text only; no experimental details, statistical analyses, or raw data are available
+- **Missing materials affecting confidence** Full methods, all figures and tables, statistical details, strain and construct information, control experiments, and any validation data for human cell translation
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually appealing and potentially scalable approach to a long-standing problem in protein engineering. The claimed outcomes, if fully supported, would be of interest to the synthetic biology and GPCR signaling communities. However, the abstract alone provides insufficient detail to evaluate technical rigor, reproducibility, or the strength of the central claims. Several assertions, particularly regarding coverage, protection, and functional retention, require direct experimental evidence that is not visible here.
+- **Who would be interested in the results, and why** Researchers in protein engineering, synthetic biology, and GPCR biology would be interested. The method promises a generalizable route to identify insertion-tolerant sites, which is directly relevant to designing biosensors, optogenetic tools, and chimeric receptors. The demonstration on GPCRs and translation to human cells would appeal to those working on receptor signaling and drug discovery.
+- **Major strengths** The proposed method addresses a clear bottleneck in chimera design with a scalable, cell-based approach. The use of CRISPR-addressable sites for systematic insertion is conceptually novel. The application across an entire signaling pathway and the identification of bifunctional chimeras with two different reporter types suggest broad utility. The inclusion of human cell validation strengthens translational relevance.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "PAM accessibility provided near-comprehensive coverage across proteins of diverse size and function"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The claim of near-comprehensive coverage is central to the method's generality, but no quantitative definition of coverage is given. It is unclear what fraction of coding sequence positions were addressable, how this varied across the tested proteins, and whether any systematic biases existed (for example, by protein size, localization, or expression level).
+  - **Why it matters** Without a clear metric for coverage, the reader cannot assess whether the method is truly general or only works for a favorable subset of proteins. This directly affects the claimed scalability and broad applicability.
+  - **Resolution test** Provide a quantitative definition of coverage, including the number of PAM sites per gene, the fraction of codons targeted, and a comparison across the full set of tested proteins. Show that coverage is not biased by protein features.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Cognate protease cleavage revealed how this protection varied with protease inhibition and size"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states that protection from protease cleavage varied with inhibition and size, but no data are shown. It is unclear how protection was quantified, what controls were used, and whether the observed variation was statistically significant or biologically meaningful.
+  - **Why it matters** This claim is presented as a key demonstration of the method's ability to report biophysical context. Without quantitative data and appropriate controls, the claim is not verifiable and may overstate the method's resolution.
+  - **Resolution test** Show representative cleavage data, quantification methods, statistical comparisons across conditions, and appropriate negative and positive controls.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Screening human adenosine A2A and melatonin MTNR1A receptors in yeast identified functional mNeonGreen and NanoLuc insertion sites that retained ligand-dependent signaling following translation to human cells"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract claims successful translation of yeast-identified insertion sites to human cells, but no details are given on the number of sites tested, the fraction that retained function, the assay used, or the magnitude of signaling retention. The phrase "retained ligand-dependent signaling" is vague and could range from near-native to barely detectable.
+  - **Why it matters** This is the key translational validation of the method. Without quantitative functional data, the claim of general applicability to human receptors is not established.
+  - **Resolution test** Provide dose-response curves for ligand-dependent signaling, comparison to wild-type receptor activity, and the number of insertion sites that passed or failed the functional threshold.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "chimera-permissive sites" is used without a brief operational definition. Nonspecialist readers may not immediately understand what constitutes permissiveness.
+  - **Required correction** Add a short phrase defining permissive sites as positions where insertion does not disrupt host protein function.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Method description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not state how many biological replicates or independent experiments were performed for the key screening and validation steps.
+  - **Required correction** Include replicate numbers in the abstract or indicate that full details are in the methods.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity of claims
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "experimentally validating generative chimera design" is ambiguous. It is unclear whether the authors validated designs from a specific generative model or are referring to a general concept.
+  - **Required correction** Specify the source of the generative designs and the nature of the validation.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient quantitative evidence to support the central claims of coverage, protection, and functional retention. Without these data, the method's utility and generality cannot be assessed.
+- **Assessment against Nature-style criteria** Originality is high, as the approach of using CRISPR-addressable sites for systematic insertion mapping appears novel. Scientific importance is potentially high for protein engineering and GPCR biology, but the current evidence is insufficient to establish significance. Interdisciplinary readership is plausible, given the combination of CRISPR technology, protein design, and receptor signaling. Technical soundness cannot be evaluated from the abstract alone, and the lack of quantitative detail is a major limitation. Readability for nonspecialists is acceptable but could be improved with brief definitions of key terms.
+- **Recommendation posture** Currently not established from the provided evidence. The concept is promising and the authors should be encouraged to resubmit with full experimental data. If the quantitative claims are supported, the work would be of considerable interest.
+
+## Risk / unsupported claims
+- "Near-comprehensive coverage across proteins of diverse size and function" is unsupported without quantitative coverage data.
+- "Site-specific biophysical protection from a protease probe" is unsupported without representative data and controls.
+- "Retained ligand-dependent signaling following translation to human cells" is unsupported without functional dose-response data.
+- "General framework for mapping insertional tolerance" is an overreach given that only two human receptors and a limited set of yeast proteins are mentioned.
+- "Accelerating functional chimera engineering" is a forward-looking claim that cannot be assessed from the abstract.

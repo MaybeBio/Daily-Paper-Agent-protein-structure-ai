@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generating Structural Ensembles of Disordered Proteins with Diffusion Models · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Generating Structural Ensembles of Disordered Proteins with Diffusion Models</h1>
+      <div class="meta">Trottier O; Gwozdecky JH; Rauscher S</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-04
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.02.756250">原文</a>
+      </div>
+      <p class="one-liner">该文开发了基于SE(3)等变扩散模型的Zephyr，用于生成无序蛋白的结构系综，结合MD模拟数据实现快速且准确的构象采样，直接命中蛋白质构象生成与AI方法核心课题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Generative models of protein structures have accelerated scientific discovery. However, the leading structure-prediction models are trained primarily on crystal structures, limiting their ability to sample the conformations of intrinsically disordered proteins (IDPs). All-atom molecular dynamics (MD) simulations can probe the diversity of IDP conformational ensembles, but these simulations are slow and costly. Leveraging the speed of generative models and the accuracy of MD, we develop Zephyr, an SE(3) equivariant diffusion model trained on simulated IDP ensembles. The model generates the structure of a single protein sequence in two phases: a coarse-grained structure is first sampled and heavy atoms are subsequently denoised onto this structure. We evaluate our method on two fronts: ensemble accuracy and sampling efficiency. Across five test systems, the model reproduces key geometric and energetic metrics of the MD ensembles, while sampling at least 63 times faster.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质结构的生成模型加速了科学发现。然而，领先的结构预测模型主要基于晶体结构进行训练，这限制了它们采样固有无序蛋白质（IDPs）构象的能力。全原子分子动力学（MD）模拟能够探测IDP构象集合的多样性，但这些模拟既缓慢又成本高昂。利用生成模型的速度和MD的准确性，我们开发了Zephyr，一种在模拟IDP集合上训练的SE(3)等变扩散模型。该模型分两个阶段生成单一蛋白质序列的结构：首先采样粗粒化结构，随后将重原子去噪到该结构上。我们从两个方面评估我们的方法：集合准确性和采样效率。在五个测试系统中，该模型重现了MD集合的关键几何和能量指标，同时采样速度至少快63倍。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Generating Structural Ensembles of Disordered Proteins with Diffusion Models</li>
+<li><strong>作者</strong>：Trottier O; Gwozdecky JH; Rauscher S</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法学论文）</li>
+<li><strong>领域</strong>：蛋白质结构预测 × 扩散模型 ×  intrinsically disordered proteins (IDPs)</li>
+<li><strong>关键词</strong>：IDP、conformational ensemble、diffusion model、SE(3) equivariance、coarse-grained、molecular dynamics</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.10.02.756250</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（训练数据为MD模拟生成的IDP ensembles）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/深度学习」方向，具体聚焦于IDP构象系综生成，结合了扩散模型（生成式AI）与MD模拟数据（物理模拟），是「AI加速物理模拟采样」路线的一个代表工作。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文开发了Zephyr——一个SE(3)等变扩散模型，在MD模拟生成的IDP构象系综上训练，通过两阶段（粗粒化采样→重原子denoising）生成单序列的构象系综，在5个测试系统上复现MD系综的关键几何与能量指标，同时采样速度至少快63倍。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何利用生成模型快速、准确地生成 intrinsically disordered proteins (IDPs) 的构象系综（conformational ensemble），而非单一静态结构？</li>
+<li><strong>为什么重要</strong>：IDP在生物过程中广泛存在且功能与构象系综密切相关；现有结构预测模型（如AlphaFold类）主要训练于晶体结构，无法捕捉IDP的构象多样性；MD模拟虽能采样系综但计算成本极高。</li>
+<li><strong>现有方法不足</strong>：① 结构预测模型偏向有序蛋白的单一结构，对IDP的系综采样能力有限；② MD模拟准确但慢，难以大规模应用。</li>
+<li><strong>精确研究问题</strong>：Can an SE(3) equivariant diffusion model trained on MD-simulated IDP ensembles generate conformational ensembles that match MD accuracy while being orders of magnitude faster?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」的领域常识，结合本文框架整理）</em>
+- <strong>阶段一：基于物理的MD模拟</strong>（代表：AMBER、CHARMM力场）——优点：物理准确、可采样系综；局限：计算成本高，难以大规模采样。
+- <strong>阶段二：深度学习结构预测</strong>（代表：AlphaFold2、ESMFold）——优点：极快、对有序蛋白准确；局限：训练数据以晶体结构为主，对IDP构象系综采样能力不足。
+- <strong>阶段三：生成模型用于构象采样</strong>（代表：扩散模型在蛋白质设计/构象生成中的应用，如FrameDiff、Chroma等）——优点：生成速度快、可学习复杂分布；局限：多数聚焦于有序蛋白或单一结构，对IDP系综的适配不足。
+- <strong>本文位置</strong>：将扩散模型与MD模拟数据结合，专门针对IDP构象系综生成，提出两阶段生成策略（粗粒化→重原子），在速度与准确性之间取得平衡。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构预测模型无法采样IDP构象</td>
+<td>现有模型输出单一静态结构，无法反映IDP的构象多样性</td>
+<td>训练数据以晶体结构为主，缺乏IDP系综信息</td>
+<td>摘要：「leading structure-prediction models are trained primarily on crystal structures, limiting their ability to sample the conformations of IDPs」</td>
+</tr>
+<tr>
+<td>MD模拟速度慢</td>
+<td>全原子MD模拟IDP系综耗时巨大</td>
+<td>全原子自由度大、时间步长小、需要长时间采样</td>
+<td>摘要：「all-atom MD simulations... are slow and costly」</td>
+</tr>
+<tr>
+<td>生成模型与MD精度差距</td>
+<td>生成模型速度快但精度不足</td>
+<td>缺乏物理约束、训练数据不足</td>
+<td>摘要：「Leveraging the speed of generative models and the accuracy of MD」暗示两者互补</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：训练一个SE(3)等变扩散模型（Zephyr），输入为单条蛋白序列，输出为构象系综；采用两阶段生成：先采样粗粒化结构，再在其上denoise重原子坐标。</li>
+<li><strong>核心洞察</strong>：将MD模拟的系综数据作为训练目标，使生成模型学习IDP的构象分布；两阶段生成策略（粗粒化→重原子）降低了高维坐标生成的难度，同时保留了物理合理性。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：对于构象系综类问题，将「慢而准」的物理模拟数据作为「快而近似」的生成模型的训练信号，是一种可迁移的范式；两阶段生成（先低维后高维）可降低生成难度，适用于其他高维结构生成任务。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：单条蛋白序列（氨基酸序列）</li>
+<li><strong>输出</strong>：该序列的构象系综（多个结构，含重原子坐标）</li>
+<li><strong>模块</strong>：
+  1. 粗粒化采样模块：生成粗粒化结构（可能为Cα或 backbone 级别）
+  2. 重原子denoising模块：在粗粒化结构条件下，生成全重原子坐标
+  3. SE(3)等变扩散模型：核心生成框架，保证旋转/平移等变性</li>
+<li><strong>训练</strong>：在MD模拟生成的IDP系综数据上训练，损失函数为扩散模型的denoising目标</li>
+<li><strong>工具</strong>：未提供具体框架（如PyTorch等）</li>
+<li><strong>假设</strong>：MD模拟系综可作为IDP构象分布的近似真值；SE(3)等变性有助于学习构象分布</li>
+<li><strong>流程</strong>：输入序列 → 粗粒化扩散采样 → 重原子denoising → 输出构象系综</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>粗粒化采样模块</td>
+<td>生成低分辨率结构骨架</td>
+<td>降低高维坐标生成难度，先确定整体拓扑</td>
+<td>输入：序列；输出：粗粒化坐标</td>
+<td>摘要：「a coarse-grained structure is first sampled」</td>
+<td>预期影响：移除后重原子生成难度增大，可能降低系综多样性（[Analysis] 预期效应）</td>
+</tr>
+<tr>
+<td>重原子denoising模块</td>
+<td>在粗粒化结构上生成全原子坐标</td>
+<td>提供化学细节，满足全原子精度需求</td>
+<td>输入：序列+粗粒化坐标；输出：全原子坐标</td>
+<td>摘要：「heavy atoms are subsequently denoised onto this structure」</td>
+<td>预期影响：移除后无法生成全原子结构，实用性下降（[Analysis] 预期效应）</td>
+</tr>
+<tr>
+<td>SE(3)等变扩散模型</td>
+<td>核心生成框架</td>
+<td>保证生成结构对旋转/平移等变，符合物理对称性</td>
+<td>输入：序列+噪声；输出：去噪坐标</td>
+<td>摘要：「an SE(3) equivariant diffusion model」</td>
+<td>预期影响：移除等变性可能降低生成结构的物理合理性（[Analysis] 预期效应）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（提供的材料中未包含具体公式）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：5个测试系统（具体蛋白未提供）；训练数据为MD模拟生成的IDP系综（规模未提供）</li>
+<li><strong>指标</strong>：ensemble accuracy（系综准确性，具体指标未提供）、sampling efficiency（采样效率，以速度倍数衡量）</li>
+<li><strong>基线</strong>：MD模拟（作为准确性参照）</li>
+<li><strong>评测协议</strong>：比较Zephyr生成系综与MD系综的关键几何与能量指标；比较采样速度</li>
+<li><strong>oracle输入</strong>：未提供（训练时使用MD系综作为监督信号）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系综准确性评估</td>
+<td>Zephyr能复现MD系综的关键指标</td>
+<td>5个测试系统，对比Zephyr生成系综 vs MD系综</td>
+<td>关键几何与能量指标被复现</td>
+<td>Zephyr生成的系综在准确性上接近MD</td>
+<td>未提供具体数值，无法判断「接近」的程度</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>采样效率评估</td>
+<td>Zephyr比MD快</td>
+<td>对比Zephyr与MD的采样时间</td>
+<td>至少快63倍</td>
+<td>Zephyr在速度上显著优于MD</td>
+<td>未提供绝对时间，无法评估实际计算成本</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对IDP构象系综生成，不涉及有序蛋白或折叠路径。</li>
+<li><strong>oracle/真值输入</strong>：训练依赖MD模拟系综作为真值，MD的准确性是Zephyr的上限。</li>
+<li><strong>端到端状态</strong>：模型为端到端生成（序列→系综），但训练数据来自MD，非实验数据。</li>
+<li><strong>算力成本</strong>：未提供训练/推理的具体算力需求；「63倍快」是相对MD而言，绝对成本未知。</li>
+<li><strong>历史数据依赖</strong>：依赖MD模拟数据的质量和覆盖度。</li>
+<li><strong>模型依赖</strong>：依赖SE(3)等变扩散模型的表达能力。</li>
+<li><strong>最难情形</strong>：未提供；可能对长IDP或复杂序列的系综生成更具挑战（[Analysis]）。</li>
+<li><strong>群体/领域边界</strong>：结论仅适用于测试的5个系统，泛化性未验证。</li>
+<li><strong>不确定性</strong>：未提供系综准确性的具体误差范围或统计显著性。</li>
+<li><strong>有边界的复述</strong>：Zephyr在5个测试IDP系统上，能以至少63倍于MD的速度生成在关键几何与能量指标上接近MD的构象系综；该结论受限于MD数据的准确性、测试系统的范围以及未披露的评估细节。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p><em>作者提及的相关约束（非正式局限）</em>：
+- 训练数据来自MD模拟，因此模型精度受限于MD力场的准确性（摘要中「trained on simulated IDP ensembles」暗示此依赖）。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>评估指标未具体化</td>
+<td>「关键几何和能量指标」未列出，可能选择性报告</td>
+<td>无法判断系综准确性的全面性</td>
+<td>要求作者提供完整指标列表及对比数值</td>
+<td>摘要仅提及「key geometric and energetic metrics」</td>
+</tr>
+<tr>
+<td>测试系统仅5个</td>
+<td>样本量小，泛化性存疑</td>
+<td>IDP序列多样性极高，5个系统不足以代表</td>
+<td>在更多样化的IDP数据集上测试</td>
+<td>摘要「across five test systems」</td>
+</tr>
+<tr>
+<td>速度比较未说明计算环境</td>
+<td>「63倍快」可能受硬件、并行化等影响</td>
+<td>影响结论的可复现性</td>
+<td>要求提供相同硬件条件下的基准测试</td>
+<td>摘要「sampling at least 63 times faster」</td>
+</tr>
+<tr>
+<td>未与现有生成模型对比</td>
+<td>未提及与其他IDP生成方法（如GAN、VAE）的比较</td>
+<td>无法判断Zephyr的相对优势</td>
+<td>与现有方法在相同数据集上对比</td>
+<td>摘要未提及任何对比方法</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>两阶段生成策略</strong>：先粗粒化后重原子的生成范式可迁移至其他高维结构生成任务（如RNA、复合物构象），降低生成难度。
+2. <strong>MD数据作为训练信号</strong>：将物理模拟数据作为生成模型的监督信号，是「AI×物理模拟」结合的有效范式，可推广至其他系综性质预测任务。
+3. <strong>SE(3)等变扩散模型</strong>：等变性设计在构象生成中保证物理对称性，可迁移至分子对接、构象采样等任务。
+4. <strong>速度-精度权衡</strong>：以「接近MD精度、远超MD速度」为目标，适用于需要大规模构象采样的场景（如药物筛选中的构象库生成）。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与FrameDiff、Chroma等蛋白质扩散模型同属生成式结构建模，但本文聚焦IDP系综而非有序蛋白设计。</li>
+<li><strong>组合方向</strong>：可与MD模拟结合，作为MD的快速预采样器，或与实验数据（如SAXS、FRET）结合进行系综校准。</li>
+<li><strong>冲突点</strong>：与AlphaFold等结构预测模型形成对比——后者输出单一结构，本文强调系综分布。</li>
+<li><strong>可迁移领域</strong>：分子对接（生成结合构象系综）、蛋白质设计（生成多样构象以筛选稳定序列）、MD加速（生成初始构象以加速平衡）。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Zephyr-Enhanced MD Initialization
+   - <strong>来源局限/观察</strong>：MD模拟需要长时间平衡才能达到稳态系综；Zephyr可快速生成近似系综。
+   - <strong>核心假设</strong>：以Zephyr生成的构象作为MD初始构象，可显著缩短平衡时间并提高采样效率。
+   - <strong>相对本文的增量</strong>：将Zephyr从「替代MD」转为「辅助MD」，提升MD的实用性。
+   - <strong>初步方法</strong>：在多个IDP系统上，比较随机初始构象 vs Zephyr初始构象的MD平衡时间与系综收敛性。
+   - <strong>验证方式</strong>：计算MD轨迹的系综收敛指标（如RMSD、Rg分布）与计算时间。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Experimental Data-Calibrated IDP Ensemble Generation
+   - <strong>来源局限/观察</strong>：Zephyr训练依赖MD数据，未利用实验数据（如SAXS、FRET）进行校准。
+   - <strong>核心假设</strong>：将实验数据作为约束或重加权信号，可提高生成系综的实验一致性。
+   - <strong>相对本文的增量</strong>：引入实验数据作为额外监督，提升系综的生物学相关性。
+   - <strong>初步方法</strong>：在Zephyr生成系综后，使用贝叶斯重加权或约束扩散方法，使系综匹配实验观测。
+   - <strong>验证方式</strong>：比较校准前后系综与实验数据的拟合度（如χ²值）。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Zephyr for Protein-Protein Interaction Ensembles
+   - <strong>来源局限/观察</strong>：Zephyr仅处理单序列，未扩展至多链复合物。
+   - <strong>核心假设</strong>：将Zephyr扩展至多链IDP复合物，可生成结合态构象系综，用于研究IDP介导的相互作用。
+   - <strong>相对本文的增量</strong>：从单链到多链，扩展应用范围至相互作用研究。
+   - <strong>初步方法</strong>：修改模型输入为多序列，训练数据为MD模拟的IDP复合物系综。
+   - <strong>验证方式</strong>：评估生成复合物系综的界面接触图与MD一致性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Uncertainty-Aware IDP Ensemble Generation
+   - <strong>来源局限/观察</strong>：Zephyr输出确定性系综，未提供生成构象的置信度。
+   - <strong>核心假设</strong>：在扩散模型中引入不确定性估计，可标识低置信度构象区域，指导后续MD细化。
+   - <strong>相对本文的增量</strong>：增加不确定性量化，提升模型的可解释性和实用性。
+   - <strong>初步方法</strong>：在Zephyr的denoising过程中估计每个原子的位置不确定性，输出置信度图。
+   - <strong>验证方式</strong>：比较不确定性高的区域与MD模拟中构象差异大的区域。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present Zephyr, an SE(3) equivariant diffusion model trained on simulated IDP ensembles, which generates protein structures in two phases (coarse-grained sampling followed by heavy-atom denoising). They claim the model reproduces key geometric and energetic metrics of MD ensembles across five test systems while sampling at least 63 times faster than MD.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, benchmark details, or methodological descriptions beyond the two-phase generation scheme</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, all figures and tables, training data specifications, test system identities, evaluation metrics, and baseline comparisons</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually appealing approach that combines the speed of generative models with the accuracy of MD simulations for IDP conformational sampling. The two-phase generation strategy is a reasonable design choice. However, the abstract provides insufficient quantitative detail to evaluate the strength of the claims. Key metrics, test system descriptions, and comparison baselines are absent. The claim of reproducing "key geometric and energetic metrics" is vague without specifying which metrics, with what error margins, and against which reference standards. The speedup factor of 63 is presented without context regarding hardware, simulation length, or convergence criteria.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational biophysics and structural biology, particularly those studying intrinsically disordered proteins and conformational ensembles. The work may also interest developers of generative models for biomolecular structures and researchers seeking efficient alternatives to MD for ensemble sampling.</li>
+<li><strong>Major strengths</strong> The problem addressed is timely and important, as IDP conformational sampling remains a computational bottleneck. The two-phase generation approach (coarse-grained then heavy-atom refinement) is a sensible architectural choice that mirrors hierarchical assembly strategies. The explicit focus on ensemble accuracy rather than single-structure prediction is appropriate for the IDP context. The reported speedup, if robust, would be practically significant.</li>
+<li><strong>Major Concerns</strong> </li>
+<li>R1-M1</li>
+<li>R1-M2</li>
+<li>R1-M3</li>
+<li><strong>Minor Comments</strong> </li>
+<li>R1-m1</li>
+<li>R1-m2</li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: the combination of diffusion models with MD-derived training data for IDP ensembles is a novel contribution, though the individual components are established. Scientific importance: the potential to accelerate IDP ensemble sampling is significant for the field. Interdisciplinary readership: the work bridges machine learning and biophysics, which could attract broad interest, but the abstract currently lacks sufficient detail for nonspecialists to assess the claims. Technical soundness: cannot be evaluated from the abstract alone; the absence of methodological detail and quantitative results prevents assessment. Readability for nonspecialists: the abstract is generally clear but uses field-specific terms (SE(3) equivariant, coarse-grained) without sufficient explanation.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract suggests a promising approach, but the claims cannot be verified without the full manuscript and quantitative results.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "the model reproduces key geometric and energetic metrics of the MD ensembles"</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Concern</strong> The abstract does not specify which geometric and energetic metrics were evaluated, the numerical agreement between model and MD results, or the statistical significance of any differences. Without this information, the claim of reproduction cannot be assessed.</li>
+<li><strong>Why it matters</strong> The central claim of the work is that Zephyr produces ensembles that match MD accuracy. If the metrics are not defined or the agreement is not quantified, the scientific contribution cannot be evaluated or reproduced.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a table or figure listing the specific metrics (e.g., radius of gyration, secondary structure propensities, contact maps, potential energies) with quantitative comparisons between Zephyr and MD ensembles, including error bars and statistical tests.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological transparency</li>
+<li><strong>Claim pointer</strong> "an SE(3) equivariant diffusion model trained on simulated IDP ensembles"</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe the training data generation protocol, the simulation force field, the number of systems used for training, the sequence diversity, or the model architecture details beyond the two-phase generation. The relationship between training data quality and model performance is therefore unclear.</li>
+<li><strong>Why it matters</strong> The model's performance is fundamentally dependent on the quality and diversity of the training ensembles. Without details on the simulation protocol and training set composition, the generalizability of the approach cannot be assessed.</li>
+<li>
+<p><strong>Resolution test</strong> Describe the MD simulation protocol (force field, water model, temperature, simulation length, number of replicas), the number and identity of training systems, and the model architecture in the methods section.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Comparative rigor</li>
+<li><strong>Claim pointer</strong> "sampling at least 63 times faster"</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Concern</strong> The speedup claim lacks context. It is unclear whether the comparison is against the MD simulations used to generate training data, against independent MD runs, or against other generative models. Hardware specifications, wall-clock time definitions, and whether the comparison includes the time required to generate training data are not stated.</li>
+<li><strong>Why it matters</strong> A speedup claim without a well-defined baseline and hardware context is not interpretable. The practical utility of Zephyr depends on the total time to obtain a usable ensemble, including any training or data generation overhead.</li>
+<li><strong>Resolution test</strong> Specify the exact comparison protocol, including hardware, software versions, MD simulation parameters, and whether the 63-fold speedup refers to inference only or includes all preprocessing steps. Provide a benchmark table comparing Zephyr against MD and, ideally, other generative baselines.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> "two phases: a coarse-grained structure is first sampled and heavy atoms are subsequently denoised onto this structure"</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Issue</strong> The description of the two-phase generation is brief and does not clarify how the coarse-grained representation is defined or how the heavy-atom denoising is conditioned on the coarse-grained structure.</li>
+<li>
+<p><strong>Required correction</strong> Provide a brief description of the coarse-grained representation (e.g., C-alpha only or backbone beads) and the conditioning mechanism in the abstract or methods.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> "Across five test systems"</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Issue</strong> The identity and diversity of the five test systems are not described. It is unclear whether they represent a range of IDP lengths, sequence compositions, or degrees of disorder.</li>
+<li>
+<p><strong>Required correction</strong> List the five test systems with their sequence lengths and relevant biophysical properties, or state that this information is in the main text.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> "key geometric and energetic metrics"</li>
+<li><strong>Evidence pointer</strong> location not provided</li>
+<li><strong>Issue</strong> The phrase "key" is subjective and does not indicate which metrics are most important for validating IDP ensembles.</li>
+<li><strong>Required correction</strong> Replace "key" with a specific list of metrics or state that the metrics are defined in the main text.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that Zephyr "reproduces key geometric and energetic metrics of the MD ensembles" is unsupported in the abstract due to the absence of specific metrics, numerical values, and statistical analyses.</li>
+<li>The claim of "sampling at least 63 times faster" is unsupported without a defined comparison baseline, hardware context, and methodology.</li>
+<li>The generalizability of the model beyond the five test systems is not assessable from the abstract.</li>
+<li>The statement that the model "leverages the speed of generative models and the accuracy of MD" implies a level of accuracy equivalence that is not demonstrated in the abstract.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

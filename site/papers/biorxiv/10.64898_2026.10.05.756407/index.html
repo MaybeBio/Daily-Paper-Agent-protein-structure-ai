@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joint protein, mRNA and DNA sequence design and optimization with nucleotide-level Potts models · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Joint protein, mRNA and DNA sequence design and optimization with nucleotide-level Potts models</h1>
+      <div class="meta">Blazej Banaszewski; Lars J. Dornfeld; Dexiong Chen; Karsten Borgwardt; Lukas F. Milles</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-06
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.05.756407">原文</a>
+      </div>
+      <p class="one-liner">该文提出NuCaliby，一种在核苷酸分辨率上联合设计蛋白质氨基酸、mRNA和DNA序列的结构条件模型，通过Potts模型和同义密码子边际化实现，并支持推理时引导优化，属于蛋白质序列设计领域的AI方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein design typically generates amino acid sequences first and then translates them into DNA post-hoc limiting control over the nucleotide sequence via codon choice at design time. We introduce NuCaliby, a structure-conditioned model that jointly designs amino acid, mRNA, and DNA sequences of a protein at nucleotide resolution. NuCaliby predicts a Potts model over a nucleotide graph, trained using amino acid supervision by marginalizing over synonymous codons. It preserves residue-level designability on par with the original Caliby model. Its energy-based formulation supports composable inference-time guidance from sequence-level objectives through proposal construction and candidate acceptance, allowing the incorporation of biological proxies into the coding nucleotide sequence. Under organism-specific tRNA adaptation guidance, NuCaliby improves adaptation to host tRNA pools beyond synonymous sequence space, trading-off self-consistency. NuCaliby also embeds specified RNA motif sequences directly into coding sequences, avoiding the combinatorial growth required for the same task at the amino-acid level. In wet lab experiments, NuCaliby produces expressible and soluble proteins on par with state of the art methods, while enabling more complex nucleotide-level control and optimization. Together, these results extend protein design beyond the amino acid level, enabling joint optimization across the central dogma of molecular biology. The code and model weights are available here: https://github.com/blazejba/NuCaliby</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质设计通常首先生成氨基酸序列，然后事后将其翻译为DNA，这限制了在设计时通过密码子选择对核苷酸序列的控制。我们引入了NuCaliby，一种结构条件模型，能够在核苷酸分辨率下联合设计蛋白质的氨基酸、mRNA和DNA序列。NuCaliby在核苷酸图上预测一个Potts模型，通过边缘化同义密码子并使用氨基酸监督进行训练。它保持了与原始Caliby模型相当的残基水平可设计性。其基于能量的公式支持通过提议构建和候选接受，从序列级目标进行可组合的推理时引导，从而允许将生物代理纳入编码核苷酸序列。在生物体特异性tRNA适应度引导下，NuCaliby在超越同义序列空间的同时改善了对宿主tRNA库的适应，并以自一致性为代价进行权衡。NuCaliby还能将指定的RNA基序序列直接嵌入编码序列，避免了在氨基酸水平上执行相同任务所需的组合增长。在湿实验室实验中，NuCaliby产生的可表达和可溶性蛋白质与最先进方法相当，同时实现了更复杂的核苷酸水平控制和优化。综合来看，这些结果将蛋白质设计扩展到氨基酸水平之外，实现了分子生物学中心法则的联合优化。代码和模型权重可在以下网址获取：https://github.com/blazejba/NuCaliby</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Joint protein, mRNA and DNA sequence design and optimization with nucleotide-level Potts models</li>
+<li><strong>作者</strong>：Blazej Banaszewski; Lars J. Dornfeld; Dexiong Chen; Karsten Borgwardt; Lukas F. Milles</li>
+<li><strong>单位</strong>：未提供（作者单位未在摘要中列出）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026-10-06</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 湿实验验证）</li>
+<li><strong>领域</strong>：蛋白质设计 × 核苷酸序列设计 × 能量模型（Potts model）</li>
+<li><strong>关键词</strong>：protein design, mRNA design, DNA design, Potts model, codon optimization, tRNA adaptation, RNA motif, central dogma</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.10.05.756407</li>
+<li><strong>代码</strong>：https://github.com/blazejba/NuCaliby</li>
+<li><strong>数据</strong>：未提供（湿实验数据未在摘要中详述）</li>
+<li><strong>阅读日期</strong>：2026-10-06</li>
+<li><strong>在课题方向中的位置</strong>：该文属于「蛋白质结构相关计算研究 × AI/物理模拟」中的<strong>序列设计</strong>分支，将传统蛋白质序列设计（氨基酸层面）扩展至<strong>核苷酸层面</strong>（mRNA/DNA），通过 Potts 模型实现跨中心法则的联合优化。与 AlphaFold 等结构预测方法互补，属于<strong>生成/设计</strong>而非<strong>预测</strong>类方法，且引入能量模型的可组合推理时引导，为结构-序列-表达一体化设计提供了新范式。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>该文提出 NuCaliby，一个基于核苷酸图上的 Potts 模型、通过边际化同义密码子以氨基酸监督训练的结构条件模型，实现蛋白质氨基酸、mRNA 和 DNA 序列的联合设计，在保持残基级可设计性的同时，支持 tRNA 适应性和 RNA 基序嵌入等核苷酸级优化，并经湿实验验证蛋白可表达可溶。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：蛋白质设计通常先设计氨基酸序列，再事后翻译为 DNA，导致无法在设计时通过密码子选择控制核苷酸序列（如 mRNA 稳定性、tRNA 适应性、RNA 基序）。</li>
+<li><strong>为什么重要</strong>：核苷酸序列直接影响蛋白质表达水平、折叠效率、可溶性等生物物理性质；跨中心法则的联合优化有望提升设计蛋白在宿主中的实际表现。</li>
+<li><strong>现有方法不足</strong>：传统流程将氨基酸设计与密码子优化分离，无法在氨基酸序列设计的同时优化核苷酸层面的目标；现有密码子优化工具（如 codon optimization）是事后处理，无法回溯修改氨基酸序列。</li>
+<li><strong>精确研究问题</strong>：Can a structure-conditioned model jointly design amino acid, mRNA, and DNA sequences at nucleotide resolution while preserving residue-level designability and enabling composable inference-time guidance from nucleotide-level objectives?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文摘要及作者引用的框架，未经外部核验，标记为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 氨基酸序列设计</td>
+<td>基于物理/统计势函数（Rosetta）、深度学习（ProteinMPNN, ESM）</td>
+<td>高设计成功率、结构条件</td>
+<td>忽略下游表达问题</td>
+<td>基础层</td>
+</tr>
+<tr>
+<td>2. 密码子优化</td>
+<td>商用/开源工具（如 IDT, SnapGene codon optimization）</td>
+<td>提升表达</td>
+<td>事后处理，无法回溯修改氨基酸</td>
+<td>被替代</td>
+</tr>
+<tr>
+<td>3. 联合设计</td>
+<td>本文 NuCaliby（基于 Caliby 扩展）</td>
+<td>氨基酸+核苷酸联合优化</td>
+<td>需处理密码子简并性、计算复杂度</td>
+<td>本文贡献</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在 Caliby（氨基酸级 Potts 模型）基础上，将图结构扩展至核苷酸级，通过边际化同义密码子实现氨基酸监督训练，从而在单一模型中同时优化氨基酸和核苷酸序列。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>氨基酸与核苷酸设计分离</td>
+<td>先设计氨基酸，再事后密码子优化，无法在设计时控制核苷酸</td>
+<td>传统流程将两个问题解耦</td>
+<td>摘要第 1 句</td>
+</tr>
+<tr>
+<td>密码子简并性导致搜索空间爆炸</td>
+<td>同义密码子组合数随序列长度指数增长</td>
+<td>氨基酸序列到 DNA 映射非一一对应</td>
+<td>摘要中「avoiding the combinatorial growth」</td>
+</tr>
+<tr>
+<td>核苷酸级目标（tRNA 适应、RNA 基序）无法在氨基酸级表达</td>
+<td>氨基酸序列不包含核苷酸信息</td>
+<td>目标定义在不同序列层级</td>
+<td>摘要中「incorporation of biological proxies」</td>
+</tr>
+<tr>
+<td>推理时引导困难</td>
+<td>需要将多种序列级目标组合进设计</td>
+<td>能量模型需支持可组合的推理时约束</td>
+<td>摘要中「composable inference-time guidance」</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：构建核苷酸图上的 Potts 模型，通过边际化同义密码子以氨基酸监督训练，实现氨基酸、mRNA、DNA 联合设计；推理时通过 proposal construction 和 candidate acceptance 引入序列级引导。</li>
+<li><strong>核心洞察</strong>：将氨基酸序列视为核苷酸序列的「隐变量」，通过边际化同义密码子，使模型在核苷酸级学习的同时保持氨基酸级可设计性；能量模型天然支持推理时组合多种目标。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：在序列设计中，若目标定义在不同层级（如氨基酸 vs 核苷酸），可通过「层级边际化」将高层级监督信号传递至低层级模型，同时保留低层级的灵活性；能量模型的可组合性使其成为多目标设计的自然框架。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质结构（结构条件）</li>
+<li><strong>输出</strong>：联合设计的氨基酸序列、mRNA 序列、DNA 序列</li>
+<li><strong>模块</strong>：
+  1. 核苷酸图构建（nucleotide graph）
+  2. Potts 模型预测（nucleotide-level Potts model）
+  3. 氨基酸监督训练（通过边际化同义密码子）
+  4. 推理时引导（proposal construction + candidate acceptance）</li>
+<li><strong>训练</strong>：使用氨基酸序列作为监督信号，通过边际化同义密码子计算似然</li>
+<li><strong>工具</strong>：未提供（代码在 GitHub）</li>
+<li><strong>反馈回路</strong>：推理时通过接受/拒绝机制迭代优化候选序列</li>
+<li><strong>假设</strong>：氨基酸序列的可设计性可通过边际化同义密码子保持；能量模型可组合多种序列级目标</li>
+<li><strong>流程</strong>：输入结构 → 构建核苷酸图 → Potts 模型预测核苷酸分布 → 边际化得到氨基酸分布 → 训练；推理时：生成候选 → 评估序列级目标 → 接受/拒绝 → 输出联合序列</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>核苷酸图构建</td>
+<td>将蛋白质结构映射为核苷酸级图</td>
+<td>在核苷酸级建模序列-结构关系</td>
+<td>输入：结构；输出：图</td>
+<td>摘要中「nucleotide graph」</td>
+<td>预期：无法进行核苷酸级建模 [Analysis]</td>
+</tr>
+<tr>
+<td>Potts 模型预测</td>
+<td>预测核苷酸序列分布</td>
+<td>能量模型支持推理时引导</td>
+<td>输入：图；输出：核苷酸分布</td>
+<td>摘要中「predicts a Potts model」</td>
+<td>预期：失去能量模型的可组合性 [Analysis]</td>
+</tr>
+<tr>
+<td>氨基酸监督训练（边际化）</td>
+<td>通过同义密码子边际化计算氨基酸似然</td>
+<td>保持氨基酸级可设计性</td>
+<td>输入：核苷酸分布；输出：氨基酸似然</td>
+<td>摘要中「trained using amino acid supervision by marginalizing over synonymous codons」</td>
+<td>实测：可设计性与 Caliby 相当（摘要中「on par with the original Caliby model」）</td>
+</tr>
+<tr>
+<td>推理时引导</td>
+<td>通过 proposal construction 和 candidate acceptance 引入序列级目标</td>
+<td>支持 tRNA 适应、RNA 基序等目标</td>
+<td>输入：候选序列 + 目标；输出：接受/拒绝</td>
+<td>摘要中「composable inference-time guidance」</td>
+<td>预期：失去多目标优化能力 [Analysis]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>摘要中未提供具体公式，以下为基于 Potts 模型的标准形式推断，标记为 [Analysis]。</p>
+</blockquote>
+<ul>
+<li><strong>Potts 模型</strong>：( E(\mathbf{s}) = \sum_i h_i(s_i) + \sum_{i&lt;j} J_{ij}(s_i, s_j) )</li>
+<li>( \mathbf{s} )：核苷酸序列（每个位点取 A/T/C/G）</li>
+<li>( h_i )：位点偏好（field）</li>
+<li>( J_{ij} )：位点间耦合（coupling）</li>
+<li><strong>用途</strong>：定义核苷酸序列的能量，能量越低越优</li>
+<li><strong>直觉</strong>：类似蛋白质共进化分析中的 Potts 模型，但应用于核苷酸级</li>
+<li><strong>边际化</strong>：( P(\mathbf{a}) = \sum_{\mathbf{s} \in \text{syn}(\mathbf{a})} P(\mathbf{s}) )</li>
+<li>( \mathbf{a} )：氨基酸序列</li>
+<li>( \text{syn}(\mathbf{a}) )：编码 ( \mathbf{a} ) 的所有同义密码子组合</li>
+<li><strong>用途</strong>：训练时从核苷酸分布计算氨基酸似然</li>
+<li><strong>直觉</strong>：将氨基酸序列视为核苷酸序列的隐变量，通过求和消除简并性</li>
+<li><strong>来源</strong>：摘要中「marginalizing over synonymous codons」；具体公式未提供</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<blockquote>
+<p>摘要中未提供详细实验设计，以下基于摘要信息整理。</p>
+</blockquote>
+<p><strong>数据集/群体</strong>：未提供（湿实验蛋白未说明）
+<strong>规模</strong>：未提供
+<strong>指标</strong>：可设计性（与 Caliby 对比）、tRNA 适应性、RNA 基序嵌入成功率、蛋白可表达性/可溶性
+<strong>基线</strong>：Caliby（氨基酸级）、state of the art 方法（湿实验对比）
+<strong>预算</strong>：未提供
+<strong>骨干/仪器</strong>：未提供
+<strong>oracle 输入</strong>：结构（作为条件输入）
+<strong>评测协议</strong>：未提供</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可设计性对比</td>
+<td>氨基酸级可设计性保持</td>
+<td>与 Caliby 对比</td>
+<td>与 Caliby 相当</td>
+<td>核苷酸级建模不损失氨基酸级性能</td>
+<td>未说明是否在多种结构上验证</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>tRNA 适应性引导</td>
+<td>改善宿主 tRNA 池适应</td>
+<td>有/无 tRNA 引导对比</td>
+<td>改善适应度</td>
+<td>推理时引导有效</td>
+<td>未说明改善幅度</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>RNA 基序嵌入</td>
+<td>直接嵌入指定基序</td>
+<td>与氨基酸级方法对比</td>
+<td>避免组合爆炸</td>
+<td>核苷酸级设计优势</td>
+<td>未说明基序类型/数量</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>湿实验表达/可溶性</td>
+<td>实际可表达可溶</td>
+<td>与 state of the art 对比</td>
+<td>相当</td>
+<td>方法实用</td>
+<td>未说明蛋白数量/种类</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：结构条件序列设计，覆盖氨基酸、mRNA、DNA 三个层级；仅针对蛋白质编码序列，不涉及非编码 RNA。</li>
+<li><strong>oracle/真值输入</strong>：结构作为条件输入，未说明结构来源（实验结构或预测结构）。</li>
+<li><strong>端到端状态</strong>：从结构到 DNA 序列的端到端设计，但湿实验验证仅报告「可表达可溶」，未报告表达量、活性等定量指标。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：训练数据未说明（可能基于结构-序列数据库）。</li>
+<li><strong>模型依赖</strong>：基于 Caliby 扩展，依赖 Potts 模型假设（成对相互作用）。</li>
+<li><strong>最难情形</strong>：未说明（如多结构域蛋白、膜蛋白等）。</li>
+<li><strong>群体/领域边界</strong>：湿实验验证范围未说明，可能仅限特定蛋白家族。</li>
+<li><strong>不确定性</strong>：未提供置信区间或统计显著性。</li>
+<li><strong>有边界的复述</strong>：NuCaliby 在保持氨基酸级可设计性（与 Caliby 相当）的同时，支持核苷酸级目标（tRNA 适应、RNA 基序）的推理时引导，湿实验验证了可表达可溶性，但未报告定量表达水平或广泛蛋白类型验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<blockquote>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+</blockquote>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要中「trading-off self-consistency」暗示 tRNA 适应性引导可能以牺牲序列自洽性为代价，但未展开说明。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可设计性「on par」未量化</td>
+<td>可能仅在特定结构上验证，或差异在统计上不显著</td>
+<td>影响方法普适性判断</td>
+<td>要求作者提供多种结构上的可设计性分布及统计检验</td>
+<td>摘要中「on par」无具体数值</td>
+</tr>
+<tr>
+<td>tRNA 适应性「trading-off self-consistency」</td>
+<td>引导可能降低序列自然度或结构兼容性</td>
+<td>影响实际应用中的权衡</td>
+<td>对比有无引导时的结构稳定性（如 MD 模拟）</td>
+<td>摘要中「trading-off self-consistency」</td>
+</tr>
+<tr>
+<td>湿实验仅报告「可表达可溶」</td>
+<td>未报告表达量、活性、稳定性等定量指标</td>
+<td>无法判断实际应用价值</td>
+<td>要求补充定量表达数据</td>
+<td>摘要中「expressible and soluble proteins」</td>
+</tr>
+<tr>
+<td>未说明训练数据规模与来源</td>
+<td>可能依赖特定数据集，影响泛化</td>
+<td>影响方法可复现性</td>
+<td>检查 GitHub 代码与数据说明</td>
+<td>摘要未提供</td>
+</tr>
+<tr>
+<td>未与现有密码子优化工具对比</td>
+<td>可能仅优于随机密码子选择，而非优于专用优化器</td>
+<td>影响实际增量</td>
+<td>与 IDT、SnapGene 等工具对比</td>
+<td>摘要中仅对比 Caliby 和 state of the art</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>层级边际化训练</strong>：将高层级监督信号（氨基酸）通过边际化低层级变量（同义密码子）传递至低层级模型，是处理多层级序列设计的通用策略。可迁移至蛋白质设计中的其他层级（如结构→序列→表达）。</li>
+<li><strong>能量模型的可组合推理时引导</strong>：Potts 模型天然支持在推理时组合多种序列级目标（tRNA 适应、RNA 基序），无需重新训练。可迁移至分子对接或 MD 模拟中的多目标优化（如结合亲和力+特异性）。</li>
+<li><strong>核苷酸级设计扩展设计空间</strong>：在氨基酸级设计之外，核苷酸级控制（密码子选择、RNA 基序）为表达优化提供了额外自由度。可迁移至蛋白质-核酸复合物设计。</li>
+<li><strong>proposal construction + candidate acceptance 框架</strong>：通过生成候选并接受/拒绝实现引导，类似 MCMC 或拒绝采样，可迁移至构象采样中的约束满足。</li>
+<li><strong>跨中心法则联合优化</strong>：将蛋白质设计从氨基酸扩展至 mRNA/DNA，提示在结构预测或 MD 模拟中也可考虑多层级联合建模（如序列-结构-动力学）。</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与 ProteinMPNN（氨基酸级设计）、ESM（序列模型）相比，NuCaliby 扩展至核苷酸级；与 Rosetta 的能量函数相比，NuCaliby 使用可学习的 Potts 模型。</li>
+<li><strong>组合方法</strong>：与 AlphaFold（结构预测）互补，NuCaliby 可用于设计序列后预测结构验证；与 MD 模拟互补，NuCaliby 设计的序列可进一步通过 MD 验证稳定性。</li>
+<li><strong>可迁移领域</strong>：核苷酸级 Potts 模型可迁移至 RNA 设计（如 riboswitch 设计）、DNA 纳米结构设计；推理时引导框架可迁移至分子对接中的多目标优化。</li>
+<li><strong>冲突观点</strong>：传统观点认为氨基酸级设计已足够，NuCaliby 挑战此假设，主张核苷酸级控制对表达至关重要。</li>
+<li><strong>候选方向</strong>：将 NuCaliby 与 AlphaFold 结合，实现「设计-预测-验证」闭环；将 Potts 模型扩展至蛋白质-核酸复合物设计。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Nucleotide-level Potts model for protein-nucleic acid complex design
+   - <strong>来源局限/观察</strong>：NuCaliby 仅针对蛋白质编码序列，未覆盖蛋白质-核酸复合物。
+   - <strong>核心假设</strong>：将 Potts 模型扩展至蛋白质-核酸界面，可联合设计蛋白序列和核酸序列。
+   - <strong>初步方法</strong>：在 NuCaliby 基础上，将核酸序列作为额外节点加入图，训练时使用复合物结构条件。
+   - <strong>验证方式</strong>：与 AlphaFold 预测复合物结构对比，湿实验验证结合亲和力。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Composable inference-time guidance for MD simulation constraints
+   - <strong>来源局限/观察</strong>：NuCaliby 的推理时引导框架可迁移至 MD 模拟中的约束满足。
+   - <strong>核心假设</strong>：在 MD 模拟中，通过 proposal construction 和 candidate acceptance 可高效满足多目标约束（如距离、角度）。
+   - <strong>初步方法</strong>：将 NuCaliby 的引导框架应用于 MD 的构象采样，每次迭代生成候选构象并接受/拒绝。
+   - <strong>验证方式</strong>：对比传统约束 MD 的采样效率和约束满足率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Hierarchical marginalization for multi-level sequence design
+   - <strong>来源局限/观察</strong>：NuCaliby 的层级边际化策略可推广至其他层级（如结构→序列→表达）。
+   - <strong>核心假设</strong>：通过边际化中间层级变量，可实现多层级联合设计。
+   - <strong>初步方法</strong>：构建结构→氨基酸→核苷酸的三层模型，训练时边际化中间层。
+   - <strong>验证方式</strong>：对比逐层设计（先氨基酸后密码子）与联合设计的表达水平。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：tRNA adaptation-guided design for rare codon enrichment
+   - <strong>来源局限/观察</strong>：NuCaliby 的 tRNA 适应性引导可进一步优化稀有密码子使用。
+   - <strong>核心假设</strong>：通过引导稀有密码子分布，可调控蛋白表达速率和折叠。
+   - <strong>初步方法</strong>：在 NuCaliby 的引导目标中加入稀有密码子偏好，对比不同宿主 tRNA 池。
+   - <strong>验证方式</strong>：湿实验测量表达速率和蛋白活性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Potts model-based RNA motif embedding for mRNA stability
+   - <strong>来源局限/观察</strong>：NuCaliby 可嵌入 RNA 基序，但未优化 mRNA 稳定性。
+   - <strong>核心假设</strong>：通过引导 mRNA 二级结构稳定性，可提升蛋白表达。
+   - <strong>初步方法</strong>：在 NuCaliby 引导目标中加入 mRNA 折叠自由能。
+   - <strong>验证方式</strong>：对比有无稳定性引导的表达水平。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce NuCaliby, a structure-conditioned model that jointly designs amino acid, mRNA, and DNA sequences at nucleotide resolution. The model predicts a Potts model over a nucleotide graph, trained with amino acid supervision via marginalization over synonymous codons. Claims include preserved residue-level designability comparable to the original Caliby model, composable inference-time guidance for sequence-level objectives, improved host tRNA adaptation beyond synonymous sequence space, direct embedding of RNA motifs into coding sequences, and wet lab validation showing expressible and soluble proteins on par with state of the art methods.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods sections, or supplementary data were supplied</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods details, model architecture specifications, training data description, benchmark definitions, wet lab protocols, quantitative results, and code repository contents</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting extension of protein design to the nucleotide level, with a technically plausible training strategy based on marginalizing over synonymous codons. However, the evidence base is limited to the abstract, and several central claims, particularly regarding wet lab performance and the nature of the trade-off between tRNA adaptation and self-consistency, cannot be evaluated without the full manuscript. The work is likely to interest the protein design and synthetic biology communities, but the case for its significance and robustness is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational protein design, mRNA therapeutics, synthetic biology, and codon optimization. The joint design of amino acid and nucleotide sequences addresses a practical bottleneck in gene synthesis and expression optimization, and the energy-based guidance framework may appeal to those working on constrained sequence design.</li>
+<li><strong>Major strengths</strong> The conceptual advance of designing at nucleotide resolution while preserving amino acid-level designability is timely and relevant. The training strategy using amino acid supervision with marginalization over synonymous codons is elegant and likely to be technically sound. The composable inference-time guidance framework is a flexible and potentially powerful feature. The inclusion of wet lab validation, even if only summarized, strengthens the practical relevance.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "In wet lab experiments, NuCaliby produces expressible and soluble proteins on par with state of the art methods"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract states wet lab results without any quantitative detail, experimental design description, or comparison metrics. No information is given on the number of proteins tested, the expression system, the solubility assay, or the statistical significance of the comparison to state of the art methods.</li>
+<li><strong>Why it matters</strong> Wet lab validation is a central pillar of the claim that NuCaliby is practically useful. Without details, the claim is unverifiable and could range from a single successful construct to a comprehensive study.</li>
+<li><strong>Resolution test</strong> Provide the full wet lab section with experimental protocols, sample sizes, quantitative expression and solubility measurements, and statistical comparisons to appropriate baselines.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim precision</li>
+<li><strong>Claim pointer</strong> "NuCaliby improves adaptation to host tRNA pools beyond synonymous sequence space, trading-off self-consistency"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The nature and magnitude of the trade-off between tRNA adaptation and self-consistency are not specified. It is unclear whether the trade-off is acceptable in practice, how it scales with the strength of the guidance, or whether it undermines the designability claim.</li>
+<li><strong>Why it matters</strong> A trade-off that degrades self-consistency could limit practical utility. The abstract does not clarify whether the trade-off is minor, context-dependent, or a fundamental limitation.</li>
+<li><strong>Resolution test</strong> Quantify the trade-off with appropriate metrics, show how it varies with guidance strength, and discuss the practical implications for design success.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical detail</li>
+<li><strong>Claim pointer</strong> "NuCaliby predicts a Potts model over a nucleotide graph, trained using amino acid supervision by marginalizing over synonymous codons"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe the nucleotide graph construction, the Potts model parameterization, the training objective, or the marginalization procedure. These details are essential for assessing the technical soundness and reproducibility of the approach.</li>
+<li><strong>Why it matters</strong> The core methodological contribution is the nucleotide-level Potts model with amino acid supervision. Without technical details, the method cannot be evaluated or reproduced.</li>
+<li><strong>Resolution test</strong> Provide a full methods section with model architecture, training details, and a clear description of the marginalization procedure.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract wording</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The phrase "beyond synonymous sequence space" is ambiguous. It could mean that the model explores non-synonymous changes that improve tRNA adaptation, or that it optimizes codon choice more effectively than existing methods.</li>
+<li><strong>Required correction</strong> Clarify the intended meaning with a precise definition or example.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Benchmark description</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The claim of "preserves residue-level designability on par with the original Caliby model" lacks any specification of the benchmark or metrics used.</li>
+<li><strong>Required correction</strong> State the benchmark dataset and the specific designability metrics used for comparison.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Code availability</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The code repository link is provided, but the abstract does not state whether the repository contains the full model, training scripts, and wet lab data.</li>
+<li><strong>Required correction</strong> Specify the contents of the repository and any access restrictions.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 and R1-M2 are blocking. The wet lab claim and the trade-off characterization are central to the paper's contribution and cannot be assessed from the abstract alone. R1-M3, while not blocking, is necessary for technical evaluation.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality is high, as the joint nucleotide-level design with amino acid supervision is a novel contribution. Scientific importance is potentially high for protein design and synthetic biology, but the significance depends on the wet lab results and the practical utility of the trade-off, which are not yet established. Interdisciplinary readership is plausible, spanning computational biology, molecular biology, and bioengineering. Technical soundness cannot be fully assessed without methods details, but the training strategy is conceptually sound. Readability for nonspecialists is adequate for an abstract, though some terms such as "Potts model" and "marginalizing over synonymous codons" may require prior knowledge.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The conceptual advance is promising, but the current evidence base is insufficient to establish the case. The authors should provide the full manuscript with detailed methods, quantitative wet lab results, and a clear characterization of the trade-off.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The wet lab claim of expressible and soluble proteins on par with state of the art methods is unsupported without quantitative data and experimental details.</li>
+<li>The claim of improved tRNA adaptation "beyond synonymous sequence space" is ambiguous and not supported by specific metrics.</li>
+<li>The trade-off between tRNA adaptation and self-consistency is mentioned but not quantified or characterized.</li>
+<li>The claim of preserving designability on par with Caliby is unverifiable without benchmark details.</li>
+<li>The claim of avoiding combinatorial growth for RNA motif embedding is plausible but not demonstrated with complexity analysis or examples.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

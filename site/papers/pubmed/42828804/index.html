@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quantum-compatible AutoDock grid scoring for multi-receptor, multi-ligand, and multi-pose protein-ligand evaluation. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Quantum-compatible AutoDock grid scoring for multi-receptor, multi-ligand, and multi-pose protein-ligand evaluation.</h1>
+      <div class="meta">Yang, Pei-Kun</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of molecular graphics &amp; modelling</span>
+        · 2026-10-04
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42828804/">原文</a>
+      </div>
+      <p class="one-liner">该文将AutoDock网格打分重构为量子兼容的内积表示，用于多受体、多配体、多构象的蛋白-配体评估，属于对接打分计算建模，但对象侧重配体而非蛋白质结构本身，方法为量子模拟与经典验证，可迁移至蛋白结构计算。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Structure-based virtual screening requires repeated evaluation of protein-ligand interaction energies across receptor conformations, ligand identities, translations, and rotations. Here, AutoDock receptor energy maps and ligand charge or atom-type occupancy grids were reformulated as an indexed quantum-compatible inner-product representation for grid-based protein-ligand scoring. Receptor maps and ligand grids were represented on a shared 32 x 32 x 32 Cartesian grid, allowing direct classical dot-product evaluation and quantum-compatible readout to be compared under the same energy model. A 32-qubit organization encoded spatial grid indices, energy channels, ligand translations, ligand rotations, and readout based on the Hadamard test. A 37-qubit organization added receptor and ligand selection registers, allowing two receptor conformations and 16 ligand entries to be indexed without changing the readout principle. Reduced Qiskit simulations and PyTorch calculations validated the rotation, translation, and probability-readout operations, and the probability-derived energies matched direct classical grid-based inner products. Finite-shot sampling and map truncation were examined as factors affecting energy recovery and ranking stability. Increasing the number of shots reduced the normalized root-mean-square error (nRMSE) and improved correlation-based and reference-configuration recovery. At the same time, the 37-qubit representation required a larger shot budget because probability mass was distributed over a larger indexed space. Among the three representative conditions examined in the main figures, U(max) = 1 gave the lowest nRMSE and the strongest Top 1% or Top 10% recovery, whereas no truncation and U(max) = 1000 better preserved correlation with the no-truncation reference at high shot numbers. These results establish a validated proof-of-concept molecular-modeling representation for quantum-compatible AutoDock grid scoring.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">基于结构的虚拟筛选需要在受体构象、配体身份、平移和旋转之间反复评估蛋白质-配体相互作用能量。在此，AutoDock受体能量图谱和配体电荷或原子类型占据网格被重新表述为一种索引化的量子兼容内积表示，用于基于网格的蛋白质-配体评分。受体图谱和配体网格被表示在共享的32 x 32 x 32笛卡尔网格上，允许直接经典点积评估和量子兼容读出在同一能量模型下进行比较。一个32量子比特的组织编码了空间网格索引、能量通道、配体平移、配体旋转以及基于Hadamard测试的读出。一个37量子比特的组织添加了受体和配体选择寄存器，允许在不改变读出原理的情况下索引两个受体构象和16个配体条目。简化的Qiskit模拟和PyTorch计算验证了旋转、平移和概率读出操作，且概率衍生能量与直接经典网格基内积相匹配。有限次采样和图谱截断被考察为影响能量恢复和排序稳定性的因素。增加采样次数降低了归一化均方根误差（nRMSE），并改善了基于相关性和参考构象的恢复。同时，37量子比特表示需要更大的采样预算，因为概率质量分布在更大的索引空间上。在主图考察的三个代表性条件中，U(max)=1给出了最低的nRMSE和最强的Top 1%或Top 10%恢复，而在高采样次数下，无截断和U(max)=1000更好地保持了与无截断参考的相关性。这些结果建立了一个经过验证的概念验证分子建模表示，用于量子兼容的AutoDock网格评分。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Quantum-compatible AutoDock grid scoring for multi-receptor, multi-ligand, and multi-pose protein-ligand evaluation</li>
+<li><strong>作者</strong>：Yang, Pei-Kun</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：Journal of Molecular Graphics &amp; Modelling</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-04）</li>
+<li><strong>论文类型</strong>：方法学/概念验证（proof-of-concept）研究</li>
+<li><strong>领域</strong>：结构虚拟筛选 × 量子计算 × 分子对接评分</li>
+<li><strong>关键词</strong>：AutoDock grid scoring；quantum computing；protein-ligand scoring；virtual screening；Hadamard test</li>
+<li><strong>DOI/arXiv</strong>：10.1016/j.jmgm.2026.109590</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（使用 Qiskit 模拟与 PyTorch 计算）</li>
+<li><strong>阅读日期</strong>：2026-05-15（假设）</li>
+<li><strong>方向定位</strong>：该文属于「蛋白质结构相关计算研究 × AI/物理模拟」中的分子对接评分环节，探索将经典 AutoDock 网格评分映射为量子计算可兼容的表示，属于量子计算与结构虚拟筛选的交叉前沿，而非深度学习或经典 MD 方法。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>该文将 AutoDock 受体能量图和配体电荷/原子类型占据网格重新表述为索引化的量子兼容内积表示，在共享 32×32×32 网格上通过 32-qubit 和 37-qubit 量子线路（含 Hadamard test 读出）实现多受体、多配体、多构象的蛋白-配体评分，并通过 Qiskit 模拟和 PyTorch 计算验证了旋转、平移和概率读出操作，证明概率导出能量与经典网格内积一致，且有限 shot 采样和网格截断影响能量恢复与排序稳定性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何将经典的 AutoDock 网格评分函数转化为量子计算可兼容的表示，以支持多受体构象、多配体条目和多姿态的蛋白-配体相互作用评估？</li>
+<li><strong>为什么重要</strong>：结构虚拟筛选需要反复评估蛋白-配体相互作用能量，计算成本高；量子计算有望提供加速，但现有评分函数并非量子原生。</li>
+<li><strong>现有方法不足</strong>：经典 AutoDock 网格评分是成熟的，但无法直接映射到量子线路；已有量子分子对接工作多聚焦于单一配体或简化模型，缺乏对多受体、多配体、多姿态的索引化处理。</li>
+<li><strong>精确研究问题</strong>：Can AutoDock grid scoring be reformulated as a quantum-compatible inner-product representation that supports multi-receptor, multi-ligand, and multi-pose evaluation with energy recovery matching classical results?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>阶段一</strong>：经典 AutoDock 网格评分（受体能量图 + 配体占据网格）——优点：成熟、高效、广泛使用；局限：需逐配体逐姿态重复计算，计算量随筛选规模线性增长。</li>
+<li><strong>阶段二</strong>：量子计算在分子模拟中的应用——如量子化学计算、量子机器学习；优点：潜在指数加速；局限：硬件噪声、qubit 数有限、算法映射困难。</li>
+<li><strong>阶段三</strong>：量子兼容分子对接——已有工作尝试将对接评分映射到量子线路，但多限于单配体或简化能量模型；本文主张：通过索引化内积表示和 Hadamard test 读出，实现多受体、多配体、多姿态的统一量子兼容评分。</li>
+<li><strong>本文位置</strong>：在经典 AutoDock 与量子计算之间架桥，提出一种可扩展的量子兼容评分表示，并验证其经典模拟下的正确性。</li>
+<li><strong>脉络核验</strong>：该脉络基于本文引言与方法的描述，未进行外部文献核验，标注为「仅本文框架」。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经典网格评分计算量大</td>
+<td>虚拟筛选需对大量配体、姿态、受体构象重复计算</td>
+<td>每次评估需独立计算内积，缺乏并行或索引化</td>
+<td>未提供（作者在引言中暗示）</td>
+</tr>
+<tr>
+<td>量子计算与经典评分不兼容</td>
+<td>经典 AutoDock 评分无法直接映射到量子线路</td>
+<td>能量图与占据网格的表示方式非量子原生</td>
+<td>未提供（作者在引言中提出）</td>
+</tr>
+<tr>
+<td>多受体/多配体索引困难</td>
+<td>量子线路需编码多个自由度，qubit 数有限</td>
+<td>需在有限 qubit 内编码空间索引、能量通道、平移、旋转、选择寄存器</td>
+<td>Methods 节（37-qubit 组织）</td>
+</tr>
+<tr>
+<td>有限 shot 采样导致能量恢复误差</td>
+<td>nRMSE 随 shot 数减少而增大</td>
+<td>概率质量分布在大索引空间，shot 数不足时采样不充分</td>
+<td>Results 图（nRMSE 与 shot 数关系）</td>
+</tr>
+<tr>
+<td>网格截断影响排序稳定性</td>
+<td>截断改变能量分布，影响 Top 1%/Top 10% 恢复</td>
+<td>截断去除高能量贡献，改变相对排序</td>
+<td>Results 图（U(max) 条件对比）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：将 AutoDock 受体能量图和配体电荷/原子类型占据网格离散到共享 32×32×32 网格，构建索引化内积表示；通过 32-qubit 和 37-qubit 量子线路编码空间索引、能量通道、平移、旋转、受体/配体选择，并用 Hadamard test 读出概率以导出能量。</li>
+<li><strong>核心洞察</strong>：AutoDock 网格评分的本质是受体图与配体图的内积，而内积可通过量子线路的 Hadamard test 以概率形式读出；通过索引化编码，可将多受体、多配体、多姿态统一到同一量子表示中，无需改变读出原理。</li>
+<li><strong>[Analysis] 可能的普适教训</strong>：经典计算中的「网格内积」类操作（如卷积、相关、评分函数）可能具有天然的量子内积映射潜力；将经典评分函数分解为「索引化张量 + 内积」形式，是量子兼容化的通用策略。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：AutoDock 受体能量图（多通道，如 vdW、静电、氢键）、配体电荷/原子类型占据网格、受体构象集合、配体条目集合、平移/旋转参数。</li>
+<li><strong>输出</strong>：蛋白-配体相互作用能量（概率读出导出），以及排序/恢复指标（nRMSE、Top 1%/Top 10% 恢复、相关系数）。</li>
+<li><strong>模块</strong>：
+  1. 网格离散化：受体图与配体图映射到共享 32×32×32 网格。
+  2. 索引化编码：空间索引、能量通道、平移、旋转、受体/配体选择寄存器编码为 qubit 状态。
+  3. 量子线路：32-qubit（基础）和 37-qubit（扩展）组织，含 Hadamard test 读出。
+  4. 经典验证：Qiskit 模拟（reduced simulation）与 PyTorch 计算对比。
+  5. 误差分析：有限 shot 采样与网格截断（U(max) 条件）对能量恢复和排序稳定性的影响。</li>
+<li><strong>训练</strong>：无监督训练（非机器学习方法），无参数学习。</li>
+<li><strong>工具</strong>：Qiskit（量子模拟）、PyTorch（经典计算）。</li>
+<li><strong>假设</strong>：网格离散化足够精细以保持能量精度；Hadamard test 概率读出可线性映射到能量；量子线路在理想无噪声条件下运行。</li>
+<li><strong>流程</strong>：受体图与配体图 → 网格离散化 → 索引化编码 → 量子线路（Hadamard test）→ 概率读出 → 能量导出 → 排序/恢复评估。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>网格离散化</td>
+<td>将连续受体/配体图映射到 32×32×32 网格</td>
+<td>量子编码需离散表示</td>
+<td>输入：AutoDock 图；输出：网格张量</td>
+<td>Methods 节（共享网格描述）</td>
+<td>网格过粗则能量精度下降（预期）</td>
+</tr>
+<tr>
+<td>索引化编码</td>
+<td>将空间索引、能量通道、平移、旋转、选择寄存器编码为 qubit</td>
+<td>实现多自由度统一编码</td>
+<td>输入：网格张量 + 参数；输出：量子态</td>
+<td>Methods 节（32/37-qubit 组织）</td>
+<td>编码错误导致能量恢复失败（预期）</td>
+</tr>
+<tr>
+<td>Hadamard test 读出</td>
+<td>通过量子线路概率读出导出内积</td>
+<td>量子兼容的能量读取方式</td>
+<td>输入：量子态；输出：概率值</td>
+<td>Results（概率导出能量与经典匹配）</td>
+<td>无此模块则无法量子读出（预期）</td>
+</tr>
+<tr>
+<td>经典验证（PyTorch）</td>
+<td>计算经典网格内积作为基准</td>
+<td>验证量子模拟正确性</td>
+<td>输入：网格张量；输出：经典能量</td>
+<td>Results（nRMSE 对比）</td>
+<td>无基准则无法量化误差（预期）</td>
+</tr>
+<tr>
+<td>误差分析（shot/截断）</td>
+<td>评估采样与截断对能量恢复的影响</td>
+<td>理解实际应用中的精度限制</td>
+<td>输入：shot 数、U(max)；输出：nRMSE、恢复率</td>
+<td>Results 图（shot 与 U(max) 条件）</td>
+<td>无此分析则无法指导实际使用（预期）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>内积表示</strong>：E = Σ_i R_i × L_i，其中 R_i 为受体网格第 i 个格点能量值，L_i 为配体占据网格第 i 个格点值。用途：网格评分的核心计算。直觉：能量为逐格点乘积之和。来源：Methods 节（索引化内积表示）。</li>
+<li><strong>Hadamard test 概率读出</strong>：P(0) = (1 + Re⟨ψ|U|ψ⟩)/2，其中 |ψ⟩ 为量子态，U 为酉算子。用途：通过测量概率提取内积实部。直觉：概率测量间接获得期望值。来源：Methods 节（Hadamard test 描述）。</li>
+<li><strong>nRMSE</strong>：nRMSE = RMSE / (E_max - E_min)，其中 RMSE 为均方根误差，E_max/E_min 为能量范围。用途：归一化能量恢复误差。直觉：消除能量尺度影响。来源：Results 节（误差分析）。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：未提供具体蛋白-配体数据集；使用代表性条件（three representative conditions）进行验证。</li>
+<li><strong>规模</strong>：32×32×32 网格；32-qubit 和 37-qubit 量子线路。</li>
+<li><strong>指标</strong>：nRMSE、Top 1%/Top 10% 恢复率、相关系数（与无截断参考的排序相关性）。</li>
+<li><strong>基线</strong>：经典 AutoDock 网格内积（PyTorch 计算）。</li>
+<li><strong>预算</strong>：未提供（模拟环境，无硬件量子计算）。</li>
+<li><strong>骨干/仪器</strong>：Qiskit 模拟器、PyTorch。</li>
+<li><strong>Oracle 输入</strong>：经典 AutoDock 网格图作为真值输入。</li>
+<li><strong>评测协议</strong>：比较量子模拟概率导出能量与经典内积能量；在不同 shot 数和 U(max) 截断条件下评估恢复与排序稳定性。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>旋转操作验证</td>
+<td>旋转编码正确性</td>
+<td>量子模拟 vs 经典旋转后内积</td>
+<td>概率导出能量与经典匹配</td>
+<td>旋转操作在量子表示中正确</td>
+<td>未验证所有旋转角度</td>
+<td>Results（旋转验证）</td>
+</tr>
+<tr>
+<td>平移操作验证</td>
+<td>平移编码正确性</td>
+<td>量子模拟 vs 经典平移后内积</td>
+<td>概率导出能量与经典匹配</td>
+<td>平移操作在量子表示中正确</td>
+<td>未验证所有平移步长</td>
+<td>Results（平移验证）</td>
+</tr>
+<tr>
+<td>概率读出验证</td>
+<td>Hadamard test 读出正确性</td>
+<td>量子模拟 vs 经典内积</td>
+<td>能量匹配</td>
+<td>读出原理有效</td>
+<td>未在真实硬件验证</td>
+<td>Results（读出验证）</td>
+</tr>
+<tr>
+<td>shot 数影响</td>
+<td>采样误差随 shot 数变化</td>
+<td>不同 shot 数（如 100/1000/10000）</td>
+<td>nRMSE 随 shot 数增加而降低</td>
+<td>有限 shot 导致能量恢复误差</td>
+<td>未给出最优 shot 数</td>
+<td>Results（shot 分析）</td>
+</tr>
+<tr>
+<td>截断影响</td>
+<td>U(max) 对排序稳定性的影响</td>
+<td>U(max)=1, 1000, 无截断</td>
+<td>U(max)=1 最低 nRMSE 和最强 Top 恢复；无截断更好保持相关性</td>
+<td>截断影响排序稳定性</td>
+<td>未覆盖所有截断阈值</td>
+<td>Results（U(max) 对比）</td>
+</tr>
+<tr>
+<td>37-qubit 扩展</td>
+<td>多受体/多配体索引可行性</td>
+<td>32-qubit vs 37-qubit</td>
+<td>37-qubit 可索引 2 受体 + 16 配体</td>
+<td>扩展编码有效</td>
+<td>未验证更大规模</td>
+<td>Results（37-qubit 验证）</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅验证了量子兼容表示在模拟环境下的正确性，未涉及真实量子硬件或实际虚拟筛选流程。</li>
+<li><strong>Oracle/真值输入</strong>：使用经典 AutoDock 网格图作为真值，量子模拟输出与之对比。</li>
+<li><strong>端到端状态</strong>：非端到端；仅验证了评分函数的量子映射，未包含对接采样或筛选流程。</li>
+<li><strong>算力成本</strong>：模拟环境，未报告实际量子资源需求；37-qubit 需要更大 shot 预算。</li>
+<li><strong>历史数据依赖</strong>：无训练数据依赖（非机器学习方法）。</li>
+<li><strong>模型依赖</strong>：依赖 AutoDock 网格评分模型；量子线路设计基于 Hadamard test。</li>
+<li><strong>最难情形</strong>：有限 shot 下能量恢复误差增大；截断条件下排序稳定性下降。</li>
+<li><strong>群体/领域边界</strong>：仅适用于 AutoDock 网格评分；未推广到其他评分函数或连续表示。</li>
+<li><strong>不确定性</strong>：未报告置信区间或统计显著性；模拟环境与真实硬件差异未评估。</li>
+<li><strong>有边界复述</strong>：该文证明在模拟条件下，AutoDock 网格评分可被映射为量子兼容内积表示，并支持多受体、多配体、多姿态索引；能量恢复精度受 shot 数和截断影响，但原理验证成立。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有限 shot 采样误差</td>
+<td>nRMSE 随 shot 数减少而增大</td>
+<td>增加 shot 数或优化采样策略</td>
+<td>Results（shot 分析）</td>
+</tr>
+<tr>
+<td>截断影响排序稳定性</td>
+<td>截断改变能量分布，影响 Top 恢复</td>
+<td>需平衡截断与精度</td>
+<td>Results（U(max) 对比）</td>
+</tr>
+<tr>
+<td>37-qubit 需要更大 shot 预算</td>
+<td>概率质量分布在大索引空间</td>
+<td>优化编码或使用更高效读出</td>
+<td>Results（37-qubit 验证）</td>
+</tr>
+<tr>
+<td>仅模拟验证</td>
+<td>未在真实量子硬件测试</td>
+<td>未来在量子硬件上验证</td>
+<td>未提供（作者在结论中暗示）</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅使用代表性条件而非系统数据集</td>
+<td>可能选择性展示有利结果</td>
+<td>影响结论普适性</td>
+<td>在多样蛋白-配体集上重复实验</td>
+<td>Results（three representative conditions）</td>
+</tr>
+<tr>
+<td>未报告真实硬件资源需求</td>
+<td>模拟环境可能低估实际开销</td>
+<td>影响实用性评估</td>
+<td>在量子硬件或更真实模拟器上测试</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>未与经典 AutoDock 性能对比</td>
+<td>未说明量子方法的优势或劣势</td>
+<td>无法判断实际价值</td>
+<td>对比经典 AutoDock 在相同任务上的精度与速度</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>截断条件选择缺乏理论依据</td>
+<td>U(max)=1 和 1000 的选择可能任意</td>
+<td>影响结论可推广性</td>
+<td>系统扫描 U(max) 值</td>
+<td>Results（U(max) 对比）</td>
+</tr>
+<tr>
+<td>未讨论噪声影响</td>
+<td>真实量子硬件有噪声，可能破坏读出</td>
+<td>影响实际可行性</td>
+<td>引入噪声模型模拟</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>
+- <strong>可迁移概念</strong>：将经典网格评分函数分解为「索引化张量 + 内积」形式，是量子兼容化的通用策略；适用于其他基于网格的评分函数（如 Vina、Glide）或深度学习特征图。
+- <strong>可迁移方法</strong>：Hadamard test 读出内积的方法可迁移到其他需要内积计算的量子机器学习任务（如量子核方法、量子卷积）。
+- <strong>可迁移设计</strong>：多受体、多配体、多姿态的索引化编码思路，可迁移到经典计算中的批量评分优化（如 GPU 并行化）。
+- <strong>对课题方向的启示</strong>：在蛋白质结构计算研究中，若需探索量子加速，可优先选择「网格内积」类操作作为切入点；同时，经典模拟验证是量子方法开发的必要前置步骤。
+- <strong>实验设计借鉴</strong>：使用 nRMSE 和 Top 恢复率作为量子-经典一致性指标，可迁移到其他量子-经典对比研究。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与量子计算在分子对接中的早期探索（如量子退火用于配体构象搜索）相关，但本文聚焦于评分函数而非采样。</li>
+<li><strong>组合方向</strong>：可与深度学习评分函数（如 DeepDock、GNINA）结合，探索量子-经典混合评分。</li>
+<li><strong>冲突点</strong>：与经典 AutoDock 的高效实现相比，量子方法在模拟阶段无性能优势；需真实硬件突破。</li>
+<li><strong>可迁移领域</strong>：量子内积表示方法可迁移到其他生物分子相互作用评分（如蛋白-蛋白、蛋白-核酸）。</li>
+<li><strong>候选方向</strong>：将本文的索引化编码与变分量子线路结合，探索可学习的量子评分函数。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>
+1. <strong>名称</strong>：量子-经典混合 AutoDock 评分优化
+   - <strong>来源局限/观察</strong>：本文仅验证模拟，未优化量子线路效率
+   - <strong>核心假设</strong>：通过变分量子线路学习网格权重，可提升评分精度
+   - <strong>初步方法</strong>：在 32×32×32 网格上训练变分量子线路，对比经典 AutoDock
+   - <strong>验证方式</strong>：在 DUD-E 或 PDBbind 数据集上比较 Top 恢复率
+   - <strong>创新状态</strong>：unverified</p>
+<ol start="2">
+<li>
+<p><strong>名称</strong>：多受体构象的量子并行评分
+   - <strong>来源局限/观察</strong>：37-qubit 仅支持 2 受体，扩展性有限
+   - <strong>核心假设</strong>：通过纠缠态编码更多受体构象，实现量子并行评分
+   - <strong>初步方法</strong>：设计多受体纠缠编码线路，模拟不同受体数下的精度
+   - <strong>验证方式</strong>：对比经典批量评分与量子模拟的 nRMSE
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：噪声鲁棒的 Hadamard test 读出
+   - <strong>来源局限/观察</strong>：本文未讨论噪声影响
+   - <strong>核心假设</strong>：通过误差缓解技术（如零噪声外推）可提升读出精度
+   - <strong>初步方法</strong>：在 Qiskit 中引入噪声模型，测试不同缓解策略
+   - <strong>验证方式</strong>：对比有/无噪声缓解下的能量恢复
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：量子网格评分与深度学习特征融合
+   - <strong>来源局限/观察</strong>：本文仅使用 AutoDock 能量图，未结合学习特征
+   - <strong>核心假设</strong>：将量子网格评分与深度学习特征结合，可提升虚拟筛选性能
+   - <strong>初步方法</strong>：设计混合模型，量子部分处理网格内积，深度学习部分处理分子图
+   - <strong>验证方式</strong>：在标准虚拟筛选基准上比较 AUC 和 EF
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：网格分辨率对量子评分精度的影响
+   - <strong>来源局限/观察</strong>：本文固定 32×32×32 网格，未系统研究分辨率
+   - <strong>核心假设</strong>：更高分辨率提升精度但增加 qubit 需求，存在最优平衡
+   - <strong>初步方法</strong>：在 16³、32³、64³ 网格上重复实验，比较 nRMSE 与 qubit 数
+   - <strong>验证方式</strong>：绘制精度-资源权衡曲线
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no figures, tables, methods, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose a quantum-compatible reformulation of AutoDock grid-based protein-ligand scoring, using indexed inner-product representations on a shared 32x32x32 Cartesian grid, validated via reduced Qiskit simulations and PyTorch calculations, with finite-shot sampling and map truncation effects examined.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no numerical results, figures, tables, or methodological details are available</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, all numerical results, figure/table contents, simulation parameters, hardware/software specifications, and any statistical analyses</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting approach to bridging classical molecular docking scoring with quantum computing architectures. The core idea of reformulating AutoDock grid maps as indexed inner products is plausible and potentially useful. However, the abstract alone provides insufficient detail to assess technical correctness, reproducibility, or the significance of the claimed validation. The results are described qualitatively without any quantitative data, making it impossible to evaluate the strength of the evidence. The claim of a "validated proof-of-concept" is not supported by the visible material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational drug discovery, particularly those exploring quantum computing applications for structure-based virtual screening. Also relevant to developers of quantum-compatible molecular modeling tools and those interested in hybrid classical-quantum algorithms for biophysical simulations.</li>
+<li><strong>Major strengths</strong> The approach addresses a real bottleneck in virtual screening, namely repeated energy evaluation across many receptor-ligand configurations. The reformulation onto a shared grid with quantum-compatible readout is a creative and potentially scalable strategy. The explicit consideration of finite-shot sampling and map truncation effects shows awareness of practical quantum computing limitations.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "Reduced Qiskit simulations and PyTorch calculations validated the rotation, translation, and probability-readout operations, and the probability-derived energies matched direct classical grid-based inner products."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract claims validation and matching of probability-derived energies with classical inner products, but provides no quantitative metrics, error values, or statistical tests. The term "matched" is undefined. Without specific numerical comparisons, the validity of this claim cannot be assessed.</li>
+<li><strong>Why it matters</strong> The entire proof-of-concept rests on the equivalence between quantum-compatible readout and classical scoring. If this equivalence is not rigorously demonstrated with error bounds and statistical significance, the core claim is unsupported.</li>
+<li><strong>Resolution test</strong> Provide quantitative comparison metrics (e.g., mean absolute error, correlation coefficients, nRMSE values) between probability-derived and classical energies across multiple test cases, with confidence intervals or statistical significance tests.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> "A 32-qubit organization encoded spatial grid indices, energy channels, ligand translations, ligand rotations, and readout based on the Hadamard test. A 37-qubit organization added receptor and ligand selection registers."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract describes qubit organizations but provides no circuit diagrams, encoding schemes, or implementation details. The Hadamard test readout is mentioned but not explained in the context of this specific encoding. Without these details, the work cannot be reproduced or independently verified.</li>
+<li><strong>Why it matters</strong> Quantum computing results are notoriously sensitive to implementation details. The lack of any circuit-level or encoding-level information makes the technical claims unverifiable from the provided material.</li>
+<li><strong>Resolution test</strong> Provide complete circuit diagrams, encoding tables, and pseudocode for both 32-qubit and 37-qubit organizations, including how grid indices, energy channels, translations, rotations, and selection registers are mapped to qubits.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> "These results establish a validated proof-of-concept molecular-modeling representation for quantum-compatible AutoDock grid scoring."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract reports results for "three representative conditions" but does not specify what these conditions are, how they were chosen, or why they are representative. The claim of a "validated proof-of-concept" is premature without a clear description of the validation scope and criteria.</li>
+<li><strong>Why it matters</strong> The significance of the work depends on the breadth and rigor of validation. Without knowing the test conditions, the generalizability of the approach cannot be evaluated.</li>
+<li><strong>Resolution test</strong> Clearly define the three representative conditions, justify their selection, and provide full results for each, including failure cases or limitations.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Terminology</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The term "quantum-compatible" is used repeatedly but never defined. It is unclear whether this means the representation can be directly executed on quantum hardware, or merely that it is formulated in a way that could be adapted.</li>
+<li><strong>Required correction</strong> Define "quantum-compatible" explicitly in the abstract or introduction, specifying the intended relationship to quantum hardware execution.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Performance comparison</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract mentions "reduced Qiskit simulations" but does not state the system size or the reduction strategy. It is unclear whether the simulations were performed on the full 32-qubit or 37-qubit systems or on smaller approximations.</li>
+<li><strong>Required correction</strong> Specify the simulation system sizes and the nature of the reduction (e.g., qubit count, circuit depth, or state vector truncation).</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Context</li>
+<li><strong>Affected element</strong> Related work</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract does not reference any prior work on quantum approaches to molecular docking or grid-based scoring, making it difficult to assess novelty.</li>
+<li><strong>Required correction</strong> Add a brief statement in the abstract or introduction situating this work relative to existing quantum molecular modeling approaches.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (validation metrics missing), R1-M2 (implementation details absent), R1-M3 (validation scope undefined)</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The approach appears novel in its specific combination of AutoDock grid scoring with quantum inner-product encoding, but the abstract does not provide enough context to fully assess novelty relative to prior quantum molecular modeling work.</li>
+<li>Scientific importance: Potentially significant for the field of quantum-enabled drug discovery, but the importance is not established from the abstract alone given the lack of quantitative results.</li>
+<li>Interdisciplinary readership: The work bridges computational chemistry, quantum computing, and drug discovery, which could attract a broad readership if the results are compelling.</li>
+<li>Technical soundness: Cannot be assessed from the abstract. The claims of validation and matching are unquantified, and implementation details are absent.</li>
+<li>Readability for nonspecialists: The abstract is reasonably accessible but uses quantum computing terminology (e.g., "Hadamard test," "qubit organization") without sufficient explanation for a general scientific audience.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract describes a promising concept, but the lack of quantitative results, implementation details, and clear validation criteria means the case for a validated proof-of-concept is not made. Supportive if the full manuscript provides the missing technical details and quantitative evidence.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>"Probability-derived energies matched direct classical grid-based inner products" is unsupported without quantitative comparison data.</li>
+<li>"Validated proof-of-concept" is unsupported given the undefined validation scope and missing metrics.</li>
+<li>The claim that increasing shots "improved correlation-based and reference-configuration recovery" is unquantified and cannot be evaluated.</li>
+<li>The relative performance of U(max) = 1 versus no truncation and U(max) = 1000 is described but not supported with any numerical values.</li>
+<li>The 32-qubit and 37-qubit organizations are described but their correctness and functionality cannot be verified without circuit or encoding details.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

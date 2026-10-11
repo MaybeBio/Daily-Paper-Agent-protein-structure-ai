@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mitigating Class Imbalance in Graph-Structured Data via Hierarchical Learning: Insights from Protein Binding Site Prediction · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Mitigating Class Imbalance in Graph-Structured Data via Hierarchical Learning: Insights from Protein Binding Site Prediction</h1>
+      <div class="meta">Vinícius Paiva; Leandro Marcolino; Sandro Izidoro; Sabrina Silveira</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-04
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.09.28.754066">原文</a>
+      </div>
+      <p class="one-liner">该文提出层级学习框架CLARA缓解图数据类别不平衡，并应用于蛋白质-配体结合位点预测，虽以图分类方法为核心，但直接涉及蛋白质结构相关计算问题，方法可迁移至蛋白结构预测任务。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Learning from imbalanced data remains a major challenge for graph neural networks (GNNs), as minority nodes are not only rare but also structurally marginalized within the graph. We address this issue with CLARA, a hierarchical learning framework that decomposes node classification into two stages: a coarse subgraph-level classifier that selects regions likely to contain minority instances, followed by a fine-grained node-level predictor within these regions. This design improves sensitivity while maintaining scalability, filtering out irrelevant areas and focusing learning on topologically meaningful neighborhoods. Experiments on benchmark graph datasets demonstrate substantial gains over established imbalance-handling methods, with CLARA reaching an F1-score of 88.3%. The same strategy achieves significant improvements in protein–ligand binding site prediction, underscoring its broad and consistent effectiveness across both biological and general graph learning tasks.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">从不平衡数据中学习仍然是图神经网络（GNNs）面临的主要挑战，因为少数类节点不仅稀少，而且在图中结构上被边缘化。我们通过CLARA解决这一问题，这是一种分层学习框架，将节点分类分解为两个阶段：首先是一个粗粒度的子图级分类器，用于选择可能包含少数类实例的区域，随后在这些区域内进行细粒度的节点级预测。这种设计在保持可扩展性的同时提高了敏感性，过滤掉不相关区域，并将学习聚焦于拓扑上有意义的邻域。在基准图数据集上的实验表明，相较于已建立的不平衡处理方法，CLARA取得了显著提升，其F1分数达到88.3%。同样的策略在蛋白质-配体结合位点预测中也实现了显著改进，突显了其在生物学和通用图学习任务中的广泛且一致的效力。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Mitigating Class Imbalance in Graph-Structured Data via Hierarchical Learning: Insights from Protein Binding Site Prediction</li>
+<li><strong>作者</strong>：Vinícius Paiva; Leandro Marcolino; Sandro Izidoro; Sabrina Silveira</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026（预印本日期 2026-10-04）</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 应用研究）</li>
+<li><strong>领域</strong>：图神经网络 × 类别不平衡 × 蛋白质结合位点预测</li>
+<li><strong>关键词</strong>：class imbalance, graph neural networks, hierarchical learning, protein binding site prediction, node classification</li>
+<li><strong>DOI/arXiv</strong>：10.64898/2026.09.28.754066</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：基准图数据集 + 蛋白质-配体结合位点数据集（具体名称未提供）</li>
+<li><strong>阅读日期</strong>：2026-05-12（按当前日期推算）</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的结构功能位点预测子方向，提出一种层级学习框架（CLARA）以缓解图数据中少数类节点（结合位点残基）的类别不平衡问题。其核心贡献在于将「粗粒度子图筛选 + 细粒度节点分类」的两阶段策略引入蛋白质结合位点预测，与现有端到端 GNN 方法形成互补，可迁移至其他蛋白质结构预测/构象采样任务中的稀疏标签问题。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对图数据中少数类节点稀少且结构边缘化的问题，本文提出 CLARA 层级学习框架，通过粗粒度子图级分类器筛选可能包含少数类实例的区域，再在区域内进行细粒度节点级预测，在基准图数据集上达到 88.3% 的 F1-score，并在蛋白质-配体结合位点预测任务中取得显著提升。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：图神经网络在处理类别不平衡数据时，少数类节点不仅数量稀少，而且在图结构中处于边缘化位置（即拓扑上孤立或连接稀疏），导致 GNN 难以有效学习其表示。</li>
+<li><strong>为什么重要</strong>：蛋白质结合位点预测是药物发现和蛋白质功能注释的关键步骤，而结合位点残基在蛋白质结构中通常只占少数（少数类节点），其预测精度直接影响下游应用。</li>
+<li><strong>现有方法为何不足</strong>：现有不平衡处理方法（如重采样、损失函数重加权、合成少数类过采样）主要针对欧氏空间数据，未考虑图结构中的拓扑边缘化问题；端到端 GNN 方法虽能利用结构信息，但缺乏对少数类节点所在局部区域的显式关注。</li>
+<li><strong>精确研究问题</strong>：Can a hierarchical learning framework that first selects subgraph regions likely to contain minority nodes, then performs fine-grained node classification within those regions, effectively mitigate class imbalance in graph-structured data and improve protein binding site prediction?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「仅本文框架」，基于摘要推断，未经外部文献核验）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据级方法</td>
+<td>随机过采样、SMOTE 及其变体</td>
+<td>简单直接，不改变模型</td>
+<td>未考虑图拓扑结构，可能引入噪声</td>
+<td>超越</td>
+</tr>
+<tr>
+<td>损失函数方法</td>
+<td>Focal Loss、Class-Balanced Loss</td>
+<td>调整损失权重，训练稳定</td>
+<td>未显式利用图结构信息</td>
+<td>超越</td>
+</tr>
+<tr>
+<td>图结构方法</td>
+<td>GraphSMOTE、ImGAGN</td>
+<td>在图空间生成少数类节点</td>
+<td>生成节点可能不自然，计算开销大</td>
+<td>超越</td>
+</tr>
+<tr>
+<td>端到端 GNN</td>
+<td>GCN、GAT、GraphSAGE</td>
+<td>利用图结构信息</td>
+<td>对少数类节点关注不足，易被多数类主导</td>
+<td>本文的基线</td>
+</tr>
+<tr>
+<td><strong>层级学习方法</strong></td>
+<td><strong>CLARA（本文）</strong></td>
+<td><strong>显式筛选少数类区域，聚焦拓扑有意义邻域</strong></td>
+<td><strong>依赖子图级分类器质量</strong></td>
+<td><strong>本文贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>少数类节点稀少</td>
+<td>结合位点残基在蛋白质结构中占比低</td>
+<td>生物学本质：结合位点天然稀疏</td>
+<td>摘要：「minority nodes are not only rare」</td>
+</tr>
+<tr>
+<td>少数类节点结构边缘化</td>
+<td>少数类节点在图拓扑中孤立或连接稀疏</td>
+<td>图结构中的位置决定了信息传播效率，边缘节点难以聚合邻域信息</td>
+<td>摘要：「structurally marginalized within the graph」</td>
+</tr>
+<tr>
+<td>现有方法忽视拓扑</td>
+<td>重采样/重加权方法未利用图结构</td>
+<td>这些方法源自欧氏空间数据，假设样本独立</td>
+<td>摘要：「existing imbalance-handling methods」的不足</td>
+</tr>
+<tr>
+<td>端到端 GNN 关注不足</td>
+<td>模型被多数类主导，少数类 recall 低</td>
+<td>损失函数由多数类主导，梯度更新偏向多数类</td>
+<td>摘要：「filtering out irrelevant areas and focusing learning on topologically meaningful neighborhoods」的动机</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+CLARA 是一个两阶段层级学习框架：第一阶段使用粗粒度子图级分类器，将图划分为若干子图区域并预测每个区域包含少数类节点的概率；第二阶段仅对高概率区域进行细粒度节点级分类，输出每个节点的标签。</p>
+<p><strong>2) 核心洞察</strong>：
+少数类节点在图中的分布并非完全随机，而是倾向于聚集在特定的拓扑区域（如蛋白质结合口袋）。通过先识别这些区域，可以「过滤」掉大量无关区域，使细粒度分类器专注于少数类节点所在的拓扑有意义邻域，从而缓解类别不平衡。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+对于蛋白质结构相关任务中任何「稀疏但结构聚集」的标签（如活性位点、突变热点、构象变化关键残基），「先定位区域、再精细预测」的层级策略可能比端到端方法更有效。这一思路可迁移至构象采样中的稀有态识别、分子对接中的结合口袋预筛等场景。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：图结构数据（节点特征 + 邻接矩阵），对于蛋白质任务为残基图（残基为节点，空间/序列邻近为边）</li>
+<li><strong>输出</strong>：节点级二分类标签（是否为少数类/结合位点残基）</li>
+<li><strong>模块</strong>：
+  1. 子图划分模块：将图划分为若干子图区域
+  2. 粗粒度子图级分类器：预测每个子图包含少数类节点的概率
+  3. 细粒度节点级预测器：仅对高概率子图内的节点进行精细分类</li>
+<li><strong>训练</strong>：两阶段训练——先训练子图级分类器，再在筛选出的子图上训练节点级预测器（具体损失函数和优化器未提供）</li>
+<li><strong>工具</strong>：GNN 架构（具体类型未提供，推测为 GCN/GAT 类）</li>
+<li><strong>反馈回路</strong>：子图级分类器的输出作为节点级预测器的输入筛选条件</li>
+<li><strong>假设</strong>：少数类节点在拓扑上聚集于特定子图区域；子图级分类器能有效识别这些区域</li>
+<li><strong>文字流程</strong>：输入图 → 子图划分 → 子图级分类器预测各子图包含少数类的概率 → 筛选高概率子图 → 在筛选出的子图上运行节点级预测器 → 输出节点标签</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>子图划分模块</td>
+<td>将图划分为若干子图区域</td>
+<td>为层级筛选提供基本单元</td>
+<td>输入：全图；输出：子图集合</td>
+<td>摘要：「decomposes node classification into two stages」</td>
+<td>预期影响：无法进行区域筛选，退化为端到端方法</td>
+</tr>
+<tr>
+<td>粗粒度子图级分类器</td>
+<td>预测子图是否包含少数类节点</td>
+<td>过滤无关区域，聚焦少数类所在区域</td>
+<td>输入：子图特征；输出：包含少数类的概率</td>
+<td>摘要：「selects regions likely to contain minority instances」</td>
+<td>预期影响：若移除，细粒度分类器需处理全图，类别不平衡问题重现</td>
+</tr>
+<tr>
+<td>细粒度节点级预测器</td>
+<td>在筛选出的子图内进行节点分类</td>
+<td>在缩小范围内精细预测，提高少数类 recall</td>
+<td>输入：筛选子图内的节点特征；输出：节点标签</td>
+<td>摘要：「fine-grained node-level predictor within these regions」</td>
+<td>预期影响：若移除，无法输出最终节点级预测</td>
+</tr>
+<tr>
+<td>筛选机制</td>
+<td>根据子图级分类器输出选择高概率子图</td>
+<td>控制计算开销，聚焦有意义区域</td>
+<td>输入：子图概率；输出：筛选后的子图集合</td>
+<td>摘要：「filtering out irrelevant areas」</td>
+<td>预期影响：若移除，计算开销增大，且引入噪声区域</td>
+</tr>
+</tbody>
+</table>
+<p><em>注：以上「预期影响」均为 [Analysis] 推断，原文未提供消融实验证据。</em></p>
+<h2>09 关键公式符号</h2>
+<p>不适用。摘要中未提供任何数学公式或符号定义。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：基准图数据集（具体名称未提供）+ 蛋白质-配体结合位点数据集（具体名称未提供）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：F1-score（主要指标），具体提到 88.3% 的 F1-score</li>
+<li><strong>基线</strong>：established imbalance-handling methods（具体方法名称未提供）</li>
+<li><strong>预算/骨干/仪器</strong>：未提供</li>
+<li><strong>oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基准图数据集实验</td>
+<td>CLARA 优于现有不平衡处理方法</td>
+<td>对比 established imbalance-handling methods</td>
+<td>F1-score 达 88.3%</td>
+<td>CLARA 在通用图任务上有效</td>
+<td>未提供具体基线数值，无法判断提升幅度</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>蛋白质结合位点预测实验</td>
+<td>CLARA 在生物任务上同样有效</td>
+<td>蛋白质-配体结合位点预测</td>
+<td>「significant improvements」</td>
+<td>层级策略可迁移至蛋白质任务</td>
+<td>未提供具体数值，无法量化提升</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖节点级二分类任务，未涉及多分类或回归任务。</li>
+<li><strong>oracle/真值输入</strong>：未提供标注来源（如 PDB 结合位点注释来自何处）。</li>
+<li><strong>端到端状态</strong>：两阶段流程，非端到端联合训练。</li>
+<li><strong>算力成本</strong>：未提供训练/推理时间对比。</li>
+<li><strong>历史数据依赖</strong>：未提供数据划分方式（时间划分/随机划分）。</li>
+<li><strong>模型依赖</strong>：未提供 GNN 具体架构，无法判断是否依赖特定模型。</li>
+<li><strong>最难情形</strong>：未讨论少数类节点完全孤立（无任何结构聚集）时的表现。</li>
+<li><strong>群体/领域边界</strong>：仅在基准图数据集和蛋白质结合位点任务上验证，未涉及其他蛋白质结构任务（如折叠预测、构象采样）。</li>
+<li><strong>不确定性</strong>：未提供方差、置信区间或统计显著性检验。</li>
+</ul>
+<p><strong>有边界的复述</strong>：CLARA 在测试的基准图数据集上达到 88.3% F1-score，并在蛋白质-配体结合位点预测任务上取得显著提升，但具体提升幅度、适用图类型和蛋白质任务范围尚不明确。</p>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><em>作者提及的相关约束（非正式局限）</em>：
+- 摘要中未讨论 CLARA 在极端不平衡（如少数类占比 &lt;1%）或大规模图（如全蛋白质组）上的表现。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供基线具体数值</td>
+<td>88.3% 的提升幅度可能有限，或基线较弱</td>
+<td>无法判断实际增益</td>
+<td>要求作者提供与各基线的详细对比表</td>
+<td>摘要仅提及「substantial gains」</td>
+</tr>
+<tr>
+<td>未提供蛋白质任务的具体指标</td>
+<td>「significant improvements」缺乏量化</td>
+<td>生物任务上的实际效果存疑</td>
+<td>要求提供结合位点预测的 Precision/Recall/AUC 等指标</td>
+<td>摘要未给出具体数值</td>
+</tr>
+<tr>
+<td>未说明子图划分策略</td>
+<td>不同划分方式（如基于社区检测、基于空间邻近）可能显著影响结果</td>
+<td>方法可复现性存疑</td>
+<td>要求作者提供子图划分的详细算法和超参数</td>
+<td>摘要仅提及「coarse subgraph-level classifier」</td>
+</tr>
+<tr>
+<td>未讨论两阶段误差传播</td>
+<td>子图级分类器的假阴性会直接导致少数类节点被遗漏</td>
+<td>可能限制 recall 上限</td>
+<td>分析子图级分类器错误对端到端性能的影响</td>
+<td>摘要未提及误差传播分析</td>
+</tr>
+<tr>
+<td>未提供与端到端 GNN 的对比</td>
+<td>层级方法的优势可能仅体现在特定不平衡比例下</td>
+<td>无法判断方法普适性</td>
+<td>在不同不平衡比例下对比端到端 GNN</td>
+<td>摘要仅对比「established imbalance-handling methods」</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>层级筛选策略</strong>：对于蛋白质结构任务中稀疏但结构聚集的标签（结合位点、活性残基、构象关键残基），「先粗粒度定位区域，再细粒度预测」可作为一种通用框架，迁移至：
+   - 分子对接中的结合口袋预筛（先预测口袋区域，再精细对接）
+   - 构象采样中的稀有态识别（先识别可能含稀有构象的区域，再精细采样）
+   - 蛋白质设计中的功能位点定位（先定位功能相关区域，再设计序列）</p>
+</li>
+<li>
+<p><strong>拓扑边缘化概念</strong>：少数类节点不仅数量少，而且在图结构中信息传播受限。这一概念可迁移至：
+   - 蛋白质残基图中的功能位点预测（结合位点残基可能位于表面凸起或凹陷处，拓扑位置特殊）
+   - MD 模拟轨迹中的稀有构象识别（稀有构象在相空间中可能处于边缘区域）</p>
+</li>
+<li>
+<p><strong>两阶段训练范式</strong>：先训练粗粒度分类器，再在筛选子集上训练细粒度模型，可减少计算开销并提高少数类关注度。可迁移至：
+   - 大规模蛋白质结构预测中的候选区域筛选
+   - 分子生成中的条件区域限定</p>
+</li>
+<li>
+<p><strong>评估指标选择</strong>：在不平衡任务中优先使用 F1-score 而非 accuracy，这一实践可直接迁移至所有蛋白质结构预测任务中的稀疏标签评估。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与「coarse-to-fine」策略在计算机视觉中的目标检测（如 R-CNN 系列的区域提议 + 精细分类）高度相似，本文将其引入图数据领域。</li>
+<li><strong>组合方向</strong>：与 GraphSMOTE（图数据过采样）、Focal Loss（损失函数重加权）等方法可组合使用，CLARA 作为前置筛选模块。</li>
+<li><strong>冲突观点</strong>：与端到端 GNN 方法（如直接在图上游走预测）形成对比，本文主张显式区域筛选优于隐式学习。</li>
+<li><strong>可迁移领域</strong>：蛋白质-配体结合位点预测与分子对接中的口袋预测高度相关；层级策略可迁移至 AlphaFold 的 pLDDT 置信度区域筛选。</li>
+<li><strong>候选方向</strong>：将 CLARA 与等变图神经网络（如 EGNN、SE(3)-Transformer）结合，用于蛋白质构象采样中的稀有态识别。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：CLARA-Conf：层级构象采样框架
+   - <strong>来源局限/观察</strong>：CLARA 在结合位点预测中有效，但未涉及构象采样；构象采样中稀有态同样稀疏且结构聚集
+   - <strong>核心假设</strong>：先粗粒度识别可能含稀有构象的相空间区域，再在这些区域内精细采样，可提高稀有态发现效率
+   - <strong>初步方法</strong>：将 CLARA 的两阶段策略应用于 MD 模拟轨迹或生成模型的潜空间，先聚类筛选高价值区域，再局部精细采样
+   - <strong>验证方式</strong>：在标准蛋白构象数据集（如 Folding@Home 轨迹）上对比稀有态发现率
+   - <strong>可能的失败模式</strong>：稀有构象可能不聚集于特定区域，导致粗粒度筛选失效
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Hierarchical-Dock：层级分子对接口袋预筛
+   - <strong>来源局限/观察</strong>：CLARA 在蛋白质结合位点预测中有效，但未延伸至分子对接；对接中全蛋白盲对接计算昂贵
+   - <strong>核心假设</strong>：先预测结合口袋区域，再在口袋内进行精细对接，可显著降低计算成本并提高对接精度
+   - <strong>初步方法</strong>：将 CLARA 的子图级分类器替换为口袋预测模块，节点级预测器替换为对接打分函数
+   - <strong>验证方式</strong>：在 PDBbind 数据集上对比盲对接与层级对接的成功率和耗时
+   - <strong>可能的失败模式</strong>：口袋预测误差导致真实结合位点被过滤，降低 recall
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：CLARA-E3：等变层级结合位点预测
+   - <strong>来源局限/观察</strong>：CLARA 使用通用 GNN，未利用蛋白质结构的等变对称性；等变网络在结构预测中表现更优
+   - <strong>核心假设</strong>：将 CLARA 的 GNN 替换为 SE(3) 等变网络，可提高结合位点预测的精度和泛化性
+   - <strong>初步方法</strong>：在 CLARA 框架中引入 EGNN 或 SE(3)-Transformer 作为子图级和节点级编码器
+   - <strong>验证方式</strong>：在多个蛋白质数据集上对比 CLARA 与 CLARA-E3 的 F1-score
+   - <strong>可能的失败模式</strong>：等变网络计算开销大，可能牺牲 CLARA 的 scalability 优势
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：CLARA-Design：功能位点引导的蛋白质设计
+   - <strong>来源局限/观察</strong>：CLARA 仅做预测，未涉及设计；蛋白质设计中功能位点定位是关键前置步骤
+   - <strong>核心假设</strong>：CLARA 预测的功能位点可作为蛋白质设计的约束条件，引导序列生成
+   - <strong>初步方法</strong>：将 CLARA 的预测结果作为条件输入到生成模型（如 ProteinMPNN），在功能位点区域施加序列约束
+   - <strong>验证方式</strong>：设计蛋白的体外功能实验或计算结构验证
+   - <strong>可能的失败模式</strong>：预测位点与实际功能位点偏差导致设计失败
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, results, figures, or tables were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose CLARA, a hierarchical two-stage learning framework for node classification in graph-structured data under class imbalance. The method first applies a coarse subgraph-level classifier to select regions likely to contain minority instances, then a fine-grained node-level predictor within those regions. The authors claim substantial improvements over established imbalance-handling methods on benchmark graph datasets, with an F1-score of 88.3%, and report significant gains in protein–ligand binding site prediction.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative comparisons, dataset descriptions, baseline specifications, or statistical details are available</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, experimental setup, dataset details, baseline implementations, hyperparameter choices, ablation studies, code availability, and all figures and tables</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting hierarchical approach to a well-recognized problem in graph learning. The two-stage design is plausible and potentially valuable. However, the evidence provided in the abstract is insufficient to evaluate the validity, robustness, or generalizability of the claims. Key experimental details, baseline comparisons, and statistical rigor are absent. The biological application is mentioned but not substantiated with any specific metrics or context. The work may have merit, but the current submission does not allow for a meaningful assessment of its technical soundness or scientific impact.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers working on graph neural networks, particularly those addressing class imbalance in node classification tasks, would find the hierarchical framework relevant. Computational biologists and structural bioinformaticians interested in protein function prediction, including binding site identification, may also be interested given the reported application. The general approach of coarse-to-fine learning could appeal to a broader machine learning audience working on scalable and selective prediction in large graphs.</li>
+<li><strong>Major strengths</strong> The problem addressed is important and timely, as class imbalance in graph-structured data is a recognized limitation of GNNs. The proposed two-stage hierarchical design is conceptually clear and offers a plausible mechanism for improving sensitivity while maintaining scalability. The inclusion of a biological application domain adds potential interdisciplinary relevance.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li>R1-M1  </li>
+<li>R1-M2  </li>
+<li>R1-M3  </li>
+<li>R1-M4</li>
+<li><strong>Minor Comments</strong>  </li>
+<li>R1-m1  </li>
+<li>R1-m2  </li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4</li>
+<li><strong>Assessment against Nature-style criteria</strong><br />
+  Originality: The hierarchical two-stage idea is not entirely novel in the broader machine learning literature, but its specific application to graph node classification under imbalance may offer a fresh angle. However, without a detailed comparison to existing hierarchical or coarse-to-fine methods, the degree of novelty cannot be established.<br />
+  Scientific importance: The problem is significant, and a robust solution would be valuable. The potential biological application adds importance, but the current evidence does not demonstrate a meaningful advance.<br />
+  Interdisciplinary readership: The abstract bridges graph learning and structural biology, which could attract readers from both communities. However, the biological claims are unsubstantiated in the abstract.<br />
+  Technical soundness: Cannot be assessed from the abstract alone. No methodological details, experimental protocols, or statistical analyses are provided.<br />
+  Readability for nonspecialists: The abstract is clearly written and accessible, with the two-stage concept explained in understandable terms. However, the lack of context for the biological application and the absence of any quantitative framing limit its accessibility to nonspecialists.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The conceptual direction is promising, but the abstract alone does not provide sufficient support for the core claims. A full manuscript with detailed methods, comprehensive experiments, and rigorous statistical analysis would be required to assess whether the case can be made.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> The authors claim "substantial gains over established imbalance-handling methods" and report an F1-score of 88.3%.  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Concern</strong> The abstract provides no comparative data, no baseline names, no dataset descriptions, and no context for the reported F1-score. It is impossible to determine whether 88.3% represents a meaningful improvement, what task it corresponds to, or how it compares to prior work.  </li>
+<li><strong>Why it matters</strong> The central claim of the paper rests on the demonstrated superiority of CLARA over existing methods. Without any quantitative comparison or experimental context, the claim is unsupported and cannot be evaluated.  </li>
+<li>
+<p><strong>Resolution test</strong> Provide a full experimental section with dataset characteristics, baseline implementations, performance tables, and statistical significance tests. The F1-score must be contextualized with respect to specific tasks, datasets, and competing methods.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Methodological detail  </li>
+<li><strong>Claim pointer</strong> The authors describe a two-stage framework with a coarse subgraph-level classifier followed by a fine-grained node-level predictor.  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Concern</strong> No details are given on how subgraphs are defined, how the coarse classifier is trained, how regions are selected, how the fine-grained predictor operates, or how the two stages are integrated. The architecture, loss functions, and training procedures are entirely unspecified.  </li>
+<li><strong>Why it matters</strong> The proposed method cannot be reproduced, validated, or compared to alternatives without a clear description of the algorithmic design. The scientific contribution depends on the technical implementation being both sound and transparent.  </li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed methods section describing the subgraph construction, model architectures, training objectives, hyperparameter choices, and the mechanism for region selection and node-level prediction.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Biological claim substantiation  </li>
+<li><strong>Claim pointer</strong> The authors state that "the same strategy achieves significant improvements in protein–ligand binding site prediction."  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Concern</strong> No specific results, metrics, datasets, or comparisons are provided for the protein–ligand binding site prediction task. The term "significant" is used without any statistical support.  </li>
+<li><strong>Why it matters</strong> The biological application is a key part of the claimed interdisciplinary impact. Without quantitative evidence, the claim of effectiveness in this domain is unsubstantiated and may mislead readers in the structural biology community.  </li>
+<li>
+<p><strong>Resolution test</strong> Provide a dedicated section on the binding site prediction experiments, including dataset details, evaluation metrics, baseline comparisons, and statistical significance testing.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Generalizability and robustness  </li>
+<li><strong>Claim pointer</strong> The authors claim "broad and consistent effectiveness across both biological and general graph learning tasks."  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Concern</strong> The abstract mentions "benchmark graph datasets" without specifying which ones, how many, or what types of imbalance were tested. No ablation studies, sensitivity analyses, or failure cases are reported.  </li>
+<li><strong>Why it matters</strong> The claim of broad effectiveness requires evidence across diverse graph types, imbalance ratios, and task configurations. Without this, the generalizability of the method remains an assertion rather than a demonstrated property.  </li>
+<li><strong>Resolution test</strong> Include experiments on multiple benchmark datasets with varying imbalance levels, report performance across different minority class proportions, and provide ablation studies to isolate the contribution of each stage.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Abstract wording  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The phrase "structurally marginalized within the graph" is vague and not defined. It is unclear whether this refers to low degree, peripheral position, or some other structural property.  </li>
+<li>
+<p><strong>Required correction</strong> Define the term explicitly or rephrase to describe the specific structural characteristics of minority nodes that motivate the hierarchical approach.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Reproducibility  </li>
+<li><strong>Affected element</strong> Resource availability  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> No mention is made of code or data availability, which is important for reproducibility in the machine learning community.  </li>
+<li>
+<p><strong>Required correction</strong> State whether code and datasets will be made publicly available, and if so, under what license and at what repository.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Terminology  </li>
+<li><strong>Affected element</strong> Method name and framing  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The acronym CLARA is introduced without explanation. It is unclear what it stands for or whether it relates to any existing method with a similar name.  </li>
+<li><strong>Required correction</strong> Expand the acronym at first use and clarify any potential confusion with prior work.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "substantial gains over established imbalance-handling methods" is unsupported due to the absence of any comparative data.</li>
+<li>The reported F1-score of 88.3% is uncontextualized and cannot be interpreted without task and dataset details.</li>
+<li>The claim of "significant improvements in protein–ligand binding site prediction" is unsupported by any quantitative evidence.</li>
+<li>The claim of "broad and consistent effectiveness" across tasks is not assessable without a description of the datasets and experimental scope.</li>
+<li>The overall effectiveness of the proposed hierarchical framework cannot be evaluated from the abstract alone.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

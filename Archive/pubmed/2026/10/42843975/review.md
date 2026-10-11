@@ -1,0 +1,99 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, introduction, results, discussion, materials and methods, and supplementary figure descriptions
+- **Assessment boundary** Scientific content, experimental design, data interpretation, and claims as presented in the manuscript
+- **Shared manuscript claim summary** The authors propose that the PHC1 domain of ROCK1 mediates recruitment to cortical Rho activity zones, cooperates with the Rho-binding domain, and participates in contractility signaling, with implications for the molecular ruler model of ROCK activation
+- **Visible evidence base** Live-cell TIRF microscopy of fluorescently tagged ROCK1 constructs, AlphaFold structural predictions, pull-down assays, optogenetic perturbation experiments, and image-based quantitative analyses
+- **Missing materials affecting confidence** Source data files, full uncropped western blots, complete statistical reporting details, and supplementary figures referenced but not fully described in the text
+
+## Reviewer
+- **Overall assessment** This manuscript presents a potentially interesting finding regarding the role of the PHC1 domain in ROCK1 recruitment to Rho activity zones. The combination of live-cell imaging, structural prediction, and optogenetic perturbation is commendable. However, several technical concerns and interpretive gaps need to be addressed before the central claims are fully established. The evidence for direct PHC1-Rho interaction is indirect, and the functional significance of the PHC1 domain in myosin activation requires stronger experimental support.
+- **Who would be interested in the results, and why** Researchers studying Rho GTPase signaling, actin cytoskeleton dynamics, cell contractility, and the molecular mechanisms of ROCK regulation. The findings may also be relevant to those interested in the structural basis of protein-membrane interactions and the application of AlphaFold predictions to guide experimental work.
+- **Major strengths** The study addresses a significant gap in understanding ROCK1 recruitment mechanisms. The use of multiple complementary approaches, including live-cell imaging, AlphaFold predictions, and optogenetic perturbation, provides a multifaceted view. The identification of specific amino acid residues through structural prediction and their experimental validation is a notable strength. The temporal analysis of ROCK1 recruitment dynamics is carefully executed.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that the PHC1 domain is sufficient for recruitment to Rho activity zones and that this recruitment is mediated by interaction with Rho-family GTPases.
+  - **Evidence pointer** Results section "The ROCK1 PHC1 domain is sufficient for recruitment of ROCK1 to Rho activity pulses", Figures 2 and 3
+  - **Concern** The pull-down experiments (Figure S2D) do not demonstrate specific binding of the isolated PHC1 domain to active RhoA. The authors report that RhoA Q63L pulled down mCherry-mPHC1, but equally strong signals were detected with inactive RhoA T19N and with the mutant mPHC1 construct. This lack of specificity undermines the claim of a direct PHC1-RhoA interaction.
+  - **Why it matters** The central mechanistic claim of the manuscript is that PHC1 mediates recruitment through interaction with Rho-family GTPases. Without biochemical evidence for specific, activity-dependent binding, the interpretation of the cellular imaging data remains ambiguous. Alternative explanations, such as lipid-mediated recruitment or indirect association through other proteins, cannot be excluded.
+  - **Resolution test** The authors should perform quantitative pull-down assays with purified proteins, including dose-response experiments and competition with unlabeled Rho. Alternatively, surface plasmon resonance or isothermal titration calorimetry could provide definitive binding affinities and specificity. The experiments should include a panel of Rho-family GTPases in both active and inactive conformations.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Experimental design
+  - **Claim pointer** The authors claim that the PHC1 domain is critical for signal transduction to activate myosin at the plasma membrane, based on the failure of CA-ROCK1 to induce myosin recruitment in the optogenetic assay.
+  - **Evidence pointer** Results section "The PHC1 domain of ROCK1 is critical for signal transduction to activate myosin at the plasma membrane", Figure 5
+  - **Concern** The CA-ROCK1 construct used in the optogenetic assay lacks the PHC1 domain but also lacks the RBD and most of the coiled-coil region. The failure of this construct to activate myosin could be due to the loss of any of these regions, not specifically the PHC1 domain. The authors do not test a construct that retains the PHC1 domain but lacks the RBD, or vice versa, to dissect the specific contribution of each domain.
+  - **Why it matters** The conclusion that the PHC1 domain is specifically required for myosin activation is not supported by the experimental design. The CA-ROCK1 construct is a minimal kinase domain construct, and its failure in the assay may reflect a general requirement for the C-terminal region in proper positioning or processivity, rather than a specific PHC1 function.
+  - **Resolution test** The authors should test additional constructs in the optogenetic assay, including: (1) CA-ROCK1 with the PHC1 domain appended, (2) CA-ROCK1 with the RBD appended, and (3) full-length ROCK1 with the PHC1 domain mutations. This would allow dissociation of the specific contributions of each domain to myosin activation.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Quantitative rigor
+  - **Claim pointer** The authors claim that ROCK1 is recruited to Rho activity zones within seconds, with a minimal temporal delay of approximately 3 seconds, and that this recruitment is significantly faster than myosin recruitment.
+  - **Evidence pointer** Results section "ROCK1 is dynamically recruited to cell contraction pulses in adherent mammalian cells", Figure 1
+  - **Concern** The temporal analysis relies on cross-correlation of fluorescence signals from different proteins imaged in separate channels. The authors do not report the frame rate, the temporal resolution of their imaging system, or the potential for differential lag times between channels due to filter switching or acquisition order. The claim of a 3-second delay may be at the limit of their temporal resolution.
+  - **Why it matters** The temporal relationship between ROCK1 and myosin recruitment is used to support the model of sequential activation. If the temporal resolution is insufficient to resolve the true delay, the conclusions about the kinetics of the signaling cascade may be overstated.
+  - **Resolution test** The authors should report the imaging frame rate and the temporal resolution of their system. They should also perform control experiments with a dual-labeled construct to measure the cross-channel lag time and correct for it in their analysis. Alternatively, they could use simultaneous dual-color imaging with a beam splitter to eliminate sequential acquisition delays.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretation
+  - **Claim pointer** The authors propose that the PHC1 domain and the RBD act synergistically to recruit ROCK1 to Rho activity zones, and that the PHC1 domain has additional functions beyond membrane targeting.
+  - **Evidence pointer** Discussion section "Potential synergistic role of the PHC1 domains and the RBDs in spatial positioning of ROCK1 in the cell cortex"
+  - **Concern** The model presented in Figure 6 is largely speculative and goes beyond the experimental data. The authors propose a specific conformational model involving a kink in the coiled coil and cooperative binding of RBD and PHC1 to membrane-associated Rho, but they do not provide direct structural or biophysical evidence for this model.
+  - **Why it matters** While speculative models can be useful for generating hypotheses, the authors present this model as a conclusion rather than a hypothesis. This could mislead readers into thinking that the conformational mechanism has been experimentally validated.
+  - **Resolution test** The authors should clearly distinguish between experimentally supported conclusions and speculative models. They should either provide additional experimental evidence for the proposed conformational changes (e.g., FRET-based assays, cross-linking, or hydrogen-deuterium exchange) or explicitly label the model as a hypothesis requiring further testing.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract states that the PHC1 domain "mediates recruitment to Rho activity zones" but does not mention the caveats regarding the lack of direct biochemical evidence for PHC1-Rho interaction.
+  - **Required correction** The abstract should be tempered to reflect the indirect nature of the evidence, e.g., "consistent with a role in recruitment" rather than "mediates recruitment."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Figure legends
+  - **Evidence pointer** Figure legends throughout
+  - **Issue** The figure legends do not consistently report the number of independent experiments, the number of cells analyzed, or the statistical tests used for each comparison.
+  - **Required correction** Provide complete statistical details in each figure legend, including n values, statistical tests, and measures of dispersion.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical detail
+  - **Affected element** Materials and Methods, Microscopy
+  - **Evidence pointer** Materials and Methods section
+  - **Issue** The frame rate and acquisition parameters for TIRF imaging are not specified, making it difficult to assess the temporal resolution of the experiments.
+  - **Required correction** Report the frame rate, exposure time, and any binning or averaging used for image acquisition.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Supplementary figures
+  - **Evidence pointer** Supplementary Material section
+  - **Issue** Several supplementary figures are referenced in the text but not described in sufficient detail in the manuscript, making it difficult to evaluate the data.
+  - **Required correction** Provide complete legends and descriptions for all supplementary figures, or include the figures in the main text if they are essential for the claims.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion section
+  - **Issue** The discussion of the "molecular ruler" model and its extension is interesting but could be more balanced by acknowledging alternative models of ROCK regulation.
+  - **Required correction** Add a brief discussion of alternative models and how the current findings might distinguish between them.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (lack of specific biochemical evidence for PHC1-Rho interaction) and R1-M2 (inadequate construct design for dissecting domain-specific contributions to myosin activation) are the primary technical issues that must be resolved. The temporal resolution concern (R1-M3) also needs to be addressed to support the kinetic claims.
+- **Assessment against Nature-style criteria** 
+  - Originality: The study addresses a relevant question about ROCK1 recruitment mechanisms and proposes a novel role for the PHC1 domain. The application of AlphaFold predictions to guide experimental work is timely. However, the concept of PHC1 involvement in membrane recruitment is not entirely new, and the originality is moderate.
+  - Scientific importance: The findings could have implications for understanding ROCK1 regulation in cell contractility, which is relevant to various physiological and pathological processes. However, the importance is somewhat limited by the lack of definitive mechanistic evidence.
+  - Interdisciplinary readership: The work will primarily appeal to cell biologists and biophysicists studying cytoskeletal dynamics and Rho GTPase signaling. The structural prediction aspects may also interest computational biologists, but the overall interdisciplinary reach is moderate.
+  - Technical soundness: The imaging and optogenetic approaches are well-executed, but the biochemical validation is insufficient. The lack of quantitative binding data and the incomplete construct design undermine the technical soundness of the central claims.
+  - Readability for nonspecialists: The manuscript is generally well-written and accessible, with clear figures and logical flow. However, some sections, particularly the discussion of structural models, may be challenging for nonspecialists.
+- **Recommendation posture** Supportive if technical concerns are resolved. The manuscript addresses an interesting question and presents a plausible model, but the central claims regarding PHC1-Rho interaction and the specific role of PHC1 in myosin activation are not yet fully established from the provided evidence. The authors should strengthen the biochemical data and refine the construct design before the case is convincing.
+
+## Risk / unsupported claims
+- The claim that PHC1 directly interacts with Rho-family GTPases is not supported by the pull-down data, which show no specificity for active versus inactive RhoA.
+- The claim that the PHC1 domain is specifically required for myosin activation is not supported by the construct design, as CA-ROCK1 lacks multiple domains.
+- The proposed conformational model involving a kink in the coiled coil and cooperative binding is speculative and not directly tested.
+- The claim of a 3-second temporal delay between ROCK1 and myosin recruitment may be at the limit of the imaging temporal resolution and requires verification.
+- The statement that the PHC1 domain has "functions beyond membrane targeting" is not directly demonstrated by the experiments presented.

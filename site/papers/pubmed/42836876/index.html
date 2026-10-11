@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep learning-guided high-throughput screening and molecular dynamics simulations facilitate the discovery of potential FXIIa inhibitors. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Deep learning-guided high-throughput screening and molecular dynamics simulations facilitate the discovery of potential FXIIa inhibitors.</h1>
+      <div class="meta">Cai, Fengze; Chen, Wanjun; Xie, Song; Wu, Juhong; Zhang, Yongqi; Gao, Ping; Zhang, Han; Li, Jinyu</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of molecular modeling</span>
+        · 2026-10-06
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42836876/">原文</a>
+      </div>
+      <p class="one-liner">该文利用深度学习虚拟筛选和分子动力学模拟发现FXIIa抑制剂，虽以药物发现为目标，但核心方法涉及蛋白结构柔性采样和对接，对蛋白质结构计算有参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">CONTEXT: Pathological thrombosis is a major cause of cardiovascular and cerebrovascular diseases. Current anticoagulants increase bleeding risk by impairing physiological hemostasis. Because coagulation factor XIIa (FXIIa) drives pathological thrombosis but is dispensable for normal hemostasis, inhibiting FXIIa may offer antithrombotic efficacy with reduced bleeding risk. However, the marked flexibility of its active site hampers the discovery of small-molecule inhibitors. Here, we developed an integrated computational workflow to address this challenge and screened a library of approximately 21 million compounds. Four structurally distinct hits (DR1-DR4) were identified. Microsecond-scale molecular dynamics simulations suggested stable binding of all four compounds to FXIIa, and binding free energy calculations suggested that DR1 and DR3 exhibited more favorable binding free energies than the reference inhibitor 1303. These compounds also showed favorable predicted pharmacokinetic properties, providing structurally distinct hits for FXIIa-targeted anticoagulant discovery. METHODS: The crystal structure of the FXIIa catalytic domain (PDB ID: 6B74) was prepared in PyMOL 3.1, and missing regions were modeled with MODELLER. To capture active-site flexibility, apo-FXIIa was subjected to three independent 1-micros molecular dynamics simulations, and a representative conformation selected by clustering was used for virtual screening. A hierarchical screening workflow was carried out in DrugFlow using KarmaDock for primary screening, CarsiDock for redocking, and RTMScore for rescoring. Drug-likeness and pharmacokinetic properties were predicted with SwissADME. Selected complexes were simulated in Amber18 using ff19SB for the protein, GAFF2 for ligands, OPC water, and AM1-BCC ligand charges, and trajectories were analyzed with CPPTRAJ in AmberTools. Binding free energies were estimated with MMPBSA.py using the MM/GBSA method, with entropy contributions evaluated by normal mode analysis. Structural visualization was performed with PyMOL and Discovery Studio Visualizer 2016.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">背景：病理性血栓形成是心脑血管疾病的主要原因。现有抗凝药物通过损害生理性止血而增加出血风险。由于凝血因子XIIa（FXIIa）驱动病理性血栓形成，但对正常止血并非必需，抑制FXIIa可能提供抗血栓疗效并降低出血风险。然而，其活性位点的显著柔性阻碍了小分子抑制剂的发现。在此，我们开发了一种整合的计算工作流程以应对这一挑战，并筛选了约2100万种化合物的文库。鉴定出四种结构不同的先导化合物（DR1-DR4）。微秒级分子动力学 (molecular dynamics) 模拟表明所有四种化合物与FXIIa稳定结合，结合自由能计算表明DR1和DR3表现出比参考抑制剂1303更有利的结合自由能。这些化合物还显示出良好的预测药代动力学特性，为靶向FXIIa的抗凝药物发现提供了结构多样的先导化合物。
+
+方法：FXIIa催化结构域的晶体结构（PDB ID: 6B74）在PyMOL 3.1中制备，缺失区域使用MODELLER建模。为捕捉活性位点柔性，对无配体FXIIa进行了三次独立的1微秒分子动力学模拟，并通过聚类选择的代表性构象用于虚拟筛选。在DrugFlow中采用分层筛选工作流程，使用KarmaDock进行初筛，CarsiDock进行重对接，RTMScore进行重新评分。药物相似性和药代动力学特性使用SwissADME预测。选定的复合物在Amber18中使用ff19SB（蛋白质）、GAFF2（配体）、OPC水模型和AM1-BCC配体电荷进行模拟，轨迹使用AmberTools中的CPPTRAJ分析。结合自由能使用MMPBSA.py通过MM/GBSA方法估算，熵贡献通过简正模式分析评估。结构可视化使用PyMOL和Discovery Studio Visualizer 2016进行。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Deep learning-guided high-throughput screening and molecular dynamics simulations facilitate the discovery of potential FXIIa inhibitors</li>
+<li><strong>作者</strong>：Cai, Fengze; Chen, Wanjun; Xie, Song; Wu, Juhong; Zhang, Yongqi; Gao, Ping; Zhang, Han; Li, Jinyu</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：Journal of Molecular Modeling</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-06）</li>
+<li><strong>论文类型</strong>：研究论文（计算筛选 + MD 验证）</li>
+<li><strong>领域</strong>：凝血因子 XIIa（FXIIa）小分子抑制剂发现；深度学习虚拟筛选；分子动力学模拟</li>
+<li><strong>关键词</strong>：FXIIa；深度学习；虚拟筛选；分子动力学；MM/GBSA；抗凝药物</li>
+<li><strong>DOI/arXiv</strong>：10.1007/s00894-026-06981-4</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：化合物库约 2100 万；PDB ID 6B74；命中化合物 DR1-DR4</li>
+<li><strong>阅读日期</strong>：2026-05-12（按当前日期）</li>
+<li><strong>在课题方向中的位置</strong>：该文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>基于结构的虚拟筛选（SBVS）</strong> 子方向，结合深度学习打分（KarmaDock、CarsiDock、RTMScore）与物理模拟（MD + MM/GBSA）形成混合工作流。其核心可迁移点在于：<strong>用 MD 采样捕捉靶标活性位点柔性，再以深度学习工具做大规模筛选</strong>——这一「柔性受体 + AI 筛选」范式对任何柔性靶标（包括构象采样、诱导契合对接）均有参考价值。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>针对 FXIIa 活性位点柔性导致小分子抑制剂发现困难的问题，该文先用 3 条 1 μs 的 apo-MD 模拟获取代表性构象，再对约 2100 万化合物库进行 KarmaDock 初筛 → CarsiDock 重对接 → RTMScore 重打分，得到 4 个结构多样的命中（DR1-DR4），随后用微秒级 MD 和 MM/GBSA 验证其结合稳定性与自由能，其中 DR1 和 DR3 的结合自由能优于参考抑制剂 1303。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何高效发现靶向 FXIIa 活性位点的小分子抑制剂，同时克服该位点的高度柔性带来的对接与打分困难？</li>
+<li><strong>为什么重要</strong>：病理性血栓是心脑血管疾病主因；现有抗凝药通过损害生理止血增加出血风险。FXIIa 驱动病理性血栓但对正常止血非必需，因此是理想的抗凝靶点，但缺乏有效的小分子抑制剂。</li>
+<li><strong>现有方法为何不足</strong>：FXIIa 活性位点柔性大，基于单一静态晶体结构的传统虚拟筛选容易产生假阳性/假阴性；实验高通量筛选成本高、周期长。</li>
+<li><strong>精确研究问题</strong>：Can a deep learning-guided hierarchical virtual screening workflow, combined with MD-derived receptor conformations, identify structurally distinct, stable, and drug-like small-molecule inhibitors of FXIIa?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文引言与方法的叙述，标注为「仅本文框架」，未经外部文献核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统 SBVS</td>
+<td>分子对接（如 Glide、AutoDock）</td>
+<td>速度快、可解释</td>
+<td>受体刚性、打分函数精度有限</td>
+<td>本文用 MD 构象替代静态结构</td>
+</tr>
+<tr>
+<td>深度学习打分</td>
+<td>KarmaDock、CarsiDock、RTMScore</td>
+<td>速度快、可处理大规模库</td>
+<td>训练分布外泛化未知、缺乏物理约束</td>
+<td>本文用 DL 做初筛与重打分</td>
+</tr>
+<tr>
+<td>物理模拟验证</td>
+<td>MD + MM/GBSA</td>
+<td>考虑柔性、溶剂化、熵</td>
+<td>计算成本高、力场误差</td>
+<td>本文用 μs 级 MD + MM/GBSA 验证</td>
+</tr>
+<tr>
+<td>柔性受体筛选</td>
+<td>集合对接（ensemble docking）</td>
+<td>捕捉构象变化</td>
+<td>构象选择策略影响大</td>
+<td>本文用聚类选取代表性构象</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：将「MD 生成柔性受体构象」与「深度学习分层筛选」串联，形成可扩展的混合工作流，兼顾速度与精度。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FXIIa 活性位点柔性大</td>
+<td>静态结构对接命中率低、假阳性高</td>
+<td>活性位点 loop 区域构象多变，单一晶体结构无法代表生理相关构象</td>
+<td>Methods：apo-FXIIa 进行 3 条 1 μs MD，聚类选代表构象</td>
+</tr>
+<tr>
+<td>大规模库筛选计算成本高</td>
+<td>约 2100 万化合物无法用传统对接全量处理</td>
+<td>传统对接速度慢，无法覆盖超大库</td>
+<td>Methods：KarmaDock 用于初筛（速度优势）</td>
+</tr>
+<tr>
+<td>深度学习打分可靠性存疑</td>
+<td>单一 DL 打分可能产生假阳性</td>
+<td>DL 模型训练分布与目标体系可能不匹配</td>
+<td>Methods：用 CarsiDock 重对接 + RTMScore 重打分形成层级验证</td>
+</tr>
+<tr>
+<td>结合自由能计算精度有限</td>
+<td>MM/GBSA 结果受熵贡献影响大</td>
+<td>熵项计算成本高且近似粗糙</td>
+<td>Methods：用正态模分析（normal mode）估计熵贡献</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：一个「MD 构象生成 → DL 初筛 → DL 重对接 → DL 重打分 → MD 验证 → MM/GBSA 评估」的六步流水线。</p>
+<p><strong>2) 核心洞察</strong>：FXIIa 的活性位点柔性不是「噪声」而是「信息」——通过 apo-MD 采样并聚类选取代表性构象，将柔性编码进受体结构本身，再交给 DL 工具做大规模筛选，从而在保持速度的同时提升命中率。此外，用多个 DL 工具形成「初筛-重对接-重打分」的层级漏斗，而非依赖单一模型，降低假阳性。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：对于任何柔性靶标（如激酶、磷酸酶、蛋白-蛋白相互作用界面），「先 MD 采样构象、再 AI 筛选」的范式可迁移；且「多模型层级验证」优于「单模型端到端」。这一思路对构象采样、诱导契合对接、甚至 AlphaFold 多构象输出后的虚拟筛选均有直接借鉴意义。</p>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：FXIIa 催化域晶体结构（PDB 6B74）；约 2100 万化合物库</li>
+<li><strong>输出</strong>：4 个结构多样的命中化合物（DR1-DR4），及其结合自由能、稳定性评估、ADMET 预测</li>
+<li><strong>模块</strong>：
+  1. 结构准备：PyMOL 3.1 清理，MODELLER 补缺失区域
+  2. 构象采样：3 条独立 1 μs apo-MD（Amber18，ff19SB，OPC 水），聚类选代表构象
+  3. 初筛：KarmaDock（DL 对接）对全库筛选
+  4. 重对接：CarsiDock 对初筛命中重对接
+  5. 重打分：RTMScore 对重对接结果打分
+  6. 药物性质预测：SwissADME（类药性、药代）
+  7. 最终验证：MD 模拟（微秒级）+ MM/GBSA 结合自由能（含熵校正）</li>
+<li><strong>工具</strong>：PyMOL 3.1、MODELLER、Amber18（ff19SB、GAFF2、OPC、AM1-BCC）、AmberTools CPPTRAJ、MMPBSA.py、SwissADME、DrugFlow 平台（KarmaDock、CarsiDock、RTMScore）</li>
+<li><strong>假设</strong>：apo-MD 采样的代表性构象能覆盖活性位点的生理相关柔性；DL 打分函数在层级验证下能有效富集真阳性；MM/GBSA 能区分命中与参考抑制剂的相对结合强弱</li>
+<li><strong>流程</strong>：结构准备 → apo-MD 采样 → 聚类选构象 → KarmaDock 全库初筛 → CarsiDock 重对接 → RTMScore 重打分 → SwissADME 过滤 → 对最终命中做 μs 级 MD + MM/GBSA</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构准备 + MODELLER 补环</td>
+<td>获得完整、可模拟的受体结构</td>
+<td>晶体结构可能缺失 loop 区域，影响 MD 与对接</td>
+<td>输入：PDB 6B74；输出：完整结构</td>
+<td>Methods 节描述</td>
+<td>预期影响：缺失区域导致 MD 不稳定或对接位点不完整 [预期效应]</td>
+</tr>
+<tr>
+<td>apo-MD 采样 + 聚类</td>
+<td>生成活性位点代表性构象</td>
+<td>静态结构无法反映柔性</td>
+<td>输入：完整结构；输出：1 个代表构象</td>
+<td>Methods：3 条 1 μs MD，聚类选代表</td>
+<td>预期影响：若用静态结构，命中率可能显著下降 [预期效应]</td>
+</tr>
+<tr>
+<td>KarmaDock 初筛</td>
+<td>对 2100 万库快速筛选</td>
+<td>传统对接无法处理此规模</td>
+<td>输入：库 + 受体；输出：初筛命中集</td>
+<td>Methods 节描述</td>
+<td>预期影响：移除后需用更慢工具，吞吐量下降 [预期效应]</td>
+</tr>
+<tr>
+<td>CarsiDock 重对接</td>
+<td>对初筛命中做更精确的对接</td>
+<td>单一 DL 模型可能产生假阳性</td>
+<td>输入：初筛命中；输出：重对接构象</td>
+<td>Methods 节描述</td>
+<td>预期影响：假阳性率可能上升 [预期效应]</td>
+</tr>
+<tr>
+<td>RTMScore 重打分</td>
+<td>对重对接结果重新排序</td>
+<td>不同打分函数互补，降低单一模型偏差</td>
+<td>输入：重对接构象；输出：排序列表</td>
+<td>Methods 节描述</td>
+<td>预期影响：排序质量可能下降 [预期效应]</td>
+</tr>
+<tr>
+<td>SwissADME 过滤</td>
+<td>评估类药性与药代</td>
+<td>排除不可成药化合物</td>
+<td>输入：候选；输出：ADMET 属性</td>
+<td>Methods 节描述</td>
+<td>预期影响：可能纳入毒性/代谢差的化合物 [预期效应]</td>
+</tr>
+<tr>
+<td>MD + MM/GBSA 验证</td>
+<td>评估结合稳定性与自由能</td>
+<td>对接打分不足以证明稳定结合</td>
+<td>输入：命中-受体复合物；输出：RMSD、结合自由能</td>
+<td>Results：DR1-DR3 稳定，DR1/DR3 优于 1303</td>
+<td>移除后：无法区分稳定与不稳定结合 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>MM/GBSA 结合自由能</strong>（Methods 节描述，具体公式未在摘要中给出，以下为通用形式）：</p>
+<p>[
+\Delta G_{\text{bind}} = \Delta E_{\text{MM}} + \Delta G_{\text{GB}} + \Delta G_{\text{SA}} - T\Delta S
+]</p>
+<ul>
+<li>(\Delta E_{\text{MM}})：分子力学气相能（内能 + 范德华 + 静电）</li>
+<li>(\Delta G_{\text{GB}})：广义 Born 溶剂化能</li>
+<li>(\Delta G_{\text{SA}})：非极性溶剂化能（基于溶剂可及表面积）</li>
+<li>(T\Delta S)：熵贡献（本文用正态模分析估计）</li>
+</ul>
+<p><strong>用途</strong>：比较 DR1-DR4 与参考抑制剂 1303 的相对结合强弱。
+<strong>直觉</strong>：将结合自由能分解为气相相互作用与溶剂化代价，熵项修正构象自由度损失。
+<strong>来源</strong>：Methods 节（MMPBSA.py，MM/GBSA 方法）。</p>
+<blockquote>
+<p>注：摘要未给出具体数值公式，以上为方法学通用形式，具体参数未提供。</p>
+</blockquote>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：约 2100 万化合物库（来源未提供）；FXIIa 催化域晶体结构 PDB 6B74</li>
+<li><strong>规模</strong>：全库初筛 → 层级过滤 → 最终 4 个命中</li>
+<li><strong>指标</strong>：结合自由能（MM/GBSA）、MD 稳定性（RMSD 等，具体数值未在摘要中给出）、ADMET 预测属性</li>
+<li><strong>基线</strong>：参考抑制剂 1303</li>
+<li><strong>预算/算力</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供（计算集群信息缺失）</li>
+<li><strong>Oracle 输入</strong>：无实验验证；仅计算预测</li>
+<li><strong>评测协议</strong>：MD 模拟评估结合稳定性；MM/GBSA 比较结合自由能；SwissADME 预测药代</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apo-MD 采样 + 聚类选构象</td>
+<td>活性位点柔性可通过 MD 捕捉</td>
+<td>3 条独立 1 μs MD</td>
+<td>获得代表性构象用于筛选</td>
+<td>MD 可生成用于对接的柔性受体构象</td>
+<td>未证明该构象优于其他构象选择策略</td>
+<td>Methods</td>
+</tr>
+<tr>
+<td>KarmaDock 全库初筛</td>
+<td>DL 可处理 2100 万级库</td>
+<td>无对比基线</td>
+<td>获得初筛命中集</td>
+<td>DL 初筛具备高通量能力</td>
+<td>未报告初筛命中率/富集因子</td>
+<td>Methods</td>
+</tr>
+<tr>
+<td>CarsiDock + RTMScore 重打分</td>
+<td>层级验证可降低假阳性</td>
+<td>无对比单一模型</td>
+<td>4 个结构多样命中</td>
+<td>多模型层级可富集候选</td>
+<td>未与单一模型对比</td>
+<td>Methods</td>
+</tr>
+<tr>
+<td>μs 级 MD 模拟</td>
+<td>命中能稳定结合 FXIIa</td>
+<td>4 个命中 + 参考 1303</td>
+<td>DR1-DR4 均稳定结合</td>
+<td>命中具有结合稳定性</td>
+<td>未报告 RMSD 数值</td>
+<td>Results</td>
+</tr>
+<tr>
+<td>MM/GBSA 结合自由能</td>
+<td>DR1/DR3 优于参考 1303</td>
+<td>与 1303 对比</td>
+<td>DR1、DR3 更优</td>
+<td>部分命中具有更优结合能</td>
+<td>未报告具体 ΔG 数值</td>
+<td>Results</td>
+</tr>
+<tr>
+<td>SwissADMET 预测</td>
+<td>命中具有良好药代</td>
+<td>无对比</td>
+<td>4 个命中均显示有利属性</td>
+<td>命中具有成药潜力</td>
+<td>仅为计算预测，无实验验证</td>
+<td>Results</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅计算筛选与验证，无体外/体内实验。结论限于「潜在抑制剂」而非「已验证抑制剂」。</li>
+<li><strong>Oracle/真值输入</strong>：无实验真值；参考抑制剂 1303 为计算对比基线，非实验阳性对照。</li>
+<li><strong>端到端状态</strong>：工作流端到端为计算流水线，未闭环到实验验证。</li>
+<li><strong>算力成本</strong>：未报告；3 条 1 μs MD + 2100 万库 DL 筛选的算力需求未量化。</li>
+<li><strong>历史数据依赖</strong>：DL 工具（KarmaDock、CarsiDock、RTMScore）的训练分布未知，可能影响泛化。</li>
+<li><strong>模型依赖</strong>：结果依赖所选 DL 工具、力场（ff19SB、GAFF2）、溶剂模型（OPC）、MM/GBSA 近似。</li>
+<li><strong>最难情形</strong>：活性位点柔性最大的构象可能未被聚类代表构象覆盖；MM/GBSA 对熵的近似可能高估/低估结合。</li>
+<li><strong>群体/领域边界</strong>：结论仅适用于 FXIIa 靶点；对其他丝氨酸蛋白酶（如凝血酶、FXa）不可直接外推。</li>
+<li><strong>不确定性</strong>：未报告误差棒、重复实验或统计显著性；MM/GBSA 结果未与实验结合数据校准。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在计算层面，该工作流能从 2100 万化合物中识别出 4 个结构多样的 FXIIa 结合候选，其中 2 个的 MM/GBSA 结合自由能优于参考抑制剂 1303，且所有命中具有预测的良好药代属性；但缺乏实验验证，不能断言这些化合物在体内具有抗血栓活性或低出血风险。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的摘要与 Methods 节中，作者未明确列出「局限性」段落。以下为作者提及的相关约束（非正式局限）：</p>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺乏实验验证</td>
+<td>命中化合物未进行体外酶活或细胞实验</td>
+<td>未明确提及</td>
+<td>全文未提供</td>
+</tr>
+<tr>
+<td>活性位点柔性挑战</td>
+<td>作者承认柔性「hampers the discovery」</td>
+<td>用 MD 构象缓解</td>
+<td>Context 段</td>
+</tr>
+<tr>
+<td>计算预测的药代属性</td>
+<td>SwissADME 仅为预测</td>
+<td>未明确提及</td>
+<td>Methods 节</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：作者未在提供的材料中明确列出局限性清单；以上为从文中推断的约束。</p>
+</blockquote>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>聚类选单一代表构象</td>
+<td>可能丢失其他重要构象；不同聚类数/算法会改变结果</td>
+<td>受体构象选择是 SBVS 的关键变量</td>
+<td>用多个代表构象做集合对接对比命中率</td>
+<td>Methods：聚类选代表构象</td>
+</tr>
+<tr>
+<td>无实验验证</td>
+<td>计算命中可能为假阳性；MM/GBSA 与实验结合数据相关性未知</td>
+<td>结论强度受限</td>
+<td>对 DR1-DR4 做酶活测定（如荧光底物法）</td>
+<td>Results：仅计算预测</td>
+</tr>
+<tr>
+<td>未报告初筛命中率/富集因子</td>
+<td>无法评估 DL 工具在该靶点上的实际富集能力</td>
+<td>影响方法可推广性判断</td>
+<td>报告 KarmaDock 初筛命中数、与随机筛选对比</td>
+<td>Methods：未提供</td>
+</tr>
+<tr>
+<td>未与经典对接工具对比</td>
+<td>无法判断 DL 工具相对传统方法的优势</td>
+<td>方法贡献度不明</td>
+<td>用 Glide/AutoDock 对同一库子集做对比</td>
+<td>全文未提供</td>
+</tr>
+<tr>
+<td>MM/GBSA 未含熵的详细讨论</td>
+<td>正态模熵估计对柔性体系可能误差大</td>
+<td>结合自由能排序可能受影响</td>
+<td>用 FEP/TI 或实验结合数据交叉验证</td>
+<td>Methods：正态模分析</td>
+</tr>
+<tr>
+<td>2100 万库的化学多样性未知</td>
+<td>库来源与多样性影响命中结构新颖性</td>
+<td>影响「结构多样」claim 的强度</td>
+<td>分析库的骨架聚类与理化性质分布</td>
+<td>未提供库来源</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li><strong>「MD 构象 + DL 筛选」混合范式</strong>：对柔性靶标，先用 apo-MD 采样（多条独立轨迹）再聚类选代表构象，可编码活性位点柔性，提升后续 DL 对接的命中率。可迁移到任何柔性靶标的 SBVS 流程。</li>
+<li><strong>层级验证策略</strong>：不依赖单一 DL 模型，而是「初筛（KarmaDock）→ 重对接（CarsiDock）→ 重打分（RTMScore）」形成漏斗，降低假阳性。可迁移到其他 DL 打分工具组合（如 GNINA + DeepDock + RTMScore）。</li>
+<li><strong>MM/GBSA 作为最终排序工具</strong>：在 DL 筛选后，用物理模拟（MD + MM/GBSA）做最终验证，兼顾速度与物理合理性。可迁移到任何 DL 筛选后的候选验证环节。</li>
+<li><strong>参考抑制剂对比设计</strong>：以已知抑制剂（1303）作为计算基准，比较结合自由能，为命中排序提供相对参照。可迁移到其他靶点的命中评估。</li>
+<li><strong>药物化学性质早期过滤</strong>：在计算流程中嵌入 SwissADME 预测，提前排除类药性差的候选。可迁移到任何虚拟筛选工作流。</li>
+<li><strong>对柔性位点的处理思路</strong>：不是试图「冻结」活性位点，而是通过 MD 采样「拥抱」其柔性，将构象多样性转化为筛选资源。对构象采样、诱导契合对接、AlphaFold 多构象筛选均有启发。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold / 结构预测</strong>：本文用 MD 而非 AlphaFold 生成受体构象；但 AlphaFold 的多构象输出（如 pLDDT 低的区域）可作为 MD 初始构象或补充采样，与本文的「MD 构象 + DL 筛选」思路互补。</li>
+<li><strong>分子对接</strong>：本文的层级筛选（KarmaDock → CarsiDock）与经典对接（Glide、AutoDock）形成对比；DL 对接工具的速度优势使其能处理 2100 万级库，这是传统对接难以企及的。</li>
+<li><strong>MD 模拟</strong>：本文的 apo-MD 采样与复合物 MD 验证，与自由能计算（MM/GBSA）结合，是物理模拟在虚拟筛选中的典型应用；可迁移到其他靶点的结合自由能排序。</li>
+<li><strong>构象采样</strong>：本文的「聚类选代表构象」策略与集合对接（ensemble docking）思想一致；可与其他采样方法（如副本交换 MD、伞形采样）结合。</li>
+<li><strong>序列/结构设计</strong>：本文未涉及设计，但其「柔性位点 + DL 筛选」思路可迁移到设计任务中——例如在设计蛋白-小分子结合口袋时，用 MD 采样评估设计构象的稳定性。</li>
+<li><strong>凝血相关靶点</strong>：FXIIa 与 FXa、凝血酶等同属丝氨酸蛋白酶家族，本文的筛选流程可迁移到这些靶点，但需注意活性位点差异。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：多构象集合对接 vs 单构象 DL 筛选的基准测试
+   - <strong>来源局限/观察</strong>：本文仅用单一代表构象做 DL 筛选，未与多构象集合对接对比。
+   - <strong>核心假设</strong>：对 FXIIa 这类柔性靶标，多构象集合对接的命中率显著高于单构象 DL 筛选。
+   - <strong>初步方法</strong>：用本文的 MD 轨迹生成 5-10 个聚类构象，分别用 KarmaDock 筛选同一库子集，对比命中率与富集因子。
+   - <strong>验证方式</strong>：用已知 FXIIa 抑制剂作为阳性对照，计算富集因子（EF）和 BEDROC 指标。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：DL 打分与 MM/GBSA 排序一致性分析
+   - <strong>来源局限/观察</strong>：本文用 RTMScore 重打分后，又用 MM/GBSA 验证，但未报告两者排序的一致性。
+   - <strong>核心假设</strong>：RTMScore 与 MM/GBSA 的排序在 FXIIa 上高度一致，可减少 MD 验证的候选数量。
+   - <strong>初步方法</strong>：对 DR1-DR4 及更多初筛命中，比较 RTMScore 排名与 MM/GBSA ΔG 排名，计算 Spearman 相关系数。
+   - <strong>验证方式</strong>：若相关性高，可提出「DL 打分 + 少量 MD 验证」的加速流程。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AlphaFold 多构象输出作为 DL 筛选受体的可行性
+   - <strong>来源局限/观察</strong>：本文用 MD 生成受体构象，但未探索 AlphaFold 的多构象输出（如 pLDDT 低区域）是否可作为替代或补充。
+   - <strong>核心假设</strong>：AlphaFold 生成的替代构象与 MD 采样构象在 DL 筛选中表现相当，且成本更低。
+   - <strong>初步方法</strong>：用 AlphaFold 对 FXIIa 催化域生成多构象，与 MD 聚类构象分别做 KarmaDock 筛选，对比命中率。
+   - <strong>验证方式</strong>：用已知抑制剂富集因子评估。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：FXIIa 活性位点柔性热点分析指导的靶向筛选
+   - <strong>来源局限/观察</strong>：本文用 MD 采样但未分析哪些残基的柔性对配体结合影响最大。
+   - <strong>核心假设</strong>：活性位点中特定 loop 的柔性是决定抑制剂选择性的关键，可据此设计选择性抑制剂。
+   - <strong>初步方法</strong>：对 MD 轨迹做残基波动分析（RMSF）和主成分分析，识别柔性热点；用这些信息指导药效团设计。
+   - <strong>验证方式</strong>：设计针对柔性热点的化合物库，用 MM/GBSA 评估选择性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：DL 筛选 + MD 验证流程的泛化性测试（多靶点）
+   - <strong>来源局限/观察</strong>：本文流程仅在 FXIIa 上验证，未测试其他丝氨酸蛋白酶。
+   - <strong>核心假设</strong>：该「MD 构象 + DL 层级筛选」流程可泛化到 FXa、凝血酶等靶点。
+   - <strong>初步方法</strong>：对 FXa 和凝血酶重复相同流程，对比命中率与已知抑制剂富集。
+   - <strong>验证方式</strong>：用公共数据库（如 DUD-E）中的抑制剂集评估。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and methods as presented in the abstract; no figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors report an integrated computational workflow combining deep learning-based virtual screening and molecular dynamics simulations to identify four structurally distinct FXIIa inhibitors (DR1-DR4) from a library of approximately 21 million compounds. They claim stable binding for all four compounds, more favorable binding free energies for DR1 and DR3 relative to a reference inhibitor, and favorable predicted pharmacokinetic properties.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, structural data, or validation experiments are visible</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, docking scores, binding free energy values, simulation convergence metrics, compound structures, and any experimental validation data</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a computationally intensive and methodologically reasonable workflow for identifying potential FXIIa inhibitors. The combination of deep learning-based docking tools with microsecond-scale molecular dynamics and binding free energy calculations is appropriate for the stated challenge of active-site flexibility. However, the abstract provides no quantitative results, no comparison metrics, and no experimental validation. The core claims of "stable binding" and "more favorable binding free energies" cannot be assessed without numerical data and statistical analysis. The work is potentially of interest to the anticoagulant discovery community, but the evidence presented in the abstract is insufficient to establish the case.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in thrombosis and hemostasis, medicinal chemists targeting coagulation factors, and computational chemists developing or applying deep learning-based virtual screening workflows. The potential for reduced bleeding risk anticoagulants is clinically relevant, and the methodological approach may interest those working on flexible active site targets.</li>
+<li><strong>Major strengths</strong> The workflow addresses a recognized challenge in FXIIa inhibitor discovery, namely active-site flexibility, by using ensemble-based screening with microsecond-scale simulations. The use of multiple docking and rescoring tools in a hierarchical manner is a sound strategy. The library scale of approximately 21 million compounds is substantial and appropriate for a high-throughput virtual screen.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "Microsecond-scale molecular dynamics simulations suggested stable binding of all four compounds to FXIIa, and binding free energy calculations suggested that DR1 and DR3 exhibited more favorable binding free energies than the reference inhibitor 1303."</li>
+<li><strong>Evidence pointer</strong> Abstract, results section not provided</li>
+<li><strong>Concern</strong> The claim of stable binding is based on simulations, but no quantitative metrics are provided, such as root-mean-square deviation (RMSD), root-mean-square fluctuation (RMSF), or interaction energy values. Similarly, the binding free energy comparison with the reference inhibitor is stated without any numerical values, error estimates, or statistical significance testing. The abstract does not indicate how many replicates were used for the binding free energy calculations or whether the differences are within the expected error of the MM/GBSA method.</li>
+<li><strong>Why it matters</strong> Without quantitative data, the reader cannot determine whether the observed binding stability is meaningful or whether the free energy differences are statistically significant. MM/GBSA methods are known to have substantial error, and claims of superiority over a reference compound require error bars and replicate analysis. This is the central claim of the paper and cannot be evaluated from the abstract alone.</li>
+<li><strong>Resolution test</strong> Provide RMSD and RMSF plots for all four compounds and the reference, binding free energy values with standard deviations from multiple independent simulations, and a statistical test (e.g., t-test or bootstrap) comparing DR1 and DR3 to the reference inhibitor.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Validation</li>
+<li><strong>Claim pointer</strong> "Four structurally distinct hits (DR1-DR4) were identified."</li>
+<li><strong>Evidence pointer</strong> Abstract, results section not provided</li>
+<li><strong>Concern</strong> The abstract reports identification of four hits from a virtual screen but provides no experimental validation, no orthogonal computational validation beyond the same docking/scoring family, and no comparison to known FXIIa inhibitors other than the single reference compound. The abstract does not state whether these compounds were tested in any biochemical or cellular assay.</li>
+<li><strong>Why it matters</strong> Virtual screening hits frequently fail in experimental assays due to false positives, solubility issues, or off-target effects. Without any experimental validation, the claim that these are "hits" is premature. The term "hit" implies some level of confirmed activity, which is not demonstrated.</li>
+<li><strong>Resolution test</strong> Provide experimental IC50 or Ki values for DR1-DR4 against FXIIa, or clearly rephrase the claim to "computationally predicted candidates" and add a statement that experimental validation is ongoing or planned.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Methodological transparency</li>
+<li><strong>Claim pointer</strong> "A hierarchical screening workflow was carried out in DrugFlow using KarmaDock for primary screening, CarsiDock for redocking, and RTMScore for rescoring."</li>
+<li><strong>Evidence pointer</strong> Abstract, methods section not provided</li>
+<li><strong>Concern</strong> The abstract does not specify the scoring thresholds, the number of compounds retained at each stage, or the criteria for selecting the final four hits. The enrichment rate from 21 million to 4 compounds is not described, and no performance metrics for the docking tools on this specific target are provided.</li>
+<li><strong>Why it matters</strong> Without knowing the selection criteria and the attrition at each stage, the reader cannot assess whether the workflow is reproducible or whether the final hits are the result of a reasonable filtering process. The lack of thresholds makes it impossible to evaluate the stringency of the screen.</li>
+<li><strong>Resolution test</strong> Provide a flowchart or table showing the number of compounds at each stage, the scoring cutoffs used, and the rationale for the final selection.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Methods description</li>
+<li><strong>Evidence pointer</strong> Abstract, methods section</li>
+<li><strong>Issue</strong> The abstract states that "missing regions were modeled with MODELLER" but does not specify which regions of the FXIIa catalytic domain were missing or the confidence in the modeled structure.</li>
+<li><strong>Required correction</strong> Specify the missing residues and provide a validation metric for the modeled regions, such as a Ramachandran plot or DOPE score.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Pharmacokinetic claims</li>
+<li><strong>Evidence pointer</strong> Abstract, results section</li>
+<li><strong>Issue</strong> The claim of "favorable predicted pharmacokinetic properties" is vague. The abstract does not state which properties were predicted (e.g., solubility, permeability, metabolic stability) or the specific values.</li>
+<li><strong>Required correction</strong> List the specific pharmacokinetic parameters predicted and provide the values for each compound, with a brief comparison to the reference inhibitor.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Simulation details</li>
+<li><strong>Evidence pointer</strong> Abstract, methods section</li>
+<li><strong>Issue</strong> The abstract does not specify the number of replicates for the binding free energy calculations or the length of the production runs used for the MMPBSA analysis.</li>
+<li><strong>Required correction</strong> State the number of independent simulations and the trajectory length used for the binding free energy calculations.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (lack of quantitative binding data and statistical analysis), R1-M2 (no experimental validation or clear rephrasing of the "hit" claim), R1-M3 (missing screening thresholds and attrition data)</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The application of deep learning-based docking to FXIIa with ensemble-based screening is moderately original, though similar workflows have been reported for other targets. Scientific importance: The potential for safer anticoagulants is clinically significant, but the abstract does not demonstrate that the identified compounds have any functional activity. Interdisciplinary readership: The work bridges computational chemistry and thrombosis research, which could attract a broad audience if the results are robust. Technical soundness: The methods are appropriate in principle, but the lack of quantitative results and validation prevents assessment of technical execution. Readability for nonspecialists: The abstract is generally clear, though the deep learning tool names and simulation details may be opaque to non-computational readers.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The workflow is reasonable and the target is clinically relevant, but the abstract lacks the quantitative data and validation needed to support the central claims. I would be supportive if the full manuscript provides binding free energy values with error analysis, simulation stability metrics, and at least preliminary experimental validation or a clear statement that these are computational predictions pending experimental testing.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that DR1 and DR3 exhibit "more favorable binding free energies" than the reference inhibitor is unsupported without numerical values and statistical analysis.</li>
+<li>The claim of "stable binding" for all four compounds is unsupported without RMSD/RMSF data or interaction energy analysis.</li>
+<li>The characterization of DR1-DR4 as "hits" is unsupported without experimental activity data.</li>
+<li>The claim of "favorable predicted pharmacokinetic properties" is unverifiable without specific parameters and values.</li>
+<li>The overall implication that these compounds are viable leads for anticoagulant discovery is premature without experimental validation.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

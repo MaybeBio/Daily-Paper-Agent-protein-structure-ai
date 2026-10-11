@@ -1,0 +1,80 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose trFlow, a conditional flow matching method for ultrafast all-atom protein conformational ensemble generation. They claim three core innovations (hybrid sampling, decoupled architecture, NMR fine-tuning) and report superior performance over competing methods across dual-conformation proteins, NMR ensembles, and a CASP16 dynamic target, with an order-of-magnitude speed advantage.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark details, or methodological descriptions are available
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, benchmark definitions, baseline specifications, and code or data availability statements
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable contribution to protein conformational sampling, but the evidence provided is insufficient to evaluate the validity of the core claims. The innovations are described at a conceptual level without technical detail, and the performance claims lack quantitative support. The work may be of interest to the structural biology and machine learning communities, but the current abstract alone does not establish the case.
+- **Who would be interested in the results, and why** Computational structural biologists studying conformational ensembles and alternative functional states; machine learning researchers developing generative models for biomolecular systems; and experimentalists seeking practical tools for ensemble generation in drug discovery or dynamics interpretation.
+- **Major strengths** The problem addressed is important and timely. The proposed hybrid sampling scheme and decoupled architecture are conceptually reasonable directions for improving efficiency. The inclusion of NMR ensemble fine-tuning is a thoughtful approach to capturing heterogeneity. The claimed speed advantage is practically relevant.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "trFlow outperforms competing methods in recovering challenging states and reproducing experimental heterogeneity"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states that trFlow outperforms competing methods, but no quantitative metrics, baseline names, or statistical significance are provided. It is unclear which methods were compared, on which specific benchmarks, and by what criteria.
+  - **Why it matters** Without quantitative evidence, the central performance claim cannot be assessed. The reader cannot determine whether the reported advantage is meaningful or within noise.
+  - **Resolution test** Provide benchmark tables with performance metrics (e.g., RMSD, diversity, coverage) for trFlow and all baselines, including error bars or significance tests.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "an order of magnitude faster than existing all-atom approaches"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The speed claim is presented without any runtime measurements, hardware specifications, or comparison protocol. It is unclear whether the speed advantage is consistent across all benchmarks or specific to certain conditions.
+  - **Why it matters** Speed is a key selling point of the method. Without measured runtimes and a clear comparison setup, the claim is not verifiable.
+  - **Resolution test** Provide runtime tables with wall-clock times for trFlow and baselines on identical hardware, with details on batch sizes and sampling steps.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** "a hybrid single- and multi-step sampling scheme" and "a decoupled representation-generation architecture"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The two architectural innovations are described only at a high level. No details are given on how the hybrid scheme decides between single and multi-step sampling, or how the decoupled architecture separates representation from generation.
+  - **Why it matters** These innovations are central to the method's claimed performance. Without technical detail, the method cannot be reproduced or evaluated for novelty.
+  - **Resolution test** Provide a methods section with formal descriptions, algorithm pseudocode, and architectural diagrams.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** "fine-tuning on NMR ensembles to better capture conformational heterogeneity"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract claims that NMR fine-tuning improves heterogeneity capture, but no comparison is shown between models with and without this fine-tuning. It is unclear whether the improvement is specific to NMR data or generalizable.
+  - **Why it matters** This is a claimed innovation, and its contribution to the overall performance must be isolated to justify its inclusion.
+  - **Resolution test** Provide an ablation study showing performance with and without NMR fine-tuning on the same benchmarks.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Benchmark description
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract mentions "dual-conformation proteins, NMR ensembles, and a CASP16 dynamic target" but does not specify the number of targets, the diversity of systems, or the selection criteria.
+  - **Required correction** Specify the number and nature of benchmark systems, and clarify how they were selected.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Baseline methods
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The competing methods are not named. It is unclear whether they include state-of-the-art diffusion or flow-based approaches.
+  - **Required correction** List all baseline methods and their versions or configurations.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Data and code availability
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** No statement is made about code or data availability, which is essential for reproducibility.
+  - **Required correction** Include a data and code availability statement in the full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The abstract does not provide sufficient quantitative or technical evidence to support the central claims of performance, speed, and methodological novelty.
+- **Assessment against Nature-style criteria** Originality: The combination of flow matching with hybrid sampling and NMR fine-tuning is potentially original, but the abstract does not provide enough detail to distinguish it from existing work. Scientific importance: The problem of conformational ensemble generation is important, and a fast all-atom method would be valuable, but the significance is not yet demonstrated. Interdisciplinary readership: The work bridges machine learning and structural biology, which is of broad interest, but the abstract is too technical for nonspecialists to fully appreciate. Technical soundness: Not assessable from the abstract alone; the claims require quantitative and methodological support. Readability for nonspecialists: The abstract is concise but assumes familiarity with flow matching and conformational sampling; a brief explanation of the problem context would improve accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a promising direction, but the core claims are unsupported without the full manuscript. I would be supportive if the technical concerns are resolved with quantitative results and methodological detail.
+
+## Risk / unsupported claims
+- The claim that trFlow "outperforms competing methods" is unsupported without quantitative comparisons.
+- The claim of being "an order of magnitude faster" is unsupported without runtime measurements.
+- The claim that the three innovations contribute to performance is unsupported without ablations.
+- The generalizability of the method beyond the mentioned benchmarks is not assessable.
+- The practical scalability for "large-scale generation" is asserted but not demonstrated.

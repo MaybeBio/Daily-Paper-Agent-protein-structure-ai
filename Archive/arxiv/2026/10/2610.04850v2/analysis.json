@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2610.04850v2",
+  "title": "PIT-GCL: Protein Interaction using Topological Graph Contrastive Learning",
+  "authors": "Jae Won Choi; Ryoonki Hong; Alan Liang; Manjula Adiveppa Wader; Bingsong Zeng; Peiyang Tang; Longwei Liu; Ruishan Liu",
+  "journal": "",
+  "published_date": "2026-10-04",
+  "window": {
+    "start": "2026-10-04",
+    "end": "2026-10-10"
+  },
+  "score": 8,
+  "one_liner_zh": "该文提出PIT-GCL，利用拓扑图对比学习结合ESM-2嵌入和持久同源描述符进行蛋白质相互作用预测，属于蛋白质结构相关的AI计算建模，方法创新且可迁移至大规模筛选。",
+  "abstract": "Protein binding prediction is central to target identification, therapeutic binder design, and large scale screening, yet remains challenging because binding depends on sequence, three dimensional geometry, and global structural organization. Recent folding models such as AlphaFold3 and Boltz-2 have substantially improved structure prediction, but their confidence outputs (pLDDT, pTM, ipTM) are not specifically designed for binary binding prediction, and dedicated structure aware predictors often require bound complex structures that are unavailable at screening scale. We introduce PIT-GCL, a dual tower structure aware framework that encodes each protein independently from its amino acid sequence, Cα point cloud, and a global persistent homology descriptor. Each tower combines residue ESM-2 embeddings with a topological summary computed from the H0 and H1 persistence landscapes of a Vietoris-Rips filtration, and processes the resulting tokens with a structure aware Transformer in which pairwise Cα distances enter as a learned attention bias. A bidirectional cross attention module then performs latent space soft docking between the two per-protein representations, and the model is trained with a combined binary cross entropy and NT-Xent contrastive objective. On three binary interaction prediction benchmarks, general PPI on PPIRef, TCRpMHC binding on STAG, and whole chain pairs on PPB-Affinity, PIT-GCL outperforms representative sequence based, structure aware, and task specific baselines on general PPI under our evaluation, and is the only method above chance on PPB-Affinity; on TCR-pMHC it leads at a fixed decision threshold but is outranked by a task specific sequence model. Because each protein is encoded independently in the first phase, its representation can be precomputed and reused across candidate pairs, which is convenient for large scale screening.",
+  "abstract_zh": "蛋白质结合预测对于靶标识别、治疗性结合物设计和大规模筛选至关重要，但由于结合依赖于序列、三维几何结构以及整体结构组织，因此仍具挑战性。近期折叠模型如AlphaFold3和Boltz-2显著改善了结构预测，但其置信度输出（pLDDT、pTM、ipTM）并非专门为二元结合预测设计，且专用的结构感知预测器通常需要结合复合物结构，而这些结构在筛选规模下往往不可得。我们提出PIT-GCL，一种双塔结构感知框架，分别从氨基酸序列、Cα点云和全局持久同源描述符对每个蛋白质进行独立编码。每个塔将残基ESM-2嵌入与从Vietoris-Rips过滤的H0和H1持久性景观计算出的拓扑摘要相结合，并通过结构感知Transformer处理所得令牌，其中成对Cα距离作为学习到的注意力偏置输入。随后，双向交叉注意力模块在两个蛋白质表示之间执行潜在空间软对接，模型通过组合的二元交叉熵和NT-Xent对比目标进行训练。在三个二元交互预测基准上——PPIRef上的通用PPI、STAG上的TCRpMHC结合以及PPB-Affinity上的全链对——在我们的评估下，PIT-GCL在通用PPI上优于代表性的基于序列、结构感知和任务特定基线，并且是PPB-Affinity上唯一高于随机水平的方法；在TCR-pMHC上，它在固定决策阈值下领先，但被一个任务特定序列模型超越。由于每个蛋白质在第一阶段被独立编码，其表示可以预计算并在候选对之间重用，这便于大规模筛选。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2610.04850v2",
+  "source_url": "https://arxiv.org/abs/2610.04850v2",
+  "paper_page_path": "papers/arxiv/2610.04850v2/index.html"
+}

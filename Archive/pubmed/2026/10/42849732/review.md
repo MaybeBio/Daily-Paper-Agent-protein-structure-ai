@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report the first crystal structure of a GT71 family enzyme, Mnt2p from *Saccharomyces cerevisiae*, at 2.40 Å resolution. They describe a two-domain architecture with a GT-A fold N-terminal domain and a novel C-terminal domain, propose a GDP-mannose binding site adjacent to a Mn(2+) ion coordinated by a DXD motif, and support alpha-(1-->3)-mannosyltransferase activity and substrate specificity through biochemical assays. Docking and molecular dynamics simulations are used to propose a structural basis for alpha-(1-->3) versus alpha-(1-->2) linkage selectivity.
+- **Visible evidence base** Abstract text only; no structural coordinates, kinetic data, mutagenesis results, or simulation parameters are provided
+- **Missing materials affecting confidence** Full manuscript, crystallographic statistics, electron density maps, activity assay details, substrate specificity data, docking and MD simulation parameters, and any validation of the proposed acceptor-binding model
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially significant advance in understanding yeast O-glycan biosynthesis by providing the first structural view of a GT71 family enzyme. The claim of a novel C-terminal domain and its proposed role in acceptor specificity is intriguing. However, the abstract alone provides insufficient evidence to evaluate the rigor of the structural determination, the biochemical validation, or the computational modeling. Several key claims, particularly regarding the molecular basis of linkage selectivity, are presented without supporting quantitative data. The work is likely of interest to glycobiology and glycosyltransferase communities, but the case as presented is not fully established from the supplied material.
+- **Who would be interested in the results, and why** Researchers studying glycosyltransferase structure-function relationships, yeast cell wall and glycoprotein biosynthesis, and the molecular evolution of linkage specificity in GT families. The first structure of a GT71 enzyme would also be of interest to structural biologists working on GT-A fold enzymes and to those investigating how acceptor substrate geometry dictates glycosidic linkage formation.
+- **Major strengths** The abstract reports the first experimentally determined structure of a GT71 family enzyme, filling a clear gap in structural coverage. The identification of a novel C-terminal domain unique to GT71 is a concrete and testable finding. The combination of structural, biochemical, and computational approaches is appropriate for addressing the question of linkage specificity.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness of structural determination
+  - **Claim pointer** "we report the crystal structure of Mnt2p at 2.40 A resolution, representing the first experimentally determined structure of a GT71 family enzyme"
+  - **Evidence pointer** Abstract only; crystallographic statistics not provided
+  - **Concern** The abstract states a 2.40 Å resolution structure but provides no information on data completeness, R-factors, Ramachandran statistics, or the quality of the electron density for key regions such as the active site and the DXD motif. Without these details, the reliability of the structural model cannot be assessed.
+  - **Why it matters** The entire mechanistic interpretation, including the proposed GDP-mannose binding site and the acceptor-binding model, depends on the accuracy of the atomic model. A structure with poor geometry or ambiguous density would undermine all downstream claims.
+  - **Resolution test** Provide crystallographic data collection and refinement statistics, including resolution, completeness, R-work/R-free, and validation metrics, in the full manuscript. Show representative electron density for the active site and the DXD motif.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Support for biochemical activity claim
+  - **Claim pointer** "we biochemically demonstrated its alpha-(1-->3)-mannosyltransferase activity and determined its substrate specificity toward alpha-mannobiose acceptors"
+  - **Evidence pointer** Abstract only; assay details not provided
+  - **Concern** The abstract claims enzymatic activity and substrate specificity but provides no quantitative data, such as kinetic parameters, product characterization, or controls. It is unclear how the alpha-(1-->3) linkage was confirmed in the product and whether the enzyme was tested against alternative acceptors to establish specificity.
+  - **Why it matters** The central functional claim is that Mnt2p specifically forms alpha-(1-->3) linkages. Without rigorous product analysis and appropriate negative controls, the possibility of non-specific or promiscuous activity cannot be excluded.
+  - **Resolution test** Provide detailed assay conditions, product analysis by HPLC or mass spectrometry, kinetic parameters if measured, and specificity data against a panel of acceptor substrates including alpha-(1-->2)-linked mannobiose.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Support for computational modeling claims
+  - **Claim pointer** "Docking and molecular dynamics simulations revealed that the C-terminal domain forms the acceptor substrate-binding site, providing the structural basis for alpha-(1-->3)-linkage selectivity"
+  - **Evidence pointer** Abstract only; simulation details not provided
+  - **Concern** The abstract states that docking and MD simulations "revealed" the acceptor-binding site and the basis for linkage selectivity, but no details are given on the docking protocol, force field, simulation length, convergence, or validation of the predicted binding mode. The term "revealed" implies a level of certainty that computational predictions typically do not warrant without experimental validation.
+  - **Why it matters** The proposed mechanism for linkage selectivity is a key novelty of the work. If the computational model is not robustly validated or is based on speculative docking poses, the mechanistic conclusion is not established.
+  - **Resolution test** Provide detailed methods for docking and MD, including software, parameters, simulation times, and convergence criteria. Ideally, validate the predicted acceptor-binding site with mutagenesis experiments or binding assays.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of domain nomenclature
+  - **Affected element** Structural description
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract describes an "N-terminal domain adopting a canonical GT-A fold" and a "novel C-terminal domain unique to the GT71 family" but does not specify the residue ranges or the overall domain organization. This makes it difficult to assess the novelty of the C-terminal domain.
+  - **Required correction** Specify the residue boundaries of each domain and clarify whether the C-terminal domain has any structural homologs in other GT families or is truly unique.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness of substrate specificity description
+  - **Affected element** Biochemical characterization
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract states specificity toward "alpha-mannobiose acceptors" but does not specify which anomeric or linkage configurations were tested. It is unclear whether the enzyme shows strict specificity for alpha-(1-->3) acceptors or accepts other alpha-mannobiose linkages.
+  - **Required correction** Clarify the panel of acceptors tested and explicitly state which linkages are accepted and which are not.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Comparison with alpha-(1-->2)-mannosyltransferases
+  - **Affected element** Mechanistic interpretation
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract states the mechanism is "distinct from the linkage specificity of alpha-(1-->2)-mannosyltransferases" but does not provide a structural comparison with any known alpha-(1-->2)-mannosyltransferase structure. A direct comparison would strengthen the claim.
+  - **Required correction** Include a structural comparison or at least a discussion of how the proposed acceptor-binding site differs from that of alpha-(1-->2)-mannosyltransferases.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (crystallographic validation), R1-M2 (biochemical product confirmation and specificity controls), R1-M3 (computational model validation)
+- **Assessment against Nature-style criteria** Originality is high, as this is the first GT71 structure and addresses a specific gap in understanding yeast O-glycan linkage formation. Scientific importance is moderate to high for the glycobiology community, though the broader impact beyond yeast glycosylation is not clearly articulated. Interdisciplinary readership is limited, as the topic is specialized; the abstract does not frame the work for a general structural biology or biochemistry audience. Technical soundness cannot be fully assessed from the abstract, but the described approach is appropriate. Readability for nonspecialists is adequate, though the abstract assumes familiarity with glycosyltransferase nomenclature and O-glycan biosynthesis.
+- **Recommendation posture** Supportive if technical concerns are resolved. The structural and biochemical claims are plausible and potentially significant, but the abstract alone does not provide sufficient evidence to establish the case. The authors must provide full crystallographic validation, rigorous biochemical product analysis, and robust computational modeling details in the full manuscript.
+
+## Risk / unsupported claims
+- The claim that the C-terminal domain is "novel" and "unique to the GT71 family" is unsupported without a structural homology search or comparison with other GT families.
+- The claim that docking and MD simulations "revealed" the acceptor-binding site and the basis for linkage selectivity is unsupported without simulation details and experimental validation.
+- The claim of "first experimentally determined structure of a GT71 family enzyme" is plausible but cannot be verified from the abstract alone.
+- The biochemical demonstration of alpha-(1-->3)-mannosyltransferase activity is unverifiable without product characterization data.
+- The proposed distinction from alpha-(1-->2)-mannosyltransferases is not supported by any comparative structural or functional data in the abstract.

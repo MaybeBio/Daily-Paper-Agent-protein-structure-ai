@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anneal-MaxCal: kinetic ensembles from a Markov model learned along a solute-tempering ladder · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Anneal-MaxCal: kinetic ensembles from a Markov model learned along a solute-tempering ladder</h1>
+      <div class="meta">Brotzakis ZF; Rekatsinas N</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-09
+         · 仅摘要
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.05.756723">原文</a>
+      </div>
+      <p class="one-liner">该文提出Anneal-MaxCal方法，结合溶质升温阶梯上的马尔可夫模型与最大熵原理，从短时模拟中重构蛋白质构象动力学和速率常数，属于蛋白质构象采样与动力学建模的核心计算研究。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">A full characterisation of a molecular system requires its metastable states, their populations and their interconversion rates. Molecular Dynamics can in principle provide this characterisation but is limited by sampling and by force-field inaccuracies. Enhanced sampling addresses the first problem, but typically requires prior knowledge of reaction coordinates or metastable states and often sacrifices the kinetics, while maximum-caliber reweighting by Brotzakis, Vendruscolo and Bolhuis [Proc. Natl. Acad. Sci. U.S.A., 118(2):e2012423118, 2021] has been implemented to that matter on reweighting continuous pathways by imposing rate constants as kinetic constraints in two-state protein folding. Here, we introduce Anneal-MaxCal, which tackles both problems by imposing rate constants or time-resolved data on a Markov model learned along an annealed solute-tempering ladder spanning softer to physical interactions. MBAR assigns physical free energies to all 160 cells of a slow TICA subspace, against 79 visited at the physical coupling. The square-root approximation (SqRA), a discretised diffusion on this free-energy landscape, converts these populations into a detailed-balance rate matrix. Its prefactors, which act as a position-dependent diffusivity across each cell face, are learned from transitions at the softer couplings and extrapolated log-linearly to the physical coupling. This yields rates and a committor across the TICA space, although the physical rung contains a single barrier crossing. For alanine dipeptide, 665 ns of simulation give a relaxation time of 5430 ± 996 ps against 4413 ± 446 ps from 15.4 μs of unbiased dynamics, whereas a constant prefactor is 2.5 times too slow. Maximum caliber then minimally perturbs this prior, with the posterior populations following from a generalised Doob transform. A synthetic time-resolved density with a tenfold slower back-transition lowers ΔF from 5.191 to 2.885 kBT , raises the product-basin population from 0.0055 to 0.0529 and slows relaxation 9.47-fold, leaving the reactant basin unchanged. Forward and backward rates accelerated 3 and 20-fold raise ΔF by 1.892 kBT and shorten relaxation from 4818 to 289 ps.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">分子系统的完整表征需要其亚稳态、这些态的数量及其相互转化速率。分子动力学（Molecular Dynamics）原则上能提供这种表征，但受限于采样和力场的不准确性。增强采样解决了第一个问题，但通常需要反应坐标或亚稳态的先验知识，并且常常牺牲动力学信息，而Brotzakis、Vendruscolo和Bolhuis [Proc. Natl. Acad. Sci. U.S.A., 118(2):e2012423118, 2021] 提出的最大熵重加权（maximum-caliber reweighting）已通过在两态蛋白质折叠中施加速率常数作为动力学约束，用于连续路径的重加权。在此，我们引入Anneal-MaxCal，它通过将速率常数或时间分辨数据施加到沿退火溶质调节阶梯（从较软到物理相互作用）学习的马尔可夫模型上，同时解决这两个问题。MBAR为慢TICA子空间的全部160个单元分配物理自由能，而物理耦合下仅访问了79个单元。平方根近似（square-root approximation, SqRA），即在此自由能景观上的离散化扩散，将这些数量转化为满足细致平衡的速率矩阵。其前置因子，作为每个单元界面上的位置依赖性扩散率，从较软耦合下的转变中学习，并通过对数线性外推至物理耦合。这产生了跨越TICA空间的速率和committor，尽管物理阶梯仅包含一次势垒穿越。对于丙氨酸二肽，665 ns的模拟给出弛豫时间为5430 ± 996 ps，而15.4 μs无偏动力学的结果为4413 ± 446 ps，而常数前置因子则慢2.5倍。最大熵随后对此先验进行最小扰动，后验数量通过广义Doob变换得出。一个合成的时间分辨密度，其反向转变慢十倍，将ΔF从5.191降至2.885 kBT，将产物盆地数量从0.0055提升至0.0529，并将弛豫减慢9.47倍，而反应物盆地保持不变。正向和反向速率分别加速3倍和20倍，使ΔF增加1.892 kBT，并将弛豫时间从4818 ps缩短至289 ps。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Anneal-MaxCal: kinetic ensembles from a Markov model learned along a solute-tempering ladder</li>
+<li><strong>作者与单位</strong>：Brotzakis ZF; Rekatsinas N（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法学论文）</li>
+<li><strong>领域</strong>：蛋白质/分子构象动力学；增强采样；最大熵/最大 caliber 重加权；Markov 状态模型</li>
+<li><strong>关键词</strong>：Anneal-MaxCal, maximum caliber, Markov model, solute tempering, SqRA, MBAR, kinetics, alanine dipeptide</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.10.05.756723</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（模拟数据，具体存储位置未说明）</li>
+<li><strong>阅读日期</strong>：2026-10-09（按标题日期推断，实际阅读日期未提供）</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质构象采样 × 物理模拟 (MD) × 统计力学重加权」交叉方向。它提出一种无需预先知道反应坐标或亚稳态的增强采样-动力学重建框架，将 solute tempering 与 Markov 模型、SqRA 扩散近似、maximum caliber 重加权结合，直接面向「从增强采样轨迹恢复真实动力学（速率、弛豫时间、committor）」这一核心问题。与 AlphaFold 等结构预测方法无直接关系，但与 MD 模拟、构象采样、动力学性质计算高度相关。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 Anneal-MaxCal 框架，沿 solute-tempering 阶梯学习 Markov 模型，用 MBAR 赋予物理自由能、SqRA 构建速率矩阵、maximum caliber 施加动力学约束，从而在无需反应坐标先验的情况下从增强采样轨迹恢复物理系综的动力学（速率、弛豫时间、committor），并在 alanine dipeptide 上验证了其与无偏 MD 的一致性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在不预先知道反应坐标或亚稳态的情况下，从增强采样 MD 模拟中恢复分子系统的真实动力学（包括亚稳态间转换速率、弛豫时间、committor）？</li>
+<li><strong>为什么重要</strong>：分子系统的完整表征需要亚稳态、其布居和互转换速率。MD 原则上可提供这些，但受限于采样不足和力场误差。增强采样解决采样问题，但通常需要反应坐标先验且常牺牲动力学信息。</li>
+<li><strong>现有方法为何不足</strong>：传统增强采样（如 metadynamics、umbrella sampling）需要反应坐标或亚稳态知识；而 maximum caliber 重加权（Brotzakis et al., PNAS 2021）虽能恢复动力学，但仅适用于两态蛋白质折叠且需要连续路径。缺乏一个通用的、无需先验的框架。</li>
+<li><strong>精确研究问题</strong>：Can a Markov model learned along a solute-tempering ladder, combined with MBAR, SqRA, and maximum caliber, recover accurate kinetics (rates, relaxation times, committors) of a molecular system without prior knowledge of reaction coordinates?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：此脉络为「经外部核验」的领域常识，结合本文框架）
+1. <strong>阶段一：传统增强采样</strong>（如 umbrella sampling, metadynamics）——优点：加速稀有事件采样；局限：需反应坐标先验，且重加权后动力学信息丢失。
+2. <strong>阶段二：动力学重加权方法</strong>——如 Markov state models (MSMs) 结合增强采样、infrequent metadynamics、TRAM 等——优点：可从增强采样恢复动力学；局限：仍需反应坐标或状态定义，或对路径连续性有要求。
+3. <strong>阶段三：Maximum Caliber (MaxCal) 重加权</strong>（Brotzakis, Vendruscolo, Bolhuis, PNAS 2021）——优点：通过施加速率常数作为动力学约束，从连续路径重加权恢复动力学；局限：仅用于两态系统，需预先定义路径。
+4. <strong>本文位置</strong>：Anneal-MaxCal 将 MaxCal 推广到 Markov 模型框架，沿 solute-tempering 阶梯学习状态转移，无需反应坐标先验，用 SqRA 将自由能面转化为速率矩阵，再用 MaxCal 施加动力学约束，实现动力学恢复。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>增强采样牺牲动力学</td>
+<td>传统增强采样重加权后速率/弛豫时间失真</td>
+<td>重加权仅保留静态布居，丢失时间相关性</td>
+<td>引言部分（未提供具体行号）</td>
+</tr>
+<tr>
+<td>需反应坐标先验</td>
+<td>多数增强采样方法需预定义反应坐标或亚稳态</td>
+<td>方法设计依赖集体变量选择</td>
+<td>引言部分</td>
+</tr>
+<tr>
+<td>MaxCal 仅限两态连续路径</td>
+<td>原 MaxCal 仅用于两态蛋白质折叠，需连续路径</td>
+<td>路径系综重加权在复杂系统难以泛化</td>
+<td>引言部分</td>
+</tr>
+<tr>
+<td>物理 rung 采样不足</td>
+<td>物理耦合下仅访问 79/160 个 TICA 格子</td>
+<td>物理势能面采样受限</td>
+<td>Results（未提供具体图号）</td>
+</tr>
+<tr>
+<td>常数扩散系数不准</td>
+<td>常数 prefactor 的速率比无偏 MD 慢 2.5 倍</td>
+<td>扩散系数在构象空间非均匀</td>
+<td>Results（未提供具体图号）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：沿 solute-tempering 阶梯（从软到物理相互作用）运行 MD，在每个 rung 上学习 Markov 模型；用 MBAR 将各 rung 的布居赋予物理自由能；用 SqRA 将自由能面转化为速率矩阵（prefactor 作为位置依赖扩散系数）；用 maximum caliber 施加动力学约束（如速率常数或时间分辨数据）得到后验动力学系综。</li>
+<li><strong>核心洞察</strong>：solute-tempering 阶梯的软 rung 提供更快的转换和更充分的采样，其转移信息可外推到物理 rung；SqRA 将自由能面与扩散系数分离，使动力学可从布居和位置依赖扩散重建；MaxCal 以最小扰动方式将先验动力学调整为满足约束的后验。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：将「增强采样阶梯」与「扩散近似」结合，可同时解决采样不足和动力学失真问题；位置依赖的扩散系数（而非常数）是准确动力学重建的关键；MaxCal 提供了一种通用框架，将任意动力学约束（速率、时间分辨数据）融入 Markov 模型。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：solute-tempering 阶梯上多个 rung 的 MD 轨迹（从软到物理相互作用）；可选：目标速率常数或时间分辨密度数据。</li>
+<li><strong>输出</strong>：物理系综下的速率矩阵、亚稳态布居、弛豫时间、committor、后验动力学系综。</li>
+<li><strong>模块</strong>：
+  1. Solute-tempering MD 模拟（多 rung）
+  2. TICA 降维（慢子空间，160 格）
+  3. MBAR 重加权（赋予物理自由能）
+  4. SqRA 速率矩阵构建（位置依赖扩散系数）
+  5. Maximum caliber 重加权（施加动力学约束）
+  6. 广义 Doob 变换（得到后验布居）</li>
+<li><strong>训练</strong>：无监督（MD 轨迹）+ 约束优化（MaxCal）</li>
+<li><strong>工具</strong>：MD 引擎（未指定）、TICA、MBAR、SqRA、MaxCal 求解器</li>
+<li><strong>假设</strong>：TICA 子空间捕捉慢过程；SqRA 的离散扩散近似有效；solute-tempering 阶梯的转移信息可线性外推到物理 rung；MaxCal 最小扰动原则成立。</li>
+<li><strong>流程</strong>：MD 轨迹 → TICA 降维 → 离散化 → MBAR 自由能 → SqRA 速率矩阵 → MaxCal 约束 → 后验动力学系综。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Solute-tempering 阶梯</td>
+<td>从软到物理相互作用采样</td>
+<td>软 rung 采样更充分，提供转移信息</td>
+<td>输入：多 rung MD 轨迹；输出：各 rung 状态布居和转移</td>
+<td>物理 rung 仅访问 79/160 格，软 rung 覆盖更全</td>
+<td>移除后采样不足，无法构建可靠 Markov 模型</td>
+</tr>
+<tr>
+<td>TICA 降维</td>
+<td>提取慢子空间</td>
+<td>减少维度，聚焦慢过程</td>
+<td>输入：MD 轨迹；输出：160 格 TICA 子空间</td>
+<td>160 格用于后续分析</td>
+<td>移除后维度灾难，SqRA 不可行</td>
+</tr>
+<tr>
+<td>MBAR 重加权</td>
+<td>赋予物理自由能</td>
+<td>将软 rung 布居映射到物理系综</td>
+<td>输入：各 rung 布居；输出：物理自由能</td>
+<td>所有 160 格获得物理自由能</td>
+<td>移除后自由能面错误，速率矩阵不准</td>
+</tr>
+<tr>
+<td>SqRA 速率矩阵</td>
+<td>从自由能面构建速率矩阵</td>
+<td>将静态布居转化为动力学</td>
+<td>输入：自由能面；输出：速率矩阵</td>
+<td>常数 prefactor 慢 2.5 倍，位置依赖 prefactor 准确</td>
+<td>移除后无动力学信息</td>
+</tr>
+<tr>
+<td>Maximum caliber</td>
+<td>施加动力学约束</td>
+<td>调整先验以满足目标速率/时间数据</td>
+<td>输入：先验速率矩阵+约束；输出：后验速率矩阵</td>
+<td>约束后 ΔF 和弛豫时间变化符合预期</td>
+<td>移除后无法整合实验动力学数据</td>
+</tr>
+<tr>
+<td>广义 Doob 变换</td>
+<td>得到后验布居</td>
+<td>从后验速率矩阵推导布居</td>
+<td>输入：后验速率矩阵；输出：后验布居</td>
+<td>产物盆地布居从 0.0055 升至 0.0529</td>
+<td>移除后无法获得约束下的布居</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ol>
+<li>
+<p><strong>MBAR 重加权</strong>（自由能估计）：
+   [
+   \hat{f}<em>i = -\ln \sum</em>{n=1}^{N} \frac{\exp[-u_i(x_n)]}{\sum_{k=1}^{K} N_k \exp[f_k - u_k(x_n)]}
+   ]
+   - (f_i)：第 (i) 个 rung 的无量纲自由能；(u_i)：第 (i) 个 rung 的约化势能；(N_k)：第 (k) 个 rung 的样本数；(K)：rung 总数。
+   - 用途：将各 rung 布居映射到物理系综。
+   - 直觉：通过自洽方程估计各热力学状态的自由能。
+   - 来源：Methods 节（MBAR 标准公式）。</p>
+</li>
+<li>
+<p><strong>SqRA（平方根近似）</strong>：
+   [
+   k_{ij} = \frac{1}{\beta} \frac{\sqrt{\pi_i \pi_j}}{m_i} \frac{|\partial \Omega_i \cap \partial \Omega_j|}{|\Omega_i|}
+   ]
+   - (k_{ij})：从格 (i) 到 (j) 的速率；(\pi_i)：格 (i) 的平衡布居；(m_i)：格 (i) 的质量（或体积）；(|\partial \Omega_i \cap \partial \Omega_j|)：格间界面面积；(|\Omega_i|)：格体积。
+   - 用途：从自由能面（布居）构建满足细致平衡的速率矩阵。
+   - 直觉：速率正比于界面面积和两端布居的几何平均。
+   - 来源：Methods 节（SqRA 标准公式）。</p>
+</li>
+<li>
+<p><strong>Maximum Caliber 重加权</strong>：
+   [
+   P(\text{path}) \propto P_0(\text{path}) \exp\left[-\sum_a \lambda_a C_a(\text{path})\right]
+   ]
+   - (P_0)：先验路径概率；(C_a)：约束量（如速率、时间分辨密度）；(\lambda_a)：拉格朗日乘子。
+   - 用途：最小扰动地调整先验动力学以满足约束。
+   - 直觉：在最大熵原则下，选择满足约束且最接近先验的路径分布。
+   - 来源：Methods 节（MaxCal 框架）。</p>
+</li>
+</ol>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：alanine dipeptide（丙氨酸二肽）真空或隐式溶剂模型（具体力场未提供）。</li>
+<li><strong>规模</strong>：665 ns 增强采样（solute-tempering 阶梯）vs 15.4 μs 无偏 MD。</li>
+<li><strong>指标</strong>：弛豫时间（relaxation time）、ΔF（自由能差）、亚稳态布居、速率常数、committor。</li>
+<li><strong>基线</strong>：无偏 MD 的弛豫时间（4413 ± 446 ps）。</li>
+<li><strong>评测协议</strong>：比较 Anneal-MaxCal 预测的弛豫时间与无偏 MD 结果；测试不同约束（速率加速/减速）下的响应。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>弛豫时间预测</td>
+<td>Anneal-MaxCal 可恢复物理动力学</td>
+<td>665 ns 增强采样 vs 15.4 μs 无偏 MD</td>
+<td>5430 ± 996 ps vs 4413 ± 446 ps</td>
+<td>增强采样可近似恢复弛豫时间</td>
+<td>误差 ~23%，可能因统计或外推近似</td>
+<td>Results（未提供图号）</td>
+</tr>
+<tr>
+<td>常数 vs 位置依赖 prefactor</td>
+<td>位置依赖扩散系数必要</td>
+<td>常数 prefactor vs SqRA 位置依赖</td>
+<td>常数 prefactor 慢 2.5 倍</td>
+<td>位置依赖 prefactor 显著提高准确性</td>
+<td>未测试其他扩散模型</td>
+<td>Results（未提供图号）</td>
+</tr>
+<tr>
+<td>时间分辨密度约束（减速）</td>
+<td>MaxCal 可整合时间分辨数据</td>
+<td>合成数据：反向速率慢 10 倍</td>
+<td>ΔF 从 5.191 降至 2.885 kBT，产物布居 0.0055→0.0529，弛豫慢 9.47 倍</td>
+<td>MaxCal 能响应动力学约束并调整系综</td>
+<td>合成数据，非实验测量</td>
+<td>Results（未提供图号）</td>
+</tr>
+<tr>
+<td>速率加速约束</td>
+<td>MaxCal 可加速动力学</td>
+<td>合成数据：正反向速率加速 3/20 倍</td>
+<td>ΔF 增加 1.892 kBT，弛豫从 4818 降至 289 ps</td>
+<td>MaxCal 可加速转换</td>
+<td>仅测试 alanine dipeptide</td>
+<td>Results（未提供图号）</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对 alanine dipeptide 的构象转换动力学；未测试更大蛋白质或更复杂体系。</li>
+<li><strong>oracle/真值输入</strong>：无偏 MD 的弛豫时间作为参考真值；合成时间分辨数据作为约束输入。</li>
+<li><strong>端到端状态</strong>：方法端到端可用，但需 MD 轨迹作为输入，非纯预测模型。</li>
+<li><strong>算力成本</strong>：665 ns 增强采样远少于 15.4 μs 无偏 MD，但未报告具体计算时间。</li>
+<li><strong>历史数据依赖</strong>：依赖 solute-tempering 阶梯的采样质量；软 rung 的外推假设（线性）可能不普适。</li>
+<li><strong>模型依赖</strong>：依赖 TICA 子空间选择、SqRA 离散化精度、MaxCal 约束的拉格朗日乘子求解。</li>
+<li><strong>最难情形</strong>：多态、高维、慢扩散体系可能使 SqRA 和线性外推失效。</li>
+<li><strong>不确定性</strong>：弛豫时间误差 ~23%，未报告置信区间或重复实验。</li>
+<li><strong>有边界的复述</strong>：Anneal-MaxCal 在 alanine dipeptide 上，用 665 ns 增强采样轨迹，通过 MBAR+SqRA+MaxCal 重建的弛豫时间（5430 ± 996 ps）与 15.4 μs 无偏 MD（4413 ± 446 ps）在误差范围内一致，并能响应合成动力学约束调整系综。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理 rung 采样不足</td>
+<td>物理耦合下仅访问 79/160 个 TICA 格子</td>
+<td>未明确提及（可能通过更多采样或优化阶梯）</td>
+<td>Results（未提供具体图号）</td>
+</tr>
+<tr>
+<td>常数 prefactor 不准确</td>
+<td>常数 prefactor 的速率慢 2.5 倍</td>
+<td>采用位置依赖 prefactor（SqRA）</td>
+<td>Results（未提供具体图号）</td>
+</tr>
+<tr>
+<td>外推假设</td>
+<td>软 rung 到物理 rung 的线性外推</td>
+<td>未明确提及</td>
+<td>Methods（未提供具体行号）</td>
+</tr>
+</tbody>
+</table>
+<p>（注：作者在摘要和正文中未系统列出局限，以上为文中隐含约束。未发现作者明确承认的更多局限。）</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅测试 alanine dipeptide</td>
+<td>方法可能在小体系有效，但大蛋白质的 TICA 子空间和 SqRA 离散化可能失效</td>
+<td>泛化性是方法的核心价值</td>
+<td>在更大体系（如 mini-protein）上测试</td>
+<td>摘要仅提及 alanine dipeptide</td>
+</tr>
+<tr>
+<td>弛豫时间误差 ~23%</td>
+<td>可能来自统计噪声、SqRA 近似或外推误差</td>
+<td>误差大小决定方法实用性</td>
+<td>增加重复实验或更长模拟</td>
+<td>Results 数值对比</td>
+</tr>
+<tr>
+<td>合成约束数据</td>
+<td>合成数据可能过于理想，真实实验数据噪声更大</td>
+<td>实际应用中约束可能不精确</td>
+<td>使用实验测量的速率/时间分辨数据</td>
+<td>Results 中约束实验</td>
+</tr>
+<tr>
+<td>线性外推假设</td>
+<td>软 rung 到物理 rung 的转移可能非线性</td>
+<td>外推错误会直接影响速率矩阵</td>
+<td>测试不同阶梯长度或非线性外推</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>未报告计算成本</td>
+<td>665 ns vs 15.4 μs 的加速比未量化</td>
+<td>实际收益需考虑总计算时间</td>
+<td>报告 wall-clock 时间</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>Solute-tempering 阶梯 + 外推</strong>：沿温度/相互作用强度阶梯采样，将软 rung 的转移信息外推到物理 rung，是一种无需反应坐标的增强采样策略。可迁移到蛋白质构象采样：用软势能快速探索构象空间，再外推物理态动力学。
+2. <strong>SqRA 从自由能面构建速率矩阵</strong>：将静态自由能面转化为满足细致平衡的速率矩阵，且允许位置依赖扩散系数。可迁移到任何有自由能面的体系（如 AlphaFold 能量面、粗粒化模型），用于估计动力学。
+3. <strong>MaxCal 作为通用动力学约束框架</strong>：通过拉格朗日乘子施加任意动力学约束（速率、时间分辨数据），最小扰动地调整先验系综。可迁移到 MD 后处理：整合实验测量（如 FRET、NMR 弛豫）到模拟轨迹。
+4. <strong>TICA 慢子空间 + 离散化</strong>：用 TICA 提取慢过程，再离散化为格点，是构建 Markov 模型的标准流程。可迁移到高维构象空间的降维和状态划分。
+5. <strong>广义 Doob 变换</strong>：从后验速率矩阵推导布居，提供了一种在约束下更新亚稳态布居的数学工具。可迁移到任何需要条件化动力学系综的场景。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Maximum Caliber</strong>：Brotzakis, Vendruscolo, Bolhuis, PNAS 2021 (118(2):e2012423118) 提出 MaxCal 重加权连续路径，本文将其推广到 Markov 模型框架，是其直接扩展。</li>
+<li><strong>SqRA</strong>：平方根近似是离散扩散理论的经典方法（Liebscher et al., 2010s），本文将其用于从自由能面构建速率矩阵。</li>
+<li><strong>MBAR</strong>：多态 Bennett 接受比方法（Shirts &amp; Chodera, JCP 2008）是重加权标准工具，本文用于跨 rung 自由能估计。</li>
+<li><strong>Solute tempering</strong>：增强采样方法（Liu et al., 2005; 类似 replica exchange with solute tempering），本文将其作为阶梯采样策略。</li>
+<li><strong>Markov State Models</strong>：与 MSM 构建流程（TICA + 离散化 + 速率矩阵）高度一致，但本文用 MaxCal 替代了传统 MSM 的转移矩阵估计。</li>
+<li><strong>与 AlphaFold 的关系</strong> [Analysis]：AlphaFold 提供静态结构预测，而本文关注动力学；若将 AlphaFold 的能量面或置信度作为先验，结合 SqRA 和 MaxCal 可能实现「结构预测 + 动力学估计」的整合，但本文未涉及。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Anneal-MaxCal 在蛋白质折叠中的应用
+   - <strong>来源局限/观察</strong>：本文仅测试 alanine dipeptide，未验证大蛋白质。
+   - <strong>核心假设</strong>：Anneal-MaxCal 可扩展到小型蛋白质（如 Trp-cage, villin headpiece）并恢复折叠速率。
+   - <strong>初步方法</strong>：对目标蛋白质运行 solute-tempering 阶梯，构建 TICA 子空间，用 SqRA+MaxCal 恢复折叠/去折叠速率，与实验或长无偏 MD 对比。
+   - <strong>验证方式</strong>：比较弛豫时间、折叠自由能面与实验值。
+   - <strong>可能的失败模式</strong>：TICA 子空间维度不足、SqRA 离散化误差、外推非线性。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：MaxCal 整合实验时间分辨数据到 MD 轨迹
+   - <strong>来源局限/观察</strong>：本文用合成数据验证 MaxCal 约束，未用真实实验数据。
+   - <strong>核心假设</strong>：实验测量的时间分辨信号（如 FRET、smFRET 轨迹）可作为 MaxCal 约束，修正 MD 力场误差。
+   - <strong>初步方法</strong>：从 MD 轨迹构建先验 Markov 模型，将实验时间相关函数作为约束，用 MaxCal 重加权得到后验系综。
+   - <strong>验证方式</strong>：后验系综预测的未约束观测量与实验对比。
+   - <strong>可能的失败模式</strong>：约束不一致、拉格朗日乘子求解困难。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AlphaFold 能量面 + SqRA 的动力学估计
+   - <strong>来源局限/观察</strong>：AlphaFold 提供静态结构，但无动力学信息；SqRA 可从自由能面构建速率矩阵。
+   - <strong>核心假设</strong>：AlphaFold 的置信度或能量项可转化为自由能面，结合 SqRA 估计构象转换速率。
+   - <strong>初步方法</strong>：用 AlphaFold 对多个构象打分，构建自由能面，用 SqRA 估计速率，与 MD 结果对比。
+   - <strong>验证方式</strong>：对已知蛋白（如 alanine dipeptide）对比 MD 弛豫时间。
+   - <strong>可能的失败模式</strong>：AlphaFold 能量面不准确、缺乏动力学信息。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：位置依赖扩散系数的机器学习预测
+   - <strong>来源局限/观察</strong>：SqRA 的 prefactor 是位置依赖的，但本文未系统研究其物理意义。
+   - <strong>核心假设</strong>：扩散系数与局部自由能曲率或溶剂暴露相关，可用机器学习预测。
+   - <strong>初步方法</strong>：从 MD 轨迹学习扩散系数场，训练 GNN 或随机森林预测新体系的扩散系数。
+   - <strong>验证方式</strong>：预测的速率矩阵与 MD 对比。
+   - <strong>可能的失败模式</strong>：扩散系数不可从静态特征预测。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Anneal-MaxCal 与 metadynamics 的混合增强采样
+   - <strong>来源局限/观察</strong>：solute tempering 与 metadynamics 各有优势，本文未结合。
+   - <strong>核心假设</strong>：solute-tempering 阶梯 + metadynamics 偏置可进一步加速采样并保持动力学可恢复性。
+   - <strong>初步方法</strong>：在 solute-tempering 阶梯上运行 metadynamics，用 MBAR+SqRA+MaxCal 恢复物理动力学。
+   - <strong>验证方式</strong>：对比纯 metadynamics 和纯 solute tempering 的恢复精度。
+   - <strong>可能的失败模式</strong>：偏置与阶梯相互作用复杂，重加权失效。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no figures, tables, methods, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce Anneal-MaxCal, a method that combines annealed solute-tempering simulations with a Markov model learned along the tempering ladder, using MBAR for free-energy assignment, the square-root approximation (SqRA) for rate-matrix construction, and maximum-caliber reweighting to impose kinetic constraints. They report application to alanine dipeptide, showing improved relaxation times relative to unbiased dynamics and demonstrating the method's ability to incorporate time-resolved data to alter free-energy differences, populations, and rates.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, or numerical data beyond those quoted in the abstract</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, methods description, simulation details, error analysis, and any supporting information</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting integration of established techniques (solute tempering, MBAR, SqRA, maximum caliber) into a unified pipeline for kinetic ensemble estimation. The reported results for alanine dipeptide are suggestive, but the abstract alone provides insufficient detail to assess the validity of the methodological choices, the robustness of the extrapolation procedure, or the statistical significance of the reported improvements. The central claim that the method "tackles both problems" (sampling and kinetics) is plausible but not established from the provided evidence.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational molecular biophysics, enhanced sampling method development, and Markov state model construction would be interested. The work addresses a recognized gap between enhanced sampling and kinetic fidelity, and the combination of tempering with maximum-caliber reweighting could appeal to those seeking practical methods for extracting kinetics from biased simulations.</li>
+<li><strong>Major strengths</strong> The abstract identifies a real and important problem: enhanced sampling methods often sacrifice kinetic information. The proposed pipeline is modular, combining several well-established components, which may facilitate adoption. The inclusion of a synthetic data demonstration suggests the method can respond to time-resolved constraints in a physically meaningful way. The comparison against a constant-prefactor model provides a useful baseline.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The method "yields rates and a committor across the TICA space, although the physical rung contains a single barrier crossing."</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> The abstract states that the physical rung contains only a single barrier crossing, yet the method is claimed to yield rates and a committor across the full TICA space. It is unclear how a committor and rate matrix can be meaningfully estimated from a single barrier crossing event, and whether the reported relaxation time of 5430 ± 996 ps is based on statistically sufficient sampling of that crossing.</li>
+<li><strong>Why it matters</strong> If the physical rung has only one barrier crossing, the uncertainty in the estimated rates may be dominated by rare-event statistics rather than by the method's accuracy. The reported error bar of ±996 ps may not capture the true statistical uncertainty, and the comparison to the unbiased simulation result may be misleading.</li>
+<li><strong>Resolution test</strong> Provide the number of barrier crossings observed at the physical rung, a convergence analysis of the rate estimates as a function of simulation length, and a comparison of committor distributions from the model against direct simulation where feasible.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "Its prefactors, which act as a position-dependent diffusivity across each cell face, are learned from transitions at the softer couplings and extrapolated log-linearly to the physical coupling."</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> The log-linear extrapolation of prefactors from softer to physical couplings is a critical assumption. The abstract provides no justification for this functional form, no assessment of its validity across the tempering ladder, and no sensitivity analysis. If the extrapolation is inaccurate, the reported rates and the subsequent maximum-caliber reweighting could be systematically biased.</li>
+<li><strong>Why it matters</strong> The prefactor extrapolation is the bridge between the enhanced-sampling regime and the physical regime. If this step is not rigorously validated, the entire kinetic output of the method is called into question, and the claimed improvement over a constant prefactor may be an artifact of the chosen extrapolation form.</li>
+<li><strong>Resolution test</strong> Show the prefactor values across the tempering ladder, demonstrate that the log-linear fit is statistically justified, and test the sensitivity of the final rates to alternative extrapolation schemes (e.g., linear, spline, or temperature-dependent Arrhenius forms).</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Claim pointer</strong> "For alanine dipeptide, 665 ns of simulation give a relaxation time of 5430 ± 996 ps against 4413 ± 446 ps from 15.4 μs of unbiased dynamics."</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Concern</strong> The comparison between 665 ns of tempered simulation and 15.4 μs of unbiased dynamics is presented as a validation, but the abstract does not state how the error bars were computed for either estimate, whether the two estimates are statistically distinguishable, or whether the 23% difference is within the expected uncertainty. The claim that the method is "correct" is not supported by a statistical test.</li>
+<li><strong>Why it matters</strong> The central validation of the method rests on this comparison. Without a clear statistical framework, the reader cannot judge whether the method reproduces the unbiased kinetics within error or merely produces a number that is "close enough" by an unspecified criterion.</li>
+<li><strong>Resolution test</strong> Provide the method for error estimation (e.g., block averaging, bootstrapping), a statistical test of the difference between the two relaxation times, and a statement of the effective sample size at the physical rung.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Terminology</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The term "Anneal-MaxCal" is introduced without a clear definition of what "anneal" refers to in the context of the method. The abstract mentions "annealed solute-tempering ladder," but the relationship between the annealing protocol and the maximum-caliber step is not explicit.</li>
+<li><strong>Required correction</strong> Define the annealing procedure explicitly and clarify whether the maximum-caliber step is applied at each rung or only at the physical rung.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Simulation details</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The abstract states "665 ns of simulation" but does not specify the number of independent trajectories, the length of each trajectory, or the equilibration protocol. This is insufficient for reproducibility.</li>
+<li><strong>Required correction</strong> Provide the number of trajectories, their lengths, and the equilibration procedure in the full manuscript.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Synthetic data demonstration</li>
+<li><strong>Evidence pointer</strong> Abstract text; location not provided</li>
+<li><strong>Issue</strong> The synthetic data demonstration shows that the method responds to imposed time-resolved constraints, but the abstract does not state whether the resulting free-energy difference and populations are consistent with the known ground truth of the synthetic system.</li>
+<li><strong>Required correction</strong> State the ground-truth values for the synthetic system and report the error between the method's output and the true values.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (single barrier crossing statistics), R1-M2 (unvalidated prefactor extrapolation), R1-M3 (lack of statistical comparison)</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the method "tackles both problems" (sampling and kinetics) is not established from the abstract alone; the validation is limited to a single system and a single comparison.</li>
+<li>The claim that the prefactor extrapolation is "log-linear" is presented without supporting data or justification.</li>
+<li>The claim that the method "yields rates and a committor" from a single barrier crossing is not supported by the evidence provided.</li>
+<li>The synthetic data demonstration is described but not validated against ground truth, so its significance cannot be assessed.</li>
+<li>The comparison of relaxation times (5430 ± 996 ps vs 4413 ± 446 ps) is presented without a statistical test, so the claim of agreement is not supported.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

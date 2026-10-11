@@ -1,0 +1,91 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors present a new variant of the MD-free COVIB algorithm for detecting cryptic pockets on two challenging drug targets, KRAS and STAT5B N-terminal domain. They report identification of numerous cryptic sites, some previously unreported, and validate prioritized sites using a pharmacophore-optimized photoaffinity-tagged fragment library with MS-based peptide mapping and NMR spectroscopy. They propose a combined COVIB-plus-photoaffinity protocol as a robust approach for cryptic pocket exploration.
+- **Visible evidence base** Abstract text only; no experimental data, algorithmic details, validation statistics, or structural information are visible
+- **Missing materials affecting confidence** Full methods, algorithm description and parameters, structural models used, complete lists of predicted and validated sites, MS and NMR data, comparison with existing methods, and any statistical or quantitative performance metrics
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially valuable computational-experimental pipeline for cryptic pocket detection, addressing a real bottleneck in drug discovery. The combination of an MD-free algorithm with photoaffinity-based experimental validation is conceptually appealing and could offer practical advantages over MD-based approaches. However, the abstract provides insufficient technical detail to assess the validity of the algorithmic claims, the robustness of the validation, or the generalizability of the protocol. The central claims of efficiency, novelty of identified sites, and experimental validation cannot be evaluated from the supplied material. The work is promising in concept but the evidence base is currently too thin to establish the case.
+- **Who would be interested in the results, and why** Computational chemists and structural biologists working on cryptic and allosteric site prediction would be interested in the algorithmic advance and its speed advantage over MD-based methods. Drug discovery scientists targeting KRAS or STAT5B, and more broadly those seeking to expand the druggable surface of challenging oncoproteins, would value the identification of new targetable regions. Method developers in the fragment-based drug discovery community would also be interested in the integrated computational-experimental validation workflow.
+- **Major strengths** The problem addressed is of high practical importance, as cryptic pocket detection remains a major bottleneck in targeting challenging proteins. The proposed approach, if validated, would represent a substantial speed improvement over MD-based alternatives. The combination of computational prediction with experimental validation via photoaffinity labeling and NMR is a strong design that could increase confidence in predicted sites. The choice of two therapeutically relevant and challenging targets adds translational significance.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that a new variant of the COVIB algorithm identifies cryptic pockets efficiently and is orders of magnitude faster than MD-based approaches.
+  - **Evidence pointer** Abstract only; no algorithmic details or performance data provided
+  - **Concern** The abstract states that a "new variant" of COVIB is used but provides no information on what is new relative to the original algorithm, how the co-vibrational modes are computed, what structural inputs are required, or how the cryptic pocket detection is performed. The claim of being "orders of magnitude faster" is presented without any benchmark data, computational cost comparison, or definition of the comparison baseline.
+  - **Why it matters** Without algorithmic details and quantitative performance data, the central methodological claim cannot be assessed. The speed advantage is a key selling point of the approach, and if it is not substantiated, the practical value of the method is unclear. Reproducibility and independent evaluation are also impossible without these details.
+  - **Resolution test** Provide a full description of the algorithm variant, including the mathematical formulation of co-vibrational modes, the pocket detection criteria, and the computational complexity. Include benchmark comparisons against at least one MD-based method on the same targets, reporting wall-clock time, hardware specifications, and detection success rates.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** The authors claim to identify "numerous cryptic sites, some of which have not yet been reported" on KRAS and STAT5B.
+  - **Evidence pointer** Abstract only; no site lists, structural coordinates, or comparison with known sites provided
+  - **Concern** The abstract does not specify how many sites were identified on each target, which sites are novel, or how novelty was established relative to the existing literature. No structural information is given to allow inspection of the predicted sites. The criteria for classifying a site as "cryptic" are not defined.
+  - **Why it matters** The claim of identifying new targetable regions is a core contribution of the work. Without a clear enumeration of the sites, their locations, and the basis for claiming novelty, the scientific value cannot be assessed. The term "cryptic" itself requires operational definition, as different methods use different criteria.
+  - **Resolution test** Provide a complete list of predicted sites for each target with residue-level definitions, structural figures or coordinates, and a literature comparison table showing which sites are known and which are newly reported. Define the operational criteria for cryptic pocket classification.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** The authors claim that prioritized sites are validated with a pharmacophore-optimized photoaffinity-tagged fragment library via MS-based peptide mapping and NMR spectroscopy.
+  - **Evidence pointer** Abstract only; no experimental data, spectra, or mapping results provided
+  - **Concern** The abstract states that validation was performed but provides no results. It is unclear how many sites were validated, what fraction of predictions were confirmed, whether any predicted sites failed validation, and what the false positive rate was. The MS-based peptide mapping and NMR data are not shown, and the criteria for a "validated" site are not defined.
+  - **Why it matters** The experimental validation is the key evidence that the computational predictions are biologically meaningful. Without quantitative validation outcomes, including both successes and failures, the reliability of the method cannot be judged. Selective reporting of successful validations would inflate the apparent performance.
+  - **Resolution test** Present the full validation dataset, including the number of sites tested, the number confirmed, the confidence thresholds used, and representative MS and NMR data. Report any predicted sites that were not validated and discuss possible reasons.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** The authors propose the combined COVIB-plus-photoaffinity protocol as "a robust approach for exploring unique and tractable cryptic pockets."
+  - **Evidence pointer** Abstract only; no protocol details or broader applicability data provided
+  - **Concern** The abstract presents the protocol as robust and general, but it has only been applied to two targets, both of which are intracellular oncoproteins. The abstract does not discuss the scope of applicability, potential limitations for other protein classes, or the transferability of the pharmacophore-optimized fragment library to other targets.
+  - **Why it matters** The claim of robustness implies generalizability beyond the two test cases. Without a discussion of limitations or additional test cases, the protocol's broader utility remains speculative. The fragment library optimization for specific targets may not transfer to other systems.
+  - **Resolution test** Discuss the expected scope and limitations of the protocol, or provide additional test cases on structurally and functionally diverse targets. Clarify whether the fragment library is target-specific or broadly applicable.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The term "cryptic pockets" is used without a definition. While the audience may be familiar with the concept, a brief operational definition would improve accessibility.
+  - **Required correction** Add a one-sentence definition of cryptic pockets, for example, pockets that are not visible in apo structures and require conformational changes to become apparent.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Target selection rationale
+  - **Evidence pointer** Abstract, third sentence
+  - **Issue** The abstract states that KRAS and STAT5B are challenging targets but does not explain why these two were chosen or what specific challenges they present for cryptic pocket detection.
+  - **Required correction** Add a brief rationale for target selection, noting the specific structural or biological features that make these targets challenging and relevant.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Structural input description
+  - **Evidence pointer** Abstract, third sentence
+  - **Issue** The abstract mentions "experimental and AI-modelled structures" but does not specify which structure was used for which target, the resolution of the experimental structure, or the AI modeling method.
+  - **Required correction** Specify the PDB identifier for the experimental structure and the AI modeling tool used, along with relevant quality metrics.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Quantitative reporting
+  - **Affected element** Number of sites
+  - **Evidence pointer** Abstract, fourth sentence
+  - **Issue** The phrase "numerous cryptic sites" is vague. A specific number for each target would allow readers to gauge the scale of the findings.
+  - **Required correction** Report the exact number of predicted and validated sites for each target.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Methodological context
+  - **Affected element** Comparison to prior COVIB work
+  - **Evidence pointer** Abstract, third sentence
+  - **Issue** The abstract refers to "a new variant" of COVIB but does not state what the original COVIB method was or what the variant changes. Readers unfamiliar with the prior work cannot assess the incremental contribution.
+  - **Required correction** Briefly describe the original COVIB method and explicitly state the modifications introduced in this variant.
+
+## Risk / unsupported claims
+- The claim that the new COVIB variant is "orders of magnitude faster" than MD-based approaches is unsupported by any benchmark data in the abstract.
+- The claim of identifying "numerous cryptic sites, some of which have not yet been reported" is unsupported without a site list, novelty assessment, or comparison with existing literature.
+- The claim that sites were "validated" via MS-based peptide mapping and NMR is unsupported without any experimental data or validation statistics.
+- The claim that the combined protocol is "robust" is unsupported given the limited demonstration on only two targets and the absence of a limitations discussion.
+- The general applicability of the pharmacophore-optimized photoaffinity-tagged fragment library to other targets is not assessable from the abstract.

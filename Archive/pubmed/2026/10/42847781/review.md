@@ -1,0 +1,93 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, materials and methods, results, discussion, supplementary references)
+- **Assessment boundary** Scientific claims, methodological soundness, and evidence quality as presented in the supplied text. No independent verification of data or code was performed.
+- **Shared manuscript claim summary** The authors present VeloHARMO, a deep learning framework combining organism-specific translation velocity predictors (VeloGRU, VeloBERT) with a genetic algorithm to design synonymous mRNA coding sequences that preserve native translation velocity profiles in heterologous hosts. They claim improved prediction accuracy over existing models, successful harmonization across 3808 E. coli genes for yeast expression, and qualitative consistency with published synonymous variant expression data.
+- **Visible evidence base** Abstract, introduction, materials and methods, results, discussion sections. Tables 1-3 and Figures 1-2, S1-S7 are referenced but not provided. Supplementary tables S1-S2 are referenced but not provided.
+- **Missing materials affecting confidence** All figures and tables are referenced but not included in the supplied text. Supplementary materials are not provided. Quantitative performance metrics (R2 values, correlation coefficients, statistical tests) are described qualitatively but not shown. The GitHub repository is mentioned but not assessed.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a conceptually interesting approach to mRNA design by directly modeling translation velocity rather than relying on codon usage frequency proxies. The core idea of harmonizing predicted velocity profiles between native and host organisms is well motivated and potentially useful. However, the evidence as presented is insufficient to fully evaluate the claims. Key quantitative results are only described verbally, all figures and tables are missing, and the validation against experimental data is acknowledged by the authors as qualitative and limited. The technical soundness of the deep learning models and the genetic algorithm cannot be assessed without the actual performance data and implementation details. The manuscript would benefit from clearer reporting of prediction accuracy metrics, statistical comparisons with baselines, and a more rigorous treatment of the experimental validation limitations.
+- **Who would be interested in the results, and why** Researchers in synthetic biology, biotechnology, and mRNA therapeutics would be interested in a data-driven approach to codon design that goes beyond frequency-based methods. Computational biologists working on translation dynamics and Ribo-seq analysis may also find the modeling framework relevant. The potential to improve heterologous protein expression in industrial and pharmaceutical settings gives the work practical significance.
+- **Major strengths** The conceptual shift from codon usage frequency to direct translation velocity modeling is well argued and addresses a recognized limitation in the field. The use of organism-specific models trained on Ribo-seq data is appropriate for the stated goal. The inclusion of multiple baseline comparisons (CHARMING, CodonTransformer, codon optimization, random substitution, tAI) is commendable. The authors are transparent about the limitations of their retrospective validation and the exploratory nature of VeloBERT.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence completeness
+  - **Claim pointer** "VeloGRU achieved higher accuracy than a previously published model, RiboMIMO" and "VeloBERT exhibited superior performance over VeloGRU in smaller datasets such as P. aeruginosa"
+  - **Evidence pointer** Table 1, Table 2 (not provided)
+  - **Concern** The quantitative prediction performance of VeloGRU and VeloBERT is not reported in the text. The claim of superiority over RiboMIMO and the comparison between the two proposed models cannot be evaluated without the actual R2 values, error bars, and statistical significance tests. The text only states qualitative outcomes.
+  - **Why it matters** The entire framework depends on the reliability of the translation velocity predictors. If the prediction accuracy is not convincingly demonstrated, the downstream design results are questionable. The reader cannot assess whether the models are fit for purpose.
+  - **Resolution test** Provide the full Table 1 and Table 2 with R2 values, standard deviations, and statistical comparisons. Report whether differences between models are significant and discuss any cases where the proposed models underperform.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence completeness
+  - **Claim pointer** "VeloHARMO consistently yielded greater fitness improvement across genes" and "these additional baselines also showed only limited fitness improvement compared with VeloHARMO"
+  - **Evidence pointer** Figure 2, Figure S7 (not provided)
+  - **Concern** The central benchmarking claim that VeloHARMO outperforms all baselines is presented without any quantitative data. The text does not report the distribution of fitness improvements, the fraction of genes where VeloHARMO wins, or any statistical test comparing methods. The figures that would show these results are not available.
+  - **Why it matters** This is the core evidence for the utility of the proposed method. Without quantitative comparison, the reader cannot determine whether the improvement is marginal or substantial, consistent or variable across genes, or an artifact of the evaluation metric.
+  - **Resolution test** Provide Figure 2 and Figure S7 with clear axis labels, effect sizes, and statistical comparisons. Report the median and interquartile range of fitness improvements for each method and the proportion of genes where VeloHARMO outperforms each baseline.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Validation rigor
+  - **Claim pointer** "the reported experimental trends were generally consistent with the fitness scores" and "VeloHARMO-designed sequences achieved the highest predicted fitness scores"
+  - **Evidence pointer** Table 3 (not provided)
+  - **Concern** The validation against experimental data is acknowledged as qualitative and limited to a small number of sequences. The text does not specify how many sequences were analyzed, what the quantitative expression measurements were, or how the consistency was assessed. The claim of qualitative support is weak and the authors themselves note that robust statistical analysis was not possible.
+  - **Why it matters** The practical relevance of VeloHARMO depends on whether predicted fitness correlates with actual protein expression or activity. A qualitative statement based on an unspecified number of examples is insufficient to establish this link. The reader cannot judge the strength of the evidence.
+  - **Resolution test** Provide Table 3 with the number of sequences, the experimental measurements, and the predicted fitness scores. If possible, report a correlation coefficient or at least a clear description of the pattern. Discuss explicitly the limitations of the comparison and what would be needed for stronger validation.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical detail
+  - **Claim pointer** "We used publicly available ribosome profiling (Ribo-seq) datasets from five organisms" and "Positions with zero footprint density were retained in the dataset"
+  - **Evidence pointer** Materials and methods, Data collection and Preprocessing (location not provided)
+  - **Concern** The description of data preprocessing is insufficient. The text does not specify how many datasets were used per organism, how read alignment was performed, how footprint densities were normalized, or how the zero-density positions were handled in model training. The choice to retain zero-density positions is mentioned but the rationale and potential impact on model training are not discussed.
+  - **Why it matters** Ribo-seq data processing is known to introduce significant variability. The reproducibility of the models depends on a complete description of the preprocessing pipeline. The handling of zero-density positions could bias the models in ways that affect the design results.
+  - **Resolution test** Provide a detailed description of the data processing pipeline, including alignment tools, normalization methods, filtering criteria, and the treatment of zero-density positions. Discuss the potential impact of these choices on model performance.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract (location not provided)
+  - **Issue** The abstract states "translation velocity harmonization" as the core concept but does not define it explicitly. A reader unfamiliar with the term may not understand what is being harmonized and how.
+  - **Required correction** Add a brief definition or clarification in the abstract, such as "matching the predicted codon-level translation velocity profile of a gene in its native host to that in a heterologous host."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical detail
+  - **Affected element** Materials and methods, Deep learning models
+  - **Evidence pointer** Materials and methods (location not provided)
+  - **Concern** The text states that VeloBERT is built upon a pretrained DNABERT backbone but does not describe how the pretrained model was adapted for the regression task. The fusion of DNABERT representations with protein-derived features is mentioned but not detailed.
+  - **Required correction** Provide a brief description of the VeloBERT architecture, including how the DNABERT embeddings are extracted, how they are fused with protein features, and the structure of the regression head.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Results, VeloHARMO designs mRNA sequences
+  - **Evidence pointer** Results (location not provided)
+  - **Concern** The toy problem validation within yeast is described as achieving a Pearson correlation of 0.995. It is unclear whether this is a single run or the best of multiple runs, and whether this result is representative.
+  - **Required correction** Clarify whether the reported correlation is from a single run or averaged over multiple runs, and report the variability if available.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion (location not provided)
+  - **Concern** The discussion mentions that VeloBERT should be regarded as exploratory but does not provide a clear recommendation on when to use VeloGRU versus VeloBERT in practice.
+  - **Required correction** Add a brief practical recommendation, such as "VeloGRU is recommended for bacterial and fungal hosts, while VeloBERT may be considered for human or mammalian systems where the pretrained representations are more relevant."
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Data availability
+  - **Evidence pointer** Data availability (location not provided)
+  - **Concern** The GitHub repository is mentioned but the text does not specify whether the trained model weights are included or only the code. This affects reproducibility.
+  - **Required correction** State explicitly whether trained model weights are provided in the repository or if users must train the models from scratch.
+
+## Risk / unsupported claims
+- The claim that VeloGRU achieves higher accuracy than RiboMIMO is unsupported without the actual performance data from Table 1.
+- The claim that VeloHARMO consistently outperforms all baselines is unsupported without the quantitative results from Figure 2 and Figure S7.
+- The claim that reported experimental trends are consistent with fitness scores is unsupported without the details from Table 3.
+- The claim that translation velocity profiles differ substantially between organisms is based on cross-prediction experiments described only qualitatively in Figure S4, which is not provided.
+- The claim that the genetic algorithm is stable under different random initializations is based on Figure S6 and Table S1, which are not provided.
+- The claim that parameter selection may be adjusted according to the task is based on Table S2, which is not provided.
+- The statement that "codon usage frequency is not a reliable proxy for translation velocity" is a central conclusion but is only supported by indirect evidence from the design experiments, which are not fully shown.

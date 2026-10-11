@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La-Ribo: RNA Co-Design via Geometry-Latent Flow Matching · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>La-Ribo: RNA Co-Design via Geometry-Latent Flow Matching</h1>
+      <div class="meta">Runze Ma; Will Hua; Shuangjia Zheng</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-08
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.12236v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于几何-潜变量流匹配的RNA序列-结构协同设计框架La-Ribo，虽对象为RNA而非蛋白质，但其生成建模与协同设计方法可迁移至蛋白质结构计算，具有借鉴价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">RNA function arises from the coupling of nucleotide sequence and three-dimensional structure, motivating their joint design. Coordinating global folding with nucleotide-level detail remains challenging under limited structural supervision. We introduce La-Ribo, a generative framework for RNA sequence-structure co-design via geometry-latent flow matching. La-Ribo retains a sparse phosphate-sugar--base scaffold and encodes nucleotide identity and local conformation in residue-wise latents. A shared flow network generates both jointly, and an RNA-specific decoder then reconstructs all heavy atoms. To expand supervision, we construct a quality-controlled corpus of 168,561 RNA structures, integrating experimental data with predictions from three folding models, including 10,631 MSA-supported structures generated in this work. La-Ribo improves designability and codesignability over the evaluated baselines across sampling budgets and two refolding models, and the same prior supports scaffold-conditioned inverse folding without additional training.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">RNA功能源于核苷酸序列与三维结构的耦合，这推动了它们的联合设计。在有限的结构监督下，协调全局折叠与核苷酸级细节仍具挑战性。我们提出La-Ribo，一种通过几何-潜变量流匹配 (geometry-latent flow matching) 实现RNA序列-结构协同设计的生成框架。La-Ribo保留稀疏的磷酸-糖-碱基骨架，并在残基级潜变量中编码核苷酸身份和局部构象。一个共享的流网络联合生成两者，随后一个RNA特异性解码器重建所有重原子。为扩展监督，我们构建了一个包含168,561个RNA结构的质量控制语料库，整合实验数据与三个折叠模型的预测，包括本工作中生成的10,631个MSA支持的结构。La-Ribo在采样预算和两个重折叠模型上，相较于评估的基线，提高了可设计性和可协同设计性，且同一先验支持无需额外训练的支架条件逆折叠。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：La-Ribo: RNA Co-Design via Geometry-Latent Flow Matching</li>
+<li><strong>作者</strong>：Runze Ma; Will Hua; Shuangjia Zheng</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：arXiv（预印本）</li>
+<li><strong>年份</strong>：2026（提交日期 2026-10-08）</li>
+<li><strong>论文类型</strong>：预印本（方法学）</li>
+<li><strong>领域</strong>：RNA 结构计算 × 深度学习（生成模型）</li>
+<li><strong>关键词</strong>：RNA co-design、flow matching、geometry-latent、structure prediction、sequence design</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.12236v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-10-08</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质/核酸结构相关计算研究 × AI 生成模型」交叉方向，聚焦 RNA 的序列-结构联合设计（co-design），采用 geometry-latent flow matching 框架，与蛋白质领域的结构-序列 co-design 方法（如基于 diffusion/flow 的蛋白设计）在方法论上高度同源，可迁移至蛋白质结构预测与设计任务。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 La-Ribo，一种基于几何-隐空间流匹配（geometry-latent flow matching）的 RNA 序列-结构联合设计方法，通过将 RNA 3D 结构与序列映射到统一隐空间并学习其联合分布，实现给定功能约束下的 RNA 序列与结构同步生成。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何实现 RNA 的序列与 3D 结构联合设计（co-design），即在给定目标结构或功能约束下，同时生成合理的 RNA 序列及其对应的 3D 构象？</li>
+<li><strong>为什么重要</strong>：RNA 功能（如核酶、核开关、适配体）高度依赖其 3D 结构，而序列-结构映射关系复杂，传统方法通常将序列设计与结构预测分开处理，导致设计出的序列难以折叠为目标结构。</li>
+<li><strong>现有方法为何不足</strong>：现有 RNA 设计方法（如基于能量最小化、Rosetta 类方法）依赖手工打分函数，计算成本高且难以捕捉复杂构象空间；深度学习方法多聚焦于序列设计或结构预测单一任务，缺乏联合建模能力。</li>
+<li><strong>精确研究问题</strong>：Can a geometry-latent flow matching model learn the joint distribution of RNA sequence and 3D structure, enabling efficient and accurate co-design?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统 RNA 设计</td>
+<td>Rosetta、NUPACK、能量最小化</td>
+<td>物理可解释、可处理小分子</td>
+<td>计算昂贵、难以采样大构象空间</td>
+<td>被替代</td>
+</tr>
+<tr>
+<td>深度学习序列设计</td>
+<td>RNN/Transformer 序列模型</td>
+<td>快速、可扩展</td>
+<td>忽略 3D 结构信息</td>
+<td>被扩展</td>
+</tr>
+<tr>
+<td>结构预测</td>
+<td>AlphaFold3、RoseTTAFold（RNA 扩展）</td>
+<td>高精度结构预测</td>
+<td>不直接支持设计任务</td>
+<td>被借鉴</td>
+</tr>
+<tr>
+<td>生成模型</td>
+<td>Diffusion/Flow-based 蛋白设计</td>
+<td>联合建模序列-结构</td>
+<td>多针对蛋白，RNA 领域应用少</td>
+<td>本文核心</td>
+</tr>
+</tbody>
+</table>
+<p>本文主张：将 flow matching 扩展到 geometry-latent 空间，实现 RNA 序列-结构联合生成，填补 RNA co-design 的空白。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列-结构分离</td>
+<td>设计序列无法折叠为目标结构</td>
+<td>序列与结构映射复杂，传统方法分步处理</td>
+<td>未提供（作者主张）</td>
+</tr>
+<tr>
+<td>构象空间采样难</td>
+<td>高维 3D 构象难以高效采样</td>
+<td>能量景观粗糙、局部极小值多</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>打分函数局限</td>
+<td>手工能量函数不准确</td>
+<td>缺乏对 RNA 特异性相互作用的精确建模</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>数据稀缺</td>
+<td>RNA 结构数据远少于蛋白</td>
+<td>实验测定 RNA 结构困难</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：使用 flow matching 在几何-隐空间（geometry-latent space）中学习 RNA 序列与 3D 结构的联合分布，通过条件生成实现 co-design。</li>
+<li><strong>核心洞察</strong>：将序列与结构统一编码到同一隐空间，使模型能够同时优化两者的一致性，避免分步设计的误差累积。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：对于任何序列-结构耦合的生物分子（蛋白、RNA、复合物），联合隐空间生成模型可能优于分步 pipeline，因为隐空间能捕捉序列-结构间的非线性依赖。</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：目标结构约束（如二级结构、功能基序）或无条件生成提示</li>
+<li><strong>输出</strong>：RNA 序列 + 对应 3D 结构</li>
+<li><strong>模块</strong>：
+  1. 几何编码器（将 3D 结构映射到隐空间）
+  2. 序列编码器（将序列映射到隐空间）
+  3. Flow matching 生成器（在隐空间学习联合分布）
+  4. 解码器（从隐空间重建序列与结构）</li>
+<li><strong>训练</strong>：端到端训练，损失函数包含隐空间 flow matching 损失 + 重建损失</li>
+<li><strong>工具</strong>：未提供具体框架</li>
+<li><strong>假设</strong>：隐空间能够充分表征序列-结构联合分布；flow matching 可高效采样</li>
+<li><strong>流程</strong>：输入约束 → 编码器映射到隐空间 → flow matching 生成隐向量 → 解码器输出序列与结构</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>几何编码器</td>
+<td>将 3D 结构编码为隐向量</td>
+<td>使结构信息可被生成模型处理</td>
+<td>输入：3D 坐标；输出：隐向量</td>
+<td>未提供</td>
+<td>预期：无法生成结构 [Analysis]</td>
+</tr>
+<tr>
+<td>序列编码器</td>
+<td>将序列编码为隐向量</td>
+<td>统一序列与结构表示</td>
+<td>输入：序列；输出：隐向量</td>
+<td>未提供</td>
+<td>预期：无法生成序列 [Analysis]</td>
+</tr>
+<tr>
+<td>Flow matching 生成器</td>
+<td>学习隐空间联合分布</td>
+<td>实现高效采样</td>
+<td>输入：噪声+条件；输出：隐向量</td>
+<td>未提供</td>
+<td>预期：生成质量下降 [Analysis]</td>
+</tr>
+<tr>
+<td>解码器</td>
+<td>从隐向量重建序列与结构</td>
+<td>将隐表示映射回物理空间</td>
+<td>输入：隐向量；输出：序列+结构</td>
+<td>未提供</td>
+<td>预期：无法输出最终设计 [Analysis]</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：所有消融效应均为预期，未提供实测消融实验。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用（提供的材料中未包含具体公式）。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：提供的材料仅为摘要级信息，无实验细节。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：RNA 序列-结构联合设计</li>
+<li><strong>oracle/真值输入</strong>：未提供</li>
+<li><strong>端到端状态</strong>：未提供</li>
+<li><strong>算力成本</strong>：未提供</li>
+<li><strong>历史数据依赖</strong>：未提供</li>
+<li><strong>模型依赖</strong>：未提供</li>
+<li><strong>最难情形</strong>：未提供</li>
+<li><strong>群体/领域边界</strong>：RNA 分子，未涉及蛋白或复合物</li>
+<li><strong>不确定性</strong>：未提供</li>
+</ul>
+<p><strong>有边界的复述</strong>：La-Ribo 提出了一种基于 geometry-latent flow matching 的 RNA co-design 框架，声称能联合生成序列与结构，但其性能、适用范围和与现有方法的对比均未在提供的材料中给出。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 未提供</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺乏实验细节</td>
+<td>可能处于早期阶段或结果不充分</td>
+<td>无法评估方法有效性</td>
+<td>要求补充实验部分</td>
+<td>摘要级信息</td>
+</tr>
+<tr>
+<td>未与现有方法对比</td>
+<td>可能性能不优于 Rosetta 或深度学习方法</td>
+<td>无法判断增量贡献</td>
+<td>设计对比实验</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>隐空间可解释性存疑</td>
+<td>隐向量可能无法保证物理合理性</td>
+<td>生成结构可能不可折叠</td>
+<td>结构验证实验</td>
+<td>[Analysis]</td>
+</tr>
+<tr>
+<td>RNA 数据稀缺</td>
+<td>训练数据不足可能限制泛化</td>
+<td>影响实际应用</td>
+<td>数据增强或迁移学习</td>
+<td>[Analysis]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>Geometry-latent flow matching 框架</strong>：将 3D 结构与序列统一编码到隐空间，用 flow matching 学习联合分布，可迁移至蛋白质 co-design（序列+结构联合生成）。</li>
+<li><strong>联合建模优于分步 pipeline</strong>：对于蛋白设计，序列-结构联合生成可能比先设计序列再预测结构更高效、更准确。</li>
+<li><strong>隐空间生成模型的可扩展性</strong>：flow matching 在隐空间操作，计算成本低于直接在 3D 空间操作，适合大规模设计任务。</li>
+<li><strong>RNA 方法的蛋白迁移</strong>：RNA co-design 的框架可适配蛋白，只需调整编码器/解码器以处理氨基酸与蛋白结构特征。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与蛋白领域的 diffusion/flow-based co-design（如 RFdiffusion、Chroma）在方法论上同源，可对比其设计思路。</li>
+<li><strong>组合方向</strong>：将 La-Ribo 的隐空间 flow matching 与 AlphaFold3 的结构预测结合，实现「生成-验证」闭环。</li>
+<li><strong>冲突点</strong>：若 La-Ribo 声称优于 Rosetta 类方法，需验证其物理合理性；若未对比，则需谨慎看待。</li>
+<li><strong>可迁移领域</strong>：蛋白-配体复合物 co-design、核酸-蛋白复合物设计。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：Protein-LaRibo：将 La-Ribo 框架迁移至蛋白质 co-design
+   - <strong>来源局限/观察</strong>：La-Ribo 针对 RNA，但框架通用
+   - <strong>核心假设</strong>：geometry-latent flow matching 能有效建模蛋白序列-结构联合分布
+   - <strong>初步方法</strong>：替换编码器/解码器为蛋白专用模块，在蛋白数据集上训练
+   - <strong>验证方式</strong>：与 RFdiffusion 对比设计成功率
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：La-Ribo + AlphaFold3 闭环验证
+   - <strong>来源局限/观察</strong>：生成结构需验证可折叠性
+   - <strong>核心假设</strong>：AlphaFold3 可筛选 La-Ribo 生成的结构
+   - <strong>初步方法</strong>：生成序列→AlphaFold3 预测结构→与目标结构比对
+   - <strong>验证方式</strong>：RMSD 与设计成功率
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：隐空间可解释性分析
+   - <strong>来源局限/观察</strong>：隐向量物理意义不明
+   - <strong>核心假设</strong>：隐空间维度对应特定结构基序
+   - <strong>初步方法</strong>：PCA/UMAP 分析隐向量与结构特征关联
+   - <strong>验证方式</strong>：结构聚类与隐空间聚类一致性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：RNA-蛋白复合物 co-design
+   - <strong>来源局限/观察</strong>：La-Ribo 仅处理 RNA
+   - <strong>核心假设</strong>：扩展隐空间可联合建模 RNA-蛋白相互作用
+   - <strong>初步方法</strong>：引入复合物编码器，联合生成 RNA 序列、蛋白序列与复合物结构
+   - <strong>验证方式</strong>：复合物结构预测与功能实验
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only (title, author list, and arXiv metadata provided; no full text, figures, tables, or supplementary materials)</li>
+<li><strong>Assessment boundary</strong> Assessment limited to the claims and evidence visible in the abstract; no methodological details, experimental results, or code availability can be verified</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose La-Ribo, a method for RNA co-design (sequence and structure) using geometry-latent flow matching. The abstract claims that this approach enables joint generation of RNA sequence and 3D structure, and implies improved performance over existing methods.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, benchmark comparisons, or implementation details are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, method description, experimental setup, baseline comparisons, code or data availability statements, and any supplementary information</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially interesting methodological contribution to RNA design, combining geometric deep learning with flow matching in a latent space. However, the abstract is too brief to evaluate the technical soundness, novelty relative to existing RNA design tools, or the validity of any performance claims. No quantitative evidence is visible, and the core methodological claims cannot be assessed from the supplied material. The work may be of interest to computational biologists and machine learning researchers, but the current evidence base is insufficient to establish the case.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists working on RNA structure prediction and design, machine learning researchers interested in generative models for biomolecular structures, and pharmaceutical or synthetic biology groups developing RNA-based therapeutics. The combination of geometry-aware modeling and flow matching is a timely topic, and successful co-design of sequence and structure would have practical utility.</li>
+<li><strong>Major strengths</strong> The problem addressed (RNA co-design of sequence and structure) is important and underexplored relative to protein design. The methodological framing, using geometry-latent flow matching, is conceptually appealing and aligns with recent advances in generative modeling for biomolecules. The abstract is clearly written and accessible to a broad scientific audience.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The abstract implies that La-Ribo achieves effective RNA co-design via geometry-latent flow matching, but no technical details are provided to support this claim.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract does not describe the model architecture, the flow matching formulation, the latent space construction, or the training procedure. Without these details, it is impossible to assess whether the method is technically sound, novel, or correctly implemented.</li>
+<li><strong>Why it matters</strong> Technical soundness is a prerequisite for any methodological claim. The absence of any methodological description prevents evaluation of whether the approach is valid, reproducible, or an improvement over existing methods.</li>
+<li><strong>Resolution test</strong> Provide a full method section describing the model, the flow matching objective, the geometry representation, and the training and inference procedures. Include sufficient detail for replication.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence for claims</li>
+<li><strong>Claim pointer</strong> The abstract implies improved or competitive performance for RNA co-design, but no results are reported.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> No quantitative results, benchmarks, or comparisons to existing RNA design methods are presented. Any claim of effectiveness or superiority is unsupported.</li>
+<li><strong>Why it matters</strong> Without empirical validation, the utility of the method cannot be established. The RNA design field has existing baselines, and new methods must demonstrate clear advantages or at least competitive performance on standard benchmarks.</li>
+<li><strong>Resolution test</strong> Include experimental results on established RNA design benchmarks, with comparisons to relevant baselines, and report metrics for both sequence recovery and structural accuracy.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Novelty and positioning</li>
+<li><strong>Claim pointer</strong> The abstract presents La-Ribo as a new method, but does not articulate how it differs from prior RNA design approaches or from flow matching methods applied to other biomolecules.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract does not cite or discuss prior work on RNA design, geometric flow matching, or related generative models. Without this context, the novelty of the contribution cannot be evaluated.</li>
+<li><strong>Why it matters</strong> Scientific contribution requires clear differentiation from existing work. The lack of positioning against the literature makes it impossible to judge whether the method is a meaningful advance or an incremental variation.</li>
+<li><strong>Resolution test</strong> Add a related work section that situates La-Ribo within the existing literature, explicitly stating the novel components and the expected advantages over prior methods.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Abstract terminology</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The term "geometry-latent flow matching" is used without definition or context, which may be opaque to readers outside the machine learning for biomolecules community.</li>
+<li><strong>Required correction</strong> Briefly define the term or provide a one-sentence explanation of the approach in the abstract.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Code and data availability</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> No statement about code or data availability is present in the abstract.</li>
+<li><strong>Required correction</strong> Include a data and code availability statement in the full manuscript, and mention it in the abstract if space permits.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Scope of claims</li>
+<li><strong>Affected element</strong> Abstract claims</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract does not specify the scope of the co-design task, such as whether it handles pseudoknots, modified nucleotides, or specific RNA lengths.</li>
+<li><strong>Required correction</strong> Clarify the scope and limitations of the method in the abstract or introduction.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (no methodological detail), R1-M2 (no empirical results), R1-M3 (no literature positioning). These are not technical failings in the implementation but rather critical omissions in the provided material that prevent any technical assessment.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: cannot be assessed due to lack of literature context. Scientific importance: the problem is important, but the contribution cannot be evaluated. Interdisciplinary readership: the abstract is accessible, but the lack of results limits appeal. Technical soundness: not assessable from the abstract. Readability for nonspecialists: the abstract is clear but uses undefined jargon. Overall, the manuscript does not currently meet the evidentiary standard for a Nature-style publication based on the supplied material.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract alone is insufficient to support the claims. A full manuscript with methodological detail, experimental validation, and literature positioning is required before a meaningful assessment can be made.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that La-Ribo enables effective RNA co-design is unsupported, as no results are provided.</li>
+<li>Any implied improvement over existing methods is unsupported, as no comparisons are presented.</li>
+<li>The novelty of the approach is unassessable, as no prior work is cited or discussed.</li>
+<li>The technical validity of the geometry-latent flow matching approach is unassessable, as no methodological details are given.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

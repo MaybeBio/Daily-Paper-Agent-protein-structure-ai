@@ -1,0 +1,86 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose a framework that augments protein language model representations with structural and co-evolutionary features for protein fitness prediction, and report consistent improvements over prior state-of-the-art on the FLIP2 benchmark across multiple distribution shift types. They further claim that structural priors help most on held-out backbones, while trunk features help most on held-out mutation positions, and that their findings provide practical guidance for representation selection.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark details, or methodological specifics are available
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, benchmark configuration details, model architecture specifications, hyperparameters, statistical significance tests, and comparison protocols
+
+## Reviewer
+- **Overall assessment** The abstract addresses a timely and practically important problem in protein fitness prediction, namely generalization under distribution shifts. The proposed framework is conceptually reasonable, combining structural and co-evolutionary signals with sequence-based language models. However, the abstract provides no quantitative evidence, no methodological detail sufficient for replication, and no statistical validation. The central claims of consistent outperformance and modality-specific contributions cannot be assessed from the supplied material. The work may be of interest to the protein engineering and machine learning communities, but the current evidence base is insufficient to establish the case.
+- **Who would be interested in the results, and why** Researchers in protein engineering, directed evolution, and computational protein design would be interested because improved fitness predictors can serve as oracles or reward functions. Machine learning researchers working on generalization under distribution shifts, particularly in biological sequence domains, would also find the modality comparison relevant.
+- **Major strengths** The problem is well motivated and practically important. The abstract explicitly addresses a known limitation of current protein language models under distribution shifts. The proposed framework is modular, allowing component-wise analysis. The authors frame their contribution not as a single best method but as guidance for representation selection, which is a useful framing for practitioners.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The framework "consistently outperforms the best previously reported FLIP2 scores across several types of distribution shift"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No quantitative results are reported. There are no performance numbers, no comparison table, no effect sizes, and no indication of which distribution shift types were tested or how many.
+  - **Why it matters** The central claim of the manuscript is that the proposed method outperforms prior work. Without any numerical evidence, this claim is unverifiable and the scientific contribution cannot be evaluated.
+  - **Resolution test** Provide a table or figure with performance metrics on FLIP2 for the proposed method and all baselines, including standard deviations and statistical significance tests, across all distribution shift types.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological clarity
+  - **Claim pointer** The framework "pairs structure-aware pLMs with features pooled from an AlphaFold-style trunk applied to each sequence and its MSA, and uses a lightweight prediction probe"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not specify which structure-aware pLMs were used, how the AlphaFold-style trunk was trained or frozen, how features were pooled, what the probe architecture was, or how the components were combined. This level of detail is insufficient for replication or even for a preliminary assessment of methodological soundness.
+  - **Why it matters** Reproducibility is a core requirement for computational biology research. Without architectural and training details, the method cannot be evaluated or compared fairly.
+  - **Resolution test** Provide a full methods section with model architectures, training procedures, hyperparameters, and code availability.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim substantiation
+  - **Claim pointer** "Structural priors yield the largest performance gains on held-out protein backbones, whereas trunk features improve generalization to held-out mutation positions"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** This is a specific and potentially valuable finding, but no data are shown to support it. It is unclear how "largest gains" were measured, whether the differences are statistically significant, and whether the pattern holds across all protein families tested.
+  - **Why it matters** This claim is the main scientific insight of the work. If unsupported, the practical guidance offered to the community is not credible.
+  - **Resolution test** Provide ablation results with error bars and significance tests for each component across each distribution shift type and protein family.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scope and generalizability
+  - **Claim pointer** The findings "provide practical guidance for choosing representations according to the generalization regime"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not state how many protein families were tested, whether the conclusions are consistent across families, or whether the guidance is limited to the FLIP2 benchmark or extends to other settings.
+  - **Why it matters** The practical value of the work depends on the breadth of validation. If only a few families were tested, the guidance may not generalize.
+  - **Resolution test** Report the number and diversity of protein families, and discuss the extent to which the conclusions are expected to transfer beyond FLIP2.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "AlphaFold-style trunk" is vague. It is unclear whether this refers to a specific pretrained model, a reimplementation, or a custom architecture.
+  - **Required correction** Specify the exact model or architecture used, including source and version.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Benchmark description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions FLIP2 but does not describe the benchmark, the number of tasks, or the specific distribution shift types.
+  - **Required correction** Briefly describe the benchmark and list the distribution shift types evaluated.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** Performance comparison
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No mention of statistical significance, variance, or number of independent runs.
+  - **Required correction** Report mean and standard deviation over multiple seeds and include significance tests where appropriate.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Code and data availability
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No statement on code or data availability.
+  - **Required correction** Add a data and code availability statement.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative results, methodological detail, and ablation evidence means the core claims are currently unsupported.
+- **Assessment against Nature-style criteria** Originality: The combination of structural and co-evolutionary features with sequence-based pLMs for fitness prediction under distribution shifts is a reasonable extension of existing work, but the abstract does not demonstrate conceptual novelty beyond what is already known in the field. Scientific importance: The problem is important, and the potential to guide representation selection is valuable, but the importance is not yet established without evidence. Interdisciplinary readership: The topic bridges machine learning and protein engineering, and the abstract is written in a way that is broadly accessible. Technical soundness: Cannot be assessed from the abstract alone; the lack of methodological detail and results prevents evaluation. Readability for nonspecialists: The abstract is clear and well structured, though some terms such as "AlphaFold-style trunk" may require elaboration for a general audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a plausible and potentially useful framework, but the absence of quantitative results, methodological detail, and ablation analyses means the central claims cannot be verified. I would be supportive if the full manuscript provides the missing evidence and addresses the concerns above.
+
+## Risk / unsupported claims
+- The claim of consistent outperformance over prior FLIP2 results is unsupported due to the absence of any numerical data.
+- The claim that structural priors yield the largest gains on held-out backbones and trunk features improve generalization to held-out mutation positions is unsupported without ablation results.
+- The claim that the findings provide practical guidance for representation selection is not assessable without evidence of consistency across protein families and shift types.
+- The methodological description is too vague to assess technical soundness or reproducibility.

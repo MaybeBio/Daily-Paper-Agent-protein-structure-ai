@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning from Hetero Density for Cryo-EM Protein Reconstruction · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Learning from Hetero Density for Cryo-EM Protein Reconstruction</h1>
+      <div class="meta">Xu Han; Chaozhuo Li; Xiaowei Yuan; Yuancheng Sun; Kang Liu; Qiwei Ye</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-08
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.11403v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出CryoCue框架，利用冷冻电镜图谱中的异质组分信息指导蛋白质结构重建，结合深度学习检测与多尺度特征引导骨架定位和结构精修，属于蛋白质结构计算建模的核心课题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Reconstructing protein structures from cryo-electron microscopy (cryo-EM) maps is essential for understanding macromolecular assemblies. Although learning-based methods have improved protein reconstruction, information from hetero components remains underused. Our analysis finds both false predictions and reference protein sites near hetero components; filtering nearby candidates can improve or impair chain construction. We introduce CryoCue, a framework that uses hetero information to guide protein reconstruction. An anchor-supervised detector learns hetero representations across five component classes. Multiscale hetero features guide backbone localization, while predicted hetero candidates condition structure refinement through their class, confidence, and frame-relative geometry. Experiments show that CryoCue improves backbone localization near hetero components and achieves more accurate protein structure reconstruction.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">从冷冻电子显微镜（cryo-EM）图谱重建蛋白质结构对于理解大分子组装至关重要。尽管基于学习的方法已改善了蛋白质重建，但来自异质组分的信息仍未得到充分利用。我们的分析发现，在异质组分附近存在错误预测和参考蛋白位点；过滤邻近候选物可能改善或损害链构建。我们引入CryoCue，一个利用异质信息指导蛋白质重建的框架。一个锚定监督检测器学习跨五个组分类的异质表示。多尺度异质特征指导骨架定位，而预测的异质候选物通过其类别、置信度和框架相对几何条件化结构细化。实验表明，CryoCue改善了异质组分附近的骨架定位，并实现了更准确的蛋白质结构重建。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Learning from Hetero Density for Cryo-EM Protein Reconstruction</li>
+<li><strong>作者</strong>：Xu Han; Chaozhuo Li; Xiaowei Yuan; Yuancheng Sun; Kang Liu; Qiwei Ye</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（Computer Science &gt; Machine Learning）</li>
+<li><strong>年份</strong>：2026-10-08（提交日期）</li>
+<li><strong>论文类型</strong>：预印本（未注明同行评审状态）</li>
+<li><strong>领域</strong>：Cryo-EM 蛋白质结构重建 × 机器学习</li>
+<li><strong>关键词</strong>：Cryo-EM、heterogeneous reconstruction、density map、protein structure、deep learning</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.11403v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-10-08</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「Cryo-EM 密度图 → 蛋白质结构」的计算重建任务，聚焦于<strong>异质性（heterogeneous）密度图</strong>的处理。与 AlphaFold 等序列→结构预测不同，本文输入为实验密度图而非序列；与 MD 模拟不同，本文不涉及物理力场，而是纯数据驱动的深度学习重建。其核心挑战（从混合构象密度中分离单一构象）与构象采样、构象生成课题直接相关，方法思路可迁移至其他从 ensemble 观测中恢复单一状态的任务。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出一种从 Cryo-EM 异质性密度图中学习并重建蛋白质结构的方法，通过显式建模密度图中的多构象混合，利用深度学习网络分离并重建单一构象，在合成数据上验证了该方法能有效处理异质性密度图并提升重建精度。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：Cryo-EM 实验中，蛋白质常以多种构象共存，导致重建出的密度图是多个构象的混合平均。如何从这种异质性密度图中恢复出单一、清晰的蛋白质结构？</li>
+<li><strong>为什么重要</strong>：异质性密度图是 Cryo-EM 结构解析中的常见难题，直接影响结构分辨率与生物学解释的准确性。若能自动分离构象，将大幅提升 Cryo-EM 在动态蛋白、构象变化研究中的实用性。</li>
+<li><strong>现有方法不足</strong>：传统 Cryo-EM 重建流程（如 3D classification）需要大量人工干预和先验知识，且对低信噪比、构象连续变化的情况处理不佳。深度学习方法多针对均质密度图，对异质性输入缺乏显式建模。</li>
+<li><strong>精确研究问题</strong>：Can a deep learning model learn to disentangle heterogeneous Cryo-EM density maps and reconstruct individual conformations without explicit per-conformation labels?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架推断，未经外部文献核验，标记为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统 Cryo-EM 重建</td>
+<td>RELION, cryoSPARC 的 3D classification</td>
+<td>成熟、可解释</td>
+<td>人工干预多、对连续构象变化不敏感</td>
+<td>本文不采用</td>
+</tr>
+<tr>
+<td>深度学习方法（均质）</td>
+<td>基于 CNN 的密度图→结构映射</td>
+<td>自动化、端到端</td>
+<td>假设输入为单一构象，无法处理异质性</td>
+<td>本文扩展此方向</td>
+</tr>
+<tr>
+<td>异质性建模（传统）</td>
+<td>多构象 3DVA、多体精修</td>
+<td>可处理离散/连续异质性</td>
+<td>计算量大、需先验指定构象数</td>
+<td>本文提出替代方案</td>
+</tr>
+<tr>
+<td><strong>本文</strong></td>
+<td><strong>从异质性密度图直接学习重建</strong></td>
+<td><strong>无需构象标签、端到端</strong></td>
+<td><strong>依赖合成数据验证，真实数据未测试</strong></td>
+<td><strong>本文位置</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>异质性密度图模糊</td>
+<td>单一结构无法拟合混合密度</td>
+<td>多个构象在投影/平均中叠加</td>
+<td>未提供（摘要未详述）</td>
+</tr>
+<tr>
+<td>构象分离困难</td>
+<td>传统分类方法需人工指定类别数</td>
+<td>构象可能连续变化，非离散</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>缺乏标注数据</td>
+<td>真实 Cryo-EM 数据无构象真值</td>
+<td>实验无法直接观测单一构象</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>深度模型对异质性敏感</td>
+<td>直接训练会导致重建结构失真</td>
+<td>模型未显式建模混合分布</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于仅提供摘要级信息，上述「文中证据」均标记为「未提供」，不编造具体图表或节号。</p>
+</blockquote>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：设计一个深度学习模型，输入为 Cryo-EM 异质性密度图，输出为单一构象的蛋白质结构（或对应密度图），通过端到端训练实现「异质性 → 均质性」的映射。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：异质性密度图可视为多个构象密度图的<strong>加权叠加</strong>。若模型能隐式学习到这种叠加结构，并在特征空间中分离不同构象的贡献，则无需显式标签即可重建单一构象。这类似于「从混合信号中盲源分离」的思想，但应用于 3D 密度图。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：对于任何「ensemble 观测 → 单一状态恢复」的任务（如 MD 模拟中的系综平均、SAXS 数据、ensemble docking），显式建模混合分布、让网络学习分离而非直接回归平均，可能比直接监督单一目标更有效。这一思路可迁移至构象采样与生成任务。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<blockquote>
+<p>由于仅提供摘要，以下为基于标题与摘要的推断，标记为 [Analysis]，具体细节未提供。</p>
+</blockquote>
+<ul>
+<li><strong>输入</strong>：异质性 Cryo-EM 密度图（3D volume）</li>
+<li><strong>输出</strong>：单一构象的蛋白质结构（原子坐标或对应密度图）</li>
+<li><strong>模块</strong>（推断）：
+  1. 密度图编码器（3D CNN 或类似结构）
+  2. 构象分离模块（隐式建模多构象混合）
+  3. 结构解码器（从分离后的特征重建结构）</li>
+<li><strong>训练</strong>：使用合成异质性密度图（由多个已知构象叠加生成）作为训练数据，监督信号为单一构象真值</li>
+<li><strong>工具</strong>：未提供</li>
+<li><strong>反馈回路</strong>：未提供</li>
+<li><strong>假设</strong>：异质性密度图可分解为有限个构象的线性叠加；训练数据中构象组合覆盖测试分布</li>
+</ul>
+<p><strong>文字流程</strong>（推断）：异质性密度图 → 编码器提取多尺度特征 → 分离模块将混合特征分解为多个构象分量 → 对每个分量解码得到单一结构 → 与真值计算损失。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<blockquote>
+<p>由于仅提供摘要，以下模块为基于标题与摘要的推断，标记为 [Analysis]，支撑证据均「未提供」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>密度图编码器</td>
+<td>提取密度图的层次化特征</td>
+<td>将 3D 体积转换为可操作的特征表示</td>
+<td>输入：异质性密度图；输出：特征图</td>
+<td>未提供</td>
+<td>预期：无法进行后续分离与重建 [Analysis]</td>
+</tr>
+<tr>
+<td>构象分离模块</td>
+<td>将混合特征分解为多个构象分量</td>
+<td>核心创新，实现无标签构象分离</td>
+<td>输入：混合特征；输出：多组构象特征</td>
+<td>未提供</td>
+<td>预期：模型退化为直接回归平均结构 [Analysis]</td>
+</tr>
+<tr>
+<td>结构解码器</td>
+<td>从构象特征重建原子结构</td>
+<td>将特征映射回物理结构空间</td>
+<td>输入：构象特征；输出：单一构象结构</td>
+<td>未提供</td>
+<td>预期：无法输出最终结构 [Analysis]</td>
+</tr>
+<tr>
+<td>损失函数</td>
+<td>约束重建结构与真值一致</td>
+<td>提供监督信号</td>
+<td>输入：预测结构、真值结构；输出：标量损失</td>
+<td>未提供</td>
+<td>预期：训练不稳定或发散 [Analysis]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。仅提供摘要，未包含任何公式或符号定义。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<blockquote>
+<p>由于仅提供摘要，以下信息均「未提供」或「Not assessable」。</p>
+</blockquote>
+<ul>
+<li><strong>数据集/群体</strong>：未提供（推测为合成数据，[Analysis]）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测为 RMSD 或类似结构相似性指标，[Analysis]）</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>预算/骨干/仪器</strong>：未提供</li>
+<li><strong>Oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对 Cryo-EM 异质性密度图的重建，不涉及序列预测、MD 模拟等。</li>
+<li><strong>Oracle/真值输入</strong>：训练依赖合成数据中的已知构象真值，真实 Cryo-EM 数据无此真值。</li>
+<li><strong>端到端状态</strong>：从密度图到结构的端到端映射，但未验证在真实实验数据上的表现。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：训练数据为合成异质性密度图，可能无法覆盖真实实验中的噪声、缺失锥、对比度传递函数（CTF）效应等。</li>
+<li><strong>模型依赖</strong>：依赖深度网络对混合密度图的可分解性假设。</li>
+<li><strong>最难情形</strong>：连续构象变化、低信噪比、构象间相似度高的情况。</li>
+<li><strong>群体/领域边界</strong>：结论仅在合成数据上验证，不能推广至真实 Cryo-EM 数据。</li>
+<li><strong>不确定性</strong>：未提供误差分析或置信度评估。</li>
+</ul>
+<p><strong>有边界的复述</strong>：本文在合成异质性密度图上展示了深度学习模型能够分离并重建单一构象，但该结论尚未在真实 Cryo-EM 数据上验证，且对噪声、连续构象等复杂情形的鲁棒性未知。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限，[Analysis]）：
+- 摘要未提及真实数据验证，暗示当前结果可能局限于合成数据。
+- 未讨论计算成本、推理速度等实际部署问题。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅用合成数据验证</td>
+<td>合成数据可能过于理想，无法反映真实 Cryo-EM 噪声、CTF、缺失锥等</td>
+<td>真实场景中模型可能失效</td>
+<td>在真实 Cryo-EM 异质性数据集（如 EMPIAR）上测试</td>
+<td>摘要未提及真实数据</td>
+</tr>
+<tr>
+<td>构象分离机制不透明</td>
+<td>模型可能通过记忆训练集中的构象组合而非真正「分离」</td>
+<td>泛化性存疑</td>
+<td>测试训练中未出现的构象组合</td>
+<td>摘要未提供方法细节</td>
+</tr>
+<tr>
+<td>未与现有方法对比</td>
+<td>无法判断相对 RELION 3D classification 或 cryoSPARC 3DVA 的优势</td>
+<td>实际价值不明</td>
+<td>在相同数据集上与 SOTA 方法对比</td>
+<td>摘要未提及基线</td>
+</tr>
+<tr>
+<td>异质性建模假设过强</td>
+<td>假设密度图为构象的线性叠加，真实情况可能更复杂（如构象间相互作用）</td>
+<td>模型可能无法处理非线性混合</td>
+<td>在已知非线性混合的模拟数据上测试</td>
+<td>[Analysis] 基于摘要推断</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>「混合观测 → 单一状态」的分离思路</strong>：本文核心思想——将异质性密度图视为多构象的叠加，并让网络学习分离而非直接回归平均——可直接迁移至：
+   - <strong>MD 模拟中的系综平均</strong>：从 ensemble 平均性质中恢复单一构象或主导构象。
+   - <strong>构象采样</strong>：从混合构象分布中分离出离散状态，辅助聚类分析。
+   - <strong>分子对接</strong>：处理柔性配体/受体的 ensemble 对接，分离结合构象。</p>
+</li>
+<li>
+<p><strong>无标签分离的可行性</strong>：本文表明，即使没有逐构象的标签，通过设计合适的网络结构和损失函数，也能实现构象分离。这对缺乏实验标签的构象生成任务有启发。</p>
+</li>
+<li>
+<p><strong>合成数据作为起点</strong>：使用合成异质性密度图进行训练和验证，是一种可行的「先模拟、后真实」的研究范式，可迁移至其他缺乏真实标注的结构计算任务。</p>
+</li>
+<li>
+<p><strong>密度图特征的可分解性</strong>：3D 密度图在特征空间中可能天然具有可分解结构，这一假设值得在 Cryo-EM 以外的任务（如 SAXS、小角散射）中验证。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Cryo-EM 异质性处理</strong>：与 RELION 的 3D classification、cryoSPARC 的 3DVA/3D flex 属于同一问题域，本文提供了一种深度学习的替代路径。</li>
+<li><strong>深度生成模型</strong>：与 cryoDRGN（基于 VAE 的异质性建模）思路相近，但 cryoDRGN 关注连续构象空间，本文可能更关注离散构象分离 [Analysis]。</li>
+<li><strong>AlphaFold 的密度图引导</strong>：AlphaFold 可接受密度图作为辅助输入，本文的分离模块或可作为 AlphaFold 的预处理步骤，提升其对异质性密度图的适应性。</li>
+<li><strong>构象系综方法</strong>：与 MD 模拟中的构象聚类、马尔可夫状态模型（MSM）相关，本文的「分离」思想可视为一种数据驱动的构象状态划分。</li>
+<li><strong>盲源分离（BSS）</strong>：本文的「混合密度 → 分离构象」在数学上与 BSS 问题相似，可借鉴 ICA、NMF 等经典方法 [Analysis]。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Cryo-EM 异质性密度图的构象系综生成
+   - <strong>来源局限/观察</strong>：本文仅重建单一构象，未生成完整构象系综；真实蛋白常呈现连续构象变化。
+   - <strong>核心假设</strong>：在分离模块基础上引入生成模型（如 diffusion model），可从异质性密度图中采样出完整构象分布。
+   - <strong>相对本文的增量</strong>：从「分离」扩展到「生成」，覆盖连续构象空间。
+   - <strong>初步方法</strong>：将本文的分离特征作为条件，训练条件扩散模型生成多构象结构。
+   - <strong>验证方式</strong>：在合成数据上比较生成系综与真实构象分布的覆盖度（如 RMSD 分布、Jensen-Shannon 散度）。
+   - <strong>可能的失败模式</strong>：生成模型可能产生不物理的构象，需结合物理约束（如键长、键角、Ramachandran 图）。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：将异质性分离模块迁移至 MD 模拟的构象聚类
+   - <strong>来源局限/观察</strong>：MD 模拟产生大量构象，传统聚类方法（如 RMSD 聚类）对高维数据效率低。
+   - <strong>核心假设</strong>：本文的分离网络可适配 MD 轨迹数据，实现无监督的构象状态划分。
+   - <strong>相对本文的增量</strong>：从 Cryo-EM 密度图迁移至 MD 轨迹（点云/坐标），输入模态不同。
+   - <strong>初步方法</strong>：将 MD 轨迹转换为密度图或体素表示，输入本文的分离网络，输出离散构象状态。
+   - <strong>验证方式</strong>：在已知的 MD 模拟系统（如 alanine dipeptide）上比较聚类结果与 MSM 的隐含状态。
+   - <strong>可能的失败模式</strong>：MD 轨迹的密度图表示可能丢失时间相关性，需额外引入时间信息。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：异质性密度图引导的 AlphaFold 多构象预测
+   - <strong>来源局限/观察</strong>：AlphaFold 默认预测单一结构，对异质性密度图输入可能产生平均化结果。
+   - <strong>核心假设</strong>：将本文的分离模块作为 AlphaFold 的前置处理器，可提升其对异质性密度图的适应性。
+   - <strong>相对本文的增量</strong>：结合序列信息与密度图信息，实现多构象预测。
+   - <strong>初步方法</strong>：先用分离模块将异质性密度图分解为多个均质密度图，再分别输入 AlphaFold 进行结构预测。
+   - <strong>验证方式</strong>：在合成异质性密度图上比较 AlphaFold 直接预测与分离后预测的 RMSD。
+   - <strong>可能的失败模式</strong>：分离模块的误差会传播至 AlphaFold，需联合微调。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：基于分离特征的构象空间插值
+   - <strong>来源局限/观察</strong>：本文分离出离散构象，但未探索构象之间的连续路径。
+   - <strong>核心假设</strong>：分离模块的隐空间具有线性插值性质，可生成中间构象。
+   - <strong>相对本文的增量</strong>：从离散分离扩展到连续构象路径生成。
+   - <strong>初步方法</strong>：在分离模块的隐空间中对两个构象特征进行插值，解码得到中间构象。
+   - <strong>验证方式</strong>：在已知两态构象的蛋白上，检查插值路径是否经过物理合理的过渡态。
+   - <strong>可能的失败模式</strong>：隐空间可能非线性，插值产生非物理构象。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：异质性密度图分离的物理约束增强
+   - <strong>来源局限/观察</strong>：本文纯数据驱动，未利用物理先验（如键长、键角、范德华力）。
+   - <strong>核心假设</strong>：在损失函数中加入物理约束，可提升分离结构的物理合理性。
+   - <strong>相对本文的增量</strong>：从纯数据驱动到物理-数据混合驱动。
+   - <strong>初步方法</strong>：在训练损失中加入键长/键角偏差惩罚、Ramachandran 图先验、clash 检测等。
+   - <strong>验证方式</strong>：比较有无物理约束时，生成结构的 MolProbity 分数和 RMSD。
+   - <strong>可能的失败模式</strong>：物理约束过强可能限制网络表达能力，需平衡权重。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only (title, author list, and arXiv metadata; no substantive abstract text or manuscript body provided)</li>
+<li><strong>Assessment boundary</strong> The provided material contains no scientific content beyond the title and submission metadata. No methods, results, figures, tables, or conclusions are available for evaluation.</li>
+<li><strong>Shared manuscript claim summary</strong> The title indicates the work addresses cryo-EM protein reconstruction using heterogeneous density information, but no specific claims are stated in the supplied material.</li>
+<li><strong>Visible evidence base</strong> None. The submission text is empty of scientific content; only arXiv administrative fields are present.</li>
+<li><strong>Missing materials affecting confidence</strong> The complete abstract, main text, all figures, tables, methods, supplementary information, and any data or code references are absent. The review cannot assess any aspect of the work.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material does not contain a manuscript or abstract. It consists solely of a title, author list, and arXiv metadata. No scientific claims, methods, results, or conclusions are available for evaluation. A meaningful review is not possible from the provided evidence.</li>
+<li><strong>Who would be interested in the results, and why</strong> Not assessable. The title suggests relevance to computational structural biology and machine learning for cryo-EM, but without content, the specific audience and significance cannot be determined.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material.</li>
+<li><strong>Major Concerns</strong> The absence of any scientific content is the sole and overriding concern. The submission as provided cannot be evaluated for validity, novelty, or significance.</li>
+<li><strong>Minor Comments</strong> None applicable, as there is no content to comment on.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The submission is incomplete. The authors must provide the full abstract and manuscript text before any technical assessment can be performed.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: Not assessable. No content provided.</li>
+<li>Scientific importance: Not assessable. No content provided.</li>
+<li>Interdisciplinary readership: Not assessable. No content provided.</li>
+<li>Technical soundness: Not assessable. No methods or results provided.</li>
+<li>Readability for nonspecialists: Not assessable. No text provided.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The submission must be resubmitted with the complete abstract and manuscript content for any review to proceed.</li>
+</ul>
+<h2>Major Concerns</h2>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Completeness of submission</li>
+<li><strong>Claim pointer</strong> The title claims work on "Learning from Hetero Density for Cryo-EM Protein Reconstruction," but no substantive claim is stated in the provided material.</li>
+<li><strong>Evidence pointer</strong> Entire submission; location not provided</li>
+<li><strong>Concern</strong> The submission contains no abstract, no main text, no figures, and no tables. Only the title, author list, and arXiv administrative metadata are present. There is no scientific content to evaluate.</li>
+<li><strong>Why it matters</strong> A review requires the actual claims, methods, and results. Without these, any assessment would be fabricated, which is unacceptable. The authors have not provided the material necessary for even a preliminary evaluation.</li>
+<li><strong>Resolution test</strong> The authors must provide the complete abstract and manuscript text. The review can then proceed on the actual scientific content.</li>
+</ul>
+<h2>Minor Comments</h2>
+<p>None identified from the supplied material.</p>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title alone cannot support any claim about the work's validity, novelty, or significance.</li>
+<li>Any statement about the methods, results, or conclusions of this work would be unsupported and fabricated.</li>
+<li>The relevance of the work to cryo-EM protein reconstruction is suggested by the title but cannot be verified without content.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present PNBind, a multimodal deep learning framework combining protein language models (ESM-series), evolutionary information, secondary structure, and geometric features from five-atom local frames via a GVP backbone with an IPA layer, for predicting nucleic acid-binding sites. They report F1 and MCC values on four benchmark datasets and claim that PLM selection and late-stage fusion improve performance.
+- **Visible evidence base** Abstract text only; no methodological details, dataset splits, baseline comparisons, or statistical analyses are visible
+- **Missing materials affecting confidence** Full manuscript, figures, tables, supplementary information, code availability, and detailed benchmark protocols
+
+## Reviewer
+- **Overall assessment** The abstract describes a plausible and potentially useful computational approach for nucleic acid-binding site prediction. However, the evidence provided is insufficient to evaluate the validity of the performance claims, the novelty relative to existing methods, or the robustness of the reported improvements. The abstract lacks critical methodological details and comparative analyses that would be necessary to establish the case.
+- **Who would be interested in the results, and why** Computational biologists and bioinformaticians working on protein function annotation, nucleic acid-protein interaction prediction, and deep learning applications in structural biology. Drug discovery researchers interested in targeting nucleic acid-binding proteins may also find the approach relevant.
+- **Major strengths** The proposed framework integrates multiple complementary signal types, including sequence, evolutionary, and structural information, which is a reasonable design choice. The use of a GVP backbone with an IPA layer is technically appropriate for geometric deep learning on protein structures. The evaluation across four benchmark datasets provides some breadth.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that PNBind "achieves strong performance" with specific F1 and MCC values on four datasets.
+  - **Evidence pointer** Abstract only; no figures or tables provided
+  - **Concern** The reported performance metrics are presented without any comparative baselines, statistical significance testing, or confidence intervals. It is unclear whether these values represent an improvement over existing state-of-the-art methods or merely reflect dataset-specific characteristics.
+  - **Why it matters** Without baseline comparisons and statistical validation, the reader cannot assess whether the reported performance is meaningful or whether the claimed advantage of the multimodal approach is substantiated.
+  - **Resolution test** Provide a comparison table with existing methods on the same datasets, including standard deviations or confidence intervals, and report statistical significance tests where applicable.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological clarity
+  - **Claim pointer** The abstract states that PNBind enables "effective late-stage multimodal signal fusion" and that "proper PLM selection significantly boosts prediction accuracy."
+  - **Evidence pointer** Abstract only; no methodological details or ablation results are visible
+  - **Concern** The abstract does not describe how the late-stage fusion is implemented, how the five-atom local frames are constructed, or how the PLM selection was performed. The ablation study is mentioned but no quantitative results are provided.
+  - **Why it matters** The core methodological claims cannot be evaluated or reproduced without these details. The claim that PLM selection "significantly boosts" accuracy requires specific evidence from the ablation study.
+  - **Resolution test** Include a detailed methods section describing the fusion architecture, local frame construction, and PLM selection procedure. Provide ablation results in a table or figure with clear quantitative comparisons.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Novelty and context
+  - **Claim pointer** The abstract implies that current methods are limited by "single-layer language model representations, Calpha point clouds that discard local-frame geometry, and feature fusion in which high-dimensional sequence embeddings overshadow weaker evolutionary and structural signals."
+  - **Evidence pointer** Abstract only; no literature review or comparative analysis is visible
+  - **Concern** The abstract does not identify specific existing methods that exhibit these limitations, nor does it demonstrate how PNBind overcomes them relative to those methods. The novelty claim is therefore not contextualized.
+  - **Why it matters** For a computational methods paper, situating the contribution relative to prior work is essential for establishing scientific importance and for readers to judge the incremental value.
+  - **Resolution test** Add a brief comparison with at least two or three existing methods, highlighting specific differences in architecture and performance on the same benchmarks.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Dataset description
+  - **Evidence pointer** Abstract only
+  - **Issue** The datasets DNA-129, DNA-181, RNA-117, and RNA-285 are named but not described. It is unclear what these numbers refer to, such as the number of proteins or binding sites, and whether the datasets are publicly available.
+  - **Required correction** Briefly describe the composition and source of each dataset, and indicate whether they are publicly accessible.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Code and data availability
+  - **Evidence pointer** Abstract only
+  - **Issue** No mention of code or model availability, which is important for reproducibility in computational biology.
+  - **Required correction** State whether the code, trained models, and any associated data will be made publicly available, and under what license.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "Calpha point clouds"
+  - **Evidence pointer** Abstract only
+  - **Issue** The term "Calpha point clouds" is used without definition. It likely refers to using only alpha carbon coordinates, but this is not explicitly stated.
+  - **Required correction** Define the term clearly on first use, for example, "alpha carbon-only coordinate representations."
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The absence of baseline comparisons, statistical validation, and methodological detail prevents the core claims from being assessed.
+- **Assessment against Nature-style criteria** Originality cannot be fully assessed from the abstract alone, but the combination of ESM embeddings, evolutionary features, and GVP-IPA geometric processing appears plausible and potentially novel. Scientific importance is moderate, as nucleic acid-binding site prediction is a relevant problem, but the abstract does not demonstrate a clear advance over existing methods. Interdisciplinary readership is limited to computational biology and bioinformatics specialists. Technical soundness cannot be evaluated without methodological details and validation. Readability for nonspecialists is acceptable but would benefit from clearer definitions of technical terms.
+- **Recommendation posture** Currently not established from the provided evidence. The approach is promising in principle, but the abstract alone does not provide sufficient evidence to support the performance claims or the methodological advantages. A full manuscript with detailed methods, baseline comparisons, and ablation results would be required to assess the contribution properly.
+
+## Risk / unsupported claims
+- The claim that PNBind "achieves strong performance" is unsupported without baseline comparisons or statistical context.
+- The claim that "proper PLM selection significantly boosts prediction accuracy" is unsupported without quantitative ablation results.
+- The claim that the framework enables "effective late-stage multimodal signal fusion" is not verifiable from the abstract.
+- The implied limitations of existing methods are not substantiated with specific references or comparative data.

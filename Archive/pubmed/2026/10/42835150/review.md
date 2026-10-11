@@ -1,0 +1,103 @@
+## Review setup
+- **Input scope** Full manuscript text
+- **Assessment boundary** Scientific content, methodology, data interpretation, and claims as presented in the manuscript
+- **Shared manuscript claim summary** The authors propose that mitochondrial-encoded proteins (cytochrome b, cytochrome c) functionally interact with nuclear-encoded innate immune molecules (NLRP3, IL-18, STING) to regulate antibacterial immunity during Pasteurella multocida infection in ducks, and report differential mRNA expression of these genes between infected and healthy birds.
+- **Visible evidence base** Sequence characterization, in silico 3D modeling, molecular docking, differential mRNA expression profiling (qPCR), pathway enrichment analysis, and protein-protein interaction network analysis
+- **Missing materials affecting confidence** Figures 1-14 referenced but not provided; supplementary material not provided; raw qPCR data not provided; statistical details (error bars, replicates, significance thresholds) not fully described; accession numbers for NLRP3 not provided; details of docking validation not provided
+
+## Reviewer
+- **Overall assessment** This manuscript addresses an interesting and potentially important topic, namely the cross talk between mitochondrial and nuclear-encoded genes in antibacterial immunity. However, the study as presented is largely descriptive and correlative, and the central claim of functional interaction between mitochondrial and nuclear immune molecules is not experimentally tested. The evidence base consists primarily of in silico predictions and differential expression data, which are insufficient to establish the mechanistic conclusions drawn. The manuscript also contains significant structural and reporting issues, including duplicated text, incomplete methodological details, and overinterpretation of pathway analyses. The work may be of interest to researchers studying mitochondrial immunity or avian host-pathogen interactions, but in its current form the case is not established.
+- **Who would be interested in the results, and why** Researchers studying mitochondrial biology in immunity, avian immunology, host-pathogen interactions, and innate immune signaling may find the descriptive data useful as a starting point. The duck model of pasteurellosis is of veterinary relevance, and the comparative expression data for NLRP3, IL-18, STING, and mitochondrial genes in infected versus healthy birds could inform future studies. However, the lack of functional validation limits the broader appeal.
+- **Major strengths** The study addresses a timely and underexplored topic, namely mitochondrial-nuclear cross talk in antibacterial immunity. The use of a natural infection model in an indigenous duck breed is a practical and relevant approach. The combination of sequence characterization, structural prediction, and expression profiling provides a multi-angle descriptive dataset. The authors appropriately acknowledge limitations in interpreting cytochrome b expression as a proxy for mitochondrial copy number.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Experimental evidence for functional interaction
+  - **Claim pointer** The manuscript claims that mitochondrial-encoded proteins "functionally interact" with nuclear-encoded immune regulators (NLRP3, IL-18, STING) and that this interaction regulates antibacterial immunity.
+  - **Evidence pointer** Results section, Discussion section, Figures 9-14
+  - **Concern** The central claim of functional interaction is not supported by any direct experimental evidence. The study relies on in silico docking, STRING interaction predictions, and KEGG pathway enrichment, none of which demonstrate actual physical or functional interaction in a biological system. No co-immunoprecipitation, pull-down, knockout, knockdown, overexpression, or reporter assays are presented. The differential expression data are correlative and do not establish causality or interaction.
+  - **Why it matters** The title and abstract promise a mechanistic insight into mitochondrial-nuclear cross talk in antibacterial immunity. Without functional validation, the claims are overstated and the scientific contribution is limited to descriptive observation.
+  - **Resolution test** Provide direct experimental evidence of interaction, such as co-immunoprecipitation of cytochrome b/cytochrome c with NLRP3, IL-18, or STING in duck cells; or demonstrate that manipulation of mitochondrial gene expression alters nuclear immune gene expression and antibacterial outcomes. Alternatively, substantially revise the claims to reflect the descriptive nature of the findings.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical rigor and data presentation
+  - **Claim pointer** The manuscript reports "significantly higher expression" of cytochrome b, cytochrome c, NLRP3, IL-18, and STING in healthy ducks compared to infected ducks.
+  - **Evidence pointer** Results section, Figures 6-7, Statistical analysis subsection
+  - **Concern** The statistical analysis is inadequately described. The authors state that "Microsoft Excel was used for descriptive statistical analysis" and that "Statistical analyses were performed using SYSTAT version 13.1," but no specific tests, significance thresholds, or correction for multiple comparisons are reported. The figures are not provided, so it is impossible to assess variance, effect sizes, or whether assumptions for the chosen tests were met. The sample size (n=6 per group) is small, and no power analysis is presented.
+  - **Why it matters** The differential expression data are the only experimental results in the study. Without rigorous statistical reporting, the conclusions drawn from these data cannot be evaluated or reproduced.
+  - **Resolution test** Provide full statistical details, including the specific tests used, exact p-values or confidence intervals, effect sizes, and information on data distribution and variance. Include raw data or accessible supplementary tables. Ensure figures show individual data points, error bars, and significance indicators.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological completeness and reproducibility
+  - **Claim pointer** The methods describe sequence characterization, 3D modeling, docking, and expression profiling, but key details are missing.
+  - **Evidence pointer** Materials and Methods section, Tables 1-3
+  - **Concern** Several methodological details are missing or incomplete. The authors do not specify the reference sequences used for primer design for all genes, the efficiency of qPCR primers, the normalization strategy beyond GAPDH, or whether multiple reference genes were evaluated. The docking methodology is described only as "PatchDock algorithm" with no mention of input structure preparation, scoring function details, or validation of docking results. The criteria for selecting "putative interaction sites" are not defined. The authors also do not state how many biological and technical replicates were used for qPCR.
+  - **Why it matters** Reproducibility is a core requirement for scientific publication. The current level of methodological detail is insufficient for other laboratories to replicate the experiments or for reviewers to assess the validity of the approaches.
+  - **Resolution test** Provide complete methodological details, including primer sequences with GenBank accession numbers for all target genes, qPCR cycling conditions, melting curve analysis, primer efficiency data, normalization strategy, and statistical treatment. For docking, specify the structures used, preparation steps, scoring functions, and any validation (e.g., re-docking of known complexes).
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretation of pathway and interaction analyses
+  - **Claim pointer** The manuscript states that KEGG pathway analysis identified involvement of NOD-like receptor signaling, cytosolic DNA sensing, phagocytic pathways, and necroptosis, and that STRING analysis revealed "extensive protein-protein interaction networks."
+  - **Evidence pointer** Results section, Figures 10-14
+  - **Concern** The pathway and interaction analyses are overinterpreted. The authors appear to have performed KEGG enrichment on a very small set of genes (five total), which is statistically underpowered and unlikely to yield meaningful enrichment. The STRING analysis is based on predicted interactions, not experimental evidence, and the confidence scores are not reported. The claim that these analyses "support a model" of coordinated interaction is not justified by the data.
+  - **Why it matters** Overinterpretation of in silico predictions as biological evidence can mislead readers and inflate the perceived significance of the findings.
+  - **Resolution test** Either remove or substantially temper the pathway and interaction claims. If these analyses are retained, report the full list of genes used, the statistical significance of enrichment, the STRING confidence scores, and clearly label these as predictive, not experimental, findings.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Manuscript structure and clarity
+  - **Claim pointer** The manuscript contains duplicated text and structural inconsistencies.
+  - **Evidence pointer** Introduction section, Discussion section
+  - **Concern** The manuscript contains two Introduction sections, with the second one repeating content from the first. The Discussion section also contains duplicated paragraphs, with the same text appearing twice verbatim. This suggests a lack of careful editing and detracts from the readability and professionalism of the manuscript.
+  - **Why it matters** Duplicated text and structural errors undermine the credibility of the work and suggest that the manuscript has not been carefully prepared.
+  - **Resolution test** Remove duplicated sections and ensure a single, coherent Introduction and Discussion. Carefully proofread the entire manuscript for similar issues.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Title and abstract
+  - **Evidence pointer** Title, Abstract
+  - **Issue** The title states that mitochondria "affect antibacterial immunity in cross talk with innate immune response molecules coded by genes of nuclear origin." This phrasing implies a bidirectional interaction that is not demonstrated. The abstract similarly overstates the findings.
+  - **Required correction** Revise the title and abstract to reflect the descriptive and correlative nature of the study, e.g., "Differential expression of mitochondrial and nuclear-encoded immune genes in ducks during Pasteurella multocida infection" or similar.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Data availability
+  - **Affected element** Data availability statement
+  - **Evidence pointer** Data availability statement
+  - **Issue** The data availability statement is vague and does not specify which datasets are available or where they can be accessed. The accession numbers for the sequences are mentioned but not listed.
+  - **Required correction** Provide specific accession numbers for all submitted sequences and clarify which datasets are available in which repositories.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Figure quality
+  - **Affected element** Figures 1-14
+  - **Evidence pointer** Figures 1-14
+  - **Issue** The figures are not provided in the manuscript text, so their quality and clarity cannot be assessed. The figure legends are also not included.
+  - **Required correction** Ensure all figures and legends are included and that they clearly present the data with appropriate labels, scales, and statistical annotations.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Reference accuracy
+  - **Affected element** Reference list
+  - **Evidence pointer** Reference list
+  - **Issue** Some references appear to be cited in a format inconsistent with the journal style, and the completeness of the reference list cannot be verified.
+  - **Required correction** Verify all citations against the reference list and ensure formatting is consistent with the journal's requirements.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Language and grammar
+  - **Affected element** Entire manuscript
+  - **Evidence pointer** Entire manuscript
+  - **Issue** The manuscript contains numerous grammatical errors, awkward phrasings, and typographical issues that impede readability.
+  - **Required correction** The manuscript should be carefully edited by a native English speaker or professional editing service.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (no functional evidence for interaction), R1-M2 (inadequate statistical reporting), R1-M3 (incomplete methodological details)
+- **Assessment against Nature-style criteria** Originality: The topic of mitochondrial-nuclear cross talk in antibacterial immunity is of interest, but the approach is not novel methodologically, and the findings are largely descriptive. Scientific importance: The potential importance is moderate, but the lack of mechanistic insight limits the significance. Interdisciplinary readership: The work may appeal to immunologists, mitochondrial biologists, and veterinary scientists, but the narrow scope and descriptive nature limit broader appeal. Technical soundness: The in silico and expression methods are standard, but the statistical reporting and lack of functional validation are significant weaknesses. Readability for nonspecialists: The manuscript is difficult to follow due to structural issues, duplicated text, and unclear writing.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript requires major revisions, including functional validation of the claimed interactions, rigorous statistical reporting, complete methodological details, and substantial rewriting to address structural and clarity issues, before the case can be considered.
+
+## Risk / unsupported claims
+- The claim of "first evidence" of mitochondrial-nuclear cross talk in duck pasteurellosis is unsupported, as no functional interaction is demonstrated.
+- The claim that differential expression of cytochrome b and cytochrome c indicates enhanced mitochondrial activity or copy number is speculative and not directly measured.
+- The pathway enrichment and STRING interaction claims are based on a very small gene set and are not statistically robust.
+- The statement that "mitochondrial retrograde signalling influences the regulation of nuclear immune genes" is not supported by any experimental evidence.
+- The conclusion that these genes "may serve as potential biomarkers" is speculative and not validated.

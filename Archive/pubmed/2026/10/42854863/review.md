@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Conceptual framework and claims as presented in the abstract; no methods, figures, tables, or full-text data were available for evaluation
+- **Shared manuscript claim summary** The authors propose a next-generation risk assessment framework for novel food proteins that integrates protein language models, structure prediction, digestomics, immunopeptidomics, human intestinal and immune new approach methodologies (NAMs), exposure modelling, and physiologically based kinetic reasoning into a weight-of-evidence process. They argue that AI-enabled NAMs can transform novel protein assessment from a binary hazard screen into a mechanistically interpretable, exposure-aware, and decision-oriented system, contingent on improvements in datasets, benchmark design, applicability domains, and reporting standards. An author-proposed scoring rule and a retrospective EFSA yellow-mealworm case are presented as illustrative applications.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, results, or supplementary materials were provided
+- **Missing materials affecting confidence** Full text, methods, validation data, scoring rule details, case study results, benchmark descriptions, and any quantitative performance metrics; without these, the framework's operational validity and the case study's conclusions cannot be assessed
+
+## Reviewer
+- **Overall assessment** The abstract presents a timely and conceptually ambitious framework that addresses a genuine gap in novel food protein safety assessment. The emphasis on moving beyond single-tool allergen prediction toward a mechanistically anchored, exposure-aware weight-of-evidence approach is well aligned with current regulatory thinking. However, the abstract provides no empirical validation, no detailed methodology, and no quantitative outcomes. The central claims are plausible but currently unsubstantiated. The illustrative case study and scoring rule are mentioned but not described in sufficient detail to evaluate their rigor or generalizability. The manuscript may have merit, but the evidence base provided is insufficient to establish the case.
+- **Who would be interested in the results, and why** Regulatory toxicologists and risk assessors at agencies such as EFSA, FDA, and FAO/WHO would be interested given the direct relevance to novel food protein approval pathways. Food safety scientists in industry, particularly those developing precision fermentation, cell-cultured, and insect-based proteins, would find the framework relevant to their product development and regulatory submission strategies. Computational biologists working on protein language models and AI-driven toxicity prediction would be interested in the proposed integration of these tools into regulatory decision-making. Immunologists and allergists studying food allergy mechanisms may also find the immunopeptidomics and AOP-anchored aspects relevant.
+- **Major strengths** The framework addresses a real and pressing regulatory bottleneck with a clear problem statement. The emphasis on anchoring AI predictions to adverse outcome pathways and human-relevant assays is scientifically sound and likely to improve regulatory acceptance. The explicit recognition that datasets, benchmarks, applicability domains, and reporting standards must improve is honest and forward-looking. The inclusion of exposure context and physiologically based kinetic reasoning adds a dimension often missing in computational toxicology frameworks. The retrospective case study, if properly executed, could provide a valuable proof-of-concept.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The central conclusion that AI-enabled NAMs can transform novel protein assessment into a mechanistically interpretable, exposure-aware, and decision-oriented system
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract asserts this transformative potential as a conclusion, but no empirical data, validation results, or comparative analyses are presented to support it. The claim is presented as a logical argument rather than a demonstrated outcome.
+  - **Why it matters** A review that makes a strong central claim about the transformative potential of a framework must provide at least some evidence that the framework works in practice. Without validation data, benchmark results, or a detailed case study outcome, the conclusion remains an opinion rather than an evidence-based finding.
+  - **Resolution test** Provide quantitative or qualitative results from the EFSA yellow-mealworm case study demonstrating that the framework produces reliable, decision-relevant outputs. Alternatively, present benchmark comparisons showing that the integrated approach outperforms single-tool predictions on relevant datasets.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** The author-proposed scoring rule is presented as a component of the workflow
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The scoring rule is mentioned but not described. No information is given on its inputs, weighting scheme, validation, or how it handles uncertainty and conflicting evidence.
+  - **Why it matters** A scoring rule is a critical element of any weight-of-evidence framework. Without details on its construction and validation, readers cannot assess whether it is arbitrary, biased, or reproducible. The rule's performance directly affects the framework's credibility.
+  - **Resolution test** Describe the scoring rule's components, derivation, and validation in the full text. Provide sensitivity analyses showing how scoring outcomes change with different inputs or weightings.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Case study rigor
+  - **Claim pointer** A retrospective EFSA yellow-mealworm case illustrates the workflow
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The case study is mentioned as an illustration, but no results, conclusions, or comparisons to the original EFSA assessment are provided. It is unclear whether the framework reproduces, refines, or contradicts the regulatory outcome.
+  - **Why it matters** A retrospective case study is only valuable if it demonstrates the framework's ability to reach sound conclusions. Without reporting the case study's outcome and its concordance with the existing regulatory decision, the illustration carries no evidentiary weight.
+  - **Resolution test** Present the case study results in detail, including the framework's output, the original EFSA conclusion, and a discussion of any discrepancies and their implications.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Scope clarity
+  - **Affected element** Framework scope
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract lists many components (protein language models, structure prediction, digestomics, immunopeptidomics, NAMs, exposure modelling, PBK reasoning) but does not clarify which are essential, which are optional, or how they interact in practice.
+  - **Required correction** Provide a clear schematic or stepwise description of the framework's workflow, indicating mandatory versus optional components and their integration points.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology precision
+  - **Affected element** Use of "immunotoxicity"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions "broader immunotoxic concern" but does not define what immunotoxicity means in this context or which endpoints are included.
+  - **Required correction** Define the scope of immunotoxicity assessment, including specific endpoints, assays, and the AOPs considered.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Literature positioning
+  - **Affected element** Novelty claim
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract positions the framework as "beyond single-tool allergen prediction" but does not situate it relative to existing integrated approaches in the literature.
+  - **Required correction** Briefly summarize prior integrated frameworks and explicitly state what this framework adds beyond them.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (no empirical support for the central claim), R1-M2 (scoring rule not described or validated), R1-M3 (case study results not reported)
+- **Assessment against Nature-style criteria** 
+  - Originality: The conceptual integration of protein language models with NAMs and AOP-anchored reasoning is moderately original, though the individual components are established. The framework's specific configuration may offer novelty, but this cannot be fully assessed from the abstract.
+  - Scientific importance: The topic is important given the rapid expansion of novel food proteins and the regulatory bottleneck. A validated framework would have significant practical impact.
+  - Interdisciplinary readership: The topic bridges computational biology, immunology, toxicology, and regulatory science, which could attract a broad readership if the full text is accessible to nonspecialists.
+  - Technical soundness: Cannot be assessed from the abstract. The absence of methods, validation, and case study results precludes any judgment on technical rigor.
+  - Readability for nonspecialists: The abstract is generally clear and avoids excessive jargon, though terms like "digestomics" and "immunopeptidomics" may need definition for broader audiences.
+- **Recommendation posture** Currently not established from the provided evidence. The framework is conceptually promising and addresses a real need, but the abstract alone does not provide sufficient evidence to support the central claims. A supportive stance would require the full text to demonstrate the framework's operational validity through the case study, scoring rule validation, and benchmark comparisons.
+
+## Risk / unsupported claims
+- The central conclusion that AI-enabled NAMs can transform novel protein assessment is unsupported by any empirical evidence in the abstract.
+- The claim that the framework is "mechanistically interpretable, exposure-aware and decision-oriented" is asserted but not demonstrated.
+- The author-proposed scoring rule is mentioned but entirely undescribed, making any claim about its utility unsupported.
+- The retrospective EFSA yellow-mealworm case is cited as an illustration, but its outcome and validity are not reported, so any implied support from it is unverifiable.
+- The assertion that the framework is "deliberately positioned beyond single-tool allergen prediction" implies a comparative advantage that is not substantiated with data or literature comparison.

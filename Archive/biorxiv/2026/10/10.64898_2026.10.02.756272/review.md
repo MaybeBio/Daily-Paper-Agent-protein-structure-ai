@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full text, figures, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors prepared peptide-brush polymers bearing the trpzip2 β-hairpin sequence via graft-through polymerization and characterized them by circular dichroism spectroscopy, infrared spectroscopy, small-angle X-ray scattering, and molecular dynamics simulations. They report that the β-hairpin structure of the monomer is lost regardless of polymer composition, and that simulations indicate the polymer backbone destabilizes local secondary structure by restricting peptide motion and altering the free-energy landscape. The study is framed as providing design rules for synthetic polymer-based proteomimetics.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or simulation details were supplied
+- **Missing materials affecting confidence** Full manuscript, all experimental spectra (CD, IR, SAXS), simulation parameters and trajectories, polymer composition details, control experiments, and statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting negative result regarding the inability of a brush polymer scaffold to preserve β-hairpin structure in a grafted peptide, which could inform future design of protein-like polymers. However, the evidence base available for review is limited to the abstract, and several claims are stated without quantitative support or methodological detail. The central conclusion that the polymer backbone destabilizes secondary structure is plausible but cannot be rigorously evaluated from the supplied material. The work may be of interest to the biomaterials and proteomimetics communities, but the case as presented is not fully established.
+- **Who would be interested in the results, and why** Researchers in peptide-polymer conjugates, protein engineering, biomimetic materials, and drug delivery would be interested because the findings address whether brush polymer architectures can preserve peptide secondary structure, which is central to designing proteomimetic therapeutics and chemical biology tools. The negative result may guide future monomer and backbone design.
+- **Major strengths** The study addresses a fundamental and under-explored question about the interplay between polymer backbone architecture and peptide secondary structure. The combination of multiple experimental techniques (CD, IR, SAXS) with molecular dynamics simulations is a rigorous approach. The use of trpzip2, a well-established model for β-hairpin folding, provides a clear benchmark for structural assessment.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "a loss of the β-hairpin structure of the monomer is observed regardless of polymer composition"
+  - **Evidence pointer** Abstract; specific figures or tables not provided
+  - **Concern** The claim of complete loss of β-hairpin structure is stated categorically, but no quantitative data are presented in the abstract. It is unclear how the loss was defined, whether it was partial or complete, and whether it was consistent across all polymer compositions tested. The phrase "regardless of polymer composition" implies a broad survey, but the number of compositions, their structural variation, and the statistical significance of the observations are not reported.
+  - **Why it matters** This is the central finding of the study. Without quantitative metrics (e.g., molar ellipticity values, fraction folded estimates, or comparison to free peptide controls), the strength and generality of the conclusion cannot be assessed. Overstatement could mislead future design efforts.
+  - **Resolution test** Provide quantitative CD and IR data showing loss of β-hairpin signatures for each polymer composition, with appropriate controls (e.g., free trpzip2 peptide) and statistical analysis. Specify the range of compositions tested and define the criteria for "loss" of structure.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic support
+  - **Claim pointer** "simulations corroborate that the polymer backbone destabilizes local secondary structure, restricting peptide motion and altering the accessible free-energy landscape"
+  - **Evidence pointer** Abstract; simulation details not provided
+  - **Concern** The mechanistic claim that the backbone restricts peptide motion and alters the free-energy landscape is presented as corroborated by simulations, but no simulation details are given. It is unclear what force field was used, how the polymer was modeled, what the simulation timescales were, whether the simulations reproduced the experimental loss of structure, and how the free-energy landscape was computed. The term "corroborate" implies agreement with experiment, but the degree of agreement and the robustness of the simulation results are not assessable.
+  - **Why it matters** The mechanistic interpretation is essential for deriving design rules. If the simulation evidence is weak or based on limited sampling, the proposed mechanism may be speculative. The claim that the backbone "restricts peptide motion" needs direct evidence, such as comparison of conformational sampling between free and polymer-conjugated peptides.
+  - **Resolution test** Provide simulation methods, including force field, system setup, simulation length, and convergence checks. Show direct comparison of conformational ensembles and free-energy profiles for free trpzip2 versus polymer-conjugated peptides, and demonstrate that the simulations capture the experimentally observed loss of structure.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** "This study provides insight into design rules governing these synthetic polymer-based proteomimetics"
+  - **Evidence pointer** Abstract; no comparative data across different peptide sequences or backbone chemistries
+  - **Concern** The abstract implies that the findings yield general design rules, but the study appears to use a single peptide sequence (trpzip2) and a single polymer architecture (brush polymers from graft-through polymerization). It is unclear whether the observed destabilization is specific to trpzip2 or to this particular backbone chemistry, and whether the rules would transfer to other β-hairpin peptides or other polymer types.
+  - **Why it matters** Design rules should be generalizable to be useful. If the effect is sequence- or chemistry-specific, the stated implications for the broader class of proteomimetics would be overstated.
+  - **Resolution test** Either temper the claim to reflect the specific system studied, or provide additional data with at least one other β-hairpin peptide or a variation in backbone chemistry to demonstrate generalizability.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The phrase "Protein-Like Polymers (PLPs)" is introduced with a definition, but the acronym is not used again in the abstract. This is unnecessary and may confuse readers.
+  - **Required correction** Either use the acronym consistently or remove it from the abstract.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Experimental details
+  - **Evidence pointer** Abstract; methods not provided
+  - **Issue** The abstract does not specify the range of polymer compositions studied (e.g., degree of polymerization, side-chain length, or grafting density). This information is critical for interpreting the "regardless of polymer composition" claim.
+  - **Required correction** Add a brief statement in the abstract specifying the compositional variables and their range, or refer to a table in the full text.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** SAXS data interpretation
+  - **Evidence pointer** Abstract; SAXS results not described
+  - **Issue** SAXS is mentioned as a technique, but no SAXS-derived parameters (e.g., radius of gyration, shape, or aggregation state) are reported in the abstract. It is unclear what structural information SAXS contributed to the conclusion.
+  - **Required correction** Briefly state the key SAXS finding (e.g., overall shape or compactness) and how it relates to the loss of β-hairpin structure.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the central experimental and mechanistic claims cannot be evaluated without quantitative data and simulation details. R1-M3 is non-blocking but requires either claim tempering or additional data.
+- **Assessment against Nature-style criteria**  
+  - Originality: The question of whether brush polymer backbones preserve or disrupt β-hairpin structure is relatively underexplored, and the negative result could be a useful contribution. However, the abstract does not clearly position the work against prior studies on α-helical brush polymers, which limits the perceived novelty.  
+  - Scientific importance: The finding has potential importance for the design of proteomimetic polymers, but the importance is contingent on the robustness of the evidence and the generalizability of the rules, both of which are not yet established from the abstract.  
+  - Interdisciplinary readership: The topic bridges polymer chemistry, biophysics, and chemical biology, and the abstract is written in a way that is broadly accessible. However, the lack of quantitative detail may limit appeal to specialists.  
+  - Technical soundness: The combination of CD, IR, SAXS, and simulations is appropriate, but the abstract does not demonstrate that the techniques were applied rigorously or that the data are conclusive.  
+  - Readability for nonspecialists: The abstract is clear and well-structured, but the acronym PLP and the lack of quantitative context may reduce accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible and potentially interesting finding, but the central claims require quantitative experimental data and detailed simulation methods to be verified. I would be supportive if the full manuscript provides the missing evidence and if the claims are appropriately tempered.
+
+## Risk / unsupported claims
+- The claim that β-hairpin structure is lost "regardless of polymer composition" is unsupported without quantitative data and a defined range of compositions.
+- The mechanistic claim that the polymer backbone "restricts peptide motion and alters the accessible free-energy landscape" is unsupported without simulation details and direct comparison to free peptide.
+- The claim that the study provides "design rules" is unsupported without evidence of generalizability beyond the specific system studied.
+- The relevance of SAXS to the conclusion is unassessable because no SAXS-derived parameters are reported in the abstract.

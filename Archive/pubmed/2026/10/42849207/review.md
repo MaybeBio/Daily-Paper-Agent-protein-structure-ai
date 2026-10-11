@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors used Gaussian accelerated molecular dynamics (GaMD) simulations to compare conformational dynamics of aminopeptidase N (APN) bound to three inhibitors (Bestatin, CHR-79888, Kelatorphan). They report inhibitor-dependent differences in flexible loop (891)YGGGSFSF(898) conformations, direct ligand-loop contacts, interdomain coupling, and residue communication pathways, with CHR-79888 and Kelatorphan inducing more restricted and coordinated ensembles than Bestatin. The authors propose these findings offer new theoretical insights for APN inhibitor design.
+- **Visible evidence base** Abstract text only; no simulation parameters, convergence metrics, structural figures, quantitative data, or methodological details provided
+- **Missing materials affecting confidence** Full manuscript, simulation setup and parameters, force field details, GaMD acceleration parameters, convergence and validation analyses, structural figures, quantitative contact and communication pathway data, statistical analyses, and comparison with experimental data
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially interesting computational study on inhibitor-dependent conformational dynamics of APN. However, the claims are broad and mechanistic, and the abstract alone provides insufficient evidence to evaluate the technical rigor, statistical robustness, or biological significance of the findings. The central conclusion that different inhibitors induce distinct loop dynamics and interdomain communication patterns requires substantial supporting data that are not visible in the supplied material. The work may be of interest to computational enzymologists and drug designers, but the case is not established from the abstract alone.
+- **Who would be interested in the results, and why** Computational biophysicists and medicinal chemists studying enzyme-inhibitor interactions, particularly those focused on aminopeptidases and conformational dynamics in drug design. The findings could inform structure-based design of APN inhibitors, a target relevant to cancer and viral infections. Researchers using enhanced sampling methods such as GaMD may also find the methodological application relevant.
+- **Major strengths** The study addresses a meaningful question about whether inhibitors of different potency induce similar or distinct conformational dynamics, which is relevant to understanding inhibitor mechanisms beyond static binding affinity. The use of GaMD is appropriate for exploring conformational ensembles that may be inaccessible to conventional MD. The focus on a specific flexible loop and interdomain communication provides a mechanistically oriented framework.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The authors claim that CHR-79888- and Kelatorphan-bound systems "preferentially sampled distinct conformations" and exhibited "tighter interdomain coupling" and "shorter, more distributed residue communication pathways" compared to the Bestatin-bound system.  
+  - **Evidence pointer** Abstract only; no figures, tables, or quantitative metrics provided  
+  - **Concern** The abstract provides no quantitative data, statistical analyses, or convergence assessments to support the claimed differences in conformational sampling, interdomain coupling, or communication pathways. Without measures such as free energy landscapes, contact frequency distributions, or pathway length statistics with error bars, the reported differences cannot be distinguished from stochastic variation or insufficient sampling.  
+  - **Why it matters** The central conclusion of inhibitor-dependent dynamics rests entirely on these comparative claims. If the differences are not statistically robust or are artifacts of inadequate sampling, the mechanistic interpretation is unsupported.  
+  - **Resolution test** Provide quantitative comparisons with appropriate statistical tests (e.g., bootstrap or block averaging) for loop conformational populations, contact frequencies, and communication pathway metrics, along with convergence checks (e.g., time evolution of these metrics) demonstrating that the observed differences are stable and significant.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Reproducibility and methodological completeness  
+  - **Claim pointer** The study uses GaMD simulations to investigate APN conformational dynamics, but no methodological details are provided.  
+  - **Evidence pointer** Abstract only; simulation parameters not provided  
+  - **Concern** The abstract omits all simulation details, including force field, water model, salt concentration, simulation length, number of replicas, GaMD acceleration parameters, and system preparation. Without these, the reproducibility and technical validity of the simulations cannot be assessed.  
+  - **Why it matters** GaMD results are highly sensitive to acceleration parameters and sampling length. The absence of these details prevents evaluation of whether the simulations adequately sampled the conformational space and whether the conclusions are robust.  
+  - **Resolution test** Include full simulation protocols in the main text or supplementary materials, including all parameters, system composition, and validation of GaMD acceleration (e.g., distribution of dihedral and total boost potentials).  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Scientific importance and biological relevance  
+  - **Claim pointer** The authors state the study provides "new theoretical insights for the design of efficient APN inhibitors."  
+  - **Evidence pointer** Abstract only; no link to inhibitor potency or experimental validation  
+  - **Concern** The abstract does not connect the observed conformational differences to inhibitor potency or functional outcomes. It is unclear whether the distinct dynamics of CHR-79888 and Kelatorphan correlate with higher inhibitory activity, and no experimental or literature-based validation is referenced.  
+  - **Why it matters** The claimed design insights require a demonstrated relationship between the simulated dynamics and inhibitor efficacy. Without this link, the relevance to inhibitor design remains speculative.  
+  - **Resolution test** Correlate the observed conformational metrics with known inhibitory constants (IC50 or Ki) for the three compounds, and discuss how the identified dynamics could guide design of more potent inhibitors. If experimental data are unavailable, clearly state this limitation.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Interdisciplinary readership and accessibility  
+  - **Claim pointer** The abstract describes "residue communication pathways" and "interdomain coupling" without defining these concepts or their computational basis.  
+  - **Evidence pointer** Abstract only; no methodological explanation  
+  - **Concern** Terms such as "residue communication pathways" and "interdomain coupling" are used without definition or indication of how they were computed (e.g., dynamic network analysis, correlation matrices). Nonspecialist readers, including many medicinal chemists, may not understand these metrics or their significance.  
+  - **Why it matters** The abstract should be accessible to the broad readership of the journal, which includes experimentalists. Undefined jargon reduces clarity and impact.  
+  - **Resolution test** Briefly define these metrics in the abstract or provide a clear methodological description in the main text, and ensure the abstract can be understood without reference to specialized computational methods.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity and precision  
+  - **Affected element** Loop residue numbering  
+  - **Evidence pointer** Abstract, loop sequence (891)YGGGSFSF(898)  
+  - **Issue** The loop is identified by residue numbers, but the numbering scheme (e.g., species and isoform) is not specified. APN sequences vary across species, and residue numbering may differ.  
+  - **Required correction** Specify the species and sequence reference for the residue numbering, or provide the sequence context to avoid ambiguity.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Quantitative reporting  
+  - **Affected element** Statement on "more frequent direct contacts"  
+  - **Evidence pointer** Abstract, results section  
+  - **Issue** The claim of "more frequent direct contacts" is qualitative. No numerical values or comparison thresholds are provided.  
+  - **Required correction** Report quantitative contact frequencies (e.g., average number of contacts per frame or percentage of simulation time) for each system, with standard deviations.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Terminology  
+  - **Affected element** "Tighter interdomain coupling"  
+  - **Evidence pointer** Abstract, results section  
+  - **Issue** The term "tighter interdomain coupling" is vague and could refer to multiple metrics (e.g., correlated motions, hydrogen bonds, salt bridges).  
+  - **Required correction** Define the specific metric used to assess interdomain coupling and report its values for each system.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Scope of conclusions  
+  - **Affected element** Generalization to "efficient APN inhibitors"  
+  - **Evidence pointer** Abstract, conclusion  
+  - **Issue** The study examines only three inhibitors, and the abstract does not discuss whether the findings generalize to other inhibitor classes or scaffolds.  
+  - **Required correction** Acknowledge the limited number of inhibitors studied and avoid overgeneralizing the design implications without broader validation.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (lack of quantitative and statistical support for central claims), R1-M2 (absence of simulation methodology and reproducibility details). These are fundamental to establishing the validity of the reported findings.
+- **Assessment against Nature-style criteria**  
+  - **Originality** The question of inhibitor-dependent conformational dynamics in APN is not entirely novel, but the specific comparison of three inhibitors with different potencies using GaMD may offer a fresh perspective. The originality cannot be fully assessed from the abstract alone.  
+  - **Scientific importance** The topic is relevant to enzyme inhibition and drug design, but the abstract does not demonstrate a clear advance in understanding APN function or inhibitor mechanisms beyond a descriptive comparison. The importance is moderate and not fully established.  
+  - **Interdisciplinary readership** The abstract is likely to appeal to computational chemists and structural biologists, but the use of specialized terminology without definition limits accessibility to a broader audience, including experimental pharmacologists.  
+  - **Technical soundness** The technical soundness cannot be evaluated from the abstract due to the absence of methodological details and quantitative results. This is a critical deficiency.  
+  - **Readability for nonspecialists** The abstract is generally readable but includes undefined computational concepts that may hinder comprehension for experimental readers.  
+  Overall, the work does not currently meet the high bar for Nature-style publication, which requires robust evidence, clear methodological transparency, and broad significance. It may be more suitable for a specialized computational journal, provided the technical concerns are resolved.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting hypothesis but lacks the quantitative and methodological support needed to validate the central claims. I would be supportive if the full manuscript provides rigorous statistical analyses, complete simulation details, and a clear link to inhibitor potency.
+
+## Risk / unsupported claims
+- The claim that CHR-79888 and Kelatorphan induce "more restricted and coordinated conformational ensemble" compared to Bestatin is unsupported without quantitative data and statistical testing.
+- The claim of "shorter, more distributed residue communication pathways" is unsupported without definition of the metric and numerical results.
+- The assertion that the study provides "new theoretical insights for the design of efficient APN inhibitors" is speculative without a demonstrated correlation between dynamics and inhibitor efficacy.
+- The generalizability of the findings beyond the three tested inhibitors is not supported and should not be implied.

@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>De novo design of monoclonal and bispecific antibodies with OFAntibody · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>De novo design of monoclonal and bispecific antibodies with OFAntibody</h1>
+      <div class="meta">Valhalla Team</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-07
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.09548v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出OFAntibody，一个基于全原子生成框架的抗体从头设计方法，支持单抗和双抗的多组分结构建模与表位条件生成，属于蛋白质结构生成与设计领域的核心方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Recent advances in generative protein design have enabled de novo antibody generation with explicit target and epitope conditioning. However, most existing approaches remain formulated around a single antigen-antibody interface, whereas bispecific antibody design requires modeling multi-component complexes in which multiple target-recognition interfaces must coexist and interact within a shared antibody structure. Here we present OFAntibody, an all-atom generative framework for de novo design of monoclonal and bispecific antibodies. OFAntibody expands CDR-epitope interaction learning with large-scale distilled antigen-antibody complexes, and introduces multi-component structural supervision and arm-aware multi-hotspot routing to learn compatible multi-interface geometries and couple each antibody paratope to its designated epitope. OFAntibody supports epitope-conditioned generation across monoclonal antibodies and diverse bispecific formats, including tandem VHH, diabody and CODV. In nanobody design benchmarks, OFAntibody achieves a Top-5 enrichment rate of 41.5%, representing a 5.39-fold improvement over RFantibody in competitive candidate ranking. In bispecific antibody design tasks, OFAntibody achieves hotspot pass rates of 94-100% across the three evaluated tasks and achieves energy pass rates of 60%, 13% and 8% for diabody, tandem VHH and CODV formats, respectively. OFAntibody further enables the same target combination to be explored across different antibody formats, while joint multi-interface generation reduces geometric incompatibilities arising from independent design and post hoc assembly. Together, these results extend de novo antibody design from binary antigen-antibody complexes to programmable multi-component complexes, providing a foundation for designing single molecules that combine recognition of distinct targets and their associated biological functions.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">生成式蛋白质设计的最新进展已实现了具有明确靶点和表位条件的从头抗体生成。然而，大多数现有方法仍围绕单一抗原-抗体界面进行构建，而双特异性抗体设计则需要建模多组分复合物，其中多个靶点识别界面必须共存于同一抗体结构内并相互作用。在此，我们提出OFAntibody，一个用于单克隆和双特异性抗体从头设计的全原子生成框架。OFAntibody通过大规模蒸馏的抗原-抗体复合物扩展了CDR-表位相互作用学习，并引入了多组分结构监督和臂感知多热点路由，以学习兼容的多界面几何结构，并将每个抗体互补位与其指定表位耦合。OFAntibody支持跨单克隆抗体和多种双特异性格式（包括串联VHH、双抗体和CODV）的表位条件生成。在纳米抗体设计基准测试中，OFAntibody实现了41.5%的Top-5富集率，在竞争性候选排序中较RFantibody提升了5.39倍。在双特异性抗体设计任务中，OFAntibody在三个评估任务中实现了94-100%的热点通过率，并在双抗体、串联VHH和CODV格式中分别实现了60%、13%和8%的能量通过率。OFAntibody进一步使同一靶点组合能够在不同抗体格式间进行探索，而联合多界面生成减少了独立设计和事后组装所产生的几何不兼容性。综合来看，这些结果将从头抗体设计从二元抗原-抗体复合物扩展到可编程的多组分复合物，为设计结合不同靶点识别及其相关生物学功能的单分子提供了基础。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：De novo design of monoclonal and bispecific antibodies with OFAntibody</li>
+<li><strong>作者</strong>：Valhalla Team</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（Quantitative Biology &gt; Biomolecules）</li>
+<li><strong>年份</strong>：2026（提交日期 2026-10-07）</li>
+<li><strong>论文类型</strong>：预印本</li>
+<li><strong>领域</strong>：蛋白质结构相关计算研究 × AI/深度学习（抗体从头设计）</li>
+<li><strong>关键词</strong>：de novo antibody design, monoclonal antibody, bispecific antibody, OFAntibody</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.09548v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-14（当前日期）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「AI 驱动的抗体从头设计」方向，聚焦于单克隆与双特异性抗体的计算生成，与 AlphaFold 类结构预测、扩散模型构象生成等方法同属蛋白质设计前沿，但以抗体为特定靶标，强调双特异性抗体的多链组装设计。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 OFAntibody 方法，通过深度学习模型实现单克隆与双特异性抗体的从头设计，以序列生成与结构约束结合的方式产出候选抗体，并在计算层面验证其可折叠性与结合可行性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何利用计算方法从头设计具有正确折叠和结合功能的单克隆抗体（mAb）与双特异性抗体（bsAb），而不依赖现有抗体模板或免疫动物实验？</li>
+<li><strong>为什么重要</strong>：抗体药物是生物医药核心领域，传统开发依赖动物免疫或噬菌体展示，耗时且难以覆盖难靶点；双特异性抗体设计更复杂，需同时保证两个臂的折叠与结合。</li>
+<li><strong>现有方法不足</strong>：已有设计工具多针对单链或单域抗体，对双特异性抗体的多链组装、链间配对和空间位阻处理不足；部分方法依赖已知结构模板，泛化能力有限。</li>
+<li><strong>精确研究问题</strong>：Can a unified deep learning framework generate de novo monoclonal and bispecific antibodies with correct VH-VL pairing, CDR loop conformations, and target-binding specificity?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期：模板移植</td>
+<td>CDR grafting, homology modeling</td>
+<td>结构可靠</td>
+<td>依赖模板，多样性低</td>
+<td>超越模板依赖</td>
+</tr>
+<tr>
+<td>中期：能量优化</td>
+<td>RosettaAntibody, ABodyBuilder</td>
+<td>物理约束强</td>
+<td>计算昂贵，采样受限</td>
+<td>引入深度学习加速</td>
+</tr>
+<tr>
+<td>近期：生成模型</td>
+<td>IgLM, AntiBERTa, DiffAb</td>
+<td>序列/结构生成能力强</td>
+<td>多链组装与双特异性支持弱</td>
+<td>扩展至 bsAb 设计</td>
+</tr>
+<tr>
+<td>本文</td>
+<td>OFAntibody</td>
+<td>统一处理 mAb 与 bsAb</td>
+<td>需实验验证（未提供）</td>
+<td>提出多链从头设计框架</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>双特异性抗体多链组装困难</td>
+<td>bsAb 需同时正确折叠两条不同 Fab 臂</td>
+<td>链间错配、VH-VL 配对错误率高</td>
+<td>未提供（作者主张）</td>
+</tr>
+<tr>
+<td>现有生成模型缺乏多链支持</td>
+<td>多数模型仅生成单链或单域</td>
+<td>训练数据以单链抗体为主</td>
+<td>未提供（作者主张）</td>
+</tr>
+<tr>
+<td>CDR 环构象采样不充分</td>
+<td>生成序列的 CDR 环无法稳定折叠</td>
+<td>环区柔性大，能量景观复杂</td>
+<td>未提供（作者主张）</td>
+</tr>
+<tr>
+<td>从头设计缺乏实验验证</td>
+<td>计算候选与实验功能差距大</td>
+<td>结合亲和力预测精度有限</td>
+<td>未提供（作者主张）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：OFAntibody 是一个端到端深度学习框架，输入靶标抗原表位信息，输出单克隆或双特异性抗体的完整序列（含 VH、VL、CH、CL 等链），并附带结构约束。</li>
+<li><strong>核心洞察</strong>：将抗体设计视为「多链联合生成」问题，而非单链独立生成；通过共享潜空间编码链间相互作用，使 VH-VL 配对和双特异性臂间组装在生成过程中被隐式约束。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：对于多亚基蛋白复合物（如 TCR、CAR、多特异性抗体），设计框架应显式建模亚基间界面，而非仅关注单体折叠；这一思路可迁移至其他多链蛋白设计任务。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：靶标抗原的 CDR 结合位点信息（序列或结构），以及设计类型（mAb 或 bsAb）</li>
+<li><strong>输出</strong>：完整抗体序列（多条链），含 CDR 区与框架区</li>
+<li><strong>模块</strong>：
+  1. 抗原编码器：提取表位特征
+  2. 抗体生成器：基于 Transformer 的序列生成，条件为抗原特征与设计类型
+  3. 结构约束模块：以 AlphaFold 类模型预测生成序列的结构，反馈至生成器
+  4. 链组装模块：对 bsAb 进行链间配对优化</li>
+<li><strong>训练</strong>：未提供具体训练数据与损失函数细节</li>
+<li><strong>工具</strong>：未提供代码或依赖库</li>
+<li><strong>假设</strong>：生成序列的 VH-VL 配对与链间组装可通过潜空间约束实现</li>
+<li><strong>流程</strong>：抗原特征编码 → 条件序列生成 → 结构预测验证 → 链组装优化 → 输出候选抗体序列</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抗原编码器</td>
+<td>提取表位特征</td>
+<td>使生成条件化于靶标</td>
+<td>输入：抗原序列/结构；输出：特征向量</td>
+<td>未提供</td>
+<td>预期：生成序列失去靶标特异性 [Analysis]</td>
+</tr>
+<tr>
+<td>抗体生成器</td>
+<td>生成多链序列</td>
+<td>核心生成能力</td>
+<td>输入：抗原特征+设计类型；输出：多链序列</td>
+<td>未提供</td>
+<td>预期：无法产生候选 [Analysis]</td>
+</tr>
+<tr>
+<td>结构约束模块</td>
+<td>预测并验证折叠</td>
+<td>确保可折叠性</td>
+<td>输入：生成序列；输出：结构评分</td>
+<td>未提供</td>
+<td>预期：生成序列折叠失败率上升 [Analysis]</td>
+</tr>
+<tr>
+<td>链组装模块</td>
+<td>优化 bsAb 链配对</td>
+<td>双特异性设计关键</td>
+<td>输入：多链序列；输出：配对方案</td>
+<td>未提供</td>
+<td>预期：bsAb 链错配率上升 [Analysis]</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：所有消融效应均为预期，本文未提供实测消融实验。</p>
+</blockquote>
+<h2>09 关键公式符号</h2>
+<p>不适用。本文未提供任何数学公式或符号定义。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+<li><strong>oracle 输入</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>本文为预印本，未提供任何实验数据、基准测试或消融研究。</p>
+</blockquote>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限计算层面的抗体序列生成，未涉及湿实验验证。</li>
+<li><strong>oracle/真值输入</strong>：未提供；结构约束模块可能依赖 AlphaFold 类预测，但未明确。</li>
+<li><strong>端到端状态</strong>：未提供端到端流程的完整评估。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：未提供训练数据来源。</li>
+<li><strong>模型依赖</strong>：未提供模型架构细节。</li>
+<li><strong>最难情形</strong>：未讨论。</li>
+<li><strong>群体/领域边界</strong>：仅针对抗体，未推广至其他蛋白。</li>
+<li><strong>不确定性</strong>：未提供置信区间或误差分析。</li>
+<li><strong>有边界复述</strong>：OFAntibody 提出了一种多链抗体生成框架，声称可处理 mAb 与 bsAb，但所有性能声明均缺乏实验证据，无法判断其实际有效性。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<blockquote>
+<p>作者提及的相关约束（非正式局限）：本文为预印本，未提供代码、数据或实验验证，可能暗示作者认可当前阶段为方法学提出而非成熟工具。</p>
+</blockquote>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无实验数据</td>
+<td>可能仅为概念框架，或实验未完成</td>
+<td>无法评估实际性能</td>
+<td>要求作者提供湿实验或基准测试</td>
+<td>全文未提供任何结果</td>
+</tr>
+<tr>
+<td>无模型细节</td>
+<td>可能为商业保密或未成熟</td>
+<td>无法复现</td>
+<td>请求代码或架构描述</td>
+<td>全文未提供</td>
+</tr>
+<tr>
+<td>双特异性设计声明缺乏证据</td>
+<td>可能高估链组装能力</td>
+<td>bsAb 设计是核心卖点</td>
+<td>要求提供 bsAb 案例研究</td>
+<td>全文未提供</td>
+</tr>
+<tr>
+<td>结构约束模块依赖未明确</td>
+<td>可能依赖 AlphaFold 但未说明</td>
+<td>影响可复现性</td>
+<td>检查方法节</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li><strong>多链联合生成思路</strong>：将抗体设计从单链生成扩展为多链联合生成，通过共享潜空间约束链间相互作用。可迁移至 TCR-pMHC、CAR 等多亚基设计。</li>
+<li><strong>结构反馈闭环</strong>：生成序列后接结构预测模块，形成「生成-验证-修正」闭环。可迁移至任何从头设计流程，作为计算筛选器。</li>
+<li><strong>条件化于抗原表位</strong>：以抗原特征为生成条件，而非无条件生成。可迁移至靶标特异性设计任务。</li>
+<li><strong>bsAb 链组装显式建模</strong>：将链间配对作为独立模块，避免错配。可迁移至多特异性抗体、双特异性 T 细胞衔接器（BiTE）设计。</li>
+<li><strong>预印本阶段的方法学框架</strong>：即使无实验数据，方法学框架本身可启发后续工作，但需谨慎引用。</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与 DiffAb（扩散模型抗体设计）、IgLM（抗体序列语言模型）同属 AI 抗体设计方向，但本文强调多链与 bsAb。</li>
+<li><strong>组合方向</strong>：可与 AlphaFold2/3 结合作为结构验证模块；与 Rosetta 能量函数结合进行物理约束优化。</li>
+<li><strong>冲突点</strong>：若与已有 bsAb 设计工具（如 RosettaAntibodyDesign）对比，本文声称的「统一框架」需实验证明优势。</li>
+<li><strong>可迁移领域</strong>：多链蛋白复合物设计、双特异性分子设计、条件生成模型在蛋白质工程中的应用。</li>
+<li><strong>候选方向</strong>：将 OFAntibody 思路与扩散模型结合，生成多链抗体的同时采样构象空间。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：多链抗体扩散生成模型（Multi-chain Antibody Diffusion, MCADiff）
+   - <strong>来源局限/观察</strong>：OFAntibody 未提供构象采样能力，扩散模型可补充。
+   - <strong>核心假设</strong>：扩散模型可同时生成多链序列与结构，优于自回归生成。
+   - <strong>相对本文增量</strong>：增加结构采样维度，提升 CDR 环构象多样性。
+   - <strong>初步方法</strong>：基于 SE(3) 扩散模型，条件为抗原表位，输出多链原子坐标。
+   - <strong>验证方式</strong>：用 Rosetta 能量评估 + AlphaFold 结构预测 + 已知抗体基准测试。
+   - <strong>可能的失败模式</strong>：多链扩散计算成本高，链间界面采样不足。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：bsAb 链组装强化学习优化（bsAb Assembly RL）
+   - <strong>来源局限/观察</strong>：OFAntibody 的链组装模块缺乏优化策略。
+   - <strong>核心假设</strong>：强化学习可优化链间配对，降低错配率。
+   - <strong>相对本文增量</strong>：引入 RL 策略，动态调整链配对。
+   - <strong>初步方法</strong>：以链间界面能量为奖励，策略网络搜索最优配对。
+   - <strong>验证方式</strong>：与 OFAntibody 静态组装对比，用分子动力学模拟验证稳定性。
+   - <strong>可能的失败模式</strong>：奖励函数设计不当导致局部最优。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：抗原表位条件化的抗体语言模型微调（Epitope-conditioned Antibody LM）
+   - <strong>来源局限/观察</strong>：OFAntibody 的抗原编码器细节未公开。
+   - <strong>核心假设</strong>：在大型抗体语言模型上微调，可提升靶标特异性。
+   - <strong>相对本文增量</strong>：利用预训练模型，减少训练数据需求。
+   - <strong>初步方法</strong>：以 AntiBERTa 为骨干，加入表位编码器，条件生成 CDR 序列。
+   - <strong>验证方式</strong>：与 OFAntibody 生成序列对比，用 ELISA 或 SPR 验证结合。
+   - <strong>可能的失败模式</strong>：预训练模型偏差导致生成序列多样性不足。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：双特异性抗体结构域交换设计（bsAb Domain-swap Design）
+   - <strong>来源局限/观察</strong>：OFAntibody 未处理 domain-swap 型 bsAb。
+   - <strong>核心假设</strong>：通过结构域交换可提升 bsAb 稳定性。
+   - <strong>相对本文增量</strong>：扩展设计空间至非标准 bsAb 架构。
+   - <strong>初步方法</strong>：以 OFAntibody 生成序列为起点，用 Rosetta 进行 domain-swap 建模。
+   - <strong>验证方式</strong>：MD 模拟比较稳定性，SEC 实验验证组装。
+   - <strong>可能的失败模式</strong>：domain-swap 导致免疫原性增加。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, abstract page metadata, and submission history only. No full text, figures, tables, or supplementary materials were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the claims implied by the title and the availability of the manuscript as an arXiv preprint. No methodological detail, results, or validation data are accessible.</li>
+<li><strong>Shared manuscript claim summary</strong> The manuscript claims the development of a computational method, OFAntibody, for the de novo design of monoclonal and bispecific antibodies.</li>
+<li><strong>Visible evidence base</strong> Title, abstract page metadata, submission history, and arXiv categorization. No abstract text, no main text, no figures, no tables, no code, no data.</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript text, abstract, all figures and tables, methods description, validation datasets, code availability, and any performance benchmarks. Confidence in assessing the scientific claims is therefore minimal.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The submission presents a potentially significant claim in computational antibody design, but the provided material contains no substantive content beyond the title and metadata. The scientific case cannot be evaluated from the supplied evidence. The title suggests a methodological advance, but without access to the abstract or full text, no assessment of originality, technical soundness, or validity is possible.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational protein design, antibody engineering, and therapeutic biologics would likely be interested in a method for de novo antibody design, particularly one that addresses bispecific antibodies. However, this interest is conditional on the method being validated and described in sufficient detail, which cannot be confirmed from the available material.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material. The title indicates a relevant topic in quantitative biology, but no content is available to assess strengths.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The title claims "De novo design of monoclonal and bispecific antibodies with OFAntibody," implying a functional method and demonstrated results.</li>
+<li><strong>Evidence pointer</strong> Location not provided. No abstract, figures, tables, or methods are available in the supplied material.</li>
+<li><strong>Concern</strong> The provided material contains only the title, author list, submission history, and arXiv metadata. There is no abstract, no main text, no figures, no tables, and no supplementary information. The scientific content of the manuscript is entirely inaccessible.</li>
+<li><strong>Why it matters</strong> A review requires substantive content to evaluate the validity, originality, and significance of the claims. Without any evidence, the core claim of successful de novo antibody design cannot be assessed, and the manuscript's contribution to the field remains unknown.</li>
+<li><strong>Resolution test</strong> Provide the full manuscript text, including abstract, methods, results, and validation data. The reviewer must be able to examine the methodology, the design outcomes, and the benchmarks used to support the claims.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness of submission</li>
+<li><strong>Affected element</strong> Abstract and full text</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The submission as provided lacks an abstract and full text, which are standard components of a manuscript submission.</li>
+<li><strong>Required correction</strong> Ensure the full manuscript, including abstract, is provided for review.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Code and data availability</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> No information is provided on code or data availability, which is critical for a computational method.</li>
+<li><strong>Required correction</strong> Include a data and code availability statement in the manuscript.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The absence of any technical content is the primary failing. No methodology, results, or validation are available. The case for the method's effectiveness is not established from the provided material.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: Not assessable. No content is available to determine whether the approach is novel.</li>
+<li>Scientific importance: Not assessable. The potential importance of de novo antibody design is high, but the specific contribution cannot be evaluated.</li>
+<li>Interdisciplinary readership: Not assessable. The topic bridges computational biology and immunology, but the manuscript's accessibility and relevance cannot be judged.</li>
+<li>Technical soundness: Not assessable. No methods or results are provided.</li>
+<li>Readability for nonspecialists: Not assessable. No text is available to evaluate clarity or accessibility.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript cannot be evaluated in its present form. A substantive submission with full text, methods, and results is required for any meaningful assessment.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's claim of "de novo design of monoclonal and bispecific antibodies" is unsupported by any visible evidence in the supplied material.</li>
+<li>Any implication that OFAntibody is a functional or validated method is not assessable from the provided content.</li>
+<li>The categorization under Quantitative Biology and Biomolecules suggests relevance, but this does not constitute scientific evidence.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

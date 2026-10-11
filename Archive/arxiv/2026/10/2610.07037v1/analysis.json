@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2610.07037v1",
+  "title": "Inference-Time Projection for Physically Valid Biomolecular Diffusion Models",
+  "authors": "Qurat-ul-ain; Yee Whye Teh; Charlotte M. Deane; Matteo Cagiada",
+  "journal": "",
+  "published_date": "2026-10-04",
+  "window": {
+    "start": "2026-10-04",
+    "end": "2026-10-10"
+  },
+  "score": 9,
+  "one_liner_zh": "该文针对AlphaFold 3类共折叠模型输出物理无效结构的问题，提出推理时闭式投影算子（链间范德华投影和配体距离几何投影），在不重训练、不增加计算开销的前提下恢复物理有效性，属于蛋白质结构预测的物理约束AI方法，与课题高度相关。",
+  "abstract": "AlphaFold 3-style cofolding models predict biomolecular complexes with high structural accuracy, yet a large fraction of their outputs are physically invalid: chains overlap at interfaces, ligand bond lengths and angles are distorted, rings are non-planar, and stereocentres are inverted. Current approaches either steer the sampler with physics-informed potentials, which multiplies sampling cost and memory overhead making inference impossible on large complexes, or finetune the model, costing time and tying the fix to one architecture. We observe that, unlike structural accuracy, physical validity is fully verifiable at inference time from quantities the sampler already holds. We therefore treat physical validity as a constrained inference problem and introduce two closed-form projection operators applied to the diffusion model's denoised clean-coordinate estimate, $\\hat{x}_0$: an inter-chain van der Waals projection that pushes apart the most severely clashing atom pairs, and a ligand distance-geometry projection that restores bond lengths, angles, internal contacts, planarity and chirality. Both operators are local, sparse and displacement-capped, require no network evaluations, gradients or importance sampling, and leave the denoiser and its weights untouched, so they can be dropped into any AF3-style sampler without retraining. Applied to two independently developed models, Boltz-2 and OpenFold-3, across five benchmarks (CASP15, CASP16, the PoseBusters monomer and complex sets, and the Boltz physical-validity test set), our method recovers perfect physical validity while preserving structural-accuracy and ligand-placement metrics. These gains are achieved with negligible runtime and memory overhead, providing a practical, model-agnostic route to physically valid all-atom structure prediction.",
+  "abstract_zh": "AlphaFold 3 风格的共折叠模型能够以高结构精度预测生物分子复合物，但其输出中有很大一部分在物理上无效：链在界面处重叠，配体键长和键角发生畸变，环非平面，立体中心发生反转。当前的方法要么使用物理信息势能引导采样器，这会成倍增加采样成本和内存开销，使得大型复合物的推理不可行；要么对模型进行微调，这既耗时又将修复绑定到单一架构上。我们观察到，与结构精度不同，物理有效性在推理时可以从采样器已持有的量中完全验证。因此，我们将物理有效性视为一个约束推理问题，并引入两个闭式投影算子，应用于扩散模型去噪后的干净坐标估计 $\\hat{x}_0$：一个链间范德华投影，用于推开最严重冲突的原子对；以及一个配体距离几何投影，用于恢复键长、键角、内部接触、平面性和手性。两个算子都是局部的、稀疏的且位移受限的，不需要网络评估、梯度或重要性采样，并且不改变去噪器及其权重，因此可以无需重新训练即可嵌入任何 AF3 风格的采样器。应用于两个独立开发的模型 Boltz-2 和 OpenFold-3，在五个基准测试（CASP15、CASP16、PoseBusters 单体与复合物集，以及 Boltz 物理有效性测试集）上，我们的方法恢复了完美的物理有效性，同时保持了结构精度和配体放置指标。这些增益以可忽略的运行时和内存开销实现，为物理有效的全原子结构预测提供了一条实用且模型无关的路径。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2610.07037v1",
+  "source_url": "https://arxiv.org/abs/2610.07037v1",
+  "paper_page_path": "papers/arxiv/2610.07037v1/index.html"
+}

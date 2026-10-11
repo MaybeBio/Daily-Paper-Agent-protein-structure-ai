@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DOGS: Design-Space Sampling for Prompt-Driven Logo Generation · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-low">0</span>
+    <div>
+      <h1>DOGS: Design-Space Sampling for Prompt-Driven Logo Generation</h1>
+      <div class="meta">Ganyu Zou; Chen Dai; Nathan Self; Kevin Piper; Ramachandra Rao Seethiraju; Karthik Shyamsunder; Chang-Tien Lu; Naren Ramakrishnan</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-07
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.10760v1">原文</a>
+      </div>
+      <p class="one-liner">该文研究文本到图像生成中的标志设计空间采样，对象为图形标志而非蛋白质结构，不涉及任何蛋白质结构计算或AI/物理模拟方法，与课题完全无关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Prompt optimization for text-to-image (T2I) generation has been pursued almost entirely as text rewriting, in which a short user brief is expanded into a longer, model-preferred token sequence. We argue that such a language-space formulation is ill-suited to structured visual design tasks such as logo creation, where a one-line brief leaves most design decisions unspecified. These decisions depend on relational priors that a linear sequence cannot encode, and they leave an uncontrolled channel through which protected marks may be reproduced. We therefore recast logo prompting as sampling within a structured design space, and instantiate this idea as DOGS (Design-space prompting with an Originality-aware GFlowNet Sampler). From a large corpus of real-world logos, we mine a typed, graph-structured design grammar whose edges record empirical co-occurrence. A GFlowNet sampler then generates design graphs with probability proportional to a terminal reward that combines recognizability, aesthetics, and corpus-relative originality. Every slot draws only from a closed design-level vocabulary, and any infringement-inducing or harmful token is removed during parsing. The originality reward further penalizes proximity to existing logos, thereby incorporating infringement avoidance into the method by construction. On two open-source renderers and against nine baselines, DOGS produces logos that are more recognizable and aesthetic, substantially more diverse, and far less prone to trademark infringement.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">文本到图像（T2I）生成的提示优化几乎完全被当作文本重写来处理，即把简短的用户说明扩展为更长的、模型偏好的标记序列。我们认为，这种语言空间表述不适合结构化视觉设计任务，如标志创作，因为一行说明留下了大多数设计决策未指定。这些决策依赖于线性序列无法编码的关系先验，并且它们留下了一个不受控制的通道，可能通过该通道复制受保护的标记。因此，我们将标志提示重新构想为在结构化设计空间内的采样，并将这一想法实例化为DOGS（设计空间提示与原创性感知的GFlowNet采样器）。从大量真实世界标志语料库中，我们挖掘出一种类型化、图结构化的设计语法，其边记录了经验共现。随后，一个GFlowNet采样器生成设计图，其概率与终端奖励成正比，该奖励结合了可识别性、美学和相对于语料库的原创性。每个槽位仅从封闭的设计级词汇中抽取，任何可能引发侵权或有害的标记在解析时被移除。原创性奖励进一步惩罚与现有标志的接近度，从而通过构造将侵权避免纳入方法中。在两个开源渲染器上，与九个基线相比，DOGS生成的标志更可识别、更美观、显著更多样化，且远不易发生商标侵权。</div>
+  </section>
+  
+  
+  
+</article>
+</main>
+</body>
+</html>

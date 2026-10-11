@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no figures, tables, methods, or supplementary material were provided
+- **Shared manuscript claim summary** The authors use all-atom molecular dynamics simulations of SUN2-KASH2 assemblies to investigate thermodynamic and structural determinants of LINC complex clustering. They report that clustering can be stabilized by distinct interaction modes (electrostatic, hydrogen-bond-rich, hydrophobic), that stable clusters show correlated motion and minimal translational separation, and that clustering is thermodynamically favorable in the absence of applied force. They propose a mechanistic framework for LINC superstructure formation and suggest clustering may regulate nuclear mechanotransduction.
+- **Visible evidence base** Abstract text only; no quantitative data, simulation parameters, convergence metrics, or statistical analyses are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, simulation methods and force field parameters, system construction details, docking and AI-prediction protocols, convergence and equilibration criteria, error estimates, and any comparison with experimental data
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially interesting computational study of LINC complex clustering, a topic of relevance to nuclear mechanobiology. However, the claims as stated cannot be evaluated from the abstract alone. The central conclusion that clustering is thermodynamically favorable in the absence of applied force requires quantitative support that is not visible. The abstract also conflates structural observations (e.g., correlated motion, interface composition) with thermodynamic conclusions without presenting the necessary free energy calculations or error analysis. The manuscript may have merit, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in nuclear mechanics, mechanotransduction, and cytoskeletal-nuclear coupling would be interested, as LINC complex organization is directly relevant to force transmission across the nuclear envelope. Computational biophysicists studying protein-protein interactions and membrane-associated complex assembly may also find the methodological approach of interest. The potential link to pathological conditions broadens relevance to cell biology and disease-oriented audiences.
+- **Major strengths** The topic addresses a genuine gap in understanding LINC complex higher-order organization. The use of multiple structure generation approaches (docking, AI prediction, geometric placement) is a reasonable strategy to sample configurational space. The abstract identifies specific interaction modes that could stabilize clustering, which provides a testable framework. The claim that clustering is force-independent is potentially significant if properly supported.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** "clustering emerges as a thermodynamically favorable property of specific LINC architectures even in the absence of applied force"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract asserts thermodynamic favorability without presenting any free energy values, free energy differences between clustered and unclustered states, or statistical measures of uncertainty. The term "thermodynamically favorable" implies a quantitative comparison of states, which is not visible.  
+  - **Why it matters** This is the central claim of the manuscript. Without quantitative free energy data or at least a clear description of how thermodynamic favorability was assessed, the claim is unsupported. Interaction energies alone do not establish thermodynamic favorability, as entropic contributions and solvent effects must be considered.  
+  - **Resolution test** Provide free energy estimates (e.g., from umbrella sampling, MM-PBSA, or similar approaches) with associated errors, and compare clustered versus non-clustered states. Alternatively, clearly state the thermodynamic quantity computed and justify its sufficiency for the claim.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** "ten distinct higher-order cluster configurations derived from protein-protein docking, AI-based structure prediction, and biologically motivated geometric placement"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract does not describe how the ten configurations were selected, whether they represent independent sampling or biased choices, or how the diversity of configurations was ensured. Without this information, the generality of the conclusions is unclear.  
+  - **Why it matters** If the ten configurations are not representative of the accessible configurational space, the conclusions about which interaction modes stabilize clustering may be artifacts of the chosen starting structures. The claim that clustering is a general property of LINC architectures depends on adequate sampling.  
+  - **Resolution test** Describe the selection criteria for the ten configurations, provide measures of configurational diversity, and ideally show that results are robust to initial structure choice.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Interpretive validity  
+  - **Claim pointer** "Stable clusters exhibit correlated motion between LCUs, minimal translational separation, and interaction energies dominated by either van der Waals or Coulombic contributions"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract presents these features as properties of stable clusters, but it is not clear whether these are defining criteria used to classify clusters as stable or emergent findings. If the former, the statement is circular. If the latter, the abstract does not explain how stability was defined independently of these metrics.  
+  - **Why it matters** The distinction between classification criteria and emergent properties is essential for interpreting the results. If stability is defined by these very metrics, the finding is tautological.  
+  - **Resolution test** Clarify the operational definition of cluster stability and show that the reported features are not simply the criteria used to define stability.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Biological relevance  
+  - **Claim pointer** "LINC clustering may serve as a tunable architectural feature for regulating nuclear mechanotransduction under physiological and pathological conditions"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract extrapolates from in silico observations of SUN2-KASH2 assemblies to physiological and pathological regulation of mechanotransduction without presenting any experimental context or validation. The link between the simulated systems and in vivo LINC clustering is not established.  
+  - **Why it matters** The broader significance of the work depends on the relevance of the simulated clusters to actual nuclear envelope organization. Without experimental evidence or at least a clear argument for physiological relevance, this claim is speculative.  
+  - **Resolution test** Provide experimental evidence of LINC clustering in cells, or clearly frame the claim as a hypothesis with explicit limitations.  
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Terminology  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The term "effective per-residue free energy contributions" is used without definition. It is unclear what method was used to compute these contributions and what "effective" means in this context.  
+  - **Required correction** Define the method used to compute per-residue free energy contributions and clarify the meaning of "effective" in this context.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Simulation details  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract does not specify the simulation timescale, force field, or system size. These details are essential for assessing the adequacy of sampling.  
+  - **Required correction** Include simulation timescale, force field, and system size in the abstract or ensure they are prominently presented in the main text.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Precision  
+  - **Affected element** Language  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The phrase "hydrogen-bond-rich" is vague. It is unclear what density of hydrogen bonds qualifies as "rich" and how this was quantified.  
+  - **Required correction** Provide quantitative thresholds or distributions for hydrogen bond density to support the classification of interaction modes.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Reproducibility  
+  - **Affected element** Methods description  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract mentions "biologically motivated geometric placement" as a source of cluster configurations, but the biological rationale is not described.  
+  - **Required correction** Briefly describe the biological rationale for the geometric placement approach in the abstract or main text.  
+- **Technical failings that need to be addressed before the case is established** R1-M1 (thermodynamic favorability claim without quantitative support), R1-M2 (inadequate description of configurational sampling), R1-M3 (potential circularity in stability definition)
+- **Assessment against Nature-style criteria**  
+  - **Originality** The question of what drives LINC complex clustering is relatively underexplored, and the use of multiple structure generation approaches is a reasonable strategy. However, the abstract does not clearly differentiate this work from prior computational studies of protein clustering. Originality is plausible but not fully demonstrated from the abstract.  
+  - **Scientific importance** The topic is of interest to the mechanobiology community, and the claim of force-independent clustering could have implications for understanding nuclear envelope organization. However, the importance is contingent on the validity of the thermodynamic claim, which is not established.  
+  - **Interdisciplinary readership** The work bridges computational biophysics and cell biology, which could attract a broad readership. However, the abstract is written in a way that assumes familiarity with LINC complex biology and molecular dynamics terminology, which may limit accessibility.  
+  - **Technical soundness** The technical approach is not described in sufficient detail to assess soundness. Key parameters, convergence criteria, and error analysis are absent. The potential circularity in the stability definition is a specific concern.  
+  - **Readability for nonspecialists** The abstract is reasonably clear in its overall structure but uses specialized terms without definition. The broader significance is stated but not well supported.  
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a potentially interesting study, but the central thermodynamic claim is unsupported, and the technical details are insufficient for evaluation. I would be supportive if the full manuscript provides quantitative free energy data, clear definitions of stability, and adequate description of the sampling strategy.
+
+## Risk / unsupported claims
+- The claim that clustering is thermodynamically favorable in the absence of applied force is unsupported without free energy calculations or equivalent quantitative evidence.
+- The claim that stable clusters exhibit correlated motion and minimal translational separation may be circular if these metrics were used to define stability.
+- The extrapolation to physiological and pathological regulation of mechanotransduction is unsupported without experimental context.
+- The distinct interaction modes (electrostatic, hydrogen-bond-rich, hydrophobic) are described qualitatively; their quantitative basis is not visible.
+- The representativeness of the ten cluster configurations cannot be assessed without details on their selection and diversity.

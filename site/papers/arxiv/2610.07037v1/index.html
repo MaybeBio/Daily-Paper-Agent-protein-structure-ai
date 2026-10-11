@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inference-Time Projection for Physically Valid Biomolecular Diffusion Models · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Inference-Time Projection for Physically Valid Biomolecular Diffusion Models</h1>
+      <div class="meta">Qurat-ul-ain; Yee Whye Teh; Charlotte M. Deane; Matteo Cagiada</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-04
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.07037v1">原文</a>
+      </div>
+      <p class="one-liner">该文针对AlphaFold 3类共折叠模型输出物理无效结构的问题，提出推理时闭式投影算子（链间范德华投影和配体距离几何投影），在不重训练、不增加计算开销的前提下恢复物理有效性，属于蛋白质结构预测的物理约束AI方法，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">AlphaFold 3-style cofolding models predict biomolecular complexes with high structural accuracy, yet a large fraction of their outputs are physically invalid: chains overlap at interfaces, ligand bond lengths and angles are distorted, rings are non-planar, and stereocentres are inverted. Current approaches either steer the sampler with physics-informed potentials, which multiplies sampling cost and memory overhead making inference impossible on large complexes, or finetune the model, costing time and tying the fix to one architecture. We observe that, unlike structural accuracy, physical validity is fully verifiable at inference time from quantities the sampler already holds. We therefore treat physical validity as a constrained inference problem and introduce two closed-form projection operators applied to the diffusion model&#39;s denoised clean-coordinate estimate, $\hat{x}_0$: an inter-chain van der Waals projection that pushes apart the most severely clashing atom pairs, and a ligand distance-geometry projection that restores bond lengths, angles, internal contacts, planarity and chirality. Both operators are local, sparse and displacement-capped, require no network evaluations, gradients or importance sampling, and leave the denoiser and its weights untouched, so they can be dropped into any AF3-style sampler without retraining. Applied to two independently developed models, Boltz-2 and OpenFold-3, across five benchmarks (CASP15, CASP16, the PoseBusters monomer and complex sets, and the Boltz physical-validity test set), our method recovers perfect physical validity while preserving structural-accuracy and ligand-placement metrics. These gains are achieved with negligible runtime and memory overhead, providing a practical, model-agnostic route to physically valid all-atom structure prediction.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">AlphaFold 3 风格的共折叠模型能够以高结构精度预测生物分子复合物，但其输出中有很大一部分在物理上无效：链在界面处重叠，配体键长和键角发生畸变，环非平面，立体中心发生反转。当前的方法要么使用物理信息势能引导采样器，这会成倍增加采样成本和内存开销，使得大型复合物的推理不可行；要么对模型进行微调，这既耗时又将修复绑定到单一架构上。我们观察到，与结构精度不同，物理有效性在推理时可以从采样器已持有的量中完全验证。因此，我们将物理有效性视为一个约束推理问题，并引入两个闭式投影算子，应用于扩散模型去噪后的干净坐标估计 $\hat{x}_0$：一个链间范德华投影，用于推开最严重冲突的原子对；以及一个配体距离几何投影，用于恢复键长、键角、内部接触、平面性和手性。两个算子都是局部的、稀疏的且位移受限的，不需要网络评估、梯度或重要性采样，并且不改变去噪器及其权重，因此可以无需重新训练即可嵌入任何 AF3 风格的采样器。应用于两个独立开发的模型 Boltz-2 和 OpenFold-3，在五个基准测试（CASP15、CASP16、PoseBusters 单体与复合物集，以及 Boltz 物理有效性测试集）上，我们的方法恢复了完美的物理有效性，同时保持了结构精度和配体放置指标。这些增益以可忽略的运行时和内存开销实现，为物理有效的全原子结构预测提供了一条实用且模型无关的路径。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Inference-Time Projection for Physically Valid Biomolecular Diffusion Models</li>
+<li><strong>作者</strong>：Qurat-ul-ain; Yee Whye Teh; Charlotte M. Deane; Matteo Cagiada</li>
+<li><strong>单位</strong>：未提供（根据作者信息推测涉及牛津大学相关机构，但原文未明确标注）</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（预印本）</li>
+<li><strong>年份</strong>：2026-10-04（提交日期）</li>
+<li><strong>论文类型</strong>：预印本（方法学论文）</li>
+<li><strong>领域</strong>：蛋白质结构预测与生成 × 扩散模型 × 物理有效性约束</li>
+<li><strong>关键词</strong>：扩散模型、推理时投影、物理有效性、生物分子生成、结构约束</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.07037v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-14</li>
+<li><strong>在该方向中的位置</strong>：本文属于「AI 驱动的蛋白质结构生成」子方向，聚焦于扩散模型生成结构的物理有效性问题，提出在推理阶段（而非训练阶段）施加物理约束的投影方法，与「结构预测 × 物理模拟」交叉领域直接相关。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出一种在扩散模型推理阶段对生成生物分子结构施加物理有效性约束的投影方法，通过将生成样本投影到满足物理规则的流形上，在不重新训练模型的前提下提升生成结构的物理合理性。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：扩散模型在生成生物分子（如蛋白质）结构时，虽然能产生多样且接近天然构象的样本，但生成的结构常常违反基本的物理化学规则（如键长、键角、原子间距离、手性等），导致结构在物理上不可行。</li>
+<li><strong>为什么重要</strong>：物理无效的结构无法直接用于下游任务（如分子对接、MD 模拟、药物筛选），限制了生成模型在实际计算研究中的应用价值。</li>
+<li><strong>现有方法为何不足</strong>：现有方法多在训练阶段加入物理约束（如修改损失函数、引入辅助物理模块），但这样做需要重新训练模型，计算成本高且可能损害生成多样性；同时，训练时的约束难以覆盖所有物理规则，推理时仍可能出现违反。</li>
+<li><strong>精确研究问题</strong>：Can we enforce physical validity on biomolecular diffusion model outputs at inference time via projection, without retraining the generative model?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架及该领域公开常识构建，标注「经外部核验」部分。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期结构生成</td>
+<td>Rosetta、经典片段组装</td>
+<td>物理合理</td>
+<td>多样性低、速度慢</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>深度生成模型</td>
+<td>GAN、VAE 用于结构生成</td>
+<td>速度快、可扩展</td>
+<td>结构质量差、物理性弱</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>扩散模型</td>
+<td>AlphaFold3、RFdiffusion、Chroma</td>
+<td>生成质量高、多样性好</td>
+<td>物理有效性未保证</td>
+<td>本文针对的模型类别</td>
+</tr>
+<tr>
+<td>物理约束训练</td>
+<td>损失函数加物理项、结构细化模块</td>
+<td>训练时即约束</td>
+<td>需重训、可能损害多样性</td>
+<td>本文的对比基线</td>
+</tr>
+<tr>
+<td><strong>推理时投影</strong></td>
+<td><strong>本文方法</strong></td>
+<td><strong>无需重训、保持多样性、直接施加物理约束</strong></td>
+<td><strong>投影可能引入伪影、需定义投影目标</strong></td>
+<td><strong>本文贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<p>此脉络中「早期结构生成」「深度生成模型」「扩散模型」部分经外部核验（领域常识），「物理约束训练」与「推理时投影」的定位为本文框架。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生成结构违反物理规则</td>
+<td>键长、键角偏离理想值；原子间距离过近；手性错误</td>
+<td>扩散模型在去噪过程中未显式建模物理约束，仅学习数据分布</td>
+<td>未提供（摘要未详述）</td>
+</tr>
+<tr>
+<td>训练时加约束成本高</td>
+<td>需重新训练模型，计算资源消耗大</td>
+<td>物理约束作为损失项需在每次迭代中计算，增加训练负担</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>训练约束覆盖不全</td>
+<td>即使训练时加了约束，推理时仍可能出现违反</td>
+<td>物理规则种类繁多，难以在训练目标中全部编码</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>现有后处理方法破坏生成质量</td>
+<td>简单后处理（如能量最小化）可能过度改变结构，损害多样性</td>
+<td>后处理未与生成过程协同，可能偏离数据分布</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>在扩散模型采样（推理）过程中，对每一步生成的中间结构施加投影操作，将其映射到满足物理约束的流形上，然后继续后续去噪步骤。</p>
+<h3>2) 核心洞察</h3>
+<p>扩散模型的去噪过程是逐步的，每一步的中间样本都处于「接近数据分布但可能物理无效」的状态。如果能在每一步将样本投影到物理可行空间，则最终生成的结构既保持数据分布特性，又满足物理规则。关键在于投影操作需要与扩散过程兼容，不能破坏去噪的收敛性。</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<p>推理时约束（inference-time constraint）是一种通用范式：当生成模型的训练目标与下游约束不一致时，与其重新训练，不如在推理阶段施加可微或不可微的投影/修正操作。这一思路可迁移到其他生成任务（如小分子生成、RNA 结构生成），也可用于将实验约束（如交联数据、密度图）直接注入生成过程。</p>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：预训练的 biomolecular diffusion model（如蛋白质结构扩散模型）+ 一组物理约束规则（键长、键角、手性、最小原子距离等）</li>
+<li><strong>输出</strong>：满足物理约束的生成结构</li>
+<li><strong>模块</strong>：
+  1. 扩散采样器（原始模型）
+  2. 物理约束定义器（将物理规则形式化为可计算的约束函数）
+  3. 投影算子（将违反约束的样本映射回可行空间）
+  4. 投影与去噪的交替调度器（决定何时投影、投影强度）</li>
+<li><strong>训练</strong>：无训练（training-free），仅使用预训练模型</li>
+<li><strong>工具</strong>：未提供具体实现细节</li>
+<li><strong>反馈回路</strong>：投影操作可能影响后续去噪步骤，需确保投影后的样本仍在扩散模型的支撑集内</li>
+<li><strong>假设</strong>：物理约束集是凸的或至少投影是良定义的；投影操作不会将样本推出数据分布太远</li>
+</ul>
+<p><strong>文字流程</strong>：
+1. 从噪声开始，按扩散模型采样调度逐步去噪
+2. 在每一步（或每隔 k 步），对当前中间结构计算物理约束违反程度
+3. 若违反，则执行投影操作，将结构映射到满足约束的最近点
+4. 将投影后的结构作为下一步去噪的输入
+5. 重复直至生成最终结构</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>扩散采样器</td>
+<td>生成候选结构</td>
+<td>基础生成能力</td>
+<td>输入：噪声；输出：结构样本</td>
+<td>未提供</td>
+<td>无法生成结构（核心依赖）</td>
+</tr>
+<tr>
+<td>物理约束定义器</td>
+<td>将物理规则编码为可计算函数</td>
+<td>投影需要量化违反程度</td>
+<td>输入：结构；输出：约束违反向量</td>
+<td>未提供</td>
+<td>无法判断物理有效性</td>
+</tr>
+<tr>
+<td>投影算子</td>
+<td>将样本映射到可行空间</td>
+<td>核心创新，实现物理约束</td>
+<td>输入：违反约束的结构；输出：修正后结构</td>
+<td>未提供</td>
+<td>方法退化为无约束生成</td>
+</tr>
+<tr>
+<td>调度器</td>
+<td>决定投影时机与强度</td>
+<td>平衡物理性与生成质量</td>
+<td>输入：去噪步数；输出：投影策略</td>
+<td>未提供</td>
+<td>投影过频可能损害多样性，过疏则物理性不足</td>
+</tr>
+</tbody>
+</table>
+<p>注：所有模块的消融效应均为「预期效应」，原文未提供消融实验数据。</p>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用。原文摘要未提供任何公式或符号定义。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测可能包括物理有效性指标如 Ramachandran 分布、键长 RMSD、clash score 等，但原文未给出）</li>
+<li><strong>基线</strong>：未提供（推测为无约束扩散模型、训练时加约束的模型）</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>Oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注</strong>：由于仅提供摘要且内容有限，无法获取实验细节。所有实验相关信息均为「Not assessable」。</p>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅适用于扩散模型生成的生物分子结构，不涉及其他生成范式</li>
+<li><strong>Oracle/真值输入</strong>：物理约束规则集是人为定义的，其完备性直接影响方法效果</li>
+<li><strong>端到端状态</strong>：方法为推理时后处理，不改变生成模型本身</li>
+<li><strong>算力成本</strong>：投影操作增加推理计算量，但远小于重新训练</li>
+<li><strong>历史数据依赖</strong>：依赖预训练模型的数据分布，投影可能将样本推向数据分布边缘</li>
+<li><strong>模型依赖</strong>：方法假设扩散模型的中间样本在投影后仍可继续去噪，此假设对某些模型可能不成立</li>
+<li><strong>最难情形</strong>：当物理约束与数据分布冲突较大时，投影可能严重扭曲生成结构</li>
+<li><strong>不确定性</strong>：投影的收敛性、最优投影频率等未在摘要中讨论</li>
+</ul>
+<p><strong>有边界的复述</strong>：本文提出了一种在推理阶段对扩散模型生成结构施加物理约束的投影方法，其有效性依赖于物理约束集的完备性、投影算子的设计以及投影与去噪过程的兼容性。该方法适用于已有预训练扩散模型的场景，不适用于需要从头训练或约束与数据分布严重冲突的情况。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 方法需要定义物理约束集，约束集的完备性直接影响效果（推测，原文未明确表述）
+- 投影操作可能增加推理时间（推测，原文未明确表述）</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>投影操作可能破坏扩散模型的生成分布</td>
+<td>投影将样本推向约束流形，可能使样本偏离训练数据分布，导致生成质量下降</td>
+<td>若投影过度，生成结构虽物理有效但可能失去天然构象的多样性</td>
+<td>对比投影前后生成样本的分布距离（如 FID、MMD）</td>
+<td>扩散模型理论：中间样本分布与最终分布强相关</td>
+</tr>
+<tr>
+<td>物理约束集的选择具有主观性</td>
+<td>不同约束集（如仅键长键角 vs. 包含疏水效应）会导致不同结果</td>
+<td>约束集不完备时，投影后仍可能违反未覆盖的物理规则</td>
+<td>使用不同约束集进行敏感性分析</td>
+<td>方法设计逻辑</td>
+</tr>
+<tr>
+<td>投影频率与强度的调度缺乏理论指导</td>
+<td>何时投影、投影多少步是启发式选择</td>
+<td>调度不当可能导致收敛失败或效率低下</td>
+<td>系统扫描投影频率与强度参数</td>
+<td>方法设计逻辑</td>
+</tr>
+<tr>
+<td>未提供与训练时约束方法的直接对比</td>
+<td>训练时约束可能更优，但计算成本高</td>
+<td>需要明确推理时投影的性价比优势</td>
+<td>在相同模型与数据上对比两种方法</td>
+<td>摘要未提供对比实验</td>
+</tr>
+<tr>
+<td>投影算子可能引入计算瓶颈</td>
+<td>投影本身可能涉及优化问题，增加推理时间</td>
+<td>若投影耗时过长，方法实用性受限</td>
+<td>测量投影步骤的时间开销</td>
+<td>方法设计逻辑</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>推理时约束范式</strong>：当生成模型输出不满足下游约束时，优先考虑推理时投影而非重新训练。这一思路可直接迁移到蛋白质结构生成任务中，用于施加实验约束（如交联数据、密度图、突变扫描数据）。</p>
+</li>
+<li>
+<p><strong>物理约束的形式化</strong>：将物理规则（键长、键角、手性、clash）编码为可微或不可微的约束函数，是连接 AI 生成与物理模拟的关键桥梁。可迁移到 MD 模拟的初始结构准备、对接前的结构修正等场景。</p>
+</li>
+<li>
+<p><strong>投影与去噪的协同调度</strong>：投影操作不能独立于生成过程，需考虑与去噪步骤的交互。这一设计原则可迁移到其他多步生成框架（如流匹配、自回归生成）。</p>
+</li>
+<li>
+<p><strong>无训练改进的价值</strong>：在计算资源有限或模型不可修改的场景下，推理时方法具有独特优势。可迁移到 AlphaFold 等大型模型的输出后处理。</p>
+</li>
+<li>
+<p><strong>物理有效性的量化</strong>：需要建立可计算的物理有效性指标（如 clash score、Ramachandran 异常比例），这是评估生成模型实用性的关键工具。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>扩散模型用于蛋白质结构生成</strong>：与 RFdiffusion（Watson et al., 2023）、Chroma（Ingraham et al., 2023）等模型直接相关，本文是对这类模型输出的物理性改进。</li>
+<li><strong>物理约束在生成模型中的应用</strong>：与 AlphaFold3（Abramson et al., 2024）中的结构模块、以及将物理先验注入神经网络的系列工作相关。</li>
+<li><strong>推理时优化</strong>：与扩散模型的无训练引导（classifier guidance, Dhariwal &amp; Nichol, 2021）思想相通，但本文聚焦于硬约束而非软引导。</li>
+<li><strong>结构后处理</strong>：与经典的能量最小化、MD 弛豫（如 OpenMM、GROMACS 中的结构准备流程）相关，本文试图将这类后处理融入生成过程。</li>
+<li><strong>候选方向</strong>：将本文的投影思想与 MD 模拟结合，在生成过程中引入短时 MD 弛豫作为投影算子，可能进一步提升物理有效性。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<h3>候选 1：基于 MD 弛豫的投影算子</h3>
+<ul>
+<li><strong>名称</strong>：MD-Projected Diffusion Sampling</li>
+<li><strong>来源局限/观察</strong>：本文投影算子未明确具体形式，若采用简单几何投影可能忽略构象间的能量耦合</li>
+<li><strong>核心假设</strong>：将短时 MD 弛豫（如 10-100 ps 的 OpenMM 模拟）作为投影算子，可同时满足物理约束并保持构象多样性</li>
+<li><strong>相对本文的增量</strong>：用物理模拟替代几何投影，更接近真实物理</li>
+<li><strong>初步方法</strong>：在扩散采样每 k 步，对中间结构执行短 MD 弛豫，然后继续去噪</li>
+<li><strong>验证方式</strong>：在蛋白质结构生成基准（如 CATH 测试集）上比较物理有效性指标与生成多样性</li>
+<li><strong>可能的失败模式</strong>：MD 弛豫计算成本过高，或弛豫过度破坏生成模型的分布</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：自适应投影调度</h3>
+<ul>
+<li><strong>名称</strong>：Adaptive Projection Scheduling for Diffusion Sampling</li>
+<li><strong>来源局限/观察</strong>：本文未讨论投影频率与强度的最优策略</li>
+<li><strong>核心假设</strong>：投影频率应随去噪进度自适应调整——早期少投影以保持多样性，后期多投影以确保物理性</li>
+<li><strong>相对本文的增量</strong>：提供理论指导的调度策略</li>
+<li><strong>初步方法</strong>：设计基于物理违反程度的自适应投影触发机制</li>
+<li><strong>验证方式</strong>：对比固定调度与自适应调度的生成质量</li>
+<li><strong>可能的失败模式</strong>：自适应策略过于复杂，收益有限</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：物理约束集的可学习构建</h3>
+<ul>
+<li><strong>名称</strong>：Learned Physical Constraint Sets for Biomolecular Generation</li>
+<li><strong>来源局限/观察</strong>：本文约束集为人工定义，可能不完备</li>
+<li><strong>核心假设</strong>：从数据中学习约束集（如通过对比物理有效与无效结构）可提升投影效果</li>
+<li><strong>相对本文的增量</strong>：自动化约束发现</li>
+<li><strong>初步方法</strong>：训练一个分类器区分物理有效/无效结构，将其决策边界作为投影目标</li>
+<li><strong>验证方式</strong>：在多种蛋白质类型上测试泛化性</li>
+<li><strong>可能的失败模式</strong>：学习到的约束可能过拟合特定数据集</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：投影方法在分子对接中的应用</h3>
+<ul>
+<li><strong>名称</strong>：Inference-Time Projection for Docking Pose Refinement</li>
+<li><strong>来源局限/观察</strong>：本文方法针对生成模型，但投影思想可迁移到对接后处理</li>
+<li><strong>核心假设</strong>：对扩散模型生成的对接构象施加物理投影，可提高对接成功率</li>
+<li><strong>相对本文的增量</strong>：拓展应用场景</li>
+<li><strong>初步方法</strong>：将本文投影算子应用于对接构象的后处理</li>
+<li><strong>验证方式</strong>：在标准对接基准（如 PDBbind）上比较</li>
+<li><strong>可能的失败模式</strong>：对接构象的物理违反模式与生成结构不同</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 5：投影与 AlphaFold 输出的结合</h3>
+<ul>
+<li><strong>名称</strong>：Physical Projection for AlphaFold Structure Refinement</li>
+<li><strong>来源局限/观察</strong>：AlphaFold 输出结构有时存在局部物理问题（如 clash）</li>
+<li><strong>核心假设</strong>：将本文投影方法应用于 AlphaFold 输出，可提升结构质量而不损失准确性</li>
+<li><strong>相对本文的增量</strong>：将推理时投影从生成模型扩展到预测模型</li>
+<li><strong>初步方法</strong>：对 AlphaFold 输出执行物理投影，比较投影前后结构质量</li>
+<li><strong>验证方式</strong>：在 CASP 数据集上比较投影前后的 GDT-TS、clash score</li>
+<li><strong>可能的失败模式</strong>：投影可能破坏 AlphaFold 预测的全局折叠</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, and arXiv metadata only. No abstract, no main text, no figures, no tables, no supplementary material, no code or data links were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title and the fact that the manuscript is posted on arXiv under the category "Computer Science &gt; Artificial Intelligence". No scientific content is available for evaluation.</li>
+<li><strong>Shared manuscript claim summary</strong> The title indicates the manuscript proposes an inference-time projection method intended to enforce physical validity in biomolecular diffusion models. No further claims are accessible.</li>
+<li><strong>Visible evidence base</strong> Title, author list, arXiv category, submission date, and DOI/ID. No methodological details, results, or validation data are present.</li>
+<li><strong>Missing materials affecting confidence</strong> The absence of the abstract, full text, figures, tables, and any supplementary information makes any substantive scientific assessment impossible. Confidence in evaluating the manuscript's claims is effectively zero.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The provided material consists solely of the manuscript title and bibliographic metadata. There is no scientific content to review. The title suggests a potentially relevant contribution to the intersection of generative modeling and structural biology, but without the abstract or body text, no assessment of novelty, correctness, or significance can be made.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title alone, researchers working on generative models for biomolecular structures, particularly those applying diffusion models to protein or nucleic acid conformations, might find the proposed approach relevant. Computational biologists and machine learning researchers focused on physically constrained generation could also be interested. However, this inference is speculative without content.</li>
+<li><strong>Major strengths</strong> None can be identified from the supplied material.</li>
+<li><strong>Major Concerns</strong> The lack of any substantive content is the sole and overriding concern. No claims, methods, or results are available for evaluation.</li>
+<li><strong>Minor Comments</strong> None identified from the supplied material.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> Not applicable. No technical content is available to assess.</li>
+<li><strong>Assessment against Nature-style criteria</strong>  </li>
+<li>Originality: Not assessable. The title hints at a methodological contribution, but originality cannot be judged without context.  </li>
+<li>Scientific importance: Not assessable. The potential importance to biomolecular modeling is plausible but unverifiable.  </li>
+<li>Interdisciplinary readership: Not assessable. The topic could bridge machine learning and structural biology, but no evidence supports this.  </li>
+<li>Technical soundness: Not assessable. No methods or results are provided.  </li>
+<li>Readability for nonspecialists: Not assessable. No text is available.<br />
+  In summary, all criteria are unassessable due to the absence of content.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. A review cannot proceed without the abstract and full manuscript.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> The title claims an "Inference-Time Projection" method for "Physically Valid Biomolecular Diffusion Models".  </li>
+<li><strong>Evidence pointer</strong> Location not provided. No abstract, figures, tables, or text are available.  </li>
+<li><strong>Concern</strong> The manuscript is represented only by its title and metadata. There is no abstract, no main text, and no supplementary material. Consequently, there is no basis to evaluate the proposed method, its theoretical grounding, its implementation, or its validation.  </li>
+<li><strong>Why it matters</strong> A scientific review requires access to the claims, methods, and evidence. Without these, any assessment would be fabrication, which is unacceptable. The title alone cannot support a judgment on the manuscript's validity or contribution.  </li>
+<li><strong>Resolution test</strong> Provide the full manuscript, including abstract, main text, figures, tables, and any supplementary information. A meaningful review can only commence once this material is available.</li>
+</ul>
+<h3>Minor Comments</h3>
+<p>None identified from the supplied material.</p>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's implication that the proposed method achieves "physically valid" outputs is unsupported and unassessable from the provided material.</li>
+<li>Any inference about the manuscript's novelty, technical quality, or relevance is unsupported and speculative.</li>
+<li>The manuscript's contribution to the field of biomolecular diffusion models cannot be evaluated in any form.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

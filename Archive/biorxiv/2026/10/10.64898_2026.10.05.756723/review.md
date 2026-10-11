@@ -1,0 +1,69 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no figures, tables, methods, or supplementary material were provided
+- **Shared manuscript claim summary** The authors introduce Anneal-MaxCal, a method that combines annealed solute-tempering simulations with a Markov model learned along the tempering ladder, using MBAR for free-energy assignment, the square-root approximation (SqRA) for rate-matrix construction, and maximum-caliber reweighting to impose kinetic constraints. They report application to alanine dipeptide, showing improved relaxation times relative to unbiased dynamics and demonstrating the method's ability to incorporate time-resolved data to alter free-energy differences, populations, and rates.
+- **Visible evidence base** Abstract text only; no figures, tables, or numerical data beyond those quoted in the abstract
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, methods description, simulation details, error analysis, and any supporting information
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting integration of established techniques (solute tempering, MBAR, SqRA, maximum caliber) into a unified pipeline for kinetic ensemble estimation. The reported results for alanine dipeptide are suggestive, but the abstract alone provides insufficient detail to assess the validity of the methodological choices, the robustness of the extrapolation procedure, or the statistical significance of the reported improvements. The central claim that the method "tackles both problems" (sampling and kinetics) is plausible but not established from the provided evidence.
+- **Who would be interested in the results, and why** Researchers in computational molecular biophysics, enhanced sampling method development, and Markov state model construction would be interested. The work addresses a recognized gap between enhanced sampling and kinetic fidelity, and the combination of tempering with maximum-caliber reweighting could appeal to those seeking practical methods for extracting kinetics from biased simulations.
+- **Major strengths** The abstract identifies a real and important problem: enhanced sampling methods often sacrifice kinetic information. The proposed pipeline is modular, combining several well-established components, which may facilitate adoption. The inclusion of a synthetic data demonstration suggests the method can respond to time-resolved constraints in a physically meaningful way. The comparison against a constant-prefactor model provides a useful baseline.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The method "yields rates and a committor across the TICA space, although the physical rung contains a single barrier crossing."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract states that the physical rung contains only a single barrier crossing, yet the method is claimed to yield rates and a committor across the full TICA space. It is unclear how a committor and rate matrix can be meaningfully estimated from a single barrier crossing event, and whether the reported relaxation time of 5430 ± 996 ps is based on statistically sufficient sampling of that crossing.
+  - **Why it matters** If the physical rung has only one barrier crossing, the uncertainty in the estimated rates may be dominated by rare-event statistics rather than by the method's accuracy. The reported error bar of ±996 ps may not capture the true statistical uncertainty, and the comparison to the unbiased simulation result may be misleading.
+  - **Resolution test** Provide the number of barrier crossings observed at the physical rung, a convergence analysis of the rate estimates as a function of simulation length, and a comparison of committor distributions from the model against direct simulation where feasible.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Its prefactors, which act as a position-dependent diffusivity across each cell face, are learned from transitions at the softer couplings and extrapolated log-linearly to the physical coupling."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The log-linear extrapolation of prefactors from softer to physical couplings is a critical assumption. The abstract provides no justification for this functional form, no assessment of its validity across the tempering ladder, and no sensitivity analysis. If the extrapolation is inaccurate, the reported rates and the subsequent maximum-caliber reweighting could be systematically biased.
+  - **Why it matters** The prefactor extrapolation is the bridge between the enhanced-sampling regime and the physical regime. If this step is not rigorously validated, the entire kinetic output of the method is called into question, and the claimed improvement over a constant prefactor may be an artifact of the chosen extrapolation form.
+  - **Resolution test** Show the prefactor values across the tempering ladder, demonstrate that the log-linear fit is statistically justified, and test the sensitivity of the final rates to alternative extrapolation schemes (e.g., linear, spline, or temperature-dependent Arrhenius forms).
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical rigor
+  - **Claim pointer** "For alanine dipeptide, 665 ns of simulation give a relaxation time of 5430 ± 996 ps against 4413 ± 446 ps from 15.4 μs of unbiased dynamics."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The comparison between 665 ns of tempered simulation and 15.4 μs of unbiased dynamics is presented as a validation, but the abstract does not state how the error bars were computed for either estimate, whether the two estimates are statistically distinguishable, or whether the 23% difference is within the expected uncertainty. The claim that the method is "correct" is not supported by a statistical test.
+  - **Why it matters** The central validation of the method rests on this comparison. Without a clear statistical framework, the reader cannot judge whether the method reproduces the unbiased kinetics within error or merely produces a number that is "close enough" by an unspecified criterion.
+  - **Resolution test** Provide the method for error estimation (e.g., block averaging, bootstrapping), a statistical test of the difference between the two relaxation times, and a statement of the effective sample size at the physical rung.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The term "Anneal-MaxCal" is introduced without a clear definition of what "anneal" refers to in the context of the method. The abstract mentions "annealed solute-tempering ladder," but the relationship between the annealing protocol and the maximum-caliber step is not explicit.
+  - **Required correction** Define the annealing procedure explicitly and clarify whether the maximum-caliber step is applied at each rung or only at the physical rung.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Simulation details
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract states "665 ns of simulation" but does not specify the number of independent trajectories, the length of each trajectory, or the equilibration protocol. This is insufficient for reproducibility.
+  - **Required correction** Provide the number of trajectories, their lengths, and the equilibration procedure in the full manuscript.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Synthetic data demonstration
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The synthetic data demonstration shows that the method responds to imposed time-resolved constraints, but the abstract does not state whether the resulting free-energy difference and populations are consistent with the known ground truth of the synthetic system.
+  - **Required correction** State the ground-truth values for the synthetic system and report the error between the method's output and the true values.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (single barrier crossing statistics), R1-M2 (unvalidated prefactor extrapolation), R1-M3 (lack of statistical comparison)
+
+## Risk / unsupported claims
+- The claim that the method "tackles both problems" (sampling and kinetics) is not established from the abstract alone; the validation is limited to a single system and a single comparison.
+- The claim that the prefactor extrapolation is "log-linear" is presented without supporting data or justification.
+- The claim that the method "yields rates and a committor" from a single barrier crossing is not supported by the evidence provided.
+- The synthetic data demonstration is described but not validated against ground truth, so its significance cannot be assessed.
+- The comparison of relaxation times (5430 ± 996 ps vs 4413 ± 446 ps) is presented without a statistical test, so the claim of agreement is not supported.
