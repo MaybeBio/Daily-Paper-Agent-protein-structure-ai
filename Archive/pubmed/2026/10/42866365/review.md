@@ -1,0 +1,100 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, methodology, results and discussion, conclusions, and supplementary material descriptions)
+- **Assessment boundary** Scientific soundness, methodological rigor, validity of claims relative to presented evidence, and clarity of the benchmark design and interpretation
+- **Shared manuscript claim summary** The authors benchmark several AI-based structure prediction tools (HighFold, cyclic-aware AlphaFold2/EvoBind2, CycPepDock, Boltz-1/1x, Boltz-2, Chai-1, Protenix-v2) for their ability to predict and rank cyclic peptide conformers, both in isolation and in complex with protein targets, using sequence or SMILES representations. They report that newer tools outperform AlphaFold2-based counterparts, that cyclic relative positional encoding is critical, that natural amino acid representation outperforms SMILES, that confidence metrics correlate poorly with binding affinity, and that physics-based MD remains superior for capturing conformational flexibility while AI tools offer a price/performance advantage.
+- **Visible evidence base** Main text figures (Fig. 1–5), supplementary figures and tables referenced (Fig. S1–S9, Tables S1–S3), and methodological descriptions in the main text
+- **Missing materials affecting confidence** The actual supplementary information (SI) file, including Tables S1–S3 and Figures S1–S9, was not provided. Specific numerical values for RMSD distributions, correlation coefficients, and statistical significance tests are referenced but not visible. Configuration files for CycPepDock and cyclic-aware AlphaFold2 are mentioned but not included. The full dataset composition and curation details are only partially described.
+
+## Reviewer
+- **Overall assessment** This manuscript addresses a timely and practically relevant question: how well do current AI-based structure prediction tools handle cyclic peptides, a modality of growing therapeutic interest. The benchmark design is thoughtful, particularly the inclusion of circularly shifted sequences to probe memorization and the comparison against MD-derived ensembles. The main findings, that cyclic-aware tools perform better, that SMILES representation degrades performance, and that confidence metrics do not track binding affinity, are plausible and consistent with prior literature. However, the manuscript as presented has several significant gaps. The most critical issue is that the core quantitative evidence, the supplementary figures and tables, is not available for assessment. Without these, the strength of the claims cannot be verified. Additionally, the MD comparison is performed on a very small subset (one target family), and the authors themselves note the difficulty in drawing conclusions. The memorization analysis, while clever, is presented in a way that conflates different potential causes of performance degradation. The manuscript would benefit from a clearer articulation of the benchmark's limitations and a more careful separation of established findings from preliminary observations.
+- **Who would be interested in the results, and why** Computational biologists and medicinal chemists working on peptide therapeutics, particularly those involved in structure-based drug design for macrocyclic peptides. The benchmark provides practical guidance on tool selection and representation choices. Researchers developing new structure prediction methods would also find the comparative performance data and the memorization analysis useful for understanding current limitations.
+- **Major strengths** The benchmark addresses a relevant and under-studied problem. The inclusion of multiple tool generations and two input representations is comprehensive. The circular shift analysis is a creative approach to probing memorization. The comparison with MD simulations, while limited, adds a valuable dimension. The authors are appropriately cautious in several of their interpretations, particularly regarding the limitations of static structure prediction.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The manuscript claims specific performance differences between tools, representation formats, and regimes (e.g., "HighFold and Boltz-2 with a cyclic constraint" achieving ~1.3 Å backbone RMSD, while others exceed 4 Å; SMILES representation degrading performance).
+  - **Evidence pointer** Figures 1–5 and Supplementary Figures S1–S9, Tables S1–S3; location not provided for specific data points
+  - **Concern** The central quantitative claims of the paper rest entirely on figures and tables in the supplementary information, which was not provided for review. Without access to the actual RMSD distributions, correlation coefficients, and statistical tests, it is impossible to assess whether the stated differences are robust, significant, or confounded. The main text provides only qualitative descriptions and a few illustrative values. This is a blocking issue because the paper's conclusions are fundamentally empirical claims about tool performance.
+  - **Why it matters** The paper's value lies in its quantitative benchmark results. If the underlying data are not available for scrutiny, the claims cannot be verified or reproduced. This is a fundamental requirement for a benchmarking study.
+  - **Resolution test** Provide the full supplementary information, including all data tables and figures, for review. Ideally, also provide the underlying data files or a public repository link with the raw metrics.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Methodological rigor
+  - **Claim pointer** The manuscript states that "for the one trajectory where the top-populated cluster was not similar to the bound conformation, we observe that greater similarity is inferred between the bound-conformation cluster and the monomer structure predictions... than between the static predicted structure and the top cluster, in line with the expectation that ML-based structure prediction tools will yield results similar to what they have 'seen'."
+  - **Evidence pointer** Section 3.5, Figure S4; location not provided
+  - **Concern** This is a single trajectory from a single peptide. The authors use this to support a general claim about ML tools favoring bound conformations. This is an over-interpretation of a single data point. The MD comparison is performed on only one of the three target families, and the authors acknowledge the small dataset size. The conclusion drawn from this one trajectory is not statistically supportable.
+  - **Why it matters** The comparison with MD is a key differentiator of this study. If the conclusions are based on anecdotal evidence, the value of this comparison is substantially diminished. The claim about ML tools "memorizing" bound conformations is important and needs stronger support.
+  - **Resolution test** Expand the MD comparison to a larger and more diverse set of peptides, or at minimum, present the results for all trajectories in the dataset and discuss the variability. If the single trajectory is truly exceptional, state this explicitly and avoid generalizing from it.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Confounding variables
+  - **Claim pointer** The manuscript attributes the performance difference between sequence and SMILES representations to "how the molecules are tokenized" and how "geometry and evolutionary constraints are estimated."
+  - **Evidence pointer** Section 3.1, Figure 1; location not provided
+  - **Concern** The comparison between sequence and SMILES representations is potentially confounded by the fact that SMILES was used for peptides containing non-canonical amino acids, while the sequence representation was used for standard peptides. The authors state this in the methodology but do not appear to control for it in the analysis. If the SMILES-using peptides are systematically different (e.g., more complex chemistry), the performance difference may be due to the peptide properties rather than the representation format.
+  - **Why it matters** The claim that "the natural amino acid representation was found to outperform the more general SMILES string input" is a key finding. If this is confounded by peptide composition, the conclusion is not valid.
+  - **Resolution test** Perform a matched comparison where the same peptides are provided in both sequence and SMILES formats, or at least analyze the subset of peptides that can be represented both ways separately. Discuss the potential confounding effect explicitly.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Construct validity
+  - **Claim pointer** The manuscript uses RMSD to a single reference structure as the primary accuracy metric and acknowledges that "a simple RMSD comparison only assesses the ability of a structure prediction tool to recapitulate a reference structure, rather than the entire conformational ensemble."
+  - **Evidence pointer** Section 3.1, Figures 1–4; location not provided
+  - **Concern** The authors correctly identify this limitation but do not adequately address it in their analysis. For cyclic peptides, which are known to be conformationally flexible, a single reference structure may not be representative. The MD comparison is presented as a partial remedy, but it is only applied to a small subset. The main benchmark results are still based on single-structure RMSD.
+  - **Why it matters** If the reference structures are not representative of the conformational ensemble, the ranking of tools based on RMSD to those structures may not reflect their utility in a drug discovery context, where conformational ensembles matter.
+  - **Resolution test** For at least a subset of peptides, compare predicted structures against the full MD-derived ensemble, using metrics such as population overlap or ensemble RMSD. Discuss how the single-structure RMSD results might change if ensemble-based metrics were used.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Methodology, Datasets section
+  - **Evidence pointer** Section 2.1, Tables 1–3
+  - **Issue** The description of the dataset curation is somewhat vague. The authors state that peptides were selected based on "studies reporting bioactivity data" and "experimentally verified structures," but the exact selection criteria, the number of peptides screened versus included, and the handling of redundant or closely related sequences are not described.
+  - **Required correction** Provide a more detailed description of the dataset curation process, including inclusion/exclusion criteria, the number of peptides considered at each stage, and how sequence redundancy was managed.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical detail
+  - **Affected element** Methodology, Modelling tools section
+  - **Evidence pointer** Section 2.2
+  - **Issue** The description of the tools and their parameters is high-level. For a benchmark that aims to be reproducible, more detail is needed on the specific versions of each tool, the exact input formats used, and any non-default parameters beyond those mentioned for CycPepDock and EvoBind2.
+  - **Required correction** Add a table or supplementary section listing the exact tool versions, key parameters, and input preparation steps for each tool.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Results and discussion, Correlation section
+  - **Evidence pointer** Section 3.4, Figure 5
+  - **Issue** The correlation analysis is described qualitatively ("weak across the board"). Specific correlation coefficients, confidence intervals, and p-values are not reported in the main text.
+  - **Required correction** Report the actual correlation coefficients and their statistical significance, either in the main text or by referencing specific values in the supplementary tables.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Results and discussion, Overall accuracy comparison
+  - **Evidence pointer** Section 3.3, Figure 4
+  - **Issue** The statement that "Protenix and Chai-1 appear to lead the competition" is based on a visual inspection of the figures, but the magnitude of the difference and its practical significance are not quantified. It is unclear if the difference between the top tools is within the noise of the benchmark.
+  - **Required correction** Provide a statistical comparison of the top-performing tools, including effect sizes and confidence intervals, to support the claim of a meaningful performance difference.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Conclusions
+  - **Evidence pointer** Section 4
+  - **Issue** The conclusions section mentions future tools and MLIPs but does not provide a clear summary of the practical recommendations for users of these tools. Given the benchmark's applied nature, a concise set of recommendations would be valuable.
+  - **Required correction** Add a short paragraph in the conclusions summarizing the key practical takeaways for researchers selecting tools for cyclic peptide modeling.
+- **Technical failings that need to be addressed before the case is established** The absence of the supplementary information is the primary technical failing. The manuscript's claims cannot be evaluated without the underlying data. Additionally, the MD comparison is too limited in scope to support the general conclusions drawn from it. The potential confounding between representation format and peptide composition in the sequence vs. SMILES comparison needs to be addressed.
+- **Assessment against Nature-style criteria** 
+  - **Originality** The benchmark is not entirely novel in concept, as similar comparisons exist for linear peptides and for some cyclic peptide tools. However, the specific focus on cyclic peptides, the inclusion of multiple tool generations, and the memorization analysis provide a degree of originality.
+  - **Scientific importance** The question of how well AI tools handle cyclic peptides is of practical importance for drug discovery. The findings, if robust, would be useful for practitioners. However, the importance is incremental rather than transformative.
+  - **Interdisciplinary readership** The topic sits at the intersection of computational biology, medicinal chemistry, and AI. The manuscript is likely to be of interest to researchers in these fields, but the appeal is somewhat narrow.
+  - **Technical soundness** The benchmark design is generally sound, but the lack of access to the supplementary data and the limited MD comparison prevent a full assessment of technical soundness. The potential confounding in the representation comparison is a concern.
+  - **Readability for nonspecialists** The manuscript is reasonably well-written and accessible. The authors explain the tools and metrics at an appropriate level. The main text is clear, though some sections (e.g., the MD methodology) are dense.
+- **Recommendation posture** Supportive if technical concerns are resolved. The manuscript addresses a relevant question and the authors have made a reasonable effort in their benchmark design. However, the blocking issue of missing supplementary data must be resolved, and the concerns about the MD comparison and the representation confounding need to be addressed before the claims can be considered established.
+
+## Risk / unsupported claims
+- The specific performance numbers (e.g., ~1.3 Å RMSD for HighFold and Boltz-2) are unverifiable without the supplementary figures.
+- The claim that newer tools provide a "significant" advantage over AlphaFold2-based counterparts is not supported by statistical evidence in the main text.
+- The conclusion that "physics-based tools remain the gold standard" for capturing conformational flexibility is based on a very small subset of peptides and a single trajectory analysis.
+- The claim that the performance difference between sequence and SMILES representations is due to tokenization and geometry estimation is potentially confounded by peptide composition.
+- The assertion that circularly shifted sequences impact performance, implying memorization, is presented without quantitative data in the main text.
+- The statement that "none of the tools tested were able to recapitulate the notable structural features" of the three well-structured peptides is based on a case study of only three peptides and is presented without detailed metrics.

@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PrOMet: Accurate and Robust Metal-Binding Site and Type Prediction. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>PrOMet: Accurate and Robust Metal-Binding Site and Type Prediction.</h1>
+      <div class="meta">Park, Gangeun; Seok, Chaok; Park, Hahnbeom</div>
+      <div class="meta muted">
+        
+        <span class="journal">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+        · 2026-10-12
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42860517/">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于剪枝-优化策略的机器学习方法PrOMet，用于预测蛋白质金属结合位点和金属类型，属于蛋白质结构功能位点预测的计算建模，方法可迁移至蛋白结构计算领域。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Metal binding to proteins is crucial for many biological functions, yet the prediction of metal-binding sites and metal types remains underexplored compared to other biomolecular interactions. Despite advances in deep learning, computational methods have achieved limited success in this area; even the best-reported approaches reach only moderate localization accuracy on high-resolution crystal structures, and even worse when applied to medium-resolution data. We hypothesize that the main challenge lies in the nature of metal binding. While the putative sites span the entire protein surface, actual binding requires the atomic-level coordination geometry. We present a structure-based metal binding site and type predictor, PrOMet, in this work, which leverages a Prune-and-Optimization strategy built upon two hierarchically connected machine learning architectures. This strategy allows the method to effectively narrow the search space while maintaining robustness to AlphaFold models and medium-resolution cryo-EM structures. PrOMet outperforms existing methods, including structure-based and language model-based predictors, achieving a PR-AUC of 0.739 for metal ion localization and an average F1-score of 0.743 for metal type classification-Zn, Ca, Mg, Mn, Fe, Cu, respectively. PrOMet can be an effective tool for allocating uncertain metal positions and types within protein structures, as well as for metalloenzyme design studies.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">金属与蛋白质的结合对许多生物功能至关重要，然而，与其他生物分子相互作用相比，金属结合位点和金属类型的预测仍未得到充分探索。尽管深度学习取得了进展，计算方法在该领域取得的成功有限；即使是最佳报道的方法，在高分辨率晶体结构上也仅达到中等定位精度，而在应用于中等分辨率数据时表现更差。我们假设主要挑战在于金属结合的本质。虽然假定位点遍布整个蛋白质表面，但实际结合需要原子级别的配位几何。在本工作中，我们提出了一种基于结构的金属结合位点和类型预测器PrOMet，它利用了一种基于两个层级连接的机器学习架构构建的剪枝与优化策略。该策略使方法能够有效缩小搜索空间，同时保持对AlphaFold模型和中等分辨率冷冻电镜结构的鲁棒性。PrOMet优于现有方法，包括基于结构和基于语言模型的预测器，在金属离子定位方面实现了0.739的PR-AUC，在金属类型分类（分别为Zn、Ca、Mg、Mn、Fe、Cu）方面平均F1分数为0.743。PrOMet可成为分配蛋白质结构中不确定金属位置和类型的有效工具，也适用于金属酶设计研究。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: PrOMet: Accurate and Robust Metal-Binding Site and Type Prediction</li>
+<li><strong>作者与单位</strong>: Park, Gangeun; Seok, Chaok; Park, Hahnbeom（首尔国立大学等，具体单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>: Advanced Science (Weinheim, Baden-Wurttemberg, Germany)</li>
+<li><strong>年份</strong>: 2026-10-12</li>
+<li><strong>论文类型</strong>: 研究论文（方法学）</li>
+<li><strong>领域</strong>: 蛋白质结构计算研究 × 深度学习（金属结合位点与类型预测）</li>
+<li><strong>关键词</strong>: 金属结合位点预测、金属类型分类、Equivariant Graph Neural Network (EGNN)、Prune-and-Optimization、AlphaFold3 对比</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1002/advs.78003</li>
+<li><strong>代码</strong>: https://github.com/qkrgangeun/LigMet</li>
+<li><strong>数据</strong>: 基于 BioLiP 数据库（2025-02-19 检索），数据可从通讯作者处获取</li>
+<li><strong>阅读日期</strong>: 未提供</li>
+<li><strong>方向定位</strong>: 该文属于「蛋白质结构相关计算研究 × AI 方法」中的结构-功能预测子方向，聚焦金属结合位点的定位与金属类型分类，与 AlphaFold3 等结构预测工具形成互补，为金属蛋白功能注释和金属酶设计提供计算工具。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>PrOMet 通过两阶段「剪枝-优化」策略（随机森林粗筛 + EGNN 精修），在蛋白质结构上同时预测金属结合位点位置与金属类型，在实验结构（X-ray/cryo-EM）和 AlphaFold3 预测结构上均达到优于现有方法的精度（PR-AUC 0.739，平均 F1 0.743），且对结构噪声具有鲁棒性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 给定一个蛋白质三维结构（实验测定或计算预测），如何准确预测金属离子结合位点的三维坐标位置以及结合的具体金属类型（Zn、Ca、Mg、Mn、Fe、Cu 等）？</li>
+<li><strong>为什么重要</strong>: 金属离子参与超过三分之一的 PDB 结构中蛋白质的催化、结构稳定、信号传导等功能。准确预测金属结合位点和类型对于理解金属蛋白功能、注释未知蛋白、设计金属酶和纠正实验结构中错误的金属注释至关重要。</li>
+<li><strong>现有方法不足</strong>: ① 序列方法（如 M-Ionic）缺乏三维结构上下文，定位精度有限；② 现有结构方法（如 Metal3D）多局限于高分辨率晶体结构，对中等分辨率 cryo-EM 和 AlphaFold 预测结构鲁棒性差；③ 多数方法仅预测位点而不预测金属类型，或仅针对单一金属；④ 模板方法难以泛化到新蛋白。</li>
+<li><strong>精确研究问题</strong>: Can a two-stage structure-based deep learning framework achieve accurate and robust metal-binding site localization and metal type classification across diverse experimental resolutions and predicted structures?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：以下脉络为「经外部核验」结合本文框架）
+1. <strong>序列基方法</strong>（早期）：基于氨基酸序列组成和保守性预测金属结合残基，如 M-Ionic。优点：可扩展性好；缺点：缺乏三维空间信息，无法精确定位。
+2. <strong>几何启发式方法</strong>（中期）：如 BioMetAll，基于几何模板匹配和化学规则。优点：可解释性强；缺点：对非经典配位几何适应性差。
+3. <strong>结构深度学习</strong>（近期）：如 Metal3D，使用 3D-CNN 或图神经网络从结构提取特征。优点：精度提升；缺点：训练数据局限于高分辨率晶体结构，对噪声结构敏感，且多不预测金属类型。
+4. <strong>大模型结构预测</strong>（当前）：AlphaFold3 等可预测蛋白-金属复合物，但需要用户指定金属类型和数量，且对非经典配位（如主链羰基配位）易失败。
+5. <strong>本文位置</strong>：提出两阶段「剪枝-优化」框架，结合粗粒度筛选与细粒度几何精修，首次系统性地在多种分辨率（X-ray、cryo-EM）和预测结构（AF3）上实现金属位点定位与类型分类的联合预测，并引入方向性特征（极性向量）增强几何感知。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>位点定位精度不足</td>
+<td>现有方法在 2Å 精度下召回率低</td>
+<td>金属结合位点遍布整个蛋白表面，正负样本极度不平衡（1224:1）</td>
+<td>Results 图 2a；Results "grid-level false-to-true ratio was reduced from 1224:1"</td>
+</tr>
+<tr>
+<td>对结构噪声敏感</td>
+<td>在 cryo-EM 和 AF 模型上性能显著下降</td>
+<td>训练数据局限于高分辨率晶体结构，模型过拟合完美几何</td>
+<td>Results 图 4a-c；"training only on high-resolution structures mainly reduces recall"</td>
+</tr>
+<tr>
+<td>金属类型预测缺失</td>
+<td>多数方法仅定位不分类</td>
+<td>金属类型分类需要更精细的化学环境特征</td>
+<td>Results 图 3a；"even the best-reported approaches reach only moderate localization accuracy"</td>
+</tr>
+<tr>
+<td>非经典配位识别困难</td>
+<td>主链羰基配位的金属位点易漏检</td>
+<td>训练数据中此类位点占比低，模型偏向侧链配位</td>
+<td>Results 图 5c；AF3 无法预测 K+ 位点案例</td>
+</tr>
+<tr>
+<td>计算成本高</td>
+<td>全表面细粒度搜索不可行</td>
+<td>蛋白表面网格点数量巨大</td>
+<td>Methods "Pruning stage"；"reducing the search space to 2.76%"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 两阶段级联架构——第一阶段用随机森林（RF）在蛋白表面网格点上进行粗粒度筛选，保留高召回率的候选区域；第二阶段用等变图神经网络（EGNN）在候选区域上进行细粒度精修，同时输出金属结合概率和金属类型分布。</li>
+<li><strong>核心洞察</strong>: 金属结合预测本质上是「多尺度问题」——全局搜索需要高效筛选（粗粒度特征即可），局部确认需要精细的几何与化学感知（原子级配位几何、方向性电子效应）。将两者解耦为级联的「剪枝-优化」过程，既保证召回率又提升精度。关键创新在于引入<strong>极性方向特征</strong>（原子极性向量与网格点方向的夹角 θ），编码孤对电子方向信息，这是距离-only 特征无法捕捉的。</li>
+<li><strong>可能的普适教训</strong> [Analysis]: ① 对「全局搜索 + 局部精修」类任务（如其他配体结合位点预测、蛋白-蛋白相互作用界面预测），两阶段级联设计可有效平衡计算效率与精度；② 方向性/角度特征对配位化学至关重要，纯距离特征信息不足；③ 训练数据应覆盖分辨率谱系（而非仅高分辨率），以增强对结构噪声的鲁棒性。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 蛋白质三维结构（PDB 格式），包含原子坐标、氨基酸类型、原子类型、二级结构注释、SASA、部分电荷等。</li>
+<li><strong>输出</strong>: (1) 金属结合位点的三维坐标（概率加权聚类中心）；(2) 每个位点的金属类型预测（Zn/Ca/Mg/Mn/Fe/Cu 或 None）。</li>
+<li><strong>模块</strong>:
+  1. <strong>网格点采样</strong>: 在蛋白表面原子范德华半径扩展区域采样候选网格点，去除空间冲突和冗余点（最小间距 0.6 Å）。
+  2. <strong>RF 剪枝器</strong>: 对每个网格点提取三类特征——(a) 第一配位层特征（距离阈值 2.5/2.8/3.0/3.2/3.5 Å 内的供体原子计数、核心残基计数等）；(b) 几何与可及性特征（到非极性碳距离、到主链原子距离、rSASA 等）；(c) 第二配位层特征（3.2-5.0 Å 范围内的残基组成）。输出金属结合概率，保留概率 &gt; 阈值的网格点。
+  3. <strong>EGNN 精修器</strong>: 将保留的网格点与周围蛋白原子构建局部图（k=16 最近邻），节点特征包含原子类型、氨基酸身份、二级结构、SASA、电荷等；边特征包含距离、极性方向角 (sin θ, cos θ)。5 层 EGNN 编码器 + 双头解码器（结合概率头 + 金属类型头）。
+  4. <strong>后处理</strong>: DBSCAN 聚类（eps=2, min_samples=2）将网格点聚合成位点，位点位置为概率加权中心，类型为最高概率网格点的 top-1 预测。</li>
+<li><strong>训练</strong>: 损失函数 L = L_occ + L_type + L_aux，其中 L_occ 为软标签二值交叉熵（高斯衰减标签），L_type 为类别平衡交叉熵，L_aux 为 2 Å 内网格点的辅助类型损失。Adam 优化器，lr=0.0001，5 层 EGNN，dropout=0.1。</li>
+<li><strong>流程</strong>: 输入结构 → 网格采样 → RF 剪枝（保留 2.76% 网格）→ EGNN 精修 → DBSCAN 聚类 → 位点坐标 + 金属类型。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>网格点采样</td>
+<td>离散化蛋白表面为候选点</td>
+<td>连续空间搜索不可行</td>
+<td>输入：蛋白结构；输出：候选网格点集</td>
+<td>Methods "Grid Representation"</td>
+<td>无法进行位点定位（预期）</td>
+</tr>
+<tr>
+<td>RF 剪枝器</td>
+<td>粗粒度筛选高概率区域</td>
+<td>正负样本极度不平衡（1224:1），直接 EGNN 训练效率低</td>
+<td>输入：网格点手工特征；输出：结合概率</td>
+<td>Results "98.8% coverage, 2.76% retained"</td>
+<td>无剪枝时 EGNN PR-AUC 从 0.739 降至 0.386（实测，Table 1）</td>
+</tr>
+<tr>
+<td>极性方向特征</td>
+<td>编码孤对电子方向信息</td>
+<td>距离-only 特征无法区分配位方向</td>
+<td>输入：原子极性向量与网格方向夹角；输出：(sin θ, cos θ) 特征</td>
+<td>Results "directional feature was most critical"；Table 1</td>
+<td>移除后精度下降（实测，Table 1）</td>
+</tr>
+<tr>
+<td>EGNN 编码器</td>
+<td>细粒度几何-化学联合建模</td>
+<td>需要等变表示以正确感知三维几何</td>
+<td>输入：局部图（节点+边特征）；输出：节点隐表示</td>
+<td>Results 图 S20；EGNN &gt; GAT &gt; GCN</td>
+<td>替换为 GAT/GCN 时 PR-AUC 从 0.740 降至 0.579/0.546（实测，图 S20）</td>
+</tr>
+<tr>
+<td>双头解码器</td>
+<td>同时输出结合概率和金属类型</td>
+<td>联合优化定位与分类</td>
+<td>输入：节点隐表示；输出：概率 + 类型分布</td>
+<td>Results 图 3a</td>
+<td>移除类型头则无法分类（预期）</td>
+</tr>
+<tr>
+<td>DBSCAN 聚类</td>
+<td>网格点聚合为位点</td>
+<td>单个网格点无生物学意义</td>
+<td>输入：高概率网格点；输出：位点坐标+类型</td>
+<td>Methods "Clustering"</td>
+<td>无法输出位点级预测（预期）</td>
+</tr>
+<tr>
+<td>数据集构建</td>
+<td>覆盖多分辨率、多金属类型</td>
+<td>训练数据多样性决定泛化性</td>
+<td>输入：BioLiP 结构；输出：标注网格点</td>
+<td>Methods "Datasets"；图 S2</td>
+<td>仅用高分辨率训练时 cryo-EM 性能下降（实测，Table 1）</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ol>
+<li>
+<p><strong>软标签函数</strong>（用于 L_occ）:
+   y_i = f(d_i) = exp(-d_i² / a)
+   其中 d_i 为网格点 i 到最近金属离子的距离，a = 4 ln 2 ≈ 5.77 Å²（使 f(2Å) = 0.5）。</p>
+</li>
+<li>
+<p><strong>总损失函数</strong>:
+   L = L_occ + L_type + L_aux
+   - L_occ = -(1/N) Σ [y_i log(ŷ_i) + (1-y_i) log(1-ŷ_i)]（二值交叉熵）
+   - L_type = -(1/N) Σ w_c log(p_i,c)（类别平衡交叉熵，w_c = 1/M_c）
+   - L_aux = 同 L_type，但仅对 d_i ≤ 2 Å 的网格点计算</p>
+</li>
+<li>
+<p><strong>精度/召回率</strong>:
+   Precision = TP / (TP + FP)
+   Recall = TP / (TP + FN)
+   F1 = 2·Precision·Recall / (Precision + Recall)</p>
+</li>
+<li>
+<p><strong>PR-AUC</strong>: 精度-召回率曲线下面积，作为主要评估指标（阈值无关）。</p>
+</li>
+</ol>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>:</li>
+<li>训练/验证/测试：BioLiP 数据库（2025-02-19 检索），含 16,196 个 PDB 条目（X-ray 和 cryo-EM），9 种金属（Zn, Ca, Mg, Mn, Fe, Cu, Ni, Co, K），排除 NMR 结构。</li>
+<li>序列聚类：30% 同一性（MMseqs2），时间划分（训练截止 2019-01-01，验证截止 2021-03-31）。</li>
+<li>独立测试集：与训练集无 &gt;30% 序列相似性。</li>
+<li>负样本：无金属结合蛋白（316 个无金属蛋白用于 AF3 对比）。</li>
+<li>AF3 基准：82 个单金属蛋白（Ca 19, Mg 21, Zn 22, Fe 6, K 4, Mn 7, Cu 3），来自 Boltz-1 测试集，序列同一性 &lt;40%。</li>
+<li><strong>评估协议</strong>: 位点级 PR-AUC、F1、精度、召回率；2 Å 和 5 Å 匹配阈值；金属类型分类准确率。</li>
+<li><strong>基线</strong>: Metal3D（结构深度学习）、BioMetAll（几何启发式）、M-Ionic（序列方法）、AlphaFold3（结构预测工具）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>位点定位（X-ray）</td>
+<td>PrOMet 优于现有方法</td>
+<td>2Å 阈值，测试集</td>
+<td>PR-AUC 0.739；recall 80.0%，precision 65.0%（阈值 0.5）</td>
+<td>PrOMet 在 X-ray 结构上定位精度最高</td>
+<td>未与所有可能基线对比</td>
+<td>Results 图 2a</td>
+</tr>
+<tr>
+<td>位点定位（cryo-EM）</td>
+<td>对中等分辨率鲁棒</td>
+<td>cryo-EM 子集</td>
+<td>性能下降幅度小于 Metal3D</td>
+<td>对结构噪声更鲁棒</td>
+<td>样本量有限</td>
+<td>Results 图 4a</td>
+</tr>
+<tr>
+<td>位点定位（AF3 结构）</td>
+<td>对预测结构鲁棒</td>
+<td>AF3 建模结构</td>
+<td>性能保持，Metal3D 显著下降</td>
+<td>可用于预测结构</td>
+<td>仅测试高质量 AF3 模型</td>
+<td>Results 图 4b</td>
+</tr>
+<tr>
+<td>金属类型分类</td>
+<td>类型预测准确</td>
+<td>6 类金属，F1 平均</td>
+<td>平均 F1 0.743；Zn 最佳 0.859，Ca 0.801</td>
+<td>类型分类有效</td>
+<td>稀有金属（Co, Ni）性能低</td>
+<td>Results 图 3a</td>
+</tr>
+<tr>
+<td>与 AF3 对比</td>
+<td>专用工具优于通用预测器</td>
+<td>82 个单金属蛋白</td>
+<td>PrOMet top-1 位点-类型正确率 45%，AF3 23%</td>
+<td>专用工具互补于 AF3</td>
+<td>AF3 在已知金属条件下可能更优</td>
+<td>Results 图 5a</td>
+</tr>
+<tr>
+<td>消融：无 RF 剪枝</td>
+<td>两阶段设计必要</td>
+<td>仅 EGNN</td>
+<td>PR-AUC 0.386 vs 0.739</td>
+<td>剪枝阶段关键</td>
+<td>—</td>
+<td>Table 1</td>
+</tr>
+<tr>
+<td>消融：无方向特征</td>
+<td>极性方向特征关键</td>
+<td>移除 (sin θ, cos θ)</td>
+<td>精度下降（具体数值未提供）</td>
+<td>方向特征提供关键归纳偏置</td>
+<td>—</td>
+<td>Table 1</td>
+</tr>
+<tr>
+<td>消融：仅高分辨率训练</td>
+<td>数据多样性必要</td>
+<td>仅 X-ray ≤2Å 训练</td>
+<td>cryo-EM 召回率下降</td>
+<td>多分辨率训练增强鲁棒性</td>
+<td>—</td>
+<td>Table 1</td>
+</tr>
+<tr>
+<td>非结合蛋白判别</td>
+<td>假阳性控制</td>
+<td>316 个无金属蛋白</td>
+<td>8.2% 假阳性（阈值 0.8）</td>
+<td>可区分非结合蛋白</td>
+<td>假阳性仍存在</td>
+<td>Results 图 S11</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 该文解决的是「给定结构预测金属结合位点和类型」，而非「从序列预测结构」或「预测金属介导的构象变化」。输入是静态结构（实验或预测），输出是位点坐标和金属类型。</li>
+<li><strong>真值/Orcale 输入</strong>: 训练和评估使用 BioLiP 注释的金属结合位点作为真值，该注释基于实验结构中的金属原子坐标。AF3 对比实验中，AF3 需要用户指定金属类型和数量（即 oracle 输入），而 PrOMet 无需此信息。</li>
+<li><strong>端到端状态</strong>: PrOMet 是端到端的结构→位点+类型预测流程，但依赖输入结构的质量。对 AF3 预测结构，仅测试了高质量子集（全局 backbone RMSD ≤5Å，局部侧链 RMSD ≤3Å），对低质量预测结构的性能未充分评估。</li>
+<li><strong>算力成本</strong>: 推理速度快（774 残基蛋白 1.26 秒，单 CPU + RTX A5000），训练成本中等（2 天，4×A5000）。</li>
+<li><strong>历史数据依赖</strong>: 训练数据来自 BioLiP（2025-02-19），存在数据库偏差；时间划分（2019/2021 截止）缓解了数据泄漏，但未完全消除。</li>
+<li><strong>最难情形</strong>: 稀有金属（Co, Ni, K）性能低；非蛋白配体介导的金属位点（如 DNA/RNA 配位）性能下降；低配位数（&lt;3 供体原子）的位点可能被过滤。</li>
+<li><strong>有边界的复述</strong>: PrOMet 在实验结构（X-ray 和 cryo-EM）和高质量 AF3 预测结构上，实现了比现有方法更高的金属位点定位精度（PR-AUC 0.739）和金属类型分类准确率（平均 F1 0.743），尤其对 Ca/Mg 等碱土金属改进显著；其两阶段架构和方向性特征设计是性能提升的关键，但稀有金属类型和低质量预测结构的性能仍有待提升。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>稀有金属类型性能不足</td>
+<td>Co、Ni 等数据量少的金属类型分类准确率低</td>
+<td>扩展数据集覆盖更多稀有金属类型</td>
+<td>Results 图 3a；Discussion "dataset imbalance"</td>
+</tr>
+<tr>
+<td>静态结构输入</td>
+<td>未考虑金属结合诱导的构象变化和动力学</td>
+<td>整合分子动力学模拟或多构象集成</td>
+<td>Discussion "temporal and multi-state rearrangements"</td>
+</tr>
+<tr>
+<td>非蛋白配体介导位点</td>
+<td>对 DNA/RNA/小分子配体共同配位的金属位点性能下降</td>
+<td>在训练数据中增加非蛋白配体环境</td>
+<td>Results 图 2c；Discussion "broader molecular contexts"</td>
+</tr>
+<tr>
+<td>低质量预测结构</td>
+<td>对 AF3 低质量模型（侧链 RMSD &gt;2Å）性能下降</td>
+<td>结合结构置信度评分或迭代精修</td>
+<td>Results 图 4d；Discussion "poorly modeled side-chains"</td>
+</tr>
+<tr>
+<td>金属类型类别有限</td>
+<td>仅覆盖 6 种主要金属类型，未包含所有生物相关金属</td>
+<td>扩展金属类型类别</td>
+<td>Methods "Datasets"；Table S5</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练数据来自 BioLiP，可能包含系统性偏差</td>
+<td>BioLiP 注释依赖文献和实验条件，可能偏向高亲和力、高占据位点</td>
+<td>影响模型在真实场景（含弱结合位点）的泛化性</td>
+<td>在独立实验数据集（如 Metals in Biology 数据库）上交叉验证</td>
+<td>Methods "Datasets"</td>
+</tr>
+<tr>
+<td>与 AF3 对比中，AF3 需要 oracle 输入（金属类型和数量）</td>
+<td>对比条件不完全公平：AF3 在无 oracle 时可能更差，但 PrOMet 无需此信息</td>
+<td>影响「AF3 不如 PrOMet」结论的强度</td>
+<td>设计无 oracle 的 AF3 对比实验</td>
+<td>Results 图 5a；Methods "Benchmarking AF3"</td>
+</tr>
+<tr>
+<td>消融实验仅报告 PR-AUC 变化，未报告具体数值</td>
+<td>无法评估效应大小和统计显著性</td>
+<td>影响对关键组件贡献度的量化判断</td>
+<td>补充完整消融数值和置信区间</td>
+<td>Table 1</td>
+</tr>
+<tr>
+<td>方向性特征（极性向量）的定义依赖原子类型分类</td>
+<td>不同力场/电荷模型的极性向量定义可能不同，影响可复现性</td>
+<td>影响方法在不同输入条件下的稳定性</td>
+<td>使用不同电荷模型（如 AMBER、CHARMM）测试特征鲁棒性</td>
+<td>Methods "EGNN"；图 S23</td>
+</tr>
+<tr>
+<td>测试集仅包含高质量 AF3 模型（RMSD ≤5Å）</td>
+<td>实际应用中 AF3 模型质量参差不齐，可能高估鲁棒性</td>
+<td>影响对预测结构泛化能力的结论</td>
+<td>在无 RMSD 过滤的 AF3 模型上测试</td>
+<td>Methods "Model Structure Test Set"</td>
+</tr>
+<tr>
+<td>网格点采样密度和 RF 阈值是超参数</td>
+<td>未系统评估这些超参数对性能的影响</td>
+<td>影响方法的可调性和最优配置</td>
+<td>进行超参数敏感性分析</td>
+<td>Methods "Grid Representation"；图 S19</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>两阶段「剪枝-优化」范式</strong> [可迁移]：对「全局搜索 + 局部精修」类任务（如其他配体结合位点预测、蛋白-蛋白相互作用界面预测、催化残基预测），可借鉴 RF 粗筛 + EGNN 精修的级联设计，在保持高召回率的同时提升精度。本课题中，可迁移至「构象采样中的结合口袋预筛」或「MD 模拟中的反应坐标初选」。
+2. <strong>方向性特征编码</strong> [可迁移]：在配位化学中，孤对电子方向（极性向量与目标方向夹角）是关键信息。本课题中，分子对接评分函数或 MD 力场可引入类似的方向性几何特征，而非仅依赖距离。
+3. <strong>软标签设计</strong> [可迁移]：用高斯衰减软标签（f(d) = exp(-d²/a)）替代硬标签，可缓解边界模糊问题，适用于任何「近-远」二分类任务（如结合位点、界面残基预测）。
+4. <strong>多分辨率训练策略</strong> [可迁移]：训练数据覆盖 X-ray 到 cryo-EM 的宽分辨率谱系，可增强模型对结构噪声的鲁棒性。本课题中，MD 模拟或结构预测的构象集成训练可借鉴此思路。
+5. <strong>类别平衡损失 + 辅助损失</strong> [可迁移]：类别平衡交叉熵 + 近邻辅助监督（L_aux）的组合，适用于数据不平衡的原子级预测任务。
+6. <strong>与 AlphaFold3 的互补定位</strong> [可迁移]：专用预测器（PrOMet）与通用结构预测器（AF3）形成互补——AF3 需要 oracle 输入且对非经典配位易失败，专用工具可校正和补充。本课题中，可考虑「AF3 生成候选结构 + 专用工具精修功能位点」的流水线。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：Metal3D（结构深度学习基线）、DeepMetalSite、IonCom 等金属位点预测方法；与 PrOMet 的差异在于两阶段架构、方向性特征和多分辨率训练。</li>
+<li><strong>相关工具</strong>：AlphaFold3（结构预测，可预测蛋白-金属复合物但需 oracle 输入）、BioMetAll（几何启发式）、MIB2（模板方法）、M-Ionic（序列方法）。</li>
+<li><strong>可核验的外部文献</strong>：</li>
+<li>BioLiP 数据库（Yang et al., Nucleic Acids Research, 2013）——金属蛋白注释来源。</li>
+<li>EGNN（Satorras et al., ICML 2021）——等变图神经网络架构。</li>
+<li>MMseqs2（Steinegger &amp; Söding, Bioinformatics, 2017）——序列聚类工具。</li>
+<li>AlphaFold3（Abramson et al., Nature, 2024）——结构预测对比基线。</li>
+<li><strong>与用户已有知识的连接</strong> [Analysis]：若用户熟悉 MD 模拟，可类比「PrOMet 的 RF 剪枝 ≈ 粗粒化预筛选（如网格映射），EGNN 精修 ≈ 全原子 MD 细化」；若用户熟悉 AlphaFold 使用，可类比「PrOMet 无需指定金属类型，类似 AF2 无需指定配体」。</li>
+<li><strong>候选方向</strong> [Analysis]：PrOMet 的框架可扩展至其他金属相关任务（如金属介导的蛋白-蛋白相互作用预测、金属酶催化残基注释），或与 MD 模拟结合（预测的金属位点作为 MD 初始坐标）。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: 金属位点感知的 MD 模拟初始化与增强采样
+   - <strong>来源局限/观察</strong>: PrOMet 预测的金属位点可作为 MD 模拟的初始坐标，但静态结构未考虑金属结合诱导的构象变化。
+   - <strong>核心假设</strong>: 将 PrOMet 预测的金属位点作为约束（harmonic restraint）或初始坐标，可加速 MD 模拟中金属配位构象的收敛。
+   - <strong>初步方法</strong>: 对目标蛋白，用 PrOMet 预测金属位点 → 将金属离子放置在预测坐标 → 用 MD（如 AMBER/OpenMM）模拟配位构象平衡 → 比较与无预测初始化的 RMSD 收敛速度。
+   - <strong>验证方式</strong>: 在已知金属蛋白（如碳酸酐酶、细胞色素 c）上比较初始化策略的收敛时间和配位几何精度。
+   - <strong>可能的失败模式</strong>: 预测位点与真实位点偏差 &gt;2Å 时，初始化可能误导模拟；需结合柔性对接或退火。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 方向性特征增强的分子对接评分函数
+   - <strong>来源局限/观察</strong>: PrOMet 的极性方向特征（θ 角）对金属配位预测至关重要，但现有对接评分函数多基于距离和角度，未显式编码孤对电子方向。
+   - <strong>核心假设</strong>: 在对接评分函数中引入极性向量方向项，可提升金属配体对接的准确性。
+   - <strong>初步方法</strong>: 在 AutoDock Vina 或 GNINA 的评分函数中，增加金属-供体原子方向的余弦相似度项；用 PrOMet 的极性向量定义计算方向特征。
+   - <strong>验证方式</strong>: 在 PDBbind 金属蛋白子集上比较对接 pose 的 RMSD 和结合亲和力预测精度。
+   - <strong>可能的失败模式</strong>: 方向特征对构象采样敏感，可能增加评分函数复杂度但收益有限。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 多构象集成的金属位点预测（PrOMet-Ensemble）
+   - <strong>来源局限/观察</strong>: PrOMet 输入单一静态结构，对构象变化敏感的位点可能漏检。
+   - <strong>核心假设</strong>: 对同一蛋白的多个构象（MD 采样或 AF3 多模型）分别预测并集成，可提高金属位点预测的召回率和鲁棒性。
+   - <strong>初步方法</strong>: 对目标蛋白生成 MD 轨迹（如 100ns）→ 每 10ns 提取构象 → 用 PrOMet 预测每个构象 → 将预测位点聚类并投票集成。
+   - <strong>验证方式</strong>: 在构象变化大的金属蛋白（如激酶、G 蛋白偶联受体）上比较单构象与多构象集成的 PR-AUC。
+   - <strong>可能的失败模式</strong>: 计算成本增加；构象多样性不足时集成收益有限。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 金属类型感知的金属酶设计辅助工具
+   - <strong>来源局限/观察</strong>: PrOMet 可预测金属类型，但未与金属酶设计流程（如 Rosetta 或基于深度学习的序列设计）整合。
+   - <strong>核心假设</strong>: 将 PrOMet 的金属类型预测作为设计约束，可提高金属酶设计的成功率。
+   - <strong>初步方法</strong>: 在金属酶设计流程中，用 PrOMet 评估设计变体的金属结合位点和类型 → 将预测结果作为反馈信号迭代优化序列。
+   - <strong>验证方式</strong>: 在已知金属酶（如非血红素铁酶）上，比较有无 PrOMet 约束的设计序列的金属结合活性。
+   - <strong>可能的失败模式</strong>: PrOMet 对设计序列的预测可能不准确（分布外）；需实验验证。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 低质量结构鲁棒的金属位点预测（PrOMet-LR）
+   - <strong>来源局限/观察</strong>: PrOMet 对 cryo-EM 和 AF3 结构鲁棒，但未测试极低质量结构（如粗粒化模型或 homology model）。
+   - <strong>核心假设</strong>: 通过数据增强（向训练结构注入噪声）可进一步提升对低质量结构的鲁棒性。
+   - <strong>初步方法</strong>: 在训练时对结构坐标添加高斯噪声（σ=0.5-2Å）模拟低质量结构；测试时在低质量 AF3 模型上评估。
+   - <strong>验证方式</strong>: 在低质量结构子集上比较 PrOMet-LR 与原始 PrOMet 的 PR-AUC。
+   - <strong>可能的失败模式</strong>: 过度噪声增强可能降低高质量结构上的性能；需平衡。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including abstract, introduction, results, discussion, methods, and supplementary figure/table references.</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, robustness of claims, and clarity of presentation. No assessment of editorial fit or journal-specific policy.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present PrOMet, a two-stage structure-based deep learning framework for predicting metal-binding sites and metal types in protein structures. The method combines a Random Forest pruning stage with an Equivariant Graph Neural Network (EGNN) optimization stage, trained on a broad dataset of protein-metal complexes from BioLiP. The authors claim state-of-the-art performance in metal localization and type classification, robustness to non-crystallographic structures (cryo-EM and AlphaFold models), and superiority over AlphaFold3 in dedicated metal-site prediction tasks.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Figures 1-5), Tables 1, supplementary figures and tables referenced (Figures S1-S23, Tables S1-S7), and detailed methods descriptions.</li>
+<li><strong>Missing materials affecting confidence</strong> Actual figure images and table data are not provided; only figure/table captions and in-text descriptions are available. Supplementary figures and tables are referenced but not included. No quantitative performance values for baseline comparisons are given in the text beyond a few specific numbers. The GitHub repository link is provided but not assessed.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a well-motivated and technically sound approach to a challenging problem in structural bioinformatics. The two-stage architecture is a sensible design choice, and the inclusion of diverse experimental structures and predicted models in evaluation is commendable. However, the evidence provided in the text is insufficient to fully validate the claimed performance advantages, particularly against AlphaFold3 and other baselines. Several key quantitative results are only described qualitatively or with single summary statistics, and the robustness analysis on cryo-EM and AlphaFold models lacks sufficient detail. The work has clear potential, but the current manuscript does not fully establish the case for its claimed superiority.</li>
+<li><strong>Who would be interested in the results, and why</strong> Structural biologists, computational biochemists, and researchers in metalloprotein engineering would find this work relevant. The method addresses a practical need for accurate metal-site annotation in increasingly common medium-resolution cryo-EM structures and AlphaFold-predicted models. The comparative analysis with AlphaFold3 is timely and of broad interest to the protein structure prediction community.</li>
+<li><strong>Major strengths</strong> 1. The two-stage prune-and-optimize architecture is a well-reasoned approach to balance computational efficiency and prediction accuracy. 2. The dataset construction, including biological-site filtering and handling of metal heterogeneity, is thoughtful and addresses known pitfalls in the field. 3. The evaluation on non-crystallographic structures (cryo-EM, AF3) is a valuable contribution, as most existing methods are benchmarked only on high-resolution X-ray structures. 4. The comparison with AlphaFold3, including runtime analysis, provides practical guidance for users.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>R1-M1</strong> (Blocking: Yes) The central claim of state-of-the-art performance is not fully supported by the quantitative evidence presented in the text. While PR-AUC values are given for the overall test set, per-metal-type breakdowns, confidence intervals, and statistical significance tests are not reported. The comparison with Metal3D and M-Ionic relies on a single summary metric, which may obscure important differences in performance across metal types or structural contexts.</li>
+<li><strong>R1-M2</strong> (Blocking: Yes) The robustness analysis on cryo-EM and AF3 structures is described qualitatively. The text states that performance "showed only a small degradation" and that Metal3D "dropped more sharply," but no numerical results are provided for these subsets. Without quantitative data, the claim of robustness cannot be adequately assessed.</li>
+<li><strong>R1-M3</strong> (Blocking: No) The comparison with AlphaFold3, while interesting, is limited to a small positive set (82 cases) and a negative set (316 cases). The text reports a top-1 site-and-type accuracy of 45% for PrOMet versus 23% for AF3, but the selection criteria for these sets, the potential for bias, and the statistical significance of the difference are not discussed. The runtime comparison, while useful, is based on a single example and may not be representative.</li>
+<li><strong>R1-M4</strong> (Blocking: No) The ablation study identifies the two-stage design and directional features as important contributors, but the analysis is incomplete. For example, the text does not report the performance of the EGNN without pruning when trained on the full (unfiltered) dataset, which would isolate the effect of the pruning stage from the training data distribution. The interaction between dataset composition and architecture choice is not fully explored.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>R1-m1</strong> The abstract states that PrOMet achieves a PR-AUC of 0.739 for localization and an average F1 of 0.743 for type classification. It would be helpful to also report the range of F1 scores across metal types, as the average may mask poor performance on rare metals.</li>
+<li><strong>R1-m2</strong> The description of the directional feature (polarity vector and angle θ) is clear, but the physical interpretation could be expanded. The text mentions "lone-pair electrons" but does not explain how the polarity vector is computed from atomic properties. A brief clarification in the methods would improve reproducibility.</li>
+<li><strong>R1-m3</strong> The negative set for the AF3 comparison consists of proteins with no annotated metals. It would be informative to also test on proteins with metals that are not among the seven modeled types, to assess whether PrOMet can correctly reject non-target metals.</li>
+<li><strong>R1-m4</strong> The manuscript mentions that the dataset includes "all ligands and nucleic acids except waters." It would be useful to specify how ligand-metal interactions are handled in the feature computation, as this could affect performance on protein-ligand interfaces.</li>
+<li><strong>R1-m5</strong> The inference time is reported for a single medium-sized protein. A more systematic analysis across protein sizes would be helpful for users planning large-scale applications.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 and R1-M2 are the primary technical concerns. The lack of quantitative results for the cryo-EM and AF3 subsets, and the absence of statistical rigor in the main benchmark, prevent a full assessment of the method's claimed advantages.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The two-stage architecture is a novel combination of existing techniques, and the focus on robustness to non-ideal structures is a meaningful contribution. However, the individual components (RF, EGNN) are well-established, and the novelty lies primarily in their integration and application.</li>
+<li>Scientific importance: The problem of metal-site prediction is of significant practical importance, and the potential to apply the method to cryo-EM and predicted structures broadens its utility. The comparative analysis with AlphaFold3 addresses a question of current interest.</li>
+<li>Interdisciplinary readership: The work is primarily of interest to computational structural biologists and bioinformaticians. The methods and results are presented in a way that is accessible to this audience, but the broader biological significance could be emphasized more.</li>
+<li>Technical soundness: The methodology is generally sound, but the evidence presented is insufficient to fully validate the claims. The lack of quantitative detail in key comparisons is a significant weakness.</li>
+<li>Readability for nonspecialists: The manuscript is well-written and the concepts are explained clearly. The abstract and introduction are accessible, but the results section assumes familiarity with machine learning and structural biology terminology.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea is promising and the methodology is well-motivated, but the current manuscript does not provide sufficient quantitative evidence to establish the claimed performance advantages. The authors should provide detailed results for the robustness analyses, add statistical measures to the main benchmark, and expand the ablation study to fully support their conclusions.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that PrOMet "outperforms existing methods" is not fully supported, as only a single summary metric (PR-AUC) is reported for the main comparison, and no statistical significance testing is described.</li>
+<li>The claim of robustness to cryo-EM and AF3 structures is unsupported by quantitative data in the text; only qualitative descriptions are provided.</li>
+<li>The claim that PrOMet is "among the first" structure-based deep learning methods to accept ligand-bound inputs is plausible but not verified against a comprehensive literature search.</li>
+<li>The statement that the two-stage design is the "dominating factor" for success is based on a single ablation experiment and may be an overstatement, as the interaction with dataset composition is not fully explored.</li>
+<li>The generalizability of the method to unseen metal types or non-standard coordination environments is not assessed.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

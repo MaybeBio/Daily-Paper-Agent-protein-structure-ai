@@ -1,0 +1,98 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, results, discussion, online methods) provided as a single block. No figures, tables, or supplemental files were available for inspection.
+- **Assessment boundary** The review is limited to the textual content supplied. Claims referring to figures, supplemental files, or external resources (e.g., interactive visualizations, GitHub repositories, Zenodo data) could not be independently verified.
+- **Shared manuscript claim summary** The authors propose that biological concepts, including protein function, structural motifs, binding-interface specificity, and single-cell transcriptional states, can be represented as linear directions (Concept Activation Vectors, CAVs) in the embedding spaces of pretrained biological foundation models. They argue that these directions are interpretable, reusable, comparable across annotation systems, and can be used for localization and hypothesis generation.
+- **Visible evidence base** The manuscript provides textual descriptions of results, including quantitative comparisons against baselines (DeepGO-SE, CLEAN-SupAN, DIAMOND), performance metrics (AUROC, AUPR, Spearman correlations), and specific case studies (e.g., Plexin-A1, PF25029, DUF2797, MYC, LRR-RK receptors). Methodological details are given in the Online Methods section.
+- **Missing materials affecting confidence** All figures and figure legends, all supplemental files (including the Pfam clustering data and zinc-binding candidate list), and the referenced external data repositories. Without these, the validity of the visual data, the completeness of the clustering analysis, and the specifics of the candidate screen cannot be assessed.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a conceptually appealing and potentially unifying framework for interrogating biological foundation models. The idea of representing diverse biological concepts as comparable linear directions in a shared embedding space is elegant and could be of significant utility to the community. The authors demonstrate the application of this framework across several distinct biological problems, from functional annotation to structural hypothesis generation. However, the strength of the claims is heavily dependent on the quality and rigor of the validation, which is difficult to fully assess from the text alone. The most significant concerns revolve around the novelty of the approach relative to existing linear probing methods, the robustness of the CAV directions to hyperparameter choices, and the depth of the validation for the more speculative claims, particularly regarding novel structural hypotheses. The single-cell analysis, while showing correlation with differential expression, needs clearer demonstration of its unique added value.
+- **Who would be interested in the results, and why** Computational biologists developing and using protein language models and single-cell foundation models would be the primary audience. Researchers interested in model interpretability, functional annotation of proteins, and the discovery of novel structural or functional relationships would also find this work relevant. The promise of a lightweight, reusable, and comparable representation for biological concepts could be attractive to those seeking to move beyond task-specific prediction heads.
+- **Major strengths**
+    1.  **Unifying Framework:** The central idea of using CAVs as a common currency for biological concepts across different modalities (protein sequence, single-cell expression) is a strong and compelling conceptual contribution.
+    2.  **Breadth of Applications:** The authors demonstrate the framework's versatility by applying it to hierarchical annotation systems (GO, EC), structural motif localization, binding-interface specificity, and single-cell state transitions. This breadth suggests the framework's potential generality.
+    3.  **Direct Comparability:** The emphasis on training CAVs against a common background to enable direct comparison and clustering of concepts is a powerful and practical feature, enabling the construction of a unified "concept map."
+    4.  **Hypothesis Generation:** The framework's ability to generate specific, testable hypotheses for poorly characterized domains (e.g., the cystine knot in CILP1) is a significant strength, moving beyond simple annotation transfer.
+- **Major Concerns**
+    - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Novelty and Significance
+    - **Claim pointer** The authors claim that their approach addresses the "mismatch between the generality of foundation-model representations and the specificity of many biological questions" by providing a framework that is distinct from "task-specific prediction models."
+    - **Evidence pointer** Introduction, Discussion
+    - **Concern** The conceptual novelty of using linear classifiers (probes) to interpret embeddings is well-established. The manuscript does not sufficiently differentiate the CAV approach from standard linear probing, other than a shift in focus from predictive performance to the direction itself. The claim of a "common representation" is predicated on the common background, but the impact of this choice on the resulting geometry and comparability is not deeply explored. The authors should more clearly articulate what fundamentally new capability or insight this framework provides over existing interpretability methods, beyond being a convenient tool.
+    - **Why it matters** If the approach is essentially a re-framing of linear probing, its significance as a novel contribution is diminished. The paper's impact hinges on demonstrating that treating the direction as a reusable entity enables new types of analyses that are not possible or practical with existing methods.
+    - **Resolution test** The authors should provide a more explicit and critical comparison with standard linear probing, perhaps by showing a task where the CAV framework provides a unique advantage that probing cannot. A discussion on how the choice of background set fundamentally changes the nature of the learned concept would also help clarify its novelty.
+    - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Technical Soundness and Robustness
+    - **Claim pointer** The authors state that "PCA dimensionality, feature scaling, and regularization strength can substantially alter the learned direction, potentially changing which proteins are retrieved and how concepts relate to one another, even when classification performance remains similar."
+    - **Evidence pointer** Discussion
+    - **Concern** This admission in the Discussion is a critical caveat that undermines the robustness and reproducibility of the core method. If the resulting "concept" is highly sensitive to standard hyperparameters, its utility as a stable, reusable representation is questionable. The manuscript does not provide a systematic analysis of this sensitivity, nor does it offer clear guidelines for choosing these parameters to ensure the biological interpretation is stable.
+    - **Why it matters** A scientific representation must be robust. If the concept directions are unstable, then the clustering, comparisons, and hypotheses derived from them are potentially artifacts of the specific hyperparameter choices. This directly impacts the reliability of all downstream analyses and the validity of the structural hypotheses.
+    - **Resolution test** The authors should include a systematic robustness analysis, showing how the key results (e.g., GO/EC clustering, Pfam map, single-cell axes) change across a range of PCA dimensions, regularization strengths, and background sets. They should demonstrate that the main conclusions are qualitatively stable or provide clear criteria for parameter selection that lead to stable and meaningful concepts.
+    - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Validation and Evidence
+    - **Claim pointer** The authors claim that the Pfam CAV map "could expose relationships and structural features not captured by existing domain annotations" and present several "candidate reinterpretations" and "hypotheses" for poorly characterized domains.
+    - **Evidence pointer** Results section "CAVs distinguish and localize structural motifs", Figure 4
+    - **Concern** While the generation of hypotheses is a strength, the evidence for these specific claims is presented as textual assertion. For example, the claim that PF25029 "adopts a cyclin-like fold" or that DUF2797 has a "GIY-YIG-like endonuclease fold" is stated without showing the supporting data (e.g., structural alignments, confidence scores, or comparisons to other methods). The statement that the DUF2797 relationship "was not recovered by Foldseek" is a single comparison and does not establish the superiority of the CAV approach.
+    - **Why it matters** The significance of the framework is partly based on its ability to make novel predictions. If these predictions are not rigorously validated or presented with clear evidence, they remain anecdotal. The reader cannot judge the reliability of the method from these examples.
+    - **Resolution test** The authors should provide the quantitative or structural evidence for these claims, perhaps in the form of figures showing structural superimpositions, alignment scores, or a more comprehensive benchmark against other structure/sequence search tools. The claims should be tempered to match the level of evidence provided.
+    - **Concern ID** R1-M4
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Significance and Added Value
+    - **Claim pointer** The authors state that in single-cell embeddings, "gene variation along these axes substantially agrees with conventional differential-expression analysis despite being a distinct computational approach."
+    - **Evidence pointer** Results section "CAVs organize single-cell gene expression", Figure 6
+    - **Concern** The analysis shows a correlation with differential expression, but it is not clear what new biological insight this provides. If the CAV axis simply recapitulates the results of standard DE analysis, its utility is primarily as a visualization tool. The claim that it can "reveal expression variation beyond conventional differential-expression testing" is only supported by a single example of genes excluded by filtering. A more compelling demonstration of its unique value is needed.
+    - **Why it matters** For the framework to be significant in the single-cell domain, it must demonstrate that it can uncover or represent biological variation that is not readily accessible through established methods. Simply correlating with existing approaches is not sufficient to establish its importance.
+    - **Resolution test** The authors should provide a more in-depth analysis showing a specific case where the CAV axis provides a unique biological insight, such as identifying a continuous transition that is missed by discrete DE analysis, or enabling a comparison between different cell states that is not possible with standard methods.
+- **Minor Comments**
+    - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity and Presentation
+    - **Affected element** Abstract, Results
+    - **Evidence pointer** Abstract, Results section "CAVs unify and organize protein functional annotations"
+    - **Issue** The abstract states that CAVs "recover" GO and EC annotations, but the results section indicates that performance is better for terms with fewer families and weaker for broader terms. The abstract could be more nuanced.
+    - **Required correction** Rephrase the abstract to accurately reflect the performance characteristics, e.g., "effectively recover annotations for terms with consistent representation" or similar.
+    - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Technical Detail
+    - **Affected element** Online Methods
+    - **Evidence pointer** Online Methods, "Training concept activation vectors"
+    - **Issue** The description of the single-cell embedding process is brief. It is unclear how the "top 4,094" genes were selected and whether this is a standard practice for Geneformer.
+    - **Required correction** Provide a brief justification for the gene selection and ranking method.
+    - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Reproducibility
+    - **Affected element** Online Methods, "Interaction Interface analysis"
+    - **Evidence pointer** Online Methods, "Interaction Interface analysis"
+    - **Issue** The description of the LRR-RK analysis is somewhat circular. It states that a CAV trained on SERB-binding interfaces "failed to sharpen this distinction," leading to the use of a contrastive CAV. The criteria for "failing" are not defined.
+    - **Required correction** Define the quantitative or qualitative criteria used to determine that the initial CAV was not sufficient.
+    - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Clarity
+    - **Affected element** Results, "CAVs can capture binding-interface specificity"
+    - **Evidence pointer** Results section "CAVs can capture binding-interface specificity"
+    - **Issue** The statement "Recovering this specificity required pooling embeddings over local amino-acid regions rather than entire proteins" is a key methodological point but is only mentioned in passing.
+    - **Required correction** Elaborate on this point, as it has significant implications for how the framework should be applied to other problems.
+- **Technical failings that need to be addressed before the case is established**
+    - R1-M2: The acknowledged sensitivity of the CAV directions to hyperparameters is a major technical concern that needs to be addressed with a systematic robustness analysis.
+    - R1-M3: The evidence for the novel structural hypotheses is not presented in the text. The authors must provide the supporting data for these claims to be credible.
+- **Assessment against Nature-style criteria**
+    - **Originality:** The idea of using CAVs as a common, reusable representation for biological concepts is a fresh perspective, although it builds directly on the established concept of linear probing. The specific applications, particularly the large-scale clustering of Pfam families and the contrastive approach for binding specificity, have original elements.
+    - **Scientific importance:** If the framework is robust and validated, it could provide a powerful and efficient tool for the community, enabling a more unified approach to interrogating foundation models. The potential for hypothesis generation for poorly characterized proteins is significant.
+    - **Interdisciplinary readership:** The work is primarily aimed at computational biologists and machine learning researchers. The conceptual framework is accessible, but the validation and methods are highly technical. The potential implications for experimental biologists are clear (e.g., hypotheses for protein function), but the paper is not written for that audience.
+    - **Technical soundness:** The core methodology is sound in principle, but the lack of a robustness analysis and the incomplete presentation of evidence for key claims are significant weaknesses. The comparison to baselines is present but needs more depth to be fully convincing.
+    - **Readability for nonspecialists:** The abstract and introduction are well-written and accessible. The results and methods sections are dense and would be challenging for a nonspecialist. The paper is well-structured, but the flow is sometimes interrupted by the need to describe multiple case studies.
+- **Recommendation posture** Supportive if technical concerns are resolved. The central concept is promising and the breadth of applications is impressive. However, the manuscript in its current form does not fully establish the robustness and validity of the method. A major revision that includes a thorough robustness analysis, a more detailed presentation of the evidence for the structural hypotheses, and a clearer demonstration of the unique value of the single-cell analysis is necessary before the claims can be fully accepted.
+
+## Risk / unsupported claims
+- The claim that the CAV map "reveal[s] novel structural relationships" is unsupported without the visual or quantitative data from Figure 4 and the supplemental files.
+- The specific structural hypotheses for PF25029, PF18419, DUF2797, and the cystine knot in CILP1 are presented as findings but are not backed by evidence in the text.
+- The claim that the framework can "manipulate" biological concepts is mentioned in the discussion but not demonstrated in the results.
+- The generalizability of the framework to "other biological data types and models" is a reasonable speculation but is not tested.
+- The performance comparison with DIAMOND and other methods is stated but the details of the comparison (e.g., statistical significance, parameter tuning) are not fully described.

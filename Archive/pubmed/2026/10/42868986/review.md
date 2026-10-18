@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors propose that Residue Cluster Classes (cRCC), previously used to classify protein folds and protein-protein interactions (PPIs), can also classify peptide-protein interactions. Machine learning models trained on cRCC features achieve near 100% classification accuracy for peptide-protein interactions with minimal overfitting (<2%), and cross-testing on independent datasets for protein-protein and protein-small-molecule interfaces maintains a 95% average success rate. The authors conclude that cRCC are intensive structural properties of protein interfaces, invariant to the molecular weight of the interacting partner, and provide a computational strategy for prioritizing druggable PPI targets and designing synthetic protein interfaces.
+- **Visible evidence base** Abstract text only; no datasets, model details, performance metrics beyond those stated, or statistical analyses are provided
+- **Missing materials affecting confidence** Full manuscript, methods section, dataset descriptions, model architectures, hyperparameters, cross-validation procedures, independent dataset details, performance metric definitions, and any figures or tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting extension of a previously described structural classification framework to peptide-protein interactions, with claims of very high classification accuracy and generalizability. However, the evidence provided in the abstract is insufficient to evaluate the validity, robustness, or novelty of the approach. Key methodological details, dataset characteristics, and statistical analyses are absent. The claim of invariance to molecular weight is particularly strong and not supported by the data presented. The work may be of interest to computational biologists and drug discovery researchers, but the current abstract does not establish the case.
+- **Who would be interested in the results, and why** Computational biologists, structural bioinformaticians, and researchers in drug discovery, particularly those focused on protein-protein interaction modulation and peptide-based therapeutics. The proposed framework could offer a new way to prioritize druggable PPI interfaces and design synthetic binders, which is of practical relevance to these communities.
+- **Major strengths** The abstract builds on a previously published framework (cRCC), which suggests continuity and potential methodological maturity. The reported near 100% classification accuracy and minimal overfitting are striking, and the cross-testing on independent datasets for different interaction types is a commendable design element. The potential practical application to PPI druggability is clearly stated.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "The top-performing algorithms achieved near 100% classification accuracy, with minimal overfitting (<2%)."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract reports near 100% classification accuracy without specifying the dataset size, class balance, number of peptide-protein interaction examples, or the definition of accuracy. Such high performance on biological classification tasks often indicates data leakage, trivial separability, or an overly simplistic benchmark. No details on cross-validation strategy, train-test splitting, or feature selection are given.
+  - **Why it matters** Without these details, the reported accuracy cannot be interpreted. If the dataset is small or imbalanced, or if the classification task is trivially separable by sequence length or composition, the results would not reflect genuine structural insight. This is the central claim of the paper, and it is currently unverifiable.
+  - **Resolution test** Provide dataset statistics, class distributions, cross-validation protocols, and a baseline comparison (e.g., using sequence-based features or random features). Show that the accuracy is significantly above chance and robust to dataset perturbations.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Generalizability and external validity
+  - **Claim pointer** "These optimized algorithms were cross-tested on independent datasets to identify both protein-protein and protein-small-molecule interfaces, maintaining a 95% average success rate."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states that models trained on peptide-protein interactions were cross-tested on protein-protein and protein-small-molecule datasets, but it does not specify the nature of these independent datasets, how they were curated, whether they are truly independent (e.g., no sequence or structural overlap with training data), or what "success rate" means (e.g., accuracy, precision, recall, or area under the ROC curve). The 95% average is presented without variance or confidence intervals.
+  - **Why it matters** Generalizability is a key claim, but without dataset descriptions and performance metric definitions, the reader cannot assess whether the cross-testing is meaningful or whether the models are simply capturing generic interface properties. Overlap between training and test sets could inflate performance.
+  - **Resolution test** Describe the independent datasets, their sources, and the criteria for independence. Report performance metrics with confidence intervals or standard deviations, and include a confusion matrix or per-class performance for each interaction type.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim support
+  - **Claim pointer** "cRCC constitute intensive structural properties of protein interfaces, remaining invariant to the molecular weight of the interacting partner."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The claim of invariance to molecular weight is a strong physical statement. The abstract provides no direct test of this invariance, such as comparing cRCC distributions across interaction types with controlled molecular weight ranges, or showing that classification performance does not correlate with partner size. The term "intensive" is used without definition in this context.
+  - **Why it matters** This claim is the conceptual foundation for the proposed practical applications. If cRCC are not truly invariant, the framework's utility for prioritizing druggable PPIs (which involve large protein partners) based on models trained on small peptides would be questionable.
+  - **Resolution test** Provide a direct analysis of cRCC feature distributions across interaction types with varying molecular weights, and show statistical equivalence or a lack of correlation between molecular weight and classification performance.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "Residue Cluster Classes (cRCC)" is used without a brief definition or reference to the prior work. Readers unfamiliar with the previous publication may not understand what cRCC represent.
+  - **Required correction** Add a one-sentence definition of cRCC and cite the prior work explicitly.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Model details
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions "machine learning models" and "top-performing algorithms" but does not name the algorithms or provide any hyperparameter information.
+  - **Required correction** Specify the algorithms used (e.g., random forest, support vector machine, neural network) and state that full details are in the methods section.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Performance metrics
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The "95% average success rate" is reported without a measure of spread or the number of datasets tested.
+  - **Required correction** Report the number of independent datasets, the range or standard deviation of success rates, and the specific metric used.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient methodological detail to assess the validity of the classification results, the generalizability claims, or the invariance claim. All three are central to the paper's conclusions.
+- **Assessment against Nature-style criteria** Originality: The extension of cRCC to peptide-protein interactions is a reasonable incremental step, but the abstract does not demonstrate conceptual novelty beyond the prior work. Scientific importance: The potential application to PPI druggability is important, but the evidence is too thin to establish significance. Interdisciplinary readership: The topic bridges structural biology, machine learning, and drug discovery, which could appeal to a broad audience, but the abstract is too technical and lacks context for nonspecialists. Technical soundness: Not assessable from the abstract; the reported metrics are implausibly high without supporting details. Readability for nonspecialists: The abstract assumes familiarity with cRCC and machine learning terminology, and the practical implications are stated but not explained.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents intriguing results, but the lack of methodological detail and the strength of the claims require full manuscript review. I would be supportive if the technical concerns are resolved with detailed methods, dataset descriptions, and statistical analyses.
+
+## Risk / unsupported claims
+- The claim of near 100% classification accuracy is unsupported without dataset and model details.
+- The claim of 95% average success rate on independent datasets is unsupported without dataset descriptions and metric definitions.
+- The claim that cRCC are invariant to molecular weight is unsupported and not directly tested in the abstract.
+- The practical claim that the framework can "prioritize druggable PPI targets" and "guide the rational design of synthetic protein interfaces" is speculative and not demonstrated by the reported results.

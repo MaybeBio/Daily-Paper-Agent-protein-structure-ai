@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors used computational methods (AlphaFold-Colab, HADDOCK, molecular dynamics simulations, MM/PBSA, and steered MD) to study the interaction between serratiopeptidase (wild-type and mutant) and five small bradykinin-potentiating peptides (BPPs) from snake venom. They report that BPP-4 is a favorable binder, with the mutant serratiopeptidase complex showing greater stability and higher mechanical rupture force than the wild-type complex. They conclude that these findings provide molecular-level insight into BPP-serratiopeptidase recognition and a basis for future experimental studies.
+- **Visible evidence base** Abstract text only; specific numerical results are limited to a HADDOCK score of -109.1 +/- 5.2 for BPP-4, simulation duration of 100 ns, and qualitative statements about RMSD, RMSF, PCA, MM/PBSA, cluster analysis, and steered MD rupture force
+- **Missing materials affecting confidence** Full manuscript, methods details, all figures and tables, supplementary data, sequence information for BPPs and serratiopeptidase variants, force field parameters, simulation convergence criteria, and statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible computational pipeline for studying protein-peptide interactions, and the focus on enzymatic degradation of BPPs is a relevant pharmacological question. However, the evidence provided is insufficient to evaluate the technical rigor of the methods or the validity of the conclusions. Several claims are made without quantitative support, and the abstract does not provide enough detail to assess whether the computational findings are robust or biologically meaningful. The work may be of interest to researchers in toxinology and peptide pharmacology, but the current evidence base does not establish the case.
+- **Who would be interested in the results, and why** Researchers studying snake venom components, particularly bradykinin-potentiating peptides and their cardiovascular effects, would be interested. Additionally, investigators working on serratiopeptidase as a therapeutic enzyme, and those applying computational docking and simulation methods to peptide-enzyme interactions, may find the methodological approach relevant. The potential immunopharmacological implications mentioned in the title could attract immunologists, though this aspect is not addressed in the abstract.
+- **Major strengths** The study addresses a gap in understanding BPP susceptibility to enzymatic degradation, which is a relevant and understudied question. The use of multiple complementary computational methods (docking, MD, MM/PBSA, steered MD) is a reasonable approach for a purely in silico study. The authors appropriately filtered BPPs based on prediction quality (pLDDT > 80), which shows attention to structural reliability.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that MD simulations revealed greater stability in the mutant complex supported by persistent hydrogen bonds, reduced RMSD/RMSF fluctuations, restricted conformational sampling in PCA, favorable MM/PBSA energy contributions, and a more stable conformational ensemble in cluster analysis.
+  - **Evidence pointer** Abstract, Results section; location not provided
+  - **Concern** The abstract provides no quantitative data to support these stability claims. No RMSD or RMSF values, no hydrogen bond occupancy percentages, no PCA variance explained, no MM/PBSA energy values with errors, and no cluster population statistics are reported. Without these numbers, the reader cannot assess whether the differences between wild-type and mutant complexes are meaningful or within simulation noise.
+  - **Why it matters** The central conclusion of the paper, that the mutant serratiopeptidase binds BPP-4 more stably, rests entirely on these simulation metrics. If the differences are small or not statistically robust, the conclusion is unsupported. The absence of quantitative evidence prevents any independent verification of the claim.
+  - **Resolution test** Provide a table or figure with mean and standard deviation (or standard error) for RMSD, RMSF, hydrogen bond occupancy, MM/PBSA binding energies, and cluster populations for both wild-type and mutant complexes, with appropriate statistical tests (e.g., block averaging or bootstrap) to demonstrate significant differences.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors state that steered MD simulation showed a higher rupture force in the mutant BPP-4-serratiopeptidase complex compared to the wild-type.
+  - **Evidence pointer** Abstract, Results section; location not provided
+  - **Concern** No rupture force values, pulling velocity, spring constant, or number of replicates are reported. Steered MD results are highly dependent on simulation parameters, and a single trajectory or unreplicated simulation cannot support a claim of higher mechanical stability. The abstract does not indicate whether multiple independent simulations were performed or whether the difference is statistically significant.
+  - **Why it matters** The mechanical stability claim is a key differentiator between the wild-type and mutant complexes. Without parameter details and replicate statistics, the result could be an artifact of the specific simulation setup.
+  - **Resolution test** Report the pulling protocol (velocity, spring constant, direction), the rupture force values for at least three independent replicates per complex, and a statistical comparison (e.g., t-test or Mann-Whitney U test) showing a significant difference.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** The authors conclude that the results offer insight into BPP-serratiopeptidase recognition at the molecular level and set the basis for future experiments on peptide binding.
+  - **Evidence pointer** Abstract, Conclusions section; location not provided
+  - **Concern** The abstract does not explain why the mutant serratiopeptidase is relevant. No information is given about the nature of the mutation, its biological or clinical context, or why a comparison between wild-type and mutant is pharmacologically meaningful. The title mentions immunopharmacological implications, but the abstract does not address any immunological or pharmacological consequence of the binding.
+  - **Why it matters** Without a clear rationale for the mutant comparison and a link to functional outcomes, the study's significance is unclear. The conclusion about future experiments is speculative unless the authors articulate a specific hypothesis that the computational findings generate.
+  - **Resolution test** Clarify the biological context of the mutant (e.g., a clinically observed variant or an engineered enzyme with altered activity) and state a specific, testable prediction (e.g., that the mutant will degrade BPP-4 more slowly in vitro) that follows from the computational results.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract, Methods section
+  - **Evidence pointer** Abstract, Methods section; location not provided
+  - **Issue** The abstract uses technical terms (pLDDT, HADDOCK score, MM/PBSA, PCA, steered MD) without brief explanations. A reader unfamiliar with computational structural biology may struggle to understand the methods.
+  - **Required correction** Add one-sentence explanations for each key method or provide a schematic figure in the full manuscript that illustrates the workflow.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Abstract, Methods section
+  - **Evidence pointer** Abstract, Methods section; location not provided
+  - **Issue** The abstract states that five BPPs were modeled and those with pLDDT > 80 were used for docking, but it does not state how many BPPs passed this filter or whether BPP-4 was the only one tested in MD simulations.
+  - **Required correction** Specify the number of BPPs that met the quality threshold and clarify whether MD simulations were performed for all qualifying BPPs or only for BPP-4.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Abstract, Purpose section
+  - **Evidence pointer** Abstract, Purpose section; location not provided
+  - **Issue** The purpose statement mentions that BPP susceptibility to enzymatic degradation is poorly understood, but the abstract does not explain why serratiopeptidase was chosen as the enzyme of interest or how this relates to snake venom pharmacology.
+  - **Required correction** Add a sentence in the Purpose or Introduction section of the full manuscript explaining the clinical or biological relevance of serratiopeptidase in the context of BPP exposure.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (lack of quantitative support for stability claims), R1-M2 (unreplicated steered MD without parameter details), R1-M3 (missing biological rationale for mutant comparison and pharmacological relevance)
+- **Assessment against Nature-style criteria** Originality: The question of BPP degradation by serratiopeptidase is relatively novel, but the abstract does not demonstrate how this advances beyond existing computational studies of peptide-enzyme interactions. Scientific importance: The potential pharmacological implications are not articulated, so the broader significance is unclear. Interdisciplinary readership: The work could appeal to toxinology, enzymology, and computational biology communities, but the abstract is too technical for a general audience. Technical soundness: The methods are appropriate in principle, but the lack of quantitative results and simulation details prevents assessment of rigor. Readability for nonspecialists: The abstract is dense with jargon and lacks context, making it difficult for non-experts to follow.
+- **Recommendation posture** Currently not established from the provided evidence. The computational pipeline is reasonable, but the abstract lacks the quantitative detail and biological context needed to support the conclusions. The authors should provide full simulation data, statistical analyses, and a clearer rationale for the mutant comparison before the case can be considered.
+
+## Risk / unsupported claims
+- The claim that the mutant complex shows greater stability is unsupported due to missing quantitative metrics (RMSD, RMSF, hydrogen bond occupancy, MM/PBSA energies, cluster populations).
+- The claim of higher rupture force in the mutant complex is unsupported due to missing steered MD parameters and replicate statistics.
+- The conclusion that the results set a basis for future experiments is speculative without a specific testable hypothesis.
+- The title's reference to immunopharmacological implications is not addressed anywhere in the abstract and is therefore unassessable.
+- The relevance of the mutant serratiopeptidase is unexplained, making the wild-type versus mutant comparison scientifically unmotivated from the provided material.

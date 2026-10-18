@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2610.18481v1",
+  "title": "ProTok: Unified Protein Tokenization via Modular Multi-Codebook Quantization",
+  "authors": "Romain Hardy; Xiaoman Zhang; Pranav Rajpurkar",
+  "journal": "",
+  "published_date": "2026-10-13",
+  "window": {
+    "start": "2026-10-11",
+    "end": "2026-10-17"
+  },
+  "score": 9,
+  "one_liner_zh": "ProTok提出一种统一的多模态蛋白质分词器，通过多码本量化将序列、结构和功能映射到共享离散词汇表，在结构重建、功能检索和序列-结构联合生成上均优于基线，直接服务于蛋白质结构计算与生成建模。",
+  "abstract": "Protein sequence, structure, and functional annotations each capture complementary aspects of protein biology, yet existing tokenizers encode each modality independently, limiting the expressiveness of discrete protein representations. We present ProTok, a unified protein tokenizer that maps all three modalities into a modular discrete vocabulary via product quantization with per-modality codebook groups and modality dropout. A single ProTok checkpoint supports flexible inference from any modality subset without retraining. On seven StructTokenBench benchmarks spanning 14 tasks and 28 test splits, ProTok achieves an average rank of 1.4 across all structure-only tokenizers, placing first on 21 splits and among the top two on 27 of the 28. These gains come without sacrificing reconstruction: ProTok's tokens reach 0.939 lDDT on CATH 4.2, showing that multi-codebook quantization and multi-modal training yield tokens that are both reconstructable and informative. ProTok's structure tokens further lead all baseline structure tokenizers on zero-shot functional retrieval across CATH, Enzyme Commission, and Gene Ontology label hierarchies. The vocabulary also supports generation: a compact language model trained from scratch over ProTok tokens jointly generates backbone and sequence, with 52% of sampled backbones designable versus 21% for a parameter-matched GeoBPE baseline. ProTok shows that structure, sequence, and function can share one discrete vocabulary, motivating protein language models that reason over a unified token stream.",
+  "abstract_zh": "蛋白质序列、结构及功能注释各自捕捉了蛋白质生物学的互补方面，然而现有分词器独立编码每种模态，限制了离散蛋白质表示的表达能力。我们提出ProTok，一种统一的蛋白质分词器，通过乘积量化（product quantization）结合每模态码本组和模态丢弃（modality dropout），将全部三种模态映射到模块化离散词汇表中。单个ProTok检查点支持从任意模态子集进行灵活推理，无需重新训练。在涵盖14项任务和28个测试分割的七个StructTokenBench基准上，ProTok在所有仅结构分词器中达到平均排名1.4，在21个分割中位列第一，并在28个中的27个分割中跻身前两名。这些提升并未以牺牲重建为代价：ProTok的令牌在CATH 4.2上达到0.939 lDDT，表明多码本量化和多模态训练产生的令牌既可重建又具信息性。ProTok的结构令牌在CATH、酶委员会（Enzyme Commission）和基因本体（Gene Ontology）标签层级上的零样本功能检索中，进一步领先所有基线结构分词器。该词汇表还支持生成：一个从零开始在ProTok令牌上训练的紧凑语言模型联合生成骨架和序列，其中52%的采样骨架可设计，而参数匹配的GeoBPE基线仅为21%。ProTok表明结构、序列和功能可以共享一个离散词汇表，激励了在统一令牌流上进行推理的蛋白质语言模型。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2610.18481v1",
+  "source_url": "https://arxiv.org/abs/2610.18481v1",
+  "paper_page_path": "papers/arxiv/2610.18481v1/index.html"
+}

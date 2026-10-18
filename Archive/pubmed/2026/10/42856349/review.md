@@ -1,0 +1,81 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, results and discussion, conclusion, supplementary material description, data availability, acknowledgements)
+- **Assessment boundary** Scientific content, technical soundness, claims versus evidence, and alignment with Nature-style criteria. No assessment of formatting, grammar, or editorial policy.
+- **Shared manuscript claim summary** The authors report a synergistic strategy combining de novo enzyme design (using the AP Novo generative model) with directed evolution to create haemproteins that catalyse new-to-nature regio- and enantioselective intramolecular C–H amination of alkyl azides to form chiral piperidines. They claim this transformation is unprecedented in both small-molecule catalysis and biocatalysis, that de novo design provides evolvable starting points with high regioselectivity, that directed evolution rapidly improves activity, and that information from evolution can be fed back into design to improve hit rates and starting-point activities.
+- **Visible evidence base** Main text figures (Fig. 2, 3, 4, 5) are referenced but not shown. Supplementary Information is referenced extensively (Figs. S2–S4, S8, S10, S11, S14, S28; Table S15; Scheme S3) but not provided. Data availability statement indicates data in main text and SI.
+- **Missing materials affecting confidence** All figures, tables, and supplementary information are absent. This includes raw activity data, sequence information, experimental protocols, computational details, and structural predictions. The manuscript cannot be fully evaluated without these materials.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a compelling and ambitious integration of de novo enzyme design and directed evolution to achieve a challenging abiological transformation. The conceptual framework of reciprocal design-evolution synergy is timely and potentially impactful. However, the provided text alone is insufficient to verify the central claims. Key quantitative data, experimental details, and computational analyses are all relegated to missing figures and supplementary information. The scientific narrative is coherent and the logic is clear, but the evidence base is not assessable from the supplied material.
+- **Who would be interested in the results, and why** Researchers in enzyme engineering, directed evolution, computational protein design, biocatalysis, and synthetic chemistry. The work demonstrates a potential paradigm for combining generative AI with experimental evolution, which is of broad interest to the protein science and catalysis communities. The specific transformation (chiral piperidine synthesis) is relevant to pharmaceutical synthesis.
+- **Major strengths** The conceptual advance of closing the loop between design and evolution is significant. The choice of a challenging, high-energy-barrier reaction with competing pathways is appropriate to showcase the approach. The reported stability and substrate tolerance of the designed enzyme are notable. The computational analysis (DFT and MD) provides a mechanistic rationale for regioselectivity, which strengthens the narrative.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence completeness
+  - **Claim pointer** The manuscript claims specific catalytic performances, including yields, turnover numbers, regioselectivity ratios, and enantioselectivity values for multiple enzyme variants and substrates.
+  - **Evidence pointer** Figures 2, 3, 4, 5; Supplementary Figures S2–S4, S8, S10, S11, S14, S28; Supplementary Table S15; location not provided
+  - **Concern** All quantitative results are presented as values in the text without the corresponding figures, tables, or experimental methods. The reader cannot verify the reported yields, selectivities, or the statistical significance of the improvements claimed.
+  - **Why it matters** The core claims of the paper rest on these numbers. Without access to the raw data, chromatograms, calibration curves, or experimental protocols, the results are unverifiable and the technical soundness cannot be assessed.
+  - **Resolution test** Provide the full figures and supplementary information, including raw data and detailed methods, so that the reported values can be checked against the evidence.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The manuscript claims that the de novo-designed enzymes adopt "architecturally distinct folds" with TM-scores <0.5 to any PDB structure, and that these scaffolds are "readily evolvable."
+  - **Evidence pointer** Figure 3b, 3e, 3f; Supplementary Figures S2, S3, S10, S11; location not provided
+  - **Concern** The structural claims are based on computational predictions (AP Novo and AF3-LA) that are not described in the text. The evolvability claim is based on directed evolution results that are not shown. The structural novelty and evolvability are central to the paper's thesis but cannot be evaluated.
+  - **Why it matters** If the structural predictions are inaccurate or the directed evolution results are not robust, the central claims of scaffold novelty and evolvability would be undermined.
+  - **Resolution test** Provide structural models, alignment details, and the full directed evolution data (library sizes, mutation frequencies, activity distributions) in the supplementary information.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim substantiation
+  - **Claim pointer** The manuscript claims that "to our knowledge, this reactivity has not previously been achieved in either transition-metal catalysis or biocatalysis."
+  - **Evidence pointer** Introduction and Conclusion; location not provided
+  - **Concern** This is a strong novelty claim. The text cites references 38–60 for prior work but does not provide a systematic comparison or a clear statement of why the cited prior art does not achieve the same transformation.
+  - **Why it matters** If this claim is overstated, the significance of the work is diminished. The novelty of the transformation is a key selling point.
+  - **Resolution test** Provide a more detailed comparison with prior art, including specific examples of what has and has not been achieved, and justify the novelty claim with explicit evidence.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness
+  - **Claim pointer** The manuscript claims that the "refined motifs" extracted from evolved variants improve hit rates and starting-point activities in subsequent design rounds.
+  - **Evidence pointer** Figure 3l, 3m; Supplementary Table S15; location not provided
+  - **Concern** The feedback loop from evolution to design is a key conceptual advance, but the data supporting it are not shown. The comparison between control motifs and refined motifs is described but not quantified in the text.
+  - **Why it matters** This is the most novel aspect of the paper. If the improvement is marginal or not statistically robust, the claim of synergy is weakened.
+  - **Resolution test** Provide the full data for the third design round, including hit rates, activity distributions, and statistical analysis comparing control and refined motifs.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Figure 2 reaction scheme
+  - **Evidence pointer** Figure 2; location not provided
+  - **Issue** The reaction scheme is described in the text but the figure is not shown. The numbering of compounds and the exact reaction conditions are unclear.
+  - **Required correction** Ensure the figure is included and that all compounds and conditions are clearly labelled.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Experimental methods
+  - **Evidence pointer** Supplementary Information; location not provided
+  - **Issue** The text refers to "high-throughput plate-based activity screening" and "normalized whole-cell conditions" without describing the assay or the normalization procedure.
+  - **Required correction** Provide detailed methods for the activity assay and normalization in the supplementary information.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** MD simulation analysis
+  - **Evidence pointer** Figure 5c; location not provided
+  - **Issue** The definition of "close contacts" is given, but the significance of the percentages (31.5% vs 3.3%) is not discussed in terms of statistical uncertainty or simulation convergence.
+  - **Required correction** Add error bars or replicate information for the MD-derived percentages and discuss the convergence of the simulations.
+- **Technical failings that need to be addressed before the case is established** The absence of all figures and supplementary data is a critical failing. The manuscript cannot be evaluated without them. Additionally, the novelty claim regarding the transformation needs more rigorous substantiation.
+- **Assessment against Nature-style criteria** Originality: High. The reciprocal design-evolution loop is a novel concept. Scientific importance: Potentially high, if the claims are substantiated. The work could influence both protein design and directed evolution fields. Interdisciplinary readership: Broad, spanning chemistry, biology, and computational science. Technical soundness: Not assessable from the provided text. The computational and experimental details are missing. Readability for nonspecialists: The text is well-written and the logic is clear, but the heavy reliance on missing figures and supplementary data makes it difficult to follow for a nonspecialist.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising and the narrative is compelling, but the absence of all supporting data prevents any assessment of technical soundness or claim substantiation. The manuscript could become a strong candidate for publication if the full evidence base is provided and the claims are verified.
+
+## Risk / unsupported claims
+- The claim that the transformation is unprecedented in both transition-metal catalysis and biocatalysis is not substantiated with a detailed comparison to prior art.
+- All quantitative claims (yields, TTN, regioselectivity, enantioselectivity) are unsupported without the corresponding figures and supplementary data.
+- The claim of structural novelty (TM-score <0.5) is unsupported without structural models and alignment details.
+- The claim of "readily evolvable" scaffolds is unsupported without the directed evolution data.
+- The claim of improved hit rates and starting-point activities from refined motifs is unsupported without the third design round data.
+- The computational analyses (DFT, MD, AF3-LA) are described but not verifiable without the methods and results in the supplementary information.

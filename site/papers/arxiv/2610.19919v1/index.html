@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beyond DFT electronic band structures via dual-space orbital learning · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-low">2</span>
+    <div>
+      <h1>Beyond DFT electronic band structures via dual-space orbital learning</h1>
+      <div class="meta">Minhyuk Kang; Beom Seok Kang; Nikolai Argatoff; Miguel Nouman; Danish Khan; William A. Goddard; Anima Anandkumar</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-14
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.19919v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出O-kRystal框架，通过双空间轨道学习预测材料电子能带结构，核心对象为材料电子结构而非蛋白质结构，且方法不涉及蛋白质结构计算建模，与课题关系微弱。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Accurate electronic band structures are essential for predicting material properties, but high-fidelity calculations are computationally demanding. We introduce O-kRystal, a dual-space orbital-learning framework that uses a lower-cost Perdew-Burke-Ernzerhof (PBE) calculation as both an energy baseline and a source of structured orbital information. Combining PBE band energies with real- and reciprocal-space orbital matrices, O-kRystal predicts higher-level corrections for individual electronic states as a function of crystal momentum and spin. For states within 5 eV of the band-edge midpoint, it predicts Heyd-Scuseria-Ernzerhof (HSE06) band energies with a mean absolute error of $0.171 \pm 0.009$ eV across nearly 6,000 three-dimensional materials spanning insulating, metallic, magnetic, and nonmagnetic systems. On a separate benchmark of six strongly correlated materials, it reduces the corresponding PBE band-energy MAE by 68.7% and resolves orbital-dependent changes in the relative placement of transition-metal d and ligand p states. Despite training only at high-symmetry points, it maintains comparable accuracy at unseen points along band paths and reconstructs HSE06 densities of states from dense Brillouin-zone predictions. Finally, training O-kRystal on $G_0W_0$ quasiparticle energies for two-dimensional materials demonstrates its applicability across levels of theory and the potential of orbital learning for higher-fidelity, momentum-resolved electronic-structure prediction beyond density functional theory.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">精确的电子能带结构对于预测材料性质至关重要，但高保真度的计算在计算上代价高昂。我们引入了O-kRystal，一个双空间轨道学习框架，它利用较低成本的Perdew-Burke-Ernzerhof（PBE）计算作为能量基线和结构化轨道信息的来源。通过将PBE带能量与实空间和倒空间轨道矩阵相结合，O-kRystal预测单个电子态作为晶体动量和自旋函数的高层级修正。对于带边中点5 eV范围内的态，它预测Heyd-Scuseria-Ernzerhof（HSE06）带能量，在近6,000种涵盖绝缘体、金属、磁性和非磁性系统的三维材料中，平均绝对误差为$0.171 \pm 0.009$ eV。在另一个包含六种强关联材料的基准测试中，它将相应的PBE带能量MAE降低了68.7%，并解析了过渡金属d态和配体p态相对位置中依赖轨道的改变。尽管仅在高度对称点进行训练，它在带路径上未见点处仍保持相当的精度，并从密集布里渊区预测中重建HSE06态密度。最后，在二维材料的$G_0W_0$准粒子能量上训练O-kRystal，展示了其跨理论层级的适用性，以及轨道学习在超越密度泛函理论的高保真度、动量分辨电子结构预测中的潜力。</div>
+  </section>
+  
+  
+  
+</article>
+</main>
+</body>
+</html>

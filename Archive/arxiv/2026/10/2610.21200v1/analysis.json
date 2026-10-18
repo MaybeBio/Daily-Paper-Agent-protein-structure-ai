@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2610.21200v1",
+  "title": "Poisoning the corpora of protein design systems during pre-training and retrieval",
+  "authors": "Charalampos Koilakos; Kimon-Antonios Provatas; Michail Patsakis; Candace SY Chan; Georgios A. Pavlopoulos; Ilias Georgakopoulos-Soares",
+  "journal": "",
+  "published_date": "2026-10-15",
+  "window": {
+    "start": "2026-10-11",
+    "end": "2026-10-17"
+  },
+  "score": 7,
+  "one_liner_zh": "该文研究针对蛋白质设计系统的数据投毒攻击，涉及蛋白质语言模型预训练和检索语料库，虽非直接结构建模，但聚焦蛋白质序列生成系统安全性，与蛋白质结构计算课题相关且方法可借鉴。",
+  "abstract": "Protein foundation models increasingly support the generation of novel biological sequences, yet their reliance on large public datasets creates opportunities for adversarial manipulation of the material they learn from and retrieve. We investigate two data-only poisoning attacks against protein design systems, targeting the pre-training corpus of autoregressive protein language models and the retrieval corpus of a text-guided protein generator. For the first, we pre-trained ProtGPT2 and ProGen2 variants of 300 million parameters, introducing poisoned protein sequences containing one of two triggers followed by one of three payloads. Across all poisoned runs, both architectures acquired highly reliable trigger-dependent generation under uniform and ramped poisoning schedules. Under ramped exposure, the earliest majority activation occurred after only 200 contaminated examples, while for the uniform schedule earliest activation occurred around 5000 poisoned samples. For the second attack, we inserted records into a retrieval corpus system without modifying its weights or decoding procedure. A single query-aware record captured a top-16 retrieval position for 58\\% of templated requests and 97\\% of free-text requests. Conditional on successful poisoned retrieval, 62\\% of requests produced altered sequences, while 19-21% acquired the inserted domain by profile-HMM homology. A universal query-unaware attack using 1,500 records also achieved substantial retrieval capture and domain transfer. Together, these findings demonstrate that adversarial protein sequence contributions can establish persistent, sequence-specific behaviour during pre-training or redirect protein generation at inference, while leaving ordinary model behaviour largely preserved. Our work establishes the integrity and biological provenance of protein sequence data as critical safeguards for generative protein design systems.",
+  "abstract_zh": "蛋白质基础模型日益支持新型生物序列的生成，然而，它们对大型公共数据集的依赖为对抗性操纵其学习与检索的材料创造了机会。我们针对蛋白质设计系统研究了两种仅基于数据的投毒攻击，分别针对自回归蛋白质语言模型的预训练语料库和文本引导蛋白质生成器的检索语料库。对于第一种攻击，我们预训练了包含3亿参数的ProtGPT2和ProGen2变体，引入了含有两种触发条件之一及三种载荷之一的投毒蛋白质序列。在所有投毒运行中，两种架构在均匀和渐进投毒计划下均获得了高度可靠的触发依赖生成能力。在渐进暴露下，最早的主要激活发生在仅200个污染样本之后，而在均匀计划下，最早激活出现在约5000个投毒样本时。对于第二种攻击，我们在不修改其权重或解码过程的情况下，向检索语料库系统中插入记录。单个查询感知记录在58%的模板化请求和97%的自由文本请求中占据了前16位的检索位置。在成功投毒检索的条件下，62%的请求产生了改变的序列，而19-21%的请求通过profile-HMM同源性获得了插入的域。一种使用1500条记录的通用查询无关攻击也实现了显著的检索捕获和域转移。综合这些发现表明，对抗性蛋白质序列贡献可以在预训练期间建立持久、序列特定的行为，或在推理时重定向蛋白质生成，同时基本保持普通模型行为不变。我们的工作确立了蛋白质序列数据的完整性和生物学来源作为生成性蛋白质设计系统的关键保障。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2610.21200v1",
+  "source_url": "https://arxiv.org/abs/2610.21200v1",
+  "paper_page_path": "papers/arxiv/2610.21200v1/index.html"
+}

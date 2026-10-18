@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Functional alignment of protein language models via reinforcement learning. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Functional alignment of protein language models via reinforcement learning.</h1>
+      <div class="meta">Blalock, Nathaniel; Seshadri, Srinath; Nakamura, Kensuke; Babbar, Agrim; Fahlberg, Sarah A; Kulkarni, Ameya; Romero, Philip A</div>
+      <div class="meta muted">
+        
+        <span class="journal">Nature communications</span>
+        · 2026-10-14
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42869909/">原文</a>
+      </div>
+      <p class="one-liner">该文提出RLXF框架，通过强化学习将蛋白语言模型与实验功能反馈对齐，用于生成高功能蛋白序列，属于蛋白质序列设计且结合AI方法，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein language models (pLMs) enable generative design of novel protein sequences but remain fundamentally misaligned with protein engineering goals, as they lack explicit understanding of function and often fail to improve properties beyond those found in nature. We introduce Reinforcement Learning from eXperimental Feedback (RLXF), a general framework that aligns protein language models with experimentally measured functional objectives, drawing inspiration from the methods used to align large language models like ChatGPT. Applied across five diverse protein families, RLXF improves generation of high-functioning variants beyond pre-trained baselines. We demonstrate this with CreiLOV, an oxygen-independent fluorescent protein, where RLXF-aligned models generate sequences with significantly enhanced fluorescence, including the most fluorescent CreiLOV variants reported to date. Our results indicate that RLXF-aligned models effectively integrate the evolutionary knowledge encoded in pre-trained pLMs with experimental observations, improving the success rate of generated sequences and enabling the discovery of synergistic mutation combinations that are difficult to identify through zero-shot or evolutionary approaches. RLXF provides a scalable and accessible approach to steer generative models toward desired biochemical properties, enabling function-driven protein design beyond the limits of natural evolution.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质语言模型（p LMs）能够实现新型蛋白质序列的生成式设计，但其与蛋白质工程目标根本性错位，因为它们缺乏对功能的明确理解，且往往无法改善自然界中已存在的特性。我们引入了基于实验反馈的强化学习（RLXF），这是一个通用框架，旨在将蛋白质语言模型与实验测量的功能目标对齐，借鉴了用于对齐大型语言模型（如ChatGPT）的方法。在五个不同的蛋白质家族中应用后，RLXF超越了预训练基线，提高了高功能变体的生成能力。我们通过Cre iLOV（一种不依赖氧的荧光蛋白）证明了这一点，其中RLXF对齐的模型生成的序列具有显著增强的荧光特性，包括迄今为止报道的最强荧光的Cre iLOV变体。我们的结果表明，RLXF对齐的模型有效整合了预训练p LMs中编码的进化知识与实验观察，提高了生成序列的成功率，并能够发现通过零样本或进化方法难以识别的协同突变组合。RLXF提供了一种可扩展且易于访问的方法，将生成模型导向所需的生化特性，实现超越自然进化限制的功能驱动型蛋白质设计。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Functional alignment of protein language models via reinforcement learning</li>
+<li><strong>作者与单位</strong>: Blalock, Nathaniel; Seshadri, Srinath; Nakamura, Kensuke; Babbar, Agrim; Fahlberg, Sarah A; Kulkarni, Abhishek; Romero, Philip A（单位未提供，推测为 University of Wisconsin-Madison 相关机构）</li>
+<li><strong>期刊/预印本平台</strong>: Nature Communications</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-10-14）</li>
+<li><strong>论文类型</strong>: 研究论文（Research Article）</li>
+<li><strong>领域</strong>: 蛋白质语言模型（pLM）、强化学习（RL）、蛋白质设计、功能对齐</li>
+<li><strong>关键词</strong>: 蛋白质语言模型、强化学习、功能对齐、荧光蛋白、实验反馈、ESM-2、CreiLOV</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1038/s41467-026-77557-2</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供（CreiLOV DMS 数据来自文献 34）</li>
+<li><strong>阅读日期</strong>: 2026-05-14（当前日期）</li>
+<li><strong>该文在课题方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>序列生成与功能优化</strong>方向，核心创新在于将 RLHF 思想引入蛋白质语言模型，通过实验数据训练的奖励模型引导 pLM 生成高功能变异体，属于<strong>生成式蛋白质设计</strong>与<strong>实验反馈闭环</strong>的交叉领域。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 RLXF（Reinforcement Learning from eXperimental Feedback）框架，通过两阶段训练（SFT + PPO）将预训练蛋白质语言模型 ESM-2 与实验测得的序列-功能数据对齐，使模型生成的序列在预测和实测功能上均显著优于预训练基线，并在 CreiLOV 荧光蛋白上发现了超越已知最亮变体的新序列。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 预训练蛋白质语言模型（pLM）虽然能生成序列多样、结构合理的蛋白质，但缺乏对特定功能（如荧光强度）的显式理解，生成的序列往往停留在自然进化已探索的范围内，无法产生功能增强的非自然变异体。</li>
+<li><strong>为什么重要</strong>: 蛋白质工程的核心目标是创造具有增强或非自然功能的蛋白质，而现有 pLM 仅编码进化信息，无法直接优化特定功能指标。</li>
+<li><strong>现有方法为何不足</strong>: </li>
+<li>零样本（zero-shot）预测虽能识别部分有害突变，但无法主动生成功能增强的序列；</li>
+<li>监督微调（SFT）容易过拟合训练数据分布，缺乏探索能力；</li>
+<li>直接进化（directed evolution）依赖大量实验迭代，成本高、效率低。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>: Can reinforcement learning from experimental feedback align protein language models with functional objectives, enabling generation of variants with enhanced properties beyond natural evolution?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」的领域发展框架，结合本文引用与领域常识）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列统计模型</td>
+<td>PSSM、HMM</td>
+<td>简单、可解释</td>
+<td>无法捕捉高阶互作</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>深度生成模型</td>
+<td>VAE（如文献 30 的 luciferase 设计）</td>
+<td>可生成多样性序列</td>
+<td>缺乏功能导向</td>
+<td>对比基线</td>
+</tr>
+<tr>
+<td>蛋白质语言模型</td>
+<td>UniRep、ESM 系列、ProtGPT2</td>
+<td>捕捉进化约束、结构信息</td>
+<td>无显式功能理解</td>
+<td>基础模型</td>
+</tr>
+<tr>
+<td>监督微调</td>
+<td>在实验数据上微调 pLM</td>
+<td>可学习功能映射</td>
+<td>过拟合、探索不足</td>
+<td>SFT 阶段</td>
+</tr>
+<tr>
+<td>偏好优化</td>
+<td>DPO（ProteinDPO、DPO_pLM）</td>
+<td>无需强化学习</td>
+<td>探索受限、依赖固定偏好对</td>
+<td>对比方法</td>
+</tr>
+<tr>
+<td><strong>强化学习对齐</strong></td>
+<td><strong>RLXF（本文）</strong></td>
+<td><strong>主动探索、动态优化</strong></td>
+<td><strong>需要奖励模型、计算成本高</strong></td>
+<td><strong>本文贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pLM 缺乏功能理解</td>
+<td>生成的序列在功能上不优于自然序列</td>
+<td>预训练目标仅为序列建模，无功能监督信号</td>
+<td>Introduction 第 2 段</td>
+</tr>
+<tr>
+<td>零样本预测无法生成增强序列</td>
+<td>预训练模型偏好保守突变</td>
+<td>进化约束偏向稳定性而非功能增强</td>
+<td>Results 图 2a</td>
+</tr>
+<tr>
+<td>监督微调过拟合</td>
+<td>SFT 模型多样性下降</td>
+<td>训练数据分布狭窄</td>
+<td>Results 图 2b、图 3a</td>
+</tr>
+<tr>
+<td>实验数据有限</td>
+<td>难以训练高精度奖励模型</td>
+<td>湿实验成本高、通量低</td>
+<td>Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>探索与利用平衡困难</td>
+<td>PPO 可能过度偏离预训练分布</td>
+<td>KL 惩罚权重需要精细调节</td>
+<td>Methods PPO 节</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 采用两阶段训练——先通过模拟退火生成高奖励序列进行 SFT，再用 PPO 直接优化奖励模型得分，同时加入 KL 散度惩罚和序列多样性奖励。</li>
+<li><strong>核心洞察</strong>: 预训练 pLM 已编码丰富的进化信息，通过实验反馈的强化学习可以「重新定向」其生成分布，使其在保持序列合理性的同时偏向高功能区域。关键在于两阶段设计：SFT 提供稳定的初始化，PPO 负责精细探索。</li>
+<li><strong>可能的普适教训</strong> [Analysis]: 将 LLM 对齐技术（RLHF）迁移到蛋白质设计领域时，奖励模型的质量和预训练先验的保持同样重要。KL 惩罚防止灾难性遗忘，多样性奖励避免模式坍缩，这种「约束下的探索」策略可推广到其他生物分子设计任务。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 预训练 ESM-2（8M/35M/150M/650M 参数）、CreiLOV DMS 实验数据（序列-荧光对）</li>
+<li><strong>输出</strong>: 功能对齐的 ESM-2 模型，可生成高荧光预测值的序列变异体</li>
+<li><strong>模块</strong>:
+  1. <strong>奖励模型</strong>: 集成 100 个 MLP，输入 one-hot 编码序列，输出预测 log 荧光值；取 5th percentile 作为保守估计
+  2. <strong>SFT 数据生成</strong>: 模拟退火（100 次独立运行）搜索高奖励序列，构建训练集
+  3. <strong>SFT 阶段</strong>: 标准 MLM 目标微调 ESM-2，学习高奖励序列的突变模式
+  4. <strong>PPO 阶段</strong>: 以 SFT 模型为初始化，用 PPO 优化奖励 + KL 惩罚 + 多样性奖励
+  5. <strong>序列生成</strong>: 迭代掩码采样（iterative masked sampling）生成指定突变数的变异体</li>
+<li><strong>训练流程</strong>: 预训练 ESM-2 → SFT（模拟退火数据）→ PPO（在线采样 + 奖励评估）→ 生成序列 → 实验验证</li>
+<li><strong>关键超参数</strong>: ε=0.174（PPO clip），γ=1.0e-06（多样性权重），β 从 1.0e-08（第 1 epoch）到 1.0e-07（后续 epoch）</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>奖励模型集成</td>
+<td>预测序列功能得分</td>
+<td>提供实验反馈的代理信号</td>
+<td>输入: one-hot 序列；输出: 预测 log 荧光</td>
+<td>Methods 奖励模型节</td>
+<td>预测精度下降，对齐效果减弱</td>
+</tr>
+<tr>
+<td>模拟退火 SFT 数据生成</td>
+<td>构建高奖励序列训练集</td>
+<td>为 SFT 提供稳定的初始化数据</td>
+<td>输入: 奖励模型；输出: 高奖励序列集</td>
+<td>Methods SFT 数据节</td>
+<td>SFT 缺乏有效引导，PPO 收敛变慢</td>
+</tr>
+<tr>
+<td>SFT 微调</td>
+<td>将模型引导至功能有利区域</td>
+<td>避免 PPO 从零探索</td>
+<td>输入: 高奖励序列；输出: 微调后 ESM-2</td>
+<td>Results 图 2a</td>
+<td>仅 PPO 训练时性能提升有限</td>
+</tr>
+<tr>
+<td>PPO 优化</td>
+<td>直接优化奖励 + 约束</td>
+<td>实现主动探索和精细调优</td>
+<td>输入: 在线采样序列 + 奖励；输出: 更新后模型</td>
+<td>Methods PPO 节</td>
+<td>无法超越 SFT 性能</td>
+</tr>
+<tr>
+<td>KL 散度惩罚</td>
+<td>防止模型偏离预训练分布</td>
+<td>保持序列合理性和多样性</td>
+<td>输入: 当前与参考模型概率；输出: 惩罚项</td>
+<td>Methods 公式 6</td>
+<td>模型可能产生不合理序列</td>
+</tr>
+<tr>
+<td>多样性奖励</td>
+<td>鼓励生成序列间的差异</td>
+<td>避免模式坍缩</td>
+<td>输入: 批次内序列对 Hamming 距离；输出: 奖励项</td>
+<td>Methods 公式 7</td>
+<td>生成序列多样性下降</td>
+</tr>
+<tr>
+<td>迭代掩码采样</td>
+<td>生成指定突变数的序列</td>
+<td>控制突变距离，模拟进化过程</td>
+<td>输入: 模型 + 突变数；输出: 变异体序列</td>
+<td>Methods 生成节</td>
+<td>无法精确控制突变数</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>符号含义</th>
+<th>用途</th>
+<th>直觉</th>
+<th>来源指针</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ELBO = E_q[log p(x|z)] - β·D_KL(q(z|x)||p(z))</td>
+<td>q: 编码器；p: 解码器；β: KL 权重</td>
+<td>VAE 训练目标</td>
+<td>平衡重构精度与潜在空间正则化</td>
+<td>Methods 公式 1</td>
+</tr>
+<tr>
+<td>L_CLIP(θ) = E_t[-min(r_t(θ)Â_t, clip(r_t(θ), 1-ε, 1+ε)Â_t)]</td>
+<td>r_t: 概率比；Â_t: 优势估计；ε: clip 阈值</td>
+<td>PPO 目标函数</td>
+<td>限制策略更新幅度，保证稳定性</td>
+<td>Methods 公式 4</td>
+</tr>
+<tr>
+<td>r_t(θ) = π_θ(a_t|s_t) / π_θ,ref(a_t|s_t)</td>
+<td>π_θ: 当前策略；π_θ,ref: 参考策略</td>
+<td>概率比计算</td>
+<td>衡量策略变化程度</td>
+<td>Methods 公式 5</td>
+</tr>
+<tr>
+<td>R(x,y) = r_θ(x,y) + γH(x,y) - βD_KL(x,y)</td>
+<td>r_θ: 奖励模型得分；H: Hamming 距离；γ, β: 权重</td>
+<td>总奖励函数</td>
+<td>功能 + 多样性 + 先验保持</td>
+<td>Methods 公式 6</td>
+</tr>
+<tr>
+<td>H(x,y) = 2/(B(B-1)) Σ_{i≠j} Σ_k 1[y_k^(i) ≠ y_k^(j)]</td>
+<td>B: 批次大小；L: 序列长度</td>
+<td>批次内多样性度量</td>
+<td>鼓励生成序列间的差异</td>
+<td>Methods 公式 7</td>
+</tr>
+<tr>
+<td>D_KL(x,y) = log[π_θ(y|x) / π_θ,ref(y|x)]</td>
+<td>π_θ: 当前策略；π_θ,ref: 参考策略</td>
+<td>KL 散度惩罚</td>
+<td>防止策略偏离参考模型</td>
+<td>Methods 公式 8</td>
+</tr>
+<tr>
+<td>F(x) = logP_TranceptEVE(x_mut) - logP_TranceptEVE(x_wt)</td>
+<td>x_mut: 突变体；x_wt: 野生型</td>
+<td>进化密度特征</td>
+<td>衡量突变对序列自然度的影响</td>
+<td>Methods 公式 9</td>
+</tr>
+<tr>
+<td>PP(x) = exp[-1/L Σ log p(x_i|x_{j≠i})]</td>
+<td>L: 序列长度</td>
+<td>伪困惑度</td>
+<td>衡量模型对序列的置信度</td>
+<td>Methods 公式 26</td>
+</tr>
+</tbody>
+</table>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>: </li>
+<li>CreiLOV DMS 数据（文献 34）：训练集 2204 单突变 + 176 双突变 + 978 三突变 + 3565 四突变；验证/测试集 9603 五突变（75/25 划分）</li>
+<li>其他四个蛋白质家族：Pab1、Bgl3、Ube4b、avGFP、GB1（DMS 数据来自文献 35-39）</li>
+<li>低数据场景：奖励模型训练数据缩减至 10/100/200/500/1000 个变异体</li>
+<li><strong>指标</strong>: win rate（相对 ESM-2 650M 基线的胜率）、预测荧光值分布、实测荧光值、突变数分布</li>
+<li><strong>基线</strong>: 预训练 ESM-2（8M/35M/150M/650M）、VAE、SFT-only 模型</li>
+<li><strong>评测协议</strong>: 计算模拟评估（win rate、预测得分）+ 湿实验验证（CreiLOV 60 个设计，大肠杆菌表达，总细胞荧光测量）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>跨 5 个蛋白质家族的 win rate</td>
+<td>RLXF 普遍提升生成序列质量</td>
+<td>各家族分别训练奖励模型，对比 ESM-2 基线</td>
+<td>所有家族 win rate 显著提升</td>
+<td>RLXF 具有跨家族泛化能力</td>
+<td>未证明对所有蛋白质都有效</td>
+<td>Results 图 2a</td>
+</tr>
+<tr>
+<td>模型规模效应</td>
+<td>更大模型对齐效果更好</td>
+<td>8M/35M/150M/650M 对比</td>
+<td>650M 表现最佳，但小模型也有提升</td>
+<td>模型规模影响对齐上限</td>
+<td>未系统研究规模-性能曲线</td>
+<td>Results 图 2a</td>
+</tr>
+<tr>
+<td>低数据场景</td>
+<td>RLXF 在少量实验数据下仍有效</td>
+<td>10-1000 个训练样本</td>
+<td>10 个样本即有提升，100 个样本接近饱和</td>
+<td>RLXF 数据效率高</td>
+<td>未测试 &lt;10 个样本的极限</td>
+<td>Results 图 2d</td>
+</tr>
+<tr>
+<td>CreiLOV 湿实验验证</td>
+<td>预测的高荧光序列实测也高</td>
+<td>60 个设计（5/10 突变），三重复</td>
+<td>对齐模型生成序列实测荧光显著高于预训练模型</td>
+<td>RLXF 预测与实验一致</td>
+<td>样本量有限（60 个）</td>
+<td>Results 图 4a</td>
+</tr>
+<tr>
+<td>发现超越已知最亮变体的序列</td>
+<td>RLXF 能发现非自然的高功能序列</td>
+<td>对比 CreiLOV-T7S</td>
+<td>3 个序列荧光 &gt; T7S</td>
+<td>RLXF 可超越自然进化极限</td>
+<td>未验证这些序列的长期稳定性</td>
+<td>Results 图 4a</td>
+</tr>
+<tr>
+<td>突变偏好分析</td>
+<td>RLXF 学习到非平凡的突变组合</td>
+<td>对比预训练模型突变频率</td>
+<td>高荧光序列含多个低排名单突变</td>
+<td>RLXF 捕捉上位效应</td>
+<td>未系统分析上位效应</td>
+<td>Results 图 4c-d</td>
+</tr>
+<tr>
+<td>与 DPO 对比</td>
+<td>RLXF 优于 DPO</td>
+<td>相同奖励模型，对比 PPO vs DPO</td>
+<td>RLXF 在多个家族上优于 DPO</td>
+<td>PPO 的探索能力优于 DPO</td>
+<td>未在更多任务上对比</td>
+<td>Discussion 第 4 段</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文结论仅适用于「有实验功能数据可训练奖励模型」的蛋白质系统，不适用于无数据或难以定义功能得分的新蛋白质。</li>
+<li><strong>Oracle/真值输入</strong>: 奖励模型基于 DMS 实验数据训练，其预测精度直接影响对齐效果；5th percentile 保守估计降低了噪声影响但可能低估真实功能。</li>
+<li><strong>端到端状态</strong>: 本文实现了「计算生成 → 湿实验验证」的闭环，但湿实验仅覆盖 CreiLOV 一个系统，其他四个家族仅做了计算评估。</li>
+<li><strong>算力成本</strong>: 单 GPU 约 3 天完成整个流程（奖励模型 1 天 + SFT 数据生成 1 天 + SFT/PPO 1 天），成本较低。</li>
+<li><strong>历史数据依赖</strong>: 依赖 DMS 数据的质量和覆盖度；CreiLOV DMS 数据覆盖 92.6% 单突变，但组合突变空间远未穷尽。</li>
+<li><strong>模型依赖</strong>: 主要基于 ESM-2 系列，未验证其他 pLM 架构（如 ProtGPT2、ProGen2）的适用性。</li>
+<li><strong>最难情形</strong>: 低数据场景（&lt;100 样本）下奖励模型精度不足，对齐效果受限；预训练先验较弱的蛋白质家族（如 Bgl3）提升幅度较小。</li>
+<li><strong>不确定性</strong>: 湿实验仅测总细胞荧光，未测蛋白表达量、折叠效率、光稳定性等；量子产率测量仅对部分序列进行。</li>
+<li><strong>有边界的复述</strong>: RLXF 在 5 个蛋白质家族的计算评估和 CreiLOV 的湿实验验证中，一致地提升了 pLM 生成序列的预测/实测功能，且仅需少量实验数据即可实现显著改进，但效果受限于奖励模型质量和预训练先验强度。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>奖励模型精度限制</td>
+<td>预测功能与实际功能存在差距</td>
+<td>使用更高质量、更大规模的实验数据训练奖励模型</td>
+<td>Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>预训练先验依赖</td>
+<td>预训练先验较弱的蛋白质提升有限</td>
+<td>结合结构信息或物理模拟增强先验</td>
+<td>Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>湿实验验证范围有限</td>
+<td>仅 CreiLOV 一个系统做了实验验证</td>
+<td>在更多蛋白质系统上验证 RLXF 的泛化性</td>
+<td>Discussion 第 5 段</td>
+</tr>
+<tr>
+<td>超参数未充分优化</td>
+<td>PPO 超参数可能不是最优</td>
+<td>系统搜索超参数空间</td>
+<td>Results 图 2a 注释</td>
+</tr>
+<tr>
+<td>未与 DPO 全面对比</td>
+<td>对比有限，未覆盖所有任务</td>
+<td>在更多任务和模型上对比 PPO vs DPO</td>
+<td>Discussion 第 4 段</td>
+</tr>
+<tr>
+<td>计算成本</td>
+<td>模拟退火数据生成耗时</td>
+<td>探索更高效的数据生成策略</td>
+<td>Methods SFT 数据节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>湿实验仅验证 CreiLOV 一个系统</td>
+<td>其他 4 个家族的 win rate 提升可能仅反映奖励模型拟合而非真实功能提升</td>
+<td>泛化性结论需要更多实验验证</td>
+<td>在 Pab1、GB1 等系统上重复湿实验</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>奖励模型使用 5th percentile 保守估计</td>
+<td>可能低估高功能序列的真实得分，导致 PPO 探索不足</td>
+<td>影响生成序列的上限</td>
+<td>对比不同百分位数的效果</td>
+<td>Methods 奖励模型节</td>
+</tr>
+<tr>
+<td>模拟退火 SFT 数据可能偏向局部最优</td>
+<td>模拟退火可能无法充分探索序列空间</td>
+<td>影响 SFT 初始化的质量</td>
+<td>对比其他探索策略（如遗传算法）</td>
+<td>Methods SFT 数据节</td>
+</tr>
+<tr>
+<td>多样性奖励权重 γ=1.0e-06 极小</td>
+<td>多样性约束可能形同虚设</td>
+<td>可能导致生成序列多样性不足</td>
+<td>系统扫描 γ 值</td>
+<td>Methods 公式 7</td>
+</tr>
+<tr>
+<td>未报告 PPO 训练曲线和稳定性</td>
+<td>无法判断训练是否收敛、是否出现模式坍缩</td>
+<td>影响方法可复现性</td>
+<td>补充训练曲线和稳定性分析</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>与 DPO 的对比可能不公平</td>
+<td>未说明是否使用相同计算资源、训练时长</td>
+<td>影响「PPO 优于 DPO」结论的可靠性</td>
+<td>严格控制变量后重新对比</td>
+<td>Discussion 第 4 段</td>
+</tr>
+<tr>
+<td>未讨论奖励模型过拟合风险</td>
+<td>集成 100 个 MLP 可能仍过拟合小样本数据</td>
+<td>影响生成序列的泛化性</td>
+<td>使用交叉验证评估奖励模型泛化性</td>
+<td>Methods 奖励模型节</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>RLHF 框架迁移到蛋白质设计</strong>：将 LLM 对齐技术（SFT + PPO + KL 惩罚）系统性地迁移到蛋白质序列生成，为「如何用实验数据引导生成模型」提供了完整范式。可迁移到本课题的<strong>构象生成</strong>任务：用 MD 模拟或实验数据作为奖励信号，引导扩散模型生成更接近天然态的构象。</p>
+</li>
+<li>
+<p><strong>两阶段训练策略</strong>：SFT 提供稳定初始化、PPO 负责精细探索的设计，有效平衡了「利用已知高功能区域」和「探索未知空间」。可迁移到<strong>分子对接</strong>后处理：先用监督学习筛选候选构象，再用强化学习优化结合能。</p>
+</li>
+<li>
+<p><strong>奖励模型集成 + 保守估计</strong>：100 个 MLP 集成取 5th percentile 的策略，有效降低了奖励模型的噪声影响。可迁移到<strong>结构预测</strong>中的置信度评估：集成多个模型的预测结果，取保守估计以避免过度自信。</p>
+</li>
+<li>
+<p><strong>模拟退火数据生成</strong>：用模拟退火搜索高奖励序列构建 SFT 数据集，避免了在线采样初期的不稳定性。可迁移到<strong>序列设计</strong>：先用模拟退火或遗传算法生成候选序列池，再训练生成模型。</p>
+</li>
+<li>
+<p><strong>KL 惩罚防止灾难性遗忘</strong>：在 PPO 目标中加入 KL 散度惩罚，保持生成序列的自然度。可迁移到<strong>MD 模拟</strong>中的增强采样：在增强采样过程中加入对初始分布的约束，避免过度偏离物理合理构象。</p>
+</li>
+<li>
+<p><strong>多样性奖励避免模式坍缩</strong>：通过 Hamming 距离奖励鼓励生成序列多样性。可迁移到<strong>构象采样</strong>：在生成构象时加入多样性约束，避免采样陷入少数低能态。</p>
+</li>
+<li>
+<p><strong>低数据场景的鲁棒性</strong>：仅 10-100 个实验数据即可实现显著改进，说明 RLXF 在数据稀缺场景下具有实用性。可迁移到<strong>新蛋白质系统</strong>：在缺乏大规模实验数据时，仍可用少量数据引导生成模型。</p>
+</li>
+<li>
+<p><strong>突变偏好分析揭示上位效应</strong>：通过分析 RLXF 学习到的突变组合，发现多个低排名单突变协同作用。可迁移到<strong>上位效应预测</strong>：用 RL 对齐模型自动发现非平凡的突变组合。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>RLHF/RLHF 在 LLM 中的应用</strong>：本文直接借鉴 ChatGPT 的 RLHF 框架（文献 23-26），将「人类偏好」替换为「实验功能」。与 InstructGPT、Llama 等对齐方法形成类比。</li>
+<li><strong>蛋白质语言模型</strong>：ESM-2（文献 3）作为基础模型，与 UniRep（文献 9）、ProtGPT2、ProGen2（文献 12,33）等形成对比。本文展示了 pLM 从「描述性」到「规范性」的转变。</li>
+<li><strong>蛋白质设计中的强化学习</strong>：与文献 30 的 VAE 方法对比，本文强调 RL 的探索能力优于纯监督学习。与文献 28-29 的序列-功能预测模型衔接。</li>
+<li><strong>DMS 数据集</strong>：CreiLOV DMS（文献 34）及其他家族 DMS 数据（文献 35-39）是奖励模型训练的基础，与 ProteinGym（文献 78）基准相关。</li>
+<li><strong>上位效应与协同突变</strong>：本文发现的协同突变组合与文献 34 的 DMS 分析一致，也与深度突变扫描（DMS）领域的上位效应研究相关。</li>
+<li><strong>与 AlphaFold 的关联</strong>：本文使用 AlphaFold3（文献 81）预测结构用于突变定位分析，展示了结构预测在功能设计中的辅助作用。</li>
+<li><strong>与 MD 模拟的潜在连接</strong> [Analysis]：本文的 RL 框架可类比于 MD 模拟中的增强采样方法（如 metadynamics、replica exchange），都是通过外部偏置引导系统探索新区域。未来可探索将 MD 模拟的物理约束作为 RL 的奖励信号。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: RLXF-Conf：用强化学习对齐构象生成模型
+   - <strong>来源局限/观察</strong>: 本文 RLXF 仅针对序列生成，未涉及构象空间；构象生成模型（如扩散模型）同样缺乏功能导向。
+   - <strong>核心假设</strong>: 将 RLXF 框架扩展到构象生成，用 MD 模拟自由能或实验结构作为奖励信号，可生成更接近天然态的构象。
+   - <strong>初步方法</strong>: 以 ESM-2 或结构预测模型为骨干，定义构象空间中的奖励函数（如 Rosetta 能量、MD 自由能），用 PPO 优化。
+   - <strong>验证方式</strong>: 在已知蛋白上比较生成构象与实验结构的 RMSD、Rg 等指标。
+   - <strong>可能的失败模式</strong>: 构象空间维度远高于序列空间，奖励函数稀疏，PPO 可能难以收敛。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 多目标 RLXF：同时优化功能与结构约束
+   - <strong>来源局限/观察</strong>: 本文仅优化单一功能（荧光），实际蛋白质工程需同时满足多个约束（稳定性、表达量、结合亲和力）。
+   - <strong>核心假设</strong>: 多目标奖励函数（功能 + 结构 + 可溶性）可引导 pLM 生成更全面的优化序列。
+   - <strong>初步方法</strong>: 设计加权多目标奖励，或使用 Pareto 最优化的多策略 RL。
+   - <strong>验证方式</strong>: 在多个蛋白质系统上比较单目标 vs 多目标 RLXF 的生成序列质量。
+   - <strong>可能的失败模式</strong>: 多目标权重难以确定，可能顾此失彼。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 主动学习 RLXF：实验反馈的闭环优化
+   - <strong>来源局限/观察</strong>: 本文使用静态 DMS 数据训练奖励模型，未利用实验验证结果进一步优化模型。
+   - <strong>核心假设</strong>: 将 RLXF 生成序列的实验结果反馈到奖励模型训练中，可形成迭代优化闭环。
+   - <strong>初步方法</strong>: 每轮 RLXF 生成 → 实验验证 → 更新奖励模型 → 重新对齐。
+   - <strong>验证方式</strong>: 比较多轮迭代后生成序列的功能提升速度。
+   - <strong>可能的失败模式</strong>: 实验成本高，迭代次数有限；奖励模型可能过拟合小样本新数据。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 结构感知的 RLXF：利用 AlphaFold 预测作为中间奖励
+   - <strong>来源局限/观察</strong>: 本文仅用 AlphaFold 做结构分析，未将其纳入训练流程。
+   - <strong>核心假设</strong>: 将 AlphaFold 预测的结构质量（pLDDT、pAE）作为奖励信号的一部分，可引导 pLM 生成结构更合理的序列。
+   - <strong>初步方法</strong>: 在奖励函数中加入结构预测得分，或使用多阶段训练（先结构后功能）。
+   - <strong>验证方式</strong>: 比较加入结构奖励前后生成序列的实验成功率。
+   - <strong>可能的失败模式</strong>: AlphaFold 预测耗时，训练成本高；结构得分与功能可能冲突。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: RLXF 与 MD 模拟的混合框架
+   - <strong>来源局限/观察</strong>: 本文奖励模型仅基于序列-功能数据，未利用物理模拟信息；MD 模拟可提供序列-结构-功能的物理机制。
+   - <strong>核心假设</strong>: 将 MD 模拟的短轨迹特征（如折叠自由能、构象稳定性）作为奖励信号，可提高 RLXF 生成序列的物理合理性。
+   - <strong>初步方法</strong>: 对 RLXF 生成的候选序列进行短 MD 模拟，提取特征作为奖励；或训练 MD 代理模型加速评估。
+   - <strong>验证方式</strong>: 比较加入 MD 奖励前后生成序列的实验折叠率、热稳定性。
+   - <strong>可能的失败模式</strong>: MD 模拟计算成本高，难以大规模集成；MD 力场精度有限。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 跨物种功能对齐：RLXF 在多任务学习中的扩展
+   - <strong>来源局限/观察</strong>: 本文每个蛋白质家族独立训练奖励模型，未利用跨家族共享的功能规律。
+   - <strong>核心假设</strong>: 多任务 RLXF（同时优化多个蛋白质家族的功能）可学习更通用的功能-序列映射。
+   - <strong>初步方法</strong>: 共享 pLM 骨干，每个家族有独立的奖励头；或使用元学习初始化。
+   - <strong>验证方式</strong>: 比较多任务 vs 单任务 RLXF 在低数据家族上的表现。
+   - <strong>可能的失败模式</strong>: 不同家族的功能规律差异大，多任务学习可能产生负迁移。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, discussion, methods) without figures, tables, or supplementary information.</li>
+<li><strong>Assessment boundary</strong> Scientific soundness, methodological rigor, validity of claims relative to provided evidence, and suitability for a general multidisciplinary audience.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce Reinforcement Learning from eXperimental Feedback (RLXF), a two-stage framework (supervised fine-tuning followed by proximal policy optimization) to align protein language models with experimentally measured functional objectives. They report improved generation of high-functioning variants across five protein families, with a detailed case study on CreiLOV fluorescent protein, where RLXF-aligned models generated variants with enhanced fluorescence, including some exceeding the brightest known variant.</li>
+<li><strong>Visible evidence base</strong> Main text only. Figures, tables, and all supplementary information referenced in the text were not provided.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures (Fig. 1–4), all supplementary figures (Supplementary Fig. 1–32), all supplementary tables (Supplementary Table 1–11), and the Reporting Summary. These are essential for evaluating quantitative claims, statistical significance, and methodological details.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a conceptually appealing and timely idea: adapting reinforcement learning from human feedback, a cornerstone of modern LLM alignment, to align protein language models with experimentally defined functional objectives. The writing is clear and the motivation is well-articulated. However, the current submission is essentially a claim document without its supporting evidence. The central quantitative results, experimental validation, and methodological comparisons are all located in figures and supplementary materials that were not available for review. As such, the scientific case is not established from the provided materials. The methodological novelty relative to existing work (e.g., DPO-based approaches) is also not fully clarified, and several claims in the discussion appear to extend beyond what the visible text alone can support.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and protein engineers developing generative models for protein design; researchers working on alignment techniques for biological sequence models; and those interested in applying RL methodologies beyond NLP. The CreiLOV case study may also interest the optogenetics and fluorescent protein community.</li>
+<li><strong>Major strengths</strong></li>
+<li>The conceptual framing of "functional alignment" is clear and compelling, drawing a strong analogy to RLHF in LLMs.</li>
+<li>The two-stage RLXF pipeline (SFT followed by PPO) is a sensible and well-motivated design.</li>
+<li>The choice of CreiLOV as a case study is apt, as fluorescence is a non-natural function for this protein, making it a strong test of functional alignment beyond evolutionary constraints.</li>
+<li>The authors address practical considerations such as low-data regimes and parameter-efficient fine-tuning, which increases potential utility.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence completeness</li>
+<li><strong>Claim pointer</strong> The manuscript claims that RLXF "improves generation of high-functioning variants beyond pre-trained baselines" across five protein families and that aligned ESM-2 models generated variants with fluorescence exceeding the brightest known variant.</li>
+<li><strong>Evidence pointer</strong> Figures 2a, 2b, 3a, 4a; Supplementary Figures 1–32; Supplementary Tables 1–11; location not provided for specific data points.</li>
+<li><strong>Concern</strong> All quantitative results, including win rates, distribution plots, statistical tests, and experimental fluorescence measurements, are presented only in figures and supplementary materials. Without these, the central claims of improved performance and experimental validation cannot be assessed.</li>
+<li><strong>Why it matters</strong> The core scientific contribution is empirical. The text alone provides no numbers, no error bars, no statistical comparisons, and no experimental data. The claims are therefore unverifiable in the current form.</li>
+<li><strong>Resolution test</strong> Provide all figures and supplementary materials, or at minimum, the key quantitative results (win rates, fluorescence values, p-values) in the main text or a revised review package.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological comparison</li>
+<li><strong>Claim pointer</strong> The discussion states that "RLHF consistently outperforms DPO for complex generation tasks in NLP" and implies RLXF is superior to DPO-based protein alignment methods.</li>
+<li><strong>Evidence pointer</strong> Discussion section; Supplementary Figures 1–7 (referenced for RLXF development and benchmarking against DPO); location not provided.</li>
+<li><strong>Concern</strong> The manuscript benchmarks RLXF against DPO (referenced in supplementary figures) but the main text does not present any direct comparison. The claim of superiority is therefore not supported by visible evidence. Furthermore, the cited NLP literature for RLHF vs. DPO is not provided, making the generalization to protein models speculative.</li>
+<li><strong>Why it matters</strong> The choice of PPO over simpler alternatives like DPO is a key methodological decision. Without a direct, visible comparison, the reader cannot judge whether the added complexity of RLXF is justified.</li>
+<li><strong>Resolution test</strong> Present a direct comparison of RLXF vs. DPO (and possibly other baselines) in the main text or a clearly referenced supplementary figure, with appropriate metrics and statistical analysis.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> The authors claim RLXF is a "general framework" applicable to diverse protein families and functions.</li>
+<li><strong>Evidence pointer</strong> Figure 2a (win rates across five protein families); Supplementary Table 1; location not provided.</li>
+<li><strong>Concern</strong> The five protein families are listed only in supplementary materials. The main text provides no details on the nature of these families, the functional assays used, or the magnitude of improvements. The claim of generality is therefore not assessable.</li>
+<li><strong>Why it matters</strong> Generality is a central selling point. Without visible details on the diversity of test systems and the consistency of improvements, the claim remains anecdotal.</li>
+<li><strong>Resolution test</strong> Summarize the five protein families, their functions, and the key win-rate improvements in the main text, or provide a comprehensive supplementary table with this information.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Mechanistic insight</li>
+<li><strong>Claim pointer</strong> The authors state that RLXF "effectively integrate[s] the evolutionary knowledge encoded in pre-trained pLMs with experimental observations" and that aligned models "learn to prioritize mutations that enhance fluorescence."</li>
+<li><strong>Evidence pointer</strong> Figures 3d, 3e, 4d; Supplementary Figures 10–12, 26–30; location not provided.</li>
+<li><strong>Concern</strong> The analysis of mutational preferences and structural mapping is presented as evidence of mechanistic insight. However, without the actual figures, it is impossible to evaluate whether the observed preferences are statistically robust, whether they generalize beyond the specific case study, or whether they provide genuine biological insight beyond what is already known from the DMS data.</li>
+<li><strong>Why it matters</strong> The claim that RLXF learns meaningful biological rules, rather than simply overfitting to the reward model, is important for establishing the method's credibility.</li>
+<li><strong>Resolution test</strong> Provide the mutational preference and structural mapping figures, along with a statistical analysis of the significance of the observed preferences.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, first sentence</li>
+<li><strong>Issue</strong> The phrase "fundamentally misaligned with protein engineering goals" is strong and could be seen as overgeneralizing. Some pLMs are explicitly trained on functional data.</li>
+<li><strong>Required correction</strong> Consider softening to "often misaligned" or "not explicitly aligned."</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods, PPO section</li>
+<li><strong>Evidence pointer</strong> Methods, "Proximal policy optimization" section</li>
+<li><strong>Issue</strong> The description of the PPO procedure is detailed but lacks specific values for several key hyperparameters (e.g., learning rate schedule details, clipping parameter epsilon is given, but the number of PPO epochs per rollout, minibatch size, and advantage normalization details are not fully specified).</li>
+<li><strong>Required correction</strong> Provide a complete table of hyperparameters or a reference to a public code repository with the full configuration.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Results, "Functional alignment improves sequence generation across diverse protein classes"</li>
+<li><strong>Evidence pointer</strong> Figure 2a; location not provided.</li>
+<li><strong>Issue</strong> The win rate metric is described, but the statistical significance of the win rates across different model sizes and protein families is not discussed in the text.</li>
+<li><strong>Required correction</strong> Add a statement on how significance was assessed (e.g., confidence intervals, bootstrapping) and report the results.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Experimental design</li>
+<li><strong>Affected element</strong> Results, "Functionally aligned models generate high-performing CreiLOV variants"</li>
+<li><strong>Evidence pointer</strong> Figure 4a; location not provided.</li>
+<li><strong>Issue</strong> The experimental characterization uses total cellular fluorescence, which is a composite readout. The authors acknowledge this and perform additional photophysical measurements, but the text does not specify how many independent experiments were performed for the photophysical characterization.</li>
+<li><strong>Required correction</strong> Clarify the number of replicates for the photophysical measurements and whether the reported quantum yields are from a single preparation or multiple independent purifications.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Literature context</li>
+<li><strong>Affected element</strong> Discussion</li>
+<li><strong>Evidence pointer</strong> Discussion, paragraph on DPO</li>
+<li><strong>Issue</strong> The discussion of DPO and its limitations is brief and does not cite specific studies comparing RLHF and DPO in the context of protein models.</li>
+<li><strong>Required correction</strong> Add relevant citations for DPO applications in protein design and for any comparative studies of RLHF vs. DPO in NLP that support the stated claims.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong></li>
+<li>R1-M1 (evidence completeness) is the primary blocking issue. The manuscript cannot be evaluated without its figures and supplementary data.</li>
+<li>R1-M2 (methodological comparison) is also blocking, as the claimed advantage over DPO is a key differentiator.</li>
+<li><strong>Assessment against Nature-style criteria</strong></li>
+<li><strong>Originality</strong> The idea of applying RLHF-style alignment to pLMs is conceptually novel and timely. However, the manuscript itself acknowledges prior DPO-based work, and the incremental contribution of PPO over DPO needs to be clearly demonstrated.</li>
+<li><strong>Scientific importance</strong> If the claims are substantiated, the work could be important, offering a general method to steer pLMs toward user-defined functional objectives. The CreiLOV case study is a compelling demonstration of non-natural function optimization.</li>
+<li><strong>Interdisciplinary readership</strong> The topic bridges machine learning, protein engineering, and synthetic biology, and the writing is accessible. The analogy to ChatGPT is effective for a broad audience.</li>
+<li><strong>Technical soundness</strong> The methodological description is plausible, but the lack of visible data prevents an assessment of technical soundness. The statistical treatment of the results is not described in the text.</li>
+<li><strong>Readability for nonspecialists</strong> The manuscript is well-written and the core concepts are explained clearly. The methods section is technical but appropriate for the target audience.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The central claims are entirely dependent on figures and supplementary materials that were not available for review. I would be supportive if the full evidence package is provided and the concerns regarding the DPO comparison and statistical rigor are addressed.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

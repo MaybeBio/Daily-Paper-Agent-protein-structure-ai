@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CHORUS: A proteome-scale atlas of membrane interaction interfaces constructed using cross-protein language model embeddings from sequences alone · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>CHORUS: A proteome-scale atlas of membrane interaction interfaces constructed using cross-protein language model embeddings from sequences alone</h1>
+      <div class="meta">Jingyao Zhao; Siming Huang; Jianfeng Sun</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-11
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.04.756538">原文</a>
+      </div>
+      <p class="one-liner">该文用跨蛋白语言模型嵌入从序列预测膜蛋白相互作用界面，虽非直接结构预测，但属于蛋白质结构相关计算建模，方法可迁移至蛋白结构计算领域。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Membrane proteins drive vital cellular signaling and bioenergetics yet resolving their physical interaction interfaces remains hindered by the paucity of experimental complexes and the breakdown of sequence alignments across hydrophobic bilayers. Here, we present CHORUS, a sequence-only deep-learning framework that decodes interaction sites across membrane proteins without requiring 3D structures, multiple sequence alignments (MSAs), or predefined partner identities. By systematically synthesizing complementary latent representations across diverse protein language model (pLM) families and functional layer depths, CHORUS outperforms 18 established sequence- and structure-based methods across 4,655 homology-isolated test contexts (average precision: 0.643), demonstrating amplified predictive capacity within the lipid-embedded core (0.746). We show that CHORUS delineates quaternary contact boundaries across megadalton respiratory supercomplexes directly from sequences alone (0.984). We deliver the CHORUS Atlas ( https://chorus.atlas.sunnylab.org ), providing precomputed, residue-resolved interaction landscapes for 80,619 reviewed transmembrane proteins spanning 4,918 species and 33.7 million residues to empower interactome-scale discovery and allosteric therapeutic design.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">膜蛋白驱动关键的细胞信号传导和生物能量学过程，但解析其物理相互作用界面仍受限于实验复合物的匮乏以及跨疏水性脂双层序列比对的失效。在此，我们提出CHORUS，一种仅基于序列的深度学习框架，无需3D结构、多序列比对（MSAs）或预定义伙伴身份即可解码膜蛋白间的相互作用位点。通过系统性地综合不同蛋白质语言模型（pLM）家族及功能层深度的互补潜在表征，CHORUS在4,655个同源隔离测试情境中优于18种已建立的基于序列和结构的方法（平均精确度：0.643），并在脂质嵌入核心区域展现出增强的预测能力（0.746）。我们证明，CHORUS能仅从序列直接描绘兆道尔顿级呼吸超复合物的四级接触边界（0.984）。我们提供CHORUS图谱（ https://chorus.atlas.sunnylab.org ），其中包含跨越4,918个物种、覆盖33.7百万残基的80,619个已审阅跨膜蛋白的预计算残基级相互作用景观，以促进相互作用组规模的发现和变构治疗设计。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：CHORUS: A proteome-scale atlas of membrane interaction interfaces constructed using cross-protein language model embeddings from sequences alone</li>
+<li><strong>作者</strong>：Jingyao Zhao; Siming Huang; Jianfeng Sun</li>
+<li><strong>单位</strong>：香港科技大学（广州）（The Hong Kong University of Science and Technology (Guangzhou)）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学 + 资源数据库（预印本）</li>
+<li><strong>领域</strong>：膜蛋白相互作用界面预测 × 蛋白质语言模型（pLM）集成</li>
+<li><strong>关键词</strong>：membrane protein, protein-protein interaction interface, protein language model, ensemble learning, proteome-scale atlas, sequence-only prediction</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.10.04.756538</li>
+<li><strong>代码</strong>：https://github.com/sunnylab-cb/chorus</li>
+<li><strong>数据</strong>：CHORUS Atlas（https://chorus.atlas.sunnylab.org）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在本课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/深度学习」方向中的<strong>序列-only 膜蛋白相互作用界面预测</strong>子领域。其核心贡献在于：(1) 提出跨 pLM 家族与层深度的集成策略，系统证明不同 pLM 表征的互补性；(2) 构建大规模膜蛋白相互作用界面图谱（80,619 条 reviewed 序列），为膜蛋白复合物组装、别构调控与药物设计提供资源；(3) 通过多种生物探针（跨膜定位、螺旋连接度、配体结合位点）系统解析 pLM 表征中编码的结构生物学信息层次。与 AlphaFold 等结构预测方法不同，本文不依赖 3D 结构或 MSA，直接以序列为输入进行界面预测，为膜蛋白这一结构数据稀缺领域提供了可扩展的替代路径。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 CHORUS——一个仅以序列为输入的膜蛋白相互作用界面预测框架，通过集成三个 pLM 家族（ESM-2、ESM-C、ProtT5）在多个层深上的嵌入表征，经六模型集成在 4,655 个同源性隔离的测试上下文上达到 0.643 的平均精度（AP），优于 18 种既有方法，并据此构建覆盖 80,619 条 reviewed 膜蛋白序列的蛋白质组规模相互作用界面图谱（CHORUS Atlas）。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否仅从膜蛋白的氨基酸序列出发，在不依赖 3D 结构、MSA 或预定义结合伙伴的条件下，准确预测其残基级别的蛋白质-蛋白质相互作用（PPI）界面？</li>
+<li><strong>为什么重要</strong>：膜蛋白占人类蛋白编码基因约 25%，是大多数药物靶点，其相互作用界面是信号转导、离子转运、能量代谢等核心生物学过程的结构基础。然而膜蛋白结构实验数据极度稀缺（高分辨率 3D 结构仅占 PDB 的 3-5%），跨膜区的疏水性质使 MSA 构建不可靠，传统结构预测方法难以适用。</li>
+<li><strong>现有方法不足</strong>：(1) 结构依赖方法（MaSIF-site、ScanNet、PeSTo 等）受限于膜蛋白结构覆盖率极低；(2) 序列方法（DeepPPISP、PIPENN 等）多依赖进化特征或单一 pLM 表征，未系统利用跨模型、跨层深的表征互补性；(3) 已有膜蛋白专用工具（DeepTMInter、MBPred）依赖跨膜拓扑先验或 MSA，在孤儿序列上性能退化。</li>
+<li><strong>精确研究问题（Can...?）</strong>：Can a sequence-only ensemble that systematically synthesizes complementary representations across diverse pLM families and layer depths achieve state-of-the-art residue-level PPI interface prediction for α-helical transmembrane proteins, and can it generalize to proteome-scale annotation without structural inputs?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文 Introduction 与 Results 的叙述框架整理，标注为「仅本文框架」，未经外部独立核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>互作组学网络时代</td>
+<td>酵母双杂交、亲和纯化-质谱（HuRI、BioPlex）</td>
+<td>建立蛋白质互作网络拓扑</td>
+<td>无法提供残基级界面分辨率；共纯化混淆间接互作</td>
+<td>本文从网络拓扑走向残基级界面解析</td>
+</tr>
+<tr>
+<td>结构解析时代</td>
+<td>X 射线晶体学、冷冻电镜</td>
+<td>提供原子级界面信息</td>
+<td>膜蛋白表达/纯化困难，结构覆盖率极低</td>
+<td>本文绕开结构实验瓶颈</td>
+</tr>
+<tr>
+<td>结构预测时代</td>
+<td>AlphaFold2/AlphaFold-Multimer</td>
+<td>高精度预测复合物结构</td>
+<td>膜蛋白 MSA 退化；需已知结合伙伴；计算成本高</td>
+<td>本文无需 MSA 或伙伴信息</td>
+</tr>
+<tr>
+<td>几何深度学习时代</td>
+<td>MaSIF-site、ScanNet、PeSTo、GraphPPIS</td>
+<td>利用表面几何/化学特征</td>
+<td>依赖 3D 结构输入，膜蛋白覆盖率不足</td>
+<td>本文完全序列驱动</td>
+</tr>
+<tr>
+<td>序列深度学习时代</td>
+<td>DeepPPISP、PIPENN、Seq-InSite、ISPRED-SEQ</td>
+<td>无需结构，直接从序列预测</td>
+<td>多依赖单一 pLM 或浅层特征；膜蛋白专项性能有限</td>
+<td>本文提出跨 pLM 家族 × 层深度的系统集成</td>
+</tr>
+<tr>
+<td>膜蛋白专项工具</td>
+<td>DeepTMInter、MBPred</td>
+<td>整合跨膜拓扑先验</td>
+<td>依赖拓扑注释或 MSA；泛化受限</td>
+<td>本文无需任何结构/拓扑先验</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在序列-only 膜蛋白界面预测范式中，首次系统证明跨 pLM 家族与层深度的表征互补性可带来超越任何单一模型或简单规模扩展的增益，并将该能力扩展至蛋白质组规模。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>膜蛋白结构数据极度稀缺</td>
+<td>高分辨率 3D 结构仅占 PDB 的 3-5%，无法支撑结构依赖方法</td>
+<td>膜蛋白表达、纯化、结晶困难；跨膜区疏水性质不利于实验解析</td>
+<td>Introduction 第 3 段（"around 3-5% of high-resolution 3D structures in the PDB"）</td>
+</tr>
+<tr>
+<td>跨膜区 MSA 不可靠</td>
+<td>疏水跨膜区序列保守性低，同源比对信号退化</td>
+<td>跨膜螺旋的疏水残基受物理约束而非进化约束，序列多样性高</td>
+<td>Introduction 第 1 段（"breakdown of sequence alignments across hydrophobic bilayers"）</td>
+</tr>
+<tr>
+<td>已有序列方法性能有限</td>
+<td>单一 pLM 表征无法同时捕捉局部化学与全局折叠信息</td>
+<td>不同 pLM 家族在不同层深编码不同层次的生物学信息，单一模型存在表征盲区</td>
+<td>Results 图 2a-c；层深分析显示不同 pLM 的最优层不同</td>
+</tr>
+<tr>
+<td>结构依赖方法在膜蛋白上覆盖率不足</td>
+<td>ScanNet 等需 3D 结构输入，膜蛋白结构缺失导致无法应用</td>
+<td>结构预测工具（ESMFold/ColabFold）在膜蛋白上精度有限，且增加计算开销</td>
+<td>Results 图 3a；结构依赖方法在膜蛋白测试集上性能显著低于 CHORUS</td>
+</tr>
+<tr>
+<td>膜蛋白界面预测缺乏蛋白质组规模资源</td>
+<td>已有工具仅能逐蛋白预测，缺乏预计算的跨物种图谱</td>
+<td>计算成本高、缺乏统一框架</td>
+<td>CHORUS Atlas 覆盖 80,619 条序列、4,918 个物种（Results 图 8）</td>
+</tr>
+<tr>
+<td>配体结合位点与 PPI 界面的功能区分困难</td>
+<td>预测的 PPI 界面可能与配体结合位点混淆</td>
+<td>两者在结构上可能重叠，需要功能注释交叉验证</td>
+<td>Results 图 6；BioLiP 交叉分析显示 PPI 与配体结合位点正交（O/E ≈ 0.979）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>CHORUS 是一个端到端的序列-only 深度学习框架，其表面流程为：输入膜蛋白氨基酸序列 → 分别通过三个预训练 pLM（ESM-2 650M、ESM-C 600M、ProtT5-XL-U50）提取嵌入 → 在每个 pLM 内部按层深采样多个隐藏层表征 → 将每个（pLM, 层）组合送入三个不同的下游预测头（Gated Conv-BiGRU [GCB]、Conv-Transformer [CT]、Gated Transformer-BiGRU [GTB]）→ 在验证集上按 AP 排序，每个 pLM 家族保留两个最优（pLM, 层, 头）组合 → 六模型概率平均得到最终预测。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>表征互补性 &gt; 模型规模</strong>：不同 pLM 家族（掩码语言建模 vs. 因果建模 vs. 编码器-解码器）在预训练中捕获不同层次的蛋白质生物学信息——早期层编码局部化学性质，中间层编码二级结构倾向，深层编码全局折叠约束。单一 pLM 的单一层无法同时最优地编码所有这些信息。</li>
+<li><strong>层深是未被充分利用的自由度</strong>：传统方法固定使用 pLM 的最后一层或平均池化，但本文系统证明最优层因 pLM 家族和预测头而异（如 ESM-2 最优在 layer 30，ProtT5 最优在 layer 18/24），层深选择本身就是一个可优化的超参数维度。</li>
+<li><strong>集成多样性来自三个正交维度</strong>：pLM 家族（预训练范式差异）、层深（信息抽象层次差异）、预测头（归纳偏置差异：卷积捕捉局部模式、Transformer 捕捉长程依赖、门控循环捕捉序列方向性）。三者交叉产生的多样性无法通过单一模型的参数扩展复制。</li>
+<li><strong>膜蛋白界面具有可学习的序列信号</strong>：尽管跨膜区 MSA 退化，但 pLM 嵌入中编码的疏水打包模式、螺旋-螺旋接触基序和拓扑约束足以支持高精度界面预测，无需显式结构输入。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>集成设计应追求「表征空间的正交性」而非「模型数量的堆叠」</strong>：本文的对照实验显示，同一 pLM 不同层的集成增益远小于跨 pLM 家族的集成增益，说明真正带来性能提升的是信息源的多样性而非参数量的增加。这一原则可迁移到其他蛋白质预测任务（如稳定性预测、功能位点注释）。</li>
+<li><strong>「最优层」是任务相关的</strong>：本文的层深分析提示，不同下游任务可能需要不同抽象层次的特征。这为迁移学习实践提供了一个通用建议：在冻结 pLM 时，应系统搜索层深而非默认使用最后一层。</li>
+<li><strong>生物物理先验可作为验证而非输入</strong>：CHORUS 不使用任何结构/拓扑先验，但通过跨膜定位、螺旋连接度等探针验证了预测结果与已知生物物理规律的一致性。这种「先预测、后验证」的策略适合数据稀缺领域。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：膜蛋白氨基酸序列（仅序列，无结构、无 MSA、无伙伴信息）</li>
+<li><strong>输出</strong>：每个残基的 PPI 界面概率 p_i ∈ [0,1]，以及经阈值 τ_val = 0.554 二值化的界面/非界面分类</li>
+<li><strong>模块</strong>：
+  1. <strong>pLM 嵌入提取</strong>：三个冻结的预训练 pLM（ESM-2 650M、ESM-C 600M、ProtT5-XL-U50），每个 pLM 采样多个隐藏层（共 19 个（pLM, 层）组合）
+  2. <strong>下游预测头</strong>：三种架构（GCB、CT、GTB），每种接收特定（pLM, 层）嵌入
+  3. <strong>候选池</strong>：57 个（pLM, 层, 头）组合
+  4. <strong>集成选择</strong>：按验证集链宏平均 AP 排序，每 pLM 家族保留 top 2，形成六模型集成
+  5. <strong>概率聚合</strong>：六模型概率的无权重算术平均</li>
+<li><strong>训练</strong>：监督学习，加权交叉熵损失（GCB/CT/GTB 各有变体，GTB/CT 含焦点损失与排序损失），AdamW 优化器，权重衰减 1e-4，恒定学习率，dropout 0.15，梯度裁剪 5</li>
+<li><strong>标签来源</strong>：从 PDBTM 实验解析的膜蛋白复合物中提取，残基对任意伙伴链重原子距离 ≤ 5Å 即标记为界面残基</li>
+<li><strong>数据划分</strong>：基于序列相似性聚类的严格划分（419 个拓扑簇，训练/验证/测试 ≈ 70:15:15），测试集与训练集无 ≥30% 序列同一性</li>
+<li><strong>推理流程</strong>：输入序列 → 截断/填充至最大长度 → 三个 pLM 分别前向传播提取指定层嵌入 → 对应预测头计算残基级概率 → 六模型概率平均 → 阈值化输出</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多 pLM 嵌入提取</td>
+<td>从三个 pLM 家族提取互补的序列表征</td>
+<td>不同 pLM 编码不同层次的生物学信息，单一模型存在盲区</td>
+<td>输入：氨基酸序列；输出：19 组残基级嵌入向量</td>
+<td>Results 图 2a-c 显示不同 pLM 最优层不同；跨家族集成增益 &gt; 同家族层集成</td>
+<td>[预期] 移除任一 pLM 家族将导致 AP 下降（对照实验显示跨家族集成增益显著）</td>
+</tr>
+<tr>
+<td>层深采样</td>
+<td>在每个 pLM 内采样多个隐藏层</td>
+<td>最优层因任务和 pLM 而异，非最后一层</td>
+<td>输入：pLM 内部隐藏状态；输出：指定层的嵌入</td>
+<td>Results 图 2 显示 ESM-2 最优在 layer 30，ProtT5 最优在 layer 18/24</td>
+<td>[预期] 固定使用最后一层将损失部分性能（对照实验显示层深选择贡献显著）</td>
+</tr>
+<tr>
+<td>三种预测头架构</td>
+<td>GCB/CT/GTB 提供不同归纳偏置</td>
+<td>卷积捕捉局部模式，Transformer 捕捉长程依赖，门控循环捕捉方向性</td>
+<td>输入：pLM 嵌入；输出：残基级界面概率</td>
+<td>Results 图 2a 显示不同头在不同表征上表现不同</td>
+<td>[预期] 移除任一架构将降低集成多样性（对照实验显示头多样性贡献显著）</td>
+</tr>
+<tr>
+<td>验证集引导的集成选择</td>
+<td>每 pLM 家族保留 top 2 模型</td>
+<td>在保持多样性的同时剔除低质量模型</td>
+<td>输入：57 个候选模型的验证 AP；输出：6 模型子集</td>
+<td>Results 图 2a 与 Supplementary Table 1</td>
+<td>[预期] 随机选择 6 模型将显著降低性能（对照实验显示选择策略贡献显著）</td>
+</tr>
+<tr>
+<td>无权重概率平均</td>
+<td>聚合六模型输出</td>
+<td>简单、稳健、无需额外训练</td>
+<td>输入：6 个概率向量；输出：最终概率 p_i</td>
+<td>Results 图 3a 显示集成优于所有单一模型</td>
+<td>[预期] 使用加权平均可能带来边际提升，但增加过拟合风险</td>
+</tr>
+<tr>
+<td>阈值校准</td>
+<td>将概率转为二值预测</td>
+<td>分类决策需要操作阈值</td>
+<td>输入：p_i；输出：ŷ_i ∈ {0,1}</td>
+<td>Methods 节：τ_val = 0.5542 在验证集上最大化 F1</td>
+<td>[预期] 阈值偏移将改变精度-召回权衡</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>1. 界面标签定义</strong>（Methods 节）：
+- 残基 i 的标签：y_i = 1 若 min 重原子距离 d_i ≤ 5Å（对任意伙伴链），否则 y_i = 0</p>
+<p><strong>2. 加权交叉熵损失</strong>（Methods 节）：
+- L_CE = -[w_+ · y_i · log(p_i) + (1 - y_i) · log(1 - p_i)]
+- 其中 w_+ = N⁻/N⁺（正类权重，N⁻ 和 N⁺ 分别为训练集中非界面和界面残基数）</p>
+<p><strong>3. 焦点损失</strong>（GCB/GTB 使用，Methods 节）：
+- L_focal = -α_t · (1 - p_t)^γ · log(p_t)
+- 其中 p_t 为模型对真实类别的预测概率，α_t 为类别权重，γ 为聚焦参数</p>
+<p><strong>4. 排序损失</strong>（CT/GTB 使用，Methods 节）：
+- L_rank = (1/m) · Σ log(1 + exp(z_j - z_i))
+- 其中 i 为界面残基，j 为非界面残基，z 为 logit，m = min(192, N_pos × N_neg) 为采样对数</p>
+<p><strong>5. 总体目标</strong>：
+- L_total = L_cls + λ · L_rank
+- 其中 L_cls 对 CT 为 L_context（链级平均交叉熵），对 GCB/GTB 为 L_focal</p>
+<p><strong>6. 标准化 AP</strong>（Methods 节，用于长度分层分析）：
+- AP_std = AP_obs × (π_c / π_0)
+- 其中 π_c 为上下文 c 的局部界面残基比例，π_0 = 523,268/2,244,041 ≈ 0.233 为参考基准比例</p>
+<p><strong>7. 集成预测</strong>：
+- p_i = (1/6) · Σ_{m=1}^{6} p_{im}
+- 其中 p_{im} 为第 m 个模型对残基 i 的预测概率</p>
+<p><strong>8. 决策阈值</strong>：
+- ŷ_i = 1 若 p_i ≥ τ_val，其中 τ_val = 0.5542（验证集上最大化 F1 确定）</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<h3>数据集与规模</h3>
+<ul>
+<li><strong>训练/验证/测试</strong>：从 PDBTM 获取膜蛋白复合物，经严格序列相似性聚类（419 个拓扑簇）后按约 70:15:15 划分。训练集 30,675 链上下文（299 簇），验证集 5,546 链上下文（65 簇），测试集 4,655 链上下文（55 簇），共 11,537,440 个残基级标签。</li>
+<li><strong>外部验证集</strong>：CompData101（101 链）、TestData36（36 链）、IndepData30（30 链），均与训练数据经 ≥30% 序列同一性过滤。</li>
+<li><strong>蛋白质组规模应用</strong>：UniProt reviewed α-helical 跨膜蛋白 80,619 条记录（70,247 条去重序列），33,722,948 个残基，4,918 个物种。</li>
+</ul>
+<h3>评测指标</h3>
+<ul>
+<li>主要指标：链宏平均 AP（chain-macro-AP）、池化 AP（pooled AP）、AUROC、F1、MCC</li>
+<li>辅助指标：P@k（top-k 精度，k = 5, 10, 20）、标准化 AP（按界面残基比例校正）</li>
+</ul>
+<h3>基线方法（18 种）</h3>
+<ul>
+<li>序列方法：DeepPPISP、PIPENN-EMB、Seq-InSite、ISPRED-SEQ、DeepTMInter、EnsemblePIS、AllSites 等</li>
+<li>结构方法：ScanNet（±MSA）、GraphPPIS（fast/evolutionary）、GPSite、PeSTo、GAT-Site 等</li>
+<li>消融对照：单 pLM 单层、单 pLM 多层、同 pLM 不同头、随机种子变化、坐标基变换等</li>
+</ul>
+<h3>关键实验与结果</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 Claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主基准测试</td>
+<td>CHORUS 优于所有既有方法</td>
+<td>18 种方法，统一 5Å 阈值，测试集 4,655 链上下文</td>
+<td>CHORUS chain-macro-AP = 0.643，最佳基线 ScanNet-MSA = 0.613（+0.030）</td>
+<td>跨 pLM 集成策略有效</td>
+<td>未证明在非膜蛋白上同样最优</td>
+<td>Results 图 3a</td>
+</tr>
+<tr>
+<td>跨膜区亚组分析</td>
+<td>CHORUS 在跨膜核心区优势最大</td>
+<td>按跨膜/胞内/胞外分区</td>
+<td>跨膜区 AP = 0.746 vs ScanNet-MSA 0.645（+0.101）</td>
+<td>序列嵌入可捕捉疏水打包物理</td>
+<td>未证明对 loop 区同样有效</td>
+<td>Results 图 5a-c</td>
+</tr>
+<tr>
+<td>消融：单 pLM vs 集成</td>
+<td>跨家族集成增益 &gt; 同家族层集成</td>
+<td>单 pLM 最优 vs 六模型集成</td>
+<td>集成 AP 0.643 vs 单 pLM 最优 0.614（ESM-C L30 GTB）</td>
+<td>跨家族互补性真实存在</td>
+<td>未分离各 pLM 的独立贡献</td>
+<td>Results 图 2a</td>
+</tr>
+<tr>
+<td>消融：层深选择</td>
+<td>最优层非最后一层</td>
+<td>同 pLM 不同层 vs 最优层</td>
+<td>ESM-2 L30 优于 L36/L24；ProtT5 L18 优于 L24</td>
+<td>层深是重要超参数</td>
+<td>未证明最优层跨任务稳定</td>
+<td>Results 图 2b</td>
+</tr>
+<tr>
+<td>消融：头架构</td>
+<td>头多样性贡献独立于 pLM 多样性</td>
+<td>同 pLM 同层不同头 vs 跨头集成</td>
+<td>跨头集成增益显著但小于跨 pLM 增益</td>
+<td>归纳偏置多样性有价值</td>
+<td>未证明三种头均必要</td>
+<td>Supplementary Table 1</td>
+</tr>
+<tr>
+<td>外部验证</td>
+<td>泛化性超越内部测试</td>
+<td>CompData101/TestData36/IndepData30</td>
+<td>AP = 0.770/0.817/0.741</td>
+<td>无序列泄漏的泛化</td>
+<td>外部集规模有限</td>
+<td>Supplementary Table 12</td>
+</tr>
+<tr>
+<td>配体位点正交性</td>
+<td>PPI 预测非配体结合位点代理</td>
+<td>BioLiP 注释交叉分析</td>
+<td>O/E = 0.979，无系统性重叠</td>
+<td>预测捕捉 PPI 特异信号</td>
+<td>未排除变构耦合位点</td>
+<td>Results 图 6</td>
+</tr>
+<tr>
+<td>呼吸体超复合物</td>
+<td>可解析兆道尔顿级复合物界面</td>
+<td>猪心呼吸体（PDB 8UGN 等 6 种组装）</td>
+<td>实体宏 AP = 0.984，AUROC = 0.970</td>
+<td>序列信号足以支撑超复合物界面注释</td>
+<td>未在动态构象上验证</td>
+<td>Results 图 7</td>
+</tr>
+<tr>
+<td>可溶性蛋白迁移</td>
+<td>跨膜训练的模型可迁移至可溶性蛋白</td>
+<td>19 种非膜组装（coiled-coil、酶-抑制剂）</td>
+<td>AUROC 0.469-0.960，coiled-coil 0.943-0.960</td>
+<td>部分迁移能力</td>
+<td>固定阈值不适用于可溶性蛋白</td>
+<td>Supplementary Tables 16-19</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>：本文解决的是<strong>膜蛋白残基级 PPI 界面预测</strong>任务，即给定单条膜蛋白序列，预测哪些残基参与与其他蛋白的物理接触（≤5Å）。这不是复合物结构预测，不预测结合伙伴身份、结合亲和力或构象变化。</p>
+<p><strong>有边界的结论</strong>：
+1. <strong>在膜蛋白范围内</strong>，CHORUS 的 chain-macro-AP 为 0.643，优于 18 种既有方法（最佳基线 0.613），但绝对性能仍有提升空间——约 36% 的界面残基无法被正确识别。
+2. <strong>跨膜核心区优势最显著</strong>（AP = 0.746），但<strong>可溶性蛋白迁移性能不稳定</strong>（AUROC 0.469-0.960），且固定阈值在可溶性蛋白上失效——模型学到的可能是膜环境特异的接触规则。
+3. <strong>集成增益来自跨 pLM 家族互补性</strong>，而非参数规模或简单模型平均。对照实验显示，同 pLM 不同层/不同种子的集成增益远小于跨家族集成。
+4. <strong>预测界面与配体结合位点正交</strong>（O/E ≈ 0.979），说明模型捕捉的是 PPI 特异信号而非通用口袋特征——但这也意味着 PPI 界面与配体位点的协同/变构关系未被建模。
+5. <strong>蛋白质组规模图谱是预测而非实验验证</strong>：80,619 条序列的界面注释全部来自模型推断，未经湿实验验证。图谱的价值在于假设生成和优先级排序，而非确定性注释。</p>
+<p><strong>不可支持的更强结论</strong>：
+- 不能声称 CHORUS 可替代结构生物学实验或 AlphaFold 类方法进行复合物结构解析。
+- 不能声称序列嵌入「理解」了膜蛋白折叠物理——AP 提升可能来自统计关联而非因果机制。
+- 不能将 5Å 接触阈值等同于功能相关界面——几何接触 ≠ 功能必需。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5Å 阈值为几何代理</td>
+<td>接触距离不能直接反映结合亲和力或热力学贡献</td>
+<td>引入结合自由能或突变实验数据作为监督信号</td>
+<td>Discussion 第 1 段</td>
+</tr>
+<tr>
+<td>无法捕捉动态构象变化</td>
+<td>预测基于静态实验结构标签，不反映膜蛋白的构象可塑性</td>
+<td>整合 MD 模拟或构象系综数据</td>
+<td>Discussion 第 1 段</td>
+</tr>
+<tr>
+<td>可溶性蛋白迁移性能不稳定</td>
+<td>固定阈值在可溶性蛋白上产生饱和假阳性</td>
+<td>开发环境感知的阈值自适应机制</td>
+<td>Discussion 第 2 段</td>
+</tr>
+<tr>
+<td>多跨膜蛋白性能下降</td>
+<td>预测精度随跨膜螺旋数量增加而降低</td>
+<td>引入拓扑先验或长程依赖建模</td>
+<td>Discussion 第 2 段</td>
+</tr>
+<tr>
+<td>计算开销高</td>
+<td>三个 pLM 的推理成本限制了实时应用</td>
+<td>知识蒸馏为单模型、量化部署</td>
+<td>Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>图谱未经实验验证</td>
+<td>80,619 条序列的注释全部为模型预测</td>
+<td>与突变扫描、交联质谱等实验数据交叉验证</td>
+<td>Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>配体界面与 PPI 界面的协同未建模</td>
+<td>预测与 BioLIP 位点正交，但未建模变构耦合</td>
+<td>多任务学习联合预测 PPI 与配体界面</td>
+<td>Discussion 第 4 段</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练标签来自 PDBTM 实验结构，存在天然偏差</td>
+<td>可解析的膜蛋白复合物偏向高丰度、高稳定性、去垢剂可溶体系；预测器可能学到的是「可结晶性」而非「可互作性」</td>
+<td>图谱的蛋白质组规模外推可能高估真实互作界面的可预测性</td>
+<td>在 AlphaFold 预测的未解析膜蛋白复合物上评估；与体内交联数据交叉验证</td>
+<td>Methods 数据集构建节</td>
+</tr>
+<tr>
+<td>5Å 重原子距离阈值过于简化</td>
+<td>不同界面类型（永久 vs 瞬时、同源 vs 异源）的接触距离分布不同；单一阈值可能混淆界面类型</td>
+<td>界面类型影响功能解读（如药物设计需区分永久结合位点与瞬时调控位点）</td>
+<td>按界面类型分层评估；引入接触面积或残基埋藏表面积作为辅助标签</td>
+<td>Methods 标签定义节</td>
+</tr>
+<tr>
+<td>集成选择仅在验证集上优化</td>
+<td>验证集驱动的模型选择可能过拟合验证集分布；测试集与验证集同源（同一 PDB 体系）</td>
+<td>报告的 0.643 AP 可能高估真实世界泛化性能</td>
+<td>在完全独立的新解析结构上评估；跨时间切分验证</td>
+<td>Methods 数据划分节</td>
+</tr>
+<tr>
+<td>对照实验未报告统计显著性</td>
+<td>文中报告对照 AP 值但未提供置信区间或显著性检验</td>
+<td>无法判断「跨家族集成增益」是否在统计上稳健</td>
+<td>要求作者提供配对 bootstrap 检验的完整结果</td>
+<td>Results 图 2a 与 Supplementary Table 1</td>
+</tr>
+<tr>
+<td>可溶性蛋白迁移测试的基线选择有限</td>
+<td>仅与 Kyte-Doolittle 疏水性排序比较，未与专用可溶性蛋白界面预测器比较</td>
+<td>迁移性能的「不足」可能被夸大或低估</td>
+<td>增加 SPPIDER、PredHS 等可溶性蛋白专用基线</td>
+<td>Supplementary Tables 16-19</td>
+</tr>
+<tr>
+<td>图谱的「reviewed」标准未明确</td>
+<td>80,619 条 reviewed 序列的筛选标准（人工审核 vs. 自动标记）未说明</td>
+<td>影响图谱的可靠性和可复现性</td>
+<td>核查 UniProt reviewed 定义及筛选流程</td>
+<td>Results 图 8 与 Methods 蛋白质组规模节</td>
+</tr>
+<tr>
+<td>未报告推理时间与资源消耗</td>
+<td>三个 pLM 的推理成本仅在 Discussion 中定性提及</td>
+<td>影响实际应用可行性评估</td>
+<td>要求提供 FLOPs、内存占用、单序列推理延迟</td>
+<td>Discussion 第 3 段</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题写「Agent 提炼的知识候选」</p>
+</blockquote>
+<h3>可迁移的概念</h3>
+<ol>
+<li>
+<p><strong>「表征正交性」优于「参数规模」</strong>：CHORUS 最核心的可迁移洞见是——集成学习的收益来自信息源的多样性（不同 pLM 家族、不同层深、不同归纳偏置），而非模型数量或参数量的堆叠。对照实验显示，跨 pLM 家族集成增益（0.643 vs 单模型最优 0.614）远大于同 pLM 内层深或种子的变化。<strong>迁移建议</strong>：在设计蛋白质预测模型时，与其扩大单一模型，不如系统探索多个预训练模型的表征互补性。</p>
+</li>
+<li>
+<p><strong>层深是未被充分利用的超参数</strong>：CHORUS 证明最优层因 pLM 家族和任务而异（ESM-2 在 layer 30，ProtT5 在 layer 18/24），且最优层通常不是最后一层。<strong>迁移建议</strong>：在冻结 pLM 做下游任务时，应系统搜索层深而非默认使用最后一层或平均池化。</p>
+</li>
+<li>
+<p><strong>「先预测、后验证」的生物物理一致性检查</strong>：CHORUS 不使用任何结构先验，但通过跨膜定位、螺旋连接度、配体位点正交性等探针验证预测结果与已知生物物理规律的一致性。<strong>迁移建议</strong>：在数据稀缺的蛋白质预测任务中，可用已知生物物理规律作为预测结果的验证锚点，而非仅依赖监督标签。</p>
+</li>
+<li>
+<p><strong>严格同源性隔离的评测协议</strong>：CHORUS 的 419 拓扑簇划分确保测试集与训练集无 ≥30% 序列同一性，且外部验证集经同样过滤。<strong>迁移建议</strong>：在蛋白质预测任务中，序列相似性聚类应作为数据划分的默认协议，否则性能估计会因泄漏而虚高。</p>
+</li>
+</ol>
+<h3>可迁移的方法</h3>
+<ol start="5">
+<li>
+<p><strong>多 pLM × 多层 × 多头的高通量筛选流程</strong>：57 个候选模型在验证集上按 AP 排序、每家族保留 top 2 的流程，是一种计算高效的集成选择策略。<strong>迁移建议</strong>：在算力受限时，可先在小验证集上筛选候选组合，再对选中的少数模型进行全量训练。</p>
+</li>
+<li>
+<p><strong>标准化 AP 校正长度偏差</strong>：CHORUS 用标准化 AP（按界面残基比例校正）消除了序列长度对性能评估的干扰。<strong>迁移建议</strong>：在残基级预测任务中，报告标准化指标可避免长序列因正类比例低而被低估。</p>
+</li>
+<li>
+<p><strong>配体位点正交性分析</strong>：通过 O/E 比率检验预测的 PPI 界面是否与已知配体结合位点系统性重叠，作为模型特异性的验证。<strong>迁移建议</strong>：在预测功能位点时，可用已知的互补功能注释（如配体结合、翻译后修饰）做交叉验证，确认模型捕捉的是目标信号而非通用特征。</p>
+</li>
+</ol>
+<h3>可迁移的实验设计</h3>
+<ol start="8">
+<li>
+<p><strong>多维度消融设计</strong>：CHORUS 的消融实验系统覆盖了种子变化、坐标基变换、层深替换、家族替换、头替换、参数扩展六个维度，每个维度对应一个具体问题（随机性？表征？深度？家族？架构？规模？）。<strong>迁移建议</strong>：消融实验应针对每个设计决策设置对照，而非仅做「有/无」二值消融。</p>
+</li>
+<li>
+<p><strong>外部验证的双重设置</strong>：既有专门化的膜蛋白基准（CompData101 等），又有跨域迁移测试（可溶性蛋白），分别检验领域内泛化和跨域迁移。<strong>迁移建议</strong>：在领域专精模型评估中，应同时报告领域内和跨域性能，以刻画模型的适用边界。</p>
+</li>
+</ol>
+<h3>对蛋白质结构计算研究的启示 [Analysis]</h3>
+<ol start="10">
+<li>
+<p><strong>序列-only 界面预测可作为结构预测的前置过滤器</strong>：CHORUS 在无结构、无 MSA 条件下达到 0.643 AP，提示在 AlphaFold 无法处理的孤儿膜蛋白上，序列嵌入可能提供足够的界面信号。<strong>潜在方向</strong>：将 CHORUS 的界面概率作为约束条件输入共折叠模型（如 AlphaFold-Multimer），可能改善膜蛋白复合物预测的采样效率。</p>
+</li>
+<li>
+<p><strong>pLM 层深的生物物理对应性</strong>：CHORUS 的层深分析显示不同层编码不同层次的膜蛋白信息（跨膜定位 vs. 接触密度 vs. 保守性），这为「pLM 内部表征的生物学可解释性」提供了新证据。<strong>潜在方向</strong>：可进一步探索层深选择与特定生物物理属性（如脂质暴露、构象灵活性）之间的系统对应关系。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, main text, methods) as provided</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, claims versus evidence, and suitability for a high-impact general audience</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present CHORUS, a sequence-only deep learning framework that predicts residue-level protein-protein interaction (PPI) interfaces in alpha-helical transmembrane proteins. The method uses an ensemble of six predictors spanning three protein language model families and three neural architectures, and is claimed to outperform 18 existing methods on a large independent test set. The authors also present a proteome-scale atlas of predictions for 80,619 reviewed transmembrane proteins.</li>
+<li><strong>Visible evidence base</strong> Abstract, Results sections (narrative only, no figures or tables visible), Methods sections, supplementary table references</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, all supplementary tables, all supplementary figures, benchmark dataset details, training/validation/test split compositions, hyperparameter tables, and the actual web resource contents</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This manuscript presents a potentially valuable contribution to the field of membrane protein interaction prediction. The core idea of leveraging cross-pLM ensemble diversity for sequence-only interface prediction is timely and the reported performance gains are notable. However, the manuscript as provided is incomplete in critical ways. The Results section is presented as narrative without any of the referenced figures or tables, making it impossible to verify the central claims. The methods are described in detail, but key validation steps, ablation study results, and statistical comparisons cannot be assessed. The claims of superiority over 18 existing methods rest entirely on data that are not visible. The proteome-scale atlas is a significant resource claim, but its utility and quality cannot be evaluated from the provided material. The manuscript has potential, but the evidence base is insufficient for a definitive assessment.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Computational biologists working on protein-protein interaction prediction, particularly those focused on membrane proteins, would be the primary audience. Researchers studying membrane protein structure, function, and assembly would also find the atlas resource valuable. The methodological approach of cross-pLM ensembling may interest the broader deep learning for biology community. The potential application to allosteric drug design targeting membrane proteins could attract pharmaceutical researchers. The work addresses a genuine gap, as membrane protein interfaces remain poorly characterized compared to soluble proteins.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong>
+  1. The problem is well-motivated and important. Membrane protein interactions are understudied and experimentally challenging.
+  2. The sequence-only, partner-agnostic formulation is elegant and practically useful, removing dependencies on structures, MSAs, and partner identification.
+  3. The systematic exploration of the pLM family-layer-architecture space is methodologically sound and thorough.
+  4. The construction of a large, leakage-controlled benchmark with strict sequence identity thresholds is commendable.
+  5. The proteome-scale atlas is a potentially valuable community resource.
+  6. The biological analyses (BioLiP orthogonality, FunFam conservation) address important questions about what the model actually learns.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence completeness</li>
+<li><strong>Claim pointer</strong> "CHORUS outperforms 18 established sequence- and structure-based methods across 4,655 homology-isolated test contexts (average precision: 0.643)"</li>
+<li><strong>Evidence pointer</strong> Figure 3, Supplementary Tables 10 and 11, location not provided</li>
+<li><strong>Concern</strong> The central performance claim cannot be verified. The manuscript references Figure 3 and supplementary tables for the benchmark comparison, but none of these are visible in the provided material. The comparison methodology, the specific configurations of the 18 baseline methods, the statistical significance of the 0.030 improvement over ScanNet-MSA, and the handling of methods with incomplete coverage are all unassessable.</li>
+<li><strong>Why it matters</strong> This is the core claim of the paper. Without the actual benchmark results, the reader cannot determine whether CHORUS genuinely advances the state of the art or whether the improvement is marginal, method-specific, or an artifact of evaluation choices.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the full benchmark results table with per-method AP, AUROC, F1, MCC values, coverage statistics, and confidence intervals. Show the PR and ROC curves for all methods. Detail the exact input configurations for each baseline method and justify any deviations from their native pipelines.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological validation</li>
+<li><strong>Claim pointer</strong> "an optimal ensemble that systematically synthesizes complementary latent representations extracted across different model families (ESM-2, ESM-C, and ProtT5) and layer depths"</li>
+<li><strong>Evidence pointer</strong> Figure 2, Supplementary Figures 1 and 2, Supplementary Tables 1-9, location not provided</li>
+<li><strong>Concern</strong> The ensemble construction and its claimed optimality are not demonstrated. The selection of the six constituent models (two per family) is described as based on validation performance, but the full 57-model comparison, the ablation studies, and the control experiments (random seeds, coordinate transforms, depth variations, uniform duplication) are all referenced but not visible. The claim that cross-family diversity provides orthogonal value beyond intra-family variation requires the actual ablation data.</li>
+<li><strong>Why it matters</strong> The methodological contribution of the paper rests on the demonstration that cross-pLM ensembling is superior to simpler alternatives. Without the ablation and control data, the reader cannot determine whether the performance gain comes from ensembling per se, from the specific model choices, or from increased parameter count.</li>
+<li>
+<p><strong>Resolution test</strong> Show the full 57-model performance landscape, the ablation results for each control condition, the pairwise model correlation matrix, and the leave-one-out ensemble results. Demonstrate that the six-model ensemble is statistically superior to each control.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> External validation</li>
+<li><strong>Claim pointer</strong> "we first evaluated CHORUS on three established benchmarks specialized for transmembrane proteins: CompData101 (101 chains), TestData36 (36 chains), and IndepData30 (30 chains)"</li>
+<li><strong>Evidence pointer</strong> Supplementary Tables 12 and 13, location not provided</li>
+<li><strong>Concern</strong> The external validation results are not visible. The retraining protocol (excluding sequences with ≥30% identity to external sets) is described, but the actual performance numbers, the comparison to published results on these benchmarks, and the behavior of the model under the retrained versus released weights are all unassessable.</li>
+<li><strong>Why it matters</strong> External benchmarks are critical for establishing generalizability beyond the internal test split. The choice of these specific benchmarks, their overlap with the training data, and the performance relative to published baselines on these datasets are essential for contextualizing the method's contribution.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the full external benchmark results with per-dataset AP, AUROC, and comparison to published state-of-the-art on these specific benchmarks. Clarify the overlap between external benchmarks and training data.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Biological interpretation</li>
+<li><strong>Claim pointer</strong> "CHORUS-predicted interaction sites do not preferentially overlap annotated protein-ligand binding sites" and "modest but reproducible association between predicted PPI sites and evolutionary conservation"</li>
+<li><strong>Evidence pointer</strong> Supplementary Figure 1, Figure 6, location not provided</li>
+<li><strong>Concern</strong> The biological analyses are described in the text but the results are not visible. The BioLiP orthogonality analysis and the FunFam conservation analysis are important for establishing that the model learns PPI-specific features rather than generic binding-site or conservation signals. The observed-to-expected ratios and their confidence intervals are stated in text but the underlying distributions, the sensitivity analyses, and the robustness of these findings cannot be evaluated.</li>
+<li><strong>Why it matters</strong> These analyses address the interpretability and specificity of the model. They are important for convincing readers that the model captures genuine PPI interface properties and for guiding future applications.</li>
+<li>
+<p><strong>Resolution test</strong> Show the full distributions of observed and expected overlaps, the bootstrap confidence intervals, the stratification by membrane region, and the sensitivity of results to thresholds and annotation sources.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Resource validation</li>
+<li><strong>Claim pointer</strong> "we deliver the CHORUS Atlas, providing precomputed, residue-resolved interaction landscapes for 80,619 reviewed transmembrane proteins spanning 4,918 species and 33.7 million residues"</li>
+<li><strong>Evidence pointer</strong> Figure 8, Supplementary Table 15, web resource, location not provided</li>
+<li><strong>Concern</strong> The atlas is a major deliverable but its quality and utility cannot be assessed. The validation of atlas predictions against known complexes, the consistency of predictions across homologous proteins, the handling of isoforms and fragments, and the practical usability of the web interface are all unverifiable from the provided material.</li>
+<li><strong>Why it matters</strong> A proteome-scale resource must be reliable and usable. Errors in the atlas could propagate to many downstream studies. The validation of the atlas as a resource is as important as the validation of the underlying model.</li>
+<li>
+<p><strong>Resolution test</strong> Provide case studies of known complexes with experimental interface data, show consistency checks across homologous proteins, and demonstrate the web interface functionality.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract states "amplified predictive capacity within the lipid-embedded core (0.746)" but does not specify the comparison baseline for this amplification. Is this the same metric (AP) as the overall result? What is the comparable value for the best baseline method in this region?</li>
+<li>
+<p><strong>Required correction</strong> Clarify the metric and provide the baseline comparison in the abstract or specify that full details are in the results.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical detail</li>
+<li><strong>Affected element</strong> Methods, Dataset construction</li>
+<li><strong>Evidence pointer</strong> Methods, location not provided</li>
+<li><strong>Concern</strong> The dataset construction section mentions filtering based on sequence coverage and identity but does not specify the exact thresholds for excluding structures with poor quality or the criteria for selecting representative chains from multi-chain complexes.</li>
+<li>
+<p><strong>Required correction</strong> Provide the exact filtering thresholds and the criteria for chain selection in the dataset construction.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods, Optimization</li>
+<li><strong>Evidence pointer</strong> Methods, location not provided</li>
+<li><strong>Concern</strong> The learning rate is described as "constant" but the specific value is not stated in the text. The batch size and number of training steps are also not explicitly given.</li>
+<li>
+<p><strong>Required correction</strong> Provide the exact learning rate, batch size, and training duration in the optimization section or in a hyperparameter table.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Results, Performance evaluation</li>
+<li><strong>Evidence pointer</strong> Results, location not provided</li>
+<li><strong>Concern</strong> The manuscript reports point estimates for AP and other metrics but does not describe the variability across the 55 test clusters. The cluster bootstrap is mentioned in Methods but the resulting confidence intervals are not reported in the Results text.</li>
+<li>
+<p><strong>Required correction</strong> Report confidence intervals for the main performance metrics and for the comparison to baseline methods.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Results, External validation</li>
+<li><strong>Evidence pointer</strong> Results, location not provided</li>
+<li><strong>Concern</strong> The text mentions 15 general-protein datasets or docking views from literature but does not describe the results on these datasets in the Results section.</li>
+<li>
+<p><strong>Required correction</strong> Either report the results on these additional datasets or clarify that they are only used in supplementary analyses.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Accessibility</li>
+<li><strong>Affected element</strong> Atlas</li>
+<li><strong>Evidence pointer</strong> Data availability, location not provided</li>
+<li><strong>Concern</strong> The atlas URL is provided but there is no description of the download options, API access, or licensing terms for the resource.</li>
+<li>
+<p><strong>Required correction</strong> Add a description of the atlas access options, including bulk download and any programmatic access.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong>
+  1. The central benchmark comparison (R1-M1) is not visible and must be provided in full.
+  2. The ensemble construction and ablation studies (R1-M2) are not visible and must be provided.
+  3. The external validation results (R1-M3) are not visible and must be provided.
+  4. The biological analyses (R1-M4) are not visible and must be provided.
+  5. The atlas validation (R1-M5) is not visible and must be provided.</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong></p>
+</li>
+<li><strong>Originality</strong> The concept of cross-pLM ensemble diversity for membrane protein interface prediction is a reasonable extension of existing work, but the field is moving rapidly and the specific contribution needs to be positioned against recent developments. The partner-agnostic formulation is not entirely new, but the systematic exploration of the model space is thorough. The originality is moderate and depends on the demonstrated performance gains.</li>
+<li><strong>Scientific importance</strong> Membrane protein interactions are of high biological and therapeutic importance. A reliable sequence-only predictor would be valuable. The atlas resource could be impactful. However, the importance is contingent on the demonstrated reliability and utility of the predictions.</li>
+<li><strong>Interdisciplinary readership</strong> The topic bridges computational biology, structural biology, and membrane biochemistry. The writing is accessible to a computational audience but may be dense for experimentalists. The potential applications to drug discovery broaden the appeal.</li>
+<li><strong>Technical soundness</strong> The methodological framework is well-conceived, with careful attention to data leakage, cluster-based evaluation, and ensemble construction. However, the technical soundness cannot be fully assessed without the missing results. The statistical methods described are appropriate, but their application cannot be verified.</li>
+<li>
+<p><strong>Readability for nonspecialists</strong> The abstract is clear and the motivation is well-articulated. The Results section is dense and assumes familiarity with PPI prediction methods. The manuscript would benefit from a figure that visually summarizes the workflow and key results for a broader audience.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript has a sound methodological framework and addresses an important problem, but the central claims cannot be verified without the missing figures, tables, and supplementary materials. The authors should be invited to resubmit with the complete evidence base. If the benchmark results, ablation studies, and external validations support the claims as stated, the work could be a valuable contribution. The decision should be reconsidered after the full evidence is available.</p>
+</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

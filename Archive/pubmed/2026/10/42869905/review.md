@@ -1,0 +1,97 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, methods) with tables and figure legends; supplementary materials not provided.
+- **Assessment boundary** Scientific claims, experimental design, data interpretation, and generalizability as presented in the provided text; no assessment of supplementary figures, data files, or peer review history.
+- **Shared manuscript claim summary** The authors report a design principle for converting Rossmann fold enzymes from NAD(P)/H dependence to NMN(H) specificity by mutating the conserved second glycine of the GxGxxG motif and installing a hydrogen-bonding partner. They demonstrate this on phosphite dehydrogenase (PTDH), yielding variants NRC-01 and NRC-02 with high NMN(H) selectivity and ~240-fold improved productivity in a model biotransformation, and extend the approach to 12 other diverse enzymes with variable success.
+- **Visible evidence base** Tables 1 and 2 (kinetic parameters); Figures 1–5 (legends only, no actual figures); Methods section; text descriptions of experimental outcomes.
+- **Missing materials affecting confidence** Actual figures and supplementary information (Supplementary Figs. 1–16, Supplementary Tables 1–2, Supplementary Data 1–2) are not provided; raw data files not accessible; structural models and RosettaLigand scoring details not fully described; no sequence alignment output shown.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a conceptually interesting and potentially useful approach to engineering orthogonal redox biocatalysts by targeting the conserved Rossmann fold GxGxxG motif. The central claim, that a paired glycine mutation and hydrogen-bonding partner can selectively disrupt NAD(P)/H binding while retaining NMN(H) activity, is supported by kinetic data for PTDH variants and by activity ratios across several other enzymes. However, the evidence base is incomplete in the provided material: figures are not visible, supplementary data are absent, and several quantitative claims (e.g., 240-fold improvement, 97% purity) cannot be independently verified. The generalizability claim is weakened by the observation that 5 of 6 enzymes deviating from the GxGxxG consensus did not respond predictably, and the predictive rule mentioned in the abstract is not clearly articulated in the text. The work is likely of interest to the biocatalysis and metabolic engineering community, but the case for broad applicability and mechanistic depth is not fully established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in biocatalysis, enzyme engineering, and metabolic engineering will be interested in the potential to create orthogonal cofactor systems that avoid interference from native NAD(P)/H metabolism. The work also speaks to fundamental questions about cofactor recognition in Rossmann fold enzymes, which may interest structural biologists and protein designers. Industrial biotechnology groups working on noncanonical cofactor systems or on improving product purity in whole-cell biotransformations would find the PTDH variants and the design principle relevant.
+- **Major strengths**
+  - The design principle is clearly stated and mechanistically motivated by the conserved geometry of the GxGxxG motif.
+  - The kinetic characterization of PTDH variants is thorough, including both apparent and full steady-state parameters.
+  - The demonstration of in vivo orthogonality in crude lysates and resting cells addresses a practical bottleneck in biocatalysis.
+  - The inclusion of 12 additional enzymes provides a useful, if mixed, test of generalizability.
+  - The discussion of trade-offs between activity and selectivity is honest and well framed.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract states that NRC-01 and NRC-02 achieve "~240-fold higher productivity than existing catalysts" for NMNH-dependent biotransformation.
+  - **Evidence pointer** Results section, "NRC-01 and NRC-02 do not crosstalk with NAD(P)+ pool in vivo"; Figure 3; location not provided for the specific 240-fold comparison.
+  - **Concern** The 240-fold improvement claim is central to the significance of the work, but the comparison basis is unclear. It is not specified whether this is relative to GDH Ortho, to wild-type PTDH with NAD+, or to another benchmark. The text mentions GDH Ortho achieving ~2% conversion at ~80% purity after 48 h, while NRC-01 achieves 100% conversion at ≥88% purity after 10 h, but these are different metrics (conversion and purity vs. productivity). The productivity calculation is not shown, and the denominator (existing catalysts) is ambiguous.
+  - **Why it matters** Without a clear and verifiable basis for the 240-fold claim, the headline quantitative advantage of the system cannot be assessed. This is a key selling point for the practical utility of the enzymes.
+  - **Resolution test** Provide a direct comparison of productivity (e.g., mmol product per g protein per h) for NRC-01, NRC-02, GDH Ortho, and wild-type PTDH under identical conditions, with error bars and statistical analysis. Clarify the benchmark used for the fold-improvement calculation.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Generalizability
+  - **Claim pointer** The abstract and discussion claim that the design principle offers "a general route to orthogonal redox biocatalysts" and that a "potential rule predicting the translatability of this method" was revealed.
+  - **Evidence pointer** Results section, "Translating the controlled Rossmann disruption principle to various Rossmann fold oxidoreductases"; Figure 5; Supplementary Figs. 8–11.
+  - **Concern** The text reports that 5 of 6 enzymes deviating from the GxGxxG consensus did not respond predictably, and even among the 7 successful cases, the degree of selectivity and retained activity varies widely. The "potential rule" is not explicitly stated anywhere in the provided text. The claim of generalizability is therefore not supported by a clear, articulated predictive framework.
+  - **Why it matters** The broader impact of the work depends on whether other researchers can apply the principle to their enzymes of interest. Without a stated rule or decision tree, the reader cannot determine a priori which enzymes will be amenable to this engineering strategy.
+  - **Resolution test** State the proposed rule explicitly (e.g., based on sequence motif, structural geometry, or cofactor binding mode). Provide a table or figure showing the relationship between the rule's criteria and the observed success or failure across all 13 enzymes. If no rule can be stated, temper the generalizability claim accordingly.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Mechanistic evidence
+  - **Claim pointer** The authors state that RosettaLigand modeling predicts that the G154Q-K177E hydrogen bond "selectively clashes with the β-phosphate of NAD(P)/H" and that this is the mechanistic basis for selectivity.
+  - **Evidence pointer** Results section, "Mechanistic studies of the mutations by computational modeling"; Figure 2b–e; Methods, "Rosetta modeling".
+  - **Concern** The computational evidence is presented as supporting the mechanism, but the text does not provide quantitative metrics for the "dispersed" versus "stable" binding pose distributions. No scores, RMSD values, or statistical comparisons between ensembles are given. The claim that the hydrogen bond "angles the G154Q away" is based on visual inspection of models, which is not a rigorous test.
+  - **Why it matters** The mechanistic model is the intellectual core of the design principle. If the computational predictions are not quantitatively supported, the mechanism remains speculative, and the design principle is less credible.
+  - **Resolution test** Provide quantitative descriptors of the pose ensembles (e.g., mean pairwise RMSD, clustering metrics, interaction energies) with statistical tests comparing wild-type vs. mutant for each cofactor. Ideally, include experimental validation such as co-crystal structures or site-directed mutagenesis of the predicted hydrogen-bonding partner to confirm the mechanism.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Data completeness
+  - **Claim pointer** The authors report kinetic parameters for NRC-01 and NRC-02 in Tables 1 and 2, including KM and kcat values.
+  - **Evidence pointer** Tables 1 and 2; Supplementary Figs. 1 and 2.
+  - **Concern** For NRC-01 with NMN+, the full steady-state fit produced non-identifiable Kicof and KMsub values (correlation r = −0.9996). The authors note this in the table footnote but still report the product of these parameters. This is a statistically problematic situation that should be acknowledged more prominently, and the reported values should be interpreted with caution.
+  - **Why it matters** The kinetic parameters are used to support claims of improved NMN(H) affinity and selectivity. If the parameters are not independently identifiable, the quantitative claims about NMN(H) binding are not robust.
+  - **Resolution test** Report the confidence intervals for all fitted parameters. Consider alternative experimental designs (e.g., varying both substrates over a wider range, using alternative inhibitors) to break the correlation. If parameters cannot be identified, state this limitation explicitly and avoid over-interpreting the fitted values.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, "~240-fold higher productivity"
+  - **Issue** The abstract states the fold improvement without specifying the comparator. This is ambiguous and could be misread.
+  - **Required correction** Specify the comparator in the abstract (e.g., "compared to the previously reported GDH Ortho system").
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods, "Rosetta modeling"
+  - **Evidence pointer** Methods section, "Rosetta modeling"
+  - **Issue** The description of the RosettaLigand protocol lacks key parameters (e.g., number of Monte Carlo rounds, temperature, ligand flexibility settings, score function weights). This limits reproducibility.
+  - **Required correction** Provide a detailed protocol or reference to a prior publication with full parameters. Consider depositing scripts and input files in a public repository.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Figure 3b and 3c
+  - **Evidence pointer** Figure 3; text describing biotransformation results
+  - **Issue** The text reports mean values with standard deviations but does not state the number of biological replicates or the statistical test used for comparisons between conditions.
+  - **Required correction** State the number of replicates and the statistical test used (e.g., unpaired t-test, ANOVA) in the figure legend or Methods.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Results, "Translating the controlled Rossmann disruption principle"
+  - **Evidence pointer** Figure 5a; text
+  - **Issue** The term "orthogonal" is used to describe enzymes with reduced but not abolished NAD(P)/H activity. The residual activity may still be significant in some contexts.
+  - **Required correction** Define "orthogonal" operationally (e.g., ratio of NMN(H) to NAD(P)/H activity) and acknowledge residual activity where relevant.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion section
+  - **Issue** The discussion mentions "two possible approaches" to compensate for the loss of the NAD+ tail but does not elaborate on how these might be implemented for the enzymes described.
+  - **Required correction** Expand the discussion with concrete examples or references to existing strategies for strengthening substrate interactions or tuning conformational dynamics.
+
+## Risk / unsupported claims
+- The "~240-fold higher productivity" claim is not verifiable from the provided text; the basis for comparison is unclear.
+- The "potential rule predicting the translatability of this method" is mentioned in the abstract but never stated in the text; this claim is unsupported.
+- The claim that the design principle offers "a general route to orthogonal redox biocatalysts" is weakened by the mixed results across the 12 additional enzymes and is not fully supported.
+- The mechanistic interpretation based on RosettaLigand pose distributions is not quantitatively supported; the claim that the hydrogen bond "selectively clashes with the β-phosphate" is speculative without statistical or structural validation.
+- The statement that NRC-01 and NRC-02 "eliminate electron leaking to NAD(P)H-dependent side reactions" is too strong; the data show reduced but not eliminated activity, and the in vivo experiments do not directly measure electron leakage.
+- The growth rescue experiment (Supplementary Figs. 6–7) is described but results are not presented in the provided text; the claim that NMN(H) cycling can sustain major metabolic demand is not assessable.

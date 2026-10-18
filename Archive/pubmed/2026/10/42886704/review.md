@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no figures, methods, or supplementary material were available for evaluation
+- **Shared manuscript claim summary** The authors report a cryo-EM structural study of a minimal complex between the commensal metallopeptidase IgAse and an IgA2 F(ab)' fragment, proposing a "knob-in-hole" gate mechanism in the C(H)1 domain that enables subclass-independent hinge cleavage. Two states along the reaction coordinate are described, supported by a crystal structure, point mutations, and molecular dynamics calculations.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary data provided
+- **Missing materials affecting confidence** Full manuscript, all figures, experimental methods, cryo-EM data processing details, mutagenesis data, molecular dynamics parameters, and statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially significant structural mechanism for IgAse-mediated cleavage of both IgA subclasses, which would be of interest to the mucosal immunology and host-microbe interaction communities. However, the evidence base available for review is limited to the abstract, and several claims cannot be independently evaluated without access to the underlying data. The proposed mechanism is novel and mechanistically plausible, but the strength of the structural and functional validation cannot be assessed from the supplied material.
+- **Who would be interested in the results, and why** Researchers studying mucosal immunity, IgA biology, bacterial proteases and virulence factors, host-microbe interactions at mucosal surfaces, and structural biologists interested in enzyme-substrate recognition mechanisms. The work may also be relevant to those developing IgA-based therapeutics or vaccines targeting mucosal pathogens.
+- **Major strengths** The study addresses a clear and important question regarding the substrate specificity of a bacterial IgA protease. The proposed two-state mechanism along the reaction coordinate is conceptually elegant and provides a structural framework for understanding subclass-independent cleavage. The combination of cryo-EM, X-ray crystallography, mutagenesis, and molecular dynamics represents a multi-pronged approach that, if properly executed, would lend strong support to the conclusions.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The cryo-EM density "strongly supporting two states along the cleavage reaction coordinate, a 'recognition complex' and a subsequent 'precatalytic complex'"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims two distinct conformational states are resolved by single-particle cryo-EM, but no information is provided regarding the resolution of the maps, the number of particles, the classification strategy, or the statistical confidence in the assignment of particles to each state. Without these details, it is impossible to assess whether the two states are genuinely distinct or an artifact of 3D classification.
+  - **Why it matters** The central mechanistic claim rests on the existence of two discrete states along the reaction coordinate. If the classification is not robustly supported, the entire proposed mechanism is undermined.
+  - **Resolution test** Provide cryo-EM data quality metrics, including gold-standard FSC curves, local resolution estimates, particle counts per class, and a description of the 3D classification strategy with evidence that the two states are reproducibly obtained and statistically distinct.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "point mutations disrupting the C(H)1:CD interface" validate the proposed gate mechanism
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that point mutations disrupting the C(H)1:CD interface validate the mechanism, but no details are given on which residues were mutated, what functional assays were performed, or the magnitude of the observed effects. Without this information, the functional validation cannot be assessed.
+  - **Why it matters** The structural observations alone do not establish that the proposed interface is functionally relevant. The mutagenesis data are essential to link the structural model to biological function.
+  - **Resolution test** Provide a table of mutations, the rationale for each, the assays used (e.g., cleavage assays, binding measurements), and quantitative results with appropriate statistical analysis demonstrating that disruption of the interface impairs or abolishes IgA cleavage.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "molecular dynamics calculations" provide a structural framework for subclass-independent IgA cleavage
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract mentions molecular dynamics calculations but provides no information on the simulation protocol, force field, simulation length, system setup, or how the calculations support the proposed mechanism. It is unclear whether the simulations were used to test the stability of the proposed states, to explore the conformational transition, or for some other purpose.
+  - **Why it matters** Molecular dynamics results can be highly sensitive to simulation parameters and analysis choices. Without methodological details, the contribution of these calculations to the overall conclusion cannot be evaluated.
+  - **Resolution test** Describe the simulation system, force field, water model, simulation length, and analysis methods. Show that the simulations are converged and that the key observations (e.g., knob-in-hole binding, SS2 rotation) are reproducible across independent simulations.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract uses several domain abbreviations (CD, WD, V(L), C(L), V(H), C(H)1, SS2) without defining them in the abstract itself. While these may be defined in the full manuscript, the abstract should be self-contained for readers from related fields.
+  - **Required correction** Define all abbreviations at first use in the abstract, or minimize their use in favor of descriptive terms.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that IgAse targets "both subclasses but no other protein," but does not provide any evidence for this claim of absolute specificity. It is unclear whether this was demonstrated in previous work or in the current study.
+  - **Required correction** Clarify whether this specificity claim is established in the current study or cited from prior work, and provide a reference or data pointer.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that the "recognition complex" and "precatalytic complex" are resolved, but does not specify whether these are the only two states observed or whether additional states were present but not resolved.
+  - **Required correction** Clarify whether the two states represent the complete set of observed conformations or a subset of a larger conformational landscape.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The structural evidence for two states, the functional validation via mutagenesis, and the molecular dynamics support are all essential to the central claim and cannot be evaluated from the abstract alone.
+- **Assessment against Nature-style criteria** Originality: The proposed "knob-in-hole" gate mechanism appears novel and distinct from previously described IgA protease mechanisms. Scientific importance: The work addresses a fundamental question in mucosal immunity and host-microbe interactions, with potential implications for understanding IgA resistance and susceptibility to bacterial proteases. Interdisciplinary readership: The topic bridges structural biology, immunology, and microbiology, and would appeal to a broad audience if the findings are robust. Technical soundness: Cannot be assessed from the abstract alone; the cryo-EM, mutagenesis, and MD claims require full methodological scrutiny. Readability for nonspecialists: The abstract is dense with domain abbreviations and structural terminology, which may limit accessibility for readers outside structural biology.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an intriguing and potentially important mechanism, but the central claims regarding the two cryo-EM states, the functional validation, and the molecular dynamics support cannot be evaluated without the full manuscript and data. A supportive recommendation would require that the technical concerns be resolved through access to the complete methods and results.
+
+## Risk / unsupported claims
+- The claim that the cryo-EM density "strongly supports" two states along the reaction coordinate is unsupported without resolution and classification metrics.
+- The claim that point mutations "disrupting the C(H)1:CD interface" validate the mechanism is unsupported without mutation details and functional assay results.
+- The claim that molecular dynamics calculations "provide a structural framework" is unsupported without simulation details.
+- The claim that IgAse targets "no other protein" is unverifiable from the abstract and may require additional specificity data.
+- The functional significance of the proposed SS2 rotation and hinge delivery mechanism cannot be assessed without kinetic or biochemical data linking the structural states to cleavage activity.

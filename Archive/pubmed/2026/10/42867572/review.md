@@ -1,0 +1,91 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions presented in the abstract; no full text, figures, tables, or supplementary materials were provided for evaluation
+- **Shared manuscript claim summary** The abstract proposes an extended definition of plant-derived multifunctional inhibitors (MFIs), reviews their structural organization, inhibitory mechanisms, evolutionary diversification, and computational advances, and discusses applications and challenges in crop protection and biotechnology
+- **Visible evidence base** Abstract text only; no primary data, figures, tables, or references were supplied
+- **Missing materials affecting confidence** Full manuscript text, all figures and tables, reference list, methodological details, and any primary experimental or computational data
+
+## Reviewer
+- **Overall assessment** The abstract presents a broad and potentially useful conceptual review of plant-derived multifunctional protease and alpha-amylase inhibitors. The proposed extended definition is interesting and could help unify a fragmented literature. However, the abstract is largely descriptive and programmatic, and the absence of the full text prevents assessment of whether the review provides critical synthesis, balanced coverage, or novel insights beyond existing reviews. The scientific case for the extended definition and the claimed advances in structural biology and engineering is not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in plant defense biology, insect-plant interactions, protein biochemistry, and structural biology would find this review relevant. Those working on crop protection, biopesticide development, and food biotechnology may also be interested in the applied aspects. The review could serve as an entry point for newcomers to the field, but specialists may find limited novelty unless the full text offers deeper synthesis.
+- **Major strengths** The abstract identifies a timely and important topic, namely multifunctional inhibitors that simultaneously target protein and carbohydrate digestion. The proposed extended definition is a potentially valuable conceptual contribution. The coverage of computational methods, including AlphaFold, molecular docking, and molecular dynamics, reflects current trends and may attract a broad readership. The explicit discussion of challenges such as insect adaptation and resistance is commendable.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that MFIs constitute a "separate functional group" and that the proposed extended definition encompasses inhibitors acting on enzymes of the same substrate pathway, such as alpha-amylase/alpha-glucosidase and trypsin/chymotrypsin systems
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The justification for the extended definition is not presented. The abstract does not explain why inhibitors acting on enzymes of the same pathway should be grouped with classical MFIs that act on structurally unrelated enzymes. The criteria for inclusion or exclusion are unclear, and no examples or comparative analysis are provided to support this conceptual reclassification.
+  - **Why it matters** The proposed definition is a central claim of the review. If the rationale is not rigorously developed, the review risks being seen as arbitrary reclassification rather than a meaningful scientific contribution. The definitional boundary directly affects how the literature is organized and interpreted.
+  - **Resolution test** The full text must provide a clear rationale, explicit criteria, and comparative examples that justify the extended definition. The authors should demonstrate how this definition improves upon existing classifications and what new insights it enables.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that "recent advances in computational structural biology, including molecular docking, molecular dynamics simulations, and AlphaFold-based protein structure prediction, have promoted mechanistic insights and enabled structure-guided engineering of improved inhibitors"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No specific examples, case studies, or comparative outcomes are provided to substantiate the claim that computational methods have led to improved inhibitors. The abstract does not indicate whether these advances are demonstrated in the reviewed literature or are aspirational. The phrase "enabled structure-guided engineering" implies a causal link that is not evidenced in the abstract.
+  - **Why it matters** This claim is central to the review's stated relevance and timeliness. If the full text does not provide concrete examples with quantitative outcomes, the claim remains unsupported and may overstate the maturity of computational approaches in this field.
+  - **Resolution test** The full text must present at least several documented cases where computational predictions were validated experimentally, with clear descriptions of how the methods contributed to inhibitor improvement. Quantitative metrics, such as binding affinity changes or inhibitory activity improvements, should be reported.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that "the evolutionary origin of MFIs through gene duplication, domain shuffling, sequence diversification and adaptive evolution" is discussed
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract does not indicate whether the evolutionary analysis is based on phylogenetic reconstructions, comparative genomics, or molecular evolution analyses. Without this information, it is impossible to assess whether the evolutionary claims are supported by data or are speculative. The abstract also does not mention any specific gene families or taxa analyzed.
+  - **Why it matters** Evolutionary claims require robust phylogenetic and statistical support. If the review merely summarizes existing hypotheses without critical evaluation, it adds little value. The absence of methodological detail in the abstract raises concerns about the depth of the evolutionary synthesis.
+  - **Resolution test** The full text must describe the types of evidence used, such as phylogenetic trees, selection analyses, or synteny data, and must critically evaluate the strength of the evidence for each proposed evolutionary mechanism.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scope and completeness
+  - **Claim pointer** The abstract states that "the applications in crop protection, development of biopesticides and food biotechnology, as well as the challenges regarding insect adaptation, evolution of resistance, biosafety and ecological impacts are critically discussed"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract lists these topics but does not indicate the depth or critical nature of the discussion. It is unclear whether the review provides a balanced assessment of trade-offs, such as efficacy versus ecological risk, or whether it merely catalogs potential applications. The term "critically discussed" is a claim that cannot be verified from the abstract.
+  - **Why it matters** For a review to be useful, it must go beyond listing applications and challenges. A critical discussion should weigh evidence, identify knowledge gaps, and propose research priorities. Without evidence of such analysis, the review may be perceived as superficial.
+  - **Resolution test** The full text should demonstrate critical analysis by comparing different application strategies, discussing conflicting evidence, and identifying specific unresolved questions with proposed approaches to address them.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Definition of MFIs
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "multifunctional inhibitors" is used without a clear operational definition. The abstract mentions "classical inhibitors acting on structurally unrelated enzymes" but does not specify how many targets or what degree of structural dissimilarity is required.
+  - **Required correction** Provide a precise operational definition in the abstract or early in the full text, including criteria for what constitutes "multifunctional" and how this differs from simply having multiple isoforms or broad specificity.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Precision
+  - **Affected element** Statement on structural organization
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that "most of the MFIs consist of single polypeptide chains with spatially separated inhibitory sites." This is presented as a general feature, but the qualifier "most" is vague and not quantified.
+  - **Required Correction** Specify the proportion or provide examples of exceptions. If the full text includes a survey, report the number of families and members analyzed.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Discussion of challenges
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions "biosafety and ecological impacts" but does not hint at the nature of these concerns, such as effects on non-target organisms or gene flow.
+  - **Required Correction** Add a brief indication of the specific biosafety and ecological issues discussed in the full text.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Abstract structure
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract is a single dense paragraph that covers many topics. This reduces readability for nonspecialists.
+  - **Required Correction** Consider restructuring the abstract into short thematic sentences or a brief structured format to improve clarity.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The extended definition lacks justification, the computational advances claim lacks specific evidence, and the evolutionary discussion lacks methodological grounding. These are central to the review's contribution and must be resolved in the full text.
+- **Assessment against Nature-style criteria** 
+  - Originality: The proposed extended definition has potential originality, but the abstract does not demonstrate how it differs from existing frameworks. The review appears to cover known ground without clear evidence of new synthesis.
+  - Scientific importance: The topic is important for plant defense and crop protection, but the abstract does not establish why this review is needed now or what gap it fills.
+  - Interdisciplinary readership: The topic bridges biochemistry, structural biology, evolution, and applied agriculture, which could attract a broad audience. However, the abstract is written in a way that assumes familiarity with inhibitor families.
+  - Technical soundness: Cannot be assessed from the abstract. The absence of methodological detail for the evolutionary and computational claims is concerning.
+  - Readability for nonspecialists: The abstract is dense and uses specialized terminology without sufficient context. It would be challenging for readers outside the immediate field.
+
+## Risk / unsupported claims
+- The claim that MFIs are a "separate functional group" is unsupported without a comparative analysis of existing classifications.
+- The claim that computational methods have "enabled structure-guided engineering of improved inhibitors" is unsupported without specific examples and outcomes.
+- The claim that the review "critically discusses" applications and challenges is unverifiable from the abstract.
+- The evolutionary mechanisms listed (gene duplication, domain shuffling, sequence diversification, adaptive evolution) are presented as established but no evidence is provided in the abstract.
+- The statement that "bridging current gaps in structural characterization and in vivo validation is necessary" is a reasonable conclusion but is not supported by specific identified gaps in the abstract.

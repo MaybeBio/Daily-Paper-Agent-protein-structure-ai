@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Benchmarking Boltz-2 for relative kinase-inhibitor interaction patterns across conformational states and resistance mutations. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Benchmarking Boltz-2 for relative kinase-inhibitor interaction patterns across conformational states and resistance mutations.</h1>
+      <div class="meta">Suenaga, Atsushi; Okimoto, Noriaki</div>
+      <div class="meta muted">
+        
+        <span class="journal">npj drug discovery</span>
+        · 2026-10-13
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42864408/">原文</a>
+      </div>
+      <p class="one-liner">该文系统评估生成式结构预测模型Boltz-2在激酶-抑制剂复合物上的预测能力，涉及蛋白-配体结构预测与构象状态，虽为基准测试而非方法创新，但聚焦蛋白质结构计算问题并具实用参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Generative structure-prediction models can directly predict protein-ligand complexes from sequence and ligand information, but their ability to capture pharmacologically relevant kinase-inhibitor interactions remains incompletely understood. We systematically evaluated Boltz-2 using curated biochemical IC(50) measurements across eight human kinases, nine clinically used inhibitors, and representative resistance mutations. Although predicted log(10)(IC(50)) values showed a compressed dynamic range relative to experimental measurements, mutation-dependent shifts in inhibitor sensitivity, inhibitor selectivity patterns, and overall potency rankings showed substantial agreement with the experimental patterns within the present benchmark. Predicted binding probability showed good discrimination between binder and non-binder pairs within the present benchmark and a consistent inverse relationship with experimental potency. Structural analyses showed that ligand-pose variability was associated with prediction behavior within the evaluated kinase-inhibitor systems, even when kinase-domain structures showed close agreement with the corresponding experimental structures. Larger ligand RMSD values were not associated with larger prediction errors in magnitude, but were linked to systematic shifts in prediction bias, indicating that ligand-pose accuracy and predictive utility are not equivalent measures of Boltz-2 performance. These findings suggest that, within the present benchmark, relative kinase-inhibitor interaction patterns were reproduced more consistently than absolute potency values. We provide a framework for interpreting Boltz-2 outputs within the kinase-inhibitor systems examined here.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">生成式结构预测模型能够直接从序列和配体信息预测蛋白质-配体复合物，但其捕捉药理学相关激酶-抑制剂相互作用的能力仍未完全明了。我们使用精选的生化学IC(50)测量数据，对八种人类激酶、九种临床使用抑制剂及代表性耐药突变进行了系统性评估。尽管预测的log(10)(IC(50))值相对于实验测量显示出压缩的动态范围，但突变依赖性抑制剂敏感性变化、抑制剂选择性模式以及总体效力排名，在本基准内与实验模式表现出显著一致性。预测的结合概率在本基准内对结合对和非结合对显示出良好的区分能力，并与实验效力呈一致的负相关关系。结构分析表明，在所评估的激酶-抑制剂系统中，配体姿态变异性与预测行为相关，即使激酶域结构与相应实验结构高度一致。较大的配体RMSD值并未与更大的预测误差幅度相关联，但导致了预测偏差的系统性变化，表明配体姿态准确性和预测实用性并非Boltz-2性能的等效衡量指标。这些发现表明，在本基准内，相对激酶-抑制剂相互作用模式比绝对效力值更一致地被重现。我们提供了一个框架，用于解释此处所检查的激酶-抑制剂系统中Boltz-2的输出结果。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Benchmarking Boltz-2 for relative kinase-inhibitor interaction patterns across conformational states and resistance mutations</li>
+<li><strong>作者与单位</strong>：Suenaga, Atsushi; Okimoto, Noriaki（单位未提供，致谢提及 Sanyo-Onoda City University 的 SANTOKA 计算机服务器）</li>
+<li><strong>期刊/预印本平台</strong>：npj drug discovery</li>
+<li><strong>年份</strong>：2026-10-13（在线日期）</li>
+<li><strong>论文类型</strong>：基准测试/评估研究（Benchmarking study）</li>
+<li><strong>领域</strong>：蛋白质结构预测 × 药物发现（激酶-抑制剂相互作用）</li>
+<li><strong>关键词</strong>：Boltz-2、激酶-抑制剂、构象状态、耐药突变、IC50预测、生成式结构预测模型</li>
+<li><strong>DOI/arXiv 号</strong>：10.1038/s44386-026-00086-x</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：57 对野生型激酶-抑制剂组合的 IC50 数据（来自 BindingDB 和 PubChem BioAssay），补充表 S1、S8、S11-S14</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在该方向中的位置</strong>：本文属于「AI 结构预测模型 × 药物相互作用评估」交叉方向，系统评估 Boltz-2 在激酶-抑制剂体系中的相对效力预测能力，涵盖构象状态、耐药突变、序列上下文效应，并与 AlphaFold 3、Chai-1 及传统打分方法（RTMScore、MMGBSA、MMPBSA）对比。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过 57 对激酶-抑制剂组合的基准测试，发现 Boltz-2 预测的 log10(IC50) 虽存在系统性压缩（回归斜率约 0.56-0.58），但能较好地再现相对效力排序、抑制剂选择性模式和耐药突变引起的效力变化（突变相关变化 Pearson r = 0.72），且结合亲和力打分基线对比表明其预测信息超出简单的激酶/抑制剂平均效应。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：生成式结构预测模型 Boltz-2 能否捕捉激酶-抑制剂相互作用的药理学相关特征——包括相对效力排序、抑制剂选择性、耐药突变引起的敏感性变化，以及构象状态（αC-helix、DFG motif）？</li>
+<li><strong>为什么重要</strong>：激酶是重要的药物靶点，耐药突变（如 ABL1 T315I、EGFR T790M/C797S）是临床治疗失败的主要原因。若能准确预测突变对抑制剂敏感性的影响，将有助于耐药管理和下一代抑制剂设计。</li>
+<li><strong>现有方法不足</strong>：传统分子对接受限于打分函数近似和构象系综处理不完整；AlphaFold 系列主要针对蛋白质结构，对配体结合和亲和力的直接预测能力有限；Boltz-2 虽引入亲和力预测模块，但其在药理学相关基准上的系统评估尚缺乏。</li>
+<li><strong>精确研究问题</strong>：Can Boltz-2 reproduce relative kinase-inhibitor interaction patterns (potency ranking, selectivity, mutation-dependent shifts) across conformational states and resistance mutations within a curated benchmark?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引言和讨论的框架，标注为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统对接/打分</td>
+<td>分子对接、MMGBSA、MMPBSA、RTMScore</td>
+<td>计算成本可控、可解释性较好</td>
+<td>打分函数近似、构象系综处理不完整、精度有限</td>
+<td>作为基线对比</td>
+</tr>
+<tr>
+<td>深度学习打分</td>
+<td>RTMScore 等</td>
+<td>部分任务精度提升</td>
+<td>依赖训练数据分布、泛化性存疑</td>
+<td>作为基线对比</td>
+</tr>
+<tr>
+<td>生成式结构预测</td>
+<td>AlphaFold 3、Boltz-2、Chai-1</td>
+<td>直接从序列+配体预测复合物结构，联合推理蛋白质-核酸-配体</td>
+<td>亲和力预测为辅助任务，绝对效力预测存在系统性压缩</td>
+<td>本文主角</td>
+</tr>
+</tbody>
+</table>
+<p>本文主张的位置：在激酶-抑制剂这一药理学重要且数据丰富的体系上，系统评估 Boltz-2 的相对预测能力，而非绝对效力预测。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预测效力动态范围压缩</td>
+<td>回归斜率 0.56-0.58，预测值标准差（0.96-0.98 log单位）小于实验值（1.37 log单位）</td>
+<td>训练目标可能偏向中心化预测；异构标签（IC50/Ki/Kd/AC50等）混合训练</td>
+<td>Results 图 1；Results 节 "Assessment of Boltz-2 inhibitor potency predictions"</td>
+</tr>
+<tr>
+<td>强效抑制剂效力被低估</td>
+<td>实验 log10(IC50) &lt; -1 的强效组合，预测残差为正（平均 +0.48 至 +0.52）</td>
+<td>同上，回归向均值收缩</td>
+<td>Results 节；Supplementary Fig. S2</td>
+</tr>
+<tr>
+<td>弱效/非结合剂效力被高估</td>
+<td>实验 log10(IC50) ≥ 0 的弱效组合，预测残差为负（平均 -0.65 至 -0.71）</td>
+<td>同上</td>
+<td>Results 节；Supplementary Fig. S2</td>
+</tr>
+<tr>
+<td>部分激酶预测一致性差</td>
+<td>EGFR、HER2 相关系数仅 0.47-0.68，低于 ABL1、KIT 等的 0.89-0.95</td>
+<td>可能与该家族构象可塑性、激活机制复杂性有关</td>
+<td>Results 节 "Variability in Boltz-2 prediction accuracy"；Supplementary Table S5</td>
+</tr>
+<tr>
+<td>配体姿态高度可变</td>
+<td>RMSDLig 范围 0.25-3.29 Å，同一体系多次预测姿态差异大</td>
+<td>生成式模型的随机采样特性；配体结合口袋柔性</td>
+<td>Results 节 "Structural accuracy and ligand-pose variability"；Supplementary Table S11</td>
+</tr>
+<tr>
+<td>训练数据重叠无法排除</td>
+<td>11/12 结构基准对存在 Boltz-2 训练截止日期（2023-06-01）前发布的复合物结构</td>
+<td>公开数据库（PDB）是 Boltz-2 训练数据来源之一</td>
+<td>Results 节 "Structural accuracy and ligand-pose variability"；Supplementary Table S13</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>用 Boltz-2 对 57 对野生型激酶-抑制剂组合进行结构预测和效力预测，系统比较预测 log10(IC50) 与实验 IC50 的相关性、排序一致性、突变引起的效力变化，并分析预测结构的构象状态（αC-helix、DFG motif）和配体姿态（RMSDLig），与 AlphaFold 3、Chai-1 及传统打分方法对比。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>相对模式优于绝对数值</strong>：Boltz-2 的预测效力虽存在系统性压缩，但相对排序、选择性模式和突变引起的效力变化方向与实验高度一致——即"相对比较"是生成式模型更可靠的输出维度。</li>
+<li><strong>效力预测与结合概率是不同信息层次</strong>：binding probability 与 log10(IC50) 高度相关（r = -0.80 至 -0.83），但前者更适合分类任务，后者更适合排序任务。</li>
+<li><strong>配体姿态精度 ≠ 效力预测精度</strong>：RMSDLig 与预测误差存在相关性（r = -0.42），但姿态偏差往往是局部的，不改变整体结合模式。</li>
+<li><strong>序列上下文影响 binding probability 而非效力预测</strong>：EGFR/HER2 的 binding probability 对序列扩展敏感，而 log10(IC50) 相对稳定，提示两个输出依赖不同的结构特征。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>对生成式结构预测模型，评估时应区分"绝对精度"和"相对一致性"两个维度，后者可能更稳健、更具实用价值。</li>
+<li>训练数据的标签异构性（IC50 vs Ki vs Kd）可能是预测动态范围压缩的重要来源，未来可通过标签归一化或分层训练缓解。</li>
+<li>结构精度指标（如 RMSD）与下游任务性能（如效力预测）不应直接等同，需要分别评估。</li>
+</ul>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：激酶蛋白序列（UniProt canonical human entries，含野生型和突变型）、配体小分子（PDB CCD 标识符）</li>
+<li><strong>输出</strong>：预测复合物结构、预测 log10(IC50)、binding probability</li>
+<li>
+<p><strong>模块</strong>：
+  1. 基准构建：8 种人源激酶 × 9 种临床抑制剂，57 对野生型组合 + 突变型组合（ABL1 Y253F/T315I、EGFR L858R/L858R+T790M/L858R+T790M+C797S、BRAF V600E）
+  2. Boltz-2 预测流程：recycling steps = 10，diffusion samples = 5，use_potentials 开启，每对 10 次独立运行
+  3. 代表性结构选择：预测 log10(IC50) 最接近中位数的运行
+  4. 结构分析：RMSDKD（激酶域 Cα RMSD）、RMSDLig（配体重原子 RMSD）、αC-helix/DFG motif 构象分类
+  5. 基线对比：AlphaFold 3（10 seeds × 5 diffusion samples = 50 结构）、Chai-1（5 结构）、RTMScore、MMGBSA、MMPBSA
+  6. 统计评估：Pearson/Spearman 相关、ROC 分析、留一配对交叉验证、留一激酶交叉验证</p>
+</li>
+<li>
+<p><strong>文字流程</strong>：构建基准 → 运行 Boltz-2 预测 → 与实验 IC50 比较（相关性、排序、突变效应）→ 结构分析（构象状态、配体姿态）→ 与基线方法对比 → 序列上下文效应分析 → 统计验证</p>
+</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基准数据集构建</td>
+<td>提供有实验 IC50 的激酶-抑制剂对</td>
+<td>评估需要可靠的实验参照</td>
+<td>输入：8 激酶、9 抑制剂、突变列表；输出：57 对野生型 + 突变型组合</td>
+<td>Methods "Benchmark construction"；Supplementary Table S1</td>
+<td>无基准则无法量化评估</td>
+</tr>
+<tr>
+<td>Boltz-2 多轮预测</td>
+<td>生成复合物结构和效力预测</td>
+<td>生成式模型具有随机性，需多次采样</td>
+<td>输入：序列+配体；输出：10 组结构+预测值</td>
+<td>Methods "Boltz-2 prediction workflow"</td>
+<td>单次预测可能受随机性影响，代表性结构选择策略失效</td>
+</tr>
+<tr>
+<td>代表性结构选择</td>
+<td>从多次预测中选择代表</td>
+<td>减少随机离群值影响</td>
+<td>输入：10 组预测；输出：1 个代表结构</td>
+<td>Methods "Boltz-2 prediction workflow"</td>
+<td>选择策略可能引入偏差 [Analysis]</td>
+</tr>
+<tr>
+<td>构象状态分类</td>
+<td>分析 αC-helix 和 DFG motif 状态</td>
+<td>激酶构象状态影响抑制剂结合模式</td>
+<td>输入：预测结构；输出：αC-IN/OUT、DFG-IN/OUT 分类</td>
+<td>Methods "Structural analysis"；Supplementary Table S10</td>
+<td>无法评估构象状态与预测行为的关系</td>
+</tr>
+<tr>
+<td>配体姿态分析</td>
+<td>计算 RMSDLig</td>
+<td>评估结构预测精度</td>
+<td>输入：预测结构+实验结构；输出：RMSDLig 值</td>
+<td>Results 图 4-5；Supplementary Table S11</td>
+<td>无法区分姿态精度对效力预测的影响</td>
+</tr>
+<tr>
+<td>基线对比（AF3/Chai-1）</td>
+<td>外部结构预测模型对比</td>
+<td>提供模型间参照</td>
+<td>输入：12 对复合物；输出：RMSDLig 分布</td>
+<td>Results "Structural accuracy"；Supplementary Table S12</td>
+<td>无法判断 Boltz-2 在同类模型中的相对位置</td>
+</tr>
+<tr>
+<td>传统打分基线</td>
+<td>RTMScore/MMGBSA/MMPBSA 对比</td>
+<td>评估 Boltz-2 是否优于传统方法</td>
+<td>输入：Boltz-2 预测结构；输出：打分值</td>
+<td>Results "Comparison with established affinity-scoring baselines"；Supplementary Table S15-S17</td>
+<td>无法判断 Boltz-2 的增量价值</td>
+</tr>
+<tr>
+<td>留一交叉验证</td>
+<td>评估预测信息是否超出简单基线</td>
+<td>排除简单激酶/抑制剂平均效应</td>
+<td>输入：57 对预测+实验值；输出：交叉验证性能</td>
+<td>Methods "Statistical analysis"；Supplementary Table S3</td>
+<td>无法排除简单基线解释</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>符号含义</th>
+<th>用途</th>
+<th>直觉</th>
+<th>来源指针</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FI_RMSD = 2/(N(N-1)) Σ RMSD(i,j)</td>
+<td>N = 构象数；RMSD(i,j) = 构象 i 和 j 之间的 RMSD</td>
+<td>量化配体固有构象柔性</td>
+<td>构象系综中两两 RMSD 的平均值，值越大表示配体越柔性</td>
+<td>Methods "Ligand conformational flexibility analysis"，公式 1</td>
+</tr>
+<tr>
+<td>Pearson r = cov(X,Y)/(σX·σY)</td>
+<td>X = 预测值，Y = 实验值</td>
+<td>评估线性相关</td>
+<td>衡量预测与实验的线性关联强度</td>
+<td>Methods "Statistical analysis"</td>
+</tr>
+<tr>
+<td>Spearman ρ</td>
+<td>秩次相关</td>
+<td>评估排序一致性</td>
+<td>不依赖线性关系，仅关注排序</td>
+<td>Methods "Statistical analysis"</td>
+</tr>
+<tr>
+<td>回归斜率（0.56-0.58）</td>
+<td>预测值对实验值的线性回归斜率</td>
+<td>量化动态范围压缩程度</td>
+<td>斜率 &lt; 1 表示预测值向均值收缩</td>
+<td>Results 图 1；Supplementary Table S2</td>
+</tr>
+<tr>
+<td>Cliff's δ</td>
+<td>效应量</td>
+<td>量化两组差异的大小</td>
+<td>非参数效应量，0.634 表示中等偏大效应</td>
+<td>Methods "Statistical analysis"；Results 图 5B</td>
+</tr>
+</tbody>
+</table>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：57 对野生型激酶-抑制剂组合（8 激酶 × 9 抑制剂），突变型组合见补充表 S8；IC50 数据来自 BindingDB 和 PubChem BioAssay，仅保留生化实验数据，每对至少 3 个独立测量值取中位数</li>
+<li><strong>基线</strong>：统计基线（全局均值、激酶均值、抑制剂均值、加性模型）；传统打分（RTMScore、MMGBSA、MMPBSA）；结构预测模型（AlphaFold 3、Chai-1）</li>
+<li><strong>评估协议</strong>：Pearson/Spearman 相关、ROC AUC、留一配对交叉验证、留一激酶交叉验证、回归斜率、残差分析</li>
+<li><strong>结构比较</strong>：12 对具有匹配实验共晶结构的复合物，RMSDKD 和 RMSDLig 计算</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>效力预测相关性（3 种序列输入）</td>
+<td>Boltz-2 预测效力与实验 IC50 相关</td>
+<td>57 对野生型组合；激酶域/激酶域+侧翼/全长序列</td>
+<td>Pearson r = 0.81-0.82，Spearman ρ = 0.80-0.82</td>
+<td>相对效力排序可被再现</td>
+<td>不证明绝对效力预测准确</td>
+<td>Results 图 1；Supplementary Table S2</td>
+</tr>
+<tr>
+<td>回归斜率分析</td>
+<td>预测动态范围是否压缩</td>
+<td>线性回归斜率 vs 1</td>
+<td>斜率 0.56-0.58，95% CI 均 &lt; 1</td>
+<td>预测值系统性压缩</td>
+<td>不说明压缩的具体机制</td>
+<td>Results 图 1；Supplementary Table S2</td>
+</tr>
+<tr>
+<td>残差分析</td>
+<td>压缩是否均匀</td>
+<td>按实验效力分层</td>
+<td>强效组合残差为正（+0.48 至 +0.52），弱效组合为负（-0.65 至 -0.71）</td>
+<td>压缩反映向中间值回归</td>
+<td>不证明是模型偏差而非标签噪声</td>
+<td>Supplementary Fig. S2</td>
+</tr>
+<tr>
+<td>统计基线对比</td>
+<td>预测信息是否超出简单基线</td>
+<td>留一配对交叉验证 vs 4 种统计基线</td>
+<td>Boltz-2 优于所有统计基线（r = 0.81 vs 最强基线 0.53）</td>
+<td>预测包含体系特异性信息</td>
+<td>不证明预测包含结构层面的机制信息</td>
+<td>Supplementary Table S3</td>
+</tr>
+<tr>
+<td>突变效力变化预测</td>
+<td>预测突变引起的效力变化</td>
+<td>实验 vs 预测 log10 倍数变化</td>
+<td>Pearson r = 0.72</td>
+<td>耐药突变的方向和幅度可被大致再现</td>
+<td>样本量有限，不推广到罕见突变</td>
+<td>Results 图 3A</td>
+</tr>
+<tr>
+<td>binding probability 与效力关系</td>
+<td>binding probability 是否反映效力</td>
+<td>相关分析</td>
+<td>与实验 log10(IC50) 负相关（r = -0.67 至 -0.71）</td>
+<td>binding probability 有定性效力信息</td>
+<td>不证明可替代定量效力预测</td>
+<td>Results 图 2D-F</td>
+</tr>
+<tr>
+<td>构象状态分析</td>
+<td>预测结构是否呈现正确构象状态</td>
+<td>与实验结构对比</td>
+<td>多数体系预测构象状态与实验一致</td>
+<td>模型能捕捉激酶构象状态</td>
+<td>构象状态分类简化了连续构象空间 [Analysis]</td>
+<td>Supplementary Table S10</td>
+</tr>
+<tr>
+<td>配体姿态精度</td>
+<td>RMSDLig 与预测误差关系</td>
+<td>相关分析</td>
+<td>中等负相关（r = -0.42）</td>
+<td>姿态偏差与效力预测偏差相关</td>
+<td>不证明因果关系</td>
+<td>Results 图 5A</td>
+</tr>
+<tr>
+<td>三模型结构对比</td>
+<td>Boltz-2 vs AF3 vs Chai-1 姿态精度</td>
+<td>12 对复合物</td>
+<td>中位 RMSDLig：Boltz-2 0.80 Å，AF3 0.95 Å，Chai-1 1.87 Å</td>
+<td>Boltz-2 与 AF3 姿态精度相当，优于 Chai-1</td>
+<td>样本量小，不推广到其他体系</td>
+<td>Results "Structural accuracy"；Supplementary Table S12</td>
+</tr>
+<tr>
+<td>序列上下文效应</td>
+<td>序列扩展是否影响预测</td>
+<td>3 种序列输入对比</td>
+<td>binding probability 变化大，log10(IC50) 变化小</td>
+<td>两个输出依赖不同结构特征</td>
+<td>不证明哪个输出更"正确"</td>
+<td>Results 图 6；Supplementary Fig. S9</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限 8 种人源激酶、9 种临床抑制剂、57 对野生型组合 + 有限突变组合；不涵盖其他靶点家族或更广泛的化学空间。</li>
+<li><strong>真值/参照</strong>：实验 IC50 来自公共数据库（BindingDB、PubChem），存在测量条件异质性和批次效应；中位数作为代表值可能掩盖测量分布信息。</li>
+<li><strong>端到端状态</strong>：Boltz-2 直接从序列+配体预测结构和效力，但评估的效力预测是模型内置模块，非独立训练的打分函数。</li>
+<li><strong>关键边界</strong>：</li>
+<li>预测效力存在系统性压缩（斜率 ~0.57），绝对 IC50 值不可直接用于定量比较。</li>
+<li>11/12 结构基准对存在训练截止日期前的共晶结构，结构预测精度可能被高估。</li>
+<li>突变分析仅覆盖 ABL1、EGFR、BRAF 的少数已知突变，不构成对未知突变的泛化证据。</li>
+<li>序列上下文效应仅在 EGFR/HER2 中显著，其他激酶未观察到类似效应。</li>
+<li><strong>正确表述</strong>：在本文基准范围内，Boltz-2 能再现激酶-抑制剂的相对效力模式（排序、选择性、已知耐药突变的方向性变化），但绝对效力预测不可靠，且不能排除训练数据重叠的贡献。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基准规模有限</td>
+<td>仅 8 种激酶、9 种抑制剂、57 对野生型组合</td>
+<td>在更大、更多样化的数据集上验证</td>
+<td>Discussion 末段</td>
+</tr>
+<tr>
+<td>训练数据重叠无法排除</td>
+<td>11/12 结构基准对存在训练截止日期前的共晶结构；亲和力训练数据与评估数据来源重叠</td>
+<td>使用时间分离或低冗余基准</td>
+<td>Discussion "A further limitation..."</td>
+</tr>
+<tr>
+<td>突变分析范围有限</td>
+<td>仅限 ABL1、EGFR、BRAF 的已知突变</td>
+<td>扩展到更多突变类型和激酶</td>
+<td>Discussion "The mutation analysis was also restricted..."</td>
+</tr>
+<tr>
+<td>未评估非典型抑制剂</td>
+<td>不含变构抑制剂、共价抑制剂等</td>
+<td>纳入更多抑制剂类型</td>
+<td>Discussion "The present benchmark also did not systematically evaluate..."</td>
+</tr>
+<tr>
+<td>预测压缩的机制未确定</td>
+<td>无法区分模型校准、标签异质性、实验噪声的贡献</td>
+<td>需要受控重训练或消融实验</td>
+<td>Discussion "Nor can potential training overlap be assumed..."</td>
+</tr>
+<tr>
+<td>亚组分析为探索性</td>
+<td>激酶/抑制剂亚组样本量小，统计功效有限</td>
+<td>更大样本验证亚组差异</td>
+<td>Discussion "These subgroup analyses should therefore be regarded as exploratory..."</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基准对存在训练重叠</td>
+<td>结构预测精度可能反映记忆而非泛化；效力预测可能受训练标签影响</td>
+<td>若重叠显著，结论的泛化性存疑</td>
+<td>使用 2023-06-01 后发布的共晶结构构建时间分离基准</td>
+<td>Results "Structural accuracy"；Supplementary Table S13</td>
+</tr>
+<tr>
+<td>突变分析样本量小</td>
+<td>每个突变仅 1-3 个抑制剂对，相关系数可能受个别离群值驱动</td>
+<td>突变预测是本文重要卖点，需稳健性验证</td>
+<td>增加突变-抑制剂对数量，报告逐对结果而非仅汇总相关</td>
+<td>Results 图 3；Supplementary Table S8-S9</td>
+</tr>
+<tr>
+<td>统计基线对比可能低估简单模型</td>
+<td>留一配对交叉验证中，加性模型在稀疏矩阵上可能表现不佳，但 Boltz-2 可能隐式利用了类似加性效应</td>
+<td>需区分"新信息"与"已知模式的重新表达"</td>
+<td>增加矩阵分解类基线（如 SVD 或协同过滤）</td>
+<td>Supplementary Table S3</td>
+</tr>
+<tr>
+<td>RMSDLig 与预测误差的相关性（r = -0.42）被解释为姿态影响预测</td>
+<td>也可能是预测误差大的体系本身实验数据更嘈杂</td>
+<td>因果方向未确定</td>
+<td>控制实验数据质量后重新分析</td>
+<td>Results 图 5A</td>
+</tr>
+<tr>
+<td>binding probability 对序列上下文敏感，但 log10(IC50) 不敏感</td>
+<td>可能反映 binding probability 训练目标对全局结构特征更敏感，而非"更正确"</td>
+<td>用户应选择适合任务的输出</td>
+<td>在不同任务（分类 vs 排序）中分别验证两个输出的实用性</td>
+<td>Results 图 6；Supplementary Fig. S9</td>
+</tr>
+<tr>
+<td>构象状态分类阈值（4Å/5Å）可能过于简化</td>
+<td>激酶构象是连续谱，二值分类可能掩盖中间状态</td>
+<td>构象状态与预测行为的关系可能被低估</td>
+<td>使用连续构象度量（如 αC-Glu 位移距离）</td>
+<td>Methods "Structural analysis"</td>
+</tr>
+<tr>
+<td>未报告预测不确定性</td>
+<td>Boltz-2 的多次运行可提供不确定性估计，但本文主要使用中位数代表</td>
+<td>不确定性信息可能有助于识别不可靠预测</td>
+<td>报告运行间变异性与预测误差的关系</td>
+<td>Methods "Boltz-2 prediction workflow"</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li>
+<p><strong>相对比较优于绝对数值</strong>：对生成式结构预测模型的效力输出，应优先评估相对排序、选择性和变化方向，而非绝对精度。可迁移到本课题的构象采样/生成任务：评估生成构象的系综分布特征（如相对群体比例）可能比单构象精度更有意义。</p>
+</li>
+<li>
+<p><strong>多输出维度需分别评估</strong>：binding probability 和 log10(IC50) 虽相关但信息不同，前者适合分类、后者适合排序。可迁移到结构预测模型的评估设计：不同输出头（如 pLDDT vs pAE vs 结合能）应分别验证其适用任务。</p>
+</li>
+<li>
+<p><strong>序列上下文效应是重要变量</strong>：EGFR/HER2 的 binding probability 对序列扩展敏感，提示模型可能隐式利用了口袋外的结构特征。可迁移到本课题：评估模型时不应只输入最小功能域，序列边界选择可能显著影响预测行为。</p>
+</li>
+<li>
+<p><strong>训练数据重叠是基准测试的关键混淆因素</strong>：本文通过训练截止日期分析部分解决了这一问题。可迁移到本课题：任何基准测试都应报告训练数据时间线，并尽可能使用时间分离的验证集。</p>
+</li>
+<li>
+<p><strong>配体柔性（FI_RMSD）与预测行为相关</strong>：柔性配体的预测表现可能不同，这一指标可作为分层分析的依据。可迁移到本课题：在构象生成/对接评估中，按配体柔性分层报告性能。</p>
+</li>
+<li>
+<p><strong>统计基线是必要的对照</strong>：本文用 4 种统计基线证明 Boltz-2 的增量价值。可迁移到本课题：任何 AI 方法评估都应包含简单的统计/物理基线，以证明方法的真正贡献。</p>
+</li>
+<li>
+<p><strong>构象状态与抑制剂类别的关系</strong>：II 型抑制剂（如 Imatinib）倾向 DFG-OUT 构象，I 型抑制剂倾向 DFG-IN，模型能再现这一区分。可迁移到本课题：构象采样/生成模型的评估应包含已知的构象-配体类别关联作为先验验证。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Boltz-2 原始论文</strong>：本文直接评估 Boltz-2（参考文献 25），该模型是 AlphaFold 3 的开源替代，引入亲和力预测模块。本文的发现（效力压缩、binding probability 有用性）是对该模型能力的独立验证。</li>
+<li><strong>Bret et al. 的 Boltz-2 基准</strong>：本文引用了 Bret 等人的 Boltz-2 对接命中分类研究（参考文献 26），并指出本文使用实验 IC50 而非预定义活性/非活性集合，是互补的评估。</li>
+<li><strong>AlphaFold 3</strong>：本文使用 AF3 作为结构预测基线（参考文献 20），发现 Boltz-2 与 AF3 在配体姿态精度上相当（中位 RMSDLig 0.80 vs 0.95 Å）。</li>
+<li><strong>激酶构象生物学</strong>：αC-helix/DFG motif 构象分类基于激酶结构生物学经典框架（参考文献 11-13, 27-30），本文验证了 Boltz-2 能再现已知的 I 型/II 型抑制剂构象偏好。</li>
+<li><strong>耐药突变数据库</strong>：ABL1 T315I、EGFR T790M/C797S 是临床验证的耐药突变（参考文献 14-16），本文以此为基准评估突变效应预测。</li>
+<li><strong>打分函数对比</strong>：RTMScore（参考文献 44）、MMGBSA/MMPBSA（参考文献 47-53）是传统打分方法代表，本文显示 Boltz-2 在相对效力排序上优于这些方法。</li>
+<li><strong>候选方向</strong>：本文未涉及 MD 模拟或构象采样增强，但讨论中提及"构象系综"的重要性，可与本课题的 MD/增强采样方法结合，探索 Boltz-2 预测结构与 MD 精化的互补性 [Analysis]。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：时间分离的激酶-抑制剂泛化基准（Temporal Split Kinase Benchmark）
+   - <strong>来源局限/观察</strong>：本文 11/12 结构基准对存在训练截止日期前的共晶结构，无法排除记忆效应。
+   - <strong>核心假设</strong>：Boltz-2 在 2023-06-01 后新发布的激酶-抑制剂共晶结构上表现显著下降。
+   - <strong>初步方法</strong>：收集 2023-06-01 后发布的激酶-抑制剂共晶结构，构建时间分离测试集，对比 Boltz-2 在"时间域内"和"时间域外"结构上的 RMSDLig 和效力预测表现。
+   - <strong>验证方式</strong>：与本文结果对比，量化性能下降幅度；分析下降是否集中在特定激酶家族或抑制剂类型。
+   - <strong>可能的失败模式</strong>：新结构数量不足，统计功效有限；或 Boltz-2 泛化能力足够强，性能无显著下降。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Boltz-2 构象系综与 MD 精化的互补性评估（Boltz-2 Ensemble + MD Refinement）
+   - <strong>来源局限/观察</strong>：本文发现 RMSDLig 与预测误差相关（r = -0.42），但未探索如何利用多构象信息改进预测。
+   - <strong>核心假设</strong>：Boltz-2 多次采样的构象系综经 MD 精化后，能提供比单构象更准确的效力预测。
+   - <strong>初步方法</strong>：选取 10-20 对激酶-抑制剂，对 Boltz-2 的 10 次预测构象分别进行短 MD 模拟，比较精化前后构象的 RMSDLig 分布和 MMGBSA 打分与实验 IC50 的相关性。
+   - <strong>验证方式</strong>：精化后构象的 MMGBSA 打分与实验 IC50 的相关性是否优于 Boltz-2 直接输出；RMSDLig 是否降低。
+   - <strong>可能的失败模式</strong>：MD 精化时间尺度不足以捕捉关键构象变化；MMGBSA 打分噪声掩盖改进信号。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：突变效应预测的物理可解释性分析（Mutation Effect Interpretability）
+   - <strong>来源局限/观察</strong>：本文发现突变引起的效力变化预测与实验一致（r = 0.72），但未分析模型为何能预测突变效应。
+   - <strong>核心假设</strong>：Boltz-2 对突变效应的预测可归因于口袋残基相互作用网络的局部重排，而非全局结构变化。
+   - <strong>初步方法</strong>：对 ABL1 T315I 和 EGFR T790M/C797S 突变体，分析预测结构中突变残基周围的接触变化、氢键网络重排，与实验结构对比。
+   - <strong>验证方式</strong>：预测结构中突变引起的接触变化是否与实验结构一致；这些变化是否能解释效力预测的偏移方向。
+   - <strong>可能的失败模式</strong>：预测结构对突变的响应过于平滑，无法捕捉实验中的剧烈重排；或突变效应主要由去溶剂化等非结构因素主导。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：binding probability 作为虚拟筛选先导指标的验证（Binding Probability as Virtual Screening Prior）
+   - <strong>来源局限/观察</strong>：本文发现 binding probability 对序列上下文敏感，且与 log10(IC50) 相关（r = -0.67 至 -0.71），但未测试其筛选性能。
+   - <strong>核心假设</strong>：binding probability 在激酶抑制剂虚拟筛选中可作为有效的先导指标，尤其适用于无实验结构的激酶突变体。
+   - <strong>初步方法</strong>：构建包含已知抑制剂和诱饵分子的激酶筛选集，比较 binding probability、预测 log10(IC50) 和传统对接打分的富集因子。
+   - <strong>验证方式</strong>：ROC-AUC 和富集因子对比；分析 binding probability 是否对已知耐药突变有区分能力。
+   - <strong>可能的失败模式</strong>：binding probability 的训练分布偏差导致对诱饵分子过度自信；或与 log10(IC50) 信息高度重叠，无增量价值。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：序列上下文效应的系统图谱（Sequence Context Sensitivity Atlas）
+   - <strong>来源局限/观察</strong>：本文发现 EGFR/HER2 的 binding probability 对序列扩展敏感，但其他激酶未观察到类似效应，机制不明。
+   - <strong>核心假设</strong>：序列上下文敏感性由激酶调节元件的结构特征决定，如 C-末端尾巴、膜近端区域等。
+   - <strong>初步方法</strong>：对 8 种激酶系统性地测试不同序列边界（激酶域、+侧翼、全长、截短变体）对 binding probability 和 log10(IC50) 的影响，结合结构分析定位敏感区域。
+   - <strong>验证方式</strong>：敏感性是否与特定结构特征（如调节螺旋、二聚化界面）相关；是否能预测其他激酶的敏感性。
+   - <strong>可能的失败模式</strong>：序列上下文效应主要由训练数据分布驱动而非结构特征；或效应过于微弱，无法在更大激酶面板中稳定检测。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, introduction, results, discussion, methods, and figure legends. Supplementary materials referenced but not provided.</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological rigor, interpretation of results, and clarity of claims as presented in the manuscript. No assessment of editorial fit or publication priority beyond Nature-style criteria.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors evaluate Boltz-2's ability to predict kinase-inhibitor interaction patterns, including potency rankings, binding probability classification, mutation-dependent sensitivity shifts, and structural features, across eight kinases and nine inhibitors, concluding that relative patterns are reproduced more consistently than absolute potency values.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Figs. 1–7), Supplementary Tables S1–S17 as referenced, and Methods section describing benchmark construction, prediction workflows, and statistical analyses.</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures and tables (S1–S18) were not provided. Experimental IC50 data curation details, complete prediction output tables, and structural comparison data are referenced but unavailable for verification. This materially limits assessment of data quality, statistical robustness, and reproducibility.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This manuscript addresses a timely and relevant question: whether generative structure-prediction models like Boltz-2 can capture pharmacologically meaningful kinase-inhibitor interactions. The study design is thoughtful, with careful attention to sequence input definitions, statistical baselines, and potential training-data overlap. The finding that relative potency patterns are better reproduced than absolute values is plausible and useful. However, the manuscript has several significant weaknesses. The benchmark is small (57 wild-type pairs, eight kinases, nine inhibitors), and the authors appropriately acknowledge this, but the strength of some conclusions exceeds what this sample size supports. The structural analyses rely on a single representative structure per system, which may not capture the stochasticity of generative models. The training-data overlap analysis is incomplete, and the authors correctly note they cannot exclude prior exposure. The comparison with AlphaFold 3 and Chai-1 is limited to 12 complexes and does not include affinity prediction comparisons. The FI_RMSD analysis is exploratory and underpowered. The sequence-context effects, while interesting, are observed in only two kinases and require validation. The manuscript is generally well-written and accessible, but the discussion sometimes overreaches relative to the evidence presented. The methods are described in sufficient detail for replication, which is a strength. Overall, this is a competent and potentially useful benchmarking study, but the claims need to be tempered and several analyses need strengthening before the conclusions are fully established.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Computational biologists and medicinal chemists working on kinase inhibitor discovery would find this study useful, as it provides practical guidance on interpreting Boltz-2 outputs for kinase targets. Researchers developing or benchmarking generative protein-ligand prediction models would also be interested, as the study highlights strengths and limitations of Boltz-2 in a focused therapeutic context. The discussion of training-data overlap and the distinction between relative and absolute prediction accuracy is relevant to anyone using such models for drug discovery applications.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> The study addresses a clinically relevant and timely question with a carefully designed benchmark. The use of multiple sequence input definitions and statistical baselines strengthens the analysis. The residual analysis revealing potency-dependent compression is insightful. The explicit discussion of training-data overlap and its implications is commendable. The comparison with established scoring methods provides useful context. The manuscript is clearly written and the methods are described in sufficient detail for replication.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical robustness and generalizability</li>
+<li><strong>Claim pointer</strong> The authors claim that "mutation-dependent shifts in inhibitor sensitivity, inhibitor selectivity patterns, and overall potency rankings showed substantial agreement with the experimental patterns within the present benchmark" and that "relative kinase-inhibitor interaction patterns were reproduced more consistently than absolute potency values."</li>
+<li><strong>Evidence pointer</strong> Results sections "Assessment of Boltz‑2 inhibitor potency predictions" and "Assessment of mutation‑dependent inhibitor sensitivity"; Figs. 1 and 3; Supplementary Tables S2, S5, S8, S9</li>
+<li><strong>Concern</strong> The benchmark comprises only 57 wild-type pairs and a small number of mutants. The correlation coefficients (r = 0.81–0.82) are reported with confidence intervals, but the number of independent observations is limited. More critically, the mutation analysis appears to rely on a very small number of mutant-inhibitor pairs (the text mentions ABL1 T315I, EGFR T790M, EGFR C797S, and BRAF V600E, but the total number of mutant pairs is not stated). With such a small sample, the claim of "substantial agreement" for mutation-dependent shifts is not well supported. The authors acknowledge the benchmark is focused, but the strength of the conclusions should be tempered accordingly. Additionally, the generalizability to other kinases and inhibitors beyond this panel is unknown.</li>
+<li><strong>Why it matters</strong> The central claim of the paper is that Boltz-2 reproduces relative interaction patterns. If the sample size is too small to support this claim statistically, the main conclusion is not established. Readers may over-interpret the results as evidence of general utility when the evidence is limited to a narrow panel.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the total number of mutant-inhibitor pairs analyzed and report confidence intervals or effect sizes for the mutation-dependent shift analysis. If the sample is too small for inferential statistics, explicitly frame the mutation results as descriptive case studies. Alternatively, expand the benchmark to include more mutants and inhibitors to increase statistical power.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Training-data overlap and claim of predictive utility</li>
+<li><strong>Claim pointer</strong> The authors state that "within the present benchmark, relative kinase-inhibitor interaction patterns were reproduced more consistently than absolute potency values" and suggest "potential utility for comparative analyses in which relative changes in drug response are of primary interest."</li>
+<li><strong>Evidence pointer</strong> Discussion section; Methods section "Benchmark construction and experimental data curation"; Supplementary Tables S13, S14</li>
+<li><strong>Concern</strong> The authors acknowledge that 11 of 12 structural benchmark pairs had potential direct structural training exposure, and that many affinity measurements were publicly available before Boltz-2's release. This means the evaluation is not a test of generalization but rather of reconstruction or memorization for most systems. The authors correctly note this limitation, but the framing of "potential utility" for comparative analyses is still problematic. If the model has seen the training data, the observed agreement may not reflect genuine predictive ability. The authors do not provide any analysis that separates systems with and without potential training overlap, nor do they attempt to quantify the degree of overlap. Without such analysis, the predictive utility claim is not established.</li>
+<li><strong>Why it matters</strong> The scientific value of a benchmarking study depends on whether the results reflect genuine predictive capability or training-data memorization. If the latter, the conclusions are not informative for real-world applications where novel kinase-inhibitor pairs are the target.</li>
+<li>
+<p><strong>Resolution test</strong> Perform a stratified analysis comparing prediction accuracy for systems with and without potential training overlap. If the number of non-overlapping systems is too small, explicitly state that the results cannot distinguish memorization from generalization and temper the utility claims accordingly. Alternatively, use a temporally separated or prospectively curated benchmark to avoid this issue.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Structural analysis methodology</li>
+<li><strong>Claim pointer</strong> The authors claim that "ligand-pose variability was associated with prediction behavior within the evaluated kinase-inhibitor systems" and that "larger RMSDLig values were not associated with larger prediction errors in magnitude, but were linked to systematic shifts in prediction bias."</li>
+<li><strong>Evidence pointer</strong> Results section "Structural accuracy and ligand-pose variability in predicted complexes"; Figs. 4 and 5; Supplementary Tables S11–S13</li>
+<li><strong>Concern</strong> The structural analysis relies on a single representative structure per system, selected as the prediction closest to the median predicted log10(IC50). This selection criterion is based on the affinity prediction, not on structural quality. The relationship between RMSDLig and prediction error is based on this single structure, which may not be representative of the full ensemble of predictions. The authors do not report how much structural variability exists across the ten runs for each system, nor do they analyze whether the relationship between RMSDLig and prediction error is stable across runs. The correlation of r = −0.42 is described as "moderate" but is based on a small number of systems (12 for the model comparison). The Mann–Whitney U test result (p = 7.74 × 10⁻⁴) is reported, but the sample size for this comparison is not stated.</li>
+<li><strong>Why it matters</strong> The claim that ligand-pose variability is linked to prediction bias is potentially important, but the methodology used to establish it is not robust. If the relationship is not stable across prediction runs, the conclusion is not reliable. The small sample size further weakens the claim.</li>
+<li>
+<p><strong>Resolution test</strong> Report the distribution of RMSDLig values across all ten runs for each system, and analyze the relationship between RMSDLig and prediction error using all runs rather than a single representative structure. Provide the sample size for the Mann–Whitney U test. If the relationship is not stable across runs, temper the claim accordingly.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Model comparison fairness</li>
+<li><strong>Claim pointer</strong> The authors state that "Boltz-2 and AlphaFold 3 showed broadly similar RMSDLig distributions, whereas Chai-1 exhibited greater complex-dependent variability" and that "Boltz-2 showed the strongest agreement with experimental log10(IC50) values" compared to RTMScore, MMGBSA, and MMPBSA.</li>
+<li><strong>Evidence pointer</strong> Results sections "Structural accuracy and ligand-pose variability in predicted complexes" and "Comparison with established affinity-scoring baselines"; Supplementary Tables S12, S15–S17</li>
+<li><strong>Concern</strong> The comparison between Boltz-2, AlphaFold 3, and Chai-1 is limited to ligand-pose RMSD for 12 complexes. The comparison with RTMScore, MMGBSA, and MMPBSA is limited to affinity correlation for 57 pairs. These are different metrics and different system sets, making direct comparison difficult. More importantly, the affinity-scoring baselines were applied as rescoring methods to Boltz-2-predicted structures, which may disadvantage them. A fairer comparison would use each method's own predicted structures or experimental structures. The authors acknowledge this limitation, but the framing of "Boltz-2 showed the strongest agreement" is still somewhat misleading given the methodological asymmetry.</li>
+<li><strong>Why it matters</strong> The claim that Boltz-2 outperforms established methods is central to the paper's utility argument. If the comparison is not fair, the conclusion is not supported.</li>
+<li>
+<p><strong>Resolution test</strong> Either apply all methods to the same set of structures (e.g., experimental structures) or use each method's own predicted structures for affinity scoring. If this is not feasible, explicitly state that the comparison is a rescoring benchmark conditioned on Boltz-2 structures and temper the claim of superiority.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Sequence context analysis</li>
+<li><strong>Claim pointer</strong> The authors claim that "sequence-context extension had a stronger effect on binding probability estimates than on quantitative affinity prediction" and that "the extended C-terminal regions formed additional folded structural elements surrounding the kinase-domain C-lobe and activation loop."</li>
+<li><strong>Evidence pointer</strong> Results section "Sequence-context effects on predicted kinase-inhibitor interactions"; Figs. 6 and 7; Supplementary Tables S4, S18</li>
+<li><strong>Concern</strong> The sequence-context analysis is limited to EGFR and HER2, with some observations for ABL1 and BRAF. The claim that binding probability is more sensitive to sequence context than predicted log10(IC50) is based on a small number of systems. The structural interpretation, that extended regions form folded elements near the activation loop, is based on visual inspection of predicted structures without quantitative validation. The authors do not provide any statistical test for the difference in sequence-context sensitivity between binding probability and log10(IC50). The observation is interesting but exploratory.</li>
+<li><strong>Why it matters</strong> The sequence-context findings could have practical implications for how users should construct inputs for Boltz-2 predictions. However, if the finding is not robust, users may be misled.</li>
+<li>
+<p><strong>Resolution test</strong> Provide statistical tests comparing the magnitude of sequence-context effects on binding probability versus log10(IC50) across all systems. Quantify the structural changes induced by sequence extension (e.g., distance between extended regions and activation loop) rather than relying on visual inspection. If the sample size is too small, explicitly frame this as a case study.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of methods</li>
+<li><strong>Affected element</strong> Methods section "Boltz-2 prediction workflow"</li>
+<li><strong>Evidence pointer</strong> Methods section, paragraph on Boltz-2 prediction workflow</li>
+<li><strong>Issue</strong> The manuscript states that "recycling steps and diffusion samples were set to 10 and 5, respectively" and that "the use_potentials option was enabled." It is not clear whether these settings are standard for Boltz-2 or whether they were chosen based on preliminary testing. Additionally, the rationale for selecting the representative structure as the one closest to the median predicted log10(IC50) is not explained.</li>
+<li>
+<p><strong>Required correction</strong> Provide a brief justification for the chosen parameters and the representative structure selection criterion. If these are default settings, state so explicitly.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data availability</li>
+<li><strong>Affected element</strong> Methods section "Benchmark construction and experimental data curation"</li>
+<li><strong>Evidence pointer</strong> Methods section, paragraph on benchmark construction</li>
+<li><strong>Issue</strong> The manuscript states that experimental IC50 data were curated from BindingDB and PubChem BioAssay, but the specific accession numbers or database identifiers for the curated data are not provided in the main text. The supplementary tables are referenced, but they were not available for review.</li>
+<li>
+<p><strong>Required correction</strong> Provide the database accession numbers or a link to the curated dataset in the main text or a data availability statement.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Results section "Assessment of Boltz‑2 inhibitor potency predictions"</li>
+<li><strong>Evidence pointer</strong> Results section, first paragraph; Fig. 1</li>
+<li><strong>Issue</strong> The manuscript reports Pearson and Spearman correlation coefficients with confidence intervals from bootstrap analyses, but does not report p-values for these correlations. Given the small sample size, p-values would help readers assess the strength of the associations.</li>
+<li>
+<p><strong>Required correction</strong> Report p-values for the correlation coefficients, or state that p-values were not computed due to the small sample size.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Figure quality</li>
+<li><strong>Affected element</strong> Fig. 4</li>
+<li><strong>Evidence pointer</strong> Fig. 4 legend</li>
+<li><strong>Issue</strong> The figure legend states that "kinase domains are shown as cartoons and inhibitors as sticks" but does not specify which structures are shown (e.g., representative predictions or specific runs). The figure itself was not available for review, but the legend should clarify the selection of structures displayed.</li>
+<li>
+<p><strong>Required correction</strong> Clarify in the figure legend how the displayed structures were selected from the prediction ensemble.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Abstract and Discussion</li>
+<li><strong>Evidence pointer</strong> Abstract, first sentence; Discussion, first paragraph</li>
+<li><strong>Issue</strong> The term "relative kinase-inhibitor interaction patterns" is used throughout the manuscript but is not explicitly defined. It appears to encompass potency rankings, selectivity patterns, and mutation-dependent shifts, but the reader has to infer this.</li>
+<li>
+<p><strong>Required correction</strong> Define "relative interaction patterns" explicitly in the introduction or at first use in the abstract.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods section "AlphaFold 3 comparison workflow"</li>
+<li><strong>Evidence pointer</strong> Methods section, paragraph on AlphaFold 3 comparison</li>
+<li><strong>Issue</strong> The manuscript states that AlphaFold 3 was run locally in a Docker container, but does not specify the exact version of the AlphaFold 3 model or the source of the code. This may affect reproducibility.</li>
+<li>
+<p><strong>Required correction</strong> Provide the exact version number and source repository for the AlphaFold 3 code used.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m7</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation of FI-RMSD analysis</li>
+<li><strong>Affected element</strong> Results section "Structural accuracy and ligand-pose variability in predicted complexes"</li>
+<li><strong>Evidence pointer</strong> Results section, paragraph on FI-RMSD; Supplementary Fig. S4</li>
+<li><strong>Issue</strong> The manuscript reports a "modest positive trend" between inhibitor flexibility (FI-RMSD) and prediction accuracy (r = 0.68, p = 0.065). The p-value is above the conventional significance threshold, and the authors appropriately note this is exploratory. However, the direction of the trend is counterintuitive and deserves more discussion.</li>
+<li><strong>Required correction</strong> Provide a brief discussion of why more flexible inhibitors might be predicted more accurately, or acknowledge that this finding may be an artifact of the small sample size.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that "mutation-dependent shifts in inhibitor sensitivity showed substantial agreement with the experimental trends" is not fully supported because the number of mutant-inhibitor pairs is not stated and may be very small.</li>
+<li>The claim that "relative kinase-inhibitor interaction patterns were reproduced more consistently than absolute potency values" is not established as a general property of Boltz-2, given the small benchmark size and potential training-data overlap.</li>
+<li>The claim that "ligand-pose accuracy and predictive utility are not equivalent measures of Boltz-2 performance" is based on a small structural subset (12 complexes) and a single representative structure per system.</li>
+<li>The claim that "sequence-context sensitivity may depend on how flanking regions are positioned relative to the kinase domain" is based on two kinase families and is speculative.</li>
+<li>The comparison with AlphaFold 3 and Chai-1 is limited to ligand-pose RMSD for 12 complexes and does not include affinity prediction, so no conclusion about relative affinity prediction performance can be drawn.</li>
+<li>The FI-RMSD analysis is exploratory and underpowered; the reported trend (r = 0.68, p = 0.065) is not statistically significant.</li>
+<li>The potential training-data overlap for both structural and affinity data is acknowledged but not quantified, and no analysis is provided to separate memorization from generalization.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

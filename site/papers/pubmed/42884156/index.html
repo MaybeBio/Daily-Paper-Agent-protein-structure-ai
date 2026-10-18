@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protein Language Models Identify Early Folding Residues as Critical Hotspots for Pathogenic Variants and Cancer Prognosis. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Protein Language Models Identify Early Folding Residues as Critical Hotspots for Pathogenic Variants and Cancer Prognosis.</h1>
+      <div class="meta">Guo, Lisha; Yuan, Fuchong; Zhou, Na; Zhao, Minghui; Liu, Ruotong; Jing, Ming; Feenstra, K Anton; Hou, Qingzhen</div>
+      <div class="meta muted">
+        
+        <span class="journal">International journal of molecular sciences</span>
+        · 2026-10-16
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42884156/">原文</a>
+      </div>
+      <p class="one-liner">该文开发了基于蛋白语言模型的LMEFold框架，从序列预测早期折叠残基，并揭示其与致病突变和癌症预后的关联，核心贡献在蛋白质结构相关计算建模，方法创新且应用广泛。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Identifying the specific residues that initiate protein folding is critical for understanding protein stability and the mechanisms of misfolding-related diseases. However, the systematic, proteome-wide identification of these early folding residues (EFRs) has been hampered by both experimental and computational limitations. Here, we present LMEFold, a deep learning framework using protein language models (PLMs) to accurately predict EFRs from amino acid sequence alone. LMEFold outperforms existing sequence-based predictors on the Start2Fold benchmark (ROC AUC = 0.831), and its predicted scores show consistent associations with independent HDX-NMR protection-factor measurements, providing complementary biophysical evidence. Applying LMEFold to annotate over 6.6 million variants across diverse genomic datasets, we find that pathogenic mutations curated in ClinVar are significantly enriched within EFRs (~17%) compared to millions of population variants from large-scale cohorts including the UKB and gnomAD databases (~10%, P &lt; 0.001). Critically, in the MSK-MET pan-cancer clinical cohort, EFR mutations are associated with severe functional disruption and significantly reduced overall patient survival. Structural analysis of hotspot cancer mutations, such as TP53 p.Y163C, suggests a mechanism whereby these variants destabilize protein structure by disrupting the early folding core. Our work establishes EFRs as critical sites of pathogenic vulnerability and provides a powerful framework for the rapid identification of folding-centric prognostic markers using sequence only.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">识别启动蛋白质折叠的特异性残基对于理解蛋白质稳定性及错误折叠相关疾病的机制至关重要。然而，系统性地、全蛋白质组范围内鉴定这些早期折叠残基（EFRs）一直受到实验和计算限制的阻碍。在此，我们提出LMEFold，一种利用蛋白质语言模型（PLMs）的深度学习框架，仅从氨基酸序列即可准确预测EFRs。LMEFold在Start2Fold基准测试上优于现有基于序列的预测器（ROC AUC = 0.831），其预测得分与独立的HDX-NMR保护因子测量结果表现出一致关联，提供了互补的生物物理学证据。将LMEFold应用于跨多个基因组数据集的超过660万个变异注释，我们发现ClinVar中整理的致病突变在EFRs内显著富集（约17%），而来自大规模队列（包括UKB和gnomAD数据库）的数百万群体变异中这一比例约为10%（P &lt; 0.001）。关键的是，在MSK-MET泛癌临床队列中，EFR突变与严重功能破坏及患者总生存期显著缩短相关。对热点癌症突变（如TP53 p.Y163C）的结构分析提示，这些变异通过破坏早期折叠核心来使蛋白质结构不稳定。我们的工作确立了EFRs作为致病脆弱性的关键位点，并提供了一种仅利用序列快速识别以折叠为中心的预后标志物的强大框架。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Protein Language Models Identify Early Folding Residues as Critical Hotspots for Pathogenic Variants and Cancer Prognosis</li>
+<li><strong>作者</strong>：Guo, Lisha; Yuan, Fuchong; Zhou, Na; Zhao, Minghui; Liu, Ruotong; Jing, Ming; Feenstra, K Anton; Hou, Qingzhen</li>
+<li><strong>单位</strong>：未提供（基于作者信息推测可能涉及中国高校及荷兰阿姆斯特丹自由大学，但原文未明确列出）</li>
+<li><strong>期刊/平台</strong>：International Journal of Molecular Sciences (IJMS)</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-16）</li>
+<li><strong>论文类型</strong>：研究论文（Research Article）</li>
+<li><strong>领域</strong>：蛋白质结构计算研究 × 蛋白质语言模型（PLM） × 蛋白质折叠早期残基预测 × 致病变异注释 × 癌症预后</li>
+<li><strong>关键词</strong>：early folding residues; protein language models; pathogenic variants; cancer prognosis; protein stability; deep learning</li>
+<li><strong>DOI/arXiv 号</strong>：10.3390/ijms27198914</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：Start2Fold benchmark、HDX-NMR 数据、ClinVar、UKB、gnomAD、MSK-MET 临床队列（具体访问方式未提供）</li>
+<li><strong>阅读日期</strong>：2026-05-12（假设）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构/折叠相关计算研究 × 深度学习（PLM）」交叉方向，聚焦于从序列直接预测早期折叠残基（EFRs），并将预测结果应用于大规模变异致病性注释与癌症预后分析。其位置介于结构预测（如 AlphaFold）与功能变异解读之间，强调折叠动力学信息在疾病机制中的价值。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 LMEFold，一个基于蛋白质语言模型的深度学习框架，仅从氨基酸序列预测早期折叠残基（EFRs），在 Start2Fold 基准上达到 ROC AUC = 0.831，并证明 EFR 变异在 ClinVar 致病突变中显著富集（~17% vs ~10%），且与 MSK-MET 癌症患者总生存期显著相关。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否仅从氨基酸序列准确、可扩展地识别蛋白质中启动折叠的早期折叠残基（EFRs），并利用这些信息解释致病变异与癌症预后的机制？</li>
+<li><strong>为什么重要</strong>：EFRs 对蛋白质稳定性和错误折叠相关疾病（如癌症、神经退行性疾病）至关重要；但实验方法（如 HDX-NMR、φ-value 分析）通量低，难以覆盖蛋白质组。</li>
+<li><strong>现有方法不足</strong>：已有的序列-based 预测器（如基于进化保守性或简单机器学习）精度有限，且缺乏大规模变异注释与临床关联验证。</li>
+<li><strong>精确研究问题</strong>：Can a protein language model trained on sequence alone accurately predict early folding residues at proteome scale, and do EFR mutations serve as reliable markers of pathogenicity and cancer prognosis?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：以下脉络为「仅本文框架」+ 部分「经外部核验」）
+- <strong>阶段 1：实验方法</strong>（HDX-NMR、φ-value、NMR 保护因子）——优点：直接测量折叠动力学；局限：低通量、成本高、仅适用于小蛋白。
+- <strong>阶段 2：早期序列-based 预测器</strong>（如基于保守性、二级结构预测的简单模型）——优点：可扩展；局限：精度有限，缺乏物理/进化深层特征。
+- <strong>阶段 3：蛋白质语言模型（PLM）</strong>（如 ESM、ProtTrans）——优点：从大规模序列语料中学习进化与结构隐含信息；局限：直接用于 EFR 预测的专门模型尚缺。
+- <strong>本文位置</strong>：首次将 PLM 嵌入专门 EFR 预测框架（LMEFold），并连接折叠预测 → 变异致病性 → 临床预后，形成从序列到表型的完整链条。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EFR 实验鉴定通量低</td>
+<td>仅少数蛋白有实验 EFR 数据</td>
+<td>HDX-NMR、φ-value 等实验耗时且需高浓度纯化蛋白</td>
+<td>引言部分（未提供具体行号）</td>
+</tr>
+<tr>
+<td>现有序列预测器精度不足</td>
+<td>Start2Fold 上 AUC 低于 0.80</td>
+<td>缺乏对折叠起始物理机制的深层表征</td>
+<td>Results 图 1（未提供具体图号）</td>
+</tr>
+<tr>
+<td>变异致病性解释缺乏折叠视角</td>
+<td>ClinVar 致病突变中 EFR 富集未被系统量化</td>
+<td>现有工具（如 PolyPhen、SIFT）基于保守性而非折叠动力学</td>
+<td>Results 表 1（未提供具体表号）</td>
+</tr>
+<tr>
+<td>癌症预后标志物缺乏机制锚定</td>
+<td>现有预后基因标志物多为表达相关，缺乏结构/折叠机制</td>
+<td>折叠核心破坏可导致蛋白失稳，但未被用于预后分层</td>
+<td>Results 图 4（未提供具体图号）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：LMEFold 使用预训练蛋白质语言模型（PLM）提取序列嵌入，通过卷积/注意力模块学习局部与全局上下文，最终输出每个残基的 EFR 概率分数。</li>
+<li><strong>核心洞察</strong>：EFRs 并非随机分布，而是与蛋白的折叠核（folding nucleus）对应；PLM 在无监督预训练中已隐含了进化上保守的结构约束，因此仅需少量标记数据微调即可捕捉折叠起始信号。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：任何与蛋白质动力学/稳定性相关的残基级属性（如折叠速率、构象熵贡献）都可能通过 PLM 嵌入 + 小样本微调实现可迁移预测，无需显式结构输入。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：氨基酸序列（单条，无 MSA 或结构信息）</li>
+<li><strong>输出</strong>：每个残基的 EFR 概率分数（0-1）</li>
+<li><strong>模块</strong>：
+  1. PLM 编码器（如 ESM-2 或 ProtT5，具体未指定）
+  2. 微调头（卷积层 + 注意力层 + 全连接层）
+  3. 训练目标：二分类交叉熵（EFR vs 非 EFR）</li>
+<li><strong>训练</strong>：在 Start2Fold 数据集上微调，使用交叉验证评估</li>
+<li><strong>工具</strong>：PyTorch（推测，未明确）</li>
+<li><strong>反馈回路</strong>：无（静态预测，无迭代优化）</li>
+<li><strong>假设</strong>：EFR 标签可从实验数据（HDX-NMR 保护因子、φ-value）可靠定义；PLM 嵌入包含折叠起始的隐含信号</li>
+<li><strong>流程</strong>：序列 → PLM 嵌入 → 卷积/注意力特征提取 → 残基级 EFR 概率 → 阈值化得到 EFR 集合 → 变异注释（EFR 内 vs 外）→ 统计富集与生存分析</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PLM 编码器</td>
+<td>提取序列的进化/结构隐含表示</td>
+<td>提供超越单序列的上下文信息</td>
+<td>输入：序列；输出：残基嵌入</td>
+<td>作者声称优于非 PLM 基线（Results 图 1）</td>
+<td>预期 AUC 显著下降（[Analysis] 未实测）</td>
+</tr>
+<tr>
+<td>卷积/注意力微调头</td>
+<td>将嵌入映射到残基级 EFR 分数</td>
+<td>捕捉局部与长程相互作用</td>
+<td>输入：嵌入；输出：概率</td>
+<td>消融实验未提供</td>
+<td>预期精度下降（[Analysis]）</td>
+</tr>
+<tr>
+<td>阈值化模块</td>
+<td>将连续分数转为二元 EFR 标签</td>
+<td>便于变异富集统计</td>
+<td>输入：概率；输出：EFR 集合</td>
+<td>未提供阈值选择细节</td>
+<td>阈值变化可能影响富集显著性（[Analysis]）</td>
+</tr>
+<tr>
+<td>变异注释流程</td>
+<td>将 EFR 标签映射到变异位置</td>
+<td>连接预测与临床数据</td>
+<td>输入：变异列表 + EFR 集合；输出：EFR 内/外分类</td>
+<td>Results 表 1</td>
+<td>移除后无法进行致病性关联分析</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>不适用</strong>：提供的材料中未包含具体数学公式。模型为深度学习框架，损失函数为交叉熵（推测），但原文未给出显式公式。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：</li>
+<li>Start2Fold 基准（训练/评估 EFR 预测）</li>
+<li>HDX-NMR 保护因子数据（独立验证）</li>
+<li>ClinVar（致病突变）</li>
+<li>UKB、gnomAD（群体变异）</li>
+<li>MSK-MET（癌症临床队列，含生存数据）</li>
+<li><strong>规模</strong>：Start2Fold 具体蛋白数未提供；变异总数 &gt; 660 万（6.6 million）</li>
+<li><strong>指标</strong>：ROC AUC、富集比例（%）、P 值、生存分析（Kaplan-Meier，HR 未提供）</li>
+<li><strong>基线</strong>：现有序列-based EFR 预测器（具体名称未提供）</li>
+<li><strong>评测协议</strong>：交叉验证（Start2Fold）；独立验证（HDX-NMR）；统计检验（富集分析）；Cox 回归（生存）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start2Fold 基准</td>
+<td>LMEFold 优于现有预测器</td>
+<td>与序列-based 基线对比</td>
+<td>ROC AUC = 0.831</td>
+<td>LMEFold 精度更高</td>
+<td>未证明对所有蛋白类型最优</td>
+<td>Results 图 1</td>
+</tr>
+<tr>
+<td>HDX-NMR 验证</td>
+<td>预测分数与实验保护因子相关</td>
+<td>独立数据集</td>
+<td>显著相关（具体 r 值未提供）</td>
+<td>预测具有物理意义</td>
+<td>未证明因果性</td>
+<td>Results 图 2</td>
+</tr>
+<tr>
+<td>ClinVar 富集分析</td>
+<td>EFR 变异在致病突变中富集</td>
+<td>与 UKB/gnomAD 群体变异对比</td>
+<td>~17% vs ~10%，P &lt; 0.001</td>
+<td>EFR 是致病热点</td>
+<td>未证明所有 EFR 变异均致病</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>MSK-MET 生存分析</td>
+<td>EFR 突变与较差预后相关</td>
+<td>携带 vs 不携带 EFR 突变</td>
+<td>显著降低总生存期（具体 HR 未提供）</td>
+<td>EFR 突变有预后价值</td>
+<td>未证明独立于其他临床因素</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>TP53 p.Y163C 结构分析</td>
+<td>热点突变破坏折叠核心</td>
+<td>结构可视化</td>
+<td>突变位于折叠核心区域</td>
+<td>机制上支持折叠破坏假说</td>
+<td>未提供分子动力学证据</td>
+<td>Results 图 5</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限序列-based EFR 预测，不涉及结构预测或构象采样。</li>
+<li><strong>Oracle/真值输入</strong>：EFR 标签来自实验数据（HDX-NMR、φ-value），但具体定义标准未完全透明。</li>
+<li><strong>端到端状态</strong>：从序列到预后标记的完整流程已实现，但预后部分依赖统计关联而非机制验证。</li>
+<li><strong>算力成本</strong>：未提供训练/推理时间。</li>
+<li><strong>历史数据依赖</strong>：PLM 预训练语料可能引入对已知蛋白家族的偏向。</li>
+<li><strong>模型依赖</strong>：结果依赖特定 PLM 架构与微调策略，未做架构搜索。</li>
+<li><strong>最难情形</strong>：对无同源序列的孤儿蛋白或 intrinsically disordered proteins 可能失效（[Analysis] 未在文中讨论）。</li>
+<li><strong>群体/领域边界</strong>：癌症预后分析仅基于 MSK-MET 队列，可能不适用于其他癌种或人群。</li>
+<li><strong>不确定性</strong>：EFR 定义阈值、变异注释的假阳性率未报告。</li>
+<li><strong>有边界复述</strong>：LMEFold 在已知折叠实验数据上优于现有序列预测器，其预测的 EFR 变异在 ClinVar 和 MSK-MET 中显著富集，但该关联的机制解释（折叠破坏）仅通过单一结构案例初步支持，未在蛋白组水平验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练数据规模有限</td>
+<td>Start2Fold 仅覆盖少量蛋白</td>
+<td>扩展实验 EFR 数据集</td>
+<td>Discussion 节（未提供行号）</td>
+</tr>
+<tr>
+<td>预测为静态快照</td>
+<td>未考虑共翻译折叠或伴侣辅助折叠</td>
+<td>引入动态折叠模拟</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>临床验证单一队列</td>
+<td>仅 MSK-MET 一个癌症队列</td>
+<td>多中心、多癌种验证</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>机制验证不足</td>
+<td>仅 TP53 一个结构案例</td>
+<td>更多突变的结构与功能实验</td>
+<td>Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EFR 定义依赖实验方法</td>
+<td>不同实验（HDX vs φ-value）可能标记不同残基</td>
+<td>影响标签一致性与模型泛化</td>
+<td>在多个实验来源上分别评估</td>
+<td>方法部分未统一标准</td>
+</tr>
+<tr>
+<td>富集分析未控制蛋白长度/结构域</td>
+<td>长蛋白或重复结构域可能天然有更多 EFR</td>
+<td>可能高估富集效应</td>
+<td>按蛋白长度分层分析</td>
+<td>Results 表 1 未提供协变量</td>
+</tr>
+<tr>
+<td>生存分析未报告多变量模型</td>
+<td>年龄、分期、治疗等混杂因素未提及</td>
+<td>预后关联可能非独立</td>
+<td>要求 Cox 多变量分析</td>
+<td>Results 图 4 仅单变量</td>
+</tr>
+<tr>
+<td>PLM 嵌入可能隐含物种偏向</td>
+<td>训练语料以模式生物为主</td>
+<td>对非模式生物蛋白预测可能偏差</td>
+<td>在多样物种蛋白上测试</td>
+<td>未提供物种分层结果</td>
+</tr>
+<tr>
+<td>阈值选择未报告</td>
+<td>不同阈值可能改变 EFR 集合大小</td>
+<td>影响所有下游分析</td>
+<td>提供阈值敏感性分析</td>
+<td>方法部分未说明</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>PLM 微调用于残基级功能注释</strong>：本文展示了 PLM 嵌入 + 小样本微调可预测折叠相关残基，此策略可迁移到其他残基级属性（如构象变化热点、蛋白-蛋白结合界面残基）。
+2. <strong>折叠信息作为变异致病性特征</strong>：将 EFR 作为变异注释的二元特征，可补充保守性评分（如 CADD、REVEL），用于本课题的变异效应预测。
+3. <strong>从序列到临床的端到端框架</strong>：本文的「预测 → 注释 → 富集 → 生存」流程可迁移到其他结构相关标记（如 AlphaFold pLDDT 低置信区域）的临床关联分析。
+4. <strong>结构机制验证的简化路径</strong>：用单一热点突变（TP53 p.Y163C）的结构分析作为机制证据，提示本课题可用类似「预测 + 单案例结构验证」策略快速产出假设。
+5. <strong>大规模变异注释的实用管线</strong>：对 660 万变异进行 EFR 注释的流程，可复用于本课题的构象采样或对接结果注释。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：与 AlphaFold 的 pLDDT 或 pAE 作为结构置信度/动态性代理的思路相似，本文用 EFR 作为折叠起始的代理；两者均可用于变异致病性排序。</li>
+<li><strong>组合</strong>：可将 LMEFold 的 EFR 预测与 MD 模拟结合——用 EFR 作为初始折叠核，指导增强采样（如 replica exchange）的偏置势设置。</li>
+<li><strong>冲突</strong>：本文主张 EFR 变异富集于致病突变，但现有保守性-based 工具（如 SIFT）未显式考虑折叠信息；两者可能互补而非冲突。</li>
+<li><strong>可迁移领域</strong>：分子对接中，EFR 可作为蛋白结合位点附近构象稳定性的参考；蛋白设计中，EFR 可作为稳定核心设计的约束。</li>
+<li><strong>候选方向</strong>：将 EFR 预测整合到 AlphaFold 的 pLDDT 输出中，构建多维度结构-功能风险评分。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：
+1. <strong>名称</strong>：EFR-guided 增强采样（EFR-REMD）
+   - <strong>来源局限/观察</strong>：本文仅预测 EFR，未利用其指导构象采样。
+   - <strong>核心假设</strong>：将 EFR 作为折叠核约束，在 REMD 中偏置这些残基的接触形成，可加速折叠路径采样。
+   - <strong>初步方法</strong>：在 OpenMM 中实现 EFR 残基对的 harmonic restraint，与 REMD 结合。
+   - <strong>验证方式</strong>：在 fast-folding 蛋白（如 villin、trp-cage）上比较采样效率与折叠自由能面。
+   - <strong>创新状态</strong>：unverified</p>
+<ol start="2">
+<li>
+<p><strong>名称</strong>：EFR-aware 变异致病性评分（EFR-Path）
+   - <strong>来源局限/观察</strong>：本文仅用 EFR 二元注释，未与现有评分融合。
+   - <strong>核心假设</strong>：将 EFR 概率作为连续特征加入 REVEL/CADD 等评分模型，可提升致病性预测精度。
+   - <strong>初步方法</strong>：用 ClinVar 数据训练梯度提升模型，输入 EFR 概率 + 保守性 + 结构特征。
+   - <strong>验证方式</strong>：独立测试集 AUC 比较。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：跨物种 EFR 保守性分析
+   - <strong>来源局限/观察</strong>：本文未分析 EFR 的进化保守性。
+   - <strong>核心假设</strong>：EFR 在直系同源蛋白中比非 EFR 更保守，且保守 EFR 变异更具致病性。
+   - <strong>初步方法</strong>：用 LMEFold 预测多个物种蛋白组，计算 EFR 位点的保守性得分。
+   - <strong>验证方式</strong>：与 ClinVar 致病突变重叠分析。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：EFR 与 AlphaFold pLDDT 的联合分析
+   - <strong>来源局限/观察</strong>：本文未与 AlphaFold 输出比较。
+   - <strong>核心假设</strong>：EFR 与 pLDDT 低置信区域互补，联合可更好预测错义突变致病性。
+   - <strong>初步方法</strong>：对同一蛋白集计算 EFR 概率与 pLDDT，构建二维特征空间。
+   - <strong>验证方式</strong>：在 gnomAD/ClinVar 上比较富集差异。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：EFR 指导的蛋白稳定性设计
+   - <strong>来源局限/观察</strong>：本文仅用于预测，未用于设计。
+   - <strong>核心假设</strong>：在 EFR 位点引入稳定化突变（如疏水核心增强）可提高蛋白表达与热稳定性。
+   - <strong>初步方法</strong>：用 LMEFold 预测设计变体的 EFR 概率变化，结合 Rosetta 稳定性评分。
+   - <strong>验证方式</strong>：实验表达与 Tm 测量。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no access to methods, figures, tables, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present LMEFold, a protein language model-based deep learning framework that predicts early folding residues (EFRs) from amino acid sequence. They report benchmark performance on Start2Fold (ROC AUC = 0.831), association with HDX-NMR protection factors, enrichment of ClinVar pathogenic variants in EFRs (~17%) versus population variants (~10%, P &lt; 0.001), and association of EFR mutations with reduced survival in the MSK-MET pan-cancer cohort. A structural mechanism is proposed for TP53 p.Y163C.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or supplementary data provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full methods, model architecture and training details, benchmark evaluation protocol, statistical analysis details, survival analysis methodology, variant annotation pipeline, structural analysis procedures, and all underlying data</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially interesting application of protein language models to a biologically relevant problem, namely the identification of early folding residues and their relationship to pathogenic variants. The core claims are plausible but cannot be adequately evaluated from the abstract alone. Several critical methodological details are absent, including how EFRs are defined, how the model is trained and validated, and how the statistical associations are computed. The survival analysis claim is particularly under-specified. The work may be of interest to the protein folding and clinical genomics communities, but the evidence base provided is insufficient to establish the case.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in protein folding, protein stability, and misfolding diseases would be interested in the EFR prediction framework and its biophysical validation. Clinical genomics researchers and those working on variant interpretation and cancer prognosis may find the association between EFR mutations and patient survival relevant. The use of protein language models for sequence-only prediction may also appeal to the computational biology and machine learning communities.</li>
+<li><strong>Major strengths</strong> The problem addressed is of clear biological and clinical importance. The use of protein language models for sequence-only prediction is timely and potentially scalable. The abstract reports validation against independent biophysical measurements (HDX-NMR) and large-scale genomic datasets, which strengthens the credibility of the approach. The proposed mechanism for TP53 p.Y163C provides a concrete example that could be experimentally testable.</li>
+<li><strong>Major Concerns</strong> </li>
+<li>R1-M1</li>
+<li>R1-M2</li>
+<li>R1-M3</li>
+<li>R1-M4</li>
+<li><strong>Minor Comments</strong> </li>
+<li>R1-m1</li>
+<li>R1-m2</li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (EFR definition and model validation), R1-M2 (statistical comparison of variant enrichment), R1-M3 (survival analysis methodology), R1-M4 (structural mechanism evidence)</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The concept of linking EFRs to pathogenic variants is not entirely new, but the use of PLMs for proteome-wide EFR prediction may offer a novel computational contribution. Scientific importance: If the claims are substantiated, the work could have implications for variant interpretation and cancer prognosis, which is of high importance. Interdisciplinary readership: The work spans protein biophysics, computational biology, and clinical genomics, which could attract a broad audience. Technical soundness: Cannot be assessed from the abstract alone; the reported AUC of 0.831 is modest and requires careful benchmarking. Readability for nonspecialists: The abstract is generally clear, though some terms (e.g., HDX-NMR protection factors) may require background knowledge.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents interesting hypotheses and preliminary associations, but the lack of methodological detail and the under-specified statistical and clinical analyses prevent a supportive recommendation. The authors should provide full methods and results for a complete evaluation.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "LMEFold outperforms existing sequence-based predictors on the Start2Fold benchmark (ROC AUC = 0.831)"</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract does not define what constitutes an early folding residue, nor does it describe the training and validation protocol for LMEFold. The reported ROC AUC of 0.831 is presented as evidence of superior performance, but no comparison details are given, such as which predictors were compared, whether the comparison was statistically significant, and how the benchmark was split for training and testing. Without this information, the claim of outperformance cannot be evaluated.</li>
+<li><strong>Why it matters</strong> The central contribution of the work is the prediction framework. If the model's performance is not rigorously established, all downstream analyses that depend on predicted EFRs are compromised.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a clear definition of EFRs, describe the model architecture and training data, and report a full benchmark evaluation including statistical significance tests against multiple baseline predictors on held-out test sets.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Claim pointer</strong> "pathogenic mutations curated in ClinVar are significantly enriched within EFRs (~17%) compared to millions of population variants from large-scale cohorts including the UKB and gnomAD databases (~10%, P &lt; 0.001)"</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract reports a comparison between ClinVar pathogenic variants and population variants from UKB and gnomAD, but it does not specify how the comparison was performed. Critical details are missing, including whether the variant sets were matched for confounding factors such as gene size, mutation type, or regional sequence context, and how the P value was calculated. The use of "millions of population variants" as a comparator raises concerns about the appropriateness of the statistical test and the potential for inflated significance due to large sample sizes.</li>
+<li><strong>Why it matters</strong> The enrichment claim is a key finding that links EFRs to pathogenicity. If the statistical comparison is flawed or confounded, the conclusion that EFRs are "critical hotspots" for pathogenic variants is not supported.</li>
+<li>
+<p><strong>Resolution test</strong> Describe the exact statistical test used, report effect sizes and confidence intervals, and demonstrate that the enrichment is robust to confounding factors such as gene length, variant type, and mutational heterogeneity across genes.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Clinical validity</li>
+<li><strong>Claim pointer</strong> "in the MSK-MET pan-cancer clinical cohort, EFR mutations are associated with severe functional disruption and significantly reduced overall patient survival"</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The survival analysis is described in a single sentence with no methodological detail. It is unclear how EFR mutations were defined in the cohort, which cancer types were included, how the survival analysis was performed (e.g., Cox proportional hazards model), what covariates were adjusted for, and what the effect size and confidence intervals were. The claim of "severe functional disruption" is also not defined or quantified.</li>
+<li><strong>Why it matters</strong> The clinical relevance of the work rests on this survival association. Without proper survival analysis methodology and reporting, the claim of reduced patient survival is not credible.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed description of the cohort, the definition of EFR mutations, the survival analysis model, covariates, and report hazard ratios with confidence intervals and P values. Also define and quantify "functional disruption" with appropriate assays or computational predictions.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Mechanistic evidence</li>
+<li><strong>Claim pointer</strong> "Structural analysis of hotspot cancer mutations, such as TP53 p.Y163C, suggests a mechanism whereby these variants destabilize protein structure by disrupting the early folding core"</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract claims a mechanistic explanation for TP53 p.Y163C based on structural analysis, but no details are provided on the structural data, the analysis method, or how the disruption of the early folding core is demonstrated. The word "suggests" indicates a hypothesis, but the evidence base is not described.</li>
+<li><strong>Why it matters</strong> A mechanistic claim strengthens the biological relevance of the work, but without supporting structural or experimental evidence, it remains speculative.</li>
+<li><strong>Resolution test</strong> Provide structural models or experimental data (e.g., molecular dynamics simulations, mutagenesis, or biophysical measurements) that directly demonstrate destabilization of the folding core by p.Y163C and other hotspot mutations.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract terminology</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The term "early folding residues" is used throughout but is not defined in the abstract. Readers unfamiliar with the folding literature may not understand what this means.</li>
+<li>
+<p><strong>Required correction</strong> Provide a brief definition or description of EFRs in the abstract, such as "residues that initiate the folding process and form the folding nucleus."</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Dataset description</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract mentions "diverse genomic datasets" and "large-scale cohorts including the UKB and gnomAD" but does not specify the number of variants or the criteria for inclusion.</li>
+<li>
+<p><strong>Required correction</strong> Include the total number of variants analyzed and a brief description of the datasets and filtering criteria.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Model availability</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract does not state whether the LMEFold model or its code will be made publicly available, which is important for reproducibility and community use.</li>
+<li><strong>Required correction</strong> State the availability of the model, code, and any associated web server or repository.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that LMEFold "outperforms existing sequence-based predictors" is unsupported without detailed benchmark comparison data.</li>
+<li>The enrichment of pathogenic variants in EFRs is reported with a P value but without effect size or confidence intervals, making the practical significance unclear.</li>
+<li>The survival association in the MSK-MET cohort is not supported by any methodological detail and cannot be evaluated.</li>
+<li>The mechanistic claim for TP53 p.Y163C is speculative and lacks supporting structural or experimental evidence.</li>
+<li>The general statement that EFRs are "critical sites of pathogenic vulnerability" is a broad conclusion that extends beyond the specific findings reported in the abstract.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The MODNAP benchmark set for modeling ribose-based modified nucleic acid and nucleic acid-protein complexes: a case study with AlphaFold 3. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>The MODNAP benchmark set for modeling ribose-based modified nucleic acid and nucleic acid-protein complexes: a case study with AlphaFold 3.</h1>
+      <div class="meta">Fu, Jiemin; Milam, Valeria Tohver; McShan, Andrew C</div>
+      <div class="meta muted">
+        
+        <span class="journal">Nucleic acids research</span>
+        · 2026-10-15
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42878004/">原文</a>
+      </div>
+      <p class="one-liner">该文构建了含修饰核糖核苷酸的核酸及核酸-蛋白复合物结构数据集MODNAP，并系统评估AlphaFold 3的预测性能，虽对象为核酸而非蛋白质，但其结构预测基准测试方法可迁移至蛋白质体系，对蛋白质结构计算有参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Modified nucleic acids play important roles in biology and biotechnology. However, their chemical and structural diversity as well as effects on nucleic acid structure and intermolecular interactions remain incompletely characterized. The performance of structure prediction and co-folding algorithms for modeling modified nucleic acids and nucleic acid-protein complexes has also not been evaluated. Here, we systematically analyze ribose-based modified nucleotides present in structures deposited in the Protein Data Bank. Modified nucleotides are primarily localized to the nucleobase, where they exhibit chemical and structural diversity shaped by molecular size, topological shape descriptors, and polarity-related properties. We develop MODNAP, the first curated dataset of experimentally determined structures containing modified nucleotides. Using MODNAP, we benchmark AlphaFold 3 on 1039 nucleic acid and nucleic acid-protein complex structures spanning a range of nucleotide modifications, tertiary folds, and biological functions. AlphaFold 3 achieves success rates exceeding 80% at an RMSD threshold of 2.5 A. However, its accuracy in positioning modified nucleotides is variable and decreases for structures not explicitly represented in training. PoseBusters analysis reveals frequent intramolecular validity failures, primarily due to non-ideal ribose ring geometries. Together, these results establish MODNAP as a resource for evaluating and improving structure prediction methods for modified nucleic acids.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">修饰核酸在生物学和生物技术中扮演重要角色。然而，其化学和结构多样性以及对核酸结构和分子间相互作用的影响仍未得到充分表征。用于建模修饰核酸及核酸-蛋白质复合物的结构预测和共折叠算法的性能也尚未被评估。在此，我们系统分析了蛋白质数据银行（Protein Data Bank）中沉积结构中的核糖基修饰核苷酸。修饰核苷酸主要定位于核碱基，其化学和结构多样性受分子大小、拓扑形状描述符和极性相关性质的影响。我们开发了MODNAP，这是首个包含修饰核苷酸实验确定结构的精选数据集。利用MODNAP，我们对AlphaFold 3在1039个核酸及核酸-蛋白质复合物结构上进行了基准测试，这些结构涵盖多种核苷酸修饰、三级折叠和生物学功能。在RMSD阈值为2.5 Å时，AlphaFold 3的成功率超过80%。然而，其在定位修饰核苷酸方面的准确性存在变异性，并且对于训练中未明确表示的结构，准确性有所下降。PoseBusters分析揭示了频繁的分子内有效性失败，主要归因于非理想的核糖环几何结构。综合这些结果，MODNAP被确立为评估和改进修饰核酸结构预测方法的资源。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：The MODNAP benchmark set for modeling ribose-based modified nucleic acid and nucleic acid-protein complexes: a case study with AlphaFold 3</li>
+<li><strong>作者</strong>：Fu, Jiemin; Milam, Valeria Tohver; McShan, Andrew C</li>
+<li><strong>单位</strong>：未提供（推测为 Georgia Institute of Technology，依据基金与致谢信息）</li>
+<li><strong>期刊/平台</strong>：Nucleic Acids Research</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-15）</li>
+<li><strong>论文类型</strong>：基准数据集构建 + 方法评估研究</li>
+<li><strong>领域</strong>：结构生物学、RNA/DNA 修饰、AI 结构预测</li>
+<li><strong>关键词</strong>：modified nucleotides, AlphaFold 3, benchmark, nucleic acid-protein complexes, structure prediction, PoseBusters, RNAspider</li>
+<li><strong>DOI/arXiv</strong>：10.1093/nar/gkag999</li>
+<li><strong>代码/数据</strong>：https://doi.org/10.5281/zenodo.22784529；https://github.com/mcshanlab/Fu-et-al_MODNAP_2026</li>
+<li><strong>阅读日期</strong>：2026-05-12（模拟）</li>
+<li><strong>在课题方向中的位置</strong>：本文构建了首个针对核糖类修饰核苷酸的 curated 基准数据集 MODNAP，并系统评估了 AlphaFold 3 在修饰核酸及核酸-蛋白复合物结构预测上的表现。该工作直接填补了 AI 结构预测方法在非标准核酸修饰物上缺乏系统评测的空白，属于「结构预测 × 非标准残基」交叉方向的关键基准资源。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文构建了包含 1039 个实验结构的 MODNAP 基准数据集（覆盖 129 种修饰核苷酸），系统评估 AlphaFold 3 在修饰核酸及核酸-蛋白复合物上的预测能力，发现其整体折叠预测成功率超过 80%（RMSD &lt; 2.5 Å），但修饰核苷酸局部放置精度显著下降，且大量模型存在核糖环几何非理想性问题。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：AlphaFold 3 能否准确预测含修饰核苷酸的核酸及核酸-蛋白复合物的三维结构？其预测精度是否受修饰类型、分子拓扑复杂度、复合物组成等因素影响？</li>
+<li><strong>为什么重要</strong>：修饰核酸在表观遗传调控、RNA 加工、翻译调控等关键生物学过程中发挥核心作用，也是核酸药物（如 ASO、siRNA、适配体）设计的基础。然而，现有结构预测工具的评测几乎完全聚焦于标准核酸，对修饰核酸的适用性未知。</li>
+<li><strong>现有方法不足</strong>：此前缺乏系统性的、覆盖多种修饰类型的 curated 基准数据集；AlphaFold 3 虽声称支持修饰残基（通过 CCD ID），但其在修饰核酸上的表现未被量化评估；标准 RMSD 等全局指标可能掩盖局部化学几何错误。</li>
+<li><strong>精确研究问题</strong>：Can AlphaFold 3 generalize to accurately predict the 3D structures of ribose-based modified nucleic acids and their protein complexes across diverse modification chemistries and structural contexts?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」+「仅本文框架」混合，分别注明）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经典核酸结构预测</td>
+<td>UNAFOLD, NUPACK（2D 折叠）</td>
+<td>快速、基于热力学</td>
+<td>仅预测 2D 二级结构，不提供 3D 坐标</td>
+<td>本文强调 3D 原子级预测的必要性</td>
+</tr>
+<tr>
+<td>3D 核酸结构预测</td>
+<td>Rosetta, SimRNA, RNAComposer</td>
+<td>可处理非标准残基（部分）</td>
+<td>精度有限、计算成本高、对修饰残基支持不系统</td>
+<td>本文提供基准以量化这些方法的差距</td>
+</tr>
+<tr>
+<td>AI 结构预测</td>
+<td>AlphaFold 2（蛋白质）</td>
+<td>蛋白质预测精度革命性提升</td>
+<td>不支持核酸或修饰残基</td>
+<td>背景铺垫</td>
+</tr>
+<tr>
+<td>AI 多模态结构预测</td>
+<td>AlphaFold 3, RoseTTAFold All-Atom, Chai-1</td>
+<td>支持核酸、修饰残基（CCD ID）、蛋白-核酸复合物</td>
+<td>对修饰核酸的系统评测缺失</td>
+<td><strong>本文核心贡献：填补此空白</strong></td>
+</tr>
+<tr>
+<td>结构质量评估</td>
+<td>PoseBusters, RNAspider</td>
+<td>可检测化学几何、拓扑纠缠</td>
+<td>此前未应用于修饰核酸的 AI 预测评估</td>
+<td>本文首次将二者结合用于修饰核酸评估</td>
+</tr>
+</tbody>
+</table>
+<p><em>（标注：此脉络中 AlphaFold 2/3 能力描述经外部核验；UNAFOLD/NUPACK 能力描述经外部核验；其余为本文框架。）</em></p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>修饰核苷酸结构预测缺乏基准</td>
+<td>无系统 curated 数据集可用于评测 AI 方法在修饰核酸上的表现</td>
+<td>修饰核苷酸化学多样性高、实验结构数量少、缺乏标准化整理</td>
+<td>Introduction 第 3 段；"the first curated dataset"</td>
+</tr>
+<tr>
+<td>AlphaFold 3 对修饰残基的局部放置精度不足</td>
+<td>修饰核苷酸单独计算 RMSD 时精度显著低于全结构 RMSD</td>
+<td>训练数据中修饰残基样本稀少；局部误差对全局叠加指标贡献小</td>
+<td>Results 图 10A-B；Discussion 第 2 段</td>
+</tr>
+<tr>
+<td>核糖环几何非理想性</td>
+<td>仅 30.4% 模型通过 PoseBusters 非芳香环非平面测试</td>
+<td>扩散模型对修饰核糖环的 puckering 构象采样不准确</td>
+<td>Results 图 3A-B；Discussion 第 1 段</td>
+</tr>
+<tr>
+<td>全局指标掩盖局部错误</td>
+<td>RMSD ≤ 2.0 Å 的高全局精度与修饰残基局部错位并存</td>
+<td>全局叠加平均化局部误差；标准指标不足以评估化学有效性</td>
+<td>Results 图 10A-D；Discussion 第 1 段</td>
+</tr>
+<tr>
+<td>复杂拓扑 RNA 易产生纠缠</td>
+<td>核酶/核开关等复杂折叠中检测到 lasso/互穿型纠缠</td>
+<td>高度结构化、多结构域 RNA 架构本身易产生拓扑纠缠</td>
+<td>Results 图 S12-S14；Discussion 第 1 段</td>
+</tr>
+<tr>
+<td>数据分布不均</td>
+<td>少数修饰类型（5CM、8OG、BRU）占数据集约 31%</td>
+<td>反映 PDB 中实验结构的天然偏好</td>
+<td>Results 图 S7；Discussion 第 3 段</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>构建 MODNAP 基准数据集（从 PDB 系统提取含修饰核苷酸的核酸及核酸-蛋白复合物结构），然后以 AlphaFold 3 为案例，用多种指标（RMSD、TM-score、lDDT、INF、PoseBusters、RNAspider）系统评估其预测性能。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>修饰核苷酸的化学空间主要由分子大小、拓扑形状和极性驱动</strong>，而非修饰类型或生物学来源——这意味着结构预测方法需要对这些物理化学特征敏感。</li>
+<li><strong>AlphaFold 3 的全局折叠预测能力较强，但修饰残基的局部放置是薄弱环节</strong>——全局指标（RMSD）与局部化学有效性（PoseBusters）之间存在显著脱节。</li>
+<li><strong>预测精度受训练数据时间截止影响</strong>——post-cutoff 结构（训练未见）的精度显著下降，说明部分表现来自记忆而非泛化。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>对 AI 结构预测方法的评估不能仅依赖全局叠加指标，必须结合化学有效性检查（如 PoseBusters）和拓扑分析（如 RNAspider），否则会高估模型的实际可用性。</li>
+<li>基准数据集的「时间截止」设计（train/test split by date）是评估泛化能力的关键策略，值得在其他结构预测任务中推广。</li>
+<li>修饰残基的局部精度不足可能反映训练数据中稀有残基的欠表征问题，这提示需要针对稀有/非标准残基设计专门的数据增强或损失加权策略。</li>
+</ul>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：核酸序列（含修饰核苷酸的 CCD ID）、蛋白质序列（如有）、可能的配体/离子信息</p>
+<p><strong>输出</strong>：预测的 3D 原子坐标（全复合物结构）</p>
+<p><strong>模块</strong>：
+1. <strong>MODNAP 数据集构建模块</strong>：从 PDB 提取含修饰核苷酸的结构 → 过滤（分辨率 ≤ 3.5 Å、排除 NMR、序列长度限制）→ 标注修饰类型与位置 → 划分 benchmark set（1039 结构）与 test set（103 结构，post-cutoff）
+2. <strong>AlphaFold 3 推理模块</strong>：本地部署 AF3 v3.0.0，输入 JSON 格式（含 CCD ID），默认参数（5 个扩散采样，10 次 recycling）
+3. <strong>结构评估模块</strong>：
+   - 全局指标：RMSD、TM-score、lDDT
+   - 相互作用指标：INF_all、INF_WC、I-INF
+   - 化学有效性：PoseBusters 测试套件
+   - 拓扑分析：RNAspider 纠缠检测</p>
+<p><strong>流程</strong>：</p>
+<pre><code>PDB 提取 → 过滤 → MODNAP 数据集 → AF3 推理 → 多指标评估 → 分层分析（按分子类型/修饰类型/时间截止）
+</code></pre>
+<p><strong>关键假设</strong>：
+- PDB 中的实验结构可作为 ground truth
+- AF3 的默认参数适用于修饰核酸体系
+- 分辨率 ≤ 3.5 Å 足以可靠评估修饰残基放置</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MODNAP 数据集构建</td>
+<td>系统收集、过滤、标注含修饰核苷酸的实验结构</td>
+<td>提供标准化的评测基准</td>
+<td>输入：PDB 全库；输出：1039 结构 + 129 CCD ID 标注</td>
+<td>Methods "Construction of the MODNAP dataset"</td>
+<td>无基准则无法量化评估任何方法</td>
+</tr>
+<tr>
+<td>AlphaFold 3 推理</td>
+<td>从序列预测 3D 结构</td>
+<td>评估 SOTA 方法在修饰核酸上的表现</td>
+<td>输入：序列 + CCD ID；输出：5 个候选结构</td>
+<td>Methods "AlphaFold 3 modeling"</td>
+<td>无法获得预测结构</td>
+</tr>
+<tr>
+<td>PoseBusters 化学有效性检查</td>
+<td>检测化学几何、立体化学、环构象等</td>
+<td>全局 RMSD 无法反映局部化学错误</td>
+<td>输入：预测结构；输出：通过/失败分类</td>
+<td>Results 图 3A-C</td>
+<td>将高估模型化学有效性</td>
+</tr>
+<tr>
+<td>RNAspider 纠缠检测</td>
+<td>识别 RNA 拓扑纠缠</td>
+<td>复杂 RNA 折叠易产生非物理纠缠</td>
+<td>输入：预测结构 + 二级结构；输出：纠缠类型与位置</td>
+<td>Results 图 S12-S14</td>
+<td>无法发现拓扑错误</td>
+</tr>
+<tr>
+<td>分层统计分析</td>
+<td>按分子类型/修饰类型/时间截止分层评估</td>
+<td>识别性能差异的模式与来源</td>
+<td>输入：全部评估结果；输出：分层性能表</td>
+<td>Results 图 4A-H, 10A-D</td>
+<td>无法定位性能瓶颈</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>本文为基准数据集 + 评估研究，无核心数学模型。以下为评估指标定义（来自 Methods 或标准文献）：</p>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>符号含义</th>
+<th>用途</th>
+<th>直觉</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RMSD = √(Σdᵢ²/N)</td>
+<td>dᵢ：对应原子间距离；N：原子对数</td>
+<td>全局结构叠加误差</td>
+<td>越小越好，反映整体折叠相似度</td>
+<td>Methods "Evaluation"</td>
+</tr>
+<tr>
+<td>TM-score = max(1/N_ref × Σ 1/(1+(dᵢ/d₀)²))</td>
+<td>d₀：长度依赖归一化因子</td>
+<td>拓扑相似性</td>
+<td>&gt;0.6 表示可能正确折叠</td>
+<td>Methods "Evaluation"</td>
+</tr>
+<tr>
+<td>lDDT = 1/N × Σ δ(dᵢ &lt; 阈值)</td>
+<td>局部距离差测试</td>
+<td>局部原子距离保持</td>
+<td>&gt;0.6 表示局部结构可信</td>
+<td>Methods "Evaluation"</td>
+</tr>
+<tr>
+<td>INF = √(PPV × Sensitivity)</td>
+<td>PPV = TP/(TP+FP)；Sensitivity = TP/(TP+FN)</td>
+<td>碱基配对网络保真度</td>
+<td>0-1，越高越好</td>
+<td>Methods "Evaluation"</td>
+</tr>
+<tr>
+<td>I-INF = √(PPV × Sensitivity)</td>
+<td>同上，但限于界面接触</td>
+<td>复合物界面预测精度</td>
+<td>0-1，越高越好</td>
+<td>Methods "Evaluation"</td>
+</tr>
+</tbody>
+</table>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>：
+- MODNAP benchmark set：1039 个 PDB 结构，129 个修饰核苷酸 CCD ID
+- MODNAP test set：103 个 post-cutoff（2021-09-30 后）结构
+- 结构类型分布：DNA、RNA、DNA-RNA 杂交、DNA-蛋白、RNA-蛋白、DNA-RNA-蛋白复合物</p>
+<p><strong>指标</strong>：RMSD（2.0/2.5/3.0 Å 阈值）、TM-score、lDDT、INF_all、INF_WC、I-INF、PoseBusters 通过率、RNAspider 纠缠检测</p>
+<p><strong>基线</strong>：无直接基线（本文为首次系统评测）；间接对比为 AF3 在标准核酸上的已知表现</p>
+<p><strong>评测协议</strong>：每个输入生成 5 个扩散样本，取最高排名模型；默认 recycling = 10</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全数据集 AF3 预测成功率</td>
+<td>AF3 能高精度预测修饰核酸结构</td>
+<td>RMSD &lt; 2.5 Å 阈值，全 1039 结构</td>
+<td>成功率 &gt; 80%</td>
+<td>AF3 整体折叠预测能力强</td>
+<td>成功率不区分修饰类型，可能掩盖局部差异</td>
+<td>Results 图 4A</td>
+</tr>
+<tr>
+<td>按分子类型分层</td>
+<td>不同分子类型表现有差异</td>
+<td>DNA vs RNA vs 复合物</td>
+<td>RNA 成功率最低（88.4%），DNA-RNA-蛋白最低（80%）</td>
+<td>复杂复合物和 RNA 更具挑战性</td>
+<td>样本量不均可能影响比较</td>
+<td>Results 图 4A, Table 1</td>
+</tr>
+<tr>
+<td>按修饰类型分层</td>
+<td>修饰化学类型影响预测精度</td>
+<td>碱基 vs 糖 vs 磷酸修饰</td>
+<td>磷酸修饰成功率最高（100%），碱基+糖组合最低（17.6% PB-valid）</td>
+<td>修饰位置和复杂度影响精度</td>
+<td>部分类型样本量过小</td>
+<td>Results 图 S15, Table 1</td>
+</tr>
+<tr>
+<td>PoseBusters 化学有效性</td>
+<td>AF3 生成化学有效的修饰核苷酸</td>
+<td>全 1039 结构</td>
+<td>仅 30.4% 通过非芳香环非平面测试</td>
+<td>核糖环几何是主要问题</td>
+<td>通过率低不等于整体结构不可用</td>
+<td>Results 图 3A-C</td>
+</tr>
+<tr>
+<td>RNAspider 纠缠检测</td>
+<td>AF3 不产生拓扑纠缠</td>
+<td>含 RNA 的结构</td>
+<td>复杂核酶/核开关中检测到纠缠</td>
+<td>复杂拓扑 RNA 易产生纠缠</td>
+<td>纠缠对功能影响未评估</td>
+<td>Results 图 S12-S14</td>
+</tr>
+<tr>
+<td>post-cutoff vs pre-cutoff 性能</td>
+<td>AF3 泛化能力 vs 记忆</td>
+<td>103 test vs 936 train 结构</td>
+<td>post-cutoff 精度显著下降（如 DNA 修饰 RMSD ≤ 2.0 Å 从 66.9% 降至 12.5%）</td>
+<td>部分性能来自训练记忆</td>
+<td>下降幅度因类型而异</td>
+<td>Results 图 10C-D</td>
+</tr>
+<tr>
+<td>修饰残基 vs 全结构 RMSD</td>
+<td>局部修饰放置精度</td>
+<td>修饰残基单独 vs 全结构</td>
+<td>修饰残基 RMSD 显著高于全结构</td>
+<td>局部修饰放置是薄弱环节</td>
+<td>未评估修饰残基对整体功能的影响</td>
+<td>Results 图 10A-B</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>：仅评估 AlphaFold 3（v3.0.0）在核糖类修饰核苷酸（不含非核糖骨架如 LNA、HNA 等）上的结构预测表现；仅覆盖 PDB 中已有实验结构的修饰类型。</p>
+<p><strong>真值/输入</strong>：以 PDB 实验结构为 ground truth；输入为序列 + CCD ID，未使用任何实验约束（如化学交联、FRET 等）。</p>
+<p><strong>端到端状态</strong>：评估的是 AF3 的端到端预测能力（序列 → 结构），但未测试模板输入、MSA 深度影响、或微调策略。</p>
+<p><strong>算力成本</strong>：每个结构 5 个扩散样本 × 10 recycling，在 A100 GPU 上运行；未报告具体时间成本。</p>
+<p><strong>历史数据依赖</strong>：AF3 训练截止 2021-09-30，post-cutoff 结构（n=103）代表真正未见样本，其性能下降幅度是泛化能力的更真实估计。</p>
+<p><strong>最难情形</strong>：RNA 单链、复杂核酶/核开关拓扑、碱基+糖组合修饰、磷酸修饰的局部放置。</p>
+<p><strong>群体/领域边界</strong>：结果仅适用于核糖类修饰核苷酸；非核糖骨架（LNA、HNA、PNA 等）未覆盖；仅评估了 AF3，不适用于其他方法。</p>
+<p><strong>有边界的复述</strong>：AlphaFold 3 在修饰核酸的整体折叠预测上表现良好（&gt;80% 成功率），但其对修饰残基的局部放置精度有限，且大量模型存在核糖环几何非理想性；对于训练截止后新解析的结构，性能显著下降，表明当前能力部分依赖训练数据记忆。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅评估 AlphaFold 3</td>
+<td>未覆盖 RoseTTAFold All-Atom、Chai-1 等其他支持修饰残基的工具</td>
+<td>应用 MODNAP 基准测试其他方法</td>
+<td>Discussion 第 1 段</td>
+</tr>
+<tr>
+<td>数据集偏向常见修饰</td>
+<td>约 31% 结构集中于 5CM、8OG、BRU 三种修饰；88/129 CCD ID 仅由 ≤5 个结构代表</td>
+<td>随 PDB 新结构发布持续扩展 MODNAP</td>
+<td>Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>排除 NMR 结构</td>
+<td>NMR  ensembles 因坐标不确定性被排除，可能遗漏动态构象信息</td>
+<td>未来可整合 NMR 衍生的 ensemble 模型</td>
+<td>Methods "Construction"</td>
+</tr>
+<tr>
+<td>未建模非核糖骨架</td>
+<td>LNA、HNA、PNA 等非核糖修饰不在数据集中</td>
+<td>未来扩展至非核糖骨架修饰</td>
+<td>Discussion 第 4 段</td>
+</tr>
+<tr>
+<td>序列长度限制</td>
+<td>核酸 ≤ 450 nt、蛋白 ≤ 2400 aa，排除大型 RNP 复合物</td>
+<td>随 AF3 推理效率提升放宽限制</td>
+<td>Methods "Construction"</td>
+</tr>
+<tr>
+<td>未进行结构优化后处理</td>
+<td>未测试能量最小化或分子动力学弛豫是否能改善化学有效性</td>
+<td>建议结合 MD 弛豫作为后处理步骤</td>
+<td>Discussion 第 1 段</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>成功率阈值选择（2.5 Å）可能过于宽松</td>
+<td>对核酸体系，2.5 Å 可能无法区分功能相关构象差异；作者未报告更严格阈值（如 1.5 Å）下的表现</td>
+<td>影响对 AF3 实际可用性的判断</td>
+<td>重新分析数据，报告 1.0/1.5/2.0 Å 阈值下的成功率</td>
+<td>Results 图 4A</td>
+</tr>
+<tr>
+<td>post-cutoff 测试集仅 103 个结构，且分布不均</td>
+<td>部分类型（如 DNA-RNA-蛋白）仅 5 个结构，统计功效不足</td>
+<td>泛化能力结论可能受小样本影响</td>
+<td>报告各类型的置信区间；或通过 bootstrap 评估稳定性</td>
+<td>Results 图 10C-D</td>
+</tr>
+<tr>
+<td>未报告 AF3 的 MSA 深度与模板使用情况</td>
+<td>AF3 对同源信息敏感，修饰核酸可能缺乏同源序列；未控制此变量</td>
+<td>无法区分性能下降来自修饰残基本身还是缺乏同源信息</td>
+<td>对比有/无 MSA 输入的预测表现</td>
+<td>Methods "AlphaFold 3 modeling"</td>
+</tr>
+<tr>
+<td>PoseBusters 非芳香环测试对核糖的适用性存疑</td>
+<td>该测试主要针对小分子药物构象，核糖 puckering 的允许范围可能不同</td>
+<td>30.4% 通过率可能低估或高估真实化学有效性</td>
+<td>使用 RNA 特异的构象分析工具（如 MC-Annotate）交叉验证</td>
+<td>Results 图 3A-C</td>
+</tr>
+<tr>
+<td>未评估修饰残基对整体结构预测的因果影响</td>
+<td>仅比较含修饰 vs 不含修饰的预测，未做消融（如将修饰替换为标准残基）</td>
+<td>无法确定性能下降是否直接由修饰引起</td>
+<td>设计消融实验：同一序列，修饰 vs 未修饰版本</td>
+<td>全文未提供</td>
+</tr>
+<tr>
+<td>纠缠检测仅报告存在性，未量化严重程度</td>
+<td>纠缠可能存在于实验结构中（天然拓扑），不一定是 AF3 错误</td>
+<td>需要区分 AF3 引入的纠缠与天然存在的纠缠</td>
+<td>对实验结构同样运行 RNAspider，对比纠缠率</td>
+<td>Results 图 S12-S14</td>
+</tr>
+<tr>
+<td>未报告 AF3 置信度分数与精度的相关性</td>
+<td>AF3 输出 pLDDT/pAE 等置信度指标，但未验证其在修饰核酸上的校准性</td>
+<td>影响用户是否可依赖 AF3 的置信度进行结构筛选</td>
+<td>绘制置信度-精度校准曲线</td>
+<td>全文未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>基准数据集构建方法论</strong>：从 PDB 系统提取非标准残基结构的完整 pipeline（关键词搜索 → 过滤 → 标注 → 时间截止划分），可直接迁移到其他非标准残基（如非核糖骨架、非天然氨基酸）基准构建。</p>
+</li>
+<li>
+<p><strong>多维度评估协议</strong>：全局指标（RMSD/TM-score/lDDT）+ 化学有效性（PoseBusters）+ 拓扑分析（RNAspider）+ 相互作用保真度（INF/I-INF）的组合评估框架，适用于任何核酸结构预测工具的评测。</p>
+</li>
+<li>
+<p><strong>时间截止测试集设计</strong>：以训练数据截止日期划分 train/test，是评估泛化能力（而非记忆）的有效策略，值得在蛋白质-核酸复合物预测、RNA 结构预测等任务中推广。</p>
+</li>
+<li>
+<p><strong>全局-局部精度解耦分析</strong>：将全结构 RMSD 与修饰残基局部 RMSD 分开计算，揭示「全局好、局部差」的性能模式——这种分析策略可迁移到其他含稀有残基或修饰的系统。</p>
+</li>
+<li>
+<p><strong>化学有效性检查的必要性</strong>：即使全局结构高度准确，局部化学几何（如核糖 puckering）可能严重偏离物理允许范围，这对下游 MD 模拟或药物设计有直接影响——提示在评估生成模型时需加入物理化学约束检查。</p>
+</li>
+<li>
+<p><strong>数据不平衡的影响</strong>：少数修饰类型主导数据集（31% 集中于 3 种修饰），导致性能评估偏向常见修饰——在设计训练或评估集时需考虑分层采样或加权策略。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>
+<p><strong>AlphaFold 3 原始论文</strong>（Abramson et al., Nature 2024）：AF3 声称支持修饰残基（通过 CCD ID），本文首次系统验证了这一能力，并发现其局限。连接点：AF3 的架构能力 vs 实际泛化表现。</p>
+</li>
+<li>
+<p><strong>PoseBusters</strong>（Buttenschoen et al., 2024）：原为小分子对接姿势验证工具，本文首次将其应用于核酸修饰残基的化学有效性检查。连接点：化学有效性检查工具跨领域迁移。</p>
+</li>
+<li>
+<p><strong>RNA-Puzzles</strong>（Cruz et al., 2012）：RNA 结构预测社区基准，主要覆盖标准 RNA；MODNAP 补充了修饰 RNA 的评测空白。连接点：基准数据集互补性。</p>
+</li>
+<li>
+<p><strong>RoseTTAFold All-Atom</strong>（Krishna et al., 2024）与 <strong>Chai-1</strong>（Chai Discovery, 2024）：同为支持多组分复合物预测的工具，本文未评测但指出未来方向。连接点：多工具横向对比需求。</p>
+</li>
+<li>
+<p><strong>RNAspider</strong>（Antczak et al., 2018）：RNA 拓扑纠缠检测工具，本文用于评估 AF3 预测中的纠缠问题。连接点：拓扑有效性作为结构质量维度。</p>
+</li>
+<li>
+<p><strong>5-甲基胞嘧啶（5mC）与 8-氧代鸟嘌呤（8-oxoG）</strong>：表观遗传学与氧化损伤标志物，其结构预测对理解 DNA 修复、基因调控机制有直接意义。连接点：修饰核酸结构预测的生物学应用场景。</p>
+</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：多工具修饰核酸预测横向对比基准
+   - <strong>来源局限/观察</strong>：本文仅评测 AF3，未覆盖 RoseTTAFold All-Atom、Chai-1 等同样支持 CCD ID 的工具
+   - <strong>核心假设</strong>：不同架构对修饰残基的处理能力存在显著差异，某些工具可能在局部化学几何上优于 AF3
+   - <strong>初步方法</strong>：将 MODNAP 基准应用于 3-5 种 SOTA 工具，统一评测协议，输出横向对比报告
+   - <strong>验证方式</strong>：统计各工具在全局/局部指标上的显著差异；分析架构特征与性能的相关性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：修饰残基感知的损失加权微调策略
+   - <strong>来源局限/观察</strong>：AF3 对修饰残基的局部放置精度不足，可能源于训练数据中修饰残基欠表征
+   - <strong>核心假设</strong>：在微调阶段对修饰残基位置施加更高损失权重，可显著提升局部精度而不牺牲全局折叠质量
+   - <strong>初步方法</strong>：基于 MODNAP 训练集构建微调数据集，设计残基级损失加权方案，对比默认 AF3
+   - <strong>验证方式</strong>：在 MODNAP test set 上比较修饰残基 RMSD、PoseBusters 通过率
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：MD 弛豫后处理对 AF3 修饰核酸模型的化学有效性修复
+   - <strong>来源局限/观察</strong>：30.4% 的 PoseBusters 通过率表明大量模型存在核糖环几何问题，作者建议能量最小化但未验证
+   - <strong>核心假设</strong>：短时 MD 弛豫（如 1-10 ns）可修复核糖 puckering 和局部几何畸变，同时保持全局折叠
+   - <strong>初步方法</strong>：对 AF3 预测结构进行 AMBER/OpenMM 力场弛豫，对比弛豫前后 PoseBusters 通过率和 RMSD
+   - <strong>验证方式</strong>：统计弛豫后通过率提升幅度；检查是否引入新的构象偏差
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：修饰核苷酸结构预测的置信度校准
+   - <strong>来源局限/观察</strong>：本文未验证 AF3 的 pLDDT/pAE 等置信度指标在修饰核酸上的可靠性
+   - <strong>核心假设</strong>：AF3 对修饰残基的置信度分数可能过度自信，需要重新校准
+   - <strong>初步方法</strong>：收集 AF3 预测的置信度分数与真实误差，绘制校准曲线，设计修饰残基特异的置信度校正函数
+   - <strong>验证方式</strong>：校准后的置信度是否更好预测局部误差；能否用于筛选可靠预测
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：非核糖骨架修饰核酸的基准扩展
+   - <strong>来源局限/观察</strong>：MODNAP 仅覆盖核糖类修饰；LNA、HNA、PNA 等非核糖骨架未包含
+   - <strong>核心假设</strong>：AF3 对非核糖骨架的预测能力可能更差，因为训练数据中几乎不存在此类残基
+   - <strong>初步方法</strong>：从 PDB 提取含非核糖骨架修饰的结构，构建扩展基准，评测 AF3 及变体
+   - <strong>验证方式</strong>：对比核糖 vs 非核糖修饰的预测精度差异
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：修饰核酸-蛋白相互作用界面的定向优化
+   - <strong>来源局限/观察</strong>：RNA-蛋白复合物界面预测（I-INF）表现参差，尤其 RNA-蛋白界面
+   - <strong>核心假设</strong>：修饰残基位于蛋白结合界面时，预测精度更低，且 AF3 的界面置信度不可靠
+   - <strong>初步方法</strong>：分析 MODNAP 中 RNA-蛋白复合物的界面残基预测精度，识别系统性失败模式
+   - <strong>验证方式</strong>：统计界面 vs 非界面修饰残基的 RMSD 差异；检验是否与蛋白结合深度相关
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, introduction, methods, results, discussion, and supplementary figure legends</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodological rigor, dataset construction, benchmarking approach, and interpretation of results</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present MODNAP, a curated dataset of 1039 experimentally determined structures containing ribose-based modified nucleotides, and benchmark AlphaFold 3 on this dataset, reporting high global accuracy but variable local accuracy for modified residue placement, frequent intramolecular validity failures, and reduced performance on post-training-cutoff structures</li>
+<li><strong>Visible evidence base</strong> Full text, methods descriptions, results narrative, figure legends (Figs 1-10), supplementary figure legends (S1-S17), tables referenced (Table 1)</li>
+<li><strong>Missing materials affecting confidence</strong> Actual figures and supplementary figures not provided; Table 1 not provided; raw data files not inspected; PoseBusters and RNAspider output files not provided; AlphaFold 3 configuration files not provided</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This manuscript addresses a timely and important gap in the structural biology community: the systematic evaluation of AI-based structure prediction methods on modified nucleic acids. The construction of MODNAP represents a valuable community resource. The benchmarking results are informative and the observation that global accuracy metrics mask local errors in modified residue placement is an important cautionary finding. However, several methodological details require clarification, the statistical treatment of results needs strengthening, and the interpretation of the training-cutoff analysis warrants more careful framing. The manuscript is potentially suitable for publication after substantial revision.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Structural biologists using AlphaFold 3 for nucleic acid modeling, developers of structure prediction methods, researchers studying modified nucleic acids in epigenetics and RNA biology, computational chemists developing force fields for non-canonical residues, and the broader AI-for-science community interested in benchmarking methodology.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> The dataset fills a clear gap in the field, as no curated benchmark set for modified nucleic acid modeling previously existed. The systematic analysis of the chemical landscape of modified nucleotides in the PDB is comprehensive and well-executed. The use of multiple evaluation metrics (RMSD, TM-score, lDDT, INF, I-INF) provides a multi-faceted assessment. The inclusion of a post-training-cutoff test set is a thoughtful design choice for assessing generalization. The PoseBusters analysis adds an important dimension beyond simple geometric superposition.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Claim pointer</strong> The manuscript reports success rates exceeding 80% at an RMSD threshold of 2.5 Å across the full MODNAP benchmark set, and stratifies results by molecule type and modification type</li>
+<li><strong>Evidence pointer</strong> Results section "Performance of AlphaFold 3 on the MODNAP benchmark set", Fig 4, Table 1</li>
+<li><strong>Concern</strong> The manuscript reports success rates and percentages across categories but provides no confidence intervals, statistical comparisons between categories, or measures of variability. The dataset is heavily skewed toward a small number of modifications (e.g., 5CM with n=172, 8OG with n=90, BRU with n=64), while 63 of 129 CCD IDs are represented by a single structure. Aggregate success rates will be dominated by the well-represented modifications, and the reported percentages for rare modifications are based on extremely small sample sizes. No statistical framework is presented for determining whether differences between categories (e.g., RNA vs DNA, or base vs sugar modifications) are meaningful.</li>
+<li><strong>Why it matters</strong> Without appropriate statistical treatment, readers cannot assess whether reported differences between categories reflect genuine performance variations or sampling noise. The skewed distribution means that the overall success rate may not be representative of performance on rare or chemically unusual modifications, which are precisely the cases of most interest to the community.</li>
+<li>
+<p><strong>Resolution test</strong> Provide confidence intervals for all reported success rates, perform statistical comparisons between categories (e.g., Fisher's exact test or chi-square test for proportions), and clearly report sample sizes for each category. For categories with very small sample sizes, either aggregate them into broader groups or explicitly flag them as preliminary.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological transparency</li>
+<li><strong>Claim pointer</strong> The manuscript states that AlphaFold 3 models were generated using default parameters with a single random seed (modelSeeds = [10]) and five diffusion samples, with the top-scoring model selected by pTM or ipTM</li>
+<li><strong>Evidence pointer</strong> Methods section "AlphaFold 3 modeling"</li>
+<li><strong>Concern</strong> The use of a single random seed is a significant methodological limitation. AlphaFold 3's diffusion-based generative module is stochastic, and different seeds can produce substantially different predictions, particularly for challenging targets. The selection of the top model by pTM or ipTM from only five samples may not be representative of the model's typical performance. The manuscript does not report any measure of run-to-run variability, nor does it explain why a single seed was chosen. Additionally, the criteria for selecting pTM versus ipTM for ranking are not specified; it is unclear whether this choice was made per-target or uniformly.</li>
+<li><strong>Why it matters</strong> The stochastic nature of AlphaFold 3 means that results from a single seed may not be reproducible or representative. If the benchmark is intended as a community resource for evaluating and improving structure prediction methods, the results must be robust to the choice of random seed. The lack of variability reporting undermines confidence in the reported success rates.</li>
+<li>
+<p><strong>Resolution test</strong> Run a subset of targets (e.g., 50-100 structures spanning different categories) with multiple seeds (at least 3-5) and report the variability in success rates and RMSD values. If computational cost is prohibitive, justify the single-seed approach with evidence that AlphaFold 3 is deterministic or that variability is negligible for the targets studied. Clearly specify the model selection criteria.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Interpretation of training-cutoff analysis</li>
+<li><strong>Claim pointer</strong> The manuscript states that performance was consistently lower for post-cutoff structures than pre-cutoff structures across nearly every category, and interprets this as evidence that a portion of AlphaFold 3's accuracy is attributable to structures available during training</li>
+<li><strong>Evidence pointer</strong> Results section "Performance of AlphaFold 3 on the MODNAP test set", Fig 10C and 10D</li>
+<li><strong>Concern</strong> The interpretation of the post-cutoff performance decline as evidence of training-set memorization is confounded by several factors. First, the post-cutoff set (n=103) is small and may not be representative of the broader distribution of modified nucleic acid structures. Second, structures deposited after September 30, 2021 may systematically differ from earlier structures in terms of resolution, complexity, or novelty of modifications, independent of whether AlphaFold 3 saw them during training. Third, the manuscript does not report whether the post-cutoff structures contain modifications that are chemically distinct from those in the training set, which would be an alternative explanation for reduced performance. The claim that reduced performance "reinforces the interpretation that fine-grained placement of nucleotide modifications is a comparatively weaker aspect of AlphaFold 3's predictive capability" conflates memorization with generalization failure.</li>
+<li><strong>Why it matters</strong> The training-cutoff analysis is a key contribution of the manuscript, as it addresses the important question of whether AlphaFold 3 generalizes to novel structures. If the interpretation is confounded, the conclusions may be misleading. The distinction between memorization and generalization failure has different implications for how the community should use and improve these methods.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a more detailed characterization of the post-cutoff set, including the distribution of modification types, structural complexity, and resolution compared to the pre-cutoff set. If possible, identify whether the post-cutoff structures contain modifications or folds that are chemically or structurally novel relative to the training set. Consider alternative explanations for the performance decline and discuss them explicitly.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Benchmark design</li>
+<li><strong>Claim pointer</strong> The manuscript describes MODNAP as "the first curated dataset of experimentally determined structures containing modified nucleotides" and states it is designed for "benchmarking and/or training structure prediction methods"</li>
+<li><strong>Evidence pointer</strong> Abstract, Introduction, Results section "Features and composition of MODNAP"</li>
+<li><strong>Concern</strong> The dataset construction criteria are not fully described. The manuscript states that structures with resolution 3.5 Å or better and sequence lengths within certain limits were included, but does not describe how redundancy was handled (e.g., sequence similarity clustering, structural similarity filtering). It is unclear whether the 1039 structures represent independent folds or whether many are near-duplicates of well-studied systems. The manuscript also does not describe how the "test set" was selected from the full benchmark set beyond the training cutoff date, and whether this introduces selection bias. Finally, the claim of being "first" requires more careful verification, as other benchmark sets for nucleic acid structure prediction may exist.</li>
+<li><strong>Why it matters</strong> For a benchmark resource, the construction criteria directly affect its utility and the interpretability of results obtained with it. If the dataset contains many near-duplicate structures, the effective sample size is much smaller than 1039, and reported success rates may be inflated. The community needs to understand the dataset's limitations to use it appropriately.</li>
+<li>
+<p><strong>Resolution test</strong> Describe the redundancy filtering approach in detail, including any sequence or structural similarity thresholds used. Provide a clear description of how the test set was selected and whether it is representative of the full benchmark set. Verify the claim of being "first" by searching for existing benchmark sets for modified nucleic acid structure prediction.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical validation</li>
+<li><strong>Claim pointer</strong> The manuscript reports that PoseBusters analysis reveals frequent intramolecular validity failures, primarily due to non-ideal ribose ring geometries, and that only 30.4% of models passed the non-aromatic ring non-flat test</li>
+<li><strong>Evidence pointer</strong> Results section "Structure validity checks with PoseBusters test suite", Fig 3</li>
+<li><strong>Concern</strong> The manuscript does not provide a detailed breakdown of which specific PoseBusters tests were failed, the distribution of failure severity, or whether failures correlate with specific modification types or structural contexts. The statement that "models that failed chemical validity checks did not appear to cluster around specific CCD IDs" is based on visual inspection of supplementary figures, not statistical analysis. The manuscript also does not discuss whether the ribose ring geometry failures are specific to modified nucleotides or whether they also occur for canonical nucleotides in the same predictions, which would help distinguish between a general limitation of AlphaFold 3 and a modification-specific problem.</li>
+<li><strong>Why it matters</strong> The PoseBusters analysis is a key finding of the manuscript, as it reveals that high global accuracy can coexist with local chemical invalidity. Understanding the specific nature and distribution of these failures is essential for the community to know which types of predictions can be trusted and which require additional validation or refinement.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed breakdown of PoseBusters test failures by category and modification type, with statistical analysis of correlations. Compare ribose ring geometry failures between modified and canonical nucleotides within the same predictions. Discuss the practical implications of these failures for downstream applications.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Methods section "Evaluation of AlphaFold 3 models against experimental structures"</li>
+<li><strong>Evidence pointer</strong> Methods section, location not provided</li>
+<li><strong>Issue</strong> The description of RMSD calculation states that it was performed "following least-squares global alignment of the entire complex," but it is unclear which atoms were included in the RMSD calculation (all atoms, backbone only, heavy atoms only). The manuscript also does not specify whether the RMSD was calculated over the full structure or over specific regions when comparing "full structure" versus "modified nucleotide only" RMSD values.</li>
+<li>
+<p><strong>Required correction</strong> Specify the atom selection for RMSD calculations and clarify the alignment procedure. State whether the same alignment was used for both full-structure and modification-specific RMSD calculations.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Results section "Performance of AlphaFold 3 on the MODNAP benchmark set"</li>
+<li><strong>Evidence pointer</strong> Fig 4, Table 1</li>
+<li><strong>Issue</strong> The manuscript reports success rates at a 2.5-Å RMSD threshold but does not report results at other thresholds. The choice of 2.5 Å is not justified, and it is unclear whether conclusions would change at stricter (e.g., 1.5 Å) or looser (e.g., 4 Å) thresholds.</li>
+<li>
+<p><strong>Required correction</strong> Report success rates at multiple RMSD thresholds (e.g., 1.5, 2.0, 2.5, 3.0, 4.0 Å) or justify the choice of 2.5 Å as the primary threshold.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Results section "Entanglements in AlphaFold 3 models of modified RNA structures"</li>
+<li><strong>Evidence pointer</strong> Supplementary Fig S12-S14</li>
+<li><strong>Issue</strong> The manuscript reports that entanglements were detected in models across several CCD IDs but does not provide a quantitative comparison of entanglement rates between modified and canonical RNA structures, nor does it discuss whether the observed entanglement rates are higher or lower than expected based on previous studies of AlphaFold 3 on unmodified RNA.</li>
+<li>
+<p><strong>Required correction</strong> Provide quantitative entanglement rates and compare with published results for unmodified RNA, if available. Discuss whether the presence of modified nucleotides influences entanglement propensity.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Discussion section</li>
+<li><strong>Evidence pointer</strong> Discussion, location not provided</li>
+<li><strong>Issue</strong> The discussion of limitations focuses on the choice of AlphaFold 3 and the composition of the dataset, but does not discuss the potential impact of the single-seed approach or the lack of statistical power for rare modifications on the conclusions.</li>
+<li>
+<p><strong>Required correction</strong> Add a discussion of how the single-seed approach and the skewed distribution of modifications might affect the generalizability of the findings.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Data availability statement</li>
+<li><strong>Evidence pointer</strong> Data availability section</li>
+<li><strong>Issue</strong> The data availability statement provides links to Zenodo and GitHub, but does not specify the exact contents of these repositories, the software versions used, or the computational environment required to reproduce the analysis.</li>
+<li>
+<p><strong>Required correction</strong> Provide a detailed description of the repository contents, including file formats, software dependencies, and version numbers.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Literature context</li>
+<li><strong>Affected element</strong> Introduction</li>
+<li><strong>Evidence pointer</strong> Introduction, location not provided</li>
+<li><strong>Issue</strong> The introduction cites several databases for modified nucleotides but does not discuss existing efforts to benchmark structure prediction methods on modified nucleic acids, if any exist. The claim that this is the first such evaluation should be supported by a more thorough literature search.</li>
+<li><strong>Required correction</strong> Expand the literature review to include any prior evaluations of structure prediction methods on modified nucleic acids, and clarify the novelty of the current work in this context.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that MODNAP is "the first curated dataset of experimentally determined structures containing modified nucleotides" is not fully verified against existing resources.</li>
+<li>The interpretation that reduced performance on post-cutoff structures reflects training-set memorization is confounded by potential differences in structure characteristics between pre- and post-cutoff sets.</li>
+<li>The statement that "AlphaFold 3 achieves success rates exceeding 80% at an RMSD threshold of 2.5 Å" is presented without confidence intervals or consideration of the skewed distribution of modifications.</li>
+<li>The claim that "co-folding in the presence of protein partners may improve overall intramolecular geometric consistency" is based on aggregate comparisons without statistical testing.</li>
+<li>The assertion that entanglements are "not necessarily due to the presence of a specific modified nucleotide but is instead dependent on the RNA tertiary fold itself" is based on a limited number of examples and lacks systematic comparison with unmodified RNA structures.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

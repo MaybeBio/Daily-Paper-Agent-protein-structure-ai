@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artificially intelligent modeling of macromolecular assemblies. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Artificially intelligent modeling of macromolecular assemblies.</h1>
+      <div class="meta">Bini, Margherita; Tozzini, Valentina</div>
+      <div class="meta muted">
+        
+        <span class="journal">Frontiers in molecular biosciences</span>
+        · 2026-10-17
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42889469/">原文</a>
+      </div>
+      <p class="one-liner">该综述系统梳理了AI方法（如AlphaFold、RoseTTAFold）与传统粗粒化模拟在蛋白质组装结构建模中的结合策略，虽为综述缺乏新方法，但紧扣蛋白质结构计算问题并具方法整合启发。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The study of macromolecular assembly formation is one of the most challenging tasks in computational modeling as it requires extensive exploration of conformational and configurational space, especially when driven by conformational transitions or folding instabilities, which are typically associated with high energy barriers. Although this type of study has traditionally been addressed in silico by using techniques that reduce the computational cost of simulations, such as coarse-grained models, artificial intelligence (AI) has recently entered the field at multiple levels, aiding in parameter optimization or trajectory analysis and even replacing potentials or force calculations. Recently developed algorithms such as AlphaFold (AF) and RoseTTAFold enable the direct prediction of final structures with high efficiency and confidence, an achievement that earned them the 2024 Nobel Prize in Chemistry. In this study, we review and analyze the different AI-based strategies used to model protein structure and dynamics and simulate macromolecular assemblies, comparing them with traditional methods, to highlight their respective advantages and limitations. By placing these approaches along an ideal continuum in which accuracy increases as interpretability decreases, we show that hybrid solutions and combinations of methods can be devised to maximize their strengths. Finally, we perspectively outline practical strategies for implementing such integrated approaches in a coherent manner, preserving accuracy and feasibility while maintaining insight into aggregation pathways, intermediate structures, and the molecular mechanisms underlying the phenomenon.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">大分子组装形成的研究是计算建模中最具挑战性的任务之一，因为它需要对构象和构型空间进行广泛探索，尤其是在由构象转变或折叠不稳定性驱动时，这些通常与高能垒相关。尽管这类研究传统上通过使用降低模拟计算成本的技术（如粗粒化模型）在计算机上解决，但人工智能（AI）最近已在多个层面进入该领域，辅助参数优化或轨迹分析，甚至替代势能或力计算。最近开发的算法，如AlphaFold（AF）和RoseTTAFold，能够以高效率和置信度直接预测最终结构，这一成就使它们荣获2024年诺贝尔化学奖。在本研究中，我们回顾并分析了用于建模蛋白质结构和动力学以及模拟大分子组装的不同基于AI的策略，将其与传统方法进行比较，以突出它们各自的优势和局限性。通过将这些方法置于一个理想连续体中，其中准确性随可解释性降低而增加，我们表明可以设计混合解决方案和方法组合，以最大化其优势。最后，我们前瞻性地概述了以连贯方式实施此类集成方法的实用策略，在保持对聚集途径、中间结构及现象背后分子机制洞察的同时，确保准确性和可行性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Artificially intelligent modeling of macromolecular assemblies</li>
+<li><strong>作者</strong>：Bini, Margherita; Tozzini, Valentina</li>
+<li><strong>单位</strong>：未提供（根据期刊与作者信息推测为意大利研究机构，具体未在材料中说明）</li>
+<li><strong>期刊/平台</strong>：Frontiers in Molecular Biosciences</li>
+<li><strong>年份</strong>：2026-10-17（在线发表日期）</li>
+<li><strong>论文类型</strong>：综述（Review）</li>
+<li><strong>领域</strong>：蛋白质结构预测与动力学模拟 × 人工智能（AI）方法，聚焦大分子组装体（macromolecular assemblies）</li>
+<li><strong>关键词</strong>：AI、AlphaFold、RoseTTAFold、粗粒化模型、大分子组装、构象采样、混合方法</li>
+<li><strong>DOI/arXiv 号</strong>：10.3389/fmolb.2026.1856649</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-10-17</li>
+<li><strong>该文在课题方向中的位置</strong>：本文是一篇综述，系统梳理了 AI 方法（AlphaFold、RoseTTAFold 等）与传统物理模拟（粗粒化 MD 等）在大分子组装体建模中的结合方式，提出了「精度-可解释性连续谱」框架，并展望了混合策略。对本课题（蛋白质结构相关计算研究 × AI/物理模拟）而言，本文提供了方法整合的宏观视角与可迁移的混合建模思路。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过综述 AI 结构预测方法（AlphaFold、RoseTTAFold）与传统粗粒化模拟在大分子组装建模中的应用，提出「精度-可解释性连续谱」框架，论证混合方法可在保持可解释性的同时提升组装路径与中间态预测的精度与可行性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何将 AI 方法（结构预测、参数优化、势函数替代）与传统物理模拟（粗粒化 MD）有效整合，以解决大分子组装体建模中构象与构型空间探索的高成本难题？</li>
+<li><strong>为什么重要</strong>：大分子组装（如病毒衣壳、蛋白复合物）涉及高能垒驱动的构象转变与折叠不稳定性，传统模拟计算成本极高，而 AI 方法虽能高效预测终态结构，却缺乏对组装路径、中间态和分子机制的洞察。</li>
+<li><strong>现有方法为何不足</strong>：传统粗粒化模拟虽降低计算成本，但参数化与力场精度有限；AI 方法（如 AlphaFold）虽能高置信度预测终态结构，但本质上是静态的，无法直接提供动力学路径与中间态信息，且可解释性差。</li>
+<li><strong>精确研究问题</strong>：Can hybrid AI-physics approaches preserve the accuracy of AI structure prediction while maintaining the interpretability and mechanistic insight of coarse-grained simulations for macromolecular assembly modeling?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架整理，未经外部独立核验，标注为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文主张的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统物理模拟</td>
+<td>全原子 MD</td>
+<td>高精度、机理清晰</td>
+<td>计算成本极高，难以覆盖组装时间尺度</td>
+<td>作为基准与验证工具</td>
+</tr>
+<tr>
+<td>粗粒化模型</td>
+<td>MARTINI、Go-model 等</td>
+<td>降低计算成本，可探索更大构象空间</td>
+<td>参数化依赖经验，精度有限</td>
+<td>作为可解释性载体，与 AI 结合</td>
+</tr>
+<tr>
+<td>AI 辅助模拟</td>
+<td>神经网络势函数、AI 参数优化、轨迹分析</td>
+<td>提升效率，部分替代力场计算</td>
+<td>可解释性差，泛化能力受限</td>
+<td>作为加速器与替代势函数</td>
+</tr>
+<tr>
+<td>AI 结构预测</td>
+<td>AlphaFold、RoseTTAFold</td>
+<td>高精度、高效率预测终态结构</td>
+<td>静态预测，缺乏动力学路径与中间态信息</td>
+<td>作为终态结构来源，与模拟结合</td>
+</tr>
+<tr>
+<td>混合方法</td>
+<td>AI 预测 + 粗粒化模拟 + 实验约束</td>
+<td>兼顾精度与可解释性</td>
+<td>整合策略尚不成熟</td>
+<td>本文提出的理想方向</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>构象空间探索成本高</td>
+<td>大分子组装涉及高能垒，传统模拟难以覆盖</td>
+<td>组装过程由构象转变或折叠不稳定性驱动，能垒高</td>
+<td>摘要第 1 句</td>
+</tr>
+<tr>
+<td>AI 结构预测缺乏动力学信息</td>
+<td>AlphaFold 等仅输出静态终态结构</td>
+<td>预测算法本质是静态的，不模拟路径</td>
+<td>摘要第 3-4 句</td>
+</tr>
+<tr>
+<td>精度与可解释性矛盾</td>
+<td>高精度 AI 方法可解释性低，传统方法可解释但精度有限</td>
+<td>方法内在特性导致</td>
+<td>摘要第 5 句「accuracy increases as interpretability decreases」</td>
+</tr>
+<tr>
+<td>混合整合策略缺失</td>
+<td>缺乏系统性的 AI+物理模拟整合框架</td>
+<td>各方法优势互补但接口不清晰</td>
+<td>摘要第 6 句「practically outline strategies」</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：综述 AI 方法（AlphaFold、RoseTTAFold、AI 参数优化、AI 替代势函数）与传统粗粒化模拟在大分子组装建模中的应用，并比较其优劣。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：将 AI 方法与物理模拟置于「精度-可解释性连续谱」上，二者并非对立而是互补——AI 提供高精度终态预测，物理模拟提供路径与机制洞察，混合方法可在连续谱上取最优折中。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：对于蛋白质结构相关计算研究，AI 预测结果不应被视为终点，而应作为物理模拟的输入或约束（如初始构象、打分函数），从而在保持精度的同时恢复动力学与机制信息。这一「AI 生成起点 + 物理模拟探索路径」的范式可迁移到构象采样、分子对接等任务。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质序列、已知结构信息、实验约束（如交联数据）、组装体组成信息</li>
+<li><strong>输出</strong>：大分子组装体的结构模型、组装路径、中间态构象、分子机制描述</li>
+<li><strong>模块</strong>：
+  1. AI 结构预测模块（AlphaFold、RoseTTAFold）——生成高置信度终态结构
+  2. 粗粒化模拟模块——探索组装路径与中间态
+  3. AI 辅助模块——参数优化、势函数替代、轨迹分析
+  4. 整合策略模块——将 AI 预测与模拟结果结合</li>
+<li><strong>训练</strong>：不适用（综述论文，无新模型训练）</li>
+<li><strong>工具</strong>：AlphaFold、RoseTTAFold、粗粒化 MD 模拟器（如 MARTINI 类）</li>
+<li><strong>反馈回路</strong>：AI 预测结构 → 作为粗粒化模拟初始构象 → 模拟结果反馈修正 AI 预测或参数</li>
+<li><strong>假设</strong>：AI 预测的终态结构可作为模拟的有效起点；粗粒化模拟能捕捉组装路径的关键特征；混合方法可在精度与可解释性间取得平衡</li>
+<li><strong>文字流程</strong>：序列/组成信息 → AI 结构预测生成候选终态 → 粗粒化模拟从候选结构出发探索组装路径 → AI 辅助优化参数/势函数 → 整合输出结构+路径+机制</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI 结构预测（AlphaFold/RoseTTAFold）</td>
+<td>高精度预测组装体终态结构</td>
+<td>传统模拟难以直接预测大分子组装终态</td>
+<td>输入：序列/组成；输出：3D 结构模型</td>
+<td>摘要提及「direct prediction of final structures with high efficiency and confidence」</td>
+<td>预期影响：失去高精度终态起点，模拟需从随机或低精度构象出发，效率下降 [预期效应]</td>
+</tr>
+<tr>
+<td>粗粒化模拟</td>
+<td>探索组装路径与中间态</td>
+<td>提供动力学与机制信息，AI 方法无法提供</td>
+<td>输入：初始构象/力场；输出：轨迹、路径、中间态</td>
+<td>摘要提及「extensive exploration of conformational and configurational space」</td>
+<td>预期影响：失去路径与机制洞察，仅剩静态结构预测 [预期效应]</td>
+</tr>
+<tr>
+<td>AI 辅助参数优化/势函数替代</td>
+<td>提升模拟效率与精度</td>
+<td>传统粗粒化力场参数化经验性强</td>
+<td>输入：模拟数据/实验数据；输出：优化参数/替代势</td>
+<td>摘要提及「aiding in parameter optimization or trajectory analysis and even replacing potentials or force calculations」</td>
+<td>预期影响：模拟精度与效率下降，但具体幅度未量化 [预期效应]</td>
+</tr>
+<tr>
+<td>混合整合策略</td>
+<td>协调 AI 与物理模拟</td>
+<td>各方法优势互补，需系统性整合</td>
+<td>输入：各模块输出；输出：统一建模框架</td>
+<td>摘要第 6 句「practically outline strategies」</td>
+<td>预期影响：失去系统性整合，各方法孤立使用，难以最大化优势 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用。本文为综述论文，未提供新的数学公式或算法推导。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：不适用（综述论文，无新实验数据）</li>
+<li><strong>规模</strong>：不适用</li>
+<li><strong>指标</strong>：不适用</li>
+<li><strong>基线</strong>：不适用</li>
+<li><strong>预算</strong>：不适用</li>
+<li><strong>骨干/仪器</strong>：不适用</li>
+<li><strong>Oracle 输入</strong>：不适用</li>
+<li><strong>评测协议</strong>：不适用</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不适用（综述无实验）</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文结论仅适用于大分子组装体建模场景，不涉及单体蛋白结构预测或小分子对接。</li>
+<li><strong>Oracle/真值输入</strong>：综述中引用的 AlphaFold/RoseTTAFold 结果依赖其训练数据与评测基准，本文未独立验证。</li>
+<li><strong>端到端状态</strong>：本文提出的混合策略是「展望性」的，未在具体体系上端到端验证。</li>
+<li><strong>算力成本</strong>：未提供具体算力对比数据。</li>
+<li><strong>历史数据依赖</strong>：AI 方法部分依赖 PDB 等历史结构数据，本文未讨论数据偏差。</li>
+<li><strong>模型依赖</strong>：结论部分依赖 AlphaFold/RoseTTAFold 的当前性能，未来算法改进可能改变结论。</li>
+<li><strong>最难情形</strong>：本文未讨论组装体尺寸极大、构象异质性极高或缺乏同源模板的极端场景。</li>
+<li><strong>不确定性</strong>：混合方法的实际增益未量化，属于定性展望。</li>
+<li><strong>有边界的复述</strong>：本文主张，在现有技术条件下，将 AI 结构预测与粗粒化模拟结合，可在保持对组装路径与中间态可解释性的同时，提升大分子组装建模的精度与可行性；但该主张尚未在具体体系中得到定量验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要中提及「accuracy increases as interpretability decreases」，暗示 AI 方法可解释性不足是已知约束。
+- 混合策略被描述为「perspectively outline」，表明其尚处于展望阶段，未成熟落地。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「精度-可解释性连续谱」框架缺乏量化指标</td>
+<td>精度与可解释性可能并非严格单调反比，某些方法可能同时提升二者</td>
+<td>框架若过于简化，可能误导方法选择</td>
+<td>在多个组装体系上系统比较 AI-only、物理-only、混合方法的精度与可解释性指标</td>
+<td>摘要第 5 句</td>
+</tr>
+<tr>
+<td>混合策略的增益未在具体体系验证</td>
+<td>可能仅适用于特定类型组装体，或增益有限</td>
+<td>若增益不显著，混合策略的实践价值存疑</td>
+<td>选取 2-3 个代表性组装体系（如病毒衣壳、蛋白复合物）进行端到端对比</td>
+<td>摘要第 6 句「perspectively outline」</td>
+</tr>
+<tr>
+<td>未讨论 AI 方法对训练数据偏差的敏感性</td>
+<td>AlphaFold 等对未见过的组装类型可能失效</td>
+<td>数据偏差可能限制方法泛化</td>
+<td>在低同源性组装体上测试 AI 预测置信度</td>
+<td>摘要未提及数据偏差问题</td>
+</tr>
+<tr>
+<td>未量化混合方法的额外计算成本</td>
+<td>混合方法可能引入新的计算瓶颈</td>
+<td>成本-收益比是实际应用的关键考量</td>
+<td>对比混合方法与纯物理模拟的计算时间与资源消耗</td>
+<td>摘要未提供算力数据</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>「AI 预测 + 物理模拟」两阶段流水线</strong>：将 AlphaFold/RoseTTAFold 预测的终态结构作为粗粒化 MD 的初始构象，可显著缩小构象搜索空间，同时保留路径与中间态信息。可迁移到本课题的构象采样与组装路径预测任务。</p>
+</li>
+<li>
+<p><strong>「精度-可解释性连续谱」作为方法选择框架</strong>：在具体任务中，可根据对精度与可解释性的需求，在纯 AI、纯物理、混合方法之间选择合适位置。可迁移到分子对接打分函数设计或 MD 模拟加速策略选择。</p>
+</li>
+<li>
+<p><strong>AI 辅助力场参数化</strong>：利用 AI 优化粗粒化力场参数或替代势函数计算，可在保持物理可解释性的同时提升模拟效率。可迁移到本课题的 MD 模拟加速与力场优化。</p>
+</li>
+<li>
+<p><strong>混合方法的接口设计</strong>：AI 输出与物理模拟输入之间的接口（如结构格式转换、约束施加方式）是整合成功的关键。可迁移到本课题的 AI-MD 工作流构建。</p>
+</li>
+<li>
+<p><strong>综述式方法比较的呈现方式</strong>：以连续谱而非二元对立的方式呈现方法优劣，有助于识别互补性。可迁移到本课题的方法综述或论文写作。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold2 (Jumper et al., 2021, Nature)</strong>：本文引用的核心 AI 结构预测方法，其高精度终态预测能力是混合策略的起点。与本课题中结构预测任务直接相关。</li>
+<li><strong>RoseTTAFold (Baek et al., 2021, Science)</strong>：另一核心 AI 方法，与 AlphaFold 互补，可作交叉验证。</li>
+<li><strong>粗粒化模型（如 MARTINI, Marrink et al.）</strong>：本文讨论的传统物理模拟代表，与本课题中 MD 模拟与构象采样任务直接相关。</li>
+<li><strong>2024 年诺贝尔化学奖</strong>：授予 AlphaFold 相关研究，说明 AI 结构预测的领域影响力，与本课题的学术背景一致。</li>
+<li><strong>候选方向</strong>：本文未提及但可关联的包括：扩散模型用于构象生成（如 Chroma、RFdiffusion）、增强采样方法（如 metadynamics、replica exchange）与 AI 的结合、以及实验约束（冷冻电镜密度图）引导的组装建模。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：AI 预测引导的粗粒化组装路径采样
+   - <strong>来源局限/观察</strong>：本文提出混合策略但未在具体体系验证；AlphaFold 预测的终态结构可作为模拟起点。
+   - <strong>核心假设</strong>：以 AlphaFold 预测的组装体终态为初始构象，结合粗粒化 MD 增强采样，可更高效地恢复组装路径与中间态。
+   - <strong>初步方法</strong>：选取一个中等规模蛋白复合物（如病毒衣壳片段），用 AlphaFold 生成终态结构，作为 MARTINI 粗粒化 MD 的初始构象，使用 metadynamics 或 umbrella sampling 探索解组装路径；与从头模拟对比。
+   - <strong>验证方式</strong>：比较两种方法的路径重现性、中间态结构与实验数据（如交联质谱、冷冻电镜）的一致性。
+   - <strong>可能的失败模式</strong>：AlphaFold 预测的终态可能处于局部能量极小，导致模拟难以逃逸；粗粒化力场精度不足可能掩盖真实路径。
+   - <strong>创新状态</strong>：unverified（本文仅提出展望，未验证）</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：可解释性感知的 AI-物理混合打分函数
+   - <strong>来源局限/观察</strong>：本文指出精度与可解释性存在矛盾，但未提出量化或平衡方案。
+   - <strong>核心假设</strong>：在分子对接或组装打分函数中，将 AI 预测的接触偏好与物理能量项（如静电、范德华）按可解释性需求加权组合，可在保持精度的同时提供机制解释。
+   - <strong>初步方法</strong>：设计一个可调权重的混合打分函数，在蛋白-蛋白对接基准集（如 DockQ 数据集）上测试不同权重组合的精度与特征可解释性。
+   - <strong>验证方式</strong>：对比纯 AI、纯物理、混合打分函数的对接成功率与预测接触面的物理合理性。
+   - <strong>可能的失败模式</strong>：AI 与物理项可能存在冲突，权重调节难以收敛到最优；可解释性量化本身缺乏标准。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AI 辅助粗粒化力场参数化的系统评估
+   - <strong>来源局限/观察</strong>：本文提及 AI 可辅助参数优化，但未给出具体方案或评估。
+   - <strong>核心假设</strong>：利用 AI（如神经网络）从实验数据或全原子模拟数据中学习粗粒化力场参数，可提升组装模拟的精度。
+   - <strong>初步方法</strong>：选取一个已知组装体系，用全原子 MD 生成训练数据，训练一个神经网络映射到 MARTINI 风格力场参数；在组装路径预测任务中对比默认参数与 AI 优化参数。
+   - <strong>验证方式</strong>：比较两种参数下的组装自由能面、中间态种群与实验观测。
+   - <strong>可能的失败模式</strong>：AI 优化参数可能过拟合训练体系，泛化到新体系时失效；参数化过程可能引入非物理行为。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AlphaFold 置信度作为组装模拟的约束先验
+   - <strong>来源局限/观察</strong>：AlphaFold 输出包含 pLDDT 和 PAE 等置信度指标，本文未讨论如何利用这些信息。
+   - <strong>核心假设</strong>：AlphaFold 的 PAE（预测对齐误差）可转化为组装界面残基对的约束势，引导粗粒化模拟更高效地探索正确的组装模式。
+   - <strong>初步方法</strong>：在粗粒化 MD 中，将 PAE 低的残基对施加弱距离约束，PAE 高的区域自由探索；在多个组装体系上测试约束强度的影响。
+   - <strong>验证方式</strong>：比较有/无 PAE 约束的模拟在组装路径、终态结构与实验数据的一致性。
+   - <strong>可能的失败模式</strong>：PAE 在组装界面上可能不准确，导致错误约束；约束过强可能抑制真实构象变化。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and conclusions as presented in the abstract; no access to full text, figures, tables, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The authors review and analyze AI-based strategies for modeling protein structure, dynamics, and macromolecular assemblies, compare them with traditional computational methods, propose a continuum framework relating accuracy and interpretability, and outline practical strategies for hybrid integrated approaches that preserve accuracy and feasibility while maintaining mechanistic insight.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or results sections provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, methodological details, case studies, benchmark comparisons, and any quantitative performance data</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a timely and potentially valuable review topic at the intersection of AI and macromolecular assembly modeling. The conceptual framing of an accuracy-interpretability continuum and the advocacy for hybrid approaches are intellectually appealing. However, the abstract is largely programmatic and lacks specific evidence, concrete examples, or comparative data. As a review article, the absence of any indication of the scope of literature covered, the criteria for method selection, or the basis for the proposed continuum substantially limits the assessability of the claims. The abstract reads more as an outline of intent than as a summary of findings.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and structural biologists working on macromolecular assemblies, developers of coarse-grained and AI-based molecular simulation methods, and researchers seeking practical guidance on integrating AI tools with traditional simulation approaches. The proposed hybrid strategies could inform method selection for studying aggregation pathways and conformational transitions.</li>
+<li><strong>Major strengths</strong> The topic is timely and relevant given the recent Nobel Prize recognition of AI-based structure prediction. The conceptual framing of an accuracy-interpretability trade-off provides a useful organizing principle. The emphasis on hybrid solutions and practical implementation strategies addresses a genuine gap in the literature.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li>R1-M1  </li>
+<li>R1-M2  </li>
+<li>R1-M3</li>
+<li><strong>Minor Comments</strong>  </li>
+<li>R1-m1  </li>
+<li>R1-m2  </li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The abstract provides no evidence base for the central claims. The proposed continuum and hybrid strategies are presented without supporting examples, comparative analyses, or references to specific results. The scope of the review is undefined, and no criteria for method inclusion or evaluation are stated.</li>
+<li><strong>Assessment against Nature-style criteria</strong>  </li>
+<li>Originality: The accuracy-interpretability continuum framing has some novelty, though the underlying idea of trade-offs in model complexity is not new. The abstract does not demonstrate a sufficiently original synthesis to establish strong novelty.  </li>
+<li>Scientific importance: The topic is important, but the abstract does not convey specific insights or findings that would advance the field beyond existing reviews.  </li>
+<li>Interdisciplinary readership: The topic bridges AI, biophysics, and structural biology, which could attract broad interest, but the abstract is too general to demonstrate concrete interdisciplinary value.  </li>
+<li>Technical soundness: Not assessable from the abstract alone. No methods, data, or validation are presented.  </li>
+<li>Readability for nonspecialists: The abstract is clearly written and accessible, though it remains at a high level of generality.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract describes a review that could be valuable, but the claims about the continuum, hybrid strategies, and practical implementation are unsupported in the visible material. A full manuscript with substantive content would be required to assess whether the case is made.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> The authors claim that AI-based strategies can be placed along an ideal continuum in which accuracy increases as interpretability decreases, and that hybrid solutions can be devised to maximize strengths.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The central conceptual claim of an accuracy-interpretability continuum is presented without any supporting examples, data, or analysis. No specific methods are compared, no quantitative or qualitative evidence is cited, and no case studies are referenced. The claim is asserted rather than demonstrated.  </li>
+<li><strong>Why it matters</strong> This continuum is the organizing framework of the review and the basis for the proposed hybrid strategies. Without evidence, the framework remains an untested assertion, and the practical recommendations derived from it lack foundation.  </li>
+<li>
+<p><strong>Resolution test</strong> The full manuscript must provide concrete examples of methods placed along the continuum, with justification for their positions, and demonstrate how hybrid approaches outperform individual methods in specific cases.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Scope definition  </li>
+<li><strong>Claim pointer</strong> The authors state that they review and analyze different AI-based strategies used to model protein structure and dynamics and simulate macromolecular assemblies, comparing them with traditional methods.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The abstract does not define the scope of the review. No information is given on the number of methods covered, the literature search strategy, inclusion criteria, or the time frame of the reviewed work. Without this, the review cannot be evaluated for completeness or bias.  </li>
+<li><strong>Why it matters</strong> A review article must establish its coverage to be credible. An undefined scope makes it impossible to determine whether the conclusions are representative or selective.  </li>
+<li>
+<p><strong>Resolution test</strong> The full manuscript must include a methods section describing the literature search, inclusion and exclusion criteria, and a clear statement of the scope of methods and studies reviewed.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Outcome specificity  </li>
+<li><strong>Claim pointer</strong> The authors claim to outline practical strategies for implementing integrated approaches in a coherent manner, preserving accuracy and feasibility while maintaining insight into aggregation pathways, intermediate structures, and molecular mechanisms.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The abstract promises practical strategies but provides no indication of what these strategies are, how they were derived, or whether they have been tested or validated. The claim of preserving accuracy and feasibility is made without any supporting evidence.  </li>
+<li><strong>Why it matters</strong> The practical value of the review depends on the specificity and validity of the proposed strategies. Vague promises without demonstrated outcomes do not constitute a useful contribution.  </li>
+<li><strong>Resolution test</strong> The full manuscript must present concrete, actionable strategies with examples of their application, and ideally evidence of their effectiveness in specific case studies.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Terminology  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The phrase "accuracy increases as interpretability decreases" is used without defining either term in the context of the methods discussed.  </li>
+<li>
+<p><strong>Required correction</strong> Define accuracy and interpretability operationally in the context of the reviewed methods, or provide a figure illustrating the proposed continuum.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Completeness  </li>
+<li><strong>Affected element</strong> Method coverage  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The abstract mentions AlphaFold and RoseTTAFold specifically but does not indicate whether other AI-based approaches, such as language models, diffusion-based methods, or machine-learned force fields, are covered.  </li>
+<li>
+<p><strong>Required correction</strong> Clarify the full range of methods included in the review, either in the abstract or clearly in the introduction of the full manuscript.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Precision  </li>
+<li><strong>Affected element</strong> Claim about Nobel Prize  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The statement that AlphaFold and RoseTTAFold "earned them the 2024 Nobel Prize in Chemistry" is imprecise. The prize was awarded for protein design and structure prediction, and the specific recognition should be stated accurately.  </li>
+<li><strong>Required correction</strong> Rephrase to accurately reflect the Nobel Prize citation, for example by referring to the award for computational protein design and structure prediction.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The accuracy-interpretability continuum is asserted without evidence and is not assessable from the abstract.</li>
+<li>The claim that hybrid solutions can maximize strengths of individual methods is unsupported by any comparative data.</li>
+<li>The promise of practical strategies that preserve accuracy and feasibility is unsubstantiated in the visible material.</li>
+<li>The scope of the review, including the number and types of methods covered, is undefined and therefore not assessable.</li>
+<li>Any comparative claims about AI-based versus traditional methods cannot be evaluated without the full text.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

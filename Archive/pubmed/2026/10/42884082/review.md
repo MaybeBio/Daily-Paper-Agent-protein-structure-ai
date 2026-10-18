@@ -1,0 +1,79 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no figures, tables, methods, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report an integrated computational pipeline (MD, MSM, binding free energy calculations) applied to human CPT1A in a membrane environment, yielding a representative conformation used for virtual screening of 1.23 million compounds, five candidates with docking scores below -10 kcal/mol, one compound with a binding free energy of -25.99 kcal/mol, ligand-specific dynamic modulation, and preliminary in vitro activity data partially consistent with computed free energies.
+- **Visible evidence base** Abstract text only; no numerical data, statistical measures, simulation parameters, validation metrics, or experimental protocols are visible
+- **Missing materials affecting confidence** Full methods, simulation convergence criteria, MSM validation (implied timescales, Chapman-Kolmogorov tests), docking protocol details, binding free energy method and error estimates, compound identities, activity assay details, replicates, and all figures and tables
+
+## Reviewer
+- **Overall assessment** The abstract describes a technically ambitious and potentially useful computational workflow for a structurally uncharacterized membrane protein. The authors are appropriately cautious in distinguishing local transition probabilities from global equilibrium populations, which is commendable. However, the evidence base available for review is limited to the abstract, and several claims require supporting data that are not visible. The central claim of a "dynamically informed structural basis" rests on a representative conformation whose selection criteria are only partially described. The in vitro data are described as "preliminary" and "partially consistent," which weakens the translational significance. The work may be of interest to the computational drug discovery community, but the case for a robust and reproducible strategy is not fully established from the supplied material.
+- **Who would be interested in the results, and why** Computational chemists and structural biologists working on membrane proteins without full-length experimental structures would find the integrated MD-MSM-screening workflow relevant. Researchers in metabolic disease and cancer biology targeting CPT1A may be interested in the candidate compounds, though the preliminary nature of the activity data limits immediate translational appeal. Methodologists developing dynamic structure-based screening approaches would also take note.
+- **Major strengths** The use of a realistic outer mitochondrial membrane model for all-atom MD is a strength. The explicit acknowledgment that pathway probabilities describe local transitions rather than global equilibrium is scientifically honest. The integration of multiple computational methods (RMSF-guided analysis, MSM transition-path analysis, GROMOS clustering) to converge on a representative conformation is a reasonable strategy. The scale of the virtual screen (1.23 million compounds) is substantial.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "RMSF-guided local region analysis coupled with MSM transition-path analysis and GROMOS clustering convergently identified a representative conformation"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that three methods "convergently identified" a representative conformation, but no quantitative agreement metrics are provided. Convergence in this context could mean the methods selected the same structure, or that they selected structures within a similarity threshold, or that the authors judged them consistent by inspection. Without a defined criterion, the claim of convergence is not verifiable.
+  - **Why it matters** The representative conformation is the foundation for all downstream virtual screening and binding free energy calculations. If the selection is arbitrary or weakly justified, the entire screening campaign loses its claimed dynamic basis.
+  - **Resolution test** Provide a quantitative definition of convergence, such as pairwise RMSD between the selected conformations from each method, or a similarity score with a stated threshold. Show that the selected conformation is robust to reasonable variations in clustering parameters and MSM lag times.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Subsequent MD simulations and binding free energy calculations confirmed stable binding, with Compound 2 exhibiting the most favorable free energy of -25.99 kcal/mol"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** A single binding free energy value is reported without an error estimate, the method used (MM-PBSA, MM-GBSA, FEP, TI, or other) is not stated, and no comparison to a control or known binder is provided. The claim of "stable binding" is not supported by any metric such as RMSD stability, contact persistence, or residence time.
+  - **Why it matters** Binding free energy values from end-point methods are notoriously sensitive to setup and can carry uncertainties of several kcal/mol. A value of -25.99 kcal/mol without error bars or methodological context cannot be interpreted, and "stable binding" is a qualitative assertion that requires quantitative support.
+  - **Resolution test** Report the method, the standard deviation or standard error across multiple independent simulations or trajectory blocks, and a comparison with a decoy or known weak binder. Provide RMSD and contact analysis over the simulation trajectory to substantiate "stable binding."
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and evidence completeness
+  - **Claim pointer** "A preliminary in vitro CPT1 activity assay revealed candidate-specific responses, and the free-energy and activity data were partially consistent"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The in vitro data are described as "preliminary" and "partially consistent," but no details are given on the assay type, concentration range, replicates, positive and negative controls, or which compounds showed which responses. The phrase "partially consistent" is ambiguous and could mask significant discrepancies.
+  - **Why it matters** The abstract implies a degree of experimental validation, but the lack of detail prevents any assessment of whether the computational predictions have meaningful predictive power. If the consistency is only partial, the authors should specify which compounds matched and which did not, and discuss possible reasons.
+  - **Resolution test** Provide the assay protocol, dose-response data, IC50 or percent inhibition values with error bars, and a clear statement of which compounds were consistent or inconsistent with the computed free energies. Discuss potential sources of discrepancy, such as membrane permeability, solubility, or assay conditions.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Virtual screening description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states "docking scores below -10 kcal/mol" but does not specify the docking software or scoring function. Different scoring functions produce values on different scales, making this threshold difficult to interpret.
+  - **Required correction** Specify the docking program and scoring function, and if possible, provide a reference for why -10 kcal/mol is a meaningful threshold in that context.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Lipinski filtering
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states "followed by Lipinski filtering" but does not indicate how many compounds remained after filtering or whether any other filters (e.g., PAINS, pan-assay interference) were applied.
+  - **Required correction** Report the number of compounds passing each stage of the filtering cascade and state whether additional filters were used.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Simulation length and convergence
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not state the total simulation time, number of replicas, or how convergence of the MSM was assessed.
+  - **Required correction** Provide the aggregate simulation time, number of independent trajectories, and the convergence criteria used for the MSM (e.g., implied timescale plots, Chapman-Kolmogorov tests).
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** PCA and secondary structure analysis
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that PCA and secondary-structure analyses "revealed ligand-specific modulation of CPT1A dynamics," but no specific findings are described. This claim is too vague to evaluate.
+  - **Required correction** Summarize the key PCA findings (e.g., which collective motions were affected) and the specific secondary structure changes observed for each compound.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (convergence of representative conformation selection), R1-M2 (binding free energy without error or method), R1-M3 (in vitro data insufficiently described)
+- **Assessment against Nature-style criteria** Originality: The integration of MSM-guided conformational selection with large-scale virtual screening for a membrane protein without a full-length structure is a creative combination, though each individual method is established. Scientific importance: CPT1A is a relevant target, and a dynamic structure-based approach could be valuable, but the preliminary nature of the experimental validation limits the immediate impact. Interdisciplinary readership: The work bridges computational biophysics and drug discovery, which could attract readers from both communities, but the abstract is written in a way that assumes familiarity with MSM and binding free energy methods. Technical soundness: Not fully assessable from the abstract; the missing convergence metrics and error estimates are significant gaps. Readability for nonspecialists: The abstract is reasonably clear but uses technical terms without brief explanations, which may hinder nonspecialist access.
+- **Recommendation posture** Currently not established from the provided evidence. The computational workflow is plausible and the authors show appropriate caution in their claims, but the abstract alone does not provide sufficient evidence to verify the convergence of the conformational selection, the reliability of the binding free energy, or the meaning of the in vitro results. A revised manuscript with full methodological detail and quantitative support could change this assessment.
+
+## Risk / unsupported claims
+- The claim of "convergent" identification of a representative conformation is unsupported without quantitative agreement metrics.
+- The binding free energy value of -25.99 kcal/mol is unsupported without method specification and error estimates.
+- The claim of "stable binding" is unsupported without trajectory-based metrics.
+- The claim that PCA and secondary-structure analyses revealed "ligand-specific modulation" is unsupported without specific findings.
+- The "partial consistency" between free-energy and activity data is uninterpretable without details on which compounds were consistent and which were not.
+- The overall claim of an "integrated strategy for ligand discovery in structurally uncharacterized proteins" is plausible but not fully established from the abstract-level evidence.

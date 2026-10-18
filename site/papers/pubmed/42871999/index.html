@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab to codes: multimodel advanced AI-driven pipelines to drive antimicrobial peptide design for the post-antibiotic era. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Lab to codes: multimodel advanced AI-driven pipelines to drive antimicrobial peptide design for the post-antibiotic era.</h1>
+      <div class="meta">Saleem, Naveed; El-Omar, Emad; Kumar, Naresh; Willcox, Mark; Jiang, Xiao-Tao</div>
+      <div class="meta muted">
+        
+        <span class="journal">Frontiers in cellular and infection microbiology</span>
+        · 2026-10-14
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42871999/">原文</a>
+      </div>
+      <p class="one-liner">该文综述了多模型AI驱动的抗菌肽设计流程，整合结构预测、分子对接和生成模型等计算手段，虽以抗菌肽为对象且偏工程化综述，但方法框架对蛋白质结构计算与设计有直接借鉴意义。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The rapid emergence of global antimicrobial resistance (AMR) has outpaced the development of new antimicrobial agents, necessitating transformative approaches such as AI-driven in-silico drug discovery. Antimicrobial peptides (AMPs) are promising alternatives due to their broad-spectrum bactericidal activity and limited susceptibility to resistance. However, the transition from bench to bedside remains constrained by certain challenges, such as instability, potency, and cytotoxicity. Here, well-integrated, multi-model AI-driven pipeline strategies for the mining and discovery of novel AMPs are designed to address these concerns through simultaneous multi-purpose optimization. The proposed architectural frameworks combine discriminative AMP classifiers, quantitative potency, and cytotoxicity screening filters to prioritize AMPs with good efficacy and safety profiles. To ensure novelty, the pipeline integrates multi-layer sequential and genomic screening by adopting alignment and profile-based approaches. Structural refinements are achieved through advanced molecular docking (MD) and protein folding approaches, providing mechanistic insights regarding peptide-target interactions. In parallel, enzymatic susceptibility and stability prediction models are incorporated to optimize AMP pharmacokinetic potentials. Notably, the multi-objective pipeline operates within iterative optimization loops; discriminative and generative AI models and sequential redesign strategies refine candidates based on multi-purpose closed feedback loops across stability, novelty, efficacy, and toxicity outcomes. These systematic and integrated approaches overcome key bottlenecks associated with traditional linear drug discovery, potentially reducing late-stage attrition and accelerating the transformation from in-silico predictions to wet-lab validation. Collectively, this review provides reproducible and generalizable blueprints for next-generation antimicrobial agents, demonstrating the computational potentials of AI-driven, multi-model architectural frameworks to tackle the global AMR crisis and favour precision design of AMPs with better therapeutic indices.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">全球抗菌素耐药性（AMR）的迅速出现已超越新型抗菌药物开发的速度，亟需采用变革性方法，如人工智能驱动的计算机模拟药物发现。抗菌肽（AMPs）因其广谱杀菌活性和对耐药性有限的易感性，成为有前景的替代方案。然而，从实验室到临床的转化仍受制于某些挑战，如稳定性、效力和细胞毒性。在此，设计了集成良好、多模型AI驱动管道策略，用于挖掘和发现新型AMPs，通过同步多目标优化来解决这些问题。所提出的架构框架结合了判别性AMP分类器、定量效力和细胞毒性筛选过滤器，以优先选择具有良好疗效和安全性特征的AMPs。为确保新颖性，该管道通过采用比对和基于谱图的方法，整合了多层序列和基因组筛选。结构优化通过先进的分子对接（MD）和蛋白质折叠方法实现，提供关于肽-靶标相互作用的机制见解。同时，整合了酶敏感性和稳定性预测模型，以优化AMP的药代动力学潜力。值得注意的是，多目标管道在迭代优化循环中运行；判别性和生成性AI模型以及顺序重设计策略，基于稳定性、新颖性、效力和毒性结果的多用途闭环反馈，优化候选物。这些系统性和集成性方法克服了与传统线性药物发现相关的关键瓶颈，可能减少后期失败率，并加速从计算机模拟预测到湿实验验证的转化。总体而言，本综述为下一代抗菌药物提供了可重复和可推广的蓝图，展示了AI驱动、多模型架构框架的计算潜力，以应对全球AMR危机，并促进具有更好治疗指数的AMPs的精准设计。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Lab to codes: multimodel advanced AI-driven pipelines to drive antimicrobial peptide design for the post-antibiotic era</li>
+<li><strong>作者与单位</strong>: Saleem, Naveed; El-Omar, Emad; Kumar, Naresh; Willcox, Mark; Jiang, Xiao-Tao（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>: Frontiers in Cellular and Infection Microbiology</li>
+<li><strong>年份</strong>: 2026-10-14</li>
+<li><strong>论文类型</strong>: 综述（Review）</li>
+<li><strong>领域</strong>: 抗菌肽（AMP）计算设计 × AI/深度学习 × 结构预测/分子对接</li>
+<li><strong>关键词</strong>: 抗菌肽（AMP）、抗微生物耐药性（AMR）、AI驱动管线、生成模型、分子对接、结构预测、多目标优化</li>
+<li><strong>DOI/arXiv 号</strong>: 10.3389/fcimb.2026.1894311</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供</li>
+<li><strong>阅读日期</strong>: 2026-10-14</li>
+<li><strong>在课题方向中的位置</strong>: 本文是综述，系统梳理了AI驱动的AMP发现与优化全流程管线，涵盖判别模型、生成模型、安全性筛选、稳定性预测、分子对接与结构预测（含AlphaFold）等模块。对本课题（蛋白质结构相关计算研究 × AI/物理模拟）而言，其核心参考价值在于：(1) 多模型管线中各模块的串联与反馈机制设计；(2) 结构预测（AlphaFold2/3）与分子对接在肽-靶标相互作用建模中的集成方式；(3) 多目标优化（效力、毒性、稳定性、新颖性）的框架设计思路。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出并系统综述了一种多模型AI驱动管线框架，通过集成判别式AMP分类器、生成模型、效力/毒性/稳定性预测、分子对接与结构预测等模块，在闭环迭代优化中同时优化AMP的效力、安全性、新颖性和药代动力学特性，以加速从计算预测到湿实验验证的转化。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何构建一个集成多模型AI方法的统一管线，以克服传统线性药物发现流程中AMP临床转化的关键瓶颈（稳定性差、效力不足、细胞毒性、新颖性有限）？</li>
+<li><strong>为什么重要</strong>: 全球AMR危机日益严峻，传统抗生素开发管线枯竭，AMP作为替代方案具有广谱活性和低耐药倾向，但其临床转化受限于多重相互关联的缺陷。AI驱动的多目标优化有望同时解决这些问题。</li>
+<li><strong>现有方法为何不足</strong>: 传统方法以线性流程为主，各环节（活性预测、毒性筛选、稳定性评估、结构优化）相互独立，缺乏闭环反馈；单一模型仅优化单一目标，无法平衡效力与安全性等多维指标；且多数模型在重叠数据集上训练，泛化能力有限。</li>
+<li><strong>精确研究问题</strong>: "Can a multi-model, closed-loop AI pipeline simultaneously optimize AMP efficacy, safety, novelty, and stability to reduce late-stage attrition and accelerate clinical translation?"</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：此脉络基于本文框架，未经外部系统核验）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文主张的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统实验驱动</td>
+<td>化学合成 + 表型筛选</td>
+<td>可靠、直接</td>
+<td>通量低、成本高、周期长</td>
+<td>需被AI加速替代</td>
+</tr>
+<tr>
+<td>经典ML分类</td>
+<td>SVM、RF、kNN（如AmPEP）</td>
+<td>可解释、小数据友好</td>
+<td>依赖手工特征、无法生成新序列</td>
+<td>作为管线中的快速筛选层</td>
+</tr>
+<tr>
+<td>深度学习判别</td>
+<td>CNN、RNN、LSTM</td>
+<td>自动特征学习、精度高</td>
+<td>需大数据、黑箱、泛化受限</td>
+<td>作为核心判别层</td>
+</tr>
+<tr>
+<td>生成模型</td>
+<td>GAN、VAE、扩散模型、LLM</td>
+<td>可探索新序列空间、条件生成</td>
+<td>训练不稳定、生成物需验证</td>
+<td>作为de novo设计引擎</td>
+</tr>
+<tr>
+<td>结构预测+对接</td>
+<td>AlphaFold2/3、DiffDock、AutoDock Vina</td>
+<td>提供机制见解、原子级分辨率</td>
+<td>计算成本高、动态构象覆盖有限</td>
+<td>作为结构验证与优化层</td>
+</tr>
+<tr>
+<td>多模型闭环管线</td>
+<td>本文提出的框架</td>
+<td>多目标同步优化、闭环反馈</td>
+<td>实现复杂、需标准化基准</td>
+<td>本文核心贡献</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据集重叠与信息泄漏</td>
+<td>模型在训练/测试集包含同源序列时性能虚高</td>
+<td>多数AMP数据库来自重叠来源，随机划分导致同源序列跨集分布</td>
+<td>"homologous AMPs and sequence redundancy distributed across test and training sets can cause information leakage"（Limitations节）</td>
+</tr>
+<tr>
+<td>负样本缺失</td>
+<td>无活性AMP序列未被系统记录</td>
+<td>不成功的AMP未发表，导致负样本稀缺</td>
+<td>"inactive AMP sequences have not been reported systematically"（Limitations节）</td>
+</tr>
+<tr>
+<td>标签异质性</td>
+<td>同一AMP在不同研究中MIC值不可比</td>
+<td>菌株、培养基、终点定义等实验条件不一致</td>
+<td>"MIC values obtained for the same AMPs may not be directly comparable across different studies"（Limitations节）</td>
+</tr>
+<tr>
+<td>计算性能≠治疗性能</td>
+<td>高预测精度未转化为临床成功</td>
+<td>生理环境（血清蛋白结合、离子强度、蛋白酶降解）未被计算模型充分建模</td>
+<td>"Physiological factors...can substantially alter activities"（Limitations节）</td>
+</tr>
+<tr>
+<td>可解释性不足</td>
+<td>判别/生成模型缺乏机制见解</td>
+<td>深度学习黑箱特性</td>
+<td>"Post hoc approaches...do not propose biological mechanisms"（Limitations节）</td>
+</tr>
+<tr>
+<td>生成模型验证缺失</td>
+<td>生成序列缺乏实验验证闭环</td>
+<td>计算-实验接口不完善</td>
+<td>"only smaller proportions have progressed through synthesis, serum stability assessments and in-vivo validations"（Limitations节）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+提出一个多阶段、多模型集成的AMP发现管线，包含：(a) 判别式AMP分类器（经典ML与深度学习）用于初筛；(b) 生成模型（GAN、VAE、扩散模型、LLM）用于de novo序列设计；(c) 效力预测模型（MIC回归）；(d) 安全性筛选（溶血、细胞毒性）；(e) 新颖性筛选（基因组/蛋白序列比对）；(f) 结构预测（AlphaFold2/3）与分子对接（AutoDock Vina、DiffDock等）用于结构验证与机制解析；(g) 稳定性预测（蛋白酶切割位点、半衰期）。各模块在闭环迭代中协同工作。</p>
+<p><strong>2) 核心洞察</strong>：
+- <strong>多目标同步优于串行筛选</strong>：将效力、毒性、稳定性、新颖性作为并行约束而非串行过滤，可避免早期过度筛选导致候选空间枯竭。
+- <strong>结构信息作为连接层</strong>：AlphaFold等结构预测工具不仅用于验证，更可作为连接序列空间与功能空间的桥梁，为对接和机制研究提供输入。
+- <strong>闭环反馈是管线核心</strong>：湿实验数据应回流至计算模型，形成"设计-预测-验证-学习"的迭代循环，而非一次性筛选。
+- <strong>数据集质量决定模型上限</strong>：数据重叠、负样本缺失、标签异质性是当前AMP计算模型泛化能力的根本限制。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 对蛋白质结构相关计算研究而言，本文的管线架构思想可迁移：任何"序列→功能"预测任务（如酶活性、结合亲和力）都可拆分为判别、生成、结构验证、稳定性评估等模块，并以闭环方式集成。
+- 结构预测工具（AlphaFold）在多模块管线中的定位不仅是"最终验证"，更可作为中间特征提取器，为下游对接、动力学模拟提供起点。
+- 数据集偏差问题在蛋白质计算领域普遍存在（如PDB偏向可溶性蛋白），本文对数据重叠和标签异质性的批判性讨论具有普适警示意义。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 已知AMP序列数据库（正样本）、非AMP蛋白序列（负样本）、基因组/宏基因组数据、目标病原体信息</li>
+<li><strong>输出</strong>: 优先化的候选AMP序列（附带预测的效力、毒性、稳定性、新颖性评分）</li>
+<li><strong>模块</strong>:
+  1. 判别式分类器（SVM/RF/XGBoost/CNN/RNN/LSTM/Transformer）
+  2. 生成模型（GAN/VAE/扩散模型/LLM）
+  3. 效力预测（MIC回归）
+  4. 安全性筛选（溶血/细胞毒性预测）
+  5. 新颖性筛选（BLAST/MMseqs2/DIAMOND/HMMER/InterProScan）
+  6. 结构预测（AlphaFold2/3）
+  7. 分子对接（AutoDock Vina、DiffDock、RosettaLigand）
+  8. 稳定性预测（蛋白酶切割位点、半衰期）</li>
+<li><strong>训练</strong>: 各模块独立训练，使用不同数据集（AMP数据库、毒性数据库、蛋白结构数据库）</li>
+<li><strong>工具</strong>: 文中提及AmPEP、HemoNet、HLPpred-Fuse、HAPPENN、AMPDeep、tAMPer、ToxGIN、PepVAE、MBC-Attention、BERT-AmPEP60、ESKAPEE-MICpred、AMPredictor、AlphaFold2/3、DiffDock、AutoDock Vina、RosettaLigand、CD-HIT、MMseqs2、DIAMOND、HMMER、InterProScan、PeptideCutter、PROSPER、PROSPERous、ProCleave、panCleave、PlifePred等</li>
+<li><strong>反馈回路</strong>: 湿实验验证结果（活性、毒性、稳定性数据）回流至各预测模型进行再训练或微调</li>
+<li><strong>假设</strong>: (1) 序列-功能关系可从数据中学习；(2) 多目标联合优化优于单目标串行筛选；(3) 结构预测可提供有意义的机制约束</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>判别式AMP分类器</td>
+<td>从大规模序列库中快速识别候选AMP</td>
+<td>缩小候选空间，降低后续计算成本</td>
+<td>输入：序列；输出：AMP概率/二分类标签</td>
+<td>文中引用AmPEP、集成模型等，报告准确率约95%</td>
+<td>预期影响：候选空间无法有效缩小，后续模块计算负担剧增 [预期效应]</td>
+</tr>
+<tr>
+<td>生成模型（GAN/VAE/扩散/LLM）</td>
+<td>de novo生成新AMP序列</td>
+<td>探索天然序列空间之外的化学多样性</td>
+<td>输入：噪声/条件向量/训练分布；输出：新序列</td>
+<td>文中引用AMPGen、EBAMP等，报告生成序列经湿实验验证</td>
+<td>预期影响：丧失探索新序列空间的能力，管线退化为纯筛选工具 [预期效应]</td>
+</tr>
+<tr>
+<td>效力预测（MIC回归）</td>
+<td>定量预测抗菌活性</td>
+<td>区分"有活性"与"足够强"的候选</td>
+<td>输入：序列+病原体信息；输出：MIC值</td>
+<td>PepVAE报告R²=0.73、RMSE=0.50（E. coli）；MBC-Attention报告Pearson=0.775、RMSE=0.533；集成模型报告Pearson=0.756-0.802</td>
+<td>预期影响：无法对候选进行定量排序，仅能二分类 [预期效应]</td>
+</tr>
+<tr>
+<td>溶血/细胞毒性筛选</td>
+<td>预测宿主安全性</td>
+<td>AMP的膜破坏机制常导致宿主细胞毒性</td>
+<td>输入：序列；输出：溶血概率/毒性评分</td>
+<td>文中引用HemoNet、HLPpred-Fuse、HAPPENN、tAMPer、ToxGIN等</td>
+<td>预期影响：高毒性候选进入湿实验阶段，浪费资源 [预期效应]</td>
+</tr>
+<tr>
+<td>新颖性筛选</td>
+<td>排除已知AMP和同源序列</td>
+<td>避免"重新发现"已知分子</td>
+<td>输入：候选序列；输出：与已知序列的相似性评分</td>
+<td>文中引用CD-HIT、BLASTP、MMseqs2、DIAMOND、HMMER、InterProScan、Foldseek</td>
+<td>预期影响：大量候选为已知AMP变体，创新性不足 [预期效应]</td>
+</tr>
+<tr>
+<td>结构预测（AlphaFold2/3）</td>
+<td>预测AMP三维结构</td>
+<td>提供机制见解，为对接做准备</td>
+<td>输入：序列；输出：3D坐标</td>
+<td>文中明确提及AlphaFold2/3作为结构预测工具</td>
+<td>预期影响：无法获得结构约束，对接和机制研究受限 [预期效应]</td>
+</tr>
+<tr>
+<td>分子对接（AutoDock Vina、DiffDock等）</td>
+<td>预测AMP-靶标结合模式</td>
+<td>验证靶标特异性，优化结合亲和力</td>
+<td>输入：AMP结构+靶标结构；输出：结合构象+打分</td>
+<td>文中引用AutoDock、AutoDock Vina、DiffDock、RosettaLigand</td>
+<td>预期影响：无法评估靶标特异性，脱靶风险增加 [预期效应]</td>
+</tr>
+<tr>
+<td>稳定性预测</td>
+<td>预测蛋白酶降解和半衰期</td>
+<td>AMP的体内应用受限于快速降解</td>
+<td>输入：序列；输出：切割位点/半衰期预测</td>
+<td>文中引用PeptideCutter、PROSPER、PROSPERous、ProCleave、panCleave、PlifePred</td>
+<td>预期影响：候选在体内快速失活，临床转化失败 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。本文为综述论文，未提出新的数学模型或算法公式。文中涉及的MIC、HC50等指标均为实验测量值而非理论公式。各模块（分类器、生成模型、对接打分函数等）的数学细节均引用自原始文献，本文未给出具体公式。</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>: 本文为综述，无原始实验数据。引用的数据集包括：AMP数据库（如APD、DRAMP等）、UniProt/Swiss-Prot（负样本来源）、宏基因组数据集、人类蛋白质组（毒性评估）等。</p>
+<p><strong>规模</strong>: 未提供具体数字。</p>
+<p><strong>指标</strong>: 准确率（~95%分类）、R²（0.73）、RMSE（0.50-0.53）、Pearson相关系数（0.707-0.802）、MSE（0.266-0.303）等，均为引用文献中的报告值。</p>
+<p><strong>基线</strong>: 各引用研究中的传统ML基线（SVM、RF等）。</p>
+<p><strong>评测协议</strong>: 各引用研究独立设计，无统一基准。</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AMPGen管线（判别+生成+MIC预测）</td>
+<td>多模型管线可生成有效AMP</td>
+<td>40个de novo AMP，38个合成，31个满足活性标准</td>
+<td>成功率81.58%；E. coli靶向19/20活性，S. aureus靶向8/18活性</td>
+<td>多模型管线可产生高比例活性候选</td>
+<td>靶标依赖性差异大，S. aureus成功率仅44.4%</td>
+<td>Jin et al., 2025（文中引用）</td>
+</tr>
+<tr>
+<td>集成分类器（AmPEP等）</td>
+<td>集成方法优于单模型</td>
+<td>多种ML/DL架构对比</td>
+<td>准确率约95%</td>
+<td>集成可提升分类性能</td>
+<td>数据集重叠可能虚高</td>
+<td>Mera-Banguero et al., 2024; Zhong et al., 2024（文中引用）</td>
+</tr>
+<tr>
+<td>PepVAE（VAE+梯度提升）</td>
+<td>生成+回归可预测MIC</td>
+<td>E. coli MIC预测</td>
+<td>R²=0.73, RMSE=0.50</td>
+<td>生成模型嵌入可支持定量预测</td>
+<td>仅单一菌种验证</td>
+<td>Dean et al., 2021（文中引用）</td>
+</tr>
+<tr>
+<td>MBC-Attention（多分支CNN+注意力）</td>
+<td>注意力机制提升MIC预测</td>
+<td>E. coli MIC回归</td>
+<td>Pearson=0.775, RMSE=0.533</td>
+<td>注意力可捕获关键序列特征</td>
+<td>仅单一菌种验证</td>
+<td>Dean et al., 2021（文中引用）</td>
+</tr>
+<tr>
+<td>BERT-AmPEP60（ProtBERT微调）</td>
+<td>蛋白LLM可提升MIC预测</td>
+<td>E. coli和S. aureus</td>
+<td>MSE=0.266（E. coli）, 0.303（S. aureus）；Pearson=0.796, 0.753</td>
+<td>预训练蛋白模型可迁移至AMP任务</td>
+<td>仅两种菌种</td>
+<td>Chung et al., 2024（文中引用）</td>
+</tr>
+<tr>
+<td>AMPredictor（GAN+图卷积）</td>
+<td>生成+结构预测+MIC集成</td>
+<td>动物感染模型</td>
+<td>RMSE=0.5348, Pearson=0.7072；24个AMP经动物验证</td>
+<td>端到端管线可产出体内有效AMP</td>
+<td>动物模型范围有限</td>
+<td>Dong et al., 2025b（文中引用）</td>
+</tr>
+<tr>
+<td>临床转化案例（pexiganan, iseganan）</td>
+<td>计算/体外成功≠临床成功</td>
+<td>III期临床试验</td>
+<td>pexiganan未达主要疗效终点；iseganan未减少口腔黏膜炎</td>
+<td>计算预测需结合PK/PD和生理条件</td>
+<td>失败原因未完全归因于计算预测</td>
+<td>Lipsky et al., 2008; Trotti et al., 2004（文中引用）</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文结论仅适用于AMP计算发现领域，具体为多模型AI管线在AMP序列挖掘、生成、效力/毒性/稳定性预测、结构验证方面的整合策略。</li>
+<li><strong>真值/验证状态</strong>: 文中引用的湿实验验证仅限于少数案例（AMPGen、AMPredictor），且多为体外或动物模型；无人体临床验证成功案例。多数模型仍处于计算预测阶段。</li>
+<li><strong>端到端状态</strong>: 尚无完整"计算设计→临床批准"的AMP案例。最接近的pexiganan和iseganan均在III期失败，说明计算预测到临床转化仍有显著鸿沟。</li>
+<li><strong>算力成本</strong>: 未提供具体算力需求。AlphaFold2/3和扩散模型等模块的计算成本可能较高，但文中未量化。</li>
+<li><strong>历史数据依赖</strong>: 所有模型均依赖现有AMP数据库，这些数据库偏向已表征的阳离子、短序列AMP，可能限制探索新型化学空间。</li>
+<li><strong>模型依赖</strong>: 各模块独立训练，模块间误差可能累积；生成模型的输出质量高度依赖训练数据分布。</li>
+<li><strong>最难情形</strong>: 对S. aureus等革兰氏阳性菌的预测成功率显著低于E. coli（44.4% vs 95%），说明不同病原体的可预测性差异大。</li>
+<li><strong>群体/领域边界</strong>: 结论主要适用于抗菌肽，对其他抗菌分子（如小分子、抗体）的可迁移性未验证。</li>
+<li><strong>有边界的复述</strong>: 本文表明，多模型AI管线在AMP计算发现中展现出潜力，能够在体外和动物模型中产生较高比例的活性候选，但临床转化仍受限于生理环境复杂性、数据集偏差和模块间误差累积，尚无端到端临床成功案例。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据集重叠与信息泄漏</td>
+<td>同源序列跨训练/测试集分布导致性能虚高</td>
+<td>相似性感知的划分、冗余控制、独立数据集评估</td>
+<td>Limitations节</td>
+</tr>
+<tr>
+<td>负样本稀缺</td>
+<td>无活性AMP未被系统记录</td>
+<td>建立包含实验验证阴性结果的数据库</td>
+<td>Limitations节</td>
+</tr>
+<tr>
+<td>标签异质性</td>
+<td>MIC等定量标签来自不同实验条件，不可直接比较</td>
+<td>标准化实验协议、assay-aware数据库</td>
+<td>Limitations节</td>
+</tr>
+<tr>
+<td>计算性能≠治疗性能</td>
+<td>高预测精度未转化为临床成功</td>
+<td>整合PK/PD、血清蛋白结合、生理条件建模</td>
+<td>Limitations节</td>
+</tr>
+<tr>
+<td>模型可解释性不足</td>
+<td>判别/生成模型缺乏机制见解</td>
+<td>可解释AI与机制性实验结合</td>
+<td>Limitations节</td>
+</tr>
+<tr>
+<td>湿实验验证不足</td>
+<td>仅少数案例经过合成和生物学验证</td>
+<td>更大规模的计算-实验闭环验证</td>
+<td>Limitations节</td>
+</tr>
+<tr>
+<td>临床转化失败案例</td>
+<td>pexiganan和iseganan在III期失败</td>
+<td>在计算管线中早期纳入临床相关约束</td>
+<td>文中引用</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>综述中引用的"成功率"（如AMPGen 81.58%）可能受选择偏差影响</td>
+<td>发表偏倚：失败的生成/筛选结果未发表；成功标准可能宽松（仅MIC达标，未评估毒性、稳定性）</td>
+<td>高成功率可能误导对AI管线成熟度的判断</td>
+<td>独立复现AMPGen管线，使用盲法评估；检查是否报告了所有生成序列而非仅活性子集</td>
+<td>文中引用Jin et al., 2025</td>
+</tr>
+<tr>
+<td>多模型管线各模块的误差累积未被量化</td>
+<td>分类器假阳性→生成器→MIC预测→毒性预测，各步误差可能叠加</td>
+<td>端到端性能可能远低于各模块独立性能</td>
+<td>对管线进行端到端误差传播分析；比较单模块vs全管线性能</td>
+<td>文中未提供端到端性能数据</td>
+</tr>
+<tr>
+<td>AlphaFold2/3在AMP上的适用性存疑</td>
+<td>AMP通常短、无序、膜环境作用，与AlphaFold训练分布（球蛋白）差异大</td>
+<td>结构预测可能提供误导性构象</td>
+<td>对已知结构AMP进行基准测试；比较AlphaFold预测与实验结构/NMR</td>
+<td>文中仅提及AlphaFold作为工具，未讨论其AMP适用性</td>
+</tr>
+<tr>
+<td>生成模型的"新颖性"定义模糊</td>
+<td>序列级新颖≠功能级新颖；与已知AMP低同源性可能意味着低活性</td>
+<td>新颖性筛选可能过滤掉有效候选</td>
+<td>对生成序列进行功能聚类而非仅序列聚类；评估新颖性与活性的权衡</td>
+<td>文中未明确定义新颖性评估标准</td>
+</tr>
+<tr>
+<td>多目标优化的权重分配缺乏指导</td>
+<td>效力、毒性、稳定性、新颖性如何权衡未明确</td>
+<td>不同应用场景需要不同权重，缺乏指导可能导致次优设计</td>
+<td>对不同权重配置进行敏感性分析；建立多目标帕累托前沿</td>
+<td>文中未提供具体优化算法或权重方案</td>
+</tr>
+<tr>
+<td>临床失败案例（pexiganan, iseganan）的教训未充分整合</td>
+<td>这些失败提示计算模型未捕获的关键因素（PK/PD、免疫互作、微环境）</td>
+<td>管线设计应纳入这些因素，而非仅优化分子性质</td>
+<td>在管线中增加PK/PD预测模块；用临床失败案例作为负样本训练</td>
+<td>文中提及但未深入分析失败原因</td>
+</tr>
+<tr>
+<td>数据集偏差的系统性影响被低估</td>
+<td>AMP数据库偏向阳离子、短序列、膜活性肽，可能限制探索非经典AMP</td>
+<td>可能错过新型抗菌机制</td>
+<td>对数据库组成进行系统分析；评估模型在不同化学空间的外推能力</td>
+<td>文中承认数据集偏差但未量化其影响</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>多模块管线架构设计</strong>：AMP设计可拆分为"判别→生成→效力预测→毒性预测→稳定性预测→结构验证"的模块化流程，各模块可独立替换和升级。此架构可迁移至其他蛋白质设计任务（如酶设计、抗体设计），将"序列→功能"映射分解为多个可优化的子问题。</p>
+</li>
+<li>
+<p><strong>闭环反馈机制</strong>：湿实验数据回流至计算模型是管线持续改进的关键。对蛋白质结构计算研究而言，这意味着MD模拟或实验测定的结构/功能数据应定期用于微调预测模型，而非一次性使用。</p>
+</li>
+<li>
+<p><strong>多目标同步优化优于串行筛选</strong>：将效力、毒性、稳定性、新颖性作为并行约束，可避免早期过度筛选导致候选空间枯竭。对蛋白质设计而言，这意味着应在设计早期同时考虑表达量、稳定性、活性、免疫原性等多维指标。</p>
+</li>
+<li>
+<p><strong>结构预测作为中间层而非终点</strong>：AlphaFold2/3在管线中不仅用于最终验证，更可作为连接序列与功能的中间特征提取器，为下游对接和机制研究提供输入。这提示结构预测工具可嵌入更广泛的计算流程中。</p>
+</li>
+<li>
+<p><strong>数据集偏差的系统性影响</strong>：训练数据偏向已表征的AMP类型会限制模型探索新化学空间的能力。对蛋白质结构计算而言，PDB等结构数据库的偏差（如可溶性蛋白偏好）同样会限制模型泛化能力，需要主动引入多样性数据。</p>
+</li>
+<li>
+<p><strong>计算-实验接口设计</strong>：AMPGen案例显示，计算筛选后仍需大量湿实验验证（38/40合成），且靶标依赖性差异大（E. coli 95% vs S. aureus 44%）。这提示计算管线的输出应设计为"候选池"而非"最终答案"，并明确各靶标的预测置信度。</p>
+</li>
+<li>
+<p><strong>临床转化差距</strong>：计算和临床前成功不等于临床成功（pexiganan、iseganan案例）。蛋白质计算设计应尽早纳入PK/PD、免疫原性等临床相关约束，而非仅优化分子层面的性质。</p>
+</li>
+<li>
+<p><strong>可解释性需求</strong>：判别模型的高准确率不提供机制见解，需要与可解释方法（注意力图、残基重要性）结合。对蛋白质设计而言，理解"为什么这个序列有活性"比"这个序列有活性"更有价值。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>
+<p><strong>AlphaFold2/3 (Jumper et al., 2021; Abramson et al., 2024)</strong>：本文引用作为结构预测工具。AlphaFold3可直接建模蛋白-肽/蛋白-配体复合物，与本文提出的AMP-靶标对接流程直接相关。可进一步探索AlphaFold3在AMP-膜蛋白相互作用预测中的适用性。</p>
+</li>
+<li>
+<p><strong>DiffDock (Corso et al., 2022)</strong>：本文引用作为生成式对接方法。DiffDock将对接重构为生成问题，与AMP设计中"生成-验证"循环的思路一致。</p>
+</li>
+<li>
+<p><strong>AMP数据库（APD, DRAMP等）</strong>：本文讨论的数据集偏差问题与这些数据库的组成直接相关。可进一步分析数据库的序列多样性、来源偏差对模型泛化的影响。</p>
+</li>
+<li>
+<p><strong>AmPEP (Bhadra et al., 2018)</strong>：RF-based AMP分类器，本文引用作为判别模型代表。其基于序列特征的方法与后续深度学习方法形成对比。</p>
+</li>
+<li>
+<p><strong>HemoNet/HLPpred-Fuse/HAPPENN</strong>：溶血预测工具，本文引用作为安全性筛选模块。这些工具从二元分类向定量HC50预测的演进与本文强调的"治疗指数建模"方向一致。</p>
+</li>
+<li>
+<p><strong>Pexiganan (Lipsky et al., 2008) / Iseganan (Trotti et al., 2004)</strong>：临床失败案例，本文引用说明计算预测到临床转化的差距。这些案例提示需要更全面的临床前评估框架。</p>
+</li>
+<li>
+<p><strong>与蛋白质结构计算研究的关联</strong>：本文的管线架构（判别→生成→结构验证→多目标优化）可类比蛋白质设计中的"序列设计→结构预测→功能验证"流程。AlphaFold等结构预测工具在两个领域中的定位相似——作为连接序列与功能的桥梁。</p>
+</li>
+<li>
+<p><strong>候选方向</strong>：将本文的多目标优化框架与基于物理的MD模拟结合，在管线中加入构象采样和自由能计算，可能提高对AMP-膜相互作用的预测精度。</p>
+</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>: AMP-结构感知多目标生成框架
+   - <strong>来源局限/观察</strong>: 本文综述显示现有AMP生成模型主要基于序列信息，结构预测（AlphaFold）仅在后期验证阶段使用，未形成闭环反馈。
+   - <strong>核心假设</strong>: 将结构预测（AlphaFold2/3）作为生成模型的约束条件，可提高生成AMP的靶标特异性和膜穿透能力。
+   - <strong>初步方法</strong>: 构建条件生成模型（如扩散模型），以目标蛋白/膜结构为条件输入，生成序列后立即进行结构预测和对接验证，并将结构质量评分反馈至生成器。
+   - <strong>验证方式</strong>: 对已知AMP进行留一法验证；对生成AMP进行MD模拟验证膜插入能力；与现有生成方法（AMPGen等）对比。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 数据集偏差感知的AMP预测模型校准
+   - <strong>来源局限/观察</strong>: 本文明确指出AMP数据集存在重叠、负样本缺失、标签异质性三大问题，但未提出解决方案。
+   - <strong>核心假设</strong>: 通过相似性感知的数据划分和标签噪声建模，可更真实地评估AMP预测模型的泛化能力。
+   - <strong>初步方法</strong>: 实现基于序列相似性（如MMseqs2聚类）的划分协议；引入标签噪声模型处理异质性MIC值；构建包含实验验证阴性样本的基准数据集。
+   - <strong>验证方式</strong>: 对比不同划分策略下的模型性能差异；在独立湿实验数据集上验证；建立社区基准。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 治疗指数导向的AMP多目标优化
+   - <strong>来源局限/观察</strong>: 本文强调治疗指数（效力/毒性比）是AMP临床转化的关键，但现有管线多将效力与毒性作为独立筛选步骤。
+   - <strong>核心假设</strong>: 以治疗指数为直接优化目标，而非分别优化效力和毒性，可更高效地发现临床可行AMP。
+   - <strong>初步方法</strong>: 构建多任务学习框架，同时预测MIC和溶血/细胞毒性，并定义可微分的治疗指数损失函数；使用帕累托优化探索效力-毒性权衡前沿。
+   - <strong>验证方式</strong>: 在已知AMP数据集上比较治疗指数优化与独立优化的候选质量；对优选候选进行体外验证。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 临床失败案例驱动的AMP可开发性预测
+   - <strong>来源局限/观察</strong>: 本文引用pexiganan和iseganan的III期失败，说明计算模型未捕获临床相关约束（PK/PD、免疫互作等）。
+   - <strong>核心假设</strong>: 将临床失败案例作为负样本纳入训练，可提高AMP可开发性预测的准确性。
+   - <strong>初步方法</strong>: 构建包含临床阶段AMP（成功与失败）的数据集；整合PK/PD预测模型（如血清稳定性、蛋白结合、清除率）；开发"可开发性评分"。
+   - <strong>验证方式</strong>: 回顾性验证临床失败AMP是否被低分；前瞻性评估新候选的可开发性。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 膜环境感知的AMP结构预测与对接
+   - <strong>来源局限/观察</strong>: 本文提及AlphaFold2/3和对接工具，但未讨论AMP作用环境（细胞膜）的特殊性——AMP的靶标常是膜本身而非单一蛋白。
+   - <strong>核心假设</strong>: 在膜环境（如脂双层）中进行的结构预测和对接，比水溶液环境更准确预测AMP的膜破坏机制。
+   - <strong>初步方法</strong>: 使用粗粒化MD模拟（如MARTINI）生成膜-AMP相互作用构象；结合AlphaFold预测的AMP结构作为起始构象；开发膜插入深度和角度评分函数。
+   - <strong>验证方式</strong>: 对已知膜活性AMP进行验证；与实验测定的膜破坏活性对比；对生成AMP进行MD模拟验证。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 跨物种宏基因组AMP挖掘的泛化评估
+   - <strong>来源局限/观察</strong>: 本文强调从宏基因组挖掘AMP的潜力，但未讨论跨物种、跨环境的泛化问题。
+   - <strong>核心假设</strong>: 在特定环境（如人类肠道）训练的AMP预测模型，对未见过环境（如海洋、土壤）的宏基因组数据泛化能力有限。
+   - <strong>初步方法</strong>: 构建多环境宏基因组AMP数据集；评估现有模型（如AMPScanner）的跨环境性能；开发环境感知的域适应方法。
+   - <strong>验证方式</strong>: 跨环境交叉验证；对预测AMP进行合成和活性验证。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, discussion, conclusion) as provided</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodological soundness, reproducibility, and alignment with stated aims; no assessment of formatting or editorial compliance</li>
+<li><strong>Shared manuscript claim summary</strong> The manuscript proposes that multi-model AI-driven pipelines integrating discriminative classifiers, generative models, potency and toxicity predictors, novelty filters, stability screens, and molecular docking can overcome key bottlenecks in antimicrobial peptide (AMP) discovery, reduce late-stage attrition, and accelerate translation from in silico prediction to wet-lab validation.</li>
+<li><strong>Visible evidence base</strong> Narrative review with cited literature; tables summarizing model performance (Tables 1–10); figures illustrating pipeline architecture (Figures 1–15); no primary experimental data or code provided</li>
+<li><strong>Missing materials affecting confidence</strong> No code, datasets, or benchmark implementations; no quantitative comparison of proposed pipelines against existing methods; no wet-lab validation data; figure contents not fully described in text; table details (e.g., exact metrics, dataset versions) not fully specified</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript provides a broad, well-structured narrative review of AI-driven AMP discovery, with a useful emphasis on multi-objective, closed-loop pipeline design. The authors correctly identify key limitations in current approaches, including dataset bias, negative-set construction, and over-generalization. However, the manuscript is largely descriptive and does not provide a concrete, reproducible pipeline architecture, benchmark evaluation, or comparative analysis. The central claim that such pipelines "overcome key bottlenecks" is asserted rather than demonstrated. The review would benefit from a more critical, quantitative treatment of existing methods and a clearer articulation of what is novel relative to prior reviews.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians working on antimicrobial peptide discovery, machine learning practitioners interested in drug design applications, and microbiologists seeking an overview of AI tools for AMP development. The review may also be of interest to researchers in AMR policy and translational medicine who want a high-level understanding of computational approaches in this space.</li>
+<li><strong>Major strengths</strong> </li>
+<li>Comprehensive coverage of AI model types (discriminative, generative, structural, stability, toxicity) relevant to AMP design</li>
+<li>Emphasis on multi-objective optimization and closed-loop design, which is a timely and important perspective</li>
+<li>Good discussion of dataset bias, negative-set construction, and benchmarking challenges</li>
+<li>Inclusion of recent tools (e.g., AlphaFold3, DiffDock, ESM-2-based models) and clear tables summarizing model capabilities</li>
+<li>Clear articulation of the gap between in silico prediction and wet-lab/clinical translation</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>R1-M1</strong> (Blocking: Yes)</li>
+<li><strong>R1-M2</strong> (Blocking: Yes)</li>
+<li><strong>R1-M3</strong> (Blocking: No)</li>
+<li><strong>R1-M4</strong> (Blocking: No)</li>
+<li><strong>R1-M5</strong> (Blocking: No)</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>R1-m1</strong></li>
+<li><strong>R1-m2</strong></li>
+<li><strong>R1-m3</strong></li>
+<li><strong>R1-m4</strong></li>
+<li><strong>R1-m5</strong></li>
+<li><strong>R1-m6</strong></li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The manuscript does not provide a concrete, testable pipeline architecture; no code, data, or benchmark results are presented; the claimed advantages of multi-model pipelines over single-model approaches are not quantitatively demonstrated; the review does not critically compare the proposed framework with existing published pipelines (e.g., AMPGAN, DeepAMP, etc.) in a systematic way.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li><strong>Originality</strong>: Moderate. The review synthesizes existing work but does not present a novel conceptual framework or new methodological contribution. The emphasis on closed-loop, multi-objective design is not entirely new and has been discussed in prior literature.</li>
+<li><strong>Scientific importance</strong>: High. AMP discovery is a critical area given the AMR crisis, and AI-driven approaches are of significant interest. However, the manuscript does not provide new evidence or a validated framework that would advance the field beyond existing reviews.</li>
+<li><strong>Interdisciplinary readership</strong>: Moderate. The manuscript is accessible to computational biologists and microbiologists, but may be too technical for clinicians or policy makers without a computational background.</li>
+<li><strong>Technical soundness</strong>: Weak. The review is descriptive and lacks quantitative benchmarking, reproducibility details, or critical evaluation of model limitations. Claims of "reproducible and generalizable blueprints" are not supported by provided evidence.</li>
+<li><strong>Readability for nonspecialists</strong>: Good. The text is clearly written, with helpful tables and figures, though some sections (e.g., molecular docking) assume prior knowledge.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript is a useful narrative review but does not substantiate its central claims of a reproducible, generalizable, multi-model pipeline that reduces attrition. Major revisions are required to provide concrete implementation details, benchmark comparisons, or a more critical and quantitative synthesis of existing evidence.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility and methodological transparency</li>
+<li><strong>Claim pointer</strong> The manuscript claims to provide "reproducible and generalizable blueprints" for multi-model AI-driven AMP design pipelines.</li>
+<li><strong>Evidence pointer</strong> Abstract; Section "Current AI-based approaches"; Figure 3; Tables 1–10</li>
+<li><strong>Concern</strong> The manuscript does not provide any concrete implementation details, such as model architectures, hyperparameters, training data versions, or code availability. The tables summarize reported performance from cited studies but do not specify how these models were integrated into the proposed pipeline. Without these details, the claimed "blueprints" cannot be reproduced or evaluated by independent researchers.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for scientific claims, especially in computational biology where model performance is highly sensitive to data splits, preprocessing, and hyperparameters. The absence of implementation details undermines the practical utility of the proposed framework.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed pipeline specification, including model choices, data sources, preprocessing steps, and evaluation protocols. Ideally, include a public repository with code and example datasets, or at minimum a step-by-step algorithmic description.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence for claimed outcomes</li>
+<li><strong>Claim pointer</strong> The manuscript states that multi-model pipelines "overcome key bottlenecks" and "reduce late-stage attrition" in AMP development.</li>
+<li><strong>Evidence pointer</strong> Abstract; Section "Current AI-based approaches"; Section "Future directives"; Table 10</li>
+<li><strong>Concern</strong> The review does not present any quantitative evidence, case studies, or comparative analyses demonstrating that multi-model pipelines outperform single-model approaches or traditional discovery methods. The cited examples (e.g., AMPGen, EBAMP) are described qualitatively, and no success rates, hit rates, or translational outcomes are systematically compared. The claim of reduced attrition is speculative and not supported by data.</li>
+<li><strong>Why it matters</strong> The central value proposition of the manuscript is that multi-model integration improves outcomes. Without empirical or at least systematic comparative evidence, this claim remains an assertion, not a demonstrated finding.</li>
+<li>
+<p><strong>Resolution test</strong> Include a comparative table or meta-analysis of published pipelines, showing metrics such as hit rates, validation success, and translational progress. If such data are unavailable, clearly state this as a limitation and reframe the claims as hypotheses rather than demonstrated outcomes.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Critical evaluation of limitations</li>
+<li><strong>Claim pointer</strong> The manuscript discusses dataset bias and over-generalization as limitations but does not critically evaluate how these issues affect the proposed pipeline.</li>
+<li><strong>Evidence pointer</strong> Section "Dataset overlapping, negative-set construction and over-generalization"; Section "Current barriers and limitations"</li>
+<li><strong>Concern</strong> While the authors correctly identify dataset bias and negative-set construction as key challenges, they do not propose concrete solutions or evaluate how their multi-model framework mitigates these issues. The discussion remains at a high level and does not engage with specific technical solutions (e.g., cluster-based splitting, temporal validation, or external benchmarking).</li>
+<li><strong>Why it matters</strong> A review that identifies limitations without proposing or evaluating solutions does not advance the field. The manuscript would be stronger if it critically assessed which existing methods address these challenges and how the proposed pipeline could incorporate them.</li>
+<li>
+<p><strong>Resolution test</strong> Add a subsection that critically evaluates proposed solutions to dataset bias (e.g., redundancy-controlled splitting, external validation) and discusses how the multi-model framework could implement these. Provide examples from the literature where such approaches have been successfully applied.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Novelty relative to existing reviews</li>
+<li><strong>Claim pointer</strong> The manuscript positions itself as a novel contribution to AI-driven AMP discovery.</li>
+<li><strong>Evidence pointer</strong> Introduction; Section "Current AI-based approaches"</li>
+<li><strong>Concern</strong> Several recent reviews have covered AI-driven AMP discovery, including discussions of generative models, toxicity prediction, and pipeline integration. The manuscript does not clearly articulate what is new relative to these prior reviews, nor does it provide a systematic comparison of existing pipelines. The novelty appears to be primarily in the emphasis on multi-objective, closed-loop design, but this is not developed into a distinct framework.</li>
+<li><strong>Why it matters</strong> For a review to be publishable, it must offer a new synthesis, critical perspective, or actionable framework. Without a clear statement of novelty, the manuscript risks being seen as redundant with existing literature.</li>
+<li>
+<p><strong>Resolution test</strong> Add a section that explicitly compares the proposed multi-model framework with 2–3 existing reviews or pipelines, highlighting specific differences in scope, methodology, or recommendations. Clearly state what this review adds beyond prior work.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Figure and table quality</li>
+<li><strong>Claim pointer</strong> Figures 1–15 and Tables 1–10 are used to support the narrative.</li>
+<li><strong>Evidence pointer</strong> Figures 1–15; Tables 1–10</li>
+<li><strong>Concern</strong> The figures are not described in sufficient detail in the text, and their content is not fully explained. For example, Figure 3 is referenced as the pipeline architecture but the specific components and their interactions are not described in the text. Tables summarize model performance but do not include confidence intervals, dataset versions, or evaluation protocols, limiting their interpretability.</li>
+<li><strong>Why it matters</strong> Figures and tables should be self-explanatory and fully integrated with the text. In their current form, they do not provide the level of detail needed for readers to assess the validity of the claims.</li>
+<li><strong>Resolution test</strong> Revise figure captions to include detailed descriptions of all components and data flows. Expand table footnotes to specify dataset versions, evaluation metrics, and any preprocessing steps. Ensure each figure and table is explicitly referenced and discussed in the text.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of terminology</li>
+<li><strong>Affected element</strong> Abstract; Section "AI, as the first stage of stability, efficacy, and safety validation"</li>
+<li><strong>Evidence pointer</strong> Abstract; Section 1.3</li>
+<li><strong>Issue</strong> The term "multimodel" is used throughout but is not clearly defined. It could refer to multiple model types, multiple datasets, or multiple objectives. The manuscript would benefit from an explicit definition early in the text.</li>
+<li>
+<p><strong>Required correction</strong> Define "multimodel" at first use, specifying whether it refers to multiple model architectures, multiple data modalities, or multiple prediction tasks.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Citation accuracy</li>
+<li><strong>Affected element</strong> Section "Discriminative AMP classifiers"</li>
+<li><strong>Evidence pointer</strong> Section 1.3.1; Table 1</li>
+<li><strong>Issue</strong> Some citations appear to be used generically without specifying which model or dataset they refer to. For example, "AmPEP" is cited but the specific version and training data are not described.</li>
+<li>
+<p><strong>Required correction</strong> Ensure each cited tool or model is accompanied by a brief description of its architecture, training data, and reported performance, as appropriate.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Consistency of claims</li>
+<li><strong>Affected element</strong> Section "Current barriers and limitations"</li>
+<li><strong>Evidence pointer</strong> Section 1.3.3; Section 2.1</li>
+<li><strong>Issue</strong> The manuscript states that "computational performance cannot equate with therapeutic performance" but earlier sections imply that high in silico metrics are sufficient for prioritization. This tension should be resolved or explicitly discussed.</li>
+<li>
+<p><strong>Required correction</strong> Clarify the relationship between in silico metrics and translational success, and discuss how the proposed pipeline addresses this gap.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Missing discussion of computational cost</li>
+<li><strong>Affected element</strong> Section "Future directives"</li>
+<li><strong>Evidence pointer</strong> Section 2.2</li>
+<li><strong>Issue</strong> The manuscript does not discuss the computational resources required for the proposed multi-model pipelines, which may be substantial. This is relevant for reproducibility and practical adoption.</li>
+<li>
+<p><strong>Required correction</strong> Add a brief discussion of computational cost and resource requirements, including any trade-offs between model complexity and performance.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Language and readability</li>
+<li><strong>Affected element</strong> Throughout</li>
+<li><strong>Evidence pointer</strong> Abstract; Section 1.3.2</li>
+<li><strong>Issue</strong> Some sentences are overly long and contain multiple clauses, which reduces readability. For example, the sentence beginning "The proposed architectural frameworks combine..." in the abstract is difficult to parse.</li>
+<li>
+<p><strong>Required correction</strong> Revise for clarity by breaking long sentences into shorter, more direct statements.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Figure accessibility</li>
+<li><strong>Affected element</strong> Figures 1–15</li>
+<li><strong>Evidence pointer</strong> Figures 1–15</li>
+<li><strong>Issue</strong> The figures are not accessible to color-blind readers, as they appear to rely on color coding without alternative markers or labels.</li>
+<li><strong>Required correction</strong> Ensure all figures use patterns, labels, or other non-color cues to convey information.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that multi-model pipelines "reduce late-stage attrition" is not supported by any quantitative or case-based evidence in the manuscript.</li>
+<li>The claim that the proposed framework is "reproducible and generalizable" is not supported, as no implementation details, code, or datasets are provided.</li>
+<li>The statement that "computational performance cannot equate with therapeutic performance" is acknowledged but not integrated into the proposed pipeline design, leaving a gap between the stated limitation and the proposed solution.</li>
+<li>The performance metrics summarized in Tables 1–10 are presented without critical assessment of their comparability, dataset overlap, or potential for information leakage, which the manuscript itself identifies as a key issue.</li>
+<li>The manuscript's assertion that "no single AI framework is optimal" is reasonable but is not developed into a concrete recommendation for how to select or combine models in practice.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

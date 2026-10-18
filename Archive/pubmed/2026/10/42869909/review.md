@@ -1,0 +1,98 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, methods) without figures, tables, or supplementary information.
+- **Assessment boundary** Scientific soundness, methodological rigor, validity of claims relative to provided evidence, and suitability for a general multidisciplinary audience.
+- **Shared manuscript claim summary** The authors introduce Reinforcement Learning from eXperimental Feedback (RLXF), a two-stage framework (supervised fine-tuning followed by proximal policy optimization) to align protein language models with experimentally measured functional objectives. They report improved generation of high-functioning variants across five protein families, with a detailed case study on CreiLOV fluorescent protein, where RLXF-aligned models generated variants with enhanced fluorescence, including some exceeding the brightest known variant.
+- **Visible evidence base** Main text only. Figures, tables, and all supplementary information referenced in the text were not provided.
+- **Missing materials affecting confidence** All figures (Fig. 1–4), all supplementary figures (Supplementary Fig. 1–32), all supplementary tables (Supplementary Table 1–11), and the Reporting Summary. These are essential for evaluating quantitative claims, statistical significance, and methodological details.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a conceptually appealing and timely idea: adapting reinforcement learning from human feedback, a cornerstone of modern LLM alignment, to align protein language models with experimentally defined functional objectives. The writing is clear and the motivation is well-articulated. However, the current submission is essentially a claim document without its supporting evidence. The central quantitative results, experimental validation, and methodological comparisons are all located in figures and supplementary materials that were not available for review. As such, the scientific case is not established from the provided materials. The methodological novelty relative to existing work (e.g., DPO-based approaches) is also not fully clarified, and several claims in the discussion appear to extend beyond what the visible text alone can support.
+- **Who would be interested in the results, and why** Computational biologists and protein engineers developing generative models for protein design; researchers working on alignment techniques for biological sequence models; and those interested in applying RL methodologies beyond NLP. The CreiLOV case study may also interest the optogenetics and fluorescent protein community.
+- **Major strengths**
+  - The conceptual framing of "functional alignment" is clear and compelling, drawing a strong analogy to RLHF in LLMs.
+  - The two-stage RLXF pipeline (SFT followed by PPO) is a sensible and well-motivated design.
+  - The choice of CreiLOV as a case study is apt, as fluorescence is a non-natural function for this protein, making it a strong test of functional alignment beyond evolutionary constraints.
+  - The authors address practical considerations such as low-data regimes and parameter-efficient fine-tuning, which increases potential utility.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence completeness
+  - **Claim pointer** The manuscript claims that RLXF "improves generation of high-functioning variants beyond pre-trained baselines" across five protein families and that aligned ESM-2 models generated variants with fluorescence exceeding the brightest known variant.
+  - **Evidence pointer** Figures 2a, 2b, 3a, 4a; Supplementary Figures 1–32; Supplementary Tables 1–11; location not provided for specific data points.
+  - **Concern** All quantitative results, including win rates, distribution plots, statistical tests, and experimental fluorescence measurements, are presented only in figures and supplementary materials. Without these, the central claims of improved performance and experimental validation cannot be assessed.
+  - **Why it matters** The core scientific contribution is empirical. The text alone provides no numbers, no error bars, no statistical comparisons, and no experimental data. The claims are therefore unverifiable in the current form.
+  - **Resolution test** Provide all figures and supplementary materials, or at minimum, the key quantitative results (win rates, fluorescence values, p-values) in the main text or a revised review package.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological comparison
+  - **Claim pointer** The discussion states that "RLHF consistently outperforms DPO for complex generation tasks in NLP" and implies RLXF is superior to DPO-based protein alignment methods.
+  - **Evidence pointer** Discussion section; Supplementary Figures 1–7 (referenced for RLXF development and benchmarking against DPO); location not provided.
+  - **Concern** The manuscript benchmarks RLXF against DPO (referenced in supplementary figures) but the main text does not present any direct comparison. The claim of superiority is therefore not supported by visible evidence. Furthermore, the cited NLP literature for RLHF vs. DPO is not provided, making the generalization to protein models speculative.
+  - **Why it matters** The choice of PPO over simpler alternatives like DPO is a key methodological decision. Without a direct, visible comparison, the reader cannot judge whether the added complexity of RLXF is justified.
+  - **Resolution test** Present a direct comparison of RLXF vs. DPO (and possibly other baselines) in the main text or a clearly referenced supplementary figure, with appropriate metrics and statistical analysis.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** The authors claim RLXF is a "general framework" applicable to diverse protein families and functions.
+  - **Evidence pointer** Figure 2a (win rates across five protein families); Supplementary Table 1; location not provided.
+  - **Concern** The five protein families are listed only in supplementary materials. The main text provides no details on the nature of these families, the functional assays used, or the magnitude of improvements. The claim of generality is therefore not assessable.
+  - **Why it matters** Generality is a central selling point. Without visible details on the diversity of test systems and the consistency of improvements, the claim remains anecdotal.
+  - **Resolution test** Summarize the five protein families, their functions, and the key win-rate improvements in the main text, or provide a comprehensive supplementary table with this information.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Mechanistic insight
+  - **Claim pointer** The authors state that RLXF "effectively integrate[s] the evolutionary knowledge encoded in pre-trained pLMs with experimental observations" and that aligned models "learn to prioritize mutations that enhance fluorescence."
+  - **Evidence pointer** Figures 3d, 3e, 4d; Supplementary Figures 10–12, 26–30; location not provided.
+  - **Concern** The analysis of mutational preferences and structural mapping is presented as evidence of mechanistic insight. However, without the actual figures, it is impossible to evaluate whether the observed preferences are statistically robust, whether they generalize beyond the specific case study, or whether they provide genuine biological insight beyond what is already known from the DMS data.
+  - **Why it matters** The claim that RLXF learns meaningful biological rules, rather than simply overfitting to the reward model, is important for establishing the method's credibility.
+  - **Resolution test** Provide the mutational preference and structural mapping figures, along with a statistical analysis of the significance of the observed preferences.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The phrase "fundamentally misaligned with protein engineering goals" is strong and could be seen as overgeneralizing. Some pLMs are explicitly trained on functional data.
+  - **Required correction** Consider softening to "often misaligned" or "not explicitly aligned."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods, PPO section
+  - **Evidence pointer** Methods, "Proximal policy optimization" section
+  - **Issue** The description of the PPO procedure is detailed but lacks specific values for several key hyperparameters (e.g., learning rate schedule details, clipping parameter epsilon is given, but the number of PPO epochs per rollout, minibatch size, and advantage normalization details are not fully specified).
+  - **Required correction** Provide a complete table of hyperparameters or a reference to a public code repository with the full configuration.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** Results, "Functional alignment improves sequence generation across diverse protein classes"
+  - **Evidence pointer** Figure 2a; location not provided.
+  - **Issue** The win rate metric is described, but the statistical significance of the win rates across different model sizes and protein families is not discussed in the text.
+  - **Required correction** Add a statement on how significance was assessed (e.g., confidence intervals, bootstrapping) and report the results.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Experimental design
+  - **Affected element** Results, "Functionally aligned models generate high-performing CreiLOV variants"
+  - **Evidence pointer** Figure 4a; location not provided.
+  - **Issue** The experimental characterization uses total cellular fluorescence, which is a composite readout. The authors acknowledge this and perform additional photophysical measurements, but the text does not specify how many independent experiments were performed for the photophysical characterization.
+  - **Required correction** Clarify the number of replicates for the photophysical measurements and whether the reported quantum yields are from a single preparation or multiple independent purifications.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Literature context
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion, paragraph on DPO
+  - **Issue** The discussion of DPO and its limitations is brief and does not cite specific studies comparing RLHF and DPO in the context of protein models.
+  - **Required correction** Add relevant citations for DPO applications in protein design and for any comparative studies of RLHF vs. DPO in NLP that support the stated claims.
+- **Technical failings that need to be addressed before the case is established**
+  - R1-M1 (evidence completeness) is the primary blocking issue. The manuscript cannot be evaluated without its figures and supplementary data.
+  - R1-M2 (methodological comparison) is also blocking, as the claimed advantage over DPO is a key differentiator.
+- **Assessment against Nature-style criteria**
+  - **Originality** The idea of applying RLHF-style alignment to pLMs is conceptually novel and timely. However, the manuscript itself acknowledges prior DPO-based work, and the incremental contribution of PPO over DPO needs to be clearly demonstrated.
+  - **Scientific importance** If the claims are substantiated, the work could be important, offering a general method to steer pLMs toward user-defined functional objectives. The CreiLOV case study is a compelling demonstration of non-natural function optimization.
+  - **Interdisciplinary readership** The topic bridges machine learning, protein engineering, and synthetic biology, and the writing is accessible. The analogy to ChatGPT is effective for a broad audience.
+  - **Technical soundness** The methodological description is plausible, but the lack of visible data prevents an assessment of technical soundness. The statistical treatment of the results is not described in the text.
+  - **Readability for nonspecialists** The manuscript is well-written and the core concepts are explained clearly. The methods section is technical but appropriate for the target audience.
+- **Recommendation posture** Currently not established from the provided evidence. The central claims are entirely dependent on figures and supplementary materials that were not available for review. I would be supportive if the full evidence package is provided and the concerns regarding the DPO comparison and statistical rigor are addressed.

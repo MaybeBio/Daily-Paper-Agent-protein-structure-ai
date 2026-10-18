@@ -1,0 +1,156 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, methods, results, outlook) without figures or supplementary materials
+- **Assessment boundary** Scientific claims, methodological soundness, and presentation quality based solely on the provided text
+- **Shared manuscript claim summary** The authors present SSE-conditioned probability densities for amino acid torsion angles (up to dimension 7) and amino acid pairs (up to dimension 14), derived by reweighting existing CBMD mixture models. They claim these densities provide quantitative bridges between Ramachandran regions and SSE labels, reveal amino-acid-specific conformational preferences, identify side-chain torsion angle influences on SSE determination, and offer generative capabilities for SSE-consistent conformations.
+- **Visible evidence base** Abstract, Introduction, Methods (Sections 2.1-2.3), Results (Sections 3.1-3.3), Outlook, Funding
+- **Missing materials affecting confidence** All figures (Fig. 1-4), all supplementary figures (Fig. S1-S16), supplementary methods (Section S2), equations referenced but not displayed (Eq. 2, 14, 15, 17), and the actual model parameters and code repository contents
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a relevant and timely problem in structural biology: quantifying the relationship between secondary structure assignments and torsion-angle distributions beyond the classical Ramachandran framework. The methodological approach of reweighting existing CBMD mixture models to obtain SSE-conditioned densities is conceptually sound and computationally efficient. However, the manuscript as provided is incomplete in critical ways. The absence of all figures, equations, and supplementary materials makes it impossible to evaluate the central claims. The results section reads more as a catalogue of observations than a systematic analysis, and several claims about generative applications and AI-model limitations are speculative. The statistical framework is appropriate, but the presentation lacks the rigor and completeness expected for a high-impact venue.
+- **Who would be interested in the results, and why** Structural biologists studying protein conformation, developers of statistical potentials for protein structure prediction and validation, computational biologists working on generative models for protein conformations, and researchers interested in the statistical foundations of secondary structure assignment. The pair-level conditioned densities could be of particular interest to those studying local conformational transitions and helix capping.
+- **Major strengths** 1) The conceptual framing of moving beyond Ramachandran distributions to full torsion-angle space is valuable and timely. 2) The reweighting strategy for conditioning existing mixture models is elegant and computationally efficient, avoiding the need for de novo estimation on potentially small SSE-specific subsets. 3) The use of DSSP4 with its explicit polyproline helix identification is a thoughtful choice. 4) The analysis of side-chain torsion angle contributions to SSE determination addresses an understudied question. 5) The entropy-based uncertainty quantification in Ramachandran space is a useful contribution.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence completeness
+  - **Claim pointer** The manuscript claims that credible regions of SSE-conditioned densities reveal discrepancies between reference Ramachandran regions and actual conformational preferences, and that these discrepancies vary by amino acid type.
+  - **Evidence pointer** Section 3.1, Fig. 2, Fig. S1, Fig. S8-S16 (not provided)
+  - **Concern** The central results of Section 3.1 are presented entirely through figures that are not included in the provided material. The text describes observations such as "the label H/α-helix has a well-defined region" and "the label I/π-helix has a specific pattern for a.a. ILE/VAL/THR" but without the actual figures, these claims cannot be verified. The comparison to reference Ramachandran regions from Fig. 1 (also not provided) is impossible to assess.
+  - **Why it matters** The core scientific contribution of this manuscript is the visual and quantitative comparison between SSE-conditioned densities and classical Ramachandran regions. Without access to the figures, the validity of the described discrepancies, the claimed amino-acid-specific patterns, and the overall interpretation cannot be evaluated. This is not a minor omission but a fundamental gap in the evidence base.
+  - **Resolution test** Provide all figures (Fig. 1-4) and supplementary figures (Fig. S1-S16) with sufficient resolution and detail to verify the described patterns. The figures must clearly show the credible regions, the reference Ramachandran regions, and the data points for comparison.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** The manuscript states that conditioned densities are obtained by reweighting CBMD mixture models according to Eq. 2, and that entropy and Jensen-Shannon divergence calculations follow Eq. 14, 15, and 17.
+  - **Evidence pointer** Section 2.3, Section 3.1, Section 3.2 (equations not displayed in provided text)
+  - **Concern** The key equations (Eq. 2 for the conditional density, Eq. 14 for entropy, Eq. 15 and 17 for Jensen-Shannon divergence) are referenced but not displayed in the provided manuscript text. The reweighting formula is the methodological cornerstone of the paper, and its exact form determines whether the approach is valid. Similarly, the entropy calculation over binned Ramachandran space requires specification of binning strategy and boundary handling.
+  - **Why it matters** Without the explicit mathematical formulation, the methodology cannot be reproduced or independently verified. The validity of the reweighting approach depends on technical details such as how responsibilities are computed, whether normalization is handled correctly, and how the mixture components are combined. The reader cannot assess whether the approach is mathematically sound or whether there are hidden assumptions.
+  - **Resolution test** Display all referenced equations in full. Provide a complete derivation of the reweighting formula, including how responsibilities are estimated from the data and any assumptions about the relationship between the SSE-agnostic and SSE-conditioned models.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Statistical validation
+  - **Claim pointer** The manuscript claims that JS divergences between SSE-conditioned distributions are "driven principally by the backbone torsion angles" based on a comparison of full-space versus backbone-only divergences, with differences ranging from -0.048 to 0.063.
+  - **Evidence pointer** Section 3.2, Fig. S4, Fig. S5 (not provided)
+  - **Concern** The claim that backbone angles are the primary determinants of SSE labels is based on a comparison of JS divergence values, but the manuscript does not report any statistical significance testing or uncertainty quantification for these divergence estimates. The range of differences (-0.048 to 0.063) is reported without context regarding the magnitude of the divergences themselves. If the divergences are small, these differences could be substantial; if large, they could be negligible. Additionally, the side-chain-only analysis (Fig. S5) is described as showing smaller divergences, but the text notes these are "presented relative to that value using a different colormap," which complicates direct comparison.
+  - **Why it matters** The conclusion that backbone angles determine SSE labels is a key finding with implications for understanding secondary structure formation. If this claim is not statistically robust, the conclusion may be overstated. The manuscript should provide confidence intervals or bootstrap estimates for the divergence values, and should clearly report the absolute magnitudes of the divergences in both full-space and subspace analyses.
+  - **Resolution test** Provide statistical uncertainty estimates for all reported JS divergence values. Report the absolute divergence magnitudes alongside the differences. Consider permutation or bootstrap tests to establish whether the observed differences between full-space and backbone-only analyses are significant.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Claim substantiation
+  - **Claim pointer** The manuscript claims that the conditioned densities "provide a direct route to define GoF test" for identifying biases in generative engines, and that they offer "explicit control on SSE" that "remains difficult to enforce explicitly in current AI-based generative models."
+  - **Evidence pointer** Section 4 (Outlook)
+  - **Concern** The Outlook section makes several claims about applications that are not demonstrated anywhere in the manuscript. The claim about AlphaFold2's structure module using torsion angle tuples is presented without citation or detailed explanation. The assertion that the conditioned densities are "a tool of choice" for generating SSE-consistent conformations is not supported by any generative experiments or comparisons. The claim about difficulty in enforcing SSE control in AI-based models is presented as fact without supporting evidence or citations.
+  - **Why it matters** These claims extend beyond the demonstrated scope of the work. While speculative applications can be appropriate in an Outlook section, they should be clearly framed as possibilities rather than established capabilities. The comparison to AI-based generative models is particularly problematic without concrete evidence or benchmarks.
+  - **Resolution test** Either remove or reframe speculative claims as possibilities rather than capabilities. If the generative application is claimed, provide at minimum a proof-of-concept demonstration. If the comparison to AI models is retained, provide citations or a brief analysis supporting the claim about difficulty of SSE control.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Data and reproducibility
+  - **Claim pointer** The manuscript states that all conditioned model parameters are publicly available on the Structural Bioinformatics Library website, along with Python code.
+  - **Evidence pointer** Section 3, footnote 1
+  - **Concern** While the availability of code and parameters is commendable, the manuscript does not describe the computational resources required, the runtime for conditioning the models, or the memory requirements. More importantly, the manuscript does not describe how the PDB50 corpus was processed to obtain the torsion angle observations, what filtering or quality criteria were applied beyond the stated R-factor and resolution cutoffs, or how missing or undefined torsion angles were handled.
+  - **Why it matters** Reproducibility requires not just code availability but also a complete description of the data processing pipeline. The handling of missing torsion angles, the treatment of terminal residues, and the criteria for including or excluding observations can all affect the resulting distributions. Without this information, independent verification of the results is difficult.
+  - **Resolution test** Provide a complete description of the data processing pipeline, including any filtering criteria, handling of missing values, and the exact procedure for extracting torsion angles from PDB structures. Report computational requirements for the conditioning procedure.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Presentation
+  - **Affected element** Section 1.1, paragraph 1
+  - **Evidence pointer** Section 1.1
+  - **Issue** The introduction contains a typographical error: "the α -helix and β -sheets" should be "the α -helix and β -sheets" (inconsistent article usage). Additionally, the phrase "the original secondary structure elements discovered a decade earlier" is imprecise, as Pauling's work identified the α-helix and β-sheet as structural motifs, but the term "secondary structure" was formalized by Linderstrøm-Lang.
+  - **Required correction** Fix the article inconsistency and consider rephrasing to acknowledge the historical nuance around the term "secondary structure."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Section 2.1, paragraph 1
+  - **Evidence pointer** Section 2.1
+  - **Issue** The sentence "A straightforward strategy consists of partitioning a dataset of amino acid observations into SSE-specific subsets and independently estimate a density for each subset" contains a grammatical inconsistency ("partitioning" followed by "estimate").
+  - **Required correction** Change "independently estimate" to "independently estimating" for grammatical consistency.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Notation
+  - **Affected element** Section 2.1, paragraph 1
+  - **Evidence pointer** Section 2.1
+  - **Issue** The notation "p ( x | j )" and "p ( x | l )" is used inconsistently; the first uses "j" and the second uses "l" for the label variable. Additionally, the symbol "ℒ" is introduced but the relationship between "j", "l", and elements of "ℒ" is not explicitly stated.
+  - **Required correction** Use consistent notation for the label variable throughout, and explicitly state that j, l ∈ ℒ.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Section 2.2, paragraph 1
+  - **Evidence pointer** Section 2.2
+  - **Issue** The description of the PhiSiCal approach states that components are "products of univariate von Mises distributions" but does not specify the number of components or the model selection criterion beyond the general statement about message length minimization.
+  - **Required correction** Provide brief details on the number of components in the CBMD models or reference the original publication for these details.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Section 3.1, paragraph 3
+  - **Evidence pointer** Section 3.1
+  - **Issue** The statement "the region γ is located inside/on the border of the exclusion region associated with the pair O i−1 … N i+1" is confusing. The ellipsis notation is unclear, and the relationship between the γ region and the exclusion region is not explained.
+  - **Required correction** Clarify the notation and explain the significance of the γ region's location relative to the exclusion region.
+  - **Concern ID** R1-m6
+  - **Severity** Minor
+  - **Axis** Consistency
+  - **Affected element** Section 3.2, paragraph 1
+  - **Evidence pointer** Section 3.2
+  - **Issue** The text states "we obtain the following values for the difference (min=-0.048, mean=-0.0005, median=0.00, max=0.063)" but does not specify what "the difference" refers to. It is presumably the difference between full-space and backbone-only JS divergences, but this is not explicitly stated.
+  - **Required correction** Explicitly state that these are the differences between full-space and backbone-only JS divergence values.
+  - **Concern ID** R1-m7
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Section 3.3, paragraph 1
+  - **Evidence pointer** Section 3.3
+  - **Issue** The term "amino dominos" is introduced with a citation to reference [16], but the term is not defined. It appears to refer to pairs of consecutive amino acids, but this should be stated explicitly.
+  - **Required correction** Define "amino dominos" when first used.
+  - **Concern ID** R1-m8
+  - **Severity** Minor
+  - **Axis** Citation
+  - **Affected element** Section 3.3, paragraph 3
+  - **Evidence pointer** Section 3.3
+  - **Issue** The statement about helix capping cites reference [26] for the hydrogen-bonding interaction, but the specific claim about the Ser g+ rotamer enabling this interaction is not directly supported by the cited reference in the provided text.
+  - **Required correction** Ensure the citation supports the specific claim, or add additional context.
+  - **Concern ID** R1-m9
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Section 3.3, paragraph 3
+  - **Evidence pointer** Section 3.3
+  - **Issue** The notation "2 { ! Helix - ! Helix }" and "{ ! Helix - Helix}" is confusing. The "2" appears to be a footnote marker, but its placement is unclear. The "!" notation for "not" is nonstandard and should be defined.
+  - **Required correction** Clarify the notation and define the "!" symbol when first used.
+  - **Concern ID** R1-m10
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Section 4, paragraph 1
+  - **Evidence pointer** Section 4
+  - **Issue** The Outlook section mentions "biases in SSE elements have been observed recently by comparing the SSE labels delivered by DSSP4 on the PDB versus AlphaFold-DB" but provides no citation for this claim.
+  - **Required correction** Add a citation for this observation.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (missing figures), R1-M2 (missing equations), R1-M3 (lack of statistical validation), R1-M5 (incomplete data description)
+- **Assessment against Nature-style criteria** Originality: The approach of conditioning existing mixture models on SSE labels is conceptually novel and represents a meaningful advance over simple Ramachandran analysis. However, the originality is somewhat tempered by the reliance on previously published CBMD models. Scientific importance: The question of how secondary structure relates to torsion-angle preferences is fundamental, and the pair-level analysis could have broad utility. The potential applications to generative models and structure validation are significant if demonstrated. Interdisciplinary readership: The work bridges statistics, structural biology, and computational biology, and the writing is generally accessible. However, the heavy reliance on statistical terminology without adequate explanation may limit accessibility. Technical soundness: The methodological framework appears sound, but the missing equations and figures prevent full assessment. The lack of statistical validation for the JS divergence comparisons is a concern. Readability for nonspecialists: The introduction and outlook are well-written and accessible, but the results section assumes significant background knowledge. The manuscript would benefit from clearer explanations of the statistical concepts and their biological significance.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript addresses an important problem with a conceptually sound approach, but the absence of all figures, equations, and supplementary materials makes it impossible to verify the central claims. The statistical validation is insufficient for the quantitative conclusions drawn. Major revisions are required to provide the missing evidence, add statistical rigor, and temper speculative claims. If the missing materials reveal the described patterns and the statistical concerns are addressed, the work could be suitable for publication in a high-impact venue.
+
+## Risk / unsupported claims
+- The claim that "the label H/α-helix has a well-defined region" while "G/3-10-helix and I/π-helix are more fuzzy" (Section 3.1) is unsupported without the referenced figures.
+- The claim that "the label I/π-helix has a specific pattern for a.a. ILE/VAL/THR, with an outgrowth towards negative values of φ" (Section 3.1) is unsupported without the referenced figures.
+- The claim that "the labels B and E coding strands are highly coherent" (Section 3.1) is unsupported without the referenced figures.
+- The claim that "labels S/T/C are in general mingled in three broad regions" (Section 3.1) is unsupported without the referenced figures.
+- The claim that "the label C displays a specific pattern for ASN, ASP, CYS, HIS, PHE, TRP, TYR" (Section 3.1) is unsupported without the referenced figures.
+- The claim that "for ARG/LYS/MET in particular, the densities escape their traditional region, yielding a significant overlap with the region β" (Section 3.1) is unsupported without the referenced figures.
+- The claim that "HIS/PHE have more mass around ζ region than the other amino acid types" (Section 3.1) is unsupported without the referenced figures.
+- The claim that "ASP/LEU have more mass than the other amino acid types" in region γ′ (Section 3.1) is unsupported without the referenced figures.
+- The claim that "PRO has a well resolved diagram" (Section 3.1) is unsupported without the referenced figures.
+- The claim that "ASP has a distinct lack of 'C' (coil) observations in the top left of the beta regions" (Section 3.1) is unsupported without the referenced figures.
+- The claim that "the γ region is seldom populated, with contributions from the pairs (B; GLY), (S; GLY, HIS, ILE, TRP, VAL); (T; GLY)" (Section 3.1) is unsupported without the referenced supplementary figures.
+- The claim that "the nature of the steric curves fit using a model peptide, the rarity of these conformations, their presence in an entire protein rather than a model peptide, and the prevalence of glycine resolve the apparent contradiction" (Section 3.1) is an interpretive conclusion that cannot be evaluated without the underlying data.
+- The claim that JS divergences are "driven principally by the backbone torsion angles" (Section 3.2) is based on reported values but lacks statistical validation.
+- The claim that "the label H is the one that influences side chains the most, followed by the G label" (Section 3.2) is unsupported without the referenced supplementary figures.
+- The claim that "ASN and ASP share a pattern where side chains angles are influenced by whether the SSE label is B or C" (Section 3.2) is unsupported without the referenced supplementary figures.
+- The claim that "for ILE, the G label results in side chain angles that uniquely differ from other labels" (Section 3.2) is unsupported without the referenced supplementary figures.
+- The claim that "there is a considerable asymmetry in these landscapes" (Section 3.3) is unsupported without the referenced figures.
+- The claim that "the entered residue is less affected by the SSE of the exited residue than vice versa" (Section 3.3) is unsupported without the referenced figures.
+- The claim that "the Ser g+ rotamer allows the hydrogen-bonding interaction between its side-chain hydroxyl and the backbone amide NH of helical residue N3" (Section 3.3) is presented as a finding but the supporting evidence is not visible in the provided text.
+- The claim that "the amino-acid pair specification {!H - H} that we used to define this SSE-conditioned probability density does not have anything to say about helix position N3 directly" (Section 3.3) is an interpretive statement that depends on the DSSP definition, which is not fully explained.
+- The claim that "our conditioned densities, obtained from SOTA statistical models for joint distributions, are certainly a tool of choice to perform such generations" (Section 4) is speculative and not demonstrated.
+- The claim that "our models provide an explicit control on SSE, that remains difficult to enforce explicitly in current AI-based generative models" (Section 4) is presented without supporting evidence or citations.
+- The claim that "biases in SSE elements have been observed recently by comparing the SSE labels delivered by DSSP4 on the PDB versus AlphaFold-DB" (Section 4) lacks a citation.

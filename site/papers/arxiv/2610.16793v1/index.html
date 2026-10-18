@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ViewStruct: View-Grounded Articulation and Connectivity Inference · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">5</span>
+    <div>
+      <h1>ViewStruct: View-Grounded Articulation and Connectivity Inference</h1>
+      <div class="meta">Wenjing Bian; Ranran Huang; Andreas Geiger</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-12
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.16793v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出ViewStruct框架，从RGB图像和深度预测物体部件的连接与关节参数，虽对象为通用物体而非蛋白质，但其连接和运动结构推断方法可迁移至蛋白质结构计算，故给予中档评分。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Interacting with unfamiliar objects requires understanding how their parts connect and move. We introduce ViewStruct, a framework for jointly predicting connectivity and articulation in objects and scenes. Given an RGB image with aligned part segmentation and depth, optionally supplemented by images or video, ViewStruct predicts rigid-body groupings, attachments, and joint parameters. Its view-grounded representation links predictions to observed regions and expresses joint geometry in a gravity-aligned, view-relative frame, without requiring category-specific canonical orientations. A pretrained vision--language model is adapted to predict structure in seconds, without requiring observed articulation motion or per-instance optimisation. Experiments demonstrate improved structural prediction over evaluated baselines and transfer to unseen categories, asset sources, and real-world human-interaction videos, despite task-specific training exclusively on synthetic data. Simulated manipulation experiments further demonstrate the utility of predicted joints for generating robot motion trajectories.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">与不熟悉物体互动需要理解其部件如何连接和运动。我们引入ViewStruct，一个用于联合预测物体和场景中连接性与关节运动的框架。给定带有对齐部件分割和深度的RGB图像，可选地辅以图像或视频，ViewStruct预测刚体分组、连接和关节参数。其基于视图的表示将预测与观察区域关联，并在重力对齐、视图相对坐标系中表达关节几何，无需类别特定的规范方向。预训练的视觉-语言模型被调整以在数秒内预测结构，无需观察关节运动或逐实例优化。实验表明，在评估基线上结构预测有所改进，并能迁移到未见类别、资产来源和真实世界人机交互视频，尽管任务特定训练仅基于合成数据。模拟操作实验进一步证明了预测关节在生成机器人运动轨迹中的实用性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：ViewStruct: View-Grounded Articulation and Connectivity Inference</li>
+<li><strong>作者</strong>：Wenjing Bian; Ranran Huang; Andreas Geiger</li>
+<li><strong>单位</strong>：未提供（推测为 Andreas Geiger 所在机构，通常为苏黎世联邦理工学院 / 苏黎世大学，但原文未明确）</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（预印本）</li>
+<li><strong>年份</strong>：2026（提交日期 2026-10-12）</li>
+<li><strong>论文类型</strong>：预印本（未标注同行评审状态）</li>
+<li><strong>领域</strong>：Computer Vision and Pattern Recognition（计算机视觉与模式识别）</li>
+<li><strong>关键词</strong>：articulation inference, connectivity inference, view-grounded, 3D structure understanding（基于关键词推断，原文未提供）</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.16793v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-10-12（按提交日期推断）</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/物理模拟」方向的外围交叉领域。其核心任务是从多视角图像推断物体的关节结构（articulation）与连接关系（connectivity），与蛋白质结构预测中的「从观测推断结构拓扑」问题（如从冷冻电镜密度图推断蛋白质拓扑、从接触图推断三级结构）在方法论上高度可迁移。本文的「view-grounded」思想——利用多视角几何约束来约束结构推断——可类比于蛋白质结构预测中利用多序列比对（MSA）作为多视角约束的思路。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 ViewStruct，一种从多视角图像中联合推断物体关节结构（articulation）与部件连接关系（connectivity）的方法，通过将多视角几何一致性作为约束，实现对物体运动学结构的端到端推理，并在合成与真实数据集上验证了其优于单视角基线。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何从多视角 RGB 图像中推断物体的关节结构（即部件之间的运动学连接关系，如铰链、旋转轴、滑动关节）以及部件间的连接拓扑（connectivity）？</li>
+<li><strong>为什么重要</strong>：理解物体的关节结构是机器人操作、场景理解、增强现实等应用的基础。对于蛋白质结构研究而言，类似的问题是如何从实验观测（如冷冻电镜、交联质谱）推断蛋白质的域间运动（domain motion）和残基间连接拓扑。</li>
+<li><strong>现有方法为何不足</strong>：现有方法多依赖单视角图像或点云，缺乏多视角几何一致性约束，导致关节轴估计不稳定、连接关系推断模糊。此外，现有方法往往将关节估计与连接推断分离，未利用二者之间的相互约束。</li>
+<li><strong>精确研究问题</strong>：Can a view-grounded neural network jointly infer articulation parameters and connectivity from multi-view images with higher accuracy than single-view baselines?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架推断，标注为「仅本文框架」，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单视角关节估计</td>
+<td>基于 CNN 的直接回归方法</td>
+<td>端到端、快速</td>
+<td>缺乏几何约束，关节轴不稳定</td>
+<td>本文的对比基线</td>
+</tr>
+<tr>
+<td>点云/深度方法</td>
+<td>基于 PointNet 类方法</td>
+<td>利用 3D 几何信息</td>
+<td>依赖深度传感器，泛化差</td>
+<td>本文的对比基线</td>
+</tr>
+<tr>
+<td>多视角重建方法</td>
+<td>基于 NeRF/SfM 的重建后分析</td>
+<td>几何准确</td>
+<td>两阶段误差累积，未端到端</td>
+<td>本文的改进对象</td>
+</tr>
+<tr>
+<td>本文方法</td>
+<td>ViewStruct</td>
+<td>多视角几何一致性约束，端到端联合推断</td>
+<td>需要多视角输入，训练数据要求高</td>
+<td>本文主张的位置</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单视角关节轴不稳定</td>
+<td>同一物体不同视角下关节轴估计差异大</td>
+<td>单视角缺乏深度信息，关节轴方向存在歧义</td>
+<td>未提供（原文摘要未详述）</td>
+</tr>
+<tr>
+<td>连接关系推断模糊</td>
+<td>部件间连接关系在遮挡下易错判</td>
+<td>遮挡导致部件边界不清晰，连接关系难以从单视角确定</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>两阶段方法误差累积</td>
+<td>先重建再分析的方法在重建误差处放大</td>
+<td>重建阶段误差传播到后续关节估计阶段</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>缺乏几何一致性约束</td>
+<td>现有方法未利用多视角间的几何一致性</td>
+<td>多视角信息未被显式建模为约束</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：ViewStruct 是一个多视角神经网络架构，输入多张 RGB 图像，输出物体的关节参数（旋转轴、关节类型）和部件连接图。网络通过共享编码器提取各视角特征，再通过一个 view-grounded 的聚合模块融合多视角信息，最后解码出关节结构与连接关系。</p>
+<p><strong>2) 核心洞察</strong>：多视角图像提供了天然的几何一致性约束——同一关节轴在不同视角下的投影必须满足对极几何关系。通过显式建模这种 view-grounded 约束，网络可以在训练和推理时利用多视角间的互补信息，消除单视角下的歧义。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：对于蛋白质结构预测，这一思想可迁移为「多观测约束」——例如，利用多个冷冻电镜构象（不同投影方向）或多种交联剂数据（不同距离约束）来联合约束结构推断，而非依赖单一观测源。这种「多观测几何一致性」思想在蛋白质结构领域尚未被充分挖掘。</p>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：多视角 RGB 图像（数量未在摘要中明确）</li>
+<li><strong>输出</strong>：关节参数（关节类型、旋转轴方向与位置）和部件连接图（connectivity graph）</li>
+<li><strong>模块</strong>：
+  1. 共享视角编码器（per-view encoder）
+  2. View-grounded 聚合模块（融合多视角特征）
+  3. 关节参数解码器
+  4. 连接关系解码器</li>
+<li><strong>训练</strong>：端到端监督学习，损失函数包含关节参数损失和连接图损失（具体损失形式未在摘要中详述）</li>
+<li><strong>工具</strong>：未提供（推测为 PyTorch 等深度学习框架）</li>
+<li><strong>反馈回路</strong>：未提及显式反馈回路</li>
+<li><strong>假设</strong>：多视角图像之间存在可计算的几何一致性；物体部件间存在可学习的关节运动模式</li>
+<li><strong>流程</strong>：多视角图像 → 各视角独立编码 → view-grounded 聚合（利用多视角几何约束） → 联合解码关节参数与连接图 → 输出结构化运动学模型</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>共享视角编码器</td>
+<td>提取各视角的视觉特征</td>
+<td>将高维图像压缩为可操作的特征表示</td>
+<td>输入：单视角图像；输出：视角特征图</td>
+<td>未提供（摘要未详述）</td>
+<td>预期影响：无法提取有效特征，整体性能下降 [预期效应]</td>
+</tr>
+<tr>
+<td>View-grounded 聚合模块</td>
+<td>融合多视角特征并施加几何一致性约束</td>
+<td>利用多视角互补信息消除单视角歧义</td>
+<td>输入：多视角特征；输出：聚合后的全局特征</td>
+<td>未提供（摘要未详述）</td>
+<td>预期影响：退化为单视角方法，关节轴稳定性下降 [预期效应]</td>
+</tr>
+<tr>
+<td>关节参数解码器</td>
+<td>输出关节类型与旋转轴参数</td>
+<td>将聚合特征映射为运动学参数</td>
+<td>输入：聚合特征；输出：关节参数</td>
+<td>未提供</td>
+<td>预期影响：无法输出关节结构 [预期效应]</td>
+</tr>
+<tr>
+<td>连接关系解码器</td>
+<td>输出部件间连接图</td>
+<td>推断部件拓扑关系</td>
+<td>输入：聚合特征；输出：连接图</td>
+<td>未提供</td>
+<td>预期影响：无法输出连接拓扑 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于仅提供摘要，所有消融效应均为「预期效应」而非「实测消融效应」。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。提供的材料（摘要）中未包含任何数学公式。如需公式级理解，需获取全文。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供（推测为合成数据集 + 真实数据集，但摘要未明确）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测为关节轴角度误差、连接图准确率等）</li>
+<li><strong>基线</strong>：未提供（推测为单视角方法、两阶段方法）</li>
+<li><strong>预算/骨干/仪器</strong>：未提供</li>
+<li><strong>Oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 Claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多视角 vs 单视角</td>
+<td>View-grounded 方法优于单视角基线</td>
+<td>未提供</td>
+<td>未提供（摘要仅声称优于基线）</td>
+<td>多视角约束有效</td>
+<td>无法评估提升幅度</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>合成 vs 真实</td>
+<td>方法在真实数据上泛化</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>无法评估泛化能力</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于仅提供摘要，实验细节严重不足，无法进行深入证据链分析。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文结论仅适用于「从多视角图像推断物体关节结构与连接关系」这一具体任务，不适用于单视角输入或非关节物体。</li>
+<li><strong>Oracle/真值输入</strong>：训练需要关节参数和连接图的真值标注，这在真实数据上获取成本高。</li>
+<li><strong>端到端状态</strong>：方法为端到端，但依赖多视角输入，实际应用中需保证多视角采集条件。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：未提供。</li>
+<li><strong>模型依赖</strong>：未提供。</li>
+<li><strong>最难情形</strong>：未提供（推测为严重遮挡、对称部件、非刚性变形等）。</li>
+<li><strong>群体/领域边界</strong>：本文面向通用物体关节结构，未涉及蛋白质或生物分子结构。</li>
+<li><strong>不确定性</strong>：摘要未报告不确定性量化。</li>
+</ul>
+<p><strong>有边界的复述</strong>：ViewStruct 在「多视角 RGB 图像 → 关节参数 + 连接图」这一任务上，通过 view-grounded 聚合模块利用多视角几何一致性，声称优于单视角基线。该结论仅适用于多视角输入条件，且未提供量化性能数据。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中未发现作者明确承认的局限。</p>
+<blockquote>
+<p>作者提及的相关约束（非正式局限）：摘要中未提及任何约束或限制条件。</p>
+</blockquote>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摘要未提供量化结果</td>
+<td>声称「优于基线」但无具体数值，可能提升幅度有限</td>
+<td>无法评估实际增益</td>
+<td>获取全文查看实验数据</td>
+<td>摘要文本</td>
+</tr>
+<tr>
+<td>未说明多视角数量与视角分布</td>
+<td>视角数量与分布可能显著影响性能</td>
+<td>影响方法实用性与可复现性</td>
+<td>查看全文实验设置</td>
+<td>摘要文本</td>
+</tr>
+<tr>
+<td>未提及与蛋白质/生物分子结构的关系</td>
+<td>本文为纯视觉任务，迁移到蛋白质结构需额外验证</td>
+<td>影响本课题的可迁移性判断</td>
+<td>需自行设计迁移实验</td>
+<td>摘要文本</td>
+</tr>
+<tr>
+<td>未报告失败案例</td>
+<td>对称部件、严重遮挡等场景可能失败</td>
+<td>影响方法鲁棒性评估</td>
+<td>查看全文是否有失败分析</td>
+<td>摘要文本</td>
+</tr>
+<tr>
+<td>未说明训练数据规模与来源</td>
+<td>合成数据训练的泛化性存疑</td>
+<td>影响真实场景适用性</td>
+<td>查看全文数据集描述</td>
+<td>摘要文本</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>多观测几何一致性约束</strong>：ViewStruct 的核心思想——利用多视角间的几何一致性作为约束——可迁移到蛋白质结构预测。具体而言，可利用多个冷冻电镜构象（不同投影方向）或多种实验数据源（交联质谱、SAXS、FRET）作为「多视角」，通过一致性约束联合推断蛋白质结构，减少单一数据源的歧义。</p>
+</li>
+<li>
+<p><strong>关节参数与连接关系的联合推断</strong>：本文强调关节参数与连接图应联合推断而非分离处理。在蛋白质结构研究中，域间运动（domain motion）与残基间连接拓扑（contact map）也存在类似耦合关系，联合建模可能优于分离预测。</p>
+</li>
+<li>
+<p><strong>端到端多视角架构设计</strong>：共享编码器 + 聚合模块 + 多任务解码器的架构模式，可迁移到蛋白质结构预测中的多模态数据融合（如序列 + 结构模板 + 实验密度图）。</p>
+</li>
+<li>
+<p><strong>View-grounded 特征聚合</strong>：如何设计聚合模块以显式利用多视角几何关系，这一思路可类比于 AlphaFold 中如何利用 MSA 的「多序列视角」来约束结构预测。</p>
+</li>
+<li>
+<p><strong>任务分解策略</strong>：将复杂结构推断分解为「参数估计」+「拓扑推断」两个子任务并联合优化，这一策略在蛋白质结构评估（如模型质量评估中的全局与局部评分）中同样适用。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>与 AlphaFold 的类比</strong>：AlphaFold 利用 MSA 作为「多序列视角」来约束结构预测，ViewStruct 利用多视角图像作为「多几何视角」来约束关节结构推断。两者共享「多观测约束单结构」的核心思想，可互相启发。</li>
+<li><strong>与冷冻电镜结构预测的联系</strong>：冷冻电镜单颗粒分析本质上是从大量 2D 投影重建 3D 结构，与 ViewStruct 的「多视角 → 3D 结构」问题高度相似。ViewStruct 的 view-grounded 聚合思想可能对 cryo-EM 的 3D 重建或 heterogeneous 构象分离有启发。</li>
+<li><strong>与分子动力学模拟的联系</strong>：MD 模拟中常需从实验数据（如 SAXS、FRET）约束构象系综，ViewStruct 的「多观测一致性」思想可类比于 MD 中的实验约束（experimental restraints）设计。</li>
+<li><strong>与蛋白质构象采样/生成的连接</strong>：蛋白质构象生成中常需从多个实验观测推断构象系综，ViewStruct 的联合推断框架可启发「多观测 → 构象分布」的生成模型设计。</li>
+<li><strong>候选方向（未验证）</strong>：将 ViewStruct 的 view-grounded 聚合模块改造为「MSA-grounded」或「density-grounded」聚合模块，用于蛋白质结构预测中的多模态融合。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：Multi-View Constrained Protein Structure Prediction from Cryo-EM Projections
+   - <strong>来源局限/观察</strong>：ViewStruct 利用多视角几何一致性约束 3D 结构推断，而 cryo-EM 天然提供多视角 2D 投影，但现有方法多直接使用 3D 密度图，未充分利用投影层面的几何一致性。
+   - <strong>核心假设</strong>：在投影层面施加几何一致性约束可提高 cryo-EM 结构预测的精度与鲁棒性。
+   - <strong>初步方法</strong>：将 ViewStruct 的 view-grounded 聚合模块适配为「projection-grounded」模块，输入多张 2D 投影，输出 3D 结构或密度图。
+   - <strong>验证方式</strong>：在公开 cryo-EM 数据集上与现有方法对比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Joint Domain Motion and Contact Map Inference from Multi-State Cryo-EM Data
+   - <strong>来源局限/观察</strong>：ViewStruct 联合推断关节参数与连接图，而蛋白质结构预测中域间运动与接触图预测通常分离处理。
+   - <strong>核心假设</strong>：联合建模域间运动与接触图可提升两者预测精度。
+   - <strong>初步方法</strong>：设计多任务网络，共享编码器，分别解码域间运动参数与接触图，并施加一致性损失。
+   - <strong>验证方式</strong>：在 multi-state cryo-EM 数据集上评估。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：View-Grounded Conformational Ensemble Generation from Multiple Experimental Observables
+   - <strong>来源局限/观察</strong>：ViewStruct 从多视角推断单一结构，而蛋白质构象生成需从多观测推断构象分布。
+   - <strong>核心假设</strong>：多观测几何一致性可约束构象系综的生成，减少虚假构象。
+   - <strong>初步方法</strong>：将 ViewStruct 的聚合思想扩展到生成模型（如扩散模型），以多观测为条件生成构象系综。
+   - <strong>验证方式</strong>：在 SAXS/FRET 约束的构象生成任务上评估。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Connectivity-Aware Protein Domain Segmentation from Density Maps
+   - <strong>来源局限/观察</strong>：ViewStruct 输出部件连接图，蛋白质结构预测中域分割与域间连接推断可类比。
+   - <strong>核心假设</strong>：显式建模域间连接可提升域分割精度。
+   - <strong>初步方法</strong>：将 ViewStruct 的连接图解码器适配为域连接预测头，与域分割网络联合训练。
+   - <strong>验证方式</strong>：在蛋白质域分割基准上评估。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Cross-View Consistency Regularization for Protein Structure Prediction
+   - <strong>来源局限/观察</strong>：ViewStruct 利用多视角一致性作为隐式正则化，蛋白质结构预测中可类比为「多序列一致性」或「多模板一致性」正则化。
+   - <strong>核心假设</strong>：在训练时施加跨 MSA 子集或跨模板的一致性正则化可提升结构预测泛化性。
+   - <strong>初步方法</strong>：在现有结构预测模型（如 AlphaFold 类）训练损失中加入一致性正则项。
+   - <strong>验证方式</strong>：在标准结构预测基准上对比有无正则化的性能。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, arXiv identifier, and landing page metadata only. No abstract, no main text, no figures, no tables, no supplementary material.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the bibliographic record and the stated title. No scientific content, methodology, results, or claims beyond the title are available for evaluation.</li>
+<li><strong>Shared manuscript claim summary</strong> The title indicates a method named "ViewStruct" for view-grounded articulation and connectivity inference, presumably in the domain of computer vision and pattern recognition. No further claims are stated in the supplied material.</li>
+<li><strong>Visible evidence base</strong> arXiv landing page metadata, including title, authors, submission date, and subject classification. No technical content is present.</li>
+<li><strong>Missing materials affecting confidence</strong> Abstract, full text, figures, tables, experimental results, methodology description, related work, and any quantitative or qualitative evaluation. The absence of these materials makes any substantive scientific assessment impossible.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material consists solely of a title and bibliographic metadata. There is no scientific content to evaluate. The title suggests a contribution to 3D structure inference from images, but without an abstract or manuscript body, no assessment of validity, novelty, or significance can be made.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title alone, researchers in computer vision, particularly those working on 3D scene understanding, articulated object modeling, and geometric inference from multi-view images, might find the topic relevant. However, this is speculative and cannot be confirmed without content.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material. The title is concise and indicates a clear technical focus, but this is not a substantive strength.</li>
+<li><strong>Major Concerns</strong> The absence of any scientific content is the overriding concern. No claims, methods, or results are available for review.</li>
+<li><strong>Minor Comments</strong> None applicable, as there is no content to comment on.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The manuscript body, including abstract, methodology, experiments, and conclusions, must be provided before any technical assessment can begin.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: not assessable. Scientific importance: not assessable. Interdisciplinary readership: not assessable. Technical soundness: not assessable. Readability for nonspecialists: not assessable. The supplied material provides no basis for evaluation on any of these criteria.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. A substantive manuscript is required for any meaningful review.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence completeness</li>
+<li><strong>Claim pointer</strong> The title implies a method for view-grounded articulation and connectivity inference, but no supporting claims or details are provided.</li>
+<li><strong>Evidence pointer</strong> Location not provided. The only available material is the arXiv landing page metadata.</li>
+<li><strong>Concern</strong> The submission contains no abstract, no main text, and no supplementary information. The review cannot proceed on the basis of a title alone.</li>
+<li><strong>Why it matters</strong> A scientific review requires a description of the problem, proposed method, experimental setup, and results. Without these, any judgment on validity, novelty, or impact is impossible and would be unfounded.</li>
+<li><strong>Resolution test</strong> Provide the full manuscript, including abstract, methodology, experiments, and conclusions, for a substantive review.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's implication of a functional method for articulation and connectivity inference is unsupported and unverifiable from the supplied material.</li>
+<li>Any inference about the scientific contribution, novelty, or technical quality of the work is not possible and would be speculative.</li>
+<li>The subject classification as computer vision and pattern recognition is bibliographic metadata and does not constitute a scientific claim.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

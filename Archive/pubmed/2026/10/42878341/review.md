@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors use multi-scale simulation to relate monomeric conformational states of human gammaD-crystallin to positions within an aggregation network. They report a three-role classification of conformational states, with large aggregate formation associated with a "promiscuous" set of states. They further report differences in role occupancies between wild-type and the cataract-associated W42R variant, consistent with the hypothesis that W42R monomers more readily occupy conformations conducive to larger aggregate formation.
+- **Visible evidence base** Abstract text only; no methodological details, simulation parameters, quantitative results, or figures are available
+- **Missing materials affecting confidence** Full manuscript, simulation protocols, force field parameters, system construction details, aggregation network definitions, quantitative role occupancy data, statistical analyses, and any comparison with experimental data
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting framework linking monomeric conformational states to aggregate topology in gammaD-crystallin, with potential relevance to cataract pathology. However, the current evidence base is insufficient to evaluate the technical soundness of the simulations, the robustness of the three-role classification, or the statistical support for the W42R comparison. The central claims are plausible but not verifiable from the supplied material.
+- **Who would be interested in the results, and why** Researchers in protein aggregation, eye lens biophysics, and computational biophysics would be interested. The work addresses a long-standing question of how conformational dynamics of crystallin proteins relate to aggregation propensity, which is relevant to understanding cataract formation and protein homeostasis in crowded environments.
+- **Major strengths** The abstract frames a clear conceptual advance by proposing a role-based classification of conformational states within aggregation networks, rather than treating aggregation as a simple binary property. The explicit consideration of two-way coupling between intermolecular interactions and monomeric conformations is thoughtful. The inclusion of a disease-associated variant provides a clinically relevant test of the framework.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The authors claim that multi-scale simulation reveals a three-role system of conformational states and that large aggregate formation is associated with a "promiscuous" set of states.  
+  - **Evidence pointer** Abstract only; no methods or results sections provided  
+  - **Concern** The abstract provides no information on the simulation methodology, including the multi-scale approach used, the force fields, the system size, the timescales sampled, or the criteria for defining conformational states and aggregation network roles. Without this information, the reliability of the three-role classification cannot be assessed.  
+  - **Why it matters** The central claim of the paper depends entirely on the validity of the simulation approach and the robustness of the classification scheme. If the conformational state definitions are arbitrary or the network construction is sensitive to simulation parameters, the conclusions may not be generalizable.  
+  - **Resolution test** Provide a detailed methods section describing the simulation protocol, the definition of conformational states, the construction of aggregation graphs, and the criteria for assigning roles. Include convergence checks and sensitivity analyses for the role classification.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Statistical support  
+  - **Claim pointer** The authors claim that differences in role occupancies are seen between wild-type gammaD-crystallin and the W42R variant, consistent with the hypothesis that W42R monomers more readily occupy conformations conducive to larger aggregate formation.  
+  - **Evidence pointer** Abstract only; no quantitative data or statistical analysis provided  
+  - **Concern** The abstract states that differences are "seen" but provides no quantitative measures, effect sizes, or statistical tests. It is unclear whether these differences are reproducible across independent simulations, whether they exceed sampling noise, or whether they are specific to the W42R variant or general to any destabilizing mutation.  
+  - **Why it matters** The comparison to W42R is a key translational element of the work. Without statistical rigor, the claim that W42R shifts conformational state occupancy toward aggregation-prone roles is not established.  
+  - **Resolution test** Provide quantitative role occupancy distributions for both variants, with error bars or confidence intervals, and appropriate statistical tests (e.g., permutation tests or bootstrapping) demonstrating significant differences.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Biological relevance  
+  - **Claim pointer** The authors discuss the relationship between conformational states and aggregation, considering the two-way influence between intermolecular interactions and monomeric conformational states.  
+  - **Evidence pointer** Abstract only; no experimental validation or connection to known biophysical data  
+  - **Concern** The abstract does not indicate whether the simulation predictions are compared with any experimental data on gammaD-crystallin aggregation, such as light scattering, microscopy, or in vitro aggregation assays. The biological relevance of the three-role system remains speculative without such validation.  
+  - **Why it matters** The lens environment is highly crowded and complex, and simulation predictions may not translate to in vivo behavior. Experimental correlation would strengthen the claim that the identified roles are biologically meaningful.  
+  - **Resolution test** Include comparisons with available experimental data on gammaD-crystallin aggregation kinetics or equilibrium behavior, or clearly state the predictions that could be tested experimentally.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Definition of "promiscuous" states  
+  - **Evidence pointer** Abstract, first paragraph  
+  - **Issue** The term "promiscuous" is used without a precise definition. It is unclear whether this refers to a high number of interaction partners, a high binding affinity, or a lack of specificity in interactions.  
+  - **Required correction** Define "promiscuous" operationally in terms of network metrics, such as degree centrality or interaction partner diversity.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Readability  
+  - **Affected element** Description of the three-role system  
+  - **Evidence pointer** Abstract, second paragraph  
+  - **Issue** The abstract mentions a "three-role system" but does not describe the nature of the three roles or how they differ. This limits the reader's ability to interpret the findings.  
+  - **Required correction** Briefly describe the three roles and their distinguishing features in the abstract.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Scope  
+  - **Affected element** Generalizability of findings  
+  - **Evidence pointer** Abstract, final sentence  
+  - **Issue** The abstract focuses on gammaD-crystallin and the W42R variant, but it is unclear whether the three-role framework is expected to generalize to other crystallins or cataract-associated mutations.  
+  - **Required correction** Add a sentence addressing the potential generalizability or limitations of the framework to other crystallin proteins.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The absence of methodological detail and statistical support means the central claims cannot be evaluated. R1-M3, while not blocking, is important for establishing biological relevance.
+- **Assessment against Nature-style criteria**  
+  - Originality: The conceptual framing of conformational states as network roles is a novel perspective, but the abstract does not demonstrate how this advances beyond existing descriptions of crystallin aggregation.  
+  - Scientific importance: The topic is important for understanding cataract formation and protein behavior in crowded environments, but the significance of the specific findings cannot be assessed without quantitative results.  
+  - Interdisciplinary readership: The work bridges biophysics, computational biology, and ophthalmology, which could appeal to a broad audience, but the abstract is too technical in places and lacks context for nonspecialists.  
+  - Technical soundness: Not assessable from the abstract; the absence of methods and statistical detail is a major limitation.  
+  - Readability for nonspecialists: The abstract is generally clear but uses terms like "multi-scale simulation" and "aggregate topology" without sufficient explanation for a general scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising, but the abstract alone does not provide sufficient methodological or statistical support to evaluate the claims. I would be supportive if the full manuscript addresses the technical and statistical concerns outlined above.
+
+## Risk / unsupported claims
+- The existence of a three-role system of conformational states is unsupported without methodological detail on how roles were defined and validated.
+- The association between "promiscuous" states and large aggregate formation is unsupported without quantitative network analysis.
+- The claim that W42R monomers more readily occupy aggregation-conducive conformations is unsupported without statistical comparison.
+- The two-way influence between intermolecular interactions and monomeric conformational states is asserted but not demonstrated with data.
+- Any implication that the simulation results reflect in vivo lens behavior is unsupported without experimental validation.

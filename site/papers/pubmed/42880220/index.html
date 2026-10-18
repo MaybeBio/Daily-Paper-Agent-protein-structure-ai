@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Programming biological behavior with AI-guided de novo protein design. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Programming biological behavior with AI-guided de novo protein design.</h1>
+      <div class="meta">Huettemann, Philipp; Kortemme, Tanja</div>
+      <div class="meta muted">
+        
+        <span class="journal">Molecular cell</span>
+        · 2026-10-15
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42880220/">原文</a>
+      </div>
+      <p class="one-liner">该文是一篇关于AI引导的从头蛋白质设计以编程生物行为的展望性综述，聚焦蛋白质结构设计方法及其向反应网络和细胞行为工程的拓展，虽缺乏具体方法创新，但紧密围绕蛋白质结构计算设计主题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Driven by advances in artificial intelligence, de novo protein design can now generate diverse molecular functions from the ground up, achieving remarkable success in engineering binders against many macromolecular targets. Here, we provide a perspective on how de novo design can progress beyond bimolecular interactions toward the bottom-up construction of protein reaction networks. We highlight how programmable, modular, and controllable de novo components can drive complex, emergent biological behaviors. Overcoming current challenges-including designable protein dynamics, multi-step functionalities, and non-equilibrium systems-is essential for this transition. With continued foundational method improvements, the field is poised to pioneer precise protein perturbations for systems-level insight and to engineer emergent cellular behaviors like signal amplification, decision-making, and error correction de novo to fundamentally advance synthetic biology, biotechnology, and medicine.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">在人工智能进步的推动下，从头蛋白质设计（de novo protein design）现已能够从零开始生成多种分子功能，在针对众多大分子靶点的结合剂工程化方面取得了显著成功。在此，我们提供了一个视角，探讨从头设计如何超越双分子相互作用，迈向蛋白质反应网络的自下而上构建。我们强调，可编程、模块化且可控的从头组件如何驱动复杂的涌现生物行为。克服当前挑战——包括可设计的蛋白质动力学、多步骤功能以及非平衡系统——对于这一转变至关重要。随着基础方法的持续改进，该领域有望开创精确蛋白质扰动以实现系统级洞察，并从头工程化涌现细胞行为，如信号放大、决策制定和错误校正，从而从根本上推进合成生物学、生物技术和医学。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Programming biological behavior with AI-guided de novo protein design</li>
+<li><strong>作者</strong>：Huettemann, Philipp; Kortemme, Tanja</li>
+<li><strong>单位</strong>：未提供（Kortemme 实验室，加州大学旧金山分校，据公开信息；原文未标注）</li>
+<li><strong>期刊/平台</strong>：Molecular Cell</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：Perspective（观点/展望综述）</li>
+<li><strong>领域</strong>：AI-guided de novo protein design；合成生物学；蛋白质反应网络</li>
+<li><strong>关键词</strong>：de novo protein design；AI；protein reaction networks；emergent behavior；synthetic biology</li>
+<li><strong>DOI/arXiv</strong>：10.1016/j.molcel.2026.08.027</li>
+<li><strong>代码</strong>：不适用（Perspective，无代码）</li>
+<li><strong>数据</strong>：不适用（Perspective，无原始数据）</li>
+<li><strong>阅读日期</strong>：2026-05-14（按系统日期）</li>
+<li><strong>在课题方向中的位置</strong>：本文是 Perspective，不提出新方法，而是系统论述 AI-guided de novo protein design 从「双分子相互作用」向「蛋白质反应网络」跃迁的路线图。对本课题（蛋白质结构相关计算研究 × AI/物理模拟）而言，其价值在于：① 明确 de novo binder 设计（结构预测/对接的典型下游任务）的现状边界；② 提出「可编程、模块化、可控」作为设计准则；③ 指出动力学、多步功能、非平衡系统三大缺口，直接关联 MD 模拟与构象采样方法的发展方向。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文以 Perspective 形式论证：AI-guided de novo protein design 已能可靠生成针对多种大分子靶标的结合物，但要从「双分子结合」推进到「蛋白质反应网络」以编程细胞行为，必须攻克可设计蛋白动力学、多步功能与非平衡系统三大挑战。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：de novo protein design 如何从当前以「结合（binding）」为核心的成功模式，跃迁到「自底向上构建蛋白质反应网络（protein reaction networks）」，从而编程复杂、涌现的生物学行为？</li>
+<li><strong>为什么重要</strong>：合成生物学与工程生物学需要可预测、可编程的分子部件；de novo 设计提供从序列直接定义结构的途径，有望实现信号放大、决策、纠错等细胞行为的人工编程，对生物技术、医学有根本性推动。</li>
+<li><strong>现有方法为何不足</strong>：当前 de novo 设计主要针对静态、双分子相互作用（binder 设计），缺乏对蛋白动力学、多步催化/信号级联、非平衡态系统的设计能力；现有设计组件多为「一次性」功能，难以组合成网络。</li>
+<li><strong>精确研究问题（Can ... ?）</strong>：Can de novo designed proteins be programmed as modular, controllable components to assemble into reaction networks that exhibit emergent, non-equilibrium biological behaviors?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>标注：以下脉络为「仅本文框架」——本文为 Perspective，其历史叙述是作者的主张，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法/事件</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期 de novo 设计</td>
+<td>基于物理/知识的序列设计（如 Rosetta）</td>
+<td>可设计稳定折叠</td>
+<td>功能单一，成功率低</td>
+<td>铺垫</td>
+</tr>
+<tr>
+<td>AI 驱动的 binder 设计</td>
+<td>深度学习方法（如 ProteinMPNN、RFdiffusion 等，文中未点名）</td>
+<td>针对多种靶标成功率高</td>
+<td>仍限于双分子结合</td>
+<td>当前成就</td>
+</tr>
+<tr>
+<td>迈向反应网络</td>
+<td>可编程、模块化、可控组件</td>
+<td>可组合、可调控</td>
+<td>动力学、多步、非平衡未解决</td>
+<td>本文主张的未来</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可设计蛋白动力学（designable protein dynamics）</td>
+<td>难以设计具有预定构象变化/变构行为的蛋白</td>
+<td>现有设计方法主要针对静态结构，缺乏对运动自由度的建模与控制</td>
+<td>原文「designable protein dynamics」列为挑战之一（Perspective 正文，无图表编号）</td>
+</tr>
+<tr>
+<td>多步功能（multi-step functionalities）</td>
+<td>单个设计组件难以执行多步骤任务（如催化+识别+调控）</td>
+<td>设计方法未将多步功能作为目标函数；组件间接口设计不足</td>
+<td>原文「multi-step functionalities」列为挑战（同上）</td>
+</tr>
+<tr>
+<td>非平衡系统（non-equilibrium systems）</td>
+<td>无法设计需要持续能量输入维持功能的系统</td>
+<td>设计框架默认平衡态；非平衡设计缺乏理论指导</td>
+<td>原文「non-equilibrium systems」列为挑战（同上）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：本文为 Perspective，未提供实验证据；以上「文中证据」均为作者在正文中的主张，无图/表/数据支撑。</p>
+</blockquote>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：本文不提出具体算法或实验方法，而是提出一个发展路线图——将 de novo 设计从「单分子结合」推进到「反应网络」，强调组件的可编程性（programmable）、模块化（modular）、可控性（controllable）。</li>
+<li><strong>核心洞察</strong>：de novo 设计的真正价值不在于制造更多 binder，而在于「自底向上」构建可组合的分子部件，使复杂行为（信号放大、决策、纠错）从组件间的相互作用中涌现（emergent）。这要求设计范式从「静态结构」转向「动态、多步、非平衡」。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：① 结构预测/对接的成功（如 binder 设计）只是「第一阶」能力，真正的系统级应用需要「第二阶」能力——设计动力学与网络行为；② 对计算研究者而言，这意味着评分函数/目标函数需从「结构相似性」扩展到「功能/动力学/网络行为」；③ 模块化与可控性应作为设计准则内嵌到生成模型中，而非事后筛选。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：不适用（Perspective，无方法流程）</li>
+<li><strong>输出</strong>：不适用</li>
+<li><strong>模块</strong>：不适用</li>
+<li><strong>训练</strong>：不适用</li>
+<li><strong>工具</strong>：不适用</li>
+<li><strong>反馈回路</strong>：不适用</li>
+<li><strong>假设</strong>：作者假设 de novo 设计组件可以像电子元件一样被组合成反应网络；假设当前 AI 方法的进步（未点名具体方法）足以支撑这一跃迁。</li>
+<li><strong>文字流程</strong>：不适用（无输入到输出的方法流程）</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<blockquote>
+<p>本文为 Perspective，无方法模块。以下按「作者提出的概念模块」拆解，标注为概念性而非实测。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可编程组件（programmable components）</td>
+<td>序列→预定结构/功能</td>
+<td>网络构建的基础单元</td>
+<td>输入：序列；输出：结构/功能</td>
+<td>作者主张（无实验）</td>
+<td>预期：无法保证组件行为可预测 [Analysis]</td>
+</tr>
+<tr>
+<td>模块化接口（modular interfaces）</td>
+<td>组件间可组合、可替换</td>
+<td>网络组装需要标准化接口</td>
+<td>输入：组件；输出：可组合网络</td>
+<td>作者主张（无实验）</td>
+<td>预期：组件无法互联，网络不可行 [Analysis]</td>
+</tr>
+<tr>
+<td>可控性（controllability）</td>
+<td>组件行为可被外部信号调控</td>
+<td>网络需要可调、可编程行为</td>
+<td>输入：组件+调控信号；输出：受控行为</td>
+<td>作者主张（无实验）</td>
+<td>预期：无法实现决策/纠错等行为 [Analysis]</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：以上均为 [Analysis] 推断，原文未提供模块级消融或实验证据。</p>
+</blockquote>
+<h2>09 关键公式符号</h2>
+<p>不适用（Perspective，无公式）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：不适用（无实验）</li>
+<li><strong>规模</strong>：不适用</li>
+<li><strong>指标</strong>：不适用</li>
+<li><strong>基线</strong>：不适用</li>
+<li><strong>预算</strong>：不适用</li>
+<li><strong>骨干/仪器</strong>：不适用</li>
+<li><strong>oracle 输入</strong>：不适用</li>
+<li><strong>评测协议</strong>：不适用</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无（Perspective）</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文结论仅适用于「de novo protein design 的发展方向」这一论述层面，不涉及具体方法性能。</li>
+<li><strong>oracle/真值输入</strong>：不适用。</li>
+<li><strong>端到端状态</strong>：不适用（无方法）。</li>
+<li><strong>算力成本</strong>：不适用。</li>
+<li><strong>历史数据依赖</strong>：作者依赖截至 2026 年的 AI 设计进展（未点名具体方法），但未提供系统文献计量或基准。</li>
+<li><strong>模型依赖</strong>：不适用。</li>
+<li><strong>最难情形</strong>：作者明确指出动力学、多步功能、非平衡系统为最难情形。</li>
+<li><strong>群体/领域边界</strong>：结论面向合成生物学、生物技术、医学；不涉及临床或工业具体实现。</li>
+<li><strong>不确定性</strong>：作者以「poised to」「can」等措辞表达展望，未提供定量预测。</li>
+<li><strong>有边界的复述</strong>：本文主张——在 AI 方法持续改进的前提下，de novo 设计有望从双分子结合扩展到反应网络，但当前三大挑战（动力学、多步、非平衡）尚未解决，且本文未提供证据证明这些挑战可被现有方法克服。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可设计蛋白动力学</td>
+<td>难以设计预定构象变化</td>
+<td>需要方法学进步（未具体化）</td>
+<td>正文「Overcoming current challenges—including designable protein dynamics...」</td>
+</tr>
+<tr>
+<td>多步功能</td>
+<td>组件难以执行多步任务</td>
+<td>需要多步功能设计方法</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>非平衡系统</td>
+<td>无法设计持续耗能系统</td>
+<td>需要非平衡设计框架</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：作者强调「continued foundational method improvements」是前提，暗示当前方法尚不足以支撑网络构建。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>作者未点名任何具体 AI 方法</td>
+<td>可能因 Perspective 文体，但削弱了可操作性</td>
+<td>读者无法判断「哪些方法」需要改进</td>
+<td>检索 2024-2026 de novo 设计文献，评估其是否覆盖动力学/多步/非平衡</td>
+<td>原文未提供方法引用</td>
+</tr>
+<tr>
+<td>「可编程、模块化、可控」为定性准则</td>
+<td>缺乏定量定义（如模块化如何度量）</td>
+<td>无法转化为设计目标函数</td>
+<td>提出模块化/可控性的定量指标并测试</td>
+<td>原文未定义</td>
+</tr>
+<tr>
+<td>未讨论计算成本与实验验证瓶颈</td>
+<td>可能低估从设计到验证的闭环难度</td>
+<td>影响路线图可行性</td>
+<td>调研 de novo 设计实验验证成功率</td>
+<td>原文未涉及</td>
+</tr>
+<tr>
+<td>未与现有蛋白工程方法（如定向进化）对比</td>
+<td>可能高估 de novo 的独特价值</td>
+<td>影响方法选择</td>
+<td>对比 de novo vs. 定向进化在反应网络构建中的表现</td>
+<td>原文未对比</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>（面向蛋白质结构相关计算研究 × AI/物理模拟）：
+1. <strong>设计目标从「结构」转向「行为」</strong>：本课题的结构预测/对接/构象采样方法，可考虑将「可编程行为」（如变构响应、多步催化）纳入目标函数，而非仅以结构相似性为指标。
+2. <strong>动力学作为设计变量</strong>：作者强调「designable protein dynamics」是缺口——这直接指向 MD 模拟与构象采样方法：可探索将 MD 导出的动力学特征（如自由能面、构象转变路径）作为 de novo 设计的约束或评分项。
+3. <strong>模块化接口设计</strong>：对分子对接/复合物预测方法而言，「模块化接口」概念提示：可开发专门预测「可组合界面」的工具，而非仅预测单一结合模式。
+4. <strong>非平衡系统建模</strong>：现有 MD/对接方法多假设平衡态；作者指出非平衡系统是未来——这提示可发展非平衡 MD 或耗散动力学模拟方法，用于设计需能量输入的功能蛋白。
+5. <strong>涌现行为的计算预测</strong>：从单组件到网络的跃迁，需要多尺度建模（从原子到网络），这为「结构预测+动力学模拟+网络模型」的集成方法提供了动机。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似/支撑</strong>：与 Baker 实验室及 Kortemme 实验室近年 de novo binder 设计工作一致（如 RFdiffusion、ProteinMPNN 等，原文未点名但属同一领域）；与合成生物学「部件-模块-系统」分层思想一致。</li>
+<li><strong>组合</strong>：可与「蛋白质构象采样/ensemble 建模」方法结合——动力学设计需要 ensemble 层面的控制，而非单一结构。</li>
+<li><strong>冲突/张力</strong>：与「定向进化」范式存在张力——de novo 设计主张理性设计，而定向进化依赖随机突变+筛选；本文未讨论两者互补性。</li>
+<li><strong>可迁移领域</strong>：MD 模拟中的增强采样方法（如 metadynamics、replica exchange）可迁移到「设计蛋白动力学」的验证环节；AlphaFold 类结构预测可作为 de novo 设计的前置筛选器。</li>
+<li><strong>标注</strong>：以上连接为 [Analysis] 推断，基于领域常识，非原文引用。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：动力学感知的 de novo 设计评分函数
+   - <strong>来源局限/观察</strong>：作者指出「designable protein dynamics」是挑战，但未提供方法。
+   - <strong>核心假设</strong>：将 MD 模拟导出的构象转变自由能面作为 de novo 设计的评分项，可提高设计蛋白的动力学可编程性。
+   - <strong>相对本文的增量</strong>：将 Perspective 的定性主张转化为可计算目标。
+   - <strong>初步方法</strong>：在现有生成模型（如 RFdiffusion）后接 MD 增强采样，提取构象转变路径与能垒，作为筛选/重设计依据。
+   - <strong>验证方式</strong>：设计一组具有预定变构行为的蛋白，实验验证构象变化。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：模块化界面预测器
+   - <strong>来源局限/观察</strong>：作者强调「模块化」是网络构建前提，但未提出界面可组合性的计算标准。
+   - <strong>核心假设</strong>：存在可学习的「界面兼容性」特征，可预测两个 de novo 组件能否按预定方式组装。
+   - <strong>相对本文的增量</strong>：为「模块化」提供计算工具。
+   - <strong>初步方法</strong>：用现有复合物结构数据训练界面兼容性评分模型，结合对接模拟验证。
+   - <strong>验证方式</strong>：设计多组件系统，测试组装效率与正交性。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：非平衡蛋白系统的粗粒化模拟框架
+   - <strong>来源局限/观察</strong>：作者指出非平衡系统是未来方向，但未提供建模思路。
+   - <strong>核心假设</strong>：粗粒化 MD 结合耗散项可模拟 de novo 蛋白网络的非平衡行为。
+   - <strong>相对本文的增量</strong>：为「非平衡设计」提供计算验证平台。
+   - <strong>初步方法</strong>：扩展粗粒化力场，加入能量输入/耗散项，模拟简单蛋白网络。
+   - <strong>验证方式</strong>：与实验构建的合成蛋白网络对比行为。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：从 binder 到网络的集成设计流程
+   - <strong>来源局限/观察</strong>：作者主张从双分子到网络的跃迁，但未给出流程。
+   - <strong>核心假设</strong>：将 binder 设计、界面预测、动力学模拟集成到一个流水线，可端到端设计简单反应网络。
+   - <strong>相对本文的增量</strong>：将 Perspective 路线图实例化。
+   - <strong>初步方法</strong>：模块化组合现有工具（结构预测→对接→MD→网络模型），以「可编程行为」为最终目标。
+   - <strong>验证方式</strong>：设计一个双蛋白信号放大模块，实验测试。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and arguments presented in the abstract; no full text, figures, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors argue that AI-guided de novo protein design, having succeeded in engineering binders, can progress beyond bimolecular interactions toward the bottom-up construction of protein reaction networks, enabling programmable and controllable components to drive emergent biological behaviors. They identify current challenges (designable protein dynamics, multi-step functionalities, non-equilibrium systems) and assert that overcoming these will enable precise perturbations for systems-level insight and engineering of emergent cellular behaviors (signal amplification, decision-making, error correction) to advance synthetic biology, biotechnology, and medicine.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or references were provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript text, figures, tables, references, and any supporting data or case examples; without these, the depth of argumentation and the basis for specific claims cannot be evaluated</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This is a perspective article that presents a forward-looking vision for the field of de novo protein design. The abstract is well-written and articulates a clear progression from current successes in binder design to future ambitions in constructing protein reaction networks. The framing is timely and aligns with ongoing trends in synthetic biology and AI-driven design. However, the abstract provides limited specific evidence or concrete examples to substantiate the claims, which is typical for a perspective but limits the ability to critically assess the novelty and feasibility of the proposed direction. The identification of challenges is sensible, but the proposed solutions and the path forward are described at a high level without technical detail.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in protein design, synthetic biology, computational biology, and AI for science would find this perspective relevant. It offers a conceptual roadmap that could inspire new research directions and collaborations. Those working on cellular engineering, biosensing, and therapeutic protein design may also be interested in the potential applications highlighted, such as signal amplification and decision-making in cells.</li>
+<li><strong>Major strengths</strong> The abstract clearly articulates a compelling vision that extends beyond current achievements. The focus on moving from static binders to dynamic, multi-step, and non-equilibrium systems is a forward-looking and important challenge. The writing is accessible and likely to engage a broad interdisciplinary audience.</li>
+<li><strong>Major Concerns</strong> None identified from the supplied material, as the abstract is a high-level perspective without specific technical claims that can be directly challenged. However, the lack of concrete examples or case studies in the abstract means that the feasibility of the proposed transition is not demonstrated.</li>
+<li><strong>Minor Comments</strong> None identified from the supplied material.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> None identified from the supplied material, given the perspective nature of the article. The case would be strengthened by including specific examples of current de novo designs that hint at the proposed capabilities, and by discussing potential technical barriers in more detail.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The vision of moving from binders to reaction networks is a notable extension of current discourse, though the individual components (e.g., protein dynamics, non-equilibrium systems) are already discussed in the field. Scientific importance: High, as the proposed direction could significantly impact synthetic biology and medicine. Interdisciplinary readership: The abstract is written to appeal to a broad audience, but the lack of technical detail may limit engagement from specialists. Technical soundness: Not assessable from the abstract alone; the claims are plausible but not substantiated with evidence. Readability for nonspecialists: The abstract is clear and avoids excessive jargon, making it accessible.</li>
+<li><strong>Recommendation posture</strong> Supportive if the full manuscript provides concrete examples, a critical assessment of current limitations, and a realistic discussion of the path forward. From the abstract alone, the case is not fully established, but the perspective is valuable and likely to stimulate discussion.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that de novo design can progress toward protein reaction networks is plausible but not supported by specific evidence in the abstract.</li>
+<li>The assertion that overcoming the listed challenges will enable precise perturbations and emergent behaviors is forward-looking but not demonstrated.</li>
+<li>The potential applications (signal amplification, decision-making, error correction) are stated as possibilities without reference to any preliminary results or proof-of-concept studies.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

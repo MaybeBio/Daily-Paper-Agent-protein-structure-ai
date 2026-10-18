@@ -1,0 +1,79 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary information
+- **Shared manuscript claim summary** The authors report the discovery and characterization of YL410, described as a first-in-class potent and selective small-molecule antagonist of GPR15. They claim in vitro potency (IC50 0.027 ± 0.005 µM in a cAMP-GloSensor assay), selectivity against a panel of GPCRs and kinases, functional activity in a Jurkat T-cell migration assay, favorable pharmacokinetics and safety, a structurally rationalized orthosteric binding mode supported by docking, MD simulations, contact analyses, and mutagenesis, and in vivo efficacy in a diet-induced obesity mouse model including weight loss and blood glucose lowering.
+- **Visible evidence base** Abstract text only; no experimental details, numerical data beyond the stated IC50, statistical parameters, compound characterization data, or methodological descriptions are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, experimental methods, compound synthesis and characterization data, selectivity panel details, pharmacokinetic data, safety data, MD simulation parameters and convergence metrics, mutagenesis results, DIO model details, and statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially significant advance in targeting GPR15 with a small-molecule antagonist and presents a broad claim set spanning medicinal chemistry, structural biology, and in vivo pharmacology. The scope is ambitious and the potential therapeutic relevance for obesity is notable. However, the abstract alone provides insufficient detail to evaluate the rigor of the key claims. The potency and selectivity claims are stated without supporting data, the structural model is described qualitatively, and the in vivo efficacy is presented without effect sizes, dose information, or statistical context. The claim of "first-in-class" is plausible but cannot be verified from the supplied material. The study is potentially of high interest, but the evidence base visible here does not establish the case.
+- **Who would be interested in the results, and why** Medicinal chemists and drug discovery researchers working on GPCR-targeted therapeutics, particularly those focused on chemokine receptors and atypical chemokine receptors. Structural biologists interested in GPCR-ligand interactions and the application of AI-based structure prediction methods. Metabolic disease researchers investigating novel targets for obesity and type 2 diabetes. The comparative analysis of MD simulations versus AI-based structure prediction tools (AlphaFold3, Chai-1, Boltz) may also interest computational chemists and method developers.
+- **Major strengths** The identification of a first-in-class small-molecule antagonist for GPR15 addresses a clear gap in the field. The reported potency is strong for a lead compound. The combination of functional assays, structural modeling, and in vivo efficacy represents a comprehensive early drug discovery package. The explicit comparison between MD-selected poses and AI-predicted poses is a useful methodological contribution. The in vivo efficacy in a DIO model, if robust, would substantially elevate the translational relevance.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "YL410 inhibits GPR15 with an IC(50) of 0.027 +/- 0.005 microM, and displays high selectivity against a panel of related GPCRs and kinases"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The potency value is stated with a standard deviation but no replicate number, assay details, or positive/negative controls are described. The selectivity claim is qualitative ("high selectivity") with no information on the number of targets tested, the concentrations used, the criteria for selectivity, or the specific targets included in the panel.
+  - **Why it matters** Potency and selectivity are foundational claims for a first-in-class antagonist. Without assay validation details and a defined selectivity threshold, the reader cannot assess whether the compound is genuinely potent and selective or whether the observed values fall within normal assay variability. Overstated selectivity claims are a common failure mode in early drug discovery reports.
+  - **Resolution test** Provide full assay protocols, replicate numbers, a complete selectivity table with IC50 or percent inhibition values for all tested targets, and a clear statement of the selectivity criteria used.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Molecular docking, replicated molecular dynamics simulations, quantitative contact analyses, and mutagenesis experiments support a plausible orthosteric binding model for YL410"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The structural model is described as "plausible" and "supported," but no quantitative metrics are provided. The MD simulation length, force field, number of replicates, convergence criteria, and the specific mutagenesis results (which residues, what functional effect) are absent. The statement that AI-based predictions "recapitulated the energetically accessible orthosteric poses but not the dynamically stable pose" is interesting but lacks the numerical comparisons needed to evaluate its significance.
+  - **Why it matters** A binding model is only as credible as the data supporting it. Without convergence metrics, replicate statistics, and mutagenesis data showing clear functional effects of specific residue substitutions, the model remains speculative. The comparison with AI tools is potentially valuable but requires quantitative pose comparisons to be meaningful.
+  - **Resolution test** Provide MD simulation parameters, convergence metrics, RMSD or contact frequency analyses, a mutagenesis table with functional data for each mutant, and quantitative pose comparisons between MD-selected and AI-predicted structures.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "in a diet-induced obesity (DIO) mouse model, YL410 administration induced significant weight loss and exerted blood glucose-lowering effects"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The in vivo efficacy claim is presented without dose, route, duration, group sizes, effect magnitudes, or statistical significance values. The phrase "significant weight loss" is ambiguous without context. No information is provided on whether the effect is dose-dependent, whether it exceeds the effect of standard-of-care comparators, or whether the blood glucose lowering is independent of weight loss.
+  - **Why it matters** In vivo efficacy is the most translationally significant claim in the abstract. Without dose-response data, effect sizes, and appropriate statistical analyses, the reader cannot determine whether the observed effects are robust, specific, or clinically meaningful. Obesity studies are particularly prone to confounds such as reduced food intake or nonspecific toxicity.
+  - **Resolution test** Provide full DIO study details including animal numbers, sex, strain, diet protocol, dosing regimen, body weight trajectories, food intake, blood glucose values, and statistical analyses. Ideally include a dose-response relationship and a pair-feeding control if weight loss is claimed to be independent of food intake.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Compound characterization
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not state whether YL410 is a reversible or covalent antagonist, nor does it provide any physicochemical properties relevant to drug-likeness.
+  - **Required correction** Add a brief statement on the mechanism of antagonism and key physicochemical properties, or reference the relevant section in the full text.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Selectivity panel composition
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "a panel of related GPCRs and kinases" is vague. The reader cannot assess whether the panel includes the most relevant off-targets for a chemokine receptor antagonist.
+  - **Required correction** Specify the number and identity of the targets in the selectivity panel, or at minimum state the most important off-targets tested.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** AI-based structure prediction comparison
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The statement that AI tools "recapitulated the energetically accessible orthosteric poses but not the dynamically stable pose" is presented as a limitation of AI methods, but it could also reflect limitations of the MD simulation protocol or force field.
+  - **Required correction** Acknowledge alternative interpretations and provide the quantitative criteria used to define "dynamically stable" versus "energetically accessible" poses.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "First-in-class" claim
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "first-in-class" is used twice. While this may be accurate, the abstract does not provide evidence that no other GPR15 antagonists have been reported.
+  - **Required correction** Provide a brief statement confirming a literature search found no prior GPR15 small-molecule antagonists, or soften the claim to "to our knowledge, the first."
+- **Technical failings that need to be addressed before the case is established** R1-M1 (potency and selectivity data), R1-M2 (structural model validation), R1-M3 (in vivo efficacy data). These three concerns are blocking because the abstract does not provide sufficient evidence to evaluate the central claims of the manuscript.
+- **Assessment against Nature-style criteria** Originality: The work appears original in targeting GPR15 with a small-molecule antagonist, and the comparison of MD versus AI-based pose prediction adds a methodological angle. Scientific importance: The therapeutic potential for obesity is significant, but the importance is contingent on the robustness of the in vivo data, which cannot be assessed from the abstract. Interdisciplinary readership: The work spans medicinal chemistry, structural biology, computational chemistry, and metabolic disease, which could attract a broad readership if the evidence is strong. Technical soundness: Cannot be evaluated from the abstract; the stated claims require full experimental detail. Readability for nonspecialists: The abstract is generally clear, though the structural modeling section assumes familiarity with MD simulations and AI-based structure prediction tools.
+- **Recommendation posture** Currently not established from the provided evidence. The claims are potentially significant, but the abstract alone does not provide sufficient detail to verify the potency, selectivity, structural model, or in vivo efficacy. A full review of the complete manuscript would be required to determine whether the technical concerns can be resolved.
+
+## Risk / unsupported claims
+- "First-in-class" claim is unverifiable from the supplied material; no evidence of a prior art search is provided.
+- "High selectivity" is stated without quantitative data or panel composition.
+- "Favorable pharmacokinetics and acceptable safety" are asserted without any numerical data or study details.
+- The structural binding model is described as "plausible" and "supported" but no quantitative validation metrics are provided.
+- The in vivo efficacy claim ("significant weight loss and blood glucose-lowering effects") is stated without effect sizes, doses, or statistical context.
+- The comparison between MD-selected and AI-predicted poses is presented as a methodological insight but lacks quantitative pose comparison data.

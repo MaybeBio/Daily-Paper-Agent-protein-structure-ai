@@ -75,8 +75,8 @@
 <p><em>标注：以下脉络为「仅本文框架」——基于摘要推断，未做外部文献核验。</em>
 - <strong>阶段 1：IL-21/IL-21R 信号通路研究</strong>。IL-21 通过结合 IL-21R 和共同 γ 链激活 JAK/STAT 通路，促进 Th17 分化、B 细胞抗体产生。代表方法：中和抗体、可溶性受体。局限：免疫原性、半衰期短。
 - <strong>阶段 2：诱饵受体策略</strong>。利用天然受体胞外域作为诱饵，竞争性结合配体。代表：IL-1Ra、TNF-R2-Fc（Etanercept）。局限：天然受体亲和力不足，需工程改造。
-- <strong>阶段 3：计算蛋白设计</strong>。OSPREY（基于 K<em> 算法的序列设计）、Rosetta（能量函数 + 序列设计）、MD 模拟（GROMACS）用于稳定性与亲和力评估。代表：Rosetta 设计的流感疫苗、OSPREY 设计的酶。局限：计算预测与实验验证存在差距。
-- </em><em>本文位置</em>*：将 OSPREY 序列设计 + GROMACS 稳定性筛选 + 实验表达与 SPR 验证整合为一条完整流程，针对 IL-21R 进行亲和力提升。</p>
+- <strong>阶段 3：计算蛋白设计</strong>。OSPREY（基于 K* 算法的序列设计）、Rosetta（能量函数 + 序列设计）、MD 模拟（GROMACS）用于稳定性与亲和力评估。代表：Rosetta 设计的流感疫苗、OSPREY 设计的酶。局限：计算预测与实验验证存在差距。
+- <strong>本文位置</strong>：将 OSPREY 序列设计 + GROMACS 稳定性筛选 + 实验表达与 SPR 验证整合为一条完整流程，针对 IL-21R 进行亲和力提升。</p>
 <h2>05 核心痛点</h2>
 <table>
 <thead>
@@ -315,11 +315,11 @@
 </table>
 <h2>14 学到什么</h2>
 <p><strong>Agent 提炼的知识候选</strong>：
-1. <strong>OSPREY 用于结合位点序列设计的流程</strong>：以受体胞外域为支架，针对结合界面残基进行 K<em> 算法设计，可迁移至其他细胞因子-受体系统（如 IL-6/IL-6R、TNF/TNFR）。
-2. </em><em>MD 模拟作为计算筛选的第二层过滤器</em><em>：OSPREY 输出候选后，用 GROMACS 评估结构稳定性（RMSD、Rg）与结合自由能（MM/PBSA），可过滤能量上有利但结构不稳定的突变。
-3. </em><em>诱饵受体设计的一般策略</em><em>：保留天然受体胞外域，仅突变结合位点残基以提高亲和力，避免引入非天然 scaffold。
-4. </em><em>实验验证的最小集</em><em>：CD 光谱（结构完整性）+ SPR（亲和力）是计算设计验证的底线组合。
-5. </em><em>可迁移思路 [Analysis]</em><em>：对于本课题（蛋白质结构预测/构象采样），OSPREY 的 K</em> 算法可视为一种「序列-结构-能量」联合采样方法，与 AlphaFold 的序列-结构映射形成互补——前者基于物理能量，后者基于进化统计。</p>
+1. <strong>OSPREY 用于结合位点序列设计的流程</strong>：以受体胞外域为支架，针对结合界面残基进行 K* 算法设计，可迁移至其他细胞因子-受体系统（如 IL-6/IL-6R、TNF/TNFR）。
+2. <strong>MD 模拟作为计算筛选的第二层过滤器</strong>：OSPREY 输出候选后，用 GROMACS 评估结构稳定性（RMSD、Rg）与结合自由能（MM/PBSA），可过滤能量上有利但结构不稳定的突变。
+3. <strong>诱饵受体设计的一般策略</strong>：保留天然受体胞外域，仅突变结合位点残基以提高亲和力，避免引入非天然 scaffold。
+4. <strong>实验验证的最小集</strong>：CD 光谱（结构完整性）+ SPR（亲和力）是计算设计验证的底线组合。
+5. <strong>可迁移思路 [Analysis]</strong>：对于本课题（蛋白质结构预测/构象采样），OSPREY 的 K* 算法可视为一种「序列-结构-能量」联合采样方法，与 AlphaFold 的序列-结构映射形成互补——前者基于物理能量，后者基于进化统计。</p>
 <h2>15 与已有知识连接</h2>
 <ul>
 <li><strong>相似工作</strong>：Rosetta 设计的 IL-2 超级kine（Levin et al., Nature 2012）——同样通过计算设计提高细胞因子-受体亲和力；Etanercept（TNF-R2-Fc）作为已上市诱饵受体药物。</li>

@@ -227,7 +227,7 @@
 <p><strong>窗口化互惠加权相似度</strong>（概念性公式）:
    - 设 $E_i$ 为序列 $i$ 的嵌入矩阵，$E_T$ 为模板嵌入
    - 相似度 $S(a, b) = \text{sim}(E_i[a], E_T[b])$，其中 $\text{sim}$ 为余弦相似度或内积
-   - 互惠条件: $b^<em> = \arg\max_b S(a, b)$ 且 $a^</em> = \arg\max_a S(a, b^<em>)$，仅当 $a^</em> = a$ 时保留匹配
+   - 互惠条件: $b^* = \arg\max_b S(a, b)$ 且 $a^* = \arg\max_a S(a, b^<em>)$，仅当 $a^</em> = a$ 时保留匹配
    - 窗口化: 限制在局部窗口内搜索，减少计算量
    - <strong>用途</strong>: 识别跨序列的对应氨基酸
    - <strong>直觉</strong>: 双向最近邻确保匹配的可靠性，窗口化控制计算复杂度

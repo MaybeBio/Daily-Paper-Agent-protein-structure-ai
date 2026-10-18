@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors present an updated version of Missense3D, a tool originally developed in 2019, that predicts structural consequences of missense variants. The new version accepts genomics, protein, and structural coordinates; models variants on single proteins and protein-protein complexes using experimental and predicted structures, including AlphaFold models; performs automated sequence-structure mapping; and evaluates structural model quality before analysis. The web server is freely available to all users, including commercial ones.
+- **Visible evidence base** Abstract text only; no quantitative results, performance metrics, validation datasets, or comparisons with prior versions or other tools are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, validation methodology, benchmark datasets, performance statistics, case studies, and any comparison with the 2019 version or competing tools
+
+## Reviewer
+- **Overall assessment** The abstract describes a timely and potentially useful update to an established tool in the missense variant interpretation space. The inclusion of AlphaFold models and protein-protein complexes addresses clear gaps in the field. However, the abstract provides no quantitative evidence of performance, accuracy, or improvement over the prior version. The scientific case for the tool's utility and reliability cannot be assessed from the supplied material. The claims are plausible but currently unsupported by visible evidence.
+- **Who would be interested in the results, and why** Clinical geneticists and molecular diagnosticians interpreting missense variants in patient genomes; computational biologists developing and benchmarking variant effect prediction tools; structural biologists using AlphaFold models for functional annotation; and researchers in precision medicine who require mechanistic explanations for variant pathogenicity. The free availability, including commercial use, broadens potential adoption across academic and industrial settings.
+- **Major strengths** The tool addresses a real and growing need, namely the interpretation of missense variants in the context of increasingly available predicted structures. The explicit inclusion of AlphaFold models and protein-protein complexes is a forward-looking and practical extension. The automated sequence-structure mapping and model quality evaluation address known practical bottlenecks in structural variant analysis. The commitment to free access, including for commercial users, is commendable and likely to maximise community uptake.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract implies that the new Missense3D algorithm performs these functions effectively and provides mechanistic explanations for variant effects.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract makes no quantitative claims about performance, accuracy, sensitivity, specificity, or comparison with the 2019 version or other established tools such as PolyPhen-2, SIFT, or AlphaMissense. No validation datasets, benchmark results, or case studies are mentioned. The reader cannot determine whether the updated algorithm is an improvement, equivalent, or potentially worse than existing approaches.
+  - **Why it matters** For a tool whose purpose is to inform variant interpretation, the absence of any performance metrics is a critical gap. Users need to know how often the tool produces correct mechanistic predictions, how it handles low-quality models, and whether it adds value beyond sequence-based predictors. Without this evidence, the scientific contribution cannot be evaluated.
+  - **Resolution test** The full manuscript must provide validation on a benchmark dataset with clear metrics, ideally including comparison with the 2019 version and at least one competing structural or sequence-based method. The authors should report sensitivity, specificity, or area under the ROC curve, and discuss failure modes.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and technical validation
+  - **Claim pointer** The abstract states that the tool "evaluates structural model quality before analysis" and "performs automated sequence-structure mapping."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No details are given on how model quality is assessed, what thresholds are used, how sequence-structure mapping handles isoforms, splice variants, or missing residues, and how errors in mapping or low-quality models are reported to the user. The abstract does not indicate whether these steps are validated against known cases.
+  - **Why it matters** Automated pipelines are only useful if their failure modes are understood and communicated. If the tool silently proceeds with a poor-quality model or a mismatched sequence, the resulting predictions could be misleading in a clinical context. The abstract gives no indication that these risks are addressed.
+  - **Resolution test** The full manuscript should describe the quality assessment criteria, the mapping algorithm, and the handling of edge cases. The authors should provide examples of how the tool flags low-confidence predictions and what guidance is given to users.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scope and generalisability
+  - **Claim pointer** The abstract states the tool "models variants on both single proteins and protein-protein complexes using experimental and predicted structures, including AlphaFold models."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract does not specify the scope of complex modelling. Does the tool handle homodimers, heterodimers, higher-order oligomers, or only binary complexes? How are interface residues defined and are interface-specific features such as buried surface area or hydrogen bond disruption at the interface treated differently from intra-chain features? The abstract is silent on these points.
+  - **Why it matters** Variants at protein-protein interfaces can have distinct functional consequences compared with variants in the protein core. If the tool treats all residues equivalently, it may miss interface-specific effects. Users need to know the intended scope to apply the tool appropriately.
+  - **Resolution test** The full manuscript should clearly define the supported complex types, the features computed for interface residues, and any validation performed on known interface variants.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "accepts genomics, protein, and structural coordinates" is ambiguous. It is unclear whether "genomics" refers to genomic coordinates, variant call format files, or gene identifiers, and whether "protein" refers to UniProt identifiers or FASTA sequences.
+  - **Required correction** Specify the exact input formats accepted, for example VCF files, genomic coordinates with reference genome build, UniProt IDs, FASTA sequences, and PDB or AlphaFold DB identifiers.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract content
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not mention the number of features used, the types of structural features computed, or whether the feature set has been expanded since 2019. The original Missense3D used features such as cavities, clashes, and bond disruption, but the abstract does not state whether new features have been added.
+  - **Required correction** Briefly list the feature categories used in the updated version and note any additions or changes relative to the 2019 release.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Accessibility
+  - **Affected element** Web server description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states the server is freely available but does not mention whether an application programming interface is provided, whether batch submission is supported, or what the expected runtime is for typical queries.
+  - **Required correction** Add a sentence describing the server's interface capabilities, including any API access, batch processing, and typical response times.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The absence of any performance validation means the central claim that the tool provides useful mechanistic explanations is not established. The lack of detail on quality control and mapping procedures raises concerns about reliability in real-world use. R1-M3 is important but not blocking if the full manuscript addresses the scope of complex modelling.
+- **Assessment against Nature-style criteria** 
+  - Originality: Moderate. The update of an existing tool with AlphaFold support and complex modelling is incremental rather than conceptually novel, though it addresses a practical gap.
+  - Scientific importance: Potentially high for the clinical genetics community, but the importance cannot be confirmed without evidence that the tool improves variant interpretation accuracy.
+  - Interdisciplinary readership: The tool sits at the intersection of structural biology, genomics, and clinical genetics, which is a broad and relevant audience. However, the abstract does not demonstrate impact beyond the tool's own user base.
+  - Technical soundness: Not assessable from the abstract. No methodology, validation, or performance data are provided.
+  - Readability for nonspecialists: The abstract is clear and accessible, with technical terms used appropriately. The main limitation is the absence of results, not the clarity of the writing.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a plausible and potentially valuable tool, but the scientific case requires the full manuscript with validation data. If the full manuscript provides robust benchmarks and addresses the quality control concerns, the work could be supportive. As presented, the abstract alone does not support a recommendation for publication.
+
+## Risk / unsupported claims
+- The claim that the tool "provides mechanistic explanations" for variant effects is unsupported by any visible evidence of accuracy or validation.
+- The claim that the tool "evaluates structural model quality before analysis" is unverifiable without details of the criteria and thresholds used.
+- The claim that the tool "performs automated sequence-structure mapping" is unverifiable without details of the algorithm and its handling of edge cases.
+- The implied utility of the tool for clinical or research applications is not supported by any performance metrics in the abstract.
+- The scope of protein-protein complex modelling is undefined and therefore not assessable.

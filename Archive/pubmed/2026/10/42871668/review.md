@@ -1,0 +1,85 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, all sections, conclusion, declarations)
+- **Assessment boundary** Scientific content, internal logic, support for claims, and framing of the review article as submitted
+- **Shared manuscript claim summary** The manuscript argues that microbial transglutaminase (MTGase) can serve as a programmable, protein-level engineering tool in microbial cell factories, extending beyond classical hydrolytic amide-transforming enzymes. It reviews experimental and computational advances, identifies key barriers, and proposes an integrated framework for future engineering.
+- **Visible evidence base** The manuscript cites numerous primary research articles, including specific experimental examples (e.g., PsaA amidase, PamC amidase, MTGase immobilization on magnetic nanoparticles, computational enzyme engineering studies). Figures 1 and 2 are described in text but not visible to the reviewer.
+- **Missing materials affecting confidence** Figures 1 and 2 are not provided. Tables 1, 2, and 3 are referenced but not included. No supplementary information was supplied. The absence of these visual and tabular elements limits full assessment of the framework's clarity and completeness.
+
+## Reviewer
+- **Overall assessment** This is a well-structured and thoughtfully written review that addresses a timely and interesting topic: the potential of MTGase as a protein-level control element in synthetic biology. The authors are careful to distinguish established capabilities from prospective applications, which is a strength. However, the review is largely conceptual and forward-looking, with limited critical depth in some sections. The central thesis, while plausible, is not supported by a systematic analysis of the existing evidence. The manuscript would benefit from a more rigorous and critical evaluation of the literature, clearer definitions of key concepts, and a more explicit discussion of the feasibility and potential impact of the proposed framework.
+- **Who would be interested in the results, and why** Researchers in synthetic biology, metabolic engineering, and enzyme biotechnology would find this review of interest. The focus on post-translational control and spatial organization as a complement to transcriptional regulation is relevant to those designing dynamic and robust microbial production systems. The review also touches on computational enzyme design, which may appeal to a computational biology audience.
+- **Major strengths**
+  - The manuscript clearly articulates a distinct perspective on MTGase, moving beyond its traditional food-industry role to propose it as a synthetic biology tool.
+  - The authors consistently and commendably distinguish between experimentally validated findings and speculative or prospective applications.
+  - The review is well-organized, with a logical flow from general enzyme classes to specific MTGase properties and future integration strategies.
+  - The discussion of limitations (e.g., off-target crosslinking, proteostatic burden) is relevant and identifies key challenges for the field.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Support for central thesis
+  - **Claim pointer** The central thesis is that MTGase "may provide a protein level engineering interface between genetic regulation and cellular phenotype" and that it can be a "controllable protein level platform for synthetic biology."
+  - **Evidence pointer** Sections "Scope of the review", "MTGase as a programmable synthetic biology tool", "Discussion"
+  - **Concern** The central thesis is presented as a plausible vision, but the review does not provide a critical, evidence-based assessment of whether this vision is realistic. The manuscript cites examples of MTGase use in extracellular contexts (e.g., biomaterials, immobilization) but does not systematically analyze the evidence for its successful use as an *intracellular* tool in microbial hosts. The discussion of challenges (e.g., off-target crosslinking) is largely theoretical. The review would be significantly strengthened by a dedicated section that critically evaluates any existing experimental evidence for intracellular MTGase applications, even if limited, and clearly states what evidence is missing to support the central claim.
+  - **Why it matters** The review's primary contribution is its central thesis. Without a rigorous evaluation of the evidence for and against this thesis, the manuscript risks being a well-written opinion piece rather than a critical scientific review. The claim that MTGase can be a "controllable" platform is not supported by evidence demonstrating control in a complex intracellular environment.
+  - **Resolution test** The authors should add a section that systematically reviews and critically evaluates all available experimental evidence for intracellular MTGase applications in microbial systems. This section should clearly state what has been demonstrated, what has failed, and what critical experiments are needed to validate the central thesis. The thesis should be reframed as a testable hypothesis with specific milestones.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Critical analysis and depth
+  - **Claim pointer** The manuscript claims to "critically examine" the transition from classical enzymes to engineered systems and to evaluate the "current limitations" of MTGase.
+  - **Evidence pointer** Sections "Amide transforming enzymes and evolution toward programmable biocatalysis", "Current limitations, engineering bottlenecks, and mitigation strategies"
+  - **Concern** The review is largely descriptive and uncritical. For example, the sections on amidases and asparaginases provide a summary of their functions and applications but do not critically compare their performance, stability, or engineering potential against each other or against MTGase. The "Current limitations" section lists challenges but does not deeply analyze the root causes or the relative importance of these challenges. The discussion of mitigation strategies is often generic (e.g., "protein engineering," "directed evolution") without a critical assessment of their likelihood of success.
+  - **Why it matters** A review's value lies in its critical synthesis. A descriptive summary of the literature, while useful, does not provide the deep insight expected of a high-quality review. The authors are well-positioned to provide a more critical perspective, given their stated expertise.
+  - **Resolution test** The authors should revise the manuscript to include more critical analysis. For example, they could compare the strengths and weaknesses of different engineering approaches, discuss why certain challenges are more fundamental than others, and critically evaluate the potential of different mitigation strategies. The "Current limitations" section should be reorganized to prioritize challenges based on their impact and tractability.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Clarity and definition of key concepts
+  - **Claim pointer** The manuscript uses terms like "programmable," "adaptive," "controllable," and "protein level control" to describe the proposed MTGase-based systems.
+  - **Evidence pointer** Throughout the manuscript, particularly in the Abstract, Introduction, and "MTGase as a programmable synthetic biology tool" section
+  - **Concern** These terms are used frequently but are not clearly defined. What specifically does "programmable" mean in this context? Is it the ability to target specific substrates via engineered tags? Is it the ability to control activity in time or space? What is the difference between "protein level control" and standard post-translational regulation? The lack of clear definitions makes it difficult to assess the novelty and feasibility of the proposed approach.
+  - **Why it matters** The manuscript's central argument rests on these concepts. Without clear definitions, the reader cannot fully understand what the authors are proposing or how it differs from existing approaches. This ambiguity weakens the manuscript's impact.
+  - **Resolution test** The authors should provide explicit, operational definitions of these key terms early in the manuscript. For example, they could define "programmable" as the ability to achieve predictable and controllable crosslinking of specific target proteins through the use of engineered recognition tags and/or engineered MTGase variants with defined substrate specificity.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability and structure
+  - **Affected element** Section "Amide transforming enzymes and evolution toward programmable biocatalysis"
+  - **Evidence pointer** Subsections on amidases, asparaginases, and other enzymes
+  - **Issue** The subsections on individual enzyme classes are somewhat formulaic, following a similar pattern of "function, applications, engineering." This becomes repetitive.
+  - **Required correction** Consider integrating the discussion of these enzymes more tightly around the central theme of the review. For example, instead of separate subsections, the authors could structure the section around key concepts, such as "substrate specificity," "engineering strategies," and "integration into synthetic circuits," and discuss how each enzyme class exemplifies these concepts.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical accuracy
+  - **Affected element** Section "Structural biology and catalytic mechanism"
+  - **Evidence pointer** Description of the catalytic mechanism
+  - **Issue** The description of the catalytic mechanism is accurate but very brief. A slightly more detailed description of the active site residues and the catalytic triad (Cys-His-Asp) would be helpful for readers unfamiliar with the enzyme.
+  - **Required correction** Add a sentence or two detailing the key catalytic residues and their roles in the acyl transfer reaction.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Section "MTagase as a programmable synthetic biology tool"
+  - **Evidence pointer** Subsection "Synthetic genetic circuits and dynamic regulation"
+  - **Issue** The discussion of integrating MTGase with genetic circuits is highly speculative and does not cite any specific examples where this has been attempted.
+  - **Required correction** The authors should either provide specific examples of such integration or more clearly state that this is a purely prospective area with no experimental precedent.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Section "Digital twin biofactories and autonomous design build test learn platforms"
+  - **Evidence pointer** Entire section
+  - **Issue** This section is very brief and reads more like a list of future trends than a substantive discussion. The connection to MTGase is particularly weak.
+  - **Required correction** Either expand this section to provide a more detailed discussion of how digital twins could specifically be applied to MTGase-based systems, or integrate this content into the "Future perspectives" section to avoid a fragmented discussion.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Presentation
+  - **Affected element** Figures and Tables
+  - **Evidence pointer** Figures 1 and 2, Tables 1, 2, and 3
+  - **Issue** The figures and tables are not provided, so their quality and relevance cannot be assessed.
+  - **Required correction** Ensure that the figures and tables are clear, informative, and directly support the text. Figure 1 should effectively summarize the enzyme classes and their applications. Figure 2 should clearly illustrate the proposed integrated framework. The tables should provide useful comparative data.
+
+## Risk / unsupported claims
+- The central claim that MTGase can serve as a "controllable protein level platform for synthetic biology" is a forward-looking hypothesis. The review does not provide sufficient experimental evidence to support this as an established capability, and the authors correctly note that intracellular applications remain to be demonstrated. This is a risk to the review's impact if not framed clearly as a hypothesis.
+- The claim that "MTGase mediated protein assembly systems may support spatial biocatalysis through programmable enzyme clustering, scaffold formation, and biomolecular compartmentalization" is speculative. The cited evidence is from extracellular or in vitro systems, and the leap to intracellular microbial engineering is not supported by direct evidence.
+- The statement that "AI guided protein engineering... can be used to connect protein sequence and structure with catalytic properties" is a general claim. The specific application to MTGase is supported by a few examples, but the review does not critically assess the general limitations of these computational approaches.
+- The "Integrated microbial cell factory framework" presented in Figure 2 is a conceptual model. Its utility and validity cannot be assessed without the figure and without a more detailed explanation of how it would be implemented.

@@ -1,0 +1,103 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, introduction, methods, results, discussion, conclusion, and supplementary data description.
+- **Assessment boundary** Scientific and technical evaluation of the proposed pseudo-labeling approach for automated NMR resonance assignment of unlabeled proteins exceeding 100 amino acid residues. Assessment is limited to the provided manuscript content.
+- **Shared manuscript claim summary** The authors present a computational pipeline that integrates AI-predicted chemical shifts (HN, Hα, 13Cα, 15N) from three tools (UCBShift2.0, EFG-CS, PLMs) into an iterative simulated annealing framework with alternating scoring schemes, enabling automated backbone resonance assignment of unlabeled proteins larger than 100 residues. Demonstrated on hen egg white lysozyme (HEWL, 129 aa), thioredoxin (TRX, 107 aa), and arsenate reductase (ArsC, 139 aa), with reported assignment accuracies of 84%, 85%, and 71%, respectively.
+- **Visible evidence base** Abstract; Introduction; Methods sections including NMR spectroscopy, pseudo-labeling approach, and assignment workflow; Results and discussions with Figures 1-5 and Tables 1-2; Conclusion; Data availability statement.
+- **Missing materials affecting confidence** Raw NMR spectra, detailed spin system extraction protocols, parameter settings for the simulated annealing algorithm, validation metrics beyond assignment accuracy, comparison with existing automated assignment tools, and the supplementary data file referenced as "Multimedia component 1" were not available for assessment.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a relevant and timely problem in structural biology, namely the validation of AI-predicted protein structures using NMR without isotopic labeling. The proposed pseudo-labeling strategy is conceptually interesting and represents a logical extension of the authors' prior work on ubiquitin. However, the evidence presented is insufficient to fully establish the reliability and generalizability of the method. Key technical details are missing, the reported accuracies are modest, and the validation approach lacks rigor in several respects. The manuscript would benefit from additional benchmarking, error analysis, and clarification of the methodology before the claims can be considered fully supported.
+- **Who would be interested in the results, and why** Researchers in NMR spectroscopy, structural biology, and computational biology would be interested, particularly those seeking to reduce the cost and technical barriers of protein structure determination. The work may also appeal to the AI-driven protein structure prediction community, as it offers an experimental validation pathway for predicted models. Additionally, laboratories without specialized NMR expertise but with access to high-field instruments could find the automated aspect attractive.
+- **Major strengths** 1) The problem addressed is of practical importance, as isotope labeling remains a bottleneck in NMR-based structural studies. 2) The integration of multiple AI prediction tools into a consensus scoring framework is a sensible strategy to mitigate individual tool biases. 3) The pseudo-labeling concept, using AI-predicted heteronuclear shifts as computational substitutes for experimental labeling, is creative and potentially impactful. 4) The iterative alternating scoring scheme is a thoughtful design to leverage complementary information across spectral dimensions. 5) The demonstration on three proteins of different sizes provides some evidence of generalizability.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The manuscript claims that the method enables "reliable automated backbone resonance assignment for unlabeled proteins exceeding 100 amino acid residues."
+  - **Evidence pointer** Results and discussions, Table 1
+  - **Concern** The reported assignment accuracies are 84% (HEWL), 85% (TRX), and 71% (ArsC). These figures indicate that a substantial fraction of residues (16-29%) are incorrectly assigned. The manuscript does not provide an analysis of the nature or distribution of these errors. It is unclear whether errors are concentrated in specific regions (e.g., flexible loops, termini) or randomly distributed. Without this information, the claim of "reliable" assignment is not well supported. Moreover, the accuracy metric itself is not clearly defined (e.g., residue-level vs. spin-system-level, and how partial assignments are counted).
+  - **Why it matters** For the method to be useful in practice, users need to know where errors are likely to occur and how to interpret the confidence of individual assignments. A 71-85% accuracy range may be insufficient for many downstream applications, such as structure calculation or binding site validation, where incorrect assignments could lead to erroneous conclusions.
+  - **Resolution test** Provide a detailed error analysis, including per-residue accuracy as a function of sequence position, secondary structure, and solvent accessibility. Define the accuracy metric precisely and report precision and recall separately. If possible, compare assigned chemical shifts with experimentally determined values for a subset of residues to validate the assignments independently.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The manuscript states that the method "effectively resolves severe cross-peak overlap during the automated assignment process by introducing heteronuclear dimensional constraints."
+  - **Evidence pointer** Methods, Pseudo-labelling approach; Results and discussions, Figures 2-3
+  - **Concern** The mechanism by which the pseudo-labeling strategy resolves cross-peak overlap is not quantitatively demonstrated. The manuscript shows schematic figures and heat maps, but there is no quantitative analysis of how many ambiguous assignments were resolved by the heteronuclear constraints versus the homonuclear data alone. The authors do not report the number of spin systems that were ambiguous at each stage, nor do they quantify the improvement attributable to the pseudo-labeling approach.
+  - **Why it matters** The central claim of the paper is that the pseudo-labeling strategy overcomes the convergence failure observed for larger proteins. Without a clear demonstration that the heteronuclear constraints are responsible for the improved performance, the causal link between the proposed method and the reported results is not established.
+  - **Resolution test** Perform ablation studies where the assignment is run with and without the heteronuclear constraints, and report the resulting accuracies and convergence behavior. Quantify the number of spin systems that were resolved uniquely by the heteronuclear information. Provide a detailed example of a specific ambiguous region that was resolved by the pseudo-labeling approach.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The manuscript claims that the method is "fully automated" and that the workflow is applicable to "researchers without specialized NMR expertise."
+  - **Evidence pointer** Methods, Assignment workflow; Results and discussions
+  - **Concern** The manuscript does not describe the level of manual intervention required at various stages of the pipeline. Spin system extraction from COSY, TOCSY, HSQC, and HMQC spectra is a non-trivial step that typically requires expert judgment, especially in crowded regions. The authors do not specify whether spin system identification was performed manually, semi-automatically, or fully automatically. If manual curation was involved, the claim of full automation is overstated.
+  - **Why it matters** The stated goal of lowering the technical barrier for non-experts depends critically on the degree of automation. If expert intervention is required for spectral interpretation, the practical utility of the method for the target audience is diminished.
+  - **Resolution test** Clearly describe the spin system extraction procedure, including any manual steps. If manual curation was used, quantify the time and expertise required. Ideally, demonstrate the pipeline on a dataset where spin systems are extracted automatically without expert intervention, and report the resulting accuracy.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** The manuscript states that the approach "will lower the technical barrier to biomolecular NMR, enabling researchers without specialized NMR expertise to employ NMR spectroscopy in fundamental life science research and drug development."
+  - **Evidence pointer** Abstract; Conclusion
+  - **Concern** The broader impact claim is not supported by the data presented. The method requires high-field NMR spectrometers (≥800 MHz) with cryoprobes and acquisition times exceeding 14 hours per heteronuclear experiment. These requirements represent significant infrastructure and time investments that may not be accessible to many potential users. The manuscript does not discuss the cost-benefit trade-off compared to conventional isotope labeling, which, while expensive, is a well-established and reliable approach.
+  - **Why it matters** The significance of the work depends on whether it genuinely lowers barriers to NMR use. If the method still requires specialized equipment and long acquisition times, the practical advantage over conventional approaches may be limited.
+  - **Resolution test** Provide a quantitative comparison of the total cost and time required for the proposed method versus conventional isotope labeling and assignment, including sample preparation, NMR acquisition, and data analysis. Discuss the accessibility of the required instrumentation and whether the method is feasible in typical structural biology laboratories.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness
+  - **Claim pointer** The manuscript claims that "integrating predictions from multiple tools produces a substantially more robust and accurate assignment than any single tool alone."
+  - **Evidence pointer** Results and discussions, Table 2
+  - **Concern** The comparison in Table 2 shows that individual tools perform poorly on some proteins (e.g., PLMs at 7% on HEWL), but the integrated approach achieves 84-85% on HEWL and TRX. However, the manuscript does not explain why the integration is effective or how the consensus scoring is weighted. It is unclear whether the improvement is due to genuine complementarity or simply to a majority-voting effect. Additionally, the performance of the integrated approach on ArsC (71%) is not substantially better than the best individual tool (EFG-CS at 68% for HEWL, but the ArsC column shows EFG at 30%, UCB at 33%, PLMs at 50%), suggesting that integration does not always provide a large benefit.
+  - **Why it matters** Understanding the source of the improvement is important for assessing the robustness of the method and for potential users who may have access to only one or two prediction tools.
+  - **Resolution test** Provide a more detailed analysis of the consensus scoring mechanism, including the weights assigned to each tool and the sensitivity of the results to these weights. Report the performance of all pairwise combinations of tools to assess the marginal contribution of each. Discuss scenarios where integration may not be beneficial.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity and reproducibility
+  - **Affected element** Methods, Pseudo-labelling approach
+  - **Evidence pointer** Figure 2
+  - **Issue** The heat map in Figure 2 shows pairwise distances but does not indicate the threshold used to define a "match" beyond the color scale. The tiered scoring scheme is described qualitatively (e.g., "distances below 0.1 yield a score of 50"), but the full scoring table is not provided.
+  - **Required correction** Provide the complete scoring table with all distance intervals and corresponding scores. Specify the exact threshold for considering a match and how the PCA dimensionality is chosen.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity and reproducibility
+  - **Affected element** Methods, Assignment workflow
+  - **Evidence pointer** Figure 4
+  - **Issue** The flowchart in Figure 4 is high-level and does not include specific parameters for the simulated annealing algorithm, such as initial temperature, cooling rate, number of iterations per round, and convergence criteria.
+  - **Required correction** Provide the full parameter set for the SA algorithm, including the temperature schedule and termination conditions. If standard settings are used, cite the relevant literature.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Data presentation
+  - **Affected element** Results and discussions, Table 1
+  - **Evidence pointer** Table 1
+  - **Issue** The table reports the number of assigned residues and accuracy per round, but the accuracy calculation is not defined. It is unclear whether accuracy is calculated relative to the total number of residues in the protein or relative to the number of spin systems identified.
+  - **Required correction** Define the accuracy metric explicitly in the table caption or in the main text. Report the number of spin systems identified at each stage and the number of residues for which assignments were attempted.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Literature context
+  - **Affected element** Introduction
+  - **Evidence pointer** Introduction, paragraphs 2-3
+  - **Issue** The introduction cites prior work on automated assignment of unlabeled proteins but does not provide a comprehensive comparison with recent computational approaches for assignment of labeled proteins, such as those using deep learning or automated peak picking.
+  - **Required correction** Add a brief discussion of state-of-the-art automated assignment tools for labeled proteins and clarify the specific advantages of the proposed method in the context of unlabeled samples.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Data availability
+  - **Affected element** Data availability statement
+  - **Evidence pointer** Data availability
+  - **Issue** The data availability statement provides a link to a repository, but the specific contents (raw spectra, assignment tables, code) are not described.
+  - **Required correction** Specify which data and code are deposited, and provide a description of the file structure to facilitate reuse.
+- **Technical failings that need to be addressed before the case is established** 1) Lack of ablation studies demonstrating the specific contribution of the pseudo-labeling heteronuclear constraints to the reported assignment accuracy (R1-M2). 2) Insufficient error analysis, including the distribution and nature of incorrect assignments (R1-M1). 3) Unclear degree of automation in spin system extraction, which is critical for the claimed accessibility of the method (R1-M3). 4) Incomplete specification of the simulated annealing parameters and scoring function details, preventing reproducibility (R1-m2). 5) The accuracy metric is not precisely defined, and the reported values (71-85%) may not be sufficient for the claimed applications (R1-M1).
+- **Assessment against Nature-style criteria** Originality: The pseudo-labeling concept, using AI-predicted heteronuclear shifts as computational substitutes for isotopic labeling, is a creative and original contribution that extends prior work in a meaningful way. Scientific importance: The problem of reducing the cost and complexity of NMR-based structure validation is important, particularly in the context of AI-driven structure prediction. However, the demonstrated performance (71-85% accuracy) and the requirement for high-field instruments with long acquisition times limit the immediate practical impact. Interdisciplinary readership: The work bridges NMR spectroscopy, computational biology, and AI, and would appeal to researchers in these fields. Technical soundness: The methodology is plausible, but the evidence provided is insufficient to fully establish its reliability. Key technical details are missing, and the validation is not sufficiently rigorous. Readability for nonspecialists: The manuscript is generally well-written and accessible, with clear figures and a logical structure. However, some technical aspects, such as the PCA-based scoring and the SA algorithm, may be challenging for readers without a computational background.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core idea is promising and relevant, but the manuscript requires substantial revisions to address the technical concerns outlined above, particularly the need for ablation studies, error analysis, and clarification of the automation level. The reported accuracies, while modest, may be acceptable for specific applications if the limitations are clearly stated and the method is shown to be robust across a wider range of proteins.
+
+## Risk / unsupported claims
+- The claim that the method enables "reliable automated backbone resonance assignment" is not fully supported given the reported accuracies of 71-85% and the lack of error analysis.
+- The claim that the pseudo-labeling strategy "effectively resolves severe cross-peak overlap" is not quantitatively demonstrated.
+- The claim that the method "will lower the technical barrier to biomolecular NMR" is not supported by a cost-benefit analysis and may be overstated given the requirement for high-field instruments and long acquisition times.
+- The generalizability of the method beyond the three tested proteins is not established, and the manuscript does not discuss potential failure modes for other protein classes (e.g., membrane proteins, intrinsically disordered proteins).
+- The statement that the first-round assignments are "particularly well suited" for validating AI-predicted binding sites is speculative and not supported by experimental validation of this specific application.

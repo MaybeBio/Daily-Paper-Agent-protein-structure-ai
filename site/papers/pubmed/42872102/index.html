@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A pseudo-labeling approach for automated assignment of unlabeled proteins exceeding 100 amino acid residues. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>A pseudo-labeling approach for automated assignment of unlabeled proteins exceeding 100 amino acid residues.</h1>
+      <div class="meta">Niu, Xiaogang; Hou, Xianhui; Jin, Changwen</div>
+      <div class="meta muted">
+        
+        <span class="journal">Magnetic resonance letters</span>
+        · 2026-10-14
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42872102/">原文</a>
+      </div>
+      <p class="one-liner">该文开发了一种无需同位素标记的NMR自动化学位移归属方法，利用AI预测化学位移辅助模拟退火框架，虽以蛋白质结构解析为应用目标，但核心贡献在实验谱图归属而非结构计算建模本身，方法可借鉴于蛋白质结构相关研究。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">In the era of AI-driven protein structure prediction, there is an urgent demand for rapid, accessible experimental approaches to validate computationally predicted structural models or to improve the accuracy of AI-based structure determination. As a key experimental technique for determining protein structures in solution, conventional biomolecular NMR spectroscopy relies heavily on proteins labeled with (13)C and (15)N isotopes, a requirement that entails high experimental costs, lengthy sample preparation times, and steep technical barriers, thereby limiting its broader application. Building on our previous work, we have developed a pseudo-labeling strategy for the automated resonance assignment of unlabeled proteins. Using high-field NMR spectrometers equipped with cryoprobes, we acquired natural-abundance (1)H-(13)C and (1)H-(15)N heteronuclear correlation spectra directly from unlabeled samples. By integrating predicted chemical shifts of H(N), H(alpha), (13)C(alpha), and (15)N from three complementary AI tools into an iterative simulated annealing framework with an alternating scoring scheme, our method effectively resolves severe cross-peak overlap during the automated assignment process by introducing heteronuclear dimensional constraints. This approach enables reliable automated backbone resonance assignment for unlabeled proteins exceeding 100 amino acid residues. We anticipate that this labeling-free strategy will lower the technical barrier to biomolecular NMR, enabling researchers without specialized NMR expertise to employ NMR spectroscopy in fundamental life science research and drug development.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">在人工智能驱动的蛋白质结构预测时代，迫切需要快速、易操作的实验方法来验证计算预测的结构模型或提高基于AI的结构测定精度。作为在溶液中测定蛋白质结构的关键实验技术，传统生物分子核磁共振波谱法高度依赖以(13)C和(15)N同位素标记的蛋白质，这一要求带来了高昂的实验成本、冗长的样品制备时间以及陡峭的技术门槛，从而限制了其更广泛的应用。基于我们先前的工作，我们开发了一种用于未标记蛋白质自动共振分配的伪标记策略。利用配备低温探针的高场核磁共振波谱仪，我们直接从未标记样品中获取天然丰度的(1)H-(13)C和(1)H-(15)N异核相关谱。通过将来自三种互补AI工具预测的H(N)、H(alpha)、(13)C(alpha)和(15)N化学位移整合到具有交替评分方案的迭代模拟退火框架中，我们的方法通过引入异核维度约束，有效解决了自动分配过程中的严重交叉峰重叠问题。该方法能够对超过100个氨基酸残基的未标记蛋白质实现可靠的自动骨架共振分配。我们预期这种免标记策略将降低生物分子核磁共振的技术门槛，使不具备专业核磁共振知识的科研人员能够在基础生命科学研究和药物开发中应用核磁共振波谱法。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：A pseudo-labeling approach for automated assignment of unlabeled proteins exceeding 100 amino acid residues</li>
+<li><strong>作者与单位</strong>：Niu, Xiaogang; Hou, Xianhui; Jin, Changwen（北京大学，北京 NMR 中心及国家蛋白质科学中心；作者单位以原文为准）</li>
+<li><strong>期刊/预印本平台</strong>：Magnetic Resonance Letters</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-14）</li>
+<li><strong>论文类型</strong>：方法学论文（Methodology）</li>
+<li><strong>领域</strong>：生物大分子 NMR 波谱学 × AI 化学位移预测 × 自动化共振归属</li>
+<li><strong>关键词</strong>：NMR spectroscopy; resonance assignment; unlabeled proteins; AI chemical shift prediction; pseudo-labeling; simulated annealing</li>
+<li><strong>DOI/arXiv 号</strong>：10.1016/j.mrl.2026.200309</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：Science Data Bank, https://doi.org/10.57760/sciencedb.mrl.00005, CSTR: 31253.11.sciencedb.mrl.00005</li>
+<li><strong>阅读日期</strong>：2026-05-13（以实际阅读日期为准）</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/物理模拟」中的<strong>实验-计算交叉验证</strong>分支：用 AI 化学位移预测（UCBShift2.0、EFG-CS、PLMs）替代同位素标记，为无标记蛋白提供多维约束，从而将 NMR 自动化归属的适用规模从 &lt;100 残基推进到 &gt;100 残基。其核心机制（伪标签 + 迭代模拟退火 + 交替评分）对结构预测验证、构象采样约束生成、AI 辅助实验解析均有直接迁移价值。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对无同位素标记蛋白的 NMR 共振归属难题，本文用三种 AI 工具预测的 HN、Hα、13Cα、15N 化学位移作为伪标签，在迭代模拟退火框架中引入异核维度约束与交替评分策略，使超过 100 个氨基酸残基的未标记蛋白（HEWL 103 aa、TRX 107 aa、ArsC 139 aa）实现全自动主链归属，准确率分别为 84%、85%、71%。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在不进行 13C/15N 同位素标记的前提下，对超过 100 个氨基酸残基的蛋白质实现可靠的自动化 NMR 主链共振归属？</li>
+<li><strong>为什么重要</strong>：同位素标记成本高、周期长、表达困难，是 NMR 在蛋白质研究中的主要瓶颈；同时，AI 结构预测（如 AlphaFold）需要实验验证，而 NMR 是关键的验证手段。若能免除标记，将大幅降低 NMR 应用门槛，加速 AI 预测结构的实验确认。</li>
+<li><strong>现有方法为何不足</strong>：作者前期工作（基于 MCD 方法 + AI 预测 HN/Hα 化学位移）仅适用于 &lt;100 残基的蛋白（如泛素 76 aa）。对更大蛋白，两个问题导致收敛失败：(1) AI 化学位移预测对部分残基偏差增大，削弱评分函数判别力；(2) 二维同核谱峰重叠严重，NOE 约束可靠性下降，组合空间爆炸。</li>
+<li><strong>精确研究问题</strong>：Can a pseudo-labeling strategy that integrates multi-AI predicted 13Cα and 15N chemical shifts into an iterative simulated annealing framework achieve reliable automated backbone resonance assignment for unlabeled proteins exceeding 100 amino acid residues?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络主要基于本文框架，部分经外部核验（标注）。</p>
+</blockquote>
+<ol>
+<li><strong>1980s–1990s：人工 MCD 方法时代</strong>。研究者用主链直接（main chain direct, MCD）方法人工归属未标记蛋白的二维 NMR 谱，极其耗时耗力。计算机辅助方法因当时算力与算法限制未成主流。[本文框架]</li>
+<li><strong>2000s–2010s：同位素标记成为标准</strong>。13C/15N 标记 + 三维异核实验（HNCA、HNCO 等）成为常规归属手段，但成本高、表达难。[外部核验：NMR 结构生物学标准实践]</li>
+<li><strong>2020s：AI 化学位移预测兴起</strong>。UCBShift2.0、EFG-CS、PLMs 等工具可从序列或结构预测化学位移，精度逐步提升。[外部核验：UCBShift 系列、EFG-CS、PLM 文献]</li>
+<li><strong>2023–2025：AI 结构预测与实验验证需求爆发</strong>。AlphaFold 等模型可高精度预测结构，但存在高置信度错误拓扑，需 NMR 等实验手段验证；同时 NMR 约束可融入 AI 结构生成框架。[本文引言引用 9–15]</li>
+<li><strong>本文位置</strong>：在前期工作（AI 预测 HN/Hα + SA 归属 &lt;100 aa 未标记蛋白）基础上，引入多 AI 集成 + 异核伪标签 + 交替评分，将适用范围扩展到 &gt;100 aa，并展示在 AI 结构验证与配体结合位点确认中的潜在应用。</li>
+</ol>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同位素标记成本高、周期长</td>
+<td>13C/15N 标记蛋白表达需优化培养基与诱导条件，常低产或无表达</td>
+<td>标记培养基昂贵，且许多蛋白在 minimal media 中表达困难</td>
+<td>引言：conventional NMR relies heavily on labeled proteins, entailing high costs, lengthy sample preparation</td>
+</tr>
+<tr>
+<td>前期方法对 &gt;100 aa 蛋白收敛失败</td>
+<td>迭代数轮后无残基达到 &gt;90% 一致性阈值，流程无法推进</td>
+<td>(1) AI 化学位移预测对部分残基偏差大；(2) 二维同核谱峰重叠严重，NOE 约束不可靠</td>
+<td>Methods：two primary factors account for this convergence breakdown</td>
+</tr>
+<tr>
+<td>二维同核谱峰重叠严重</td>
+<td>HN-Hα 指纹区交叉峰大量重叠，难以区分</td>
+<td>残基数增加导致谱峰密度增大，化学位移简并加剧</td>
+<td>Methods：peak overlap in 2D homonuclear NMR spectra becomes markedly severe</td>
+</tr>
+<tr>
+<td>单一 AI 预测工具性能不稳定</td>
+<td>不同工具在不同蛋白上表现差异大</td>
+<td>各工具训练数据与算法侧重不同，存在系统偏差</td>
+<td>Results 表 2：PLMs 在 TRX 上 85% 但 HEWL 仅 7%；EFG-CS 在 HEWL 上 68% 但 ArsC 仅 30%</td>
+</tr>
+<tr>
+<td>大蛋白柔性区域化学位移预测精度下降</td>
+<td>柔性 loop、结构域界面等区域预测偏差大</td>
+<td>这些区域在 BDB 中数据稀疏、归属不完整，训练样本质量差</td>
+<td>Results：prediction accuracy degrades in conformationally heterogeneous regions</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：用三种 AI 化学位移预测工具（UCBShift2.0、EFG-CS、PLMs）分别预测目标蛋白每个残基的 HN、Hα、13Cα、15N 化学位移，将预测值作为"伪标签"；在迭代模拟退火框架中，将实验观测的交叉峰与伪标签进行匹配评分，通过交替使用不同评分策略逐步固定高置信度归属。</li>
+<li><strong>核心洞察</strong>：<strong>异核维度约束可以替代同位素标记的部分信息</strong>。虽然未标记蛋白无法直接实验测量 13Cα 和 15N 化学位移，但 AI 预测的异核化学位移可以作为"计算伪标签"引入评分函数，从而在二维同核谱严重重叠时提供额外的判别维度。这本质上是<strong>用计算预测弥补实验信息的缺失</strong>，将"实验-计算"边界向计算侧推移。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：在实验数据不足或质量受限时，<strong>多源计算预测的集成 + 迭代自举（pseudo-labeling）</strong> 可以显著扩展自动化方法的适用范围。这与半监督学习中的伪标签思想高度一致——先用高置信度预测固定部分变量，再逐步扩展。对蛋白质结构计算研究而言，这意味着：当实验约束稀疏时，AI 预测（化学位移、距离图、接触图等）可作为软约束融入优化框架，而非仅作为最终验证工具。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：</li>
+<li>未标记蛋白样品（~0.5 mM，50 mM 磷酸钠缓冲液 pH 5.0，10% D2O）</li>
+<li>实验谱：1H-1H COSY、1H-1H TOCSY、1H-1H NOESY、1H-13C HSQC（自然丰度，128 scans）、SOFAST 1H-15N HMQC（2048 scans）</li>
+<li>蛋白序列（用于 AI 化学位移预测）</li>
+<li><strong>输出</strong>：主链共振归属（每个残基的 HN、Hα、13Cα、15N 化学位移分配）</li>
+<li><strong>模块</strong>：
+  1. <strong>谱图采集模块</strong>：950 MHz Bruker AVANCE III HD + TCI 低温探头，308 K
+  2. <strong>自旋系统提取模块</strong>：从 COSY/TOCSY 提取 HN-Hα 自旋系统；从 HSQC 提取 Hα-Cα 自旋系统；从 HMQC 提取 HN-N 自旋系统
+  3. <strong>AI 化学位移预测模块</strong>：UCBShift2.0、EFG-CS、PLMs 三种工具独立预测每个残基的 HN、Hα、13Cα、15N 化学位移
+  4. <strong>伪标签构建模块</strong>：将 AI 预测化学位移转换为 PCA 空间中的期望交叉峰位置，与实验交叉峰计算距离并转换为评分（距离 &lt;0.1 得 50 分，0.4–0.5 得 10 分，&gt;0.5 得 0 分）
+  5. <strong>自旋系统关联模块</strong>：通过共享 HN 化学位移连接 HN-Hα 与 HN-N 自旋系统；通过共享 Hα 化学位移连接 HN-Hα 与 Hα-Cα 自旋系统
+  6. <strong>迭代模拟退火模块</strong>：100 个独立 SA 运行/轮；评分函数 = 氨基酸类型兼容性（RF+SVM）+ NOE 连接一致性 + 化学位移相似性；奇数轮用四维化学位移（HN、Hα、13Cα、15N），偶数轮仅用二维（HN、Hα）；&gt;90% 一致性固定，迭代至 &gt;95% 自旋系统归属</li>
+<li><strong>工具</strong>：Bruker 谱仪、UCBShift2.0、EFG-CS、PLMs、RF/SVM 分类器、SA/MC 优化框架</li>
+<li><strong>文字流程</strong>：采集谱图 → 提取三类自旋系统 → AI 预测化学位移 → PCA 距离计算与评分 → 自旋系统间关联 → 迭代 SA 优化（交替评分）→ 高置信度固定 → 直至 &gt;95% 归属完成</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高场谱仪 + 低温探头采集</td>
+<td>获取自然丰度 1H-13C/1H-15N 相关谱</td>
+<td>未标记蛋白的异核信号极弱，需高灵敏度</td>
+<td>输入：未标记蛋白样品；输出：COSY/TOCSY/NOESY/HSQC/HMQC 谱</td>
+<td>Methods：950 MHz + TCI cryoprobe，HSQC 128 scans，HMQC 2048 scans</td>
+<td>预期影响：移除后信噪比不足，异核谱无法采集，伪标签策略失效</td>
+</tr>
+<tr>
+<td>自旋系统提取</td>
+<td>从同核谱中识别 HN-Hα 自旋系统</td>
+<td>归属的基本单元</td>
+<td>输入：COSY/TOCSY 谱；输出：HN-Hα 自旋系统列表</td>
+<td>Methods：spin systems identified based on COSY/TOCSY correlations</td>
+<td>预期影响：无法建立残基候选集，整个流程无法启动</td>
+</tr>
+<tr>
+<td>AI 化学位移预测（三工具集成）</td>
+<td>预测每个残基的 HN、Hα、13Cα、15N 化学位移</td>
+<td>提供伪标签，替代同位素标记的异核信息</td>
+<td>输入：蛋白序列；输出：每个残基的四维预测化学位移</td>
+<td>Results 表 2：单工具性能波动大，集成后稳定</td>
+<td>实测影响：单工具在部分蛋白上准确率极低（PLMs 在 HEWL 仅 7%），移除集成将导致特定蛋白上完全失败</td>
+</tr>
+<tr>
+<td>PCA 距离计算与评分</td>
+<td>将预测化学位移与实验交叉峰匹配</td>
+<td>将多维化学位移差异归一化到可比空间</td>
+<td>输入：实验峰位 + 预测峰位；输出：匹配评分（0–50）</td>
+<td>Methods：scaling factors（15N×0.14，13C×0.1）+ PCA 降维</td>
+<td>预期影响：移除后不同核的化学位移量纲不可比，评分失效</td>
+</tr>
+<tr>
+<td>自旋系统关联（共享化学位移连接）</td>
+<td>通过 HN 或 Hα 化学位移连接三类自旋系统</td>
+<td>将一维自旋系统组装为残基级单元</td>
+<td>输入：三类自旋系统 + 化学位移表；输出：关联后的复合自旋系统</td>
+<td>Methods：linked via shared HN/Hα chemical shifts</td>
+<td>预期影响：无法整合异核信息，退化为纯同核方法</td>
+</tr>
+<tr>
+<td>迭代 SA + 交替评分</td>
+<td>搜索最优自旋系统-残基映射</td>
+<td>组合空间巨大，需全局优化</td>
+<td>输入：自旋系统 + 评分函数；输出：最终归属</td>
+<td>Methods：100 runs/轮，&gt;90% 固定，交替四维/二维评分</td>
+<td>实测影响：交替评分是核心创新，移除后收敛稳定性下降（作者归因于互补维度信息）</td>
+</tr>
+<tr>
+<td>RF+SVM 氨基酸类型分类器</td>
+<td>预测每个自旋系统的氨基酸类型</td>
+<td>提供序列位置候选的初始过滤</td>
+<td>输入：自旋系统化学位移；输出：氨基酸类型概率</td>
+<td>Methods：trained on BMRB data</td>
+<td>预期影响：移除后候选集增大，搜索空间指数增长</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>本文为方法学论文，未给出显式数学公式。以下为从方法描述中可重构的关键评分逻辑：</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>化学位移相似性评分</strong>（PCA 空间）：
+   [
+   S_{CS} = \sum_{n \in {HN, Hα, Cα, N}} f(d_n), \quad d_n = | \delta_{exp,n} - \delta_{pred,n} |<em>{\text{PCA}}
+   ]
+   - ( \delta</em>{exp,n} )：实验观测的第 n 核化学位移
+   - ( \delta_{pred,n} )：AI 预测的第 n 核化学位移
+   - ( d_n )：PCA 变换后的距离；( f(d) ) 为分段评分函数（d&lt;0.1→50 分；0.1–0.4→中间值；0.4–0.5→10 分；&gt;0.5→0 分）
+   - 缩放因子：15N 化学位移 ×0.14，13C 化学位移 ×0.1（Methods 节）</p>
+</li>
+<li>
+<p><strong>总评分函数</strong>：
+   [
+   S_{total} = w_1 S_{aa_type} + w_2 S_{NOE} + w_3 S_{CS}
+   ]
+   - ( S_{aa_type} )：RF+SVM 输出的氨基酸类型兼容性评分
+   - ( S_{NOE} )：NOE 连接一致性评分（基于顺序 NOE 交叉峰的存在与否）
+   - ( w_1, w_2, w_3 )：权重（原文未给出具体数值）</p>
+</li>
+<li>
+<p><strong>Metropolis 接受准则</strong>（SA 核心）：
+   [
+   P(\text{accept } \Delta S &lt; 0) = \exp(\Delta S / T)
+   ]
+   - ( \Delta S )：评分变化（负值表示变差）
+   - ( T )：当前温度参数，随冷却计划逐步降低</p>
+</li>
+<li>
+<p><strong>一致性固定准则</strong>：某自旋系统在 &gt;90/100 次独立运行中映射到同一残基位置 → 固定。</p>
+</li>
+</ol>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：</li>
+<li>三种未标记蛋白：HEWL（鸡卵清溶菌酶，103 个可归属残基）、TRX（硫氧还蛋白，107 aa）、ArsC（砷酸还原酶，139 aa）</li>
+<li>参考归属：BMRB 数据库中的已发表归属</li>
+<li><strong>规模</strong>：3 种蛋白，共 349 个残基</li>
+<li><strong>指标</strong>：归属准确率（与 BMRB 参考归属一致的残基比例）</li>
+<li><strong>基线</strong>：作者前期方法（仅 HN/Hα 二维化学位移 + SA，适用于 &lt;100 aa）</li>
+<li><strong>谱仪</strong>：Bruker AVANCE III HD 950 MHz，TCI 低温探头，308 K</li>
+<li><strong>AI 工具</strong>：UCBShift2.0、EFG-CS、PLMs（三种独立预测 + 集成）</li>
+<li><strong>评测协议</strong>：迭代 SA 运行至 &gt;95% 自旋系统归属；每轮 100 次独立运行；&gt;90% 一致性固定</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HEWL 全自动归属</td>
+<td>方法可处理 &gt;100 aa 未标记蛋白</td>
+<td>103 个 HN-Hα 交叉峰，6 轮迭代</td>
+<td>全部 103 峰归属，84% 与 BMRB 一致</td>
+<td>方法在 &gt;100 aa 蛋白上可行</td>
+<td>84% 准确率仍有 16% 错误，非完美归属</td>
+<td>Results 图 5、表 1</td>
+</tr>
+<tr>
+<td>TRX 全自动归属</td>
+<td>方法可推广至其他蛋白</td>
+<td>107 aa，3 轮迭代</td>
+<td>86/101 峰归属，85% 准确率</td>
+<td>方法具有跨蛋白泛化能力</td>
+<td>仅测试 3 种蛋白，未覆盖不同折叠类型</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>ArsC 全自动归属</td>
+<td>方法可处理更大蛋白</td>
+<td>139 aa，15 轮迭代</td>
+<td>107 峰归属，71% 准确率</td>
+<td>方法在 139 aa 蛋白上仍可工作</td>
+<td>准确率随分子量下降，15 轮才收敛</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>单工具 vs 三工具集成</td>
+<td>集成预测优于单一工具</td>
+<td>分别用 UCBShift2.0、EFG-CS、PLMs 单独预测</td>
+<td>PLMs 在 TRX 85% 但 HEWL 仅 7%；EFG-CS 在 HEWL 68% 但 ArsC 30%</td>
+<td>单一工具性能不稳定，集成必要</td>
+<td>未做集成 vs 最优单工具的严格统计检验</td>
+<td>Results 表 2</td>
+</tr>
+<tr>
+<td>首轮高置信度归属</td>
+<td>首轮归属可用于后续固定</td>
+<td>每蛋白首轮归属准确率</td>
+<td>TRX 94%、HEWL 91%、ArsC 86%，均高于最终平均准确率</td>
+<td>首轮高置信度归属可作为伪标签固定</td>
+<td>未分析首轮错误归属对后续的级联影响</td>
+<td>Results 表 1</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对主链共振归属（HN、Hα、13Cα、15N），不涉及侧链归属、NOE 距离约束提取或完整结构计算。</li>
+<li><strong>输入条件</strong>：需要 950 MHz 高场谱仪 + 低温探头，采集时间 &gt;14 h/异核谱；未标记蛋白浓度需 ~0.5 mM。这些条件并非所有实验室都具备。</li>
+<li><strong>oracle/真值输入</strong>：AI 化学位移预测（UCBShift2.0、EFG-CS、PLMs）是核心 oracle，其预测精度直接决定归属质量；BMRB 参考归属作为评估基准。</li>
+<li><strong>端到端状态</strong>：方法实现了从原始谱图到主链归属的自动化流程，但自旋系统提取仍需人工干预（"pre-extracted spin system data"），并非全自动。</li>
+<li><strong>算力成本</strong>：SA 每轮 100 次独立运行，ArsC 需 15 轮，总运行次数达 1500 次；虽未给出具体耗时，但计算成本显著高于简单贪心方法。</li>
+<li><strong>历史数据依赖</strong>：RF+SVM 氨基酸类型分类器依赖 BMRB 训练数据；AI 化学位移预测工具的训练集覆盖度影响泛化。</li>
+<li><strong>模型依赖</strong>：结果高度依赖三种 AI 预测工具的准确性；工具更新或替换可能改变性能。</li>
+<li><strong>最难情形</strong>：139 aa 的 ArsC 准确率降至 71%，且需 15 轮才收敛，表明分子量增大时性能显著下降。作者归因于 NOE 谱峰重叠和 AI 预测精度下降的协同效应。</li>
+<li><strong>群体/领域边界</strong>：仅测试 3 种球状蛋白，未覆盖膜蛋白、 intrinsically disordered proteins（IDPs）、多结构域蛋白或蛋白复合物。</li>
+<li><strong>不确定性</strong>：未报告置信区间或多次独立实验的标准差；"准确率"基于与 BMRB 参考归属的单次比较。</li>
+<li><strong>有边界的复述</strong>：本文证明，在 950 MHz 谱仪 + 低温探头条件下，通过三 AI 工具集成的伪标签策略，可在无同位素标记的情况下对 103–139 aa 的球状蛋白实现 71–85% 的主链归属准确率；该方法在更大蛋白或更复杂体系上的表现尚未验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大蛋白准确率下降</td>
+<td>ArsC（139 aa）准确率仅 71%，低于 HEWL（84%）和 TRX（85%）</td>
+<td>作者提出可引入 3D 结构模型进行交叉验证和迭代精修</td>
+<td>Results 讨论段</td>
+</tr>
+<tr>
+<td>AI 预测在柔性区域精度不足</td>
+<td>柔性 loop、结构域界面等区域的化学位移预测偏差大</td>
+<td>未明确给出解决方案，但暗示结构模型可辅助</td>
+<td>Results 讨论段</td>
+</tr>
+<tr>
+<td>未实现全自动自旋系统提取</td>
+<td>自旋系统需预先提取（"pre-extracted"）</td>
+<td>未明确提及</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>仅测试 3 种蛋白</td>
+<td>未覆盖膜蛋白、IDPs、多结构域蛋白等</td>
+<td>未明确提及</td>
+<td>Results 表 1</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：作者在讨论中提到的"3D 结构模型辅助精修"是作为未来方向提出，并非已实现功能。</p>
+</blockquote>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>准确率定义模糊</td>
+<td>"准确率"指与 BMRB 参考归属一致的残基比例，但未说明是否包含未归属残基、是否区分"错误归属"与"未归属"</td>
+<td>若将未归属残基计入分母，准确率可能被低估；若不计入，则可能高估</td>
+<td>要求作者明确准确率计算公式，并报告混淆矩阵（正确/错误/未归属）</td>
+<td>Results 表 1 仅给出百分比，未给出原始计数</td>
+</tr>
+<tr>
+<td>首轮高准确率可能源于简单残基优先</td>
+<td>首轮准确率 86–94% 可能因为算法优先归属化学位移独特、易匹配的残基（如 Gly、Ala、Pro），而困难残基留到后续轮次</td>
+<td>若如此，首轮准确率不能代表算法整体能力</td>
+<td>分析首轮归属残基的氨基酸类型分布，与蛋白整体组成比较</td>
+<td>Results 表 1：首轮准确率均高于最终准确率</td>
+</tr>
+<tr>
+<td>三工具集成的增益未严格量化</td>
+<td>表 2 显示单工具性能波动大，但未报告集成 vs 最优单工具的统计检验</td>
+<td>若集成增益不显著，则增加计算复杂度未必值得</td>
+<td>对多种蛋白重复实验，计算集成 vs 单工具的准确率差异及置信区间</td>
+<td>Results 表 2</td>
+</tr>
+<tr>
+<td>未与现有标记蛋白自动化归属工具对比</td>
+<td>未与 CARA、NMRFAM-SPARKY、PINE 等成熟工具在相同蛋白上对比</td>
+<td>无法判断本方法相对现有工具的优劣</td>
+<td>在相同数据集上运行现有工具，比较准确率、运行时间、人工干预量</td>
+<td>全文未提及对比实验</td>
+</tr>
+<tr>
+<td>谱仪要求高（950 MHz + cryoprobe）</td>
+<td>多数实验室无此设备，方法可及性受限</td>
+<td>若方法仅在高场下可行，则推广价值有限</td>
+<td>在 600/800 MHz 谱仪上测试灵敏度是否足够</td>
+<td>Methods：950 MHz 为唯一测试条件</td>
+</tr>
+<tr>
+<td>伪标签策略的失败模式未分析</td>
+<td>当 AI 预测化学位移系统偏差大时，伪标签可能将算法引向错误解；作者未讨论如何检测或纠正</td>
+<td>这是半监督方法的经典风险</td>
+<td>人为引入预测偏差，测试算法鲁棒性；分析错误归属残基的预测偏差模式</td>
+<td>Methods 节未提及鲁棒性分析</td>
+</tr>
+<tr>
+<td>未报告运行时间与计算资源</td>
+<td>SA 每轮 100 次运行 × 最多 15 轮，但未给出单次运行耗时</td>
+<td>若计算成本过高，实际应用受限</td>
+<td>要求作者报告总计算时间、CPU/GPU 配置</td>
+<td>全文未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题：Agent 提炼的知识候选</p>
+</blockquote>
+<ol>
+<li><strong>伪标签思想可迁移到结构计算</strong>：当实验数据不足时，AI 预测值（化学位移、接触图、距离图）可作为"伪标签"融入优化框架，而非仅作为最终验证。这为 AlphaFold 预测结构的实验验证提供了新思路——预测本身可成为解析实验数据的先验约束。</li>
+<li><strong>多工具集成优于单工具</strong>：三种 AI 化学位移预测工具单独使用时性能波动大（PLMs 在 HEWL 仅 7%），集成后显著提升稳定性。这提示在结构计算中，多模型集成（如 AlphaFold + ESMFold + RoseTTAFold 的预测集成）可能比依赖单一模型更鲁棒。</li>
+<li><strong>交替评分策略是处理多源约束的有效机制</strong>：奇数轮用四维化学位移、偶数轮用二维，这种交替使用不同约束子集的方式，可避免算法过度依赖某一类可能出错的约束。可迁移到 MD 模拟中的多目标优化或构象采样的约束切换。</li>
+<li><strong>高置信度固定 + 迭代扩展是处理大规模组合问题的通用策略</strong>：每轮固定 &gt;90% 一致性的自旋系统，逐步缩小搜索空间。这与蛋白质结构预测中的"先局部后全局"策略一致，也可用于分子对接中的逐步约束收紧。</li>
+<li><strong>异核维度约束可替代部分实验标记信息</strong>：虽然未标记蛋白无法直接测量 13Cα/15N，但 AI 预测值提供了"计算异核维度"，有效缓解了同核谱重叠问题。这提示在 MD 模拟或构象生成中，可引入计算预测的"虚拟实验维度"来增强约束。</li>
+<li><strong>实验-计算闭环是结构验证的趋势</strong>：本文展示了 AI 预测（化学位移）与实验（NMR 谱）的深度融合，这与 AlphaFold 预测 + MD 精修 + 实验验证的闭环逻辑一致，是结构生物学方法发展的方向。</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与半监督学习中的伪标签（pseudo-labeling）策略一致（Lee, 2013），本文将其引入 NMR 归属领域，属于跨域迁移。</li>
+<li><strong>相似工具</strong>：UCBShift 系列（Li et al., 2020; 2023）为本文使用的 AI 化学位移预测工具之一；EFG-CS 和 PLMs 为其他两种工具。这些工具本身是 AI 蛋白质结构预测生态的一部分。</li>
+<li><strong>组合优化框架</strong>：模拟退火 + Monte Carlo 采样在 NMR 归属中有长期应用（如 UNIO、FLYA 等），本文的创新在于伪标签约束的引入和交替评分策略。</li>
+<li><strong>与 AlphaFold 的关系</strong>：本文引言明确指出，AI 结构预测需要实验验证，NMR 是重要手段；本文方法可加速这一验证流程。这与 AlphaFold 论文（Jumper et al., 2021）中"实验验证不可替代"的立场一致。</li>
+<li><strong>与 MD 模拟的潜在连接</strong>：本文的化学位移伪标签可作为 MD 模拟中的实验约束（类似 CAMDAS 或 PPM 方法），用于构象筛选或力场校准。</li>
+<li><strong>与分子对接的潜在连接</strong>：本文的"高置信度固定 + 迭代扩展"策略可迁移到蛋白-配体对接中的逐步约束收紧，特别是当实验表位信息有限时。</li>
+<li><strong>候选方向（未验证）</strong>：将本文伪标签策略与 AlphaFold 预测结构结合，用预测结构的化学位移作为伪标签，可能进一步扩展 NMR 自动化归属的适用范围。</li>
+</ul>
+<h2>16 研究想法</h2>
+<blockquote>
+<p>标题：Agent 生成的研究候选</p>
+</blockquote>
+<p><strong>候选 1：AlphaFold 结构引导的伪标签 NMR 归属</strong>
+- <strong>来源局限/观察</strong>：本文使用序列级 AI 化学位移预测（UCBShift2.0 等），未利用 AlphaFold 预测的三维结构信息；而结构已知时化学位移预测精度通常更高。
+- <strong>核心假设</strong>：以 AlphaFold 预测结构为输入，用结构基化学位移预测工具（如 ShiftX2、SPARTA+）生成伪标签，可提高 &gt;100 aa 蛋白的归属准确率。
+- <strong>增量</strong>：将结构信息引入伪标签生成，可能显著提升柔性区域和重叠峰的判别力。
+- <strong>初步方法</strong>：对目标蛋白运行 AlphaFold → 用预测结构生成化学位移伪标签 → 与本文 SA 框架集成 → 在 HEWL/TRX/ArsC 上对比。
+- <strong>验证方式</strong>：与本文结果（84%/85%/71%）对比，检验准确率提升。
+- <strong>失败模式</strong>：AlphaFold 预测结构在柔性区域不可靠，可能引入比序列基预测更大的偏差。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 2：交替评分策略迁移到 MD 模拟的约束切换</strong>
+- <strong>来源局限/观察</strong>：本文交替使用四维/二维化学位移评分，有效缓解了单一约束集的偏差。MD 模拟中常面临多种实验约束（RDC、PRE、NOE、化学位移）权重难以平衡的问题。
+- <strong>核心假设</strong>：在 MD 模拟中交替使用不同实验约束子集，可避免单一约束主导导致的构象偏差，提高系综采样质量。
+- <strong>增量</strong>：将"交替约束"思想引入 MD 模拟，替代传统的固定权重多约束方案。
+- <strong>初步方法</strong>：在 MD 模拟中设计交替约束调度（奇数轮用化学位移，偶数轮用 NOE），比较与固定权重方案的构象系综差异。
+- <strong>验证方式</strong>：对已知蛋白（如泛素）比较模拟系综与实验 RDC/RMSD 的一致性。
+- <strong>失败模式</strong>：交替约束可能导致模拟不收敛或引入非物理的构象跳变。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 3：多 AI 工具集成的置信度加权评分</strong>
+- <strong>来源局限/观察</strong>：本文对三种 AI 工具简单求和评分，未考虑各工具在不同残基类型或结构环境下的置信度差异。
+- <strong>核心假设</strong>：根据残基局部环境（二级结构、溶剂可及性、柔性）动态调整各工具的权重，可进一步提高归属准确率。
+- <strong>增量</strong>：从"等权集成"升级为"自适应加权集成"。
+- <strong>初步方法</strong>：训练一个元模型，以残基特征为输入，预测各工具在该位置的可靠性，动态生成权重。
+- <strong>验证方式</strong>：在更多蛋白（&gt;10 种）上测试，与等权集成对比。
+- <strong>失败模式</strong>：元模型过拟合，权重调整引入新偏差。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 4：伪标签策略扩展到侧链归属</strong>
+- <strong>来源局限/观察</strong>：本文仅处理主链归属，侧链归属仍是 NMR 自动化瓶颈。
+- <strong>核心假设</strong>：主链归属确定后，AI 预测的侧链化学位移可作为伪标签，辅助侧链归属。
+- <strong>增量</strong>：将伪标签框架从主链扩展到侧链，可能实现更完整的自动化归属。
+- <strong>初步方法</strong>：在主链归属基础上，用 AI 预测侧链化学位移，扩展 SA 评分函数。
+- <strong>验证方式</strong>：在已知结构蛋白上比较侧链归属准确率。
+- <strong>失败模式</strong>：侧链化学位移预测精度不足，伪标签噪声过大。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 5：伪标签归属与 AlphaFold 结构验证的闭环</strong>
+- <strong>来源局限/观察</strong>：本文方法可验证 AI 预测结构，但未与 AlphaFold 形成闭环。
+- <strong>核心假设</strong>：NMR 归属结果可反馈优化 AlphaFold 预测（如通过化学位移约束重折叠），而优化后的结构又可生成更好的伪标签，形成迭代闭环。
+- <strong>增量</strong>：提出"实验-计算互增强"框架，超越单向验证。
+- <strong>初步方法</strong>：设计迭代协议：AlphaFold 预测 → 伪标签归属 → 归属结果作为约束重预测 → 重复。
+- <strong>验证方式</strong>：在已知结构蛋白上测试闭环是否收敛到正确结构。
+- <strong>失败模式</strong>：错误归属在闭环中放大，导致发散。
+- <strong>创新状态</strong>：unverified</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, introduction, methods, results, discussion, conclusion, and supplementary data description.</li>
+<li><strong>Assessment boundary</strong> Scientific and technical evaluation of the proposed pseudo-labeling approach for automated NMR resonance assignment of unlabeled proteins exceeding 100 amino acid residues. Assessment is limited to the provided manuscript content.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present a computational pipeline that integrates AI-predicted chemical shifts (HN, Hα, 13Cα, 15N) from three tools (UCBShift2.0, EFG-CS, PLMs) into an iterative simulated annealing framework with alternating scoring schemes, enabling automated backbone resonance assignment of unlabeled proteins larger than 100 residues. Demonstrated on hen egg white lysozyme (HEWL, 129 aa), thioredoxin (TRX, 107 aa), and arsenate reductase (ArsC, 139 aa), with reported assignment accuracies of 84%, 85%, and 71%, respectively.</li>
+<li><strong>Visible evidence base</strong> Abstract; Introduction; Methods sections including NMR spectroscopy, pseudo-labeling approach, and assignment workflow; Results and discussions with Figures 1-5 and Tables 1-2; Conclusion; Data availability statement.</li>
+<li><strong>Missing materials affecting confidence</strong> Raw NMR spectra, detailed spin system extraction protocols, parameter settings for the simulated annealing algorithm, validation metrics beyond assignment accuracy, comparison with existing automated assignment tools, and the supplementary data file referenced as "Multimedia component 1" were not available for assessment.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a relevant and timely problem in structural biology, namely the validation of AI-predicted protein structures using NMR without isotopic labeling. The proposed pseudo-labeling strategy is conceptually interesting and represents a logical extension of the authors' prior work on ubiquitin. However, the evidence presented is insufficient to fully establish the reliability and generalizability of the method. Key technical details are missing, the reported accuracies are modest, and the validation approach lacks rigor in several respects. The manuscript would benefit from additional benchmarking, error analysis, and clarification of the methodology before the claims can be considered fully supported.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in NMR spectroscopy, structural biology, and computational biology would be interested, particularly those seeking to reduce the cost and technical barriers of protein structure determination. The work may also appeal to the AI-driven protein structure prediction community, as it offers an experimental validation pathway for predicted models. Additionally, laboratories without specialized NMR expertise but with access to high-field instruments could find the automated aspect attractive.</li>
+<li><strong>Major strengths</strong> 1) The problem addressed is of practical importance, as isotope labeling remains a bottleneck in NMR-based structural studies. 2) The integration of multiple AI prediction tools into a consensus scoring framework is a sensible strategy to mitigate individual tool biases. 3) The pseudo-labeling concept, using AI-predicted heteronuclear shifts as computational substitutes for experimental labeling, is creative and potentially impactful. 4) The iterative alternating scoring scheme is a thoughtful design to leverage complementary information across spectral dimensions. 5) The demonstration on three proteins of different sizes provides some evidence of generalizability.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The manuscript claims that the method enables "reliable automated backbone resonance assignment for unlabeled proteins exceeding 100 amino acid residues."</li>
+<li><strong>Evidence pointer</strong> Results and discussions, Table 1</li>
+<li><strong>Concern</strong> The reported assignment accuracies are 84% (HEWL), 85% (TRX), and 71% (ArsC). These figures indicate that a substantial fraction of residues (16-29%) are incorrectly assigned. The manuscript does not provide an analysis of the nature or distribution of these errors. It is unclear whether errors are concentrated in specific regions (e.g., flexible loops, termini) or randomly distributed. Without this information, the claim of "reliable" assignment is not well supported. Moreover, the accuracy metric itself is not clearly defined (e.g., residue-level vs. spin-system-level, and how partial assignments are counted).</li>
+<li><strong>Why it matters</strong> For the method to be useful in practice, users need to know where errors are likely to occur and how to interpret the confidence of individual assignments. A 71-85% accuracy range may be insufficient for many downstream applications, such as structure calculation or binding site validation, where incorrect assignments could lead to erroneous conclusions.</li>
+<li><strong>Resolution test</strong> Provide a detailed error analysis, including per-residue accuracy as a function of sequence position, secondary structure, and solvent accessibility. Define the accuracy metric precisely and report precision and recall separately. If possible, compare assigned chemical shifts with experimentally determined values for a subset of residues to validate the assignments independently.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The manuscript states that the method "effectively resolves severe cross-peak overlap during the automated assignment process by introducing heteronuclear dimensional constraints."</li>
+<li><strong>Evidence pointer</strong> Methods, Pseudo-labelling approach; Results and discussions, Figures 2-3</li>
+<li><strong>Concern</strong> The mechanism by which the pseudo-labeling strategy resolves cross-peak overlap is not quantitatively demonstrated. The manuscript shows schematic figures and heat maps, but there is no quantitative analysis of how many ambiguous assignments were resolved by the heteronuclear constraints versus the homonuclear data alone. The authors do not report the number of spin systems that were ambiguous at each stage, nor do they quantify the improvement attributable to the pseudo-labeling approach.</li>
+<li><strong>Why it matters</strong> The central claim of the paper is that the pseudo-labeling strategy overcomes the convergence failure observed for larger proteins. Without a clear demonstration that the heteronuclear constraints are responsible for the improved performance, the causal link between the proposed method and the reported results is not established.</li>
+<li><strong>Resolution test</strong> Perform ablation studies where the assignment is run with and without the heteronuclear constraints, and report the resulting accuracies and convergence behavior. Quantify the number of spin systems that were resolved uniquely by the heteronuclear information. Provide a detailed example of a specific ambiguous region that was resolved by the pseudo-labeling approach.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The manuscript claims that the method is "fully automated" and that the workflow is applicable to "researchers without specialized NMR expertise."</li>
+<li><strong>Evidence pointer</strong> Methods, Assignment workflow; Results and discussions</li>
+<li><strong>Concern</strong> The manuscript does not describe the level of manual intervention required at various stages of the pipeline. Spin system extraction from COSY, TOCSY, HSQC, and HMQC spectra is a non-trivial step that typically requires expert judgment, especially in crowded regions. The authors do not specify whether spin system identification was performed manually, semi-automatically, or fully automatically. If manual curation was involved, the claim of full automation is overstated.</li>
+<li><strong>Why it matters</strong> The stated goal of lowering the technical barrier for non-experts depends critically on the degree of automation. If expert intervention is required for spectral interpretation, the practical utility of the method for the target audience is diminished.</li>
+<li><strong>Resolution test</strong> Clearly describe the spin system extraction procedure, including any manual steps. If manual curation was used, quantify the time and expertise required. Ideally, demonstrate the pipeline on a dataset where spin systems are extracted automatically without expert intervention, and report the resulting accuracy.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> The manuscript states that the approach "will lower the technical barrier to biomolecular NMR, enabling researchers without specialized NMR expertise to employ NMR spectroscopy in fundamental life science research and drug development."</li>
+<li><strong>Evidence pointer</strong> Abstract; Conclusion</li>
+<li><strong>Concern</strong> The broader impact claim is not supported by the data presented. The method requires high-field NMR spectrometers (≥800 MHz) with cryoprobes and acquisition times exceeding 14 hours per heteronuclear experiment. These requirements represent significant infrastructure and time investments that may not be accessible to many potential users. The manuscript does not discuss the cost-benefit trade-off compared to conventional isotope labeling, which, while expensive, is a well-established and reliable approach.</li>
+<li><strong>Why it matters</strong> The significance of the work depends on whether it genuinely lowers barriers to NMR use. If the method still requires specialized equipment and long acquisition times, the practical advantage over conventional approaches may be limited.</li>
+<li><strong>Resolution test</strong> Provide a quantitative comparison of the total cost and time required for the proposed method versus conventional isotope labeling and assignment, including sample preparation, NMR acquisition, and data analysis. Discuss the accessibility of the required instrumentation and whether the method is feasible in typical structural biology laboratories.</li>
+<li><strong>Concern ID</strong> R1-M5</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The manuscript claims that "integrating predictions from multiple tools produces a substantially more robust and accurate assignment than any single tool alone."</li>
+<li><strong>Evidence pointer</strong> Results and discussions, Table 2</li>
+<li><strong>Concern</strong> The comparison in Table 2 shows that individual tools perform poorly on some proteins (e.g., PLMs at 7% on HEWL), but the integrated approach achieves 84-85% on HEWL and TRX. However, the manuscript does not explain why the integration is effective or how the consensus scoring is weighted. It is unclear whether the improvement is due to genuine complementarity or simply to a majority-voting effect. Additionally, the performance of the integrated approach on ArsC (71%) is not substantially better than the best individual tool (EFG-CS at 68% for HEWL, but the ArsC column shows EFG at 30%, UCB at 33%, PLMs at 50%), suggesting that integration does not always provide a large benefit.</li>
+<li><strong>Why it matters</strong> Understanding the source of the improvement is important for assessing the robustness of the method and for potential users who may have access to only one or two prediction tools.</li>
+<li><strong>Resolution test</strong> Provide a more detailed analysis of the consensus scoring mechanism, including the weights assigned to each tool and the sensitivity of the results to these weights. Report the performance of all pairwise combinations of tools to assess the marginal contribution of each. Discuss scenarios where integration may not be beneficial.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity and reproducibility</li>
+<li><strong>Affected element</strong> Methods, Pseudo-labelling approach</li>
+<li><strong>Evidence pointer</strong> Figure 2</li>
+<li><strong>Issue</strong> The heat map in Figure 2 shows pairwise distances but does not indicate the threshold used to define a "match" beyond the color scale. The tiered scoring scheme is described qualitatively (e.g., "distances below 0.1 yield a score of 50"), but the full scoring table is not provided.</li>
+<li><strong>Required correction</strong> Provide the complete scoring table with all distance intervals and corresponding scores. Specify the exact threshold for considering a match and how the PCA dimensionality is chosen.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity and reproducibility</li>
+<li><strong>Affected element</strong> Methods, Assignment workflow</li>
+<li><strong>Evidence pointer</strong> Figure 4</li>
+<li><strong>Issue</strong> The flowchart in Figure 4 is high-level and does not include specific parameters for the simulated annealing algorithm, such as initial temperature, cooling rate, number of iterations per round, and convergence criteria.</li>
+<li><strong>Required correction</strong> Provide the full parameter set for the SA algorithm, including the temperature schedule and termination conditions. If standard settings are used, cite the relevant literature.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data presentation</li>
+<li><strong>Affected element</strong> Results and discussions, Table 1</li>
+<li><strong>Evidence pointer</strong> Table 1</li>
+<li><strong>Issue</strong> The table reports the number of assigned residues and accuracy per round, but the accuracy calculation is not defined. It is unclear whether accuracy is calculated relative to the total number of residues in the protein or relative to the number of spin systems identified.</li>
+<li><strong>Required correction</strong> Define the accuracy metric explicitly in the table caption or in the main text. Report the number of spin systems identified at each stage and the number of residues for which assignments were attempted.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Literature context</li>
+<li><strong>Affected element</strong> Introduction</li>
+<li><strong>Evidence pointer</strong> Introduction, paragraphs 2-3</li>
+<li><strong>Issue</strong> The introduction cites prior work on automated assignment of unlabeled proteins but does not provide a comprehensive comparison with recent computational approaches for assignment of labeled proteins, such as those using deep learning or automated peak picking.</li>
+<li><strong>Required correction</strong> Add a brief discussion of state-of-the-art automated assignment tools for labeled proteins and clarify the specific advantages of the proposed method in the context of unlabeled samples.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data availability</li>
+<li><strong>Affected element</strong> Data availability statement</li>
+<li><strong>Evidence pointer</strong> Data availability</li>
+<li><strong>Issue</strong> The data availability statement provides a link to a repository, but the specific contents (raw spectra, assignment tables, code) are not described.</li>
+<li><strong>Required correction</strong> Specify which data and code are deposited, and provide a description of the file structure to facilitate reuse.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> 1) Lack of ablation studies demonstrating the specific contribution of the pseudo-labeling heteronuclear constraints to the reported assignment accuracy (R1-M2). 2) Insufficient error analysis, including the distribution and nature of incorrect assignments (R1-M1). 3) Unclear degree of automation in spin system extraction, which is critical for the claimed accessibility of the method (R1-M3). 4) Incomplete specification of the simulated annealing parameters and scoring function details, preventing reproducibility (R1-m2). 5) The accuracy metric is not precisely defined, and the reported values (71-85%) may not be sufficient for the claimed applications (R1-M1).</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The pseudo-labeling concept, using AI-predicted heteronuclear shifts as computational substitutes for isotopic labeling, is a creative and original contribution that extends prior work in a meaningful way. Scientific importance: The problem of reducing the cost and complexity of NMR-based structure validation is important, particularly in the context of AI-driven structure prediction. However, the demonstrated performance (71-85% accuracy) and the requirement for high-field instruments with long acquisition times limit the immediate practical impact. Interdisciplinary readership: The work bridges NMR spectroscopy, computational biology, and AI, and would appeal to researchers in these fields. Technical soundness: The methodology is plausible, but the evidence provided is insufficient to fully establish its reliability. Key technical details are missing, and the validation is not sufficiently rigorous. Readability for nonspecialists: The manuscript is generally well-written and accessible, with clear figures and a logical structure. However, some technical aspects, such as the PCA-based scoring and the SA algorithm, may be challenging for readers without a computational background.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea is promising and relevant, but the manuscript requires substantial revisions to address the technical concerns outlined above, particularly the need for ablation studies, error analysis, and clarification of the automation level. The reported accuracies, while modest, may be acceptable for specific applications if the limitations are clearly stated and the method is shown to be robust across a wider range of proteins.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the method enables "reliable automated backbone resonance assignment" is not fully supported given the reported accuracies of 71-85% and the lack of error analysis.</li>
+<li>The claim that the pseudo-labeling strategy "effectively resolves severe cross-peak overlap" is not quantitatively demonstrated.</li>
+<li>The claim that the method "will lower the technical barrier to biomolecular NMR" is not supported by a cost-benefit analysis and may be overstated given the requirement for high-field instruments and long acquisition times.</li>
+<li>The generalizability of the method beyond the three tested proteins is not established, and the manuscript does not discuss potential failure modes for other protein classes (e.g., membrane proteins, intrinsically disordered proteins).</li>
+<li>The statement that the first-round assignments are "particularly well suited" for validating AI-predicted binding sites is speculative and not supported by experimental validation of this specific application.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

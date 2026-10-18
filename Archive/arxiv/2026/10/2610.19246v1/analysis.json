@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2610.19246v1",
+  "title": "Refined Topology-Pass Scheduling: Damped Trust-Region Compensation for Dynamic k-NN Graphs in SE(3)-Equivariant Structure Prediction",
+  "authors": "Jiankai Huang; Hanwen Shen",
+  "journal": "",
+  "published_date": "2026-10-13",
+  "window": {
+    "start": "2026-10-11",
+    "end": "2026-10-17"
+  },
+  "score": 7,
+  "one_liner_zh": "该文针对SE(3)-等变蛋白质结构预测中的动态kNN图重建开销，提出阻尼信任域补偿的两遍调度策略，在保持预测精度的同时显著加速，属于蛋白质结构预测的工程优化，方法有理论分析但创新性有限。",
+  "abstract": "Equivariant structure-prediction pipelines alternate coordinate updates with the construction of a k-nearest-neighbour (kNN) graph whose membership is a discrete, piecewise-constant function of the coordinates. Rebuilding that graph at every block boundary (PB) is the expensive part of an epoch, whereas reusing one frozen graph (F) is fast but leaves a topology gap. We study a two-pass design in which the cheap pass records a small amount of state (margins, kNN radii, measured per-boundary displacements) and a second pass compensates conservatively. We formulate the choice of the graph-construction basis as a damped fixed-point iteration whose unique fixed point is exactly PB, and derive (i) exact non-flip certificates with the two-sided constant $m_i/4$ and one-sided constant $m_i/2$, (ii) the minimum-variance (BLUE) replay gain $γ^*$ and the resulting feasibility crossover, (iii) an $\\ell_\\infty$ trust-region projection that preserves convergence, and (iv) an analytic near-tie spacing law $E[m] \\approx r_k/(3k)$ that matches measurements to 1\\%. Three compensation levels are implemented in C++ (L1: frozen set with live geometry; L2: margin-gated local repair; L3: damped, projected basis) and validated under a matched-conditions protocol (identical seed, MSA depth and trajectory family, only the topology mode differs). L2 reproduces the PB edge set exactly ($D = 0.0000$ at every boundary), L1 stays within 0.6% and L3 interpolates monotonically: L2 reproduces the PB edge set exactly when the trust region is removed, and L3 interpolates between the frozen and the PB topology. The recorded trajectory itself yields a measured $1.5\\times$ Pass-1 and $1.76\\times$ epoch speed-up with no measurable loss gap. An open-source implementation of the runtime and of all the experiments reported here is available at https://github.com/AlbertHuang96/ProteinPredictMachineLearning.",
+  "abstract_zh": "等变结构预测流程交替进行坐标更新和k近邻（kNN）图的构建，其中kNN图的成员关系是坐标的离散、分段常数函数。在每个块边界（PB）处重建该图是每个训练周期中昂贵的部分，而重用单个冻结图（F）则快速但留下拓扑间隙。我们研究了一种两遍设计，其中廉价遍记录少量状态（边距、kNN半径、测得的每边界位移），第二遍则保守地补偿。我们将图构建基的选择表述为阻尼不动点迭代，其唯一不动点恰好是PB，并推导出（i）具有双边常数$m_i/4$和单边常数$m_i/2$的精确非翻转证书，（ii）最小方差（BLUE）重放增益$γ^*$及由此产生的可行性交叉点，（iii）保持收敛性的$\\ell_\\infty$信任域投影，以及（iv）与测量值匹配至1%的解析近等距间距定律$E[m] \\approx r_k/(3k)$。三种补偿级别在C++中实现（L1：冻结集与实时几何；L2：边距门控局部修复；L3：阻尼、投影基），并在匹配条件协议下验证（相同种子、MSA深度和轨迹族，仅拓扑模式不同）。L2精确复现PB边集（每个边界处$D = 0.0000$），L1保持在0.6%以内，L3单调插值：当移除信任域时，L2精确复现PB边集，L3在冻结拓扑和PB拓扑之间插值。记录的轨迹本身产生测得的$1.5\\times$第一遍和$1.76\\times$训练周期加速，且无可测损失间隙。运行时及本文报告的所有实验的开源实现可在https://github.com/AlbertHuang96/ProteinPredictMachineLearning获取。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2610.19246v1",
+  "source_url": "https://arxiv.org/abs/2610.19246v1",
+  "paper_page_path": "papers/arxiv/2610.19246v1/index.html"
+}

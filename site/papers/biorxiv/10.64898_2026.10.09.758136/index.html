@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protein Deimmunization with a Generative Diffusion Model · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Protein Deimmunization with a Generative Diffusion Model</h1>
+      <div class="meta">Zijie Chen; Chih-chieh Yu; Cai Zhou; Xinyun Jiang; Long Nguyen; Cameron Myhrvold; Tommi S Jaakkola; Kaiyi Jiang</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-16
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.09.758136">原文</a>
+      </div>
+      <p class="one-liner">该文开发了生成式离散扩散模型MESSI，以蛋白质结构为输入设计去免疫原性序列，属于蛋白质序列设计结合结构约束的AI方法，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein immunogenicity is a major cause of biologic drug failure, leading to the production of anti-drug antibodies (ADA) that accelerate drug clearance, rejection of repeated doses, abolished efficacy, and sometimes life threatening anaphylaxis in patients. These responses constrain the clinical use of synthetic protein therapeutics from non-human origin. To efficiently deimmunize protein therapeutics, we developed a generative discrete diffusion model (MESSI), which takes protein structures as input and outputs sequences that preserve structure without containing peptides predicted to bind major histocompatibility complex class II molecules. MESSI designs sequences with high structural recovery and down to 0 predicted epitopes for specified MHC molecules at higher efficiency than post-hoc filtering approaches. Experimentally, we first applied MESSI to deimmunize a luciferase and a de novo designed mini-binder against PD-1, resulting in variants with no predicted epitopes and higher activity than their parents. Lastly, we coupled MESSI with evolution guidance to deimmunize uricase, a clinically approved enzyme with severe immunogenicity, and found deimmunized variants with higher catalytic activity than their natural orthologs. MESSI enables generative design of functional proteins with minimized immunogenicity, potentially making protein therapeutics safer and more effective.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质免疫原性是生物药物失败的主要原因，导致产生抗药物抗体（ADA），这些抗体加速药物清除、排斥重复给药、使疗效丧失，有时甚至引发患者危及生命的过敏反应。这些反应限制了来自非人类来源的合成蛋白质疗法的临床应用。为了高效去免疫化蛋白质疗法，我们开发了一种生成式离散扩散模型（MESSI），该模型以蛋白质结构为输入，输出保持结构但不包含预测能结合主要组织相容性复合体II类分子的肽段的序列。MESSI设计的序列具有高结构恢复率，并且对于指定的MHC分子，预测表位可降至0，其效率高于事后过滤方法。实验上，我们首先将MESSI应用于去免疫化一种荧光素酶和一种针对PD-1的从头设计迷你结合蛋白，所得变体无预测表位且活性高于其亲本。最后，我们将MESSI与进化引导相结合，去免疫化尿酸氧化酶（一种临床上已批准但具有严重免疫原性的酶），发现去免疫化变体的催化活性高于其天然同源物。MESSI实现了具有最小免疫原性的功能蛋白的生成式设计，有望使蛋白质疗法更安全、更有效。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Protein Deimmunization with a Generative Diffusion Model</li>
+<li><strong>作者</strong>：Zijie Chen; Chih-chieh Yu; Cai Zhou; Xinyun Jiang; Long Nguyen; Cameron Myhrvold; Tommi S Jaakkola; Kaiyi Jiang</li>
+<li><strong>单位</strong>：未提供（根据竞争利益声明推测涉及 Princeton University，但作者单位列表未在摘要中提供）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026（预印本日期 2026-10-16）</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 实验验证）</li>
+<li><strong>领域</strong>：蛋白质设计 × 生成式扩散模型 × 免疫原性工程</li>
+<li><strong>关键词</strong>：deimmunization, diffusion model, MHC class II, epitope, protein therapeutics, sequence design</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.10.09.758136</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-10-16</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质序列设计 × 生成式 AI」方向，具体为用离散扩散模型在给定结构条件下生成低免疫原性序列。与结构预测（AlphaFold 类）不同，本文聚焦序列生成与功能保持，属于「结构→序列」的反向设计任务，与分子对接、MD 模拟无直接关联，但与结构条件生成、功能约束下的序列设计高度相关。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出一个生成式离散扩散模型 MESSI，以蛋白质结构为输入，生成保持结构且不含预测 MHC-II 结合表位的序列，并在荧光素酶、PD-1 mini-binder 和尿酸酶上实验验证了去免疫化变体具有与亲本相当或更高的活性。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何高效地对蛋白质治疗药物进行去免疫化（deimmunization），即在保持结构和功能的前提下，消除或最小化序列中预测的 MHC-II 结合表位？</li>
+<li><strong>为什么重要</strong>：蛋白质药物的免疫原性导致 ADA 产生，加速药物清除、降低疗效、甚至引发过敏反应，严重限制非人源蛋白治疗药物的临床应用。</li>
+<li><strong>现有方法为何不足</strong>：传统的 post-hoc filtering 方法（先设计序列再过滤掉含表位的候选）效率低，且过滤后可能损失大量功能序列；同时缺乏全局优化能力，难以在序列空间中同时满足结构保持和表位消除两个目标。</li>
+<li><strong>精确研究问题</strong>：Can a generative diffusion model directly produce protein sequences that preserve structure while containing zero predicted MHC-II epitopes, with higher efficiency and better functional outcomes than post-hoc filtering approaches?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文摘要推断，标注为「仅本文框架」，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 免疫原性预测</td>
+<td>MHC-II 结合预测工具（如 NetMHCIIpan 类）</td>
+<td>可快速评估表位</td>
+<td>仅预测，不提供修改方案</td>
+<td>作为 MESSI 的评分/过滤组件</td>
+</tr>
+<tr>
+<td>2. 序列设计</td>
+<td>基于结构的序列设计（如 Rosetta、ProteinMPNN）</td>
+<td>可生成高结构恢复率序列</td>
+<td>不考虑免疫原性</td>
+<td>MESSI 的基础生成能力</td>
+</tr>
+<tr>
+<td>3. 去免疫化</td>
+<td>post-hoc filtering（先设计后过滤）</td>
+<td>简单直接</td>
+<td>效率低，可能损失功能序列</td>
+<td>本文对比的基线方法</td>
+</tr>
+<tr>
+<td>4. 生成式去免疫化</td>
+<td>MESSI（离散扩散模型）</td>
+<td>端到端生成低免疫原性序列，效率高</td>
+<td>依赖结构输入和表位预测准确性</td>
+<td>本文提出</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>蛋白质药物免疫原性</td>
+<td>ADA 产生，加速清除、疗效丧失、过敏反应</td>
+<td>非人源蛋白序列含 MHC-II 结合表位</td>
+<td>Abstract 第 1-2 句</td>
+</tr>
+<tr>
+<td>现有去免疫化效率低</td>
+<td>post-hoc filtering 效率低于 MESSI</td>
+<td>先生成后过滤，搜索空间受限</td>
+<td>Abstract：「at higher efficiency than post-hoc filtering approaches」</td>
+</tr>
+<tr>
+<td>去免疫化与功能保持难以兼顾</td>
+<td>去表位后活性下降</td>
+<td>表位残基可能与功能关键残基重叠</td>
+<td>Abstract：MESSI 变体「higher activity than their parents」暗示解决了此问题</td>
+</tr>
+<tr>
+<td>临床已批准药物免疫原性严重</td>
+<td>尿酸酶临床使用受限</td>
+<td>天然序列含大量表位</td>
+<td>Abstract：尿酸酶「severe immunogenicity」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：MESSI 是一个生成式离散扩散模型，输入蛋白质结构，输出氨基酸序列；在扩散过程中以 MHC-II 表位预测为约束，逐步去噪生成低免疫原性序列。</p>
+<p><strong>2) 核心洞察</strong>：将去免疫化从「设计→过滤」的两步流程转变为「生成即去免疫化」的单步流程。通过在生成过程中内嵌表位约束，模型在序列空间中同时优化结构保持和免疫原性最小化，而非事后筛选。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：对于蛋白质设计中的多目标优化问题（如结构保持 + 功能 + 免疫原性 + 表达量等），将约束嵌入生成过程比事后过滤更高效。这一思路可迁移到其他「生成 + 约束」场景，如可溶性设计、稳定性设计等。</p>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质结构（可能为 PDB 格式或结构坐标）</li>
+<li><strong>输出</strong>：去免疫化的氨基酸序列（保持结构）</li>
+<li><strong>模块</strong>：
+  1. 结构编码器（将结构信息编码为条件）
+  2. 离散扩散模型（序列生成）
+  3. MHC-II 表位预测器（作为约束/评分函数）
+  4. 可选：进化引导模块（用于尿酸酶案例）</li>
+<li><strong>训练</strong>：未提供具体训练细节（摘要未涉及）</li>
+<li><strong>工具</strong>：未提供具体工具名（如 Rosetta、AlphaFold 等）</li>
+<li><strong>反馈回路</strong>：扩散去噪过程中，每一步根据表位预测调整生成方向</li>
+<li><strong>假设</strong>：结构决定功能，保持结构即可保持功能；MHC-II 表位预测器可准确识别免疫原性表位</li>
+<li><strong>文字流程</strong>：输入结构 → 结构编码 → 离散扩散模型以结构为条件逐步去噪 → 每一步以 MHC-II 表位预测为约束 → 输出低免疫原性序列 → 实验验证（荧光素酶、mini-binder、尿酸酶）</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构编码器</td>
+<td>将结构信息转化为模型可用的条件表示</td>
+<td>使生成序列保持目标结构</td>
+<td>输入：结构坐标；输出：结构嵌入</td>
+<td>摘要：「takes protein structures as input」</td>
+<td>预期影响：无法保持结构，序列功能丧失 [预期效应]</td>
+</tr>
+<tr>
+<td>离散扩散模型</td>
+<td>生成氨基酸序列</td>
+<td>核心生成能力</td>
+<td>输入：结构嵌入 + 噪声；输出：序列</td>
+<td>摘要：「generative discrete diffusion model」</td>
+<td>预期影响：无生成能力 [预期效应]</td>
+</tr>
+<tr>
+<td>MHC-II 表位预测器</td>
+<td>预测序列中 MHC-II 结合表位</td>
+<td>约束生成方向，消除免疫原性</td>
+<td>输入：序列；输出：表位预测</td>
+<td>摘要：「without containing peptides predicted to bind MHC-II」</td>
+<td>预期影响：无法控制免疫原性 [预期效应]</td>
+</tr>
+<tr>
+<td>进化引导模块</td>
+<td>引导生成方向以提升功能</td>
+<td>尿酸酶案例中需同时优化催化活性</td>
+<td>输入：序列 + 功能评分；输出：引导信号</td>
+<td>摘要：「coupled MESSI with evolution guidance」</td>
+<td>仅尿酸酶案例使用；移除后可能无法获得高活性变体 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于仅提供摘要，所有消融效应均为「预期效应」而非「实测消融效应」。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。摘要中未提供任何数学公式或符号定义。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：
+- 荧光素酶（luciferase）：未提供具体物种/序列信息
+- PD-1 靶向 de novo mini-binder：未提供具体序列信息
+- 尿酸酶（uricase）：临床已批准酶，未提供具体物种来源</p>
+<p><strong>规模</strong>：未提供（无序列数量、变体数量等）</p>
+<p><strong>指标</strong>：
+- 结构恢复率（structural recovery）
+- 预测表位数量（predicted epitopes，目标为 0）
+- 活性（activity，具体测定方法未提供）
+- 催化活性（catalytic activity，尿酸酶案例）</p>
+<p><strong>基线</strong>：post-hoc filtering 方法</p>
+<p><strong>预算/骨干/仪器</strong>：未提供</p>
+<p><strong>oracle 输入</strong>：MHC-II 表位预测器（具体工具未提供）</p>
+<p><strong>评测协议</strong>：未提供（实验细节未在摘要中描述）</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算验证：结构恢复 + 表位消除</td>
+<td>MESSI 可生成高结构恢复、零表位序列</td>
+<td>对比 post-hoc filtering</td>
+<td>结构恢复率高，表位降至 0，效率高于 baseline</td>
+<td>MESSI 在计算层面优于 post-hoc filtering</td>
+<td>无法判断泛化性、无法判断功能</td>
+<td>Abstract 第 3 句</td>
+</tr>
+<tr>
+<td>荧光素酶去免疫化</td>
+<td>MESSI 可去免疫化功能性酶</td>
+<td>与亲本活性对比</td>
+<td>变体无预测表位且活性高于亲本</td>
+<td>MESSI 可保持/提升功能</td>
+<td>仅单一蛋白，无法推广</td>
+<td>Abstract 第 4 句</td>
+</tr>
+<tr>
+<td>PD-1 mini-binder 去免疫化</td>
+<td>MESSI 可去免疫化 de novo 设计蛋白</td>
+<td>与亲本活性对比</td>
+<td>变体无预测表位且活性高于亲本</td>
+<td>MESSI 适用于 de novo 设计蛋白</td>
+<td>仅单一 binder，无法推广</td>
+<td>Abstract 第 4 句</td>
+</tr>
+<tr>
+<td>尿酸酶去免疫化 + 进化引导</td>
+<td>MESSI + 进化引导可去免疫化临床酶并提升活性</td>
+<td>与天然 orthologs 对比</td>
+<td>催化活性高于天然 orthologs</td>
+<td>进化引导可进一步提升功能</td>
+<td>未提供体内免疫原性数据</td>
+<td>Abstract 第 5 句</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅针对 MHC-II 介导的 CD4+ T 细胞表位，未涉及 MHC-I、B 细胞表位、抗药抗体其他机制。</li>
+<li><strong>oracle/真值输入</strong>：MHC-II 表位预测为计算预测，非实验验证的免疫原性；「0 predicted epitopes」不等于「0 实际免疫原性」。</li>
+<li><strong>端到端状态</strong>：计算设计 + 体外/体内活性验证（具体实验类型未提供），但未提供体内免疫原性数据（如小鼠/人源化模型中的 ADA 检测）。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：模型训练数据未提供，无法判断对训练集分布外蛋白的泛化能力。</li>
+<li><strong>模型依赖</strong>：依赖 MHC-II 表位预测器的准确性；若预测器有假阴性，MESSI 可能遗漏真实表位。</li>
+<li><strong>最难情形</strong>：未提供失败案例或模型失效场景。</li>
+<li><strong>群体/领域边界</strong>：仅验证了 3 个蛋白（酶、binder、临床酶），未覆盖抗体、融合蛋白等常见治疗蛋白类别。</li>
+<li><strong>不确定性</strong>：未提供置信区间、重复实验次数、统计显著性。</li>
+</ul>
+<p><strong>有边界的复述</strong>：MESSI 在计算层面可生成结构恢复率高、预测 MHC-II 表位为零的序列，并在三个测试蛋白上表现出不低于亲本的活性；但该结论仅限于计算预测的表位消除，不包含实验免疫原性验证，且泛化范围未超出测试蛋白。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 竞争利益声明中提到 Princeton University 已申请临时专利，且 K.J. 是 Foundry BioSciences 联合创始人——这暗示商业化导向，但非技术局限。
+- 摘要中「down to 0 predicted epitopes」的措辞暗示表位消除是基于预测而非实验验证，这构成隐含约束。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「0 predicted epitopes」依赖 MHC-II 预测器准确性</td>
+<td>预测器假阴性可能导致真实表位未被消除</td>
+<td>免疫原性是临床失败主因，预测误差直接决定方法有效性</td>
+<td>用多种预测器交叉验证；对设计序列做实验免疫原性测定</td>
+<td>Abstract 第 3 句</td>
+</tr>
+<tr>
+<td>仅 3 个蛋白验证，且均为酶/binder</td>
+<td>可能对特定蛋白类别有效，对抗体、融合蛋白等无效</td>
+<td>治疗蛋白以抗体为主，泛化性存疑</td>
+<td>在抗体、Fc 融合蛋白等更多类别上测试</td>
+<td>Abstract 第 4-5 句</td>
+</tr>
+<tr>
+<td>「higher activity than their parents」的机制不明</td>
+<td>可能是去除了不利表位区域的序列约束，而非 MESSI 本身的设计优势</td>
+<td>影响对方法价值的判断</td>
+<td>对比随机突变 + 过滤的活性分布</td>
+<td>Abstract 第 4 句</td>
+</tr>
+<tr>
+<td>进化引导与 MESSI 的耦合方式未说明</td>
+<td>可能依赖额外的功能评分函数，该函数的选择影响结果</td>
+<td>可复现性和方法迁移性取决于此</td>
+<td>查看全文 Methods 节</td>
+<td>Abstract 第 5 句</td>
+</tr>
+<tr>
+<td>未提供与现有去免疫化方法（如免疫原性导向的饱和突变）的定量对比</td>
+<td>可能仅优于 post-hoc filtering，但不如其他专门方法</td>
+<td>方法定位需要更全面的 baseline</td>
+<td>与多种去免疫化方法对比</td>
+<td>Abstract 第 3 句</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>生成式约束嵌入优于事后过滤</strong>：MESSI 的核心思路——将表位约束嵌入扩散去噪过程——可迁移到其他蛋白质设计任务。例如，在序列设计中嵌入可溶性、稳定性、表达量等约束，而非先生成后筛选。</p>
+</li>
+<li>
+<p><strong>离散扩散模型用于结构→序列设计</strong>：MESSI 展示了离散扩散模型在给定结构条件下生成序列的可行性。这一方法可迁移到本课题中的「结构条件序列设计」任务，与 ProteinMPNN 等自回归方法形成互补。</p>
+</li>
+<li>
+<p><strong>进化引导与生成模型耦合</strong>：MESSI + 进化引导的组合策略（先生成低免疫原性序列，再用进化信号优化功能）可迁移到其他「多目标优化」场景，如同时优化结合亲和力与免疫原性。</p>
+</li>
+<li>
+<p><strong>去免疫化作为独立设计目标</strong>：本文将免疫原性作为可计算的设计约束，这一思路可迁移到抗体设计、酶设计等任务中，将免疫原性预测器作为评分函数嵌入生成过程。</p>
+</li>
+<li>
+<p><strong>实验验证闭环</strong>：MESSI 在计算设计后进行了实验验证（活性测定），这一「设计→实验→反馈」闭环是蛋白质计算研究的标准范式，值得在本课题中坚持。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>与 ProteinMPNN 的关联</strong>：ProteinMPNN（Dauparas et al., 2022）是结构条件序列设计的代表性方法，MESSI 可视为其「生成式 + 多约束」扩展。两者均以结构为输入、序列为输出，但 MESSI 额外嵌入免疫原性约束。</li>
+<li><strong>与扩散模型在蛋白质设计中的应用</strong>：RFdiffusion（Watson et al., 2023）将扩散模型用于结构生成，而 MESSI 将离散扩散用于序列生成，两者互补。</li>
+<li><strong>与 MHC-II 表位预测</strong>：MESSI 依赖 MHC-II 表位预测器（如 NetMHCIIpan 类工具），该领域已有成熟方法，MESSI 的价值在于将其嵌入生成过程而非仅用于过滤。</li>
+<li><strong>与去免疫化的传统方法</strong>：传统去免疫化（如 T 细胞表位去除、人源化）多为残基突变 + 实验验证，MESSI 提供了一种计算驱动的替代路径。</li>
+<li><strong>[Analysis] 候选方向</strong>：MESSI 的方法可迁移到「抗原性消除」（MHC-I 表位）、「免疫原性 + 功能多目标优化」等方向，但需注意 MHC-I 与 MHC-II 预测器的差异。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<p><strong>候选 1：MESSI 方法迁移到抗体人源化</strong>
+- 名称：Diffusion-based Antibody Humanization with Germline Constraint
+- 来源局限/观察：MESSI 证明了生成式去免疫化的可行性，但未覆盖抗体（治疗蛋白最大类别）
+- 核心假设：将 MESSI 的扩散生成框架与抗体 germline 序列约束结合，可在保持 CDR 结构和结合亲和力的同时消除框架区表位
+- 相对本文的增量：扩展应用域至抗体，增加 germline 约束
+- 初步方法：以抗体结构为输入，在扩散过程中同时约束 MHC-II 表位和 germline 相似度
+- 验证方式：计算结构恢复 + 表位消除 + 实验亲和力测定
+- 创新状态：unverified</p>
+<p><strong>候选 2：MESSI + AlphaFold 闭环验证</strong>
+- 名称：Generative Deimmunization with Structure Prediction Feedback
+- 来源局限/观察：MESSI 依赖输入结构，但未提及生成序列的结构验证
+- 核心假设：将 AlphaFold2 预测结构作为反馈信号嵌入 MESSI 的扩散过程，可进一步提升结构保持率
+- 相对本文的增量：增加结构验证闭环
+- 初步方法：MESSI 生成序列 → AlphaFold2 预测结构 → 与输入结构比对 → 反馈 RMSD 作为额外约束
+- 验证方式：结构恢复率对比（有/无 AlphaFold 反馈）
+- 创新状态：unverified</p>
+<p><strong>候选 3：多物种 MHC 覆盖的通用去免疫化</strong>
+- 名称：Pan-species Deimmunization via Multi-allele Diffusion Guidance
+- 来源局限/观察：MESSI 针对「specified MHC molecules」，未提及多物种覆盖
+- 核心假设：在扩散过程中同时约束多个物种的常见 MHC-II 等位基因，可生成跨物种低免疫原性序列
+- 相对本文的增量：从单物种到多物种覆盖
+- 初步方法：以多等位基因表位预测的加权和为扩散引导信号
+- 验证方式：计算多等位基因表位覆盖 + 实验交叉反应性测定
+- 创新状态：unverified</p>
+<p><strong>候选 4：去免疫化与功能进化的联合优化</strong>
+- 名称：Joint Deimmunization and Activity Optimization via Multi-objective Diffusion
+- 来源局限/观察：MESSI 在尿酸酶案例中耦合了进化引导，但未系统化
+- 核心假设：将活性评分（如催化活性、结合亲和力）与表位消除作为多目标扩散引导，可同时优化两个目标
+- 相对本文的增量：系统化的多目标优化框架
+- 初步方法：在扩散过程中交替或加权应用表位约束和活性约束
+- 验证方式：Pareto 前沿分析（表位数 vs 活性）
+- 创新状态：unverified</p>
+<p><strong>候选 5：MESSI 生成序列的 MD 模拟验证</strong>
+- 名称：Molecular Dynamics Validation of Diffusion-generated Deimmunized Variants
+- 来源局限/观察：MESSI 实验验证了活性，但未提供结构稳定性/动力学证据
+- 核心假设：MESSI 生成的序列在 MD 模拟中保持与亲本相似的结构稳定性和构象动力学
+- 相对本文的增量：从静态结构保持扩展到动态稳定性验证
+- 初步方法：对 MESSI 生成序列进行 MD 模拟，比较 RMSD、Rg、氢键网络等
+- 验证方式：MD 轨迹分析 + 与亲本对比
+- 创新状态：unverified</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present a generative discrete diffusion model, MESSI, that takes protein structures as input and outputs sequences predicted to lack MHC class II binding epitopes while preserving structure. They claim high structural recovery, reduced predicted epitope counts, and experimental validation in three systems, including a luciferase, a PD-1 mini-binder, and uricase, with the latter showing improved catalytic activity relative to natural orthologs.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, methodological details, or experimental protocols are available</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, supplementary information, model architecture details, training data description, experimental methods, statistical analyses, and sequence-level data</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially valuable approach to a clinically important problem, namely the reduction of protein immunogenicity through generative design. The conceptual framing is clear and the choice of three experimental systems, including a clinically approved enzyme, is appropriate. However, the abstract provides no quantitative evidence for any of the central claims. Structural recovery values, epitope prediction counts, activity measurements, and statistical comparisons are all absent. The claim that MESSI outperforms post-hoc filtering is unsupported without data. The experimental results are described only in qualitative terms, making it impossible to assess effect sizes, variability, or significance. The work may be of interest to the protein engineering and therapeutic development communities, but the current evidence base is insufficient to evaluate the strength of the claims.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in protein engineering, computational biology, and biotherapeutics development would be interested. The potential to reduce immunogenicity of protein therapeutics addresses a major bottleneck in biologic drug development. Those working on generative models for protein design would also find the methodological approach relevant, particularly the use of discrete diffusion with structural conditioning.</li>
+<li><strong>Major strengths</strong> The problem addressed is clinically significant and well motivated. The use of a generative diffusion model for deimmunization is a novel angle compared to conventional post-hoc filtering. The inclusion of three distinct experimental systems, including a clinically approved enzyme, suggests an attempt at broad validation. The coupling of the model with evolution guidance for uricase is a thoughtful extension.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> MESSI designs sequences with high structural recovery and down to 0 predicted epitopes for specified MHC molecules at higher efficiency than post-hoc filtering approaches</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract states that MESSI achieves high structural recovery and zero predicted epitopes, and that it does so more efficiently than post-hoc filtering, but no quantitative data are provided. No structural recovery values, no epitope prediction counts, no efficiency metrics, and no comparison data are shown.</li>
+<li><strong>Why it matters</strong> These are the central quantitative claims of the method. Without numbers, the reader cannot assess whether the performance is meaningful, whether the improvement over filtering is substantial or marginal, or whether the results are reproducible.</li>
+<li><strong>Resolution test</strong> Provide quantitative results in the full manuscript, including structural recovery values, predicted epitope counts, and efficiency metrics, with appropriate comparisons to post-hoc filtering baselines and statistical analysis.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> Experimentally, we first applied MESSI to deimmunize a luciferase and a de novo designed mini-binder against PD-1, resulting in variants with no predicted epitopes and higher activity than their parents</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The experimental results are described only qualitatively. No activity values, no fold improvements, no number of variants tested, no experimental replicates, and no statistical significance are reported.</li>
+<li><strong>Why it matters</strong> The claim that deimmunized variants retain or improve activity is critical for the practical utility of the method. Without quantitative experimental data, the claim is not verifiable.</li>
+<li><strong>Resolution test</strong> Provide experimental data in the full manuscript, including activity measurements, variant counts, replicate numbers, and statistical tests comparing variants to parental proteins.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> We coupled MESSI with evolution guidance to deimmunize uricase, a clinically approved enzyme with severe immunogenicity, and found deimmunized variants with higher catalytic activity than their natural orthologs</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The uricase result is presented as a key demonstration of the method on a clinically relevant enzyme, but no catalytic activity values, no comparison to natural orthologs, and no immunogenicity measurements are provided.</li>
+<li><strong>Why it matters</strong> This is the most clinically relevant claim in the abstract. The absence of quantitative data prevents any assessment of whether the deimmunized variants are actually useful or whether the improvement over natural orthologs is meaningful.</li>
+<li><strong>Resolution test</strong> Provide catalytic activity data, immunogenicity measurements, and statistical comparisons to natural orthologs in the full manuscript.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Model name and description</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The model name MESSI is introduced without explanation of the acronym or the rationale for the name.</li>
+<li><strong>Required correction</strong> Define the acronym or provide a brief explanation of the name in the full manuscript.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Scope</li>
+<li><strong>Affected element</strong> MHC coverage</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract mentions specified MHC molecules but does not indicate which MHC alleles or how many were considered.</li>
+<li><strong>Required correction</strong> Specify the MHC alleles used in the study and the rationale for their selection.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Evolution guidance</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The coupling of MESSI with evolution guidance is mentioned but not described. The nature of the guidance and how it was integrated is unclear.</li>
+<li><strong>Required correction</strong> Describe the evolution guidance approach in the full manuscript, including the objective function and the optimization procedure.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The absence of quantitative data for all central claims means the case is not established from the provided material.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality is potentially high, as the application of generative diffusion to deimmunization is not a standard approach. Scientific importance is clear given the clinical relevance of immunogenicity in biologic drugs. Interdisciplinary readership is plausible, spanning computational biology, immunology, and therapeutic development. Technical soundness cannot be assessed from the abstract alone. Readability for nonspecialists is adequate, with the abstract being accessible, though some terms such as discrete diffusion model and MHC class II may require background knowledge.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract describes a promising approach, but the absence of quantitative results for all major claims prevents any assessment of validity or significance. A full manuscript with detailed data would be required to evaluate the work properly.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that MESSI achieves high structural recovery and zero predicted epitopes is unsupported by quantitative data.</li>
+<li>The claim that MESSI is more efficient than post-hoc filtering approaches is unsupported.</li>
+<li>The claim that deimmunized luciferase and PD-1 mini-binder variants have higher activity than their parents is unsupported.</li>
+<li>The claim that deimmunized uricase variants have higher catalytic activity than natural orthologs is unsupported.</li>
+<li>The general claim that MESSI enables generative design of functional proteins with minimized immunogenicity is not assessable from the abstract.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

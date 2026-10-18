@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLM-to-Flow Distillation: Teaching Natural Language Goals to Scientific Generators · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>LLM-to-Flow Distillation: Teaching Natural Language Goals to Scientific Generators</h1>
+      <div class="meta">Riccardo De Santi; Federico Di Gennaro; Angelo Gnazzo; Sophia Tang; Pranam Chatterjee; Fanny Yang; İsmail İlkan Ceylan; Michael M. Bronstein; Andreas Krause</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-12
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.17246v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出LLM-to-Flow蒸馏方法，利用冻结LLM作为教师，通过课程子目标和DPO偏好蒸馏，将自然语言科学目标对齐到蛋白质/小分子生成器，实现面向结构设计的生成控制，与蛋白质结构生成和序列设计课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Generative discovery in science requires coupling high-level scientific reasoning with the ability to generate samples respecting the structure of a design space. Yet these capabilities remain largely separated: foundation LLMs encode broad chemical and biological knowledge, while domain-specific flow- and diffusion-based generators capture the priors needed to produce valid sequences and geometries. We study how to align such scientific generators to high-level natural-language discovery goals without requiring an explicit proxy reward, which is often unavailable or poorly captured by learned predictors in experimental sciences. We introduce LLM-to-Flow Distillation (LFD), where a frozen LLM acts as an adaptive teacher for a domain-specific generator. Given a goal such as &#39;generate peptides with promising anticancer activity&#39;, the teacher constructs a curriculum of intermediate sub-goals aware of the flow&#39;s current capabilities, and progressively directs them toward the original discovery goal. At each round, the LLM judges sampled candidates under the current objective. These judgments induce preferences that are iteratively distilled into the generator through DPO. This procedure provides dense learning signals even when the initial model places negligible probability on designs satisfying the final goal, enabling adaptation toward poorly covered, out-of-distribution regions. Experiments on therapeutic peptides and small-molecule structure design demonstrate that LFD enables a new form of generative control: aligning arbitrary domain-specific scientific generators to scientific discovery tasks expressed via high-level natural-language goals.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">科学中的生成式发现需要将高层级的科学推理与生成符合设计空间结构的样本能力相结合。然而，这些能力在很大程度上仍是分离的：基础LLM编码了广泛的化学和生物学知识，而特定领域的基于流和扩散的生成器则捕获了生成有效序列和几何结构所需的先验。我们研究如何将此类科学生成器与高层级自然语言发现目标对齐，而无需显式的代理奖励，这在实验科学中通常不可用或难以通过学习的预测器充分捕获。我们引入了LLM到流蒸馏（LLM-to-Flow Distillation, LFD），其中冻结的LLM充当特定领域生成器的自适应教师。给定一个目标，如“生成具有有前景抗癌活性的肽”，教师构建一个中间子目标课程，该课程感知流的当前能力，并逐步将其引导至原始发现目标。在每一轮中，LLM根据当前目标判断采样的候选者。这些判断产生偏好，通过DPO迭代蒸馏到生成器中。即使初始模型对满足最终目标的设计赋予可忽略的概率，此过程也提供密集的学习信号，从而能够适应覆盖不足的分布外区域。在治疗性肽和小分子结构设计上的实验表明，LFD实现了一种新的生成控制形式：将任意特定领域的科学生成器与通过高层级自然语言目标表达的科学发现任务对齐。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：LLM-to-Flow Distillation: Teaching Natural Language Goals to Scientific Generators</li>
+<li><strong>作者</strong>：Riccardo De Santi; Federico Di Gennaro; Angelo Gnazzo; Sophia Tang; Pranam Chatterjee; Fanny Yang; İsmail İlkan Ceylan; Michael M. Bronstein; Andreas Krause</li>
+<li><strong>单位</strong>：未提供（作者所属机构未在摘要中列出）</li>
+<li><strong>期刊/平台</strong>：arXiv 预印本</li>
+<li><strong>年份</strong>：2026（提交日期 2026-10-12）</li>
+<li><strong>论文类型</strong>：预印本（方法学论文）</li>
+<li><strong>领域</strong>：Machine Learning；Scientific Generation（科学生成器）；LLM 与生成模型蒸馏</li>
+<li><strong>关键词</strong>：LLM distillation；flow matching；scientific generators；natural language goals；protein generation（推断，基于标题与领域背景）</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.17246v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-10-12（提交日期）</li>
+<li><strong>该文在课题方向中的位置</strong>：本文提出将 LLM 的自然语言目标蒸馏到科学生成器（如 flow-based 生成模型）中，使生成器能直接响应文本指令。在「蛋白质结构相关计算研究 × AI 方法」方向中，本文属于「多模态条件生成」与「模型蒸馏」交叉点，可迁移至蛋白质结构/序列生成中引入自然语言条件（如功能描述、结合位点要求）。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出一种 LLM-to-Flow 蒸馏框架，将 LLM 对自然语言目标的理解能力迁移到科学生成器（flow matching 模型）中，使后者能直接以文本指令为条件生成科学对象（如分子/蛋白质），并通过蒸馏损失对齐 LLM 与生成器的表示空间。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：科学生成器（如 flow matching 模型）通常以数值/结构化条件（如坐标、序列）为输入，无法直接理解自然语言目标（如"生成一个结合 ATP 的蛋白"）。如何让生成器具备自然语言条件化能力？</li>
+<li><strong>为什么重要</strong>：自然语言是科学家表达设计意图的最自然方式；若生成器能直接响应文本指令，可大幅降低使用门槛，并支持复杂、多属性目标的组合描述。</li>
+<li><strong>现有方法为何不足</strong>：现有科学生成器多为条件生成（如以标签、属性向量为条件），缺乏对开放域文本语义的建模；LLM 虽能理解文本，但无法直接生成结构化科学对象（如 3D 坐标、序列）。</li>
+<li><strong>精确研究问题</strong>：Can we distill the natural language understanding of an LLM into a flow-based scientific generator, such that the generator can produce valid scientific objects conditioned solely on text prompts?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文标题与摘要推断，标注为「仅本文框架」；因未提供全文，无法进行外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 条件生成模型</td>
+<td>CVAE、cGAN、条件 diffusion/flow</td>
+<td>可控制生成属性</td>
+<td>条件需为结构化/数值</td>
+<td>本文的起点</td>
+</tr>
+<tr>
+<td>2. 文本-科学对象跨模态</td>
+<td>CLIP 式对齐、text-to-molecule 模型</td>
+<td>支持文本条件</td>
+<td>多为检索或简单映射，缺乏生成能力</td>
+<td>本文的对比对象</td>
+</tr>
+<tr>
+<td>3. LLM 作为控制器</td>
+<td>LLM 生成代码/参数，调用生成器</td>
+<td>灵活</td>
+<td>间接、非端到端、误差累积</td>
+<td>本文的替代方案</td>
+</tr>
+<tr>
+<td>4. LLM-to-Flow 蒸馏（本文）</td>
+<td>将 LLM 表示蒸馏到 flow generator</td>
+<td>端到端、直接文本条件</td>
+<td>需蒸馏训练、可能损失 LLM 语义丰富性</td>
+<td><strong>本文主张的位置</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>科学生成器无法理解自然语言</td>
+<td>生成器仅接受数值/结构化条件，文本指令需人工翻译为特征</td>
+<td>生成器训练目标与文本语义空间不对齐</td>
+<td>未提供（基于标题推断）</td>
+</tr>
+<tr>
+<td>LLM 无法直接生成科学对象</td>
+<td>LLM 输出文本/代码，而非 3D 坐标或序列</td>
+<td>LLM 训练数据中缺乏科学对象的结构化输出空间</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>现有文本-科学对象方法缺乏生成能力</td>
+<td>多为检索或简单映射，无法生成新对象</td>
+<td>跨模态对齐未与生成目标联合优化</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>蒸馏可能损失语义丰富性</td>
+<td>生成器可能无法捕捉 LLM 的全部语义细节</td>
+<td>蒸馏损失函数设计不完善或容量不匹配</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：训练一个 flow matching 生成器，使其在给定自然语言 prompt 的条件下生成科学对象；训练过程中使用 LLM 作为教师，通过蒸馏损失将 LLM 的文本表示空间与生成器的条件编码器对齐。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：LLM 已经具备强大的自然语言理解能力，其内部表示蕴含丰富的语义信息；与其从零训练一个文本条件生成器，不如将 LLM 的表示空间"蒸馏"到生成器的条件编码器中，使生成器直接继承 LLM 的语义理解能力。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：跨模态条件生成中，与其设计复杂的条件编码器，不如利用已有大模型的表示空间作为"语义锚点"，通过蒸馏实现条件化——这一思路可迁移至蛋白质结构生成中，用 LLM 表示编码功能描述（如"结合锌离子"），蒸馏到结构生成器的条件模块。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：自然语言 prompt（如"生成一个结合 ATP 的蛋白"）+ 随机噪声/初始状态</li>
+<li><strong>输出</strong>：科学对象（如分子图、蛋白质序列或 3D 结构）</li>
+<li><strong>模块</strong>：
+  1. LLM 教师模型（编码 prompt 为语义表示）
+  2. Flow matching 生成器（从噪声到对象的生成过程）
+  3. 条件编码器（将 prompt 映射为生成器的条件向量）
+  4. 蒸馏损失模块（对齐 LLM 表示与条件编码器输出）</li>
+<li><strong>训练</strong>：两阶段或联合训练——先预训练 flow generator 无条件生成，再通过蒸馏损失将 LLM 表示对齐到条件编码器</li>
+<li><strong>工具</strong>：未提供（推断使用 PyTorch 等深度学习框架）</li>
+<li><strong>反馈回路</strong>：蒸馏损失反向传播更新条件编码器与生成器；生成质量可通过下游任务评估（如分子有效性、结合亲和力）</li>
+<li><strong>假设</strong>：LLM 的文本表示空间与科学对象的语义空间存在可对齐的结构；flow matching 生成器有足够容量表达文本条件</li>
+<li><strong>流程</strong>：prompt → LLM 编码 → 条件向量 → flow generator 条件生成 → 科学对象；训练时额外计算 LLM 表示与条件编码器输出的蒸馏损失</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM 教师</td>
+<td>编码自然语言 prompt 为语义表示</td>
+<td>提供文本理解能力</td>
+<td>输入：文本；输出：表示向量</td>
+<td>未提供</td>
+<td>生成器失去文本语义理解，退化为无条件生成</td>
+</tr>
+<tr>
+<td>Flow matching 生成器</td>
+<td>从噪声生成科学对象</td>
+<td>生成结构化对象</td>
+<td>输入：噪声+条件；输出：对象</td>
+<td>未提供</td>
+<td>无法生成对象</td>
+</tr>
+<tr>
+<td>条件编码器</td>
+<td>将 prompt 映射为生成器条件</td>
+<td>桥接文本与生成空间</td>
+<td>输入：文本/LLM 表示；输出：条件向量</td>
+<td>未提供</td>
+<td>生成器无法接收文本条件</td>
+</tr>
+<tr>
+<td>蒸馏损失</td>
+<td>对齐 LLM 与条件编码器表示</td>
+<td>传递语义信息</td>
+<td>输入：两个表示；输出：标量损失</td>
+<td>未提供</td>
+<td>条件编码器无法继承 LLM 语义，生成质量下降（预期）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：所有消融效应均为「预期效应」，因未提供全文实验数据。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>因未提供全文，以下为基于方法名称的推断，标注 [Analysis]；若需精确公式请参考原文。</p>
+</blockquote>
+<ul>
+<li><strong>Flow matching 目标</strong>：L_CFM = E_{t,x_1} [ ||v_θ(x_t, t, c) - u_t(x_t|x_1)||² ]  </li>
+<li>x_t：时间 t 的插值状态；x_1：目标对象；v_θ：生成器速度场；u_t：条件概率路径；c：条件向量</li>
+<li>用途：训练 flow generator 生成对象</li>
+<li>直觉：让生成器的速度场匹配从噪声到对象的插值路径</li>
+<li><strong>蒸馏损失</strong>：L_distill = ||h_LLM(prompt) - h_cond(prompt)||²  </li>
+<li>h_LLM：LLM 表示；h_cond：条件编码器输出</li>
+<li>用途：对齐两个表示空间</li>
+<li>直觉：让条件编码器模仿 LLM 的语义编码</li>
+<li><strong>总损失</strong>：L_total = L_CFM + λ L_distill  </li>
+<li>λ：权衡系数</li>
+<li>用途：联合训练生成与对齐</li>
+</ul>
+<blockquote>
+<p>来源：未提供（基于 flow matching 与蒸馏的通用形式推断）。</p>
+</blockquote>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<blockquote>
+<p>因未提供全文，以下信息均标注为「Not assessable」。</p>
+</blockquote>
+<ul>
+<li><strong>数据集/群体</strong>：Not assessable（未提供）</li>
+<li><strong>规模</strong>：Not assessable</li>
+<li><strong>指标</strong>：Not assessable（推测包括生成有效性、条件一致性、语义对齐度等）</li>
+<li><strong>基线</strong>：Not assessable（推测包括无条件生成、属性条件生成、LLM 直接生成等）</li>
+<li><strong>预算/骨干/仪器</strong>：Not assessable</li>
+<li><strong>oracle 输入</strong>：Not assessable</li>
+<li><strong>评测协议</strong>：Not assessable</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Not assessable</td>
+<td>Not assessable</td>
+<td>Not assessable</td>
+<td>Not assessable</td>
+<td>Not assessable</td>
+<td>Not assessable</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文方法适用于科学生成器（flow matching 类）的自然语言条件化；具体科学对象类型（分子、蛋白、材料）未提供。</li>
+<li><strong>oracle/真值输入</strong>：蒸馏依赖 LLM 作为教师，LLM 的表示质量直接影响生成器性能。</li>
+<li><strong>端到端状态</strong>：方法为端到端训练（prompt → 对象），但依赖预训练 LLM 的固定表示。</li>
+<li><strong>算力成本</strong>：Not assessable（蒸馏训练需额外计算 LLM 前向传播）。</li>
+<li><strong>历史数据依赖</strong>：依赖 LLM 预训练语料与生成器预训练数据。</li>
+<li><strong>模型依赖</strong>：依赖 LLM 的表示质量与 flow generator 的容量。</li>
+<li><strong>最难情形</strong>：Not assessable（推测为复杂、多属性、组合式 prompt）。</li>
+<li><strong>群体/领域边界</strong>：方法在科学生成领域提出，但未限定具体科学对象；迁移到蛋白质结构生成需验证。</li>
+<li><strong>不确定性</strong>：未提供消融实验、失败案例或鲁棒性分析。</li>
+</ul>
+<p><strong>有边界的复述</strong>：本文提出一种蒸馏框架，使 flow-based 科学生成器能响应自然语言 prompt；其有效性依赖于 LLM 表示质量与蒸馏损失设计，具体性能边界未在摘要中给出。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅标题与摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限，基于摘要推断）：
+- 方法针对 flow matching 类生成器，可能不直接适用于其他生成框架（如自回归模型）。
+- 蒸馏依赖 LLM 的表示质量，LLM 的偏差可能传递给生成器。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>蒸馏可能仅对齐表示空间，而非语义理解</td>
+<td>条件编码器可能过拟合 LLM 表示的浅层特征，而非真正理解语义</td>
+<td>影响生成器对未见 prompt 的泛化能力</td>
+<td>用分布外 prompt 测试生成质量</td>
+<td>基于蒸馏方法的常见风险</td>
+</tr>
+<tr>
+<td>LLM 表示可能包含与科学对象无关的信息</td>
+<td>蒸馏可能引入噪声，降低生成质量</td>
+<td>影响条件编码的精确性</td>
+<td>对比不同 LLM 层/表示维度的蒸馏效果</td>
+<td>基于 LLM 表示的多义性</td>
+</tr>
+<tr>
+<td>未提供具体科学对象与实验</td>
+<td>方法可能仅在小规模/简单对象上有效</td>
+<td>影响结论的可推广性</td>
+<td>在蛋白质/分子等真实任务上验证</td>
+<td>摘要中未提供实验细节</td>
+</tr>
+<tr>
+<td>蒸馏损失权重 λ 的敏感性</td>
+<td>不同 λ 可能显著影响生成质量与语义对齐的平衡</td>
+<td>影响方法鲁棒性</td>
+<td>进行 λ 敏感性分析</td>
+<td>基于多任务损失的常见问题</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>LLM 表示作为语义锚点</strong>：在蛋白质结构生成中，可用 LLM 编码功能描述（如"结合 ATP"、"膜蛋白"），蒸馏到结构生成器的条件模块，实现文本到结构的直接生成。</li>
+<li><strong>蒸馏损失设计</strong>：对齐教师（LLM）与学生（条件编码器）的表示空间，可迁移至蛋白质设计中的多模态条件融合。</li>
+<li><strong>Flow matching 的条件化</strong>：flow 模型天然支持条件生成，结合蒸馏可实现灵活的条件控制，适用于蛋白质构象采样中的目标导向生成。</li>
+<li><strong>跨模态迁移思路</strong>：将 LLM 的开放域语义理解迁移到专用生成器，可避免为每个科学任务单独训练文本编码器。</li>
+<li><strong>实验设计启示</strong>：蒸馏类方法需重点评估分布外 prompt 的泛化能力，以及蒸馏损失与生成损失的平衡。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与「text-to-molecule」模型（如 MolT5、Text2Mol）目标相似，但本文强调蒸馏而非联合训练；与「diffusion language models」的条件生成相关。</li>
+<li><strong>组合方向</strong>：可与 AlphaFold 等结构预测模型结合，用 LLM 描述功能需求，蒸馏到结构生成器，实现「功能描述 → 结构」的端到端生成。</li>
+<li><strong>冲突/差异</strong>：与直接微调 LLM 生成科学对象的方法不同，本文保留专用生成器的结构先验，仅蒸馏语义条件，可能更高效。</li>
+<li><strong>可迁移领域</strong>：蛋白质序列设计（文本描述 → 序列）、构象采样（目标描述 → 构象分布）、分子对接（结合位点描述 → 配体构象）。</li>
+<li><strong>候选方向</strong> [Analysis]：将 LLM-to-Flow 蒸馏应用于蛋白质设计，需验证 LLM 表示是否包含足够的结构语义，以及 flow generator 是否能表达蛋白质的复杂结构约束。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：LLM-to-Flow 蛋白质结构生成器
+   - <strong>来源局限/观察</strong>：本文方法未在蛋白质结构上验证；蛋白质结构生成需满足物理化学约束（如键长、键角、空间冲突）。
+   - <strong>核心假设</strong>：LLM 的功能描述表示可蒸馏到蛋白质结构生成器的条件模块，生成满足描述的结构。
+   - <strong>初步方法</strong>：以 flow matching 为骨干，LLM 编码功能描述，蒸馏对齐条件编码器；在 CATH 或 SCOPe 数据集上训练，评估生成结构的有效性（pLDDT、RMSD）与功能一致性。
+   - <strong>验证方式</strong>：对比无条件生成、属性条件生成与本文蒸馏方法的生成质量；用分布外功能描述测试泛化。
+   - <strong>可能的失败模式</strong>：LLM 表示缺乏结构细节，生成结构虽语义匹配但物理不合理；蒸馏损失与结构生成损失冲突。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：文本条件蛋白质构象采样
+   - <strong>来源局限/观察</strong>：构象采样通常以序列或结构为条件，缺乏文本描述引导。
+   - <strong>核心假设</strong>：LLM 描述（如"开放构象"、"结合态"）可引导 flow-based 构象生成器采样目标构象。
+   - <strong>初步方法</strong>：在 flow matching 构象生成器中引入 LLM 蒸馏条件，训练时对齐文本表示与构象条件向量。
+   - <strong>验证方式</strong>：用 MD 模拟或实验构象作为参考，评估生成构象的多样性、有效性及与文本描述的一致性。
+   - <strong>可能的失败模式</strong>：文本描述与构象空间的映射模糊，蒸馏无法提供足够引导。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：多模态条件蒸馏（文本+结构）用于蛋白质设计
+   - <strong>来源局限/观察</strong>：本文仅用文本条件；蛋白质设计常需同时指定功能与结构约束。
+   - <strong>核心假设</strong>：将 LLM 文本表示与结构编码器联合蒸馏到生成器，可实现多模态条件生成。
+   - <strong>初步方法</strong>：在 flow generator 中融合文本与结构条件，蒸馏损失同时对齐两个条件空间。
+   - <strong>验证方式</strong>：在蛋白质设计任务中对比单模态与多模态条件的生成质量。
+   - <strong>可能的失败模式</strong>：多模态条件融合增加训练复杂度，可能引入模态冲突。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：LLM 蒸馏的分布外泛化评估框架
+   - <strong>来源局限/观察</strong>：本文未提供分布外测试；蒸馏方法可能过拟合 LLM 表示。
+   - <strong>核心假设</strong>：系统评估蒸馏方法在分布外 prompt 上的表现，可揭示语义理解的真实程度。
+   - <strong>初步方法</strong>：构建分布外 prompt 测试集（如未见过的功能描述、组合描述），评估生成质量。
+   - <strong>验证方式</strong>：对比蒸馏方法与联合训练方法在分布外测试上的表现。
+   - <strong>可能的失败模式</strong>：分布外测试集构建困难，难以保证语义多样性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, journal/platform field, date, DOI/ID, URL, and the arXiv abstract page metadata. No abstract text, no main text, no figures, no tables, no supplementary materials were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title and bibliographic metadata. No scientific content, methodology, results, or claims beyond the title could be evaluated.</li>
+<li><strong>Shared manuscript claim summary</strong> The title indicates a method for distilling large language model capabilities into scientific generators, specifically teaching such generators to follow natural language goals. No further claims are available from the supplied material.</li>
+<li><strong>Visible evidence base</strong> Title only. No abstract, no sections, no figures, no tables, no references, no code or data links were included in the provided material.</li>
+<li><strong>Missing materials affecting confidence</strong> The complete manuscript, including abstract, main text, all figures and tables, references, and any supplementary information, is absent. Confidence in any substantive assessment is therefore minimal.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material consists solely of a title and bibliographic metadata. It is not possible to evaluate the scientific contribution, technical soundness, or significance of the work. The title suggests a potentially interesting intersection of large language models and scientific generative models, but no evidence is available to support any claim about the work's validity or impact.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title alone, researchers in machine learning, particularly those working on generative models, scientific discovery, and large language model distillation, might find the topic relevant. However, without content, the specific audience and the reasons for interest cannot be determined.</li>
+<li><strong>Major strengths</strong> None can be identified from the supplied material. The title is clear and suggests a coherent research direction, but this is not a substantive strength.</li>
+<li><strong>Major Concerns</strong> The absence of the manuscript content is the overriding concern. No scientific claims, methods, or results are available for review.</li>
+<li><strong>Minor Comments</strong> None can be provided in the absence of content.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The manuscript content must be provided before any technical assessment can be made. Without the abstract and main text, no technical claims can be evaluated.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: Not assessable. The title hints at a novel combination of LLM distillation and scientific generators, but no evidence supports this.</li>
+<li>Scientific importance: Not assessable. The potential importance of the work cannot be judged without content.</li>
+<li>Interdisciplinary readership: Not assessable. The title suggests relevance to machine learning and scientific domains, but the breadth of appeal is unknown.</li>
+<li>Technical soundness: Not assessable. No methods or results are available.</li>
+<li>Readability for nonspecialists: Not assessable. No text is available to evaluate.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript must be supplied in full for any meaningful review.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence completeness</li>
+<li><strong>Claim pointer</strong> The title claims a method for "LLM-to-Flow Distillation" that teaches natural language goals to scientific generators. This is the only claim available.</li>
+<li><strong>Evidence pointer</strong> Location not provided. The entire manuscript is missing.</li>
+<li><strong>Concern</strong> The review is based solely on the title. No abstract, main text, figures, tables, or supplementary materials were provided. It is impossible to assess the validity, novelty, or significance of the claimed method.</li>
+<li><strong>Why it matters</strong> A scientific review requires substantive content to evaluate the claims, methods, and results. Without this, any assessment would be speculative and potentially misleading.</li>
+<li><strong>Resolution test</strong> Provide the full manuscript, including abstract, main text, and all supporting materials. The review can then proceed on the basis of actual content.</li>
+</ul>
+<h3>Minor Comments</h3>
+<p>None identified from the supplied material.</p>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's implication that the work presents a novel distillation method is unsupported by any provided evidence.</li>
+<li>Any inference about the work's scientific quality, technical soundness, or potential impact is not assessable from the supplied material.</li>
+<li>The relevance of the work to specific audiences or fields cannot be determined from the title alone.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

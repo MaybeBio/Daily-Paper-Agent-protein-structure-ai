@@ -1,0 +1,116 @@
+## Review setup
+- **Input scope** Full manuscript text, including abstract, introduction, methods, results, discussion, and conclusion sections.
+- **Assessment boundary** Scientific content, methodological rigor, validity of claims, and presentation quality. Editorial or formatting issues are noted only where they affect scientific clarity.
+- **Shared manuscript claim summary** The authors present a computational pipeline that integrates AlphaFold-predicted structures, TED domain segmentation, and GWAS-derived stress-associated mutations in rice to identify variants likely to impact protein structure and function. They report 102 mutations in 76 high-quality domains, with 39 mutations near predicted functional sites, 18 predicted protein–protein interaction partners, and six mutations predicted to enhance binding affinity. The authors claim this is the first comprehensive application of domain-level GWAS mapping to 3D structure prediction in plants.
+- **Visible evidence base** Full manuscript text with methods, results, and discussion sections. Supplementary materials are referenced but not provided for review.
+- **Missing materials affecting confidence** Supplementary tables (Tables 1, 2a, 2b, 9a, 10), supplementary files (S1, S3, S4, S5, S6, S7, S8, S9b), and all figures (Figs 1–7) were not available for assessment. These materials are essential for verifying the quantitative results, statistical analyses, and structural visualizations described in the text.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a potentially valuable computational framework for prioritizing stress-associated mutations in rice using structural information. The integration of AlphaFold, TED, and GWAS data is timely and addresses a genuine gap in plant genomics. However, the current manuscript has several significant methodological and presentational issues that must be addressed. The most critical concerns are the lack of a clear statistical framework for the enrichment analysis, the absence of key validation details, and the overstatement of biological conclusions from purely computational predictions. The manuscript would benefit from substantial revision to clarify the analytical pipeline, provide complete results, and temper the claims to match the evidence presented.
+- **Who would be interested in the results, and why** Plant geneticists and breeders working on stress tolerance would find the prioritized mutation list useful for experimental follow-up. Computational biologists developing structural genomics pipelines would be interested in the methodological framework. Researchers studying the functional impact of natural genetic variation in crops would benefit from the approach. The work is also relevant to the broader community interested in applying AlphaFold predictions to interpret non-human genetic variation.
+- **Major strengths** The study addresses an important problem: interpreting the functional impact of GWAS-identified variants in crops. The use of high-quality structural filters (pLDDT, SSE count, radius of gyration, packing density) is a thoughtful approach to mitigate AlphaFold limitations. The multi-tool strategy for functional site prediction (P2Rank, AlphaFold, Cons-PPISP, PASSer) provides complementary evidence. The inclusion of protein–protein interaction modelling with AlphaFold 3 is forward-looking. The authors acknowledge limitations of computational predictions and emphasize the need for experimental validation.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical validity
+  - **Claim pointer** The authors claim that "all analysed functional categories showed significant enrichment after FDR correction (q < .05), demonstrating that the observed mutations are non-randomly distributed and preferentially localize to biologically relevant regions."
+  - **Evidence pointer** Section 2.7, Section 3.4, Table 9a (not provided)
+  - **Concern** The enrichment analysis methodology is inadequately described. The authors state that random residues were selected within the same domains 10,000 times, but the details of the null model are unclear. Specifically, it is not specified whether the random sampling accounts for the amino acid composition, the structural environment (surface vs. core), or the mutational spectrum of the observed variants. Without a properly defined null model, the enrichment results could be biased by factors such as residue accessibility or amino acid substitution preferences. Furthermore, the authors do not report effect sizes or confidence intervals for the enrichment, only p-values. The claim that the enrichment is "non-random" requires a more rigorous statistical framework.
+  - **Why it matters** The central conclusion of the manuscript, that stress-associated mutations preferentially localize to functional sites, rests entirely on this enrichment analysis. If the null model is misspecified, the conclusion could be an artifact of the analysis rather than a biological finding.
+  - **Resolution test** Provide a detailed description of the null model, including how random mutations were generated (e.g., whether they preserve the observed amino acid substitution spectrum and whether they are restricted to the same structural environment). Report effect sizes with confidence intervals. Consider using a permutation-based approach that preserves the observed mutation spectrum. Show that the enrichment results are robust to the choice of null model.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim point** The authors state that "six mutations were predicted to enhance binding affinity with their protein partners" and present this as a key finding.
+  - **Evidence pointer** Section 3.5, Table 3, Figs 5 and 6 (not provided)
+  - **Concern** The mCSM-PPI2 predictions of binding affinity changes are presented without any benchmark or validation against known experimental data. The authors do not report the confidence intervals or error estimates for these predictions. Furthermore, the threshold of >0.5 kcal/mol for "substantial increase" is arbitrary and not justified. The biological significance of a predicted 0.5 kcal/mol change in binding affinity is unclear, especially given that mCSM-PPI2 has not been benchmarked for plant proteins. The authors also do not discuss the possibility of false positives in the interaction predictions from AlphaFold 3.
+  - **Why it matters** The claim that specific mutations enhance protein–protein interactions is a strong mechanistic statement. If the prediction tools are not reliable for plant proteins, this claim could mislead experimental follow-up efforts.
+  - **Resolution test** Provide a benchmark of mCSM-PPI2 performance on plant proteins, or at minimum, discuss the known limitations of the tool when applied to non-human proteins. Report the distribution of predicted ΔΔG values for all mutations, not just those above the threshold. Justify the 0.5 kcal/mol threshold with reference to experimental data or provide a sensitivity analysis.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim point** The authors describe a "consensus approach" for domain segmentation using TED, and a multi-step filtering pipeline for selecting high-quality domains.
+  - **Evidence pointer** Section 2.1, Section 3.1
+  - **Concern** The manuscript does not provide sufficient detail on the TED domain segmentation parameters, the specific version of the AlphaFold database used, or the exact criteria for "high-quality" domains beyond the listed metrics. The authors mention excluding low-confidence regions but do not specify how this was implemented. The pipeline is described at a high level, making it difficult for others to reproduce the analysis. Additionally, the authors state that "local model uncertainty directly impacts prediction reliability; we therefore excluded these regions from analysis" but do not describe how this exclusion was performed or how it affected the results.
+  - **Why it matters** Reproducibility is a core requirement for computational biology. Without detailed parameters and version information, other researchers cannot replicate or build upon this work.
+  - **Resolution test** Provide a detailed step-by-step description of the pipeline, including software versions, parameters, and thresholds. Make the code and intermediate data available. Describe how low-confidence regions were identified and excluded, and report how many mutations were removed by this filter.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretation
+  - **Claim point** The authors compare their findings to human disease-associated mutations, stating that "rice stress mutations showed higher enrichment at ligand-binding sites (50% versus 9%)" and suggest this indicates "potential functional adaptation through regulatory site modification under stress conditions."
+  - **Evidence pointer** Section 3.4
+  - **Concern** The comparison to human disease mutations is not well justified. The human dataset from Sen et al. (2022) may have different characteristics (e.g., mutation types, gene selection, functional site definitions) that make direct comparison inappropriate. The authors do not describe how the human data were processed to ensure comparability. The interpretation that higher enrichment at ligand-binding sites reflects "functional adaptation" is speculative and not supported by any direct evidence.
+  - **Why it matters** This comparison is used to suggest that the rice mutations have a distinct biological signature. If the comparison is not valid, this conclusion is unsupported.
+  - **Resolution test** Describe the human dataset and the processing steps used to make it comparable to the rice data. Alternatively, remove the direct comparison and instead discuss the rice findings in the context of plant-specific biology.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Completeness
+  - **Claim point** The authors state that "this is the first comprehensive application of domain-level GWAS mapping to 3D structure prediction in plants."
+  - **Evidence pointer** Section 3.4, Section 4
+  - **Concern** This novelty claim is not supported by a thorough literature review. The authors do not discuss prior work that may have applied similar approaches in plants or other organisms. Without a clear statement of what is genuinely novel, this claim is difficult to evaluate.
+  - **Why it matters** The novelty claim is central to the perceived contribution of the work. If similar analyses have been published, the claim needs to be revised.
+  - **Resolution test** Provide a more comprehensive literature review, explicitly stating what has been done before and what is new in this study. If prior work exists, explain how this study differs and advances the field.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, Results section
+  - **Issue** The abstract states "102 mutations in 76 high-quality protein domains" but does not clarify the relationship between mutations and domains. Some proteins may contain multiple domains, and some domains may contain multiple mutations. A brief clarification would improve readability.
+  - **Required correction** Add a phrase such as "across 76 domains from 74 proteins" to clarify the distribution.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Consistency
+  - **Affected element** Section 3.2
+  - **Evidence pointer** Section 3.2, paragraph 1
+  - **Issue** The text states "3034 missense variations" were extracted, but later states "172 mutations were mapped to 113 high-quality domain structures." The relationship between the initial 3034 and the final 102 is not clearly traced through the filtering steps.
+  - **Required correction** Provide a clear flow diagram or stepwise description of how the 3034 variants were reduced to 102, including the number removed at each filtering stage.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Precision
+  - **Affected element** Section 2.3
+  - **Evidence pointer** Section 2.3, paragraph 1
+  - **Issue** The Grantham score categories are defined, but the text does not specify whether the scores were calculated for the specific amino acid substitutions observed or whether a reference substitution matrix was used.
+  - **Required correction** Clarify the exact method for calculating Grantham scores, including the reference used.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Language
+  - **Affected element** Availability and implementation section
+  - **Evidence pointer** Availability and implementation, paragraph 1
+  - **Issue** The sentence "This study utilized only open-access tools and and provides a framework" contains a duplicated word "and."
+  - **Required correction** Remove the duplicated "and."
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Section 3.5
+  - **Evidence pointer** Section 3.5, paragraph 1
+  - **Issue** The authors state "We selected some examples for more detailed analysis" but do not explain the selection criteria. This could introduce selection bias.
+  - **Required correction** State the criteria used to select the examples, or clarify that they are illustrative rather than representative.
+  - **Concern ID** R1-m6
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Section 3.5.4
+  - **Evidence pointer** Section 3.5.4, paragraph 1
+  - **Issue** The text states the mutation Q104K is "close (∼1 Å) to residue 107, which is a predicted protein–protein interaction site." It is unclear whether residue 107 is the interaction site itself or a residue within the interaction site.
+  - **Required correction** Clarify the relationship between residue 107 and the predicted interaction site.
+- **Technical failings that need to be addressed before the case is established** The statistical framework for the enrichment analysis is not fully described, making the central claim of non-random localization unverifiable. The mCSM-PPI2 predictions are presented without benchmarking or error estimates. The comparison to human disease mutations lacks methodological detail. The manuscript does not provide sufficient detail for reproducibility of the pipeline.
+- **Assessment against Nature-style criteria** 
+  - Originality: Moderate. The application of AlphaFold-based structural analysis to GWAS variants in crops is a logical extension of existing approaches in human genetics. The specific combination of tools is somewhat novel, but the underlying concept is not groundbreaking.
+  - Scientific importance: Moderate. The work provides a prioritized list of mutations for experimental follow-up, which could be valuable for crop improvement. However, the lack of experimental validation limits the immediate impact.
+  - Interdisciplinary readership: Limited. The manuscript is primarily of interest to computational biologists and plant geneticists. The methods and results are unlikely to attract readers from outside these fields.
+  - Technical soundness: The pipeline is generally sound, but the statistical analysis and validation are insufficiently described. The reliance on multiple prediction tools without benchmarking is a concern.
+  - Readability for nonspecialists: The manuscript is written in a technical style that assumes familiarity with structural biology and genomics. The abstract is accessible, but the methods and results sections would be challenging for nonspecialists.
+- **Recommendation posture** Supportive if technical concerns are resolved. The manuscript addresses a relevant problem and presents a reasonable computational framework. However, the statistical validity of the central claim, the reliability of the interaction predictions, and the reproducibility of the pipeline must be addressed before the findings can be considered established. The authors should also temper their conclusions to reflect the computational nature of the analysis and the need for experimental validation.
+
+## Risk / unsupported claims
+- The claim that "all analysed functional categories showed significant enrichment after FDR correction" is unverifiable without the supplementary Table 9a and a detailed description of the statistical methods.
+- The claim that "six mutations were predicted to enhance binding affinity" is presented as a finding, but the reliability of mCSM-PPI2 for plant proteins is not established.
+- The comparison of rice mutation enrichment to human disease mutations is not supported by sufficient methodological detail.
+- The statement that "this is the first comprehensive application of domain-level GWAS mapping to 3D structure prediction in plants" is not supported by a thorough literature review.
+- The claim that "39 mutations are located close to predicted functional sites" depends on the accuracy of the prediction tools, which is not benchmarked in this study.
+- The conclusion that "most of these missense mutations may exert their effects through mechanisms not captured by proximity to classical functional sites" is speculative and not directly supported by the data presented.

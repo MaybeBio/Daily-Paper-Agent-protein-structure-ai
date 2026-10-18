@@ -1,0 +1,77 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the supplied abstract text
+- **Shared manuscript claim summary** The authors describe RFdiffusion3 (RFD3), a generative AI method for biopolymers that uses free atom diffusion to satisfy complex atomic constraints. They claim improved speed and accuracy over previous methods across enzyme design and RNA structure design challenges. They report experimental validation through zero-shot design of de novo phosphotriesterases with a carbamylated lysine coordinating two metal ions, and zinc proteases specific for transthyretin, with active catalysts obtained in 96-construct campaigns.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided
+- **Missing materials affecting confidence** Full manuscript, methods details, benchmark definitions, experimental protocols, activity assay data, structural validation (e.g., crystallography or cryo-EM), negative control results, and comparison baselines
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially significant advance in generative protein and RNA design, with notable experimental validation claims. However, the supplied material is insufficient to evaluate the technical soundness, the rigor of the benchmark comparisons, or the robustness of the experimental results. The core claims are plausible but currently not established from the provided evidence.
+- **Who would be interested in the results, and why** Protein engineers, enzyme designers, computational biologists, and RNA structural biologists would be interested. The method addresses a central challenge in biomolecular design, namely placing multiple functional atoms with high precision, and the reported zero-shot experimental success is directly relevant to therapeutic and industrial enzyme development.
+- **Major strengths** The approach of free atom diffusion is conceptually novel and addresses a known limitation of fixed-backbone or residue-level generative methods. The experimental validation targets challenging active site architectures, including a carbamylated lysine and metal coordination, which are nontrivial design goals. The zero-shot framing of the design campaigns is a strong claim that, if substantiated, would indicate high method reliability.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The method "satisfies complex sets of atomic constraints more rapidly and accurately than previous methods" across enzyme design and RNA structure design.  
+  - **Evidence pointer** Abstract text; location not provided  
+  - **Concern** The abstract provides no quantitative comparison data, benchmark definitions, or baseline methods. The claim of superiority in speed and accuracy is unsubstantiated without specific metrics, datasets, or statistical tests.  
+  - **Why it matters** A central selling point of the method is its comparative advantage. Without defined benchmarks and results, the claim cannot be assessed or reproduced.  
+  - **Resolution test** Provide a benchmark table with named baseline methods, datasets, evaluation metrics (e.g., RMSD, success rate, runtime), and statistical significance measures.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Experimental validation  
+  - **Claim pointer** "Active catalysts in zero shot 96 construct design campaigns" for both phosphotriesterases and zinc proteases.  
+  - **Evidence pointer** Abstract text; location not provided  
+  - **Concern** The abstract does not define what constitutes "active," the assay conditions, the activity thresholds, or the number of active constructs out of 96. The term "zero shot" is also ambiguous without specifying the training data exclusion criteria.  
+  - **Why it matters** The experimental claim is the primary evidence of practical utility. Without clear activity definitions and success rates, the significance of the result cannot be evaluated.  
+  - **Resolution test** Report the number of active designs per campaign, activity values relative to controls, assay protocols, and a statement on how training data were filtered to ensure zero-shot conditions.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Structural validation  
+  - **Claim pointer** The designed enzymes incorporate "a carbamylated lysine coordinating two metal ions" and are "zinc proteases specific for the transthyretin protein."  
+  - **Evidence pointer** Abstract text; location not provided  
+  - **Concern** No structural evidence is provided to confirm that the designed active site architectures are realized as intended. Carbamylation and metal coordination are difficult to achieve and must be verified experimentally.  
+  - **Why it matters** Without structural confirmation, the observed activity could arise from alternative mechanisms or misfolded states, undermining the claim that the method achieved atomic-level design accuracy.  
+  - **Resolution test** Provide crystallographic or cryo-EM structures of representative designs showing the carbamylated lysine, metal coordination geometry, and zinc binding sites.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Generalizability  
+  - **Claim pointer** The method is applicable to "RNA structure design" as a challenge area.  
+  - **Evidence pointer** Abstract text; location not provided  
+  - **Concern** The abstract mentions RNA structure design but provides no results, benchmarks, or experimental validation for RNA. The claim of generalizability is therefore unsupported.  
+  - **Why it matters** The title and framing suggest broad applicability, but the evidence base is limited to protein examples. Overclaiming generalizability without data weakens the manuscript's credibility.  
+  - **Resolution test** Include RNA design benchmark results or explicitly limit the scope claims to protein design in the abstract.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** "Free atom diffusion"  
+  - **Evidence pointer** Abstract text  
+  - **Issue** The term is not defined. It is unclear whether this refers to diffusion over all atom coordinates, a specific noise schedule, or a new training objective.  
+  - **Required correction** Define the term in the abstract or refer to a methods section with a clear description.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Reproducibility  
+  - **Affected element** "96 construct design campaigns"  
+  - **Evidence pointer** Abstract text  
+  - **Issue** The number 96 is stated without context on how constructs were selected, whether they were diverse, or how many were designed in silico versus experimentally tested.  
+  - **Required correction** Clarify the design-to-test pipeline and the selection criteria for the 96 constructs.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Specificity  
+  - **Affected element** "Zinc proteases specific for the transthyretin protein"  
+  - **Evidence pointer** Abstract text  
+  - **Issue** The abstract does not specify the cleavage site, the protease class, or the functional relevance of transthyretin specificity.  
+  - **Required correction** Provide details on substrate specificity and the intended application context.
+
+## Risk / unsupported claims
+- The claim of superior speed and accuracy over previous methods is unsupported without benchmark data.
+- The claim of "zero shot" success is unverifiable without training data exclusion details.
+- The claim of RNA structure design applicability is unsupported by any presented results.
+- The structural realization of the designed active sites (carbamylated lysine, metal coordination, zinc binding) is unverified.
+- The experimental activity of the designed enzymes is not quantified or defined.

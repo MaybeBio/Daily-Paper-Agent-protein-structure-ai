@@ -1,0 +1,879 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Filling the Missing Puzzle: Integrating Interaction and Evolutionary Information to Enhance Protein Fitness Prediction in Inverse Folding · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Filling the Missing Puzzle: Integrating Interaction and Evolutionary Information to Enhance Protein Fitness Prediction in Inverse Folding</h1>
+      <div class="meta">Zhihao Wang; Zhongyang Zhang; Yanmei Yang; Yuanyuan Qu; Yuguang Mu; Sheng Wang; Nanyu Han; Liangzhen Zheng; Weifeng Li</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-11
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.05.756918">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于蛋白-配体复合物异质图神经网络zPolaron，融合结构、相互作用与进化信息以增强反向折叠中的蛋白质适应度预测，并通过湿实验验证了功能设计效果，属于蛋白质结构相关的AI计算方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein inverse folding, which infers compatible amino acid sequences from a given backbone structure, is central to rational protein design. Current methods rely largely on sequence recovery rate as the evaluation metric, emphasizing structural compatibility but seldom addressing function. Yet functional activity depends on the proper network of non-covalent interactions—protein–ligand contacts being a prime example. We argue that function-oriented protein design is governed by three complementary constraints: structural, interaction, and evolutionary, none of which are handled in a unified manner by existing pretrained models. To bridge this gap, we introduce zPolaron, a graph neural network built on protein–ligand complexes for functional protein design. zPolaron represents residues and ligand atoms as a heterogeneous graph and jointly encodes structural, interaction, and evolutionary information by fusing physical-interaction-enhanced graph representations with ESM-2 embeddings. Across multiple fitness prediction benchmarks, zPolaron outperforms all baselines, with gains evident across structural, interaction, and evolutionary dimensions. Wet-lab experiments further confirm its utility in functional enzyme screening and design: the optimized CalA6-D205A-S160G mutant achieves a 17.84-fold improvement in activity, while the CalB-I121M mutant yields a 1.91-fold increase. Together, these results show that integrating interaction and evolutionary information fills the missing puzzle of inverse folding, enhancing protein fitness prediction beyond structural compatibility. zPolaron is available at https://github.com/zelixirSH/zPolaron .</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质逆折叠（protein inverse folding）从给定的骨架结构推断兼容的氨基酸序列，是理性蛋白质设计的核心。现有方法主要依赖序列恢复率作为评估指标，强调结构兼容性，但很少涉及功能。然而，功能活性依赖于非共价相互作用的适当网络——蛋白质-配体接触即为典型例子。我们认为，面向功能的蛋白质设计受三个互补约束支配：结构、相互作用和进化，而现有预训练模型均未以统一方式处理这些约束。为弥合这一差距，我们引入zPolaron，一种基于蛋白质-配体复合物的图神经网络，用于功能性蛋白质设计。zPolaron将残基和配体原子表示为异质图，并通过融合物理相互作用增强的图表示与ESM-2嵌入，联合编码结构、相互作用和进化信息。在多个适应度预测基准上，zPolaron优于所有基线，其增益在结构、相互作用和进化维度上均显著。湿实验进一步证实了其在功能性酶筛选和设计中的实用性：优化后的CalA6-D205A-S160G突变体活性提高17.84倍，而CalB-I121M突变体活性提高1.91倍。综合这些结果表明，整合相互作用和进化信息填补了逆折叠缺失的拼图，增强了超越结构兼容性的蛋白质适应度预测。zPolaron可在https://github.com/zelixirSH/zPolaron获取。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Filling the Missing Puzzle: Integrating Interaction and Evolutionary Information to Enhance Protein Fitness Prediction in Inverse Folding</li>
+<li><strong>作者</strong>：Zhihao Wang; Zhongyang Zhang; Yanmei Yang; Yuanyuan Qu; Yuguang Mu; Sheng Wang; Nanyu Han; Liangzhen Zheng; Weifeng Li</li>
+<li><strong>单位</strong>：未提供（推测涉及上海 Zelixir 公司、山东大学等，但原文未明确列出单位对应关系）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026（预印本日期 2026-10-11）</li>
+<li><strong>论文类型</strong>：方法学 + 湿实验验证（预印本）</li>
+<li><strong>领域</strong>：蛋白质逆折叠（inverse folding）、蛋白质-配体复合物、适应性预测（fitness prediction）、酶工程</li>
+<li><strong>关键词</strong>：inverse folding, protein fitness prediction, protein-ligand interaction, evolutionary information, graph neural network, ESM-2</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.10.05.756918</li>
+<li><strong>代码</strong>：https://github.com/zelixirSH/zPolaron</li>
+<li><strong>数据</strong>：训练集来自 LigandMPNN 的蛋白-配体复合物数据集（62,908 样本）；测试集为 2023–2025 年发布的 249 个低相似度 PDB 结构；评估数据集包括 S2648、ProteinGym（8 个酶）、DAOx（5 个底物）、ADK（178 序列）、PETase（214 变体）</li>
+<li><strong>阅读日期</strong>：2026-05-14（按当前日期）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的逆折叠与适应性预测交叉方向。其核心主张是：逆折叠模型不应仅以序列恢复率（sequence recovery）为优化目标，而应同时整合结构、相互作用、进化三类约束，以提升蛋白适应性（fitness）预测能力。该工作与 LigandMPNN、ProteinMPNN、ESM-IF、CARBonAra、ABACUS-T 等模型形成直接对比，并引入湿实验验证，属于「AI 方法 + 物理/进化先验融合」路线。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 zPolaron——一个基于异质图神经网络（heterogeneous GNN）的逆折叠模型，通过将蛋白-配体非共价相互作用信息与 ESM-2 进化嵌入融合，在序列恢复、进化保守性、零样本适应性预测及湿实验酶工程验证中均优于现有基线，证明整合相互作用与进化信息可显著提升蛋白适应性预测能力。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：逆折叠模型能否超越单纯的结构兼容性（sequence recovery），实现对蛋白适应性（fitness）——包括稳定性、催化活性、底物特异性等——的有效预测？</li>
+<li><strong>为什么重要</strong>：蛋白设计的最终目标是功能，而非仅仅序列与结构的几何兼容。现有逆折叠模型以序列恢复率为核心指标，但高恢复率并不保证功能活性。在酶工程、药物设计等实际应用中，功能性预测能力直接决定设计成功率。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>多数逆折叠模型（如 ProteinMPNN、ESM-IF）仅利用蛋白结构信息，忽略配体/辅因子等非蛋白组分对功能的关键贡献；</li>
+<li>部分模型（如 LigandMPNN、CARBonAra）虽引入配体上下文，但未显式建模物理相互作用类型（氢键、疏水接触、π-π 堆积等）；</li>
+<li>进化信息（如 ESM-2 嵌入）虽被部分模型使用，但未与相互作用信息在统一框架中联合优化；</li>
+<li>现有评估体系过度依赖序列恢复率，缺乏对适应性预测能力的系统检验。</li>
+<li><strong>精确研究问题</strong>：Can a graph neural network that jointly encodes structural, interaction, and evolutionary constraints outperform existing inverse folding models in protein fitness prediction, as measured by zero-shot correlation with experimental fitness data and validated by wet-lab enzyme engineering?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文引言及参考文献，标注为「经外部核验」的部分仅指该方向公认的发展阶段，具体方法细节以本文描述为准。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理能量函数时代</td>
+<td>Rosetta</td>
+<td>可解释性强，基于物理原理</td>
+<td>计算昂贵，搜索空间有限</td>
+<td>本文不直接对比，但继承了物理相互作用的思想</td>
+</tr>
+<tr>
+<td>深度学习逆折叠早期</td>
+<td>ProteinMPNN</td>
+<td>高序列恢复率，速度快</td>
+<td>仅用结构信息，忽略配体与功能</td>
+<td>本文的直接基线之一</td>
+</tr>
+<tr>
+<td>大规模结构预训练</td>
+<td>ESM-IF</td>
+<td>利用 AlphaFold 预测结构扩展训练数据</td>
+<td>仍以结构兼容性为核心，功能预测有限</td>
+<td>本文的直接基线之一</td>
+</tr>
+<tr>
+<td>配体感知逆折叠</td>
+<td>LigandMPNN、CARBonAra</td>
+<td>引入配体上下文，提升功能相关设计</td>
+<td>未显式建模相互作用类型，进化信息利用有限</td>
+<td>本文的直接基线，本文主张超越其框架</td>
+</tr>
+<tr>
+<td>统一多约束逆折叠</td>
+<td><strong>zPolaron（本文）</strong></td>
+<td>结构+相互作用+进化三类约束统一建模</td>
+<td>依赖 ESM-2 嵌入质量；湿实验验证范围有限</td>
+<td><strong>本文位置</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>脉络标注</strong>：以上阶段划分基于本文引言（Introduction 第 1-2 段）及参考文献 [13, 15, 20, 21, 22, 35] 的引用关系，属于「经外部核验」的公认发展脉络；具体各方法的性能对比以本文 Results 为准。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列恢复率 ≠ 功能活性</td>
+<td>高恢复率的序列在实验中可能无功能</td>
+<td>结构兼容性仅保证折叠，不保证配体识别、催化等功能的化学约束</td>
+<td>Introduction 第 1 段；Discussion 4.1 节</td>
+</tr>
+<tr>
+<td>现有模型忽略配体/辅因子</td>
+<td>多数逆折叠模型仅以蛋白结构为输入</td>
+<td>配体对功能至关重要，但被排除在建模范围之外</td>
+<td>Introduction 第 2 段（LigandMPNN 首次引入配体）</td>
+</tr>
+<tr>
+<td>相互作用类型未被显式建模</td>
+<td>配体感知模型仅将配体作为上下文，未区分氢键、疏水、π-π 等</td>
+<td>不同相互作用类型对功能贡献不同，需差异化编码</td>
+<td>Methods 2.1 节（六种边类型定义）</td>
+</tr>
+<tr>
+<td>进化信息与结构/相互作用信息割裂</td>
+<td>现有模型要么用结构、要么用序列进化信息，未统一</td>
+<td>三类约束互补，需联合优化</td>
+<td>Introduction 第 3 段；Results 3.1 节</td>
+</tr>
+<tr>
+<td>评估体系单一</td>
+<td>仅用序列恢复率评估逆折叠模型</td>
+<td>恢复率无法反映适应性预测能力</td>
+<td>Discussion 4.1 节；Results 3.3 节</td>
+</tr>
+<tr>
+<td>高灵活性功能口袋难以建模</td>
+<td>无序/高 B-factor 区域恢复率下降</td>
+<td>结构不确定性影响纯几何模型</td>
+<td>Results 3.1 节（图 2g B-factor 分析）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>zPolaron 是一个异质图神经网络，将蛋白残基和配体原子作为两类节点，构建六种边类型（残基-残基骨架边、残基-残基空间边、残基-残基相互作用边、配体-残基边、配体内部边、残基-配体相互作用边），通过消息传递联合编码结构、相互作用、进化三类信息，并以置信度引导的迭代解码策略生成序列。</p>
+<h3>2) 核心洞察</h3>
+<p><strong>蛋白适应性由三类互补约束共同决定</strong>：
+- <strong>结构约束</strong>：序列必须能折叠为目标结构（骨架几何、空间邻近）；
+- <strong>相互作用约束</strong>：残基必须与配体/辅因子建立正确的非共价相互作用网络（氢键、疏水、π-π 等），这是功能活性的直接化学基础；
+- <strong>进化约束</strong>：序列应遵循自然进化中形成的保守性模式，ESM-2 嵌入提供了远超单结构比对所能获得的进化先验。</p>
+<p><strong>关键机制</strong>：三类约束不是简单拼接，而是通过异质图的消息传递在每一层中相互调制——结构边提供几何框架，相互作用边提供功能化学约束，ESM-2 嵌入提供进化上下文。迭代解码策略进一步利用已确定的高置信度残基来逐步丰富上下文，模拟了协同折叠/共进化过程。</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>评估指标决定模型能力上限</strong>：当领域以单一指标（如序列恢复率）为优化目标时，模型会过度拟合该指标而牺牲其他维度。zPolaron 的贡献不仅是方法，更是将评估维度从「结构兼容」扩展到「功能适应性」。</li>
+<li><strong>异质图是融合多源信息的自然框架</strong>：当问题涉及多种实体（蛋白残基、配体原子）和多种关系（共价、空间、非共价相互作用）时，异质图比同质图或序列模型更自然地表达领域知识。</li>
+<li><strong>进化信息是功能预测的强先验</strong>：ESM-2 等蛋白语言模型从海量序列中隐式编码了功能约束，与结构/相互作用信息互补，而非替代。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白-配体复合物结构（PDB 格式），包含蛋白骨架原子坐标、配体原子坐标及类型；目标序列的部分掩码（训练时随机掩码，推理时全掩码）</li>
+<li><strong>输出</strong>：每个残基位置上的 20 种氨基酸概率分布；可进一步用于序列设计或适应性打分（mean NLL）</li>
+<li><strong>模块</strong>：
+  1. <strong>异质图构建</strong>：残基节点（特征维度 667 = ESM-2 640 维 + 结构特征 27 维）、配体原子节点（24 维 one-hot 原子类型）；六种边类型
+  2. <strong>消息传递层</strong>：按边类型分化的消息函数，堆叠多层
+  3. <strong>迭代解码</strong>：置信度引导的逐步解锁策略
+  4. <strong>打分模块</strong>：mean NLL 作为适应性指标</li>
+<li><strong>训练</strong>：多任务学习，主任务为掩码残基预测，辅助任务为边类型/相互作用计数预测；AdamW 优化器，warmup + cosine 退火</li>
+<li><strong>工具</strong>：ESM-2（esm2_t30_150M_UR50D，150M 参数，第 30 层 640 维输出）；AlphaFold 3 用于结构重建验证；Foldseek 用于同源搜索</li>
+<li><strong>流程</strong>：
+  1. 输入复合物结构 → 构建异质图
+  2. 残基节点特征 = ESM-2 嵌入 + 结构特征；配体节点 = 原子类型编码
+  3. 堆叠消息传递层，按边类型更新节点表示
+  4. 迭代解码：每轮预测所有掩码位置的概率 → 锁定高置信度残基 → 更新 ESM-2 上下文 → 下一轮
+  5. 输出：最终序列 + 每个位置的置信度 + 整体 mean NLL 分数</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>异质图构建</td>
+<td>将蛋白残基和配体原子统一表示为图节点，六种边类型编码不同关系</td>
+<td>蛋白-配体复合物本质上是异质系统，需区分不同实体和关系</td>
+<td>输入：PDB 结构；输出：异质图 G=(V,E)</td>
+<td>Methods 2.1 节；图 1</td>
+<td>若改为同质图（不区分残基/配体），将丢失实体类型信息，预期降低配体相关功能预测能力 [预期效应]</td>
+</tr>
+<tr>
+<td>ESM-2 嵌入</td>
+<td>提供进化上下文（640 维）</td>
+<td>进化保守性编码功能约束，是适应性预测的关键</td>
+<td>输入：目标序列（部分掩码）；输出：每残基 640 维嵌入</td>
+<td>Results 3.1 节（图 2f PSSM 分析）；图 S1 消融</td>
+<td>消融实验表明移除 ESM 嵌入后恢复率显著下降（图 S1），适应性预测能力预期大幅降低 [实测消融效应]</td>
+</tr>
+<tr>
+<td>六种边类型消息传递</td>
+<td>按边类型分化的消息函数，分别编码骨架连接、空间邻近、物理相互作用</td>
+<td>不同相互作用类型对功能贡献不同，需差异化建模</td>
+<td>输入：异质图；输出：更新后的节点表示</td>
+<td>Methods 2.1 节；图 1</td>
+<td>若仅保留空间边（类似 ProteinMPNN），则丢失相互作用信息，预期在配体相关任务上性能下降 [预期效应]</td>
+</tr>
+<tr>
+<td>置信度引导迭代解码</td>
+<td>逐步锁定高置信度残基，丰富上下文</td>
+<td>避免一次性预测所有位置的误差累积，模拟协同折叠</td>
+<td>输入：掩码序列 + 图；输出：逐步解锁的序列</td>
+<td>Results 3.1 节（图 2b 迭代曲线）</td>
+<td>若改为单次预测，恢复率预期下降（迭代曲线显示单调上升趋势）[实测消融效应，图 2b]</td>
+</tr>
+<tr>
+<td>辅助边预测任务</td>
+<td>预测残基-配体间相互作用类型计数</td>
+<td>强制模型学习物理相互作用模式</td>
+<td>输入：节点表示；输出：边类型计数</td>
+<td>Methods 2.1 节（多任务学习）</td>
+<td>移除后预期降低模型对相互作用约束的敏感性 [预期效应]</td>
+</tr>
+<tr>
+<td>mean NLL 打分</td>
+<td>将序列概率转换为适应性分数</td>
+<td>提供零样本适应性预测能力</td>
+<td>输入：序列 + 结构；输出：标量分数</td>
+<td>Results 3.3 节（图 3c-d）</td>
+<td>移除后模型退化为纯序列生成器，丧失适应性评估能力 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>1. 异质图定义</strong>：
+G = (V, E)，其中 V = V_r ∪ V_l（V_r 为残基节点，V_l 为配体原子节点），E = E_rr ∪ E_ll ∪ E_rl（残基-残基边、配体内部边、残基-配体边）</p>
+<p><strong>2. 消息传递更新</strong>：
+h_v^(l+1) = Update(h_v^(l), Aggregation({α_uv · MSG(h_u^(l), e_uv) : u ∈ N(v)}))</p>
+<ul>
+<li>h_v^(l)：节点 v 在第 l 层的隐藏状态</li>
+<li>α_uv：注意力权重</li>
+<li>e_uv：边特征</li>
+<li>MSG：可学习的消息生成函数</li>
+<li>N(v)：节点 v 的邻居集合</li>
+</ul>
+<p><strong>3. 边类型分化的消息传递</strong>：
+h_v^(l+1) = Update(h_v^(l), Σ_{t∈T} Aggregation_t({α_uv^t · MSG_t(h_u^(l), e_uv^t) : u ∈ N_t(v)}))</p>
+<ul>
+<li>T：边类型集合（六种）</li>
+<li>MSG_t：第 t 种边类型对应的消息函数</li>
+</ul>
+<p><strong>4. 置信度分数</strong>：
+c_i = max_j p_ij</p>
+<ul>
+<li>c_i：位置 i 的置信度</li>
+<li>p_ij：位置 i 预测为第 j 种氨基酸的概率</li>
+</ul>
+<p><strong>5. 序列打分（mean NLL）</strong>：
+Score(S) = (1/L) Σ_{i=1}^{L} -log p_i(s_i)</p>
+<ul>
+<li>L：序列长度</li>
+<li>p_i(s_i)：模型在位置 i 对真实氨基酸 s_i 的预测概率</li>
+<li>分数越低表示序列越合理</li>
+</ul>
+<p><strong>6. 总损失函数</strong>：
+L_total = L_node + λ · L_edge</p>
+<ul>
+<li>L_node：节点分类（氨基酸预测）损失</li>
+<li>L_edge：边预测（相互作用计数）损失</li>
+<li>λ：边预测损失的权重（动态调度）</li>
+</ul>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<h3>数据集与规模</h3>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>用途</th>
+<th>规模</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LigandMPNN 蛋白-配体复合物数据集</td>
+<td>训练</td>
+<td>62,908 样本</td>
+<td>高分辨率晶体结构</td>
+</tr>
+<tr>
+<td>LigandMPNN 验证集</td>
+<td>验证/早停</td>
+<td>3,515 样本</td>
+<td>监控泛化</td>
+</tr>
+<tr>
+<td>独立测试集</td>
+<td>序列恢复评估</td>
+<td>249 个 PDB</td>
+<td>2023–2025 发布，与训练集序列相似度 &lt; 40%</td>
+</tr>
+<tr>
+<td>S2648</td>
+<td>稳定性预测</td>
+<td>10 个蛋白靶点</td>
+<td>含 ΔΔG 实验数据</td>
+</tr>
+<tr>
+<td>ProteinGym（8 个酶）</td>
+<td>适应性预测</td>
+<td>8 个酶系统</td>
+<td>有明确底物注释</td>
+</tr>
+<tr>
+<td>DAOx（5 个底物）</td>
+<td>适应性预测</td>
+<td>1 个酶 × 5 底物</td>
+<td>多底物适应性</td>
+</tr>
+<tr>
+<td>ADK</td>
+<td>口袋破坏识别</td>
+<td>178 序列</td>
+<td>腺苷酸激酶</td>
+</tr>
+<tr>
+<td>PETase</td>
+<td>口袋破坏识别</td>
+<td>214 变体</td>
+<td>PET 水解酶</td>
+</tr>
+</tbody>
+</table>
+<h3>评测协议</h3>
+<ul>
+<li><strong>序列恢复</strong>：独立测试集上预测序列与天然序列的氨基酸一致率</li>
+<li><strong>稳定性</strong>：S2648 上预测分数与实验 ΔΔG 的相关性（Pearson/Spearman）</li>
+<li><strong>适应性</strong>：ProteinGym 和 DAOx 上预测分数与实验适应性的相关性</li>
+<li><strong>口袋破坏</strong>：ADK 和 PETase 上区分功能丧失突变与野生型的 AUC/AP</li>
+<li><strong>结构验证</strong>：AlphaFold 3 重建设计序列的结构，计算 TM-score 与 pLDDT</li>
+</ul>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列恢复率（图 2a）</td>
+<td>zPolaron 在结构兼容性上不逊于现有模型</td>
+<td>对比 CARBonAra、ABACUS-T、LigandMPNN、ProteinMPNN</td>
+<td>zPolaron 恢复率最高，分布更集中</td>
+<td>整合三类信息不牺牲结构兼容性</td>
+<td>恢复率高不等于功能好</td>
+<td>Results 3.1 节</td>
+</tr>
+<tr>
+<td>迭代策略分析（图 2b）</td>
+<td>置信度引导迭代提升恢复率</td>
+<td>不同迭代轮数（1-10）</td>
+<td>恢复率随迭代单调上升，第 10 轮中位数 &gt; 80%</td>
+<td>迭代解码有效利用上下文</td>
+<td>最优迭代数需权衡计算成本</td>
+<td>Results 3.1 节</td>
+</tr>
+<tr>
+<td>结构重建验证（图 2c-d）</td>
+<td>设计序列可折叠为目标结构</td>
+<td>AlphaFold 3 重建，计算 TM-score/pLDDT</td>
+<td>所有方法 TM-score &gt; 0.95，pLDDT ≈ 90</td>
+<td>设计序列结构可行性高</td>
+<td>AF3 预测偏差可能高估结构相似性</td>
+<td>Results 3.1 节</td>
+</tr>
+<tr>
+<td>进化保守性分析（图 2f, 2h-l）</td>
+<td>zPolaron 预测与进化保守性一致</td>
+<td>PSSM 分析，ΔPSSM 比较</td>
+<td>zPolaron 平均 ΔPSSM = −0.62，优于所有基线</td>
+<td>模型输出更接近自然进化偏好</td>
+<td>ΔPSSM 为负说明仍有偏差</td>
+<td>Results 3.1 节</td>
+</tr>
+<tr>
+<td>B-factor 鲁棒性（图 2g）</td>
+<td>zPolaron 对结构不确定性鲁棒</td>
+<td>按 B-factor 分层分析恢复率</td>
+<td>zPolaron 在高 B-factor 区间下降最慢</td>
+<td>进化/相互作用信息补偿结构噪声</td>
+<td>高柔性区域仍是最难预测</td>
+<td>Results 3.1 节</td>
+</tr>
+<tr>
+<td>稳定性预测（图 3a-b）</td>
+<td>zPolaron 可预测 ΔΔG</td>
+<td>S2648 上 Pearson/Spearman 相关</td>
+<td>zPolaron 整体相关性与 ProteinMPNN 相当或更优</td>
+<td>结构+进化信息有助于稳定性预测</td>
+<td>非所有靶点最优</td>
+<td>Results 3.2 节</td>
+</tr>
+<tr>
+<td>适应性预测（图 3c-d）</td>
+<td>zPolaron 可预测蛋白适应性</td>
+<td>ProteinGym 8 酶 + DAOx 5 底物</td>
+<td>zPolaron 在多数靶点相关性最强，DAOx 上稳定 ≈ −0.5</td>
+<td>三类信息联合提升适应性预测</td>
+<td>相关性仍非完美，存在未捕获因素</td>
+<td>Results 3.3 节</td>
+</tr>
+<tr>
+<td>口袋破坏识别（图 4a-l）</td>
+<td>zPolaron 识别功能丧失突变</td>
+<td>ADK + PETase，AUC/AP</td>
+<td>ADK AUC=0.995，PETase AUC=0.934</td>
+<td>模型对口袋微环境破坏高度敏感</td>
+<td>仅两类酶，泛化需更多验证</td>
+<td>Results 3.4 节</td>
+</tr>
+<tr>
+<td>消融实验（图 S1-S2）</td>
+<td>三类信息各自贡献</td>
+<td>移除 ESM/结构/相互作用之一</td>
+<td>任意两类组合仍优于全部基线；ESM 贡献最大</td>
+<td>三类信息互补，ESM 是主要贡献者</td>
+<td>消融仅在特定数据集上验证</td>
+<td>补充材料</td>
+</tr>
+<tr>
+<td>湿实验验证（图 5）</td>
+<td>zPolaron 发现新酶和有益突变</td>
+<td>脂肪酶筛选 + 定点突变</td>
+<td>CalA6-D205A-S160G 活性提升 17.84 倍；CalB-I121M 提升 1.91 倍</td>
+<td>计算预测可转化为实际功能增益</td>
+<td>仅两个酶系统，样本量有限</td>
+<td>Results 3.5 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文的适应性预测限定在「给定蛋白-配体复合物结构，预测序列变体的适应性（以实验测定的催化活性/稳定性为标签）」这一特定任务。结论不适用于无配体的 apo 蛋白、膜蛋白等未验证场景。</li>
+<li><strong>零样本性质</strong>：zPolaron 的适应性预测是零样本的——即不针对特定蛋白的突变数据微调，直接使用预训练模型打分。这既是优势（无需实验数据），也是局限（无法利用已知突变数据）。</li>
+<li><strong>湿实验验证的边界</strong>：17.84 倍和 1.91 倍的提升是在特定反应条件（30°C, pH 9.0）和特定底物下测得的。这些数值不应被解读为普适的「平均提升倍数」。</li>
+<li><strong>与序列恢复率的关系</strong>：zPolaron 在序列恢复率上确实最高，但作者明确指出恢复率 ≠ 功能。该结论的准确表述是：zPolaron 在保持高恢复率的同时，额外获得了更好的适应性预测能力。</li>
+<li><strong>消融实验的解读</strong>：任意两类信息组合都优于全部基线，说明三类信息有冗余性；但 ESM-2 贡献最大，说明进化信息是适应性预测的主要驱动力。</li>
+<li><strong>不支持的结论</strong>：本文不证明「整合三类信息是适应性预测的必要条件」，也不证明「zPolaron 在所有蛋白类型上均最优」。测试集以酶为主，其他蛋白类型的泛化能力未验证。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列恢复率与功能不完全对应</td>
+<td>高恢复率不保证功能活性，恢复率指标本身有局限</td>
+<td>应发展更全面的评估体系，将适应性预测纳入标准评测</td>
+<td>Discussion 4.1 节</td>
+</tr>
+<tr>
+<td>湿实验验证范围有限</td>
+<td>仅验证了两个酶系统（脂肪酶和醛脱氢酶）</td>
+<td>在更多酶家族和蛋白类型上验证</td>
+<td>Results 3.5 节；Conclusion</td>
+</tr>
+<tr>
+<td>测试集以酶为主</td>
+<td>独立测试集和适应性评估均集中于酶</td>
+<td>扩展到非酶蛋白、膜蛋白等</td>
+<td>Discussion 4.1 节</td>
+</tr>
+<tr>
+<td>零样本打分的固有限制</td>
+<td>不利用已知突变数据，可能遗漏特定蛋白的独特约束</td>
+<td>探索与微调策略的结合</td>
+<td>Discussion 4.2 节</td>
+</tr>
+<tr>
+<td>迭代解码的计算成本</td>
+<td>多轮迭代增加推理时间</td>
+<td>探索自适应迭代轮数</td>
+<td>Results 3.1 节（推荐 4 轮为默认）</td>
+</tr>
+<tr>
+<td>依赖 ESM-2 嵌入质量</td>
+<td>进化信息质量受限于 ESM-2 的训练数据覆盖</td>
+<td>随蛋白语言模型进步可自然提升</td>
+<td>Discussion 4.2 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>湿实验验证样本量小</td>
+<td>仅 2 个酶系统、少数突变体，统计功效有限</td>
+<td>17.84 倍提升可能受特定蛋白/反应条件影响，不具普适性</td>
+<td>在 10+ 酶系统上重复验证，报告置信区间</td>
+<td>Results 3.5 节</td>
+</tr>
+<tr>
+<td>测试集时间窗口短</td>
+<td>2023–2025 年发布的 PDB 与训练集（LigandMPNN 数据集，主要来自更早年份）时间接近</td>
+<td>可能低估真实世界中新折叠类型的难度</td>
+<td>使用更长时间跨度的测试集，或按折叠类型分层</td>
+<td>Methods 2.2 节</td>
+</tr>
+<tr>
+<td>与基线比较的公平性</td>
+<td>基线模型（ProteinMPNN 等）未针对适应性预测任务微调，而 zPolaron 的架构和训练目标专门为此设计</td>
+<td>比较可能偏向 zPolaron</td>
+<td>对基线进行同等程度的任务适配后比较</td>
+<td>Results 3.3 节</td>
+</tr>
+<tr>
+<td>ΔPSSM 为负的解释</td>
+<td>所有模型 ΔPSSM 均为负，说明预测序列整体偏离天然保守偏好；zPolaron 只是偏离最少</td>
+<td>负 ΔPSSM 的生物学意义未充分讨论</td>
+<td>分析 ΔPSSM 与功能增益的具体关系</td>
+<td>Results 3.1 节（图 2h-l）</td>
+</tr>
+<tr>
+<td>消融实验的粒度</td>
+<td>仅报告「移除某一类信息」的粗粒度消融，未区分六种边类型各自的贡献</td>
+<td>无法确定哪种相互作用类型最关键</td>
+<td>逐边类型消融，报告每种边类型的边际贡献</td>
+<td>补充材料图 S1-S2</td>
+</tr>
+<tr>
+<td>适应性打分的校准</td>
+<td>mean NLL 与实验适应性的相关性虽显著，但未报告绝对误差或校准曲线</td>
+<td>相关性高不等于预测值可直接用于定量比较</td>
+<td>报告预测分数与实验值的绝对误差、Bland-Altman 分析</td>
+<td>Results 3.3 节</td>
+</tr>
+<tr>
+<td>与 AlphaFold 3 的耦合</td>
+<td>结构预测和验证均依赖 AF3，AF3 的系统性偏差可能被继承</td>
+<td>若 AF3 对某类蛋白有偏好，zPolaron 的评估可能失真</td>
+<td>使用实验结构（如晶体结构）作为对照</td>
+<td>Results 3.1 节（图 2c-d）</td>
+</tr>
+<tr>
+<td>未与其他蛋白语言模型比较</td>
+<td>仅比较了逆折叠模型，未与 ESM-2 直接打分、Tranception 等适应性预测专用模型比较</td>
+<td>无法定位 zPolaron 在适应性预测领域的相对位置</td>
+<td>增加适应性预测专用基线</td>
+<td>Results 3.3 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>异质图是蛋白-配体复合物建模的优选框架</strong>：将残基和配体原子作为不同类型节点，六种边类型显式编码共价、空间、非共价相互作用，比同质图或序列模型更自然地表达复合物的多体化学约束。可迁移到分子对接、结合位点预测等任务。</p>
+</li>
+<li>
+<p><strong>三类约束互补原则</strong>：结构（能否折叠）+ 相互作用（能否识别配体/底物）+ 进化（是否符合自然选择）是蛋白功能的三根支柱。任何单一约束都不足以预测适应性。可迁移到蛋白设计评分函数设计。</p>
+</li>
+<li>
+<p><strong>置信度引导的迭代解码优于一次性预测</strong>：逐步锁定高置信度残基、丰富上下文，模拟协同折叠过程，避免误差累积。可迁移到序列设计、结构生成等自回归/迭代生成任务。</p>
+</li>
+<li>
+<p><strong>适应性预测需要多维评估</strong>：仅用序列恢复率评估逆折叠模型会掩盖功能预测能力的差异。应同时评估结构兼容性（恢复率、TM-score）、稳定性（ΔΔG 相关性）、适应性（实验 fitness 相关性）、功能位点敏感性（AUC/AP）。</p>
+</li>
+<li>
+<p><strong>进化信息是适应性预测的强先验</strong>：ESM-2 嵌入贡献最大（消融实验），说明从海量序列中学习的进化约束比几何结构更接近功能本质。可迁移到突变效应预测、适应性景观建模。</p>
+</li>
+<li>
+<p><strong>计算预测 + 湿实验验证的闭环</strong>：先计算筛选（发现新酶、预测有益突变），再湿实验验证（活性测定），形成「预测-验证-迭代」的完整流程。这是计算蛋白设计走向实际应用的必要路径。</p>
+</li>
+<li>
+<p><strong>对 B-factor 的鲁棒性设计</strong>：通过整合进化/相互作用信息，模型对结构噪声（高 B-factor 区域）的敏感度降低。可迁移到低分辨率结构、AlphaFold 预测结构上的下游任务。</p>
+</li>
+<li>
+<p><strong>多任务学习增强泛化</strong>：主任务（氨基酸预测）+ 辅助任务（相互作用计数预测）联合训练，使模型同时学习结构-序列映射和物理化学相互作用模式。可迁移到其他结构生物学预测任务。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>ProteinMPNN (Dauparas et al., 2022)</strong>：本文的直接基线。ProteinMPNN 仅用结构信息，zPolaron 在此基础上引入配体和进化信息。连接点：图神经网络编码结构-序列关系。</li>
+<li><strong>LigandMPNN (Dauparas et al., 2023)</strong>：首次将配体引入逆折叠框架，zPolaron 的训练集即来自 LigandMPNN 数据集。连接点：配体上下文的重要性。</li>
+<li><strong>ESM-2 (Lin et al., 2023)</strong>：zPolaron 使用 ESM-2 嵌入作为进化先验。连接点：蛋白语言模型的进化知识编码。</li>
+<li><strong>AlphaFold 3 (Abramson et al., 2024)</strong>：用于结构重建验证和复合物结构预测。连接点：结构预测与逆折叠的闭环。</li>
+<li><strong>CARBonAra (2024)</strong>：基于几何 Transformer 的配体感知逆折叠，zPolaron 的基线之一。连接点：配体-残基相互作用建模。</li>
+<li><strong>ABACUS-T (2024)</strong>：基于能量函数的逆折叠方法，zPolaron 的基线之一。连接点：物理能量与深度学习融合。</li>
+<li><strong>ProteinGym (Notin et al., 2023)</strong>：适应性预测评估基准，zPolaron 使用其中 8 个酶靶点。连接点：零样本适应性预测的标准化评估。</li>
+<li><strong>S2648 数据集</strong>：稳定性预测评估基准，zPolaron 用于 ΔΔG 预测评估。连接点：稳定性与适应性的关系。</li>
+<li><strong>Ferreira de Freitas &amp; Schapira (2017)</strong>：蛋白-配体相互作用类型分类，zPolaron 的边类型定义来源。连接点：非共价相互作用的系统分类。</li>
+<li><strong>Duncan et al. (ADK) 和 Norton et al. (PETase)</strong>：口袋破坏评估数据集来源。连接点：功能位点突变效应的实验数据。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<h3>候选 1：多配体共适应逆折叠</h3>
+<ul>
+<li><strong>名称</strong>：Multi-Ligand Co-Adaptive Inverse Folding</li>
+<li><strong>来源局限/观察</strong>：zPolaron 仅处理单一配体，但许多酶需要多个辅因子/底物协同作用（如 NAD⁺ 和底物同时结合）</li>
+<li><strong>核心假设</strong>：同时建模多个配体的协同约束可进一步提升适应性预测精度</li>
+<li><strong>初步方法</strong>：扩展异质图支持多配体节点，增加配体-配体边类型，建模配体间协同效应</li>
+<li><strong>验证方式</strong>：在多辅因子酶（如细胞色素 P450）上评估适应性预测</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：适应性预测的置信度校准</h3>
+<ul>
+<li><strong>名称</strong>：Calibrated Fitness Scoring for Inverse Folding</li>
+<li><strong>来源局限/观察</strong>：zPolaron 的 mean NLL 与实验适应性相关，但未报告预测不确定度</li>
+<li><strong>核心假设</strong>：对预测不确定性进行校准可提高适应性排序的可靠性</li>
+<li><strong>初步方法</strong>：引入深度集成或 MC-dropout 估计预测方差，输出适应性预测的置信区间</li>
+<li><strong>验证方式</strong>：在 ProteinGym 上比较校准前后对 top-k 突变体选择的精确率</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：结构噪声自适应的鲁棒逆折叠</h3>
+<ul>
+<li><strong>名称</strong>：Noise-Adaptive Inverse Folding</li>
+<li><strong>来源局限/观察</strong>：zPolaron 对 B-factor 有一定鲁棒性，但未显式建模结构不确定性</li>
+<li><strong>核心假设</strong>：将 B-factor/结构不确定性作为显式输入特征可进一步提升低质量结构上的表现</li>
+<li><strong>初步方法</strong>：将 B-factor 编码为节点特征或边权重，训练时注入坐标噪声增强</li>
+<li><strong>验证方式</strong>：在低分辨率晶体结构和 AlphaFold 预测结构上对比恢复率</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：从逆折叠到适应性景观导航</h3>
+<ul>
+<li><strong>名称</strong>：Fitness Landscape Navigation via Inverse Folding</li>
+<li><strong>来源局限/观察</strong>：zPolaron 可打分但未提供搜索策略</li>
+<li><strong>核心假设</strong>：将逆折叠模型嵌入蒙特卡洛树搜索或遗传算法，可系统探索适应性景观</li>
+<li><strong>初步方法</strong>：以 zPolaron 分数为适应度函数，结合结构聚类指导突变组合搜索</li>
+<li><strong>验证方式</strong>：在酶工程任务中比较搜索策略与随机突变/单点突变的效果</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 5：配体感知的通用蛋白适应度预训练</h3>
+<ul>
+<li><strong>名称</strong>：Ligand-Aware Protein Fitness Pretraining</li>
+<li><strong>来源局限/观察</strong>：zPolaron 在逆折叠任务上预训练，适应性预测是下游应用</li>
+<li><strong>核心假设</strong>：在适应性数据上直接预训练（而非仅逆折叠）可进一步提升预测精度</li>
+<li><strong>初步方法</strong>：使用 ProteinGym 等大规模突变数据对 zPolaron 架构进行对比预训练</li>
+<li><strong>验证方式</strong>：在未参与预训练的酶靶点上评估零样本适应性预测</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 6：相互作用类型的可解释性分析</h3>
+<ul>
+<li><strong>名称</strong>：Interpretable Interaction Typology in Inverse Folding</li>
+<li><strong>来源局限/观察</strong>：zPolaron 定义了六种边类型，但未分析各类型对预测的具体贡献</li>
+<li><strong>核心假设</strong>：不同相互作用类型在不同功能位点上的重要性不同，可解释性分析可指导设计</li>
+<li><strong>初步方法</strong>：注意力权重归因分析，识别关键相互作用类型和残基</li>
+<li><strong>验证方式</strong>：与已知催化残基/保守位点比对，评估归因准确性</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, discussion, conclusion, data availability, contributions, acknowledgements) as provided in the submission. Figures, tables, and supplementary materials are referenced but not provided.</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodological soundness, experimental design, and interpretation as presented in the text. No assessment of code functionality, reproducibility of the wet-lab experiments beyond what is described, or verification of the GitHub repository contents.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce zPolaron, a heterogeneous graph neural network for protein inverse folding on protein–ligand complexes. The model integrates structural, interaction, and evolutionary information via six edge types and ESM-2 embeddings, using a confidence-guided iterative decoding strategy. Claims include: state-of-the-art sequence recovery on a low-similarity test set; superior zero-shot fitness prediction on ProteinGym and a DAOx multi-substrate benchmark; strong sensitivity in identifying loss-of-function mutations in binding pockets; and wet-lab validation showing a 17.84-fold activity improvement for CalA6-D205A-S160G and a 1.91-fold improvement for CalB-I121M.</li>
+<li><strong>Visible evidence base</strong> Text descriptions of results in Sections 3.1–3.5, including numerical values for recovery rates, correlations, AUC/AP, and fold improvements. Methodological details in Sections 2.1–2.4. All figures, tables, and supplementary materials are referenced but not visible.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures (Figs. 1–5), supplementary figures (Figs. S1–S5), supplementary methods (Section 3 of Supplementary Materials), dataset composition details, and the GitHub repository contents. Without these, statistical significance, effect sizes, baseline comparisons, and experimental reproducibility cannot be independently verified.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a relevant and timely problem: moving protein inverse folding beyond structural recovery toward functional fitness prediction. The proposed architecture, combining heterogeneous graph representations with ESM-2 embeddings and iterative decoding, is a reasonable and well-motivated design. The wet-lab validation is a notable strength that elevates the work beyond purely computational benchmarking. However, the manuscript as presented has several critical gaps. The absence of all figures and supplementary materials makes it impossible to verify the quantitative claims, assess statistical rigor, or evaluate the experimental setup. The framing in the abstract and introduction overstates the novelty of integrating evolutionary information, as prior inverse folding methods already incorporate such signals. The wet-lab section lacks critical controls and quantitative details. The claim that zPolaron "fills the missing puzzle of inverse folding" is not supported by the evidence presented, which is largely incremental over existing methods.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational protein design researchers, particularly those working on inverse folding, enzyme engineering, and fitness prediction. The wet-lab validation of predicted variants would also interest protein engineers and synthetic biologists seeking practical tools for enzyme optimization. The methodological combination of graph neural networks with protein language models is relevant to the broader machine learning for structural biology community.</li>
+<li><strong>Major strengths</strong> 1) The problem framing is important: sequence recovery alone is insufficient for functional protein design, and the authors provide a clear argument for integrating interaction and evolutionary constraints. 2) The heterogeneous graph design with six edge types is a thoughtful architectural choice that explicitly encodes physicochemical interactions. 3) The confidence-guided iterative decoding strategy is a sensible compromise between autoregressive and one-shot generation. 4) The wet-lab validation, if reproducible, provides compelling evidence of practical utility that is rare in this field. 5) The analysis of B-factor sensitivity (Section 3.1) addresses a practical concern about robustness to structural uncertainty.</li>
+<li><strong>Major Concerns</strong> See detailed items below.</li>
+<li><strong>Minor Comments</strong> See detailed items below.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (missing figures and statistical rigor), R1-M2 (overstated novelty), R1-M3 (incomplete wet-lab reporting), R1-M4 (unclear dataset construction and leakage control).</li>
+<li><strong>Assessment against Nature-style criteria</strong><br />
+<em>Originality</em>: Moderate. The integration of interaction and evolutionary information is a reasonable extension of existing work, but the individual components (heterogeneous graphs, ESM-2 embeddings, iterative decoding) are all established techniques. The specific combination and the wet-lab validation provide some novelty, but the conceptual advance over LigandMPNN and CARBONARA is incremental.<br />
+<em>Scientific importance</em>: Moderate to high. Functional fitness prediction is a critical bottleneck in protein design, and demonstrating practical utility via wet-lab validation is valuable. However, the importance is diminished by the lack of clear evidence that the improvements are statistically significant and generalizable beyond the tested systems.<br />
+<em>Interdisciplinary readership</em>: Moderate. The work bridges computational biology, machine learning, and enzymology. The wet-lab results could attract a broader audience, but the presentation is heavily computational and may not be accessible to experimentalists without additional context.<br />
+<em>Technical soundness</em>: Cannot be fully assessed. The architectural choices are reasonable, but the absence of figures, supplementary methods, and statistical details prevents verification of the claims. The wet-lab section lacks critical controls.<br />
+<em>Readability for nonspecialists</em>: Moderate. The introduction and discussion are accessible, but the methods section assumes significant familiarity with graph neural networks and protein language models. The abstract is clear but overstates the novelty.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript has potential, and the wet-lab validation is promising, but the missing figures, supplementary materials, and statistical details preclude a supportive recommendation. Major revisions are required to address the concerns below.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality and statistical rigor</li>
+<li><strong>Claim pointer</strong> The manuscript claims zPolaron "outperforms all baselines" across sequence recovery, fitness prediction, and mutation effect identification, with specific numerical values (e.g., recovery rate exceeding 80% at 10 iterations, Spearman correlations of −0.609 and −0.530, AUC of 0.934 and 0.995).</li>
+<li><strong>Evidence pointer</strong> Sections 3.1–3.4; all figures (Figs. 1–5) and supplementary figures (Figs. S1–S5) are referenced but not provided.</li>
+<li><strong>Concern</strong> The central quantitative claims cannot be verified without the figures and supplementary materials. No confidence intervals, standard errors, or statistical tests are reported for any of the benchmark comparisons. The number of independent runs, the variance across runs, and the significance of differences between zPolaron and baselines are not stated. For the wet-lab experiments, no replicates, error bars, or statistical analysis are presented. The claim of "significantly higher" recovery rate (Section 3.1) is unsupported without statistical testing.</li>
+<li><strong>Why it matters</strong> Nature-style publications require rigorous statistical evidence. Without measures of variance and significance, the reader cannot determine whether the observed improvements are meaningful or within noise. This is particularly important given the small number of test systems (10 PDB entries for stability, 8 enzyme targets for fitness, 2 enzymes for mutation analysis).</li>
+<li>
+<p><strong>Resolution test</strong> Provide all figures and supplementary materials. Add confidence intervals, standard errors, or statistical tests (e.g., paired tests across targets) for all benchmark comparisons. Report the number of independent runs and the variance. For wet-lab experiments, provide replicate numbers, error bars, and appropriate statistical analysis.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Novelty and positioning</li>
+<li><strong>Claim pointer</strong> The abstract states that "none of [structural, interaction, evolutionary constraints] are handled in a unified manner by existing pretrained models" and that zPolaron "fills the missing puzzle of inverse folding."</li>
+<li><strong>Evidence pointer</strong> Section 1 (Introduction), Abstract.</li>
+<li><strong>Concern</strong> The claim that existing models do not handle evolutionary information is inaccurate. ESM-2 embeddings, which the authors use, are derived from evolutionary sequence data. ProteinMPNN and ESM-IF have been shown to capture evolutionary constraints implicitly. LigandMPNN explicitly incorporates ligand context. The novelty of zPolaron appears to be the specific combination of heterogeneous graph edges with ESM-2 embeddings and iterative decoding, not the introduction of a fundamentally new information source. The "missing puzzle" framing overstates the gap.</li>
+<li><strong>Why it matters</strong> Overstated novelty undermines the credibility of the contribution. The manuscript should accurately position zPolaron relative to existing methods, acknowledging that evolutionary information is already used in various forms, and clarify what specific architectural or methodological advance enables the improved performance.</li>
+<li>
+<p><strong>Resolution test</strong> Revise the introduction and abstract to accurately describe the state of the art. Provide a clear, specific statement of what zPolaron adds beyond existing methods, supported by ablation studies that isolate the contribution of each component.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Experimental validation and reporting</li>
+<li><strong>Claim pointer</strong> Section 3.5 claims wet-lab validation showing "CalA6-D205A-S160G achieves a 17.84-fold improvement in catalytic activity over native CalA" and "CalB-I121M shows a 1.91-fold increase."</li>
+<li><strong>Evidence pointer</strong> Section 3.5, Fig. 5, Fig. S5.</li>
+<li><strong>Concern</strong> The wet-lab section is severely under-reported. No details are given on: (i) the number of biological and technical replicates; (ii) the assay conditions beyond buffer, pH, and temperature; (iii) how the 17.84-fold and 1.91-fold values were calculated (e.g., initial rates, endpoint assays, product quantification); (iv) whether the improvements are statistically significant; (v) the expression and purification yields for each variant; (vi) whether the variants were characterized for stability, expression level, or solubility beyond activity. The statement that CalA8 was "predominantly expressed as inclusion bodies" suggests variability in expression that is not controlled for. Without these details, the wet-lab claims cannot be evaluated.</li>
+<li><strong>Why it matters</strong> Wet-lab validation is a major strength of the manuscript, but only if it is rigorously reported. The current description is insufficient for reproduction or independent verification. The 17.84-fold improvement is a strong claim that requires robust evidence.</li>
+<li>
+<p><strong>Resolution test</strong> Provide full experimental details: replicate numbers, statistical analysis, assay protocols, calculation methods, and characterization of all variants (expression, solubility, stability). Include raw data or representative chromatograms/curves in the supplementary materials.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Dataset construction and leakage control</li>
+<li><strong>Claim pointer</strong> Section 2.2 describes the training set as "the protein–ligand complex dataset released by the LigandMPNN study" and the test set as "249 low-similarity PDB structures published between 2023 and 2025, collected independently," with sequence similarity "strictly below 40%."</li>
+<li><strong>Evidence pointer</strong> Section 2.2, Section 3.1.</li>
+<li><strong>Concern</strong> The dataset construction is described too briefly. Key questions remain: (i) How was the 40% sequence similarity threshold computed (global vs. local alignment, which tool)? (ii) Was the threshold applied per-chain or per-complex? (iii) Were the test PDB structures checked for ligand identity and binding site similarity to training structures, or only sequence similarity? (iv) How many structures were excluded by the filtering, and what was the final distribution of protein families and ligand types? (v) For the ProteinGym and DAOx benchmarks, were the structures used for scoring consistent with the training set (e.g., did any ProteinGym targets overlap with training structures)? (vi) The stability benchmark uses only 10 PDB entries, which is a very small sample. The manuscript does not state whether these 10 entries are representative or how they were selected.</li>
+<li><strong>Why it matters</strong> Leakage between training and test sets is a common pitfall in protein design benchmarks. If the test set is not truly independent, the reported improvements may be inflated. The small sample sizes also raise concerns about generalizability.</li>
+<li><strong>Resolution test</strong> Provide a detailed description of dataset construction, including the alignment tool and parameters, the filtering process, and the final composition of all datasets. Report the number of structures excluded at each step. For the stability benchmark, justify the selection of the 10 PDB entries and consider expanding the set. Verify and report that no test targets share significant sequence or structural similarity with training data.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of model description</li>
+<li><strong>Affected element</strong> Section 2.1</li>
+<li><strong>Evidence pointer</strong> Section 2.1, equations (1)–(3)</li>
+<li><strong>Issue</strong> The model architecture is described at a high level, but the equations are not fully defined. The message-passing update, attention weight computation, and edge feature construction are not specified in sufficient detail. The dimension of edge features (d_e) is mentioned but not explained. The integration of ESM-2 embeddings with graph features is described only qualitatively.</li>
+<li>
+<p><strong>Required correction</strong> Provide a complete mathematical specification of the model, including the attention mechanism, message functions, edge feature construction, and the fusion of ESM-2 embeddings. Include a diagram or pseudocode in the supplementary materials.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Baseline selection and comparison</li>
+<li><strong>Affected element</strong> Section 3.1</li>
+<li><strong>Evidence pointer</strong> Section 3.1, Fig. 2a</li>
+<li><strong>Issue</strong> The baseline methods (CARBONARA, ABACUS-T, LigandMPNN, ProteinMPNN) are appropriate, but the comparison is not described in detail. It is unclear whether all baselines were retrained on the same training set, whether hyperparameters were tuned per method, and whether the same decoding strategy (e.g., iterative vs. one-shot) was used for all methods.</li>
+<li>
+<p><strong>Required correction</strong> Describe the training and evaluation protocol for all baselines, including hyperparameter selection, decoding strategy, and any differences in input features. State whether the comparison is fair in terms of model capacity and training data.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting in figures</li>
+<li><strong>Affected element</strong> Section 3.1–3.4, Figs. 2–4</li>
+<li><strong>Evidence pointer</strong> Sections 3.1–3.4</li>
+<li><strong>Issue</strong> The text reports mean values (e.g., mean ΔPSSM = −0.62) but does not report the distribution or variance. For the correlation analyses, no confidence intervals are given. The ROC/PR curves in Figs. 4i–l are described qualitatively without reporting the number of positive and negative samples.</li>
+<li>
+<p><strong>Required correction</strong> Add error bars, confidence intervals, or box plots to all figures. Report the number of samples for each ROC/PR analysis. Consider adding a supplementary table with all numerical results and their variances.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Discussion of limitations</li>
+<li><strong>Affected element</strong> Section 4</li>
+<li><strong>Evidence pointer</strong> Section 4.1, 4.2</li>
+<li><strong>Issue</strong> The discussion of limitations focuses on the sequence recovery metric but does not address limitations of the zPolaron model itself, such as its dependence on accurate ligand poses, sensitivity to the quality of input structures, or the computational cost of iterative decoding. The discussion of evolutionary constraints is insightful but does not acknowledge that ESM-2 embeddings may not capture all relevant evolutionary signals for ligand-binding sites.</li>
+<li>
+<p><strong>Required correction</strong> Add a subsection on model limitations, including input structure quality, ligand pose dependence, computational cost, and potential failure modes. Acknowledge the limitations of ESM-2 embeddings for capturing binding-site-specific evolutionary constraints.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility of wet-lab experiments</li>
+<li><strong>Affected element</strong> Section 2.4</li>
+<li><strong>Evidence pointer</strong> Section 2.4</li>
+<li><strong>Issue</strong> The wet-lab methods are described in a single paragraph without sufficient detail. The source of the genes, the expression host strain, the induction conditions, the lysis method, and the HPLC analysis conditions are mentioned but not fully specified. The "standard curves" are referenced but not described.</li>
+<li><strong>Required correction</strong> Provide a complete experimental protocol in the supplementary materials, including all buffer compositions, instrument settings, and data analysis procedures.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that zPolaron "fills the missing puzzle of inverse folding" is unsupported and overstated. The manuscript demonstrates incremental improvements on benchmarks, not a fundamental resolution of a known gap.</li>
+<li>The claim that "none of [structural, interaction, evolutionary constraints] are handled in a unified manner by existing pretrained models" is inaccurate, as ESM-2 and related models already incorporate evolutionary information.</li>
+<li>The specific numerical claims (17.84-fold, 1.91-fold, AUC 0.934/0.995, Spearman −0.609/−0.530) are unsupported without the corresponding figures, raw data, and statistical analysis.</li>
+<li>The claim that zPolaron is "insensitive to structural uncertainty" (Section 3.1, B-factor analysis) is based on a single analysis and lacks statistical verification.</li>
+<li>The generalizability of zPolaron to diverse protein families and ligand types is claimed but not demonstrated, given the limited number of test systems.</li>
+<li>The statement that "any two of the three information sources suffice to surpass all baselines" (Section 5) is presented without the ablation data (Fig. S2) being visible.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

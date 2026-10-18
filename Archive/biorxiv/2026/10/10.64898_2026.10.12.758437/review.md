@@ -1,0 +1,84 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, introduction, results, discussion, materials and methods, and supplementary figure legends as provided.
+- **Assessment boundary** Scientific content, experimental logic, evidence quality, and internal consistency of the claims as presented. No assessment of editorial fit or journal policy.
+- **Shared manuscript claim summary** The authors propose that MIZ1 proteins are ancient land plant regulators of cytokinin-dependent development, that their molecular compatibility with cytokinin receptors has diverged between species, and that the role of Arabidopsis MIZ1 in root hydrotropism represents a derived recruitment of this ancestral module.
+- **Visible evidence base** Phylogenetic analysis, structural predictions, subcellular localization, cross-species complementation assays in Arabidopsis, CRISPR mutants and overexpression lines in Marchantia polymorpha, gene expression analysis, protein-protein docking, and BiFC assays.
+- **Missing materials affecting confidence** Figures and supplementary figures are referenced but not provided. Statistical details, sample sizes, and replicate numbers are not reported. Raw data and analysis scripts are not available. The manuscript is a preprint and has not undergone peer review.
+
+## Reviewer
+- **Overall assessment** This manuscript addresses an interesting evolutionary question about the ancestral function of MIZ1 proteins and presents a plausible model in which MIZ1 function in cytokinin signaling is conserved while molecular compatibility has diverged. The combination of cross-species complementation, loss-of-function analysis in Marchantia, and protein interaction assays is a reasonable approach. However, the evidence as presented has several gaps that prevent full confidence in the conclusions. The lack of statistical detail, the reliance on qualitative BiFC data, and the absence of key controls for the complementation experiments are notable weaknesses. The claim that hydrotropism is a derived function rests on negative results, which are inherently difficult to interpret. The manuscript would benefit from additional quantitative data and a more rigorous treatment of the interaction analyses.
+- **Who would be interested in the results, and why** Researchers studying plant evolution, cytokinin signaling, and root development would find this work relevant. The manuscript addresses a fundamental question about how signaling modules are co-opted for new functions during evolution. The Marchantia work provides a new genetic resource for studying MIZ1 function in a bryophyte. The species-specific interaction data, if confirmed, would be of interest to those studying protein-protein interaction evolution.
+- **Major strengths** The evolutionary question is well framed and timely. The use of Marchantia as a model for ancestral land plant function is appropriate. The combination of phylogenetic, structural, genetic, and biochemical approaches is comprehensive. The finding that MpMIZ1a affects thallus growth and cytokinin homeostasis provides new functional data for a non-angiosperm MIZ1. The species-specific interaction pattern, if robust, offers a mechanistic explanation for the lack of cross-species complementation.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** The claim that MIZ1 orthologues from early diverging land plants fail to restore hydrotropism or cytokinin sensitivity in the Arabidopsis miz1 mutant.
+  - **Evidence pointer** Figure 2A-D, Figure 3A-B, Supplementary Figures S2-S4
+  - **Concern** The complementation experiments are described qualitatively without statistical analysis. The text states that transgenic lines exhibited bending angles "comparable to those of miz1" and that expression of AtMIZ1 "restored" the phenotype, but no quantitative data, statistical tests, or effect sizes are provided. It is unclear how many independent transgenic lines were tested, how many seedlings were measured per line, and whether the lack of complementation could be due to insufficient expression levels or protein instability rather than functional divergence.
+  - **Why it matters** The central conclusion that MIZ1 function is not conserved across land plants depends entirely on these negative results. Without quantitative data and appropriate controls, the possibility that the transgenes were not expressed at sufficient levels or that the proteins were not properly folded cannot be excluded. This weakens the foundation of the paper's main argument.
+  - **Resolution test** Provide quantitative measurements of root bending angles and root lengths with statistical comparisons across genotypes. Include expression analysis of the transgenes to confirm protein accumulation. Test multiple independent transgenic lines and report the number of biological replicates. If possible, include a positive control showing that the same constructs can complement a different phenotype or that the proteins are stable in planta.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** The claim that protein-protein docking and BiFC reveal species-specific interactions between MIZ1 proteins and their cognate cytokinin receptors.
+  - **Evidence pointer** Figure 6A-G
+  - **Concern** The BiFC data are described as showing "strong" fluorescence for cognate pairs and "little or no" fluorescence for cross-species pairs, but no quantification is provided. The docking predictions are based on AlphaFold models and HDOCK, which are computational predictions that require experimental validation. The criteria for defining a "stable" interaction or a "discrete interaction interface" are not stated. The number of biological replicates for the BiFC experiments is not reported.
+  - **Why it matters** The species-specific interaction pattern is a key mechanistic claim that explains the lack of cross-species complementation. If the BiFC data are not quantified or if the docking predictions are not validated, the conclusion that molecular compatibility has diverged is not firmly established. The paper would be substantially strengthened by quantitative interaction data, such as co-immunoprecipitation with appropriate controls or fluorescence intensity measurements.
+  - **Resolution test** Quantify BiFC fluorescence intensity across multiple fields and biological replicates with statistical comparison. Validate the docking predictions with site-directed mutagenesis of predicted interface residues. Consider performing co-immunoprecipitation experiments to confirm the interactions in a more quantitative manner.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretive caution
+  - **Claim pointer** The proposal that hydrotropism represents a derived recruitment of an ancestral MIZ1-cytokinin module into root-specific pathways.
+  - **Evidence pointer** Discussion section
+  - **Concern** This is an evolutionary scenario that is plausible but not directly tested. The evidence that MpMIZ1a functions in cytokinin-related processes in Marchantia does not necessarily mean that this is the ancestral function. The lack of complementation in Arabidopsis could be due to many factors beyond functional divergence, including technical issues with the transgenic system. The authors acknowledge this is a proposal, but the framing in the abstract and discussion is more definitive than the evidence supports.
+  - **Why it matters** The paper's broader significance depends on this evolutionary interpretation. If the ancestral function of MIZ1 is not firmly established, the claim that hydrotropism is derived is speculative. The authors should be more cautious in their language and acknowledge alternative interpretations.
+  - **Resolution test** Soften the language in the abstract and discussion to present this as a hypothesis rather than a conclusion. Consider testing additional MIZ1 orthologues from intermediate lineages or performing ancestral sequence reconstruction to strengthen the evolutionary argument.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Evidence quality
+  - **Claim pointer** The claim that MpMIZ1a regulates thallus growth and cytokinin homeostasis in Marchantia.
+  - **Evidence pointer** Figure 4A-F, Supplementary Figures S5-S7
+  - **Concern** The phenotypic analysis of Mpmiz1a mutants is described, but the quantification is not shown in the text. The statement that "cytokinin treatment rescued the hyponastic growth phenotype" is not supported by statistical analysis. The gene expression data for MpIPT1 and MpLOG1 are described as "reduced" but the magnitude and statistical significance are not reported. The number of biological replicates for the RT-qPCR is not stated.
+  - **Why it matters** The Marchantia data are the main positive evidence for a conserved role of MIZ1 in cytokinin-related processes. If the phenotypes are not rigorously quantified, the strength of this conclusion is diminished. The paper would benefit from clearer presentation of the quantitative data.
+  - **Resolution test** Provide quantitative measurements of thallus area and growth angles with statistical comparisons. Report the fold changes and statistical significance for the gene expression data. Include the number of biological and technical replicates for all experiments.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Figure 1C
+  - **Evidence pointer** Figure 1C
+  - **Issue** The text states that the phylogenetic tree is shown in Figure 1C, but Figure 1A is described as showing the phylogenetic analysis. This is inconsistent.
+  - **Required correction** Clarify which figure panel contains the phylogenetic tree and ensure the text matches the figure numbering.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Materials and methods, docking analysis
+  - **Evidence pointer** Materials and methods, Protein structure prediction and protein-protein docking
+  - **Issue** The docking analysis is described briefly without specifying the parameters used in HDOCK or the criteria for selecting the top-ranked models. The criteria for identifying putative interface residues are not stated.
+  - **Required correction** Provide more detail on the docking parameters, model selection criteria, and the definition of interface residues to ensure reproducibility.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** All quantitative experiments
+  - **Evidence pointer** Figures 2-4
+  - **Issue** No statistical methods are described in the materials and methods. It is unclear what tests were used and what significance thresholds were applied.
+  - **Required correction** Add a statistical analysis section describing the tests used, the software, and the significance criteria for all quantitative experiments.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Supplementary Figure S9
+  - **Evidence pointer** Supplementary Figure S9
+  - **Issue** The description of the sporophyte phenotype in Mpmiz1a crosses is brief. It is unclear how many crosses were analyzed and what the penetrance of the phenotype was.
+  - **Required correction** Provide more detail on the number of crosses analyzed and the proportion of plants showing the phenotype.
+
+## Risk / unsupported claims
+- The claim that MIZ1 orthologues from early diverging land plants fail to restore hydrotropism or cytokinin sensitivity in Arabidopsis is not fully supported due to lack of quantitative data and expression controls.
+- The claim that protein-protein interactions are species-specific is based on qualitative BiFC data and computational docking without experimental validation.
+- The proposal that hydrotropism is a derived function of MIZ1 is presented as a conclusion but is not directly tested and should be framed as a hypothesis.
+- The claim that MpMIZ1a regulates cytokinin homeostasis is based on gene expression data that are not fully quantified or statistically validated.
+- The phylogenetic analysis is described but the tree is not shown in the provided materials, making it impossible to evaluate the evolutionary relationships.

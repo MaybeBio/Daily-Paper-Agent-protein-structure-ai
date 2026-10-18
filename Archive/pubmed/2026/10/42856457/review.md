@@ -1,0 +1,100 @@
+## Review setup
+- **Input scope** Full manuscript text (preprint, bioRxiv)
+- **Assessment boundary** Scientific and technical soundness of the presented method, validation evidence, and claims as stated in the provided manuscript
+- **Shared manuscript claim summary** The authors present SMartini, an automated pipeline for deriving Martini 3 coarse-grained parameters for small molecules. The pipeline uses a fragment-based mapping engine, Boltzmann inversion of all-atom MD trajectories, and iterative distribution matching to fit bonded parameters. Validation is performed on seven small molecules, and protein–ligand simulations are used to assess stability of the derived topologies.
+- **Visible evidence base** Abstract, Introduction, Methodology (General Strategy, Mapping and Bead Type Assignment, Bonded Parameters, Molecular Dynamics Simulations), Results (Validated Molecules, Bonded parameter distributions, Solvent-Accessible Surface Area/RMSD/Radius of Gyration, Protein–Ligand Contact Analysis), Discussion, Code and Data Availability
+- **Missing materials affecting confidence** Figures and tables referenced (Figures 1–4, Table 1, Supplementary Sections S2–S4) are not provided. No quantitative comparison against existing tools (e.g., AutoMartini M3) is presented. No benchmarks of computational cost or wall-clock time are reported. No error bars or statistical significance tests are reported for the Wasserstein distances beyond a single mean value. No convergence criteria for the iterative fitting procedure are defined. No validation of non-bonded parameters (e.g., solvation free energies, partition coefficients) is presented.
+
+## Reviewer
+- **Overall assessment** The manuscript describes a potentially useful tool for automated Martini 3 parametrization of small molecules. The fragment-based mapping approach and the iterative distribution-matching strategy are sensible and address a real bottleneck in the field. However, the evidence presented is insufficient to establish that the method is robust, accurate, and broadly applicable. The validation set is small (seven molecules), the reported metrics are limited to internal conformational agreement, and the protein–ligand test is compromised by the need for manual distance restraints. The claim that the pipeline "makes automated parametrization of large ligand libraries practical" is not supported by any demonstration of throughput, scalability, or success rate on a large library. The manuscript would benefit from a more rigorous and comprehensive validation, including comparisons to existing methods and experimental data.
+- **Who would be interested in the results, and why** Researchers in the coarse-grained simulation community, particularly those using the Martini force field for protein–ligand systems, drug discovery, or membrane biology. The tool could be of interest to computational chemists seeking to automate the parametrization of ligands for high-throughput screening. The method's potential to reduce manual effort in CG model development is the primary appeal.
+- **Major strengths** The manuscript addresses a clear and important need in the Martini community. The fragment-based mapping approach is a reasonable strategy to overcome the scaling limitations of exhaustive enumeration. The iterative distribution-matching procedure for bonded parameters is a principled approach. The modular architecture and HPC compatibility are practical advantages. The choice of a diverse test set (including large cofactors like chlorophyll) is commendable.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "The pipeline produces numerically stable topologies" and "the coarse-grained conformational ensemble reproduces the all-atom reference within tolerance"
+  - **Evidence pointer** Results, "Bonded parameter distributions"; Figure 2 (not provided)
+  - **Concern** The manuscript reports Wasserstein distances for bonded terms but does not define the "tolerance" used to declare convergence or success. The mean bond distance of 0.036 is reported, but the range across molecules is not given. The dihedral distances show a wide range (0.009–0.075), and the authors acknowledge that some molecules (LIB, CLA) are difficult to fit. The claim of "within tolerance" is therefore not substantiated. Furthermore, the metric is only applied to internal conformational distributions; no validation of non-bonded interactions (e.g., solvation free energies, partitioning behavior) is presented, which is critical for the use of the parameters in protein–ligand simulations.
+  - **Why it matters** The central claim of the paper is that SMartini produces accurate and reliable CG parameters. Without a clear definition of success criteria and without validation of the non-bonded terms, the accuracy of the method is not established. The reported difficulties with LIB and CLA suggest that the method may not be as general as claimed.
+  - **Resolution test** The authors should define a quantitative convergence criterion for the iterative fitting. They should report the full distribution of Wasserstein distances for all bonded terms and all molecules, not just means. They should validate the non-bonded parameters by computing solvation free energies or partition coefficients for the test set and comparing to experimental or AA reference data. They should also demonstrate that the final CG models are stable in longer simulations and reproduce relevant physical properties (e.g., conformational ensembles, binding poses).
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance / evidence sufficiency
+  - **Claim pointer** "SMartini makes automated parametrization of large ligand libraries practical" and "reduces the manual effort required for coarse-grained model development, enabling high-throughput coarse-grained simulations"
+  - **Evidence pointer** Abstract; Introduction; Discussion, Conclusion
+  - **Concern** The manuscript claims that SMartini is practical for large ligand libraries and high-throughput applications, but no evidence is provided to support this. The validation is limited to seven molecules, and no benchmark of computational cost, wall-clock time, or success rate on a larger set is presented. The manual adjustments required for three of the seven test molecules (LIB, ANP, CLA) suggest that the "default" pipeline may not be fully automatic for many real-world cases. The claim of "high-throughput" is therefore not supported.
+  - **Why it matters** The primary motivation for the tool is to enable large-scale parametrization. Without a demonstration of scalability and throughput, the practical impact of the method is unclear. The need for manual intervention in three of seven test cases undermines the claim of full automation.
+  - **Resolution test** The authors should apply SMartini to a larger library (e.g., 100+ drug-like molecules) and report the success rate, the average computational cost per molecule, and the fraction of molecules that required manual intervention. They should also compare the wall-clock time of SMartini to that of existing tools (e.g., AutoMartini M3) on the same set of molecules.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "We validate SMartini on a diverse set of drug-like molecules, metabolites, and cofactors... and demonstrate that the pipeline produces numerically stable topologies" and "the coarse-grained Q(t) tracks the all-atom reference reasonably well"
+  - **Evidence pointer** Results, "Protein–Ligand Contact Analysis"; Figure 4 (not provided)
+  - **Concern** The protein–ligand validation is compromised by the introduction of two supplementary distance restraints in the kinase domain simulation to maintain ligand binding. This indicates that the derived parameters alone are not sufficient to keep the ligand bound, which is a significant limitation. The authors acknowledge this as a known limitation of CG force fields, but the use of restraints undermines the claim that the SMartini parameters are directly usable for protein–ligand simulations. The Q(t) analysis is also only shown for two systems, and the "reasonable" agreement is not quantified.
+  - **Why it matters** The stated goal of the tool is to enable protein–ligand simulations. If the derived parameters require manual addition of restraints to maintain binding, the practical utility of the method for this purpose is questionable. The validation is too limited to draw general conclusions.
+  - **Resolution test** The authors should test the SMartini parameters on a larger set of protein–ligand complexes and report the fraction of cases where the ligand remains bound without additional restraints. They should quantify the Q(t) agreement (e.g., mean and standard deviation over time and over multiple replicates). They should also discuss the conditions under which restraints are needed and provide guidance on how to identify such cases a priori.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** "The complete set of bonds, angles, and dihedrals is inferred directly from the coarse-grained molecular graph based on bead connectivity."
+  - **Evidence pointer** Methodology, "Bonded Parameters"; Code and Data Availability
+  - **Concern** The manuscript does not provide sufficient detail on the iterative fitting procedure to allow reproduction. The update rule for the bonded parameters is not described. The convergence criterion is not defined. The number of iterations is fixed at three by default, but it is not clear how the authors determined that this is sufficient. The code is available on GitHub, but the manuscript does not describe the key algorithmic steps in enough detail for a reader to understand or reproduce the method without inspecting the code.
+  - **Why it matters** Reproducibility is a core requirement for scientific software. Without a clear description of the algorithm, the method cannot be independently implemented or verified.
+  - **Resolution test** The authors should provide a detailed algorithmic description of the iterative fitting procedure, including the update rule, the objective function, and the convergence criterion. They should also provide a step-by-step example of the fitting process for one molecule in the Supplementary Information.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Methodology, "Molecular Dynamics Simulations", "All-atom reference simulations"
+  - **Evidence pointer** "The default production length was 20 ns (10 M steps); in practice, even 2 ns of AA sampling proved sufficient for reliable bonded parameter extraction, though this does not account for a priori undersampling of the full conformational landscape."
+  - **Issue** The statement that 2 ns is sufficient is based on the authors' experience but is not supported by a systematic analysis. The caveat about undersampling is acknowledged, but the practical recommendation is unclear.
+  - **Required correction** Provide a systematic analysis of the convergence of the bonded parameter fits as a function of simulation length for at least one molecule. If 2 ns is indeed sufficient, show this explicitly.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Results, "Validated Molecules"
+  - **Evidence pointer** Table 1 (not provided)
+  - **Issue** The test set is described as "diverse," but the selection criteria are not stated. The rationale for choosing these specific seven molecules is not given.
+  - **Required correction** State the criteria used to select the test set (e.g., range of sizes, chemical functionalities, flexibility, relevance to drug discovery).
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical detail
+  - **Affected element** Methodology, "Mapping and Bead Type Assignment"
+  - **Evidence pointer** "Bead types are assigned using per-bead SMILES and logP-based classification, following AutoMartiniM328."
+  - **Issue** The manuscript does not describe how the logP values are obtained or how the classification is performed. The reference to AutoMartiniM3 is helpful, but the specific implementation details are missing.
+  - **Required correction** Provide a brief description of the logP source and the classification rules, or refer to a specific section of the AutoMartiniM3 paper.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Presentation
+  - **Affected element** Results, "Bonded parameter distributions"
+  - **Evidence pointer** "Figure 2 presents the per-molecule mean Wasserstein distances, and an example of dihedral distributions for ANP with W1 = 0.032 to provide visual context for the raw metric values."
+  - **Issue** The manuscript reports a single example (ANP) for visual context. It would be more informative to show examples of good and poor fits (e.g., ANP and LIB).
+  - **Required correction** Include a second example of a molecule with a higher Wasserstein distance (e.g., LIB) to illustrate the range of fitting quality.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Results, "Solvent-Accessible Surface Area, RMSD, and Radius of Gyration"
+  - **Evidence pointer** "Figure 3 presents the mean SASA, RMSD, and Rg values with 95% bootstrap confidence intervals (1 000 replicates, non-parametric; see Supplementary Information, Section S2)"
+  - **Issue** The manuscript reports mean values and confidence intervals but does not state whether the differences between AA and CG are statistically significant.
+  - **Required correction** Report the statistical significance of the differences (e.g., p-values) or state that the differences are within the confidence intervals.
+  - **Concern ID** R1-m6
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Discussion, "Limitations of Bonded-Parameter Fitting"
+  - **Evidence pointer** "A potential route to resolving this problem is to use more flexible simulation engines: the OpenMM implementation of Martini48 supports tabulated and custom bonded potentials that could, in principle, capture multi-well angle distributions."
+  - **Issue** The discussion of future directions is brief and does not address the practical challenges of implementing such potentials in the Martini framework.
+  - **Required correction** Expand the discussion to include the potential benefits and challenges of using tabulated potentials, and whether this is a realistic near-term solution.
+
+## Risk / unsupported claims
+- The claim that the pipeline "makes automated parametrization of large ligand libraries practical" is unsupported by any demonstration of throughput or scalability.
+- The claim that the pipeline "reduces the manual effort required for coarse-grained model development" is only weakly supported, as three of seven test molecules required manual intervention.
+- The claim that the pipeline "produces numerically stable topologies" is not supported by any long-timescale stability analysis.
+- The claim that the coarse-grained conformational ensemble "reproduces the all-atom reference within tolerance" is not supported by a defined tolerance or a comprehensive statistical comparison.
+- The claim that the method "easily scales to ligands the size of chlorophyll (~64 heavy atoms) and beyond" is based on a single example and is not supported by a systematic scaling analysis.
+- The protein–ligand validation is compromised by the use of manual restraints, and the claim that the parameters are suitable for protein–ligand simulations is not established.
+- The manuscript does not provide a comparison of SMartini's performance (accuracy, speed, ease of use) against existing tools such as AutoMartini M3, which is a significant omission given the stated goal of improving upon the state of the art.

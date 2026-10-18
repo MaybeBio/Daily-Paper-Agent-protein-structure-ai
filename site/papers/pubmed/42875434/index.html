@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Predicting phase transitions across temperature, pressure, and chemical potential using exponentially tilted thermodynamic maps. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Predicting phase transitions across temperature, pressure, and chemical potential using exponentially tilted thermodynamic maps.</h1>
+      <div class="meta">Lee, Suemin; Wang, Ruiyu; Herron, Lukas; Tiwary, Pratyush</div>
+      <div class="meta muted">
+        
+        <span class="journal">Nature communications</span>
+        · 2026-10-15
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42875434/">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于统计物理和生成式AI的指数倾斜热力学图框架，用于在任意热力学条件下生成不同相样本，虽以晶格气体和CO2为对象，但其生成式采样方法可迁移至蛋白质构象采样与相变研究。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Predicting and characterizing phase transitions is crucial for understanding generic physical phenomena such as crystallization, protein folding, and others. However, directly observing phase transitions is not always easy, and we often have limited observations far from the phase boundary, measured under specific thermodynamic conditions. In this study, we propose a statistical-physics- and generative-AI-driven framework that uses such limited information to generate samples of different phases under arbitrary thermodynamic conditions, which we call Exponentially Tilted Thermodynamic Maps (expTM). The central idea is to map collected data into a simple, tractable prior expressed as an exponentially tilted Gaussian. We demonstrate how the variance and mean of the prior can be correlated with pairs of thermodynamic control variables, including temperature, pressure, and chemical potential. This gives us the ability to generate thermodynamically correct samples under any values of the control variables. To demonstrate the practical applicability of this approach, we use expTM to sample a lattice gas model with the grand canonical ensemble, capturing phase transitions under varying chemical potentials and temperatures. We further demonstrate how expTM can model the isothermal-isobaric ensemble, with which we predict different phases of CO(2) under varying pressure conditions. Both examples are trained on very limited data far from the phase boundary. These results establish expTM as a robust tool for understanding phase transitions across diverse thermodynamic conditions requiring only a small number of observations.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">预测和表征相变对于理解诸如结晶、蛋白质折叠等一般物理现象至关重要。然而，直接观察相变并不总是容易的，我们往往只能在远离相边界的有限观测中，在特定热力学条件下进行测量。在本研究中，我们提出了一种基于统计物理和生成式人工智能的框架，利用这些有限信息在任意热力学条件下生成不同相的样本，我们称之为指数倾斜热力学映射（Exponentially Tilted Thermodynamic Maps, expTM）。核心思想是将收集到的数据映射到一个简单、易处理的先验分布上，该分布表示为指数倾斜的高斯分布。我们展示了先验的方差和均值如何与热力学控制变量对（包括温度、压力和化学势）相关联。这使我们能够在任意控制变量值下生成热力学上正确的样本。为展示该方法的实际应用性，我们使用expTM对巨正则系综下的晶格气体模型进行采样，捕捉不同化学势和温度下的相变。我们进一步展示了expTM如何模拟等温等压系综，并据此预测CO(2)在不同压力条件下的不同相。两个示例均在远离相边界的极有限数据上训练。这些结果确立了expTM作为一种稳健工具，能够在多样热力学条件下理解相变，且仅需少量观测数据。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Predicting phase transitions across temperature, pressure, and chemical potential using exponentially tilted thermodynamic maps</li>
+<li><strong>作者</strong>：Lee, Suemin; Wang, Ruiyu; Herron, Lukas; Tiwary, Pratyush</li>
+<li><strong>单位</strong>：未提供（根据作者领域推断为美国马里兰大学，Tiwary 课题组）</li>
+<li><strong>期刊/平台</strong>：Nature Communications</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学（Methodology）</li>
+<li><strong>领域</strong>：统计物理 × 生成式 AI（扩散模型）；相变预测；系综采样</li>
+<li><strong>关键词</strong>：扩散模型、指数倾斜、热力学图、巨正则系综、等温等压系综、相变、晶相预测</li>
+<li><strong>DOI/arXiv</strong>：10.1038/s41467-026-77612-y</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（训练数据来自 MC/MD 模拟）</li>
+<li><strong>阅读日期</strong>：2026-05-15</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「AI 驱动的构象/相空间采样」方向，将扩散模型与统计力学系综理论结合，实现跨温度、压力、化学势的外推采样。对蛋白质结构研究而言，其核心可迁移思想是：将热力学控制变量（温度、压力、化学势）编码进扩散模型的先验分布，从而在有限训练数据下生成任意热力学条件下的系综样本。这与蛋白质构象采样（如温度依赖的构象系综、压力诱导的蛋白变性、配体化学势驱动的结合态采样）高度相关。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 expTM 框架，通过在扩散模型的 Gaussian 先验中引入指数倾斜因子（exponential tilting），将温度映射到先验方差、压力/化学势映射到先验均值，从而仅用远离相边界的两组训练数据即可生成任意（T, P, μ）条件下的热力学一致样本，并在格子气体（巨正则系综）和 CO₂ 固相（等温等压系综）两个体系中验证了相变预测能力。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何用生成式 AI 模型，在仅有少量、远离相边界的训练数据条件下，预测体系在不同温度、压力、化学势下的相行为和相变边界？</li>
+<li><strong>为什么重要</strong>：相变预测对材料科学、药物结晶、蛋白质折叠等至关重要。传统 MC/MD 模拟在相边界附近面临采样瓶颈（临界慢化、自由能势垒），且需要针对每个热力学条件单独模拟，计算成本极高。</li>
+<li><strong>现有方法不足</strong>：</li>
+<li>传统 MC/MD：需要大量采样，尤其在相变点附近效率极低；每个（T, P, μ）条件需独立模拟。</li>
+<li>原始 TM 框架（ref. 18）：仅支持温度（canonical 系综）外推，无法处理压力、化学势等额外热力学变量。</li>
+<li>条件扩散模型：通常将条件作为固定标签输入，缺乏物理机制保证热力学一致性。</li>
+<li><strong>精确研究问题</strong>：能否通过将热力学控制变量（T, P, μ）以指数倾斜形式嵌入扩散模型的 Gaussian 先验，使模型在仅见两个热力学条件数据的情况下，外推生成任意条件下的系综样本并正确预测相变？</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引用与作者叙述整理，部分经外部核验，标注如下。</p>
+</blockquote>
+<ol>
+<li><strong>传统模拟方法</strong>（MC/MD）：Metropolis-Hastings MC、分子动力学模拟是研究相变的标准工具，但受限于时间尺度和采样效率（Introduction 节）。</li>
+<li><strong>扩散模型兴起</strong>（2020-2023）：Sohl-Dickstein et al. (2015) 提出扩散模型；后续在分子科学中广泛应用：GeoDiff、GeoLDM 生成分子构象，DiffDock、NeuralPlexer 预测配体-蛋白结合，AlphaFold3 预测生物分子结构（Introduction 节）。[经外部核验]</li>
+<li><strong>扩散模型与物理结合</strong>：扩散模型的 OU 过程与统计力学的联系逐渐被认识；score-based generative model 的噪声扰动过程可类比热力学涨落。[经外部核验，如 Song et al. 2021]</li>
+<li><strong>Thermodynamic Maps (TM)</strong>（本文作者前期工作，ref. 18）：首次将扩散模型与 canonical 系综对应，温度映射到先验方差，实现温度外推。成功应用于 Ising 模型、RNA 构象、Gay-Berne 模型（Introduction 节）。[仅本文框架]</li>
+<li><strong>expTM（本文）</strong>：在 TM 基础上引入指数倾斜因子，将额外热力学变量（P, μ）映射到先验均值，推广到 NPT 和 μVT 系综，实现多变量联合外推（Methods 节）。[仅本文框架]</li>
+<li><strong>相关方向</strong>：随机定位（stochastic localization）与指数倾斜的联系（Discussion 节提及 ref. 29-31），表明指数倾斜是更广泛的统计物理-生成模型桥梁。[仅本文框架]</li>
+</ol>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>相变点附近采样困难</td>
+<td>MC/MD 在临界点附近需要极长模拟时间，相变边界难以精确定位</td>
+<td>临界慢化、自由能势垒导致采样效率急剧下降</td>
+<td>Introduction 节："traditional approaches face limitations, such as time-scale constraints"</td>
+</tr>
+<tr>
+<td>多热力学变量外推缺失</td>
+<td>现有生成模型仅能处理温度，无法同时控制压力/化学势</td>
+<td>原始 TM 的 Gaussian 先验仅编码温度（方差），缺乏对均值偏移的建模</td>
+<td>Methods "Thermodynamic Maps" 节：TM 仅对应 canonical 系综</td>
+</tr>
+<tr>
+<td>训练数据有限</td>
+<td>实际场景中只能获得少量远离相边界的数据</td>
+<td>实验/模拟成本高，尤其在极端条件下</td>
+<td>Results 节：仅用两个训练点（格子气体）和两个训练点（CO₂）</td>
+</tr>
+<tr>
+<td>条件生成缺乏物理一致性</td>
+<td>条件扩散模型将条件作为标签，生成样本不满足热力学分布</td>
+<td>条件信息未嵌入先验，模型无法理解热力学变量与分布形状的物理关系</td>
+<td>Methods "expTM" 节：强调联合学习 score 而非条件生成</td>
+</tr>
+<tr>
+<td>相变边界模糊</td>
+<td>生成样本在相边界附近出现混合态，难以清晰区分相</td>
+<td>有限训练数据导致边界区域不确定性</td>
+<td>Results 图 3f：使用 λ₁ 阈值 0.58 调整相边界判定</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+- 将扩散模型的前向过程定义为联合空间 (x, η) 上的 OU 过程，其中 η = {α, β⁻¹} 包含两个热力学控制变量
+- 温度 β⁻¹ 控制先验方差，压力/化学势 α 控制先验均值
+- 训练时仅需两个热力学条件下的数据，通过 score matching 学习联合 score ∇_{(x,η)} log p(x, η)
+- 推理时，通过设置目标 (α, β⁻¹) 初始化先验，反向采样生成对应热力学条件下的系综样本</p>
+<p><strong>2) 核心洞察</strong>：
+- 热力学控制变量与 Gaussian 先验的统计参数存在一一对应关系：温度→方差（涨落幅度），压力/化学势→均值（平衡位置偏移）
+- 指数倾斜（exponential tilting）是连接统计力学系综与生成模型先验的数学桥梁：对 Gaussian 乘以 e^{αx} 等价于均值平移
+- 将热力学变量作为扩散对象而非条件标签，使模型学习 joint distribution p(x, α, β⁻¹)，从而天然具备外推能力</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 物理先验知识（系综理论）可以直接编码到生成模型的先验分布中，而非仅作为训练数据的约束或条件输入
+- 将「控制变量」作为扩散过程的一部分（而非固定条件），是提升生成模型外推能力的通用策略
+- 对蛋白质结构研究：温度、压力、配体化学势等环境变量均可类比编码到扩散先验中，实现多条件构象系综生成</p>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：两个热力学条件下的训练数据集（如格子气体在 μ=-16, T=7 和 μ=0, T=7 的构型；CO₂ 在 P=1 GPa, T=350 K 和 P=8 GPa, T=350 K 的构型）</li>
+<li><strong>输出</strong>：任意 (T, P) 或 (T, μ) 条件下的系综样本，可用于计算密度、相边界、中间态等</li>
+<li><strong>模块</strong>：
+  1. <strong>前向扩散</strong>：在联合空间 (x, η) 上定义 OU 过程，η 包含 α（压力/化学势）和 β⁻¹（温度）
+  2. <strong>Score 网络</strong>：学习联合 score ∇_{(x,η)} log p(x, η)，输入为 x, η, 时间 t
+  3. <strong>指数倾斜先验</strong>：先验分布为 N(α, β⁻¹I<strong>)，均值</strong>α 决定，方差由 β⁻¹ 决定
+  4. <strong>反向采样</strong>：从目标 (α, β⁻¹) 对应的先验出发，用学习到的 score 反向扩散生成样本</li>
+<li><strong>训练</strong>：score matching 目标函数，与标准扩散模型类似但扩展至联合空间</li>
+<li><strong>工具</strong>：未提供具体代码框架；MC 模拟用于格子气体基准，MD（well-tempered metadynamics）用于 CO₂ 基准</li>
+<li><strong>文字流程</strong>：训练数据（两个热力学条件）→ 前向扩散加噪 → score 网络学习联合分布 → 推理时指定目标 (α, β⁻¹) → 从倾斜 Gaussian 先验采样 → 反向扩散生成构型 → 计算热力学量（密度、相边界等）</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>指数倾斜 Gaussian 先验</td>
+<td>将热力学控制变量编码为先验的均值和方差</td>
+<td>使先验直接反映目标热力学条件，保证生成样本的物理一致性</td>
+<td>输入：α, β⁻¹；输出：先验分布 N(α, β⁻¹I_d)</td>
+<td>Methods "expTM" 节：公式 15-19 推导</td>
+<td>移除后退化为原始 TM，无法处理压力/化学势 [预期]</td>
+</tr>
+<tr>
+<td>联合空间扩散 (x, η)</td>
+<td>同时扩散特征和控制变量</td>
+<td>使模型学习 joint distribution，实现跨条件外推</td>
+<td>输入：x, η, t；输出：扰动后的 x, η</td>
+<td>Methods 公式 20-21</td>
+<td>若仅扩散 x 而固定 η，则退化为条件生成，丧失外推能力 [预期]</td>
+</tr>
+<tr>
+<td>Score 网络</td>
+<td>近似联合 score ∇_{(x,η)} log p(x, η)</td>
+<td>反向扩散需要 score 指导</td>
+<td>输入：x, η, t；输出：score 估计</td>
+<td>Methods "expTM" 节</td>
+<td>移除后无法进行反向采样 [预期]</td>
+</tr>
+<tr>
+<td>反向采样器</td>
+<td>从先验生成目标条件样本</td>
+<td>生成新构型</td>
+<td>输入：目标 (α, β⁻¹) 和随机噪声；输出：构型样本</td>
+<td>Results 图 2b, 3d-e</td>
+<td>移除后无法生成新样本 [预期]</td>
+</tr>
+<tr>
+<td>相边界判定协议</td>
+<td>从生成样本中提取相边界</td>
+<td>量化相变位置</td>
+<td>输入：生成样本的序参量（密度、λ₁/λ₃）；输出：相边界位置</td>
+<td>Results 图 2c, 3f；Table 1</td>
+<td>移除后只能生成样本，无法定量预测相变 [预期]</td>
+</tr>
+<tr>
+<td>消融对照（无倾斜先验）</td>
+<td>验证指数倾斜的必要性</td>
+<td>证明倾斜项对相变预测的关键作用</td>
+<td>输入：标准 Gaussian 先验；输出：退化预测</td>
+<td>Supplementary Note 4, Figs. 3-5</td>
+<td>无法恢复尖锐相边界 [实测]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ol>
+<li>
+<p><strong>Ising/格子气体 Hamiltonian</strong>（公式 1, 3）：
+   - E_spin = -J Σ⟨i,j⟩ s_i s_j - H Σ⟨i⟩ s_i
+   - E_LG = -ε Σ⟨i,j⟩ n_i n_j - μ Σ⟨i⟩ n_i
+   - 符号：J=耦合常数，s_i∈{+1,-1}=自旋，H=外场，ε=相互作用能，μ=化学势，n_i∈{0,1}=占据数
+   - 用途：定义体系能量，MC 模拟的基准</p>
+</li>
+<li>
+<p><strong>自旋-占据数变换</strong>（公式 2）：
+   - n_i = (s_i + 1)/2, J = ε/4, H = μ + 2JZ
+   - 符号：Z=配位数
+   - 用途：将 Ising 模型映射到格子气体</p>
+</li>
+<li>
+<p><strong>指数倾斜 Gaussian 先验</strong>（公式 15, 17）：
+   - p(x) = (1/Z_II) exp[-β/2 (x-α)²]
+   - 等价于 p(x) ∝ exp[-β/2 x²] · e^{βαx}
+   - 符号：α=压力(-P)或化学势(μ)，β=1/(k_B T)
+   - 用途：将热力学控制变量编码为先验的均值和方差</p>
+</li>
+<li>
+<p><strong>前向扩散 SDE</strong>（公式 20）：
+   - d(x, η) = -g(t)(x-α₀, η)dt + √(2g(t))(√β₀⁻¹, 1)dB_t
+   - 符号：α₀=训练数据的热力学条件，β₀⁻¹=训练温度，g(t)=噪声调度
+   - 用途：定义联合空间的扩散过程</p>
+</li>
+<li>
+<p><strong>反向扩散 SDE</strong>（公式 21）：
+   - d(x, η) = -g(τ)[(x-α₀, η) + s_θ(x, η, τ)]dτ + √(2g(τ))(√β₀⁻¹, 1)dB_τ
+   - 符号：s_θ=学习的 score 网络，τ=反向时间
+   - 用途：从先验生成目标条件样本</p>
+</li>
+<li>
+<p><strong>score matching 目标</strong>（Methods 节，公式未编号）：
+   - argmin_θ E[||s_θ(x, η, τ) - ∇_{(x,η)} log p_τ(x, η)||²]
+   - 用途：训练 score 网络</p>
+</li>
+</ol>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>：
+- 格子气体模型：2D 20×20 格子，MC 模拟生成基准数据
+- CO₂ 晶体：256 分子体系，well-tempered metadynamics MD 模拟生成基准数据</p>
+<p><strong>规模</strong>：
+- 格子气体：训练数据仅 2 个热力学条件（μ=-16, T=7 和 μ=0, T=7）
+- CO₂：训练数据仅 2 个热力学条件（P=1 GPa, T=350 K 和 P=8 GPa, T=350 K），每条件 10⁵ 个构型</p>
+<p><strong>指标</strong>：
+- 粒子密度 ρ（格子气体）
+- 相边界位置（CO₂：P≈4.5-5.4 GPa 区间）
+- 与 MC/MD 基准的密度差 Δρ</p>
+<p><strong>基线</strong>：
+- MC 模拟（格子气体基准）
+- well-tempered metadynamics MD（CO₂ 基准）
+- 原始 TM（无倾斜项，消融对照）</p>
+<p><strong>评测协议</strong>：
+- 训练 expTM 于 2 个条件，生成 625 个 (μ, T) 网格点（格子气体）或 9 个压力点（CO₂）的样本
+- 将生成样本的密度与 MC/MD 基准比较
+- 通过 λ₁/λ₃ 阈值判定 CO₂ 相态</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>格子气体密度预测</td>
+<td>expTM 能跨 (μ, T) 生成正确密度</td>
+<td>训练于 μ=-16, 0 (T=7)，生成 μ∈[-20,4], T∈[1,13] 网格</td>
+<td>Δρ &lt; 0.05（除 μ_c=-8 附近）</td>
+<td>expTM 可准确外推至未见热力学条件</td>
+<td>未证明对更强相互作用或更大格子有效</td>
+<td>Results 图 2b-c</td>
+</tr>
+<tr>
+<td>格子气体相边界</td>
+<td>expTM 能恢复 μ_c=-8 临界点</td>
+<td>生成密度突变位置 vs MC 基准</td>
+<td>在 μ_c=-8 附近观察到密度突变</td>
+<td>expTM 捕获临界行为</td>
+<td>临界指数等定量临界性质未验证</td>
+<td>Results 图 2b</td>
+</tr>
+<tr>
+<td>消融实验（无倾斜）</td>
+<td>倾斜项对相变预测必要</td>
+<td>标准 Gaussian 先验 vs 倾斜先验</td>
+<td>无倾斜时无法恢复相边界</td>
+<td>指数倾斜是核心机制</td>
+<td>—</td>
+<td>Supplementary Note 4, Figs. 3-5</td>
+</tr>
+<tr>
+<td>CO₂ 相边界预测</td>
+<td>expTM 能预测 P 驱动的 I/III 相变</td>
+<td>训练于 P=1, 8 GPa (T=350 K)，生成 P∈[1,8] GPa</td>
+<td>相边界位于 P≈4.5-5.4 GPa</td>
+<td>expTM 可预测压力驱动的固-固相变</td>
+<td>未与实验相图直接对比</td>
+<td>Results 图 3d-f</td>
+</tr>
+<tr>
+<td>CO₂ 中间态捕获</td>
+<td>expTM 能生成相边界附近的中间态</td>
+<td>生成样本的 λ₁/λ₃ 分布</td>
+<td>在相边界附近观察到混合特征</td>
+<td>expTM 可采样过渡区域构型</td>
+<td>中间态的热力学稳定性未验证</td>
+<td>Results 图 3f</td>
+</tr>
+<tr>
+<td>计算效率对比</td>
+<td>expTM 比 MD 更高效</td>
+<td>wall-clock time 对比</td>
+<td>expTM 显著快于 MD（具体数值见 SI）</td>
+<td>expTM 具有计算优势</td>
+<td>未提供具体加速比数值</td>
+<td>Supplementary Note 3</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文方法适用于具有明确序参量（密度、结构相似性参数）的体系相变预测，在格子气体和 CO₂ 晶体两个模型体系上验证。</li>
+<li><strong>oracle/真值输入</strong>：训练数据来自 MC/MD 模拟，即模型学习的是模拟体系的 Boltzmann 分布，而非实验数据。预测质量受限于模拟力场/模型的准确性。</li>
+<li><strong>端到端状态</strong>：方法并非端到端——需要预先确定特征表示（格子占据、λ₁/λ₃ 等序参量），且训练数据需来自可靠的模拟或实验。</li>
+<li><strong>算力成本</strong>：训练 score 网络需要一定算力，但推理阶段生成样本成本低；与 MD 相比的优势在多次采样场景下体现。</li>
+<li><strong>历史数据依赖</strong>：模型依赖训练数据的分布覆盖；若目标热力学条件与训练条件差异过大，外推可靠性下降。</li>
+<li><strong>模型依赖</strong>：结果依赖 score 网络的架构和训练质量；未提供网络架构细节和超参数敏感性分析。</li>
+<li><strong>最难情形</strong>：临界点附近（μ_c=-8）误差最大（Δρ 最大），说明方法在临界区域的精度有限。</li>
+<li><strong>群体/领域边界</strong>：验证体系为简单格子模型和分子晶体，未涉及溶液中的生物大分子（蛋白质、RNA）等复杂体系。</li>
+<li><strong>不确定性</strong>：未提供生成样本的置信区间或多次运行的标准差；CO₂ 相边界预测的误差范围未量化。</li>
+</ul>
+<p><strong>有边界的复述</strong>：expTM 在格子气体（巨正则系综）和 CO₂ 固相（等温等压系综）两个模型体系中，使用两个远离相边界的热力学条件下的训练数据，能够生成与 MC/MD 基准一致的样本，并预测密度和相边界位置；在临界点附近精度下降；方法尚未在生物大分子体系验证。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>临界点附近精度有限</td>
+<td>格子气体在 μ_c=-8 附近 Δρ 最大</td>
+<td>未明确提及</td>
+<td>Results 图 2c</td>
+</tr>
+<tr>
+<td>未涉及生物大分子</td>
+<td>仅验证格子气体和 CO₂ 晶体</td>
+<td>作者在 Discussion 中提出可应用于 intrinsically disordered proteins 和 RNA</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>未采用 stochastic localization 框架</td>
+<td>作者指出 ref. 31 的随机定位方法可能提供闭式指数倾斜方案</td>
+<td>作者表示将结合 stochastic localization 框架进一步优化</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>未使用坐标范数</td>
+<td>作者提及 ref. 33 提出取坐标范数可增强模型</td>
+<td>作者表示该改进可能进一步提升模型</td>
+<td>Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅两个训练点是否足够</td>
+<td>格子气体和 CO₂ 的对称性较高，可能使两个训练点恰好覆盖关键信息；对低对称性体系（如蛋白质）可能不足</td>
+<td>方法声称的「极少量数据」优势可能不具普适性</td>
+<td>在低对称性、多相竞争的模型体系上测试训练点数量敏感性</td>
+<td>Results 节：训练点选择</td>
+</tr>
+<tr>
+<td>序参量选择依赖</td>
+<td>方法依赖 λ₁/λ₃ 等预定义序参量来判定相态，这些序参量的选择需要物理直觉</td>
+<td>若序参量选择不当，相边界预测可能失效</td>
+<td>测试不同序参量选择对相边界预测的影响</td>
+<td>Table 1, Results 图 3f</td>
+</tr>
+<tr>
+<td>与条件扩散模型的对比缺失</td>
+<td>作者声称联合扩散优于条件生成，但未与条件扩散模型（η 作为标签）直接对比</td>
+<td>无法判断联合扩散的增量优势是否显著</td>
+<td>实现条件扩散基线并对比外推精度</td>
+<td>Methods "expTM" 节：作者强调与条件生成不同</td>
+</tr>
+<tr>
+<td>相边界判定阈值的主观性</td>
+<td>使用 λ₁ 阈值 0.58 判定相态，该阈值的选择依据未充分说明</td>
+<td>阈值选择可能影响相边界位置预测</td>
+<td>进行阈值敏感性分析</td>
+<td>Results 图 3f 说明</td>
+</tr>
+<tr>
+<td>计算效率对比不完整</td>
+<td>仅报告 wall-clock 优势，未提供加速比数值</td>
+<td>无法量化计算优势</td>
+<td>补充具体加速比和硬件配置</td>
+<td>Supplementary Note 3</td>
+</tr>
+<tr>
+<td>外推极限未探索</td>
+<td>未测试训练条件与目标条件差异极大时的外推能力</td>
+<td>方法的外推边界不明确</td>
+<td>设计极端外推实验（如从低温外推至超高温）</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>控制变量→先验参数映射</strong>：将热力学控制变量（温度→方差，压力/化学势→均值）直接编码到扩散模型先验中，而非作为条件标签。可迁移到蛋白质构象采样：将配体浓度/化学势映射到先验均值，实现配体结合态与游离态的连续采样。</p>
+</li>
+<li>
+<p><strong>联合空间扩散策略</strong>：将控制变量 η 与特征 x 放在同一扩散空间中联合学习 score，而非固定 η 做条件生成。可迁移到蛋白质构象生成：将环境变量（温度、pH、离子强度）与构象坐标联合扩散，实现多环境条件下的构象系综生成。</p>
+</li>
+<li>
+<p><strong>指数倾斜的物理意义</strong>：指数倾斜因子 e^{αx} 在 Gaussian 先验中等价于均值平移，在统计力学中等价于引入外场/化学势项。这一数学结构可迁移到蛋白质-配体结合采样：将配体化学势作为倾斜因子，实现结合自由能 landscapes 的高效采样。</p>
+</li>
+<li>
+<p><strong>远离相边界的训练策略</strong>：仅用远离相边界的数据训练，即可外推至相边界附近。可迁移到蛋白质折叠研究：用天然态和变性态（远离折叠转变点）的数据训练，外推预测折叠转变温度和中间态。</p>
+</li>
+<li>
+<p><strong>序参量驱动的相态判定</strong>：使用结构相似性参数（λ₁/λ₃）作为相态判据。可迁移到蛋白质构象分类：定义类似的结构序参量（如 RMSD 到天然态、二级结构含量），用于自动识别构象状态。</p>
+</li>
+<li>
+<p><strong>消融验证的必要性</strong>：通过移除倾斜项验证其核心作用。可迁移到方法开发：对任何物理先验注入，都应设计消融实验证明其必要性而非装饰性。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>扩散模型基础</strong>：与 Sohl-Dickstein et al. (2015)、Song et al. (2021) 的 score-based generative model 直接相关；本文的 OU 过程框架与 DDPM/score-SDE 框架一致。[经外部核验]</li>
+<li><strong>Thermodynamic Maps (TM)</strong>：本文直接扩展了作者前期工作（ref. 18），该工作已在 Ising 模型、RNA 构象、Gay-Berne 模型上验证温度外推能力。[仅本文框架]</li>
+<li><strong>统计力学系综理论</strong>：巨正则系综（μVT）和等温等压系综（NPT）的配分函数形式与本文的指数倾斜 Gaussian 先验直接对应；Boltzmann 因子 e^{-βE} 与倾斜因子 e^{αx} 的数学结构一致。[经外部核验]</li>
+<li><strong>生成模型在分子科学的应用</strong>：与 GeoDiff、GeoLDM（构象生成）、DiffDock、NeuralPlexer（对接）、AlphaFold3（结构预测）并列，但本文聚焦于「系综采样」而非「单结构预测」。[经外部核验]</li>
+<li><strong>增强采样方法</strong>：与 well-tempered metadynamics（本文用于 CO₂ 基准）互补；expTM 可视为一种「学习式增强采样」方法。[经外部核验]</li>
+<li><strong>随机定位（Stochastic Localization）</strong>：Discussion 节提及 ref. 29-31，指出随机定位与指数倾斜的联系，是潜在的理论深化方向。[仅本文框架]</li>
+<li><strong>候选方向（未验证）</strong>：与蛋白质构象系综生成（如 AlphaFold 的 MSA 采样、MD 的增强采样）可能结合，但本文未涉及生物分子体系。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Protein-expTM：基于指数倾斜热力学图的蛋白质构象系综生成
+   - <strong>来源局限/观察</strong>：expTM 在简单体系验证成功，但未涉及蛋白质；蛋白质构象系综对温度、配体浓度、压力敏感，与 expTM 的控制变量框架天然匹配
+   - <strong>核心假设</strong>：将蛋白质构象特征（如骨架二面角、接触图）与温度/配体化学势联合扩散，可生成任意热力学条件下的构象系综
+   - <strong>初步方法</strong>：以 AlphaFold 或 MD 模拟数据为训练集，将温度映射到先验方差、配体浓度映射到先验均值，训练 score 网络
+   - <strong>验证方式</strong>：预测蛋白质折叠温度（T_m）、配体诱导的构象转变，与实验或增强采样 MD 对比
+   - <strong>可能失败模式</strong>：蛋白质构象空间高维且复杂，Gaussian 先验假设可能过于简单；需要更复杂的先验形式</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：配体化学势驱动的结合态采样
+   - <strong>来源局限/观察</strong>：expTM 的 μ 映射机制可用于配体结合；传统对接/MD 难以高效采样配体结合/解离路径
+   - <strong>核心假设</strong>：将配体化学势作为倾斜因子，可生成配体结合态与游离态的连续过渡样本
+   - <strong>初步方法</strong>：以 MD 或实验结合态结构为训练数据，将配体浓度映射到先验均值，生成不同化学势下的结合构象
+   - <strong>验证方式</strong>：计算结合自由能（ΔG_bind），与 FEP/TI 方法对比
+   - <strong>可能失败模式</strong>：配体结合涉及大尺度构象变化，扩散模型可能难以捕捉稀有事件</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：多控制变量联合外推的蛋白质相图预测
+   - <strong>来源局限/观察</strong>：expTM 支持 (T, P) 或 (T, μ) 双变量控制，但蛋白质相图涉及温度、压力、pH、离子强度等多变量
+   - <strong>核心假设</strong>：将多个环境变量同时编码到先验中，可预测蛋白质的相图（如聚集、结晶、变性边界）
+   - <strong>初步方法</strong>：扩展 expTM 至多维 η 空间，以实验或模拟数据训练
+   - <strong>验证方式</strong>：预测蛋白质结晶条件、液-液相分离边界，与实验相图对比
+   - <strong>可能失败模式</strong>：多变量联合外推的误差累积；数据需求随维度增加</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Stochastic Localization 增强的 expTM
+   - <strong>来源局限/观察</strong>：作者在 Discussion 中承认未采用 stochastic localization 框架，该框架可能提供闭式指数倾斜方案
+   - <strong>核心假设</strong>：随机定位框架可提供更高效的指数倾斜实现，提升外推精度
+   - <strong>初步方法</strong>：将 expTM 的倾斜先验替换为随机定位框架，对比两者在格子气体和 CO₂ 上的表现
+   - <strong>验证方式</strong>：外推精度、采样效率、训练稳定性对比
+   - <strong>可能失败模式</strong>：随机定位框架的理论复杂度高，实现难度大</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：expTM 用于无序蛋白（IDP）的构象系综预测
+   - <strong>来源局限/观察</strong>：作者在 Discussion 中明确提出 IDP 是未来方向；IDP 构象系综对环境条件高度敏感
+   - <strong>核心假设</strong>：expTM 可生成不同温度/化学势下 IDP 的构象系综，捕捉环境诱导的构象转变
+   - <strong>初步方法</strong>：以 IDP 的 MD 模拟或 SAXS/NMR 实验数据为训练集
+   - <strong>验证方式</strong>：预测的 R_g、二级结构含量与实验对比
+   - <strong>可能失败模式</strong>：IDP 构象空间极大，训练数据需求高；Gaussian 先验可能无法捕捉多峰分布</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, introduction, results, discussion, methods, and figure/table captions. Supplementary information referenced but not provided.</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, clarity of claims, and alignment with stated contributions. No assessment of editorial fit or publication decision.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose "exponentially tilted thermodynamic maps" (expTM), a generative AI framework combining diffusion models with statistical mechanics to generate thermodynamically consistent samples across multiple control variables (temperature, pressure, chemical potential) from limited training data. They demonstrate the method on a lattice gas model in the grand canonical ensemble and on CO2 phase transitions in the isothermal-isobaric ensemble.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Figs. 1–3), Table 1, equations (Eqs. 1–21), and methodological descriptions in Methods. Supplementary Notes 3–5 and Supplementary Figs. 3–8 are referenced but not provided.</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary Information (Notes 3–5, Figs. 3–8), training details, hyperparameters, neural network architecture specifics, quantitative error metrics beyond density differences, and code availability. These omissions limit full reproducibility assessment.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a conceptually interesting extension of the authors' prior thermodynamic maps framework, aiming to generalize temperature-only control to additional thermodynamic variables via exponential tilting of a Gaussian prior. The statistical mechanics motivation is sound, and the two demonstrations address relevant problems. However, the current evidence base is insufficient to establish the claimed generality and robustness. Key concerns include: the theoretical connection between the tilted prior and the target ensemble is asserted rather than rigorously derived; the lattice gas demonstration uses only two training points at a single temperature, which is a very limited test; the CO2 application relies on collective variables and free energy surfaces from enhanced sampling simulations, making the "prediction" claim difficult to evaluate without the supplementary material; and the comparison to MC/MD benchmarks lacks quantitative error analysis. The ablation study is mentioned but its results are only in the supplementary material. The manuscript would benefit from clearer articulation of what constitutes a "correct" generated sample and how thermodynamic consistency is verified.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational statistical mechanics, molecular simulation, and machine learning for physical sciences would be interested. The promise of generating samples across thermodynamic conditions from limited data could appeal to those studying phase transitions, materials discovery, and biomolecular conformational sampling. The connection between diffusion models and statistical ensembles is a timely topic given the rapid adoption of generative models in the physical sciences.</li>
+<li><strong>Major strengths</strong>
+  1. The conceptual extension of thermodynamic maps to multiple control variables via exponential tilting is a natural and potentially impactful generalization.
+  2. The statistical mechanics framing provides a principled basis for the prior distribution choice, distinguishing this work from purely data-driven generative approaches.
+  3. The two applications span different ensembles (grand canonical and isothermal-isobaric), demonstrating the framework's intended flexibility.
+  4. The emphasis on limited training data far from phase boundaries addresses a practical limitation of simulation-based approaches.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Theoretical foundation</li>
+<li><strong>Claim pointer</strong> The manuscript claims that exponential tilting of the Gaussian prior enables the diffusion model to represent the grand canonical and isothermal-isobaric ensembles, with the mean and variance of the prior corresponding to pressure/chemical potential and temperature, respectively.</li>
+<li><strong>Evidence pointer</strong> Methods sections "Isothermal-Isobaric Thermodynamic Maps" and "Grand Canonical Thermodynamic Maps", Eqs. 14–19</li>
+<li><strong>Concern</strong> The derivation maps the ensemble probability to a tilted Gaussian prior by assuming a harmonic energy function and linear volume/particle-number dependence. However, the connection between the prior distribution and the actual target ensemble is not rigorously established. Specifically, the authors do not demonstrate that the score function learned in the joint space (x, η) correctly captures the conditional distributions needed for arbitrary (α, β⁻¹) combinations. The claim that "the mean and variance of the prior can be correlated with pairs of thermodynamic control variables" is asserted but not proven. The relationship between the abstract feature space x and physical observables (e.g., density, structural order parameters) is also not formalized.</li>
+<li><strong>Why it matters</strong> The central contribution is the claim that expTM generates thermodynamically correct samples at arbitrary conditions. Without a rigorous derivation or at least a clear statement of the assumptions under which this holds, the theoretical foundation is incomplete. If the mapping is only approximate or holds only for specific feature choices, the generality claim is weakened.</li>
+<li><strong>Resolution test</strong> Provide a formal derivation or a clear statement of the conditions under which the tilted Gaussian prior correctly represents the target ensemble. Alternatively, demonstrate on a system with a known exact solution that the generated samples match the exact distribution across a range of (α, β⁻¹) values.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Experimental validation</li>
+<li><strong>Claim pointer</strong> The manuscript claims that expTM "accurately reproduces the density of particles and critical behavior" for the lattice gas model and "successfully delineating phase boundaries and capturing intermediate states" for CO2.</li>
+<li><strong>Evidence pointer</strong> Fig. 2, Fig. 3, Table 1</li>
+<li><strong>Concern</strong> The quantitative validation is limited. For the lattice gas, the only reported metric is the absolute density difference (Fig. 2c), which is stated to be within 0.05 except near the critical point. No error bars, statistical significance, or comparison across multiple random seeds are provided. For CO2, the phase boundary determination relies on a λ1 threshold of 0.58, which is described as an adjustment to "accommodate the wide spread of the generated data." This suggests the generated samples have significant variance, and the threshold choice appears somewhat arbitrary. The free energy differences in Fig. 3g are from MD simulations, not from expTM, so the comparison is indirect.</li>
+<li><strong>Why it matters</strong> The core claim is that expTM can predict phase transitions from limited data. The validation must demonstrate that the predictions are quantitatively reliable, not just qualitatively plausible. Without error bars, multiple runs, or a clear metric for "correctness," the reader cannot assess the method's accuracy or robustness.</li>
+<li><strong>Resolution test</strong> Provide quantitative error metrics with uncertainty quantification (e.g., standard deviation across multiple training runs) for both applications. For the lattice gas, report the density error as a function of (T, μ) with confidence intervals. For CO2, show the distribution of generated samples in the (λ1, λ3) space and justify the threshold choice with a sensitivity analysis.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The manuscript claims that expTM is a practical framework that can be applied to "diverse thermodynamic conditions requiring only a small number of observations."</li>
+<li><strong>Evidence pointer</strong> Methods sections, Fig. 1, Supplementary Notes 3–5</li>
+<li><strong>Concern</strong> The manuscript does not provide sufficient details for reproduction. The neural network architecture, training procedure, hyperparameters, loss function, and optimization details are not described. The feature engineering for both applications (lattice gas configurations and CO2 collective variables) is only partially described. The supplementary material, which presumably contains these details, is not provided for review. The computational cost comparison in Supplementary Note 3 is referenced but not shown.</li>
+<li><strong>Why it matters</strong> Reproducibility is a fundamental requirement for scientific publication. Without these details, the method cannot be independently implemented or verified. The claim of practical applicability cannot be assessed.</li>
+<li><strong>Resolution test</strong> Include a complete description of the model architecture, training procedure, and hyperparameters in the main text or provide the supplementary material for review. Include a statement on code availability.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Comparison to baselines</li>
+<li><strong>Claim pointer</strong> The manuscript implies that expTM offers advantages over conventional simulation methods and prior generative approaches, particularly in terms of data efficiency and extrapolation capability.</li>
+<li><strong>Evidence pointer</strong> Introduction, Discussion, Fig. 2, Fig. 3</li>
+<li><strong>Concern</strong> The manuscript does not compare expTM to alternative methods. For the lattice gas, a comparison to the original TM framework (which handles temperature only) would clarify the added value of exponential tilting. For CO2, a comparison to direct MD or enhanced sampling at the predicted conditions would demonstrate whether expTM provides accurate predictions or merely interpolates between training points. The ablation study (removing the tilting term) is mentioned but its results are only in the supplementary material.</li>
+<li><strong>Why it matters</strong> Without baselines, the reader cannot judge whether expTM is a meaningful advance or an incremental modification. The claim of "robust tool" requires evidence that it outperforms or complements existing approaches.</li>
+<li><strong>Resolution test</strong> Add a comparison to the original TM framework and to standard MD/MC simulations at the predicted conditions. Report computational cost and accuracy for each method. Include the ablation study results in the main text or clearly summarize the key findings.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Fig. 1 caption</li>
+<li><strong>Evidence pointer</strong> Fig. 1</li>
+<li><strong>Issue</strong> The caption describes the schematic but does not clearly explain the role of the "tilted Gaussian prior" in the forward and reverse diffusion processes. The notation (α₀, β₀⁻¹) for training conditions versus (α, β⁻¹) for target conditions could be confusing.</li>
+<li><strong>Required correction</strong> Expand the caption to explicitly define all symbols and clarify the distinction between training and target conditions. Consider adding a step-by-step description of the forward and reverse processes.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Abstract and Introduction</li>
+<li><strong>Evidence pointer</strong> Abstract, Introduction</li>
+<li><strong>Issue</strong> The term "thermodynamically correct samples" is used without a precise definition. It is unclear whether this means samples distributed according to the exact Boltzmann distribution, or samples that reproduce certain macroscopic observables.</li>
+<li><strong>Required correction</strong> Define what is meant by "thermodynamically correct" in the context of generated samples. Clarify whether the method aims to reproduce the full distribution or only specific expectation values.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Fig. 2c</li>
+<li><strong>Evidence pointer</strong> Fig. 2c</li>
+<li><strong>Issue</strong> The density difference plot shows a single realization. No information is provided about the variability of this result across different training data selections or random seeds.</li>
+<li><strong>Required correction</strong> Report the mean and standard deviation of the density difference across multiple independent training runs, or state that the result is representative.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Literature context</li>
+<li><strong>Affected element</strong> Introduction</li>
+<li><strong>Evidence pointer</strong> Introduction</li>
+<li><strong>Issue</strong> The introduction cites prior work on diffusion models for molecular sciences but does not discuss recent work on physics-informed generative models or thermodynamic-conditioned sampling, which is directly relevant.</li>
+<li><strong>Required correction</strong> Add a brief discussion of related approaches that condition generative models on thermodynamic variables, and clarify the distinction.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Notation</li>
+<li><strong>Affected element</strong> Methods, Eq. 20</li>
+<li><strong>Evidence pointer</strong> Eq. 20</li>
+<li><strong>Issue</strong> The notation η ≡ {α, β⁻¹} is introduced, but the dimensionality of η is stated as 3D in the text following Eq. 21. This is confusing because α and β⁻¹ are each D-dimensional, so η should be 2D-dimensional.</li>
+<li><strong>Required correction</strong> Clarify the dimensionality of η. If η is the concatenation of α and β⁻¹, its dimension should be 2D, not 3D. Correct the statement or explain the discrepancy.</li>
+<li><strong>Concern ID</strong> R1-m6</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data availability</li>
+<li><strong>Affected element</strong> Data availability statement</li>
+<li><strong>Evidence pointer</strong> Not present in the provided text</li>
+<li><strong>Issue</strong> No data availability statement is included in the provided manuscript text.</li>
+<li><strong>Required correction</strong> Add a data availability statement describing where the training data, code, and any generated datasets can be accessed.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong></li>
+<li>R1-M1: The theoretical connection between the tilted prior and the target ensemble is not rigorously established.</li>
+<li>R1-M2: Quantitative validation is insufficient, with no error bars or uncertainty quantification.</li>
+<li>R1-M3: Reproducibility is compromised by missing methodological details.</li>
+<li>R1-M4: Lack of comparison to baselines weakens the claim of advantage.</li>
+<li><strong>Assessment against Nature-style criteria</strong></li>
+<li><strong>Originality</strong> The extension of thermodynamic maps to multiple control variables via exponential tilting is a novel contribution. The idea of embedding thermodynamic parameters into the prior distribution of a diffusion model is creative and builds logically on prior work. However, the incremental nature relative to the authors' own TM framework should be more clearly articulated.</li>
+<li><strong>Scientific importance</strong> If validated, the method could be impactful for studying phase transitions in systems where direct simulation is expensive. The potential to extrapolate across thermodynamic conditions from limited data addresses a real bottleneck. However, the current evidence does not yet establish that the method achieves this reliably.</li>
+<li><strong>Interdisciplinary readership</strong> The work bridges statistical mechanics, machine learning, and computational chemistry. The writing is generally accessible, though the Methods section assumes familiarity with diffusion models and ensemble theory. The potential applications to materials and biomolecular systems broaden the appeal.</li>
+<li><strong>Technical soundness</strong> The statistical mechanics motivation is sound, but the theoretical derivation is incomplete. The numerical demonstrations are suggestive but not yet convincing due to limited quantitative analysis. The ablation study is a good idea but its results are not presented in the main text.</li>
+<li><strong>Readability for nonspecialists</strong> The abstract and introduction are clear and accessible. The Results section is reasonably readable. The Methods section is dense and would benefit from additional explanation of the connection between the mathematical formalism and the physical intuition.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The conceptual idea is promising and worth pursuing, but the manuscript requires substantial revision to address the theoretical gaps, provide quantitative validation with uncertainty quantification, include full methodological details, and add comparisons to baselines. I would be supportive if these concerns are resolved.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that expTM "generates thermodynamically correct samples" is not supported by a rigorous definition or verification of thermodynamic correctness.</li>
+<li>The claim that expTM "can explore any combination of (T, μ)" is not supported by evidence; only a limited range of conditions was tested.</li>
+<li>The claim that the method "requires only a small number of observations" is not quantified; the relationship between training data size and accuracy is not explored.</li>
+<li>The claim that the CO2 phase boundary prediction is consistent with experimental results is not quantitatively compared to the experimental phase boundary.</li>
+<li>The ablation study results are referenced but not presented, making the claim that exponential tilting is essential unverifiable from the provided material.</li>
+<li>The computational advantage claim is referenced to Supplementary Note 3 but not substantiated in the main text.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RNASeek: A Cross-Phyla Generative Foundation Model for Multipurpose RNA Modeling and Reinforcement Learning-Based Design. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>RNASeek: A Cross-Phyla Generative Foundation Model for Multipurpose RNA Modeling and Reinforcement Learning-Based Design.</h1>
+      <div class="meta">Chen, Shiyuan; Fernandes, Neil R; Li, Wei Vivian; Wang, Lili; Jia, Zhenyu; Xiang, Joy S</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv : the preprint server for biology</span>
+        · 2026-10-11
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42856293/">原文</a>
+      </div>
+      <p class="one-liner">该文提出RNA生成式基础模型RNASeek，用于RNA序列建模与功能设计，虽对象为RNA而非蛋白质，但其生成模型与强化学习设计框架可迁移至蛋白质结构/序列设计，对课题有借鉴价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">RNA plays central roles in regulating information flow and provides a versatile substrate for engineering biological functions. While large language models (LLMs) have transformed natural language processing and protein design, a general framework connecting RNA foundation models to functional sequence design remains limited. Here, we present RNASeek, a 1.6-billion-parameter generative foundation model built on a DeepSeek architecture and trained on a cross-phyla transcriptomic corpus for RNA sequence representation and generation. Natural-language tokens enable flexible conditional prediction and sequence design using a unified backbone. RNASeek captures species-specific transcript features and intron-exon boundaries in a zero-shot setting. We then fine-tune RNASeek to predict ribozyme self-cleavage activity and viral mRNA stability, revealing interpretable sequence features associated with function, including ribozyme loop flexibility and stem stability, as well as AU-rich motifs associated with mRNA stability. We use these functional predictors as reward models and apply Group Relative Policy Optimization (GRPO) to update RNASeek&#39;s generation policy toward sequences with desired properties. GRPO-guided generation produces faster-cleaving ribozymes and stability-enhancing 3&#39; UTRs while satisfying user-specified IUPAC constraints. Experimentally validated RNASeek-generated ribozymes achieve wild-type levels of activity, while RNASeek-generated 3&#39; UTR sequences exceed the performance of the training data and benchmarked AI-generated 3&#39; UTRs. Together, RNASeek establishes a unified pretrain-predict-optimize framework that connects learned RNA function to controllable de novo sequence design and provides a general strategy for engineering regulatory RNAs with desired properties.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">RNA在调控信息流中发挥核心作用，并为工程化生物功能提供了多功能底物。尽管大型语言模型（LLMs）已变革自然语言处理和蛋白质设计，但将RNA基础模型与功能性序列设计连接起来的通用框架仍然有限。在此，我们提出RNASeek，一个基于DeepSeek架构构建的16亿参数生成式基础模型，并在跨门类转录组语料库上训练，用于RNA序列表示和生成。自然语言标记使得能够使用统一骨干进行灵活的条件预测和序列设计。RNASeek在零样本设置中捕获物种特异性转录特征和内含子-外显子边界。然后，我们对RNASeek进行微调，以预测核酶自切割活性和病毒mRNA稳定性，揭示与功能相关的可解释序列特征，包括核酶环灵活性和茎稳定性，以及与mRNA稳定性相关的AU富集基序。我们使用这些功能预测器作为奖励模型，并应用组相对策略优化（GRPO）来更新RNASeek的生成策略，朝向具有所需属性的序列。GRPO引导的生成产生更快切割的核酶和增强稳定性的3&#39; UTR，同时满足用户指定的IUPAC约束。实验验证的RNASeek生成的核酶达到野生型活性水平，而RNASeek生成的3&#39; UTR序列超过训练数据和基准测试的AI生成3&#39; UTR的性能。总之，RNASeek建立了一个统一的预训练-预测-优化框架，将学习的RNA功能与可控的从头序列设计连接起来，并为工程化具有所需属性的调控RNA提供通用策略。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：RNASeek: A Cross-Phyla Generative Foundation Model for Multipurpose RNA Modeling and Reinforcement Learning-Based Design</li>
+<li><strong>作者</strong>：Chen, Shiyuan; Fernandes, Neil R; Li, Wei Vivian; Wang, Lili; Jia, Zhenyu; Xiang, Joy S</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：bioRxiv (preprint server for biology)</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 实验验证）</li>
+<li><strong>领域</strong>：RNA 基础模型、生成式 AI、强化学习、RNA 功能设计</li>
+<li><strong>关键词</strong>：RNA foundation model, generative model, reinforcement learning, GRPO, ribozyme, 3' UTR, mRNA stability, cross-phyla</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.24.754173</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：跨物种（cross-phyla）转录组语料库（具体规模未提供）</li>
+<li><strong>阅读日期</strong>：2026-10-11</li>
+<li><strong>在该方向中的位置</strong>：本文属于「RNA 序列表示与生成 × 强化学习设计」方向，与蛋白质结构相关计算研究（如结构预测、序列设计）在方法论上高度同构——均采用「预训练基础模型 + 下游任务微调 + 强化学习优化生成策略」的范式。其 GRPO 引导的序列生成策略可迁移至蛋白质构象采样、序列设计等任务。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>RNASeek 是一个 1.6B 参数的生成式 RNA 基础模型，基于 DeepSeek 架构，通过跨物种转录组预训练、功能预测微调和 GRPO 强化学习，实现从 RNA 序列表示到可控功能序列设计的统一框架，实验验证其生成的核酶和 3' UTR 达到或超过训练数据与基准 AI 方法的性能。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何构建一个统一的 RNA 基础模型框架，既能进行序列表示与条件生成，又能通过强化学习将功能预测信号转化为可控的 de novo 序列设计？</li>
+<li><strong>为什么重要</strong>：RNA 在基因调控、疾病机制和合成生物学中发挥核心作用，但缺乏类似蛋白质领域的通用生成模型与设计闭环。</li>
+<li><strong>现有方法不足</strong>：现有 RNA 模型多聚焦于表示学习或单一任务预测，缺乏生成能力；蛋白质设计中的「预训练-预测-优化」范式尚未在 RNA 领域系统建立。</li>
+<li><strong>精确研究问题</strong>：Can a single generative foundation model, fine-tuned with functional predictors and optimized via GRPO, produce RNA sequences (ribozymes and 3' UTRs) with experimentally validated functional improvements over training data and existing AI baselines?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<p><em>标注：以下脉络基于本文框架，未经外部系统核验。</em>
+1. <strong>阶段一：RNA 表示学习模型</strong>（如 RNA-FM, DNABERT-2 等）——擅长序列嵌入与下游分类，但缺乏生成能力。
+2. <strong>阶段二：RNA 结构预测与功能预测模型</strong>（如 AlphaFold3 的 RNA 模块、RhoFold）——聚焦结构，未直接连接序列设计。
+3. <strong>阶段三：蛋白质设计中的生成-优化闭环</strong>（如 ProteinMPNN + RL, EvoDiff）——展示了「预训练生成模型 + 奖励模型 + 策略优化」的可行性，但 RNA 领域缺乏对应实现。
+4. <strong>本文位置</strong>：首次将「预训练-预测-优化」闭环系统引入 RNA 领域，使用 LLM 架构（DeepSeek）与 GRPO 强化学习，实现跨物种 RNA 生成与功能设计。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RNA 模型缺乏生成能力</td>
+<td>现有模型多为判别式或表示学习，无法直接生成新序列</td>
+<td>缺乏统一的生成式架构与训练语料</td>
+<td>Abstract: "a general framework connecting RNA foundation models to functional sequence design remains limited"</td>
+</tr>
+<tr>
+<td>功能预测与序列设计脱节</td>
+<td>预测模型无法直接指导序列生成</td>
+<td>缺少将预测信号转化为生成策略的优化机制</td>
+<td>Abstract: "We use these functional predictors as reward models and apply GRPO to update RNASeek's generation policy"</td>
+</tr>
+<tr>
+<td>跨物种泛化不足</td>
+<td>模型难以捕捉不同物种的转录特征</td>
+<td>训练语料单一或模型容量不足</td>
+<td>Abstract: "trained on a cross-phyla transcriptomic corpus" 且 "captures species-specific transcript features in a zero-shot setting"</td>
+</tr>
+<tr>
+<td>设计序列的可控性差</td>
+<td>难以满足用户指定的序列约束（如 IUPAC 约束）</td>
+<td>生成模型缺乏条件控制机制</td>
+<td>Abstract: "while satisfying user-specified IUPAC constraints"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：构建 1.6B 参数生成式 LLM（DeepSeek 架构），在跨物种转录组上预训练；微调为功能预测器（核酶自切割活性、mRNA 稳定性）；用 GRPO 将预测器作为奖励模型优化生成策略。</li>
+<li><strong>核心洞察</strong>：将自然语言 token 与 RNA 序列 token 统一在同一生成框架中，使条件预测与序列生成共享同一 backbone，从而让「功能预测」与「序列生成」不再是两个独立模块，而是同一模型的两面。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：在生物序列设计中，「预测器 + 强化学习」的闭环比单纯增大模型或数据更关键——奖励模型的质量直接决定生成序列的功能上限；同时，统一 token 空间（自然语言 + 生物序列）可显著提升条件控制的灵活性。</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：RNA 序列（跨物种转录组）、自然语言条件 token（如物种、功能描述）</li>
+<li><strong>输出</strong>：RNA 序列（生成）、功能预测分数（核酶活性、mRNA 稳定性）</li>
+<li><strong>模块</strong>：
+  1. 预训练：DeepSeek 架构 LLM，跨物种转录组语料
+  2. 微调：功能预测头（核酶自切割、mRNA 稳定性）
+  3. 优化：GRPO 策略优化，以预测器为奖励模型</li>
+<li><strong>训练</strong>：预训练 → 微调 → GRPO 强化学习</li>
+<li><strong>工具</strong>：DeepSeek 架构、GRPO 算法</li>
+<li><strong>反馈回路</strong>：生成序列 → 预测器打分 → GRPO 更新生成策略 → 新序列</li>
+<li><strong>假设</strong>：LLM 的生成能力可捕捉 RNA 序列的功能相关特征；GRPO 可在满足约束的同时优化功能</li>
+</ul>
+<p><strong>文字流程</strong>：
+1. 在跨物种转录组上预训练 RNASeek，学习 RNA 序列的通用表示与生成分布。
+2. 微调为功能预测器（核酶活性、mRNA 稳定性），提取可解释的序列特征。
+3. 将预测器作为奖励模型，用 GRPO 更新生成策略，使生成序列偏向高功能分数。
+4. 实验验证生成序列的体外活性（核酶）与稳定性（3' UTR）。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>跨物种预训练</td>
+<td>学习 RNA 序列通用表示</td>
+<td>提供生成能力与跨物种泛化基础</td>
+<td>输入：转录组序列；输出：序列嵌入/生成分布</td>
+<td>Abstract: "captures species-specific transcript features and intron-exon boundaries in a zero-shot setting"</td>
+<td>预期：生成质量与泛化能力显著下降 [Analysis]</td>
+</tr>
+<tr>
+<td>功能预测微调</td>
+<td>预测核酶活性与 mRNA 稳定性</td>
+<td>将序列映射到功能分数，作为奖励信号</td>
+<td>输入：RNA 序列；输出：功能分数</td>
+<td>Abstract: "revealing interpretable sequence features"</td>
+<td>预期：GRPO 失去奖励信号，无法优化 [Analysis]</td>
+</tr>
+<tr>
+<td>GRPO 策略优化</td>
+<td>更新生成策略以最大化功能分数</td>
+<td>将预测信号转化为生成偏好</td>
+<td>输入：生成序列 + 预测分数；输出：更新后的策略</td>
+<td>Abstract: "GRPO-guided generation produces faster-cleaving ribozymes and stability-enhancing 3' UTRs"</td>
+<td>预期：生成序列功能无提升 [Analysis]</td>
+</tr>
+<tr>
+<td>条件 token 机制</td>
+<td>支持自然语言条件控制</td>
+<td>实现灵活的条件生成与约束满足</td>
+<td>输入：自然语言指令 + 序列；输出：条件生成序列</td>
+<td>Abstract: "Natural-language tokens enable flexible conditional prediction"</td>
+<td>预期：可控性下降 [Analysis]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>（本文为预印本，提供的材料中未包含具体公式或符号定义）。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：跨物种转录组语料库（具体物种与规模未提供）；核酶活性数据与 mRNA 稳定性数据（来源与规模未提供）</li>
+<li><strong>指标</strong>：核酶自切割活性（实验验证）、mRNA 稳定性（实验验证）、生成序列满足 IUPAC 约束的比例</li>
+<li><strong>基线</strong>：训练数据中的序列、benchmarked AI-generated 3' UTRs（具体基线方法未提供）</li>
+<li><strong>评测协议</strong>：体外实验验证核酶活性；3' UTR 稳定性实验；零样本物种特征与剪接位点识别</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>零样本物种特征识别</td>
+<td>模型捕捉跨物种转录特征</td>
+<td>未提供具体对比</td>
+<td>成功识别物种特异特征</td>
+<td>预训练语料具有跨物种信息</td>
+<td>未证明优于专门模型</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>核酶活性预测与生成</td>
+<td>GRPO 可生成更快切割的核酶</td>
+<td>实验验证 vs 训练数据</td>
+<td>达到野生型活性水平</td>
+<td>生成序列功能有效</td>
+<td>未提供定量比较</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>3' UTR 稳定性生成</td>
+<td>GRPO 可生成稳定性增强的 3' UTR</td>
+<td>实验验证 vs 训练数据与 AI 基线</td>
+<td>超过训练数据与基准 AI 方法</td>
+<td>生成序列优于现有方法</td>
+<td>未提供具体数值</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>IUPAC 约束满足</td>
+<td>生成满足用户约束</td>
+<td>未提供具体测试集</td>
+<td>满足约束</td>
+<td>条件控制有效</td>
+<td>未提供失败案例</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：RNA 序列生成与功能设计（核酶、3' UTR），非结构预测或构象采样。</li>
+<li><strong>oracle/真值输入</strong>：功能预测器为微调模型，非实验真值；实验验证仅覆盖部分生成序列。</li>
+<li><strong>端到端状态</strong>：预训练-微调-GRPO 闭环已实现，但实验验证规模有限。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：依赖跨物种转录组与功能标注数据，数据偏差可能影响泛化。</li>
+<li><strong>模型依赖</strong>：依赖 DeepSeek 架构与 GRPO 算法，其他架构或优化器效果未知。</li>
+<li><strong>最难情形</strong>：复杂多结构域 RNA、非编码 RNA 的远距离相互作用可能超出当前模型能力。</li>
+<li><strong>群体/领域边界</strong>：结果基于特定核酶与 3' UTR 数据集，不能推广至所有 RNA 功能类型。</li>
+<li><strong>不确定性</strong>：实验验证的序列数量、重复次数、统计显著性未提供。</li>
+</ul>
+<p><strong>有边界的复述</strong>：RNASeek 在跨物种 RNA 序列生成与功能设计任务上，通过 GRPO 优化实现了实验验证的功能提升，但该结论仅限于核酶自切割活性与 3' UTR 稳定性两个任务，且定量细节未完整披露。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 实验验证仅覆盖核酶与 3' UTR 两类序列，未涉及其他 RNA 功能类型。
+- 未提供生成序列的多样性、新颖性分析。
+- 未讨论模型对长序列（&gt;1kb）的生成能力。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验验证规模未披露</td>
+<td>可能仅验证少量序列，统计功效不足</td>
+<td>影响结论可靠性</td>
+<td>要求提供验证序列数量、重复次数、统计检验</td>
+<td>Abstract 未提供细节</td>
+</tr>
+<tr>
+<td>基线方法未明确</td>
+<td>"benchmarked AI-generated 3' UTRs" 未列出具体方法</td>
+<td>无法判断相对优势</td>
+<td>要求补充基线列表与比较条件</td>
+<td>Abstract 表述模糊</td>
+</tr>
+<tr>
+<td>功能预测器作为奖励模型</td>
+<td>预测器误差可能被 GRPO 放大，生成序列在实验中未必最优</td>
+<td>影响生成质量上限</td>
+<td>对比不同奖励模型（实验真值 vs 预测器）的生成效果</td>
+<td>Abstract 未讨论</td>
+</tr>
+<tr>
+<td>跨物种泛化仅零样本验证</td>
+<td>零样本成功可能依赖序列相似性而非深层生物学理解</td>
+<td>影响模型通用性</td>
+<td>在远缘物种或非模式生物上测试</td>
+<td>Abstract 仅提及零样本</td>
+</tr>
+<tr>
+<td>未提供生成序列的多样性分析</td>
+<td>可能生成高度相似序列，降低设计空间覆盖</td>
+<td>影响实际应用价值</td>
+<td>计算生成序列的成对距离分布</td>
+<td>Abstract 未提及</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>「预训练-预测-优化」闭环范式</strong>：将功能预测器作为奖励模型，用 GRPO 更新生成策略，可迁移至蛋白质序列设计（如酶活性、结合亲和力优化）。
+2. <strong>统一 token 空间设计</strong>：自然语言与生物序列共享 token 空间，可实现灵活的条件控制——可迁移至蛋白质设计中的「文本描述 → 序列生成」。
+3. <strong>跨物种预训练策略</strong>：跨物种语料库可提升零样本泛化，适用于蛋白质结构预测中的跨家族泛化。
+4. <strong>可解释特征提取</strong>：微调后的预测器可揭示功能相关序列特征（如环灵活性、茎稳定性、AU-rich motif），可迁移至蛋白质功能位点识别。
+5. <strong>GRPO 在序列设计中的适用性</strong>：相比 PPO，GRPO 无需价值网络，更适用于高维序列空间的策略优化——可迁移至蛋白质构象采样或序列生成。</p>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：与 EvoDiff、ProGen2 等蛋白质生成模型在「生成式预训练 + 条件控制」上相似；与 ProteinMPNN + RL 在「生成 + 优化」闭环上同构。</li>
+<li><strong>组合</strong>：RNASeek 的 GRPO 优化策略可与 AlphaFold 的预测分数结合，用于蛋白质序列设计中的结构约束优化。</li>
+<li><strong>冲突</strong>：本文强调生成式 LLM 优于判别式模型，与部分观点（如结构预测优先）存在张力，但未提供直接对比。</li>
+<li><strong>可迁移领域</strong>：蛋白质结构预测（序列 → 结构）、构象采样（生成多样构象）、分子对接（配体序列优化）、MD 模拟（力场参数优化）。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：ProteinSeek——基于 GRPO 的蛋白质序列功能优化框架
+   - <strong>来源局限/观察</strong>：RNASeek 的闭环范式可迁移至蛋白质，但需适配蛋白质的序列-结构-功能关系。
+   - <strong>核心假设</strong>：以 AlphaFold 预测分数或实验活性为奖励，GRPO 可生成功能增强的蛋白质序列。
+   - <strong>初步方法</strong>：预训练蛋白质 LLM → 微调功能预测器 → GRPO 优化生成策略。
+   - <strong>验证方式</strong>：体外实验验证酶活性或结合亲和力。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：跨物种蛋白质构象采样预训练
+   - <strong>来源局限/观察</strong>：RNASeek 的跨物种预训练提升零样本泛化，蛋白质构象采样可借鉴。
+   - <strong>核心假设</strong>：跨物种蛋白质语料预训练可提升构象生成的多样性。
+   - <strong>初步方法</strong>：在跨物种蛋白质序列上预训练生成模型，微调为构象生成器。
+   - <strong>验证方式</strong>：与现有构象采样方法对比 RMSD 与多样性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：统一 token 空间的蛋白质-文本条件生成
+   - <strong>来源局限/观察</strong>：RNASeek 的自然语言 token 机制实现灵活条件控制。
+   - <strong>核心假设</strong>：蛋白质序列与功能描述共享 token 空间可提升设计可控性。
+   - <strong>初步方法</strong>：构建蛋白质-文本联合 tokenizer，训练生成模型。
+   - <strong>验证方式</strong>：文本描述 → 序列生成的功能验证。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：GRPO 在蛋白质对接中的配体优化
+   - <strong>来源局限/观察</strong>：GRPO 无需价值网络，适合高维序列优化。
+   - <strong>核心假设</strong>：GRPO 可优化配体序列以提升对接亲和力。
+   - <strong>初步方法</strong>：以对接分数为奖励，GRPO 更新配体生成策略。
+   - <strong>验证方式</strong>：对接分数与实验结合常数对比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present RNASeek, a 1.6-billion-parameter generative foundation model based on a DeepSeek architecture, trained on a cross-phyla transcriptomic corpus. The model uses natural-language tokens for conditional prediction and sequence design. Claims include zero-shot capture of species-specific transcript features and intron–exon boundaries; fine-tuning for ribozyme self-cleavage activity and viral mRNA stability prediction with interpretable features; GRPO-based reinforcement learning for sequence generation; and experimental validation showing wild-type-level ribozyme activity and superior 3′ UTR stability compared to training data and benchmarked AI-generated sequences.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, statistical measures, dataset descriptions, or experimental protocols provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, model architecture details, training corpus composition, fine-tuning datasets, experimental methods, benchmark definitions, and statistical analyses</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes an ambitious and potentially impactful framework that unifies generative modeling, functional prediction, and reinforcement learning for RNA design. The conceptual integration of a cross-phyla foundation model with GRPO-based optimization is timely and aligns with current trends in AI-driven biomolecular engineering. However, the abstract provides no quantitative evidence, no comparative baselines with statistical rigor, and no details on experimental validation. The claims of zero-shot capability, interpretable features, and experimental superiority are stated without supporting numbers or methodological specifics. As presented, the case is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in RNA biology, synthetic biology, and computational biology would be interested in a unified generative framework for RNA design. Those working on foundation models for biomolecules, particularly in the context of regulatory RNA engineering, would find the pretrain–predict–optimize paradigm relevant. The potential for cross-species generalization and reinforcement learning-based design could attract a broad interdisciplinary audience spanning machine learning and molecular engineering.</li>
+<li><strong>Major strengths</strong> The proposed framework addresses a clear gap in connecting RNA foundation models to functional sequence design. The use of natural-language tokens for conditional generation is an innovative approach that may enhance flexibility. The integration of interpretable feature analysis with reinforcement learning-based optimization is conceptually strong. The inclusion of experimental validation, if robust, would significantly strengthen the practical relevance of the work.</li>
+<li><strong>Major Concerns</strong> </li>
+<li>R1-M1</li>
+<li>R1-M2</li>
+<li>R1-M3</li>
+<li>R1-M4</li>
+<li><strong>Minor Comments</strong> </li>
+<li>R1-m1</li>
+<li>R1-m2</li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality is high, as the combination of a cross-phyla generative model with GRPO for RNA design appears novel. Scientific importance is potentially substantial given the central role of RNA in regulation and engineering. Interdisciplinary readership is plausible, spanning computational and experimental biology. Technical soundness cannot be assessed from the abstract alone, as no quantitative or methodological details are provided. Readability for nonspecialists is adequate, with clear conceptual framing, but the lack of concrete results limits the ability to evaluate the work's significance.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents a promising framework, but the absence of quantitative results, statistical validation, and methodological transparency prevents a supportive recommendation. A full manuscript with detailed evidence would be required to assess the claims.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The abstract claims that RNASeek captures species-specific transcript features and intron–exon boundaries in a zero-shot setting.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The claim of zero-shot capability is stated without any quantitative metrics, such as accuracy, F1 scores, or comparison to existing methods. No details are given on the evaluation tasks, datasets, or baselines used to establish this capability.</li>
+<li><strong>Why it matters</strong> Zero-shot performance is a strong claim that requires rigorous benchmarking to demonstrate generalization beyond training data. Without quantitative evidence, the claim is unverifiable and may overstate the model's capabilities.</li>
+<li>
+<p><strong>Resolution test</strong> Provide specific evaluation tasks, datasets, and metrics for zero-shot performance, including comparisons to state-of-the-art models and statistical significance tests.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The abstract claims that fine-tuned RNASeek predicts ribozyme self-cleavage activity and viral mRNA stability, revealing interpretable sequence features.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> No quantitative performance measures are provided for the fine-tuned predictors, such as correlation coefficients, AUC values, or error rates. The interpretable features are described qualitatively, but no evidence is shown to support the claim that these features are statistically significant or biologically meaningful.</li>
+<li><strong>Why it matters</strong> Predictive performance and interpretability are central to the utility of the model. Without quantitative validation, the predictors' reliability and the interpretability claims cannot be assessed.</li>
+<li>
+<p><strong>Resolution test</strong> Report performance metrics for both prediction tasks, including cross-validation results and comparisons to existing predictors. Provide statistical analysis of the identified features, such as enrichment scores or effect sizes, with appropriate controls.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The abstract claims that GRPO-guided generation produces faster-cleaving ribozymes and stability-enhancing 3′ UTRs while satisfying user-specified IUPAC constraints.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The outcomes of GRPO-guided generation are described without any quantitative data, such as fold improvements in cleavage rates or stability measures, success rates for constraint satisfaction, or comparisons to non-RL baselines. The experimental validation is mentioned but not detailed.</li>
+<li><strong>Why it matters</strong> The core contribution is the RL-based design capability. Without quantitative outcomes and experimental validation details, the effectiveness of the approach cannot be evaluated.</li>
+<li>
+<p><strong>Resolution test</strong> Provide quantitative results for generated sequences, including activity measurements, stability metrics, constraint satisfaction rates, and statistical comparisons to training data and benchmarked AI-generated sequences. Include experimental protocols and replicate numbers.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The abstract claims that experimentally validated RNASeek-generated ribozymes achieve wild-type levels of activity and that generated 3′ UTRs exceed the performance of training data and benchmarked AI-generated sequences.</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> No experimental details are provided, including the number of tested sequences, assay conditions, controls, or statistical analysis. The claim of exceeding benchmarks lacks specification of the benchmarks used.</li>
+<li><strong>Why it matters</strong> Experimental validation is critical for establishing real-world utility. Without detailed methods and results, the claims are not reproducible or verifiable.</li>
+<li><strong>Resolution test</strong> Describe experimental procedures, including constructs, cell lines or in vitro conditions, replicates, and statistical tests. Specify the benchmarks and provide raw data or clear summaries with error bars and significance levels.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Model architecture description</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract states the model is built on a "DeepSeek architecture" but does not clarify which specific variant or how it was adapted for RNA sequences.</li>
+<li>
+<p><strong>Required correction</strong> Specify the exact architecture version and any modifications made for RNA tokenization and generation.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Training corpus description</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract mentions a "cross-phyla transcriptomic corpus" but provides no details on species coverage, data sources, or preprocessing.</li>
+<li>
+<p><strong>Required correction</strong> Describe the corpus composition, including number of species, sequence types, and any filtering criteria.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Use of "zero-shot"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The term "zero-shot" is used without defining the task formulation or the training data exclusion criteria.</li>
+<li><strong>Required correction</strong> Clarify what zero-shot means in this context, including how the evaluation tasks were excluded from training.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>Zero-shot capture of species-specific transcript features and intron–exon boundaries is unsupported without quantitative evaluation.</li>
+<li>Interpretable sequence features associated with ribozyme activity and mRNA stability are unsupported without statistical evidence.</li>
+<li>GRPO-guided generation producing faster-cleaving ribozymes and stability-enhancing 3′ UTRs is unsupported without quantitative outcomes.</li>
+<li>Experimental validation claims of wild-type-level activity and superior 3′ UTR performance are unsupported without experimental details and data.</li>
+<li>The claim that generated 3′ UTRs exceed benchmarked AI-generated sequences is unverifiable without specification of benchmarks and statistical comparisons.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

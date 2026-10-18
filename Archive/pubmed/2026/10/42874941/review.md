@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and scope as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The abstract claims that AI integration is driving a paradigm shift in aptamer discovery, moving from empirical SELEX-based screening to rational, data-driven design. It asserts comprehensive coverage of the pipeline, including databases, structure prediction (AlphaFold 3, RoseTTAFoldNA, diffusion-based approaches), interaction prediction, molecular docking, dynamics, free energy calculations, generative design (AptaDiff, InstructNA, GRAPE-LM, AiDTA), and applications in diagnostics, therapy, and biosensing. It further claims to synthesize 2024-2026 advances and to serve as a timely resource.
+- **Visible evidence base** Abstract text only; no figures, tables, references, or methodological details provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, reference list, case studies, benchmark comparisons, and any quantitative performance data
+
+## Reviewer
+- **Overall assessment** The abstract presents a broad and timely overview of AI applications in aptamer discovery, with a plausible structure and a clear emphasis on recent advances. However, the claims of comprehensiveness and paradigm shift cannot be evaluated from the abstract alone. The absence of specific examples, quantitative outcomes, or critical comparisons with SELEX limits the ability to assess whether the review offers genuine insight beyond a catalogue of tools. The abstract reads as a well-organized roadmap, but the depth, balance, and critical analysis remain unverified.
+- **Who would be interested in the results, and why** Researchers in aptamer engineering, computational biology, and AI-driven drug discovery would find this review relevant. Those seeking an entry point into AI tools for nucleic acid design, structure prediction, or generative modeling would benefit from a curated synthesis. The emphasis on 2024-2026 advances may attract readers tracking rapid developments in this space.
+- **Major strengths** The abstract is clearly structured around the full pipeline, from data analysis to generative design and applications. The inclusion of named tools and models (AlphaFold 3, RoseTTAFoldNA, AptaDiff, InstructNA, GRAPE-LM, AiDTA) signals concrete coverage rather than vague generalities. The stated focus on very recent work (2024-2026) suggests currency, which is valuable in a fast-moving field.
+- **Major Concerns**  
+  - **R1-M1**  
+    - **Severity** Major  
+    - **Blocking** Yes  
+    - **Axis** Claim substantiation  
+    - **Claim pointer** The abstract claims a "paradigm shift from empirical screening toward rational, data-driven design" and "comprehensive overview of AI integration across the entire aptamer development pipeline."  
+    - **Evidence pointer** Abstract only; no supporting data, case studies, or comparative analyses provided  
+    - **Concern** The abstract asserts a paradigm shift and comprehensive coverage without presenting any evidence of how AI-designed aptamers outperform SELEX-derived ones in practice. No specific examples, success rates, or validation results are mentioned.  
+    - **Why it matters** A review claiming a paradigm shift must substantiate that claim with concrete examples of AI-designed aptamers that have been experimentally validated and shown to match or exceed SELEX outcomes. Without such evidence, the claim remains rhetorical.  
+    - **Resolution test** Provide at least two to three documented cases where AI-designed aptamers were experimentally validated, with performance metrics compared against SELEX-derived aptamers for the same target.  
+  - **R1-M2**  
+    - **Severity** Major  
+    - **Blocking** No  
+    - **Axis** Scope and balance  
+    - **Claim pointer** The abstract claims to cover "state-of-the-art strategies" and "very recent AI-driven generative design" across multiple model families.  
+    - **Evidence pointer** Abstract only; no indication of selection criteria, inclusion/exclusion rules, or critical assessment of the tools listed  
+    - **Concern** The abstract lists many tools and methods but does not indicate whether the review critically compares them, identifies limitations, or discusses failure modes. A list of tools without critical evaluation risks becoming a directory rather than a review.  
+    - **Why it matters** Readers need guidance on which tools are mature, which are speculative, and what trade-offs exist. A review that merely catalogues tools without critical assessment has limited utility.  
+    - **Resolution test** Include a comparative table or section that evaluates each major tool class on criteria such as accuracy, computational cost, ease of use, and experimental validation status.  
+  - **R1-M3**  
+    - **Severity** Major  
+    - **Blocking** No  
+    - **Axis** Reproducibility and transparency  
+    - **Claim pointer** The abstract claims to synthesize "the latest computational and experimental advances" and to outline "future directions toward closed-loop, interpretable AI frameworks."  
+    - **Evidence pointer** Abstract only; no mention of how the literature was searched, screened, or synthesized  
+    - **Concern** The abstract does not describe the methodology for selecting and synthesizing the literature. Without a clear search strategy, inclusion criteria, or quality assessment, the review's conclusions cannot be independently verified or reproduced.  
+    - **Why it matters** For a review to be a reliable resource, the methodology must be transparent. This is especially important in a fast-moving field where selective citation can skew the perceived state of the art.  
+    - **Resolution test** Add a methods section describing the literature search strategy, databases used, time window, and inclusion/exclusion criteria.  
+- **Minor Comments**  
+  - **R1-m1**  
+    - **Severity** Minor  
+    - **Axis** Clarity  
+    - **Affected element** Title  
+    - **Evidence pointer** Abstract title  
+    - **Issue** The title "Beyond SELEX: AI-driven aptamers from sequence to structure to function" is catchy but may overstate the degree to which AI has moved beyond SELEX, given that most AI-designed aptamers still require experimental screening for validation.  
+    - **Required correction** Consider a more measured title, such as "Integrating AI with SELEX: from sequence to structure to function in aptamer discovery."  
+  - **R1-m2**  
+    - **Severity** Minor  
+    - **Axis** Precision  
+    - **Affected element** Claim of "paradigm shift"  
+    - **Evidence pointer** Abstract, first sentence  
+    - **Issue** The phrase "paradigm shift" is used without qualification. In practice, AI tools are often used to augment SELEX rather than replace it.  
+    - **Required correction** Soften the language to "a complementary shift" or "an accelerating integration" to reflect the current hybrid nature of most workflows.  
+  - **R1-m3**  
+    - **Severity** Minor  
+    - **Axis** Completeness  
+    - **Affected element** Applications section  
+    - **Evidence pointer** Abstract, applications sentence  
+    - **Issue** The abstract mentions diagnostics, therapy, and biosensing but does not indicate whether the review covers regulatory, manufacturing, or clinical translation challenges, which are often the bottleneck for aptamer adoption.  
+    - **Required correction** Add a sentence indicating whether translational challenges are addressed, or explicitly state that they are outside the scope.  
+- **Technical failings that need to be addressed before the case is established** The abstract does not provide any quantitative evidence that AI-driven approaches outperform or complement SELEX in practice. The claim of a paradigm shift is unsupported without at least one concrete, validated example. The absence of a methodology for the literature synthesis is a technical shortcoming that undermines reproducibility.
+- **Assessment against Nature-style criteria**  
+  - **Originality** The abstract suggests a synthesis of very recent work, which could be timely, but the originality of the conceptual framework is not evident from the abstract alone. The "sequence to structure to function" framing is not novel.  
+  - **Scientific importance** The topic is important, and a well-executed review could be valuable. However, the abstract does not demonstrate that the review offers new insights beyond what is already available in existing reviews.  
+  - **Interdisciplinary readership** The abstract is written in accessible language and should appeal to both computational and experimental researchers. The named tools provide concrete anchors.  
+  - **Technical soundness** Cannot be assessed from the abstract. The lack of methodology and absence of critical evaluation are concerns.  
+  - **Readability for nonspecialists** The abstract is clear and well-structured, but terms like "diffusion models" and "reinforcement learning" are used without brief explanation, which may limit accessibility for experimental biologists.  
+- **Recommendation posture** Currently not established from the provided evidence. The abstract outlines a plausible and timely review, but the core claims of comprehensiveness and paradigm shift require the full manuscript to verify. A revised abstract with at least one concrete example of a validated AI-designed aptamer and a brief mention of the review methodology would strengthen the case.
+
+## Risk / unsupported claims
+- The claim of a "paradigm shift" from SELEX to AI-driven design is unsupported in the abstract, as no comparative evidence is provided.
+- The claim of "comprehensive overview" cannot be verified without the full manuscript.
+- The assertion that the review "synthesizes the latest computational and experimental advances" is unverifiable from the abstract alone.
+- The named tools (AlphaFold 3, RoseTTAFoldNA, AptaDiff, InstructNA, GRAPE-LM, AiDTA) are listed without any indication of their maturity, limitations, or validation status, which risks overstating their readiness for routine use.

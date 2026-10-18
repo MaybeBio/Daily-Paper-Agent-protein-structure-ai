@@ -1,0 +1,77 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full-text methods, figures, or supplementary data were available for evaluation
+- **Shared manuscript claim summary** The authors report that the gidB A133P mutation in Mycobacterium tuberculosis confers low-level streptomycin resistance by impairing GidB-SAM binding and methyltransferase function, while the R96C mutation has no phenotypic effect on resistance.
+- **Visible evidence base** Abstract text only; no figures, tables, or detailed methods are provided
+- **Missing materials affecting confidence** Full methods, MIC values, growth curve data, qRT-PCR and Western blot results, CETSA data, molecular docking and MD simulation parameters, statistical analyses, and strain validation details
+
+## Reviewer
+- **Overall assessment** The abstract presents a focused and potentially valuable investigation of two gidB mutations in streptomycin-resistant M. tuberculosis. The conclusion that A133P is a novel low-level resistance determinant is plausible but not fully established from the abstract alone. The key mechanistic claim linking impaired SAM binding to resistance is supported by multiple complementary assays, but the absence of quantitative data and full methodological details limits the strength of the case. The study addresses a clinically relevant question, though the novelty of the A133P mutation as a resistance determinant requires verification against existing literature.
+- **Who would be interested in the results, and why** Clinical microbiologists and infectious disease specialists interested in molecular diagnostics for drug-resistant tuberculosis; researchers studying aminoglycoside resistance mechanisms in mycobacteria; and those working on GidB methyltransferase function and its role in bacterial fitness and resistance.
+- **Major strengths** The study combines clinical isolate screening with functional validation in a recombinant mycobacterial system, which strengthens the translational relevance. The use of multiple orthogonal assays (MIC, growth, expression, binding, and computational methods) to dissect the mechanism is commendable. The clear distinction between the two mutations provides a useful comparative framework.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that A133P is a "novel low-level SM resistance determinant" and that resistance is mediated by impaired GidB-SAM binding.
+  - **Evidence pointer** Results section; location not provided
+  - **Concern** The abstract does not provide quantitative MIC data, nor does it specify the fold-change in MIC relative to wild-type or the clinical breakpoint used to define "low-level" resistance. Without these values, the claim of a resistance determinant cannot be adequately assessed.
+  - **Why it matters** The definition of a resistance determinant requires a clear phenotypic threshold. If the MIC increase is within normal assay variability or below clinical relevance, the conclusion would be overstated.
+  - **Resolution test** Provide exact MIC values (µg/mL) for wild-type, R96C, and A133P strains, including replicates and statistical significance, and state the breakpoint used for low-level resistance classification.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic link
+  - **Claim pointer** The abstract states that A133P mediates resistance by impairing GidB-SAM binding and subsequent methyltransferase function.
+  - **Evidence pointer** Results section; location not provided
+  - **Concern** The abstract reports that CETSA showed neither mutation affected GidB-SM binding, and that both mutations impaired SAM binding. However, no direct evidence of methyltransferase activity (e.g., methylation assays) is presented. The link between reduced SAM binding and resistance is inferred but not demonstrated.
+  - **Why it matters** The proposed mechanism requires a functional demonstration that impaired SAM binding leads to reduced methylation activity, which in turn causes resistance. Without this, the causal chain is incomplete.
+  - **Resolution test** Include a direct methyltransferase activity assay (e.g., using a defined substrate) comparing wild-type and mutant GidB, or provide published evidence that SAM binding affinity directly correlates with GidB function in this context.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Novelty verification
+  - **Claim pointer** The abstract claims A133P is a "novel" low-level SM resistance determinant.
+  - **Evidence pointer** Introduction/Conclusion; location not provided
+  - **Concern** The abstract does not reference prior reports of gidB mutations, particularly A133P, in clinical isolates or functional studies. Without a literature comparison, the novelty claim cannot be verified.
+  - **Why it matters** If A133P has been previously described, the claim of novelty would be inaccurate and the study's contribution diminished.
+  - **Resolution test** Add a brief literature review in the introduction or discussion confirming that A133P has not been previously characterized as a resistance determinant, with appropriate citations.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Methods
+  - **Evidence pointer** Methods section; location not provided
+  - **Issue** The abstract states that recombinant M. smegmatis strains were constructed but does not specify whether the gidB mutations were expressed from a plasmid or integrated into the chromosome, nor the promoter used.
+  - **Required correction** Specify the expression system (e.g., plasmid, integrative vector) and promoter in the methods or abstract.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Results
+  - **Evidence pointer** Results section; location not provided
+  - **Issue** The abstract reports differences in MIC, growth, and expression but does not state the number of biological replicates or the statistical tests used.
+  - **Required correction** Include replicate numbers and statistical methods (e.g., t-test, ANOVA) for each assay in the results or methods.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Data presentation
+  - **Affected element** Results
+  - **Evidence pointer** Results section; location not provided
+  - **Issue** The abstract mentions "molecular docking and MD simulation" but does not report key parameters such as binding free energies or simulation timescales.
+  - **Required correction** Provide quantitative outputs from docking and MD (e.g., binding energies, RMSD values) in the results or supplementary material.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Clinical relevance
+  - **Affected element** Results
+  - **Evidence pointer** Results section; location not provided
+  - **Issue** The abstract does not state the prevalence of R96C and A133P among the 75 clinical isolates, which would help contextualize their clinical importance.
+  - **Required correction** Report the number and frequency of each mutation in the isolate collection.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (quantitative MIC data missing) and R1-M2 (no direct methyltransferase activity evidence) are the primary technical gaps. Without these, the central claim of A133P as a resistance determinant with a defined mechanism is not fully supported.
+- **Assessment against Nature-style criteria** Originality: The study addresses a specific mutation pair in gidB, but the novelty of A133P is not verified against existing literature, so originality is uncertain. Scientific importance: The work has potential clinical relevance for molecular diagnostics of SM-resistant TB, which is important, but the impact is moderate given the narrow scope. Interdisciplinary readership: The topic is primarily of interest to microbiologists and clinical diagnosticians; the mechanistic depth may attract structural biologists, but the appeal is limited. Technical soundness: The use of multiple assays is a strength, but the lack of quantitative data and direct functional evidence weakens the technical case. Readability for nonspecialists: The abstract is concise and generally clear, though terms like CETSA and MD simulation may require explanation for a broader audience.
+- **Recommendation posture** Supportive if technical concerns are resolved. The study has a sound conceptual framework and relevant clinical motivation, but the abstract as presented does not provide sufficient quantitative evidence or direct mechanistic proof to fully establish the claims. Revision should address the missing MIC data, methyltransferase activity, and novelty verification.
+
+## Risk / unsupported claims
+- The claim that A133P is a "novel" resistance determinant is unsupported without a literature comparison.
+- The claim that resistance is mediated by impaired SAM binding and subsequent methyltransferase function is not fully supported without direct activity data.
+- The statement that R96C has "no phenotypic effects" is based on limited data (MIC and growth) and may not exclude subtle effects on other phenotypes.
+- The clinical relevance of the findings is implied but not quantified (e.g., prevalence of mutations in the isolate cohort).

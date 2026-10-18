@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ProtModernBERT: Compute-Efficient Protein Language Modeling · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>ProtModernBERT: Compute-Efficient Protein Language Modeling</h1>
+      <div class="meta">Alberto Martínez; Natalia Flechas Manrique; Llorenç Espinosa-Portalés; Luc Andrea</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-14
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.19738v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出计算高效的蛋白质语言模型ProtModernBERT，通过现代架构改进在低算力下匹配大型模型的结构预测性能，虽聚焦序列而非直接结构建模，但方法可迁移至蛋白质结构计算任务。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Large protein language models provide a powerful framework for learning sequence-function relationships and guiding experimental design. However, architectural improvements are underexplored, especially in low-compute regimes of relevance for resource-constrained research laboratories. We show that the training cost for encoder-only transformer architectures can be reduced by leveraging modern architectural refinements, offering an encouraging performance / compute-efficiency trade-off. We introduce ProtModernBERT, a modernized BERT-style model pre-trained on amino acid sequences, and compare it with ProtBert, Amplify, and ESM2 across a set of supervised structural tasks -encompassing secondary structure prediction, disorder prediction, and subcellular localization- and ProteinGym&#39;s zero-shot functional benchmark. We find that ProtModernBERT matches or closely tracks the performance of Amplify-120M and ProtBert with up to 80-90\% reduction in pre-training FLOPs, and narrows the gap to ESM2 when controlling for pre-training. Our analysis using a cluster-based validation protocol for hyperparameter selection and randomly initialized models disentangles the contributions of architecture and data, showing that modern components provide stronger inductive biases that are more consequential than parameter count in low-compute regimes.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">大型蛋白质语言模型为学习序列-功能关系和指导实验设计提供了强大的框架。然而，架构改进的探索仍显不足，尤其是在资源受限研究实验室相关的低计算量场景中。我们表明，通过利用现代架构改进，可以降低仅编码器Transformer架构的训练成本，从而提供令人鼓舞的性能/计算效率权衡。我们引入了ProtModernBERT，一种现代化的BERT风格模型，在氨基酸序列上预训练，并将其与ProtBert、Amplify和ESM2在一组监督结构任务——涵盖二级结构预测、无序预测和亚细胞定位——以及ProteinGym的零样本功能基准上进行比较。我们发现，ProtModernBERT在预训练FLOPs减少80-90%的情况下，匹配或紧密跟随Amplify-120M和ProtBert的性能，并在控制预训练时缩小了与ESM2的差距。我们使用基于聚类的验证协议进行超参数选择和随机初始化模型的分析，解耦了架构和数据的贡献，表明现代组件提供了更强的归纳偏置，在低计算量场景中比参数数量更具决定性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：ProtModernBERT: Compute-Efficient Protein Language Modeling</li>
+<li><strong>作者</strong>：Alberto Martínez; Natalia Flechas Manrique; Llorenç Espinosa-Portalés; Luc Andrea</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（预印本）</li>
+<li><strong>年份</strong>：2026-10-14（提交日期）</li>
+<li><strong>论文类型</strong>：预印本（方法学/模型论文）</li>
+<li><strong>领域</strong>：蛋白质语言模型（Protein Language Model, pLM）、计算效率优化</li>
+<li><strong>关键词</strong>：蛋白质语言模型、计算效率、ModernBERT、Transformer、蛋白质序列建模</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.19738v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-10-14</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/深度学习」中的蛋白质序列表示学习方向，聚焦于通过架构改进（引入 ModernBERT 架构）提升蛋白质语言模型的<strong>计算效率</strong>，而非直接做结构预测或构象采样。其可迁移价值在于：为蛋白质序列编码提供更高效的骨干网络，可嵌入结构预测、对接、MD 模拟的输入编码环节。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 ProtModernBERT，将 ModernBERT 架构应用于蛋白质序列建模，在保持或接近现有 pLM 性能的前提下，通过架构层面的计算效率优化（如更深的网络、更高效的注意力机制）降低训练和推理成本，并验证了其在蛋白质任务上的可行性。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：现有蛋白质语言模型（如 ESM 系列）在蛋白质序列表示上表现优异，但计算成本高（参数量大、训练/推理耗时），限制了其在资源受限场景下的应用。本文试图回答：能否通过引入 ModernBERT 架构（一种为文本设计的计算高效 Transformer 变体）来构建一个<strong>计算效率更高</strong>的蛋白质语言模型，同时不显著损失下游任务性能？</li>
+<li><strong>为什么重要</strong>：蛋白质结构预测、对接、MD 模拟等任务常依赖 pLM 生成的序列嵌入作为输入特征。若 pLM 推理成本过高，会拖慢整个下游流程；更高效的 pLM 可直接加速这些计算研究。</li>
+<li><strong>现有方法为何不足</strong>：ESM-2 等模型虽强大，但参数量大、推理开销高；已有的高效 pLM（如 ProstT5 等）多聚焦于特定任务或量化，而非从架构层面系统性优化。</li>
+<li><strong>精确研究问题</strong>：Can a ModernBERT-based architecture achieve comparable protein representation quality to existing pLMs at a fraction of the compute cost?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架及公开领域常识，标注「经外部核验」部分。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期序列编码</td>
+<td>One-hot、BLOSUM</td>
+<td>简单、可解释</td>
+<td>无上下文信息</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>第一代 pLM</td>
+<td>ESM-1b、ProtBERT</td>
+<td>引入 Transformer 到蛋白质</td>
+<td>参数量大、训练成本高</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>大规模 pLM</td>
+<td>ESM-2、ProtT5</td>
+<td>性能强、通用性好</td>
+<td>推理/训练计算开销大</td>
+<td>本文对比对象</td>
+</tr>
+<tr>
+<td>高效 Transformer</td>
+<td>ModernBERT（文本领域）</td>
+<td>计算效率高、推理快</td>
+<td>未在蛋白质上验证</td>
+<td>本文核心引入</td>
+</tr>
+<tr>
+<td><strong>本文</strong></td>
+<td><strong>ProtModernBERT</strong></td>
+<td><strong>将 ModernBERT 架构迁移到蛋白质序列</strong></td>
+<td><strong>需验证在蛋白质任务上的性能保持</strong></td>
+<td><strong>本文贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>此脉络为「经外部核验」：ModernBERT 为 2024 年提出的文本高效 BERT 变体（公开文献），ESM 系列为已知 pLM 基线。</p>
+</blockquote>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算成本高</td>
+<td>现有 pLM 训练和推理耗时、耗能</td>
+<td>参数量大、注意力机制计算复杂度高</td>
+<td>未提供（作者在摘要中暗示，但无具体数据）</td>
+</tr>
+<tr>
+<td>架构迁移空白</td>
+<td>ModernBERT 的高效设计未在蛋白质序列上验证</td>
+<td>蛋白质序列与自然语言在分布、长度、语义上有差异</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>性能-效率权衡</td>
+<td>高效模型常以性能下降为代价</td>
+<td>压缩或架构简化可能损失表示能力</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于仅提供摘要级信息，上述痛点中「作者解释」部分多为推断，具体证据未提供。</p>
+</blockquote>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：将 ModernBERT 架构（包括更深的层、更高效的注意力、优化的位置编码等）直接应用于蛋白质序列，构建 ProtModernBERT，并在标准蛋白质任务上评估。</li>
+<li><strong>核心洞察</strong>：ModernBERT 在文本领域证明的计算效率优化（如更深的窄网络、Flash Attention、更好的初始化）可能同样适用于蛋白质序列，因为蛋白质序列在结构上具有与自然语言类似的「局部依赖 + 长程交互」特性。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：架构层面的效率优化（而非单纯压缩参数）是提升 pLM 实用性的关键路径；跨领域架构迁移（文本→蛋白质）可能带来「免费」的效率提升，但需在领域特定任务上验证。</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质氨基酸序列（tokenized）</li>
+<li><strong>输出</strong>：每个残基的上下文嵌入表示（可用于下游任务）</li>
+<li><strong>模块</strong>：</li>
+<li>Tokenizer（氨基酸词汇表）</li>
+<li>ModernBERT 骨干（多层 Transformer，含高效注意力机制）</li>
+<li>输出头（用于 MLM 预训练或下游任务）</li>
+<li><strong>训练</strong>：掩码语言建模（MLM）预训练（推测，未明确说明）</li>
+<li><strong>工具</strong>：未提供（推测为 PyTorch/HuggingFace 生态）</li>
+<li><strong>反馈回路</strong>：无显式反馈回路（非生成式模型）</li>
+<li><strong>假设</strong>：蛋白质序列的统计规律可通过高效 Transformer 架构充分捕获</li>
+</ul>
+<p><strong>文字流程</strong>：氨基酸序列 → tokenize → ModernBERT 多层编码 → 输出每个位置的嵌入向量 → 用于下游任务（如结构预测、功能注释）。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ModernBERT 骨干</td>
+<td>序列编码</td>
+<td>高效捕获序列上下文</td>
+<td>输入：token 序列；输出：嵌入序列</td>
+<td>未提供（作者主张）</td>
+<td>预期：计算效率下降，回到标准 BERT 开销</td>
+</tr>
+<tr>
+<td>高效注意力机制</td>
+<td>降低注意力计算复杂度</td>
+<td>长序列下标准注意力开销大</td>
+<td>输入：Q/K/V；输出：加权表示</td>
+<td>未提供</td>
+<td>预期：推理速度下降，显存占用上升</td>
+</tr>
+<tr>
+<td>深度窄网络设计</td>
+<td>提升模型容量-效率比</td>
+<td>更深的网络在相同参数量下表达力更强</td>
+<td>输入：层间表示；输出：更深表示</td>
+<td>未提供</td>
+<td>预期：性能可能下降（若深度不足）</td>
+</tr>
+<tr>
+<td>位置编码</td>
+<td>注入序列位置信息</td>
+<td>Transformer 无位置感知</td>
+<td>输入：token 嵌入；输出：位置增强嵌入</td>
+<td>未提供</td>
+<td>预期：序列顺序信息丢失，性能显著下降</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：所有「移除后影响」均为 [Analysis] 预期，非实测消融。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。提供的材料中未包含任何数学公式或符号定义。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供（推测为 UniRef 或类似蛋白质序列数据库）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测为 perplexity、下游任务准确率等）</li>
+<li><strong>基线</strong>：未提供（推测为 ESM-2、ProtBERT 等）</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>oracle 输入</strong>：不适用（无 oracle 机制）</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>由于仅提供摘要级信息，无法获取任何实验细节。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅验证了 ModernBERT 架构在蛋白质序列建模上的可行性，未涉及结构预测、对接等具体下游任务。</li>
+<li><strong>oracle/真值输入</strong>：不适用。</li>
+<li><strong>端到端状态</strong>：未提供端到端评估信息。</li>
+<li><strong>算力成本</strong>：作者声称「compute-efficient」，但未提供具体 FLOPs、训练时间或硬件对比数据。</li>
+<li><strong>历史数据依赖</strong>：预训练数据未说明。</li>
+<li><strong>模型依赖</strong>：依赖 ModernBERT 架构设计，其有效性在文本领域已验证，但在蛋白质上需独立验证。</li>
+<li><strong>最难情形</strong>：未讨论长序列、多域蛋白、低同源性序列等困难场景。</li>
+<li><strong>不确定性</strong>：性能-效率权衡的具体数值未知。</li>
+</ul>
+<p><strong>有边界的复述</strong>：本文提出了一种将 ModernBERT 架构应用于蛋白质序列建模的模型 ProtModernBERT，声称在计算效率上优于现有 pLM，但未提供可验证的实验数据，其性能声明目前无法独立确认。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<blockquote>
+<p>另加「作者提及的相关约束」：未提供。</p>
+</blockquote>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺乏实验数据</td>
+<td>摘要中无任何定量结果，无法验证「compute-efficient」和性能保持的声明</td>
+<td>核心 claim 无法被评估</td>
+<td>获取全文，检查实验部分</td>
+<td>摘要全文</td>
+</tr>
+<tr>
+<td>架构迁移的合理性</td>
+<td>ModernBERT 的优化（如 Flash Attention）在文本上有效，但蛋白质序列长度分布、token 语义不同，可能不直接迁移</td>
+<td>决定模型实际可用性</td>
+<td>对比 ProtModernBERT 与 ESM-2 在相同任务、相同算力下的表现</td>
+<td>[Analysis]</td>
+</tr>
+<tr>
+<td>「compute-efficient」定义模糊</td>
+<td>是训练效率、推理效率还是两者？与哪个基线对比？</td>
+<td>影响结论的可比性</td>
+<td>要求作者明确效率指标和对比基线</td>
+<td>[Analysis]</td>
+</tr>
+<tr>
+<td>下游任务缺失</td>
+<td>未提及在结构预测、功能注释等实际任务上的表现</td>
+<td>pLM 的价值在于下游应用</td>
+<td>在标准 benchmark（如 PEER、TAPE）上评估</td>
+<td>[Analysis]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>架构迁移策略</strong>：将文本领域的高效 Transformer 架构（如 ModernBERT）迁移到蛋白质序列，是一种「低探索成本、潜在高回报」的路径。本课题（蛋白质结构计算 × AI）可借鉴此思路，尝试将其他高效架构（如 Mamba、RWKV）引入蛋白质建模。</li>
+<li><strong>计算效率作为一等公民</strong>：在蛋白质结构预测、MD 模拟等计算密集型任务中，pLM 的推理效率直接影响整体流程可行性。设计 pLM 时应将「效率-性能」权衡作为核心指标，而非仅追求精度。</li>
+<li><strong>跨领域验证的必要性</strong>：文本领域的架构优化不能直接假设在蛋白质上有效，必须在下游任务（如结构预测、对接）上独立验证。这提醒我们在迁移方法时需设计针对性的验证协议。</li>
+<li><strong>可迁移到本课题的具体方式</strong>：若 ProtModernBERT 验证有效，可将其作为 ESM-2 的替代编码器，嵌入到结构预测（如 ESMFold 类模型）或 MD 模拟的输入特征提取环节，以降低整体计算成本。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：与 ESM-2（Lin et al., 2023）、ProtBERT（Elnaggar et al., 2021）同属蛋白质语言模型家族，但聚焦效率优化。</li>
+<li><strong>组合</strong>：ModernBERT（Warner et al., 2024）为文本领域的高效 BERT 变体，本文是其向蛋白质领域的迁移应用。</li>
+<li><strong>冲突</strong>：若 ProtModernBERT 性能显著低于 ESM-2，则说明蛋白质序列的建模需求与文本不同，架构迁移并非「免费午餐」。</li>
+<li><strong>可迁移领域</strong>：蛋白质结构预测（如 AlphaFold 的 Evoformer 可考虑更高效的注意力）、分子对接（配体-蛋白共编码）、MD 模拟（粗粒化表示学习）。</li>
+<li><strong>候选方向</strong> [Analysis]：将 ModernBERT 的高效注意力机制引入 Evoformer 或 AlphaFold 的编码器，可能降低结构预测的推理成本。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：ProtModernBERT 在结构预测下游任务上的系统评估
+   - <strong>来源局限/观察</strong>：原文未提供下游任务验证
+   - <strong>核心假设</strong>：ProtModernBERT 的嵌入在结构预测任务上不显著逊于 ESM-2
+   - <strong>相对本文的增量</strong>：补充下游任务验证，明确实际可用性
+   - <strong>初步方法</strong>：在 PDB 子集上微调 ProtModernBERT 用于二级结构预测、接触图预测，与 ESM-2 对比
+   - <strong>验证方式</strong>：相同训练预算下的精度对比
+   - <strong>可能的失败模式</strong>：嵌入质量显著下降，说明架构迁移不适用于蛋白质
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：高效注意力机制在 AlphaFold 编码器中的迁移
+   - <strong>来源局限/观察</strong>：ModernBERT 的注意力优化在文本上有效，可能迁移到结构模块
+   - <strong>核心假设</strong>：将 Flash Attention 或稀疏注意力引入 Evoformer，可在保持精度的前提下降低推理成本
+   - <strong>相对本文的增量</strong>：从序列编码扩展到结构编码
+   - <strong>初步方法</strong>：替换 Evoformer 的注意力层，在 CASP 类 benchmark 上评估
+   - <strong>验证方式</strong>：精度（如 lDDT、TM-score）与推理时间对比
+   - <strong>可能的失败模式</strong>：结构建模的全局依赖需求与稀疏注意力冲突
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：计算效率感知的 pLM 设计准则
+   - <strong>来源局限/观察</strong>：原文未提供效率-性能的定量权衡分析
+   - <strong>核心假设</strong>：存在一个「效率-性能」帕累托前沿，可指导 pLM 架构选择
+   - <strong>相对本文的增量</strong>：从单一模型扩展到设计准则
+   - <strong>初步方法</strong>：在固定算力预算下，对比多种架构（BERT、ModernBERT、Mamba）在蛋白质任务上的表现
+   - <strong>验证方式</strong>：绘制帕累托曲线，识别最优架构区域
+   - <strong>可能的失败模式</strong>：不同任务的最优架构不一致，难以形成统一准则
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：ProtModernBERT 嵌入在 MD 模拟粗粒化建模中的应用
+   - <strong>来源局限/观察</strong>：pLM 嵌入可用于构建粗粒化势函数，但计算成本高
+   - <strong>核心假设</strong>：ProtModernBERT 的嵌入在保持精度的同时，可加速粗粒化 MD 模拟
+   - <strong>相对本文的增量</strong>：从静态表示扩展到动态模拟
+   - <strong>初步方法</strong>：用 ProtModernBERT 嵌入替代传统手工特征，训练 CG 势函数，在折叠模拟上测试
+   - <strong>验证方式</strong>：折叠路径正确性与模拟速度对比
+   - <strong>可能的失败模式</strong>：嵌入缺乏动力学相关信息，CG 模拟精度不足
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, submission metadata, and arXiv landing page text. No abstract, no main text, no figures, no tables, no methods, no code, no data.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title and the bibliographic record. No scientific content is available for evaluation.</li>
+<li><strong>Shared manuscript claim summary</strong> The title asserts the existence of a model named "ProtModernBERT" that performs protein language modeling with improved compute efficiency. No further claims are stated in the supplied material.</li>
+<li><strong>Visible evidence base</strong> None. The supplied material contains no abstract, no results, no methodology, and no supporting data.</li>
+<li><strong>Missing materials affecting confidence</strong> The abstract, full text, figures, tables, methods, code, and data are all absent. Confidence in any substantive assessment is effectively zero.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material consists solely of a title and bibliographic metadata. There is no scientific content to review. The title indicates a potential contribution in compute-efficient protein language modeling, but no claims, methods, or results are available to evaluate. A meaningful review cannot be conducted on this basis.</li>
+<li><strong>Who would be interested in the results, and why</strong> Not assessable from the supplied material. Based on the title alone, researchers in protein language modeling, computational biology, and efficient machine learning might have interest, but this cannot be confirmed without content.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material. The title is concise and suggests a clear topic, but this is not a scientific strength.</li>
+<li><strong>Major Concerns</strong> None can be formulated because no scientific content is provided. The absence of content is itself the overriding issue.</li>
+<li><strong>Minor Comments</strong> None can be formulated because no content is available for comment.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The manuscript is not assessable. The authors must provide the abstract and full text before any technical evaluation can occur.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: not assessable. Scientific importance: not assessable. Interdisciplinary readership: not assessable. Technical soundness: not assessable. Readability for nonspecialists: not assessable. The supplied material provides no basis for any of these criteria.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript cannot be evaluated in any form until the actual scientific content is supplied.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title implies a model named "ProtModernBERT" with compute-efficient protein language modeling capabilities. This claim is entirely unsupported by the supplied material.</li>
+<li>No other claims are present in the supplied material.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,112 @@
+## Review setup
+- **Input scope** Full manuscript text
+- **Assessment boundary** Scientific content, methodology, data interpretation, and conclusions as presented in the manuscript
+- **Shared manuscript claim summary** The authors report whole-genome sequencing of 7 men with oligoasthenoteratozoospermia (OAT) from consanguineous families, identifying 2 rare homozygous missense variants in DNAH9 (p.Pro355Leu) and CFAP45 (p.Arg493Trp) in one index case, along with additional lower-impact variants in genes related to spermiogenesis, acrosomal integrity, and testicular function. They propose these variants may contribute to the OAT phenotype and highlight the utility of WGS in consanguineous populations.
+- **Visible evidence base** Full manuscript text including methods, results, tables referenced (Table I, Table II), figures referenced (Figures 1-3), and discussion. No raw sequencing data, no supplementary files, no tables or figures actually provided in the submitted material.
+- **Missing materials affecting confidence** Tables I and II, Figures 1-3, raw variant call data, coverage statistics per sample, quality control metrics, ethnicity-matched control allele frequencies, functional assay data, segregation analysis data, and clinical phenotype details for all 7 participants.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a small WGS study of 7 men with OAT from consanguineous families, identifying 2 rare homozygous missense variants in one index case. While the topic is relevant to male infertility genetics, the study has substantial limitations: it is a single-case report in essence, lacks functional validation, provides no segregation data, and the bioinformatic prioritization strategy is not sufficiently described to assess reproducibility. The claims of association between the identified variants and OAT are speculative and not supported by the current evidence. The manuscript would benefit from a more rigorous analytical framework, additional cohort validation, and functional studies before the conclusions can be considered established.
+- **Who would be interested in the results, and why** Clinicians and researchers in reproductive genetics, particularly those studying genetic causes of male infertility in consanguineous populations. The candidate genes DNAH9 and CFAP45 are biologically plausible and may be of interest to groups studying flagellar function and ciliopathies. However, the single-case design limits the generalizability and impact for a broader audience.
+- **Major strengths** The use of WGS rather than exome sequencing allows detection of variants across the whole genome. The study addresses an understudied population (Iranian men from consanguineous families). The candidate genes are biologically plausible based on known roles in flagellar structure and function. The authors acknowledge limitations including VUS classification and lack of functional validation.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical and quantitative rigor
+  - **Claim pointer** The manuscript claims that the identified DNAH9 and CFAP37 variants "may contribute to the impaired sperm function observed in this man" and that the OAT phenotype "may be due to the combined effects of multiple variants."
+  - **Evidence pointer** Results section, Discussion section; location not provided
+  - **Concern** The study is based on a single index case. No statistical framework is provided to assess whether the identified variants are enriched in cases versus controls. The allele frequencies of these variants in the general population (gnomAD) are mentioned as a filtering criterion but not reported for the specific variants. Without case-control comparison or segregation analysis, the association between these variants and OAT cannot be established. The claim that multiple variants collectively contribute to the phenotype is entirely speculative without functional or genetic evidence.
+  - **Why it matters** The central conclusion of the manuscript rests on the pathogenicity of these variants. Without statistical evidence of enrichment, segregation data, or functional validation, the variants remain variants of uncertain significance, and the claim of association is unsupported.
+  - **Resolution test** Provide allele frequencies of the identified variants in ethnically matched controls, perform case-control association analysis, and/or provide segregation data from family members. Functional studies demonstrating a deleterious effect on flagellar function would substantially strengthen the case.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and methodological transparency
+  - **Claim pointer** The methods describe variant prioritization including "predicted pathogenicity and relevance to reproduction" and "previously reported or biologically plausible roles in spermatogenesis, sperm motility, or male infertility."
+  - **Evidence pointer** Materials and Methods, WGS and variant prioritization section; location not provided
+  - **Concern** The variant prioritization pipeline is described at a high level but lacks critical details. The criteria for "relevance to reproduction" and "biologically plausible roles" are not defined operationally. The number of variants passing each filtering step is not reported, making it impossible to assess whether the final candidates were selected based on pre-specified criteria or post-hoc reasoning. The absence of a variant filtering table (e.g., from millions of variants to the final candidates) undermines the transparency of the analysis.
+  - **Why it matters** Reproducibility is a core requirement for genomic studies. Without a clear, stepwise filtering strategy with variant counts at each stage, the analysis cannot be replicated or evaluated for potential selection bias.
+  - **Resolution test** Provide a detailed variant filtering flowchart with variant counts at each step, define the criteria for gene relevance explicitly, and report all variants passing the final filters, not just the selected candidates.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Evidence strength and functional validation
+  - **Claim pointer** The manuscript states that "multiple in silico analyses predicted a deleterious effect and reduced protein stability" for the DNAH9 variant and that the CFAP45 variant is predicted to "AFFECT PROTEIN FUNCTION."
+  - **Evidence pointer** Results, Amino acid substitution effects section; location not provided
+  - **Concern** The manuscript relies entirely on in silico prediction tools (SIFT, PROVEAN, I-Mutant2.0, PHD-SNPg) to infer pathogenicity. Notably, SIFT predicts the DNAH9 p.Pro355Leu variant to be "TOLERATED," while PROVEAN predicts it to be deleterious. This discrepancy is acknowledged but not resolved. No functional assays, protein stability measurements, or cellular models are provided. The structural modeling is descriptive and does not demonstrate a functional consequence.
+  - **Why it matters** In silico predictions are hypothesis-generating, not confirmatory. The conflicting predictions for the DNAH9 variant weaken the claim of pathogenicity. Without functional validation, the biological significance of these variants remains unknown.
+  - **Resolution test** Perform functional assays such as sperm flagellar ultrastructure analysis, protein expression studies, or cellular assays to demonstrate a deleterious effect of the variants. At minimum, reconcile the conflicting in silico predictions with additional evidence.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Clinical and phenotypic characterization
+  - **Claim pointer** The manuscript describes the index case as having "severe OAT" with specific semen parameters.
+  - **Evidence pointer** Results section; location not provided
+  - **Concern** Clinical details are limited to semen analysis and hormone levels for the index case. No information is provided on the clinical characteristics of the other 6 men, including their semen parameters, hormonal profiles, or whether they had any identifiable variants. The criteria for OAT diagnosis are not fully specified beyond reference to WHO 2021 guidelines. Physical examination findings, testicular volume, and other relevant clinical data are absent.
+  - **Why it matters** Without complete phenotypic characterization of all participants, it is impossible to assess whether the index case is representative or whether the other 6 men had distinct phenotypes that might have informed the analysis. The clinical context is essential for interpreting genetic findings.
+  - **Resolution test** Provide full clinical and phenotypic data for all 7 participants, including semen parameters, hormone levels, physical examination findings, and any relevant imaging or histopathology.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretation and generalizability
+  - **Claim pointer** The conclusion states that the findings "expand the spectrum of candidate genes associated with OAT" and "provide a foundation for future functional studies and personalized diagnostic approaches."
+  - **Evidence pointer** Discussion and Conclusion sections; location not provided
+  - **Concern** The claim of expanding the candidate gene spectrum is overstated given that DNAH9 and CFAP45 were already known to be involved in flagellar function and male infertility. The study does not provide novel genetic evidence beyond identifying variants in known candidate genes in a single individual. The claim about personalized diagnostic approaches is premature without validated biomarkers or established genotype-phenotype correlations.
+  - **Why it matters** Overstated conclusions can mislead readers and overstate the clinical utility of the findings. The study is exploratory and hypothesis-generating at best.
+  - **Resolution test** Temper the conclusions to reflect the exploratory nature of the study. Clearly state that the findings require validation in larger cohorts and functional studies before any clinical application can be considered.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability and clarity
+  - **Affected element** Abstract and Introduction
+  - **Evidence pointer** Abstract, Background section; location not provided
+  - **Issue** The abstract states the study is "an experimental study" but the design is observational and descriptive. The term "experimental" implies intervention, which is not the case here.
+  - **Required correction** Replace "experimental study" with "observational study" or "genetic association study" in the title and abstract.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Data presentation
+  - **Affected element** Results section
+  - **Evidence pointer** Results section, Table I and Table II references; location not provided
+  - **Issue** Tables I and II are referenced but not provided in the submitted material. The manuscript text does not summarize the key data from these tables, making it difficult to evaluate the findings.
+  - **Required correction** Provide the tables or summarize the key variant information (gene, variant, zygosity, allele frequency, in silico predictions) in the text.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical accuracy
+  - **Affected element** Results, Structural consideration section
+  - **Evidence pointer** Results section, Structural consideration; location not provided
+  - **Issue** The text refers to "σ and φ angles" in one instance and "σ and Ψ angles" in another. The Greek letter for the backbone dihedral angle is typically phi (φ) and psi (ψ), not sigma (σ). This appears to be a typographical error.
+  - **Required correction** Correct the angle notation to phi (φ) and psi (ψ) throughout.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Literature context
+  - **Affected element** Discussion section
+  - **Evidence pointer** Discussion section; location not provided
+  - **Issue** The discussion cites previous studies on DNAH9 and CFAP45 but does not provide a comprehensive comparison of the identified variants with previously reported pathogenic variants in these genes. The novelty of the specific variants is not clearly established.
+  - **Required correction** Add a comparison of the identified variants with previously reported variants in DNAH9 and CFAP45, including their positions relative to known functional domains and any previously reported disease associations.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Language and grammar
+  - **Affected element** Throughout
+  - **Evidence pointer** Full text; location not provided
+  - **Issue** The manuscript contains several grammatical errors and awkward phrasings (e.g., "4.733 transcripts per million" should be "4.733 transcripts per million" with proper decimal notation; "the σ and φ angles" usage is inconsistent). The writing would benefit from professional editing.
+  - **Required correction** Perform a thorough language edit to improve clarity and grammatical accuracy.
+
+## Risk / unsupported claims
+- The claim that the identified variants "may contribute to the impaired sperm function observed in this man" is unsupported without functional validation or segregation data.
+- The claim that "the OAT phenotype in this case may arise from the combined effects of multiple genetic alterations" is speculative and not supported by any statistical or functional evidence.
+- The claim that the study "expands the spectrum of candidate genes associated with OAT" is overstated, as both DNAH9 and CFAP45 were previously implicated in flagellar function and male infertility.
+- The claim that the findings "provide a foundation for future functional studies and personalized diagnostic approaches" is premature and not supported by the current evidence.
+- The assertion that WGS was performed at "average coverage of ~30x" is not verifiable without sequencing quality metrics.
+- The statement that "the remaining men did not show similarly prioritized variants" is not supported by any data presented for those individuals.
+- The clinical significance of the additional variants (IGF2R, FBXO24, ACTRT1, SPATA2, GIT1) is not assessed, and their inclusion in the discussion as potentially contributing to the phenotype is speculative.
+
+## Assessment against Nature-style criteria
+- **Originality** Limited. The study applies existing WGS methodology to a small cohort and identifies variants in genes already known to be involved in flagellar function. No novel genes, mechanisms, or analytical approaches are presented.
+- **Scientific importance** Low to moderate. The findings are of interest to the reproductive genetics community but do not provide definitive evidence of pathogenicity or a new disease mechanism. The single-case design limits the significance.
+- **Interdisciplinary readership** Narrow. The study is primarily relevant to reproductive medicine and genetics. The lack of functional data and the descriptive nature of the findings limit broader appeal to cell biology or clinical genetics audiences.
+- **Technical soundness** The sequencing and variant calling methods are standard, but the variant prioritization strategy is not fully transparent, and the reliance on in silico predictions without functional validation is a significant weakness. The structural modeling is descriptive and does not provide mechanistic insight.
+- **Readability for nonspecialists** The manuscript is generally readable but contains technical jargon and assumes familiarity with genomic terminology. The abstract and introduction are accessible, but the methods and results sections would be challenging for nonspecialists.
+
+## Recommendation posture
+Currently not established from the provided evidence. The manuscript describes a hypothesis-generating case report within a small cohort. The central claims of association between the identified variants and OAT are not supported by the evidence presented. Major revisions addressing the statistical framework, functional validation, and transparency of the analytical pipeline would be required before the findings could be considered established. The manuscript may be suitable for a specialty journal after substantial revision, but it does not meet the standards of evidence required for a high-impact general journal.

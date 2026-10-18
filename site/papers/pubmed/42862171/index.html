@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Large-scale prospective evaluation of co-folding across hundreds of Mac1-ligand complexes and three virtual screens. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Large-scale prospective evaluation of co-folding across hundreds of Mac1-ligand complexes and three virtual screens.</h1>
+      <div class="meta">Kim, Jongbin; Correy, Galen J; Hall, Brendan W; Rachman, Moira M; Mailhot, Olivier; Togo, Takaya; Gonciarz, Ryan L; Jaishankar, Priyadarshini; Neitz, R Jeffrey; Hantz, Eric R; Doruk, Yagmur U; Stevens, Maisie G V; Diolaiti, Morgan E; Reid, Rashad; Gopalkrishnan, Saumya; Krogan, Nevan J; Renslo, Adam R; Ashworth, Alan; Shoichet, Brian K; Fraser, James S</div>
+      <div class="meta muted">
+        
+        <span class="journal">eLife</span>
+        · 2026-10-12
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42862171/">原文</a>
+      </div>
+      <p class="one-liner">该文大规模前瞻性评估了AlphaFold3、Boltz-2和Chai-1等共折叠方法在数百个Mac1-配体复合物结构预测和虚拟筛选中的表现，核心聚焦蛋白质-配体复合物结构预测与亲和力排序，属于蛋白质结构计算问题，并采用深度学习共折叠与对接方法，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Accurate prediction of ligand-bound protein complexes and ranking them by affinity are central problems in drug discovery. While deep-learning co-folding methods can help address these challenges, their evaluation has been hampered by the difficulties in assessing independence from training data and insufficiently large test sets. Here, we test the ability of co-folding methods to predict the structures of 551 ligands, 489 of which are of sufficient quality for evaluation, bound to the SARS-CoV-2 NSP3 macrodomain (Mac1) that were determined after the training cutoff dates. AlphaFold3 (AF3), Boltz-2, and Chai-1 each reproduced &gt;50% of the Mac1 ligand poses to better than 2 A root-mean-square deviation of experiment. Despite the potential for co-folding to describe protein conformational changes that stabilize ligand binding, we did not find that common conformational rearrangements, including peptide flip and a large loop opening, were recapitulated by the co-folding prediction. For AF3 and Chai-1, ligand pose prediction confidence weakly, but significantly, tracked experimental potency, while DOCK3.7 energies were only weakly correlated. Boltz-2 affinity predictions showed the strongest correlation with measured potency and, after calibration, achieved lower mean absolute error than a baseline predictor. We next assessed whether co-folding scores could rescore docking hit lists to distinguish true ligands from non-binders among hundreds of molecules prospectively experimentally tested against AmpC beta-lactamase, the dopamine D4, and the sigma(2) receptors. AF3 ligand pose confidence values did not separate true ligands from high-scoring false positives as effectively as docking scores or Boltz-2 affinity predictions did. Taken together, the modest, but independent correlations of docking score and co-folding confidence or affinity suggest that integrating physics-based and deep-learning approaches may help with hit prioritization and subsequent optimization in structure-based ligand discovery.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">配体结合蛋白复合物的精确预测及按亲和力排序是药物发现中的核心问题。尽管深度学习共折叠方法有助于应对这些挑战，但其评估一直受到训练数据独立性评估困难和测试集规模不足的阻碍。在此，我们测试了共折叠方法预测551个配体结构的能力，其中489个配体质量足以用于评估，这些配体结合至SARS-CoV-2 NSP3大结构域（Mac1），且均在训练截止日期后确定。AlphaFold3 (AF3)、Boltz-2和Chai-1各自重现了超过50%的Mac1配体构象，其均方根偏差优于实验值的2 Å。尽管共折叠有潜力描述稳定配体结合的蛋白质构象变化，但我们未发现常见的构象重排（包括肽翻转和大环开口）被共折叠预测所重现。对于AF3和Chai-1，配体构象预测置信度与实验效力呈弱但显著的相关性，而DOCK3.7能量仅呈弱相关。Boltz-2亲和力预测与实测效力显示出最强相关性，并在校准后，其平均绝对误差低于基线预测器。我们随后评估了共折叠评分是否能重新评分对接命中列表，以区分真实配体与非结合物，这些分子针对AmpC β-内酰胺酶、多巴胺D4和sigma(2)受体进行了前瞻性实验测试。AF3配体构象置信度值在区分真实配体与高评分假阳性方面不如对接评分或Boltz-2亲和力预测有效。综合来看，对接评分与共折叠置信度或亲和力之间的适度但独立的相关性表明，整合基于物理的方法和深度学习方法可能有助于基于结构的配体发现中的命中优先级排序及后续优化。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Large-scale prospective evaluation of co-folding across hundreds of Mac1-ligand complexes and three virtual screens</li>
+<li><strong>作者与单位</strong>：Kim, Jongbin; Correy, Galen J; Hall, Brendan W; Rachman, Moira M; Mailhot, Olivier; Togo, Takaya; Gonciarz, Ryan L; Jaishankar, Priyadarshini; Neitz, R Jeffrey; Hantz, Eric R; Doruk, Yagmur U; Diolaiti, Morgan E; Reid, Rashad; Gopalkrishnan, Saumya; Krogan, Nevan J; Renslo, Adam R; Ashworth, Alan; Shoichet, Brian K; Fraser, James S（加州大学旧金山分校等，具体单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：eLife</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：前瞻性基准评估（prospective evaluation）</li>
+<li><strong>领域</strong>：蛋白质-配体共折叠预测、虚拟筛选、结构生物学、AI 药物发现</li>
+<li><strong>关键词</strong>：co-folding, AlphaFold3, Boltz-2, Chai-1, Mac1, virtual screening, docking, structure-based drug design</li>
+<li><strong>DOI/arXiv 号</strong>：10.7554/eLife.110475</li>
+<li><strong>代码</strong>：https://github.com/jongbin99/cofold-em</li>
+<li><strong>数据</strong>：468 个新 Mac1-配体复合物结构（PDB 收录），另有 22 个来自早期研究；三个虚拟筛选数据集来自 LSD（https://lsd.docking.org/）</li>
+<li><strong>阅读日期</strong>：2026-10-12</li>
+<li><strong>在课题方向中的位置</strong>：本文是共折叠（co-folding）深度学习方法（AF3、Boltz-2、Chai-1）在蛋白质-配体复合物结构预测与虚拟筛选重排序中的大规模前瞻性评估，直接面向「结构预测 × 分子对接 × AI 方法」交叉领域，提供了关于泛化性、记忆效应、置信度-亲和力相关性的关键证据。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过 551 个训练截止日期后测定的 Mac1-配体共晶结构及三个大型虚拟筛选数据集，前瞻性评估了 AF3、Boltz-2、Chai-1 三种共折叠方法，发现它们能高保真重现多数配体构象（&gt;50% 优于 2 Å RMSD），但无法捕捉蛋白构象变化，且其置信度/亲和力分数在区分真实配体与对接假阳性方面弱于传统对接打分。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：共折叠深度学习方法（AF3、Boltz-2、Chai-1）在训练截止日期后的全新蛋白质-配体复合物上，能否准确预测配体结合构象？其内部置信度/亲和力分数能否用于虚拟筛选命中重排序？</li>
+<li><strong>为什么重要</strong>：共折叠方法被广泛用于结构预测和药物发现，但其评估多基于训练集内或回顾性数据，存在记忆效应风险；前瞻性、大规模、独立于训练数据的评估是判断其真实泛化能力的关键。</li>
+<li><strong>现有方法不足</strong>：已有评估样本量小、缺乏训练独立性控制，且多聚焦于蛋白结构预测而非配体构象与亲和力排序；DOCK 等物理方法虽快但精度有限，缺乏与深度学习方法在大规模前瞻性数据上的系统对比。</li>
+<li><strong>精确研究问题</strong>：Can co-folding methods (AF3, Boltz-2, Chai-1) prospectively predict ligand binding poses and rank ligands by affinity on complexes determined after their training cutoff dates, and do their confidence/affinity scores outperform docking in distinguishing true ligands from false positives in virtual screening hit lists?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：以下脉络为「经外部核验」的领域共识，结合本文引言整理）
+1. <strong>AlphaFold2/RosettaFold 时代（2021-）</strong>：革命性提升蛋白结构预测精度，但主要针对 apo 蛋白，无法直接处理配体。
+2. <strong>共折叠方法兴起（2024-）</strong>：AF3、Chai-1、Boltz-2 等通过扩散模型或流匹配直接预测蛋白-配体复合物结构，并输出置信度分数（ipTM、pLTP）和亲和力预测（Boltz-2 pIC50）。
+3. <strong>回顾性评估的局限</strong>：早期评估多使用训练集内或已知结构，存在记忆效应；少量前瞻性研究样本量小，结论不一致。
+4. <strong>本文位置</strong>：首次在数百个训练截止后测定的复合物和三个大型虚拟筛选数据集上，系统评估共折叠方法的结构预测与亲和力排序能力，并与传统对接（DOCK3.7）对比，填补了前瞻性大规模评估的空白。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练数据记忆效应</td>
+<td>模型可能在训练集内结构上表现好，但泛化未知</td>
+<td>共折叠方法训练数据包含大量 PDB 结构，测试集若与训练集重叠会高估性能</td>
+<td>作者特意选择训练截止日期后测定的 551 个复合物，并量化了与训练集的相似性（图 1d）</td>
+</tr>
+<tr>
+<td>蛋白构象变化无法预测</td>
+<td>配体结合诱导的肽段翻转、loop 开放等构象变化未被共折叠方法重现</td>
+<td>共折叠方法倾向于预测 apo 或常见构象，缺乏对诱导-fit 的显式建模</td>
+<td>19 个 twisted 态仅 4 个被 AF3 正确预测，20 个 open 态全部失败（图 2b）</td>
+</tr>
+<tr>
+<td>置信度分数与亲和力相关性弱</td>
+<td>AF3 L-pLDDT 与实验 IC50 相关性弱（r=0.314），DOCK 能量更弱（r=-0.225）</td>
+<td>置信度分数主要反映结构确定性而非结合自由能；亲和力预测模块与结构模块解耦</td>
+<td>图 4a，Results 节</td>
+</tr>
+<tr>
+<td>虚拟筛选中假阳性区分度不足</td>
+<td>AF3 L-pLDDT 在三个虚拟筛选数据集中 AUC 仅 46.4-60.5，部分低于随机</td>
+<td>共折叠方法对高打分但非真实配体的分子缺乏物理化学区分能力</td>
+<td>图 5a-c，Results 节</td>
+</tr>
+<tr>
+<td>亲和力绝对误差大</td>
+<td>Boltz-2 pIC50 在 Mac1 上 MAE 约 1.6 kcal/mol，校正后约 0.7 kcal/mol</td>
+<td>亲和力预测模块训练数据有限，且对弱结合剂预测偏差大</td>
+<td>图 4a，Results 节</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：对 551 个 Mac1-配体复合物和三个虚拟筛选数据集（AmpC、σ2、D4），分别运行 AF3、Boltz-2、Chai-1 共折叠预测，计算配体 RMSD、置信度分数（L-pLDDT、ipTM、pIC50），并与 DOCK3.7 对接打分对比，评估结构预测准确性和亲和力排序能力。</li>
+<li><strong>核心洞察</strong>：
+   - 共折叠方法在配体构象预测上显著优于传统对接（&gt;50% 优于 2 Å RMSD），且对训练集外分子泛化良好，说明其学到了可迁移的分子识别模式。
+   - 但共折叠方法无法预测蛋白构象变化（诱导-fit），且其置信度/亲和力分数在虚拟筛选假阳性区分上弱于对接打分，说明结构预测能力 ≠ 亲和力排序能力。
+   - 物理方法（DOCK）与深度学习方法（共折叠）的错误相关性低，提示两者在命中发现中可能互补。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：共折叠方法擅长「几何匹配」但缺乏「物理化学判别力」；在药物发现中，结构预测精度与亲和力排序是两种不同任务，应分别评估和优化；将物理打分与深度学习置信度结合可能是更优策略。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白序列（Mac1、AmpC、σ2、D4）、配体 SMILES、蛋白结构（对接用，PDB 5SQW 等）</li>
+<li><strong>输出</strong>：预测的蛋白-配体复合物结构（mmCIF）、配体 RMSD、置信度分数（AF3 L-pLDDT、Chai-1 ipTM、Boltz-2 pIC50）、DOCK3.7 能量打分</li>
+<li><strong>模块</strong>：
+  1. Mac1 共晶结构测定（X-ray，PanDDA 处理）
+  2. 配体相似性/记忆效应分析（ECFP4 Tanimoto、MCS%）
+  3. 共折叠预测（AF3、Boltz-2、Chai-1）
+  4. 对接打分（DOCK3.7）
+  5. 结构评估（RMSD、氢键重现）
+  6. 亲和力相关性分析（Pearson r、MAE）
+  7. 虚拟筛选命中重排序评估（AUC、pProp 命中率曲线）</li>
+<li><strong>训练</strong>：无（所有模型为预训练，仅推理）</li>
+<li><strong>工具</strong>：RDKit（配体处理、RMSD 计算）、PyMol（结构比对）、DOCK3.7、Jackhmmer（MSA）</li>
+<li><strong>流程</strong>：Mac1 复合物结构测定 → 配体相似性分析 → 三种共折叠方法预测 → RMSD 评估 → 置信度/亲和力与实验 IC50 相关性分析 → 三个虚拟筛选数据集上重排序评估 → 与 DOCK3.7 对比</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mac1 共晶结构测定</td>
+<td>提供 551 个训练截止后测定的高质量参考结构</td>
+<td>确保测试集独立于训练数据，避免记忆效应</td>
+<td>输入：配体、Mac1 晶体；输出：共晶结构、IC50</td>
+<td>图 1a，Methods 节</td>
+<td>无此模块则无法进行前瞻性评估</td>
+</tr>
+<tr>
+<td>配体相似性分析</td>
+<td>量化测试配体与训练集的相似度</td>
+<td>判断性能是否由记忆效应驱动</td>
+<td>输入：配体 SMILES；输出：TC、MCS% 分布</td>
+<td>图 1d，图 1—figure supplement 1</td>
+<td>无法排除记忆效应解释</td>
+</tr>
+<tr>
+<td>共折叠预测（AF3/Boltz-2/Chai-1）</td>
+<td>预测蛋白-配体复合物结构</td>
+<td>核心评估对象</td>
+<td>输入：序列+SMILES；输出：mmCIF、置信度分数</td>
+<td>图 2a，Methods 节</td>
+<td>无此模块则无法评估共折叠性能</td>
+</tr>
+<tr>
+<td>配体 RMSD 评估</td>
+<td>量化预测构象与实验结构的偏差</td>
+<td>衡量结构预测精度的金标准</td>
+<td>输入：预测/实验结构；输出：RMSD 分布</td>
+<td>图 2a，Methods 节</td>
+<td>无法判断结构预测准确性</td>
+</tr>
+<tr>
+<td>亲和力相关性分析</td>
+<td>检验置信度/亲和力分数与实验 IC50 的相关性</td>
+<td>评估共折叠方法在命中排序中的价值</td>
+<td>输入：分数+IC50；输出：Pearson r、MAE</td>
+<td>图 4a，Results 节</td>
+<td>无法判断亲和力预测能力</td>
+</tr>
+<tr>
+<td>虚拟筛选重排序评估</td>
+<td>在三个真实筛选数据集上比较共折叠与对接的命中区分能力</td>
+<td>评估实际药物发现场景中的效用</td>
+<td>输入：打分/分数+实验活性；输出：AUC、命中率曲线</td>
+<td>图 5a-c，Results 节</td>
+<td>无法判断实际应用价值</td>
+</tr>
+<tr>
+<td>DOCK3.7 对接</td>
+<td>提供物理打分基线</td>
+<td>与深度学习方法对比</td>
+<td>输入：配体+受体结构；输出：能量打分</td>
+<td>图 5a-c，Methods 节</td>
+<td>无法进行方法对比</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>RMSD（均方根偏差）</strong>：<code>RMSD = sqrt( (1/N) * Σ ||x_i - y_i||² )</code>，其中 x_i、y_i 分别为预测和实验结构中第 i 个重原子的坐标，N 为重原子数。用于量化配体构象预测精度。</li>
+<li><strong>Tanimoto 系数（TC）</strong>：<code>TC(A,B) = |A ∩ B| / |A ∪ B|</code>，其中 A、B 为 ECFP4 指纹位集合。用于衡量配体间结构相似性。</li>
+<li><strong>最大公共子结构百分比（MCS%）</strong>：<code>MCS% = (公共重原子数 / 较大分子重原子数) × 100%</code>，用于衡量配体间骨架相似性。</li>
+<li><strong>AUC（ROC 曲线下面积）</strong>：衡量二分类器（如区分真实配体与假阳性）的性能，0.5 为随机，1.0 为完美。</li>
+<li><strong>Pearson 相关系数 r</strong>：<code>r = cov(X,Y) / (σ_X * σ_Y)</code>，用于衡量预测分数与实验 IC50 的线性相关性。</li>
+<li><strong>MAE（平均绝对误差）</strong>：<code>MAE = (1/N) * Σ |y_i - ŷ_i|</code>，用于衡量亲和力预测的绝对误差。</li>
+<li><strong>pProp</strong>：<code>pProp = -log10(rank/N_total)</code>，其中 rank 为分子在打分列表中的排名，N_total 为列表总数。用于标准化排名比较。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：</li>
+<li>Mac1 基准：551 个配体，489 个通过质量过滤，468 个新结构 + 22 个早期结构；202 个有 IC50 数据</li>
+<li>虚拟筛选：AmpC（1293 测试，247 活性）、σ2（506 测试，201 活性）、D4（541 测试，205 活性）</li>
+<li><strong>指标</strong>：配体 RMSD（2 Å 阈值）、L-pLDDT、ipTM、pIC50、DOCK 能量、AUC、命中率、Pearson r、MAE</li>
+<li><strong>基线</strong>：DOCK3.7 对接打分</li>
+<li><strong>评测协议</strong>：所有共折叠预测使用训练截止日期后的结构；配体 RMSD 在蛋白 Cα 比对后计算；活性阈值按各数据集原始定义</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mac1 配体构象预测</td>
+<td>共折叠方法能准确预测训练集外配体构象</td>
+<td>AF3 vs Boltz-2 vs Chai-1 vs DOCK3.7，489 个复合物</td>
+<td>AF3/Chai-1 ~70% 优于 2 Å，Boltz-2 53%，DOCK 40%</td>
+<td>共折叠显著优于对接</td>
+<td>不能说明对所有蛋白靶点都有效</td>
+<td>图 2a，Results 节</td>
+</tr>
+<tr>
+<td>记忆效应分析</td>
+<td>性能不依赖训练集相似性</td>
+<td>按 TC/MCS% 分层比较 RMSD</td>
+<td>无显著相关性</td>
+<td>泛化性不依赖记忆</td>
+<td>不能排除更隐蔽的记忆形式</td>
+<td>图 2c，Results 节</td>
+</tr>
+<tr>
+<td>蛋白构象变化重现</td>
+<td>共折叠能预测诱导-fit 构象</td>
+<td>19 个 twisted、20 个 open 状态</td>
+<td>AF3 仅 4/19 twisted、0/20 open 正确</td>
+<td>共折叠无法预测蛋白构象变化</td>
+<td>不能说明所有构象变化都失败</td>
+<td>图 2b，Results 节</td>
+</tr>
+<tr>
+<td>置信度-亲和力相关性</td>
+<td>共折叠置信度分数与实验 IC50 相关</td>
+<td>AF3 L-pLDDT、Boltz-2 pIC50 vs IC50</td>
+<td>Boltz-2 r=0.6，AF3 r=0.314，DOCK r=-0.225</td>
+<td>Boltz-2 亲和力预测有较强相关性</td>
+<td>相关性不等于因果性，且仅限 Mac1</td>
+<td>图 4a，Results 节</td>
+</tr>
+<tr>
+<td>虚拟筛选重排序</td>
+<td>共折叠能区分真实配体与假阳性</td>
+<td>三个数据集，AF3 vs Boltz-2 vs DOCK</td>
+<td>DOCK AUC 71-79，AF3 46-61，Boltz-2 68-84</td>
+<td>DOCK 和 Boltz-2 优于 AF3；共折叠未显著优于对接</td>
+<td>数据集仅三个靶点，不能推广</td>
+<td>图 5a-c，Results 节</td>
+</tr>
+<tr>
+<td>方法互补性</td>
+<td>共折叠与对接错误不相关</td>
+<td>比较 AF3 与 DOCK 预测 RMSD 的相关性</td>
+<td>低相关性（r~0.3-0.5）</td>
+<td>两种方法可能互补</td>
+<td>未测试集成方法的实际增益</td>
+<td>图 3—figure supplement 3，Results 节</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅评估了共折叠方法在配体构象预测和亲和力排序两个任务上的表现，不涉及共价对接、共因子、金属蛋白等复杂体系。</li>
+<li><strong>Oracle/真值输入</strong>：Mac1 基准使用实验共晶结构作为真值；虚拟筛选使用实验测定的活性数据。共折叠输入为蛋白序列+配体 SMILES，未使用任何实验结构信息。</li>
+<li><strong>端到端状态</strong>：共折叠方法为端到端预测，但亲和力预测模块（Boltz-2 pIC50）与结构预测模块解耦，且未经过针对特定靶点的微调。</li>
+<li><strong>算力成本</strong>：共折叠方法（尤其 AF3）计算成本远高于 DOCK3.7，本文未报告具体耗时，但指出共折叠慢 4 个数量级。</li>
+<li><strong>历史数据依赖</strong>：所有模型依赖训练数据分布，Mac1 在训练集中有大量结构，可能高估泛化性；虚拟筛选数据集中的分子与训练集相似性低，更能反映真实泛化。</li>
+<li><strong>最难情形</strong>：蛋白构象变化（twisted/open 状态）、高柔性配体、弱结合剂（IC50 &gt; 100 µM）是共折叠方法的主要失败模式。</li>
+<li><strong>群体/领域边界</strong>：结论仅适用于 globular 蛋白-药物样分子体系，不适用于蛋白-蛋白、核酸-配体、膜蛋白等。</li>
+<li><strong>有边界的复述</strong>：在训练截止后测定的 Mac1 复合物上，AF3/Chai-1 能高保真预测多数配体构象，但无法预测蛋白构象变化；在三个虚拟筛选数据集上，共折叠方法的命中区分能力未显著优于传统对接，但 Boltz-2 亲和力预测在 Mac1 上表现较好；两种方法错误模式不同，可能互补。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单一靶点体系</td>
+<td>Mac1 基准仅覆盖一个蛋白靶点，虚拟筛选仅三个靶点</td>
+<td>扩展到更多靶点和体系</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>训练集偏差</td>
+<td>Mac1 在训练集中有大量结构，可能高估泛化性</td>
+<td>使用训练集中完全无结构的靶点进行测试</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>构象变化预测失败</td>
+<td>共折叠无法重现 twisted/open 等诱导-fit 构象</td>
+<td>开发能显式建模蛋白柔性的方法</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>虚拟筛选数据集偏差</td>
+<td>三个虚拟筛选数据集本身由对接方法筛选，可能对共折叠不公平</td>
+<td>使用非对接筛选的随机化合物库进行测试</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>亲和力预测范围有限</td>
+<td>Boltz-2 pIC50 仅在 Mac1 上验证，且对弱结合剂预测偏差大</td>
+<td>在更多体系上验证亲和力预测模块</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>计算成本</td>
+<td>共折叠方法计算成本远高于对接</td>
+<td>开发更高效的推理方法</td>
+<td>Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mac1 基准中配体多样性有限</td>
+<td>551 个配体虽拓扑多样，但均结合同一靶点同一活性位点，可能高估共折叠的泛化能力</td>
+<td>单一靶点无法代表药物发现中的多样体系</td>
+<td>在多个不同靶点（激酶、GPCR、蛋白酶）上重复类似评估</td>
+<td>图 1c，Results 节</td>
+</tr>
+<tr>
+<td>虚拟筛选数据集由对接方法产生</td>
+<td>三个数据集均来自 DOCK 筛选，分子本身偏向对接友好的化学空间，可能对共折叠不公平</td>
+<td>无法判断共折叠在真实化合物库上的表现</td>
+<td>使用随机化合物库或不同筛选方法产生的数据集</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>AF3 置信度分数与亲和力相关性弱</td>
+<td>可能因为 L-pLDDT 设计目标是结构确定性而非结合自由能</td>
+<td>用户可能误用置信度分数作为亲和力代理</td>
+<td>开发专门针对亲和力预测的置信度分数</td>
+<td>图 4a，Results 节</td>
+</tr>
+<tr>
+<td>构象变化预测失败可能被低估</td>
+<td>作者仅检查了已知的 twisted/open 状态，可能还有其他未识别的构象变化</td>
+<td>共折叠可能在其他构象变化上表现更差</td>
+<td>系统性地比较预测结构与实验结构的 Cα RMSD 分布</td>
+<td>图 2b，Results 节</td>
+</tr>
+<tr>
+<td>未报告计算资源消耗</td>
+<td>共折叠方法计算成本是实际应用的关键考量</td>
+<td>用户需要权衡精度与成本</td>
+<td>报告各方法的 GPU 耗时和内存占用</td>
+<td>Methods 节未提供</td>
+</tr>
+<tr>
+<td>与训练集相似性分析仅用两种指标</td>
+<td>TC 和 MCS% 可能无法完全捕捉结构记忆效应</td>
+<td>可能存在更隐蔽的记忆形式（如药效团相似性）</td>
+<td>使用多种相似性指标（如形状相似性、药效团指纹）交叉验证</td>
+<td>图 1d，Methods 节</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>前瞻性评估设计</strong>：选择训练截止日期后测定的结构作为测试集，并量化与训练集的相似性，是评估泛化能力的关键方法，可迁移到任何结构预测模型的评估中。
+2. <strong>结构预测 ≠ 亲和力排序</strong>：共折叠方法在构象预测上优于对接，但在虚拟筛选命中区分上未显著优于对接，说明两类任务需要不同的评估指标和优化目标。
+3. <strong>方法互补性</strong>：物理对接与深度学习共折叠的错误相关性低，提示集成方法可能优于单一方法，可探索将 DOCK 能量与 AF3 置信度分数结合的重排序策略。
+4. <strong>构象变化是共折叠的短板</strong>：诱导-fit 构象（肽段翻转、loop 开放）无法被当前共折叠方法预测，这为开发显式建模蛋白柔性的方法提供了明确目标。
+5. <strong>置信度分数的校准</strong>：AF3 L-pLDDT 与实验 IC50 相关性弱，说明需要开发专门针对亲和力预测的置信度分数，而非直接使用结构置信度。
+6. <strong>数据集规模的重要性</strong>：551 个复合物的规模远超以往研究，说明大规模、高质量的前瞻性数据集是可靠评估 AI 方法的基础。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似研究</strong>：Menon et al. (2025) 在相同虚拟筛选数据集上使用 AF3 得到类似结论，本文与之独立但结果一致，增强了结论的可靠性。</li>
+<li><strong>方法基础</strong>：AF3 (Abramson et al., 2024)、Boltz-2 (Wohlwend et al., 2025)、Chai-1 (Boitreaud et al., 2024) 均为扩散/流匹配-based 共折叠方法，本文是对这些方法的大规模独立验证。</li>
+<li><strong>与 AlphaFold2 的对比</strong>：早期研究（Lyu et al., 2024; Díaz-Holguín et al., 2024）表明 AF2 结构可用于虚拟筛选，本文进一步评估了 AF3 等共折叠方法，显示其在构象预测上的进步但亲和力排序上的局限。</li>
+<li><strong>与物理对接的关系</strong>：DOCK3.7 等物理方法在虚拟筛选中仍具竞争力，本文结果支持「物理+AI」互补的观点，与近期多项研究（e.g., Brocidiacono et al., 2025）一致。</li>
+<li><strong>候选方向</strong>：将共折叠预测的构象作为物理对接的输入（ensemble docking），或使用共折叠置信度作为对接打分的补充特征，是值得探索的集成策略。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：
+1. <strong>名称</strong>：共折叠-对接集成重排序框架
+   - <strong>来源局限/观察</strong>：本文发现共折叠与对接错误相关性低，且各自在不同靶点上表现不同
+   - <strong>核心假设</strong>：将共折叠置信度分数与物理对接能量结合，可提高虚拟筛选命中率
+   - <strong>初步方法</strong>：在三个虚拟筛选数据集上，训练一个轻量级模型（如 logistic regression 或 gradient boosting），输入 AF3 L-pLDDT、Boltz-2 pIC50、DOCK 能量等特征，输出重排序分数
+   - <strong>验证方式</strong>：与单一方法对比 AUC 和早期命中率
+   - <strong>创新状态</strong>：unverified</p>
+<ol start="2">
+<li>
+<p><strong>名称</strong>：构象变化感知的共折叠微调策略
+   - <strong>来源局限/观察</strong>：共折叠无法预测 twisted/open 等诱导-fit 构象
+   - <strong>核心假设</strong>：在训练数据中加入构象变化标注，或使用多状态训练目标，可提升共折叠对构象变化的预测能力
+   - <strong>初步方法</strong>：从 PDB 中收集同一蛋白-配体对的多个构象状态，构建多状态训练集，微调 AF3 或 Boltz-2
+   - <strong>验证方式</strong>：在 Mac1 twisted/open 子集上评估构象预测准确率
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：配体新颖性对共折叠性能的影响分析
+   - <strong>来源局限/观察</strong>：本文发现共折叠对训练集外配体泛化良好，但未系统分析新颖性梯度
+   - <strong>核心假设</strong>：共折叠性能随配体与训练集相似度降低而下降，但下降速率因方法而异
+   - <strong>初步方法</strong>：将 551 个配体按 TC/MCS% 分层，分别计算各层的 RMSD 和置信度分数，拟合性能-新颖性曲线
+   - <strong>验证方式</strong>：比较不同方法的曲线斜率和截距
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：共折叠置信度分数作为亲和力预测的校准工具
+   - <strong>来源局限/观察</strong>：AF3 L-pLDDT 与 IC50 相关性弱，但 Boltz-2 pIC50 较强
+   - <strong>核心假设</strong>：将共折叠置信度分数与实验亲和力数据结合，可训练出更准确的亲和力预测模型
+   - <strong>初步方法</strong>：在 Mac1 202 个有 IC50 的配体上，训练一个校准模型，输入 AF3 L-pLDDT、Boltz-2 pIC50、DOCK 能量，输出预测 IC50
+   - <strong>验证方式</strong>：与 Boltz-2 pIC50 单独预测对比 MAE
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：多靶点共折叠泛化性基准构建
+   - <strong>来源局限/观察</strong>：本文仅覆盖 4 个靶点，无法判断共折叠的跨靶点泛化性
+   - <strong>核心假设</strong>：共折叠性能在不同靶点间差异显著，且与靶点结构特征（如结合口袋柔韧性）相关
+   - <strong>初步方法</strong>：从 PDB 和文献中收集 10+ 个靶点的训练截止后共晶结构，构建多靶点基准，评估 AF3/Boltz-2/Chai-1 的性能
+   - <strong>验证方式</strong>：跨靶点比较 RMSD 和 AUC，分析性能与靶点特征的相关性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, discussion, methods, data availability)</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodology, evidence quality, and interpretation as presented in the provided text</li>
+<li><strong>Shared manuscript claim summary</strong> The authors prospectively evaluate three co-folding methods (AlphaFold3, Chai-1, Boltz-2) on 551 previously unpublished SARS-CoV-2 Mac1-ligand crystal structures and on three large-scale docking hit lists (AmpC β-lactamase, σ2 receptor, dopamine D4 receptor). They report that co-folding methods reproduce ligand poses with &gt;50% accuracy at 2 Å RMSD, that confidence scores weakly track affinity, and that co-folding does not outperform docking in distinguishing true ligands from false positives in virtual screening hit lists.</li>
+<li><strong>Visible evidence base</strong> Full text including results narrative, figure references, supplementary file references, methods section, and data availability statement</li>
+<li><strong>Missing materials affecting confidence</strong> Figures, tables, and supplementary files referenced but not provided; specific numerical values for many reported statistics; details of statistical test implementations; complete crystallographic data</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This manuscript addresses an important and timely question: whether deep-learning co-folding methods can be applied prospectively to ligand pose prediction and virtual screening hit prioritization. The Mac1 dataset of 551 previously unpublished complexes is a substantial and valuable resource, and the prospective nature of the evaluation is a genuine strength. However, the manuscript's central claims are only partially supported by the evidence presented. The pose prediction results are convincing, but the affinity correlation analyses are weakened by the limited dynamic range of the dataset and the absence of key statistical details. The virtual screening results, while interesting, are presented in a way that makes it difficult to assess whether the conclusions are robust. The manuscript would benefit from clearer presentation of the statistical methods, additional analyses to support the claim of complementarity between docking and co-folding, and a more nuanced discussion of the limitations of the affinity predictions.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Computational chemists and structural biologists working on ligand-protein complex prediction and virtual screening will find this study directly relevant. Drug discovery scientists using structure-based methods will be interested in the practical implications for hit prioritization workflows. Developers of deep-learning methods for molecular modeling will find the prospective evaluation valuable for understanding the strengths and limitations of current approaches. The Mac1 dataset itself will be a useful benchmark for future method development.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> The prospective design of the study is a significant strength, as it avoids the circularity that plagues many retrospective evaluations. The Mac1 dataset is large and previously unpublished, providing a genuinely independent test set. The comparison across three co-folding methods and three different targets in the virtual screening component adds breadth. The authors are appropriately cautious in their interpretation of the affinity correlations, acknowledging the limited dynamic range. The discussion of complementarity between physics-based and deep-learning approaches is thoughtful and well-framed.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Claim pointer</strong> The authors report that Boltz-2 affinity predictions showed the strongest correlation with measured potency and achieved lower mean absolute error than a baseline predictor after calibration.</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 4a; Methods, Statistical analysis</li>
+<li><strong>Concern</strong> The claim that Boltz-2 affinity predictions outperform a baseline predictor is based on a comparison to the mean pIC50 of the dataset. However, the dataset has a limited dynamic range (sub-micromolar to &gt;500 µM), and the baseline predictor is not clearly defined. The manuscript does not report confidence intervals for the MAE values, nor does it specify how many compounds were used in the calibration. The statistical comparison between Boltz-2 and the baseline is not described with sufficient detail to assess its validity.</li>
+<li><strong>Why it matters</strong> The claim that Boltz-2 provides meaningful affinity predictions is a key finding of the study. If the comparison to baseline is not statistically robust, the conclusion that co-folding methods can predict affinity is weakened. The limited dynamic range of the dataset may also inflate the apparent performance of the baseline predictor, making the comparison less meaningful.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a clear definition of the baseline predictor, report confidence intervals for all MAE values, and describe the statistical test used to compare Boltz-2 to the baseline. They should also report the distribution of pIC50 values in the dataset and discuss how the limited dynamic range affects the interpretation of the results.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors state that co-folding methods did not meaningfully outperform docking in distinguishing true ligands from false positives in the three virtual screening hit lists.</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 5; Methods, Benchmarking co-folding on experimentally validated compounds</li>
+<li><strong>Concern</strong> The virtual screening analysis is presented with limited methodological detail. The manuscript does not specify how the hit lists were constructed, how many compounds were in each list, or how the thresholds for true hits and non-binders were defined for each target. The AUC values are reported, but the authors do not provide confidence intervals or statistical tests to determine whether the differences between methods are significant. The claim that co-folding methods "struggle" to re-rank hit lists is based on a comparison that may not be statistically powered.</li>
+<li><strong>Why it matters</strong> The virtual screening results are a central component of the manuscript's conclusions about the limitations of co-folding methods. Without clear methodological details and statistical analysis, it is not possible to determine whether the findings are robust or whether they reflect the specific choices made in this study.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a detailed description of the hit list construction, including the number of compounds and the criteria for selecting them. They should report confidence intervals for all AUC values and perform statistical tests to compare the performance of different methods. They should also describe the thresholds used to define true hits and non-binders for each target.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Claim pointer</strong> The authors suggest that the weak correlation between docking and co-folding errors indicates complementarity between the two approaches.</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 3—figure supplement 3; Discussion</li>
+<li><strong>Concern</strong> The claim of complementarity is based on the observation that errors between methods are not highly correlated. However, the manuscript does not provide a quantitative analysis of this complementarity, nor does it demonstrate that combining the methods would improve performance. The suggestion that integrating the methods "may help" is speculative and not supported by direct evidence.</li>
+<li><strong>Why it matters</strong> The claim of complementarity is a key takeaway of the manuscript and has practical implications for how these methods might be used in drug discovery. Without a direct demonstration that combining methods improves performance, the claim remains an interesting hypothesis rather than a supported conclusion.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should perform an analysis that directly tests whether combining docking and co-folding scores improves hit prioritization compared to either method alone. This could be done using a simple ensemble approach or a more sophisticated machine learning model.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Methods, Mac1 X-ray crystallography</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The text states "nominal conentrations" which appears to be a typo for "nominal concentrations."</li>
+<li>
+<p><strong>Required correction</strong> Correct the typo.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods, Statistical analysis</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The statistical analysis section mentions "Friedman and post hoc Conover tests" and "Holm–Bonferroni correction" but does not specify the software or packages used for these analyses.</li>
+<li>
+<p><strong>Required correction</strong> Specify the software and version used for statistical analyses.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Results, Model confidence and energy scores</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 4</li>
+<li><strong>Issue</strong> The text states "the correlation was best for the Boltz-2 pIC50 (r = 0.6)" but does not specify whether this is Pearson or Spearman correlation.</li>
+<li>
+<p><strong>Required correction</strong> Specify the correlation coefficient used.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Data availability</li>
+<li><strong>Evidence pointer</strong> Data availability section</li>
+<li><strong>Issue</strong> The data availability statement mentions that 468 accession codes are listed in Supplementary file 1, but the total number of complexes is stated as 551. The discrepancy between 468 and 551 is not explained.</li>
+<li>
+<p><strong>Required correction</strong> Clarify the relationship between the 468 deposited structures and the 551 complexes analyzed.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Results, Co-folding struggles to reliably re-rank docking hit lists</li>
+<li><strong>Evidence pointer</strong> Results section, Figure 5</li>
+<li><strong>Issue</strong> The text states "the AF3 correlation with binders pKi was not much worse than docking's (r = 0.183)" but does not report the corresponding correlation for docking.</li>
+<li>
+<p><strong>Required correction</strong> Report the docking correlation value for comparison.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> The statistical analysis of the affinity predictions (R1-M1) and the virtual screening results (R1-M2) need to be strengthened with additional details and analyses. The claim of complementarity (R1-M3) needs direct evidence. These issues must be addressed before the manuscript's central conclusions can be considered fully supported.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that Boltz-2 affinity predictions outperform a baseline predictor is not fully supported due to unclear baseline definition and lack of statistical details.</li>
+<li>The claim that co-folding methods "struggle" to re-rank docking hit lists is not fully supported due to limited methodological detail and lack of statistical analysis.</li>
+<li>The claim of complementarity between docking and co-folding is speculative and not directly demonstrated.</li>
+<li>The statement that "co-folding can accurately reproduce poses of ligands dissimilar to those on which it trained" is supported by the RMSD data, but the analysis of similarity to training data relies on a single fingerprint method and may not capture all relevant chemical similarity.</li>
+<li>The claim that "co-folding reliably recapitulates dominant ligand-binding interactions" is based on analysis of a subset of interactions and may not generalize to all interaction types.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full methods, figures, tables, or supplementary material
+- **Shared manuscript claim summary** The authors report a computational analysis of non-synonymous SNPs in the human TNF gene, identifying I118F and I118N as high-risk variants with predicted destabilizing effects at a conserved residue. Molecular dynamics simulations (200 ns) are claimed to show increased structural fluctuations, reduced compactness, altered principal component and free energy landscapes, and weaker dynamic coupling for these mutants relative to wild-type TNF. The authors state that relevance to ALD-associated neuroinflammation remains hypothetical.
+- **Visible evidence base** Abstract text only; no quantitative data, simulation parameters, validation metrics, or statistical analyses are provided
+- **Missing materials affecting confidence** Full methods, simulation setup and force field parameters, convergence criteria, replicate details, pathogenicity prediction scores, conservation analysis details, all figures and tables, and any supplementary data
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible computational workflow for prioritizing nsSNPs in TNF and characterizing two candidate variants via MD simulations. However, the evidence base is limited to qualitative statements without quantitative support, and the link to ALD is explicitly acknowledged as hypothetical. The technical soundness cannot be fully assessed from the abstract alone, and the scientific advance over existing computational SNP prioritization studies is not clearly articulated.
+- **Who would be interested in the results, and why** Researchers in computational genomics and protein biophysics interested in TNF variant effects; investigators studying ALD pathophysiology who may use these predictions to guide experimental validation. The work may also interest methodologists applying MD simulations to disease-associated SNPs.
+- **Major strengths** The study integrates multiple established pathogenicity prediction tools, which is a standard and defensible approach. The use of 200 ns MD simulations with multiple analyses (RMSD, Rg, PCA, FEL, DCCM) is comprehensive for a computational study. The authors appropriately acknowledge the hypothetical nature of the ALD connection, avoiding overclaiming.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "MD simulations demonstrated that these mutations result in heightened structural fluctuations, as indicated by elevated RMSD and Radius of Gyration (Rg) values, signifying a reduction in structural compactness."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract reports qualitative outcomes (elevated RMSD and Rg) without any numerical values, error estimates, or statistical comparisons between wild-type and mutants. It is unclear whether the observed differences exceed simulation noise or replicate variability.
+  - **Why it matters** Without quantitative data and appropriate statistical treatment, the claim of "heightened structural fluctuations" cannot be evaluated for significance. This is central to the paper's main conclusion about variant-induced destabilization.
+  - **Resolution test** Provide mean and standard deviation (or confidence intervals) for RMSD and Rg across replicates, with statistical tests (e.g., per-residue or per-time-point comparisons) demonstrating significant differences between wild-type and each mutant.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "The PCA and FEL analyses showed that the wild-type protein keeps a stable energy minimum, whereas DCCM analysis indicated that the I118F and I118N mutations exhibit weaker dynamic coupling with more than one metastable state, leading to lesser stable structure."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The interpretation of PCA, FEL, and DCCM results is presented without methodological details or quantitative descriptors. No free energy values, projection plots, or correlation coefficients are given. The claim of "more than one metastable state" is not supported by any visible metric.
+  - **Why it matters** These analyses are used to support the conclusion of compromised trimer stability and dynamics. Without quantitative evidence, the conclusions are not reproducible or verifiable from the abstract.
+  - **Resolution test** Include free energy differences between basins, PCA eigenvalue spectra, and DCCM correlation matrices with significance thresholds. Provide representative plots in the main text or supplementary material.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** "These findings suggest that the identified TNF variants may influence TNF protein stability and conformational dynamics; however, their relevance to ALD-associated neuroinflammation remains hypothetical and requires experimental and clinical validation."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not establish a mechanistic or epidemiological link between TNF nsSNPs and ALD. The selection of TNF as a target is motivated by its role in neuroinflammation, but no evidence is presented that I118F or I118N occur in ALD patients or are associated with disease severity.
+  - **Why it matters** The title and framing imply a role in ALD, but the abstract explicitly concedes the connection is hypothetical. This limits the translational significance and may overstate the relevance to the disease context.
+  - **Resolution test** Clarify whether these variants have been observed in ALD cohorts or general populations, and discuss their allele frequencies. If not, reframe the study as a general TNF variant analysis with potential relevance to neuroinflammatory conditions.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Methods description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The list of prediction tools is dense and may overwhelm nonspecialist readers without context on how they complement each other.
+  - **Required correction** Briefly explain the rationale for using multiple tools (e.g., consensus scoring) and define key terms like "nsSNP" and "conserved residue" for a broader audience.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Simulation length justification
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The choice of 200 ns simulation time is stated but not justified. For a trimeric protein, this may be insufficient to sample large conformational changes.
+  - **Required correction** Provide a justification for the simulation length, referencing convergence tests or prior studies on similar systems.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Variant selection
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** Only two variants (I118F and I118N) are selected for MD simulations, but the criteria for this selection beyond "strong computational evidence" are not specified.
+  - **Required correction** State the exact thresholds or ranking criteria used to select these variants from the initial SNP pool.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the central claims of structural destabilization and altered dynamics are not quantitatively supported. The lack of statistical analysis and methodological detail prevents verification of the conclusions.
+- **Assessment against Nature-style criteria**  
+  - Originality: Moderate. The application of standard computational tools to TNF is not novel, though the specific focus on position 118 may be new.  
+  - Scientific importance: Limited. The ALD connection is hypothetical, and the abstract does not demonstrate clinical or functional relevance.  
+  - Interdisciplinary readership: Narrow. The work is primarily of interest to computational biologists and ALD researchers; the abstract does not frame findings for a broader audience.  
+  - Technical soundness: Not fully assessable from the abstract. The workflow is standard, but quantitative evidence is missing.  
+  - Readability for nonspecialists: Acceptable but could be improved with clearer definitions and less jargon.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a reasonable computational study, but the lack of quantitative data and the explicitly hypothetical ALD link mean the core claims cannot be evaluated. Supportive if technical concerns are resolved and the ALD relevance is either substantiated or appropriately de-emphasized.
+
+## Risk / unsupported claims
+- The claim that I118F and I118N are "high-risk" variants is unsupported without population frequency data or experimental validation.
+- The claim of "reduction in structural compactness" is unsupported without quantitative Rg values and statistical comparison.
+- The claim of "more than one metastable state" is unsupported without free energy landscape data.
+- The relevance of TNF variants to ALD-associated neuroinflammation is explicitly acknowledged as hypothetical and is therefore not an established claim.

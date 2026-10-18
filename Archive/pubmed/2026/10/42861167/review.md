@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Full manuscript text (perspective article)
+- **Assessment boundary** Scientific content, technical accuracy, logical coherence, and support for claims as presented in the provided text
+- **Shared manuscript claim summary** The authors argue that AlphaFold 3 (AF3) represents a transformative advance in drug discovery and development (DDD), with specific roles in target identification, hit identification, lead optimization, and personalized clinical decisions. They acknowledge limitations in prediction accuracy across biomolecule categories and propose technical, ethical, and regulatory frameworks to address these challenges.
+- **Visible evidence base** The manuscript text includes references to published work (citations [1]-[28]), descriptions of AF3 capabilities, and proposed frameworks. No original experimental data, benchmark results, or case studies are presented.
+- **Missing materials affecting confidence** Figures (Figure 1), Tables (Tables 1-3), and all cited references are not provided. The manuscript is a perspective piece, so the absence of primary data is expected, but the absence of the figures and tables limits assessment of how specific claims are illustrated or quantified.
+
+## Reviewer
+- **Overall assessment** This perspective article provides a broad and generally well-structured overview of AlphaFold 3's potential applications in drug discovery, alongside a thoughtful discussion of technical limitations, ethical considerations, and regulatory implications. The authors correctly identify key strengths of AF3 (e.g., prediction of protein-ligand complexes, improved PAE maps) and acknowledge its limitations (e.g., static structures, variable accuracy for post-translational modifications). However, the manuscript suffers from a lack of specificity in several sections, with claims that are either unsupported by concrete examples or presented without quantitative context. The proposed frameworks for iterative validation, ethical governance, and regulatory oversight are reasonable but remain largely aspirational, with no discussion of feasibility or implementation challenges. The writing is clear but occasionally repetitive, and some sections (e.g., Regulatory Implications) introduce highly specific technical proposals (e.g., blockchain-verified multi-signature authentication) that appear disconnected from the current state of AF3 applications and may distract from the core message. Overall, the manuscript offers a useful synthesis for a broad audience but does not provide sufficient depth or novelty to be considered a major contribution to the field.
+- **Who would be interested in the results, and why** Researchers and practitioners in computational biology, structural biology, and drug discovery would find this perspective useful as a high-level summary of AF3's capabilities and limitations. Those new to the field or seeking a framework for integrating AI-based structure prediction into their workflows may benefit from the structured discussion of target identification, lead optimization, and personalized medicine. However, experts in the field are unlikely to encounter new information, as the content largely recapitulates known features of AF3 and general challenges in AI-driven drug discovery.
+- **Major strengths** The manuscript provides a comprehensive and accessible overview of AF3's potential roles across the drug discovery pipeline. The authors appropriately balance enthusiasm with caution, explicitly acknowledging that prediction accuracy varies across biomolecule categories and that experimental validation remains essential. The discussion of ethical and regulatory considerations, including data privacy, bias, and dual-use risks, is timely and relevant. The proposed iterative computational-experimental framework, with explicit use of confidence metrics (pLDDT, PAE) to guide decision-making, is a practical and sensible suggestion.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Support for claims
+  - **Claim pointer** The authors claim that AF3 "has the potential to revolutionize drug design and development" and that it "can significantly shorten the DDD timeline."
+  - **Evidence pointer** General Background section, location not provided
+  - **Concern** This claim is made without any quantitative or case-based evidence. No examples are provided of AF3 accelerating a specific drug discovery project, nor is there any comparison with traditional methods in terms of time or cost savings.
+  - **Why it matters** The central thesis of the manuscript is that AF3 will transform drug innovation. Without concrete examples or data, this claim remains speculative and does not convince a skeptical reader.
+  - **Resolution test** Provide at least one documented case study or cite published work demonstrating a measurable acceleration or cost reduction in a drug discovery project attributable to AF3.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical accuracy
+  - **Claim pointer** The authors state that "AF3 can explicitly model certain post-translational modifications, such as phosphorylation and glycosylation."
+  - **Evidence pointer** Target Identification and Validation section, location not provided
+  - **Concern** The accuracy of AF3 for post-translational modifications is acknowledged as "relatively low" later in the manuscript, but the initial claim of "explicitly model" is misleading. The capability to include such modifications in input features does not equate to accurate prediction of their structural consequences.
+  - **Why it matters** Readers may overestimate AF3's utility for modified proteins, which are highly relevant in disease contexts. The manuscript should clearly distinguish between the ability to input modifications and the reliability of the resulting predictions.
+  - **Resolution test** Reword the claim to reflect the limited accuracy, or provide benchmark data showing the actual performance of AF3 on phosphorylated or glycosylated proteins.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Logical coherence
+  - **Claim pointer** The authors propose a "tiered biosecurity classification system" requiring "cryptographic proof-of-stake mechanisms" and "blockchain-verified multi-signature authentication" for controlling access to sensitive protein predictions.
+  - **Evidence pointer** Regulatory Implications section, location not provided
+  - **Concern** This proposal is highly specific and technical but is presented without any discussion of its feasibility, cost, or whether such mechanisms are proportionate to the actual risks. It appears disconnected from the rest of the manuscript, which otherwise focuses on scientific and regulatory considerations at a higher level.
+  - **Why it matters** The inclusion of such specific and potentially controversial proposals without justification may undermine the credibility of the regulatory discussion and distract from more actionable recommendations.
+  - **Resolution test** Either remove this level of technical detail or provide a rationale for why such mechanisms are necessary and how they could be implemented in practice.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Support for claims
+  - **Claim pointer** The authors state that "AF3's PAE map more reliably delineates the true interface" in antibody-antigen complexes, with "significantly higher interface DockQ scores."
+  - **Evidence pointer** General Background section, location not provided
+  - **Concern** This quantitative claim is not supported by any specific data or citation in the provided text. The reader cannot verify the magnitude of the improvement or the benchmark used.
+  - **Why it matters** Quantitative claims require quantitative evidence. Without it, the statement is unverifiable and weakens the manuscript's credibility.
+  - **Resolution test** Provide the specific DockQ scores and the benchmark dataset, or cite the original publication where these results are reported.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract states that AF3 "promises to reshape the landscape of drug innovation" but does not specify the scope of the perspective (e.g., whether it focuses on small molecules, biologics, or both).
+  - **Required correction** Clarify the scope in the abstract to set appropriate expectations for the reader.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Technical Challenges section
+  - **Evidence pointer** Technical Challenges section, location not provided
+  - **Issue** The section lists limitations but does not discuss how AF3 compares with other state-of-the-art tools (e.g., RoseTTAFold All-Atom) for the same prediction tasks.
+  - **Required correction** Add a brief comparison with alternative methods to contextualize AF3's relative strengths and weaknesses.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Regulatory Implications section
+  - **Evidence pointer** Regulatory Implications section, location not provided
+  - **Issue** The section is dense and introduces multiple novel concepts (e.g., "uncertainty-aware validation matrices," "sharded database architectures") without clear definitions or examples.
+  - **Required correction** Simplify the language and provide concrete examples of how these concepts would be applied in practice.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Consistency
+  - **Affected element** Conclusions
+  - **Evidence pointer** Conclusions section, location not provided
+  - **Issue** The conclusion states that AF3 "will likely accelerate the creation of new medicines," which is more definitive than the cautious tone used elsewhere in the manuscript.
+  - **Required correction** Align the conclusion's tone with the rest of the manuscript by using more conditional language (e.g., "has the potential to accelerate").
+- **Technical failings that need to be addressed before the case is established** The manuscript does not present original data, which is acceptable for a perspective, but the claims made about AF3's capabilities and impact must be supported by specific citations or examples. The absence of figures and tables in the provided material prevents assessment of how the authors illustrate their points. The quantitative claim about DockQ scores (R1-M4) is a specific technical failing that needs to be addressed with data or a citation.
+- **Assessment against Nature-style criteria** 
+  - **Originality** The manuscript offers a synthesis of existing knowledge about AF3 rather than novel insights. The proposed frameworks for iterative validation and ethical governance are not entirely new and lack specific, actionable details. The originality is limited.
+  - **Scientific importance** The topic is of high importance given the rapid adoption of AI tools in drug discovery. However, the manuscript does not provide new data or a critical analysis that would significantly advance understanding. Its importance lies primarily in its role as a broad overview.
+  - **Interdisciplinary readership** The manuscript is accessible to a broad audience, including computational biologists, medicinal chemists, and clinicians. The discussion of ethical and regulatory issues broadens its appeal. However, the technical depth in some sections (e.g., blockchain mechanisms) may be off-putting to some readers.
+  - **Technical soundness** The technical descriptions of AF3 are generally accurate, but the lack of specific data to support quantitative claims (e.g., DockQ scores) and the misleading statement about post-translational modification modeling (R1-M2) are concerns.
+  - **Readability for nonspecialists** The manuscript is generally well-written and accessible, but some sections (e.g., Regulatory Implications) are dense and may be difficult for nonspecialists to follow. The use of jargon without definition is a minor issue.
+- **Recommendation posture** Supportive if technical concerns are resolved. The manuscript provides a useful overview but needs to address the specific concerns raised, particularly the lack of evidence for quantitative claims and the misleading statement about post-translational modifications. With these revisions, the manuscript could be a valuable contribution to the literature.
+
+## Risk / unsupported claims
+- The claim that AF3 "has the potential to revolutionize drug design and development" is unsupported by specific examples or data.
+- The claim that AF3 "can significantly shorten the DDD timeline" is unsupported.
+- The statement that AF3 "explicitly model[s] certain post-translational modifications" is misleading given the acknowledged low accuracy.
+- The quantitative claim about "significantly higher interface DockQ scores" is unsupported by data or citation.
+- The proposed technical mechanisms for biosecurity (e.g., blockchain-verified multi-signature authentication) are presented without feasibility analysis and are not supported by evidence.

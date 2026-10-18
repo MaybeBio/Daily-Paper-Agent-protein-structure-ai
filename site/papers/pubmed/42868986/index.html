@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protein interactions with small molecules, peptides and proteins share residue cluster classes. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Protein interactions with small molecules, peptides and proteins share residue cluster classes.</h1>
+      <div class="meta">Hernandez Castillo, Juan Martin; Vilchis Macias, Erik Hazel; Del Rio, Gabriel</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of molecular graphics &amp; modelling</span>
+        · 2026-10-13
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42868986/">原文</a>
+      </div>
+      <p class="one-liner">该文利用残基簇类（cRCC）框架训练机器学习模型，对肽-蛋白、蛋白-蛋白及蛋白-小分子相互作用界面进行分类，虽非直接的结构预测或生成，但以蛋白结构为核心，采用计算建模方法，对蛋白界面识别和可成药性预测有参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Macromolecular interactions with small molecules, peptides, and proteins are fundamental to cellular function. Despite intensive efforts to identify small-molecule modulators of protein-protein interactions (PPIs), successfully targeted interfaces remain rare, reinforcing the premise that binding sites across these molecular scale regimes possess distinct structural architectures. We previously demonstrated that the densest topological regions of protein structures, categorized as a collection of Residue Cluster Classes (cRCC), can effectively classify global protein folds and PPI. Here, we leverage the cRCC framework to train machine learning models to classify peptide-protein interactions. The top-performing algorithms achieved near 100% classification accuracy, with minimal overfitting (&lt;2%). To ensure model generalizability, these optimized algorithms were cross-tested on independent datasets to identify both protein-protein and protein-small-molecule interfaces, maintaining a 95% average success rate and validating the robust predictive reliability of our approach. Collectively, these findings show that cRCC constitute intensive structural properties of protein interfaces, remaining invariant to the molecular weight of the interacting partner. Consequently, this framework provides a novel computational strategy to prioritize druggable PPI targets for small-molecule discovery and guide the rational design of synthetic protein interfaces.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">大分子与小分子、肽段及蛋白质的相互作用是细胞功能的基础。尽管在识别蛋白质-蛋白质相互作用（PPIs）的小分子调节剂方面付出了大量努力，但成功靶向的界面仍然罕见，这强化了以下前提：这些分子尺度范围内的结合位点具有不同的结构架构。我们此前证明，蛋白质结构中最密集的拓扑区域，归类为残基簇类（cRCC）的集合，能有效分类全局蛋白质折叠和PPI。在此，我们利用cRCC框架训练机器学习模型以分类肽-蛋白质相互作用。表现最佳的算法实现了接近100%的分类准确率，且过拟合极小（&lt;2%）。为确保模型泛化能力，这些优化算法在独立数据集上进行了交叉测试，以识别蛋白质-蛋白质和蛋白质-小分子界面，保持了95%的平均成功率，验证了我们方法稳健的预测可靠性。总体而言，这些发现表明cRCC构成蛋白质界面的密集结构特性，且不随相互作用伙伴的分子量变化而改变。因此，该框架提供了一种新颖的计算策略，用于优先筛选可成药PPI靶点以促进小分子发现，并指导合成蛋白质界面的合理设计。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Protein interactions with small molecules, peptides and proteins share residue cluster classes</li>
+<li><strong>作者</strong>：Hernandez Castillo, Juan Martin; Vilchis Macias, Erik Hazel; Del Rio, Gabriel</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：Journal of Molecular Graphics &amp; Modelling</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-13）</li>
+<li><strong>论文类型</strong>：研究论文（方法学 + 应用验证）</li>
+<li><strong>领域</strong>：蛋白质相互作用界面预测与分类；结构生物信息学 × 机器学习</li>
+<li><strong>关键词</strong>：Residue Cluster Classes (cRCC)；protein-protein interactions (PPIs)；peptide-protein interactions；small molecule binding sites；machine learning classification</li>
+<li><strong>DOI/arXiv</strong>：10.1016/j.jmgm.2026.109614</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（提及独立测试数据集，但未给出具体来源标识）</li>
+<li><strong>阅读日期</strong>：2026-05-14（按当前日期推算）</li>
+<li><strong>在该课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/深度学习」方向，聚焦于利用结构拓扑特征（cRCC）作为统一的界面描述子，跨分子量尺度（小分子、肽、蛋白质）训练 ML 分类器，用于 PPI 可成药性评估与界面设计。与 AlphaFold 等端到端预测不同，本文强调<strong>结构局部拓扑密度</strong>作为跨尺度不变量的可迁移性，为构象采样/界面设计提供新的特征表示思路。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文用基于蛋白质结构最密拓扑区域构建的 Residue Cluster Classes (cRCC) 特征训练机器学习分类器，对肽-蛋白相互作用界面进行分类，达到近 100% 准确率，并跨测试到蛋白-蛋白和小分子-蛋白界面仍保持 95% 平均成功率，从而论证 cRCC 是跨分子量尺度不变的界面结构属性。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：蛋白质与不同分子量伙伴（小分子、肽、蛋白质）的相互作用界面，是否共享可泛化的结构拓扑特征（而非各自具有独特架构）？</li>
+<li><strong>为什么重要</strong>：若界面结构特征跨尺度不变，则可将小分子可成药性评估方法迁移到 PPI 靶点，并为理性设计合成蛋白界面提供统一的结构规则。</li>
+<li><strong>现有方法为何不足</strong>：既往研究多聚焦单一相互作用类型（如仅 PPI 或仅小分子口袋），缺乏统一的几何/拓扑描述子来跨尺度比较；且 PPI 靶向小分子成功案例稀少，被归因于界面架构差异，但缺乏系统性结构证据。</li>
+<li><strong>精确研究问题</strong>：Can residue cluster classes (cRCC) — 作为蛋白质结构最密拓扑区域的分类 — 同时有效分类 peptide-protein、protein-protein 和 protein-small molecule 相互作用界面，且保持高准确率与泛化性？</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引言与作者前期工作的描述，标注为「仅本文框架」，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期：界面几何描述</td>
+<td>溶剂可及表面积、氢键模式、疏水补丁</td>
+<td>直观、计算快</td>
+<td>缺乏全局拓扑信息，难以跨尺度比较</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>中期：口袋/界面检测</td>
+<td>fpocket、SiteMap、Fpocket2 等</td>
+<td>可识别小分子口袋</td>
+<td>对平坦 PPI 界面效果差</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>近期：ML/DL 界面预测</td>
+<td>PPI 预测器、AlphaFold 多聚体、GraphPPI</td>
+<td>端到端、准确率高</td>
+<td>特征可解释性弱，跨分子量泛化未验证</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>本文：cRCC 拓扑分类</td>
+<td>基于结构最密区域的 Residue Cluster Classes + ML 分类器</td>
+<td>跨尺度不变、可解释、高准确率</td>
+<td>依赖结构输入，动态构象未覆盖</td>
+<td>本文主张</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPI 靶向小分子成功率低</td>
+<td>成功靶向的 PPI 界面稀少</td>
+<td>界面架构被认为与小分子口袋有本质差异</td>
+<td>引言段（"successfully targeted interfaces remain rare"）</td>
+</tr>
+<tr>
+<td>缺乏统一界面描述子</td>
+<td>不同分子量尺度的界面研究各自为政</td>
+<td>没有跨尺度可比的结构特征框架</td>
+<td>引言段（"binding sites across these molecular scale regimes possess distinct structural architectures" 为被检验假设）</td>
+</tr>
+<tr>
+<td>现有分类器泛化性不足</td>
+<td>单一类型界面的模型难以迁移</td>
+<td>特征工程针对特定相互作用类型</td>
+<td>本文跨测试设计（Results 节）</td>
+</tr>
+<tr>
+<td>结构特征与功能解耦</td>
+<td>几何特征难以关联可成药性</td>
+<td>缺乏拓扑层面的抽象</td>
+<td>cRCC 作为密集拓扑区域的分类（Methods 节）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<ul>
+<li>将蛋白质结构划分为基于最密拓扑区域的 Residue Cluster Classes (cRCC)；</li>
+<li>用 cRCC 作为特征，训练多种机器学习分类器（具体算法未在摘要中列出，称"top-performing algorithms"）；</li>
+<li>在 peptide-protein 界面上训练，然后在 protein-protein 和 protein-small molecule 界面上独立测试。</li>
+</ul>
+<h3>2) 核心洞察</h3>
+<ul>
+<li>cRCC 不是针对特定相互作用类型设计的，而是蛋白质结构的内在拓扑属性；</li>
+<li>若同一 cRCC 特征集能跨三种分子量尺度分类界面，则说明界面结构架构存在<strong>共性</strong>，而非本质不同；</li>
+<li>这挑战了「PPI 界面与小分子口袋结构架构不同」的既有前提。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>结构拓扑密度（而非序列或表面化学）可能是跨相互作用类型的不变量；</li>
+<li>对蛋白质结构计算研究而言，<strong>局部残基聚集模式</strong>可作为统一特征表示，适用于对接、界面设计、可成药性评估等多种任务；</li>
+<li>特征的可迁移性验证（跨数据集测试）比单一任务的高准确率更有价值。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质三维结构（来源未明确，推测为实验结构或模型结构）</li>
+<li><strong>输出</strong>：相互作用界面类型分类（peptide-protein / protein-protein / protein-small molecule）</li>
+<li><strong>模块</strong>：
+  1. cRCC 计算：识别蛋白质结构中最密拓扑区域并分类为残基簇类别；
+  2. 特征构建：将界面残基映射到 cRCC 类别，形成特征向量；
+  3. ML 分类器训练：在 peptide-protein 界面上训练多种分类器；
+  4. 跨测试：用训练好的模型在 protein-protein 和 protein-small molecule 数据集上测试。</li>
+<li><strong>训练</strong>：分类器在 peptide-protein 数据上训练，评估指标包括准确率与过拟合程度（&lt;2%）。</li>
+<li><strong>工具</strong>：未提供具体软件/库名称。</li>
+<li><strong>假设</strong>：cRCC 是界面结构的充分统计量；不同分子量尺度的界面共享 cRCC 分布模式。</li>
+<li><strong>文字流程</strong>：结构 → 计算 cRCC → 提取界面残基的 cRCC 特征 → 训练 ML 分类器（peptide-protein）→ 跨测试（PPI 与小分子）→ 评估准确率与泛化性。</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cRCC 计算</td>
+<td>将结构划分为密集拓扑区域并分类</td>
+<td>提供跨尺度统一的界面描述子</td>
+<td>输入：3D 结构；输出：残基-簇类别映射</td>
+<td>作者前期工作（"We previously demonstrated..."）</td>
+<td>无此模块则无统一特征，回到传统几何描述</td>
+</tr>
+<tr>
+<td>特征构建</td>
+<td>将界面残基转化为 cRCC 分布向量</td>
+<td>使 ML 模型可处理结构信息</td>
+<td>输入：界面残基集合 + cRCC 映射；输出：特征向量</td>
+<td>未提供消融</td>
+<td>特征质量直接影响分类性能</td>
+</tr>
+<tr>
+<td>ML 分类器</td>
+<td>学习 cRCC 分布与界面类型的映射</td>
+<td>实现自动分类</td>
+<td>输入：特征向量；输出：界面类型标签</td>
+<td>近 100% 准确率，&lt;2% 过拟合</td>
+<td>分类器选择影响泛化性（未提供对比）</td>
+</tr>
+<tr>
+<td>跨测试验证</td>
+<td>在独立数据集上测试模型</td>
+<td>验证泛化性而非记忆训练集</td>
+<td>输入：PPI 与小分子界面特征；输出：分类准确率</td>
+<td>95% 平均成功率</td>
+<td>无此模块则无法支撑「跨尺度不变」主张</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：所有消融效应均为预期效应，文中未提供模块级消融实验。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用。摘要与正文中未提供具体数学公式或符号定义。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：peptide-protein 相互作用界面（训练集）；protein-protein 与 protein-small molecule 界面（独立测试集）。具体规模、来源、数量未提供。</li>
+<li><strong>指标</strong>：分类准确率（accuracy）；过拟合程度（训练-测试准确率差异 &lt;2%）。</li>
+<li><strong>基线</strong>：未提供对比基线。</li>
+<li><strong>评测协议</strong>：训练集上优化模型，独立测试集上评估泛化性。</li>
+<li><strong>骨干/仪器</strong>：未提供。</li>
+<li><strong>oracle 输入</strong>：结构坐标（来源未明确）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>peptide-protein 分类</td>
+<td>cRCC 能有效分类肽-蛋白界面</td>
+<td>多种 ML 算法对比</td>
+<td>近 100% 准确率，过拟合 &lt;2%</td>
+<td>cRCC 特征对肽-蛋白界面有判别力</td>
+<td>未提供与现有方法对比</td>
+<td>Results 节（摘要）</td>
+</tr>
+<tr>
+<td>跨测试到 PPI</td>
+<td>cRCC 特征泛化到蛋白-蛋白界面</td>
+<td>独立 PPI 数据集</td>
+<td>95% 平均成功率（与另两类合并）</td>
+<td>cRCC 跨尺度不变</td>
+<td>未分别报告 PPI 与小分子的单独准确率</td>
+<td>Results 节（摘要）</td>
+</tr>
+<tr>
+<td>跨测试到小分子</td>
+<td>cRCC 特征泛化到小分子-蛋白界面</td>
+<td>独立小分子数据集</td>
+<td>同上</td>
+<td>同上</td>
+<td>同上</td>
+<td>Results 节（摘要）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限静态结构（或模型结构）的界面分类，不涉及动态构象、结合亲和力预测或结合机制解释。</li>
+<li><strong>oracle/真值输入</strong>：依赖蛋白质三维结构坐标；结构质量与来源未说明，可能影响特征计算。</li>
+<li><strong>端到端状态</strong>：非端到端；cRCC 计算是独立前置步骤，ML 分类器仅处理特征向量。</li>
+<li><strong>算力成本</strong>：未提供；cRCC 计算可能对大型结构有计算开销。</li>
+<li><strong>历史数据依赖</strong>：训练数据为 peptide-protein 界面，测试数据为 PPI 与小分子界面；数据集的代表性、平衡性、冗余度未说明。</li>
+<li><strong>模型依赖</strong>：具体 ML 算法未列出，无法评估模型选择对结果的敏感性。</li>
+<li><strong>最难情形</strong>：未讨论失败案例或低置信度分类的界面类型。</li>
+<li><strong>群体/领域边界</strong>：结论仅适用于已测试的界面类型与结构来源；对膜蛋白、 intrinsically disordered regions、变构位点等未覆盖。</li>
+<li><strong>不确定性</strong>：未提供置信区间、交叉验证细节或统计显著性检验。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在本文所测试的结构数据集范围内，cRCC 特征训练的 ML 分类器能够以高准确率区分肽-蛋白界面，并泛化到蛋白-蛋白与小分子-蛋白界面，支持 cRCC 作为跨分子量尺度的界面结构描述子；但该结论不扩展到动态构象、亲和力预测或未测试的界面类型。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要中未讨论失败案例、数据偏差或方法适用范围；
+- 未提供与现有界面预测方法的对比，暗示可能缺乏基准比较；
+- 未说明 cRCC 计算对结构质量/分辨率的敏感性。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>近 100% 准确率可能源于数据泄漏</td>
+<td>训练集与测试集可能共享同源蛋白或相似界面</td>
+<td>高准确率若来自记忆而非泛化，则跨尺度主张不成立</td>
+<td>检查序列/结构同源性去除；按 fold 划分交叉验证</td>
+<td>摘要未提供数据去冗余细节</td>
+</tr>
+<tr>
+<td>95% 平均成功率掩盖了类别间差异</td>
+<td>PPI 与小分子界面的单独准确率可能差异显著</td>
+<td>若某一类别准确率低，则「共享 cRCC」主张被削弱</td>
+<td>要求作者提供分类别混淆矩阵</td>
+<td>摘要仅给合并平均值</td>
+</tr>
+<tr>
+<td>cRCC 特征可能对界面大小敏感</td>
+<td>小分子界面残基少，cRCC 分布稀疏，分类可能由残基数量驱动</td>
+<td>若分类器学的是界面大小而非拓扑类别，则结论需修正</td>
+<td>控制界面残基数后重新测试</td>
+<td>摘要未讨论特征归一化</td>
+</tr>
+<tr>
+<td>未与现有方法对比</td>
+<td>无法判断 cRCC 是否优于或仅等价于已有描述子</td>
+<td>若已有方法同样能跨尺度分类，则 novelty 降低</td>
+<td>与 fpocket、SiteMap、GraphPPI 等对比</td>
+<td>摘要无对比实验</td>
+</tr>
+<tr>
+<td>结构来源未说明</td>
+<td>若使用预测结构（如 AlphaFold），误差可能传播到 cRCC</td>
+<td>影响结论对实验结构的适用性</td>
+<td>要求提供结构来源与质量指标</td>
+<td>摘要未提及</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li><strong>cRCC 作为跨尺度界面描述子</strong>：将蛋白质结构的最密拓扑区域分类为残基簇类别，可作为统一特征表示，适用于小分子口袋、肽结合位点与 PPI 界面。可迁移到本课题的<strong>分子对接</strong>与<strong>界面设计</strong>任务，作为特征输入或约束条件。</li>
+<li><strong>跨数据集泛化验证范式</strong>：在一种相互作用类型上训练，在另两种上测试，是验证特征通用性的有效实验设计。本课题可借鉴此范式，用于验证新描述子（如几何图神经网络特征）是否跨任务泛化。</li>
+<li><strong>拓扑密度 vs 表面化学</strong>：本文暗示结构拓扑密度（而非氨基酸化学性质）可能是界面分类的更稳定信号。对<strong>构象采样</strong>与<strong>结构预测</strong>，可考虑将局部残基聚集密度作为辅助损失或约束。</li>
+<li><strong>可成药性评估新思路</strong>：若 cRCC 能区分可靶向与不可靶向的 PPI 界面，则可作为<strong>虚拟筛选</strong>前的预筛选工具，降低计算成本。</li>
+<li><strong>ML 分类器 + 结构特征的低成本路线</strong>：相比端到端深度学习，cRCC + 传统 ML 达到高准确率，提示在数据有限时，精心设计的结构特征 + 简单分类器可能优于复杂模型。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与 fpocket（口袋检测）、SiteMap（结合位点评估）等传统方法目标相似，但 cRCC 强调拓扑密度而非几何口袋；与近期基于图神经网络的界面预测（如 GraphPPI、DELIA）在特征表示上互补。</li>
+<li><strong>组合方向</strong>：cRCC 可与 AlphaFold 预测结构结合，用于预测结构的界面可成药性评估；也可与 MD 模拟结合，分析构象 ensemble 中 cRCC 的稳定性。</li>
+<li><strong>冲突观点</strong>：本文主张跨尺度界面共享结构架构，与「PPI 界面平坦、小分子口袋深埋」的传统认知相悖；需更多独立验证。</li>
+<li><strong>可迁移领域</strong>：蛋白质设计（若 cRCC 可指导界面设计）、虚拟筛选（预筛选可成药 PPI）、结构比对（cRCC 作为结构指纹）。</li>
+<li><strong>候选方向（未验证）</strong>：cRCC 是否对 intrinsically disordered proteins 或变构位点有效，文中未涉及，可作为后续探索。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<ol>
+<li>
+<p><strong>cRCC 引导的 PPI 可成药性预筛选管道</strong>
+   - 来源局限/观察：本文仅分类界面类型，未直接评估可成药性。
+   - 核心假设：cRCC 分布模式可区分可成药与不可成药的 PPI 界面。
+   - 增量：将分类模型扩展为回归/排序模型，输出可成药性分数。
+   - 初步方法：收集已知可成药 PPI（如临床阶段抑制剂靶点）与难成药 PPI，提取 cRCC 特征，训练排序模型；与 fpocket 打分对比。
+   - 验证：在 DOCKGROUND 或 2P2I 数据库上评估 AUC。
+   - 创新状态：unverified</p>
+</li>
+<li>
+<p><strong>cRCC 与 AlphaFold 结构结合的界面泛化性测试</strong>
+   - 来源局限/观察：本文未说明结构来源；若用实验结构，预测结构上是否有效未知。
+   - 核心假设：cRCC 在 AlphaFold 预测结构上仍保持跨尺度分类能力。
+   - 增量：验证 cRCC 对结构噪声的鲁棒性。
+   - 初步方法：对同一蛋白取实验结构与 AlphaFold 结构，分别计算 cRCC，比较分类一致性；加入 MD 采样构象测试稳定性。
+   - 验证：用本文方法复现分类，比较准确率差异。
+   - 创新状态：unverified</p>
+</li>
+<li>
+<p><strong>cRCC 作为扩散模型生成界面的结构约束</strong>
+   - 来源局限/观察：本文仅分类，未涉及生成。
+   - 核心假设：在生成蛋白质界面时约束 cRCC 分布，可提高生成界面的功能有效性。
+   - 增量：将 cRCC 作为可微约束加入生成模型损失。
+   - 初步方法：在 RFdiffusion 或 FrameFlow 基础上，加入 cRCC 分布匹配损失；生成肽结合界面并实验验证。
+   - 验证：计算生成界面的 cRCC 分布与天然界面的 KL 散度；结合分子对接评估。
+   - 创新状态：unverified</p>
+</li>
+<li>
+<p><strong>cRCC 动态分析：MD 模拟中界面拓扑密度的演化</strong>
+   - 来源局限/观察：本文基于静态结构。
+   - 核心假设：cRCC 在 MD 轨迹中保持稳定，可作为结合态/解离态的标志。
+   - 增量：将 cRCC 从静态描述子扩展为动态描述子。
+   - 初步方法：对已知结合/解离体系跑 MD，逐帧计算 cRCC，分析其时间演化与结合自由能的相关性。
+   - 验证：与 MM-PBSA 或 FEP 结果对比。
+   - 创新状态：unverified</p>
+</li>
+<li>
+<p><strong>cRCC 与序列设计：从结构拓扑到序列恢复</strong>
+   - 来源局限/观察：本文未涉及序列。
+   - 核心假设：cRCC 类别可指导序列设计，使设计序列折叠后呈现目标界面拓扑。
+   - 增量：将 cRCC 作为 ProteinMPNN 等序列设计器的结构条件。
+   - 初步方法：对目标界面提取 cRCC，作为条件输入到条件生成模型；评估设计序列的折叠结构与 cRCC 保真度。
+   - 验证：AlphaFold 结构预测 + cRCC 计算对比。
+   - 创新状态：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose that Residue Cluster Classes (cRCC), previously used to classify protein folds and protein-protein interactions (PPIs), can also classify peptide-protein interactions. Machine learning models trained on cRCC features achieve near 100% classification accuracy for peptide-protein interactions with minimal overfitting (&lt;2%), and cross-testing on independent datasets for protein-protein and protein-small-molecule interfaces maintains a 95% average success rate. The authors conclude that cRCC are intensive structural properties of protein interfaces, invariant to the molecular weight of the interacting partner, and provide a computational strategy for prioritizing druggable PPI targets and designing synthetic protein interfaces.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no datasets, model details, performance metrics beyond those stated, or statistical analyses are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, dataset descriptions, model architectures, hyperparameters, cross-validation procedures, independent dataset details, performance metric definitions, and any figures or tables</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially interesting extension of a previously described structural classification framework to peptide-protein interactions, with claims of very high classification accuracy and generalizability. However, the evidence provided in the abstract is insufficient to evaluate the validity, robustness, or novelty of the approach. Key methodological details, dataset characteristics, and statistical analyses are absent. The claim of invariance to molecular weight is particularly strong and not supported by the data presented. The work may be of interest to computational biologists and drug discovery researchers, but the current abstract does not establish the case.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists, structural bioinformaticians, and researchers in drug discovery, particularly those focused on protein-protein interaction modulation and peptide-based therapeutics. The proposed framework could offer a new way to prioritize druggable PPI interfaces and design synthetic binders, which is of practical relevance to these communities.</li>
+<li><strong>Major strengths</strong> The abstract builds on a previously published framework (cRCC), which suggests continuity and potential methodological maturity. The reported near 100% classification accuracy and minimal overfitting are striking, and the cross-testing on independent datasets for different interaction types is a commendable design element. The potential practical application to PPI druggability is clearly stated.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "The top-performing algorithms achieved near 100% classification accuracy, with minimal overfitting (&lt;2%)."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract reports near 100% classification accuracy without specifying the dataset size, class balance, number of peptide-protein interaction examples, or the definition of accuracy. Such high performance on biological classification tasks often indicates data leakage, trivial separability, or an overly simplistic benchmark. No details on cross-validation strategy, train-test splitting, or feature selection are given.</li>
+<li><strong>Why it matters</strong> Without these details, the reported accuracy cannot be interpreted. If the dataset is small or imbalanced, or if the classification task is trivially separable by sequence length or composition, the results would not reflect genuine structural insight. This is the central claim of the paper, and it is currently unverifiable.</li>
+<li><strong>Resolution test</strong> Provide dataset statistics, class distributions, cross-validation protocols, and a baseline comparison (e.g., using sequence-based features or random features). Show that the accuracy is significantly above chance and robust to dataset perturbations.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Generalizability and external validity</li>
+<li><strong>Claim pointer</strong> "These optimized algorithms were cross-tested on independent datasets to identify both protein-protein and protein-small-molecule interfaces, maintaining a 95% average success rate."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract states that models trained on peptide-protein interactions were cross-tested on protein-protein and protein-small-molecule datasets, but it does not specify the nature of these independent datasets, how they were curated, whether they are truly independent (e.g., no sequence or structural overlap with training data), or what "success rate" means (e.g., accuracy, precision, recall, or area under the ROC curve). The 95% average is presented without variance or confidence intervals.</li>
+<li><strong>Why it matters</strong> Generalizability is a key claim, but without dataset descriptions and performance metric definitions, the reader cannot assess whether the cross-testing is meaningful or whether the models are simply capturing generic interface properties. Overlap between training and test sets could inflate performance.</li>
+<li><strong>Resolution test</strong> Describe the independent datasets, their sources, and the criteria for independence. Report performance metrics with confidence intervals or standard deviations, and include a confusion matrix or per-class performance for each interaction type.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim support</li>
+<li><strong>Claim pointer</strong> "cRCC constitute intensive structural properties of protein interfaces, remaining invariant to the molecular weight of the interacting partner."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The claim of invariance to molecular weight is a strong physical statement. The abstract provides no direct test of this invariance, such as comparing cRCC distributions across interaction types with controlled molecular weight ranges, or showing that classification performance does not correlate with partner size. The term "intensive" is used without definition in this context.</li>
+<li><strong>Why it matters</strong> This claim is the conceptual foundation for the proposed practical applications. If cRCC are not truly invariant, the framework's utility for prioritizing druggable PPIs (which involve large protein partners) based on models trained on small peptides would be questionable.</li>
+<li><strong>Resolution test</strong> Provide a direct analysis of cRCC feature distributions across interaction types with varying molecular weights, and show statistical equivalence or a lack of correlation between molecular weight and classification performance.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Terminology</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The term "Residue Cluster Classes (cRCC)" is used without a brief definition or reference to the prior work. Readers unfamiliar with the previous publication may not understand what cRCC represent.</li>
+<li><strong>Required correction</strong> Add a one-sentence definition of cRCC and cite the prior work explicitly.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Model details</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract mentions "machine learning models" and "top-performing algorithms" but does not name the algorithms or provide any hyperparameter information.</li>
+<li><strong>Required correction</strong> Specify the algorithms used (e.g., random forest, support vector machine, neural network) and state that full details are in the methods section.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Performance metrics</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The "95% average success rate" is reported without a measure of spread or the number of datasets tested.</li>
+<li><strong>Required correction</strong> Report the number of independent datasets, the range or standard deviation of success rates, and the specific metric used.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient methodological detail to assess the validity of the classification results, the generalizability claims, or the invariance claim. All three are central to the paper's conclusions.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The extension of cRCC to peptide-protein interactions is a reasonable incremental step, but the abstract does not demonstrate conceptual novelty beyond the prior work. Scientific importance: The potential application to PPI druggability is important, but the evidence is too thin to establish significance. Interdisciplinary readership: The topic bridges structural biology, machine learning, and drug discovery, which could appeal to a broad audience, but the abstract is too technical and lacks context for nonspecialists. Technical soundness: Not assessable from the abstract; the reported metrics are implausibly high without supporting details. Readability for nonspecialists: The abstract assumes familiarity with cRCC and machine learning terminology, and the practical implications are stated but not explained.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents intriguing results, but the lack of methodological detail and the strength of the claims require full manuscript review. I would be supportive if the technical concerns are resolved with detailed methods, dataset descriptions, and statistical analyses.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of near 100% classification accuracy is unsupported without dataset and model details.</li>
+<li>The claim of 95% average success rate on independent datasets is unsupported without dataset descriptions and metric definitions.</li>
+<li>The claim that cRCC are invariant to molecular weight is unsupported and not directly tested in the abstract.</li>
+<li>The practical claim that the framework can "prioritize druggable PPI targets" and "guide the rational design of synthetic protein interfaces" is speculative and not demonstrated by the reported results.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

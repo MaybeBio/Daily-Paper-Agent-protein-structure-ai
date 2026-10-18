@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beyond SELEX: AI-driven aptamers from sequence to structure to function. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Beyond SELEX: AI-driven aptamers from sequence to structure to function.</h1>
+      <div class="meta">Cui, Boming; Lian, Xintao; Song, Weiwei; Yang, Hua; Yang, Xiaojuan; Wang, Lan; Yang, Ge</div>
+      <div class="meta muted">
+        
+        <span class="journal">Biotechnology advances</span>
+        · 2026-10-14
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42874941/">原文</a>
+      </div>
+      <p class="one-liner">该综述系统总结了AI驱动的适配体从头设计流程，涵盖结构预测、对接、MD模拟及生成模型，虽对象为核酸适配体而非蛋白质，但其AI+结构计算框架可迁移至蛋白质结构相关研究。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Conventional aptamer discovery by systematic evolution of ligands by exponential enrichment (SELEX) is often constrained by limited library capacity, PCR bias, and multi-round screening. The recent convergence of artificial intelligence with aptamer development is driving a paradigm shift from empirical screening toward rational, data-driven design. This Review presents a timely and comprehensive overview of AI integration across the entire aptamer development pipeline, with a particular emphasis on advances reported in 2024-2026. We begin by discussing bioinformatics databases and computational tools for high-throughput SELEX data analysis. We then review state-of-the-art strategies for secondary and tertiary structure prediction, including recent breakthroughs such as AlphaFold 3, RoseTTAFoldNA, and diffusion-based approaches. We also cover machine learning methods for aptamer-target interaction prediction, molecular docking, dynamics simulations, and free energy calculations. A major focus is placed on very recent AI-driven generative design, including diffusion models (AptaDiff), language model-based frameworks (InstructNA, GRAPE-LM), and reinforcement learning approaches (AiDTA) for de novo aptamer generation and optimization. Emerging applications of AI-designed aptamers in precision diagnostics, targeted therapy, and biosensing are also surveyed. Finally, we discuss current challenges and outline future directions toward closed-loop, interpretable AI frameworks for translational aptamer development. By synthesizing the latest computational and experimental advances, this Review aims to serve as a timely resource for researchers seeking to leverage AI for next-generation aptamer discovery.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">通过指数富集配体系统进化（SELEX）进行的传统适配体发现，常受限于文库容量有限、PCR偏差及多轮筛选。近年来，人工智能与适配体开发的融合正推动从经验筛选向理性、数据驱动设计的范式转变。本综述对AI在整个适配体开发流程中的整合进行了及时且全面的概述，特别聚焦于2024-2026年间报道的进展。我们首先讨论用于高通量SELEX数据分析的生物信息学数据库和计算工具。随后，我们回顾二级和三级结构预测的最新策略，包括AlphaFold 3、RoseTTAFoldNA及基于扩散的方法等近期突破。我们还涵盖用于适配体-靶标相互作用预测的机器学习方法、分子对接、动力学模拟及自由能计算。重点聚焦于近期AI驱动的生成设计，包括扩散模型（AptaDiff）、基于语言模型的框架（InstructNA、GRAPE-LM）以及用于从头适配体生成和优化的强化学习方法（AiDTA）。此外，我们还调查了AI设计适配体在精准诊断、靶向治疗和生物传感中的新兴应用。最后，我们讨论当前挑战，并展望面向转化适配体开发的闭环、可解释AI框架的未来方向。通过综合最新的计算和实验进展，本综述旨在为寻求利用AI进行下一代适配体发现的研究人员提供及时的资源。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Beyond SELEX: AI-driven aptamers from sequence to structure to function</li>
+<li><strong>作者</strong>：Cui, Boming; Lian, Xintao; Song, Weiwei; Yang, Hua; Yang, Xiaojuan; Wang, Lan; Yang, Ge</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：Biotechnology Advances</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-14）</li>
+<li><strong>论文类型</strong>：综述（Review）</li>
+<li><strong>领域</strong>：适体（aptamer）发现 × 人工智能（AI）/ 深度学习 / 物理模拟</li>
+<li><strong>关键词</strong>：SELEX；aptamer；AI-driven design；structure prediction；generative model；molecular docking；molecular dynamics</li>
+<li><strong>DOI/arXiv</strong>：10.1016/j.biotechadv.2026.109075</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-13（按当前日期）</li>
+<li><strong>在课题方向中的位置</strong>：本文是综述，覆盖适体（核酸适配体）发现全流程中 AI 的整合，包括序列分析、二级/三级结构预测（AlphaFold 3、RoseTTAFoldNA、扩散模型）、相互作用预测、分子对接、MD 模拟、自由能计算，以及生成式设计（扩散模型、语言模型、强化学习）。与「蛋白质结构相关计算研究 × AI/物理模拟」课题方向直接相关：适体是核酸分子，但其结构预测、构象采样、对接、MD 模拟、生成设计的方法论与蛋白质结构计算高度同源，可迁移性强。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文系统综述了 AI 在适体发现全流程（从 SELEX 数据分析、结构预测、相互作用预测到生成式设计）中的整合现状与趋势，指出 AI 正推动适体发现从经验筛选转向理性、数据驱动的设计，并展望了闭环、可解释的 AI 框架。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何将 AI 方法系统性地整合到适体发现流程中，以克服传统 SELEX 的局限性（文库容量有限、PCR 偏差、多轮筛选耗时）？</li>
+<li><strong>为什么重要</strong>：适体在诊断、治疗、生物传感中具有广泛应用前景，但传统 SELEX 效率低、成本高、成功率不稳定。AI 有望实现更快速、更理性的适体设计与优化。</li>
+<li><strong>现有方法为何不足</strong>：SELEX 依赖实验筛选，文库容量有限（通常 10^14–10^15），PCR 扩增引入偏差，多轮筛选耗时且难以保证命中率。传统计算工具在核酸结构预测和相互作用预测方面精度有限。</li>
+<li><strong>精确研究问题</strong>：Can AI-driven methods (structure prediction, interaction prediction, generative design) replace or substantially augment SELEX for de novo aptamer discovery and optimization?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文主张的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统 SELEX</td>
+<td>多轮体外筛选</td>
+<td>实验验证可靠</td>
+<td>文库容量有限、PCR 偏差、耗时</td>
+<td>作为基准，AI 旨在补充或替代</td>
+</tr>
+<tr>
+<td>生物信息学工具</td>
+<td>高通量 SELEX 数据分析工具</td>
+<td>可处理大规模测序数据</td>
+<td>仅覆盖序列层面，不涉及结构/功能</td>
+<td>作为 AI 流程的输入层</td>
+</tr>
+<tr>
+<td>结构预测</td>
+<td>AlphaFold 3、RoseTTAFoldNA、扩散模型</td>
+<td>核酸结构预测精度显著提升</td>
+<td>动态构象、配体诱导适应仍具挑战</td>
+<td>作为 AI 设计流程的核心模块</td>
+</tr>
+<tr>
+<td>相互作用预测</td>
+<td>ML 方法、分子对接、MD 模拟、自由能计算</td>
+<td>可评估适体-靶标结合</td>
+<td>计算成本高、精度受力场限制</td>
+<td>作为筛选与验证环节</td>
+</tr>
+<tr>
+<td>生成式设计</td>
+<td>AptaDiff、InstructNA、GRAPE-LM、AiDTA</td>
+<td>可 de novo 生成和优化适体序列</td>
+<td>生成序列的实验验证率仍待提升</td>
+<td>本文重点强调的最新前沿</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文库容量有限</td>
+<td>SELEX 起始文库通常仅覆盖 10^14–10^15 序列</td>
+<td>化学合成和实验操作限制</td>
+<td>摘要首句</td>
+</tr>
+<tr>
+<td>PCR 偏差</td>
+<td>扩增过程中某些序列被偏好性富集</td>
+<td>PCR 扩增效率不均一</td>
+<td>摘要首句</td>
+</tr>
+<tr>
+<td>多轮筛选耗时</td>
+<td>典型 SELEX 需 8–15 轮筛选</td>
+<td>每轮需富集、扩增、测序、分析</td>
+<td>摘要首句</td>
+</tr>
+<tr>
+<td>结构预测精度不足</td>
+<td>核酸三级结构预测仍具挑战</td>
+<td>构象柔性、配体诱导适应</td>
+<td>摘要中结构预测部分</td>
+</tr>
+<tr>
+<td>生成序列验证率低</td>
+<td>AI 生成的适体序列实验验证成功率有限</td>
+<td>生成模型与实验筛选之间的闭环尚未建立</td>
+<td>摘要中挑战与展望部分</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：综述 AI 在适体发现全流程中的整合，包括数据库与工具、结构预测、相互作用预测、生成式设计、应用与挑战。</li>
+<li><strong>核心洞察</strong>：AI 正在推动适体发现从「经验筛选」向「理性、数据驱动设计」的范式转变；结构预测（AlphaFold 3、RoseTTAFoldNA）和生成模型（扩散、语言模型、强化学习）是这一转变的关键驱动力。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：对于任何生物分子（蛋白质、核酸）的计算设计，将「序列 → 结构 → 功能」的预测链条与生成模型结合，并辅以实验验证闭环，是提升设计成功率的核心路径。适体与蛋白质在结构预测和生成设计上的方法论高度互通。</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：适体序列数据（来自 SELEX 或数据库）、靶标结构/序列、实验结合数据</li>
+<li><strong>输出</strong>：适体候选序列、预测结构、结合亲和力预测、优化后的适体</li>
+<li><strong>模块</strong>：
+  1. 数据库与生物信息学工具（SELEX 数据分析）
+  2. 二级/三级结构预测（AlphaFold 3、RoseTTAFoldNA、扩散模型）
+  3. 相互作用预测（ML 方法、分子对接、MD 模拟、自由能计算）
+  4. 生成式设计（AptaDiff、InstructNA、GRAPE-LM、AiDTA）
+  5. 应用（诊断、治疗、生物传感）</li>
+<li><strong>训练</strong>：各模块使用不同的训练数据与策略（未提供细节）</li>
+<li><strong>工具</strong>：AlphaFold 3、RoseTTAFoldNA、AptaDiff、InstructNA、GRAPE-LM、AiDTA 等</li>
+<li><strong>反馈回路</strong>：作者展望闭环 AI 框架，即生成 → 预测 → 实验验证 → 反馈优化</li>
+<li><strong>假设</strong>：AI 预测的结构和相互作用可以指导适体设计，且生成模型能探索超出 SELEX 文库的序列空间</li>
+<li><strong>流程</strong>：SELEX 数据 → 序列分析 → 结构预测 → 相互作用预测 → 生成式设计 → 实验验证 → 优化迭代</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据库与 SELEX 分析工具</td>
+<td>存储和解析高通量测序数据</td>
+<td>从 SELEX 结果中提取候选序列</td>
+<td>输入：测序数据；输出：富集序列列表</td>
+<td>摘要中提及</td>
+<td>预期：失去数据驱动基础 [Analysis]</td>
+</tr>
+<tr>
+<td>二级结构预测</td>
+<td>预测适体折叠的二级结构</td>
+<td>结构信息是功能预测的基础</td>
+<td>输入：序列；输出：二级结构</td>
+<td>摘要中提及</td>
+<td>预期：下游预测精度下降 [Analysis]</td>
+</tr>
+<tr>
+<td>三级结构预测（AlphaFold 3、RoseTTAFoldNA）</td>
+<td>预测适体三维结构</td>
+<td>结合机制依赖三维结构</td>
+<td>输入：序列；输出：3D 结构</td>
+<td>摘要中提及</td>
+<td>预期：无法进行结构层面的对接与设计 [Analysis]</td>
+</tr>
+<tr>
+<td>相互作用预测（ML、对接、MD、自由能）</td>
+<td>评估适体-靶标结合</td>
+<td>筛选高亲和力候选</td>
+<td>输入：适体结构 + 靶标结构；输出：结合分数/自由能</td>
+<td>摘要中提及</td>
+<td>预期：生成序列缺乏功能筛选 [Analysis]</td>
+</tr>
+<tr>
+<td>生成式设计（AptaDiff、InstructNA、GRAPE-LM、AiDTA）</td>
+<td>de novo 生成和优化适体序列</td>
+<td>探索超出 SELEX 文库的序列空间</td>
+<td>输入：靶标信息/约束；输出：候选序列</td>
+<td>摘要中提及</td>
+<td>预期：失去 de novo 设计能力 [Analysis]</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：本文为综述，未提供消融实验数据；以上「移除后影响」均为 [Analysis] 预期推断。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。本文为综述，未提供具体公式。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：未提供（综述，无原始实验数据）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供</li>
+<li><strong>基线</strong>：SELEX 作为传统基准</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>Oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无（综述）</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>本文为综述，不包含原始实验。所有方法描述均为作者对文献的总结。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文覆盖适体发现全流程的 AI 整合，包括序列分析、结构预测、相互作用预测、生成设计、应用。</li>
+<li><strong>Oracle/真值输入</strong>：各方法依赖的实验数据（如 SELEX 富集数据、结合实验数据）作为训练/验证真值。</li>
+<li><strong>端到端状态</strong>：作者指出当前 AI 流程尚未完全实现端到端闭环，实验验证仍是必要环节。</li>
+<li><strong>算力成本</strong>：未提供具体数据；结构预测（如 AlphaFold 3）和 MD 模拟计算成本较高 [Analysis]。</li>
+<li><strong>历史数据依赖</strong>：AI 模型依赖已有适体序列和实验数据，数据质量影响模型性能。</li>
+<li><strong>模型依赖</strong>：不同模型（扩散、语言模型、RL）各有适用场景，无统一最优解。</li>
+<li><strong>最难情形</strong>：适体的构象柔性、配体诱导适应、复杂靶标（如膜蛋白）的结合预测。</li>
+<li><strong>群体/领域边界</strong>：本文聚焦核酸适体，但方法论可迁移至蛋白质/多肽适配体设计 [Analysis]。</li>
+<li><strong>不确定性</strong>：AI 生成序列的实验验证成功率仍有限，需实验闭环验证。</li>
+<li><strong>有边界的复述</strong>：AI 方法在适体发现各环节（结构预测、相互作用预测、生成设计）已展现出超越传统 SELEX 的潜力，但当前仍处于「AI 辅助」而非「AI 替代」阶段，实验验证和闭环优化仍是必要环节。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要末尾提到「challenges」和「future directions toward closed-loop, interpretable AI frameworks」，暗示当前 AI 框架缺乏闭环和可解释性。
+- 摘要中「very recent AI-driven generative design」的表述暗示该领域尚处于早期阶段。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>综述强调 2024–2026 的进展，可能选择性突出成功案例</td>
+<td>发表偏倚可能使综述过于乐观</td>
+<td>影响读者对 AI 适体设计成熟度的判断</td>
+<td>对比系统文献计量分析，统计各方法的成功率</td>
+<td>摘要中「particular emphasis on advances reported in 2024-2026」</td>
+</tr>
+<tr>
+<td>结构预测（AlphaFold 3、RoseTTAFoldNA）在核酸上的精度可能被高估</td>
+<td>这些模型主要针对蛋白质优化，核酸适配体的构象柔性更高</td>
+<td>影响结构预测模块在适体设计中的可靠性</td>
+<td>在独立核酸测试集上评估这些模型的精度</td>
+<td>摘要中提及结构预测方法</td>
+</tr>
+<tr>
+<td>生成式设计（AptaDiff、InstructNA 等）的实验验证率未量化</td>
+<td>缺乏成功率数据，难以评估实际可用性</td>
+<td>决定 AI 生成适体能否进入实际应用</td>
+<td>汇总各方法在独立实验中的验证率</td>
+<td>摘要中未提供具体数据</td>
+</tr>
+<tr>
+<td>综述未讨论 AI 方法的计算成本</td>
+<td>结构预测和 MD 模拟成本高，可能限制实际应用</td>
+<td>影响方法在资源受限实验室的可行性</td>
+<td>对比各方法的计算资源需求</td>
+<td>摘要中未提及</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>结构预测方法的迁移</strong>：AlphaFold 3、RoseTTAFoldNA 等模型虽主要针对蛋白质，但可迁移至核酸适体结构预测。本课题（蛋白质结构计算）可借鉴其架构（如扩散模型）用于蛋白质构象采样。</li>
+<li><strong>生成式设计的范式</strong>：AptaDiff（扩散模型）、InstructNA（语言模型）、GRAPE-LM（图+语言模型）、AiDTA（强化学习）展示了不同生成范式在生物分子序列设计中的应用。这些方法可直接迁移至蛋白质序列设计。</li>
+<li><strong>闭环设计框架</strong>：作者展望的「生成 → 预测 → 实验验证 → 反馈优化」闭环框架，适用于蛋白质设计，可整合 MD 模拟和实验数据形成迭代优化。</li>
+<li><strong>相互作用预测的整合</strong>：ML 方法 + 分子对接 + MD 模拟 + 自由能计算的组合策略，可用于蛋白质-配体、蛋白质-蛋白质相互作用预测。</li>
+<li><strong>数据驱动 vs 物理模拟的互补</strong>：综述强调 AI 与物理模拟（对接、MD）的结合，提示本课题中深度学习与 MD 模拟的混合方法具有潜力。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold 3</strong>（Abramson et al., 2024, Nature）：蛋白质-核酸复合物结构预测，本文将其应用于适体-靶标复合物预测。</li>
+<li><strong>RoseTTAFoldNA</strong>（Baek et al., 2024, Science）：核酸结构预测，与 AlphaFold 3 互补。</li>
+<li><strong>扩散模型在生物分子生成中的应用</strong>：与蛋白质扩散模型（如 RFdiffusion）方法同源。</li>
+<li><strong>语言模型在序列设计中的应用</strong>：与蛋白质语言模型（如 ESM、ProtGPT2）方法同源。</li>
+<li><strong>SELEX 传统方法</strong>：作为基准，与 AI 方法形成对比。</li>
+<li><strong>分子对接与 MD 模拟</strong>：经典物理模拟方法，在适体和蛋白质中通用。</li>
+</ul>
+<blockquote>
+<p>注：以上连接基于本文摘要提及的方法名称，具体文献细节未在摘要中提供。</p>
+</blockquote>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：基于扩散模型的蛋白质-适体双靶标共设计
+   - <strong>来源局限/观察</strong>：适体设计中的生成模型（AptaDiff）仅针对核酸序列，未考虑与蛋白质靶标的共折叠。
+   - <strong>核心假设</strong>：将蛋白质靶标结构作为条件输入扩散模型，可生成与靶标互补的适体序列。
+   - <strong>相对本文的增量</strong>：将适体生成从「序列空间探索」扩展至「序列-结构-功能联合设计」。
+   - <strong>初步方法</strong>：扩展 AptaDiff 架构，加入靶标结构编码器；使用 MD 模拟验证生成序列的结合稳定性。
+   - <strong>验证方式</strong>：在已知适体-蛋白质复合物数据集上评估生成序列的命中率。
+   - <strong>可能的失败模式</strong>：靶标构象柔性导致生成序列与实验结合不匹配。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：闭环 AI-MD 适体优化框架
+   - <strong>来源局限/观察</strong>：作者指出当前 AI 框架缺乏闭环，生成序列需实验验证。
+   - <strong>核心假设</strong>：将 MD 模拟的自由能计算作为生成模型的奖励信号，可迭代优化适体亲和力。
+   - <strong>相对本文的增量</strong>：实现「生成 → 物理模拟评估 → 反馈优化」的闭环。
+   - <strong>初步方法</strong>：使用强化学习（类似 AiDTA）将 MD 计算的结合自由能作为奖励函数。
+   - <strong>验证方式</strong>：在 3–5 个已知靶标上比较闭环优化与单轮生成的适体亲和力。
+   - <strong>可能的失败模式</strong>：MD 模拟计算成本过高，导致优化迭代不可行。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：蛋白质构象采样中的扩散模型-语言模型混合方法
+   - <strong>来源局限/观察</strong>：适体领域同时使用扩散模型（AptaDiff）和语言模型（InstructNA、GRAPE-LM），但蛋白质构象采样中两者尚未充分结合。
+   - <strong>核心假设</strong>：语言模型提供序列先验，扩散模型提供结构先验，二者结合可提升蛋白质构象采样效率。
+   - <strong>相对本文的增量</strong>：将适体领域的混合生成策略迁移至蛋白质构象采样。
+   - <strong>初步方法</strong>：使用 GRAPE-LM 的图表示学习 + 扩散模型的结构生成，在蛋白质构象数据集上评估。
+   - <strong>验证方式</strong>：与单一模型对比采样多样性和构象能量分布。
+   - <strong>可能的失败模式</strong>：两种模型的潜在空间不兼容，融合困难。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：基于 AlphaFold 3 的适体-蛋白质复合物结构预测基准测试
+   - <strong>来源局限/观察</strong>：AlphaFold 3 被提及用于适体-靶标预测，但其在核酸-蛋白质复合物上的精度未系统评估。
+   - <strong>核心假设</strong>：AlphaFold 3 在适体-蛋白质复合物上的精度低于蛋白质-蛋白质复合物。
+   - <strong>相对本文的增量</strong>：为适体领域提供结构预测的可靠性基准。
+   - <strong>初步方法</strong>：收集已知适体-蛋白质复合物结构，评估 AlphaFold 3 的预测精度（RMSD、DockQ）。
+   - <strong>验证方式</strong>：与实验结构对比，统计不同靶标类型的成功率。
+   - <strong>可能的失败模式</strong>：公开的适体-蛋白质复合物结构数量有限，统计功效不足。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：蛋白质设计中的「序列 → 结构 → 功能」联合优化框架
+   - <strong>来源局限/观察</strong>：适体领域强调「sequence to structure to function」的完整链条，蛋白质设计多聚焦于序列-结构映射。
+   - <strong>核心假设</strong>：将功能预测（如结合亲和力）纳入蛋白质设计的目标函数，可提升设计成功率。
+   - <strong>相对本文的增量</strong>：将适体领域的全链条设计理念迁移至蛋白质设计。
+   - <strong>初步方法</strong>：在蛋白质设计流程中加入功能预测模块（如对接分数、MD 自由能），形成多目标优化。
+   - <strong>验证方式</strong>：在酶设计或结合蛋白设计任务中对比有无功能模块的成功率。
+   - <strong>可能的失败模式</strong>：功能预测模块计算成本高，且与结构生成目标冲突。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and scope as presented in the abstract; no access to full text, figures, tables, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The abstract claims that AI integration is driving a paradigm shift in aptamer discovery, moving from empirical SELEX-based screening to rational, data-driven design. It asserts comprehensive coverage of the pipeline, including databases, structure prediction (AlphaFold 3, RoseTTAFoldNA, diffusion-based approaches), interaction prediction, molecular docking, dynamics, free energy calculations, generative design (AptaDiff, InstructNA, GRAPE-LM, AiDTA), and applications in diagnostics, therapy, and biosensing. It further claims to synthesize 2024-2026 advances and to serve as a timely resource.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, references, or methodological details provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, reference list, case studies, benchmark comparisons, and any quantitative performance data</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a broad and timely overview of AI applications in aptamer discovery, with a plausible structure and a clear emphasis on recent advances. However, the claims of comprehensiveness and paradigm shift cannot be evaluated from the abstract alone. The absence of specific examples, quantitative outcomes, or critical comparisons with SELEX limits the ability to assess whether the review offers genuine insight beyond a catalogue of tools. The abstract reads as a well-organized roadmap, but the depth, balance, and critical analysis remain unverified.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in aptamer engineering, computational biology, and AI-driven drug discovery would find this review relevant. Those seeking an entry point into AI tools for nucleic acid design, structure prediction, or generative modeling would benefit from a curated synthesis. The emphasis on 2024-2026 advances may attract readers tracking rapid developments in this space.</li>
+<li><strong>Major strengths</strong> The abstract is clearly structured around the full pipeline, from data analysis to generative design and applications. The inclusion of named tools and models (AlphaFold 3, RoseTTAFoldNA, AptaDiff, InstructNA, GRAPE-LM, AiDTA) signals concrete coverage rather than vague generalities. The stated focus on very recent work (2024-2026) suggests currency, which is valuable in a fast-moving field.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li><strong>R1-M1</strong>  <ul>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Claim substantiation  </li>
+<li><strong>Claim pointer</strong> The abstract claims a "paradigm shift from empirical screening toward rational, data-driven design" and "comprehensive overview of AI integration across the entire aptamer development pipeline."  </li>
+<li><strong>Evidence pointer</strong> Abstract only; no supporting data, case studies, or comparative analyses provided  </li>
+<li><strong>Concern</strong> The abstract asserts a paradigm shift and comprehensive coverage without presenting any evidence of how AI-designed aptamers outperform SELEX-derived ones in practice. No specific examples, success rates, or validation results are mentioned.  </li>
+<li><strong>Why it matters</strong> A review claiming a paradigm shift must substantiate that claim with concrete examples of AI-designed aptamers that have been experimentally validated and shown to match or exceed SELEX outcomes. Without such evidence, the claim remains rhetorical.  </li>
+<li><strong>Resolution test</strong> Provide at least two to three documented cases where AI-designed aptamers were experimentally validated, with performance metrics compared against SELEX-derived aptamers for the same target.  </li>
+</ul>
+</li>
+<li><strong>R1-M2</strong>  <ul>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Scope and balance  </li>
+<li><strong>Claim pointer</strong> The abstract claims to cover "state-of-the-art strategies" and "very recent AI-driven generative design" across multiple model families.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; no indication of selection criteria, inclusion/exclusion rules, or critical assessment of the tools listed  </li>
+<li><strong>Concern</strong> The abstract lists many tools and methods but does not indicate whether the review critically compares them, identifies limitations, or discusses failure modes. A list of tools without critical evaluation risks becoming a directory rather than a review.  </li>
+<li><strong>Why it matters</strong> Readers need guidance on which tools are mature, which are speculative, and what trade-offs exist. A review that merely catalogues tools without critical assessment has limited utility.  </li>
+<li><strong>Resolution test</strong> Include a comparative table or section that evaluates each major tool class on criteria such as accuracy, computational cost, ease of use, and experimental validation status.  </li>
+</ul>
+</li>
+<li><strong>R1-M3</strong>  <ul>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Reproducibility and transparency  </li>
+<li><strong>Claim pointer</strong> The abstract claims to synthesize "the latest computational and experimental advances" and to outline "future directions toward closed-loop, interpretable AI frameworks."  </li>
+<li><strong>Evidence pointer</strong> Abstract only; no mention of how the literature was searched, screened, or synthesized  </li>
+<li><strong>Concern</strong> The abstract does not describe the methodology for selecting and synthesizing the literature. Without a clear search strategy, inclusion criteria, or quality assessment, the review's conclusions cannot be independently verified or reproduced.  </li>
+<li><strong>Why it matters</strong> For a review to be a reliable resource, the methodology must be transparent. This is especially important in a fast-moving field where selective citation can skew the perceived state of the art.  </li>
+<li><strong>Resolution test</strong> Add a methods section describing the literature search strategy, databases used, time window, and inclusion/exclusion criteria.  </li>
+</ul>
+</li>
+<li><strong>Minor Comments</strong>  </li>
+<li><strong>R1-m1</strong>  <ul>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Title  </li>
+<li><strong>Evidence pointer</strong> Abstract title  </li>
+<li><strong>Issue</strong> The title "Beyond SELEX: AI-driven aptamers from sequence to structure to function" is catchy but may overstate the degree to which AI has moved beyond SELEX, given that most AI-designed aptamers still require experimental screening for validation.  </li>
+<li><strong>Required correction</strong> Consider a more measured title, such as "Integrating AI with SELEX: from sequence to structure to function in aptamer discovery."  </li>
+</ul>
+</li>
+<li><strong>R1-m2</strong>  <ul>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Precision  </li>
+<li><strong>Affected element</strong> Claim of "paradigm shift"  </li>
+<li><strong>Evidence pointer</strong> Abstract, first sentence  </li>
+<li><strong>Issue</strong> The phrase "paradigm shift" is used without qualification. In practice, AI tools are often used to augment SELEX rather than replace it.  </li>
+<li><strong>Required correction</strong> Soften the language to "a complementary shift" or "an accelerating integration" to reflect the current hybrid nature of most workflows.  </li>
+</ul>
+</li>
+<li><strong>R1-m3</strong>  <ul>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Completeness  </li>
+<li><strong>Affected element</strong> Applications section  </li>
+<li><strong>Evidence pointer</strong> Abstract, applications sentence  </li>
+<li><strong>Issue</strong> The abstract mentions diagnostics, therapy, and biosensing but does not indicate whether the review covers regulatory, manufacturing, or clinical translation challenges, which are often the bottleneck for aptamer adoption.  </li>
+<li><strong>Required correction</strong> Add a sentence indicating whether translational challenges are addressed, or explicitly state that they are outside the scope.  </li>
+</ul>
+</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The abstract does not provide any quantitative evidence that AI-driven approaches outperform or complement SELEX in practice. The claim of a paradigm shift is unsupported without at least one concrete, validated example. The absence of a methodology for the literature synthesis is a technical shortcoming that undermines reproducibility.</li>
+<li><strong>Assessment against Nature-style criteria</strong>  </li>
+<li><strong>Originality</strong> The abstract suggests a synthesis of very recent work, which could be timely, but the originality of the conceptual framework is not evident from the abstract alone. The "sequence to structure to function" framing is not novel.  </li>
+<li><strong>Scientific importance</strong> The topic is important, and a well-executed review could be valuable. However, the abstract does not demonstrate that the review offers new insights beyond what is already available in existing reviews.  </li>
+<li><strong>Interdisciplinary readership</strong> The abstract is written in accessible language and should appeal to both computational and experimental researchers. The named tools provide concrete anchors.  </li>
+<li><strong>Technical soundness</strong> Cannot be assessed from the abstract. The lack of methodology and absence of critical evaluation are concerns.  </li>
+<li><strong>Readability for nonspecialists</strong> The abstract is clear and well-structured, but terms like "diffusion models" and "reinforcement learning" are used without brief explanation, which may limit accessibility for experimental biologists.  </li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract outlines a plausible and timely review, but the core claims of comprehensiveness and paradigm shift require the full manuscript to verify. A revised abstract with at least one concrete example of a validated AI-designed aptamer and a brief mention of the review methodology would strengthen the case.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of a "paradigm shift" from SELEX to AI-driven design is unsupported in the abstract, as no comparative evidence is provided.</li>
+<li>The claim of "comprehensive overview" cannot be verified without the full manuscript.</li>
+<li>The assertion that the review "synthesizes the latest computational and experimental advances" is unverifiable from the abstract alone.</li>
+<li>The named tools (AlphaFold 3, RoseTTAFoldNA, AptaDiff, InstructNA, GRAPE-LM, AiDTA) are listed without any indication of their maturity, limitations, or validation status, which risks overstating their readiness for routine use.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

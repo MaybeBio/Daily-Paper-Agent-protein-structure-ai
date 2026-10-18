@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beyond Ramachandran distributions: quantifying secondary structure effects on amino acids and their pairs in the full torsional space · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Beyond Ramachandran distributions: quantifying secondary structure effects on amino acids and their pairs in the full torsional space</h1>
+      <div class="meta">Carrière G; Robert CH; Cazals F</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-12
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.09.758016">原文</a>
+      </div>
+      <p class="one-liner">该文用循环统计混合模型在完整扭转角空间量化氨基酸及其配对在不同二级结构下的构象偏好，虽非AI/物理模拟方法，但为蛋白质构象生成提供了可嵌入生成模型的统计框架，与蛋白质结构计算课题相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The Ramachandran diagram has long served for understanding protein secondary structure elements (SSEs), despite the multitude of factors contributing to their occurrence. Starting from recently introduced circula-based multivariate torsion-angle distribution (CBMD) mixture models – accommodating covariance structure in the full torsion-angle space of amino acids, we define continuous densities for the 20 amino acids and 400 amino-acid pairs in dimension up to 14, conditioned by SSE labels. Projecting these higher-dimensional distributions onto the classical Ramachandran diagram reveals how secondary structures in the protein universe emerge from amino-acid-dependent conformational preferences reflecting influences beyond backbone dihedrals alone. Our analysis links the traditional geometric description of local protein structure to modern statistical models of the full conformational space of amino acids and amino-acid pairs, while providing a framework for generating protein conformations consistent with any given secondary structure environment – a feature that remains difficult to enforce explicitly in current AI-based generative models.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">Ramachandran图长期以来一直用于理解蛋白质二级结构元件（SSEs），尽管其出现受多种因素影响。基于最近引入的基于圆形的多变量扭转角分布（CBMD）混合模型——该模型适应氨基酸全扭转角空间中的协方差结构，我们为20种氨基酸和400种氨基酸对定义了维度高达14的连续密度，并以SSE标签为条件。将这些高维分布投影到经典的Ramachandran图上，揭示了蛋白质宇宙中的二级结构如何从氨基酸依赖的构象偏好中涌现，这些偏好反映了超越主链二面角之外的影响。我们的分析将局部蛋白质结构的传统几何描述与氨基酸及氨基酸对全构象空间的现代统计模型联系起来，同时提供了一个框架，用于生成与任何给定二级结构环境一致的蛋白质构象——这一特性在当前基于AI的生成模型中仍难以显式实现。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Beyond Ramachandran distributions: quantifying secondary structure effects on amino acids and their pairs in the full torsional space</li>
+<li><strong>作者与单位</strong>：Carrière G; Robert CH; Cazals F（未提供单位，从 Funding 推断为法国 Inria 与 CNRS 相关机构）</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 数据分析）</li>
+<li><strong>领域</strong>：蛋白质结构计算研究 × 统计建模（方向性统计 / 混合模型）</li>
+<li><strong>关键词</strong>：Ramachandran diagram, secondary structure elements (SSE), torsion-angle distributions, circula-based multivariate distribution (CBMD), mixture models, amino-acid pairs, helix capping</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.10.09.758016</li>
+<li><strong>代码</strong>：https://sbl.inria.fr/data/higher-ramachandran/（模型参数与 Python 加载/使用代码）</li>
+<li><strong>数据</strong>：PDB50 语料库（38,885 个非冗余结构，R-factor ≤ 0.3，分辨率 ≤ 3.5 Å）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构计算研究 × 统计/生成模型」交叉方向，聚焦于<strong>二级结构条件化</strong>的 torsion-angle 分布建模。与 AlphaFold2 结构模块的 torsion 生成、构象采样、loop 建模等任务直接相关，为 AI 生成模型提供可显式控制 SSE 的统计先验与评估工具。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文利用 circula-based multivariate distribution (CBMD) 混合模型，在完整 torsion 空间（维度最高 14）中为 20 种氨基酸及 400 种氨基酸对构建了<strong>二级结构（SSE）条件化</strong>的概率密度，通过重加权（reweighting）而非重新拟合实现高效条件化，揭示了 backbone torsion 是 SSE 决定性的主要因素、side-chain torsion 受 SSE 影响较小但存在氨基酸特异性模式，并展示了该框架在 helix capping 分析中的可解释性价值。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何定量刻画二级结构标签（SSE）对氨基酸及其配对在<strong>完整 torsion 空间</strong>（含 backbone φ/ψ 与 side-chain χ 角）中构象分布的影响？传统 Ramachandran 图与 SSE 标签的叠加是定性的，缺乏统计严谨性。</li>
+<li><strong>为什么重要</strong>：二级结构是蛋白质结构描述的基本单元，但 SSE 标签与 torsion 角分布之间的定量关系从未被系统建立。该关系对构象生成、结构预测、loop 建模、helix capping 机制理解均有直接意义。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>Ramachandran 图是二维投影，忽略 side-chain 角度与氨基酸间相关性；</li>
+<li>传统 SSE 区域划分（如 DSSP/STRIDE）依赖离散判据，边界具有任意性；</li>
+<li>现有 AI 生成模型（如 AlphaFold2）难以显式控制 SSE 条件；</li>
+<li>独立估计每个 SSE 子集的密度会因小样本而过拟合，且无法利用全量数据。</li>
+<li><strong>精确研究问题</strong>：Can we construct statistically rigorous, SSE-conditioned probability densities in the full torsional space of amino acids and amino-acid pairs, and use them to quantify the extent to which backbone versus side-chain torsions determine secondary structure assignment?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」——基于本文引用与领域常识，但具体分期框架为本文叙述方式）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经典 Ramachandran 分析（1963–）</td>
+<td>Ramachandran 图 [1]</td>
+<td>直观、计算简单</td>
+<td>仅二维、定性、忽略 side-chain 与相关性</td>
+</tr>
+<tr>
+<td>SSE 自动标注（1983–）</td>
+<td>DSSP [8,9]、STRIDE [12]</td>
+<td>自动化、可复现</td>
+<td>离散判据、边界任意、与 torsion 分布无统计关联</td>
+</tr>
+<tr>
+<td>能量/几何分析（2000s–）</td>
+<td>模型肽 + MD + PDB 分析 [6,7]</td>
+<td>物理可解释</td>
+<td>难以覆盖全 torsion 空间与序列多样性</td>
+</tr>
+<tr>
+<td>方向性统计混合模型（2010s–）</td>
+<td>PhiSiCal [17]、CBMD [18]</td>
+<td>全 torsion 空间、含协方差、连续密度</td>
+<td>未条件化 SSE，无法直接用于 SSE 相关分析</td>
+</tr>
+<tr>
+<td><strong>本文（2026）</strong></td>
+<td><strong>SSE 条件化 CBMD（重加权）</strong></td>
+<td>统计严谨、计算高效、支持氨基酸对、可解释</td>
+<td>依赖 PDB50 语料与 DSSP4 标签定义</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在 PhiSiCal/CBMD 的全 torsion 空间混合模型基础上，通过<strong>标签重加权</strong>而非重新拟合实现 SSE 条件化，填补了 Ramachandran 图与 SSE 标签之间定量关系的空白，并为 AI 生成模型提供可显式控制 SSE 的统计工具。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ramachandran 图与 SSE 标签的叠加是定性的</td>
+<td>无法量化 SSE 对 torsion 分布的影响强度与边界</td>
+<td>二维投影丢失 side-chain 信息；SSE 是离散标签，与连续 torsion 空间无直接统计桥梁</td>
+<td>Introduction 1.1 节</td>
+</tr>
+<tr>
+<td>SSE 子集独立估计易过拟合</td>
+<td>某些 SSE 标签（如 π-helix）样本极少</td>
+<td>独立估计需要为每个子集重新拟合，小样本下混合模型参数不稳定</td>
+<td>Methods 2.1 节「straightforward strategy…prone to overfitting」</td>
+</tr>
+<tr>
+<td>现有 AI 生成模型难以显式控制 SSE</td>
+<td>AlphaFold2 等模型无法在生成时指定二级结构环境</td>
+<td>生成模型以序列为条件，SSE 是隐式学习而非显式可控变量</td>
+<td>Outlook 节「remains difficult to enforce explicitly in current AI-based generative models」</td>
+</tr>
+<tr>
+<td>Ramachandran 区域与物理约束存在表观矛盾</td>
+<td>γ 区域位于 steric exclusion 边界内</td>
+<td>传统 steric 图基于模型肽拟合，未考虑全蛋白环境与 Gly 的特殊性</td>
+<td>Results 3.1 节「γ 区域 seldom populated…Gly 的 absence of Cβ relaxes the entire structure」</td>
+</tr>
+<tr>
+<td>SSE 标签在 torsion 空间存在固有模糊性</td>
+<td>同一 φ/ψ 位置对应多种 SSE 标签</td>
+<td>不同 SSE 的 torsion 分布存在重叠，离散标签无法反映连续过渡</td>
+<td>Results 3.1 节 entropy 图（Fig. S3）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<ul>
+<li>使用 CBMD 混合模型（含协方差结构、定义在 flat torus T^d 上）作为 baseline 的 SSE-agnostic 模型；</li>
+<li>对每个 SSE 标签 j，通过计算每个混合分量对标签 j 的<strong>责任度（responsibility）</strong>，将原始权重 w_k 重加权为 w_k^(j)，得到条件化密度 p(x|j)；</li>
+<li>对氨基酸对（20×20），在维度最高 14 的 torsion 空间中构建 SSE 标签对条件化密度；</li>
+<li>用 credible region（最高密度区域）可视化，用 Jensen-Shannon 散度量化 SSE 间差异，用 entropy 图量化标签不确定性。</li>
+</ul>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>重加权而非重拟合</strong>：SSE 条件化可以通过对已有混合模型的权重进行标签责任度加权实现，计算成本为 O(NKc_f)，远低于重新估计混合模型（EM 迭代），且天然避免了小样本 SSE 子集的过拟合问题。</li>
+<li><strong>Backbone torsion 是 SSE 的主要决定因素</strong>：JS 散度分析表明，仅用 backbone 角度与用全部角度得到的 SSE 间差异几乎一致（差异均值 -0.0005），说明 side-chain 角度对 SSE 判定的增量信息极小。</li>
+<li><strong>Side-chain 受 SSE 影响存在氨基酸特异性</strong>：虽然整体影响小，但 H/α-helix 标签对 side-chain 影响最大，且 Phe/Trp/Tyr 等芳香族氨基酸的 side-chain 对 SSE 更敏感。</li>
+<li><strong>SSE 标签在 torsion 空间存在固有模糊性</strong>：entropy 图显示 κ-helix 区域和 δ-bridge 区域存在多标签重叠，说明离散 SSE 标签无法完全刻画 torsion 空间的连续结构过渡。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>条件化密度可以通过重加权实现</strong>：当 baseline 模型已充分覆盖数据空间时，条件化不必重新拟合——这一策略可迁移到其他「给定条件变量」的构象分布建模任务（如给定温度、配体结合状态等）。</li>
+<li><strong>高维全 torsion 空间分布可以投影回低维经典图</strong>：本文展示了如何将高维密度投影到 Ramachandran 图并与经典区域对比，弥合了现代统计模型与传统可视化工具之间的鸿沟。</li>
+<li><strong>SSE 标签的模糊性是本质而非缺陷</strong>：entropy 分析提示，任何基于离散 SSE 标签的评估（如 AlphaFold2 的 pLDDT 与 SSE 一致性检查）都应考虑标签固有的不确定性。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：
+- PDB50 语料库（38,885 个非冗余蛋白结构）
+- DSSP4 分配的 9 种 SSE 标签（G/H/I/P/B/E/S/T/C）
+- 每个氨基酸的 torsion 角集合：backbone (φ, ψ) + side-chain χ 角（数量取决于氨基酸类型，ARG 最多 5 个 χ 角，总维度 7；氨基酸对最高维度 14）</p>
+<p><strong>输出</strong>：
+- 20 个氨基酸 × 9 个 SSE 标签的条件化密度 p(x|j)，定义在 T^2 至 T^7
+- 400 个氨基酸对 × 64 个 SSE 标签对的条件化密度，定义在 T^4 至 T^14
+- Credible region 图（t=0.75）、JS 散度矩阵、SSE 标签 entropy 图</p>
+<p><strong>模块</strong>：
+1. <strong>Baseline CBMD 混合模型</strong>：从 PhiSiCal [17] 和 CBMD [18] 继承的混合模型，分量含协方差结构，定义在 flat torus 上，通过最小消息长度（MML）选择分量数 K
+2. <strong>SSE 条件化模块</strong>：对每个标签 j，计算每个混合分量 k 的责任度 m_kj（即分量 k 中标签 j 的期望比例），重加权 w_k^(j) ∝ w_k · m_kj
+3. <strong>可视化模块</strong>：credible region 计算（最高密度区域）、Ramachandran 投影、entropy 图
+4. <strong>差异量化模块</strong>：JS 散度计算（全空间 vs backbone-only vs side-chain-only）</p>
+<p><strong>流程</strong>：
+1. 从 PDB50 提取所有氨基酸的 torsion 角与 DSSP4 标签
+2. 估计 SSE-agnostic 的 CBMD 混合模型（每个氨基酸类型一个，每个氨基酸对一个）
+3. 对每个 SSE 标签 j，计算责任度向量并重加权得到 p(x|j)
+4. 计算 credible region 并投影到 Ramachandran 图，与参考区域 [13] 对比
+5. 计算 JS 散度矩阵（9×9），分析 backbone vs side-chain 贡献
+6. 对氨基酸对，按 4 类 SSE 分组（Helix/Strand/κ-Helix/Bend-Turn）分析 transition 模式
+7. 以 SER-ALA 配对为例，展示 χ₁ 分布在 helix capping 环境中的差异</p>
+<p><strong>假设</strong>：
+- DSSP4 标签是 ground truth（作者选择 DSSP4 而非 STRIDE，因后者使用 Ramachandran 先验，会造成循环论证）
+- CBMD 混合模型已充分捕捉 SSE-agnostic 的 torsion 分布
+- 重加权策略假设每个混合分量内部标签分布均匀（即 m_kj 估计准确）</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CBMD 混合模型（baseline）</td>
+<td>在 flat torus 上建模 torsion 角联合分布，含协方差结构</td>
+<td>提供 SSE-agnostic 的完整构象分布描述，是条件化的基础</td>
+<td>输入：PDB50 torsion 角数据；输出：K 个混合分量（均值、协方差、权重）</td>
+<td>Methods 2.2 节引用 [18]；Fig. 1 展示 ALA 生成点</td>
+<td>无法进行后续条件化；若用 PhiSiCal（无协方差）替代，会丢失角度间相关性信息</td>
+</tr>
+<tr>
+<td>SSE 责任度计算与重加权</td>
+<td>将 SSE-agnostic 模型转化为 SSE 条件化模型</td>
+<td>避免独立拟合小样本子集，实现高效条件化</td>
+<td>输入：baseline 模型 + 标签数据；输出：条件化权重 w_k^(j)</td>
+<td>Methods 2.1 节公式 (2)；复杂度 O(NKc_f) 论证</td>
+<td>若移除，需为每个 SSE 独立拟合模型，π-helix 等小样本标签将严重过拟合</td>
+</tr>
+<tr>
+<td>Credible region 计算</td>
+<td>提取密度最高区域（t=0.75）用于可视化</td>
+<td>将高维密度转化为可解释的二维投影</td>
+<td>输入：条件化密度；输出：等高线图</td>
+<td>Results 3.1 节 Fig. 2、Fig. S1</td>
+<td>无法直观对比 SSE 间差异；退化为点云散点图</td>
+</tr>
+<tr>
+<td>JS 散度分析</td>
+<td>量化 SSE 标签对 torsion 分布的影响强度</td>
+<td>回答「SSE 在多大程度上决定 torsion 分布」</td>
+<td>输入：条件化密度对；输出：9×9 散度矩阵</td>
+<td>Results 3.2 节 Fig. S4/S5；backbone vs side-chain 差异统计</td>
+<td>无法区分 backbone 与 side-chain 贡献；无法识别氨基酸特异性模式</td>
+</tr>
+<tr>
+<td>SSE 标签 entropy 图</td>
+<td>量化 Ramachandran 图上每个位置的标签不确定性</td>
+<td>揭示 SSE 标签的固有模糊性</td>
+<td>输入：条件化密度；输出：entropy 热图</td>
+<td>Results 3.1 节 Fig. S3；entropy ≈ ln 6 区域</td>
+<td>无法识别标签重叠区域；过度信任离散 SSE 标签</td>
+</tr>
+<tr>
+<td>氨基酸对条件化密度</td>
+<td>分析相邻氨基酸的 SSE transition 模式</td>
+<td>捕捉序列邻近效应与构象相关性</td>
+<td>输入：20×20 氨基酸对 + 8×8 SSE 标签对；输出：25,600 个条件化密度</td>
+<td>Results 3.3 节 Fig. 3、Fig. S6/S7</td>
+<td>无法分析 SSE transition 与 helix capping 等序列 motif</td>
+</tr>
+<tr>
+<td>Helix capping 案例分析</td>
+<td>展示条件化密度在具体生物学问题中的应用</td>
+<td>验证方法的实际价值</td>
+<td>输入：SER-ALA 配对在 {¬H-¬H} 与 {¬H-H} 环境下的 χ₁ 分布</td>
+<td>Results 3.3 节 Fig. 4</td>
+<td>方法停留在抽象分布层面，缺乏生物学可解释性</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>1. 条件化密度的重加权公式</strong>（Methods 2.1 节，公式 2）：</p>
+<p>p(x|j) = Σ_{k=1}^{K} w_k^(j) · f_k(x)</p>
+<p>其中 w_k^(j) = (w_k · m_kj) / Σ_{k'=1}^{K} (w_k' · m_k'j)</p>
+<ul>
+<li>x ∈ T^d：torsion 角向量，定义在 d 维 flat torus 上</li>
+<li>j ∈ ℒ = {1, …, S}：SSE 标签（S = 9，DSSP4 标签）</li>
+<li>K：混合分量数</li>
+<li>w_k：第 k 个分量的原始权重（SSE-agnostic）</li>
+<li>f_k(x)：第 k 个分量的密度函数（CBMD 形式，含协方差结构）</li>
+<li>m_kj：第 k 个分量对标签 j 的责任度（responsibility），满足 Σ_j m_kj = 1</li>
+</ul>
+<p><strong>2. Credible region 定义</strong>（Methods 2.1 节）：</p>
+<p>对于密度 f 和质量分数 t ∈ (0,1)，阈值 c_t 满足：
+∫_{f(x) ≥ c_t} f(x) dx = t</p>
+<p><strong>3. SSE 标签熵</strong>（Methods 2.1 节，公式 14）：</p>
+<p>H(x) = -Σ_{j∈ℒ} p(j|x) ln p(j|x)</p>
+<p>在 Ramachandran 图网格化后逐格计算。</p>
+<p><strong>4. Jensen-Shannon 散度</strong>（Methods 2.1 节，公式 15/17）：</p>
+<p>D_JS(p(x|j₁) ∥ p(x|j₂)) = ½ D_KL(p(x|j₁) ∥ M) + ½ D_KL(p(x|j₂) ∥ M)</p>
+<p>其中 M = ½(p(x|j₁) + p(x|j₂))，D_KL 为 KL 散度。以自然对数计，0 ≤ D_JS ≤ ln 2。</p>
+<p><strong>直觉</strong>：
+- 重加权公式的本质是<strong>贝叶斯条件化</strong>：w_k^(j) ∝ w_k · P(j|k)，即先验权重乘以分量对标签的似然。
+- D_JS 上界 ln 2 意味着完全可分的两个分布散度为 0.693，可用于归一化比较。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>：
+- PDB50 语料库：38,885 个非冗余蛋白结构（R-factor ≤ 0.3，分辨率 ≤ 3.5 Å）
+- DSSP4 分配 9 种 SSE 标签（G/H/I/P/B/E/S/T/C）
+- 与 baseline CBMD 模型估计使用相同数据（无独立测试集）</p>
+<p><strong>指标</strong>：
+- Credible region 覆盖率（t=0.75）
+- JS 散度（全空间、backbone-only、side-chain-only 三种设置）
+- SSE 标签熵（Ramachandran 图网格化）</p>
+<p><strong>基线</strong>：
+- 参考 Ramachandran 区域定义 [13]
+- PhiSiCal 模型 [17]（无协方差结构）
+- 独立 SSE 子集拟合（作为对照，论证重加权优势）</p>
+<p><strong>评测协议</strong>：
+- 定性：credible region 图与参考区域叠加对比
+- 定量：JS 散度矩阵、entropy 图
+- 案例：SER-ALA 配对 χ₁ 分布对比</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单氨基酸 SSE 条件化密度</td>
+<td>SSE 标签对应不同的 torsion 分布</td>
+<td>20 氨基酸 × 9 SSE 标签，credible region 与参考区域 [13] 对比</td>
+<td>H/α-helix 区域明确；G/I 与 S/T/C 重叠；B/E 高度一致</td>
+<td>SSE 条件化密度可统计定义 Ramachandran 区域</td>
+<td>不能证明 SSE 标签完全决定 torsion 分布</td>
+<td>Results 3.1 节 Fig. 2、Fig. S1</td>
+</tr>
+<tr>
+<td>JS 散度：全空间 vs backbone-only</td>
+<td>Backbone torsion 是 SSE 的主要决定因素</td>
+<td>720 个氨基酸/SSE 组合，比较全空间与 backbone-only 的 D_JS</td>
+<td>差异均值 -0.0005，中位数 0.00</td>
+<td>Side-chain 对 SSE 判定的增量信息极小</td>
+<td>不能排除 side-chain 在特定氨基酸/SSE 组合中的重要性</td>
+<td>Results 3.2 节 Fig. S4</td>
+</tr>
+<tr>
+<td>JS 散度：side-chain-only</td>
+<td>Side-chain 受 SSE 影响存在氨基酸特异性</td>
+<td>20 氨基酸 × 9 SSE 标签，仅用 χ 角</td>
+<td>H 标签影响最大；Phe/Trp/Tyr 更敏感；Asn/Asp 有 B/C 特异模式</td>
+<td>Side-chain 影响虽小但非零，且具有氨基酸特异性</td>
+<td>不能确定这些模式的生物学功能意义</td>
+<td>Results 3.2 节 Fig. S5</td>
+</tr>
+<tr>
+<td>SSE 标签 entropy 图</td>
+<td>Ramachandran 空间存在标签模糊区域</td>
+<td>9 标签 entropy 计算，网格化</td>
+<td>κ-helix 区域和 δ-bridge 区域 entropy ≈ ln 6</td>
+<td>离散 SSE 标签无法完全刻画 torsion 空间连续过渡</td>
+<td>不能确定模糊区域是否对应真实的结构中间态</td>
+<td>Results 3.1 节 Fig. S3</td>
+</tr>
+<tr>
+<td>氨基酸对 SSE transition</td>
+<td>相邻氨基酸的 SSE 组合影响构象分布</td>
+<td>25,600 个条件化密度，按 4 类 SSE 分组</td>
+<td>transition 模式存在显著不对称性</td>
+<td>氨基酸对条件化密度可捕捉序列邻近效应</td>
+<td>不能确定这些模式是否具有普遍性（受限于 PDB50 样本）</td>
+<td>Results 3.3 节 Fig. 3、Fig. S6/S7</td>
+</tr>
+<tr>
+<td>Helix capping 案例</td>
+<td>条件化密度可解释具体生物学 motif</td>
+<td>SER-ALA 在 {¬H-¬H} vs {¬H-H} 环境下的 χ₁</td>
+<td>螺旋环境下 SER χ₁ 几乎 exclusively g+</td>
+<td>条件化密度可定量揭示 helix capping 的 side-chain 构象偏好</td>
+<td>不能推广到所有 capping motif</td>
+<td>Results 3.3 节 Fig. 4</td>
+</tr>
+<tr>
+<td>γ 区域与 steric exclusion 矛盾</td>
+<td>传统 steric 图与统计密度存在表观矛盾</td>
+<td>γ 区域 credible region 与 steric exclusion 边界对比</td>
+<td>γ 区域 seldom populated，主要贡献来自 Gly</td>
+<td>矛盾源于模型肽 vs 全蛋白环境差异及 Gly 特殊性</td>
+<td>不能完全排除其他氨基酸在 γ 区域的贡献</td>
+<td>Results 3.1 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>：本文仅针对 torsion 角分布（backbone φ/ψ + side-chain χ）的 SSE 条件化建模，不涉及蛋白质三级结构预测、能量计算或动力学模拟。</p>
+<p><strong>oracle/真值输入</strong>：DSSP4 标签作为 SSE ground truth。作者明确选择 DSSP4 而非 STRIDE，因 STRIDE 使用 Ramachandran 先验会造成循环论证。</p>
+<p><strong>端到端状态</strong>：非端到端。模型输出为概率密度函数，而非直接的结构坐标或能量。生成应用（如采样 torsion 角）需要额外步骤。</p>
+<p><strong>算力成本</strong>：重加权策略计算成本为 O(NKc_f)，远低于重新拟合。但 baseline CBMD 模型的估计成本未在文中讨论。</p>
+<p><strong>历史数据依赖</strong>：模型完全依赖 PDB50 语料库（截至估计时的结构集合）。PDB 的组成偏差（如可溶性蛋白偏好、晶体结构偏好）会直接影响条件化密度。</p>
+<p><strong>模型依赖</strong>：结果依赖于 CBMD 混合模型的表达力与 MML 选择的分量数 K。若 baseline 模型未能充分覆盖 torsion 空间，条件化密度也会失真。</p>
+<p><strong>最难情形</strong>：π-helix（I）和 κ-helix（P）等稀有 SSE 标签的样本量极小，条件化密度的可靠性受限。作者通过重加权缓解了过拟合，但无法完全消除小样本问题。</p>
+<p><strong>群体/领域边界</strong>：结论基于 PDB50 中的球蛋白结构，不适用于膜蛋白、 intrinsically disordered proteins（IDPs）或非标准氨基酸。</p>
+<p><strong>不确定性</strong>：JS 散度差异（backbone vs side-chain）的统计显著性未报告置信区间。entropy 图的网格化分辨率未说明。</p>
+<p><strong>有边界的复述</strong>：在 PDB50 语料库和 DSSP4 标签定义下，本文构建的 SSE 条件化 torsion 密度表明：(1) backbone torsion 是 SSE 判定的主要决定因素；(2) side-chain torsion 受 SSE 影响较小但存在氨基酸特异性模式；(3) 重加权策略可高效实现条件化。这些结论不直接推广到其他 SSE 标注方案（如 STRIDE）或其他蛋白质类别。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>稀有 SSE 标签样本量小</td>
+<td>π-helix（I）和 κ-helix（P）等标签的观测较少，条件化密度可能不稳定</td>
+<td>未明确提及（隐含在重加权策略中缓解）</td>
+<td>Methods 2.1 节</td>
+</tr>
+<tr>
+<td>依赖 DSSP4 标签定义</td>
+<td>标签是离散的，无法完全刻画 torsion 空间的连续过渡</td>
+<td>使用 entropy 图量化不确定性，但未提出替代标签方案</td>
+<td>Results 3.1 节</td>
+</tr>
+<tr>
+<td>模型基于 PDB50 语料库</td>
+<td>语料库组成偏差可能影响条件化密度的普适性</td>
+<td>未明确提及</td>
+<td>Methods 2.2 节</td>
+</tr>
+<tr>
+<td>与 AI 生成模型的整合尚未实现</td>
+<td>作者指出该框架可用于生成模型，但未提供具体整合方案</td>
+<td>提出用于 AlphaFold2 结构模块的 torsion 生成、SSE 偏差检测</td>
+<td>Outlook 节</td>
+</tr>
+<tr>
+<td>计算成本未详细报告</td>
+<td>重加权策略高效，但 baseline CBMD 模型估计成本未讨论</td>
+<td>未明确提及</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 选择 DSSP4 而非 STRIDE 是因为后者使用 Ramachandran 先验，会造成循环论证（Methods 2.2 节）
+- 氨基酸对分析中省略了 SSE 标签 C（coil），因为其信息量低（Results 3.3 节）</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>重加权策略假设每个混合分量内部标签分布均匀</td>
+<td>若分量内部存在标签异质性，条件化密度可能失真</td>
+<td>重加权是方法核心，其有效性依赖此假设</td>
+<td>对每个分量计算标签分布的熵，检验是否接近均匀；或与独立拟合结果对比</td>
+<td>Methods 2.1 节公式 (2)</td>
+</tr>
+<tr>
+<td>JS 散度差异未报告统计显著性</td>
+<td>backbone vs side-chain 的差异（均值 -0.0005）可能不显著</td>
+<td>核心结论「backbone 是主要决定因素」需要统计支持</td>
+<td>对 720 个组合进行 bootstrap 或置换检验</td>
+<td>Results 3.2 节 Fig. S4</td>
+</tr>
+<tr>
+<td>未与独立 SSE 子集拟合进行系统对比</td>
+<td>作者声称重加权优于独立拟合，但未提供定量对比</td>
+<td>重加权策略的优势需要实证支持</td>
+<td>在相同数据上比较重加权与独立拟合的泛化性能（如交叉验证）</td>
+<td>Methods 2.1 节</td>
+</tr>
+<tr>
+<td>氨基酸对分析中省略 C 标签</td>
+<td>C（coil）是常见标签，省略可能丢失重要信息</td>
+<td>影响 25,600 个条件化密度的完整性</td>
+<td>将 C 纳入分析，检验结论是否改变</td>
+<td>Results 3.3 节</td>
+</tr>
+<tr>
+<td>未讨论 PDB50 语料库的序列冗余问题</td>
+<td>同源序列可能引入偏差</td>
+<td>影响条件化密度的普适性</td>
+<td>使用序列相似性阈值（如 30%）进行去冗余后重估</td>
+<td>Methods 2.2 节</td>
+</tr>
+<tr>
+<td>与 AlphaFold2 的整合仅停留在概念层面</td>
+<td>作者提出可用于生成 torsion 角，但未验证</td>
+<td>实际应用价值需要实证</td>
+<td>在 AlphaFold2 结构模块中替换或对比 torsion 采样策略</td>
+<td>Outlook 节</td>
+</tr>
+<tr>
+<td>未报告模型选择（K 的选择）的敏感性</td>
+<td>MML 选择的分量数 K 可能影响条件化密度</td>
+<td>结果稳健性需要验证</td>
+<td>在不同 K 值下重复分析，检验结论是否稳定</td>
+<td>Methods 2.2 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>重加权条件化策略</strong>：当已有充分覆盖数据空间的 baseline 混合模型时，条件化可通过计算分量对条件的责任度并重加权实现，无需重新拟合。这一策略可迁移到：(a) 给定温度/pH/配体状态的构象分布建模；(b) 给定序列 motif 的 torsion 分布预测；(c) 任何「条件变量与观测变量共享隐分量」的场景。</p>
+</li>
+<li>
+<p><strong>Backbone vs side-chain 的贡献分解</strong>：通过比较全空间、backbone-only、side-chain-only 三种设置的 JS 散度，可以系统分解不同角度子集对条件变量的贡献。该方法可迁移到分子对接中评估配体结合对受体 backbone 与 side-chain 构象的影响。</p>
+</li>
+<li>
+<p><strong>SSE 标签熵作为不确定性量化工具</strong>：将离散标签的熵映射到连续 torsion 空间，可识别标签模糊区域。该方法可迁移到：(a) 评估 DSSP/STRIDE 等标注工具在特定区域的可靠性；(b) 为 AI 生成模型提供 SSE 置信度图；(c) 检测结构预测中二级结构分配的不确定性。</p>
+</li>
+<li>
+<p><strong>高维密度投影回经典图</strong>：将高维 torsion 密度投影到 Ramachandran 图并与参考区域对比，弥合了现代统计模型与传统可视化工具之间的鸿沟。该方法可迁移到任何「高维构象分布 → 低维可解释图」的可视化任务。</p>
+</li>
+<li>
+<p><strong>Helix capping 的定量分析</strong>：通过条件化密度揭示 SER 在螺旋环境中的 χ₁ 偏好（g+ rotamer），展示了统计模型在具体生物学 motif 分析中的价值。该方法可迁移到其他 motif（如 β-turn、loop 闭合）的构象偏好分析。</p>
+</li>
+<li>
+<p><strong>避免循环论证的标签选择</strong>：作者选择 DSSP4 而非 STRIDE，因后者使用 Ramachandran 先验。这一「标签独立性」原则可迁移到任何「用结构特征预测结构标签」的任务中。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<p><strong>相似工作</strong>：
+- <strong>PhiSiCal [17]</strong>：本文的直接基础，提供无协方差结构的单氨基酸 torsion 混合模型。本文将其扩展为 SSE 条件化并支持氨基酸对。
+- <strong>CBMD [18]</strong>：本文的直接基础，提供含协方差结构的混合模型。本文在其上实现重加权条件化。
+- <strong>Ramachandran 区域定义 [13]</strong>：本文的参考标准，用于对比 credible region 与经典区域。
+- <strong>DSSP [8,9] / STRIDE [12]</strong>：SSE 标签来源。本文选择 DSSP4 并讨论其与 STRIDE 的差异。
+- <strong>Amino-domino 方法 [16]</strong>：本文的氨基酸对分析与之相关，但本文提供连续概率密度而非离散聚类。</p>
+<p><strong>组合方向</strong>：
+- <strong>AlphaFold2 结构模块</strong>：本文的 torsion 分布可作为先验或评估工具，用于检测生成 torsion 的 SSE 一致性（作者在 Outlook 中提及）。
+- <strong>构象采样 / loop 建模</strong>：本文的 edge potential 概念（Outlook 节）可迁移到基于逆运动学的 loop 采样 [27]。
+- <strong>自由能估计</strong>：本文的 message passing 应用（Outlook 节）与基于图的自由能方法 [28] 相关。
+- <strong>AI 生成模型的偏差检测</strong>：作者提出用条件化密度检测 AlphaFold-DB 中 SSE 偏差，与「结构预测模型评估」方向直接相关。</p>
+<p><strong>冲突或需注意</strong>：
+- 本文结论基于 PDB50 语料库，与 AlphaFold-DB 的分布可能存在系统性差异（作者在 Outlook 中提及 SSE 偏差）。
+- DSSP4 标签与 STRIDE 标签在边界区域可能不一致，影响条件化密度的可复现性。</p>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：SSE 条件化 torsion 先验用于 AlphaFold2 结构模块的 torsion 生成约束
+   - <strong>来源局限/观察</strong>：作者指出 AI 生成模型难以显式控制 SSE，但未提供整合方案
+   - <strong>核心假设</strong>：将本文的 SSE 条件化密度作为先验，可提升生成结构的 SSE 一致性与物理合理性
+   - <strong>初步方法</strong>：在 AlphaFold2 的 structure module 中，将 torsion 采样的损失函数加入 SSE 条件化密度的负对数似然项
+   - <strong>验证方式</strong>：在 CAMEO 或 CASP 目标上比较加入先验前后的 SSE 分配准确率与 torsion 合理性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：基于 SSE 条件化密度的 loop 构象采样 edge potential
+   - <strong>来源局限/观察</strong>：作者在 Outlook 中提出 edge potential 概念但未展开
+   - <strong>核心假设</strong>：氨基酸对的 SSE 条件化密度可作为 loop 采样的 edge potential，提升采样效率与准确性
+   - <strong>初步方法</strong>：在逆运动学 loop 采样框架中，将相邻氨基酸的 SSE 条件化密度作为 edge 权重
+   - <strong>验证方式</strong>：在 benchmark loop 数据集上比较采样成功率与 RMSD
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AlphaFold-DB 与 PDB 的 SSE 分布系统性偏差检测
+   - <strong>来源局限/观察</strong>：作者提及 AlphaFold-DB 的 SSE 偏差但未量化
+   - <strong>核心假设</strong>：AlphaFold-DB 的 torsion 分布在特定 SSE 标签上显著偏离 PDB50 条件化密度
+   - <strong>初步方法</strong>：对 AlphaFold-DB 子集计算 SSE 条件化密度的对数似然，与 PDB50 比较，识别偏差区域
+   - <strong>验证方式</strong>：统计检验 + 可视化偏差热图
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：基于重加权条件化的温度/pH 依赖构象分布建模
+   - <strong>来源局限/观察</strong>：重加权策略的高效性可推广到其他条件变量
+   - <strong>核心假设</strong>：温度/pH 对 torsion 分布的影响可通过责任度重加权捕捉，无需重新拟合
+   - <strong>初步方法</strong>：在 MD 模拟数据上估计 baseline 模型，按温度/pH 条件重加权
+   - <strong>验证方式</strong>：与独立拟合的分布比较 KL 散度
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：SSE 标签熵作为结构预测置信度指标
+   - <strong>来源局限/观察</strong>：entropy 图揭示了标签模糊区域，但未与预测置信度关联
+   - <strong>核心假设</strong>：SSE 标签熵高的区域对应结构预测中 pLDDT 低或构象不确定的区域
+   - <strong>初步方法</strong>：计算 AlphaFold2 预测结构的 SSE 标签熵，与 pLDDT 和 PAE 做相关性分析
+   - <strong>验证方式</strong>：Pearson/Spearman 相关 + 案例可视化
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：氨基酸对 SSE transition 偏好用于蛋白质设计中的二级结构组合约束
+   - <strong>来源局限/观察</strong>：25,600 个条件化密度蕴含丰富的 transition 偏好信息
+   - <strong>核心假设</strong>：设计序列时约束相邻氨基酸的 SSE transition 可提升设计结构的二级结构准确性
+   - <strong>初步方法</strong>：在蛋白质设计框架（如 ProteinMPNN）中加入 SSE transition 先验
+   - <strong>验证方式</strong>：设计序列的二级结构预测准确率与实验验证
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, outlook) without figures or supplementary materials</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodological soundness, and presentation quality based solely on the provided text</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present SSE-conditioned probability densities for amino acid torsion angles (up to dimension 7) and amino acid pairs (up to dimension 14), derived by reweighting existing CBMD mixture models. They claim these densities provide quantitative bridges between Ramachandran regions and SSE labels, reveal amino-acid-specific conformational preferences, identify side-chain torsion angle influences on SSE determination, and offer generative capabilities for SSE-consistent conformations.</li>
+<li><strong>Visible evidence base</strong> Abstract, Introduction, Methods (Sections 2.1-2.3), Results (Sections 3.1-3.3), Outlook, Funding</li>
+<li><strong>Missing materials affecting confidence</strong> All figures (Fig. 1-4), all supplementary figures (Fig. S1-S16), supplementary methods (Section S2), equations referenced but not displayed (Eq. 2, 14, 15, 17), and the actual model parameters and code repository contents</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a relevant and timely problem in structural biology: quantifying the relationship between secondary structure assignments and torsion-angle distributions beyond the classical Ramachandran framework. The methodological approach of reweighting existing CBMD mixture models to obtain SSE-conditioned densities is conceptually sound and computationally efficient. However, the manuscript as provided is incomplete in critical ways. The absence of all figures, equations, and supplementary materials makes it impossible to evaluate the central claims. The results section reads more as a catalogue of observations than a systematic analysis, and several claims about generative applications and AI-model limitations are speculative. The statistical framework is appropriate, but the presentation lacks the rigor and completeness expected for a high-impact venue.</li>
+<li><strong>Who would be interested in the results, and why</strong> Structural biologists studying protein conformation, developers of statistical potentials for protein structure prediction and validation, computational biologists working on generative models for protein conformations, and researchers interested in the statistical foundations of secondary structure assignment. The pair-level conditioned densities could be of particular interest to those studying local conformational transitions and helix capping.</li>
+<li><strong>Major strengths</strong> 1) The conceptual framing of moving beyond Ramachandran distributions to full torsion-angle space is valuable and timely. 2) The reweighting strategy for conditioning existing mixture models is elegant and computationally efficient, avoiding the need for de novo estimation on potentially small SSE-specific subsets. 3) The use of DSSP4 with its explicit polyproline helix identification is a thoughtful choice. 4) The analysis of side-chain torsion angle contributions to SSE determination addresses an understudied question. 5) The entropy-based uncertainty quantification in Ramachandran space is a useful contribution.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence completeness</li>
+<li><strong>Claim pointer</strong> The manuscript claims that credible regions of SSE-conditioned densities reveal discrepancies between reference Ramachandran regions and actual conformational preferences, and that these discrepancies vary by amino acid type.</li>
+<li><strong>Evidence pointer</strong> Section 3.1, Fig. 2, Fig. S1, Fig. S8-S16 (not provided)</li>
+<li><strong>Concern</strong> The central results of Section 3.1 are presented entirely through figures that are not included in the provided material. The text describes observations such as "the label H/α-helix has a well-defined region" and "the label I/π-helix has a specific pattern for a.a. ILE/VAL/THR" but without the actual figures, these claims cannot be verified. The comparison to reference Ramachandran regions from Fig. 1 (also not provided) is impossible to assess.</li>
+<li><strong>Why it matters</strong> The core scientific contribution of this manuscript is the visual and quantitative comparison between SSE-conditioned densities and classical Ramachandran regions. Without access to the figures, the validity of the described discrepancies, the claimed amino-acid-specific patterns, and the overall interpretation cannot be evaluated. This is not a minor omission but a fundamental gap in the evidence base.</li>
+<li><strong>Resolution test</strong> Provide all figures (Fig. 1-4) and supplementary figures (Fig. S1-S16) with sufficient resolution and detail to verify the described patterns. The figures must clearly show the credible regions, the reference Ramachandran regions, and the data points for comparison.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological transparency</li>
+<li><strong>Claim pointer</strong> The manuscript states that conditioned densities are obtained by reweighting CBMD mixture models according to Eq. 2, and that entropy and Jensen-Shannon divergence calculations follow Eq. 14, 15, and 17.</li>
+<li><strong>Evidence pointer</strong> Section 2.3, Section 3.1, Section 3.2 (equations not displayed in provided text)</li>
+<li><strong>Concern</strong> The key equations (Eq. 2 for the conditional density, Eq. 14 for entropy, Eq. 15 and 17 for Jensen-Shannon divergence) are referenced but not displayed in the provided manuscript text. The reweighting formula is the methodological cornerstone of the paper, and its exact form determines whether the approach is valid. Similarly, the entropy calculation over binned Ramachandran space requires specification of binning strategy and boundary handling.</li>
+<li><strong>Why it matters</strong> Without the explicit mathematical formulation, the methodology cannot be reproduced or independently verified. The validity of the reweighting approach depends on technical details such as how responsibilities are computed, whether normalization is handled correctly, and how the mixture components are combined. The reader cannot assess whether the approach is mathematically sound or whether there are hidden assumptions.</li>
+<li><strong>Resolution test</strong> Display all referenced equations in full. Provide a complete derivation of the reweighting formula, including how responsibilities are estimated from the data and any assumptions about the relationship between the SSE-agnostic and SSE-conditioned models.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Statistical validation</li>
+<li><strong>Claim pointer</strong> The manuscript claims that JS divergences between SSE-conditioned distributions are "driven principally by the backbone torsion angles" based on a comparison of full-space versus backbone-only divergences, with differences ranging from -0.048 to 0.063.</li>
+<li><strong>Evidence pointer</strong> Section 3.2, Fig. S4, Fig. S5 (not provided)</li>
+<li><strong>Concern</strong> The claim that backbone angles are the primary determinants of SSE labels is based on a comparison of JS divergence values, but the manuscript does not report any statistical significance testing or uncertainty quantification for these divergence estimates. The range of differences (-0.048 to 0.063) is reported without context regarding the magnitude of the divergences themselves. If the divergences are small, these differences could be substantial; if large, they could be negligible. Additionally, the side-chain-only analysis (Fig. S5) is described as showing smaller divergences, but the text notes these are "presented relative to that value using a different colormap," which complicates direct comparison.</li>
+<li><strong>Why it matters</strong> The conclusion that backbone angles determine SSE labels is a key finding with implications for understanding secondary structure formation. If this claim is not statistically robust, the conclusion may be overstated. The manuscript should provide confidence intervals or bootstrap estimates for the divergence values, and should clearly report the absolute magnitudes of the divergences in both full-space and subspace analyses.</li>
+<li><strong>Resolution test</strong> Provide statistical uncertainty estimates for all reported JS divergence values. Report the absolute divergence magnitudes alongside the differences. Consider permutation or bootstrap tests to establish whether the observed differences between full-space and backbone-only analyses are significant.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Claim substantiation</li>
+<li><strong>Claim pointer</strong> The manuscript claims that the conditioned densities "provide a direct route to define GoF test" for identifying biases in generative engines, and that they offer "explicit control on SSE" that "remains difficult to enforce explicitly in current AI-based generative models."</li>
+<li><strong>Evidence pointer</strong> Section 4 (Outlook)</li>
+<li><strong>Concern</strong> The Outlook section makes several claims about applications that are not demonstrated anywhere in the manuscript. The claim about AlphaFold2's structure module using torsion angle tuples is presented without citation or detailed explanation. The assertion that the conditioned densities are "a tool of choice" for generating SSE-consistent conformations is not supported by any generative experiments or comparisons. The claim about difficulty in enforcing SSE control in AI-based models is presented as fact without supporting evidence or citations.</li>
+<li><strong>Why it matters</strong> These claims extend beyond the demonstrated scope of the work. While speculative applications can be appropriate in an Outlook section, they should be clearly framed as possibilities rather than established capabilities. The comparison to AI-based generative models is particularly problematic without concrete evidence or benchmarks.</li>
+<li><strong>Resolution test</strong> Either remove or reframe speculative claims as possibilities rather than capabilities. If the generative application is claimed, provide at minimum a proof-of-concept demonstration. If the comparison to AI models is retained, provide citations or a brief analysis supporting the claim about difficulty of SSE control.</li>
+<li><strong>Concern ID</strong> R1-M5</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Data and reproducibility</li>
+<li><strong>Claim pointer</strong> The manuscript states that all conditioned model parameters are publicly available on the Structural Bioinformatics Library website, along with Python code.</li>
+<li><strong>Evidence pointer</strong> Section 3, footnote 1</li>
+<li><strong>Concern</strong> While the availability of code and parameters is commendable, the manuscript does not describe the computational resources required, the runtime for conditioning the models, or the memory requirements. More importantly, the manuscript does not describe how the PDB50 corpus was processed to obtain the torsion angle observations, what filtering or quality criteria were applied beyond the stated R-factor and resolution cutoffs, or how missing or undefined torsion angles were handled.</li>
+<li><strong>Why it matters</strong> Reproducibility requires not just code availability but also a complete description of the data processing pipeline. The handling of missing torsion angles, the treatment of terminal residues, and the criteria for including or excluding observations can all affect the resulting distributions. Without this information, independent verification of the results is difficult.</li>
+<li><strong>Resolution test</strong> Provide a complete description of the data processing pipeline, including any filtering criteria, handling of missing values, and the exact procedure for extracting torsion angles from PDB structures. Report computational requirements for the conditioning procedure.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Section 1.1, paragraph 1</li>
+<li><strong>Evidence pointer</strong> Section 1.1</li>
+<li><strong>Issue</strong> The introduction contains a typographical error: "the α -helix and β -sheets" should be "the α -helix and β -sheets" (inconsistent article usage). Additionally, the phrase "the original secondary structure elements discovered a decade earlier" is imprecise, as Pauling's work identified the α-helix and β-sheet as structural motifs, but the term "secondary structure" was formalized by Linderstrøm-Lang.</li>
+<li><strong>Required correction</strong> Fix the article inconsistency and consider rephrasing to acknowledge the historical nuance around the term "secondary structure."</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section 2.1, paragraph 1</li>
+<li><strong>Evidence pointer</strong> Section 2.1</li>
+<li><strong>Issue</strong> The sentence "A straightforward strategy consists of partitioning a dataset of amino acid observations into SSE-specific subsets and independently estimate a density for each subset" contains a grammatical inconsistency ("partitioning" followed by "estimate").</li>
+<li><strong>Required correction</strong> Change "independently estimate" to "independently estimating" for grammatical consistency.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Notation</li>
+<li><strong>Affected element</strong> Section 2.1, paragraph 1</li>
+<li><strong>Evidence pointer</strong> Section 2.1</li>
+<li><strong>Issue</strong> The notation "p ( x | j )" and "p ( x | l )" is used inconsistently; the first uses "j" and the second uses "l" for the label variable. Additionally, the symbol "ℒ" is introduced but the relationship between "j", "l", and elements of "ℒ" is not explicitly stated.</li>
+<li><strong>Required correction</strong> Use consistent notation for the label variable throughout, and explicitly state that j, l ∈ ℒ.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Section 2.2, paragraph 1</li>
+<li><strong>Evidence pointer</strong> Section 2.2</li>
+<li><strong>Issue</strong> The description of the PhiSiCal approach states that components are "products of univariate von Mises distributions" but does not specify the number of components or the model selection criterion beyond the general statement about message length minimization.</li>
+<li><strong>Required correction</strong> Provide brief details on the number of components in the CBMD models or reference the original publication for these details.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Section 3.1, paragraph 3</li>
+<li><strong>Evidence pointer</strong> Section 3.1</li>
+<li><strong>Issue</strong> The statement "the region γ is located inside/on the border of the exclusion region associated with the pair O i−1 … N i+1" is confusing. The ellipsis notation is unclear, and the relationship between the γ region and the exclusion region is not explained.</li>
+<li><strong>Required correction</strong> Clarify the notation and explain the significance of the γ region's location relative to the exclusion region.</li>
+<li><strong>Concern ID</strong> R1-m6</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Consistency</li>
+<li><strong>Affected element</strong> Section 3.2, paragraph 1</li>
+<li><strong>Evidence pointer</strong> Section 3.2</li>
+<li><strong>Issue</strong> The text states "we obtain the following values for the difference (min=-0.048, mean=-0.0005, median=0.00, max=0.063)" but does not specify what "the difference" refers to. It is presumably the difference between full-space and backbone-only JS divergences, but this is not explicitly stated.</li>
+<li><strong>Required correction</strong> Explicitly state that these are the differences between full-space and backbone-only JS divergence values.</li>
+<li><strong>Concern ID</strong> R1-m7</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Section 3.3, paragraph 1</li>
+<li><strong>Evidence pointer</strong> Section 3.3</li>
+<li><strong>Issue</strong> The term "amino dominos" is introduced with a citation to reference [16], but the term is not defined. It appears to refer to pairs of consecutive amino acids, but this should be stated explicitly.</li>
+<li><strong>Required correction</strong> Define "amino dominos" when first used.</li>
+<li><strong>Concern ID</strong> R1-m8</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Citation</li>
+<li><strong>Affected element</strong> Section 3.3, paragraph 3</li>
+<li><strong>Evidence pointer</strong> Section 3.3</li>
+<li><strong>Issue</strong> The statement about helix capping cites reference [26] for the hydrogen-bonding interaction, but the specific claim about the Ser g+ rotamer enabling this interaction is not directly supported by the cited reference in the provided text.</li>
+<li><strong>Required correction</strong> Ensure the citation supports the specific claim, or add additional context.</li>
+<li><strong>Concern ID</strong> R1-m9</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Section 3.3, paragraph 3</li>
+<li><strong>Evidence pointer</strong> Section 3.3</li>
+<li><strong>Issue</strong> The notation "2 { ! Helix - ! Helix }" and "{ ! Helix - Helix}" is confusing. The "2" appears to be a footnote marker, but its placement is unclear. The "!" notation for "not" is nonstandard and should be defined.</li>
+<li><strong>Required correction</strong> Clarify the notation and define the "!" symbol when first used.</li>
+<li><strong>Concern ID</strong> R1-m10</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Section 4, paragraph 1</li>
+<li><strong>Evidence pointer</strong> Section 4</li>
+<li><strong>Issue</strong> The Outlook section mentions "biases in SSE elements have been observed recently by comparing the SSE labels delivered by DSSP4 on the PDB versus AlphaFold-DB" but provides no citation for this claim.</li>
+<li><strong>Required correction</strong> Add a citation for this observation.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (missing figures), R1-M2 (missing equations), R1-M3 (lack of statistical validation), R1-M5 (incomplete data description)</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: The approach of conditioning existing mixture models on SSE labels is conceptually novel and represents a meaningful advance over simple Ramachandran analysis. However, the originality is somewhat tempered by the reliance on previously published CBMD models. Scientific importance: The question of how secondary structure relates to torsion-angle preferences is fundamental, and the pair-level analysis could have broad utility. The potential applications to generative models and structure validation are significant if demonstrated. Interdisciplinary readership: The work bridges statistics, structural biology, and computational biology, and the writing is generally accessible. However, the heavy reliance on statistical terminology without adequate explanation may limit accessibility. Technical soundness: The methodological framework appears sound, but the missing equations and figures prevent full assessment. The lack of statistical validation for the JS divergence comparisons is a concern. Readability for nonspecialists: The introduction and outlook are well-written and accessible, but the results section assumes significant background knowledge. The manuscript would benefit from clearer explanations of the statistical concepts and their biological significance.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript addresses an important problem with a conceptually sound approach, but the absence of all figures, equations, and supplementary materials makes it impossible to verify the central claims. The statistical validation is insufficient for the quantitative conclusions drawn. Major revisions are required to provide the missing evidence, add statistical rigor, and temper speculative claims. If the missing materials reveal the described patterns and the statistical concerns are addressed, the work could be suitable for publication in a high-impact venue.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that "the label H/α-helix has a well-defined region" while "G/3-10-helix and I/π-helix are more fuzzy" (Section 3.1) is unsupported without the referenced figures.</li>
+<li>The claim that "the label I/π-helix has a specific pattern for a.a. ILE/VAL/THR, with an outgrowth towards negative values of φ" (Section 3.1) is unsupported without the referenced figures.</li>
+<li>The claim that "the labels B and E coding strands are highly coherent" (Section 3.1) is unsupported without the referenced figures.</li>
+<li>The claim that "labels S/T/C are in general mingled in three broad regions" (Section 3.1) is unsupported without the referenced figures.</li>
+<li>The claim that "the label C displays a specific pattern for ASN, ASP, CYS, HIS, PHE, TRP, TYR" (Section 3.1) is unsupported without the referenced figures.</li>
+<li>The claim that "for ARG/LYS/MET in particular, the densities escape their traditional region, yielding a significant overlap with the region β" (Section 3.1) is unsupported without the referenced figures.</li>
+<li>The claim that "HIS/PHE have more mass around ζ region than the other amino acid types" (Section 3.1) is unsupported without the referenced figures.</li>
+<li>The claim that "ASP/LEU have more mass than the other amino acid types" in region γ′ (Section 3.1) is unsupported without the referenced figures.</li>
+<li>The claim that "PRO has a well resolved diagram" (Section 3.1) is unsupported without the referenced figures.</li>
+<li>The claim that "ASP has a distinct lack of 'C' (coil) observations in the top left of the beta regions" (Section 3.1) is unsupported without the referenced figures.</li>
+<li>The claim that "the γ region is seldom populated, with contributions from the pairs (B; GLY), (S; GLY, HIS, ILE, TRP, VAL); (T; GLY)" (Section 3.1) is unsupported without the referenced supplementary figures.</li>
+<li>The claim that "the nature of the steric curves fit using a model peptide, the rarity of these conformations, their presence in an entire protein rather than a model peptide, and the prevalence of glycine resolve the apparent contradiction" (Section 3.1) is an interpretive conclusion that cannot be evaluated without the underlying data.</li>
+<li>The claim that JS divergences are "driven principally by the backbone torsion angles" (Section 3.2) is based on reported values but lacks statistical validation.</li>
+<li>The claim that "the label H is the one that influences side chains the most, followed by the G label" (Section 3.2) is unsupported without the referenced supplementary figures.</li>
+<li>The claim that "ASN and ASP share a pattern where side chains angles are influenced by whether the SSE label is B or C" (Section 3.2) is unsupported without the referenced supplementary figures.</li>
+<li>The claim that "for ILE, the G label results in side chain angles that uniquely differ from other labels" (Section 3.2) is unsupported without the referenced supplementary figures.</li>
+<li>The claim that "there is a considerable asymmetry in these landscapes" (Section 3.3) is unsupported without the referenced figures.</li>
+<li>The claim that "the entered residue is less affected by the SSE of the exited residue than vice versa" (Section 3.3) is unsupported without the referenced figures.</li>
+<li>The claim that "the Ser g+ rotamer allows the hydrogen-bonding interaction between its side-chain hydroxyl and the backbone amide NH of helical residue N3" (Section 3.3) is presented as a finding but the supporting evidence is not visible in the provided text.</li>
+<li>The claim that "the amino-acid pair specification {!H - H} that we used to define this SSE-conditioned probability density does not have anything to say about helix position N3 directly" (Section 3.3) is an interpretive statement that depends on the DSSP definition, which is not fully explained.</li>
+<li>The claim that "our conditioned densities, obtained from SOTA statistical models for joint distributions, are certainly a tool of choice to perform such generations" (Section 4) is speculative and not demonstrated.</li>
+<li>The claim that "our models provide an explicit control on SSE, that remains difficult to enforce explicitly in current AI-based generative models" (Section 4) is presented without supporting evidence or citations.</li>
+<li>The claim that "biases in SSE elements have been observed recently by comparing the SSE labels delivered by DSSP4 on the PDB versus AlphaFold-DB" (Section 4) lacks a citation.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

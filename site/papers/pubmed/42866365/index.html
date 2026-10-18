@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Benchmarking AI-driven protocols for cyclic peptide conformer prediction and ranking. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Benchmarking AI-driven protocols for cyclic peptide conformer prediction and ranking.</h1>
+      <div class="meta">Damjanovic, Jovan; Ochoa, Rodrigo</div>
+      <div class="meta muted">
+        
+        <span class="journal">RSC medicinal chemistry</span>
+        · 2026-10-13
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42866365/">原文</a>
+      </div>
+      <p class="one-liner">该文系统基准测试了多种AI工具在环肽构象预测与排序中的表现，并与物理模拟对比，核心聚焦蛋白质（环肽）结构计算问题，方法上涵盖AI与物理模拟，虽为基准测试但提供了重要方法学见解。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Generative AI is being used in peptide design to optimize binders from early research stages. One notable application is with respect to cyclic peptides, wherein AI assists in modelling conformers in bound or solution states. This work benchmarks state-of-the-art protocols&#39; ability to predict and rank conformers of cyclic peptide binders alone and in complex with their targets, using sequence or all-atom representations. The datasets consist of cyclic peptides with experimental structures available in public repositories. Various tools were included in the benchmark: HighFold, cyclic-aware AlphaFold2 as implemented in EvoBind2, CycPepDock, Boltz-1/1x, Boltz-2, and Chai-1. We found that more recent tools provide a structure prediction advantage over their AlphaFold2-based counterparts, although accurate results with both sets of tools are largely limited to protein-peptide complexes, rather than the free solution structure. In addition, using a cyclic relative positional encoding offset proved key for accurate prediction, and the natural amino acid representation was found to outperform the more general SMILES string input. We mirror prior literature findings on linear peptides by showing that even for accurate predictions, model confidence metrics poorly correlate with experimentally observed binding affinity. Lastly, we compare the performance of AI-based tools to that of physics-based simulations, showing that the latter remain the only way to account for intrinsic conformational flexibility of cyclic peptides, but that the former have a significant price/performance advantage in complex structure prediction. This study provides insights applicable to the design and optimization of cyclic peptides, contributing to advancements in peptide-based therapeutics.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">生成式人工智能正被用于肽设计，以从早期研究阶段优化结合剂。一个显著的应用涉及环肽，其中AI辅助模拟结合态或溶液态的构象。本研究基准测试了最先进协议在单独预测和排序环肽结合剂及其与靶标复合物构象方面的能力，使用序列或全原子表示。数据集包含公共存储库中具有实验结构的环肽。基准测试中包含了多种工具：HighFold、EvoBind2中实现的环状感知AlphaFold2、CycPepDock、Boltz-1/1x、Boltz-2和Chai-1。我们发现，较新的工具在结构预测上优于基于AlphaFold2的对应工具，尽管两组工具的准确结果主要限于蛋白质-肽复合物，而非游离溶液结构。此外，使用环状相对位置编码偏移被证明对准确预测至关重要，并且天然氨基酸表示优于更通用的SMILES字符串输入。我们通过显示即使对于准确预测，模型置信度指标与实验观察到的结合亲和力相关性较差，呼应了先前关于线性肽的文献发现。最后，我们比较了基于AI的工具与基于物理的模拟的性能，表明后者仍是解释环肽固有构象灵活性的唯一途径，但前者在复合物结构预测中具有显著的价格/性能优势。本研究提供了适用于环肽设计和优化的见解，有助于推进基于肽的治疗方法的发展。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Benchmarking AI-driven protocols for cyclic peptide conformer prediction and ranking</li>
+<li><strong>作者与单位</strong>: Damjanovic, Jovan; Ochoa, Rodrigo（均为诺和诺德（Novo Nordisk）全职员工）</li>
+<li><strong>期刊/预印本平台</strong>: RSC Medicinal Chemistry</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-10-13）</li>
+<li><strong>论文类型</strong>: 基准测试/方法评估研究</li>
+<li><strong>领域</strong>: 环肽构象预测与排序 × AI 结构预测/物理模拟</li>
+<li><strong>关键词</strong>: 环肽、构象预测、AlphaFold2/3、Boltz、Chai-1、分子动力学、基准测试</li>
+<li><strong>DOI/arXiv 号</strong>: 10.1039/d6md00676k</li>
+<li><strong>代码</strong>: https://github.com/novonordisk-research/CycPepBenchmark/</li>
+<li><strong>数据</strong>: 数据集来自 PDB 及公开仓库（https://github.com/ysl-lab/CP_crystal_structures），另有内部未发表环肽及文献报道肽</li>
+<li><strong>阅读日期</strong>: 未提供</li>
+<li><strong>在课题方向中的位置</strong>: 本文系统评估了当前主流 AI 结构预测工具（HighFold、EvoBind2/AF2、CycPepDock、Boltz-1/1x/2、Chai-1、Protenix-v2）在环肽单体及复合物构象预测与排序上的表现，并与增强采样 MD 模拟进行对比，是该方向首个覆盖多代 AI 工具与物理模拟的系统性基准。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过构建包含 PDB 公开结构、内部未发表肽及文献报道肽的环肽基准数据集，系统比较了 7 种 AI 结构预测工具在单体与复合物构象预测上的表现，发现环肽感知的循环相对位置编码（cyclic relative positional encoding）是准确预测的关键，AI 工具在复合物预测上具有显著性价比优势，但 MD 模拟仍是刻画环肽溶液构象 ensemble 的唯一可靠手段，且所有工具的置信度指标与实验结合亲和力无一致相关性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 当前 AI 驱动的结构预测工具在环肽构象预测与排序任务上的实际表现如何？不同输入表示（氨基酸序列 vs. SMILES）、不同架构代际（AF2 系 vs. AF3 系）对预测精度有何影响？AI 工具与物理模拟（增强采样 MD）在环肽构象刻画上的能力边界在哪里？</li>
+<li><strong>为什么重要</strong>: 环肽是重要的治疗模态，其构象预测直接影响基于结构的药物设计与优化。AI 工具快速涌现但缺乏系统性评估，研究者无法判断工具选择、输入表示和置信度解读的最佳实践。</li>
+<li><strong>现有方法为何不足</strong>: 已有评估多聚焦于线性肽或蛋白质，对环肽特有的拓扑约束（head-to-tail 环化、二硫键环化）缺乏专门考量；不同工具使用不同输入格式（序列 vs. SMILES），缺乏公平对比；AI 工具输出的静态结构无法反映环肽在溶液中的构象 ensemble。</li>
+<li><strong>精确研究问题</strong>: 在环肽构象预测任务中，环肽感知的 AI 工具是否显著优于通用工具？AI 工具的置信度指标能否作为实验结合亲和力的定量代理？</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」——基于本文引用及领域公认发展历程）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理模拟时代</td>
+<td>MD 模拟、增强采样（metadynamics、replica exchange）</td>
+<td>物理可解释、能刻画构象 ensemble</td>
+<td>计算昂贵、采样效率有限</td>
+</tr>
+<tr>
+<td>AF2 时代</td>
+<td>AlphaFold2、EvoBind2、HighFold</td>
+<td>序列到结构的快速预测</td>
+<td>对环肽拓扑缺乏显式建模；单体权重无法处理复合物</td>
+</tr>
+<tr>
+<td>环肽专用工具</td>
+<td>HighFold、CycPepDock</td>
+<td>显式编码环化约束</td>
+<td>依赖正确的输入设置；对新化学类型泛化有限</td>
+</tr>
+<tr>
+<td>AF3 及开源替代</td>
+<td>Boltz-1/1x/2、Chai-1、Protenix-v2</td>
+<td>支持多分子复合物、小分子配体；扩散模型生成</td>
+<td>对环肽的循环拓扑仍需额外处理；置信度与功能相关性未验证</td>
+</tr>
+<tr>
+<td>生成式/流匹配</td>
+<td>AlphaFlow、StrEAMM</td>
+<td>可预测构象 ensemble</td>
+<td>主要面向蛋白质；对环肽类型和大小有限制</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>: 处于 AI 工具代际更迭的评估节点，首次系统对比 AF2 系与 AF3 系工具在环肽任务上的表现，并明确 AI 与物理模拟的互补边界。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>环肽拓扑未被通用工具显式建模</td>
+<td>通用工具（未加循环位置编码）预测的肽链不呈环状</td>
+<td>模型训练数据以线性肽/蛋白质为主，缺乏环肽拓扑先验</td>
+<td>Results 节 Fig. 2：单体预测中未加循环编码的工具产生非环状构象</td>
+</tr>
+<tr>
+<td>输入表示影响预测精度</td>
+<td>SMILES 输入整体劣于氨基酸序列输入</td>
+<td>SMILES 分词方式（每重原子一个 token）丢失残基级语义；3D 初始化受配体大小影响</td>
+<td>Results 节 Fig. 3：SMILES 输入下所有工具性能下降至 &gt;2.5 Å RMSD</td>
+</tr>
+<tr>
+<td>记忆效应（memorization）干扰评估</td>
+<td>循环移位序列后，环化感知工具性能稳定，通用工具显著下降</td>
+<td>通用工具可能记忆了训练集中的序列-结构对应关系</td>
+<td>Results 节 Fig. 3 与 Fig. S8 对比</td>
+</tr>
+<tr>
+<td>置信度指标与实验亲和力无一致相关</td>
+<td>各工具 pLDDT/pTM/ipTM 与 Ki/IC50 相关性弱且方向不一</td>
+<td>置信度反映结构确定性而非功能/热力学性质；环肽构象应变影响结合但未被模型编码</td>
+<td>Results 节 Fig. 5</td>
+</tr>
+<tr>
+<td>静态预测无法反映溶液构象 ensemble</td>
+<td>单体预测与 MD 主导构象不一致</td>
+<td>环肽在溶液中存在多构象平衡，静态预测仅给出单一结构</td>
+<td>Results 节 3.5 与 Fig. S4</td>
+</tr>
+<tr>
+<td>默认参数导致肽段偏离结合位点</td>
+<td>CycPepDock 和 EvoBind2/AF2 默认设置下复合物 RMSD &gt;10 Å</td>
+<td>工具默认参数未针对环肽-蛋白复合物优化</td>
+<td>Methodology 节 Modelling tools 与 Results 节 Multimer regime</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>:
+构建包含三类环肽数据集（uPA 结合肽、compstatin 类似物、HIV 整合酶结合肽）的基准，使用氨基酸序列和 SMILES 两种输入表示，对 7 种 AI 工具（HighFold、EvoBind2/AF2、CycPepDock、Boltz-1/1x、Boltz-2、Chai-1、Protenix-v2）进行单体与复合物构象预测评估，并以增强采样 MD（偏置交换 metadynamics）作为物理模拟参照。通过循环移位序列构建聚合数据集以检测记忆效应。</p>
+<p><strong>2) 核心洞察</strong>:
+- 环肽感知的循环相对位置编码（cyclic relative positional encoding offset）是准确预测环肽构象的关键技术组件，其作用在复合物预测中尤为显著。
+- AI 工具代际更迭（AF2→AF3 系）带来了实质性的精度提升，但这一提升主要体现在复合物预测上，单体预测中环化感知工具仍占优。
+- AI 工具与物理模拟的互补关系明确：AI 擅长快速给出复合物结合构象，MD 是刻画溶液构象 ensemble 的唯一可靠手段。
+- 置信度指标（pLDDT 等）不能作为结合亲和力的代理，只能作为结构有效性的定性筛选。</p>
+<p><strong>3) 可能的普适教训</strong> [Analysis]:
+- 对具有特殊拓扑约束的生物分子（环肽、共价修饰、非天然氨基酸），通用模型的"隐式学习"不足以替代显式拓扑编码——这提示结构预测工具设计时应将拓扑约束作为一等公民输入。
+- 基准测试设计必须考虑记忆效应：循环移位是一种轻量且有效的记忆检测手段，可推广到其他序列-结构预测任务的评估中。
+- AI 工具与物理模拟的"分工"可能是一个普遍模式：AI 负责快速生成候选构象，物理模拟负责验证和刻画 ensemble，二者互补而非替代。</p>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>:
+- 环肽氨基酸序列（FASTA 格式）或 SMILES 字符串
+- 靶蛋白序列（复合物预测时）
+- 环化类型信息（head-to-tail 或二硫键）</p>
+<p><strong>输出</strong>:
+- 预测的环肽单体或环肽-蛋白复合物三维结构
+- 置信度指标（pLDDT、pTM、ipTM）
+- MD 模拟的构象 ensemble 及主导构象</p>
+<p><strong>模块</strong>:
+1. <strong>数据集构建</strong>: 三类环肽-蛋白体系（uPA、C3c/compstatin、HIV 整合酶），含 PDB 公开结构、内部未发表肽、文献报道肽；溶液构象集来自公开仓库
+2. <strong>AI 预测工具</strong>: HighFold（环肽专用）、EvoBind2 中的 AF2（环化感知）、CycPepDock（Rosetta 对接）、Boltz-1/1x/2（扩散模型）、Chai-1、Protenix-v2（AF3 类似）
+3. <strong>输入处理</strong>: 序列直接输入或 SMILES 生成；环化感知工具使用循环位置编码偏移
+4. <strong>MD 模拟</strong>: 偏置交换 metadynamics（GROMACS 2024.2 + PLUMED 2.9.2），RSFF2 力场，显式溶剂
+5. <strong>评估指标</strong>: 骨架/侧链 RMSD、复合物 RMSD、二面角 RMSD、与实验结合亲和力的相关性（Spearman/Pearson）
+6. <strong>记忆效应检测</strong>: 循环移位序列的聚合数据集对比</p>
+<p><strong>流程</strong>:
+1. 收集并标注环肽数据集（序列、环化类型、实验结构、亲和力数据）
+2. 对每个工具分别以序列和 SMILES 输入运行单体预测
+3. 对复合物预测运行多聚体模式
+4. 对 HIV 整合酶子集执行 MD 模拟获取溶液构象
+5. 计算所有评估指标，对比 AI 预测 vs 实验结构 vs MD 主导构象
+6. 执行循环移位聚合分析检测记忆效应
+7. 统计置信度指标与实验亲和力的相关性</p>
+<p><strong>假设</strong>:
+- 实验晶体结构代表环肽的结合构象
+- MD 模拟（RSFF2 力场 + 偏置交换）能充分采样环肽溶液构象空间
+- 循环移位不改变环肽的化学同一性（仅改变序列起始位置）</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>循环相对位置编码（cyclic relative positional encoding offset）</td>
+<td>使模型感知环肽的循环拓扑</td>
+<td>通用位置编码假设线性序列，无法表达 head-to-tail 环化</td>
+<td>输入：序列；输出：环化感知的注意力偏置</td>
+<td>Results 节 Fig. 1-3：环化感知工具在单体和复合物预测中均显著优于未感知工具</td>
+<td>预期影响：移除后所有环肽预测退化为线性肽预测，RMSD 显著上升 [预期效应]</td>
+</tr>
+<tr>
+<td>氨基酸序列 vs. SMILES 双输入模式</td>
+<td>比较不同分子表示对预测精度的影响</td>
+<td>非天然氨基酸和复杂环化化学需要 SMILES 表达；但 SMILES 可能损失残基级语义</td>
+<td>输入：序列或 SMILES；输出：对应预测结构</td>
+<td>Results 节 Fig. 3：SMILES 输入下所有工具性能下降至 &gt;2.5 Å RMSD</td>
+<td>预期影响：仅保留 SMILES 输入将导致整体精度下降 [实测效应]</td>
+</tr>
+<tr>
+<td>循环移位聚合数据集</td>
+<td>检测模型记忆效应</td>
+<td>公开结构可能已进入训练集，需区分"记忆"与"泛化"</td>
+<td>输入：环肽序列的所有循环移位；输出：聚合后的平均 RMSD</td>
+<td>Results 节 Fig. 3 与 Fig. S8 对比：循环移位后通用工具性能显著下降</td>
+<td>预期影响：移除后无法区分记忆与泛化，基准结果可能高估工具能力 [预期效应]</td>
+</tr>
+<tr>
+<td>偏置交换 metadynamics MD 模拟</td>
+<td>获取环肽溶液构象 ensemble</td>
+<td>AI 工具仅输出静态结构，无法反映溶液中的构象多样性</td>
+<td>输入：环肽序列+初始结构；输出：构象 ensemble + 主导簇</td>
+<td>Results 节 3.5 与 Table S3：MD 揭示部分肽的溶液主导构象与结合构象不同</td>
+<td>预期影响：移除后无法评估 AI 预测结构在溶液 ensemble 中的代表性 [预期效应]</td>
+</tr>
+<tr>
+<td>Rosetta 能量评分</td>
+<td>评估预测结构的热力学合理性</td>
+<td>结构相似性（RMSD）不等同于能量有利性</td>
+<td>输入：预测结构；输出：Rosetta 能量分数</td>
+<td>Results 节 Fig. S7：环化感知工具产生更高应变的结构</td>
+<td>预期影响：移除后无法区分"结构相似但能量不合理"的预测 [预期效应]</td>
+</tr>
+<tr>
+<td>置信度-亲和力相关性分析</td>
+<td>检验置信度指标的功能预测价值</td>
+<td>若置信度与亲和力相关，则可作为虚拟筛选工具</td>
+<td>输入：各工具置信度指标+实验 Ki/IC50；输出：Spearman/Pearson 相关系数</td>
+<td>Results 节 Fig. 5：相关性弱且方向不一致</td>
+<td>预期影响：移除后无法给出"置信度不可作为亲和力代理"的结论 [实测效应]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1) 骨架 RMSD（Root Mean Square Deviation）</strong>:
+RMSD = √(1/N Σᵢ₌₁ᴺ ||xᵢ - yᵢ||²)</p>
+<ul>
+<li>N: 对齐的原子数（通常为骨架原子 Cα、C、N）</li>
+<li>xᵢ: 预测结构中第 i 个原子的坐标</li>
+<li>yᵢ: 参考（实验）结构中第 i 个原子的坐标</li>
+<li>用途: 衡量预测结构与实验结构的整体偏差</li>
+<li>直觉: 数值越小，预测越接近实验结构</li>
+</ul>
+<p><strong>2) 二面角 RMSD</strong>:
+RMSD_dihedral = √(1/M Σⱼ₌₁ᴹ (Δφⱼ)²)</p>
+<ul>
+<li>M: 比较的二面角数量</li>
+<li>Δφⱼ: 第 j 个二面角（φ 或 ψ）的预测值与参考值之差（考虑周期性）</li>
+<li>用途: 评估环肽骨架构象的局部准确性</li>
+<li>直觉: 捕捉 RMSD 可能遗漏的局部构象差异</li>
+</ul>
+<p><strong>3) 归一化积分乘积（Normalized Integral Product, NIP）</strong>:
+NIP = ∫f₁(x)f₂(x)dx / √(∫f₁²(x)dx · ∫f₂²(x)dx)</p>
+<ul>
+<li>f₁, f₂: 两个概率分布（此处为 MD 模拟的自由能景观投影）</li>
+<li>用途: 衡量 MD 模拟轨迹间的相似性，用于收敛判定</li>
+<li>直觉: 值域 [0,1]，越接近 1 表示两个分布越相似；收敛阈值设为 0.9</li>
+</ul>
+<p><strong>4) Spearman 秩相关系数</strong>:
+ρ = 1 - (6Σdᵢ²)/(n(n²-1))</p>
+<ul>
+<li>dᵢ: 第 i 个样本的秩差</li>
+<li>n: 样本数</li>
+<li>用途: 衡量置信度指标与实验亲和力的单调相关性</li>
+<li>直觉: 不要求线性关系，仅要求单调性</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>:
+- <strong>uPA 结合肽</strong>: 含二硫键环化的环肽，PDB 有实验结构，有 Ki 值
+- <strong>C3c/compstatin 类似物</strong>: head-to-tail 环化，PDB 有实验结构，有 IC50 值
+- <strong>HIV 整合酶结合肽</strong>: head-to-tail 环化，PDB 有实验结构，有 IC50 值
+- <strong>溶液构象集</strong>: 来自公开仓库（ysl-lab/CP_crystal_structures），含无结合靶标的环肽晶体结构
+- <strong>内部未发表肽</strong>: 9 个环肽，无公开结构
+- <strong>文献报道肽</strong>: cyclo-GNSRV、cyclo-VVGGVG、cyclo-IVGGVG，有 MD 验证的 NMR 结构（未公开）</p>
+<p><strong>规模</strong>: 未提供具体肽段总数（Tables 1-3 分别列出各靶标数据集）</p>
+<p><strong>指标</strong>: 骨架 RMSD、侧链 RMSD、复合物 RMSD、二面角 RMSD、Rosetta 能量分数、Spearman/Pearson 相关性</p>
+<p><strong>基线</strong>: 实验晶体结构为金标准；MD 模拟（偏置交换 metadynamics）为物理模拟参照</p>
+<p><strong>评测协议</strong>: 单体预测（序列或 SMILES 输入）与复合物预测（多聚体模式）；循环移位聚合数据集用于记忆检测</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单体预测（氨基酸序列输入）</td>
+<td>环化感知工具优于通用工具</td>
+<td>HighFold、Boltz-2-cyc vs. 未加循环编码的 Boltz-2、Chai-1、Protenix</td>
+<td>环化感知工具 RMSD ~1.3 Å，通用工具 &gt;4 Å</td>
+<td>循环位置编码对单体环肽预测至关重要</td>
+<td>不能说明环化感知工具在所有环肽类型上均最优</td>
+<td>Results 节 Fig. 1</td>
+</tr>
+<tr>
+<td>单体预测（SMILES 输入）</td>
+<td>SMILES 输入可替代序列输入</td>
+<td>同一工具分别以序列和 SMILES 输入</td>
+<td>SMILES 输入下所有工具性能下降至 &gt;2.5 Å RMSD</td>
+<td>序列输入优于 SMILES 输入</td>
+<td>不能说明 SMILES 输入完全不可用</td>
+<td>Results 节 Fig. 3</td>
+</tr>
+<tr>
+<td>复合物预测</td>
+<td>新一代工具在复合物预测上优于 AF2 系</td>
+<td>Boltz-2-cyc、HighFold-multimer vs. EvoBind2/AF2、CycPepDock</td>
+<td>环化感知工具复合物 RMSD &lt;1 Å，EvoBind2 和 CycPepDock 默认设置 &gt;10 Å</td>
+<td>代际更迭带来复合物预测精度提升</td>
+<td>不能说明所有 AF3 系工具均优于所有 AF2 系工具</td>
+<td>Results 节 Fig. 3</td>
+</tr>
+<tr>
+<td>循环移位聚合分析</td>
+<td>通用工具存在记忆效应</td>
+<td>原始序列 vs. 循环移位序列</td>
+<td>通用工具在移位序列上性能显著下降，环化感知工具稳定</td>
+<td>通用工具部分依赖训练集记忆</td>
+<td>不能量化记忆效应的具体贡献比例</td>
+<td>Results 节 Fig. 3 与 Fig. S8</td>
+</tr>
+<tr>
+<td>置信度-亲和力相关性</td>
+<td>置信度指标可预测结合亲和力</td>
+<td>各工具 pLDDT/pTM/ipTM vs. 实验 Ki/IC50</td>
+<td>相关性弱且方向不一致</td>
+<td>置信度不能作为亲和力代理</td>
+<td>不能排除在更大数据集上存在弱相关</td>
+<td>Results 节 Fig. 5</td>
+</tr>
+<tr>
+<td>MD 模拟对比</td>
+<td>MD 能提供 AI 工具无法给出的溶液构象信息</td>
+<td>MD 主导簇 vs. 实验结合构象 vs. AI 预测</td>
+<td>部分肽的 MD 溶液主导构象与结合构象不同</td>
+<td>MD 是刻画溶液 ensemble 的必要工具</td>
+<td>不能说明 MD 对所有环肽均能准确预测溶液构象</td>
+<td>Results 节 3.5 与 Table S3</td>
+</tr>
+<tr>
+<td>内部未发表肽预测</td>
+<td>工具对训练集外肽的泛化能力</td>
+<td>内部肽 vs. 公开肽</td>
+<td>所有工具在内部肽上性能下降</td>
+<td>现有工具对训练集外环肽泛化有限</td>
+<td>样本量小，不能推广到所有新环肽</td>
+<td>Results 节 Fig. S1</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文仅评估静态结构预测（单体与复合物），不涉及构象 ensemble 预测、结合亲和力预测或序列设计。</li>
+<li><strong>数据集边界</strong>: 环肽类型限于 head-to-tail 环化和二硫键环化，含非天然氨基酸的环肽仅能通过 SMILES 输入；不含 lariat、lasso、硫醚环化等"exotic"化学类型。</li>
+<li><strong>oracle/真值输入</strong>: 实验晶体结构（PDB）为金标准；MD 模拟使用 RSFF2 力场 + 偏置交换 metadynamics，收敛阈值 NIP=0.9。MD 结果本身是模型依赖的，不能视为实验真值。</li>
+<li><strong>端到端状态</strong>: 所有工具均为"开箱即用"默认参数（除 CycPepDock 和 EvoBind2 经调参外），未进行针对环肽的微调或优化。</li>
+<li><strong>算力成本</strong>: 未提供各工具的运行时间或计算资源对比，仅定性指出 AI 工具在计算成本上优于 MD。</li>
+<li><strong>历史数据依赖</strong>: 公开数据集中的环肽结构可能已进入模型训练集，循环移位分析表明记忆效应存在但无法完全排除。</li>
+<li><strong>最难情形</strong>: 训练集外的内部肽、非天然氨基酸环肽（仅 SMILES 输入）、溶液构象与结合构象差异大的肽。</li>
+<li><strong>不确定性</strong>: 统计显著性受限于小样本量（每个数据集肽段数有限），部分相关性分析未达显著阈值。</li>
+<li><strong>有边界的复述</strong>: 在本文构建的环肽基准上，环化感知的 AI 工具（HighFold、Boltz-2-cyc）在单体和复合物构象预测上均优于通用工具；新一代工具（Boltz-2、Chai-1、Protenix-v2）在复合物预测上优于 AF2 系；所有 AI 工具的置信度指标不能作为结合亲和力的定量代理；MD 模拟仍是刻画环肽溶液构象 ensemble 的唯一可靠手段，但计算成本远高于 AI 工具。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据集规模有限</td>
+<td>仅三个靶标体系，每个体系肽段数有限，统计功效受限</td>
+<td>扩大数据集以支持更强结论</td>
+<td>Results 节 Fig. 5 讨论</td>
+</tr>
+<tr>
+<td>静态结构评估为主</td>
+<td>主要比较单一预测结构与实验结构的 RMSD，未系统评估构象 ensemble 预测能力</td>
+<td>开发能预测构象 ensemble 的工具</td>
+<td>Conclusions 节</td>
+</tr>
+<tr>
+<td>非天然氨基酸处理受限</td>
+<td>含非天然氨基酸的环肽仅能通过 SMILES 输入，精度下降</td>
+<td>期待支持非天然氨基酸与 CCD 条目结合的新工具</td>
+<td>Conclusions 节（提及 Boltz 第三方修改）</td>
+</tr>
+<tr>
+<td>记忆效应无法完全排除</td>
+<td>循环移位分析表明存在记忆效应，但无法量化其贡献</td>
+<td>需要更多训练集外数据进行验证</td>
+<td>Results 节 3.2 与 Fig. S8</td>
+</tr>
+<tr>
+<td>MD 模拟仅用于子集</td>
+<td>因计算成本，MD 模拟仅对 HIV 整合酶数据集执行</td>
+<td>在更大范围内进行 MD 对比</td>
+<td>Methodology 节 Molecular dynamics comparison</td>
+</tr>
+<tr>
+<td>置信度-亲和力相关性数据点少</td>
+<td>相关性分析受限于可用亲和力数据</td>
+<td>需要更多含亲和力数据的环肽-蛋白复合物结构</td>
+<td>Results 节 Fig. 5 讨论</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束</strong>（非正式局限）:
+- 所有工具使用默认参数（除 CycPepDock 和 EvoBind2 经调参），可能未达到各工具最优性能
+- 环肽的"溶液构象"参考来自 MD 模拟而非实验（NMR），存在模型依赖性
+- 未包含 AlphaFold3 官方版本（因许可限制），仅使用开源替代品</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>环化感知工具的优势可能部分来自训练数据偏差</td>
+<td>HighFold 和 Boltz-2-cyc 可能专门针对环肽数据微调，而通用工具未做同等优化</td>
+<td>公平性：基准应区分"架构优势"与"训练数据优势"</td>
+<td>使用相同训练数据对通用工具进行环肽微调后重新比较</td>
+<td>Methodology 节 Modelling tools 描述</td>
+</tr>
+<tr>
+<td>MD 模拟仅用于一个数据集，且使用单一力场</td>
+<td>RSFF2 力场对环肽的适用性可能有限，不同力场可能给出不同主导构象</td>
+<td>物理模拟作为"金标准"的可信度取决于力场选择</td>
+<td>使用多个力场（如 CHARMM、AMBER）交叉验证 MD 结果</td>
+<td>Methodology 节 Molecular dynamics comparison</td>
+</tr>
+<tr>
+<td>置信度-亲和力相关性分析样本量过小</td>
+<td>每个数据集仅数个到十几个肽段，统计功效不足以检测弱相关</td>
+<td>结论"置信度不能预测亲和力"可能过于绝对</td>
+<td>在更大数据集上重复相关性分析</td>
+<td>Results 节 Fig. 5 与 Tables 1-3</td>
+</tr>
+<tr>
+<td>循环移位聚合分析可能低估记忆效应</td>
+<td>循环移位改变了序列的局部上下文，可能影响模型对非环肽特征的利用，而非纯粹检测记忆</td>
+<td>记忆效应的检测方法需要更精细的设计</td>
+<td>使用同源但非训练集的环肽序列进行对照实验</td>
+<td>Results 节 3.2 与 Fig. S8</td>
+</tr>
+<tr>
+<td>未报告各工具的运行时间和资源消耗</td>
+<td>计算成本是工具选择的重要实际考量</td>
+<td>实际应用中，精度-成本权衡可能改变工具选择</td>
+<td>补充各工具的运行时间和 GPU 资源对比</td>
+<td>全文未提供</td>
+</tr>
+<tr>
+<td>内部未发表肽的"非训练集"属性未经验证</td>
+<td>作者未说明如何确认内部肽不在任何工具的训练集中</td>
+<td>泛化性结论的可信度取决于此假设</td>
+<td>与工具开发者确认训练集组成或使用更严格的排除标准</td>
+<td>Results 节 Fig. S1 讨论</td>
+</tr>
+<tr>
+<td>Rosetta 能量评分与 RMSD 的关系未深入分析</td>
+<td>高能量但低 RMSD 的预测可能反映力场与 ML 模型的系统偏差</td>
+<td>理解能量-结构关系有助于改进工具</td>
+<td>对能量-RMSD 散点图进行系统分析</td>
+<td>Results 节 Fig. S7</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:</p>
+<ol>
+<li>
+<p><strong>循环相对位置编码（cyclic relative positional encoding offset）是环肽结构预测的关键技术组件</strong>。可迁移到本课题：在设计环肽专用预测工具或修改现有工具时，应优先考虑显式编码环化拓扑，而非依赖模型隐式学习。具体实现可参考 HighFold 和 Boltz-2-cyc 的做法，在注意力机制中加入循环偏移。</p>
+</li>
+<li>
+<p><strong>输入表示的选择显著影响预测精度</strong>。氨基酸序列输入优于 SMILES 输入，因为 SMILES 的原子级分词丢失残基级语义。可迁移到本课题：在环肽-蛋白复合物预测中，优先使用序列输入；仅在需要表示非天然氨基酸时使用 SMILES，并预期精度下降。</p>
+</li>
+<li>
+<p><strong>记忆效应检测应成为基准测试的标准流程</strong>。循环移位序列是一种轻量有效的检测手段。可迁移到本课题：在评估任何结构预测工具时，应构建聚合数据集（如序列循环移位、同源序列）以区分记忆与泛化。</p>
+</li>
+<li>
+<p><strong>AI 工具与物理模拟的互补分工模式</strong>。AI 工具擅长快速预测复合物结合构象，MD 模拟擅长刻画溶液构象 ensemble。可迁移到本课题：在环肽药物设计流程中，可采用"AI 初筛 + MD 验证"的级联策略，兼顾效率与物理可靠性。</p>
+</li>
+<li>
+<p><strong>置信度指标（pLDDT/pTM/ipTM）不能作为结合亲和力的代理</strong>。可迁移到本课题：在基于结构的虚拟筛选中，不应使用置信度分数直接排序候选分子；应结合实验或 MD 计算的结合自由能。</p>
+</li>
+<li>
+<p><strong>环肽的溶液构象与结合构象可能不同</strong>。MD 模拟显示部分肽的溶液主导构象与结合构象存在差异。可迁移到本课题：在设计环肽时，应同时考虑溶液构象的稳定性和结合构象的适配性，而非仅优化结合态结构。</p>
+</li>
+<li>
+<p><strong>工具代际更迭（AF2→AF3 系）带来复合物预测的实质提升</strong>。可迁移到本课题：在资源允许时，优先选择新一代工具（Boltz-2、Chai-1、Protenix-v2）进行复合物预测；但单体环肽预测仍应使用环化感知工具。</p>
+</li>
+<li>
+<p><strong>Rosetta 能量评分可作为预测结构的物理合理性检查</strong>。环化感知工具产生更高应变的结构，提示 ML 预测可能牺牲物理合理性换取结构相似性。可迁移到本课题：对 ML 预测结构进行能量最小化或 MD 弛豫，以改善物理合理性。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold2 及其环肽应用</strong>: 本文的 EvoBind2/AF2 结果与已有文献一致，即 AF2 对环肽的预测需要额外处理环化约束。可参考 Jumper et al. (2021) Nature 的 AF2 原始架构，以及 EvoBind 系列工作（Bryant et al.）对肽段结合预测的改进。</li>
+<li><strong>AlphaFold3 与开源替代</strong>: 本文的 Boltz-2、Chai-1、Protenix-v2 属于 AF3 系工具。可参考 Abramson et al. (2024) Nature 的 AF3 架构，以及 Boltz-1（Wohlwend et al.）和 Chai-1（Chai Discovery）的开源实现。</li>
+<li><strong>环肽构象预测专用工具</strong>: HighFold 是环肽专用工具，其循环位置编码思想与本文结论直接相关。可参考 HighFold 原始论文（McHugh et al.）及其在环肽设计中的应用。</li>
+<li><strong>环肽 MD 模拟</strong>: 本文使用 RSFF2 力场 + 偏置交换 metadynamics，与环肽 MD 模拟文献一致。可参考 RSFF2 力场原始论文（Zhou et al.）以及环肽构象采样相关工作（如 StrEAMM、CycPeptMPDB 数据库）。</li>
+<li><strong>记忆效应与基准测试</strong>: 本文的循环移位聚合分析设计与近期 ML 基准测试中"训练集污染检测"的思路一致。可参考 AlphaFold 相关基准测试中关于训练集重叠的讨论。</li>
+<li><strong>置信度与功能相关性</strong>: 本文发现置信度与亲和力弱相关的结论，与已有文献中 pLDDT 与功能预测相关性有限的观察一致。可参考关于 AlphaFold 置信度指标局限性的讨论。</li>
+<li><strong>环肽药物设计</strong>: 本文涉及的环肽药物案例（linaclotide、lanreotide、Luna18、MK-0616）可连接到环肽药物开发文献，以及环肽口服生物利用度与构象刚性的关系研究。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>名称</strong>: 环肽构象 ensemble 预测的混合 AI-MD 框架
+   - <strong>来源局限/观察</strong>: 本文显示 AI 工具仅输出静态结构，无法反映环肽溶液构象 ensemble；MD 虽能刻画 ensemble 但计算昂贵
+   - <strong>核心假设</strong>: 将 AI 预测的多个候选构象作为 MD 模拟的初始种子，可显著加速 ensemble 收敛，同时保持物理准确性
+   - <strong>增量</strong>: 相比纯 MD 或纯 AI，混合框架可能在精度-成本权衡上达到最优
+   - <strong>初步方法</strong>: 使用 Boltz-2-cyc 生成多个候选构象，作为偏置交换 metadynamics 的初始结构；比较与随机初始化的收敛速度和 ensemble 一致性
+   - <strong>验证方式</strong>: 在本文 HIV 整合酶数据集上，比较混合框架与纯 MD 的 NIP 收敛曲线和主导构象一致性
+   - <strong>失败模式</strong>: AI 候选构象可能偏向结合态，导致溶液 ensemble 采样偏差</p>
+</li>
+<li>
+<p><strong>名称</strong>: 非天然氨基酸环肽的序列-结构预测统一模型
+   - <strong>来源局限/观察</strong>: 本文显示 SMILES 输入精度显著低于序列输入，但非天然氨基酸无法用标准序列表示
+   - <strong>核心假设</strong>: 设计一种混合 tokenizer，将标准氨基酸残基和 CCD 条目统一编码，可同时支持天然和非天然环肽的高精度预测
+   - <strong>增量</strong>: 解决环肽药物设计中常见的非天然氨基酸建模痛点
+   - <strong>初步方法</strong>: 扩展 Boltz-2 的 tokenizer，支持 CCD 条目与标准残基的混合输入；在含非天然氨基酸的环肽数据集上微调
+   - <strong>验证方式</strong>: 与本文 SMILES 输入结果对比，评估 RMSD 提升幅度
+   - <strong>失败模式</strong>: 非天然氨基酸训练数据稀缺，可能无法充分学习其构象偏好</p>
+</li>
+<li>
+<p><strong>名称</strong>: 环肽结合亲和力预测的几何-能量混合评分函数
+   - <strong>来源局限/观察</strong>: 本文显示置信度指标与亲和力无一致相关，但 Rosetta 能量可提供物理合理性检查
+   - <strong>核心假设</strong>: 结合 ML 结构预测的几何特征与 Rosetta 能量项，可构建比单一指标更有效的亲和力排序函数
+   - <strong>增量</strong>: 为环肽虚拟筛选提供更可靠的排序工具
+   - <strong>初步方法</strong>: 提取预测结构的几何特征（二面角、氢键模式、环应变）与 Rosetta 能量项，训练轻量级排序模型
+   - <strong>验证方式</strong>: 在本文三个数据集上，比较混合评分与单一指标的 Spearman 相关性
+   - <strong>失败模式</strong>: 数据集规模小，可能过拟合；需要外部验证集</p>
+</li>
+<li>
+<p><strong>名称</strong>: 环肽记忆效应检测的标准化基准协议
+   - <strong>来源局限/观察</strong>: 本文的循环移位分析揭示了记忆效应，但方法较为简单
+   - <strong>核心假设</strong>: 设计更系统的记忆检测协议（包括序列突变、结构扰动、同源家族排除），可更准确评估工具的真实泛化能力
+   - <strong>增量</strong>: 为环肽结构预测工具的评估提供标准化协议
+   - <strong>初步方法</strong>: 构建包含原始序列、循环移位、随机突变、同源序列的多层次测试集；定义记忆指数（Memorization Index）
+   - <strong>验证方式</strong>: 在本文工具集上应用协议，比较不同工具的记忆指数
+   - <strong>失败模式</strong>: 过度严格的排除标准可能导致测试集过小，统计功效不足</p>
+</li>
+<li>
+<p><strong>名称</strong>: 环肽溶液构象与结合构象差异的系统性分析
+   - <strong>来源局限/观察</strong>: 本文 MD 模拟显示部分肽的溶液主导构象与结合构象不同，但未系统分析
+   - <strong>核心假设</strong>: 环肽的溶液-结合构象差异与其序列特征（环大小、氨基酸组成、氢键模式）存在可预测的关联
+   - <strong>增量</strong>: 为环肽设计提供"构象预组织"的序列设计规则
+   - <strong>初步方法</strong>: 对本文数据集及扩展数据集进行 MD 模拟，量化溶液-结合构象差异，关联序列特征
+   - <strong>验证方式</strong>: 在已知构象预组织的环肽（如 compstatin 类似物）上验证关联规则
+   - <strong>失败模式</strong>: 数据集有限，可能无法发现普适规律</p>
+</li>
+<li>
+<p><strong>名称</strong>: 环肽-蛋白复合物预测的 ensemble 评估指标
+   - <strong>来源局限/观察</strong>: 本文主要使用 RMSD 评估，但环肽的柔性意味着单一静态结构可能不足以代表 ensemble
+   - <strong>核心假设</strong>: 开发基于 ensemble 的评估指标（如覆盖率、多样性、与实验 ensemble 的重叠度），能更全面评估预测工具
+   - <strong>增量</strong>: 为环肽结构预测提供更合理的评估框架
+   - <strong>初步方法</strong>: 定义 ensemble 覆盖率（预测 ensemble 与实验 ensemble 的 Jaccard 相似度）和多样性指标；在本文数据集上重新评估所有工具
+   - <strong>验证方式</strong>: 比较 ensemble 指标与 RMSD 在工具排序上的一致性
+   - <strong>失败模式</strong>: 实验 ensemble 数据稀缺，难以建立金标准</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methodology, results and discussion, conclusions, and supplementary material descriptions)</li>
+<li><strong>Assessment boundary</strong> Scientific soundness, methodological rigor, validity of claims relative to presented evidence, and clarity of the benchmark design and interpretation</li>
+<li><strong>Shared manuscript claim summary</strong> The authors benchmark several AI-based structure prediction tools (HighFold, cyclic-aware AlphaFold2/EvoBind2, CycPepDock, Boltz-1/1x, Boltz-2, Chai-1, Protenix-v2) for their ability to predict and rank cyclic peptide conformers, both in isolation and in complex with protein targets, using sequence or SMILES representations. They report that newer tools outperform AlphaFold2-based counterparts, that cyclic relative positional encoding is critical, that natural amino acid representation outperforms SMILES, that confidence metrics correlate poorly with binding affinity, and that physics-based MD remains superior for capturing conformational flexibility while AI tools offer a price/performance advantage.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Fig. 1–5), supplementary figures and tables referenced (Fig. S1–S9, Tables S1–S3), and methodological descriptions in the main text</li>
+<li><strong>Missing materials affecting confidence</strong> The actual supplementary information (SI) file, including Tables S1–S3 and Figures S1–S9, was not provided. Specific numerical values for RMSD distributions, correlation coefficients, and statistical significance tests are referenced but not visible. Configuration files for CycPepDock and cyclic-aware AlphaFold2 are mentioned but not included. The full dataset composition and curation details are only partially described.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript addresses a timely and practically relevant question: how well do current AI-based structure prediction tools handle cyclic peptides, a modality of growing therapeutic interest. The benchmark design is thoughtful, particularly the inclusion of circularly shifted sequences to probe memorization and the comparison against MD-derived ensembles. The main findings, that cyclic-aware tools perform better, that SMILES representation degrades performance, and that confidence metrics do not track binding affinity, are plausible and consistent with prior literature. However, the manuscript as presented has several significant gaps. The most critical issue is that the core quantitative evidence, the supplementary figures and tables, is not available for assessment. Without these, the strength of the claims cannot be verified. Additionally, the MD comparison is performed on a very small subset (one target family), and the authors themselves note the difficulty in drawing conclusions. The memorization analysis, while clever, is presented in a way that conflates different potential causes of performance degradation. The manuscript would benefit from a clearer articulation of the benchmark's limitations and a more careful separation of established findings from preliminary observations.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and medicinal chemists working on peptide therapeutics, particularly those involved in structure-based drug design for macrocyclic peptides. The benchmark provides practical guidance on tool selection and representation choices. Researchers developing new structure prediction methods would also find the comparative performance data and the memorization analysis useful for understanding current limitations.</li>
+<li><strong>Major strengths</strong> The benchmark addresses a relevant and under-studied problem. The inclusion of multiple tool generations and two input representations is comprehensive. The circular shift analysis is a creative approach to probing memorization. The comparison with MD simulations, while limited, adds a valuable dimension. The authors are appropriately cautious in several of their interpretations, particularly regarding the limitations of static structure prediction.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The manuscript claims specific performance differences between tools, representation formats, and regimes (e.g., "HighFold and Boltz-2 with a cyclic constraint" achieving ~1.3 Å backbone RMSD, while others exceed 4 Å; SMILES representation degrading performance).</li>
+<li><strong>Evidence pointer</strong> Figures 1–5 and Supplementary Figures S1–S9, Tables S1–S3; location not provided for specific data points</li>
+<li><strong>Concern</strong> The central quantitative claims of the paper rest entirely on figures and tables in the supplementary information, which was not provided for review. Without access to the actual RMSD distributions, correlation coefficients, and statistical tests, it is impossible to assess whether the stated differences are robust, significant, or confounded. The main text provides only qualitative descriptions and a few illustrative values. This is a blocking issue because the paper's conclusions are fundamentally empirical claims about tool performance.</li>
+<li><strong>Why it matters</strong> The paper's value lies in its quantitative benchmark results. If the underlying data are not available for scrutiny, the claims cannot be verified or reproduced. This is a fundamental requirement for a benchmarking study.</li>
+<li><strong>Resolution test</strong> Provide the full supplementary information, including all data tables and figures, for review. Ideally, also provide the underlying data files or a public repository link with the raw metrics.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Methodological rigor</li>
+<li><strong>Claim pointer</strong> The manuscript states that "for the one trajectory where the top-populated cluster was not similar to the bound conformation, we observe that greater similarity is inferred between the bound-conformation cluster and the monomer structure predictions... than between the static predicted structure and the top cluster, in line with the expectation that ML-based structure prediction tools will yield results similar to what they have 'seen'."</li>
+<li><strong>Evidence pointer</strong> Section 3.5, Figure S4; location not provided</li>
+<li><strong>Concern</strong> This is a single trajectory from a single peptide. The authors use this to support a general claim about ML tools favoring bound conformations. This is an over-interpretation of a single data point. The MD comparison is performed on only one of the three target families, and the authors acknowledge the small dataset size. The conclusion drawn from this one trajectory is not statistically supportable.</li>
+<li><strong>Why it matters</strong> The comparison with MD is a key differentiator of this study. If the conclusions are based on anecdotal evidence, the value of this comparison is substantially diminished. The claim about ML tools "memorizing" bound conformations is important and needs stronger support.</li>
+<li><strong>Resolution test</strong> Expand the MD comparison to a larger and more diverse set of peptides, or at minimum, present the results for all trajectories in the dataset and discuss the variability. If the single trajectory is truly exceptional, state this explicitly and avoid generalizing from it.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Confounding variables</li>
+<li><strong>Claim pointer</strong> The manuscript attributes the performance difference between sequence and SMILES representations to "how the molecules are tokenized" and how "geometry and evolutionary constraints are estimated."</li>
+<li><strong>Evidence pointer</strong> Section 3.1, Figure 1; location not provided</li>
+<li><strong>Concern</strong> The comparison between sequence and SMILES representations is potentially confounded by the fact that SMILES was used for peptides containing non-canonical amino acids, while the sequence representation was used for standard peptides. The authors state this in the methodology but do not appear to control for it in the analysis. If the SMILES-using peptides are systematically different (e.g., more complex chemistry), the performance difference may be due to the peptide properties rather than the representation format.</li>
+<li><strong>Why it matters</strong> The claim that "the natural amino acid representation was found to outperform the more general SMILES string input" is a key finding. If this is confounded by peptide composition, the conclusion is not valid.</li>
+<li><strong>Resolution test</strong> Perform a matched comparison where the same peptides are provided in both sequence and SMILES formats, or at least analyze the subset of peptides that can be represented both ways separately. Discuss the potential confounding effect explicitly.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Construct validity</li>
+<li><strong>Claim pointer</strong> The manuscript uses RMSD to a single reference structure as the primary accuracy metric and acknowledges that "a simple RMSD comparison only assesses the ability of a structure prediction tool to recapitulate a reference structure, rather than the entire conformational ensemble."</li>
+<li><strong>Evidence pointer</strong> Section 3.1, Figures 1–4; location not provided</li>
+<li><strong>Concern</strong> The authors correctly identify this limitation but do not adequately address it in their analysis. For cyclic peptides, which are known to be conformationally flexible, a single reference structure may not be representative. The MD comparison is presented as a partial remedy, but it is only applied to a small subset. The main benchmark results are still based on single-structure RMSD.</li>
+<li><strong>Why it matters</strong> If the reference structures are not representative of the conformational ensemble, the ranking of tools based on RMSD to those structures may not reflect their utility in a drug discovery context, where conformational ensembles matter.</li>
+<li><strong>Resolution test</strong> For at least a subset of peptides, compare predicted structures against the full MD-derived ensemble, using metrics such as population overlap or ensemble RMSD. Discuss how the single-structure RMSD results might change if ensemble-based metrics were used.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Methodology, Datasets section</li>
+<li><strong>Evidence pointer</strong> Section 2.1, Tables 1–3</li>
+<li><strong>Issue</strong> The description of the dataset curation is somewhat vague. The authors state that peptides were selected based on "studies reporting bioactivity data" and "experimentally verified structures," but the exact selection criteria, the number of peptides screened versus included, and the handling of redundant or closely related sequences are not described.</li>
+<li><strong>Required correction</strong> Provide a more detailed description of the dataset curation process, including inclusion/exclusion criteria, the number of peptides considered at each stage, and how sequence redundancy was managed.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical detail</li>
+<li><strong>Affected element</strong> Methodology, Modelling tools section</li>
+<li><strong>Evidence pointer</strong> Section 2.2</li>
+<li><strong>Issue</strong> The description of the tools and their parameters is high-level. For a benchmark that aims to be reproducible, more detail is needed on the specific versions of each tool, the exact input formats used, and any non-default parameters beyond those mentioned for CycPepDock and EvoBind2.</li>
+<li><strong>Required correction</strong> Add a table or supplementary section listing the exact tool versions, key parameters, and input preparation steps for each tool.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Results and discussion, Correlation section</li>
+<li><strong>Evidence pointer</strong> Section 3.4, Figure 5</li>
+<li><strong>Issue</strong> The correlation analysis is described qualitatively ("weak across the board"). Specific correlation coefficients, confidence intervals, and p-values are not reported in the main text.</li>
+<li><strong>Required correction</strong> Report the actual correlation coefficients and their statistical significance, either in the main text or by referencing specific values in the supplementary tables.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Results and discussion, Overall accuracy comparison</li>
+<li><strong>Evidence pointer</strong> Section 3.3, Figure 4</li>
+<li><strong>Issue</strong> The statement that "Protenix and Chai-1 appear to lead the competition" is based on a visual inspection of the figures, but the magnitude of the difference and its practical significance are not quantified. It is unclear if the difference between the top tools is within the noise of the benchmark.</li>
+<li><strong>Required correction</strong> Provide a statistical comparison of the top-performing tools, including effect sizes and confidence intervals, to support the claim of a meaningful performance difference.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Conclusions</li>
+<li><strong>Evidence pointer</strong> Section 4</li>
+<li><strong>Issue</strong> The conclusions section mentions future tools and MLIPs but does not provide a clear summary of the practical recommendations for users of these tools. Given the benchmark's applied nature, a concise set of recommendations would be valuable.</li>
+<li><strong>Required correction</strong> Add a short paragraph in the conclusions summarizing the key practical takeaways for researchers selecting tools for cyclic peptide modeling.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The absence of the supplementary information is the primary technical failing. The manuscript's claims cannot be evaluated without the underlying data. Additionally, the MD comparison is too limited in scope to support the general conclusions drawn from it. The potential confounding between representation format and peptide composition in the sequence vs. SMILES comparison needs to be addressed.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li><strong>Originality</strong> The benchmark is not entirely novel in concept, as similar comparisons exist for linear peptides and for some cyclic peptide tools. However, the specific focus on cyclic peptides, the inclusion of multiple tool generations, and the memorization analysis provide a degree of originality.</li>
+<li><strong>Scientific importance</strong> The question of how well AI tools handle cyclic peptides is of practical importance for drug discovery. The findings, if robust, would be useful for practitioners. However, the importance is incremental rather than transformative.</li>
+<li><strong>Interdisciplinary readership</strong> The topic sits at the intersection of computational biology, medicinal chemistry, and AI. The manuscript is likely to be of interest to researchers in these fields, but the appeal is somewhat narrow.</li>
+<li><strong>Technical soundness</strong> The benchmark design is generally sound, but the lack of access to the supplementary data and the limited MD comparison prevent a full assessment of technical soundness. The potential confounding in the representation comparison is a concern.</li>
+<li><strong>Readability for nonspecialists</strong> The manuscript is reasonably well-written and accessible. The authors explain the tools and metrics at an appropriate level. The main text is clear, though some sections (e.g., the MD methodology) are dense.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The manuscript addresses a relevant question and the authors have made a reasonable effort in their benchmark design. However, the blocking issue of missing supplementary data must be resolved, and the concerns about the MD comparison and the representation confounding need to be addressed before the claims can be considered established.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The specific performance numbers (e.g., ~1.3 Å RMSD for HighFold and Boltz-2) are unverifiable without the supplementary figures.</li>
+<li>The claim that newer tools provide a "significant" advantage over AlphaFold2-based counterparts is not supported by statistical evidence in the main text.</li>
+<li>The conclusion that "physics-based tools remain the gold standard" for capturing conformational flexibility is based on a very small subset of peptides and a single trajectory analysis.</li>
+<li>The claim that the performance difference between sequence and SMILES representations is due to tokenization and geometry estimation is potentially confounded by peptide composition.</li>
+<li>The assertion that circularly shifted sequences impact performance, implying memorization, is presented without quantitative data in the main text.</li>
+<li>The statement that "none of the tools tested were able to recapitulate the notable structural features" of the three well-structured peptides is based on a case study of only three peptides and is presented without detailed metrics.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

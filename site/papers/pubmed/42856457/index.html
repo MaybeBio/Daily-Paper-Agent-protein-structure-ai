@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMartini: automated small molecule parametrization for Martini 3 force field. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>SMartini: automated small molecule parametrization for Martini 3 force field.</h1>
+      <div class="meta">Yangaliev, Danis; Ozkan, S Banu</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv : the preprint server for biology</span>
+        · 2026-10-11
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42856457/">原文</a>
+      </div>
+      <p class="one-liner">该文开发了针对Martini 3粗粒化力场的小分子自动参数化流程，虽对象为小分子而非蛋白质，但其参数化方法可迁移至蛋白-配体体系的粗粒化模拟，对蛋白质结构计算有间接启发。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">We present SMartini, an automated pipeline for deriving Martini 3 coarse-grained force-field parameters for arbitrary small molecules. Starting from a molecular structure or a SMILES string, the pipeline maps the all-atom molecule onto a coarse-grained bead representation and automatically fits both bonded and non-bonded parameters. Bonded parameters are obtained via Boltzmann inversion of atomistic molecular dynamics trajectories; successive rounds of coarse-grained simulation and distribution-matching updates then refine these estimates until the coarse-grained conformational ensemble reproduces the all-atom reference within tolerance. We validate the pipeline on a diverse set of small molecules including drug-like compounds, metabolites, and cofactors. Implemented as a modular sequence of scripts that can be orchestrated on high-performance computing clusters, SMartini makes automated parametrization of large ligand libraries practical and reduces the manual effort required for coarse-grained model development, enabling high-throughput coarse-grained simulations of protein-ligand systems within the Martini 3 ecosystem.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">我们介绍SMartini，这是一个自动化流程，用于为任意小分子推导Martini 3粗粒化力场参数。从分子结构或SMILES字符串出发，该流程将全原子分子映射到粗粒化珠子表示，并自动拟合键合和非键合参数。键合参数通过原子级分子动力学轨迹的玻尔兹曼反演获得；随后，通过多轮粗粒化模拟和分布匹配更新，逐步优化这些估计值，直至粗粒化构象系综在容差范围内再现全原子参考。我们在包括药物样化合物、代谢物和辅因子在内的多样化小分子集合上验证了该流程。SMartini作为一系列模块化脚本实现，可在高性能计算集群上编排，使大型配体库的自动化参数化变得实用，并减少了粗粒化模型开发所需的手动工作，从而在Martini 3生态系统中实现蛋白质-配体系统的高通量粗粒化模拟。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：SMartini: automated small molecule parametrization for Martini 3 force field</li>
+<li><strong>作者</strong>：Yangaliev, Danis; Ozkan, S Banu</li>
+<li><strong>单位</strong>：未提供（根据基金信息推测为美国机构，具体单位未在摘要中提供）</li>
+<li><strong>期刊/平台</strong>：bioRxiv (the preprint server for biology)</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法学论文）</li>
+<li><strong>领域</strong>：粗粒化分子动力学力场参数化；蛋白质-配体相互作用计算</li>
+<li><strong>关键词</strong>：Martini 3 力场、粗粒化、小分子参数化、自动流程、分布匹配、Boltzmann 反演</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.09.29.755481</li>
+<li><strong>代码</strong>：https://github.com/DanYev/SMartini；https://github.com/DanYev/reForge</li>
+<li><strong>数据</strong>：分子动力学数据可应要求提供</li>
+<li><strong>阅读日期</strong>：2026-10-11</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × 物理模拟（MD）」方向中的粗粒化力场参数化工具开发。它针对 Martini 3 力场中任意小分子（配体、辅因子、代谢物）的自动化参数化问题，填补了从分子结构/SMILES 到可用 CG 拓扑的自动化流程空白。与 AlphaFold 等结构预测方法互补——CG MD 模拟需要高质量的配体参数才能研究蛋白-配体动态相互作用。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 SMartini 自动化流程，通过片段化图划分算法将任意小分子映射为 Martini 3 CG beads，并利用 Boltzmann 反演加迭代分布匹配（AA-to-CG）自动拟合键合参数，在 7 个分子（20-64 重原子）上验证了 CG 系综与全原子参考的一致性，且可扩展至叶绿素等大分子。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何自动化地为任意小分子生成 Martini 3 粗粒化力场参数（包括 bead 映射、类型分配、键合参数拟合），无需人工干预？</li>
+<li><strong>为什么重要</strong>：蛋白-配体相互作用是几乎所有生物过程的核心。Martini 3 CG MD 可将模拟时间尺度提升 2-3 个数量级，但配体参数化长期依赖专家手动操作，成为高通量虚拟筛选和复杂体系模拟的瓶颈。</li>
+<li><strong>现有方法不足</strong>：AutoMartini M3 虽能自动映射和分配 bead 类型，但其全局枚举策略呈指数级扩展——对超过约 30 个重原子的分子（如 ATP 大小），映射步骤需数小时和数十 GB 内存；且键合参数自动拟合几乎空白。</li>
+<li><strong>精确研究问题</strong>："Can an automated pipeline generate Martini 3 parameters for arbitrary small molecules (up to ~64 heavy atoms) with bonded parameters that reproduce all-atom conformational distributions within tolerance, without manual intervention?"</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络基于本文引言及作者引用，经外部核验程度有限，标记为「仅本文框架」）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AA 力场成熟期</td>
+<td>CHARMM, AMBER, OpenFF</td>
+<td>精度持续提升，可预测配体几何、溶剂化自由能、结合亲和力</td>
+<td>计算昂贵，难以达到微秒-毫秒时间尺度</td>
+</tr>
+<tr>
+<td>CG 模型兴起</td>
+<td>Martini 3 等</td>
+<td>2-3 个数量级加速，可研究蛋白-配体识别、膜渗透、自组装</td>
+<td>需要预先参数化，小分子参数化困难</td>
+</tr>
+<tr>
+<td>小分子 CG 参数化工具</td>
+<td>AutoMartini M3</td>
+<td>自动映射和 bead 类型分配</td>
+<td>全局枚举指数级扩展，&gt;30 重原子不可行；键合参数仍需手动</td>
+</tr>
+<tr>
+<td><strong>本文位置</strong></td>
+<td><strong>SMartini</strong></td>
+<td><strong>局部图划分线性扩展，自动键合参数拟合</strong></td>
+<td><strong>依赖 AA 参考模拟；GROMACS 函数形式限制</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全局映射枚举指数级扩展</td>
+<td>&gt;30 重原子分子映射需数小时、数十 GB 内存</td>
+<td>搜索空间随 bead 数组合爆炸</td>
+<td>Introduction 节："for molecules beyond roughly 30 heavy atoms... the mapping step alone can take hours and consume tens of gigabytes of memory"</td>
+</tr>
+<tr>
+<td>键合参数自动拟合缺失</td>
+<td>自动工具仅覆盖映射和类型分配</td>
+<td>键合参数拟合需要迭代 CG 模拟与分布匹配，工程复杂</td>
+<td>Introduction 节："automated fitting of bonded parameters—an equally critical step—remains, to our knowledge, even less developed"</td>
+</tr>
+<tr>
+<td>小分子刚性导致数值不稳定</td>
+<td>20 fs 标准 CG 步长不可靠</td>
+<td>芳香环、共轭双键、紧凑共价骨架产生高频内自由度</td>
+<td>Results 节："small-molecule ligands are typically significantly stiffer... 20 fs can be employed for some systems, but it does not generalise reliably"</td>
+</tr>
+<tr>
+<td>角度-二面角耦合难以拟合</td>
+<td>LIB 的角度 W1=0.022、二面角 W1=0.075 偏高</td>
+<td>GROMACS 单阱谐振角度势无法表示多峰分布</td>
+<td>Discussion 节："the harmonic angle potential cannot capture the multimodal character induced by adjacent dihedral substates"</td>
+</tr>
+<tr>
+<td>CG 缺乏氢键导致结合不稳定</td>
+<td>蛋白-配体复合物中配体易脱离</td>
+<td>CG 模型无显式氢键，缺乏锚定相互作用</td>
+<td>Results 节（蛋白-配体部分）："CG models lack explicit hydrogen bonds... additional distance restraints that mimic the AA hydrogen-bond network may be required"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>一个模块化自动化流程：输入分子结构/SMILES → 片段化图划分映射为 CG beads → 基于 SMILES 和 logP 分配 Martini 3 bead 类型 → OpenFF Sage 生成 AA 参考轨迹 → Boltzmann 反演获得初始键合参数 → 迭代 CG 模拟与分布匹配更新参数 → 输出数值稳定的 Martini 3 拓扑。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>局部优于全局</strong>：将分子分解为化学上有意义的子图（片段），在每个子图内局部求解划分问题再拼接，将指数级搜索降为近线性——这是突破 AutoMartini M3 规模瓶颈的关键。</li>
+<li><strong>分布匹配而非单点拟合</strong>：键合参数的目标不是复现某个构象，而是让 CG 系综的键长/角度/二面角分布逼近 AA 参考分布，以 Wasserstein 距离为量化指标。</li>
+<li><strong>刚性分子需更小步长</strong>：小分子配体比蛋白质更刚硬，10 fs 步长是数值稳定性与效率的折中。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>将全局 NP 难问题分解为局部子问题</strong>是处理分子复杂性的一般策略——类似思路可迁移至蛋白-配体对接的构象搜索、蛋白质设计中的片段组装等。</li>
+<li><strong>以分布而非单构象为拟合目标</strong>是粗粒化/机器学习势函数训练的通用原则（如深度势能、玻尔兹曼生成模型），本文将其系统化应用于 Martini 3 键合参数。</li>
+<li><strong>自动化流程的模块化设计</strong>（每步可独立运行、可 HPC 编排）是工具被社区采纳的关键工程因素。</li>
+</ul>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：分子结构文件（SDF）或 SMILES 字符串</p>
+<p><strong>输出</strong>：数值稳定的 Martini 3 CG 拓扑（含 beads、类型、键合参数）</p>
+<p><strong>模块与流程</strong>：
+1. <strong>片段化图划分引擎</strong>：将分子分解为化学子图，局部求解 bead 划分，拼接为完整 CG 映射。处理环完整性、功能基团保留、bead 大小约束。
+2. <strong>Bead 类型分配</strong>：每个 bead 提取其组成原子的 SMILES 子串，结合 logP 值，按 AutoMartini M3 规则分类为 P/N/C/D/Q 类型及尺寸（regular/small/tiny）。
+3. <strong>AA 参考模拟</strong>：OpenMM 8.5 + OpenFF 2.1.0 (Sage) + SMIRNOFF 参数分配；Amber19 溶剂/离子 + OPC 水；默认 20 ns 生产模拟（2 ns 已够用）。
+4. <strong>Boltzmann 反演</strong>：从 AA 轨迹提取键长/角度/二面角分布，反演得到初始键合参数。
+5. <strong>迭代分布匹配</strong>：运行 CG 模拟（GROMACS 2023 + Martini 3），计算 CG 分布与 AA 参考的 Wasserstein 距离，更新参数，重复至收敛（默认 3 次迭代）。
+6. <strong>数值稳定性保障</strong>：采用精化的角度/二面角函数形式；对刚性分子使用 10 fs 步长。</p>
+<p><strong>工具链</strong>：OpenMM（AA 模拟）、GROMACS 2023（CG 模拟）、MDAnalysis（轨迹分析）、MDTraj（SASA 计算）。</p>
+<p><strong>关键假设</strong>：AA 参考模拟（20 ns）能充分采样分子构象空间；Martini 3 bead 类型映射规则（AutoMartini M3）适用于任意小分子。</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>片段化图划分引擎</td>
+<td>将分子分解为子图并局部求解 bead 映射</td>
+<td>避免全局枚举的指数级复杂度</td>
+<td>输入：分子图；输出：CG bead 划分</td>
+<td>叶绿素 a（64 重原子）&lt;2 秒完成映射（Results 节）</td>
+<td>[预期] 移除后回到 AutoMartini M3 的指数级扩展瓶颈，&gt;30 重原子不可行</td>
+</tr>
+<tr>
+<td>Bead 类型分配（SMILES+logP）</td>
+<td>为每个 bead 分配 Martini 3 类型</td>
+<td>决定非键相互作用参数</td>
+<td>输入：bead 原子组成；输出：P/N/C/D/Q 类型+尺寸</td>
+<td>采用 AutoMartini M3 规则（Methods 节）</td>
+<td>[预期] 类型错误将导致溶剂化自由能、分配系数等热力学性质严重偏差</td>
+</tr>
+<tr>
+<td>AA 参考模拟（OpenFF+OpenMM）</td>
+<td>生成目标构象分布</td>
+<td>提供拟合键合参数的参考数据</td>
+<td>输入：分子结构；输出：20 ns AA 轨迹</td>
+<td>7 个分子均成功生成参考轨迹（Results 节）</td>
+<td>[预期] 无参考数据则无法拟合；模拟不足则分布不收敛</td>
+</tr>
+<tr>
+<td>Boltzmann 反演</td>
+<td>从 AA 分布获得初始键合参数</td>
+<td>提供迭代的合理起点</td>
+<td>输入：AA 轨迹分布；输出：初始键参数</td>
+<td>Methods 节 "Initial bonded parameters are obtained by Boltzmann inversion"</td>
+<td>[预期] 无此步骤则迭代起点差，可能不收敛或需更多迭代</td>
+</tr>
+<tr>
+<td>迭代分布匹配</td>
+<td>修正 CG 系综与 AA 参考的偏差</td>
+<td>单次反演不足以补偿 CG 映射的信息损失</td>
+<td>输入：CG 模拟轨迹+AA 参考；输出：更新后的键参数</td>
+<td>默认 3 次迭代收敛（Methods 节）；W1 指标量化（Results 图 2）</td>
+<td>[实测] 对 LIB 等柔性分子仍难完全拟合（W1=0.075）；移除后参数精度显著下降</td>
+</tr>
+<tr>
+<td>精化角度/二面角函数形式</td>
+<td>缓解数值不稳定</td>
+<td>小分子刚性导致标准函数形式不稳定</td>
+<td>输入：标准 Martini 键参数；输出：精化参数</td>
+<td>Methods 节 "refined angle and dihedral potential forms"</td>
+<td>[预期] 移除后 10 fs 步长下可能出现构象畸变或模拟崩溃</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1. 归一化 1-Wasserstein 距离（分布相似性指标）</strong></p>
+<p>$$W_1 = \int |F(x) - G(x)| dx$$</p>
+<ul>
+<li>$F(x)$：AA 参考分布的累积分布函数（CDF）</li>
+<li>$G(x)$：CG 模拟分布的累积分布函数（CDF）</li>
+<li>$W_1$：两分布间的"传输距离"，值越小表示 CG 系综越接近 AA 参考</li>
+<li>判定标准：$W_1 &lt; 0.05$ 视为满意（Results 节）</li>
+</ul>
+<p><strong>2. Boltzmann 反演（初始参数估计）</strong></p>
+<p>$$U_{bond}(r) = -k_B T \ln P_{AA}(r)$$</p>
+<ul>
+<li>$P_{AA}(r)$：AA 模拟中键长/角度/二面角的概率分布</li>
+<li>$U_{bond}(r)$：对应的有效键合势能</li>
+<li>$k_B$：玻尔兹曼常数；$T$：温度（300 K）</li>
+<li>用途：从 AA 系综分布直接反推 CG 键合势的初始估计</li>
+</ul>
+<p><strong>3. 原生接触分数（蛋白-配体结合稳定性指标）</strong></p>
+<p>$$Q(t) = \frac{1}{N_c} \sum_{i,j} H(d_c - r_{ij}(t))$$</p>
+<ul>
+<li>$N_c$：参考构象中的接触对总数</li>
+<li>$r_{ij}(t)$：t 时刻 bead-残基对 (i,j) 的距离</li>
+<li>$d_c = 0.7$ nm：接触截断距离</li>
+<li>$H$：Heaviside 阶跃函数</li>
+<li>用途：衡量 CG 模拟中蛋白-配体结合界面的保持程度（Results 节）</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>：7 个小分子——ANP（核苷酸类似物）、叶绿素 a（CLA，64 重原子，27 beads）、5,6-二甲基苯并咪唑（DMBI）、富马酸硫酯类似物（FTA）、血红素（HEM）、利多卡因苄基类似物（LIB）、Δ9-四氢大麻酚（THC）。覆盖 20-64 重原子、9-27 beads、极性/非极性/带电化学。</p>
+<p><strong>评测指标</strong>：
+- 归一化 1-Wasserstein 距离（键/角/二面角分布匹配度）
+- SASA（溶剂可及表面积，Shrake-Rupley 算法，探针半径 0.14 nm）
+- RMSD（相对 AA 参考结构的均方根偏差）
+- Rg（回旋半径）
+- Q(t)（原生接触分数，截断 0.7 nm）</p>
+<p><strong>基线</strong>：无直接基线工具对比（未与 AutoMartini M3 输出做定量比较）；以 AA 参考模拟为"金标准"。</p>
+<p><strong>计算资源</strong>：AA 模拟在 OpenMM 8.5 上运行；CG 模拟在 GROMACS 2023 上运行；HPC 集群编排支持。</p>
+<p><strong>评测协议</strong>：对每个分子，从 SDF 出发全自动参数化；AA 参考模拟默认 20 ns（2 ns 已够用）；CG 迭代拟合默认 3 轮；每轮 CG 模拟 10 ns。</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7 分子全自动参数化</td>
+<td>流程可处理多样化学结构</td>
+<td>无人工干预，默认配置</td>
+<td>全部成功，无需手动调整</td>
+<td>SMartini 对 20-64 重原子分子全自动可行</td>
+<td>未证明对更大分子（&gt;64 重原子）或极端复杂天然产物有效</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>映射速度测试（CLA）</td>
+<td>局部图划分近线性扩展</td>
+<td>64 重原子，单 CPU 核</td>
+<td>&lt;2 秒完成映射</td>
+<td>突破 AutoMartini M3 的指数级瓶颈</td>
+<td>未与 AutoMartini M3 做同条件基准对比</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>键合参数分布匹配</td>
+<td>迭代分布匹配收敛</td>
+<td>W1 &lt; 0.05 为满意阈值</td>
+<td>键/角 W1 均值 0.036；多数分子达标</td>
+<td>CG 系综复现 AA 构象偏好</td>
+<td>二面角 W1 最高达 0.075（LIB），未完全收敛</td>
+<td>Results 图 2</td>
+</tr>
+<tr>
+<td>SASA/RMSD/Rg 对比</td>
+<td>CG 保持整体结构性质</td>
+<td>AA vs CG，95% bootstrap CI</td>
+<td>多数分子一致；CLA 的 Rg 略高</td>
+<td>CG 模型保持分子整体形状和溶剂暴露</td>
+<td>未做长时间尺度（&gt;100 ns）稳定性验证</td>
+<td>Results 图 3</td>
+</tr>
+<tr>
+<td>蛋白-配体模拟（EGFR+ANP；1TQN+HEM）</td>
+<td>CG 拓扑可用于蛋白-配体体系</td>
+<td>Q(t) &gt; 0.8 为稳定标准</td>
+<td>两体系 Q(t) 均 &gt;0.8</td>
+<td>SMartini 参数在蛋白-配体情境下有效</td>
+<td>需额外距离约束补偿氢键缺失；未测结合自由能</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>特殊配置测试（LIB/ANP/CLA）</td>
+<td>局部启发式规则可处理复杂情况</td>
+<td>3 个分子使用非默认配置</td>
+<td>均成功参数化</td>
+<td>用户可调参数覆盖默认配置的不足</td>
+<td>未系统评估启发式规则的失败边界</td>
+<td>Results 节</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文解决的是 Martini 3 力场中小分子键合参数和非键参数的自动生成，<strong>不是</strong>新的 CG 力场开发，也<strong>不是</strong>蛋白-配体结合自由能预测方法。</li>
+<li><strong>验证边界</strong>：验证限于 7 个分子、短时间尺度（CG 模拟 10 ns/轮）、构象分布匹配和简单蛋白-配体接触保持。<strong>未验证</strong>：结合自由能精度、长时间尺度动力学、膜渗透等 Martini 3 典型应用场景。</li>
+<li><strong>"端到端"的限定</strong>：流程从 SDF/SMILES 到拓扑是自动的，但<strong>需要用户提供 AA 参考模拟</strong>（OpenFF+OpenMM），且对特殊分子可能需要调整配置参数（3/7 个验证分子使用了非默认配置）。</li>
+<li><strong>性能声明</strong>：映射速度（CLA &lt;2 秒）是核心优势，但键合参数拟合仍需多轮 CG 模拟，总计算成本未与人工参数化做定量对比。</li>
+<li><strong>不确定性</strong>：W1 指标对二面角拟合的满意度阈值（0.05）是作者设定的经验值；对柔性分子（LIB）的拟合质量明显低于刚性分子。</li>
+<li><strong>对蛋白-配体研究的实际意义</strong>：SMartini 使大规模配体库的 CG 参数化成为可能，但用户需注意氢键缺失问题可能需要额外约束，且 10 fs 步长比标准 Martini 20 fs 慢一倍。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>角度-二面角耦合难以拟合</td>
+<td>LIB 的二面角 W1=0.075 和角度 W1=0.022 显著高于其他分子</td>
+<td>使用更灵活的势函数形式（如 OpenMM 中的 tabulated/custom 势）</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>GROMACS 势函数形式限制</td>
+<td>单阱谐振角度势无法表示多峰分布</td>
+<td>探索 OpenMM 的 Martini 实现以支持更复杂势函数</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>标准平衡采样可能欠采样</td>
+<td>高能垒分隔的构象态在短 AA 模拟中可能未访问</td>
+<td>使用增强采样方法（metadynamics、replica exchange MD）</td>
+<td>Methods 节（Boltzmann 反演部分）</td>
+</tr>
+<tr>
+<td>CG 缺乏氢键导致结合不稳定</td>
+<td>蛋白-配体模拟中可能需要额外距离约束</td>
+<td>未明确提及</td>
+<td>Results 节（蛋白-配体部分）</td>
+</tr>
+<tr>
+<td>局部启发式规则需人工调整</td>
+<td>3/7 验证分子需非默认配置</td>
+<td>未明确提及</td>
+<td>Results 节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>验证集仅 7 个分子，且 3 个需特殊配置</td>
+<td>默认配置的"通用性"可能被高估；特殊配置规则可能隐含过拟合</td>
+<td>用户对"任意小分子"的期望可能落空</td>
+<td>在更大、更多样化的分子集（如 ZINC 子集）上测试默认配置成功率</td>
+<td>Results 节：3/7 分子使用非默认配置</td>
+</tr>
+<tr>
+<td>无与 AutoMartini M3 的定量对比</td>
+<td>映射质量、参数精度、计算成本的相对优势未量化</td>
+<td>无法判断 SMartini 是否真正优于现有工具</td>
+<td>在相同分子集上运行两工具，对比映射时间、W1 指标、模拟稳定性</td>
+<td>Introduction 节将 AutoMartini M3 作为主要对比对象，但 Results 无直接对比</td>
+</tr>
+<tr>
+<td>W1 &lt; 0.05 阈值的合理性未论证</td>
+<td>该阈值可能过于宽松或严格；不同键合类型应有不同容差</td>
+<td>影响"满意"结论的可信度</td>
+<td>系统扫描阈值，检验对下游蛋白-配体模拟结果的影响</td>
+<td>Results 节："values below ~0.05 were deemed satisfactory"</td>
+</tr>
+<tr>
+<td>蛋白-配体验证仅 2 个体系、Q(t)&gt;0.8</td>
+<td>未测结合自由能、未与实验或 AA 结果定量对比</td>
+<td>Q(t) 高不等于结合模式正确或热力学准确</td>
+<td>计算结合自由能（如 MM/PBSA 或自由能微扰）并与实验对比</td>
+<td>Results 节：Q(t) 定义和阈值</td>
+</tr>
+<tr>
+<td>10 fs 步长使 CG 效率优势减半</td>
+<td>标准 Martini 20 fs 步长不可用，效率提升从 2-3 个数量级降至 1-2 个</td>
+<td>影响实际应用中的计算成本评估</td>
+<td>系统测试不同分子的最大稳定步长，量化效率损失</td>
+<td>Methods 节（CG 模拟部分）</td>
+</tr>
+<tr>
+<td>未讨论非键参数（Lennard-Jones）的验证</td>
+<td>仅验证键合参数和整体结构指标，非键参数（决定热力学）未单独评估</td>
+<td>非键参数错误可能导致溶剂化自由能、分配系数偏差</td>
+<td>计算水/辛醇分配系数、水合自由能并与实验对比</td>
+<td>Methods 节仅描述键合参数拟合流程</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>局部子图分解策略</strong>：将全局组合优化问题（分子→beads 映射）分解为化学子图上的局部求解，是处理大分子复杂性的可迁移范式。可迁移至：蛋白质的 CG 映射（如残基→beads）、蛋白-配体结合位点的药效团分解、RNA 的片段化粗粒化。</p>
+</li>
+<li>
+<p><strong>分布匹配作为参数化目标</strong>：以 Wasserstein 距离量化 CG 与 AA 系综的分布差异，迭代更新参数直至收敛——这一"分布级"而非"构象级"的拟合目标，可迁移至：机器学习势函数的训练损失设计、生成模型（如扩散模型）的评估指标、增强采样方法的偏置势优化。</p>
+</li>
+<li>
+<p><strong>Boltzmann 反演 + 迭代修正的两阶段策略</strong>：先解析反演获得合理初值，再通过模拟-比较-更新闭环精修——这种"粗估+精修"策略可迁移至：AlphaFold 结构预测的初始模板+MD 精修流程、蛋白质设计的序列-结构迭代优化、对接构象的初始打分+MD 重排。</p>
+</li>
+<li>
+<p><strong>刚性分子的步长妥协</strong>：小分子配体比蛋白质更刚硬，需要更短积分步长（10 fs vs 20 fs）。这一"分子刚性决定积分步长"的经验法则可迁移至：含配体的蛋白 CG 模拟设置、DNA/RNA 模拟、以及混合分辨率模拟中的时间步长选择。</p>
+</li>
+<li>
+<p><strong>模块化 HPC 架构</strong>：将流程拆分为可独立运行、可编排的模块（映射→类型→AA 模拟→反演→迭代），是工具被社区采纳的关键工程因素。可迁移至：高通量虚拟筛选管线的设计、AlphaFold 批量预测的集群部署、MD 模拟的自动化工作流。</p>
+</li>
+<li>
+<p><strong>氢键缺失的补偿策略</strong>：CG 模型无显式氢键，蛋白-配体结合可能不稳定，需额外距离约束。这一"已知缺陷的工程补偿"思路可迁移至：Martini 模拟中蛋白-配体体系的设置、CG 力场的极性相互作用修正、以及混合 AA/CG 分辨率方案的设计。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Martini 力场系列</strong>：本文直接构建于 Martini 3 力场（Souza et al., 2021, Nat Methods）之上，采用其 bead 类型体系和非键参数。与 Martini 2 相比，Martini 3 重新定义了 bead 类型，使小分子参数化更加系统化。</li>
+<li><strong>AutoMartini M3</strong>（本文主要对比对象）：提供 bead 映射和类型分配算法，但全局枚举策略有规模限制。SMartini 的片段化局部求解是对其核心瓶颈的改进。</li>
+<li><strong>Boltzmann 反演方法</strong>：经典粗粒化参数化技术（如 Reith et al., 2003, J Comput Chem 的迭代 Boltzmann 反演），本文将其与迭代分布匹配结合，形成自动化闭环。</li>
+<li><strong>OpenFF 力场</strong>：本文 AA 参考模拟使用 OpenFF 2.1.0 (Sage)（Qiu et al., 2021, J Chem Theory Comput），体现了"AA 力场精度 → CG 参数来源"的层级依赖关系。</li>
+<li><strong>粗粒化蛋白-配体模拟</strong>：与 Martini 3 蛋白参数（如 martini 3.0.b.5.2）配合使用，可研究蛋白-配体识别、膜渗透等。本文的 EGFR+ANP 和 1TQN+HEM 验证与此方向直接相关。</li>
+<li><strong>Wasserstein 距离</strong>：作为分布相似性度量，在生成模型评估（如 WGAN）和单细胞数据分析中广泛使用，本文将其引入 CG 参数化质量评估。</li>
+<li><strong>候选连接方向</strong>：与基于机器学习的 CG 力场学习（如 CGNet、MARTINI-ML）互补——SMartini 提供物理基础的初始参数，ML 方法可进一步优化非键相互作用。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：SMartini-ΔG：基于 SMartini 参数的 CG 结合自由能预测流程
+   - <strong>来源局限/观察</strong>：本文仅验证了结构保持（Q(t)&gt;0.8），未测结合自由能；CG 模型的热力学精度是蛋白-配体筛选的关键。
+   - <strong>核心假设</strong>：SMartini 参数化的配体在 Martini 3 中可定量预测相对结合自由能排序。
+   - <strong>初步方法</strong>：在 EGFR+ANP 和 1TQN+HEM 体系上，用自由能微扰（FEP）或 MM/PBSA 计算结合自由能，与实验值对比；扩展至 10-20 个已知亲和力的配体对。
+   - <strong>验证方式</strong>：与实验 IC50/Kd 相关性分析；与 AA FEP 结果对比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：ML 增强的 bead 类型分配：从 SMartini 规则到学习型分类器
+   - <strong>来源局限/观察</strong>：SMartini 的 bead 类型分配依赖 AutoMartini M3 的规则和 logP 查表，3/7 分子需人工调整配置，说明规则覆盖不全。
+   - <strong>核心假设</strong>：图神经网络可从分子图直接预测最优 Martini 3 bead 类型，超越规则方法的覆盖范围。
+   - <strong>初步方法</strong>：以 SMartini/AutoMartini 输出为训练标签，构建 GNN 分类器预测 bead 类型；在 SMartini 需特殊配置的分子上测试改进。
+   - <strong>验证方式</strong>：预测类型与人工调整后类型的准确率；下游 CG 模拟的结构保持指标对比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：多阱角度势的 Martini 扩展：解决角度-二面角耦合问题
+   - <strong>来源局限/观察</strong>：LIB 的角度 W1=0.022 和二面角 W1=0.075 表明 GROMACS 标准单阱谐振势无法表示柔性分子的多峰分布。
+   - <strong>核心假设</strong>：引入 tabulated 或多阱角度势可显著改善柔性药物的 CG 系综保真度。
+   - <strong>初步方法</strong>：在 OpenMM 的 Martini 实现中实现 tabulated 角度势，对 LIB 和类似柔性分子重新参数化，对比 W1 指标。
+   - <strong>验证方式</strong>：W1 距离降低幅度；长时间 CG 模拟的构象系综与 AA 参考的相似性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：SMartini-增强采样：结合 metadynamics 的自动化参数化
+   - <strong>来源局限/观察</strong>：作者承认标准平衡 AA 模拟可能欠采样高能垒构象，影响 Boltzmann 反演质量。
+   - <strong>核心假设</strong>：用 metadynamics 或 replica exchange 增强的 AA 参考轨迹可显著提升柔性分子的参数化质量。
+   - <strong>初步方法</strong>：对 LIB 和 CLA 用 metadynamics 生成参考轨迹，对比增强采样与标准模拟的参数化结果。
+   - <strong>验证方式</strong>：W1 指标对比；CG 模拟预测的构象群体与实验（如 NMR NOE）对比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：从配体到蛋白-配体复合物的端到端 CG 参数化
+   - <strong>来源局限/观察</strong>：SMartini 仅参数化孤立小分子，蛋白-配体复合物中配体的结合构象可能偏离溶液构象。
+   - <strong>核心假设</strong>：在蛋白结合口袋环境中重新拟合配体键合参数可改善复合物模拟的稳定性。
+   - <strong>初步方法</strong>：对 EGFR+ANP 体系，在口袋环境中重新运行 SMartini 拟合流程，对比溶液与口袋参数化的模拟表现。
+   - <strong>验证方式</strong>：Q(t) 保持时间；配体结合模式与晶体结构对比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (preprint, bioRxiv)</li>
+<li><strong>Assessment boundary</strong> Scientific and technical soundness of the presented method, validation evidence, and claims as stated in the provided manuscript</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present SMartini, an automated pipeline for deriving Martini 3 coarse-grained parameters for small molecules. The pipeline uses a fragment-based mapping engine, Boltzmann inversion of all-atom MD trajectories, and iterative distribution matching to fit bonded parameters. Validation is performed on seven small molecules, and protein–ligand simulations are used to assess stability of the derived topologies.</li>
+<li><strong>Visible evidence base</strong> Abstract, Introduction, Methodology (General Strategy, Mapping and Bead Type Assignment, Bonded Parameters, Molecular Dynamics Simulations), Results (Validated Molecules, Bonded parameter distributions, Solvent-Accessible Surface Area/RMSD/Radius of Gyration, Protein–Ligand Contact Analysis), Discussion, Code and Data Availability</li>
+<li><strong>Missing materials affecting confidence</strong> Figures and tables referenced (Figures 1–4, Table 1, Supplementary Sections S2–S4) are not provided. No quantitative comparison against existing tools (e.g., AutoMartini M3) is presented. No benchmarks of computational cost or wall-clock time are reported. No error bars or statistical significance tests are reported for the Wasserstein distances beyond a single mean value. No convergence criteria for the iterative fitting procedure are defined. No validation of non-bonded parameters (e.g., solvation free energies, partition coefficients) is presented.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript describes a potentially useful tool for automated Martini 3 parametrization of small molecules. The fragment-based mapping approach and the iterative distribution-matching strategy are sensible and address a real bottleneck in the field. However, the evidence presented is insufficient to establish that the method is robust, accurate, and broadly applicable. The validation set is small (seven molecules), the reported metrics are limited to internal conformational agreement, and the protein–ligand test is compromised by the need for manual distance restraints. The claim that the pipeline "makes automated parametrization of large ligand libraries practical" is not supported by any demonstration of throughput, scalability, or success rate on a large library. The manuscript would benefit from a more rigorous and comprehensive validation, including comparisons to existing methods and experimental data.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in the coarse-grained simulation community, particularly those using the Martini force field for protein–ligand systems, drug discovery, or membrane biology. The tool could be of interest to computational chemists seeking to automate the parametrization of ligands for high-throughput screening. The method's potential to reduce manual effort in CG model development is the primary appeal.</li>
+<li><strong>Major strengths</strong> The manuscript addresses a clear and important need in the Martini community. The fragment-based mapping approach is a reasonable strategy to overcome the scaling limitations of exhaustive enumeration. The iterative distribution-matching procedure for bonded parameters is a principled approach. The modular architecture and HPC compatibility are practical advantages. The choice of a diverse test set (including large cofactors like chlorophyll) is commendable.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "The pipeline produces numerically stable topologies" and "the coarse-grained conformational ensemble reproduces the all-atom reference within tolerance"</li>
+<li><strong>Evidence pointer</strong> Results, "Bonded parameter distributions"; Figure 2 (not provided)</li>
+<li><strong>Concern</strong> The manuscript reports Wasserstein distances for bonded terms but does not define the "tolerance" used to declare convergence or success. The mean bond distance of 0.036 is reported, but the range across molecules is not given. The dihedral distances show a wide range (0.009–0.075), and the authors acknowledge that some molecules (LIB, CLA) are difficult to fit. The claim of "within tolerance" is therefore not substantiated. Furthermore, the metric is only applied to internal conformational distributions; no validation of non-bonded interactions (e.g., solvation free energies, partitioning behavior) is presented, which is critical for the use of the parameters in protein–ligand simulations.</li>
+<li><strong>Why it matters</strong> The central claim of the paper is that SMartini produces accurate and reliable CG parameters. Without a clear definition of success criteria and without validation of the non-bonded terms, the accuracy of the method is not established. The reported difficulties with LIB and CLA suggest that the method may not be as general as claimed.</li>
+<li><strong>Resolution test</strong> The authors should define a quantitative convergence criterion for the iterative fitting. They should report the full distribution of Wasserstein distances for all bonded terms and all molecules, not just means. They should validate the non-bonded parameters by computing solvation free energies or partition coefficients for the test set and comparing to experimental or AA reference data. They should also demonstrate that the final CG models are stable in longer simulations and reproduce relevant physical properties (e.g., conformational ensembles, binding poses).</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scientific importance / evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "SMartini makes automated parametrization of large ligand libraries practical" and "reduces the manual effort required for coarse-grained model development, enabling high-throughput coarse-grained simulations"</li>
+<li><strong>Evidence pointer</strong> Abstract; Introduction; Discussion, Conclusion</li>
+<li><strong>Concern</strong> The manuscript claims that SMartini is practical for large ligand libraries and high-throughput applications, but no evidence is provided to support this. The validation is limited to seven molecules, and no benchmark of computational cost, wall-clock time, or success rate on a larger set is presented. The manual adjustments required for three of the seven test molecules (LIB, ANP, CLA) suggest that the "default" pipeline may not be fully automatic for many real-world cases. The claim of "high-throughput" is therefore not supported.</li>
+<li><strong>Why it matters</strong> The primary motivation for the tool is to enable large-scale parametrization. Without a demonstration of scalability and throughput, the practical impact of the method is unclear. The need for manual intervention in three of seven test cases undermines the claim of full automation.</li>
+<li><strong>Resolution test</strong> The authors should apply SMartini to a larger library (e.g., 100+ drug-like molecules) and report the success rate, the average computational cost per molecule, and the fraction of molecules that required manual intervention. They should also compare the wall-clock time of SMartini to that of existing tools (e.g., AutoMartini M3) on the same set of molecules.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "We validate SMartini on a diverse set of drug-like molecules, metabolites, and cofactors... and demonstrate that the pipeline produces numerically stable topologies" and "the coarse-grained Q(t) tracks the all-atom reference reasonably well"</li>
+<li><strong>Evidence pointer</strong> Results, "Protein–Ligand Contact Analysis"; Figure 4 (not provided)</li>
+<li><strong>Concern</strong> The protein–ligand validation is compromised by the introduction of two supplementary distance restraints in the kinase domain simulation to maintain ligand binding. This indicates that the derived parameters alone are not sufficient to keep the ligand bound, which is a significant limitation. The authors acknowledge this as a known limitation of CG force fields, but the use of restraints undermines the claim that the SMartini parameters are directly usable for protein–ligand simulations. The Q(t) analysis is also only shown for two systems, and the "reasonable" agreement is not quantified.</li>
+<li><strong>Why it matters</strong> The stated goal of the tool is to enable protein–ligand simulations. If the derived parameters require manual addition of restraints to maintain binding, the practical utility of the method for this purpose is questionable. The validation is too limited to draw general conclusions.</li>
+<li><strong>Resolution test</strong> The authors should test the SMartini parameters on a larger set of protein–ligand complexes and report the fraction of cases where the ligand remains bound without additional restraints. They should quantify the Q(t) agreement (e.g., mean and standard deviation over time and over multiple replicates). They should also discuss the conditions under which restraints are needed and provide guidance on how to identify such cases a priori.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> "The complete set of bonds, angles, and dihedrals is inferred directly from the coarse-grained molecular graph based on bead connectivity."</li>
+<li><strong>Evidence pointer</strong> Methodology, "Bonded Parameters"; Code and Data Availability</li>
+<li><strong>Concern</strong> The manuscript does not provide sufficient detail on the iterative fitting procedure to allow reproduction. The update rule for the bonded parameters is not described. The convergence criterion is not defined. The number of iterations is fixed at three by default, but it is not clear how the authors determined that this is sufficient. The code is available on GitHub, but the manuscript does not describe the key algorithmic steps in enough detail for a reader to understand or reproduce the method without inspecting the code.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for scientific software. Without a clear description of the algorithm, the method cannot be independently implemented or verified.</li>
+<li><strong>Resolution test</strong> The authors should provide a detailed algorithmic description of the iterative fitting procedure, including the update rule, the objective function, and the convergence criterion. They should also provide a step-by-step example of the fitting process for one molecule in the Supplementary Information.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Methodology, "Molecular Dynamics Simulations", "All-atom reference simulations"</li>
+<li><strong>Evidence pointer</strong> "The default production length was 20 ns (10 M steps); in practice, even 2 ns of AA sampling proved sufficient for reliable bonded parameter extraction, though this does not account for a priori undersampling of the full conformational landscape."</li>
+<li><strong>Issue</strong> The statement that 2 ns is sufficient is based on the authors' experience but is not supported by a systematic analysis. The caveat about undersampling is acknowledged, but the practical recommendation is unclear.</li>
+<li><strong>Required correction</strong> Provide a systematic analysis of the convergence of the bonded parameter fits as a function of simulation length for at least one molecule. If 2 ns is indeed sufficient, show this explicitly.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Results, "Validated Molecules"</li>
+<li><strong>Evidence pointer</strong> Table 1 (not provided)</li>
+<li><strong>Issue</strong> The test set is described as "diverse," but the selection criteria are not stated. The rationale for choosing these specific seven molecules is not given.</li>
+<li><strong>Required correction</strong> State the criteria used to select the test set (e.g., range of sizes, chemical functionalities, flexibility, relevance to drug discovery).</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical detail</li>
+<li><strong>Affected element</strong> Methodology, "Mapping and Bead Type Assignment"</li>
+<li><strong>Evidence pointer</strong> "Bead types are assigned using per-bead SMILES and logP-based classification, following AutoMartiniM328."</li>
+<li><strong>Issue</strong> The manuscript does not describe how the logP values are obtained or how the classification is performed. The reference to AutoMartiniM3 is helpful, but the specific implementation details are missing.</li>
+<li><strong>Required correction</strong> Provide a brief description of the logP source and the classification rules, or refer to a specific section of the AutoMartiniM3 paper.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Results, "Bonded parameter distributions"</li>
+<li><strong>Evidence pointer</strong> "Figure 2 presents the per-molecule mean Wasserstein distances, and an example of dihedral distributions for ANP with W1 = 0.032 to provide visual context for the raw metric values."</li>
+<li><strong>Issue</strong> The manuscript reports a single example (ANP) for visual context. It would be more informative to show examples of good and poor fits (e.g., ANP and LIB).</li>
+<li><strong>Required correction</strong> Include a second example of a molecule with a higher Wasserstein distance (e.g., LIB) to illustrate the range of fitting quality.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Results, "Solvent-Accessible Surface Area, RMSD, and Radius of Gyration"</li>
+<li><strong>Evidence pointer</strong> "Figure 3 presents the mean SASA, RMSD, and Rg values with 95% bootstrap confidence intervals (1 000 replicates, non-parametric; see Supplementary Information, Section S2)"</li>
+<li><strong>Issue</strong> The manuscript reports mean values and confidence intervals but does not state whether the differences between AA and CG are statistically significant.</li>
+<li><strong>Required correction</strong> Report the statistical significance of the differences (e.g., p-values) or state that the differences are within the confidence intervals.</li>
+<li><strong>Concern ID</strong> R1-m6</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Discussion, "Limitations of Bonded-Parameter Fitting"</li>
+<li><strong>Evidence pointer</strong> "A potential route to resolving this problem is to use more flexible simulation engines: the OpenMM implementation of Martini48 supports tabulated and custom bonded potentials that could, in principle, capture multi-well angle distributions."</li>
+<li><strong>Issue</strong> The discussion of future directions is brief and does not address the practical challenges of implementing such potentials in the Martini framework.</li>
+<li><strong>Required correction</strong> Expand the discussion to include the potential benefits and challenges of using tabulated potentials, and whether this is a realistic near-term solution.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the pipeline "makes automated parametrization of large ligand libraries practical" is unsupported by any demonstration of throughput or scalability.</li>
+<li>The claim that the pipeline "reduces the manual effort required for coarse-grained model development" is only weakly supported, as three of seven test molecules required manual intervention.</li>
+<li>The claim that the pipeline "produces numerically stable topologies" is not supported by any long-timescale stability analysis.</li>
+<li>The claim that the coarse-grained conformational ensemble "reproduces the all-atom reference within tolerance" is not supported by a defined tolerance or a comprehensive statistical comparison.</li>
+<li>The claim that the method "easily scales to ligands the size of chlorophyll (~64 heavy atoms) and beyond" is based on a single example and is not supported by a systematic scaling analysis.</li>
+<li>The protein–ligand validation is compromised by the use of manual restraints, and the claim that the parameters are suitable for protein–ligand simulations is not established.</li>
+<li>The manuscript does not provide a comparison of SMartini's performance (accuracy, speed, ease of use) against existing tools such as AutoMartini M3, which is a significant omission given the stated goal of improving upon the state of the art.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

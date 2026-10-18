@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Structural compatibility is not enough: Current challenges in protein-protein interaction prediction. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Structural compatibility is not enough: Current challenges in protein-protein interaction prediction.</h1>
+      <div class="meta">Elofsson, Arne</div>
+      <div class="meta muted">
+        
+        <span class="journal">Molecular cell</span>
+        · 2026-10-15
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42880216/">原文</a>
+      </div>
+      <p class="one-liner">该文系统梳理了AlphaFold2等AI方法在蛋白质-蛋白质相互作用预测中的局限，按可计算性划分挑战类别，并指出需超越静态结构预测、建模动态和细胞环境中的相互作用景观，虽为综述但聚焦蛋白结构计算问题，对课题有启发。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Since the introduction of AlphaFold2, AI-driven methods have greatly advanced protein structure and complex prediction. However, the performance varies strongly across interaction classes. The performance drops when dynamics are important and when interactions lack a strong co-evolutionary history. We propose to organize these limitations into distinct regions: interactions that are largely tractable by current methods; interactions in which structural compatibility is ambiguous due to competition, paralogy, or stoichiometry; interactions that lack sufficient co-evolutionary signal; and interactions whose biological relevance depends on cellular context, dynamics, or disorder. These limitations define distinct categories of interaction prediction challenges, each requiring different computational and experimental approaches. Future progress will require methods that rely less on multiple sequence alignments, better distinguish interaction strength and specificity, and move beyond static structure prediction toward modeling interaction landscapes in their cellular contexts.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">自AlphaFold2问世以来，AI驱动的方法极大地推进了蛋白质结构与复合物预测。然而，不同相互作用类别的性能差异显著。当动力学至关重要且相互作用缺乏强共进化历史时，性能会下降。我们建议将这些局限性组织为不同区域：当前方法基本可处理的相互作用；因竞争、旁系同源或化学计量比导致结构兼容性模糊的相互作用；缺乏足够共进化信号的相互作用；以及其生物学相关性依赖于细胞环境、动力学或无序性的相互作用。这些局限性定义了不同类型的相互作用预测挑战，每种都需要不同的计算和实验方法。未来进展将要求方法减少对多序列比对的依赖，更好地区分相互作用强度与特异性，并超越静态结构预测，转向在细胞环境中建模相互作用景观。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Structural compatibility is not enough: Current challenges in protein-protein interaction prediction</li>
+<li><strong>作者</strong>：Elofsson, Arne</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：Molecular Cell</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：Perspective / Review（观点/综述类）</li>
+<li><strong>领域</strong>：蛋白质-蛋白质相互作用（PPI）预测；AI驱动的结构预测</li>
+<li><strong>关键词</strong>：AlphaFold2、蛋白质复合物预测、共进化信号、相互作用特异性、构象动力学、无序蛋白</li>
+<li><strong>DOI/arXiv 号</strong>：10.1016/j.molcel.2026.08.030</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文是面向「蛋白质结构相关计算研究 × AI 方法」领域的批判性综述，聚焦 AlphaFold2 等 AI 结构预测方法在 PPI 预测中的系统性局限，将失败模式分类为可处理、结构兼容性模糊、共进化信号不足、依赖细胞环境/动力学/无序四类。对本课题（结构预测、构象采样、分子对接、MD 模拟）提供方法边界与未来方向的框架性参考。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文指出 AlphaFold2 等 AI 方法在 PPI 预测中性能随相互作用类别差异显著，尤其在动力学重要、缺乏强共进化历史的相互作用中表现下降，并将这些局限组织为四类挑战区域，主张未来需减少对 MSA 的依赖、区分相互作用强度与特异性、超越静态结构预测。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：为什么 AlphaFold2 等 AI 驱动的结构预测方法在蛋白质-蛋白质相互作用预测中性能不稳定？哪些类别的相互作用是当前方法难以处理的？</li>
+<li><strong>为什么重要</strong>：PPI 预测是理解细胞功能、疾病机制和药物设计的基础；AlphaFold2 的成功使人们对其在复合物预测上的能力产生过高期望，但实际应用中失败模式多样且未被系统化。</li>
+<li><strong>现有方法为何不足</strong>：现有方法（尤其 AlphaFold2 类）依赖 MSA 中的共进化信号，对缺乏共进化历史的相互作用（如弱/瞬时相互作用）无能为力；同时静态结构预测无法捕捉动力学、无序和细胞环境依赖的相互作用。</li>
+<li><strong>精确研究问题</strong>：Can current AI-driven structure prediction methods reliably predict protein-protein interactions across all interaction classes, or are their limitations systematically tied to co-evolutionary signal, structural ambiguity, and dynamic/context-dependent interactions?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>阶段一</strong>：AlphaFold2 之前——传统对接方法（如 ClusPro、HADDOCK）依赖几何互补和物理能量函数，计算成本高、精度有限，尤其对构象变化大的复合物。</li>
+<li><strong>阶段二</strong>：AlphaFold2 引入——利用 MSA 共进化信息和端到端深度学习，在单体结构预测上达到实验级精度，并推广至复合物预测（AlphaFold-Multimer），在强共进化信号的复合物上表现优异。</li>
+<li><strong>阶段三</strong>：当前——性能饱和与失败暴露。方法在部分相互作用类别上仍不可靠，包括动力学主导的相互作用、缺乏共进化信号的相互作用、竞争/旁系同源/化学计量导致的歧义、以及依赖细胞环境或无序区域的相互作用。</li>
+<li><strong>本文主张的位置</strong>：在阶段三中，本文提出一个系统化的失败分类框架，将 PPI 预测挑战划分为四个区域，并指出未来方向（减少 MSA 依赖、区分强度与特异性、建模相互作用景观）。</li>
+<li><strong>脉络核验状态</strong>：仅本文框架（作者提出的分类体系），未提供外部文献核验。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>动力学相关的相互作用预测失败</td>
+<td>涉及构象变化、瞬时结合的复合物预测精度显著下降</td>
+<td>静态结构预测无法捕捉构象动态；AlphaFold2 输出单一静态结构</td>
+<td>摘要：「performance drops when dynamics are important」</td>
+</tr>
+<tr>
+<td>缺乏强共进化历史的相互作用预测失败</td>
+<td>弱/瞬时相互作用、非共进化保守的复合物无法被 MSA 信号捕获</td>
+<td>方法依赖 MSA 中的共进化信号，缺乏该信号时无有效输入</td>
+<td>摘要：「interactions lack a strong co-evolutionary history」</td>
+</tr>
+<tr>
+<td>结构兼容性歧义</td>
+<td>竞争性结合、旁系同源、化学计量变化导致同一结构兼容多种结合模式</td>
+<td>结构兼容性不足以区分特异性；多个候选结合模式在能量上相近</td>
+<td>摘要：「structural compatibility is ambiguous due to competition, paralogy, or stoichiometry」</td>
+</tr>
+<tr>
+<td>细胞环境/动力学/无序依赖</td>
+<td>依赖细胞上下文、内在无序区域或动态构象的相互作用无法被静态模型表征</td>
+<td>静态结构预测忽略细胞环境、动力学和 disorder</td>
+<td>摘要：「biological relevance depends on cellular context, dynamics, or disorder」</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：将 PPI 预测的失败模式组织为四个区域——(1) 当前方法基本可处理的相互作用；(2) 结构兼容性模糊（竞争、旁系同源、化学计量）；(3) 共进化信号不足；(4) 依赖细胞环境、动力学或无序的相互作用。每个区域需要不同的计算和实验策略。</li>
+<li><strong>核心洞察</strong>：结构兼容性（structural compatibility）是 PPI 预测的必要条件但非充分条件。AlphaFold2 类方法的根本局限在于其将相互作用简化为静态结构匹配问题，忽略了相互作用强度（affinity）与特异性（specificity）的区别，以及细胞环境对相互作用相关性的决定作用。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：对任何基于共进化或静态结构的预测方法，其性能边界由训练数据的生物学多样性决定；当目标相互作用超出该多样性（如弱/瞬时/动态相互作用）时，方法必然失效。这提示本课题（构象采样、MD 模拟、分子对接）应关注将动态信息与静态结构预测结合，而非仅优化静态精度。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质序列（及 MSA）、已知结构、相互作用数据（如实验验证的 PPI）</li>
+<li><strong>输出</strong>：PPI 预测的可靠性分类（四类区域）、对未来方法方向的建议</li>
+<li><strong>模块</strong>：失败模式分类框架（四区域）、方法能力评估（基于 AlphaFold2 等现有方法的性能分析）</li>
+<li><strong>训练</strong>：不适用（本文为观点/综述，无训练过程）</li>
+<li><strong>工具</strong>：未提供具体工具</li>
+<li><strong>反馈回路</strong>：不适用</li>
+<li><strong>假设</strong>：当前 AI 结构预测方法的性能差异可归因于相互作用类别特征（共进化信号、动力学、细胞环境等）</li>
+<li><strong>文字流程</strong>：作者基于 AlphaFold2 引入后的文献和自身经验，观察 PPI 预测性能随相互作用类别的变化 → 归纳失败模式 → 提出四区域分类 → 讨论每个区域的计算/实验策略 → 提出未来方向（减少 MSA 依赖、区分强度与特异性、建模相互作用景观）。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>四区域失败分类框架</td>
+<td>将 PPI 预测挑战系统化分类</td>
+<td>为不同失败模式提供针对性解决路径</td>
+<td>输入：现有方法性能观察；输出：四类挑战区域</td>
+<td>摘要中明确列出四类区域</td>
+<td>[预期] 移除后，领域缺乏系统性讨论框架，难以指导方法选择</td>
+</tr>
+<tr>
+<td>共进化信号分析</td>
+<td>识别方法对 MSA 的依赖边界</td>
+<td>解释为何缺乏共进化历史的相互作用预测失败</td>
+<td>输入：MSA 特征；输出：信号充足性判断</td>
+<td>摘要：「interactions lack a strong co-evolutionary history」</td>
+<td>[预期] 移除后，无法解释方法性能差异的根源</td>
+</tr>
+<tr>
+<td>结构兼容性 vs 特异性区分</td>
+<td>区分「能结合」与「实际结合」</td>
+<td>结构兼容性不足以预测真实相互作用</td>
+<td>输入：结构预测结果；输出：特异性判断需求</td>
+<td>摘要：「structural compatibility is ambiguous」</td>
+<td>[预期] 移除后，无法解释竞争/旁系同源导致的歧义</td>
+</tr>
+<tr>
+<td>细胞环境/动力学/无序维度</td>
+<td>扩展预测范围至动态和上下文依赖的相互作用</td>
+<td>静态结构预测无法覆盖全部生物学相关相互作用</td>
+<td>输入：细胞环境、动力学、无序信息；输出：预测边界</td>
+<td>摘要：「biological relevance depends on cellular context, dynamics, or disorder」</td>
+<td>[预期] 移除后，方法边界定义不完整</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p>不适用（本文为观点/综述，未提供公式或数学模型）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：未提供（本文为观点/综述，无原始实验数据）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>Oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无（观点/综述）</td>
+<td>不适用</td>
+<td>不适用</td>
+<td>不适用</td>
+<td>不适用</td>
+<td>不适用</td>
+<td>不适用</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅讨论 AI 驱动的 PPI 预测（以 AlphaFold2 为代表），不涉及实验方法或非 AI 计算方法的全面评估。</li>
+<li><strong>Oracle/真值输入</strong>：未提供；作者基于文献和领域共识进行归纳，未使用独立基准测试。</li>
+<li><strong>端到端状态</strong>：本文为观点/综述，非端到端方法提案；结论为领域级观察而非方法级验证。</li>
+<li><strong>算力成本</strong>：未讨论。</li>
+<li><strong>历史数据依赖</strong>：结论基于 AlphaFold2 引入后的领域发展，可能不适用于未来方法。</li>
+<li><strong>模型依赖</strong>：讨论主要针对 AlphaFold2 类 MSA 依赖的深度学习方法，不覆盖所有 AI 方法。</li>
+<li><strong>最难情形</strong>：作者明确指出动力学重要、缺乏共进化信号、依赖细胞环境的相互作用是当前最难情形。</li>
+<li><strong>群体/领域边界</strong>：结论基于结构生物学和计算生物学领域共识，可能不适用于其他相互作用类型（如代谢物-蛋白相互作用）。</li>
+<li><strong>不确定性</strong>：四区域分类为作者提出的框架，未经定量验证；各区域的边界可能模糊。</li>
+<li><strong>有边界的复述</strong>：在 AlphaFold2 类方法框架下，PPI 预测的性能受限于共进化信号、结构歧义和动态/环境因素；这些局限可被组织为四类挑战，但该分类的定量边界和普适性尚未验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限（本文为观点/综述，摘要中未包含自认局限部分）。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 作者指出当前方法「依赖 MSA」是根本约束，但未讨论 MSA 替代方案的可行性。
+- 作者提出「建模相互作用景观」作为未来方向，但未给出具体实现路径。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>四区域分类缺乏定量边界</td>
+<td>各区域可能重叠，且同一相互作用可能同时属于多个区域</td>
+<td>分类框架若无法操作化，则难以指导方法选择</td>
+<td>在标准 PPI 基准集上对四类相互作用进行定量性能评估，检验分类的判别力</td>
+<td>摘要仅定性描述四类区域，未提供量化标准</td>
+</tr>
+<tr>
+<td>结论基于 AlphaFold2 单一方法</td>
+<td>其他 AI 方法（如基于语言模型或扩散模型的方法）可能已部分解决所述局限</td>
+<td>若结论仅适用于 AlphaFold2，则对领域指导意义有限</td>
+<td>对比 AlphaFold2 与其他方法在四类相互作用上的性能</td>
+<td>摘要明确以 AlphaFold2 引入为背景</td>
+</tr>
+<tr>
+<td>「结构兼容性不足」主张缺乏直接证据</td>
+<td>作者未提供具体案例或数据证明结构兼容性预测失败</td>
+<td>核心主张若无证据支撑，则说服力有限</td>
+<td>收集结构兼容但非真实相互作用的案例，量化其频率</td>
+<td>摘要仅陈述主张，未提供数据</td>
+</tr>
+<tr>
+<td>未来方向（减少 MSA 依赖）可行性未讨论</td>
+<td>替代信号（如语言模型嵌入、物理能量）可能同样不足</td>
+<td>若替代方案不可行，则未来方向缺乏可操作性</td>
+<td>评估非 MSA 方法在缺乏共进化信号相互作用上的性能</td>
+<td>摘要仅提出方向，未讨论可行性</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>失败模式分类框架</strong>：将 PPI 预测挑战分为「可处理」「结构歧义」「共进化不足」「动态/环境依赖」四类，可迁移至本课题的基准测试设计——在评估新方法（如扩散模型、MD 增强对接）时，应分别报告四类相互作用上的性能，而非仅报告总体精度。
+2. <strong>结构兼容性 ≠ 特异性</strong>：对分子对接和构象采样方法，应区分「几何/能量上可行」与「生物学上真实」的相互作用；可设计后处理过滤器（如结合自由能、细胞环境约束）来提升特异性。
+3. <strong>MSA 依赖的边界</strong>：对依赖共进化信号的方法（如 AlphaFold2 类），应明确其适用边界；本课题中若开发新预测器，可考虑引入非 MSA 特征（如语言模型嵌入、物理约束）以扩展适用范围。
+4. <strong>动态/无序相互作用的建模需求</strong>：对 MD 模拟和构象采样，应关注弱/瞬时相互作用和无序区域的构象 ensemble，而非仅静态结构；可开发 ensemble 级预测指标（如结合概率、占据率）。
+5. <strong>细胞环境作为预测维度</strong>：未来方法可考虑将细胞环境（如浓度、定位、翻译后修饰）作为输入特征，超越纯序列/结构预测。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：与 AlphaFold2 原始论文（Jumper et al., 2021, Nature）和 AlphaFold-Multimer（Evans et al., 2022）的局限讨论一致——这些工作也指出 MSA 深度和共进化信号对精度的影响。</li>
+<li><strong>组合</strong>：与「蛋白质构象 ensemble 预测」方向（如 AlphaFold 的 pLDDT 作为动态性代理）可组合——本文强调动态重要性，与 pLDDT 低置信度区域对应无序/动态区域的观察一致。</li>
+<li><strong>冲突</strong>：与部分「AlphaFold2 可解决 PPI 预测」的乐观观点（如某些 benchmark 报告高精度）形成对比——本文强调性能随类别变化，提示 benchmark 选择偏差。</li>
+<li><strong>可迁移领域</strong>：分子对接（如 HADDOCK、ClusPro）的评分函数设计可借鉴「区分强度与特异性」的思想；MD 模拟的增强采样方法可借鉴「建模相互作用景观」的方向。</li>
+<li><strong>核验状态</strong>：以上连接基于领域常识，未在本文中直接引用；具体文献需外部核验。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：四类 PPI 挑战的定量基准集构建
+   - <strong>来源局限/观察</strong>：本文提出四区域分类但无定量边界
+   - <strong>核心假设</strong>：四类相互作用在现有方法（AlphaFold2、对接、MD）上的性能差异可被定量区分
+   - <strong>相对本文的增量</strong>：将定性框架转化为可操作的基准
+   - <strong>初步方法</strong>：从 PPI 数据库（如 BioGRID、STRING）中按共进化信号强度、动力学特征（如 NMR 数据）、细胞环境依赖性标注相互作用，构建分类基准；在 AlphaFold2、HADDOCK、MD 模拟上评估
+   - <strong>验证方式</strong>：检验四类相互作用在方法性能上的分离度（如 AUC、PRC）
+   - <strong>可能的失败模式</strong>：类别间特征重叠导致无法清晰分离
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：结合自由能过滤的结构兼容性后处理
+   - <strong>来源局限/观察</strong>：结构兼容性不足以预测真实相互作用
+   - <strong>核心假设</strong>：在 AlphaFold2 输出结构上附加结合自由能计算（如 MM/PBSA、FEP）可提升 PPI 特异性
+   - <strong>相对本文的增量</strong>：将「区分强度与特异性」思想落地为计算流程
+   - <strong>初步方法</strong>：对 AlphaFold2 预测的复合物进行 MD 模拟，计算结合自由能；与实验 PPI 数据对比，评估特异性提升
+   - <strong>验证方式</strong>：在标准 PPI 基准上比较有无自由能过滤的精度
+   - <strong>可能的失败模式</strong>：自由能计算误差大，过滤效果有限
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：基于语言模型嵌入的弱共进化 PPI 预测
+   - <strong>来源局限/观察</strong>：缺乏共进化信号的相互作用预测失败
+   - <strong>核心假设</strong>：蛋白质语言模型（如 ESM-2）嵌入可捕获非共进化的相互作用信号
+   - <strong>相对本文的增量</strong>：提供 MSA 依赖的替代方案
+   - <strong>初步方法</strong>：用 ESM-2 嵌入替换或补充 MSA 特征，训练 PPI 预测器；在弱共进化相互作用子集上评估
+   - <strong>验证方式</strong>：与 AlphaFold2 在弱共进化子集上的性能对比
+   - <strong>可能的失败模式</strong>：语言模型嵌入同样缺乏弱相互作用信号
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：细胞环境感知的相互作用 ensemble 预测
+   - <strong>来源局限/观察</strong>：静态结构预测忽略细胞环境与动态
+   - <strong>核心假设</strong>：将细胞环境（浓度、定位）作为约束，结合构象 ensemble 采样，可提升 PPI 预测的生物学相关性
+   - <strong>相对本文的增量</strong>：将「建模相互作用景观」方向操作化
+   - <strong>初步方法</strong>：对候选复合物进行增强采样 MD（如 GaMD、REMD），生成 ensemble；以细胞环境数据（如蛋白丰度、共定位）为权重，计算 ensemble 级结合概率
+   - <strong>验证方式</strong>：在已知细胞环境依赖的 PPI 上检验预测相关性
+   - <strong>可能的失败模式</strong>：细胞环境数据稀疏，约束不足
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Conceptual claims and proposed categorization framework, as presented in the abstract</li>
+<li><strong>Shared manuscript claim summary</strong> The authors argue that current AI-driven protein-protein interaction prediction methods, while advanced, perform unevenly across interaction classes, and propose a four-region categorization of limitations, with implications for future method development.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or results sections provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, methods description, quantitative performance data, and any validation of the proposed categorization framework</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This is a perspective-style manuscript that identifies a genuine and timely problem in the field of protein-protein interaction prediction. The proposed categorization of interaction prediction challenges into four regions is conceptually reasonable and may be useful for organizing future research efforts. However, the abstract alone provides no empirical evidence to support the claimed performance variations, and the categorization framework is presented without any systematic justification or validation. The manuscript's contribution is therefore primarily organizational and speculative at this stage, and its impact will depend on the depth of analysis and evidence provided in the full text.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and bioinformaticians working on protein structure prediction, protein-protein interaction prediction, and AI-driven methods for molecular biology. Experimental biologists studying protein interactions, particularly those involving dynamic complexes, disordered regions, or context-dependent assembly, may also find the categorization useful for selecting appropriate computational tools. The manuscript could serve as a roadmap for method developers and a cautionary guide for users of existing prediction tools.</li>
+<li><strong>Major strengths</strong> The manuscript addresses a well-recognized and important limitation of current AI-based prediction methods, namely the uneven performance across interaction classes. The proposed four-region categorization is intuitive and likely to resonate with practitioners. The call for methods that move beyond static structure prediction and reduce reliance on multiple sequence alignments is forward-looking and aligns with emerging trends in the field.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The claim that "performance drops when dynamics are important and when interactions lack a strong co-evolutionary history" is presented as a general finding.</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract asserts performance variation across interaction classes without presenting any quantitative data, benchmarks, or systematic comparisons. No specific datasets, metrics, or interaction classes are named.</li>
+<li><strong>Why it matters</strong> Without supporting evidence, this claim cannot be evaluated for accuracy or generalizability. The reader cannot determine whether the performance drops are consistent across methods, datasets, or interaction types, or whether they are anecdotal observations from a limited set of cases.</li>
+<li><strong>Resolution test</strong> Provide quantitative performance comparisons across defined interaction classes, including specific metrics (e.g., DockQ, TM-score, interface RMSD) and benchmark datasets, with appropriate statistical analysis.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Framework validation</li>
+<li><strong>Claim pointer</strong> The proposed four-region categorization of interaction prediction challenges is presented as a useful organizing principle.</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The categorization is introduced without any systematic derivation, literature synthesis, or case-based justification. It is unclear whether these four regions are exhaustive, mutually exclusive, or derived from empirical observations or theoretical considerations.</li>
+<li><strong>Why it matters</strong> If the categorization is not rigorously derived or validated, it risks being an arbitrary taxonomy that does not accurately reflect the landscape of interaction prediction challenges. This would limit its utility as a framework for guiding future research.</li>
+<li><strong>Resolution test</strong> Provide a systematic derivation of the four regions, including examples of interaction classes that fall into each region, discussion of boundary cases, and evidence that the categorization captures meaningful distinctions in method performance or underlying biology.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Actionability of recommendations</li>
+<li><strong>Claim pointer</strong> The statement that "future progress will require methods that rely less on multiple sequence alignments, better distinguish interaction strength and specificity, and move beyond static structure prediction" is presented as a roadmap.</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The recommendations are general and lack specificity regarding how these goals might be achieved, what technical approaches could be pursued, or what challenges might arise in implementing them.</li>
+<li><strong>Why it matters</strong> For a perspective manuscript to be impactful, its recommendations should be sufficiently concrete to guide method development. Vague suggestions without technical context may be of limited practical use.</li>
+<li><strong>Resolution test</strong> Provide more detailed discussion of potential approaches, such as alternative input features to MSAs, methods for modeling interaction dynamics, or strategies for incorporating cellular context, with reference to existing or emerging techniques.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Definition of "structural compatibility"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The term "structural compatibility" is used in the title and abstract but is not explicitly defined. It is unclear whether it refers to geometric complementarity, energetic favorability, or some other criterion.</li>
+<li><strong>Required correction</strong> Provide a clear definition of "structural compatibility" in the context of interaction prediction, ideally with reference to how it is assessed by current methods.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Use of "co-evolutionary history"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The term "co-evolutionary history" is used without specifying how it is measured or operationalized in the context of prediction methods.</li>
+<li><strong>Required correction</strong> Clarify what constitutes "strong" versus "weak" co-evolutionary signal, and how this relates to MSA depth or other quantifiable features.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Scope</li>
+<li><strong>Affected element</strong> Coverage of interaction classes</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract does not mention specific interaction classes (e.g., transient versus permanent, obligate versus non-obligate, homo-oligomeric versus hetero-oligomeric) that would help ground the categorization in concrete examples.</li>
+<li><strong>Required correction</strong> Include representative examples of interaction classes within each of the four proposed regions to illustrate the framework.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 and R1-M2 are blocking. The manuscript's central claims about performance variation and the utility of the proposed categorization cannot be assessed without quantitative evidence and systematic justification. The recommendations in R1-M3, while not blocking, would benefit from greater specificity.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The manuscript addresses a recognized problem but the proposed categorization, while potentially useful, is not clearly novel in its conceptual framing. Similar distinctions have been discussed in the literature regarding the limitations of co-evolution-based methods and the challenges of dynamic complexes.</li>
+<li>Scientific importance: The topic is of high importance to the structural biology and computational biology communities, given the widespread adoption of AlphaFold2 and related tools. The manuscript could help set research priorities.</li>
+<li>Interdisciplinary readership: The topic bridges computational biology, structural biology, and biochemistry, and the abstract is written in a way that is accessible to nonspecialists. However, the lack of concrete examples or data limits its immediate utility for experimentalists.</li>
+<li>Technical soundness: Cannot be evaluated from the abstract alone. The absence of any quantitative evidence or methodological detail prevents assessment of technical rigor.</li>
+<li>Readability for nonspecialists: The abstract is clearly written and the four-region framework is easy to follow conceptually. However, terms such as "co-evolutionary history" and "structural compatibility" would benefit from brief clarification for a broader audience.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The conceptual framework is promising and the topic is timely, but the abstract alone does not provide sufficient evidence to support the central claims. A decision would require review of the full manuscript, particularly the evidence for performance variation and the derivation of the categorization. If the full text provides quantitative support and systematic justification, the manuscript could be a valuable perspective piece.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

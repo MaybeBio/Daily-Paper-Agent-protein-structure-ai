@@ -1,0 +1,115 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, introduction, results, discussion, methods, and figure/table captions. Supplementary information referenced but not provided.
+- **Assessment boundary** Scientific validity, methodological soundness, clarity of claims, and alignment with stated contributions. No assessment of editorial fit or publication decision.
+- **Shared manuscript claim summary** The authors propose "exponentially tilted thermodynamic maps" (expTM), a generative AI framework combining diffusion models with statistical mechanics to generate thermodynamically consistent samples across multiple control variables (temperature, pressure, chemical potential) from limited training data. They demonstrate the method on a lattice gas model in the grand canonical ensemble and on CO2 phase transitions in the isothermal-isobaric ensemble.
+- **Visible evidence base** Main text figures (Figs. 1–3), Table 1, equations (Eqs. 1–21), and methodological descriptions in Methods. Supplementary Notes 3–5 and Supplementary Figs. 3–8 are referenced but not provided.
+- **Missing materials affecting confidence** Supplementary Information (Notes 3–5, Figs. 3–8), training details, hyperparameters, neural network architecture specifics, quantitative error metrics beyond density differences, and code availability. These omissions limit full reproducibility assessment.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a conceptually interesting extension of the authors' prior thermodynamic maps framework, aiming to generalize temperature-only control to additional thermodynamic variables via exponential tilting of a Gaussian prior. The statistical mechanics motivation is sound, and the two demonstrations address relevant problems. However, the current evidence base is insufficient to establish the claimed generality and robustness. Key concerns include: the theoretical connection between the tilted prior and the target ensemble is asserted rather than rigorously derived; the lattice gas demonstration uses only two training points at a single temperature, which is a very limited test; the CO2 application relies on collective variables and free energy surfaces from enhanced sampling simulations, making the "prediction" claim difficult to evaluate without the supplementary material; and the comparison to MC/MD benchmarks lacks quantitative error analysis. The ablation study is mentioned but its results are only in the supplementary material. The manuscript would benefit from clearer articulation of what constitutes a "correct" generated sample and how thermodynamic consistency is verified.
+- **Who would be interested in the results, and why** Researchers in computational statistical mechanics, molecular simulation, and machine learning for physical sciences would be interested. The promise of generating samples across thermodynamic conditions from limited data could appeal to those studying phase transitions, materials discovery, and biomolecular conformational sampling. The connection between diffusion models and statistical ensembles is a timely topic given the rapid adoption of generative models in the physical sciences.
+- **Major strengths**
+  1. The conceptual extension of thermodynamic maps to multiple control variables via exponential tilting is a natural and potentially impactful generalization.
+  2. The statistical mechanics framing provides a principled basis for the prior distribution choice, distinguishing this work from purely data-driven generative approaches.
+  3. The two applications span different ensembles (grand canonical and isothermal-isobaric), demonstrating the framework's intended flexibility.
+  4. The emphasis on limited training data far from phase boundaries addresses a practical limitation of simulation-based approaches.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Theoretical foundation
+  - **Claim pointer** The manuscript claims that exponential tilting of the Gaussian prior enables the diffusion model to represent the grand canonical and isothermal-isobaric ensembles, with the mean and variance of the prior corresponding to pressure/chemical potential and temperature, respectively.
+  - **Evidence pointer** Methods sections "Isothermal-Isobaric Thermodynamic Maps" and "Grand Canonical Thermodynamic Maps", Eqs. 14–19
+  - **Concern** The derivation maps the ensemble probability to a tilted Gaussian prior by assuming a harmonic energy function and linear volume/particle-number dependence. However, the connection between the prior distribution and the actual target ensemble is not rigorously established. Specifically, the authors do not demonstrate that the score function learned in the joint space (x, η) correctly captures the conditional distributions needed for arbitrary (α, β⁻¹) combinations. The claim that "the mean and variance of the prior can be correlated with pairs of thermodynamic control variables" is asserted but not proven. The relationship between the abstract feature space x and physical observables (e.g., density, structural order parameters) is also not formalized.
+  - **Why it matters** The central contribution is the claim that expTM generates thermodynamically correct samples at arbitrary conditions. Without a rigorous derivation or at least a clear statement of the assumptions under which this holds, the theoretical foundation is incomplete. If the mapping is only approximate or holds only for specific feature choices, the generality claim is weakened.
+  - **Resolution test** Provide a formal derivation or a clear statement of the conditions under which the tilted Gaussian prior correctly represents the target ensemble. Alternatively, demonstrate on a system with a known exact solution that the generated samples match the exact distribution across a range of (α, β⁻¹) values.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Experimental validation
+  - **Claim pointer** The manuscript claims that expTM "accurately reproduces the density of particles and critical behavior" for the lattice gas model and "successfully delineating phase boundaries and capturing intermediate states" for CO2.
+  - **Evidence pointer** Fig. 2, Fig. 3, Table 1
+  - **Concern** The quantitative validation is limited. For the lattice gas, the only reported metric is the absolute density difference (Fig. 2c), which is stated to be within 0.05 except near the critical point. No error bars, statistical significance, or comparison across multiple random seeds are provided. For CO2, the phase boundary determination relies on a λ1 threshold of 0.58, which is described as an adjustment to "accommodate the wide spread of the generated data." This suggests the generated samples have significant variance, and the threshold choice appears somewhat arbitrary. The free energy differences in Fig. 3g are from MD simulations, not from expTM, so the comparison is indirect.
+  - **Why it matters** The core claim is that expTM can predict phase transitions from limited data. The validation must demonstrate that the predictions are quantitatively reliable, not just qualitatively plausible. Without error bars, multiple runs, or a clear metric for "correctness," the reader cannot assess the method's accuracy or robustness.
+  - **Resolution test** Provide quantitative error metrics with uncertainty quantification (e.g., standard deviation across multiple training runs) for both applications. For the lattice gas, report the density error as a function of (T, μ) with confidence intervals. For CO2, show the distribution of generated samples in the (λ1, λ3) space and justify the threshold choice with a sensitivity analysis.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** The manuscript claims that expTM is a practical framework that can be applied to "diverse thermodynamic conditions requiring only a small number of observations."
+  - **Evidence pointer** Methods sections, Fig. 1, Supplementary Notes 3–5
+  - **Concern** The manuscript does not provide sufficient details for reproduction. The neural network architecture, training procedure, hyperparameters, loss function, and optimization details are not described. The feature engineering for both applications (lattice gas configurations and CO2 collective variables) is only partially described. The supplementary material, which presumably contains these details, is not provided for review. The computational cost comparison in Supplementary Note 3 is referenced but not shown.
+  - **Why it matters** Reproducibility is a fundamental requirement for scientific publication. Without these details, the method cannot be independently implemented or verified. The claim of practical applicability cannot be assessed.
+  - **Resolution test** Include a complete description of the model architecture, training procedure, and hyperparameters in the main text or provide the supplementary material for review. Include a statement on code availability.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Comparison to baselines
+  - **Claim pointer** The manuscript implies that expTM offers advantages over conventional simulation methods and prior generative approaches, particularly in terms of data efficiency and extrapolation capability.
+  - **Evidence pointer** Introduction, Discussion, Fig. 2, Fig. 3
+  - **Concern** The manuscript does not compare expTM to alternative methods. For the lattice gas, a comparison to the original TM framework (which handles temperature only) would clarify the added value of exponential tilting. For CO2, a comparison to direct MD or enhanced sampling at the predicted conditions would demonstrate whether expTM provides accurate predictions or merely interpolates between training points. The ablation study (removing the tilting term) is mentioned but its results are only in the supplementary material.
+  - **Why it matters** Without baselines, the reader cannot judge whether expTM is a meaningful advance or an incremental modification. The claim of "robust tool" requires evidence that it outperforms or complements existing approaches.
+  - **Resolution test** Add a comparison to the original TM framework and to standard MD/MC simulations at the predicted conditions. Report computational cost and accuracy for each method. Include the ablation study results in the main text or clearly summarize the key findings.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Fig. 1 caption
+  - **Evidence pointer** Fig. 1
+  - **Issue** The caption describes the schematic but does not clearly explain the role of the "tilted Gaussian prior" in the forward and reverse diffusion processes. The notation (α₀, β₀⁻¹) for training conditions versus (α, β⁻¹) for target conditions could be confusing.
+  - **Required correction** Expand the caption to explicitly define all symbols and clarify the distinction between training and target conditions. Consider adding a step-by-step description of the forward and reverse processes.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Abstract and Introduction
+  - **Evidence pointer** Abstract, Introduction
+  - **Issue** The term "thermodynamically correct samples" is used without a precise definition. It is unclear whether this means samples distributed according to the exact Boltzmann distribution, or samples that reproduce certain macroscopic observables.
+  - **Required correction** Define what is meant by "thermodynamically correct" in the context of generated samples. Clarify whether the method aims to reproduce the full distribution or only specific expectation values.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** Fig. 2c
+  - **Evidence pointer** Fig. 2c
+  - **Issue** The density difference plot shows a single realization. No information is provided about the variability of this result across different training data selections or random seeds.
+  - **Required correction** Report the mean and standard deviation of the density difference across multiple independent training runs, or state that the result is representative.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Literature context
+  - **Affected element** Introduction
+  - **Evidence pointer** Introduction
+  - **Issue** The introduction cites prior work on diffusion models for molecular sciences but does not discuss recent work on physics-informed generative models or thermodynamic-conditioned sampling, which is directly relevant.
+  - **Required correction** Add a brief discussion of related approaches that condition generative models on thermodynamic variables, and clarify the distinction.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Notation
+  - **Affected element** Methods, Eq. 20
+  - **Evidence pointer** Eq. 20
+  - **Issue** The notation η ≡ {α, β⁻¹} is introduced, but the dimensionality of η is stated as 3D in the text following Eq. 21. This is confusing because α and β⁻¹ are each D-dimensional, so η should be 2D-dimensional.
+  - **Required correction** Clarify the dimensionality of η. If η is the concatenation of α and β⁻¹, its dimension should be 2D, not 3D. Correct the statement or explain the discrepancy.
+  - **Concern ID** R1-m6
+  - **Severity** Minor
+  - **Axis** Data availability
+  - **Affected element** Data availability statement
+  - **Evidence pointer** Not present in the provided text
+  - **Issue** No data availability statement is included in the provided manuscript text.
+  - **Required correction** Add a data availability statement describing where the training data, code, and any generated datasets can be accessed.
+- **Technical failings that need to be addressed before the case is established**
+  - R1-M1: The theoretical connection between the tilted prior and the target ensemble is not rigorously established.
+  - R1-M2: Quantitative validation is insufficient, with no error bars or uncertainty quantification.
+  - R1-M3: Reproducibility is compromised by missing methodological details.
+  - R1-M4: Lack of comparison to baselines weakens the claim of advantage.
+- **Assessment against Nature-style criteria**
+  - **Originality** The extension of thermodynamic maps to multiple control variables via exponential tilting is a novel contribution. The idea of embedding thermodynamic parameters into the prior distribution of a diffusion model is creative and builds logically on prior work. However, the incremental nature relative to the authors' own TM framework should be more clearly articulated.
+  - **Scientific importance** If validated, the method could be impactful for studying phase transitions in systems where direct simulation is expensive. The potential to extrapolate across thermodynamic conditions from limited data addresses a real bottleneck. However, the current evidence does not yet establish that the method achieves this reliably.
+  - **Interdisciplinary readership** The work bridges statistical mechanics, machine learning, and computational chemistry. The writing is generally accessible, though the Methods section assumes familiarity with diffusion models and ensemble theory. The potential applications to materials and biomolecular systems broaden the appeal.
+  - **Technical soundness** The statistical mechanics motivation is sound, but the theoretical derivation is incomplete. The numerical demonstrations are suggestive but not yet convincing due to limited quantitative analysis. The ablation study is a good idea but its results are not presented in the main text.
+  - **Readability for nonspecialists** The abstract and introduction are clear and accessible. The Results section is reasonably readable. The Methods section is dense and would benefit from additional explanation of the connection between the mathematical formalism and the physical intuition.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual idea is promising and worth pursuing, but the manuscript requires substantial revision to address the theoretical gaps, provide quantitative validation with uncertainty quantification, include full methodological details, and add comparisons to baselines. I would be supportive if these concerns are resolved.
+
+## Risk / unsupported claims
+- The claim that expTM "generates thermodynamically correct samples" is not supported by a rigorous definition or verification of thermodynamic correctness.
+- The claim that expTM "can explore any combination of (T, μ)" is not supported by evidence; only a limited range of conditions was tested.
+- The claim that the method "requires only a small number of observations" is not quantified; the relationship between training data size and accuracy is not explored.
+- The claim that the CO2 phase boundary prediction is consistent with experimental results is not quantitatively compared to the experimental phase boundary.
+- The ablation study results are referenced but not presented, making the claim that exponential tilting is essential unverifiable from the provided material.
+- The computational advantage claim is referenced to Supplementary Note 3 but not substantiated in the main text.

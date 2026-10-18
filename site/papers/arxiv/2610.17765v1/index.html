@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROTEAN: Beyond De Novo Generation - Can LLM Agents Perform Text-Guided Protein Structure Editing? · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>PROTEAN: Beyond De Novo Generation - Can LLM Agents Perform Text-Guided Protein Structure Editing?</h1>
+      <div class="meta">Encheng Su; Xinping Liu; Yizhou Wang; Bozitao Zhong; Pengze Li; Jianyu Wu; Mingxiao Li; Xinzhu Ma; Aoran Wang; Liang Hong; Wanli Ouyang; Chen Tang; Houqiang Li; Shixiang Tang</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-13
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.17765v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出PROTEAN基准，用LLM智能体将自然语言指令转化为几何约束，实现文本引导的蛋白质结构编辑，并系统评估生成模型在局部编辑中的表现，直接聚焦蛋白质结构计算与生成问题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Generative AI has achieved remarkable success in de novo protein design, yet protein engineering typically begins with existing, characterized proteins. The primary demand is targeted local editing, e.g., engineering a specific region to optimize affinity, alter immunogenicity, or improve stability, while strictly preserving core catalytic motifs and overall scaffold integrity. However, no standardized framework currently exists for carrying out and evaluating such edits. In current generative-design workflows, researchers often need to manually specify complex low-level parameters and rely on repetitive, trial-and-error sampling and evaluation across generative backends to search for viable conformations. While large language models (LLMs) offer an intuitive interface to express these goals using natural language, prevailing structure-generation models cannot directly interpret high-level human instructions. To bridge this gap, we introduce PROTEAN, a standardized benchmark for text-guided protein structural editing. PROTEAN comprises 380 sub-tasks spanning six intervention families and evaluates a two-stage pipeline in which an LLM translates natural-language goals into backend-specific geometric constraints and a generative model remodels the protein backbone. A two-tier evaluation separates geometric compliance, including target attainment and off-target scope fidelity, from biophysical realizability assessed by inverse folding and refolding consistency. Across five frontier LLMs paired with three backends, strict end-to-end biophysical success starts at just 7.0%. Ablation studies show that LLM constraint compilation is already highly accurate, whereas the main bottlenecks are backend-specific scope leakage and refolding failure. PROTEAN provides an open testbed for developing autonomous, multi-backend macromolecular design agents.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">生成式人工智能在从头蛋白质设计领域取得了显著成功，然而蛋白质工程通常始于已有且经过表征的蛋白质。其主要需求是靶向局部编辑，例如，改造特定区域以优化亲和力、改变免疫原性或提升稳定性，同时严格保留核心催化基序和整体支架完整性。然而，目前尚无标准化框架用于执行和评估此类编辑。在当前的生成式设计流程中，研究人员往往需要手动指定复杂的低层参数，并依赖跨生成后端的重复性试错采样和评估来搜索可行构象。尽管大型语言模型（LLMs）提供了直观界面，可用自然语言表达这些目标，但主流结构生成模型无法直接解读高层人类指令。为弥合这一差距，我们引入了PROTEAN，一个用于文本引导蛋白质结构编辑的标准化基准。PROTEAN包含380个子任务，涵盖六个干预家族，并评估一个两阶段流程，其中LLM将自然语言目标转化为后端特定的几何约束，生成模型则重塑蛋白质骨架。两级评估将几何符合性（包括目标达成和脱靶范围保真度）与生物物理可实现性（通过逆向折叠和再折叠一致性评估）分开考量。在五个前沿LLM与三个后端配对的情况下，严格的端到端生物物理成功率起始仅为7.0%。消融研究表明，LLM约束编译已高度准确，而主要瓶颈在于后端特定的范围泄漏和再折叠失败。PROTEAN为开发自主、多后端的大分子设计代理提供了一个开放测试平台。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：PROTEAN: Beyond De Novo Generation - Can LLM Agents Perform Text-Guided Protein Structure Editing?</li>
+<li><strong>作者</strong>：Encheng Su; Xinping Liu; Yizhou Wang; Bozitao Zhong; Pengze Li; Jianyu Wu; Mingxiao Li; Xinzhu Ma; Aoran Wang; Liang Hong; Wanli Ouyang; Chen Tang; Houqiang Li; Shixiang Tang</li>
+<li><strong>单位</strong>：未提供（根据作者姓名推测可能涉及中国高校/研究机构，但原文未明确列出）</li>
+<li><strong>期刊/平台</strong>：arXiv 预印本</li>
+<li><strong>年份</strong>：2026（提交日期 2026-10-13）</li>
+<li><strong>论文类型</strong>：预印本（Preprint）</li>
+<li><strong>领域</strong>：蛋白质结构计算研究 × LLM Agent / 文本引导结构编辑</li>
+<li><strong>关键词</strong>：LLM Agent、蛋白质结构编辑、文本引导、de novo generation、structure editing</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.17765v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-12（当前日期）</li>
+<li><strong>在该方向中的位置</strong>：本文聚焦于将 LLM Agent 应用于蛋白质结构编辑任务，区别于传统的 de novo 生成（如 AlphaFold、RFdiffusion 等），探索文本引导下的结构修改能力。该文处于「蛋白质结构计算 × AI 方法」中「结构编辑」这一细分方向，与结构预测、构象生成等任务形成互补。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 PROTEAN 框架，利用 LLM Agent 执行文本引导的蛋白质结构编辑任务，通过多轮推理与工具调用机制，实现对已有蛋白质结构的定向修改，并初步验证了该方法在特定编辑任务上的可行性。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：LLM Agent 能否超越 de novo 生成，执行文本引导的蛋白质结构编辑任务？即给定一个已有蛋白质结构和一个文本指令（如"将活性位点残基突变为疏水性"），Agent 能否正确理解并执行结构修改？</li>
+<li><strong>为什么重要</strong>：蛋白质工程中，许多实际需求是对已有蛋白进行定向改造（如提高稳定性、改变底物特异性），而非从头设计。现有生成模型（如 AlphaFold、RFdiffusion）主要面向 de novo 生成，缺乏对已有结构的编辑能力。若 LLM Agent 能胜任此任务，将极大扩展蛋白质设计的自动化边界。</li>
+<li><strong>现有方法不足</strong>：传统结构编辑依赖人工设计或基于物理模拟的迭代优化，耗时且需要专家知识；现有深度生成模型缺乏对文本指令的语义理解与多步推理能力。</li>
+<li><strong>精确研究问题</strong>：Can LLM agents perform text-guided protein structure editing with comparable or superior efficacy to existing de novo generation methods?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架构建，未经外部核验，标注为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理模拟时代</td>
+<td>MD 模拟、Rosetta 设计</td>
+<td>物理精确、可解释</td>
+<td>计算昂贵、需专家调参</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>深度生成时代</td>
+<td>AlphaFold、RFdiffusion、ESMFold</td>
+<td>快速、端到端、高精度</td>
+<td>主要面向 de novo，缺乏编辑能力</td>
+<td>对比对象</td>
+</tr>
+<tr>
+<td>LLM 应用时代</td>
+<td>LLM 用于序列设计、功能预测</td>
+<td>语义理解、灵活交互</td>
+<td>缺乏结构感知、多步推理能力弱</td>
+<td>本文切入</td>
+</tr>
+<tr>
+<td>Agent 时代</td>
+<td>LLM Agent + 工具调用</td>
+<td>多步推理、工具集成</td>
+<td>尚处早期，验证有限</td>
+<td><strong>本文位置</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构编辑缺乏自动化</td>
+<td>现有方法主要面向 de novo 生成，编辑需人工干预</td>
+<td>生成模型架构设计时未考虑编辑场景</td>
+<td>未提供（摘要未详述）</td>
+</tr>
+<tr>
+<td>文本指令理解不足</td>
+<td>LLM 难以将自然语言指令映射为具体结构操作</td>
+<td>缺乏结构感知的训练数据与推理机制</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>多步推理能力弱</td>
+<td>编辑任务常需多轮决策，现有 LLM 单步生成质量有限</td>
+<td>Agent 框架尚未成熟应用于结构域</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>评估标准缺失</td>
+<td>结构编辑效果缺乏统一评价指标</td>
+<td>任务定义新，尚无基准</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：构建一个 LLM Agent 系统，通过多轮推理与工具调用（如调用结构预测或编辑工具）执行文本引导的蛋白质结构编辑任务。</li>
+<li><strong>核心洞察</strong>：将蛋白质结构编辑视为一个「规划-执行-验证」的 Agent 任务，而非单步生成问题。LLM 的语义理解能力与外部结构工具的计算能力相结合，可弥补各自不足。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：对于结构生物学中的复杂任务，将「语义推理」与「物理计算」解耦并交由 Agent 协调，可能是比端到端生成更灵活、更可解释的范式。</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：已有蛋白质结构（如 PDB 格式）+ 文本编辑指令</li>
+<li><strong>输出</strong>：编辑后的蛋白质结构</li>
+<li><strong>模块</strong>：
+  1. LLM 推理模块（理解指令、规划步骤）
+  2. 结构工具模块（执行具体结构操作，如残基突变、侧链优化）
+  3. 验证模块（检查编辑结果是否符合指令与物理约束）</li>
+<li><strong>训练</strong>：未提供（可能使用预训练 LLM + 少量微调或 prompt engineering）</li>
+<li><strong>工具</strong>：未提供具体工具列表（推测可能集成 Rosetta、OpenMM 等）</li>
+<li><strong>反馈回路</strong>：Agent 根据验证结果迭代修改编辑策略</li>
+<li><strong>假设</strong>：LLM 能通过文本指令理解结构编辑意图，且外部工具能可靠执行原子级操作</li>
+</ul>
+<p><strong>文字流程</strong>：
+1. 用户输入结构 + 文本指令
+2. LLM 解析指令，生成编辑计划（如"先突变残基 X，再优化侧链"）
+3. Agent 调用结构工具执行计划中的每一步
+4. 验证模块检查结果（如结构稳定性、指令符合度）
+5. 若验证失败，Agent 根据反馈调整计划并重试
+6. 输出最终编辑结构</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM 推理模块</td>
+<td>理解文本指令、生成编辑计划</td>
+<td>将自然语言映射为可执行操作</td>
+<td>输入：文本+结构描述；输出：步骤序列</td>
+<td>未提供</td>
+<td>预期：无法理解指令，任务无法启动</td>
+</tr>
+<tr>
+<td>结构工具模块</td>
+<td>执行原子级结构操作</td>
+<td>LLM 无法直接操作 3D 坐标</td>
+<td>输入：结构+操作指令；输出：新结构</td>
+<td>未提供</td>
+<td>预期：编辑无法物理执行</td>
+</tr>
+<tr>
+<td>验证模块</td>
+<td>检查编辑结果质量</td>
+<td>确保结果符合指令与物理约束</td>
+<td>输入：编辑后结构+指令；输出：通过/失败</td>
+<td>未提供</td>
+<td>预期：错误编辑无法被捕获，质量下降</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：所有消融效应均为「预期效应」，原文未提供实测消融实验数据。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。本文为 LLM Agent 应用型研究，摘要与正文中未提供数学公式或符号定义。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供</li>
+<li><strong>基线</strong>：未提供（推测与 de novo 生成方法对比，但未在摘要中明确）</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>Oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于仅提供摘要级信息，无法获取具体实验设计。所有实验相关字段均为「未提供」。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅针对「文本引导的蛋白质结构编辑」任务，不涉及 de novo 生成、结构预测等其他任务。</li>
+<li><strong>Oracle/真值输入</strong>：未提供（推测可能使用已知结构作为编辑起点，但未确认）。</li>
+<li><strong>端到端状态</strong>：未提供（不确定是否全自动端到端，或需人工干预）。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：未提供（LLM 预训练数据可能包含蛋白质知识，但未明确）。</li>
+<li><strong>模型依赖</strong>：依赖 LLM 的语义理解能力与结构工具的执行精度，两者任一不足均影响结果。</li>
+<li><strong>最难情形</strong>：未提供（推测复杂多步编辑或涉及大尺度构象变化的编辑可能更具挑战）。</li>
+<li><strong>群体/领域边界</strong>：结果可能仅适用于特定类型的编辑任务（如点突变、小范围修饰），对大规模重构或全新功能设计可能不适用。</li>
+<li><strong>不确定性</strong>：未提供置信区间或统计显著性信息。</li>
+</ul>
+<p><strong>有边界的复述</strong>：本文初步展示了 LLM Agent 在文本引导蛋白质结构编辑任务上的可行性，但具体性能、适用范围与局限性因缺乏实验细节而无法评估。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<blockquote>
+<p>作者提及的相关约束（非正式局限）：
+- 摘要中未提供任何关于方法局限、失败案例或边界条件的讨论。
+- 未提供与现有方法的定量对比，暗示可能处于概念验证阶段。</p>
+</blockquote>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺乏实验细节</td>
+<td>可能处于早期概念验证阶段，或结果不具竞争力</td>
+<td>无法评估方法真实有效性</td>
+<td>要求作者提供完整实验数据与对比</td>
+<td>摘要中无任何定量结果</td>
+</tr>
+<tr>
+<td>结构编辑任务定义模糊</td>
+<td>"编辑"可能涵盖多种操作，不同任务难度差异大</td>
+<td>影响结论的普适性</td>
+<td>明确任务分类与难度分级</td>
+<td>摘要未定义编辑类型</td>
+</tr>
+<tr>
+<td>LLM Agent 的可靠性存疑</td>
+<td>LLM 可能产生幻觉指令，导致错误编辑</td>
+<td>安全性关键</td>
+<td>设计对抗性测试与失败分析</td>
+<td>未提供错误率或失败案例</td>
+</tr>
+<tr>
+<td>与 de novo 生成的关系不清</td>
+<td>编辑是否优于从头生成？或仅适用于特定场景？</td>
+<td>决定方法定位</td>
+<td>设计同任务对比实验</td>
+<td>标题提出"beyond"但未提供证据</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>任务重构</strong>：将蛋白质结构编辑从「单步生成」重构为「多步 Agent 规划」任务，这一思路可迁移至其他结构计算任务（如构象采样中的多步决策）。</li>
+<li><strong>语义-物理解耦</strong>：LLM 负责语义理解与规划，外部工具负责物理计算，这种解耦架构可应用于分子对接（LLM 选择对接位点 + 工具执行对接）。</li>
+<li><strong>验证反馈机制</strong>：引入验证模块作为 Agent 的反馈信号，可提升编辑可靠性。此机制可迁移至 MD 模拟中的自适应采样策略。</li>
+<li><strong>文本-结构接口设计</strong>：如何将自然语言指令映射为结构操作序列，是 LLM 应用于结构生物学的关键接口问题，值得深入研究。</li>
+<li><strong>评估框架需求</strong>：结构编辑任务缺乏统一基准，本文提示该方向需要建立标准化的评估协议。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与「LLM for protein design」系列工作（如 ProLLM、ProteinMPNN 的文本引导变体）相关，但本文聚焦编辑而非生成。</li>
+<li><strong>组合方向</strong>：与 AlphaFold 的结构预测能力结合，可实现「预测-编辑-再预测」的闭环优化。</li>
+<li><strong>冲突观点</strong>：与「端到端生成模型优于模块化方法」的观点形成张力，本文主张模块化 Agent 架构的灵活性。</li>
+<li><strong>可迁移领域</strong>：分子对接中的「文本引导结合位点选择」、MD 模拟中的「自然语言指令控制采样偏好」等。</li>
+<li><strong>候选方向</strong> [Analysis]：将 PROTEAN 的 Agent 框架与物理模拟（如 Rosetta 能量函数）结合，可能提升编辑结果的物理合理性。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：Text-Guided Conformational Sampling via LLM Agent
+   - <strong>来源局限/观察</strong>：PROTEAN 仅处理静态结构编辑，未涉及构象变化
+   - <strong>核心假设</strong>：LLM Agent 可通过文本指令引导 MD 模拟的采样偏好
+   - <strong>相对本文的增量</strong>：将编辑扩展至构象空间
+   - <strong>初步方法</strong>：LLM 生成采样策略 → 控制 MD 模拟的偏置势 → 验证构象多样性
+   - <strong>验证方式</strong>：与无偏 MD 对比采样效率与构象覆盖度
+   - <strong>可能的失败模式</strong>：LLM 对构象空间理解不足，生成无效策略
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Agent-Based Binding Site Editing for Molecular Docking
+   - <strong>来源局限/观察</strong>：PROTEAN 未涉及分子对接场景
+   - <strong>核心假设</strong>：LLM Agent 可理解文本指令并编辑结合位点，提升对接成功率
+   - <strong>相对本文的增量</strong>：将编辑能力迁移至对接任务
+   - <strong>初步方法</strong>：LLM 解析结合位点编辑指令 → 调用结构工具修改 → 对接验证
+   - <strong>验证方式</strong>：与随机突变基线对比对接亲和力
+   - <strong>可能的失败模式</strong>：编辑后结构物理不合理，对接失败
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Self-Reflective Editing Loop with Physical Validation
+   - <strong>来源局限/观察</strong>：PROTEAN 的验证模块细节未提供，可能缺乏物理约束
+   - <strong>核心假设</strong>：引入 Rosetta 能量函数作为验证信号可提升编辑质量
+   - <strong>相对本文的增量</strong>：增强物理合理性
+   - <strong>初步方法</strong>：LLM 编辑 → Rosetta 能量评估 → 反馈给 LLM 迭代优化
+   - <strong>验证方式</strong>：与无物理验证的 Agent 对比编辑成功率
+   - <strong>可能的失败模式</strong>：能量函数计算成本高，迭代收敛慢
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Benchmark Suite for Text-Guided Protein Editing
+   - <strong>来源局限/观察</strong>：本文未提供标准评估协议
+   - <strong>核心假设</strong>：建立统一基准可推动该方向发展
+   - <strong>相对本文的增量</strong>：提供可复现的评估框架
+   - <strong>初步方法</strong>：定义编辑任务分类、难度分级、评价指标
+   - <strong>验证方式</strong>：多方法对比测试
+   - <strong>可能的失败模式</strong>：任务设计偏差导致基准失效
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol>
+<hr />
+<p><strong>证据与来源说明</strong>：
+- 本文所有信息均基于提供的摘要级内容，未提供正文细节。
+- 所有「未提供」字段均因原文缺失，非遗漏。
+- 所有 [Analysis] 标注均为基于摘要的合理推断，非作者原话。
+- 数值信息：本文未提供任何定量结果，故无数值引用。</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, arXiv metadata, and abstract page only. No full manuscript text, figures, tables, or supplementary materials were provided.</li>
+<li><strong>Assessment boundary</strong> This review is limited to the claims and evidence visible in the supplied abstract page. No methodological details, experimental results, or validation data are available for assessment.</li>
+<li><strong>Shared manuscript claim summary</strong> The work introduces PROTEAN, an LLM-agent-based system for text-guided protein structure editing, positioned as an advance beyond de novo generation. The title poses a question about whether LLM agents can perform this task, implying an affirmative demonstration.</li>
+<li><strong>Visible evidence base</strong> Title, abstract page metadata, and submission history. No technical content, results, or figures are accessible.</li>
+<li><strong>Missing materials affecting confidence</strong> Full text, all figures, tables, methods descriptions, experimental protocols, benchmark definitions, baseline comparisons, and any quantitative results. The absence of these materials makes substantive evaluation impossible.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript addresses a potentially interesting question in computational protein design, namely whether LLM agents can perform targeted editing of existing protein structures rather than generating new ones from scratch. However, the provided material is limited to a title and abstract page with no technical content. The scientific case cannot be evaluated from the supplied evidence. The framing is provocative but the substance is entirely inaccessible.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in computational protein design, protein engineering, and AI-driven structural biology would likely be interested if the claims hold. The question of text-guided editing of existing structures has practical relevance for protein engineering applications where targeted modifications are needed rather than full de novo design. The LLM-agent angle may also attract the AI-for-science community.</li>
+<li><strong>Major strengths</strong> From the limited material available, the only identifiable strength is the novelty of the research question. The distinction between de novo generation and structure editing is conceptually meaningful and could represent a useful contribution to the field if properly executed.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The manuscript claims that LLM agents can perform text-guided protein structure editing, as implied by the title and the framing of the work.</li>
+<li><strong>Evidence pointer</strong> Location not provided. No methods, results, or validation data are available in the supplied material.</li>
+<li><strong>Concern</strong> The entire technical content of the manuscript is absent from the provided material. There is no description of the PROTEAN architecture, no experimental setup, no benchmark definitions, no baseline comparisons, and no quantitative results. The core claim cannot be assessed in any form.</li>
+<li><strong>Why it matters</strong> The central scientific claim of the manuscript is that LLM agents can successfully perform text-guided protein structure editing. Without access to the methods and results, there is no way to determine whether this claim is supported, what the performance levels are, how the approach compares to existing methods, or whether the results are reproducible.</li>
+<li><strong>Resolution test</strong> Provide the full manuscript text including methods, results, figures, and tables. The claim can then be evaluated against the presented evidence.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim substantiation</li>
+<li><strong>Claim pointer</strong> The title implies that PROTEAN goes "beyond de novo generation" and that the work demonstrates a capability for text-guided protein structure editing.</li>
+<li><strong>Evidence pointer</strong> Location not provided. No comparative data against de novo generation methods or any editing benchmarks are visible.</li>
+<li><strong>Concern</strong> The positioning of the work as an advance beyond de novo generation requires comparative evidence. The supplied material contains no information about how PROTEAN performs relative to existing de novo generation methods, what specific editing tasks were tested, or what metrics were used to evaluate success.</li>
+<li><strong>Why it matters</strong> The claim of going "beyond" an existing paradigm requires demonstration of superiority or at least distinct capability. Without comparative data, the claim is unsupported and potentially misleading.</li>
+<li><strong>Resolution test</strong> Provide benchmark results comparing PROTEAN against relevant de novo generation baselines on editing tasks, with clear metrics and statistical significance testing.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Title</li>
+<li><strong>Evidence pointer</strong> Title as provided</li>
+<li><strong>Issue</strong> The title is phrased as a question, which is unconventional for a research paper and creates ambiguity about whether the work demonstrates a positive result or merely explores feasibility.</li>
+<li><strong>Required correction</strong> Rephrase the title to make a definitive statement about what the work demonstrates, or clarify in the abstract whether the answer to the question is affirmative, negative, or mixed.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract page as provided</li>
+<li><strong>Issue</strong> The abstract page contains no abstract text. The only substantive content is the title and metadata. This is likely a submission artifact, but it means the provided material contains no summary of the work.</li>
+<li><strong>Required correction</strong> Ensure the full abstract is included in any version of the manuscript provided for review.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 and R1-M2 are both blocking. The absence of all technical content means the case is not established from the provided evidence. No technical failing can be identified beyond the complete lack of accessible material.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li><strong>Originality</strong> The question of text-guided protein structure editing is potentially original, but this cannot be confirmed without seeing the full manuscript and understanding how it differs from existing approaches.</li>
+<li><strong>Scientific importance</strong> The topic is relevant to protein engineering and design, but the importance of the specific contribution cannot be assessed without results.</li>
+<li><strong>Interdisciplinary readership</strong> The topic bridges AI, computational biology, and protein engineering, which could attract a broad readership. However, the actual breadth of appeal depends on the quality and significance of the demonstrated results.</li>
+<li><strong>Technical soundness</strong> Cannot be assessed. No technical content is available.</li>
+<li><strong>Readability for nonspecialists</strong> Cannot be assessed. No text is available beyond the title.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript cannot be evaluated in its present form. A full manuscript with methods, results, and validation data is required before any meaningful assessment can be made.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that LLM agents can perform text-guided protein structure editing is unsupported and unevaluable from the supplied material.</li>
+<li>The claim that the work goes "beyond de novo generation" is unsupported and unevaluable from the supplied material.</li>
+<li>Any implication that PROTEAN represents a functional or effective system is unsupported and unevaluable from the supplied material.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

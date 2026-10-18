@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors study the HyHEL10 (Hy10) antibody lineage binding to lysozymes of varying conformational flexibility. They report that the affinity-matured Hy10(4X) antibody achieves high affinity by actively destabilizing its CDRH1 loop, enabling entropy-buffered conformational selection. They benchmark MM/PBSA and AI-driven structure predictors (including Chai-1) and find that both initially fail to rank affinities accurately in flexible systems, but that inclusion of structural templates in Chai-1 improves correlation with experimental affinities. They propose a hybrid AI plus physics-based workflow for antibody engineering.
+- **Visible evidence base** Abstract text only; no quantitative data, methodological details, or validation metrics are provided
+- **Missing materials affecting confidence** Full manuscript, experimental affinity measurements, simulation protocols, benchmark datasets, statistical analyses, structural coordinates, and any comparison with existing methods
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting observation regarding the role of conformational flexibility in antibody-antigen recognition and the limitations of current computational methods. However, the claims are broad and the evidence base is entirely absent from the supplied material. The central mechanistic assertion regarding CDRH1 destabilization and entropy-buffered conformational selection is not supported by any presented data. The benchmarking conclusions are stated without quantitative outcomes. The abstract reads as a summary of work that may be substantial, but the current form does not allow for evaluation of technical soundness or validity of the conclusions.
+- **Who would be interested in the results, and why** Computational biologists and structural biologists working on antibody engineering, protein-protein interactions, and conformational dynamics would be interested. Researchers developing or applying AI-based structure prediction tools for affinity prediction would also find the benchmarking results relevant. The proposed hybrid workflow could be of practical interest to therapeutic antibody developers.
+- **Major strengths** The topic is timely and relevant, addressing a gap between physics-based and AI-driven methods for flexible systems. The focus on a well-characterized antibody lineage (HyHEL10) provides a concrete test case. The proposal to combine AI screening with physics-based evaluation is pragmatic and forward-looking.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The affinity-matured Hy10(4X) antibody achieves high affinity by actively destabilizing its CDRH1 loop, enabling the capture of mobile antigen variants via entropy-buffered conformational selection.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The central mechanistic claim is presented as a definitive finding, but no experimental or computational evidence is shown in the abstract. There is no indication of how destabilization was measured, how entropy buffering was quantified, or how alternative explanations were excluded.  
+  - **Why it matters** This claim is the conceptual foundation of the paper. If it is not rigorously supported, the entire narrative about flexibility-dependent recognition and the subsequent benchmarking loses its rationale.  
+  - **Resolution test** Provide quantitative data from experiments or simulations that directly demonstrate CDRH1 destabilization in Hy10(4X) compared to other lineage members, and show that this destabilization correlates with affinity and conformational selection behavior.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** Both MM/PBSA and AI-driven structure predictors initially fail to accurately rank affinities in more flexible systems, primarily due to sampling limitations and inaccurate structure prediction.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The benchmarking results are stated without any quantitative metrics, such as correlation coefficients, error bars, or statistical significance. The claim that failure is "primarily due to sampling limitations and inaccurate structure prediction" is an interpretation that requires supporting analysis.  
+  - **Why it matters** The benchmarking is a key contribution of the paper. Without quantitative results, the reader cannot assess the magnitude of the failure or the validity of the attributed causes.  
+  - **Resolution test** Present correlation coefficients, rank-order statistics, and error estimates for each method across the full set of antibody-antigen complexes, along with analyses that isolate the contributions of sampling and structure prediction errors.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The inclusion of structural templates in Chai-1 effectively mitigated these limitations, leading to enhanced correlation with experimental affinities.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The improvement from template inclusion is stated qualitatively. There is no indication of the magnitude of improvement, the number of cases tested, or whether the improvement is statistically robust.  
+  - **Why it matters** This is the positive result that supports the proposed hybrid workflow. If the improvement is marginal or inconsistent, the recommendation loses force.  
+  - **Resolution test** Provide quantitative comparison of Chai-1 with and without templates, including correlation coefficients, confidence intervals, and case-by-case analysis.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Generalizability  
+  - **Claim pointer** The polarization effect is enhanced with increasing protein flexibility.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** This claim is presented as a general finding, but it is unclear whether it is based on the Hy10 system alone or on a broader set of complexes. The abstract does not specify how polarization was computed or compared.  
+  - **Why it matters** If this is a general trend, it has implications for force field development and simulation protocols. If it is system-specific, the claim should be framed accordingly.  
+  - **Resolution test** Specify the systems and methods used to assess polarization, and show whether the trend holds across multiple antibody-antigen pairs or other protein complexes.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Terminology  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The term "entropy-buffered conformational selection" is introduced without definition or context.  
+  - **Required correction** Define the term explicitly and explain how it differs from standard conformational selection or induced fit models.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Methodological scope  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract mentions MM/PBSA and Chai-1 but does not specify which other AI-driven predictors were tested or why these were chosen.  
+  - **Required correction** List all methods benchmarked and justify the selection.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Precision  
+  - **Affected element** Claim wording  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The phrase "initially fail" is vague and could imply a temporal sequence that is not explained.  
+  - **Required correction** Clarify whether "initially" refers to a first round of testing, a default parameter set, or a specific implementation.  
+  - **Concern ID** R1-m4  
+  - **Severity** Minor  
+  - **Axis** Readability  
+  - **Affected element** Abstract structure  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract moves from a mechanistic claim to a benchmarking result to a future outlook without clear transitions.  
+  - **Required correction** Restructure the abstract to separate the mechanistic finding, the benchmarking study, and the proposed workflow into distinct logical sections.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The central mechanistic claim and the benchmarking conclusions are not supported by any visible data. Without these, the case for the proposed hybrid workflow is not established.
+- **Assessment against Nature-style criteria**  
+  - Originality: The idea of examining flexibility-dependent recognition in an antibody lineage and benchmarking modern AI tools against physics-based methods is not entirely novel, but the specific focus on entropy-buffered conformational selection may offer a new perspective. The originality cannot be fully assessed from the abstract alone.  
+  - Scientific importance: If the claims are substantiated, the work could inform both fundamental understanding of antibody recognition and practical computational antibody engineering. The importance is potentially high but not yet demonstrated.  
+  - Interdisciplinary readership: The topic bridges structural biology, computational chemistry, and machine learning, which could attract a broad readership. However, the abstract is written in a way that assumes familiarity with all three fields.  
+  - Technical soundness: Not assessable from the abstract. No methods, data, or validation are presented.  
+  - Readability for nonspecialists: The abstract is dense and uses specialized terminology without explanation. It would be challenging for a nonspecialist to follow the logic.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes potentially interesting work, but the absence of any quantitative data or methodological detail prevents evaluation of the claims. The authors should be encouraged to submit the full manuscript for review, at which point the technical soundness and significance can be properly assessed.
+
+## Risk / unsupported claims
+- The mechanistic claim that Hy10(4X) achieves high affinity via active CDRH1 destabilization and entropy-buffered conformational selection is unsupported in the abstract.
+- The claim that polarization is enhanced with increasing protein flexibility is unsupported and lacks methodological context.
+- The benchmarking conclusion that both MM/PBSA and AI predictors fail in flexible systems is unsupported without quantitative results.
+- The claim that template inclusion in Chai-1 mitigates limitations and enhances correlation is unsupported without specific metrics.
+- The proposed hybrid workflow is speculative and not validated by any presented results.

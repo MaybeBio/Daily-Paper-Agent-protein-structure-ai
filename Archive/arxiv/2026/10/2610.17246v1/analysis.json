@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2610.17246v1",
+  "title": "LLM-to-Flow Distillation: Teaching Natural Language Goals to Scientific Generators",
+  "authors": "Riccardo De Santi; Federico Di Gennaro; Angelo Gnazzo; Sophia Tang; Pranam Chatterjee; Fanny Yang; İsmail İlkan Ceylan; Michael M. Bronstein; Andreas Krause",
+  "journal": "",
+  "published_date": "2026-10-12",
+  "window": {
+    "start": "2026-10-11",
+    "end": "2026-10-17"
+  },
+  "score": 8,
+  "one_liner_zh": "该文提出LLM-to-Flow蒸馏方法，利用冻结LLM作为教师，通过课程子目标和DPO偏好蒸馏，将自然语言科学目标对齐到蛋白质/小分子生成器，实现面向结构设计的生成控制，与蛋白质结构生成和序列设计课题高度相关。",
+  "abstract": "Generative discovery in science requires coupling high-level scientific reasoning with the ability to generate samples respecting the structure of a design space. Yet these capabilities remain largely separated: foundation LLMs encode broad chemical and biological knowledge, while domain-specific flow- and diffusion-based generators capture the priors needed to produce valid sequences and geometries. We study how to align such scientific generators to high-level natural-language discovery goals without requiring an explicit proxy reward, which is often unavailable or poorly captured by learned predictors in experimental sciences. We introduce LLM-to-Flow Distillation (LFD), where a frozen LLM acts as an adaptive teacher for a domain-specific generator. Given a goal such as 'generate peptides with promising anticancer activity', the teacher constructs a curriculum of intermediate sub-goals aware of the flow's current capabilities, and progressively directs them toward the original discovery goal. At each round, the LLM judges sampled candidates under the current objective. These judgments induce preferences that are iteratively distilled into the generator through DPO. This procedure provides dense learning signals even when the initial model places negligible probability on designs satisfying the final goal, enabling adaptation toward poorly covered, out-of-distribution regions. Experiments on therapeutic peptides and small-molecule structure design demonstrate that LFD enables a new form of generative control: aligning arbitrary domain-specific scientific generators to scientific discovery tasks expressed via high-level natural-language goals.",
+  "abstract_zh": "科学中的生成式发现需要将高层级的科学推理与生成符合设计空间结构的样本能力相结合。然而，这些能力在很大程度上仍是分离的：基础LLM编码了广泛的化学和生物学知识，而特定领域的基于流和扩散的生成器则捕获了生成有效序列和几何结构所需的先验。我们研究如何将此类科学生成器与高层级自然语言发现目标对齐，而无需显式的代理奖励，这在实验科学中通常不可用或难以通过学习的预测器充分捕获。我们引入了LLM到流蒸馏（LLM-to-Flow Distillation, LFD），其中冻结的LLM充当特定领域生成器的自适应教师。给定一个目标，如“生成具有有前景抗癌活性的肽”，教师构建一个中间子目标课程，该课程感知流的当前能力，并逐步将其引导至原始发现目标。在每一轮中，LLM根据当前目标判断采样的候选者。这些判断产生偏好，通过DPO迭代蒸馏到生成器中。即使初始模型对满足最终目标的设计赋予可忽略的概率，此过程也提供密集的学习信号，从而能够适应覆盖不足的分布外区域。在治疗性肽和小分子结构设计上的实验表明，LFD实现了一种新的生成控制形式：将任意特定领域的科学生成器与通过高层级自然语言目标表达的科学发现任务对齐。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2610.17246v1",
+  "source_url": "https://arxiv.org/abs/2610.17246v1",
+  "paper_page_path": "papers/arxiv/2610.17246v1/index.html"
+}

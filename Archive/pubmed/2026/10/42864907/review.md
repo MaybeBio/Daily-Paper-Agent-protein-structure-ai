@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Conceptual claims and scope of the review as presented in the abstract; no detailed methods, figures, tables, or reference list were provided for assessment.
+- **Shared manuscript claim summary** The authors argue that AI-enabled RNA therapeutic design must move beyond molecular optimization to incorporate system-level evaluation, and they propose a conceptual generation-simulation-feedback-optimization framework that integrates molecular design with cellular-response modelling, with virtual cells positioned as approximate prioritization tools rather than complete replicas.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or reference list were supplied.
+- **Missing materials affecting confidence** Full text, figures, tables, case studies, benchmark data, model descriptions, and any comparative analysis of the cited computational approaches; without these, the depth and novelty of the review cannot be independently verified.
+
+## Reviewer
+- **Overall assessment** The abstract presents a timely and relevant perspective on the interface between AI-driven RNA design and system-level pharmacological evaluation. The framing is coherent and the proposed conceptual framework is sensible. However, the abstract is largely programmatic and does not provide sufficient detail to evaluate the substantive content, critical analysis, or novelty of the review relative to existing literature. The claims are plausible but currently under-supported by the visible evidence.
+- **Who would be interested in the results, and why** Computational biologists, RNA therapeutic developers, pharmacologists, and researchers working on AI for drug discovery would find this perspective useful as a conceptual roadmap. The emphasis on bridging molecular design with cellular-response modelling may also appeal to systems pharmacologists and those developing virtual cell frameworks.
+- **Major strengths** The abstract clearly identifies a genuine gap in the field, namely the disconnect between molecular-level optimization and system-level therapeutic outcomes. The comparative framing across multiple RNA modalities (siRNA, ASO, aptamer, mRNA, circRNA) is appropriate and suggests a broad scope. The positioning of virtual cells as approximate frameworks rather than complete replicas is a measured and realistic stance.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that the review "compares the design constraints" of multiple RNA modalities and "examines the capabilities and current limitations" of computational models.
+  - **Evidence pointer** Abstract only; no figures, tables, or detailed sections provided.
+  - **Concern** The abstract asserts a comparative and critical analysis, but no substantive content is visible to verify the depth, accuracy, or completeness of these comparisons. Without access to the actual review content, the reader cannot assess whether the comparisons are meaningful, up-to-date, or balanced.
+  - **Why it matters** The core value of a review lies in its critical synthesis. If the comparisons are superficial or omit key recent advances, the review would not serve its intended purpose. The current evidence base does not allow verification of this central claim.
+  - **Resolution test** Provide the full text or at least the relevant sections, tables, and figures that substantiate the comparative analysis and model assessment.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Novelty and positioning
+  - **Claim pointer** The abstract implies a novel conceptual framework ("generation-simulation-feedback-optimization") and a specific lens on the molecular-system interface.
+  - **Evidence pointer** Abstract only; no comparison with prior frameworks or reviews is visible.
+  - **Concern** The abstract does not articulate how this perspective differs from existing reviews on AI for RNA therapeutics or on virtual cells. Without a clear statement of prior work and the specific gap this review fills, the novelty claim is unverifiable.
+  - **Why it matters** For a perspective piece, positioning relative to existing literature is essential. If similar frameworks have been proposed, the contribution would be incremental rather than original.
+  - **Resolution test** Include a section in the full text that explicitly contrasts this framework with prior reviews and frameworks, and state the specific novel contribution.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical depth
+  - **Claim pointer** The abstract mentions "data resources and perturbation representations required to connect molecular candidates with broader cellular-response models."
+  - **Evidence pointer** Abstract only; no specific data resources or representation schemes are named.
+  - **Concern** The abstract gestures at a critical technical topic but provides no concrete examples, such as specific databases, perturbation atlases, or representation learning approaches. This leaves the reader without a sense of the practical recommendations the review might offer.
+  - **Why it matters** For a review aimed at guiding practitioners, concrete recommendations on data and representations are essential. The current level of abstraction limits actionable value.
+  - **Resolution test** In the full text, provide specific examples of data resources, representation schemes, and their limitations, with references.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract, sentence on virtual cells
+  - **Issue** The phrase "approximate computational frameworks" is vague and could be misinterpreted.
+  - **Required correction** Define what "approximate" means in this context, for example in terms of fidelity, scope, or validation status.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scope clarity
+  - **Affected element** Modality coverage
+  - **Evidence pointer** Abstract, list of RNA modalities
+  - **Issue** The abstract lists five modalities but does not indicate whether the coverage is balanced or whether some are emphasized.
+  - **Required correction** State the relative emphasis or criteria for modality selection in the full text.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Abstract structure
+  - **Evidence pointer** Abstract, final sentence
+  - **Issue** The final sentence is somewhat generic and does not convey a specific take-home message.
+  - **Required correction** Consider ending with a more concrete statement of the key recommendation or open challenge.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the central claims of comparative analysis and novel framing cannot be verified from the abstract alone. The full text must be provided to establish the case.
+- **Assessment against Nature-style criteria** 
+  - **Originality** Not assessable from the abstract alone. The framing is plausible but its distinctiveness relative to prior reviews is unclear.
+  - **Scientific importance** The topic is important and timely, and the abstract identifies a real gap. However, importance is not yet demonstrated through substantive content.
+  - **Interdisciplinary readership** The abstract is written in a way that should appeal to computational and pharmacological audiences, but the lack of concrete examples may limit accessibility for non-specialists.
+  - **Technical soundness** Not assessable. No technical details, benchmarks, or case studies are visible.
+  - **Readability for nonspecialists** The abstract is generally clear, but terms such as "perturbation representations" and "virtual cells" would benefit from brief clarification.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract is promising and the conceptual direction is sound, but the full text is required to assess the depth, novelty, and technical quality of the review. If the full text substantiates the comparative analysis and clearly positions the framework relative to existing work, the review could be supportive.
+
+## Risk / unsupported claims
+- The claim that the review "compares the design constraints" of multiple RNA modalities is unsupported without the full text.
+- The claim that the review "examines the capabilities and current limitations" of computational models is unsupported without the full text.
+- The novelty of the "generation-simulation-feedback-optimization" framework is unverifiable without a comparison to prior frameworks.
+- The practical utility of the discussed "data resources and perturbation representations" is not assessable without specific examples.
+- The positioning of virtual cells as "approximate computational frameworks" is stated but not elaborated or justified in the abstract.

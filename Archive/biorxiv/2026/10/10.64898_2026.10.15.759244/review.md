@@ -1,0 +1,88 @@
+## Review setup
+
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose that two Pleckstrin homology (PH) domains, one known (PH1) and one newly identified (PH2), scaffold SNAP-47-containing SNARE complexes. They report that AlphaFold3 predicts both domains, that BioEmu and molecular dynamics simulations show a stable and energetically favorable interface between PH1 and PH2, that PH1 interacts with the SNARE coiled coil, that in silico acetylation at a lysine known to impair SNAP-47 function disrupts this interface, and that PH1, PH2, and synaptotagmin-1 can simultaneously engage the plasma membrane, consistent with a pro-fusion conformation.
+- **Visible evidence base** Abstract text only; no experimental details, numerical data, statistical analyses, or methodological descriptions are available
+- **Missing materials affecting confidence** Full manuscript, all figures, tables, supplementary information, experimental protocols, simulation parameters, and statistical details
+
+## Reviewer
+
+- **Overall assessment** The abstract presents a potentially interesting mechanistic hypothesis regarding the role of PH domains in SNAP-47-containing SNARE complexes. However, the evidence base available for review is limited to the abstract, which precludes any substantive evaluation of the experimental rigor, data quality, or validity of the conclusions. The claims are ambitious and integrative, combining structural prediction, molecular dynamics, and biochemical validation, but the abstract does not provide sufficient detail to assess whether the evidence supports the conclusions. The manuscript may have merit, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in the fields of synaptic transmission, membrane fusion, SNARE biology, and structural biology would be interested. The potential link between PH domain scaffolding and SNAP-47 function in AMPA receptor insertion during long-term potentiation is relevant to understanding synaptic plasticity mechanisms. Those studying calcium-triggered fusion and the role of synaptotagmin may also find the proposed multi-domain membrane engagement model of interest.
+- **Major strengths** The abstract addresses a clear gap in understanding SNAP-47-specific regulatory regions. The integration of AI-based structure prediction with molecular dynamics and biochemical validation is a modern and potentially powerful approach. The identification of a previously unrecognized PH domain is a concrete and testable claim. The connection to a physiologically relevant process, long-term potentiation and AMPA receptor trafficking, gives the work potential significance beyond a purely structural finding.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The authors claim that AlphaFold3 predictions revealed one known PH domain (PH1) and one previously unidentified PH domain (PH2), which they validated experimentally.  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract states that PH2 was "previously unidentified" and "validated experimentally," but no experimental details are provided. It is unclear what validation means in this context, whether it involves mutagenesis, binding assays, structural determination, or other approaches. Without this information, the claim that PH2 is a bona fide PH domain cannot be assessed.  
+  - **Why it matters** The existence of PH2 is a foundational claim of the paper. If the experimental validation is weak or the domain assignment is based solely on prediction, the entire scaffolding model is compromised.  
+  - **Resolution test** Provide the experimental data and methods used to validate PH2, including sequence alignments, structural comparisons, and functional assays demonstrating PH domain activity.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The authors claim that BioEmu and molecular dynamics simulations indicated that PH1 and PH2 form a stable and energetically favorable interface, and that PH1 stably interacted with the SNARE coiled coil.  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** No quantitative data from simulations are presented, such as free energy values, root-mean-square deviation trajectories, or interaction energies. The terms "stable" and "energetically favorable" are qualitative and cannot be evaluated without supporting metrics.  
+  - **Why it matters** The stability of the PH1-PH2 interface and the PH1-SNARE interaction is central to the proposed scaffolding function. Without quantitative simulation data, the claim is unsupported.  
+  - **Resolution test** Provide simulation parameters, convergence criteria, free energy calculations, and statistical analyses demonstrating the stability and favorability of the interactions.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The authors claim that in silico acetylation at a lysine whose acetylation is known to impair SNAP-47 function disrupted the PH1-SNARE interface.  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract does not specify which lysine residue was acetylated, how the acetylation was modeled, or what the magnitude of the disruption was. The link between this in silico result and the known functional impairment is asserted but not demonstrated.  
+  - **Why it matters** This result is presented as a mechanistic link between post-translational modification and SNAP-47 function. Without details on the residue identity and the simulation outcome, the claim is not testable.  
+  - **Resolution test** Specify the lysine residue, the acetylation modeling approach, and provide quantitative comparison of the PH1-SNARE interface with and without acetylation.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The authors claim that PH1, PH2, and synaptotagmin-1 can simultaneously engage with the plasma membrane, consistent with a pro-fusion conformation.  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract states that this observation was made, but no experimental or computational method is described. It is unclear whether this is a simulation result, a biochemical assay, or a structural model. The phrase "consistent with a pro-fusion conformation" is speculative and not supported by direct evidence in the abstract.  
+  - **Why it matters** The simultaneous membrane engagement of three domains is a key mechanistic claim that links the structural findings to fusion function. Without a clear description of the evidence, this claim cannot be evaluated.  
+  - **Resolution test** Describe the method used to assess membrane engagement, provide supporting data, and clarify whether the pro-fusion interpretation is directly tested or inferred.  
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Abstract background  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract states that SNAP-47 exhibits slower fusion kinetics compared to other SNAP proteins, but no context is given for this comparison or its relevance to the study.  
+  - **Required correction** Briefly explain why slower kinetics is relevant to the proposed PH domain function, or remove the statement if it is not central.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Terminology  
+  - **Affected element** Abstract methods description  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The term "scaffold" in the title and abstract is used to describe the proposed function of the PH domains, but the abstract does not define what scaffolding means in this context, whether it is structural stabilization, recruitment, or spatial organization.  
+  - **Required correction** Define the intended meaning of scaffolding as used in this study.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Abstract conclusion  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract concludes with "we provide new mechanistic insight into how PH domains regulate SNAP-47-mediated membrane fusion," but the abstract does not describe a regulatory mechanism, only a structural arrangement.  
+  - **Required correction** Either describe the regulatory mechanism explicitly or temper the conclusion to match the evidence presented.  
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The abstract does not provide sufficient experimental or computational detail to support the central claims. All four major concerns must be resolved with full data and methods before the case can be established.
+- **Assessment against Nature-style criteria**  
+  - Originality: The identification of a second PH domain in SNAP-47 and its proposed scaffolding role appears novel, but the abstract does not provide enough context to establish how this advances beyond existing knowledge of SNARE complex regulation.  
+  - Scientific importance: The potential link to long-term potentiation and AMPA receptor trafficking gives the work potential importance, but the significance is not fully articulated in the abstract.  
+  - Interdisciplinary readership: The work spans structural biology, computational biology, and neuroscience, which could appeal to a broad audience, but the abstract is too technical in places and lacks sufficient context for nonspecialists.  
+  - Technical soundness: Cannot be assessed from the abstract alone. No methods, data, or statistical analyses are available for evaluation.  
+  - Readability for nonspecialists: The abstract assumes familiarity with SNARE complexes, PH domains, and simulation methods. It is not accessible to a general scientific audience.  
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting hypothesis, but the lack of experimental detail, quantitative data, and methodological description prevents any meaningful evaluation of the claims. A full manuscript with complete data would be required to assess whether the case can be made.
+
+## Risk / unsupported claims
+
+- The claim that PH2 is a previously unidentified PH domain validated experimentally is unsupported without experimental details.
+- The claim that PH1 and PH2 form a stable and energetically favorable interface is unsupported without quantitative simulation data.
+- The claim that in silico acetylation at a specific lysine disrupts the PH1-SNARE interface is unsupported without residue identity and simulation outcomes.
+- The claim that PH1, PH2, and synaptotagmin-1 simultaneously engage the plasma membrane is unsupported without a described method or data.
+- The conclusion that the findings provide mechanistic insight into PH domain regulation of SNAP-47-mediated fusion is not supported by the abstract content.

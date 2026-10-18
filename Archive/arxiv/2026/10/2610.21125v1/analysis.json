@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2610.21125v1",
+  "title": "Noise-Space Reward Alignment for Few-Step Generative Models",
+  "authors": "Woocheol Shin; Taeyoung Yun; Jiwon Sung; Hyeongyu Kang; Jeongmin Park; Jaewoo Lee; Kyuil Sim; Dohyun Kim; Yutong He; Jinkyoo Park",
+  "journal": "",
+  "published_date": "2026-10-15",
+  "window": {
+    "start": "2026-10-11",
+    "end": "2026-10-17"
+  },
+  "score": 7,
+  "one_liner_zh": "该文提出噪声策略优化（NPO）方法，通过学习生成器噪声空间上的奖励倾斜策略来对齐少步生成模型，并在蛋白质结构生成任务上验证了其有效性，与蛋白质结构生成问题直接相关。",
+  "abstract": "Few-step generative models produce high-quality samples in one or a few evaluations. However, steering them toward desired properties remains difficult, especially when only black-box reward evaluations are available. While one could apply approaches developed for iterative diffusion and flow-based models, such as direct RL fine-tuning or test-time scaling, we find that neither transfers well to the few-step regime: direct fine-tuning suffers from severe reward over-optimization, and test-time scaling sacrifices the efficiency advantage of few-step generation. We propose Noise Policy Optimization (NPO), which explicitly targets the alignment problem for few-step generative models. The key idea is to learn an amortized flow policy over the initial noise space of the generator. The trained policy transports Gaussian noise to a reward-tilted noise distribution, whose pushforward distribution through the frozen generator is exactly the reward-tilted output distribution. By keeping the generator frozen, we can effectively utilize the knowledge encoded in the pretrained model, yielding a better reward-quality trade-off than direct fine-tuning. The amortized policy moves the search cost into training, so inference adds only a lightweight noise sampling step on top of the pretrained model. To improve sample efficiency during training, we use ELBO-based likelihood estimation that requires only sampled endpoints rather than simulated trajectories. Across image, language, and protein structure generation, NPO consistently achieves a better reward-quality trade-off than direct fine-tuning, and matches test-time search methods with 16 to 549 times lower inference cost.",
+  "abstract_zh": "少步生成模型在一次或少数几次评估中即可产生高质量样本。然而，引导它们朝向期望属性仍然困难，尤其是在仅有黑盒奖励评估可用时。尽管可以应用为迭代扩散和基于流的模型开发的方法，如直接强化学习微调或测试时扩展，我们发现这两种方法在少步场景中均无法良好迁移：直接微调遭受严重的奖励过度优化，而测试时扩展则牺牲了少步生成的效率优势。我们提出噪声策略优化（Noise Policy Optimization, NPO），明确针对少步生成模型的对齐问题。关键思想是在生成器的初始噪声空间上学习一个摊销流策略。训练后的策略将高斯噪声传输到奖励倾斜的噪声分布，其通过冻结生成器的推前分布恰好是奖励倾斜的输出分布。通过保持生成器冻结，我们能有效利用预训练模型中编码的知识，获得比直接微调更好的奖励-质量权衡。摊销策略将搜索成本转移到训练阶段，因此推理仅在预训练模型之上增加一个轻量级噪声采样步骤。为提高训练期间的样本效率，我们使用基于ELBO的似然估计，仅需采样端点而非模拟轨迹。在图像、语言和蛋白质结构生成中，NPO始终实现比直接微调更好的奖励-质量权衡，并以16至549倍更低的推理成本匹配测试时搜索方法。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2610.21125v1",
+  "source_url": "https://arxiv.org/abs/2610.21125v1",
+  "paper_page_path": "papers/arxiv/2610.21125v1/index.html"
+}

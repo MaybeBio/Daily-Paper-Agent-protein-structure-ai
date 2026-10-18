@@ -1,0 +1,1 @@
+Correction for 'Simulation of protein structure using a coarse-grained potential incorporating the backbone dihedral interactions' by Kanika Kole et al., Phys. Chem. Chem. Phys., 2026, 28, 23541-23554, https://doi.org/10.1039/d6cp02188c.

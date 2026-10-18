@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReState: Noise-Level-Aware State Correction for Training-Free Object Removal in Few-Step Diffusion Models · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-low">0</span>
+    <div>
+      <h1>ReState: Noise-Level-Aware State Correction for Training-Free Object Removal in Few-Step Diffusion Models</h1>
+      <div class="meta">Donghwan Lee; Sanghyun Jo; Sihyun Kim; Ziseok Lee; Kyungsu Kim</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-15
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.21287v1">原文</a>
+      </div>
+      <p class="one-liner">该文研究扩散模型中的无训练对象移除，属于图像编辑任务，不涉及蛋白质结构计算，与本课题无关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Training-free object removal commonly redirects self-attention away from the target region, but on few-step distilled diffusion models this often leaves object-shaped residuals. We identify a temporal mismatch: a structured prediction forms inside the mask at the first forward, and the short trajectory offers few later chances to revise it, while attention rerouting acts mainly in later steps. Across four distilled backbones, magnitude-matched single-forward interventions show that background-directed state correction affects the final result more than attention rerouting. We therefore propose ReState, which corrects the masked clean prediction toward background evidence retrieved from the input using a noise-level-aware weight that vanishes at the final forward. ReState retains object-excluding attention as a complementary constraint and adds no denoiser evaluations. Across two paired benchmarks and two few-step backbones, ReState achieves the best masked PSNR, SSIM, and LPIPS among training-free methods, improving PSNR by 3.17 dB on average over the strongest baseline. On OBER-Test, it also outperforms the 50-step attention-forcing reference on all three metrics at 6.7x lower latency. The same configuration transfers to two additional distilled backbones without retuning. Project page: https://tdrlee.github.io/ReState</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">免训练物体移除通常将自注意力从目标区域重定向，但在少步蒸馏扩散模型上，这往往留下物体形状的残差。我们识别出一种时间上的不匹配：在第一次前向传播时，掩码内部形成了一个结构化预测，而短轨迹提供了很少的后续修正机会，同时注意力重定向主要作用于后续步骤。在四个蒸馏骨干网络上，幅度匹配的单次前向干预表明，背景导向的状态修正对最终结果的影响大于注意力重定向。因此，我们提出ReState，它利用从输入中检索到的背景证据，通过一个噪声级别感知的权重来修正掩码的干净预测，该权重在最终前向传播时消失。ReState保留排除物体的注意力作为补充约束，并且不增加去噪器评估次数。在两个配对基准和两个少步骨干网络上，ReState在免训练方法中实现了最佳的掩码PSNR、SSIM和LPIPS，相比最强基线平均提高了3.17 dB的PSNR。在OBER-Test上，它还在所有三个指标上以6.7倍更低的延迟优于50步注意力强制参考。相同的配置无需重新调整即可迁移到另外两个蒸馏骨干网络。项目页面：https://tdrlee.github.io/ReState</div>
+  </section>
+  
+  
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,69 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to methods, figures, tables, or supplementary data
+- **Shared manuscript claim summary** The authors report that sequential enzymatic hydrolysis of sea cucumber protein produces short peptides with altered structural and flavor properties, and that a specific pentapeptide (FDRGF, termed TH) exhibits both umami taste and in vitro anti-inflammatory activity, as supported by bioinformatic screening, molecular simulations, and cellular assays.
+- **Visible evidence base** Abstract text only; no experimental details, numerical results, statistical analyses, or methodological descriptions are provided
+- **Missing materials affecting confidence** Full methods, all figures and tables, peptide identification data, docking scores, simulation parameters, cellular assay protocols, statistical details, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents a broad, multi-technique workflow aimed at identifying a dual-function umami peptide from sea cucumber protein hydrolysates. The scientific premise is reasonable and the integration of flavoromics, peptidomics, and bioinformatics is topical. However, the abstract is largely descriptive and lacks quantitative results, methodological transparency, and clear evidence linking the identified peptide to both taste and anti-inflammatory function. The central claim of a "dual-function" peptide is plausible but not established from the provided material. The work may be of interest to food science and functional food researchers, but the current evidence base is insufficient to assess technical soundness or the strength of the conclusions.
+- **Who would be interested in the results, and why** Researchers in food chemistry, flavor science, bioactive peptide discovery, and functional food development would be interested. The combination of taste evaluation with immunomodulatory activity addresses a growing interest in multifunctional food-derived ingredients. Those working on sea cucumber valorization or peptide-based nutraceuticals may also find the work relevant.
+- **Major strengths** The study integrates multiple complementary approaches, including hydrolysis, flavoromics, peptidomics, bioinformatics, molecular simulation, and cellular validation. The identification of a specific pentapeptide with both umami and anti-inflammatory potential is a clear and focused outcome. The work addresses a practical goal, namely value-added utilization of sea cucumber resources, which has translational relevance.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that the pentapeptide FDRGF (TH) was identified with "outstanding umami taste and low bitterness" and that cellular assays "verified that TH improved macrophage metabolic status and regulated the expression of inflammatory mediators under LPS-induced inflammatory conditions."
+  - **Evidence pointer** Abstract only; no figures, tables, or numerical data provided
+  - **Concern** The abstract provides no quantitative data to support the umami taste claim, the bitterness assessment, or the anti-inflammatory effects. No taste threshold values, dose-response data, cytokine quantification, or statistical comparisons are reported. The phrase "verified" is too strong given the absence of any visible experimental results.
+  - **Why it matters** The central conclusion of the paper rests on the dual functionality of TH. Without quantitative evidence, the reader cannot assess the magnitude of the effects, the reliability of the measurements, or whether the claims are supported by adequate replicates and statistical analysis.
+  - **Resolution test** Provide taste evaluation data with thresholds and bitterness scores, and cellular assay results with quantitative readouts (e.g., cytokine levels, metabolic markers) and appropriate statistical analysis. The claims should be supported by specific figures or tables.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** The abstract states that "molecular docking and dynamics simulations confirmed stable binding of TH to immunomodulatory targets."
+  - **Evidence pointer** Abstract only; no simulation details provided
+  - **Concern** The term "confirmed" implies a level of certainty that requires detailed methodological support. No information is given on the docking software, scoring functions, simulation length, force field, or the specific immunomodulatory targets used. Without these details, the stability of binding cannot be evaluated.
+  - **Why it matters** Molecular simulation results are highly dependent on the chosen parameters and targets. The claim of stable binding is a key part of the mechanistic narrative and must be reproducible and interpretable by readers with computational expertise.
+  - **Resolution test** Specify the simulation protocols, target proteins, and provide binding energies, RMSD or other stability metrics, and a clear description of how "stable" was defined.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scope and focus
+  - **Claim pointer** The abstract describes a broad workflow including "multi-scale characterization, flavoromics, peptidomics, bioinformatic screening, molecular simulations, and cellular assays" and reports structural changes, flavor remodeling, and bioactivity.
+  - **Evidence pointer** Abstract only
+  - **Concern** The abstract attempts to cover a very large number of analyses in a single study. The structural characterization, volatile profiling, peptide identification, and bioactivity testing are each substantial areas of work. The abstract does not clarify how these components are integrated or which findings are central versus peripheral.
+  - **Why it matters** A lack of focus can dilute the impact of the main finding. The reader is left uncertain about the primary contribution of the paper and whether the breadth of analyses is matched by depth of evidence.
+  - **Resolution test** Clarify the primary research question and how each method contributes to answering it. Consider whether the structural and volatile analyses are essential to the main claim or could be presented as supporting context.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The term "desirable taste characteristics" is vague and not defined. It is unclear what specific taste attributes were targeted or how they were measured.
+  - **Required correction** Specify the taste attributes of interest (e.g., umami, bitterness, saltiness) and the methods used to evaluate them.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reporting quality
+  - **Affected element** Peptide nomenclature
+  - **Evidence pointer** Abstract, results section
+  - **Issue** The peptide is referred to as "FDRGF (TH)" but the basis for the abbreviation "TH" is not explained. It is unclear whether this is a fraction name, a code, or a functional label.
+  - **Required Correction** Define the abbreviation "TH" at first use or remove it if it is not essential.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Contextualization
+  - **Affected element** Comparison to existing literature
+  - **Evidence pointer** Abstract, final sentence
+  - **Issue** The abstract claims the study "elucidates the structure-flavor-activity relationships" but does not indicate how these relationships compare to previously reported findings for other protein hydrolysates or umami peptides.
+  - **Required Correction** Add a brief statement on how the current findings extend or differ from prior work on umami peptides or sea cucumber protein hydrolysates.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The absence of quantitative data and methodological detail prevents assessment of the central claims. The abstract alone does not establish the dual-function nature of TH.
+- **Assessment against Nature-style criteria**  
+  - Originality: The combination of umami taste and anti-inflammatory activity in a single peptide from sea cucumber is a novel angle, but the abstract does not demonstrate how this differs conceptually from prior bioactive peptide studies.  
+  - Scientific importance: The potential for multifunctional food-derived peptides is of interest, but the significance is not yet demonstrated without quantitative evidence of effect size and specificity.  
+  - Interdisciplinary readership: The work spans food chemistry, bioinformatics, and immunology, which could attract a broad audience, but the abstract is too descriptive to engage specialists in any one field.  
+  - Technical soundness: Cannot be assessed from the abstract. The lack of methodological detail and data prevents evaluation of experimental rigor.  
+  - Readability for nonspecialists: The abstract is generally readable, but terms such as "flavoromics" and "peptidomics" are used without definition, which may hinder accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a promising workflow and a plausible finding, but the absence of quantitative results and methodological transparency means the central claims cannot be evaluated. A revised version with full data and methods would be required to assess whether the case is convincing.

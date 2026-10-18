@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A high-resolution protein-RNA binding atlas for structure-aware interaction prediction and post-transcriptional regulatory modeling · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>A high-resolution protein-RNA binding atlas for structure-aware interaction prediction and post-transcriptional regulatory modeling</h1>
+      <div class="meta">Mehran Karimzadeh; Lisa Fish; Heather Karner; Johannes Linder; Ali Emadi; Aldo Hernandez-Corchado; Fatima Zohra Smaili; Khashayar Ghavami; Edna S. Stewart; David Kelley; Bo Wang; Hamed Shateri Najafabadi; Manuel D. Leonetti; Hani Goodarzi</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-13
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.12.758580">原文</a>
+      </div>
+      <p class="one-liner">该文构建RNA结合蛋白高分辨率结合图谱并开发结构感知的Pythia模型预测RBP-RNA相互作用，虽以RNA为核心对象，但其结构感知建模思路可迁移至蛋白质结构计算研究。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">RNA-binding proteins (RBPs) control post-transcriptional gene expression by regulating RNA processing, localization, stability, and translation. However, our understanding of RNA regulation remains limited by the resolution, scale, and uniformity of available RBP binding maps. Here we introduce eclair CLIP (ecCLIP), a high-throughput CLIP-seq platform that combines endogenous protein tagging for uniform affinity capture with ligation-free library preparation to generate high-resolution RNA-protein binding profiles. We applied ecCLIP to 67 endogenously tagged RBPs in HEK293T cells, generating a high-quality transcriptome-scale atlas that recovered known binding preferences and captured post-transcriptional regulons linked to RNA half-life. To test the utility of the atlas, we incorporated ecCLIP into Borzuki, a Borzoi-derived sequence-to-function model trained on complementary RNA degradation, expression, CLIP, and Perturb-seq data. Inclusion of ecCLIP data improved RNA half-life prediction and assessment of 3 ′ UTR variant effects on RNA stability, demonstrating that our atlas helps capture RNA dynamics. To directly model the cis-regulatory grammar underlying these RBP-RNA interactions, we developed Pythia, a structure-aware neural network architecture that incorporates context-free grammar-inspired fixed convolutions to explicitly encode RNA base-pairing features. Pythia predicted RBP binding from sequence and structural context and decomposed predictions into sequence-and structure-dependent components. We tested this decomposition for five RBPs using massively parallel reporter CLIP (MPRC) binding assays in cells, using synthetic RNA libraries containing mutations designed to preserve or disrupt predicted RNA structures across nominated binding sites. We used the same MPRC strategy to confirm allele-specific binding effects for variants prioritized by Pythia. Together, ecCLIP and Pythia provide a resource for structure-aware decoding of RNA-protein interaction grammar and interpretation of post-transcriptional regulatory variation.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">RNA结合蛋白（RBPs）通过调控RNA加工、定位、稳定性和翻译来控制转录后基因表达。然而，我们对RNA调控的理解仍受限于现有RBP结合图谱的分辨率、规模及一致性。在此，我们引入eclair CLIP（ecCLIP），一种高通量CLIP-seq平台，该平台结合内源蛋白标记以实现均匀亲和捕获，并采用无连接酶文库制备，从而生成高分辨率的RNA-蛋白质结合谱。我们将ecCLIP应用于HEK293T细胞中的67个内源标记RBPs，生成了一个高质量的转录组规模图谱，该图谱恢复了已知的结合偏好，并捕获了与RNA半衰期相关的转录后调控子。为测试该图谱的实用性，我们将ecCLIP整合入Borzuki，一个源自Borzoi的序列到功能模型，该模型基于互补的RNA降解、表达、CLIP和Perturb-seq数据进行训练。ecCLIP数据的加入改善了RNA半衰期预测及3‘UTR变异对RNA稳定性影响的评估，表明我们的图谱有助于捕获RNA动态。为直接模拟这些RBP-RNA相互作用背后的顺式调控语法，我们开发了Pythia，一种结构感知的神经网络架构，该架构结合了受上下文无关语法启发的固定卷积，以显式编码RNA碱基配对特征。Pythia从序列和结构背景中预测RBP结合，并将预测分解为序列依赖和结构依赖的组分。我们使用大规模并行报告基因CLIP（MPRC）结合实验在细胞中测试了五种RBPs的这种分解，使用包含设计用于在指定结合位点保留或破坏预测RNA结构的突变的合成RNA文库。我们采用相同的MPRC策略来确认Pythia优先排序的变异体的等位基因特异性结合效应。总之，ecCLIP和Pythia为结构感知解码RNA-蛋白质相互作用语法及解释转录后调控变异提供了资源。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：A high-resolution protein-RNA binding atlas for structure-aware interaction prediction and post-transcriptional regulatory modeling</li>
+<li><strong>作者</strong>：Mehran Karimzadeh; Lisa Fish; Heather Karner; Johannes Linder; Ali Emadi; Aldo Hernandez-Corchado; Fatima Zohra Smaili; Khashayar Ghavami; Edna S. Stewart; David Kelley; Bo Wang; Hamed Shateri Najafabadi; Manuel D. Leonetti; Hani Goodarzi</li>
+<li><strong>单位</strong>：未提供（作者所属机构未在摘要中列出）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学 + 资源型论文（实验方法开发 + 数据集构建 + 深度学习建模）</li>
+<li><strong>领域</strong>：RNA 结合蛋白（RBP）互作图谱；RNA 结构感知的深度学习预测；转录后调控建模</li>
+<li><strong>关键词</strong>：eclair CLIP (ecCLIP)、RNA-binding protein (RBP)、RNA structure、deep learning、post-transcriptional regulation、variant effect prediction</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.10.12.758580</li>
+<li><strong>代码</strong>：Pythia: https://github.com/goodarzilab/pythia ；Borzuki: https://github.com/calico/borzoi-paper/tree/main/extensions/borzuki</li>
+<li><strong>数据</strong>：GEO 登录号 GSE349934</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质-RNA 相互作用的结构感知预测」方向，核心贡献为：(1) 开发了高通量、高分辨率的 RBP-RNA 结合图谱实验平台 ecCLIP；(2) 构建了结构感知的深度学习模型 Pythia，显式编码 RNA 碱基配对特征；(3) 将 RBP 结合预测与 RNA 稳定性（半衰期）及 3' UTR 变异效应联系起来。与课题的关联在于：其「结构感知的深度学习架构」和「序列-结构解耦的归因分析」思路可迁移至蛋白质结构预测、构象采样及蛋白质-RNA 复合物相互作用建模。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文开发了 eclair CLIP (ecCLIP) 高通量实验平台，对 67 个内源标记的 RNA 结合蛋白（RBP）在 HEK293T 细胞中生成转录组规模的结合图谱，并训练了结构感知的深度学习模型 Pythia（含固定碱基配对卷积层），在 RBP 结合位点预测、RNA 半衰期预测及 3' UTR 变异效应评估上优于或匹敌现有方法，且通过大规模平行报告基因 CLIP (MPRC) 实验验证了结构归因的生物学可解释性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何生成足够高质量、高分辨率、跨多个 RBP 的转录组规模结合图谱，并利用这些图谱训练能够同时捕捉 RNA 序列和结构决定因素的预测模型，从而解释和预测 RBP 结合及其对 RNA 稳定性的调控？</li>
+<li><strong>为什么重要</strong>：RBP 调控 RNA 加工、定位、稳定性和翻译，其结合位点的解析是理解转录后调控机制和解读非编码区遗传变异功能的关键。现有图谱在分辨率、覆盖 RBP 数量和实验一致性上存在不足。</li>
+<li><strong>现有方法不足</strong>：(1) 传统 CLIP-seq 依赖特异性抗体，抗体质量差异大，难以规模化；(2) 现有图谱多来自 K562/HepG2 等细胞系，缺乏 HEK293T 背景；(3) 多数深度学习模型仅使用序列特征，未显式编码 RNA 二级结构信息；(4) 缺乏对序列 vs 结构贡献的系统性归因和实验验证。</li>
+<li><strong>精确研究问题</strong>：Can a structure-aware deep learning model trained on a uniformly generated, high-resolution RBP binding atlas improve prediction of RNA stability and variant effects on RBP binding, compared to sequence-only models?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架，未经外部核验。
+- <strong>阶段一：CLIP-seq 技术发展</strong>。从早期 CLIP (Ule et al., 2003)、HITS-CLIP、PAR-CLIP 到 eCLIP (Van Nostrand et al., 2016)，逐步提高灵敏度和分辨率。局限：依赖抗体、步骤繁琐、通量有限。
+- <strong>阶段二：规模化 RBP 图谱</strong>。ENCODE eCLIP 在 K562/HepG2 中覆盖约 150 个 RBP，但抗体依赖和细胞类型限制明显。本文的 ecCLIP 通过内源 split-mNeonGreen 标签实现统一捕获，避免抗体差异，并扩展至 HEK293T。
+- <strong>阶段三：序列到功能的深度学习模型</strong>。Borzoi (Linder et al., 2025) 和 Saluki (Agarwal &amp; Kelley, 2022) 建立了从 DNA 序列预测 RNA 表达和稳定性的框架。局限：未显式建模 RNA 二级结构，且训练数据缺乏高分辨率 RBP 结合信息。
+- <strong>阶段四：结构感知的 RNA 建模</strong>。传统 RNA 结构预测（如 RNAfold）和结构 motif 发现（如 RNApromo）提供了结构表示思路，但未与深度学习端到端结合。本文的 Pythia 通过固定碱基配对卷积层将 CFG 启发的结构先验嵌入神经网络，是该方向的新尝试。
+- <strong>本文位置</strong>：处于阶段三与阶段四的交汇点，用 ecCLIP 图谱增强 Borzoi 类模型的训练数据，同时用 Pythia 引入显式结构归纳偏置。</p>
+</blockquote>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抗体依赖导致 CLIP 规模化困难</td>
+<td>不同 RBP 的抗体质量差异大，部分 RBP 无可用抗体，难以统一比较</td>
+<td>传统 CLIP 依赖特异性抗体进行免疫沉淀，抗体批次差异和可用性限制了通量和一致性</td>
+<td>摘要及 Introduction 中关于现有 CLIP 资源局限的论述</td>
+</tr>
+<tr>
+<td>图谱分辨率不足</td>
+<td>峰值宽泛，难以精确定位 RBP 结合 motif</td>
+<td>连接酶依赖的文库制备和放射性标记可视化步骤导致信噪比低、分辨率受限</td>
+<td>Introduction 中关于 ligation-dependent library preparation 和 radioactive visualization 的讨论</td>
+</tr>
+<tr>
+<td>现有模型忽略 RNA 结构</td>
+<td>序列模型无法解释结构依赖的 RBP 结合（如 HNRNPC 对单链 poly-U 的偏好）</td>
+<td>多数深度学习模型仅编码序列，未显式编码碱基配对或结构可达性</td>
+<td>Pythia 设计动机（Introduction 及 Results 3.1）</td>
+</tr>
+<tr>
+<td>缺乏序列 vs 结构的归因验证</td>
+<td>模型预测难以区分序列 motif 与结构背景的贡献</td>
+<td>缺乏可独立操纵序列和结构的实验平台</td>
+<td>MPRC 实验设计（Results 3.4）</td>
+</tr>
+<tr>
+<td>变异效应预测缺乏实验校准</td>
+<td>非编码变异对 RBP 结合的影响难以从序列直接推断</td>
+<td>缺乏等位基因特异性的结合测量数据</td>
+<td>MPRC 等位基因实验（Results 3.5）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：
+   - 实验端：开发 ecCLIP，利用内源 split-mNeonGreen 标签进行统一亲和捕获，结合红外可视化（替代放射性）和连接酶-free 文库制备，在 HEK293T 中对 67 个 RBP 生成高分辨率结合图谱。
+   - 建模端：训练 Borzuki（Borzoi 扩展）整合 ecCLIP、RNA 降解、表达和 Perturb-seq 数据；训练 Pythia 双通道网络（序列通道 + 结构通道），结构通道使用固定碱基配对卷积层。
+   - 验证端：开发 MPRC 大规模平行报告基因 CLIP，在细胞内直接测量序列和结构变体对 RBP 结合的影响。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：
+   - 内源标签 + 统一捕获协议可以消除抗体差异这一最大技术变量，使图谱在 RBP 间可比。
+   - RNA 结构对 RBP 结合的影响可以通过「固定碱基配对卷积核」以归纳偏置形式注入网络，无需外部结构预测工具，且可端到端训练。
+   - 将模型预测分解为序列和结构两个通道的归因，可以在实验上（MPRC）验证哪些位点真正依赖结构。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：
+   - 在生物序列建模中，将领域知识（如碱基配对规则）编码为固定初始化层而非可学习参数，可以在小数据 regime 下提供强先验，同时保留下游可学习性。
+   - 实验平台的设计应优先考虑「跨样本一致性」而非单样本灵敏度，因为图谱类资源的最终价值在于可比较性。
+   - 将模型归因与合成报告基因实验闭环，是验证可解释性声明的有效范式。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：DNA 序列（393,216 bp 窗口，Borzuki）；RNA 序列（256 nt，Pythia RBP 分类）；ecCLIP 峰序列及 dinucleotide-shuffled 阴性对照。</li>
+<li><strong>输出</strong>：Borzuki 预测 RNA 表达、降解、RBP 结合覆盖度；Pythia 输出 RBP 结合概率及序列/结构通道归因分数；MPRC 输出等位基因特异性结合效应。</li>
+<li><strong>模块</strong>：
+  1. ecCLIP 实验流程（内源标签、交联、亲和捕获、红外可视化、连接酶-free 文库制备、测序）。
+  2. 峰/位点定义与阴性对照生成（dinucleotide shuffling）。
+  3. Borzuki 模型（Borzoi 架构扩展，多任务训练，集成 ecCLIP、eCLIP、RNA 降解、Perturb-seq）。
+  4. Pythia 模型（双通道：序列通道 + 结构通道；结构通道含固定碱基配对卷积层；DeepLIFT 归因）。
+  5. MPRC 实验（合成报告基因文库、慢病毒转导、CLIP 定量）。</li>
+<li><strong>训练</strong>：Borzuki 为集成模型（6 个副本）；Pythia 为每个 RBP 单独训练二分类器；优化器、学习率、早停等细节未在摘要中提供。</li>
+<li><strong>工具</strong>：CTK (CLIP Tool Kit)、bowtie2、UMI-tools、RNAfold (ViennaRNA)、ESM2、DeepLIFT、scikit-learn。</li>
+<li><strong>假设</strong>：dinucleotide-shuffled 序列可作为「未结合」阴性对照；结构通道的固定卷积可捕捉碱基配对模式；MPRC 报告基因环境可反映内源结合偏好。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ecCLIP 实验平台</td>
+<td>生成 67 个 RBP 的高分辨率结合图谱</td>
+<td>提供统一、可比的训练数据，替代抗体依赖的 eCLIP</td>
+<td>输入：内源 mNG 标签 RBP 细胞系；输出：全基因组峰及 CIMS 位点</td>
+<td>Results 2.1 图谱质量评估（FRiP、与 eCLIP 比较）</td>
+<td>移除后 Borzuki 和 Pythia 缺乏核心训练数据，无法训练</td>
+</tr>
+<tr>
+<td>固定碱基配对卷积层（Pythia 结构通道）</td>
+<td>显式编码 Watson-Crick 和摆动碱基配对模式</td>
+<td>为网络提供结构归纳偏置，无需外部结构预测</td>
+<td>输入：one-hot RNA 序列；输出：多通道碱基配对特征图</td>
+<td>Results 3.1-3.3 结构分类任务及消融</td>
+<td>移除后 Pythia 退化为纯序列模型，结构归因能力丧失</td>
+</tr>
+<tr>
+<td>双通道归因（DeepLIFT）</td>
+<td>将预测分解为序列和结构贡献</td>
+<td>识别结构依赖的 RBP 结合位点，指导实验验证</td>
+<td>输入：训练好的 Pythia 模型 + 峰序列；输出：每个位点的 log2 序列/结构归因比</td>
+<td>Results 3.4 MPRC 验证</td>
+<td>移除后无法区分序列 vs 结构依赖位点</td>
+</tr>
+<tr>
+<td>MPRC 报告基因系统</td>
+<td>在细胞内定量测量序列/结构变体对 RBP 结合的影响</td>
+<td>为模型归因提供正交实验验证</td>
+<td>输入：合成变体文库；输出：等位基因特异性 log2(IP/input)</td>
+<td>Results 3.4-3.5</td>
+<td>移除后模型归因缺乏实验验证，可解释性声明弱化</td>
+</tr>
+<tr>
+<td>Borzuki 多任务模型</td>
+<td>整合 ecCLIP、eCLIP、降解、表达、Perturb-seq 预测 RNA 命运</td>
+<td>验证 ecCLIP 数据对 RNA 稳定性预测的增量价值</td>
+<td>输入：DNA 序列；输出：多轨道预测</td>
+<td>Results 2.2-2.3 消融实验</td>
+<td>移除后无法证明 ecCLIP 数据的下游效用</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>log2 富集分数（ecCLIP 峰）</strong>：对每个 5-mer k，计算其在峰内 20-nt 窗口 vs 侧翼背景窗口的 log2 富集。符号：( E_k = \log_2 \left( \frac{f_{k,peak} + \epsilon}{f_{k,background} + \epsilon} \right) )，其中 ( f ) 为频率，( \epsilon ) 为伪计数。用途：表征 RBP 序列偏好。</li>
+<li><strong>Mantel 检验 / 修正 RV 系数</strong>：用于比较 ESM2 蛋白嵌入距离矩阵与 ecCLIP 结合偏好距离矩阵的相关性。符号：( \rho_{Mantel} )、( RV_{mod} )。用途：评估蛋白序列相似性与 RNA 结合偏好相似性的对应关系。</li>
+<li><strong>DeepLIFT 归因</strong>：对每个输入特征 ( x_i )，计算其对输出 ( y ) 的贡献分数 ( \Delta y / \Delta x_i )。本文分别对序列通道和结构通道计算归因，并取 log2 比值：( R = \log_2 \left( \frac{\text{DeepLIFT}<em>{seq}}{\text{DeepLIFT}</em>{str}} \right) )。用途：定义序列主导 vs 结构主导位点。</li>
+<li><strong>MPRC 效应量</strong>：对每个构建体，计算 log2(IP/input) 作为结合强度的度量。符号：( L_{IP/input} = \log_2 \left( \frac{IP_{norm} + \epsilon}{input_{norm} + \epsilon} \right) )。用途：比较参考、结构保持、结构破坏、阴性对照之间的结合差异。</li>
+<li><strong>Borzuki 变异效应评分</strong>：对参考和替代等位基因，计算预测轨道差异的加权和（方法 1 使用 Saluki 回归权重，方法 2 使用 MPRAC 参考值回归权重）。符号：( z = \frac{1}{K} \sum_{k=1}^{K} \sum_{t=1}^{T} w_{k,t} (u^{alt}<em>{k,t} - u^{ref}</em>{k,t}) )。用途：将多轨道预测压缩为标量变异效应。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：</li>
+<li>ecCLIP：67 个内源 mNG 标签 RBP，HEK293T 细胞，2 个生物学重复。</li>
+<li>训练/验证/测试：按染色体划分（测试染色体未在摘要中说明）。</li>
+<li>阴性对照：dinucleotide-shuffled 峰序列。</li>
+<li>MPRC：5 个 RBP（EMG1, HNRNPC, PCBP1, HNRNPU, SFPQ），30 个结构验证位点 + 88 个变异位点。</li>
+<li>Borzuki 训练：14 个人类 + 11 个小鼠 RNA 降解时间序列实验，31 个 ENCODE eCLIP，11 个 ecCLIP，10 个 Perturb-seq。</li>
+<li><strong>指标</strong>：AUROC、AUPRC、Spearman 相关、FRiP、R²、F1。</li>
+<li><strong>基线</strong>：DeepBind、DeepSEA、GraphProt、PRIESTTESS、6 个 RNA 语言模型（RNA-FM、RiNALMo、RNA-MSM、RNAErnie、UTR-LM-MRL、UTR-LM-TE_EL）、BEACON 17 个基线。</li>
+<li><strong>评测协议</strong>：BEACON 官方协议（CMP: Top-L precision；DMP: R²；SSP: F1；SSI: R²）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ecCLIP 图谱质量评估</td>
+<td>ecCLIP 产生高分辨率、可重复的结合图谱</td>
+<td>FRiP 分析、峰内信号集中度、重复间相关性</td>
+<td>峰中心 FRiP 曲线集中，重复间高相关</td>
+<td>ecCLIP 图谱质量高，适合建模</td>
+<td>未与 eCLIP 在同一细胞类型中直接比较</td>
+<td>Results 2.1, Fig. 2a</td>
+</tr>
+<tr>
+<td>RBP 结合偏好与蛋白嵌入对应</td>
+<td>蛋白序列相似性与 RNA 结合偏好相关</td>
+<td>ESM2 嵌入距离 vs ecCLIP 5-mer 富集距离</td>
+<td>Mantel ρ=0.083, RV=0.110, 距离相关=0.605, P≤0.002</td>
+<td>存在弱但非随机的对应</td>
+<td>对应关系弱，不能用于预测</td>
+<td>Results 2.1, Fig. 1c</td>
+</tr>
+<tr>
+<td>Borzuki 消融（有无 ecCLIP）</td>
+<td>ecCLIP 数据提升 RNA 半衰期预测</td>
+<td>有/无 ecCLIP 训练数据对比</td>
+<td>加入 ecCLIP 后半衰期预测提升</td>
+<td>ecCLIP 携带独立于 eCLIP 的稳定性相关信息</td>
+<td>未报告提升幅度</td>
+<td>Results 2.2, Fig. 2e</td>
+</tr>
+<tr>
+<td>Pythia vs 基线（RBP 结合预测）</td>
+<td>结构感知架构优于序列模型</td>
+<td>DeepBind, DeepSEA, GraphProt, PRIESTTESS</td>
+<td>Pythia 在 AUROC/AUPRC 上优于所有基线</td>
+<td>结构归纳偏置有效</td>
+<td>未报告每个 RBP 的详细比较</td>
+<td>Results 3.1, Fig. 3d</td>
+</tr>
+<tr>
+<td>Pythia vs RNA 语言模型</td>
+<td>监督结构感知模型匹敌或优于预训练嵌入</td>
+<td>6 个 RNA 语言模型线性探针</td>
+<td>Pythia 与最强嵌入相当</td>
+<td>显式结构先验可替代大规模预训练</td>
+<td>预训练模型可能在小样本 RBP 上更优</td>
+<td>Results 3.1, Fig. 3e</td>
+</tr>
+<tr>
+<td>BEACON 结构任务</td>
+<td>Pythia 泛化到通用 RNA 结构预测</td>
+<td>17 个 BEACON 基线</td>
+<td>CMP Top-L 66.6%, SSP F1 71.5%，优于所有基线</td>
+<td>固定碱基配对卷积是通用结构先验</td>
+<td>DMP/SSI 未超越最佳语言模型</td>
+<td>Results 3.2, Fig. 3c</td>
+</tr>
+<tr>
+<td>MPRC 结构验证</td>
+<td>结构归因预测可被实验验证</td>
+<td>结构保持 vs 结构破坏突变</td>
+<td>11/11 预测结构依赖位点显示结构保持突变保留结合</td>
+<td>Pythia 结构归因具有生物学真实性</td>
+<td>样本量小（11 个位点）</td>
+<td>Results 3.4, Fig. 4c</td>
+</tr>
+<tr>
+<td>MPRC 变异效应</td>
+<td>Pythia 可预测等位基因特异性结合变化</td>
+<td>88 个变异位点，预测 vs 实测</td>
+<td>预测与实测效应正相关（r=0.33, P=0.0019）</td>
+<td>模型可优先排序功能性变异</td>
+<td>相关较弱，不能作为唯一依据</td>
+<td>Results 3.5, Fig. 5d</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文的结论限于 HEK293T 细胞背景下的 67 个 RBP；Pythia 的 RBP 结合预测任务为二分类（峰 vs 洗牌阴性），非回归结合强度预测。</li>
+<li><strong>oracle/真值输入</strong>：ecCLIP 峰定义为「结合」，但未验证每个峰的功能后果；阴性对照为 dinucleotide-shuffled 序列，非实验验证的未结合区域。</li>
+<li><strong>端到端状态</strong>：Borzuki 和 Pythia 均为监督模型，依赖实验标签；Pythia 的结构通道使用固定先验，但下游权重完全从数据学习。</li>
+<li><strong>算力成本</strong>：未提供训练时间、GPU 数量等细节。</li>
+<li><strong>历史数据依赖</strong>：Borzuki 依赖 Borzoi 预训练权重和公开 ENCODE 数据；Pythia 依赖 ecCLIP 新数据。</li>
+<li><strong>最难情形</strong>：预测变异效应时，相关较弱（r=0.33），且仅 24/88 变异达到显著效应；结构依赖位点的验证仅覆盖 11 个位点。</li>
+<li><strong>群体/领域边界</strong>：结论不适用于其他细胞类型、其他 RBP 家族、体内 RNA 结构动态变化或翻译后修饰影响的场景。</li>
+<li><strong>有边界的复述</strong>：在 HEK293T 细胞中，ecCLIP 生成的 67 个 RBP 结合图谱可提升 RNA 半衰期预测；Pythia 的固定碱基配对卷积架构在 RBP 结合预测和 RNA 结构任务上优于传统序列模型，且其结构归因在 MPRC 实验中部分验证；但变异效应预测的准确性有限，需结合实验校准。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图谱仅覆盖 HEK293T 细胞</td>
+<td>67 个 RBP 在一个细胞类型中，缺乏细胞类型特异性</td>
+<td>扩展至更多细胞类型和条件</td>
+<td>Discussion 末段</td>
+</tr>
+<tr>
+<td>内源标签可能影响 RBP 功能</td>
+<td>mNG 标签可能改变部分 RBP 的定位或结合</td>
+<td>对标签敏感 RBP 进行正交验证</td>
+<td>Discussion 中关于标签效应的讨论</td>
+</tr>
+<tr>
+<td>Pythia 结构通道编码的是「结构潜力」而非实测结构</td>
+<td>固定卷积基于序列可配对性，非实验测定的 RNA 结构</td>
+<td>整合 icSHAPE 等实测结构数据</td>
+<td>Discussion 中关于结构表示的讨论</td>
+</tr>
+<tr>
+<td>MPRC 报告基因环境简化了天然转录本上下文</td>
+<td>报告基因缺乏天然 3' UTR 的完整序列和蛋白上下文</td>
+<td>在天然位点进行 CRISPR 编辑验证</td>
+<td>Discussion 中关于 MPRC 局限的讨论</td>
+</tr>
+<tr>
+<td>变异效应预测相关较弱</td>
+<td>r=0.33，且仅部分变异达到显著效应</td>
+<td>改进模型架构和训练数据规模</td>
+<td>Results 3.5 末段</td>
+</tr>
+<tr>
+<td>未验证所有 RBP 的功能后果</td>
+<td>峰定义为结合事件，未连接至下游调控功能</td>
+<td>结合功能实验（如 RNA 稳定性、翻译）</td>
+<td>Discussion 中关于功能验证的讨论</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>阴性对照使用 dinucleotide-shuffled 序列</td>
+<td>洗牌序列可能破坏 k-mer 组成以外的特征（如密码子偏倚、poly-A 尾），导致模型学习到非特异区分特征</td>
+<td>若阴性对照不具代表性，模型可能高估真实区分能力</td>
+<td>使用实验验证的未结合区域（如 RNA 干扰后的下调位点）作为阴性对照</td>
+<td>Methods 4.5</td>
+</tr>
+<tr>
+<td>Pythia 结构通道的固定卷积核仅覆盖有限距离（d=5-24）</td>
+<td>长程 RNA 结构相互作用（&gt;24 nt）未被编码</td>
+<td>长程假结或远距离配对可能对某些 RBP 重要</td>
+<td>扩展距离范围并比较性能</td>
+<td>Methods 4.13</td>
+</tr>
+<tr>
+<td>MPRC 验证仅覆盖 5 个 RBP 和 30 个位点</td>
+<td>样本量小，可能无法代表 67 个 RBP 的多样性</td>
+<td>结构归因的普适性声明需要更大规模验证</td>
+<td>扩展 MPRC 至更多 RBP 和位点</td>
+<td>Results 3.4</td>
+</tr>
+<tr>
+<td>Borzuki 的 ecCLIP 消融实验未报告效应量</td>
+<td>仅报告「提升」，未给出具体数值</td>
+<td>无法评估 ecCLIP 数据的边际贡献大小</td>
+<td>报告具体 AUROC/AUPRC 差异及置信区间</td>
+<td>Results 2.2</td>
+</tr>
+<tr>
+<td>ESM2 嵌入与结合偏好的对应弱（ρ=0.083）</td>
+<td>作者将其解释为「非随机」，但实际预测价值有限</td>
+<td>该分析可能过度解读弱相关</td>
+<td>使用专门训练的 RBP-RNA 共嵌入模型重新评估</td>
+<td>Results 2.1</td>
+</tr>
+<tr>
+<td>变异效应预测的验证集可能偏向高置信位点</td>
+<td>88 个变异位点的选择标准未详细说明</td>
+<td>若选择有偏，预测性能可能被高估</td>
+<td>在随机选择的变异集上评估</td>
+<td>Results 3.5</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题：Agent 提炼的知识候选</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>可迁移概念：固定先验卷积层作为结构归纳偏置</strong>。Pythia 使用冻结的碱基配对卷积核，将 RNA 二级结构先验直接编码进网络，而非依赖外部结构预测或可学习结构模块。此思路可迁移至蛋白质结构预测：例如，在序列编码器中加入冻结的接触图先验卷积层（基于已知二级结构或进化耦合），或用于蛋白质-RNA 复合物界面预测。</p>
+</li>
+<li>
+<p><strong>可迁移方法：双通道架构 + 归因分解</strong>。Pythia 将序列和结构分为两个独立通道，并通过 DeepLIFT 归因计算每个位点的「序列 vs 结构依赖比」。此设计可直接迁移至蛋白质构象采样或结合位点预测：将序列特征与结构特征（如溶剂可及性、二级结构、接触图）分离，并用量化归因识别哪些残基/区域的功能依赖结构而非序列。</p>
+</li>
+<li>
+<p><strong>可迁移实验设计：合成报告基因验证模型归因</strong>。MPRC 通过设计结构保持/结构破坏突变对，直接检验模型的结构归因预测。此闭环验证范式可迁移至蛋白质设计：对模型预测的结构关键残基，设计保守替换（结构保持）与破坏性替换（结构破坏），通过实验验证设计规则。</p>
+</li>
+<li>
+<p><strong>可迁移数据策略：内源标签统一捕获</strong>。ecCLIP 通过内源 split-mNeonGreen 标签替代抗体，消除了抗体差异这一技术变量。在蛋白质结构研究中，类似思路可应用于：统一标签系统（如 ALFA-tag）进行跨蛋白的相互作用组学比较，或用于 MD 模拟中统一力场参数的验证。</p>
+</li>
+<li>
+<p><strong>可迁移建模框架：多任务整合提升泛化</strong>。Borzuki 将 ecCLIP、eCLIP、RNA 降解、表达和 Perturb-seq 整合到单一模型，通过多任务学习共享序列表示。此框架可迁移至蛋白质结构-功能联合预测：将结构预测、稳定性预测、结合亲和力预测整合为多任务模型，利用共享表示提升各任务泛化。</p>
+</li>
+<li>
+<p><strong>可迁移评估思路：外部基准 + 消融双轨验证</strong>。作者在 BEACON 基准上评估 Pythia 的结构泛化能力，同时通过消融实验证明 ecCLIP 数据的增量价值。在蛋白质结构研究中，应同时使用外部基准（如 CAMEO、CASP）和内部消融（移除特定数据/模块）来验证新方法贡献。</p>
+</li>
+<li>
+<p><strong>可迁移分析：蛋白嵌入 vs 结合偏好弱对应的警示</strong>。ESM2 嵌入与 RNA 结合偏好的弱相关（ρ=0.083）提示：通用蛋白语言模型嵌入不能直接作为 RBP 功能相似性的代理。在蛋白质结构研究中，类似地，通用蛋白嵌入（如 ESM2）可能不足以捕捉结构或功能相似性，需使用专门训练的结构感知嵌入或实验数据校准。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, methods, discussion, supplementary figure legends, funding, data availability)</li>
+<li><strong>Assessment boundary</strong> Scientific content, technical soundness, methodological rigor, claims-to-evidence alignment, and clarity of the presented work. No assessment of editorial fit or publication venue.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present ecCLIP, a high-throughput CLIP-seq platform combining endogenous split-mNeonGreen tagging with ligation-free library preparation, applied to 67 RBPs in HEK293T cells. They introduce Borzuki, a Borzoi-derived model incorporating ecCLIP data for improved RNA half-life and 3' UTR variant effect prediction, and Pythia, a structure-aware neural network with a fixed dilated convolutional layer encoding base-pairing features. Pythia is benchmarked on BEACON tasks and used to predict and experimentally validate (via MPRC) sequence- and structure-dependent RBP binding determinants, including allele-specific effects of trait-associated variants.</li>
+<li><strong>Visible evidence base</strong> Main figures (Fig. 1a-c, 2a-i, 3a-e, 4a-d, 5a-e), supplementary figures (S1a-j, S2a-i, S3a-g, S4a-g, S5a-b), methods sections 4.1-4.19, data availability statements</li>
+<li><strong>Missing materials affecting confidence</strong> Full figure panels and legends not provided; exact numerical values for many reported statistics not visible; complete details of MPRC library design and variant selection not fully specified; details of Borzuki training data composition and hyperparameter tuning not fully described; no information on replicate numbers for MPRC experiments beyond "two biological replicates"</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript presents a substantial and ambitious resource: a high-throughput RBP binding atlas generated with a new experimental platform (ecCLIP), integrated into two complementary modeling frameworks (Borzuki for RNA fate prediction, Pythia for structure-aware binding prediction). The work is technically impressive and the combination of experimental atlas generation, deep learning modeling, and experimental validation via MPRC is commendable. However, several technical concerns and gaps in evidence presentation limit the strength of the claims as currently written. The manuscript would benefit from clearer reporting of validation statistics, more rigorous benchmarking against existing methods, and additional evidence that the structure-aware component of Pythia provides unique predictive value beyond sequence-based models.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in RNA biology, post-transcriptional gene regulation, computational biology, and deep learning for genomics. The ecCLIP atlas provides a new resource for RBP binding sites in a common cell line. The Borzuki and Pythia models offer tools for predicting RNA stability and RBP binding from sequence, with potential applications in variant interpretation. The MPRC validation framework is a methodological contribution for testing structure-dependent binding hypotheses.</li>
+<li><strong>Major strengths</strong> 1) The ecCLIP platform addresses real limitations in existing CLIP protocols (antibody dependence, ligation bias) through endogenous tagging and ligation-free library preparation. 2) The scale of the atlas (67 RBPs) is a significant resource. 3) The integration of experimental data with deep learning models (Borzuki, Pythia) is a forward-looking approach. 4) The MPRC validation provides direct experimental evidence for model predictions, which is rare in this field. 5) The BEACON benchmarking provides standardized comparison against existing methods.</li>
+<li><strong>Major Concerns</strong> See detailed items below.</li>
+<li><strong>Minor Comments</strong> See detailed items below.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (negative control adequacy), R1-M2 (MPRC validation statistics), R1-M3 (Borzuki ablation interpretation), R1-M4 (Pythia structure arm contribution), R1-M5 (variant effect validation scope)</li>
+<li><strong>Assessment against Nature-style criteria</strong> <strong>Originality:</strong> High. The combination of endogenous tagging CLIP with structure-aware deep learning and MPRC validation is novel. <strong>Scientific importance:</strong> Potentially high, if the resource and models prove broadly useful. The atlas and models could enable new insights into post-transcriptional regulation. <strong>Interdisciplinary readership:</strong> Moderate to high. The work bridges experimental RNA biology, computational genomics, and deep learning. <strong>Technical soundness:</strong> Mixed. The experimental platform appears well-designed, but several validation and benchmarking aspects need strengthening (see Major Concerns). <strong>Readability for nonspecialists:</strong> The abstract and introduction are accessible, but the methods and results sections assume significant expertise in both CLIP-seq and deep learning. Some concepts (e.g., fixed dilated convolutions, Borzoi architecture) could be explained more clearly for a broader audience.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core resource and modeling framework are valuable, but the current evidence does not fully establish all claims, particularly regarding the unique contribution of the structure-aware component and the robustness of the MPRC validation.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Experimental design / controls</li>
+<li><strong>Claim pointer</strong> "We applied ecCLIP to 67 endogenously tagged RBPs in HEK293T cells, generating a high-quality transcriptome-scale atlas that recovered known binding preferences and captured post-transcriptional regulons linked to RNA half-life."</li>
+<li><strong>Evidence pointer</strong> Section 2.1, Fig. 1, Supp. Fig. S1</li>
+<li><strong>Concern</strong> The manuscript does not describe a rigorous negative control for the ecCLIP protocol. The authors mention a "tag-only negative-control BED set" in Section 4.5, but no details are provided on how this control was generated, whether it was a non-RBP mNeonGreen-tagged protein, a parental cell line, or an untagged control. Without a proper negative control, it is difficult to assess the specificity of the peaks called and the false discovery rate of the atlas.</li>
+<li><strong>Why it matters</strong> The entire atlas and all downstream modeling depend on the quality and specificity of the called peaks. If the negative control is inadequate, the atlas may contain a substantial number of false positives, which would propagate through Borzuki and Pythia training and validation.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed description of the negative control, including the cell line, the tag construct, and the processing pipeline. Show that the negative control produces significantly fewer peaks than the tagged RBPs, and ideally demonstrate that known non-RBP proteins do not produce peaks. Report the number of peaks called in the negative control and the FDR threshold used.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical validation / experimental evidence</li>
+<li><strong>Claim pointer</strong> "MPRC confirmed that Pythia-nominated structural features correspond to functional determinants of RBP binding. Among sites predicted by Pythia to be structure-dependent, structure-preserving reporters were closer to the reference than structure-disrupting reporters at all 11 reference-enriched sites, using the same number of mutations in both conditions (one-sided paired Wilcoxon P = 4.9 × 10 −4 ; Fig. 4c )."</li>
+<li><strong>Evidence pointer</strong> Section 2.5, Fig. 4c, Supp. Fig. S4</li>
+<li><strong>Concern</strong> The MPRC validation is based on a small number of sites (11 reference-enriched structure-dependent sites, 8 non-structure-dependent sites). The statistical test is a paired Wilcoxon test across sites, but the number of sites is very small. Additionally, the manuscript does not report effect sizes or confidence intervals for the differences between structure-preserving and structure-disrupting constructs. The binomial logistic regression analysis is mentioned but the results are not fully reported. The choice of the 0.25 log2(IP/input) threshold for "reference-enriched" is not justified.</li>
+<li><strong>Why it matters</strong> The MPRC validation is the key experimental evidence supporting the central claim that Pythia's structure-aware predictions are biologically meaningful. With such a small number of sites and incomplete statistical reporting, the robustness of this conclusion is uncertain.</li>
+<li>
+<p><strong>Resolution test</strong> Report the full results of the logistic regression analysis, including coefficients, standard errors, and p-values for each site. Provide effect sizes (e.g., Cohen's d) and confidence intervals for the differences between construct types. Justify the choice of the reference-enrichment threshold. Consider increasing the number of validated sites or providing a power analysis to show the study is adequately powered.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Model evaluation / ablation interpretation</li>
+<li><strong>Claim pointer</strong> "In matched ablations, adding ecCLIP data improved prediction of RNA half-life and of MPRA-measured 3 ′ UTR variant effects on RNA stability, showing that the ecCLIP atlas carries regulatory information about RNA fate that existing data does not."</li>
+<li><strong>Evidence pointer</strong> Section 2.2, Fig. 2e, Supp. Fig. S2</li>
+<li><strong>Concern</strong> The ablation study shows that adding ecCLIP data improves performance, but the manuscript does not clearly describe what "matched ablations" means. Were the models trained with the same architecture and hyperparameters, differing only in the input data? How many replicates of the ablation were performed? The improvement in performance is reported but the magnitude of the improvement and its statistical significance are not clearly stated. Furthermore, the claim that ecCLIP provides information "that existing data does not" is strong and requires a more detailed comparison of the types of information captured by ecCLIP versus ENCODE eCLIP.</li>
+<li><strong>Why it matters</strong> The claim that ecCLIP adds unique predictive value is central to the paper's contribution. Without clear ablation methodology and statistical reporting, this claim is not fully supported.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed description of the ablation methodology, including model architecture, hyperparameters, and training procedure. Report the performance metrics for each ablation with confidence intervals and statistical tests. Perform an analysis of the types of binding sites uniquely captured by ecCLIP versus ENCODE eCLIP (e.g., in terms of sequence features, structural context, or genomic location).</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Model architecture / contribution of structure component</li>
+<li><strong>Claim pointer</strong> "Pythia predicted RBP binding from sequence and structural context and decomposed predictions into sequence-and structure-dependent components."</li>
+<li><strong>Evidence pointer</strong> Section 2.3, Fig. 3, Supp. Fig. S3</li>
+<li><strong>Concern</strong> The manuscript does not provide a clear ablation of the Pythia architecture itself. Specifically, it is not shown that the structure-aware component (the fixed dilated convolutional layer) contributes to improved performance over a sequence-only version of Pythia. The comparison against BEACON baselines is informative, but these baselines may not be directly comparable in terms of training data and architecture. A direct ablation of Pythia with and without the structure arm would more directly support the claim that structure-aware modeling is beneficial.</li>
+<li><strong>Why it matters</strong> The central novelty of Pythia is its explicit structure-aware architecture. Without a direct ablation, it is unclear whether the structure component provides unique predictive value or whether the performance is driven primarily by the sequence component.</li>
+<li>
+<p><strong>Resolution test</strong> Train a version of Pythia with only the sequence arm (no structure arm) and compare its performance to the full Pythia on the RBP binding prediction task. Report the performance difference and its statistical significance. This ablation should be performed for all 67 RBPs.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Variant effect validation / clinical relevance</li>
+<li><strong>Claim pointer</strong> "We used the same MPRC strategy to confirm allele-specific binding effects for variants prioritized by Pythia."</li>
+<li><strong>Evidence pointer</strong> Section 2.6, Fig. 5, Supp. Fig. S5</li>
+<li><strong>Concern</strong> The manuscript reports that 24 of 88 tested RBP-variant pairs showed significant allele-specific binding, but the criteria for "significant" are not fully described. The correlation between predicted and observed effects is modest (Pearson r = 0.33). The manuscript does not report how many variants were prioritized by Pythia and how many were tested. The selection of variants for testing is not described in detail. The trait annotations for the highlighted variants are presented as "hypotheses for follow-up," but the manuscript does not discuss potential confounding factors or alternative explanations for the observed allele-specific effects.</li>
+<li><strong>Why it matters</strong> The variant effect prediction is a key translational application of the work. The modest correlation and incomplete reporting of the validation strategy limit the strength of the claims about Pythia's utility for variant interpretation.</li>
+<li><strong>Resolution test</strong> Provide a detailed description of the variant selection process, including the number of variants prioritized by Pythia, the criteria for selection, and the number tested. Report the full results of the MPRC experiments, including effect sizes and confidence intervals for each variant. Discuss potential confounding factors (e.g., linkage disequilibrium, cell-type specificity) and how they were addressed.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity / terminology</li>
+<li><strong>Affected element</strong> Section 2.1, Fig. 1</li>
+<li><strong>Evidence pointer</strong> "eclair CLIP (ecCLIP)"</li>
+<li><strong>Issue</strong> The name "eclair CLIP" is used without explanation of the acronym. It is unclear what "eclair" stands for.</li>
+<li>
+<p><strong>Required correction</strong> Provide a brief explanation of the name, e.g., "efficient, clonal, and rapid" or similar, or state that it is a coined name.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility / data availability</li>
+<li><strong>Affected element</strong> Section 4.5, Data availability</li>
+<li><strong>Evidence pointer</strong> "All raw and processed sequencing data are available from the Gene Expression Omnibus (GEO) under accession number GSE349934."</li>
+<li><strong>Issue</strong> The manuscript states that data are available, but the specific GEO accession is only mentioned in the Data availability section. It would be helpful to also include the accession number in the main text or figure legends where the data are first described.</li>
+<li>
+<p><strong>Required correction</strong> Include the GEO accession number in the main text (e.g., in Section 2.1) or in the relevant figure legends.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Section 2.2, Fig. 2</li>
+<li><strong>Evidence pointer</strong> "In matched ablations, adding ecCLIP data improved prediction of RNA half-life"</li>
+<li><strong>Issue</strong> The manuscript reports improvements in prediction but does not provide the actual performance metrics (e.g., correlation coefficients, MSE) for the models with and without ecCLIP data. The magnitude of the improvement is not quantified.</li>
+<li>
+<p><strong>Required correction</strong> Report the specific performance metrics for each ablation condition, with confidence intervals and p-values.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity / methodology</li>
+<li><strong>Affected element</strong> Section 4.12, Pythia model</li>
+<li><strong>Evidence pointer</strong> "The fixed layer enumerates candidate Watson-Crick and wobble base-pairing rules across a range of distances and bulge configurations."</li>
+<li><strong>Issue</strong> The description of the fixed dilated convolutional layer is brief. It is unclear how the "bulge configurations" are parameterized and how the layer handles gaps or bulges in RNA duplexes.</li>
+<li>
+<p><strong>Required correction</strong> Provide a more detailed description of the fixed layer, including the exact kernel design, the range of dilation rates, and how bulges are handled. A supplementary figure or table showing the kernel configurations would be helpful.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation / discussion</li>
+<li><strong>Affected element</strong> Section 3, Discussion</li>
+<li><strong>Evidence pointer</strong> "The atlas was generated in HEK293T cells, so extending ecCLIP across cell types, cell perturbations, and disease contexts will be important for modeling context-specific regulation."</li>
+<li><strong>Issue</strong> The discussion of limitations is brief. The authors could more thoroughly discuss the potential impact of cell-type specificity on the generalizability of the atlas and models, and how the MPRC validation in HEK293T cells might not fully capture in vivo binding behavior.</li>
+<li><strong>Required correction</strong> Expand the discussion of limitations, including a more detailed consideration of cell-type specificity, potential artifacts from endogenous tagging, and the limitations of the MPRC reporter system.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that ecCLIP provides information "that existing data does not" is not fully supported without a more detailed comparison of the types of information captured by ecCLIP versus ENCODE eCLIP.</li>
+<li>The claim that Pythia's structure-aware component provides unique predictive value is not supported without a direct ablation of the Pythia architecture.</li>
+<li>The claim that MPRC "confirmed" Pythia's predictions is strong; the modest correlation (r = 0.33) and small number of validated sites suggest the confirmation is partial.</li>
+<li>The claim that the highlighted trait-associated variants "nominate local RNA-processing hypotheses" is speculative and not directly tested in the manuscript.</li>
+<li>The generalizability of the atlas and models to other cell types and conditions is not established, and the discussion of this limitation is brief.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

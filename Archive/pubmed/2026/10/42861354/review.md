@@ -1,0 +1,83 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, methods, results, discussion, and supplementary figure/table references
+- **Assessment boundary** Scientific validity, technical soundness, and claims as presented in the provided manuscript text; no external data or unpublished materials consulted
+- **Shared manuscript claim summary** The authors report an integrated computation-guided workflow for thermostabilizing the fungal sweet protein Honey Truffle Sweetener (HTS). They determined the HTS crystal structure, used Rosetta and ThermoMPNN for candidate mutation screening, developed a machine learning model (SMRC-Net) for Tm prediction, and assembled stabilizing mutations stepwise. The final variant FM achieved a melting temperature of 82.1 °C (27.5 °C above wild-type), retained sweetness in untreated samples, and showed improved heat and pH tolerance in terms of solubility and secondary structure.
+- **Visible evidence base** Crystal structure (Table 1, Fig. 1), computational screening results (Fig. 2), SMRC-Net cross-validation metrics (Fig. 3, Table S4), prospective variant testing (Fig. 4, Table S16), modular assembly Tm data (Fig. 5, Table S9), CD spectra (Fig. 6), MD analyses (Fig. 7, Fig. 8, Tables S11–S13), sensory evaluation (Table S3), disulfide variant data (Table S1), H16A/F99A mutant data (Table S15)
+- **Missing materials affecting confidence** Supplementary figures and tables referenced but not provided in full (Figs. S1–S7, Tables S1–S18); detailed SMRC-Net architecture and hyperparameters only in Supplementary Methods; sensory evaluation raw data not shown; statistical details for some comparisons not fully specified
+
+## Reviewer
+- **Overall assessment** This manuscript presents a well-structured and potentially valuable workflow for protein thermostabilization, with a clear demonstration of success in a challenging target protein. The integration of structure determination, complementary computational screening, machine learning, and stepwise experimental assembly is logical and the reported Tm improvement is substantial. However, several technical aspects require clarification and additional evidence before the case is fully established, particularly regarding the generalizability of SMRC-Net, the statistical robustness of the sensory data, and the mechanistic interpretation of the MD analyses.
+- **Who would be interested in the results, and why** Researchers in protein engineering, food science, and structural biology would be interested. The work addresses a practical bottleneck in using sweet proteins as sugar substitutes, and the computation-guided workflow could be applicable to other compact proteins with limited stability. The combination of physics-based and deep learning methods, plus the residual learning framework, may interest computational biologists developing protein stability prediction tools.
+- **Major strengths** 1) The crystal structure provides a solid foundation for rational design. 2) The complementary use of Rosetta and ThermoMPNN is sensible and well-justified. 3) The stepwise modular assembly strategy is methodologically sound and reduces risk of incompatible mutations. 4) The final Tm improvement of 27.5 °C is substantial and practically meaningful. 5) The inclusion of heat and pH tolerance assays adds practical relevance beyond simple Tm measurements.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness of SMRC-Net validation
+  - **Claim pointer** "Repeated nested cross-validation supported quantitative Tm prediction within the HTS scaffold, while prospective testing showed 9/10 directional agreement in a small, computationally selected variant set."
+  - **Evidence pointer** Section 3.3, Fig. 3, Table S4; Section 3.4, Fig. 4, Table S16
+  - **Concern** The nested cross-validation is performed on 65 variants, all derived from the same protein scaffold and selected through the same computational pipeline. This creates a potential selection bias: the model is trained and tested on variants that were pre-filtered by Rosetta and ThermoMPNN, which may not represent the full mutation space. The prospective set of 10 variants is very small, and the reported 9/10 directional agreement, while encouraging, has wide confidence intervals. More critically, the manuscript does not report whether the SMRC-Net predictions were compared against simpler baselines (e.g., using only ESM2 features, or only MD features) in the nested cross-validation, which would be necessary to demonstrate the added value of the residual correction module.
+  - **Why it matters** The central methodological contribution of this work is the SMRC-Net framework. If its performance is not rigorously benchmarked against appropriate baselines and its generalizability is not demonstrated beyond a narrow, pipeline-selected variant set, the claim that it provides a useful "mutation-centered" prediction tool is not fully supported.
+  - **Resolution test** Provide ablation studies in the nested cross-validation (ESM2-only, MD-only, and combined models). Report confidence intervals for the 9/10 directional agreement. Ideally, test the frozen model on a set of variants that were not selected by the same Rosetta/ThermoMPNN pipeline, even if small.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence for retained sweetness
+  - **Claim pointer** "Untreated FM retained sweetness, while separate heat- and pH-treatment assays showed retained solubility and largely preserved secondary-structure profiles. Sweetness after these treatments was not evaluated."
+  - **Evidence pointer** Section 3.5, Table S3
+  - **Concern** The sensory evaluation is described only in terms of threshold values in Table S3, which is not provided in the main text. The manuscript states that "sweetness thresholds of Mut10-1 and FM remained within a range similar to that of WT," but no statistical analysis of these thresholds is presented. With only eight panelists, the power to detect meaningful differences is limited. Furthermore, the critical claim for practical application would be sweetness retention after heat or pH treatment, which the authors explicitly state was not evaluated. This is a significant gap given that the stated motivation is use in thermally processed foods.
+  - **Why it matters** The practical value of the engineered variant depends on retaining sweetness under processing-relevant conditions. Without data on sweetness after heat or pH treatment, the claim that FM is suitable for thermally processed foods is not established.
+  - **Resolution test** Provide the full sensory data with statistical analysis (e.g., confidence intervals for thresholds). At minimum, evaluate sweetness of FM after a relevant heat treatment (e.g., 80 °C for 1 h) to demonstrate functional retention under the conditions where solubility and structure are maintained.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Mechanistic interpretation of MD analyses
+  - **Claim pointer** "Molecular dynamics analyses indicated that FM was not uniformly rigidified but instead exhibited localized flexibility redistribution and a more consolidated conformational ensemble."
+  - **Evidence pointer** Section 3.6, Fig. 7, Fig. 8, Tables S11–S13
+  - **Concern** The MD analyses are descriptive and correlative. The manuscript reports differences in RMSF, SASA, contact persistence, and free-energy landscapes between WT and FM, but does not establish a causal link between specific mutations and the observed stability increase. For example, the H16-F99 contact is identified as contributing to stability based on a double mutant, but it is unclear how this contact relates to the other 11 mutations in FM. The free-energy landscape analysis (Fig. 8d) is qualitative; no quantitative metrics (e.g., free-energy differences between basins) are provided.
+  - **Why it matters** Without a clearer mechanistic link between the introduced mutations and the observed stability changes, the generalizability of the design principles to other proteins is uncertain. The manuscript would be strengthened by identifying which mutations contribute most to stability and why.
+  - **Resolution test** Perform additional MD analyses to quantify free-energy differences between conformational states. Consider alanine scanning or reversion mutants to identify key stabilizing mutations and test their individual contributions. Relate specific mutations to the observed flexibility redistribution.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of methods
+  - **Affected element** SMRC-Net architecture description
+  - **Evidence pointer** Section 2.5 (implied), Supplementary Methods
+  - **Issue** The main text provides only a high-level description of SMRC-Net. Key details such as the number of MD features, the specific feature selection method, and the model architecture (e.g., number of layers, regularization) are relegated to the Supplementary Methods.
+  - **Required correction** Provide a concise summary of the SMRC-Net architecture and key hyperparameters in the main text or a table, so that readers can assess the model without consulting the supplement.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Tm measurements and comparisons
+  - **Evidence pointer** Fig. 2c, Fig. 5c, Table S9
+  - **Issue** The manuscript reports Tm values as mean ± SD from triplicate measurements but does not state the number of independent protein preparations or whether the triplicates are technical or biological replicates. The statistical significance of differences between variants is not consistently reported.
+  - **Required correction** Clarify the nature of replicates and report the number of independent experiments. Where comparisons are made, provide appropriate statistical tests and effect sizes.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness of data presentation
+  - **Affected element** Sensory evaluation
+  - **Evidence pointer** Table S3
+  - **Issue** The sensory evaluation is summarized only as threshold values. The manuscript does not describe the training of panelists, the number of sessions, or the variability across panelists.
+  - **Required correction** Provide a brief description of the sensory protocol in the main text and include individual panelist data or a measure of inter-panelist variability in the supplement.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interpretation of CD data
+  - **Affected element** Fig. 6c, Fig. 6f, Table S10
+  - **Issue** The CD spectra are described as showing "largely preserved secondary-structure profiles," but the quantitative secondary-structure content estimates (presumably from BeStSel) are only in Table S10. It is unclear whether the differences between WT and FM under stress conditions are statistically significant.
+  - **Required correction** Report the secondary-structure content estimates in the main text or a main-text figure, with appropriate statistical comparisons.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Disulfide bond validation
+  - **Claim pointer** "The final variant, FM, had a melting temperature of 82.1 °C, 27.5 °C higher than that of wild-type HTS."
+  - **Evidence pointer** Section 3.5, Fig. 5b, Table S1
+  - **Issue** The manuscript states that an engineered disulfide bond was introduced (Cys37-Cys46), but it is not explicitly stated whether formation of the disulfide bond was experimentally confirmed (e.g., by mass spectrometry or non-reducing SDS-PAGE). The Tm increase attributed to the disulfide bond could be confounded by the accompanying mutations.
+  - **Required correction** Provide evidence for disulfide bond formation in the purified FM protein, or acknowledge that the contribution of the disulfide bond to stability is inferred from the Tm of the disulfide-only variant.
+- **Technical failings that need to be addressed before the case is established** 1) Lack of ablation studies for SMRC-Net to demonstrate the added value of the MD residual correction over the ESM2 baseline alone. 2) Absence of sweetness evaluation after heat or pH treatment, which is central to the practical application claim. 3) Insufficient statistical detail for sensory data and some Tm comparisons. 4) No experimental confirmation of disulfide bond formation in FM.
+- **Assessment against Nature-style criteria** Originality: The integration of complementary computational methods with a residual learning framework is a novel contribution, though individual components are established. Scientific importance: The work addresses a real bottleneck in sweet protein application and provides a potentially transferable workflow. Interdisciplinary readership: The work bridges structural biology, computational biology, and food science, and should appeal to readers across these fields. Technical soundness: The experimental design is generally sound, but the validation of SMRC-Net and the sensory data require strengthening. Readability for nonspecialists: The manuscript is clearly written and accessible, though the SMRC-Net section may be challenging for readers without machine learning background.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core experimental achievement (a 27.5 °C Tm increase with retained sweetness) is significant and likely reproducible. However, the validation of the computational framework and the missing post-treatment sweetness data must be addressed before the broader claims of the workflow's utility are fully established.
+
+## Risk / unsupported claims
+- The claim that SMRC-Net provides "quantitative Tm prediction" is only supported within a narrow, pipeline-selected variant set; generalizability to other proteins or even other regions of the HTS sequence space is not demonstrated.
+- The claim that FM "retained sweetness" is based on threshold data in the supplement without statistical analysis; the claim that it is suitable for thermally processed foods is unsupported because sweetness after heat or pH treatment was not evaluated.
+- The mechanistic interpretation that FM stabilization arises from "localized flexibility redistribution and a more consolidated conformational ensemble" is correlative; no causal link between specific mutations and these changes is established.
+- The statement that the engineered disulfide bond contributes to stability is inferred from Tm data but not directly confirmed by structural or biochemical evidence of disulfide formation.

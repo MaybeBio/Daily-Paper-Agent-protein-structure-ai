@@ -1,0 +1,69 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Conceptual claims and proposed categorization framework, as presented in the abstract
+- **Shared manuscript claim summary** The authors argue that current AI-driven protein-protein interaction prediction methods, while advanced, perform unevenly across interaction classes, and propose a four-region categorization of limitations, with implications for future method development.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or results sections provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, methods description, quantitative performance data, and any validation of the proposed categorization framework
+
+## Reviewer
+- **Overall assessment** This is a perspective-style manuscript that identifies a genuine and timely problem in the field of protein-protein interaction prediction. The proposed categorization of interaction prediction challenges into four regions is conceptually reasonable and may be useful for organizing future research efforts. However, the abstract alone provides no empirical evidence to support the claimed performance variations, and the categorization framework is presented without any systematic justification or validation. The manuscript's contribution is therefore primarily organizational and speculative at this stage, and its impact will depend on the depth of analysis and evidence provided in the full text.
+- **Who would be interested in the results, and why** Computational biologists and bioinformaticians working on protein structure prediction, protein-protein interaction prediction, and AI-driven methods for molecular biology. Experimental biologists studying protein interactions, particularly those involving dynamic complexes, disordered regions, or context-dependent assembly, may also find the categorization useful for selecting appropriate computational tools. The manuscript could serve as a roadmap for method developers and a cautionary guide for users of existing prediction tools.
+- **Major strengths** The manuscript addresses a well-recognized and important limitation of current AI-based prediction methods, namely the uneven performance across interaction classes. The proposed four-region categorization is intuitive and likely to resonate with practitioners. The call for methods that move beyond static structure prediction and reduce reliance on multiple sequence alignments is forward-looking and aligns with emerging trends in the field.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that "performance drops when dynamics are important and when interactions lack a strong co-evolutionary history" is presented as a general finding.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract asserts performance variation across interaction classes without presenting any quantitative data, benchmarks, or systematic comparisons. No specific datasets, metrics, or interaction classes are named.
+  - **Why it matters** Without supporting evidence, this claim cannot be evaluated for accuracy or generalizability. The reader cannot determine whether the performance drops are consistent across methods, datasets, or interaction types, or whether they are anecdotal observations from a limited set of cases.
+  - **Resolution test** Provide quantitative performance comparisons across defined interaction classes, including specific metrics (e.g., DockQ, TM-score, interface RMSD) and benchmark datasets, with appropriate statistical analysis.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Framework validation
+  - **Claim pointer** The proposed four-region categorization of interaction prediction challenges is presented as a useful organizing principle.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The categorization is introduced without any systematic derivation, literature synthesis, or case-based justification. It is unclear whether these four regions are exhaustive, mutually exclusive, or derived from empirical observations or theoretical considerations.
+  - **Why it matters** If the categorization is not rigorously derived or validated, it risks being an arbitrary taxonomy that does not accurately reflect the landscape of interaction prediction challenges. This would limit its utility as a framework for guiding future research.
+  - **Resolution test** Provide a systematic derivation of the four regions, including examples of interaction classes that fall into each region, discussion of boundary cases, and evidence that the categorization captures meaningful distinctions in method performance or underlying biology.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Actionability of recommendations
+  - **Claim pointer** The statement that "future progress will require methods that rely less on multiple sequence alignments, better distinguish interaction strength and specificity, and move beyond static structure prediction" is presented as a roadmap.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The recommendations are general and lack specificity regarding how these goals might be achieved, what technical approaches could be pursued, or what challenges might arise in implementing them.
+  - **Why it matters** For a perspective manuscript to be impactful, its recommendations should be sufficiently concrete to guide method development. Vague suggestions without technical context may be of limited practical use.
+  - **Resolution test** Provide more detailed discussion of potential approaches, such as alternative input features to MSAs, methods for modeling interaction dynamics, or strategies for incorporating cellular context, with reference to existing or emerging techniques.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Definition of "structural compatibility"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "structural compatibility" is used in the title and abstract but is not explicitly defined. It is unclear whether it refers to geometric complementarity, energetic favorability, or some other criterion.
+  - **Required correction** Provide a clear definition of "structural compatibility" in the context of interaction prediction, ideally with reference to how it is assessed by current methods.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Use of "co-evolutionary history"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "co-evolutionary history" is used without specifying how it is measured or operationalized in the context of prediction methods.
+  - **Required correction** Clarify what constitutes "strong" versus "weak" co-evolutionary signal, and how this relates to MSA depth or other quantifiable features.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scope
+  - **Affected element** Coverage of interaction classes
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not mention specific interaction classes (e.g., transient versus permanent, obligate versus non-obligate, homo-oligomeric versus hetero-oligomeric) that would help ground the categorization in concrete examples.
+  - **Required correction** Include representative examples of interaction classes within each of the four proposed regions to illustrate the framework.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The manuscript's central claims about performance variation and the utility of the proposed categorization cannot be assessed without quantitative evidence and systematic justification. The recommendations in R1-M3, while not blocking, would benefit from greater specificity.
+- **Assessment against Nature-style criteria** 
+  - Originality: The manuscript addresses a recognized problem but the proposed categorization, while potentially useful, is not clearly novel in its conceptual framing. Similar distinctions have been discussed in the literature regarding the limitations of co-evolution-based methods and the challenges of dynamic complexes.
+  - Scientific importance: The topic is of high importance to the structural biology and computational biology communities, given the widespread adoption of AlphaFold2 and related tools. The manuscript could help set research priorities.
+  - Interdisciplinary readership: The topic bridges computational biology, structural biology, and biochemistry, and the abstract is written in a way that is accessible to nonspecialists. However, the lack of concrete examples or data limits its immediate utility for experimentalists.
+  - Technical soundness: Cannot be evaluated from the abstract alone. The absence of any quantitative evidence or methodological detail prevents assessment of technical rigor.
+  - Readability for nonspecialists: The abstract is clearly written and the four-region framework is easy to follow conceptually. However, terms such as "co-evolutionary history" and "structural compatibility" would benefit from brief clarification for a broader audience.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising and the topic is timely, but the abstract alone does not provide sufficient evidence to support the central claims. A decision would require review of the full manuscript, particularly the evidence for performance variation and the derivation of the categorization. If the full text provides quantitative support and systematic justification, the manuscript could be a valuable perspective piece.

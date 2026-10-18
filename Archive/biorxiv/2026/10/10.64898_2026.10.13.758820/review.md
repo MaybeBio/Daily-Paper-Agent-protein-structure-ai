@@ -1,0 +1,94 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, methods) without figures, tables, or supplementary materials
+- **Assessment boundary** Scientific claims, methodological soundness, and evidence consistency based solely on the provided text; structural biology and computational design claims are assessed at the level of reported results
+- **Shared manuscript claim summary** The authors report a computational pipeline for designing metamorphic proteins that can access two distinct conformations, combining RFdiffusion-based backbone remodeling, two sequence design strategies (chimeric and fully redesigned), and experimental validation via CD, NMR, and X-ray crystallography, with state-shifting mutations used to steer conformational equilibria.
+- **Visible evidence base** Text descriptions of results, methods, and figure references; no actual figures, tables, spectra, or structural coordinates provided
+- **Missing materials affecting confidence** All figures, supplementary tables (S1-S19), structural coordinates, NMR spectra, crystallographic data, and MD simulation trajectories; specific numerical values for RMSDs, pLDDT scores, and spectral assignments are referenced but not visible
+
+## Reviewer
+- **Overall assessment** This manuscript addresses a significant and timely challenge in computational protein design: encoding conformational dynamics and metamorphic behavior into designed sequences. The authors present a thoughtful combination of generative backbone remodeling, two complementary sequence design strategies, and multi-modal experimental validation. The conceptual framework is compelling, and the reported results suggest meaningful progress. However, the current evidence base is insufficient to fully evaluate the strength of the claims. Key concerns include the limited number of experimentally characterized systems, the reliance on computational prediction as a primary filter without clear benchmarks, and the absence of quantitative metrics for conformational heterogeneity. The manuscript would benefit from clearer articulation of success rates, more systematic comparison between design strategies, and explicit discussion of failure cases. The work is likely to interest the protein design and biophysics communities, but the current presentation does not yet establish the generalizability of the approach.
+- **Who would be interested in the results, and why** Computational protein designers and engineers will find the dual design strategies and the use of RFdiffusion for conformational landscape exploration directly relevant. Biophysicists studying protein dynamics and metamorphic proteins will be interested in the NMR and MD characterization approaches. Researchers developing AI-based conformational sampling tools (e.g., BioEmu) will find the benchmarking and application context valuable. The demonstration that small numbers of mutations can shift conformational equilibria has implications for understanding sequence-structure-dynamics relationships.
+- **Major strengths** The manuscript addresses a genuinely open problem in protein design with a well-reasoned conceptual framework. The combination of two complementary design strategies (chimeric and fully redesigned) is thoughtful and provides a useful comparison. The integration of multiple computational tools (RFdiffusion, ProteinMPNN, AlphaFold2/3, BioEmu) with experimental validation (CD, NMR, crystallography) is comprehensive. The use of state-shifting mutations to steer equilibria is a practical and potentially generalizable approach. The authors are appropriately cautious about the challenges of characterizing dynamic proteins.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that designed metamorphic proteins can access two distinct conformations and that conformational equilibria can be shifted towards either state through mutations.
+  - **Evidence pointer** Results sections "Computational design and experimental characterization of metamorphic proteins" and "Steering energy landscapes with state-shifting mutations"; figures 3-6 referenced but not visible
+  - **Concern** The central claim of successful metamorphic design rests on a small number of experimentally characterized systems (three folds, with detailed characterization on H2H-chimeric, H2H-full, H2B-chimeric, H2B-full, and B2H-full). For H2H-full, the redesigned segment was predominantly disordered, and for B2H-full, the native state was kinetically more stable. Only H2H-chimeric showed clear evidence of sampling both states. This limited success rate, while honest, does not establish a generalizable design principle. The manuscript does not report how many designs were attempted, what fraction passed computational filters, or how many were experimentally tested but failed. Without this denominator, the reader cannot assess the reliability of the approach.
+  - **Why it matters** The claim of demonstrating feasibility requires evidence that the approach works with reasonable frequency, not just in isolated cases. If the success rate is very low, the practical utility is limited. The absence of failure analysis also prevents the community from understanding the limitations and failure modes of the design strategies.
+  - **Resolution test** Provide a clear accounting of the design funnel: number of initial folds, number of alternative conformations generated, number of sequences designed, number passing computational filters, number experimentally tested, and number showing the desired behavior. Include at least one detailed failure case analysis to illustrate the limitations of the approach.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological validation
+  - **Claim** The authors state that AlphaFold2/3 and BioEmu predictions were used to identify state-shifting mutations and that these predictions were validated experimentally.
+  - **Evidence pointer** Methods section "Stabilization of metamorphic proteins by computational mutational screening"; figures 5-6 referenced but not visible
+  - **Concern** The manuscript does not provide a systematic evaluation of the predictive accuracy of the computational screening pipeline. For the chimeric protein, 2,951 native-directed and 298 alternative-directed variants were generated, but only a handful were experimentally tested. For the fully redesigned protein, 836 single-point variants were screened in silico, but the manuscript does not report how many were experimentally validated or what the concordance rate was between prediction and experiment. The claim that AF models were "effective in identifying state-shifting mutations" is based on anecdotal evidence rather than systematic benchmarking.
+  - **Why it matters** The utility of the proposed pipeline depends on the reliability of the computational predictions. If the false positive rate is high, the approach is not practical. The manuscript should demonstrate that the computational filters have predictive value beyond what would be expected by chance.
+  - **Resolution test** Provide a quantitative comparison of predicted versus experimentally observed conformational preferences for a set of tested variants. Report sensitivity, specificity, or at minimum the number of variants that behaved as predicted versus those that did not. If possible, include a blinded prediction experiment.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Experimental characterization depth
+  - **Claim** The authors state that NMR spectroscopy revealed conformational heterogeneity and that structural characterization confirmed the designed conformations.
+  - **Evidence pointer** Results sections on NMR characterization; figures 3-6 and supplementary figures S5-S18 referenced but not visible
+  - **Concern** The NMR characterization is described qualitatively. For H2H-chimeric, only approximately 50% of residues could be assigned, and the metamorphic region showed exchange broadening. While this is consistent with dynamics, it also means that the structural details of the metamorphic region remain uncharacterized. The manuscript does not report relaxation dispersion experiments, exchange rates, or quantitative populations of the two states. The statement that the protein is "predominantly disordered" for H2H-full is based on chemical shift analysis, but the extent of disorder and the structural ensemble are not described.
+  - **Why it matters** The claim of designing proteins that populate two defined conformations requires evidence that both conformations are well-folded and structurally distinct. If the NMR data only show partial folding or significant disorder, the interpretation of "metamorphic behavior" is weakened. Quantitative characterization of the conformational exchange would strengthen the claims considerably.
+  - **Resolution test** Provide quantitative NMR parameters: relaxation dispersion profiles, exchange rates, and estimated populations of the two states. If possible, include a structural ensemble or at least a description of the disordered regions. For the H2H-full protein, clarify the extent of disorder and whether the designed conformation is populated at all.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Comparison to existing methods
+  - **Claim** The authors position their work as addressing the challenge of designing proteins with multiple conformations, implying progress beyond existing approaches.
+  - **Evidence pointer** Introduction and Discussion sections
+  - **Concern** The manuscript does not provide a systematic comparison with existing methods for designing dynamic or metamorphic proteins. The authors mention prior work on peptide binding-triggered hinge motions and calcium-triggered rearrangements, but do not compare their approach to these or other relevant methods in terms of design success, conformational diversity, or experimental validation. The claim of novelty is not fully substantiated without such comparison.
+  - **Why it matters** The field of protein design is rapidly advancing, and the contribution of this work needs to be positioned relative to existing capabilities. Without comparison, the reader cannot assess whether the approach represents a significant advance or an incremental step.
+  - **Resolution test** Add a comparative discussion of at least 2-3 existing methods for designing dynamic proteins, highlighting specific advantages and limitations of the proposed approach relative to these methods. If possible, include a table comparing design success rates, conformational diversity, and experimental validation across methods.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of terminology
+  - **Affected element** Use of "metamorphic" throughout
+  - **Evidence pointer** Abstract, Introduction, Discussion
+  - **Issue** The term "metamorphic" is used to describe proteins that access multiple conformations, but the manuscript does not clearly define the criteria for classifying a protein as metamorphic versus simply dynamic or conformationally heterogeneous. The distinction matters for interpreting the claims.
+  - **Required correction** Provide a clear operational definition of "metamorphic" as used in this work, and specify how the designed proteins meet this definition.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** MD simulation analysis
+  - **Evidence pointer** Methods section "MD Simulations"
+  - **Issue** The manuscript reports aggregate simulation times (240 μs and 179 μs) but does not report the number of independent simulations, the length of individual trajectories, or the statistical uncertainty in the observed transitions.
+  - **Required correction** Report the number of replicates, trajectory lengths, and provide error estimates or confidence intervals for key observables (e.g., RMSD distributions, transition frequencies).
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Computational pipeline details
+  - **Evidence pointer** Methods sections on RFdiffusion and iterative ProteinMPNN
+  - **Issue** The methods describe the computational pipelines but do not provide sufficient detail for reproduction. For example, the "unfolding potential" and "transformation potential" are defined but the specific parameters (r0, d0, weights) are not given. The iterative ProteinMPNN procedure is described but the convergence criteria are vague.
+  - **Required correction** Provide all relevant parameters, hyperparameters, and convergence criteria. Consider depositing code and configuration files in a public repository.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Data availability
+  - **Affected element** Structural data
+  - **Evidence pointer** Results section on crystallography
+  - **Issue** The manuscript reports crystal structures for H2H_alt1, H2B_alt4, and a stabilized H2H-chimeric variant, but does not state whether the coordinates and structure factors have been deposited in the PDB.
+  - **Required correction** State the PDB accession codes for all deposited structures, or provide a clear statement of data availability.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Figure quality
+  - **Affected element** All figures
+  - **Evidence pointer** Not applicable (figures not visible)
+  - **Issue** The manuscript references multiple figures, but the quality and clarity of these figures cannot be assessed from the text alone. Given the complexity of the data, the figures will be critical for evaluating the claims.
+  - **Required correction** Ensure that all figures are high-resolution, clearly labeled, and include appropriate statistical annotations. Consider including representative raw data (e.g., NMR spectra, MD trajectories) in supplementary materials.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (limited experimental validation and absence of design funnel statistics), R1-M2 (lack of systematic validation of computational predictions), R1-M3 (insufficient quantitative NMR characterization of conformational dynamics)
+- **Assessment against Nature-style criteria** Originality: The work addresses a genuinely open problem and introduces a novel combination of methods, though the individual components are established. Scientific importance: The challenge of designing dynamic proteins is significant, and the approach has potential to advance the field. Interdisciplinary readership: The work bridges computational design, biophysics, and structural biology, and should appeal to a broad audience. Technical soundness: The methods are generally sound, but the evidence base is insufficient to fully evaluate the claims. Readability for nonspecialists: The manuscript is well-written and accessible, though some sections assume familiarity with protein design terminology.
+- **Recommendation posture** Supportive if technical concerns are resolved. The conceptual framework and preliminary results are promising, but the current evidence does not fully establish the generalizability of the approach. The manuscript would benefit from additional experimental validation, more systematic reporting of design success rates, and quantitative characterization of conformational dynamics.
+
+## Risk / unsupported claims
+- The claim that designed metamorphic proteins can access two distinct conformations is supported for H2H-chimeric but not for other systems; the generalizability of this claim is not established.
+- The claim that AF models were "effective in identifying state-shifting mutations" is based on anecdotal evidence without systematic benchmarking.
+- The claim that the designed proteins exhibit "metamorphic behavior" is not fully supported by the NMR data, which show significant conformational heterogeneity and, in some cases, disorder rather than well-defined alternative states.
+- The claim that the approach enables "controlling the relative free energies of the two states" is aspirational and not demonstrated by the presented data.
+- The success rate of the design pipeline cannot be assessed from the provided information, as the number of designs attempted and the fraction that succeeded are not reported.

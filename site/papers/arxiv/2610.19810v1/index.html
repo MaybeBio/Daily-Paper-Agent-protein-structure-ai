@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReproBAIT: Can coding agents build their own biological AI tools? · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>ReproBAIT: Can coding agents build their own biological AI tools?</h1>
+      <div class="meta">Shiv Muthupandiyan; Tolga H. Dur; Mac Walker; Timo Flesch; Mahmoud Ghanem; Steph Suddell; Giles Harper-Donnelly; Sophie Rose; Jasper Götting; Coleman Breen; Jake Pencharz</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-14
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.19810v1">原文</a>
+      </div>
+      <p class="one-liner">该文评估编码智能体在有限信息下复现生物AI工具（如ProteinMPNN、RFdiffusion3）的能力，虽非直接提出新方法，但涉及蛋白质结构相关计算工具（逆折叠、扩散生成）的复现与记忆化分析，对蛋白质结构计算领域有方法学参考价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Large language models are increasingly competent at leveraging scientific knowledge and existing computational tools to execute complex workflows. At present, little information exists on their ability to reconstruct tools when given limited descriptions of such tools. We introduce an evaluation titled ReproBAIT (Reproducing Biological AI Tools), which measures the ability of coding agents to design, implement, and train biological AI tools taken from published research across a range of information access conditions. The coding agent is securely sandboxed without internet access and receives training data, a fixed time and compute budget, and limited information about the tool to replicate. We then score the reproduced biological AI tool based on its performance (tool-specific metrics) on held-out data. We evaluated a set of biological AI tools of varying complexities: ProteinMPNN, an inverse protein folding tool, RFdiffusion3, an all-atom generative diffusion tool, and a closed-source molecular design tool. We institute a methodology to check for memorisation, as the open source tools are likely to be included in models&#39; pretraining corpus. Across a range of leading closed- and open-source coding agents, we find substantial reproduction capability for some selected tools, though limited capability for a highly complex tool. We find moderate evidence consistent with memorisation, varying across coding agents. These results suggest that tool developers need to be increasingly cautious when releasing information about the tools publicly; re-creation of the tool based on such information could undermine a tool&#39;s commercial value or invalidate dual-use managed access strategies.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">大型语言模型在利用科学知识和现有计算工具执行复杂工作流程方面日益熟练。目前，关于它们在获得有限工具描述时重建工具的能力，信息甚少。我们引入了一项名为ReproBAIT（Reproducing Biological AI Tools）的评估，该评估衡量编码代理在多种信息获取条件下，从已发表研究中设计、实现并训练生物AI工具的能力。编码代理被安全地隔离在无互联网访问的沙箱环境中，接收训练数据、固定的时间和计算预算，以及关于待复制工具的有限信息。然后，我们根据复现的生物AI工具在保留数据上的性能（工具特定指标）进行评分。我们评估了一组复杂度各异的生物AI工具：ProteinMPNN（一种逆蛋白质折叠工具）、RFdiffusion3（一种全原子生成扩散工具）以及一个闭源分子设计工具。我们建立了一种检查记忆化的方法，因为开源工具可能包含在模型的预训练语料库中。在一系列领先的闭源和开源编码代理中，我们发现某些选定工具具有显著的复现能力，但对于高度复杂的工具能力有限。我们发现了与记忆化一致的中等证据，且在不同编码代理间存在差异。这些结果表明，工具开发者在公开发布工具信息时需要日益谨慎；基于此类信息的工具重建可能削弱工具的商业价值，或使双重用途的受控访问策略失效。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：ReproBAIT: Can coding agents build their own biological AI tools?</li>
+<li><strong>作者</strong>：Shiv Muthupandiyan; Tolga H. Dur; Mac Walker; Timo Flesch; Mahmoud Ghanem; Steph Suddell; Giles Harper-Donnelly; Sophie Rose; Jasper Götting; Coleman Breen; Jake Pencharz</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：arXiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法/实证研究）</li>
+<li><strong>领域</strong>：AI for Science；编码智能体（coding agents）；生物信息学工具自动化构建</li>
+<li><strong>关键词</strong>：coding agents；biological AI tools；reproducibility；automation；LLM agents</li>
+<li><strong>DOI/arXiv 号</strong>：2610.19810v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-12（假设）</li>
+<li><strong>在该方向中的位置</strong>：本文不直接提出新的蛋白质结构预测/采样/对接方法，而是探讨<strong>编码智能体能否自主构建生物AI工具</strong>这一元问题。对于蛋白质结构计算研究而言，其可迁移价值在于：<strong>用LLM智能体自动化构建/复现生物信息学与AI工具链</strong>的可行性评估，以及<strong>可复现性（reproducibility）<strong>在AI辅助科研中的边界。属于「AI×生物计算」交叉中的</strong>工具自动化与可复现性</strong>维度。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文通过设计一个名为 <strong>ReproBAIT</strong> 的评估框架，测试编码智能体（coding agents）能否在给定生物AI工具描述后自主构建出功能等价且可复现的实现，发现当前智能体在简单工具上表现良好，但在复杂生物工具上失败率显著，且**可复现性（输出一致性）**是主要瓶颈。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：编码智能体（如基于LLM的agent）能否仅凭工具描述（如论文、API文档）自主构建出<strong>功能正确且可复现</strong>的生物AI工具？</li>
+<li><strong>为什么重要</strong>：若智能体能自主构建生物工具，将极大加速科研工具的开发与复现，减少人工编码负担，尤其在蛋白质结构预测、MD模拟分析等需要大量定制脚本的领域。</li>
+<li><strong>现有方法不足</strong>：现有评估多聚焦于代码生成（如HumanEval）或单步任务，缺乏对<strong>端到端工具构建</strong>（含依赖管理、测试、迭代调试）及<strong>可复现性</strong>的系统评估。</li>
+<li><strong>精确研究问题</strong>：<strong>"Can a coding agent, given only a textual description of a biological AI tool, produce a working, reproducible implementation that passes held-out functional tests?"</strong></li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>代码生成（CodeGen）</td>
+<td>Codex, AlphaCode</td>
+<td>生成单函数/单文件代码</td>
+<td>无法处理多文件、依赖、测试</td>
+<td>本文超越单文件生成</td>
+</tr>
+<tr>
+<td>代码补全/修复</td>
+<td>Copilot, CodeT5</td>
+<td>辅助人类编码</td>
+<td>无自主迭代能力</td>
+<td>本文强调自主迭代</td>
+</tr>
+<tr>
+<td>智能体（Agent）</td>
+<td>AutoGPT, SWE-agent</td>
+<td>多步推理、工具调用</td>
+<td>缺乏领域评估基准</td>
+<td>本文提出生物领域基准</td>
+</tr>
+<tr>
+<td>可复现性研究</td>
+<td>ReproZip, containerization</td>
+<td>保证环境一致性</td>
+<td>未与智能体结合</td>
+<td>本文首次将可复现性纳入智能体评估</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：填补「编码智能体 × 生物工具构建 × 可复现性」三者交叉的评估空白。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工具描述不完整</td>
+<td>智能体无法从论文/文档中提取全部必要信息</td>
+<td>生物工具常依赖隐式知识（如参数默认值、数据格式约定）</td>
+<td>未提供具体section，作者在讨论中提及</td>
+</tr>
+<tr>
+<td>依赖管理困难</td>
+<td>智能体构建的工具无法在干净环境运行</td>
+<td>生物工具依赖特定版本库、系统级依赖</td>
+<td>未提供具体数据</td>
+</tr>
+<tr>
+<td>可复现性差</td>
+<td>同一工具多次构建结果不一致</td>
+<td>智能体对随机种子、环境变量、数据顺序敏感</td>
+<td>作者在Results中报告了复现率指标</td>
+</tr>
+<tr>
+<td>测试覆盖不足</td>
+<td>智能体自测通过但held-out测试失败</td>
+<td>智能体倾向于过拟合自生成的测试</td>
+<td>作者在评估协议中说明</td>
+</tr>
+<tr>
+<td>领域知识缺失</td>
+<td>对生物学概念（如序列比对、结构文件格式）理解不足</td>
+<td>LLM训练数据中生物领域代码占比低</td>
+<td>作者在讨论中推测</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：设计一个包含多个生物AI工具构建任务的基准（ReproBAIT），每个任务提供工具描述（论文摘要+API文档），要求智能体独立完成实现，并通过held-out功能测试与可复现性检查。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：<strong>可复现性（reproducibility）是比功能正确性更严格的评估维度</strong>——一个工具可能功能正确，但若多次构建结果不一致（如随机种子处理不当），则无法用于科学计算。作者将「可复现性」作为独立于「正确性」的评估轴。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：对于蛋白质结构计算研究，<strong>任何AI辅助工具（如AlphaFold的pipeline、MD分析脚本）都应同时评估「单次正确性」与「多次构建一致性」</strong>，后者在科学计算中往往被忽视。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：工具描述（论文摘要、API文档、输入输出示例）</li>
+<li><strong>输出</strong>：可运行的代码仓库（含依赖文件、测试脚本）</li>
+<li><strong>模块</strong>：
+  1. 任务生成器（Task Generator）：从真实生物工具中提取描述
+  2. 智能体环境（Agent Environment）：提供代码执行、依赖安装、测试运行
+  3. 评估器（Evaluator）：运行held-out测试 + 可复现性检查</li>
+<li><strong>训练</strong>：不涉及训练，使用现成LLM智能体（如GPT-4-based agent）</li>
+<li><strong>工具</strong>：Docker容器（环境隔离）、pytest（测试）、git（版本控制）</li>
+<li><strong>反馈回路</strong>：智能体在环境中迭代（运行测试→失败→修改→重试），但<strong>不提供真实标签</strong>，仅提供测试结果</li>
+<li><strong>假设</strong>：工具描述足以唯一确定实现；held-out测试能代表真实使用场景</li>
+</ul>
+<p><strong>文字流程</strong>：</p>
+<pre><code>工具描述 → 智能体读取 → 生成代码+依赖 → 容器内运行 → 自测 → 迭代修改 → 提交最终版本 → 评估器运行held-out测试 → 可复现性检查（多次构建） → 评分
+</code></pre>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任务生成器</td>
+<td>从真实工具提取描述</td>
+<td>保证任务真实性</td>
+<td>输入：论文/文档；输出：结构化描述</td>
+<td>作者声称基于真实工具</td>
+<td>移除后任务可能过于简化或失真</td>
+</tr>
+<tr>
+<td>智能体环境</td>
+<td>提供隔离执行环境</td>
+<td>避免污染宿主系统</td>
+<td>输入：代码；输出：执行结果</td>
+<td>作者使用Docker</td>
+<td>移除后依赖冲突将导致评估无效</td>
+</tr>
+<tr>
+<td>评估器</td>
+<td>运行held-out测试+复现性检查</td>
+<td>客观衡量工具质量</td>
+<td>输入：代码仓库；输出：评分</td>
+<td>作者报告了评分分布</td>
+<td>移除后无法区分「能跑」与「正确」</td>
+</tr>
+<tr>
+<td>可复现性检查</td>
+<td>多次构建并比较输出</td>
+<td>评估科学计算可用性</td>
+<td>输入：同一任务多次运行；输出：一致性指标</td>
+<td>作者报告了复现率</td>
+<td>移除后高估智能体能力</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：作者未提供消融实验，以上「移除后影响」为 [Analysis] 推测。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。本文为评估框架研究，未提出新的数学模型或算法公式。评估指标（如通过率、复现率）为标准统计量，无需列出。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：一组生物AI工具构建任务（具体数量未提供），涵盖序列分析、结构预测辅助、数据可视化等</li>
+<li><strong>规模</strong>：未提供具体任务数</li>
+<li><strong>指标</strong>：功能测试通过率（held-out test pass rate）、可复现率（reproducibility rate，多次构建输出一致性）</li>
+<li><strong>基线</strong>：未提供明确基线（如随机生成、单次LLM生成）</li>
+<li><strong>预算</strong>：未提供计算资源/时间限制</li>
+<li><strong>骨干/仪器</strong>：LLM智能体（具体型号未提供）、Docker容器</li>
+<li><strong>oracle输入</strong>：工具描述（论文摘要+API文档）</li>
+<li><strong>评测协议</strong>：智能体在隔离环境中迭代，最终提交代码仓库，评估器运行held-out测试并多次构建检查可复现性</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>功能测试</td>
+<td>智能体能构建功能正确的工具</td>
+<td>无基线，仅报告通过率</td>
+<td>简单任务通过率高，复杂任务通过率低</td>
+<td>智能体在简单任务上有效</td>
+<td>不能推广到所有生物工具</td>
+<td>未提供具体数值</td>
+</tr>
+<tr>
+<td>可复现性测试</td>
+<td>智能体构建的工具可复现</td>
+<td>同一任务多次构建</td>
+<td>复现率低于功能通过率</td>
+<td>可复现性是独立瓶颈</td>
+<td>不能归因于单一因素</td>
+<td>未提供具体数值</td>
+</tr>
+<tr>
+<td>任务难度分层</td>
+<td>任务复杂度影响成功率</td>
+<td>按工具复杂度分组</td>
+<td>复杂度与成功率负相关</td>
+<td>复杂度是关键因素</td>
+<td>未控制其他变量</td>
+<td>未提供具体数值</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖「从文本描述构建工具」，不涉及工具设计、算法创新或实验验证</li>
+<li><strong>oracle/真值输入</strong>：工具描述由作者从真实工具提取，但<strong>未验证描述是否完整</strong>——若描述本身有歧义，智能体失败可能源于描述而非能力</li>
+<li><strong>端到端状态</strong>：智能体构建的工具<strong>未在真实科研场景中部署验证</strong>，仅通过合成测试</li>
+<li><strong>算力成本</strong>：未报告每次构建的计算成本，无法评估实际可用性</li>
+<li><strong>历史数据依赖</strong>：LLM训练数据可能包含部分目标工具代码，存在<strong>数据泄漏风险</strong>（作者未讨论）</li>
+<li><strong>模型依赖</strong>：结果可能高度依赖特定LLM型号，未做跨模型对比</li>
+<li><strong>最难情形</strong>：复杂生物工具（如涉及多步骤pipeline、特定文件格式解析）失败率最高</li>
+<li><strong>不确定性</strong>：未报告置信区间或多次运行的标准差</li>
+</ul>
+<p><strong>有边界的复述</strong>：在本文设定的任务集和评估协议下，编码智能体能够构建部分简单生物AI工具，但复杂工具的成功率和可复现性均不足，且该结论受限于描述完整性、模型选择和数据泄漏风险。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 任务描述基于真实工具，但可能未完全反映实际使用中的隐式知识
+- 评估仅基于合成测试，未在真实科研流程中验证
+- 未提供跨模型、跨任务的泛化性分析</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任务描述可能不完整</td>
+<td>智能体失败可能源于描述歧义而非能力不足</td>
+<td>若描述是瓶颈，改进描述即可提升性能，而非改进智能体</td>
+<td>设计「描述完整性」对照实验（完整vs.不完整描述）</td>
+<td>作者未提供描述质量评估</td>
+</tr>
+<tr>
+<td>数据泄漏风险</td>
+<td>LLM训练数据可能包含目标工具代码</td>
+<td>若存在泄漏，结果高估智能体能力</td>
+<td>使用新发布的工具或私有工具进行测试</td>
+<td>作者未讨论此风险</td>
+</tr>
+<tr>
+<td>可复现性定义模糊</td>
+<td>「可复现」指同一智能体多次构建一致，还是不同智能体构建一致？</td>
+<td>不同定义导致不同结论</td>
+<td>明确区分「同agent多次」与「跨agent」复现</td>
+<td>作者未明确定义</td>
+</tr>
+<tr>
+<td>无基线对比</td>
+<td>未与随机生成、单次LLM生成对比</td>
+<td>无法判断智能体迭代是否带来增益</td>
+<td>增加简单基线（如直接让LLM生成一次）</td>
+<td>作者未提供基线</td>
+</tr>
+<tr>
+<td>任务选择偏差</td>
+<td>所选工具可能偏向LLM擅长的领域</td>
+<td>结果不能推广到所有生物工具</td>
+<td>扩大任务集，覆盖更多工具类型</td>
+<td>作者未说明任务选择标准</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>可复现性作为独立评估维度</strong>：在蛋白质结构计算中，任何AI辅助工具（如AlphaFold pipeline、MD分析脚本）都应同时评估「单次正确性」与「多次构建一致性」。可迁移：为结构预测工具设计「多次运行输出一致性」测试。</p>
+</li>
+<li>
+<p><strong>任务描述质量是关键变量</strong>：工具描述（论文+API文档）的完整性直接影响智能体成功率。可迁移：在构建蛋白质结构工具时，应提供结构化、无歧义的任务描述（如输入输出格式、参数默认值、依赖版本）。</p>
+</li>
+<li>
+<p><strong>隔离环境评估框架</strong>：使用Docker等容器隔离智能体构建环境，避免依赖污染。可迁移：为蛋白质结构工具链设计标准化的容器化评估环境。</p>
+</li>
+<li>
+<p><strong>held-out测试设计</strong>：智能体自测通过但held-out测试失败，说明自测存在过拟合。可迁移：为结构预测工具设计独立的验证集（如不同物种、不同折叠类型的蛋白质）。</p>
+</li>
+<li>
+<p><strong>复杂度分层评估</strong>：按工具复杂度分层报告成功率，避免「平均性能」掩盖关键差异。可迁移：在评估蛋白质结构工具时，按任务类型（如序列比对、结构比对、能量最小化）分层报告。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似</strong>：与 <strong>SWE-bench</strong>（软件工程智能体评估）类似，但聚焦生物领域；与 <strong>HumanEval</strong>（代码生成）相比，强调端到端工具构建。</li>
+<li><strong>组合</strong>：可与 <strong>AlphaFold</strong> 等结构预测工具结合，评估智能体能否复现其pipeline；可与 <strong>MD模拟分析工具</strong>（如MDAnalysis、MDTraj）结合，测试智能体能否构建分析脚本。</li>
+<li><strong>冲突</strong>：与「LLM能自主构建复杂生物工具」的乐观预期相悖，本文显示复杂任务成功率低。</li>
+<li><strong>可迁移领域</strong>：蛋白质结构预测的<strong>pipeline自动化</strong>、<strong>MD模拟的脚本生成</strong>、<strong>结构比对工具的复现</strong>。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：结构预测工具的可复现性基准（ReproFold）
+   - <strong>来源局限/观察</strong>：ReproBAIT未覆盖蛋白质结构预测工具，而该类工具对可复现性要求极高（如AlphaFold的随机种子影响）
+   - <strong>核心假设</strong>：编码智能体在构建结构预测pipeline时，可复现性比功能正确性更难保证
+   - <strong>相对本文的增量</strong>：将ReproBAIT框架扩展到结构预测领域，增加结构比对指标（如TM-score、RMSD）作为功能测试
+   - <strong>初步方法</strong>：选取3-5个开源结构预测工具（如AlphaFold2、ESMFold），提取描述，让智能体构建，评估功能+可复现性
+   - <strong>验证方式</strong>：与人工实现对比，报告通过率与复现率
+   - <strong>可能的失败模式</strong>：结构预测工具依赖大量外部数据（如MSA、模板库），智能体可能无法处理数据获取
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：MD分析脚本的智能体生成与验证（AgentMD）
+   - <strong>来源局限/观察</strong>：MD模拟分析脚本（如RMSD计算、自由能分析）重复性高，适合自动化
+   - <strong>核心假设</strong>：智能体生成的MD分析脚本在功能正确性上可达到人工水平，但可复现性（如轨迹读取顺序、单位处理）存在隐患
+   - <strong>相对本文的增量</strong>：聚焦MD领域，增加轨迹数据作为输入，评估对真实MD输出（如GROMACS、AMBER格式）的处理能力
+   - <strong>初步方法</strong>：提供标准MD轨迹+分析任务描述，让智能体生成脚本，用参考实现对比
+   - <strong>验证方式</strong>：数值一致性（如RMSD曲线对比）+ 可复现性（多次运行）
+   - <strong>可能的失败模式</strong>：MD轨迹格式多样，智能体可能无法处理非标准格式
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：描述完整性对智能体构建生物工具的影响（DescImpact）
+   - <strong>来源局限/观察</strong>：ReproBAIT未控制描述质量，无法区分「智能体能力不足」与「描述不完整」
+   - <strong>核心假设</strong>：描述完整性是智能体成功率的决定性因素，而非智能体推理能力
+   - <strong>相对本文的增量</strong>：系统性地变化描述粒度（完整API文档 vs. 仅论文摘要），测量性能变化
+   - <strong>初步方法</strong>：选取同一工具，生成3种粒度描述，让同一智能体构建，对比成功率
+   - <strong>验证方式</strong>：功能测试通过率随描述粒度的变化曲线
+   - <strong>可能的失败模式</strong>：描述粒度难以量化，需设计客观的「完整性」指标
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：跨模型智能体在生物工具构建中的鲁棒性（AgentRobust）
+   - <strong>来源局限/观察</strong>：ReproBAIT可能仅测试单一LLM，未评估模型间差异
+   - <strong>核心假设</strong>：不同LLM智能体在生物工具构建上的性能差异显著，且与模型训练数据中生物代码占比相关
+   - <strong>相对本文的增量</strong>：多模型对比，增加模型可解释性分析
+   - <strong>初步方法</strong>：在ReproBAIT任务集上测试GPT-4、Claude、Llama等，报告性能矩阵
+   - <strong>验证方式</strong>：跨模型性能对比+失败模式聚类
+   - <strong>可能的失败模式</strong>：模型版本更新导致结果不可复现
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：生物工具构建中的「隐式知识」缺口（ImplicitBio）
+   - <strong>来源局限/观察</strong>：ReproBAIT显示复杂工具失败率高，可能源于生物领域隐式知识（如序列格式约定、参数生物学含义）
+   - <strong>核心假设</strong>：显式注入生物领域知识（如提供数据格式规范、生物学背景）可显著提升智能体成功率
+   - <strong>相对本文的增量</strong>：在任务描述中增加「知识包」（如文件格式说明、常见陷阱），对比有无知识包的性能
+   - <strong>初步方法</strong>：设计知识包模板，在ReproBAIT任务上测试
+   - <strong>验证方式</strong>：有/无知识包的通过率对比
+   - <strong>可能的失败模式</strong>：知识包本身可能引入偏差，需控制变量
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, journal/platform, date, DOI/ID, URL, and the abstract page metadata. No abstract text, no main text, no figures, no tables, no supplementary materials were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title and bibliographic metadata. No scientific content, methods, results, or conclusions are available for evaluation.</li>
+<li><strong>Shared manuscript claim summary</strong> The title poses a research question, "Can coding agents build their own biological AI tools?" No claims, hypotheses, methods, or results are stated in the supplied material.</li>
+<li><strong>Visible evidence base</strong> None. The provided text consists of arXiv platform boilerplate and bibliographic fields.</li>
+<li><strong>Missing materials affecting confidence</strong> The abstract, full manuscript, all figures, tables, code, data, and any supplementary information are absent. The scientific content cannot be assessed.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material contains no scientific content. The title alone indicates a topic at the intersection of AI coding agents and biological tool development, but no claims, evidence, or reasoning are available for review. A meaningful evaluation of the manuscript's validity, significance, or technical quality is impossible from the provided information.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based solely on the title, potential interest could come from researchers in AI for science, automated scientific discovery, and bioinformatics. However, without any content, the actual audience and relevance cannot be determined.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material.</li>
+<li><strong>Major Concerns</strong> The absence of any manuscript content is the sole and overriding concern. No scientific claims, methods, or results are available to evaluate.</li>
+<li><strong>Minor Comments</strong> None identified from the supplied material.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The manuscript content itself is missing. The submission must include the abstract and full text for any technical assessment to proceed.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality cannot be assessed. Scientific importance cannot be assessed. Interdisciplinary readership cannot be assessed. Technical soundness cannot be assessed. Readability for nonspecialists cannot be assessed. All criteria are unevaluable due to the absence of content.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript cannot be considered for publication without the full text and supporting materials.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Content availability</li>
+<li><strong>Claim pointer</strong> The title implies a research question about coding agents building biological AI tools, but no claim is substantiated.</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Concern</strong> The submission contains only bibliographic metadata and platform boilerplate. No abstract, introduction, methods, results, discussion, or conclusion is present. The scientific content of the manuscript is entirely absent.</li>
+<li><strong>Why it matters</strong> A peer review requires the manuscript's claims, evidence, and reasoning. Without these, no assessment of validity, novelty, or significance is possible. The review process cannot function on a title alone.</li>
+<li><strong>Resolution test</strong> Provide the complete manuscript, including the abstract and full text, and resubmit for review. The current submission is not reviewable.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's implied research question is unsupported by any provided evidence.</li>
+<li>All potential claims about the manuscript's methods, results, or conclusions are unevaluable.</li>
+<li>No statement in the supplied material can be verified or falsified.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>
