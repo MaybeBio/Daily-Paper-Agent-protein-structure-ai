@@ -1,0 +1,78 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to full methods, figures, tables, or supplementary data
+- **Shared manuscript claim summary** The authors report that ultrasound pretreatment at 300 W alters the conformation of large yellow croaker bone protein, increases neutral protease accessibility, and enhances the degree of hydrolysis and the proportion of low-molecular-weight peptides. The resulting hydrolysates show increased osteogenic activity in MC3T3-E1 cells. Three proline-rich peptides are proposed as candidate osteogenic peptides based on LC-MS/MS and molecular docking, with EGFR as a predicted target. A 100-ns molecular dynamics simulation supports the stability of one peptide-EGFR complex.
+- **Visible evidence base** Abstract text only. No experimental details, quantitative data, statistical analyses, or methodological descriptions are available for verification.
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, LC-MS/MS data, docking scores, simulation parameters, statistical details, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents a coherent and potentially interesting workflow linking ultrasound pretreatment to enhanced osteogenic peptide release from fish bone protein. The topic is relevant to functional food research and marine by-product valorization. However, the evidence base available for review is limited to the abstract, which prevents verification of the central claims. Several logical gaps exist between the reported experiments and the conclusions drawn, particularly regarding the causal link between conformational changes and osteogenic activity, and the functional relevance of the proposed peptide-EGFR interactions.
+- **Who would be interested in the results, and why** Researchers in food science, particularly those working on bioactive peptide discovery, protein modification by physical pretreatments, and valorization of fishery by-products. The work may also interest investigators studying bone health applications of food-derived peptides and the use of computational approaches to screen bioactive candidates.
+- **Major strengths** The study addresses a practical problem in food processing with a clear application pathway. The combination of experimental hydrolysis, cellular assays, and computational screening is methodologically ambitious. The focus on fish bone protein as an underutilized by-product adds value to the sustainability narrative.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Causal inference
+  - **Claim pointer** The abstract states that ultrasound-induced conformational changes increased protease accessibility and consequently enhanced hydrolysis and osteogenic activity.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The causal chain from conformational alteration to enhanced osteogenic activity is asserted but not demonstrated. No data are presented to show that the conformational change is the mechanistic driver of improved hydrolysis, nor that the increased hydrolysis is responsible for the enhanced osteogenic activity rather than some other effect of ultrasound on the protein matrix or peptide composition.
+  - **Why it matters** The central premise of the study is that ultrasound acts through conformational modulation. Without direct evidence linking conformation to function, the mechanistic claim is unsupported and the study reduces to an empirical observation that ultrasound improves peptide release.
+  - **Resolution test** Provide quantitative conformational data (e.g., circular dichroism, fluorescence, surface hydrophobicity) correlated with hydrolysis kinetics and osteogenic outcomes. Include a control where conformational change is induced without ultrasound or where ultrasound is applied without enzymatic hydrolysis to isolate effects.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** Three peptides are proposed as candidate osteogenic peptides based on LC-MS/MS and molecular docking.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The identification of candidate peptides from a complex hydrolysate requires quantitative peptide abundance data, activity-guided fractionation, or at minimum a demonstration that these peptides are present in sufficient quantities to exert biological effects. The abstract provides no information on peptide abundance, no dose-response data, and no direct testing of the synthetic peptides in the cellular assay.
+  - **Why it matters** Without evidence that the proposed peptides are present at bioactive concentrations and that they reproduce the observed osteogenic effects, the claim that they are the active agents is speculative.
+  - **Resolution test** Synthesize the three peptides and test them individually and in combination in the MC3T3-E1 assay. Provide quantitative MS data showing their relative abundance in the active hydrolysate fraction.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Functional relevance of computational predictions
+  - **Claim pointer** Molecular docking predicted favorable interactions of all three peptides with EGFR, and a 100-ns MD simulation supported the stability of the GPPGPMGPPG-EGFR complex.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The functional relevance of EGFR binding to osteogenic activity is not established. No experimental validation of EGFR engagement is presented, and the connection between EGFR signaling and the observed osteogenic readouts is not explained. A 100-ns simulation is also relatively short for drawing robust conclusions about binding stability.
+  - **Why it matters** The computational results are presented as supporting evidence for the mechanism, but without experimental validation or a clear biological rationale linking EGFR to osteogenesis in this context, the relevance is unclear.
+  - **Resolution test** Perform EGFR activation or inhibition experiments in MC3T3-E1 cells with the candidate peptides. Provide longer simulations or experimental binding data (e.g., surface plasmon resonance, isothermal titration calorimetry).
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Reporting completeness
+  - **Affected element** Ultrasound parameters
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** Only the power (300 W) is reported. Frequency, duration, duty cycle, and temperature control are not mentioned.
+  - **Required correction** Report all relevant ultrasound parameters in the methods section.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Cell model justification
+  - **Affected element** MC3T3-E1 cell line
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The choice of MC3T3-E1 cells is appropriate for osteogenic studies, but the abstract does not state whether the cells were used in a differentiation or proliferation context, which affects interpretation.
+  - **Required correction** Clarify the experimental context and the specific osteogenic markers measured.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology precision
+  - **Affected element** "Osteogenic activity"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The term is used broadly. The abstract reports proliferation, ALP activity, and mineralization, which are related but distinct aspects of osteogenic response.
+  - **Required correction** Use more precise terminology or define the scope of "osteogenic activity" as used in the study.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Comparative context
+  - **Affected element** Comparison to untreated hydrolysates
+  - **Evidence pointer** Abstract only; location not provided
+  - **Issue** The abstract states that ultrasound-treated hydrolysates showed the highest osteogenic activity, but the comparator conditions are not specified.
+  - **Required correction** Clearly state the control conditions and the magnitude of improvement over non-ultrasound-treated samples.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The causal link between conformational change and osteogenic activity must be experimentally demonstrated, and the proposed peptides must be validated as the active components. R1-M3 requires experimental validation of the EGFR interaction to be meaningful.
+- **Assessment against Nature-style criteria** Originality: moderate. The combination of ultrasound pretreatment with osteogenic peptide discovery is not entirely novel, but the specific application to fish bone protein adds some originality. Scientific importance: moderate. The work addresses a relevant sustainability and health topic, but the conceptual advance is incremental. Interdisciplinary readership: limited. The work will primarily interest food scientists and peptide researchers rather than a broad scientific audience. Technical soundness: not assessable from the abstract alone. The computational and experimental approaches are reasonable in principle, but the evidence presented is insufficient to evaluate rigor. Readability for nonspecialists: the abstract is clearly written and accessible, though some terms assume familiarity with the field.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting workflow, but the central mechanistic claims and the identification of active peptides require substantial additional evidence. Supportive if the blocking concerns are resolved with appropriate experimental data.
+
+## Risk / unsupported claims
+- The claim that ultrasound-induced conformational alteration is the mechanistic cause of enhanced hydrolysis and osteogenic activity is unsupported without direct conformational and functional correlation data.
+- The proposal of three specific peptides as osteogenic candidates is unsupported without abundance data and direct bioactivity testing.
+- The functional relevance of EGFR binding to osteogenic activity is unsupported without experimental validation.
+- The 100-ns MD simulation as evidence of complex stability is weak given the short timescale and lack of experimental corroboration.
+- The general statement that ultrasound pretreatment "facilitates the generation" of osteogenic hydrolysates is only supported for the specific conditions tested, and the abstract does not report the range of conditions explored.

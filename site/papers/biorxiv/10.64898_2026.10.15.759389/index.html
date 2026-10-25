@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DEEP: Extracting Latent Energetic Landscapes from Protein Structure Predictors · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>DEEP: Extracting Latent Energetic Landscapes from Protein Structure Predictors</h1>
+      <div class="meta">Zsofia Borbala Rozsa; Gabor Erdos</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-21
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.15.759389">原文</a>
+      </div>
+      <p class="one-liner">该文提出DEEP框架，从蛋白质结构预测器的距离分布中提取潜在能量景观，用于零样本预测突变稳定性和区分天然构象，核心贡献在蛋白质结构计算建模，方法新颖且与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Modern protein structure predictors learn complex sequence-structure relationships, yet the extent to which their internal representations capture the energetic principles governing protein stability and conformational preferences remains unclear. Here, we introduce DEEP (Distogram Encoded Energetic Potential), a general framework that extracts effective statistical potentials directly from predicted residue-pair distance distributions, using the models own terminal distance state as an internal reference without training on experimental stability data. Applied to Boltz-2 (DEEP-Boltz) achieves a mean per-assay Spearman correlation of 0.720 across 64 ProteinGym stability assays, numerically outperforming all 97 published zero-shot methods in the matched comparison on level with the best performing predictors trained directly on experimental stability measurements. Beyond mutation effects, DEEP-Boltz accurately distinguishes native-like from non-native conformations across more than 180,000 Rosetta decoys. Applying DEEP to AlphaFold2 reveals nearly identical conformational discrimination but substantially weaker mutation-effect prediction, demonstrating that recognizing favorable conformations and capturing their energetic sensitivity to sequence changes are distinct properties of learned structural representations. Together, these findings establish that protein structure predictors encode accessible energetic information beyond their geometric predictions and that this information can be extracted. We release the framework and DEEP-Boltz as a freely available tool for extracting these latent energetic representations and for zero-shot prediction of mutation-induced protein stability changes.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">现代蛋白质结构预测器能够学习复杂的序列-结构关系，但其内部表征在多大程度上捕捉了控制蛋白质稳定性和构象偏好的能量学原理仍不清楚。在此，我们引入DEEP（距离图编码能量势，Distogram Encoded Energetic Potential），这是一个通用框架，直接从预测的残基对距离分布中提取有效的统计势，利用模型自身的末端距离状态作为内部参考，无需在实验稳定性数据上进行训练。应用于Boltz-2（DEEP-Boltz）在64个ProteinGym稳定性检测中实现了平均每检测Spearman相关系数0.720，在匹配比较中数值上优于所有97种已发表的零样本方法，与直接基于实验稳定性测量训练的最佳性能预测器水平相当。除突变效应外，DEEP-Boltz在超过180,000个Rosetta诱饵中准确区分天然样构象与非天然构象。将DEEP应用于AlphaFold2揭示了几乎相同的构象区分能力，但突变效应预测能力显著较弱，表明识别有利构象和捕捉其对序列变化的能量敏感性是学习到的结构表征的不同属性。综合这些发现，我们确立了蛋白质结构预测器在其几何预测之外编码了可获取的能量信息，且这些信息可以被提取。我们发布该框架和DEEP-Boltz作为免费可用工具，用于提取这些潜在能量表征以及零样本预测突变诱导的蛋白质稳定性变化。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：DEEP: Extracting Latent Energetic Landscapes from Protein Structure Predictors</li>
+<li><strong>作者</strong>：Zsofia Borbala Rozsa; Gabor Erdos</li>
+<li><strong>单位</strong>：未提供（推测为 ELTE，基于 GitHub 组织名 erdoslab-elte）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026-10-21</li>
+<li><strong>论文类型</strong>：方法学（Method）论文，提出新框架 + 基准评测</li>
+<li><strong>领域</strong>：蛋白质结构预测 × 能量景观提取 × 突变稳定性预测（zero-shot）</li>
+<li><strong>关键词</strong>：DEEP, Distogram Encoded Energetic Potential, statistical potential, protein stability, mutation effect prediction, decoy discrimination, Boltz-2, AlphaFold2</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.10.15.759389</li>
+<li><strong>代码</strong>：https://github.com/erdoslab-elte/DEEP-Boltz</li>
+<li><strong>数据</strong>：ProteinGym（64 个稳定性 assay）、Rosetta decoys（&gt;180,000 个）</li>
+<li><strong>阅读日期</strong>：2026-10-21（预印本发布日）</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」交叉方向，具体位于「从结构预测器内部表征提取能量信息」这一新兴子领域。与直接训练稳定性预测器（如 ThermoNet、RaSP）不同，DEEP 不依赖实验稳定性数据训练，而是从结构预测器自身的 distogram 输出中提取统计势能。该工作连接了结构预测（AlphaFold2/Boltz-2）、能量景观建模（统计势能）与突变效应预测（zero-shot）三个子领域，为「结构预测器内部到底学到了什么」提供了新的探测手段。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 DEEP 框架，从蛋白质结构预测器（Boltz-2、AlphaFold2）输出的残基对距离分布（distogram）中提取有效统计势能，以模型自身的末端距离状态为内部参考（无需实验稳定性数据训练），在 64 个 ProteinGym 稳定性 assay 上达到平均 Spearman 相关 0.720（DEEP-Boltz），超越 97 个已发表的 zero-shot 方法，并在 &gt;180,000 个 Rosetta decoys 上准确区分天然态与非天然构象。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：现代蛋白质结构预测器（如 AlphaFold2、Boltz-2）的内部表征在多大程度上捕获了控制蛋白质稳定性和构象偏好的能量学原理？这些能量信息能否被显式提取并用于突变稳定性预测和构象判别？</li>
+<li><strong>为什么重要</strong>：如果结构预测器的内部表征确实编码了能量信息，那么这些模型不仅是几何预测器，还可以作为免费的「能量函数」，用于突变效应预测、蛋白质设计、构象采样等下游任务，而无需昂贵的实验数据或额外的 MD 模拟。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>直接训练稳定性预测器（如基于实验数据的监督方法）需要大量实验标注，泛化受限。</li>
+<li>传统统计势能（如 Rosetta）依赖已知结构数据库的频次统计，分辨率有限。</li>
+<li>已有从 AlphaFold2 提取能量的尝试（如 ESM 类方法）多依赖 log-likelihood 或注意力权重，缺乏系统的能量学框架。</li>
+<li><strong>精确研究问题</strong>：Can a general framework extract effective statistical potentials from predicted residue-pair distance distributions of structure predictors, without training on experimental stability data, such that the resulting potential achieves state-of-the-art zero-shot mutation stability prediction and accurate native/non-native conformational discrimination?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络为「经外部核验」+「本文框架」混合标注。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统统计势能</td>
+<td>Rosetta, DFIRE, GOAP</td>
+<td>可解释、计算快</td>
+<td>依赖结构数据库频次、分辨率有限、缺乏序列上下文</td>
+<td>DEEP 作为「现代版统计势能」，从预测器 distogram 提取</td>
+</tr>
+<tr>
+<td>基于进化序列的方法</td>
+<td>EVE, DeepSequence</td>
+<td>捕获共进化信号</td>
+<td>需多序列比对、对单点突变敏感度有限</td>
+<td>DEEP 不依赖 MSA 深度，直接从结构预测器输出提取</td>
+</tr>
+<tr>
+<td>结构预测器作为能量函数</td>
+<td>AlphaFold2 pLDDT/pAE, ESM-IF</td>
+<td>利用预训练表征</td>
+<td>多为启发式打分，缺乏系统能量学框架</td>
+<td>DEEP 提供系统化的 distogram→势能映射框架</td>
+</tr>
+<tr>
+<td>监督式稳定性预测</td>
+<td>ThermoNet, RaSP, P rot</td>
+<td>精度高</td>
+<td>需实验数据训练、泛化受限</td>
+<td>DEEP-Boltz 在 zero-shot 下达到与监督方法相当的水平</td>
+</tr>
+<tr>
+<td>零样本突变效应预测</td>
+<td>97 种已发表方法（ProteinGym 基准）</td>
+<td>无需实验数据</td>
+<td>精度参差、机制不透明</td>
+<td>DEEP-Boltz 在 64 个 assay 上平均 Spearman 0.720，超越全部 97 种</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：DEEP 填补了「结构预测器内部表征 → 显式能量函数」这一空白，提供了一种无需实验数据、无需额外训练的通用能量提取框架。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构预测器的能量信息未被利用</td>
+<td>AlphaFold2/Boltz-2 输出 distogram，但仅用于几何预测</td>
+<td>缺乏将距离分布映射为能量的系统框架</td>
+<td>Abstract: "the extent to which their internal representations capture the energetic principles... remains unclear"</td>
+</tr>
+<tr>
+<td>突变稳定性预测依赖实验数据</td>
+<td>监督方法需大量实验标注，zero-shot 方法精度不足</td>
+<td>实验数据稀缺、标注成本高；现有 zero-shot 方法缺乏能量学基础</td>
+<td>Abstract: DEEP "without training on experimental stability data" 达到与监督方法相当水平</td>
+</tr>
+<tr>
+<td>构象判别与突变效应预测被混为一谈</td>
+<td>假设「能区分天然态」即「能预测突变效应」</td>
+<td>两者可能是结构表征的不同属性</td>
+<td>Abstract: "recognizing favorable conformations and capturing their energetic sensitivity to sequence changes are distinct properties"</td>
+</tr>
+<tr>
+<td>统计势能分辨率有限</td>
+<td>传统势能基于频次统计，缺乏序列上下文</td>
+<td>依赖已知结构数据库、无法泛化到新序列</td>
+<td>Abstract: DEEP 从预测器 distogram 提取，利用模型学到的序列-结构关系</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>DEEP 从结构预测器（Boltz-2 或 AlphaFold2）输出的残基对距离分布（distogram）中提取有效统计势能。具体地，对每个残基对 (i, j)，预测器输出一个距离分布 P_ij(d)；DEEP 将该分布转换为能量项 E_ij(d) = -log P_ij(d)（或类似变换），并以模型自身的「末端距离状态」作为内部参考（即用预测器对天然序列的预测作为参考态），从而无需外部实验数据或已知结构数据库。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>洞察一</strong>：结构预测器的 distogram 输出不仅是几何预测，还隐式编码了能量学信息——因为预测器必须「理解」哪些残基对倾向于靠近/远离，才能做出准确预测。</li>
+<li><strong>洞察二</strong>：以模型自身的末端状态为参考（而非外部参考态），可以消除模型偏差，使提取的势能具有自洽性。</li>
+<li><strong>洞察三</strong>：构象判别（区分天然态 vs 非天然态）与突变效应预测（序列变化对稳定性的影响）是结构表征的两个不同属性，DEEP 框架可以分别评估这两个属性。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>预训练模型的中间/辅助输出（如 distogram）可能包含比主任务输出更丰富的物理信息，值得系统挖掘。</li>
+<li>「自参考」策略（用模型自身输出作为基线）可以避免外部参考态的选择偏差，是一种通用的无监督校准策略。</li>
+<li>一个框架的「通用性」应通过多个下游任务（突变效应 + 构象判别）来验证，而非单一基准。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质序列（单条），可选 MSA</li>
+<li><strong>输出</strong>：</li>
+<li>突变稳定性分数（ΔΔG 或稳定性变化排序）</li>
+<li>构象判别分数（native vs non-native）</li>
+<li><strong>模块</strong>：
+  1. <strong>结构预测器</strong>：Boltz-2 或 AlphaFold2，输出 distogram（残基对距离分布）
+  2. <strong>能量提取模块</strong>：将 distogram 转换为残基对能量项（如 -log P）
+  3. <strong>参考态模块</strong>：以模型对野生型序列的末端距离状态为内部参考
+  4. <strong>打分模块</strong>：对突变体或候选构象计算总能量分数</li>
+<li><strong>训练</strong>：无监督，不训练于实验稳定性数据</li>
+<li><strong>工具</strong>：Boltz-2、AlphaFold2、ProteinGym 基准、Rosetta decoy 集</li>
+<li><strong>反馈回路</strong>：无（前馈式提取）</li>
+<li><strong>假设</strong>：</li>
+<li>预测器的 distogram 输出编码了有效的能量学信息</li>
+<li>模型自身的末端状态可作为有效的参考态</li>
+<li>距离分布的对数变换可近似为有效势能</li>
+</ul>
+<p><strong>文字流程</strong>：
+1. 输入野生型序列 → 结构预测器（Boltz-2/AF2）→ 获得 distogram
+2. 对每个残基对，将距离分布转换为能量项
+3. 以野生型预测的末端状态为参考，计算突变体或候选构象的相对能量
+4. 输出稳定性分数或构象判别分数</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构预测器（Boltz-2/AF2）</td>
+<td>生成 distogram</td>
+<td>提供残基对距离分布，是能量提取的原料</td>
+<td>输入：序列；输出：distogram</td>
+<td>Abstract: "extracts effective statistical potentials directly from predicted residue-pair distance distributions"</td>
+<td>无 distogram 则整个框架无法工作（预期）</td>
+</tr>
+<tr>
+<td>能量转换模块</td>
+<td>将距离分布转换为能量项</td>
+<td>距离概率 → 能量的映射是统计力学的基本关系</td>
+<td>输入：distogram；输出：残基对能量</td>
+<td>Abstract: "using the models own terminal distance state as an internal reference"</td>
+<td>若移除，无法获得能量分数（预期）</td>
+</tr>
+<tr>
+<td>内部参考态模块</td>
+<td>以模型末端状态为参考</td>
+<td>消除模型偏差，提供自洽基线</td>
+<td>输入：野生型预测；输出：参考能量</td>
+<td>Abstract: "using the models own terminal distance state as an internal reference without training on experimental stability data"</td>
+<td>若移除，需外部参考态，可能引入偏差（预期）</td>
+</tr>
+<tr>
+<td>打分/判别模块</td>
+<td>计算突变效应或构象分数</td>
+<td>将能量转换为可比较的分数</td>
+<td>输入：能量项；输出：Spearman 相关或判别准确率</td>
+<td>Abstract: "achieves a mean per-assay Spearman correlation of 0.720"</td>
+<td>若移除，无法量化性能（预期）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于本文为预印本且提供的材料为摘要级别，未提供详细的消融实验数据。上述「移除后影响」均为预期效应，非实测消融结果。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>注：由于提供的材料仅为摘要，未包含具体公式。以下基于摘要描述推断核心公式形式，标注为 [Analysis]。</p>
+</blockquote>
+<p><strong>核心公式（推断）</strong>：</p>
+<p>$$E_{ij}(d) = -\log P_{ij}(d)$$</p>
+<ul>
+<li>$E_{ij}(d)$：残基对 (i, j) 在距离 d 处的有效能量</li>
+<li>$P_{ij}(d)$：结构预测器输出的残基对 (i, j) 距离分布</li>
+<li>直觉：距离概率越低，能量越高（Boltzmann 反比关系）</li>
+</ul>
+<p><strong>参考态公式（推断）</strong>：</p>
+<p>$$\Delta E = E_{\text{mutant}} - E_{\text{wildtype}}$$</p>
+<ul>
+<li>$E_{\text{mutant}}$：突变体序列的总能量</li>
+<li>$E_{\text{wildtype}}$：野生型序列的总能量（内部参考）</li>
+<li>直觉：以模型自身对野生型的预测为基线，突变体的相对能量变化即为稳定性变化</li>
+</ul>
+<blockquote>
+<p>来源：基于摘要中 "using the models own terminal distance state as an internal reference" 和 "extracts effective statistical potentials directly from predicted residue-pair distance distributions" 的推断。具体公式细节需查阅全文 Methods 节。</p>
+</blockquote>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<h3>数据集与评测协议</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>详情</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>突变效应数据集</td>
+<td>ProteinGym 稳定性 assay，64 个</td>
+</tr>
+<tr>
+<td>突变效应指标</td>
+<td>每个 assay 内的 Spearman 相关，取平均</td>
+</tr>
+<tr>
+<td>对比基线</td>
+<td>97 个已发表的 zero-shot 方法</td>
+</tr>
+<tr>
+<td>构象判别数据集</td>
+<td>Rosetta decoys，&gt;180,000 个</td>
+</tr>
+<tr>
+<td>构象判别任务</td>
+<td>区分天然态（native）与非天然态（non-native）构象</td>
+</tr>
+<tr>
+<td>模型</td>
+<td>Boltz-2（DEEP-Boltz）、AlphaFold2（DEEP-AF2）</td>
+</tr>
+<tr>
+<td>训练</td>
+<td>无监督，不训练于实验稳定性数据</td>
+</tr>
+</tbody>
+</table>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DEEP-Boltz 在 ProteinGym 上的突变效应预测</td>
+<td>DEEP 提取的势能可预测突变稳定性</td>
+<td>对比 97 个 zero-shot 方法</td>
+<td>平均 Spearman 0.720，超越全部 97 个方法</td>
+<td>DEEP 提取的势能具有 SOTA zero-shot 突变预测能力</td>
+<td>不能证明 DEEP 在所有 assay 上都最优（仅平均最优）</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>DEEP-Boltz 与监督方法对比</td>
+<td>DEEP 可达到监督方法水平</td>
+<td>对比「最佳监督方法」</td>
+<td>与最佳监督方法相当</td>
+<td>DEEP 无需实验数据即可达到监督水平</td>
+<td>不能证明 DEEP 超越所有监督方法</td>
+<td>Abstract: "on level with the best performing predictors trained directly on experimental stability measurements"</td>
+</tr>
+<tr>
+<td>DEEP-Boltz 在 Rosetta decoys 上的构象判别</td>
+<td>DEEP 可区分天然态与非天然态</td>
+<td>180,000+ decoys</td>
+<td>准确区分 native 与 non-native</td>
+<td>DEEP 提取的势能编码了构象偏好信息</td>
+<td>不能证明 DEEP 可用于构象采样或生成</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>DEEP-AF2 与 DEEP-Boltz 对比</td>
+<td>不同预测器的能量信息含量不同</td>
+<td>DEEP-AF2 vs DEEP-Boltz</td>
+<td>AF2 构象判别与 Boltz 几乎相同，但突变效应预测显著更弱</td>
+<td>构象判别与突变效应预测是结构表征的不同属性</td>
+<td>不能确定 AF2 与 Boltz 差异的具体机制</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：DEEP 的验证限于 (1) 单点突变的稳定性效应预测（ProteinGym 基准）和 (2) 天然态 vs 非天然态的二元构象判别（Rosetta decoys）。未验证：多点突变、构象采样、构象生成、蛋白质设计。</li>
+<li><strong>oracle/真值输入</strong>：ProteinGym 的稳定性标签来自实验测量；Rosetta decoys 的 native/non-native 标签来自 Rosetta 生成协议。DEEP 本身不接收这些标签作为训练信号。</li>
+<li><strong>端到端状态</strong>：DEEP 是「提取器」，依赖上游结构预测器（Boltz-2/AF2）的 distogram 输出。不是端到端的能量函数，而是「预测器 + 提取器」的组合。</li>
+<li><strong>算力成本</strong>：未提供具体算力数据。推断主要成本在结构预测器的前向传播（Boltz-2/AF2），DEEP 提取本身计算量较小。</li>
+<li><strong>历史数据依赖</strong>：DEEP 不依赖实验稳定性数据，但依赖结构预测器的预训练（Boltz-2/AF2 的训练数据）。</li>
+<li><strong>模型依赖</strong>：DEEP 的性能高度依赖上游预测器的质量。DEEP-AF2 与 DEEP-Boltz 的差异表明，不同预测器编码的能量信息量不同。</li>
+<li><strong>最难情形</strong>：突变效应预测中，对预测器训练分布之外的序列/突变类型可能失效；构象判别中，对与天然态能量接近的 near-native decoys 可能区分困难。</li>
+<li><strong>群体/领域边界</strong>：验证限于球状蛋白（ProteinGym 覆盖范围）；未验证膜蛋白、 intrinsically disordered proteins、核酸复合物等。</li>
+<li><strong>不确定性</strong>：预印本，未经同行评审；具体方法细节（如能量转换公式、参考态定义）需查阅全文。</li>
+</ul>
+<p><strong>有边界的复述</strong>：DEEP 从 Boltz-2 的 distogram 中提取的势能，在 ProteinGym 的 64 个稳定性 assay 上平均 Spearman 相关为 0.720，超越 97 个已发表 zero-shot 方法，与最佳监督方法相当；在 Rosetta decoys 上可准确区分天然态与非天然态。但该结论限于单点突变稳定性预测和二元构象判别任务，且依赖上游预测器的质量。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<blockquote>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+</blockquote>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要中未明确列出局限性。但可推断以下约束（标注为 [Analysis]）：
+  - DEEP 依赖上游预测器的 distogram 质量，不同预测器（AF2 vs Boltz-2）的能量信息含量不同。
+  - 验证范围限于 ProteinGym 稳定性 assay 和 Rosetta decoys，未覆盖更广泛的蛋白质类型和突变类型。
+  - 预印本状态，方法细节和局限性讨论需查阅全文。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DEEP 的「自参考」策略可能引入循环论证</td>
+<td>以模型自身对野生型的预测为参考，可能只是放大了模型自身的偏差，而非提取了真实的物理能量</td>
+<td>如果 DEEP 只是「模型自我一致性」的度量，而非真实能量，则其泛化性存疑</td>
+<td>将 DEEP 提取的势能与实验测定的能量（如折叠自由能）直接比较，而非仅比较排序相关性</td>
+<td>Abstract: "using the models own terminal distance state as an internal reference"</td>
+</tr>
+<tr>
+<td>平均 Spearman 0.720 可能掩盖 assay 间的巨大差异</td>
+<td>某些 assay 上可能表现极好，某些可能接近零相关</td>
+<td>平均指标可能高估方法的稳健性</td>
+<td>检查 64 个 assay 的 Spearman 分布（方差、最差表现）</td>
+<td>Abstract: "mean per-assay Spearman correlation of 0.720"</td>
+</tr>
+<tr>
+<td>与「97 个 zero-shot 方法」的对比可能不公平</td>
+<td>对比的 97 个方法可能来自不同时期、不同实现，且 DEEP 使用了更强的上游模型（Boltz-2）</td>
+<td>如果对比基线较弱，SOTA 结论可能不稳健</td>
+<td>与最新最强的 zero-shot 方法（如 ESM 系列）在同一上游模型条件下对比</td>
+<td>Abstract: "numerically outperforming all 97 published zero-shot methods"</td>
+</tr>
+<tr>
+<td>构象判别任务可能过于简单</td>
+<td>180,000 个 decoys 中，大部分可能远离天然态，区分「远距离」decoy 容易</td>
+<td>如果 DEEP 只能区分「明显错误」的构象，对 near-native 判别可能无效</td>
+<td>按 decoy 的 RMSD 分层报告判别准确率</td>
+<td>Abstract: "accurately distinguishes native-like from non-native conformations"</td>
+</tr>
+<tr>
+<td>DEEP-AF2 与 DEEP-Boltz 的差异未被解释</td>
+<td>为什么 AF2 的构象判别与 Boltz 相同但突变效应预测更弱？是模型架构差异还是训练数据差异？</td>
+<td>理解这一差异有助于设计更好的预测器</td>
+<td>系统比较 AF2 与 Boltz-2 的架构和训练数据差异，并做控制实验</td>
+<td>Abstract: "reveals nearly identical conformational discrimination but substantially weaker mutation-effect prediction"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>Distogram 作为能量信息来源</strong>：结构预测器的 distogram 输出可被重新解释为能量景观的投影。这一思路可迁移到其他输出类型（如 pLDDT、pAE、注意力权重），构建多通道能量提取框架。</p>
+</li>
+<li>
+<p><strong>自参考策略</strong>：以模型自身的「末端状态」为内部参考，避免了外部参考态（如已知结构数据库）的选择偏差。这一策略可迁移到任何需要「参考态」的势能提取任务，如蛋白质设计中的序列-结构兼容性评估。</p>
+</li>
+<li>
+<p><strong>构象判别 vs 突变效应预测的解耦</strong>：本文证明这两个任务是结构表征的不同属性。对本课题的启示：在设计评估协议时，不应假设「能区分构象」的模型必然「能预测突变效应」，需要分别评测。</p>
+</li>
+<li>
+<p><strong>Zero-shot 能量提取的可行性</strong>：无需实验数据训练即可达到监督方法水平，说明预训练结构预测器内部已编码大量能量学信息。这为「无监督能量函数」方向提供了有力证据。</p>
+</li>
+<li>
+<p><strong>跨模型迁移的评估框架</strong>：将同一 DEEP 框架应用于 Boltz-2 和 AF2，通过性能差异揭示不同模型内部表征的能量学信息含量差异。这种「同一提取器、不同上游模型」的对比设计可用于评估任何结构预测器的物理合理性。</p>
+</li>
+<li>
+<p><strong>对 MD/对接研究的启示</strong>：DEEP 提取的势能可作为 MD 模拟的初始打分函数、或作为对接构象排序的补充评分，与物理势能（如 AMBER/CHARMM）结合使用。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>
+<p><strong>AlphaFold2 的 distogram 输出</strong>：AF2 的 distogram 头输出残基对距离分布，原始论文（Jumper et al., 2021, Nature）将其用于结构模块的几何约束。DEEP 重新利用这一输出作为能量来源，与已有工作（如 AF2 的 pLDDT 作为置信度分数）形成互补。</p>
+</li>
+<li>
+<p><strong>统计势能传统</strong>：DEEP 与经典统计势能（如 DFIRE, Zhou &amp; Zhou, 2002; GOAP, Zhou &amp; Skolnick, 2011）在思想上一致——从频次/分布中提取能量，但 DEEP 的「频次」来自预测器的内部表征而非结构数据库。</p>
+</li>
+<li>
+<p><strong>ProteinGym 基准</strong>：ProteinGym（Notin et al., 2023）是突变效应预测的标准基准。DEEP-Boltz 在 64 个稳定性 assay 上的表现可与该基准中的 97 个方法直接对比。</p>
+</li>
+<li>
+<p><strong>Zero-shot 突变预测</strong>：与 ESM 系列（Meier et al., 2021; Lin et al., 2023）的 log-likelihood 方法、以及基于结构的方法（如 RaSP, Blaabjerg et al., 2023）形成对比。DEEP 的独特之处在于利用 distogram 而非序列或单一结构。</p>
+</li>
+<li>
+<p><strong>Boltz-2</strong>：Boltz-2（Wohlwend et al., 2024）是新一代结构预测器，DEEP 选择其作为主要上游模型，说明新一代预测器的 distogram 可能编码更丰富的能量信息。</p>
+</li>
+<li>
+<p><strong>[Analysis] 候选连接</strong>：DEEP 的自参考策略与「相对能量」概念（如 MM/PBSA 中的相对结合自由能）有相似之处，可探索将 DEEP 扩展到蛋白质-配体/蛋白质-蛋白质相互作用界面。</p>
+</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<h3>候选 1：DEEP-MD——将 DEEP 势能作为 MD 模拟的增强采样偏置</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：DEEP 提取的势能是静态的（基于单一序列的 distogram），未利用构象系综信息；MD 模拟的增强采样需要可微分的偏置势。</li>
+<li><strong>核心假设</strong>：DEEP 势能可作为副本交换 MD（REMD）或 metadynamics 的偏置势，加速构象采样，且比传统集体变量更「物理相关」。</li>
+<li><strong>初步方法</strong>：将 DEEP 势能实现为可微分的 PyTorch 模块，嵌入 OpenMM 或 AMBER 的自定义偏置力；在小型蛋白（如 villin headpiece）上比较 DEEP 偏置 MD 与常规 MD 的构象采样效率。</li>
+<li><strong>验证方式</strong>：比较 DEEP-MD 采样的构象系综与实验（NMR/晶体）构象的 RMSD 分布、以及折叠/去折叠自由能面。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：DEEP-Design——利用 DEEP 势能进行序列设计</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：DEEP 提取的势能对序列变化敏感（突变效应预测），但尚未用于序列设计。</li>
+<li><strong>核心假设</strong>：DEEP 势能可作为序列设计的可微目标函数，与结构预测器联合优化，实现「能量感知」的序列设计。</li>
+<li><strong>初步方法</strong>：将 DEEP 势能作为 ProteinMPNN 或 ESM-IF 的额外损失项，在目标结构上迭代优化序列，使 DEEP 势能最小化。</li>
+<li><strong>验证方式</strong>：设计序列的实验表达与稳定性测试，或与 Rosetta 设计的序列进行计算比较。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：DEEP-Multimer——扩展 DEEP 到蛋白质复合物界面</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：DEEP 目前验证于单体蛋白的稳定性与构象判别，未涉及蛋白质-蛋白质相互作用。</li>
+<li><strong>核心假设</strong>：DEEP 势能可扩展至复合物界面残基对，用于预测突变对结合亲和力的影响（ΔΔG_binding）。</li>
+<li><strong>初步方法</strong>：将 DEEP 框架应用于 Boltz-2 的复合物 distogram 输出，提取界面残基对的能量项；在 SKEMPI 2.0 基准上评估突变对结合亲和力的预测。</li>
+<li><strong>验证方式</strong>：与 FoldX、MM/PBSA 等结合亲和力预测方法对比。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：DEEP-Ensemble——从构象系综中提取能量景观</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：DEEP 使用单一序列的 distogram，未利用多构象信息；能量景观的完整描述需要系综。</li>
+<li><strong>核心假设</strong>：对同一序列的多个预测构象（如不同种子或不同 MSA 的 AF2 预测）分别提取 DEEP 势能，可重建更完整的能量景观。</li>
+<li><strong>初步方法</strong>：对同一序列生成多个 AF2/Boltz-2 预测，提取每个预测的 DEEP 势能，构建能量景观的低维嵌入（如 PCA 或 UMAP），与实验构象系综比较。</li>
+<li><strong>验证方式</strong>：在已知具有多个构象状态的蛋白（如 kinases）上验证 DEEP-Ensemble 是否捕获已知的构象平衡。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 5：DEEP 与物理势能的混合能量函数</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：DEEP 势能来自预测器的统计学习，可能缺乏物理真实性（如范德华、静电相互作用）；物理势能（AMBER/CHARMM）计算成本高但物理可解释。</li>
+<li><strong>核心假设</strong>：DEEP 势能与物理势能的加权组合，可同时获得统计学习的精度和物理力学的可解释性。</li>
+<li><strong>初步方法</strong>：在 ProteinGym 上优化 DEEP 与 AMBER 势能的加权系数；在 MD 模拟中测试混合势能的稳定性。</li>
+<li><strong>验证方式</strong>：混合势能在突变效应预测和构象采样上的表现是否优于任一单独势能。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>证据与来源说明</strong>：本 Card 基于提供的摘要文本。所有「作者主张」均标注来源为 Abstract；标注 [Analysis] 的内容为基于摘要的推断分析，非作者原话。具体方法细节（如能量转换公式、参考态定义、消融实验）需查阅全文 Methods 节，本文未提供。数值（Spearman 0.720、64 个 assay、97 个方法、180,000 decoys）均与摘要原文一致。</p>
+</blockquote></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and conclusions as stated in the abstract, without access to methods, figures, tables, or supplementary material</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce DEEP, a framework for extracting statistical potentials from predicted residue-pair distance distributions of protein structure predictors. DEEP-Boltz achieves a mean per-assay Spearman correlation of 0.720 across 64 ProteinGym stability assays, outperforming 97 published zero-shot methods and matching best-performing supervised predictors. DEEP-Boltz also distinguishes native-like from non-native conformations across more than 180,000 Rosetta decoys. Applying DEEP to AlphaFold2 yields comparable conformational discrimination but weaker mutation-effect prediction, suggesting these are distinct properties of learned representations.</li>
+<li><strong>Visible evidence base</strong> Abstract text only. No methods, figures, tables, or supplementary information were provided for review.</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, all figures and tables, supplementary information, benchmark details, statistical analysis details, and code repository contents.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially interesting framework for extracting energetic information from protein structure predictors without training on experimental stability data. The reported performance metrics are striking, particularly the claim of outperforming all 97 published zero-shot methods while matching supervised predictors. However, the abstract alone provides insufficient detail to evaluate the methodological soundness, the statistical rigor of the comparisons, or the validity of the interpretational claims. The distinction drawn between conformational discrimination and mutation-effect prediction is conceptually interesting but requires substantially more evidence than the abstract can provide.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in protein biophysics, computational protein design, and protein engineering would be interested in a method that extracts energetic information from structure predictors without additional training. The zero-shot stability prediction capability has direct applications in variant effect prediction, protein design, and understanding mutational landscapes. The comparative analysis between Boltz-2 and AlphaFold2 also addresses questions about what different structure predictors learn internally, which is relevant to the machine learning for biology community.</li>
+<li><strong>Major strengths</strong> The framework concept is elegant, using the model's own terminal distance state as an internal reference to avoid training on experimental data. The reported benchmark coverage is broad, spanning 64 stability assays and over 180,000 decoys. The comparative analysis between two major predictors (Boltz-2 and AlphaFold2) provides a useful scientific contribution by demonstrating that conformational discrimination and energetic sensitivity are separable properties.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "DEEP-Boltz achieves a mean per-assay Spearman correlation of 0.720 across 64 ProteinGym stability assays, numerically outperforming all 97 published zero-shot methods in the matched comparison on level with the best performing predictors trained directly on experimental stability measurements"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract reports a single mean Spearman correlation aggregated across 64 assays, but provides no information on the distribution of correlations, the statistical significance of the comparison against the 97 zero-shot methods, or the criteria used for the "matched comparison." Without knowing whether the comparison was performed on identical assay subsets, identical mutation sets, and with identical preprocessing, the claim of outperforming all 97 methods cannot be evaluated. The phrase "on level with the best performing predictors trained directly on experimental stability measurements" is ambiguous regarding whether this is a statistical equivalence claim or a numerical proximity claim.</li>
+<li><strong>Why it matters</strong> The central claim of the paper rests on this benchmark comparison. If the comparison is not properly matched, or if the variance across assays is high, the headline number of 0.720 may not represent a robust improvement. The distinction between "numerically outperforming" and "statistically significantly outperforming" is critical for assessing whether this method genuinely advances the state of the art.</li>
+<li><strong>Resolution test</strong> Provide per-assay correlation values, confidence intervals, and a clear description of the matched comparison protocol. Specify which assays were included, whether the same mutation subsets were used for all methods, and whether any assays were excluded and why. Report statistical tests comparing DEEP-Boltz against the best-performing zero-shot and supervised methods.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "DEEP (Distogram Encoded Energetic Potential), a general framework that extracts effective statistical potentials directly from predicted residue-pair distance distributions, using the models own terminal distance state as an internal reference without training on experimental stability data"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The methodological description is too brief to assess the validity of the approach. The concept of using the model's "terminal distance state as an internal reference" is not defined. It is unclear how the statistical potential is derived from distance distributions, how the reference state is constructed, what functional form the potential takes, and how it is applied to compute stability changes for single mutations. Without this information, the framework cannot be evaluated for internal consistency or compared to existing statistical potential approaches.</li>
+<li><strong>Why it matters</strong> The novelty of the paper depends on the methodological contribution. If the potential extraction procedure has hidden dependencies on training data or if the reference state construction introduces biases, the claim of extracting "accessible energetic information" without experimental training data would be weakened. The method must be described in sufficient detail for replication.</li>
+<li><strong>Resolution test</strong> Provide a complete mathematical description of the potential extraction procedure, including the definition of the reference state, the transformation from distance distributions to energies, and the aggregation across residue pairs. Include a schematic or pseudocode. Clarify what "terminal distance state" means operationally.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "DEEP-Boltz accurately distinguishes native-like from non-native conformations across more than 180,000 Rosetta decoys"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract reports accurate discrimination of native-like from non-native conformations across 180,000 decoys but provides no quantitative metric. "Accurately" is undefined. It is unclear whether this is a classification task, a ranking task, or a threshold-based discrimination. The choice of decoy set, the definition of "native-like," and the baseline comparators are not specified. Without these details, the claim cannot be evaluated.</li>
+<li><strong>Why it matters</strong> This result is presented as evidence that DEEP captures conformational preferences beyond mutation effects. If the discrimination accuracy is modest or if the decoy set is biased, the conclusion that structure predictors encode accessible energetic information about conformational preferences would be weakened.</li>
+<li><strong>Resolution test</strong> Report the discrimination metric (e.g., AUC, enrichment factor, or correlation with RMSD to native), the decoy generation protocol, the definition of native-like, and comparisons to existing scoring functions or energy functions on the same decoy sets.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Interpretational validity</li>
+<li><strong>Claim pointer</strong> "Applying DEEP to AlphaFold2 reveals nearly identical conformational discrimination but substantially weaker mutation-effect prediction, demonstrating that recognizing favorable conformations and capturing their energetic sensitivity to sequence changes are distinct properties of learned structural representations"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The abstract interprets the differential performance between Boltz-2 and AlphaFold2 as evidence for distinct properties of learned representations. However, alternative explanations are plausible. The difference could arise from architectural differences, training data differences, or differences in the distance distribution granularity between the two models. The claim that this demonstrates distinct properties of learned representations is a strong interpretational leap that requires controlled comparisons.</li>
+<li><strong>Why it matters</strong> This is a conceptual claim about what protein structure predictors learn internally. If the difference is attributable to technical factors rather than fundamental representational differences, the scientific contribution of this finding would be substantially reduced.</li>
+<li><strong>Resolution test</strong> Provide controlled comparisons that rule out technical explanations, such as matching architecture components, training data, or output granularity. Discuss alternative explanations and provide evidence that the observed difference reflects fundamental representational properties.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract, first sentence</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The phrase "the extent to which their internal representations capture the energetic principles governing protein stability and conformational preferences remains unclear" is vague. It is not specified what "energetic principles" means in this context or how "capture" would be operationalized.</li>
+<li><strong>Required correction</strong> Define "energetic principles" and "capture" more precisely, or rephrase to state the specific question being addressed.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract, methods description</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The term "effective statistical potentials" is used without definition. It is unclear how these differ from standard statistical potentials used in protein structure modeling.</li>
+<li><strong>Required correction</strong> Briefly define what makes these potentials "effective" and how they differ from existing statistical potentials.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Abstract, code availability</li>
+<li><strong>Evidence pointer</strong> Footnotes, GitHub link provided</li>
+<li><strong>Issue</strong> The GitHub repository is mentioned but its contents, documentation, and license are not described.</li>
+<li><strong>Required correction</strong> State the repository contents, provide documentation details, and specify the license in the abstract or methods.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Abstract, benchmark description</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract mentions "64 ProteinGym stability assays" but does not specify which assays or the diversity of proteins covered.</li>
+<li><strong>Required correction</strong> Briefly describe the assay composition or refer to a table listing the assays.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (benchmark comparison validity), R1-M2 (methodological description completeness), R1-M3 (decoy discrimination metric missing), R1-M4 (interpretational claim requires controlled comparisons)</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The concept of extracting energetic information from structure predictors without experimental training data is novel and potentially significant. However, the abstract does not provide enough detail to assess whether the methodological approach is genuinely new or an incremental adaptation of existing statistical potential methods.</li>
+<li>Scientific importance: If the claims hold, the method would be valuable for zero-shot variant effect prediction and for understanding what structure predictors learn. The comparative analysis between Boltz-2 and AlphaFold2 addresses a question of growing interest. However, the importance depends on the robustness of the benchmark results.</li>
+<li>Interdisciplinary readership: The topic bridges machine learning, structural biology, and biophysics. The abstract is written in a way that is accessible to a broad audience, though some terms require domain knowledge.</li>
+<li>Technical soundness: Cannot be assessed from the abstract alone. The missing methodological details and benchmark validation are critical gaps.</li>
+<li>Readability for nonspecialists: The abstract is generally clear, but terms such as "effective statistical potentials," "terminal distance state," and "distogram encoded" may be opaque to readers outside the immediate field.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents promising results, but the absence of methodological detail, benchmark validation, and statistical rigor prevents assessment of whether the claims are supported. A full manuscript review is required to evaluate the technical soundness and validity of the conclusions.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of outperforming all 97 published zero-shot methods cannot be evaluated without details of the matched comparison protocol and statistical significance testing.</li>
+<li>The claim that DEEP-Boltz matches the best supervised predictors is ambiguous and unsupported without statistical equivalence testing.</li>
+<li>The claim of "accurately" distinguishing native-like from non-native conformations is unsupported without a defined metric and baseline comparison.</li>
+<li>The interpretational claim that conformational discrimination and mutation-effect prediction are distinct properties of learned representations is unsupported without controlled comparisons ruling out technical explanations.</li>
+<li>The claim that structure predictors "encode accessible energetic information" is a strong statement that requires more evidence than the abstract provides.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

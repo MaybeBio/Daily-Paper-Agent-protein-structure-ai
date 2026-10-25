@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no figures, methods, or supplementary material were provided
+- **Shared manuscript claim summary** The authors propose that hydrogen sulfide (H₂S) derived sulfur species engage the catalytic zinc center of HDAC6, enhance its deacetylase activity under defined conditions, and support an alternative deacetylation pathway producing thioacetic acid. They further link this mechanism to H₂S induced endothelial migration and angiogenesis, with CD2 being the required catalytic domain.
+- **Visible evidence base** Molecular dynamics simulations, surface plasmon resonance, zinc depletion experiments, quantum chemical calculations, detection of thioacetic acid in multiple biological contexts, cryo electron microscopy structures, and cell based functional assays (endothelial migration, angiogenesis) using HDAC6 loss and CD2 requirement
+- **Missing materials affecting confidence** Full methods, all figures and tables, statistical details, experimental replicates, construct details for HDAC6 mutants, cryo EM validation metrics, and any control experiments
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting and novel mechanism linking H₂S to HDAC6 function through zinc coordination. However, the evidence as summarized is insufficient to fully establish the central claims. Several key assertions are supported only by qualitative statements without quantitative data, and the relationship between the proposed alternative deacetylation pathway and the observed functional outcomes remains unclear. The work could be of interest to the gasotransmitter and epigenetic regulation communities, but the current abstract does not provide enough detail to assess technical rigor.
+- **Who would be interested in the results, and why** Researchers studying gasotransmitter signaling, particularly H₂S biology, and those interested in HDAC6 function in acetylation regulation, angiogenesis, and endothelial biology. The proposed alternative deacetylation chemistry may also attract enzymologists and computational chemists studying metal dependent catalysis.
+- **Major strengths** The abstract integrates multiple orthogonal approaches (simulations, biophysics, computational chemistry, structural biology, and cell based assays) to address a single hypothesis. The detection of thioacetic acid across multiple biological contexts is a notable effort to link in vitro chemistry to physiological relevance. The identification of CD2 as the specific domain required for H₂S responses provides some mechanistic specificity.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "H₂S-derived sulfur species engage the catalytic Zn²⁺ center of HDAC6 and enhance deacetylase activity under defined conditions"
+  - **Evidence pointer** Surface plasmon resonance and zinc depletion experiments, location not provided
+  - **Concern** The abstract states that SPR and zinc depletion experiments "support reversible, zinc-dependent engagement" but provides no quantitative data, such as binding affinities, kinetic parameters, or the extent of activity enhancement. The phrase "under defined conditions" is vague and does not specify the H₂S donor concentration, pH, or reducing environment used.
+  - **Why it matters** Without quantitative binding and activity data, it is impossible to assess whether the engagement is physiologically relevant or merely a high concentration in vitro artifact. The claim of "enhanced deacetylase activity" requires dose response and specificity controls to rule out non specific effects.
+  - **Resolution test** Provide SPR sensorgrams with fitted affinities, zinc depletion and rescue data with quantitative activity measurements, and a clear definition of the conditions under which enhancement is observed, including H₂S donor concentrations and controls with other metal ions.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic link
+  - **Claim pointer** "Quantum chemical calculations support a chemically feasible sulfur-associated deacetylation pathway that generates thioacetic acid"
+  - **Evidence pointer** Quantum chemical calculations and thioacetic acid detection, location not provided
+  - **Concern** The abstract does not describe the calculated pathway, the energy barriers, or the proposed intermediates. It is unclear whether the pathway is competitive with the native water based mechanism or operates only under specific conditions. The detection of thioacetic acid is mentioned but no quantitative levels, detection limits, or controls (e.g., absence in HDAC6 knockout samples) are provided.
+  - **Why it matters** The central novelty of the paper rests on this alternative deacetylation chemistry. Without details on the calculated mechanism and rigorous detection controls, the claim that thioacetic acid is a bona fide product of HDAC6 catalysis rather than a background artifact cannot be evaluated.
+  - **Resolution test** Provide a detailed description of the calculated pathway with energy profiles, and quantitative thioacetic acid measurements with appropriate negative controls (e.g., catalytically dead HDAC6 mutants, no H₂S conditions, and spike in recovery experiments).
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Functional causality
+  - **Claim pointer** "HDAC6 loss blunts H₂S-induced endothelial migration and angiogenesis, and CD2 is required for these responses"
+  - **Evidence pointer** Cell based assays, location not provided
+  - **Concern** The abstract does not specify whether HDAC6 loss refers to genetic knockout, knockdown, or pharmacological inhibition. The requirement of CD2 is stated but the experimental approach (e.g., CD2 catalytic dead mutant, CD2 deletion construct) is not described. It is also unclear whether the effect on migration and angiogenesis is dependent on the proposed thioacetic acid pathway or on the conventional deacetylase activity of HDAC6.
+  - **Why it matters** The physiological relevance of the proposed mechanism depends on establishing that the functional effects are specifically due to the zinc sulfur coordination and the alternative deacetylation pathway, not to general HDAC6 activity changes or off target effects.
+  - **Resolution test** Specify the genetic or pharmacological tools used, include rescue experiments with wild type and CD2 mutant HDAC6, and test whether thioacetic acid production correlates with the functional outcomes.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The term "H₂S-derived sulfur species" is imprecise. It is unclear whether the active species is H₂S itself, HS⁻, polysulfides, or another oxidation product.
+  - **Required correction** Specify the exact sulfur species proposed to engage the zinc center and provide evidence for its identity.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Structural interpretation
+  - **Affected element** Cryo EM claim
+  - **Evidence pointer** Cryo electron microscopy, location not provided
+  - **Concern** The abstract states that cryo EM "defines the tandem organization" and reveals "distinct CD1 and CD2 tunnel architectures" but does not mention resolution, model quality, or whether the structures are in the presence or absence of H₂S.
+  - **Required correction** Provide resolution and validation metrics, and clarify whether the structures represent apo or ligand bound states.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Generalizability
+  - **Affected element** Physiological relevance
+  - **Evidence pointer** Mouse tissues and human serum, location not provided
+  - **Concern** The detection of thioacetic acid in mouse tissues and human serum is presented without context on endogenous levels or whether these levels change with H₂S modulation.
+  - **Required correction** Provide quantitative baseline levels and, if possible, data showing modulation by H₂S donors or synthase inhibitors.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3
+- **Assessment against Nature-style criteria**  
+  - Originality: The proposed alternative deacetylation pathway involving zinc sulfur coordination is conceptually novel and extends beyond typical H₂S persulfidation mechanisms.  
+  - Scientific importance: If fully established, the work could open new avenues in gasotransmitter biology and metal dependent catalysis, with potential implications for angiogenesis and HDAC6 related pathologies.  
+  - Interdisciplinary readership: The topic bridges chemistry, structural biology, and vascular biology, which could attract a broad audience.  
+  - Technical soundness: The multi method approach is commendable, but the abstract lacks the quantitative and control data needed to assess rigor.  
+  - Readability for nonspecialists: The abstract is concise and accessible, though some terms (e.g., "CD1 and CD2 tunnel architectures") may require prior knowledge.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an intriguing hypothesis but lacks sufficient quantitative and mechanistic detail to support the central claims. Supportive if the technical concerns regarding binding quantification, pathway validation, and functional causality are resolved with full data.
+
+## Risk / unsupported claims
+- The claim that H₂S enhances HDAC6 deacetylase activity is unsupported without quantitative activity data and defined conditions.
+- The alternative deacetylation pathway generating thioacetic acid is unsupported without details of the calculated mechanism and rigorous detection controls.
+- The requirement of CD2 for H₂S induced functional responses is unsupported without specification of the experimental tools and rescue experiments.
+- The physiological relevance of thioacetic acid detection in tissues and serum is uninterpretable without baseline levels and modulation data.
+- The cryo EM structural claims are unassessable without resolution and validation metrics.

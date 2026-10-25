@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>REAPS: An All-Atom Receptor-Aware Geometric Deep Learning Framework for De Novo Design of Linear and Macrocyclic Peptide Binders. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>REAPS: An All-Atom Receptor-Aware Geometric Deep Learning Framework for De Novo Design of Linear and Macrocyclic Peptide Binders.</h1>
+      <div class="meta">Qiu, Yongkang; Qiao, Jingxin; Zhu, Lengjing; Du, Le; Yang, Shengyong; Zou, Jun</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-10-23
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42912911/">原文</a>
+      </div>
+      <p class="one-liner">该文提出一个以受体全原子环境为上下文的几何图神经网络REAPS，用于线性和环状肽结合物的从头序列设计，并在NK3R上经实验验证，属于蛋白质结构相关的AI设计方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Peptide therapeutics occupy a critical niche between small molecules and biologics, yet the sequence design of peptide binders remains challenging because their bioactive conformations and interfacial fitness are dictated by the receptor microenvironment. Current computational approaches largely treat this as a generic inverse folding problem that relies on backbone geometry alone, overlooking the detailed physicochemical constraints of the receptor pocket. To bridge this gap, we introduce the REceptor-Aware Peptide Sequence Designer (REAPS), a geometric graph neural network that reframes sequence design for peptide binders by treating the receptor as a fully observable all-atom context. Multidimensional evaluations show that REAPS outperforms the widely used inverse folding model ProteinMPNN in sequence recovery, structural fidelity, and interface-level biophysical metrics across both linear and macrocyclic peptide binders. We further integrate REAPS with structural hallucination in a closed-loop de novo discovery pipeline, yielding peptide candidates with experimentally verified functional activity at the neurokinin-3 receptor (NK3R). The source code, model checkpoints, processed data sets, preprocessing scripts, and an example design workflow are publicly available at https://github.com/Mistletoe-git/REAPS.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">肽类治疗药物在小分子药物和生物制剂之间占据着关键地位，然而肽结合物的序列设计仍具挑战性，因为其生物活性构象和界面适应性由受体微环境决定。当前计算方法大多将其视为一个通用逆折叠问题，仅依赖骨架几何结构，忽视了受体口袋的详细物理化学约束。为弥合这一差距，我们引入了受体感知肽序列设计器（REAPS），这是一种几何图神经网络，通过将受体视为完全可观测的全原子上下文，重新构建肽结合物的序列设计。多维评估表明，REAPS在序列恢复、结构保真度以及界面级生物物理指标方面，均优于广泛使用的逆折叠模型ProteinMPNN，适用于线性和大环肽结合物。我们进一步将REAPS与结构幻觉集成于闭环从头发现流程中，生成了在神经激肽-3受体（NK3R）上具有实验验证功能活性的肽候选物。源代码、模型检查点、处理后的数据集、预处理脚本及示例设计工作流可在 https://github.com/Mistletoe-git/REAPS 公开获取。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：REAPS: An All-Atom Receptor-Aware Geometric Deep Learning Framework for De Novo Design of Linear and Macrocyclic Peptide Binders</li>
+<li><strong>作者</strong>：Qiu, Yongkang; Qiao, Jingxin; Zhu, Lengjing; Du, Le; Yang, Shengyong; Zou, Jun</li>
+<li><strong>单位</strong>：未提供（基于作者信息推测可能为中国高校/研究机构，但原文未明确）</li>
+<li><strong>期刊/平台</strong>：Journal of Chemical Information and Modeling</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-23）</li>
+<li><strong>论文类型</strong>：方法学论文（含实验验证）</li>
+<li><strong>领域</strong>：蛋白质/多肽结构计算 × 深度学习（几何图神经网络）</li>
+<li><strong>关键词</strong>：peptide binder design, inverse folding, geometric deep learning, all-atom receptor context, macrocyclic peptide, de novo design</li>
+<li><strong>DOI/arXiv</strong>：10.1021/acs.jcim.6c02057</li>
+<li><strong>代码</strong>：https://github.com/Mistletoe-git/REAPS（含源码、模型权重、处理后的数据集、预处理脚本、示例设计流程）</li>
+<li><strong>数据</strong>：处理后的数据集公开可用（具体规模未在摘要中说明）</li>
+<li><strong>阅读日期</strong>：2026-05-14（基于当前日期推断）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>序列设计/逆折叠</strong>子方向，核心创新在于将受体口袋作为全原子上下文纳入几何图神经网络，而非仅依赖 backbone 几何。与 ProteinMPNN 等通用逆折叠模型形成直接对比，并延伸至 macrocyclic peptide 设计及实验验证的闭环流程。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>REAPS 通过将受体作为全原子可观测上下文输入几何图神经网络，重新定义多肽结合物序列设计任务，在序列恢复率、结构保真度和界面生物物理指标上优于 ProteinMPNN，并整合结构幻觉实现闭环 de novo 发现，在 NK3R 上获得实验验证的功能活性候选多肽。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何为线性及环状多肽结合物设计高亲和力、结构稳定的氨基酸序列，使其在受体微环境中呈现生物活性构象？</li>
+<li><strong>为什么重要</strong>：多肽治疗药物介于小分子和生物制剂之间，具有高特异性、低毒性等优势，但序列设计受限于受体口袋的物理化学约束，现有方法难以捕捉这些约束。</li>
+<li><strong>现有方法为何不足</strong>：当前计算方法（如 ProteinMPNN）将多肽设计视为通用逆折叠问题，仅依赖 backbone 几何，忽略受体口袋的详细物理化学环境（如残基侧链、氢键网络、疏水相互作用等），导致设计序列在界面适应性上欠佳。</li>
+<li><strong>精确研究问题</strong>：Can an all-atom receptor-aware geometric graph neural network outperform backbone-only inverse folding models in designing linear and macrocyclic peptide binders with improved sequence recovery, structural fidelity, and interface-level biophysical metrics?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文摘要及领域常识构建，标注为「经外部核验」部分。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基于物理模拟的序列设计</td>
+<td>Rosetta (FixBB, FlexBB)</td>
+<td>物理化学可解释性强</td>
+<td>计算成本高，搜索空间有限</td>
+<td>本文未直接对比，但物理指标用于评估</td>
+</tr>
+<tr>
+<td>基于能量函数的逆折叠</td>
+<td>传统统计势能方法</td>
+<td>快速，可处理大序列空间</td>
+<td>精度有限，缺乏深度学习特征</td>
+<td>本文的基线之一</td>
+</tr>
+<tr>
+<td>基于深度学习的逆折叠</td>
+<td>ProteinMPNN, ESM-IF, GVP-Transformer</td>
+<td>高序列恢复率，快速推理</td>
+<td>仅依赖 backbone 几何，忽略受体环境</td>
+<td>本文的直接对比基线</td>
+</tr>
+<tr>
+<td>受体感知的序列设计</td>
+<td>本文 REAPS</td>
+<td>全原子受体上下文，界面物理化学感知</td>
+<td>需要受体结构信息，泛化性待验证</td>
+<td>本文的核心贡献</td>
+</tr>
+</tbody>
+</table>
+<p><strong>结论</strong>：本文主张在「仅 backbone 几何」与「全原子受体上下文」之间做出关键区分，将逆折叠从通用任务转向受体特异的结合物设计任务。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>受体微环境被忽略</td>
+<td>现有逆折叠模型仅使用 backbone 几何，不感知受体口袋的物理化学约束</td>
+<td>作者认为这是「generic inverse folding」范式的固有缺陷</td>
+<td>摘要：「overlooking the detailed physicochemical constraints of the receptor pocket」</td>
+</tr>
+<tr>
+<td>生物活性构象难以保持</td>
+<td>设计序列在受体中可能无法呈现功能构象</td>
+<td>序列设计未考虑界面互补性</td>
+<td>摘要：「bioactive conformations and interfacial fitness are dictated by the receptor microenvironment」</td>
+</tr>
+<tr>
+<td>环状多肽设计困难</td>
+<td>Macrocyclic peptide 的构象约束更强，现有方法表现不佳</td>
+<td>环状结构对序列-结构关系更敏感</td>
+<td>摘要：「across both linear and macrocyclic peptide binders」的对比评估</td>
+</tr>
+<tr>
+<td>序列恢复率与结构保真度不足</td>
+<td>ProteinMPNN 等模型在受体感知任务上表现有限</td>
+<td>缺乏受体上下文信息</td>
+<td>摘要：「REAPS outperforms the widely used inverse folding model ProteinMPNN in sequence recovery, structural fidelity, and interface-level biophysical metrics」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>REAPS 是一个几何图神经网络（geometric GNN），将受体作为全原子可观测上下文，与多肽 backbone 一起构建图结构，进行序列设计。</p>
+<h3>2) 核心洞察</h3>
+<p><strong>受体不是背景，而是序列设计的「条件」</strong>。多肽结合物的序列设计不应是「给定 backbone 预测序列」的通用逆折叠，而应是「给定受体环境预测能与之互补的序列」的受体条件化任务。全原子受体上下文提供了 backbone 几何无法捕捉的物理化学约束（如侧链相互作用、氢键供体/受体位置、疏水口袋形状等），这些约束直接决定多肽的界面适应性。</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>在分子设计中，「上下文」的粒度决定模型的信息上限。从 backbone-only 到 all-atom 的升级，本质上是将「几何约束」扩展为「物理化学约束」。</li>
+<li>闭环设计（生成→筛选→实验验证）是深度学习分子设计的可行范式，但需要模型具备足够的初始精度才能让闭环收敛。</li>
+<li>环状多肽的设计挑战可能源于其构象自由度受限，对序列-结构映射的精度要求更高，这为评估模型能力提供了更严格的测试场景。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：受体全原子结构（PDB 格式）+ 多肽 backbone 坐标（或初始骨架）</li>
+<li><strong>输出</strong>：多肽氨基酸序列（线性或环状）</li>
+<li><strong>核心模块</strong>：
+  1. 图构建：将受体原子和多肽残基构建为几何图，节点为原子或残基，边基于空间距离
+  2. 几何特征编码：编码原子坐标、键长、键角、二面角等几何信息
+  3. 消息传递：在图上进行多轮消息传递，融合受体上下文信息
+  4. 序列解码：从节点特征解码氨基酸类型</li>
+<li><strong>训练</strong>：监督学习，使用已知多肽-受体复合物结构作为训练数据（具体损失函数和训练策略未在摘要中详述）</li>
+<li><strong>工具</strong>：PyTorch 等深度学习框架（基于 GitHub 仓库推断）</li>
+<li><strong>反馈回路</strong>：与结构幻觉（structural hallucination）集成，形成闭环 de novo 发现流程</li>
+<li><strong>假设</strong>：受体全原子结构已知且固定；多肽 backbone 构象可由结构预测或幻觉生成</li>
+</ul>
+<p><strong>文字流程</strong>：
+1. 输入受体全原子结构 → 2. 构建几何图（受体原子 + 多肽 backbone 残基）→ 3. 几何特征编码 → 4. 消息传递融合受体上下文 → 5. 序列解码 → 6. 输出多肽序列 → 7. （闭环）结构幻觉生成新 backbone → 8. 重复 1-6 直至收敛 → 9. 实验验证</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全原子图构建</td>
+<td>将受体原子和多肽残基编码为图结构</td>
+<td>捕捉受体口袋的物理化学环境</td>
+<td>输入：PDB 结构；输出：几何图</td>
+<td>摘要：「treating the receptor as a fully observable all-atom context」</td>
+<td>预期影响：退化为 backbone-only 模型，丧失受体感知能力 [Analysis]</td>
+</tr>
+<tr>
+<td>几何特征编码</td>
+<td>编码原子坐标、键长、键角等</td>
+<td>提供空间几何信息</td>
+<td>输入：原子坐标；输出：几何特征向量</td>
+<td>摘要：「geometric graph neural network」</td>
+<td>预期影响：无法区分不同空间构象 [Analysis]</td>
+</tr>
+<tr>
+<td>消息传递层</td>
+<td>在图上传播信息，融合受体上下文</td>
+<td>让多肽节点感知受体环境</td>
+<td>输入：图 + 节点特征；输出：更新后的节点特征</td>
+<td>摘要：「receptor-aware」</td>
+<td>预期影响：多肽节点无法获取受体信息，性能下降 [Analysis]</td>
+</tr>
+<tr>
+<td>序列解码器</td>
+<td>从节点特征预测氨基酸类型</td>
+<td>生成最终序列</td>
+<td>输入：节点特征；输出：氨基酸序列</td>
+<td>摘要：「sequence design」</td>
+<td>预期影响：无法输出序列 [Analysis]</td>
+</tr>
+<tr>
+<td>结构幻觉集成</td>
+<td>生成新 backbone 构象</td>
+<td>实现 de novo 发现</td>
+<td>输入：受体结构；输出：候选 backbone</td>
+<td>摘要：「integrate REAPS with structural hallucination in a closed-loop de novo discovery pipeline」</td>
+<td>预期影响：无法进行 de novo 设计，仅能序列重设计 [Analysis]</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于仅提供摘要，所有消融效应均为「预期影响」而非「实测消融效应」。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。摘要中未提供任何数学公式或符号定义。如需公式级理解，需查阅全文 Methods 部分。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未在摘要中说明具体数据集（推测为已知多肽-受体复合物结构，如 PDB 子集）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：sequence recovery, structural fidelity, interface-level biophysical metrics</li>
+<li><strong>基线</strong>：ProteinMPNN（明确提及）</li>
+<li><strong>评估协议</strong>：多维评估（multidimensional evaluations），具体协议未详述</li>
+<li><strong>实验验证</strong>：NK3R（neurokinin-3 receptor）上的功能活性验证</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列恢复率对比</td>
+<td>REAPS 优于 ProteinMPNN</td>
+<td>线性多肽结合物</td>
+<td>REAPS 更高</td>
+<td>REAPS 在序列设计上更优</td>
+<td>未说明提升幅度</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>结构保真度对比</td>
+<td>REAPS 生成序列能保持 backbone 构象</td>
+<td>线性多肽结合物</td>
+<td>REAPS 更优</td>
+<td>REAPS 设计序列结构稳定性更好</td>
+<td>未说明具体指标</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>界面生物物理指标</td>
+<td>REAPS 设计序列界面互补性更好</td>
+<td>线性多肽结合物</td>
+<td>REAPS 更优</td>
+<td>REAPS 考虑受体环境有效</td>
+<td>未说明具体指标</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>环状多肽对比</td>
+<td>REAPS 在 macrocyclic peptide 上同样优于 ProteinMPNN</td>
+<td>环状多肽结合物</td>
+<td>REAPS 更优</td>
+<td>REAPS 泛化到环状多肽</td>
+<td>未说明环状多肽的额外挑战</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>NK3R 实验验证</td>
+<td>REAPS 设计序列具有功能活性</td>
+<td>闭环 de novo 流程</td>
+<td>实验验证有活性</td>
+<td>REAPS 可用于实际药物发现</td>
+<td>未说明活性强度、选择性等</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：多肽结合物序列设计（线性 + 环状），非通用蛋白质设计</li>
+<li><strong>oracle/真值输入</strong>：受体全原子结构已知；多肽 backbone 构象由结构幻觉生成（闭环流程中）</li>
+<li><strong>端到端状态</strong>：从受体结构到候选序列的端到端流程已实现，但实验验证仅针对 NK3R 一个靶点</li>
+<li><strong>算力成本</strong>：未提供</li>
+<li><strong>历史数据依赖</strong>：依赖已知多肽-受体复合物结构进行监督训练</li>
+<li><strong>模型依赖</strong>：依赖几何 GNN 架构；与结构幻觉工具的集成方式未详述</li>
+<li><strong>最难情形</strong>：环状多肽设计（作者明确提及）；可能还包括受体构象变化、多肽柔性等 [Analysis]</li>
+<li><strong>群体/领域边界</strong>：仅验证了 NK3R 一个靶点；未说明对其他受体类型的泛化性</li>
+<li><strong>不确定性</strong>：未提供置信区间、统计显著性检验等信息</li>
+</ul>
+<p><strong>有边界的复述</strong>：REAPS 在公开数据集上（具体规模未提供）对线性及环状多肽结合物的序列设计优于 ProteinMPNN，并在 NK3R 靶点上通过闭环流程获得实验验证的功能活性候选物。该结论限于多肽结合物设计任务，且实验验证仅覆盖单一靶点。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 需要受体全原子结构作为输入（可能限制在无结构靶点上的应用）
+- 实验验证仅覆盖 NK3R 一个靶点
+- 环状多肽设计仍具挑战性（作者将其作为评估维度，暗示其难度）</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅与 ProteinMPNN 对比</td>
+<td>可能未与更新的逆折叠模型（如 ESM-IF, FrameFlow 等）对比</td>
+<td>无法确定 REAPS 是否代表当前最优</td>
+<td>要求作者提供与多种基线的对比</td>
+<td>摘要仅提及 ProteinMPNN</td>
+</tr>
+<tr>
+<td>实验验证仅 NK3R</td>
+<td>单一靶点可能无法代表一般性</td>
+<td>泛化性存疑</td>
+<td>要求更多靶点的实验验证</td>
+<td>摘要：「experimentally verified functional activity at the neurokinin-3 receptor (NK3R)」</td>
+</tr>
+<tr>
+<td>未报告提升幅度</td>
+<td>摘要未给出具体数值</td>
+<td>无法评估实际增益大小</td>
+<td>查阅全文数据</td>
+<td>摘要仅定性描述「outperforms」</td>
+</tr>
+<tr>
+<td>闭环流程细节缺失</td>
+<td>结构幻觉与 REAPS 的集成方式、迭代次数等未说明</td>
+<td>影响可复现性</td>
+<td>查阅全文 Methods</td>
+<td>摘要仅提及「closed-loop de novo discovery pipeline」</td>
+</tr>
+<tr>
+<td>环状多肽的额外挑战未量化</td>
+<td>环状多肽的构象约束如何影响设计未分析</td>
+<td>可能隐藏重要技术细节</td>
+<td>查阅全文对环状多肽的专门分析</td>
+<td>摘要仅提及「across both linear and macrocyclic peptide binders」</td>
+</tr>
+<tr>
+<td>受体构象固定假设</td>
+<td>可能未考虑受体柔性</td>
+<td>真实生物环境中受体可能发生构象变化</td>
+<td>检查是否使用 ensemble 或柔性受体</td>
+<td>摘要未提及受体构象处理</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>全原子受体上下文编码</strong>：将受体从「背景」提升为「条件」，通过几何图神经网络编码全原子信息，这一思路可直接迁移到其他蛋白质-配体相互作用任务（如小分子对接、抗体设计）。</p>
+</li>
+<li>
+<p><strong>逆折叠任务的重新定义</strong>：从「给定 backbone 预测序列」转向「给定受体环境设计序列」，这一范式转变适用于所有结合物设计任务，包括蛋白质-蛋白质相互作用界面设计。</p>
+</li>
+<li>
+<p><strong>闭环 de novo 设计流程</strong>：结构幻觉（生成 backbone）→ 序列设计（REAPS）→ 实验验证的闭环范式，可迁移到其他靶点的多肽/蛋白质设计。</p>
+</li>
+<li>
+<p><strong>环状多肽作为严格测试集</strong>：环状多肽的构象约束为评估模型能力提供了更严格的测试场景，可用于未来模型对比的基准设计。</p>
+</li>
+<li>
+<p><strong>多维评估协议</strong>：sequence recovery + structural fidelity + interface-level biophysical metrics 的三维评估框架，可复用于其他序列设计模型的评估。</p>
+</li>
+<li>
+<p><strong>公开资源完整性</strong>：代码、权重、数据、脚本、示例流程全部公开，为领域内复现和基准对比提供了良好范例。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>ProteinMPNN (Dauparas et al., 2022)</strong>：本文的直接基线，代表 backbone-only 逆折叠范式。REAPS 的对比结果可视为对 ProteinMPNN 范式的挑战。</li>
+<li><strong>ESM-IF / Inverse Folding (Hsu et al., 2022)</strong>：基于语言模型的逆折叠方法，同样仅依赖 backbone 几何。REAPS 的受体感知思路可视为对这类方法的补充或替代。</li>
+<li><strong>AlphaFold 系列 (Jumper et al., 2021)</strong>：AlphaFold 提供高精度结构预测，可作为 REAPS 的 backbone 来源；REAPS 的序列设计可反向用于验证 AlphaFold 预测结构的可设计性。</li>
+<li><strong>RFdiffusion (Watson et al., 2023)</strong>：结构幻觉/生成的代表方法，本文的闭环流程可能与其相关（需查阅全文确认）。</li>
+<li><strong>Rosetta 序列设计 (Kuhlman et al., 2003)</strong>：传统物理模拟方法，REAPS 的 interface-level biophysical metrics 可能参考了 Rosetta 的能量函数。</li>
+<li><strong>Macrocyclic peptide 设计 (Hosseinzadeh et al., 2017)</strong>：环状多肽设计领域已有工作，REAPS 将其纳入评估范围。</li>
+<li><strong>[Analysis] 候选方向</strong>：REAPS 的受体感知思路可能与「context-aware protein design」趋势一致，可关注后续是否有类似方法（如 LigandMPNN 的扩展）。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<h3>候选 1：REAPS 扩展到蛋白质-蛋白质界面设计</h3>
+<ul>
+<li><strong>名称</strong>：PPI-REAPS: Receptor-Aware Design for Protein-Protein Interaction Interfaces</li>
+<li><strong>来源局限/观察</strong>：REAPS 聚焦多肽结合物，但受体感知的逆折叠思路可推广到更大的蛋白质界面</li>
+<li><strong>核心假设</strong>：全原子受体上下文能提升蛋白质-蛋白质界面序列设计的成功率</li>
+<li><strong>初步方法</strong>：将 REAPS 的图构建和消息传递机制扩展到蛋白质-蛋白质复合物，调整节点/边定义</li>
+<li><strong>验证方式</strong>：在标准 PPI 设计基准（如 SKEMPI）上对比 ProteinMPNN 和 ESM-IF</li>
+<li><strong>可能的失败模式</strong>：计算复杂度随蛋白质尺寸急剧增加；界面残基定义不明确</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：多肽 backbone 构象与序列的联合优化</h3>
+<ul>
+<li><strong>名称</strong>：Co-Design of Peptide Backbone and Sequence with Receptor Context</li>
+<li><strong>来源局限/观察</strong>：REAPS 依赖结构幻觉生成 backbone，序列设计在固定 backbone 上进行；联合优化可能提升设计质量</li>
+<li><strong>核心假设</strong>：backbone 和序列的联合优化能产生更优的多肽结合物</li>
+<li><strong>初步方法</strong>：将 REAPS 与扩散模型（如 RFdiffusion）集成，在生成 backbone 的同时优化序列</li>
+<li><strong>验证方式</strong>：在多个靶点上对比联合优化 vs 分步优化（幻觉→序列设计）</li>
+<li><strong>可能的失败模式</strong>：联合优化空间过大，训练不稳定；实验验证成本高</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：REAPS 用于环状多肽的构象约束感知设计</h3>
+<ul>
+<li><strong>名称</strong>：Cyclic-REAPS: Explicit Conformational Constraint Modeling for Macrocyclic Peptide Design</li>
+<li><strong>来源局限/观察</strong>：摘要提及环状多肽设计，但未说明是否显式建模环状约束</li>
+<li><strong>核心假设</strong>：显式建模环状多肽的构象约束（如环闭合、二面角限制）能进一步提升设计精度</li>
+<li><strong>初步方法</strong>：在 REAPS 的图构建中加入环状拓扑约束，或引入环闭合损失项</li>
+<li><strong>验证方式</strong>：在环状多肽基准上对比 REAPS 原始版本与 Cyclic-REAPS</li>
+<li><strong>可能的失败模式</strong>：环状约束的数学建模复杂；可能过度约束导致序列多样性下降</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：REAPS 的物理化学可解释性分析</h3>
+<ul>
+<li><strong>名称</strong>：Interpretability Analysis of Receptor-Aware Sequence Design</li>
+<li><strong>来源局限/观察</strong>：REAPS 声称感知受体物理化学约束，但未提供可解释性证据</li>
+<li><strong>核心假设</strong>：REAPS 的注意力权重或特征重要性可揭示受体-多肽相互作用的关键残基</li>
+<li><strong>初步方法</strong>：对 REAPS 进行注意力可视化、特征归因分析，与已知相互作用热点对比</li>
+<li><strong>验证方式</strong>：在多个复合物上分析注意力模式与实验确定的 hotspots 的一致性</li>
+<li><strong>可能的失败模式</strong>：注意力权重与物理化学意义无直接对应；分析结果难以泛化</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 5：REAPS 与 MD 模拟的集成验证</h3>
+<ul>
+<li><strong>名称</strong>：MD-Validated Receptor-Aware Peptide Design</li>
+<li><strong>来源局限/观察</strong>：REAPS 的 interface-level biophysical metrics 可能为静态评估；MD 模拟可提供动态稳定性证据</li>
+<li><strong>核心假设</strong>：REAPS 设计的序列在 MD 模拟中表现出更好的结合稳定性</li>
+<li><strong>初步方法</strong>：对 REAPS 和 ProteinMPNN 设计的序列进行 MD 模拟，比较结合自由能、氢键占有率等</li>
+<li><strong>验证方式</strong>：在多个靶点上进行 MD 模拟对比</li>
+<li><strong>可能的失败模式</strong>：MD 模拟计算成本高；力场精度限制结论</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<hr />
+<p><strong>证据与来源规则说明</strong>：
+- 所有「作者主张」均来自摘要原文，标注为「摘要」。
+- 所有「[Analysis]」标记的分析为本文作者基于摘要的推断，不视为作者原意。
+- 未提供的信息（如具体数据集、消融实验、公式）均标注为「未提供」或「Not assessable」。
+- 数值引用仅限摘要中明确出现的定性描述（如「outperforms」），未编造任何具体数值。</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present REAPS, a geometric graph neural network for de novo design of linear and macrocyclic peptide binders. The method treats the receptor as an all-atom context, outperforms ProteinMPNN on sequence recovery, structural fidelity, and interface-level biophysical metrics, and is integrated with structural hallucination in a closed-loop pipeline yielding experimentally validated peptide candidates against NK3R.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, benchmark details, experimental protocols, or statistical analyses are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, benchmark definitions, dataset descriptions, experimental validation details, code repository contents, and statistical methodology</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially valuable contribution to computational peptide design by explicitly incorporating receptor context into sequence design. The methodological framing is clear and the integration with experimental validation is commendable. However, the abstract alone provides insufficient quantitative evidence to assess the strength of the claimed improvements over ProteinMPNN, the robustness of the benchmark evaluations, or the validity of the experimental validation. The claims are plausible but currently not verifiable from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and medicinal chemists working on peptide therapeutics, particularly those developing de novo design pipelines. Researchers in geometric deep learning for protein design would also find the receptor-aware architecture relevant. The demonstrated application to NK3R may interest investigators targeting neurokinin receptors.</li>
+<li><strong>Major strengths</strong> The conceptual advance of treating the receptor as a fully observable all-atom context rather than relying solely on backbone geometry is well motivated and addresses a recognized limitation in inverse folding approaches. The integration of the model with structural hallucination in a closed-loop pipeline, followed by experimental validation, represents a strong translational component. Public release of code, checkpoints, and datasets supports reproducibility.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> "REAPS outperforms the widely used inverse folding model ProteinMPNN in sequence recovery, structural fidelity, and interface-level biophysical metrics across both linear and macrocyclic peptide binders"  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Concern</strong> The abstract states that REAPS outperforms ProteinMPNN on multiple metrics but provides no numerical values, effect sizes, statistical significance, or details on the benchmark datasets and evaluation protocols. Without these data, the magnitude and reliability of the claimed improvements cannot be assessed.  </li>
+<li><strong>Why it matters</strong> The central claim of the paper rests on this comparative performance. If the improvements are marginal or limited to specific test cases, the practical utility of REAPS over existing methods would be substantially diminished.  </li>
+<li><strong>Resolution test</strong> Provide quantitative results in the full manuscript, including mean and variance for each metric, statistical tests comparing REAPS and ProteinMPNN, and clear descriptions of benchmark datasets, sequence diversity, and evaluation criteria.  </li>
+<li><strong>Concern ID</strong> R1-M2  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Experimental validation rigor  </li>
+<li><strong>Claim pointer</strong> "yielding peptide candidates with experimentally verified functional activity at the neurokinin-3 receptor (NK3R)"  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Concern</strong> The abstract reports experimentally verified functional activity but does not specify the assay type, the number of candidates tested, the hit rate, the potency values, or the criteria for functional activity. Without these details, the strength of the experimental validation and its relevance to the design pipeline cannot be evaluated.  </li>
+<li><strong>Why it matters</strong> Experimental validation is the key differentiator of this work from purely computational studies. Insufficient detail prevents readers from judging whether the pipeline produces genuinely active binders or whether the reported activity is marginal or assay-dependent.  </li>
+<li><strong>Resolution test</strong> In the full manuscript, describe the experimental assay, provide dose-response data or activity thresholds, report the number of tested and confirmed candidates, and include appropriate controls.  </li>
+<li><strong>Concern ID</strong> R1-M3  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Generalizability  </li>
+<li><strong>Claim pointer</strong> "across both linear and macrocyclic peptide binders"  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Concern</strong> The abstract claims performance across both linear and macrocyclic peptides but does not indicate the number of targets, the diversity of receptor types, or the range of peptide lengths and cyclization strategies covered in the evaluation. The generalizability of the method beyond the tested cases remains unclear.  </li>
+<li><strong>Why it matters</strong> Peptide binders vary widely in structural complexity and receptor context. If the benchmark is limited to a narrow set of targets, the claim of broad applicability is overstated.  </li>
+<li><strong>Resolution test</strong> Specify the number and diversity of benchmark targets, including receptor families, peptide length distributions, and cyclization methods, and discuss any observed performance variations across these categories.</li>
+<li><strong>Minor Comments</strong>  </li>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Method description  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Issue</strong> The term "geometric graph neural network" is used without specifying the architectural innovations that distinguish REAPS from prior receptor-aware models.  </li>
+<li><strong>Required correction</strong> Briefly describe the key architectural components or refer to a methods section where these are detailed.  </li>
+<li><strong>Concern ID</strong> R1-m2  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Reproducibility  </li>
+<li><strong>Affected element</strong> Resource availability  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Issue</strong> The abstract states that source code and data are publicly available but does not specify the license, the computational requirements for running the model, or whether the processed datasets are sufficient to reproduce the reported benchmarks.  </li>
+<li><strong>Required correction</strong> Include license information, hardware requirements, and a statement on dataset completeness in the full manuscript or repository documentation.  </li>
+<li><strong>Concern ID</strong> R1-m3  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Terminology  </li>
+<li><strong>Affected element</strong> "structural hallucination"  </li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided  </li>
+<li><strong>Issue</strong> The term "structural hallucination" is used without definition, which may be ambiguous for readers unfamiliar with generative protein design terminology.  </li>
+<li><strong>Required correction</strong> Define the term on first use or provide a brief explanation of the hallucination procedure.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 and R1-M2 are blocking because the core comparative performance claim and the experimental validation claim cannot be assessed from the abstract alone. R1-M3 is non-blocking but requires clarification for the generalizability claim to be credible.</li>
+<li><strong>Assessment against Nature-style criteria</strong>  </li>
+<li><strong>Originality</strong> The receptor-aware all-atom framing is a meaningful conceptual step beyond backbone-only inverse folding, though the abstract does not clarify how this differs from existing receptor-conditioned models. Originality is plausible but not fully established from the abstract.  </li>
+<li><strong>Scientific importance</strong> Peptide binder design is a high-impact area, and a method that demonstrably improves design success with experimental validation would be important. The importance is contingent on the strength of the evidence, which is not visible here.  </li>
+<li><strong>Interdisciplinary readership</strong> The work bridges computational methods and experimental biology, which could attract a broad audience. The abstract is accessible but lacks the quantitative detail needed to engage method-focused readers.  </li>
+<li><strong>Technical soundness</strong> The architectural description is too brief to assess technical soundness. The evaluation metrics are named but not defined, and the experimental protocol is unspecified.  </li>
+<li><strong>Readability for nonspecialists</strong> The abstract is generally clear in its motivation and high-level approach, but terms like "structural hallucination" and "interface-level biophysical metrics" may require elaboration for a general scientific audience.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The conceptual framing is promising and the translational component is valuable, but the abstract does not provide sufficient quantitative or methodological detail to support the central claims. A revised assessment would require access to the full manuscript, including benchmark results, statistical analyses, and experimental validation data.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of outperforming ProteinMPNN on multiple metrics is unsupported without numerical data and statistical testing.</li>
+<li>The claim of experimentally verified functional activity is unsupported without assay details, potency values, and hit rates.</li>
+<li>The claim of applicability across both linear and macrocyclic peptide binders is unsupported without information on benchmark target diversity.</li>
+<li>The general statement that current computational approaches "overlook" receptor physicochemical constraints is a broad generalization that may not account for all existing methods; this is not substantiated in the abstract.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

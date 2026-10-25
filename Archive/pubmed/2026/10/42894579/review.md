@@ -1,0 +1,77 @@
+## Review setup
+- **Input scope** Full manuscript text, including summary, main text, methods, figure legends, and supplemental figure titles
+- **Assessment boundary** Scientific validity, technical soundness, and support for claims based solely on the provided manuscript content
+- **Shared manuscript claim summary** The authors propose that the Asn333 high-mannose N-glycan in ACP3 plays a structurally non-redundant role in protein folding and stability, and that its loss via the disease-associated T335M variant leads to ER retention, aggregation, loss of enzymatic activity, and neurodevelopmental dysfunction in patients.
+- **Visible evidence base** Recombinant expression and secretion assays, site-specific glycan profiling by LC-MS/MS, immunostaining and confocal microscopy, transmission electron microscopy, proteinase K sensitivity assays, phosphatase activity measurements, and all-atom MD simulations
+- **Missing materials affecting confidence** Raw mass spectrometry data, full Western blot images, uncropped microscopy fields, MD simulation input files and force field parameters, patient clinical records beyond summarized features, and statistical source data
+
+## Reviewer
+- **Overall assessment** This manuscript presents a systematic and largely well-executed investigation of site-specific N-glycan function in ACP3. The combination of experimental biochemistry, cell biology, structural simulation, and human genetics is commendable and the central claim, that the Asn333 glycan is a non-redundant structural stabilizer, is plausible and potentially significant. However, several technical concerns, particularly around the quantitative rigor of the secretion and activity assays, the limited genetic evidence, and the interpretative scope of the MD simulations, prevent the case from being fully established as presented.
+- **Who would be interested in the results, and why** Researchers in glycobiology, protein folding and quality control, and molecular mechanisms of genetic disease. The work provides a clear example of how a single N-glycan can have a disproportionately large effect on protein homeostasis, which is relevant to understanding the pathogenesis of glycosylation-related disorders and to engineering glycoproteins with improved stability.
+- **Major strengths** The study addresses a well-defined question with a multi-pronged approach. The site-specific glycan profiling is a key strength, directly demonstrating the distinct glycan types at each site. The phenotypic contrast between the N94Q/N220Q and N333Q/T335M variants is clear and compelling. The use of patient genetics to anchor the basic science in human disease adds translational significance. The MD simulations provide a plausible mechanistic rationale for the experimental observations.
+- **Major Concerns**
+    - **Concern ID** R1-M1
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Evidence quality and quantitative rigor
+    - **Claim pointer** The claim that N333Q and T335M variants are "not secreted" and exhibit "complete loss of enzymatic activity" is central to the paper's thesis.
+    - **Evidence pointer** Figure 2A, 2B, 6B; "location not provided" for specific data points
+    - **Concern** The secretion assay (Figure 2A) is presented as a qualitative Ni-NTA purification gel. The quantitative analysis in Figure 2B reports secretion of N333Q and T335M as 0.14% and 0.05% of WT, respectively. While this is a very low level, it is not zero. The claim of "not detected" in the purification and "complete loss" of activity is too absolute. The activity assay (Figure 6B) is performed on samples normalized for ACP3 protein amount, but for N333Q and T335M, the intracellular protein is misfolded and aggregated. It is unclear if the normalization accurately reflects the amount of properly folded, active enzyme. The subtraction of a ~60% background signal from endogenous phosphatases introduces a significant correction that could obscure low but real residual activity. The statistical analysis and exact n for the activity assay are not fully clear from the text.
+    - **Why it matters** The paper's central conclusion is that loss of the Asn333 glycan completely abrogates ACP3 function. If there is residual secretion or activity, the conclusion would need to be tempered from "complete loss" to "severe impairment." This distinction is important for understanding the potential phenotype in patients, who are heterozygous and may have some WT ACP3 activity.
+    - **Resolution test** Provide a more sensitive detection method for secreted protein (e.g., ELISA) with a proper standard curve. For the activity assay, perform a detailed kinetic analysis with a wider range of substrate concentrations and clearly report the limit of detection. Show that the normalization for the activity assay is based on the amount of folded, active protein, not total immunoreactive protein.
+    - **Concern ID** R1-M2
+    - **Severity** Major
+    - **Blocking** Yes
+    - **Axis** Genetic evidence and causality
+    - **Claim pointer** The claim that the p.T335V variant "drives disease-associated dysfunction" and is linked to neurodevelopmental abnormalities.
+    - **Evidence pointer** Table 3, "Clinical manifestations in patients" section
+    - **Concern** The genetic evidence is based on only three unrelated individuals. While the de novo occurrence of the variant is noted, the manuscript does not provide statistical evidence of enrichment in patients versus controls. The allele frequency in gnomAD is given as 6.6 x 10^-4, which is not extremely rare. The clinical features are heterogeneous, and one patient (Case 2) has a second, known pathogenic variant in YWHAG, which could confound the phenotype. The manuscript does not discuss whether the T335M variant has been identified in healthy individuals or in a control population. The link between ACP3 dysfunction and the specific neurological phenotypes remains speculative, as the authors acknowledge.
+    - **Why it matters** The title and abstract imply a causal link between the T335M variant and disease. The evidence presented is suggestive but not conclusive. Overstating the genetic evidence could mislead the field about the certainty of this association.
+    - **Resolution test** Perform a formal statistical test for variant enrichment in a larger patient cohort versus controls. Provide functional validation in a more physiologically relevant model, such as patient-derived cells or an animal model. Clearly state the limitations of the genetic evidence and temper the language in the title and abstract to reflect that this is a potential association, not a proven cause.
+    - **Concern ID** R1-M3
+    - **Severity** Major
+    - **Blocking** No
+    - **Axis** Interpretive validity of MD simulations
+    - **Claim pointer** The claim that the Asn333 glycan acts as a "structural clamp" based on reduced RMSF and increased contact area.
+    - **Evidence pointer** Figure 7C, 7D, 7E, Table 1
+    - **Concern** The MD simulations are performed on a model where the glycan structures are "intentionally simplified" and sialic acids are omitted. The conclusion that the Asn333 glycan is a "structural clamp" is based on a single, simplified model. The simulations show reduced flexibility of the glycan, but this does not necessarily translate to a stabilizing effect on the protein. The simulations of the "T335M variant lacking Asn333 glycosylation" are essentially the same as the "N333Q" simulation, as both lack the glycan. The specific effect of the T335M mutation, independent of glycan loss, is not addressed. The functional significance of the increased contact area is inferred but not directly tested.
+    - **Why it matters** The "structural clamp" model is a key mechanistic proposal. If the simulations are not robust to the choice of glycan structure or do not isolate the effect of the mutation from the effect of glycan loss, the proposed mechanism is weakened.
+    - **Resolution test** Perform simulations with different glycan compositions (e.g., including sialylated structures) to test the robustness of the findings. Include a simulation of the T335M mutant with the glycan attached (if possible) to separate the effects of the mutation from the loss of the glycan. Use a more quantitative metric of protein stability, such as free energy perturbation or enhanced sampling methods, to support the "clamp" hypothesis.
+- **Minor Comments**
+    - **Concern ID** R1-m1
+    - **Severity** Minor
+    - **Axis** Clarity and reproducibility
+    - **Affected element** Methods, "Molecular dynamics simulations"
+    - **Evidence pointer** "location not provided"
+    - **Issue** The description of the MD simulation setup is missing key parameters, such as the specific CHARMM-GUI input options used, the equilibration protocol details, and the criteria for determining when the system reached equilibrium. The text states RMSD stabilized at 30 ns, but the figure (S13-S15) is not provided for review.
+    - **Required correction** Provide a complete description of the simulation parameters, including the version of CHARMM-GUI, the specific CHARMM36 modification used, the salt concentration, and the temperature/pressure coupling algorithms. Include the RMSD plots as a supplementary figure.
+    - **Concern ID** R1-m2
+    - **Severity** Minor
+    - **Axis** Data presentation
+    - **Affected element** Figure 2B
+    - **Evidence pointer** Figure 2B
+    - **Issue** The y-axis label for the quantitative secretion/intracellular analysis is not defined. It is unclear if the values represent a percentage of total WT secretion, a ratio, or an arbitrary unit.
+    - **Required correction** Clearly label the y-axis with the units and define the normalization method in the figure legend.
+    - **Concern ID** R1-m3
+    - **Severity** Minor
+    - **Axis** Statistical reporting
+    - **Affected element** Figure 6A, 6B
+    - **Evidence pointer** Figure 6A, 6B
+    - **Issue** The statistical analysis for the proteinase K and activity assays is mentioned in the methods, but the specific p-values and the number of independent experiments (n) are not stated in the figure legends.
+    - **Required correction** Add the exact p-values and n to the figure legends for all panels in Figure 6.
+    - **Concern ID** R1-m4
+    - **Severity** Minor
+    - **Axis** Interpretation
+    - **Affected element** Discussion of N220Q phenotype
+    - **Evidence pointer** Figure 2B, 6A
+    - **Issue** The N220Q variant shows a partial secretion defect and increased protease sensitivity but retains activity. The authors suggest this is a "modest" effect. It would be helpful to discuss whether this partial defect could have any physiological consequences, especially in the context of a heterozygous state.
+    - **Required correction** Add a sentence or two discussing the potential implications of the partial N220Q defect, even if it is not disease-associated in this context.
+- **Technical failings that need to be addressed before the case is established** The primary technical failing is the lack of quantitative rigor in the secretion and activity assays, which are the foundation of the "essential" and "complete loss" claims. The genetic evidence is too limited to support the strong causal language in the title. The MD simulations, while supportive, are based on a simplified model and do not fully separate the effects of the mutation from the loss of the glycan.
+- **Assessment against Nature-style criteria** **Originality:** The concept of site-specific, non-redundant N-glycan function is not entirely new, but the detailed characterization of a specific high-mannose glycan as a structural clamp in a disease-relevant protein is a valuable and original contribution. **Scientific importance:** The findings have implications for understanding the molecular basis of glycosylation-related disorders and for protein engineering. The link to a human phenotype, while not definitive, increases the importance. **Interdisciplinary readership:** The work bridges glycobiology, protein biophysics, cell biology, and clinical genetics, making it of interest to a broad audience. **Technical soundness:** The experimental design is generally sound, but the quantitative weaknesses in key assays and the limited genetic evidence are significant concerns. **Readability for nonspecialists:** The manuscript is clearly written and the figures are well-designed, making the main findings accessible. The title is somewhat over-stated given the evidence.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core finding, that the Asn333 glycan is uniquely important for ACP3 stability, is likely correct and interesting. However, the strength of the claims must be aligned with the strength of the evidence. The authors need to provide more rigorous quantitative data for secretion and activity, and temper the language regarding the genetic causality. If these revisions are made, the manuscript would be a strong contribution.
+
+## Risk / unsupported claims
+- The claim that the T335M variant "drives disease-associated dysfunction" is not fully supported by the genetic evidence presented (n=3, no statistical enrichment analysis, one confounding variant).
+- The claim of "complete loss of enzymatic activity" is not supported by the data, which shows a very low but non-zero secretion level and uses a normalization method that may not account for misfolded protein.
+- The "structural clamp" mechanism is a plausible interpretation of the MD data but is not directly proven and may be sensitive to the simplified glycan models used.
+- The statement that Asn333 is "essential" for secretion is based on a qualitative assay and should be supported by more sensitive quantitative methods.

@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>APR-Score: Identification and Scoring of Aggregation-prone Regions in Protein Sequences. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>APR-Score: Identification and Scoring of Aggregation-prone Regions in Protein Sequences.</h1>
+      <div class="meta">Kaushik, Rahul; Launey, Thomas</div>
+      <div class="meta muted">
+        
+        <span class="journal">Genomics, proteomics &amp; bioinformatics</span>
+        · 2026-10-19
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42895482/">原文</a>
+      </div>
+      <p class="one-liner">该文开发了基于机器学习的APR-Score方法，利用序列和结构特征预测蛋白质序列中的聚集倾向区域，属于蛋白质序列层面的计算预测，与蛋白质结构计算相关但未涉及结构生成或采样。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein aggregation is a critical phenomenon associated with numerous neurodegenerative and systemic diseases. Understanding the propensity of proteins to aggregate is essential for unraveling the molecular basis of these disorders and for the design and engineering of novel proteins, as well as for modulating the activity/stability of enzymatic proteins. Here, we present APR-Score, a novel machine learning-based computational method designed to identify aggregation-prone regions within protein sequences. APR-Score leverages a combination of sequence-based features to predict regions of proteins that are prone to aggregation. It harnessed the information embedded in compiled sequence and structural features to achieve state-of-the-art accuracy. The method was evaluated through rigorous cross-validation on the training dataset and further validated on an independent test dataset. APR-Score demonstrated robustness and reliability in distinguishing aggregation-prone regions from non-aggregating ones, achieving a Matthews correlation coefficient (MCC) of 0.77, precision of 0.89, and F1-Score of 0.87. This tool offers significant value for researchers investigating protein aggregation-related diseases, as it can expedite the identification of aggregation-prone regions, thereby aiding the development of targeted therapies and diagnostic tools. Moreover, computational protein design and engineering efforts can be facilitated by APR-Score-based identification and screening of aggregation-prone protein sequences. APR-Score is available at https://github.com/TII-BRC/APR-Score.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质聚集是与多种神经退行性疾病和系统性疾病相关的关键现象。理解蛋白质聚集的倾向性对于揭示这些疾病的分子基础、设计和工程化新型蛋白质，以及调节酶蛋白的活性/稳定性至关重要。在此，我们提出APR-Score，一种基于机器学习的新型计算方法，旨在识别蛋白质序列中的聚集倾向区域。APR-Score利用序列特征的组合来预测蛋白质中易于聚集的区域。它利用了编译的序列和结构特征中嵌入的信息，达到了最先进的准确性。该方法通过在训练数据集上进行严格的交叉验证评估，并在独立的测试数据集上进一步验证。APR-Score在区分聚集倾向区域与非聚集区域方面表现出稳健性和可靠性，实现了马修斯相关系数（MCC）为0.77，精确度为0.89，F1分数为0.87。该工具为研究蛋白质聚集相关疾病的研究人员提供了重要价值，因为它能加速聚集倾向区域的识别，从而有助于开发靶向治疗和诊断工具。此外，基于APR-Score的识别和筛选聚集倾向蛋白质序列，可以促进计算蛋白质设计和工程化工作。APR-Score可在https://github.com/TII-BRC/APR-Score获取。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：APR-Score: Identification and Scoring of Aggregation-prone Regions in Protein Sequences</li>
+<li><strong>作者与单位</strong>：Kaushik, Rahul; Launey, Thomas（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：Genomics, Proteomics &amp; Bioinformatics</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-19）</li>
+<li><strong>论文类型</strong>：方法学（method）论文</li>
+<li><strong>领域</strong>：蛋白质生物信息学；蛋白质聚集预测；机器学习</li>
+<li><strong>关键词</strong>：Protein aggregation; Aggregation-prone regions; Machine learning; Sequence-based features; Protein design</li>
+<li><strong>DOI/arXiv 号</strong>：10.1093/gpbjnl/qzag104</li>
+<li><strong>代码</strong>：https://github.com/TII-BRC/APR-Score</li>
+<li><strong>数据</strong>：未提供（训练集与独立测试集的具体来源未在摘要中说明）</li>
+<li><strong>阅读日期</strong>：2026-05-13（按当前日期）</li>
+<li><strong>该文在课题方向中的位置</strong>：属于「蛋白质结构相关计算研究 × AI/深度学习」中的序列级功能区域预测任务，聚焦于聚集倾向区域（APR）的识别与打分，与结构预测（如 AlphaFold）互补，可用于蛋白质设计中的序列筛选与稳定性调控。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>APR-Score 使用基于序列特征的机器学习方法，通过编译序列与结构特征来识别蛋白质序列中的聚集倾向区域，在独立测试集上达到 MCC 0.77、精确率 0.89、F1 0.87，为聚集相关疾病研究和蛋白质工程设计提供快速筛选工具。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何从蛋白质一级序列中准确识别聚集倾向区域（APR），并对其聚集倾向进行打分？</li>
+<li><strong>为什么重要</strong>：蛋白质聚集与多种神经退行性疾病和系统性疾病相关；理解聚集倾向有助于疾病机制研究、靶向治疗开发，以及蛋白质工程中调节酶活性/稳定性。</li>
+<li><strong>现有方法不足</strong>：现有方法在准确性和泛化性上有限，或依赖昂贵的结构信息，难以用于大规模序列筛选（摘要中未详细列举具体方法，但暗示需要更优的序列特征组合）。</li>
+<li><strong>精确研究问题</strong>：Can a machine learning model using only sequence-derived features achieve state-of-the-art accuracy in identifying aggregation-prone regions across diverse protein sequences?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>脉络标注</strong>：仅本文框架（基于摘要推断，未外部核验）</li>
+<li><strong>阶段一</strong>：早期基于物理化学性质的规则方法（如疏水性、电荷分布）预测聚集倾向。优点：可解释；局限：准确率低，无法捕捉序列上下文。</li>
+<li><strong>阶段二</strong>：基于统计势能和结构信息的预测器（如 TANGO、Zyggregator）。优点：利用结构信息提高精度；局限：需要结构或同源建模，不适用于大规模序列筛选。</li>
+<li><strong>阶段三</strong>：机器学习方法（如 PASTA、Aggrescan）。优点：可整合多类特征；局限：特征工程有限，泛化性不足。</li>
+<li><strong>本文位置</strong>：APR-Score 提出结合序列与结构特征的机器学习框架，强调仅用序列特征即可达到 SOTA 精度，填补了高精度与可扩展性之间的空白。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>聚集区域识别精度不足</td>
+<td>现有方法在独立测试集上 MCC 较低</td>
+<td>特征组合不充分，未充分利用序列与结构信息</td>
+<td>摘要中「achieve state-of-the-art accuracy」暗示对比基线</td>
+</tr>
+<tr>
+<td>结构信息依赖</td>
+<td>许多方法需要三维结构或同源模型</td>
+<td>结构数据稀缺，难以用于高通量筛选</td>
+<td>摘要强调「sequence-based features」</td>
+</tr>
+<tr>
+<td>泛化性差</td>
+<td>训练集与测试集性能差距大</td>
+<td>过拟合或训练集偏差</td>
+<td>摘要提及「rigorous cross-validation」和「independent test dataset」</td>
+</tr>
+<tr>
+<td>可解释性不足</td>
+<td>难以理解哪些特征驱动预测</td>
+<td>黑箱模型缺乏特征重要性分析</td>
+<td>未提供（摘要未提及）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：构建一个机器学习分类器，输入为蛋白质序列，通过计算多种序列特征（如氨基酸组成、疏水性、二级结构倾向、进化信息等）来预测每个残基或区域是否为聚集倾向区域，并输出打分。</li>
+<li><strong>核心洞察</strong>：聚集倾向不仅由局部序列决定，还受序列上下文和结构倾向影响；通过编译序列与结构特征，可以在不依赖实验结构的情况下捕捉这些信息，达到与结构基方法相当的精度。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：对于蛋白质功能区域预测任务，将序列特征与从序列预测的结构特征（如二级结构、溶剂可及性）结合，往往能显著提升模型性能，且保持高通量可扩展性。这一思路可迁移到其他区域预测任务（如结合位点、翻译后修饰位点）。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质氨基酸序列（FASTA 格式）</li>
+<li><strong>输出</strong>：每个残基或区域的聚集倾向打分（0-1 概率或分类标签）</li>
+<li><strong>模块</strong>：
+  1. 特征提取模块：计算序列特征（氨基酸组成、二肽组成、疏水性、电荷、二级结构预测、进化保守性等）
+  2. 模型训练模块：使用机器学习算法（具体算法未在摘要中说明，可能是随机森林或梯度提升）
+  3. 打分与阈值模块：输出连续打分并应用阈值进行分类</li>
+<li><strong>训练</strong>：在标注的 APR 数据集上进行交叉验证，并在独立测试集上评估</li>
+<li><strong>工具</strong>：未提供（推测使用 Python 生物信息学库如 Biopython）</li>
+<li><strong>反馈回路</strong>：未提及</li>
+<li><strong>假设</strong>：序列特征足以捕捉聚集倾向；训练集标注准确反映真实 APR</li>
+<li><strong>文字流程</strong>：输入序列 → 计算特征向量 → 输入训练好的分类器 → 输出每个残基的聚集概率 → 应用阈值识别 APR 区域 → 输出打分与区域注释</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列特征提取</td>
+<td>将序列转换为数值向量</td>
+<td>机器学习需要数值输入</td>
+<td>输入：序列；输出：特征矩阵</td>
+<td>摘要「leverages a combination of sequence-based features」</td>
+<td>预期：特征减少将降低精度（未实测）</td>
+</tr>
+<tr>
+<td>结构特征整合</td>
+<td>引入预测的二级结构/溶剂可及性</td>
+<td>结构信息增强聚集倾向判别</td>
+<td>输入：序列；输出：结构特征</td>
+<td>摘要「compiled sequence and structural features」</td>
+<td>预期：移除后精度下降（未实测）</td>
+</tr>
+<tr>
+<td>分类器</td>
+<td>区分 APR 与非 APR</td>
+<td>核心预测引擎</td>
+<td>输入：特征向量；输出：概率打分</td>
+<td>摘要「MCC 0.77, precision 0.89, F1 0.87」</td>
+<td>预期：替换为简单规则将大幅降低性能</td>
+</tr>
+<tr>
+<td>打分与阈值</td>
+<td>将概率转换为区域注释</td>
+<td>提供可解释的生物学输出</td>
+<td>输入：概率；输出：APR 区域</td>
+<td>摘要「identification and scoring」</td>
+<td>预期：阈值调整影响灵敏度/特异度平衡</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>不适用</strong>：摘要中未提供任何数学公式或符号定义。</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：训练集与独立测试集（具体来源、规模未在摘要中提供）</li>
+<li><strong>指标</strong>：MCC（0.77）、精确率（0.89）、F1-Score（0.87）</li>
+<li><strong>基线</strong>：未在摘要中明确列出对比方法</li>
+<li><strong>评测协议</strong>：交叉验证（训练集）+ 独立测试集验证</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>oracle 输入</strong>：未提供（标注数据来源未说明）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>交叉验证</td>
+<td>模型在训练集上稳定</td>
+<td>训练集内 K-fold CV</td>
+<td>未提供具体数值</td>
+<td>模型训练稳定</td>
+<td>不能证明泛化性</td>
+<td>摘要「rigorous cross-validation」</td>
+</tr>
+<tr>
+<td>独立测试</td>
+<td>模型泛化能力</td>
+<td>独立测试集</td>
+<td>MCC 0.77, precision 0.89, F1 0.87</td>
+<td>模型具有良好泛化性</td>
+<td>不能证明在所有蛋白家族上有效</td>
+<td>摘要「independent test dataset」</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对蛋白质序列中的聚集倾向区域识别，不涉及聚集动力学或病理机制。</li>
+<li><strong>oracle/真值输入</strong>：训练标注来自实验验证的 APR 数据集（具体来源未提供）。</li>
+<li><strong>端到端状态</strong>：模型是端到端的序列到打分映射，但依赖预计算特征。</li>
+<li><strong>算力成本</strong>：未提供（推测为轻量级，适合高通量筛选）。</li>
+<li><strong>历史数据依赖</strong>：训练集可能偏向已知聚集蛋白，对未知聚集机制蛋白的泛化性未验证。</li>
+<li><strong>模型依赖</strong>：具体算法未披露，无法评估其对特征选择的敏感性。</li>
+<li><strong>最难情形</strong>：对 intrinsically disordered regions 或低复杂度序列的预测可能不准确（未验证）。</li>
+<li><strong>群体/领域边界</strong>：适用于可溶性蛋白和已知聚集相关蛋白；对膜蛋白或共翻译聚集可能不适用。</li>
+<li><strong>不确定性</strong>：未提供置信区间或错误率分析。</li>
+<li><strong>有边界的复述</strong>：APR-Score 在已标注的 APR 数据集上达到高精度，可作为序列级聚集倾向的快速筛选工具，但其在未探索蛋白空间中的表现和生物学机制解释力尚未验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 摘要中未讨论方法对结构预测错误的敏感性。
+- 未提及对同源蛋白或突变体的适用性边界。
+- 未提供与现有工具（如 TANGO、PASTA）的定量对比。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>特征组合未详细披露</td>
+<td>可能依赖特定特征工程，难以复现</td>
+<td>影响方法可移植性</td>
+<td>检查 GitHub 代码中的特征列表</td>
+<td>摘要仅提及「combination of sequence-based features」</td>
+</tr>
+<tr>
+<td>独立测试集规模未知</td>
+<td>小规模测试集可能高估性能</td>
+<td>影响结论可靠性</td>
+<td>查看论文 Methods 节的数据集描述</td>
+<td>摘要未提供测试集规模</td>
+</tr>
+<tr>
+<td>未与现有方法定量对比</td>
+<td>无法判断是否真正 SOTA</td>
+<td>影响方法定位</td>
+<td>在相同基准上对比 TANGO、PASTA 等</td>
+<td>摘要仅声称「state-of-the-art accuracy」</td>
+</tr>
+<tr>
+<td>结构特征来源未说明</td>
+<td>若依赖预测结构，误差可能传播</td>
+<td>影响实际应用</td>
+<td>检查是否使用 AlphaFold 预测结构</td>
+<td>摘要未提及结构特征来源</td>
+</tr>
+<tr>
+<td>打分阈值未讨论</td>
+<td>不同阈值影响灵敏度/特异度</td>
+<td>影响实际使用</td>
+<td>查看 ROC 曲线或阈值分析</td>
+<td>摘要未提供阈值信息</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>特征组合策略</strong>：将序列组成特征与预测的结构特征（二级结构、溶剂可及性）结合，可提升区域预测精度。可迁移到蛋白质结合位点预测、翻译后修饰位点预测等任务。
+2. <strong>高通量筛选设计</strong>：仅用序列特征即可实现高通量 APR 筛选，适用于蛋白质设计中的候选序列预筛。可迁移到蛋白质稳定性工程中的突变筛选。
+3. <strong>评估协议</strong>：交叉验证 + 独立测试集的双重验证是区域预测任务的标准做法，可借鉴到其他序列功能区域预测模型的评估设计。
+4. <strong>工具发布模式</strong>：提供 GitHub 代码仓库，便于社区复现和扩展。可迁移到其他生物信息学工具的开发与发布。
+5. <strong>与结构预测的互补性</strong>：APR-Score 可作为 AlphaFold 等结构预测工具的补充，在序列层面快速标注风险区域，再结合结构分析进行深入验证。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：TANGO（Fernandez-Escamilla et al., 2004）、PASTA（Walsh et al., 2014）、Aggrescan（Conchillo-Solé et al., 2007）均为聚集倾向预测工具，APR-Score 声称超越这些方法。</li>
+<li><strong>组合方向</strong>：可与 AlphaFold 结合，将 APR 预测结果映射到预测结构上，分析聚集区域的结构环境。</li>
+<li><strong>可迁移领域</strong>：蛋白质设计（如 de novo 设计、抗体工程）中，APR-Score 可用于筛选低聚集倾向的候选序列。</li>
+<li><strong>冲突点</strong>：若 APR-Score 依赖预测结构特征，则其性能可能受结构预测精度限制，与纯序列方法（如 TANGO）相比优势需谨慎评估。</li>
+<li><strong>候选方向</strong>：将 APR-Score 的特征工程思路迁移到其他淀粉样蛋白相关预测任务（如淀粉样纤维形成区域预测）。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：APR-Score 与 AlphaFold 结构特征融合的聚集风险预测
+   - <strong>来源局限/观察</strong>：APR-Score 声称结合序列与结构特征，但未明确结构特征来源；AlphaFold 可提供高精度结构预测。
+   - <strong>核心假设</strong>：将 AlphaFold 预测的溶剂可及性和二级结构作为额外特征，可进一步提升 APR 预测精度。
+   - <strong>相对本文的增量</strong>：明确结构特征来源，并验证预测结构 vs 实验结构的性能差异。
+   - <strong>初步方法</strong>：在 APR-Score 特征集上加入 AlphaFold 预测的 pLDDT、溶剂可及性、二级结构概率，重新训练并对比。
+   - <strong>验证方式</strong>：在独立测试集上比较加入 AlphaFold 特征前后的 MCC、AUC。
+   - <strong>可能的失败模式</strong>：AlphaFold 预测误差在无序区域较大，可能引入噪声。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：基于 APR-Score 的蛋白质设计序列筛选流程
+   - <strong>来源局限/观察</strong>：蛋白质设计中聚集倾向是常见失败原因，APR-Score 可提供快速筛选。
+   - <strong>核心假设</strong>：将 APR-Score 集成到设计流程中，可显著降低设计序列的聚集倾向，提高实验成功率。
+   - <strong>相对本文的增量</strong>：从预测工具到设计工作流的应用扩展。
+   - <strong>初步方法</strong>：在 Rosetta 或 ProteinMPNN 设计流程中，对输出序列计算 APR-Score，过滤高聚集风险序列。
+   - <strong>验证方式</strong>：对设计序列进行实验表达和聚集检测，对比过滤前后的成功率。
+   - <strong>可能的失败模式</strong>：APR-Score 可能对设计序列的分布外泛化不足。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：APR-Score 的可解释性分析：特征重要性驱动的聚集机制研究
+   - <strong>来源局限/观察</strong>：摘要未提供特征重要性分析，黑箱模型限制机制理解。
+   - <strong>核心假设</strong>：通过 SHAP 或 permutation importance 分析，可识别驱动 APR 预测的关键序列特征，揭示聚集的分子机制。
+   - <strong>相对本文的增量</strong>：从预测到机制解释的深化。
+   - <strong>初步方法</strong>：对 APR-Score 模型进行特征重要性分析，比较不同特征类别（组成 vs 结构）的贡献。
+   - <strong>验证方式</strong>：将重要特征与已知聚集相关实验数据（如突变扫描）进行相关性分析。
+   - <strong>可能的失败模式</strong>：特征重要性可能受模型类型影响，结论不稳定。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：跨物种 APR 预测的迁移学习
+   - <strong>来源局限/观察</strong>：APR-Score 训练集可能偏向人类蛋白，对微生物或植物蛋白泛化性未知。
+   - <strong>核心假设</strong>：通过迁移学习或域适应，可提升 APR-Score 在非模式生物蛋白上的预测性能。
+   - <strong>相对本文的增量</strong>：扩展工具的适用范围。
+   - <strong>初步方法</strong>：在多个物种的 APR 数据集上微调 APR-Score，评估跨物种性能。
+   - <strong>验证方式</strong>：比较微调前后在目标物种测试集上的 MCC。
+   - <strong>可能的失败模式</strong>：不同物种的聚集机制差异大，迁移收益有限。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present APR-Score, a machine learning method for identifying aggregation-prone regions in protein sequences, reporting state-of-the-art accuracy with MCC 0.77, precision 0.89, and F1-score 0.87, validated by cross-validation and an independent test set, with code available on GitHub.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no methodological details, dataset descriptions, or performance comparisons are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, training and test dataset descriptions, feature definitions, model architecture, cross-validation protocol, independent test set composition, baseline comparisons, and code repository contents</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially useful computational tool for protein aggregation prediction, but the evidence presented is insufficient to evaluate the core claims of state-of-the-art performance and methodological novelty. The reported metrics are promising, yet without details on dataset composition, feature engineering, model selection, and comparison to existing methods, the claims cannot be independently assessed. The work addresses a relevant biological problem, but the current abstract does not establish the technical soundness or scientific impact required for a high-profile venue.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers studying protein misfolding and aggregation in neurodegenerative and systemic diseases would find this tool relevant for identifying potential aggregation hotspots in disease-associated proteins. Computational protein designers and engineers could use APR-Score to screen sequences for aggregation propensity during design workflows. Additionally, the broader bioinformatics community interested in sequence-based prediction tools would be a potential audience.</li>
+<li><strong>Major strengths</strong> The problem addressed is of clear biological and clinical relevance. The reported performance metrics (MCC 0.77, precision 0.89, F1-score 0.87) are strong if reproducible. The availability of the tool on GitHub is a positive step toward community adoption and transparency.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li>R1-M1  </li>
+<li>R1-M2  </li>
+<li>R1-M3  </li>
+<li>R1-M4</li>
+<li><strong>Minor Comments</strong>  </li>
+<li>R1-m1  </li>
+<li>R1-m2  </li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3, R1-M4</li>
+<li><strong>Assessment against Nature-style criteria</strong><br />
+  Originality: The abstract does not clearly differentiate APR-Score from existing aggregation prediction methods, so novelty is not established.<br />
+  Scientific importance: The problem is important, but the abstract does not demonstrate a significant advance over current state of the art.<br />
+  Interdisciplinary readership: The work could appeal to structural biologists, computational biologists, and clinical researchers, but the abstract lacks sufficient context to engage a broad audience.<br />
+  Technical soundness: The reported metrics are not supported by sufficient methodological detail to assess validity.<br />
+  Readability for nonspecialists: The abstract is generally clear but uses technical terms without adequate explanation for a general scientific audience.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents promising results, but the lack of methodological and comparative detail prevents a supportive recommendation. The authors should provide the full manuscript and additional evidence to substantiate the claims.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Technical soundness  </li>
+<li><strong>Claim pointer</strong> The method achieved state-of-the-art accuracy with MCC 0.77, precision 0.89, and F1-score 0.87.  </li>
+<li><strong>Evidence pointer</strong> Abstract, performance metrics section; location not provided  </li>
+<li><strong>Concern</strong> The abstract reports performance metrics without providing any details on the dataset size, composition, or the definition of aggregation-prone regions. It is unclear how many protein sequences were used, whether the dataset is balanced, and how the ground truth labels were established.  </li>
+<li><strong>Why it matters</strong> Without dataset details, the reported metrics cannot be interpreted. A small or biased dataset could inflate performance, and the absence of label definitions makes the results non-reproducible.  </li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed description of the training and test datasets, including sequence counts, label sources, and class balance. Report performance metrics with confidence intervals or standard deviations.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Technical soundness  </li>
+<li><strong>Claim pointer</strong> The method leverages a combination of sequence-based features and compiled sequence and structural features to achieve state-of-the-art accuracy.  </li>
+<li><strong>Evidence pointer</strong> Abstract, methods description; location not provided  </li>
+<li><strong>Concern</strong> The abstract does not specify which features were used, how they were computed, or how structural information was incorporated. The phrase "compiled sequence and structural features" is vague and does not allow assessment of feature relevance or redundancy.  </li>
+<li><strong>Why it matters</strong> Feature selection is central to machine learning performance. Without knowing the features, the method cannot be reproduced, and the claim of novelty cannot be evaluated against existing approaches.  </li>
+<li>
+<p><strong>Resolution test</strong> List all features used, describe their computation, and explain how structural features were derived. Provide an analysis of feature importance or ablation studies.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Comparative validity  </li>
+<li><strong>Claim pointer</strong> APR-Score demonstrated state-of-the-art accuracy.  </li>
+<li><strong>Evidence pointer</strong> Abstract, performance claims; location not provided  </li>
+<li><strong>Concern</strong> The abstract claims state-of-the-art performance but does not compare APR-Score to any existing aggregation prediction methods. No baseline algorithms or benchmark datasets are mentioned.  </li>
+<li><strong>Why it matters</strong> The term "state-of-the-art" is only meaningful in comparison to prior work. Without a direct comparison, the claim is unsupported and potentially misleading.  </li>
+<li>
+<p><strong>Resolution test</strong> Include a comparative analysis against at least two or three established aggregation prediction tools on the same benchmark datasets, with statistical significance testing.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Validation rigor  </li>
+<li><strong>Claim pointer</strong> The method was evaluated through rigorous cross-validation on the training dataset and further validated on an independent test dataset.  </li>
+<li><strong>Evidence pointer</strong> Abstract, validation description; location not provided  </li>
+<li><strong>Concern</strong> The abstract does not specify the cross-validation scheme (e.g., k-fold, leave-one-out), the number of folds, or the relationship between the training and independent test datasets. It is unclear whether the independent test set was truly independent or derived from the same source.  </li>
+<li><strong>Why it matters</strong> Inadequate validation can lead to overfitting and inflated performance estimates. The lack of detail prevents assessment of the robustness and generalizability of the method.  </li>
+<li><strong>Resolution test</strong> Describe the cross-validation protocol in detail, including the number of folds and how the independent test set was constructed. Ensure no sequence overlap between training and test sets.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Abstract, background section  </li>
+<li><strong>Evidence pointer</strong> Abstract, first sentence; location not provided  </li>
+<li><strong>Issue</strong> The abstract states that protein aggregation is associated with numerous diseases but does not provide specific examples or context for why this is important.  </li>
+<li>
+<p><strong>Required correction</strong> Add one or two examples of diseases or biological processes affected by aggregation to strengthen the motivation.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Reproducibility  </li>
+<li><strong>Affected element</strong> Abstract, availability statement  </li>
+<li><strong>Evidence pointer</strong> Abstract, last sentence; location not provided  </li>
+<li><strong>Issue</strong> The GitHub link is provided, but the abstract does not state whether the code is open-source, what dependencies are required, or whether a web server is available.  </li>
+<li>
+<p><strong>Required correction</strong> Clarify the availability of the code, including license, dependencies, and whether a user-friendly web interface is provided.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Readability  </li>
+<li><strong>Affected element</strong> Abstract, results description  </li>
+<li><strong>Evidence pointer</strong> Abstract, performance metrics; location not provided  </li>
+<li><strong>Issue</strong> The metrics MCC, precision, and F1-score are reported without defining them or explaining their relevance to the prediction task.  </li>
+<li><strong>Required correction</strong> Briefly define these metrics or explain why they are appropriate for evaluating aggregation prediction performance.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "state-of-the-art accuracy" is unsupported without comparative benchmarks.</li>
+<li>The reported performance metrics (MCC 0.77, precision 0.89, F1-score 0.87) are not verifiable without dataset and validation details.</li>
+<li>The claim that APR-Score "harnessed the information embedded in compiled sequence and structural features" is not assessable without feature descriptions.</li>
+<li>The assertion that the method "demonstrated robustness and reliability" is not supported by the evidence provided in the abstract.</li>
+<li>The potential applications to therapeutic development and protein engineering are speculative and not substantiated by any results in the abstract.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

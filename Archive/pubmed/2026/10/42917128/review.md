@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report that photoactivated cross-linking mass spectrometry using sulfo-SDA, a heterobifunctional photoactivatable reagent, captures interdomain FMN-heme cross-links in an oxygenase/FMN construct of human inducible nitric oxide synthase (iNOS), but does not reveal statistically robust differences between wild-type and E546N mutant, in contrast to their prior DSBU-based quantitative XL-MS results. They attribute this to SDA's short effective distance range and near-instantaneous reactivity, which restrict cross-link formation to a narrow subset of transient docking states, and conclude that reagent choice and complementary cross-linkers are critical for defining conformational landscapes of dynamic multidomain proteins.
+- **Visible evidence base** Abstract text only; no experimental details, statistical analyses, figures, or supplementary data provided
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, statistical analysis details, raw cross-link data, structural models, and any supporting information
+
+## Reviewer
+- **Overall assessment** The abstract presents a scientifically interesting and timely comparison of two cross-linking reagents applied to a challenging multidomain enzyme system. The central observation, that SDA and DSBU yield different sensitivities to a mutation-induced shift in conformational equilibrium, is potentially valuable for the XL-MS community. However, the abstract alone provides insufficient evidence to evaluate the robustness of the claims. Key statistical, methodological, and interpretive details are absent, and the mechanistic explanation, while plausible, is not directly supported by data presented here. The conclusion about reagent selection is reasonable but requires stronger experimental backing.
+- **Who would be interested in the results, and why** Researchers in structural biology, particularly those using cross-linking mass spectrometry to study protein dynamics and conformational ensembles. The work also speaks to biochemists studying nitric oxide synthase regulation and to method developers interested in photoactivatable reagents. The comparative reagent analysis has broad relevance for anyone applying XL-MS to dynamic or transiently populated states.
+- **Major strengths** The study addresses an important and underexplored question, namely how sensitive photoactivated XL-MS is to shifts in conformational equilibrium involving sparsely populated docked states. The choice of iNOS as a stringent test case is well justified given its known large-amplitude domain motions. The comparison between two chemically distinct cross-linkers (DSBU and SDA) within the same system is a strong experimental design. The interpretation that SDA's short distance range and fast reactivity restrict sampling to a narrow subset of states is mechanistically coherent.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical robustness
+  - **Claim pointer** The abstract states that SDA "did not reveal statistically robust changes in the abundances of these cross-links between wild-type and E546N mutant."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The claim of no statistically robust change is presented without any supporting statistical details. No information is given on the number of replicates, the statistical test used, the effect sizes, or the variability of the measurements. The absence of a statistically significant difference could reflect insufficient power, high technical variability, or a true lack of biological difference. Without these details, the negative result cannot be properly interpreted.
+  - **Why it matters** The central contrast between DSBU and SDA hinges on this negative result. If the SDA data are underpowered or noisy, the conclusion that SDA is insensitive to the conformational shift would be unsupported. The paper's main message depends on the reliability of this comparison.
+  - **Resolution test** Provide full statistical analysis including replicate numbers, variance estimates, effect sizes, and power calculations. Show that the lack of significance is not due to technical limitations. Ideally, demonstrate that SDA can detect known conformational changes in a positive control system.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic interpretation
+  - **Claim pointer** The abstract attributes the observed differences to "the short effective distance range and near-instantaneous reactivity of SDA, which restrict FMN-heme cross-link formation to a narrow subset of transient docking states."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** This mechanistic explanation is presented as a conclusion, but the abstract provides no direct evidence linking SDA's properties to the observed cross-link patterns. The claim that SDA cross-links are "largely satisfied by a minimal subset of docked states" is stated without showing the structural modeling, the criteria for "satisfied," or the comparison with DSBU-derived restraints. The interpretation is plausible but not demonstrated.
+  - **Why it matters** The paper's broader conclusion about reagent selection depends on this mechanistic rationale. If the explanation is incorrect or incomplete, the guidance offered to the XL-MS community would be misleading. The distinction between "restricted sampling" and "different labeling preferences" needs to be experimentally or computationally substantiated.
+  - **Resolution test** Show the structural modeling results, including the ensemble of states used, the satisfaction criteria, and the quantitative comparison between SDA and DSBU restraints. Provide evidence that SDA's reactivity and distance range, rather than other factors such as labeling bias or protein surface accessibility, explain the observed patterns.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** The abstract concludes that "these results underscore the importance of selecting appropriate cross-linking reagents and employing complementary cross-linkers to define the conformational landscapes of dynamic multidomain proteins."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** This conclusion is broad and prescriptive, but it is based on a single protein system and a single mutation. The abstract does not discuss whether the findings are likely to generalize to other multidomain proteins or to other types of conformational changes. The recommendation to use complementary cross-linkers is reasonable, but the evidence base is narrow.
+  - **Why it matters** The paper appears to aim for a methodological take-home message. If the conclusion is overstated relative to the evidence, it could mislead readers into applying these findings beyond their valid scope. The field would benefit from a more cautious framing that acknowledges the system-specific nature of the observations.
+  - **Resolution test** In the full manuscript, discuss the limitations of generalizing from iNOS and the E546N mutant. If possible, include additional examples or a broader discussion of when SDA-type reagents are likely to be informative versus when DSBU-type reagents are preferable.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The term "docked states" is used without a clear definition. It is not immediately obvious whether this refers to a specific structural conformation, a range of conformations, or a computational construct.
+  - **Required correction** Define "docked states" in the abstract or refer to a prior definition. Clarify whether this is an experimentally observed state or a modeling concept.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Negative control
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract mentions that SDA produced a higher proportion of dead-end labeling products for iNOS proteins than for BSA, but it does not state what this comparison is meant to show. The relevance of BSA as a control is not explained.
+  - **Required correction** Briefly state the purpose of the BSA comparison, for example, to assess whether the high dead-end labeling is specific to iNOS or a general property of SDA on large proteins.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Precision
+  - **Affected element** Quantitative claim
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The phrase "largely satisfied" is vague. It is unclear what fraction of cross-links were satisfied and what threshold was used.
+  - **Required correction** Provide a quantitative measure, such as the percentage of cross-links satisfied within a given distance cutoff, and state the cutoff used.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Context
+  - **Affected element** Prior work
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract references prior work with DSBU but does not provide a citation or a brief description of the experimental conditions. Readers unfamiliar with that work may struggle to understand the comparison.
+  - **Required correction** Add a citation to the prior DSBU study and briefly state the key experimental differences, such as the construct used and the labeling conditions.
+
+## Risk / unsupported claims
+- The claim that SDA "did not reveal statistically robust changes" is unsupported without statistical details.
+- The mechanistic explanation attributing the observed differences to SDA's distance range and reactivity is not directly evidenced in the abstract.
+- The statement that SDA cross-links are "largely satisfied by a minimal subset of docked states" is unverifiable without structural modeling data.
+- The general recommendation to use complementary cross-linkers is reasonable but is presented as a firm conclusion rather than a suggestion based on a single case study.
+- The relevance and interpretation of the BSA comparison for dead-end labeling are not explained.

@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep learning coupled with scalable domain-specific structural validation expands RNA virus discovery from metatranscriptomes. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Deep learning coupled with scalable domain-specific structural validation expands RNA virus discovery from metatranscriptomes.</h1>
+      <div class="meta">Luo, Gaoyang; Zang, Zelin; Yuan, Ling; Zhou, Jingbo; Dong, Ao; Huang, Yufei; Li, Stan Z; Ju, Feng</div>
+      <div class="meta muted">
+        
+        <span class="journal">Nature communications</span>
+        · 2026-10-19
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42894013/">原文</a>
+      </div>
+      <p class="one-liner">该文用蛋白语言模型和结构预测从宏转录组中发现RNA病毒，虽以病毒为对象，但其结构域验证和滑动窗口预测策略可迁移至蛋白质结构计算，故给6分。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The discovery of RNA viruses from metatranscriptomic data remains challenging due to extreme sequence divergence and length heterogeneity, ranging from massive polyproteins to short assembly artifacts. We present Rider, a two-stage framework that synergizes deep representation learning with scalable domain-specific structural validation. In the first stage, Rider leverages a compact pretrained protein language model to broadly detect highly divergent viral signals. To overcome the inherent input length limitations of language models and accurately capture catalytic core domains, the second stage employs an overlapping sliding-window structure prediction strategy. These structures are then aligned against our curated database of non-redundant RdRp (RNA-dependent RNA polymerase) domains. This domain-centric design detects RdRp domains embedded within long polyproteins and truncated fragments. Across &gt;10,000 metatranscriptomes spanning diverse ecosystems, Rider achieves sensitivity comparable to LucaProt, recalling &gt;99% of previously cataloged RNA viruses. Rider identifies thousands of deeply divergent sequences and clades that elude existing methods. In a human inflammatory bowel disease (IBD) cohort, Rider agrees with other methods in detecting RNA viruses while extending detection to divergent lineages, providing a scalable pipeline for global RNA virome exploration.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">从宏转录组数据中发现RNA病毒仍然具有挑战性，原因在于极端的序列分歧和长度异质性，范围从巨大的多聚蛋白到短的组装伪影。我们提出了Rider，一个两阶段框架，将深度表示学习与可扩展的结构域特异性结构验证协同结合。在第一阶段，Rider利用一个紧凑的预训练蛋白质语言模型广泛检测高度分化的病毒信号。为克服语言模型固有的输入长度限制并准确捕获催化核心结构域，第二阶段采用重叠滑动窗口结构预测策略。这些结构随后与我们的非冗余RdRp（RNA依赖性RNA聚合酶）结构域精选数据库进行比对。这种以结构域为中心的设计能够检测嵌入长多聚蛋白和截短片段中的RdRp结构域。在跨越多样生态系统的超过10,000个宏转录组中，Rider实现了与LucaProt相当的灵敏度，召回超过99%的先前编目的RNA病毒。Rider识别出数千个深度分化的序列和进化枝，这些是现有方法无法检测到的。在人类炎症性肠病（IBD）队列中，Rider在检测RNA病毒方面与其他方法一致，同时将检测扩展到分化谱系，为全球RNA病毒组探索提供了可扩展的流程。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Deep learning coupled with scalable domain-specific structural validation expands RNA virus discovery from metatranscriptomes</li>
+<li><strong>作者</strong>: Luo, Gaoyang; Zang, Zelin; Yuan, Ling; Zhou, Jingbo; Dong, Ao; Huang, Yufei; Li, Stan Z; Ju, Feng</li>
+<li><strong>单位</strong>: 未提供（致谢提及西湖大学高性能计算中心，推测作者单位含西湖大学）</li>
+<li><strong>期刊/平台</strong>: Nature Communications</li>
+<li><strong>年份</strong>: 2026</li>
+<li><strong>论文类型</strong>: 方法学/工具开发 + 应用研究</li>
+<li><strong>领域</strong>: 病毒组学、宏转录组、RNA病毒发现、蛋白质语言模型、结构验证</li>
+<li><strong>关键词</strong>: RNA病毒发现、RdRp、蛋白质语言模型、结构验证、宏转录组、深度学习</li>
+<li><strong>DOI/arXiv</strong>: 10.1038/s41467-026-77183-y</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供（提及补充数据集1-16）</li>
+<li><strong>阅读日期</strong>: 2026-05-13</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × AI/深度学习」交叉方向，核心创新在于将蛋白质语言模型（ESM2）与结构预测（ESMFold）和结构比对（Foldseek）结合，用于从宏转录组中发现高度分化的RNA病毒RdRp。其「两阶段框架」——序列级粗筛 + 结构级精验——对蛋白质结构预测、构象采样、分子对接等课题具有直接的方法论借鉴意义，尤其是「滑动窗口处理长序列」和「结构域级验证」两个设计。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>Rider通过「ESM2嵌入+Transformer分类器」的序列级初筛和「滑动窗口ESMFold结构预测+Foldseek结构比对」的结构级验证两阶段框架，在超过10,000个宏转录组中实现了对高度分化RNA病毒RdRp的高灵敏度、低假阳性发现，并识别出数千条现有方法遗漏的深度分化序列。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何从大规模宏转录组数据中高效、准确地发现高度分化的RNA病毒（尤其是RdRp序列），同时处理序列极端分化、长度异质性（从短片段到&gt;4000 aa的多聚蛋白）和大量非病毒序列干扰？</li>
+<li><strong>为什么重要</strong>: RNA病毒在生态系统和人类健康中具有重要作用，但极端序列分化使传统同源比对方法（BLAST、HMMER）和基序检测方法失效；现有深度学习方法（如LucaProt）受限于输入长度（≤4000 aa）和缺乏结构验证，无法全面覆盖真实宏转录组中的病毒多样性。</li>
+<li><strong>现有方法不足</strong>:</li>
+<li>基于序列同源性的方法（BLAST、HMMER）对高度分化序列灵敏度低，易产生假阴性</li>
+<li>基于基序的方法（如LucaProt的RdRp基序检测）对短片段和缺失基序的序列不敏感</li>
+<li>现有深度学习方法缺乏显式结构验证，是"黑盒"预测</li>
+<li>计算成本高，难以扩展到百万级ORF的宏转录组数据</li>
+<li><strong>精确的"Can ... ?"问题</strong>: Can a two-stage framework combining protein language model-based sequence screening with domain-specific structural validation achieve both high sensitivity and low false positive rate in discovering highly divergent RNA viruses from large-scale metatranscriptomic data?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（注：此脉络基于本文引言及引用，标注为「仅本文框架」）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期同源搜索</td>
+<td>BLAST、HMMER</td>
+<td>对已知病毒灵敏</td>
+<td>对高度分化序列假阴性率高</td>
+</tr>
+<tr>
+<td>机器学习/深度学习</td>
+<td>DeepVirFinder、VirSorter2、geNomad</td>
+<td>不依赖严格同源性</td>
+<td>对短片段和高度分化序列仍有限</td>
+</tr>
+<tr>
+<td>结构感知方法</td>
+<td>LucaProt（序列+接触图）</td>
+<td>引入结构信息</td>
+<td>输入长度限制（≤4000 aa）、计算成本高、缺乏显式3D验证</td>
+</tr>
+<tr>
+<td>蛋白质语言模型</td>
+<td>ESM2等</td>
+<td>隐式学习结构-序列关系</td>
+<td>输入长度限制（≤1024 aa）、直接用于病毒发现未充分探索</td>
+</tr>
+<tr>
+<td><strong>本文位置</strong></td>
+<td><strong>Rider（两阶段：ESM2+Transformer → ESMFold+Foldseek）</strong></td>
+<td><strong>突破长度限制、显式结构验证、可扩展</strong></td>
+<td><strong>依赖结构预测质量，对极端"暗物质"仍有验证瓶颈</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列极端分化</td>
+<td>高度分化的RdRp与已知序列同源性极低（&lt;30%相似性）</td>
+<td>RNA病毒进化速率快，RdRp序列多样性极高</td>
+<td>Results 图2i：按门到科分类的novelty测试；Results 图4e：土壤候选与参考序列&lt;30%相似性但TM-score=0.94</td>
+</tr>
+<tr>
+<td>长度异质性</td>
+<td>从短片段（&lt;100 aa）到巨型多聚蛋白（&gt;4000 aa）</td>
+<td>RNA病毒基因组结构多样，RdRp可独立或嵌入多聚蛋白</td>
+<td>Introduction：提及"massive polyproteins to short assembly artifacts"；Methods：滑动窗口策略处理&gt;1024 aa序列</td>
+</tr>
+<tr>
+<td>输入长度限制</td>
+<td>ESM2固定输入窗口1024 aa，LucaProt上限4000 aa</td>
+<td>Transformer自注意力计算复杂度随长度平方增长</td>
+<td>Introduction：明确提及ESM2的1024残基限制和LucaProt的4000 aa限制</td>
+</tr>
+<tr>
+<td>黑盒预测</td>
+<td>深度学习方法缺乏显式结构验证</td>
+<td>现有方法仅用序列特征或2D接触图，无3D结构确认</td>
+<td>Introduction："existing deep learning pipelines largely function as predictive 'black boxes'"</td>
+</tr>
+<tr>
+<td>计算成本</td>
+<td>全量结构预测在百万级ORF上不可行</td>
+<td>ESMFold等结构预测工具计算密集</td>
+<td>Results 图2a-d：两阶段设计使结构验证仅用于初筛阳性候选</td>
+</tr>
+<tr>
+<td>假阳性控制</td>
+<td>宏转录组中大量非病毒序列干扰</td>
+<td>数据高度不平衡，非病毒ORF占绝大多数</td>
+<td>Results 图S3g：混淆矩阵显示Rider在1:100和1:400不平衡条件下保持低假阳性</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>: 两阶段框架。第一阶段用冻结的ESM2-35M提取序列嵌入，经轻量Transformer分类器进行病毒/非病毒二分类；第二阶段对初筛阳性且与已知序列相似性&lt;90%的候选，用滑动窗口ESMFold预测3D结构，再与RDSDB（RdRp结构数据库）进行Foldseek结构比对验证。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>: 
+   - <strong>序列级初筛 + 结构级精验的分工</strong>：语言模型嵌入能捕获隐式进化信息，适合大规模粗筛；而结构比对能识别序列相似性极低但结构保守的真阳性，同时过滤序列相似但结构不匹配的假阳性。两者互补，兼顾灵敏度与特异性。
+   - <strong>域级（domain-level）而非全长级验证</strong>：RdRp催化核心域是保守的，即使全长序列分化极大，核心域结构仍高度保守。将验证粒度从全长蛋白缩小到结构域，既降低计算成本，又提高对多聚蛋白和片段的适用性。
+   - <strong>滑动窗口解决长度异质性</strong>：对&gt;1024 aa的长序列，用500 aa步长的重叠窗口切分，每个窗口独立预测和比对，避免截断丢失关键域。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]: 
+   - 在"大海捞针"式的大规模筛选任务中，<strong>级联式（cascade）设计</strong>——用廉价方法粗筛、昂贵方法精验——是平衡计算成本与精度的通用策略。
+   - <strong>结构域而非全长</strong>作为比对单元，可显著提高对多结构域蛋白和片段化序列的鲁棒性，这一思想可迁移到分子对接、构象采样等任务中。
+   - 语言模型嵌入的"隐式结构知识"可作为显式结构验证的<strong>预筛器</strong>，两者不是替代关系而是互补关系。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 宏转录组组装后的ORF蛋白序列（长度100-2000 aa，经MMSeqs2在90%相似性去冗余）</li>
+<li><strong>输出</strong>: 经结构验证的RNA病毒RdRp候选序列列表，附带结构比对分数（Prob-score、TM-score）</li>
+<li><strong>模块</strong>:
+  1. <strong>序列嵌入模块</strong>: 冻结的ESM2-35M，输出480维/残基嵌入，取[CLS] token（首token）作为序列级表示
+  2. <strong>分类模块</strong>: 2层Transformer编码器（8头注意力，FFN隐层960维，dropout 0.3）+ 线性分类层 → 二分类概率
+  3. <strong>候选筛选模块</strong>: 概率阈值分三档（Rider-st ≥0.99、Rider-nr ≥0.90、Rider-se ≥0.50）；与已知RdRp序列相似性&lt;90%的候选进入结构验证
+  4. <strong>结构预测模块</strong>: ESMFold v1，滑动窗口（窗口1000 aa，步长500 aa）处理&gt;1024 aa序列
+  5. <strong>结构比对模块</strong>: Foldseek，将预测结构与RDSDB比对，计算Prob-score（贝叶斯后验概率）和TM-score
+  6. <strong>数据库模块</strong>: RDSDB（217,762个病毒蛋白结构，来源NCBI、Neri et al.、Zayed et al.、Edgar et al.）和RDSDB30（30%相似性去冗余后9,735个代表性RdRp结构域）</li>
+<li><strong>训练</strong>: 加权交叉熵损失（处理类别不平衡），AdamW优化器（lr=1e-4），batch size=256，早停策略（patience=5），每400步评估</li>
+<li><strong>流程</strong>: ORF序列 → ESM2嵌入 → Transformer分类 → 概率阈值筛选 → 相似性过滤 → ESMFold结构预测（滑动窗口） → Foldseek结构比对 → 输出验证结果</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESM2-35M嵌入</td>
+<td>提取序列的隐式进化/结构特征</td>
+<td>语言模型预训练捕获了序列-结构-功能关系，优于one-hot或k-mer特征</td>
+<td>输入: 蛋白序列(≤1024 aa)；输出: 480维序列级嵌入</td>
+<td>Results 图2a-d：Rider在多个测试集上AUC优于基线；图S4：消融显示ESM2贡献显著</td>
+<td>预期：分类性能大幅下降，接近传统模型水平</td>
+</tr>
+<tr>
+<td>Transformer分类器</td>
+<td>在ESM2嵌入基础上进行任务特定精炼</td>
+<td>冻结的ESM2嵌入是通用的，需要任务特定变换来区分病毒/非病毒</td>
+<td>输入: 480维嵌入；输出: 二分类概率</td>
+<td>Results 图S4：Transformer优于线性头（ESM2-linear）</td>
+<td>预期：AUC下降，但可能仍优于非语言模型基线</td>
+</tr>
+<tr>
+<td>概率阈值模式</td>
+<td>提供三档灵敏度/特异性权衡</td>
+<td>不同应用场景需要不同的假阳性容忍度</td>
+<td>输入: 分类概率；输出: 三档候选集</td>
+<td>Results 图2a-d：三模式ROC曲线；Methods：阈值定义</td>
+<td>预期：无此模块则无法灵活适配不同下游验证能力</td>
+</tr>
+<tr>
+<td>相似性过滤（&lt;90%）</td>
+<td>筛除与已知序列高度相似的候选，聚焦分化序列</td>
+<td>高相似序列已被现有方法覆盖，结构验证应聚焦于novel序列</td>
+<td>输入: 候选序列+已知RdRp库；输出: 分化候选集</td>
+<td>Results 图3b：30%/0%相似性基准测试</td>
+<td>预期：保留高相似序列会浪费结构验证计算资源</td>
+</tr>
+<tr>
+<td>ESMFold滑动窗口</td>
+<td>对长序列分段预测结构</td>
+<td>ESMFold输入限制1024 aa，而病毒多聚蛋白可&gt;4000 aa</td>
+<td>输入: 候选序列(任意长度)；输出: 分段3D结构</td>
+<td>Methods：窗口1000 aa、步长500 aa；Results 图3h：Mitovirus片段检测</td>
+<td>预期：无此模块则长多聚蛋白无法被结构验证</td>
+</tr>
+<tr>
+<td>Foldseek结构比对</td>
+<td>验证预测结构是否具有RdRp折叠</td>
+<td>结构比对能识别序列相似性极低但结构保守的同源物</td>
+<td>输入: 预测结构+RDSDB；输出: Prob-score、TM-score</td>
+<td>Results 图3c,d：正负样本Prob-score分布显著分离；图3b：结构比对灵敏度优于序列比对</td>
+<td>预期：无此模块则假阳性率显著上升，novel序列无法被验证</td>
+</tr>
+<tr>
+<td>RDSDB/RDSDB30</td>
+<td>提供结构比对参考库</td>
+<td>需要高质量、非冗余的RdRp结构域参考集</td>
+<td>输入: 多来源病毒蛋白序列；输出: 9,735个代表性结构域</td>
+<td>Methods：构建流程详述；Results 图3c,d：RDSDB30区分度验证</td>
+<td>预期：库质量下降会直接影响结构验证的可靠性</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1. Prob-score（Foldseek结构比对后验概率）</strong></p>
+<p>$$P(\text{TP} | \text{score}) = \frac{p(\text{score}|\text{TP}) \cdot p(\text{TP})}{p(\text{score}|\text{TP}) \cdot p(\text{TP}) + p(\text{score}|\text{FP}) \cdot p(\text{FP})}$$</p>
+<ul>
+<li>$P(\text{TP} | \text{score})$: 给定比对分数下为真阳性的后验概率</li>
+<li>$p(\text{score}|\text{TP})$: 真阳性比对的分数似然</li>
+<li>$p(\text{score}|\text{FP})$: 假阳性比对的分数似然</li>
+<li>$p(\text{TP})$, $p(\text{FP})$: 先验概率</li>
+<li><strong>用途</strong>: 判断预测结构是否与已知RdRp结构域真正同源</li>
+</ul>
+<p><strong>2. Ave_Probscore（Top-K聚合）</strong></p>
+<p>$$\text{Ave_Probscore} = \frac{\sum \text{Top}_K \text{Probscore}}{K}$$</p>
+<ul>
+<li>$K$: 默认10，取每个查询结构在RDSDB中前K个最佳比对的Prob-score均值</li>
+<li><strong>用途</strong>: 综合多个结构比对结果，减少单次比对偶然性</li>
+</ul>
+<p><strong>3. DNA mapping rate（正交验证指标）</strong></p>
+<p>$$\text{DNA mapping rate} = \frac{\text{number of positions with coverage} \ge 1}{\text{total contig length}}$$</p>
+<ul>
+<li><strong>用途</strong>: 验证RNA病毒候选是否具有基因组DNA支持，排除组装假象</li>
+</ul>
+<p><strong>4. RPKM（表达量归一化）</strong></p>
+<p>$$\text{RPKM} = \frac{10^9 \times C}{N \times L}$$</p>
+<ul>
+<li>$C$: 映射到含Rider命中ORF的contig的reads数</li>
+<li>$N$: 实验中总映射reads数</li>
+<li>$L$: contig长度（bp）</li>
+<li><strong>用途</strong>: 评估病毒转录丰度</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/群体</strong>:
+- 训练集: 24,439条阳性RdRp序列（NCBI + RefSeq，经HMMER过滤）+ 122,195条阴性序列（UniRef90非RdRp）
+- 独立测试集: 多个，包括LucaProt标准化测试集（22,284条序列，540正/21,744负）、Neri et al.分类学novelty测试集、PalmDB基序测试集、RefSeq病毒基因组测试集
+- 大规模应用: 10,000+宏转录组样本，45个生态系统
+- IBD队列: CD (n=45)、UC (n=21)、非IBD (n=11)</p>
+<p><strong>指标</strong>: AUC、准确率、F1、精确率、召回率、假阳性率（FPR）、真阳性率（TPR）</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平衡测试集分类</td>
+<td>Rider在标准条件下优于基线</td>
+<td>与LucaProt、Transformer、CNN、XGB、RF对比</td>
+<td>Rider AUC最高（具体数值未提供）</td>
+<td>Rider架构有效</td>
+<td>未提供具体AUC数值，无法量化优势幅度</td>
+<td>Results 图2a</td>
+</tr>
+<tr>
+<td>1:100不平衡测试</td>
+<td>Rider在真实场景比例下保持低假阳性</td>
+<td>10个独立数据集，1:100正负比</td>
+<td>AUC=0.983；96/100,000假阳性</td>
+<td>Rider对类别不平衡鲁棒</td>
+<td>未与其他方法在此条件下的FPR对比</td>
+<td>Results 图2b、图S3g</td>
+</tr>
+<tr>
+<td>短片段测试（≤300 aa）</td>
+<td>Rider对短序列敏感</td>
+<td>与LucaProt对比</td>
+<td>Rider AUC=0.988 vs LucaProt 0.966</td>
+<td>Rider在短序列上优于LucaProt</td>
+<td>未提供短序列长度下限</td>
+<td>Results 图2c</td>
+</tr>
+<tr>
+<td>基序测试（PalmDB, 50-250 aa）</td>
+<td>Rider能识别仅含核心基序的片段</td>
+<td>与LucaProt对比</td>
+<td>Rider AUC=0.987 vs LucaProt 0.920；1240 TP/78 FP vs 891 TP/148 FP</td>
+<td>Rider在基序级识别上显著优于LucaProt</td>
+<td>未提供PalmDB测试集的具体构成</td>
+<td>Results 图2d、图S3g</td>
+</tr>
+<tr>
+<td>分类学novelty测试</td>
+<td>Rider对深度分化序列敏感</td>
+<td>按门/纲/目/科novelty分层</td>
+<td>Rider平均召回91.71% vs LucaProt 90.66% vs PalmScan 82.19%</td>
+<td>Rider在深度分化序列上优于现有方法</td>
+<td>差异较小（~1%），需统计检验</td>
+<td>Results 图2i</td>
+</tr>
+<tr>
+<td>大规模数据库召回</td>
+<td>Rider可扩展至百万级序列</td>
+<td>PalmDB 250,799条；Serratus 140万条</td>
+<td>PalmDB召回99.24%（Rider-se）；Serratus召回98.61%（Rider-nr）</td>
+<td>Rider具有大规模可扩展性</td>
+<td>未提供与LucaProt在大规模数据上的直接对比</td>
+<td>Results 图2f-h、补充数据8</td>
+</tr>
+<tr>
+<td>消融实验</td>
+<td>各组件贡献</td>
+<td>移除ESM2/Transformer/结构验证</td>
+<td>ESM2贡献最大；Transformer优于线性头；结构验证降低假阳性</td>
+<td>混合架构各组件均有必要</td>
+<td>未提供各消融条件的完整指标表</td>
+<td>Results 图S4</td>
+</tr>
+<tr>
+<td>结构验证区分度</td>
+<td>Prob-score能区分真/假RdRp</td>
+<td>正样本vs 194,572非RdRp结构</td>
+<td>正样本Prob-score&gt;50，负样本集中在20-30</td>
+<td>Prob-score是有效判别指标</td>
+<td>未提供ROC或AUC用于Prob-score判别</td>
+<td>Results 图3c,d</td>
+</tr>
+<tr>
+<td>远程同源检测</td>
+<td>结构比对优于序列比对</td>
+<td>30%/0%相似性测试集</td>
+<td>Rider-s2召回99.71%/90.91% vs 序列方法&lt;1%</td>
+<td>结构验证对远程同源检测至关重要</td>
+<td>未与Foldseek直接基于序列的版本对比</td>
+<td>Results 图3b</td>
+</tr>
+<tr>
+<td>多聚蛋白特异性</td>
+<td>能区分功能性RdRp与非催化前体</td>
+<td>SeMV P2a vs P2ab</td>
+<td>Rider正确拒绝P2a，识别P2ab中的RdRp</td>
+<td>结构验证提供功能域级特异性</td>
+<td>仅1个病毒案例，需更多验证</td>
+<td>Results 图3i</td>
+</tr>
+<tr>
+<td>DNA正交验证</td>
+<td>预测的RNA病毒有基因组支持</td>
+<td>167对宏基因组-宏转录组</td>
+<td>DNA映射率与Rider分数负相关</td>
+<td>预测具有生物学真实性</td>
+<td>相关性较弱（r≈-0.06），需更多验证</td>
+<td>Results 图4i、图S5</td>
+</tr>
+<tr>
+<td>IBD队列应用</td>
+<td>Rider可发现疾病相关病毒</td>
+<td>CD/UC/非IBD比较</td>
+<td>短序列（100-200 aa）检测到更多病毒；CD中病毒丰度最低</td>
+<td>Rider可揭示疾病相关病毒动态</td>
+<td>未提供差异的统计显著性</td>
+<td>Results 图5b-d</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文结论仅限于从宏转录组ORF中识别RdRp（RNA病毒标志基因），不涉及完整病毒基因组重建、病毒-宿主关联或表型预测。</li>
+<li><strong>真值/基准</strong>: 训练和测试依赖已知RdRp注释（NCBI、RefSeq、Neri et al.、Edgar et al.），这些注释本身可能不完整或有误；"novelty"定义基于与LucaProt超组的序列相似性阈值，是操作化定义而非生物学本质。</li>
+<li><strong>端到端状态</strong>: Rider是"发现工具"而非"验证工具"。结构验证（ESMFold+Foldseek）提供的是计算层面的支持，未经湿实验验证；Prob-score&gt;50的阈值是经验设定的，不同数据集可能需要调整。</li>
+<li><strong>算力成本</strong>: 两阶段设计显著降低了计算成本，但结构验证阶段仍需对每个候选运行ESMFold，在超大规模数据集上仍是瓶颈。作者未提供端到端总计算成本的详细报告。</li>
+<li><strong>性能边界</strong>: 在1:100和1:400极端不平衡条件下表现良好，但假阳性率仍非零（96/100,000）；对"暗物质"（&lt;30%相似性）序列，结构验证成功率有限（2294/13,407未验证）。</li>
+<li><strong>有边界的复述</strong>: Rider在宏转录组RdRp发现任务中，通过两阶段"序列初筛+结构验证"设计，在保持高灵敏度的同时将假阳性率控制在较低水平，并能识别出部分现有方法遗漏的深度分化序列；但其性能受限于当前结构预测工具对极端分化序列的建模能力，且所有结论均为计算预测，需实验验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构验证瓶颈</td>
+<td>2294/13,407个候选未能通过结构验证，其中61.5%为深度分化序列（&lt;30%相似性），平均pLDDT仅0.37</td>
+<td>需要开发对缺乏进化上下文序列更鲁棒的新一代结构预测模型</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>阳性定义宽泛</td>
+<td>训练检测"复制相关信号"，阳性可能包含缺乏明确RdRp结构域的contig</td>
+<td>建议用户结合基序工具（如LucaProt、PalmScan）进行后过滤</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>结构数据库覆盖度</td>
+<td>RDSDB的覆盖度和质量直接影响验证可靠性</td>
+<td>持续扩展和更新结构数据库</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>计算资源需求</td>
+<td>结构验证阶段计算密集，虽经优化但仍是瓶颈</td>
+<td>未明确提及</td>
+<td>Results 图2a-d、Methods 节</td>
+</tr>
+<tr>
+<td>依赖ESMFold能力</td>
+<td>单序列结构预测对深度分化序列的建模能力有限</td>
+<td>未来可探索多序列比对或共进化信息增强的预测模型</td>
+<td>Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>与LucaPort对比的公平性</td>
+<td>作者未提供与LucaPort在相同测试条件下的完整对比指标（如F1、精确率），仅报告了AUC和部分TPR/FPR</td>
+<td>若对比不全面，可能高估Rider优势</td>
+<td>在相同测试集上运行两个模型，报告完整混淆矩阵和95%置信区间</td>
+<td>Results 图2a-d</td>
+</tr>
+<tr>
+<td>"敏感性可比"的模糊性</td>
+<td>作者称Rider敏感性"comparable to"LucaPort，但未给出具体数值和统计检验</td>
+<td>无法判断差异是否显著</td>
+<td>提供配对检验或Bootstrap置信区间</td>
+<td>Results 图2a-d</td>
+</tr>
+<tr>
+<td>结构验证的循环论证风险</td>
+<td>RDSDB由已知RdRp构建，用Foldseek比对预测结构到RDSDB，可能偏向验证与已知结构相似的候选，而对真正novel的折叠不敏感</td>
+<td>可能系统性低估"暗物质"</td>
+<td>使用不依赖RdRp注释的独立结构聚类方法交叉验证</td>
+<td>Methods 节、Results 图3c,d</td>
+</tr>
+<tr>
+<td>滑动窗口的边界效应</td>
+<td>窗口500 aa步长可能切断跨窗口的域间相互作用，影响多域蛋白的结构预测质量</td>
+<td>对多聚蛋白的验证可能不完整</td>
+<td>比较不同窗口/步长设置下的验证结果稳定性</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>DNA映射率验证的局限性</td>
+<td>DNA映射率低不必然意味着RNA病毒假阳性——真正的RNA病毒可能因宿主DNA污染、测序深度不足等原因显示低DNA映射率</td>
+<td>该验证可能过度排除真实RNA病毒</td>
+<td>使用正对照（已知RNA病毒）评估该验证的灵敏度和特异性</td>
+<td>Results 图4i</td>
+</tr>
+<tr>
+<td>训练数据偏差</td>
+<td>阳性训练数据来自已知RdRp，可能偏向已充分采样的病毒谱系</td>
+<td>对未充分采样谱系的检测可能不敏感</td>
+<td>分析训练集分类学组成，评估对稀有门类的检测率</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>未报告端到端计算成本</td>
+<td>作者报告了推理速度（44倍加速），但未报告完整pipeline（含结构验证）的总计算成本</td>
+<td>影响实际部署决策</td>
+<td>提供不同规模数据集上的端到端时间/GPU小时数</td>
+<td>Results 图2a-d、补充数据10</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:</p>
+<ol>
+<li>
+<p><strong>两阶段级联设计（序列粗筛→结构精验）</strong>：这是本文最核心的可迁移方法论。在蛋白质结构预测、分子对接等任务中，面对海量候选（如构象采样中的海量decoy、虚拟筛选中的百万级分子），可借鉴"廉价方法粗筛+昂贵方法精验"的级联策略，在保持精度的同时大幅降低计算成本。具体到本课题，可在MD模拟前用AlphaFold/ESMFold快速过滤不稳定构象，或用语言模型嵌入预筛后再做对接。</p>
+</li>
+<li>
+<p><strong>结构域级（domain-level）而非全长级验证</strong>：本文通过将验证粒度从全长蛋白缩小到RdRp核心催化域，成功处理了多聚蛋白和片段化序列。这一思想可迁移到：a) 分子对接中，聚焦结合口袋而非全蛋白；b) 构象采样中，聚焦功能域而非全长；c) 蛋白质设计中，验证核心折叠而非全长。<strong>"找关键域"比"看全长"更鲁棒、更高效</strong>。</p>
+</li>
+<li>
+<p><strong>滑动窗口策略处理长度异质性</strong>：对超出模型输入限制的长序列（&gt;1024 aa），用重叠窗口分段处理，每个窗口独立预测和比对。这一策略可直接迁移到：a) AlphaFold/ESMFold对超长蛋白（如多聚蛋白、重复蛋白）的结构预测；b) 分子动力学模拟中的区域化处理；c) 任何基于Transformer的蛋白质模型对长序列的处理。</p>
+</li>
+<li>
+<p><strong>语言模型嵌入作为"隐式结构预筛器"</strong>：本文证明冻结的ESM2嵌入+轻量分类器即可高效区分病毒/非病毒，说明PLM嵌入蕴含丰富的结构/功能信息。这提示本课题：在需要显式结构预测（如AlphaFold）之前，可先用PLM嵌入进行快速预筛或聚类，大幅减少需要昂贵结构计算的对象数量。</p>
+</li>
+<li>
+<p><strong>Prob-score作为结构验证的置信度指标</strong>：Foldseek的Prob-score（贝叶斯后验概率）为结构比对提供了概率化解释，优于单一相似性分数。这一思想可迁移到：a) 分子对接打分函数的概率化校准；b) 构象采样的置信度评估；c) AlphaFold pLDDT的校准使用。</p>
+</li>
+<li>
+<p><strong>多正交验证策略</strong>：本文使用DNA映射率作为RNA病毒候选的独立验证，结合结构比对和序列相似性，形成多证据链。这提示本课题：任何计算预测都应寻求独立于模型本身的验证信号（如实验数据、独立物理量、跨方法一致性），而非仅依赖模型内部置信度。</p>
+</li>
+<li>
+<p><strong>"暗物质"分析框架</strong>：本文对未通过结构验证的序列进行系统分析（pLDDT分布、novelty分层），区分"真novel但结构可折叠"与"结构预测失败"两种情况。这种对"模型失败模式"的系统分析框架，可迁移到本课题中评估AlphaFold等工具在哪些序列空间失效。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>
+<p><strong>LucaProt (Hou et al., 2024)</strong>：本文的直接前作和主要对比对象。LucaProt是首个将蛋白质语言模型（ESM2）与接触图预测结合用于RNA病毒RdRp发现的深度学习方法，但受限于输入长度（≤4000 aa）和缺乏显式3D验证。Rider在LucaProt基础上引入结构域级验证和滑动窗口策略，突破了长度限制。<strong>连接点</strong>：本课题中AlphaFold等结构预测工具同样面临输入长度限制，Rider的滑动窗口策略可借鉴。</p>
+</li>
+<li>
+<p><strong>ESM2 (Lin et al., 2023)</strong>：本文使用的骨干模型。ESM2是Meta训练的蛋白质语言模型，在掩码语言建模任务上预训练，隐式学习了序列-结构-功能关系。<strong>连接点</strong>：本课题中，ESM2嵌入可作为蛋白质表示学习的通用特征，用于构象聚类、功能预测、序列设计等下游任务。</p>
+</li>
+<li>
+<p><strong>ESMFold (Lin et al., 2023)</strong>：本文使用的结构预测工具。ESMFold是单序列快速结构预测器，无需MSA，适合大规模应用。<strong>连接点</strong>：本课题中，ESMFold可作为AlphaFold的轻量替代，用于需要高通量结构预测的场景（如虚拟筛选、构象采样）。</p>
+</li>
+<li>
+<p><strong>Foldseek (van Kempen et al., 2023)</strong>：本文使用的结构比对工具。Foldseek通过将结构编码为3Di字母表实现快速结构搜索，比DALI/TM-align快数个数量级。<strong>连接点</strong>：本课题中，Foldseek可用于大规模结构聚类、构象空间分析、远程同源检测。</p>
+</li>
+<li>
+<p><strong>RdRp系统发育 (Wolf et al., 2020; Neri et al., 2022)</strong>：本文的生物学基础。RdRp是RNA病毒最通用的标志基因，其系统发育框架（如Orthornavirae分类）为病毒发现提供了参考框架。<strong>连接点</strong>：本课题中，RdRp结构域可作为蛋白质结构预测和设计的测试体系。</p>
+</li>
+<li>
+<p><strong>宏转录组病毒发现 (Edgar et al., 2022; Zayed et al., 2022)</strong>：本文的应用场景。大规模宏转录组测序产生了海量未注释ORF，是病毒发现的富矿。<strong>连接点</strong>：本课题中，宏基因组/宏转录组数据可作为蛋白质结构预测的大规模应用场景。</p>
+</li>
+<li>
+<p><strong>pLDDT与结构置信度 (Jumper et al., 2021)</strong>：本文使用pLDDT评估预测结构质量。AlphaFold2引入的pLDDT已成为结构预测置信度的标准指标。<strong>连接点</strong>：本课题中，pLDDT可用于过滤低质量预测、指导构象采样、评估模型泛化能力。</p>
+</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>名称</strong>: 基于结构域级滑动窗口的AlphaFold长序列预测增强
+   - <strong>来源局限/观察</strong>: AlphaFold2/3对&gt;2000 aa的多域蛋白预测质量下降，且显存消耗巨大。Rider的滑动窗口策略（窗口1000 aa、步长500 aa）在结构域级验证中有效，但尚未系统应用于结构预测本身。
+   - <strong>核心假设</strong>: 对长蛋白进行重叠窗口切分，分别预测各窗口结构，再基于域间相互作用和几何约束拼接，可获得优于全长预测的质量，同时降低显存需求。
+   - <strong>初步方法</strong>: 在Rider的滑动窗口基础上，引入域间接触图预测和几何拼接算法（如基于TM-score的刚体叠加），在CASP15/16长链目标上系统评估。
+   - <strong>验证方式</strong>: 与AlphaFold2/3全长预测对比TM-score、LDDT、域间相对方位误差；消融窗口大小和重叠率。
+   - <strong>可能的失败模式</strong>: 域间相对方位预测不准导致拼接失败；窗口边界处二级结构断裂。</p>
+</li>
+<li>
+<p><strong>名称</strong>: PLM嵌入引导的构象采样加速
+   - <strong>来源局限/观察</strong>: Rider证明冻结的ESM2嵌入+轻量分类器可高效区分蛋白类别，说明PLM嵌入蕴含丰富的结构信息。在构象采样（如MD、MCMC）中，大量采样时间浪费在低能垒区域。
+   - <strong>核心假设</strong>: PLM嵌入的梯度或隐空间距离可作为构象采样的偏置势，引导采样器快速跨越能垒、探索功能相关构象。
+   - <strong>初步方法</strong>: 将ESM2嵌入的隐空间距离作为collective variable，结合增强采样方法（如metadynamics、REMD），在模型蛋白（如激酶、GPCR）上测试采样效率和构象覆盖度。
+   - <strong>验证方式</strong>: 与无偏MD对比构象空间探索速度、自由能面收敛时间、已知功能构象的命中率。
+   - <strong>可能的失败模式</strong>: PLM嵌入对构象变化不敏感（主要编码序列信息而非构象信息）；偏置势引入人为自由能面畸变。</p>
+</li>
+<li>
+<p><strong>名称</strong>: 结构域级Prob-score校准的分子对接虚拟筛选
+   - <strong>来源局限/观察</strong>: Rider使用Foldseek Prob-score（贝叶斯后验概率）作为结构验证指标，在远程同源检测中优于序列方法。分子对接的评分函数常产生大量假阳性，缺乏概率化校准。
+   - <strong>核心假设</strong>: 将对接pose的结构相似性（对已知复合物结构库的Foldseek比对）转化为概率化评分，可提高虚拟筛选的富集因子。
+   - <strong>初步方法</strong>: 构建蛋白-配体复合物结构库，对每个对接pose计算其与库中已知复合物的Foldseek Prob-score，作为评分函数的补充特征，训练排序模型。
+   - <strong>验证方式</strong>: 在DUD-E、LIT-PCBA等标准虚拟筛选基准上对比富集因子、ROC-AUC。
+   - <strong>可能的失败模式</strong>: 结构库覆盖度不足导致Prob-score不可靠；计算开销过大。</p>
+</li>
+<li>
+<p><strong>名称</strong>: 基于结构域嵌入的RNA病毒RdRp功能分类
+   - <strong>来源局限/观察</strong>: Rider识别出大量深度分化RdRp，但仅用结构相似性验证，未进行功能注释。RdRp的催化域结构保守但底物特异性、复制策略可能不同。
+   - <strong>核心假设</strong>: RdRp催化域的三维结构嵌入（如从ESM2或结构比对中提取）可区分不同复制策略（如正链/负链/双链RNA病毒）和宿主范围。
+   - <strong>初步方法</strong>: 对Rider验证的11,113个RdRp结构域提取结构嵌入，结合已知RdRp功能注释训练分类器，预测未知序列的功能类别。
+   - <strong>验证方式</strong>: 交叉验证分类准确率；对预测的新类别进行系统发育和结构基序验证。
+   - <strong>可能的失败模式</strong>: RdRp结构域过于保守，无法区分功能亚型；功能注释本身不完整。</p>
+</li>
+<li>
+<p><strong>名称</strong>: 结构验证引导的蛋白质设计迭代优化
+   - <strong>来源局限/观察</strong>: Rider的两阶段框架（序列筛选→结构验证）本质上是"生成-验证"循环。在蛋白质设计中，类似循环可系统化：设计序列→预测结构→结构验证→反馈优化。
+   - <strong>核心假设</strong>: 将Foldseek结构比对（对目标结构库）作为设计序列的反馈信号，可引导设计算法（如扩散模型、遗传算法）生成结构更接近目标的序列。
+   - <strong>初步方法</strong>: 在RFDiffusion或ProteinMPNN生成序列后，用ESMFold预测结构，再与目标结构进行Foldseek比对，将Prob-score作为奖励信号进行强化学习或进化优化。
+   - <strong>验证方式</strong>: 在从头设计蛋白基准（如CASP15设计赛道）上对比成功率、结构相似性。
+   - <strong>可能的失败模式</strong>: 结构预测误差在迭代中被放大；奖励信号稀疏导致优化困难。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, introduction, results, discussion, methods, and supplementary information descriptions.</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, reproducibility, and claims as presented in the provided manuscript text. No external data or code were accessed.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present Rider, a two-stage deep learning framework for RNA virus discovery from metatranscriptomes. Stage 1 uses a frozen ESM2 protein language model with a Transformer classifier for sequence-based screening; Stage 2 employs sliding-window structure prediction and alignment against a curated RdRp domain database (RDSDB) for structural validation. The authors claim superior sensitivity for divergent and fragmented viral sequences compared to existing tools, scalability to &gt;10,000 metatranscriptomes, and application to an IBD cohort revealing previously missed viral diversity.</li>
+<li><strong>Visible evidence base</strong> Figures 1–5, Supplementary Figures S1–S7, Supplementary Datasets 1–16, and methods text. Performance metrics (AUC, TPR, FPR), benchmark comparisons, case studies, and phylogenetic analyses are described.</li>
+<li><strong>Missing materials affecting confidence</strong> Code availability, trained model weights, exact hyperparameters, full benchmark result tables, and detailed statistical outputs are not provided in the manuscript text. The actual RDSDB contents and the complete list of 10,000+ metatranscriptome accessions are not enumerated.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript presents a technically sophisticated and potentially valuable framework for RNA virus discovery. The two-stage design, combining a frozen protein language model with structural validation, is a logical and innovative response to known limitations in sequence-based viral detection. The benchmarking against multiple baselines and the application to real-world datasets are commendable. However, several methodological details and validation aspects require clarification and strengthening before the claims can be fully accepted. The reliance on structural validation as a gold standard, the handling of false positives, and the interpretation of the IBD cohort results are areas of particular concern.</li>
+<li><strong>Who would be interested in the results, and why</strong> Virologists, metagenomics and metatranscriptomics researchers, computational biologists developing tools for pathogen discovery, and researchers studying the human microbiome, particularly in the context of inflammatory bowel disease. The framework's scalability and sensitivity for divergent viruses would be of broad interest to the global virosphere discovery community.</li>
+<li><strong>Major strengths</strong></li>
+<li>The two-stage architecture is a well-reasoned and practical solution to the dual challenges of sequence divergence and length heterogeneity.</li>
+<li>The use of a frozen, compact ESM2 model with a lightweight trainable head is computationally efficient and scalable, a significant practical advantage.</li>
+<li>The construction of a domain-specific structural database (RDSDB) and the use of structural alignment for validation is a rigorous approach that goes beyond sequence-based homology.</li>
+<li>The extensive benchmarking against multiple baseline methods and on diverse datasets, including short fragments and long polyproteins, is thorough.</li>
+<li>The application to a clinical cohort (IBD) demonstrates real-world utility and provides a compelling case study for the framework's ability to uncover previously missed viral diversity.</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness / Validation</li>
+<li><strong>Claim pointer</strong> The claim that Rider's structural validation (Stage 2) provides a "rigorous" and "reliable" criterion for identifying true RdRp domains, effectively eliminating false positives.</li>
+<li><strong>Evidence pointer</strong> Results section "Rider overcomes the challenges in viral identification in metatranscriptomes", specifically "Identifying remote homologs through structure validation"; Figure 3c, 3d.</li>
+<li><strong>Concern</strong> The manuscript demonstrates that structural validation can distinguish RdRp from non-RdRp proteins in a controlled setting. However, the claim of "effectively eliminating false positives" is too strong. The analysis of the 2,294 unverified sequences (Figure 4g) shows that structural validation fails for a significant portion of highly divergent candidates, which the authors attribute to limitations of ESMFold. This means the method's final output is still dependent on the quality of the initial structure prediction. The manuscript does not provide a clear strategy for how to handle these unverified but potentially real viral sequences, other than acknowledging they are a "challenge". The paper needs to more clearly define the operational meaning of a "false positive" in this context. A sequence that fails structural validation is not necessarily a false positive; it could be a true positive that ESMFold cannot fold. The authors should provide a more nuanced discussion of this limitation and its impact on the final set of reported viruses.</li>
+<li><strong>Why it matters</strong> The core value proposition of the two-stage framework is the combination of sensitive screening with specific validation. If the validation step is known to have a high failure rate for the most divergent sequences (the very ones of most interest), then the framework's ability to "expand RNA virus discovery" is potentially limited. The paper must be transparent about this trade-off and provide guidance on how users should interpret the unverified set.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a quantitative analysis of the unverified sequences. For example, how many of the 2,294 unverified sequences are found by other tools (LucaProt, PalmScan)? If a significant number are co-detected, this would suggest they are likely true positives that the structural validation step is incorrectly rejecting. The authors should also discuss potential improvements to the structural validation step, such as using multiple structure prediction models or relaxing the threshold for highly divergent sequences.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness / Benchmarking</li>
+<li><strong>Claim pointer</strong> The claim that Rider achieves "sensitivity comparable to LucaProt, recalling &gt;99% of previously cataloged RNA viruses" and outperforms it on short and fragmented sequences.</li>
+<li><strong>Evidence pointer</strong> Results section "Rider: a deep representation model for diverse RNA virus discovery", Figure 2, Supplementary Datasets 3, 4, 6.</li>
+<li><strong>Concern</strong> The benchmarking methodology, while extensive, has a potential critical flaw. The authors state that Rider's training data includes sequences from NCBI and other sources. It is unclear if the test sets derived from LucaProt's study (e.g., the 161,979 sequences) were rigorously excluded from Rider's training data. The authors mention "Pre-training aware test sets" for the ESM2 backbone, but it is not clear if the same rigor was applied to the fine-tuning data for the Transformer classifier. If any of the test sequences or their close homologs were seen during training, the reported recall rates would be inflated. The paper must explicitly state the exact overlap between the training data and all test sets, and ideally, perform a time-based split where the training data is strictly older than the test data.</li>
+<li><strong>Why it matters</strong> This is a fundamental issue of data leakage in machine learning. If not addressed, the reported performance metrics are not trustworthy, and the claimed superiority over other tools could be an artifact of training on the test data.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must provide a detailed analysis of sequence identity between the training set and each test set. They should also retrain the model on a dataset that excludes all sequences with &gt;30% identity to the test sets and re-report the performance metrics. This would provide a true measure of generalization.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Scientific importance / Biological interpretation</li>
+<li><strong>Claim pointer</strong> The claim that the IBD cohort analysis reveals that "the depletion of the gut RNA virome remains a consistent descriptive pattern of Crohn's disease" and that the apparent "viral bloom" in UC is due to underestimation of fragmented viruses in healthy controls.</li>
+<li><strong>Evidence pointer</strong> Results section "Extending to human gut virome: insights from an IBD cohort", Figure 5b–d.</li>
+<li><strong>Concern</strong> The biological interpretation of the IBD data is a significant leap from the computational results. The analysis is based on a small cohort (n=77 total) and the statistical analysis is performed at the contig level, not the participant level, as the authors acknowledge. The conclusion that the "viral bloom" in UC is an artifact of methodology is a strong claim that has clinical implications. The authors need to be more cautious. The difference in detected viral abundance between UC and healthy controls when using a &gt;100 aa threshold could be due to many factors, including differences in sequencing depth, sample processing, or true biological differences in the viral community structure that are not captured by this analysis. The paper should frame this as a hypothesis-generating observation, not a definitive re-interpretation of previous findings.</li>
+<li><strong>Why it matters</strong> Over-interpreting results from a small, exploratory computational analysis can mislead the field and have implications for how future studies are designed. The authors should temper their conclusions and clearly state the limitations of the cohort and the statistical approach.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should rephrase the conclusions to be more tentative. They should also consider performing a participant-level analysis, perhaps by aggregating contig-level data per participant, to see if the trends hold. A discussion of potential confounders and the need for validation in larger, independent cohorts is essential.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness / Reproducibility</li>
+<li><strong>Claim pointer</strong> The claim that the framework is "scalable" and can be applied to "global RNA virome exploration."</li>
+<li><strong>Evidence pointer</strong> Results section "Computational efficiency and scalability across synthetic and real-world datasets", Methods section "Runtime benchmarking and computational efficiency profiling".</li>
+<li><strong>Concern</strong> While the speed of Stage 1 is impressive, the overall scalability of the pipeline is not fully demonstrated. The "stress test" for the structural validation module (Stage 2) used a maximum sequence length of 1200 amino acids. However, the paper also discusses the challenge of "massive polyproteins" exceeding 4000 amino acids. The sliding-window strategy is designed to handle this, but the computational cost of running ESMFold on multiple windows for thousands of long polyproteins is not benchmarked. The end-to-end runtime profiling on real-world data is useful, but it is not clear how many of the sequences in those datasets were long polyproteins. The paper should provide a more detailed analysis of the computational bottleneck of Stage 2 and its scalability to truly massive datasets.</li>
+<li><strong>Why it matters</strong> The claim of scalability is central to the paper's potential impact. If the structural validation step is prohibitively expensive for large-scale studies, the practical utility of the framework is diminished.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a benchmark of the end-to-end pipeline on a dataset with a significant number of long polyproteins, showing the time taken for the structural validation step. They should also discuss potential strategies for optimizing this step, such as parallelization or using faster structure prediction models.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Figure 2e</li>
+<li><strong>Evidence pointer</strong> Figure 2e, Results section "Ablation studies and feature visualization".</li>
+<li><strong>Issue</strong> The t-SNE visualization is described as showing that Rider's Transformer "reshaped the distribution into more compact, separated clusters." However, the text also notes that "these visualizations do not establish a uniform classification advantage over ESM2-linear." This is a somewhat contradictory statement. If the visualization does not show a clear advantage, its inclusion is of limited value.</li>
+<li>
+<p><strong>Required correction</strong> The authors should either clarify what specific insight the t-SNE plot provides, or remove it if it is not informative. If kept, the caption should be more descriptive about what the reader should observe.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity / Reproducibility</li>
+<li><strong>Affected element</strong> Methods section "Model design, training, and benchmarking"</li>
+<li><strong>Evidence pointer</strong> Methods section, "Model architecture".</li>
+<li><strong>Issue</strong> The description of the Transformer classifier is brief. The number of layers, attention heads, hidden dimensions, and other architectural details are not fully specified. This makes it difficult to reproduce the model.</li>
+<li>
+<p><strong>Required correction</strong> Provide a more detailed description of the Transformer architecture, including the number of layers, heads, feed-forward dimensions, and any regularization techniques used.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Figure 4i</li>
+<li><strong>Evidence pointer</strong> Figure 4i, Results section "DNA read coverage supports Rider predictions".</li>
+<li><strong>Issue</strong> The correlation between Rider scores and DNA mapping rates is reported for four different environments. The Pearson correlation coefficients are very small (e.g., r = -0.065, r = -0.014) and some are not statistically significant. The text states this is a "consistent negative correlation," but the effect sizes are negligible.</li>
+<li>
+<p><strong>Required correction</strong> The authors should temper their interpretation of these results. The weak correlations provide only very weak support for the claim that higher-confidence predictions have lower DNA mapping rates. The text should acknowledge the small effect sizes and the potential for confounding factors.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Figure 1</li>
+<li><strong>Evidence pointer</strong> Figure 1 caption.</li>
+<li><strong>Issue</strong> The figure caption is very long and detailed. While informative, it could be streamlined to improve readability.</li>
+<li><strong>Required correction</strong> Consider moving some of the detailed description of the workflow into the main text or a separate methods section, and keep the figure caption more concise.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that structural validation "effectively eliminates false positives" is not fully supported, as the method is shown to fail on a significant number of highly divergent sequences.</li>
+<li>The claim that the IBD analysis reveals the "true" nature of the gut virome in UC and CD is an over-interpretation of a small, exploratory, contig-level analysis.</li>
+<li>The claim of "scalability" for the entire pipeline is not fully demonstrated, as the computational cost of the structural validation step for long polyproteins is not benchmarked.</li>
+<li>The performance metrics on the LucaProt test set may be inflated if there is any data leakage between the training and test sets; this is not explicitly ruled out.</li>
+<li>The biological significance of the "519 Rider-only candidates" is not validated beyond co-occurrence with geNomad signals.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

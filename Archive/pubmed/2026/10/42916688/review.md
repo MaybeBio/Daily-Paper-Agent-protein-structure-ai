@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors introduce the PLAC dataset of experimentally validated PTM-mediated ligand activity changes, report that interaction-affecting PTMs are spatially closer to ligands than neutral ones, evaluate MM/GBSA end-point protocols with varying MD simulation times and dielectric constants, and report that 100 ns MD with epsilonin = 4 gives the strongest correlation with experimental data (rp = -0.70) while epsilonin = 1 better classifies PTM effect type. They further claim that long MD simulations capture conformational differences between wild-type and PTM systems, improving prediction.
+- **Visible evidence base** Abstract text only; no dataset description, statistical methods, simulation details, or validation metrics beyond the single correlation coefficient
+- **Missing materials affecting confidence** Full manuscript, methods section, dataset schema and curation criteria, all figures and tables, statistical analysis details, comparison with alternative approaches, and any validation or benchmarking results
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable resource in the PLAC dataset and a systematic evaluation of MM/GBSA protocols for a clinically relevant problem. However, the evidence base is limited to a single correlation coefficient and a qualitative spatial observation. The central claims regarding protocol performance and mechanistic interpretation cannot be adequately assessed without the underlying data, statistical rigor, and methodological detail. The work addresses an important gap, but the current evidence is insufficient to establish the stated conclusions.
+- **Who would be interested in the results, and why** Computational chemists and structural biologists working on binding free energy calculations, drug discovery scientists interested in PTM-informed design, and researchers developing benchmarks for protein-ligand interaction prediction. The PLAC dataset could serve as a community resource for method benchmarking.
+- **Major strengths** The problem is well motivated and addresses a genuine gap in available datasets. The systematic evaluation of MD simulation time and dielectric constant is a sensible design. The provision of a curated dataset has clear community value.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical validity
+  - **Claim pointer** The claim that 100 ns MD with epsilonin = 4 yields the strongest correlation with experimental data (rp = -0.70) and that epsilonin = 1 better classifies PTM effect type
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract reports a single Pearson correlation coefficient without any measure of uncertainty, sample size, significance testing, or comparison across conditions beyond the qualitative statement. No confidence intervals, p-values, or cross-validation results are provided. The classification performance for the three PTM effect categories is not quantified.
+  - **Why it matters** Without statistical rigor, the reported difference between protocols could be within noise. The choice of optimal protocol is a central conclusion and must be supported by appropriate statistical evidence.
+  - **Resolution test** Provide sample sizes, confidence intervals or bootstrapped estimates, significance tests for the difference between protocols, and quantitative classification metrics such as accuracy or Matthews correlation coefficient with uncertainty estimates.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Dataset validity and curation
+  - **Claim pointer** The claim that the PLAC dataset is experimentally validated and that interaction-affecting PTMs occur spatially closer to ligands than interaction-neutral ones
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** No information is provided on the curation criteria, the number of entries, the types of PTMs included, the source databases or literature, the quality filters applied, or how "spatially closer" was defined and measured. The statistical basis for the spatial distance claim is absent.
+  - **Why it matters** The dataset is the foundation of the study. If curation is biased or the spatial analysis is not statistically robust, all downstream conclusions are compromised.
+  - **Resolution test** Describe the curation workflow, inclusion and exclusion criteria, dataset size and composition, the definition of spatial proximity, and the statistical test used to support the distance claim.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic interpretation
+  - **Claim pointer** The claim that long MD simulations capture conformational differences between wild-type and PTM-involved systems, thereby improving prediction
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The mechanistic explanation is presented as a conclusion but no supporting evidence is shown. No conformational metrics, trajectory analyses, or structural comparisons are described.
+  - **Why it matters** The mechanistic claim is used to explain why longer simulations perform better. Without direct evidence, this remains speculation and cannot be distinguished from other explanations such as improved sampling of the bound state or reduced noise.
+  - **Resolution test** Provide quantitative conformational analyses such as RMSD, RMSF, or binding site volume comparisons between wild-type and PTM systems across different simulation lengths, with appropriate statistical treatment.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The phrase "end-point binding free-energy protocols (MM/GBSA)" is imprecise. MM/GBSA is one specific end-point method, and the abstract does not clarify whether other end-point methods were considered.
+  - **Required correction** Specify the exact methods evaluated and clarify whether MM/GBSA is the only end-point approach used.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Dataset availability
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract states the PLAC dataset is provided but does not indicate where or under what license it can be accessed.
+  - **Required correction** State the repository or database where the dataset is deposited and the access conditions.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Performance metrics
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** Only one correlation coefficient is reported. No comparison with alternative methods such as docking scores, MM/PBSA, or machine learning approaches is mentioned.
+  - **Required correction** Include at least a brief comparison with standard alternative approaches to contextualize the reported performance.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The statistical validity of the protocol comparison, the curation and spatial analysis of the dataset, and the mechanistic interpretation are all insufficiently supported by the provided evidence.
+- **Assessment against Nature-style criteria** Originality is moderate. The PLAC dataset addresses a genuine gap, but the methodological approach is standard. Scientific importance is potentially high given the relevance to drug design, but this cannot be confirmed without the full evidence. Interdisciplinary readership is plausible, spanning computational chemistry, structural biology, and medicinal chemistry. Technical soundness cannot be assessed from the abstract alone. Readability for nonspecialists is adequate, though the abstract assumes familiarity with MM/GBSA and PTM terminology.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a potentially valuable study, but the central claims require substantial additional evidence. A supportive posture would be possible if the full manuscript addresses the statistical, curation, and mechanistic concerns identified above.
+
+## Risk / unsupported claims
+- The optimal protocol claim (100 ns, epsilonin = 4) is unsupported without statistical testing and comparison across conditions.
+- The classification performance claim for epsilonin = 1 is unsupported as no quantitative metrics are provided.
+- The spatial proximity claim for interaction-affecting versus neutral PTMs is unsupported without dataset details and statistical analysis.
+- The mechanistic claim that long MD simulations capture conformational differences is unsupported without trajectory or structural evidence.
+- The dataset size, composition, and curation quality are unassessable from the abstract.

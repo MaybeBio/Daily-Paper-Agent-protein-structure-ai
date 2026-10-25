@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2610.27334v1",
+  "title": "EMBER: Predicting TCR--pMHC Binding Without a Docked Complex",
+  "authors": "Lin Ha; Chen Zhou; Haozheng Luo; Han Liu; Xiaoyu Zhang; Yan Chen",
+  "journal": "",
+  "published_date": "2026-10-19",
+  "window": {
+    "start": "2026-10-18",
+    "end": "2026-10-24"
+  },
+  "score": 8,
+  "one_liner_zh": "该文提出EMBER，一种无需对接复合物即可预测TCR-pMHC结合的结构基框架，通过独立折叠并编码为SE(3)不变图来避免对接误差，属于蛋白质结构相关的AI计算建模方法，对蛋白-蛋白相互作用预测有直接借鉴意义。",
+  "abstract": "We propose EMBER, a structure-based framework for TCR--pMHC binding prediction that eliminates the need for a predicted docked complex, and with it the placement error that dominates such predictions. Traditional structure-based predictors utilize the co-folded complex structure of the receptor and the antigen and interpret binding from its contact surface. Consequently, every downstream feature inherits any deviation the structure-prediction tool introduced. Methodologically, EMBER folds the TCR and pMHC independently, encodes them as SE(3)-invariant residue graphs, and compares their learned representations without constructing a shared coordinate frame. A relative pose is therefore not an input of the model, so placement error cannot propagate into the prediction. Computationally, EMBER preprocesses $O(N{+}M)$ monomer folds where a complex-based predictor needs $O(NM)$ operations. Experimentally, under epitope-disjoint evaluation with six retrained baselines, EMBER is first on every metric under all four folding tools, by 0.9 to 14.4% in micro-AUROC, 18.5 to 25.3% in micro-AUPRC and 10.6 to 24.1% in MCC. Its ranking is also up to 85% more stable across folding tools.",
+  "abstract_zh": "我们提出EMBER，一种基于结构的TCR-pMHC结合预测框架，它消除了对预测对接复合物的需求，从而避免了主导此类预测的放置误差。传统基于结构的预测器利用受体与抗原的共折叠复合物结构，并从其接触表面解读结合情况。因此，每个下游特征都会继承结构预测工具引入的任何偏差。在方法上，EMBER独立折叠TCR和pMHC，将其编码为SE(3)-不变残基图，并在不构建共享坐标框架的情况下比较其学习到的表示。因此，相对姿态不是模型的输入，放置误差无法传播到预测中。在计算上，EMBER预处理$O(N{+}M)$单体折叠，而基于复合物的预测器需要$O(NM)$操作。在实验上，在表位不相交评估下，使用六种重新训练的基线，EMBER在所有四种折叠工具下的每项指标上均排名第一，micro-AUROC提高0.9%至14.4%，micro-AUPRC提高18.5%至25.3%，MCC提高10.6%至24.1%。其排名在不同折叠工具间的稳定性也提高了高达85%。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2610.27334v1",
+  "source_url": "https://arxiv.org/abs/2610.27334v1",
+  "paper_page_path": "papers/arxiv/2610.27334v1/index.html"
+}

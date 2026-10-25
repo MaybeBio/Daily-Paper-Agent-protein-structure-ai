@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sequence-only prediction of VHH nanobody epitopes and paratopes on HER2 with a frozen protein language model ( ESM2) and a structure-derived residue prior · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Sequence-only prediction of VHH nanobody epitopes and paratopes on HER2 with a frozen protein language model ( ESM2) and a structure-derived residue prior</h1>
+      <div class="meta">Dharani Babu; Sundaramurthy Pandurangan; Agilisium Consulting</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-21
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.15.759522">原文</a>
+      </div>
+      <p class="one-liner">该文用冻结ESM2蛋白语言模型和结构衍生残基先验，仅从序列预测HER2纳米抗体的表位和互补位，虽聚焦抗体-抗原界面而非完整结构计算，但方法可迁移至蛋白质结构相关计算，且评估严谨。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Mapping which antigen residues an antibody contacts (the epitope) and which antibody residues do the contacting (the paratope) is central to therapeutic antibody engineering, yet most accurate methods require a solved or predicted three dimensional complex. We address a sequence only formulation: predict the HER2 epitope and the single domain antibody (VHH, or nanobody) paratope from the two sequences alone, with no three dimensional structure prediction at any stage. We pair a frozen ESM2 650M protein language model, used strictly as a feature extractor, with a lightweight trainable module per chain encoders, a shared cross attention block, and epitope, paratope and binder heads (12.2M trainable parameters) trained jointly on three public sources: HER2 binding and blocking competition assays (&#34;AVIDa hHER2&#34; to be published by organizers of SEPIQ 2026 The authors have no right to share the dataset to public ), residue level antibody antigen contacts (SAbDab2), and two reference antibody crystal structures. The blocking competition signal is de confounded into a trastuzumab minus pertuzumab contrast whose sign encodes the HER2 domain and which is used only as a training target, never as a model input. Under a three way, sequence cluster level split with a test set opened exactly once, the binder head reaches PR AUC 0.999 and the paratope head 0.659, while residue level epitope prediction on novel antigens remains near baseline (0.070) a limitation the sealed split exposes rather than hides. Sequence alone recovers the competition derived HER2 domain (the competitor class) for 87.7% of held out clones, a leakage free result. For HER2 specifically, a residue prior built from 25 mined HER2 antibody complexes and validated by leave one out reaches 0.26 to 0.29 residue PR AUC once the domain is correct, roughly 3.6 times the language model head alone. We release and report two submission variants per test clone, a fully sequence only prediction and a competition informed one ,and document which data were used where. Keywords: epitope prediction; paratope prediction; nanobody; VHH; HER2; protein language model; ESM2; cross attention; antibody antigen interface; leakage safe evaluation.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">绘制抗体所接触的抗原残基（表位）以及负责接触的抗体残基（对位）对于治疗性抗体工程至关重要，然而大多数精确方法需要已解析或预测的三维复合物。我们解决一个仅基于序列的公式：仅从两条序列预测HER2表位和单域抗体（VHH，或纳米抗体）对位，在任何阶段均不进行三维结构预测。我们将冻结的ESM2 650M蛋白质语言模型（严格用作特征提取器）与轻量级可训练模块配对，包括每条链的编码器、共享交叉注意力块，以及表位、对位和结合子头部（12.2M可训练参数），并在三个公共来源上联合训练：HER2结合和阻断竞争实验（“AVIDa hHER2”，由SEPIQ 2026组织者发布，作者无权公开共享该数据集）、残基级抗体-抗原接触（SAbDab2），以及两个参考抗体晶体结构。阻断竞争信号被去混杂为曲妥珠单抗减去帕妥珠单抗的对比，其符号编码HER2结构域，且仅用作训练目标，从不作为模型输入。在序列聚类水平的三方划分下，测试集仅打开一次，结合子头部达到PR AUC 0.999，对位头部达到0.659，而新抗原上的残基级表位预测仍接近基线（0.070），这是密封划分暴露而非隐藏的局限性。仅凭序列即可恢复竞争衍生的HER2结构域（竞争类别），对87.7%的保留克隆有效，这是一个无泄漏的结果。对于HER2特异性，基于25个挖掘的HER2抗体复合物构建并通过留一法验证的残基先验，在结构域正确后达到0.26至0.29的残基PR AUC，约为语言模型头部单独性能的3.6倍。我们为每个测试克隆发布并报告两种提交变体：一种完全基于序列的预测和一种竞争信息增强的预测，并记录哪些数据在何处使用。关键词：表位预测；对位预测；纳米抗体；VHH；HER2；蛋白质语言模型；ESM2；交叉注意力；抗体-抗原界面；无泄漏评估。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Sequence-only prediction of VHH nanobody epitopes and paratopes on HER2 with a frozen protein language model (ESM2) and a structure-derived residue prior</li>
+<li><strong>作者</strong>：Dharani Babu; Sundaramurthy Pandurangan; Agilisium Consulting</li>
+<li><strong>单位</strong>：Agilisium Consulting（未提供具体作者单位细节）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026-10-21</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 基准测试）</li>
+<li><strong>领域</strong>：蛋白质结构相关计算研究 × AI/深度学习（抗体-抗原表位/互补位预测）</li>
+<li><strong>关键词</strong>：epitope prediction; paratope prediction; nanobody; VHH; HER2; protein language model; ESM2; cross attention; antibody-antigen interface; leakage safe evaluation</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.10.15.759522</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：AVIDa hHER2（SEPIQ 2026 竞赛数据，作者无权公开）、SAbDab2、两个参考抗体晶体结构、25 个 HER2 抗体复合物（挖掘自公共数据库）</li>
+<li><strong>阅读日期</strong>：2026-10-21（预印本发布日）</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「抗体-抗原相互作用预测」子方向，核心贡献在于：(1) 提出纯序列输入的 VHH 表位/互补位预测框架，完全绕开结构预测；(2) 将竞争性阻断实验数据（trastuzumab vs pertuzumab 对比）去混淆为训练标签；(3) 强调泄漏安全的评估协议（序列聚类级别划分 + 测试集仅打开一次）。该文与 AlphaFold 类结构预测方法形成互补，属于「序列-only 的抗体界面预测」这一细分赛道。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出一个纯序列输入的 VHH 纳米抗体表位/互补位预测框架：以冻结的 ESM2 650M 作为特征提取器，搭配 12.2M 可训练参数的轻量模块（链编码器 + 共享交叉注意力 + 三个预测头），利用 HER2 结合/阻断竞争实验数据（去混淆为 trastuzumab 减 pertuzumab 对比）作为训练标签，在序列聚类级别划分的泄漏安全评估下，binder 头 PR AUC 达 0.999、paratope 头 0.659，但 novel 抗原上的残基级表位预测接近基线（0.070），而 HER2 特异残基先验可将表位 PR AUC 提升至 0.26–0.29。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否仅从 VHH 纳米抗体和抗原（HER2）的两条序列出发，不借助任何三维结构预测，准确预测 (a) 抗原上的表位残基、(b) 抗体上的互补位残基、(c) 抗体是否结合 HER2？</li>
+<li><strong>为什么重要</strong>：表位/互补位映射是治疗性抗体工程的核心环节。现有最准确方法（如 docking、AlphaFold 复合物预测）依赖三维结构，计算成本高且对孤儿抗原（无同源结构）不适用。序列-only 方法可大幅降低门槛，实现高通量筛选。</li>
+<li><strong>现有方法为何不足</strong>：多数序列-based 方法或依赖同源建模（隐含结构信息），或在评估中存在泄漏（如随机划分而非序列聚类划分），导致泛化性能被高估。此外，现有方法很少利用功能实验数据（如竞争性阻断）作为监督信号。</li>
+<li><strong>精确研究问题</strong>：Can a frozen ESM2 feature extractor paired with a lightweight trainable module predict HER2 epitopes and VHH paratopes from sequences alone, under a leakage-safe evaluation protocol, and can a structure-derived residue prior improve epitope prediction on a specific antigen (HER2)?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架及作者引用，部分经外部核验（标注）。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构-based 界面预测</td>
+<td>Docking (ClusPro, HADDOCK)、MD 模拟</td>
+<td>物理精度高，可解释性强</td>
+<td>计算昂贵，需结构输入，孤儿抗原不适用</td>
+<td>本文完全绕开此路线</td>
+</tr>
+<tr>
+<td>结构预测 + 界面推断</td>
+<td>AlphaFold2/3 复合物预测、ColabFold</td>
+<td>端到端预测复合物结构，界面可从结构中提取</td>
+<td>需 MSA 深度，孤儿抗原表现差，计算成本高</td>
+<td>本文主张序列-only 可避免此瓶颈</td>
+</tr>
+<tr>
+<td>序列-based 抗体特异性预测</td>
+<td>基于 CNN/LSTM 的 paratope 预测（如 PECAN、SPIDER 类方法）</td>
+<td>无需结构，速度快</td>
+<td>多依赖同源信息，评估协议常存在泄漏</td>
+<td>本文强调泄漏安全评估</td>
+</tr>
+<tr>
+<td>PLM 特征 + 轻量头</td>
+<td>ESM2 等冻结特征 + 任务头</td>
+<td>迁移学习强，训练成本低</td>
+<td>特征与任务对齐需设计，残基级精度有限</td>
+<td>本文核心方法（ESM2 650M + 12.2M 头）</td>
+</tr>
+<tr>
+<td>功能数据作为监督</td>
+<td>竞争性阻断实验、深度突变扫描</td>
+<td>直接反映功能相关性</td>
+<td>数据稀缺，需去混淆</td>
+<td>本文创新点：trastuzumab 减 pertuzumab 对比作为训练标签</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在「序列-only + 泄漏安全评估 + 功能数据监督」的交汇处，同时引入结构-derived 残基先验作为 HER2 特异的增强。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构依赖</td>
+<td>最准确的表位/互补位预测需复合物结构</td>
+<td>现有方法（docking、AF 复合物预测）以结构为输入或中间产物</td>
+<td>Abstract: "most accurate methods require a solved or predicted three dimensional complex"</td>
+</tr>
+<tr>
+<td>评估泄漏</td>
+<td>随机划分导致泛化性能虚高</td>
+<td>同源序列在训练/测试间泄漏信息</td>
+<td>Abstract: "three way, sequence cluster level split" 的设计</td>
+</tr>
+<tr>
+<td>功能数据未利用</td>
+<td>竞争性阻断实验数据未被用于训练</td>
+<td>数据格式（竞争信号）与残基级标签不对齐，需去混淆</td>
+<td>Abstract: "blocking competition signal is de confounded into a trastuzumab minus pertuzumab contrast"</td>
+</tr>
+<tr>
+<td>Novel 抗原表位预测差</td>
+<td>残基级表位预测在 novel 抗原上接近基线（0.070 PR AUC）</td>
+<td>序列-only 特征对未知抗原的界面残基判别力不足</td>
+<td>Abstract: "residue level epitope prediction on novel antigens remains near baseline (0.070)"</td>
+</tr>
+<tr>
+<td>数据不可共享</td>
+<td>AVIDa hHER2 数据集作者无权公开</td>
+<td>竞赛组织者限制</td>
+<td>Abstract: "The authors have no right to share the dataset to public"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<ul>
+<li>冻结 ESM2 650M 作为特征提取器，提取抗体链和抗原链的残基级嵌入。</li>
+<li>轻量可训练模块（12.2M 参数）：每链编码器（per-chain encoders）+ 共享交叉注意力（shared cross attention block）+ 三个预测头（epitope head、paratope head、binder head）。</li>
+<li>训练标签来自三个来源：AVIDa hHER2 竞争性阻断数据（去混淆为 trastuzumab 减 pertuzumab 对比）、SAbDab2 残基级接触、两个参考抗体晶体结构。</li>
+<li>对 HER2 特异任务，额外引入从 25 个 HER2 抗体复合物挖掘的残基先验。</li>
+</ul>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>功能数据可去混淆为方向性标签</strong>：trastuzumab 和 pertuzumab 结合 HER2 的不同结构域（DIV vs DII），其竞争性阻断信号的差值编码了 HER2 结构域信息，可作为 binder 头的训练目标，且该标签不泄漏到输入。</li>
+<li><strong>结构先验可补偿序列-only 的不足</strong>：对特定抗原（HER2），从已知复合物中提取的残基先验可将表位预测从接近基线提升约 3.6 倍，说明「序列-only + 抗原特异先验」是可行的折中。</li>
+<li><strong>泄漏安全评估暴露真实瓶颈</strong>：序列聚类级别划分 + 测试集仅打开一次，使 novel 抗原表位预测的真实性能（0.070）暴露出来，而非被泄漏掩盖。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>冻结 PLM + 轻量头的架构在抗体-抗原任务上有效，但残基级界面预测的瓶颈可能不在特征提取，而在标签质量与任务定义。</li>
+<li>功能实验数据（如竞争性阻断）可作为弱监督信号，但需仔细去混淆以避免引入偏差。</li>
+<li>抗原特异的先验（如结构-derived 残基偏好）是序列-only 方法的重要补充，尤其在数据稀缺的靶点上。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：VHH 纳米抗体序列 + HER2 抗原序列（仅序列，无结构）。</li>
+<li><strong>输出</strong>：(a) 抗原残基级表位概率；(b) 抗体残基级互补位概率；(c) 抗体是否结合 HER2 的二分类概率。</li>
+<li><strong>模块</strong>：
+  1. ESM2 650M（冻结）：提取两链的残基级嵌入。
+  2. Per-chain encoders（可训练）：对 ESM2 嵌入做任务相关的变换。
+  3. Shared cross attention block（可训练）：让抗体和抗原的残基表示相互关注，捕捉界面信号。
+  4. Epitope head / Paratope head / Binder head（可训练）：分别输出残基级概率和结合概率。</li>
+<li><strong>训练</strong>：多任务联合训练，损失来自三个数据源（AVIDa hHER2 竞争数据、SAbDab2 接触标签、参考晶体结构）。</li>
+<li><strong>工具</strong>：未提供具体框架（如 PyTorch 等）细节。</li>
+<li><strong>反馈回路</strong>：无显式反馈回路；模型为前馈式。</li>
+<li><strong>假设</strong>：(1) ESM2 嵌入包含足够的残基级界面信号；(2) 竞争性阻断数据的去混淆标签与真实结合域一致；(3) 序列聚类级别划分可有效防止泄漏。</li>
+<li><strong>流程</strong>：序列 → ESM2 嵌入 → per-chain 编码 → 交叉注意力 → 三个头输出预测。</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESM2 650M（冻结）</td>
+<td>提取残基级序列嵌入</td>
+<td>提供丰富的进化/结构隐含特征，无需训练</td>
+<td>输入：序列；输出：残基级嵌入</td>
+<td>Abstract: "frozen ESM2 650M protein language model, used strictly as a feature extractor"</td>
+<td>预期：替换为其他 PLM 或 one-hot 编码将显著降低性能（未实测）</td>
+</tr>
+<tr>
+<td>Per-chain encoders</td>
+<td>对 ESM2 嵌入做任务相关变换</td>
+<td>将通用嵌入映射到抗体-抗原任务空间</td>
+<td>输入：ESM2 嵌入；输出：变换后残基表示</td>
+<td>Abstract: "lightweight trainable module per chain encoders"</td>
+<td>预期：移除后交叉注意力输入质量下降（未实测）</td>
+</tr>
+<tr>
+<td>Shared cross attention block</td>
+<td>让两链残基相互关注</td>
+<td>捕捉抗体-抗原界面残基间的相互信号</td>
+<td>输入：两链变换后表示；输出：交互增强的残基表示</td>
+<td>Abstract: "shared cross attention block"</td>
+<td>预期：移除后 paratope/epitope 预测精度下降（未实测）</td>
+</tr>
+<tr>
+<td>Epitope head</td>
+<td>预测抗原残基是否为表位</td>
+<td>核心任务输出</td>
+<td>输入：交互增强的抗原表示；输出：残基级概率</td>
+<td>Abstract: "epitope... heads"</td>
+<td>预期：移除后无表位预测能力</td>
+</tr>
+<tr>
+<td>Paratope head</td>
+<td>预测抗体残基是否为互补位</td>
+<td>核心任务输出</td>
+<td>输入：交互增强的抗体表示；输出：残基级概率</td>
+<td>Abstract: "paratope... heads"</td>
+<td>预期：移除后无互补位预测能力</td>
+</tr>
+<tr>
+<td>Binder head</td>
+<td>预测抗体是否结合 HER2</td>
+<td>二分类任务，利用竞争数据</td>
+<td>输入：交互增强的两链表示（池化）；输出：结合概率</td>
+<td>Abstract: "binder head reaches PR AUC 0.999"</td>
+<td>实测：该头性能极高（PR AUC 0.999）</td>
+</tr>
+<tr>
+<td>HER2 残基先验</td>
+<td>提供 HER2 特异的表位偏好</td>
+<td>补偿序列-only 在特定抗原上的不足</td>
+<td>输入：25 个 HER2 复合物挖掘的先验；输出：残基级先验概率</td>
+<td>Abstract: "residue prior built from 25 mined HER2 antibody complexes"</td>
+<td>实测：移除后 HER2 表位 PR AUC 从 0.26–0.29 降至约 0.07–0.08（约 3.6 倍差距）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>本文为预印本，未提供完整方法学公式。以下基于摘要可推断的符号与概念：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>符号/概念</th>
+<th>含义</th>
+<th>用途</th>
+<th>直觉</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PR AUC</td>
+<td>Precision-Recall Area Under Curve</td>
+<td>评估残基级预测和 binder 分类性能</td>
+<td>对不平衡标签（表位残基稀少）更稳健</td>
+<td>Abstract: "PR AUC 0.999"、"0.659"、"0.070"</td>
+</tr>
+<tr>
+<td>trastuzumab − pertuzumab contrast</td>
+<td>竞争性阻断信号的差值</td>
+<td>去混淆为 HER2 结构域标签</td>
+<td>两抗体结合不同结构域，差值编码域信息</td>
+<td>Abstract: "de confounded into a trastuzumab minus pertuzumab contrast"</td>
+</tr>
+<tr>
+<td>序列聚类级别划分</td>
+<td>Sequence cluster-level split</td>
+<td>防止同源序列泄漏</td>
+<td>同源序列共享界面特征，随机划分会泄漏</td>
+<td>Abstract: "three way, sequence cluster level split"</td>
+</tr>
+<tr>
+<td>Leave-one-out 验证</td>
+<td>留一法</td>
+<td>验证 HER2 残基先验的稳健性</td>
+<td>每次留一个复合物，检验先验泛化</td>
+<td>Abstract: "validated by leave one out"</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：具体损失函数、注意力公式等未在摘要中提供，标记为 Not assessable。</p>
+</blockquote>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：</li>
+<li>AVIDa hHER2：HER2 结合/阻断竞争实验数据（SEPIQ 2026 竞赛，作者无权公开）</li>
+<li>SAbDab2：残基级抗体-抗原接触数据</li>
+<li>两个参考抗体晶体结构</li>
+<li>25 个 HER2 抗体复合物（挖掘自公共数据库，用于构建残基先验）</li>
+<li><strong>规模</strong>：未提供具体样本数（Not assessable）</li>
+<li><strong>指标</strong>：PR AUC（残基级和 binder 级）</li>
+<li><strong>基线</strong>：未明确列出（Not assessable）</li>
+<li><strong>评测协议</strong>：三路序列聚类级别划分；测试集仅打开一次；每测试克隆提交两个变体（纯序列预测 + 竞争信息增强预测）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binder 预测</td>
+<td>序列-only 可高精度预测 HER2 结合</td>
+<td>三路聚类划分，测试集打开一次</td>
+<td>PR AUC 0.999</td>
+<td>结合预测在 HER2 上高度准确</td>
+<td>不能推广到其他抗原</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>Paratope 预测</td>
+<td>序列-only 可预测 VHH 互补位</td>
+<td>同上</td>
+<td>PR AUC 0.659</td>
+<td>互补位预测中等准确</td>
+<td>残基级精度有限</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>Novel 抗原表位预测</td>
+<td>序列-only 可泛化到新抗原</td>
+<td>同上</td>
+<td>PR AUC 0.070（接近基线）</td>
+<td>序列-only 对新抗原表位预测失败</td>
+<td>需要抗原特异先验</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>HER2 残基先验增强</td>
+<td>结构-derived 先验可提升表位预测</td>
+<td>先验 + 序列模型 vs 纯序列模型</td>
+<td>PR AUC 0.26–0.29（约 3.6 倍提升）</td>
+<td>抗原特异先验显著有效</td>
+<td>仅对 HER2 验证，非通用</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>竞争数据去混淆</td>
+<td>trastuzumab − pertuzumab 对比编码结构域</td>
+<td>仅作为训练标签，非输入</td>
+<td>87.7% 测试克隆结构域正确</td>
+<td>去混淆标签有效</td>
+<td>依赖两抗体结构域差异的已知性</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对 HER2 抗原和 VHH 纳米抗体；不涉及其他抗原或抗体类型。</li>
+<li><strong>oracle/真值输入</strong>：训练使用了 SAbDab2 接触标签和晶体结构作为监督；HER2 残基先验来自 25 个已知复合物。这些是「oracle 信息」，在 novel 抗原上不可用。</li>
+<li><strong>端到端状态</strong>：模型是「序列 → 预测」的端到端，但 HER2 先验是外部注入的，非端到端学习。</li>
+<li><strong>算力成本</strong>：未提供（Not assessable）。</li>
+<li><strong>历史数据依赖</strong>：依赖 ESM2 预训练语料库和 SAbDab2 的覆盖范围。</li>
+<li><strong>最难情形</strong>：novel 抗原（无同源复合物）上的残基级表位预测，PR AUC 仅 0.070，接近随机基线。</li>
+<li><strong>群体/领域边界</strong>：仅限 HER2/VHH；对非 HER2 抗原或全长抗体（非 VHH）的适用性未知。</li>
+<li><strong>不确定性</strong>：预印本，未经同行评审；AVIDa hHER2 数据不可公开，无法独立复现。</li>
+</ul>
+<p><strong>有边界的复述</strong>：本文证明，在 HER2/VHH 这一特定场景下，序列-only 模型可高精度预测结合与否（PR AUC 0.999），中等精度预测互补位（0.659），但无法泛化预测 novel 抗原的表位（0.070）；引入 HER2 特异的结构-derived 残基先验可将表位预测提升至 0.26–0.29，但该先验不适用于其他抗原。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据不可公开</td>
+<td>AVIDa hHER2 数据集作者无权分享</td>
+<td>未提供（依赖竞赛组织者）</td>
+<td>Abstract: "The authors have no right to share the dataset to public"</td>
+</tr>
+<tr>
+<td>Novel 抗原表位预测差</td>
+<td>PR AUC 0.070，接近基线</td>
+<td>未明确提供</td>
+<td>Abstract: "residue level epitope prediction on novel antigens remains near baseline"</td>
+</tr>
+<tr>
+<td>残基先验仅限 HER2</td>
+<td>先验从 25 个 HER2 复合物构建</td>
+<td>未明确提供</td>
+<td>Abstract: "For HER2 specifically, a residue prior built from 25 mined HER2 antibody complexes"</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：作者在摘要中未系统列出局限，以上为摘要中可辨识的约束。未提供更多细节。</p>
+</blockquote>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binder PR AUC 0.999 可能过于乐观</td>
+<td>HER2 结合数据可能高度不平衡（多数 VHH 不结合），PR AUC 对高负样本比例敏感；或训练/测试序列聚类划分仍不够严格</td>
+<td>若性能虚高，则实际筛选价值有限</td>
+<td>检查测试集正负样本比例；尝试更严格的划分（如按 CDR 序列相似度）</td>
+<td>Abstract: "PR AUC 0.999"</td>
+</tr>
+<tr>
+<td>竞争数据去混淆的假设未验证</td>
+<td>trastuzumab 减 pertuzumab 对比假设两抗体结构域差异完全已知且无交叉反应，但实际可能存在部分重叠或非特异性结合</td>
+<td>若假设不成立，标签含噪声</td>
+<td>用独立实验（如 ELISA 域映射）验证标签准确性</td>
+<td>Abstract: "de confounded into a trastuzumab minus pertuzumab contrast"</td>
+</tr>
+<tr>
+<td>HER2 残基先验的构建细节未提供</td>
+<td>25 个复合物的挖掘标准、先验形式（离散/连续）、是否引入循环依赖未知</td>
+<td>影响可复现性</td>
+<td>要求作者提供先验构建代码与数据</td>
+<td>Abstract: "residue prior built from 25 mined HER2 antibody complexes"</td>
+</tr>
+<tr>
+<td>Novel 抗原表位预测 0.070 是否真为「失败」</td>
+<td>可能测试集抗原与训练集差异过大，或残基级标签本身噪声高</td>
+<td>若标签噪声高，0.070 可能接近标签噪声下限</td>
+<td>计算标签噪声率；用人工标注子集验证</td>
+<td>Abstract: "remains near baseline (0.070)"</td>
+</tr>
+<tr>
+<td>未提供基线对比</td>
+<td>未说明与现有方法（如 PECAN、AF2 复合物）的定量比较</td>
+<td>无法判断相对优势</td>
+<td>要求补充与公开基线的对比实验</td>
+<td>摘要未提及基线</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>冻结 PLM + 轻量头的架构范式</strong>：ESM2 650M 冻结 + 12.2M 可训练参数即可在抗体-抗原任务上取得强性能，说明大规模 PLM 特征提取 + 任务特定头的组合是高效方案。可迁移到其他蛋白质相互作用预测任务（如酶-底物、受体-配体）。</p>
+</li>
+<li>
+<p><strong>功能数据去混淆为方向性标签</strong>：将竞争性阻断实验（trastuzumab vs pertuzumab）的差值作为训练标签，而非直接使用原始信号，是一种巧妙的弱监督策略。可迁移到其他有竞争实验数据的系统（如多种抑制剂对同一靶点）。</p>
+</li>
+<li>
+<p><strong>泄漏安全评估协议</strong>：序列聚类级别划分 + 测试集仅打开一次，是评估泛化性能的严格标准。本课题所有序列-based 方法都应采用此协议，避免同源泄漏。</p>
+</li>
+<li>
+<p><strong>结构-derived 残基先验作为补偿</strong>：当序列-only 在特定抗原上表现差时，从已知复合物构建残基先验可显著提升性能（3.6 倍）。这提示「序列-only + 抗原特异先验」是数据稀缺场景的可行折中。</p>
+</li>
+<li>
+<p><strong>诚实的失败报告</strong>：作者明确报告 novel 抗原表位预测失败（0.070），而非用泄漏掩盖。这种「暴露瓶颈」的评估方式对领域进步至关重要。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>ESM2</strong>：与 Lin et al. (2023) 的 ESM2 模型直接相关，本文验证了其在抗体-抗原任务上的冻结特征提取能力。</li>
+<li><strong>SAbDab2</strong>：与 Dunbar et al. (2014) 的 SAbDab 数据库一脉相承，本文使用其残基级接触标签。</li>
+<li><strong>AlphaFold 类方法</strong>：本文明确与结构-based 方法（如 AF2/AF3 复合物预测）形成对比，主张序列-only 可避免结构预测的计算瓶颈。可参考 Evans et al. (2022) AF2 复合物版本。</li>
+<li><strong>抗体表位预测</strong>：与 PECAN、EpiPred、DiscoTope 等方法相关，本文的贡献在于纯序列 + 功能数据监督 + 泄漏安全评估。</li>
+<li><strong>HER2 抗体</strong>：trastuzumab（结合 DII）和 pertuzumab（结合 DIV）的结构域差异是已知的（Cho et al. 2003; Franklin et al. 2004），本文利用该差异设计去混淆标签。</li>
+<li><strong>纳米抗体（VHH）</strong>：与 Muyldermans (2013) 的 VHH 综述相关，VHH 的单域特性使其序列-结构关系更直接。</li>
+<li><strong>SEPIQ 2026 竞赛</strong>：本文数据来自该竞赛，属于竞赛方法学报告。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<h3>候选 1：跨抗原泛化的残基先验蒸馏</h3>
+<ul>
+<li><strong>名称</strong>：Cross-antigen residue prior distillation for sequence-only epitope prediction</li>
+<li><strong>来源局限/观察</strong>：本文的 HER2 残基先验仅对 HER2 有效，novel 抗原上表位预测失败（0.070）。但先验中可能包含可迁移的「界面残基偏好」模式。</li>
+<li><strong>核心假设</strong>：从多个抗原的已知复合物中提取的残基先验，经蒸馏后可提升 novel 抗原的表位预测。</li>
+<li><strong>初步方法</strong>：在多个抗原（非仅 HER2）上构建残基先验，训练一个「先验预测器」，将其输出作为 epitope head 的辅助输入。</li>
+<li><strong>验证方式</strong>：在多个 novel 抗原上评估 PR AUC，与本文 0.070 基线对比。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：竞争数据去混淆的通用框架</h3>
+<ul>
+<li><strong>名称</strong>：Generalizable deconfounding of competitive binding assays for antibody specificity prediction</li>
+<li><strong>来源局限/观察</strong>：本文的 trastuzumab 减 pertuzumab 对比依赖已知结构域差异，但多数靶点无此信息。</li>
+<li><strong>核心假设</strong>：竞争性阻断数据的成对结构可自动学习去混淆，无需先验结构域知识。</li>
+<li><strong>初步方法</strong>：设计一个对比学习框架，将竞争矩阵分解为「共享表位」和「特异表位」两个隐空间。</li>
+<li><strong>验证方式</strong>：在多个靶点的竞争数据上测试，与本文去混淆方法对比。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：序列-only 互补位预测的 CDR 级评估</h3>
+<ul>
+<li><strong>名称</strong>：CDR-level evaluation of sequence-only paratope prediction</li>
+<li><strong>来源局限/观察</strong>：本文 paratope PR AUC 0.659 为残基级，但 CDR 环（尤其是 CDR-H3）的预测精度可能差异大。</li>
+<li><strong>核心假设</strong>：CDR-H3 的预测精度显著低于框架区，且可通过 CDR 特异性损失加权提升。</li>
+<li><strong>初步方法</strong>：按 CDR 区域分层评估 paratope 预测，设计 CDR 感知的损失函数。</li>
+<li><strong>验证方式</strong>：在 SAbDab2 上按 CDR 区域报告 PR AUC。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：泄漏安全评估协议的形式化</h3>
+<ul>
+<li><strong>名称</strong>：Formalizing leakage-safe evaluation for antibody-antigen interaction prediction</li>
+<li><strong>来源局限/观察</strong>：本文强调序列聚类划分 + 测试集仅打开一次，但未形式化「聚类」的粒度（如 CDR 相似度阈值）。</li>
+<li><strong>核心假设</strong>：不同聚类粒度对评估结果影响显著，需建立标准化协议。</li>
+<li><strong>初步方法</strong>：在多个数据集上系统比较不同聚类粒度（序列同一性 30%/50%/70%、CDR 相似度）下的性能差异。</li>
+<li><strong>验证方式</strong>：发布标准化评估协议，供领域内比较。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 5：结构先验与序列模型的端到端融合</h3>
+<ul>
+<li><strong>名称</strong>：End-to-end fusion of structure-derived priors with sequence-only models</li>
+<li><strong>来源局限/观察</strong>：本文的残基先验是外部注入的，非端到端学习；且仅对 HER2 有效。</li>
+<li><strong>核心假设</strong>：将结构先验作为可学习的「软约束」融入模型训练，可提升泛化性。</li>
+<li><strong>初步方法</strong>：设计一个双通道架构：序列通道（ESM2）+ 先验通道（从已知复合物学习的残基偏好），在训练中联合优化。</li>
+<li><strong>验证方式</strong>：在多个抗原上评估，与本文的「先验 + 序列」分离式方法对比。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and methods as presented in the abstract; no full text, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose a sequence-only deep learning pipeline for predicting HER2 epitopes and VHH nanobody paratopes, using a frozen ESM2 650M model as a feature extractor and a lightweight trainable module with cross-attention. Training uses three public data sources, including a competition assay dataset ("AVIDa hHER2") that is not yet public. A structure-derived residue prior is introduced for HER2-specific epitope prediction. The authors report high performance on binder classification (PR AUC 0.999) and moderate paratope prediction (PR AUC 0.659), while acknowledging near-baseline performance for epitope prediction on novel antigens (PR AUC 0.070). A leakage-safe evaluation protocol is emphasized.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, code, or dataset documentation provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, dataset access details, model architecture specifics, hyperparameters, training/validation split details, and the "AVIDa hHER2" dataset itself (not yet public)</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a technically plausible approach to a challenging problem in antibody engineering, with a commendable emphasis on leakage-safe evaluation. However, the evidence base is limited to the abstract, and several claims cannot be verified without the full manuscript. The reported performance numbers are inconsistent in their implications, and the near-baseline epitope prediction result, while honestly reported, raises questions about the practical utility of the method. The reliance on a not-yet-public dataset for a central training signal is a significant concern for reproducibility.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers and practitioners in therapeutic antibody engineering, computational immunology, and protein language model applications. The focus on HER2, a clinically relevant target, and the sequence-only formulation would appeal to those seeking to avoid costly structure prediction steps. The leakage-safe evaluation protocol would interest methodologists in the field.</li>
+<li><strong>Major strengths</strong> The explicit commitment to leakage-safe evaluation with a sealed test set opened once is a notable strength. The honest reporting of a near-baseline result for novel antigen epitope prediction is commendable. The use of a frozen protein language model as a feature extractor with a lightweight trainable head is a sensible design choice for computational efficiency.</li>
+<li><strong>Major Concerns</strong> The central training dataset is not public, undermining reproducibility. The performance numbers are difficult to interpret without context, and the relationship between the competition-derived domain signal and the residue-level predictions is unclear. The abstract does not provide sufficient detail on the cross-attention mechanism or the residue prior construction to assess technical soundness.</li>
+<li><strong>Minor Comments</strong> The abstract is dense and would benefit from clearer separation of the different prediction tasks. The claim of "leakage free" for the 87.7% domain recovery result needs more precise definition. The release of "two submission variants" per test clone is mentioned but not explained in terms of how they are reconciled.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The unavailability of the "AVIDa hHER2" dataset is a primary technical failing for reproducibility. The lack of detail on the residue prior and its validation is a secondary concern.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: Moderate. The combination of a frozen ESM2 with a structure-derived prior is not entirely novel, but the specific application to VHH nanobodies on HER2 with a leakage-safe protocol has some originality. Scientific importance: Moderate. The problem is important, but the near-baseline epitope result limits the immediate impact. Interdisciplinary readership: Limited. The abstract is highly specialized and would not attract a broad readership. Technical soundness: Not fully assessable from the abstract; the evaluation protocol is a strength, but the dataset issue is a weakness. Readability for nonspecialists: Poor. The abstract is dense and assumes significant background knowledge.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract shows promise, but the dataset availability issue and the lack of methodological detail prevent a supportive recommendation.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The model is trained on "AVIDa hHER2" competition assay data, which is stated to be "to be published" and the authors "have no right to share."</li>
+<li><strong>Evidence pointer</strong> Abstract, "Training data" section (location not provided)</li>
+<li><strong>Concern</strong> The central training signal for the binder head and the competition-derived domain contrast relies on a dataset that is not publicly available and cannot be shared by the authors. This makes the reported results, particularly the PR AUC 0.999 for the binder head, impossible to reproduce or independently verify.</li>
+<li><strong>Why it matters</strong> Reproducibility is a cornerstone of scientific validity. Without access to the training data, other researchers cannot validate the method, compare against it, or build upon it. This is a fundamental barrier to the manuscript's contribution.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must provide a clear plan for making the "AVIDa hHER2" dataset available, either through the SEPIQ 2026 organizers or through a controlled access mechanism, before the results can be considered reproducible.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The residue-level epitope prediction on novel antigens is reported as near baseline (PR AUC 0.070), while the structure-derived residue prior reaches 0.26 to 0.29 once the domain is correct.</li>
+<li><strong>Evidence pointer</strong> Abstract, "Results" section (location not provided)</li>
+<li><strong>Concern</strong> The abstract reports a near-baseline performance for the primary task of epitope prediction on novel antigens. The improvement from the residue prior is conditional on the domain being correct, which itself is only correct for 87.7% of held-out clones. The abstract does not clarify how these numbers combine to give an overall performance estimate for the full pipeline on a novel HER2 antibody.</li>
+<li><strong>Why it matters</strong> The central claim of the manuscript is the utility of the sequence-only approach. If the epitope prediction is near baseline for novel antigens, the practical value of the method is severely limited, and the conditional improvement from the prior may not translate to real-world use.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide an end-to-end performance estimate for the full pipeline on a held-out set of HER2 antibodies, combining the domain classification accuracy with the residue-level prediction performance, to demonstrate the overall utility.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The model uses a "structure-derived residue prior" built from 25 mined HER2 antibody complexes and validated by leave-one-out.</li>
+<li><strong>Evidence pointer</strong> Abstract, "Methods" section (location not provided)</li>
+<li><strong>Concern</strong> The abstract does not describe how the residue prior is constructed, how it is integrated with the language model features, or what the leave-one-out validation entails. The improvement from 0.070 to 0.26-0.29 is substantial, but without methodological detail, it is unclear whether this prior is generalizable or overfit to the 25 complexes.</li>
+<li><strong>Why it matters</strong> The residue prior is a key component of the claimed performance improvement. Without understanding its construction and validation, the technical soundness of the approach cannot be assessed.</li>
+<li><strong>Resolution test</strong> The full manuscript must provide a detailed description of the residue prior construction, its integration into the model, and the leave-one-out validation results, including error bars and a comparison to a non-informative prior.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract structure</li>
+<li><strong>Evidence pointer</strong> Abstract (location not provided)</li>
+<li><strong>Issue</strong> The abstract mixes multiple prediction tasks (binder classification, paratope prediction, epitope prediction, domain classification) without clearly separating their definitions, evaluation metrics, and results.</li>
+<li>
+<p><strong>Required correction</strong> Restructure the abstract to clearly delineate each task, its input/output, and its performance metric, possibly in a table or bulleted format.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> "Leakage free" claim</li>
+<li><strong>Evidence pointer</strong> Abstract, "Results" section (location not provided)</li>
+<li><strong>Issue</strong> The claim of "leakage free" for the 87.7% domain recovery result is not defined. It is unclear what leakage was tested for and how it was prevented.</li>
+<li>
+<p><strong>Required correction</strong> Provide a precise definition of the leakage considered and the measures taken to prevent it, such as sequence clustering thresholds and test set construction.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> "Two submission variants"</li>
+<li><strong>Evidence pointer</strong> Abstract, "Results" section (location not provided)</li>
+<li><strong>Issue</strong> The abstract mentions releasing "two submission variants per test clone" but does not explain the difference between them or how they are evaluated.</li>
+<li><strong>Required correction</strong> Clarify the nature of the two variants and whether the reported performance numbers correspond to one or both.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "leakage free" for the 87.7% domain recovery result is unsupported without a definition of the leakage tested.</li>
+<li>The overall utility of the method is unsupported because the near-baseline epitope prediction (PR AUC 0.070) is not reconciled with the conditional improvement from the residue prior.</li>
+<li>The reproducibility of all results is unsupported due to the unavailability of the "AVIDa hHER2" dataset.</li>
+<li>The technical soundness of the residue prior is unsupported without methodological detail.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

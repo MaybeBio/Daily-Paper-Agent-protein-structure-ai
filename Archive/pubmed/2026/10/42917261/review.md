@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report development of a fluctuating charge force field for zinc-containing metalloproteins based on the atom-bond electronegativity equalization method (ABEEM). Parameters were optimized against quantum mechanical data, and molecular dynamics simulations were performed on 10 protein segments. The model reportedly reproduces the first Zn-Ow peak position, maintains structural stability, and yields lower heavy-atom root mean square deviation values compared with crystal structures from the Protein Data Bank.
+- **Visible evidence base** Abstract text only; no quantitative data, methodological details, or simulation protocols are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, parameterization details, simulation setup, force field validation data, and comparison benchmarks
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful development in polarizable force fields for zinc metalloproteins, a topic of genuine interest in biomolecular simulation. However, the abstract provides insufficient quantitative evidence and methodological detail to assess the validity, novelty, or generalizability of the claims. The core assertions regarding accuracy and stability are stated without supporting numbers or comparisons. The work may be of interest to the computational chemistry community, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational chemists and biophysicists working on force field development, polarizable models, and metalloprotein simulations would be the primary audience. Researchers studying zinc-dependent enzymes or zinc-binding domains may also find the approach relevant for capturing charge polarization effects that fixed-charge models miss.
+- **Major strengths** The focus on a polarizable model for zinc metalloproteins addresses a recognized limitation of fixed-charge force fields. The use of PDB-derived model molecules for parameterization is a reasonable strategy. The claim of dynamic charge distribution capture is conceptually appealing for metalloprotein systems.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The model reproduces the first Zn-Ow peak position and maintains structural stability throughout simulations, and shows lower heavy-atom RMSD values compared with PDB crystal structures.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No quantitative values are given for the Zn-Ow peak position, RMSD values, or simulation durations. Without these numbers, the reader cannot evaluate whether the reported agreement is meaningful or whether the stability claim is supported over a relevant timescale.
+  - **Why it matters** The central validation claims are the primary basis for recommending the force field. Absent quantitative comparison, the claims are unfalsifiable from the abstract and cannot be distinguished from anecdotal observation.
+  - **Resolution test** Provide specific numerical values for the Zn-Ow peak position compared with experimental or ab initio references, RMSD values for each of the 10 domains, and simulation lengths. Include error estimates or standard deviations where applicable.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** Parameters were determined and optimized using quantum mechanical methods and were in good agreement with computed charge distributions, potential energy surfaces, and geometric structures.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not specify which quantum mechanical method was used, what level of theory, what basis set, or how the fitting was performed. The phrase "good agreement" is undefined. No metrics such as root mean square error or correlation coefficients are reported.
+  - **Why it matters** Reproducibility and assessment of parameter quality require knowledge of the reference data and fitting procedure. Without this information, the reliability of the force field cannot be judged, and the work cannot be replicated.
+  - **Resolution test** Specify the QM method and basis set, the fitting target and procedure, and provide quantitative agreement metrics for charge distributions, potential energy surfaces, and geometries.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scope and generalizability
+  - **Claim pointer** The model was designed focusing primarily on tetracoordinated Zn proteins, and simulations were performed on 10 different protein segments.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not state how the 10 protein segments were selected, whether they represent diverse zinc coordination environments, or whether the model is intended to generalize beyond tetracoordinated sites. Zinc proteins also feature penta- and hexacoordinated sites, and the limitation to tetracoordination is not discussed.
+  - **Why it matters** The utility of the force field depends on its applicability across the range of zinc coordination geometries found in biology. If the model is restricted to tetracoordinated sites, this must be stated explicitly, and the implications for broader use must be addressed.
+  - **Resolution test** Describe the selection criteria for the 10 domains, list their coordination environments, and discuss the model's applicability to non-tetracoordinated zinc sites or state the limitation clearly.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "simplifying several complex and time-consuming processes" is vague and does not specify which processes are simplified or how.
+  - **Required correction** Specify the computational or methodological simplifications achieved relative to existing approaches.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Comparison to existing methods
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No comparison is made to other polarizable force fields or fixed-charge models for zinc metalloproteins, so the relative advantage of the ABEEM approach is unclear.
+  - **Required correction** Add a brief statement comparing performance or features with at least one existing force field for zinc systems.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Use of "fluctuating charge"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "fluctuating charge" is used without defining the mechanism or distinguishing it from other polarizable approaches such as Drude oscillators or induced dipoles.
+  - **Required correction** Provide a one-sentence definition or context for the fluctuating charge approach in the abstract.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, and R1-M3 are blocking. The absence of quantitative validation data, unspecified QM methodology, and undefined scope of applicability prevent assessment of the core claims.
+- **Assessment against Nature-style criteria** Originality cannot be fully assessed from the abstract, though the application of ABEEM to zinc metalloproteins may offer a novel contribution. Scientific importance is potentially high given the biological relevance of zinc, but the evidence provided is insufficient to establish significance. Interdisciplinary readership is plausible, as the work bridges chemistry, biology, and computational methods, but the abstract is written primarily for specialists. Technical soundness is not assessable without methodological detail and quantitative results. Readability for nonspecialists is moderate, though some terms such as "atom-bond electronegativity equalization method" and "fluctuating charge" are used without explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract indicates potentially useful work, but the absence of quantitative data and methodological transparency precludes a supportive recommendation. The case could be established if the full manuscript provides the missing validation metrics and methodological details.
+
+## Risk / unsupported claims
+- The claim that the model "reproduces the first Zn-Ow peak position" is unsupported without numerical values or reference comparisons.
+- The claim of "lower root mean square deviation values" is unsupported without specific RMSD numbers and comparison baselines.
+- The claim of "good agreement" with quantum mechanical data is unsupported without defined metrics.
+- The claim that the force field "provides a promising approach" is an assertion of utility that cannot be evaluated from the abstract alone.
+- The claim that the model "can dynamically capture the change in charge distributions" is stated without demonstration or analysis.

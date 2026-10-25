@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GDEE: A Structure-Based Platform for Gene Discovery and Enzyme Engineering. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>GDEE: A Structure-Based Platform for Gene Discovery and Enzyme Engineering.</h1>
+      <div class="meta">Souza, Caio S; Correia, Joao P G; Rocha, Isabel; Lousa, Diana; Soares, Claudio M</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-10-23
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42912922/">原文</a>
+      </div>
+      <p class="one-liner">该文介绍了一个基于结构的酶工程平台GDEE，整合序列生成、结构预测、对接和结合能评估来优化酶突变体，属于蛋白质结构计算在酶工程中的应用，但更偏工程化平台而非方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Enzymes are extensively utilized for catalyzing the production of value-added compounds in diverse sectors with significant economic impact. However, challenges such as poor protein expression, low catalytic activity, substrate/co-factor limitations, and toxicity of final products limit the efficiency of these biocatalysts. Protein engineering offers a solution by redesigning enzyme catalytic properties to enhance biosynthetic pathways. In this study, we present an automated platform for gene discovery and enzyme engineering, aimed at overcoming these bottlenecks. The GDEE platform finds and optimizes enzymes responsible for rate-limiting steps in biosynthetic pathways, with objectives ranging from improving catalytic efficiency to enabling novel transformations. The platform operates through four key steps: an initial sequence step that either sources natural enzyme sequences or generates mutant variants, followed by an atomistic protein structure prediction step, a docking step, and a binding energy evaluator, obtaining a set of variant enzyme sequences that are prioritized for experimental validation. Additionally, machine learning-based re-scoring of binding poses to improve binding affinities significantly enhances the accuracy of predicting the effect of mutations on binding, highlighting its potential in metabolic engineering applications.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">酶被广泛用于催化多种具有重大经济影响的行业中增值化合物的生产。然而，诸如蛋白质表达不良、催化活性低、底物/辅因子限制以及最终产物的毒性等挑战，限制了这些生物催化剂的效率。蛋白质工程通过重新设计酶的催化特性以增强生物合成途径，提供了一种解决方案。在本研究中，我们提出了一个用于基因发现和酶工程的全自动平台，旨在克服这些瓶颈。GDEE平台寻找并优化负责生物合成途径中限速步骤的酶，其目标范围从提高催化效率到实现新型转化。该平台通过四个关键步骤运作：初始序列步骤，要么获取天然酶序列，要么生成突变变体，随后进行原子级蛋白质结构预测步骤、对接步骤和结合能评估，获得一组优先用于实验验证的变体酶序列。此外，基于机器学习的结合姿态重新评分以改善结合亲和力，显著提高了预测突变对结合影响的准确性，突显了其在代谢工程应用中的潜力。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：GDEE: A Structure-Based Platform for Gene Discovery and Enzyme Engineering</li>
+<li><strong>作者</strong>：Souza, Caio S; Correia, Joao P G; Rocha, Isabel; Lousa, Diana; Soares, Claudio M</li>
+<li><strong>单位</strong>：未提供（根据作者信息推测为葡萄牙研究机构，具体单位未在材料中提供）</li>
+<li><strong>期刊/预印本平台</strong>：Journal of Chemical Information and Modeling</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-23）</li>
+<li><strong>论文类型</strong>：方法/平台描述论文（含基准测试与评估）</li>
+<li><strong>领域</strong>：结构生物信息学、酶工程、计算蛋白质设计</li>
+<li><strong>关键词</strong>：酶工程、基因发现、同源建模、分子对接、机器学习打分函数、结合亲和力预测</li>
+<li><strong>DOI/arXiv 号</strong>：10.1021/acs.jcim.5c02688</li>
+<li><strong>代码</strong>：未提供（文中提及为 Python 包，但未给出公开仓库地址）</li>
+<li><strong>数据</strong>：PDBBind v2020 refined set（4482 个复合物）；260 对参考-突变体蛋白对（来自平台基准测试，见 Supporting Information S2）</li>
+<li><strong>阅读日期</strong>：2026-10-23</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/物理模拟」中的<strong>酶工程自动化平台</strong>类别，将同源建模（Modeller）、分子对接（AutoDock Vina/Smina）与机器学习打分函数（Rf-Score 系列等）整合为端到端流水线，用于酶突变体优先排序和天然酶基因发现。其核心贡献在于<strong>平台化集成</strong>与<strong>打分函数在酶工程场景下的系统评估</strong>，而非新算法开发。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>GDEE 是一个自动化结构生物学平台，通过「序列生成 → 同源建模（Modeller）→ 分子对接（AutoDock Vina/Smina）→ 结合亲和力打分/重打分（经典或 ML 打分函数）」四步流水线，对酶突变体或天然同源酶的底物/配体结合亲和力进行预测和排序，以优先筛选候选酶进行实验验证；基准测试表明 AutoDock Vina 在姿态识别上最优，Rf-Score v2 在亲和力预测上最优，堆叠集成模型在独立基准上表现最佳但在完整流水线中优势减弱。</p>
+<hr />
+<h2>03 研究问题</h2>
+<p><strong>具体问题</strong>：如何构建一个自动化、可扩展、高吞吐的结构生物学平台，用于（1）酶工程——预测哪些突变体可能具有更好的底物/配体结合亲和力，以及（2）基因发现——从天然同源酶中筛选能催化目标反应的候选酶？</p>
+<p><strong>为什么重要</strong>：酶在制药、生物催化、可持续能源和环境修复等领域有巨大经济价值，但天然酶或新途径常受限于低表达、低催化活性、底物/辅因子限制和产物毒性等问题。酶工程是解决这些瓶颈的关键策略，而计算优先排序可以大幅减少实验筛选的成本和时间。</p>
+<p><strong>现有方法为何不足</strong>：
+- QM/MM 方法精度高但计算成本过高，无法用于大规模突变体库筛选；
+- MM 自由能计算方法（如元动力学）仍计算密集；
+- 现有结构预测和对接工具缺乏自动化集成，需要大量人工干预；
+- 经典打分函数（Vina、Smina 等）在亲和力排序上精度有限；
+- ML 打分函数虽在基准上表现好，但未在酶工程场景（突变体 vs 野生型）下系统评估。</p>
+<p><strong>精确研究问题</strong>：Can an automated structure-based pipeline, combining homology modeling, rigid-receptor docking, and ML-based re-scoring, reliably prioritize enzyme variants with improved ligand binding affinity for experimental testing?</p>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络主要基于本文 Introduction 与 Discussion 的叙述框架，标注为「仅本文框架」；部分经典方法（Rosetta、FoldX 等）为外部常识，标注为「经外部核验」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验定向进化</td>
+<td>随机突变 + 筛选</td>
+<td>无需结构信息</td>
+<td>需要大量筛选，效率低</td>
+<td>本文旨在减少实验筛选负担</td>
+</tr>
+<tr>
+<td>理性设计（基于结构）</td>
+<td>Rosetta、FoldX、DynaMut</td>
+<td>利用结构信息预测突变效应</td>
+<td>需要结构可用；能量函数精度有限；难以自动化大规模筛选</td>
+<td>本文采用同源建模解决结构可用性问题</td>
+</tr>
+<tr>
+<td>高精度但高成本方法</td>
+<td>QM、QM/MM、元动力学</td>
+<td>精度高，可解析反应机制</td>
+<td>计算成本过高，不适合大规模突变体筛选</td>
+<td>本文明确放弃此类方法，采用对接作为近似</td>
+</tr>
+<tr>
+<td>分子对接</td>
+<td>AutoDock Vina、Smina</td>
+<td>速度快，可高吞吐</td>
+<td>刚性受体假设；打分函数精度有限</td>
+<td>本文核心步骤之一，系统评估其精度</td>
+</tr>
+<tr>
+<td>ML 打分函数</td>
+<td>Rf-Score v1/v2/v3、NNScore、PLEC 系列</td>
+<td>在 PDBBind 基准上亲和力预测精度高</td>
+<td>训练于实验结构，对预测结构/突变体泛化性未知</td>
+<td>本文首次在酶工程流水线中系统评估其表现</td>
+</tr>
+<tr>
+<td>自动化平台</td>
+<td>本文 GDEE</td>
+<td>集成建模-对接-打分-排序全流程</td>
+<td>精度受限于各步骤近似</td>
+<td><strong>本文贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>酶工程中计算筛选缺乏自动化</td>
+<td>需要手动准备结构、运行建模、执行对接、分析结果</td>
+<td>现有工具分散，缺乏统一工作流管理</td>
+<td>Introduction：现有工具需要「additional automation, integration with ligand docking, and workflow standardization」</td>
+</tr>
+<tr>
+<td>高精度方法计算成本过高</td>
+<td>QM/MM 和 MM 自由能方法无法处理数千突变体</td>
+<td>量子级和原子级模拟的计算复杂度</td>
+<td>Introduction：这些方法「generally too computationally demanding for high-throughput calculations」</td>
+</tr>
+<tr>
+<td>经典打分函数亲和力预测精度有限</td>
+<td>Vina 等对 ΔΔG 的预测约 50% 正确率（接近随机）</td>
+<td>经验打分函数的简化假设；刚性受体</td>
+<td>Results 图 4：Vina、Smina、Vinardo、AD4 正确率约 50%</td>
+</tr>
+<tr>
+<td>ML 打分函数在预测结构上泛化性未知</td>
+<td>在 PDBBind 上表现好，但在完整流水线（预测结构）中优势减弱</td>
+<td>训练分布（实验结构）与使用分布（同源模型）不一致</td>
+<td>Results：Rf-Score v2 在 X-ray 结构上 72% 正确率，完整流水线中降至 55%</td>
+</tr>
+<tr>
+<td>突变引起的结合亲和力变化通常很小</td>
+<td>ΔΔG 值小，常落在打分函数误差范围内</td>
+<td>单点突变对结合自由能影响有限</td>
+<td>Results：ΔΔG 值「very small...often fall within Vina's error range」</td>
+</tr>
+<tr>
+<td>同源建模引入结构不确定性</td>
+<td>预测结构中的微小偏差传播到对接和打分</td>
+<td>建模精度有限；柔性侧链处理不足</td>
+<td>Discussion：完整流水线性能下降归因于「accumulation of uncertainty across multiple upstream steps」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>GDEE 是一个 Python 包，由 8 个模块组成（Pipeline、Variant、Modeling、Evaluator、Measurement、Analysis、Platform、Database），实现四步流水线：
+1. <strong>序列生成</strong>：酶工程模式下自动采样突变空间（保守/非保守/随机）；基因发现模式下接受 FASTA 文件输入天然同源序列
+2. <strong>同源建模</strong>：使用 Modeller 以用户提供的模板结构构建突变体三维结构，支持优化半径和优化级别设置
+3. <strong>分子对接</strong>：使用 AutoDock Vina 或 Smina 将配体对接至受体，支持 Vina 或 Vinardo 打分函数
+4. <strong>打分与排序</strong>：计算结合亲和力，基于距离约束过滤催化相关姿态，按亲和力排序突变体</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>结合亲和力作为催化性能的实用代理</strong>：作者明确承认结合亲和力 ≠ 催化效率（kcat/KM），但在高吞吐筛选中，结合亲和力是可计算且与底物识别、产物释放等限速步骤相关的实用指标。</li>
+<li><strong>「对接 + ML 重打分」的分工策略</strong>：Vina 擅长姿态识别（docking precision 54%），ML 函数擅长亲和力排序（scoring precision），两者结合优于任一单独使用。</li>
+<li><strong>误差累积意识</strong>：完整流水线（建模→对接→打分）的性能低于独立基准测试，作者将此归因于上游步骤（尤其是同源建模）引入的误差传播——这提示平台设计需要在每个步骤控制误差。</li>
+<li><strong>堆叠集成的条件性优势</strong>：集成模型在独立基准上最优，但在完整流水线中优势减弱——说明 ML 打分函数的训练分布与酶工程应用场景存在分布偏移。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>平台化思维</strong>：将已有工具（Modeller、Vina、ML 打分函数）集成并自动化，其价值不亚于开发新算法——工程化本身是计算生物学的重要贡献。</li>
+<li><strong>「代理指标」的明确边界</strong>：用结合亲和力代理催化效率是务实选择，但必须明确其边界，避免过度解读。</li>
+<li><strong>基准测试的分层设计</strong>：独立基准（PDBBind）与端到端流水线评估（260 对突变体）分别回答不同问题——前者测算法能力，后者测系统性能。这种分层评估值得借鉴。</li>
+<li><strong>分布偏移是 ML 在科学应用中落地的核心障碍</strong>：ML 打分函数在实验结构上训练，在预测结构上应用，性能下降是必然的——需要在应用场景数据上微调或设计领域自适应方法。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：
+- 模板酶结构（PDB 格式）
+- 配体结构（PDBQT 格式）
+- 酶工程模式：目标残基位置 + 突变策略（保守/非保守/随机）+ 突变数量
+- 基因发现模式：FASTA 格式的候选同源序列文件</p>
+<p><strong>输出</strong>：
+- 每个突变体/候选酶的排序列表（按结合亲和力）
+- 每个变体的模型结构、对接姿态、打分值
+- 存储在 SQLite 数据库中的全部中间数据</p>
+<p><strong>模块流程</strong>：</p>
+<pre><code>[Variant 模块] → 生成突变序列 / 读取 FASTA
+       ↓
+[Modeling 模块] → Modeller 同源建模（多模型生成 + 质量评估）
+       ↓
+[Evaluator 模块] → AutoDock Vina / Smina 分子对接
+       ↓
+[Measurement 模块] → 计算原子间距离（用于姿态过滤）
+       ↓
+[Analysis 模块] → 基于距离约束过滤 + 按亲和力排序
+       ↓
+[Database 模块] → SQLite 存储全部结果
+</code></pre>
+<p><strong>关键参数</strong>（推荐配置，见 Supporting Information S1/S2）：
+- 每个变体生成 5 个模型（benchmark 显示 5 个模型是精度/成本平衡点）
+- 对接 exhaustiveness ≥ 100
+- 优化半径和级别可选（0/1/2 三级）</p>
+<p><strong>并行化</strong>：通过 MPI4Py 实现数据并行，支持分布式计算。</p>
+<p><strong>重打分模块</strong>：可选步骤，在对接后使用 7 种 ML 打分函数（Rf-Score v1/v2/v3、NNScore、PLECrf、PLECnn、PLEClinear）对姿态进行重打分，或使用堆叠集成模型。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Variant</strong></td>
+<td>生成突变序列或读取 FASTA</td>
+<td>酶工程和基因发现两种模式的入口</td>
+<td>输入：模板序列+突变规格/FASTA；输出：变体序列列表</td>
+<td>平台设计描述（Methods）</td>
+<td>无法自动生成突变体库，需手动准备序列</td>
+</tr>
+<tr>
+<td><strong>Modeling</strong></td>
+<td>使用 Modeller 构建变体 3D 结构</td>
+<td>突变体无实验结构，需预测</td>
+<td>输入：变体序列+模板结构；输出：多模型+质量分数</td>
+<td>平台设计描述（Methods）</td>
+<td>无结构则无法进行后续对接；建模误差是主要误差来源 [Analysis]</td>
+</tr>
+<tr>
+<td><strong>Evaluator</strong></td>
+<td>执行分子对接并计算结合亲和力</td>
+<td>核心打分步骤</td>
+<td>输入：模型结构+配体；输出：对接姿态+结合能</td>
+<td>基准测试：Vina 姿态识别 54% 最优</td>
+<td>无法评估配体结合；整个平台失去功能</td>
+</tr>
+<tr>
+<td><strong>Measurement</strong></td>
+<td>计算配体-蛋白原子间距离</td>
+<td>支持催化相关姿态过滤</td>
+<td>输入：对接姿态+用户指定原子对；输出：距离值</td>
+<td>平台设计描述（Methods）</td>
+<td>无法过滤非催化相关姿态，排序质量下降</td>
+</tr>
+<tr>
+<td><strong>Analysis</strong></td>
+<td>基于距离阈值过滤姿态并按亲和力排序</td>
+<td>确保只考虑催化相关结合模式</td>
+<td>输入：姿态+距离+打分；输出：排序列表</td>
+<td>平台设计描述（Methods）</td>
+<td>可能纳入无催化意义的姿态，降低筛选精度</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>管理执行模式（单线程/分布式）</td>
+<td>支持高吞吐计算</td>
+<td>输入：用户配置；输出：任务调度</td>
+<td>平台设计描述（Methods）</td>
+<td>无法处理大规模突变体库</td>
+</tr>
+<tr>
+<td><strong>Database</strong></td>
+<td>SQLite 存储全部中间数据</td>
+<td>可追溯、可重分析</td>
+<td>输入：各步骤数据；输出：结构化存储</td>
+<td>平台设计描述（Methods）</td>
+<td>无法进行事后分析和调试</td>
+</tr>
+<tr>
+<td><strong>重打分（可选）</strong></td>
+<td>使用 ML 打分函数或堆叠集成重打分</td>
+<td>提高亲和力预测精度</td>
+<td>输入：对接姿态；输出：重打分值</td>
+<td>独立基准：Rf-Score v2 最优（72%）；集成模型 R² 最高</td>
+<td>降低亲和力排序精度；但集成模型在完整流水线中优势减弱</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>本文核心公式为 ML 打分函数输出（pKi/d）与结合自由能（ΔG）之间的换算：</p>
+<p><strong>公式</strong>：
+$$\Delta G = RT \ln 10 \cdot pK_{i/d}$$</p>
+<p><strong>符号含义</strong>：
+- ΔG：结合自由能（kcal/mol）
+- R：理想气体常数（1.987 cal·mol⁻¹·K⁻¹）
+- T：绝对温度（K）
+- pKi/d：ML 打分函数输出的负对数抑制/解离常数</p>
+<p><strong>用途</strong>：将 ML 打分函数（输出 pKi/d）的结果与经典打分函数（输出 ΔG）统一到同一尺度，便于比较。</p>
+<p><strong>直觉</strong>：pKi/d 与 ΔG 呈线性关系，转换系数为 RT·ln10 ≈ 1.36 kcal/mol（室温下），即 pKi/d 每增加 1，ΔG 降低约 1.36 kcal/mol。</p>
+<p><strong>来源指针</strong>：Methods 节「Re-scoring of Docking Poses with Machine Learning Scoring Functions」段落，引用文献 [ref]（原文未给出具体编号）。</p>
+<p><strong>其他隐含公式</strong>：
+- ΔΔG = ΔG(突变体) − ΔG(野生型/参考)：用于评估突变对结合的影响（Results 图 4 的评估指标）
+- 成功率 = 正确预测 ΔΔG 符号的突变体比例 / 总突变体数（Results 图 4 的评估指标）</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<h3>数据集与规模</h3>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>规模</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PDBBind v2020 refined set</td>
+<td>4482 个蛋白-配体复合物</td>
+<td>评估打分函数的打分精度（scoring precision）和姿态识别精度（docking precision）</td>
+</tr>
+<tr>
+<td>260 对参考-突变体蛋白对</td>
+<td>260 对（来自平台基准测试，见 SI S2）</td>
+<td>评估打分函数在酶工程场景下预测突变效应的能力</td>
+</tr>
+<tr>
+<td>187 个参考蛋白</td>
+<td>187 个（部分参考蛋白对应多个突变体）</td>
+<td>完整流水线评估（建模→对接→打分）</td>
+</tr>
+</tbody>
+</table>
+<h3>评估指标</h3>
+<ul>
+<li><strong>打分精度（Scoring precision）</strong>：预测亲和力与实验亲和力的相关性（R²、MSE）</li>
+<li><strong>姿态识别精度（Docking precision）</strong>：预测姿态与晶体结构的 RMSD ≤ 2Å 的比例</li>
+<li><strong>突变效应预测成功率</strong>：正确预测 ΔΔG 符号（改善/降低）的百分比</li>
+</ul>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 Claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>打分精度评估（PDBBind）</td>
+<td>ML 函数在亲和力预测上优于经典函数</td>
+<td>7 种 ML 函数 vs Vina、Smina、Vinardo、AD4</td>
+<td>Rf-Score v2 最优；PLEC 系列表现差</td>
+<td>ML 函数可提高亲和力预测精度</td>
+<td>最优函数因数据集而异；PLEC 系列不适用</td>
+<td>Results 图 S5</td>
+</tr>
+<tr>
+<td>姿态识别评估（PDBBind）</td>
+<td>经典函数在姿态识别上优于 ML 函数</td>
+<td>同上</td>
+<td>Vina 54% 正确（2Å 内），优于 ML 函数（2-17%）</td>
+<td>Vina 适合用于姿态生成</td>
+<td>ML 函数不适合直接用于对接姿态选择</td>
+<td>Results 图 S6</td>
+</tr>
+<tr>
+<td>突变效应预测（X-ray 结构）</td>
+<td>Rf-Score v2 在酶工程场景下有效</td>
+<td>260 对突变体，直接使用 X-ray 结构打分</td>
+<td>Rf-Score v2 成功率约 72%</td>
+<td>ML 函数可预测突变对结合的影响</td>
+<td>成功率仍非确定性，不能作为唯一筛选依据</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>突变效应预测（对接后）</td>
+<td>对接后 ML 函数仍保持优势</td>
+<td>260 对突变体，对接后重打分</td>
+<td>Rf-Score v2 成功率降至 55%</td>
+<td>对接引入的误差削弱 ML 函数优势</td>
+<td>完整流水线精度低于理想条件</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>完整流水线评估</td>
+<td>GDEE 端到端可用</td>
+<td>187 个参考蛋白，全流程</td>
+<td>成功率约 54%（RF-Score v1 最优）</td>
+<td>平台可用于初步筛选</td>
+<td>精度仅略高于随机，需结合生化知识</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>堆叠集成评估</td>
+<td>集成模型优于单模型</td>
+<td>独立基准 vs 完整流水线</td>
+<td>独立基准最优（R² 最高）；完整流水线中优势减弱</td>
+<td>集成在理想条件下有效</td>
+<td>集成不能解决上游误差传播</td>
+<td>Results 图 4、图 S5</td>
+</tr>
+</tbody>
+</table>
+<h3>关键基线</h3>
+<ul>
+<li>随机猜测基线：50% 正确率（二分类：改善/降低）</li>
+<li>经典打分函数：Vina、Smina、Vinardo、AD4（约 50% 正确率）</li>
+</ul>
+<hr />
+<h2>11 结论正确解读</h2>
+<p><strong>任务范围</strong>：本文评估的是<strong>结合亲和力预测</strong>，而非<strong>催化效率（kcat/KM）预测</strong>。作者明确声明结合亲和力是催化性能的「实用代理」，但两者不等价。</p>
+<p><strong>输入条件</strong>：
+- 需要用户提供模板酶结构和配体结构
+- 需要用户指定突变位点和配体结合位点（box 中心/大小）
+- 同源建模假设模板与目标序列有足够同源性</p>
+<p><strong>端到端状态</strong>：GDEE 是<strong>计算筛选平台</strong>，输出的是「优先实验验证的候选列表」，而非最终验证的酶变体。所有预测需经实验确认。</p>
+<p><strong>精度边界</strong>：
+- 最佳场景（X-ray 结构 + Rf-Score v2）：72% 正确率
+- 完整流水线（建模 + 对接 + 打分）：约 54% 正确率
+- 作者明确表示「不应被解释为支持对单个突变的二元成功/失败预测」</p>
+<p><strong>算力成本</strong>：文中未提供具体运行时间数据（Not assessable）。平台支持 MPI 并行，暗示为计算密集型工作流。</p>
+<p><strong>历史数据依赖</strong>：ML 打分函数训练于 PDBBind（实验结构），在预测结构上存在分布偏移，性能下降。</p>
+<p><strong>模型依赖</strong>：平台依赖 Modeller（同源建模）、AutoDock Vina/Smina（对接）、7 种 ML 打分函数——每个步骤的精度限制都会传播到最终结果。</p>
+<p><strong>最难情形</strong>：单点突变引起的 ΔΔG 变化通常很小，落在打分函数误差范围内；同源建模引入的结构偏差进一步降低信噪比。</p>
+<p><strong>群体/领域边界</strong>：评估数据集为 PDBBind（通用蛋白-配体复合物）和平台内部基准（260 对突变体），未在特定酶家族或工业相关酶上验证。</p>
+<p><strong>收尾</strong>：GDEE 是一个实用的自动化筛选平台，其价值在于<strong>高通量初步筛选</strong>和<strong>减少实验候选数量</strong>，而非精确预测单个突变的效应。最佳使用方式是结合生化知识和活性位点检查，将计算排序作为实验设计的辅助工具。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结合亲和力 ≠ 催化效率</td>
+<td>平台预测的是结合亲和力，而非 kcat/KM；结合改善不一定意味着催化改善</td>
+<td>未明确提及（隐含：需结合其他方法预测催化）</td>
+<td>Introduction：binding affinity「does not necessarily imply improved catalytic efficiency」</td>
+</tr>
+<tr>
+<td>打分函数精度有限</td>
+<td>完整流水线中最佳成功率仅约 54%，仅略高于随机</td>
+<td>集成 ML 重打分模块；改进打分函数</td>
+<td>Results 图 4 讨论</td>
+</tr>
+<tr>
+<td>同源建模引入误差</td>
+<td>预测结构中的微小偏差传播到对接和打分，降低整体精度</td>
+<td>未明确提及（隐含：改进建模精度或引入柔性）</td>
+<td>Discussion：误差累积解释</td>
+</tr>
+<tr>
+<td>ML 打分函数训练分布偏移</td>
+<td>训练于实验结构，在预测结构上性能下降</td>
+<td>未明确提及</td>
+<td>Discussion：分布差异解释</td>
+</tr>
+<tr>
+<td>需要人工检查</td>
+<td>模型质量评估和姿态过滤仍需人工监督</td>
+<td>未明确提及</td>
+<td>Methods：manual curation「remains imperative」</td>
+</tr>
+<tr>
+<td>刚性受体假设</td>
+<td>对接中蛋白视为刚性，忽略构象变化</td>
+<td>未明确提及</td>
+<td>Methods：protein considered rigid</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结合亲和力作为催化代理的合理性未经验证</td>
+<td>结合亲和力改善的突变体可能因过渡态稳定化不足而催化效率不变或降低；平台可能筛选出「结合更好但催化更差」的变体</td>
+<td>这是平台核心假设，若假设不成立，整个筛选策略失效</td>
+<td>在已知催化数据的酶系统上回顾性验证：比较平台排序与实验 kcat/KM 排序的相关性</td>
+<td>Introduction 中作者自认「binding-based predictions should be interpreted as a means to prioritize variants...rather than as direct predictions of catalytic improvement」</td>
+</tr>
+<tr>
+<td>260 对突变体基准的构成未详细说明</td>
+<td>突变类型分布（保守/非保守）、蛋白家族多样性、配体类型未知；可能存在选择偏差</td>
+<td>基准结果（72% 成功率）可能无法泛化到其他酶系统</td>
+<td>检查 SI S2 中基准的详细构成；在独立酶系统上交叉验证</td>
+<td>Results 图 4 仅给出汇总数据</td>
+</tr>
+<tr>
+<td>完整流水线 54% 成功率的实际价值存疑</td>
+<td>仅比随机高 4 个百分点；考虑到实验验证成本，这种提升是否具有实际意义未讨论</td>
+<td>平台宣称「prioritize variants for experimental testing」，但 54% 的精度意味着近一半的推荐是错的</td>
+<td>进行成本-收益分析：比较计算筛选 + 实验验证 vs 纯实验筛选的总成本</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>堆叠集成模型的「最优」结论条件性强</td>
+<td>集成模型在独立基准上最优，但在完整流水线中优势消失；作者仍推荐其为默认重打分函数</td>
+<td>用户可能被误导认为集成模型始终最优</td>
+<td>明确报告集成模型在完整流水线中的具体性能数据（文中仅称「similar performance」）</td>
+<td>Results 图 4 讨论</td>
+</tr>
+<tr>
+<td>未与现有平台（如 Rosetta、FoldX 等）进行直接比较</td>
+<td>文中仅引用这些工具，未在相同基准上对比 GDEE 与它们的性能</td>
+<td>无法判断 GDEE 的相对优势</td>
+<td>在相同突变体基准上运行 Rosetta 等工具，对比排序精度</td>
+<td>Introduction 引用但无对比实验</td>
+</tr>
+<tr>
+<td>同源建模步骤的精度未单独评估</td>
+<td>建模误差是作者归因的完整流水线性能下降主因，但未提供建模精度（如与晶体结构 RMSD）的数据</td>
+<td>无法判断误差主要来自建模还是对接/打分</td>
+<td>对 260 对突变体计算模型与晶体结构的 RMSD，与下游性能关联分析</td>
+<td>Discussion 误差累积解释</td>
+</tr>
+<tr>
+<td>配体结合位点需用户指定</td>
+<td>box 位置/大小由用户提供，这引入了主观性；不同 box 设置可能显著影响结果</td>
+<td>平台自动化程度被高估，实际需要相当的专家知识</td>
+<td>测试不同 box 设置对排序结果的影响</td>
+<td>Methods：box size and center「must be provided by the user」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题：Agent 提炼的知识候选</p>
+</blockquote>
+<h3>可迁移概念</h3>
+<ol>
+<li>
+<p><strong>「对接 + ML 重打分」的分层策略</strong>：用经典打分函数（Vina）负责姿态生成（docking precision 高），用 ML 函数负责亲和力排序（scoring precision 高），两者分工明确。这一策略可迁移到任何基于对接的蛋白质-配体/蛋白质-蛋白质相互作用预测任务。</p>
+</li>
+<li>
+<p><strong>代理指标（Surrogate Metric）的显式边界声明</strong>：作者明确声明「结合亲和力 ≠ 催化效率」，并将平台定位为「优先排序工具」而非「预测器」。这种对代理指标边界的诚实声明值得在类似工作中效仿。</p>
+</li>
+<li>
+<p><strong>误差累积的端到端评估</strong>：作者区分了「独立基准」（PDBBind，测打分函数本身）和「端到端评估」（完整流水线，测系统性能），并明确归因性能下降于上游误差传播。这种分层评估设计值得在计算平台类工作中推广。</p>
+</li>
+<li>
+<p><strong>堆叠集成的条件性优势</strong>：集成模型在理想条件下最优，但在实际流水线中优势减弱——说明「模型集成」不能解决「上游数据质量」问题。这提示在构建端到端系统时，应优先改进上游步骤（如同源建模精度）而非堆叠更多下游模型。</p>
+</li>
+</ol>
+<h3>可迁移方法</h3>
+<ol start="5">
+<li>
+<p><strong>同源建模 + 多模型生成 + 质量筛选</strong>：每个变体生成多个模型（默认 5 个），用 VoroMQA 和 DOPE 评分筛选，只保留高质量模型进入对接。这一「生成-筛选」策略可迁移到任何基于结构预测的突变体评估任务。</p>
+</li>
+<li>
+<p><strong>距离约束过滤催化相关姿态</strong>：通过计算配体与特定残基（催化残基）的距离来过滤对接姿态，确保只考虑催化相关的结合模式。这一方法可迁移到酶工程中的底物特异性预测。</p>
+</li>
+<li>
+<p><strong>SQLite 全流程数据持久化</strong>：所有中间数据（序列、模型、姿态、打分）存储在 SQLite 数据库中，便于事后分析和调试。这种数据管理方式值得在计算平台中借鉴。</p>
+</li>
+<li>
+<p><strong>MPI 并行化</strong>：通过 MPI4Py 实现数据并行，支持大规模突变体库的分布式计算。对于计算密集型流水线，并行化设计是必要的工程实践。</p>
+</li>
+</ol>
+<h3>对蛋白质结构计算研究的启示</h3>
+<ol start="9">
+<li>
+<p><strong>ML 打分函数的分布偏移问题</strong>：ML 打分函数在实验结构上训练，在预测结构上性能下降——这提示在将 ML 模型应用于结构预测下游任务时，需要考虑训练-应用分布差异，可能需要在预测结构数据上微调。</p>
+</li>
+<li>
+<p><strong>「结合亲和力」作为酶工程筛选指标的边界</strong>：对于本课题（蛋白质结构 × AI/物理模拟），本文提供了一个重要警示：结合亲和力改善 ≠ 催化效率改善。在设计基于结构的酶工程筛选流程时，应考虑结合其他指标（如过渡态稳定化、构象采样等）。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<h3>相似工作</h3>
+<ul>
+<li><strong>Rosetta</strong>（Leman et al., 2020）：蛋白质设计和酶工程的金标准平台，提供突变扫描、对接、能量评估等模块。GDEE 与 Rosetta 的差异在于：GDEE 更专注于「结合亲和力排序」这一特定任务，且集成了 ML 打分函数；Rosetta 覆盖更广但需要更多专家知识。</li>
+<li><strong>FoldX</strong>（Schymkowitz et al., 2005）：基于经验力场的突变效应预测工具。GDEE 的 ΔΔG 评估目标与 FoldX 类似，但 GDEE 使用对接 + ML 打分而非经验力场。</li>
+<li><strong>DynaMut</strong>（Rodrigues et al., 2018）：结合正常模式分析与图签名预测突变对稳定性和动力学的影响。GDEE 未考虑动力学效应，这是两者互补之处。</li>
+<li><strong>AutoDock Vina</strong>（Trott &amp; Olson, 2010）：GDEE 的核心对接引擎，其精度已在大量基准中验证。</li>
+<li><strong>Rf-Score 系列</strong>（Ballester &amp; Mitchell, 2010；Wojcikowski et al., 2019）：随机森林/深度学习打分函数，GDEE 中表现最优的 ML 打分函数。</li>
+</ul>
+<h3>组合可能性</h3>
+<ul>
+<li><strong>GDEE + AlphaFold</strong>：GDEE 目前需要用户提供模板结构。若将 AlphaFold 预测结构作为模板输入，可扩展至无实验结构的酶系统。但需注意 AlphaFold 预测结构的不确定性传播问题。</li>
+<li><strong>GDEE + MD 模拟</strong>：GDEE 使用刚性受体对接，忽略构象变化。可结合 MD 模拟（如元动力学）对候选突变体进行更精确的构象采样和结合自由能计算，作为第二层筛选。</li>
+<li><strong>GDEE + 序列设计</strong>：GDEE 的突变采样策略（保守/非保守/随机）可与基于深度学习的序列设计工具（如 ProteinMPNN）结合，生成更智能的突变库。</li>
+</ul>
+<h3>冲突或需注意的差异</h3>
+<ul>
+<li><strong>ML 打分函数的训练分布</strong>：Rf-Score 等训练于 PDBBind（实验结构），在 GDEE 的预测结构上性能下降。这与 AlphaFold 等结构预测模型在预测结构上评估时的分布偏移问题类似。</li>
+<li><strong>结合亲和力 vs 催化效率</strong>：本文的核心假设（结合亲和力可代理催化效率）与酶催化中「过渡态稳定化」理论存在张力。在设计酶工程筛选时，应意识到这一假设的边界。</li>
+</ul>
+<h3>候选方向（未验证）</h3>
+<ul>
+<li>将 GDEE 的「对接 + ML 重打分」策略迁移至蛋白质-蛋白质相互作用（PPI）预测</li>
+<li>在 GDEE 中引入构象系综（ensemble docking）以部分缓解刚性受体假设</li>
+<li>开发针对酶工程场景微调的 ML 打分函数（在突变体数据上训练）</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<blockquote>
+<p>标题：Agent 生成的研究候选</p>
+</blockquote>
+<h3>候选 1：基于 GDEE 框架的「结合亲和力 + 过渡态稳定化」双指标酶工程筛选</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：GDEE 仅使用结合亲和力作为筛选指标，作者自认这不能直接预测催化效率。酶催化的核心是过渡态稳定化，而非底物结合本身。</li>
+<li><strong>核心假设</strong>：结合「底物结合亲和力」和「过渡态类似物结合亲和力」的双指标筛选，比单一结合亲和力指标更能富集催化效率改善的突变体。</li>
+<li><strong>增量</strong>：在 GDEE 流水线中增加一个「过渡态类似物对接」步骤，计算 ΔΔG(TS-analog) − ΔΔG(substrate) 作为催化倾向的代理指标。</li>
+<li><strong>初步方法</strong>：选取已知催化机制的酶（如丝氨酸蛋白酶、β-内酰胺酶），对底物和过渡态类似物分别对接，比较双指标排序与实验 kcat/KM 数据的相关性。</li>
+<li><strong>验证方式</strong>：回顾性验证（已知突变体数据）+ 前瞻性验证（新突变体实验测试）。</li>
+<li><strong>失败模式</strong>：过渡态类似物与真实过渡态的几何差异可能导致误导性结果；刚性受体假设在过渡态结合中可能更成问题。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<hr />
+<h3>候选 2：不确定性感知的 GDEE 流水线——传播建模误差到最终排序</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：作者将完整流水线性能下降归因于「上游误差传播」，但未量化各步骤的误差贡献。</li>
+<li><strong>核心假设</strong>：通过显式建模各步骤的不确定性（同源建模置信度、对接打分方差、ML 预测区间），可以生成带置信区间的突变体排序，提高筛选决策质量。</li>
+<li><strong>增量</strong>：为 GDEE 增加不确定性量化模块，输出每个突变体的排序分 + 置信区间，而非点估计。</li>
+<li><strong>初步方法</strong>：使用 AlphaFold 的 pLDDT 或 Modeller 的 DOPE 分数作为建模不确定性；对对接进行多次随机种子重复估计方差；对 ML 打分函数使用集成方差或 MC Dropout。</li>
+<li><strong>验证方式</strong>：在 260 对突变体基准上比较「不确定性加权排序」与「原始排序」的富集率。</li>
+<li><strong>失败模式</strong>：不确定性估计可能不准确，导致加权排序反而更差；计算成本增加。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<hr />
+<h3>候选 3：GDEE 与 AlphaFold 结构预测的端到端集成——无模板酶工程</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：GDEE 需要用户提供模板结构，限制了其在无实验结构酶系统上的应用。</li>
+<li><strong>核心假设</strong>：AlphaFold 预测结构可作为 GDEE 的模板，且预测结构的不确定性（pLDDT）可用于指导建模优化半径的选择。</li>
+<li><strong>增量</strong>：将 AlphaFold 预测结构 + pLDDT 分数整合到 GDEE 的 Modeling 模块，实现从序列到排序的完全自动化。</li>
+<li><strong>初步方法</strong>：在 260 对突变体基准上，比较「实验模板」与「AlphaFold 模板」的排序一致性；分析 pLDDT 与建模质量的关系。</li>
+<li><strong>验证方式</strong>：在无实验结构的酶家族上测试端到端流水线的筛选效率。</li>
+<li><strong>失败模式</strong>：AlphaFold 对突变体的预测可能不准确（尤其对功能丧失突变）；预测结构中的错误可能被下游步骤放大。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<hr />
+<h3>候选 4：基于 GDEE 框架的「构象系综对接」——引入柔性以提升突变体排序精度</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：GDEE 使用刚性受体对接，忽略突变可能引起的局部构象变化。作者在 Discussion 中承认「accumulation of uncertainty」但未提出解决方案。</li>
+<li><strong>核心假设</strong>：对每个突变体生成构象系综（如通过 MD 模拟或正常模式分析），在系综中进行对接，取最优或平均结合能，可提升突变体排序精度。</li>
+<li><strong>增量</strong>：在 GDEE 的 Evaluator 模块中增加系综对接选项，与刚性对接进行系统比较。</li>
+<li><strong>初步方法</strong>：选取 20-30 个已知突变体，分别进行刚性对接和系综对接，比较排序与实验数据的相关性。</li>
+<li><strong>验证方式</strong>：在 260 对突变体基准上比较两种策略的 ΔΔG 预测精度。</li>
+<li><strong>失败模式</strong>：系综生成的计算成本可能过高，抵消高通量优势；系综中可能引入噪声而非信号。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<hr />
+<h3>候选 5：ML 打分函数的酶工程场景微调——领域自适应</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：ML 打分函数（Rf-Score 等）训练于 PDBBind 实验结构，在 GDEE 的预测结构上性能下降（72% → 55%）。</li>
+<li><strong>核心假设</strong>：在酶工程相关数据（突变体 + 结合数据）上微调 ML 打分函数，可以缓解分布偏移，提高完整流水线中的排序精度。</li>
+<li><strong>增量</strong>：为 GDEE 提供「微调模式」，允许用户用自有数据微调重打分模型。</li>
+<li><strong>初步方法</strong>：收集公开的酶突变-结合亲和力数据集，在 Rf-Score v2 基础上微调，比较微调前后在 GDEE 完整流水线中的表现。</li>
+<li><strong>验证方式</strong>：交叉验证 + 独立测试集。</li>
+<li><strong>失败模式</strong>：可用训练数据有限，微调可能导致过拟合；不同酶家族的分布差异可能无法通过单一微调解决。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, overview, platform description, pipeline description, benchmarking, results, conclusions) and supplementary material reference list. No figures, tables, or supplementary files were provided.</li>
+<li><strong>Assessment boundary</strong> Technical soundness of the described platform, validity of benchmarking claims, and adequacy of evidence for stated conclusions. No assessment of code functionality or reproducibility beyond what is described in text.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present GDEE, an automated, modular Python platform for structure-based enzyme engineering and gene discovery. The platform integrates sequence generation, homology modeling (Modeller), docking (AutoDock Vina or Smina), and scoring, with optional machine learning-based re-scoring. The authors benchmark scoring functions on PDBBind v2020 and on 260 protein pairs, and report that a stacking ensemble metamodel outperforms individual scoring functions in affinity prediction, though its advantage diminishes within the full pipeline. The authors conclude that the most effective protocol is Vina for pose selection followed by ML re-scoring for affinity ranking.</li>
+<li><strong>Visible evidence base</strong> Text descriptions of benchmarking procedures and results. Reference to Supporting Information Sections S1, S2, S3, S3.1, and Figures S5, S6, S16, S18. No actual data, figures, or tables were provided in the submitted material.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, tables, and Supporting Information files. The manuscript references Figure 1 (platform architecture), Figure 2 (database schema), Figure 3 (scoring function success rates), Figure 4 (histograms and mutation analysis), Table 1 (metamodel weights), and multiple supplementary figures. None of these were available for review. The two published case studies referenced in the text were not provided.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript describes a potentially useful and extensible platform for structure-based enzyme engineering. The modular architecture and the integration of established tools (Modeller, AutoDock Vina, Smina) are sensible. The benchmarking effort, particularly the evaluation of ML scoring functions within the full pipeline context, addresses an important gap in the literature. However, the core claims regarding the platform's utility and the superiority of the proposed re-scoring approach are not verifiable from the provided material, as all quantitative results are contained in inaccessible figures and supplementary files. The reported performance of the best scoring function in the full pipeline (approximately 54% correct sign prediction) is modest and the authors appropriately acknowledge this limitation. The manuscript would benefit from clearer articulation of the novelty relative to existing enzyme engineering platforms and from a more critical discussion of the proxy relationship between binding affinity and catalytic efficiency.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in enzyme engineering, protein engineering, and metabolic engineering who require accessible, automated tools for variant prioritization. Computational biologists developing or benchmarking scoring functions for protein-ligand interactions would also find the comparative evaluation of interest. The platform's modular design may appeal to groups seeking to integrate structure-based workflows into their own pipelines.</li>
+<li><strong>Major strengths</strong> 1. The platform addresses a real bottleneck in enzyme engineering: the need for automated, high-throughput variant prioritization. 2. The modular, object-oriented architecture with MPI support for distributed computing is a practical design choice. 3. The benchmarking includes a realistic full-pipeline evaluation, not just isolated scoring function tests. 4. The authors are transparent about the limitations of binding affinity as a proxy for catalytic efficiency and about the modest performance in the full pipeline. 5. The integration of ML-based re-scoring as an optional, configurable step is a thoughtful addition.</li>
+<li><strong>Major Concerns</strong> 1. The central quantitative claims are entirely unsupported in the provided material. All figures and tables are missing, making it impossible to assess the validity of the benchmarking results, the statistical significance of differences between scoring functions, or the claimed superiority of the metamodel. 2. The novelty of the platform relative to existing tools is not clearly established. The authors state that GDEE has been "developed for some years" and applied to published case studies, but the specific innovations or advantages over existing platforms are not articulated. 3. The relationship between the benchmarking results and the platform's practical utility is unclear. The reported 54% success rate in the full pipeline is barely above chance, and the authors do not provide a clear decision framework for how users should interpret and act on the platform's rankings. 4. The manuscript lacks a critical discussion of the assumptions underlying the platform, particularly the use of rigid-receptor docking and the proxy relationship between binding affinity and catalytic activity. 5. The description of the "gene discovery" mode is underdeveloped. The text mentions BLAST-based pre-selection but does not explain how the platform handles sequence diversity, phylogenetic relationships, or the risk of selecting orthologs with different catalytic mechanisms.</li>
+<li><strong>Minor Comments</strong> 1. The abstract would benefit from a quantitative summary of the platform's performance. 2. The introduction could more explicitly position GDEE relative to other automated enzyme engineering platforms (e.g., Rosetta, PROSS, FuncLib). 3. The description of the "Vina error range" in the context of ΔΔG predictions is vague. The authors should specify what error range they refer to and how it was determined. 4. The statement that "binding affinity indicates how strongly an enzyme can bind to its target molecule" is trivially true but does not address the more relevant question of how binding affinity relates to catalytic efficiency for different types of reactions (e.g., substrate binding vs. product release). 5. The manuscript would benefit from a discussion of computational cost and runtime for typical use cases. 6. The authors mention "less successful outcomes" from case studies but do not describe what these were or what lessons were learned. 7. The conclusions section overstates the platform's capabilities relative to the evidence presented, particularly the claim that it can "rapidly identify and optimize enzyme variants" without quantitative evidence of speed or success rate.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> 1. All quantitative benchmarking results are inaccessible. The authors must provide the actual data, figures, and statistical analyses. 2. The claim that the metamodel "outperformed all individual scoring functions" requires statistical testing (e.g., confidence intervals or significance tests) that is not described. 3. The full-pipeline evaluation is based on homology models, but the authors do not describe how model quality varies across the 187 reference proteins or whether model quality correlates with scoring performance. 4. The authors do not describe how the 260 protein pairs were selected or whether they represent a diverse and unbiased sample. 5. The manuscript does not specify how the "success" criterion (correct sign of ΔΔG) accounts for the magnitude of the predicted effect. A method that correctly predicts a tiny positive ΔΔG is counted the same as one that correctly predicts a large positive ΔΔG.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: Moderate. The combination of existing tools into an automated pipeline is useful but not conceptually novel. The benchmarking of ML scoring functions within a full enzyme engineering pipeline is a valuable contribution. Scientific importance: Moderate. The platform addresses a practical need, but the modest performance in the full pipeline limits its immediate impact. Interdisciplinary readership: Limited. The manuscript is primarily of interest to computational enzymologists and protein engineers. Technical soundness: Not assessable from the provided material. The benchmarking methodology is described, but the results are not visible. Readability for nonspecialists: Acceptable. The text is generally clear, though some sections assume familiarity with docking and scoring terminology.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript describes a potentially useful platform, but the core quantitative claims cannot be evaluated without the missing figures, tables, and supplementary material. The authors should be invited to resubmit with the complete data and with additional analysis addressing the concerns above.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence availability</li>
+<li><strong>Claim pointer</strong> The manuscript claims that the stacking ensemble metamodel outperforms all individual scoring functions in affinity prediction, and that the best individual function (Rf-Score v2) achieves approximately 72% success in predicting mutation effects on binding from X-ray structures.</li>
+<li><strong>Evidence pointer</strong> Figures 3, 4, Table 1, Supporting Information Figures S5, S6, S16, S18. Location not provided.</li>
+<li><strong>Concern</strong> All quantitative results supporting the central claims are contained in figures and tables that were not provided for review. Without access to the actual data, it is impossible to verify the reported performance metrics, assess the statistical significance of differences between scoring functions, or evaluate the validity of the benchmarking methodology.</li>
+<li><strong>Why it matters</strong> The manuscript's contribution rests on the claim that the proposed re-scoring approach improves prediction accuracy. If the underlying data are not available, the scientific community cannot assess the reliability of these claims or reproduce the results.</li>
+<li>
+<p><strong>Resolution test</strong> Provide all figures, tables, and supplementary material. Include statistical analyses (e.g., confidence intervals, significance tests) for the reported performance differences.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim support</li>
+<li><strong>Claim pointer</strong> The manuscript states that the platform "finds and optimizes enzymes responsible for rate-limiting steps in biosynthetic pathways" and that it has been applied to multiple case studies with "several successes."</li>
+<li><strong>Evidence pointer</strong> Introduction, Conclusions. Location not provided.</li>
+<li><strong>Concern</strong> The manuscript references two published case studies but does not describe them in any detail. The claim that the platform can identify rate-limiting steps and optimize enzymes for real biosynthetic pathways is not supported by any in-text results or case study descriptions. The "less successful outcomes" are mentioned but not described.</li>
+<li><strong>Why it matters</strong> The practical utility of the platform depends on demonstrated success in real applications. Without case study details, the reader cannot assess whether the platform works in practice or only in retrospective benchmarks.</li>
+<li>
+<p><strong>Resolution test</strong> Include a dedicated case study section with at least one fully described application, including the biological problem, the enzyme targets, the mutations proposed, and the experimental validation results.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Methodology</li>
+<li><strong>Claim pointer</strong> The manuscript states that "binding affinity indicates how strongly an enzyme can bind to its target molecule" and uses predicted binding affinity as a proxy for catalytic efficiency.</li>
+<li><strong>Evidence pointer</strong> Introduction, Overview. Location not provided.</li>
+<li><strong>Concern</strong> The relationship between binding affinity and catalytic efficiency is complex and reaction-dependent. For some enzymes, strong substrate binding can reduce catalytic turnover. The manuscript acknowledges this limitation in the Introduction but does not discuss how the platform's rankings should be interpreted given this complexity. The benchmarking evaluates the ability to predict binding affinity changes, not catalytic improvements.</li>
+<li><strong>Why it matters</strong> Users of the platform may misinterpret improved predicted binding as improved catalytic performance. The manuscript should provide clearer guidance on the scope and limitations of the platform's predictions.</li>
+<li>
+<p><strong>Resolution test</strong> Add a discussion section that explicitly addresses the conditions under which binding affinity is a reliable proxy for catalytic efficiency and provide guidance on when the platform's predictions should be treated with caution.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Methodology</li>
+<li><strong>Claim pointer</strong> The manuscript describes the full-pipeline evaluation using 260 protein pairs and reports that the best scoring function achieves approximately 54% correct sign prediction for mutation effects on binding.</li>
+<li><strong>Evidence pointer</strong> Figure 3, Supporting Information Section S2. Location not provided.</li>
+<li><strong>Concern</strong> The reported success rate of approximately 54% is barely above random chance (50%). The authors acknowledge this is "modest" but do not discuss whether this level of accuracy is practically useful for enzyme engineering. A 54% success rate means that nearly half of the prioritized variants would be expected to have the opposite effect on binding.</li>
+<li><strong>Why it matters</strong> The practical value of the platform depends on whether its rankings are sufficiently accurate to reduce the experimental burden. A 54% success rate provides minimal advantage over random selection.</li>
+<li><strong>Resolution test</strong> Provide a more detailed analysis of the distribution of predicted ΔΔG values, including the magnitude of correctly and incorrectly predicted effects. Discuss the practical implications of the observed accuracy for experimental prioritization.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract. Location not provided.</li>
+<li><strong>Issue</strong> The abstract states that the platform "finds and optimizes enzymes responsible for rate-limiting steps in biosynthetic pathways" but does not explain how the platform identifies rate-limiting steps. This is a significant claim that is not elaborated in the main text.</li>
+<li>
+<p><strong>Required correction</strong> Clarify in the abstract or introduction how the platform identifies rate-limiting steps, or revise the claim to reflect the platform's actual scope.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods description</li>
+<li><strong>Evidence pointer</strong> GDEE Platform section. Location not provided.</li>
+<li><strong>Issue</strong> The manuscript states that GDEE is "developed as a Python package" but does not provide information on availability, versioning, or installation instructions. No repository or documentation link is given.</li>
+<li>
+<p><strong>Required correction</strong> Provide a statement on software availability, including a repository URL or distribution channel, and specify the supported Python versions and dependencies.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Benchmarking description</li>
+<li><strong>Evidence pointer</strong> Re-scoring of Docking Poses with Machine Learning Scoring Functions section. Location not provided.</li>
+<li><strong>Issue</strong> The manuscript states that the PDBBind v2020 refined set was used for benchmarking but does not specify the data split methodology beyond referencing a "leak-proof split version." The criteria for the leak-proof split are not described.</li>
+<li>
+<p><strong>Required correction</strong> Describe the leak-proof split criteria in the main text or provide a reference to the original publication describing this split.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Results discussion</li>
+<li><strong>Evidence pointer</strong> Stacking Ensemble of Scoring Models section. Location not provided.</li>
+<li><strong>Issue</strong> The manuscript reports that the metamodel achieved higher R² but comparable MSE to Rf-Score v2, and that its performance was "within the error range" of Rf-Score v2. The practical significance of the R² improvement is not discussed.</li>
+<li>
+<p><strong>Required correction</strong> Discuss whether the R² improvement translates into meaningful differences in variant prioritization, given the comparable MSE.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Introduction</li>
+<li><strong>Evidence pointer</strong> Introduction. Location not provided.</li>
+<li><strong>Issue</strong> The term "gene discovery" is used to describe the identification of natural enzyme variants with improved binding. This terminology is potentially confusing, as "gene discovery" typically refers to identifying genes associated with phenotypes or functions, not to screening natural variants of a known enzyme.</li>
+<li><strong>Required correction</strong> Consider using a more precise term such as "natural variant screening" or "ortholog discovery" to avoid confusion.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that GDEE "finds and optimizes enzymes responsible for rate-limiting steps in biosynthetic pathways" is unsupported by any in-text evidence or case study description.</li>
+<li>The claim that the platform has been applied to "multiple case studies, with several successes" is unsupported, as no case study details are provided.</li>
+<li>The reported performance metrics (e.g., 72% success for Rf-Score v2 on X-ray structures, 54% in the full pipeline) cannot be verified without the missing figures and tables.</li>
+<li>The claim that the metamodel "outperformed all individual scoring functions" is unsupported without statistical testing.</li>
+<li>The statement that the platform "significantly enhances the accuracy of predicting the effect of mutations on binding" (from the abstract) is not supported by the reported full-pipeline results, which show only modest improvement over chance.</li>
+<li>The relationship between predicted binding affinity and catalytic efficiency is acknowledged as a proxy but the limitations of this proxy are not adequately discussed in the context of the platform's practical utility.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

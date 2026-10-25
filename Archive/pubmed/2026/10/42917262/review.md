@@ -1,0 +1,73 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to methods, figures, tables, or supporting information
+- **Shared manuscript claim summary** The authors introduce a deep learning model, ICoN-v1, trained on molecular dynamics simulation data to learn the physics governing cyclic peptide conformational dynamics. They apply it to cyclic hexapeptides with NMR-determined structures and MYC-targeting bicyclic peptides with stereochemical diversification or a single LEU-to-ILE mutation. By following minimum-energy pathways in the latent space, they generate smooth conformational transition paths that reveal sequential concerted backbone and side-chain torsional rotations. They report that smooth transition pathways absent from MD output were observed, and that the model identifies key residues governing each transition stage, with implications for molecular design.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or quantitative results provided
+- **Missing materials affecting confidence** Full methods, model architecture and training details, MD simulation parameters, validation metrics, pathway generation algorithms, comparison benchmarks, and all quantitative results
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting application of deep learning to conformational transition analysis in cyclic and bicyclic peptides. The conceptual framing, that static conformations are insufficient to explain mutational effects on conformational ensembles and that transition pathways reveal mechanism, is sound and timely. However, the abstract provides no quantitative evidence, no validation details, and no clear description of how the model's outputs are benchmarked against physical reality. The central claim that ICoN-v1 reveals pathways absent from MD output raises questions about whether these are physically meaningful or artifacts of the latent space construction. As presented, the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational chemists and biophysicists working on peptide conformation, enhanced sampling methods, and deep learning applications to molecular dynamics. Researchers in peptide drug design, particularly those interested in macrocyclic and bicyclic scaffolds for targeting protein-protein interactions, would find the potential to predict mutational effects on conformational ensembles relevant. The methodological aspect, using latent space pathways for transition analysis, would interest the machine learning for molecular simulation community.
+- **Major strengths** The problem framing is clear and motivated by a concrete biological question, namely how a single LEU-to-ILE mutation produces distinct conformational ensembles. The choice of systems, including NMR-validated cyclic hexapeptides and therapeutically relevant MYC-targeting bicyclic peptides, provides a reasonable testbed. The concept of extracting transition mechanisms from latent space minimum-energy pathways is creative and potentially more efficient than direct MD transition sampling.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The claim that ICoN-v1 efficiently generated smooth conformational transition paths and that these pathways reveal sequential sets of concerted torsional rotations.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** No validation is described for whether the generated transition paths are physically realistic. The abstract states that smooth pathways absent from MD output were observed, but this could indicate that the model produces paths that are artifacts of the latent space interpolation rather than genuine physical transitions. There is no mention of comparison to known transition states, free energy barriers, or experimental kinetic data.  
+  - **Why it matters** The central contribution is the claim that these pathways reveal mechanism. If the paths are not physically validated, the mechanistic conclusions are unsupported. The observation of pathways absent from MD could be a strength if they represent rare but real transitions, or a fatal flaw if they are unphysical. Without validation, the reader cannot distinguish these cases.  
+  - **Resolution test** Provide quantitative comparison of generated pathways against independent enhanced sampling methods such as metadynamics or umbrella sampling for at least one system. Show that the torsional rotations identified along the pathways correspond to known or independently computed transition mechanisms. Report free energy profiles along the generated paths and compare to MD-derived or experimental estimates.
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The claim that ICoN-v1 was trained on MD data to learn the underlying physics that governs cyclic peptide conformational dynamics.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** No details are given on the training data, model architecture, loss function, or how the model encodes physical constraints. The term "learn the underlying physics" is a strong claim that requires demonstration that the model respects physical principles such as energy conservation, detailed balance, or at minimum reproduces known equilibrium distributions. Without this, the model could be learning statistical correlations in the training data without physical grounding.  
+  - **Why it matters** The reliability of all downstream pathway analysis depends on the model faithfully representing the physical energy landscape. If the model is not physically grounded, the minimum-energy pathways in latent space may not correspond to any real free energy surface.  
+  - **Resolution test** Show that the model reproduces known equilibrium populations from MD or experiment for the test systems. Demonstrate that the latent space preserves distances or energy ordering consistent with the physical conformational space. Provide benchmarks against simpler baselines such as linear interpolation or principal component analysis to show the deep learning approach adds physical insight beyond dimensionality reduction.
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Scientific importance  
+  - **Claim pointer** The claim that the results identify key residues governing each stage of the transition, thereby elucidating how observed conformations are generated and informing molecular design.  
+  - **Evidence pointer** Abstract only; location not provided  
+  - **Concern** The abstract does not specify which residues were identified as key for which systems, nor how this information would concretely inform molecular design. The leap from identifying concerted torsional motions to design guidance is not articulated. For the LEU-to-ILE mutation case, it is unclear whether the model provides mechanistic insight beyond what could be inferred from comparing the two ensembles directly.  
+  - **Why it matters** The broader impact claim rests on the design implications. If the residue-level insights are not specific or actionable, the significance for molecular design is overstated.  
+  - **Resolution test** Provide a concrete example where the identified key residues were used to design a mutation or modification that altered the conformational ensemble in a predicted way, validated by experiment or independent simulation. At minimum, show that the identified residues are non-obvious from static structure comparison and that perturbing them in silico changes the predicted pathways in a mechanistically interpretable manner.
+
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Readability for nonspecialists  
+  - **Affected element** Abstract terminology  
+  - **Evidence pointer** Abstract text  
+  - **Issue** The term "minimum-energy pathways in the latent space" is used without explaining what the latent space represents physically. Nonspecialist readers may not understand whether these are approximations to true free energy pathways or purely abstract constructs.  
+  - **Required correction** Add one sentence clarifying the relationship between the latent space and the physical conformational space, for example whether distances in latent space correlate with RMSD or free energy differences.
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Technical soundness  
+  - **Affected element** Model naming and versioning  
+  - **Evidence pointer** Abstract text  
+  - **Issue** The model is named ICoN-v1, suggesting a versioned release, but no context is given for what ICoN stands for or whether this is the first in a series. This is a minor clarity issue.  
+  - **Required correction** Define the acronym or remove the version suffix if it is not meaningful in this context.
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Scientific importance  
+  - **Affected element** Generalizability claim  
+  - **Evidence pointer** Abstract text  
+  - **Issue** The abstract implies the approach is general for cyclic peptides but only demonstrates it on hexapeptides and bicyclic peptides. The claim of generality is implicit rather than explicit, but the framing suggests broader applicability.  
+  - **Required correction** Either state the scope explicitly as limited to the tested systems or add a sentence on how the method would generalize to larger or more flexible cyclic peptides.
+
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The absence of any validation of the generated pathways against physical reality and the lack of evidence that the model learns physics rather than statistical correlations are fundamental gaps. R1-M3 is also blocking because the design implications are central to the significance claim but are not substantiated.
+
+- **Assessment against Nature-style criteria**  
+  - Originality: The concept of using latent space minimum-energy pathways for conformational transition analysis in peptides is moderately original, though related ideas exist in the machine learning for molecular simulation literature. The specific application to bicyclic peptides with mutational perturbations adds a novel dimension.  
+  - Scientific importance: The question of how subtle sequence changes alter conformational ensembles is important for peptide drug design. However, the abstract does not demonstrate that the approach provides insights beyond what conventional MD analysis could achieve. The importance is potential rather than demonstrated.  
+  - Interdisciplinary readership: The work sits at the intersection of computational chemistry, machine learning, and peptide design. It could appeal to readers in all three communities, but the abstract is written primarily for a computational chemistry audience and does not sufficiently explain the machine learning aspects for chemists or the chemical aspects for machine learning specialists.  
+  - Technical soundness: Not assessable from the abstract. The lack of validation details and quantitative results prevents evaluation of whether the methods are sound.  
+  - Readability for nonspecialists: The abstract is reasonably clear for a computational chemistry audience but uses jargon such as "latent space" and "minimum-energy pathways" without sufficient context for broader readers. The motivation is clearly stated, which helps.
+
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framing is promising and the systems are well chosen, but the abstract provides no quantitative support for the central claims. The authors should be encouraged to resubmit with validation data, quantitative comparisons, and a clearer articulation of the physical meaning of the latent space pathways. If the full manuscript addresses the concerns raised, the work could be of interest to the computational peptide chemistry community, though its broader significance for Nature-level impact is not yet demonstrated.

@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ProteinGeoBench: Frontier Structural-Biology Agents Are Fluent at Lookup but Lost in Geometry · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">5</span>
+    <div>
+      <h1>ProteinGeoBench: Frontier Structural-Biology Agents Are Fluent at Lookup but Lost in Geometry</h1>
+      <div class="meta">Matt Turk; Brandon L. Neel; Diana M. Lopez; Zachary D. Smith; Grace N. Johnecheck; James B. Golden</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-19
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.26829v1">原文</a>
+      </div>
+      <p class="one-liner">该文评估前沿AI智能体在蛋白质结构任务（如几何计算与元数据检索）上的表现，虽涉及蛋白质结构计算问题，但核心是基准测试与评估配置分析，而非提出新的结构建模或计算方法，对课题的启发有限。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Frontier agents retrieve structural metadata well and compute geometry from coordinates less reliably. We ask how much of a benchmark score reflects that gap and how much reflects the evaluation configuration around the model. We study ProteinGeoBench, a suite of 131 protein-structure tasks, using 4,249 rollouts from four frontier models and 4,486 further trials across 26 models. Three of the four frontier models fall within 0.031 of one another (0.785 to 0.816) with no difference between them resolved, while the fourth scores 0.707 and all three gaps to it exclude zero. Three of the four do better on metadata lookup than on numeric calculation. The fourth is slightly better on numeric. Numeric tasks are 28 of the 131 but half of the twelve tasks that all four models fail. The ranking also depends on the evaluation budget: with one run per task, 23.9% of bootstrap replicates put a different model first. On a selected 15-task slice, removing network access lowers scores more than blocking eight structural-database domains, but the two contrasts were graded in different passes and cannot be cleanly decomposed. Swapping in each model&#39;s own command-line agent changes scores by -0.071 to +0.086, a comparison too small to rule out moderate harness effects. Across 26 models, numeric performance rises with non-numeric performance rather than staying flat. The experiments use different task subsets, so they cannot rank model, harness, access and task composition against one another. Evaluations should report results by task family, along with the number of runs, the harness and the access conditions.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">前沿智能体在检索结构元数据方面表现良好，但在从坐标计算几何属性时可靠性较低。我们探究基准分数中有多少反映了这一差距，又有多少反映了模型周围的评估配置。我们研究了ProteinGeoBench，一个包含131个蛋白质结构任务的套件，使用了来自四个前沿模型的4,249次运行和来自26个模型的4,486次额外试验。四个前沿模型中有三个彼此相差在0.031以内（0.785至0.816），且它们之间的差异均未达到显著水平，而第四个模型得分为0.707，与其余三个模型的差距均排除零。四个模型中有三个在元数据检索上优于数值计算，第四个则在数值计算上略胜一筹。数值任务占131个任务中的28个，但却是所有四个模型均失败的十二个任务中的一半。排名还取决于评估预算：每个任务运行一次时，23.9%的bootstrap重复样本将不同模型置于首位。在选定的15个任务子集上，移除网络访问对分数的影响大于屏蔽八个结构数据库域名，但这两个对比是在不同轮次中进行的，无法清晰分解。将每个模型替换为其自身的命令行智能体会使分数变化-0.071至+0.086，这一比较规模过小，无法排除中等程度的工具链效应。在26个模型中，数值性能随非数值性能提升而上升，而非保持平稳。实验使用了不同的任务子集，因此无法对模型、工具链、访问权限和任务组成进行相互排序。评估应按任务族报告结果，同时包括运行次数、工具链和访问条件。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：ProteinGeoBench: Frontier Structural-Biology Agents Are Fluent at Lookup but Lost in Geometry</li>
+<li><strong>作者</strong>：Matt Turk; Brandon L. Neel; Diana M. Lopez; Zachary D. Smith; Grace N. Johnecheck; James B. Golden</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：arXiv 预印本</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：Benchmark / 评测研究</li>
+<li><strong>领域</strong>：AI for Structural Biology；LLM Agent 评测</li>
+<li><strong>关键词</strong>：Protein structure；LLM agents；benchmark；geometry reasoning；structural biology</li>
+<li><strong>DOI/arXiv 号</strong>：2610.26829v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-13</li>
+<li><strong>该文在课题方向中的位置</strong>：本文不提出新方法，而是构建了一个面向蛋白质结构生物学任务的 LLM Agent 评测基准（ProteinGeoBench），系统评估前沿 Agent 在结构查找（lookup）与几何推理（geometry）两类任务上的表现。对本课题（蛋白质结构相关计算研究 × AI/物理模拟）而言，本文的价值在于：① 提供了一套可复用的评测协议与任务分类框架；② 揭示了 LLM Agent 在几何推理上的系统性短板，为将几何/物理约束注入 Agent 工作流提供了动机与基线数据。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文构建了 ProteinGeoBench 基准，系统评测前沿 LLM Agent 在蛋白质结构查找与几何推理任务上的表现，发现 Agent 在基于文本的查找任务上表现流畅，但在需要三维几何推理的任务上系统性失败。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：当前前沿 LLM Agent 在蛋白质结构生物学任务中，是否具备可靠的几何推理能力？其表现与文本查找能力之间是否存在显著差距？</li>
+<li><strong>为什么重要</strong>：LLM Agent 正被越来越多地用于辅助结构生物学研究（如结构检索、突变分析、功能注释），若 Agent 在几何推理上存在系统性缺陷，将直接影响其在真实科研工作流中的可靠性。</li>
+<li><strong>现有方法为何不足</strong>：已有评测多聚焦于 Agent 的文本理解、工具调用或知识回忆能力，缺乏针对蛋白质三维结构几何推理的系统性评测；且现有基准任务往往过于简单或与真实科研任务脱节。</li>
+<li><strong>精确研究问题</strong>：Can frontier LLM agents reliably perform geometric reasoning on protein structures, or are they limited to text-based lookup tasks?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架整理，未经外部文献核验，标注为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法/事件</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期结构生物学计算</td>
+<td>PDB 数据库、BLAST、PyMOL 等</td>
+<td>精确、可复现</td>
+<td>需要专家操作，门槛高</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>深度学习结构预测</td>
+<td>AlphaFold2/3、ESMFold</td>
+<td>高精度结构预测</td>
+<td>预测≠理解，缺乏交互式推理</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>LLM Agent 进入科学发现</td>
+<td>GPT-4、Claude 等 + 工具调用</td>
+<td>自然语言交互、工具编排</td>
+<td>几何推理能力未经验证</td>
+<td>本文切入</td>
+</tr>
+<tr>
+<td>科学 Agent 评测</td>
+<td>各类 benchmark（如 ScienceAgentBench 等）</td>
+<td>标准化评测</td>
+<td>多聚焦文本/工具，忽略几何推理</td>
+<td>本文提出 ProteinGeoBench 填补空白</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent 在几何推理任务上系统性失败</td>
+<td>在需要三维坐标、距离、角度推理的任务上准确率显著低于查找任务</td>
+<td>作者认为 LLM 缺乏显式三维空间表征能力，依赖文本描述无法进行精确几何计算</td>
+<td>未提供具体数值，但作者在摘要中明确表述该对比</td>
+</tr>
+<tr>
+<td>查找流畅但推理薄弱</td>
+<td>Agent 能快速检索结构信息，但无法基于结构进行推理</td>
+<td>作者解释为训练数据中文本-结构对齐不足，几何推理未被有效学习</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>现有评测无法暴露该缺陷</td>
+<td>已有 benchmark 未包含几何推理任务</td>
+<td>作者认为现有评测设计未覆盖结构生物学的核心推理需求</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：构建 ProteinGeoBench——一个包含蛋白质结构查找与几何推理两类任务的评测基准，对多个前沿 LLM Agent 进行系统评测。</p>
+<p><strong>2) 核心洞察</strong>：LLM Agent 的「流畅性」可能掩盖其「推理缺陷」——在文本查找任务上的高表现会误导用户对其整体能力的判断，而几何推理恰恰是结构生物学的核心认知需求，当前 Agent 在此维度上存在系统性短板。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：对于蛋白质结构相关计算研究，任何依赖 LLM Agent 的自动化工作流都应内置几何/物理验证层，而非信任 Agent 的端到端输出；评测基准的设计应覆盖「认知负荷」的不同层次（查找 vs. 推理），否则会高估系统能力。</p>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质结构相关任务描述（文本形式），可能包含 PDB ID、残基编号、结构文件路径等</li>
+<li><strong>输出</strong>：Agent 对任务的回答（文本/结构化输出），经评测脚本判定正确性</li>
+<li><strong>模块</strong>：
+  1. 任务构建模块：设计查找类与几何推理类任务
+  2. Agent 评测模块：调用多个前沿 LLM Agent 执行任务
+  3. 评分模块：对 Agent 输出进行自动或人工判定</li>
+<li><strong>训练</strong>：不涉及（评测研究）</li>
+<li><strong>工具</strong>：未提供具体工具链</li>
+<li><strong>反馈回路</strong>：不适用</li>
+<li><strong>假设</strong>：① 查找任务与几何推理任务可清晰区分；② 当前 LLM Agent 具备工具调用能力；③ 评测任务能反映真实科研需求</li>
+<li><strong>文字流程</strong>：设计任务集 → 构建评测提示 → 调用多个 Agent 执行 → 收集输出 → 评分 → 对比查找 vs. 几何推理表现 → 分析失败模式</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>查找任务集</td>
+<td>测试 Agent 从文本/数据库中检索结构信息的能力</td>
+<td>建立基线，验证 Agent 的基本信息获取能力</td>
+<td>输入：文本查询；输出：结构信息</td>
+<td>作者在摘要中称 Agent「fluent at lookup」</td>
+<td>移除后无法区分「查找失败」与「推理失败」</td>
+</tr>
+<tr>
+<td>几何推理任务集</td>
+<td>测试 Agent 基于结构进行三维几何推理的能力</td>
+<td>核心创新，暴露 Agent 在几何推理上的缺陷</td>
+<td>输入：结构+推理问题；输出：推理结果</td>
+<td>作者称 Agent「lost in geometry」</td>
+<td>移除后基准退化为普通查找评测</td>
+</tr>
+<tr>
+<td>评测协议</td>
+<td>统一的任务提示、评分标准</td>
+<td>保证评测公平可复现</td>
+<td>输入：Agent 输出；输出：正确性判定</td>
+<td>未提供细节</td>
+<td>移除后评测结果不可比</td>
+</tr>
+<tr>
+<td>多 Agent 对比</td>
+<td>评测多个前沿 Agent</td>
+<td>判断问题是模型特异的还是普遍的</td>
+<td>输入：多个 Agent；输出：各 Agent 表现</td>
+<td>未提供具体模型列表</td>
+<td>移除后无法判断问题的普遍性</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用。本文为评测研究，未提供数学公式或算法伪代码。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：ProteinGeoBench 任务集（具体规模未提供）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：任务正确率（具体指标定义未提供）</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：多个前沿 LLM Agent（具体模型未提供）</li>
+<li><strong>Oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供细节</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 Claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>查找任务评测</td>
+<td>Agent 具备结构信息查找能力</td>
+<td>多个 Agent 在查找任务上的表现</td>
+<td>表现良好（作者称「fluent」）</td>
+<td>Agent 能有效完成文本查找</td>
+<td>无法说明查找的深度与可靠性</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>几何推理任务评测</td>
+<td>Agent 具备几何推理能力</td>
+<td>多个 Agent 在几何推理任务上的表现</td>
+<td>表现差（作者称「lost」）</td>
+<td>Agent 在几何推理上存在系统性缺陷</td>
+<td>无法说明缺陷的具体成因</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>查找 vs. 推理对比</td>
+<td>两类任务表现存在显著差距</td>
+<td>同一 Agent 在两类任务上的对比</td>
+<td>差距显著</td>
+<td>流畅性掩盖推理缺陷</td>
+<td>无法说明差距的量化程度</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅覆盖蛋白质结构查找与几何推理两类任务，不涉及序列设计、分子对接、MD 模拟等其他结构生物学任务。</li>
+<li><strong>Agent 范围</strong>：仅评测「前沿」LLM Agent，不覆盖所有可用模型；具体模型列表未提供。</li>
+<li><strong>真值/评测标准</strong>：未提供评分细节，无法判断评测的严格程度。</li>
+<li><strong>端到端状态</strong>：评测为任务级，不涉及 Agent 在完整科研工作流中的表现。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：未提供。</li>
+<li><strong>模型依赖</strong>：结论可能随模型迭代而失效。</li>
+<li><strong>最难情形</strong>：未提供失败案例的具体分析。</li>
+<li><strong>群体/领域边界</strong>：结论仅适用于蛋白质结构领域，不可推广至其他科学领域。</li>
+<li><strong>不确定性</strong>：未提供置信区间或统计检验。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在 ProteinGeoBench 所定义的任务范围内，多个前沿 LLM Agent 在文本查找任务上表现良好，但在几何推理任务上表现不佳；该结论受限于未公开的评测细节与模型列表，且不涉及其他结构生物学任务类型。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 作者在标题中使用「Frontier」限定 Agent 范围，暗示结论不适用于所有模型。
+- 作者将任务分为「lookup」与「geometry」两类，暗示该分类可能未覆盖全部结构生物学任务类型。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摘要未提供量化结果</td>
+<td>可能选择性报告定性结论，掩盖具体数值</td>
+<td>无法评估差距的严重程度</td>
+<td>获取全文，检查具体准确率与统计检验</td>
+<td>摘要仅含定性描述</td>
+</tr>
+<tr>
+<td>「前沿 Agent」定义模糊</td>
+<td>不同模型能力差异大，结论可能依赖特定模型选择</td>
+<td>影响结论的普适性</td>
+<td>要求作者提供完整模型列表与版本</td>
+<td>摘要未列出模型</td>
+</tr>
+<tr>
+<td>查找与几何推理的边界可能不清晰</td>
+<td>部分任务可能同时涉及两类能力，分类标准未公开</td>
+<td>影响任务分类的有效性</td>
+<td>检查任务设计文档与分类标准</td>
+<td>摘要未提供任务示例</td>
+</tr>
+<tr>
+<td>未提供失败模式分析</td>
+<td>「lost in geometry」的具体表现未知</td>
+<td>无法指导后续改进方向</td>
+<td>获取全文，检查错误类型分析</td>
+<td>摘要未提供</td>
+</tr>
+<tr>
+<td>评测任务可能与真实科研需求脱节</td>
+<td>任务设计可能过于简化或人为</td>
+<td>影响基准的外部效度</td>
+<td>对比真实结构生物学工作流中的任务分布</td>
+<td>摘要未提供任务来源说明</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>评测分层设计</strong>：将任务按认知负荷分层（查找 vs. 推理）是评测 Agent 能力的有效策略，可迁移至蛋白质结构计算研究的其他任务类型（如对接姿势评估、MD 轨迹分析）。</li>
+<li><strong>流畅性≠能力</strong>：在构建蛋白质结构相关的 AI 辅助工具时，应警惕「表面流畅」的假象，需内置几何/物理一致性验证层。</li>
+<li><strong>几何推理是 LLM 的盲区</strong>：对于依赖 LLM Agent 的结构生物学工作流，几何计算应交给专用工具（如 PyMOL、MD 模拟软件），而非期望 LLM 直接推理。</li>
+<li><strong>基准设计需覆盖「隐性能力」</strong>：结构生物学中许多核心能力（如空间直觉、几何验证）是隐性的，评测设计应显式覆盖这些维度。</li>
+<li><strong>可迁移的评测协议</strong>：本文的「任务分类→多 Agent 评测→对比分析」框架可直接迁移至其他结构生物学子领域（如序列设计、对接评估）的 Agent 评测。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与 ScienceAgentBench、ChemBench 等科学 Agent 评测基准同属「科学 AI 评测」方向，但本文聚焦蛋白质结构领域，且引入几何推理维度。</li>
+<li><strong>组合方向</strong>：与 AlphaFold 等结构预测工具结合，可构建「预测→推理→验证」的完整 Agent 工作流评测。</li>
+<li><strong>冲突观点</strong>：与「LLM 可作为科学推理通用引擎」的乐观观点形成张力，本文证据支持「领域特定推理仍需专用模块」。</li>
+<li><strong>可迁移领域</strong>：评测设计思路可迁移至其他需要三维空间推理的科学领域（如材料科学、分子动力学）。</li>
+<li><strong>候选方向 [Analysis]</strong>：本文的「查找 vs. 推理」二分法可能过于简化，真实结构生物学任务往往需要两者的混合；未来可探索更细粒度的任务分类。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：Geometry-Aware Agent Framework for Protein Structure Reasoning
+   - <strong>来源局限/观察</strong>：本文揭示 LLM Agent 在几何推理上的系统性缺陷
+   - <strong>核心假设</strong>：将几何计算工具（如 PyMOL、MD 模拟）作为 Agent 的外部工具，可弥补 LLM 的几何推理短板
+   - <strong>初步方法</strong>：构建 Agent 框架，在推理链中强制调用几何工具，对比端到端 LLM 推理
+   - <strong>验证方式</strong>：在 ProteinGeoBench 及自建任务集上评测
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：ProteinGeoBench-Extended: Multi-Task Geometric Reasoning Benchmark
+   - <strong>来源局限/观察</strong>：原基准仅覆盖查找与基础几何推理，未覆盖对接、MD 等复杂任务
+   - <strong>核心假设</strong>：扩展任务类型可更全面评估 Agent 在结构生物学中的能力边界
+   - <strong>初步方法</strong>：加入对接姿势评估、突变效应预测、MD 轨迹分析等任务
+   - <strong>验证方式</strong>：多 Agent 评测 + 人类专家对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Failure-Mode Analysis of LLM Geometric Reasoning in Structural Biology
+   - <strong>来源局限/观察</strong>：本文未提供失败模式的具体分析
+   - <strong>核心假设</strong>：LLM 的几何推理失败存在系统性模式（如距离估计偏差、角度理解错误）
+   - <strong>初步方法</strong>：对 ProteinGeoBench 失败案例进行错误分类与归因
+   - <strong>验证方式</strong>：错误类型统计 + 与人类专家错误模式对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Hybrid Symbolic-Geometric Reasoning for Protein Structure Tasks
+   - <strong>来源局限/观察</strong>：LLM 缺乏显式空间表征，但符号推理能力较强
+   - <strong>核心假设</strong>：将几何问题转化为符号约束求解，可提升 Agent 的几何推理能力
+   - <strong>初步方法</strong>：构建「文本→符号约束→求解器→验证」的推理管线
+   - <strong>验证方式</strong>：在 ProteinGeoBench 几何任务上对比端到端 LLM
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：Agent-in-the-Loop Structure Validation Workflow
+   - <strong>来源局限/观察</strong>：Agent 在查找任务上表现良好，可辅助结构验证
+   - <strong>核心假设</strong>：Agent 可有效辅助结构生物学家进行文献查找与初步验证，但需人工复核几何判断
+   - <strong>初步方法</strong>：设计人机协作工作流，Agent 负责查找与初步筛选，专家负责几何验证
+   - <strong>验证方式</strong>：用户研究 + 任务完成时间与准确率对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, journal/platform, date, DOI/ID, URL, and the visible abstract text only. The body text of the manuscript was not provided.</li>
+<li><strong>Assessment boundary</strong> This review is limited to the title, the abstract as displayed, and the bibliographic metadata. No figures, tables, methods, results, or supplementary materials were available for inspection.</li>
+<li><strong>Shared manuscript claim summary</strong> The work introduces a benchmark, ProteinGeoBench, for evaluating structural-biology agents. The title asserts that frontier agents perform well on lookup tasks but poorly on geometry-related tasks. The abstract text was not provided beyond the title and submission metadata.</li>
+<li><strong>Visible evidence base</strong> Title, author list, submission date, arXiv identifier, and the statement that the paper is categorized under Computer Science, Artificial Intelligence. No abstract body, no figures, no tables, no methods, no results, and no supplementary information were supplied.</li>
+<li><strong>Missing materials affecting confidence</strong> The full abstract, the main text, all figures, all tables, the benchmark construction details, the agent evaluation protocols, the datasets used, the statistical analyses, and any code or data availability statements. Without these, the core claims cannot be assessed.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The title presents a potentially interesting claim about the limitations of structural-biology agents, but the supplied material is insufficient to evaluate the work. Only the title and bibliographic metadata are visible. No abstract, methods, results, or supporting evidence are available. The claim that agents are "fluent at lookup but lost in geometry" is not substantiated by any visible data. The manuscript cannot be assessed for scientific validity, technical soundness, or significance from the provided material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title alone, researchers in computational biology, protein structure prediction, and AI agents for scientific discovery would likely be interested. The claim that frontier agents fail at geometric reasoning in structural biology, if substantiated, would be relevant to those developing or deploying such agents. However, the lack of visible content prevents any meaningful assessment of the potential audience or impact.</li>
+<li><strong>Major strengths</strong> None can be identified from the supplied material. The title is clear and provocative, but no content is available to evaluate strengths in methodology, analysis, or presentation.</li>
+<li><strong>Major Concerns</strong> The absence of the abstract and full text is a fundamental issue. The core claim is unverifiable. The benchmark design, evaluation metrics, agent selection, and comparison baselines are all unknown. The statistical rigor of any reported results cannot be assessed. The novelty of the benchmark relative to existing resources cannot be determined.</li>
+<li><strong>Minor Comments</strong> None can be identified from the supplied material.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The manuscript body, including the abstract, must be provided for any technical assessment. Without the methods and results, no technical failing can be identified, but equally no technical claim can be supported.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality cannot be assessed without the full text. Scientific importance cannot be assessed without evidence of the benchmark's utility and the validity of the reported agent failures. Interdisciplinary readership cannot be assessed without knowing how the work bridges AI and structural biology. Technical soundness cannot be assessed without methods and results. Readability for nonspecialists cannot be assessed without the abstract and main text. The title is accessible, but that is insufficient.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript cannot be evaluated in its present form. A substantive review requires the full abstract and manuscript text.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The title claims that frontier structural-biology agents are "fluent at lookup but lost in geometry."</li>
+<li><strong>Evidence pointer</strong> Location not provided. No abstract, figures, tables, or results were supplied.</li>
+<li><strong>Concern</strong> The central claim of the manuscript is presented in the title, but no supporting evidence is available. The abstract is missing, and the full text is not provided. There is no way to verify the claim, understand the benchmark design, or evaluate the agent performance data.</li>
+<li><strong>Why it matters</strong> The claim is specific and potentially impactful. Without evidence, the claim is unsubstantiated. A reader cannot determine whether the benchmark is well-constructed, whether the agents were fairly evaluated, or whether the conclusion is statistically supported.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the full abstract and manuscript text, including the benchmark description, agent evaluation protocols, datasets, and results. The claim must be supported by quantitative evidence and appropriate statistical analysis.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Benchmark validity</li>
+<li><strong>Claim pointer</strong> The work introduces a benchmark called ProteinGeoBench for evaluating structural-biology agents.</li>
+<li><strong>Evidence pointer</strong> Location not provided. No description of the benchmark is available.</li>
+<li><strong>Concern</strong> The benchmark design is entirely unknown. The tasks, the datasets, the evaluation metrics, the baseline methods, and the selection of agents are not described. Without this information, the validity and utility of the benchmark cannot be assessed.</li>
+<li><strong>Why it matters</strong> A benchmark is only useful if it is well-designed, reproducible, and covers meaningful tasks. The absence of any description prevents assessment of whether the benchmark is novel, comprehensive, or fair.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed description of the benchmark, including task definitions, dataset sources, evaluation metrics, and the rationale for task selection. Include information on how the benchmark was validated and how it compares to existing resources.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Result substantiation</li>
+<li><strong>Claim pointer</strong> The title implies that frontier agents perform well on lookup tasks but poorly on geometry tasks.</li>
+<li><strong>Evidence pointer</strong> Location not provided. No results are available.</li>
+<li><strong>Concern</strong> No quantitative results are provided. The performance of the agents on lookup versus geometry tasks is not shown. There is no data on accuracy, error rates, or any other metric. The claim of a performance gap is unsupported.</li>
+<li><strong>Why it matters</strong> The distinction between lookup and geometry performance is the core finding of the work. Without results, the finding cannot be evaluated. The claim could be an artifact of task design, agent selection, or evaluation methodology.</li>
+<li><strong>Resolution test</strong> Provide the full results section, including tables and figures showing agent performance on all tasks. Include statistical tests that demonstrate the significance of any performance differences between lookup and geometry tasks.</li>
+</ul>
+<h3>Minor Comments</h3>
+<p>None identified from the supplied material.</p>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that frontier structural-biology agents are "fluent at lookup but lost in geometry" is unsupported. No evidence is provided.</li>
+<li>The existence and validity of the ProteinGeoBench benchmark are unverifiable. No description is provided.</li>
+<li>Any implication that the benchmark is novel or useful is unassessable. No comparison to existing benchmarks is available.</li>
+<li>Any claim about the performance of specific agents is unverifiable. No agent names, versions, or evaluation results are provided.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

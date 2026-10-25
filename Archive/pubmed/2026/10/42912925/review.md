@@ -1,0 +1,99 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, results, discussion, conclusion, methods) as provided
+- **Assessment boundary** Scientific content, methodological rigor, claim-evidence alignment, and presentation quality based solely on the supplied material
+- **Shared manuscript claim summary** The authors use multiscale molecular dynamics simulations (all-atom, HREMD, USMD, and Martini coarse-grained) to characterize the GTP-induced closed-to-open conformational transition of the bacterial dynamin-like protein (BDLP) from Nostoc punctiforme. They report that GTP binding lowers the free energy barrier for opening by approximately 7–7.5 kcal/mol (corresponding to a ~5 orders of magnitude acceleration), that the open monomer remains thermodynamically unfavored, and that dimerization and membrane binding act synergistically to stabilize a semiclosed intermediate. They further identify a salt-bridge network that mediates allosteric communication and propose a refined mechanochemical cycle for BDLP.
+- **Visible evidence base** Text descriptions of results from MD, HREMD, USMD, and CG simulations; RMSF analysis; free energy surfaces; PMF profiles; DCC analysis; clustering; PCA; DSSP analysis; ConSurf and gmx_MMPBSA calculations. Figures and tables are referenced but not visible in the provided material.
+- **Missing materials affecting confidence** All figures, tables, and supplementary information are referenced but not provided. This includes Figure 1 (structures, RMSF, angles), Figure 2 (free energy surfaces), Figure 3 (salt bridges, DCC), Figure 4 (PMF profiles), Figure 5 (CG simulation results), Figure 6 (mechanochemical cycle), Table 1 (simulation summary), and all supplementary figures (S1–S8). Without these, quantitative claims cannot be independently verified.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a comprehensive computational study of a biologically important conformational transition in a dynamin-like protein. The methodological approach is ambitious and appropriate, combining multiple simulation techniques to address a question that is difficult to tackle experimentally. The central claims—that GTP binding accelerates the closed-to-open transition by lowering a free energy barrier, and that dimerization plus membrane binding stabilize the open state—are plausible and mechanistically interesting. However, the manuscript as provided has several significant weaknesses. First, the key quantitative claims (barrier heights, acceleration factors, free energy differences) cannot be verified without the figures and tables. Second, the claim of a "5 orders of magnitude" acceleration is derived from an Arrhenius extrapolation that is highly sensitive to the pre-exponential factor and the accuracy of the PMF; this warrants more careful justification and sensitivity analysis. Third, the coarse-grained simulations are described only briefly, and the evidence that dimerization and membrane binding "synergistically" stabilize the open state is not presented in sufficient detail. Fourth, the evolutionary conservation analysis is mentioned but its connection to the functional conclusions is underdeveloped. Overall, the study has the potential to be a valuable contribution, but the current evidence base is insufficient to fully establish the claims.
+- **Who would be interested in the results, and why** Researchers in the dynamin/GTPase field, computational biophysicists studying conformational transitions and allostery, and structural biologists interested in membrane remodeling proteins. The work provides a detailed atomistic model of how nucleotide binding couples to large-scale conformational change, which is a general problem in mechanochemical enzymes.
+- **Major strengths** The study addresses a significant and timely question using a multi-technique simulation strategy. The identification of specific salt bridges as allosteric switches is mechanistically concrete and testable. The attempt to connect monomeric conformational dynamics to the requirements for membrane binding and dimerization is biologically relevant. The authors are appropriately cautious in noting that the open monomer is not thermodynamically favored, which is an important insight.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The manuscript claims that GTP binding lowers the free energy barrier for the closed-to-open transition by approximately 7–7.5 kcal/mol, corresponding to a ~5 orders of magnitude acceleration.
+  - **Evidence pointer** Figure 4 (PMF profiles), Figure S8 (error estimates), Methods section "Weighted Histogram Analysis Method"
+  - **Concern** The quantitative values for the barrier heights and the derived acceleration factor are central to the paper's message, but the actual PMF profiles, error bars, and the method for extracting the barrier from the PMF are not visible in the provided material. The conversion of a free energy barrier to a timescale using the Arrhenius equation with a fixed pre-exponential factor of 10⁻¹² s is a very rough estimate. The uncertainty in this factor alone could span orders of magnitude. Furthermore, the PMF is computed along a single collective variable (d_GT), and it is not demonstrated that this is a sufficient reaction coordinate to capture the true transition mechanism. The manuscript should show the PMF, discuss convergence, and provide a sensitivity analysis of the timescale estimate to the chosen pre-exponential factor.
+  - **Why it matters** The "5 orders of magnitude" acceleration is a headline claim that is used to argue for the biological significance of GTP binding. If this number is not robust, the central thesis is weakened.
+  - **Resolution test** The authors should provide the PMF figures with error bars, demonstrate convergence of the USMD simulations, and show how the timescale estimate changes with different reasonable values of τ₀. They should also discuss the limitations of using a single collective variable.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The manuscript claims that "BDLP dimerization and membrane binding are necessary to initiate the stabilization of the open conformation" and that these factors act "synergistically."
+  - **Evidence pointer** Figure 5 (CG simulation results), Results section "Membrane Anchoring Delays But Does Not Prevent Partial BDLP Closure"
+  - **Concern** The evidence for this central claim is presented in a single paragraph describing coarse-grained simulations. The details of the CG simulations (system setup, membrane model, protein parameterization, simulation length, analysis) are not provided in the main text, and the results are not shown. The claim of "synergy" requires a quantitative comparison of the stabilizing effects of membrane binding alone, dimerization alone, and both together. Without seeing the data, it is impossible to assess whether the conclusion is supported. The statement that membrane anchoring "delays but does not prevent" closure is also vague; the timescales and extent of closure are not quantified.
+  - **Why it matters** This is a key biological conclusion of the paper, distinguishing it from studies that focus only on the monomeric transition. If the evidence is weak, the paper's contribution is substantially reduced.
+  - **Resolution test** The authors should provide the CG simulation data, including time series of relevant order parameters (e.g., d_GT, RMSD) for all seven systems, and a quantitative analysis of the free energy or stability of the open state under different conditions. The claim of synergy should be backed by a direct comparison of the relevant free energy differences.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Methodological rigor
+  - **Claim pointer** The manuscript states that "GTP binding accelerates the transition by 5 orders of magnitude through an allosteric mechanism" and describes the allosteric network involving salt bridges.
+  - **Evidence pointer** Results sections "GTP Binding Ignites Communication across BDLP's Structure" and "GTP Binding Halves the Energy Needed for the Closed-To-Open Transition"; Figure 3 (salt bridges, DCC)
+  - **Concern** The allosteric mechanism is inferred from salt-bridge occupancy changes and DCC analysis. While these are reasonable approaches, the causal link between the identified salt bridges and the barrier reduction is not established. The manuscript does not show whether mutating these residues (in silico) would abolish the GTP effect, nor does it provide a quantitative measure of allosteric coupling (e.g., mutual information or perturbation response). The DCC analysis is performed on 600 ns trajectories, which may not be sufficient to capture the relevant correlated motions, especially for a large-scale transition.
+  - **Why it matters** The claim of an "allosteric mechanism" is a strong statement. Without a more rigorous demonstration of causality, it remains a hypothesis.
+  - **Resolution test** The authors could perform additional simulations with mutated salt-bridge residues to test their functional importance, or use more advanced allostery analysis methods. At minimum, they should discuss the limitations of their inference.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** The manuscript claims to be "the first all-atom MD investigation of a full-length dynamin-like protein" and "the first to map the complete closed-open transition pathway of BDLP, and dynamins in general."
+  - **Evidence pointer** Introduction section
+  - **Concern** These novelty claims are strong and should be carefully substantiated. The authors cite previous work that used coarse-grained simulations, but it is not clear whether other all-atom studies of dynamin family members (even if not full-length) have addressed similar transitions. The claim of "first" is always risky and requires a thorough literature search. The provided reference list is not visible, so this cannot be checked.
+  - **Why it matters** If the novelty claim is overstated, it could undermine the credibility of the paper.
+  - **Resolution test** The authors should carefully rephrase these claims to be more specific and defensible, e.g., "to our knowledge, this is the first all-atom study of the full-length BDLP transition" and provide a more detailed comparison with prior work.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The phrase "From Closed to Mighty" in the title is catchy but not informative. The abstract would benefit from a more explicit statement of the key quantitative findings.
+  - **Required correction** Consider revising the title to be more descriptive, and ensure the abstract includes the key numbers (e.g., barrier heights, timescales) if they are robust.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods
+  - **Evidence pointer** Methods section "Overview of the Simulations"
+  - **Issue** The methods state that "all fine details of the simulation settings are provided in the Supporting Information." For a computational study, it is essential that the main text includes enough detail for a knowledgeable reader to reproduce the simulations without accessing the SI. Key parameters such as the force field version, water model, salt concentration, and equilibration protocol should be stated.
+  - **Required correction** Move the most critical simulation parameters to the main text or a table.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Results section "GTP Binding Halves the Energy Needed for the Closed-To-Open Transition"
+  - **Evidence pointer** Figure 4
+  - **Issue** The statement that GTP "halves" the energy needed is a specific quantitative claim. It is unclear if this refers to the barrier height or the overall free energy difference. The text should be more precise.
+  - **Required correction** Clarify whether the 7–7.5 kcal/mol reduction refers to the barrier height (kinetic) or the stability of the open state (thermodynamic), and use consistent terminology.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion section
+  - **Issue** The discussion of the mechanochemical cycle (Figure 6) is brief. The authors mention steps 5 and 6 rely on "well-documented experimental literature," but do not provide specific citations or explain how their simulations inform these steps.
+  - **Required correction** Expand the discussion of the proposed cycle, and clearly distinguish between what is directly supported by their simulations and what is inferred from the literature.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Presentation
+  - **Affected element** Results section "Open BDLP is Highly Dynamic and Can Adopt Semiclosed and Wide-Open Conformations"
+  - **Evidence pointer** Figure 1
+  - **Issue** The term "wide-open conformation" is introduced but not quantitatively defined. It would be helpful to provide a metric (e.g., d_GT or hinge angle value) that distinguishes "open" from "wide-open."
+  - **Required correction** Define the conformational states quantitatively.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (barrier height and acceleration factor not verifiable without figures and with questionable Arrhenius extrapolation), R1-M2 (evidence for synergistic stabilization by dimerization and membrane binding is not presented in sufficient detail), R1-M3 (causal link between salt-bridge changes and barrier reduction not established).
+- **Assessment against Nature-style criteria**
+  - **Originality** The study addresses a well-known problem (dynamin conformational change) but with a novel computational approach and a focus on the full-length protein. The identification of specific salt-bridge switches is a potentially original contribution. However, the novelty claims are somewhat overstated and need to be tempered.
+  - **Scientific importance** The dynamin family is of broad biological importance, and understanding the mechanochemical coupling is a significant question. The finding that the open monomer is unstable and requires dimerization/membrane binding for stabilization is an important conceptual point.
+  - **Interdisciplinary readership** The topic is of interest to structural biologists, biophysicists, and cell biologists. The writing is generally accessible, but the heavy reliance on simulation jargon and the lack of clear figures may limit accessibility.
+  - **Technical soundness** The simulation methodology is state-of-the-art and appropriate. However, the key quantitative claims are not fully supported by the presented evidence, and the Arrhenius extrapolation is a potential weakness. The convergence of the USPMF and the sufficiency of the reaction coordinate are not demonstrated.
+  - **Readability for nonspecialists** The abstract and introduction are readable, but the results section is dense and assumes significant background knowledge. The lack of visible figures makes it difficult to follow the narrative.
+- **Recommendation posture** Supportive if technical concerns are resolved. The study has the potential to be a valuable contribution, but the current evidence base is insufficient to fully establish the central claims. The authors must provide the missing figures and data, strengthen the analysis of the coarse-grained simulations, and temper the novelty claims.
+
+## Risk / unsupported claims
+- The claim that GTP binding accelerates the transition by "5 orders of magnitude" is not verifiable from the provided material and is highly sensitive to the Arrhenius pre-exponential factor.
+- The claim that dimerization and membrane binding act "synergistically" to stabilize the open state is not supported by the presented evidence.
+- The claim that the identified salt bridges are "allosteric switches" is a hypothesis that is not causally tested.
+- The claim of being "the first" all-atom study of a full-length dynamin-like protein and "the first" to map the complete transition pathway is not verifiable without a full literature comparison.
+- The statement that "GTP binding must chronologically precede membrane insertion" is a strong conclusion based on structural analysis of a single state; it is not clear that this is a general requirement.

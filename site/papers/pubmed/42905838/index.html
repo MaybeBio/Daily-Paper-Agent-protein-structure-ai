@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Physical confinement modulates the rate-limiting transition in the release of phosphate from actin filaments. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Physical confinement modulates the rate-limiting transition in the release of phosphate from actin filaments.</h1>
+      <div class="meta">Herman, Kristina M; Iyer, Sahithya Sridharan; Wang, Yihang; Pollard, Thomas D; Voth, Gregory A</div>
+      <div class="meta muted">
+        
+        <span class="journal">Science advances</span>
+        · 2026-10-22
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42905838/">原文</a>
+      </div>
+      <p class="one-liner">该文通过全原子分子动力学模拟研究肌动蛋白丝中磷酸盐释放的限速步骤，揭示物理约束通过调控活性位点水分子数量影响释放速率，属于蛋白质构象动态与MD模拟计算研究，与蛋白质结构计算课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The nucleotide state and rates of transitions between states regulate the dynamics of ATPases. Slow inorganic phosphate (P(i)) release following ATP hydrolysis is often rate limiting and associated with key conformational changes. Actin filaments offer a unique opportunity to understand the fundamentals of P(i) release because identical subunits at filament ends and the interior release P(i) at markedly different rates. The molecular origin of this difference is debated, so we used extensive all-atom molecular dynamics simulations to characterize P(i) release from different subunits within an actin filament. The calculated dissociation rates of P(i) from ADP-Mg(2+) in the active site correlate with experimentally measured P(i) release rates and scale inversely with the numbers of water molecules in the cavity surrounding the gamma-phosphate. Simulations show that egress of P(i) through the protein channels, including through the N111-R177 backdoor, is not rate limiting and that subunits at the filament ends use alternative egress pathways.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">核苷酸状态及状态间转换速率调控ATP酶动力学。ATP水解后缓慢的无机磷酸盐（P(i)）释放通常是限速步骤，并与关键构象变化相关。肌动蛋白丝为理解P(i)释放的基本原理提供了独特机会，因为丝末端和内部的相同亚基以显著不同的速率释放P(i)。这一差异的分子起源尚存争议，因此我们利用广泛的全原子分子动力学模拟来表征肌动蛋白丝内不同亚基的P(i)释放。活性位点中ADP-Mg(2+)的P(i)解离速率计算值与实验测得的P(i)释放速率相关，并与γ-磷酸周围空腔中水分子数量成反比。模拟表明，P(i)通过蛋白通道（包括通过N111-R177后门）的逸出并非限速步骤，且丝末端亚基使用替代逸出途径。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Physical confinement modulates the rate-limiting transition in the release of phosphate from actin filaments</li>
+<li><strong>作者</strong>：Herman, Kristina M; Iyer, Sahithya Sridharan; Wang, Yihang; Pollard, Thomas D; Voth, Gregory A</li>
+<li><strong>单位</strong>：未提供（根据作者信息推测为芝加哥大学，但原文未明确列出）</li>
+<li><strong>期刊/平台</strong>：Science Advances</li>
+<li><strong>年份</strong>：2026-10-22</li>
+<li><strong>论文类型</strong>：研究论文（含分子动力学模拟与增强采样方法）</li>
+<li><strong>领域</strong>：计算生物物理学；ATP酶动力学；肌动蛋白丝组装/解聚调控</li>
+<li><strong>关键词</strong>：磷酸释放、肌动蛋白丝、分子动力学模拟、限域效应、离子对解离、增强采样</li>
+<li><strong>DOI/arXiv</strong>：10.1126/sciadv.aeh7206</li>
+<li><strong>代码</strong>：https://doi.org/10.5281/zenodo.22677899（速率计算、自由能计算、MD轨迹及参数测量脚本）</li>
+<li><strong>数据</strong>：PDB 8A2S（肌动蛋白丝冷冻电镜结构）、PDB 5OOD（jasplakinolide结合结构）</li>
+<li><strong>阅读日期</strong>：2026-10-22</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × 物理模拟（MD）」方向，聚焦于肌动蛋白丝中无机磷酸（Pi）释放的限速步骤。其核心贡献在于通过全原子MD模拟与增强采样，揭示物理限域（活性位点腔体体积）通过调控离子对（Mg²⁺-Pi）解离的自由能垒来决定Pi释放速率。该工作为理解ATP酶家族中Pi释放的通用机制提供了计算框架，并展示了如何将MD模拟与实验速率数据定量对接。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文通过全原子分子动力学模拟与增强采样，证明肌动蛋白丝中Pi释放的限速步骤是Mg²⁺-Pi离子对从接触态（CIP）到溶剂分离态（SSIP）的解离，该步骤的速率由活性位点腔体内水分子数量（即物理限域程度）决定，而非此前认为的蛋白通道开闭或门控残基运动。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：为什么肌动蛋白丝内部亚基的Pi释放速率（0.002–0.007 s⁻¹）比末端亚基慢两个数量级以上？分子机制是什么？</li>
+<li><strong>为什么重要</strong>：Pi释放是ATP酶（肌球蛋白、驱动蛋白、肌动蛋白等）循环中的限速步骤，调控构象变化和机械做功。理解其分子机制对揭示细胞骨架动态调控、肌肉收缩等基本生物学过程至关重要。</li>
+<li><strong>现有方法不足</strong>：</li>
+<li>早期steered MD（Wriggers &amp; Schulten, 1999）提出离子对解离是主要能垒，但未解释不同亚基间的速率差异。</li>
+<li>后续研究（Oosterheert et al., 2023）提出N111-R177“后门”开闭假说，但MD模拟显示该门在生理温度下频繁开闭（纳秒时间尺度），无法解释秒级释放速率。</li>
+<li>缺乏对末端亚基与内部亚基的系统比较，且未将模拟速率与实验速率定量关联。</li>
+<li><strong>精确研究问题</strong>：Can the rate-limiting step of Pi release from actin filaments be quantitatively explained by the CIP-to-SSIP transition of the Mg²⁺-Pi ion pair, modulated by the physical confinement (water availability) of the active site cavity?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引用与讨论，经外部核验（引用文献可查）。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法/发现</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期实验（1980s–2000s）</td>
+<td>生化速率测定（Carlier, Pollard等）</td>
+<td>建立Pi释放速率范围（内部亚基0.002–0.007 s⁻¹）</td>
+<td>无法提供原子级机制</td>
+</tr>
+<tr>
+<td>早期计算（1999）</td>
+<td>Steered MD（Wriggers &amp; Schulten）</td>
+<td>首次提出离子对解离是主要能垒</td>
+<td>仅模拟单体，未考虑丝内环境</td>
+</tr>
+<tr>
+<td>结构生物学（2017–2023）</td>
+<td>冷冻电镜结构（PDB 6DJN, 8A2S, 8D14）</td>
+<td>揭示ADP-Pi态构象，显示CIP态</td>
+<td>静态结构无法解释动态过程</td>
+</tr>
+<tr>
+<td>增强采样MD（2020s）</td>
+<td>体积-based metadynamics（Oosterheert et al., 2023）</td>
+<td>识别多种e-gress通路</td>
+<td>未计算速率，未比较不同亚基</td>
+</tr>
+<tr>
+<td>本文（2026）</td>
+<td>全原子MD + WT-MetaD + 速率计算</td>
+<td>定量解释速率差异，统一机制</td>
+<td>依赖力场精度，绝对速率有偏差</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在已有“离子对解离”与“后门开闭”两种假说之间，本文通过系统比较不同亚基的模拟结果，证明离子对解离（CIP→SSIP）是普遍限速步骤，而物理限域（水分子数量）是调节能垒高度的关键变量，从而统一了两种假说。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>速率差异无法解释</td>
+<td>末端亚基Pi释放比内部亚基快≥100倍</td>
+<td>活性位点腔体体积不同→水分子数量不同→离子对稳定性不同</td>
+<td>Results 图 2C：水分子数分布差异；表 1：速率常数差异</td>
+</tr>
+<tr>
+<td>后门假说与模拟矛盾</td>
+<td>N111-R177门在MD中频繁开闭，但实验速率极慢</td>
+<td>门开闭不是限速步骤，而是离子对解离后的下游事件</td>
+<td>Results 图 5C：门开闭时间尺度为纳秒，远快于释放速率</td>
+</tr>
+<tr>
+<td>力场高估离子对稳定性</td>
+<td>模拟绝对速率比实验慢</td>
+<td>CHARMM36m过度稳定CIP态</td>
+<td>Methods 节：力场基准测试（section S1）</td>
+</tr>
+<tr>
+<td>腔体体积测量困难</td>
+<td>需要定义“可及水体积”</td>
+<td>腔体形状动态变化，需统计平均</td>
+<td>Methods 节：POVME3分析；Results 图 2A-B</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：构建13亚基ADP-Pi肌动蛋白丝模型（基于PDB 8A2S），进行1.6 μs无偏MD模拟 + WT-MetaD增强采样，计算不同亚基（内部、末端、jasplakinolide结合）的CIP→SSIP转变速率，并用POVME3测量活性位点腔体体积。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：
+   - <strong>限速步骤是离子对解离，而非通道开闭</strong>：CIP→SSIP转变的自由能垒（~20 kcal/mol）远高于e-gress过程中的任何能垒（~5 kcal/mol），因此Pi从Mg²⁺解离是速率决定步骤。
+   - <strong>物理限域通过水分子数量调控能垒</strong>：腔体体积越大→水分子越多→介电屏蔽越强→离子对越不稳定→能垒越低→释放越快。末端亚基因缺乏相邻亚基的约束，腔体更大，水分子更多，故释放更快。
+   - <strong>jasplakinolide通过缩小腔体抑制释放</strong>：药物结合稳定了N111-R177门，减少腔体体积和水分子数量，从而升高能垒。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：
+   - 蛋白质活性位点的“物理限域”效应（水分子可用性）可能是调控离子对/极性相互作用稳定性的通用机制，不仅限于肌动蛋白，也可能适用于其他ATP酶（如肌球蛋白、驱动蛋白）和GTP酶。
+   - 计算模拟中，仅关注静态结构或单一反应坐标可能遗漏关键变量（如腔体体积的动态分布）；需结合增强采样与统计力学分析。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：PDB 8A2S（13亚基ADP-Pi肌动蛋白丝冷冻电镜结构）、PDB 5OOD（jasplakinolide结合结构）、CHARMM36m力场参数、TIP3P水模型、KCl离子（0.1 M）。</li>
+<li><strong>输出</strong>：各亚基CIP→SSIP转变速率常数（k₀）、自由能垒（ΔG‡）、腔体体积分布、e-gress通路分类。</li>
+<li><strong>模块</strong>：
+  1. <strong>系统构建与平衡</strong>：缺失残基建模（MODELER）、溶剂化、能量最小化、逐步升温（0→310 K）、200 ns无约束NPT平衡。
+  2. <strong>无偏MD生产</strong>：两个独立副本，各~800 ns，共1.6 μs。
+  3. <strong>WT-MetaD增强采样</strong>：偏置CV为Mg²⁺-Pi距离（r），自适应沉积速率，估计CIP→SSIP转变时间。
+  4. <strong>速率计算</strong>：Tiwary-Parrinello方法，从偏置模拟中重标定时间，拟合CDF得到k₀。
+  5. <strong>腔体体积分析</strong>：POVME3，以Pi磷原子为中心、半径5 Å的球内可及水体积。
+  6. <strong>e-gress通路分析</strong>：WT-MetaD轨迹中Pi的逃逸路径分类（后门下方、后门上方、前门）。
+  7. <strong>机器学习模型</strong>：随机森林回归，预测腔体体积（输入：正常模式角度、环间距等）。</li>
+<li><strong>工具</strong>：GROMACS 2020.4（MD）、PLUMED 2.7（增强采样）、POVME3（体积分析）、Scikit-learn（随机森林）。</li>
+<li><strong>假设</strong>：</li>
+<li>CHARMM36m力场能合理描述离子对相互作用（经水相基准测试校正）。</li>
+<li>单CV（r）足以促进CIP→SSIP转变（与双CV自由能计算一致）。</li>
+<li>13亚基丝模型足以代表内部亚基环境。</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系统构建与平衡</td>
+<td>生成稳定的ADP-Pi肌动蛋白丝模型</td>
+<td>确保模拟起始结构合理，避免人为构象偏差</td>
+<td>输入：PDB 8A2S；输出：平衡后的13亚基丝</td>
+<td>Methods 节；引用文献[12]验证平衡时间</td>
+<td>若平衡不足，末端亚基可能未完全松弛，导致腔体体积低估</td>
+</tr>
+<tr>
+<td>无偏MD生产</td>
+<td>采样亚基构象系综，测量腔体体积和门开闭动态</td>
+<td>提供 unbiased 参考，验证增强采样结果</td>
+<td>输入：平衡结构；输出：1.6 μs轨迹</td>
+<td>Results 图 2B-C；图 5B-D</td>
+<td>移除后无法评估增强采样的偏差</td>
+</tr>
+<tr>
+<td>WT-MetaD增强采样</td>
+<td>加速CIP→SSIP转变，估计速率</td>
+<td>直接MD无法在微秒内观察到该稀有事件</td>
+<td>输入：CIP态结构；输出：转变时间、PMF</td>
+<td>Results 图 1C；表 1；Methods 节</td>
+<td>移除后无法获得速率常数</td>
+</tr>
+<tr>
+<td>速率计算（Tiwary-Parrinello）</td>
+<td>从偏置模拟重标定时间，得到无偏速率</td>
+<td>将模拟时间转换为物理时间</td>
+<td>输入：偏置轨迹；输出：k₀、ΔG‡</td>
+<td>Results 表 1；Methods 节</td>
+<td>移除后无法与实验定量比较</td>
+</tr>
+<tr>
+<td>腔体体积分析（POVME3）</td>
+<td>量化活性位点水可用性</td>
+<td>建立“限域程度”与速率的定量关系</td>
+<td>输入：MD轨迹；输出：体积分布</td>
+<td>Results 图 2A-D</td>
+<td>移除后无法验证核心假设</td>
+</tr>
+<tr>
+<td>e-gress通路分析</td>
+<td>分类Pi逃逸路径</td>
+<td>评估通道开闭是否影响速率</td>
+<td>输入：WT-MetaD轨迹；输出：通路分类</td>
+<td>Results 图 4-5</td>
+<td>移除后无法排除通道限制假说</td>
+</tr>
+<tr>
+<td>随机森林回归</td>
+<td>预测腔体体积</td>
+<td>证明正常模式与腔体体积的因果关系</td>
+<td>输入：角度、距离特征；输出：体积预测</td>
+<td>Results 图 3E</td>
+<td>移除后无法建立结构-动力学联系</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>符号含义</th>
+<th>用途</th>
+<th>直觉</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>αᵢ = (1/tᵢ) ∫₀ᵗᵢ e^(βVᵢ(t′)) dt′</td>
+<td>αᵢ：时间加速因子；tᵢ：模拟时间；Vᵢ(t′)：t′时刻偏置势；β = 1/k_BT</td>
+<td>从WT-MetaD模拟中估计无偏转变时间</td>
+<td>偏置势加速了稀有事件，积分偏置量可反推真实时间</td>
+<td>Methods 节，公式(1)</td>
+</tr>
+<tr>
+<td>CDF = 1 − e^(−k₀t)</td>
+<td>CDF：累积分布函数；k₀：一阶速率常数；t：时间</td>
+<td>拟合转变时间分布，估计速率常数</td>
+<td>假设CIP→SSIP为泊松过程（单指数衰减）</td>
+<td>Results 图 1C；Methods 节</td>
+</tr>
+<tr>
+<td>ΔG‡ = −k_BT ln(k₀h/k_BT)</td>
+<td>ΔG‡：活化自由能；h：普朗克常数</td>
+<td>从速率常数反推能垒高度</td>
+<td>Eyring方程（过渡态理论）</td>
+<td>Results 图 2E；Methods 节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：13亚基ADP-Pi肌动蛋白丝（基于PDB 8A2S）；变异体：jasplakinolide结合丝；对照：水相Mg²⁺-Pi体系。</li>
+<li><strong>规模</strong>：无偏MD 2×800 ns；WT-MetaD每亚基8次独立模拟；共~20 μs累计模拟时间。</li>
+<li><strong>指标</strong>：CIP→SSIP转变速率（k₀）、自由能垒（ΔG‡）、腔体体积（Å³）、水分子数、门开闭概率。</li>
+<li><strong>基线</strong>：水相Mg²⁺-Pi的k₀（~0.0014 s⁻¹）作为无蛋白限域参考。</li>
+<li><strong>评测协议</strong>：速率常数与实验值（内部亚基0.002–0.007 s⁻¹，末端&gt;2 s⁻¹）比较；相对速率（末端/内部）与实验比值（≥100倍）比较。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无偏MD（1.6 μs）</td>
+<td>门开闭不是限速步骤</td>
+<td>内部亚基 vs 末端亚基</td>
+<td>N111-R177门在纳秒尺度开闭，远快于释放速率</td>
+<td>门开闭不限制Pi释放</td>
+<td>不能排除门在特定构象下短暂关闭</td>
+<td>Results 图 5C</td>
+</tr>
+<tr>
+<td>WT-MetaD速率计算</td>
+<td>CIP→SSIP是限速步骤</td>
+<td>内部、末端、jasplakinolide亚基</td>
+<td>速率常数与实验相对速率一致（末端&gt;内部&gt;jasplakinolide）</td>
+<td>离子对解离决定释放速率</td>
+<td>绝对速率比实验慢（力场偏差）</td>
+<td>Results 表 1</td>
+</tr>
+<tr>
+<td>腔体体积分析</td>
+<td>水分子数量调控能垒</td>
+<td>各亚基体积分布 vs k₀</td>
+<td>体积越大→水分子越多→k₀越大</td>
+<td>物理限域通过水可用性调控速率</td>
+<td>相关性不等于因果性</td>
+<td>Results 图 2C-D</td>
+</tr>
+<tr>
+<td>jasplakinolide模拟</td>
+<td>药物通过缩小腔体抑制释放</td>
+<td>有药 vs 无药内部亚基</td>
+<td>腔体体积减少~30%，k₀降低36倍</td>
+<td>药物作用机制是增强限域效应</td>
+<td>未考虑药物对蛋白构象的间接影响</td>
+<td>Results 图 2A；表 1</td>
+</tr>
+<tr>
+<td>水相基准</td>
+<td>蛋白环境显著改变离子对稳定性</td>
+<td>水相 vs 内部亚基</td>
+<td>水相k₀比内部亚基快~10⁴倍</td>
+<td>蛋白腔体强烈稳定CIP态</td>
+<td>水相模型未包含蛋白残基的化学贡献</td>
+<td>Results 图 1C</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅研究ADP-Pi态肌动蛋白丝中Pi释放的分子机制，不涉及ATP水解步骤、ADP释放或丝组装/解聚的完整循环。</li>
+<li><strong>Oracle/真值输入</strong>：模拟基于冷冻电镜结构（PDB 8A2S），该结构代表ADP-Pi态的静态快照；实验速率数据来自文献（Jégou et al., 2018; Fujiwara et al., 2007）。</li>
+<li><strong>端到端状态</strong>：模拟提供了从结构到速率的定量预测，但绝对速率受力场精度限制（比实验慢~10倍），仅相对速率可靠。</li>
+<li><strong>算力成本</strong>：~20 μs累计MD模拟，需GPU集群（具体硬件未提供）。</li>
+<li><strong>历史数据依赖</strong>：依赖冷冻电镜结构的准确性；若结构存在构象异质性，可能影响腔体体积计算。</li>
+<li><strong>模型依赖</strong>：CHARMM36m力场对离子对相互作用的描述存在偏差（作者承认CIP过度稳定），但相对比较仍有效。</li>
+<li><strong>最难情形</strong>：jasplakinolide结合亚基的模拟需要额外约束（阳离子-π相互作用校正），可能引入人为偏差。</li>
+<li><strong>群体/领域边界</strong>：结论基于肌动蛋白丝，但作者推测可推广至其他ATP酶；此推广尚未经实验验证。</li>
+<li><strong>不确定性</strong>：速率常数估计的置信区间未明确报告；腔体体积测量依赖POVME3参数选择。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在CHARMM36m力场和13亚基丝模型条件下，模拟表明肌动蛋白丝中Pi释放的限速步骤是Mg²⁺-Pi离子对解离，其速率由活性位点腔体内水分子数量决定；该机制解释了末端与内部亚基的速率差异，并预测jasplakinolide通过缩小腔体抑制释放。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>力场精度不足</td>
+<td>CHARMM36m过度稳定CIP态，导致绝对速率比实验慢</td>
+<td>使用极化力场（如AMOEBA）进行基准测试</td>
+<td>Methods 节，Section S1</td>
+</tr>
+<tr>
+<td>单CV增强采样</td>
+<td>仅偏置Mg²⁺-Pi距离，可能遗漏其他慢变量</td>
+<td>使用多CV metadynamics或副本交换方法</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>模拟时间有限</td>
+<td>1.6 μs无偏MD可能未完全采样亚基构象</td>
+<td>延长模拟时间或使用加速MD</td>
+<td>Results 图 2B</td>
+</tr>
+<tr>
+<td>模型简化</td>
+<td>未包含肌动蛋白结合蛋白（如cofilin、肌球蛋白）的影响</td>
+<td>模拟蛋白复合物体系</td>
+<td>Discussion 节</td>
+</tr>
+<tr>
+<td>实验验证不足</td>
+<td>未直接测量jasplakinolide结合后的腔体体积变化</td>
+<td>结合实验（如NMR、氢氘交换）验证</td>
+<td>Discussion 节</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 模拟中保留了冷冻电镜结构中的水分子，但未系统评估初始水分子位置的影响。
+- jasplakinolide模拟中使用了额外的阳离子-π相互作用校正，可能影响结果的可比性。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>腔体体积与速率的关联基于5个亚基的有限样本</td>
+<td>样本量小，相关性可能受个别亚基影响</td>
+<td>核心结论依赖此相关性</td>
+<td>增加更多亚基（如不同丝长度、突变体）的模拟</td>
+<td>Results 图 2D</td>
+</tr>
+<tr>
+<td>速率计算依赖单CV（r）</td>
+<td>若存在其他慢变量（如蛋白构象重排），速率估计可能偏差</td>
+<td>影响限速步骤的判定</td>
+<td>使用多CV metadynamics或机器学习增强采样交叉验证</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>力场对离子对过度稳定</td>
+<td>绝对速率比实验慢~10倍，可能影响相对速率的可靠性</td>
+<td>若力场偏差非线性，相对速率也可能失真</td>
+<td>使用极化力场重复关键模拟</td>
+<td>Section S1</td>
+</tr>
+<tr>
+<td>jasplakinolide模拟中的人为约束</td>
+<td>阳离子-π相互作用校正可能过度稳定药物结合</td>
+<td>影响药物机制的解释</td>
+<td>使用不同力场参数进行敏感性分析</td>
+<td>Methods 节</td>
+</tr>
+<tr>
+<td>未考虑Pi质子化状态</td>
+<td>Pi可能以HPO₄²⁻或H₂PO₄⁻形式存在，影响离子对强度</td>
+<td>质子化状态影响静电相互作用</td>
+<td>使用恒定pH模拟或显式质子化采样</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>随机森林模型仅用于预测，未用于因果推断</td>
+<td>模型显示相关性，但无法证明正常模式→腔体体积的因果关系</td>
+<td>过度解读模型结果可能导致错误结论</td>
+<td>设计突变体模拟验证因果链</td>
+<td>Results 图 3E</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>限域效应作为调控机制</strong>：蛋白质活性位点的物理限域（可用水分子数量）可通过调节离子对稳定性来调控化学反应速率。此概念可迁移至其他ATP酶（如肌球蛋白、驱动蛋白）的Pi释放研究，以及酶活性位点的一般设计原则。</p>
+</li>
+<li>
+<p><strong>CIP→SSIP作为通用反应坐标</strong>：将离子对解离作为限速步骤的分析框架，可应用于其他金属离子-磷酸盐/核苷酸体系（如GTP酶、激酶），为计算酶学提供标准反应坐标。</p>
+</li>
+<li>
+<p><strong>增强采样速率计算方法</strong>：Tiwary-Parrinello方法从WT-MetaD模拟中提取速率常数，适用于其他稀有构象转变（如蛋白折叠、配体结合/解离）的定量预测。</p>
+</li>
+<li>
+<p><strong>腔体体积的POVME3分析</strong>：以配体原子为中心、固定半径的球内可及水体积作为“限域程度”的度量，可推广至其他配体结合位点的水合状态分析。</p>
+</li>
+<li>
+<p><strong>多亚基丝模型构建</strong>：13亚基模型平衡末端与内部环境的方法，可迁移至其他纤维状蛋白（如微管、淀粉样纤维）的模拟。</p>
+</li>
+<li>
+<p><strong>机器学习辅助结构-动力学关联</strong>：随机森林回归将构象参数（正常模式角度、环间距）与功能指标（腔体体积）关联，可推广至其他复杂生物分子体系。</p>
+</li>
+<li>
+<p><strong>力场基准测试的重要性</strong>：作者在Section S1中系统比较了不同力场对离子对稳定性的描述，强调了在计算酶学中进行力场验证的必要性。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：</li>
+<li>Wriggers &amp; Schulten (1999) 首次提出肌动蛋白Pi释放的离子对解离机制（本文直接扩展并验证）。</li>
+<li>Wang et al. (2023) 对5亚基丝的metadynamics模拟（本文使用13亚基丝，更接近真实环境）。</li>
+<li>Oosterheert et al. (2023) 冷冻电镜结构（PDB 8A2S）为本文提供起始结构。</li>
+<li><strong>组合领域</strong>：</li>
+<li>与肌球蛋白Pi释放研究（Llinas et al., 2015）比较，可检验限域效应的普适性。</li>
+<li>与GTP酶（如Ras）的核苷酸交换机制研究（Grant et al., 2011）结合，探索离子对解离的通用规律。</li>
+<li><strong>冲突观点</strong>：</li>
+<li>本文反对“N111-R177门开闭是限速步骤”的假说，与Oosterheert et al. (2023) 的结论部分冲突，但作者通过模拟时间尺度和速率计算提供了替代解释。</li>
+<li><strong>可迁移领域</strong>：</li>
+<li>酶活性位点设计：通过调控腔体体积来调节反应速率。</li>
+<li>药物设计：jasplakinolide的限域机制可启发设计其他通过稳定离子对来抑制ATP酶的药物。</li>
+<li>生物材料：肌动蛋白丝老化（Pi释放）的力学性质变化可联系到细胞迁移、组织力学。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：限域效应在肌球蛋白Pi释放中的普适性检验
+   - <strong>来源局限/观察</strong>：本文仅研究肌动蛋白，但作者推测限域效应可能适用于其他ATP酶。
+   - <strong>核心假设</strong>：肌球蛋白的Pi释放速率差异（快/慢亚型）也由活性位点腔体体积（水分子数量）决定。
+   - <strong>初步方法</strong>：构建肌球蛋白-ADP-Pi复合物模型，使用WT-MetaD计算不同亚型的CIP→SS转变速率，并与实验数据比较。
+   - <strong>验证方式</strong>：若速率与腔体体积呈负相关，则支持普适性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：深度学习预测活性位点腔体体积与Pi释放速率
+   - <strong>来源局限/观察</strong>：本文的腔体体积分析依赖MD轨迹，计算成本高。
+   - <strong>核心假设</strong>：基于蛋白结构的几何特征（残基接触、口袋形状）可快速预测腔体体积和Pi释放速率。
+   - <strong>初步方法</strong>：使用图神经网络（GNN）或3D-CNN，以蛋白结构为输入，预测POVME3计算的腔体体积；再训练一个代理模型预测速率。
+   - <strong>验证方式</strong>：在已知突变体（如N111S）和药物结合（jasplakinolide）体系上测试。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：限域效应在酶设计中的应用——人工ATP酶活性位点优化
+   - <strong>来源局限/观察</strong>：本文揭示腔体体积是调控离子对稳定性的关键参数。
+   - <strong>核心假设</strong>：通过设计活性位点腔体大小，可人工调控ATP酶的Pi释放速率。
+   - <strong>初步方法</strong>：使用Rosetta或基于深度学习的蛋白设计工具，设计具有不同腔体体积的ATP酶变体，并用MD验证。
+   - <strong>验证方式</strong>：实验表达并测定Pi释放速率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Pi释放与肌动蛋白丝力学性质的多尺度模拟
+   - <strong>来源局限/观察</strong>：本文聚焦化学步骤（Pi释放），但未涉及力学后果。
+   - <strong>核心假设</strong>：Pi释放引起的构象变化（从ADP-Pi到ADP态）通过限域效应影响丝的弯曲刚度。
+   - <strong>初步方法</strong>：将本文的速率常数输入粗粒化丝模型，模拟丝的老化过程及其力学响应。
+   - <strong>验证方式</strong>：与原子力显微镜（AFM）或光镊实验比较。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：机器学习增强的Pi释放速率预测——从MD到实验的桥梁
+   - <strong>来源局限/观察</strong>：本文的速率计算依赖增强采样，计算成本高。
+   - <strong>核心假设</strong>：基于短MD轨迹的特征（如腔体体积波动、水分子停留时间）可训练模型预测长时程速率。
+   - <strong>初步方法</strong>：收集多个ATP酶体系的MD数据，训练回归模型（如XGBoost或神经网络），输入为结构特征，输出为实验速率。
+   - <strong>验证方式</strong>：在未参与训练的ATP酶上测试预测精度。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, introduction, results, discussion, materials and methods, and supplementary materials description</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodological soundness, evidence quality, and alignment with stated conclusions. Editorial or stylistic issues are noted only where they affect scientific clarity.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors use extensive all-atom molecular dynamics simulations with well-tempered metadynamics to characterize inorganic phosphate (Pi) release from actin filaments. They claim that the rate-limiting step is the dissociation of Pi from Mg2+ (CIP-to-SSIP transition), that this rate is modulated by the number of water molecules in the phosphate cavity, that egress through protein channels is not rate limiting, and that terminal subunits use alternative egress pathways. They also report that bound jasplakinolide slows Pi release by reducing cavity volume and stabilizing the N111-R177 gate.</li>
+<li><strong>Visible evidence base</strong> Simulation results including rate constants from resampled first-passage times, cavity volume measurements from PDB structures, normal mode analyses, egress pathway classifications from metadynamics simulations, and comparisons to published experimental rates. Supplementary figures and tables are referenced but not fully visible.</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures S1-S24 and tables S1 are referenced but not provided in the submitted material. Force field benchmarking details in section S1 are referenced but not visible. The machine learning model details (random forest regressor) are described but hyperparameters and feature importance values are not fully reported. Experimental rate constants used for comparison are cited but not tabulated in the visible text.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript addresses a significant and long-debated question in actin biology: the molecular mechanism underlying the slow, location-dependent release of inorganic phosphate from actin filaments. The authors combine extensive unbiased and biased all-atom simulations with careful statistical analysis to propose that the rate-limiting step is the dissociation of Pi from Mg2+, modulated by the local hydration environment. The work is technically ambitious and the central claim, that water availability in the phosphate cavity scales inversely with the CIP-to-SSSIP transition rate, is mechanistically plausible and supported by the presented data. However, several concerns regarding force field accuracy, the interpretation of relative versus absolute rates, and the generalizability of the egress pathway findings require careful consideration. The manuscript is well written and will be of interest to the actin cytoskeleton community and to computational biophysicists studying nucleotide release mechanisms in ATPases.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers studying actin filament dynamics, nucleotide hydrolysis and phosphate release in ATPases, and computational biophysicists interested in ion-pair dissociation in confined protein environments. The findings have implications for understanding how actin-binding proteins and drugs like jasplakinolide modulate filament aging and stability.</li>
+<li><strong>Major strengths</strong> The study uses a large 13-mer filament model, which is more realistic than smaller oligomers used in prior work. The combination of unbiased simulations with well-tempered metadynamics and first-passage time analysis is methodologically rigorous. The correlation between cavity water count and relative rates across multiple subunit types provides a coherent mechanistic framework. The identification of alternative egress pathways in terminal subunits is a novel contribution.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors claim that the CIP-to-SSSIP transition is the rate-limiting step for Pi release from actin filaments, and that the calculated relative rates correlate with experimental measurements.</li>
+<li><strong>Evidence pointer</strong> Table 1, Figure 1C, Discussion section</li>
+<li><strong>Concern</strong> The absolute rates calculated from simulations are stated to be slower than experimental measurements by several orders of magnitude (barriers 20-30% too high). The authors attribute this to force field overstabilization of the CIP state. While the relative rates across subunits are the primary comparison, the manuscript does not provide a quantitative assessment of whether the force field error is systematic or could vary across subunit environments. If the overstabilization is environment-dependent, the relative rates could be affected. The authors acknowledge this possibility but do not test it, for example by comparing with a polarizable force field in at least one subunit environment.</li>
+<li><strong>Why it matters</strong> The central conclusion that relative rates are correctly captured depends on the assumption that force field errors are approximately uniform across subunit types. If the error varies with cavity hydration, the correlation between water count and rate could be an artifact of the force field rather than a physical property.</li>
+<li><strong>Resolution test</strong> Perform at least one additional set of simulations with a polarizable force field (e.g., AMOEBA) for an interior subunit and a terminal subunit to test whether the relative rates and water count correlation are preserved. Alternatively, provide a quantitative analysis of how the overstabilization scales with cavity water count using the existing AMOEBA benchmarking data referenced in section S1.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors claim that egress of Pi through protein channels is not rate limiting and that terminal subunits use alternative egress pathways, including a front-door pathway near K18.</li>
+<li><strong>Evidence pointer</strong> Figure 4, Figure 5, "Phosphate egress pathways" section</li>
+<li><strong>Concern</strong> The egress pathway analysis is based on a limited number of metadynamics simulations (eight per subunit for interior and terminal subunits, four for B-1 and B-2). The classification of pathways relies on visual inspection of trajectories and distance criteria. The front-door pathway near K18 is described as novel, but the manuscript does not provide a quantitative comparison of the free energy barriers for different egress pathways. The statement that egress is not rate limiting is based on estimated timescales that are acknowledged to be lower bounds.</li>
+<li><strong>Why it matters</strong> The claim that egress is not rate limiting is important for the overall conclusion that CIP-to-SSSIP is the dominant barrier. If the egress barriers are underestimated due to the lower-bound nature of the estimates, the relative contribution of egress to the overall rate could be larger than stated.</li>
+<li><strong>Resolution test</strong> Provide free energy profiles for the egress pathways (e.g., PMF along a reaction coordinate that captures the full egress process) and compare the barriers to the CIP-to-SSSIP barriers. If this is not computationally feasible, clearly state the limitations of the lower-bound estimates and discuss the potential impact on the conclusions.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> The authors claim that the number of water molecules in the phosphate cavity is the key determinant of the Pi release rate, and that this "physical confinement" effect explains the range of rates across subunits.</li>
+<li><strong>Evidence pointer</strong> Figure 2, Table 1, Discussion section</li>
+<li><strong>Concern</strong> The correlation between water count and rate is demonstrated for five subunit types (interior, barbed end, pointed end, B-1, B-2) plus the jasplakinolide-bound state. However, the manuscript does not discuss whether other factors, such as specific protein-Pi interactions or conformational differences in the active site, could also contribute to the rate differences. The random forest model is used to predict cavity volume from structural parameters, but the model is not used to predict rates directly, and the relative importance of water count versus other features is not quantified.</li>
+<li><strong>Why it matters</strong> The claim that water count is the primary determinant is strong and has implications for understanding how mutations and drugs modulate Pi release. If other factors are also important, the mechanistic picture is incomplete.</li>
+<li><strong>Resolution test</strong> Use the random forest model or a similar approach to test whether water count alone can predict the relative rates, or whether additional features (e.g., specific hydrogen bonding patterns, electrostatic potential) improve the prediction. Alternatively, perform additional simulations with a mutant that alters cavity volume without changing water count to isolate the effect.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors claim that the N111S mutant has a similar CIP-to-SSSIP transition rate to wild-type, based on simulations described in section S7.</li>
+<li><strong>Evidence pointer</strong> Section S7 (referenced, not visible)</li>
+<li><strong>Concern</strong> The N111S mutant is associated with nemaline myopathy and increases Pi release rate by at least 15-fold in experiments. The authors state that their simulations show a similar rate to wild-type, which would contradict the experimental finding. The explanation provided in section S7 is not visible in the submitted material, making it impossible to assess the validity of this claim.</li>
+<li><strong>Why it matters</strong> The N111S mutant is a clinically relevant variant, and the discrepancy between simulation and experiment for this mutant could indicate a limitation of the model or the simulation approach. If the simulations cannot capture the effect of this mutation, the generalizability of the conclusions to other mutants is questionable.</li>
+<li><strong>Resolution test</strong> Provide the full content of section S7 in the revised manuscript or supplementary materials, including the simulation details and a quantitative comparison with experimental rates. If the discrepancy is due to limitations of the force field or sampling, discuss the implications for the overall conclusions.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Introduction, first paragraph</li>
+<li><strong>Evidence pointer</strong> Introduction, paragraph 1</li>
+<li><strong>Issue</strong> The introduction assumes familiarity with ATPase cycles and actin filament structure. A brief explanation of the biological significance of Pi release in the context of actin filament turnover would help nonspecialist readers.</li>
+<li><strong>Required correction</strong> Add one or two sentences in the introduction explaining why Pi release is important for actin filament function, e.g., its role in filament aging, severing, and interaction with actin-binding proteins.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Methods, rate calculation section</li>
+<li><strong>Evidence pointer</strong> "Rate calculations" subsection</li>
+<li><strong>Issue</strong> The description of the Tiwary-Parrinello method is brief. The equation for the acceleration factor is given, but the statistical treatment of the resampled first-passage times (e.g., how many independent simulations, how the CDF is fit) could be clearer.</li>
+<li><strong>Required correction</strong> Expand the methods section to include the number of independent simulations per subunit, the criteria for defining the CIP and SSSIP states, and the fitting procedure for the CDF.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interdisciplinary readership</li>
+<li><strong>Affected element</strong> Discussion, "Implications for other ATPases" section</li>
+<li><strong>Evidence pointer</strong> Discussion, final subsection</li>
+<li><strong>Issue</strong> The discussion of implications for other ATPases is brief and does not fully explore how the confinement mechanism might apply to ATPases with different active site geometries or nucleotide binding modes.</li>
+<li><strong>Required correction</strong> Expand this section to discuss specific examples of other ATPases where the confinement mechanism might be relevant, and note any structural features that could modulate the effect.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Methods, force field section</li>
+<li><strong>Evidence pointer</strong> "Force fields" subsection</li>
+<li><strong>Issue</strong> The choice of CHARMM36m is justified by prior work, but the manuscript does not discuss potential limitations of this force field for modeling phosphate-Mg2+ interactions, which are central to the study.</li>
+<li><strong>Required correction</strong> Add a brief discussion of the known limitations of nonpolarizable force fields for divalent cation-phosphate interactions and how the authors addressed these (e.g., through the AMOEBA benchmarking in section S1).</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability for nonspecialists</li>
+<li><strong>Affected element</strong> Results, "Phosphate egress pathways" section</li>
+<li><strong>Evidence pointer</strong> Figure 4, Figure 5</li>
+<li><strong>Issue</strong> The description of egress pathways is detailed but may be difficult to follow without a clear visual representation of the channel locations relative to the actin filament structure.</li>
+<li><strong>Required correction</strong> Consider adding a schematic figure or a more detailed figure legend that clearly labels the channel locations and the key residues involved in each pathway.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that the CIP-to-SSSIP transition is the rate-limiting step for Pi release from all actin subunits is supported for the specific conditions simulated, but the absolute rate discrepancy with experiments (several orders of magnitude) is not fully resolved. The authors correctly focus on relative rates, but the assumption of uniform force field error across subunit environments is not tested.</li>
+<li>The claim that egress is not rate limiting is based on lower-bound estimates and should be treated with caution. The manuscript acknowledges this but could more explicitly discuss the potential impact on the conclusions.</li>
+<li>The claim that the N111S mutant has a similar rate to wild-type contradicts experimental findings (15-fold increase). The explanation in section S7 is not visible, making this claim unverifiable from the submitted material.</li>
+<li>The correlation between water count and rate is demonstrated for a limited number of subunit types. The claim that this is the primary determinant of rate differences is plausible but not definitively established, as other factors could also contribute.</li>
+<li>The identification of a front-door egress pathway near K18 is novel but based on a small number of simulations. The generalizability of this finding to other filament states or conditions is unclear.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.10.15.759522",
+  "title": "Sequence-only prediction of VHH nanobody epitopes and paratopes on HER2 with a frozen protein language model ( ESM2) and a structure-derived residue prior",
+  "authors": "Dharani Babu; Sundaramurthy Pandurangan; Agilisium Consulting",
+  "journal": "bioRxiv",
+  "published_date": "2026-10-21",
+  "window": {
+    "start": "2026-10-18",
+    "end": "2026-10-24"
+  },
+  "score": 7,
+  "one_liner_zh": "该文用冻结ESM2蛋白语言模型和结构衍生残基先验，仅从序列预测HER2纳米抗体的表位和互补位，虽聚焦抗体-抗原界面而非完整结构计算，但方法可迁移至蛋白质结构相关计算，且评估严谨。",
+  "abstract": "Mapping which antigen residues an antibody contacts (the epitope) and which antibody residues do the contacting (the paratope) is central to therapeutic antibody engineering, yet most accurate methods require a solved or predicted three dimensional complex. We address a sequence only formulation: predict the HER2 epitope and the single domain antibody (VHH, or nanobody) paratope from the two sequences alone, with no three dimensional structure prediction at any stage. We pair a frozen ESM2 650M protein language model, used strictly as a feature extractor, with a lightweight trainable module per chain encoders, a shared cross attention block, and epitope, paratope and binder heads (12.2M trainable parameters) trained jointly on three public sources: HER2 binding and blocking competition assays (\"AVIDa hHER2\" to be published by organizers of SEPIQ 2026 The authors have no right to share the dataset to public ), residue level antibody antigen contacts (SAbDab2), and two reference antibody crystal structures. The blocking competition signal is de confounded into a trastuzumab minus pertuzumab contrast whose sign encodes the HER2 domain and which is used only as a training target, never as a model input. Under a three way, sequence cluster level split with a test set opened exactly once, the binder head reaches PR AUC 0.999 and the paratope head 0.659, while residue level epitope prediction on novel antigens remains near baseline (0.070) a limitation the sealed split exposes rather than hides. Sequence alone recovers the competition derived HER2 domain (the competitor class) for 87.7% of held out clones, a leakage free result. For HER2 specifically, a residue prior built from 25 mined HER2 antibody complexes and validated by leave one out reaches 0.26 to 0.29 residue PR AUC once the domain is correct, roughly 3.6 times the language model head alone. We release and report two submission variants per test clone, a fully sequence only prediction and a competition informed one ,and document which data were used where. Keywords: epitope prediction; paratope prediction; nanobody; VHH; HER2; protein language model; ESM2; cross attention; antibody antigen interface; leakage safe evaluation.",
+  "abstract_zh": "绘制抗体所接触的抗原残基（表位）以及负责接触的抗体残基（对位）对于治疗性抗体工程至关重要，然而大多数精确方法需要已解析或预测的三维复合物。我们解决一个仅基于序列的公式：仅从两条序列预测HER2表位和单域抗体（VHH，或纳米抗体）对位，在任何阶段均不进行三维结构预测。我们将冻结的ESM2 650M蛋白质语言模型（严格用作特征提取器）与轻量级可训练模块配对，包括每条链的编码器、共享交叉注意力块，以及表位、对位和结合子头部（12.2M可训练参数），并在三个公共来源上联合训练：HER2结合和阻断竞争实验（“AVIDa hHER2”，由SEPIQ 2026组织者发布，作者无权公开共享该数据集）、残基级抗体-抗原接触（SAbDab2），以及两个参考抗体晶体结构。阻断竞争信号被去混杂为曲妥珠单抗减去帕妥珠单抗的对比，其符号编码HER2结构域，且仅用作训练目标，从不作为模型输入。在序列聚类水平的三方划分下，测试集仅打开一次，结合子头部达到PR AUC 0.999，对位头部达到0.659，而新抗原上的残基级表位预测仍接近基线（0.070），这是密封划分暴露而非隐藏的局限性。仅凭序列即可恢复竞争衍生的HER2结构域（竞争类别），对87.7%的保留克隆有效，这是一个无泄漏的结果。对于HER2特异性，基于25个挖掘的HER2抗体复合物构建并通过留一法验证的残基先验，在结构域正确后达到0.26至0.29的残基PR AUC，约为语言模型头部单独性能的3.6倍。我们为每个测试克隆发布并报告两种提交变体：一种完全基于序列的预测和一种竞争信息增强的预测，并记录哪些数据在何处使用。关键词：表位预测；对位预测；纳米抗体；VHH；HER2；蛋白质语言模型；ESM2；交叉注意力；抗体-抗原界面；无泄漏评估。",
+  "has_fulltext": true,
+  "fulltext_source": "europepmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.15.759522",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.10.15.759522",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.10.15.759522/index.html"
+}

@@ -1,0 +1,104 @@
+## Review setup
+- **Input scope** Full manuscript text, including abstract, main text, methods, figure legends, and supplementary table descriptions.
+- **Assessment boundary** Scientific validity, methodological soundness, clarity of claims, and alignment with the stated evidence. No assessment of editorial fit or publication policy.
+- **Shared manuscript claim summary** The authors introduce the Kernel Allelic Series Model (KASM), a statistical framework that integrates multiple functional annotations to model the covariance of rare variant effects within genes. Applied to exome-wide association data from 786,871 individuals across 26 traits, KASM estimates that rare missense heritability is at least 1.27±0.09% on average, and 1.83±0.11% under a flexible model, exceeding pLoF heritability. The model identifies enriched structural features, quantifies effect concordance among proximal variants, and nominates gene-specific functional hypotheses.
+- **Visible evidence base** Abstract, full methods section, results narrative, figure legends, and supplementary table titles. No actual figures, tables, or numerical results are provided in the submitted material.
+- **Missing materials affecting confidence** All figures, tables, and supplementary data files are absent. The manuscript text references specific numerical results (e.g., enrichment values, P values) without the underlying data being visible. Simulation details are described but not shown. This substantially limits the ability to verify the central claims.
+
+## Reviewer
+- **Overall assessment** The manuscript presents a conceptually interesting and technically ambitious framework for integrating functional annotations into rare variant heritability estimation. The methodological development appears thoughtful, with careful attention to estimand definition, confounding control, and estimator properties. However, the absence of all figures, tables, and numerical results makes it impossible to evaluate whether the claims are supported by the evidence. The text alone cannot establish the validity of the central estimates or the robustness of the findings. The manuscript would benefit from a clearer presentation of the relationship between the proposed kernel heritability and existing estimands, and from a more explicit discussion of the assumptions required for causal interpretation.
+- **Who would be interested in the results, and why** Statistical geneticists developing methods for rare variant analysis, researchers studying the genetic architecture of complex traits, and investigators using functional annotations to prioritize variants in exome sequencing studies. The framework could also interest those working on heritability estimation from biobank-scale data, and those interested in the relative contribution of missense versus loss-of-function variation to complex trait heritability.
+- **Major strengths** The methodological framework is well-motivated and addresses a real gap in the literature, namely the limited integration of functional annotations into heritability estimation for rare variants. The distinction between kernel heritability and burden heritability is clearly articulated. The use of both random-effects and fixed-effects estimators, with a clear rationale for their respective roles, is a thoughtful design choice. The attention to confounding, particularly the inclusion of overdispersion kernels and the discussion of identifiability, demonstrates methodological maturity. The application to a large biobank dataset with multiple ancestry groups is a strength.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The manuscript claims that "rare missense heritability is at least 1.27±0.09% on average, 1.83±0.11% under our most flexible model, exceeding pLoF heritability (0.87±0.05%) and far exceeding missense burden heritability as previously estimated (0.54±0.04%)."
+  - **Evidence pointer** Abstract, Results section "Functional informed kernel heritability", Figure 2b, Supplementary Table 7
+  - **Concern** The central quantitative claims of the manuscript are presented without any visible supporting data. No figures or tables are provided, and the text does not include the underlying estimates, confidence intervals, or model comparison statistics. The reader cannot assess the magnitude of the effects, the precision of the estimates, or the statistical significance of the differences between models.
+  - **Why it matters** The primary contribution of this work is empirical, providing revised estimates of rare missense heritability. Without the actual numbers, the claims are unverifiable. The comparison to previous estimates (e.g., BHR) is central to the narrative, but the reader cannot evaluate whether the differences are meaningful or within sampling variation.
+  - **Resolution test** Provide the full set of numerical results in Figure 2b and Supplementary Table 7, including point estimates, standard errors, and sample sizes for each model and trait. Include a comparison of model fit statistics (e.g., likelihood or information criteria) to support the claim that the flexible models are preferred.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological validation
+  - **Claim pointer** The manuscript claims that "KASM accurately estimated the kernel heritability across simulation settings" and that "Enrichment estimates were well calibrated in both significant genes and subthreshold genes."
+  - **Evidence pointer** Results section "Simulations", Figure 1a, 1b, 1c, Supplementary Figures 1-5, Supplementary Tables 1-3
+  - **Concern** The simulation results are described in text but no actual simulation outcomes are shown. The reader cannot evaluate the bias, variance, or coverage properties of the estimators. The claim of accurate estimation is unsupported without seeing the simulation results. Additionally, the simulation design is described only briefly; it is unclear how the data-generating process relates to the model assumptions, and whether the simulations adequately capture the complexity of real exome data.
+  - **Why it matters** The validity of the empirical findings depends entirely on the statistical properties of the estimator. If the estimator is biased or has poor coverage in realistic settings, the central claims would be compromised. The simulations are the primary evidence for estimator performance, and their absence is a critical gap.
+  - **Resolution test** Provide the full simulation results, including bias, root mean squared error, and coverage probabilities for each estimator and simulation setting. Describe the simulation design in sufficient detail to assess its realism, including how variant effects, LD, and population structure were simulated.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Confounding control
+  - **Claim pointer** The manuscript claims that the random-effects estimator "features diagonal kernels which absorb confounding due to residual population stratification, analogous to the BHR intercept."
+  - **Evidence pointer** Methods section "Random-effects estimator for subthreshold genes", Results section "Functional informed kernel heritability", Supplementary Figure 13
+  - **Concern** The identifiability of the heritable kernel coefficients in the presence of overdispersion kernels is a central methodological issue. The text states that overdispersion kernels are included to absorb confounding, but the conditions under which this separation is identifiable are not fully specified. The assumption that confounding effects are uncorrelated with functional annotations is stated but not justified. The sensitivity of the results to violations of this assumption is not discussed.
+  - **Why it matters** If the overdispersion kernels absorb part of the biological signal, the heritability estimates would be biased downward. Conversely, if the heritable kernels absorb confounding, the estimates would be biased upward. The validity of the central estimates depends on the identifiability of these components.
+  - **Resolution test** Provide a formal identifiability analysis, including conditions under which the heritable and overdispersion components are separately identifiable. Present sensitivity analyses that vary the assumptions about the correlation between confounding and functional annotations, and show how the estimates change.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretability of enrichment
+  - **Claim pointer** The manuscript claims that "a series of structural features is enriched for heritability, from amino acid chemical features and structural motifs to residue contacts and protein-protein interaction interfaces."
+  - **Evidence pointer** Results section "Structural and functional enrichments", Figure 4, Supplementary Table 11
+  - **Concern** The enrichment analysis is described in text, but the actual enrichment values, confidence intervals, and multiple testing corrections are not shown. The interpretation of enrichment is not fully developed. For example, the authors report that charge-reversing substitutions at interchain hydrogen-bond residues have 27±2-fold enrichment, but it is unclear how this relates to the baseline enrichment of charge-reversing substitutions or interchain hydrogen-bond residues individually.
+  - **Why it matters** The enrichment results are used to draw conclusions about the biological mechanisms underlying trait-associated variation. Without the full results, the reader cannot assess the robustness of these findings or the specificity of the enrichment to particular features.
+  - **Resolution test** Provide the full enrichment results, including point estimates, standard errors, and multiple testing corrections. Include a discussion of how the enrichment of combined features relates to the enrichment of individual features, and whether the interactions are statistically significant.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** The manuscript claims that "we find that most missense effects are modestly correlated, but an exception is when residues are close in 3D structure but distant in 1D sequence; such pairs also covary across species."
+  - **Evidence pointer** Results section "Effect concordance of variant pairs", Figure 6, Supplementary Table 13
+  - **Concern** The concordance analysis is described, but the actual estimates and their precision are not shown. The interpretation of the concordance parameter is not fully developed. The claim that 3D-proximal/1D-distant pairs have higher concordance is interesting, but the biological interpretation is speculative. The relationship between the estimated concordance and the underlying mutational processes is not discussed.
+  - **Why it matters** The concordance results are used to draw conclusions about the functional architecture of missense variation. Without the full results, the reader cannot assess the strength of the evidence for the claims.
+  - **Resolution test** Provide the full concordance results, including point estimates, standard errors, and the number of pairs in each category. Include a discussion of the biological interpretation of the concordance parameter and the potential confounders.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The abstract states that "Protein coding variants span the gamut of structural and functional effects on proteins, and they have similarly heterogeneous effects on traits." This is a general statement that does not clearly motivate the specific contribution of the paper.
+  - **Required correction** Consider revising the opening to more directly state the gap in current methods for integrating functional annotations into rare variant heritability estimation.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods, "Functional informed kernels"
+  - **Evidence pointer** Methods section, equation for β_g
+  - **Issue** The notation for the genotype matrix and effect size vector is introduced but the dimensions are not fully specified. The text states "Let denote the genotype dosage matrix" but the symbol is missing.
+  - **Required correction** Ensure all mathematical symbols are properly defined and that the dimensions of all matrices and vectors are explicitly stated.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Results, "Benchmarking missense deleteriousness predictors"
+  - **Evidence pointer** Results section, Figure 3
+  - **Issue** The comparison of predictors is described, but the text does not specify how the "top decile" is defined when there are ties in predictor scores, or how the enrichment estimates are combined across traits.
+  - **Required correction** Provide details on the handling of ties and the meta-analysis procedure for the enrichment estimates.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Results, "Characterizing functional allelic series"
+  - **Evidence pointer** Results section, PIEZO1 example
+  - **Issue** The text states that "7 of 14 hydrogen-bond contact variants had nominally significant effects, all lowering HbA1c (Z<−3)." It is unclear what threshold is used for "nominally significant" and how the Z-scores are computed.
+  - **Required correction** Specify the significance threshold and the source of the Z-scores (e.g., from the association analysis or from a joint model).
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion, paragraph on gain-of-function
+  - **Issue** The discussion of gain-of-function mechanisms is speculative and not directly supported by the presented analyses. The authors note that "we can rule out a narrow model in which missense variants produce weaker loss-of-function effects in a manner that is uniform across genes," but the evidence for this claim is not clearly presented.
+  - **Required correction** Clarify the evidence that supports this claim and consider softening the language if the evidence is indirect.
+- **Technical failings that need to be addressed before the case is established** The absence of all figures, tables, and numerical results is a critical failing that prevents evaluation of the central claims. The simulation results are described but not shown, making it impossible to assess estimator performance. The identifiability of the heritable and overconfounding components is not formally established. The sensitivity of the results to key assumptions (e.g., uncorrelated confounding) is not assessed.
+- **Assessment against Nature-style criteria** Originality: The framework is a novel integration of functional annotations into kernel-based heritability estimation, extending prior work in a meaningful direction. Scientific importance: The revised estimates of rare missense heritability, if correct, would be of substantial interest to the field. Interdisciplinary readership: The work bridges statistical genetics, protein biology, and complex trait genetics, and would appeal to a broad audience. Technical soundness: The methodological development appears sound in principle, but the absence of results prevents verification. Readability for nonspecialists: The manuscript is clearly written and the concepts are accessible, though the methods section is dense.
+- **Recommendation posture** Currently not established from the provided evidence. The methodological framework is promising and the writing is clear, but the absence of all quantitative results makes it impossible to evaluate the validity of the claims. The authors should provide the full set of figures, tables, and numerical results, along with a more detailed description of the simulation outcomes and sensitivity analyses, before the case can be assessed.
+
+## Risk / unsupported claims
+- The central quantitative claims (missense heritability estimates, enrichment values, concordance estimates) are unsupported in the provided material, as no figures or tables are included.
+- The claim that "KASM accurately estimated the kernel heritability across simulation settings" is unsupported without the simulation results.
+- The claim that "Enrichment estimates were well calibrated" is unsupported without the simulation results.
+- The claim that "a composite score outperformed every individual predictor" is unsupported without the benchmark results.
+- The claim that "3D-proximal/1D-distal pairs have greater effect concordance" is unsupported without the concordance results.
+- The claim that "we can rule out a narrow model in which missense variants produce weaker loss-of-function effects in a manner that is uniform across genes" is not directly supported by the presented evidence.

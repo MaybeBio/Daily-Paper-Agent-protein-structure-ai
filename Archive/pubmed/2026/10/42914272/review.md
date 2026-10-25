@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no figures, tables, or methods sections were available for inspection
+- **Shared manuscript claim summary** The authors report that beta-lactoglobulin produced by precision fermentation (f-BLG) and milk-derived BLG (m-BLG) share equivalent tertiary and quaternary structures, but differ in thermal aggregation behaviour under UHT-like conditions. The f-BLG variant carries an N-terminal "EAEA" extension, which is associated with increased negative surface charge, enhanced electrostatic repulsion, and markedly reduced aggregation at 140 degrees C. Molecular dynamics simulations are used to propose a mechanism involving outward-facing negatively charged N-termini that limit aggregate growth.
+- **Visible evidence base** Abstract text only; no figures, tables, supplementary materials, or methods details were provided
+- **Missing materials affecting confidence** Full methods, all figures and tables, statistical analyses, simulation parameters, raw data, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting comparative study of a precision-fermentation-derived dairy protein against its milk-derived counterpart, with a clear mechanistic hypothesis linking an N-terminal sequence extension to altered aggregation behaviour. The structural equivalence claim is supported by multiple orthogonal techniques, which is commendable. However, the central functional claim, that f-BLG shows no detectable aggregation under conditions where m-BLG aggregates rapidly, is presented without quantitative uncertainty or statistical context. The mechanistic attribution to electrostatic repulsion is plausible but not directly demonstrated in the abstract. The molecular dynamics component is mentioned but not described in sufficient detail to assess its validity. Overall, the work addresses a topic of practical relevance to food science and biotechnology, but the evidence as presented in the abstract alone is insufficient to fully establish the mechanistic case.
+- **Who would be interested in the results, and why** Researchers and industry professionals in food science, dairy protein chemistry, and precision fermentation biotechnology would be interested. The findings have direct implications for the formulation of heat-stable protein ingredients from fermentation-derived sources, which is relevant to the development of animal-free dairy alternatives. The structural comparison approach may also interest protein biophysicists studying post-translational or sequence-extension effects on protein behaviour.
+- **Major strengths** The use of multiple orthogonal structural techniques (LC-MS, LC-MS/MS, 2D methyl NMR, SEC-UV-MALS) to establish primary, tertiary, and quaternary structure equivalence is a rigorous approach. The comparison of thermal aggregation behaviour under UHT-like conditions is practically relevant. The proposed mechanism, linking the N-terminal extension to surface charge and electrostatic repulsion, is mechanistically coherent and testable. The inclusion of molecular dynamics simulations adds a molecular-level perspective that strengthens the hypothesis.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract states that "no detectable aggregation occurred for f-BLG" at 140 degrees C over 1800 s, while 80-90% of m-BLG aggregated within 30 s.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The claim of "no detectable aggregation" is presented as an absolute statement without any indication of the detection limit of the UPLC-UV method used. The abstract does not report the sensitivity threshold, the number of replicates, or the statistical significance of the difference between f-BLG and m-BLG. Without this information, it is impossible to determine whether f-BLG truly does not aggregate or whether aggregation occurs below the detection limit.
+  - **Why it matters** The central conclusion of the paper, that f-BLG is markedly more stable under UHT-like conditions, rests entirely on this comparative aggregation measurement. If the detection limit is not sufficiently low, the claim of "no aggregation" could be misleading and would not support the strong conclusion of enhanced stability.
+  - **Resolution test** The authors should report the detection limit of the UPLC-UV method for aggregated BLG, provide replicate measurements with standard deviations or confidence intervals, and state the statistical test used to compare f-BLG and m-BLG aggregation levels. If possible, a complementary method such as dynamic light scattering or turbidity measurements should be used to confirm the absence of aggregation.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic support
+  - **Claim pointer** The abstract attributes f-BLG's increased thermal stability to "the additional glutamic acid residues in its N-terminal extension, which results in a more negative surface charge and increased electrostatic repulsion."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract does not report any direct measurement of surface charge, such as zeta potential, for f-BLG and m-BLG. The claim of "more negative surface charge" is inferred from the amino acid sequence, but no experimental evidence is presented to confirm that this sequence difference translates into a measurable difference in surface charge under the relevant conditions (pH, ionic strength, temperature).
+  - **Why it matters** The proposed mechanism is the core explanatory framework of the paper. If the surface charge difference is not experimentally verified, the mechanism remains speculative. Furthermore, the abstract does not address whether other factors, such as differences in glycosylation, disulfide bonding, or folding kinetics, could contribute to the observed behavioural differences.
+  - **Resolution test** The authors should provide zeta potential measurements or another direct surface charge characterisation for both proteins under the conditions used in the aggregation experiments. Alternatively, they could perform charge-modification experiments or use variants with neutral or positively charged N-terminal extensions to test the electrostatic repulsion hypothesis directly.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Simulation validity
+  - **Claim pointer** The abstract states that "molecular dynamics simulations further indicate that these negatively charged N-termini remain outward facing upon protein association, potentially maintaining electrostatic repulsion at the aggregate surface."
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The abstract provides no details on the simulation methodology, including the force field, simulation length, system size, number of replicates, or how the aggregation process was modelled. Without this information, the reliability and relevance of the simulation results cannot be assessed. The word "potentially" also indicates that the simulation evidence is suggestive rather than conclusive.
+  - **Why it matters** The simulation is used to support the proposed mechanism, but if the simulation conditions do not adequately represent the experimental system, the conclusions drawn from it may not be valid. The lack of methodological detail prevents the reader from evaluating whether the simulation is a meaningful test of the hypothesis.
+  - **Resolution test** The authors should provide a detailed description of the simulation setup in the methods section, including force field parameters, simulation time, system composition, and any validation against experimental data. If possible, they should also show that the simulation results are robust to changes in initial conditions or simulation parameters.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The term "UHT-like conditions" is used but not defined. The abstract mentions 140 degrees C, but does not specify the heating method, holding time, or whether the conditions mimic industrial UHT processing.
+  - **Required correction** Define "UHT-like conditions" explicitly, including the heating apparatus, temperature profile, and any relevant processing parameters.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Quantitative reporting
+  - **Affected element** Viscosity data
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract states that "m-BLG exhibited a steeper concentration-dependent viscosity increase" and reports Krieger-Dougherty modelling results, but does not provide the actual viscosity values or the concentration range tested.
+  - **Required correction** Report the viscosity data in a figure or table, and specify the concentration range and conditions under which the measurements were made.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Proteoform characterisation
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract states that f-BLG "consists of several proteoforms, predominantly a mature sequence containing an N-terminal 'EAEA' extension," but does not specify the relative abundance of the different proteoforms or whether the minor proteoforms were also characterised structurally and functionally.
+  - **Required correction** Provide the relative abundances of the proteoforms and clarify whether the structural and functional analyses were performed on the predominant proteoform or on the mixture.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Experimental replicates
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract does not state the number of independent replicates for the aggregation and viscosity experiments.
+  - **Required correction** Report the number of replicates and the statistical treatment of the data in the methods or figure legends.
+
+## Risk / unsupported claims
+- The claim that f-BLG shows "no detectable aggregation" is unsupported without knowledge of the detection limit of the assay.
+- The attribution of increased thermal stability to increased negative surface charge is unsupported without direct surface charge measurements.
+- The molecular dynamics simulation results are unassessable without methodological details.
+- The claim of "equivalent tertiary and quaternary structures" is supported by the techniques named, but the abstract does not provide the resolution or sensitivity of these measurements, so the equivalence claim cannot be fully evaluated.
+- The statement that f-BLG "remained translucent throughout 1800 s" is a qualitative observation; the quantitative relationship between turbidity and aggregation is not established in the abstract.

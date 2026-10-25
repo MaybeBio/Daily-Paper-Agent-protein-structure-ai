@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report synthesis of a tau fragment (tau368-412, R' domain) with and without fluorine labels at Phe378, Tyr394, Pro397, and Pro405; characterization of its predominantly disordered structure; detection and quantification of cis-Pro at Pro397 and Pro405; MD simulation suggesting cis/trans isomerization effects on conformational ensemble; and NMR-based evidence for a submillisecond exchange process between free peptide and a lowly populated MT-bound state, with binding localized to the N-terminal region adjacent to R4 and retention of side-chain dynamics in the bound state.
+- **Visible evidence base** Abstract text only; no experimental details, spectra, simulation parameters, or quantitative data are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, experimental methods, MD simulation details, NMR acquisition and analysis parameters, DEST fitting procedures, and any statistical or error analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a technically ambitious application of 19F NMR-based methods to a biologically relevant problem in tau-MT interactions. The combination of chemical shift, relaxation, and DEST analyses is potentially powerful, and the focus on a flanking region outside the canonical R1-R4 repeats addresses a genuine gap in the field. However, the abstract alone provides insufficient detail to evaluate the rigor of the experimental design, the validity of the kinetic and structural conclusions, or the robustness of the MD simulation results. Several claims, particularly regarding the submillisecond exchange time scale and the localization of binding, require quantitative evidence that is not visible here. The work is likely of interest to specialists in protein NMR and tau biology, but the case for broad significance and technical soundness is not fully established from the supplied material.
+- **Who would be interested in the results, and why** Researchers studying tau-microtubule interactions and neurodegenerative disease mechanisms would value the focus on the R' domain and the potential for 19F NMR to probe weakly populated binding states. Methodologists in biomolecular NMR, particularly those developing fluorine-based probes for large macromolecular assemblies, would be interested in the DEST approach applied to a peptide-MT system. Computational chemists studying proline isomerization and conformational ensembles of intrinsically disordered proteins may also find the MD component relevant.
+- **Major strengths** The study addresses a specific and under-explored region of tau (the R' domain) rather than the canonical repeats, which is a meaningful contribution. The use of multiple fluorine labels at aromatic and proline positions is a thoughtful design that could provide site-specific information. The combination of experimental NMR with MD simulation to interpret proline isomerization effects is a constructive integrative approach. The application of DEST to a peptide-MT system represents a methodological extension that could be valuable to the NMR community.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims a rapid exchange process between free tau peptide and a lowly populated MT-bound state on a submillisecond time scale (tauex approximately 500 mus).
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The exchange time scale of approximately 500 microseconds is presented as a quantitative result, but no information is provided about how this value was derived, what model was used, what uncertainties or confidence intervals are associated with it, or whether the DEST data were fit with appropriate consideration of multiple binding sites or non-specific interactions. The abstract also does not state the concentration of MTs, the stoichiometry of binding, or whether the exchange rate was validated by independent methods.
+  - **Why it matters** A quantitative kinetic claim of this nature is central to the paper's mechanistic contribution. If the fitting procedure, model selection, or error analysis is inadequate, the reported time scale could be an artifact of the analysis rather than a physical property of the system. Without visible validation, the claim cannot be assessed for reliability.
+  - **Resolution test** Provide the full DEST fitting details, including the model equations, the number of parameters, the goodness-of-fit metrics, and the uncertainty in tauex. Ideally, show that the extracted time scale is robust to variations in the fitting assumptions and, if possible, corroborate with an independent NMR experiment such as relaxation dispersion or line shape analysis.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence strength
+  - **Claim pointer** The abstract claims that MT binding predominantly occurs at the N-terminal region of the tau peptide adjacent to the canonical R4 domain.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The localization of binding is inferred from 19F DEST data, but the abstract does not specify which fluorine labels showed the largest DEST effects, how the differential effects were quantified, or whether the observed pattern is consistent across all labels. The claim of "predominantly" implies a comparative assessment across the four labeled sites, but no quantitative comparison is presented. Additionally, the possibility that the C-terminal region also contributes to binding, albeit weakly, is not addressed.
+  - **Why it matters** The spatial localization of the binding interface is a key finding that distinguishes this study from prior work on the canonical repeats. If the DEST data do not clearly differentiate between the labeled sites, or if the analysis does not account for differential relaxation properties of the labels, the conclusion could be overstated.
+  - **Resolution test** Show the DEST profiles for each labeled site with appropriate error bars, and provide a statistical comparison demonstrating that the N-terminal sites (Phe378, Tyr394) exhibit significantly larger binding-induced effects than the C-terminal sites (Pro397, Pro405). Discuss how the intrinsic relaxation properties of each label were accounted for in the comparison.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that MD simulation data suggest that cis/trans isomerization of Pro397 and Pro405 could alter the conformational ensemble of the tau peptide.
+  - **Evidence pointer** Abstract text; location not provided
+  - **Concern** The MD simulation is described only in a single sentence, with no information about the force field, simulation length, sampling methodology, or how the cis/trans states were populated and compared. The phrase "could alter" is appropriately cautious, but the abstract does not indicate whether the simulations were validated against the NMR-derived cis-Pro populations or whether the observed conformational changes are statistically significant.
+  - **Why it matters** The MD component is presented as supporting evidence for the functional relevance of proline isomerization. If the simulations are not well-converged or if the comparison between cis and trans states is not statistically robust, the claim adds little to the experimental findings and may even introduce doubt about the rigor of the computational work.
+  - **Resolution test** Provide details on the simulation protocol, including force field, water model, simulation length, and number of replicas. Show that the cis/trans populations in the simulations are consistent with the NMR-derived values, and demonstrate that the conformational differences between the two states are statistically significant with appropriate error analysis.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract uses the term "tauex" without defining it in the text. While specialists may infer its meaning, the symbol is not standard across all NMR subfields, and the abstract should be self-contained for a broader readership.
+  - **Required correction** Define tauex as the exchange lifetime or provide the full phrase "exchange time constant" at first use.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract states that the 1H and 13C chemical shift data "point to slight secondary structural propensities" but does not specify which residues or regions exhibit these propensities or whether they are consistent with known tau behavior.
+  - **Required correction** Briefly indicate the location and nature of the secondary structural propensities, or state that they are distributed throughout the peptide, to give readers a clearer picture.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The phrase "with 2S,4R stereochemistry" for the proline labels is ambiguous. It is unclear whether this refers to the stereochemistry of the fluorine substitution or to the proline ring itself, and the relevance of this detail is not explained.
+  - **Required correction** Clarify what the stereochemical designation refers to and why it is important for the experimental design or interpretation.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text; location not provided
+  - **Issue** The abstract does not state the number of independent experiments or replicates for the NMR measurements, nor does it mention any error analysis for the reported chemical shifts or relaxation data.
+  - **Required correction** Add a brief statement about reproducibility or refer to error bars in the full manuscript, even if only in a general way.
+
+## Risk / unsupported claims
+- The quantitative exchange time scale (tauex approximately 500 mus) is unsupported in the abstract because no fitting details, uncertainties, or validation are provided.
+- The claim that MT binding "predominantly" occurs at the N-terminal region is not quantitatively supported by the abstract, as no comparative DEST data across the four labeled sites are shown.
+- The MD simulation claim regarding cis/trans isomerization effects on the conformational ensemble is not assessable from the abstract, as no simulation parameters or statistical analyses are provided.
+- The statement that the peptide "retains a large level of side-chain dynamics in the MT-bound state" is not supported by any quantitative measure of dynamics in the abstract.
+- The general claim that the study "exemplifies how novel 19F NMR-based methods enable investigating proteins in the context of challenging large systems" is a forward-looking statement that cannot be evaluated without evidence of the method's generalizability beyond this specific system.

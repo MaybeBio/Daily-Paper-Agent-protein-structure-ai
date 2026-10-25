@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Engineering a hemoglobin variant with enhanced stability and oxygen affinity using a protein language model. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Engineering a hemoglobin variant with enhanced stability and oxygen affinity using a protein language model.</h1>
+      <div class="meta">Shityakov, Sergey; Novikov, Alexander S; Skorb, Ekaterina V; Dandekar, Thomas</div>
+      <div class="meta muted">
+        
+        <span class="journal">Frontiers in chemistry</span>
+        · 2026-10-20
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42898797/">原文</a>
+      </div>
+      <p class="one-liner">该文结合蛋白语言模型ESM3与分子对接、MD模拟及DFT等物理方法，工程化改造血红蛋白变体以增强稳定性和氧亲和力，核心聚焦蛋白质结构计算设计，方法创新且可推广。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">INTRODUCTION: Engineered hemoglobin variants offer therapeutic promise for artificial blood substitutes and oxygen therapeutics, but rational design is constrained by protein stability and heme-binding. Protein language models (pLMs) predict mutation fitness, yet their integration with biophysical validation remains limited. METHODS: We developed a hybrid pipeline combining pLM (ESM3) with molecular docking, Monte Carlo simulation, molecular dynamics, MM-GBSA/PBSA binding free energy calculations, and density functional theory (DFT) to engineer a stabilized hemoglobin variant (esmHb) with enhanced oxygen affinity, benchmarking against the clinically characterized Hb Fort de France mutation (alpha45 His--&gt;Arg). RESULTS: ESM3 accurately assessed the fitness effect of the Hb Fort de France mutation and generated structurally stable esmHb models. Compared with the wild-type variant (wtHb), esmHb exhibited improved thermodynamic stability (DeltaG: -18.48 vs. -12.22 kcal/mol), increased heme-binding affinity (DeltaGbind: -11.79 vs. -8.42 kcal/mol), and greater thermodynamic favorability of oxidation according to DFT calculations (DeltaE: -173.1 vs. -149.9 kcal/mol). MM-GBSA and MM-PBSA binding free energy calculations further supported improved protein-heme and protein-protein interactions, with esmHb showing more favorable values in both implicit solvation models. Statistical significance (p &lt; 0.05) was reached for protein-protein interactions via both methods and for protein-heme interactions via MM-PBSA. We interpret the MM-GBSA results as a suggestive trend rather than definitive evidence. DISCUSSION: This work establishes a generalizable framework for pLM-driven protein engineering applicable to therapeutic Hb variants and beyond.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">引言：工程化血红蛋白变体为人工血液替代品和氧治疗药物提供了治疗前景，但理性设计受限于蛋白质稳定性和血红素结合。蛋白质语言模型（pLMs）可预测突变适应性，但其与生物物理验证的整合仍有限。方法：我们开发了一种混合流程，结合pLM（ESM3）与分子对接、蒙特卡洛模拟、分子动力学、MM-GBSA/PBSA结合自由能计算以及密度泛函理论（DFT），以工程化一种具有增强氧亲和力的稳定血红蛋白变体（esmHb），并以临床表征的Hb Fort de France突变（alpha45 His--&gt;Arg）为基准进行对比。结果：ESM3准确评估了Hb Fort de France突变的适应性效应，并生成了结构稳定的esmHb模型。与野生型变体（wtHb）相比，esmHb表现出改善的热力学稳定性（DeltaG: -18.48 vs. -12.22 kcal/mol）、增强的血红素结合亲和力（DeltaGbind: -11.79 vs. -8.42 kcal/mol），以及根据DFT计算，氧化反应的热力学有利性更高（DeltaE: -173.1 vs. -149.9 kcal/mol）。MM-GBSA和MM-PBSA结合自由能计算进一步支持了改善的蛋白质-血红素和蛋白质-蛋白质相互作用，esmHb在两种隐式溶剂化模型中均显示出更有利的值。通过两种方法，蛋白质-蛋白质相互作用均达到统计学显著性（p &lt; 0.05），而蛋白质-血红素相互作用通过MM-PBSA达到显著性。我们将MM-GBSA结果解释为提示性趋势而非确定性证据。讨论：这项工作建立了一个可推广的pLM驱动蛋白质工程框架，适用于治疗性Hb变体及其他领域。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Engineering a hemoglobin variant with enhanced stability and oxygen affinity using a protein language model</li>
+<li><strong>作者</strong>：Shityakov, Sergey; Novikov, Alexander S; Skorb, Ekaterina V; Dandekar, Thomas</li>
+<li><strong>单位</strong>：未提供（据致谢推测含 ITMO University 与 University of Würzburg 相关团队，但原文未明确列出）</li>
+<li><strong>期刊/平台</strong>：Frontiers in Chemistry</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-20）</li>
+<li><strong>论文类型</strong>：研究论文（计算模拟为主，无湿实验验证）</li>
+<li><strong>领域</strong>：蛋白质工程 × 蛋白质语言模型（pLM）× 生物物理模拟</li>
+<li><strong>关键词</strong>：hemoglobin, protein language model, ESM3, molecular dynamics, DFT, heme binding, oxygen affinity, protein stability</li>
+<li><strong>DOI/ID</strong>：10.3389/fchem.2026.1898272；PubMed ID: 42898797</li>
+<li><strong>代码/数据</strong>：https://github.com/virtualscreenlab/ESM3-Hb</li>
+<li><strong>阅读日期</strong>：2026-05-14（按当前日期）</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>序列-结构-功能联合设计</strong>子方向，具体为：利用生成式 pLM（ESM3）对血红素蛋白的配体结合位点进行单点突变设计，并串联分子对接、MD、MM-GBSA/PBSA 与 DFT 等多尺度物理模拟进行验证。其特色在于<strong>主动挑战 pLM 设计中通常回避的配体结合位点突变</strong>，并以已知临床突变（Hb Fort de France）作为基准锚点。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文构建了一个将 ESM3 蛋白质语言模型与分子对接、Monte Carlo、分子动力学、MM-GBSA/PBSA 及 DFT 串联的混合计算管线，在血红蛋白 α 链第 45 位引入 His→Arg 突变（受肌红蛋白同源位点启发），获得了一个计算预测的热力学稳定性（ΔG: −18.48 vs. −12.22 kcal/mol）、血红素结合亲和力（ΔGbind: −11.79 vs. −8.42 kcal/mol）及氧化热力学偏好（ΔE: −173.1 vs. −149.9 kcal/mol）均优于野生型的工程化血红蛋白变体 esmHb。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：能否利用蛋白质语言模型对血红蛋白的<strong>配体结合位点</strong>进行单点突变设计，在保持整体折叠的同时增强其热力学稳定性与氧亲和力？</li>
+<li><strong>为什么重要</strong>：工程化血红蛋白变体在人工血液替代品和氧治疗领域具有治疗前景，但理性设计受限于蛋白质稳定性与血红素结合之间的权衡。配体结合位点突变通常被 pLM 管线回避，因为可能破坏功能互作。</li>
+<li><strong>现有方法为何不足</strong>：多数 pLM 设计管线刻意避开配体结合位点序列改动；且缺乏与生物物理验证（MD、DFT）的整合，导致预测缺乏动态与电子结构层面的支撑。</li>
+<li><strong>精确研究问题（Can 句式）</strong>：Can a protein language model (ESM3), when guided by structural templating and validated by multi-scale biophysical simulations, engineer a single-residue mutation (His45Arg) in the heme-binding pocket of hemoglobin that simultaneously improves thermodynamic stability, heme-binding affinity, and oxidative favorability relative to wild-type?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络为「仅本文框架」——基于本文引文与论述逻辑重建，未经外部系统核验。</p>
+</blockquote>
+<ol>
+<li><strong>阶段一：基于物理势能的理性设计</strong>（如 FoldX、Rosetta）——优点：可解释性强、直接计算热力学量；局限：依赖经验势能、构象采样有限、难以捕捉长程协同效应。</li>
+<li><strong>阶段二：数据驱动的蛋白质语言模型</strong>（如 ESM 系列、AlphaFold）——优点：从海量序列/结构中学习进化约束与适应度景观，可快速评估突变效应；局限：缺乏动态与电子结构信息，对配体结合位点改动保守。</li>
+<li><strong>阶段三：pLM + 物理模拟的混合管线</strong>（本文定位）——将 pLM 的进化先验与 MD/DFT 的物理验证结合，既利用 pLM 的序列空间探索能力，又通过多尺度模拟确认动态稳定性、结合亲和力与反应热力学。本文进一步以<strong>已知临床突变作为基准</strong>，验证 pLM 能否"重新发现"并超越自然突变。</li>
+</ol>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pLM 设计回避配体结合位点</td>
+<td>多数管线不改动结合位点序列，因担心破坏功能互作</td>
+<td>配体结合位点对序列扰动高度敏感，pLM 缺乏配体感知能力</td>
+<td>Introduction: "most of the published AI-based pipelines for protein design lack benchmarking protocols based on well-described mutations"；"application of these models to alter ligand-binding sites remains challenging owing to the risk of disrupting functional integrity"</td>
+</tr>
+<tr>
+<td>缺乏基准验证</td>
+<td>pLM 预测缺乏与已知临床突变对照的评估</td>
+<td>缺少系统性的"已知突变重发现"测试</td>
+<td>Introduction: "most of the computational pipelines for protein modeling via pLM are designed not to change the sequences of protein-ligand binding sites"；本文以 Hb Fort de France 为基准</td>
+</tr>
+<tr>
+<td>计算预测与生物物理验证脱节</td>
+<td>pLM 输出缺乏动态、电子结构层面的确认</td>
+<td>pLM 本质是统计模型，不包含物理相互作用细节</td>
+<td>Introduction: "their integration with biophysical validation remains limited"</td>
+</tr>
+<tr>
+<td>配体结合位点突变的功能风险评估</td>
+<td>单点突变可能破坏血红素结合或氧亲和力</td>
+<td>血红素-蛋白互作涉及轴向配位、疏水口袋、盐桥等多重因素</td>
+<td>Results: His87 不可替换（直接配位铁），His45 适合改造（与血红素丙酸基形成极性互作）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：一个五阶段混合计算管线——(1) 序列比对与同源位点映射（Hb α45 ↔ Mb CD3）；(2) ESM3 生成突变体结构（结构模板引导 + 局部掩码）；(3) FoldX 与 Rosetta MC 评估折叠稳定性；(4) AutoDock 分子对接 + 三重复 MD（AMBER）评估动态行为与结合亲和力；(5) MM-GBSA/PBSA 与 DFT 计算热力学量。</p>
+<p><strong>2) 核心洞察</strong>：<strong>利用跨蛋白同源位点的"自然实验"作为 pLM 设计的先验锚点</strong>——肌红蛋白在对应位置天然存在精氨酸，且已知其与血红素丙酸基形成盐桥。作者不是让 pLM 从零发明突变，而是用 pLM 验证"将肌红蛋白的解决方案移植到血红蛋白"是否可行，并以已知临床突变（Hb Fort de France，同样为 His45Arg）作为天然基准。这规避了 pLM 在配体结合位点上的盲目探索风险。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：pLM 在配体结合位点设计中的价值可能不在于"无中生有"的突变发现，而在于<strong>对跨同源蛋白的功能性解决方案进行快速评估与结构生成</strong>。将"进化已给出的答案"（如 Mb 中的 Arg）作为设计起点，再用 pLM 生成结构、用物理模拟验证，可能是比纯 de novo 设计更稳健的策略。此外，本文展示了"pLM 生成结构 + MD 验证动态 + DFT 验证电子结构"的三级验证范式，可作为配体结合位点工程的一般框架。</p>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：野生型人脱氧血红蛋白 α 链结构（PDB: 1A3N，1.8 Å）、肌红蛋白结构（PDB: 1MBO，1.6 Å）、目标突变位点（α45 His→Arg）。</p>
+<p><strong>输出</strong>：esmHb 突变体结构模型及其稳定性（ΔG）、血红素结合亲和力（ΔGbind）、氧化热力学（ΔE）的计算评估。</p>
+<p><strong>模块与流程</strong>：
+1. <strong>序列分析</strong>：BLOSUM62 矩阵、成对比对（gap open = −10, gap extension = −5），映射 Hb α45 ↔ Mb CD3 位点。
+2. <strong>ESM3 结构生成</strong>：以 Hb α 链为模板，结构 token 引导 + 局部掩码，温度 1.0 生成突变体，温度 0.0 确定性重折叠；评估指标为局部 RMSD、全局 RMSD、序列一致性。
+3. <strong>稳定性评估</strong>：FoldX 计算 ΔG_folding；Rosetta MC 协议（1,000 轨迹，kT = 0.8，Metropolis 准则）输出最低能量结构。
+4. <strong>分子对接</strong>：AutoDock4，半柔性对接，Lamarckian 遗传算法，网格中心为共结晶配体坐标（x = −9.83, y = 26.82, z = 55.76 Å），网格 60×60×60 Å。
+5. <strong>MD 模拟</strong>：AMBER v22，FF99SB 力场，配体 GAFF，AM1-BCC 电荷，TIP3P 水盒子，Na+ 中和，2 fs 步长，SHAKE 约束，1 ns 平衡（NVT + NPT），500 ns 生产，三重复，310 K（Langevin 恒温器）。
+6. <strong>结合自由能</strong>：MM-GBSA 与 MM-PBSA 两种隐式溶剂模型。
+7. <strong>DFT</strong>：ωB97XD/CEP-121G，Gaussian 09，单点能计算，模型体系为血红素-轴向配体-近端残基截断模型。</p>
+<p><strong>假设</strong>：FF99SB 力场适用于血红素蛋白；AM1-BCC 电荷对血红素铁合理；DFT 截断模型能代表完整蛋白环境；ESM3 生成的结构在 MD 中可达到平衡。</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESM3 结构生成</td>
+<td>生成 His45Arg 突变体的三维结构</td>
+<td>pLM 提供序列-结构映射，避免人工建模偏差</td>
+<td>输入：Hb α 链模板 + 突变约束；输出：esmHb 全原子模型</td>
+<td>Results 图 3：ESM3 对 Arg 给出高适应度评分（2.6）；局部 RMSD 1.0–1.5 Å</td>
+<td>预期影响：失去 pLM 的进化先验，需依赖同源建模或人工突变，可能引入构象偏差</td>
+</tr>
+<tr>
+<td>FoldX 稳定性评估</td>
+<td>计算 ΔG_folding</td>
+<td>快速评估突变对折叠自由能的影响</td>
+<td>输入：wtHb/esmHb 结构；输出：ΔG 值</td>
+<td>Results: ΔG −18.48 vs. −12.22 kcal/mol</td>
+<td>预期影响：失去快速热力学筛选，只能依赖 MD 或实验</td>
+</tr>
+<tr>
+<td>Rosetta MC</td>
+<td>构象搜索与能量最小化</td>
+<td>验证突变体在构象空间中的稳定性</td>
+<td>输入：ESM3 结构；输出：最低能量构象</td>
+<td>Results 图 5A–F：esmHb 能量始终低于 wtHb</td>
+<td>预期影响：失去独立构象采样验证，ESM3 结构可能停留在局部最优</td>
+</tr>
+<tr>
+<td>AutoDock 对接</td>
+<td>评估血红素结合亲和力</td>
+<td>提供配体结合的静态快照与结合能</td>
+<td>输入：蛋白结构 + 血红素配体；输出：ΔGbind</td>
+<td>Results: −11.79 vs. −8.42 kcal/mol</td>
+<td>预期影响：失去配体结合位点的直接评估，无法确认突变是否增强结合</td>
+</tr>
+<tr>
+<td>MD 模拟（AMBER）</td>
+<td>评估动态稳定性与构象ensemble</td>
+<td>静态结构不足以反映生理条件下的行为</td>
+<td>输入：对接复合物；输出：RMSD/RMSF/Rg 轨迹</td>
+<td>Results 图 6A–D：esmHb RMSD 更低、RMSF 在口袋区域从 4.11 降至 3.33 Å</td>
+<td>预期影响：失去动态验证，无法排除突变导致的构象失稳</td>
+</tr>
+<tr>
+<td>MM-GBSA/PBSA</td>
+<td>计算结合自由能</td>
+<td>从 MD 轨迹提取热力学结合信息</td>
+<td>输入：MD 轨迹；输出：ΔG_bind</td>
+<td>Results 图 7A–B：esmHb 在两种溶剂模型中均更优</td>
+<td>预期影响：失去结合亲和力的定量比较，仅剩对接得分</td>
+</tr>
+<tr>
+<td>DFT（ωB97XD）</td>
+<td>评估氧化反应热力学</td>
+<td>提供电子结构层面的氧化还原信息</td>
+<td>输入：血红素-配体截断模型；输出：ΔE_oxidation</td>
+<td>Results 表 1–2、图 9：esmHb 氧化偏好高 23.2 kcal/mol</td>
+<td>预期影响：失去电子结构验证，无法评估突变对氧化态稳定性的影响</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1. FoldX 折叠自由能</strong>
+ΔG_folding = G_folded − G_unfolded
+- ΔG_folding：折叠自由能（kcal/mol），负值越大越稳定
+- 用于比较 wtHb（−12.22）与 esmHb（−18.48）</p>
+<p><strong>2. Metropolis 接受准则（Rosetta MC）</strong>
+P(accept) = min[1, exp(−ΔE/kT)]
+- ΔE：能量变化（Rosetta Energy Units, REU）
+- kT = 0.8（"温度"参数）
+- 用于决定 MC 移动是否被接受</p>
+<p><strong>3. 结合自由能（MM-GBSA/PBSA）</strong>
+ΔG_bind = G_complex − (G_receptor + G_ligand)
+- 分解为：ΔE_MM + ΔG_solvation − TΔS
+- ΔE_MM：分子力学能量（键合 + 范德华 + 静电）
+- ΔG_solvation：隐式溶剂化自由能（GB 或 PB 模型）
+- TΔS：熵贡献（本文未计算）</p>
+<p><strong>4. RMSD（均方根偏差）</strong>
+RMSD = √[(1/N) Σᵢ (rᵢ − rᵢ_ref)²]
+- N：原子数；rᵢ：第 i 个原子坐标；rᵢ_ref：参考坐标
+- 用于评估 ESM3 生成结构精度（1.5 Å）与 MD 轨迹收敛</p>
+<p><strong>5. DFT 氧化反应能量</strong>
+ΔE_oxidation = E(oxidized) − E(reduced)
+- 在 ωB97XD/CEP-121G 水平计算
+- esmHb 比 wtHb 的氧化反应有利性高 23.2 kcal/mol</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集/体系</strong>：
+- 人血红蛋白 α 链（PDB: 1A3N，1.8 Å 分辨率）
+- 肌红蛋白（PDB: 1MBO，1.6 Å 分辨率）
+- 目标突变：α45 His→Arg（Hb Fort de France 临床突变）
+- 无实验数据生成，全部为计算模拟</p>
+<p><strong>指标</strong>：ΔG_folding（FoldX）、Rosetta 能量（REU）、ΔGbind（AutoDock）、RMSD/RMSF/Rg（MD）、ΔG_bind（MM-GBSA/PBSA）、ΔE_oxidation（DFT）、ESM3 适应度评分</p>
+<p><strong>基线/对照</strong>：野生型血红蛋白（wtHb）；肌红蛋白作为同源参考；Hb Fort de France 临床突变作为已知功能锚点</p>
+<p><strong>评测协议</strong>：三重复 MD（500 ns 生产）；MM-GBSA 与 MM-PBSA 双方法交叉验证；DFT 单点能计算基于 MD 平衡构象</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESM3 适应度评分</td>
+<td>Arg45 是进化上有利的突变</td>
+<td>19 种氨基酸在位置 45 的评分对比</td>
+<td>Arg 评分 2.6，为最高之一</td>
+<td>ESM3 预测 His45Arg 是功能性可行突变</td>
+<td>评分是统计先验，非物理结合能</td>
+<td>Results 图 3</td>
+</tr>
+<tr>
+<td>ESM3 结构生成精度</td>
+<td>生成结构在突变位点附近准确</td>
+<td>局部 RMSD 目标 &lt; 1.5 Å</td>
+<td>局部 RMSD ≈ 1.0–1.5 Å</td>
+<td>ESM3 能高精度生成突变体结构</td>
+<td>全局折叠可能仍有偏差</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>FoldX ΔG</td>
+<td>esmHb 比 wtHb 更稳定</td>
+<td>wtHb vs. esmHb 二聚体</td>
+<td>−18.48 vs. −12.22 kcal/mol</td>
+<td>His45Arg 增强热力学稳定性</td>
+<td>仅计算预测，需实验验证</td>
+<td>Results</td>
+</tr>
+<tr>
+<td>Rosetta MC</td>
+<td>esmHb 在构象空间中能量更低</td>
+<td>1,000 轨迹最低能量比较</td>
+<td>esmHb 能量始终更低</td>
+<td>突变体构象更稳定</td>
+<td>MC 采样有限，可能遗漏重要构象</td>
+<td>Results 图 5</td>
+</tr>
+<tr>
+<td>AutoDock 对接</td>
+<td>esmHb 与血红素结合更强</td>
+<td>ΔGbind 比较</td>
+<td>−11.79 vs. −8.42 kcal/mol</td>
+<td>突变增强血红素结合</td>
+<td>对接打分函数精度有限</td>
+<td>Results</td>
+</tr>
+<tr>
+<td>MD 稳定性</td>
+<td>esmHb 动态更稳定</td>
+<td>三重复 500 ns，RMSD/RMSF/Rg</td>
+<td>esmHb RMSD 更低，口袋区 RMSF 从 4.11→3.33 Å</td>
+<td>突变增强整体刚性</td>
+<td>500 ns 可能不足以捕捉大尺度构象变化</td>
+<td>Results 图 6</td>
+</tr>
+<tr>
+<td>MM-GBSA/PBSA</td>
+<td>esmHb 结合亲和力更优</td>
+<td>两种隐式溶剂模型</td>
+<td>两种方法均显示 esmHb 更优；仅 MM-PBSA 达 p &lt; 0.05</td>
+<td>结合增强趋势一致</td>
+<td>MM-GBSA 未达显著，作者自认"提示性"</td>
+<td>Results 图 7</td>
+</tr>
+<tr>
+<td>DFT 氧化能量</td>
+<td>esmHb 氧化更有利</td>
+<td>ωB97XD/CEP-121G 单点能</td>
+<td>esmHb 比 wtHb 有利 23.2 kcal/mol</td>
+<td>突变增强氧化热力学偏好</td>
+<td>截断模型忽略蛋白环境长程效应</td>
+<td>Results 表 1–2、图 9</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅针对<strong>单一突变位点（α45）</strong> 在<strong>计算层面</strong>的评估，不涉及其他位点、组合突变或多聚体组装。</li>
+<li><strong>oracle/真值输入</strong>：以 Hb Fort de France 临床突变（已知高氧亲和力）作为基准锚点，以肌红蛋白同源位点作为设计灵感来源。ESM3 的适应度评分是统计先验，非实验测量。</li>
+<li><strong>端到端状态</strong>：<strong>非端到端</strong>。pLM 仅用于结构生成与适应度预测，稳定性、结合、氧化热力学均由独立物理模拟模块评估。无 wet-lab 验证。</li>
+<li><strong>算力成本</strong>：未提供具体算力信息。MD 为 3×500 ns，DFT 为截断模型单点计算，整体计算量中等。</li>
+<li><strong>历史/数据依赖</strong>：ESM3 的训练数据隐含进化偏差；FF99SB 力场对血红素铁的描述有已知局限；DFT 截断模型忽略蛋白环境。</li>
+<li><strong>最难情形</strong>：作者未讨论氧亲和力的<strong>变构调控</strong>（R/T 态转换）、pH/Bohr 效应、2,3-BPG 效应等生理复杂性。</li>
+<li><strong>群体/领域边界</strong>：结论仅适用于<strong>α 链第 45 位 His→Arg 突变</strong>在<strong>计算模拟</strong>条件下的行为，不能外推至其他突变位点或体内功能。</li>
+<li><strong>不确定性</strong>：MM-GBSA 未达统计显著（p &gt; 0.05），作者自认为"提示性趋势"；DFT 截断模型可能高估/低估盐桥贡献。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在计算模拟框架下，ESM3 引导的 His45Arg 突变预测可同时改善血红蛋白二聚体的热力学稳定性、血红素结合亲和力（MM-PBSA 显著）及氧化热力学偏好（DFT），但所有结论均需实验验证，且不涉及变构调控等生理复杂性。</p>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺乏实验验证</td>
+<td>全部结论基于计算模拟，无 wet-lab 功能实验</td>
+<td>"Experimental benchmarking of oxygen-binding kinetics and in vivo stability is essential to confirm therapeutic potential"</td>
+<td>Discussion, Limitations</td>
+</tr>
+<tr>
+<td>计算指标不能完全代表生理复杂性</td>
+<td>"computational metrics do not fully replicate physiological complexities such as allosteric effectors"</td>
+<td>未明确</td>
+<td>Discussion, Limitations</td>
+</tr>
+<tr>
+<td>ESM3 的统计偏差</td>
+<td>"may inherit biases that overemphasize well-represented protein families while underperforming on novel motifs"</td>
+<td>未明确</td>
+<td>Discussion, Limitations</td>
+</tr>
+<tr>
+<td>对配体结合位点创新的保守性</td>
+<td>His45Arg 突变受 Mb 同源启发而非纯 de novo 生成</td>
+<td>"highlighting a limitation in the ability of ESM3 to innovate high-risk changes without structural disturbance"</td>
+<td>Discussion, Limitations</td>
+</tr>
+<tr>
+<td>忽略量子效应与长程相互作用</td>
+<td>"reliance on statistical patterns rather than explicit physical simulations may overlook subtle quantum effects or long-range interactions"</td>
+<td>未明确</td>
+<td>Discussion, Limitations</td>
+</tr>
+<tr>
+<td>MM-GBSA 结果未达显著</td>
+<td>作者将 MM-GBSA 结果解释为"提示性趋势"而非确定性证据</td>
+<td>未明确</td>
+<td>Results, 图 7 讨论</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无实验验证，全部结论基于计算</td>
+<td>计算模拟的力场误差、采样不足可能系统性偏向"突变有利"结论</td>
+<td>蛋白质工程的核心是实验功能验证，计算预测的假阳性率未知</td>
+<td>对 esmHb 进行表达、纯化、氧平衡曲线（OEC）和热稳定性（DSC/DSF）实验</td>
+<td>全文无 wet-lab 数据</td>
+</tr>
+<tr>
+<td>以 Hb Fort de France 为基准存在循环论证风险</td>
+<td>该临床突变已知有高氧亲和力表型，ESM3 可能从训练数据中"记住"了这一关联，而非真正泛化</td>
+<td>若 ESM3 只是检索记忆而非推理，则方法对新位点设计无预测力</td>
+<td>在多个未知功能突变位点上测试 ESM3 预测与实验的吻合度</td>
+<td>ESM3 训练数据包含大量已知突变数据库</td>
+</tr>
+<tr>
+<td>二聚体 vs. 四聚体模型</td>
+<td>血红蛋白功能单位为 α₂β₂ 四聚体，本文仅模拟二聚体，忽略亚基间变构通讯</td>
+<td>氧亲和力调控依赖四聚体界面与 T/R 态转换，二聚体模型可能高估/低估突变效应</td>
+<td>对四聚体进行全原子 MD 模拟，比较 R/T 态自由能差</td>
+<td>Methods: "heme-bound Hb dimer"</td>
+</tr>
+<tr>
+<td>DFT 截断模型过度简化</td>
+<td>仅保留血红素-轴向配体-近端残基，忽略蛋白环境介电响应与长程静电</td>
+<td>氧化还原势对蛋白环境高度敏感，截断模型可能产生数十 kcal/mol 误差</td>
+<td>用 QM/MM 方法在完整蛋白环境中重算氧化能</td>
+<td>Methods: DFT 模型描述</td>
+</tr>
+<tr>
+<td>单一突变位点的外推限制</td>
+<td>仅评估 α45 一个位点，无法支持"通用框架"结论</td>
+<td>若方法仅对特定位置有效，则对一般蛋白质工程指导有限</td>
+<td>在多个蛋白-配体体系上测试该管线</td>
+<td>全文仅一个突变位点</td>
+</tr>
+<tr>
+<td>统计显著性不足</td>
+<td>MM-GBSA 未达 p &lt; 0.05，仅 MM-PBSA 显著</td>
+<td>结合亲和力改善的证据强度有限</td>
+<td>增加 MD 重复次数或延长模拟时间，进行 bootstrap 分析</td>
+<td>Results 图 7</td>
+</tr>
+<tr>
+<td>未讨论氧亲和力与释放的权衡</td>
+<td>高氧亲和力可能意味着低组织释放效率，临床可用性存疑</td>
+<td>氧治疗需要的是"结合-释放"平衡，而非单纯高亲和力</td>
+<td>计算 R/T 态氧结合曲线，评估 P50 变化</td>
+<td>Discussion 未涉及</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>跨蛋白同源位点作为 pLM 设计锚点</strong>：当目标蛋白的配体结合位点需要改造时，可搜索同源蛋白中对应位置的"天然解决方案"（如 Mb 的 Arg），用 pLM 验证移植可行性。此策略可迁移到其他配体结合蛋白（如酶活性位点、受体结合口袋）的设计中。</p>
+</li>
+<li>
+<p><strong>"已知突变重发现"作为 pLM 验证基准</strong>：在应用 pLM 到新位点前，先用已知功能突变的临床/实验数据作为基准测试，评估 pLM 的适应度评分是否与已知表型一致。这是低成本、高信息量的验证策略。</p>
+</li>
+<li>
+<p><strong>三级验证范式（结构-动态-电子）</strong>：pLM 生成结构 → MD 验证动态稳定性 → DFT 验证电子结构/反应热力学。这种"统计先验 + 经典力学 + 量子力学"的递进验证框架，可推广到任何涉及配体结合或催化机制的蛋白质工程设计。</p>
+</li>
+<li>
+<p><strong>配体结合位点突变的"保守性设计"原则</strong>：本文通过保留血红素配位关键残基（His87 不可动）、仅改造第二壳层残基（His45），实现了功能增强而不破坏核心互作。这种"壳层分层"设计思路可迁移到其他金属蛋白或辅基蛋白的工程中。</p>
+</li>
+<li>
+<p><strong>多隐式溶剂模型交叉验证</strong>：MM-GBSA 与 MM-PBSA 结果不完全一致时，作者选择报告两种结果并标注显著性差异。这种"不掩盖不一致"的诚实报告方式值得借鉴——计算生物学中单一方法的结果往往不可靠，多方法交叉验证是必要的。</p>
+</li>
+<li>
+<p><strong>ESM3 的"温度退火"策略</strong>：高温（1.0）生成多样性候选，低温（0.0）确定性重折叠确保一致性。这种"探索-收敛"两阶段生成策略可迁移到其他生成式 pLM 的蛋白质设计任务中。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li>
+<p><strong>ESM3 与生成式 pLM</strong>：本文使用的 ESM3 是 Hayes et al. (2025) 开发的生成式多模态模型，该团队此前用 ESM3 生成了 esmGFP（与天然荧光蛋白序列一致性仅 58%，模拟 5 亿年进化）。本文将其应用从"远距离同源生成"扩展到"近缘单点突变设计"，属于 ESM3 应用边界的拓展。</p>
+</li>
+<li>
+<p><strong>Hb Fort de France 突变</strong>：Braconnier et al. (1977) 首次临床描述该突变（α45 His→Arg），Perutz et al. (1985) 通过 NMR 确认其结构完整性。本文以该突变为基准，验证 pLM 能否"重新发现"已知功能突变。</p>
+</li>
+<li>
+<p><strong>肌红蛋白 CD3 位点 Arg 的功能</strong>：Carver et al. (1991) 证明 Mb 中 CD3 位点的碱性残基调节双分子重组和氧亲和力；Ringe et al. (1984) 提出"分子门挡"机制。本文将这些机制性知识作为设计合理性依据。</p>
+</li>
+<li>
+<p><strong>血红素蛋白计算模拟</strong>：FF99SB 力场 + GAFF 配体参数 + AM1-BCC 电荷是血红素蛋白 MD 模拟的常用组合（Case et al., 2005）；MM-GBSA/PBSA 方法广泛用于蛋白-配体结合自由能计算（Shityakov et al., 2021）。</p>
+</li>
+<li>
+<p><strong>与 AlphaFold 类方法的互补</strong>：AlphaFold 主要解决"序列→结构"预测，而本文展示的 pLM + MD + DFT 管线解决"结构→功能"评估。两者可串联：AlphaFold 预测结构 → ESM3 生成突变 → MD/DFT 验证功能。</p>
+</li>
+<li>
+<p><strong>与定向进化互补</strong>：本文是计算驱动的理性设计，与实验定向进化（如噬菌体辅助连续进化）互补——计算可缩小候选空间，实验可验证并进一步优化。</p>
+</li>
+<li>
+<p><strong>[Analysis] 与蛋白质设计领域的连接</strong>：本文的"同源位点移植 + pLM 验证"策略与 Rosetta 的"序列重设计"（Kuhlman et al., 2003）和"功能位点移植"（Tinberg et al., 2013）思路一致，但用 pLM 替代了物理势能函数作为序列建议来源，代表了"AI 替代/增强物理势能"的趋势。</p>
+</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：多同源位点组合突变的 pLM 引导设计
+   - <strong>来源局限/观察</strong>：本文仅评估单一突变位点（α45），未探索多个同源位点的组合效应
+   - <strong>核心假设</strong>：将 Mb 中多个血红素口袋残基（如 CD3、E7、E11 等）的组合移植到 Hb，可产生协同增强效应
+   - <strong>初步方法</strong>：用 ESM3 对多个位点进行组合掩码生成，MD 评估组合突变的动态稳定性，MM-PBSA 计算结合自由能，DFT 评估氧化态稳定性
+   - <strong>验证方式</strong>：与 Hb Fort de France 单突变对比，检验组合突变是否进一步降低 ΔG 和 ΔGbind
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：pLM 适应度评分与物理模拟结果的系统相关性分析
+   - <strong>来源局限/观察</strong>：本文仅报告了 Arg 的 ESM3 评分（2.6），未系统比较 19 种氨基酸的评分与物理模拟结果的关系
+   - <strong>核心假设</strong>：ESM3 适应度评分与 MD/MM-PBSA 计算结果存在可预测的相关性，可用 pLM 评分作为物理模拟的预筛选器
+   - <strong>初步方法</strong>：对 19 种氨基酸突变逐一进行 ESM3 评分 + FoldX ΔG + 短 MD + MM-PBSA，构建评分-能量回归模型
+   - <strong>验证方式</strong>：交叉验证回归模型的预测能力，评估 pLM 评分能否替代部分物理模拟
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：血红蛋白四聚体变构调控的计算评估
+   - <strong>来源局限/观察</strong>：本文仅模拟二聚体，忽略 R/T 态变构转换和 2,3-BPG 效应
+   - <strong>核心假设</strong>：His45Arg 突变对四聚体 R/T 态平衡的影响不同于二聚体中的表现
+   - <strong>初步方法</strong>：构建 α₂β₂ 四聚体模型，分别模拟 R 态和 T 态，计算 T→R 转换自由能差，评估突变对 Bohr 效应和 2,3-BPG 结合的影响
+   - <strong>验证方式</strong>：与已知 Hb 变构效应物（如 BPG、H+）的实验数据对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：pLM 引导的血红蛋白氧亲和力-释放平衡优化
+   - <strong>来源局限/观察</strong>：本文仅关注亲和力增强，未讨论组织氧释放效率
+   - <strong>核心假设</strong>：通过 pLM 设计可在保持高亲和力的同时优化 P50 和 Hill 系数，实现"结合-释放"平衡
+   - <strong>初步方法</strong>：用 ESM3 生成多个候选突变，MD 模拟氧合/脱氧态，计算 P50 变化，筛选亲和力与释放效率的 Pareto 最优解
+   - <strong>验证方式</strong>：计算氧平衡曲线并与临床 Hb 变体数据对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：ESM3 在金属蛋白配体结合位点设计中的通用性评估
+   - <strong>来源局限/观察</strong>：本文仅针对血红素铁，未测试其他金属辅基（如锌指、铁硫簇、铜中心）
+   - <strong>核心假设</strong>：ESM3 对金属配位位点的突变适应度预测精度取决于金属-配体相互作用的化学特异性
+   - <strong>初步方法</strong>：在多个金属蛋白体系（如细胞色素 P450、超氧化物歧化酶、锌指蛋白）中测试 ESM3 评分与实验/计算结果的吻合度
+   - <strong>验证方式</strong>：与已知金属蛋白突变数据库（如 ProTherm、ClinVar）对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：pLM 生成结构的力场依赖性偏差分析
+   - <strong>来源局限/观察</strong>：本文使用 FF99SB 力场，未测试其他力场（如 CHARMM36、AMBER ff19SB）对结论的影响
+   - <strong>核心假设</strong>：ESM3 生成结构的局部构象偏差在不同力场下可能导致不同的 MD 稳定性结论
+   - <strong>初步方法</strong>：对同一 esmHb 结构分别用 2-3 种力场进行 MD，比较 RMSD、RMSF、MM-PBSA 结果的差异
+   - <strong>验证方式</strong>：评估力场间差异是否影响"esmHb 优于 wtHb"的结论稳健性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including Introduction, Methods, Results, Discussion, and supplementary references</li>
+<li><strong>Assessment boundary</strong> Computational predictions only; no experimental validation data provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present a hybrid computational pipeline integrating the ESM3 protein language model with molecular docking, Monte Carlo simulation, molecular dynamics, MM-GBSA/PBSA binding free energy calculations, and DFT to engineer a hemoglobin variant (esmHb) with a single His45Arg mutation. They claim this variant shows enhanced thermodynamic stability, increased heme-binding affinity, and greater thermodynamic favorability of oxidation compared to wild-type hemoglobin, benchmarking against the clinically characterized Hb Fort de France mutation.</li>
+<li><strong>Visible evidence base</strong> Figures 1–9, Tables 1–2, Supplementary Figure S1, Supplementary Table S1 (referenced but not provided in the supplied text)</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary Table S1 (DFT coordinates), Supplementary Figure S1 (block convergence analysis), raw MD trajectory data, ESM3 generation parameters beyond temperature, statistical test details, and any experimental validation data</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This manuscript presents a computationally intensive pipeline for hemoglobin engineering, combining a state-of-the-art protein language model with multiple biophysical simulation methods. The work addresses a relevant problem in therapeutic protein design, and the integration of ESM3 with traditional computational validation is timely. However, the manuscript suffers from several critical weaknesses: the central claims rest entirely on computational predictions without any experimental validation, the statistical framework is inconsistently applied, and some methodological details are insufficiently described to assess reproducibility. The comparison to Hb Fort de France is used as a benchmark but the manuscript does not clearly establish whether the esmHb variant reproduces the experimentally known properties of this mutation beyond qualitative agreement. The DFT methodology, while described in detail, relies on heavily truncated models that may not capture the full electrostatic environment of the heme pocket. The manuscript would benefit from clearer presentation of the novelty relative to existing computational protein engineering approaches and a more rigorous treatment of uncertainty in the computational predictions.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Researchers in computational protein design and engineering, particularly those working with protein language models for therapeutic protein optimization. The work may also interest the hemoglobin research community, specifically those studying oxygen carriers and blood substitute development. The methodological framework could be relevant to computational biologists developing hybrid AI-physics pipelines for protein engineering. However, the lack of experimental validation limits the immediate utility for translational researchers.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> 
+  1. The integration of ESM3 with multiple orthogonal computational validation methods (docking, MD, MM-GBSA/PBSA, DFT) represents a comprehensive in silico pipeline.
+  2. The use of a clinically characterized mutation (Hb Fort de France) as a benchmark provides a meaningful reference point for evaluating the pLM's predictive capability.
+  3. The authors appropriately acknowledge limitations in their statistical interpretation, particularly for MM-GBSA results.
+  4. The detailed description of DFT model construction, including spin states and truncation strategies, demonstrates methodological rigor.
+  5. The work addresses a challenging problem (modifying a ligand-binding site) that is often avoided in AI-driven protein design.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The manuscript claims esmHb exhibits "improved thermodynamic stability (ΔG: −18.48 vs. −12.22 kcal/mol), increased heme-binding affinity (ΔGbind: −11.79 vs. −8.42 kcal/mol), and greater thermodynamic favorability of oxidation according to DFT calculations (ΔE: −173.1 vs. −149.9 kcal/mol)."</li>
+<li><strong>Evidence pointer</strong> Results sections "Protein stability analysis," "Protein–ligand interaction analysis," and "DFT analysis"; Figures 5, 7, 9; Tables 1–2</li>
+<li><strong>Concern</strong> All central claims of enhanced stability, binding affinity, and oxidation favorability are based exclusively on computational predictions. No experimental validation is provided, such as spectroscopic binding assays, thermal denaturation measurements, or oxygen equilibrium curves. The manuscript acknowledges this in the Discussion but does not temper the strength of the claims in the Abstract or Results accordingly.</li>
+<li><strong>Why it matters</strong> Computational predictions of protein stability and binding affinity are known to have significant error rates. Without experimental confirmation, the claim that esmHb is a viable therapeutic candidate with "enhanced stability and oxygen affinity" is not established. The Nature readership expects either experimental validation or substantially more cautious language.</li>
+<li>
+<p><strong>Resolution test</strong> Provide experimental validation of at least one key claim (e.g., heme binding affinity via spectrophotometric titration, thermal stability via circular dichroism, or oxygen affinity via tonometry). Alternatively, substantially revise the claims to clearly state these are computational predictions requiring experimental confirmation.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Claim pointer</strong> The manuscript states "Statistical significance (p &lt; 0.05) was reached for protein–protein interactions via both methods and for protein–heme interactions via MM-PBSA."</li>
+<li><strong>Evidence pointer</strong> Results section "Molecular dynamics simulations"; Figure 7</li>
+<li><strong>Concern</strong> The statistical analysis is inadequately described. The manuscript does not specify what statistical test was used, how many independent samples were compared, what the degrees of freedom were, or how the triplicate MD simulations were treated in the statistical comparison. The use of a Student's t-test (mentioned in Methods) for comparing binding free energies derived from MD simulations is questionable, as these values are not independent measurements but rather derived from correlated trajectory data.</li>
+<li><strong>Why it matters</strong> The claim of statistical significance is central to the manuscript's assertion that esmHb is improved over wtHb. If the statistical framework is flawed, the significance claims are unsupported, undermining the core conclusion.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed description of the statistical methodology, including the exact test used, the number of samples, how the triplicate simulations were handled, and justification for the chosen test given the correlated nature of MD-derived data. If the test is inappropriate, reanalyze the data with a suitable method.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Methodological completeness</li>
+<li><strong>Claim pointer</strong> The manuscript describes the ESM3-based generation of esmHb and claims "the optimized prompting strategy yielded a variant with exactly one mutation (His45Arg), achieving 100% sequence identity to the wild-type α-chain outside the targeted site."</li>
+<li><strong>Evidence pointer</strong> Results section "Optimization of ESM3 parameters for esmHb modeling"; Figure 4</li>
+<li><strong>Concern</strong> The ESM3 generation process is not fully described. The manuscript mentions two prompting strategies and reports r² values for nonlinear regressions, but does not provide sufficient detail on the ESM3 model version, the exact tokenization scheme, the number of generation attempts, the selection criteria for the final model, or how the "deterministic refolding step" was implemented. The definition of RT50 is provided but its biological or structural significance is not discussed.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement for computational studies. Without complete methodological details, other researchers cannot replicate the ESM3 generation process or verify the claims about the pipeline's effectiveness.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a complete description of the ESM3 generation protocol, including model version, all hyperparameters, generation attempts, selection criteria, and the code or pseudocode for the prompting strategy. Consider making the generation script available in the repository.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Interpretational validity</li>
+<li><strong>Claim pointer</strong> The manuscript states "the optimized prompting strategy yielded a variant with exactly one mutation (His45Arg)" and later claims this variant shows "greater thermodynamic favorability of oxidation according to DFT calculations (ΔE: −173.1 vs. −149.9 kcal/mol)."</li>
+<li><strong>Evidence pointer</strong> Results sections "Optimization of ESM3 parameters for esmHb modeling" and "DFT analysis"; Tables 1–2; Figure 9</li>
+<li><strong>Concern</strong> The DFT calculations are performed on heavily truncated models containing only the heme and residues within 5 Å, with the His45Arg mutation retained but all other residues beyond the first coordination shell removed. The reported energy difference of 23.2 kcal/mol between wtHb and esmHb oxidation is attributed to the His45Arg mutation. However, the truncation strategy may not adequately capture long-range electrostatic effects, protein dynamics, or solvation effects that could substantially influence the oxidation thermodynamics. The manuscript does not discuss the sensitivity of the DFT results to the truncation radius or model size.</li>
+<li><strong>Why it matters</strong> The DFT claim is a key piece of evidence for the functional advantage of esmHb. If the truncated model introduces artifacts, the 23.2 kcal/mol difference may not reflect the true thermodynamic difference in the full protein context.</li>
+<li>
+<p><strong>Resolution test</strong> Perform convergence tests with increasing truncation radii, or use a QM/MM approach that includes the full protein environment. Alternatively, temper the DFT claim to acknowledge the limitations of the truncated model.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Comparative analysis</li>
+<li><strong>Claim pointer</strong> The manuscript benchmarks against the Hb Fort de France mutation and claims "ESM3 accurately assessed the fitness effect of the Hb Fort de France mutation."</li>
+<li><strong>Evidence pointer</strong> Results section "ESM3 mutation analysis"; Figure 3</li>
+<li><strong>Concern</strong> The benchmarking claim is not rigorously established. The manuscript shows that ESM3 assigns a high fitness score to the His45Arg mutation, which is consistent with the known phenotype of Hb Fort de France. However, this is a single data point. The manuscript does not compare ESM3's performance against other prediction methods (e.g., Rosetta, FoldX, or other pLMs) for this specific mutation, nor does it test whether ESM3 correctly identifies the experimentally known destabilizing or neutral mutations at other positions in hemoglobin.</li>
+<li><strong>Why it matters</strong> The claim that ESM3 "accurately assessed" the fitness effect is based on a single positive example. A more rigorous benchmark would strengthen the case that ESM3 is a reliable tool for this type of mutation analysis.</li>
+<li>
+<p><strong>Resolution test</strong> Expand the benchmarking to include multiple known hemoglobin mutations with experimentally characterized effects on stability and oxygen affinity. Compare ESM3 predictions against other computational methods.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract</li>
+<li><strong>Issue</strong> The abstract states "ESM3 accurately assessed the fitness effect of the Hb Fort de France mutation" without qualification. Given that this is based on a single mutation and no experimental validation, this overstates the evidence.</li>
+<li>
+<p><strong>Required correction</strong> Revise to "ESM3 predicted a high fitness score for the Hb Fort de France mutation, consistent with its known phenotype."</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods, "Sequence analysis and pLM-based structure prediction"</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The manuscript states "The output tokens were converted into three-dimensional backbone coordinates" but does not specify the software or algorithm used for this conversion, nor the version of ESM3 employed.</li>
+<li>
+<p><strong>Required correction</strong> Specify the ESM3 model version and the software used for token-to-structure conversion.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Consistency</li>
+<li><strong>Affected element</strong> Results, "Molecular dynamics simulations"</li>
+<li><strong>Evidence pointer</strong> Results section</li>
+<li><strong>Issue</strong> The manuscript reports "mean RMSD" values but does not specify whether these are averaged over the three replicate simulations or over time for a single simulation. The presentation of error bars in Figure 6 is not described.</li>
+<li>
+<p><strong>Required correction</strong> Clarify how the mean values and error bars were computed from the triplicate simulations.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Results, "DFT analysis"</li>
+<li><strong>Evidence pointer</strong> Results section; Tables 1–2</li>
+<li><strong>Issue</strong> The manuscript reports ΔE values for oxidation but does not provide the absolute energies or the components of the energy decomposition. The reader cannot assess whether the 23.2 kcal/mol difference arises from electronic effects, electrostatic interactions, or other contributions.</li>
+<li>
+<p><strong>Required correction</strong> Provide a breakdown of the energy components contributing to the ΔE difference between wtHb and esmHb.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Accessibility</li>
+<li><strong>Affected element</strong> Discussion</li>
+<li><strong>Evidence pointer</strong> Discussion section</li>
+<li><strong>Issue</strong> The Discussion references "molecular doorstop" mechanism and other biophysical concepts without sufficient explanation for a general readership.</li>
+<li>
+<p><strong>Required correction</strong> Briefly explain the "molecular doorstop" mechanism or provide a citation that does so.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Data availability</li>
+<li><strong>Affected element</strong> Data availability statement</li>
+<li><strong>Evidence pointer</strong> Data availability statement</li>
+<li><strong>Issue</strong> The GitHub repository is referenced but its contents are not described. It is unclear whether the repository contains code, data, or both.</li>
+<li><strong>Required correction</strong> Describe the contents of the repository and provide a DOI or version identifier.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that esmHb has "enhanced stability and oxygen affinity" is unsupported by experimental evidence; all supporting data are computational predictions.</li>
+<li>The claim that "ESM3 accurately assessed the fitness effect of the Hb Fort de France mutation" is based on a single mutation and lacks comparative benchmarking.</li>
+<li>The DFT-derived 23.2 kcal/mol difference in oxidation favorability is based on heavily truncated models and may not be representative of the full protein system.</li>
+<li>The statistical significance claims for MM-GBSA/PBSA results are not supported by adequate methodological description.</li>
+<li>The claim that esmHb is "applicable to hemoglobinopathies, artificial blood substitutes, and more" is speculative given the absence of experimental validation.</li>
+<li>The statement that the pipeline is "generalizable" is not supported by demonstration on multiple protein systems.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

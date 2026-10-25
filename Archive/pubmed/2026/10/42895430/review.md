@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no figures, tables, methods details, or supporting information were provided
+- **Shared manuscript claim summary** The authors apply a localized second-order vibrational quasi-degenerate perturbation theory (VQDPT2) combined with QM/MM calculations to compute amide I, II, and III spectra of insulin dimer and ubiquitin. They report convergence of computed spectra upon averaging over ten MD snapshots, assign amide II and III peak positions to coil contributions, find protein-dependent origins for amide I maxima, and report hydrogen-bond-dependent amide I frequency shifts correlated with amide dihedral angle changes in alpha-helix and beta-sheet structures. They claim the method enables direct interpretation of amide band shifts associated with conformational changes.
+- **Visible evidence base** Abstract text only; no numerical data, spectra, convergence metrics, or methodological details are visible
+- **Missing materials affecting confidence** Full manuscript, figures, tables, computational details, MD simulation parameters, VQDPT2 implementation specifics, convergence criteria, and experimental comparison data
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful computational approach for interpreting protein amide spectra, with a plausible physical rationale. However, the evidence base available for review is limited to the abstract, which prevents verification of the central claims regarding spectral convergence, band assignments, and hydrogen-bond-dependent frequency shifts. The claim that localized VQDPT2 provides a "useful basis" for spectral analysis is modest and appropriately qualified, but the more specific conclusions about secondary-structure origins of amide bands require scrutiny of the underlying data. The abstract is clearly written and the methodological context is understandable to a specialist audience.
+- **Who would be interested in the results, and why** Computational spectroscopists and biophysical chemists interested in vibrational analysis of proteins, particularly those working on amide band interpretation and secondary-structure determination. Researchers developing QM/MM and perturbative vibrational methods would also find the methodological application relevant. The potential link between amide frequency shifts and dihedral angle changes may interest structural biologists using vibrational spectroscopy as a conformational probe.
+- **Major strengths** The method addresses a known limitation of empirical approaches to amide band assignment by using localized anharmonic calculations. The explicit acknowledgment of the neglect of inter-amide vibrational coupling is honest and frames the method's scope appropriately. The use of MD snapshots for ensemble averaging is a reasonable strategy for capturing conformational heterogeneity. The subdivision of spectra by secondary structure and hydrogen-bonding type provides a systematic framework for interpretation.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that "the computed spectra converged to a sufficient degree" by averaging over ten MD snapshots.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states that ten snapshots were sufficient for convergence but provides no quantitative convergence metrics, no comparison of spectra obtained with different numbers of snapshots, and no statistical measure of variability across snapshots. Ten snapshots is a small ensemble for a protein system, and convergence of vibrational spectra with respect to conformational sampling is not trivial to establish.
+  - **Why it matters** If the spectra are not truly converged, all subsequent assignments and correlations between band positions and secondary-structure elements could be artifacts of insufficient sampling. The central interpretive claims depend on the reliability of the averaged spectra.
+  - **Resolution test** Provide convergence plots showing spectral features (peak positions, intensities, band shapes) as a function of the number of snapshots, with error bars or standard deviations across independent snapshot sets. Demonstrate that adding more snapshots does not materially change the reported band positions or assignments.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors state that "the amide II and III peak positions tend to be closely associated with the coil contribution, whereas the origin of the amide I maximum is more protein dependent."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** This is a central interpretive claim, but the abstract provides no quantitative decomposition of the total spectra into secondary-structure contributions, no peak-fitting results, no assignment criteria, and no statistical significance testing. The claim that amide II and III are "closely associated" with coil contributions is vague without numerical support.
+  - **Why it matters** The primary scientific contribution appears to be the assignment of spectral features to structural origins. Without quantitative evidence, the claim cannot be evaluated, and the reader cannot distinguish a robust trend from a qualitative impression.
+  - **Resolution test** Provide a table or figure showing the decomposition of amide I, II, and III bands into secondary-structure components (alpha-helix, beta-sheet, coil, turn) with peak positions, intensities, and fractional contributions. Include a statistical comparison (e.g., correlation coefficients or significance tests) between band positions and secondary-structure fractions across the two proteins.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that "hydrogen-bond-dependent amide I frequency shifts were found to correlate with changes in the amide dihedral angles (O=C-N-H)."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract reports a correlation between amide I frequency shifts and dihedral angle changes but provides no correlation coefficient, no scatter plot, no definition of which dihedral angle is being varied, and no explanation of the physical mechanism linking hydrogen bonding to dihedral angle changes. The direction and magnitude of the correlation are unspecified.
+  - **Why it matters** This correlation is presented as a key mechanistic insight. Without quantitative details, the claim is not testable, and the reader cannot assess whether the correlation is strong, weak, or potentially coincidental given the small number of structures examined.
+  - **Resolution test** Provide a scatter plot of amide I frequency shift versus dihedral angle change with the correlation coefficient and significance level. Specify which dihedral angle (phi, psi, or the amide plane angle) is used and justify the choice. Discuss the physical mechanism by which hydrogen bonding alters the dihedral angle and thus the frequency.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Method description
+  - **Evidence pointer** Abstract
+  - **Issue** The term "localized, second-order vibrational quasi-degenerate perturbation theory (VQDPT2)" is introduced without a brief explanation of what "localized" means in this context or why quasi-degenerate perturbation theory is needed for amide vibrations.
+  - **Required correction** Add one sentence explaining that "localized" refers to treating each amide group independently and that quasi-degenerate perturbation theory accounts for near-resonant couplings within each local mode subspace.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness of reporting
+  - **Affected element** Experimental comparison
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract states that "calculated amide I and III frequencies of the coil structures showed good agreement with experimental values" but does not specify the magnitude of the agreement (e.g., within 5 cm-1 or 20 cm-1) or which experimental reference is used.
+  - **Required correction** Report the numerical deviation from experiment and cite the experimental source for the coil amide I and III frequencies.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity of scope
+  - **Affected element** Method limitation statement
+  - **Evidence pointer** Abstract
+  - **Issue** The authors acknowledge "neglect of vibrational coupling between neighboring amide groups" as a limitation but do not discuss the expected impact of this neglect on the specific conclusions drawn.
+  - **Required correction** Add a sentence indicating whether the neglect of inter-amide coupling is expected to affect the relative band positions across secondary structures or only the absolute frequencies.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (spectral convergence not demonstrated), R1-M2 (secondary-structure assignment not quantitatively supported), R1-M3 (hydrogen-bond/dihedral correlation not quantified)
+- **Assessment against Nature-style criteria** 
+  - Originality: The application of localized VQDPT2 to protein amide bands is a methodological extension rather than a fundamentally new approach. The originality lies in the systematic decomposition of spectra by secondary structure and hydrogen-bonding type, which is a useful contribution but not transformative.
+  - Scientific importance: The work addresses a long-standing problem in vibrational spectroscopy of proteins, namely the structural interpretation of amide bands. If the claims are fully supported, the results would be of interest to the spectroscopy community, but the importance is incremental rather than paradigm-shifting.
+  - Interdisciplinary readership: The abstract is written for a specialist audience in computational spectroscopy. The potential relevance to structural biology is mentioned but not developed in a way that would attract a broad interdisciplinary readership.
+  - Technical soundness: Cannot be fully assessed from the abstract. The convergence claim and the correlation claim require quantitative evidence that is not visible. The method's limitation regarding inter-amide coupling is acknowledged but its impact on conclusions is not discussed.
+  - Readability for nonspecialists: The abstract is clear for a specialist but uses terminology that would be challenging for a general scientific audience. The physical significance of the findings is not framed in a way that would engage nonspecialists.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents plausible claims, but the absence of quantitative convergence data, spectral decomposition results, and correlation statistics prevents verification of the central conclusions. The authors should be encouraged to resubmit with the full evidence base, at which point the technical soundness can be properly evaluated.
+
+## Risk / unsupported claims
+- The claim that ten MD snapshots provide sufficient convergence of computed spectra is unsupported without convergence metrics.
+- The claim that amide II and III peak positions are "closely associated" with coil contributions is unsupported without quantitative decomposition data.
+- The claim that amide I frequency shifts correlate with amide dihedral angle changes is unsupported without correlation statistics.
+- The claim of "good agreement" between calculated and experimental coil frequencies is unquantified and cannot be evaluated.
+- The general statement that "localized VQDPT2 enables direct interpretation of amide band shifts" is a reasonable aspiration but is not demonstrated as a general capability from the two proteins studied.

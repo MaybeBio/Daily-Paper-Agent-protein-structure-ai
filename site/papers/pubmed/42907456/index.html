@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generating protein hydrogels with customizable stress relaxation behavior via deep learning-driven entanglement design. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Generating protein hydrogels with customizable stress relaxation behavior via deep learning-driven entanglement design.</h1>
+      <div class="meta">Deng, Puqing; Wu, Yutong; Fok, Hong Kiu Francis; Li, Linyan; Zhang, Wen-Bin; Sun, Fei; Gao, Hanyu</div>
+      <div class="meta muted">
+        
+        <span class="journal">Nature communications</span>
+        · 2026-10-22
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42907456/">原文</a>
+      </div>
+      <p class="one-liner">该文提出深度学习框架TangleDiff，用于从头设计具有可编程结合能的同源二聚体缠结蛋白，并通过实验验证其可定制水凝胶应力松弛行为，核心贡献在蛋白质结构设计与生成，方法为AI驱动，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein hydrogels are promising artificial extracellular matrices (ECMs) for 3D stem cell and organoid culture due to their favorable stress relaxation behavior (a decrease in stress in response to strain). Inter-chain entangled motifs, in which different protein chains are interlaced, represent a powerful strategy to synthesize such hydrogels. However, designing these motifs with tailored properties such as binding energy remains a major challenge due to the difficulty of simultaneously controlling these properties while ensuring entanglement. Here, we introduce TangleDiff, a deep learning framework for the de novo design of homodimeric entangled proteins with programmable features. TangleDiff generates diverse foldable entangled sequences with an in-silico success rate exceeding 70%, markedly outperforming current models (~1%). By conditioning TangleDiff on inter-chain binding energy, we generate novel protein dimers whose binding energies closely match the specified ranges, with approximately 70% of successful designs conforming to expected values. We experimentally validate TangleDiff by designing nine homodimers targeting various binding energies; seven successfully form hydrogels, with stress relaxation dynamics correlated with specified binding energies. This work establishes a general strategy for entangled protein design, opening avenues for entanglement-based biomaterial innovation.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质水凝胶因其良好的应力松弛行为（响应应变时应力减小）而成为用于三维干细胞和类器官培养的有前景的人工细胞外基质（ECMs）。链间缠结基序，其中不同蛋白质链相互交织，代表了一种合成此类水凝胶的强大策略。然而，设计具有定制特性（如结合能）的这些基序仍是一项重大挑战，因为难以在确保缠结的同时同步控制这些特性。在此，我们引入了TangleDiff，一种用于从头设计具有可编程特性的同源二聚体缠结蛋白质的深度学习框架。TangleDiff生成了多样化的可折叠缠结序列，其计算机模拟成功率超过70%，显著优于当前模型（约1%）。通过将TangleDiff条件化于链间结合能，我们生成了新型蛋白质二聚体，其结合能与指定范围紧密匹配，约70%的成功设计符合预期值。我们通过设计九个靶向不同结合能的同源二聚体来实验验证TangleDiff；其中七个成功形成水凝胶，其应力松弛动力学与指定结合能相关。这项工作建立了缠结蛋白质设计的通用策略，为基于缠结的生物材料创新开辟了途径。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Generating protein hydrogels with customizable stress relaxation behavior via deep learning-driven entanglement design</li>
+<li><strong>作者</strong>：Deng, Puqing; Wu, Yutong; Fok, Hong Kiu Francis; Li, Linyan; Zhang, Wen-Bin; Sun, Fei; Gao, Hanyu</li>
+<li><strong>单位</strong>：未提供（推测为香港科技大学 HKUST，依据致谢部分）</li>
+<li><strong>期刊/平台</strong>：Nature Communications</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-22）</li>
+<li><strong>论文类型</strong>：研究论文（Research Article）</li>
+<li><strong>领域</strong>：蛋白质设计 × 深度学习生成模型 × 生物材料（水凝胶）</li>
+<li><strong>关键词</strong>：蛋白质水凝胶、应力松弛、纠缠设计、扩散模型、蛋白质语言模型、结合能条件生成</li>
+<li><strong>DOI/arXiv 号</strong>：10.1038/s41467-026-77607-9</li>
+<li><strong>代码</strong>：未提供（文中提及 custom scripts 见 Code Availability，但正文未给出具体仓库）</li>
+<li><strong>数据</strong>：79,890 条纠缠同源二聚体序列数据集（源自 UniRef50 挖掘）</li>
+<li><strong>阅读日期</strong>：2026-10-22</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>蛋白质从头设计</strong>分支，具体为<strong>基于扩散模型的纠缠蛋白序列生成</strong>，并延伸至<strong>生物材料功能调控</strong>（水凝胶应力松弛行为）。与 AlphaFold/ESMFold 等结构预测工具形成「生成-验证」闭环，与分子模拟（MD）结合验证设计稳定性，是该方向中「AI 生成 + 实验验证」的完整范例。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 TangleDiff——一个基于预训练蛋白质语言模型（ESMFold 编码）和扩散 Transformer（DiT）的生成框架，通过条件生成具有指定链间结合能的纠缠同源二聚体序列，经虚拟筛选和实验验证，成功制备出应力松弛行为可调控的蛋白质水凝胶。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何从头设计具有可编程链间结合能的纠缠同源二聚体蛋白，并将其用作物理交联点来制备应力松弛行为可定制的水凝胶？</li>
+<li><strong>为什么重要</strong>：蛋白质水凝胶作为人工细胞外基质（ECM）在 3D 干细胞/类器官培养中具有关键应用，其应力松弛行为直接影响细胞信号传导、黏附、增殖和分化。然而，天然纠缠蛋白基序种类有限（仅 p53dim、HP0242 等少数几个），严重限制了水凝胶粘弹性的可调范围。</li>
+<li><strong>现有方法不足</strong>：</li>
+<li>天然纠缠基序数量少，结构多样性受限；</li>
+<li>已有的从头设计纠缠蛋白方法依赖手工拓扑设计和精确几何控制，需要领域专家知识，难以规模化；</li>
+<li>基于串联重复单元的设计策略将序列/结构限制在狭窄子空间，无法覆盖广泛的结合能范围。</li>
+<li><strong>精确的 Can 问题</strong>：Can a deep learning generative model learn the sequence determinants of protein entanglement and conditionally generate novel entangled homodimers with user-specified inter-chain binding energies, such that the resulting protein hydrogels exhibit predictable stress relaxation behaviors?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络为「经外部核验」+「仅本文框架」混合标注。</p>
+</blockquote>
+<ol>
+<li><strong>纠缠蛋白的天然发现与表征</strong>（经外部核验）：p53 二聚化结构域（p53dim）和 HP0242 是已知的天然纠缠同源二聚体，其链间物理缠结赋予蛋白质独特的力学和组装性质。此前研究已用 GLN（Gauss Linking Number）量化纠缠程度。</li>
+<li><strong>纠缠蛋白的从头设计</strong>（经外部核验）：早期工作通过串联重复天然基序或人工设计拓扑来构建纠缠蛋白，但受限于重复单元的序列空间，难以实现性质连续可调。</li>
+<li><strong>深度学习蛋白质生成</strong>（经外部核验）：以 ProteinMPNN（逆折叠）、RFdiffusion（结构扩散）为代表的生成模型实现了蛋白质序列和结构的从头设计，但主要针对单体或复合物的折叠与结合，未专门处理「纠缠拓扑」这一特殊几何约束。</li>
+<li><strong>数据驱动的纠缠基序挖掘</strong>（仅本文框架）：本文提出两阶段筛选策略，从 UniRef50 约 1270 万条代表序列中，通过 ESMFold 预测同源二聚体结构、GLN ≥ 0.7 判定纠缠、C2 对称性和 pLDDT ≥ 80 过滤，最终获得 79,890 条高质量纠缠序列——这是首个大规模纠缠蛋白序列数据集。</li>
+<li><strong>条件生成与性质调控</strong>（仅本文框架）：TangleDiff 将结合能作为条件标签，通过 adaLN-Zero 模块注入扩散 Transformer，实现「按需生成」特定结合能范围的纠缠蛋白，将生成模型的输出与宏观材料性质直接挂钩。</li>
+</ol>
+<p><strong>本文主张的位置</strong>：位于「纠缠蛋白从头设计」与「深度学习条件生成」的交叉点，首次实现从序列生成到水凝胶宏观流变性质的全链条闭环。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>纠缠蛋白基序稀缺</td>
+<td>天然已知纠缠基序仅 p53dim、HP0242 等少数几个，结构多样性受限</td>
+<td>纠缠拓扑在进化中罕见，且实验表征困难</td>
+<td>Introduction 第 2 段</td>
+</tr>
+<tr>
+<td>从头设计纠缠拓扑困难</td>
+<td>已有设计依赖串联重复和手工几何控制，需领域专家知识</td>
+<td>纠缠界面的空间互补性和动力学折叠路径难以同时满足</td>
+<td>Introduction 第 2 段；Discussion 第 1 段</td>
+</tr>
+<tr>
+<td>性质调控缺乏系统性</td>
+<td>无法连续调节纠缠蛋白的结合强度，导致水凝胶粘弹性不可控</td>
+<td>缺乏大规模纠缠序列数据，无法建立序列-性质映射</td>
+<td>Introduction 第 2 段；Results 图 4</td>
+</tr>
+<tr>
+<td>现有生成模型不适用于纠缠蛋白</td>
+<td>通用蛋白生成模型（如 RFdiffusion）未针对纠缠拓扑优化，成功率极低（~1%）</td>
+<td>纠缠界面的几何约束（链间穿绕）超出常规复合物设计范畴</td>
+<td>Results 图 3c；Supplementary Fig. 8</td>
+</tr>
+<tr>
+<td>计算筛选与实验验证脱节</td>
+<td>许多设计在计算上合理但实验不折叠或不组装</td>
+<td>缺乏结合能的准确计算与可溶性/稳定性联合筛选流程</td>
+<td>Results 图 4e；Methods 虚拟筛选部分</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>TangleDiff 是一个两阶段框架：
+- <strong>数据阶段</strong>：从 UniRef50 大规模挖掘纠缠同源二聚体序列（ESMFold 预测 + GLN 判定 + C2 对称性 + pLDDT 过滤），构建训练集；
+- <strong>生成阶段</strong>：用 ESM2-650M 将序列编码为 logits，在 logits 空间施加扩散过程；以 DiT 为骨干网络，通过 adaLN-Zero 注入条件（结合能分箱标签）；训练目标为最小化预测 logits 与真实 logits 的 MSE；
+- <strong>筛选阶段</strong>：生成序列经 ESMFold/AlphaFold2 结构预测，按纠缠性、pLDDT、结合能、可溶性等多指标虚拟筛选；
+- <strong>实验阶段</strong>：将筛选出的设计嵌入 SpyTag/SpyCatcher 水凝胶体系，通过流变学测试验证应力松弛行为。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>纠缠拓扑可被序列模型隐式学习</strong>：尽管纠缠是全局拓扑性质，但通过大规模数据训练，扩散模型能够隐式捕获纠缠所需的序列特征，无需显式几何建模；</li>
+<li><strong>结合能是连接分子设计与宏观性质的桥梁</strong>：将 Rosetta 计算的链间结合能作为条件变量，使得「分子层面的相互作用强度」直接映射到「宏观水凝胶的应力松弛速率」；</li>
+<li><strong>logits 空间扩散优于序列空间扩散</strong>：在预训练语言模型的 logits 连续空间施加高斯扩散，比直接在离散序列空间扩散更易训练、生成质量更高（消融实验支持）。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>「数据挖掘 → 条件生成 → 虚拟筛选 → 实验验证」是蛋白质设计的高效闭环范式</strong>，可迁移到其他功能蛋白设计（如酶、结合蛋白、自组装模块）；</li>
+<li><strong>宏观材料性质可通过分子层面的可计算量（如结合能）作为中间变量实现端到端调控</strong>，这一思路可推广到其他生物材料设计；</li>
+<li><strong>预训练语言模型 + 扩散模型的组合在蛋白质序列生成中具有通用优势</strong>，其 logits 空间提供了比 one-hot 序列更平滑的生成流形。</li>
+</ul>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：条件标签（结合能分箱，如 &lt; −160、−160~−140、−140~−120、−120~−100、&gt; −100 REU）、目标序列长度（40–50 aa 或从经验分布采样）</li>
+<li><strong>输出</strong>：纠缠同源二聚体蛋白序列（可直接合成表达）</li>
+<li><strong>模块</strong>：
+  1. <strong>数据挖掘模块</strong>：UniRef50 两阶段筛选（ESMFold 同源二聚体预测 → GLN ≥ 0.7 → C2 对称 → pLDDT ≥ 80）
+  2. <strong>编码模块</strong>：ESM2-650M 将序列 token 映射为 logits（冻结参数）
+  3. <strong>扩散模块</strong>：DiT（Diffusion Transformer），含 adaLN-Zero 条件注入、自条件化（self-conditioning）、线性噪声调度
+  4. <strong>解码模块</strong>：argmax 将 logits 映射回序列
+  5. <strong>虚拟筛选模块</strong>：ESMFold/AlphaFold2 结构预测 → 纠缠判定（GLN ≥ 0.7）→ pLDDT &gt; 70 → ProteinMPNN 序列-结构一致性评分 &lt; 1.4906 → Rosetta 单链/复合物能量 → ProteinSol 可溶性 &gt; 0.45
+  6. <strong>实验验证模块</strong>：基因合成 → E. coli 表达 → SpyTag/SpyCatcher 交联 → 流变学测试</li>
+<li><strong>训练</strong>：Adam 优化器（β1=0.9, β2=0.999），学习率 1×10⁻⁴，全局 batch size 128，4×RTX3090，118,000 步（约 20 小时）</li>
+<li><strong>文字流程</strong>：从 UniRef50 挖掘纠缠序列 → 用 ESM2 编码为 logits → 在 logits 上训练扩散模型（条件=结合能）→ 采样生成新序列 → 结构预测验证纠缠与折叠 → 多指标筛选 → 实验表达与成胶 → 流变学表征应力松弛</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>两阶段数据挖掘</td>
+<td>从 UniRef50 大规模识别纠缠同源二聚体序列</td>
+<td>纠缠序列在数据库中稀疏，需高效筛选策略平衡计算成本与覆盖率</td>
+<td>输入：UniRef50 代表序列（50–100 aa）；输出：79,890 条纠缠序列</td>
+<td>Results 图 1a–d；Methods 数据集构建</td>
+<td>预期影响：训练数据不足，模型无法学习纠缠特征（[Analysis] 基于数据驱动模型的一般依赖）</td>
+</tr>
+<tr>
+<td>ESM2-650M 编码器</td>
+<td>将离散序列映射为连续 logits 空间</td>
+<td>提供有意义的序列语义空间，使扩散过程在连续域进行</td>
+<td>输入：氨基酸序列；输出：20 维 logits 向量</td>
+<td>Results 图 3h（ESM2 优于 VHSE、TAPE 等编码器）</td>
+<td>实测消融：替换为 VHSE 或 TAPE 后生成性能显著下降</td>
+</tr>
+<tr>
+<td>DiT 扩散骨干</td>
+<td>学习 logits 分布并去噪生成</td>
+<td>扩散模型擅长高维连续分布建模，DiT 适合序列长度可变</td>
+<td>输入：噪声 logits + 条件标签 + 时间步；输出：去噪 logits</td>
+<td>Results 图 2d–e；Methods 模型训练</td>
+<td>预期影响：无扩散模型则无法生成新序列（[Analysis] 核心生成模块）</td>
+</tr>
+<tr>
+<td>adaLN-Zero 条件注入</td>
+<td>将结合能标签注入生成过程</td>
+<td>实现条件生成，使输出序列满足指定结合能范围</td>
+<td>输入：结合能分箱标签；输出：调制后的 DiT 块参数</td>
+<td>Results 图 4b（生成序列结合能落在指定区间）</td>
+<td>预期影响：移除后只能无条件生成，无法调控性质</td>
+</tr>
+<tr>
+<td>自条件化（self-conditioning）</td>
+<td>将上一步预测的 logits 作为额外输入</td>
+<td>提高生成质量与训练稳定性</td>
+<td>输入：上一步预测 logits；输出：拼接后送入 DiT</td>
+<td>Results 图 3i（消融实验）</td>
+<td>实测消融：移除后生成性能下降</td>
+</tr>
+<tr>
+<td>虚拟筛选流水线</td>
+<td>多指标过滤生成序列</td>
+<td>提高实验成功率，确保设计可折叠、可纠缠、可溶</td>
+<td>输入：生成序列；输出：9 个候选设计</td>
+<td>Results 图 4e–g；Methods 虚拟筛选</td>
+<td>预期影响：无筛选则实验成功率大幅降低（[Analysis] 基于实验验证结果推断）</td>
+</tr>
+<tr>
+<td>SpyTag/SpyCatcher 水凝胶体系</td>
+<td>将纠缠二聚体嵌入网络形成物理交联</td>
+<td>验证纠缠蛋白作为交联点的功能</td>
+<td>输入：纯化蛋白；输出：水凝胶</td>
+<td>Results 图 5a–f</td>
+<td>预期影响：无此体系则无法验证宏观性质</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ol>
+<li>
+<p><strong>GLN（Gauss Linking Number）</strong>：
+   [
+   \text{GLN} = \sum_{i=1}^{N_A-1} \sum_{j=1}^{N_B-1} \frac{(\mathbf{r}<em>i^A \times \mathbf{r}<em>j^B) \cdot \mathbf{l}</em>{ij}}{4\pi |\mathbf{l}</em>{ij}|^3}
+   ]
+   - (\mathbf{r}_i^A)：链 A 中第 i 个和第 i+1 个 Cα 原子之间的向量（N 端指向 C 端）
+   - (\mathbf{r}<em>j^B)：链 B 中第 j 个和第 j+1 个 Cα 原子之间的向量
+   - (\mathbf{l}</em>{ij})：连接 (\mathbf{r}_i^A) 中点和 (\mathbf{r}_j^B) 中点的向量
+   - (N_A, N_B)：链 A 和链 B 的残基数
+   - <strong>用途</strong>：量化两条链之间的缠绕程度，|GLN| ≥ 0.7 判定为纠缠</p>
+</li>
+<li>
+<p><strong>扩散模型训练损失（MSE）</strong>：
+   [
+   \mathcal{L} = \mathbb{E}_{t, \mathbf{z}_0, \epsilon} \left[ | \hat{\mathbf{z}}_0(\mathbf{z}_t, t, c) - \mathbf{z}_0 |^2 \right]
+   ]
+   - (\mathbf{z}_0)：真实 logits（ESM2 编码）
+   - (\mathbf{z}_t)：t 步噪声化 logits
+   - (c)：条件标签（结合能分箱）
+   - (\hat{\mathbf{z}}_0)：模型预测的去噪 logits
+   - <strong>用途</strong>：训练 TangleDiff 预测原始 logits</p>
+</li>
+<li>
+<p><strong>弛豫谱转换关系</strong>：
+   [
+   G'(\omega) = \int_{-\infty}^{\infty} H(\tau) \frac{\omega^2 \tau^2}{1 + \omega^2 \tau^2} d\ln(\tau)
+   ]
+   [
+   G''(\omega) = \int_{-\infty}^{\infty} H(\tau) \frac{\omega \tau}{1 + \omega^2 \tau^2} d\ln(\tau)
+   ]
+   - (G'(\omega))：储能模量（storage modulus）
+   - (G''(\omega))：损耗模量（loss modulus）
+   - (H(\tau))：连续弛豫谱
+   - (\omega)：角频率
+   - (\tau)：弛豫时间
+   - <strong>用途</strong>：从频率扫描数据计算弛豫谱，提取特征弛豫时间</p>
+</li>
+</ol>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：</li>
+<li>训练集：79,890 条纠缠同源二聚体序列（UniRef50 挖掘，32,339 簇 @50% 同一性）</li>
+<li>生成评估：4,000 条无条件生成序列；每条件 400 条（图 4b,c）或 4,000 条（虚拟筛选）</li>
+<li>实验验证：9 个设计（每结合能条件 3 个）</li>
+<li><strong>基线</strong>：无直接基线模型对比；与已有生成模型对比见 Supplementary Fig. 8（最佳替代模型成功率 1.02%）</li>
+<li><strong>指标</strong>：pLDDT（结构置信度）、纠缠率（GLN ≥ 0.7 比例）、序列-结构一致性（ProteinMPNN score）、Rosetta 结合能、实验成胶率、弛豫时间</li>
+<li><strong>评测协议</strong>：ESMFold 和 AlphaFold2 双预测器交叉验证；MD 模拟 200 ns 评估结构稳定性；流变学频率扫描 + 弛豫谱分析</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无条件生成评估</td>
+<td>TangleDiff 能生成高质量纠缠序列</td>
+<td>4,000 条生成序列 vs 训练集分布</td>
+<td>平均 pLDDT ≈ 80，纠缠率 &gt; 80%</td>
+<td>模型学会了纠缠序列的分布特征</td>
+<td>不能证明生成序列在实验中都折叠</td>
+<td>Results 图 3a–c</td>
+</tr>
+<tr>
+<td>编码器消融</td>
+<td>ESM2 优于其他编码器</td>
+<td>ESM2-650M vs VSEH vs TAPE-Bert vs TAPE-Unirep</td>
+<td>ESM2 显著优于其他</td>
+<td>预训练语言模型提供了更好的序列语义空间</td>
+<td>未测试更大 ESM2 变体</td>
+<td>Results 图 3h</td>
+</tr>
+<tr>
+<td>训练策略消融</td>
+<td>自条件化、线性噪声调度等有效</td>
+<td>逐项移除各策略</td>
+<td>每项移除均导致性能下降</td>
+<td>各策略均有贡献</td>
+<td>未测试策略间交互效应</td>
+<td>Results 图 3i</td>
+</tr>
+<tr>
+<td>条件生成（结合能）</td>
+<td>生成序列结合能落在指定区间</td>
+<td>5 个结合能条件，每条件 400 条</td>
+<td>约 70% 生成序列结合能符合指定范围</td>
+<td>条件控制有效</td>
+<td>未测试连续结合能控制精度</td>
+<td>Results 图 4b</td>
+</tr>
+<tr>
+<td>虚拟筛选</td>
+<td>筛选流程能选出可实验验证的设计</td>
+<td>4,000 条/条件 → 多指标筛选 → 9 个候选</td>
+<td>9 个设计中 8 个有效二聚化</td>
+<td>筛选流程有效</td>
+<td>样本量小，无法估计总体成功率</td>
+<td>Results 图 4e–g</td>
+</tr>
+<tr>
+<td>MD 模拟</td>
+<td>设计结构在动力学上稳定</td>
+<td>200 ns 显式溶剂模拟</td>
+<td>8/9 设计 RMSD 稳定；C4_1771 解离</td>
+<td>多数设计动力学稳定</td>
+<td>MD 力场精度有限</td>
+<td>Supplementary Fig. 15</td>
+</tr>
+<tr>
+<td>水凝胶制备</td>
+<td>设计能形成水凝胶</td>
+<td>9 个设计 × 2 种网络类型</td>
+<td>7/8 二聚化设计成功成胶</td>
+<td>纠缠二聚体可作为物理交联点</td>
+<td>未测试所有设计组合</td>
+<td>Results 图 5e–f</td>
+</tr>
+<tr>
+<td>流变学测试</td>
+<td>应力松弛与结合能相关</td>
+<td>不同结合能设计的水凝胶</td>
+<td>弱结合（C4）弛豫快（τ~2.4 s），强结合（C0）无弛豫峰</td>
+<td>结合能调控应力松弛速率</td>
+<td>未建立定量标度关系</td>
+<td>Results 图 6b–c</td>
+</tr>
+<tr>
+<td>负对照</td>
+<td>纠缠是凝胶化的必要条件</td>
+<td>C4_1771（非二聚化）vs 其他设计</td>
+<td>C4_1771 无法形成稳定凝胶</td>
+<td>纠缠交联是凝胶化的关键</td>
+<td>未测试非纠缠但强结合对照</td>
+<td>Results 图 5f；Supplementary Fig. 18</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文解决的是「纠缠同源二聚体」的从头设计，而非所有纠缠拓扑（如三聚体、异源二聚体、更复杂链环）。结论仅适用于同源二聚体纠缠。</li>
+<li><strong>条件控制范围</strong>：结合能控制是在分箱级别（5 个离散区间）实现的，并非连续精确调控。约 70% 的生成序列落在指定区间，仍有 30% 偏差。</li>
+<li><strong>实验验证范围</strong>：9 个设计中 8 个二聚化、7 个成胶。样本量小，不能外推为普适成功率。C4_1771 的失败提示部分设计虽计算上合理但实验不折叠。</li>
+<li><strong>宏观性质关联</strong>：应力松弛行为与结合能相关，但弛豫时间与结合能之间未建立定量标度关系（仅有定性趋势：弱结合→快弛豫，强结合→慢/无弛豫）。</li>
+<li><strong>端到端状态</strong>：本文实现了「序列生成 → 结构验证 → 水凝胶制备 → 流变学表征」的完整链路，但未涉及细胞实验（如干细胞培养中的功能验证）。</li>
+<li><strong>有边界的复述</strong>：TangleDiff 能够以超过 70% 的计算机模拟成功率生成可折叠的纠缠同源二聚体序列，通过结合能条件控制可调节生成蛋白的链间相互作用强度，且该强度与水凝胶的应力松弛速率呈定性相关；在 9 个实验设计中，8 个有效二聚化、7 个成功成胶，验证了该方法的可行性。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生成序列的新颖性有限</td>
+<td>与训练集最接近的序列同一性多为 0.4–0.6，高新颖性序列比例有限</td>
+<td>扩大数据挖掘范围或降低聚类阈值</td>
+<td>Discussion 第 2 段；Results 图 3d</td>
+</tr>
+<tr>
+<td>条件控制精度有限</td>
+<td>结合能控制在分箱级别，约 70% 符合率</td>
+<td>引入更精细的条件编码或回归式条件</td>
+<td>Results 图 4b；Discussion 第 3 段</td>
+</tr>
+<tr>
+<td>实验验证规模小</td>
+<td>仅 9 个设计进入实验，7 个成胶</td>
+<td>扩大实验验证规模，测试更多设计</td>
+<td>Discussion 第 4 段</td>
+</tr>
+<tr>
+<td>未测试细胞功能</td>
+<td>未进行干细胞/类器官培养实验</td>
+<td>将水凝胶用于 3D 细胞培养验证</td>
+<td>Discussion 第 5 段</td>
+</tr>
+<tr>
+<td>仅限同源二聚体</td>
+<td>未扩展到异源二聚体、三聚体或更复杂拓扑</td>
+<td>扩展模型以支持更复杂的对称性和化学计量比</td>
+<td>Discussion 第 6 段</td>
+</tr>
+<tr>
+<td>计算筛选依赖预测器</td>
+<td>ESMFold/AlphaFold2 预测精度有限，可能漏选或误选</td>
+<td>结合更精确的物理模拟或实验高通量筛选</td>
+<td>Discussion 第 4 段</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结合能计算依赖 Rosetta 近似</td>
+<td>Rosetta 能量函数对纠缠界面可能不准确，条件标签可能有噪声</td>
+<td>条件生成的质量取决于标签准确性</td>
+<td>用 MD 自由能计算（如 MM-PBSA）交叉验证 Rosetta 结合能</td>
+<td>Methods 结合能计算部分</td>
+</tr>
+<tr>
+<td>纠缠判定仅依赖 GLN ≥ 0.7</td>
+<td>GLN 对开放链不严格，可能包含非真正拓扑纠缠的假阳性</td>
+<td>数据质量影响模型学习</td>
+<td>用更严格的拓扑分析（如链环多项式、随机闭合方法）验证</td>
+<td>Methods 数据集构建</td>
+</tr>
+<tr>
+<td>训练集来自 ESMFold 预测而非实验结构</td>
+<td>预测结构可能存在系统性偏差，模型学到的是「ESMFold 眼中的纠缠」</td>
+<td>模型可能无法泛化到真实实验结构</td>
+<td>用实验解析的纠缠二聚体结构做外部验证集</td>
+<td>Results 图 1；Methods</td>
+</tr>
+<tr>
+<td>9 个实验设计样本量过小</td>
+<td>7/9 成胶率可能高估真实成功率</td>
+<td>结论的统计效力不足</td>
+<td>扩大实验验证至 30–50 个设计</td>
+<td>Results 图 5</td>
+</tr>
+<tr>
+<td>未与现有从头设计方法直接对比</td>
+<td>声称优于现有模型（1.02%），但未在相同条件下对比</td>
+<td>无法评估相对优势</td>
+<td>在相同数据集和评估协议下与 RFdiffusion、ProteinMPNN 等对比</td>
+<td>Supplementary Fig. 8</td>
+</tr>
+<tr>
+<td>弛豫谱分析可能存在多解性</td>
+<td>从 G'、G" 反演 H(τ) 是病态问题，不同算法可能给出不同谱</td>
+<td>弛豫时间定量可能不稳定</td>
+<td>使用多种反演算法交叉验证</td>
+<td>Methods 弛豫谱计算</td>
+</tr>
+<tr>
+<td>未报告生成序列的实验表达量分布</td>
+<td>仅报告「可溶表达」，未量化表达水平</td>
+<td>表达量影响实际应用</td>
+<td>补充表达量定量数据</td>
+<td>Results 图 5b</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题：Agent 提炼的知识候选</p>
+</blockquote>
+<ol>
+<li><strong>大规模纠缠蛋白数据集的构建策略</strong>：两阶段筛选（代表序列 → ESMFold 预测 → GLN 判定）可高效地从序列数据库中挖掘拓扑特殊蛋白，此策略可迁移到其他拓扑特征（如 knots、slipknots、catenanes）的数据挖掘。</li>
+<li><strong>logits 空间扩散生成</strong>：在预训练蛋白质语言模型的 logits 连续空间施加扩散，比直接在离散序列空间扩散更有效。这一「先编码、后扩散、再解码」的范式可迁移到其他蛋白质生成任务（如酶设计、抗原表位设计）。</li>
+<li><strong>结合能作为条件变量的桥梁作用</strong>：将分子层面的可计算量（Rosetta 结合能）作为生成条件，实现了从微观相互作用到宏观材料性质的跨尺度调控。此思路可推广到其他功能蛋白设计（如设计不同热稳定性、不同亲和力的蛋白）。</li>
+<li><strong>虚拟筛选的多指标联合策略</strong>：结构置信度（pLDDT）+ 序列-结构一致性（ProteinMPNN）+ 能量（Rosetta）+ 可溶性（ProteinSol）的联合筛选显著提高实验成功率，此流程可复用于任何蛋白设计项目。</li>
+<li><strong>纠缠蛋白作为水凝胶物理交联点的设计原理</strong>：通过调节链间结合能来控制物理交联点的解离速率，从而调控水凝胶应力松弛——这一「分子设计 → 宏观流变」的映射关系可推广到其他物理交联水凝胶体系。</li>
+<li><strong>MD 模拟作为实验前的动力学筛选</strong>：200 ns 的 MD 模拟可有效识别计算上合理但动力学不稳定的设计（如 C4_1771），在实验前剔除失败候选，节省实验成本。</li>
+<li><strong>GLN 作为纠缠程度的连续度量</strong>：GLN 不仅可用于二值判定（纠缠/不纠缠），还可作为连续变量用于条件生成，实现纠缠程度的精细调控——这一思路可迁移到拓扑蛋白的定量设计。</li>
+<li><strong>条件生成 + 实验验证的闭环迭代</strong>：本文展示了「生成 → 筛选 → 实验 → 反馈」的完整闭环，其中实验失败案例（C4_1771）可反馈至筛选标准优化，形成迭代改进的良性循环。</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text including abstract, results, methods, and figure legends</li>
+<li><strong>Assessment boundary</strong> Scientific soundness, technical validity, and claims as supported by the provided evidence</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present TangleDiff, a deep learning framework for de novo design of homodimeric entangled proteins with programmable inter-chain binding energies, and demonstrate that these designed proteins can form hydrogels with stress relaxation behavior correlated to the specified binding energies.</li>
+<li><strong>Visible evidence base</strong> Abstract, full results section with figure legends (Figs. 1-6), methods section, discussion</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures and tables referenced but not provided; actual figure images not available; experimental raw data not available; code not available for inspection</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript presents a potentially significant advance in the computational design of entangled protein motifs and their application to tunable biomaterials. The integration of a latent diffusion model with protein language model embeddings for the specific task of entangled homodimer design is novel, and the demonstration of a correlation between computationally specified binding energies and macroscopic hydrogel stress relaxation is conceptually appealing. However, the evidence provided in the manuscript text is insufficient to fully evaluate several key claims, particularly regarding the quantitative strength of the binding energy-stress relaxation correlation, the statistical significance of the reported success rates, and the robustness of the experimental validations. The manuscript would benefit from clearer presentation of quantitative results and additional controls.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in protein design and engineering, particularly those working on de novo protein structure prediction and generative models; biomaterials scientists developing hydrogels for tissue engineering and regenerative medicine; computational biologists interested in protein language models and diffusion-based generative approaches. The work bridges computational protein design with materials science, making it relevant to a broad interdisciplinary audience.</li>
+<li><strong>Major strengths</strong> 1) The problem addressed is important and timely: expanding the limited toolbox of entangled protein motifs for biomaterial applications. 2) The computational pipeline is well-structured, combining data mining, generative modeling, and virtual screening in a logical workflow. 3) The demonstration of conditional generation based on binding energy is a valuable proof-of-concept for property-directed protein design. 4) The experimental validation, including hydrogel formation and rheological characterization, provides a meaningful end-to-end demonstration.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "approximately 70% of successful designs conforming to expected values" and "in-silico success rate exceeding 70%"</li>
+<li><strong>Evidence pointer</strong> Results section "Unconditional design of entangled homodimers", Fig. 3c</li>
+<li><strong>Concern</strong> The reported success rates are presented as single percentages without confidence intervals, statistical comparisons to baselines, or clear definitions of what constitutes a "successful design" beyond the stated thresholds. The comparison to "current models (~1%)" is mentioned but the specific models, their configurations, and the evaluation protocol are not described in sufficient detail. Without a rigorous statistical framework and clear baseline comparisons, the claimed superiority of TangleDiff cannot be properly assessed.</li>
+<li><strong>Why it matters</strong> The central claim of the manuscript is that TangleDiff substantially outperforms existing methods for entangled protein design. If this claim is not rigorously supported with appropriate statistical analysis and fair baseline comparisons, the significance of the work is substantially diminished.</li>
+<li><strong>Resolution test</strong> Provide confidence intervals for success rates, describe the baseline models and their training/evaluation protocols in detail, and include statistical tests comparing TangleDiff to baselines. Clarify the exact definition of "success" used for each metric.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "stress relaxation dynamics correlated with specified binding energies" and "manipulating the macroscopic properties of protein hydrogels can be achieved through the rational design of molecular-level interactions"</li>
+<li><strong>Evidence pointer</strong> Results section "Rheological tests of 14 prepared protein hydrogel networks", Fig. 6</li>
+<li><strong>Concern</strong> The manuscript states that stress relaxation behavior correlates with binding energies, but the quantitative nature of this correlation is not presented. No correlation coefficients, statistical significance values, or quantitative comparisons between the different binding energy groups are provided in the text. The relaxation spectra are described qualitatively (e.g., "clear dissipation peak at ω ~ 0.3 rad/s"), but the relationship between the peak positions and the specified binding energies is not quantified. Furthermore, only two of the three binding energy groups (C4 and C2) show clear relaxation peaks, while the C0 group shows none, which is a limited demonstration of tunability.</li>
+<li><strong>Why it matters</strong> The claim of customizable stress relaxation behavior is the key translational outcome of the work. Without quantitative evidence demonstrating a systematic relationship between binding energy and relaxation times across multiple designs, the claim of "customizable" behavior is not established.</li>
+<li><strong>Resolution test</strong> Provide quantitative correlation analysis between binding energies and relaxation times (e.g., correlation coefficients with p-values), include data from all three binding energy groups, and demonstrate that the relationship is systematic and predictive rather than anecdotal.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "we experimentally validate TangleDiff by designing nine homodimers targeting various binding energies; seven successfully form hydrogels"</li>
+<li><strong>Evidence pointer</strong> Results section "Experimental validation and preparation of entanglement-crosslinked protein hydrogels", Fig. 5</li>
+<li><strong>Concern</strong> The experimental validation is limited to nine designs, with seven forming hydrogels. The manuscript does not provide sufficient detail on the reproducibility of hydrogel formation, the yield of hydrogel formation across batches, or the criteria used to determine "successful" hydrogel formation. Additionally, the relationship between the computationally predicted binding energies and experimentally measured binding affinities is not directly validated. The manuscript relies on computational predictions (Rosetta, gmx_MMPBSA) without experimental binding measurements.</li>
+<li><strong>Why it matters</strong> The translational claim depends on the reliability of the computational predictions. Without experimental validation of the binding energies themselves, it is unclear whether the observed rheological differences are truly due to the designed binding energy differences or to other uncontrolled factors.</li>
+<li><strong>Resolution test</strong> Include experimental binding affinity measurements (e.g., ITC, SPR) for at least a subset of the designed proteins to validate the computational predictions. Provide more detailed characterization of hydrogel formation reproducibility and success criteria.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "TangleDiff generates diverse foldable entangled sequences" and "designs are evolutionarily distant"</li>
+<li><strong>Evidence pointer</strong> Results section "Unconditional design of entangled homodimers", Fig. 3d-g</li>
+<li><strong>Concern</strong> The diversity of generated sequences is assessed primarily through sequence identity comparisons to the training set. However, structural diversity is not quantitatively assessed beyond qualitative descriptions of alpha-dominant and beta-dominant topologies. The claim of novelty would be strengthened by a more systematic analysis of structural diversity, such as clustering by structural similarity or fold classification. Additionally, the functional annotations of the designed proteins (e.g., DNA-binding, RNA-binding) are inferred from structural similarity to known proteins, but this inference is not experimentally validated.</li>
+<li><strong>Why it matters</strong> The claim of expanding the design space of entangled proteins depends on demonstrating that the generated proteins are not merely near-copies of training examples but genuinely novel and diverse. Without quantitative structural diversity analysis, this claim is not fully supported.</li>
+<li><strong>Resolution test</strong> Include quantitative structural diversity metrics (e.g., TM-score distribution, fold classification, structural clustering) and compare the diversity of generated proteins to that of the training set and to existing design methods.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Methods section, Dataset construction</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The description of the two-stage screening strategy would benefit from a clearer explanation of the computational cost savings and the rationale for the specific thresholds chosen (e.g., sequence length 50-100, |GLN| ≥ 0.7, pLDDT ≥ 80).</li>
+<li><strong>Required correction</strong> Provide a brief justification for the chosen thresholds and a more explicit comparison of the computational cost between the two stages.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods section, Model training</li>
+<li><strong>Evidence pointer</strong> Methods section</li>
+<li><strong>Issue</strong> The training details are described but some hyperparameters are missing (e.g., number of diffusion steps during training, noise schedule parameters, learning rate schedule, weight decay).</li>
+<li><strong>Required correction</strong> Provide complete hyperparameter settings to ensure reproducibility.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Results section, Fig. 4</li>
+<li><strong>Evidence pointer</strong> Fig. 4b</li>
+<li><strong>Concern</strong> The box plot in Fig. 4b shows the distribution of binding energies for generated proteins under different conditions, but the number of proteins per condition and the statistical significance of differences between conditions are not stated in the text.</li>
+<li><strong>Required correction</strong> Add sample sizes and statistical comparisons to the figure legend or text.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Results section, Fig. 6</li>
+<li><strong>Evidence pointer</strong> Fig. 6</li>
+<li><strong>Concern</strong> The rheological data are presented for the hydrogels, but the manuscript does not report the concentration of the proteins in the hydrogels, the gelation kinetics, or the reproducibility of the rheological measurements across independent preparations.</li>
+<li><strong>Required correction</strong> Provide details on hydrogel composition, gelation conditions, and variability across replicates.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Discussion</li>
+<li><strong>Evidence pointer</strong> Discussion section</li>
+<li><strong>Concern</strong> The discussion mentions that TangleDiff can be extended to other properties and higher-order structures, but these claims are speculative without preliminary data or a clear roadmap.</li>
+<li><strong>Required correction</strong> Either provide preliminary evidence for these extensions or clearly frame them as future directions.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> 1) Lack of quantitative statistical analysis for the claimed success rates and the binding energy-stress relaxation correlation (R1-M1, R1-M2). 2) Absence of experimental validation of computationally predicted binding energies (R1-M3). 3) Insufficient quantitative analysis of structural diversity of generated proteins (R1-M4).</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The application of latent diffusion models to entangled protein design is novel and represents a creative integration of existing techniques. The concept of conditioning on binding energy for downstream materials properties is original.</li>
+<li>Scientific importance: The work addresses a real bottleneck in protein-based biomaterials and could have significant impact if the claims are fully substantiated. The potential to rationally design hydrogels with predictable mechanical properties is important for tissue engineering.</li>
+<li>Interdisciplinary readership: The work bridges computational biology, protein engineering, and materials science, making it of interest to multiple communities. The writing is generally accessible, though some sections assume familiarity with protein design terminology.</li>
+<li>Technical soundness: The computational pipeline is well-conceived, but the evidence presented is insufficient to fully evaluate technical soundness. Key quantitative results are missing, and the experimental validation is limited in scope.</li>
+<li>Readability for nonspecialists: The abstract and introduction are accessible, but the results section becomes technical. The figures are well-designed based on the legends, but the lack of quantitative details in the text makes it difficult for nonspecialists to assess the strength of the claims.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core concept is promising and the work addresses an important problem, but the current evidence is insufficient to fully establish the central claims. The manuscript requires additional quantitative analysis, experimental validation of binding energies, and more rigorous statistical treatment before the case is fully established.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that TangleDiff's in-silico success rate "exceeding 70%" substantially surpasses current models is not fully supported without detailed baseline comparisons and statistical analysis.</li>
+<li>The claim that stress relaxation dynamics are "correlated with specified binding energies" is not quantitatively supported with correlation coefficients or significance tests.</li>
+<li>The claim that the designed proteins are "novel" and "evolutionarily distant" is based on sequence identity alone, without comprehensive structural novelty analysis.</li>
+<li>The inference of protein function (e.g., DNA-binding, RNA-binding) from structural similarity is not experimentally validated.</li>
+<li>The claim that the observed rheological differences are specifically due to designed binding energy differences is not fully established, as other structural factors may contribute.</li>
+<li>The generalizability of the approach to other properties beyond binding energy is speculative and not demonstrated.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

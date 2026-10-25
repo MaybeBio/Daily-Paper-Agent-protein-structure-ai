@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors present RiboDFM, a backbone-conditioned discrete flow-matching framework for RNA sequence design. The method integrates a geometric backbone encoder, an auxiliary base-pairing prediction head, and language model representations into a discrete flow sampler. Training data are supplemented with trRosettaRNA2-predicted models. The authors claim high sequence recovery, superior tertiary-structure self-consistency relative to existing methods, strong performance on aptamer-focused tasks, and utility of flow-derived nucleotide probabilities for confidence estimation and zero-shot assessment of predicted structures.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark details, or methodological specifics are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, benchmark definitions, dataset descriptions, baseline comparisons, statistical analyses, and code or model availability statements
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially useful contribution to RNA sequence design, combining discrete flow matching with geometric and language model features. The methodological concept is timely and the proposed applications, particularly the use of flow trajectory probabilities for confidence estimation, are interesting. However, the abstract provides no quantitative evidence, no benchmark details, and no comparison specifics. The core claims of improved performance and robustness cannot be evaluated from the supplied material. The manuscript may merit consideration after full review, but the case is not established from the abstract alone.
+- **Who would be interested in the results, and why** Researchers in RNA engineering, computational structural biology, and machine learning for biomolecular design would be interested. The method addresses a practical bottleneck in RNA design, and the proposed confidence estimation capability could be useful for practitioners relying on predicted RNA structures. The integration of flow matching with RNA backbone conditioning may also attract method developers in generative modeling.
+- **Major strengths** The methodological framing is coherent and addresses a recognized challenge. The combination of discrete flow matching with geometric and sequence-level features is a reasonable design choice. The proposed auxiliary use of flow trajectory probabilities for confidence estimation and zero-shot assessment is a distinctive and potentially valuable contribution beyond standard sequence recovery metrics.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "RiboDFM achieves high sequence recovery and generates sequences with greater tertiary-structure self-consistency than existing methods"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that RiboDFM outperforms existing methods on sequence recovery and tertiary-structure self-consistency, but no quantitative results, benchmark names, baseline methods, or effect sizes are reported. No figure or table is referenced.
+  - **Why it matters** The central claim of the manuscript is comparative superiority. Without any numerical evidence or specification of benchmarks and baselines, the claim is unfalsifiable from the provided material and cannot be assessed for statistical or practical significance.
+  - **Resolution test** Provide benchmark names, baseline methods, sequence recovery percentages, self-consistency metrics, and confidence intervals or significance tests in the full manuscript with corresponding figures or tables.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "RiboDFM also performs strongly on aptamer-focused design tasks"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The claim of strong aptamer-focused performance is presented without any task definition, evaluation metric, or comparison. The term "aptamer-focused" is not specified in terms of target ligands, structural contexts, or success criteria.
+  - **Why it matters** Aptamer design involves distinct constraints and evaluation protocols. Without specification, the claim is ambiguous and cannot be reproduced or compared with existing aptamer design methods.
+  - **Resolution test** Define the aptamer design tasks, report relevant metrics, and compare against appropriate baselines in the full manuscript.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "the nucleotide probabilities derived from RiboDFM's flow trajectory serve as an intrinsic measure of sequence-structure compatibility. This enables reliable confidence estimation for designed sequences, as well as reference-free, zero-shot assessment of predicted structure models"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims that flow-derived probabilities enable reliable confidence estimation and zero-shot assessment, but no validation is described. No correlation with experimental outcomes, no comparison with existing confidence metrics, and no benchmark for zero-shot assessment are provided.
+  - **Why it matters** The claim of reliability is a strong statistical statement. Without validation against ground truth or established baselines, the utility of this feature remains speculative.
+  - **Resolution test** Provide validation experiments showing correlation between RiboDFM probabilities and experimental or high-confidence structural outcomes, and compare against existing confidence estimation methods.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Method description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that training data were supplemented with trRosettaRNA2-predicted models but does not specify the proportion of predicted versus experimental structures, filtering criteria, or potential biases introduced by predicted data.
+  - **Required correction** Clarify the composition of the training dataset and any quality filters applied to predicted structures.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Availability statement
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No statement on code, model, or data availability is included in the abstract.
+  - **Required correction** Include a data and code availability statement in the full manuscript.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scope
+  - **Affected element** Benchmark diversity
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions "diverse benchmarks" but does not indicate the range of structural complexity, RNA length, or functional classes covered.
+  - **Required correction** Specify the benchmark set composition in the full manuscript.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, and R1-M3 are blocking. The abstract provides no quantitative evidence for any of the three main performance claims. Without these data, the core contributions of the manuscript cannot be verified.
+- **Assessment against Nature-style criteria** Originality: the combination of discrete flow matching with RNA backbone conditioning and the proposed confidence estimation application appears novel, but novelty cannot be fully assessed without a literature comparison in the full text. Scientific importance: RNA design is a relevant and active field, and improved methods would be of interest, but the importance of this specific contribution is not demonstrated without evidence of substantial gains over existing methods. Interdisciplinary readership: the topic bridges machine learning and structural biology, which could attract a broad audience, but the abstract is too sparse to engage nonspecialists with concrete outcomes. Technical soundness: the methodological components are plausible, but no technical details or validation are provided to assess soundness. Readability for nonspecialists: the abstract is readable but relies on domain terminology without sufficient context for a general scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a plausible and potentially interesting method, but the absence of any quantitative results or methodological detail prevents assessment of the core claims. A full manuscript with benchmarks, comparisons, and validation would be required to evaluate the contribution.
+
+## Risk / unsupported claims
+- The claim of high sequence recovery and superior tertiary-structure self-consistency is unsupported by any quantitative data in the abstract.
+- The claim of strong aptamer-focused performance is unsupported and underspecified.
+- The claim of reliable confidence estimation and zero-shot assessment is unsupported by any validation evidence.
+- The use of trRosettaRNA2-predicted models as training data raises potential concerns about data quality and bias that cannot be assessed from the abstract.

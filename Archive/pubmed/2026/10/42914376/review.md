@@ -1,0 +1,88 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report a non-monotonic temperature-dependent binding profile between beta-lactoglobulin and capsaicin over 25-95 degrees C, with increased affinity at 65 degrees C, a sharp decline at 75 degrees C, and partial recovery at 85-95 degrees C. They attribute these changes to multistage conformational transitions of beta-LG, including a molten globule-like state and aggregation/rearrangement. They further claim that CAP modulates beta-LG aggregation, and that MD simulations with MM-PBSA and free energy landscape analysis confirm stable binding in the hydrophobic cavity with optimal affinity at 65 degrees C. They propose 65 degrees C as an optimal processing temperature and suggest turbidity and solubility as low-cost monitoring indicators.
+- **Visible evidence base** Abstract text only; no numerical data, spectra, simulation parameters, or statistical analyses are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, experimental methods, simulation protocols, statistical details, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting and industrially relevant study on the temperature dependence of beta-LG and capsaicin interactions. The non-monotonic binding profile with a critical threshold at 75 degrees C is a notable finding. However, the abstract alone provides insufficient evidence to evaluate the robustness of the claims. Key quantitative data, experimental details, and simulation validation are absent. The claim that simple physicochemical indicators correlate with binding affinity is intriguing but unsupported in the provided material. The study may be of interest to food scientists and dairy processors, but the case is not established from the abstract alone.
+- **Who would be interested in the results, and why** Food chemists and dairy processing engineers would be interested in the temperature-dependent behavior of whey protein interactions with bioactive compounds, particularly for optimizing thermal processing to retain capsaicin or similar hydrophobic ligands. Researchers studying protein-ligand binding under thermal stress and those developing real-time quality monitoring tools for dairy manufacturing would also find relevance.
+- **Major strengths** The study addresses a practical industrial question with a multi-technique approach combining spectroscopy, physicochemical measurements, and MD simulations. The identification of a critical temperature threshold at 75 degrees C and the proposed practical monitoring indicators are potentially actionable outcomes. The claim that CAP actively modulates beta-LG aggregation adds a bidirectional interaction perspective beyond simple ligand binding.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim a non-monotonic, temperature-dependent binding profile with specific transitions at 65, 75, and 85-95 degrees C, and that MD simulations confirm stable binding with optimal affinity at 65 degrees C.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract provides no quantitative binding data, no error estimates, no statistical comparisons between temperatures, and no details on how binding affinity was measured. The MD simulation results are stated without any parameters, convergence criteria, or validation against experimental data.
+  - **Why it matters** Without quantitative evidence, the claimed non-monotonic profile and the specific optimal temperature cannot be assessed for reliability. The central conclusion that 65 degrees C is optimal for CAP retention depends entirely on these unshown data.
+  - **Resolution test** Provide binding affinity values with standard deviations and statistical tests across all temperatures, and show MD simulation results including free energy values, RMSD convergence, and comparison with experimental binding data.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic support
+  - **Claim pointer** The authors attribute the binding profile to beta-LG multistage conformational transitions, including a molten globule-like state at 65 degrees C, aggregation at 75 degrees C, and aggregate rearrangement at 85-95 degrees C.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states these conformational assignments but provides no spectroscopic evidence, such as far-UV CD, near-UV CD, or intrinsic fluorescence data, that would support the molten globule designation or the aggregation and rearrangement mechanisms.
+  - **Why it matters** The mechanistic narrative is the explanatory framework for the observed binding behavior. If the conformational assignments are incorrect or oversimplified, the interpretation of the binding profile and the processing recommendations would be compromised.
+  - **Resolution test** Show spectroscopic data with appropriate controls that demonstrate the molten globule state at 65 degrees C, aggregation at 75 degrees C, and rearrangement at higher temperatures, with quantitative metrics for each state.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim-support mismatch
+  - **Claim pointer** The authors claim strong correlations between simple physicochemical indicators (turbidity, solubility) and binding affinity, offering a practical pathway for low-cost, real-time quality monitoring.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No correlation coefficients, regression analyses, or validation data are presented. The claim of "strong correlations" is asserted without any numerical support.
+  - **Why it matters** This is a potentially high-impact translational claim for industrial application. Without demonstrated correlation strength and predictive validity, the recommendation to use turbidity and solubility as monitoring proxies is premature.
+  - **Resolution test** Provide correlation coefficients, confidence intervals, and cross-validation or independent test set results showing that turbidity and solubility reliably predict binding affinity across the temperature range.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Bidirectional interaction evidence
+  - **Claim pointer** The authors claim that CAP actively modulates beta-LG aggregation by occupying hydrophobic patches, evidenced by smaller particle sizes and lower turbidity in CAP-supplemented groups.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract mentions particle size and turbidity differences but provides no numerical values, no concentration dependence, and no mechanistic evidence that hydrophobic patch occupation is the cause.
+  - **Why it matters** This claim extends the study beyond binding to a functional role of CAP in modifying protein aggregation behavior. If true, it has implications for product formulation, but the current evidence is insufficient to distinguish CAP-specific effects from general ligand-induced changes.
+  - **Resolution test** Show particle size distributions and turbidity values with statistical comparisons, and provide molecular-level evidence such as competitive binding or site-directed mutagenesis to support the hydrophobic patch occupation mechanism.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Temperature range description
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The abstract states "25-95 degrees C" but the specific increments and equilibration times are not mentioned.
+  - **Required correction** Specify the temperature increments and incubation times in the methods or abstract.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology precision
+  - **Affected element** "Molten globule-like transition"
+  - **Evidence pointer** Abstract, binding profile description
+  - **Issue** The term "molten globule-like" is used without defining which structural criteria were used to assign this state.
+  - **Required correction** Define the operational criteria for molten globule designation based on the spectroscopic data used.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** MD simulation description
+  - **Evidence pointer** Abstract, MD simulation mention
+  - **Issue** No force field, water model, simulation length, or temperature coupling details are provided.
+  - **Required correction** Include simulation parameters in the methods section.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Scope clarity
+  - **Affected element** Industrial relevance statement
+  - **Evidence pointer** Abstract, final sentence
+  - **Issue** The claim about "low-cost, real-time quality monitoring" implies a practical application but no context is given for how this would be implemented.
+  - **Required correction** Clarify the intended application context or soften the claim if implementation is speculative.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The central binding profile, the mechanistic interpretation, and the translational monitoring claim all require quantitative evidence not present in the abstract.
+- **Assessment against Nature-style criteria** Originality: The non-monotonic binding profile with recovery at high temperatures is a potentially novel observation, but its novelty cannot be fully assessed without comparison to prior literature. Scientific importance: The work addresses a relevant food processing question, but the importance is moderate and primarily applied rather than fundamental. Interdisciplinary readership: The study bridges food chemistry, biophysics, and computational simulation, which could attract a broad readership if the evidence is robust. Technical soundness: Cannot be evaluated from the abstract alone; the absence of quantitative data and simulation details prevents assessment. Readability for nonspecialists: The abstract is generally clear and accessible, though some terms such as "molten globule-like" and "MM-PBSA" may require definition for a broader audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting hypothesis and a plausible narrative, but the absence of quantitative data, statistical analyses, and methodological details means the claims cannot be verified. A full manuscript with complete experimental and simulation results would be required to assess whether the case can be made.
+
+## Risk / unsupported claims
+- The non-monotonic binding profile with specific temperature thresholds is unsupported without quantitative binding data.
+- The assignment of a molten globule-like state at 65 degrees C is unsupported without spectroscopic evidence.
+- The claim that CAP modulates beta-LG aggregation via hydrophobic patch occupation is unsupported without particle size and turbidity values.
+- The claim of strong correlations between turbidity, solubility, and binding affinity is unsupported without correlation statistics.
+- The MD simulation confirmation of binding thermodynamics is unevaluable without simulation parameters and free energy values.
+- The recommendation of 65 degrees C as optimal processing temperature and avoidance of 75 degrees C is unevaluable without the underlying data.

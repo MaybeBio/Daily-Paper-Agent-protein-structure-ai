@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report a machine learning classifier trained on 2055 membrane protein variants with binary expression labels, used to predict expression for over 10,000 unmeasured sequences. Experimental validation of 12 predictions achieved 100% success. Explainable AI identified key sequence positions, and model-guided engineering improved purification yield 8-fold for a poorly expressing variant.
+- **Visible evidence base** Abstract text only; no methodological details, dataset description, model architecture, validation statistics, or experimental protocols provided
+- **Missing materials affecting confidence** Full methods, dataset composition and provenance, model training and evaluation details, validation data for the 12 test variants, purification yield measurements, sequence position analysis, and all figures/tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable application of machine learning to membrane protein expression prediction, with an encouraging validation result. However, the evidence base is too limited to assess technical soundness or the robustness of the central claims. The 100% success rate on 12 variants, while promising, is statistically fragile, and the absence of methodological detail prevents evaluation of model generalizability, data leakage risks, and the biological interpretation of the explainable AI findings.
+- **Who would be interested in the results, and why** Researchers in membrane protein biochemistry, recombinant protein production, and synthetic biology would find this relevant, as improved expression prediction could reduce trial-and-error in protein manufacturing. The machine learning community working on genotype-to-phenotype prediction may also be interested, particularly in the application of explainable AI to sequence-based classifiers.
+- **Major strengths** The use of a computationally designed variant library with controlled sequence diversity is a thoughtful approach that aligns with lightweight bioinformatic tools. The combination of supervised learning with experimental validation, including a model-guided engineering demonstration, provides a practical angle. The reported 8-fold purification yield improvement is a concrete, application-relevant outcome.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The trained model was used to infer expression of over 10,000 unmeasured sequences, and experimental validation of these predictions for 12 test variants achieved a 100% success rate.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The validation set of 12 variants is extremely small, and a 100% success rate on such a sample provides weak statistical evidence for model performance. With 12 binary outcomes, the 95% confidence interval for the true success rate ranges from approximately 74% to 100%, meaning the model could have substantially lower accuracy than claimed. No information is provided on how these 12 variants were selected, whether they were representative of the prediction distribution, or whether they were independent of the training set.
+  - **Why it matters** The central claim of effective sequence-to-expression prediction rests on this validation. Without a larger, clearly described validation set and appropriate performance metrics (e.g., precision, recall, AUC), the generalizability of the model cannot be established. Overfitting or selection bias in choosing the 12 variants could inflate the reported success rate.
+  - **Resolution test** Provide the full validation dataset size, selection criteria for test variants, and performance metrics with confidence intervals. If only 12 variants were tested, acknowledge the statistical limitation and consider additional validation or a revised claim.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** We selected a relatively small and balanced dataset of 2055 protein sequences assigned to binary classes of either "high" or "low" expression and used these sequences to train a sequence-to-expression classifier using supervised machine learning.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not describe the machine learning method, feature representation, model selection, cross-validation strategy, or class balance beyond the term "balanced." Without these details, it is impossible to assess whether the model is appropriately trained, whether there is data leakage (e.g., sequence homology between training and test sets), or whether the binary classification threshold is biologically meaningful.
+  - **Why it matters** The reproducibility and reliability of the model depend on these methodological choices. A classifier trained on a small, potentially biased dataset may not generalize to other membrane proteins or expression systems, which is a key implied application.
+  - **Resolution test** Include a methods summary specifying the algorithm, features, cross-validation approach, and class distribution. Address potential data leakage and justify the binary threshold for expression.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** Using tools from explainable AI, we identified specific sequence positions and substitutions that are most important in dictating cellular expression levels. This analysis was validated by model-guided protein engineering that achieved an 8-fold increase in the purification yield of a poorly expressing variant.
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract claims that explainable AI identified important sequence positions, but no details are given on which positions or substitutions were identified, how they relate to known membrane protein biology, or how the model-guided engineering was performed. The 8-fold yield increase is reported without baseline values, replicate numbers, or statistical significance.
+  - **Why it matters** The biological insight claim is a key contribution, but without specific findings or validation of the mechanistic interpretation, it remains anecdotal. The yield improvement, while impressive, needs context to determine if it is robust and generalizable.
+  - **Resolution test** Provide the specific sequence positions and substitutions identified, with supporting data. Report purification yield measurements with replicates and statistical analysis, and clarify how the model-guided design was executed.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract clarity
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract uses terms like "genotype-to-phenotype models" and "explainable AI" without brief definitions, which may hinder accessibility for readers outside computational biology.
+  - **Required correction** Add a brief explanatory phrase for these terms, such as "models linking sequence to measurable traits" and "methods that interpret model predictions."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Contextual framing
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract states that few expression datasets are available but does not specify how this dataset compares to existing ones or what unique features it offers beyond the controlled design.
+  - **Required correction** Briefly state the novelty of the dataset relative to prior work, such as the specific design strategy or sequence diversity range.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Validation description
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The phrase "100% success rate" is ambiguous; it is unclear whether success means correct binary classification, improved expression, or another criterion.
+  - **Required correction** Define the success criterion explicitly, such as "all 12 predicted high-expression variants were confirmed as high-expression in experimental assays."
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the validation sample size and lack of methodological detail prevent assessment of the core prediction claim. R1-M3 is non-blocking but requires additional data to support the biological insight and engineering claims.
+- **Assessment against Nature-style criteria** Originality: The application of machine learning to a designed membrane protein library is moderately original, though similar approaches exist in protein engineering. Scientific importance: Improved expression prediction has practical value, but the narrow scope (one protein, one host) limits broad impact. Interdisciplinary readership: The work bridges computational and experimental biology, but the abstract lacks sufficient detail to engage both audiences fully. Technical soundness: Not assessable from the abstract due to missing methods and small validation set. Readability for nonspecialists: The abstract is generally clear but could benefit from brief definitions of technical terms.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents promising results, but the blocking concerns regarding validation size and methodological transparency must be resolved before the claims can be considered robust. A revised abstract with more detail, or access to the full manuscript, would be necessary for a supportive assessment.
+
+## Risk / unsupported claims
+- The 100% success rate on 12 test variants is statistically fragile and not sufficient to support the claim of effective prediction.
+- The 8-fold purification yield improvement is reported without baseline or statistical context, making it unverifiable from the abstract.
+- The identification of specific sequence positions via explainable AI is claimed but not substantiated with any specific findings.
+- The generalizability of the model to other membrane proteins or expression systems is implied but not supported by the evidence presented.

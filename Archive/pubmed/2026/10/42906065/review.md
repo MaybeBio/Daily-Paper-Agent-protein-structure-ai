@@ -1,0 +1,81 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors propose HelixDTA, a dual-branch deep learning framework that integrates sequence-derived and complete target structure-derived features for drug-target affinity prediction. They report competitive performance on Davis and KIBA benchmarks, robust generalization in cold-start settings, interpretability via attention mechanisms, and a WRN case study demonstrating structure-aware allosteric candidate prioritization.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark tables, methodological details, or case study figures are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, benchmark datasets and splits, hyperparameter settings, baseline comparisons, statistical significance tests, attention visualization details, WRN case study methodology and outcomes, code availability
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially valuable contribution to the drug-target affinity prediction field, specifically in combining sequence and complete structural information within a dual-branch architecture. However, the abstract lacks quantitative evidence, methodological specificity, and comparative rigor. The claims of robustness, interpretability, and practical utility cannot be evaluated from the supplied material. The work may be of interest to computational drug discovery researchers, but the current evidence base is insufficient to establish the stated advantages.
+- **Who would be interested in the results, and why** Computational biologists, medicinal chemists, and machine learning researchers working on drug discovery, particularly those focused on structure-aware prediction models, protein-ligand interaction modeling, and interpretable AI for biomedical applications. The dual-branch design and cold-start evaluation may appeal to groups developing generalizable prediction tools for novel targets and scaffolds.
+- **Major strengths** The conceptual motivation is clear and addresses a recognized limitation in existing DTA models, namely the incomplete use of structural information. The dual-branch architecture that preserves modality-specific features until the prediction layer is a reasonable design choice. The inclusion of cold-start settings and a case study on allosteric candidate prioritization suggests attention to practical deployment scenarios beyond standard benchmark performance.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "HelixDTA achieved strong and competitive performance on the Davis and KIBA benchmarks and maintained clear advantages across most similarity-based cold-start settings"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No quantitative results are reported. The abstract does not provide any performance metrics, baseline comparisons, or statistical measures to support the claims of strong, competitive, or advantageous performance.
+  - **Why it matters** Without numerical evidence, the central performance claims cannot be verified or compared against existing methods. The phrase "clear advantages" is subjective and unsupported.
+  - **Resolution test** Provide benchmark tables with metrics (e.g., CI, RMSE, MAE) for HelixDTA and at least several baseline methods, including statistical significance tests or confidence intervals, across all evaluated settings.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological clarity
+  - **Claim pointer** "a parallel dual-branch architecture that independently learns representations from two distinct but complementary modalities: sequence context and complete target structures"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract does not describe how "complete target structures" are obtained, represented, or processed. It is unclear whether these are experimental structures, predicted models, or a combination, and how the structure branch handles proteins without known structures.
+  - **Why it matters** The novelty and feasibility of the approach depend critically on the structural data pipeline. If complete structures are required, the method's applicability to proteome-wide or novel target settings is questionable.
+  - **Resolution test** Describe the structural data source, preprocessing, featurization, and how missing structures are handled. Clarify whether predicted structures are used and how their quality is assessed.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Interpretability claim
+  - **Claim pointer** "its built-in attention mechanism enhances interpretability by highlighting molecular regions that contribute to affinity prediction"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract claims interpretability but provides no example, evaluation, or validation of the attention outputs. It is unclear whether the highlighted regions correspond to known binding sites or pharmacophores.
+  - **Why it matters** Interpretability claims in machine learning for drug discovery require demonstration that attention weights are biologically meaningful, not merely that they exist.
+  - **Resolution test** Provide attention visualization examples with known binding site annotations, and ideally a quantitative evaluation (e.g., enrichment of attention weights at binding interfaces) against a baseline.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Case study validity
+  - **Claim pointer** "a WRN case study demonstrates the potential use of HelixDTA for structure-aware allosteric candidate prioritization by integrating complete target-level structural context with docking-based pose inspection"
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The case study is mentioned but no results, candidate compounds, or validation are described. The phrase "demonstrates the potential use" is vague and does not establish practical utility.
+  - **Why it matters** Case studies are valuable for showing real-world applicability, but without details on the prioritization workflow, hit rates, or experimental validation, the claim remains anecdotal.
+  - **Resolution test** Describe the case study setup, the number of candidates prioritized, any docking scores or ranking metrics, and whether any candidates were experimentally validated or compared against known allosteric modulators.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of terminology
+  - **Affected element** "complete target structures"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "complete" is ambiguous. It could mean full-length protein structures, all available conformations, or structures without pocket truncation.
+  - **Required correction** Define "complete" explicitly in the abstract or methods, and clarify how this differs from pocket-only approaches.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Benchmark description
+  - **Affected element** "Davis and KIBA benchmarks"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not specify the evaluation protocol, such as random split versus cold-start, or the exact cold-start variants used.
+  - **Required correction** Specify the split protocols and the number of cold-start settings evaluated, and clarify which settings showed advantages.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Model availability
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No mention of code or model availability, which is important for reproducibility in the machine learning community.
+  - **Required correction** State whether code, trained models, and data processing scripts will be made publicly available.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (no quantitative performance evidence), R1-M2 (unclear structural data pipeline), R1-M3 (unvalidated interpretability claim). These are blocking because the core claims of performance, methodological novelty, and interpretability cannot be assessed from the abstract alone.
+- **Assessment against Nature-style criteria** Originality: The dual-branch integration of sequence and complete structure information is a reasonable extension of existing work, but the abstract does not clearly differentiate from prior structure-aware DTA models. Scientific importance: The problem is important, and the cold-start focus is relevant, but the evidence does not yet demonstrate a significant advance. Interdisciplinary readership: The work bridges machine learning and structural biology, which could appeal to a broad audience, but the abstract is too technical and lacks accessible framing. Technical soundness: Cannot be evaluated from the abstract; methodological details and validation are missing. Readability for nonspecialists: The abstract is dense and assumes familiarity with DTA benchmarks and deep learning terminology; it would benefit from clearer motivation and plain-language summaries of results.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual direction is promising, and the work may become publishable if the full manuscript provides quantitative results, methodological clarity, and validated interpretability. A revised abstract with key metrics and clearer claims would strengthen the case.
+
+## Risk / unsupported claims
+- "Strong and competitive performance" on Davis and KIBA is unsupported without numerical results.
+- "Clear advantages across most similarity-based cold-start settings" is unsupported without specifying settings and metrics.
+- "Robust generalization to compounds with unseen scaffolds and novel protein targets" is a broad claim not backed by data in the abstract.
+- "Enhances interpretability by highlighting molecular regions" is unvalidated; no evidence that highlighted regions are biologically meaningful.
+- "Demonstrates the potential use of HelixDTA for structure-aware allosteric candidate prioritization" is anecdotal without case study results.
+- "Highly accurate, interpretable, and robust solution" is an overall characterization that exceeds the evidence provided.

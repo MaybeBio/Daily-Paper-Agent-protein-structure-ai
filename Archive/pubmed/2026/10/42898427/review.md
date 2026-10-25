@@ -1,0 +1,91 @@
+## Review setup
+- **Input scope** Full manuscript text
+- **Assessment boundary** Scientific content, methodology, data interpretation, and claims as presented in the provided manuscript
+- **Shared manuscript claim summary** The authors curated 55 YWHAG missense variants (17 pathogenic, 38 benign), performed structural modeling, spatiotemporal and single-cell expression analyses, PPI network construction, and benchmarked 34 in silico pathogenicity prediction tools. They report that hydrogen bond alterations do not distinguish pathogenic from benign variants, that YWHAG expression peaks in early fetal, infancy, and adolescence stages, and that deep learning and ensemble tools (e.g., MetaSVM, ESM1b) outperform traditional conservation-based predictors for YWHAG variant classification.
+- **Visible evidence base** Full text including Methods, Results, Discussion, and references to Supplementary Tables S1–S6 and Figures 1–9
+- **Missing materials affecting confidence** Supplementary Tables S1–S6, all figures, and the underlying variant-level data were not provided. This limits independent verification of the curated variant list, ACMG classifications, tool scores, and statistical analyses.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a clinically relevant question: how to stratify pathogenicity of YWHAG missense variants in DEE. The authors have assembled a curated dataset and performed a broad computational evaluation. However, the core claims are weakened by the absence of the supplementary data, which are essential for verifying the variant classifications, the tool benchmarking methodology, and the statistical comparisons. The structural analysis is presented as a negative result, which is useful, but the conclusion that specific in silico tools are reliable for clinical use is not fully supported by the evidence provided. The manuscript is technically sound in its overall design but requires substantial clarification and data availability to establish its claims.
+- **Who would be interested in the results, and why** Clinical geneticists and molecular diagnosticians involved in variant interpretation for neurodevelopmental disorders would be the primary audience. Researchers studying 14-3-3 protein family function and DEE genetics may also find the expression and PPI data of interest. The benchmarking of prediction tools is relevant to the broader community working on in silico variant pathogenicity assessment.
+- **Major strengths** The study addresses a practical clinical need with a focused question. The dataset curation, while requiring verification, appears to follow established ACMG guidelines. The inclusion of a negative structural finding (hydrogen bond analysis) is honest and informative. The benchmarking of 34 tools is comprehensive and the use of multiple performance metrics is appropriate. The discussion of potential training data overlap is a thoughtful consideration.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Data availability and verification
+  - **Claim pointer** The manuscript claims a curated dataset of 55 YWHAG missense variants with 17 pathogenic and 38 benign classifications, and that these classifications meet ACMG guidelines.
+  - **Evidence pointer** Methods section "Variants collection"; Results section "Clinical features of YWHAG missense variants"; Supplementary Tables S1 and S2
+  - **Concern** The core dataset is not accessible for review. The ACMG evidence codes (Table S1), the full list of variants with their clinical sources and classifications (Table S2), and the benign variant selection criteria from gnomAD are not provided. Without these, the integrity of the gold-standard labels used for all subsequent benchmarking cannot be assessed.
+  - **Why it matters** The entire performance evaluation of the 34 tools is contingent on the accuracy and unbiased nature of the pathogenic and benign variant labels. If the pathogenic set is small, heterogeneous, or includes variants with weaker evidence, the reported performance metrics (AUC, MCC) could be misleading. The benign set, sourced from gnomAD, may include rare variants with unrecognized pathogenic potential, which would also skew results.
+  - **Resolution test** The authors must provide the full supplementary tables, including the specific ACMG evidence codes for each pathogenic variant and the genomic coordinates, allele frequencies, and ClinPred/ClinVar annotations for all 55 variants. A detailed description of the literature search and inclusion/exclusion criteria for the pathogenic variants is also required.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Statistical methodology and overfitting
+  - **Claim pointer** The manuscript claims that gene-specific optimized cut-offs were derived using Youden's Index and that these can calibrate PP3/BP4 evidence strength in ACMG guidelines.
+  - **Evidence pointer** Methods section "In silico prediction"; Results section "Performance of prediction algorithms"; Discussion section
+  - **Concern** The method for deriving and validating the gene-specific cut-offs is not described in sufficient detail. The cut-offs are derived from the same 55-variant dataset on which the tools are evaluated, which introduces a risk of overfitting. The manuscript acknowledges this but does not provide a solution, such as cross-validation or an independent validation cohort. The claim that these cut-offs can inform PP3/BP4 evidence weighting is therefore premature.
+  - **Why it matters** Clinical application of these cut-offs requires confidence that they generalize beyond the training set. Without external validation, the reported sensitivity and specificity at these cut-offs are likely optimistic. The manuscript's own bootstrap analysis is a step in the right direction, but the results are not presented in the main text, and the methodology for applying bootstrap-derived cut-offs to new variants is unclear.
+  - **Resolution test** The authors should provide a clear description of the cut-off derivation process, including the exact formula and software used. They should present the bootstrap results, including the distribution of optimal cut-offs and the resulting performance metrics with confidence intervals. Most importantly, they should temper their conclusions about clinical utility until independent validation is performed.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Interpretation of structural and expression analyses
+  - **Claim pointer** The manuscript claims that hydrogen bond alterations do not distinguish pathogenic from benign variants and that YWHAG spatiotemporal expression aligns with its DEE pathogenic role.
+  - **Evidence pointer** Results sections "Clinical features of YWHAG missense variants" and "Spatio-temporal expression of YWHAG"; Figures 1–4
+  - **Concern** The structural analysis is limited to hydrogen bond changes, which is a narrow metric. The conclusion that this cannot distinguish pathogenic from benign variants is presented as a definitive finding, but the analysis does not consider other structural consequences such as changes in hydrophobicity, electrostatic potential, or protein dynamics. The expression analysis is descriptive, and the link between the observed expression peaks and the specific DEE phenotype (early-onset seizures) is speculative. The single-cell data from organoids is interesting but its relevance to human brain development is not critically discussed.
+  - **Why it matters** The negative structural result is used to justify the need for in silico tools, but a more comprehensive structural analysis might yield different conclusions. The expression data is used to support a pathogenic role, but the correlation is not strong enough to be causal. Over-interpreting these descriptive findings could mislead readers about the molecular mechanisms.
+  - **Resolution test** The authors should either expand the structural analysis to include other biophysical properties or clearly state its limitations. The expression data should be presented as hypothesis-generating, and the discussion should acknowledge the gap between expression patterns and disease mechanism.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Clinical relevance and generalizability
+  - **Claim pointer** The manuscript claims that the evaluated tools "may provide reliable support for the pathogenicity assessment of YWHAG variants in clinical genetic diagnosis."
+  - **Evidence pointer** Discussion section; Results section "Performance of prediction algorithms"
+  - **Concern** The clinical utility of the findings is overstated. The study is a retrospective benchmarking analysis on a small, curated dataset. It does not demonstrate prospective clinical validity or utility. The performance of the tools is reported in terms of statistical metrics, but the practical impact on patient diagnosis and management is not addressed. The manuscript does not discuss how these tools should be integrated into the existing ACMG/AMP framework beyond a general suggestion.
+  - **Why it matters** Clinicians need clear guidance on how to use these tools in practice. A statistical demonstration of high AUC does not translate directly to clinical benefit. The manuscript should provide a more nuanced discussion of the limitations of in silico predictions and the need for functional validation.
+  - **Resolution test** The authors should revise the conclusion to be more measured, emphasizing the preliminary nature of the findings and the need for further validation. They should discuss the specific scenarios where these tools might be most useful and where they should not be relied upon.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity and completeness of methods
+  - **Affected element** Methods section "In silico prediction"
+  - **Evidence pointer** Methods section
+  - **Issue** The description of the two-step threshold strategy is somewhat convoluted. The distinction between the "default thresholds" and "gene-specific optimized cut-offs" is clear, but the rationale for using both is not fully explained. The sentence "And and the exact model version..." contains a typographical error.
+  - **Required correction** Clarify the purpose of each threshold strategy and correct the typo. Consider moving the detailed description of the threshold strategy to a separate subsection for clarity.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Results section "Performance of prediction algorithms"
+  - **Evidence pointer** Results section; Supplementary Tables S4–S6
+  - **Concern** The results section reports a large number of performance metrics for 34 tools, but the main text only highlights a few. The reader is directed to the supplementary tables for full results, which is appropriate, but the main text could benefit from a more structured summary, such as a table of the top-performing tools with their key metrics.
+  - **Required correction** Consider adding a summary table in the main text with the top 5-10 tools and their accuracy, balanced accuracy, sensitivity, specificity, and MCC. This would improve readability and allow for easier comparison.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation of expression data
+  - **Affected element** Results section "Spatio-temporal expression of YWHAG"
+  - **Evidence pointer** Figure 4
+  - **Concern** The statement that "YWHAG expression peaks during the early fetal stage, which may suggest a possible role in early neurodevelopment and a potential association with early seizure onset" is speculative. The link between expression level and seizure onset is not established.
+  - **Required correction** Soften the language to indicate that this is a hypothesis that requires further investigation. Avoid making causal claims based on descriptive expression data.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Discussion of limitations
+  - **Affected element** Discussion section
+  - **Evidence pointer** Discussion section
+  - **Concern** The limitations section is brief and does not address the potential for bias in the variant curation process, the lack of functional validation, or the generalizability of the findings to other populations.
+  - **Required correction** Expand the limitations section to include a discussion of these points. Acknowledge that the performance of the tools may vary depending on the specific variant and the clinical context.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** References and citations
+  - **Affected element** Throughout
+  - **Evidence pointer** Reference list
+  - **Concern** The reference list is not provided in the manuscript text. It is not possible to verify the accuracy and relevance of the cited literature.
+  - **Required correction** Ensure that the reference list is complete and accurate. Verify that all citations in the text are included in the list.
+
+## Risk / unsupported claims
+- The claim that the curated pathogenic variants are "rigorously classified according to ACMG criteria" is unverifiable without the supplementary evidence tables.
+- The claim that the gene-specific optimized cut-offs can "calibrate the strength of PP3/BP4 evidence" is unsupported without external validation.
+- The claim that the tools' performance reflects "genuine biological generalization capacity rather than overfitting" is an interpretation that is not fully supported by the analysis presented.
+- The claim that YWHAG expression patterns "align with its DEE pathogenic role" is a correlative statement that is not mechanistically established.
+- The overall conclusion that the tools "may provide reliable support for clinical genetic diagnosis" is overstated given the preliminary nature of the study and the lack of independent validation.

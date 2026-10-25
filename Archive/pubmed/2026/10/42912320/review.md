@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report that the AML-associated A338V mutation in the intrinsically disordered C-terminal tail of GPR183 preserves agonist potency and Gi activation, impairs GRK2 and beta-arrestin2 recruitment, alters the conformational ensemble and lipid interactions of the tail, and increases migration of differentiated HL-60 cells.
+- **Visible evidence base** Abstract text only; methods and results are summarized but not detailed
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, experimental protocols, statistical details, simulation parameters, and supplementary data
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting finding that a single disease-associated mutation in a GPCR intrinsically disordered region can selectively modulate transducer coupling and cellular behavior. The combination of experimental and computational approaches is appropriate for the question. However, the abstract alone does not provide sufficient detail to evaluate the rigor of the methods, the robustness of the statistical analyses, or the strength of the causal links between the observed conformational changes and functional outcomes. The claim that the mutation "rewires" signaling through "C-terminal ensemble redistribution" is plausible but not fully established from the provided evidence.
+- **Who would be interested in the results, and why** Researchers in GPCR biology, particularly those studying biased agonism, intrinsically disordered regions in signaling proteins, and the molecular basis of disease-associated mutations. The work may also interest investigators focused on AML biology and oxysterol receptor signaling, as well as computational biologists studying allosteric communication in membrane proteins.
+- **Major strengths** The study addresses a timely and important question about the functional role of intrinsically disordered regions in GPCR signaling. The use of multiple orthogonal experimental assays (BRET, FRET, bioluminescence, fluorescence, migration) combined with molecular dynamics simulations and allosteric network analysis is commendable. The finding that a single mutation can selectively impair GRK2 and beta-arrestin2 recruitment while preserving or enhancing Gi activation suggests a potential mechanism for biased signaling.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that A338V "consistently impaired GRK2 and beta-arrestin2 recruitment across multiple experimental configurations" and that this is due to "disrupted spatial presentation of regulatory motifs."
+  - **Evidence pointer** Abstract text; specific figures and statistical details not provided
+  - **Concern** The abstract does not report effect sizes, statistical significance, or the number of independent replicates for the BRET/FRET recruitment assays. It is unclear whether the impairment is modest or substantial, and whether the "multiple experimental configurations" are truly independent or variations of the same assay.
+  - **Why it matters** Without quantitative details, the reader cannot assess whether the observed impairment is biologically meaningful or within experimental noise. The causal link between altered lipid interactions of phosphorylation-prone residues and impaired recruitment is inferred from simulations but not directly tested experimentally.
+  - **Resolution test** Provide effect sizes with confidence intervals, exact p-values, and replicate numbers for all recruitment assays. Include a direct experimental test of the proposed mechanism, such as mutation of the phosphorylation-prone residues or manipulation of membrane lipid composition.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that "atomistic simulations supported these observations and further suggested that A338V reshapes the conformational ensemble of the C-terminal tail, altering its disorder, compaction, and membrane interactions."
+  - **Evidence pointer** Abstract text; simulation details not provided
+  - **Concern** No information is given on simulation length, force field, number of replicas, convergence criteria, or how the "allosteric communication networks" were constructed. The abstract does not state whether the simulations were validated against experimental data or whether the observed conformational differences are statistically robust across independent simulations.
+  - **Why it matters** Molecular dynamics simulations of intrinsically disordered regions are notoriously sensitive to force field choice and sampling length. Without these details, the computational claims cannot be evaluated, and the "support" provided by simulations for the experimental observations remains anecdotal.
+  - **Resolution test** Provide full simulation parameters, convergence metrics, and a statistical comparison of conformational ensembles between wild-type and mutant. Ideally, include experimental validation of the predicted changes in tail dynamics or membrane interactions.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** The abstract claims that "overexpression of GPR183 A338V in differentiated HL-60 cells led to a significant increase in migration of these cells toward the chemoattractant."
+  - **Evidence pointer** Abstract text; experimental details not provided
+  - **Concern** The abstract does not specify the magnitude of the migration increase, the concentration of chemoattractant used, or whether the effect is dependent on G protein signaling or on the impaired arrestin recruitment. It is also unclear whether the overexpression level of the mutant is physiologically relevant compared to endogenous GPR183 expression.
+  - **Why it matters** The migration result is the only functional cellular readout and is central to the claim that the mutation affects "receptor-mediated cellular behavior." Without context on the magnitude and mechanism, the clinical or biological relevance of this finding is uncertain.
+  - **Resolution test** Report the fold change in migration with error bars and statistical tests. Include experiments with a signaling-deficient mutant or a GRK2/arrestin inhibitor to establish the pathway responsible. Compare overexpression levels to endogenous expression.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract uses several technical terms without brief explanation, such as "allosteric communication networks" and "ensemble redistribution," which may be opaque to readers outside the GPCR or computational biology fields.
+  - **Required correction** Add a brief parenthetical explanation of these terms or rephrase to make the concepts more accessible.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract does not state the frequency of the A338V mutation in AML patients or whether this mutation has been functionally studied before. This context is important for assessing the clinical relevance.
+  - **Required correction** Include a sentence on the mutation frequency and prior functional studies, if any.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract mentions "bioluminescence- and fluorescence-based assays" but does not specify which assays were used for which measurements, making it difficult to map methods to results.
+  - **Required correction** Briefly specify the assay types for each measurement (e.g., BRET for recruitment, calcium mobilization for Gi activation).
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3
+- **Assessment against Nature-style criteria** Originality: The work is original in addressing the role of an intrinsically disordered region in GPCR biased signaling via a disease-associated mutation. Scientific importance: Potentially high for GPCR biology and AML research, but the clinical relevance is not yet established. Interdisciplinary readership: The topic bridges structural biology, computational chemistry, and cancer biology, which could attract a broad audience. Technical soundness: Cannot be fully assessed from the abstract; the lack of quantitative details and simulation parameters is a significant limitation. Readability for nonspecialists: The abstract is dense and uses jargon that may limit accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a compelling hypothesis and a reasonable experimental strategy, but the lack of quantitative results, statistical details, and simulation parameters prevents a rigorous evaluation. The authors should provide the full manuscript with detailed methods and results to support the claims.
+
+## Risk / unsupported claims
+- The claim that A338V "rewires" GPR183 signaling through "C-terminal ensemble redistribution" is not directly supported by the abstract, as the causal link between conformational changes and functional outcomes is inferred rather than demonstrated.
+- The claim that the mutation "likely" induces different receptor core conformations is speculative and not supported by direct structural evidence.
+- The claim that the mutation "redistributes lipid interactions of phosphorylation-prone serine and threonine residues" is based solely on simulations and is not experimentally validated.
+- The clinical relevance of the increased migration in HL-60 cells is unclear without data on endogenous expression levels or patient-derived samples.

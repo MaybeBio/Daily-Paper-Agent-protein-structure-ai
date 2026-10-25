@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Computer-Aided Drug Design for Type 2 Diabetes-Related Enzymes: SILCS-Based Fragment Mapping, Pharmacophore Modeling, and Virtual Screening. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Computer-Aided Drug Design for Type 2 Diabetes-Related Enzymes: SILCS-Based Fragment Mapping, Pharmacophore Modeling, and Virtual Screening.</h1>
+      <div class="meta">Mohammadi, Esmat; Lemkul, Justin A</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-10-23
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42912944/">原文</a>
+      </div>
+      <p class="one-liner">该文开发了改进的SILCS计算框架（结合Drude极化力场和中性-带电探针分离协议），用于2型糖尿病相关酶的片段图谱、药效团建模和虚拟筛选，属于蛋白质结构相关的计算药物设计，方法有创新但对象为酶-配体体系，偏工程应用。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Highly charged enzyme active sites present a challenge for conventional Site Identification by Ligand Competitive Saturation (SILCS) because strongly interacting charged probes can suppress sampling of neutral fragments, while additive force fields do not explicitly account for electronic polarization. To address these limitations, we developed a comprehensive SILCS-based computational framework and applied it to the N-terminal and C-terminal domains of maltase-glucoamylase and to alpha-amylase. Both the conventional mixed-probe SILCS workflow and a modified neutral-charged protocol were evaluated using the CHARMM additive and Drude polarizable force fields. FragMap convergence analysis demonstrated reliable sampling across all systems, with the neutral-charged protocol alleviating competitive exclusion effects observed in conventional simulations. In highly charged catalytic pockets, the conventional workflow was dominated by cationic probe sampling, suppressing neutral and hydrogen-bonding features. Separation of charged and neutral probes restored chemically diverse interaction patterns, improving representation of hydrogen-bond donor, acceptor, and hydrophobic hotspots. Incorporation of the Drude polarizable force field further enhanced resolution of electrostatic and hydrogen-bonding interactions. Energy-based SILCS-Pharmacophore models were generated from the neutral-charged FragMaps and used for virtual screening of the Maybridge and ChemBridge libraries. Hits were refined using SILCS-MC, ranked by ligand grid free energy (LGFE) and ligand efficiency (LE), and analyzed through scaffold- and fingerprint-based clustering. Integration of energetic and structural analyses enabled identification of favorable scaffolds and functional group patterns associated with strong binding efficiency. Together, this study develops, evaluates, and applies an improved SILCS workflow to three enzymes associated with type 2 diabetes (T2D), demonstrating its utility for characterizing highly charged active sites and prioritizing candidate inhibitors.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">高电荷酶活性位点对传统配体竞争饱和位点识别（SILCS）方法构成挑战，因为强相互作用的带电探针可能抑制中性片段的采样，而加和力场未明确考虑电子极化效应。为克服这些局限，我们开发了一个基于SILCS的综合计算框架，并将其应用于麦芽糖酶-葡糖淀粉酶的N端和C端结构域以及α-淀粉酶。使用CHARMM加和力场和Drude极化力场，评估了传统混合探针SILCS流程和改良的中性-带电协议。FragMap收敛性分析表明所有系统均具有可靠的采样，其中中性-带电协议缓解了传统模拟中观察到的竞争性排除效应。在高电荷催化口袋中，传统流程以阳离子探针采样为主，抑制了中性和氢键特征。将带电与中性探针分离后，恢复了化学多样性的相互作用模式，改善了氢键供体、受体和疏水热点区域的表征。引入Drude极化力场进一步增强了静电和氢键相互作用的解析度。基于能量的SILCS-药效团模型由中性-带电FragMap生成，并用于Maybridge和ChemBridge文库的虚拟筛选。命中化合物通过SILCS-MC进行优化，按配体网格自由能（LGFE）和配体效率（LE）排序，并通过骨架和指纹聚类进行分析。能量与结构分析的整合使得能够识别与强结合效率相关的有利骨架和官能团模式。综上，本研究开发、评估并应用了一种改进的SILCS流程于三种与2型糖尿病（T2D）相关的酶，展示了其在表征高电荷活性位点和优先排序候选抑制剂方面的实用性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: Computer-Aided Drug Design for Type 2 Diabetes-Related Enzymes: SILCS-Based Fragment Mapping, Pharmacophore Modeling, and Virtual Screening</li>
+<li><strong>作者</strong>: Mohammadi, Esmat; Lemkul, Justin A</li>
+<li><strong>单位</strong>: 未提供（根据致谢推测为 Virginia Tech）</li>
+<li><strong>期刊/平台</strong>: Journal of Chemical Information and Modeling</li>
+<li><strong>年份</strong>: 2026</li>
+<li><strong>论文类型</strong>: 方法开发 + 应用研究</li>
+<li><strong>领域</strong>: 计算机辅助药物设计（CADD）；SILCS 片段映射；药效团建模；虚拟筛选</li>
+<li><strong>关键词</strong>: SILCS, FragMap, Drude polarizable force field, pharmacophore, virtual screening, type 2 diabetes, maltase-glucoamylase, α-amylase</li>
+<li><strong>DOI/arXiv</strong>: 10.1021/acs.jcim.6c01733</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供（PDB 结构：3L4Y, 3TOP, 4GQR）</li>
+<li><strong>阅读日期</strong>: 2026-10-23</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × 物理模拟（MD/GCMC）」方向，聚焦于 SILCS 片段映射方法在<strong>高电荷酶活性位点</strong>上的改进（neutral–charged 协议 + Drude 极化力场），并串联药效团建模与虚拟筛选，形成从位点表征到候选抑制剂优先排序的完整 CADD 流程。对本课题的可迁移点在于：SILCS FragMap 的生成与收敛性评估、药效团特征提取与虚拟筛选的集成策略、以及极化力场在高电荷口袋中的应用。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对高电荷酶活性位点中带电探针抑制中性片段采样的问题，本文开发了 neutral–charged SILCS 协议（将带电与中性探针分开模拟）并结合 Drude 极化力场，在 NtMGAM、CtMGAM 和 α-amylase 三个 T2D 相关酶上生成了化学多样性更高的 FragMap，进而构建 SILCS-Pharmacophore 模型并完成虚拟筛选，最终通过 SILCS-MC 对接和 LGFE/LE 排序优先选出候选抑制剂。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 在高电荷酶活性位点中，常规 SILCS 的混合探针模拟会导致强相互作用的带电探针（如甲基铵阳离子）主导采样，抑制中性片段（疏水、氢键供体/受体）的充分采样，从而降低 FragMap 的化学多样性；同时，加和力场（如 CHARMM）无法显式描述电子极化效应，可能影响高电荷环境中静电相互作用的表征精度。</li>
+<li><strong>为什么重要</strong>: T2D 相关酶（NtMGAM、CtMGAM、α-amylase）的活性位点富含带电残基（Asp、His、Arg 等），是设计抑制剂的关键靶区。准确表征这些位点的相互作用特征（氢键、静电、疏水）是虚拟筛选成功的前提。若 FragMap 被单一探针主导，将遗漏关键的药物-靶点相互作用信息，降低筛选命中率。</li>
+<li><strong>现有方法不足</strong>: 常规 SILCS 混合探针协议在高电荷位点存在竞争性排斥；加和力场缺乏极化描述；先前的 SILCS 研究未结合增强采样（如 GCMC-MD）与极化力场。</li>
+<li><strong>精确研究问题（Can...?）</strong>: Can a neutral–charged SILCS protocol combined with the Drude polarizable force field improve fragment sampling diversity and pharmacophore quality in highly charged enzyme active sites, thereby enhancing virtual screening hit prioritization for T2D-related enzymes?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」——基于 SILCS 方法学文献与本文引言，但具体阶段划分与代表性方法选择为本文框架）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统对接</td>
+<td>AutoDock, Glide 等</td>
+<td>计算快、易用</td>
+<td>静态蛋白构象、简化溶剂模型、忽略诱导契合与水介导作用</td>
+<td>本文指出其在高电荷、柔性口袋中的排名不准</td>
+</tr>
+<tr>
+<td>片段映射</td>
+<td>传统 SILCS（混合探针）</td>
+<td>全原子 MD、显式溶剂、考虑蛋白柔性</td>
+<td>高电荷位点中带电探针主导采样，中性片段被抑制</td>
+<td>本文改进对象</td>
+</tr>
+<tr>
+<td>极化力场 SILCS</td>
+<td>Goel et al. 的 Drude SILCS</td>
+<td>显式极化改善静电描述</td>
+<td>未结合增强采样、未系统评估高电荷蛋白</td>
+<td>本文扩展至 GCMC-MD + neutral–charged 协议</td>
+</tr>
+<tr>
+<td>药效团虚拟筛选</td>
+<td>Pharmit / Pharmer</td>
+<td>快速筛选大型库</td>
+<td>依赖药效团质量，静态特征</td>
+<td>本文从 FragMap 生成药效团并集成 SILCS-MC 排序</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>带电探针主导采样</td>
+<td>常规 SILCS 中甲基铵阳离子 FragMap 占据活性位点，中性/氢键探针几乎不可见</td>
+<td>高电荷口袋对阳离子有强静电吸引，竞争性排斥中性片段</td>
+<td>Results 图 2A/C（NtMGAM、CtMGAM、α-amylase 的 FragMap 对比）</td>
+</tr>
+<tr>
+<td>加和力场缺乏极化</td>
+<td>CHARMM 力场无法描述环境依赖的电子分布变化</td>
+<td>加和力场固定部分电荷，无法响应局部电场变化</td>
+<td>Introduction 第 4 段</td>
+</tr>
+<tr>
+<td>中性片段采样不足</td>
+<td>氢键供体/受体、疏水 FragMap 在常规协议中缺失或极弱</td>
+<td>带电探针的强相互作用抑制了弱相互作用的采样</td>
+<td>Results 图 2A vs 2B（CHARMM 常规 vs neutral–charged）</td>
+</tr>
+<tr>
+<td>药效团特征单一</td>
+<td>基于常规 FragMap 的药效团仅含阳离子特征，缺乏氢键/疏水特征</td>
+<td>FragMap 化学多样性不足直接导致药效团特征单一</td>
+<td>Results 药效团模型对比（表 2-4）</td>
+</tr>
+<tr>
+<td>虚拟筛选命中率受限</td>
+<td>药效团过于严格或特征单一导致漏检或假阳性</td>
+<td>药效团特征组合不合理，未覆盖关键相互作用</td>
+<td>Results 虚拟筛选命中数对比（表 2-4）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 将 SILCS 模拟拆分为两个独立体系——中性探针组（苯、丙烷、二甲醚、甲醇、甲酰胺、咪唑）和带电探针组（乙酸根、甲基铵），分别进行 GCMC-MD 采样，最后合并 FragMap；同时用 Drude 极化力场替代 CHARMM 加和力场。</li>
+<li><strong>核心洞察</strong>: 高电荷活性位点的「静电竞争」是 FragMap 化学多样性丧失的根源。将带电与中性探针物理隔离，可让中性片段在不受静电干扰的情况下充分探索疏水和氢键位点；而 Drude 力场通过显式极化进一步修正了高电荷环境中的静电描述，使 FragMap 更接近真实相互作用。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>: 在计算模拟中，当体系内不同组分间的相互作用强度差异过大时（如强静电 vs 弱疏水），「竞争性采样」会导致弱相互作用被掩盖。<strong>分离变量</strong>（将强/弱相互作用组分分开采样）是一种通用策略，可推广到其他片段映射方法（如 FTMAP）、共溶剂 MD 模拟，甚至增强采样方法的设计中。此外，力场选择应匹配体系化学环境——高电荷/极性体系可能需要极化力场才能获得可靠结果。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 三个酶的晶体结构（PDB: 3L4Y, 3TOP, 4GQR）；探针分子集合（中性：BENZ, PROP, DME, MEOH, FORM, IMID；带电：ACET, MAMM）；力场（CHARMM36 加和力场 / Drude-2019 极化力场）</li>
+<li><strong>输出</strong>: FragMap 三维概率图；SILCS-Pharmacophore 模型；虚拟筛选命中列表（按 LGE/LE 排序）</li>
+<li><strong>模块</strong>:
+  1. <strong>蛋白准备</strong>: CHARMM 能量最小化，去除水分子和离子
+  2. <strong>体系构建</strong>: 常规协议（10 个独立体系，混合探针）vs neutral–charged 协议（10 个中性体系 + 10 个带电体系）
+  3. <strong>GCMC-MD 采样</strong>: 100 轮 GCMC-MD 循环，每轮 200,000 步 GCMC + 1 ns MD
+  4. <strong>FragMap 生成</strong>: 基于探针占有率计算三维网格上的归一化占有率，经 Boltzmann 变换转为自由能图
+  5. <strong>药效团建模</strong>: 基于 FragMap 特征（疏水、氢键供体/受体、阳离子、阴离子）聚类生成药效团
+  6. <strong>虚拟筛选</strong>: Pharmit 平台对 Maybridge（53,231 化合物）和 ChemBridge（1,240,308 化合物）库进行筛选
+  7. <strong>SILCS-MC 精修与排序</strong>: 对命中化合物进行对接，计算 LGFE 和 LE</li>
+<li><strong>文字流程</strong>: 蛋白结构准备 → 构建常规/neutral–charged 体系 → GCMC-MD 迭代采样 → 生成 FragMap → 评估收敛性（OC 值）→ 与晶体结构对比验证 → 生成药效团 → Pharmit 虚拟筛选 → SILCS-MC 精修 → LGFE/LE 排序 → 聚类分析（Bemis–Murcko + 指纹）→ 候选抑制剂优先排序</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Neutral–charged 协议</td>
+<td>将带电与中性探针分开模拟</td>
+<td>避免高电荷位点中阳离子探针抑制中性片段采样</td>
+<td>输入：蛋白结构 + 探针子集；输出：独立 FragMap 集</td>
+<td>Results 图 2：neutral–charged 协议下氢键供体/受体、疏水 FragMap 显著增强</td>
+<td>预期影响：FragMap 化学多样性降低，药效团缺失关键特征，虚拟筛选命中率下降</td>
+</tr>
+<tr>
+<td>Drude 极化力场</td>
+<td>显式描述电子极化</td>
+<td>高电荷位点中加和力场无法准确描述静电相互作用</td>
+<td>输入：Drude-2019 力场参数；输出：极化感知的 FragMap</td>
+<td>Results 表 2-4：Drude 药效团特征更丰富，命中化合物 LGFE 更优</td>
+<td>预期影响：静电相互作用描述不准确，FragMap 分辨率降低，尤其影响氢键和带电相互作用</td>
+</tr>
+<tr>
+<td>GCMC-MD 增强采样</td>
+<td>提高探针在结合位点的采样效率</td>
+<td>常规 MD 难以充分采样探针在深埋口袋中的构象</td>
+<td>输入：GCMC 化学势 + MD 轨迹；输出：高占有率 FragMap</td>
+<td>Methods 节：100 轮 GCMC-MD 循环，OC 值 ≥0.71</td>
+<td>预期影响：FragMap 收敛性下降，遗漏稀有但重要的相互作用位点</td>
+</tr>
+<tr>
+<td>SILCS-Pharmacophore 建模</td>
+<td>将 FragMap 转化为可筛选的药效团特征</td>
+<td>将三维占有率图转化为离散的化学特征用于虚拟筛选</td>
+<td>输入：FragMap + 阈值；输出：药效团特征（HBD, HBA, 疏水, 阳离子, 阴离子）</td>
+<td>Results 表 2-4：药效团特征数量与类型对比</td>
+<td>预期影响：无法进行虚拟筛选，或药效团特征不准确导致假阳性/假阴性</td>
+</tr>
+<tr>
+<td>Pharmit 虚拟筛选</td>
+<td>快速筛选大型化合物库</td>
+<td>从数十万化合物中初步筛选满足药效团约束的候选物</td>
+<td>输入：药效团 + 化合物库；输出：命中列表</td>
+<td>Results 表 2-4：各药效团的命中数量</td>
+<td>预期影响：无法缩小候选范围，后续计算成本剧增</td>
+</tr>
+<tr>
+<td>SILCS-MC 精修与 LGFE/LE 排序</td>
+<td>对命中化合物进行构象采样和能量评估</td>
+<td>药效团筛选仅保证形状/化学匹配，需能量评估排序</td>
+<td>输入：命中化合物 + FragMap；输出：LGFE、LE 值</td>
+<td>Results 表 2-4：命中化合物 LGFE/LE 与已知抑制剂对比</td>
+<td>预期影响：无法区分弱结合与强结合化合物，候选优先级不明确</td>
+</tr>
+<tr>
+<td>Bemis–Murcko + 指纹聚类</td>
+<td>分析命中化合物的结构共性</td>
+<td>识别优势骨架和功能基团模式</td>
+<td>输入：命中化合物 SMILES；输出：聚类结果</td>
+<td>Results 图 3-5：优势骨架识别</td>
+<td>预期影响：无法指导后续化学优化，缺乏结构-活性关系信息</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>符号含义</th>
+<th>用途</th>
+<th>直觉</th>
+<th>来源指针</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P_xyz = OCC_xyz / (n_atoms × OCC_bulk)</td>
+<td>P_xyz：归一化占有率；OCC_xyz： voxel 占有率；n_atoms：探针中该原子类型数；OCC_bulk：体相占有率</td>
+<td>将原始占有率归一化，消除探针大小和浓度差异</td>
+<td>将 voxel 占有率转换为相对体相的富集程度</td>
+<td>Methods 节，公式 1</td>
+</tr>
+<tr>
+<td>GFE_xyz = −RT ln(P_xyz)</td>
+<td>GFE_xyz：网格自由能；R：气体常数；T：温度；P_xyz：归一化占有率</td>
+<td>将占有率转换为自由能图</td>
+<td>高占有率 voxel 对应负 GFE（有利相互作用）</td>
+<td>Methods 节，公式 2</td>
+</tr>
+<tr>
+<td>OC = Σ min(Q_i¹/ΣQ_j¹, Q_i²/ΣQ_j²)</td>
+<td>OC：重叠系数；Q_i¹、Q_i²：两组独立模拟的 voxel 占有率</td>
+<td>评估 FragMap 收敛性</td>
+<td>OC 越接近 1，两组模拟结果越一致</td>
+<td>Methods 节，公式 3</td>
+</tr>
+<tr>
+<td>FGFE_j = Σ GFE_i (i ∈ cluster j)</td>
+<td>FGFE_j：特征 j 的网格自由能；GFE_i：voxel i 的自由能</td>
+<td>量化药效团特征的能量贡献</td>
+<td>特征包含的 voxel 越多、GFE 越负，FGFE 越负</td>
+<td>Methods 节，公式 4</td>
+</tr>
+<tr>
+<td>LE = LGFE / N_heavy_atoms</td>
+<td>LE：配体效率；LGFE：配体网格自由能；N_heavy_atoms：非氢原子数</td>
+<td>归一化配体结合效率</td>
+<td>单位原子贡献的结合自由能越高，LE 越优</td>
+<td>Results 节（表 2-4 描述）</td>
+</tr>
+</tbody>
+</table>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>: 3 个酶结构（NtMGAM PDB 3L4Y, CtMGAM PDB 3TOP, α-amylase PDB 4GQR）；2 个化合物库（Maybridge 53,231 化合物/74,593 构象；ChemBridge 1,240,308 化合物/2,164,721 构象）</li>
+<li><strong>指标</strong>: OC（FragMap 收敛性）；FragMap 化学特征多样性；药效团特征数量与类型；虚拟筛选命中数；LGFE；LE</li>
+<li><strong>基线</strong>: 常规混合探针 SILCS 协议（CHARMM 力场）</li>
+<li><strong>骨干/仪器</strong>: SilcsBio 2023.1 + GROMACS 2022.5（CHARMM 模拟）；OpenMM 7.7.0（Drude 模拟）；Pharmit 服务器</li>
+<li><strong>oracle 输入</strong>: 晶体结构中的已知抑制剂结合构象（miglitol、acarbose、myristin）</li>
+<li><strong>评测协议</strong>: 将 FragMap 与晶体结构中的抑制剂原子位置对比；将药效团筛选命中化合物进行 SILCS-MC 对接，计算 LGFE/LE 并与已知抑制剂比较</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FragMap 收敛性分析</td>
+<td>所有体系均达到充分采样</td>
+<td>OC 值比较（前 5 个 vs 后 5 个独立模拟）</td>
+<td>所有体系 OC ≥ 0.71，多数 ≥ 0.8</td>
+<td>采样充分，FragMap 可靠</td>
+<td>OC 阈值 0.6-0.8 为经验值，不保证生物学准确性</td>
+<td>Results 表 S2-S3</td>
+</tr>
+<tr>
+<td>常规 vs neutral–charged 协议 FragMap 对比</td>
+<td>neutral–charged 协议提高化学多样性</td>
+<td>同一酶、同一力场，不同探针混合方式</td>
+<td>常规协议中甲基铵主导；neutral–charged 协议中氢键供体/受体、疏水 FragMap 显著增强</td>
+<td>分离带电/中性探针可缓解竞争性排斥</td>
+<td>未定量比较 FragMap 与已知抑制剂的匹配度</td>
+<td>Results 图 2</td>
+</tr>
+<tr>
+<td>CHARMM vs Drude FragMap 对比</td>
+<td>极化力场改善静电表征</td>
+<td>同一协议（neutral–charged），不同力场</td>
+<td>Drude FragMap 显示更丰富的氢键和静电特征，尤其在 Asp/His/Arg 富集区</td>
+<td>极化力场提高高电荷位点的表征分辨率</td>
+<td>未进行 MD 轨迹的物理化学验证（如偶极矩分布）</td>
+<td>Results 图 2，表 2-4</td>
+</tr>
+<tr>
+<td>药效团模型生成</td>
+<td>药效团特征反映真实相互作用</td>
+<td>CHARMM vs Drude 药效团特征数量与类型</td>
+<td>Drude 药效团特征更多样，包含 HBD/HBA/阳离子/疏水特征</td>
+<td>极化力场产生更全面的药效团</td>
+<td>未用独立测试集验证药效团的选择性</td>
+<td>Results 表 2-4</td>
+</tr>
+<tr>
+<td>虚拟筛选命中率</td>
+<td>药效团模型能富集潜在抑制剂</td>
+<td>Maybridge 和 ChemBridge 库，各药效团模型独立筛选</td>
+<td>各模型命中数不同，Drude 模型命中数较少但 LGFE/LE 更优</td>
+<td>Drude 药效团更严格，富集效率更高</td>
+<td>未进行实验验证（酶活性测定）</td>
+<td>Results 表 2-4</td>
+</tr>
+<tr>
+<td>已知抑制剂基准测试</td>
+<td>SILCS-MC 能重现已知结合模式</td>
+<td>miglitol/NtMGAM, acarbose/CtMGAM, myricetin/α-amylase 的晶体构象 vs 精修构象</td>
+<td>RMSD: CHARMM 4.06/3.38/2.40 Å; Drude 3.95/1.30/2.26 Å</td>
+<td>Drude FragMap 精修更接近晶体构象</td>
+<td>RMSD 差异未进行统计显著性检验；样本量小（n=3）</td>
+<td>Results 图 4-6</td>
+</tr>
+<tr>
+<td>聚类分析</td>
+<td>命中化合物具有结构共性</td>
+<td>Bemis–Murcko 骨架 + 指纹聚类</td>
+<td>识别出含氮杂环、多羟基芳香族等优势骨架</td>
+<td>聚类结果与 FragMap 特征一致</td>
+<td>未进行合成与活性验证</td>
+<td>Results 图 3-5</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 本文仅针对 3 个 T2D 相关酶（NtMGAM、CtMGAM、α-amylase）的活性位点表征和虚拟筛选，<strong>未涉及</strong>其他 T2D 靶点（如 DPP-4、SGLT2）或其他高电荷酶系统。</li>
+<li><strong>oracle/真值输入</strong>: 使用晶体结构中的已知抑制剂（miglitol、acarbose、myricetin）作为验证基准，但<strong>未进行</strong>实验酶活性测定或细胞实验验证。</li>
+<li><strong>端到端状态</strong>: 流程为「FragMap → 药效团 → 虚拟筛选 → SILCS-MC 精修 → 排序」，<strong>止步于计算预测</strong>，未进入湿实验验证阶段。</li>
+<li><strong>算力成本</strong>: CHARMM 模拟每体系 1 μs（10 × 100 ns），Drude 模拟每体系 2 μs（100 × 20 ns），计算成本较高；Drude 模拟需额外处理 Drude 粒子（约 2-3 倍计算量）。</li>
+<li><strong>历史数据依赖</strong>: 依赖 PDB 晶体结构（3L4Y, 3TOP, 4GQR），这些结构可能不代表溶液中的全部构象状态。</li>
+<li><strong>模型依赖</strong>: 结果依赖力场选择（CHARMM36 vs Drude-2019）、探针集组成、GCMC 化学势参数、药效团特征阈值等。</li>
+<li><strong>最难情形</strong>: 高电荷、柔性、溶剂暴露的活性位点（如 α-amylase 的浅而宽的活性位点）仍具挑战；Drude 模拟中带电探针的极化参数可能引入额外不确定性。</li>
+<li><strong>群体/领域边界</strong>: 结论仅适用于与本研究类似的「高电荷糖苷酶活性位点」场景，<strong>不可外推</strong>至其他蛋白质家族。</li>
+<li><strong>不确定性</strong>: 未报告置信区间或统计检验；LGFE/LE 为计算预测值，与实验结合自由能的绝对相关性未验证。</li>
+<li><strong>有边界的复述</strong>: 在 CHARMM36 和 Drude-2019 力场下，neutral–charged SILCS 协议在 3 个高电荷糖苷酶活性位点上比常规混合探针协议产生了化学多样性更高的 FragMap；Drude 力场进一步改善了静电相互作用的表征；基于这些 FragMap 构建的药效团模型成功筛选出 LGFE/LE 优于已知抑制剂的候选化合物，但所有预测均需实验验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drude 模拟计算成本高</td>
+<td>每体系 2 μs 累积模拟时间，需 OpenMM 专用实现</td>
+<td>未明确提及</td>
+<td>Conclusions 节（隐含）</td>
+</tr>
+<tr>
+<td>Drude 工作流依赖 CHARMM 预采样</td>
+<td>Drude 模拟从 CHARMM GCMC 构象初始化，可能引入偏差</td>
+<td>未明确提及</td>
+<td>Methods 节（Drude SILCS Workflow）</td>
+</tr>
+<tr>
+<td>虚拟筛选命中数有限</td>
+<td>Drude 药效团在 Maybridge 库中仅 1 个命中（α-amylase）</td>
+<td>未明确提及</td>
+<td>Results 表 2-4</td>
+</tr>
+<tr>
+<td>未进行实验验证</td>
+<td>所有命中化合物均为计算预测，无酶活性数据</td>
+<td>未明确提及（但暗示后续实验）</td>
+<td>Conclusions 节</td>
+</tr>
+<tr>
+<td>药效团特征选择主观性</td>
+<td>特征选择基于 FragMap 阈值和空间聚类，存在人为设定</td>
+<td>未明确提及</td>
+<td>Methods 节（SILCS Pharmacophore Modeling）</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drude 模拟从 CHARMM 构象初始化</td>
+<td>初始构象偏差可能影响 Drude 采样结果，而非力场本身改善</td>
+<td>若初始化偏差主导，则 Drude 的改进可能被高估</td>
+<td>从随机或纯 Drude 平衡构象重新初始化，比较 FragMap 差异</td>
+<td>Methods 节（Drude SILCS Workflow）</td>
+</tr>
+<tr>
+<td>药效团特征选择存在主观性</td>
+<td>不同阈值或聚类参数可能导致完全不同的药效团模型</td>
+<td>影响虚拟筛选结果的可重复性</td>
+<td>进行参数敏感性分析（阈值 ±0.2 kcal/mol，聚类距离 ±0.5 Å）</td>
+<td>Methods 节（SILCS Pharmacophore Modeling）</td>
+</tr>
+<tr>
+<td>命中化合物 LGFE/LE 与已知抑制剂比较的公平性</td>
+<td>已知抑制剂（miglitol/acarbose）分子量较大，LE 天然偏低；新命中化合物可能因分子量小获得高 LE</td>
+<td>LE 比较可能偏向小分子，而非真实结合优势</td>
+<td>使用等分子量匹配的已知抑制剂子集进行比较，或报告标准化 LE（如 LE_scale）</td>
+<td>Results 表 2-4</td>
+</tr>
+<tr>
+<td>未报告 FragMap 与晶体结构的定量匹配度</td>
+<td>仅定性描述「重叠」，未给出量化指标（如 voxel 覆盖率、Dice 系数）</td>
+<td>无法客观评估 FragMap 质量</td>
+<td>计算 FragMap 与晶体配体原子的空间重叠率</td>
+<td>Results 图 2</td>
+</tr>
+<tr>
+<td>三个酶系统的选择偏差</td>
+<td>均为糖苷酶家族，活性位点相似（富含 Asp/Glu 催化残基），可能无法代表所有高电荷位点</td>
+<td>结论外推性受限</td>
+<td>增加不同家族的高电荷酶（如激酶、磷酸酶）进行验证</td>
+<td>Introduction 节</td>
+</tr>
+<tr>
+<td>Drude 力场参数对探针分子的适用性</td>
+<td>探针分子（如甲胺、乙酸）的 Drude 参数可能未经过系统验证</td>
+<td>参数误差可能影响 FragMap 准确性</td>
+<td>与高精度 QM 计算的相互作用能对比验证</td>
+<td>Methods 节（Drude SILCS Workflow）</td>
+</tr>
+<tr>
+<td>虚拟筛选命中率未与随机筛选比较</td>
+<td>未报告富集因子或 ROC 曲线</td>
+<td>无法评估药效团模型的判别能力</td>
+<td>使用 DUD-E 或 MUBD 基准集计算富集因子</td>
+<td>Results 表 2-4</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>分离变量采样策略（可迁移）</strong>: 当体系中不同探针/配体片段的相互作用强度差异过大时，竞争性采样会掩盖弱相互作用。将强/弱相互作用组分分开模拟再合并结果，是一种通用策略，可迁移到其他片段映射方法（如 FTMAP、共溶剂 MD）或增强采样设计。</p>
+</li>
+<li>
+<p><strong>极化力场在高电荷位点的价值（可迁移）</strong>: Drude 力场通过显式极化改善了高电荷活性位点的静电表征，尤其对氢键供体/受体和带电相互作用的描述。本课题中，若目标蛋白活性位点富含带电残基，可考虑使用极化力场（Drude 或 AMOEBA）进行 MD 模拟或片段映射。</p>
+</li>
+<li>
+<p><strong>FragMap 到药效团的转化流程（可迁移）</strong>: 从 FragMap 中提取药效团特征（HBD、HBA、疏水、阳离子、阴离子）并设置能量阈值（如 −1.0 kcal/mol）的流程，可迁移到其他靶点的药效团建模，特别是当缺乏实验结构-活性数据时。</p>
+</li>
+<li>
+<p><strong>GCMC-MD 增强采样协议（可迁移）</strong>: 200,000 步 GCMC + 1 ns MD 的迭代循环（100 轮）可有效提高探针在深埋口袋中的采样效率，适用于其他柔性或隐蔽口袋的片段映射。</p>
+</li>
+<li>
+<p><strong>多级筛选流程设计（可迁移）</strong>: 「FragMap → 药效团 → 虚拟筛选 → 分子对接精修 → LE 排序」的多级流程可有效缩小候选范围，适用于大规模虚拟筛选项目。</p>
+</li>
+<li>
+<p><strong>LE 作为排序指标（可迁移）</strong>: 使用 LE（LGFE/重原子数）而非绝对结合自由能进行候选排序，可减少分子量偏差，适用于比较不同化学系列的命中化合物。</p>
+</li>
+<li>
+<p><strong>收敛性评估方法（可迁移）</strong>: 使用 OC 值（前 5 个 vs 后 5 个独立模拟的 FragMap 重叠）作为采样收敛性指标，可迁移到其他基于 MD 的映射方法的质量控制。</p>
+</li>
+<li>
+<p><strong>Bemis–Murcko 骨架 + 指纹聚类（可迁移）</strong>: 结合骨架分析和指纹聚类的化合物分析策略，可有效识别优势骨架和功能基团模式，适用于任何虚拟筛选结果的后期分析。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>SILCS 方法学</strong>: 本文直接扩展了 Lakkaraju et al. (2015) 和 Raman et al. (2013) 的 SILCS 方法，将 RNA 系统中开发的 neutral–charged 协议（SILCS-RNA）首次系统应用于蛋白质系统。可连接至 SILCS 官方文档和 SilcsBio 软件包。</li>
+<li><strong>Drude 极化力场</strong>: 本文与 Goel et al. 的 Drude-SILCS 工作直接相关，后者在一般蛋白质系统上验证了 Drude 力场的可行性。可连接至 Lemkul 课题组的 Drude 力场系列工作（Lemkul et al., 2016, JPC B）。</li>
+<li><strong>糖苷酶抑制剂设计</strong>: 与 acarbose、miglitol 的临床使用和结构生物学研究（Sim et al., 2008, JMB）相关，本文的 FragMap 结果可与已知抑制剂结合模式交叉验证。</li>
+<li><strong>药效团建模与虚拟筛选</strong>: 本文的 SILCS-Pharm 流程与 Pharmit 平台（Sunseri &amp; Koes, 2016, NAR）相关，可连接至其他基于结构的药效团方法（如 LigandScout、GALAHAD）。</li>
+<li><strong>CADD 流程集成</strong>: 本文展示了「MD 模拟 → 药效团 → 虚拟筛选 → 对接精修」的完整流程，与近年来的结构-based 虚拟筛选工作流（如 DOCK、AutoDock Vina 流程）形成互补。</li>
+<li><strong>[Analysis] 候选方向</strong>: 本文的 neutral–charged 协议可进一步与增强采样方法（如 REST2、GaMD）结合，或与机器学习势函数（如 ANI、MACE）联用，以提高高电荷体系的采样效率。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: Neutral–charged SILCS 协议在激酶/磷酸酶高电荷位点上的泛化性验证
+   - <strong>来源局限/观察</strong>: 本文仅验证了 3 个糖苷酶，其活性位点均富含 Asp/Glu 催化残基；激酶（ATP 结合位点富含 Lys/Glu/Asp）和磷酸酶（催化位点富含 Cys/Arg/Asp）具有不同的电荷分布模式
+   - <strong>核心假设</strong>: neutral–charged 协议的改善效果与位点电荷密度正相关，而非糖苷酶特异性
+   - <strong>初步方法</strong>: 选取 3-5 个激酶和磷酸酶结构，重复本文的 CHARMM vs Drude、常规 vs neutral–charged 对比实验
+   - <strong>验证方式</strong>: 比较 FragMap 化学多样性（OC 值、特征数量）和已知抑制剂结合模式的重现度
+   - <strong>可能的失败模式</strong>: 若改善效果不显著，可能表明糖苷酶的特殊性（如深口袋、多个催化残基）是主因</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 机器学习势函数（MLP）替代 Drude 极化力场的 SILCS 可行性评估
+   - <strong>来源局限/观察</strong>: Drude 力场计算成本高（约 2-3 倍于加和力场），且需要额外处理 Drude 粒子；MLP（如 ANI-2x, MACE）可隐式包含极化效应
+   - <strong>核心假设</strong>: MLP 能在保持极化精度的同时降低 SILCS 计算成本，且 FragMap 质量不低于 Drude
+   - <strong>初步方法</strong>: 在 NtMGAM 上使用 MACE-MP 或 ANI-2x 进行 SILCS 模拟，与 Drude 结果对比 FragMap 和药效团质量
+   - <strong>验证方式</strong>: OC 值、与晶体结构的匹配度、虚拟筛选富集因子
+   - <strong>可能的失败模式</strong>: MLP 对探针分子的泛化性不足，或 MD 稳定性问题</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于 FragMap 的机器学习药效团特征自动生成
+   - <strong>来源局限/观察</strong>: 本文药效团特征选择依赖人工阈值和聚类参数，存在主观性
+   - <strong>核心假设</strong>: 图神经网络（GNN）可从 FragMap 中自动学习最优药效团特征组合，提高虚拟筛选富集率
+   - <strong>初步方法</strong>: 将 FragMap 转换为 3D 网格特征，输入 3D-CNN 或 GNN 模型，在 DUD-E 基准集上训练和评估
+   - <strong>验证方式</strong>: 与本文人工药效团的富集因子对比
+   - <strong>可能的失败模式</strong>: 训练数据不足导致过拟合，或 FragMap 分辨率不足以支持深度学习</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: SILCS FragMap 与 AlphaFold 预测结构的兼容性评估
+   - <strong>来源局限/观察</strong>: 本文使用实验晶体结构；实际应用中靶点结构可能来自 AlphaFold 预测，其侧链构象和电荷分布可能与实验结构有差异
+   - <strong>核心假设</strong>: AlphaFold 预测结构的高置信度区域可产生与实验结构相当的 FragMap，但低置信度区域（如柔性环）需额外处理
+   - <strong>初步方法</strong>: 对 3 个酶分别使用实验结构和 AlphaFold 预测结构进行 SILCS，对比 FragMap 差异
+   - <strong>验证方式</strong>: FragMap 重叠率、药效团特征一致性、虚拟筛选命中率
+   - <strong>可能的失败模式</strong>: AlphaFold 结构在活性位点的侧链 packing 差异导致 FragMap 显著偏差</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 高电荷位点中水分子介导相互作用的 SILCS 显式水模型改进
+   - <strong>来源局限/观察</strong>: 本文 SILCS 模拟虽为显式溶剂，但 FragMap 分析未区分直接相互作用与水介导相互作用；高电荷位点中水分子桥接作用可能被低估
+   - <strong>核心假设</strong>: 在 FragMap 分析中引入水分子占有率图，可识别水介导的氢键网络，提高药效团精度
+   - <strong>初步方法</strong>: 在现有 SILCS 轨迹中额外计算水分子占有率图，与探针 FragMap 联合分析
+   - <strong>验证方式</strong>: 与已知抑制剂的水介导相互作用对比（如晶体结构中的保守水分子）
+   - <strong>可能的失败模式</strong>: 水分子占有率图噪声大，难以提取稳定特征</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于 SILCS LGFE 的生成式分子设计（与扩散模型结合）
+   - <strong>来源局限/观察</strong>: 本文止步于虚拟筛选，未进行分子生成；LGFE 可作为生成模型的评分函数
+   - <strong>核心假设</strong>: 将 LGFE 作为条件扩散模型（如 DiffSBDD）的引导信号，可生成高 LGFE 的新型抑制剂
+   - <strong>初步方法</strong>: 使用本文的 FragMap 和 LGFE 评分函数，训练条件扩散模型生成针对 NtMGAM 的新分子
+   - <strong>验证方式</strong>: 生成分子的 LGFE 分布、合成可及性、与已知抑制剂的结构相似性
+   - <strong>可能的失败模式</strong>: LGFE 评分函数过于平滑，无法提供足够的梯度信号引导生成</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including abstract, introduction, methods, results, discussion, and conclusions. Figures and tables are referenced but not provided in full detail.</li>
+<li><strong>Assessment boundary</strong> Methodological soundness, validity of claims relative to presented evidence, and overall contribution to the field of computer-aided drug design. Experimental validation is outside the scope as this is a computational study.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present an enhanced SILCS-based computational workflow that separates neutral and charged probe molecules and optionally uses the Drude polarizable force field, applied to three type 2 diabetes-related enzymes. They claim this approach alleviates competitive exclusion effects in highly charged active sites, improves fragment diversity, and enables identification of candidate inhibitors through virtual screening and clustering analysis.</li>
+<li><strong>Visible evidence base</strong> Text descriptions of methods and results, convergence metrics (OC values) reported in text and supplementary tables, RMSD values for pose refinement, pharmacophore feature counts and FGFE values, virtual screening hit counts, and clustering outcomes. Specific figures and tables are referenced but not fully visible.</li>
+<li><strong>Missing materials affecting confidence</strong> Full figures and tables (especially FragMap visualizations, pharmacophore models, and clustering dendrograms), detailed virtual screening hit lists, and complete supplementary information. Without these, quantitative assessment of several claims is limited.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript addresses a relevant methodological gap in SILCS-based fragment mapping for highly charged enzyme active sites. The neutral-charged protocol is a logical extension of prior SILCS-RNA work, and the systematic comparison of additive versus polarizable force fields is valuable. The application to three diabetes-related enzymes provides practical context. However, several claims regarding the superiority of the Drude force field and the practical utility of identified hits are not fully supported by the presented evidence. The manuscript would benefit from clearer quantitative comparisons and a more critical discussion of limitations.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational chemists and structural biologists working on fragment-based drug design, particularly those applying SILCS or similar methods to challenging targets with charged binding sites. Researchers interested in polarizable force fields for drug discovery applications would also find the comparison relevant. The methodological framework could be adopted by groups studying other enzymes with highly charged active sites.</li>
+<li><strong>Major strengths</strong>
+  1. The neutral-charged SILCS protocol is a well-motivated methodological innovation that directly addresses a known limitation of conventional SILCS in charged systems.
+  2. The systematic comparison of additive (CHARMM) and polarizable (Drude) force fields within the same workflow provides useful guidance for practitioners.
+  3. The application to three clinically relevant enzymes (NtMGAM, CtMGAM, α-amylase) grounds the methodology in a real drug design context.
+  4. The integration of multiple computational tools (SILCS, pharmacophore modeling, virtual screening, clustering) into a coherent pipeline is commendable.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The authors claim that "the Drude polarizable force field further enhanced resolution of electrostatic and hydrogen-bonding interactions" and that Drude-based pharmacophores led to "the best predicted inhibitors for CtMGAM and α-amylase."</li>
+<li><strong>Evidence pointer</strong> Results and Discussion sections on affinity patterns and virtual screening; Tables S5-S7</li>
+<li><strong>Concern</strong> The quantitative evidence supporting the superiority of Drude over CHARMM is not clearly presented. RMSD improvements are modest (e.g., 4.06 Å vs 3.95 Å for miglitol), and the claim that Drude-based pharmacophores produced better inhibitors relies on LE comparisons that are not shown in the main text. The authors state that Drude pharmacophores for α-amylase rely entirely on hydrogen-bond donors, but it is unclear whether this represents a genuine improvement or simply a different, potentially less validated, interaction profile.</li>
+<li><strong>Why it matters</strong> The central methodological contribution is the comparison between force fields. Without clear, quantitative evidence that Drude provides meaningful advantages, the practical recommendation for adopting the more computationally expensive polarizable workflow is not established.</li>
+<li><strong>Resolution test</strong> Provide a direct, quantitative comparison of pose prediction accuracy (e.g., RMSD distributions across multiple ligands), virtual screening enrichment factors or ROC curves, and a statistical analysis of whether observed differences between CHARMM and Drude are significant.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Validation adequacy</li>
+<li><strong>Claim pointer</strong> The authors claim that the SILCS-Pharmacophore models "successfully captured dominant interaction motifs within each binding site" and that virtual screening hits "exhibit superior predicted binding energetics relative to known inhibitors."</li>
+<li><strong>Evidence pointer</strong> Results and Discussion sections on pharmacophore modeling and virtual screening; Tables S5-S7</li>
+<li><strong>Concern</strong> The validation of pharmacophore models and virtual screening hits is limited to comparison with known inhibitors (miglitol, acarbose, myricetin) and internal consistency checks. There is no experimental validation, no use of decoy sets to assess enrichment, and no comparison with alternative docking or screening methods. The claim that identified hits are "superior" is based solely on computed LE values, which may not translate to actual binding affinity.</li>
+<li><strong>Why it matters</strong> Virtual screening is only useful if it can distinguish true binders from non-binders. Without external validation or benchmark comparisons, the practical utility of the proposed workflow for identifying viable drug candidates remains unproven.</li>
+<li><strong>Resolution test</strong> Include a retrospective validation using known actives and decoys (e.g., DUD-E or similar) to compute enrichment factors. Alternatively, provide experimental binding data for a subset of top hits, or clearly state that such validation is planned as future work.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The authors state that "the Drude polarizable SILCS workflow described below was implemented separately in this study and is not part of the standard SilcsBio 2023.1 protein workflow."</li>
+<li><strong>Evidence pointer</strong> Methods section, Drude SILCS Workflow</li>
+<li><strong>Concern</strong> The implementation details of the Drude SILCS workflow are not fully specified. Key parameters such as the Drude-2019 force field version, the exact protocol for adding lone pairs and Drude oscillators, the equilibration scheme, and the criteria for selecting snapshots for GCMC-MD are described but lack sufficient detail for reproduction. The custom Python script for coordinate conversion is mentioned but not provided or described in detail.</li>
+<li><strong>Why it matters</strong> Reproducibility is a cornerstone of computational research. Without complete methodological details, other groups cannot implement or verify the proposed Drude SILCS workflow.</li>
+<li><strong>Resolution test</strong> Provide a detailed step-by-step protocol, including all input files, parameter settings, and scripts, either in the main text or as supplementary material. Consider depositing the workflow in a public repository.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, first sentence</li>
+<li><strong>Issue</strong> The abstract states that "highly charged enzyme active sites present a challenge for conventional SILCS" but does not specify what the challenge is beyond "suppress sampling of neutral fragments." A brief explanation of the mechanism would help readers understand the motivation.</li>
+<li><strong>Required correction</strong> Add a phrase such as "because strongly interacting charged probes can outcompete neutral fragments for binding site occupancy" to the abstract.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Methods, Protein Preparation</li>
+<li><strong>Evidence pointer</strong> Methods section, Protein Preparation</li>
+<li><strong>Issue</strong> The authors state that "all water molecules and ions were removed from the structures" but do not specify whether crystallographic ligands (e.g., inhibitors, cofactors) were also removed. This is important because retained ligands could bias subsequent fragment mapping.</li>
+<li><strong>Required correction</strong> Clarify whether all non-protein entities, including ligands and cofactors, were removed during preparation.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Results, Convergence of the SILCS Simulations</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, Convergence section</li>
+<li><strong>Issue</strong> OC values are reported as single numbers without measures of variability. Given that ten independent simulations were performed, it would be informative to report mean and standard deviation or range.</li>
+<li><strong>Required correction</strong> Report OC values as mean ± standard deviation across the ten independent simulations.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Results, Virtual Screening</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, Virtual Screening sections</li>
+<li><strong>Issue</strong> The authors report that "no overlap was identified between the Maybridge and ChemBridge hit sets" but do not discuss whether this is expected or concerning. Given that both libraries are diverse, some overlap might be anticipated if the pharmacophore models are capturing a conserved binding mode.</li>
+<li><strong>Required correction</strong> Add a brief discussion of whether the lack of overlap is consistent with the chemical diversity of the two libraries and the specificity of the pharmacophore models.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Conclusions</li>
+<li><strong>Evidence pointer</strong> Conclusions, final paragraph</li>
+<li><strong>Issue</strong> The conclusion that "the neutral-charged SILCS protocol should be viewed as a targeted strategy for mitigating competitive exclusion rather than as a universal replacement" is well stated, but the practical guidance for when to use which protocol could be more explicit.</li>
+<li><strong>Required correction</strong> Add a sentence summarizing the conditions under which the neutral-charged protocol is recommended (e.g., highly charged active sites) versus when the conventional protocol may suffice.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong></li>
+<li>R1-M1: Insufficient quantitative evidence for Drude superiority</li>
+<li>R1-M2: Lack of external validation for virtual screening results</li>
+<li>R1-M3: Incomplete methodological details for reproduction of the Drude workflow</li>
+<li><strong>Assessment against Nature-style criteria</strong></li>
+<li><strong>Originality</strong> The neutral-charged SILCS protocol is a novel adaptation of existing methodology, and the systematic comparison with a polarizable force field adds an original dimension. However, the core SILCS method is well established, and the innovation is incremental rather than paradigm-shifting.</li>
+<li><strong>Scientific importance</strong> The work addresses a real limitation in fragment-based drug design for charged enzyme systems, which is relevant to many therapeutic targets. The methodological guidance on when to use neutral-charged versus conventional protocols is practically useful. However, the lack of experimental validation limits the immediate impact.</li>
+<li><strong>Interdisciplinary readership</strong> The manuscript is primarily of interest to computational chemists and structural biologists. The clinical relevance to type 2 diabetes is mentioned but not developed in a way that would attract a broader biomedical audience.</li>
+<li><strong>Technical soundness</strong> The computational methods are generally sound, and the convergence analysis is appropriate. However, the validation of virtual screening results is insufficient, and the statistical treatment of comparisons between force fields is lacking.</li>
+<li><strong>Readability for nonspecialists</strong> The manuscript is clearly written for a specialist audience. The methods are described in sufficient detail for practitioners, but the significance of the findings may not be immediately apparent to readers outside the field. The abstract could be more accessible.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The methodological framework is promising and addresses a genuine need, but the current evidence does not fully establish the claimed advantages of the Drude force field or the practical utility of the identified hits. Addressing the major concerns through additional validation and clearer quantitative comparisons would significantly strengthen the manuscript.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

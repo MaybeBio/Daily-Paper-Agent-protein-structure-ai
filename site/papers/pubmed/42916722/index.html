@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protein Breathing Induces Non-Markovian Buried Ring-Flip Dynamics in Cytochrome C. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Protein Breathing Induces Non-Markovian Buried Ring-Flip Dynamics in Cytochrome C.</h1>
+      <div class="meta">Roy, Bikirna; Mukherjee, Arnab</div>
+      <div class="meta muted">
+        
+        <span class="journal">The journal of physical chemistry. B</span>
+        · 2026-10-23
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42916722/">原文</a>
+      </div>
+      <p class="one-liner">该文用增强采样MD和Grote-Hynes理论研究细胞色素C中埋藏苯丙氨酸的环翻转动力学，揭示蛋白呼吸运动导致的非马尔可夫摩擦效应，属于蛋白质构象动力学计算研究。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Aromatic amino acids buried inside folded proteins play a critical role in stabilizing both the folded conformation and anchoring incoming substrate molecules. Moreover, their ring flips serve as sensitive probes of protein breathing motions. In this work, we accurately estimate the ring-flip rates of a phenylalanine residue in cytochrome C from MD simulations using enhanced sampling methods and advanced rate theories, such as the reactive flux formalism and Grote-Hynes theory (GHT). We demonstrate that the combined steric hindrance from the residues adjacent to the ring, along with their delayed response in accommodating free rotation, manifests as memory-dependent friction. Increasing solvent viscosity slows the fluctuations of these cavity residues, reinforcing the delayed response and producing a fractional viscosity dependence of the flip rate despite the ring being completely buried.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">折叠蛋白内部埋藏的芳香族氨基酸在稳定折叠构象及锚定进入的底物分子方面发挥着关键作用。此外，它们的环翻转可作为蛋白质呼吸运动的敏感探针。在本工作中，我们利用增强采样方法和先进速率理论，如反应通量形式主义和Grote-Hynes理论（GHT），从分子动力学（MD）模拟中准确估计了细胞色素C中一个苯丙氨酸残基的环翻转速率。我们证明，环邻近残基的联合空间位阻，以及它们在适应自由旋转时的延迟响应，表现为记忆依赖的摩擦。增加溶剂粘度会减缓这些腔体残基的波动，强化延迟响应，并产生翻转速率的分数粘度依赖性，尽管环完全被埋藏。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Protein Breathing Induces Non-Markovian Buried Ring-Flip Dynamics in Cytochrome C</li>
+<li><strong>作者</strong>：Roy, Bikirna; Mukherjee, Arnab</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：The Journal of Physical Chemistry B</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：研究论文（计算模拟 + 理论分析）</li>
+<li><strong>领域</strong>：蛋白质构象动力学 × 增强采样 × 非马尔可夫反应动力学</li>
+<li><strong>关键词</strong>：ring-flip dynamics, cytochrome C, enhanced sampling, Grote-Hynes theory, reactive flux, memory friction, viscosity dependence</li>
+<li><strong>DOI/arXiv</strong>：10.1021/acs.jpcb.6c04066</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-13</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质构象采样 × 物理模拟（MD + 增强采样 + 高级反应速率理论）」方向，聚焦于埋藏芳香残基的环翻转动力学，揭示蛋白质呼吸运动如何通过记忆摩擦（非马尔可夫效应）调控埋藏残基的构象转变速率。对蛋白质结构预测与构象生成任务中「如何刻画蛋白质动态响应与溶剂效应」具有方法论参考价值。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文通过增强采样 MD 模拟结合 reactive flux 形式与 Grote-Hynes 理论，证明细胞色素 C 中埋藏苯丙氨酸残基的环翻转速率受相邻残基的延迟响应（记忆摩擦）控制，且翻转速率对溶剂粘度呈分数依赖，尽管该残基完全埋藏于蛋白内部。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：埋藏在折叠蛋白内部的芳香残基（苯丙氨酸）的环翻转速率如何受蛋白质呼吸运动（cavity breathing）影响？这种影响是马尔可夫（瞬时摩擦）还是非马尔可夫（记忆摩擦）的？</li>
+<li><strong>为什么重要</strong>：芳香残基环翻转是蛋白质内部动力学的重要探针，反映蛋白质的柔性、空腔形变能力以及配体锚定稳定性。理解其速率决定因素有助于揭示蛋白质内部动力学与功能的关系。</li>
+<li><strong>现有方法为何不足</strong>：传统过渡态理论（TST）假设反应坐标上的运动是马尔可夫的，忽略溶剂和蛋白质环境的延迟响应。对于埋藏残基，环境响应时间尺度可能与反应本身相当，需引入记忆摩擦修正。</li>
+<li><strong>精确研究问题</strong>：Can the ring-flip rate of a buried phenylalanine in cytochrome C be accurately predicted by Grote-Hynes theory with memory friction, and does the rate exhibit fractional viscosity dependence despite complete burial?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经典 TST</td>
+<td>Eyring 方程</td>
+<td>简单、广泛适用</td>
+<td>忽略 recrossing 与溶剂记忆效应</td>
+<td>作为基线被超越</td>
+</tr>
+<tr>
+<td>Kramers 理论</td>
+<td>马尔可夫摩擦下的速率表达式</td>
+<td>引入溶剂粘度依赖</td>
+<td>假设瞬时摩擦，不适用于慢环境响应</td>
+<td>被 GHT 取代</td>
+</tr>
+<tr>
+<td>Grote-Hynes 理论</td>
+<td>频率依赖摩擦核</td>
+<td>捕捉非马尔可夫效应</td>
+<td>需计算摩擦核，计算成本高</td>
+<td>本文核心方法</td>
+</tr>
+<tr>
+<td>Reactive flux 形式</td>
+<td>从 MD 轨迹直接计算速率</td>
+<td>无需假设反应坐标形式</td>
+<td>需足够采样，对稀有事件困难</td>
+<td>本文用于验证 GHT</td>
+</tr>
+<tr>
+<td>增强采样 MD</td>
+<td>伞形采样、元动力学等</td>
+<td>克服稀有事件采样瓶颈</td>
+<td>需选择集体变量，可能引入偏差</td>
+<td>本文用于生成反应轨迹</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>埋藏残基环翻转速率难以准确预测</td>
+<td>传统 TST 高估速率</td>
+<td>忽略 recrossing 与记忆摩擦</td>
+<td>文中对比 TST 与 reactive flux 结果</td>
+</tr>
+<tr>
+<td>溶剂粘度依赖异常</td>
+<td>完全埋藏残基仍显示粘度依赖</td>
+<td>溶剂通过影响 cavity 残基波动间接影响翻转</td>
+<td>文中粘度变化实验</td>
+</tr>
+<tr>
+<td>环境响应时间尺度不可忽略</td>
+<td>马尔可夫摩擦假设失效</td>
+<td>相邻残基的延迟响应产生记忆摩擦</td>
+<td>GHT 与 reactive flux 一致性</td>
+</tr>
+<tr>
+<td>增强采样可能引入偏差</td>
+<td>速率估计依赖采样方法</td>
+<td>需用多种方法交叉验证</td>
+<td>文中使用多种增强采样方法</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：使用增强采样 MD 模拟生成环翻转反应轨迹，结合 reactive flux 形式计算精确速率，并用 Grote-Hynes 理论（GHT）解析预测速率，两者交叉验证。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：埋藏残基的环翻转并非由瞬时摩擦控制，而是由相邻 cavity 残基的延迟响应（记忆摩擦）主导。溶剂粘度通过调节 cavity 残基的波动速率，间接影响翻转速率，产生分数粘度依赖。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：蛋白质内部的构象转变速率可能普遍受环境（蛋白质基质 + 溶剂）的记忆效应控制，而非简单的马尔可夫摩擦。这意味着在蛋白质构象生成与采样任务中，需考虑环境动态响应的时间尺度，而非仅关注反应坐标本身。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：细胞色素 C 的原子结构（PDB 结构，具体 ID 未提供）、力场参数、溶剂模型。</li>
+<li><strong>输出</strong>：苯丙氨酸残基的环翻转速率常数、摩擦核、粘度依赖指数。</li>
+<li><strong>模块</strong>：
+  1. 增强采样 MD（具体方法未详述，可能为伞形采样或元动力学）
+  2. Reactive flux 计算
+  3. Grote-Hynes 理论计算（含摩擦核计算）
+  4. 粘度依赖性分析</li>
+<li><strong>训练</strong>：不适用（无机器学习组件）。</li>
+<li><strong>工具</strong>：MD 模拟软件（具体未提供）、增强采样插件、GHT 计算脚本。</li>
+<li><strong>反馈回路</strong>：GHT 预测速率与 reactive flux 结果对比，验证理论一致性。</li>
+<li><strong>假设</strong>：反应坐标可定义为环的二面角翻转；蛋白质环境可视为提供记忆摩擦的介质。</li>
+</ul>
+<p><strong>文字流程</strong>：从初始结构出发 → 增强采样 MD 生成翻转轨迹 → 计算 reactive flux 得到精确速率 → 从轨迹提取摩擦核 → 代入 GHT 求解速率 → 改变溶剂粘度重复实验 → 分析粘度依赖指数。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>增强采样 MD</td>
+<td>生成环翻转反应轨迹</td>
+<td>环翻转是稀有事件，需增强采样</td>
+<td>输入：初始结构；输出：反应轨迹集合</td>
+<td>文中用于计算 reactive flux</td>
+<td>无法获得足够统计量的翻转事件</td>
+</tr>
+<tr>
+<td>Reactive flux 形式</td>
+<td>计算精确翻转速率</td>
+<td>直接测量速率，无需理论假设</td>
+<td>输入：反应轨迹；输出：速率常数</td>
+<td>文中作为基准</td>
+<td>失去精确速率参考</td>
+</tr>
+<tr>
+<td>Grote-Hynes 理论</td>
+<td>解析预测速率</td>
+<td>提供理论框架理解记忆摩擦</td>
+<td>输入：摩擦核；输出：速率预测</td>
+<td>与 reactive flux 一致</td>
+<td>无法解释非马尔可夫效应</td>
+</tr>
+<tr>
+<td>粘度依赖性分析</td>
+<td>量化溶剂效应</td>
+<td>揭示埋藏残基的间接溶剂依赖</td>
+<td>输入：不同粘度下的速率；输出：依赖指数</td>
+<td>文中分数依赖结果</td>
+<td>无法揭示间接溶剂效应</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>Grote-Hynes 理论速率表达式</strong>：</p>
+<p>[
+k_{GHT} = \frac{\omega_R}{\omega_b} k_{TST}
+]</p>
+<ul>
+<li>( k_{GHT} )：Grote-Hynes 速率常数</li>
+<li>( k_{TST} )：过渡态理论速率常数</li>
+<li>( \omega_R )：反应坐标在势垒顶的有效频率（含记忆摩擦修正）</li>
+<li>( \omega_b )：势垒顶的虚频（无摩擦）</li>
+</ul>
+<p><strong>频率依赖摩擦核</strong>：</p>
+<p>[
+\zeta(t) = \frac{\langle F(0) F(t) \rangle}{k_B T}
+]</p>
+<ul>
+<li>( \zeta(t) )：摩擦核（记忆函数）</li>
+<li>( F(t) )：反应坐标上的随机力</li>
+<li>( k_B T )：热能</li>
+</ul>
+<p><strong>直觉</strong>：GHT 通过频率依赖摩擦核捕捉环境的延迟响应，当摩擦核衰减时间与反应时间尺度可比时，马尔可夫近似失效，需用 GHT 修正。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：细胞色素 C 蛋白（具体物种未提供），单个苯丙氨酸残基。</li>
+<li><strong>规模</strong>：MD 模拟（具体时长未提供）。</li>
+<li><strong>指标</strong>：环翻转速率常数、粘度依赖指数。</li>
+<li><strong>基线</strong>：TST 预测速率。</li>
+<li><strong>预算</strong>：未提供。</li>
+<li><strong>骨干/仪器</strong>：未提供。</li>
+<li><strong>Oracle 输入</strong>：不适用。</li>
+<li><strong>评测协议</strong>：GHT 预测与 reactive flux 结果对比。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GHT vs reactive flux</td>
+<td>GHT 能准确预测翻转速率</td>
+<td>相同轨迹数据</td>
+<td>两者一致</td>
+<td>记忆摩擦模型有效</td>
+<td>不能证明 GHT 对所有残基适用</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>粘度变化实验</td>
+<td>埋藏残基显示粘度依赖</td>
+<td>不同溶剂粘度</td>
+<td>分数依赖</td>
+<td>溶剂间接影响 cavity 残基</td>
+<td>不能确定依赖指数普适性</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>TST vs 精确速率</td>
+<td>TST 高估速率</td>
+<td>对比 TST 与 reactive flux</td>
+<td>TST 偏高</td>
+<td>需考虑 recrossing</td>
+<td>不能量化高估程度</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对细胞色素 C 中一个苯丙氨酸残基的环翻转，不推广至所有芳香残基或所有蛋白。</li>
+<li><strong>Oracle/真值输入</strong>：无实验速率数据作为真值，仅以 reactive flux 作为计算基准。</li>
+<li><strong>端到端状态</strong>：计算流程完整，但未与实验数据直接对比。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：依赖 MD 力场准确性。</li>
+<li><strong>模型依赖</strong>：GHT 假设反应坐标定义合理，摩擦核计算收敛。</li>
+<li><strong>最难情形</strong>：埋藏残基的慢环境响应，需长模拟时间捕捉记忆效应。</li>
+<li><strong>群体/领域边界</strong>：结论限于细胞色素 C 体系，推广需谨慎。</li>
+<li><strong>不确定性</strong>：力场误差、采样不完全、摩擦核计算误差均可能影响定量结果。</li>
+</ul>
+<p><strong>有边界的复述</strong>：在细胞色素 C 的特定苯丙氨酸残基上，GHT 能准确描述环翻转速率，且该速率对溶剂粘度呈分数依赖，但此结论不保证适用于其他蛋白或残基。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 研究限于单一残基、单一蛋白，未做系统扫描。
+- 未与实验速率数据直接对比。
+- 增强采样方法的具体偏差未讨论。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅一个残基的结论</td>
+<td>可能不具代表性</td>
+<td>影响普适性判断</td>
+<td>在多个蛋白/残基上重复</td>
+<td>摘要仅提及一个 Phe</td>
+</tr>
+<tr>
+<td>无实验验证</td>
+<td>计算模型可能偏离真实</td>
+<td>影响定量可信度</td>
+<td>与 NMR 或荧光实验对比</td>
+<td>摘要未提及实验</td>
+</tr>
+<tr>
+<td>粘度依赖的机制解释</td>
+<td>可能混淆直接与间接效应</td>
+<td>影响机制理解</td>
+<td>控制 cavity 残基突变</td>
+<td>摘要仅给出相关性</td>
+</tr>
+<tr>
+<td>增强采样偏差未讨论</td>
+<td>可能影响速率绝对值</td>
+<td>影响定量结论</td>
+<td>用不同增强采样方法交叉验证</td>
+<td>摘要未详述方法</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>记忆摩擦框架</strong>：蛋白质内部构象转变速率可能受环境延迟响应控制，Grote-Hynes 理论是处理此类非马尔可夫效应的有效工具。可迁移至蛋白质构象生成任务中，用于评估构象转变的动力学可行性。</p>
+</li>
+<li>
+<p><strong>间接溶剂效应</strong>：埋藏残基的动力学可通过 cavity 残基间接受溶剂影响，提示在 MD 模拟中需考虑溶剂-蛋白质-残基的三体耦合。</p>
+</li>
+<li>
+<p><strong>增强采样 + 速率理论结合</strong>：增强采样生成轨迹 + reactive flux 精确计算 + 解析理论交叉验证，是研究稀有构象转变的稳健流程，可迁移至蛋白质折叠或配体结合/解离研究。</p>
+</li>
+<li>
+<p><strong>分数粘度依赖的启示</strong>：埋藏残基的粘度依赖指数可作为蛋白质内部柔性的动力学探针，可能用于区分不同蛋白的动力学状态。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Grote-Hynes 理论</strong>：经典化学动力学理论，用于处理溶剂记忆效应（Grote &amp; Hynes, J. Chem. Phys. 1980）。本文将其应用于蛋白质内部动力学，扩展了应用场景。</li>
+<li><strong>Reactive flux 形式</strong>：Chandler 等人发展的精确速率计算方法（Chandler, J. Chem. Phys. 1978），本文用作数值基准。</li>
+<li><strong>环翻转动力学</strong>：芳香残基环翻转作为蛋白质动力学探针已有广泛研究（如 Wagner, J. Mol. Biol. 1980），本文聚焦于埋藏残基的非马尔可夫特性。</li>
+<li><strong>细胞色素 C 动力学</strong>：该蛋白的构象动力学与电子传递功能密切相关，本文为理解其内部动力学提供了新视角。</li>
+<li><strong>[Analysis] 候选方向</strong>：与机器学习势函数结合，用 ML 势加速摩擦核计算，可能提高 GHT 在复杂体系中的适用性。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：ML 势加速的 Grote-Hynes 摩擦核计算
+   - <strong>来源局限/观察</strong>：GHT 需长 MD 轨迹计算摩擦核，计算成本高。
+   - <strong>核心假设</strong>：ML 势函数可在保持精度的前提下大幅加速摩擦核收敛。
+   - <strong>初步方法</strong>：训练 ML 势（如 MACE、NequIP）复现 MD 轨迹，计算摩擦核并与全原子结果对比。
+   - <strong>验证方式</strong>：在细胞色素 C 及其他蛋白上对比 GHT 速率预测。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：环翻转速率作为蛋白质构象状态分类器
+   - <strong>来源局限/观察</strong>：本文显示环翻转速率对环境敏感，可能反映蛋白构象状态。
+   - <strong>核心假设</strong>：不同构象状态（如天然态 vs 熔球态）的环翻转速率谱可区分。
+   - <strong>初步方法</strong>：对多种蛋白构象状态计算环翻转速率，构建速率谱数据库。
+   - <strong>验证方式</strong>：与实验（NMR 弛豫）对比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：记忆摩擦对 AlphaFold 预测结构动态修正的启示
+   - <strong>来源局限/观察</strong>：AlphaFold 预测静态结构，忽略动态记忆效应。
+   - <strong>核心假设</strong>：在 AlphaFold 结构上施加 GHT 修正可改善构象采样效率。
+   - <strong>初步方法</strong>：对 AlphaFold 预测结构进行增强采样，比较有无记忆摩擦修正的采样差异。
+   - <strong>验证方式</strong>：与实验构象分布对比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：埋藏残基翻转作为配体结合位点动态探针
+   - <strong>来源局限/观察</strong>：芳香残基翻转影响配体锚定。
+   - <strong>核心假设</strong>：配体结合改变 cavity 残基动态，进而改变翻转速率。
+   - <strong>初步方法</strong>：模拟配体结合前后环翻转速率变化。
+   - <strong>验证方式</strong>：与结合亲和力实验对比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors report that ring-flip dynamics of a buried phenylalanine in cytochrome C are non-Markovian, governed by memory-dependent friction arising from delayed steric responses of adjacent cavity residues, and exhibit fractional viscosity dependence despite full burial of the ring.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no numerical data, simulation details, or statistical analyses are available</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, simulation parameters, convergence criteria, error estimates, comparison with experimental rates, and all figures/tables</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a conceptually interesting hypothesis linking protein breathing to non-Markovian ring-flip dynamics, but the evidence base is insufficient to evaluate the validity of the central claims. The authors invoke advanced rate theories and enhanced sampling methods without providing any quantitative results, error analysis, or methodological justification. The fractional viscosity dependence claim is intriguing but unsupported by any data in the supplied material. The work may be of interest to computational biophysicists, but the current abstract does not establish the case.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and physical chemists studying protein dynamics, particularly those interested in memory effects in condensed-phase reactions, ring-flip kinetics in proteins, and the role of solvent viscosity in buried residue dynamics. Experimentalists using NMR relaxation to probe aromatic ring flips may also find the predictions testable.</li>
+<li><strong>Major strengths</strong> The conceptual framing connecting protein breathing to memory-dependent friction is timely and potentially significant. The use of Grote-Hynes theory and reactive flux formalism is appropriate for addressing non-Markovian effects. The prediction of fractional viscosity dependence for a buried ring is a nontrivial and falsifiable claim.</li>
+<li><strong>Major Concerns</strong> </li>
+<li>R1-M1</li>
+<li>R1-M2</li>
+<li>R1-M3</li>
+<li><strong>Minor Comments</strong> </li>
+<li>R1-m1</li>
+<li>R1-m2</li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: the concept of memory-dependent friction in ring flips is not entirely new, but the specific application to a buried residue in cytochrome C with fractional viscosity dependence is a fresh angle. Scientific importance: potentially high if the claims are quantitatively supported, as it would link solvent properties to internal protein dynamics in a nonintuitive way. Interdisciplinary readership: the topic bridges physical chemistry, biophysics, and molecular simulation, but the abstract is too sparse to attract broad readership. Technical soundness: cannot be assessed from the abstract alone; the absence of any quantitative results is a critical gap. Readability for nonspecialists: the abstract is reasonably clear but relies on jargon (non-Markovian, Grote-Hynes theory) without sufficient context for a general audience.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. Supportive if the full manuscript provides quantitative rate estimates, error bars, convergence checks, and a clear demonstration that the memory kernel is indeed the dominant factor controlling the flip rate.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The authors claim to "accurately estimate the ring-flip rates" using enhanced sampling and advanced rate theories.</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> No numerical values, error estimates, or comparison with experimental or previous computational rates are provided. The term "accurately" is unsubstantiated without any quantitative benchmark.</li>
+<li><strong>Why it matters</strong> The central claim of the paper rests on the accuracy of the rate estimates. Without numbers, the reader cannot judge whether the rates are physically reasonable or whether the enhanced sampling converged.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the computed flip rates with statistical uncertainties, compare them to known experimental values (if available) or to results from unbiased simulations, and state the convergence criteria used for the enhanced sampling runs.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> The authors state that "memory-dependent friction" arises from "combined steric hindrance" and "delayed response" of adjacent residues.</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> The abstract asserts a mechanistic interpretation without presenting any data on the time-dependent friction kernel, the correlation functions of the cavity residues, or the timescales of the delayed response. No evidence is shown that the dynamics are indeed non-Markovian in the sense claimed.</li>
+<li><strong>Why it matters</strong> The non-Markovian character is the core conceptual novelty. If the memory kernel is not explicitly computed or characterized, the claim is speculative rather than demonstrated.</li>
+<li>
+<p><strong>Resolution test</strong> Show the computed friction kernel or velocity autocorrelation function for the ring dihedral, compare Markovian versus non-Markovian rate predictions, and provide a timescale analysis of the cavity residue fluctuations relative to the flip event.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim support</li>
+<li><strong>Claim pointer</strong> The authors claim "fractional viscosity dependence of the flip rate despite the ring being completely buried."</li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided</li>
+<li><strong>Concern</strong> No data on the viscosity dependence are presented. The abstract does not specify the range of viscosities studied, the exponent of the fractional dependence, or how the viscosity was varied in the simulations (e.g., by changing solvent properties or using a continuum model).</li>
+<li><strong>Why it matters</strong> This is a striking and potentially controversial prediction. Without quantitative results, the claim cannot be evaluated, and it is unclear whether the effect is robust or an artifact of the simulation setup.</li>
+<li><strong>Resolution test</strong> Provide a plot of flip rate versus solvent viscosity with the fitted exponent and its uncertainty, state the method used to vary viscosity, and show that the effect persists across multiple independent simulation conditions.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Terminology</li>
+<li><strong>Evidence pointer</strong> Abstract, first sentence</li>
+<li><strong>Issue</strong> The phrase "protein breathing motions" is used without definition or reference to a specific structural coordinate.</li>
+<li>
+<p><strong>Required correction</strong> Define what is meant by breathing motions in this context, for example, specific collective coordinates or RMSD fluctuations of the protein backbone.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> System description</li>
+<li><strong>Evidence pointer</strong> Abstract, second sentence</li>
+<li><strong>Issue</strong> The specific phenylalanine residue is not identified by its sequence position, and the simulation conditions (force field, temperature, box size) are not stated.</li>
+<li>
+<p><strong>Required correction</strong> Specify the residue number and provide key simulation parameters in the abstract or refer to the methods section for details.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Context</li>
+<li><strong>Affected element</strong> Comparison with prior work</li>
+<li><strong>Evidence pointer</strong> Abstract, overall</li>
+<li><strong>Issue</strong> No mention is made of how these findings relate to previous studies of ring flips in proteins, particularly those using NMR or other simulation approaches.</li>
+<li><strong>Required correction</strong> Add a sentence situating the results in the context of existing literature on ring-flip dynamics and memory effects.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "accurate" rate estimation is unsupported without quantitative data.</li>
+<li>The mechanistic claim of memory-dependent friction from delayed residue response is not evidenced.</li>
+<li>The fractional viscosity dependence claim is entirely unsupported in the abstract.</li>
+<li>The relevance of the findings to "stabilizing the folded conformation and anchoring incoming substrate molecules" is asserted but not connected to any results.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,81 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials provided
+- **Shared manuscript claim summary** The authors use molecular dynamics simulations to study the trefoil-knotted enzyme AOTCase in the presence of polyethylene glycol (PEG) and dextran crowders. They report that dextran accumulates persistently and heterogeneously near the protein surface, while PEG interacts transiently. These interfacial differences propagate into protein dynamics, with dextran fragmenting communication pathways and PEG preserving network coherence. At elevated temperatures, dextran retards global denaturation relative to PEG or pure water, and the knotted core shows reduced fluctuations. The authors conclude that crowding effects on knotted proteins arise from both excluded-volume effects and the chemical nature of crowder-protein interactions, influencing local topological dynamics and global stability.
+- **Visible evidence base** Abstract text only; no simulation details, system setup, force fields, analysis methods, or quantitative results are provided
+- **Missing materials affecting confidence** Full manuscript, simulation parameters, force field choices, system size and composition, simulation timescales, replica or repeat information, error estimates, structural and dynamical analysis details, denaturation protocols, and all figures and tables
+
+## Reviewer
+- **Overall assessment** The abstract addresses a potentially interesting and underexplored question, namely how molecular crowders affect the dynamics and stability of knotted proteins. The central claim that crowder chemical identity, not just excluded volume, modulates topological stability is plausible and could be of interest to the biophysics and protein folding communities. However, the abstract provides no quantitative evidence, no methodological detail, and no statistical context. The conclusions are stated as definitive but cannot be evaluated from the supplied material. The work may have merit, but the case is not established from the abstract alone.
+- **Who would be interested in the results, and why** Researchers studying protein folding and stability under cellular crowding conditions, computational biophysicists interested in knotted proteins and topological constraints, and experimentalists seeking predictions about crowder effects on enzyme stability. The distinction between excluded-volume and chemical effects of crowders is broadly relevant to the crowding field.
+- **Major strengths** The question is timely and specific, targeting a gap in the literature on knotted proteins under crowding. The comparison of two chemically distinct crowders, PEG and dextran, is a sensible design for separating generic excluded-volume effects from specific chemical interactions. The focus on both interfacial dynamics and global stability provides a potentially integrated view.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that dextran induces fragmentation of communication pathways and that PEG preserves network coherence, and that dextran retards global denaturation compared to PEG or pure water.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No quantitative data, error estimates, or statistical analyses are presented. The terms "fragmentation," "coherence," "retards," and "reduced fluctuations" are qualitative. Without numerical values, convergence checks, or replicate simulations, the reader cannot assess whether these effects are robust or within noise.
+  - **Why it matters** The central conclusions depend on comparative dynamical and stability outcomes. If the differences between crowders are small or not statistically significant, the main message would be unsupported. The abstract does not allow any such assessment.
+  - **Resolution test** Provide quantitative metrics with uncertainties, such as mean squared fluctuations, contact lifetimes, communication pathway scores, and denaturation temperatures or timescales, with clear statistical comparisons across replicate simulations.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors state that dextran exhibits persistent, heterogeneous accumulation near the protein surface, while PEG shows transient interaction patterns.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No simulation details are given, including force field parameters for PEG and dextran, water model, ion concentration, temperature and pressure coupling, simulation box size, or simulation length. The distinction between "persistent" and "transient" requires a defined timescale and a quantitative measure of residence or occupancy. Without these, the claim is not testable.
+  - **Why it matters** The interfacial behavior is the proposed origin of downstream dynamical and stability differences. If the interaction patterns are artifacts of force field choices or insufficient sampling, the entire mechanistic narrative collapses.
+  - **Resolution test** Specify the simulation protocol, provide residence time distributions or occupancy maps for each crowder, and demonstrate convergence of these quantities over the simulation time.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Originality and scientific importance
+  - **Claim pointer** The authors conclude that crowding effects on knotted proteins arise from both excluded-volume effects and the chemical nature of crowder-protein interactions.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract does not describe any control simulations or systematic variation of crowder concentration, size, or excluded-volume strength. Without such controls, the attribution of observed effects to "chemical nature" versus "excluded volume" is speculative. The claim of interplay is asserted, not demonstrated.
+  - **Why it matters** The stated novelty depends on separating these two contributions. If the observed effects can be explained purely by excluded volume, the conclusion is not novel. The abstract provides no basis for this distinction.
+  - **Resolution test** Include simulations with inert crowders matched in size and concentration, or systematically vary crowder concentration and show that chemical effects persist beyond excluded-volume predictions.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that at elevated temperatures, dextran retards global denaturation compared to PEG or pure water, with the knotted core exhibiting reduced fluctuations.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No definition of "elevated temperatures," no denaturation criterion, and no comparison of unfolding pathways or intermediates are provided. The claim that the knotted core has reduced fluctuations is not quantified. It is unclear whether the effect is on the free energy barrier, the kinetic rate, or the equilibrium population.
+  - **Why it matters** Stability claims require a clear operational definition. Without a denaturation metric, the reader cannot judge the magnitude or significance of the reported retardation.
+  - **Resolution test** Define the denaturation criterion, report denaturation temperatures or rates with uncertainties, and provide fluctuation profiles for the knotted core versus other regions across conditions.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "communication pathways" is used without definition. Nonspecialist readers may not understand what this refers to in the context of protein dynamics.
+  - **Required correction** Define "communication pathways" in the abstract, for example as correlated motions or allosteric interaction networks, or use a more standard term.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not state the simulation temperature range or the crowder concentrations used. These are essential parameters for interpreting any crowding study.
+  - **Required correction** Add the concentration range and temperature conditions to the abstract or indicate where they are reported in the full text.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Originality
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not mention any prior work on knotted proteins under crowding, so the claim of being "unexplored" is not contextualized.
+  - **Required correction** Briefly cite or reference prior related studies, if any exist, to establish the gap more precisely.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The abstract lacks quantitative evidence, simulation protocol details, control simulations, and operational definitions of key metrics. Without these, the central claims cannot be evaluated.
+- **Assessment against Nature-style criteria** Originality: The question is potentially original, but the abstract does not demonstrate a novel mechanistic insight beyond a general statement that chemical identity matters. Scientific importance: The topic is relevant to crowding and knotted protein research, but the importance is not established without quantitative results. Interdisciplinary readership: The abstract could appeal to biophysicists, computational chemists, and biochemists, but the lack of context and definitions limits broader accessibility. Technical soundness: Not assessable from the abstract; no methods or data are provided. Readability for nonspecialists: The abstract is readable but uses undefined terms such as "communication pathways" and "topological dynamics" without sufficient explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract suggests a potentially interesting study, but the absence of quantitative data, methodological detail, and control analyses means the claims cannot be assessed. A full manuscript with proper evidence would be required to evaluate the case.
+
+## Risk / unsupported claims
+- The claim that dextran induces fragmentation of communication pathways is unsupported without a defined metric and quantitative data.
+- The claim that PEG preserves network coherence is unsupported for the same reason.
+- The claim that dextran retards global denaturation compared to PEG or pure water is unsupported without a denaturation criterion and quantitative comparison.
+- The claim that the knotted core exhibits reduced fluctuations is unsupported without fluctuation data.
+- The attribution of observed effects to both excluded-volume and chemical interactions is unsupported without control simulations.
+- The statement that the interaction of knotted proteins with crowders is "unexplored" is not verifiable from the abstract alone.

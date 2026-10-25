@@ -1,0 +1,82 @@
+## Review setup
+- **Input scope** Full manuscript text (Abstract, Introduction, sections on structural characteristics, molecular mechanisms, integrative approaches, current evidence, challenges and future perspectives, Conclusion, and ancillary statements)
+- **Assessment boundary** Scientific content, internal logic, evidence quality, and alignment with stated review aims. Editorial or stylistic issues are noted only where they affect scientific clarity.
+- **Shared manuscript claim summary** The manuscript argues that bamboo-based remediation of hazardous contaminants is currently understood mainly through bulk removal and tissue-level data, while the molecular determinants (macromolecular structure, transport proteins, oxidative enzymes) remain underexplored. It proposes an integrative framework combining proteomics, AI-based structure prediction, molecular docking, MD simulations, and quantitative binding assays to move toward predictive, mechanism-driven remediation strategies.
+- **Visible evidence base** The manuscript is a narrative review. It cites a range of primary literature (e.g., Chakraborty et al., 2023; Sall et al., 2020; Xu et al., 2024; Akhtar et al., 2021; Priyadarshanee et al., 2021; Mohsin, 2023; Rimal, 2023; Zhang, 2025; Uturunco et al., 2024; Das et al., 2025; Rani et al., 2023; Behera et al., 2025; Zhu et al., 2022; Camargos et al., 2025a; Rashid et al., 2023; Ivbanikaro et al., 2023; Huang et al., 2026b; Lou et al., 2023; Kaur et al., 2022; Kumar and Kumar, 2023; Bai et al., 2022; Zhou et al., 2023; Kumar and Chang, 2024; Xue et al., 2023; Bagbi et al., 2024; Peng et al., 2018; Shan et al., 2021; Zhang et al., 2020; Dandash et al., 2025; Verma et al., 2021; Tian et al., 2023; Seidi et al., 2025; Guo et al., 2008; Mennani et al., 2024; Zhu et al., 2024a; Das and Sarma, 2025; Hibakhadeeja et al., 2025; Zeng et al., 2024; Negi et al., 2024; Shimada et al., 2021; Rekha et al., 2021; Zhang et al., 2023; Li et al., 2024b; Gao et al., 2025; Khan et al., 2020; Yang et al., 2025a; Liu et al., 2016; Kar et al., 2022; Miyauchi et al., 2017; Xia et al., 2024; Kaur, 2016; Li et al., 2020; Li et al., 2016; Jin et al., 2023; Zhu et al., 2024b; Bhanse et al., 2025; Fan et al., 2026; Soda et al., 2021; Mabuza et al., 2022; Mahanty et al., 2023; Andreo-Martínez et al., 2021; Rojas et al., 2025; Tolbert et al., 2014; Bastola et al., 2017; Chen et al., 2024; Haneczok and Delijewski, 2021; Khan et al., 2024; Pietrucci et al., 2021; Mathias et al., 2025; Kou, 2025; Chen et al., 2026). The manuscript includes four figures (referenced but not provided) and three tables (referenced but not provided).
+- **Missing materials affecting confidence** Figures 1-4 and Tables 1-3 are referenced but not provided. The reference list is not provided. No primary data are presented, which is expected for a review. The absence of figures and tables limits the ability to assess the accuracy of the visual summaries and the completeness of the tabulated evidence.
+
+## Reviewer
+- **Overall assessment** This is a well-structured and clearly written narrative review that addresses a genuine gap in the literature: the molecular-level understanding of bamboo-based remediation. The authors are appropriately cautious in distinguishing between direct evidence from bamboo, comparative evidence from other species, and hypothesis-generating computational approaches. The review is comprehensive in scope and the proposed framework for future research is sensible. However, the manuscript is largely descriptive and does not provide a critical synthesis that would elevate it beyond a summary of existing literature. The main weaknesses are the lack of a systematic methodology for literature selection, the absence of a critical comparison of conflicting or inconsistent findings, and the reliance on general statements about knowledge gaps without providing specific, actionable hypotheses. The review would be strengthened by a more rigorous and transparent approach to evidence synthesis.
+- **Who would be interested in the results, and why** Researchers in phytoremediation, environmental biotechnology, and plant molecular biology would find this review useful as a conceptual framework and a summary of the state of the field. Those working on bamboo specifically, or on lignocellulosic biomass for environmental applications, would benefit from the compilation of relevant studies. The review may also be of interest to researchers using computational methods (e.g., MD simulations, docking) who are looking for biological systems to which these methods could be applied.
+- **Major strengths** The review addresses a timely and important topic. The authors clearly articulate the gap between bulk-level observations and molecular-level understanding. The structure is logical, moving from structural features of macromolecules to interaction mechanisms to integrative approaches. The authors are appropriately cautious in their claims, consistently distinguishing between direct evidence, comparative evidence, and hypotheses. The discussion of methodological limitations (e.g., reliance on colorimetric assays, lack of molecular weight characterization) is valuable and highlights concrete areas for improvement.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality and synthesis
+  - **Claim pointer** The review claims to "systematically synthesize" the structure-function relationships of bamboo-derived macromolecules and to provide a "critical assessment" of the literature.
+  - **Evidence pointer** Section "Current state of evidence for bamboo macromolecule-contaminant interactions", Section "Critical assessment of current evidence and methodological limitations"
+  - **Concern** The manuscript does not describe a systematic methodology for literature search, selection, or quality appraisal. The term "systematically synthesizes" is therefore not supported. The narrative appears to be a selective summary rather than a systematic review. The "critical assessment" section identifies limitations but does not critically evaluate the strength of evidence for specific claims or compare conflicting findings across studies. For example, the review states that adsorption capacities vary but does not discuss why they vary or what this means for the proposed mechanisms.
+  - **Why it matters** A review that claims to be systematic and critical must provide a transparent and reproducible method for identifying and evaluating the literature. Without this, the conclusions are not verifiable and the review cannot be distinguished from a narrative opinion piece. The lack of critical synthesis means that the review does not advance the field beyond what is already known.
+  - **Resolution test** The authors should either (a) revise the claims to accurately reflect a narrative review, or (b) provide a clear description of the search strategy, inclusion criteria, and quality assessment. The "critical assessment" section should be revised to evaluate the strength of evidence for specific mechanisms, identify conflicting results, and explain how these were resolved or why they remain unresolved.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Support for central claims
+  - **Claim pointer** The review proposes an "integrative framework combining proteomics, AI-assisted structure prediction, molecular docking, molecular dynamics (MD) simulations, and quantitative binding assays to uncover the molecular basis of bamboo-pollutant interactions."
+  - **Evidence pointer** Abstract, Section "Integrative approaches to elucidating macromolecular mechanisms"
+  - **Concern** The proposed framework is presented as a solution to the identified knowledge gaps, but the review does not provide a concrete example of how these methods would be integrated, what specific questions they would answer, or what the expected outcomes would be. The section on integrative approaches is largely a list of methods with general descriptions of their potential. There is no discussion of the practical challenges of applying these methods to bamboo (e.g., the lack of a reference genome for many bamboo species, the difficulty of expressing and purifying membrane proteins for structural studies, the challenges of simulating complex lignocellulosic matrices).
+  - **Why it matters** The central proposal of the review is the integrative framework. If this framework is not described in sufficient detail to be actionable, the review's main contribution is weakened. The review should provide a more concrete vision of how these methods would be combined and what specific hypotheses they would test.
+  - **Resolution test** The authors should provide a specific example of how the framework would be applied to a particular contaminant and a particular bamboo macromolecule, including the specific methods, expected data, and how the data would be interpreted. They should also discuss the limitations and challenges of the proposed approach.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Completeness of evidence
+  - **Claim pointer** The review states that "direct evidence for their endogenous activity in bamboo remains limited" for oxidative enzymes and that "direct molecular evidence for these specific transporter functions in bamboo remains limited."
+  - **Evidence pointer** Section "Oxidative enzymes", Section "Transport-mediated sequestration"
+  - **Concern** The review correctly identifies these as limitations, but it does not provide a comprehensive summary of what direct evidence does exist. For example, are there any studies that have purified a bamboo laccase or peroxidase and characterized its activity? Are there any studies that have used heterologous expression to characterize a bamboo transporter? The review mentions a few examples but does not provide a systematic account of the state of the art.
+  - **Why it matters** A review should provide a complete and accurate picture of the current state of knowledge. By not summarizing the existing direct evidence, the review may underestimate the progress that has been made and may not accurately represent the field.
+  - **Resolution test** The authors should provide a more comprehensive summary of the direct evidence for bamboo enzyme and transporter function, even if this evidence is limited. This could be presented in a table or a dedicated section.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity and precision
+  - **Affected element** Abstract, Introduction
+  - **Evidence pointer** Abstract, Introduction
+  - **Issue** The term "hazardous contaminants" is used throughout, but the review covers a wide range of contaminants (heavy metals, organic pollutants, emerging contaminants). The term is vague and could be more specific.
+  - **Required correction** Consider using more specific terms where possible, such as "metal contaminants" or "organic contaminants," or define the scope of "hazardous contaminants" early in the manuscript.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Section "Current state of evidence for bamboo macromolecule-contaminant interactions"
+  - **Evidence pointer** Section "Current state of evidence for bamboo macromolecule-contaminant interactions"
+  - **Issue** The review states that "studies using purified bamboo-derived macromolecules remain relatively uncommon" but does not provide a list of these studies or a summary of their findings.
+  - **Required correction** Provide a table or a more detailed description of the studies that have used purified bamboo macromolecules, including the macromolecule, contaminant, and key findings.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical accuracy
+  - **Affected element** Section "Molecular mechanisms of contaminant interactions with bamboo-derived macromolecules"
+  - **Evidence pointer** Section "Molecular mechanisms of contaminant interactions with bamboo-derived macromolecules"
+  - **Issue** The review states that "laccases oxidize phenolic substrates through copper-containing catalytic centers." This is correct, but the review could be more precise about the number and type of copper atoms (e.g., T1, T2, T3) and their roles.
+  - **Required correction** Consider adding a brief description of the copper centers in laccases to improve technical accuracy.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Section "Challenges and future perspectives for molecularly guided bamboo remediation"
+  - **Evidence pointer** Section "Challenges and future perspectives for molecularly guided bamboo remediation"
+  - **Issue** The section on future research priorities is a list of recommendations but lacks a clear sense of priority or a timeline. It is not clear which recommendations are most important or which should be addressed first.
+  - **Required correction** Consider prioritizing the recommendations and explaining the rationale for the proposed order.
+- **Technical failings that need to be addressed before the case is established** The lack of a systematic methodology for the literature review (R1-M1) is a significant technical failing that undermines the claim of a "systematic synthesis." The lack of detail in the proposed framework (R1-M2) is also a technical failing, as it does not provide a clear path for implementation. The absence of figures and tables in the provided material prevents assessment of their accuracy and completeness.
+- **Assessment against Nature-style criteria** 
+  - **Originality** The review addresses a topic that is not well covered in the existing literature, and the focus on molecular mechanisms is a useful contribution. However, the originality is limited by the descriptive nature of the review and the lack of a novel synthesis or a new conceptual model.
+  - **Scientific importance** The topic is of importance for the field of phytoremediation and environmental biotechnology. The review correctly identifies a gap in the literature and proposes a framework to address it. However, the importance is not fully realized because the review does not provide a critical evaluation of the evidence or a clear set of testable hypotheses.
+  - **Interdisciplinary readership** The review is likely to be of interest to researchers in plant biology, environmental science, and computational biology. The language is generally accessible, but the review assumes a basic understanding of molecular biology and biochemistry.
+  - **Technical soundness** The review is technically sound in its descriptions of the macromolecules and methods. However, the lack of a systematic methodology and the lack of detail in the proposed framework are technical weaknesses.
+  - **Readability for nonspecialists** The review is well-written and generally clear. However, the use of technical terms without definition (e.g., "lignin-carbohydrate complexes," "polydispersity indices") may make it difficult for nonspecialists to follow.
+- **Recommendation posture** Supportive if technical concerns are resolved. The review addresses a relevant topic and provides a useful framework, but the lack of a systematic methodology and the lack of detail in the proposed framework need to be addressed before the review can be considered a significant contribution.
+
+## Risk / unsupported claims
+- The claim that the review "systematically synthesizes" the literature is unsupported due to the lack of a described methodology.
+- The claim that the proposed integrative framework will "uncover the molecular basis of bamboo-pollutant interactions" is speculative and not supported by any evidence presented in the review.
+- The statement that "direct evidence for their endogenous activity in bamboo remains limited" is likely accurate but is not supported by a comprehensive summary of the existing evidence.
+- The review's statements about the potential of AI-based structure prediction and MD simulations are presented as promising but are not supported by any specific examples or case studies in the bamboo context.

@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report that HmuF from *Fusobacterium nucleatum* binds heme, traffics it to anaerobilin synthase, and catalyzes four-electron reduction of anaerobilin. Using the paralog FldH, they combine molecular dynamics simulations and 19F NMR to show that a conserved hinge motif (cis-Pro151, His150, Asp155) modulates conformational mobility of an alpha-helical cap. Mutations in the hinge alter NMR spectra but do not abolish heme trafficking or anaerobilin reduction, leading to the conclusion that the hinge fine-tunes dynamics but is not strictly required for function.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or statistical analyses provided
+- **Missing materials affecting confidence** Full manuscript, MD simulation parameters and trajectories, NMR spectra and assignment details, kinetic or binding assay data for heme trafficking and anaerobilin reduction, experimental methods, and any statistical or error analysis
+
+## Reviewer
+- **Overall assessment** The abstract presents a focused and mechanistically interesting study of conformational dynamics in a heme trafficking protein. The combination of MD simulations and 19F NMR is appropriate and potentially powerful. However, the abstract alone provides insufficient detail to evaluate the rigor of the simulations, the assignment and interpretation of NMR resonances, or the functional assays supporting the conclusion that the hinge is not required. The central claim that the hinge "fine-tunes" dynamics without being a "strict prerequisite" is plausible but not fully established from the supplied material.
+- **Who would be interested in the results, and why** Researchers studying heme transport and metabolism in anaerobic bacteria, particularly those interested in protein conformational dynamics and allostery. The work may also appeal to biophysicists using 19F NMR to probe protein dynamics, and to structural biologists studying flavodoxin-like proteins with appended domains.
+- **Major strengths** The study addresses a specific and testable mechanistic question about a conserved motif. The use of multiple orthogonal approaches (MD, NMR, functional assays) is commendable. The conclusion that the hinge modulates but does not gate function is nuanced and avoids overstatement. The identification of a slow exchange process (tau = 1.5 ms) provides quantitative insight into the conformational equilibrium.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Molecular dynamics simulations of FldH without heme reveal that the alpha-helical cap pivots away from the flavodoxin domain to form an open complex, but then reforms the closed complex, which remains closed for the duration of the MD simulation."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not specify the simulation timescale, force field, number of replicates, or convergence criteria. The statement that the cap "pivots away" and then "reforms" suggests a single or limited set of trajectories, which may not be statistically robust. The claim that the closed complex "remains closed for the duration" could reflect insufficient sampling rather than a true free energy minimum.
+  - **Why it matters** Conformational transitions in proteins are often rare events on MD timescales. Without evidence of multiple independent simulations or enhanced sampling, the observed behavior may be trajectory-specific and not representative of the ensemble. This directly affects the interpretation of the hinge's role.
+  - **Resolution test** Provide simulation length, number of replicates, force field, and analysis of convergence (e.g., RMSD or free energy profiles). Show that the open-to-closed transition is observed reproducibly and that the closed state is stable across multiple trajectories.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "1D NMR reveals that a single 19F-Tyr probe in the alpha-helical cap has two resonances that slowly exchange (tau = 1.5 ms)."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not describe how the 19F label was introduced, how the assignment of the two resonances to the cap probe was established, or how the exchange time constant was measured (e.g., lineshape analysis, EXSY, or relaxation dispersion). The value of 1.5 ms is presented without error estimates or experimental conditions (temperature, pH, protein concentration).
+  - **Why it matters** Accurate interpretation of the two resonances as arising from open and closed conformations requires unambiguous assignment and a validated method for extracting exchange rates. Without these details, the slow exchange claim is not verifiable.
+  - **Resolution test** Provide experimental methods for 19F labeling, resonance assignment (e.g., via mutagenesis or comparison to apo/holo states), and the specific NMR experiment used to determine tau. Include error bars and conditions.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Despite the variants exhibiting different 19F-NMR spectra, all engage in heme trafficking and anaerobilin reduction."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that all variants "engage in heme trafficking and anaerobilin reduction" but provides no quantitative data, such as rates, yields, or binding affinities. It is unclear whether the variants show wild-type levels of activity or reduced but measurable activity. The phrase "engage in" is vague and does not establish functional equivalence.
+  - **Why it matters** The central conclusion that the hinge is not a "strict prerequisite" depends on demonstrating that the variants retain sufficient function. Without quantitative comparison to the wild-type protein, the conclusion is not supported.
+  - **Resolution test** Provide kinetic parameters (e.g., kcat, Km) for anaerobilin reduction and quantitative heme binding or trafficking assays for wild-type and each variant, with statistical comparisons.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "hinge" is used to describe residues cis-Pro151, His150, and Asp155, but the abstract does not define the structural basis for this designation beyond stating they "form a hinge bisecting the cap and flavodoxin domain."
+  - **Required correction** Clarify whether the hinge is defined by backbone geometry, hydrogen bonding, or dynamic behavior, and provide a structural reference (e.g., a figure or PDB ID).
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Functional assay description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions "heme trafficking" but does not specify the assay used (e.g., transfer to a recipient protein, membrane permeability, or cellular uptake).
+  - **Required correction** Briefly describe the trafficking assay in the abstract or refer to a methods section.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Mutation effects
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that H150A and D155N caused "coalescence of these two peaks, indicating faster exchange or stabilization of one conformer." These two interpretations have different mechanistic implications, but the abstract does not distinguish between them.
+  - **Required correction** Specify which interpretation is supported by the data, or state that both are possible and how they might be differentiated.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (MD simulation rigor), R1-M2 (NMR assignment and exchange rate determination), R1-M3 (quantitative functional data for variants)
+- **Assessment against Nature-style criteria** 
+  - **Originality** The study addresses a specific and relatively unexplored question about conformational control in heme trafficking proteins. The use of 19F NMR to probe a hinge motif is not entirely novel but is applied to a new system. Originality is moderate.
+  - **Scientific importance** The findings are of interest to the heme transport and anaerobe metabolism communities, but the broader significance is limited unless the hinge mechanism is shown to be conserved across other systems. Importance is moderate.
+  - **Interdisciplinary readership** The work bridges structural biology, biophysics, and microbiology, but the abstract is written in a way that may be accessible to specialists in these fields rather than a broad audience. Interdisciplinary appeal is limited.
+  - **Technical soundness** The combination of MD and NMR is appropriate, but the abstract lacks sufficient detail to assess the rigor of either method. Technical soundness cannot be fully evaluated from the supplied material.
+  - **Readability for nonspecialists** The abstract is concise and logically structured, but terms like "anaerobilin synthase" and "19F-Tyr probe" may be unfamiliar to nonspecialists. Readability is acceptable for a specialist journal.
+- **Recommendation posture** Supportive if technical concerns are resolved. The study has a clear hypothesis and appropriate methods, but the abstract does not provide enough evidence to establish the central claims. Full manuscript review is needed to assess MD convergence, NMR assignments, and functional data.
+
+## Risk / unsupported claims
+- The claim that the hinge "fine-tunes" dynamics is not quantitatively supported without free energy or rate comparisons across variants.
+- The claim that the hinge is "not a strict prerequisite" for function is unsupported without quantitative activity data for the variants.
+- The interpretation of the 19F NMR two-resonance behavior as reflecting open and closed conformations is plausible but not verifiable from the abstract alone.
+- The MD observation of a single open-to-closed transition is not established as representative without simulation details and replicates.

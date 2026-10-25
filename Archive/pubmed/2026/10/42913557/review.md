@@ -1,0 +1,82 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to methods, figures, tables, or supplementary information
+- **Shared manuscript claim summary** The authors use molecular dynamics simulations of full-length AKT on PIP3-containing lipid bilayers to identify four membrane-binding modes, observe PIP3 interactions with basic residues in the kinase domain, and report that the most stable mode involves dual-site PIP3 binding to the PH domain with the activation loop phosphorylation site solvent-exposed. They further claim that binding mode populations depend on PIP3 concentration, and that live-cell single-molecule imaging supports cooperative roles of the PH domain and kinase domain in membrane recruitment.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided
+- **Missing materials affecting confidence** Full methods, simulation parameters and force fields, system setup and equilibration details, statistical analyses, single-molecule imaging protocols and quantification, all figures and tables, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting and timely contribution to understanding AKT membrane recruitment, combining computational and experimental approaches. The central claim that PH domain and kinase domain cooperate in membrane binding is plausible and mechanistically relevant. However, the abstract alone provides insufficient detail to evaluate the technical rigor of the simulations, the statistical robustness of the binding mode populations, or the quantitative support from single-molecule imaging. Several claims are stated without visible evidence, and the relationship between simulation timescales and cellular observations is not addressed.
+- **Who would be interested in the results, and why** Researchers in cell signaling, particularly those studying PI3K/AKT pathway regulation, membrane-protein interactions, and lipid-mediated signaling. Computational biophysicists interested in multidomain protein-membrane interactions and coarse-grained or atomistic simulation methodologies would also find the work relevant. The combination of simulation and single-molecule imaging may appeal to interdisciplinary groups bridging molecular dynamics and cell biology.
+- **Major strengths** The study addresses a mechanistically important question that is not fully resolved in the literature, namely how the PH domain and kinase domain cooperate in AKT membrane recruitment. The use of full-length AKT in simulations is a notable advance over domain-only studies. The identification of a secondary PIP3 binding site in the PH domain and PIP3 interactions with basic residues in the kinase domain are specific and testable findings. The integration of live-cell single-molecule imaging provides a complementary experimental dimension.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim to identify four distinct membrane-binding modes of full-length AKT on PIP3-containing lipid bilayers using molecular dynamics simulations.
+  - **Evidence pointer** Abstract only; simulation methods and parameters not provided
+  - **Concern** The abstract does not specify the simulation methodology, including whether atomistic or coarse-grained simulations were used, the force field, the lipid bilayer composition beyond PIP3 presence, the simulation timescale, or the number of independent replicates. Without this information, the reliability and convergence of the identified binding modes cannot be assessed.
+  - **Why it matters** Molecular dynamics simulations of protein-membrane systems are highly sensitive to force field choice, system size, and simulation length. If the simulations are not sufficiently converged or replicated, the four binding modes may be artifacts of insufficient sampling rather than genuine conformational states.
+  - **Resolution test** Provide full simulation details in the methods, including force field, water model, lipid composition, system dimensions, simulation length, number of replicates, and convergence criteria. Show that the binding mode populations are stable over the simulation time and reproducible across independent runs.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that the populations of the four binding modes depend on PIP3 concentration in the membrane, leading to changes in the preferred orientation of AKT.
+  - **Evidence pointer** Abstract only; no quantitative data provided
+  - **Concern** The abstract states that binding mode populations depend on PIP3 concentration but provides no quantitative data, such as population fractions, error bars, or statistical comparisons across different PIP3 concentrations. It is unclear how many concentrations were tested, whether the differences are statistically significant, and whether the observed trend is monotonic or complex.
+  - **Why it matters** The concentration dependence is a central mechanistic claim that links lipid composition to AKT orientation and function. Without statistical support, the claim that PIP3 concentration shapes AKT orientation is not established.
+  - **Resolution test** Provide population fractions for each binding mode at each PIP3 concentration tested, with appropriate statistical analyses (e.g., bootstrapping or replicate-based error estimates). Show that the differences across concentrations are significant and that the preferred orientation changes in a consistent manner.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that live-cell single-molecule imaging supports distinct but cooperative roles of the PH domain and kinase domain in membrane recruitment, with the PH domain promoting membrane association and the kinase domain enhancing recruitment efficiency and stabilizing longer-residence membrane-bound states.
+  - **Evidence pointer** Abstract only; imaging methods and quantification not provided
+  - **Concern** The abstract does not describe the single-molecule imaging experiments, including the cell type, the labeling strategy, the constructs used (e.g., full-length AKT, PH domain alone, kinase domain alone, or mutants), the number of cells or molecules analyzed, or the statistical methods used to compare residence times and recruitment efficiencies. Without these details, the claim that the kinase domain stabilizes longer-residence states is not quantitatively supported.
+  - **Why it matters** Single-molecule imaging data are only meaningful if the experimental design includes appropriate controls and sufficient sampling. The claim of cooperative roles requires direct comparison of constructs with and without each domain, and the residence time distributions must be statistically robust.
+  - **Resolution test** Provide full experimental details, including construct design, labeling strategy, imaging conditions, number of molecules tracked, and statistical comparisons of residence times and recruitment efficiencies across constructs. Show that the differences are significant and that the kinase domain effect is not due to artifacts such as oligomerization or non-specific binding.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** The authors claim that the most stable binding mode involves PIP3 interacting with both the canonical and a secondary binding site in the PH domain, while the kinase domain adopts an orientation in which the activation loop phosphorylation site is exposed to the solvent.
+  - **Evidence pointer** Abstract only; structural details not provided
+  - **Concern** The claim that the activation loop phosphorylation site is solvent-exposed in the most stable mode is presented as a key functional insight, but the abstract does not explain how this orientation relates to AKT activation. It is unclear whether solvent exposure of the phosphorylation site is sufficient for phosphorylation by upstream kinases such as PDK1, or whether additional conformational changes are required.
+  - **Why it matters** The functional relevance of the observed orientation is central to the claim that the membrane-bound state is poised for activation. Without a mechanistic link between the observed orientation and phosphorylation or kinase activity, the significance of this finding is speculative.
+  - **Resolution test** Provide additional analysis or discussion showing that the solvent-exposed activation loop is accessible to upstream kinases, or perform additional simulations or experiments (e.g., phosphorylation assays or kinase docking) to support the functional interpretation.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The abstract opens with "The PI3K/AKT signaling pathway is triggered by the recruitment of AKT to cellular membranes," which is accurate but does not provide context for why this recruitment is important in disease or physiology.
+  - **Required correction** Consider adding a brief statement on the biological significance of AKT signaling (e.g., roles in cell growth, survival, and cancer) to orient nonspecialist readers.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Binding mode nomenclature
+  - **Evidence pointer** Abstract, "four distinct membrane-binding modes"
+  - **Issue** The abstract does not define or name the four binding modes, making it difficult for readers to follow the subsequent discussion of populations and stability.
+  - **Required correction** Briefly describe the distinguishing features of each mode (e.g., orientation of the PH domain, contact residues, or depth of membrane insertion) in the abstract or refer to a figure where they are defined.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interdisciplinary readership
+  - **Affected element** Single-molecule imaging description
+  - **Evidence pointer** Abstract, "Live-cell single-molecule imaging"
+  - **Issue** The abstract does not specify the type of single-molecule imaging (e.g., TIRF, confocal, or super-resolution), which may be relevant for readers assessing the spatial and temporal resolution of the measurements.
+  - **Required correction** Specify the imaging modality in the abstract or methods to allow readers to evaluate the resolution and applicability of the technique.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The simulation methodology and convergence, the statistical support for concentration-dependent populations, and the quantitative basis for the single-molecule imaging claims are all essential to the central conclusions and cannot be evaluated from the abstract alone.
+- **Assessment against Nature-style criteria** Originality: The work appears original in its use of full-length AKT simulations and the identification of a secondary PIP3 binding site, though the abstract does not fully distinguish it from prior domain-level studies. Scientific importance: The question of AKT membrane recruitment is important, and the cooperative domain model is a potentially significant advance, but the functional implications are not fully developed. Interdisciplinary readership: The combination of simulation and single-molecule imaging has broad appeal, but the abstract is written primarily for specialists in the AKT field. Technical soundness: Cannot be assessed from the abstract; the missing methodological details are substantial. Readability for nonspecialists: The abstract is generally clear but assumes familiarity with AKT domain architecture and signaling terminology.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible and interesting model, but the technical details required to evaluate the simulation and imaging claims are entirely absent. I would be supportive if the full manuscript provides rigorous methods, statistical analyses, and clear evidence for the concentration-dependent populations and the cooperative roles of the domains.
+
+## Risk / unsupported claims
+- The identification of four distinct membrane-binding modes is unsupported without simulation details and convergence analysis.
+- The claim that PIP3 interacts with basic residues in the kinase domain is unsupported without structural or energetic data.
+- The claim that the most stable mode involves dual-site PIP3 binding to the PH domain is unsupported without population or free energy data.
+- The claim that the activation loop phosphorylation site is solvent-exposed in the most stable mode is unsupported without structural analysis.
+- The claim that binding mode populations depend on PIP3 concentration is unsupported without quantitative data and statistical tests.
+- The claim that the PH domain primarily promotes membrane association while the kinase domain enhances recruitment efficiency and stabilizes longer-residence states is unsupported without experimental details and statistical comparisons.
+- The functional interpretation that the observed membrane-bound states are relevant to AKT activation is speculative without direct evidence linking orientation to phosphorylation or kinase activity.

@@ -1,0 +1,85 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to methods, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors introduce Pinal, a 16-billion-parameter foundation model trained on 1.7 billion synthetically annotated protein-text pairs, which generates candidate proteins from natural-language descriptions of desired function. Computational evaluations report high predicted foldability, functional-description alignment, and sequence diversity. Experimental validation across four tasks (fluorescent protein, PET hydrolase, alcohol dehydrogenase, metabolic H-protein) reportedly shows intended function in each case, including catalytic activity for both designed enzymes. A Pinal-designed H-protein increased product titre by 1.7-fold relative to native E. coli H-protein in a multi-enzyme CO2 fixation pathway without iterative experimental optimization.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary data provided
+- **Missing materials affecting confidence** Full methods, model architecture details, training data construction, computational evaluation protocols, experimental procedures, raw data, statistical analyses, sequence and structure outputs, and all figures and tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially significant advance in protein design, positioning natural language as a high-level interface for functional protein generation. The scale of the model and the breadth of experimental validation across four distinct tasks are notable. However, the abstract alone provides insufficient detail to assess the technical soundness of the approach, the rigor of the computational evaluations, or the robustness of the experimental claims. The central claim that natural language enables programmable protein design with reduced reliance on structural or sequence constraints requires substantially more evidence than is visible here.
+- **Who would be interested in the results, and why** Researchers in protein engineering, computational biology, and synthetic biology would be interested in a model that generates functional proteins from text descriptions, potentially lowering the barrier to protein design. The broader machine learning community may also find interest in the scale and training paradigm of the model. Biotechnologists working on enzyme engineering and metabolic pathway optimization would be interested in the demonstrated catalytic activities and the H-protein titre improvement.
+- **Major strengths** The model scale (16 billion parameters) and training data volume (1.7 billion pairs) suggest a substantial technical undertaking. The experimental validation across four distinct functional classes, including two enzymes with catalytic activity, is a strong point if the evidence is robust. The reported 1.7-fold titre improvement in a metabolic pathway context without iterative optimization is a practically meaningful outcome.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The model "designs candidate proteins from natural-language descriptions of desired function" and "links functional intent to protein sequence and structure."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not describe how natural-language descriptions are converted into functional design objectives, how the model represents and generates protein structure, or how the synthetic annotations were constructed. Without this information, the mechanism by which the model achieves functional design is unverifiable.
+  - **Why it matters** The core novelty of the work rests on the claim that natural language serves as a sufficient interface for functional protein design. If the model actually relies on implicit structural or sequence constraints embedded in the training data or generation process, the claim of reduced reliance on manual constraints would be overstated.
+  - **Resolution test** Provide a clear description of the model architecture, the input-output mapping, the training objective, and the annotation generation pipeline. Show examples of input text and corresponding output sequences and structures.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence quality
+  - **Claim pointer** "In computational evaluations, generated candidates combined high predicted foldability with functional-description alignment and sequence diversity."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract reports computational metrics without defining them. "Predicted foldability" and "functional-description alignment" are not standard terms with clear operational definitions. No baselines, comparators, or statistical thresholds are mentioned.
+  - **Why it matters** Without defined metrics and comparators, the reader cannot judge whether the computational performance is actually strong or merely adequate. The claim that candidates provide "a basis for prioritizing experimentally testable designs" depends on these metrics being meaningful and validated.
+  - **Resolution test** Define each metric precisely, describe how they were computed, and provide comparisons against existing protein design methods or appropriate baselines. Include distributions and statistical analyses.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Experimental rigor
+  - **Claim pointer** "We applied Pinal to four distinct design tasks... and experimentally observed the intended function in each case, including catalytic activity for both designed enzymes."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that intended function was observed in all four cases but provides no experimental details. For the fluorescent protein, what was the brightness or spectral property? For the PET hydrolase and alcohol dehydrogenase, what were the kinetic parameters? How many designs were tested, and what was the success rate? Were negative controls included?
+  - **Why it matters** The claim of broad experimental success is central to the paper's significance. Without quantitative data, success rates, and controls, the reader cannot assess whether the results are robust or whether they reflect cherry-picking or weak functional criteria.
+  - **Resolution test** Provide full experimental methods, quantitative measurements for each designed protein, the number of candidates tested, the success criteria, and appropriate controls. Include raw data and statistical analyses.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim substantiation
+  - **Claim pointer** "Without iterative experimental optimization, a Pinal-designed H-protein increased product titre by 1.7-fold relative to the corresponding native Escherichia coli H-protein in a multi-enzyme CO(2) fixation pathway."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The 1.7-fold improvement is presented as a headline result, but the abstract does not specify the number of replicates, the variability of the measurement, the experimental conditions, or whether the native H-protein was expressed and assayed under identical conditions.
+  - **Why it matters** A 1.7-fold difference could be within experimental noise if variability is high. The claim that this improvement demonstrates the utility of the design approach depends on the statistical robustness of the measurement.
+  - **Resolution test** Provide replicate data, error bars, statistical tests, and a full description of the experimental setup. Clarify whether the native H-protein was the same construct expressed in the same host and assayed in parallel.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "synthetically annotated protein-text pairs" is ambiguous. It is unclear whether the annotations were generated by an automated pipeline, by human curators, or by another model.
+  - **Required correction** Clarify the annotation generation process and provide examples of the text descriptions used.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Model comparison
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not compare Pinal to existing protein design methods, such as RFdiffusion or ESM-based approaches, in either computational or experimental benchmarks.
+  - **Required correction** Include comparisons to state-of-the-art methods to contextualize the claimed advantages.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Data availability
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No mention is made of code, model weights, or data availability.
+  - **Required correction** State whether the model, training data, and evaluation scripts will be made publicly available.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Scope
+  - **Affected element** Generalizability
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The four tasks represent a narrow set of protein functions. The abstract does not discuss limitations or failure modes of the approach.
+  - **Required correction** Add a discussion of the boundaries of the approach, including cases where it may fail or underperform.
+
+## Risk / unsupported claims
+- The claim that Pinal "links functional intent to protein sequence and structure" is unsupported without architectural or training details.
+- The claim of "high predicted foldability with functional-description alignment" is unverifiable without defined metrics and baselines.
+- The claim of experimental success in all four tasks is unsupported without quantitative data, success rates, and controls.
+- The 1.7-fold titre improvement is unsupported without replicate data and statistical analysis.
+- The claim that natural language enables "reduced reliance on manually specified structural or sequence constraints" is not substantiated by the abstract alone.
+- The generalizability of the approach beyond the four tested tasks is not assessable from the provided material.

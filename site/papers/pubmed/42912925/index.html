@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From Closed to Mighty: How GTP-Induced Allosteric Dynamics, Dimerization, and Membrane Binding Transform a Bacterial Dynamin-like Protein. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>From Closed to Mighty: How GTP-Induced Allosteric Dynamics, Dimerization, and Membrane Binding Transform a Bacterial Dynamin-like Protein.</h1>
+      <div class="meta">Schumann, Wibke; Bundschuh, Bastian F; Loschwitz, Jennifer; Strodel, Birgit</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-10-23
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42912925/">原文</a>
+      </div>
+      <p class="one-liner">该研究通过全原子增强采样MD模拟揭示细菌dynamin样蛋白GTP诱导的闭合-开放构象转变机制，核心聚焦蛋白质构象动态与膜重塑，方法为物理模拟，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Dynamins, crucial GTPases involved in membrane remodeling, play key roles in processes like endocytosis and membrane fission. While their importance is well-established, the precise dynamics of their conformational changes remain unclear. This study investigates the bacterial dynamin-like protein (BDLP) from Nostoc punctiforme, which undergoes a dramatic closed-to-open transition upon GTP binding. Using standard and enhanced all-atom molecular dynamics simulations, we map this transition, revealing a complex energetic landscape. The initial barrier arises from disruption of salt bridges formed by the GTPase domain with the trunk and paddle, setting off the main hinge motion. Subsequent conformational changes involve further hinge motions and lateral shearing to minimize electrostatic forces. Notably, GTP binding accelerates the transition by 5 orders of magnitude through an allosteric mechanism. Our multiscale simulations of 37.1 mus accumulated simulation time show that BDLP dimerization and membrane binding are necessary to initiate the stabilization of the open conformation. These findings provide crucial insights into BDLP&#39;s membrane remodeling mechanism, advancing our understanding of dynamin dynamics.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">发动蛋白（Dynamins）是参与膜重塑的关键GTP酶，在内吞作用和膜分裂等过程中发挥重要作用。尽管其重要性已得到充分确认，但其构象变化的具体动力学仍不清楚。本研究探讨了来自点状念珠藻（Nostoc punctiforme）的细菌发动蛋白样蛋白（BDLP），该蛋白在GTP结合时经历剧烈的闭合到开放转变。利用标准和增强的全原子分子动力学模拟，我们绘制了这一转变过程，揭示了一个复杂的能量景观。初始能垒源于GTP酶结构域与主干和桨叶形成的盐桥断裂，从而触发主要铰链运动。随后的构象变化涉及进一步的铰链运动和横向剪切，以最小化静电力。值得注意的是，GTP结合通过变构机制将转变加速了5个数量级。我们累计37.1微秒模拟时间的多尺度模拟表明，BDLP二聚化和膜结合是启动开放构象稳定化的必要条件。这些发现为BDLP的膜重塑机制提供了关键见解，推进了我们对发动蛋白动力学的理解。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：From Closed to Mighty: How GTP-Induced Allosteric Dynamics, Dimerization, and Membrane Binding Transform a Bacterial Dynamin-like Protein</li>
+<li><strong>作者与单位</strong>：Schumann, Wibke; Bundschuh, Bastian F; Loschwitz, Jennifer; Strodel, Birgit（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：Journal of Chemical Information and Modeling</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：计算模拟研究（全原子 MD + 增强采样 + 粗粒化 MD）</li>
+<li><strong>领域</strong>：蛋白质构象动力学 × 分子模拟（GTPase / Dynamin 超家族）</li>
+<li><strong>关键词</strong>：dynamin-like protein, GTP-induced conformational change, allosteric regulation, molecular dynamics, free energy landscape, membrane binding, dimerization</li>
+<li><strong>DOI/arXiv 号</strong>：10.1021/acs.jcim.6c01952</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：PDB 结构 2J69（closed）、2W6D（open）；模拟轨迹未公开</li>
+<li><strong>阅读日期</strong>：2026-05-13</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质构象采样与构象生成 × 物理模拟（MD）」方向，聚焦 GTP 诱导的闭合-开放构象转变机制，结合增强采样（HREMD、USMD）与粗粒化模拟，是首个对全长 dynamin-like 蛋白进行全原子 MD 研究的报道，对理解核苷酸调控的构象重排与膜结合协同机制具有方法学参考价值。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文通过累计 37.1 μs 的多尺度 MD 模拟（全原子 + HREMD + USMD + Martini CG），揭示了 BDLP 在 GTP 结合后通过破坏 G 结构域-躯干盐桥网络、触发 flap 运动与铰链旋转，将闭合-开放转变能垒从 14.5 kcal/mol 降至 7.5 kcal/mol，并证明仅靠二聚化与膜结合不足以完全锁定开放构象，需更高阶聚合。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：细菌 dynamin-like 蛋白 BDLP 在 GTP 结合后如何从闭合单体转变为开放、膜结合活性构象？其构象转变的分子机制、能量学与变构通讯网络是什么？</li>
+<li><strong>为什么重要</strong>：Dynamin 超家族蛋白在膜重塑（内吞、膜分裂）中发挥核心作用，其 GTP 驱动的构象重排机制是理解这类机械化学酶功能的关键，但此前缺乏原子分辨率的动态描述。</li>
+<li><strong>现有方法不足</strong>：已有研究主要依赖静态晶体结构（closed 2J69、open 2W6D）和粗粒化模拟，缺乏对转变路径、中间态和能量景观的原子级刻画；全长 dynamin 蛋白的全原子 MD 研究此前未见报道。</li>
+<li><strong>精确研究问题</strong>：Can all-atom MD simulations reveal the complete closed-to-open transition pathway of BDLP and quantify how GTP binding, dimerization, and membrane binding collectively stabilize the open state?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p>（标注：以下脉络为「经外部核验」结合「仅本文框架」的混合叙述，其中 dynamin 超家族基本功能与结构特征为外部知识，具体 BDLP 研究进展以本文引用为准。）</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法/工作</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构解析</td>
+<td>X 射线晶体学（2J69, closed）、冷冻电镜（2W6D, open dimer）</td>
+<td>提供闭合/开放端态原子结构</td>
+<td>静态、缺乏中间态与动态信息</td>
+<td>以这两个结构为模拟起点</td>
+</tr>
+<tr>
+<td>粗粒化模拟</td>
+<td>Martini CG 模拟 dynamin 聚合与膜相互作用</td>
+<td>可模拟大体系、长时程</td>
+<td>分辨率低，无法描述盐桥等静电细节</td>
+<td>本文用 Martini 2.2 模拟二聚体/膜结合体系</td>
+</tr>
+<tr>
+<td>全原子 MD</td>
+<td>对 dynamin 家族蛋白的片段或截短体模拟</td>
+<td>原子分辨率、可解析变构细节</td>
+<td>全长蛋白体系大、采样受限</td>
+<td>本文首次对全长 BDLP 进行全原子 MD</td>
+</tr>
+<tr>
+<td>增强采样</td>
+<td>HREMD、USMD、伞形采样</td>
+<td>可跨越高能垒、计算自由能景观</td>
+<td>计算成本高、需合理选择反应坐标</td>
+<td>本文用 HREMD + USMD 绘制 PMF 曲线</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在 dynamin 超家族构象转变研究中，首次以全原子分辨率系统刻画闭合-开放转变路径，并定量 GTP 对能垒的降低效应，同时用 CG 模拟补充二聚化与膜结合的协同稳定作用。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全长 dynamin 蛋白构象转变缺乏原子级描述</td>
+<td>此前无全长 dynamin 蛋白的全原子 MD 研究</td>
+<td>体系大（&gt;1000 残基）、构象空间广阔、计算成本高</td>
+<td>Introduction: "This study represents the first all-atom MD investigation of a full-length dynamin-like protein"</td>
+</tr>
+<tr>
+<td>闭合-开放转变路径未知</td>
+<td>仅知端态结构，中间态与转变机制不明</td>
+<td>常规 MD 无法跨越构象能垒</td>
+<td>Results: 常规 MD 仅采样到 semiclosed 态，需 USMD 强制转变</td>
+</tr>
+<tr>
+<td>GTP 如何加速构象转变的机制不清</td>
+<td>已知 GTP 结合触发开放，但变构路径不明</td>
+<td>缺乏对盐桥网络动态变化的原子级追踪</td>
+<td>Results: 鉴定 flap 1/flap 2 运动及 K154–E438 等盐桥断裂</td>
+</tr>
+<tr>
+<td>开放态稳定性来源不明</td>
+<td>开放单体在溶液中不稳定，但膜结合/二聚化如何稳定未知</td>
+<td>需要模拟膜环境与多聚体体系</td>
+<td>Results: CG 模拟显示膜结合延迟但未阻止闭合，二聚化不足以完全锁定开放态</td>
+</tr>
+<tr>
+<td>构象转变时间尺度与 GTP 水解的竞争关系</td>
+<td>需判断转变是否快于 GTP 水解</td>
+<td>缺乏动力学时间估计</td>
+<td>Results: Arrhenius 估算 apo 转变 &gt;30 ms，holo 约 250–300 ns</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+- 对 BDLP 的闭合（2J69）与开放（2W6D）结构进行全原子 MD 模拟（amber ff99SB*-ILDNP + TIP3P），分别模拟 apo/holo 状态，时长 600 ns × 3 重复
+- 用 HREMD（30 副本）增强采样闭合态构象空间
+- 用 USMD（74/67 个窗口 × 100 ns）沿 d_GT 反应坐标计算闭合-开放转变的 PMF
+- 用 Martini 2.2 CG 模拟（1–2 μs）研究膜结合与二聚化对开放态稳定性的影响
+- 结合 ConSurf 保守性分析、gmx_MMPBSA 残基结合自由能、PCA、聚类、DCC 动态交叉相关分析</p>
+<p><strong>2) 核心洞察</strong>：
+- <strong>GTP 通过变构盐桥重排触发开放</strong>：GTP 结合使 flap 1/flap 2 摆动覆盖核苷酸结合位点，破坏 G 结构域-躯干间的关键盐桥（如 K154–E438），从而解锁闭合构象。
+- <strong>铰链 1 是受限球窝关节而非简单铰链</strong>：闭合-开放转变不仅涉及铰链旋转，还伴随躯干沿 z 轴的侧向剪切运动，以最小化静电排斥。
+- <strong>GTP 将转变能垒减半</strong>：14.5 → 7.5 kcal/mol，对应时间尺度从 &gt;30 ms 加速至 ~250–300 ns，使转变在 GTP 水解前完成。
+- <strong>开放态稳定需要多因素协同</strong>：膜结合与二聚化单独均不足以锁定开放构象，提示更高阶聚合（螺旋/管状组装）是最终稳定机制。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 大尺度构象转变的「解锁」往往始于局部静电相互作用的破坏，而非全局结构重排——识别关键盐桥可作为变构调控的靶点。
+- 单一反应坐标（如距离）可能不足以描述复杂构象转变，需结合多维度序参量（角度+侧向位移）才能捕捉完整机制。
+- 多尺度模拟策略（全原子 + 增强采样 + CG）是研究大型蛋白构象转变的可行范式，可在原子精度与体系规模间取得平衡。</p>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：PDB 2J69（闭合，GDP 结合）、2W6D（开放，GTP 类似物结合）；GTP/Mg²⁺ 参数；POPC 膜模型</li>
+<li><strong>输出</strong>：闭合-开放转变的 PMF 曲线、关键盐桥动态、flap 运动模式、膜结合/二聚化对构象稳定性的影响</li>
+<li><strong>模块</strong>：
+  1. 体系构建与平衡（全原子：amber ff99SB*-ILDNP + TIP3P；CG：Martini 2.2）
+  2. 常规 MD（600 ns × 3 重复，4 个体系：apo/holo × closed/open）
+  3. HREMD（30 副本，100 ns/副本，仅 apo 闭合态）
+  4. USMD（沿 d_GT 反应坐标，74/67 窗口 × 100 ns）
+  5. 分析模块：RMSF、PCA、聚类、DCC、FES、MMPBSA、ConSurf</li>
+<li><strong>训练</strong>：不适用（无机器学习组件）</li>
+<li><strong>工具</strong>：GROMACS（2018）、PLUMED、gmx_MMPBSA、MD-TASK、ConSurf、PyMOL、Python</li>
+<li><strong>流程</strong>：结构准备 → 能量最小化/平衡 → 常规 MD 或增强采样 → 轨迹分析 → PMF 计算 → CG 模拟补充 → 整合机制模型</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>常规 MD（closed/open × apo/holo）</td>
+<td>评估各状态稳定性与局部动态</td>
+<td>建立基线动态行为，识别 GTP 诱导的差异</td>
+<td>输入：PDB 结构+配体；输出：RMSF、构象聚类</td>
+<td>Results 图 2a,b：闭合 holo 显示 flap 区域高波动</td>
+<td>无法识别 GTP 诱导的局部不稳定区域</td>
+</tr>
+<tr>
+<td>HREMD</td>
+<td>增强闭合态构象采样</td>
+<td>常规 MD 可能陷于局部最小值</td>
+<td>输入：apo 闭合态；输出：扩展构象系综</td>
+<td>Results 图 2c：采样到 semiclosed 态（97°）</td>
+<td>可能遗漏闭合态的其他亚稳态</td>
+</tr>
+<tr>
+<td>USMD + WHAM</td>
+<td>计算闭合-开放转变的 PMF</td>
+<td>定量转变能垒与中间态稳定性</td>
+<td>输入：沿 d_GT 的窗口结构；输出：PMF 曲线</td>
+<td>Results 图 3：apo 能垒 14.5 kcal/mol，holo 7.5 kcal/mol</td>
+<td>无法定量 GTP 的加速效应</td>
+</tr>
+<tr>
+<td>盐桥网络分析</td>
+<td>鉴定 GTP 诱导的静电相互作用变化</td>
+<td>揭示变构通讯的结构基础</td>
+<td>输入：MD 轨迹；输出：盐桥占有率变化</td>
+<td>Results 图 4：K154–E438 等盐桥断裂</td>
+<td>无法解释变构机制</td>
+</tr>
+<tr>
+<td>PCA + 聚类</td>
+<td>提取主要构象运动模式</td>
+<td>识别 flap 摆动与铰链旋转等集体运动</td>
+<td>输入：G 结构域轨迹；输出：主成分、构象簇</td>
+<td>Results 图 5：flap 1/flap 2 摆动</td>
+<td>无法区分不同构象亚态</td>
+</tr>
+<tr>
+<td>DCC 分析</td>
+<td>识别结构域间运动相关性</td>
+<td>揭示变构信号传播路径</td>
+<td>输入：MD 轨迹；输出：相关矩阵</td>
+<td>Results 图 6：GTP 增强 G 结构域-躯干反相关</td>
+<td>无法确认因果方向</td>
+</tr>
+<tr>
+<td>Martini CG MD</td>
+<td>模拟膜结合与二聚化效应</td>
+<td>全原子无法模拟大体系/长时程</td>
+<td>输入：开放/闭合结构+膜+二聚体；输出：构象稳定性</td>
+<td>Results 图 7：膜结合延迟闭合，二聚化不足以锁定开放态</td>
+<td>无法评估聚合对稳定性的贡献</td>
+</tr>
+<tr>
+<td>MMPBSA + ConSurf</td>
+<td>计算残基结合自由能与保守性</td>
+<td>识别功能关键残基</td>
+<td>输入：结构/轨迹；输出：能量贡献、保守性分数</td>
+<td>Results 图 S1：G 结构域-躯干界面保守性中等</td>
+<td>无法区分保守性与功能必需性</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1) 自由能面（FES）计算</strong>：
+$$\Delta G(r_1, r_2) = k_B T [\ln P(r_1, r_2) - \ln P_{\max}(r_1, r_2)]$$
+- $\Delta G$：自由能差
+- $k_B$：玻尔兹曼常数
+- $T$：温度（303 K）
+- $P(r_1, r_2)$：序参量 $r_1$、$r_2$ 的联合概率分布
+- $P_{\max}$：概率最大值（用于归一化，使 $\Delta G = 0$ 对应最低自由能态）
+- 用途：从 MD 轨迹构建构象自由能景观
+- 直觉：将高维轨迹投影到低维序参量空间，识别亚稳态与转变路径</p>
+<p><strong>2) Arrhenius 方程（时间尺度估计）</strong>：
+$$\tau = \tau_0 \exp\left(\frac{\Delta G^#}{k_B T}\right)$$
+- $\tau$：转变特征时间
+- $\tau_0 \approx 10^{-12}$ s：指前因子（Arrhenius 因子）
+- $\Delta G^#$：转变能垒
+- $k_B T \approx 0.602$ kcal/mol（303 K）
+- 用途：将 PMF 能垒转换为构象转变时间尺度
+- 直觉：能垒减半（14.5 → 7.5 kcal/mol）对应时间加速约 5 个数量级</p>
+<p><strong>3) 反应坐标定义</strong>：
+- $d_{GT}$：G 结构域残基 N224 与躯干残基 T453 的 Cα 距离
+- 铰链 1 角：残基 G124、Q359、D587 的 Cα 夹角
+- 铰链 2 角：残基 S291、P303、L323 的 Cα 夹角
+- $\Delta z$：躯干尖端（残基 G580）沿 z 轴的位移</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/体系</strong>：BDLP（Nostoc punctiforme），闭合态 PDB 2J69（3.0 Å X 射线）、开放态 PDB 2W6D（9 Å 冷冻电镜）</li>
+<li><strong>规模</strong>：全原子体系约 10 万原子（含溶剂）；CG 体系含 POPC 膜（约 200–400 脂质分子）</li>
+<li><strong>模拟参数</strong>：全原子 600 ns × 3 重复 × 4 体系；HREMD 30 副本 × 100 ns；USMD 74（apo）/67（holo）窗口 × 100 ns；CG 1–2 μs</li>
+<li><strong>力场</strong>：Amber ff99SB*-ILDNP（全原子）、Martini 2.2（CG）；TIP3P 水模型</li>
+<li><strong>温度</strong>：303 K（全原子、USMD、CG）、310 K（HREMD）</li>
+<li><strong>oracle/真值输入</strong>：实验结构（2J69、2W6D）作为模拟起点；GTP/Mg²⁺ 配体参数来自已有力场数据库</li>
+<li><strong>评测协议</strong>：RMSF 比较、构象聚类、PMF 能垒比较、DCC 矩阵、膜结合稳定性评估</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>常规 MD（closed apo vs holo）</td>
+<td>GTP 结合诱导闭合态局部不稳定</td>
+<td>600 ns × 3 重复，比较 RMSF</td>
+<td>holo 在 flap 1/flap 2 区域 RMSF 显著升高</td>
+<td>GTP 结合触发局部构象扰动</td>
+<td>不能证明这些扰动直接导致开放</td>
+<td>Results 图 2a</td>
+</tr>
+<tr>
+<td>常规 MD（open apo vs holo）</td>
+<td>GTP 稳定开放态</td>
+<td>600 ns × 3 重复</td>
+<td>holo 开放态 RMSF 更低，保持开放</td>
+<td>GTP 结合稳定开放构象</td>
+<td>不能证明 GTP 是充分条件</td>
+<td>Results 图 2b</td>
+</tr>
+<tr>
+<td>HREMD（apo 闭合态）</td>
+<td>闭合态可自发部分开放</td>
+<td>30 副本 × 100 ns</td>
+<td>采样到 semiclosed 态（铰链 1 角 97°）</td>
+<td>闭合态存在部分开放亚态</td>
+<td>未达到完全开放</td>
+<td>Results 图 2c</td>
+</tr>
+<tr>
+<td>USMD PMF（apo vs holo）</td>
+<td>GTP 降低转变能垒</td>
+<td>74/67 窗口 × 100 ns，沿 d_GT</td>
+<td>能垒从 14.5 降至 7.5 kcal/mol</td>
+<td>GTP 将转变加速约 5 个数量级</td>
+<td>未考虑溶剂粘滞效应</td>
+<td>Results 图 3</td>
+</tr>
+<tr>
+<td>盐桥分析</td>
+<td>特定盐桥是变构开关</td>
+<td>比较 apo/holo 盐桥占有率</td>
+<td>K154–E438 等 3 对盐桥断裂</td>
+<td>盐桥破坏是开放的关键步骤</td>
+<td>不能排除其他相互作用</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>PCA + 聚类</td>
+<td>flap 运动是主要构象变化</td>
+<td>G 结构域轨迹 PCA</td>
+<td>主成分对应 flap 1/flap 2 摆动</td>
+<td>flap 运动介导变构信号</td>
+<td>不能确定摆动与盐桥破坏的因果顺序</td>
+<td>Results 图 5</td>
+</tr>
+<tr>
+<td>DCC 分析</td>
+<td>GTP 增强结构域间反相关运动</td>
+<td>4 个体系 DCC 矩阵比较</td>
+<td>holo 态 G 结构域-躯干反相关增强</td>
+<td>变构通讯网络被 GTP 激活</td>
+<td>相关性不等于因果性</td>
+<td>Results 图 6</td>
+</tr>
+<tr>
+<td>CG MD（膜结合）</td>
+<td>膜结合稳定开放态</td>
+<td>开放/闭合 × 溶液/膜 × 单体/二聚体</td>
+<td>膜结合延迟闭合但未阻止；二聚体部分稳定</td>
+<td>膜+二聚体协同但不足以完全锁定</td>
+<td>需更高阶聚合</td>
+<td>Results 图 7</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅研究 BDLP 单体的闭合-开放转变及二聚体/膜结合效应，不涉及完整聚合体的组装动态或 GTP 水解步骤。</li>
+<li><strong>oracle/真值输入</strong>：模拟以实验解析的端态结构为起点，GTP 结合位点基于 2W6D 结构建模；未进行突变验证或与实验动力学数据直接对比。</li>
+<li><strong>端到端状态</strong>：模拟覆盖从闭合单体到开放单体的转变路径，但开放态的最终稳定需依赖更高阶聚合，该过程未在模拟中完整重现。</li>
+<li><strong>算力成本</strong>：全原子模拟累计约 20 μs，CG 模拟约 17 μs，总计算量较大；增强采样仅针对 apo 闭合态，holo 闭合态未做 HREMD。</li>
+<li><strong>历史数据依赖</strong>：力场参数（ff99SB*-ILDNP）和 Martini 2.2 为已有方法，对盐桥描述可能影响定量结论。</li>
+<li><strong>模型依赖</strong>：PMF 计算依赖 d_GT 作为单一反应坐标，可能未完全捕捉多维转变路径。</li>
+<li><strong>最难情形</strong>：完全开放的 wide-open 构象在无膜/无聚合条件下极不稳定，模拟中仅短暂采样到。</li>
+<li><strong>群体/领域边界</strong>：结论基于单一蛋白（BDLP），推广至其他 dynamin 家族成员需谨慎，因序列保守性仅限 G 结构域。</li>
+<li><strong>不确定性</strong>：能垒数值（14.5/7.5 kcal/mol）依赖力场和反应坐标选择，误差估计仅通过 bootstrap 提供；Arrhenius 时间尺度估算高度依赖指前因子假设。</li>
+<li><strong>有边界的复述</strong>：在 ff99SB*-ILDNP 力场和所选反应坐标下，GTP 结合通过破坏 G 结构域-躯干盐桥网络将 BDLP 闭合-开放转变能垒从 14.5 降至 7.5 kcal/mol，但开放态在无膜/无聚合条件下仍不稳定，需二聚化与膜结合协同作用，且可能需更高阶组装才能完全锁定。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全原子模拟时间尺度有限</td>
+<td>600 ns 常规 MD 无法采样完整转变</td>
+<td>使用增强采样（HREMD、USMD）补充</td>
+<td>Results 部分</td>
+</tr>
+<tr>
+<td>开放态稳定性不足</td>
+<td>开放单体在溶液中倾向闭合</td>
+<td>引入膜结合与二聚化模拟</td>
+<td>Results 图 7</td>
+</tr>
+<tr>
+<td>未模拟完整聚合体</td>
+<td>仅模拟单体/二聚体，未覆盖螺旋组装</td>
+<td>暗示需更高阶聚合研究</td>
+<td>Discussion: "higher-order BDLP polymerization is required"</td>
+</tr>
+<tr>
+<td>力场依赖</td>
+<td>盐桥描述可能受力场影响</td>
+<td>未明确提及</td>
+<td>Methods 部分（隐含）</td>
+</tr>
+<tr>
+<td>反应坐标简化</td>
+<td>d_GT 单一坐标可能不充分</td>
+<td>未明确提及</td>
+<td>Methods 部分（隐含）</td>
+</tr>
+<tr>
+<td>缺乏实验验证</td>
+<td>模拟预测未与突变实验或 FRET 数据直接对比</td>
+<td>未明确提及</td>
+<td>全文（隐含）</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>能垒降低 7 kcal/mol 的定量可靠性</td>
+<td>力场（ff99SB*-ILDNP）对盐桥和非键相互作用的描述可能偏差；PMF 收敛性未充分讨论</td>
+<td>核心定量结论依赖此数值</td>
+<td>使用不同力场（如 CHARMM36m）重复 USMD；延长采样时间检查收敛</td>
+<td>Methods 部分</td>
+</tr>
+<tr>
+<td>d_GT 作为唯一反应坐标</td>
+<td>实际转变可能涉及多个坐标（铰链角+侧向位移），单一坐标可能遗漏重要中间态</td>
+<td>影响 PMF 形状与能垒高度</td>
+<td>使用 metadynamics 或多维 US 验证</td>
+<td>Results 图 3</td>
+</tr>
+<tr>
+<td>flap 运动与盐桥破坏的因果顺序未确定</td>
+<td>可能是盐桥破坏导致 flap 运动，而非 flap 运动导致盐桥破坏</td>
+<td>变构机制的核心问题</td>
+<td>定点突变（如 K154A）后重复模拟</td>
+<td>Results 图 4,5</td>
+</tr>
+<tr>
+<td>CG 模拟中膜结合效应的定量性</td>
+<td>Martini 2.2 对蛋白质-膜相互作用的描述精度有限；POPC 膜与细菌内膜成分差异</td>
+<td>影响膜结合稳定化结论的普适性</td>
+<td>使用 Martini 3 或全原子膜模拟验证</td>
+<td>Results 图 7</td>
+</tr>
+<tr>
+<td>未模拟 GTP 水解状态</td>
+<td>仅模拟 GTP 结合态，未考虑 GDP·Pi 态或水解后状态</td>
+<td>完整催化循环中水解可能改变构象偏好</td>
+<td>模拟 GDP·Pi 结合态</td>
+<td>Introduction 部分</td>
+</tr>
+<tr>
+<td>保守性分析未与功能实验关联</td>
+<td>ConSurf 保守性中等区域可能并非功能关键</td>
+<td>变构靶点的可药性判断需功能验证</td>
+<td>结合深度突变扫描数据</td>
+<td>Results 图 S1</td>
+</tr>
+<tr>
+<td>时间尺度估算的可靠性</td>
+<td>Arrhenius 外推假设指前因子 10⁻¹² s，实际可能偏差数个数量级</td>
+<td>影响「转变快于 GTP 水解」的结论</td>
+<td>使用 Markov state model 或实验动力学数据校准</td>
+<td>Methods 方程 2</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>多尺度模拟策略</strong>：全原子 MD（局部动态与盐桥解析）+ 增强采样（跨越能垒）+ CG（大体系/长时程）的三级组合，是研究大型蛋白构象转变的可行范式，可迁移至其他 dynamin 家族蛋白或大型构象变化体系。</p>
+</li>
+<li>
+<p><strong>盐桥网络作为变构开关</strong>：识别关键盐桥（如 K154–E438）的破坏作为构象解锁的初始事件，这一思路可迁移至其他核苷酸调控蛋白（如 Ras、Rab）的变构机制研究。</p>
+</li>
+<li>
+<p><strong>受限球窝关节模型</strong>：铰链运动伴随侧向剪切的概念，提示在描述构象转变时需考虑多维运动模式，而非单一铰链旋转——对设计构象柔性蛋白或预测突变效应有参考价值。</p>
+</li>
+<li>
+<p><strong>多因素协同稳定化</strong>：膜结合与二聚化单独不足以锁定开放态，需协同作用——对理解膜重塑蛋白的组装机制具有普适意义，也提示在设计膜活性蛋白时需考虑多重稳定因素。</p>
+</li>
+<li>
+<p><strong>反应坐标选择的警示</strong>：单一距离坐标（d_GT）可能不足以描述复杂转变，需结合角度与位移等多维序参量——对计算自由能景观的方法选择有直接指导意义。</p>
+</li>
+<li>
+<p><strong>GTP 结合与膜结合的时序关系</strong>：GTP 必须先于膜结合发生（因膜结合封闭核苷酸通道），这一时序约束对设计小分子调节剂或理解蛋白激活顺序有参考价值。</p>
+</li>
+<li>
+<p><strong>保守性-动态性关联分析</strong>：将序列保守性与构象动态性结合（保守的催化核心 vs. 可变的界面区域），可帮助识别功能关键残基与可药性靶点，可迁移至其他蛋白家族的比较分析。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, discussion, conclusion, methods) as provided</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodological rigor, claim-evidence alignment, and presentation quality based solely on the supplied material</li>
+<li><strong>Shared manuscript claim summary</strong> The authors use multiscale molecular dynamics simulations (all-atom, HREMD, USMD, and Martini coarse-grained) to characterize the GTP-induced closed-to-open conformational transition of the bacterial dynamin-like protein (BDLP) from Nostoc punctiforme. They report that GTP binding lowers the free energy barrier for opening by approximately 7–7.5 kcal/mol (corresponding to a ~5 orders of magnitude acceleration), that the open monomer remains thermodynamically unfavored, and that dimerization and membrane binding act synergistically to stabilize a semiclosed intermediate. They further identify a salt-bridge network that mediates allosteric communication and propose a refined mechanochemical cycle for BDLP.</li>
+<li><strong>Visible evidence base</strong> Text descriptions of results from MD, HREMD, USMD, and CG simulations; RMSF analysis; free energy surfaces; PMF profiles; DCC analysis; clustering; PCA; DSSP analysis; ConSurf and gmx_MMPBSA calculations. Figures and tables are referenced but not visible in the provided material.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, tables, and supplementary information are referenced but not provided. This includes Figure 1 (structures, RMSF, angles), Figure 2 (free energy surfaces), Figure 3 (salt bridges, DCC), Figure 4 (PMF profiles), Figure 5 (CG simulation results), Figure 6 (mechanochemical cycle), Table 1 (simulation summary), and all supplementary figures (S1–S8). Without these, quantitative claims cannot be independently verified.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> This manuscript presents a comprehensive computational study of a biologically important conformational transition in a dynamin-like protein. The methodological approach is ambitious and appropriate, combining multiple simulation techniques to address a question that is difficult to tackle experimentally. The central claims—that GTP binding accelerates the closed-to-open transition by lowering a free energy barrier, and that dimerization plus membrane binding stabilize the open state—are plausible and mechanistically interesting. However, the manuscript as provided has several significant weaknesses. First, the key quantitative claims (barrier heights, acceleration factors, free energy differences) cannot be verified without the figures and tables. Second, the claim of a "5 orders of magnitude" acceleration is derived from an Arrhenius extrapolation that is highly sensitive to the pre-exponential factor and the accuracy of the PMF; this warrants more careful justification and sensitivity analysis. Third, the coarse-grained simulations are described only briefly, and the evidence that dimerization and membrane binding "synergistically" stabilize the open state is not presented in sufficient detail. Fourth, the evolutionary conservation analysis is mentioned but its connection to the functional conclusions is underdeveloped. Overall, the study has the potential to be a valuable contribution, but the current evidence base is insufficient to fully establish the claims.</li>
+<li><strong>Who would be interested in the results, and why</strong> Researchers in the dynamin/GTPase field, computational biophysicists studying conformational transitions and allostery, and structural biologists interested in membrane remodeling proteins. The work provides a detailed atomistic model of how nucleotide binding couples to large-scale conformational change, which is a general problem in mechanochemical enzymes.</li>
+<li><strong>Major strengths</strong> The study addresses a significant and timely question using a multi-technique simulation strategy. The identification of specific salt bridges as allosteric switches is mechanistically concrete and testable. The attempt to connect monomeric conformational dynamics to the requirements for membrane binding and dimerization is biologically relevant. The authors are appropriately cautious in noting that the open monomer is not thermodynamically favored, which is an important insight.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The manuscript claims that GTP binding lowers the free energy barrier for the closed-to-open transition by approximately 7–7.5 kcal/mol, corresponding to a ~5 orders of magnitude acceleration.</li>
+<li><strong>Evidence pointer</strong> Figure 4 (PMF profiles), Figure S8 (error estimates), Methods section "Weighted Histogram Analysis Method"</li>
+<li><strong>Concern</strong> The quantitative values for the barrier heights and the derived acceleration factor are central to the paper's message, but the actual PMF profiles, error bars, and the method for extracting the barrier from the PMF are not visible in the provided material. The conversion of a free energy barrier to a timescale using the Arrhenius equation with a fixed pre-exponential factor of 10⁻¹² s is a very rough estimate. The uncertainty in this factor alone could span orders of magnitude. Furthermore, the PMF is computed along a single collective variable (d_GT), and it is not demonstrated that this is a sufficient reaction coordinate to capture the true transition mechanism. The manuscript should show the PMF, discuss convergence, and provide a sensitivity analysis of the timescale estimate to the chosen pre-exponential factor.</li>
+<li><strong>Why it matters</strong> The "5 orders of magnitude" acceleration is a headline claim that is used to argue for the biological significance of GTP binding. If this number is not robust, the central thesis is weakened.</li>
+<li><strong>Resolution test</strong> The authors should provide the PMF figures with error bars, demonstrate convergence of the USMD simulations, and show how the timescale estimate changes with different reasonable values of τ₀. They should also discuss the limitations of using a single collective variable.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The manuscript claims that "BDLP dimerization and membrane binding are necessary to initiate the stabilization of the open conformation" and that these factors act "synergistically."</li>
+<li><strong>Evidence pointer</strong> Figure 5 (CG simulation results), Results section "Membrane Anchoring Delays But Does Not Prevent Partial BDLP Closure"</li>
+<li><strong>Concern</strong> The evidence for this central claim is presented in a single paragraph describing coarse-grained simulations. The details of the CG simulations (system setup, membrane model, protein parameterization, simulation length, analysis) are not provided in the main text, and the results are not shown. The claim of "synergy" requires a quantitative comparison of the stabilizing effects of membrane binding alone, dimerization alone, and both together. Without seeing the data, it is impossible to assess whether the conclusion is supported. The statement that membrane anchoring "delays but does not prevent" closure is also vague; the timescales and extent of closure are not quantified.</li>
+<li><strong>Why it matters</strong> This is a key biological conclusion of the paper, distinguishing it from studies that focus only on the monomeric transition. If the evidence is weak, the paper's contribution is substantially reduced.</li>
+<li><strong>Resolution test</strong> The authors should provide the CG simulation data, including time series of relevant order parameters (e.g., d_GT, RMSD) for all seven systems, and a quantitative analysis of the free energy or stability of the open state under different conditions. The claim of synergy should be backed by a direct comparison of the relevant free energy differences.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Methodological rigor</li>
+<li><strong>Claim pointer</strong> The manuscript states that "GTP binding accelerates the transition by 5 orders of magnitude through an allosteric mechanism" and describes the allosteric network involving salt bridges.</li>
+<li><strong>Evidence pointer</strong> Results sections "GTP Binding Ignites Communication across BDLP's Structure" and "GTP Binding Halves the Energy Needed for the Closed-To-Open Transition"; Figure 3 (salt bridges, DCC)</li>
+<li><strong>Concern</strong> The allosteric mechanism is inferred from salt-bridge occupancy changes and DCC analysis. While these are reasonable approaches, the causal link between the identified salt bridges and the barrier reduction is not established. The manuscript does not show whether mutating these residues (in silico) would abolish the GTP effect, nor does it provide a quantitative measure of allosteric coupling (e.g., mutual information or perturbation response). The DCC analysis is performed on 600 ns trajectories, which may not be sufficient to capture the relevant correlated motions, especially for a large-scale transition.</li>
+<li><strong>Why it matters</strong> The claim of an "allosteric mechanism" is a strong statement. Without a more rigorous demonstration of causality, it remains a hypothesis.</li>
+<li><strong>Resolution test</strong> The authors could perform additional simulations with mutated salt-bridge residues to test their functional importance, or use more advanced allostery analysis methods. At minimum, they should discuss the limitations of their inference.</li>
+<li><strong>Concern ID</strong> R1-M4</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The manuscript claims to be "the first all-atom MD investigation of a full-length dynamin-like protein" and "the first to map the complete closed-open transition pathway of BDLP, and dynamins in general."</li>
+<li><strong>Evidence pointer</strong> Introduction section</li>
+<li><strong>Concern</strong> These novelty claims are strong and should be carefully substantiated. The authors cite previous work that used coarse-grained simulations, but it is not clear whether other all-atom studies of dynamin family members (even if not full-length) have addressed similar transitions. The claim of "first" is always risky and requires a thorough literature search. The provided reference list is not visible, so this cannot be checked.</li>
+<li><strong>Why it matters</strong> If the novelty claim is overstated, it could undermine the credibility of the paper.</li>
+<li><strong>Resolution test</strong> The authors should carefully rephrase these claims to be more specific and defensible, e.g., "to our knowledge, this is the first all-atom study of the full-length BDLP transition" and provide a more detailed comparison with prior work.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, first sentence</li>
+<li><strong>Issue</strong> The phrase "From Closed to Mighty" in the title is catchy but not informative. The abstract would benefit from a more explicit statement of the key quantitative findings.</li>
+<li><strong>Required correction</strong> Consider revising the title to be more descriptive, and ensure the abstract includes the key numbers (e.g., barrier heights, timescales) if they are robust.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods</li>
+<li><strong>Evidence pointer</strong> Methods section "Overview of the Simulations"</li>
+<li><strong>Issue</strong> The methods state that "all fine details of the simulation settings are provided in the Supporting Information." For a computational study, it is essential that the main text includes enough detail for a knowledgeable reader to reproduce the simulations without accessing the SI. Key parameters such as the force field version, water model, salt concentration, and equilibration protocol should be stated.</li>
+<li><strong>Required correction</strong> Move the most critical simulation parameters to the main text or a table.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Results section "GTP Binding Halves the Energy Needed for the Closed-To-Open Transition"</li>
+<li><strong>Evidence pointer</strong> Figure 4</li>
+<li><strong>Issue</strong> The statement that GTP "halves" the energy needed is a specific quantitative claim. It is unclear if this refers to the barrier height or the overall free energy difference. The text should be more precise.</li>
+<li><strong>Required correction</strong> Clarify whether the 7–7.5 kcal/mol reduction refers to the barrier height (kinetic) or the stability of the open state (thermodynamic), and use consistent terminology.</li>
+<li><strong>Concern ID</strong> R1-m4</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Discussion</li>
+<li><strong>Evidence pointer</strong> Discussion section</li>
+<li><strong>Issue</strong> The discussion of the mechanochemical cycle (Figure 6) is brief. The authors mention steps 5 and 6 rely on "well-documented experimental literature," but do not provide specific citations or explain how their simulations inform these steps.</li>
+<li><strong>Required correction</strong> Expand the discussion of the proposed cycle, and clearly distinguish between what is directly supported by their simulations and what is inferred from the literature.</li>
+<li><strong>Concern ID</strong> R1-m5</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Results section "Open BDLP is Highly Dynamic and Can Adopt Semiclosed and Wide-Open Conformations"</li>
+<li><strong>Evidence pointer</strong> Figure 1</li>
+<li><strong>Issue</strong> The term "wide-open conformation" is introduced but not quantitatively defined. It would be helpful to provide a metric (e.g., d_GT or hinge angle value) that distinguishes "open" from "wide-open."</li>
+<li><strong>Required correction</strong> Define the conformational states quantitatively.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (barrier height and acceleration factor not verifiable without figures and with questionable Arrhenius extrapolation), R1-M2 (evidence for synergistic stabilization by dimerization and membrane binding is not presented in sufficient detail), R1-M3 (causal link between salt-bridge changes and barrier reduction not established).</li>
+<li><strong>Assessment against Nature-style criteria</strong></li>
+<li><strong>Originality</strong> The study addresses a well-known problem (dynamin conformational change) but with a novel computational approach and a focus on the full-length protein. The identification of specific salt-bridge switches is a potentially original contribution. However, the novelty claims are somewhat overstated and need to be tempered.</li>
+<li><strong>Scientific importance</strong> The dynamin family is of broad biological importance, and understanding the mechanochemical coupling is a significant question. The finding that the open monomer is unstable and requires dimerization/membrane binding for stabilization is an important conceptual point.</li>
+<li><strong>Interdisciplinary readership</strong> The topic is of interest to structural biologists, biophysicists, and cell biologists. The writing is generally accessible, but the heavy reliance on simulation jargon and the lack of clear figures may limit accessibility.</li>
+<li><strong>Technical soundness</strong> The simulation methodology is state-of-the-art and appropriate. However, the key quantitative claims are not fully supported by the presented evidence, and the Arrhenius extrapolation is a potential weakness. The convergence of the USPMF and the sufficiency of the reaction coordinate are not demonstrated.</li>
+<li><strong>Readability for nonspecialists</strong> The abstract and introduction are readable, but the results section is dense and assumes significant background knowledge. The lack of visible figures makes it difficult to follow the narrative.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The study has the potential to be a valuable contribution, but the current evidence base is insufficient to fully establish the central claims. The authors must provide the missing figures and data, strengthen the analysis of the coarse-grained simulations, and temper the novelty claims.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that GTP binding accelerates the transition by "5 orders of magnitude" is not verifiable from the provided material and is highly sensitive to the Arrhenius pre-exponential factor.</li>
+<li>The claim that dimerization and membrane binding act "synergistically" to stabilize the open state is not supported by the presented evidence.</li>
+<li>The claim that the identified salt bridges are "allosteric switches" is a hypothesis that is not causally tested.</li>
+<li>The claim of being "the first" all-atom study of a full-length dynamin-like protein and "the first" to map the complete transition pathway is not verifiable without a full literature comparison.</li>
+<li>The statement that "GTP binding must chronologically precede membrane insertion" is a strong conclusion based on structural analysis of a single state; it is not clear that this is a general requirement.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

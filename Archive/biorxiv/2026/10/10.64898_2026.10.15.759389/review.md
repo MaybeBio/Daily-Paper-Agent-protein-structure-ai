@@ -1,0 +1,94 @@
+## Review setup
+
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as stated in the abstract, without access to methods, figures, tables, or supplementary material
+- **Shared manuscript claim summary** The authors introduce DEEP, a framework for extracting statistical potentials from predicted residue-pair distance distributions of protein structure predictors. DEEP-Boltz achieves a mean per-assay Spearman correlation of 0.720 across 64 ProteinGym stability assays, outperforming 97 published zero-shot methods and matching best-performing supervised predictors. DEEP-Boltz also distinguishes native-like from non-native conformations across more than 180,000 Rosetta decoys. Applying DEEP to AlphaFold2 yields comparable conformational discrimination but weaker mutation-effect prediction, suggesting these are distinct properties of learned representations.
+- **Visible evidence base** Abstract text only. No methods, figures, tables, or supplementary information were provided for review.
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, supplementary information, benchmark details, statistical analysis details, and code repository contents.
+
+## Reviewer
+
+- **Overall assessment** The abstract presents a potentially interesting framework for extracting energetic information from protein structure predictors without training on experimental stability data. The reported performance metrics are striking, particularly the claim of outperforming all 97 published zero-shot methods while matching supervised predictors. However, the abstract alone provides insufficient detail to evaluate the methodological soundness, the statistical rigor of the comparisons, or the validity of the interpretational claims. The distinction drawn between conformational discrimination and mutation-effect prediction is conceptually interesting but requires substantially more evidence than the abstract can provide.
+- **Who would be interested in the results, and why** Researchers in protein biophysics, computational protein design, and protein engineering would be interested in a method that extracts energetic information from structure predictors without additional training. The zero-shot stability prediction capability has direct applications in variant effect prediction, protein design, and understanding mutational landscapes. The comparative analysis between Boltz-2 and AlphaFold2 also addresses questions about what different structure predictors learn internally, which is relevant to the machine learning for biology community.
+- **Major strengths** The framework concept is elegant, using the model's own terminal distance state as an internal reference to avoid training on experimental data. The reported benchmark coverage is broad, spanning 64 stability assays and over 180,000 decoys. The comparative analysis between two major predictors (Boltz-2 and AlphaFold2) provides a useful scientific contribution by demonstrating that conformational discrimination and energetic sensitivity are separable properties.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "DEEP-Boltz achieves a mean per-assay Spearman correlation of 0.720 across 64 ProteinGym stability assays, numerically outperforming all 97 published zero-shot methods in the matched comparison on level with the best performing predictors trained directly on experimental stability measurements"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract reports a single mean Spearman correlation aggregated across 64 assays, but provides no information on the distribution of correlations, the statistical significance of the comparison against the 97 zero-shot methods, or the criteria used for the "matched comparison." Without knowing whether the comparison was performed on identical assay subsets, identical mutation sets, and with identical preprocessing, the claim of outperforming all 97 methods cannot be evaluated. The phrase "on level with the best performing predictors trained directly on experimental stability measurements" is ambiguous regarding whether this is a statistical equivalence claim or a numerical proximity claim.
+  - **Why it matters** The central claim of the paper rests on this benchmark comparison. If the comparison is not properly matched, or if the variance across assays is high, the headline number of 0.720 may not represent a robust improvement. The distinction between "numerically outperforming" and "statistically significantly outperforming" is critical for assessing whether this method genuinely advances the state of the art.
+  - **Resolution test** Provide per-assay correlation values, confidence intervals, and a clear description of the matched comparison protocol. Specify which assays were included, whether the same mutation subsets were used for all methods, and whether any assays were excluded and why. Report statistical tests comparing DEEP-Boltz against the best-performing zero-shot and supervised methods.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "DEEP (Distogram Encoded Energetic Potential), a general framework that extracts effective statistical potentials directly from predicted residue-pair distance distributions, using the models own terminal distance state as an internal reference without training on experimental stability data"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The methodological description is too brief to assess the validity of the approach. The concept of using the model's "terminal distance state as an internal reference" is not defined. It is unclear how the statistical potential is derived from distance distributions, how the reference state is constructed, what functional form the potential takes, and how it is applied to compute stability changes for single mutations. Without this information, the framework cannot be evaluated for internal consistency or compared to existing statistical potential approaches.
+  - **Why it matters** The novelty of the paper depends on the methodological contribution. If the potential extraction procedure has hidden dependencies on training data or if the reference state construction introduces biases, the claim of extracting "accessible energetic information" without experimental training data would be weakened. The method must be described in sufficient detail for replication.
+  - **Resolution test** Provide a complete mathematical description of the potential extraction procedure, including the definition of the reference state, the transformation from distance distributions to energies, and the aggregation across residue pairs. Include a schematic or pseudocode. Clarify what "terminal distance state" means operationally.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "DEEP-Boltz accurately distinguishes native-like from non-native conformations across more than 180,000 Rosetta decoys"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract reports accurate discrimination of native-like from non-native conformations across 180,000 decoys but provides no quantitative metric. "Accurately" is undefined. It is unclear whether this is a classification task, a ranking task, or a threshold-based discrimination. The choice of decoy set, the definition of "native-like," and the baseline comparators are not specified. Without these details, the claim cannot be evaluated.
+  - **Why it matters** This result is presented as evidence that DEEP captures conformational preferences beyond mutation effects. If the discrimination accuracy is modest or if the decoy set is biased, the conclusion that structure predictors encode accessible energetic information about conformational preferences would be weakened.
+  - **Resolution test** Report the discrimination metric (e.g., AUC, enrichment factor, or correlation with RMSD to native), the decoy generation protocol, the definition of native-like, and comparisons to existing scoring functions or energy functions on the same decoy sets.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Interpretational validity
+  - **Claim pointer** "Applying DEEP to AlphaFold2 reveals nearly identical conformational discrimination but substantially weaker mutation-effect prediction, demonstrating that recognizing favorable conformations and capturing their energetic sensitivity to sequence changes are distinct properties of learned structural representations"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract interprets the differential performance between Boltz-2 and AlphaFold2 as evidence for distinct properties of learned representations. However, alternative explanations are plausible. The difference could arise from architectural differences, training data differences, or differences in the distance distribution granularity between the two models. The claim that this demonstrates distinct properties of learned representations is a strong interpretational leap that requires controlled comparisons.
+  - **Why it matters** This is a conceptual claim about what protein structure predictors learn internally. If the difference is attributable to technical factors rather than fundamental representational differences, the scientific contribution of this finding would be substantially reduced.
+  - **Resolution test** Provide controlled comparisons that rule out technical explanations, such as matching architecture components, training data, or output granularity. Discuss alternative explanations and provide evidence that the observed difference reflects fundamental representational properties.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, first sentence
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The phrase "the extent to which their internal representations capture the energetic principles governing protein stability and conformational preferences remains unclear" is vague. It is not specified what "energetic principles" means in this context or how "capture" would be operationalized.
+  - **Required correction** Define "energetic principles" and "capture" more precisely, or rephrase to state the specific question being addressed.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, methods description
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The term "effective statistical potentials" is used without definition. It is unclear how these differ from standard statistical potentials used in protein structure modeling.
+  - **Required correction** Briefly define what makes these potentials "effective" and how they differ from existing statistical potentials.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Abstract, code availability
+  - **Evidence pointer** Footnotes, GitHub link provided
+  - **Issue** The GitHub repository is mentioned but its contents, documentation, and license are not described.
+  - **Required correction** State the repository contents, provide documentation details, and specify the license in the abstract or methods.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract, benchmark description
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract mentions "64 ProteinGym stability assays" but does not specify which assays or the diversity of proteins covered.
+  - **Required correction** Briefly describe the assay composition or refer to a table listing the assays.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (benchmark comparison validity), R1-M2 (methodological description completeness), R1-M3 (decoy discrimination metric missing), R1-M4 (interpretational claim requires controlled comparisons)
+- **Assessment against Nature-style criteria** 
+  - Originality: The concept of extracting energetic information from structure predictors without experimental training data is novel and potentially significant. However, the abstract does not provide enough detail to assess whether the methodological approach is genuinely new or an incremental adaptation of existing statistical potential methods.
+  - Scientific importance: If the claims hold, the method would be valuable for zero-shot variant effect prediction and for understanding what structure predictors learn. The comparative analysis between Boltz-2 and AlphaFold2 addresses a question of growing interest. However, the importance depends on the robustness of the benchmark results.
+  - Interdisciplinary readership: The topic bridges machine learning, structural biology, and biophysics. The abstract is written in a way that is accessible to a broad audience, though some terms require domain knowledge.
+  - Technical soundness: Cannot be assessed from the abstract alone. The missing methodological details and benchmark validation are critical gaps.
+  - Readability for nonspecialists: The abstract is generally clear, but terms such as "effective statistical potentials," "terminal distance state," and "distogram encoded" may be opaque to readers outside the immediate field.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents promising results, but the absence of methodological detail, benchmark validation, and statistical rigor prevents assessment of whether the claims are supported. A full manuscript review is required to evaluate the technical soundness and validity of the conclusions.
+
+## Risk / unsupported claims
+- The claim of outperforming all 97 published zero-shot methods cannot be evaluated without details of the matched comparison protocol and statistical significance testing.
+- The claim that DEEP-Boltz matches the best supervised predictors is ambiguous and unsupported without statistical equivalence testing.
+- The claim of "accurately" distinguishing native-like from non-native conformations is unsupported without a defined metric and baseline comparison.
+- The interpretational claim that conformational discrimination and mutation-effect prediction are distinct properties of learned representations is unsupported without controlled comparisons ruling out technical explanations.
+- The claim that structure predictors "encode accessible energetic information" is a strong statement that requires more evidence than the abstract provides.

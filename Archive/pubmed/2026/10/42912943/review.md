@@ -1,0 +1,69 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** The claims and methods described in the abstract, without access to the full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors present a computational study of three SARS-CoV-2 Nsp1 mutants (D33K/E36K/E37K/E41K, L27D/V28D, R124E/K125E) binding to the host NXF1-RRM domain. They introduce a Markov state model (MSM) based framework using radius of gyration and RMSD fluctuations to calculate binding free energy landscapes. They report that the D33K/E36K/E37K/E41K mutant most strongly destabilizes the complex, while the other two mutants behave closer to wild type. They compare MSM results with MM-PBSA calculations and prior experimental data, concluding that MSM yields more realistic binding free energies than MM-PBSA.
+- **Visible evidence base** Abstract text only. No figures, tables, methods details, or numerical results are provided.
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, simulation protocols, force field parameters, convergence criteria, MSM construction details, MM-PBSA settings, error estimates, and the experimental reference data used for comparison
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially useful computational framework for assessing mutation effects on protein-protein binding, and the biological question regarding Nsp1-NXF1-RRM interactions is relevant to SARS-CoV-2 host modulation. However, the abstract alone provides insufficient detail to evaluate the validity of the MSM-based free energy approach, the statistical robustness of the results, or the strength of the claimed agreement with experiment. The central methodological novelty, namely the use of radius of gyration and RMSD fluctuations as MSM collective variables for binding free energy estimation, is not adequately justified or benchmarked within the visible material. The claim that MSM yields "more realistic" values than MM-PBSA requires quantitative support that is not presented.
+- **Who would be interested in the results, and why** Computational biophysicists and structural biologists studying protein-protein interactions, particularly those developing or applying enhanced sampling and Markov state model methodologies. Researchers working on SARS-CoV-2 host-pathogen interactions and viral immune evasion mechanisms would also find the biological context relevant. The methodological comparison between MSM and MM-PBSA may interest practitioners seeking more physically grounded free energy estimates for mutational scanning.
+- **Major strengths** The study addresses a biologically important interaction with clear translational relevance. The use of multiple complementary approaches (structural analysis, energetic analysis, MSM, MM-PBSA) is methodologically sound in principle. The comparison with prior experimental work provides a benchmark for the computational predictions. The focus on mutation-induced changes rather than absolute binding affinities is a sensible framing that may reduce systematic error concerns.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological validity
+  - **Claim pointer** The authors claim that their MSM-based framework, using fluctuations of radius of gyration and RMSD from a reference state, can calculate the free energy landscape of protein-protein binding and yield "more realistic" binding free energy values than MM-PBSA.
+  - **Evidence pointer** Abstract, methods description (location not provided)
+  - **Concern** The abstract does not explain how a one-dimensional or low-dimensional projection onto radius of gyration and RMSD captures the relevant binding free energy surface. Protein-protein binding involves complex conformational rearrangements, desolvation, and entropic contributions that are unlikely to be fully described by these two collective variables. No validation against known binding free energies, no comparison with more rigorous methods (e.g., umbrella sampling, metadynamics, or free energy perturbation), and no convergence assessment are presented.
+  - **Why it matters** If the MSM collective variables do not adequately resolve the binding/unbinding transition states and metastable states, the resulting free energy estimates could be systematically biased. The claim of superiority over MM-PBSA rests entirely on this methodological foundation, which is not established from the abstract.
+  - **Resolution test** Provide a detailed description of the MSM construction, including state space discretization, lag time selection, implied timescale plots, Chapman-Kolmogorov tests, and validation of the collective variables against known binding pathways. Show convergence of free energy estimates with simulation length and replicate runs. Benchmark the method on a system with experimentally known binding free energy before applying it to the Nsp1 mutants.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Quantitative support for claims
+  - **Claim pointer** The authors claim that the D33K/E36K/E37K/E41K mutant exerts the "strongest destabilizing effect" and that the other two mutants retain properties "closer to those of wild-type," with results "in good agreement with the previous experimental work."
+  - **Evidence pointer** Abstract, results section (location not provided)
+  - **Concern** No numerical values are provided for structural deviations, compactness, hydrogen bond counts, or binding free energies for any of the four systems (WT and three mutants). The abstract states agreement with experiment but does not specify which experimental quantities were compared, what the quantitative discrepancies were, or how statistical significance was assessed. Without error bars or confidence intervals, the ranking of mutants cannot be evaluated.
+  - **Why it matters** The central biological conclusion, namely the differential destabilizing effects of the three mutants, depends entirely on quantitative comparisons. If the differences between mutants are within statistical noise, the conclusions would be unsupported. The claimed agreement with experiment is also unverifiable without specifying the experimental data and the comparison metric.
+  - **Resolution test** Report mean values with standard errors or confidence intervals for all measured quantities across replicate simulations. Provide a statistical test (e.g., bootstrap or permutation test) demonstrating that the differences between mutants are significant. Specify the experimental data used for comparison and quantify the agreement (e.g., correlation coefficient, mean absolute error).
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Comparison methodology
+  - **Claim pointer** The authors claim that "the binding free energy values obtained from the MSM method are more realistic compared to the MM-PBSA method, which tends to overestimate binding free energy values or produce unphysically negative results."
+  - **Evidence pointer** Abstract, discussion (location not provided)
+  - **Concern** The abstract does not define what "realistic" means in this context. Is the comparison against experimental binding free energies? Against thermodynamic integration or other reference methods? The statement that MM-PBSA "tends to overestimate" is a known limitation of the method, but the claim that MSM is more realistic requires a quantitative benchmark. Without specifying the reference values and the magnitude of errors for both methods, this claim is not assessable.
+  - **Why it matters** This is a strong methodological claim that goes beyond the specific system studied. If the authors intend to recommend MSM as a general alternative to MM-PBSA, they need to demonstrate its accuracy across multiple systems or at least provide a rigorous benchmark for the current system.
+  - **Resolution test** Provide a table comparing MSM-derived, MM-PBSA-derived, and experimental binding free energies for all four systems, with uncertainties. State the reference method used to define "realistic" and quantify the improvement of MSM over MM-PBSA. If possible, include a second test system with known binding affinity to demonstrate generalizability.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract, methods description
+  - **Evidence pointer** Abstract (location not provided)
+  - **Issue** The phrase "horizontal line" appears in the mutant list, which is likely a formatting artifact. The abstract does not specify the simulation length, number of replicas, force field, or water model used.
+  - **Required correction** Remove the formatting artifact and add key simulation parameters to the abstract or indicate that they are in the main text.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Abstract, methods
+  - **Evidence pointer** Abstract (location not provided)
+  - **Issue** The MSM approach is described only in general terms. No information is given on how the free energy is extracted from the MSM (e.g., via stationary distribution, transition path theory, or perturbation analysis).
+  - **Required correction** Briefly state the free energy estimation procedure from the MSM, or refer to a prior publication with full methodological details.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Abstract, results
+  - **Evidence pointer** Abstract (location not provided)
+  - **Issue** The abstract states that the D33K/E36K/E37K/E41K mutant results in "reduced compactness" and "significant loss of intermolecular hydrogen bonds," but does not explain how these structural changes relate mechanistically to the binding free energy change.
+  - **Required correction** Add one sentence connecting the structural observables to the thermodynamic outcome, or clarify that the structural changes are descriptive rather than causal.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The MSM methodology must be validated and described in sufficient detail to establish that the free energy estimates are reliable. Quantitative results with statistical uncertainties must be provided to support the mutant ranking and the agreement with experiment. R1-M3, while not blocking, requires substantial additional evidence to support the general claim of MSM superiority over MM-PBSA.
+
+## Risk / unsupported claims
+- The claim that MSM yields "more realistic" binding free energies than MM-PBSA is unsupported without a quantitative benchmark against experimental or reference computational values.
+- The claim of "good agreement with the previous experimental work" is unverifiable from the abstract, as the specific experimental data and comparison metrics are not provided.
+- The ranking of the three mutants by destabilizing effect is not assessable without numerical values and statistical significance testing.
+- The general utility of the MSM framework for characterizing mutation-induced changes is not established from the abstract alone, as no validation on independent systems is presented.
+- The mechanistic link between structural observables (radius of gyration, RMSD, hydrogen bonds) and binding free energy changes is asserted but not demonstrated.

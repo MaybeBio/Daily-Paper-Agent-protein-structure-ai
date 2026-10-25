@@ -1,0 +1,72 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report engineering a tannase from *Paraburkholderia pallida* (Tanpp) via active-site mutagenesis and computational hotspot prediction. The double mutant F384T/N307A is claimed to show a 2.7-fold increase in catalytic efficiency and an 11-fold longer half-life at 50 degrees C compared to wild-type. Structural modeling and molecular dynamics simulations are used to propose mechanistic explanations. Green tea clarification assays reportedly show improved turbidity reduction and catechin conversion. The authors conclude that coordinated active-site remodeling improves both catalytic performance and thermal stability, supporting the mutant's application potential.
+- **Visible evidence base** Abstract text only; no experimental details, numerical data tables, structural figures, or statistical analyses are visible
+- **Missing materials affecting confidence** Full methods, enzyme kinetic data, thermal inactivation curves, structural models, MD simulation parameters and trajectories, green tea assay protocols, statistical analyses, and all figures and tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful enzyme engineering study with a clear application focus. The reported improvements in catalytic efficiency and thermal stability are quantitatively stated, and the proposed structural rationale is plausible. However, the abstract alone does not provide sufficient detail to verify the robustness of the kinetic measurements, the statistical significance of the improvements, the quality of the structural models, or the reproducibility of the tea clarification results. The mechanistic interpretation, while reasonable, is presented without supporting data. The application claims are promising but require experimental validation beyond what is visible here.
+- **Who would be interested in the results, and why** Researchers in enzyme engineering, protein stability engineering, and food biotechnology would find these results relevant. The work addresses a practical bottleneck in tea beverage processing, so industrial researchers working on beverage clarification and tannase applications would also be interested. The combination of computational prediction and experimental validation may appeal to those studying structure-function relationships in hydrolases.
+- **Major strengths** The study addresses a real industrial problem with clear application relevance. The reported improvements are quantified with fold-changes, which is useful for comparative assessment. The combination of experimental mutagenesis with computational modeling and MD simulations provides a multi-pronged approach. The green tea clarification assays connect the engineering work to a practical end-use, strengthening the translational value.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The double mutant F384T/N307A showed a 2.7-fold increase in catalytic efficiency and an 11-fold longer half-life at 50 degrees C than wild-type Tanpp.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract reports fold-improvements in catalytic efficiency and thermal stability but provides no information on the number of replicates, error margins, statistical tests, or the specific substrates and assay conditions used. Without these details, it is impossible to assess whether the reported improvements are robust and reproducible or within experimental noise.
+  - **Why it matters** Enzyme kinetic parameters and half-life measurements are highly sensitive to assay conditions. If the improvements are not statistically validated, the central claim of the paper is not established.
+  - **Resolution test** Provide full kinetic data with replicates and statistical analysis, including substrate concentrations, buffer conditions, temperature control, and the method used to calculate half-life. Show that the improvements are significant relative to measurement uncertainty.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** Structural modeling and molecular dynamics simulations suggested that N307A widened the substrate-entry region, whereas F384T compacted the catalytic pocket.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The mechanistic interpretation is presented as a conclusion, but no structural models, simulation parameters, convergence criteria, or validation of the models are visible. The abstract does not indicate whether the simulations were replicated, whether force fields were appropriate, or whether the observed structural changes were statistically significant across the simulation trajectory.
+  - **Why it matters** The proposed mechanism is a key part of the paper's intellectual contribution. If the structural interpretation is not rigorously supported, the paper reduces to an empirical mutagenesis study without a validated explanatory framework.
+  - **Resolution test** Provide structural figures with clear annotations, simulation details including force field, simulation length, temperature coupling, and convergence metrics. Show that the described structural changes are consistent across multiple independent simulations or statistically significant within a single trajectory.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** In green tea clarification assays, F384T/N307A produced the lowest turbidity and promoted conversion of galloylated catechins into non-galloylated products and gallic acid.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The tea clarification results are described qualitatively. No turbidity values, catechin concentrations, conversion percentages, or time-course data are provided. The claim that the mutant retained superior performance across tested enzyme dosages and treatment times is not supported by any visible quantitative data.
+  - **Why it matters** The application claim is central to the paper's stated purpose. Without quantitative evidence, the practical advantage of the mutant over wild-type is not demonstrated.
+  - **Resolution test** Provide turbidity measurements with replicates and statistical comparison, catechin conversion data with concentrations and time points, and a clear demonstration that the mutant outperforms wild-type across the tested range of dosages and times.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract uses the term "hotspot prediction" without explaining what this means in the context of enzyme engineering. Nonspecialist readers may not understand the computational approach.
+  - **Required correction** Briefly define hotspot prediction or rephrase to describe the computational method in more accessible terms.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not state how the engineered mutant compares to other engineered tannases or to commercially available alternatives. This limits the reader's ability to judge the significance of the improvement.
+  - **Required correction** Add a brief comparison to previously reported tannase engineering efforts or commercial benchmarks, if available.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states the double mutant remained more stable at 323.15 K, which is 50 degrees C. This appears redundant with the earlier half-life claim at 50 degrees C, but the phrasing suggests a separate measurement. The relationship between these two statements is unclear.
+  - **Required correction** Clarify whether the 323.15 K stability measurement is the same experiment as the half-life determination or a distinct assay, and state the specific stability metric used.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The central claims of improved catalytic efficiency, thermal stability, mechanistic basis, and application performance are all presented without sufficient quantitative or statistical support in the visible material.
+- **Assessment against Nature-style criteria** Originality: The combination of active-site mutagenesis with computational hotspot prediction for a tannase is not clearly novel, but the specific mutations and mechanistic interpretation may offer some originality. Scientific importance: The work addresses a practical problem in tea processing, which is of moderate importance to the applied enzymology community, but the abstract does not demonstrate a major conceptual advance. Interdisciplinary readership: The work bridges protein engineering and food science, which may attract readers from both fields, but the narrow application focus limits broader appeal. Technical soundness: Not assessable from the abstract alone; the lack of quantitative detail and statistical validation is a significant concern. Readability for nonspecialists: The abstract is generally clear but uses some technical terms without explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible and potentially useful study, but the absence of quantitative data, statistical validation, and methodological detail prevents verification of the central claims. A full manuscript with complete experimental data would be required to assess whether the case is established.
+
+## Risk / unsupported claims
+- The 2.7-fold improvement in catalytic efficiency is unsupported without kinetic data and statistical analysis.
+- The 11-fold longer half-life at 50 degrees C is unsupported without thermal inactivation curves and replicate measurements.
+- The mechanistic interpretation based on structural modeling and MD simulations is unsupported without model validation and simulation details.
+- The claim that the mutant produced the lowest turbidity in green tea clarification is unsupported without quantitative turbidity data.
+- The claim that the mutant promoted conversion of galloylated catechins is unsupported without concentration data.
+- The claim that the mutant retained superior performance across tested dosages and times is unsupported without time-course and dosage-response data.

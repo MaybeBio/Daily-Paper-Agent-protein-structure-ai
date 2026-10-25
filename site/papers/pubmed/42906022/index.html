@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Simulation-Free Topological Basis for Building Compact Koopman Models of Protein Folding. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>A Simulation-Free Topological Basis for Building Compact Koopman Models of Protein Folding.</h1>
+      <div class="meta">Fakhoury, Ziad; Sosso, Gabriele C; Habershon, Scott</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-10-22
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42906022/">原文</a>
+      </div>
+      <p class="one-liner">该文提出一种免模拟的图驱动采样（GDS）方法生成蛋白质折叠接触图景观，结合VAMP构建马尔可夫模型以估计折叠时间尺度，属于蛋白质构象采样与动力学建模的计算研究，方法创新且可迁移。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Unravelling protein-folding mechanisms and kinetics is a key challenge to biochemical science. The variational approach for Markov processes (VAMP) is a powerful tool to build Markov Models that capture key kinetic and structural information despite the conformational complexity and long time scales associated with protein folding. However, VAMP-based Markov models use data from exhaustive molecular dynamics (MD) simulations to construct an underlying basis set describing the &#34;coarse-grained&#34; kinetics; the same MD data can be used to predict transition probabilities between partitioned configuration space, enabling the extraction of folding time scales and mechanism. Here, we propose an alternative strategy for Markov model construction that does not rely on extensive, computationally demanding MD data for configuration space partitioning. Specifically, we show that graph-driven sampling (GDS) can generate a complete &#34;landscape&#34; of intermediate contact-maps linking unfolded and folded protein conformations; importantly, extensive MD simulations are not required in GDS. When combined with a physically intuitive shortest-contact-hop metric to discriminate different intermediate states, GDS mapping of protein-folding configuration space generates a reliable &#34;structurally aware&#34; partitioning for VAMP model construction. To demonstrate this strategy, we show that a GDS-constructed Markov model variationally improves folding time scale estimates for all-atom models of the WW domain protein horizontal line and has the additional advantage of easily resolving kinetic traps in the folding landscape that have proven challenging to confirm otherwise. Together, the combination of GDS and VAMP opens a new route toward rapid characterization of protein-folding intermediates and kinetics traps to help address frontier challenges such as protein misfolding, aggregation, and protein design.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">解析蛋白质折叠机制和动力学是生物化学科学的一个关键挑战。马尔可夫过程的变分方法（VAMP）是构建马尔可夫模型的强大工具，能够捕捉关键的动力学和结构信息，尽管蛋白质折叠涉及构象复杂性和长时间尺度。然而，基于VAMP的马尔可夫模型利用详尽的分子动力学（MD）模拟数据来构建描述“粗粒度”动力学的基础基组；同一MD数据可用于预测划分构象空间之间的转移概率，从而提取折叠时间尺度和机制。在此，我们提出了一种替代的马尔可夫模型构建策略，该策略不依赖于广泛且计算密集的MD数据进行构象空间划分。具体而言，我们展示了图驱动采样（GDS）能够生成连接未折叠和折叠蛋白质构象的中间接触图谱的完整“景观”；重要的是，GDS中不需要广泛的MD模拟。当与物理直觉的最短接触跳跃度量相结合以区分不同中间状态时，GDS对蛋白质折叠构象空间的映射为VAMP模型构建生成了可靠的“结构感知”划分。为演示此策略，我们展示了GDS构建的马尔可夫模型在变分上改善了WW结构域蛋白水平线的全原子模型的折叠时间尺度估计，并具有轻松解析折叠景观中动力学陷阱的额外优势，而这些陷阱在其他方法中难以确认。总之，GDS与VAMP的结合开辟了一条快速表征蛋白质折叠中间体和动力学陷阱的新途径，有助于应对蛋白质错误折叠、聚集和蛋白质设计等前沿挑战。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：A Simulation-Free Topological Basis for Building Compact Koopman Models of Protein Folding</li>
+<li><strong>作者</strong>：Fakhoury, Ziad; Sosso, Gabriele C; Habershon, Scott</li>
+<li><strong>单位</strong>：University of Warwick（基于致谢信息推断，原文未明确列出单位）</li>
+<li><strong>期刊/平台</strong>：Journal of Chemical Information and Modeling</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-22）</li>
+<li><strong>论文类型</strong>：方法学研究（含验证性应用）</li>
+<li><strong>领域</strong>：蛋白质折叠动力学；马尔可夫模型；Koopman 算子；图驱动采样</li>
+<li><strong>关键词</strong>：蛋白质折叠、Koopman 模型、VAMP、图驱动采样（GDS）、接触图、WW domain、动力学陷阱</li>
+<li><strong>DOI/arXiv</strong>：10.1021/acs.jcim.6c01905</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：使用 D. E. Shaw Research 提供的 ANTON 专用计算机生成的 MD 轨迹数据（WW domain GTT variant 和 NTL9）</li>
+<li><strong>阅读日期</strong>：2026-10-22</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × 物理模拟（MD）+ 机器学习（Koopman/VAMP）」交叉方向。其核心贡献在于提出一种<strong>无需 MD 模拟</strong>的构象空间划分方法（GDS），用于构建紧凑且物理可解释的 Koopman/Markov 模型，直接回应了该方向中「MD 数据生成昂贵」与「状态划分依赖先验 MD 采样」两大瓶颈。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出用图驱动采样（GDS）在接触图空间中生成从去折叠到折叠态的路径，以这些路径上的中间接触图为基函数中心，结合最短接触跳（SCH）度量构建 Koopman 模型，从而在不依赖先验 MD 模拟的情况下完成构象空间划分，并在 WW domain 和 NTL9 上验证了折叠时间尺度的准确性与动力学陷阱的解析能力。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在不进行大量 MD 模拟的前提下，为蛋白质折叠构建一个紧凑、物理可解释且能准确捕捉慢动力学过程的 Markov/Koopman 模型基函数集？</li>
+<li><strong>为什么重要</strong>：蛋白质折叠的 MD 模拟（尤其是毫秒级轨迹）计算成本极高；而现有 VAMP/Markov 建模方法的状态划分（如聚类、VAMPNet）均依赖先验 MD 数据，形成「先有数据才能建模，建模又需要更多数据」的循环瓶颈。若能以廉价方式生成覆盖折叠路径的构象状态，将大幅降低动力学建模门槛，并有助于解析折叠中间态与动力学陷阱。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>传统 MSM 依赖 MD 轨迹聚类，需要充分采样才能获得可靠状态划分；</li>
+<li>VAMPNet 虽能学习软状态，但训练仍需初始 MD 数据，且基函数缺乏物理可解释性；</li>
+<li>基于 Q（天然接触分数）等一维反应坐标存在非马尔可夫伪影，无法区分拓扑不同的中间态。</li>
+<li><strong>精确研究问题</strong>：<em>Can a simulation-free, contact-map-based path sampling scheme (GDS) generate a basis set that yields variational improvement in Koopman model estimates of protein folding time scales compared to MD-derived bases?</em></li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文引言与参考文献构建，标注为「经外部核验」的部分来自文中引用的经典文献；其余为本文框架下的叙述。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 原子级 MD 长轨迹</td>
+<td>ANTON 专用机（Lindorff-Larsen et al.）</td>
+<td>提供近乎完整的折叠轨迹</td>
+<td>计算成本极高，仅限少数小蛋白</td>
+<td>本文使用其数据作为验证基准</td>
+</tr>
+<tr>
+<td>2. 传统 MSM</td>
+<td>基于 MD 轨迹的几何聚类 + 转移矩阵估计</td>
+<td>可提取慢时间尺度与 metastable states</td>
+<td>状态划分依赖 MD 采样质量；聚类参数敏感</td>
+<td>本文提出替代状态划分来源</td>
+</tr>
+<tr>
+<td>3. 变分方法</td>
+<td>VAC / VAMP（Noé &amp; Nüske 等）</td>
+<td>提供优化状态划分的变分原理</td>
+<td>仍需 MD 数据估计协方差矩阵</td>
+<td>本文沿用 VAMP 框架，但基函数由 GDS 生成</td>
+</tr>
+<tr>
+<td>4. 深度学习状态划分</td>
+<td>VAMPNet（Mardt et al.）</td>
+<td>自动学习软状态，提升分辨率</td>
+<td>训练需 MD 数据；基函数缺乏物理可解释性</td>
+<td>本文强调 GDS 基函数的物理可解释性</td>
+</tr>
+<tr>
+<td>5. 无 MD 的路径采样</td>
+<td>GDS（本文作者前期工作）</td>
+<td>快速生成折叠路径，无需 MD</td>
+<td>路径物理真实性依赖接触图重建</td>
+<td>本文首次将 GDS 与 VAMP 结合用于动力学建模</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在「状态划分（问题 A）」环节用 GDS 替代 MD 依赖型方法，保留 VAMP 作为动力学估计框架（问题 B），实现「基函数构建零 MD 成本」。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MD 数据生成成本高</td>
+<td>需要微秒至毫秒级轨迹才能覆盖折叠事件</td>
+<td>折叠是稀有事件，时间尺度跨越极大</td>
+<td>Introduction: "severe computational bottleneck"；"extensive MD simulations"</td>
+</tr>
+<tr>
+<td>状态划分依赖先验 MD 数据</td>
+<td>聚类或 VAMPNet 训练均需已有轨迹</td>
+<td>基函数/状态定义与数据生成耦合</td>
+<td>Introduction: "sensitive to a number of user-specified parameters as well as the nature of the available MD data"</td>
+</tr>
+<tr>
+<td>简单反应坐标（如 Q）存在非马尔可夫伪影</td>
+<td>Q 无法区分拓扑不同的构象</td>
+<td>不同接触组合可对应相同 Q 值</td>
+<td>Introduction: "severe non-Markovian artifacts"；Results: Q 无法解析动力学陷阱</td>
+</tr>
+<tr>
+<td>动力学陷阱难以解析</td>
+<td>传统方法无法清晰分辨 trap 态</td>
+<td>状态划分粒度不足或基函数缺乏拓扑敏感性</td>
+<td>Results: GDS 模型识别出 β-turn 移位的 misfolded trap，此前方法难以确认</td>
+</tr>
+<tr>
+<td>基函数缺乏物理可解释性</td>
+<td>VAMPNet 的软状态难以映射到具体结构特征</td>
+<td>神经网络基函数为黑箱</td>
+<td>本文主张 GDS 基函数直接对应接触图中间态，天然可解释</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>用 GDS 在接触图空间生成从全去折叠（全零矩阵）到天然态（目标接触图）的路径集合；以路径上的中间接触图为中心放置 SCH 度量下的高斯径向基函数；用这些基函数在 VAMP 框架下对 MD 轨迹数据（仅用于参数化，不用于基函数选择）进行投影，估计 Koopman 算子并提取慢时间尺度。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>接触图空间中的最短路径天然对应折叠的拓扑演化序列</strong>：GDS 通过 SCH 度量保证相邻接触图之间的结构相似性，因此路径上的中间节点即为合理的折叠中间态候选。</li>
+<li><strong>基函数选择与动力学参数解耦</strong>：传统方法中基函数来自 MD 数据（聚类中心或网络权重），而 GDS 将基函数生成变为一个独立的、廉价的图搜索问题，MD 数据仅用于最后一步的转移矩阵估计。</li>
+<li><strong>拓扑敏感的度量优于全局反应坐标</strong>：SCH 度量能区分 Q 无法区分的拓扑差异（如 β-turn 移位），因此基函数能解析动力学陷阱。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>「先验结构路径」可作为动力学建模的廉价先验</strong>：在 MD 采样不足的场景下，基于结构/拓扑的路径生成（如 GDS、morphing、插值）可作为基函数来源，避免「先有采样才能建模」的鸡生蛋问题。</li>
+<li><strong>基函数的物理可解释性不仅是附加价值，更是解析能力的来源</strong>：当基函数对应可识别的结构状态时，模型输出的慢模式可直接映射到具体构象事件（如 β 发卡形成顺序），这对机制研究至关重要。</li>
+<li><strong>「变分下界」可作为无 MD 基函数的验证工具</strong>：本文利用 VAMP 的变分原理，通过比较 GDS 基与 MD 聚类基的特征值大小来证明 GDS 基的优越性——这为「非数据驱动基函数」的评估提供了通用框架。</li>
+</ul>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质序列；目标天然态接触图（由已知结构或预测结构计算）；MD 轨迹数据（仅用于最终参数化，不用于基函数生成）。</li>
+<li><strong>输出</strong>：Koopman 模型（含转移矩阵、慢模式特征值/特征向量、弛豫时间尺度）；折叠路径上的中间态集合；动力学陷阱识别。</li>
+<li><strong>模块</strong>：
+  1. <strong>GDS 路径生成</strong>：在接触图空间执行模拟退火 + Metropolis-Hastings 更新，目标函数 F 保证路径连续性与拓扑合理性；每条路径从全零图到目标图，长度 N=10。
+  2. <strong>基函数构建</strong>：对每条路径上的中间接触图（去重后）放置 SCH 高斯核（式 5），γ 取 0.1 和 0.2 双尺度。
+  3. <strong>Koopman 估计</strong>：将 MD 轨迹数据投影到基函数上，用无偏 Koopman 重加权算法（deeptime 包实现）估计转移算子，提取慢模式。
+  4. <strong>后处理</strong>：PCCA 聚类粗粒化 metastable states；接触图平均可视化解释各态结构特征。</li>
+<li><strong>训练/参数化</strong>：无传统「训练」；基函数由 GDS 直接生成，仅需估计转移矩阵（线性代数运算）。</li>
+<li><strong>工具</strong>：deeptime（Koopman 重加权）；GROMACS + CHARMM36m-TIP3P（用于 back-mapping 和短 MD 弛豫）；LBFGS（接触图重建）。</li>
+<li><strong>假设</strong>：接触图空间中的最短路径（SCH 度量下）能覆盖折叠过程中的关键中间态；这些中间态在原子尺度上可通过短 MD 弛豫获得合理构象。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GDS 路径生成</td>
+<td>生成去折叠→折叠的接触图序列</td>
+<td>提供无 MD 的中间态候选集</td>
+<td>输入：序列、目标接触图；输出：路径集合（N=10 节点）</td>
+<td>2D 模型验证：GDS 基与全覆盖基特征值一致（0.748 vs 0.750 等）</td>
+<td>移除后无基函数来源，方法失效</td>
+</tr>
+<tr>
+<td>SCH 度量（式 4）</td>
+<td>衡量接触图间拓扑距离</td>
+<td>比 Hamming 距离更准确捕捉结构相似性</td>
+<td>输入：两个接触图；输出：标量距离</td>
+<td>作者前期工作；本文 2D 模型对比显示 SCH 优于 Hamming</td>
+<td>若用 Hamming 距离，基函数可能无法区分拓扑差异，动力学陷阱解析失败</td>
+</tr>
+<tr>
+<td>SCH 高斯基函数（式 5）</td>
+<td>将接触图空间映射到可估计 Koopman 算子的函数空间</td>
+<td>提供连续、可微的基函数</td>
+<td>输入：接触图；输出：基函数值</td>
+<td>2D 模型与 WW domain 均验证有效</td>
+<td>移除后无法构建 Koopman 模型</td>
+</tr>
+<tr>
+<td>Koopman 重加权估计</td>
+<td>从 MD 轨迹估计转移算子</td>
+<td>获得动力学参数</td>
+<td>输入：MD 轨迹 + 基函数；输出：特征值/特征向量</td>
+<td>WW domain 时间尺度 10.6 μs 与文献一致</td>
+<td>若用朴素最大似然估计，可能引入偏差</td>
+</tr>
+<tr>
+<td>Back-mapping + 短 MD 弛豫</td>
+<td>将接触图转换为原子坐标并局部弛豫</td>
+<td>验证中间态物理合理性</td>
+<td>输入：接触图；输出：弛豫后结构</td>
+<td>800 个中间态仅需 ~800 ns 总 MD</td>
+<td>移除后中间态仅为拓扑抽象，无法与原子模拟对接</td>
+</tr>
+<tr>
+<td>PCCA 聚类</td>
+<td>粗粒化 metastable states</td>
+<td>简化模型解释</td>
+<td>输入：MSM 转移矩阵；输出：3 态模型</td>
+<td>识别出 folded/unfolded/trapped 三态</td>
+<td>移除后仍可分析连续慢模式，但失去离散态解释</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>符号含义</th>
+<th>用途</th>
+<th>直觉</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P_ij^τ = Pr(x(τ) ∈ A_j | x(0) ∈ A_i)</td>
+<td>P_ij^τ：转移概率；A_i：状态划分；x(t)：构象</td>
+<td>定义 Markov 状态模型</td>
+<td>状态间转移概率描述动力学</td>
+<td>Methods "Markov State Models"</td>
+</tr>
+<tr>
+<td>t_i = −τ / ln λ_i</td>
+<td>λ_i：转移矩阵第 i 个特征值；τ：滞后时间</td>
+<td>从特征值提取弛豫时间尺度</td>
+<td>特征值越接近 1，弛豫越慢</td>
+<td>Methods "Markov State Models"</td>
+</tr>
+<tr>
+<td>T^τ<a href="x">u</a> = (1/π(x)) ∫ u(y) Pr(y→x,τ) π(y) dy</td>
+<td>T^τ：Perron-Frobenius 转移算子；π：平稳分布</td>
+<td>理论框架：MSM 是转移算子的有限秩近似</td>
+<td>转移算子描述概率密度演化</td>
+<td>Methods "Variational Approach"</td>
+</tr>
+<tr>
+<td>K^τ<a href="x">f</a> = E[f(x_{t+τ}) | x_t = x]</td>
+<td>K^τ：Koopman 算子；f：可观测函数</td>
+<td>从可观测函数角度描述动力学</td>
+<td>Koopman 算子传播可观测量的期望</td>
+<td>Methods "Variational Approach"</td>
+</tr>
+<tr>
+<td>G_ij = 1 若 r_ij &lt; r_c，否则 0</td>
+<td>G：接触图；r_ij：Cα 距离；r_c = 8 Å</td>
+<td>将构象离散化为接触图</td>
+<td>接触图编码二级/三级结构拓扑</td>
+<td>Methods "Graph Driven Sampling"</td>
+</tr>
+<tr>
+<td>f_SCH(G_A, G_B) = (1/N²) Σ_ij |S_ij^A − S_ij^B| / max(S_ij^A, S_ij^B)</td>
+<td>S_ij^A：接触图 G_A 中 i,j 间最短路径长度</td>
+<td>衡量接触图间拓扑距离</td>
+<td>基于图距离的归一化差异，对局部扰动鲁棒</td>
+<td>Methods 式 4</td>
+</tr>
+<tr>
+<td>χ_j(r) = exp(−f_SCH(G_j, G(r))² / (2γ²))</td>
+<td>χ_j：第 j 个基函数；γ：带宽参数</td>
+<td>定义 Koopman 模型的基函数</td>
+<td>以 GDS 中间接触图为中心的高斯核</td>
+<td>Methods 式 5</td>
+</tr>
+<tr>
+<td>F = Σ_{i=1}^{N−1} f̄(G_i)</td>
+<td>F：GDS 目标函数；f̄：路径连续性惩罚</td>
+<td>引导路径搜索</td>
+<td>惩罚不连续跳变，保证路径平滑</td>
+<td>Methods 式 3</td>
+</tr>
+<tr>
+<td>V_recon(r_α, G) = V_poly + V_GRP</td>
+<td>V_poly：聚合物链势能；V_GRP：接触图约束势</td>
+<td>从接触图重建原子坐标</td>
+<td>用简谐势约束满足目标接触图</td>
+<td>Methods 式 7</td>
+</tr>
+</tbody>
+</table>
+<h2>10 实验设计与证据链</h2>
+<h3>数据集与规模</h3>
+<ul>
+<li><strong>2D 模型</strong>：人工构造的 rugged folding funnel 势能面（式 6），50 个随机高斯扰动；网格 11×11=121 个格点；GDS 生成 10³ 条路径，筛选后 50 个基函数中心。</li>
+<li><strong>WW domain（GTT variant of FIP35）</strong>：35 残基，双 β-hairpin 拓扑；使用 ANTON 专用机生成的 MD 轨迹（&gt;1 ms 总模拟时间，2.5 ps 采样间隔）；GDS 生成 100 条路径，800 个中间接触图，去重后 608 个，双 γ 扩展至 1216 个基函数。</li>
+<li><strong>NTL9</strong>：另一 ANTON 数据集蛋白，用于泛化性验证（详见 SI）。</li>
+</ul>
+<h3>评测指标</h3>
+<ul>
+<li>特征值大小（VAMP 变分原理：特征值越大越好）</li>
+<li>弛豫时间尺度（t_i = −τ/ln λ_i）</li>
+<li>与文献报道的折叠时间尺度对比</li>
+<li>慢模式特征向量的物理可解释性（接触图可视化）</li>
+</ul>
+<h3>基线</h3>
+<ul>
+<li>全覆盖基（2D 模型）：121 个格点全覆盖的指示函数基</li>
+<li>传统 MD 聚类基（WW domain）：基于 ANTON 轨迹的几何聚类中心</li>
+<li>Q（天然接触分数）作为反应坐标</li>
+</ul>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 Claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2D 模型：GDS 基 vs 全覆盖基</td>
+<td>GDS 基能覆盖关键动力学信息</td>
+<td>50 个 GDS 基 vs 121 个全覆盖基；相同滞后时间 τ=1.5</td>
+<td>特征值：GDS (0.748, 0.670, 0.590) vs 全覆盖 (0.750, 0.672, 0.594)，差异 &lt;0.005</td>
+<td>GDS 基以 &lt;50% 基函数数量达到几乎相同的变分精度</td>
+<td>2D 模型不能完全代表真实蛋白质的复杂性</td>
+<td>Results "A Rugged 2D..."</td>
+</tr>
+<tr>
+<td>2D 模型：特征向量对比</td>
+<td>GDS 基能正确识别慢模式方向</td>
+<td>目视对比 GDS 与全覆盖基的特征向量空间分布</td>
+<td>特征向量高度一致，慢模式方向相同</td>
+<td>GDS 基保留了动力学模式的结构信息</td>
+<td>未做定量重叠度量</td>
+<td>Results 图 2</td>
+</tr>
+<tr>
+<td>WW domain：GDS 基 Koopman 模型</td>
+<td>GDS 基能产生准确的折叠时间尺度</td>
+<td>与文献报道的 6–10 μs 对比</td>
+<td>最慢时间尺度 10.6 μs，在文献范围内</td>
+<td>GDS 基构建的模型动力学准确</td>
+<td>单蛋白验证，需更多案例</td>
+<td>Results "GDS-Constructed Markov Model"</td>
+</tr>
+<tr>
+<td>WW domain：动力学陷阱解析</td>
+<td>GDS 基能识别传统方法遗漏的 trap 态</td>
+<td>对比 Q 反应坐标投影</td>
+<td>识别出 β-turn 移位一个残基的 misfolded trap，Q 无法区分</td>
+<td>SCH 度量的拓扑敏感性优于 Q</td>
+<td>未做自由能定量比较</td>
+<td>Results 图 4</td>
+</tr>
+<tr>
+<td>WW domain：MSM 离散化</td>
+<td>GDS 基 + Voronoi 划分可构建离散 MSM</td>
+<td>232 态 MSM vs 文献 1000 态模型</td>
+<td>折叠时间 13.8 ± 0.9 μs，长于文献 10.2 μs</td>
+<td>变分改进（更长时间尺度 = 更优）</td>
+<td>标准误差仅来自单一轨迹集</td>
+<td>Results "MSM" 段</td>
+</tr>
+<tr>
+<td>NTL9 泛化验证</td>
+<td>GDS 方法可迁移至其他蛋白</td>
+<td>重复完整流程</td>
+<td>折叠时间 18.5 μs，与文献一致</td>
+<td>方法具有泛化性</td>
+<td>仅两个蛋白，需更广泛验证</td>
+<td>Results "Markov Model of NTL9"</td>
+</tr>
+<tr>
+<td>Q 对比：MFPT 计算</td>
+<td>GDS 基模型与 Q 反应坐标的 MFPT 对比</td>
+<td>WW: 18 μs vs 文献 21(6) μs；NTL9: 22 μs vs 29(7) μs</td>
+<td>均在误差范围内</td>
+<td>GDS 基模型与实验/文献一致</td>
+<td>MFPT 对状态定义敏感，需谨慎解读</td>
+<td>Results 末段</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文解决的是 Markov/Koopman 模型构建中的「状态划分/基函数生成」子问题（问题 A），而非动力学参数估计（问题 B）。动力学参数仍来自 ANTON MD 轨迹。</li>
+<li><strong>「无需 MD」的准确含义</strong>：基函数生成阶段无需 MD；但模型参数化（转移矩阵估计）仍需已有 MD 轨迹。因此本文是「基函数零 MD 成本」，而非「完全无 MD」。</li>
+<li><strong>验证边界</strong>：仅在两个蛋白（WW domain, NTL9）上验证，均为小蛋白（≤35 残基）；2D 模型为概念验证。对更大蛋白、更复杂折叠机制的适用性未证实。</li>
+<li><strong>变分改进的解读</strong>：13.8 μs &gt; 10.2 μs 的折叠时间差异被解释为变分改进，但需注意：更长的时间尺度在变分原理下确实更优，但前提是滞后时间一致且模型可比较。</li>
+<li><strong>动力学陷阱的识别</strong>：GDS 基识别出的 trap 态（β-turn 移位）是拓扑层面的发现，其热力学稳定性（自由能）未定量评估。</li>
+<li><strong>不确定性</strong>：GDS 路径的随机性（模拟退火初始条件）对基函数集合的影响未做系统敏感性分析；γ 参数（0.1/0.2）的选择依据未充分说明。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未直接计算自由能</td>
+<td>当前框架仅提供动力学（时间尺度）信息，未给出各态自由能</td>
+<td>结合接触图自由能计算方法</td>
+<td>Conclusion: "we now need to develop efficient estimates of free energies"</td>
+</tr>
+<tr>
+<td>依赖 MD 轨迹进行参数化</td>
+<td>转移矩阵仍需 ANTON 轨迹估计</td>
+<td>结合增强采样方法（如 metadynamics）实现完全无 MD 的动力学估计</td>
+<td>Conclusion: "Koopman reweighting is now being applied to enhanced sampling trajectories"</td>
+</tr>
+<tr>
+<td>接触图表示的限制</td>
+<td>不适用于侧链构象变化等局部细节</td>
+<td>未明确提及</td>
+<td>Introduction: "not suited to the study of localized conformational changes, such as side-chain rotations"</td>
+</tr>
+<tr>
+<td>泛化性证据有限</td>
+<td>仅两个蛋白验证</td>
+<td>未明确提及</td>
+<td>Results: NTL9 为额外验证，但作者未声称广泛泛化</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：作者在 Conclusion 中强调「focus here is explicitly on addressing step (A)」，隐含承认未解决步骤 (B) 的无 MD 化。</p>
+</blockquote>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GDS 路径的物理真实性未严格验证</td>
+<td>接触图路径虽满足 SCH 连续性，但可能包含热力学上不可达的中间态；back-mapping + 短 MD 弛豫仅保证局部合理性，不保证全局可及性</td>
+<td>若基函数包含非物理态，Koopman 模型可能高估某些慢模式</td>
+<td>对 GDS 中间态进行长时间 MD 验证其 metastability；或与过渡路径采样（TPS）结果对比</td>
+<td>Methods: back-mapping 仅 ~1 ns 弛豫</td>
+</tr>
+<tr>
+<td>变分改进的显著性未做统计检验</td>
+<td>13.8 vs 10.2 μs 的差异可能来自基函数数量、滞后时间选择等混淆因素</td>
+<td>变分论证是本文核心主张之一，需排除偶然性</td>
+<td>重复多次 GDS 运行，报告时间尺度分布；对不同滞后时间做敏感性分析</td>
+<td>Results: 仅报告单次估计</td>
+</tr>
+<tr>
+<td>与文献对比的公平性</td>
+<td>文献值（6–10 μs）来自不同力场/水模型/分析方法</td>
+<td>跨研究对比需谨慎</td>
+<td>在相同 MD 轨迹上运行文献方法（如 VAMPNet）作为直接对照</td>
+<td>Results: 引用文献值但未复现</td>
+</tr>
+<tr>
+<td>γ 参数选择缺乏系统调优</td>
+<td>γ=0.1/0.2 的选择依据未说明；不同 γ 可能显著影响基函数重叠与模型质量</td>
+<td>方法可复现性要求参数选择透明</td>
+<td>对 γ 做网格搜索，报告变分分数变化</td>
+<td>Methods 式 5 后未讨论 γ 选择</td>
+</tr>
+<tr>
+<td>GDS 路径数量（100 条）的充分性未论证</td>
+<td>100 条路径可能未覆盖所有重要折叠路径</td>
+<td>基函数覆盖度直接影响模型质量</td>
+<td>增加路径数量，观察变分分数收敛曲线</td>
+<td>Methods: "100 GDS runs"</td>
+</tr>
+<tr>
+<td>与深度学习方法的比较缺失</td>
+<td>未与 VAMPNet 等 SOTA 方法在相同数据上直接对比</td>
+<td>需证明 GDS 基优于或至少不劣于数据驱动基</td>
+<td>在相同 ANTON 轨迹上训练 VAMPNet，对比特征谱与时间尺度</td>
+<td>全文未提及 VAMPNet 对比</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题：Agent 提炼的知识候选</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>「结构路径先验」可替代「采样先验」用于基函数构建</strong>：GDS 的核心可迁移思想是——用廉价的图搜索/路径生成替代昂贵的 MD 采样来获得构象状态候选集。这启发我们：在 MD 数据不足的场景下，可尝试用结构插值、morphing、或基于能量模型的路径搜索（如 NEB、string method 的粗粒化版本）生成基函数中心。</p>
+</li>
+<li>
+<p><strong>拓扑度量（SCH）优于全局反应坐标（Q）</strong>：SCH 度量对接触图拓扑差异敏感，能区分 Q 无法区分的构象。这提示我们在设计反应坐标或状态划分时，应优先选择能编码拓扑/连接性信息的度量，而非全局标量。</p>
+</li>
+<li>
+<p><strong>变分原理可作为「无数据基函数」的验证工具</strong>：本文用 VAMP 特征值大小来证明 GDS 基的优越性——这为任何非数据驱动的基函数设计提供了通用评估框架：只要能在同一 MD 轨迹上投影，就能用变分分数比较不同基函数的质量。</p>
+</li>
+<li>
+<p><strong>「基函数生成」与「动力学估计」的解耦是方法论进步</strong>：传统方法将两者耦合（基函数来自同一 MD 数据），本文证明解耦后不仅可行，还能获得变分改进。这启发我们在其他动力学建模任务中，可尝试独立设计状态空间离散化方案，再与数据驱动估计结合。</p>
+</li>
+<li>
+<p><strong>Back-mapping 作为接触图与原子模型的桥梁</strong>：GDS 中间态通过 back-mapping + 短 MD 弛豫获得原子表示，这一流程可迁移到其他接触图/粗粒化方法中，用于将拓扑态映射为可模拟的原子结构。</p>
+</li>
+<li>
+<p><strong>动力学陷阱的拓扑解释</strong>：GDS 模型识别出 β-turn 移位的 trap 态，说明折叠动力学中的「陷阱」可能源于拓扑错误（如 β 发夹错配），而非单纯的能量局部极小。这为蛋白质设计中的「可折叠性」评估提供了新视角——不仅要考虑能量，还要考虑拓扑路径的连通性。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>VAMP / VAC 理论</strong>：本文直接建立在 Noé &amp; Nüske 等提出的变分框架上（文中引用），是 VAMP 在「基函数来源」上的创新扩展。与 VAMPNet（Mardt et al.）形成互补：VAMPNet 用神经网络学习基函数，本文用 GDS 生成物理基函数。</li>
+<li><strong>MSM 构建流程</strong>：与传统 MSM 的「MD 采样 → 几何聚类 → 转移矩阵估计」流程相比，本文用 GDS 替代前两步中的聚类，保留转移矩阵估计。与 Huber 等关于 MSM 状态划分对结果影响的研究直接相关。</li>
+<li><strong>接触图与蛋白质折叠</strong>：接触图作为折叠表示的历史悠久（如 Go 模型、contact order 等），本文将其与现代变分方法结合，延续了「拓扑决定动力学」的经典观点。</li>
+<li><strong>增强采样与路径采样</strong>：GDS 与 TPS、metadynamics 等路径采样方法互补——GDS 提供拓扑路径，增强采样可提供热力学权重。作者在 Conclusion 中明确提到与 metadynamics 结合的未来方向。</li>
+<li><strong>AlphaFold 等结构预测方法</strong>：本文的接触图目标可由实验结构或预测结构（如 AlphaFold 输出）获得，因此 GDS 框架可与结构预测工具无缝衔接——预测结构作为折叠目标，GDS 生成路径，MD 短弛豫验证。</li>
+<li><strong>蛋白质设计</strong>：作者在 Introduction 中提到「foldability 是设计流程中被忽视的特征」，本文方法可为设计候选的动力学可折叠性提供快速评估。</li>
+</ul>
+<h2>16 研究想法</h2>
+<blockquote>
+<p>标题：Agent 生成的研究候选</p>
+</blockquote>
+<h3>候选 1：GDS 基函数 + 图神经网络反应坐标</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：GDS 基函数是手工设计的（SCH 高斯核），可能未充分利用接触图的图结构信息。</li>
+<li><strong>核心假设</strong>：用 GNN 在接触图空间学习更优的基函数（以 VAMP 分数为损失），可进一步提升模型精度。</li>
+<li><strong>增量</strong>：将 GDS 的路径先验作为 GNN 的初始化或正则化，结合数据驱动优化。</li>
+<li><strong>初步方法</strong>：GDS 生成路径 → 路径上的接触图作为 GNN 训练样本 → 以 VAMP-2 分数为损失函数 → 对比 GDS 固定基与 GNN 学习基。</li>
+<li><strong>验证</strong>：WW domain 与 NTL9 上对比特征谱、时间尺度、trap 态识别。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：GDS 路径的 metadynamics 增强采样</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：作者在 Conclusion 中提出未来方向，但未实现。</li>
+<li><strong>核心假设</strong>：GDS 生成的路径可作为 metadynamics 的集体变量（CV）定义依据，实现「拓扑引导的增强采样」。</li>
+<li><strong>增量</strong>：将 GDS 路径上的 SCH 距离作为 CV，替代传统几何 CV（如 RMSD），可能更有效地驱动折叠/去折叠转换。</li>
+<li><strong>初步方法</strong>：GDS 生成路径 → 定义 CV = SCH(G, G_path) → 运行 metadynamics → 比较自由能面与文献值。</li>
+<li><strong>验证</strong>：在 WW domain 上比较 SCH-CV 与 RMSD-CV 的收敛速度与自由能精度。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：GDS 基函数用于蛋白质-配体结合动力学</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：本文仅关注折叠；但 GDS 的「路径先验」思想可迁移到结合/解离过程。</li>
+<li><strong>核心假设</strong>：接触图表示可扩展至蛋白质-配体复合物，GDS 生成的结合/解离路径可作为 Markov 模型的基函数。</li>
+<li><strong>增量</strong>：将 GDS 从单链折叠扩展到双分子结合，需定义复合物接触图与 SCH 度量。</li>
+<li><strong>初步方法</strong>：定义复合物接触图（含分子间接触）→ GDS 生成解离路径 → 构建 Koopman 模型 → 估计结合/解离速率。</li>
+<li><strong>验证</strong>：已知结合速率的体系（如 trypsin-BPTI）上对比实验值。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：GDS 路径与 AlphaFold 预测结构的整合</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：GDS 需要目标接触图；AlphaFold 可提供高精度预测结构，但缺乏动力学信息。</li>
+<li><strong>核心假设</strong>：AlphaFold 预测结构作为 GDS 目标，可快速生成折叠路径与中间态，为「静态预测」补充「动态机制」。</li>
+<li><strong>增量</strong>：将 GDS 作为 AlphaFold 输出的后处理工具，提供折叠机制与动力学陷阱预测。</li>
+<li><strong>初步方法</strong>：AlphaFold 预测结构 → 计算目标接触图 → GDS 生成路径 → 识别中间态与 trap → 与实验突变数据对比。</li>
+<li><strong>验证</strong>：对 AlphaFold 预测但实验未解析中间态的蛋白，预测其折叠机制并与已知突变表型关联。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 5：GDS 基函数的可微化与端到端学习</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：GDS 路径生成是离散优化，不可微；与深度学习框架整合困难。</li>
+<li><strong>核心假设</strong>：将 GDS 路径生成松弛为可微过程（如 Gumbel-Softmax 或连续松弛），可实现「路径生成 + Koopman 估计」的端到端训练。</li>
+<li><strong>增量</strong>：消除 GDS 与 VAMP 之间的接口障碍，实现完全数据驱动的路径发现。</li>
+<li><strong>初步方法</strong>：将接触图更新松弛为连续概率 → 用 VAMP 分数作为损失 → 反向传播优化路径集合。</li>
+<li><strong>验证</strong>：在 2D 模型上验证可微 GDS 与原始 GDS 的等价性，再迁移至 WW domain。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, discussion, conclusion) as provided</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological soundness, clarity of claims, and alignment with stated evidence; no assessment of formatting or editorial style beyond Nature-style criteria</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose a simulation-free method (graph-driven sampling, GDS) to generate a basis set for constructing Koopman models of protein folding, eliminating the need for extensive molecular dynamics (MD) simulations in basis construction. They demonstrate this on a 2D model and the WW domain protein, claiming improved variational estimates of folding timescales and identification of kinetic traps.</li>
+<li><strong>Visible evidence base</strong> Methods descriptions, results for 2D model and WW domain, comparisons to prior work, supplementary material referenced but not provided</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary figures and tables (Figure S2, SI methods for lagtime selection, NTL9 results, Q-based comparisons), full MD trajectory details, code availability, and detailed parameter choices for GDS and Koopman fitting</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a conceptually interesting and potentially impactful idea: using a graph-based, simulation-free approach to construct basis sets for Koopman models of protein folding. The 2D proof-of-concept is well described and supports the core hypothesis. However, the WW domain application, while promising, raises several concerns regarding the validity of the kinetic estimates, the interpretation of the identified "kinetic trap," and the generalizability of the approach. The reliance on existing ANTON MD data for parameterization, while pragmatic, limits the claim of being "simulation-free" in a practical sense. The manuscript is clearly written and accessible, but the evidence as presented is insufficient to fully establish the superiority or broad utility of the method over existing approaches.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and chemists working on protein folding, Markov state models, and enhanced sampling. Researchers developing new methods for kinetic model construction that aim to reduce computational cost. The work may also interest method developers in the Koopman operator and dynamical systems community.</li>
+<li><strong>Major strengths</strong> 1) The core idea is novel and addresses a real bottleneck in MSM construction (basis selection without MD). 2) The 2D model provides a clear, controlled demonstration of the concept. 3) The use of the SCH metric is physically motivated and appears to offer advantages over simpler metrics. 4) The identification of a kinetic trap in the WW domain, if validated, is a significant finding. 5) The manuscript is generally well-written and accessible to a broad audience.</li>
+<li><strong>Major Concerns</strong> See detailed items below.</li>
+<li><strong>Minor Comments</strong> See detailed items below.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 (validation of kinetic trap), R1-M2 (simulation-free claim), R1-M3 (comparison to prior work), R1-M4 (generalizability).</li>
+<li><strong>Assessment against Nature-style criteria</strong> <strong>Originality:</strong> High. The concept of using GDS for basis construction is novel and distinct from existing MD-based or order-parameter-based approaches. <strong>Scientific importance:</strong> Potentially high, as it addresses a fundamental computational bottleneck in studying protein dynamics. However, the importance is contingent on the robustness and generalizability of the method, which are not fully established here. <strong>Interdisciplinary readership:</strong> Moderate. The work is primarily of interest to computational chemists and biophysicists; the broader biological or chemical community may find the technical details less accessible. <strong>Technical soundness:</strong> The 2D model is sound. The WW domain application is suggestive but has unresolved issues regarding the interpretation of the kinetic trap and the comparison to prior work. <strong>Readability for nonspecialists:</strong> The abstract and introduction are accessible, but the methods and results sections are dense and require specialist knowledge. Overall, the manuscript has strong potential but requires substantial revision and additional evidence to meet the high bar for a Nature-style publication.</li>
+<li><strong>Recommendation posture</strong> Supportive if technical concerns are resolved. The core idea is promising, but the current evidence does not fully establish the method's validity and superiority. The authors must address the concerns regarding the kinetic trap, the practical scope of the "simulation-free" claim, and the robustness of the comparison to prior work.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Validity of interpretation</li>
+<li><strong>Claim pointer</strong> The manuscript claims that the GDS-constructed Koopman model "definitively identifies a 'kinetic trap' within the folding pathway(s) of the FIP35 WW domain which previous conventional VAMP-based approaches struggled to resolve."</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, WW Domain section, Figure 4 and associated text; location not provided</li>
+<li><strong>Concern</strong> The identification of the "kinetic trap" is a central result, but the evidence presented is not sufficient to support the claim of "definitive" identification. The interpretation relies on visual inspection of free energy surfaces and contact map averages. It is not clear how the authors distinguish a true kinetic trap (a metastable state with a significant residence time) from a transient, non-committal intermediate. The manuscript does not provide quantitative metrics such as state populations, mean first passage times into and out of the trap, or a comparison of the trap's stability relative to thermal fluctuations. Furthermore, the claim that previous methods "struggled to resolve" this trap is not substantiated with a direct comparison of the resolved free energy surfaces or state decompositions from prior work.</li>
+<li><strong>Why it matters</strong> The identification of a novel kinetic trap is a key selling point of the method. If this interpretation is not robust, the primary advantage of the GDS approach over existing methods is weakened. A definitive claim requires quantitative evidence of metastability and a clear demonstration that the trap is not an artifact of the basis set or the analysis procedure.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide quantitative evidence of the trap's metastability, such as: (1) the population of the trap state from the MSM; (2) the residence time or mean first passage time to escape the trap; (3) a comparison of the free energy barrier separating the trap from the unfolded and folded states; (4) a direct comparison of the free energy surface and state decomposition obtained from the GDS-based model with that from a conventional MSM built on the same ANTON data, to demonstrate the claimed improvement in resolution.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Claim accuracy</li>
+<li><strong>Claim pointer</strong> The title and abstract state the method is "Simulation-Free" and that it "does not rely on extensive, computationally demanding MD data for configuration space partitioning."</li>
+<li><strong>Evidence pointer</strong> Title, Abstract, Introduction; location not provided</li>
+<li><strong>Concern</strong> The claim of being "simulation-free" is misleading. While GDS itself does not generate MD trajectories, the method's validation and parameterization for the WW domain rely entirely on the existing ANTON MD dataset. The kinetic parameters (timescales) are extracted by projecting this MD data onto the GDS-generated basis. The method is therefore not "simulation-free" in a practical sense; it is "MD-basis-construction-free." This distinction is crucial. The authors do acknowledge this in the conclusion, but the title and abstract overstate the case. This could mislead readers about the method's true requirements and potential applications.</li>
+<li><strong>Why it matters</strong> The primary claim of novelty and utility is the removal of the MD bottleneck. If the method still requires MD data for any meaningful kinetic output, its advantage is reduced to a pre-processing step. The claim must be accurately scoped to avoid overstating the method's capabilities.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should revise the title and abstract to accurately reflect the method's scope, e.g., "Simulation-Free Basis Construction for Koopman Models" or "MD-Free Basis Selection for Koopman Models." The text should clearly state that while GDS generates the basis without MD, the parameterization of the kinetic model (i.e., estimating transition probabilities) still requires MD data, and the method's primary advantage is in reducing the amount of MD data needed for basis selection, not eliminating it entirely.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> The manuscript claims that the GDS-based model "variationally improves folding time scale estimates" compared to previous studies, citing a folding time of 13.8 μs vs. 10.2 μs from prior work.</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, WW Domain section; location not provided</li>
+<li><strong>Concern</strong> The comparison to prior work is not sufficiently detailed. The authors compare their folding time to a single value (10.2 μs) from previous studies, but it is unclear if this is an apples-to-apples comparison. The previous studies may have used different lag times, different state definitions, different analysis methods, or even different definitions of the "folding time." The manuscript does not provide a table comparing the key parameters of the different models (e.g., number of states, lag time, basis functions, clustering method). Without this context, the claim of "variational improvement" is not convincing. A variational improvement means that the estimated timescale is closer to the true value, but the true value is unknown. A longer timescale could also be an artifact of a poorly converged model or a different definition of the folded state.</li>
+<li><strong>Why it matters</strong> The claim of variational improvement is a key quantitative result. If the comparison is not rigorous, the claim is unsupported. The authors need to demonstrate that the difference in timescales is significant and that it arises from the quality of the basis set, not from other methodological differences.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a detailed comparison table (in the main text or SI) listing the model parameters for their GDS-based model and the prior models they compare against. They should also discuss the uncertainty in their estimate (e.g., via bootstrapping) and the sensitivity of the result to the choice of lag time and basis function parameters. A more robust demonstration would be to show that their model converges to a stable timescale with fewer basis functions than a conventional model built on the same data.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Generalizability</li>
+<li><strong>Claim pointer</strong> The manuscript suggests the method is "quite general" and "could equally be applied to protein–protein interaction networks, drug–protein binding, protein misfolding, and other complex transient biophysical processes."</li>
+<li><strong>Evidence pointer</strong> Conclusion; location not provided</li>
+<li><strong>Concern</strong> The generalizability claim is not supported by the evidence. The method is demonstrated on a single, small protein (WW domain, 35 residues) and a 2D toy model. The success of GDS relies on the ability to generate a connected path of physically plausible intermediate contact maps between unfolded and folded states. For larger proteins or more complex processes (e.g., binding), the contact map space becomes vastly larger and the GDS optimization may struggle to find relevant paths. The manuscript does not discuss the computational scaling of GDS with system size or the potential challenges in applying it to more complex systems.</li>
+<li><strong>Why it matters</strong> The potential impact of the method depends on its applicability to a wide range of problems. If the method only works for small, simple proteins, its significance is limited. The authors should either provide evidence of scalability or temper their claims about generalizability.</li>
+<li><strong>Resolution test</strong> The authors should discuss the computational cost of GDS as a function of protein size and contact map complexity. They could also perform a proof-of-concept on a second, larger protein to demonstrate scalability. If this is not feasible, the claims of generalizability should be significantly softened.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Methods, GDS algorithm description</li>
+<li><strong>Evidence pointer</strong> Methods, Graph Driven Sampling section; location not provided</li>
+<li><strong>Issue</strong> The description of the GDS algorithm is brief. The specific details of the Metropolis-Hastings updates, the cooling schedule, and the convergence criteria are not fully specified. The choice of the parameter k_cont = 0.05 for the WW domain is mentioned but not justified in detail.</li>
+<li>
+<p><strong>Required correction</strong> Provide a more detailed algorithmic description, including pseudo-code if possible. Justify the choice of k_cont and other key parameters, perhaps with a sensitivity analysis.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods, Koopman model fitting</li>
+<li><strong>Evidence pointer</strong> Methods, Markov Models in Contact-Map Space section; location not provided</li>
+<li><strong>Issue</strong> The manuscript states that the Koopman model was fit using the "unbiased Koopman reweighting algorithm" implemented in the deeptime package. However, the specific parameters of the fitting procedure (e.g., regularization, number of basis functions used in the final model) are not provided.</li>
+<li>
+<p><strong>Required correction</strong> Provide the specific parameters used for the Koopman model fitting, or a reference to a configuration file or code repository where these are available.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Presentation</li>
+<li><strong>Affected element</strong> Results, WW Domain section</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, WW Domain section; location not provided</li>
+<li><strong>Issue</strong> The text describing the free energy surfaces and the kinetic trap is somewhat terse. The figures are referenced, but the key features of the plots are not described in sufficient detail in the text.</li>
+<li>
+<p><strong>Required correction</strong> Expand the description of the figures, explicitly pointing out the features that support the interpretation of the kinetic trap and the different folding pathways.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Results, NTL9 section</li>
+<li><strong>Evidence pointer</strong> Results and Discussion, Markov Model of NTL9 section; location not provided</li>
+<li><strong>Issue</strong> The NTL9 results are only briefly mentioned and are relegated to the SI. Given that this is a second demonstration of the method's applicability, it would strengthen the paper to include at least a summary of the key findings in the main text.</li>
+<li>
+<p><strong>Required correction</strong> Include a brief summary of the NTL9 results in the main text, highlighting the key timescales and any differences from the WW domain results.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Introduction</li>
+<li><strong>Evidence pointer</strong> Introduction; location not provided</li>
+<li><strong>Issue</strong> The introduction contains a typo: "Markov State Models (MSMs) have emerged as a powerful frameworkk" (extra 'k').</li>
+<li><strong>Required correction</strong> Correct the typo.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "definitively" identifying a kinetic trap is unsupported by the quantitative evidence provided.</li>
+<li>The claim of being "simulation-free" is overstated and misleading, as MD data is still required for kinetic parameterization.</li>
+<li>The claim of "variational improvement" over prior work is not rigorously established due to a lack of detailed comparison.</li>
+<li>The claim of generalizability to other biophysical processes is speculative and not supported by evidence.</li>
+<li>The performance of the GDS method for proteins larger than the WW domain is unknown and not discussed.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

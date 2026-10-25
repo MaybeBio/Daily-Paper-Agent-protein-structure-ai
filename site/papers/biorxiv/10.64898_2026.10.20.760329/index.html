@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UnibindMD: An Integrated AI and Molecular Dynamics Platform for De Novo Peptide Binder Design · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>UnibindMD: An Integrated AI and Molecular Dynamics Platform for De Novo Peptide Binder Design</h1>
+      <div class="meta">Wu X; Huang A; Fu C; Wang Z; Fu W</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-23
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.20.760329">原文</a>
+      </div>
+      <p class="one-liner">该文提出UnibindMD集成平台，将深度学习设计、结构预测、亲和力预测与MD验证串联，用于从头设计肽结合剂，核心聚焦蛋白质结构计算问题，方法创新且应用明确。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">UnibindMD is an integrated computational platform that turns a protein target into validated de novo peptide-binder leads by chaining five orthogonal stages: deep-learning binder design (BindCraft), independent structure prediction and confidence assessment (AlphaFold3-class / Boltz-2), binding-affinity prediction (PRODIGY), developability profiling (ADMET-AI), and all-atom molecular-dynamics validation (GROMACS/CHARMM36m). The platform targets a persistent weakness of single-method design, namely that confidence metrics such as ipTM and pLDDT are self-consistent but not independent, so a design predicted to be confident may still be physically unstable. We demonstrate UnibindMD on three Andes virus (ANDV) intervention points, a setting of urgent need given a case fatality rate approaching 40%, a 2026 MV Hondius cruise-ship outbreak (13 cases, 3 deaths), and no approved therapeutic: the Gn-Gc glycoprotein complex (viral entry), the L-protein endonuclease domain (cap-snatching; PDB 6Q99), and the host VEGFR2 kinase (vascular permeability; PDB 2XIR). Across nine BindCraft campaigns (4,475 trajectories) the platform produced 464 accepted binders (acceptance 2.3-67.6%), with top candidates reaching ipTM = 0.94 and pLDDT = 0.94. The three selected leads were predicted by PRODIGY to bind with G = -9.1 to -11.1 kcal mol-1 (Kd 8 nM-0.2 μM), and all three remained stably bound over 100 ns of unrestrained molecular dynamics (receptor CαRMSD ≤ 2.6 Å, retained peptide fold, ≥ 99.5% of frames preserving more than half of the initial interface contacts, and 75-82% helical content). ADMET-AI flagged the expected poor oral bioavailability of large polar peptides and no PAINS alerts. By converting single-prediction design into a cross-validated, dynamics-tested workflow, UnibindMD provides a rapid, scalable, and generalizable path from any protein target to validated peptide-binder candidates.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">UnibindMD是一个集成计算平台，通过串联五个正交阶段将蛋白质靶标转化为经过验证的从头设计肽结合剂候选物：深度学习结合剂设计（BindCraft）、独立结构预测和置信度评估（AlphaFold3类 / Boltz-2）、结合亲和力预测（PRODIGY）、可开发性分析（ADMET-AI）以及全原子分子动力学验证（GROMACS/CHARMM36m）。该平台针对单一方法设计的持久弱点，即ipTM和pLDDT等置信度指标是自洽的但非独立的，因此预测为高置信度的设计仍可能在物理上不稳定。我们在三个安第斯病毒（ANDV）干预点上展示了UnibindMD，鉴于病死率接近40%、2026年MV Hondius游轮疫情暴发（13例病例，3例死亡）以及尚无获批疗法，这一领域需求迫切：Gn-Gc糖蛋白复合物（病毒进入）、L蛋白内切酶结构域（帽抢夺；PDB 6Q99）以及宿主VEGFR2激酶（血管通透性；PDB 2XIR）。在九个BindCraft活动（4,475条轨迹）中，该平台产生了464个可接受的结合剂（接受率2.3-67.6%），顶级候选物达到ipTM = 0.94和pLDDT = 0.94。三个选定的先导物被PRODIGY预测以G = -9.1至-11.1 kcal mol-1（Kd 8 nM-0.2 μM）结合，且所有三个在100 ns无约束分子动力学中保持稳定结合（受体CαRMSD ≤ 2.6 Å，保留肽折叠，≥ 99.5%的帧保留超过一半的初始界面接触，以及75-82%的螺旋含量）。ADMET-AI标记了大型极性肽预期的口服生物利用度差，且无PAINS警报。通过将单一预测设计转化为交叉验证、动力学测试的工作流程，UnibindMD提供了一条从任何蛋白质靶标到验证肽结合剂候选物的快速、可扩展且通用路径。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：UnibindMD: An Integrated AI and Molecular Dynamics Platform for De Novo Peptide Binder Design</li>
+<li><strong>作者与单位</strong>：Wu X; Huang A; Fu C; Wang Z; Fu W（单位未提供）</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026-10-23</li>
+<li><strong>论文类型</strong>：方法学/平台论文（含案例研究）</li>
+<li><strong>领域</strong>：蛋白质-肽结合物设计 × AI + 分子动力学（MD）验证</li>
+<li><strong>关键词</strong>：de novo peptide binder design, BindCraft, AlphaFold3/Boltz-2, PRODIGY, ADMET-AI, GROMACS, Andes virus, molecular dynamics validation</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.10.20.760329</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（仅提及 PDB 结构 6Q99、2XIR 作为靶点结构）</li>
+<li><strong>阅读日期</strong>：2026-10-23</li>
+<li><strong>在该方向中的位置</strong>：本文属于「AI 驱动的蛋白质-肽结合物设计 + 物理模拟验证」的集成平台类工作。其核心主张是：单一 AI 设计工具的置信度指标（ipTM/pLDDT）是自洽但非独立的，必须通过独立的结构预测、亲和力预测、ADMET 评估和全原子 MD 模拟进行交叉验证，才能获得物理上稳定的候选分子。该工作位于「结构预测（AlphaFold 类）→ 结合物设计（BindCraft）→ 物理验证（MD）」这一流水线的集成端，强调工作流而非单一算法创新。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文构建了一个五阶段集成平台 UnibindMD（BindCraft 设计 → Boltz-2 结构预测 → PRODIGY 亲和力预测 → ADMET-AI 成药性评估 → GROMACS MD 验证），在 Andes virus 三个靶点上产出 464 个候选肽结合物，其中 3 个先导物经 PRODIGY 预测 Kd 为 8 nM–0.2 μM，并在 100 ns 无约束 MD 中保持稳定结合（受体 Cα RMSD ≤ 2.6 Å，≥ 99.5% 帧保留 &gt; 50% 初始界面接触）。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何将单次 AI 预测的肽结合物设计转化为经过独立交叉验证和动力学测试的可靠候选物？</li>
+<li><strong>为什么重要</strong>：现有 AI 设计工具（如 BindCraft）的置信度指标（ipTM、pLDDT）是模型自洽的，但并非独立于模型本身的验证。一个被预测为高置信度的设计可能在物理上不稳定（如肽段折叠不稳定、界面接触松散、在 MD 中迅速解离）。在 Andes virus（致死率近 40%，2026 年 MV Hondius 游轮爆发 13 例 3 死，无获批治疗药物）等紧急场景下，需要快速且可靠的候选物。</li>
+<li><strong>现有方法为何不足</strong>：单一方法（仅 AI 设计、仅结构预测或仅 MD）各自存在盲区：AI 设计缺乏物理验证；结构预测的置信度指标自洽但不独立；MD 模拟需要初始候选物且计算成本高。没有集成平台将这些正交方法串联成可扩展的工作流。</li>
+<li><strong>精确研究问题</strong>：Can a five-stage integrated pipeline (AI design → independent structure prediction → affinity prediction → developability profiling → MD validation) convert single-prediction peptide-binder designs into physically stable, validated leads across multiple protein targets?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架，标注为「仅本文框架」；未提供外部综述性引用。</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>阶段一：AI 驱动的结合物设计（BindCraft 类）</strong>
+   - 代表性方法：BindCraft（深度学习，基于序列/结构生成肽结合物）
+   - 优点：高通量、可扩展、无需先验实验数据
+   - 局限：输出为统计预测，缺乏物理稳定性保证；置信度指标（ipTM/pLDDT）自洽但不独立
+   - 本文位置：作为流水线第一站，生成候选池</p>
+</li>
+<li>
+<p><strong>阶段二：独立结构预测与置信度评估（AlphaFold3 类 / Boltz-2）</strong>
+   - 代表性方法：AlphaFold3、Boltz-2
+   - 优点：高精度结构预测，提供 ipTM/pLDT 等置信度指标
+   - 局限：预测基于训练数据分布，对全新设计（de novo）可能过度自信；不评估动力学稳定性
+   - 本文位置：作为独立于 BindCraft 的第二验证层</p>
+</li>
+<li>
+<p><strong>阶段三：结合亲和力预测（PRODIGY）</strong>
+   - 代表性方法：PRODIGY（基于接触界面的结合自由能预测）
+   - 优点：快速、无需模拟
+   - 局限：基于经验/统计势，不捕捉构象动态
+   - 本文位置：提供热力学排序</p>
+</li>
+<li>
+<p><strong>阶段四：成药性评估（ADMET-AI）</strong>
+   - 代表性方法：ADMET-AI（吸收、分布、代谢、排泄、毒性预测）
+   - 优点：快速筛选类药性
+   - 局限：对肽类分子的口服生物利用度预测保守
+   - 本文位置：过滤不可开发候选</p>
+</li>
+<li>
+<p><strong>阶段五：全原子 MD 验证（GROMACS/CHARMM36m）</strong>
+   - 代表性方法：GROMACS + CHARMM36m 力场
+   - 优点：物理真实性最高，可评估结合稳定性、构象保持、界面接触持久性
+   - 局限：计算成本高，需要初始候选物
+   - 本文位置：最终仲裁层，淘汰物理不稳定设计</p>
+</li>
+</ol>
+<p><strong>本文主张的位置</strong>：将上述五阶段串联为「设计→交叉验证→物理仲裁」的集成工作流，弥补单一方法的盲区，实现从靶点序列到验证后候选物的端到端路径。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单一 AI 设计工具的置信度指标不可靠</td>
+<td>高 ipTM/pLDDT 的设计可能在 MD 中不稳定</td>
+<td>置信度指标是模型自洽的，不独立于生成模型；统计预测不保证物理稳定性</td>
+<td>Abstract: "confidence metrics such as ipTM and pLDDT are self-consistent but not independent, so a design predicted to be confident may still be physically unstable"</td>
+</tr>
+<tr>
+<td>缺乏跨方法交叉验证</td>
+<td>单次预测无法区分真实结合物与统计伪影</td>
+<td>不同方法（生成、预测、物理模拟）各有盲区，未集成时无法互相校正</td>
+<td>Abstract: "a persistent weakness of single-method design"</td>
+</tr>
+<tr>
+<td>紧急场景下需要快速可靠的候选物</td>
+<td>Andes virus 无获批治疗药物，致死率近 40%</td>
+<td>传统实验筛选耗时，无法应对突发疫情</td>
+<td>Abstract: "a setting of urgent need given a case fatality rate approaching 40%, a 2026 MV Hondius cruise-ship outbreak (13 cases, 3 deaths), and no approved therapeutic"</td>
+</tr>
+<tr>
+<td>肽类分子的成药性挑战</td>
+<td>大极性肽口服生物利用度差</td>
+<td>肽类分子量大、极性高、易被蛋白酶降解</td>
+<td>Abstract: "ADMET-AI flagged the expected poor oral bioavailability of large polar peptides"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>构建一个五阶段串联流水线：BindCraft 生成候选肽 → Boltz-2 独立结构预测 → PRODIGY 亲和力排序 → ADMET-AI 成药性过滤 → GROMACS MD 最终验证。在三个 Andes virus 靶点上运行 9 个 BindCraft 战役（4,475 条轨迹），产出 464 个候选，选 3 个先导物做 100 ns MD。</p>
+<h3>2) 核心洞察</h3>
+<p><strong>正交验证优于单一置信度</strong>：AI 生成模型的置信度指标（ipTM/pLDDT）是自洽的——它们衡量模型自身对预测的信心，而非物理真实性。通过引入独立的结构预测器（Boltz-2）、独立的亲和力预测器（PRODIGY）和物理模拟（MD），每个阶段都提供与前一阶段无关的验证信号。只有当多个正交方法一致支持同一候选物时，该候选物才值得进入实验验证。MD 作为最终仲裁层，提供了 AI 方法无法提供的物理真实性检验。</p>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>多方法交叉验证是 AI 设计可靠性的关键</strong>：任何 AI 生成模型的置信度指标都应被视为「内部一致性」而非「外部真实性」。引入独立验证层（无论是物理模拟、实验还是其他模型）是提高可靠性的通用策略。</li>
+<li><strong>流水线设计可复用</strong>：五阶段架构（生成→独立预测→属性预测→过滤→物理验证）可迁移到其他分子设计任务（如小分子、抗体、核酸适配体）。</li>
+<li><strong>MD 作为「物理仲裁层」的角色</strong>：在 AI 设计流程中，MD 不仅是验证工具，更是筛选标准——它提供了 AI 指标无法捕捉的动力学稳定性信息（如界面接触持久性、构象保持）。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质靶点结构（PDB 6Q99 L-蛋白内切酶结构域；PDB 2XIR VEGFR2 激酶；Gn-Gc 糖蛋白复合物结构未提供 PDB ID）</li>
+<li><strong>输出</strong>：验证后的 de novo 肽结合物先导候选（含预测亲和力、MD 稳定性指标、ADMET 概况）</li>
+<li><strong>模块</strong>：
+  1. BindCraft：深度学习肽结合物设计（生成候选池）
+  2. Boltz-2（AlphaFold3 类）：独立结构预测与置信度评估（ipTM/pLDDT）
+  3. PRODIGY：结合自由能预测（ΔG, Kd）
+  4. ADMET-AI：成药性评估（吸收、毒性、PAINS 警报）
+  5. GROMACS/CHARMM36m：全原子 MD 验证（100 ns 无约束模拟）</li>
+<li><strong>训练</strong>：未提供（BindCraft 为预训练模型，本文未涉及重训练）</li>
+<li><strong>工具</strong>：BindCraft, Boltz-2, PRODIGY, ADMET-AI, GROMACS, CHARMM36m</li>
+<li><strong>反馈回路</strong>：未明确提及（推测为线性流水线，无显式反馈循环）</li>
+<li><strong>假设</strong>：</li>
+<li>BindCraft 生成的候选池足够多样且包含真实结合物</li>
+<li>Boltz-2 的结构预测独立于 BindCraft 的生成过程</li>
+<li>PRODIGY 的亲和力预测与 MD 结果一致</li>
+<li>100 ns MD 足以评估结合稳定性</li>
+<li>CHARMM36m 力场适用于肽-蛋白体系</li>
+</ul>
+<p><strong>文字流程</strong>：
+靶点结构 → BindCraft 生成候选肽池（9 战役，4,475 轨迹）→ 464 个候选通过初始筛选 → Boltz-2 独立预测复合物结构并评估 ipTM/pLDDT → PRODIGY 预测 ΔG/Kd → ADMET-AI 评估成药性 → 选出 3 个先导物 → GROMACS 100 ns 无约束 MD → 评估受体 Cα RMSD、肽段折叠保持、界面接触保留率、螺旋含量 → 输出验证后的候选物。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BindCraft</td>
+<td>深度学习生成 de novo 肽结合物候选</td>
+<td>提供初始候选池，高通量生成</td>
+<td>输入：靶点结构；输出：候选肽序列/结构</td>
+<td>Abstract: "deep-learning binder design (BindCraft)"</td>
+<td>无候选池，流水线无法启动（预期）</td>
+</tr>
+<tr>
+<td>Boltz-2（AlphaFold3 类）</td>
+<td>独立结构预测与置信度评估</td>
+<td>提供与 BindCraft 无关的结构验证，避免自洽偏差</td>
+<td>输入：靶点+候选肽序列；输出：预测复合物结构、ipTM/pLDDT</td>
+<td>Abstract: "independent structure prediction and confidence assessment"</td>
+<td>失去独立结构验证，仅依赖 BindCraft 自身置信度（预期）</td>
+</tr>
+<tr>
+<td>PRODIGY</td>
+<td>结合亲和力预测</td>
+<td>提供热力学排序，筛选高亲和力候选</td>
+<td>输入：复合物结构；输出：ΔG, Kd</td>
+<td>Abstract: "binding-affinity prediction (PRODIGY)"；结果：ΔG = -9.1 至 -11.1 kcal/mol，Kd = 8 nM–0.2 μM</td>
+<td>无法排序候选，可能保留低亲和力结合物（预期）</td>
+</tr>
+<tr>
+<td>ADMET-AI</td>
+<td>成药性评估</td>
+<td>过滤不可开发候选，避免后期失败</td>
+<td>输入：候选分子结构；输出：ADMET 属性、PAINS 警报</td>
+<td>Abstract: "ADMET-AI flagged the expected poor oral bioavailability of large polar peptides and no PAINS alerts"</td>
+<td>可能保留毒性或不可开发候选（预期）</td>
+</tr>
+<tr>
+<td>GROMACS/CHARMM36m</td>
+<td>全原子 MD 验证</td>
+<td>提供物理真实性检验，评估结合稳定性</td>
+<td>输入：复合物结构；输出：RMSD、接触保留率、螺旋含量等轨迹指标</td>
+<td>Abstract: "all three remained stably bound over 100 ns of unrestrained molecular dynamics (receptor CαRMSD ≤ 2.6 Å, retained peptide fold, ≥ 99.5% of frames preserving more than half of the initial interface contacts, and 75-82% helical content)"</td>
+<td>失去物理验证，候选物可能动力学不稳定（预期）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用。本文为平台/工作流论文，摘要中未提供具体公式。涉及的量化指标（ipTM、pLDDT、ΔG、Kd、RMSD、接触保留率、螺旋含量）均为标准定义，但原文未给出公式。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：3 个 Andes virus 靶点——Gn-Gc 糖蛋白复合物（病毒入侵）、L-蛋白内切酶结构域（cap-snatching，PDB 6Q99）、宿主 VEGFR2 激酶（血管通透性，PDB 2XIR）</li>
+<li><strong>规模</strong>：9 个 BindCraft 战役，4,475 条轨迹，464 个候选结合物</li>
+<li><strong>指标</strong>：ipTM、pLDDT、PRODIGY ΔG/Kd、MD 轨迹指标（受体 Cα RMSD、肽段折叠保持、界面接触保留率、螺旋含量）、ADMET 属性</li>
+<li><strong>基线</strong>：未提供（无对比基线）</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供（GROMACS 运行硬件未说明）</li>
+<li><strong>Oracle 输入</strong>：PDB 结构（6Q99, 2XIR）作为靶点结构输入</li>
+<li><strong>评测协议</strong>：未提供（无实验验证，仅计算预测）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9 个 BindCraft 战役（4,475 轨迹）</td>
+<td>BindCraft 能生成足够多样的候选池</td>
+<td>3 个靶点，无对比</td>
+<td>464 个候选结合物，接受率 2.3–67.6%</td>
+<td>流水线可扩展至多靶点</td>
+<td>接受率差异大，未解释原因</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>3 个先导物的 PRODIGY 预测</td>
+<td>候选物具有高预测亲和力</td>
+<td>无对比</td>
+<td>ΔG = -9.1 至 -11.1 kcal/mol，Kd = 8 nM–0.2 μM</td>
+<td>候选物预测结合强</td>
+<td>未与已知结合物对比，未实验验证</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>3 个先导物的 100 ns MD</td>
+<td>候选物在物理模拟中稳定结合</td>
+<td>无对比（无阴性对照）</td>
+<td>受体 Cα RMSD ≤ 2.6 Å，≥ 99.5% 帧保留 &gt; 50% 初始接触，75–82% 螺旋含量</td>
+<td>候选物在 MD 时间尺度内稳定</td>
+<td>100 ns 不足以证明长期稳定性；无 unbinding 对照</td>
+<td>Abstract</td>
+</tr>
+<tr>
+<td>ADMET-AI 评估</td>
+<td>候选物无严重成药性问题</td>
+<td>无对比</td>
+<td>无 PAINS 警报；大极性肽口服生物利用度差（预期）</td>
+<td>候选物无 PAINS 警报</td>
+<td>口服生物利用度差，需替代给药途径</td>
+<td>Abstract</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅涉及计算预测，无任何实验验证（无体外/体内结合实验）。所有结论均为计算层面的「候选物筛选」。</li>
+<li><strong>Oracle/真值输入</strong>：靶点结构来自 PDB（6Q99, 2XIR），Gn-Gc 结构未提供 PDB ID。无实验结合数据作为真值。</li>
+<li><strong>端到端状态</strong>：流水线端到端运行成功，但「端到端」仅指计算流程，不包含湿实验验证。</li>
+<li><strong>算力成本</strong>：未提供。MD 100 ns × 3 体系的算力成本未说明。</li>
+<li><strong>历史数据依赖</strong>：BindCraft、Boltz-2、PRODIGY、ADMET-AI 均为预训练/预构建工具，本文未涉及重训练。依赖这些工具的训练数据分布。</li>
+<li><strong>模型依赖</strong>：所有结论依赖 BindCraft 的生成质量、Boltz-2 的结构预测准确性、PRODIGY 的亲和力预测精度、CHARMM36m 力场对肽-蛋白体系的适用性。</li>
+<li><strong>最难情形</strong>：未讨论。未说明哪些靶点类型或肽段特征下流水线可能失败。</li>
+<li><strong>群体/领域边界</strong>：仅在 Andes virus 三个靶点上验证。结论不能推广至所有蛋白靶点或所有肽类设计任务。</li>
+<li><strong>不确定性</strong>：未提供置信区间、误差分析或多次重复实验的变异性。接受率 2.3–67.6% 的宽范围未解释。</li>
+<li><strong>有边界的复述</strong>：UnibindMD 在 Andes virus 三个靶点上，通过五阶段计算流水线产出了 464 个候选肽结合物，其中 3 个先导物在计算预测中显示强结合（Kd 8 nM–0.2 μM）并在 100 ns MD 中保持稳定。该结论仅限于计算层面，未经实验验证，且仅适用于所测试的三个靶点。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- ADMET-AI 预测大极性肽口服生物利用度差——这暗示候选物可能需要非口服给药途径，但作者未将其作为局限讨论。
+- 接受率范围宽（2.3–67.6%），作者未解释原因或讨论其对流水线效率的影响。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无实验验证</td>
+<td>所有结论均为计算预测，无湿实验确认结合活性</td>
+<td>计算预测与实验结合之间存在显著差距，尤其在 de novo 设计场景</td>
+<td>对 3 个先导物进行 SPR/ITC 结合实验、细胞水平中和实验</td>
+<td>Abstract 未提及任何实验验证</td>
+</tr>
+<tr>
+<td>无对比基线</td>
+<td>未与现有方法（如单独 BindCraft、其他设计工具）对比</td>
+<td>无法评估五阶段流水线的增量价值</td>
+<td>运行 BindCraft 单独设计，对比 MD 通过率、候选质量</td>
+<td>Abstract 未提供基线</td>
+</tr>
+<tr>
+<td>无阴性对照</td>
+<td>MD 验证中未包含已知非结合肽或随机肽作为对照</td>
+<td>无法确认 MD 稳定性指标是否具有区分度</td>
+<td>加入随机肽/已知弱结合肽作为 MD 阴性对照</td>
+<td>Abstract 仅报告阳性结果</td>
+</tr>
+<tr>
+<td>接受率范围宽（2.3–67.6%）</td>
+<td>不同靶点间接受率差异巨大，未解释原因</td>
+<td>可能反映 BindCraft 对不同靶点类型的适用性差异，影响流水线通用性</td>
+<td>分析各靶点的序列/结构特征与接受率的相关性</td>
+<td>Abstract 数据</td>
+</tr>
+<tr>
+<td>100 ns MD 时间尺度有限</td>
+<td>100 ns 可能不足以评估结合稳定性，尤其对弱结合或慢解离体系</td>
+<td>更长时间模拟可能显示解离事件</td>
+<td>延长至 500 ns–1 μs，或使用增强采样方法</td>
+<td>Abstract 仅报告 100 ns</td>
+</tr>
+<tr>
+<td>无 unbinding 事件报告</td>
+<td>未报告 MD 中是否观察到肽段解离</td>
+<td>如果所有候选均稳定，可能反映筛选标准过严或 MD 条件过于宽松</td>
+<td>报告 MD 中解离事件数量、解离时间分布</td>
+<td>Abstract 未提及</td>
+</tr>
+<tr>
+<td>选择 3 个先导物的标准不透明</td>
+<td>未说明从 464 个候选中选择 3 个先导物的具体标准</td>
+<td>选择偏差可能影响结论代表性</td>
+<td>明确选择标准（如 ipTM 阈值、PRODIGY 排序、ADMET 过滤）</td>
+<td>Abstract 未提供</td>
+</tr>
+<tr>
+<td>靶点选择偏倚</td>
+<td>三个靶点均来自 Andes virus，可能具有相似的可成药性特征</td>
+<td>流水线在其他靶点类型（如蛋白-蛋白相互作用界面、酶活性位点）上的表现未知</td>
+<td>在多样化靶点集上测试（如激酶、转录因子、膜蛋白）</td>
+<td>Abstract 仅涉及 Andes virus 靶点</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>五阶段正交验证流水线架构</strong>：设计（BindCraft）→ 独立结构预测（Boltz-2）→ 亲和力预测（PRODIGY）→ 成药性过滤（ADMET-AI）→ MD 物理仲裁（GROMACS）。此架构可迁移至其他分子设计任务（抗体设计、小分子对接、核酸适配体），核心思想是「每个阶段提供与前一阶段无关的验证信号」。</p>
+</li>
+<li>
+<p><strong>置信度指标的「自洽但不独立」陷阱</strong>：AI 生成模型的置信度指标（ipTM/pLDDT）衡量模型自身信心，而非物理真实性。在蛋白质结构预测和设计中，应始终引入独立验证层，而非仅依赖生成模型的内部指标。</p>
+</li>
+<li>
+<p><strong>MD 作为最终仲裁层的角色</strong>：MD 提供了 AI 指标无法捕捉的动力学信息——界面接触持久性、构象保持、解离事件。在计算资源允许时，MD 应作为筛选流水线的最后关卡，而非仅用于事后分析。</p>
+</li>
+<li>
+<p><strong>多靶点战役设计</strong>：9 个战役 × 3 个靶点的设计展示了如何系统评估流水线在不同靶点上的表现。接受率范围（2.3–67.6%）提示：流水线效率高度依赖靶点特征，需要报告各靶点的独立结果而非仅聚合数据。</p>
+</li>
+<li>
+<p><strong>肽类成药性的现实预期</strong>：ADMET-AI 预测大极性肽口服生物利用度差是预期结果，但流水线仍可产出候选物——这提示在肽类设计中，应提前考虑给药途径（如注射、鼻内）而非仅追求口服可用性。</p>
+</li>
+<li>
+<p><strong>计算流水线的「端到端」边界</strong>：本文的「端到端」仅指计算流程，不包含实验验证。在类似工作中，应明确区分「计算验证」与「实验验证」的边界，避免读者误解。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>BindCraft</strong>：BindCraft 是已知的深度学习肽结合物设计工具（外部工具，本文使用）。其设计逻辑基于蛋白质-肽相互作用模式的统计学习。本文将其作为流水线第一站，但未提供 BindCraft 的原始引用或版本信息。</li>
+<li><strong>AlphaFold3 / Boltz-2</strong>：AlphaFold3 是 DeepMind 发布的结构预测模型，支持蛋白-配体复合物预测；Boltz-2 是开源的 AlphaFold3 类替代品。本文使用 Boltz-2 作为独立结构预测器，利用其 ipTM/pLDDT 指标进行置信度评估。这与 AlphaFold 系列在蛋白质结构预测中的广泛应用一致。</li>
+<li><strong>PRODIGY</strong>：PRODIGY 是基于接触界面的结合自由能预测工具，常用于蛋白-蛋白/蛋白-肽相互作用的热力学评估。本文将其用于亲和力排序。</li>
+<li><strong>ADMET-AI</strong>：ADMET-AI 是用于预测吸收、分布、代谢、排泄和毒性属性的 AI 工具，在药物发现流程中常用。本文将其用于成药性过滤。</li>
+<li><strong>GROMACS + CHARMM36m</strong>：GROMACS 是广泛使用的分子动力学模拟软件；CHARMM36m 是适用于蛋白质和肽模拟的力场，特别优化了 intrinsically disordered peptides 的模拟。本文使用该组合进行 100 ns 无约束 MD 验证。</li>
+<li><strong>Andes virus 背景</strong>：Andes virus（ANDV）是汉坦病毒属成员，通过啮齿动物传播，可导致汉坦病毒肺综合征（HPS），致死率高。本文选择其作为应用场景，与 2026 年 MV Hondius 游轮爆发事件相关。该病毒的关键靶点包括 Gn-Gc 糖蛋白复合物（介导病毒入侵）、L-蛋白内切酶结构域（cap-snatching 机制，mRNA 加帽）和宿主 VEGFR2（血管通透性调控）。</li>
+<li><strong>与「蛋白质结构相关计算研究 × AI/物理模拟」方向的连接</strong>：本文位于「AI 设计 + 物理验证」的交叉点，与以下方向相关：(1) AlphaFold 系列在结构预测中的应用；(2) 深度学习驱动的 de novo 蛋白/肽设计；(3) MD 模拟在结合亲和力验证中的应用；(4) 多工具集成流水线在计算药物发现中的兴起。本文的独特贡献在于将五阶段流水线作为「平台」提出，而非单一算法创新。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：UnibindMD 流水线的实验验证扩展
+   - <strong>来源局限/观察</strong>：本文无任何实验验证，所有结论均为计算预测
+   - <strong>核心假设</strong>：3 个先导物在体外结合实验（SPR/ITC）中显示与预测一致的亲和力
+   - <strong>初步方法</strong>：合成 3 个先导肽，进行 SPR 结合实验、细胞水平病毒中和实验
+   - <strong>验证方式</strong>：对比实验 Kd 与 PRODIGY 预测 Kd；评估 MD 稳定性指标与实验结合的相关性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：MD 稳定性指标与实验结合亲和力的相关性研究
+   - <strong>来源局限/观察</strong>：本文使用 MD 稳定性指标（RMSD、接触保留率、螺旋含量）作为验证标准，但未验证这些指标与实验结合的相关性
+   - <strong>核心假设</strong>：MD 稳定性指标（如接触保留率）与实验结合亲和力呈正相关，可作为计算筛选的有效代理指标
+   - <strong>初步方法</strong>：收集已发表的蛋白-肽结合实验数据（含 MD 模拟和实验 Kd），系统评估 MD 指标与实验 Kd 的相关性
+   - <strong>验证方式</strong>：回归分析、ROC 曲线评估 MD 指标的区分能力
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：UnibindMD 流水线在不同靶点类型上的泛化性评估
+   - <strong>来源局限/观察</strong>：本文仅测试 3 个 Andes virus 靶点，接受率范围宽（2.3–67.6%），未解释原因
+   - <strong>核心假设</strong>：流水线接受率与靶点结构特征（如结合口袋深度、疏水性、柔性）相关
+   - <strong>初步方法</strong>：在多样化靶点集（激酶、转录因子、蛋白-蛋白界面、膜蛋白）上运行流水线，分析靶点特征与接受率的关系
+   - <strong>验证方式</strong>：多靶点接受率对比、特征相关性分析
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：MD 模拟时间尺度对结合稳定性判断的影响
+   - <strong>来源局限/观察</strong>：100 ns MD 可能不足以评估弱结合或慢解离体系
+   - <strong>核心假设</strong>：延长 MD 至 μs 尺度或使用增强采样（如 metadynamics、replica exchange）可揭示 100 ns 内未观察到的解离事件
+   - <strong>初步方法</strong>：对 3 个先导物进行 500 ns–1 μs MD 或增强采样模拟，对比不同时间尺度的稳定性判断
+   - <strong>验证方式</strong>：解离事件发生率、结合自由能计算（MM-PBSA、FEP）对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：AI 置信度指标与 MD 验证结果的一致性分析
+   - <strong>来源局限/观察</strong>：本文核心主张是 AI 置信度指标「自洽但不独立」，但未系统量化 AI 指标与 MD 结果的一致性
+   - <strong>核心假设</strong>：BindCraft 的置信度指标与 MD 稳定性指标存在系统性偏差，可通过校准提高 AI 指标的预测价值
+   - <strong>初步方法</strong>：对 464 个候选物系统比较 BindCraft 置信度与 MD 结果，构建校准曲线
+   - <strong>验证方式</strong>：校准误差（ECE）、可靠性图
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：肽段螺旋含量与结合稳定性的结构-动力学关系
+   - <strong>来源局限/观察</strong>：本文报告 75–82% 螺旋含量作为稳定性指标，但未探讨螺旋含量与结合机制的关系
+   - <strong>核心假设</strong>：高螺旋含量肽段通过预组织（pre-organization）降低结合熵代价，从而增强结合稳定性
+   - <strong>初步方法</strong>：对 3 个先导物进行圆二色谱（CD）实验验证螺旋含量，结合 MD 分析螺旋形成与界面接触的时序关系
+   - <strong>验证方式</strong>：CD 实验 vs MD 预测螺旋含量对比；螺旋含量与结合自由能的相关性
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present UnibindMD, an integrated computational platform combining five stages (BindCraft, Boltz-2, PRODIGY, ADMET-AI, GROMACS/CHARMM36m) for de novo peptide binder design. They report application to three Andes virus targets, with 464 accepted binders from 4,475 trajectories, top candidates at ipTM = 0.94 and pLDDT = 0.94, predicted binding free energies of -9.1 to -11.1 kcal mol-1, and stable 100 ns molecular dynamics simulations for three selected leads.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or supplementary data provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, methods details, simulation parameters, trajectory analyses, target structure preparation protocols, and supplementary data</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract describes a potentially useful integrated pipeline for peptide binder design, addressing a legitimate concern about over-reliance on self-consistent confidence metrics. However, the evidence presented in the abstract is insufficient to evaluate the technical soundness of the platform, the validity of the reported metrics, or the generalizability claims. Several quantitative claims lack methodological context, and the biological relevance of the three targets is asserted but not demonstrated with functional validation.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biologists and protein design researchers interested in integrated pipelines that combine deep learning with physics-based validation. Structural biologists working on viral entry mechanisms, particularly arenaviruses, may find the application to Andes virus relevant. Drug discovery scientists seeking practical workflows for peptide binder development could benefit if the platform is shown to be robust and generalizable.</li>
+<li><strong>Major strengths</strong> The platform addresses a real limitation in current AI-based protein design, namely the circularity of self-consistent confidence metrics. The multi-stage design is logical and each component is well-established in the field. The choice of Andes virus targets is timely and clinically motivated, given the high case fatality rate and lack of approved therapeutics.</li>
+<li><strong>Major Concerns</strong> The abstract reports quantitative results without sufficient methodological context to assess their validity. The acceptance rate range of 2.3-67.6% is extremely broad and unexplained. The molecular dynamics metrics are presented as evidence of stability but the criteria for "stable" are not justified. The claim of generalizability is unsupported by the single-target-family demonstration. No functional or experimental validation is presented.</li>
+<li><strong>Minor Comments</strong> The abstract uses "G = -9.1 to -11.1 kcal mol-1" without specifying the sign convention or the method used by PRODIGY. The Kd range of 8 nM-0.2 μM spans more than an order of magnitude and is not discussed. The statement about ADMET-AI flagging "expected poor oral bioavailability" is vague and does not specify which properties were predicted. The relationship between the three targets and the "intervention points" framing is not explained in terms of therapeutic rationale.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The abstract does not provide sufficient detail on the molecular dynamics setup, the criteria for selecting the three leads from 464 accepted binders, the statistical treatment of the trajectory analyses, or the validation of the PRODIGY predictions against known binders. The claim that the platform is "generalizable" is not supported by the evidence presented.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: moderate. The integration of existing tools is useful but not conceptually novel. Scientific importance: potentially high if the platform is validated, but the abstract does not demonstrate this. Interdisciplinary readership: the work spans AI, structural biology, and drug discovery, which could attract broad interest. Technical soundness: cannot be assessed from the abstract alone. Readability for nonspecialists: the abstract is accessible but uses field-specific terms without sufficient explanation.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract presents a plausible pipeline and promising preliminary results, but the lack of methodological detail and functional validation prevents assessment of whether the core claims are supported.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> "all three remained stably bound over 100 ns of unrestrained molecular dynamics (receptor CαRMSD ≤ 2.6 Å, retained peptide fold, ≥ 99.5% of frames preserving more than half of the initial interface contacts, and 75-82% helical content)"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The molecular dynamics stability criteria are presented without justification. The threshold of "more than half of the initial interface contacts" is arbitrary and may not reflect meaningful binding. The helical content metric is reported without context for whether this is expected for the designed peptides or the target interface. The RMSD threshold of 2.6 Å is not compared to any control or reference simulation.</li>
+<li><strong>Why it matters</strong> The central claim of the platform is that it provides dynamics-validated binders. If the stability criteria are not rigorous or are not benchmarked against known negatives, the validation step may be meaningless and the platform's advantage over single-method design is not established.</li>
+<li>
+<p><strong>Resolution test</strong> Provide the simulation setup, force field parameters, equilibration protocol, and a comparison of the stability metrics for the selected leads against negative controls or known non-binders. Justify the contact preservation threshold and show that it correlates with experimentally validated binding.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> "By converting single-prediction design into a cross-validated, dynamics-tested workflow, UnibindMD provides a rapid, scalable, and generalizable path from any protein target to validated peptide-binder candidates"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The generalizability claim is based on three targets within a single viral system. No evidence is presented that the platform performs equally well on diverse target classes, such as protein-protein interaction interfaces, enzyme active sites, or membrane proteins. The "any protein target" claim is not supported by the data shown.</li>
+<li><strong>Why it matters</strong> The stated value of the platform is its general applicability. If the platform only works on a narrow range of targets, the claim is misleading and the practical utility is limited.</li>
+<li>
+<p><strong>Resolution test</strong> Demonstrate the platform on targets from at least two additional protein families with different structural and biophysical characteristics. Report success rates and failure modes across these diverse targets.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Validation adequacy</li>
+<li><strong>Claim pointer</strong> "The three selected leads were predicted by PRODIGY to bind with G = -9.1 to -11.1 kcal mol-1 (Kd 8 nM-0.2 μM)"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Concern</strong> The binding affinity predictions are computational only. No experimental validation, such as surface plasmon resonance, isothermal titration calorimetry, or cellular assays, is presented. The abstract does not state whether any of the 464 accepted binders were tested experimentally.</li>
+<li><strong>Why it matters</strong> Computational predictions of binding affinity are known to have significant error. Without experimental confirmation, the claim that these are "validated peptide-binder leads" is not supported. The term "validated" is used in the abstract but appears to refer only to computational cross-validation.</li>
+<li><strong>Resolution test</strong> Provide experimental binding data for at least the three selected leads, or clearly state that the results are computational predictions and adjust the language accordingly.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Acceptance rate reporting</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The acceptance rate range of 2.3-67.6% across nine campaigns is extremely broad and unexplained. This range suggests high variability in performance across targets or conditions.</li>
+<li>
+<p><strong>Required correction</strong> Report the acceptance rate per target and discuss the sources of variability. If the range reflects different target difficulty, this should be stated explicitly.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Use of "validated"</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract uses "validated" to describe the peptide-binder leads, but the evidence presented is entirely computational. This terminology may mislead readers into assuming experimental confirmation.</li>
+<li>
+<p><strong>Required correction</strong> Replace "validated" with "computationally assessed" or "in silico validated" throughout the abstract, or provide experimental data to justify the term.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> ADMET-AI results</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The ADMET-AI statement is vague. "Expected poor oral bioavailability" and "no PAINS alerts" are reported without specific values or comparison to reference compounds.</li>
+<li>
+<p><strong>Required correction</strong> Report the specific ADMET properties predicted, such as permeability, solubility, and metabolic stability, and compare them to known peptide therapeutics or approved peptide drugs.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Context</li>
+<li><strong>Affected element</strong> Target selection rationale</li>
+<li><strong>Evidence pointer</strong> Abstract, location not provided</li>
+<li><strong>Issue</strong> The abstract states that the three targets are "intervention points" for Andes virus but does not explain why these specific targets were chosen or how they relate to the viral life cycle and pathogenesis.</li>
+<li><strong>Required correction</strong> Provide a brief rationale for each target, including its role in viral entry, replication, or pathogenesis, and why disrupting it with a peptide binder would be therapeutically relevant.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that UnibindMD provides "a rapid, scalable, and generalizable path from any protein target to validated peptide-binder candidates" is unsupported. The evidence covers only three targets in one viral system, and no experimental validation is presented.</li>
+<li>The claim that the three selected leads are "validated" is unsupported. All evidence is computational, and the term "validated" implies experimental confirmation that is not described.</li>
+<li>The molecular dynamics stability metrics are presented as evidence of binding stability, but no benchmarks, controls, or comparisons to known non-binders are provided. The criteria for "stable" are not justified.</li>
+<li>The predicted binding affinities (G = -9.1 to -11.1 kcal mol-1) are reported without experimental confirmation or comparison to known binders of the same targets.</li>
+<li>The acceptance rate range of 2.3-67.6% is reported without explanation, making it impossible to assess the consistency and reliability of the platform.</li>
+<li>The ADMET-AI results are reported in vague terms without specific values, preventing assessment of the developability claims.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

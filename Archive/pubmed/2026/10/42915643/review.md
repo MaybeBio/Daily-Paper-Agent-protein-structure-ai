@@ -1,0 +1,92 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report that inositol hexakisphosphate (IP6) promotes an open pore state in the HIV-1 capsid protein lattice by reconfiguring subunit contacts. They base this on high-speed atomic force microscopy (HS-AFM) observations of individual hexamer pores, constant-pH molecular dynamics (MD) simulations, and mechanical fatigue assays. They conclude that IP6 acts as a proviral regulator coupling pore dynamics, intersubunit contact rewiring, and mechanical resilience.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or numerical data provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, experimental methods, simulation parameters, statistical analyses, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting and mechanistically ambitious study that combines single-molecule imaging, simulation, and mechanical testing to address a relevant question in HIV-1 biology. However, the current evidence base is insufficient to evaluate the validity of the central claims. The abstract reports qualitative findings without quantitative data, statistical support, or methodological detail. The link between the observed pore states, the simulated contact rewiring, and the mechanical fatigue results is asserted rather than demonstrated. The claim that IP6 is a "proviral regulator" coupling multiple phenomena is a strong interpretive leap that requires substantially more evidence than is presented here.
+- **Who would be interested in the results, and why** Researchers studying HIV-1 capsid biology, viral uncoating and reverse transcription, capsid-targeting antiviral development, and biophysical studies of protein lattice dynamics. The mechanical properties of the capsid and the role of IP6 may also interest the broader community studying virus mechanics and nanomaterials.
+- **Major strengths** The study addresses a specific and important mechanistic question about how IP6 modulates pore conformation. The combination of experimental single-molecule imaging, computational simulation, and mechanical testing is a potentially powerful approach. The focus on individual hexamer dynamics rather than averaged structures is a notable methodological advance.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that HS-AFM visualized asynchronous motions of individual hexamer pores and identified dynamic transitions between two major states, and that quantitative analysis enabled estimation of IP6-induced pore conformations and populations.
+  - **Evidence pointer** Abstract only; no figures or tables provided
+  - **Concern** The abstract provides no quantitative data, no statistical measures, no sample sizes, and no description of how the two states were defined or distinguished. The claim that "quantitative analysis enabled estimation" is unsupported by any presented numbers or error estimates.
+  - **Why it matters** Without quantitative evidence, the reader cannot assess whether the two-state model is robust, whether the populations are significantly different between conditions, or whether the observations are reproducible. This is the foundational experimental claim on which the entire mechanistic interpretation rests.
+  - **Resolution test** Provide the actual population estimates, transition frequencies, dwell times, and statistical comparisons between IP6-present and IP6-absent conditions, with appropriate error bars and significance tests.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic support
+  - **Claim pointer** The authors claim that constant-pH MD simulations reveal that IP6 induces contact rewiring at the pore entrance, stabilizing the open state through coordinated rearrangement of intersubunit interactions.
+  - **Evidence pointer** Abstract only; no simulation details provided
+  - **Concern** The abstract does not describe the simulation system, force field, simulation length, number of replicas, or how "contact rewiring" was defined and quantified. The claim that simulations "reveal" a mechanism is not supported by any specific data on which contacts change, how they change, or how this relates to the experimentally observed states.
+  - **Why it matters** The simulation is presented as a key piece of mechanistic evidence. Without details on the simulation setup and analysis, the claim that IP6 stabilizes the open state via contact rewiring is not verifiable. The connection between the simulated contact changes and the experimentally observed pore states is also not established.
+  - **Resolution test** Provide simulation parameters, convergence criteria, a clear definition of contact rewiring, and a direct comparison between simulated contact changes and experimentally inferred pore conformations.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Interpretive validity
+  - **Claim pointer** The authors claim that mechanical fatigue assays show IP6 markedly enhances the resistance of the capsid lattice to mechanical fatigue, and that this reveals its role as a mechanically stabilized nanomaterial.
+  - **Evidence pointer** Abstract only; no data provided
+  - **Concern** The abstract reports a qualitative result ("markedly enhances") without any quantitative measure of fatigue resistance, such as number of cycles to failure, force thresholds, or comparison to controls. The relevance of mechanical fatigue resistance to the pore state model is also not explained.
+  - **Why it matters** The mechanical fatigue result is used to support the broader claim that IP6 couples pore dynamics to mechanical resilience. Without quantitative data and a clear mechanistic link, this claim is not established. The connection between pore opening and lattice-level mechanical properties is not obvious and requires explicit demonstration.
+  - **Resolution test** Provide quantitative fatigue data with statistical comparisons, and show how the mechanical changes relate to the pore state populations or contact rewiring.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim scope
+  - **Claim pointer** The authors conclude that IP6 is a "proviral regulator" that couples nanoscale pore dynamics, intersubunit contact reconfiguration, and mechanical resilience, providing a "unified mechanistic framework" for its role in viral replication.
+  - **Evidence pointer** Abstract only
+  - **Concern** This conclusion extends beyond the presented data. The abstract does not provide any direct evidence linking the observed pore states, contact rewiring, or mechanical properties to viral replication outcomes. The term "proviral regulator" implies a functional consequence that is not demonstrated.
+  - **Why it matters** The conclusion overreaches the evidence. While the individual observations may be consistent with a role in replication, the abstract does not show that the open pore state, the contact rewiring, or the mechanical stabilization actually affect reverse transcription or viral infectivity.
+  - **Resolution test** Provide functional data linking the observed biophysical changes to viral replication, such as reverse transcription assays or infectivity measurements under conditions where the pore state is modulated.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract
+  - **Issue** The term "asynchronous motions" is used without definition. It is unclear whether this refers to temporal asynchrony between different hexamers, or to stochastic switching within individual hexamers.
+  - **Required correction** Define the term explicitly and describe how asynchrony was assessed in the analysis.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Experimental conditions
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract does not specify the IP6 concentrations used in the experiments and simulations, nor the buffer conditions for HS-AFM.
+  - **Required correction** Provide the relevant concentrations and conditions in the methods or results.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Control conditions
+  - **Evidence pointer** Abstract
+  - **Issue** It is unclear whether the HS-AFM experiments included a control condition without IP6, and whether the simulations included a no-IP6 comparison.
+  - **Required correction** State explicitly what control conditions were used and how they were compared.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** Quantitative claims
+  - **Evidence pointer** Abstract
+  - **Issue** The abstract uses qualitative terms such as "markedly enhances" and "asynchronous" without reporting effect sizes or confidence intervals.
+  - **Required correction** Report numerical values with appropriate statistical measures for all quantitative claims.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The abstract does not provide sufficient quantitative or methodological detail to evaluate any of the three main experimental or computational pillars, nor the integrative conclusion.
+- **Assessment against Nature-style criteria** 
+  - Originality: The approach of combining single-hexamer HS-AFM with MD simulations and mechanical testing is potentially original, but the abstract does not provide enough detail to assess the novelty of the findings relative to prior structural studies.
+  - Scientific importance: The question of how IP6 modulates the HIV-1 capsid pore is of clear importance for understanding viral replication and for antiviral development. However, the importance of the specific mechanistic claims cannot be assessed without supporting data.
+  - Interdisciplinary readership: The topic bridges virology, biophysics, and computational biology, and the findings could interest a broad readership. The abstract is written in a way that is accessible to nonspecialists, though some terms require definition.
+  - Technical soundness: Not assessable from the abstract. No methods, controls, or statistical analyses are presented.
+  - Readability for nonspecialists: The abstract is generally clear and well-structured, but the lack of quantitative detail limits its usefulness to a general audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents an interesting hypothesis and a plausible experimental strategy, but the claims are not supported by the information provided. A full evaluation requires access to the complete manuscript with figures, methods, and data.
+
+## Risk / unsupported claims
+- The claim that HS-AFM identified two major pore states and estimated their populations is unsupported without quantitative data.
+- The claim that MD simulations reveal contact rewiring stabilizing the open state is unsupported without simulation details and analysis.
+- The claim that IP6 markedly enhances mechanical fatigue resistance is unsupported without quantitative fatigue data.
+- The conclusion that IP6 is a "proviral regulator" coupling pore dynamics, contact rewiring, and mechanical resilience is an interpretive leap not supported by the abstract.
+- The "unified mechanistic framework" for IP6's role in viral replication is not established from the presented evidence.

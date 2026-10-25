@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2610.26829v1",
+  "title": "ProteinGeoBench: Frontier Structural-Biology Agents Are Fluent at Lookup but Lost in Geometry",
+  "authors": "Matt Turk; Brandon L. Neel; Diana M. Lopez; Zachary D. Smith; Grace N. Johnecheck; James B. Golden",
+  "journal": "",
+  "published_date": "2026-10-19",
+  "window": {
+    "start": "2026-10-18",
+    "end": "2026-10-24"
+  },
+  "score": 5,
+  "one_liner_zh": "该文评估前沿AI智能体在蛋白质结构任务（如几何计算与元数据检索）上的表现，虽涉及蛋白质结构计算问题，但核心是基准测试与评估配置分析，而非提出新的结构建模或计算方法，对课题的启发有限。",
+  "abstract": "Frontier agents retrieve structural metadata well and compute geometry from coordinates less reliably. We ask how much of a benchmark score reflects that gap and how much reflects the evaluation configuration around the model. We study ProteinGeoBench, a suite of 131 protein-structure tasks, using 4,249 rollouts from four frontier models and 4,486 further trials across 26 models. Three of the four frontier models fall within 0.031 of one another (0.785 to 0.816) with no difference between them resolved, while the fourth scores 0.707 and all three gaps to it exclude zero. Three of the four do better on metadata lookup than on numeric calculation. The fourth is slightly better on numeric. Numeric tasks are 28 of the 131 but half of the twelve tasks that all four models fail. The ranking also depends on the evaluation budget: with one run per task, 23.9% of bootstrap replicates put a different model first. On a selected 15-task slice, removing network access lowers scores more than blocking eight structural-database domains, but the two contrasts were graded in different passes and cannot be cleanly decomposed. Swapping in each model's own command-line agent changes scores by -0.071 to +0.086, a comparison too small to rule out moderate harness effects. Across 26 models, numeric performance rises with non-numeric performance rather than staying flat. The experiments use different task subsets, so they cannot rank model, harness, access and task composition against one another. Evaluations should report results by task family, along with the number of runs, the harness and the access conditions.",
+  "abstract_zh": "前沿智能体在检索结构元数据方面表现良好，但在从坐标计算几何属性时可靠性较低。我们探究基准分数中有多少反映了这一差距，又有多少反映了模型周围的评估配置。我们研究了ProteinGeoBench，一个包含131个蛋白质结构任务的套件，使用了来自四个前沿模型的4,249次运行和来自26个模型的4,486次额外试验。四个前沿模型中有三个彼此相差在0.031以内（0.785至0.816），且它们之间的差异均未达到显著水平，而第四个模型得分为0.707，与其余三个模型的差距均排除零。四个模型中有三个在元数据检索上优于数值计算，第四个则在数值计算上略胜一筹。数值任务占131个任务中的28个，但却是所有四个模型均失败的十二个任务中的一半。排名还取决于评估预算：每个任务运行一次时，23.9%的bootstrap重复样本将不同模型置于首位。在选定的15个任务子集上，移除网络访问对分数的影响大于屏蔽八个结构数据库域名，但这两个对比是在不同轮次中进行的，无法清晰分解。将每个模型替换为其自身的命令行智能体会使分数变化-0.071至+0.086，这一比较规模过小，无法排除中等程度的工具链效应。在26个模型中，数值性能随非数值性能提升而上升，而非保持平稳。实验使用了不同的任务子集，因此无法对模型、工具链、访问权限和任务组成进行相互排序。评估应按任务族报告结果，同时包括运行次数、工具链和访问条件。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2610.26829v1",
+  "source_url": "https://arxiv.org/abs/2610.26829v1",
+  "paper_page_path": "papers/arxiv/2610.26829v1/index.html"
+}

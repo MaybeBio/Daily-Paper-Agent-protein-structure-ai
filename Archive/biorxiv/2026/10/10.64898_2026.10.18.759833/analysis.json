@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.10.18.759833",
+  "title": "BiHC: Protein domain segmentation by bidirectional hierarchical clustering using Voronoi tessellation and physical self-containment",
+  "authors": "Le QK",
+  "journal": "bioRxiv",
+  "published_date": "2026-10-20",
+  "window": {
+    "start": "2026-10-18",
+    "end": "2026-10-24"
+  },
+  "score": 8,
+  "one_liner_zh": "该文提出基于Voronoi接触面积和双向层次聚类的蛋白质结构域分割方法BiHC，通过物理自包含性评分实现结构域边界识别，与深度学习方法性能相当，属于蛋白质结构计算建模问题，方法创新且可迁移。",
+  "abstract": "Protein domains are commonly regarded as structurally separated, functionally relevant, and evolutionarily separable units. Although classification systems may assign different domain boundaries to the same structure, structural separation remains a shared criterion, and many domain parsers assess it through inter-residue distances, contact numbers, or contact densities. However, the Voronoi contact area, which is widely used to study protein–protein interactions and predict contact sites, has seen limited use in domain parsing. There are two potential challenges to this problem. First, unlike in protein-protein interaction, partitions are not known in advance and must be identified before their interface can be evaluated. Second, the contact area depends on fragment size and internal packing, making it difficult to compare candidate partitions. Here, we introduce BiHC (Bidirectional Hierarchical Clustering), a domain parser based on all-heavy-atom Voronoi contact areas. By normalizing the contact area for fragment size and internal packing, and incorporating residue hydropathy, we define a pairwise self-containment score F. BiHC applies F in two independent hierarchical searches: top-down recursive splitting until no admissible division remains, and bottom-up merging of secondary-structure elements until the entire structure becomes a single fragment. Intermediate partitions from both searches are ranked by a global partition quality score G, derived on the same principle. On two CATH–ECOD consensus benchmarks, under balanced evaluation, BiHC achieved the strongest performance among all tested criterion-based parsers and was comparable to Chainsaw, the best-performing deep learning method tested. These results show that the Voronoi-based criterion can yield competitive domain parsing. <h4>Software availability</h4> https://github.com/LeKhang97/BiHC <h4>Statement of importance</h4> Protein domains are functional units that are structurally separated. Therefore, one natural solution is to identify domains by measuring the Voronoi contact areas among potential fragments. However, potential fragments are not known in advance, and distinguishing candidate partitions is also challenging. This study shows that BiHC addresses both problems using Voronoi-based criteria, providing competitive domain-parsing performance and demonstrating that such criteria can support both boundary discovery and partition assessment.",
+  "abstract_zh": "蛋白质结构域通常被视为在结构上分离、功能上相关且在进化上可分离的单元。尽管分类系统可能为同一结构分配不同的结构域边界，但结构分离仍是共同的标准，许多结构域解析器通过残基间距离、接触数或接触密度来评估这一标准。然而，广泛用于研究蛋白质-蛋白质相互作用和预测接触位点的Voronoi接触面积，在结构域解析中的应用却有限。这一问题面临两个潜在挑战。首先，与蛋白质-蛋白质相互作用不同，分区并非预先已知，必须在评估其界面之前识别出来。其次，接触面积依赖于片段大小和内部堆积，这使得比较候选分区变得困难。在此，我们引入了BiHC（双向层次聚类），这是一种基于全重原子Voronoi接触面积的结构域解析器。通过归一化片段大小和内部堆积的接触面积，并结合残基疏水性，我们定义了一个成对的自包含评分F。BiHC在两个独立的层次搜索中应用F：自上而下的递归分割，直至无允许的划分剩余；以及自下而上的二级结构元素合并，直至整个结构成为单一片段。两个搜索产生的中间分区通过全局分区质量评分G进行排名，该评分基于相同原则推导。在两个CATH–ECOD共识基准上，在平衡评估下，BiHC在所有测试的基于标准的解析器中表现最强，并与表现最佳的深度学习方法Chainsaw相当。这些结果表明，基于Voronoi的标准能够产生具有竞争力的结构域解析。<h4>软件可用性</h4> https://github.com/LeKhang97/BiHC <h4>重要性声明</h4> 蛋白质结构域是结构上分离的功能单元。因此，一种自然的解决方案是通过测量潜在片段间的Voronoi接触面积来识别结构域。然而，潜在片段并非预先已知，区分候选分区也具有挑战性。本研究表明，BiHC利用基于Voronoi的标准解决了这两个问题，提供了具有竞争力的结构域解析性能，并证明此类标准能够支持边界发现和分区评估。",
+  "has_fulltext": true,
+  "fulltext_source": "europepmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.18.759833",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.10.18.759833",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.10.18.759833/index.html"
+}

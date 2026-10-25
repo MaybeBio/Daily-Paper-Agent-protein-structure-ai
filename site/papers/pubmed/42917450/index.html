@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MOFF2: A Transferable Coarse-Grained Protein Force Field for Predictive Condensate Simulations. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>MOFF2: A Transferable Coarse-Grained Protein Force Field for Predictive Condensate Simulations.</h1>
+      <div class="meta">Liu, Shuming; Zhang, Yumeng; Riveros, Ivan; Wang, Cong; Zhang, Bin</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical theory and computation</span>
+        · 2026-10-23
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42917450/">原文</a>
+      </div>
+      <p class="one-liner">该文提出可迁移的粗粒化蛋白质力场MOFF2，结合残基对特异相互作用与密度依赖多体势，通过数据驱动优化实现折叠蛋白、无序蛋白及多域蛋白的构象和凝聚体模拟，属于蛋白质结构计算中的物理模拟方法创新。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Coarse-grained (CG) protein force fields enable simulations of biomolecular systems at length and time scales that are difficult to access with atomistic models, but achieving transferability across folded, intrinsically disordered, and multidomain proteins (MDPs) remains challenging. A central difficulty is that one-bead-per-residue models must represent chemically specific residue interactions while also absorbing solvent-mediated and many-body effects into a simplified energy function. Here, we present MOFF2, a transferable coarse-grained protein force field that combines residue-pair-specific interactions with a density-dependent many-body potential. MOFF2 is optimized using a two-stage strategy: bottom-up parameter learning from heterogeneous reference ensembles followed by refinement against experimental conformational observables. The resulting model provides balanced performance across ordered proteins (OPs), intrinsically disordered proteins (IDPs), and multidomain proteins, and predicts condensate saturation-concentration trends for A1-LCD variant systems. Analysis of the learned parameters reveals chemically interpretable interaction patterns and density-dependent effects that explain the model&#39;s improved transferability. These results demonstrate that combining a generalized coarse-grained energy function with data-driven optimization can produce a practical and interpretable force field for protein conformational and condensate simulations.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">粗粒化（CG）蛋白质力场使得在原子模型难以企及的长度和时间尺度上模拟生物分子系统成为可能，但在折叠蛋白、 intrinsically disordered proteins (IDPs) 和多结构域蛋白（MDPs）之间实现可转移性仍具挑战。核心难点在于，单珠每残基模型必须表示化学特异性残基相互作用，同时将溶剂介导效应和多体效应吸收到简化能量函数中。在此，我们提出MOFF2，一种可转移的粗粒化蛋白质力场，结合了残基对特异性相互作用与密度依赖性多体势。MOFF2采用两阶段策略优化：首先从异质参考系综进行自下而上的参数学习，随后针对实验构象观测量进行细化。所得模型在有序蛋白（OPs）、 intrinsically disordered proteins (IDPs) 和多结构域蛋白间提供均衡性能，并预测A1-LCD变体系统的凝聚体饱和浓度趋势。对学习参数的分析揭示了化学上可解释的相互作用模式和密度依赖性效应，这些解释了模型改进的可转移性。这些结果表明，将广义粗粒化能量函数与数据驱动优化相结合，可产生实用且可解释的力场，用于蛋白质构象和凝聚体模拟。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: MOFF2: A Transferable Coarse-Grained Protein Force Field for Predictive Condensate Simulations</li>
+<li><strong>作者</strong>: Liu, Shuming; Zhang, Yumeng; Riveros, Ivan; Wang, Cong; Zhang, Bin</li>
+<li><strong>单位</strong>: 未提供（根据作者姓名和期刊推测可能为 MIT 或相关机构，但原文未提供，故写「未提供」）</li>
+<li><strong>期刊/平台</strong>: Journal of Chemical Theory and Computation (JCTC)</li>
+<li><strong>年份</strong>: 2026（在线日期 2026-10-23）</li>
+<li><strong>论文类型</strong>: 方法学（力场开发与验证）</li>
+<li><strong>领域</strong>: 粗粒化蛋白质力场、相分离/凝聚体模拟、无序蛋白、多域蛋白</li>
+<li><strong>关键词</strong>: coarse-grained force field, intrinsically disordered proteins, condensate, transferability, many-body potential</li>
+<li><strong>DOI/arXiv</strong>: 10.1021/acs.jctc.6c01336</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 未提供</li>
+<li><strong>阅读日期</strong>: 2026-05-12（假设）</li>
+<li><strong>在课题方向中的位置</strong>: 该文属于「蛋白质结构相关计算研究 × 物理模拟」交叉方向，聚焦于粗粒化力场的可迁移性设计，面向折叠蛋白、IDP、多域蛋白及相分离凝聚体模拟，与 AlphaFold 等结构预测方法互补，属于构象采样与序列-相行为预测的工具链。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>MOFF2 通过将残基对特异性相互作用与密度依赖的多体势结合，并采用两阶段优化（自底向上参数学习 + 实验观测精修），构建了一个可迁移的粗粒化蛋白质力场，在折叠蛋白、IDP、多域蛋白及 A1-LCD 凝聚体饱和浓度预测上表现均衡。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 如何设计一个粗粒化蛋白质力场，使其在折叠蛋白、IDP 和多域蛋白之间具有可迁移性，并能预测相分离凝聚体的饱和浓度？</li>
+<li><strong>为什么重要</strong>: 粗粒化模拟可访问原子模拟难以达到的时空尺度，但现有 CG 力场往往针对特定蛋白类型优化，缺乏跨构象状态的通用性，限制了其在相分离等复杂现象中的预测能力。</li>
+<li><strong>现有方法不足</strong>: 单珠残基模型需在简化能量函数中同时表示化学特异性残基相互作用、溶剂效应和多体效应，传统 pairwise-only 模型难以平衡这些因素，导致对 IDP 或 MDP 的预测偏差。</li>
+<li><strong>精确研究问题</strong>: Can a residue-pair-specific plus density-dependent many-body CG energy function, optimized via bottom-up learning and experimental refinement, achieve balanced transferability across ordered, disordered, and multidomain proteins, and predict condensate saturation concentrations?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<ul>
+<li><strong>脉络标注</strong>: 仅本文框架（基于摘要推断，未做外部文献核验）</li>
+<li><strong>阶段 1</strong>: 传统原子力场（如 CHARMM、AMBER）——高精度但计算成本高，无法模拟大尺度相分离。</li>
+<li><strong>阶段 2</strong>: 早期 CG 力场（如 MARTINI、AWSEM）——提升效率，但多针对折叠蛋白或特定 IDP，缺乏跨状态通用性。</li>
+<li><strong>阶段 3</strong>: 数据驱动 CG 力场（如 bottom-up 方法）——从原子模拟学习参数，但常过拟合参考态，难以泛化。</li>
+<li><strong>阶段 4</strong>: MOFF2——结合 pairwise 特异性与密度依赖多体势，两阶段优化（bottom-up + 实验精修），强调可解释性与可迁移性。</li>
+<li><strong>本文位置</strong>: 在数据驱动 CG 力场基础上，引入多体效应和实验约束，填补了折叠/无序/多域蛋白统一描述的空白。</li>
+</ul>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可迁移性差</td>
+<td>CG 力场在折叠蛋白上表现好，但在 IDP 或 MDP 上失效</td>
+<td>单珠模型难以同时表示化学特异性与溶剂/多体效应</td>
+<td>摘要： "achieving transferability across folded, intrinsically disordered, and multidomain proteins remains challenging"</td>
+</tr>
+<tr>
+<td>多体效应缺失</td>
+<td>pairwise-only 模型无法捕捉密度依赖的相互作用</td>
+<td>简化能量函数忽略了溶剂介导和拥挤效应</td>
+<td>摘要： "absorbing solvent-mediated and many-body effects into a simplified energy function"</td>
+</tr>
+<tr>
+<td>参数优化过拟合</td>
+<td>bottom-up 学习易过拟合参考系综</td>
+<td>单一参考态无法覆盖多样构象状态</td>
+<td>摘要： "two-stage strategy: bottom-up parameter learning ... followed by refinement"</td>
+</tr>
+<tr>
+<td>相分离预测不足</td>
+<td>现有力场难以预测凝聚体饱和浓度</td>
+<td>缺乏对多体相互作用的显式建模</td>
+<td>摘要： "predicts condensate saturation-concentration trends for A1-LCD variant systems"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>: 构建 MOFF2 力场，包含残基对特异性相互作用项和密度依赖多体势，通过两阶段优化（先自底向上从参考系综学习，再用实验观测精修）获得参数。</li>
+<li><strong>核心洞察</strong>: 可迁移性的关键在于显式引入密度依赖的多体势，以吸收溶剂介导和拥挤效应，使 pairwise 项能专注于化学特异性残基相互作用，从而在不同蛋白类型间取得平衡。</li>
+<li><strong>可能的普适教训</strong> [Analysis]: 在简化模型中，将「化学特异性」与「环境效应」分离到不同能量项，可提升模型泛化能力；数据驱动优化需结合实验约束以避免过拟合。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 蛋白质序列（或结构），参考系综（来自原子模拟或实验构象库），实验观测数据（如构象系综、相分离浓度）</li>
+<li><strong>输出</strong>: 粗粒化力场参数（pairwise 相互作用参数 + 密度依赖多体势参数），可用于模拟的 CG 模型</li>
+<li><strong>模块</strong>:
+  1. 能量函数定义（pairwise + density-dependent many-body term）
+  2. 自底向上参数学习（从异质参考系综拟合）
+  3. 实验观测精修（调整参数以匹配实验数据）</li>
+<li><strong>训练</strong>: 两阶段优化，第一阶段最小化参考系综的势能偏差，第二阶段最小化实验观测预测误差</li>
+<li><strong>工具</strong>: 未提供（推测使用 MD 模拟软件如 LAMMPS 或 OpenMM，但原文未提供）</li>
+<li><strong>反馈回路</strong>: 参数学习 → 模拟验证 → 实验精修 → 最终力场</li>
+<li><strong>假设</strong>: 单珠残基模型足以表示化学特异性；密度依赖势可有效吸收多体效应；实验观测可提供足够约束</li>
+<li><strong>流程</strong>: 定义能量函数 → 从参考系综学习初始参数 → 用实验数据精修 → 验证于折叠蛋白、IDP、MDP 和 A1-LCD 凝聚体</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>残基对特异性相互作用项</td>
+<td>表示化学特异性残基相互作用</td>
+<td>捕捉序列依赖的构象偏好</td>
+<td>输入：残基类型对；输出：pairwise 能量</td>
+<td>摘要： "residue-pair-specific interactions"</td>
+<td>预期影响：失去序列特异性，无法区分不同蛋白</td>
+</tr>
+<tr>
+<td>密度依赖多体势</td>
+<td>吸收溶剂介导和拥挤效应</td>
+<td>弥补 pairwise-only 模型的不足</td>
+<td>输入：局部密度；输出：多体能量修正</td>
+<td>摘要： "density-dependent many-body potential"</td>
+<td>预期影响：可迁移性下降，相分离预测失效</td>
+</tr>
+<tr>
+<td>两阶段优化策略</td>
+<td>从参考系综学习 + 实验精修</td>
+<td>避免过拟合，提升泛化</td>
+<td>输入：参考系综 + 实验数据；输出：优化参数</td>
+<td>摘要： "two-stage strategy"</td>
+<td>预期影响：单阶段优化可能导致过拟合或欠拟合</td>
+</tr>
+<tr>
+<td>参数可解释性分析</td>
+<td>分析学习到的参数模式</td>
+<td>验证力场物理合理性</td>
+<td>输入：参数集；输出：化学解释</td>
+<td>摘要： "chemically interpretable interaction patterns"</td>
+<td>预期影响：缺乏可解释性则难以诊断模型缺陷</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<ul>
+<li><strong>不适用</strong>（摘要未提供具体公式；力场能量函数形式未在摘要中给出）</li>
+</ul>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>: 折叠蛋白（OPs）、IDP、多域蛋白（MDPs）、A1-LCD 变体系统</li>
+<li><strong>规模</strong>: 未提供具体蛋白数量或系统大小</li>
+<li><strong>指标</strong>: 构象系综准确性、饱和浓度预测趋势</li>
+<li><strong>基线</strong>: 未提供（推测与现有 CG 力场如 MARTINI 或 MOFF1 对比，但原文未提供）</li>
+<li><strong>评测协议</strong>: 未提供（推测为模拟与实验数据对比）</li>
+<li><strong>oracle 输入</strong>: 实验构象观测数据（用于精修）</li>
+<li><strong>骨干/仪器</strong>: 未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>折叠蛋白测试</td>
+<td>MOFF2 在 OP 上表现良好</td>
+<td>与实验结构对比</td>
+<td>未提供具体数值</td>
+<td>力场在有序蛋白上有效</td>
+<td>无法证明优于所有现有力场</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>IDP 测试</td>
+<td>MOFF2 在无序蛋白上可迁移</td>
+<td>与实验构象系综对比</td>
+<td>未提供具体数值</td>
+<td>力场在 IDP 上有效</td>
+<td>无法证明对所有 IDP 通用</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>MDP 测试</td>
+<td>MOFF2 在多域蛋白上平衡</td>
+<td>与实验或原子模拟对比</td>
+<td>未提供具体数值</td>
+<td>力场在 MDP 上有效</td>
+<td>无法证明域间相互作用完全准确</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>A1-LCD 凝聚体测试</td>
+<td>MOFF2 预测饱和浓度趋势</td>
+<td>与实验相分离数据对比</td>
+<td>未提供具体数值</td>
+<td>力场可预测相行为趋势</td>
+<td>无法证明定量精确</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>参数可解释性分析</td>
+<td>学习到的参数有化学意义</td>
+<td>参数模式分析</td>
+<td>未提供具体数值</td>
+<td>参数反映化学相互作用</td>
+<td>无法证明因果性</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: MOFF2 适用于粗粒化模拟，覆盖折叠蛋白、IDP、MDP 和相分离系统，但未涉及翻译后修饰、配体结合或化学修饰。</li>
+<li><strong>oracle/真值输入</strong>: 实验构象观测数据用于精修，但具体数据类型（如 FRET、SAXS、NMR）未提供。</li>
+<li><strong>端到端状态</strong>: 力场参数已优化，但未提供独立验证集或盲测结果。</li>
+<li><strong>算力成本</strong>: 未提供（CG 模拟通常比原子模拟高效，但具体成本未说明）。</li>
+<li><strong>历史数据依赖</strong>: 依赖参考系综和实验数据，可能受限于数据质量。</li>
+<li><strong>模型依赖</strong>: 依赖单珠表示和密度依赖势的假设。</li>
+<li><strong>最难情形</strong>: 多域蛋白的域间相互作用和复杂相分离行为可能仍具挑战。</li>
+<li><strong>群体/领域边界</strong>: 结果基于特定蛋白集（A1-LCD 等），可能不适用于所有蛋白序列。</li>
+<li><strong>不确定性</strong>: 未提供误差条或统计显著性。</li>
+<li><strong>有边界复述</strong>: MOFF2 在测试的蛋白系统中表现出平衡性能，并能预测 A1-LCD 变体的饱和浓度趋势，但其定量精度和通用性需进一步验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）:
+- 摘要提到 "achieving transferability ... remains challenging"，暗示力场仍有改进空间。
+- 未提供具体蛋白数量或系统规模，可能受限于测试集范围。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>两阶段优化依赖实验数据</td>
+<td>实验数据可能有限或有偏，导致精修过拟合</td>
+<td>影响力场泛化能力</td>
+<td>用独立实验数据集进行盲测</td>
+<td>摘要： "refinement against experimental conformational observables"</td>
+</tr>
+<tr>
+<td>密度依赖多体势的物理基础未明确</td>
+<td>多体势可能只是经验修正，缺乏物理推导</td>
+<td>影响可解释性和外推能力</td>
+<td>分析多体势在不同密度下的行为</td>
+<td>摘要： "density-dependent many-body potential"</td>
+</tr>
+<tr>
+<td>测试集仅提及 A1-LCD</td>
+<td>可能只验证了特定序列的相分离</td>
+<td>无法证明通用性</td>
+<td>测试多种 IDP 和 MDP 的相行为</td>
+<td>摘要： "A1-LCD variant systems"</td>
+</tr>
+<tr>
+<td>未提供与现有力场的定量对比</td>
+<td>无法判断 MOFF2 是否优于 MARTINI 等</td>
+<td>影响实际应用选择</td>
+<td>与多个基线力场在相同系统上对比</td>
+<td>摘要未提供对比数据</td>
+</tr>
+<tr>
+<td>参数可解释性分析可能主观</td>
+<td>"chemically interpretable" 可能基于人工判断</td>
+<td>影响结论客观性</td>
+<td>用统计方法量化参数与化学性质的关联</td>
+<td>摘要： "chemically interpretable interaction patterns"</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>:
+1. <strong>多体势设计</strong>: 在 CG 力场中显式引入密度依赖项，可分离化学特异性和环境效应，这一思路可迁移到其他 CG 模型（如用于膜蛋白或核酸模拟）。
+2. <strong>两阶段优化策略</strong>: 先自底向上学习再实验精修，可避免过拟合，适用于任何数据驱动的力场开发。
+3. <strong>可解释性分析</strong>: 分析学习到的参数模式可验证力场物理合理性，可用于诊断模型缺陷。
+4. <strong>相分离预测</strong>: 通过 CG 模拟预测饱和浓度趋势，可迁移到设计序列突变以调控相行为。
+5. <strong>跨状态验证</strong>: 在折叠、无序、多域蛋白上同时测试，是评估力场可迁移性的有效协议。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>: MOFF1（前身力场，推测为 pairwise-only 模型）；MARTINI 力场（CG 模拟常用，但缺乏多体项）；AWSEM（结构预测导向 CG 力场）。</li>
+<li><strong>组合方向</strong>: 与 AlphaFold 结合，用 AF 预测结构作为参考系综，再用 MOFF2 模拟构象动态。</li>
+<li><strong>冲突点</strong>: 与纯 bottom-up CG 方法（如多体势拟合）相比，MOFF2 强调实验精修，可能牺牲部分理论一致性。</li>
+<li><strong>可迁移领域</strong>: 相分离模拟、IDP 构象采样、多域蛋白组装、序列设计（通过预测相行为）。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>:</p>
+<ol>
+<li>
+<p><strong>名称</strong>: MOFF2-ΔG 预测器
+   - <strong>来源局限/观察</strong>: MOFF2 预测饱和浓度趋势，但未提供定量自由能。
+   - <strong>核心假设</strong>: MOFF2 能量函数可分解为残基对和多体贡献，用于预测突变对相分离自由能的影响。
+   - <strong>初步方法</strong>: 用 MOFF2 模拟 A1-LCD 变体，计算饱和浓度并拟合 ΔG；与实验数据对比。
+   - <strong>验证方式</strong>: 用已知突变体数据验证预测精度。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 多体势可迁移性测试
+   - <strong>来源局限/观察</strong>: 密度依赖多体势仅在 A1-LCD 上验证。
+   - <strong>核心假设</strong>: 多体势可迁移到其他 IDP 或 RNA 结合蛋白。
+   - <strong>初步方法</strong>: 在多种 IDP 系统上测试 MOFF2，与实验构象数据对比。
+   - <strong>验证方式</strong>: 用 SAXS/FRET 数据验证。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: MOFF2-αFold 混合管道
+   - <strong>来源局限/观察</strong>: MOFF2 未利用结构预测信息。
+   - <strong>核心假设</strong>: AlphaFold 预测结构可作为参考系综，提升 MOFF2 对折叠蛋白的精度。
+   - <strong>初步方法</strong>: 用 AF 预测结构生成初始系综，再用 MOFF2 模拟。
+   - <strong>验证方式</strong>: 与实验结构对比 RMSD。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 序列-相行为设计
+   - <strong>来源局限/观察</strong>: MOFF2 可预测相分离趋势，但未用于设计。
+   - <strong>核心假设</strong>: 通过优化序列以调控饱和浓度。
+   - <strong>初步方法</strong>: 用 MOFF2 扫描突变体，筛选相行为变化。
+   - <strong>验证方式</strong>: 实验验证设计序列的相分离。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>: 多体势的物理起源分析
+   - <strong>来源局限/观察</strong>: 多体势缺乏物理推导。
+   - <strong>核心假设</strong>: 多体势可映射到溶剂化自由能或拥挤效应。
+   - <strong>初步方法</strong>: 用原子模拟计算局部密度与能量的关系，与 MOFF2 多体势对比。
+   - <strong>验证方式</strong>: 统计相关性分析。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present MOFF2, a transferable coarse-grained protein force field combining residue-pair-specific interactions with a density-dependent many-body potential. The model is optimized via a two-stage strategy involving bottom-up parameter learning from heterogeneous reference ensembles and refinement against experimental conformational observables. The authors claim balanced performance across ordered proteins, intrinsically disordered proteins, and multidomain proteins, and predictive accuracy for condensate saturation-concentration trends in A1-LCD variant systems. The learned parameters are reported to reveal chemically interpretable interaction patterns and density-dependent effects that explain improved transferability.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, benchmark comparisons, parameter analysis, or methodological details are visible</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, methods section, parameter sets, benchmark datasets, simulation protocols, and comparison baselines</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a plausible and potentially valuable contribution to coarse-grained protein force field development, addressing a recognized challenge in transferability across protein classes. The two-stage optimization strategy and the inclusion of a density-dependent many-body potential are conceptually sound and align with current trends in the field. However, the abstract provides no quantitative evidence to support the central claims of balanced performance, predictive accuracy, or chemical interpretability. Without access to the full manuscript, the strength of the claims cannot be evaluated. The work is likely of interest to the computational biophysics and molecular simulation communities, but the case for its significance and reliability is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and physical chemists developing or applying coarse-grained models for proteins, particularly those studying intrinsically disordered proteins, phase separation, and condensate formation. Method developers in molecular simulation would also be interested in the two-stage optimization framework and the density-dependent many-body potential as a generalizable approach. Experimental groups studying biomolecular condensates may find the predictive capability for saturation-concentration trends useful for hypothesis generation.</li>
+<li><strong>Major strengths</strong> The abstract identifies a clear and important problem, namely transferability of CG protein force fields across folded, disordered, and multidomain proteins. The proposed solution, combining residue-pair-specific interactions with a density-dependent many-body potential, is a conceptually reasonable approach to address solvent-mediated and many-body effects. The two-stage optimization strategy, integrating bottom-up learning with experimental refinement, is a sensible and increasingly common paradigm. The claim of chemically interpretable parameters is attractive, as interpretability is often lacking in data-driven models.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> The abstract claims "balanced performance across ordered proteins (OPs), intrinsically disordered proteins (IDPs), and multidomain proteins" and "predicts condensate saturation-concentration trends for A1-LCD variant systems."  </li>
+<li><strong>Evidence pointer</strong> Abstract only; no figures, tables, or quantitative metrics provided  </li>
+<li><strong>Concern</strong> The central performance claims are presented without any quantitative data. No metrics, comparison baselines, error bars, or statistical measures are given. The phrase "balanced performance" is undefined, and the predictive accuracy for condensate trends is not quantified.  </li>
+<li><strong>Why it matters</strong> Without quantitative evidence, the reader cannot assess whether the claimed performance is competitive with existing models, whether the balance across protein classes is genuine, or whether the condensate predictions are accurate within meaningful tolerances. The core value proposition of the work depends on these numbers.  </li>
+<li><strong>Resolution test</strong> Provide benchmark results with quantitative metrics for each protein class, including comparisons to established CG force fields, and report numerical accuracy for condensate saturation-concentration predictions with appropriate uncertainty estimates.  </li>
+<li><strong>Concern ID</strong> R1-M2  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Methodological transparency  </li>
+<li><strong>Claim pointer</strong> The abstract describes a "two-stage strategy: bottom-up parameter learning from heterogeneous reference ensembles followed by refinement against experimental conformational observables."  </li>
+<li><strong>Evidence pointer</strong> Methods section not provided  </li>
+<li><strong>Concern</strong> The abstract does not specify the nature of the reference ensembles, the experimental observables used for refinement, the optimization algorithm, or the functional form of the density-dependent potential. Without these details, the method cannot be reproduced or critically evaluated.  </li>
+<li><strong>Why it matters</strong> Reproducibility is a fundamental requirement for force field development. The choice of reference data and experimental targets strongly influences the resulting parameters and the generalizability of the model. The lack of methodological detail prevents assessment of potential overfitting or circularity in the optimization.  </li>
+<li><strong>Resolution test</strong> Provide a complete methods description, including the functional form of the potential, the reference ensemble generation protocol, the experimental datasets used, the optimization procedure, and the validation strategy.  </li>
+<li><strong>Concern ID</strong> R1-M3  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Interpretability claim  </li>
+<li><strong>Claim pointer</strong> The abstract claims "Analysis of the learned parameters reveals chemically interpretable interaction patterns and density-dependent effects that explain the model's improved transferability."  </li>
+<li><strong>Evidence pointer</strong> Abstract only; no parameter analysis shown  </li>
+<li><strong>Concern</strong> The claim of chemical interpretability is presented as a finding, but no examples of such patterns are given, and the causal link between these patterns and improved transferability is asserted rather than demonstrated.  </li>
+<li><strong>Why it matters</strong> Interpretability is a stated advantage of the model, but without concrete examples or a systematic analysis, this claim remains anecdotal. The explanatory link to transferability is particularly important because it would distinguish this work from purely phenomenological fits.  </li>
+<li><strong>Resolution test</strong> Show specific learned parameters with clear chemical correspondence, and provide a quantitative or systematic argument connecting these parameters to observed transferability improvements, such as correlation analyses or ablation studies.  </li>
+<li><strong>Minor Comments</strong>  </li>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Terminology  </li>
+<li><strong>Evidence pointer</strong> Abstract, first sentence  </li>
+<li><strong>Issue</strong> The term "heterogeneous reference ensembles" is vague and could refer to ensembles of different protein types, different conformational states, or different simulation conditions.  </li>
+<li><strong>Required correction</strong> Specify the composition and generation method of the reference ensembles in the abstract or methods.  </li>
+<li><strong>Concern ID</strong> R1-m2  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Scope justification  </li>
+<li><strong>Affected element</strong> Model naming  </li>
+<li><strong>Evidence pointer</strong> Abstract, title  </li>
+<li><strong>Issue</strong> The name "MOFF2" implies a successor to a prior model, but no context is given for what MOFF1 was or what specific limitations are addressed in this version.  </li>
+<li><strong>Required correction</strong> Briefly state the relationship to the predecessor model and the key improvements in MOFF2.  </li>
+<li><strong>Concern ID</strong> R1-m3  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Generalizability  </li>
+<li><strong>Affected element</strong> Validation scope  </li>
+<li><strong>Evidence pointer</strong> Abstract, performance claims  </li>
+<li><strong>Issue</strong> The abstract mentions validation on A1-LCD variant systems for condensate predictions, but it is unclear whether this is a single system or a family of variants, and whether other condensate-forming systems were tested.  </li>
+<li><strong>Required correction</strong> Clarify the number and diversity of systems used for condensate validation, and state whether the model was tested on additional phase-separating proteins.  </li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1 and R1-M2 are blocking. The absence of quantitative performance data and methodological detail means the central claims cannot be verified. R1-M3, while not blocking, requires substantial additional evidence to support the interpretability and explanatory claims.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "balanced performance" across OPs, IDPs, and MDPs is unsupported without quantitative benchmarks.</li>
+<li>The claim of predictive accuracy for condensate saturation-concentration trends is unsupported without numerical results and comparison to experiment.</li>
+<li>The claim that learned parameters are "chemically interpretable" and that density-dependent effects "explain" improved transferability is unsupported without parameter analysis or causal evidence.</li>
+<li>The general statement that the model is "transferable" is not defined operationally and cannot be assessed from the abstract alone.</li>
+<li>The two-stage optimization strategy is described but its implementation, convergence, and robustness are not assessable from the supplied material.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

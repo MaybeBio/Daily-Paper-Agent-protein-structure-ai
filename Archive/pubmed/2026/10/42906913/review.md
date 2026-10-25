@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors report the de novo design of protein scaffolds that bind metal polypyridine photocatalysts, followed by directed evolution to create artificial metalloenzymes with high enantioselectivity and efficiency for light-driven reactions. They claim that the protein environment extends the photocatalyst excited-state lifetime, organizes substrate near the cofactor, alters energy transfer, and controls stereoselectivity. They further claim that this establishes de novo protein design as a general route to functional scaffolds for synthetic metal complexes lacking natural protein partners.
+- **Visible evidence base** Abstract text only; no experimental data, sequence information, structural data, spectroscopic results, or evolutionary trajectories are available
+- **Missing materials affecting confidence** Full manuscript, methods, all figures and tables, supplementary information, sequence and structural data, spectroscopic measurements, catalytic performance data, and directed evolution details
+
+## Reviewer
+- **Overall assessment** The abstract presents a compelling and ambitious claim: that generative protein design combined with directed evolution can produce enantioselective artificial metalloenzymes for photocatalysis using metal polypyridine complexes. The potential significance is high, as this would address a long-standing gap in asymmetric photocatalysis. However, the abstract provides only qualitative assertions without quantitative data. Key claims regarding enantioselectivity levels, turnover numbers, substrate scope, and mechanistic insights are not substantiated in the provided material. The scientific case cannot be evaluated from the abstract alone, and several claims are currently unsupported or unverifiable.
+- **Who would be interested in the results, and why** Researchers in asymmetric catalysis, photocatalysis, protein engineering, and de novo protein design would find these results of interest. The work bridges synthetic chemistry and protein engineering, potentially offering a new paradigm for creating enzymes for non-natural reactions. Those working on artificial metalloenzymes and on expanding the functional repertoire of designed proteins would be particularly engaged.
+- **Major strengths** The conceptual advance is clear and significant: moving beyond trial-and-error scaffold discovery to generative design for a challenging catalyst class. The combination of de novo design with directed evolution is a logical and potentially powerful strategy. The claim that the protein environment modulates excited-state dynamics and substrate organization suggests mechanistic depth, if substantiated. The practical features mentioned, such as catalyst recycling and compatibility with racemic metal complexes, are attractive for real-world application.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that directed evolution converts the designed artificial metalloenzymes into "efficient, highly enantioselective photocatalysts" and that the evolved proteins support "diverse light-driven reactions, high catalyst turnover and catalyst recycling."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No quantitative data are provided for enantioselectivity (e.g., enantiomeric excess values), catalytic efficiency (e.g., turnover number or frequency), substrate scope, or recycling performance. The terms "efficient," "highly enantioselective," and "diverse" are undefined and cannot be assessed.
+  - **Why it matters** The core claim of the manuscript rests on these performance metrics. Without numbers, the reader cannot judge whether the results represent a meaningful advance over existing systems or whether the claims are overstated.
+  - **Resolution test** Provide quantitative data in the full manuscript, including enantiomeric excess values for all substrates, turnover numbers, reaction yields, and recycling data, with appropriate controls.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic evidence
+  - **Claim pointer** The abstract states that "spectroscopic studies show that the protein environment extends the photocatalyst excited-state lifetime and organizes substrate near the cofactor, altering energy transfer and controlling stereoselectivity."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The mechanistic claims are presented as established findings, but no spectroscopic data, experimental conditions, or comparative controls are described. The link between excited-state lifetime extension, substrate organization, and stereocontrol is asserted without evidence.
+  - **Why it matters** These mechanistic claims are central to understanding why the design works and are likely a major part of the paper's novelty. If not rigorously supported, the mechanistic narrative is speculative.
+  - **Resolution test** Present time-resolved spectroscopic data (e.g., transient absorption or emission lifetimes) for the cofactor in solution versus in the protein, structural or binding data showing substrate proximity, and mutagenesis or control experiments linking these effects to enantioselectivity.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Generality of the design approach
+  - **Claim pointer** The abstract claims that "these findings establish de novo protein design as a route to functional scaffolds for synthetic metal complexes that lack natural protein partners."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract describes a single class of metal complexes (metal polypyridine photocatalysts) and does not indicate how many distinct scaffolds or catalysts were designed and tested. The claim of establishing a general route requires demonstration across multiple scaffolds or catalyst types.
+  - **Why it matters** The generality claim elevates the work from a specific example to a broadly applicable strategy. Without evidence of generality, the claim is premature.
+  - **Resolution test** Show successful design and evolution for multiple metal complexes or at least multiple scaffold topologies, with data on success rates and failure analysis.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The phrase "redefine the landscape of asymmetric catalysis" is promotional and not scientifically informative.
+  - **Required correction** Replace with a specific statement of the gap being addressed, such as the lack of enantioselective photocatalytic systems within protein scaffolds.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Catalyst description
+  - **Evidence pointer** Abstract, statement on "commercially available racemic metal complexes"
+  - **Issue** The abstract does not specify which metal complexes were used, making it impossible to assess the significance of using racemic mixtures.
+  - **Required correction** Name the specific complexes in the abstract or indicate that details are in the main text.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scope
+  - **Affected element** Reaction scope
+  - **Evidence pointer** Abstract, "diverse light-driven reactions"
+  - **Issue** The term "diverse" is vague; the reader cannot gauge the breadth of reactions supported.
+  - **Required correction** List the reaction types or state the number of distinct reactions demonstrated.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative catalytic data, mechanistic evidence, and demonstration of generality means the central claims are not established from the provided material.
+- **Assessment against Nature-style criteria** 
+  - Originality: High. The concept of de novo designing scaffolds for metal polypyridine photocatalysts and evolving them for enantioselectivity appears novel and distinct from prior trial-and-error approaches.
+  - Scientific importance: Potentially high, if the claims are substantiated. The work could open new avenues in asymmetric photocatalysis and expand the scope of de novo protein design.
+  - Interdisciplinary readership: Strong. The work bridges chemistry, biology, and protein engineering, and would appeal to a broad audience if the results are compelling.
+  - Technical soundness: Not assessable from the abstract. No methods or data are available to evaluate the rigor of the design, evolution, or characterization.
+  - Readability for nonspecialists: The abstract is generally clear, but the mechanistic claims and the significance of the design approach would benefit from more explicit framing for a general audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a promising concept, but the absence of quantitative data and mechanistic support prevents evaluation of the core claims. A full manuscript with detailed methods, results, and controls is required to assess whether the case is made.
+
+## Risk / unsupported claims
+- The claim of "efficient, highly enantioselective photocatalysts" is unsupported without quantitative data.
+- The claim that the protein environment "extends the photocatalyst excited-state lifetime and organizes substrate near the cofactor, altering energy transfer and controlling stereoselectivity" is unsupported without spectroscopic and structural evidence.
+- The claim that the findings "establish de novo protein design as a route to functional scaffolds" is unsupported as a general statement without demonstration across multiple systems.
+- The claim of "diverse light-driven reactions" is unverifiable without a list of reactions.
+- The claim of "high catalyst turnover and catalyst recycling" is unverifiable without turnover numbers and recycling data.

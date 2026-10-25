@@ -1,0 +1,72 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report the use of AI-assisted de novo protein design combined with bacterial surface display screening, pull-down assays, and biolayer interferometry to identify protein binders against the Stx2a B subunit. One binder, Binder506, is claimed to exhibit high affinity, a three-alpha-helix fold, high thermostability, potent Stx2a-neutralizing activity, minimal intrinsic cytotoxicity in Vero cells, and a mechanism involving inhibition of Stx2a attachment to and uptake by Vero cells without disrupting holotoxin integrity.
+- **Visible evidence base** Abstract text only; no numerical data, figures, tables, or methodological details provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, experimental protocols, statistical analyses, sequence information, and any supplementary data
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting application of AI-assisted de novo protein design to generate a binder against Shiga toxin 2a. The workflow is logical and the reported outcomes are promising. However, the abstract lacks quantitative data, experimental details, and controls, making it impossible to evaluate the robustness of the claims. The mechanistic conclusion is plausible but not fully supported by the evidence described. The work may be of interest to the food safety and protein engineering communities, but the current evidence base is insufficient to establish the case.
+- **Who would be interested in the results, and why** Researchers in food safety, particularly those working on Shiga toxin-producing E. coli; protein engineers and computational biologists interested in AI-driven binder design; and investigators developing therapeutic or prophylactic strategies against bacterial toxins.
+- **Major strengths** The combination of AI-based design with multiple experimental validation methods is a modern and potentially powerful approach. The reported mechanism of action, inhibition of cellular attachment and uptake rather than holotoxin disruption, is a distinctive and potentially valuable finding. The inclusion of thermostability and cytotoxicity assessments indicates attention to practical applicability.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** Binder506 exhibited high affinity against Stx2aB
+  - **Evidence pointer** Abstract, biolayer interferometry mentioned but no data provided
+  - **Concern** The abstract states that Binder506 exhibited high affinity but provides no quantitative binding parameters such as KD values, association or dissociation rates, or comparison to controls or known binders.
+  - **Why it matters** Affinity is a central claim of the work. Without quantitative data, the reader cannot assess whether the affinity is genuinely high, moderate, or comparable to existing binders. This is essential for evaluating the novelty and utility of the designed protein.
+  - **Resolution test** Provide KD values from biolayer interferometry, including replicates, error estimates, and comparison to a relevant positive or negative control.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic support
+  - **Claim pointer** Binder506 inhibited Stx2a attachment to and uptake by Vero cells without disrupting holotoxin integrity
+  - **Evidence pointer** Abstract, size-exclusion chromatography, coimmunoprecipitation, cellular binding and internalization assays mentioned but no data shown
+  - **Concern** The mechanistic conclusion is based on assays that are only named, not described with results. It is unclear how inhibition of attachment and uptake was quantified, whether the effect was dose-dependent, and whether the holotoxin integrity assessment was sufficiently sensitive to detect partial disruption.
+  - **Why it matters** The proposed mechanism distinguishes this work from other neutralization strategies. If the evidence is weak or ambiguous, the mechanistic claim is not established, and the potential advantage of this binder over alternatives is unclear.
+  - **Resolution test** Show dose-response data for inhibition of binding and uptake, include appropriate controls such as a non-binding protein or a known neutralizing antibody, and demonstrate the sensitivity and specificity of the holotoxin integrity assay.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and validation
+  - **Claim pointer** AI-assisted de novo design combined with bacterial surface display screening identified Binder506
+  - **Evidence pointer** Abstract, no details on design pipeline, screening hits, or selection criteria
+  - **Concern** The abstract does not describe the AI design pipeline, the number of candidates generated, the screening hit rate, or the criteria by which Binder506 was selected over other candidates. Without this information, the contribution of the AI component relative to the screening step cannot be assessed.
+  - **Why it matters** The novelty of the work rests partly on the claim that AI-assisted design was effective. If the screening was extensive and the AI contribution marginal, the significance of the approach is diminished. Conversely, if the AI design was highly predictive, this would strengthen the case.
+  - **Resolution test** Describe the design pipeline, report the number of designs tested, the number of hits, and the selection criteria. Ideally, include a comparison of AI-designed binders versus a control set to demonstrate the value of the AI component.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Structural claim
+  - **Evidence pointer** Abstract, structural modeling and circular dichroism mentioned
+  - **Issue** The abstract states that structural modeling predicted a three-alpha-helix fold consistent with circular dichroism analysis, but no details on the modeling method, confidence metrics, or circular dichroism spectra are provided.
+  - **Required correction** Provide the modeling method and confidence scores, and show the circular dichroism data with secondary structure estimates.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Cytotoxicity claim
+  - **Evidence pointer** Abstract, Vero cell cytotoxicity mentioned
+  - **Issue** The claim of minimal intrinsic cytotoxicity is made without any quantitative data or comparison to a control.
+  - **Required correction** Report cell viability values, assay type, concentration range tested, and comparison to untreated or vehicle-treated cells.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Specificity
+  - **Affected element** Neutralization claim
+  - **Evidence pointer** Abstract, Stx2a-neutralizing activity mentioned
+  - **Issue** The abstract does not specify how neutralization was measured, what concentration of Binder506 was effective, or whether the effect was specific to Stx2a versus other Stx subtypes.
+  - **Required correction** Describe the neutralization assay, report effective concentrations, and test or discuss specificity against other Shiga toxin variants.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative affinity data, detailed mechanistic evidence, and design pipeline information means the central claims are not currently verifiable from the provided material.
+- **Assessment against Nature-style criteria** Originality: the application of AI-assisted de novo design to Shiga toxin binders is a reasonable extension of existing work but not clearly transformative based on the abstract alone. Scientific importance: the topic is relevant to food safety and toxin neutralization, but the significance depends on the affinity and efficacy relative to existing approaches, which cannot be assessed. Interdisciplinary readership: the work bridges computational design, protein biochemistry, and food safety, which could appeal to a broad audience if the evidence is strong. Technical soundness: the methods named are appropriate, but the lack of data prevents evaluation of their execution and interpretation. Readability for nonspecialists: the abstract is clear and accessible, though some terms such as de novo design and biolayer interferometry may require background knowledge.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a plausible and potentially valuable study, but the absence of quantitative data and methodological detail means the claims cannot be evaluated. I would be supportive if the full manuscript provides the missing evidence and addresses the major concerns.
+
+## Risk / unsupported claims
+- The claim that Binder506 exhibited high affinity is unsupported without quantitative binding data.
+- The claim that Binder506 inhibited Stx2a attachment to and uptake by Vero cells is unsupported without dose-response and control data.
+- The claim that Binder506 did not disrupt Stx2a holotoxin integrity is unsupported without assay sensitivity details.
+- The claim that the AI-assisted design was effective is not assessable without pipeline details and hit rate information.
+- The claim of minimal intrinsic cytotoxicity is unsupported without quantitative cell viability data.
+- The claim of potent Stx2a-neutralizing activity is unsupported without assay details and effective concentration data.

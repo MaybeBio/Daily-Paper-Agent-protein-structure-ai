@@ -61,7 +61,7 @@
 <li><strong>代码</strong>：未提供</li>
 <li><strong>数据</strong>：DUD-E 数据集（7 个靶标子集）</li>
 <li><strong>阅读日期</strong>：2026-10-17</li>
-<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」交叉方向中的**打分函数（scoring function）**子领域，具体为物理信息神经网络（physics-informed neural network）用于蛋白-配体结合亲和力/活性分类预测。其方法核心（路径积分启发、变分目标、重整化群谱约束）与分子对接打分、构象采样中的自由能估计问题高度相关，可作为该方向的替代性建模思路。</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」交叉方向中的<strong>打分函数（scoring function）</strong>子领域，具体为物理信息神经网络（physics-informed neural network）用于蛋白-配体结合亲和力/活性分类预测。其方法核心（路径积分启发、变分目标、重整化群谱约束）与分子对接打分、构象采样中的自由能估计问题高度相关，可作为该方向的替代性建模思路。</li>
 </ul>
 <hr />
 <h2>02 一句话总结</h2>
@@ -149,7 +149,7 @@
 <hr />
 <h2>06 核心思想</h2>
 <p><strong>1) 表面方法</strong>：
-PATHNet 以分子力学（MM）描述符为输入，通过一个<strong>非单调分段线性映射器（non-monotonic piecewise-linear mapper）<strong>叠加一个</strong>有界神经网络修正项（bounded neural-network correction）<strong>构成打分函数；训练目标为</strong>最小作用量启发的变分目标（variational, least-action-inspired objective）</strong>，并施加<strong>重整化群启发的谱约束（renormalization-group-inspired spectral constraint）</strong>；模型选择通过**多起点盆地优化（multi-start basin optimization）**完成。</p>
+PATHNet 以分子力学（MM）描述符为输入，通过一个<strong>非单调分段线性映射器（non-monotonic piecewise-linear mapper）</strong>叠加一个<strong>有界神经网络修正项（bounded neural-network correction）</strong>构成打分函数；训练目标为<strong>最小作用量启发的变分目标（variational, least-action-inspired objective）</strong>，并施加<strong>重整化群启发的谱约束（renormalization-group-inspired spectral constraint）</strong>；模型选择通过<strong>多起点盆地优化（multi-start basin optimization）</strong>完成。</p>
 <p><strong>2) 核心洞察</strong>：
 [Analysis] 作者将蛋白-配体结合打分类比为热力学路径积分中的作用量最小化问题——即结合过程的最优路径对应作用量极值；神经网络被构造为对该作用量的可微参数化近似，变分目标确保模型逼近真实结合自由能曲面，而 RG 谱约束则控制模型复杂度/有效自由度，防止过拟合。非单调分段线性映射器提供基础非线性表达能力，有界神经网络修正则保证修正幅度有限，从而维持物理稳定性。</p>
 <p><strong>3) 可能的普适教训</strong>：

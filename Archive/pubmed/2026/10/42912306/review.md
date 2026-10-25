@@ -1,0 +1,69 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no evaluation of methods details, figures, or supplementary data
+- **Shared manuscript claim summary** The authors introduce Azi-LPXL-MS, a chemoselective aziridination-based crosslinking strategy coupled with mass spectrometry, to capture lipid-protein contacts and intraprotein distance constraints in a single experiment. They apply it to beta-lactoglobulin (BLG) and diacylglycerol acyltransferase 1 (DGAT1), reporting identification of phosphatidic acid (PA)-binding sites, lipid-dependent conformational rearrangements, and an allosteric conformational network, with validation via mutagenesis and docking.
+- **Visible evidence base** Abstract text only; no figures, tables, methods, or supplementary materials provided
+- **Missing materials affecting confidence** Full manuscript, experimental procedures, mass spectrometry data, structural models, mutagenesis details, docking parameters, and validation statistics
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable methodological advance in studying lipid-protein interactions with site resolution. The concept of using aziridination to install reactive handles on native unsaturated lipids, followed by DSS-based crosslinking, is chemically plausible and could address a genuine gap in the field. However, the abstract alone provides insufficient evidence to assess the robustness of the method, the validity of the biological conclusions, or the strength of the validation. The claims regarding conformational changes and allosteric networks are ambitious and would require substantial structural and functional evidence to be convincing. The work is likely of interest to the lipid biology and chemical biology communities, but the current evidence base does not establish the case.
+- **Who would be interested in the results, and why** Researchers in lipid-protein interaction biology, chemical biology, and structural biology would be interested. The method offers a potential tool for capturing transient lipid-protein contacts and conformational changes, which is relevant to understanding membrane protein function, lipid signaling, and drug development targeting lipid-binding sites.
+- **Major strengths** The methodological concept is novel and addresses a recognized limitation in the field. The integration of lipid-binding site identification with intraprotein distance constraints in a single workflow is elegant and potentially powerful. The application to both a soluble protein (BLG) and an integral membrane enzyme (DGAT1) suggests broad applicability. The inclusion of functional validation via mutagenesis and docking strengthens the biological claims.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The method "simultaneously identifies lipid-binding sites and intraprotein peptide-peptide distance constraints" and "provides direct insight into lipid binding and binding-induced conformational changes within a single experiment."  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract does not provide any details on the efficiency, specificity, or reproducibility of the aziridination and crosslinking reactions. It is unclear how the authors distinguish true lipid-protein crosslinks from background or nonspecific interactions, and how the distance constraints are derived and interpreted.  
+  - **Why it matters** Without evidence of chemoselectivity and low false-positive rates, the core methodological claim is unsubstantiated. The reliability of the conformational conclusions depends entirely on the quality of the crosslinking data.  
+  - **Resolution test** Provide quantitative data on crosslinking efficiency, specificity controls (e.g., negative controls without aziridination or with non-lipid probes), and validation of distance constraints against known structures.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Scientific importance and validity of biological conclusions  
+  - **Claim pointer** "Azi-LPXL-MS reveals phosphatidic acid (PA)-binding sites and maps lipid-dependent conformational rearrangements across both resolved and previously uncharacterized regions. These data further define an allosteric conformational network linking lipid engagement to distal structural changes."  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The claim of an allosteric conformational network is a strong conclusion that requires robust structural evidence, such as multiple independent conformational states or perturbation analysis. The abstract does not describe how conformational changes are quantified or how the network is inferred. The "previously uncharacterized regions" claim is also vague without specifying which regions and how they were mapped.  
+  - **Why it matters** Overinterpretation of crosslinking data as evidence of allostery could mislead the field. The biological significance of the DGAT1 findings depends on the rigor of the conformational analysis.  
+  - **Resolution test** Show dose-dependent or mutation-dependent conformational responses, provide structural models with confidence metrics, and demonstrate that the proposed allosteric network is supported by independent methods (e.g., HDX-MS, molecular dynamics, or functional assays).  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Validation and reproducibility  
+  - **Claim pointer** "Integrated with site-directed mutagenesis and molecular docking, two potential PA-binding sites in DGAT1, located in a surface pocket and an internal chamber, were identified and functionally validated."  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract states that the PA-binding sites were "functionally validated," but no functional readout is described. It is unclear whether validation refers to binding affinity, enzymatic activity, or another phenotype. The docking results are mentioned without any scoring or confidence assessment.  
+  - **Why it matters** Functional validation is critical to support the biological relevance of the identified sites. Without clear validation criteria, the claim is not assessable.  
+  - **Resolution test** Specify the functional assay used, provide quantitative results (e.g., activity changes, binding constants), and include docking scores or alternative structural evidence for the proposed binding sites.
+
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Readability for nonspecialists  
+  - **Affected element** Abstract text  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract uses technical terms such as "N-H aziridine moiety" and "disuccinimidyl suberate" without brief contextual explanation, which may hinder accessibility for readers outside chemical biology.  
+  - **Required correction** Add a brief parenthetical explanation of the chemical strategy or its purpose in plain language.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Clarity of scope  
+  - **Affected element** Abstract text  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract does not state the limitations of the method, such as applicability to saturated lipids or compatibility with complex membrane environments.  
+  - **Required correction** Include a sentence acknowledging known limitations or scope of applicability.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Completeness of reporting  
+  - **Affected element** Abstract text  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract mentions "site-resolved elucidation" but does not specify the resolution achieved (e.g., residue-level or domain-level).  
+  - **Required correction** Clarify the resolution of the method in the abstract.
+
+## Risk / unsupported claims
+- The claim that Azi-LPXL-MS "provides direct insight into lipid binding and binding-induced conformational changes" is unsupported without quantitative crosslinking data and structural validation.
+- The claim of an "allosteric conformational network" in DGAT1 is unsupported without independent conformational or functional evidence.
+- The claim that two PA-binding sites were "functionally validated" is unsupported without description of the functional assay and results.
+- The general applicability of the method to "biological systems" is overstated based on only two protein examples, one soluble and one membrane-bound.
+- The statement that the method provides "information not accessible from static structures alone" is plausible but not demonstrated in the abstract.

@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cholesterol Hot Spot Automated Mapping Protocol (CHAMP): Identifying Cholesterol-Binding Hot Spots in Membrane Proteins. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Cholesterol Hot Spot Automated Mapping Protocol (CHAMP): Identifying Cholesterol-Binding Hot Spots in Membrane Proteins.</h1>
+      <div class="meta">Sotillo-Nunez, David; Nardi Cesarini, Matteo; Elisi, Gian Marco; Bernetti, Mattia; Bottegoni, Giovanni</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical information and modeling</span>
+        · 2026-10-23
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42912926/">原文</a>
+      </div>
+      <p class="one-liner">该文开发了基于粗粒化分子动力学模拟的自动化流程CHAMP，用于识别膜蛋白-胆固醇结合热点，属于蛋白质结构相关的计算模拟方法，但聚焦于膜蛋白脂质相互作用而非核心结构预测/构象生成问题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Biological membranes are dynamic and heterogeneous environments that actively influence protein structure and function. Cholesterol, in particular, has been widely reported to modulate membrane proteins through binding to specific interaction sites. However, the identification of these sites remains challenging due to the intrinsic complexity and dynamics of lipid bilayers, especially when multiple systems and membrane environments are considered. Here, we present CHAMP (Cholesterol hot spot automated mapping protocol), an automated Python-based workflow that combines coarse-grained molecular dynamics simulations with a dual analysis based on contact persistence and spatial density to identify cholesterol-binding hot spots at protein-membrane interfaces. The protocol requires limited user intervention and is designed to enable consistent and reproducible analyses across different targets. We validated CHAMP on the serotonin transporter and the cannabinoid receptor 1 (CB1), where it recovers known cholesterol-binding regions reported in experimental and computational studies. In the CB1 system, the method also identifies a potential additional interaction site. To assess the generality of the approach, we applied the protocol to the CB1 negative allosteric modulator Org27569, showing that it can capture relevant interaction hot spots beyond sterol molecules. Overall, CHAMP provides a practical framework for mapping interaction hot spots at protein-membrane interfaces and may support large-scale and comparative studies of membrane proteins. Limitations of the current implementation and possible extensions are discussed.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">生物膜是动态且异质的环境，积极影响蛋白质的结构与功能。特别是胆固醇，已被广泛报道通过结合特定相互作用位点来调节膜蛋白。然而，由于脂质双层的固有复杂性和动态性，尤其是在考虑多个系统和膜环境时，这些位点的识别仍具挑战性。在此，我们提出CHAMP（胆固醇热点自动映射协议），一种基于Python的自动化工作流程，结合粗粒化分子动力学模拟与基于接触持续性和空间密度的双重分析，以识别蛋白质-膜界面的胆固醇结合热点。该协议需要有限的人工干预，旨在实现跨不同靶标的一致且可重复的分析。我们在血清素转运体和 cannabinoid receptor 1 (CB1) 上验证了CHAMP，它恢复了实验和计算研究中报道的已知胆固醇结合区域。在CB1系统中，该方法还识别出一个潜在的额外相互作用位点。为评估该方法的普适性，我们将该协议应用于CB1负向别构调节剂Org27569，显示其能捕获甾醇分子之外的相關相互作用热点。总体而言，CHAMP为绘制蛋白质-膜界面的相互作用热点提供了实用框架，并可能支持膜蛋白的大规模及比较研究。讨论了当前实现的局限性及可能的扩展方向。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Cholesterol Hot Spot Automated Mapping Protocol (CHAMP): Identifying Cholesterol-Binding Hot Spots in Membrane Proteins</li>
+<li><strong>作者</strong>：Sotillo-Nunez, David; Nardi Cesarini, Matteo; Elisi, Gian Marco; Bernetti, Mattia; Bottegoni, Giovanni</li>
+<li><strong>单位</strong>：未提供（根据作者姓名推测为意大利机构，具体单位未在摘要中给出）</li>
+<li><strong>期刊/平台</strong>：Journal of Chemical Information and Modeling</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-23）</li>
+<li><strong>论文类型</strong>：方法学/工具开发论文</li>
+<li><strong>领域</strong>：膜蛋白-胆固醇相互作用；粗粒化分子动力学；计算结构生物学</li>
+<li><strong>关键词</strong>：胆固醇结合位点、粗粒化MD、接触持久性、空间密度、膜蛋白、自动化工作流</li>
+<li><strong>DOI/arXiv</strong>：10.1021/acs.jcim.6c01419</li>
+<li><strong>代码</strong>：未提供（摘要中未提及公开代码仓库）</li>
+<li><strong>数据</strong>：未提供（验证系统为血清素转运体、CB1受体及Org27569配体，但未提供数据存储位置）</li>
+<li><strong>阅读日期</strong>：2026-05-13（基于当前日期推断）</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × 物理模拟（粗粒化MD）」方向，聚焦于膜蛋白-胆固醇相互作用位点的自动化识别。与AlphaFold等结构预测方法互补——它不预测静态结构，而是通过动态模拟捕捉脂质-蛋白界面的相互作用热点，可视为结构预测下游的功能位点注释工具。其「自动化+可重复」的设计理念对大规模比较研究具有直接参考价值。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文开发了一个名为CHAMP的自动化Python工作流，通过粗粒化分子动力学模拟结合接触持久性与空间密度双重分析，在血清素转运体和CB1受体上成功识别已知胆固醇结合区域，并展示了对非甾醇配体（Org27569）结合热点的可迁移性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在多系统、多膜环境下自动、一致地识别膜蛋白上的胆固醇结合热点？</li>
+<li><strong>为何重要</strong>：胆固醇通过结合特定位点调节膜蛋白功能，但实验鉴定这些位点成本高、周期长；计算预测可加速这一过程，尤其对药物靶点（如转运体、GPCR）具有重要意义。</li>
+<li><strong>现有方法不足</strong>：脂质双分子层的复杂性和动态性使得基于静态结构或短时模拟的方法难以捕捉瞬态结合位点；手动分析不同系统时缺乏一致性，难以进行大规模比较研究。</li>
+<li><strong>精确研究问题</strong>：Can an automated workflow combining coarse-grained MD with dual contact-density analysis reliably identify known cholesterol-binding hot spots across different membrane protein systems?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络主要基于本文摘要及作者引用的框架，未经外部文献系统核验，部分为[Analysis]推断）</em>
+- <strong>阶段一：实验方法</strong>（如X射线晶体学、冷冻电镜）——可直接观察胆固醇密度，但受限于结晶条件、分辨率及动态信息缺失。
+- <strong>阶段二：全原子MD模拟</strong>——可提供原子级动态信息，但计算成本高，难以进行多系统、长时间采样。
+- <strong>阶段三：粗粒化MD（如Martini力场）</strong>——大幅降低计算成本，允许更长模拟时间和更大系统，但分辨率降低，需要后续反映射或验证。
+- <strong>阶段四：自动化分析工作流</strong>（本文位置）——在粗粒化MD基础上，通过标准化分析流程（接触持久性+空间密度）实现跨系统一致性，减少人工干预和主观偏差。
+- <strong>本文主张的位置</strong>：CHAMP填补了「粗粒化MD模拟」与「可重复、可扩展的位点注释」之间的方法论空白，特别强调自动化与通用性。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>胆固醇结合位点鉴定困难</td>
+<td>实验方法耗时且受限于样品条件；计算方法缺乏一致性</td>
+<td>脂质双分子层复杂且动态，结合位点可能为瞬态或低占据状态</td>
+<td>摘要：「identification of these sites remains challenging due to the intrinsic complexity and dynamics of lipid bilayers」</td>
+</tr>
+<tr>
+<td>多系统比较缺乏标准化</td>
+<td>不同研究使用不同模拟参数和分析标准，结果难以横向比较</td>
+<td>缺乏统一的自动化工作流，手动分析引入主观偏差</td>
+<td>摘要：「requires limited user intervention and is designed to enable consistent and reproducible analyses across different targets」</td>
+</tr>
+<tr>
+<td>现有方法局限于甾醇分子</td>
+<td>胆固醇结合位点预测方法难以推广到其他配体</td>
+<td>分析框架可能过度依赖胆固醇的化学特征</td>
+<td>摘要：「showing that it can capture relevant interaction hot spots beyond sterol molecules」</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：CHAMP是一个Python自动化工作流，输入为膜蛋白-膜系统，执行粗粒化MD模拟，然后对轨迹进行双重分析——(a) 接触持久性（contact persistence）：统计胆固醇与蛋白残基的接触时间占比；(b) 空间密度（spatial density）：计算胆固醇在蛋白-膜界面的三维占据密度图。两者结合输出候选热点区域。</li>
+<li><strong>核心洞察</strong>：胆固醇结合位点并非静态口袋，而是动态界面上的「高占据区域」。单一指标（如接触时间或密度）可能遗漏瞬态或低亲和力位点，而双重分析可互补：接触持久性捕捉时间维度，空间密度捕捉空间维度。此外，该框架不依赖胆固醇的特定化学基团，因此可迁移到其他膜结合配体。</li>
+<li><strong>可能的普适教训</strong> [Analysis]：对于膜蛋白-配体相互作用，将「时间持久性」与「空间聚集性」结合的分析策略，可能比单一静态打分更鲁棒。这一思路可推广到其他脂质（如磷脂酰肌醇）、膜锚定肽或小分子别构调节剂的结合位点预测。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：膜蛋白结构（如AlphaFold预测或实验结构）、膜组成参数（脂质类型、胆固醇比例）、模拟参数（力场、温度、时长）</li>
+<li><strong>输出</strong>：胆固醇结合热点列表（含残基编号、接触持久性分数、密度峰值位置）</li>
+<li><strong>模块</strong>：
+  1. 系统构建模块（将蛋白嵌入粗粒化膜）
+  2. MD模拟模块（执行平衡和产出轨迹）
+  3. 接触持久性分析模块（计算蛋白-胆固醇接触时间）
+  4. 空间密度分析模块（生成三维密度图并识别峰值）
+  5. 热点聚类与报告模块（合并双重分析结果，输出候选位点）</li>
+<li><strong>训练</strong>：无监督方法，无需训练数据；依赖MD采样充分性</li>
+<li><strong>工具</strong>：Python、粗粒化MD引擎（推测为GROMACS，摘要未明确）、Martini力场（推测）</li>
+<li><strong>反馈回路</strong>：无显式反馈回路；分析为一次性流程</li>
+<li><strong>假设</strong>：粗粒化MD采样足以覆盖胆固醇结合/解离事件；接触持久性与密度峰值共同指示功能相关位点</li>
+<li><strong>文字流程</strong>：输入蛋白结构 → 嵌入粗粒化膜 → 运行MD模拟 → 对轨迹计算接触持久性和空间密度 → 双重分析结果交叉验证 → 输出热点列表</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>粗粒化MD模拟</td>
+<td>生成胆固醇-蛋白动态轨迹</td>
+<td>捕捉瞬态结合事件和膜动态</td>
+<td>输入：蛋白+膜系统；输出：轨迹</td>
+<td>摘要：「combines coarse-grained molecular dynamics simulations」</td>
+<td>无法获得动态信息，退回静态结构分析（预期影响）</td>
+</tr>
+<tr>
+<td>接触持久性分析</td>
+<td>统计胆固醇-残基接触时间占比</td>
+<td>识别时间上稳定的相互作用</td>
+<td>输入：轨迹；输出：残基接触分数</td>
+<td>摘要：「dual analysis based on contact persistence」</td>
+<td>可能遗漏短时但功能重要的结合事件（预期影响）</td>
+</tr>
+<tr>
+<td>空间密度分析</td>
+<td>生成胆固醇占据密度图</td>
+<td>识别空间聚集区域</td>
+<td>输入：轨迹；输出：密度峰值坐标</td>
+<td>摘要：「and spatial density」</td>
+<td>可能遗漏低占据但高特异性的位点（预期影响）</td>
+</tr>
+<tr>
+<td>热点聚类与报告</td>
+<td>合并双重分析结果</td>
+<td>提高位点鉴定的置信度</td>
+<td>输入：接触分数+密度图；输出：热点列表</td>
+<td>摘要：「identify cholesterol-binding hot spots」</td>
+<td>无合并则需手动交叉验证，降低可重复性（预期影响）</td>
+</tr>
+</tbody>
+</table>
+<p><em>注：摘要未提供消融实验数据，所有「移除后影响」均为[Analysis]推断的预期效应，非实测。</em></p>
+<h2>09 关键公式符号</h2>
+<p>不适用。摘要中未提供任何数学公式或定量定义（如接触持久性的具体计算方式、密度阈值的设定标准）。方法细节需查阅全文。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集/群体</strong>：两个验证系统——血清素转运体（SERT）和CB1受体；另加CB1负向别构调节剂Org27569作为非甾醇配体测试</li>
+<li><strong>规模</strong>：未提供（模拟时长、重复次数、系统大小均未在摘要中给出）</li>
+<li><strong>指标</strong>：与已知胆固醇结合区域的重叠程度（定性比较）</li>
+<li><strong>基线</strong>：未提供（无对比方法）</li>
+<li><strong>预算/骨干/仪器</strong>：未提供</li>
+<li><strong>Oracle输入</strong>：已知胆固醇结合位点（来自实验和计算研究）</li>
+<li><strong>评测协议</strong>：将CHAMP输出与文献报道的胆固醇结合区域进行定性比对</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SERT验证</td>
+<td>CHAMP能恢复已知胆固醇结合区</td>
+<td>与实验/计算报道比对</td>
+<td>成功恢复</td>
+<td>CHAMP在SERT上有效</td>
+<td>未提供定量重叠度指标</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>CB1验证</td>
+<td>CHAMP能恢复已知胆固醇结合区</td>
+<td>与实验/计算报道比对</td>
+<td>成功恢复</td>
+<td>CHAMP在CB1上有效</td>
+<td>未提供定量重叠度指标</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>CB1新位点</td>
+<td>CHAMP能发现潜在新位点</td>
+<td>无外部验证</td>
+<td>识别一个额外位点</td>
+<td>CHAMP有发现新位点的能力</td>
+<td>该位点功能意义未验证</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>Org27569测试</td>
+<td>CHAMP可推广到非甾醇配体</td>
+<td>与胆固醇结果对比</td>
+<td>成功捕获热点</td>
+<td>CHAMP具有通用性</td>
+<td>仅测试一个配体，泛化性有限</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：CHAMP仅识别蛋白-膜界面的胆固醇（或类似配体）结合热点，不预测结合亲和力、不区分激动/拮抗效应、不提供原子级结合模式。</li>
+<li><strong>Oracle/真值输入</strong>：验证依赖文献中已知结合位点，这些位点本身可能不完整或有争议。</li>
+<li><strong>端到端状态</strong>：CHAMP是分析流程而非预测模型；其输出质量高度依赖输入结构质量和MD采样充分性。</li>
+<li><strong>算力成本</strong>：粗粒化MD虽比全原子便宜，但多系统、长时程模拟仍需可观计算资源（具体未量化）。</li>
+<li><strong>历史数据依赖</strong>：无训练数据依赖，但验证基准（已知位点）来自历史文献。</li>
+<li><strong>模型依赖</strong>：依赖粗粒化力场（推测Martini）的准确性；粗粒化可能丢失原子级细节。</li>
+<li><strong>最难情形</strong>：瞬态、低占据或构象依赖的结合位点可能被遗漏；胆固醇结合引起的蛋白构象变化未被显式建模。</li>
+<li><strong>群体/领域边界</strong>：验证仅限两个蛋白系统和一个配体；对GPCR家族其他成员、离子通道等的适用性未测试。</li>
+<li><strong>不确定性</strong>：无统计置信度指标；热点排序缺乏显著性检验。</li>
+<li><strong>有边界的复述</strong>：CHAMP在SERT和CB1上能自动识别与文献一致的胆固醇结合区域，并初步展示对非甾醇配体的可迁移性，但其灵敏度、特异性和泛化能力需在更大规模、更多样化的系统上验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>当前实现存在限制</td>
+<td>摘要末句：「Limitations of the current implementation and possible extensions are discussed」</td>
+<td>讨论部分提出扩展方向（具体内容未在摘要中提供）</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<p><em>注：摘要仅提及「讨论了局限和扩展」，未列出具体内容。</em></p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 验证系统数量有限（2个蛋白+1个配体）
+- 依赖粗粒化模拟的采样质量
+- 未提供定量评估指标</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>验证仅基于两个蛋白系统</td>
+<td>SERT和CB1可能具有特殊的胆固醇结合特征，不代表一般膜蛋白</td>
+<td>泛化性声明缺乏统计支持</td>
+<td>在更多GPCR、离子通道、转运体上测试</td>
+<td>摘要仅提及两个验证系统</td>
+</tr>
+<tr>
+<td>无定量评估指标</td>
+<td>「恢复已知位点」可能基于宽松的定性判断</td>
+<td>无法评估方法的精确率和召回率</td>
+<td>计算与已知位点的Dice系数或距离阈值匹配率</td>
+<td>摘要未提供数值指标</td>
+</tr>
+<tr>
+<td>未与现有方法对比</td>
+<td>无基线方法（如全原子MD、其他热点预测工具）比较</td>
+<td>无法判断CHAMP的增量优势</td>
+<td>在相同系统上运行其他方法并比较</td>
+<td>摘要未提及对比实验</td>
+</tr>
+<tr>
+<td>粗粒化力场的固有局限</td>
+<td>Martini等CG力场可能高估或低估胆固醇-蛋白亲和力</td>
+<td>影响热点排序的可靠性</td>
+<td>对CHAMP输出位点进行全原子MD或突变实验验证</td>
+<td>摘要未讨论力场验证</td>
+</tr>
+<tr>
+<td>Org27569测试的解读</td>
+<td>该配体是CB1别构调节剂，其结合位点可能与胆固醇位点重叠或不同</td>
+<td>「可迁移性」可能仅适用于两亲性膜配体</td>
+<td>测试结构多样的膜结合配体</td>
+<td>摘要仅提及一个非甾醇配体</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>双重分析策略</strong>：将「接触持久性」（时间维度）与「空间密度」（空间维度）结合，可提高膜蛋白-配体热点识别的鲁棒性。这一策略可直接迁移到其他脂质（如PIP2、神经节苷脂）或膜锚定肽的结合位点预测。
+2. <strong>自动化工作流设计</strong>：CHAMP强调「limited user intervention」和「consistent and reproducible analyses」，这对本课题的大规模比较研究（如跨家族膜蛋白的胆固醇结合位点谱）具有直接借鉴价值——可构建类似pipeline整合MD模拟+分析+报告。
+3. <strong>粗粒化MD的适用性</strong>：对于膜蛋白-脂质相互作用，CG-MD是平衡采样效率与系统规模的可行选择；但需注意后续用全原子MD或实验验证关键位点。
+4. <strong>非甾醇配体的可迁移性</strong>：CHAMP框架不依赖胆固醇的化学特征，提示「界面热点」概念可推广到其他膜活性分子——这为研究别构调节剂、脂质类似物药物的膜结合位点提供了新工具。
+5. <strong>验证策略</strong>：用已知实验/计算位点作为基准进行定性验证是起步，但应补充定量指标（如重叠率、排名一致性）和阴性对照（如无胆固醇结合能力的蛋白）。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：与「MDsim-based hot spot mapping」类方法（如DoGSite、FTMap等基于全原子MD或分子对接的热点预测）思路相似，但CHAMP专用于膜蛋白-脂质界面，且采用CG-MD以降低计算成本。</li>
+<li><strong>组合方向</strong>：CHAMP输出热点可与AlphaFold预测结构结合——用AF2结构作为CG-MD起点，实现「结构预测→动态功能位点注释」的pipeline。</li>
+<li><strong>冲突/差异</strong>：与基于序列或静态结构的胆固醇结合位点预测工具（如CholPred）不同，CHAMP强调动态采样，可能捕捉到静态方法遗漏的构象依赖位点。</li>
+<li><strong>可迁移领域</strong>：CHAMP的「接触持久性+空间密度」分析框架可迁移到蛋白质-核酸界面、蛋白质-纳米材料界面等非膜系统。</li>
+<li><strong>理论背景</strong>：与「lipid-protein interaction」领域中的「lipid selectivity」和「hot spot」概念一致，可参考文献如Corradi et al. (2019)关于膜-蛋白相互作用的综述。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：CHAMP-ΔG：结合自由能估计的胆固醇热点排序增强
+   - <strong>来源局限/观察</strong>：CHAMP仅输出热点位置，不提供结合强度排序；粗粒化模拟无法直接给出定量自由能。
+   - <strong>核心假设</strong>：在CHAMP热点基础上，用伞形采样或MM/PBSA计算相对结合自由能，可提高热点排序的准确性。
+   - <strong>初步方法</strong>：对CHAMP输出的top-N热点，构建CG系统进行伞形采样，计算胆固醇解离自由能；与已知实验亲和力数据比较。
+   - <strong>验证方式</strong>：在SERT和CB1上比较CHAMP原始排序与自由能排序的AUC。
+   - <strong>可能的失败模式</strong>：CG力场对自由能估计误差大；热点间自由能差异可能小于力场噪声。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：CHAMP-ensemble：多构象输入的鲁棒性分析
+   - <strong>来源局限/观察</strong>：CHAMP依赖单一输入结构，而膜蛋白存在多种功能构象（如激活/失活态），胆固醇结合可能具有构象选择性。
+   - <strong>核心假设</strong>：使用AlphaFold预测的多种构象（如apo、holo、突变体）作为输入，CHAMP输出将显示构象依赖的热点变化。
+   - <strong>初步方法</strong>：对CB1的激活态和失活态结构分别运行CHAMP，比较热点差异；结合已知功能数据验证构象选择性位点。
+   - <strong>验证方式</strong>：与实验报道的构象依赖胆固醇效应比较。
+   - <strong>可能的失败模式</strong>：CG-MD模拟时间不足以让胆固醇在构象间重新分布；构象差异被膜环境噪声掩盖。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：CHAMP-lipidome：多脂质类型热点比较
+   - <strong>来源局限/观察</strong>：CHAMP仅针对胆固醇，但膜中其他脂质（如PIP2、鞘磷脂）也可能调节膜蛋白。
+   - <strong>核心假设</strong>：CHAMP框架可扩展为「多脂质热点图谱」，揭示不同脂质在蛋白表面的竞争性结合位点。
+   - <strong>初步方法</strong>：在相同蛋白系统中分别模拟胆固醇、PIP2、鞘磷脂，用CHAMP分析各自热点；计算热点重叠度以识别竞争或协同位点。
+   - <strong>验证方式</strong>：与已知脂质-蛋白共结晶结构或突变实验比较。
+   - <strong>可能的失败模式</strong>：不同脂质的CG参数质量不一；多脂质模拟的混合膜系统复杂度增加。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：CHAMP-ML：基于热点特征的胆固醇结合位点预测器
+   - <strong>来源局限/观察</strong>：CHAMP需要MD模拟，计算成本高，难以用于大规模蛋白质组筛选。
+   - <strong>核心假设</strong>：CHAMP在代表性蛋白上输出的热点特征（如残基组成、疏水性、局部密度）可训练机器学习模型，实现快速预测。
+   - <strong>初步方法</strong>：在50-100个膜蛋白上运行CHAMP，提取热点残基特征；训练随机森林或图神经网络预测胆固醇结合残基。
+   - <strong>验证方式</strong>：留出法交叉验证；与已知胆固醇结合蛋白数据库比较。
+   - <strong>可能的失败模式</strong>：训练集偏差导致泛化失败；CHAMP热点与功能位点并非一一对应。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：CHAMP-perturbation：胆固醇热点对突变的功能影响预测
+   - <strong>来源局限/观察</strong>：CHAMP识别位点后，未连接至功能后果；疾病相关突变可能位于胆固醇热点。
+   - <strong>核心假设</strong>：位于CHAMP热点的错义突变更可能影响胆固醇调节功能，从而与疾病表型相关。
+   - <strong>初步方法</strong>：将CHAMP热点与ClinVar/gnomAD中膜蛋白突变位点重叠分析；用分子动力学模拟验证突变对胆固醇结合的影响。
+   - <strong>验证方式</strong>：统计热点内突变与疾病关联的富集度。
+   - <strong>可能的失败模式</strong>：胆固醇结合与功能调节的因果关系不明确；突变效应可能通过蛋白构象而非直接结合位点介导。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present CHAMP, an automated Python-based workflow combining coarse-grained molecular dynamics simulations with dual analysis of contact persistence and spatial density to identify cholesterol-binding hot spots at protein-membrane interfaces. The protocol is claimed to require limited user intervention, enable consistent and reproducible analyses across targets, and is validated on the serotonin transporter and cannabinoid receptor 1 (CB1), recovering known cholesterol-binding regions and identifying a potential additional site in CB1. The protocol is also applied to the CB1 negative allosteric modulator Org27569 to demonstrate generality beyond sterols.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, simulation parameters, validation metrics, or comparative benchmarks are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, all figures and tables, simulation setup details, validation datasets, statistical analyses, and any comparison against existing methods</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially useful computational protocol for mapping cholesterol-binding hot spots in membrane proteins. The methodological concept is reasonable and the choice of validation targets is sensible given prior literature. However, the abstract provides no quantitative evidence of performance, no details on how "recovery" of known sites was assessed, and no comparison against existing approaches. The claim of generality based on a single additional application to a small-molecule ligand is not sufficiently supported. The work may be of interest to the computational biophysics and membrane protein communities, but the case is not established from the abstract alone.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and cheminformaticians working on membrane protein-lipid interactions would be the primary audience. Researchers studying cholesterol modulation of membrane proteins, particularly transporters and GPCRs, may find the protocol useful for generating hypotheses about interaction sites. Developers of automated analysis workflows for molecular dynamics simulations may also be interested in the methodological contribution.</li>
+<li><strong>Major strengths</strong> The protocol addresses a real need for automated, reproducible identification of cholesterol-binding sites across multiple membrane protein systems. The dual analysis approach combining contact persistence and spatial density is conceptually sound. The emphasis on limited user intervention and cross-target consistency is a practical advantage. The validation on two distinct protein classes and the extension to a non-sterol ligand suggest potential breadth.</li>
+<li><strong>Major Concerns</strong>  </li>
+<li>R1-M1  </li>
+<li>R1-M2  </li>
+<li>R1-M3  </li>
+<li>R1-M4</li>
+<li><strong>Minor Comments</strong>  </li>
+<li>R1-m1  </li>
+<li>R1-m2  </li>
+<li>R1-m3</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3</li>
+<li><strong>Assessment against Nature-style criteria</strong><br />
+  Originality: The combination of contact persistence and spatial density analysis in an automated workflow is a modest methodological increment rather than a conceptual breakthrough. Similar approaches for mapping lipid interaction sites exist in the literature, and the novelty appears to lie in the specific integration and automation rather than in a fundamentally new principle.<br />
+  Scientific importance: The problem of identifying cholesterol-binding sites is relevant, but the abstract does not demonstrate that CHAMP provides a significant advance over existing methods. The importance of the claimed findings cannot be assessed without quantitative validation.<br />
+  Interdisciplinary readership: The work sits at the interface of computational chemistry, biophysics, and membrane biology. The abstract is written in a way that is accessible to specialists in these areas, but the lack of quantitative results limits its appeal to a broader readership.<br />
+  Technical soundness: The methodological logic is plausible, but no technical details are provided to assess the soundness of the implementation, the choice of simulation parameters, or the statistical treatment of the results.<br />
+  Readability for nonspecialists: The abstract is clearly written and the workflow is described in understandable terms. However, the absence of concrete outcomes makes it difficult for a nonspecialist to gauge the practical utility of the protocol.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract describes a reasonable protocol and plausible applications, but without quantitative validation data, methodological details, or comparison to existing tools, the claims of recovery, identification, and generality cannot be evaluated. A supportive posture would require the full manuscript to demonstrate robust performance.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> The protocol "recovers known cholesterol-binding regions reported in experimental and computational studies" for the serotonin transporter and CB1.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The abstract states that known cholesterol-binding regions are recovered but provides no quantitative measure of recovery. It is unclear whether recovery means partial overlap, full spatial coincidence, or statistical enrichment. No metrics such as distance thresholds, overlap coefficients, or false positive rates are given.  </li>
+<li><strong>Why it matters</strong> The central validation claim of the protocol rests on this recovery. Without a defined and quantified criterion for what constitutes successful recovery, the claim is unfalsifiable and cannot be compared against other methods.  </li>
+<li>
+<p><strong>Resolution test</strong> Provide a clear definition of recovery (e.g., fraction of known sites identified within a specified distance threshold), report the numerical values for both validation targets, and include a comparison against a null model or an existing method.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> The protocol "identifies a potential additional interaction site" in the CB1 system.  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The identification of a potential additional site is presented as a finding, but no evidence is provided to support its biological relevance. It is not stated whether this site has any prior experimental or computational support, whether it is statistically significant relative to noise, or whether it is reproducible across independent simulations.  </li>
+<li><strong>Why it matters</strong> A novel predicted site is only meaningful if it can be distinguished from false positives and if some rationale for its potential functional relevance is provided. Without this, the claim is speculative.  </li>
+<li>
+<p><strong>Resolution test</strong> Report the statistical significance of the predicted site relative to background density, state whether it has any prior literature support, and discuss its potential functional relevance in the context of CB1 biology.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> The application to Org27569 shows that CHAMP "can capture relevant interaction hot spots beyond sterol molecules."  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The abstract does not specify what "relevant" means in this context. It is not stated whether the identified hot spots for Org27569 correspond to known binding sites, whether they are supported by experimental data, or whether they are merely spatially clustered regions with no demonstrated functional significance. A single application to one ligand is insufficient to establish generality.  </li>
+<li><strong>Why it matters</strong> The claim of generality beyond sterols is a key part of the protocol's potential utility. Without a defined relevance criterion and without multiple test cases, the claim is not supported.  </li>
+<li>
+<p><strong>Resolution test</strong> Define the criterion for relevance (e.g., overlap with known binding site, correlation with mutational data), report the results for Org27569 against that criterion, and ideally include at least one additional non-sterol ligand to demonstrate consistency.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Methodological transparency  </li>
+<li><strong>Claim pointer</strong> The protocol "requires limited user intervention and is designed to enable consistent and reproducible analyses across different targets."  </li>
+<li><strong>Evidence pointer</strong> Abstract only; location not provided  </li>
+<li><strong>Concern</strong> The abstract makes claims about automation and reproducibility but provides no information on the specific parameters that must be set by the user, the computational cost, the sensitivity of results to parameter choices, or the variability across replicate runs.  </li>
+<li><strong>Why it matters</strong> Reproducibility and ease of use are central selling points of the protocol. Without evidence on parameter sensitivity and run-to-run variability, these claims cannot be assessed.  </li>
+<li><strong>Resolution test</strong> Provide a parameter sensitivity analysis, report run-to-run variability for at least one system, and state the computational cost in terms of wall-clock time and resources.</li>
+</ul>
+<h3>Minor Comments</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-m1  </li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Description of the dual analysis  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The abstract states that the protocol combines "contact persistence and spatial density" but does not explain how these two measures are integrated. It is unclear whether they are combined into a single score, used as sequential filters, or treated as independent outputs.  </li>
+<li>
+<p><strong>Required correction</strong> Clarify in the abstract or methods how the two analyses are combined and what each contributes to the final hot spot identification.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Completeness  </li>
+<li><strong>Affected element</strong> Validation scope  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The abstract mentions validation on two targets and an additional application to a ligand, but does not state whether any negative controls were included, such as proteins without known cholesterol-binding sites, to assess false positive rates.  </li>
+<li>
+<p><strong>Required correction</strong> Include a statement on whether negative controls were used and, if so, report the false positive rate. If not, acknowledge this as a limitation.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Reproducibility  </li>
+<li><strong>Affected element</strong> Software availability  </li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided  </li>
+<li><strong>Issue</strong> The protocol is described as an "automated Python-based workflow," but the abstract does not state whether the code is publicly available, under what license, or whether documentation and example inputs are provided.  </li>
+<li><strong>Required correction</strong> State the software availability, including repository URL, license, and any dependencies, in the abstract or a data availability statement.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that CHAMP "recovers known cholesterol-binding regions" is unsupported without quantitative recovery metrics.</li>
+<li>The claim that a "potential additional interaction site" is identified in CB1 is unsupported without statistical or biological evidence.</li>
+<li>The claim that the protocol "can capture relevant interaction hot spots beyond sterol molecules" is unsupported without a defined relevance criterion and additional test cases.</li>
+<li>The claims of limited user intervention and cross-target reproducibility are not assessable from the abstract.</li>
+<li>The general utility of the protocol for "large-scale and comparative studies" is speculative and not supported by any demonstration of scalability.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

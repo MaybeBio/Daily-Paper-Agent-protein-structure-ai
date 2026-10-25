@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projected Gradient Descent for Hallucination-Based Protein Binder Design · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Projected Gradient Descent for Hallucination-Based Protein Binder Design</h1>
+      <div class="meta">Magnus Ross; David Miller; Jude Wells</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-23
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.22.760942">原文</a>
+      </div>
+      <p class="one-liner">该文提出将投影梯度下降（PGD）替代软max重参数化梯度下降用于基于幻觉的蛋白质结合剂设计，通过直接更新氨基酸概率避免梯度衰减，在多个靶标上提升设计置信度和多样性，属于蛋白质结构计算与AI优化方法的直接贡献。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Gradient-based hallucination is a popular approach to protein binder design that backpropagates a loss defined on a structure predictor&#39;s output to guide optimisation in a continuous relaxation of sequence space, yet the choice of optimiser for this task has received little systematic evaluation. In this work we evaluate simplex-projected gradient descent (PGD) as an alternative to the commonly used gradient descent on softmax-reparameterised sequence logits. By updating amino-acid probabilities directly, PGD avoids softmax-induced gradient attenuation and allows amino acids suppressed early in optimisation to re-enter the design. Using an ESMFold2-based pipeline on ten targets, we find that PGD minimises the design loss in fewer iterations and produces designs with higher predicted interface confidence compared to its softmax counterpart. Simulating selection in real campaigns by considering the upper tail of the ipSAE distribution across a pool of 1,024 designs per target, we show that PGD significantly improves on six of the ten targets, with no significant degradation on any, and produces more structurally diverse designs on every target. Additionally, we find that pairing shorter PGD runs with candidate screening raises the total number of in silico hits per GPU-hour by 29\% relative to default-length trajectories. These results support PGD as a simple and effective alternative for hallucination-based binder design. Code and design data are publicly available.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">基于梯度的幻觉生成（gradient-based hallucination）是蛋白质结合剂设计中的一种常用方法，它通过反向传播基于结构预测器输出定义的损失函数，在序列空间的连续松弛中引导优化，然而该任务中优化器的选择尚未得到系统性评估。在本研究中，我们评估了单纯形投影梯度下降（PGD）作为常用软最大化重参数化序列对数梯度下降的替代方案。通过直接更新氨基酸概率，PGD避免了软最大化引起的梯度衰减，并允许在优化早期被抑制的氨基酸重新进入设计过程。使用基于ESMFold2的流程对十个靶标进行测试，我们发现PGD在更少的迭代次数内最小化设计损失，并产生具有更高预测界面置信度的设计，优于其软最大化对应方法。通过考虑每个靶标1,024个设计池中ipSAE分布的上尾来模拟实际活动中的选择，我们显示PGD在十个靶标中的六个上显著改善，且在任何靶标上均无显著退化，并在每个靶标上产生更多结构多样化的设计。此外，我们发现将较短的PGD运行与候选筛选配对，可将每GPU小时的总计算机模拟命中数相对于默认长度轨迹提高29%。这些结果支持PGD作为基于幻觉的结合剂设计的简单有效替代方案。代码和设计数据公开可用。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Projected Gradient Descent for Hallucination-Based Protein Binder Design</li>
+<li><strong>作者</strong>：Magnus Ross; David Miller; Jude Wells</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026-10-23</li>
+<li><strong>论文类型</strong>：方法评估/实证研究（预印本）</li>
+<li><strong>领域</strong>：蛋白质计算设计 × 深度学习（结构预测引导的序列设计）</li>
+<li><strong>关键词</strong>：protein binder design, hallucination, projected gradient descent, ESMFold, ipSAE, sequence optimisation</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.10.22.760942</li>
+<li><strong>代码</strong>：https://github.com/magnusross/pgd-hallucination</li>
+<li><strong>数据</strong>：https://doi.org/10.5522/04/34493751</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在该方向中的位置</strong>：本文聚焦于蛋白质 binder 设计中的「hallucination」优化器选择问题，属于「结构预测（ESMFold）× 序列空间连续优化」交叉方向。与 AlphaFold 引导的序列设计（hallucination）一脉相承，但首次系统评估投影梯度下降（PGD）vs. softmax 重参数化梯度下降的优化器差异，属于方法层面的增量贡献。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文用 simplex-projected gradient descent（PGD）替代 softmax 重参数化梯度下降来优化蛋白质 binder 序列的连续概率表示，在 ESMFold2 引导的 hallucination 设计中以更少迭代达到更低设计损失，并在 10 个靶标上产生更高预测界面置信度、更多样化结构及更高 in silico 命中率。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：在基于结构预测器（ESMFold2）的 hallucination 蛋白质 binder 设计中，优化器选择对设计质量与效率的影响尚未被系统评估。具体而言，常用的 softmax 重参数化梯度下降是否存在可避免的缺陷，而 simplex-projected gradient descent 是否能作为更优替代？</li>
+<li><strong>为什么重要</strong>：Binder 设计是蛋白质工程的核心任务之一（靶向结合、药物设计、传感器等）。Hallucination 方法通过反向传播结构预测损失来优化序列，优化器直接决定设计收敛速度、最终序列质量与多样性，影响实际设计成本与成功率。</li>
+<li><strong>现有方法为何不足</strong>：softmax 重参数化存在梯度衰减问题（softmax 的 Jacobian 使被抑制的氨基酸梯度趋近于零），导致早期被压低的氨基酸难以在后期重新进入设计，可能陷入次优解。</li>
+<li><strong>精确研究问题</strong>：Can simplex-projected gradient descent outperform softmax-reparameterised gradient descent in hallucination-based protein binder design, in terms of loss minimisation efficiency, predicted interface confidence, structural diversity, and in silico hit rate?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架及该领域公开常识，标注「经外部核验」部分。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 基于物理的 binder 设计</td>
+<td>Rosetta（柔性对接+序列设计）</td>
+<td>物理可解释、可实验验证</td>
+<td>计算昂贵、构象采样有限、需专家知识</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>2. 深度学习结构预测引导设计（hallucination）</td>
+<td>AlphaFold hallucination（Anishchenko et al., 2021）；ProteinMPNN 序列设计</td>
+<td>利用结构预测器作为可微 oracle，无需物理能量函数</td>
+<td>优化器未系统评估；softmax 梯度衰减</td>
+<td>直接背景</td>
+</tr>
+<tr>
+<td>3. 序列空间连续优化</td>
+<td>softmax 重参数化 + Adam/梯度下降（常用）</td>
+<td>简单、稳定</td>
+<td>梯度衰减、早期抑制难以逆转</td>
+<td>本文挑战的对象</td>
+</tr>
+<tr>
+<td>4. 投影梯度下降（PGD）</td>
+<td>本文方法</td>
+<td>直接更新概率、避免梯度衰减、允许氨基酸重新进入</td>
+<td>需处理 simplex 投影；尚未在实验验证</td>
+<td><strong>本文贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>此脉络中阶段 1-2 为「经外部核验」的领域常识；阶段 3-4 为本文框架。</p>
+</blockquote>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>softmax 梯度衰减</td>
+<td>被抑制的氨基酸梯度趋近于零，难以在后期恢复</td>
+<td>softmax 的 Jacobian 结构使低概率氨基酸的梯度被指数级压缩</td>
+<td>作者在引言/方法中解释（未提供具体节号）</td>
+</tr>
+<tr>
+<td>优化器选择未被系统评估</td>
+<td>领域内默认使用 softmax+Adam，缺乏对比研究</td>
+<td>hallucination 方法发展快，优化器被视为工程细节而非研究问题</td>
+<td>作者在引言中声明（未提供具体节号）</td>
+</tr>
+<tr>
+<td>设计效率低</td>
+<td>默认长度轨迹计算成本高</td>
+<td>长轨迹未必带来更好设计，存在冗余迭代</td>
+<td>Results 中「29% 提升 per GPU-hour」数据</td>
+</tr>
+<tr>
+<td>设计多样性不足</td>
+<td>softmax 方法产生结构相似的设计</td>
+<td>梯度衰减导致序列空间探索受限</td>
+<td>Results 中「PGD 在每个靶标上产生更多样化结构」</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>用 simplex-projected gradient descent 直接在氨基酸概率 simplex 上更新，替代在 softmax 重参数化 logits 上的梯度下降。每次迭代：计算损失梯度 → 在 simplex 上做投影 → 更新概率分布。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>softmax 的梯度衰减是优化瓶颈</strong>：softmax 将 logits 映射到概率时，低概率氨基酸的梯度被 Jacobian 压缩，导致这些氨基酸在早期被抑制后几乎无法恢复。PGD 直接更新概率，梯度不受此衰减影响。</li>
+<li><strong>概率空间的直接更新允许「重新进入」</strong>：被抑制的氨基酸在 PGD 中可以因后续梯度方向变化而重新获得概率质量，增加序列空间探索能力。</li>
+<li><strong>更少迭代 + 筛选 = 更高吞吐</strong>：短轨迹 PGD 配合候选筛选，在相同 GPU 时间内产生更多 in silico 命中。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li>优化器的选择不仅是工程细节，可能从根本上改变优化轨迹的几何性质（梯度衰减 vs. 直接投影），这在任何基于可微 oracle 的序列设计任务中都可能适用（如小分子生成、RNA 设计等）。</li>
+<li>「短轨迹 + 筛选」策略提示：在计算昂贵的 oracle 场景中，增加候选多样性可能比延长单次优化更有价值。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：靶标蛋白结构（10 个靶标）；目标 binder 长度设定</li>
+<li><strong>输出</strong>：设计 binder 序列（每个靶标 1,024 个候选）</li>
+<li><strong>模块</strong>：
+  1. 序列概率表示：每个位置一个 20 维概率向量（simplex）
+  2. 结构预测 oracle：ESMFold2（可微）
+  3. 损失函数：基于预测结构的 hallucination 损失（含 ipSAE 等指标）
+  4. 优化器：PGD（simplex 投影） vs. softmax+梯度下降（对照）
+  5. 候选筛选：基于 ipSAE 分布上尾的 in silico 命中判定</li>
+<li><strong>训练</strong>：无监督优化（非训练）；每个靶标独立优化</li>
+<li><strong>工具</strong>：ESMFold2；PyTorch（推断）；代码公开</li>
+<li><strong>假设</strong>：ESMFold2 的预测结构可作为 binder-靶标复合物的有效代理；ipSAE 可作为 in silico 命中指标</li>
+<li><strong>流程</strong>：初始化随机概率 → 迭代 PGD 更新（或 softmax 对照）→ 从最终概率采样序列 → ESMFold2 预测复合物结构 → 计算 ipSAE → 判定命中 → 统计对比</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simplex 投影层</td>
+<td>将梯度更新后的概率投影回 simplex</td>
+<td>保证概率合法（非负、和为 1）</td>
+<td>输入：任意实数向量；输出：simplex 上概率</td>
+<td>作者方法描述（未提供节号）</td>
+<td>无投影则概率非法，优化失效</td>
+</tr>
+<tr>
+<td>ESMFold2 oracle</td>
+<td>从序列预测结构，提供可微损失</td>
+<td>作为 hallucination 的「结构评判者」</td>
+<td>输入：binder 序列（+靶标）；输出：预测结构坐标</td>
+<td>作者方法描述</td>
+<td>无 oracle 则无法定义结构损失</td>
+</tr>
+<tr>
+<td>Hallucination 损失</td>
+<td>衡量预测复合物的结构合理性（含 ipSAE）</td>
+<td>引导序列向高亲和/高界面置信方向优化</td>
+<td>输入：预测结构；输出：标量损失</td>
+<td>Results 中损失曲线</td>
+<td>无损失则优化无目标</td>
+</tr>
+<tr>
+<td>PGD 优化器</td>
+<td>在概率 simplex 上直接梯度更新</td>
+<td>避免 softmax 梯度衰减</td>
+<td>输入：损失梯度+当前概率；输出：更新后概率</td>
+<td>Results 图（损失 vs. 迭代）</td>
+<td>换回 softmax 则梯度衰减，性能下降</td>
+</tr>
+<tr>
+<td>候选筛选（ipSAE 上尾）</td>
+<td>从 1,024 个设计中判定 in silico 命中</td>
+<td>模拟真实设计流程的筛选环节</td>
+<td>输入：ipSAE 分布；输出：命中集合</td>
+<td>Results 中 6/10 靶标显著提升</td>
+<td>无筛选则无法评估实际命中率</td>
+</tr>
+<tr>
+<td>多样性度量</td>
+<td>衡量设计结构间的差异</td>
+<td>评估优化器对探索能力的影响</td>
+<td>输入：设计结构集合；输出：多样性分数</td>
+<td>Results 中「每个靶标更多样」</td>
+<td>无多样性度量则忽略探索能力</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：以上「移除后影响」中，ESMFold2 与损失移除为「预期效应」（逻辑必然），PGD 移除影响为「实测消融效应」（文中对比实验）。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>1. Softmax 重参数化（对照方法）</strong></p>
+<p>$$p_i = \frac{\exp(l_i)}{\sum_{j=1}^{20} \exp(l_j)}$$</p>
+<ul>
+<li>$p_i$：位置上的第 $i$ 个氨基酸概率</li>
+<li>$l_i$：对应的 logit</li>
+<li><strong>用途</strong>：将 logits 映射到概率 simplex</li>
+<li><strong>直觉</strong>：softmax 的 Jacobian $\partial p_i / \partial l_j = p_i(\delta_{ij} - p_j)$，当 $p_i \to 0$ 时梯度 $\to 0$，即梯度衰减</li>
+<li><strong>来源</strong>：本文引言/方法（未提供节号）</li>
+</ul>
+<p><strong>2. PGD 更新规则</strong></p>
+<p>$$p^{(t+1)} = \Pi_{\Delta}\left(p^{(t)} - \eta \nabla_p \mathcal{L}(p^{(t)})\right)$$</p>
+<ul>
+<li>$p^{(t)}$：第 $t$ 次迭代的概率向量</li>
+<li>$\Pi_{\Delta}$：到概率 simplex 的欧几里得投影</li>
+<li>$\eta$：学习率</li>
+<li>$\mathcal{L}$：hallucination 损失</li>
+<li><strong>用途</strong>：直接在概率空间更新</li>
+<li><strong>直觉</strong>：投影保证概率合法，同时避免 softmax 的梯度压缩</li>
+<li><strong>来源</strong>：本文方法（未提供节号）</li>
+</ul>
+<p><strong>3. ipSAE（in silico predicted binding affinity 相关指标）</strong></p>
+<ul>
+<li>具体公式未在摘要中给出；文中用于判定 in silico 命中</li>
+<li><strong>来源</strong>：Results 中提及，公式未提供</li>
+</ul>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：10 个靶标蛋白（具体靶标列表未在摘要中提供）</li>
+<li><strong>规模</strong>：每个靶标 1,024 个设计候选</li>
+<li><strong>指标</strong>：设计损失（loss）、预测界面置信度（ipSAE 相关）、结构多样性、in silico 命中率</li>
+<li><strong>基线</strong>：softmax 重参数化 + 梯度下降（默认方法）</li>
+<li><strong>计算资源</strong>：GPU（具体型号未提供）；per GPU-hour 命中率作为效率指标</li>
+<li><strong>评测协议</strong>：从 1,024 个设计的 ipSAE 分布上尾判定命中；对比 PGD vs. softmax 的命中数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>损失最小化效率</td>
+<td>PGD 在更少迭代内达到更低损失</td>
+<td>PGD vs. softmax，相同靶标与初始化</td>
+<td>PGD 在更少迭代内最小化设计损失</td>
+<td>PGD 优化效率更高</td>
+<td>未说明损失绝对值的实际意义</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>预测界面置信度</td>
+<td>PGD 产生更高界面置信度设计</td>
+<td>10 靶标，1,024 设计/靶标</td>
+<td>PGD 产生更高预测界面置信度</td>
+<td>PGD 设计质量更优</td>
+<td>未提供效应量/显著性</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>in silico 命中率</td>
+<td>PGD 提高命中率</td>
+<td>上尾 ipSAE 分布，1,024 设计池</td>
+<td>6/10 靶标显著提升，无显著退化</td>
+<td>PGD 在多数靶标上更优</td>
+<td>4/10 靶标无显著差异</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>结构多样性</td>
+<td>PGD 产生更多样化设计</td>
+<td>每个靶标设计集合</td>
+<td>PGD 在每个靶标上更多样</td>
+<td>PGD 探索能力更强</td>
+<td>未说明多样性度量的具体定义</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>效率（per GPU-hour）</td>
+<td>短 PGD + 筛选提高吞吐</td>
+<td>短轨迹 PGD vs. 默认长度</td>
+<td>in silico 命中数/GPU-hour 提升 29%</td>
+<td>短轨迹+筛选策略更高效</td>
+<td>未说明绝对命中数</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅限 in silico 评估；无湿实验验证。结论限于「预测指标」层面，不能外推至实验结合亲和力。</li>
+<li><strong>oracle 依赖</strong>：所有结论依赖 ESMFold2 的预测质量；若 ESMFold2 对某些靶标预测不准，结论可能不成立。</li>
+<li><strong>靶标范围</strong>：10 个靶标，未说明多样性（是否涵盖不同折叠类型、结合界面特征等），外推需谨慎。</li>
+<li><strong>指标边界</strong>：ipSAE 是 in silico 代理指标，与实验亲和力的相关性未在本文验证。</li>
+<li><strong>计算成本</strong>：per GPU-hour 提升 29% 是相对值，绝对成本未披露。</li>
+<li><strong>不确定性</strong>：未报告置信区间、显著性检验细节或效应量。</li>
+<li><strong>有边界的复述</strong>：在 ESMFold2 作为 oracle、10 个未公开细节的靶标、in silico 指标（ipSAE）为评判标准的条件下，PGD 相比 softmax 重参数化梯度下降，在优化效率、界面置信度、多样性和部分靶标的命中率上表现更优，且短轨迹+筛选策略可提升单位 GPU 时间的命中产出。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 所有评估为 in silico，无实验验证（摘要中「Simulating selection in real campaigns」暗示为模拟）。
+- 依赖 ESMFold2 作为结构预测 oracle（方法描述中隐含）。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10 个靶标未说明选择标准</td>
+<td>可能存在选择偏差；靶标多样性未知</td>
+<td>影响结论外推性</td>
+<td>要求作者披露靶标列表及选择理由；在更大靶标集上重复</td>
+<td>摘要仅说「ten targets」</td>
+</tr>
+<tr>
+<td>ipSAE 作为命中指标未验证与实验相关性</td>
+<td>高 ipSAE 未必等于高实验亲和力</td>
+<td>影响结论的实际应用价值</td>
+<td>与湿实验数据对比；或使用多个 in silico 指标交叉验证</td>
+<td>摘要未提供 ipSAE 验证数据</td>
+</tr>
+<tr>
+<td>未报告效应量与显著性</td>
+<td>6/10 靶标「显著提升」但未给 p 值或效应量</td>
+<td>无法判断提升的实际幅度</td>
+<td>要求补充统计细节</td>
+<td>摘要未提供</td>
+</tr>
+<tr>
+<td>短轨迹+筛选提升 29% 的机制未解释</td>
+<td>可能是筛选环节的贡献而非 PGD 本身</td>
+<td>影响对策略可迁移性的判断</td>
+<td>分离变量：固定筛选，对比轨迹长度；固定轨迹，对比筛选与否</td>
+<td>摘要仅给联合结果</td>
+</tr>
+<tr>
+<td>未与更复杂优化器（如 Adam 在 simplex 上、自然梯度等）对比</td>
+<td>PGD 的优势可能仅相对 softmax+朴素梯度下降成立</td>
+<td>影响方法定位</td>
+<td>增加更多优化器基线</td>
+<td>摘要仅对比 softmax 对应方法</td>
+</tr>
+<tr>
+<td>结构多样性提升的机制未阐明</td>
+<td>可能是 PGD 的随机初始化效应而非优化器本身</td>
+<td>影响对探索能力的归因</td>
+<td>控制初始化，重复实验</td>
+<td>摘要未提供消融</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong></p>
+<ol>
+<li><strong>优化器几何性质影响序列设计结果</strong>：softmax 重参数化的梯度衰减是实际可观测的优化瓶颈，直接概率空间更新（PGD）可避免此问题。→ 可迁移至任何基于可微 oracle 的序列设计任务（如小分子 SMILES 生成、RNA 设计、抗体 CDR 设计）。</li>
+<li><strong>「短轨迹 + 大规模候选筛选」策略</strong>：在 oracle 计算昂贵时，增加候选多样性比延长单次优化更划算（29% per GPU-hour 提升）。→ 可迁移至 AlphaFold 引导的任何设计流程，建议在计算预算有限时优先考虑。</li>
+<li><strong>概率 simplex 上的投影优化是 softmax 的可行替代</strong>：对于需要概率输出的生成任务，PGD 避免了 softmax 的 Jacobian 问题，且实现简单。→ 可迁移至强化学习策略优化、生成模型的概率输出层。</li>
+<li><strong>多样性可作为优化器评估的独立维度</strong>：本文明确将结构多样性作为与损失、命中率并列的指标。→ 建议在蛋白质设计评估中常规加入多样性指标。</li>
+<li><strong>in silico 命中率需结合筛选分布（上尾）评估</strong>：仅看平均损失可能掩盖分布差异；上尾分析更贴近实际设计流程。→ 可迁移至其他设计方法的评估协议。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold hallucination</strong>（Anishchenko et al., 2021, PNAS）：首次提出用结构预测网络引导序列设计，本文是其优化器层面的直接延伸。</li>
+<li><strong>ProteinMPNN</strong>（Dauparas et al., 2022, Science）：逆折叠方法，与 hallucination 互补；本文的 PGD 策略可与其结合（先 hallucination 再 ProteinMPNN 序列设计）。</li>
+<li><strong>RifDock / Rosetta</strong>（Dou et al., 2018, Nature）：物理模拟 binder 设计；本文为纯 in silico 方法，两者可在实验验证环节互补。</li>
+<li><strong>ipSAE</strong>：in silico 亲和力预测指标，与 AlphaFold 的 PAE/pLDDT 相关；本文将其作为命中判定标准。</li>
+<li><strong>投影梯度下降</strong>：经典优化方法（Boyd &amp; Vandenberghe, Convex Optimization），本文将其引入蛋白质序列设计场景。</li>
+<li><strong>[Analysis] 候选方向</strong>：与扩散模型（diffusion-based protein design, e.g., RFdiffusion, Watson et al., 2023 Nature）对比，本文方法为确定性优化，扩散模型为生成式采样，两者可互为补充。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong></p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：PGD + 多 oracle 集成（AlphaFold2 + ESMFold + RoseTTAFold）的 binder 设计
+   - <strong>来源局限/观察</strong>：本文仅用 ESMFold2 单一 oracle；不同结构预测器对序列的偏好可能不同，集成可提高鲁棒性。
+   - <strong>核心假设</strong>：多 oracle 损失加权可减少单一预测器偏差，提高 in silico 命中率。
+   - <strong>初步方法</strong>：在 PGD 框架中，将多个 oracle 的损失加权求和（或交替优化），在相同靶标上对比单 oracle。
+   - <strong>验证方式</strong>：10+ 靶标，对比单/多 oracle 的 ipSAE 分布与命中率。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：PGD 与扩散模型（RFdiffusion）的混合策略
+   - <strong>来源局限/观察</strong>：本文为确定性优化；扩散模型为生成式采样，两者探索空间特性不同。
+   - <strong>核心假设</strong>：先用扩散模型生成多样骨架，再用 PGD 优化序列，可结合两者优势。
+   - <strong>初步方法</strong>：RFdiffusion 生成骨架 → PGD 序列优化（以 ESMFold2 为 oracle）→ 对比纯扩散或纯 PGD。
+   - <strong>验证方式</strong>：同一靶标集，对比 in silico 命中率与多样性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：PGD 在抗体 CDR 设计中的应用
+   - <strong>来源局限/观察</strong>：本文针对从头 binder 设计；抗体 CDR 设计有更严格的框架约束。
+   - <strong>核心假设</strong>：PGD 的概率直接更新特性可更好地在 CDR 区域探索序列，同时保持框架区不变。
+   - <strong>初步方法</strong>：固定框架区序列，仅对 CDR 区域做 PGD 优化，以 ESMFold2 或 AlphaFold2 为 oracle。
+   - <strong>验证方式</strong>：已知抗体-抗原复合物上回测，对比 CDR 序列多样性与预测亲和力。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：PGD 的收敛行为与学习率调度分析
+   - <strong>来源局限/观察</strong>：本文未报告学习率敏感性、收敛曲线细节。
+   - <strong>核心假设</strong>：PGD 对学习率的敏感性低于 softmax 方法，且存在最优调度策略。
+   - <strong>初步方法</strong>：在固定靶标上系统扫描学习率、动量、调度策略，绘制收敛曲线。
+   - <strong>验证方式</strong>：损失曲线、最终命中率对比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：PGD 与实验验证的闭环（湿实验测试 top 候选）
+   - <strong>来源局限/观察</strong>：本文全部为 in silico 评估；ipSAE 与实验亲和力的相关性未知。
+   - <strong>核心假设</strong>：PGD 设计的 binder 在实验中具有可检测的结合亲和力。
+   - <strong>初步方法</strong>：选择 2-3 个靶标，取 PGD 设计的 top 候选进行表面等离子共振（SPR）或生物层干涉（BLI）实验。
+   - <strong>验证方式</strong>：实验结合亲和力与 ipSAE 排序的相关性。
+   - <strong>创新状态</strong>：unverified（需实验资源）</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose simplex-projected gradient descent (PGD) as an alternative to gradient descent on softmax-reparameterised sequence logits for hallucination-based protein binder design. They report that PGD minimises design loss in fewer iterations, produces designs with higher predicted interface confidence, improves in silico hit rates on six of ten targets with no significant degradation, yields more structurally diverse designs, and increases in silico hits per GPU-hour by 29% when paired with candidate screening.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no figures, tables, methods, or supplementary data were supplied</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods description, all figures and tables, supplementary information, code repository contents, and design data are not available for assessment</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially useful methodological contribution to the protein binder design community, addressing a practical gap in optimiser selection for gradient-based hallucination. The claims are specific and quantitative, which is commendable. However, the evidence base provided is insufficient to evaluate the technical soundness of the approach, the statistical rigour of the comparisons, or the generalisability of the findings. Several claims require detailed methodological and statistical support that is not visible in the abstract alone.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational protein designers, particularly those working on binder design and de novo protein hallucination. Researchers developing optimisation methods for sequence design in continuous relaxation spaces would also find the comparison between PGD and softmax-based approaches relevant. The efficiency gains in GPU-hours may interest practitioners running large-scale in silico screening campaigns.</li>
+<li><strong>Major strengths</strong> The work addresses a specific and under-evaluated component of the hallucination pipeline, namely the optimiser choice. The proposed method is conceptually simple and likely easy to implement, which lowers the barrier to adoption. The evaluation includes multiple targets and a practical metric (hits per GPU-hour) that reflects real campaign constraints. The inclusion of structural diversity as an outcome measure is a useful addition beyond loss minimisation.</li>
+<li><strong>Major Concerns</strong> The abstract alone does not provide sufficient detail to assess the validity of the reported improvements. Key methodological choices, statistical tests, and baseline configurations are not described. The claim of "no significant degradation on any" target requires knowledge of the statistical power and test used. The 29% improvement in hits per GPU-hour depends on unspecified screening thresholds and trajectory lengths. The mechanism by which PGD allows suppressed amino acids to re-enter the design is stated but not demonstrated.</li>
+<li><strong>Minor Comments</strong> The abstract would benefit from specifying the number of independent runs or seeds used. The choice of ESMFold2 as the structure predictor and its potential influence on the results is not discussed. The relationship between predicted interface confidence and experimentally validated binding is not addressed. The public availability of code and data is noted but the contents are not described.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The statistical methodology for comparing PGD against the softmax baseline is not described. The definition of "in silico hit" and the ipSAE threshold used are not provided. The computational cost comparison appears to conflate optimisation iterations with wall-clock time, which may be misleading if per-iteration costs differ between methods. The diversity metric is not defined.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality: moderate. The application of PGD to hallucination-based design is a reasonable incremental contribution, but the core idea of projected gradient methods in probability simplices is well established in optimisation literature. Scientific importance: potentially relevant to a specialised community, but the abstract does not demonstrate broad biological or methodological significance beyond an incremental improvement. Interdisciplinary readership: limited; the work is primarily of interest to computational protein designers and optimisation researchers. Technical soundness: not assessable from the abstract; the absence of methodological detail precludes evaluation of the statistical and computational claims. Readability for nonspecialists: the abstract is reasonably clear for a technical audience but assumes familiarity with hallucination-based design, ipSAE, and sequence logit reparameterisation.</li>
+</ul>
+<h2>Major Concerns</h2>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Statistical rigour</li>
+<li><strong>Claim pointer</strong> "PGD significantly improves on six of the ten targets, with no significant degradation on any"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract reports significant improvement on six of ten targets and no significant degradation on any, but does not describe the statistical test used, the multiple-comparison correction applied, the number of independent replicates, or the variance structure of the metrics compared. Without this information, the significance claims cannot be evaluated.</li>
+<li><strong>Why it matters</strong> The central claim of the paper rests on the statistical comparison between PGD and the softmax baseline. If the tests are underpowered, improperly corrected, or based on non-independent samples, the conclusions may not hold. The "no significant degradation" claim is particularly sensitive to statistical power.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed description of the statistical framework, including the test used, the number of independent runs, the handling of multiple comparisons across ten targets, and the effect sizes observed. Show that the tests are adequately powered to detect meaningful differences.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological clarity</li>
+<li><strong>Claim pointer</strong> "PGD avoids softmax-induced gradient attenuation and allows amino acids suppressed early in optimisation to re-enter the design"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The mechanism by which PGD enables re-entry of suppressed amino acids is stated as a property of the method, but no evidence is presented to demonstrate that this occurs in practice or that it contributes to the observed improvements. The gradient attenuation argument is plausible but requires formal or empirical support.</li>
+<li><strong>Why it matters</strong> The proposed advantage of PGD over the softmax baseline is central to the motivation of the work. If the mechanism is not demonstrated, the improvement could be attributed to other factors, such as different effective learning rates or update scales.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a formal argument or empirical demonstration that PGD allows recovery of suppressed amino acids, and show that this property is linked to the observed performance gains, for example through ablation or trajectory analysis.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Computational cost comparison</li>
+<li><strong>Claim pointer</strong> "pairing shorter PGD runs with candidate screening raises the total number of in silico hits per GPU-hour by 29% relative to default-length trajectories"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The 29% improvement in hits per GPU-hour depends on the definition of "shorter" runs, the screening threshold, and the baseline trajectory length. The abstract does not specify these parameters, nor does it clarify whether the comparison accounts for the computational cost of screening itself.</li>
+<li><strong>Why it matters</strong> The efficiency claim is a practical selling point of the method. If the comparison is not apples-to-apples, or if the screening cost is excluded, the reported improvement may be misleading.</li>
+<li>
+<p><strong>Resolution test</strong> Specify the trajectory lengths compared, the screening protocol and its computational cost, and the exact calculation of hits per GPU-hour. Show that the comparison is fair and that the result is robust to reasonable variations in these parameters.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Outcome metric validity</li>
+<li><strong>Claim pointer</strong> "produces designs with higher predicted interface confidence" and "more structurally diverse designs on every target"</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The metrics used to support these claims are not defined. "Predicted interface confidence" presumably refers to a specific output of ESMFold2, but the exact quantity is not stated. The structural diversity metric is also unspecified. Without definitions, the claims cannot be reproduced or compared with other work.</li>
+<li><strong>Why it matters</strong> The practical value of the method depends on whether the reported improvements in predicted confidence and diversity translate to better experimental outcomes. If the metrics are poorly chosen or defined, the claims may not be meaningful.</li>
+<li><strong>Resolution test</strong> Define all metrics precisely, including how they are computed from the model outputs and how diversity is quantified. Justify the choice of these metrics as proxies for binder quality.</li>
+</ul>
+<h2>Minor Comments</h2>
+<ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Experimental setup</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The number of independent runs or random seeds used for each target is not stated. Stochastic optimisation results can vary substantially across seeds, and the reported improvements may not be stable.</li>
+<li>
+<p><strong>Required correction</strong> Report the number of independent replicates and the variance across runs for the key metrics.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Generalisability</li>
+<li><strong>Affected element</strong> Target selection</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The ten targets are not described. Their diversity in terms of size, fold, binding interface characteristics, or difficulty is unknown, which limits the reader's ability to judge the generalisability of the findings.</li>
+<li>
+<p><strong>Required correction</strong> Provide a brief description of the ten targets and justify their selection as a representative test set.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Terminology</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The term "hallucination-based" is used without definition. While familiar to practitioners, the abstract should briefly clarify what this entails for readers outside the immediate subfield.</li>
+<li>
+<p><strong>Required correction</strong> Add a brief explanation of hallucination-based design in the abstract or introduction.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Practical relevance</li>
+<li><strong>Affected element</strong> Experimental validation</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The abstract reports only in silico results. No experimental validation of designed binders is mentioned, which limits the practical significance of the claims.</li>
+<li><strong>Required correction</strong> State clearly that results are in silico only, or include any experimental validation if available.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that PGD "allows amino acids suppressed early in optimisation to re-enter the design" is stated without supporting evidence in the abstract.</li>
+<li>The statistical significance claims for six of ten targets are not supported by any described statistical methodology.</li>
+<li>The 29% improvement in hits per GPU-hour is not supported by a described calculation or comparison framework.</li>
+<li>The claim of "more structurally diverse designs on every target" is not supported by a defined diversity metric.</li>
+<li>The generalisability of the findings beyond the ten unspecified targets is not established.</li>
+<li>The relationship between predicted interface confidence and experimental binder success is not addressed, leaving the practical relevance of the primary outcome metric unclear.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

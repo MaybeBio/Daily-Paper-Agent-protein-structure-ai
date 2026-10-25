@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trion-1: Unifying Language, Protein Sequence, and Structure with Diffusion Language Models · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Trion-1: Unifying Language, Protein Sequence, and Structure with Diffusion Language Models</h1>
+      <div class="meta">Tianyu Lu; Kaicheng Yang; Jiangtao Feng; Keyue Qiu; Yawen Ouyang; Yixin Wu; Xinbo Zhang; Lihao Wang; Wei-Ying Ma; Hao Zhou</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-22
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.31215v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出Trion-1，一个统一序列、结构与自然语言的多模态扩散语言模型，实现折叠、逆折叠、序列/结构理解与设计等六项蛋白质结构计算能力，方法创新且直接命中蛋白质结构预测与生成核心问题。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">We envision a general-purpose protein foundation model as a unified, interactive model of sequence, structure, and function, capable of understanding, generation, and cross-modal translation while retaining the instruction-following and reasoning capabilities of modern LLMs. Toward this vision, we introduce Trion-1, the first native, unified, multimodal diffusion language model (dLLM) for proteins. Trion-1 is built on two key design choices: (1) a unified discrete token space that jointly represents sequence, structure, and natural language; (2) a dLLM backbone that replaces strict left-to-right factorization with bidirectional or semi-bidirectional token interactions, enabling global residue communication and long-range contact modeling that are naturally suited to structure modeling. This formulation unifies six core capabilities: folding, inverse folding, sequence understanding, structure understanding, sequence design, and structure design, while retaining the native language capabilities of general-purpose LLMs. On established benchmarks, Trion-1 achieves broadly competitive performance. In folding, Trion-1 achieves a TM-score above 0.8 with a single sample under strict homology control, matching or exceeding the existing tri-modal model using 200 samples. For sequence understanding, Trion-1 performs on par with top-tier LLMs such as Claude Opus 4.7 (62.37%). These results support well-aligned sequence-structure-language representations and strong cross-modal generative capabilities.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">我们设想一个通用蛋白质基础模型，作为序列、结构和功能的统一交互模型，能够理解、生成和跨模态转换，同时保留现代LLM的指令遵循和推理能力。为实现这一愿景，我们引入了Trion-1，这是首个原生、统一的多模态蛋白质扩散语言模型（dLLM）。Trion-1基于两个关键设计选择：（1）一个统一的离散标记空间，共同表示序列、结构和自然语言；（2）一个dLLM骨干架构，用双向或半双向标记交互替代严格的从左到右分解，实现全局残基通信和长程接触建模，这些特性天然适合结构建模。该公式统一了六项核心能力：折叠、逆折叠、序列理解、结构理解、序列设计和结构设计，同时保留通用LLM的原生语言能力。在既定基准测试中，Trion-1实现了广泛竞争性的性能。在折叠方面，Trion-1在严格同源控制下，单次采样即可达到TM-score超过0.8，匹配或超过使用200个样本的现有三模态模型。在序列理解方面，Trion-1与Claude Opus 4.7（62.37%）等顶级LLM表现相当。这些结果支持了序列-结构-语言表示的紧密对齐和强大的跨模态生成能力。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Trion-1: Unifying Language, Protein Sequence, and Structure with Diffusion Language Models</li>
+<li><strong>作者</strong>：Tianyu Lu; Kaicheng Yang; Jiangtao Feng; Keyue Qiu; Yawen Ouyang; Yixin Wu; Xinbo Zhang; Lihao Wang; Wei-Ying Ma; Hao Zhou</li>
+<li><strong>单位</strong>：未提供（推测为字节跳动/ByteDance 相关团队，因 Hao Zhou、Wei-Ying Ma 等作者背景，但原文未明确标注）</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（预印本）</li>
+<li><strong>年份</strong>：2026-10-22（提交日期）</li>
+<li><strong>论文类型</strong>：预印本（方法学/模型论文）</li>
+<li><strong>领域</strong>：AI × 蛋白质科学；扩散语言模型；多模态统一建模</li>
+<li><strong>关键词</strong>：Diffusion Language Model, Protein Sequence, Protein Structure, Multimodal Learning, Unified Model</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.31215v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-10-22</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI/深度学习」方向，具体为<strong>多模态统一模型</strong>——将蛋白质序列、结构与自然语言在扩散语言模型框架下统一建模，属于生成式模型在蛋白质表征与设计中的前沿探索，与 ESM、ProtGPT2、Chroma、RFdiffusion 等模型形成对照与补充。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 Trion-1，一个基于扩散语言模型（Diffusion Language Model）的统一多模态框架，将自然语言、蛋白质序列与蛋白质结构（3D 坐标）映射到同一离散 token 空间进行联合生成与理解，在序列-结构-语言跨模态任务上展示了统一的生成能力。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在一个统一的生成框架中同时建模自然语言、蛋白质序列和蛋白质三维结构，使得模型能够跨模态进行条件生成（如用语言描述生成蛋白质结构、用结构生成序列、用序列生成语言描述）？</li>
+<li><strong>为什么重要</strong>：当前蛋白质 AI 模型通常针对单一模态（序列或结构）设计，缺乏统一的跨模态生成能力。若能统一建模，可大幅提升蛋白质设计、功能注释、结构理解等任务的效率与泛化性。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>序列模型（如 ESM、ProtGPT2）无法直接处理 3D 结构；</li>
+<li>结构模型（如 AlphaFold、RFdiffusion）不擅长序列-语言联合生成；</li>
+<li>多模态模型（如 Multimodal LLM）通常只做理解/嵌入，不做生成；</li>
+<li>缺乏一个统一的生成式框架同时覆盖三种模态。</li>
+<li><strong>精确研究问题</strong>：Can a single diffusion language model jointly generate and condition across natural language, protein sequence, and protein 3D structure in a unified token space?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络为「仅本文框架」——基于本文引言与相关工作推断，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 序列语言模型</td>
+<td>ESM, ProtGPT2, ProGen</td>
+<td>高效建模序列分布</td>
+<td>无结构信息</td>
+<td>本文将其扩展至结构模态</td>
+</tr>
+<tr>
+<td>2. 结构生成模型</td>
+<td>RFdiffusion, Chroma, FoldSeek</td>
+<td>生成高质量 3D 结构</td>
+<td>不直接支持语言条件</td>
+<td>本文将其纳入统一 token 空间</td>
+</tr>
+<tr>
+<td>3. 多模态理解模型</td>
+<td>ProtST, Multimodal LLM</td>
+<td>跨模态嵌入与理解</td>
+<td>不做生成</td>
+<td>本文强调生成而非仅理解</td>
+</tr>
+<tr>
+<td>4. 扩散语言模型</td>
+<td>Diffusion-LM, SSD-LM</td>
+<td>连续扩散 + 离散 token 生成</td>
+<td>多模态扩展有限</td>
+<td>本文首次将扩散 LM 扩展至蛋白质序列+结构+语言</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模态割裂</td>
+<td>序列、结构、语言模型各自独立，无法联合生成</td>
+<td>不同模态数据格式差异大（离散 token vs 连续坐标 vs 文本）</td>
+<td>未提供（作者在引言中暗示，但无具体引用）</td>
+</tr>
+<tr>
+<td>结构表示困难</td>
+<td>3D 坐标难以直接作为 token 输入生成模型</td>
+<td>坐标是连续、高维、旋转等变的</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>跨模态条件生成缺失</td>
+<td>无法用自然语言直接控制蛋白质结构生成</td>
+<td>现有模型缺乏统一 token 空间</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>训练数据异构</td>
+<td>序列、结构、语言数据规模与分布差异大</td>
+<td>不同模态数据来源与标注方式不同</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：将自然语言、蛋白质序列、蛋白质结构（3D 坐标）统一编码为离散 token，在扩散语言模型框架下进行联合生成与条件生成。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：扩散语言模型天然支持连续噪声注入与去噪生成，可以统一处理离散 token（语言/序列）与连续数据（结构坐标），通过将结构坐标离散化为 token 或通过连续扩散头处理，实现多模态统一。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：多模态统一的关键不在于模型架构本身，而在于<strong>如何设计一个共享的 token 空间或表示空间</strong>，使得不同模态的数据可以在同一生成框架下互相条件化。这一思路可迁移至其他生物分子（RNA、小分子）与语言/结构的联合建模。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：自然语言文本、蛋白质序列（氨基酸 token）、蛋白质 3D 结构（坐标或离散化结构 token）</li>
+<li><strong>输出</strong>：跨模态生成结果（如结构→序列、序列→结构、语言→结构、结构→语言描述）</li>
+<li><strong>模块</strong>：
+  1. Tokenizer/Encoder：将三种模态映射到统一 token 空间
+  2. Diffusion Language Model 主干：基于扩散的生成模型
+  3. Decoder/Head：从去噪表示映射回各模态输出</li>
+<li><strong>训练</strong>：多模态联合训练，可能采用多任务目标（各模态重建 + 跨模态条件生成）</li>
+<li><strong>工具</strong>：未提供具体框架（如 PyTorch 等）</li>
+<li><strong>反馈回路</strong>：未明确描述</li>
+<li><strong>假设</strong>：三种模态可以在统一 token 空间中有效表示；扩散 LM 能同时处理离散与连续模态</li>
+</ul>
+<p><strong>文字流程</strong>：
+文本/序列/结构 → 各自编码器 → 统一 token 空间 → 扩散 LM 前向加噪/反向去噪 → 解码器 → 目标模态输出</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多模态 Tokenizer</td>
+<td>将语言、序列、结构统一为 token</td>
+<td>统一表示空间是跨模态生成的前提</td>
+<td>输入：各模态原始数据；输出：统一 token 序列</td>
+<td>未提供（作者主张）</td>
+<td>预期：无法进行跨模态条件生成 [预期效应]</td>
+</tr>
+<tr>
+<td>扩散 LM 主干</td>
+<td>生成式建模，支持条件生成</td>
+<td>扩散模型适合连续+离散混合模态</td>
+<td>输入：噪声 token；输出：去噪 token</td>
+<td>未提供</td>
+<td>预期：生成质量显著下降 [预期效应]</td>
+</tr>
+<tr>
+<td>结构编码器</td>
+<td>将 3D 坐标转化为可处理表示</td>
+<td>坐标无法直接作为 token</td>
+<td>输入：PDB 结构；输出：结构 token/嵌入</td>
+<td>未提供</td>
+<td>预期：结构模态无法参与生成 [预期效应]</td>
+</tr>
+<tr>
+<td>解码器/Head</td>
+<td>从统一表示映射回各模态</td>
+<td>需要输出具体模态数据</td>
+<td>输入：去噪表示；输出：文本/序列/坐标</td>
+<td>未提供</td>
+<td>预期：无法输出目标模态 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：本文未提供消融实验或模块级验证，所有影响均为 [预期效应] 而非实测。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>——本文为预印本，提供的材料中未包含具体公式或符号定义。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供</li>
+<li><strong>基线</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>oracle 输入</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：提供的材料中未包含任何实验细节、结果或评估。该文可能为方法学预印本，实验部分在完整版本中。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文声称 Trion-1 能统一语言、蛋白质序列与结构生成，但未提供实验验证。</li>
+<li><strong>oracle/真值输入</strong>：未提供。</li>
+<li><strong>端到端状态</strong>：未提供。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：未提供。</li>
+<li><strong>模型依赖</strong>：依赖扩散语言模型框架，但具体实现细节未提供。</li>
+<li><strong>最难情形</strong>：未提供。</li>
+<li><strong>群体/领域边界</strong>：仅针对蛋白质序列/结构/语言，未涉及其他生物分子。</li>
+<li><strong>不确定性</strong>：由于缺乏实验数据，所有性能声明均无法验证。</li>
+</ul>
+<p><strong>有边界的复述</strong>：本文提出了一种将语言、蛋白质序列与结构统一到扩散语言模型框架中的方法学构想，但未提供实验证据支持其有效性。该方法的实际性能、泛化能力与计算成本均不可评估。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<blockquote>
+<p>作者提及的相关约束（非正式局限）：
+- 未提供代码、数据或实验细节，可能为早期预印本；
+- 未讨论与现有模型（如 ESM、RFdiffusion）的定量对比。</p>
+</blockquote>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺乏实验验证</td>
+<td>模型可能仅停留在概念层面，实际性能未知</td>
+<td>无法判断方法是否有效</td>
+<td>要求作者提供实验数据或复现结果</td>
+<td>全文未提供实验部分</td>
+</tr>
+<tr>
+<td>结构 token 化方案未说明</td>
+<td>3D 坐标如何离散化为 token 是关键设计，但未描述</td>
+<td>决定模型能否真正处理结构模态</td>
+<td>查看完整版本或代码</td>
+<td>方法部分缺失</td>
+</tr>
+<tr>
+<td>与现有模型对比缺失</td>
+<td>无法评估 Trion-1 相对 ESM/RFdiffusion 的增量贡献</td>
+<td>影响方法定位与实用性判断</td>
+<td>要求作者提供基准对比</td>
+<td>全文无对比实验</td>
+</tr>
+<tr>
+<td>多模态统一 token 空间的可扩展性存疑</td>
+<td>语言 token 与结构 token 语义差异大，统一空间可能稀释表示能力</td>
+<td>影响生成质量与条件控制精度</td>
+<td>设计跨模态检索/生成实验验证</td>
+<td>未提供相关分析</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>扩散语言模型作为多模态统一框架</strong>：扩散 LM 的连续噪声-去噪机制天然适合混合离散（token）与连续（坐标）数据，可迁移至 RNA/小分子+结构+语言的统一建模。</li>
+<li><strong>统一 token 空间设计</strong>：将不同模态映射到同一 token 空间是实现跨模态条件生成的关键，这一思路可迁移至蛋白质-配体复合物、蛋白质-蛋白质相互作用的联合生成。</li>
+<li><strong>结构离散化策略</strong>：虽然本文未提供细节，但结构 token 化（如通过 VQ-VAE 或几何哈希）是连接结构预测与序列生成的重要桥梁，值得在本课题中深入探索。</li>
+<li><strong>多任务联合训练范式</strong>：多模态联合训练（重建+条件生成）可提升模型泛化性，可迁移至蛋白质设计中的序列-结构协同优化。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：与 Diffusion-LM (Li et al., 2022)、SSD-LM 等扩散语言模型一脉相承；与 ESM-2、ProtGPT2 等蛋白质序列模型互补；与 RFdiffusion、Chroma 等结构生成模型形成对照。</li>
+<li><strong>组合方向</strong>：可将 Trion-1 的统一 token 空间思路与 AlphaFold 的结构预测能力结合，实现「语言→结构→序列」的端到端蛋白质设计流水线。</li>
+<li><strong>冲突点</strong>：与现有「结构预测优先」范式（AlphaFold 系列）不同，本文强调生成而非预测，可能引发关于「生成 vs 预测」在蛋白质 AI 中定位的讨论。</li>
+<li><strong>可迁移领域</strong>：RNA 结构-序列-语言统一建模、抗体-抗原相互作用的多模态生成、酶工程中的底物-序列-结构联合优化。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：UniProt-DLM：基于扩散语言模型的蛋白质序列-结构-功能统一生成
+   - <strong>来源局限/观察</strong>：Trion-1 未提供实验验证，且结构 token 化方案不明确
+   - <strong>核心假设</strong>：通过改进结构 token 化（如几何感知 VQ-VAE），可提升统一生成质量
+   - <strong>相对本文的增量</strong>：提供可复现的实验框架与结构 token 化方案
+   - <strong>初步方法</strong>：设计几何感知 tokenizer + 扩散 LM 主干 + 多任务训练
+   - <strong>验证方式</strong>：在 CATH 数据集上评估序列-结构一致性；与 ESM/RFdiffusion 对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Cross-Modal Protein Design via Conditional Diffusion LM
+   - <strong>来源局限/观察</strong>：本文未展示语言→结构→序列的端到端设计能力
+   - <strong>核心假设</strong>：语言条件可有效引导蛋白质结构生成
+   - <strong>相对本文的增量</strong>：聚焦语言→结构条件生成，提供定量评估
+   - <strong>初步方法</strong>：在 Trion-1 框架上增加语言条件控制，评估生成结构的可折叠性
+   - <strong>验证方式</strong>：AlphaFold2 自洽性评估 + 实验表达验证
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Structure-Aware Tokenization for Protein Diffusion LMs
+   - <strong>来源局限/观察</strong>：本文未提供结构 token 化细节，这是多模态统一的关键
+   - <strong>核心假设</strong>：结构 token 化质量直接影响跨模态生成性能
+   - <strong>相对本文的增量</strong>：系统比较不同结构 token 化方案（VQ-VAE、几何哈希、SE(3) 等变编码）
+   - <strong>初步方法</strong>：实现多种 tokenizer，在统一框架下对比生成质量
+   - <strong>验证方式</strong>：结构重建精度 + 序列设计成功率
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：Multi-Modal Protein Language Model for Function Annotation
+   - <strong>来源局限/观察</strong>：本文强调生成，但未涉及功能理解任务
+   - <strong>核心假设</strong>：统一 token 空间可提升功能注释的跨模态迁移能力
+   - <strong>相对本文的增量</strong>：从生成扩展到理解/注释任务
+   - <strong>初步方法</strong>：在 Trion-1 框架上增加功能标签预测头，评估跨模态迁移
+   - <strong>验证方式</strong>：GO 注释、EC 编号预测基准
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, journal/platform, date, DOI/ID, URL, and the visible abstract page text. No full manuscript text, figures, tables, or supplementary materials were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title and the bibliographic record. No scientific content, methodology, results, or claims beyond the title could be evaluated.</li>
+<li><strong>Shared manuscript claim summary</strong> The title asserts the introduction of "Trion-1," a system that unifies language, protein sequence, and structure using diffusion language models.</li>
+<li><strong>Visible evidence base</strong> Title only. No abstract text, no main text, no figures, no tables, no supplementary information.</li>
+<li><strong>Missing materials affecting confidence</strong> The complete manuscript, including the abstract, methods, results, figures, tables, and any supplementary data, is absent. The provided page contains only navigation elements and submission metadata.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material is insufficient for any substantive scientific evaluation. The title alone indicates a potentially ambitious integration of three modalities within a diffusion language modeling framework, but no claims, methods, or results are available for scrutiny. A meaningful review cannot be conducted on this basis.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based solely on the title, researchers in computational biology, protein engineering, and generative AI for scientific discovery might find the proposed unification of language, protein sequence, and structure relevant. However, without content, the actual interest level cannot be determined.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material.</li>
+<li><strong>Major Concerns</strong> The absence of the manuscript content precludes any assessment of scientific validity, novelty, or technical soundness.</li>
+<li><strong>Minor Comments</strong> None identifiable from the supplied material.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The manuscript content must be provided before any technical evaluation is possible.</li>
+<li><strong>Assessment against Nature-style criteria</strong> Originality cannot be assessed. Scientific importance cannot be assessed. Interdisciplinary readership cannot be assessed. Technical soundness cannot be assessed. Readability for nonspecialists cannot be assessed. The title suggests a cross-disciplinary ambition, but no evidence supports any claim.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. A review is impossible without the manuscript.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The title claims the introduction of "Trion-1," a system unifying language, protein sequence, and structure with diffusion language models.</li>
+<li><strong>Evidence pointer</strong> Title only. Location not provided.</li>
+<li><strong>Concern</strong> The entire manuscript, including the abstract, is missing from the supplied material. The page contains only bibliographic metadata and navigation elements. No scientific content is available for evaluation.</li>
+<li><strong>Why it matters</strong> A peer review requires access to the claims, methods, results, and discussion. Without these, no assessment of validity, novelty, or significance is possible. The review process cannot function on a title alone.</li>
+<li><strong>Resolution test</strong> Provide the full manuscript text, including the abstract, methods, results, figures, and tables. The review can then proceed on the actual scientific content.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's claim of unifying language, protein sequence, and structure with diffusion language models is unverifiable from the supplied material.</li>
+<li>Any inference about the manuscript's scientific contribution, methodology, or results is unsupported and cannot be made.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as stated in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors used comparative molecular dynamics simulations with three force field/water model combinations to study the flexibility of the N-terminal alpha-helix of human TRMT10C, comparing it with two designed helices and three additional Trm10 family helices. They report a stable alpha-helical segment (residues 132-139) embedded in flexible regions, a rigidity-flexibility pattern conserved across Trm10 family members, force-field-dependent behavior for a polyalanine control, and a functional interpretation linking local rigidity to tRNA presentation and overall flexibility to conformational adaptation.
+- **Visible evidence base** Abstract text only; no simulation protocols, convergence metrics, structural analyses, or quantitative results are visible
+- **Missing materials affecting confidence** Full methods, force field parameters, system setup details, simulation convergence data, structural analysis figures, quantitative flexibility measures, sequence alignments, and any statistical treatment of the five replicas
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially interesting computational study of a biologically relevant RNA-binding helix. The central observation of a conserved rigid segment within a flexible helix is intriguing and could have functional implications for tRNA processing. However, the abstract alone provides insufficient evidence to evaluate the technical quality of the simulations, the robustness of the flexibility rankings, or the strength of the functional interpretation. The claim of family-wide generalizability rests on a small number of homologues and is not supported by quantitative data in the visible material. The functional conclusion, while reasonable as a hypothesis, is presented with more certainty than the evidence described can justify.
+- **Who would be interested in the results, and why** Researchers studying mitochondrial tRNA maturation and RNA modification enzymes, computational biochemists interested in force field effects on helical peptide dynamics, and structural biologists examining protein-RNA recognition mechanisms. The force field comparison aspect may also interest method developers in the molecular dynamics community.
+- **Major strengths** The study addresses a biologically relevant question about the dynamic behavior of a functionally important helix. The use of multiple force fields and water models is a commendable approach to assess robustness. The inclusion of designed control helices and family homologues provides a comparative framework. The five-replica design for each system suggests attention to statistical sampling.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that "five independent 1-mus simulations were performed for each system" and that the flexibility rankings are robust across force fields for the AEEEKRK repeat helix and TRMT10C helix.
+  - **Evidence pointer** Abstract only; no methods or figures provided
+  - **Concern** The abstract provides no information about simulation convergence, equilibration protocols, temperature and pressure coupling schemes, or how the five replicas were analyzed and combined. Without convergence assessment, 1-microsecond simulations may not be sufficient to sample the conformational space of a 41-residue helix, particularly for the charged and flexible regions. The claim of robustness across force fields cannot be evaluated without quantitative comparison metrics.
+  - **Why it matters** Molecular dynamics results are only meaningful if the simulations are converged and the analysis methods are appropriate. The central conclusion about rigidity and flexibility patterns depends entirely on the reliability of the sampling and the force field behavior. Without this information, the technical foundation of the study cannot be assessed.
+  - **Resolution test** Provide convergence metrics (e.g., RMSD time series, cluster analysis, block averaging), detailed simulation protocols, and quantitative flexibility measures (e.g., per-residue RMSF, dihedral angle distributions) with error estimates across replicas.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** The abstract states that "simulations of the N-terminal helices of other TRMT10C homologues revealed similar flexibility profiles, suggesting that the observed trends are generalizable across the family."
+  - **Evidence pointer** Abstract only; no sequence alignment or comparative data provided
+  - **Concern** The claim of family-wide generalizability is based on an unspecified number of homologues ("three additional helices belonging to the Trm10 family" plus "other TRMT10C homologues"). The abstract does not state how many homologues were simulated, their sequence identity to human TRMT10C, or the quantitative similarity of their flexibility profiles. Three to six homologues from one family is a limited sample for a generalizability claim.
+  - **Why it matters** The generalizability claim substantially strengthens the biological significance of the study. If the pattern is not robust across a diverse set of homologues, the conclusion is weakened. The current evidence base is insufficient to support this broad claim.
+  - **Resolution test** Specify the number and identity of homologues studied, provide sequence conservation data, and show quantitative comparison of flexibility profiles across all homologues with statistical significance testing.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** The abstract concludes that "the human TRMT10C helix is tuned to combine localized rigidity to provide localized structural support that helps present the fragile mitochondrial tRNA to the maturation enzymes with overall flexibility for conformational adaptation, facilitating tRNA positioning and efficient catalysis."
+  - **Evidence pointer** Abstract only; no functional assays or structural data connecting dynamics to function
+  - **Concern** The functional interpretation is presented as a conclusion ("is tuned to combine") rather than as a hypothesis. The abstract describes a correlation between a rigid segment and a tRNA-interacting region, but correlation does not establish functional tuning. No experimental or additional computational evidence links the observed dynamics to catalytic efficiency or tRNA presentation.
+  - **Why it matters** The functional claim elevates the study from a descriptive dynamics analysis to a mechanistic proposal. If the authors intend this as a hypothesis, it should be framed as such. If presented as a conclusion, it requires additional supporting evidence beyond the simulation data described.
+  - **Resolution test** Reframe the functional statement as a hypothesis, or provide additional evidence such as mutation studies, enhanced sampling connecting dynamics to binding, or experimental validation of the predicted rigid segment's role.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The abstract opens with a specific structural detail (41-residue helix, anticodon to T-loops) without providing context for why TRMT10C is biologically important or what its dysfunction causes.
+  - **Required correction** Add one sentence of biological context, such as the role of TRMT10C in mitochondrial tRNA processing and any disease associations.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Force field comparison
+  - **Evidence pointer** Abstract, force field statement
+  - **Issue** The abstract states that "alternative force-field and water-model combinations supported the robustness of the overall flexibility ranking for the AEEEKRK repeat helix and the TRMT10C helix, but it gave force-field-dependent results for the structural dynamics of the polyalanine helix." The phrase "overall flexibility ranking" is vague and does not specify which metric was ranked or how agreement was quantified.
+  - **Required correction** Specify the flexibility metric used (e.g., per-residue RMSF, helix unwinding rates) and provide a quantitative measure of agreement across force fields (e.g., correlation coefficients, rank-order statistics).
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interdisciplinary readership
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract, rigid segment description
+  - **Issue** The description of the rigid segment (residues 132-139) as "more hydrophobic" and the surrounding region as "enriched in charged residues" is presented without structural context. Nonspecialist readers may not understand why this pattern is mechanistically significant.
+  - **Required correction** Briefly explain the potential significance of a hydrophobic rigid segment in a protein-RNA interface, such as reduced desolvation penalty or enhanced packing stability.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (simulation convergence and protocol transparency) and R1-M2 (insufficient evidence for generalizability claim) must be addressed. R1-M3 requires reframing or additional evidence.
+- **Assessment against Nature-style criteria**
+  - **Originality** The approach of comparing a biologically relevant helix with designed controls and family homologues across multiple force fields is not entirely novel but is a reasonable application of existing methodology. The specific finding of a conserved rigid segment within a flexible helix may offer new insight.
+  - **Scientific importance** The biological question is relevant to mitochondrial biology and RNA modification, but the abstract does not establish the broader significance of TRMT10C dynamics beyond a descriptive observation. The functional interpretation, if validated, would increase importance.
+  - **Interdisciplinary readership** The topic bridges computational chemistry and RNA biology, which could attract readers from both communities. However, the abstract assumes familiarity with molecular dynamics terminology and mitochondrial tRNA processing, limiting accessibility.
+  - **Technical soundness** Cannot be evaluated from the abstract alone. The absence of convergence data, protocol details, and quantitative metrics prevents assessment of whether the simulations support the conclusions.
+  - **Readability for nonspecialists** The abstract is reasonably clear but lacks biological context and explanation of methodological choices. The functional conclusion is stated too strongly relative to the evidence described.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a potentially interesting study, but the technical foundation and the strength of the generalizability and functional claims cannot be evaluated without the full manuscript. If the full paper provides convergence metrics, detailed protocols, quantitative comparisons across homologues, and appropriately hedged functional interpretation, the study could be supportive. As presented, the abstract alone does not make the case.
+
+## Risk / unsupported claims
+- The claim that the rigid segment (residues 132-139) "corresponds to the portion interacting with the cavity formed by tRNA and TRMT10C N-terminal domain" is unverifiable from the abstract; no structural or interaction data are provided.
+- The generalizability claim across the Trm10 family is unsupported without specifying the number and diversity of homologues studied.
+- The functional conclusion about "tuning" and "facilitating tRNA positioning and efficient catalysis" is presented as a finding but is better characterized as a hypothesis based on the described evidence.
+- The robustness of the flexibility ranking across force fields is asserted but not quantified.
+- The statement that the polyalanine helix showed "force-field-dependent results" is reported without specifying which force fields diverged or the nature of the divergence.

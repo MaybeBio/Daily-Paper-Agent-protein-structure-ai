@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors present REAPS, a geometric graph neural network for de novo design of linear and macrocyclic peptide binders. The method treats the receptor as an all-atom context, outperforms ProteinMPNN on sequence recovery, structural fidelity, and interface-level biophysical metrics, and is integrated with structural hallucination in a closed-loop pipeline yielding experimentally validated peptide candidates against NK3R.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark details, experimental protocols, or statistical analyses are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, benchmark definitions, dataset descriptions, experimental validation details, code repository contents, and statistical methodology
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially valuable contribution to computational peptide design by explicitly incorporating receptor context into sequence design. The methodological framing is clear and the integration with experimental validation is commendable. However, the abstract alone provides insufficient quantitative evidence to assess the strength of the claimed improvements over ProteinMPNN, the robustness of the benchmark evaluations, or the validity of the experimental validation. The claims are plausible but currently not verifiable from the supplied material.
+- **Who would be interested in the results, and why** Computational biologists and medicinal chemists working on peptide therapeutics, particularly those developing de novo design pipelines. Researchers in geometric deep learning for protein design would also find the receptor-aware architecture relevant. The demonstrated application to NK3R may interest investigators targeting neurokinin receptors.
+- **Major strengths** The conceptual advance of treating the receptor as a fully observable all-atom context rather than relying solely on backbone geometry is well motivated and addresses a recognized limitation in inverse folding approaches. The integration of the model with structural hallucination in a closed-loop pipeline, followed by experimental validation, represents a strong translational component. Public release of code, checkpoints, and datasets supports reproducibility.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** "REAPS outperforms the widely used inverse folding model ProteinMPNN in sequence recovery, structural fidelity, and interface-level biophysical metrics across both linear and macrocyclic peptide binders"  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract states that REAPS outperforms ProteinMPNN on multiple metrics but provides no numerical values, effect sizes, statistical significance, or details on the benchmark datasets and evaluation protocols. Without these data, the magnitude and reliability of the claimed improvements cannot be assessed.  
+  - **Why it matters** The central claim of the paper rests on this comparative performance. If the improvements are marginal or limited to specific test cases, the practical utility of REAPS over existing methods would be substantially diminished.  
+  - **Resolution test** Provide quantitative results in the full manuscript, including mean and variance for each metric, statistical tests comparing REAPS and ProteinMPNN, and clear descriptions of benchmark datasets, sequence diversity, and evaluation criteria.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Experimental validation rigor  
+  - **Claim pointer** "yielding peptide candidates with experimentally verified functional activity at the neurokinin-3 receptor (NK3R)"  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract reports experimentally verified functional activity but does not specify the assay type, the number of candidates tested, the hit rate, the potency values, or the criteria for functional activity. Without these details, the strength of the experimental validation and its relevance to the design pipeline cannot be evaluated.  
+  - **Why it matters** Experimental validation is the key differentiator of this work from purely computational studies. Insufficient detail prevents readers from judging whether the pipeline produces genuinely active binders or whether the reported activity is marginal or assay-dependent.  
+  - **Resolution test** In the full manuscript, describe the experimental assay, provide dose-response data or activity thresholds, report the number of tested and confirmed candidates, and include appropriate controls.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Generalizability  
+  - **Claim pointer** "across both linear and macrocyclic peptide binders"  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract claims performance across both linear and macrocyclic peptides but does not indicate the number of targets, the diversity of receptor types, or the range of peptide lengths and cyclization strategies covered in the evaluation. The generalizability of the method beyond the tested cases remains unclear.  
+  - **Why it matters** Peptide binders vary widely in structural complexity and receptor context. If the benchmark is limited to a narrow set of targets, the claim of broad applicability is overstated.  
+  - **Resolution test** Specify the number and diversity of benchmark targets, including receptor families, peptide length distributions, and cyclization methods, and discuss any observed performance variations across these categories.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Method description  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The term "geometric graph neural network" is used without specifying the architectural innovations that distinguish REAPS from prior receptor-aware models.  
+  - **Required correction** Briefly describe the key architectural components or refer to a methods section where these are detailed.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Reproducibility  
+  - **Affected element** Resource availability  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The abstract states that source code and data are publicly available but does not specify the license, the computational requirements for running the model, or whether the processed datasets are sufficient to reproduce the reported benchmarks.  
+  - **Required correction** Include license information, hardware requirements, and a statement on dataset completeness in the full manuscript or repository documentation.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Terminology  
+  - **Affected element** "structural hallucination"  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The term "structural hallucination" is used without definition, which may be ambiguous for readers unfamiliar with generative protein design terminology.  
+  - **Required correction** Define the term on first use or provide a brief explanation of the hallucination procedure.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the core comparative performance claim and the experimental validation claim cannot be assessed from the abstract alone. R1-M3 is non-blocking but requires clarification for the generalizability claim to be credible.
+- **Assessment against Nature-style criteria**  
+  - **Originality** The receptor-aware all-atom framing is a meaningful conceptual step beyond backbone-only inverse folding, though the abstract does not clarify how this differs from existing receptor-conditioned models. Originality is plausible but not fully established from the abstract.  
+  - **Scientific importance** Peptide binder design is a high-impact area, and a method that demonstrably improves design success with experimental validation would be important. The importance is contingent on the strength of the evidence, which is not visible here.  
+  - **Interdisciplinary readership** The work bridges computational methods and experimental biology, which could attract a broad audience. The abstract is accessible but lacks the quantitative detail needed to engage method-focused readers.  
+  - **Technical soundness** The architectural description is too brief to assess technical soundness. The evaluation metrics are named but not defined, and the experimental protocol is unspecified.  
+  - **Readability for nonspecialists** The abstract is generally clear in its motivation and high-level approach, but terms like "structural hallucination" and "interface-level biophysical metrics" may require elaboration for a general scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framing is promising and the translational component is valuable, but the abstract does not provide sufficient quantitative or methodological detail to support the central claims. A revised assessment would require access to the full manuscript, including benchmark results, statistical analyses, and experimental validation data.
+
+## Risk / unsupported claims
+- The claim of outperforming ProteinMPNN on multiple metrics is unsupported without numerical data and statistical testing.
+- The claim of experimentally verified functional activity is unsupported without assay details, potency values, and hit rates.
+- The claim of applicability across both linear and macrocyclic peptide binders is unsupported without information on benchmark target diversity.
+- The general statement that current computational approaches "overlook" receptor physicochemical constraints is a broad generalization that may not account for all existing methods; this is not substantiated in the abstract.

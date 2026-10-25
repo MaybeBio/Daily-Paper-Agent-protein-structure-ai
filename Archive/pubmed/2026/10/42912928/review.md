@@ -1,0 +1,80 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report that micheliolide (MCL) covalently engages Cys367 in the STAT3 DNA-binding domain (DBD), a residue unique to STAT3 among STAT family members, and that this modification disrupts STAT3 phosphorylation at Tyr705, nuclear translocation, and transcriptional activity without prior inhibition of upstream JAK phosphorylation. Using covalent docking, R-group enumeration, and free-energy perturbation (FEP) calculations, the authors designed and synthesized MCL analogs with comparable antiproliferative potency but improved physicochemical properties. Microscale thermophoresis (MST) confirms C367-dependent binding; microsecond-scale molecular dynamics (MD) simulations and pair-interaction energy analyses identify electrostatic interactions with Lys365, Val366, and Ile368 as dominant. Compound 16 is proposed as a next-generation lead.
+- **Visible evidence base** Abstract text only; no experimental details, numerical data, structural figures, or statistical analyses provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, experimental methods, compound synthesis and characterization data, assay protocols, statistical analyses, MD simulation parameters, FEP calculation details, and any supplementary information
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting strategy for targeting a previously considered "undruggable" site in STAT3, with a clear translational rationale linked to pancreatic cancer and the clinical-stage compound ACT001. However, the evidence base available for assessment is limited to the abstract, which contains several claims that cannot be verified or fully evaluated without the underlying data. The central mechanistic claim, that C367 covalent engagement by MCL leads to downstream inhibition of STAT3 phosphorylation and transcriptional activity independent of JAK blockade, is intriguing but requires rigorous experimental support. The computational design pipeline is described in outline only, and the key claim that FEP-guided optimization was validated lacks quantitative detail. The identification of compound 16 as a lead is stated without comparative data. Overall, the work is potentially significant but the case is not established from the abstract alone.
+- **Who would be interested in the results, and why** Researchers in cancer biology, particularly those studying STAT3 signaling and pancreatic cancer; medicinal chemists interested in covalent inhibitor design and targeting challenging protein surfaces; computational chemists working on free-energy perturbation methods for covalent ligand optimization; and drug discovery groups focused on transcription factor targets previously considered undruggable.
+- **Major strengths** The targeting of a non-canonical, STAT3-specific cysteine in the DBD represents a conceptually novel approach that could address selectivity limitations of SH2-domain inhibitors. The integration of computational design (covalent docking, FEP) with experimental validation (MST, MD, antiproliferative assays) reflects a modern drug discovery workflow. The link to ACT001, a clinical-stage compound, provides translational relevance. The claim that STAT3 inhibition occurs independently of upstream JAK blockade, if substantiated, would support a direct-on-target mechanism.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic claim
+  - **Claim pointer** "This specific modification disrupts STAT3 phosphorylation at Tyr705, nuclear translocation, and transcriptional activity prior to any detectable inhibition of upstream JAK phosphorylation, a finding that suggests that STAT3 inhibition is not primarily driven by upstream kinase blockade."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that C367 modification disrupts STAT3 phosphorylation at Tyr705 and nuclear translocation, but the mechanistic logic is unclear. Phosphorylation at Tyr705 is required for STAT3 dimerization and nuclear translocation; if C367 modification prevents Tyr705 phosphorylation, the downstream effects on nuclear translocation and transcriptional activity would be expected consequences. However, the abstract does not explain how a covalent modification in the DBD would mechanistically interfere with phosphorylation at Tyr705, which is located in the SH2 domain. The temporal claim ("prior to any detectable inhibition of upstream JAK phosphorylation") is presented without data on time courses or dose responses.
+  - **Why it matters** The central mechanistic claim of the paper rests on this causal chain. If the connection between C367 modification and Tyr705 phosphorylation is not mechanistically explained and experimentally supported, the conclusion that STAT3 inhibition is not driven by upstream kinase blockade is not established. This distinction is critical for differentiating the proposed mechanism from conventional JAK/STAT pathway inhibitors.
+  - **Resolution test** Provide time-course and dose-response data showing that C367 modification occurs before and independently of changes in JAK phosphorylation. Include mechanistic experiments, such as mutagenesis of C367 (e.g., C367S or C367A) to demonstrate loss of MCL effects on Tyr705 phosphorylation, nuclear translocation, and transcriptional activity. Clarify the structural or allosteric basis by which DBD modification affects SH2-domain phosphorylation.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Computational validation
+  - **Claim pointer** "Guided by covalent docking, R-group enumeration, and relative binding free-energy calculations via free-energy perturbation (FEP), we have designed and synthesized a series of MCL analogs... validates FEP-guided optimization of covalent inhibitors."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims that FEP-guided optimization was validated, but no quantitative correlation between computed and experimental values is provided. No binding free-energy values, rank-order comparisons, or experimental binding affinities are reported. The phrase "validates" is a strong claim that requires demonstration that FEP predictions accurately ranked compounds against experimental measurements (e.g., MST-derived Kd values or cellular potencies).
+  - **Why it matters** The methodological contribution of the paper, as stated, is the validation of FEP for covalent inhibitor optimization. Without quantitative agreement between predictions and experiments, the claim of validation is unsupported. This is a key differentiator for the paper's significance to the computational chemistry community.
+  - **Resolution test** Provide a scatter plot or table correlating computed relative binding free energies with experimentally determined binding affinities or potencies for the full series of synthesized analogs. Report statistical metrics (e.g., Pearson R, Kendall tau, mean unsigned error). If FEP was used only for ranking a subset, state this explicitly and provide the relevant comparisons.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Selectivity claim
+  - **Claim pointer** "Cys367 (C367)-dependent covalent engagement within the DNA-binding domain (DBD)-a residue unique to STAT3 among STAT family members."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims C367 is unique to STAT3 among STAT family members, but no sequence alignment or structural comparison is provided. The abstract also does not address potential off-target reactivity of the covalent warhead with other cysteine-containing proteins beyond the STAT family. Selectivity is claimed only in terms of STAT family uniqueness, not broader proteome-wide selectivity.
+  - **Why it matters** For a covalent inhibitor, selectivity is a primary concern. The claim of targeting a "unique" residue is necessary but not sufficient to establish selectivity. Without evidence of minimal off-target reactivity, the translational potential of compound 16 is not established.
+  - **Resolution test** Provide a sequence alignment of STAT family DBDs showing C367 is unique. Include a selectivity assay, such as a cysteine-reactive proteome profiling experiment (e.g., activity-based protein profiling with a clickable probe) or a panel of related transcription factors and kinases, to demonstrate that MCL and compound 16 do not broadly react with other cysteines.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Lead compound claim
+  - **Claim pointer** "Identifies compound 16 as a promising next-generation lead with a superior drug-like profile for targeting STAT3-dependent cancers."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** Compound 16 is named as a lead, but no comparative data are provided against MCL or other analogs. "Superior drug-like profile" is stated without quantitative metrics for solubility, lipophilicity, permeability, metabolic stability, or selectivity. No in vivo data are mentioned.
+  - **Why it matters** The designation of a lead compound requires evidence that it improves upon the parent compound in relevant properties while retaining efficacy. Without comparative data, the claim is not assessable.
+  - **Resolution test** Provide a table comparing compound 16 with MCL and other key analogs across the measured properties (kinetic solubility, logP or logD, permeability, metabolic stability, antiproliferative IC50, binding affinity). If in vivo data exist, include them; if not, state that the lead designation is based on in vitro properties only.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Mechanistic narrative
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that C367 modification disrupts Tyr705 phosphorylation, nuclear translocation, and transcriptional activity, but the order of these events and their causal relationships are not clearly articulated. The phrase "prior to any detectable inhibition of upstream JAK phosphorylation" is ambiguous regarding the time frame and the assay used.
+  - **Required correction** Clarify the temporal sequence of events with explicit time points and specify which JAK isoforms were assessed. State whether the effect on Tyr705 phosphorylation is direct (e.g., steric blockade of the kinase-substrate interaction) or indirect (e.g., conformational change).
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "Undruggable" claim
+  - **Evidence pointer** Title; location not provided
+  - **Issue** The title uses "Undruggable" in quotes, which is appropriate, but the abstract does not define what makes the STAT3 DBD "undruggable" or how the current approach overcomes the specific challenges (e.g., lack of a deep binding pocket, protein-protein interaction surface).
+  - **Required correction** Briefly state the specific challenges of targeting the DBD and how covalent engagement of C367 addresses them.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Data reporting
+  - **Affected element** MD simulation claims
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions "microsecond-scale molecular dynamics simulations and pair-interaction energy analyses" but provides no details on the number of replicates, force field, system setup, or convergence criteria. The claim that "electrostatic interactions predominate" is stated without quantitative energy values.
+  - **Required correction** Provide simulation details in the main text or methods, and report the pair-interaction energy values for the key residues (Lys365, Val366, Ile368) to support the claim.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Context
+  - **Affected element** Comparison to existing inhibitors
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that conventional SH2-domain inhibitors have "limited selectivity and efficacy" but does not cite specific examples or compare the current compounds to any known STAT3 inhibitors.
+  - **Required correction** Add a brief comparison to representative SH2-domain inhibitors (e.g., stattic, S3I-201) in terms of potency, selectivity, or physicochemical properties.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (mechanistic link between C367 modification and Tyr705 phosphorylation), R1-M2 (lack of quantitative FEP-experiment correlation), R1-M3 (insufficient selectivity evidence), R1-M4 (no comparative data for compound 16)
+- **Assessment against Nature-style criteria** Originality: The concept of targeting a STAT3-specific cysteine in the DBD with a covalent inhibitor derived from a clinical-stage natural product is original and potentially impactful. Scientific importance: If fully substantiated, the work could provide a new strategy for targeting STAT3 in cancers where current inhibitors have failed, with implications for pancreatic cancer therapy. Interdisciplinary readership: The work bridges cancer biology, medicinal chemistry, and computational chemistry, which could appeal to a broad audience, but the abstract is too specialized in its current form to engage nonspecialists. Technical soundness: Not assessable from the abstract alone; the computational and experimental methods are described only in outline, and key validation data are missing. Readability for nonspecialists: The abstract is dense and assumes familiarity with STAT3 biology, covalent inhibitor design, and FEP methodology; the mechanistic logic is not clearly explained for a general scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible and interesting hypothesis with a reasonable experimental plan, but the central mechanistic claim, the validation of the computational approach, and the lead compound designation all require substantial additional evidence. A revised manuscript with full data would be needed to assess whether the claims are supported.

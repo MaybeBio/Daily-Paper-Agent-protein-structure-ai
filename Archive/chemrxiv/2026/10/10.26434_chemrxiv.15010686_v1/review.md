@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report a fine-tuned variant of ProteinMPNN, termed DeImmu-MPNN, trained via direct preference optimization to reduce predicted MHC class II and class I epitopes. They claim reductions of 41.4% for class II and 33.0% for class I relative to baseline, with minimal sequence recovery loss and no structural cost, and report transfer to unseen alleles and paralogs, plus generalization to 11 published de novo binder complexes.
+- **Visible evidence base** Abstract text only; no quantitative distributions, statistical tests, model architecture details, training data description, or validation protocols are visible
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, training and validation datasets, baseline definitions, statistical analysis, and any code or model availability statements
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful contribution to the field of de novo protein design by addressing immunogenicity, an underexplored constraint in sequence design. The reported effect sizes are substantial and the transfer claims are ambitious. However, the abstract alone does not provide sufficient detail to assess the validity of the training procedure, the robustness of the evaluation, or the biological relevance of the predicted reductions. Several claims, particularly regarding structural cost and generalization, require verification against the full manuscript.
+- **Who would be interested in the results, and why** Researchers in computational protein design, therapeutic protein engineering, and immunogenicity prediction would be interested. The work offers a practical method to reduce predicted T-cell epitopes during sequence design, which is directly relevant to the development of protein therapeutics and vaccines. The transferability claims may also interest those working on HLA allele diversity and population coverage.
+- **Major strengths** The problem addressed is clinically relevant and timely. The use of direct preference optimization on a widely used model is a sensible methodological choice. The reported reductions are large and the transfer to unseen alleles and paralogs, if robust, would strengthen the practical utility. The inclusion of class I epitopes alongside class II is a useful extension beyond the primary ADA mechanism.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The model reduces predicted MHC class II presentation by 41.4% and class I by 33.0% relative to baseline, with no detectable structural cost.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract reports percentage reductions and a sequence recovery change but provides no information on the variance, number of designs evaluated, statistical significance, or the distribution of outcomes across designs. The claim of "no detectable structural cost" is unsupported without structural metrics, such as Rosetta energy, RMSD to the design model, or experimental validation.
+  - **Why it matters** Without measures of spread and significance, the reported reductions could be driven by outliers or a subset of designs. The structural cost claim is central to the practical utility of the method, and its absence weakens the case that the trade-off is acceptable.
+  - **Resolution test** Provide per-design distributions, confidence intervals, and statistical tests for the immunogenicity reductions. Include structural metrics comparing DeImmu-MPNN and baseline designs, such as predicted energy, structural deviation, or experimental folding data.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and data provenance
+  - **Claim pointer** The model was fine-tuned using direct preference optimization on a six-allele HLA-DRB1 panel.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract does not describe the training data, the construction of preference pairs, the choice of alleles, or the fine-tuning protocol. Without these details, the method cannot be reproduced or assessed for potential biases, such as overfitting to the training alleles or to the NetMHCIIpan predictor.
+  - **Why it matters** Reproducibility is a core requirement for computational methods. The choice of alleles and the source of training sequences directly affect the generalizability claims. If the preference optimization was driven by a narrow sequence set, the reported reductions may not hold on diverse therapeutic proteins.
+  - **Resolution test** Provide a detailed methods section covering data sources, allele selection rationale, preference pair construction, hyperparameters, and training/validation splits. Include an analysis of performance across sequence diversity.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** External validity
+  - **Claim pointer** The reduction transfers without retraining to unseen DRB1 alleles, DRB3/4/5 paralogs, and HLA-DQ, and generalizes to 11 published de novo binder complexes.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states transfer and generalization but provides no details on the number of alleles tested, the selection criteria for the 11 complexes, the baseline used for comparison, or the metrics for interface confidence. The claim of "no systematic predicted cost" is vague and not backed by quantitative data.
+  - **Why it matters** Transfer to unseen alleles and paralogs is a strong claim that, if true, would greatly increase the method's value. However, the abstract does not show whether the reductions are consistent across alleles or whether some alleles show no benefit or even increased presentation. The choice of the 11 complexes could bias the result.
+  - **Resolution test** Provide a table of per-allele and per-complex results, including the range of reductions, the number of alleles per locus, and the interface confidence metrics used. Describe how the 11 complexes were selected and whether they represent a diverse set of backbones and binding interfaces.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, "reducing ADA-relevant class II epitopes across a six-allele HLA-DRB1 panel, while also reducing class I epitopes"
+  - **Issue** The phrase "ADA-relevant" is not defined. It is unclear whether this refers to epitopes known to drive ADA responses or simply predicted class II binders.
+  - **Required correction** Define "ADA-relevant" or replace with a more precise term, such as "predicted MHC class II binders."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Comparability
+  - **Affected element** Baseline definition
+  - **Evidence pointer** Abstract, "relative to the baseline model"
+  - **Issue** The baseline model is not specified. It is implied to be ProteinMPNN, but the exact version or configuration is not stated.
+  - **Required correction** Specify the exact baseline model and version used for comparison.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Metric interpretation
+  - **Affected element** Sequence recovery
+  - **Evidence pointer** Abstract, "2.1 points of sequence recovery"
+  - **Issue** The direction of the change is not stated. It is implied to be a loss, but the abstract does not explicitly say whether recovery decreased or increased.
+  - **Required correction** State the direction explicitly, for example, "a 2.1-point decrease in sequence recovery."
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The abstract does not provide sufficient statistical, methodological, or validation detail to establish the core claims.
+- **Assessment against Nature-style criteria** Originality is moderate; applying preference optimization to reduce immunogenicity in protein design is a reasonable extension of existing methods, but the core idea of optimizing for reduced epitopes is not entirely new. Scientific importance is potentially high given the clinical relevance of immunogenicity, but the abstract does not demonstrate that predicted reductions translate to functional outcomes. Interdisciplinary readership is plausible, as the work bridges computational design and immunology, but the abstract assumes familiarity with both fields. Technical soundness cannot be fully assessed from the abstract; the lack of statistical detail and validation metrics is a significant gap. Readability for nonspecialists is acceptable but could be improved by defining key terms such as "direct preference optimization" and "sequence recovery."
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents promising results, but the absence of methodological detail, statistical validation, and structural metrics prevents a definitive assessment. The authors should provide the full manuscript and address the major concerns before the case can be considered.
+
+## Risk / unsupported claims
+- The claim of "no detectable structural cost" is unsupported without structural metrics or experimental data.
+- The claim of transfer to unseen alleles and paralogs is unsupported without per-allele data.
+- The generalization to 11 published complexes is unsupported without details on complex selection and baseline comparisons.
+- The biological relevance of the predicted reductions to actual ADA responses is not established; the abstract only reports predicted epitope reductions.

@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BiHC: Protein domain segmentation by bidirectional hierarchical clustering using Voronoi tessellation and physical self-containment · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>BiHC: Protein domain segmentation by bidirectional hierarchical clustering using Voronoi tessellation and physical self-containment</h1>
+      <div class="meta">Le QK</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-20
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.18.759833">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于Voronoi接触面积和双向层次聚类的蛋白质结构域分割方法BiHC，通过物理自包含性评分实现结构域边界识别，与深度学习方法性能相当，属于蛋白质结构计算建模问题，方法创新且可迁移。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein domains are commonly regarded as structurally separated, functionally relevant, and evolutionarily separable units. Although classification systems may assign different domain boundaries to the same structure, structural separation remains a shared criterion, and many domain parsers assess it through inter-residue distances, contact numbers, or contact densities. However, the Voronoi contact area, which is widely used to study protein–protein interactions and predict contact sites, has seen limited use in domain parsing. There are two potential challenges to this problem. First, unlike in protein-protein interaction, partitions are not known in advance and must be identified before their interface can be evaluated. Second, the contact area depends on fragment size and internal packing, making it difficult to compare candidate partitions. Here, we introduce BiHC (Bidirectional Hierarchical Clustering), a domain parser based on all-heavy-atom Voronoi contact areas. By normalizing the contact area for fragment size and internal packing, and incorporating residue hydropathy, we define a pairwise self-containment score F. BiHC applies F in two independent hierarchical searches: top-down recursive splitting until no admissible division remains, and bottom-up merging of secondary-structure elements until the entire structure becomes a single fragment. Intermediate partitions from both searches are ranked by a global partition quality score G, derived on the same principle. On two CATH–ECOD consensus benchmarks, under balanced evaluation, BiHC achieved the strongest performance among all tested criterion-based parsers and was comparable to Chainsaw, the best-performing deep learning method tested. These results show that the Voronoi-based criterion can yield competitive domain parsing. &lt;h4&gt;Software availability&lt;/h4&gt; https://github.com/LeKhang97/BiHC &lt;h4&gt;Statement of importance&lt;/h4&gt; Protein domains are functional units that are structurally separated. Therefore, one natural solution is to identify domains by measuring the Voronoi contact areas among potential fragments. However, potential fragments are not known in advance, and distinguishing candidate partitions is also challenging. This study shows that BiHC addresses both problems using Voronoi-based criteria, providing competitive domain-parsing performance and demonstrating that such criteria can support both boundary discovery and partition assessment.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质结构域通常被视为在结构上分离、功能上相关且在进化上可分离的单元。尽管分类系统可能为同一结构分配不同的结构域边界，但结构分离仍是共同的标准，许多结构域解析器通过残基间距离、接触数或接触密度来评估这一标准。然而，广泛用于研究蛋白质-蛋白质相互作用和预测接触位点的Voronoi接触面积，在结构域解析中的应用却有限。这一问题面临两个潜在挑战。首先，与蛋白质-蛋白质相互作用不同，分区并非预先已知，必须在评估其界面之前识别出来。其次，接触面积依赖于片段大小和内部堆积，这使得比较候选分区变得困难。在此，我们引入了BiHC（双向层次聚类），这是一种基于全重原子Voronoi接触面积的结构域解析器。通过归一化片段大小和内部堆积的接触面积，并结合残基疏水性，我们定义了一个成对的自包含评分F。BiHC在两个独立的层次搜索中应用F：自上而下的递归分割，直至无允许的划分剩余；以及自下而上的二级结构元素合并，直至整个结构成为单一片段。两个搜索产生的中间分区通过全局分区质量评分G进行排名，该评分基于相同原则推导。在两个CATH–ECOD共识基准上，在平衡评估下，BiHC在所有测试的基于标准的解析器中表现最强，并与表现最佳的深度学习方法Chainsaw相当。这些结果表明，基于Voronoi的标准能够产生具有竞争力的结构域解析。&lt;h4&gt;软件可用性&lt;/h4&gt; https://github.com/LeKhang97/BiHC &lt;h4&gt;重要性声明&lt;/h4&gt; 蛋白质结构域是结构上分离的功能单元。因此，一种自然的解决方案是通过测量潜在片段间的Voronoi接触面积来识别结构域。然而，潜在片段并非预先已知，区分候选分区也具有挑战性。本研究表明，BiHC利用基于Voronoi的标准解决了这两个问题，提供了具有竞争力的结构域解析性能，并证明此类标准能够支持边界发现和分区评估。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：BiHC: Protein domain segmentation by bidirectional hierarchical clustering using Voronoi tessellation and physical self-containment</li>
+<li><strong>作者与单位</strong>：Le QK（Quoc Khang Le）；CRBM, CNRS, University of Montpellier</li>
+<li><strong>期刊/预印本平台</strong>：bioRxiv</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学（method）论文，提出新的计算工具</li>
+<li><strong>领域</strong>：蛋白质结构域分割（protein domain segmentation / parsing）</li>
+<li><strong>关键词</strong>：protein domain, Voronoi tessellation, hierarchical clustering, self-containment, hydropathy, domain parsing</li>
+<li><strong>DOI/arXiv 号</strong>：10.64898/2026.10.18.759833</li>
+<li><strong>代码</strong>：https://github.com/LeKhang97/BiHC</li>
+<li><strong>数据</strong>：基准数据集清单、逐链域分配、指标表及复现脚本将存放于 Zenodo 和 GitHub（论文发表时提供）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质结构域分割」这一结构计算子领域，采用<strong>基于物理准则（Voronoi 接触面积 + 亲水性加权）的无监督方法</strong>，不依赖深度学习训练数据。其核心贡献在于：将 Voronoi 镶嵌从蛋白-蛋白相互作用分析迁移到域分割任务，并设计了统一的归一化准则（F 和 G），同时用于候选分割的生成与评估。与 Chainsaw、Merizo 等深度学习方法形成对照，属于「物理模拟/几何准则 × 结构计算」路线，而非 AI 方法。对课题的启示在于：<strong>物理可解释的准则可以替代或补充学习到的表征</strong>，且双向层次搜索（top-down + bottom-up）的策略可迁移到其他结构分割/构象划分任务。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>BiHC 提出一种基于全重原子 Voronoi 接触面积、经残基亲水性和片段尺寸归一化的成对自包含分数 F 及全局分割质量分数 G，通过独立的 top-down 递归分裂和 bottom-up 递归合并两条层次搜索轨迹生成候选域分割，在 CATH–ECOD 共识基准上达到与深度学习方法 Chainsaw 相当、优于其他准则型方法的域分割性能。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何仅凭显式的物理/几何准则（而非学习到的表征）自动识别蛋白质结构域边界？</li>
+<li><strong>为什么重要</strong>：蛋白质结构域是结构、进化、功能的基本单元，域分割是结构分类、进化分析、基于结构的设计的必要前置步骤。随着实验和预测结构数量激增，自动化、可解释的域分割工具需求日益增长。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>深度学习方法（Chainsaw、Merizo、DPAM-AI）性能强，但边界决策依赖学习到的表征，难以追溯每个决策的结构依据；</li>
+<li>传统准则型方法（PUU、DomainParser、PDP、SWORD、DDOMAIN、UniDoc）多使用距离截断或距离函数表示接触，未直接度量界面的几何范围；且候选生成与候选评估常使用不同准则，需要额外校准，增加过拟合风险。</li>
+<li><strong>精确的「Can ... ?」研究问题</strong>：Can a single Voronoi-based physical criterion, normalized for fragment size and internal packing and supplemented by hydropathy, be used consistently for both candidate domain-boundary discovery and partition quality assessment, achieving performance competitive with deep learning methods?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文 Introduction 与 Discussion 的叙述，属于「仅本文框架」，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期物理/几何准则</td>
+<td>Wodak &amp; Janin (1981)：界面面积极小值；STRUDL (Wernisch et al. 1999)：加权 Voronoi 接触面积 + Kernighan-Lin 启发式</td>
+<td>可解释、不依赖标注</td>
+<td>候选生成与接受准则分离，需额外校准；STRUDL 无公开代码</td>
+<td>继承 Voronoi 接触面积思想，但统一生成与评估准则</td>
+</tr>
+<tr>
+<td>距离/接触数准则</td>
+<td>PUU (1994)、DomainParser (2000)、PDP (2003)、DDOMAIN (2007)、SWORD (2017)、UniDoc (2023)</td>
+<td>计算简单、广泛使用</td>
+<td>距离截断未直接度量界面几何范围；多依赖启发式或额外准则</td>
+<td>用 Voronoi 面片面积替代距离截断，直接度量界面几何</td>
+</tr>
+<tr>
+<td>深度学习方法</td>
+<td>Chainsaw (2024)、Merizo (2023)、DPAM-AI (2025)</td>
+<td>基准性能强</td>
+<td>依赖训练数据与学习表征，决策可解释性低；可能隐式编码分类约定</td>
+<td>作为对照，证明物理准则可达相近性能</td>
+</tr>
+<tr>
+<td>本文</td>
+<td>BiHC</td>
+<td>统一 F/G 准则、双向层次搜索、全原子 Voronoi 接触面积 + 亲水性加权</td>
+<td>多域结构性能仍低于深度学习方法</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Voronoi 接触面积在域分割中应用受限</td>
+<td>虽有 STRUDL 先例，但后续发展有限</td>
+<td>域分割中候选分割未知，需先发现再评估；原始接触面积依赖片段尺寸和内部堆积，无法直接跨候选比较</td>
+<td>Introduction：Voronoi 接触面积广泛用于蛋白-蛋白相互作用，但在域分割中面临两个挑战：分割未知 + 面积不可比</td>
+</tr>
+<tr>
+<td>生成与评估准则分离</td>
+<td>STRUDL 用 Voronoi 面积生成候选，用额外准则接受/拒绝</td>
+<td>需额外校准，增加过拟合风险</td>
+<td>Introduction：STRUDL 的候选接受依赖描述相对接触和内部紧密度（compactness）的附加准则</td>
+</tr>
+<tr>
+<td>单一层次搜索方向可能遗漏最优分割</td>
+<td>top-down 或 bottom-up 单独使用可能错过另一方向可达的分割</td>
+<td>top-down 与 bottom-up 并非互逆操作；顺序应用时第二阶段受第一阶段约束</td>
+<td>Results/Overview：仅用单一轨迹可能排除另一轨迹可达的分割；bottom-up 合并无法引入 top-down 遗漏的边界</td>
+</tr>
+<tr>
+<td>早期停止准则可能过早终止</td>
+<td>沿轨迹第一个违反准则的分割即停止，但后续分割可能重新满足</td>
+<td>局部最优陷阱</td>
+<td>Results/Overview：停止于第一个违反准则的分割，尽管后续分割可能再次满足准则</td>
+</tr>
+<tr>
+<td>多域结构分割准确率低</td>
+<td>BiHC 在多域结构上准确率低于深度学习方法</td>
+<td>物理准则可能未捕捉域组织的全部信号（进化、同源、分类约定等）</td>
+<td>Results：多域结构上 Chainsaw 和 Merizo 准确率更高；Discussion：域分配可能反映分类约定而非纯物理去耦</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>BiHC 是一个纯准则型（criterion-based）域分割器，包含三个核心组件：
+- <strong>结构表示</strong>：以 SSE（二级结构元件）为基本单元，用全重原子 Voronoi 镶嵌（Voronota v1.29，1.4 Å 探针）计算残基间接触面积；
+- <strong>成对自包含分数 F</strong>：将残基间 Voronoi 接触面积按残基亲水性（Kyte-Doolittle 标度归一化到 [0,1]）加权，再除以片段尺寸相关的归一化项（约化尺寸项 µ_AB 的 β 次方，β = 0.86）；
+- <strong>全局分割质量分数 G</strong>：由 F 导出的全局分数，同时要求域间接触弱（低 F）且域内最弱可允许切割也弱（高 F），以调和平均组合。</p>
+<p>搜索策略为<strong>双向层次聚类</strong>：top-down 从完整结构开始递归施加最弱可允许切割（单切或双切），bottom-up 从 SSE 开始递归合并 F 最高的接触对，两条轨迹的所有中间分割均作为候选，最后用 G 排序选择。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>Voronoi 接触面积直接度量界面几何范围</strong>，比距离截断更物理；</li>
+<li><strong>亲水性加权</strong>：域间界面平均而言比域内接触更亲水（极性），因为疏水残基更倾向于埋在域内部；</li>
+<li><strong>归一化是关键</strong>：原始接触面积随片段尺寸增长，必须用约化尺寸项归一化才能跨候选比较；</li>
+<li><strong>F 同时用于生成与评估</strong>：同一准则贯穿候选发现与候选排序，避免生成-评估准则分离带来的校准问题；</li>
+<li><strong>双向搜索互补</strong>：top-down 和 bottom-up 各自覆盖不同的分割空间，保留所有中间分割可避免早期停止的局部最优问题。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>物理准则的「可解释性红利」</strong>：当深度学习模型在基准上占优时，显式物理准则仍可提供可追溯的决策依据，且可作为集成、蒸馏或异常检测的补充信号；</li>
+<li><strong>「生成-评估同源」原则</strong>：若生成候选与评估候选使用同一准则，可减少超参数校准负担，降低过拟合风险——这一原则可迁移到其他结构分割/聚类任务；</li>
+<li><strong>双向搜索 + 全轨迹保留</strong>：不依赖单一方向的贪心停止，而是保留所有中间状态再全局排序，是一种通用的搜索策略，适用于构象采样、聚类等存在层次结构的问题；</li>
+<li><strong>归一化设计需匹配任务几何</strong>：尺寸归一化的指数（β）需与接触面积的标度行为匹配（本文通过 PDP 的 α 推导 β = 2α = 0.86），这种「从已有方法推导标度指数」的思路可迁移。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质链的 3D 结构（PDB 格式），需 ≥60 残基</li>
+<li><strong>输出</strong>：域分割（每个残基的域分配），以及每个候选分割的全局质量分数 G</li>
+<li><strong>模块</strong>：
+  1. <strong>结构表示模块</strong>：SSE 分配（STRIDE）→ 全重原子 Voronoi 镶嵌（Voronota v1.29）→ 残基-残基接触面积矩阵
+  2. <strong>打分模块</strong>：计算成对自包含分数 F（亲水性加权 + 尺寸归一化）
+  3. <strong>搜索模块</strong>：top-down 递归分裂 + bottom-up 递归合并，保留所有中间分割
+  4. <strong>排序模块</strong>：用全局分数 G 对所有候选分割排序，选择最优
+  5. <strong>后处理模块</strong>：合并短片段（&lt;40 残基或 &lt;2 个规则 SSE）到相邻片段</li>
+<li><strong>训练</strong>：无监督，无需训练数据；唯一需选择的超参数为阈值 t（在 tuning set 上选取）</li>
+<li><strong>工具</strong>：STRIDE（SSE 分配）、Voronota v1.29（Voronoi 镶嵌）、自研 Python 实现</li>
+<li><strong>文字流程</strong>：
+  1. 输入结构 → STRIDE 分配 SSE → Voronota 计算全重原子 Voronoi 镶嵌 → 汇总为残基-残基接触面积
+  2. 对任意两个片段 A、B，计算亲水性加权的 Voronoi 界面面积 W_AB 和约化尺寸项 µ_AB，得 F_AB = W_AB / (µ_AB)^β
+  3. Top-down：从完整结构开始，找到 F 最低的可允许切割（单切或双切，每侧 ≥40 残基），递归分裂直到无合法切割；记录所有中间分割
+  4. Bottom-up：从 SSE 开始，反复合并 F 最高的接触对，直到整个结构合并为一个片段；记录所有中间分割
+  5. 对每个候选分割 P，计算全局分数 G_P,t（域间 F 与域内最弱切割 F 的调和平均，相对于阈值 t）
+  6. 选择 G 最高的分割作为最终预测；后处理合并短片段</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSE 分配（STRIDE）</td>
+<td>将结构划分为螺旋、折叠、卷曲元件</td>
+<td>提供 bottom-up 搜索的初始单元；保证切割不破坏 SSE</td>
+<td>输入：3D 结构；输出：SSE 标注</td>
+<td>Methods/Structural representation</td>
+<td>预期影响：bottom-up 初始单元改变，可能影响合并轨迹；无实测消融</td>
+</tr>
+<tr>
+<td>Voronoi 镶嵌（Voronota）</td>
+<td>计算全重原子接触面积</td>
+<td>直接度量界面几何范围，替代距离截断</td>
+<td>输入：原子坐标；输出：残基-残基接触面积矩阵</td>
+<td>Methods/Structural representation；Introduction 中 STRUDL 先例</td>
+<td>预期影响：若用距离截断替代，将丢失界面几何信息，F 的物理意义减弱；无实测消融</td>
+</tr>
+<tr>
+<td>亲水性加权</td>
+<td>按残基亲水性加权接触面积</td>
+<td>域间界面平均更亲水，加权增强边界信号</td>
+<td>输入：接触面积 + Kyte-Doolittle 标度；输出：加权界面面积 W_AB</td>
+<td>Methods/Pairwise self-containment score；Results 图 7e</td>
+<td>实测消融（Ablation study）：移除亲水性加权导致性能下降（具体数值见 Supplementary File 1，正文未给出）</td>
+</tr>
+<tr>
+<td>尺寸归一化（µ_AB^β）</td>
+<td>消除片段尺寸对接触面积的影响</td>
+<td>原始接触面积随尺寸增长，不可跨候选比较</td>
+<td>输入：片段残基数 N_A、N_B；输出：归一化因子</td>
+<td>Methods：β = 2α = 0.86，源自 PDP 的 α = 0.43</td>
+<td>实测消融：β 偏离 0.86 时性能下降（Supplementary File 1 图 S1）；β = 1 的变体（variant 3）性能下降</td>
+</tr>
+<tr>
+<td>Top-down 递归分裂</td>
+<td>从完整结构向下搜索分割</td>
+<td>覆盖大尺度到小尺度的分割空间</td>
+<td>输入：完整结构 + F；输出：一系列候选分割</td>
+<td>Results/Overview；Methods/Global partition quality score</td>
+<td>预期影响：移除后丢失大尺度优先的分割候选；无实测消融</td>
+</tr>
+<tr>
+<td>Bottom-up 递归合并</td>
+<td>从 SSE 向上合并</td>
+<td>覆盖小尺度到大的分割空间，与 top-down 互补</td>
+<td>输入：SSE 集合 + F；输出：一系列候选分割</td>
+<td>Results/Overview</td>
+<td>预期影响：移除后丢失小尺度优先的分割候选；无实测消融</td>
+</tr>
+<tr>
+<td>全局分数 G</td>
+<td>对所有候选分割排序</td>
+<td>从大量候选中选择最优分割</td>
+<td>输入：候选分割 + F；输出：排序分数</td>
+<td>Methods/Global partition quality score</td>
+<td>预期影响：若用其他排序准则，可能改变最终选择；无实测消融</td>
+</tr>
+<tr>
+<td>后处理</td>
+<td>合并短片段</td>
+<td>避免输出过小、无意义的片段</td>
+<td>输入：候选分割；输出：最终分割</td>
+<td>Methods/Post-processing</td>
+<td>预期影响：移除后可能产生 &lt;40 残基的碎片化输出；无实测消融</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>注：原文公式以文字描述为主，具体符号形式未完整给出。以下基于 Methods 描述重构，标注 [Analysis] 表示推断。</p>
+</blockquote>
+<p><strong>1. 亲水性加权界面面积</strong></p>
+<p>W_AB = Σ_(r∈A, s∈B) a_rs · h_rs</p>
+<ul>
+<li>W_AB：片段 A、B 之间的亲水性加权 Voronoi 接触面积</li>
+<li>a_rs：残基 r 和 s 之间的 Voronoi 接触面积（由 Voronota 计算）</li>
+<li>h_rs：残基 r、s 的归一化亲水性值的均值（Kyte-Doolittle 标度归一化到 [0,1]）</li>
+<li>用途：衡量域间界面的物理接触强度，亲水残基贡献更大</li>
+<li>直觉：域间界面应相对亲水（疏水残基埋在域内），因此高 W 表示强接触</li>
+</ul>
+<p><strong>2. 约化尺寸项</strong></p>
+<p>µ_AB = (N_A · N_B) / (N_A + N_B)  [Analysis：基于「harmonic mean」描述推断]</p>
+<ul>
+<li>N_A、N_B：片段 A、B 的残基数</li>
+<li>用途：归一化界面面积，消除片段尺寸影响</li>
+<li>直觉：与两片段尺寸的调和平均成正比，大片段自然有更大接触面积</li>
+</ul>
+<p><strong>3. 成对自包含分数</strong></p>
+<p>F_AB = W_AB / (µ_AB)^β</p>
+<ul>
+<li>β = 0.86（= 2α，α = 0.43 来自 PDP）</li>
+<li>用途：衡量 A、B 是否应合并为同一域</li>
+<li>直觉：F 低 → 界面弱（相对尺寸而言）→ 应分割；F 高 → 界面强 → 应合并</li>
+<li>标度推导：当 N_A ≈ N_B ≈ N 时，µ_AB ≈ N/2，F 的尺寸标度为 N^(1-β) = N^0.14，与 PDP 的 N^(2α) = N^0.86 标度一致（在 comparable-size limit）</li>
+</ul>
+<p><strong>4. 几何 Voronoi 接触密度</strong>（用于定义 F 的分母）</p>
+<p>ρ_A = (内部接触面积之和) / (N_A 相关归一化项)  [Analysis：原文描述为 "geometric Voronoi contact density"，具体公式未给出]</p>
+<ul>
+<li>用途：衡量片段 A 的内部堆积紧密程度</li>
+<li>直觉：高密度 → 结构紧凑 → 更可能是一个独立域</li>
+</ul>
+<p><strong>5. 全局分割质量分数</strong></p>
+<p>G_P,t = H( 域间分数, 域内分数 )  [Analysis：原文描述为 "harmonic mean of the inter-domain and intra-domain scores"，具体形式未给出]</p>
+<ul>
+<li>域间分数：所有接触域对的 F 相对于阈值 t 的满足程度（要求 F &lt; t）</li>
+<li>域内分数：每个域的最弱可允许内部切割的 F 相对于阈值 t 的满足程度（要求 F &gt; t）</li>
+<li>用途：对候选分割 P 的整体质量打分</li>
+<li>直觉：好的分割应使域间界面弱（F &lt; t）且域内无弱切割（所有内部切割 F &gt; t）</li>
+</ul>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<h3>数据集</h3>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>来源</th>
+<th>规模</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CONSENSUS-43</td>
+<td>CATH v4.3 S40 + ECOD v295.2 共识</td>
+<td>3,231 结构（3,031 单域 + 200 多域）</td>
+<td>主基准</td>
+</tr>
+<tr>
+<td>Tuning set</td>
+<td>CATH v4.3 S40 流程，排除 CONSENSUS-43</td>
+<td>3,918 结构（1,959 单域 + 1,959 多域，平衡采样）</td>
+<td>选择阈值 t</td>
+</tr>
+<tr>
+<td>CONSENSUS-44</td>
+<td>CATH v4.4 S40 新增域 + ECOD v295.2 共识</td>
+<td>1,060 结构（933 单域 + 127 多域）</td>
+<td>跨版本稳定性验证</td>
+</tr>
+</tbody>
+</table>
+<h3>过滤流程（四阶段）</h3>
+<ol>
+<li>长度过滤：≥60 残基（35,581 / 17,278 候选）</li>
+<li>序列相似性过滤：MMseqs2 40% 同一性、80% 覆盖度聚类，排除与训练集/先前集合聚类的簇（4,350 / 16,332 / 1,755）</li>
+<li>结构相似性过滤：Foldseek，TM-score ≥ 0.90（长链归一化）或序列同一性 ≥ 0.90 且 TM-score ≥ 0.80 排除（4,051 / 15,555 / 1,487）</li>
+<li>CATH–ECOD 共识过滤：域数一致且 partition IoU ≥ 0.90（3,231 / 11,241 / 1,060）</li>
+</ol>
+<h3>评估指标</h3>
+<ul>
+<li><strong>域数准确率</strong>：exact-K accuracy（预测域数 = 目标域数的比例）</li>
+<li><strong>域数误差</strong>：K-score（基于 Bray-Curtis 相异度，反映域数误差幅度）</li>
+<li><strong>分割质量</strong>：IoU、NDO（归一化域重叠）、CSD（链段距离）、DBD（域边界距离）</li>
+</ul>
+<h3>对比方法</h3>
+<ul>
+<li>准则型：UniDoc、SWORD2、STRIDE-R（重构的 STRUDL）</li>
+<li>深度学习方法：Chainsaw、Merizo</li>
+</ul>
+<h3>统计检验</h3>
+<ul>
+<li>配对 bootstrap（3,000 次重采样），Benjamini-Hochberg 校正，q &lt; 0.05 显著</li>
+<li>敏感性分析：exact-K 用 McNemar 检验，连续指标用 Wilcoxon 符号秩检验</li>
+</ul>
+<h3>实验列表</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CONSENSUS-43 主基准</td>
+<td>BiHC 的域分割性能与现有方法可比</td>
+<td>与 UniDoc、SWORD2、STRIDE-R、Chainsaw、Merizo 对比</td>
+<td>BiHC 在平衡评估下为最强准则型方法；域数准确率与 Chainsaw 无显著差异；多域结构上低于 Chainsaw/Merizo</td>
+<td>物理准则可达到与深度学习方法相当的域数预测性能</td>
+<td>不能声称 BiHC 在所有指标上优于深度学习方法</td>
+<td>Results 图 4；Tables S2-S4</td>
+</tr>
+<tr>
+<td>单域结构性能</td>
+<td>BiHC 在单域结构上表现优异</td>
+<td>单域子集（3,031 结构）</td>
+<td>BiHC 取得所有方法中最高的单域准确率（91.8% exact-K）</td>
+<td>物理自包含准则能有效识别单域结构</td>
+<td>单域结构相对简单，不能推广到复杂多域</td>
+<td>Results 图 4a</td>
+</tr>
+<tr>
+<td>多域结构性能</td>
+<td>BiHC 在多域结构上的局限性</td>
+<td>多域子集（200 结构）</td>
+<td>BiHC 准确率 71.0%，低于 Chainsaw（84.0%）和 Merizo（76.0%）</td>
+<td>物理准则对多域组织的捕捉不如学习方法</td>
+<td>多域子集规模小（n=200），统计功效有限</td>
+<td>Results 图 4b</td>
+</tr>
+<tr>
+<td>CONSENSUS-44 稳定性</td>
+<td>BiHC 性能跨 CATH 版本稳定</td>
+<td>新版本 CATH v4.4 域</td>
+<td>性能模式与 CONSENSUS-43 一致</td>
+<td>BiHC 的行为跨版本稳定</td>
+<td>CONSENSUS-44 不独立于 Chainsaw 训练数据</td>
+<td>Results 图 5</td>
+</tr>
+<tr>
+<td>消融研究</td>
+<td>F 的各组件均有贡献</td>
+<td>移除亲水性加权、尺寸归一化、β 变化等变体</td>
+<td>移除任何组件均导致性能下降；β 在 0.7-1.6 区间内性能稳定</td>
+<td>F 的多组件设计是必要的</td>
+<td>消融差异未达统计显著（正文未报告 p 值）</td>
+<td>Supplementary File 1</td>
+</tr>
+<tr>
+<td>β 敏感性</td>
+<td>β = 0.86 是合理选择</td>
+<td>β 从 0.1 到 2.0 扫描</td>
+<td>0.7-1.6 区间性能平台；&lt;0.7 时多域性能急剧下降</td>
+<td>β 的标度行为与理论推导一致</td>
+<td>最优 β 可能依赖数据集</td>
+<td>Supplementary File 1 图 S1</td>
+</tr>
+<tr>
+<td>案例研究</td>
+<td>BiHC 的成败模式可解释</td>
+<td>8 个代表性案例，4 种一致/不一致模式</td>
+<td>成功案例显示清晰的物理去耦；失败案例涉及紧密堆积或模糊边界</td>
+<td>物理准则的决策可追溯</td>
+<td>案例选择可能有偏</td>
+<td>Results 图 6</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文仅评估了<strong>域分割</strong>（domain segmentation），即给定一条链，预测域的数量和边界。未涉及域分类、域功能注释或域间相互作用预测。</li>
+<li><strong>基准范围</strong>：CONSENSUS-43/44 基于 CATH 与 ECOD 的共识注释，排除了两者不一致的结构。这意味着基准偏向于「注释一致」的较清晰案例，真实世界中的模糊案例可能更多。</li>
+<li><strong>真值/oracle 输入</strong>：BiHC 的输入仅为 3D 结构（PDB），无任何域注释或同源信息。对比的深度学习方法（Chainsaw、Merizo）使用训练集学习域组织模式，其训练数据可能包含与基准重叠的结构。</li>
+<li><strong>端到端状态</strong>：BiHC 是<strong>完全无监督</strong>的，无需训练；但阈值 t 在 tuning set 上选择，tuning set 与 CONSENSUS-43 同源于 CATH v4.3，存在一定程度的「调参泄漏」——虽然 tuning set 排除了 CONSENSUS-43 本身，但两者来自同一分布。</li>
+<li><strong>算力成本</strong>：Voronoi 镶嵌（Voronota）为多项式时间算法，层次搜索为 O(N²) 量级（基于 SSE 数），远低于深度学习方法的前向推理成本（需 GPU）。但本文未报告具体运行时间。</li>
+<li><strong>历史数据依赖</strong>：无。BiHC 不依赖任何训练数据或历史注释。</li>
+<li><strong>模型依赖</strong>：无。BiHC 不依赖预训练模型。</li>
+<li><strong>最难情形</strong>：多域结构（≥3 域）、紧密堆积的域间界面、无规则 SSE 的卷曲区域。BiHC 在多域结构上准确率显著低于深度学习方法。</li>
+<li><strong>有边界的复述</strong>：在 CATH-ECOD 共识基准上，BiHC 作为无监督物理准则方法，其域数预测准确率与深度学习方法 Chainsaw 相当，且显著优于其他准则型方法；但其多域分割能力仍弱于深度学习方法，且其性能边界受限于物理去耦假设（即注释域边界不一定对应物理弱界面）。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多域结构性能不足</td>
+<td>多域结构上准确率（71.0%）低于 Chainsaw（84.0%）和 Merizo（76.0%）</td>
+<td>未明确给出，但 Discussion 暗示可能需要补充更高阶的物理信号</td>
+<td>Results 图 4b；Discussion</td>
+</tr>
+<tr>
+<td>物理准则可能未捕捉全部域组织信号</td>
+<td>注释域边界可能反映进化、同源、分类约定，而非纯物理去耦</td>
+<td>未明确给出</td>
+<td>Discussion</td>
+</tr>
+<tr>
+<td>CONSENSUS-44 非完全独立</td>
+<td>CATH v4.4 的域注释流程使用了 Chainsaw，因此该基准对深度学习方法有利</td>
+<td>未明确给出</td>
+<td>Results/CONSENSUS-44 段</td>
+</tr>
+<tr>
+<td>阈值 t 需在 tuning set 上选择</td>
+<td>t = 0.365 在 tuning set 上选取，非完全无参数</td>
+<td>未明确给出</td>
+<td>Methods/Global partition quality score</td>
+</tr>
+<tr>
+<td>消融差异未达统计显著</td>
+<td>移除 F 的组件仅导致轻微性能下降</td>
+<td>未明确给出</td>
+<td>Supplementary File 1（正文未报告 p 值）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基准以 CATH-ECOD 共识为准</td>
+<td>共识注释偏向「清晰」案例，模糊案例被排除；BiHC 在真实世界模糊案例上的表现未知</td>
+<td>基准选择直接影响结论的泛化性</td>
+<td>在非共识案例（CATH 与 ECOD 不一致）上单独评估</td>
+<td>Methods/Data availability；CATH-ECOD consensus filtering 描述</td>
+</tr>
+<tr>
+<td>CONSENSUS-44 的独立性声明较弱</td>
+<td>CATH v4.4 使用 Chainsaw 辅助注释，因此该基准对 Chainsaw 有利；BiHC 在此基准上的表现不能完全视为「公平对比」</td>
+<td>跨版本稳定性结论可能被高估</td>
+<td>使用完全不使用任何自动分割工具的基准（如人工注释的 SCOPe）</td>
+<td>Results/CONSENSUS-44 段</td>
+</tr>
+<tr>
+<td>多域子集规模小（n=200）</td>
+<td>多域性能差异（71.0% vs 84.0%）的统计功效有限；bootstrap 置信区间未报告</td>
+<td>多域结论的可靠性存疑</td>
+<td>扩大多域基准规模，报告置信区间</td>
+<td>Results 图 4b；Methods/Statistical analysis</td>
+</tr>
+<tr>
+<td>F 的公式细节不完整</td>
+<td>原文以文字描述公式，具体符号和计算步骤未完全给出，可复现性受限</td>
+<td>方法学论文的可复现性依赖于公式完整性</td>
+<td>检查代码仓库是否提供完整实现</td>
+<td>Methods/Pairwise self-containment score；代码仓库</td>
+</tr>
+<tr>
+<td>消融研究仅报告「轻微下降」</td>
+<td>未报告消融差异的显著性检验；可能 F 的某些组件冗余</td>
+<td>组件必要性未得到严格验证</td>
+<td>对每个消融变体进行显著性检验</td>
+<td>Supplementary File 1</td>
+</tr>
+<tr>
+<td>与 STRIDE-R 的比较</td>
+<td>STRIDE-R 是作者自己重构的 STRUDL 版本，非原始实现；原始 STRUDL 可能表现不同</td>
+<td>与历史方法的对比可能不公平</td>
+<td>尝试获取原始 STRUDL 实现或与其他已发表准则方法对比</td>
+<td>Methods/Evaluated domain parsers</td>
+</tr>
+<tr>
+<td>未报告运行时间</td>
+<td>无法评估 BiHC 的实际计算成本</td>
+<td>实际应用中计算效率是重要考量</td>
+<td>在标准数据集上报告 CPU 时间和内存占用</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题：Agent 提炼的知识候选</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>物理准则的「生成-评估同源」设计</strong>：BiHC 的核心设计原则是让同一个物理分数 F 同时驱动候选生成（top-down 切割和 bottom-up 合并）和候选评估（全局分数 G）。这种「同源准则」避免了 STRUDL 中生成与接受准则分离导致的额外校准问题。<strong>可迁移到</strong>：构象采样中的打分函数设计、聚类算法中的距离度量选择。</p>
+</li>
+<li>
+<p><strong>双向层次搜索 + 全轨迹保留</strong>：BiHC 不依赖单一方向的贪心决策，而是同时运行 top-down 和 bottom-up 两条轨迹，保留所有中间分割，再用全局分数排序。这避免了早期停止的局部最优问题。<strong>可迁移到</strong>：蛋白质构象空间的层次划分、MD 模拟中的状态聚类、序列设计中的层次搜索。</p>
+</li>
+<li>
+<p><strong>Voronoi 接触面积作为「几何界面」度量</strong>：相比距离截断，Voronoi 面片面积直接度量原子间的几何接触范围，且可通过镶嵌一次计算、反复查询。<strong>可迁移到</strong>：蛋白-蛋白相互作用界面预测、蛋白-配体结合位点识别、MD 轨迹中的接触分析。</p>
+</li>
+<li>
+<p><strong>亲水性加权的物理直觉</strong>：域间界面平均更亲水（疏水残基埋在域内），这一物理先验可以增强边界信号。<strong>可迁移到</strong>：蛋白-蛋白 docking 的界面打分、膜蛋白的跨膜区域预测、蛋白设计中的表面残基选择。</p>
+</li>
+<li>
+<p><strong>尺寸归一化的标度推导</strong>：从已有方法（PDP 的 α = 0.43）推导自己的归一化指数（β = 2α = 0.86），而不是自由拟合。这种「从先验方法推导标度」的思路可避免过拟合。<strong>可迁移到</strong>：任何需要尺寸归一化的几何/物理打分函数设计。</p>
+</li>
+<li>
+<p><strong>基准构建的严谨性</strong>：CATH-ECOD 共识过滤（域数一致 + IoU ≥ 0.90）、序列和结构双重去冗余、对训练集泄漏的控制（排除 Chainsaw/Merizo 训练集相关簇）——这些基准构建原则对评估任何结构预测/分割方法都适用。</p>
+</li>
+<li>
+<p><strong>物理准则与深度学习的互补定位</strong>：BiHC 在单域结构上最优、在多域结构上弱于深度学习方法，说明物理准则擅长「识别独立单元」而弱于「解析复杂组织」。<strong>可迁移到</strong>：将物理准则作为深度学习模型的先验/正则化，或用于生成训练标签。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Wodak &amp; Janin (1981)</strong>：最早提出用界面面积极小值识别域边界。BiHC 继承「弱界面 = 域边界」的物理直觉，但用 Voronoi 面片面积替代了溶剂可及表面积（SASA）计算。</li>
+<li><strong>STRUDL (Wernisch, Hunting, and Wodak 1999)</strong>：首次将 Voronoi 接触面积用于域分割，使用 radical plane 加权 Voronoi 和 Kernighan-Lin 图分割。BiHC 的 F 分数可视为 STRUDL 思想的推广，但统一了生成与评估准则，并增加了亲水性加权。</li>
+<li><strong>PDP (Alexandrov &amp; Shindyalov 2003)</strong>：使用距离相关的接触数和尺寸归一化（α = 0.43）。BiHC 的 β = 2α = 0.86 直接源自 PDP 的标度行为。</li>
+<li><strong>PUU (Holm &amp; Sander 1994)</strong>：基于接触数的 top-down 递归分割。BiHC 的 top-down 搜索与之类似，但使用 Voronoi 面积而非接触数。</li>
+<li><strong>SWORD / SWORD2 (Postic et al. 2017; Cretin et al. 2022)</strong>：bottom-up 合并策略的先例。BiHC 的 bottom-up 搜索与之类似，但使用 F 而非接触密度。</li>
+<li><strong>UniDoc (Zhu et al. 2023)</strong>：结合 top-down 和 bottom-up 的准则方法。BiHC 与之最接近，但 UniDoc 使用距离/接触准则，BiHC 使用 Voronoi 面积 + 亲水性。</li>
+<li><strong>Chainsaw (Wells et al. 2024)</strong>：深度学习方法，预测残基对同域概率。BiHC 的对比基准，也是 CATH v4.4 注释流程的组成部分。</li>
+<li><strong>Merizo (Lau, Kandathil, &amp; Jones 2023)</strong>：深度学习方法，预测域掩码。BiHC 的对比基准。</li>
+<li><strong>Voronota (Olechnovič &amp; Venclauskas 2014)</strong>：Voronoi 镶嵌计算工具，BiHC 的几何计算基础。</li>
+<li><strong>STRIDE (Frishman &amp; Argus 1995)</strong>：二级结构分配工具，BiHC 的 SSE 定义来源。</li>
+<li><strong>Kyte-Doolittle 疏水性标度 (1982)</strong>：亲水性加权的物理基础。</li>
+<li><strong>CATH (Sillitoe et al. 2020) / ECOD (Schaeffer et al. 2026)</strong>：域注释数据库，BiHC 的基准来源。</li>
+<li><strong>MMseqs2 (Steinegger &amp; Söding 2017)</strong>：序列聚类工具，用于去冗余。</li>
+<li><strong>Foldseek (van Kempen et al. 2024)</strong>：结构相似性搜索工具，用于结构去冗余。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<blockquote>
+<p>标题：Agent 生成的研究候选</p>
+</blockquote>
+<h3>候选 1：物理-学习混合域分割器</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：BiHC 在单域结构上最优但在多域结构上弱于深度学习方法；深度学习方法性能强但决策不可解释。</li>
+<li><strong>核心假设</strong>：将 BiHC 的 F/G 物理分数作为特征或正则化项注入深度学习模型（如 Chainsaw 的架构），可以兼得物理可解释性和学习表征的表达力。</li>
+<li><strong>增量</strong>：在 Chainsaw/Merizo 的架构中加入 F 分数作为辅助输入或辅助损失；或在 BiHC 的候选排序阶段用学习到的排序器替代固定阈值 t。</li>
+<li><strong>初步方法</strong>：在 CONSENSUS-43 上训练一个轻量排序器，输入为 BiHC 各候选分割的 F/G 特征 + 结构几何特征，输出为候选排序；与纯 BiHC 和纯 Chainsaw 对比。</li>
+<li><strong>验证方式</strong>：CONSENSUS-43/44 基准，报告 exact-K、K-score、IoU、NDO、CSD、DBD；重点分析多域子集。</li>
+<li><strong>失败模式</strong>：物理特征与学习表征冗余，混合后无增益；或排序器过拟合 tuning set。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 2：Voronoi 接触面积作为 MD 轨迹的域动态描述符</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：BiHC 的 F 分数是静态结构上的快照；但域边界在 MD 模拟中可能动态变化。</li>
+<li><strong>核心假设</strong>：沿 MD 轨迹计算 F/G 分数的时间序列可以揭示域的动态稳定性、域间界面的开合事件，以及域边界随构象变化的移动。</li>
+<li><strong>增量</strong>：将静态域分割扩展到动态域分割（dynamic domain segmentation），为构象采样和 MD 分析提供新工具。</li>
+<li><strong>初步方法</strong>：选取若干已知域结构的蛋白，运行 μs 级 MD；每帧计算 F/G；聚类 F/G 时间序列，识别域边界移动或域合并/分裂事件。</li>
+<li><strong>验证方式</strong>：与实验已知的域运动（如 domain swapping、open-closed 构象）对比；检查 F/G 变化是否与构象转变同步。</li>
+<li><strong>失败模式</strong>：F/G 对热波动过于敏感，时间序列噪声大；或域边界在 MD 中过于稳定，无动态事件可捕捉。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 3：F 分数作为 AlphaFold 预测结构的域质量评估器</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：AlphaFold 预测结构的域边界可能与实验结构不一致；pLDDT 是残基级置信度，缺乏域级质量度量。</li>
+<li><strong>核心假设</strong>：BiHC 的 F/G 分数可以评估预测结构的域内自包含性和域间去耦性，从而作为域级置信度指标，辅助识别预测结构中不可靠的域边界。</li>
+<li><strong>增量</strong>：为 AlphaFold 预测结果提供域级质量评估，补充 pLDDT 的残基级信息。</li>
+<li><strong>初步方法</strong>：在 CONSENSUS-43 上，对每个结构的 AlphaFold 预测版本计算 F/G；比较预测结构与实验结构的 F/G 差异；训练一个分类器，用 F/G 特征预测域边界是否正确。</li>
+<li><strong>验证方式</strong>：在独立测试集上评估域边界预测准确率；与 pLDDT 基线对比。</li>
+<li><strong>失败模式</strong>：F/G 对结构误差不敏感，无法区分正确与错误的域边界；或 pLDDT 已包含足够信息，F/G 无增量。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 4：基于 F 分数的蛋白设计域边界约束</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：蛋白设计（如 de novo design）中，域边界的合理放置影响折叠和功能；现有设计工具缺乏显式的域边界约束。</li>
+<li><strong>核心假设</strong>：将 F/G 分数作为设计目标的正则化项，可以引导设计出域间界面弱、域内自包含性强的多域蛋白。</li>
+<li><strong>增量</strong>：为蛋白设计提供物理可解释的域级目标函数。</li>
+<li><strong>初步方法</strong>：在现有设计流程（如 RFdiffusion + ProteinMPNN）中，加入 F/G 分数作为可微损失项；设计若干多域蛋白，验证其是否折叠为预期域结构。</li>
+<li><strong>验证方式</strong>：实验表达和结构验证（或 AlphaFold 预测验证）；与无 F/G 约束的设计对比。</li>
+<li><strong>失败模式</strong>：F/G 不可微或梯度噪声大，难以优化；或设计出的域边界与天然蛋白差异大，折叠失败。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul>
+<h3>候选 5：双向层次搜索策略迁移到构象聚类</h3>
+<ul>
+<li><strong>来源局限/观察</strong>：BiHC 的双向搜索（top-down 分裂 + bottom-up 合并）避免了单一方向的局部最优；构象聚类（如 MD 轨迹聚类）同样面临层次结构未知的问题。</li>
+<li><strong>核心假设</strong>：将 BiHC 的双向搜索策略迁移到构象空间聚类，可以比单一方向的层次聚类（如 agglomerative 或 divisive）更鲁棒地识别构象状态层次。</li>
+<li><strong>增量</strong>：为构象聚类提供新的搜索策略，可能改善对稀有构象和中间态的识别。</li>
+<li><strong>初步方法</strong>：将 F 分数替换为构象间的距离/相似度度量（如 RMSD、接触图相似度），实现双向层次聚类；在标准 MD 轨迹集上评估。</li>
+<li><strong>验证方式</strong>：与常见聚类方法（如 GROMOS、DBSCAN、层次聚类）对比，使用 VRC、silhouette 等内部指标和已知构象状态的恢复率。</li>
+<li><strong>失败模式</strong>：双向搜索的计算成本过高；或构象空间缺乏清晰的层次结构，双向搜索无优势。</li>
+<li><strong>创新状态</strong>：unverified</li>
+</ul></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, results, discussion, methods) for a single-author preprint submitted to bioRxiv.</li>
+<li><strong>Assessment boundary</strong> Scientific soundness, methodological clarity, validity of claims relative to presented evidence, and suitability for a general structural biology audience. No assessment of code functionality or reproducibility beyond what is described in the text.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors introduce BiHC, a criterion-based protein domain parser that uses Voronoi tessellation-derived contact areas, normalized by fragment size and internal packing, and weighted by residue hydropathy, to define a pairwise self-containment score F and a global partition quality score G. BiHC performs independent top-down and bottom-up hierarchical searches, and is claimed to achieve state-of-the-art performance among criterion-based parsers and comparable performance to deep learning methods on CATH-ECOD consensus benchmarks.</li>
+<li><strong>Visible evidence base</strong> Abstract, full introduction, results overview (including dataset construction, tuning, benchmark performance, and case studies), discussion, and methods sections. Figures are referenced but not provided. Supplementary files are referenced but not provided.</li>
+<li><strong>Missing materials affecting confidence</strong> Figures 1-7, all supplementary tables (S1-S7), Supplementary File 1 (including ablation study), Supplementary File 2 (per-chain results), and the actual benchmark datasets. Without these, quantitative claims cannot be independently verified.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> This manuscript presents a conceptually interesting approach to protein domain segmentation, leveraging Voronoi tessellation in a way that has been underexplored in modern domain parsers. The methodological framework is clearly described and the motivation is well-articulated. However, the manuscript as presented has several critical gaps. The results section is largely descriptive without presenting actual numerical data, making it impossible to assess the strength of the claimed performance. The reliance on a single-author submission with no code or data available at the time of review further limits verification. The core claims, while plausible, are not substantiated by the evidence visible in this manuscript. The work has potential, but in its current form, the case is not fully established.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Structural biologists, bioinformaticians, and researchers working on protein structure annotation and classification would be the primary audience. The work is relevant to those interested in criterion-based (non-machine-learning) approaches to domain parsing, as it offers a transparent alternative to deep learning methods. The use of Voronoi tessellation and physical self-containment criteria may also appeal to researchers studying protein geometry and packing. The comparative benchmarking against Chainsaw and Merizo would be of interest to the broader protein structure prediction community.</p>
+</li>
+<li>
+<p><strong>Major Strengths</strong>
+  1. The conceptual framing is strong. The authors correctly identify a gap in the field: most modern domain parsers rely on learned representations, and explicit geometric criteria are underrepresented. The use of Voronoi contact areas, normalized for size and packing, is a thoughtful and physically motivated approach.
+  2. The methodological design is coherent. The bidirectional search strategy (independent top-down and bottom-up) is a sensible way to explore the partition space, and the use of a single scoring function F throughout both candidate generation and evaluation is a principled improvement over methods like STRUDL that use different criteria at different stages.
+  3. The authors are appropriately cautious in their claims. They acknowledge the multi-domain performance gap and the potential for curated annotations to reflect non-geometric information. This balanced perspective is commendable.
+  4. The inclusion of a reconstructed STRUDL (STRUDL-R) as a baseline is a useful contribution, as it allows for direct comparison with a historical Voronoi-based method.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The manuscript claims that "On the primary CONSENSUS-43 benchmark, BiHC showed a clear class-dependent performance profile" and that "BiHC achieved the strongest performance among all tested criterion-based parsers and was comparable to Chainsaw" under balanced evaluation.</li>
+<li><strong>Evidence pointer</strong> Results section, "BiHC performance on benchmark datasets"; Figures 4 and 5 are referenced but not provided; Tables S2-S7 are referenced but not provided.</li>
+<li><strong>Concern</strong> The central quantitative claims of the manuscript are entirely unsupported by the visible text. No numerical results are presented in the body of the manuscript. The reader is told that BiHC performed well, but is not shown any actual performance values, confidence intervals, or statistical comparisons. The figures and supplementary tables that would contain this information are not available for review. This is a fundamental issue, as the entire case for BiHC's utility rests on these benchmark results.</li>
+<li><strong>Why it matters</strong> Without access to the actual performance numbers, it is impossible to evaluate whether the claims of "strongest among criterion-based parsers" and "comparable to Chainsaw" are justified. The reader cannot assess the magnitude of differences, the variance across protein classes, or the practical significance of the results. This is a blocking issue for any assessment of the manuscript's validity.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must provide the actual numerical results in the main text or in accessible supplementary materials. This should include at minimum: exact-K accuracy, K-score, IoU, NDO, CSD, and DBD for all methods on both benchmarks, with appropriate measures of uncertainty. The figures must be made available for review.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological completeness</li>
+<li><strong>Claim pointer</strong> The manuscript states that "BiHC applies F in two independent hierarchical searches" and that "Intermediate partitions from both searches are ranked by a global partition quality score G, derived on the same principle."</li>
+<li><strong>Evidence pointer</strong> Results section, "Overview of the BiHC framework"; Materials and Methods, "Pairwise self-containment score" and "Global partition quality score".</li>
+<li><strong>Concern</strong> The mathematical definitions of the key quantities F and G are not fully specified in the visible text. The methods section describes the components of F (hydropathy-weighted interface, reduced-size term, geometric Voronoi contact density) but the actual equations are not shown. The text refers to equations that are not present in the manuscript. Similarly, the definition of G is described verbally but the exact formula is not given. The threshold t is mentioned but its precise role in the scoring is not fully formalized.</li>
+<li><strong>Why it matters</strong> The manuscript's central contribution is a novel scoring function. Without the explicit mathematical formulation, the method cannot be reproduced, evaluated for correctness, or compared to alternative approaches. The reader cannot assess whether the normalization is sound, whether the hydropathy weighting is appropriate, or whether the thresholding scheme is principled. This is a fundamental gap in a methods-focused paper.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must provide the complete mathematical definitions of F, G, and the thresholding procedure. This should include all equations, definitions of all variables, and a clear statement of how the threshold t is applied. The equations should be numbered and referenced in the text.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Benchmark validity</li>
+<li><strong>Claim pointer</strong> The manuscript claims that CONSENSUS-43 and CONSENSUS-44 are appropriate benchmarks, with CONSENSUS-43 being "the primary benchmark" and CONSENSUS-44 used "to assess the stability of tool performance."</li>
+<li><strong>Evidence pointer</strong> Results section, "Overview of the dataset construction"; Materials and Methods, "Data preprocessing" and "CATH-ECOD consensus filtering".</li>
+<li><strong>Concern</strong> The benchmark construction is described in detail, but several aspects raise concerns. First, the CONSENSUS-44 set is derived from CATH v4.4, which the authors acknowledge "is not fully independent of that method" (i.e., Chainsaw) because CATH v4.4 used Chainsaw in its annotation pipeline. This means that the benchmark itself may be biased toward Chainsaw's predictions, making any comparison on this set difficult to interpret. Second, the filtering criteria (CATH-ECOD agreement on domain count and partition IoU ≥ 0.90) may select for "easy" cases where the two databases agree, potentially reducing the difficulty of the benchmark and limiting its ability to discriminate between methods. Third, the number of multi-domain structures in CONSENSUS-43 (200 out of 3231) is small, which may limit the statistical power of the multi-domain comparisons.</li>
+<li><strong>Why it matters</strong> The validity of the benchmark directly affects the interpretability of the performance claims. If the benchmark is biased or too easy, the reported performance may not generalize to real-world domain parsing tasks. The small number of multi-domain structures is particularly concerning, as this is where the authors acknowledge BiHC struggles.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a more detailed analysis of the benchmark characteristics, including the distribution of domain counts, protein lengths, and structural classes. They should also discuss the potential impact of the CATH v4.4 annotation bias on CONSENSUS-44 results and consider whether additional benchmarks (e.g., from ECOD alone or from a manually curated set) would strengthen the evaluation.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Comparison fairness</li>
+<li><strong>Claim pointer</strong> The manuscript states that "BiHC achieved the strongest performance among all tested criterion-based parsers and was comparable to Chainsaw, the best-performing deep learning method tested."</li>
+<li><strong>Evidence pointer</strong> Results section, "BiHC performance on benchmark datasets"; Materials and Methods, "Evaluated domain parsers".</li>
+<li><strong>Concern</strong> The comparison with other methods is described, but the details of how these methods were run are not fully specified. For example, were the deep learning methods (Chainsaw, Merizo) run with their default settings, or were they fine-tuned on the benchmark? Were the criterion-based methods (UniDoc, SWORD2) run with their default parameters, or were they optimized for the benchmark? The manuscript mentions that "All tools were obtained from their official repositories" but does not state the specific versions or configuration used. Additionally, the reconstruction of STRUDL (STRUDL-R) is described as having a "logistic classifier... fitted on the tuning set," which raises the question of whether STRUDL-R was given an advantage by being trained on data from the same distribution as the benchmark.</li>
+<li><strong>Why it matters</strong> Fair comparison is essential for the validity of the performance claims. If other methods were not given the same opportunity to perform well (e.g., through hyperparameter tuning), the comparison may be biased in favor of BiHC. Conversely, if STRUDL-R was trained on the tuning set, it may have an unfair advantage over methods that were not similarly tuned.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a detailed description of how each comparison method was configured and run, including specific versions, parameters, and any tuning procedures. They should also clarify whether the tuning set was used to optimize any aspect of the comparison methods, and if so, how this was done.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Ablation study rigor</li>
+<li><strong>Claim pointer</strong> The manuscript states that "we conducted an ablation study on the tuning set to assess the contributions of its individual components" and that "most components of F, including hydropathy and size-dependent terms, contributed to the performance."</li>
+<li><strong>Evidence pointer</strong> Discussion section; Supplementary File 1, "Ablation study" section (not provided).</li>
+<li><strong>Concern</strong> The ablation study is only mentioned in passing, with no results presented in the main text. The reader is told that removing components led to "a slight decrease in balanced domain-count performance, although the differences were not significant." This is a critical piece of evidence for the design of F, but the details are entirely relegated to a supplementary file that is not available for review. The lack of significance is also concerning, as it suggests that the individual components may not be essential, which would weaken the justification for the specific form of F.</li>
+<li><strong>Why it matters</strong> The ablation study is the primary evidence that the specific formulation of F is well-justified. If the components do not significantly contribute, the method could potentially be simplified, or the choice of components may be arbitrary. The reader cannot evaluate this without seeing the actual results.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should present the ablation study results in the main text or provide the supplementary file for review. They should also discuss the implications of the lack of statistical significance for the design choices.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Abstract, "Statement of importance"</li>
+<li><strong>Issue</strong> The statement "This study shows that BiHC addresses both problems using Voronoi-based criteria, providing competitive domain-parsing performance" is somewhat vague. The abstract would benefit from a brief mention of the specific performance metrics and the magnitude of the results.</li>
+<li>
+<p><strong>Required correction</strong> Consider adding a sentence with a representative quantitative result (e.g., "BiHC achieved a balanced exact-K accuracy of 81.4% on the CONSENSUS-43 benchmark, comparable to the deep learning method Chainsaw at 82.5%").</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Data availability</li>
+<li><strong>Evidence pointer</strong> Data availability section</li>
+<li><strong>Issue</strong> The data availability statement says that benchmark manifests and scripts "will be deposited" at Zenodo and GitHub, but no links or accession numbers are provided. This makes it impossible for reviewers or readers to access the data at the time of review.</li>
+<li>
+<p><strong>Required correction</strong> Provide the actual URLs or DOIs for the deposited data, or state clearly that they will be made available upon publication.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Methods, "Pairwise self-containment score"</li>
+<li><strong>Evidence pointer</strong> Materials and Methods, "Pairwise self-containment score"</li>
+<li><strong>Issue</strong> The term "self-containment" is used throughout, but it is not formally defined. The concept is described as a combination of weak inter-fragment contact and strong intra-fragment packing, but a precise definition would help the reader understand the physical interpretation.</li>
+<li>
+<p><strong>Required correction</strong> Provide a brief formal definition of "self-containment" in the methods section, perhaps in terms of the ratio of inter-fragment to intra-fragment contact.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Results, "BiHC performance on benchmark datasets"</li>
+<li><strong>Evidence pointer</strong> Results section, "BiHC performance on benchmark datasets"</li>
+<li><strong>Issue</strong> The manuscript reports mean values for metrics but does not provide confidence intervals or measures of variance. Given the small number of multi-domain structures (200 in CONSENSUS-43), the uncertainty in these estimates could be substantial.</li>
+<li>
+<p><strong>Required correction</strong> Report confidence intervals or standard errors for the key metrics, particularly for the multi-domain subset.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Figure quality</li>
+<li><strong>Affected element</strong> Figure 6</li>
+<li><strong>Evidence pointer</strong> Results section, "Representative case studies"</li>
+<li><strong>Issue</strong> The case studies are described in text, but the actual figures are not available. The selection of cases across four agreement patterns is a good idea, but the reader cannot assess the visual quality of the predictions without seeing the structures.</li>
+<li>
+<p><strong>Required correction</strong> Ensure that Figure 6 is of high quality and clearly shows the reference and predicted domain boundaries for each case.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m6</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Related work</li>
+<li><strong>Affected element</strong> Introduction</li>
+<li><strong>Evidence pointer</strong> Introduction</li>
+<li><strong>Issue</strong> The introduction mentions STRUDL as a prior Voronoi-based method, but does not discuss other recent criterion-based approaches in detail. A brief comparison with methods like UniDoc or SWORD2 in the introduction would help position BiHC more clearly.</li>
+<li><strong>Required correction</strong> Add a sentence or two in the introduction summarizing the key differences between BiHC and other recent criterion-based parsers.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that BiHC "achieved the strongest performance among all tested criterion-based parsers" is unsupported in the visible text, as no numerical results are presented.</li>
+<li>The claim that BiHC is "comparable to Chainsaw" is unsupported for the same reason.</li>
+<li>The claim that "most components of F, including hydropathy and size-dependent terms, contributed to the performance" is unsupported, as the ablation study results are not visible.</li>
+<li>The claim that "BiHC showed a clear class-dependent performance profile" is unsupported without the actual performance data.</li>
+<li>The claim that the benchmark construction includes "controls for training-set overlap, sequence redundancy, and structural redundancy" is described, but the effectiveness of these controls cannot be assessed without the data.</li>
+<li>The claim that "the Voronoi-based criterion can yield competitive domain parsing" is a reasonable hypothesis but is not established from the provided evidence.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

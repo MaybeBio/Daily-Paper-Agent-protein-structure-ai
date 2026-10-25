@@ -1,0 +1,100 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, results, methods, and figure legends
+- **Assessment boundary** Scientific soundness, technical validity, and claims as supported by the provided evidence
+- **Shared manuscript claim summary** The authors present TangleDiff, a deep learning framework for de novo design of homodimeric entangled proteins with programmable inter-chain binding energies, and demonstrate that these designed proteins can form hydrogels with stress relaxation behavior correlated to the specified binding energies.
+- **Visible evidence base** Abstract, full results section with figure legends (Figs. 1-6), methods section, discussion
+- **Missing materials affecting confidence** Supplementary figures and tables referenced but not provided; actual figure images not available; experimental raw data not available; code not available for inspection
+
+## Reviewer
+- **Overall assessment** This manuscript presents a potentially significant advance in the computational design of entangled protein motifs and their application to tunable biomaterials. The integration of a latent diffusion model with protein language model embeddings for the specific task of entangled homodimer design is novel, and the demonstration of a correlation between computationally specified binding energies and macroscopic hydrogel stress relaxation is conceptually appealing. However, the evidence provided in the manuscript text is insufficient to fully evaluate several key claims, particularly regarding the quantitative strength of the binding energy-stress relaxation correlation, the statistical significance of the reported success rates, and the robustness of the experimental validations. The manuscript would benefit from clearer presentation of quantitative results and additional controls.
+- **Who would be interested in the results, and why** Researchers in protein design and engineering, particularly those working on de novo protein structure prediction and generative models; biomaterials scientists developing hydrogels for tissue engineering and regenerative medicine; computational biologists interested in protein language models and diffusion-based generative approaches. The work bridges computational protein design with materials science, making it relevant to a broad interdisciplinary audience.
+- **Major strengths** 1) The problem addressed is important and timely: expanding the limited toolbox of entangled protein motifs for biomaterial applications. 2) The computational pipeline is well-structured, combining data mining, generative modeling, and virtual screening in a logical workflow. 3) The demonstration of conditional generation based on binding energy is a valuable proof-of-concept for property-directed protein design. 4) The experimental validation, including hydrogel formation and rheological characterization, provides a meaningful end-to-end demonstration.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "approximately 70% of successful designs conforming to expected values" and "in-silico success rate exceeding 70%"
+  - **Evidence pointer** Results section "Unconditional design of entangled homodimers", Fig. 3c
+  - **Concern** The reported success rates are presented as single percentages without confidence intervals, statistical comparisons to baselines, or clear definitions of what constitutes a "successful design" beyond the stated thresholds. The comparison to "current models (~1%)" is mentioned but the specific models, their configurations, and the evaluation protocol are not described in sufficient detail. Without a rigorous statistical framework and clear baseline comparisons, the claimed superiority of TangleDiff cannot be properly assessed.
+  - **Why it matters** The central claim of the manuscript is that TangleDiff substantially outperforms existing methods for entangled protein design. If this claim is not rigorously supported with appropriate statistical analysis and fair baseline comparisons, the significance of the work is substantially diminished.
+  - **Resolution test** Provide confidence intervals for success rates, describe the baseline models and their training/evaluation protocols in detail, and include statistical tests comparing TangleDiff to baselines. Clarify the exact definition of "success" used for each metric.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "stress relaxation dynamics correlated with specified binding energies" and "manipulating the macroscopic properties of protein hydrogels can be achieved through the rational design of molecular-level interactions"
+  - **Evidence pointer** Results section "Rheological tests of 14 prepared protein hydrogel networks", Fig. 6
+  - **Concern** The manuscript states that stress relaxation behavior correlates with binding energies, but the quantitative nature of this correlation is not presented. No correlation coefficients, statistical significance values, or quantitative comparisons between the different binding energy groups are provided in the text. The relaxation spectra are described qualitatively (e.g., "clear dissipation peak at ω ~ 0.3 rad/s"), but the relationship between the peak positions and the specified binding energies is not quantified. Furthermore, only two of the three binding energy groups (C4 and C2) show clear relaxation peaks, while the C0 group shows none, which is a limited demonstration of tunability.
+  - **Why it matters** The claim of customizable stress relaxation behavior is the key translational outcome of the work. Without quantitative evidence demonstrating a systematic relationship between binding energy and relaxation times across multiple designs, the claim of "customizable" behavior is not established.
+  - **Resolution test** Provide quantitative correlation analysis between binding energies and relaxation times (e.g., correlation coefficients with p-values), include data from all three binding energy groups, and demonstrate that the relationship is systematic and predictive rather than anecdotal.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness
+  - **Claim pointer** "we experimentally validate TangleDiff by designing nine homodimers targeting various binding energies; seven successfully form hydrogels"
+  - **Evidence pointer** Results section "Experimental validation and preparation of entanglement-crosslinked protein hydrogels", Fig. 5
+  - **Concern** The experimental validation is limited to nine designs, with seven forming hydrogels. The manuscript does not provide sufficient detail on the reproducibility of hydrogel formation, the yield of hydrogel formation across batches, or the criteria used to determine "successful" hydrogel formation. Additionally, the relationship between the computationally predicted binding energies and experimentally measured binding affinities is not directly validated. The manuscript relies on computational predictions (Rosetta, gmx_MMPBSA) without experimental binding measurements.
+  - **Why it matters** The translational claim depends on the reliability of the computational predictions. Without experimental validation of the binding energies themselves, it is unclear whether the observed rheological differences are truly due to the designed binding energy differences or to other uncontrolled factors.
+  - **Resolution test** Include experimental binding affinity measurements (e.g., ITC, SPR) for at least a subset of the designed proteins to validate the computational predictions. Provide more detailed characterization of hydrogel formation reproducibility and success criteria.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness
+  - **Claim pointer** "TangleDiff generates diverse foldable entangled sequences" and "designs are evolutionarily distant"
+  - **Evidence pointer** Results section "Unconditional design of entangled homodimers", Fig. 3d-g
+  - **Concern** The diversity of generated sequences is assessed primarily through sequence identity comparisons to the training set. However, structural diversity is not quantitatively assessed beyond qualitative descriptions of alpha-dominant and beta-dominant topologies. The claim of novelty would be strengthened by a more systematic analysis of structural diversity, such as clustering by structural similarity or fold classification. Additionally, the functional annotations of the designed proteins (e.g., DNA-binding, RNA-binding) are inferred from structural similarity to known proteins, but this inference is not experimentally validated.
+  - **Why it matters** The claim of expanding the design space of entangled proteins depends on demonstrating that the generated proteins are not merely near-copies of training examples but genuinely novel and diverse. Without quantitative structural diversity analysis, this claim is not fully supported.
+  - **Resolution test** Include quantitative structural diversity metrics (e.g., TM-score distribution, fold classification, structural clustering) and compare the diversity of generated proteins to that of the training set and to existing design methods.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Methods section, Dataset construction
+  - **Evidence pointer** Methods section
+  - **Issue** The description of the two-stage screening strategy would benefit from a clearer explanation of the computational cost savings and the rationale for the specific thresholds chosen (e.g., sequence length 50-100, |GLN| ≥ 0.7, pLDDT ≥ 80).
+  - **Required correction** Provide a brief justification for the chosen thresholds and a more explicit comparison of the computational cost between the two stages.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods section, Model training
+  - **Evidence pointer** Methods section
+  - **Issue** The training details are described but some hyperparameters are missing (e.g., number of diffusion steps during training, noise schedule parameters, learning rate schedule, weight decay).
+  - **Required correction** Provide complete hyperparameter settings to ensure reproducibility.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Results section, Fig. 4
+  - **Evidence pointer** Fig. 4b
+  - **Concern** The box plot in Fig. 4b shows the distribution of binding energies for generated proteins under different conditions, but the number of proteins per condition and the statistical significance of differences between conditions are not stated in the text.
+  - **Required correction** Add sample sizes and statistical comparisons to the figure legend or text.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Results section, Fig. 6
+  - **Evidence pointer** Fig. 6
+  - **Concern** The rheological data are presented for the hydrogels, but the manuscript does not report the concentration of the proteins in the hydrogels, the gelation kinetics, or the reproducibility of the rheological measurements across independent preparations.
+  - **Required correction** Provide details on hydrogel composition, gelation conditions, and variability across replicates.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion section
+  - **Concern** The discussion mentions that TangleDiff can be extended to other properties and higher-order structures, but these claims are speculative without preliminary data or a clear roadmap.
+  - **Required correction** Either provide preliminary evidence for these extensions or clearly frame them as future directions.
+- **Technical failings that need to be addressed before the case is established** 1) Lack of quantitative statistical analysis for the claimed success rates and the binding energy-stress relaxation correlation (R1-M1, R1-M2). 2) Absence of experimental validation of computationally predicted binding energies (R1-M3). 3) Insufficient quantitative analysis of structural diversity of generated proteins (R1-M4).
+- **Assessment against Nature-style criteria** 
+  - Originality: The application of latent diffusion models to entangled protein design is novel and represents a creative integration of existing techniques. The concept of conditioning on binding energy for downstream materials properties is original.
+  - Scientific importance: The work addresses a real bottleneck in protein-based biomaterials and could have significant impact if the claims are fully substantiated. The potential to rationally design hydrogels with predictable mechanical properties is important for tissue engineering.
+  - Interdisciplinary readership: The work bridges computational biology, protein engineering, and materials science, making it of interest to multiple communities. The writing is generally accessible, though some sections assume familiarity with protein design terminology.
+  - Technical soundness: The computational pipeline is well-conceived, but the evidence presented is insufficient to fully evaluate technical soundness. Key quantitative results are missing, and the experimental validation is limited in scope.
+  - Readability for nonspecialists: The abstract and introduction are accessible, but the results section becomes technical. The figures are well-designed based on the legends, but the lack of quantitative details in the text makes it difficult for nonspecialists to assess the strength of the claims.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core concept is promising and the work addresses an important problem, but the current evidence is insufficient to fully establish the central claims. The manuscript requires additional quantitative analysis, experimental validation of binding energies, and more rigorous statistical treatment before the case is fully established.
+
+## Risk / unsupported claims
+- The claim that TangleDiff's in-silico success rate "exceeding 70%" substantially surpasses current models is not fully supported without detailed baseline comparisons and statistical analysis.
+- The claim that stress relaxation dynamics are "correlated with specified binding energies" is not quantitatively supported with correlation coefficients or significance tests.
+- The claim that the designed proteins are "novel" and "evolutionarily distant" is based on sequence identity alone, without comprehensive structural novelty analysis.
+- The inference of protein function (e.g., DNA-binding, RNA-binding) from structural similarity is not experimentally validated.
+- The claim that the observed rheological differences are specifically due to designed binding energy differences is not fully established, as other structural factors may contribute.
+- The generalizability of the approach to other properties beyond binding energy is speculative and not demonstrated.

@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors propose BiMTBind, a domain-guided multimodal deep learning framework for residue-level protein-nucleic acid binding site prediction. The model integrates bidirectional state-space modeling, Transformer-based attention, protein-domain annotations as biological priors, and multi-source feature fusion via a learnable gating mechanism. The authors claim consistent outperformance over state-of-the-art sequence- and structure-based methods on F1, MCC, and AUC across DNA and RNA benchmarks, and improved interpretability via domain-guided attention.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark details, model architecture specifics, or case study outputs are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, benchmark datasets and splits, baseline implementations, hyperparameter settings, statistical significance tests, case study visualizations, and code or data availability statements
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and timely approach to a well-recognized problem in computational biology. The combination of state-space models, Transformer attention, and domain priors is conceptually interesting and could offer genuine advances in both accuracy and interpretability. However, the abstract provides no quantitative evidence, no benchmark specifications, and no architectural details sufficient to evaluate the claims. The core assertions of consistent outperformance and improved interpretability are currently unsupported by the supplied material. The work may have merit, but the case is not established from the abstract alone.
+- **Who would be interested in the results, and why** Computational biologists and bioinformaticians working on protein-nucleic acid interactions, particularly those developing deep learning methods for binding site prediction. Researchers interested in interpretable AI for biological sequence analysis and in integrating domain knowledge with modern sequence models would also find the approach relevant. The potential for application in structure-based drug discovery and functional annotation of proteins broadens the appeal to structural biologists and pharmaceutical researchers.
+- **Major strengths** The conceptual integration of bidirectional state-space modeling with Transformer attention is a modern and technically sound direction. The explicit use of protein-domain annotations as biological priors is a thoughtful approach to improving interpretability, which is often lacking in deep learning models for this task. The proposed learnable gating mechanism for multimodal feature fusion is a reasonable design choice that could address the challenge of combining heterogeneous feature types. The focus on both DNA and RNA benchmarks suggests an intention to demonstrate generalizability.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** "BiMTBind consistently outperforms state-of-the-art sequence- and structure-based methods on multiple metrics, including F1, MCC, and AUC"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract claims consistent outperformance but provides no numerical results, no list of compared methods, no dataset names, and no indication of statistical significance. Without these details, the claim cannot be assessed for validity or magnitude.  
+  - **Why it matters** The central contribution of the work is the claimed performance advantage. If the evidence is not presented, the reader cannot determine whether the improvement is meaningful, marginal, or an artifact of specific benchmark choices.  
+  - **Resolution test** Provide a table or figure in the full manuscript with F1, MCC, and AUC values for BiMTBind and all baselines on each benchmark, including standard deviations and significance tests (e.g., paired t-test or Wilcoxon).  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Interpretability claim  
+  - **Claim pointer** "domain-guided attention improves interpretability by aligning predicted binding residues with annotated functional domains"  
+  - **Evidence pointer** Abstract; case studies mentioned but not shown; location not provided  
+  - **Concern** The claim of improved interpretability is based on case studies that are not described in the abstract. No metrics, visualizations, or quantitative comparisons are provided to support the assertion that the alignment is meaningful or superior to alternative interpretability methods.  
+  - **Why it matters** Interpretability is a stated key advantage of the method. Without evidence, this claim is anecdotal and cannot be distinguished from post hoc rationalization.  
+  - **Resolution test** Include case study figures with predicted binding residues and annotated domains, plus a quantitative metric (e.g., overlap fraction, enrichment score) comparing BiMTBind's attention to a baseline model without domain guidance.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Technical reproducibility  
+  - **Claim pointer** "integrates bidirectional state-space modeling with Transformer-based attention" and "multi-source features are fused via a learnable gating mechanism"  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract does not specify the model architecture in sufficient detail to understand how the state-space model and Transformer are combined, how domain annotations are injected, or how the gating mechanism operates. This limits the ability to assess technical novelty and reproducibility.  
+  - **Why it matters** For a methods paper, the technical contribution must be clear enough for others to implement or compare against. The current description is too high-level.  
+  - **Resolution test** Provide a detailed architecture description in the full manuscript, including equations, layer dimensions, and a diagram of the data flow.  
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Feature description  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The phrase "handcrafted structural descriptors" is vague. It is unclear which descriptors are used (e.g., torsion angles, solvent accessibility, secondary structure).  
+  - **Required correction** Specify the exact structural descriptors in the full manuscript and justify their selection.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Benchmark scope  
+  - **Affected element** Evaluation breadth  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract mentions "diverse DNA and RNA benchmarks" but does not name them. This makes it difficult to gauge the diversity and relevance of the evaluation.  
+  - **Required correction** List the benchmark datasets in the abstract or full manuscript, with brief descriptions of their size and composition.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Generalizability  
+  - **Affected element** Claim of generalizability  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The claim that the approach is "scalable and generalizable" is not supported by any evidence in the abstract, such as runtime analysis or cross-dataset validation.  
+  - **Required correction** Provide runtime comparisons and cross-dataset or cross-species validation results in the full manuscript.  
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the core claims of performance and interpretability are not supported by the supplied evidence. R1-M3 is non-blocking but essential for technical assessment.
+- **Assessment against Nature-style criteria**  
+  - Originality: The combination of state-space models with domain-guided attention is a novel direction, but the abstract does not provide enough detail to distinguish it from prior multimodal approaches. Assessment is currently weak.  
+  - Scientific importance: The problem is important and the potential for interpretable prediction is valuable. However, the importance of the specific contribution is not yet demonstrated.  
+  - Interdisciplinary readership: The work could appeal to computational biologists, structural biologists, and AI researchers, but the abstract is too technical and lacks context for nonspecialists.  
+  - Technical soundness: The proposed architecture is plausible, but the lack of architectural details and quantitative results prevents a soundness assessment.  
+  - Readability for nonspecialists: The abstract is dense and assumes familiarity with state-space models, protein language models, and binding site prediction. It is not accessible to a broad audience.  
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual approach is promising, and the work could be supportive if the full manuscript provides the missing quantitative results, architectural details, and interpretability evidence.
+
+## Risk / unsupported claims
+- Consistent outperformance over state-of-the-art methods on F1, MCC, and AUC is unsupported without numerical data and benchmark details.
+- Improved interpretability via domain-guided attention is unsupported without case study evidence or quantitative metrics.
+- Scalability and generalizability are claimed but not evidenced.
+- The specific contribution of the gating mechanism relative to simpler fusion methods is not assessable from the abstract.

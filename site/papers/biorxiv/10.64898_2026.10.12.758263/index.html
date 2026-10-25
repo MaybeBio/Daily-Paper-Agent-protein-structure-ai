@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relation-Aware Graph–Hypergraph Networks for Antibody Sequence–Structure Co-Design · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Relation-Aware Graph–Hypergraph Networks for Antibody Sequence–Structure Co-Design</h1>
+      <div class="meta">Jinzhu Wei; Shuijun Zhang; Hongliang Duan; Leyi Wei; Jingjing Guo</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-18
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.12.758263">原文</a>
+      </div>
+      <p class="one-liner">该文提出关系感知图-超图网络RA-GHN，通过双等变路径和生物物理超边实现抗体序列-结构协同设计，并引入SSDI指标缓解折叠幻觉，属于蛋白质结构计算与AI生成方法的核心创新工作。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The design of antibody complementarity-determining regions (CDRs) is pivotal for therapeutic development, yet remains challenged by the complexity of the antibody–antigen interface. Existing methods, which largely rely on pairwise relationships, struggle to capture intrinsic multibody interactions and global structural constraints. To address this limitation, we propose the Relation-Aware Graph–Hypergraph Network (RA-GHN), a novel framework that systematically unifies graph-based pairwise modeling with biophysical hypergraphs to capture high-order co-operative effects. Specifically, we construct a heterogeneous hypergraph representation featuring three complementary hyperedge types: epitope–paratope interaction patches, spatial structural clusters, and high-degree hub structures, enabling a comprehensive encoding of interface physics. Architecturally, RA-GHN adopts a dual-pathway design that synergistically integrates a Relation-Aware Equivariant Graph Network (RA-EGN) with an Equivariant Hypergraph Encoder , strictly preserving SE (3)-equivariance throughout the sequence–structure co-design process. Furthermore, to mitigate folding hallucination and sequence overfitting commonly observed in generative models, we introduce the Structure–Sequence Decoupling Index (SSDI), which employs a harmonic mean to non-linearly balance structural physical reliability with sequence novelty. Extensive experiments demonstrate that RA-GHN significantly outperforms state-of-the-art baselines across standard benchmarks and affinity optimization tasks, validating that the fusion of high-order geometric modeling with rigorous evaluation criteria enables the generation of physically feasible and functionally innovative antibodies. Highlights RA-GHN co-designs antibody sequence and structure via hypergraphs. Biophysical hyperedges capture high-order effects at binding interfaces. Dual equivariant pathways synergistically guarantee local geometry and global shape. SSDI metric addresses folding hallucination in antibody evaluation.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">抗体互补决定区（CDRs）的设计对于治疗性抗体的开发至关重要，然而抗体-抗原界面的复杂性仍对其构成挑战。现有方法主要依赖成对关系，难以捕捉内在的多体相互作用和全局结构约束。为解决这一局限，我们提出了关系感知图-超图网络（Relation-Aware Graph–Hypergraph Network, RA-GHN），这是一种新颖框架，系统性地将基于图的成对建模与生物物理超图相统一，以捕捉高阶协同效应。具体而言，我们构建了一个异质超图表示，包含三种互补的超边类型：表位-互补位相互作用补丁、空间结构簇和高阶枢纽结构，从而实现对界面物理特性的全面编码。在架构上，RA-GHN采用双路径设计，协同整合关系感知等变图网络（Relation-Aware Equivariant Graph Network, RA-EGN）与等变超图编码器，在序列-结构协同设计过程中严格保持SE(3)-等变性。此外，为缓解生成模型中常见的折叠幻觉和序列过拟合问题，我们引入了结构-序列解耦指数（Structure–Sequence Decoupling Index, SSDI），该指数采用调和均值，以非线性方式平衡结构物理可靠性与序列新颖性。大量实验表明，RA-GHN在标准基准和亲和力优化任务中显著优于最先进的基线方法，验证了高阶几何建模与严格评估标准的融合能够生成物理可行且功能创新的抗体。亮点 RA-GHN通过超图协同设计抗体序列和结构。生物物理超边捕捉结合界面处的高阶效应。双等变路径协同保证局部几何和全局形状。SSDI指标解决抗体评估中的折叠幻觉问题。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Relation-Aware Graph–Hypergraph Networks for Antibody Sequence–Structure Co-Design</li>
+<li><strong>作者</strong>：Jinzhu Wei; Shuijun Zhang; Hongliang Duan; Leyi Wei; Jingjing Guo</li>
+<li><strong>单位</strong>：未提供（根据基金信息推测与澳门相关，具体单位未在材料中提供）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法学 + 实验验证）</li>
+<li><strong>领域</strong>：抗体设计、蛋白质结构–序列共设计、图神经网络、超图神经网络、SE(3)-等变网络</li>
+<li><strong>关键词</strong>：抗体 CDR 设计、超图、等变图神经网络、序列–结构共设计、亲和力优化、折叠幻觉</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.10.12.758263</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：SAbDab、RAbD、SKEMPI V2.0（均为公开数据集）</li>
+<li><strong>阅读日期</strong>：2026-05-14（按当前日期推算）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的抗体序列–结构共设计任务，核心创新在于将超图（hypergraph）引入抗体–抗原界面建模，以捕获超越成对相互作用的多元（multibody）协同效应，并保持 SE(3)-等变性。与 RefineGNN、DiffAb、MEAN、dyMEAN、RAAD 等构成直接竞争/延续关系，是该方向中首个显式以「图–超图双路径」融合成对与高阶相互作用的抗体设计框架。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>针对抗体 CDR 序列–结构共设计任务，本文提出 RA-GHN——一个融合成对关系图（RA-EGN）与三类生物物理超边（表位–互补位补丁、空间结构簇、高连接度枢纽）的双路径 SE(3)-等变网络，并引入 SSDI 指标以平衡结构物理可靠性与序列新颖性，在 SAbDab、RAbD、SKEMPI V2.0 上取得优于现有方法的性能。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在抗体 CDR 序列–结构共设计中，同时捕获（1）残基间的成对相互作用和（2）超越成对的高阶多元协同效应（如多中心氢键网络、疏水簇、热点残基的枢纽作用），并保证生成结果的物理可行性？</li>
+<li><strong>为什么重要</strong>：抗体 CDR（尤其是 H3）是抗原结合特异性和亲和力的主要决定因素，其序列空间巨大（20^L），实验筛选不可行；现有计算方法多依赖成对图建模，无法充分表达界面处固有的多体协同效应，导致生成序列物理不可行或功能欠佳。</li>
+<li><strong>现有方法不足</strong>：现有深度生成模型（LSTM、RefineGNN、DiffAb、MEAN、dyMEAN、RAAD 等）主要基于成对图或序列模型，缺乏对多体相互作用的显式建模；且评估指标（如单独使用 AAR 或 RMSD）无法识别「折叠幻觉」——即序列新颖但结构物理不可行，或结构精确但序列退化为记忆。</li>
+<li><strong>精确研究问题</strong>：Can a dual-pathway graph–hypergraph architecture with biophysically motivated hyperedges and a harmonic-mean-based decoupling metric (SSDI) simultaneously improve sequence recovery, structural accuracy, and binding affinity optimization in antibody CDR co-design?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引言与相关工作的描述构建，标注为「仅本文框架」；未逐一外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列-only 生成</td>
+<td>LSTM [14]</td>
+<td>简单、可扩展</td>
+<td>忽略结构信息，无法保证可折叠性</td>
+</tr>
+<tr>
+<td>结构感知生成</td>
+<td>RefineGNN [19]（自回归图生成）、HERN [20]（层次细化）</td>
+<td>引入结构上下文</td>
+<td>依赖成对关系，多体效应缺失</td>
+</tr>
+<tr>
+<td>扩散/生成模型</td>
+<td>DiffAb [2]、AbDiffuser [22]</td>
+<td>生成质量高、可采样多样</td>
+<td>计算成本高，结构–序列耦合不足</td>
+</tr>
+<tr>
+<td>全图/全序列共设计</td>
+<td>MEAN [23]、dyMEAN [24]（全原子）、RAAD [25]（异质图）</td>
+<td>端到端共设计、利用完整抗原上下文</td>
+<td>仍以成对边为主，高阶协同效应未显式建模</td>
+</tr>
+<tr>
+<td><strong>本文位置</strong></td>
+<td><strong>RA-GHN</strong></td>
+<td><strong>首次将超图引入抗体共设计，三类生物物理超边 + 双路径等变融合 + SSDI 评估</strong></td>
+<td>静态建模，未考虑构象动力学（作者自述）</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>成对建模不足以表达界面多体协同</td>
+<td>生成抗体在界面处缺乏协同的氢键网络、疏水堆积</td>
+<td>传统图边仅连接两个节点，无法表达「一组残基共同构成功能单元」；界面结合自由能高度局域化，热点残基贡献不成比例</td>
+<td>Section 2.2（超图动机）、Introduction（多中心氢键网络、O-ring 理论）</td>
+</tr>
+<tr>
+<td>折叠幻觉（folding hallucination）</td>
+<td>生成序列对应低 RMSD 结构但物理不可行，或结构看似合理但序列无功能</td>
+<td>现有指标单独使用 AAR 或 RMSD 无法同时约束序列新颖性与结构物理性；生成模型易退化为记忆训练集序列</td>
+<td>Section 5.2（SSDI 动机）、Table 2 注</td>
+</tr>
+<tr>
+<td>序列过拟合/保守记忆</td>
+<td>AAR 高但序列多样性低，缺乏功能创新</td>
+<td>以 AAR 为目标的模型倾向于复制天然序列</td>
+<td>Section 5.2（P_novel 设计动机）</td>
+</tr>
+<tr>
+<td>结构–序列耦合不足</td>
+<td>序列预测与结构预测相互独立，生成结果不一致</td>
+<td>缺乏联合优化机制</td>
+<td>Section 3.5（联合损失设计）</td>
+</tr>
+<tr>
+<td>超边构造缺乏生物物理依据</td>
+<td>现有超图方法多基于纯拓扑或随机分组</td>
+<td>需要将界面物理（补丁、簇、枢纽）编码为超边</td>
+<td>Section 2.2（三类超边的生物物理动机）</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+- 构建异质关系图（8 类成对边，沿用 RAAD 的设定）表示残基间成对相互作用；
+- 构建三类超边：表位–互补位交互补丁（跨链、界面距离 ≤6.0 Å，容量 ≤5）、空间结构簇（链内、贪心聚类，容量 ≤K_size）、高连接度枢纽（拓扑度 top-10，连接最近 ≤6 邻居）；
+- 双路径编码：RA-EGN 处理成对图，Equivariant Hypergraph Encoder 处理超图，两者特征拼接后经融合网络输出序列 logits 与结构坐标；
+- 联合优化：序列交叉熵损失 + 结构 Smooth-L1 损失，权重 α 平衡。</p>
+<p><strong>2) 核心洞察</strong>：
+- 抗体–抗原识别的功能单元不是「残基对」而是「残基组」：界面补丁、疏水簇、热点枢纽分别对应不同的生物物理协同模式，超图是表达这些模式的自然语言；
+- 成对图与超图是互补而非替代关系：成对图提供精细的局部几何约束，超图提供全局拓扑与多体协同信息，二者融合可同时满足「局部精确」与「全局一致」；
+- 评估指标本身是设计问题的一部分：AAR 与 RMSD 的分离导致「折叠幻觉」，SSDI 用调和平均强制二者同时满足，从而引导模型探索「结构可靠的新序列」而非「结构可靠的旧序列」。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 在蛋白质设计中，「高阶相互作用」不是可选项而是必选项——界面结合、折叠稳定性、变构效应本质上都是多体现象；将生物物理先验（补丁、簇、枢纽）编码为超边，比让网络隐式学习更高效、更可解释。
+- 评估指标的设计直接影响模型行为：单一指标（AAR 或 RMSD）会诱导模型走捷径（记忆或平均化），复合指标（如 SSDI 的调和平均）可作为一种「可微的约束」引导探索。
+- 双路径融合（成对 + 高阶）是一种通用架构模式：不仅适用于抗体，也可迁移至一般蛋白质–蛋白质相互作用预测、酶活性位点设计等任务。</p>
+<h2>07 方法总览</h2>
+<p><strong>输入</strong>：抗体–抗原复合物结构（残基级：氨基酸类型、Cα 坐标、链标识、残基索引），目标 CDR 区域掩码 M。</p>
+<p><strong>输出</strong>：CDR 区域残基的氨基酸类型概率分布（序列）与 Cα 坐标（结构）。</p>
+<p><strong>模块</strong>：
+1. <strong>特征初始化</strong>：节点特征 = 残基类型 embedding（F_e=32）+ 位置编码 + 链标识；边特征 = RBF 编码距离 + 四元数相对朝向。
+2. <strong>RA-EGN（成对图路径）</strong>：8 类关系边分别进行消息传递，更新节点特征与坐标，保持 SE(3)-等变。
+3. <strong>Equivariant Hypergraph Encoder（超图路径）</strong>：L 层超图卷积，每层含节点→超边→节点两阶段消息传递，带注意力门控；坐标更新基于超边质心。
+4. <strong>双路径融合</strong>：拼接两路径最终节点特征，经 MLP 输出序列 logits；坐标由两路径坐标加权融合（权重 λ）。
+5. <strong>联合损失</strong>：L = L_seq + α · L_struct，L_seq 为 CDR 掩码区交叉熵，L_struct 为 Smooth-L1。</p>
+<p><strong>训练</strong>：Adam 优化器，lr ∈ {0.0003, 0.001}，batch ∈ {4, 8, 16}，epochs=20，hidden ∈ {128, 256}，层数 L ∈ {3, 4}；超参由 NNI 自动搜索。硬件：4× NVIDIA A100 80GB。</p>
+<p><strong>流程</strong>：输入复合物结构 → 构建成对图 + 三类超边 → 双路径并行编码 → 特征融合 → 联合预测序列与坐标 → 计算联合损失 → 反向传播。</p>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>异质成对关系图（RA-EGN）</td>
+<td>建模残基间成对相互作用（8 类关系）</td>
+<td>提供精细局部几何约束与化学键信息</td>
+<td>输入：节点特征+边特征；输出：更新后节点特征与坐标</td>
+<td>Section 3.2；RAAD [25] 的设定</td>
+<td>预期：丧失局部几何精度，AAR 与 RMSD 均下降 [Analysis]</td>
+</tr>
+<tr>
+<td>表位–互补位交互补丁超边</td>
+<td>跨链捕获界面处协同结合单元</td>
+<td>界面结合由残基组协同完成，非孤立成对接触</td>
+<td>输入：界面残基（≤6.0 Å）；输出：补丁超边（容量≤5）</td>
+<td>Section 2.2；消融图 5（Epitope-only 达 AAR 38.10%）</td>
+<td>实测：移除后 AAR 显著下降（图 5），说明表位信号是序列恢复的主要驱动</td>
+</tr>
+<tr>
+<td>空间结构簇超边</td>
+<td>链内捕获疏水簇、氢键网络等折叠单元</td>
+<td>稳定 CDR 构象需要局部残基协同堆积</td>
+<td>输入：链内残基坐标；输出：贪心聚类超边（容量≤K_size）</td>
+<td>Section 2.2；Algorithm 1</td>
+<td>实测：单独使用（Spatial+Hub）时 RMSD 最低（1.778 Å），但 AAR 下降（37.12%），提示过度正则化</td>
+</tr>
+<tr>
+<td>高连接度枢纽超边</td>
+<td>识别拓扑中心残基（热点）并强化其信号传播</td>
+<td>热点残基对结合自由能贡献不成比例，需防止信号被稀释</td>
+<td>输入：界面图节点度；输出：top-10 枢纽超边（连接≤6 邻居）</td>
+<td>Section 2.2（O-ring 理论）</td>
+<td>预期：移除后热点信号被平均化，亲和力优化能力下降 [Analysis]</td>
+</tr>
+<tr>
+<td>注意力门控超图卷积</td>
+<td>节点↔超边双向消息传递，动态加权</td>
+<td>不同超边类型对最终预测的贡献应因上下文而异</td>
+<td>输入：节点特征+超边特征；输出：更新后节点特征</td>
+<td>Section 3.3；图 2(b)</td>
+<td>预期：替换为无注意力版本将降低对噪声超边的鲁棒性 [Analysis]</td>
+</tr>
+<tr>
+<td>双路径融合模块</td>
+<td>拼接成对图与超图特征，统一预测</td>
+<td>成对与高阶信息互补，需在统一空间融合</td>
+<td>输入：两路径节点特征+坐标；输出：融合特征+坐标</td>
+<td>Section 3.4；图 2(c)</td>
+<td>预期：移除任一通路将导致 AAR 或 RMSD 恶化（图 5 支持）</td>
+</tr>
+<tr>
+<td>SSDI 评估指标</td>
+<td>调和平均耦合结构可靠性与序列新颖性</td>
+<td>单独 AAR/RMSD 无法识别折叠幻觉</td>
+<td>输入：AAR、RMSD；输出：SSDI ∈ [0,1]</td>
+<td>Section 5.2；Table 2</td>
+<td>预期：若用算术平均替代，模型可能偏向单一指标 [Analysis]</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1) 超边构造（距离阈值）</strong>：
+- 表位–互补位补丁：‖x_u − x_v‖ ≤ δ_int，δ_int = 6.0 Å
+- 空间簇：‖x_u − x_v‖ ≤ δ_spatial（具体值未在材料中给出）</p>
+<p><strong>2) 超图消息传递（Eq. 9 附近，具体公式编号未提供）</strong>：
+- 节点→超边聚合：h_e = φ_enc({h_v : v ∈ V_e})，其中 φ_enc 为 MLP
+- 注意力门控：α = g(h_e)，g 为可学习标量函数；h_e' = α · h_e
+- 超边→节点传播：h_v_new = [h_v_old ‖ h_e']，‖ 表示拼接（残差式连接）</p>
+<p><strong>3) 坐标更新（超图路径）</strong>：
+- 超边质心：c_e = (1/|V_e|) Σ_{v∈V_e} x_v
+- 节点位移：Δx_v = Σ_{e∋v} Ψ(h_v) · (x_v − c_e)，Ψ 为 MLP 映射</p>
+<p><strong>4) 双路径坐标融合</strong>：
+- x_final = λ · x_graph + (1 − λ) · x_hyper，λ ∈ [0,1]</p>
+<p><strong>5) 联合损失</strong>：
+- L = L_seq + α · L_struct
+- L_seq = −Σ_{i∈M} y_i^T log(softmax(logits_i))（交叉熵，M 为 CDR 掩码）
+- L_struct = Smooth-L1(x_pred, x_true)（Huber 损失）</p>
+<p><strong>6) SSDI 指标</strong>：
+- SSDI = 2 · (P_struct · P_novel) / (P_struct + P_novel)（调和平均）
+- P_struct = σ((2.0 − RMSD) / k)，σ 为 sigmoid，k = 3
+- P_novel = (1 − AAR) / (1 − AAR_random)，AAR_random ≈ 0.05</p>
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>：
+- SAbDab：3,127 个抗体–抗原复合物（排除缺失轻链或抗原的结构）；CDR 序列按 &gt;40% 同一性聚类，得到 H1: 765 簇、H2: 1,093 簇、H3: 1,659 簇；按 8:1:1 划分训练/验证/测试。
+- RAbD：60 个代表性抗体–抗原复合物，用于独立测试 CDR-H3 生成。
+- SKEMPI V2.0：53 个抗体–抗原复合物，用于亲和力优化微调与评估。</p>
+<p><strong>指标</strong>：AAR（序列恢复率）、RMSD（结构偏差）、TM-score（结构相似性）、ΔΔG_pos（目标抗原结合自由能变化）、ΔΔG_neg（非目标抗原）、SP-score（特异性 = ΔΔG_neg − ΔΔG_pos）、SSDI（复合指标）。</p>
+<p><strong>基线</strong>：LSTM [14]、RefineGNN [19]、HERN [20]、DiffAb [2]、AbDiffuser [22]、MEAN [23]、dyMEAN [24]、RAAD [25]、ADesigner [29]；另含 C-LSTM、C-RefineGNN、C-HERN（提供完整复合物上下文的扩展版本）。</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列与结构建模（Table 1）</td>
+<td>RA-GHN 在 CDR H1/H2/H3 上同时提升 AAR 与 RMSD</td>
+<td>10 折交叉验证，对比全部基线</td>
+<td>H3: AAR 38.15%，RMSD 1.78 Å；H1/H2 RMSD 较最强基线分别降 15.58%/22.22%</td>
+<td>图–超图双路径优于纯成对方法</td>
+<td>未报告统计显著性检验；AAR 在 H1/H2 上略低于部分基线（~2%）</td>
+<td>Results 5.1, Table 1</td>
+</tr>
+<tr>
+<td>CDR-H3 生成（Table 2）</td>
+<td>RA-GHN 在 SSDI 上优于所有基线</td>
+<td>RAbD 独立测试集</td>
+<td>SSDI 0.7421，超 RAAD 4.46%、超 dyMEAN 8.40%</td>
+<td>SSDI 能有效平衡结构可靠性与序列新颖性</td>
+<td>早期方法（RosettaAD、RefineGNN）SSDI 近零，可能受指标定义影响</td>
+<td>Results 5.2, Table 2</td>
+</tr>
+<tr>
+<td>亲和力优化（Table 3）</td>
+<td>RA-GHN 在 ΔΔG_pos 上最优</td>
+<td>SKEMPI V2.0 微调后评估</td>
+<td>ΔΔG_pos = −12.145 kcal/mol，优于 RAAD（−11.787）</td>
+<td>高阶超边有助于发现更强结合序列</td>
+<td>SP-score 略低于 RAAD，特异性未达最优</td>
+<td>Results 5.3, Table 3</td>
+</tr>
+<tr>
+<td>消融：超边类型（图 5）</td>
+<td>三类超边各有不可替代的贡献</td>
+<td>单视图 vs 多视图组合</td>
+<td>Epitope-only AAR 38.10%；Spatial+Hub RMSD 1.778 Å；Hybrid AAR 38.15% + RMSD 1.780 Å</td>
+<td>表位驱动序列恢复，空间/枢纽驱动结构精度，二者互补</td>
+<td>未报告各组合的方差；未做统计检验</td>
+<td>Results 5.4, 图 5</td>
+</tr>
+<tr>
+<td>消融：损失权重 α（图 6）</td>
+<td>α 存在最优值</td>
+<td>α ∈ {0.1, 0.2, 0.3, 0.5, 0.7}</td>
+<td>α=0.2 时 AAR 峰值 38.15%；α=0.7 时 RMSD 最低 1.760 Å 但 AAR 降至 37.43%</td>
+<td>适度结构监督正则化有益，过度则抑制序列多样性</td>
+<td>未报告 α 对亲和力优化的影响</td>
+<td>Results 5.4, 图 6</td>
+</tr>
+<tr>
+<td>可视化案例（图 3, 4）</td>
+<td>RA-GHN 生成结构在拓扑上接近天然</td>
+<td>代表性案例定性比较</td>
+<td>图 3：H3 环骨架重建良好；图 4：2ny7 等案例中 Tyr/Arg 富集</td>
+<td>模型学到物理化学上合理的界面互补</td>
+<td>定性证据，无定量结合自由能验证</td>
+<td>Results 5.2, 5.3</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文解决的是抗体 CDR（H1/H2/H3）的序列–结构共设计，输入为已知抗体–抗原复合物结构，输出为 CDR 区域的序列与 Cα 坐标。<strong>不涉及</strong>：全抗体设计、从头抗原表位预测、构象动力学/系综采样。</li>
+<li><strong>性能边界</strong>：AAR 38.15%（H3）意味着约 60% 的残基未能恢复天然序列，模型生成的是「物理可行但序列新颖」的抗体，而非「序列恢复」工具。RMSD 1.78 Å 为 Cα 级别精度，未评估侧链构象。</li>
+<li><strong>指标解读</strong>：SSDI 是本文提出的复合指标，非社区标准指标；其数值（0.7421）不能直接与其他论文的 AAR/RMSD 数值比较。ΔΔG 来自计算预测（具体方法未在材料中说明），非实验测量值。</li>
+<li><strong>等变性声明</strong>：SE(3)-等变仅保证模型输出随输入坐标的刚性变换而一致变换，<strong>不保证</strong>生成结构的物理正确性或能量最小性。</li>
+<li><strong>静态建模</strong>：作者明确说明当前框架为静态建模，未考虑诱导契合（induced fit）与构象动力学——这对柔性 CDR-H3 的亲和力预测可能构成根本性限制。</li>
+<li><strong>适用边界</strong>：训练数据来自 SAbDab 中解析的复合物结构，对未解析结构、非常规修饰（糖基化等）、双特异性抗体等场景的外推能力未验证。</li>
+</ul>
+<h2>11 结论正确解读（续）</h2>
+<ul>
+<li><strong>消融结论的强度</strong>：图 5 显示 Epitope-only 已达 AAR 38.10%，说明表位信息是序列恢复的主要驱动；Spatial+Hub 主要贡献 RMSD 精度。但「三类超边缺一不可」的强 claim 未被直接验证——未报告移除单一超边类型（保留另外两类）的实验。</li>
+<li><strong>与 RAAD 的关系</strong>：RA-GHN 在成对图部分沿用 RAAD 的异质图设定，增量在于超边与双路径融合。因此，性能提升可归因于超边建模，但也可能部分来自超参数搜索（NNI）或训练细节差异。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态建模，未考虑构象动力学</td>
+<td>框架基于静态复合物结构，未建模诱导契合与构象变化</td>
+<td>扩展至构象动力学与诱导契合机制</td>
+<td>Section 6（Conclusion）</td>
+</tr>
+<tr>
+<td>仅针对 CDR 设计</td>
+<td>未覆盖全抗体设计、纳米抗体等更广泛场景</td>
+<td>推广至纳米抗体工程等更广泛的蛋白质设计任务</td>
+<td>Section 6（Conclusion）</td>
+</tr>
+<tr>
+<td>未纳入多目标约束</td>
+<td>未显式考虑溶解度、免疫原性等开发性指标</td>
+<td>纳入多目标约束（如溶解度、免疫原性）</td>
+<td>Section 6（Conclusion）</td>
+</tr>
+<tr>
+<td>缺乏湿实验闭环验证</td>
+<td>计算预测的亲和力提升未经实验验证</td>
+<td>与高通量湿实验筛选结合，实现闭环设计</td>
+<td>Section 6（Conclusion）</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>超边构造依赖距离阈值（δ_int=6.0 Å）与贪心聚类</td>
+<td>阈值选择可能对结果敏感；贪心聚类可能产生非最优分组</td>
+<td>超边质量直接决定高阶信息编码效果</td>
+<td>对 δ_int、K_patch、K_size 做敏感性分析</td>
+<td>Section 2.2；Algorithm 1</td>
+</tr>
+<tr>
+<td>Epitope-only 已达 AAR 38.10%，与完整模型（38.15%）几乎无差异</td>
+<td>超边（Spatial+Hub）对序列恢复的增量贡献可能很小，主要贡献在 RMSD</td>
+<td>若序列恢复主要靠表位信息，则超边的「必要性」claim 被削弱</td>
+<td>报告仅移除 Spatial 或仅移除 Hub 的消融</td>
+<td>图 5</td>
+</tr>
+<tr>
+<td>SSDI 为自定义指标，未与社区标准指标（如 scRMSD、pLDDT）对比</td>
+<td>指标设计可能偏向本文方法；调和平均对极端值敏感</td>
+<td>社区可比性是方法被采纳的关键</td>
+<td>在相同基准上报告 AAR、RMSD、TM-score 的完整分布</td>
+<td>Section 5.2</td>
+</tr>
+<tr>
+<td>ΔΔG 计算细节未说明（力场？模型？）</td>
+<td>不同 ΔΔG 预测器结果差异大；−12 kcal/mol 数值异常低，可能超出物理合理范围</td>
+<td>亲和力优化结论的可信度取决于 ΔΔG 预测可靠性</td>
+<td>明确 ΔΔG 计算方法；用实验数据（如 deep mutational scanning）验证</td>
+<td>Table 3</td>
+</tr>
+<tr>
+<td>未报告统计显著性检验</td>
+<td>性能差异可能不显著，尤其 AAR 在 H1/H2 上低于部分基线</td>
+<td>结论强度依赖统计可靠性</td>
+<td>报告多次运行的标准差与显著性检验</td>
+<td>Table 1, 2, 3</td>
+</tr>
+<tr>
+<td>训练/验证划分基于 CDR 序列聚类（&gt;40% 同一性）</td>
+<td>同一抗体的不同 CDR 环可能分布在不同集合，导致数据泄漏</td>
+<td>评估的公正性依赖划分策略</td>
+<td>报告基于完整抗体序列聚类的划分结果</td>
+<td>Section 4.2</td>
+</tr>
+<tr>
+<td>未与最新扩散模型（如 IgG-VAE、Antibody Diffusion）对比</td>
+<td>基线列表可能未覆盖最新 SOTA</td>
+<td>方法定位需与最新技术对比</td>
+<td>补充与 2024-2026 年最新方法的对比</td>
+<td>Section 4.4</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<blockquote>
+<p>标题：Agent 提炼的知识候选</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>超图是表达蛋白质高阶相互作用的自然语言</strong>：成对图只能表达「残基 A 与 B 相互作用」，而超图可以表达「残基 A、B、C 共同构成一个功能单元」。本文的三类超边（补丁、簇、枢纽）分别对应界面结合、折叠稳定、热点信号三种生物物理模式，这种「以生物物理先验指导拓扑构造」的思路可直接迁移至酶活性位点设计、蛋白–蛋白相互作用预测等任务。</p>
+</li>
+<li>
+<p><strong>双路径融合优于单路径</strong>：成对图提供局部精度，超图提供全局拓扑，二者互补。这一架构模式可迁移至任意需要同时建模局部与全局相互作用的蛋白质任务（如 MD 模拟的粗粒化建模、构象采样中的集体变量选择）。</p>
+</li>
+<li>
+<p><strong>评估指标设计是方法设计的一部分</strong>：SSDI 的调和平均强制「结构可靠」与「序列新颖」同时满足，有效抑制折叠幻觉。这提示我们：在蛋白质设计任务中，单一指标（AAR 或 RMSD）会诱导模型走捷径，复合指标可作为可微约束引导探索方向。</p>
+</li>
+<li>
+<p><strong>「折叠幻觉」是生成式蛋白质设计的普遍风险</strong>：低 RMSD 不等于物理可行，高 AAR 不等于功能新颖。任何生成模型都应在评估阶段同时报告结构可靠性与序列新颖性，而非单一指标。</p>
+</li>
+<li>
+<p><strong>静态建模的边界</strong>：本文明确承认未考虑构象动力学。对于 CDR-H3 这类高柔性区域，静态结构可能不足以捕捉诱导契合机制——这提示将 MD 模拟或构象采样与生成模型耦合是重要的未来方向。</p>
+</li>
+<li>
+<p><strong>消融实验的设计要「缺一不可」而非「逐一添加」</strong>：本文的消融（图 5）展示了单视图与多视图的差异，但未报告「移除单一超边类型」的实验，导致无法精确归因各超边的贡献。更严格的消融设计应逐一移除每个组件。</p>
+</li>
+<li>
+<p><strong>数据划分策略影响结论可靠性</strong>：基于 CDR 序列聚类（&gt;40% 同一性）的划分可能仍存在跨集合的同源 CDR 泄漏。更严格的划分应基于完整抗体序列或结构相似性。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>RAAD [25]</strong>：本文的成对图部分直接沿用 RAAD 的异质图设定（8 类关系边），可视为 RAAD 的超图扩展。对比两者可评估超边的增量贡献。</li>
+<li><strong>RefineGNN [19] / HERN [20]</strong>：早期自回归/层次细化方法，本文在 CDR-H3 生成任务上与之对比，SSDI 指标的设计部分针对这些方法的「折叠幻觉」问题。</li>
+<li><strong>DiffAb [2] / AbDiffuser [22]</strong>：扩散模型在抗体设计中的应用，本文在生成质量与物理可行性上与之对比。</li>
+<li><strong>MEAN [23] / dyMEAN [24]</strong>：全图/全原子共设计方法，本文在 CDR-H3 生成与亲和力优化上与之对比。</li>
+<li><strong>AlphaFold 系列</strong>：本文未直接使用 AlphaFold，但其「结构–序列共设计」思路与 AlphaFold 的「序列→结构」预测形成互补——本文是「结构→序列」方向。</li>
+<li><strong>O-ring 理论</strong>：本文高连接度枢纽超边的构造直接引用该理论，说明热点残基的拓扑中心性对结合自由能的重要性。</li>
+<li><strong>SAbDab / RAbD / SKEMPI V2.0</strong>：均为抗体设计领域的标准公开数据集，与大量已有工作可比。</li>
+<li><strong>候选连接方向 [Analysis]</strong>：本文的静态建模局限提示与 MD 模拟（如 Folding@home 风格的构象采样）或流匹配（flow matching）生成模型结合的可能性；SSDI 指标可推广至一般蛋白质设计评估。</li>
+</ul>
+<h2>16 研究想法</h2>
+<blockquote>
+<p>标题：Agent 生成的研究候选</p>
+</blockquote>
+<p><strong>候选 1：动态超图构造——将构象系综编码为时序超图</strong>
+- <strong>来源局限/观察</strong>：本文为静态建模，作者自认未考虑构象动力学；CDR-H3 的高柔性意味着单一静态结构可能丢失关键诱导契合信息。
+- <strong>核心假设</strong>：将 MD 模拟或构象采样得到的系综编码为时序超图（节点=残基，超边=随时间演化的协同单元），可提升亲和力预测与序列设计的准确性。
+- <strong>初步方法</strong>：对每个复合物运行短 MD 模拟，提取多个构象；在每个构象上构造本文的三类超边，跨构象对齐超边形成时序超图；用时序超图神经网络（如 Hypergraph Transformer + temporal attention）编码动态协同模式。
+- <strong>验证方式</strong>：在 RAbD 与 SKEMPI V2.0 上对比静态 vs 动态超图的 AAR、RMSD、ΔΔG 预测精度。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 2：SSDI 的推广——面向一般蛋白质设计的「结构–功能解耦指数」</strong>
+- <strong>来源局限/观察</strong>：SSDI 针对抗体 CDR 设计，调和平均结构可靠性与序列新颖性；但一般蛋白质设计（酶设计、结合蛋白设计）同样面临「折叠幻觉」与「序列退化为记忆」的权衡。
+- <strong>核心假设</strong>：将 SSDI 推广为「结构–功能解耦指数」（Structure–Function Decoupling Index, SFDI），以功能指标（如酶活性、结合亲和力）替代序列新颖性，可更普适地评估设计模型。
+- <strong>初步方法</strong>：定义 SFDI = 2·(P_struct · P_func)/(P_struct + P_func)，其中 P_func 为功能指标（如 ΔΔG、催化效率）的归一化得分；在多个蛋白质设计基准（如 ProteinMPNN、RFDiffusion 输出）上验证 SFDI 与实验验证结果的相关性。
+- <strong>验证方式</strong>：收集已有设计模型的输出与实验数据，计算 SFDI 与实验成功率的 Spearman 相关。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 3：超边可解释性——识别界面协同残基模块</strong>
+- <strong>来源局限/观察</strong>：本文的超边构造有生物物理依据，但未分析学到的超边权重是否对应已知的功能热点或协同残基网络。
+- <strong>核心假设</strong>：注意力门控学到的超边权重可解释为「协同残基模块」，且与实验验证的热点残基、共进化残基显著重叠。
+- <strong>初步方法</strong>：训练 RA-GHN 后，提取每类超边的平均注意力权重；对高权重超边进行残基组成分析，与已知热点残基（来自文献或深度突变扫描数据）比对；用共进化分析（EVcouplings）验证协同模块的进化保守性。
+- <strong>验证方式</strong>：在 SAbDab 测试集上计算超边权重与热点残基的富集倍数；与随机超边对照比较。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 4：从抗体到一般蛋白–蛋白相互作用——超图框架的迁移</strong>
+- <strong>来源局限/观察</strong>：本文框架针对抗体–抗原，但超图建模高阶相互作用的思路可迁移至一般 PPI 界面设计。
+- <strong>核心假设</strong>：RA-GHN 的架构（成对图 + 三类超边 + 双路径融合）在一般 PPI 设计任务上同样优于纯成对方法。
+- <strong>初步方法</strong>：将 RA-GHN 迁移至一般 PPI 数据集（如 Docking Benchmark 5.5），将「表位–互补位补丁」泛化为「界面补丁」，保留空间簇与枢纽超边；在 PPI 序列设计任务上对比 ProteinMPNN 等基线。
+- <strong>验证方式</strong>：在 Docking Benchmark 5.5 上报告 AAR、RMSD、界面残基恢复率。
+- <strong>创新状态</strong>：unverified</p>
+<p><strong>候选 5：损失函数改进——将 SSDI 作为可微训练目标</strong>
+- <strong>来源局限/观察</strong>：SSDI 仅用于评估，未参与训练；若将其作为可微损失项，可能直接引导模型优化「结构可靠 + 序列新颖」的联合目标。
+- <strong>核心假设</strong>：将 SSDI 的调和平均形式转化为可微损失（如用 soft 版本的 P_struct 与 P_novel），在训练中直接优化，可进一步提升生成质量。
+- <strong>初步方法</strong>：定义 L_SSDI = −log(SSDI_soft)，其中 SSDI_soft 用 sigmoid 平滑的 RMSD 与序列距离计算；与现有 L_seq + α·L_struct 联合训练，对比有无 SSDI 损失的生成质量。
+- <strong>验证方式</strong>：在 SAbDab 测试集上对比 AAR、RMSD、SSDI 及实验验证成功率。
+- <strong>创新状态</strong>：unverified</p></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (abstract, introduction, methods, results, discussion, conclusion) as provided</li>
+<li><strong>Assessment boundary</strong> Scientific and technical evaluation of the proposed method, experimental design, results, and claims. No assessment of code availability, reproducibility scripts, or peer review status.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose RA-GHN, a graph–hypergraph neural network for antibody CDR sequence–structure co-design. They claim state-of-the-art performance across sequence recovery, structure prediction, CDR-H3 generation, and affinity optimization, and introduce a new evaluation metric (SSDI) to balance structural reliability and sequence novelty.</li>
+<li><strong>Visible evidence base</strong> Tables 1–3 (referenced), Figures 1–6 (referenced), ablation study, sensitivity analysis, dataset descriptions (SAbDab, RAbD, SKEMPI V2.0)</li>
+<li><strong>Missing materials affecting confidence</strong> Actual table data, figure contents, baseline implementation details, statistical significance tests, hyperparameter search results, and any supplementary information were not provided. The manuscript text alone does not allow quantitative verification of the reported improvements.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The manuscript addresses a relevant and timely problem in antibody design, and the proposed architecture is conceptually interesting. The combination of graph-based pairwise modeling with hypergraph-based higher-order interactions is a reasonable and potentially valuable direction. However, the evidence provided in the text is insufficient to fully evaluate the claims. Key quantitative results are referenced but not shown, and several methodological details are either underspecified or presented in a way that raises questions about rigor. The introduction of the SSDI metric is thoughtful, but its validation is incomplete. The manuscript would benefit from clearer reporting of experimental protocols, statistical analyses, and direct comparisons with baselines.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Computational biologists, protein engineers, and researchers in machine learning for drug discovery would be interested. The work targets a practical problem (antibody CDR design) with a novel architectural contribution, and the proposed metric addresses a known evaluation gap. The results, if fully validated, could inform future generative models for antibody and protein design.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong><br />
+  1. The problem is well-motivated and practically important.<br />
+  2. The architectural design is novel in its explicit combination of graph and hypergraph modeling with SE(3)-equivariance.<br />
+  3. The introduction of SSDI as a composite metric is a useful conceptual contribution.<br />
+  4. The ablation study and sensitivity analysis are appropriate and informative in principle.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence sufficiency  </li>
+<li><strong>Claim pointer</strong> The manuscript claims that RA-GHN "significantly outperforms state-of-the-art baselines across standard benchmarks and affinity optimization tasks."  </li>
+<li><strong>Evidence pointer</strong> Tables 1–3, Section 5.1–5.3  </li>
+<li><strong>Concern</strong> The actual numerical results are not provided in the manuscript text. Tables are referenced but their contents are absent from the supplied material. Without the data, the central performance claims cannot be verified.  </li>
+<li><strong>Why it matters</strong> The core contribution of the paper is empirical. If the reported improvements are not shown, the case for the method's effectiveness is not established.  </li>
+<li>
+<p><strong>Resolution test</strong> Provide the full tables with all baseline comparisons, including standard deviations and statistical significance tests (e.g., paired t-tests or confidence intervals).</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Methodological rigor  </li>
+<li><strong>Claim pointer</strong> The authors state that the hypergraph construction is "biophysically grounded" and that the three hyperedge types capture "high-order cooperative effects."  </li>
+<li><strong>Evidence pointer</strong> Section 2.2, Algorithm 1  </li>
+<li><strong>Concern</strong> The biophysical justification for the hyperedge types is qualitative. No quantitative analysis is provided to show that these hyperedges actually capture meaningful cooperative effects beyond what pairwise graphs already encode. The choice of thresholds (e.g., δ_int = 6.0 Å, K_patch = 5, K_min, K_size) is described as "empirically set" but no sensitivity analysis for these parameters is shown.  </li>
+<li><strong>Why it matters</strong> The novelty of the method rests on the claim that hypergraphs add value over graphs. Without evidence that the hypergraph components contribute to performance, the architectural contribution is not substantiated.  </li>
+<li>
+<p><strong>Resolution test</strong> Include an ablation that isolates the contribution of each hyperedge type, and report sensitivity to key hyperparameters.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evaluation metric validity  </li>
+<li><strong>Claim pointer</strong> The SSDI metric is introduced to "address the limitations of existing evaluation metrics, specifically the risks of folding hallucination and sequence overfitting."  </li>
+<li><strong>Evidence pointer</strong> Section 5.2, Table 2  </li>
+<li><strong>Concern</strong> The SSDI is defined as a harmonic mean of structural reliability and sequence novelty, but the manuscript does not provide a formal validation of this metric. It is unclear whether SSDI correlates with experimentally measured binding affinity or stability. The choice of the 2.0 Å threshold and the parameter k = 3 are not justified beyond a brief statement.  </li>
+<li><strong>Why it matters</strong> If SSDI is to be adopted by the community, it must be shown to be a reliable and discriminative metric. Without validation, its use as a primary evaluation criterion is questionable.  </li>
+<li>
+<p><strong>Resolution test</strong> Provide a correlation analysis between SSDI and experimental or computational binding affinity measurements, and justify the threshold and steepness parameters with data.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4  </p>
+</li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> No  </li>
+<li><strong>Axis</strong> Baseline fairness  </li>
+<li><strong>Claim pointer</strong> The authors compare against "state-of-the-art baselines" including LSTM, RefineGNN, HERN, DiffAb, AbDiffuser, MEAN, dyMEAN, RAAD, and ADesigner.  </li>
+<li><strong>Evidence pointer</strong> Section 4.4, Tables 1–3  </li>
+<li><strong>Concern</strong> The manuscript states that some baselines were extended (C-LSTM, C-RefineGNN, C-HERN) to provide full complex context, but the details of these extensions are not described. It is unclear whether the baselines were retrained under the same data splits, hyperparameter tuning protocols, and computational budgets.  </li>
+<li><strong>Why it matters</strong> Unfair or inconsistent baseline comparisons can lead to inflated performance claims.  </li>
+<li>
+<p><strong>Resolution test</strong> Describe the exact training and evaluation protocols for all baselines, including any modifications, and ensure identical data splits and evaluation criteria.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Clarity  </li>
+<li><strong>Affected element</strong> Section 2.2, hyperedge construction  </li>
+<li><strong>Evidence pointer</strong> Section 2.2  </li>
+<li><strong>Issue</strong> The description of the hyperedge construction is dense and contains some typographical errors (e.g., "where x_u and x_v denote the three-dimensional atomic coordinates (e.g., Cα or side-chain centroids) of residues u and respectively" appears to be missing a variable).  </li>
+<li>
+<p><strong>Required correction</strong> Proofread and clarify the mathematical definitions and variable names.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Reproducibility  </li>
+<li><strong>Affected element</strong> Section 4.3, implementation details  </li>
+<li><strong>Evidence pointer</strong> Section 4.3  </li>
+<li><strong>Issue</strong> The hyperparameter search is described as using the AutoML toolkit NNI, but the final selected values are not reported.  </li>
+<li>
+<p><strong>Required correction</strong> Report the final hyperparameter values used for the reported results.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Statistical reporting  </li>
+<li><strong>Affected element</strong> Section 5.1, Table 1  </li>
+<li><strong>Evidence pointer</strong> Section 5.1  </li>
+<li><strong>Issue</strong> The manuscript reports results based on 10-fold cross-validation but does not state whether the reported metrics are averages, medians, or include variance.  </li>
+<li>
+<p><strong>Required correction</strong> Report mean and standard deviation (or confidence intervals) for all metrics.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4  </p>
+</li>
+<li><strong>Severity</strong> Minor  </li>
+<li><strong>Axis</strong> Interpretation  </li>
+<li><strong>Affected element</strong> Section 5.3, Table 3  </li>
+<li><strong>Evidence pointer</strong> Section 5.3  </li>
+<li><strong>Issue</strong> The affinity optimization results are reported as average ΔΔG values, but the units and the method of calculation (e.g., using which scoring function) are not specified.  </li>
+<li>
+<p><strong>Required correction</strong> Specify the scoring function and the exact definition of ΔΔG used.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong><br />
+  R1-M1 (missing quantitative results), R1-M2 (lack of evidence for hypergraph contribution), R1-M3 (unvalidated SSDI metric), R1-M4 (baseline fairness).</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong>  </p>
+</li>
+<li><strong>Originality</strong> The combination of graph and hypergraph modeling with SE(3)-equivariance for antibody design is a novel contribution. The SSDI metric is also a new idea. However, the originality is somewhat tempered by the fact that the individual components (equivariant GNNs, hypergraph networks) are established; the novelty lies in their integration.  </li>
+<li><strong>Scientific importance</strong> Antibody design is a high-impact area, and improving co-design methods is of clear practical value. If the claims are fully substantiated, the work could be important.  </li>
+<li><strong>Interdisciplinary readership</strong> The work sits at the intersection of machine learning, structural biology, and immunology. It would appeal to a broad readership if the presentation is accessible.  </li>
+<li><strong>Technical soundness</strong> The architecture is plausible, but the lack of quantitative evidence and incomplete methodological details prevent a full assessment of technical soundness.  </li>
+<li>
+<p><strong>Readability for nonspecialists</strong> The manuscript is generally well-written but contains dense technical sections that may be challenging for nonspecialists. The abstract is clear, but the methods section assumes significant prior knowledge.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The conceptual contribution is interesting, but the manuscript as supplied does not contain the necessary quantitative results or methodological details to support the central claims. The authors should provide full tables, statistical analyses, and additional validation of the SSDI metric before the case can be made.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "significant outperformance" over baselines is unsupported because the actual results are not provided.</li>
+<li>The claim that hypergraphs capture "high-order cooperative effects" is not empirically demonstrated.</li>
+<li>The SSDI metric is presented as a solution to evaluation limitations, but its validity is not established.</li>
+<li>The claim that RA-GHN generates "physically feasible and functionally innovative antibodies" is not supported by any experimental validation.</li>
+<li>The statement that the method "significantly reduces the risk of aggregation and instability" is speculative and not backed by data.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

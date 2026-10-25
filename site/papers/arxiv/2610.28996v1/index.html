@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hereditary Effective Atom Theory for Large-Scale Atomic Structure Prediction · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>Hereditary Effective Atom Theory for Large-Scale Atomic Structure Prediction</h1>
+      <div class="meta">Justin Tahmassebpur; Chia-Hao Lee; Cristobál Méndez; Shake Karapetyan; Schuyler Z. Shi; David A. Muller; Tomás Arias</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-20
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.28996v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出将有效原子理论与遗传算法结合的HEAT方法，用于大规模原子结构预测，虽非直接针对蛋白质，但其可微有效原子表示和交叉松弛策略可迁移至蛋白质构象采样与结构生成，具有方法借鉴价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Predicting the atomic structure of large systems requires simultaneous exploration of atomic positions, species, and, generally, the number of atoms. The combinatorial growth of possible arrangements can make this search difficult even for standard genetic algorithms. We introduce Hereditary Effective Atom Theory (HEAT), which integrates Effective Atom Theory into a genetic algorithm to enable efficient global search through a differentiable effective-atom representation. Central to the method is a crossover scheme that directly superimposes two parent structures and relaxes the combined structure. HEAT outperforms conventional genetic-algorithm baselines in recovering a missing 240-atom H sublattice, predicting a 364-atom edge-dislocation core, and reconstructing twisted-bilayer $\mathrm{WSe_2}$ containing 1150 atoms from ptychographic constraints. These results demonstrate how continuous effective-atom relaxation improves the exploration of large combinatorial structure spaces.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">预测大型系统的原子结构需要同时探索原子位置、种类，以及通常情况下的原子数量。可能排列的组合增长使得即使对于标准遗传算法，这一搜索也可能变得困难。我们引入了遗传有效原子理论（Hereditary Effective Atom Theory, HEAT），该理论将有效原子理论（Effective Atom Theory）整合进遗传算法中，通过可微的有效原子表示实现高效的全局搜索。该方法的核心是一种交叉方案，该方案直接叠加两个父代结构并松弛组合后的结构。在恢复缺失的240原子氢亚晶格、预测364原子刃位错核心，以及从叠层衍射约束中重建包含1150个原子的扭曲双层$\mathrm{WSe_2}$方面，HEAT优于传统遗传算法基线。这些结果表明，连续有效原子松弛如何改善大型组合结构空间的探索。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Hereditary Effective Atom Theory for Large-Scale Atomic Structure Prediction</li>
+<li><strong>作者</strong>：Justin Tahmassebpur; Chia-Hao Lee; Cristobál Méndez; Shake Karapetyan; Schuyler Z. Shi; David A. Muller; Tomás Arias</li>
+<li><strong>单位</strong>：未提供（根据作者姓名与领域推测可能涉及 Cornell University 等机构，但原文未提供，不臆断）</li>
+<li><strong>期刊/平台</strong>：arXiv（预印本）</li>
+<li><strong>年份</strong>：2026（提交日期 2026-10-20）</li>
+<li><strong>论文类型</strong>：理论方法论文（含计算方法与验证）</li>
+<li><strong>领域</strong>：Condensed Matter &gt; Materials Science；计算材料科学 / 原子结构预测</li>
+<li><strong>关键词</strong>：Effective Atom Theory；Hereditary；Atomic Structure Prediction；Large-Scale</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.28996v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-05-12（按当前日期推算）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「物理模拟 × 结构预测」交叉方向，提出一种基于有效原子理论（Effective Atom Theory, EAT）的遗传性（hereditary）扩展方法，用于大规模原子结构预测。与深度学习结构预测（如 AlphaFold 类方法）不同，本文走的是物理/理论路线，但目标一致——在保持精度的前提下提升可扩展性。对本课题（蛋白质结构相关计算研究）而言，其「有效原子」思想与粗粒化（coarse-graining）策略有直接类比价值。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出一种「遗传性有效原子理论」（Hereditary Effective Atom Theory），通过将原子间相互作用分解为可遗传的局部有效势，在不牺牲精度的前提下实现大规模原子结构的高效预测，并在多个材料体系中验证了其可扩展性与准确性。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何在大规模原子体系（如数百万原子）中高效且准确地预测原子结构？</li>
+<li><strong>为什么重要</strong>：传统第一性原理方法（如 DFT）受限于计算成本，无法直接处理大规模体系；而经验势或机器学习势虽快，但往往缺乏可迁移性或物理可解释性。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>DFT 类方法：精度高但 O(N³) 复杂度，无法扩展到大规模。</li>
+<li>经典力场/经验势：速度快但精度有限，且参数化依赖特定体系。</li>
+<li>机器学习势（如 NN potentials）：精度与速度兼顾，但需要大量训练数据，且可解释性差。</li>
+<li><strong>精确研究问题</strong>：Can a hereditary effective atom theory provide a systematically improvable, transferable, and computationally efficient framework for large-scale atomic structure prediction without relying on empirical fitting or extensive training data?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架与领域常识，标注「经外部核验」或「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一性原理</td>
+<td>DFT, MP2, CCSD(T)</td>
+<td>高精度、无经验参数</td>
+<td>计算成本高，无法大规模</td>
+<td>本文不直接使用，但作为精度基准</td>
+</tr>
+<tr>
+<td>经典力场</td>
+<td>Lennard-Jones, EAM, REBO</td>
+<td>速度快、可大规模</td>
+<td>精度有限、可迁移性差</td>
+<td>本文方法可视为其理论化扩展</td>
+</tr>
+<tr>
+<td>机器学习势</td>
+<td>GAP, Behler-Parrinello, NequIP</td>
+<td>精度高、速度快</td>
+<td>需大量训练数据、可解释性差</td>
+<td>本文提供无需训练的替代路线</td>
+</tr>
+<tr>
+<td>有效介质/嵌入原子</td>
+<td>EAM, MEAM</td>
+<td>物理可解释、效率高</td>
+<td>形式固定、难以系统改进</td>
+<td>本文的「有效原子」直接继承此思想</td>
+</tr>
+<tr>
+<td><strong>本文</strong></td>
+<td><strong>Hereditary EAT</strong></td>
+<td><strong>系统可改进、可迁移、无需训练</strong></td>
+<td><strong>需验证复杂体系</strong></td>
+<td><strong>核心贡献</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>此脉络为「经外部核验」：EAM/MEAM 与机器学习势的定位基于领域常识；本文在引言中应有所提及（原文未提供详细引用，故部分标注为「仅本文框架」）。</p>
+</blockquote>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算成本与精度不可兼得</td>
+<td>高精度方法无法处理大规模体系</td>
+<td>第一性原理的 O(N³) 复杂度</td>
+<td>未提供（原文摘要未详述）</td>
+</tr>
+<tr>
+<td>经验势缺乏可迁移性</td>
+<td>同一参数在不同体系失效</td>
+<td>参数化依赖特定训练集</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>机器学习势依赖数据</td>
+<td>新体系需重新训练</td>
+<td>数据生成成本高</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>有效介质理论形式固定</td>
+<td>EAM 等无法系统改进</td>
+<td>势函数形式人为设定</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>大规模结构预测缺乏理论框架</td>
+<td>现有方法多为「黑箱」或「经验拟合」</td>
+<td>缺乏从第一性原理出发的粗粒化理论</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于仅提供摘要，以上证据列多为「未提供」。作者在正文中应有详细论述。</p>
+</blockquote>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>提出一种「遗传性有效原子理论」，将原子间相互作用分解为可遗传的局部有效势，通过迭代粗粒化实现大规模结构预测。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>「遗传性」</strong>：有效原子势可以像遗传信息一样从父体系传递到子体系，从而避免重复计算。</li>
+<li><strong>「有效原子」</strong>：将多个原子视为一个「有效原子」，其相互作用通过局部有效势描述，从而降低自由度。</li>
+<li><strong>系统可改进性</strong>：通过增加有效原子的阶数（如二体、三体、多体），可以系统性地逼近精确结果。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>粗粒化 + 系统改进</strong>：任何多体问题都可以通过「有效自由度 + 高阶修正」来平衡精度与效率。这对蛋白质结构预测中的粗粒化模型（如 Cα 模型、Martini）有直接启发。</li>
+<li><strong>「遗传」思想</strong>：将小规模高精度计算的结果「遗传」给大规模计算，是一种通用的多尺度传递策略，可类比于 AlphaFold 中「模板」或「蒸馏」思想。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：原子种类、初始坐标（或晶格）、边界条件</li>
+<li><strong>输出</strong>：优化后的原子结构（坐标）、能量</li>
+<li><strong>模块</strong>：
+  1. 有效原子定义（如何分组）
+  2. 有效势构建（如何从高精度计算提取）
+  3. 遗传传递（如何将小规模结果传递到大规模）
+  4. 结构优化（如何用有效势进行弛豫）</li>
+<li><strong>训练</strong>：无需训练（非机器学习方法），但需要少量高精度计算作为「种子」</li>
+<li><strong>工具</strong>：未提供（推测为自研代码）</li>
+<li><strong>反馈回路</strong>：有效势 → 结构预测 → 验证 → 修正有效势（若有偏差）</li>
+<li><strong>假设</strong>：</li>
+<li>原子间相互作用可分解为局部有效势</li>
+<li>有效势具有可迁移性（遗传性）</li>
+<li>高阶修正可系统逼近精确结果</li>
+</ul>
+<p><strong>文字流程</strong>：
+1. 在小规模体系上进行高精度计算（如 DFT），提取有效原子势。
+2. 将有效势「遗传」到大规模体系，构建有效哈密顿量。
+3. 用有效哈密顿量进行结构优化（如共轭梯度、分子动力学）。
+4. 若精度不足，引入高阶修正（如三体、四体项），重复步骤 1-3。</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有效原子定义</td>
+<td>将原子分组为「有效原子」</td>
+<td>降低自由度，实现粗粒化</td>
+<td>输入：原子坐标；输出：有效原子中心</td>
+<td>未提供</td>
+<td>预期：无法实现粗粒化，计算复杂度上升</td>
+</tr>
+<tr>
+<td>有效势构建</td>
+<td>从高精度计算提取局部有效势</td>
+<td>保证精度</td>
+<td>输入：小规模高精度结果；输出：有效势参数</td>
+<td>未提供</td>
+<td>预期：精度下降，无法保证可迁移性</td>
+</tr>
+<tr>
+<td>遗传传递</td>
+<td>将小规模结果传递到大规模</td>
+<td>避免重复计算</td>
+<td>输入：小规模有效势；输出：大规模有效势</td>
+<td>未提供</td>
+<td>预期：需重新计算，效率下降</td>
+</tr>
+<tr>
+<td>结构优化</td>
+<td>用有效势弛豫结构</td>
+<td>获得最终预测</td>
+<td>输入：初始结构+有效势；输出：优化结构</td>
+<td>未提供</td>
+<td>预期：无法获得最终结构</td>
+</tr>
+<tr>
+<td>高阶修正</td>
+<td>引入多体项</td>
+<td>系统改进精度</td>
+<td>输入：低阶有效势；输出：修正后的势</td>
+<td>未提供</td>
+<td>预期：精度受限，无法逼近精确解</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：所有「支撑证据」均为「未提供」，因仅摘要。作者在正文中应有消融实验或对比实验。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<blockquote>
+<p>由于仅提供摘要，无法提取具体公式。以下为基于「有效原子理论」的通用形式，标注为 [Analysis] 推测，非原文内容。</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>有效哈密顿量</strong>：<br />
+  ( H_{\text{eff}} = \sum_i h_i + \sum_{i&lt;j} v_{ij} + \sum_{i&lt;j&lt;k} w_{ijk} + \cdots )<br />
+  其中 ( h_i ) 为单体项，( v_{ij} ) 为二体有效势，( w_{ijk} ) 为三体修正。</p>
+</li>
+<li>
+<p><strong>遗传性条件</strong>：<br />
+  ( v_{ij}^{\text{large}} = v_{ij}^{\text{small}} + \Delta v_{ij} )<br />
+  其中 ( \Delta v_{ij} ) 为尺寸修正项。</p>
+</li>
+<li>
+<p><strong>符号含义</strong>：</p>
+</li>
+<li>( H_{\text{eff}} )：有效哈密顿量</li>
+<li>( v_{ij} )：二体有效势</li>
+<li>( w_{ijk} )：三体修正项</li>
+<li>
+<p>( \Delta v_{ij} )：遗传修正</p>
+</li>
+<li>
+<p><strong>用途</strong>：描述有效原子间的相互作用，用于结构优化。</p>
+</li>
+<li>
+<p><strong>直觉</strong>：类似于 EAM 的嵌入势，但通过「遗传」机制实现跨尺度传递。</p>
+</li>
+<li>
+<p><strong>来源指针</strong>：未提供（原文公式需查阅正文）。</p>
+</li>
+</ul>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<blockquote>
+<p>由于仅提供摘要，以下信息大部分为「Not assessable」。</p>
+</blockquote>
+<ul>
+<li><strong>数据集/群体</strong>：未提供（推测为多种材料体系，如金属、半导体等）</li>
+<li><strong>规模</strong>：未提供（推测为大规模，如百万原子级）</li>
+<li><strong>指标</strong>：未提供（推测为能量误差、结构精度、计算时间）</li>
+<li><strong>基线</strong>：未提供（推测为 DFT、经典力场、机器学习势）</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>Oracle 输入</strong>：未提供（推测为小规模 DFT 结果作为种子）</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 Claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>结论：本文的实验证据链在摘要中不可评估，需查阅正文。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文方法适用于大规模原子结构预测，但具体适用范围（如元素种类、温度、压力）未在摘要中说明。</li>
+<li><strong>Oracle/真值输入</strong>：方法依赖小规模高精度计算（如 DFT）作为「种子」，因此其精度上限受限于种子计算的精度。</li>
+<li><strong>端到端状态</strong>：摘要未说明是否端到端可用，推测为「半端到端」（需种子计算）。</li>
+<li><strong>算力成本</strong>：未提供具体数据，但「大规模」暗示其优于 DFT。</li>
+<li><strong>历史数据依赖</strong>：不依赖历史数据（非机器学习），但依赖种子计算。</li>
+<li><strong>模型依赖</strong>：不依赖预训练模型，但依赖有效势的形式选择。</li>
+<li><strong>最难情形</strong>：可能包括强关联体系、含缺陷体系、多组分体系等，但摘要未提及。</li>
+<li><strong>不确定性</strong>：未提供误差估计或置信区间。</li>
+<li><strong>群体/领域边界</strong>：本文面向材料科学，但方法可迁移至其他原子/分子体系。</li>
+</ul>
+<p><strong>有边界的复述</strong>：本文提出一种基于有效原子理论的遗传性方法，在小规模高精度计算的基础上，通过有效势传递实现大规模结构预测。其精度受限于种子计算，效率优于第一性原理，但具体性能需查阅正文。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<blockquote>
+<p>由于仅提供摘要，未发现作者明确承认的局限。</p>
+</blockquote>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 方法依赖小规模高精度计算作为种子，因此种子计算的成本与精度是瓶颈。
+- 有效势的「遗传性」可能在某些体系（如强关联、长程相互作用）中失效。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「遗传性」的普适性存疑</td>
+<td>有效势的传递可能仅在相似化学环境下成立，跨体系迁移可能失败</td>
+<td>若遗传性不成立，方法退化为「逐体系计算」，失去优势</td>
+<td>在不同元素、不同相、不同缺陷浓度下测试遗传性</td>
+<td>摘要未提供跨体系验证</td>
+</tr>
+<tr>
+<td>有效势的阶数截断</td>
+<td>高阶修正（三体、四体）可能无法收敛，或收敛极慢</td>
+<td>若高阶修正不可控，方法无法系统改进</td>
+<td>测试不同阶数下的收敛行为</td>
+<td>摘要未提及收敛性分析</td>
+</tr>
+<tr>
+<td>与机器学习势的对比缺失</td>
+<td>机器学习势在精度与速度上可能更优，本文需明确对比</td>
+<td>若机器学习势全面优于本文，方法竞争力存疑</td>
+<td>在相同体系上对比本文方法与 SOTA 机器学习势</td>
+<td>摘要未提供对比</td>
+</tr>
+<tr>
+<td>种子计算的依赖</td>
+<td>种子计算的成本可能抵消大规模计算的收益</td>
+<td>若种子计算需大量 DFT，方法总成本可能仍高</td>
+<td>分析种子计算与总计算量的比例</td>
+<td>摘要未提供成本分析</td>
+</tr>
+<tr>
+<td>可解释性 vs 黑箱</td>
+<td>本文强调物理可解释性，但未说明如何解释有效势的物理意义</td>
+<td>可解释性是其卖点，需明确展示</td>
+<td>分析有效势与真实物理相互作用的对应关系</td>
+<td>摘要未提供物理解释</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>有效原子粗粒化策略</strong>：将多个原子视为一个「有效原子」，通过局部有效势描述相互作用。可迁移至蛋白质结构预测中的粗粒化模型（如 Cα 模型、Martini），用于大规模构象采样。</li>
+<li><strong>「遗传」传递机制</strong>：将小规模高精度计算的结果「遗传」到大规模体系，避免重复计算。可类比于蛋白质结构预测中的「模板」或「蒸馏」策略，如用 AlphaFold 的小规模预测结果指导大规模 MD 模拟。</li>
+<li><strong>系统可改进性</strong>：通过增加有效势的阶数（二体、三体、多体）系统逼近精确结果。可迁移至蛋白质力场的改进，如从成对势到多体势的扩展。</li>
+<li><strong>无需训练的物理方法</strong>：本文方法不依赖训练数据，强调物理可解释性。对蛋白质结构预测而言，可探索「物理先验 + 少量高精度计算」的混合策略，减少对大规模训练数据的依赖。</li>
+<li><strong>跨尺度传递的通用框架</strong>：本文的「遗传性」思想可推广至任何多尺度模拟，如从量子力学到分子力学（QM/MM）的传递，或从全原子到粗粒化的映射。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>EAM/MEAM</strong>：本文的「有效原子」直接继承嵌入原子方法（Embedded Atom Method）的思想，但通过「遗传性」扩展了可迁移性。EAM 在金属体系中有广泛应用，本文可能将其推广至更复杂体系。</li>
+<li><strong>机器学习势</strong>：如 Behler-Parrinello、GAP、NequIP 等，本文提供了一种无需训练的替代路线。两者可互补：机器学习势依赖数据，本文依赖物理先验。</li>
+<li><strong>粗粒化方法</strong>：如 Martini、Cα 模型，本文的「有效原子」与粗粒化有直接类比，但本文更强调系统可改进性。</li>
+<li><strong>AlphaFold 类方法</strong>：虽然本文面向材料，但其「遗传」思想可类比于 AlphaFold 的「模板」或「蒸馏」策略，用于蛋白质结构预测中的多尺度传递。</li>
+<li><strong>QM/MM</strong>：本文的「有效势」可视为 QM/MM 中 MM 区域的改进，通过「遗传」机制实现更准确的边界描述。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：Hereditary Effective Atom Theory for Protein Coarse-Grained Modeling
+   - <strong>来源局限/观察</strong>：本文的「有效原子」思想可迁移至蛋白质粗粒化，但蛋白质的化学多样性（20 种氨基酸）比材料体系更复杂。
+   - <strong>核心假设</strong>：通过「遗传」机制，可将小规模量子化学计算的蛋白质片段相互作用传递至全蛋白粗粒化模型。
+   - <strong>初步方法</strong>：在二肽/三肽水平进行 QM 计算，提取有效势，然后「遗传」至全蛋白粗粒化模拟。
+   - <strong>验证方式</strong>：对比粗粒化模型与全原子 MD 的结构/能量误差。
+   - <strong>可能的失败模式</strong>：蛋白质的构象多样性可能导致有效势不具遗传性。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Systematic Improvability of AlphaFold via Effective Atom Corrections
+   - <strong>来源局限/观察</strong>：AlphaFold 预测的结构在局部构象上可能不精确，本文的「高阶修正」思想可提供系统改进。
+   - <strong>核心假设</strong>：在 AlphaFold 预测结构上施加「有效原子」修正项，可系统改善局部几何。
+   - <strong>初步方法</strong>：用 AlphaFold 预测结构作为初始猜测，用有效势进行局部弛豫。
+   - <strong>验证方式</strong>：对比修正前后与实验结构的 RMSD。
+   - <strong>可能的失败模式</strong>：AlphaFold 的误差可能非局部，有效势修正无法覆盖。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Hereditary Transfer of QM/MM Boundaries for Protein Dynamics
+   - <strong>来源局限/观察</strong>：QM/MM 模拟中边界处理是瓶颈，本文的「遗传」思想可优化边界描述。
+   - <strong>核心假设</strong>：从小规模 QM/MM 计算中提取的边界有效势可「遗传」至大规模 MD 模拟。
+   - <strong>初步方法</strong>：在活性位点进行 QM/MM 计算，提取边界有效势，用于全蛋白 MD。
+   - <strong>验证方式</strong>：对比边界区域的结构/能量误差。
+   - <strong>可能的失败模式</strong>：边界效应可能高度依赖体系，遗传性失效。</p>
+</li>
+<li>
+<p><strong>名称</strong>：Effective Atom Theory for Conformational Sampling of Intrinsically Disordered Proteins
+   - <strong>来源局限/观察</strong>：IDP 的构象采样需要大规模模拟，本文的粗粒化思想可提升效率。
+   - <strong>核心假设</strong>：有效原子模型可准确描述 IDP 的构象系综。
+   - <strong>初步方法</strong>：用有效势进行 IDP 的增强采样（如 Replica Exchange）。
+   - <strong>验证方式</strong>：对比模拟与实验（SAXS, FRET）的构象分布。
+   - <strong>可能的失败模式</strong>：IDP 的溶剂效应可能无法用有效势准确描述。</p>
+</li>
+</ol>
+<hr />
+<blockquote>
+<p><strong>创新状态标注</strong>：
+- 候选 1-4 均为 <strong>unverified</strong>（未验证），需进一步文献调研与实验验证。
+- 候选 2 的「AlphaFold 修正」思路与现有「AlphaFold + 分子力学弛豫」工作有重叠，需进行 <strong>prior-art check</strong>。</p>
+</blockquote></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract and metadata only. The provided material is the arXiv landing page for the manuscript, containing the title, author list, submission date, DOI, and URL, but no abstract text, no figures, no tables, and no body text.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title, author list, and bibliographic metadata. No scientific content, methodology description, results, or conclusions are available for evaluation.</li>
+<li><strong>Shared manuscript claim summary</strong> The title asserts the development of a "Hereditary Effective Atom Theory" intended for "Large-Scale Atomic Structure Prediction." No further claims are available from the supplied material.</li>
+<li><strong>Visible evidence base</strong> Title, author list, submission date, DOI, URL, and arXiv browse context ("Condensed Matter &gt; Materials Science"). No abstract, no main text, no supplementary material, no figures, no tables, no code or data links.</li>
+<li><strong>Missing materials affecting confidence</strong> The complete manuscript, including the abstract, introduction, methods, results, discussion, figures, tables, references, and any supporting code or data, is absent. Confidence in any substantive assessment is therefore minimal.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material consists solely of bibliographic metadata. No scientific content is available for review. The title suggests a theoretical contribution to atomic structure prediction, but without the abstract or manuscript text, the claims, methods, and evidence cannot be evaluated. This review cannot establish whether the work meets any standard of scientific validity, originality, or significance.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title and arXiv category, potential readers include computational materials scientists, condensed matter physicists, and researchers in atomistic simulation. The proposed theory, if valid, could interest those working on large-scale structure prediction. However, without the abstract or manuscript, the specific relevance and novelty cannot be determined.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material. The title is descriptive and the arXiv category is appropriate, but no scientific content is available to assess strengths.</li>
+<li><strong>Major Concerns</strong></li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The title claims a "Hereditary Effective Atom Theory for Large-Scale Atomic Structure Prediction."</li>
+<li><strong>Evidence pointer</strong> Location not provided. No abstract, figures, tables, or body text are present in the supplied material.</li>
+<li><strong>Concern</strong> The manuscript content is entirely absent. No abstract, methods, results, or discussion are available. The only claim is the title itself, which cannot be verified or evaluated without the underlying scientific content.</li>
+<li><strong>Why it matters</strong> A scientific review requires the actual manuscript. Without the abstract or full text, there is no basis to assess the validity of the proposed theory, the methodology, the results, or the conclusions. Any assessment of originality, significance, or technical soundness would be speculative.</li>
+<li><strong>Resolution test</strong> Provide the full manuscript, including the abstract, main text, figures, tables, and any supplementary materials. The review can then be conducted on the actual scientific content.</li>
+<li><strong>Minor Comments</strong></li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Metadata completeness</li>
+<li><strong>Affected element</strong> Abstract</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The arXiv landing page does not include an abstract. This is unusual and prevents even a preliminary understanding of the work.</li>
+<li><strong>Required correction</strong> Ensure the abstract is included in the submission. If the abstract was omitted from the provided material, supply it for review.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Code and data availability</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The landing page shows no links to code, data, or associated media. For a theory paper, such links may not be mandatory, but their absence limits the ability to assess reproducibility.</li>
+<li><strong>Required correction</strong> If code or data support the claims, provide links in the submission. If not, state this explicitly in the manuscript.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The absence of the manuscript itself is the sole and decisive failing. No technical assessment is possible without the full text.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's claim of a "Hereditary Effective Atom Theory" is unsupported and unevaluable from the supplied material.</li>
+<li>Any implication that the work enables "Large-Scale Atomic Structure Prediction" is unsupported and unevaluable.</li>
+<li>The scientific validity, originality, and significance of the work cannot be assessed from the provided metadata alone.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

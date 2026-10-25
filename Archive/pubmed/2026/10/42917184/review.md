@@ -1,0 +1,68 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no figures, tables, methods, or supplementary material provided
+- **Shared manuscript claim summary** The authors use all-atom MD simulations to characterize the conformational landscape of wild-type HYPK and a charge-variant mutant, with and without fluorescent proteins (FPs) attached at the termini. They report that the mutant is more compact than wild type in all conditions, that wild type with FPs shows bimodal populations differing in helix packing, that the mutant with FPs also shows bimodality via competitive electrostatic interactions, and that bimodality in the mutant without FPs depends on salt conditions. They interpret these results as explaining experimentally observed marginality and as providing general insights into IDP behavior.
+- **Visible evidence base** Abstract text only; no simulation details, force field parameters, convergence criteria, error estimates, or comparison to experimental data beyond qualitative statements
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, simulation protocols, force field validation, statistical analyses, and quantitative comparisons to experimental fluorescence and CD data
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting computational study addressing a relevant question about marginal disorder in HYPK. The central claims about charge patterning and bimodality are plausible but cannot be evaluated without quantitative evidence. The abstract lacks sufficient methodological detail to assess technical soundness, and the connection to experimental observations is stated qualitatively rather than demonstrated. The work may be of interest to the IDP community, but the current evidence base is insufficient to establish the case.
+- **Who would be interested in the results, and why** Researchers studying intrinsically disordered proteins, particularly those interested in sequence determinants of compaction, the role of folded domains or fusion tags in modulating IDP conformations, and the molecular origins of marginal disorder. The findings on charge patterning and competitive electrostatic interactions could inform experimental design for IDP characterization.
+- **Major strengths** The study addresses a timely and underexplored question about marginal proteins that sit between fully disordered and folded states. The systematic comparison of wild type and charge-variant mutant, with and without FPs, is a sensible design. The proposed mechanisms for bimodality, including helix packing and competitive electrostatics, are mechanistically interesting and testable.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that MD simulations reveal specific conformational populations and mechanisms, including "two distinct conformational populations differing in helix packing" and "competitive electrostatic interactions between different protein segments and the FPs."
+  - **Evidence pointer** Abstract only; no figures, tables, or methods provided
+  - **Concern** No simulation details are provided, including force field, water model, salt concentration, temperature, simulation length, number of replicas, or convergence criteria. Without these, the reliability of the conformational populations and the inferred mechanisms cannot be assessed. The abstract also does not report any quantitative measures such as radius of gyration distributions, free energy surfaces, or contact probabilities that would support the qualitative descriptions.
+  - **Why it matters** All-atom MD of IDPs is highly sensitive to force field choice and sampling adequacy. Bimodal populations and electrostatic mechanisms are strong claims that require demonstration of converged sampling and robust statistics. The absence of any methodological or quantitative evidence prevents evaluation of whether the simulations are technically sound.
+  - **Resolution test** Provide full methods with force field and sampling details, show convergence metrics, and present quantitative distributions or free energy profiles for the conformational populations described.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence strength
+  - **Claim pointer** The abstract claims that the charge-variant mutant is "more compact compared to the wild type both with and without FPs, showing the importance of charge patterning that is consistent with experimental observations and theoretical predictions."
+  - **Evidence pointer** Abstract only; no quantitative comparison to experimental data provided
+  - **Concern** The claim of consistency with experimental observations is stated but not demonstrated. No quantitative values, error bars, or statistical tests are provided for the compaction difference. The phrase "consistent with" is vague and does not establish whether the simulation results match experimental measurements within uncertainty or merely show the same qualitative trend.
+  - **Why it matters** The central scientific contribution is the molecular explanation of experimentally observed marginality. Without a quantitative link between simulation and experiment, the claim of consistency is unsupported, and the explanatory power of the simulations is not established.
+  - **Resolution test** Provide quantitative comparison of simulated and experimental observables, such as radius of gyration or FRET efficiency, with appropriate uncertainty estimates and statistical analysis.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** The abstract claims that the findings "offer broad insights into the origin of marginality, competing interactions, as well as the roles charge patterning and folded domains play on IDP conformation both in vitro and in-cell."
+  - **Evidence pointer** Abstract only; no in-cell data or broader context provided
+  - **Concern** The claim of broad insights, particularly the extension to in-cell behavior, is not supported by the evidence described. The abstract reports only in silico simulations of a single protein and one mutant. No in-cell experiments or generalizable principles are demonstrated.
+  - **Why it matters** Overstating the scope of findings can mislead readers about the generality of the conclusions. The in-cell claim is particularly problematic because the abstract does not describe any cellular context or relevant simulation conditions.
+  - **Resolution test** Either remove the in-cell claim or provide evidence from simulations or experiments that directly address cellular conditions. Frame the conclusions as specific to the system studied unless general principles are quantitatively demonstrated.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The phrase "marginal proteins" is introduced without a clear definition. The abstract states HYPK is "one such recently discovered marginal protein" but does not explain what marginality means in operational terms.
+  - **Required correction** Define marginality explicitly, for example in terms of the balance between disordered and folded characteristics, and state how it is quantified experimentally or computationally.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Simulation conditions
+  - **Evidence pointer** Abstract, no methods section provided
+  - **Issue** The abstract mentions modulation of "temperature, crowding, ionic strength" in the experimental context but does not specify which conditions were used in the simulations. It is unclear whether the simulations replicate the experimental conditions or explore new ones.
+  - **Required correction** Specify the simulation conditions, including temperature, salt concentration, and whether crowding agents or other environmental factors were modeled.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Bimodality interpretation
+  - **Evidence pointer** Abstract, statements on bimodal populations
+  - **Issue** The abstract describes bimodality in wild type with FPs as due to "helix packing" and in the mutant with FPs as due to "competitive electrostatic interactions." It is not clear whether these are mutually exclusive mechanisms or whether both contribute in each case.
+  - **Required correction** Clarify whether the mechanisms are distinct or overlapping, and provide evidence that distinguishes between them, such as structural analysis or mutation effects.
+
+## Risk / unsupported claims
+- The claim that the charge-variant mutant is more compact than wild type is unsupported without quantitative data and statistical analysis.
+- The claim of consistency with experimental observations is unsupported without quantitative comparison.
+- The claim of bimodal populations with specific mechanisms (helix packing, competitive electrostatics) is unsupported without structural or energetic evidence.
+- The claim of broad insights extending to in-cell behavior is unsupported by the described evidence.
+- The overall explanatory link between simulation results and experimentally observed marginality is not established from the abstract alone.

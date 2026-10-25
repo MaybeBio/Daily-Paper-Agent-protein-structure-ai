@@ -1,0 +1,101 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, introduction, results, discussion, conclusion, and methods sections. Supplementary figure and table references noted but not provided.
+- **Assessment boundary** Scientific content, methodological soundness, validity of claims relative to presented evidence, and alignment with Nature-style criteria. No assessment of formatting, grammar, or editorial fit.
+- **Shared manuscript claim summary** The authors employ enhanced-sampling molecular dynamics simulations (string method with swarms of trajectories) to characterize ligand-dependent conformational energy landscapes of PAR1 across five receptor states. They identify a continuous activation pathway linking extracellular ligand engagement to intracellular motifs, validate key predictions through alanine mutagenesis and Gq-CASE BRET assays, and propose that different ligands modulate PAR1 signaling by reshaping the conformational landscape and microswitch network.
+- **Visible evidence base** Full text of abstract, introduction, results, discussion, conclusion, and methods. References to supplementary figures S1–S9 and tables S1–S4, but these materials were not provided for review.
+- **Missing materials affecting confidence** Supplementary figures S1–S9, supplementary tables S1–S4, all primary figures referenced in the main text (Figures 1–5 and associated panels), simulation parameter files, force field validation data, and raw experimental data. The absence of these materials limits verification of quantitative claims, convergence assessments, and experimental reproducibility.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a comprehensive computational investigation of PAR1 conformational dynamics using an established enhanced-sampling technique. The integration of multiple ligand conditions, Gαq binding, and experimental validation is commendable and addresses an important gap in understanding PAR1 activation mechanisms. However, the absence of all primary figures and supplementary materials prevents verification of the central quantitative claims, convergence assessments, and the quality of the experimental validation. The manuscript shows promise but cannot be fully evaluated in its current form.
+- **Who would be interested in the results, and why** Researchers in GPCR structural biology, computational biophysics, and pharmacology would find this work relevant. The study addresses fundamental questions about ligand-dependent conformational selection and allosteric communication in GPCRs, with potential implications for structure-based drug design targeting PAR1. The methodological approach combining SMwST with experimental validation may also interest computational biologists developing enhanced-sampling protocols for membrane proteins.
+- **Major strengths** The study addresses a significant and timely question regarding PAR1 activation mechanisms. The use of SMwST is appropriate for exploring conformational transitions in GPCRs. The inclusion of five receptor states allows systematic comparison of ligand effects. The integration of computational predictions with experimental mutagenesis and BRET assays provides a validation framework. The identification of a continuous activation pathway with specific structural motifs is mechanistically informative.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence completeness
+  - **Claim pointer** The manuscript claims that free-energy landscapes were computed for five receptor states and that these reveal ligand-dependent modulation of PAR1 activation.
+  - **Evidence pointer** Results sections "Ligand-Dependent Modulation of the PAR1 Activation Free-Energy Landscape" and "Free-Energy Analysis Reveals Ligand-Specific Modulation of PAR1 Activation Motifs"; all primary figures referenced but not provided
+  - **Concern** The central quantitative results of this study are presented in figures that were not included in the review materials. Without access to the free-energy landscapes, convergence plots, and structural overlays, it is impossible to assess whether the claims about ligand-dependent modulation are supported by the data. The manuscript text describes qualitative trends but the quantitative evidence base is absent.
+  - **Why it matters** The core scientific contribution of this work is the characterization of conformational energy landscapes. If these landscapes cannot be examined, the validity of the entire computational analysis is unverifiable.
+  - **Resolution test** Provide all primary figures with appropriate resolution and detail. Include convergence assessments for the SMwST simulations, error estimates for free-energy surfaces, and clear labeling of all states and conditions.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological validation
+  - **Claim pointer** The manuscript claims that the string method with swarms of trajectories was applied and that 300 iterations were sufficient to achieve convergence.
+  - **Evidence pointer** Methods section "String Method with Swarms of Trajectories (SMwST)"; Figure S3 referenced but not provided
+  - **Concern** The convergence of SMwST simulations is critical for the reliability of computed free-energy landscapes. The manuscript states that convergence was assessed via the Frobenius norm but provides no quantitative convergence data. The choice of 42 images, 30 swarm trajectories, and 10 ps swarm length requires justification relative to the system size and the timescales of PAR1 conformational changes. The supplementary figure showing convergence was not available for review.
+  - **Why it matters** Inadequate convergence would invalidate all free-energy calculations and the subsequent mechanistic interpretations. The methodological choices must be rigorously justified and demonstrated to be sufficient for this specific system.
+  - **Resolution test** Provide convergence plots showing the Frobenius norm as a function of iteration number for all six systems. Include analysis demonstrating that the chosen swarm length and number of trajectories are sufficient to sample the relevant conformational space. Justify the choice of 42 images and the equilibration protocol.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Experimental validation
+  - **Claim pointer** The manuscript claims that alanine mutagenesis and Gq-CASE BRET assays validate predicted roles of key residues in activation and G-protein coupling.
+  - **Evidence pointer** Results section "Experimental Validation of Computationally Identified PAR1 Activation and G-Protein Binding Sites"; Figures 4 and 5 referenced but not provided; Table S2 referenced but not provided
+  - **Concern** The experimental validation is presented as supporting the computational predictions, but the actual data are not available for review. The manuscript reports p-values and effect sizes in the text but the figures showing dose-response curves, BRET traces, and statistical comparisons are absent. The selection criteria for which residues to mutate are not fully justified, and the relationship between the computational predictions and the specific experimental outcomes cannot be evaluated.
+  - **Why it matters** The experimental validation is a key differentiator of this study from purely computational work. If the experimental data do not robustly support the computational predictions, the central claims of the manuscript are weakened.
+  - **Resolution test** Provide all experimental figures with complete dose-response curves, appropriate error bars, and statistical analysis. Justify the selection of mutated residues based on the computational predictions. Include raw data or clear representation of replicates.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Force field and system setup
+  - **Claim pointer** The manuscript claims that the CHARMM36m force field was used and that the systems were prepared following standard protocols.
+  - **Evidence pointer** Methods section "MD System Preparation and Equilibration"; Table S3 referenced but not provided
+  - **Concern** The choice of CHARMM36m is appropriate for membrane proteins, but the manuscript does not provide details on how the force field parameters for the ligand (vorapaxar) were validated. The CGenFF parameters for VPX require validation against quantum mechanical calculations or experimental data. The protonation state assignment for D1482.50 is mentioned but the rationale and validation are not fully described. The system composition details in Table S3 were not available.
+  - **Why it matters** Force field accuracy and correct system setup are fundamental to the reliability of all simulation results. Errors in ligand parameterization or protonation states could significantly affect the computed free-energy landscapes.
+  - **Resolution test** Provide validation of VPX parameters, including comparison with QM reference data if available. Justify the protonation state choice with pKa calculations or experimental evidence. Provide complete system composition details.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Collective variable selection
+  - **Claim pointer** The manuscript claims that five transmembrane helix distance metrics were used as collective variables and that these reliably distinguish active, intermediate, and inactive conformations.
+  - **Evidence pointer** Methods section "String Method with Swarms of Trajectories (SMwST)"; Table S1 referenced but not provided; Figure S2 referenced but not provided
+  - **Concern** The choice of collective variables is critical for the string method. The manuscript states that the CV set was previously derived for β2AR and applied here to PAR1, but the transferability of these CVs to PAR1 is not fully justified. The validation that these CVs distinguish PAR1 conformational states (Figure S2) was not available. The manuscript does not discuss whether these CVs capture all relevant slow degrees of freedom for PAR1 activation.
+  - **Why it matters** If the collective variables do not adequately describe the conformational landscape, the computed free-energy surfaces and transition pathways may be incomplete or misleading.
+  - **Resolution test** Provide the validation of CVs for PAR1, including the distribution of known structures in CV space. Discuss the completeness of the CV set and consider whether additional degrees of freedom may be relevant for PAR1 activation.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity of presentation
+  - **Affected element** Results section "Ligand-Dependent Modulation of the PAR1 Activation Free-Energy Landscape"
+  - **Evidence pointer** Main text, first results subsection
+  - **Issue** The description of the free-energy landscapes is qualitative and relies heavily on figure references. The text describes "broad ensembles," "restricted conformations," and "shifts in free energy" without providing numerical values or quantitative comparisons between conditions.
+  - **Required correction** Include quantitative descriptions of free-energy differences, barrier heights, and population shifts where possible. Consider adding a table summarizing key free-energy values for each condition.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Methodological detail
+  - **Affected element** Methods section "Targeted MD"
+  - **Evidence pointer** Main text, Targeted MD subsection
+  - **Issue** The description of the targeted MD protocol lacks specific parameters such as the pulling rate, force constant for the rmsd restraint, and the criteria for selecting initial conformations for the string.
+  - **Required correction** Provide complete parameters for the tMD simulations to enable reproducibility.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical analysis
+  - **Affected element** Experimental validation section
+  - **Evidence pointer** Results section "Experimental Validation of Computationally Identified PAR1 Activation and G-Protein Binding Sites"
+  - **Issue** The manuscript reports p-values for comparisons between mutants and wild-type but does not describe the statistical test used or whether multiple comparison corrections were applied.
+  - **Required correction** Specify the statistical tests used, the number of independent experiments, and whether corrections for multiple comparisons were applied.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Discussion of limitations
+  - **Affected element** Conclusion section
+  - **Evidence pointer** Main text, Conclusion
+  - **Issue** The limitations of the study are discussed briefly but do not address the potential impact of the simplified Gαq model (nucleotide-free, monomeric) on the conclusions about transducer-dependent stabilization.
+  - **Required correction** Expand the discussion of limitations to include the potential effects of the simplified Gαq model and the absence of Gβγ subunits on the computed free-energy landscapes.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods section "Free-Energy Calculation"
+  - **Evidence pointer** Main text, Free-Energy Calculation subsection
+  - **Issue** The manuscript states that the Demystify software was used for PCA but does not provide a version number or citation. Similarly, the Python scripts for the string method are referenced via a GitHub link but no version or commit identifier is provided.
+  - **Required correction** Provide version numbers and persistent identifiers for all software used to ensure reproducibility.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (missing figures), R1-M2 (convergence evidence), R1-M3 (experimental data availability). These are blocking because the central claims of the manuscript cannot be verified without the primary evidence.
+- **Assessment against Nature-style criteria** 
+  - Originality: The application of SMwST to PAR1 with systematic comparison of five ligand states is a novel contribution. The identification of a continuous activation pathway with specific structural motifs extends previous structural studies. However, the methodological approach itself is established, and the novelty lies primarily in the system-specific findings.
+  - Scientific importance: Understanding ligand-dependent conformational selection in PAR1 has implications for GPCR biology and drug design. The potential to inform pathway-selective modulator design is significant. However, the importance is somewhat limited by the focus on a single receptor and the absence of broader comparative insights.
+  - Interdisciplinary readership: The work bridges computational biophysics, structural biology, and pharmacology. The findings would interest researchers across these fields. The experimental validation component enhances accessibility to experimentalists.
+  - Technical soundness: The methodological approach is appropriate, but the inability to verify convergence and the absence of primary data prevent full assessment. The experimental validation appears sound based on the text description but cannot be verified.
+  - Readability for nonspecialists: The manuscript is generally well-written and accessible. The introduction provides appropriate context. However, the results section relies heavily on figure references and assumes familiarity with GPCR activation terminology. Some sections, particularly the description of the string method, may be challenging for nonspecialist readers.
+- **Recommendation posture** Supportive if technical concerns are resolved. The manuscript addresses an important question with an appropriate methodology and includes valuable experimental validation. However, the absence of all primary figures and supplementary materials prevents verification of the central claims. The authors should be given the opportunity to provide the missing evidence. If the figures and supplementary data support the text descriptions, this could be a valuable contribution to the field.

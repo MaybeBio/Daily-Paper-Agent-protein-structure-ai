@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report quantum mechanics/molecular mechanics (QM/MM) simulations with excited-state calculations using density functional tight-binding (DFTB) to study structural dynamics and optical spectra of bilin pigments in the open-form PC612 complex. They claim that the protein matrix controls fluctuations of excitation energies and excitonic couplings, that thermal fluctuations minimally affect pigment spectral densities due to similar ground- and excited-state electron density distributions, and that computed absorption spectra at different temperatures agree reasonably with experiment, accurately predicting relative peak positions.
+- **Visible evidence base** Abstract text only; no numerical data, methodological details, or experimental comparisons are provided
+- **Missing materials affecting confidence** Full manuscript, computational methods section, all figures and tables, experimental spectra, convergence criteria, force field parameters, DFTB parametrization details, and statistical analysis of simulation trajectories
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting application of QM/MM-DFTB to a less-studied light-harvesting complex, with a claim that contrasts the behavior of bilin pigments with (bacterio)chlorophyll systems. However, the abstract alone provides insufficient detail to evaluate the technical soundness of the simulations, the robustness of the spectral density claim, or the quality of the agreement with experiment. The central mechanistic conclusion regarding minimal thermal effects on spectral densities is stated without quantitative support, and the comparison to experiment is described only qualitatively. The work may be of interest to the biophysical chemistry and photosynthesis communities, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Researchers studying light-harvesting complexes, cryptophyte algae, bilin photophysics, and exciton dynamics in pigment-protein systems would be interested. The claim that protein environment effects dominate over thermal fluctuations in bilin systems, in contrast to chlorophyll-based systems, could inform theoretical models of energy transfer and spectral tuning. Methodologists using DFTB for excited-state simulations in biological chromophores may also find the approach relevant.
+- **Major strengths** The study addresses a relatively underexplored system, PC612, with a computationally efficient method that allows for explicit treatment of protein environment effects. The contrast drawn between bilin and (bacterio)chlorophyll systems provides a potentially novel conceptual framing. The inclusion of temperature-dependent spectral calculations suggests an attempt to validate against experimental observables.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The authors claim that "thermal fluctuations induced by the environment have a minimal effect on the pigment spectral densities due to similar electron density distributions in the ground and excited states."  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The claim that thermal fluctuations minimally affect spectral densities is presented as a general conclusion, but the abstract provides no quantitative data, such as spectral density magnitudes, reorganization energies, or comparison of fluctuation amplitudes between ground and excited states. The mechanistic explanation based on "similar electron density distributions" is plausible but requires verification through computed charge distributions or transition density analyses. Without these data, the claim cannot be assessed.  
+  - **Why it matters** This claim is central to the novelty of the study, as it distinguishes bilin systems from chlorophyll-based systems. If unsupported, the main conceptual contribution of the work is weakened.  
+  - **Resolution test** Provide quantitative spectral densities or reorganization energies for each bilin, with comparison to chlorophyll systems, and show computed ground- and excited-state electron density differences that support the stated mechanism.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The authors claim that "the computed absorption spectra, calculated at different temperatures, are in reasonable agreement with the experimental counterparts, accurately predicting the relative peak positions."  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract does not specify which temperatures were simulated, how the experimental spectra were obtained, what metric was used to define "reasonable agreement," or the magnitude of any peak shifts or intensity discrepancies. Without quantitative comparison, such as root-mean-square deviations, peak wavelength errors, or spectral overlap integrals, the claim of accuracy is not verifiable.  
+  - **Why it matters** Agreement with experiment is the primary validation of the computational approach. A qualitative statement is insufficient to establish reliability, especially given the approximate nature of DFTB for excited states.  
+  - **Resolution test** Present a figure comparing computed and experimental spectra at each temperature, with quantitative error metrics and a discussion of any systematic deviations.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Reproducibility  
+  - **Claim pointer** The authors state that they used "quantum mechanics/molecular mechanics simulations with excited-state calculations utilizing a numerically efficient density functional tight-binding method."  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Concern** The abstract provides no details on the QM/MM partitioning, the DFTB parametrization for bilins, the level of theory for ground-state dynamics versus excited-state calculations, the simulation length, or the number of configurations sampled. These factors critically affect the reliability of excitation energy and coupling fluctuations.  
+  - **Why it matters** Without methodological transparency, the results cannot be reproduced or independently verified, which is essential for a computational study.  
+  - **Resolution test** In the full manuscript, provide a complete methods section with all parameters, convergence tests, and validation of the DFTB approach against higher-level methods for at least one representative configuration.
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Abstract wording  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The phrase "numerically efficient density functional tight-binding method" is vague; it is unclear whether this refers to a specific variant, such as DFTB2 or DFTB3, or a novel implementation.  
+  - **Required correction** Specify the DFTB variant and the excited-state method, such as time-dependent DFTB or a configuration interaction scheme.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Contextualization  
+  - **Affected element** Abstract background  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The abstract mentions that cryptophyte algae show "diverse spectroscopic properties" but does not explain how PC612 fits into this diversity or why its open structure is particularly relevant.  
+  - **Required correction** Add one sentence contextualizing PC612 within the broader cryptophyte family and stating the specific open question addressed.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Terminology  
+  - **Affected element** Abstract claim  
+  - **Evidence pointer** Abstract; location not provided  
+  - **Issue** The term "minimal effect" is used without a quantitative threshold, making the claim difficult to interpret.  
+  - **Required correction** Define "minimal" in terms of a specific metric, such as reorganization energy below a certain value or spectral density amplitude relative to chlorophyll systems.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The central mechanistic claim and the experimental validation are not quantitatively supported, and the methodological details are insufficient for reproducibility.
+- **Assessment against Nature-style criteria**  
+  - Originality: The application to PC612 and the contrast with chlorophyll systems is potentially original, but the abstract does not demonstrate that this is a first or significantly novel finding.  
+  - Scientific importance: The work could inform understanding of bilin photophysics and protein environment effects, but the importance is not clearly articulated beyond a general statement.  
+  - Interdisciplinary readership: The topic bridges biophysics, photochemistry, and computational chemistry, but the abstract is written in a specialized manner that may limit accessibility.  
+  - Technical soundness: Not assessable from the abstract; the lack of methodological and quantitative detail prevents evaluation.  
+  - Readability for nonspecialists: The abstract assumes familiarity with QM/MM, DFTB, and spectral density concepts, which may hinder broader readership.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible study with an interesting conceptual claim, but the lack of quantitative support and methodological detail means the case is not made. A revised abstract with specific data, or access to the full manuscript, would be required to assess whether the claims are supported.
+
+## Risk / unsupported claims
+- The claim that thermal fluctuations minimally affect spectral densities is unsupported without quantitative spectral density or reorganization energy data.
+- The claim of reasonable agreement with experimental spectra is unsupported without quantitative comparison metrics.
+- The mechanistic explanation based on similar ground- and excited-state electron density distributions is unverifiable from the abstract.
+- The general statement that the protein matrix "significantly controls" fluctuations of excitation energies and couplings is plausible but not quantified.
+- The applicability of the DFTB method for this system is not validated against higher-level methods in the abstract.

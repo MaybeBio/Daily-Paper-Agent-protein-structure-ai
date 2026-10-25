@@ -1,0 +1,70 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full manuscript, figures, tables, or supplementary materials provided
+- **Shared manuscript claim summary** The authors present MARDy 2.0, an updated web-based platform for exploring and analysing antifungal resistance mutations. The platform integrates data from the FungAMR community resource and protein structures from UniProtKB or AlphaFold predictions. It offers interactive features including search filtering, downloads, BLAST-based sequence similarity searches, a natural-language query interface, a mutation plot for protein-context visualisation, and structural predictions showing mutation locations. The authors state the platform facilitates research into antifungal resistance evolution, surveillance, and mitigation, and should be cited alongside FungAMR.
+- **Visible evidence base** Abstract text only; no URLs beyond the platform link, no screenshots, no usage statistics, no benchmark results, no comparison with existing tools, and no technical documentation
+- **Missing materials affecting confidence** Full manuscript, platform interface, code repository, data schema, API documentation, validation or benchmarking results, user testing, and any quantitative evidence of platform utility or performance
+
+## Reviewer
+- **Overall assessment** The abstract describes a potentially useful update to an existing bioinformatics resource, but the evidence provided is insufficient to evaluate the technical soundness, novelty, or practical utility of the platform. The claims are largely descriptive and lack quantitative support. The abstract does not establish a clear advance over the original MARDy or other existing antifungal resistance databases, nor does it demonstrate that the new features function as described. The case for the platform's value is currently not established from the provided material.
+- **Who would be interested in the results, and why** Researchers in medical mycology, clinical microbiology, and agricultural plant pathology studying antifungal resistance mechanisms would be the primary audience. Additionally, bioinformaticians developing or maintaining pathogen-focused genomic databases and clinicians or surveillance groups tracking resistance mutations may find the platform relevant. The natural-language query interface and structural visualisation features could appeal to users with limited bioinformatics expertise.
+- **Major strengths** The platform addresses a timely and important topic, namely antifungal resistance, which has clear public health and agricultural relevance. The integration of multiple data types, including resistance mutations, protein structures, and predicted structures, is a sensible design choice. The inclusion of a natural-language query interface and BLAST search suggests an effort to improve accessibility for non-specialist users. The platform is freely accessible, which supports community use.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The platform provides enhanced tools for data exploration and analysis, including search filtering, downloads, BLAST-based sequence similarity searches, a natural-language query interface, a mutation plot, and structural predictions showing mutation locations.
+  - **Evidence pointer** Abstract, Availability section; location not provided
+  - **Concern** The abstract claims a range of functional features but provides no evidence that these features are implemented correctly, are usable, or produce accurate results. No screenshots, usage examples, performance metrics, or validation against known resistance mutations are presented. The natural-language query interface, in particular, is a complex feature that requires demonstration of its accuracy and reliability.
+  - **Why it matters** Without evidence of correct implementation and functional accuracy, the platform cannot be distinguished from a static data repository. The core value proposition, namely enabling exploratory analysis, depends on the reliability of the search, query, and visualisation tools. A platform with broken or inaccurate features would mislead users and undermine research conclusions.
+  - **Resolution test** Provide a demonstration of each feature using a concrete example, such as a known resistance mutation, with screenshots or a video walkthrough. Include quantitative validation, for example precision and recall of the natural-language query interface against a set of test queries, and confirm that BLAST results and structural predictions match expected outputs for a benchmark set of sequences and proteins.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Originality and scientific importance
+  - **Claim pointer** MARDy 2.0 is an updated platform replacing the original Mycology Antifungal Resistance Database and provides a platform to facilitate research into antifungal resistance evolution, surveillance, and mitigation strategies.
+  - **Evidence pointer** Abstract, Results section; location not provided
+  - **Concern** The abstract does not specify what is new in version 2.0 relative to the original MARDy, nor does it compare the platform with other existing antifungal resistance databases or general-purpose mutation databases. The claimed contribution to research facilitation is asserted without any demonstration of how the platform has been used or what new analyses it enables.
+  - **Why it matters** For a resource paper, the scientific importance rests on the novelty of the tool and its demonstrated utility. Without a clear statement of new features, improvements, or unique capabilities, the reader cannot assess whether this is a substantive advance or a minor update. The lack of comparison with existing tools also prevents assessment of the platform's relative value.
+  - **Resolution test** Clearly list the new features and improvements over the original MARDy, and provide a comparison table with at least two existing antifungal resistance or mutation databases, highlighting unique capabilities. Include at least one use case or example analysis that could not be performed with existing tools.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and data provenance
+  - **Claim pointer** MARDy 2.0 provides an interactive platform for exploring antifungal resistance data from the community resource FungAMR, and protein structures from UniProtKB or predicted structures using AlphaFold.
+  - **Evidence pointer** Abstract, Results section; location not provided
+  - **Concern** The abstract does not describe how data are curated, updated, or versioned. It is unclear whether the platform reflects the latest FungAMR release, how often data are synchronised, and whether the underlying data are accessible for download in a structured format. The provenance of protein structures, specifically which AlphaFold models are used and how they are selected, is also unspecified.
+  - **Why it matters** Reproducibility is a core requirement for any scientific resource. Users need to know the exact data version and source to interpret results and to cite appropriately. Without clear data provenance and versioning, the platform's outputs cannot be reliably reproduced or compared across studies.
+  - **Resolution test** Document the data pipeline, including the FungAMR version and release date, the UniProtKB release, and the AlphaFold model version and selection criteria. Provide a data dictionary and a downloadable file with version metadata. State the update frequency and the mechanism for tracking changes.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract, Results section
+  - **Evidence pointer** Abstract, Results section; location not provided
+  - **Issue** The abstract uses technical terms such as "natural-language query interface" and "mutation plot" without explaining what these features do or how a user would interact with them. A non-specialist reader may not understand the practical value of these tools.
+  - **Required correction** Add one sentence describing the intended user interaction for each major feature, for example "users can type a question in plain English, such as 'which mutations confer resistance to fluconazole', and the platform returns relevant mutations and associated structures."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Abstract, Availability section
+  - **Evidence pointer** Abstract, Availability section; location not provided
+  - **Issue** The abstract states the platform is "freely accessible" but does not specify whether registration is required, whether there are usage limits, or whether the underlying code is open source. This information is relevant for users planning to integrate the platform into their workflows.
+  - **Required correction** State whether registration is required, whether the code is available under an open-source license, and provide a link to the code repository if applicable.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interdisciplinary readership
+  - **Affected element** Abstract, Motivation section
+  - **Evidence pointer** Abstract, Motivation section; location not provided
+  - **Issue** The motivation mentions both clinical management and agricultural disease control, but the abstract does not explain how the platform addresses agricultural applications specifically. This may limit interest from the plant pathology community.
+  - **Required correction** Add a brief statement on how the platform supports agricultural research, for example by including crop pathogen resistance mutations or by allowing comparison of clinical and agricultural isolates.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The platform's functionality is unverified, the novelty relative to existing tools is unclear, and data provenance is undocumented. These issues must be resolved before the platform's value can be assessed.
+- **Assessment against Nature-style criteria** Originality: The abstract does not demonstrate a clear advance over the original MARDy or other existing resources, so originality is not established. Scientific importance: The topic is important, but the claimed contribution to research facilitation is not evidenced, so importance is asserted rather than demonstrated. Interdisciplinary readership: The platform could appeal to clinical, agricultural, and bioinformatics audiences, but the abstract does not tailor its description to these groups. Technical soundness: No evidence of correct implementation or validation is provided, so technical soundness is unassessable. Readability for nonspecialists: The abstract is concise but uses technical terms without explanation, limiting accessibility for non-specialist readers.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a potentially useful resource, but the lack of functional demonstration, novelty comparison, and data provenance documentation means the case for the platform's value is not made. The authors should provide the full manuscript with detailed feature descriptions, validation results, and data management documentation before a supportive recommendation can be considered.
+
+## Risk / unsupported claims
+- The claim that the platform "provides enhanced tools for data exploration and analysis" is unsupported because no evidence of tool functionality or performance is provided.
+- The claim that the platform "facilitates research into antifungal resistance evolution, surveillance, and mitigation strategies" is unsupported because no use cases, user studies, or examples of research outcomes are presented.
+- The claim that the platform "should be used and cited alongside" FungAMR is an assertion without justification, as the nature of the integration and the added value over FungAMR alone are not described.
+- The availability of the platform at the stated URL is not verifiable from the abstract alone, and no information on registration, usage limits, or code availability is provided.

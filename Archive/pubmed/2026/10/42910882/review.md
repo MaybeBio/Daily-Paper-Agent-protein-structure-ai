@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors propose a combined analytical framework that pairs conventional backbone-dihedral-angle analysis with a motif-level representation of peptide planes to study conformational restructuring in protein loops, using the Rho GTPase-binding domain of plexin-B1 (RBD) as a test system. They report that this combined approach yields complementary information on local versus collective conformational changes, provides motif-specific thermodynamic and ordering properties in natural orientational coordinates, and enables assessment of entropic contributions to free energy differences associated with RBD dimerization and RBD-Rac1 binding. Specific findings include canonical type-II-to-type-I beta-turn crankshaft flips of the K50-G51 peptide plane in RBD, more intricate noncanonical transitions in RBD-Rac1, deviations from canonical helicity with subsequent relaxation, a concerted multi-peptide-plane dynamical process in the RBD dimer, a versatile dynamic hinge, and through-space dynamical correlations.
+- **Visible evidence base** Abstract text only; no figures, tables, methods descriptions, or numerical results provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, methods section, simulation parameters, convergence criteria, error estimates, and any statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents an ambitious and potentially valuable conceptual framework for analyzing MD trajectories of protein loops by combining residue-level dihedral analysis with peptide-plane-level motif analysis. The scientific questions are relevant and the proposed approach could offer insights beyond conventional methods. However, the abstract alone provides insufficient evidence to evaluate the technical soundness of the methods, the robustness of the conclusions, or the quantitative validity of the reported thermodynamic and entropic assessments. Several claims are stated without supporting numerical data or methodological detail, and the relationship between the two analytical components is described at a conceptual level without demonstration of how they are integrated in practice. The manuscript may merit consideration if the full paper provides rigorous validation, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational biophysicists and molecular dynamics practitioners studying protein conformational dynamics, particularly those focused on loop restructuring, beta-turn transitions, and allosteric mechanisms. Researchers working on plexin signaling or Rho GTPase biology may also find the specific system relevant. Methodologists interested in novel order parameters or collective coordinate descriptions of protein dynamics could be attracted to the motif-level framework.
+- **Major strengths** The conceptual distinction between residue-local and peptide-plane-collective descriptions is clear and potentially powerful. The use of natural orientational coordinates for expressing thermodynamic and ordering properties is a principled idea. The application to multiple related systems (RBD, RBD dimer, RBD-Rac1) suggests an attempt at generalizability. The explicit attention to entropic contributions to binding and dimerization free energies addresses a nontrivial and often neglected aspect of such calculations.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The combined motif-level and conventional dihedral-angle analysis provides complementary information that reveals how local conformational changes connect with collective structural, energetic, entropic, and ordering organization.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not describe how the two analytical components are quantitatively integrated. No equations, definitions of the motif-level coordinates, or criteria for identifying correlated peptide-plane motions are given. Without this information, the reader cannot assess whether the claimed complementarity is rigorously established or merely asserted.
+  - **Why it matters** The central novelty of the work rests on the claim that the combined analysis yields information inaccessible from conventional analysis alone. If the integration is not formally defined and validated, the core contribution of the manuscript is unverifiable.
+  - **Resolution test** The full manuscript must provide explicit mathematical definitions of the motif-level representation, the algorithm for combining it with dihedral analysis, and validation against known or independently computed quantities.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Quantitative support
+  - **Claim pointer** Entropic contributions to the free energy differences associated with RBD dimerization and RBD-Rac1 binding are assessed.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No numerical values, error estimates, or comparison with total free energy differences are provided. The abstract states that entropic contributions are assessed but gives no indication of the magnitude, sign, or statistical significance of these contributions.
+  - **Why it matters** Entropy estimates from MD simulations are notoriously sensitive to methodology and convergence. Without quantitative reporting, the claim is unfalsifiable and the practical importance of the finding cannot be evaluated.
+  - **Resolution test** The full manuscript must report numerical entropy values with uncertainties, describe the method used (for example, quasiharmonic, Schlitter, or mutual information based), and demonstrate convergence with respect to simulation length.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** Distinct local conformational changes in protein loops can be realized through dynamically correlated motions of peptide planes, providing a common basis for analyzing several distinct mechanisms of conformational restructuring in RBD, RBD dimer, and RBD-Rac1.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims a common framework applies across three systems but provides no comparative data, no quantitative measures of correlation, and no demonstration that the identified mechanisms are indeed distinct rather than variations of the same process.
+  - **Why it matters** The generalizability claim is a key part of the paper's significance. Without comparative evidence, the reader cannot determine whether the framework genuinely unifies the three systems or whether the similarities are superficial.
+  - **Resolution test** The full manuscript must present per-system quantitative results, including correlation measures, order parameters, and free energy components, with explicit cross-system comparisons.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "horizontal line" appears in the abstract where a colon or other punctuation would be expected, suggesting a formatting artifact. The term "canonical type-II-to-type-I beta-turn crankshaft flips" is used without definition.
+  - **Required correction** Fix the formatting artifact and define "crankshaft flip" in the context of beta-turn transitions, or provide a reference to the original definition.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Simulation details
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No simulation length, force field, temperature, or system preparation details are given in the abstract. While such details typically appear in the methods section, their absence from the abstract limits the reader's ability to gauge the study's scope.
+  - **Required correction** Ensure the full manuscript provides complete simulation parameters and consider mentioning the simulation timescale in the abstract if space permits.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** "Versatile dynamic hinge"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "versatile dynamic hinge" is evocative but undefined. It is unclear whether this refers to a specific structural element, a statistical property of the trajectory, or a functional interpretation.
+  - **Required correction** Provide a precise operational definition of the dynamic hinge in the full manuscript and clarify whether it is identified by geometric criteria, dynamical criteria, or both.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (integration of analytical components not defined), R1-M2 (entropy assessment not quantified), R1-M3 (cross-system comparative evidence not provided)
+- **Assessment against Nature-style criteria** Originality: The motif-level peptide-plane framework appears conceptually novel relative to standard dihedral-based analyses, though the abstract does not fully distinguish it from existing collective-variable approaches. Scientific importance: The questions addressed, particularly the connection between local and collective dynamics and the role of entropy in binding, are of genuine interest to the biophysics community. Interdisciplinary readership: The work is likely to appeal primarily to computational biophysicists and physical chemists; the abstract does not make a strong case for broader appeal beyond these fields. Technical soundness: Cannot be assessed from the abstract alone; the absence of methodological detail and quantitative results is a significant limitation. Readability for nonspecialists: The abstract is reasonably clear at a conceptual level but uses specialized terminology without sufficient context, and the formatting artifact detracts from readability.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual framework is promising and the scientific questions are worthwhile, but the abstract does not provide sufficient methodological or quantitative detail to support the central claims. A supportive recommendation would require the full manuscript to rigorously define the analytical integration, report quantitative results with uncertainties, and demonstrate cross-system generalizability.
+
+## Risk / unsupported claims
+- The claim that motif-level analysis reveals information inaccessible from conventional dihedral analysis alone is unsupported without a formal comparison or demonstration of unique information content.
+- The claim that entropic contributions to free energy differences are assessed is unverifiable without numerical values and methodological description.
+- The claim of a "common basis" for analyzing distinct mechanisms across three systems is unsupported without comparative quantitative evidence.
+- The identification of a "versatile dynamic hinge" and "through-space dynamical correlations" is not evaluable without operational definitions and supporting data.
+- The characterization of transitions in RBD-Rac1 as "more intricate and noncanonical" is not supported by any comparative metric or trajectory analysis presented in the abstract.

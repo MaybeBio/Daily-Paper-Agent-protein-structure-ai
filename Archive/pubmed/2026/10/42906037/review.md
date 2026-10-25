@@ -1,0 +1,84 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors propose a framework, DIME, that constructs a continuous-time Markov chain (CTMC) from a static, Boltzmann-weighted Monte Carlo ensemble. The method clusters the ensemble into metastable states, builds a rate matrix satisfying detailed balance with rates derived from free energy barriers, and calibrates the absolute time scale using a short MD reference trajectory. Validation is claimed across six molecular systems, with inferred models reproducing MD-derived rate matrices, mean first-passage times, and implied time scales. The method is also applied to an enhanced sampling surface for alanine dipeptide.
+- **Visible evidence base** Abstract text only; no quantitative results, figures, tables, or methodological details are available
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, detailed methods, simulation parameters, error estimates, and the nature of the MD reference trajectories
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting idea with potentially broad applicability, but the evidence provided is insufficient to evaluate the validity, robustness, or novelty of the method. The claims are broad and quantitative, yet no data are shown. The symmetry-based test for AIB9 is a clever design, but its execution and results cannot be assessed. The manuscript may be of interest to computational chemists and biophysicists, but the current abstract alone does not establish the case.
+- **Who would be interested in the results, and why** Computational chemists, biophysicists, and method developers in molecular simulation would be interested. The approach addresses a known limitation of Monte Carlo sampling, namely the lack of temporal information, and could be valuable for systems where MD is prohibitively expensive but thermodynamic sampling is feasible. The potential to complement Markov state models is also of interest to practitioners in the field.
+- **Major strengths** The core idea is conceptually appealing and addresses a real gap in the field. The use of a symmetry-based system (AIB9) as a reference-free test is a thoughtful validation strategy. The range of test systems, from simple alkanes to a millisecond-scale protein, suggests an attempt at broad validation. The stated compatibility with enhanced sampling surfaces adds practical value.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The abstract claims that "in each case the inferred model reproduces MD-derived rate matrices, mean first-passage times, and implied time scales following a short calibration step."  
+  - **Evidence pointer** Abstract, validation section; location not provided  
+  - **Concern** No quantitative results are presented. The abstract states that the method reproduces MD-derived quantities across six systems, but provides no numbers, error bars, or comparisons. Without these, the claim is unverifiable.  
+  - **Why it matters** The central claim of the manuscript is that the method produces accurate kinetic models. If the agreement with MD is poor or only qualitative, the method's utility is substantially diminished. The reader cannot judge the quality of the agreement from the abstract alone.  
+  - **Resolution test** Provide quantitative comparisons for at least a subset of systems, including numerical values for rate matrices, mean first-passage times, and implied time scales, with associated uncertainties.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Methodological clarity  
+  - **Claim pointer** The method "builds a rate matrix over these states that satisfies detailed balance by design, with transition rates set by the free energy barriers separating the states, estimated directly from the free energy surface of the ensemble."  
+  - **Evidence pointer** Abstract, methods description; location not provided  
+  - **Concern** The abstract does not explain how free energy barriers are estimated from the ensemble, nor how the rate matrix is constructed to satisfy detailed balance. The relationship between barrier heights and transition rates is not specified, and the sensitivity of the results to these choices is unknown.  
+  - **Why it matters** The validity of the entire approach hinges on the accuracy of the barrier estimation and the rate matrix construction. If these are ad hoc or poorly justified, the inferred kinetics may be unreliable. The reader cannot assess the methodological soundness without details.  
+  - **Resolution test** Provide a detailed description of the barrier estimation procedure, the functional form of the rate constants, and a sensitivity analysis showing how results depend on key parameters.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Calibration validity  
+  - **Claim pointer** The method "calibrates the absolute time scale by matching the slowest relaxation mode to a short MD reference trajectory."  
+  - **Evidence pointer** Abstract, methods description; location not provided  
+  - **Concern** The abstract does not specify the length of the "short" MD reference trajectory, nor how the matching is performed. It is unclear whether the calibration is robust to the choice of reference trajectory and whether the slowest mode is well-resolved in such a short simulation.  
+  - **Why it matters** If the calibration is sensitive to the reference trajectory or if the slowest mode is not adequately sampled, the absolute time scale could be significantly wrong, undermining all kinetic predictions.  
+  - **Resolution test** Provide details on the length and nature of the reference trajectory, the matching procedure, and a test of calibration robustness across different reference trajectories.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Novelty assessment  
+  - **Claim pointer** The abstract states the method "serves as a complement to existing Markov state model approaches that build kinetic models from MD data."  
+  - **Evidence pointer** Abstract, final sentence; location not provided  
+  - **Concern** The abstract does not clearly differentiate the proposed method from existing approaches that infer kinetics from static ensembles, such as those based on transition state theory or kinetic Monte Carlo. The novelty is asserted but not demonstrated.  
+  - **Why it matters** If similar approaches exist, the manuscript's contribution may be incremental rather than novel. The reader cannot judge the novelty without a comparison to prior work.  
+  - **Resolution test** Provide a clear statement of what is new relative to prior methods, with citations and a discussion of differences in assumptions, implementation, or applicability.  
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Abstract, system description  
+  - **Evidence pointer** Abstract, validation section; location not provided  
+  - **Issue** The abstract lists six systems but does not specify the simulation conditions, force fields, or the nature of the MC sampling used for each.  
+  - **Required correction** Provide brief details on simulation protocols for each system, or refer to a methods section.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Terminology  
+  - **Affected element** Abstract, methods description  
+  - **Evidence pointer** Abstract, methods description; location not provided  
+  - **Issue** The term "metastable discrete states" is used without defining the clustering criterion or the number of states.  
+  - **Required correction** Define the clustering method and state the number of states used for each system.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Completeness  
+  - **Affected element** Abstract, validation section  
+  - **Evidence pointer** Abstract, validation section; location not provided  
+  - **Issue** The abstract mentions "implied time scales" but does not specify how these are computed or compared to MD.  
+  - **Required correction** Briefly describe the calculation of implied time scales and the metric used for comparison.  
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The lack of quantitative results, methodological details, and calibration robustness are critical gaps that prevent the case from being established.
+- **Assessment against Nature-style criteria**  
+  - **Originality** The idea of inferring kinetics from static ensembles is not entirely new, but the specific combination of clustering, barrier-based rate matrices, and time-scale calibration may have original elements. However, the abstract does not provide enough context to assess novelty fully.  
+  - **Scientific importance** If validated, the method could be important for systems where MD is infeasible. The potential impact is moderate to high, but this depends on the demonstrated accuracy and generality.  
+  - **Interdisciplinary readership** The topic is relevant to computational chemistry, biophysics, and chemical physics. The abstract is written in a way that is accessible to these audiences, but the lack of results limits its appeal.  
+  - **Technical soundness** Cannot be assessed from the abstract. The methodological description is too brief, and no validation data are shown.  
+  - **Readability for nonspecialists** The abstract is reasonably clear for a specialist audience, but the technical details are sparse. Nonspecialists may struggle to understand the significance without more context.  
+- **Recommendation posture** Currently not established from the provided evidence. The idea is promising, but the abstract alone does not provide sufficient evidence to support the claims. A full manuscript with quantitative results and methodological details is required for a fair assessment.
+
+## Risk / unsupported claims
+- The claim that the method "reproduces MD-derived rate matrices, mean first-passage times, and implied time scales" is unsupported without quantitative data.
+- The claim that the method "generates physically plausible kinetic trajectories" is unsupported without examples or validation.
+- The claim that the method "can equally well be applied to surfaces obtained from enhanced sampling simulations" is unsupported without demonstration details.
+- The claim that the method "serves as a complement to existing Markov state model approaches" is asserted but not substantiated with a comparison.

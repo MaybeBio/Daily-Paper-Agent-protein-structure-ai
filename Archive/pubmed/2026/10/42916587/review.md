@@ -1,0 +1,81 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report construction of a V314I mutant of caffeate O-methyltransferase with 95% increased catalytic efficiency toward 3,4-dihydroxybenzyl alcohol in Escherichia coli, supported by molecular simulations; introduction of ADH6 to alleviate growth inhibition from 3,4-dihydroxybenzaldehyde accumulation; enhancement of S-adenosylmethionine supply via genomic integration of luxS-mtn and methionine supplementation; and achievement of 6.21 g/L vanillyl alcohol titer in a 3 L fermenter from glycerol
+- **Visible evidence base** Abstract text only; no experimental details, strain information, plasmid constructs, fermentation profiles, analytical methods, or statistical analyses are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, supplementary methods, strain and plasmid tables, fermentation time-course data, analytical validation (e.g., HPLC or LC-MS chromatograms), molecular simulation parameters and validation, and replicate statistics
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible integrative strategy for vanillyl alcohol production in E. coli, combining protein engineering, pathway modification, and cofactor supply enhancement. The reported titer of 6.21 g/L is notable. However, the abstract alone provides insufficient detail to evaluate the rigor of the enzyme kinetics, the validity of the molecular simulation conclusions, the effectiveness of the ADH6 strategy, or the reproducibility of the fermentation result. The claims are directionally interesting but not fully assessable from the supplied material.
+- **Who would be interested in the results, and why** Researchers in metabolic engineering and synthetic biology focused on microbial production of aromatic natural products, particularly methylated compounds; industrial biotechnology groups interested in biobased production of pharmaceutical intermediates; and enzymologists studying O-methyltransferase engineering. The integrative approach combining active-site spatial engineering with pathway and cofactor engineering may be of general interest to the broader metabolic engineering community.
+- **Major strengths** The combination of structure-guided protein engineering with pathway-level interventions is a coherent and potentially generalizable strategy. The reported titer of 6.21 g/L from glycerol in a 3 L fermenter suggests practical scalability. The use of molecular simulations to rationalize the mutation effect adds mechanistic depth, if properly validated.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The V314I mutant showed a 95% increase in catalytic efficiency toward 3,4-dihydroxybenzyl alcohol
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract reports a 95% increase in catalytic efficiency but provides no kinetic parameters (kcat, Km, or kcat/Km values), no assay conditions, no replicate numbers, and no statistical analysis. It is unclear whether this increase was measured in vitro with purified enzyme or in vivo, and whether the comparison was made against wild-type under identical conditions.
+  - **Why it matters** The central claim of the paper rests on this improvement. Without kinetic data and statistical validation, the magnitude of the improvement cannot be assessed, and the conclusion that the mutation is beneficial for production cannot be verified.
+  - **Resolution test** Provide full kinetic characterization of wild-type and V314I mutant with at least three independent replicates, including substrate concentration ranges, assay buffer conditions, and error estimates. Report kcat, Km, and kcat/Km with confidence intervals.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** Molecular simulations revealed that the mutation narrows the active-site cavity, constraining the smaller substrate into a catalytically competent orientation
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states a mechanistic conclusion from molecular simulations but provides no details on the simulation method (e.g., molecular dynamics, docking, QM/MM), force field parameters, simulation length, system setup, or validation against experimental data. Without these details, the mechanistic interpretation cannot be evaluated.
+  - **Why it matters** The mechanistic explanation is a key intellectual contribution of the work. If the simulations are not robustly performed or validated, the proposed mechanism may be speculative and could mislead future engineering efforts.
+  - **Resolution test** Provide full simulation methods, including software, force field, equilibration protocol, simulation time, and convergence checks. Show that the simulation results are consistent with the kinetic data and, ideally, with structural or mutational validation.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** Introduction of ADH6 alleviated growth inhibition caused by 3,4-dihydroxybenzaldehyde accumulation
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims that ADH6 introduction alleviated growth inhibition but provides no growth curves, no toxicity data for 3,4-dihydroxybenzaldehyde, no evidence that ADH6 was functionally expressed, and no comparison of growth or production with and without ADH6 under otherwise identical conditions.
+  - **Why it matters** This is a key pathway engineering step. Without evidence that the intermediate is indeed toxic and that ADH6 reduces its accumulation or toxicity, the contribution of this modification to the final titer is unclear.
+  - **Resolution test** Provide growth curves with and without ADH6 in the presence of 3,4-dihydroxybenzaldehyde, quantification of intermediate accumulation, and demonstration that ADH6 expression reduces intermediate levels and restores growth.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** A VNA titer of 6.21 g/L was achieved in a 3 L fermenter from glycerol
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract reports a single titer value without fermentation conditions (media, temperature, pH control, induction strategy, feeding profile, duration), biological or technical replicates, or product yield and productivity values. It is unclear whether this is a peak titer, an endpoint titer, or a representative value.
+  - **Why it matters** The titer is the primary practical outcome of the work. Without context on reproducibility and fermentation performance, the significance of this value cannot be assessed.
+  - **Resolution test** Provide full fermentation details, time-course data, replicate fermentations, and calculate yield (g/g glycerol) and volumetric productivity. Report variability across replicates.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract uses abbreviations such as VNA, ADH6, and luxS-mtn without defining them at first use. Nonspecialist readers may struggle to follow the logic.
+  - **Required correction** Define all abbreviations at first use, including full gene names and product names.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Contextual framing
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that VNA is a high-value compound but does not quantify its market value or compare the achieved titer with prior work. The significance of 6.21 g/L relative to existing production routes is unclear.
+  - **Required correction** Add a brief comparison with previously reported VNA titers or yields and state the improvement in quantitative terms.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** S-adenosylmethionine enhancement
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that SAM supply was enhanced by luxS-mtn integration and methionine supplementation but provides no quantitative effect on SAM levels or on VNA titer attributable to this modification.
+  - **Required correction** Report SAM concentrations or flux measurements and show the incremental contribution of this modification to the final titer.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (kinetic validation), R1-M2 (simulation rigor), R1-M3 (ADH6 functional evidence), R1-M4 (fermentation reproducibility)
+- **Assessment against Nature-style criteria** Originality: The combination of active-site spatial engineering with pathway and cofactor engineering for a methylated aromatic product is moderately original, though each individual element has precedent. Scientific importance: The reported titer is potentially significant for industrial VNA production, but the broader impact on methylated aromatic natural products is not yet demonstrated. Interdisciplinary readership: The work bridges enzymology, metabolic engineering, and fermentation science, which could attract a broad readership if fully validated. Technical soundness: Not assessable from the abstract alone; the identified gaps in kinetics, simulation, and fermentation data must be resolved. Readability for nonspecialists: The abstract is concise but relies on undefined abbreviations and lacks contextual framing for a general audience.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract presents a plausible and potentially valuable strategy, but the absence of kinetic data, simulation details, functional validation of ADH6, and fermentation reproducibility prevents assessment of the core claims. Supportive if technical concerns are resolved in the full manuscript.
+
+## Risk / unsupported claims
+- The 95% increase in catalytic efficiency is unsupported without kinetic parameters and statistical analysis
+- The molecular simulation mechanism is unsupported without method details and validation
+- The ADH6-mediated alleviation of growth inhibition is unsupported without growth and toxicity data
+- The 6.21 g/L titer is unsupported without fermentation conditions, replicates, and time-course data
+- The claim of an integrative strategy for methylated aromatic natural products is a generalizable statement that is not supported by evidence beyond a single compound
+- The enhancement of SAM supply is claimed but its quantitative effect on titer is not reported

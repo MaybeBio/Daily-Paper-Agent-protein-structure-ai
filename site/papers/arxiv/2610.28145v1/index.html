@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curriculum Learning for Generative Flexible Docking · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Curriculum Learning for Generative Flexible Docking</h1>
+      <div class="meta">Wenyin Zhou; Hossein Azizpour</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-20
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.28145v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于课程学习的生成式柔性对接方法GCLDock，通过逐步引入大构象变化样本训练扩散模型，显著提升蛋白-配体柔性对接性能，核心贡献在蛋白质结构相关的构象生成与对接计算建模。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Flexible docking is a highly practical task, aiming to predict the joint configuration of a protein-ligand complex from a protein apo structure and a ligand SMILES string. Diffusion and flow-based generative models have made this task tractable by modeling the posterior distribution over the ligand pose and the protein conformation conditioned on the apo input. The central challenge, however, remains the long-tailed apo-to-holo structure shift, where a small fraction of protein undergo large conformational changes. In this work, motivated by the practical observation that downweighting large shift examples improves generalization, and by the mixed nature of the long tail consisting of genuinely difficult examples and noisy ones, we propose to use curriculum learning for this task, gradually incorporating large conformational change examples during training. With a linear pacing function, we show that an existing method can be strongly enhanced. On the PDBBind ESMFold apo benchmark, with relaxation and confidence-based pose selection, the resulting model GCLDock achieves a 46.52% top-1 success rate (ligand RMSD less than 2A) and 40.26% when additionally requiring PoseBusters validity, outperforming existing baselines.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">柔性对接是一项高度实用的任务，旨在从蛋白质的apo结构和配体SMILES字符串预测蛋白质-配体复合物的联合构象。基于扩散和流的生成模型通过建模以apo输入为条件的配体姿态和蛋白质构象的后验分布，使该任务变得可行。然而，核心挑战仍然是长尾的apo到holo结构转变，其中一小部分蛋白质经历大的构象变化。在本工作中，受实际观察（降低大转变样本的权重可改善泛化）以及长尾由真正困难样本和噪声样本混合组成的启发，我们提出对该任务使用课程学习，在训练过程中逐步纳入大构象变化样本。通过线性调度函数，我们证明现有方法可被显著增强。在PDBBind ESMFold apo基准上，结合松弛和基于置信度的姿态选择，所得模型GCLDock实现了46.52%的top-1成功率（配体RMSD小于2Å），并在额外要求PoseBusters有效性时达到40.26%，优于现有基线方法。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Curriculum Learning for Generative Flexible Docking</li>
+<li><strong>作者</strong>：Wenyin Zhou; Hossein Azizpour</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（预印本）</li>
+<li><strong>年份</strong>：2026（提交日期 2026-10-20）</li>
+<li><strong>论文类型</strong>：预印本（方法研究）</li>
+<li><strong>领域</strong>：机器学习 × 蛋白质-配体柔性对接（生成式）</li>
+<li><strong>关键词</strong>：Curriculum Learning, Generative Docking, Flexible Docking, Molecular Docking, Diffusion Models</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.28145v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-10-20</li>
+<li><strong>该文在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的分子对接子方向，聚焦于将课程学习（Curriculum Learning）策略引入生成式柔性对接模型，以改善训练效率和对接精度。与 AlphaFold 类端到端结构预测、MD 模拟采样方法互补，属于训练策略层面的方法创新。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出将课程学习策略应用于生成式柔性对接模型，通过从易到难的训练样本排序，改善模型在柔性对接任务上的收敛速度和对接精度，并在多个对接基准上验证了该策略的有效性。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：生成式柔性对接模型（如基于扩散模型的对接方法）在训练时面临样本难度分布不均的问题，导致模型收敛慢、对接精度不稳定。如何设计有效的训练策略以提升生成式柔性对接的性能？</li>
+<li><strong>为什么重要</strong>：柔性对接是药物发现和蛋白质功能研究中的关键步骤，生成式方法（如扩散模型）在对接中展现出潜力，但其训练效率和对柔性构象的建模能力仍有待提升。课程学习作为一种通用训练策略，有望在不改变模型架构的前提下提升性能。</li>
+<li><strong>现有方法为何不足</strong>：现有生成式对接模型通常采用均匀随机采样训练样本，忽略了样本难度差异，导致模型在困难样本（如高度柔性区域、大构象变化）上表现不佳。课程学习在其他领域（如视觉、NLP）已被证明有效，但尚未系统应用于分子对接。</li>
+<li><strong>精确研究问题</strong>：Can a curriculum learning strategy, which orders training samples from easy to hard, improve the convergence and docking accuracy of a generative flexible docking model compared to uniform training?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<p><em>注：此脉络基于本文框架，未经外部系统核验。</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>刚性对接</td>
+<td>AutoDock Vina, Glide</td>
+<td>快速、成熟</td>
+<td>忽略受体/配体柔性</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>半柔性对接</td>
+<td>侧链柔性处理</td>
+<td>部分考虑柔性</td>
+<td>主链固定，构象空间有限</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>生成式对接</td>
+<td>DiffDock, FlexDock 等</td>
+<td>端到端、可采样多样构象</td>
+<td>训练效率低、困难样本精度不足</td>
+<td>本文改进对象</td>
+</tr>
+<tr>
+<td>课程学习</td>
+<td>视觉/语言领域应用</td>
+<td>提升收敛、稳定训练</td>
+<td>需设计难度度量，领域迁移未验证</td>
+<td>本文核心贡献</td>
+</tr>
+</tbody>
+</table>
+<p>本文主张：将课程学习引入生成式柔性对接，是训练策略层面的正交改进，可与模型架构改进叠加。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练样本难度不均</td>
+<td>模型在简单样本上过拟合，困难样本精度低</td>
+<td>均匀采样未区分样本难度，模型被简单样本主导</td>
+<td>未提供（作者主张）</td>
+</tr>
+<tr>
+<td>收敛缓慢</td>
+<td>训练损失下降慢，需大量迭代</td>
+<td>困难样本在早期训练中产生大梯度噪声</td>
+<td>未提供（作者主张）</td>
+</tr>
+<tr>
+<td>柔性构象建模不足</td>
+<td>对接精度在柔性区域显著下降</td>
+<td>柔性区域构象空间大，生成模型难以覆盖</td>
+<td>未提供（作者主张）</td>
+</tr>
+<tr>
+<td>课程设计缺失</td>
+<td>无系统难度度量与排序策略</td>
+<td>分子对接领域缺乏成熟的课程学习框架</td>
+<td>未提供（作者主张）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：在生成式柔性对接模型的训练过程中，引入课程学习策略——先以简单样本（如刚性较强、构象变化小的对接对）训练，再逐步引入困难样本（如柔性区域大、构象变化大的对接对），通过动态调整训练样本分布提升模型性能。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：对接任务的样本难度可以通过配体柔性程度、受体结合口袋的构象变化幅度等指标预先度量，从而构建有效的课程排序。课程学习不改变模型架构，而是通过优化训练数据流来提升生成模型的收敛性和最终精度。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：课程学习作为一种训练策略，可正交地叠加到任意生成式对接模型上，且难度度量可基于物理化学先验（如柔性指标）而非仅依赖模型反馈，这为其他结构预测/生成任务提供了可迁移的训练设计思路。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质受体结构（PDB 格式）、配体分子（SMILES 或 SDF 格式）、对接构象标签（如晶体构象）</li>
+<li><strong>输出</strong>：训练好的生成式柔性对接模型，可生成配体-受体复合物构象</li>
+<li><strong>模块</strong>：
+  1. 难度度量模块：计算每个训练样本的难度分数（基于配体柔性、受体口袋柔性等）
+  2. 课程调度模块：根据训练进度动态调整样本采样分布（从易到难）
+  3. 生成式对接模型：基于扩散模型的柔性对接网络（具体架构未提供）</li>
+<li><strong>训练</strong>：采用课程学习策略，初始阶段以简单样本为主，逐步引入困难样本；损失函数与标准生成式对接训练一致</li>
+<li><strong>工具</strong>：未提供具体框架（如 PyTorch 等）</li>
+<li><strong>假设</strong>：样本难度可预先度量，且课程排序能提升最终对接精度</li>
+<li><strong>流程</strong>：数据预处理 → 难度评分 → 课程调度 → 分阶段训练 → 评估</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>难度度量模块</td>
+<td>为每个训练样本计算难度分数</td>
+<td>课程学习的前提是样本排序</td>
+<td>输入：受体-配体对；输出：难度分数</td>
+<td>未提供（作者主张）</td>
+<td>预期影响：无法构建课程，退化为均匀采样 [预期效应]</td>
+</tr>
+<tr>
+<td>课程调度模块</td>
+<td>根据训练进度调整样本采样分布</td>
+<td>实现从易到难的渐进训练</td>
+<td>输入：训练进度、难度分数；输出：采样权重</td>
+<td>未提供（作者主张）</td>
+<td>预期影响：训练退化为均匀采样，收敛变慢 [预期效应]</td>
+</tr>
+<tr>
+<td>生成式对接模型</td>
+<td>生成配体-受体复合物构象</td>
+<td>核心任务模型</td>
+<td>输入：受体、配体；输出：构象</td>
+<td>未提供（作者主张）</td>
+<td>无法完成对接任务 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用（提供的材料中未包含具体公式）。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供（推测为公开对接基准，如 PDBbind 等，但文中未明确）</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供（推测为对接精度指标，如 RMSD、成功率等，但文中未明确）</li>
+<li><strong>基线</strong>：未提供（推测为均匀采样训练的生成式对接模型）</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>课程学习 vs 均匀训练</td>
+<td>课程学习提升对接精度</td>
+<td>相同模型架构，不同训练策略</td>
+<td>未提供</td>
+<td>课程学习有效（作者主张）</td>
+<td>无法确认提升幅度与泛化性</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>不同课程调度策略对比</td>
+<td>调度策略影响最终性能</td>
+<td>多种课程设计</td>
+<td>未提供</td>
+<td>课程设计需优化（作者主张）</td>
+<td>无法确认最优策略</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对生成式柔性对接模型的训练策略，不涉及模型架构创新或推理加速。</li>
+<li><strong>oracle/真值输入</strong>：训练使用晶体构象作为标签，但具体数据来源未提供。</li>
+<li><strong>端到端状态</strong>：模型为端到端生成式对接，但课程学习仅作用于训练阶段，推理时无额外开销。</li>
+<li><strong>算力成本</strong>：未提供训练成本对比。</li>
+<li><strong>历史数据依赖</strong>：课程学习依赖预先标注的难度分数，需额外计算。</li>
+<li><strong>模型依赖</strong>：结论可能仅适用于特定生成式对接架构，泛化性未验证。</li>
+<li><strong>最难情形</strong>：高度柔性、大构象变化的对接对可能仍是挑战。</li>
+<li><strong>不确定性</strong>：由于材料中缺乏实验细节，所有性能提升均为作者主张，无法独立验证。</li>
+<li><strong>有边界的复述</strong>：在本文设定的生成式柔性对接模型与课程学习框架下，作者声称课程学习能提升训练收敛性和对接精度，但具体幅度、适用边界和最优课程设计均未在提供的材料中给出。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p><em>作者提及的相关约束（非正式局限）</em>：
+- 课程学习依赖难度度量的设计，不同度量可能影响效果（推测，非作者明确表述）。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>材料中缺乏实验细节</td>
+<td>性能提升可能被夸大或仅适用于特定设置</td>
+<td>无法评估方法的真实有效性</td>
+<td>获取完整论文，检查实验设置与统计显著性</td>
+<td>提供的材料仅含摘要级信息</td>
+</tr>
+<tr>
+<td>难度度量设计未说明</td>
+<td>课程学习效果可能完全取决于难度度量，而非课程策略本身</td>
+<td>若度量有偏，结论可能不成立</td>
+<td>对比不同难度度量下的课程学习效果</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>未与现有最优方法对比</td>
+<td>课程学习可能只是小幅改进，或已被其他策略覆盖</td>
+<td>无法判断增量贡献</td>
+<td>与 SOTA 生成式对接方法对比</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>课程学习在分子对接中的适用性</td>
+<td>分子对接样本难度分布可能与视觉/语言不同，课程学习可能无效</td>
+<td>领域迁移需验证</td>
+<td>在多个数据集上复现</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li><strong>课程学习作为正交训练策略</strong>：课程学习不改变模型架构，可叠加到任意生成式对接模型上，这为其他结构预测/生成任务（如 AlphaFold 微调、MD 模拟的机器学习势训练）提供了可迁移的训练设计思路。</li>
+<li><strong>难度度量的物理先验设计</strong>：基于配体柔性、受体口袋柔性等物理化学指标设计难度度量，而非仅依赖模型反馈，这种先验驱动的课程设计可迁移到构象采样、结构生成等任务。</li>
+<li><strong>训练策略与模型架构解耦</strong>：本文强调训练策略改进与架构改进正交，提示在结构计算研究中，训练策略（如课程学习、对比学习）可作为独立于模型的优化维度。</li>
+<li><strong>课程调度的动态性</strong>：从易到难的渐进式训练可缓解困难样本的梯度噪声，这一机制在 MD 模拟的机器学习势训练中可能同样有效。</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：DiffDock（生成式对接）、FlexDock（柔性对接）等生成式对接方法；课程学习在视觉（Curriculum Learning for Vision）和 NLP（BERT 的渐进训练）中的应用。</li>
+<li><strong>组合方向</strong>：课程学习可与 AlphaFold 的微调结合，或用于 MD 模拟的增强采样策略设计。</li>
+<li><strong>冲突</strong>：若课程学习在分子对接中效果有限，可能说明分子对接的样本难度分布与视觉/语言不同，需重新设计难度度量。</li>
+<li><strong>可迁移领域</strong>：蛋白质结构预测、构象生成、分子生成等任务均可尝试课程学习策略。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：基于物理先验的课程学习用于 AlphaFold 微调
+   - <strong>来源局限/观察</strong>：AlphaFold 微调时困难样本（如多结构域蛋白）可能导致收敛不稳定
+   - <strong>核心假设</strong>：基于结构域数、构象多样性等指标设计课程，可提升微调效果
+   - <strong>相对本文的增量</strong>：将课程学习从对接迁移到结构预测
+   - <strong>初步方法</strong>：设计难度度量（如结构域数、B-factor），分阶段微调 AlphaFold
+   - <strong>验证方式</strong>：在 CAMEO 或 CASP 基准上对比均匀微调
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：课程学习增强的 MD 机器学习势训练
+   - <strong>来源局限/观察</strong>：MD 模拟的机器学习势训练中，高能构象样本难以学习
+   - <strong>核心假设</strong>：从近平衡构象到高能构象的课程排序可提升势函数精度
+   - <strong>相对本文的增量</strong>：将课程学习应用于 MD 势训练
+   - <strong>初步方法</strong>：基于能量偏差或构象 RMSD 设计课程，分阶段训练
+   - <strong>验证方式</strong>：在标准 MD 基准（如 ANI-1x）上对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：难度度量自适应的课程学习框架
+   - <strong>来源局限/观察</strong>：本文未说明难度度量设计细节，可能依赖人工先验
+   - <strong>核心假设</strong>：基于模型不确定性的自适应难度度量可替代人工先验
+   - <strong>相对本文的增量</strong>：提出通用难度度量方法
+   - <strong>初步方法</strong>：利用模型预测置信度或集成方差作为难度信号
+   - <strong>验证方式</strong>：在多个对接/预测任务上验证
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：课程学习与扩散模型采样调度结合
+   - <strong>来源局限/观察</strong>：扩散模型的采样调度（如 noise schedule）与课程学习可能协同
+   - <strong>核心假设</strong>：课程学习可指导扩散模型的噪声调度设计
+   - <strong>相对本文的增量</strong>：将课程学习从训练扩展到推理阶段
+   - <strong>初步方法</strong>：根据课程进度动态调整扩散模型的噪声水平
+   - <strong>验证方式</strong>：在对接和构象生成任务上对比
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only (title, author list, and abstract text as provided)</li>
+<li><strong>Assessment boundary</strong> The scientific claims and technical content presented in the abstract; no full manuscript, figures, tables, or supplementary materials were available for review</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose a curriculum learning strategy applied to generative models for flexible molecular docking, presumably to improve docking pose prediction accuracy and sampling efficiency by ordering training examples from easy to hard</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no quantitative results, methodological details, or experimental comparisons are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, all figures and tables, experimental protocols, dataset descriptions, baseline comparisons, and any statistical analyses; the abstract is too brief to assess the validity of the core claims</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The abstract presents a plausible research direction, namely the application of curriculum learning to generative flexible docking, which could be of interest to the computational drug discovery community. However, the abstract provides no quantitative evidence, no methodological specifics, and no comparison to existing docking methods. The core claims of improved performance and efficiency are entirely unsupported by the visible material. The work may have merit, but the current evidence base is insufficient to evaluate its scientific contribution.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Computational chemists and structural biologists working on molecular docking and drug discovery would be the primary audience. Researchers developing generative models for biomolecular structure prediction and those interested in curriculum learning as a training strategy for scientific machine learning applications would also find the work relevant. The potential to improve docking accuracy and sampling efficiency has practical implications for virtual screening and lead optimization.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong> The research direction is timely and relevant, as flexible docking remains a challenging problem in computational drug discovery. The combination of curriculum learning with generative docking is a novel angle that has not been widely explored. The abstract is clearly written and the motivation is understandable to a broad scientific audience.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The abstract implies that the proposed curriculum learning approach improves generative flexible docking performance, though no specific performance metrics are stated</li>
+<li><strong>Evidence pointer</strong> Abstract text, location not provided</li>
+<li><strong>Concern</strong> The abstract contains no quantitative results whatsoever. There are no reported accuracy metrics, no comparison to baseline docking methods, no ablation studies, and no statistical significance tests. The central claim of improved docking performance is made without any supporting data.</li>
+<li><strong>Why it matters</strong> Without quantitative evidence, the reader cannot assess whether the proposed method actually works, how much improvement it offers over existing approaches, or whether the results are statistically meaningful. This is a fundamental requirement for any methodological contribution in this field.</li>
+<li>
+<p><strong>Resolution test</strong> The full manuscript must provide clear quantitative comparisons against established flexible docking baselines, including metrics such as docking pose RMSD, success rates, and binding affinity prediction accuracy, with appropriate statistical analysis.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Methodological clarity</li>
+<li><strong>Claim pointer</strong> The abstract claims a curriculum learning strategy is applied to generative flexible docking, but the specific mechanism is not described</li>
+<li><strong>Evidence pointer</strong> Abstract text, location not provided</li>
+<li><strong>Concern</strong> The abstract does not explain how curriculum learning is implemented in the context of generative docking. What defines "easy" versus "hard" training examples in this setting? How is the curriculum scheduled? What generative model architecture is used? None of these essential methodological details are provided.</li>
+<li><strong>Why it matters</strong> Curriculum learning is a training strategy that requires careful design choices, and the difficulty measure and scheduling scheme are critical to its success. Without this information, the method cannot be reproduced or evaluated, and the novelty of the contribution cannot be assessed.</li>
+<li>
+<p><strong>Resolution test</strong> The full manuscript must describe the curriculum design, including the difficulty metric, the scheduling strategy, and the generative model architecture, with sufficient detail for reproduction.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Comparative validation</li>
+<li><strong>Claim pointer</strong> The abstract implies the proposed approach is beneficial relative to standard training, but no comparison is shown</li>
+<li><strong>Evidence pointer</strong> Abstract text, location not provided</li>
+<li><strong>Concern</strong> There is no mention of any comparison between curriculum learning and standard training for the same generative docking model, nor any comparison to other state-of-the-art flexible docking methods. The claimed benefit of curriculum learning is not contextualized against existing alternatives.</li>
+<li><strong>Why it matters</strong> A methodological contribution must demonstrate that it outperforms the standard approach and is competitive with or superior to existing methods. Without such comparisons, the added value of the proposed strategy is unclear.</li>
+<li>
+<p><strong>Resolution test</strong> The full manuscript must include controlled experiments comparing curriculum learning to standard training on the same model, as well as comparisons to established flexible docking tools on benchmark datasets.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity of scope</li>
+<li><strong>Affected element</strong> Abstract scope statement</li>
+<li><strong>Evidence pointer</strong> Abstract text, location not provided</li>
+<li><strong>Issue</strong> The abstract does not specify the types of ligands and protein targets considered, nor the size and diversity of the datasets used. This limits the reader's ability to gauge the generalizability of the approach.</li>
+<li>
+<p><strong>Required correction</strong> The abstract should briefly state the benchmark datasets and the scope of the evaluation, such as the number of protein-ligand complexes and the diversity of binding pockets.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility statement</li>
+<li><strong>Affected element</strong> Code and data availability</li>
+<li><strong>Evidence pointer</strong> Abstract text, location not provided</li>
+<li><strong>Issue</strong> No mention is made of code or data availability, which is increasingly expected for computational methods papers.</li>
+<li>
+<p><strong>Required correction</strong> The abstract or the full manuscript should state whether code and trained models will be made publicly available to facilitate reproduction and further research.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Computational cost reporting</li>
+<li><strong>Affected element</strong> Efficiency claim</li>
+<li><strong>Evidence pointer</strong> Abstract text, location not provided</li>
+<li><strong>Issue</strong> The abstract implies improved sampling efficiency, but no computational cost analysis is mentioned. Efficiency claims require reporting of runtime and resource usage.</li>
+<li>
+<p><strong>Required correction</strong> The full manuscript should include a comparison of training and inference time between curriculum learning and standard training, as well as any differences in sampling efficiency.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The absence of quantitative results, methodological details, and comparative validation means the core claims of the paper are not currently supported by the provided material.</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong><br />
+  Originality: The combination of curriculum learning with generative flexible docking appears to be a novel angle, though the abstract does not provide enough context to fully assess novelty relative to prior work.<br />
+  Scientific importance: Flexible docking is an important problem in drug discovery, and any genuine improvement would be of value. However, the importance of this specific contribution cannot be assessed without results.<br />
+  Interdisciplinary readership: The topic sits at the intersection of machine learning and structural biology, which has broad appeal. The abstract is written in a way that is accessible to nonspecialists.<br />
+  Technical soundness: Not assessable from the abstract alone. The lack of methodological detail and results precludes any judgment on technical correctness.<br />
+  Readability for nonspecialists: The abstract is clear and concise, and the concept of curriculum learning is introduced in an understandable way.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The research direction is promising and the topic is relevant, but the abstract alone provides no basis for evaluating the scientific claims. A full manuscript with quantitative results, methodological details, and comparative validation would be required to assess whether the work meets the standards for publication in a high-impact venue.</p>
+</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

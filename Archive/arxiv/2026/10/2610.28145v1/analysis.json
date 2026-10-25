@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2610.28145v1",
+  "title": "Curriculum Learning for Generative Flexible Docking",
+  "authors": "Wenyin Zhou; Hossein Azizpour",
+  "journal": "",
+  "published_date": "2026-10-20",
+  "window": {
+    "start": "2026-10-18",
+    "end": "2026-10-24"
+  },
+  "score": 9,
+  "one_liner_zh": "该文提出基于课程学习的生成式柔性对接方法GCLDock，通过逐步引入大构象变化样本训练扩散模型，显著提升蛋白-配体柔性对接性能，核心贡献在蛋白质结构相关的构象生成与对接计算建模。",
+  "abstract": "Flexible docking is a highly practical task, aiming to predict the joint configuration of a protein-ligand complex from a protein apo structure and a ligand SMILES string. Diffusion and flow-based generative models have made this task tractable by modeling the posterior distribution over the ligand pose and the protein conformation conditioned on the apo input. The central challenge, however, remains the long-tailed apo-to-holo structure shift, where a small fraction of protein undergo large conformational changes. In this work, motivated by the practical observation that downweighting large shift examples improves generalization, and by the mixed nature of the long tail consisting of genuinely difficult examples and noisy ones, we propose to use curriculum learning for this task, gradually incorporating large conformational change examples during training. With a linear pacing function, we show that an existing method can be strongly enhanced. On the PDBBind ESMFold apo benchmark, with relaxation and confidence-based pose selection, the resulting model GCLDock achieves a 46.52% top-1 success rate (ligand RMSD less than 2A) and 40.26% when additionally requiring PoseBusters validity, outperforming existing baselines.",
+  "abstract_zh": "柔性对接是一项高度实用的任务，旨在从蛋白质的apo结构和配体SMILES字符串预测蛋白质-配体复合物的联合构象。基于扩散和流的生成模型通过建模以apo输入为条件的配体姿态和蛋白质构象的后验分布，使该任务变得可行。然而，核心挑战仍然是长尾的apo到holo结构转变，其中一小部分蛋白质经历大的构象变化。在本工作中，受实际观察（降低大转变样本的权重可改善泛化）以及长尾由真正困难样本和噪声样本混合组成的启发，我们提出对该任务使用课程学习，在训练过程中逐步纳入大构象变化样本。通过线性调度函数，我们证明现有方法可被显著增强。在PDBBind ESMFold apo基准上，结合松弛和基于置信度的姿态选择，所得模型GCLDock实现了46.52%的top-1成功率（配体RMSD小于2Å），并在额外要求PoseBusters有效性时达到40.26%，优于现有基线方法。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://arxiv.org/abs/2610.28145v1",
+  "source_url": "https://arxiv.org/abs/2610.28145v1",
+  "paper_page_path": "papers/arxiv/2610.28145v1/index.html"
+}

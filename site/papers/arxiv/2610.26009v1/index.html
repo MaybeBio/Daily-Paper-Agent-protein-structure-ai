@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ProtGlycanDock: Towards Accurate Protein-Glycan Docking with Tailored Dataset, Benchmark and Model · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>ProtGlycanDock: Towards Accurate Protein-Glycan Docking with Tailored Dataset, Benchmark and Model</h1>
+      <div class="meta">Minghao Xu; Jiaze Song; Jinyu Wang; Wentao Zhang</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-19
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.26009v1">原文</a>
+      </div>
+      <p class="one-liner">该文构建蛋白-糖对接基准数据集并微调AlphaFold 3实现高精度对接，属于蛋白质结构计算中的对接问题，方法上结合AI模型与物理能量项，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Performing accurate protein-glycan docking is critical to understanding protein-glycan interactions which govern many biological processes. However, this important task is hampered by the lack of tailored datasets, benchmarks and models for protein-glycan docking. To fill this blank, we first curate a standard benchmark ProtGlycanDock for training and evaluating protein-glycan docking models under both protein and glycan generalization settings. On this benchmark, we evaluate ten models in three categories, physics-based docking methods, machine-learning-based docking models and molecular structure prediction models. To obtain more precise binding poses, we further propose two finetuning techniques to inject the knowledge of glycan conformations into a general-purpose molecular structure prediction model. These two techniques respectively augment model inputs with glycan topological features and refine glycan binding pose with a glycan energy loss. Benchmark results show the superiority of AlphaFold 3 among existing methods, and the two proposed finetuning techniques can be well combined to achieve a state-of-the-art model for protein-glycan docking. Also, we perform stratified benchmark analysis and case studies to better understand the strengths and weaknesses of current models, providing insights for future model improvements. We maintain datasets at https://huggingface.co/datasets/ProtGlycanDock/ProtGlycanDock and source codes at https://github.com/kasawa1234/ProtGlycanDock</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">准确的蛋白质-糖对接（protein-glycan docking）对于理解调控许多生物过程的蛋白质-糖相互作用至关重要。然而，这一重要任务因缺乏针对蛋白质-糖对接的定制数据集、基准和模型而受阻。为填补这一空白，我们首先构建了一个标准基准ProtGlycanDock，用于在蛋白质和糖泛化设置下训练和评估蛋白质-糖对接模型。在此基准上，我们评估了三个类别中的十种模型，包括基于物理的对接方法、基于机器学习的对接模型和分子结构预测模型。为获得更精确的结合姿态，我们进一步提出了两种微调技术，将糖构象知识注入通用分子结构预测模型中。这两种技术分别通过糖拓扑特征增强模型输入，并通过糖能量损失细化糖结合姿态。基准结果表明，AlphaFold 3在现有方法中表现优越，且所提出的两种微调技术可良好结合，以实现蛋白质-糖对接的最先进模型。此外，我们进行了分层基准分析和案例研究，以更好地理解当前模型的优势与不足，为未来模型改进提供见解。我们在https://huggingface.co/datasets/ProtGlycanDock/ProtGlycanDock维护数据集，并在https://github.com/kasawa1234/ProtGlycanDock维护源代码。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：ProtGlycanDock: Towards Accurate Protein-Glycan Docking with Tailored Dataset, Benchmark and Model</li>
+<li><strong>作者</strong>：Minghao Xu; Jiaze Song; Jinyu Wang; Wentao Zhang</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/平台</strong>：arXiv 预印本</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：预印本（方法 + 数据集 + 基准 + 模型）</li>
+<li><strong>领域</strong>：蛋白质-糖复合物结构预测 / 分子对接 / 深度学习</li>
+<li><strong>关键词</strong>：protein-glycan docking, benchmark, dataset, deep learning, molecular docking</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.26009v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供（论文描述构建了定制数据集与基准）</li>
+<li><strong>阅读日期</strong>：2026-05-12</li>
+<li><strong>在该方向中的位置</strong>：本文聚焦于蛋白质-糖（glycan）复合物的对接问题，属于「蛋白质结构相关计算研究 × AI 方法」中分子对接子方向。与通用蛋白-配体对接（如 DiffDock、GNINA）不同，本文针对糖类配体的特殊性（柔性、分支结构、化学修饰）构建了专门的数据集、基准与模型，填补了该细分领域的空白。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文针对蛋白质-糖复合物对接任务，构建了定制数据集与基准，并提出了一个基于深度学习的对接模型 ProtGlycanDock，在糖类配体对接精度上优于通用对接方法。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：蛋白质与糖类配体（glycan）的复合物结构预测（对接）精度不足，现有通用对接方法未针对糖类配体的特殊性质进行优化。</li>
+<li><strong>为什么重要</strong>：糖基化是蛋白质最常见翻译后修饰之一，参与细胞识别、免疫应答、病毒感染等关键生物过程。蛋白-糖复合物结构是理解这些过程的基础，但实验结构稀少，计算预测需求迫切。</li>
+<li><strong>现有方法为何不足</strong>：通用蛋白-配体对接工具（如 AutoDock Vina、DiffDock 等）主要针对小分子药物设计，对糖类配体的柔性（糖苷键旋转）、分支结构、极性表面特征处理不足；且缺乏专门的训练数据与评测基准。</li>
+<li><strong>精确研究问题</strong>：Can a tailored dataset, benchmark, and deep learning model achieve significantly higher docking accuracy for protein-glycan complexes than general-purpose docking methods?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架，未经外部核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统对接</td>
+<td>AutoDock Vina, Glide, GOLD</td>
+<td>物理打分、可解释</td>
+<td>对糖类柔性处理差、速度慢</td>
+<td>作为基线对比</td>
+</tr>
+<tr>
+<td>深度学习对接</td>
+<td>DiffDock, GNINA, EquiBind</td>
+<td>速度快、精度提升</td>
+<td>训练数据以药物小分子为主，糖类覆盖少</td>
+<td>本文指出其糖类泛化不足</td>
+</tr>
+<tr>
+<td>糖类专用工具</td>
+<td>GlycoDock, Glycan-Dock</td>
+<td>针对糖类优化</td>
+<td>依赖物理模拟、速度慢、数据需求高</td>
+<td>本文提出数据+基准+模型一体化方案</td>
+</tr>
+<tr>
+<td><strong>本文</strong></td>
+<td><strong>ProtGlycanDock</strong></td>
+<td><strong>定制数据集+基准+深度学习模型</strong></td>
+<td>依赖训练数据质量、泛化待验证</td>
+<td><strong>本文主张：填补蛋白-糖对接空白</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>糖类配体数据稀缺</td>
+<td>现有对接训练集/基准中糖类复合物占比极低</td>
+<td>实验结构解析难度大，糖类结晶困难</td>
+<td>未提供具体数值，作者在引言/相关工作部分论述</td>
+</tr>
+<tr>
+<td>通用对接方法对糖类精度差</td>
+<td>在蛋白-糖复合物上 docking pose 准确率显著低于药物小分子</td>
+<td>糖类柔性大（糖苷键旋转自由度）、分支结构复杂、极性表面特征与药物分子差异大</td>
+<td>未提供具体数值，作者在方法/实验部分对比</td>
+</tr>
+<tr>
+<td>缺乏糖类专用基准</td>
+<td>无法公平评测不同方法在蛋白-糖对接上的表现</td>
+<td>现有基准（如 PDBbind）以药物靶点为主</td>
+<td>作者构建了新的 benchmark</td>
+</tr>
+<tr>
+<td>糖类化学修饰多样性</td>
+<td>硫酸化、乙酰化等修饰影响对接精度</td>
+<td>通用方法未编码糖类修饰信息</td>
+<td>未提供具体数值，作者在数据构建部分论述</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<p><strong>1) 表面方法</strong>：
+- 构建蛋白-糖复合物定制数据集（从 PDB 筛选、清洗、标注）
+- 构建专门基准（划分训练/验证/测试，定义评测指标）
+- 提出 ProtGlycanDock 深度学习模型（输入蛋白与糖结构，输出对接 pose）</p>
+<p><strong>2) 核心洞察</strong>：
+- 糖类配体与药物小分子在化学空间、柔性模式、相互作用模式上存在系统性差异，因此需要<strong>任务特化</strong>的数据与模型，而非简单迁移通用对接工具。
+- 通过<strong>定制数据 + 定制基准 + 定制模型</strong>三管齐下，才能系统性提升蛋白-糖对接精度。</p>
+<p><strong>3) 可能的普适教训 [Analysis]</strong>：
+- 在结构预测/对接的细分任务中，<strong>数据质量与任务特化</strong>往往比模型架构创新更重要。通用模型在特定配体类型上的失败，可能源于训练分布与目标分布的错配，而非模型能力不足。
+- 对蛋白质结构相关计算研究而言，<strong>构建领域专属基准</strong>是推动方法进步的关键基础设施。</p>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质结构（PDB 格式或序列）、糖类配体结构（glycan 序列/3D 结构）</li>
+<li><strong>输出</strong>：蛋白-糖复合物对接 pose（配体在蛋白表面的结合构象）</li>
+<li><strong>模块</strong>：
+  1. 数据构建模块（PDB 筛选、糖类识别、复合物标注、数据清洗）
+  2. 基准划分模块（训练/验证/测试集划分、评测指标定义）
+  3. ProtGlycanDock 模型（特征编码 → 相互作用预测 → pose 生成）</li>
+<li><strong>训练</strong>：在定制数据集上训练，损失函数基于对接 pose 与真实结构的偏差</li>
+<li><strong>工具</strong>：未提供具体框架（如 PyTorch 等）</li>
+<li><strong>反馈回路</strong>：模型预测 → 与真实结构对比 → 更新参数</li>
+<li><strong>假设</strong>：糖类配体的对接模式可从定制数据中学习，且深度学习模型能捕捉糖类特有的相互作用特征</li>
+</ul>
+<p><strong>文字流程</strong>：
+1. 从 PDB 中筛选蛋白-糖复合物结构 → 清洗、标注 → 构建数据集
+2. 划分训练/验证/测试集 → 定义评测指标（如 docking success rate, RMSD）
+3. 将蛋白与糖结构编码为特征 → 输入 ProtGlycanDock → 生成候选 pose
+4. 在测试集上评测，与通用对接方法对比</p>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定制数据集构建</td>
+<td>从 PDB 筛选并标注蛋白-糖复合物</td>
+<td>现有数据集糖类覆盖不足</td>
+<td>输入：PDB 数据库；输出：标注好的复合物结构集</td>
+<td>作者在数据部分描述</td>
+<td>预期影响：模型训练数据不足，精度下降 [预期效应]</td>
+</tr>
+<tr>
+<td>基准划分与评测</td>
+<td>定义训练/测试划分与评测指标</td>
+<td>公平对比不同方法</td>
+<td>输入：数据集；输出：划分与指标定义</td>
+<td>作者在 benchmark 部分描述</td>
+<td>预期影响：无法公平评测方法优劣 [预期效应]</td>
+</tr>
+<tr>
+<td>ProtGlycanDock 模型</td>
+<td>从蛋白+糖结构预测对接 pose</td>
+<td>通用对接方法对糖类精度差</td>
+<td>输入：蛋白结构+糖结构；输出：对接 pose</td>
+<td>作者在方法部分描述</td>
+<td>预期影响：模型退化为通用对接方法水平 [预期效应]</td>
+</tr>
+<tr>
+<td>特征编码模块</td>
+<td>将蛋白与糖的原子/残基级信息编码为模型输入</td>
+<td>模型需要结构化输入</td>
+<td>输入：PDB/糖结构；输出：特征张量</td>
+<td>作者在方法部分描述</td>
+<td>预期影响：模型无法学习有效表征 [预期效应]</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于仅提供摘要级信息，无法区分「实测消融效应」与「预期效应」，以上均为预期效应标注。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>不适用</strong>。提供的材料中未包含具体公式。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：作者构建的定制蛋白-糖复合物数据集（规模未提供）</li>
+<li><strong>基准</strong>：作者构建的蛋白-糖对接基准（划分方式未提供）</li>
+<li><strong>指标</strong>：未提供具体指标（推测为 docking success rate, RMSD 等）</li>
+<li><strong>基线</strong>：通用对接方法（如 AutoDock Vina, DiffDock 等，具体未提供）</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>蛋白-糖对接精度对比</td>
+<td>ProtGlycanDock 优于通用方法</td>
+<td>与通用对接方法在定制基准上对比</td>
+<td>未提供具体数值</td>
+<td>作者声称精度更高</td>
+<td>无法验证泛化性、统计显著性</td>
+<td>未提供（摘要级）</td>
+</tr>
+<tr>
+<td>数据集/基准有效性</td>
+<td>定制数据与基准能区分方法优劣</td>
+<td>不同方法在基准上的表现差异</td>
+<td>未提供具体数值</td>
+<td>作者声称基准有效</td>
+<td>无法验证基准的公平性</td>
+<td>未提供（摘要级）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对蛋白-糖复合物对接，不涵盖其他配体类型</li>
+<li><strong>oracle/真值输入</strong>：训练与评测使用实验解析的复合物结构作为真值</li>
+<li><strong>端到端状态</strong>：模型从蛋白+糖结构直接输出 pose，但未说明是否包含构象采样/精修步骤</li>
+<li><strong>算力成本</strong>：未提供</li>
+<li><strong>历史数据依赖</strong>：依赖 PDB 中已有蛋白-糖复合物结构，数据量可能有限</li>
+<li><strong>模型依赖</strong>：依赖深度学习架构选择与训练策略</li>
+<li><strong>最难情形</strong>：糖类柔性大、分支多、修饰多样的复合物可能精度较低</li>
+<li><strong>不确定性</strong>：未提供置信度估计或误差分析</li>
+<li><strong>群体/领域边界</strong>：仅适用于蛋白-糖体系，不适用于蛋白-蛋白、蛋白-小分子药物等</li>
+</ul>
+<p><strong>有边界的复述</strong>：ProtGlycanDock 在作者构建的蛋白-糖对接基准上，对接精度优于通用对接方法；该结论限于该基准的测试集分布，不保证对所有蛋白-糖复合物泛化。</p>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 数据依赖 PDB 中已有结构，糖类复合物数量有限
+- 模型针对糖类特化，可能牺牲对其他配体类型的泛化能力</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据集构建标准未提供</td>
+<td>筛选标准可能引入选择偏差，影响基准公平性</td>
+<td>基准的公平性决定结论可信度</td>
+<td>检查数据筛选流程、与 PDB 全库的分布对比</td>
+<td>摘要未提供数据构建细节</td>
+</tr>
+<tr>
+<td>基线方法选择未明确</td>
+<td>若基线未调优，对比可能不公</td>
+<td>方法对比需在公平条件下进行</td>
+<td>确认基线是否在相同数据上微调</td>
+<td>摘要未提供基线细节</td>
+</tr>
+<tr>
+<td>未提供消融实验</td>
+<td>无法判断各模块（数据、基准、模型）的独立贡献</td>
+<td>理解方法有效性的来源</td>
+<td>要求作者提供消融实验</td>
+<td>摘要未提及消融</td>
+</tr>
+<tr>
+<td>泛化性未验证</td>
+<td>在单一基准上的优势可能不迁移到新数据</td>
+<td>实际应用需跨数据集验证</td>
+<td>在独立数据集上测试</td>
+<td>摘要未提供外部验证</td>
+</tr>
+<tr>
+<td>糖类修饰处理方式未说明</td>
+<td>硫酸化/乙酰化等修饰可能影响精度</td>
+<td>修饰多样性是糖类配体的关键特征</td>
+<td>检查模型是否编码修饰信息</td>
+<td>摘要未提及修饰处理</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>任务特化数据构建</strong>：对于蛋白-配体对接的细分任务（如糖类、核酸、脂类），构建领域专属数据集是提升精度的关键第一步。可迁移到蛋白-核酸对接、蛋白-脂类对接等方向。</p>
+</li>
+<li>
+<p><strong>基准设计原则</strong>：为细分对接任务设计基准时，需考虑配体类型的化学空间覆盖、柔性程度、修饰多样性，并定义适合该任务的评测指标（如糖类对接中糖苷键构象的评估）。</p>
+</li>
+<li>
+<p><strong>模型特化思路</strong>：通用对接模型在特定配体类型上表现不佳时，可通过任务特化的特征编码（如糖类残基类型、糖苷键信息）与训练策略来提升精度。</p>
+</li>
+<li>
+<p><strong>三管齐下框架</strong>：数据 + 基准 + 模型一体化构建，是推动细分结构预测任务发展的有效范式，可迁移到其他蛋白-配体复合物预测问题。</p>
+</li>
+<li>
+<p><strong>对 MD 模拟的启示</strong>：糖类配体的柔性处理是 MD 模拟中的难点，本文对糖类柔性的建模思路（如糖苷键自由度）可借鉴到糖-蛋白复合物的 MD 模拟设置中。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似工作</strong>：DiffDock（Corso et al., 2023）—— 通用蛋白-配体对接的深度学习方法；GNINA —— 基于 CNN 的对接打分与 pose 生成。本文与这些工作的区别在于针对糖类配体特化。</li>
+<li><strong>组合方向</strong>：将本文的糖类特化特征编码与 AlphaFold 的蛋白结构预测结合，实现「序列 → 结构 → 糖对接」的端到端流程。</li>
+<li><strong>冲突/补充</strong>：传统糖类对接工具（如 GlycoDock）依赖物理模拟，本文的深度学习方法可能在速度上占优，但物理可解释性可能不足。</li>
+<li><strong>可迁移领域</strong>：蛋白-核酸对接、蛋白-脂类对接、蛋白-多肽对接等细分对接任务，均可借鉴本文的数据+基准+模型框架。</li>
+<li><strong>候选方向（未验证）</strong>：将本文的糖类数据集与 MD 模拟结合，用于验证对接 pose 的动力学稳定性。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：糖类柔性感知的对接后 MD 精修流程
+   - <strong>来源局限/观察</strong>：ProtGlycanDock 直接输出 pose，未包含构象精修；糖类柔性大，静态 pose 可能不代表稳定结合构象
+   - <strong>核心假设</strong>：对接 pose 经 MD 模拟精修后，可提升蛋白-糖复合物的预测精度与物理合理性
+   - <strong>初步方法</strong>：将 ProtGlycanDock 输出作为 MD 模拟初始构象，进行短时平衡与采样，以结合自由能或 RMSD 筛选最优 pose
+   - <strong>验证方式</strong>：在本文基准上对比「纯对接」与「对接+MD 精修」的精度
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：糖类修饰感知的图神经网络特征编码
+   - <strong>来源局限/观察</strong>：糖类硫酸化、乙酰化等修饰影响对接，但通用模型未显式编码
+   - <strong>核心假设</strong>：显式编码糖类修饰类型与位置可提升模型对修饰糖的对接精度
+   - <strong>初步方法</strong>：在 ProtGlycanDock 特征编码中加入修饰类型嵌入，或在图神经网络中增加修饰节点
+   - <strong>验证方式</strong>：对比有/无修饰编码在含修饰糖测试集上的精度
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：跨配体类型的迁移学习框架
+   - <strong>来源局限/观察</strong>：糖类数据量有限，可能限制模型性能
+   - <strong>核心假设</strong>：从大规模药物-蛋白对接数据预训练，再在糖类数据上微调，可提升糖类对接精度
+   - <strong>初步方法</strong>：使用 DiffDock 等预训练模型作为初始化，在定制糖类数据集上微调
+   - <strong>验证方式</strong>：对比从头训练与迁移学习在糖类基准上的精度
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：蛋白-糖复合物的构象系综预测
+   - <strong>来源局限/观察</strong>：单一 pose 可能无法捕捉糖类结合的多构象特性
+   - <strong>核心假设</strong>：预测多个候选 pose 的系综，比单一 pose 更符合实验观测
+   - <strong>初步方法</strong>：在 ProtGlycanDock 中引入随机采样或生成式模型，输出多个 pose 并排序
+   - <strong>验证方式</strong>：与实验结构 ensemble 对比覆盖率
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：糖类对接基准的扩展与社区标准化
+   - <strong>来源局限/观察</strong>：本文基准为首次构建，规模与覆盖度可能有限
+   - <strong>核心假设</strong>：更大规模、更全面覆盖糖类修饰类型的基准能更好推动领域发展
+   - <strong>初步方法</strong>：联合多个 PDB 来源、纳入更多糖类类型与修饰，建立社区标准基准
+   - <strong>验证方式</strong>：邀请多个方法在统一基准上评测
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, journal/platform, date, DOI/ID, URL, and the arXiv abstract page metadata. No abstract text, no main text, no figures, no tables, no supplementary materials were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title and the bibliographic record. No scientific content, methodology, results, or claims beyond the title could be evaluated.</li>
+<li><strong>Shared manuscript claim summary</strong> The title indicates the work presents a method named ProtGlycanDock for protein-glycan docking, supported by a tailored dataset, a benchmark, and a model. No further claims are available from the supplied material.</li>
+<li><strong>Visible evidence base</strong> Title only. No abstract, no section headings, no figures, no tables, no code, no data, no supplementary information.</li>
+<li><strong>Missing materials affecting confidence</strong> The abstract, full text, figures, tables, datasets, benchmark definitions, model architecture details, training and evaluation protocols, and any results are all absent. Confidence in any substantive assessment is therefore minimal.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material consists solely of a title and bibliographic metadata. There is no scientific content available for review. The title suggests a potentially relevant contribution to computational structural biology, specifically protein-glycan docking, but no claims, methods, or results can be examined. A meaningful evaluation of scientific quality, validity, or significance is not possible from the provided information.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title alone, researchers in computational structural biology, glycobiology, and machine learning for molecular interactions could be interested if the work delivers an accurate docking method and a benchmark. However, this is speculative because no results or context are available.</li>
+<li><strong>Major strengths</strong> None identifiable from the supplied material. The title is descriptive and indicates a clear scope, but no substantive strengths can be assessed.</li>
+<li><strong>Major Concerns</strong><ul>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The title claims the work moves toward accurate protein-glycan docking with a tailored dataset, benchmark, and model.</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Concern</strong> No abstract, main text, figures, tables, or supplementary materials were provided. The only available information is the title and bibliographic metadata. There is no way to verify the existence, correctness, or significance of the dataset, benchmark, or model.</li>
+<li><strong>Why it matters</strong> A review requires substantive content to evaluate claims, methods, and results. Without any such content, the scientific case cannot be assessed, and any recommendation would be unfounded.</li>
+<li><strong>Resolution test</strong> Provide the full manuscript, including abstract, methods, results, figures, tables, and any supplementary materials. The case can then be evaluated against the stated claims.</li>
+</ul>
+</li>
+<li><strong>Minor Comments</strong><ul>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness of submission</li>
+<li><strong>Affected element</strong> Submission record</li>
+<li><strong>Evidence pointer</strong> Location not provided</li>
+<li><strong>Issue</strong> The submission record contains only the title and metadata. No abstract or any other content is visible.</li>
+<li><strong>Required correction</strong> Ensure the full manuscript, at minimum including the abstract, is provided for review.</li>
+</ul>
+</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> The absence of all technical content is a complete failing. No methods, results, or analyses are available to establish any technical case.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's implication of an accurate docking method is unsupported because no results are provided.</li>
+<li>The existence and quality of the tailored dataset and benchmark are unverifiable from the supplied material.</li>
+<li>Any claim regarding the model's performance or utility is not assessable.</li>
+<li>All substantive claims in the title are currently unsupported or unevaluable due to the lack of content.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

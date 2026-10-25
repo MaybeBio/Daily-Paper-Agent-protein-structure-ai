@@ -1,0 +1,104 @@
+## Review setup
+- **Input scope** Full manuscript text (abstract, introduction, methods, results, discussion, limitations, outlook, conclusions) as provided.
+- **Assessment boundary** Scientific and technical evaluation of the STELLAR workflow, its validation, and the claims made. No assessment of code availability, reproducibility beyond described methods, or comparison with unpublished tools.
+- **Shared manuscript claim summary** The authors present STELLAR, a fragment-based docking workflow for highly flexible long-chain biopolymers (peptides 10–21 residues, polysaccharides 6–10 monosaccharides). They claim accurate pose prediction (RMSD < 5 Å) on a benchmark of 257 protein–peptide and 8 protein–polysaccharide complexes, linear computational scaling, minimal GPU usage, and a novel interpretable machine learning-derived ranking formula for the p38α–HePTP KIM peptide system.
+- **Visible evidence base** Text descriptions of methods and results; references to Figures 1–4, S1–S19; Tables S1–S8. No actual figures, tables, or supplementary data were provided in the submitted material.
+- **Missing materials affecting confidence** All figures, tables, and supplementary files are referenced but not included. This prevents verification of quantitative results, statistical analyses, and visual data. The specific benchmark composition, selection criteria, and per-case results are not fully described.
+
+## Reviewer
+- **Overall assessment** The manuscript addresses a real and important gap in docking methodology: handling highly flexible long-chain biopolymers. The fragment-based approach with explicit filtering, recombination, and short MD relaxation is conceptually sound and the reported performance is promising. However, the current evidence base is incomplete, with all figures and tables absent, making it impossible to verify the central claims. The machine learning analysis is presented as a proof-of-concept but lacks external validation. The writing is generally clear but contains some redundancy and overstatement. The work has potential, but the case is not fully established from the provided material.
+- **Who would be interested in the results, and why** Computational chemists and structural biologists working on peptide–protein interactions, drug discovery researchers targeting protein–protein interfaces, and developers of docking software. The workflow's claimed efficiency and scalability would also interest groups performing high-throughput virtual screening of biopolymers.
+- **Major strengths**
+  1. Addresses a genuine methodological gap: docking of long, flexible biopolymers is poorly handled by existing tools.
+  2. The fragment-based strategy with explicit geometric filtering is a pragmatic and potentially generalizable approach.
+  3. The inclusion of a short MD relaxation step to correct assembly artifacts is a sensible addition.
+  4. The attempt to derive an interpretable ranking metric, rather than relying on black-box scoring, is commendable.
+  5. The workflow is designed for CPU-based execution, which broadens accessibility.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "STELLAR achieved RMSD values below 5 Å in validation experiments using benchmark complexes from Propedia and the Protein Data Bank (PDB)."
+  - **Evidence pointer** Results section; Figures 1–4; Tables S2–S5 (location not provided)
+  - **Concern** The central validation claim is that STELLAR achieves RMSD < 5 Å for the benchmark complexes. However, no figures or tables are provided in the submitted material. The text describes distributions and percentages but does not allow the reader to assess the quality of predictions, the distribution of RMSD values, or the specific cases that failed. The claim of "100% success" for minimum RMSD and ">95%" for all cases is stated without supporting data.
+  - **Why it matters** The entire utility of the workflow rests on its ability to predict near-native poses. Without the actual data, the claim cannot be evaluated. The reader cannot determine whether the success is uniform across peptide lengths, whether certain sequence features are problematic, or whether the 5 Å threshold is appropriate.
+  - **Resolution test** Provide the actual RMSD distributions for all 257 peptide and 8 polysaccharide cases, including per-case values, success rates at multiple thresholds, and a breakdown by peptide length. Include the referenced figures and tables.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Comparative validation
+  - **Claim pointer** "It offers a faster and more efficient alternative to several state-of-the-art tools across a range of peptide lengths."
+  - **Evidence pointer** Results section; Tables S7 and S8 (location not provided)
+  - **Concern** The claim of superiority over existing tools is made, but no direct comparison is presented in the text. The authors state that "direct quantitative comparison is difficult" and instead compare to literature-reported values. This is insufficient to support the claim of being "faster and more efficient." The runtime analysis is only presented for STELLAR itself, not against other tools under identical conditions.
+  - **Why it matters** A new docking workflow must demonstrate clear advantages over existing methods to justify adoption. Without a head-to-head comparison on the same benchmark with the same hardware, the claimed advantage is unsubstantiated.
+  - **Resolution test** Provide a direct comparison with at least one or two established docking tools (e.g., standard GNINA whole-peptide docking, HADDOCK, or similar) on the same benchmark complexes, reporting both accuracy (RMSD) and runtime. Alternatively, clearly frame the work as a proof-of-concept without claims of superiority.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability of ranking model
+  - **Claim pointer** "A novel scoring function derived from the STELLAR pipeline was successfully applied to the p38α–HePTP KIM peptide complex. This approach showed a strong correlation between the RMSD of the predicted poses and the values obtained from the proposed scoring function."
+  - **Evidence pointer** Results section; Figures 8–10, S8–S19; Table S1 (location not provided)
+  - **Concern** The machine learning-derived ranking formula is trained and tested on a single protein–peptide complex (p38α–HePTP). The authors acknowledge this is a proof-of-concept, but the claim that it "can be extended to other systems" is speculative. The formula includes interaction terms specific to this system's features, and there is no evidence of transferability.
+  - **Why it matters** A ranking metric that works for one system may not generalize. The value of the approach depends on whether the identified features are system-specific or broadly applicable. Without cross-validation on multiple complexes, the utility of the ranking formula is unclear.
+  - **Resolution test** Apply the same methodology to at least 2–3 additional protein–peptide complexes with known structures, and report the correlation between the derived score and RMSD. If transferability is not yet established, temper the claims accordingly.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Assembly rate and selection bias
+  - **Claim pointer** "The revised pipeline successfully recovered 450 of 500 previously unsuccessful cases, corresponding to a 90% recovery rate."
+  - **Evidence pointer** Results section; Table S6 (location not provided)
+  - **Concern** The initial assembly rate is described as "relatively low" but the exact figure is not stated. The recovery of 450/500 previously failed cases is presented as a success, but it is unclear whether these recovered cases were then included in the final benchmark of 257 successful cases. If the benchmark only includes cases that assembled successfully, there is a potential selection bias that could inflate the reported accuracy.
+  - **Why it matters** If the benchmark excludes cases that failed to assemble, the reported RMSD values may not be representative of the workflow's performance on arbitrary inputs. The reader needs to know the total number of attempted cases and the success rate to assess practical utility.
+  - **Resolution test** Report the total number of cases attempted, the number that assembled successfully, and the number that failed at each stage. Clarify whether the 257 reported cases are a subset of a larger attempted set, and discuss the implications of assembly failures on practical applicability.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Methods, Fragment Docking section
+  - **Evidence pointer** "An intermediate exhaustiveness value of 64 (default: 8) was employed"
+  - **Issue** The rationale for choosing exhaustiveness 64 is not explained. It is unclear whether this value was optimized, chosen based on prior experience, or determined by computational constraints.
+  - **Required correction** Provide a brief justification for the chosen exhaustiveness value, or state that it was selected based on preliminary testing.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Methods, Filtering and Joining section
+  - **Evidence pointer** "An overlap threshold of 350 Å3 is applied by default"
+  - **Issue** The overlap threshold is stated, but the sensitivity of the results to this parameter is not discussed. It is unclear whether the results are robust to reasonable variations in this threshold.
+  - **Required correction** Add a brief sensitivity analysis or discussion of how the threshold affects the number of valid combinations and final RMSD values.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical reporting
+  - **Affected element** Results, Poses Obtained section
+  - **Evidence pointer** "The median RMSD value was 3.47 Å, and the mean was 3.49 Å"
+  - **Issue** Only mean and median are reported. No confidence intervals, standard deviations, or measures of dispersion are provided for the RMSD distributions.
+  - **Required correction** Report standard deviations or interquartile ranges for the RMSD distributions, and consider providing confidence intervals for the mean values.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Throughout
+  - **Evidence pointer** "very short molecular dynamics simulation"
+  - **Issue** The term "very short" is vague. The total simulation time (26 ps) is stated later, but the phrase is imprecise.
+  - **Required correction** Replace "very short" with the specific duration (26 ps) or a more precise descriptor.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Methods, Benchmark Design section
+  - **Evidence pointer** "Complexes were retrieved from the Propedia database"
+  - **Issue** The criteria for selecting the 257 peptide complexes from the larger Propedia database are not described. It is unclear whether the selection was random, stratified, or biased toward certain peptide lengths or sequence features.
+  - **Required correction** Describe the selection criteria for the benchmark complexes, including any filtering based on peptide length, sequence diversity, or structural quality.
+  - **Concern ID** R1-m6
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Results, Runtime Performance section
+  - **Evidence pointer** "STELLAR enables extensive parallelization of its workflow"
+  - **Issue** The parallelization strategy is described qualitatively. It is unclear whether the parallelization is across fragments, across complexes, or across both.
+  - **Required correction** Clarify the parallelization strategy and how it scales with the number of available cores or nodes.
+
+## Risk / unsupported claims
+- The claim of "100% success" for minimum RMSD < 5 Å across the benchmark is unverifiable without the actual data.
+- The claim of being "faster and more efficient" than existing tools is unsupported without direct comparative benchmarks.
+- The generalizability of the machine learning-derived ranking formula to other systems is speculative, as it is derived from a single complex.
+- The statement that STELLAR "addresses a critical limitation in current docking methodologies" is an overstatement given the limited validation presented.
+- The claim that the workflow "scales linearly in computational time" is only supported by a single figure reference (Figure 4) that was not provided.
+- The assertion that STELLAR "avoids reliance on generative approximations" is presented as an advantage, but the manuscript does not provide a systematic comparison against generative approaches to substantiate this.

@@ -1,0 +1,68 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full text, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report that chemical cross-linking mass spectrometry (XL-MS) of the ApoE3/TREM2 ectodomain (TREM2ECD) complex, combined with integrative protein-protein docking, supports a binding model in which a helix-loop-helix motif in the ApoE3 hinge and C-terminal region forms a transient pocket around the hydrophobic tip of the TREM2 ectodomain. They further claim that de novo-designed miniprotein binders reproduce this binding mode, establishing a framework for miniprotein-based TREM2 agonists.
+- **Visible evidence base** Abstract text only; no experimental details, cross-link tables, docking scores, design statistics, or validation data are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, XL-MS raw data and analysis parameters, docking methodology and scoring, miniprotein design and experimental validation details, and any statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting structural hypothesis for the ApoE/TREM2 interaction, supported by two complementary approaches. However, the level of evidence described is insufficient to evaluate the robustness of the proposed binding model or the claim that miniprotein binders recapitulate the native interaction. The abstract lacks quantitative details, validation metrics, and experimental confirmation of the functional consequences of the proposed binding mode. The work may be of interest to the Alzheimer's disease and neuroimmunology communities, but the current evidence base does not establish the central claims.
+- **Who would be interested in the results, and why** Researchers studying Alzheimer's disease genetics and microglial biology, particularly those focused on TREM2 signaling and APOE-related mechanisms. Structural biologists interested in protein-protein interactions involving lipoprotein receptors and immune receptors. Drug discovery groups developing TREM2-targeted therapies or miniprotein-based biologics for neurodegenerative and neuroinflammatory conditions.
+- **Major strengths** The combination of XL-MS with integrative docking is a technically appropriate approach for studying transient or challenging protein complexes. The use of de novo-designed miniprotein binders as an orthogonal validation strategy is conceptually strong. The potential translational relevance for TREM2 agonist development is clear and clinically motivated.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "Our data support a binding model in which a helix-loop-helix motif within the ApoE3 hinge and C-terminal region forms a transient binding pocket that wraps around the hydrophobic tip of the TREM2 ectodomain."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that XL-MS data "support" the proposed binding model, but no information is provided on the number, type, or quality of cross-links identified, the confidence of the docking solutions, or how the model was selected among alternatives. The term "transient binding pocket" implies conformational dynamics that are not demonstrated by the described static cross-linking and docking approach.
+  - **Why it matters** Without quantitative cross-link data and docking metrics, the reader cannot assess whether the proposed model is uniquely supported or merely one of many possible solutions. The claim of a "transient" pocket requires dynamic or ensemble evidence that is not described.
+  - **Resolution test** Provide the number of unique interprotein cross-links, their sequence coverage, the docking score distribution, and a comparison of the proposed model against alternative docking solutions. If "transient" is claimed, provide supporting evidence such as molecular dynamics simulations or conformational ensemble analysis.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Validation adequacy
+  - **Claim pointer** "This model is further supported by de novo-designed miniprotein binders, which show the same binding mode as identified by our XL-MS experiment."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims that miniprotein binders "show the same binding mode" as the XL-MS-derived model, but no details are given on how the miniproteins were designed, how their binding was experimentally characterized, or what structural or biochemical evidence demonstrates that they bind TREM2 in the same manner as ApoE3. The term "same binding mode" requires structural comparison that is not described.
+  - **Why it matters** The miniprotein validation is presented as key supporting evidence for the proposed model. Without experimental details such as binding affinity measurements, mutagenesis data, or co-crystal structures, the claim of identical binding mode is unsupported and potentially misleading.
+  - **Resolution test** Provide experimental characterization of miniprotein binding to TREM2, including affinity measurements, binding site mapping via mutagenesis or competition assays, and ideally a co-structure or HDX-MS comparison demonstrating the same binding interface as the ApoE3 model.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Functional relevance
+  - **Claim pointer** "These results establish a robust framework for developing miniprotein-based TREM2 agonists."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not report any functional data demonstrating that the proposed binding mode leads to TREM2 activation. No cell-based assays, signaling readouts, or in vivo experiments are described that would support the claim that the identified interaction motif or the designed miniproteins act as TREM2 agonists.
+  - **Why it matters** The translational claim of "a robust framework for developing miniprotein-based TREM2 agonists" requires at least preliminary evidence that the miniproteins can activate TREM2 signaling. Without functional validation, the framework remains purely structural and the agonist claim is premature.
+  - **Resolution test** Include cell-based TREM2 activation assays (e.g., NFAT reporter, Syk phosphorylation, or phagocytosis assays) demonstrating that the designed miniproteins induce TREM2-dependent signaling.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "transient binding pocket" is used without definition or contextual explanation. It is unclear whether this refers to a conformationally dynamic interface, a low-affinity interaction, or a computational prediction.
+  - **Required correction** Define the term explicitly and provide the evidence basis for describing the pocket as "transient."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Experimental context
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions "ApoE3/TREM2ECD complex" but does not specify the source or purity of the proteins, the cross-linking reagent used, or the stoichiometry of the complex studied.
+  - **Required correction** Add brief methodological context in the abstract or ensure the full text provides these details prominently.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Literature context
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that "several studies have shown that TREM2 signaling is activated through direct interaction between TREM2 and ApoE" but does not acknowledge conflicting reports or the ongoing debate regarding the direct versus indirect nature of this interaction.
+  - **Required correction** Provide a balanced view of the literature in the introduction or discussion, acknowledging studies that question the direct interaction model.
+
+## Risk / unsupported claims
+- The proposed binding model (helix-loop-helix motif wrapping around the TREM2 hydrophobic tip) is not evaluable from the abstract alone; no cross-link data or docking metrics are provided.
+- The claim that miniprotein binders "show the same binding mode" as the XL-MS model is unsupported without structural or biochemical comparison data.
+- The claim of "a robust framework for developing miniprotein-based TREM2 agonists" is unsupported without functional activation data.
+- The statement that the binding pocket is "transient" is not supported by the described methodology.
+- The abstract's implication that the XL-MS and docking data uniquely determine the binding mode cannot be assessed without alternative model comparisons.

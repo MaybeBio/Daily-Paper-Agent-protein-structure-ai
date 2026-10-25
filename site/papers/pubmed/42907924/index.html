@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The evolutionary processes of bacterial aromatic polyketide ketosynthases. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">6</span>
+    <div>
+      <h1>The evolutionary processes of bacterial aromatic polyketide ketosynthases.</h1>
+      <div class="meta">Wang, Xiaoyu; Gao, Qiandi; Ge, Liangjun; Qin, Zhiwei</div>
+      <div class="meta muted">
+        
+        <span class="journal">Genome biology</span>
+        · 2026-10-22
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42907924/">原文</a>
+      </div>
+      <p class="one-liner">该文利用蛋白语言模型算法MAAPE分析细菌芳香聚酮合酶KS/CLF的进化过程，虽以蛋白质序列/结构进化为对象并涉及AI方法，但核心是进化生物学问题而非蛋白质结构计算建模，对结构设计仅有间接启发。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">BACKGROUND: The biosynthesis of bacterial aromatic polyketides (type II polyketides, T2PKs) employs a single set of catalysts (ketosynthases, KSs or KS(alpha), with chain length factors, CLFs or KS(beta)) and iteratively assembles a carbon backbone with precise chain length control. Considering the increasing number of T2PKs discovered in laboratory settings, it is necessary to understand the evolutionary trajectories of KSs and CLFs. RESULTS: We employ our recently developed algorithm, MAAPE, based on large protein language model to glean insights into the evolution process of KSs and CLFs. Our findings indicate the evolutionary history of KS and CLF domains from bacterial T2PKSs and identify a shared ancestral cluster (Cluster A), supporting a common origin. Despite structural homology, KSs and CLFs followed distinct evolutionary paths, shaped by coevolution and early horizontal gene transfer. CONCLUSIONS: Understanding the evolutionary lineage of these enzymes will illuminate the natural optimization processes of their functions and present opportunities for the rational design of novel polyketides with enhanced efficacy.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">背景：细菌芳香族聚酮化合物（II型聚酮化合物，T2PKs）的生物合成利用一套单一的催化剂（酮合酶，KSs或KS(α)，以及链长因子，CLFs或KS(β)），并迭代组装碳骨架，实现精确的链长控制。鉴于实验室环境中发现的T2PKs数量不断增加，理解KSs和CLFs的进化轨迹十分必要。结果：我们采用最近开发的基于大型蛋白质语言模型的算法MAAPE，深入探究KSs和CLFs的进化过程。我们的发现揭示了细菌T2PKSs中KS和CLF结构域的进化历史，并识别出一个共享的祖先簇（Cluster A），支持其共同起源。尽管存在结构同源性，KSs和CLFs遵循了不同的进化路径，这些路径受共进化和早期水平基因转移的影响。结论：理解这些酶的进化谱系将阐明其功能的自然优化过程，并为合理设计具有增强功效的新型聚酮化合物提供机会。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>: The evolutionary processes of bacterial aromatic polyketide ketosynthases</li>
+<li><strong>作者</strong>: Wang, Xiaoyu; Gao, Qiandi; Ge, Liangjun; Qin, Zhiwei</li>
+<li><strong>单位</strong>: 未提供（致谢提及北京师范大学跨学科智能超级计算中心）</li>
+<li><strong>期刊/平台</strong>: Genome Biology</li>
+<li><strong>年份</strong>: 2026-10-22（在线发表）</li>
+<li><strong>论文类型</strong>: 研究论文（Research Article）</li>
+<li><strong>领域</strong>: 计算进化生物学 × 蛋白质语言模型 × 聚酮合酶（PKS）进化</li>
+<li><strong>关键词</strong>: Type II polyketides (T2PKs); Ketosynthase (KS); Chain length factor (CLF); Protein language model (PLM); ESM-2; MAAPE; Horizontal gene transfer (HGT); Coevolution</li>
+<li><strong>DOI/arXiv</strong>: 10.1186/s13059-026-04215-7</li>
+<li><strong>代码</strong>: 未提供</li>
+<li><strong>数据</strong>: 166对KS-CLF序列及对应产物结构（补充表S1-S9）</li>
+<li><strong>阅读日期</strong>: 2026-05-12</li>
+<li><strong>在课题方向中的位置</strong>: 本文属于「蛋白质结构相关计算研究 × AI方法」交叉方向，具体为利用蛋白质语言模型（ESM-2）嵌入表征来推断蛋白质进化关系，而非直接预测结构。其核心方法MAAPE（Modular Assembly Analysis of Protein Embeddings）将PLM嵌入与KNN网络、方向性图分析结合，用于重建KS/CLF的进化轨迹，并识别水平基因转移（HGT）与共进化信号。该工作为结构预测/构象采样之外的「序列-进化-功能」关系研究提供了新范式，其方法学可迁移至其他蛋白质家族的进化分析。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文利用基于ESM-2蛋白质语言模型嵌入的MAAPE算法，对166对细菌芳香族聚酮合酶KS/CLF序列进行进化轨迹重建，发现二者存在共同祖先簇（Cluster A），并揭示非氧化型T2PKs的CLF通过水平基因转移获得KS样功能，支持KS/CLF共起源后分化、共进化的假说。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>: 细菌II型聚酮合酶（T2PKS）中，酮合酶（KS/KSα）与链长因子（CLF/KSβ）的进化关系如何？它们是否源自共同祖先？进化过程中经历了怎样的分化、共进化和水平基因转移事件？</li>
+<li><strong>为什么重要</strong>: T2PKS负责合成大量具有药用和工业价值的芳香族聚酮化合物，其链长控制机制由KS/CLF异源二聚体决定。理解KS/CLF的进化历史有助于揭示天然产物多样性的产生机制，并为理性设计新型聚酮合酶提供进化指导。</li>
+<li><strong>现有方法为何不足</strong>: 传统系统发育分析（基于多序列比对）在KS/CLF序列一致性低于30%的情况下难以解析深层进化关系，且无法捕捉结构保守但序列高度分化的同源蛋白之间的进化信号。已有进化假说（共同祖先→基因复制→功能分化）缺乏严格验证。</li>
+<li><strong>精确研究问题</strong>: Can protein language model embeddings, analyzed via the MAAPE algorithm, reveal the evolutionary trajectories and ancestral relationships of structurally homologous but sequence-divergent KS and CLF domains?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：此脉络为「经外部核验」——基于文中引用及领域常识）</em></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经典系统发育分析</td>
+<td>多序列比对（CLUSTALW）+ 最大似然树（IQ-TREE）</td>
+<td>成熟、可解释</td>
+<td>对序列一致性&lt;30%的同源蛋白分辨率低；无法捕捉结构保守信息</td>
+<td>作为基线对照（Fig. 1a）</td>
+</tr>
+<tr>
+<td>结构比较</td>
+<td>AlphaFold结构预测 + RMSD比对</td>
+<td>揭示结构同源性</td>
+<td>无法推断进化方向与时间顺序</td>
+<td>用于验证KS/CLF结构同源（Fig. 1c）</td>
+</tr>
+<tr>
+<td>蛋白质语言模型嵌入</td>
+<td>ESM-2等PLM预训练 + 嵌入向量</td>
+<td>捕捉序列深层进化信号；无需比对</td>
+<td>嵌入空间缺乏进化方向性；难以直接解释</td>
+<td>本文核心输入</td>
+</tr>
+<tr>
+<td>图网络进化推断</td>
+<td>KNN图 + 方向性分析（MAAPE）</td>
+<td>从嵌入中提取进化方向与模块组装信号</td>
+<td>新方法，需验证</td>
+<td>本文核心方法</td>
+</tr>
+</tbody>
+</table>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序列比对方法无法解析深层同源关系</td>
+<td>KS/CLF序列一致性&lt;30%，传统系统发育树无法显示KS→CLF的进化方向</td>
+<td>序列高度分化后，比对信号消失；结构保守但序列可变</td>
+<td>Results节：Fig. 1a中KS/CLF形成两个截然分开的簇，无中间过渡</td>
+</tr>
+<tr>
+<td>传统系统发育无法检测水平基因转移</td>
+<td>基因树与物种树不一致时难以判断HGT事件</td>
+<td>系统发育树仅反映垂直遗传信号</td>
+<td>Results节：Fig. 4中HGT信号通过嵌入网络权重检测</td>
+</tr>
+<tr>
+<td>结构同源但功能分化的蛋白难以用序列方法比较</td>
+<td>KS与CLF结构RMSD&lt;1，但功能不同（催化vs链长控制）</td>
+<td>序列差异大，功能分化后正选择压力不同</td>
+<td>Results节：Fig. 1c结构比对RMSD=0.993</td>
+</tr>
+<tr>
+<td>PLM嵌入缺乏进化方向性</td>
+<td>嵌入空间仅反映相似性，不包含时间/方向信息</td>
+<td>嵌入训练目标为掩码语言建模，非进化建模</td>
+<td>Methods节：MAAPE需额外构建方向性图</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>: 使用ESM-2（3B参数）提取166对KS/CLF序列的嵌入向量，经PCA降维至220维（保留&gt;60%方差），再通过MAAPE构建KNN图并计算方向性边权重，最终重建进化网络。同时用DeepFRI预测蛋白功能（GO terms）以验证进化分组的生物学意义。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>: 
+   - PLM嵌入空间中的距离关系可以反映进化亲缘关系，即使序列一致性极低（&lt;30%），嵌入仍能捕捉结构同源信号。
+   - 通过分析嵌入向量的局部模块（滑动窗口切分），可以检测基因组装/水平转移事件——即不同长度的序列片段在嵌入空间中与不同参考簇的相似性，揭示模块级进化历史。
+   - 非氧化型T2PKs的CLF（CLF_4簇）嵌入到KS簇中，且功能预测显示其具有KS样乙酰转移酶活性，表明这些CLF可能通过HGT从KS获得功能，而非独立进化。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]: 
+   - PLM嵌入不仅是结构/功能预测的特征，还可作为进化推断的「软比对」工具，尤其适用于序列高度分化的同源蛋白家族。
+   - 进化方向性可以通过嵌入空间中节点间的非对称关系（KNN图边方向）来推断，这为「嵌入空间是否具有进化时间轴」这一开放问题提供了实证案例。
+   - 模块级嵌入分析（MAAPE的滑动窗口）可能比全序列嵌入更敏感地检测重组/水平转移事件，这一思路可迁移至其他多结构域蛋白的进化分析。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>: 166对KS/CLF氨基酸序列（来自已知T2PKS基因簇，产物结构已知）+ 1条金黄色葡萄球菌FabF序列（外群）</li>
+<li><strong>输出</strong>: 
+  1. 进化网络图（KNN图+方向性边）
+  2. 祖先簇（Cluster A）鉴定
+  3. 各KS/CLF簇的进化轨迹与HGT事件
+  4. 功能预测（DeepFRI GO terms）</li>
+<li><strong>模块</strong>:
+  1. <strong>数据整理</strong>: 从基因簇数据库筛选166对KS/CLF，去冗余（&gt;90%同一性），对应产物结构已知
+  2. <strong>传统系统发育</strong>: CLUSTALW比对 + IQ-TREE建树（LG+F+R8模型），作为基线
+  3. <strong>结构预测</strong>: AlphaFold3预测KS/CLF结构，PyMOL比对计算RMSD
+  4. <strong>嵌入提取</strong>: ESM-2（ESM2_t36_3B_UR50D）提取每序列的嵌入向量（最终层，2560维）
+  5. <strong>降维</strong>: PCA降至220维（保留&gt;60%方差）
+  6. <strong>MAAPE分析</strong>: <ul>
+<li>KNN图构建（欧氏距离，IndexFlatL2精确索引）</li>
+<li>滑动窗口切分嵌入为可变长度片段</li>
+<li>计算片段间相似性与包含关系，构建共现矩阵</li>
+<li>基于共现矩阵计算方向性边权重
+  7. <strong>功能预测</strong>: DeepFRI预测GO分子功能，构建功能向量，计算余弦相似性</li>
+</ul>
+</li>
+<li><strong>流程</strong>: 序列 → ESM-2嵌入 → PCA降维 → KNN图 → MAAPE方向性分析 → 进化网络 → 结合DeepFRI功能验证 → 生物学解释</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESM-2嵌入提取</td>
+<td>将序列映射为高维向量</td>
+<td>捕捉序列深层进化信号，超越比对方法</td>
+<td>输入：氨基酸序列；输出：2560维嵌入</td>
+<td>Methods节；Fig. 1b中嵌入可视化与系统发育一致</td>
+<td>预期影响：失去对低序列一致性同源蛋白的识别能力</td>
+</tr>
+<tr>
+<td>PCA降维</td>
+<td>220维，保留&gt;60%方差</td>
+<td>降低计算复杂度，去噪</td>
+<td>输入：2560维嵌入；输出：220维向量</td>
+<td>Methods节</td>
+<td>预期影响：可能丢失微弱进化信号</td>
+</tr>
+<tr>
+<td>KNN图构建</td>
+<td>基于欧氏距离构建相似性网络</td>
+<td>定义嵌入空间中的局部邻域关系</td>
+<td>输入：降维嵌入；输出：KNN图</td>
+<td>Methods节；Fig. 2a</td>
+<td>预期影响：无法定义进化邻域</td>
+</tr>
+<tr>
+<td>MAAPE滑动窗口</td>
+<td>切分嵌入为可变片段，检测模块级相似性</td>
+<td>识别基因组装/水平转移的模块信号</td>
+<td>输入：全序列嵌入；输出：片段共现矩阵</td>
+<td>Methods节；Fig. 4</td>
+<td>预期影响：无法检测模块级HGT事件</td>
+</tr>
+<tr>
+<td>方向性边计算</td>
+<td>基于共现矩阵推断进化方向</td>
+<td>区分祖先-后代关系，识别HGT方向</td>
+<td>输入：共现矩阵；输出：有向图</td>
+<td>Methods节；Fig. 2a, 4</td>
+<td>预期影响：失去进化方向信息</td>
+</tr>
+<tr>
+<td>DeepFRI功能预测</td>
+<td>预测GO分子功能</td>
+<td>验证进化分组的生物学意义</td>
+<td>输入：序列；输出：GO terms概率向量</td>
+<td>Results节；Fig. 3</td>
+<td>预期影响：无法解释非氧化型CLF的KS样功能</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><em>（本文为计算流程型方法，无显式数学公式。以下为方法中隐含的关键计算步骤）</em></p>
+<ol>
+<li>
+<p><strong>PCA降维</strong>: 嵌入矩阵 X ∈ R^(n×2560)，保留前220个主成分，使累计解释方差 &gt; 60%。
+   - 符号: X = 嵌入矩阵; P = 投影矩阵; Z = XP ∈ R^(n×220)</p>
+</li>
+<li>
+<p><strong>KNN图</strong>: 对每个节点i，基于欧氏距离 d(i,j) = ||z_i - z_j||₂ 选取k个最近邻，构建无向图G。</p>
+</li>
+<li>
+<p><strong>共现矩阵</strong>: 对滑动窗口片段s，定义共现矩阵C，其中 C_ij = 片段i与片段j在嵌入空间中的相似度（欧氏距离的倒数或高斯核）。</p>
+</li>
+<li>
+<p><strong>方向性边权重</strong>: 对节点对(i,j)，比较双向边权重差异，若 |w_ij - w_ji| / max(w_ij, w_ji) &gt; 0.5，则判定为单向边（方向指向权重更大者），否则为双向边。</p>
+</li>
+<li>
+<p><strong>余弦相似度（功能比较）</strong>: sim(f_i, f_j) = (f_i · f_j) / (||f_i|| ||f_j||)，其中f为DeepFRI输出的GO概率向量。</p>
+</li>
+</ol>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>: 166对KS/CLF序列（来自T2PKS基因簇，产物结构已知），1条S. aureus FabF外群序列</li>
+<li><strong>规模</strong>: 166对（332条序列）+ 1条外群</li>
+<li><strong>基线</strong>: 传统系统发育树（IQ-TREE, LG+F+R8模型）</li>
+<li><strong>指标</strong>: </li>
+<li>嵌入空间聚类与系统发育树的一致性（定性比较）</li>
+<li>距离比（KS/CLF到祖先簇的距离比）</li>
+<li>DeepFRI功能预测的GO term概率</li>
+<li><strong>评测协议</strong>: 无独立测试集；通过生物学已知事实（产物结构、已有进化假说）进行验证</li>
+<li><strong>骨干/仪器</strong>: ESM-2（3B参数）、AlphaFold3、DeepFRI、IQ-TREE、CLUSTALW、PyMOL、Faiss</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系统发育树构建</td>
+<td>KS/CLF形成独立进化分支</td>
+<td>166对序列 + FabF外群，IQ-TREE</td>
+<td>KS/CLF形成两个截然分开的簇</td>
+<td>序列水平上KS/CLF高度分化</td>
+<td>无法推断共同祖先关系</td>
+<td>Results节；Fig. 1a</td>
+</tr>
+<tr>
+<td>ESM-2嵌入可视化</td>
+<td>PLM嵌入能区分KS/CLF</td>
+<td>UMAP降维至3D，颜色按KS/CLF分组</td>
+<td>嵌入空间中KS/CLF形成分离簇，但Cluster A混合</td>
+<td>嵌入捕捉到序列分化信号</td>
+<td>嵌入本身不显示进化方向</td>
+<td>Results节；Fig. 1b</td>
+</tr>
+<tr>
+<td>结构比对</td>
+<td>KS/CLF结构同源</td>
+<td>AlphaFold3预测 + PyMOL比对</td>
+<td>RMSD=0.993（actinorhodin KS/CLF）</td>
+<td>结构高度保守</td>
+<td>结构相似不等于进化同源</td>
+<td>Results节；Fig. 1c</td>
+</tr>
+<tr>
+<td>MAAPE网络分析</td>
+<td>Cluster A为祖先簇</td>
+<td>KNN图 + 方向性边权重</td>
+<td>Cluster A含22个节点（14 KS + 7 CLF + FabF），位于网络中心</td>
+<td>KS/CLF共起源假说得到支持</td>
+<td>无法确定分化时间</td>
+<td>Results节；Fig. 2a</td>
+</tr>
+<tr>
+<td>距离比分析</td>
+<td>KS/CLF共进化</td>
+<td>计算各节点到祖先簇的距离比</td>
+<td>大多数KS/CLF对距离比≈1（均值1.0082）</td>
+<td>支持共进化假说</td>
+<td>仅6对显著偏离，样本量小</td>
+<td>Results节；Fig. 2d</td>
+</tr>
+<tr>
+<td>DeepFRI功能预测</td>
+<td>非氧化型CLF具有KS样功能</td>
+<td>166对序列的GO预测</td>
+<td>CLF_4簇功能与KS相似（乙酰转移酶活性）</td>
+<td>非氧化型CLF可能通过HGT获得KS功能</td>
+<td>功能预测不等于实验验证</td>
+<td>Results节；Fig. 3</td>
+</tr>
+<tr>
+<td>HGT信号分析</td>
+<td>HGT是早期进化主要驱动力</td>
+<td>共现矩阵方向性分析</td>
+<td>早期节点间单向边权重高（深红色）</td>
+<td>HGT在早期进化中频繁</td>
+<td>无法量化HGT频率</td>
+<td>Results节；Fig. 4</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>: 仅针对细菌芳香族聚酮合酶（T2PKS）的KS/CLF家族，共166对已知产物结构的序列。不涵盖其他类型PKS（如I型、III型）或其他细菌蛋白家族。</li>
+<li><strong>oracle/真值输入</strong>: 序列对应的产物化学结构（用于分组验证）；FabF作为外群；已知的T2PKS分类（基于链长：8/9/10/12/13）。</li>
+<li><strong>端到端状态</strong>: 非端到端。方法依赖ESM-2预训练嵌入（不重新训练），MAAPE为无监督分析流程，DeepFRI为独立预训练模型。整个流程无监督学习，无端到端训练。</li>
+<li><strong>算力成本</strong>: 未提供具体数值。ESM-2 3B参数推理 + PCA + KNN图构建，对166条序列计算量可接受。</li>
+<li><strong>历史数据依赖</strong>: 依赖ESM-2预训练语料库（UniRef50等）和DeepFRI训练数据（PDB + GO注释）。这些数据集的偏差可能影响嵌入质量。</li>
+<li><strong>模型依赖</strong>: 结果高度依赖ESM-2嵌入质量。不同PLM（如ProtBERT、ESM-1b）可能产生不同聚类结果。</li>
+<li><strong>最难情形</strong>: 序列一致性极低（&lt;20%）且结构域重排频繁的KS/CLF；非氧化型T2PKs的CLF（嵌入到KS簇中，传统方法无法识别）。</li>
+<li><strong>群体/领域边界</strong>: 仅限细菌来源；古菌或真核生物的类似蛋白未包含。产物结构已知的序列可能偏向研究充分的T2PK家族。</li>
+<li><strong>不确定性</strong>: 作者未提供置信区间或统计检验；Cluster A的祖先地位是推断性的，缺乏实验验证（如祖先序列重建+体外生化实验）。</li>
+<li><strong>有边界的复述</strong>: 在166对已知产物结构的细菌T2PKS KS/CLF序列中，基于ESM-2嵌入的MAAPE分析识别出一个包含KS、CLF和FabF的混合簇（Cluster A），支持KS/CLF共同起源假说；距离比分析显示大多数KS/CLF对经历相似进化速率（共进化）；非氧化型T2PKs的CLF嵌入KS簇且功能预测为KS样，提示HGT介导的功能转换。这些结论限于该数据集和计算方法，未经实验验证。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p><em>（在提供的全文/摘要中，作者未设独立「Limitations」章节。以下为文中明确提及的局限或约束）</em></p>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据集偏差</td>
+<td>166对序列均来自已知产物结构的基因簇，可能偏向研究充分的T2PK家族</td>
+<td>未明确提及</td>
+<td>Results节（数据集描述）</td>
+</tr>
+<tr>
+<td>祖先推断的不确定性</td>
+<td>Cluster A的祖先地位基于计算推断，缺乏实验验证</td>
+<td>未明确提及</td>
+<td>Discussion节</td>
+</tr>
+<tr>
+<td>功能预测的验证不足</td>
+<td>DeepFRI预测的KS样功能未经体外生化实验验证</td>
+<td>未明确提及</td>
+<td>Results节（Fig. 3）</td>
+</tr>
+<tr>
+<td>样本量限制</td>
+<td>距离比分析中仅6对显著偏离，样本量小</td>
+<td>未明确提及</td>
+<td>Results节（Fig. 2d）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>作者提及的相关约束</strong>（非正式局限）:
+- 传统系统发育分析无法解析KS/CLF的深层进化关系（Results节，Fig. 1a）
+- PLM嵌入的进化解释需要结合生物学先验知识（Discussion节）
+- HGT事件的检测依赖于共现矩阵的阈值选择（Methods节，MAAPE描述）</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cluster A的祖先地位推断</td>
+<td>混合簇可能反映的是嵌入空间的伪影（如序列长度、GC含量偏差），而非真实祖先状态</td>
+<td>祖先推断是整个进化故事的基础，若Cluster A非祖先，则共起源假说动摇</td>
+<td>用祖先序列重建（如PAML、BEAST）独立验证；或对Cluster A成员进行系统发育定位</td>
+<td>Results节；Fig. 2a</td>
+</tr>
+<tr>
+<td>距离比≈1作为共进化证据</td>
+<td>距离比接近1可能仅反映KS/CLP在基因簇中协同进化（连锁），而非独立共进化</td>
+<td>共进化结论影响对功能耦合的理解</td>
+<td>用共进化检测工具（如EVcouplings）独立验证；或比较不同基因簇中KS/CLP的进化速率</td>
+<td>Results节；Fig. 2d</td>
+</tr>
+<tr>
+<td>DeepFRI功能预测的循环论证</td>
+<td>DeepFRI训练数据可能包含KS/CLF注释，预测结果可能反映训练集偏差而非真实功能</td>
+<td>功能预测用于解释非氧化型CLF的KS样功能，若预测有偏则解释不成立</td>
+<td>用实验数据（酶活测定）验证；或使用不依赖GO注释的结构比对方法</td>
+<td>Results节；Fig. 3</td>
+</tr>
+<tr>
+<td>HGT信号与序列相似性混淆</td>
+<td>高权重单向边可能仅反映序列相似性梯度，而非真实HGT事件</td>
+<td>HGT是进化故事的关键驱动力，误判会导致错误结论</td>
+<td>用系统发育网络（如SplitsTree）或基因簇共线性分析验证HGT</td>
+<td>Results节；Fig. 4</td>
+</tr>
+<tr>
+<td>无统计检验</td>
+<td>所有结论基于描述性分析，无置信区间或显著性检验</td>
+<td>无法评估结论的稳健性</td>
+<td>增加bootstrap或置换检验</td>
+<td>全文</td>
+</tr>
+<tr>
+<td>单一PLM依赖</td>
+<td>仅使用ESM-2，未比较其他PLM（如ProtT5、Ankh）的稳健性</td>
+<td>结论可能依赖特定嵌入空间</td>
+<td>用多种PLM重复分析，比较一致性</td>
+<td>Methods节</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>PLM嵌入作为「软比对」工具</strong> [可迁移方法]: 对于序列一致性&lt;30%的同源蛋白家族，传统多序列比对失效，但PLM嵌入仍能捕捉结构/进化信号。可迁移至其他高度分化的蛋白家族（如不同物种的转录因子、免疫受体）的进化分析。</p>
+</li>
+<li>
+<p><strong>模块级嵌入分析检测HGT</strong> [可迁移方法]: MAAPE的滑动窗口策略——将嵌入向量切分为片段，分析片段级相似性——可检测基因重组/水平转移事件。可迁移至多结构域蛋白（如NLR免疫受体、ABC转运蛋白）的嵌合体检测。</p>
+</li>
+<li>
+<p><strong>距离比作为共进化指标</strong> [可迁移指标]: 计算蛋白对到祖先节点的距离比（均值≈1）可作为共进化的定量指标。可迁移至其他蛋白复合物（如激酶-底物、受体-配体）的共进化分析。</p>
+</li>
+<li>
+<p><strong>功能预测与进化分组交叉验证</strong> [可迁移实验设计]: 用DeepFRI等独立功能预测工具验证进化分组的功能意义，避免仅依赖序列聚类。可迁移至任何进化基因组学研究。</p>
+</li>
+<li>
+<p><strong>结构同源但功能分化的进化解释框架</strong> [可迁移概念]: KS/CLF结构高度相似（RMSD&lt;1）但功能分化（催化vs链长控制），说明结构保守不等于功能保守。对蛋白质设计有启示：结构骨架可承载多种功能，设计时应考虑功能可塑性。</p>
+</li>
+<li>
+<p><strong>HGT在天然产物生物合成基因簇进化中的核心作用</strong> [领域知识]: 该研究为PKS基因簇通过HGT实现功能创新提供了计算证据，支持在基因组挖掘中关注HGT信号以发现新型生物合成基因簇。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>: MAAPE与已有工作如「Phylo-EMB」（利用PLM嵌入构建系统发育树）和「ProteinBERT的进化分析应用」在思路上一脉相承，但MAAPE的模块级滑动窗口分析是独特贡献。</li>
+<li><strong>领域背景</strong>: 与经典PKS进化研究（如Jenke-Kodama等关于PKS模块进化的综述）互补，本文提供了基于PLM的新视角。</li>
+<li><strong>结构预测连接</strong>: 本文使用AlphaFold3验证KS/CLF结构同源（RMSD=0.993），与AlphaFold2/3在结构比较中的应用一致，但本文重点不在结构预测而在进化推断。</li>
+<li><strong>功能预测连接</strong>: DeepFRI的使用与「序列-结构-功能」关系研究一致，但本文将其用于进化分组验证而非从头功能注释。</li>
+<li><strong>可迁移领域</strong>: </li>
+<li>蛋白质设计：KS/CLF结构保守但功能分化的案例提示，设计新型催化剂时可利用结构骨架的进化可塑性。</li>
+<li>MD模拟：本文识别的共进化残基对（通过距离比分析）可作为MD模拟中功能关键残基的候选。</li>
+<li>分子对接：HGT获得的KS样CLF可能具有新的底物特异性，值得对接研究。</li>
+<li><strong>冲突或补充</strong>: 本文与传统系统发育分析结果部分一致（KS/CLF分离），但提供了传统方法无法检测的HGT信号，补充而非否定已有结论。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>: PLM嵌入距离比作为通用共进化指标
+   - <strong>来源局限/观察</strong>: 本文用距离比（均值≈1）支持KS/CLF共进化，但未检验该指标在随机序列对中的分布。
+   - <strong>核心假设</strong>: 距离比接近1在随机蛋白对中不成立，可作为共进化的统计检验。
+   - <strong>初步方法</strong>: 生成随机蛋白对（同长度、相同GC含量），计算距离比分布；与真实KS/CLF对比较；用置换检验评估显著性。
+   - <strong>验证方式</strong>: 在已知共进化蛋白对（如细菌双组分系统）和已知非共进化蛋白对中测试。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 模块级嵌入分析用于多结构域蛋白的HGT检测
+   - <strong>来源局限/观察</strong>: MAAPE的滑动窗口策略在KS/CLF中有效，但未测试于多结构域蛋白。
+   - <strong>核心假设</strong>: 多结构域蛋白的HGT事件可通过嵌入片段与不同参考簇的相似性检测。
+   - <strong>初步方法</strong>: 选取已知HGT事件的多结构域蛋白（如毒力因子），用MAAPE分析嵌入片段，比较HGT来源域与垂直遗传域的嵌入位置。
+   - <strong>验证方式</strong>: 与系统发育网络方法（SplitsTree）结果对比。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 非氧化型T2PKs CLF的底物特异性预测与对接验证
+   - <strong>来源局限/观察</strong>: 本文预测非氧化型CLF（CLF_4）具有KS样功能，但未实验验证。
+   - <strong>核心假设</strong>: CLF_4的底物结合口袋与KS相似，可接受KS底物。
+   - <strong>初步方法</strong>: 用AlphaFold3预测CLF_4结构，与KS结构比对；用分子对接预测底物结合模式；比较与氧化型CLF的差异。
+   - <strong>验证方式</strong>: 体外生化实验（酶活测定）或突变体功能分析。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 基于PLM嵌入的祖先序列重建与功能复活
+   - <strong>来源局限/观察</strong>: 本文识别了祖先簇（Cluster A），但未进行祖先序列重建。
+   - <strong>核心假设</strong>: Cluster A的祖先序列具有可预测的催化活性，且可体外复活。
+   - <strong>初步方法</strong>: 用Cluster A序列进行祖先序列重建（如PAML、BEAST）；合成祖先基因；表达并测定KS/CLF活性。
+   - <strong>验证方式</strong>: 与现生KS/CLF的活性比较；突变分析验证关键残基。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+<li>
+<p><strong>候选名称</strong>: 共进化残基对作为MD模拟的功能热点
+   - <strong>来源局限/观察</strong>: 本文距离比分析识别了共进化的KS/CLF对，但未定位具体残基。
+   - <strong>核心假设</strong>: 共进化残基对在MD模拟中表现为功能关键相互作用。
+   - <strong>初步方法</strong>: 从嵌入空间提取共进化信号最强的残基对；在KS/CLF结构中进行MD模拟；分析这些残基对的动态相关性。
+   - <strong>验证方式</strong>: 突变MD模拟比较功能影响；与实验突变数据对比。
+   - <strong>创新状态</strong>: unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including abstract, results, discussion, methods, and supplementary information descriptions</li>
+<li><strong>Assessment boundary</strong> Scientific claims, methodological soundness, evidence quality, and alignment with stated conclusions</li>
+<li><strong>Shared manuscript claim summary</strong> The authors use a protein language model-based algorithm (MAAPE) to infer evolutionary relationships between bacterial aromatic polyketide ketosynthases (KS) and chain length factors (CLF), proposing a common ancestral cluster (Cluster A), distinct evolutionary trajectories, coevolution, and horizontal gene transfer as major drivers of diversification.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Fig. 1a-c, Fig. 2a-e, Fig. 3a-b, Fig. 4a-b), supplementary tables S1-S9, supplementary figures S1-S3, methods descriptions</li>
+<li><strong>Missing materials affecting confidence</strong> Supplementary files (Tables S1-S9, Figs. S1-S3) were not provided for inspection; raw data, code, and MAAPE algorithm implementation details are not accessible; statistical validation metrics for clustering and network analyses are not fully described</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The manuscript presents a novel application of protein language model embeddings to study the evolution of type II polyketide synthases, a topic of considerable interest in natural product biosynthesis. The central claim of a common ancestral cluster and subsequent functional divergence is plausible and consistent with prior hypotheses, but the evidence provided in the main text is largely descriptive and lacks rigorous statistical validation. The MAAPE algorithm is not described in sufficient detail to assess its reliability, and the absence of supplementary data prevents verification of key results. The biological interpretations, while reasonable, are often speculative and not directly supported by the presented analyses. The manuscript has potential but requires substantial strengthening of the analytical framework and evidence base before the conclusions can be considered established.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Researchers in natural product biosynthesis, enzymology, and evolutionary biology would find this work relevant. The application of protein language models to evolutionary inference is a growing area, and the specific focus on type II polyketide synthases connects to efforts in genome mining and rational engineering of polyketide pathways. The proposed coevolution and HGT hypotheses could inform experimental design for pathway engineering, making the work of interest to both fundamental and applied microbiologists.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong>
+  1. The use of a protein language model (ESM-2) to capture evolutionary signals beyond traditional sequence alignment is a timely and potentially powerful approach.
+  2. The identification of a mixed KS-CLF cluster (Cluster A) as a putative ancestral group is an interesting observation that challenges purely sequence-based phylogenies.
+  3. The integration of functional prediction (DeepFRI) with embedding-based clustering provides a multi-layered perspective on protein evolution.
+  4. The manuscript is clearly written and the figures are visually informative, aiding comprehension of complex network analyses.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The MAAPE algorithm reliably reconstructs evolutionary trajectories and identifies ancestral states from protein embeddings.</li>
+<li><strong>Evidence pointer</strong> Methods section "MAAPE analysis", Fig. 2a-c</li>
+<li><strong>Concern</strong> The MAAPE algorithm is described only at a conceptual level. The sliding window approach, co-occurrence matrix construction, and directionality assignment are not specified with enough detail to evaluate their validity or reproducibility. No benchmarks, simulations, or comparisons against known evolutionary scenarios are provided to demonstrate that the method accurately recovers true evolutionary relationships. The absence of statistical measures (e.g., bootstrap support, confidence intervals) for the inferred network topology is a critical gap.</li>
+<li><strong>Why it matters</strong> The central conclusions of the paper rest entirely on the reliability of MAAPE. Without validation, the inferred ancestral cluster and evolutionary trajectories could be artifacts of the embedding space or the algorithm's parameters. Readers cannot assess whether the method distinguishes genuine phylogenetic signal from noise.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed algorithmic description, release code, and validate MAAPE on simulated datasets with known evolutionary histories or on empirical datasets with well-established phylogenies. Include statistical support values for the network edges and cluster assignments.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> Cluster A represents a shared ancestral group for KS and CLF sequences, supporting a common origin.</li>
+<li><strong>Evidence pointer</strong> Fig. 1b, Fig. 2a, Additional file 1: Table S2</li>
+<li><strong>Concern</strong> The designation of Cluster A as ancestral is based on its mixed composition and the presence of the FABF outgroup. However, the criteria for defining "ancestral" are not explicitly stated. The cluster contains only 22 of 166 pairs, and the authors acknowledge potential biases in their product-focused dataset. The possibility that Cluster A reflects convergent sequence features or artifacts of the embedding reduction is not excluded. The claim of common ancestry requires independent support, such as phylogenetic analysis of the cluster members or structural evidence.</li>
+<li><strong>Why it matters</strong> The common origin hypothesis is a key conclusion and a foundation for subsequent interpretations of coevolution and HGT. If Cluster A is not truly ancestral, the evolutionary narrative collapses.</li>
+<li>
+<p><strong>Resolution test</strong> Perform a rigorous phylogenetic analysis of Cluster A members using multiple methods and models. Test whether the cluster is robust to dataset composition (e.g., including non-product-associated sequences). Provide explicit criteria for ancestral state inference and rule out alternative explanations such as convergence or long-branch attraction.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> Coevolution between KS and CLF pairs is demonstrated by the ratio of distances to the ancestral node being close to 1.</li>
+<li><strong>Evidence pointer</strong> Fig. 2d, Additional file 1: Table S9</li>
+<li><strong>Concern</strong> The distance ratio analysis is presented as evidence of coevolution, but the statistical framework is unclear. The mean ratio of 1.0082 is reported without a measure of variance, a null model, or a test of significance. The six outlier pairs are identified but not analyzed in detail. The choice of the ancestral node as the centroid of Cluster A embeddings is arbitrary and may bias the results. Coevolution is a strong claim that requires more direct evidence, such as correlated mutation analysis or functional assays.</li>
+<li><strong>Why it matters</strong> Coevolution is a central biological interpretation. If the distance ratio is not a valid proxy, the claim is unsupported. Overinterpretation of a descriptive metric as evidence of coevolution could mislead readers.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a statistical test comparing the observed distance ratios to a null distribution (e.g., randomized pairings). Report confidence intervals and effect sizes. Use complementary methods (e.g., coevolutionary analysis of residue contacts) to corroborate the finding.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> Horizontal gene transfer is a main driving force of KS/CLF polymorphism.</li>
+<li><strong>Evidence pointer</strong> Fig. 4a-b, Discussion section</li>
+<li><strong>Concern</strong> The inference of HGT is based on network edge weights and directionality, but no direct evidence of HGT (e.g., phylogenetic incongruence, GC content analysis, or taxonomic distribution) is presented. The interpretation of high-weight edges as HGT events is speculative. The authors do not account for alternative explanations such as gene duplication, loss, or convergent evolution. The claim that HGT is a "main" driving force is not quantitatively supported.</li>
+<li><strong>Why it matters</strong> HGT is a major evolutionary mechanism, and attributing KS/CLF diversity to it has implications for understanding pathway evolution. An unsupported claim could lead to incorrect conclusions about the mobility and distribution of these biosynthetic genes.</li>
+<li>
+<p><strong>Resolution test</strong> Conduct explicit HGT detection analyses (e.g., phylogenetic reconciliation, sequence composition bias tests). Quantify the contribution of HGT relative to other mechanisms. Provide species-level context to support the HGT interpretation.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M5</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The dataset of 166 KS-CLF pairs is comprehensive and curated.</li>
+<li><strong>Evidence pointer</strong> Methods section "Data collection and phylogenetic analysis", Additional file 1: Table S1</li>
+<li><strong>Concern</strong> The curation criteria are described briefly, but the source databases, search terms, and filtering steps are not fully specified. The exclusion of sequences with &gt;90% identity is mentioned, but the impact of this threshold on diversity and representation is not discussed. The supplementary table containing the dataset was not available for review.</li>
+<li><strong>Why it matters</strong> Reproducibility is a core requirement. Without a complete description of data acquisition and processing, other researchers cannot replicate the study or assess potential biases.</li>
+<li>
+<p><strong>Resolution test</strong> Provide a detailed data curation protocol, including database versions, accession numbers, and filtering criteria. Make the full dataset publicly available in a standard format.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Fig. 2a description</li>
+<li><strong>Evidence pointer</strong> Fig. 2a</li>
+<li><strong>Issue</strong> The figure caption states that only the top 10 highest-weighted edges from FAB to KS/CLF clusters and the top 5 between KS and CLF clusters are displayed. The rationale for these thresholds is not explained.</li>
+<li>
+<p><strong>Required correction</strong> Justify the edge display thresholds or state that they are for visual clarity only.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical reporting</li>
+<li><strong>Affected element</strong> Fig. 2d</li>
+<li><strong>Evidence pointer</strong> Fig. 2d</li>
+<li><strong>Issue</strong> The distance ratio plot lacks error bars or a measure of dispersion. The reader cannot assess the variability of the ratios.</li>
+<li>
+<p><strong>Required correction</strong> Add error bars or a confidence band to the plot and report the standard deviation or interquartile range in the text.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Terminology</li>
+<li><strong>Affected element</strong> Discussion section</li>
+<li><strong>Evidence pointer</strong> Discussion section</li>
+<li><strong>Issue</strong> The term "Grammar of Life" is used without definition and may be confusing to readers unfamiliar with the concept.</li>
+<li>
+<p><strong>Required correction</strong> Define the term or replace it with a more standard phrase such as "sequence-encoded evolutionary information."</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Methods section "Functional prediction"</li>
+<li><strong>Evidence pointer</strong> Methods section "Functional prediction"</li>
+<li><strong>Issue</strong> The DeepFRI analysis is described, but the specific GO terms used for the vectorization are not listed. The dimensionality of the functional vectors is not stated.</li>
+<li>
+<p><strong>Required correction</strong> Provide a list of the GO terms included and the number of dimensions in the functional vectors.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Interpretation</li>
+<li><strong>Affected element</strong> Fig. 3b</li>
+<li><strong>Evidence pointer</strong> Fig. 3b</li>
+<li><strong>Issue</strong> The heatmap shows functional similarities, but the biological significance of the observed similarity values is not discussed. A similarity of 0.5 is mentioned as "comparable," but the scale is not defined.</li>
+<li><strong>Required correction</strong> Explain the range and meaning of the cosine similarity values and interpret the observed values in a biological context.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim that Cluster A represents a shared ancestral group is not statistically validated and may be influenced by dataset composition.</li>
+<li>The inference of coevolution from distance ratios lacks a formal statistical framework and alternative explanations are not excluded.</li>
+<li>The assertion that HGT is a main driving force of KS/CLF polymorphism is speculative and not supported by direct HGT detection analyses.</li>
+<li>The functional convergence between nonoxidative CLFs and KSs is inferred from similarity scores without experimental validation.</li>
+<li>The general statement that PLM embeddings capture evolutionary information beyond sequence alignment is plausible but not rigorously demonstrated in this study.</li>
+<li>The biological interpretations regarding selective pressures (chemical competition, ecological niches, metabolic trade-offs) are presented as conclusions but are not directly tested.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "source": "biorxiv",
+  "id": "10.64898/2026.10.22.760942",
+  "title": "Projected Gradient Descent for Hallucination-Based Protein Binder Design",
+  "authors": "Magnus Ross; David Miller; Jude Wells",
+  "journal": "bioRxiv",
+  "published_date": "2026-10-23",
+  "window": {
+    "start": "2026-10-18",
+    "end": "2026-10-24"
+  },
+  "score": 9,
+  "one_liner_zh": "该文提出将投影梯度下降（PGD）替代软max重参数化梯度下降用于基于幻觉的蛋白质结合剂设计，通过直接更新氨基酸概率避免梯度衰减，在多个靶标上提升设计置信度和多样性，属于蛋白质结构计算与AI优化方法的直接贡献。",
+  "abstract": "Gradient-based hallucination is a popular approach to protein binder design that backpropagates a loss defined on a structure predictor's output to guide optimisation in a continuous relaxation of sequence space, yet the choice of optimiser for this task has received little systematic evaluation. In this work we evaluate simplex-projected gradient descent (PGD) as an alternative to the commonly used gradient descent on softmax-reparameterised sequence logits. By updating amino-acid probabilities directly, PGD avoids softmax-induced gradient attenuation and allows amino acids suppressed early in optimisation to re-enter the design. Using an ESMFold2-based pipeline on ten targets, we find that PGD minimises the design loss in fewer iterations and produces designs with higher predicted interface confidence compared to its softmax counterpart. Simulating selection in real campaigns by considering the upper tail of the ipSAE distribution across a pool of 1,024 designs per target, we show that PGD significantly improves on six of the ten targets, with no significant degradation on any, and produces more structurally diverse designs on every target. Additionally, we find that pairing shorter PGD runs with candidate screening raises the total number of in silico hits per GPU-hour by 29\\% relative to default-length trajectories. These results support PGD as a simple and effective alternative for hallucination-based binder design. Code and design data are publicly available.",
+  "abstract_zh": "基于梯度的幻觉生成（gradient-based hallucination）是蛋白质结合剂设计中的一种常用方法，它通过反向传播基于结构预测器输出定义的损失函数，在序列空间的连续松弛中引导优化，然而该任务中优化器的选择尚未得到系统性评估。在本研究中，我们评估了单纯形投影梯度下降（PGD）作为常用软最大化重参数化序列对数梯度下降的替代方案。通过直接更新氨基酸概率，PGD避免了软最大化引起的梯度衰减，并允许在优化早期被抑制的氨基酸重新进入设计过程。使用基于ESMFold2的流程对十个靶标进行测试，我们发现PGD在更少的迭代次数内最小化设计损失，并产生具有更高预测界面置信度的设计，优于其软最大化对应方法。通过考虑每个靶标1,024个设计池中ipSAE分布的上尾来模拟实际活动中的选择，我们显示PGD在十个靶标中的六个上显著改善，且在任何靶标上均无显著退化，并在每个靶标上产生更多结构多样化的设计。此外，我们发现将较短的PGD运行与候选筛选配对，可将每GPU小时的总计算机模拟命中数相对于默认长度轨迹提高29%。这些结果支持PGD作为基于幻觉的结合剂设计的简单有效替代方案。代码和设计数据公开可用。",
+  "has_fulltext": true,
+  "fulltext_source": "europepmc",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "paper-card.md",
+  "review_path": "review.md",
+  "url": "https://www.biorxiv.org/content/10.64898/2026.10.22.760942",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.10.22.760942",
+  "paper_page_path": "papers/biorxiv/10.64898_2026.10.22.760942/index.html"
+}

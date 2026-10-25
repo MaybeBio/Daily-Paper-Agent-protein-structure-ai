@@ -1,0 +1,95 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors introduce CatESO, a differentiable sequence optimizer that backpropagates through a substrate-aware Kcat predictor under continuous sequence relaxation to co-optimize predicted catalytic activity, evolutionary plausibility, and structural integrity. They report median predicted fold change of 1.52 in Kcat across seven out-of-distribution enzymes spanning EC classes 1-7, with all variants retaining pLDDT above 70, and claim superior balance between predicted activity and structural confidence relative to RFdiffusion3-LigandMPNN and ZymCtrl.
+- **Visible evidence base** Abstract text only; no quantitative distributions, baselines, ablations, or methodological details are visible
+- **Missing materials affecting confidence** Full methods, all figures and tables, baseline implementation details, dataset construction and split criteria, hyperparameters, uncertainty quantification, and any experimental validation
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually appealing idea, namely making kinetic objectives differentiable for enzyme sequence design, which is a timely and potentially impactful direction. However, the evidence provided is insufficient to establish the core claims. The reported performance metrics are limited to a single median value and a structural threshold, with no indication of variance, statistical testing, or comparison of distributions. The absence of methodological detail prevents assessment of the differentiable relaxation scheme, the cross-modal predictor architecture, and the validity of the out-of-distribution evaluation. The work is promising in principle but not established from the supplied material.
+- **Who would be interested in the results, and why** Computational protein engineers and enzyme designers would be interested because the approach addresses a recognized gap between sequence generation and kinetic evaluation. Machine learning researchers working on differentiable design and protein language models would also find the cross-modal optimization framework relevant. Biocatalysis practitioners seeking function-oriented design tools may be interested if the predicted improvements translate to experimental validation, though that is not demonstrated here.
+- **Major strengths** The conceptual framing is clear and addresses a real limitation in current enzyme design pipelines. The idea of making substrate-conditioned kinetic objectives differentiable is a logical extension of structure- and binding-centered differentiable design. The choice of seven enzymes spanning EC classes 1-7 suggests an intention to demonstrate generalizability, which is appropriate for the claim of a general route to function-oriented engineering.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** "CatESO raised model-predicted Kcat for many designs, with a median predicted fold change of 1.52"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The central quantitative claim rests on a single median value across seven enzymes. No information is provided on the distribution of fold changes, the number of designs per enzyme, the range, or any statistical significance testing. A median of 1.52 could be driven by a few large improvements while many designs show no change or decreases, which would materially alter the interpretation.
+  - **Why it matters** The claim of improved predicted Kcat is the primary evidence for the method's utility. Without distributional information and statistical assessment, the reader cannot determine whether the improvement is consistent, robust, or merely an artifact of outlier designs.
+  - **Resolution test** Provide per-enzyme distributions of predicted fold changes, including quartiles, ranges, and counts of designs with fold change above 1. Report statistical tests comparing CatESO outputs to starting sequences and to baseline methods, with effect sizes and confidence intervals.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological transparency
+  - **Claim pointer** "By backpropagating through a cross-modal Kcat predictor under continuous sequence relaxation"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not describe how the continuous sequence relaxation is implemented, how the Kcat predictor is made differentiable, what the cross-modal architecture is, or how the three objectives are weighted and balanced. These details are essential for evaluating whether the approach is technically sound and reproducible.
+  - **Why it matters** Differentiable optimization through a predictive model is only meaningful if the relaxation scheme is well-defined and the gradients are informative. Without this information, the reader cannot assess whether the method is a genuine advance or a straightforward application of existing techniques.
+  - **Resolution test** Provide a full methods section describing the relaxation scheme, the predictor architecture and training data, the loss function and weighting scheme, and the optimization procedure including hyperparameters and convergence criteria.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Validation rigor
+  - **Claim pointer** "Across seven stringent, out-of-distribution enzymes spanning EC classes 1-7"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract claims the enzymes are out-of-distribution and stringent, but no definition of out-of-distribution is provided. It is unclear whether this refers to sequence identity thresholds, substrate novelty, or absence from the predictor's training set. The criteria for selecting these seven enzymes and the basis for calling them stringent are not stated.
+  - **Why it matters** The generalizability claim depends entirely on the validity of the out-of-distribution evaluation. If the enzymes are not truly out-of-distribution, the results may reflect memorization rather than generalization. If the selection criteria are arbitrary, the claim of spanning EC classes 1-7 may not be meaningful.
+  - **Resolution test** Define the out-of-distribution criteria explicitly, including sequence identity cutoffs to training data, substrate novelty, and any other relevant filters. Provide details on how the seven enzymes were selected and why they are considered stringent.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Comparative validity
+  - **Claim pointer** "Against the RFdiffusion3-LigandMPNN pipeline and ZymCtrl, CatESO struck a better balance between predicted activity and structural confidence"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The comparison to baselines is stated without any quantitative support. No metrics, trade-off curves, or statistical comparisons are provided. It is unclear whether the baselines were run under identical conditions, with the same computational budget, or with the same evaluation protocol.
+  - **Why it matters** A claim of superiority over existing methods requires a fair and well-documented comparison. Without this, the reader cannot determine whether the advantage is real or an artifact of different evaluation settings.
+  - **Resolution test** Provide a detailed comparison table or figure showing the distribution of predicted Kcat and pLDDT for all methods, with identical evaluation protocols. Report the computational cost of each method and any hyperparameter tuning performed.
+  - **Concern ID** R1-M5
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim scope
+  - **Claim pointer** "giving a general route to function-oriented enzyme engineering"
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract claims generality based on seven enzymes and predicted, not measured, Kcat values. No experimental validation is reported, and the claim of a general route is not supported by the evidence presented.
+  - **Why it matters** Predicted improvements in Kcat do not guarantee improved catalytic activity in practice. The claim of a general route to enzyme engineering requires at least some experimental demonstration or a strong argument for why predicted improvements are reliable.
+  - **Resolution test** Provide experimental validation for at least a subset of designs, or clearly state that the results are computational predictions and temper the generality claim accordingly.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** "many designs"
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The phrase "many designs" is vague and does not convey the proportion of designs that improved.
+  - **Required correction** Report the fraction of designs with predicted fold change above 1, ideally per enzyme.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Structural integrity metric
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract reports pLDDT above 70 for all variants but does not state the baseline pLDDT of the starting sequences or the distribution of pLDDT values.
+  - **Required correction** Provide baseline pLDDT values and the distribution of pLDDT across designs.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** "using ESM-2 and ESMFold"
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The specific versions of ESM-2 and ESMFold are not stated, which affects reproducibility.
+  - **Required correction** Specify model versions and any relevant configuration details.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "cross-modal Kcat predictor"
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The term cross-modal is used without explaining what modalities are involved.
+  - **Required correction** Clarify what input modalities the predictor uses, for example sequence and substrate structure or representation.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4, R1-M5. The case is not established because the central quantitative claim lacks distributional evidence, the methodology is not described in sufficient detail, the out-of-distribution claim is undefined, the baseline comparison is unsupported, and the generality claim exceeds the evidence.
+- **Assessment against Nature-style criteria** Originality is moderate to high, as differentiable optimization of kinetic objectives is a relatively unexplored direction. Scientific importance is potentially high if the approach leads to experimentally validated improvements, but the current evidence is predictive only. Interdisciplinary readership is plausible, spanning machine learning, protein engineering, and biocatalysis. Technical soundness cannot be assessed from the abstract alone, as the core methodological details are missing. Readability for nonspecialists is adequate, with clear framing and accessible language, though some terms such as cross-modal and continuous sequence relaxation may require elaboration for a broader audience.
+
+## Risk / unsupported claims
+- The claim of a median predicted fold change of 1.52 is unsupported without distributional data and statistical testing.
+- The claim of a better balance between predicted activity and structural confidence relative to baselines is unsupported without quantitative comparison.
+- The claim of a general route to function-oriented enzyme engineering is unsupported without experimental validation or a broader set of enzymes.
+- The out-of-distribution nature of the seven enzymes is unverifiable without a definition of the criteria.
+- The claim that all variants retained pLDDT above 70 is unverifiable without baseline values and distributional context.

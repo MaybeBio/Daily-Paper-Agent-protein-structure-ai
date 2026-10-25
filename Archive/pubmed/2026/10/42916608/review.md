@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report identification of a novel nitrilase BhNIT from *Bradyrhizobium huanghuaihaiense* via computational screening, and development of an integrated computational workflow (DeepPCD) combining sequence design, structure filtering, stability assessment, evolutionary compatibility, and molecular dynamics analyses. They claim that modifying only seven candidate residues yielded a mutant with a 1.3 x 10^5-fold improvement in hydrolytic efficiency, a 20.4 degrees C increase in melting temperature, and a broader alkaline pH range. Molecular dynamics and structural analyses are claimed to reveal mechanistic bases for these improvements. Preliminary application to other nitrilases is claimed to suggest workflow transferability.
+- **Visible evidence base** Abstract text only; no quantitative data tables, sequence alignments, structural figures, simulation parameters, or experimental protocols are provided
+- **Missing materials affecting confidence** Full methods, all experimental data (kinetic parameters, stability measurements, pH profiles), structural models, molecular dynamics simulation details, statistical analyses, and validation data for transferability claims
+
+## Reviewer
+- **Overall assessment** The abstract presents an ambitious and potentially valuable computational workflow for enzyme engineering, with an impressive reported improvement in catalytic efficiency. However, the evidence base available for review is limited to the abstract, which precludes verification of the central quantitative claims, the mechanistic interpretations, and the generalizability statement. The work addresses a relevant problem in industrial biocatalysis, but the strength of the conclusions cannot be adequately assessed from the supplied material.
+- **Who would be interested in the results, and why** Researchers in enzyme engineering, computational protein design, and industrial biotechnology would be interested. Those developing AI-guided workflows for enzyme optimization would find the DeepPCD approach relevant. Industrial groups seeking nitrilases with improved activity and stability for nitrile bioconversion processes would also be potential readers.
+- **Major strengths** The abstract describes a clearly structured, multi-step computational workflow that integrates several established techniques into a coherent pipeline. The reported magnitude of improvement in hydrolytic efficiency is striking and, if reproducible, would represent a substantial advance. The inclusion of stability and pH range improvements alongside activity enhancement addresses multiple industrially relevant parameters simultaneously. The stated intention to test transferability within the nitrilase family is a thoughtful step toward generalizability.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that modifying only seven candidate residues of BhNIT yielded a mutant with a 1.3 x 10^5-fold improvement in hydrolytic efficiency
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract reports a 1.3 x 10^5-fold improvement in hydrolytic efficiency but provides no baseline values, no definition of hydrolytic efficiency (for example kcat/Km versus whole-cell activity), no replicate information, and no statistical context. Such a large improvement is unusual and requires careful verification of assay conditions, substrate concentrations, and comparison to appropriate controls.
+  - **Why it matters** This is the central quantitative claim of the work. Without access to the underlying kinetic data, assay details, and error estimates, the claim cannot be evaluated for reliability or reproducibility. Overstated improvements in enzyme engineering are a known concern in the literature.
+  - **Resolution test** Provide full kinetic parameters for wild-type and mutant enzymes, including substrate range, assay conditions, replicate numbers, and statistical analysis. Clarify whether the improvement is in kcat, Km, or both, and confirm the calculation of hydrolytic efficiency.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic support
+  - **Claim pointer** The claim that molecular dynamics simulations and structural analysis revealed that enhanced performance stems from reshaping of the substrate-binding pocket and access channel, along with a strengthened interaction network
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract asserts a mechanistic explanation for the observed improvements but provides no details on the structural models used, the simulation length, force fields, convergence criteria, or how the reshaping and interaction network changes were quantified. No comparison to the wild-type structure is described.
+  - **Why it matters** Mechanistic claims require robust structural and simulation evidence. Without details on model quality, simulation protocols, and analysis methods, the proposed mechanism remains speculative and cannot be distinguished from alternative explanations such as improved protein folding or altered surface properties.
+  - **Resolution test** Provide structural models with validation metrics, simulation parameters, convergence analysis, and quantitative comparisons of pocket geometry and interaction networks between wild-type and mutant. Show that the proposed mechanism is consistent with experimental mutagenesis data.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Generalizability
+  - **Claim pointer** The claim that preliminary computational application to additional nitrilases suggested the potential transferability of this workflow within the nitrilase family
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states that the workflow was applied to additional nitrilases and that results suggested transferability, but no details are given on which enzymes were tested, what criteria were used to judge success, or whether any experimental validation was performed for those additional cases.
+  - **Why it matters** Transferability is a key selling point of computational workflows. Without experimental validation on additional nitrilases, the claim of transferability is only a computational prediction and should be framed as such. The current wording implies more support than is demonstrated.
+  - **Resolution test** Specify the additional nitrilases tested, the computational predictions made, and whether any experimental validation was conducted. If only computational predictions were made, revise the claim to reflect that transferability is suggested by in silico results only.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Workflow description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that DeepPCD "organizes sequence-design, structure-filtering, stability-assessment, evolutionary-compatibility, and molecular dynamics analyses" but does not clarify the order of these steps or how they are integrated. The workflow is described as a pipeline, but the logic of the sequence is unclear.
+  - **Required correction** Provide a brief description of the workflow architecture, including how each component feeds into the next and how candidate mutations are prioritized.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Quantitative reporting
+  - **Affected element** Stability and pH range claims
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract reports a 20.4 degrees C increase in melting temperature and a broader operational pH range but does not specify the melting temperature of the wild-type enzyme, the pH range tested, or the assay used to determine operational pH range.
+  - **Required correction** Report wild-type melting temperature, the full pH range tested for both wild-type and mutant, and the assay conditions used to define operational pH range.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** Use of "novel"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The nitrilase BhNIT is described as "novel," but no information is provided on sequence identity to known nitrilases or on whether this enzyme has been previously characterized. The term "novel" requires a clear definition in this context.
+  - **Required correction** Clarify the basis for describing BhNIT as novel, for example by reporting sequence identity to the closest characterized homolog and stating whether the enzyme has been functionally described before.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Comparison to prior work
+  - **Affected element** Positioning of DeepPCD
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that DeepPCD is more efficient than approaches requiring extensive screening of large mutant libraries, but no specific comparator methods or benchmarks are mentioned. The claim of efficiency is not quantified.
+  - **Required correction** Provide a comparison to at least one established method, including the number of variants tested and the experimental effort required, to substantiate the efficiency claim.
+
+## Risk / unsupported claims
+- The 1.3 x 10^5-fold improvement in hydrolytic efficiency is unsupported without kinetic data and statistical context.
+- The mechanistic explanation involving reshaping of the substrate-binding pocket and access channel is unsupported without structural and simulation details.
+- The claim of workflow transferability within the nitrilase family is unsupported without specification of the additional enzymes tested and any experimental validation.
+- The characterization of BhNIT as "novel" is unverifiable from the abstract alone.
+- The efficiency advantage of DeepPCD over other approaches is asserted without comparative data.

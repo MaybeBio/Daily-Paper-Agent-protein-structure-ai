@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors use molecular dynamics (MD) and mixed quantum mechanical/molecular mechanical (QM/MM) free energy simulations to compare conformational flexibility and hydrogen-bonding interactions between preturnover and midturnover states of E. coli ribonucleotide reductase (RNR). They report that Y731 samples multiple conformations in both states, interfacial water channels are present, E623 can adopt conformations distal to Y730 in the preturnover state, and forward radical transfer from Y731 to Y730 is thermodynamically favorable with a reasonable barrier even without E623 mediation.
+- **Visible evidence base** Abstract text only; no simulation details, force field parameters, convergence criteria, free energy profiles, or structural validation data provided
+- **Missing materials affecting confidence** Full methods, simulation protocols, force field choices, system setup, equilibration and production lengths, convergence assessments, free energy calculation details, error estimates, and comparison with experimental structures
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible computational study addressing conformational dynamics relevant to PCET in RNR. The claims are internally consistent and align with prior work in the field, but the evidence base is insufficient to evaluate technical rigor or quantitative support. The central conclusion that conformational flexibility regulates PCET is reasonable but not established from the abstract alone.
+- **Who would be interested in the results, and why** Researchers in enzymology, particularly those studying radical transfer mechanisms, PCET theory, and conformational dynamics in multi-subunit enzymes. The work may also interest computational chemists developing QM/MM methods for biological systems and structural biologists using cryo-EM to capture functional states.
+- **Major strengths** The study addresses a mechanistically important question using two experimentally defined states. The focus on conformational sampling and water channels is timely. The inclusion of QM/MM free energy calculations adds quantitative dimension beyond qualitative MD analysis.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Our mixed quantum mechanical/molecular mechanical free energy simulations indicate that forward radical transfer from Y731 to Y730 is thermodynamically favorable with a reasonable free energy barrier, even in the absence of mediation by E623."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract provides no quantitative values for the free energy barrier or reaction free energy, nor any indication of statistical uncertainty, convergence, or comparison with experimental rates. The phrase "reasonable free energy barrier" is undefined and cannot be assessed.
+  - **Why it matters** The central quantitative claim of thermodynamic favorability and barrier height is a key result. Without numbers, error bars, or convergence criteria, the claim is not verifiable and may mislead readers about the strength of the conclusion.
+  - **Resolution test** Provide the computed free energy barrier and reaction free energy with associated uncertainties, and state the convergence criteria used in the QM/MM simulations.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Our simulations show that Y731... samples multiple conformations in both states" and "E623... can also sample conformations distal to Y730 in the preturnover state"
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not specify simulation lengths, number of replicas, force field parameters, or how conformational sampling was assessed (e.g., RMSD clustering, free energy surfaces). Without these details, the claim of "multiple conformations" is not quantitatively supported.
+  - **Why it matters** Conformational sampling claims require evidence of adequate sampling and statistical convergence. Insufficient sampling could lead to overinterpretation of transient states as stable conformations.
+  - **Resolution test** Report simulation lengths, convergence metrics, and the criteria used to define distinct conformational states.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** "We also observe interfacial water channels between the protein subunits in both states."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not define what constitutes a "water channel" in terms of occupancy, lifetime, or geometric criteria. The observation is qualitative and may not be reproducible without explicit definitions.
+  - **Why it matters** Water channels are proposed as functionally relevant, but without operational definitions, the claim is difficult to verify or compare with other studies.
+  - **Resolution test** Define the criteria for water channel identification and provide occupancy or lifetime statistics.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states "approximately 32 A chain" without specifying whether this is the donor-acceptor distance or the full PCET pathway length.
+  - **Required correction** Clarify the definition of the 32 A distance and specify the reference points.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Abstract scope
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not mention any comparison with experimental mutagenesis or kinetic data that could validate the computational predictions.
+  - **Required correction** Add a sentence relating the simulation results to existing experimental observations, if available.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Abstract structure
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The transition from MD observations to QM/MM free energy results is abrupt and lacks a logical connector.
+  - **Required correction** Add a bridging sentence explaining how the MD findings motivated the QM/MM calculations.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking because the quantitative and sampling claims are not supported by the abstract. R1-M3 is non-blocking but requires definitional clarity.
+- **Assessment against Nature-style criteria** Originality: moderate, as the approach extends prior work on RNR PCET but does not introduce a fundamentally new method or concept. Scientific importance: high for the RNR community, but the abstract does not demonstrate broader significance beyond this enzyme. Interdisciplinary readership: limited, as the abstract is specialized and lacks context for non-experts. Technical soundness: not assessable from the abstract due to missing methods and quantitative data. Readability for nonspecialists: poor, as terms like "preturnover" and "midturnover" are used without definition, and the significance of Y731, Y730, and E623 is not explained.
+- **Recommendation posture** Currently not established from the provided evidence. The study is potentially valuable, but the abstract alone does not provide sufficient technical detail to support the central claims. A revised abstract with quantitative results and methodological clarity could change this assessment.
+
+## Risk / unsupported claims
+- The claim that forward radical transfer is "thermodynamically favorable with a reasonable free energy barrier" is unsupported without numerical values and error estimates.
+- The claim that Y731 "samples multiple conformations" is unsupported without sampling statistics or convergence metrics.
+- The claim of "interfacial water channels" is unsupported without operational definitions or occupancy data.
+- The statement that E623 "can also sample conformations distal to Y730" is unsupported without quantitative conformational analysis.
+- The overall conclusion that "conformational motions and flexibility" regulate PCET is plausible but not established from the abstract alone.

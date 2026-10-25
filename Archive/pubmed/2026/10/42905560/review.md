@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors propose a generalized framework that uses an artificial neural network to predict backbone chemical shifts from C(alpha)-only protein conformations, enabling one-bead-per-aminoacid coarse-grained force fields to sample transient secondary structure in intrinsically disordered proteins without dihedral parameterization. They claim the approach recapitulates local and global arrangements across a large set of IDPs in isolation and in condensates, yielding experimentally informed ensembles that can inform structure-mediated function and resolve force field limitations.
+- **Visible evidence base** Abstract text only; no quantitative results, methodological details, validation metrics, or comparisons to existing methods are provided
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, simulation protocols, neural network architecture and training details, dataset composition, validation statistics, and comparison benchmarks
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting and potentially impactful approach to a well-recognized limitation in coarse-grained simulations of intrinsically disordered proteins. The idea of using a neural network to predict chemical shifts from C(alpha)-only coordinates is novel and could address a genuine gap in the field. However, the abstract provides insufficient technical detail and no quantitative evidence to evaluate the validity, robustness, or generalizability of the proposed framework. The claims are broad and ambitious, but the visible evidence base is too thin to assess whether they are supported. The manuscript may merit consideration if the full paper provides rigorous validation, but from the abstract alone, the case is not established.
+- **Who would be interested in the results, and why** Computational biophysicists and structural biologists working on intrinsically disordered proteins, developers of coarse-grained force fields, and researchers studying phase separation and condensate biology. The approach could also interest experimentalists who use chemical shift data to inform ensemble modeling, as it offers a pathway to integrate such data into computationally efficient CG simulations.
+- **Major strengths** The problem addressed is important and well recognized. The proposed solution is conceptually elegant, avoiding dihedral parameterization by using a neural network to bridge C(alpha)-only conformations to chemical shifts. The potential scope is broad, spanning isolated IDPs, condensates, binding motifs, and short-linear motifs, which suggests a versatile framework.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The framework "correctly recapitulates both local and global arrangements" across a large set of IDPs in isolation or condensates.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract provides no quantitative metrics, no comparison to experimental data, and no benchmarks against existing methods. It is impossible to assess what "correctly recapitulates" means in practice, what error margins were achieved, or how the approach performs relative to established CG or all-atom methods.
+  - **Why it matters** The central claim of the paper rests on the accuracy and reliability of the neural network predictions and the resulting ensembles. Without quantitative evidence, the reader cannot judge whether the method is fit for purpose or merely qualitatively plausible.
+  - **Resolution test** Provide in the full manuscript a clear validation section with metrics such as chemical shift prediction errors, ensemble agreement with experimental observables (e.g., SAXS, FRET, NMR), and direct comparisons to existing CG and all-atom simulation results for the same IDPs.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility and methodological detail
+  - **Claim pointer** The framework uses "an artificial neural network capable of predicting backbone chemical shifts from C(alpha)-only protein conformations."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** No details are given on the neural network architecture, training data, feature representation, or how the predicted chemical shifts are integrated into the CG force field as restraints. The abstract does not specify whether the network was trained on IDP-specific data, how transferability across sequence space was ensured, or how the restraints are weighted during simulation.
+  - **Why it matters** Reproducibility is a core requirement for computational methods. Without these details, other groups cannot implement or test the approach, and the scientific community cannot independently verify the claims.
+  - **Resolution test** The full manuscript must include a complete description of the neural network, training and test datasets, hyperparameters, and the exact protocol for applying chemical shift restraints in the CG simulations, including any weighting or scaling schemes.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Generalizability and scope of validation
+  - **Claim pointer** The approach "correctly recapitulates both local and global arrangements" when "applied on a large set of IDPs in isolation or condensates."
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract does not specify the size or diversity of the IDP set, the range of sequence properties covered, or the types of condensates studied. It is unclear whether the method was tested on IDPs with varying degrees of transient structure, different charge patterning, or different lengths. The claim of resolving "force field limitations" is particularly strong and requires evidence that the method corrects known biases rather than merely fitting to experimental data.
+  - **Why it matters** Overfitting to a narrow set of test cases is a common failure mode in machine-learning-based approaches. The claim of broad applicability and force field correction is only credible if the validation set is sufficiently diverse and if the method demonstrably improves accuracy beyond what the base force field achieves.
+  - **Resolution test** Provide a detailed description of the test set, including sequence diversity, structural propensities, and condensate conditions. Show that the method improves agreement with experimental data across multiple independent IDPs and that improvements are not driven by a few favorable cases.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract framing
+  - **Evidence pointer** Abstract only
+  - **Issue** The abstract uses terms such as "elastic network models," "rigid body," and "dihedral parameterization" without brief contextual explanation, which may limit accessibility for readers outside the immediate simulation community.
+  - **Required correction** Add a short clause or parenthetical defining these terms in plain language, or rephrase to make the limitation being addressed more intuitive.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity of claims
+  - **Affected element** Statement on "functional elements of secondary structure"
+  - **Evidence pointer** Abstract only
+  - **Issue** The phrase "functional elements of secondary structure" is vague. It is unclear whether this refers to specific motifs, transient helices, beta-sheets, or something else, and how "functional" is defined in this context.
+  - **Required correction** Define what constitutes a functional element of secondary structure in the context of IDPs and specify which types of secondary structure the method can sample.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scope of applications
+  - **Affected element** Claims about "nucleation in condensates" and "conformationally selected binding motifs"
+  - **Evidence pointer** Abstract only
+  - **Issue** These application areas are mentioned as potential outcomes, but the abstract does not indicate whether they were actually demonstrated or are merely speculative future directions.
+  - **Required correction** Clarify whether these applications were tested in the current study or are proposed as future possibilities, and if tested, provide a brief summary of the findings.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative validation, methodological detail, and evidence of generalizability means the central claims cannot be evaluated from the supplied material.
+- **Assessment against Nature-style criteria** 
+  - Originality: The use of a neural network to predict chemical shifts from C(alpha)-only coordinates for CG simulation restraints appears novel and is a creative solution to a known limitation. This is a potential strength.
+  - Scientific importance: The problem is significant, given the prevalence of IDPs and the limitations of current CG methods. If validated, the approach could have broad utility. However, importance alone does not establish the case.
+  - Interdisciplinary readership: The work sits at the intersection of machine learning, biophysics, and structural biology, which could attract a broad audience. The abstract, however, is written in a way that may be more accessible to specialists.
+  - Technical soundness: Not assessable from the abstract. The lack of any quantitative results or methodological detail prevents evaluation of the technical validity.
+  - Readability for nonspecialists: The abstract is reasonably clear in its high-level narrative but uses field-specific jargon without explanation, which may hinder accessibility.
+- **Recommendation posture** Currently not established from the provided evidence. The conceptual idea is promising and the problem is important, but the abstract alone does not provide sufficient evidence to support the claims. A supportive recommendation would require the full manuscript to demonstrate rigorous validation, methodological transparency, and clear evidence of generalizability and improvement over existing methods.
+
+## Risk / unsupported claims
+- The claim that the approach "correctly recapitulates both local and global arrangements" is unsupported by any quantitative data in the abstract.
+- The claim that the method can "resolve force field limitations" is unsupported and requires direct comparison to baseline force field performance.
+- The claim of applicability to "a large set of IDPs in isolation or condensates" is unverifiable without details on the dataset and conditions.
+- The potential applications to "nucleation in condensates," "conformationally selected binding motifs," and "short-linear motifs" are presented as outcomes but are not substantiated in the abstract.

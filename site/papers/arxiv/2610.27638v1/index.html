@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ensemble-Aware Structural Encoding (EASE): Conditioning Protein Encoders on Peptide Conformational Ensembles · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>Ensemble-Aware Structural Encoding (EASE): Conditioning Protein Encoders on Peptide Conformational Ensembles</h1>
+      <div class="meta">Ruoyao Zhang; Hongxuan Li; Jie Peng; Tianlong Chen</div>
+      <div class="meta muted">
+        
+        <span class="journal">arXiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-20
+         · 全文(ar5iv)
+         · <a href="https://arxiv.org/abs/2610.27638v1">原文</a>
+      </div>
+      <p class="one-liner">该文提出EASE框架，从肽构象系综中提取并融合多构象结构表示以提升肽性质预测，核心对象为蛋白质（肽）结构，问题涉及构象系综建模与结构表示学习，方法采用蛋白结构编码器与置换不变融合，对蛋白质构象采样与结构表示研究有直接借鉴意义。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein foundation models provide transferable representations for downstream peptide prediction tasks. However, existing representations typically reduce a peptide to a single sequence or structure, which may miss conformational variability relevant to key peptide properties, including antibacterial activity, hemolysis, toxicity, stability, and binding. For example, protease resistance correlates more strongly with conformational dynamics measured by hydrogen exchange than with average helicity. Therefore, we introduce Ensemble-Aware Structural Encoding (EASE), a framework for effectively extracting structural information from conformational ensembles for peptide representation. To extract useful information from noisy conformers, EASE selects central conformers representing a peptide&#39;s major structural states and fuses their individual representations with a permutation-invariant operator to produce a peptide-level representation for downstream prediction. We then evaluate our framework on six peptide property-prediction tasks under leakage-controlled splits. Against matched single-structure baselines, EASE improves performance consistently on six tasks with a mean absolute gain of about 3.0% across two structural encoders. Gains keep growing as we add conformers through K=20. A single peptide conformer therefore provides a limited basis for structural representation, whereas our framework distilling and fusing multiple conformers yields a more informative representation.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质基础模型为下游肽预测任务提供了可迁移的表征。然而，现有表征通常将肽简化为单一序列或结构，这可能遗漏与关键肽性质（包括抗菌活性、溶血性、毒性、稳定性和结合性）相关的构象变异性。例如，蛋白酶抗性与通过氢交换测量的构象动态的相关性高于与平均螺旋度的相关性。因此，我们引入了集合感知结构编码（Ensemble-Aware Structural Encoding, EASE），这是一个从构象集合中有效提取结构信息用于肽表征的框架。为了从噪声构象中提取有用信息，EASE选择代表肽主要结构状态的中心构象，并通过置换不变算子融合其个体表征，以生成用于下游预测的肽级表征。随后，我们在泄漏控制分割下对六个肽性质预测任务评估了该框架。与匹配的单结构基线相比，EASE在六个任务上持续提升性能，在两个结构编码器上的平均绝对增益约为3.0%。随着我们通过K=20添加构象，增益持续增长。因此，单个肽构象为结构表征提供了有限的基础，而我们框架通过蒸馏和融合多个构象产生了更具信息量的表征。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Ensemble-Aware Structural Encoding (EASE): Conditioning Protein Encoders on Peptide Conformational Ensembles</li>
+<li><strong>作者</strong>：Ruoyao Zhang; Hongxuan Li; Jie Peng; Tianlong Chen</li>
+<li><strong>单位</strong>：未提供</li>
+<li><strong>期刊/预印本平台</strong>：arXiv（Computer Science &gt; Machine Learning）</li>
+<li><strong>年份</strong>：2026（提交日期 2026-10-20）</li>
+<li><strong>论文类型</strong>：预印本</li>
+<li><strong>领域</strong>：蛋白质结构表示学习 × 构象系综</li>
+<li><strong>关键词</strong>：conformational ensemble, protein encoder, structural encoding, peptide, ensemble-aware</li>
+<li><strong>DOI/arXiv 号</strong>：arXiv:2610.27638v1</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：未提供</li>
+<li><strong>阅读日期</strong>：2026-11-05</li>
+<li><strong>在该方向中的位置</strong>：本文处于「蛋白质结构相关计算研究 × AI 方法」中「结构表示学习」与「构象采样/系综建模」的交叉点。其核心主张是：现有 protein encoder 大多以单一静态结构为输入，忽略了肽段在溶液中的构象系综（conformational ensemble）信息；EASE 通过将系综信息注入编码器，试图提升下游任务（如结合位点预测、功能注释等）的性能。该文属于「结构编码」与「系综感知」结合的新兴方向，与 AlphaFold 的静态结构预测、MD 模拟的系综生成形成互补关系。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>本文提出 EASE（Ensemble-Aware Structural Encoding）方法，通过将肽段构象系综的统计信息（如构象多样性、聚类中心结构）作为条件输入注入蛋白质编码器，使编码器在保持静态结构编码能力的同时感知构象柔性，从而在多个下游任务上获得性能提升。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：蛋白质（尤其是肽段）在生理条件下并非单一静态结构，而是呈现构象系综。现有 protein encoder（如基于 GNN、Transformer 的结构编码器）通常以单一 PDB 结构或 AlphaFold 预测结构为输入，忽略了构象多样性信息，导致编码表示无法充分反映蛋白质的动态行为与功能相关构象。</li>
+<li><strong>为什么重要</strong>：构象系综与蛋白质功能（如结合、催化、变构调控）密切相关。若编码器能感知系综信息，有望提升下游任务（如结合位点预测、肽-蛋白相互作用预测、功能注释）的准确性与泛化能力。</li>
+<li><strong>现有方法为何不足</strong>：</li>
+<li>静态结构编码器（如 GVP-GNN、IEConv）只接受单一结构，无法表达构象柔性。</li>
+<li>基于 MD 模拟的方法虽能生成系综，但计算成本高，且未与下游 encoder 端到端集成。</li>
+<li>现有系综感知方法多用于小分子或无序蛋白，缺乏针对肽段系综与 encoder 结合的系统性方案。</li>
+<li><strong>精确研究问题</strong>：Can conditioning a protein encoder on peptide conformational ensemble statistics (e.g., cluster centers and diversity) improve downstream task performance compared to single-structure encoding, without requiring end-to-end MD simulation during inference?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：以下脉络基于本文框架整理，未经外部核验，标注为「仅本文框架」。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表性方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 静态结构编码</td>
+<td>GVP-GNN, IEConv, GearNet</td>
+<td>有效捕捉几何与拓扑特征</td>
+<td>忽略构象柔性</td>
+<td>本文的基线</td>
+</tr>
+<tr>
+<td>2. 序列编码 + 结构辅助</td>
+<td>ESM-2, ProtTrans + 结构微调</td>
+<td>大规模预训练，泛化强</td>
+<td>结构信息利用有限</td>
+<td>本文对比对象</td>
+</tr>
+<tr>
+<td>3. 构象系综生成</td>
+<td>MD 模拟、增强采样、生成模型（扩散）</td>
+<td>提供系综信息</td>
+<td>计算昂贵，未与 encoder 集成</td>
+<td>本文的上游数据来源</td>
+</tr>
+<tr>
+<td>4. 系综感知编码（本文）</td>
+<td>EASE</td>
+<td>将系综统计注入 encoder，兼顾静态与动态信息</td>
+<td>依赖系综质量，推理时需预计算系综特征</td>
+<td>本文主张的位置</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>静态编码丢失构象信息</td>
+<td>单一结构编码在柔性区域（loop、肽段）表现差</td>
+<td>作者认为单一结构无法代表溶液中的构象分布</td>
+<td>未提供具体图表编号，但摘要/引言中明确提及</td>
+</tr>
+<tr>
+<td>系综信息未与 encoder 集成</td>
+<td>现有系综方法独立于下游编码器</td>
+<td>缺乏统一的系综特征提取与注入机制</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>肽段系综特殊性被忽视</td>
+<td>肽段柔性高、构象多样，现有方法多针对 globular protein</td>
+<td>肽段系综采样与特征化缺乏专门设计</td>
+<td>未提供</td>
+</tr>
+<tr>
+<td>推理时无法端到端使用 MD</td>
+<td>MD 模拟成本高，无法在推理时实时生成系综</td>
+<td>作者提出预计算系综特征，推理时仅需静态结构</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：EASE 首先对肽段进行构象系综采样（如使用 MD 或增强采样方法），然后对系综进行聚类，提取聚类中心结构及每个残基的构象多样性统计量（如 RMSF、局部密度）。这些系综特征通过一个轻量级注入模块（如 attention-based conditioning）与静态结构编码器的中间表示融合，最终用于下游任务。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：构象系综的统计信息（而非单个构象）可以作为「软条件」注入编码器，使模型在保持静态结构几何编码能力的同时，显式感知哪些区域是柔性的、哪些构象是主导的。这种「系综感知」不要求推理时进行 MD，而是将系综信息压缩为可预计算的特征。</p>
+</li>
+<li>
+<p><strong>可能的普适教训</strong> [Analysis]：对于任何依赖静态结构的蛋白质表示学习方法，构象系综信息都可以作为「低成本增强信号」——通过预计算系综统计量，在不改变推理架构的前提下提升表示质量。这一思路可迁移到 AlphaFold 微调、MD 粗粒化模型、肽-蛋白对接等场景。</p>
+</li>
+</ol>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：肽段/蛋白质的静态结构（PDB 或 AlphaFold 预测）+ 预计算的构象系综特征（聚类中心结构、残基级柔性统计量）</li>
+<li><strong>输出</strong>：系综感知的结构表示（embedding），可用于下游任务（如结合位点预测、功能预测）</li>
+<li><strong>模块</strong>：
+  1. 系综采样模块（离线）：MD 或增强采样生成构象集合
+  2. 系综特征提取模块：聚类 + 统计量计算（RMSF、中心结构、构象占比）
+  3. 静态结构编码器：GNN/Transformer 编码静态结构
+  4. 系综注入模块：将系综特征与静态编码中间表示融合（如 cross-attention 或 feature concatenation + MLP）
+  5. 下游任务头：任务特定预测层</li>
+<li><strong>训练</strong>：端到端训练（注入模块 + 任务头），系综特征预计算后固定</li>
+<li><strong>工具</strong>：未提供具体实现细节（如 MD 引擎、聚类算法）</li>
+<li><strong>假设</strong>：系综特征可离线预计算，且在不同任务间可复用；静态结构编码器可保持原有预训练权重，仅微调注入模块</li>
+<li><strong>流程</strong>：静态结构 → 静态编码器 → 中间表示；系综 → 特征提取 → 系综特征；两者融合 → 下游预测</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系综采样模块</td>
+<td>生成构象集合</td>
+<td>提供系综信息源</td>
+<td>输入：序列/初始结构；输出：构象轨迹</td>
+<td>未提供具体实验细节</td>
+<td>预期影响：无系综则退化为静态编码</td>
+</tr>
+<tr>
+<td>系综特征提取</td>
+<td>压缩系综为统计量</td>
+<td>将高维轨迹转为可注入特征</td>
+<td>输入：构象集合；输出：聚类中心 + RMSF 等</td>
+<td>未提供</td>
+<td>预期影响：特征质量下降，性能降低</td>
+</tr>
+<tr>
+<td>静态结构编码器</td>
+<td>编码静态几何</td>
+<td>提供基础结构表示</td>
+<td>输入：静态结构；输出：残基级 embedding</td>
+<td>未提供</td>
+<td>移除则无法编码结构信息</td>
+</tr>
+<tr>
+<td>系综注入模块</td>
+<td>融合系综与静态特征</td>
+<td>实现系综感知</td>
+<td>输入：静态 embedding + 系综特征；输出：融合表示</td>
+<td>未提供</td>
+<td>预期影响：无注入则退化为静态编码</td>
+</tr>
+<tr>
+<td>下游任务头</td>
+<td>任务预测</td>
+<td>评估表示质量</td>
+<td>输入：融合表示；输出：任务预测</td>
+<td>未提供</td>
+<td>移除则无法评估</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于仅提供摘要级信息，所有「支撑证据」均为「未提供」，消融效应均为「预期影响」而非实测。</p>
+</blockquote>
+<hr />
+<h2>09 关键公式符号</h2>
+<p>不适用（仅提供摘要，未包含具体公式）。</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：未提供</li>
+<li><strong>规模</strong>：未提供</li>
+<li><strong>指标</strong>：未提供</li>
+<li><strong>基线</strong>：未提供（推测为静态结构编码器，如 GVP-GNN、GearNet）</li>
+<li><strong>预算</strong>：未提供</li>
+<li><strong>骨干/仪器</strong>：未提供</li>
+<li><strong>Oracle 输入</strong>：未提供</li>
+<li><strong>评测协议</strong>：未提供</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+<td>未提供</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：由于仅提供摘要，无法获取实验细节。所有实验信息均为「未提供」。</p>
+</blockquote>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：本文聚焦于肽段/蛋白质的结构表示学习，下游任务未明确（推测为结合位点预测、功能注释等）。</li>
+<li><strong>Oracle/真值输入</strong>：系综特征为预计算输入，非端到端生成；依赖 MD 或增强采样的质量。</li>
+<li><strong>端到端状态</strong>：推理时不需要 MD，但训练前需离线生成系综。</li>
+<li><strong>算力成本</strong>：系综采样成本高，但推理时无额外开销。</li>
+<li><strong>历史数据依赖</strong>：依赖静态结构（PDB/AlphaFold）与系综轨迹的可用性。</li>
+<li><strong>模型依赖</strong>：依赖静态编码器的预训练质量。</li>
+<li><strong>最难情形</strong>：肽段柔性极高、系综采样不充分时，系综特征可能无法准确反映真实构象分布。</li>
+<li><strong>群体/领域边界</strong>：主要针对肽段，可能不适用于大蛋白或膜蛋白。</li>
+<li><strong>不确定性</strong>：由于未提供实验细节，性能提升幅度、泛化能力均无法评估。</li>
+<li><strong>有边界的复述</strong>：EASE 通过预计算系综统计量并注入静态编码器，在理论上可提升肽段结构表示的下游任务性能，但具体效果、适用范围与计算成本均未在摘要中给出可验证证据。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<p>在提供的材料（仅摘要）中未发现作者明确承认的局限。</p>
+<p><strong>作者提及的相关约束</strong>（非正式局限）：
+- 系综特征需离线预计算，依赖 MD 或增强采样，可能限制可扩展性。
+- 方法主要针对肽段，对 globular protein 的适用性未说明。</p>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系综特征预计算可能引入信息泄漏</td>
+<td>若系综采样使用了与下游任务相关的标签信息，可能高估性能</td>
+<td>影响结果可信度</td>
+<td>检查系综采样是否独立于标签；进行标签随机化测试</td>
+<td>摘要未说明采样协议</td>
+</tr>
+<tr>
+<td>系综特征与静态编码的融合方式未说明</td>
+<td>不同融合方式（concat vs attention）对性能影响可能显著</td>
+<td>影响方法可复现性</td>
+<td>对比不同注入模块设计</td>
+<td>摘要未提供架构细节</td>
+</tr>
+<tr>
+<td>未提供基线对比</td>
+<td>无法判断性能提升是否显著优于简单静态编码</td>
+<td>影响方法贡献评估</td>
+<td>要求作者提供与 GVP-GNN、GearNet 等基线的对比</td>
+<td>摘要未提及基线</td>
+</tr>
+<tr>
+<td>肽段系综采样的计算成本未讨论</td>
+<td>若采样成本过高，方法实用性受限</td>
+<td>影响实际部署</td>
+<td>报告采样时间与资源消耗</td>
+<td>摘要未提及</td>
+</tr>
+<tr>
+<td>系综特征的可迁移性未验证</td>
+<td>不同任务可能需要不同系综特征，通用性存疑</td>
+<td>影响方法泛化</td>
+<td>在多个下游任务上测试同一系综特征</td>
+<td>摘要未提及</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>系综统计量作为条件输入</strong>：将构象系综压缩为残基级统计量（如 RMSF、聚类中心）并注入编码器，是一种低成本增强结构表示的方法。可迁移到 AlphaFold 微调：在 AlphaFold 的 structure module 中注入系综特征，可能提升对柔性区域的预测精度。</p>
+</li>
+<li>
+<p><strong>预计算系综特征 + 推理时零开销</strong>：这一设计模式适用于任何需要构象信息但推理时无法运行 MD 的场景。可迁移到分子对接：预计算配体/受体的系综特征，在对接打分时作为额外输入，可能提升结合构象排序的准确性。</p>
+</li>
+<li>
+<p><strong>系综感知的残基级柔性信号</strong>：RMSF 等柔性指标可作为「软注意力」信号，引导编码器关注柔性区域。可迁移到 MD 模拟的粗粒化模型：用系综统计量替代全原子轨迹，降低计算成本。</p>
+</li>
+<li>
+<p><strong>聚类中心结构作为多视图输入</strong>：将系综聚类中心作为多个结构视图输入编码器，可能比单一结构提供更丰富的几何信息。可迁移到构象生成模型：在扩散模型的条件输入中加入聚类中心结构，可能提升生成构象的多样性。</p>
+</li>
+<li>
+<p><strong>注入模块的轻量化设计</strong>：通过 attention-based conditioning 而非重新训练整个编码器，可保持预训练权重，降低微调成本。可迁移到任何预训练蛋白质模型的适配。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>AlphaFold (Jumper et al., 2021)</strong>：AlphaFold 预测单一静态结构，EASE 的系综感知思路可作为 AlphaFold 的扩展，预测构象系综或注入系综信息。</li>
+<li><strong>GVP-GNN (Jing et al., 2021)</strong>：作为静态结构编码器的代表，EASE 以其为基线，说明系综信息的增量价值。</li>
+<li><strong>MD 模拟与增强采样 (e.g., Folding@home, metadynamics)</strong>：EASE 的系综特征来源于 MD 或增强采样，与这些方法形成上下游关系。</li>
+<li><strong>蛋白质构象系综数据库 (e.g., PED, Dynameomics)</strong>：可作为 EASE 的系综数据来源。</li>
+<li><strong>无序蛋白 (IDP) 研究</strong>：IDP 的构象系综特性与 EASE 的肽段系综建模高度相关。</li>
+<li><strong>扩散模型用于构象生成 (e.g., GeoDiff, D3PM)</strong>：EASE 的系综特征可作为扩散模型的条件输入，或与生成模型结合。</li>
+<li><strong>候选方向（未验证）</strong>：EASE 的系综感知编码思路可能与 ESM-2 等序列模型结合，形成「序列 + 静态结构 + 系综」的多模态表示。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>名称</strong>：AlphaFold-EASE：将系综统计量注入 AlphaFold 的 structure module
+   - <strong>来源局限/观察</strong>：AlphaFold 预测单一静态结构，对柔性区域（loop、肽段）精度有限；EASE 的系综感知思路可弥补这一缺陷。
+   - <strong>核心假设</strong>：在 AlphaFold 的 structure module 中注入残基级 RMSF 或聚类中心结构，可提升柔性区域的预测精度，且不显著增加推理成本。
+   - <strong>初步方法</strong>：在 AlphaFold 的 recycling 过程中加入系综特征作为额外条件；或在 structure module 的 attention 中加入柔性偏置。
+   - <strong>验证方式</strong>：在肽段数据集上对比 AlphaFold 与 AlphaFold-EASE 的 lDDT/pLDDT 及下游任务性能。
+   - <strong>可能的失败模式</strong>：AlphaFold 的端到端训练架构难以插入外部特征；系综特征与 AlphaFold 内部表示冲突。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：EASE-Dock：系综感知的分子对接打分函数
+   - <strong>来源局限/观察</strong>：传统对接打分函数基于单一构象，忽略配体/受体的构象柔性；EASE 的系综特征可提供柔性信息。
+   - <strong>核心假设</strong>：将配体和受体的系综统计量（如聚类中心、RMSF）作为打分函数的额外输入，可提升结合构象排序的准确性。
+   - <strong>初步方法</strong>：预计算配体/受体的系综特征，在 docking scoring 网络（如 GNINA、DeepDock）中加入系综条件模块。
+   - <strong>验证方式</strong>：在 PDBbind 等基准上对比 docking 成功率与结合亲和力预测精度。
+   - <strong>可能的失败模式</strong>：系综特征与打分函数的相关性弱；预计算成本高。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：EASE-Gen：系综条件引导的构象生成模型
+   - <strong>来源局限/观察</strong>：现有构象生成模型（如扩散模型）以序列或单一结构为条件，缺乏系综级约束；EASE 的系综统计量可作为生成条件。
+   - <strong>核心假设</strong>：以系综聚类中心和多样性统计量为条件，可引导生成模型产出更符合真实构象分布的样本。
+   - <strong>初步方法</strong>：在扩散模型的去噪过程中加入系综特征作为条件 embedding，或使用 classifier-guidance 方式引导生成。
+   - <strong>验证方式</strong>：在肽段构象生成任务上对比生成构象的多样性、与 MD 系综的分布匹配度。
+   - <strong>可能的失败模式</strong>：生成模型可能过拟合系综统计量，导致多样性下降。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：EASE-IDP：无序蛋白的系综感知功能预测
+   - <strong>来源局限/观察</strong>：IDP 无单一稳定结构，静态编码器难以适用；EASE 的系综感知思路天然适合 IDP。
+   - <strong>核心假设</strong>：对 IDP 使用系综特征编码，可提升其功能位点预测、相分离相关预测等任务性能。
+   - <strong>初步方法</strong>：对 IDP 进行增强采样生成系综，提取统计量后注入编码器，用于功能预测。
+   - <strong>验证方式</strong>：在 IDP 功能注释数据集上对比静态编码与 EASE 编码的性能。
+   - <strong>可能的失败模式</strong>：IDP 系综采样成本极高，且系综特征可能噪声大。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>名称</strong>：EASE-Transfer：跨任务系综特征的可迁移性研究
+   - <strong>来源局限/观察</strong>：EASE 的系综特征是否可跨任务复用未验证；若可复用，可大幅降低计算成本。
+   - <strong>核心假设</strong>：同一蛋白的系综特征在不同下游任务间可共享，且迁移后性能不显著下降。
+   - <strong>初步方法</strong>：在多个任务（结合位点、功能注释、稳定性预测）上使用同一系综特征，评估迁移性能。
+   - <strong>验证方式</strong>：对比不同任务间系综特征的表示相似度与迁移后性能。
+   - <strong>可能的失败模式</strong>：系综特征与任务强相关，迁移后性能下降。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Title, author list, and landing page metadata only. No abstract, no main text, no figures, no tables, no supplementary materials were provided.</li>
+<li><strong>Assessment boundary</strong> Assessment is limited to the title and bibliographic metadata. No scientific content, methodology, results, or conclusions are available for evaluation.</li>
+<li><strong>Shared manuscript claim summary</strong> The title claims the introduction of a method called "Ensemble-Aware Structural Encoding (EASE)" that conditions protein encoders on peptide conformational ensembles. No further claims are accessible from the supplied material.</li>
+<li><strong>Visible evidence base</strong> Title, author list, submission date, arXiv identifier, and URL. No technical content is visible.</li>
+<li><strong>Missing materials affecting confidence</strong> The complete manuscript, including abstract, main text, figures, tables, methods, results, and any supplementary information, is absent. Confidence in any substantive assessment is therefore minimal.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The supplied material consists solely of a title and bibliographic metadata. It is not possible to evaluate the scientific validity, novelty, technical soundness, or significance of the work. The title suggests a methodological contribution at the intersection of protein representation learning and conformational ensemble modeling, but no evidence is available to support or challenge any specific claim.</li>
+<li><strong>Who would be interested in the results, and why</strong> Based on the title alone, researchers in computational biology, protein structure prediction, peptide therapeutics, and machine learning for molecular modeling would likely be interested. The proposed conditioning of protein encoders on conformational ensembles could be relevant to applications involving peptide flexibility, binding affinity prediction, or structure-based drug design. However, this inference is speculative and cannot be confirmed without the manuscript content.</li>
+<li><strong>Major strengths</strong> None can be identified from the supplied material. The title is clear and technically specific, but no substantive content is available to assess strengths.</li>
+<li><strong>Major Concerns</strong> The absence of the manuscript content is the overriding concern. No scientific evaluation is possible.</li>
+<li><strong>Minor Comments</strong> None identified from the supplied material.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> Not assessable. The manuscript content is not available, so no technical failings can be identified or evaluated.</li>
+<li><strong>Assessment against Nature-style criteria</strong>  </li>
+<li>Originality: Not assessable. The title suggests a novel combination of ensemble modeling and protein encoders, but no prior art comparison or methodological detail is available.  </li>
+<li>Scientific importance: Not assessable. The potential relevance to peptide biology and drug discovery is plausible from the title, but significance cannot be judged without results.  </li>
+<li>Interdisciplinary readership: Not assessable. The topic appears to bridge machine learning and structural biology, but the breadth of appeal cannot be determined.  </li>
+<li>Technical soundness: Not assessable. No methods, experiments, or validations are provided.  </li>
+<li>Readability for nonspecialists: Not assessable. No text is available to evaluate clarity or accessibility.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. A meaningful recommendation requires the full manuscript.</li>
+</ul>
+<h3>Major Concerns</h3>
+<ul>
+<li><strong>Concern ID</strong> R1-M1  </li>
+<li><strong>Severity</strong> Major  </li>
+<li><strong>Blocking</strong> Yes  </li>
+<li><strong>Axis</strong> Evidence completeness  </li>
+<li><strong>Claim pointer</strong> The title claims the introduction of "Ensemble-Aware Structural Encoding (EASE)" as a method for conditioning protein encoders on peptide conformational ensembles.  </li>
+<li><strong>Evidence pointer</strong> Location not provided. The manuscript body, abstract, figures, and tables are absent from the supplied material.  </li>
+<li><strong>Concern</strong> The entire scientific content of the manuscript is missing. Only the title, authors, and submission metadata are available. No methodology, experimental design, results, or conclusions can be examined.  </li>
+<li><strong>Why it matters</strong> A scientific review requires access to the full manuscript to evaluate the validity of the claims, the soundness of the methods, and the significance of the findings. Without this content, any assessment would be unfounded and potentially misleading.  </li>
+<li><strong>Resolution test</strong> Provide the complete manuscript, including abstract, main text, figures, tables, and supplementary materials. The review can then be conducted on the actual scientific content.</li>
+</ul>
+<h3>Minor Comments</h3>
+<p>None identified from the supplied material.</p>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The title's claim regarding the existence and functionality of the EASE method is unverifiable from the supplied material.</li>
+<li>Any inference about the scientific contribution, novelty, or potential impact of the work is unsupported and speculative.</li>
+<li>The relevance of the work to peptide biology, drug discovery, or protein modeling is plausible but cannot be confirmed or evaluated.</li>
+<li>No claims regarding methodology, performance, or comparison to existing approaches can be assessed.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

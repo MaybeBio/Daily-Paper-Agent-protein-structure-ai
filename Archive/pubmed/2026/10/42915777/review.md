@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to full text, figures, tables, or methods
+- **Shared manuscript claim summary** The authors report that softening a salt bridge, specifically via the Arg318Lys mutation, in a mesophilic endo-beta-1,4-mannanase from *Eisenia fetida* increases low-temperature activity approximately 2.5-fold at 10-20 degrees C while largely preserving thermal stability.
+- **Visible evidence base** Abstract text only; no quantitative data, statistical analyses, structural coordinates, or experimental protocols provided
+- **Missing materials affecting confidence** Full methods, kinetic data, thermal stability measurements, structural analysis, statistical details, and all figures and tables
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting hypothesis, that targeted disruption of a salt bridge can enhance low-temperature activity in a mesophilic enzyme without major loss of thermal stability. The reported result, a 2.5-fold activity increase for the Arg318Lys mutant, is potentially valuable for enzyme engineering. However, the evidence base is limited to the abstract, and several critical details are absent, including quantitative kinetic parameters, thermal stability data, structural validation, and statistical treatment. The claim of "largely preserving" thermal stability is vague and cannot be assessed without numerical data. The mechanistic interpretation, that softening a salt bridge increases flexibility, is plausible but not directly demonstrated. The work may be of interest to enzyme engineers and biochemists, but the case is not fully established from the supplied material.
+- **Who would be interested in the results, and why** Researchers in enzyme engineering, protein engineering, and biocatalysis would be interested, as the work suggests a rational design strategy for improving low-temperature activity in mesophilic enzymes. Those working on cold-adapted enzymes and psychrophile biology may also find the results relevant. Industrial biotechnologists seeking enzymes with improved activity at moderate temperatures could benefit from the approach.
+- **Major strengths** The hypothesis is clearly stated and mechanistically grounded in established principles of protein flexibility and salt bridge contributions to stability. The focus on a specific structural feature, salt bridges involving arginine and glutamic acid/aspartic acid, provides a targeted and testable design rationale. The reported improvement in low-temperature activity is substantial and potentially useful.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that the Arg318Lys mutant exhibited nearly 2.5-fold higher activity than the wild-type at 10-20 degrees C while largely preserving thermal stability.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract provides no quantitative data to support the 2.5-fold activity increase or the thermal stability claim. No kinetic parameters, such as kcat, Km, or kcat/Km, are given. No thermal stability data, such as Tm values or half-life measurements, are provided. The phrase "largely preserving" is undefined and could encompass a wide range of outcomes.
+  - **Why it matters** Without quantitative data, the magnitude and significance of the reported effects cannot be evaluated. The claim of preserved thermal stability is central to the paper's value proposition, and its vagueness undermines the conclusion. The reader cannot determine whether the trade-off between activity and stability is acceptable for practical applications.
+  - **Resolution test** Provide specific kinetic parameters with error bars and statistical comparisons for wild-type and mutant enzymes at multiple temperatures. Provide thermal stability data, such as Tm values or residual activity after incubation at elevated temperatures, with statistical analysis. Define "largely preserving" with a quantitative threshold.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic support
+  - **Claim pointer** The claim that softening the salt bridge by the arginine-to-lysine mutation increased low-temperature activity based on tertiary structural information.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that the mutation was designed based on tertiary structural information, but no structural data are presented. It is not shown that the salt bridge involving Arg318 is actually disrupted or weakened in the mutant. The mechanistic link between the mutation, increased flexibility, and enhanced low-temperature activity is inferred but not demonstrated.
+  - **Why it matters** The paper's central hypothesis is that salt bridge softening increases flexibility and thus low-temperature activity. Without structural or biophysical evidence, such as crystallography, molecular dynamics simulations, or flexibility measurements, the mechanism remains speculative. The observed activity change could arise from other effects, such as altered substrate binding or changes in active site geometry.
+  - **Resolution test** Provide structural data for the mutant, such as a crystal structure or homology model, showing the loss of the salt bridge. Include flexibility measurements, such as B-factors or molecular dynamics simulations, comparing wild-type and mutant. Alternatively, provide kinetic evidence that the activity increase is due to improved catalytic efficiency rather than substrate binding.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Generalizability
+  - **Claim pointer** The claim that softening a salt bridge by the arginine-to-lysine mutation increased low-temperature activity while largely preserving thermal stability, presented as a general strategy.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract reports results for a single mutation in a single enzyme. The broader applicability of the strategy is implied but not tested. It is unclear whether the approach would work for other salt bridges in this enzyme or for other mesophilic enzymes.
+  - **Why it matters** The paper's significance would be enhanced if the strategy were shown to be generalizable. As presented, the result could be a special case specific to this enzyme and this particular salt bridge. The claim of a general strategy is not supported by the evidence.
+  - **Resolution test** Test additional salt bridge mutations in this enzyme or in other mesophilic enzymes and show consistent improvements in low-temperature activity with preserved stability. Alternatively, temper the claim to be specific to this enzyme and mutation.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Definition of "low-temperature activity"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states that the enzyme shows weaker activity at low temperatures compared with other *E. fetida* enzymes, but the temperature range for "low" is not defined in the abstract.
+  - **Required correction** Specify the temperature range considered as "low" in the abstract.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Mutant characterization
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions the Asp316 mutation but does not report its effect on thermal stability or activity in detail. Only the Arg318Lys mutant is highlighted.
+  - **Required correction** Provide a brief summary of the Asp316 mutant results, or clarify why it is not discussed further.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** Activity comparison
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The 2.5-fold activity increase is reported without any indication of variability or statistical significance.
+  - **Required correction** Include error bars and p-values or confidence intervals for the activity measurements.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The absence of quantitative kinetic and stability data and the lack of structural or biophysical evidence for the proposed mechanism prevent the case from being established from the supplied material.
+- **Assessment against Nature-style criteria** 
+  - **Originality** The idea of targeting salt bridges to modulate low-temperature activity is not entirely new, but the specific application to a mesophilic mannanase and the focus on arginine-to-lysine substitution is a reasonable contribution. The originality is moderate.
+  - **Scientific importance** The work addresses a relevant problem in enzyme engineering, namely improving activity at moderate temperatures without sacrificing stability. The potential impact is moderate, as the strategy may be useful but is not demonstrated to be general.
+  - **Interdisciplinary readership** The work is likely to appeal primarily to biochemists and enzyme engineers. The broader interdisciplinary appeal is limited, as the abstract does not connect to wider biological or biotechnological implications.
+  - **Technical soundness** Cannot be fully assessed from the abstract. The lack of quantitative data and structural evidence is a significant limitation.
+  - **Readability for nonspecialists** The abstract is generally clear and accessible, with the key concepts of salt bridges and low-temperature activity explained adequately for a broad scientific audience.
+- **Recommendation posture** Currently not established from the provided evidence. The hypothesis is interesting and the reported result is potentially valuable, but the abstract lacks the quantitative and structural data needed to support the central claims. The authors should provide full kinetic and stability data, structural validation, and statistical analysis to make the case convincing.
+
+## Risk / unsupported claims
+- The 2.5-fold activity increase at 10-20 degrees C is unsupported without kinetic data and statistical analysis.
+- The claim of "largely preserving" thermal stability is unsupported without quantitative stability measurements.
+- The mechanistic claim that salt bridge softening increases flexibility and thus activity is unsupported without structural or biophysical evidence.
+- The generalizability of the strategy to other enzymes or salt bridges is unsupported and should be either tested or explicitly limited.

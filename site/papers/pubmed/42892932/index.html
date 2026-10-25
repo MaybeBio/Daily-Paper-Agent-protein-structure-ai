@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>An inverse-protein-folding pre-trained model for predicting the mutational effects in protein-protein interactions. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">8</span>
+    <div>
+      <h1>An inverse-protein-folding pre-trained model for predicting the mutational effects in protein-protein interactions.</h1>
+      <div class="meta">Mao, Sihong; Meng, Siwei; Xiang, Ye</div>
+      <div class="meta muted">
+        
+        <span class="journal">iScience</span>
+        · 2026-10-18
+         · 全文(pmc)
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42892932/">原文</a>
+      </div>
+      <p class="one-liner">该文提出基于逆折叠预训练的消息传递神经网络DGMPNN，用于预测蛋白质-蛋白质相互作用中突变引起的结合亲和力变化，属于蛋白质结构相关的AI计算建模，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Protein-protein interactions (PPIs) are fundamental to vast biological processes. Accurate prediction of mutation-induced changes in PPIs is crucial for protein engineering and drug discovery. Most existing PPI prediction approaches rely on refined physicochemical features or computationally intensive structural sampling. Here, we present delta-G message-passing-neural-network (DGMPNN), a message-passing neural-network framework for predicting the effects of mutations on PPIs. DGMPNN is pre-trained on an inverse protein folding (IPF) task and employs an adaptive residue-level attention pooling mechanism to enable effective transfer learning for predicting mutation-induced changes in protein binding affinity. The model achieves state-of-the-art performance on multiple benchmark datasets and deep mutational scanning (DMS) datasets. Experimental validation using computationally selected multi-site variants of the SARS-CoV-2 RBD-hACE2 complex showed strong agreement between predicted and experimentally measured binding affinities.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质-蛋白质相互作用（PPIs）是广泛生物学过程中的基础。准确预测突变引起的PPIs变化对于蛋白质工程和药物发现至关重要。现有的大多数PPI预测方法依赖于精细的物理化学特征或计算密集的结构采样。在此，我们提出了delta-G消息传递神经网络（DGMPNN），一种用于预测突变对PPIs影响的消息传递神经网络框架。DGMPNN在逆向蛋白质折叠（IPF）任务上进行了预训练，并采用自适应残基级注意力池化机制，以实现有效的迁移学习，用于预测突变引起的蛋白质结合亲和力变化。该模型在多个基准数据集和深度突变扫描（DMS）数据集上达到了最先进的性能。使用计算选择的多位点SARS-CoV-2 RBD-hACE2复合物变体的实验验证显示，预测与实验测得的结合亲和力之间具有强烈的一致性。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：An inverse-protein-folding pre-trained model for predicting the mutational effects in protein-protein interactions</li>
+<li><strong>作者</strong>：Mao, Sihong; Meng, Siwei; Xiang, Ye</li>
+<li><strong>单位</strong>：未提供（通讯作者 Ye Xiang 邮箱为 yxiang@mail.tsinghua.edu.cn，推断为清华大学）</li>
+<li><strong>期刊/平台</strong>：iScience</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-18）</li>
+<li><strong>论文类型</strong>：研究论文（含方法开发 + 实验验证）</li>
+<li><strong>领域</strong>：蛋白质-蛋白质相互作用（PPI）突变效应预测 × 深度学习（图神经网络）</li>
+<li><strong>关键词</strong>：inverse protein folding, protein-protein interaction, mutational effects, message-passing neural network, binding affinity, deep mutation scanning</li>
+<li><strong>DOI/ID</strong>：10.1016/j.isci.2026.117693</li>
+<li><strong>代码</strong>：https://github.com/MaoSihong/DGMPNN</li>
+<li><strong>数据</strong>：SKEMPI v2.0、SARS-CoV-2 RBD-hACE2 DMS 数据（jbloomlab）、CtDock-CtCoh DMS 数据（MaveDB）</li>
+<li><strong>阅读日期</strong>：未提供</li>
+<li><strong>在课题方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的 PPI 突变效应预测任务。其核心创新在于将 inverse protein folding（IPF）预训练任务与注意力池化机制结合，实现无需预计算特征/能量项的纯深度学习 ΔΔG 预测，并展示了在 SARS-CoV-2 RBD-hACE2 多突变体筛选中的实际应用价值。与 AlphaFold、MD 模拟等方法形成互补：不依赖构象采样，直接从结构+序列预测突变效应。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出 DGMPNN——一个基于 IPF 预训练的 MPNN 框架，通过编码蛋白质复合物的骨架几何与序列信息，直接预测 ln(KD) 并计算 ΔΔG，在 SKEMPI 基准和 SARS-CoV-2 RBD-hACE2 DMS 数据上达到 SOTA 性能，且无需预计算特征或构象采样。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何准确、高效地预测蛋白质-蛋白质相互作用中突变引起的结合亲和力变化（ΔΔG）？</li>
+<li><strong>为什么重要</strong>：PPI 是信号转导、免疫应答等核心生物过程的基础；准确预测突变效应对于蛋白工程（如抗体优化）、药物发现和病毒进化监测（如 SARS-CoV-2 变异株风险评估）至关重要。</li>
+<li><strong>现有方法不足</strong>：</li>
+<li>实验方法（SPR、BLI）成本高、通量低；</li>
+<li>基于物理/经验力场的方法（FoldX、Rosetta）依赖构象采样，计算量大且精度受限于采样充分性；</li>
+<li>传统机器学习方法（mCSM-PPI、MutaBind）依赖预定义/预计算特征，特征工程繁琐且可能丢失关键信息；</li>
+<li>现有深度学习方法（如 GeoPPI、DiffAffinity）虽引入自监督学习，但多依赖侧链重构等任务，未充分利用 IPF 任务的优势。</li>
+<li><strong>精确研究问题（Can...?）</strong>：Can an inverse-protein-folding pre-trained MPNN model, without any precomputed biochemical features or conformational sampling, achieve state-of-the-art accuracy in predicting mutation-induced changes in protein-protein binding affinity?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文框架整理，未经外部系统核验。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验方法</td>
+<td>SPR、BIL</td>
+<td>准确、直接</td>
+<td>成本高、通量低</td>
+</tr>
+<tr>
+<td>物理/经验力场</td>
+<td>FoldX、Rosetta</td>
+<td>可解释、有物理基础</td>
+<td>依赖构象采样，计算量大，精度受采样限制</td>
+</tr>
+<tr>
+<td>传统机器学习</td>
+<td>PoPMuSiC、mCSM-PPI、MutaBind、BindProfX</td>
+<td>速度快、可批量</td>
+<td>依赖预定义特征，特征工程繁琐</td>
+</tr>
+<tr>
+<td>拓扑数据分析</td>
+<td>PerSpect-EL、TopNetTree</td>
+<td>捕捉拓扑特征</td>
+<td>特征提取复杂，泛化性有限</td>
+</tr>
+<tr>
+<td>深度学习（自监督）</td>
+<td>GeoPPI、RDE-Net、DiffAffinity</td>
+<td>自动特征学习</td>
+<td>预训练任务与下游任务关联度有限</td>
+</tr>
+<tr>
+<td>深度学习（IPF 预训练）</td>
+<td><strong>DGMPNN（本文）</strong></td>
+<td>无需预计算特征，IPF 任务与结构-序列关系高度相关</td>
+<td>依赖高质量结构输入，对多突变组合的泛化仍需验证</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：DGMPNN 位于深度学习方法的延伸点上，其独特贡献在于：(1) 采用 IPF 作为预训练任务，使模型学习残基在局部结构环境中的适配性；(2) 引入 SAG-like 注意力池化，保留全图信息的同时实现节点级加权；(3) 无需任何预计算特征或构象采样，纯端到端学习。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验方法通量低</td>
+<td>SPR/BLI 每次只能测少量突变体</td>
+<td>成本高、耗时</td>
+<td>Introduction 节："often limited by high costs and low throughput"</td>
+</tr>
+<tr>
+<td>物理方法计算量大</td>
+<td>FoldX/Rosetta 需构象采样</td>
+<td>依赖离散构象搜索，采样不充分导致不准确</td>
+<td>Introduction 节："rely on extensive conformation sampling, and thus, are time consuming and can be inaccurate due to the limitations of discrete conformation sampling"</td>
+</tr>
+<tr>
+<td>传统 ML 依赖预定义特征</td>
+<td>mCSM-PPI、MutaBind 需预计算特征</td>
+<td>特征工程繁琐，可能遗漏关键信息</td>
+<td>Introduction 节："their accuracy depends on predefined and precalculated input features"</td>
+</tr>
+<tr>
+<td>现有 DL 预训练任务关联度有限</td>
+<td>GeoPPI 等使用侧链重构等任务</td>
+<td>预训练任务与 PPI 突变效应预测的关联不够直接</td>
+<td>Introduction 节："methods that use protein reverse folding task as the main pre-training objective can be further explored"</td>
+</tr>
+<tr>
+<td>多突变组合效应难以评估</td>
+<td>单点突变数据充足，多点突变数据稀疏</td>
+<td>数据稀缺，且存在上位效应（epistasis）</td>
+<td>Discussion 节："The current datasets assessing single-point mutation effects on protein binding affinity remain limited in scale. The entries containing multisite mutations are sparser"</td>
+</tr>
+<tr>
+<td>模型无法评估蛋白折叠稳定性</td>
+<td>DGMPNN 无法预测突变导致的折叠/聚集问题</td>
+<td>训练数据缺乏相关标签</td>
+<td>Limitations 节："our model cannot predict essential functional attributes such as protein folding stability and aggregation propensity"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li>
+<p><strong>表面方法</strong>：构建一个 MPNN 编码器-解码器架构，先在 IPF 任务上预训练（给定骨架结构预测氨基酸序列），再在 PPI 突变效应预测任务上微调。输入为蛋白质复合物的图表示（节点=残基，边=骨架原子间距离+序列位置），输出为 ln(KD) 预测值，进而计算 ΔΔG。</p>
+</li>
+<li>
+<p><strong>核心洞察</strong>：
+   - IPF 任务天然要求模型理解残基与其局部结构环境（包括与其他链残基的接触）的适配关系，这与 PPI 突变效应预测高度相关——突变改变局部化学环境，IPF 预训练使模型对此敏感。
+   - 采用 SAG-like 注意力池化而非传统图池化，保留全图信息（不丢弃节点），通过注意力权重实现节点级贡献评估，既提升预测精度又提供可解释性。
+   - 直接预测 ln(KD) 而非 ΔΔG，使模型学习绝对亲和力，ΔΔG 通过 WT 与突变体预测值之差计算，避免直接回归小数值的困难。</p>
+</li>
+<li>
+<p><strong>可能的普适教训 [Analysis]</strong>：
+   - 预训练任务的选择应最大化与下游任务的知识重叠。IPF 与 PPI 突变效应共享「序列-结构适配」这一核心物理化学约束，因此迁移效果好。
+   - 注意力机制不仅提升性能，还提供可解释的残基级贡献，有助于生物学发现（如关键残基识别）。
+   - 纯结构+序列输入、无需预计算特征的端到端设计，简化了使用流程，提高了泛化潜力。</p>
+</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质复合物的三维结构（骨架原子坐标）+ 序列信息。图表示中，节点=每个氨基酸残基，边=基于 Cα-Cα 距离的 k-NN 图（k=48），边特征包含 25 对骨架原子间距离（Cα, C, N, O, Cβ 的原子对）和相对序列位置编码。</li>
+<li><strong>输出</strong>：ln(KD) 预测值；ΔΔG 通过 RT·ln(KD_mut/KD_wt) 计算。</li>
+<li><strong>模块</strong>：
+  1. <strong>编码器</strong>：3 层堆叠 MPNN 层，从零向量节点特征出发，通过消息传递更新节点和边表示，提取结构-序列联合表征。
+  2. <strong>解码器</strong>：3 层堆叠 MPNN 层，用于 IPF 预训练任务（预测残基身份）。
+  3. <strong>注意力池化层</strong>：SAG-like 自适应注意力池化，额外 MPNN 层生成节点级注意力分数，加权求和得到图级表示。
+  4. <strong>预测头</strong>：2 层 MLP，将图级表示映射为 ln(KD)。</li>
+<li><strong>训练流程</strong>：
+  1. <strong>预训练</strong>：在 PDB 蛋白质复合物（2021-08-02 前沉积）上执行 IPF 任务，自回归方式预测残基身份，使用 teacher forcing。
+  2. <strong>微调</strong>：在 SKEMPI v2.0 衍生的 S2462 数据集（2462 个单点突变，205 个复合物）上微调，损失为 ln(KD) 的 MSE。</li>
+<li><strong>工具</strong>：PyTorch 等深度学习框架（具体版本未提供）；ProteinMPNN 代码库作为参考（https://github.com/dauparas/ProteinMPNN）。</li>
+<li><strong>推理流程</strong>：输入突变体复合物结构 → 图构建 → 编码器提取特征 → 注意力池化 → MLP 预测 ln(KD) → 与 WT 预测值比较计算 ΔΔG。</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>编码器（3 层 MPNN）</td>
+<td>从骨架几何+序列位置提取残基级结构-序列联合表征</td>
+<td>将原始几何信息转化为可学习的特征表示，捕捉局部化学环境</td>
+<td>输入：图（零向量节点特征+几何边特征）；输出：更新后的节点/边表示</td>
+<td>Results 图 2：S2462 上 ln(KD) PCC=0.93</td>
+<td>[预期] 减少层数会缩小感受野，可能降低对远距离残基相互作用的捕捉能力</td>
+</tr>
+<tr>
+<td>解码器（3 层 MPNN）</td>
+<td>IPF 预训练任务：预测残基身份</td>
+<td>通过 IPF 任务学习序列-结构适配规则，为下游任务提供良好初始化</td>
+<td>输入：编码器输出的结构表示+部分序列上下文；输出：残基身份 logits</td>
+<td>Methods 节："pre-trained on an inverse protein folding (IPF) task"</td>
+<td>[预期] 移除预训练将显著降低下游性能（IPF 是核心创新）</td>
+</tr>
+<tr>
+<td>SAG-like 注意力池化</td>
+<td>生成节点级注意力分数，加权聚合图表示</td>
+<td>替代传统池化，保留全图信息并实现残基级贡献评估</td>
+<td>输入：编码器+解码器输出的节点特征；输出：注意力分数+加权图级表示</td>
+<td>Results 图 3：注意力分数识别出已知关键残基（Q493、Q498、N501 等）</td>
+<td>[实测] 消融实验（Table S1）显示注意力头数&gt;8 时性能饱和；[预期] 移除注意力池化改用简单池化会降低精度和可解释性</td>
+</tr>
+<tr>
+<td>全局池化（add + max）</td>
+<td>将注意力加权特征与全局最大池化特征拼接</td>
+<td>结合加权聚合和全局极值信息，丰富图级表征</td>
+<td>输入：注意力加权节点特征；输出：拼接后的图级特征</td>
+<td>Methods 节："concatenated with global max pooling"</td>
+<td>[预期] 移除 max pooling 可能损失对极端残基贡献的捕捉</td>
+</tr>
+<tr>
+<td>预测头（2 层 MLP）</td>
+<td>将图级表示映射为 ln(KD)</td>
+<td>实现从表征到亲和力数值的回归</td>
+<td>输入：拼接后的图级特征；输出：ln(KD) 标量</td>
+<td>Results 图 2A：ln(KD) PCC=0.93</td>
+<td>[预期] 增加层数可能过拟合，减少层数可能欠拟合</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><strong>1. ΔΔG 计算</strong>：
+$$\Delta\Delta G = RT \ln\left(\frac{K_D^{mut}}{K_D^{wt}}\right)$$
+- $\Delta\Delta G$：突变引起的结合自由能变化（kcal/mol）
+- $R$：气体常数
+- $T$：温度（K）
+- $K_D^{mut}$：突变体解离常数
+- $K_D^{wt}$：野生型解离常数</p>
+<p><strong>2. IPF 预训练损失（负对数似然）</strong>：
+$$\mathcal{L}<em>{IPF} = -\sum</em>{i} \log p(a_i | \text{structure}, a_{&lt;i})$$
+- $a_i$：第 i 个位置的氨基酸残基
+- $a_{&lt;i}$：已预测的序列上下文
+- $p$：模型预测的残基概率分布</p>
+<p><strong>3. 微调损失（MSE）</strong>：
+$$\mathcal{L}<em>{finetune} = \frac{1}{N}\sum</em>{j=1}^{N} (\ln K_D^{pred,j} - \ln K_D^{exp,j})^2$$
+- $N$：批次中样本数
+- $\ln K_D^{pred,j}$：第 j 个样本的预测 ln(KD)
+- $\ln K_D^{exp,j}$：第 j 个样本的实验 ln(KD)</p>
+<p><strong>4. 图构建中的边特征</strong>：
+- 25 对骨架原子间距离：${d_{ab}}$，其中 $a, b \in {C_\alpha, C, N, O, C_\beta}$
+- 相对序列位置编码：one-hot 向量（65 位，±32 范围）+ 1 位链间标志</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：</li>
+<li>S2462：从 SKEMPI v2.0 筛选，2462 个单点突变，205 个双链复合物</li>
+<li>S1131 和 S4169：SKEMPI 标准基准集</li>
+<li>SARS-CoV-2 RBD-hACE2 DMS：jbloomlab 数据，BA.1 株 3880 个突变</li>
+<li>CtDock-CtCoh：MaveDB，C. thermocellum 对接蛋白-共hesin 复合物，2609 个突变</li>
+<li><strong>指标</strong>：PCC（Pearson 相关系数）、RMSE（均方根误差）</li>
+<li><strong>基线</strong>：UniBind、MpbPPI、Hom-ML-V2、PerSpect-EL、GeoPPI、TopNetTree、mCSM-PPI2、MutaBind2、BindProfX、FoldX</li>
+<li><strong>评测协议</strong>：10 折交叉验证；S1131/S4169 上重复 3 次取均值；SARS-CoV-2 子集上对比 SPR/DMS 实验值</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S2462 10 折交叉验证</td>
+<td>DGMPNN 在内部数据集上的预测精度</td>
+<td>无外部对比，报告绝对性能</td>
+<td>ln(KD) PCC=0.93, RMSE=2.04；ΔΔG PCC=0.80, RMSE=1.22</td>
+<td>DGMPNN 能高精度预测单点突变效应</td>
+<td>内部数据集，需外部验证</td>
+<td>Results 图 2A-2B</td>
+</tr>
+<tr>
+<td>S1131 基准测试</td>
+<td>DGMPNN 达到 SOTA</td>
+<td>对比 UniBind, MpbPPI, Hom-ML-V2, PerSpect-EL, GeoPPI, TopNetTree 等</td>
+<td>PCC=0.874（均值），高于所有对比方法</td>
+<td>DGMPNN 在标准基准上优于现有方法</td>
+<td>对比方法的结果来自原论文，数据划分可能不同</td>
+<td>Table 1</td>
+</tr>
+<tr>
+<td>S4169 基准测试</td>
+<td>DGMPNN 在更大基准上保持 SOTA</td>
+<td>同上</td>
+<td>PCC=0.790（均值），与 MpbPPI+MODELER 相当，略低于 Hom-ML-V2 (0.800)</td>
+<td>DGMPNN 在大基准上表现良好但非最优</td>
+<td>与 Hom-ML-V2 的差距可能源于方法差异或数据划分</td>
+<td>Table 1</td>
+</tr>
+<tr>
+<td>残基类型分层分析</td>
+<td>模型对极性/带电残基突变预测更准</td>
+<td>疏水 vs 极性/带电残基突变</td>
+<td>极性/带电残基 PCC=0.87，疏水残基 PCC=0.74</td>
+<td>模型对涉及氢键/静电相互作用的突变更敏感</td>
+<td>分层标准可能影响结论</td>
+<td>Results 图 2C-2D</td>
+</tr>
+<tr>
+<td>界面位置分层分析</td>
+<td>模型对核心界面残基预测更准</td>
+<td>核心 vs 支撑 vs 边缘 vs 非界面残基</td>
+<td>核心残基 PCC=0.83，支撑 0.66，边缘 0.63，非界面 0.65</td>
+<td>模型能有效捕捉界面核心区域的相互作用</td>
+<td>界面区域分类依赖结构注释</td>
+<td>Results 图 2E-2H</td>
+</tr>
+<tr>
+<td>SARS-CoV-2 DMS 验证</td>
+<td>模型在非标准数据上的泛化能力</td>
+<td>对比 SPR 实验值（23 个突变）</td>
+<td>woDMS PCC=0.45, wDMS PCC=0.63；优于其他方法（0.20-0.31）</td>
+<td>模型可迁移至新冠突变预测</td>
+<td>样本量小（23 个），需更大规模验证</td>
+<td>Table 2</td>
+</tr>
+<tr>
+<td>多突变体实验验证</td>
+<td>模型筛选的多突变体具有实验可验证性</td>
+<td>9 个多突变体，SPR/BLI 实验</td>
+<td>6/9 保持或增强 RBD-hACE2 结合；部分突变体逃逸广谱中和抗体</td>
+<td>模型可识别具有上位效应的多突变组合</td>
+<td>样本量小，需更多重复</td>
+<td>Results 图 7</td>
+</tr>
+<tr>
+<td>1R0R 同源排除实验</td>
+<td>预训练数据中同源复合物不影响下游性能</td>
+<td>排除 1R0R 同源复合物后重新预训练</td>
+<td>PCC=0.6870 vs 基线 0.6847，无显著差异</td>
+<td>下游性能不依赖预训练中的同源记忆</td>
+<td>仅测试了一个复合物</td>
+<td>Table S4</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：DGMPNN 预测的是 PPI 结合亲和力变化（ΔΔG），基于静态结构输入，不涉及构象动态、变构效应或翻译后修饰。</li>
+<li><strong>Oracle/真值输入</strong>：模型依赖输入复合物的三维结构（骨架原子坐标）。对于突变体，使用 WT 骨架结构（未对突变体进行结构预测或重建模），这是一个重要简化假设。</li>
+<li><strong>端到端状态</strong>：模型是端到端训练的，但预训练（IPF）和微调（ΔΔG 预测）是两阶段过程。微调阶段仅更新池化和预测头参数（从 Methods 描述推断）。</li>
+<li><strong>算力成本</strong>：预训练在单张 NVIDIA RTX 4090 GPU 上完成（具体时长未提供）；多突变体筛选约 21 天（3,200,000 个组合 × 205 种可能）。</li>
+<li><strong>历史数据依赖</strong>：预训练数据截至 2021-08-02 的 PDB 结构，不包含后续解析的新结构；微调数据来自 SKEMPI v2.0。</li>
+<li><strong>模型依赖</strong>：基于 ProteinMPNN 架构（v_48_020.pt checkpoint），不同初始化可能影响结果。</li>
+<li><strong>最难情形</strong>：疏水残基突变（PCC=0.74）、非界面残基突变（PCC=0.65）预测精度较低；多突变体的折叠稳定性无法预测。</li>
+<li><strong>群体/领域边界</strong>：训练数据以双链复合物为主，对多亚基复合物、膜蛋白复合物的泛化未验证；对非 SKEMPI 类型相互作用（如酶-底物瞬时相互作用）的适用性未知。</li>
+<li><strong>有边界的复述</strong>：DGMPNN 在 SKEMPI 基准和 SARS-CoV-2 RBD-hACE2 数据上展示了无需预计算特征即可高精度预测单点突变 ΔΔG 的能力，并能通过注意力分数识别关键残基；但对多突变体的预测需结合实验验证，且无法评估折叠稳定性。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无法预测蛋白折叠稳定性</td>
+<td>实验验证中 7M、8B、14M 突变体出现异常寡聚状态，超出模型预测范围</td>
+<td>需结合蛋白稳定性/聚集预测工具</td>
+<td>Limitations 节："our model cannot predict essential functional attributes such as protein folding stability and aggregation propensity"</td>
+</tr>
+<tr>
+<td>依赖结构输入质量</td>
+<td>突变体使用 WT 骨架结构，未考虑突变引起的结构重排</td>
+<td>引入精确结构建模或构象采样方法</td>
+<td>Limitations 节："the performance...can be hindered by the reliance on potentially inaccurate structural modeling of the mutant complexes"</td>
+</tr>
+<tr>
+<td>预训练数据时间限制</td>
+<td>预训练数据截至 2021-08-02，不包含 Omicron 后续变异株结构</td>
+<td>纳入更新结构数据</td>
+<td>Limitations 节："the pre-training dataset was restricted to PDB structures deposited before August 2, 2021"</td>
+</tr>
+<tr>
+<td>多突变体数据稀疏</td>
+<td>训练数据以单点突变为主，多突变体预测依赖外推</td>
+<td>建立多突变体基准数据集</td>
+<td>Discussion 节："The entries containing multisite mutations are sparser"</td>
+</tr>
+<tr>
+<td>模型无法评估抗体逃逸</td>
+<td>多突变体筛选需结合文献中抗体逃逸数据</td>
+<td>整合抗体-抗原共结构预测</td>
+<td>Results 节："The ability to escape antibody neutralization, as derived from statistics over different antibodies in the previous studies"</td>
+</tr>
+</tbody>
+</table>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1131 上 PCC=0.874 与 Hom-ML-V2 的 0.857 差异较小</td>
+<td>0.017 的 PCC 差异在统计上可能不显著；对比方法的结果来自原论文，数据划分可能不同</td>
+<td>若差异不显著，则「SOTA」claim 需弱化</td>
+<td>在统一数据划分下进行配对检验；报告置信区间</td>
+<td>Table 1</td>
+</tr>
+<tr>
+<td>注意力分数与已知关键残基的一致性</td>
+<td>注意力分数可能反映的是残基可预测性而非功能重要性；相关性分析（r=0.140）较弱</td>
+<td>可解释性 claim 需谨慎；注意力分数可能受结构冗余影响</td>
+<td>与随机残基的注意力分布对比；进行置换检验</td>
+<td>Results 图 3、Table S6</td>
+</tr>
+<tr>
+<td>多突变体实验验证样本量小（9 个）</td>
+<td>6/9 成功可能受选择偏差影响；未报告阴性对照</td>
+<td>模型的实际应用价值需更大规模验证</td>
+<td>扩大验证集；预注册筛选标准</td>
+<td>Results 图 7</td>
+</tr>
+<tr>
+<td>使用 WT 骨架预测突变体</td>
+<td>突变引起的局部结构重排被忽略，可能系统性低估/高估某些突变效应</td>
+<td>对构象变化大的突变（如脯氨酸替换）预测可能失效</td>
+<td>与突变体实验结构对比；引入结构预测工具</td>
+<td>Limitations 节</td>
+</tr>
+<tr>
+<td>训练数据中 SARS-CoV 相关数据极少（仅 4 个点）</td>
+<td>模型对新冠突变的预测可能依赖泛化而非领域知识</td>
+<td>新冠应用场景的可靠性需更多验证</td>
+<td>消融实验：排除所有冠状病毒数据后重新评估</td>
+<td>Table 2 上下文</td>
+</tr>
+<tr>
+<td>未与 AlphaFold 突变扫描或基于 MD 的方法对比</td>
+<td>这些方法可能在某些场景下更优；对比缺失使定位不清晰</td>
+<td>用户无法判断何时选择 DGMPNN 而非其他工具</td>
+<td>在相同基准上对比 AlphaFold2/3、MD+MM-PBSA 等</td>
+<td>全文未提及此类对比</td>
+</tr>
+<tr>
+<td>预训练数据过滤标准未详细说明</td>
+<td>30% 序列同一性聚类可能不足以防止信息泄漏</td>
+<td>若预训练数据包含测试集同源复合物，性能可能虚高</td>
+<td>详细报告数据过滤流程；进行严格同源排除验证</td>
+<td>Methods 节</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>IPF 作为 PPI 预测的预训练任务是有效的</strong>：IPF 任务（从骨架结构预测序列）迫使模型学习残基与局部化学环境的适配关系，这种知识可直接迁移到突变效应预测。可迁移到本课题：在蛋白质设计、对接 pose 评估等任务中，可考虑使用 IPF 预训练作为通用初始化。</p>
+</li>
+<li>
+<p><strong>SAG-like 注意力池化的设计选择</strong>：保留全图信息（不丢弃节点）的注意力池化优于传统图池化，且注意力分数提供残基级可解释性。可迁移到本课题：在构象采样或结构评估任务中，可用注意力分数识别关键残基/相互作用热点。</p>
+</li>
+<li>
+<p><strong>直接预测 ln(KD) 而非 ΔΔG</strong>：通过预测绝对亲和力再计算差值，避免了直接回归小数值（ΔΔG 通常 &lt; 5 kcal/mol）的困难。可迁移到本课题：在预测其他热力学量（如折叠自由能、对接能）时，可考虑预测绝对量再求差。</p>
+</li>
+<li>
+<p><strong>无需预计算特征的端到端设计</strong>：仅使用骨架几何+序列位置作为输入，避免了特征工程的主观性和计算开销。可迁移到本课题：在构建结构相关预测模型时，优先考虑端到端设计，减少对第三方工具（如 DSSP、SASA 计算器）的依赖。</p>
+</li>
+<li>
+<p><strong>多突变体筛选策略</strong>：通过 patch-based 组合筛选 + 注意力分数引导，可高效探索巨大序列空间。可迁移到本课题：在蛋白质设计或突变体库构建中，可用注意力分数优先考虑关键位点，减少组合爆炸。</p>
+</li>
+<li>
+<p><strong>跨数据集验证的重要性</strong>：在 SKEMPI 基准、SARS-CoV-2 DMS、CtDock-CtDock 三个不同来源的数据上验证，增强了结论的可靠性。可迁移到本课题：在开发新方法时，应尽量在多个独立数据集上验证，而非仅依赖单一基准。</p>
+</li>
+</ol>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>ProteinMPNN (Dauparas et al., 2022)</strong>：DGMPNN 的编码器-解码器架构和 IPF 预训练任务直接继承自 ProteinMPNN。本文的贡献在于将 IPF 预训练模型适配到 PPI 突变效应预测任务，并引入注意力池化。可参考 ProteinMPNN 原始论文了解架构细节。</li>
+<li><strong>SKEMPI v2.0 (Jankauskaitė et al., 2019)</strong>：PPI 突变效应预测的标准基准数据集，本文的 S2462、S1131、S4169 均源于此。该数据集包含 300+ 蛋白复合物的 3000+ 突变数据。</li>
+<li><strong>mCSM-PPI (Rodrigues et al., 2019)</strong>：基于图签名（graph-based signatures）的传统 ML 方法，是本文的主要对比基线之一。其依赖预计算特征，与 DGMPNN 的端到端设计形成对比。</li>
+<li><strong>MutaBind2 (Zhang et al., 2020)</strong>：结合分子力学（MM）和统计势的 ML 方法，同样依赖预计算特征。</li>
+<li><strong>GeoPPI (Liu et al., 2021)</strong>：基于几何图神经网络的 PPI 预测方法，使用侧链重构作为预训练任务，与 DGMPNN 的 IPF 预训练形成对比。</li>
+<li><strong>AlphaFold2/3 (Jumper et al., 2021; Abramson et al., 2024)</strong>：AlphaFold 系列可用于预测突变体结构，但直接用于 ΔΔG 预测的精度有限。DGMPNN 的轻量级设计（无需构象采样）在通量上具有优势。</li>
+<li><strong>深度突变扫描 (DMS) 技术</strong>：本文使用的新冠 RBD DMS 数据来自 Bloom 实验室，该技术可高通量测量突变对结合的影响，为模型验证提供了宝贵资源。</li>
+<li><strong>上位效应 (Epistasis)</strong>：本文的多突变体分析揭示了突变间的协同/拮抗效应，这与定量遗传学中的上位效应概念一致，提示 PPI 突变效应预测需考虑突变组合的非线性。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选：IPF 预训练 + 扩散模型的 PPI 突变体结构预测</strong>
+   - <strong>来源局限/观察</strong>：DGMPNN 使用 WT 骨架预测突变体效应，忽略突变引起的结构重排（作者自认局限）。
+   - <strong>核心假设</strong>：在 IPF 预训练基础上，引入轻量级结构微调模块（如扩散模型或 flow matching），可同时预测突变体结构和结合亲和力变化。
+   - <strong>初步方法</strong>：在 DGMPNN 编码器后添加结构生成头，以 WT 结构为条件，生成突变体局部结构；用生成结构与 WT 结构的差异作为额外特征输入预测头。
+   - <strong>验证方式</strong>：在 SKEMPI 和 DMS 数据上对比 DGMPNN 与 DGMPNN+结构微调的性能；对结构变化大的突变（如脯氨酸替换）进行专门分析。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选：注意力分数引导的 PPI 热点残基预测</strong>
+   - <strong>来源局限/观察</strong>：DGMPNN 的注意力分数与实验 ΔΔG 相关性较弱（r=0.140），但能识别已知关键残基。
+   - <strong>核心假设</strong>：注意力分数可作为一种零样本（zero-shot）的热点残基预测器，且与基于序列的预测方法（如 EVcouplings）互补。
+   - <strong>初步方法</strong>：在多个 PPI 复合物上提取注意力分数，与实验定义的热点残基（如丙氨酸扫描数据）对比；将注意力分数与共进化特征结合，训练热点预测模型。
+   - <strong>验证方式</strong>：在 SKEMPI 热点数据库和丙氨酸扫描数据集上评估 AUC；与现有热点预测工具（如 KFC2、Robetta）对比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选：多突变体上位效应的可解释建模</strong>
+   - <strong>来源局限/观察</strong>：DGMPNN 对多突变体的预测隐含假设突变效应可加性，但实验显示存在显著上位效应（PCC=0.57 vs 单突变 0.80）。
+   - <strong>核心假设</strong>：通过分析注意力分数在突变位点间的协同变化，可显式建模上位效应，提升多突变体预测精度。
+   - <strong>初步方法</strong>：提取突变位点对的注意力分数协方差作为上位效应特征；训练一个二阶模型（如双线性层）预测多突变体 ΔΔG。
+   - <strong>验证方式</strong>：在新冠 RBD 多突变体数据上对比加性模型与上位效应模型的预测精度；分析注意力分数协方差与实验上位效应的一致性。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选：IPF 预训练模型用于抗体-抗原对接 pose 评估</strong>
+   - <strong>来源局限/观察</strong>：DGMPNN 的 IPF 预训练使模型对界面残基的序列-结构适配敏感，这一能力可用于评估对接 pose 的质量。
+   - <strong>核心假设</strong>：IPF 预训练模型对正确对接 pose 的序列恢复率显著高于错误 pose，可作为排序/评分函数。
+   - <strong>初步方法</strong>：在抗体-抗原对接基准（如 ZDOCK 测试集）上，用 DGMPNN 的 IPF 头对每个 pose 计算序列恢复率；将恢复率与现有评分函数（如 Rosetta、ZRANK）结合。
+   - <strong>验证方式</strong>：在对接基准上评估 Top-1 成功率；与现有评分函数进行消融对比。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+<li>
+<p><strong>候选：结合 MD 模拟的 IPF 预训练增强</strong>
+   - <strong>来源局限/观察</strong>：DGMPNN 仅使用静态结构，未利用构象系综信息；MD 模拟可提供突变引起的构象变化。
+   - <strong>核心假设</strong>：将 MD 模拟产生的构象系综作为 IPF 预训练的增强数据，可提升模型对构象敏感突变的预测能力。
+   - <strong>初步方法</strong>：对 SKEMPI 中的复合物进行短 MD 模拟，提取多个构象快照；用这些快照扩充 IPF 预训练数据；在 ΔΔG 预测任务上对比增强前后性能。
+   - <strong>验证方式</strong>：在 S1131 和 DMS 数据上对比增强前后 PCC/RMSE；分析模型对柔性界面残基突变的预测改进。
+   - <strong>创新状态</strong>：unverified</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text, including abstract, main text, methods, and supplemental information references.</li>
+<li><strong>Assessment boundary</strong> Scientific validity, methodological rigor, reproducibility, and claims as supported by the provided evidence. No assessment of editorial fit or scope beyond the stated journal context.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present DGMPNN, a message-passing neural network pre-trained on an inverse protein folding task, for predicting mutation-induced changes in protein-protein interaction binding affinity. They claim state-of-the-art performance on benchmark datasets (S1131, S4169) and deep mutational scanning data, and demonstrate experimental validation of computationally selected multi-site variants in the SARS-CoV-2 RBD-hACE2 complex.</li>
+<li><strong>Visible evidence base</strong> Main text figures (Figures 1–7), tables (Tables 1–2), supplemental figures and tables (Figures S1–S5, Tables S1–S13), and method descriptions in the STAR Methods section.</li>
+<li><strong>Missing materials affecting confidence</strong> The full supplemental information files (Figures S1–S5, Tables S1–S13) are referenced but not provided in the submitted material. The source data files (Data S1, Data S2) are also not available. The code repository is cited but not accessible for review. The manuscript does not include a detailed description of the pre-training dataset composition beyond a reference to a prior filtering procedure.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li>
+<p><strong>Overall assessment</strong> The manuscript presents a potentially useful deep learning framework for predicting mutational effects on protein-protein interactions. The core idea of leveraging inverse protein folding pre-training for downstream binding affinity prediction is reasonable and aligns with current trends in protein representation learning. However, the evidence provided is insufficient to fully evaluate the claims of state-of-the-art performance and the generalizability of the model. Several methodological details are unclear, and the experimental validation, while promising, is limited in scope. The manuscript would benefit from more rigorous benchmarking, clearer reporting of statistical significance, and a more thorough discussion of limitations.</p>
+</li>
+<li>
+<p><strong>Who would be interested in the results, and why</strong> Researchers in computational protein engineering, protein design, and structural bioinformatics would be the primary audience. The work is also relevant to those studying viral evolution, particularly SARS-CoV-2, given the application to RBD-hACE2 interactions. The potential for accelerating antibody and therapeutic protein design would interest a broader biotechnology audience.</p>
+</li>
+<li>
+<p><strong>Major strengths</strong></p>
+</li>
+<li>The use of inverse protein folding as a pre-training task is a sensible and potentially powerful approach for learning protein representations that are sensitive to local chemical environment.</li>
+<li>The model architecture is relatively simple and does not rely on pre-computed biophysical features, which is a practical advantage.</li>
+<li>The inclusion of experimental validation for computationally selected multi-site variants is a strong point, demonstrating a real-world application.</li>
+<li>
+<p>The analysis of attention scores to identify key interaction residues and correlated mutational effects is an interesting and potentially valuable interpretability feature.</p>
+</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness / Reproducibility</li>
+<li><strong>Claim pointer</strong> The model achieves state-of-the-art performance on multiple benchmark datasets and deep mutational scanning datasets.</li>
+<li><strong>Evidence pointer</strong> Table 1, Table 2, Results section "Model performance on non-standard data"</li>
+<li><strong>Concern</strong> The claim of state-of-the-art performance is not fully substantiated. The comparison in Table 1 is made against a set of methods with reported performance from the literature, but the data partitioning details for these methods are not available. The authors state they repeated their evaluation with three random seeds, but it is unclear if the reported values for other methods are averages or single runs. A rigorous comparison requires a standardized evaluation protocol, including identical data splits and statistical testing for significance. The performance on the SARS-CoV-2 dataset (Table 2) is compared against a limited set of methods, and the improvement over the best baseline (FEP) is not demonstrated to be statistically significant. The PCC values for the woDMS model are low (0.45), which raises questions about the model's practical utility for this specific application without fine-tuning.</li>
+<li><strong>Why it matters</strong> Without a rigorous and statistically sound comparison, the central claim of the paper cannot be verified. The lack of standardized evaluation protocols makes it difficult to assess whether DGMPNN is genuinely superior to existing methods or merely competitive under different conditions.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a detailed comparison using identical data splits for all methods, report confidence intervals or p-values for the performance differences, and include a statistical test (e.g., Steiger's test, which is mentioned in the methods) for the correlation coefficients. They should also clarify the evaluation protocol for the methods cited from the literature.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness / Reproducibility</li>
+<li><strong>Claim pointer</strong> The model is pre-trained on an inverse protein folding task and fine-tuned for predicting mutation-induced changes in binding affinity.</li>
+<li><strong>Evidence pointer</strong> STAR Methods, "The pretraining procedure" and "Finetune for the downstream PPI affinity prediction task"</li>
+<li><strong>Concern</strong> The description of the pre-training and fine-tuning procedures is insufficient for reproduction. The exact composition of the pre-training dataset (number of protein complexes, redundancy filtering, etc.) is not described in detail. The hyperparameters for fine-tuning (learning rate, number of epochs, batch size) are not fully specified. The method for calculating ΔΔG from predicted ln(KD) values is mentioned but not detailed. The manuscript states that the model predicts ln(KD) directly, but the relationship between the predicted ln(KD) for the mutant and wild-type and the final ΔΔG value needs to be explicitly defined. The use of a fixed data partition for the S2462 dataset is mentioned, but the details of this partition are not provided.</li>
+<li><strong>Why it matters</strong> Reproducibility is a cornerstone of scientific research. Without a complete and unambiguous description of the training and evaluation procedures, other researchers cannot build upon this work or verify its findings.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a complete description of the pre-training dataset, all hyperparameters, the exact formula for ΔΔG calculation, and the data splitting strategy. Ideally, the code and trained model weights should be made publicly available.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Scientific importance / Validity of claims</li>
+<li><strong>Claim pointer</strong> Experimental validation using computationally selected multi-site variants of the SARS-CoV-2 RBD-hACE2 complex showed strong agreement between predicted and experimentally measured binding affinities.</li>
+<li><strong>Evidence pointer</strong> Results section "Validation of the multisite mutation predictions using RBD-hACE2", Figures 6 and 7</li>
+<li><strong>Concern</strong> The experimental validation is a key strength, but the analysis is incomplete. The authors report that 5 out of 9 selected variants maintain binding affinity, but they do not provide a clear statistical measure of the agreement between predicted and experimental values for all tested variants. The correlation coefficients (PCC = 0.726, Spearman = 0.886) are reported for a subset of 6 variants, but the criteria for excluding the other 3 variants (7M, 8M-B, 14M) from this correlation analysis are not clearly justified. The authors state these variants are in an "abnormal oligomeric state," but this is a post-hoc observation that may not be a valid reason for exclusion from the predictive performance assessment. The selection of variants for experimental testing is not described in detail, and the criteria for choosing these specific 9 variants from the large library are unclear.</li>
+<li><strong>Why it matters</strong> The experimental validation is the most direct evidence for the model's practical utility. If the analysis is not rigorous or the selection criteria are biased, the strength of this claim is significantly weakened. The exclusion of data points that do not fit the model's predictions is a serious concern.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should report the predicted and experimental ΔΔG values for all 9 tested variants, including those that failed to fold. They should provide a clear rationale for any data exclusion and perform a correlation analysis on the full dataset. The selection criteria for the 9 variants should be described in detail.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The model is capable of gaining generalizable knowledge of PPIs from the training data, as evidenced by its ability to identify key residues and predict effects on non-homologous complexes.</li>
+<li><strong>Evidence pointer</strong> Results section "The gaining knowledge ability of DGMPNN", Figure 3, Table S5</li>
+<li><strong>Concern</strong> The claim of generalizability is only weakly supported. The attention-based identification of known key residues (Q493, N498, etc.) is a qualitative observation and does not constitute a quantitative validation of the model's interpretability. The performance on the Clostridium thermocellum complex (Table S5) is modest (PCC = 0.514 for interface residues) and is only compared against FoldX. The authors acknowledge a "systematic bias" between measurement techniques, but this is not explored in detail. The claim that the model can "gain generalizable knowledge" is an overstatement based on the limited evidence presented.</li>
+<li><strong>Why it matters</strong> The generalizability of the model is a key selling point. If the model only works well on complexes similar to those in the training set, its utility is limited. The current evidence is not sufficient to support the strong claim of generalizability.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a more quantitative analysis of the attention scores, perhaps by comparing them to known functional data or alanine scanning mutagenesis results. They should also test the model on a more diverse set of non-homologous complexes and compare its performance against a wider range of baselines.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity and presentation</li>
+<li><strong>Affected element</strong> Figure 1</li>
+<li><strong>Evidence pointer</strong> Figure 1</li>
+<li><strong>Issue</strong> The figure is complex and the flow of information is not immediately clear. The distinction between the pre-training and fine-tuning stages could be more explicitly illustrated.</li>
+<li>
+<p><strong>Required correction</strong> Consider simplifying the figure or adding a clearer schematic that separates the pre-training and fine-tuning phases.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity and presentation</li>
+<li><strong>Affected element</strong> Table 1</li>
+<li><strong>Evidence pointer</strong> Table 1</li>
+<li><strong>Issue</strong> The table lists performance values for many methods, but it is not clear which values are taken from the original publications and which are reproduced by the authors. The footnote mentions "PCC values of DGMPNN are expressed as the mean value across three independent repeats," but this is not stated for the other methods.</li>
+<li>
+<p><strong>Required correction</strong> Clarify the source of each performance value in the table, and specify whether the values for other methods are from a single run or an average.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Statistical rigor</li>
+<li><strong>Affected element</strong> Results section "Model performance on the benchmark dataset"</li>
+<li><strong>Evidence pointer</strong> Figures 2C–2H</li>
+<li><strong>Issue</strong> The authors report different PCC values for different categories of mutations (e.g., polar/charged vs. hydrophobic). It is unclear if these differences are statistically significant.</li>
+<li>
+<p><strong>Required correction</strong> Perform and report a statistical test (e.g., a test for comparing correlation coefficients) to determine if the performance differences across mutation categories are significant.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> STAR Methods, "Featurization of protein complex"</li>
+<li><strong>Evidence pointer</strong> STAR Methods</li>
+<li><strong>Issue</strong> The description of the graph featurization mentions 25 atom pairs and 16 Gaussian kernels, resulting in a 400-dimensional vector. The calculation (25 * 16 = 400) is correct, but it is unclear if the relative position embeddings are concatenated to this vector or handled separately.</li>
+<li>
+<p><strong>Required correction</strong> Clarify how the relative position embeddings are incorporated into the edge features.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity and presentation</li>
+<li><strong>Affected element</strong> Discussion</li>
+<li><strong>Evidence pointer</strong> Discussion section</li>
+<li><strong>Issue</strong> The discussion of the model's limitations is brief and does not fully address the potential impact of the temporal gap in training data on the model's performance for emerging variants.</li>
+<li>
+<p><strong>Required correction</strong> Expand the discussion on this limitation and suggest potential strategies to mitigate it.</p>
+</li>
+<li>
+<p><strong>Technical failings that need to be addressed before the case is established</strong></p>
+</li>
+<li>R1-M1: Lack of rigorous, statistically sound benchmarking against existing methods.</li>
+<li>R1-M2: Insufficient methodological detail for reproduction.</li>
+<li>
+<p>R1-M3: Incomplete and potentially biased analysis of experimental validation data.</p>
+</li>
+<li>
+<p><strong>Assessment against Nature-style criteria</strong></p>
+</li>
+<li><strong>Originality:</strong> The application of inverse protein folding pre-training to the specific task of predicting mutational effects on PPI binding affinity is a reasonable and somewhat novel combination, though the individual components are established. The attention-based interpretability analysis adds a unique element.</li>
+<li><strong>Scientific importance:</strong> The problem addressed is of high importance for protein engineering and drug discovery. However, the demonstrated improvement over existing methods is not yet convincing, which limits the immediate scientific impact.</li>
+<li><strong>Interdisciplinary readership:</strong> The work is primarily of interest to computational biologists and bioinformaticians. The experimental validation may attract a slightly broader audience, but the technical nature of the manuscript limits its accessibility.</li>
+<li><strong>Technical soundness:</strong> The core methodology is plausible, but the evaluation and validation are not sufficiently rigorous to establish technical soundness. The lack of detail on training procedures and the incomplete experimental analysis are significant concerns.</li>
+<li>
+<p><strong>Readability for nonspecialists:</strong> The manuscript is written in a technical style that would be challenging for a non-specialist. The abstract and introduction are relatively clear, but the results and methods sections assume significant background knowledge.</p>
+</li>
+<li>
+<p><strong>Recommendation posture</strong> Currently not established from the provided evidence. The manuscript presents a promising approach, but the central claims of state-of-the-art performance and robust experimental validation are not adequately supported. The authors must address the major concerns regarding benchmarking rigor, methodological detail, and experimental data analysis before the case for this work can be considered established.</p>
+</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "state-of-the-art performance" is not supported by a rigorous, statistically sound comparison.</li>
+<li>The claim that the model can "gain generalizable knowledge" is an overstatement based on the limited evidence presented.</li>
+<li>The claim of "strong agreement" between predictions and experimental data is not fully supported by the analysis, particularly given the exclusion of three variants from the correlation analysis.</li>
+<li>The generalizability of the model to non-homologous complexes is not well established, as it is only tested on a single additional complex.</li>
+<li>The interpretability of the attention scores is only qualitatively demonstrated and not quantitatively validated.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

@@ -1,0 +1,76 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the supplied abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors propose an iterative reweighting algorithm as a flexible framework for optimizing coarse-grained force field parameters, apply it to develop the IsRNA2+ force field by augmenting IsRNA with an explicit base-stacking potential, and report improved structure prediction accuracy on a benchmark of 46 "simple" and 20 "difficult" RNAs relative to the original IsRNA2 force field. They further claim that case analyses highlight the importance of balanced local energy components and suggest potential synergy between machine learning and traditional force fields.
+- **Visible evidence base** Abstract text only; no numerical results, benchmark definitions, parameter details, or validation statistics are provided
+- **Missing materials affecting confidence** Full manuscript, methods section, benchmark set composition, quantitative accuracy metrics, comparison protocols, parameter optimization details, and case study analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially useful methodological contribution, namely the application of iterative reweighting to optimize a coarse-grained RNA force field with an explicit base-stacking term. The reported improvement over the predecessor force field is plausible but cannot be evaluated without quantitative results or methodological detail. The conceptual framing is clear and the stated motivation is sound. However, the evidence base available for this review is limited to the abstract, which precludes verification of the central claims. The work may be of interest to the RNA modeling community, but the case for its significance and technical soundness is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational biophysicists and chemists working on RNA structure prediction, developers of coarse-grained force fields, and researchers interested in parameter optimization methods for molecular simulations. The iterative reweighting framework may also appeal to those developing hybrid machine learning and physics-based approaches.
+- **Major strengths** The proposed use of iterative reweighting as a general parameter optimization framework is conceptually attractive and potentially transferable beyond RNA. The explicit addition of a base-stacking potential addresses a known limitation of many coarse-grained RNA models. The benchmark design, with separate "simple" and "difficult" sets, suggests an attempt to probe model limitations systematically.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that the IsRNA2+ force field leads to improved accuracy in structure prediction compared to the original IsRNA2 force field.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No quantitative results are presented. The abstract states "improved accuracy" without reporting any numerical metrics, such as root-mean-square deviation values, fraction of native contacts, or statistical significance. Without these data, the magnitude and reliability of the improvement cannot be assessed.
+  - **Why it matters** The central contribution of the work is the claimed performance gain. If the improvement is marginal or inconsistent across the benchmark, the value of the new force field is substantially diminished. The absence of numbers prevents any judgment on whether the improvement is meaningful.
+  - **Resolution test** Provide quantitative accuracy metrics for both IsRNA2 and IsRNA2+ on the full benchmark, including per-set statistics and, where appropriate, statistical significance tests.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Reproducibility
+  - **Claim pointer** The claim that the iterative reweighting algorithm serves as a flexible framework for force field parameter optimization.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** No details of the iterative reweighting procedure are given. The abstract does not describe the objective function, the reweighting scheme, convergence criteria, or how the base-stacking parameters were initialized and updated. Without this information, the method cannot be reproduced or evaluated for robustness.
+  - **Why it matters** A methodological claim requires methodological transparency. If the iterative reweighting procedure is unstable, sensitive to initialization, or requires extensive tuning, its utility as a general framework is questionable.
+  - **Resolution test** Describe the iterative reweighting algorithm in sufficient detail, including the target distribution, the weighting scheme, and convergence diagnostics, such that an independent group could implement it.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that case analyses highlight the importance of a balanced treatment of local energy components in determining RNA tertiary structures.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract refers to "several cases with large improvements" but provides no information on which systems these are, what the improvements were, or how the analysis supports the stated conclusion. The link between the case studies and the general principle of balanced local energy components is asserted, not demonstrated.
+  - **Why it matters** This claim is presented as a mechanistic insight. If the case analyses are anecdotal or not systematically selected, the conclusion may not generalize. The claim also implies a design principle for future force field development, which requires stronger support.
+  - **Resolution test** Present the case study systems, the magnitude of improvement for each, and a quantitative decomposition of energy components that supports the conclusion about balance.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "IsRNA2+" is introduced without explicit definition of what the "+" denotes beyond the addition of an explicit base-stacking potential. The relationship to the original IsRNA2 force field is stated but not formalized.
+  - **Required correction** Define the naming convention clearly and state explicitly which terms are new or modified relative to IsRNA2.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Benchmark description
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The benchmark set of 46 "simple" and 20 "difficult" RNAs is mentioned but the criteria for classification are not given. The reader cannot assess whether the split is meaningful or whether the sets are representative.
+  - **Required correction** Specify the criteria used to classify RNAs as "simple" or "difficult" and provide references or a table listing the systems.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scope
+  - **Affected element** Discussion of machine learning
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The final sentence envisions combining machine learning with traditional force fields but provides no concrete direction or rationale beyond a general statement. This appears speculative and adds little to the abstract.
+  - **Required correction** Either remove the statement or provide a specific, brief example of how such a combination might be implemented.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The absence of quantitative results, methodological detail, and case study evidence means the central claims are currently unsupported.
+- **Assessment against Nature-style criteria** 
+  - Originality: The iterative reweighting approach is not entirely new in the broader field of molecular simulation, but its application to RNA coarse-grained force field optimization with an explicit base-stacking term may offer a novel contribution. This cannot be fully assessed from the abstract.
+  - Scientific importance: RNA structure prediction remains a significant challenge, and improved coarse-grained force fields would be valuable. However, the importance of the specific advance depends on the magnitude of the improvement, which is not reported.
+  - Interdisciplinary readership: The work is likely to appeal primarily to computational biophysicists and force field developers. The abstract does not frame the results in a way that would attract a broader readership.
+  - Technical soundness: Not assessable from the abstract. The lack of methodological detail and quantitative results precludes any judgment on the reliability of the approach.
+  - Readability for nonspecialists: The abstract is reasonably clear for a specialist audience but uses field-specific terminology without sufficient context for a general reader.
+- **Recommendation posture** Currently not established from the provided evidence. The abstract describes a plausible and potentially useful contribution, but the absence of quantitative results, methodological detail, and case study evidence means the central claims cannot be verified. A supportive stance would require access to the full manuscript and confirmation that the reported improvements are robust and statistically meaningful.
+
+## Risk / unsupported claims
+- The claim of improved accuracy in structure prediction is unsupported because no quantitative metrics are provided.
+- The claim that iterative reweighting is a flexible framework for parameter optimization is unsupported because the algorithm is not described.
+- The claim that case analyses demonstrate the importance of balanced local energy components is unsupported because no case details are given.
+- The statement about combining machine learning with traditional force fields is speculative and not substantiated.
+- The benchmark classification into "simple" and "difficult" sets is not defined and therefore not assessable.

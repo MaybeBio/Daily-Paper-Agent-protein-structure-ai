@@ -1,0 +1,69 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors present MOFF2, a transferable coarse-grained protein force field combining residue-pair-specific interactions with a density-dependent many-body potential. The model is optimized via a two-stage strategy involving bottom-up parameter learning from heterogeneous reference ensembles and refinement against experimental conformational observables. The authors claim balanced performance across ordered proteins, intrinsically disordered proteins, and multidomain proteins, and predictive accuracy for condensate saturation-concentration trends in A1-LCD variant systems. The learned parameters are reported to reveal chemically interpretable interaction patterns and density-dependent effects that explain improved transferability.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark comparisons, parameter analysis, or methodological details are visible
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, methods section, parameter sets, benchmark datasets, simulation protocols, and comparison baselines
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially valuable contribution to coarse-grained protein force field development, addressing a recognized challenge in transferability across protein classes. The two-stage optimization strategy and the inclusion of a density-dependent many-body potential are conceptually sound and align with current trends in the field. However, the abstract provides no quantitative evidence to support the central claims of balanced performance, predictive accuracy, or chemical interpretability. Without access to the full manuscript, the strength of the claims cannot be evaluated. The work is likely of interest to the computational biophysics and molecular simulation communities, but the case for its significance and reliability is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational biophysicists and physical chemists developing or applying coarse-grained models for proteins, particularly those studying intrinsically disordered proteins, phase separation, and condensate formation. Method developers in molecular simulation would also be interested in the two-stage optimization framework and the density-dependent many-body potential as a generalizable approach. Experimental groups studying biomolecular condensates may find the predictive capability for saturation-concentration trends useful for hypothesis generation.
+- **Major strengths** The abstract identifies a clear and important problem, namely transferability of CG protein force fields across folded, disordered, and multidomain proteins. The proposed solution, combining residue-pair-specific interactions with a density-dependent many-body potential, is a conceptually reasonable approach to address solvent-mediated and many-body effects. The two-stage optimization strategy, integrating bottom-up learning with experimental refinement, is a sensible and increasingly common paradigm. The claim of chemically interpretable parameters is attractive, as interpretability is often lacking in data-driven models.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Evidence sufficiency  
+  - **Claim pointer** The abstract claims "balanced performance across ordered proteins (OPs), intrinsically disordered proteins (IDPs), and multidomain proteins" and "predicts condensate saturation-concentration trends for A1-LCD variant systems."  
+  - **Evidence pointer** Abstract only; no figures, tables, or quantitative metrics provided  
+  - **Concern** The central performance claims are presented without any quantitative data. No metrics, comparison baselines, error bars, or statistical measures are given. The phrase "balanced performance" is undefined, and the predictive accuracy for condensate trends is not quantified.  
+  - **Why it matters** Without quantitative evidence, the reader cannot assess whether the claimed performance is competitive with existing models, whether the balance across protein classes is genuine, or whether the condensate predictions are accurate within meaningful tolerances. The core value proposition of the work depends on these numbers.  
+  - **Resolution test** Provide benchmark results with quantitative metrics for each protein class, including comparisons to established CG force fields, and report numerical accuracy for condensate saturation-concentration predictions with appropriate uncertainty estimates.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Methodological transparency  
+  - **Claim pointer** The abstract describes a "two-stage strategy: bottom-up parameter learning from heterogeneous reference ensembles followed by refinement against experimental conformational observables."  
+  - **Evidence pointer** Methods section not provided  
+  - **Concern** The abstract does not specify the nature of the reference ensembles, the experimental observables used for refinement, the optimization algorithm, or the functional form of the density-dependent potential. Without these details, the method cannot be reproduced or critically evaluated.  
+  - **Why it matters** Reproducibility is a fundamental requirement for force field development. The choice of reference data and experimental targets strongly influences the resulting parameters and the generalizability of the model. The lack of methodological detail prevents assessment of potential overfitting or circularity in the optimization.  
+  - **Resolution test** Provide a complete methods description, including the functional form of the potential, the reference ensemble generation protocol, the experimental datasets used, the optimization procedure, and the validation strategy.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Interpretability claim  
+  - **Claim pointer** The abstract claims "Analysis of the learned parameters reveals chemically interpretable interaction patterns and density-dependent effects that explain the model's improved transferability."  
+  - **Evidence pointer** Abstract only; no parameter analysis shown  
+  - **Concern** The claim of chemical interpretability is presented as a finding, but no examples of such patterns are given, and the causal link between these patterns and improved transferability is asserted rather than demonstrated.  
+  - **Why it matters** Interpretability is a stated advantage of the model, but without concrete examples or a systematic analysis, this claim remains anecdotal. The explanatory link to transferability is particularly important because it would distinguish this work from purely phenomenological fits.  
+  - **Resolution test** Show specific learned parameters with clear chemical correspondence, and provide a quantitative or systematic argument connecting these parameters to observed transferability improvements, such as correlation analyses or ablation studies.  
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Clarity  
+  - **Affected element** Terminology  
+  - **Evidence pointer** Abstract, first sentence  
+  - **Issue** The term "heterogeneous reference ensembles" is vague and could refer to ensembles of different protein types, different conformational states, or different simulation conditions.  
+  - **Required correction** Specify the composition and generation method of the reference ensembles in the abstract or methods.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Scope justification  
+  - **Affected element** Model naming  
+  - **Evidence pointer** Abstract, title  
+  - **Issue** The name "MOFF2" implies a successor to a prior model, but no context is given for what MOFF1 was or what specific limitations are addressed in this version.  
+  - **Required correction** Briefly state the relationship to the predecessor model and the key improvements in MOFF2.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Generalizability  
+  - **Affected element** Validation scope  
+  - **Evidence pointer** Abstract, performance claims  
+  - **Issue** The abstract mentions validation on A1-LCD variant systems for condensate predictions, but it is unclear whether this is a single system or a family of variants, and whether other condensate-forming systems were tested.  
+  - **Required correction** Clarify the number and diversity of systems used for condensate validation, and state whether the model was tested on additional phase-separating proteins.  
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The absence of quantitative performance data and methodological detail means the central claims cannot be verified. R1-M3, while not blocking, requires substantial additional evidence to support the interpretability and explanatory claims.
+
+## Risk / unsupported claims
+- The claim of "balanced performance" across OPs, IDPs, and MDPs is unsupported without quantitative benchmarks.
+- The claim of predictive accuracy for condensate saturation-concentration trends is unsupported without numerical results and comparison to experiment.
+- The claim that learned parameters are "chemically interpretable" and that density-dependent effects "explain" improved transferability is unsupported without parameter analysis or causal evidence.
+- The general statement that the model is "transferable" is not defined operationally and cannot be assessed from the abstract alone.
+- The two-stage optimization strategy is described but its implementation, convergence, and robustness are not assessable from the supplied material.

@@ -1,0 +1,83 @@
+## Review setup
+- **Input scope** Full manuscript text, including abstract, introduction, methods, main body sections, discussion of challenges, and conclusion. Tables and figures referenced but not provided. Supplementary material referenced but not provided.
+- **Assessment boundary** Scientific content, coherence of the review's claims, adequacy of evidence presented, and alignment with stated aims. Not assessed: editorial quality, formatting, or compliance with journal-specific policies.
+- **Shared manuscript claim summary** The manuscript claims to provide an integrated overview of engineered protein therapeutics, their engineering strategies, applications across disease areas, and their role in precision medicine, supported by a list of FDA- and EMA-approved products from 2020 to 2025.
+- **Visible evidence base** Narrative text describing engineering approaches (directed evolution, rational design, de novo design, synthetic biology), delivery systems, disease-specific applications, and challenges. References cited throughout. Tables and figures mentioned but not included in the provided material.
+- **Missing materials affecting confidence** Tables 1–3, Figure 1, and Supplementary Table S1 are referenced but not provided. These are central to the manuscript's claims regarding approved products, comparative analysis, and disease-specific applications. Without them, the evidentiary basis for several key claims cannot be verified.
+
+## Reviewer
+- **Overall assessment** This is a broad narrative review covering established and emerging topics in engineered protein therapeutics and precision medicine. The manuscript is clearly written and covers relevant ground, but it is largely descriptive and does not offer a novel synthesis or critical analysis that would distinguish it from existing reviews. The central claim of filling a gap in the literature is not convincingly supported, as the review largely reiterates well-known concepts. The absence of the tables, figure, and supplementary material prevents full evaluation of the manuscript's most concrete contributions, particularly the list of approved products and the comparative analysis across disease areas.
+- **Who would be interested in the results, and why** Researchers and clinicians new to the field of protein therapeutics may find this a useful introductory overview. Those interested in the regulatory landscape of biologics from 2020 to 2025 might consult the supplementary table, if it is comprehensive and accurate. However, specialists in protein engineering or precision medicine are unlikely to encounter new information or perspectives here.
+- **Major strengths** The manuscript is well-organized and readable, with a logical progression from engineering methods to applications and challenges. It covers a wide range of disease areas and includes relevant examples. The discussion of challenges, particularly immunogenicity and regulatory issues, is sensible and appropriately referenced. The acknowledgment of limitations, including the non-systematic literature search, is transparent.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The manuscript claims to provide "an integrated overview of the clinical applications of engineered therapeutic proteins across key medical fields, supported by a list of U.S. Food and Drug Administration- and European Medicines Agency-approved protein therapeutics from 2020 to 2025."
+  - **Evidence pointer** Supplementary Table S1, Tables 1–3, Figure 1 (all referenced but not provided)
+  - **Concern** The central evidentiary components of the manuscript are not available for review. The list of approved products (Supplementary Table S1), the classification frameworks (Table 1), the comparative analysis of engineering strategies (Table 2), and the disease-specific applications (Table 3, Figure 1) are all referenced but not included in the provided material. Without these, the accuracy, completeness, and relevance of the data supporting the manuscript's main claims cannot be assessed.
+  - **Why it matters** The manuscript's stated contribution is to provide an up-to-date and integrated resource. The tables and supplementary material are the primary vehicles for this contribution. If they are incomplete, inaccurate, or not clearly linked to the text, the manuscript's value is substantially diminished. The review's conclusions about regulatory momentum and clinical translation rest on these data.
+  - **Resolution test** Provide the missing tables, figure, and supplementary material. Verify that the list of approved products is accurate, complete for the stated period, and correctly categorized. Confirm that the claims in the text are directly supported by the data in these materials.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Originality and synthesis
+  - **Claim pointer** The manuscript claims to address a gap: "a comprehensive understanding of how these innovations intersect with precision medicine remains limited. This review addresses this gap."
+  - **Evidence pointer** Entire manuscript
+  - **Concern** The manuscript does not demonstrate that this gap exists or that the review fills it. The content is largely a summary of established knowledge in protein engineering and precision medicine. The sections on engineering methods, delivery systems, and disease applications are descriptive and do not offer a critical synthesis, a comparative framework beyond simple categorization, or a novel perspective on how these fields intersect. The claim of addressing a gap is asserted but not substantiated.
+  - **Why it matters** For a review to be valuable, it should offer more than a compilation of known facts. A clear articulation of what is new or differently framed in this review, relative to existing reviews, is necessary to justify its publication. Without this, the manuscript does not meet the standard of a significant contribution to the literature.
+  - **Resolution test** Revise the introduction and discussion to explicitly identify specific gaps in the existing literature and explain how this review addresses them. Alternatively, reframe the manuscript as a tutorial or primer for a specific audience, which would lower the bar for novelty but require a clearer statement of purpose.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Methodological rigor
+  - **Claim pointer** The methods section states: "Literature selection was guided by relevance, significance, and recency rather than by a predefined systematic protocol."
+  - **Evidence pointer** Methods section
+  - **Concern** The non-systematic approach to literature selection is acknowledged, but the implications are not discussed. There is no statement on how many articles were screened, how many were included, or how selection bias was mitigated. The claim that the review provides a "comprehensive overview" is difficult to reconcile with a non-systematic approach. The absence of a PRISMA-style flow diagram or a clear search strategy limits the reproducibility and verifiability of the review process.
+  - **Why it matters** Readers cannot assess whether the review is balanced or whether important studies were omitted. The lack of methodological transparency weakens confidence in the conclusions, particularly the comparative claims about clinical translation across disease areas.
+  - **Resolution test** Provide a detailed description of the search strategy, including databases, search terms, inclusion and exclusion criteria, and the number of records screened and included. If a systematic approach is not feasible, explicitly state the limitations of the non-systematic approach and how they might affect the conclusions.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity and precision
+  - **Affected element** Introduction, paragraph 1
+  - **Evidence pointer** "Modified protein-based therapeutics are generated by post-translational modifications (PTMs) of naturally occurring proteins through chemical or enzymatic processes..."
+  - **Issue** The distinction between "modified protein-based therapeutics" and "engineered protein-based therapeutics" is introduced but not clearly maintained throughout the manuscript. The terms are used somewhat interchangeably, which could confuse readers.
+  - **Required correction** Define both terms clearly at first use and use them consistently. Alternatively, clarify that the distinction is not central to the review's scope.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Accuracy of claims
+  - **Affected element** Introduction, paragraph 2
+  - **Evidence pointer** "Over the past 5 years, the FDA has approved 213 drugs, including 44 mAbs, which represented approximately 20.7% of these approvals."
+  - **Issue** The source for this statistic is cited as "Research and Markets, 2022," which is a market research firm, not a primary regulatory source. The date of the data (2022) does not align with the "past 5 years" claim relative to the manuscript's 2026 publication date.
+  - **Required correction** Verify the statistic against primary FDA data and update the citation to the original source. Clarify the time period covered by the statistic.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Section "Protein-engineering applications and their role in precision medicine"
+  - **Evidence pointer** Tables 3 and Supplementary Table S1
+  - **Issue** The text frequently refers to "Table 3" and "Supplementary Table S1" for details of approved products and applications, but these are not provided. The text alone does not give the reader enough information to evaluate the claims.
+  - **Required correction** Ensure the tables and supplementary material are included with the manuscript and that the text provides sufficient context for interpreting them.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Readability
+  - **Affected element** Section "Comparative impact of engineered proteins across disease areas and implications for precision medicine"
+  - **Evidence pointer** "Oncology and hematology currently show the greatest clinical translation, with numerous approved mAbs, Fc-engineered variants, bispecific antibodies, and ADCs that are now standard of care."
+  - **Issue** This claim is presented without supporting data or specific examples in the text. The reader is referred to the supplementary table, which is not available.
+  - **Required correction** Provide a few specific examples of approved products and their indications in the text to illustrate the claim, or ensure the supplementary table is available and clearly referenced.
+- **Technical failings that need to be addressed before the case is established** The absence of the tables, figure, and supplementary material is a critical failing. The manuscript's claims regarding approved products, comparative analysis, and disease-specific applications cannot be verified without them. The non-systematic literature search, while acknowledged, needs a more detailed description of its limitations to allow readers to judge the review's comprehensiveness.
+- **Assessment against Nature-style criteria**  
+  - **Originality** Low. The review covers well-established topics and does not offer a novel framework, new data, or a unique synthesis. The claim of addressing a gap is not substantiated.  
+  - **Scientific importance** Moderate. The topic is important, and a well-curated, up-to-date list of approved products could be a useful resource. However, the review does not provide new insights or a critical analysis that would advance the field.  
+  - **Interdisciplinary readership** Moderate. The topic spans protein engineering, clinical medicine, and regulatory science, which could appeal to a broad audience. However, the depth of analysis in each area is limited, and the manuscript may not satisfy specialists in any single discipline.  
+  - **Technical soundness** Not fully assessable. The narrative text is generally accurate, but the key data tables and figures are missing, preventing verification of the manuscript's central claims.  
+  - **Readability for nonspecialists** Good. The manuscript is clearly written and accessible, with jargon explained. The structure is logical and easy to follow.
+- **Recommendation posture** Currently not established from the provided evidence. The manuscript has the potential to be a useful resource, but the missing tables, figure, and supplementary material must be provided and verified. The claim of addressing a gap in the literature needs to be better supported, and the methodological limitations of the non-systematic review need to be more transparently discussed. If these issues are addressed, the manuscript could be considered for publication as a review article, but it would not meet the bar for a high-impact journal due to its limited originality and synthesis.
+
+## Risk / unsupported claims
+- The claim that the review "addresses a gap" in the literature is unsupported, as no specific gap is identified or shown to be unfilled.
+- The claim of providing "an integrated overview" of clinical applications is not verifiable without the referenced tables and supplementary material.
+- The statistic on FDA approvals (213 drugs, 44 mAbs) is cited to a secondary source and may be outdated or inaccurate; it should be verified against primary data.
+- The comparative claims about clinical translation across disease areas are based on "patterns and numbers of regulatory approvals" but the data supporting this comparison are not provided.
+- The statement that "few engineered protein therapeutics have been approved for neurological disorders or for many infectious diseases" is presented without specific data or examples in the text.

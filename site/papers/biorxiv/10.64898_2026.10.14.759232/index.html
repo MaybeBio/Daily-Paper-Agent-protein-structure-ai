@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Distance-AF Multimer: A Multi-Step Approach for Protein Complex Structure Modeling with User-Defined Distance Constraints · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-high">9</span>
+    <div>
+      <h1>Distance-AF Multimer: A Multi-Step Approach for Protein Complex Structure Modeling with User-Defined Distance Constraints</h1>
+      <div class="meta">Ling K; Zhang Y; Zhang Z; Nakamura T; Kihara D</div>
+      <div class="meta muted">
+        
+        <span class="journal">bioRxiv</span> <span class="preprint-badge">预印本</span>
+        · 2026-10-18
+         · 全文(europepmc)
+         · <a href="https://www.biorxiv.org/content/10.64898/2026.10.14.759232">原文</a>
+      </div>
+      <p class="one-liner">该文提出Distance-AF Multimer，利用用户定义的残基对距离约束引导和优化AlphaFold-Multimer的蛋白复合物结构预测，属于蛋白质结构计算建模的方法创新，与课题高度相关。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">The three-dimensional structure of proteins provides essential insight into the molecular mechanisms underlying their function. Many biological activities are mediated through protein interactions, making accurate structural determination of protein complexes important. Despite significant advances in computational protein structure prediction, there are still many cases where protein complexes are not correctly assembled. In particular, there are cases where experimental data, such as distances between residue pairs in interacting proteins are available, yet existing prediction methods fail to produce models consistent with these data. Here, we present Distance-AF Multimer, a method that guides and refines AlphaFold-Multimer docking predictions using user-provided residue pair distance information. This approach extends our previously successful data-guided single-protein modeling method, Distance-AF. Distance-AF Multimer operates in a two-step process, starting from multiple initial conformations and iteratively refining them to satisfy the provided distance constraints. We evaluated Distance-AF Multimer on protein-complex benchmarks spanning different chain counts and docking errors, demonstrating competitive or superior performance compared to other existing deep-learning-based structure prediction methods. In addition to dimer cases, we also demonstrated the potential of Distance-AF Multimer for large-scale protein assemblies containing multiple chains, including those with more than 5 chains. &lt;h4&gt;Significance Statement&lt;/h4&gt; Proteins often function as complexes, but predicting how their components fit together remains difficult. Distance-AF Multimer uses distance constraints between residues to improve the arrangement of protein chains in predicted structures. This approach offers a practical way to combine computational predictions with available structural information, helping researchers study protein interactions, peptide binding, and larger assemblies when detailed experimental structures are unavailable.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">蛋白质的三维结构为理解其功能的分子机制提供了重要见解。许多生物活动通过蛋白质相互作用介导，因此准确测定蛋白质复合物的结构至关重要。尽管计算蛋白质结构预测取得了显著进展，但仍有许多情况下蛋白质复合物未能正确组装。特别是，当存在实验数据（如相互作用蛋白质中残基对之间的距离）时，现有预测方法往往无法生成与这些数据一致的模型。在此，我们提出Distance-AF Multimer，一种利用用户提供的残基对距离信息来引导和优化AlphaFold-Multimer对接预测的方法。该方法扩展了我们先前成功的数据引导单蛋白建模方法Distance-AF。Distance-AF Multimer采用两步流程，从多个初始构象开始，并迭代优化以满足提供的距离约束。我们在涵盖不同链数和对接误差的蛋白质复合物基准上评估了Distance-AF Multimer，显示出与其他现有基于深度学习的结构预测方法相比具有竞争力或更优的性能。除二聚体案例外，我们还展示了Distance-AF Multimer在包含多条链（包括超过5条链）的大规模蛋白质组装体中的潜力。
+
+&lt;h4&gt;意义声明&lt;/h4&gt; 蛋白质通常以复合物形式发挥功能，但预测其组分如何组装在一起仍然困难。Distance-AF Multimer利用残基间的距离约束来改善预测结构中蛋白质链的排列。该方法提供了一种将计算预测与可用结构信息相结合的实用途径，帮助研究人员在缺乏详细实验结构时研究蛋白质相互作用、肽结合及更大组装体。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Distance-AF Multimer: A Multi-Step Approach for Protein Complex Structure Modeling with User-Defined Distance Constraints</li>
+<li><strong>作者</strong>：Ling K; Zhang Y; Zhang Z; Nakamura T; Kihara D</li>
+<li><strong>单位</strong>：未提供（根据通讯作者 Kihara D 推断为普渡大学，但原文未明确）</li>
+<li><strong>期刊/平台</strong>：bioRxiv（预印本）</li>
+<li><strong>年份</strong>：2026</li>
+<li><strong>论文类型</strong>：方法学论文（含基准测试与案例研究）</li>
+<li><strong>领域</strong>：蛋白质复合物结构预测 × 深度学习（AlphaFold-Multimer 后处理约束优化）</li>
+<li><strong>关键词</strong>：蛋白质复合物结构预测、距离约束、AlphaFold-Multimer、无训练优化、DockQ</li>
+<li><strong>DOI/ID</strong>：10.64898/2026.10.14.759232</li>
+<li><strong>代码</strong>：https://github.com/kiharalab/Distance-AFM</li>
+<li><strong>数据</strong>：补充材料（dafm_suppl_v1.3.docx 与 suppl_table_v1.1.xlsx，含 Supplementary Tables 1–8）</li>
+<li><strong>阅读日期</strong>：2026-10-18（预印本发布日）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「蛋白质结构相关计算研究 × AI 方法」中的<strong>约束引导的复合物结构预测</strong>子方向。与 AlphaLink2（训练时嵌入约束）、Chai-1/Protenix（训练时接受约束特征）不同，Distance-AFM 采用<strong>无训练（training-free）后处理优化</strong>范式，在预训练 AFM 基础上通过迭代优化满足用户提供的残基间距离约束，是 Distance-AF（单链）向多链复合物的扩展。</li>
+</ul>
+<hr />
+<h2>02 一句话总结</h2>
+<p>Distance-AF Multimer 通过「粗调（刚体旋转搜索生成多样起始构象）+ 精调（在 AFM 结构模块中迭代优化距离约束损失）」两阶段流程，在不重新训练 AlphaFold-Multimer 的前提下，利用用户提供的残基间距离约束修正错误对接构象，在 27 个 AFM 失败靶标上达到中位 DockQ 0.58，并成功处理 5–10 链的大规模复合物。</p>
+<hr />
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：当 AlphaFold-Multimer（AFM）对蛋白质复合物产生严重错误的对接构象（如整体旋转错误、结合位点错误、肽段方向反转）时，如何利用已知的残基间距离信息（如 XL-MS、NMR、FRET 等实验数据）修正这些错误？</li>
+<li><strong>为什么重要</strong>：多链蛋白复合物介导大多数细胞功能，但 AFM 在弱进化信号、构象柔性界面、多链组装等场景下仍频繁失败。实验距离数据（如 XL-MS）相对易得，若能有效整合，可显著扩展计算结构预测的适用范围。</li>
+<li><strong>现有方法不足</strong>：</li>
+<li>传统对接方法（LZerD、HADDOCK、ClusPro）可整合约束，但精度有限；</li>
+<li>AlphaLink2 需在训练时嵌入约束，无法直接用于已有 AFM 模型；</li>
+<li>Chai-1/Protenix 虽接受约束特征，但需重新训练且算力成本高；</li>
+<li>直接对 AFM 预测施加距离约束优化常因初始构象误差过大（尤其旋转误差）而失败。</li>
+<li><strong>精确研究问题</strong>：Can a training-free, two-step (coarse-to-fine) constraint-guided refinement of AlphaFold-Multimer predictions correct severe docking errors (including large rotational errors) using sparse residue-pair distance constraints?</li>
+</ul>
+<hr />
+<h2>04 背景与发展脉络</h2>
+<blockquote>
+<p>注：此脉络基于本文引言与作者引用，标注为「经外部核验」的部分仅指作者引用的文献确实存在；脉络框架本身为本文作者主张。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>代表方法</th>
+<th>优点</th>
+<th>局限</th>
+<th>本文位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统对接+约束</td>
+<td>LZerD、HADDOCK、ClusPro</td>
+<td>可整合实验约束；计算相对轻量</td>
+<td>精度有限；依赖初始采样质量</td>
+<td>本文继承了「约束整合」思想，但用深度学习结构模块替代传统打分</td>
+</tr>
+<tr>
+<td>深度学习端到端预测</td>
+<td>AlphaFold2/Multimer</td>
+<td>单链精度极高；多链在强进化信号下表现好</td>
+<td>弱进化信号、柔性界面、多链组装时失败；无法直接整合约束</td>
+<td>本文以 AFM 为基座模型</td>
+</tr>
+<tr>
+<td>训练时嵌入约束</td>
+<td>AlphaLink2、Chai-1、Protenix</td>
+<td>约束信息参与训练，理论上更优</td>
+<td>需大规模训练数据与算力；约束类型固定；不可迁移到已有模型</td>
+<td>本文对比基准</td>
+</tr>
+<tr>
+<td>无训练后处理优化</td>
+<td>Distance-AF（单链）</td>
+<td>无需重训练；灵活整合任意距离约束</td>
+<td>单链方法无法处理多链旋转误差</td>
+<td><strong>本文：Distance-AF Multimer</strong>，扩展至多链并引入粗调阶段</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本文主张的位置</strong>：在「训练时嵌入约束」与「纯后处理优化」之间，本文主张后处理优化通过引入<strong>粗调阶段</strong>即可解决多链场景下的旋转误差问题，无需重训练，从而在灵活性与性能之间取得平衡。</p>
+<hr />
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AFM 严重对接错误</td>
+<td>链间相对旋转错误、结合位点错误、肽段方向反转</td>
+<td>弱进化信号、界面柔性、多链组装复杂度</td>
+<td>Results 节：27 个靶标中 AFM 产生 DockQ &lt; 0.15（21 个）或 0.15–0.4（6 个）</td>
+</tr>
+<tr>
+<td>直接距离优化失败</td>
+<td>对 AFM 错误构象直接施加距离约束无法收敛</td>
+<td>大旋转误差下梯度优化易陷入局部最优；距离损失主要诱导平移而非旋转</td>
+<td>Introduction 节：Distance-AF 单链方法无法处理多链旋转误差；Results 节：粗调阶段必要性</td>
+</tr>
+<tr>
+<td>现有约束方法需重训练</td>
+<td>AlphaLink2/Chai-1/Protenix 需大规模训练</td>
+<td>约束嵌入训练过程，模型不可迁移</td>
+<td>Introduction 节：对比现有方法时指出「require extensive retraining」</td>
+</tr>
+<tr>
+<td>约束数量不足时性能下降</td>
+<td>稀疏约束下精度降低</td>
+<td>距离信息不足以唯一确定构象</td>
+<td>Results 节图 2f,g：0–30 约束消融实验，1–6 约束增益最大，6 以上递减</td>
+</tr>
+<tr>
+<td>距离不确定性</td>
+<td>实验距离常为范围而非精确值</td>
+<td>实验误差、构象系综</td>
+<td>Results 节图 2h,i：±2.5 Å 与 ±5 Å 区间约束实验，精度下降但仍在可接受范围</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>06 核心思想</h2>
+<h3>1) 表面方法</h3>
+<p>Distance-AFM 是一个三阶段流程：
+- <strong>Phase 1</strong>：运行标准 AlphaFold-Multimer 生成初始预测；
+- <strong>Phase 2（粗调）</strong>：将每条链视为刚体，在满足距离约束的平移基础上，对三个欧拉角 (α, β, γ) 以 30° 间隔穷举旋转搜索，生成 10³–10⁴ 个候选构象；按 Cα–Cα 距离 &lt; 12 Å 的碰撞判据过滤，聚类后取三大簇的均值旋转作为起始构象；
+- <strong>Phase 3（精调）</strong>：从粗调构象出发，在 AFM 结构模块中迭代优化，损失函数为距离约束损失 L_dis 与 AFM 原有损失（L_com、L_vio、L_angle、L_fape）的加权组合，采用分段调度策略动态调整权重。</p>
+<h3>2) 核心洞察</h3>
+<ul>
+<li><strong>旋转误差是主要障碍</strong>：距离约束本质上主要提供平移信息，对旋转误差的修正能力有限。因此需要显式的旋转搜索（粗调）来「重置」起始构象，使精调阶段能有效工作。</li>
+<li><strong>训练-free 的可行性</strong>：AFM 的结构模块本身已编码了蛋白质折叠与相互作用的先验知识，无需重新训练即可通过损失函数引导其满足外部约束。</li>
+<li><strong>域内 FAPE 掩码</strong>：通过仅计算域内（intra-domain）FAPE 损失，保留 AFM 对单链内部几何的建模能力，同时将域间（inter-domain）几何完全交给距离约束驱动，实现「各司其职」。</li>
+</ul>
+<h3>3) 可能的普适教训 [Analysis]</h3>
+<ul>
+<li><strong>「粗调 + 精调」两阶段策略可迁移</strong>：对于任何「初始预测存在大尺度刚体误差」的优化问题（如分子对接、构象采样），先做离散刚体搜索再连续优化，比直接连续优化更鲁棒。</li>
+<li><strong>损失函数的分段调度</strong>：根据当前约束满足程度动态调整约束项与结构保真项的权重，是一种简单有效的平衡策略，可迁移到其他约束引导生成任务。</li>
+<li><strong>「域内保真 + 域间约束」的掩码思想</strong>：在需要同时保持局部质量与满足全局约束的场景中，将损失按空间域拆分并分别处理，是一种可推广的设计模式。</li>
+</ul>
+<hr />
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：蛋白质复合物的氨基酸序列（多条链）、用户定义的残基间距离约束列表（残基对 + 目标距离或距离范围）</li>
+<li><strong>输出</strong>：满足距离约束的复合物三维结构模型（PDB 格式）</li>
+<li><strong>模块</strong>：
+  1. <strong>AFM 初始预测模块</strong>：标准 AlphaFold-Multimer v2.0，生成初始全复合物模型；
+  2. <strong>粗调模块（Phase 2）</strong>：刚体旋转搜索 + 碰撞过滤 + 聚类，生成多样起始构象；
+  3. <strong>精调模块（Phase 3）</strong>：AFM 结构模块迭代优化，损失函数为 L = w_d·L_d + w_f·L_fape + w_a·L_angle + w_v·L_vio + w_c·L_com，权重按分段调度更新；
+  4. <strong>模型选择模块</strong>：基于修改版 VoroIF-jury 共识打分（23 个排序标准）选择最终模型。</li>
+<li><strong>训练</strong>：无训练（training-free），仅使用预训练 AFM 权重。</li>
+<li><strong>流程</strong>：
+  1. 运行 AFM 生成初始模型；
+  2. 评估初始模型是否满足距离约束；若不满足，进入 Phase 2；
+  3. Phase 2 生成粗调起始构象（每靶标 3 个）；
+  4. Phase 3 从每个粗调构象出发进行精调；
+  5. 使用 VoroIF-jury 对候选模型排序，输出最优模型。</li>
+<li><strong>工具</strong>：基于 OpenFold-Multimer 实现；补充材料提供算法细节、计算时间与内存使用。</li>
+</ul>
+<hr />
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AFM 初始预测</td>
+<td>生成初始全复合物模型</td>
+<td>提供起始结构；AFM 在部分靶标上已正确</td>
+<td>输入：序列；输出：初始模型</td>
+<td>Results 节：27 靶标中 AFM 全部失败（DockQ &lt; 0.4）</td>
+<td>无此模块则无起始结构；但若 AFM 已正确则无需后续步骤</td>
+</tr>
+<tr>
+<td>粗调（刚体旋转搜索）</td>
+<td>生成多样起始构象，修正大尺度旋转误差</td>
+<td>距离约束主要提供平移信息，无法直接修正旋转</td>
+<td>输入：AFM 模型 + 距离约束；输出：3 个粗调构象</td>
+<td>Results 节：粗调后 DockQ 显著提升；图 3 案例显示旋转修正</td>
+<td><strong>实测</strong>：移除粗调直接精调，多数靶标无法恢复（作者在 Results 中说明直接应用 Distance-AF 失败）</td>
+</tr>
+<tr>
+<td>碰撞过滤</td>
+<td>排除原子重叠的候选构象</td>
+<td>旋转搜索产生大量物理上不可能的构象</td>
+<td>输入：候选构象；输出：有效构象</td>
+<td>Methods/补充材料 1：Cα–Cα &lt; 12 Å 判据</td>
+<td>预期：移除后精调阶段易发散或产生非物理结构</td>
+</tr>
+<tr>
+<td>聚类与代表选取</td>
+<td>从有效构象中选三大簇均值</td>
+<td>减少冗余，保留多样性</td>
+<td>输入：有效构象集；输出：3 个代表构象</td>
+<td>补充材料 1</td>
+<td>预期：移除后候选数量过多，计算成本上升</td>
+</tr>
+<tr>
+<td>精调（AFM 结构模块迭代）</td>
+<td>在粗调构象基础上精细优化，满足距离约束</td>
+<td>粗调仅提供近似构象，需原子级精修</td>
+<td>输入：粗调构象 + 距离约束；输出：精调模型</td>
+<td>Results 节：精调后 DockQ 进一步提升</td>
+<td><strong>实测</strong>：无精调则粗调构象精度不足（DockQ 低于最终值）</td>
+</tr>
+<tr>
+<td>分段权重调度</td>
+<td>动态调整 L_d 与结构保真项权重</td>
+<td>避免早期大权重破坏结构、后期小权重无法满足约束</td>
+<td>输入：当前 L_d 值；输出：权重系数</td>
+<td>Eq. 2：L_d &gt; 10 时 w_d=1.0；5–10 时 w_d=2.0；1–5 时 w_d=4.0；&lt;1 时 w_d=1.0 且 w_f=10</td>
+<td>预期：移除后优化不稳定或收敛到非物理结构</td>
+</tr>
+<tr>
+<td>域内 FAPE 掩码</td>
+<td>仅计算域内 FAPE，屏蔽域间 FAPE</td>
+<td>防止 FAPE 损失与距离约束冲突</td>
+<td>输入：预测结构 + 域定义；输出：掩码后的 FAPE 损失</td>
+<td>Methods 节：m_ij = 1 当且仅当同域</td>
+<td><strong>预期</strong>：移除后域间 FAPE 会与 L_d 竞争，导致约束满足率下降</td>
+</tr>
+<tr>
+<td>VoroIF-jury 共识打分</td>
+<td>从多个候选模型中选择最优</td>
+<td>精调产生多个候选，需自动选择</td>
+<td>输入：候选模型集；输出：排序后的模型</td>
+<td>Results 节：图 4 显示打分与 DockQ 正相关（ρ = 0.694）</td>
+<td>预期：移除后需人工选择，无法自动化</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>09 关键公式符号</h2>
+<p><strong>损失函数（Eq. 2）</strong>：</p>
+<p>L = w_d · L_d + w_f · L_fape + w_a · L_angle + w_v · L_vio + w_c · L_com</p>
+<p><strong>距离约束损失（Eq. 1）</strong>：</p>
+<p>L_d = (1/N) · Σᵢ (dᵢ − d'ᵢ)²</p>
+<ul>
+<li><strong>N</strong>：距离约束对的数量</li>
+<li><strong>i</strong>：第 i 个约束对</li>
+<li><strong>dᵢ</strong>：第 i 个约束对的目标距离（用户提供）</li>
+<li><strong>d'ᵢ</strong>：第 i 个约束对的预测 Cα–Cα 距离</li>
+</ul>
+<p><strong>权重调度（分段）</strong>：
+- L_d &gt; 10：w_d = 1.0
+- 5 &lt; L_d ≤ 10：w_d = 2.0
+- 1 &lt; L_d ≤ 5：w_d = 4.0
+- L_d ≤ 1：w_d = 1.0，w_f = 10（恢复结构保真）</p>
+<p><strong>域内 FAPE 掩码</strong>：
+- m_ij = 1 当且仅当残基 i 和 j 属于同一域（domain）；否则 m_ij = 0
+- FAPE 损失仅对 m_ij = 1 的残基对计算</p>
+<p><strong>评估指标</strong>：
+- DockQ：对接质量综合评分（0–1，≥ 0.23 为可接受，≥ 0.49 为中等，≥ 0.80 为高质量）
+- RMSD：均方根偏差（Å）
+- iRMSD：界面 RMSD
+- lRMSD：配体 RMSD
+- Fnat：天然接触恢复分数</p>
+<hr />
+<h2>10 实验设计与证据链</h2>
+<p><strong>数据集</strong>：
+- 27 个 AFM 失败靶标（来自 PDB 生物组装体，不含 DNA/RNA，大小适配 GPU 资源）
+  - 11 个二链、8 个三链、8 个四链复合物
+  - 选择标准：AFM 预测 DockQ &lt; 0.4
+- 6 个肽-受体复合物（来自 DistPepFold 工作，Zhang et al., 2025b）
+- 5 个大型复合物（5–10 链，包括 1BHC 十聚体、6EN8 六聚体、6QVJ 五聚体、2KWD 五聚体、4B6J 八聚体）</p>
+<p><strong>约束生成</strong>：
+- 基准测试：从天然结构中提取残基间 Cα–Cα 距离作为约束
+- 约束数量：每对相互作用链最多 12 个约束
+- 消融实验：0–30 个约束变化</p>
+<p><strong>基线方法</strong>：
+- AFM（未约束）
+- AlphaLink2（AL2）
+- Chai-1
+- Protenix</p>
+<p><strong>评测协议</strong>：
+- 每个靶标运行 AFM 5 次，选最高置信度模型作为起始
+- 粗调生成 3 个起始构象，精调后共 3 个候选模型
+- 使用修改版 VoroIF-jury 选择最终模型
+- 指标：DockQ、RMSD、iRMSD、lRMSD、Fnat</p>
+<p><strong>主要实验</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>27 靶标基准</td>
+<td>D-AFM 优于现有约束方法</td>
+<td>D-AFM vs AFM/AL2/Chai-1/Protenix</td>
+<td>D-AFM 中位 DockQ 0.58，最高；AL2 最低</td>
+<td>D-AFM 在 AFM 失败靶标上有效</td>
+<td>未提供逐靶标显著性检验</td>
+<td>Results 图 2a–e；Table 1</td>
+</tr>
+<tr>
+<td>逐指标对比</td>
+<td>D-AFM 在 RMSD/iRMSD/lRMSD/Fnat 上全面占优</td>
+<td>同上</td>
+<td>D-AFM 在 RMSD、lRMSD、Fnat 上最优；iRMSD 第二</td>
+<td>多指标一致支持 D-AFM</td>
+<td>iRMSD 非最优，说明界面局部精度仍有提升空间</td>
+<td>Results 图 2b–e</td>
+</tr>
+<tr>
+<td>约束数量消融</td>
+<td>少量约束即可显著提升</td>
+<td>0/1/3/6/12/30 约束</td>
+<td>1–6 约束增益最大；6 以上递减</td>
+<td>稀疏约束足够</td>
+<td>30 约束时仍有部分靶标未达可接受</td>
+<td>Results 图 2f,g</td>
+</tr>
+<tr>
+<td>距离不确定性</td>
+<td>区间约束仍有效</td>
+<td>精确值 vs ±2.5 Å vs ±5 Å</td>
+<td>中位 DockQ 0.65→0.33/0.32</td>
+<td>可容忍一定实验误差</td>
+<td>精确距离显著优于区间</td>
+<td>Results 图 2h,i</td>
+</tr>
+<tr>
+<td>肽-受体复合物</td>
+<td>D-AFM 修正多种肽对接错误</td>
+<td>6 个 DistPepFold 靶标</td>
+<td>全部靶标 DockQ 和 Fnat 提升</td>
+<td>覆盖平移、旋转、方向反转等错误类型</td>
+<td>样本量小（6 个）</td>
+<td>Results 图 5a–f</td>
+</tr>
+<tr>
+<td>大型复合物</td>
+<td>D-AFM 可扩展至 5–10 链</td>
+<td>5 个大型靶标</td>
+<td>1BHC DockQ 0.83、6EN8 0.75、6QVJ 0.59、2KWD 0.63、4B6J 0.22</td>
+<td>可处理多链组装</td>
+<td>4B6J 未达可接受阈值，大复合物仍有挑战</td>
+<td>Results 图 6a–e</td>
+</tr>
+<tr>
+<td>模型选择</td>
+<td>VoroIF-jury 打分与质量正相关</td>
+<td>138 个模型，打分 vs DockQ</td>
+<td>Spearman ρ = 0.694（DockQ），ρ = −0.645（RMSD）</td>
+<td>共识打分可自动选择近优模型</td>
+<td>相关性非完美，Top-1 选择仍有误差</td>
+<td>Results 图 4a,b</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：仅针对 AFM 已产生错误构象的靶标（DockQ &lt; 0.4），不适用于 AFM 已正确的场景（此时无需修正）。27 个靶标为精心挑选的失败案例，不代表一般复合物预测性能。</li>
+<li><strong>约束来源</strong>：基准测试中约束来自天然结构（即「oracle」约束），实际应用中需依赖实验数据（XL-MS 等），约束质量可能低于基准设置。</li>
+<li><strong>约束数量</strong>：12 个约束/界面为默认设置，实际应用中约束数量可能更少或分布不均。</li>
+<li><strong>端到端状态</strong>：方法依赖 AFM 的预训练权重，未重新训练；性能上限受限于 AFM 结构模块的表达能力。</li>
+<li><strong>计算成本</strong>：粗调阶段需穷举旋转搜索（10³–10⁴ 构象），计算成本随链数增加而上升；补充材料提供具体时间与内存数据（本文未提供具体数值）。</li>
+<li><strong>模型选择</strong>：VoroIF-jury 共识打分在二链靶标上 Top-1 命中率 63.6%（DockQ），三链仅 12.5%，四链 0%——链数越多，自动选择越不可靠。</li>
+<li><strong>最难点</strong>：4B6J（八链，1,608 残基）最终 DockQ 0.22，低于可接受阈值；大复合物中残基内变形（intra-chain deformation）是未解决问题。</li>
+<li><strong>有边界的复述</strong>：Distance-AF Multimer 在 AFM 失败的二至四链复合物上，利用 6–12 个精确距离约束可将中位 DockQ 从 &lt; 0.15 提升至 0.58；在五至十链复合物上可部分恢复组装，但大复合物仍存在挑战；性能优于 AlphaLink2、Chai-1、Protenix 等对比方法，但优势在 Fnat 指标上不显著。</li>
+</ul>
+<hr />
+<h2>12 作者自认局限</h2>
+<table>
+<thead>
+<tr>
+<th>局限</th>
+<th>具体表现</th>
+<th>作者提出的未来方向</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大复合物仍有挑战</td>
+<td>4B6J（八链）最终 DockQ 0.22，低于可接受阈值；残基内变形未解决</td>
+<td>未明确提及</td>
+<td>Results 节图 6e</td>
+</tr>
+<tr>
+<td>约束信息不足时性能下降</td>
+<td>单约束时部分靶标 RMSD 反而增加（如 1SMN 从 22.5 Å 增至 27.6 Å）</td>
+<td>未明确提及</td>
+<td>Results 节图 2f,g</td>
+</tr>
+<tr>
+<td>距离不确定性降低精度</td>
+<td>±2.5 Å 与 ±5 Å 区间约束下中位 DockQ 从 0.65 降至 0.33/0.32</td>
+<td>未明确提及</td>
+<td>Results 节图 2h,i</td>
+</tr>
+<tr>
+<td>肽-受体测试样本量小</td>
+<td>仅 6 个靶标，且为刻意挑选的失败案例</td>
+<td>未明确提及</td>
+<td>Results 节</td>
+</tr>
+<tr>
+<td>模型选择在大复合物上不可靠</td>
+<td>四链靶标 Top-1 命中率 0%</td>
+<td>未明确提及</td>
+<td>Results 节图 4d</td>
+</tr>
+<tr>
+<td>约束来源依赖实验数据</td>
+<td>基准测试使用天然结构距离，实际应用需实验测量</td>
+<td>未明确提及</td>
+<td>隐含于方法描述</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：作者在 Discussion 中未设独立「Limitations」小节；以上为从 Results 与 Discussion 中提取的明确或隐含局限。</p>
+</blockquote>
+<hr />
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基准测试使用「oracle」约束（来自天然结构）</td>
+<td>实际实验约束（如 XL-MS）有噪声、缺失、错误配对，性能可能显著下降</td>
+<td>方法声称适用于实验数据整合，但基准未模拟实验噪声</td>
+<td>使用带噪声的模拟约束（如随机扰动 ±5–10 Å、随机删除 30% 约束）重跑基准</td>
+<td>Results 节：约束来自天然结构；图 2h,i 仅测试了区间而非噪声</td>
+</tr>
+<tr>
+<td>对比方法选择可能不公</td>
+<td>AlphaLink2 需训练时嵌入约束，本文直接使用其预训练模型可能未达最优；Chai-1/Protenix 的约束输入格式可能与本文不同</td>
+<td>结论「D-AFM 优于现有方法」可能受实现细节影响</td>
+<td>对每个对比方法按其原生约束格式与最优超参数重新评估</td>
+<td>Results 图 2a–e；Methods 节未详述对比方法配置</td>
+</tr>
+<tr>
+<td>27 个靶标均为 AFM 失败案例</td>
+<td>选择偏差：未报告 D-AFM 在 AFM 成功案例上的表现（是否会破坏原本正确的预测？）</td>
+<td>实际应用中无法预知 AFM 是否失败，方法需保证「不伤害」</td>
+<td>在 AFM 成功靶标（DockQ &gt; 0.8）上运行 D-AFM，检查是否保持正确</td>
+<td>Results 节：靶标选择标准为 DockQ &lt; 0.4</td>
+</tr>
+<tr>
+<td>粗调阶段计算成本未量化</td>
+<td>30° 欧拉角穷举搜索 + 碰撞过滤 + 聚类，计算量随链数指数增长；补充材料虽有说明但摘要未提</td>
+<td>可扩展性决定实际可用性</td>
+<td>报告各阶段耗时与内存，与 AFM 单次推理对比</td>
+<td>补充材料 1（本文未提供具体数值）</td>
+</tr>
+<tr>
+<td>VoroIF-jury 打分与 DockQ 相关性在链数增加时下降</td>
+<td>四链靶标 Top-1 命中率 0%，说明自动选择在大复合物上失效</td>
+<td>若无可靠模型选择，多候选生成的优势无法兑现</td>
+<td>分析打分失败案例，开发链数感知的打分策略</td>
+<td>Results 图 4d</td>
+</tr>
+<tr>
+<td>域内 FAPE 掩码的域定义依赖用户</td>
+<td>若用户定义的域与真实结构域不符，掩码可能错误屏蔽关键约束</td>
+<td>方法声称支持用户自定义域，但未测试域定义错误时的鲁棒性</td>
+<td>在域定义随机扰动下重跑基准</td>
+<td>Methods 节：m_ij 定义依赖用户域划分</td>
+</tr>
+<tr>
+<td>未与物理模拟方法对比</td>
+<td>未对比 HADDOCK 等传统约束对接方法，也未对比 MD 模拟约束满足方法</td>
+<td>无法判断「深度学习后处理」相对「传统物理方法」的优势</td>
+<td>在相同靶标与约束下运行 HADDOCK/ROSETTA 约束对接</td>
+<td>Introduction 提及传统方法但 Results 未对比</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：</p>
+<ol>
+<li>
+<p><strong>「粗调 + 精调」两阶段范式</strong>：对于任何「初始预测存在大尺度刚体误差」的结构优化问题（分子对接、构象采样、域组装），先做离散刚体搜索（穷举旋转 + 碰撞过滤 + 聚类）再连续优化，比直接梯度优化更鲁棒。可迁移到：MD 模拟的初始构象生成、构象采样的起始点选择。</p>
+</li>
+<li>
+<p><strong>损失函数分段调度策略</strong>：根据当前约束满足程度动态调整约束项与结构保真项的权重（L_d 大时用小权重避免破坏结构，L_d 小时加大结构保真权重恢复几何），是一种简单有效的平衡策略。可迁移到：任意约束引导的生成任务（扩散模型采样、MD 增强采样）。</p>
+</li>
+<li>
+<p><strong>域内保真 + 域间约束的掩码设计</strong>：通过 FAPE 掩码将「保持局部结构质量」与「满足全局约束」解耦，让不同损失项各司其职。可迁移到：多域蛋白结构预测、蛋白-配体对接中的柔性区域处理。</p>
+</li>
+<li>
+<p><strong>训练-free 约束整合的可行性</strong>：预训练模型（AFM）的结构先验足以支持后处理优化，无需重新训练。这意味着：对于已有强大预训练模型的预测任务，约束整合可通过「优化时注入」而非「训练时注入」实现，大幅降低算力门槛。</p>
+</li>
+<li>
+<p><strong>稀疏约束的收益递减规律</strong>：1–6 个约束带来最大增益，6 个以上收益递减——提示在实际应用中，优先获取少量高质量距离约束（如 XL-MS 关键交联对）比追求大量约束更有效。</p>
+</li>
+<li>
+<p><strong>模型选择的链数瓶颈</strong>：共识打分（VoroIF-jury）在二链上可靠，三链下降，四链失效——多链复合物的自动模型选择仍是开放问题，可能需要结合界面特异性打分或实验验证。</p>
+</li>
+<li>
+<p><strong>约束方向性信息的重要性</strong>：距离约束主要提供平移信息，对旋转误差修正能力有限——这解释了为何需要显式旋转搜索。可迁移到：设计约束时优先选择能提供方向性信息的实验数据（如交联 + 取向约束）。</p>
+</li>
+</ol>
+<hr />
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>Distance-AF（Zhang et al., 2025a）</strong>：本文的直接前作，单链蛋白质结构建模的约束引导方法。本文将其扩展至多链复合物，核心差异是引入粗调阶段处理链间旋转误差。<strong>连接点</strong>：损失函数设计、分段调度策略一脉相承。</li>
+<li><strong>AlphaFold-Multimer（Evans et al., 2022）</strong>：本文的基座模型。本文在 AFM 结构模块上附加距离约束损失，未修改预训练权重。<strong>连接点</strong>：展示了预训练模型作为「可优化先验」的用法。</li>
+<li><strong>AlphaLink2（Stahl et al., 2024）</strong>：将 XL-MS 交联约束嵌入 AFM 训练的代表性方法。本文对比基准之一，且本文强调「训练-free」优势。<strong>连接点</strong>：两种约束整合路径（训练时 vs 优化时）的对比。</li>
+<li><strong>Chai-1（Boitreaud et al., 2024）与 Protenix（Chen et al., 2025）</strong>：AlphaFold3 风格的扩散模型，支持约束输入。本文对比基准。<strong>连接点</strong>：扩散模型约束引导 vs 优化时约束注入的对比。</li>
+<li><strong>传统约束对接（HADDOCK, de Vries et al., 2010；LZerD, Christoffer et al., 2021）</strong>：本文引用的传统约束整合方法。本文继承了「残基间距离约束」的表示方式，但用深度学习结构模块替代传统打分函数。<strong>连接点</strong>：约束表示与优化框架的迁移。</li>
+<li><strong>VoroIF-jury（Olechnovic et al., 2026）</strong>：本文使用的共识打分方法，源自 CASP16 复合物建模。<strong>连接点</strong>：模型选择策略可迁移至其他多候选生成方法。</li>
+<li><strong>DistPepFold（Zhang et al., 2025b）</strong>：肽-受体复合物预测方法，本文在肽-受体测试中使用了其权重。<strong>连接点</strong>：肽段构象先验的迁移。</li>
+<li><strong>DockQ（Mirabello &amp; Gray, 2024）</strong>：本文使用的对接质量评估指标。<strong>连接点</strong>：复合物预测的标准评估协议。</li>
+</ul>
+<hr />
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：</p>
+<ol>
+<li>
+<p><strong>候选名称</strong>：噪声鲁棒性约束引导（Noise-Robust Constraint-Guided Refinement）
+   - <strong>来源局限/观察</strong>：本文基准使用「oracle」约束（来自天然结构），但实际实验约束（XL-MS、FRET）含噪声、缺失和错误配对。图 2h,i 仅测试了区间而非噪声。
+   - <strong>核心假设</strong>：在约束损失中引入不确定性加权（如根据实验误差模型对每个约束赋予置信度权重），可提升噪声条件下的鲁棒性。
+   - <strong>初步方法</strong>：在 L_d 中引入逐约束权重 wᵢ = 1/(σᵢ²)，σᵢ 为实验误差估计；在模拟噪声约束（高斯扰动、随机删除）下与均匀权重对比。
+   - <strong>验证方式</strong>：在本文 27 靶标上注入不同噪声水平，比较 DockQ 分布。
+   - <strong>可能的失败模式</strong>：噪声过大时约束信息不足，加权无法补偿；需结合约束数量自适应策略。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：方向性约束扩展（Orientation-Aware Constraint Extension）
+   - <strong>来源局限/观察</strong>：本文指出距离约束主要提供平移信息，对旋转误差修正能力有限（粗调阶段的存在即为证据）。
+   - <strong>核心假设</strong>：若约束不仅包含距离还包含相对取向（如来自残余偶极耦合 RDC 或取向性光交联），可减少粗调阶段的搜索空间，提升效率与精度。
+   - <strong>初步方法</strong>：扩展损失函数加入取向约束项 L_ori；在粗调阶段利用取向信息缩小欧拉角搜索范围。
+   - <strong>验证方式</strong>：在二链靶标上对比「仅距离」vs「距离 + 取向」的 DockQ 与计算时间。
+   - <strong>可能的失败模式</strong>：取向约束实验数据获取难度高，适用范围有限。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：链数自适应模型选择（Chain-Count-Adaptive Model Selection）
+   - <strong>来源局限/观察</strong>：VoroIF-jury 在二链靶标 Top-1 命中率 63.6%，三链 12.5%，四链 0%——链数越多，自动选择越不可靠。
+   - <strong>核心假设</strong>：结合界面特异性打分（如界面残基保守性、物理化学互补性）与共识打分，可提升多链复合物的模型选择准确率。
+   - <strong>初步方法</strong>：在 VoroIF-jury 基础上加入界面能量项（Rosetta 或统计势）；训练一个轻量级排序模型（以 DockQ 为标签）。
+   - <strong>验证方式</strong>：在 27 靶标 + 额外多链测试集上比较 Top-1 命中率。
+   - <strong>可能的失败模式</strong>：多链复合物界面多样性强，单一打分函数难以泛化。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：约束引导的构象系综生成（Constraint-Guided Conformational Ensemble Generation）
+   - <strong>来源局限/观察</strong>：本文方法生成单一最优模型，但许多复合物（特别是柔性肽-受体体系）本质上是构象系综。
+   - <strong>核心假设</strong>：粗调阶段产生的多个候选构象可视为系综的初始成员，通过精调后保留多个模型可表征构象多样性。
+   - <strong>初步方法</strong>：修改模型选择策略，从「选最优」改为「保留 Top-K 且多样性最大化」；用系综平均 DockQ 或覆盖度评估。
+   - <strong>验证方式</strong>：在 6 个肽-受体靶标上比较单模型 vs 系综的界面覆盖度。
+   - <strong>可能的失败模式</strong>：粗调搜索空间有限，可能无法覆盖真实系综的多样性。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：跨尺度约束整合框架（Cross-Scale Constraint Integration Framework）
+   - <strong>来源局限/观察</strong>：本文仅处理残基间距离约束；但实验数据还包括 SAXS 形状、cryo-EM 密度图、HDX-MS 保护因子等。
+   - <strong>核心假设</strong>：将多类型实验约束统一为「可微损失项」，在 AFM 结构模块中联合优化，可解决单一约束类型信息不足的问题。
+   - <strong>初步方法</strong>：设计统一的约束接口（距离、密度图相关性、保护因子映射）；在大型复合物（如 4B6J）上测试多约束联合优化。
+   - <strong>验证方式</strong>：对比单约束 vs 多约束的 DockQ 与实验数据拟合度。
+   - <strong>可能的失败模式</strong>：不同约束类型权重标定困难，联合优化可能相互冲突。</p>
+</li>
+<li>
+<p><strong>候选名称</strong>：约束信息量评估与主动采样（Constraint Informativeness Assessment and Active Sampling）
+   - <strong>来源局限/观察</strong>：本文消融实验显示 1–6 约束增益最大，6 以上递减——提示存在「信息量饱和」现象。
+   - <strong>核心假设</strong>：不同残基对的距离约束信息量差异大（界面中心残基 vs 表面残基），主动选择信息量最大的约束可进一步提升效率。
+   - <strong>初步方法</strong>：基于 AFM 预测的注意力权重或残基间进化耦合（EVcouplings）预测约束信息量；贪心选择 Top-K 约束。
+   - <strong>验证方式</strong>：在 27 靶标上比较随机约束 vs 主动选择约束的 DockQ。
+   - <strong>可能的失败模式</strong>：信息量评估本身有误差，可能劣于均匀采样。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Full manuscript text (Abstract, Introduction, Results, Discussion, Supplementary Material descriptions, Author Contributions, Funding, Data Availability, AI Disclosure)</li>
+<li><strong>Assessment boundary</strong> Scientific content, methodological soundness, evidence quality, and claims as presented in the provided text. Figures, tables, and supplementary materials are referenced but not directly examined.</li>
+<li><strong>Shared manuscript claim summary</strong> The authors present Distance-AF Multimer (Distance-AFM), a training-free, post-hoc refinement method that extends their earlier single-chain Distance-AF approach to protein complexes. The method uses user-provided inter-chain residue-residue distance constraints to correct and refine AlphaFold-Multimer predictions through a three-phase pipeline: (1) initial AFM prediction, (2) a coarse-tuning phase generating diverse starting conformations via rigid-body translational and rotational searches, and (3) a fine-tuning phase optimizing a composite loss function that includes distance constraints, center-of-mass, clash, angle, and modified FAPE terms. The authors claim competitive or superior performance against Chai-1, Protenix, and AlphaLink2 on a 27-target benchmark, robustness to sparse constraints (1-6 constraints sufficient for most gains), successful modeling of peptide-receptor complexes with five distinct failure modes, and scalability to assemblies of 5-10 chains.</li>
+<li><strong>Visible evidence base</strong> Abstract, Introduction, Results sections (Three-Phase Architecture, Docking model improvement, Distance Constraint Density, Case studies, Model Selection, Peptide-receptor docking, Large protein complexes), Discussion, and manuscript metadata. Figures 1-6 and Supplementary Tables 1-8 are referenced but not directly viewable.</li>
+<li><strong>Missing materials affecting confidence</strong> All figures, all supplementary tables, the supplementary document describing algorithmic details, and the source code. Statistical details (exact p-values, confidence intervals, per-target data) are not directly verifiable. The benchmark selection criteria and the nature of the "user-defined" constraints in practical scenarios are not fully specified.</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The manuscript presents a conceptually appealing and practically relevant extension of a training-free constraint-based refinement paradigm to protein complex modeling. The core idea, using a coarse-to-fine strategy to overcome the rotational failure modes that plague direct distance-based refinement of multimer predictions, is well motivated and addresses a genuine gap in the field. The reported results, if fully supported by the supplementary data, suggest that the method is effective across a range of complex sizes and error types. However, the current manuscript text leaves several critical technical details underspecified, particularly regarding the loss function formulation, the constraint generation process, and the statistical robustness of the benchmark comparisons. The claims of "competitive or superior" performance and scalability to 10 chains require careful scrutiny of the underlying data, which are not fully visible in the provided text. The manuscript is well-written and accessible, but the evidence base as presented is insufficient to fully establish all claims without access to the supplementary materials.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational structural biologists developing or using protein-protein docking and complex prediction tools; experimental biologists who have sparse distance information (e.g., from XL-MS, FRET, or mutagenesis) and need to generate or validate complex models; researchers interested in integrative modeling approaches that combine AI-based prediction with experimental restraints. The training-free nature of the method makes it particularly attractive for users who lack the resources to retrain large models.</li>
+<li><strong>Major strengths</strong>
+  1. The problem addressed is timely and important: integrating experimental restraints into state-of-the-art deep learning predictors without retraining.
+  2. The two-step coarse-to-fine strategy is a logical and well-reasoned solution to the specific challenge of large rotational errors in multimer predictions, a limitation that is acknowledged but often not addressed by other methods.
+  3. The evaluation is broad, covering dimers, higher-order complexes, peptide-receptor systems with distinct failure modes, and large assemblies, which strengthens the generalizability claims.
+  4. The ablation studies on constraint density and distance uncertainty directly address practical usability, which is a significant strength.
+  5. The manuscript is clearly written and the figures, as described, appear to illustrate the key concepts and results effectively.</li>
+<li>
+<p><strong>Major Concerns</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M1</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The manuscript states that the loss function includes a "modified FAPE loss" where "the FAPE-loss is only computed within user-defined domains" and that "all inter-domain FAPE contributions are masked out and set to zero." This is claimed to "preserve local geometry and prevent the structure module from distorting well-formed intra-domain structures during iterative updates, while allowing the inter-domain (inter-chain) orientation to be primarily optimized by the distance loss."</li>
+<li><strong>Evidence pointer</strong> Results, "Three-Phase Architecture of Distance-AF Multimer" section, equations 1 and 2 (not fully shown in text)</li>
+<li><strong>Concern</strong> The description of the loss function is incomplete and potentially problematic. The text mentions a "modified FAPE loss" but does not provide the full mathematical formulation. The key claim is that masking inter-domain FAPE is beneficial. However, FAPE is a distance-based metric in local frames. Masking it entirely between domains means that the only inter-domain attractive/repulsive forces come from the distance constraints and the clash violation loss. This could lead to a situation where, in the absence of sufficient constraints, the domains are not held together properly, or where the clash loss dominates and prevents proper interface formation. The authors need to clarify whether the center-of-mass loss (Lcom) acts as a global attractor, and how the balance between these terms is maintained. Furthermore, the claim that this masking "prevents distortion" needs to be supported by a comparison against a version of the method without the mask. The current text does not provide this ablation, making the specific design choice difficult to evaluate.</li>
+<li><strong>Why it matters</strong> The loss function is the core of the fine-tuning phase. If the formulation is not fully specified or the design choice is not rigorously justified, the method cannot be reproduced or its performance properly contextualized. The interaction between the masked FAPE, the distance loss, and the clash loss is critical for understanding why the method works and when it might fail.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must provide the complete mathematical formulation of all loss terms in the main text or supplementary. They should also include an ablation study comparing the full method against a version where the FAPE mask is not applied, to demonstrate the specific contribution of this design choice to the final accuracy and the preservation of intra-domain structure.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M2</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence quality</li>
+<li><strong>Claim pointer</strong> The manuscript claims "competitive or superior performance compared to other existing deep-learning-based structure prediction methods" based on a 27-target benchmark, and that "D-AFM consistently demonstrates superior or near-superior performance across all metrics."</li>
+<li><strong>Evidence pointer</strong> Results, "Docking model improvement by Distance-AFM" section, Figure 2, Table 1, Supplementary Table 2</li>
+<li><strong>Concern</strong> The benchmark comparison is described only in aggregate terms. The text states that D-AFM "wins" against AFM on "every target across every metric with a single exception," but the specific metrics (DockQ, RMSD, iRMSD, lRMSD, Fnat) are not defined in the text, and the statistical significance of these wins is not reported. For example, a "win" in DockQ from 0.10 to 0.12 is not as meaningful as a win from 0.10 to 0.60. The manuscript needs to provide a per-target breakdown of the scores for all methods, and an analysis of whether the improvements are statistically significant (e.g., using a paired test). The selection of the 27 targets is also a potential source of bias. The authors state these were chosen because AFM "failed to generate accurate models," which is a reasonable criterion for a rescue method, but it does not represent a general benchmark. The comparison against Chai-1 and Protenix is described as "closest overall," but the text does not clarify if these methods were given the same distance constraints. If they were not, the comparison is not entirely fair, as the other methods are being evaluated in an unconstrained mode.</li>
+<li><strong>Why it matters</strong> The central claim of the paper is that the method improves upon existing tools. Without a clear, statistically robust, and fair comparison, this claim is not established. The reader cannot assess the practical significance of the improvements from the current text.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a supplementary table with per-target scores for all methods and all metrics. They should perform and report a statistical test (e.g., Wilcoxon signed-rank test) comparing D-AFM to each baseline. They must also clarify whether the baseline methods (Chai-1, Protenix, AlphaLink2) were provided with the same distance constraints, and if not, discuss the implications of this difference in evaluation protocol.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M3</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The manuscript states that "Up to 12 distance constraints were used per interacting chain pair; fewer were used when fewer residue pairs were successfully matched during constraint generation." and that "All constrained residue pairs and target distances are listed in Supplementary Table 1."</li>
+<li><strong>Evidence pointer</strong> Results, "Docking model improvement by Distance-AFM" section, Supplementary Table 1</li>
+<li><strong>Concern</strong> The process of "constraint generation" is not described in the main text. It is unclear how the distance constraints are derived from the native structure in the benchmark. Are they all Cα-Cα distances? Are they randomly selected, or are they chosen to be informative (e.g., at the interface)? The manuscript mentions an ablation on constraint density, but the method for selecting which residues to constrain is a critical part of the pipeline. If the constraints are derived from the native structure, this is a "cheating" scenario that is not realistic for a practical application where the native structure is unknown. The authors need to clarify the source of the constraints in the benchmark and discuss how a user would obtain these constraints in a real-world scenario (e.g., from XL-MS, which gives specific lysine-lysine distances, not arbitrary Cα-Cα distances).</li>
+<li><strong>Why it matters</strong> The method's utility depends on the availability and quality of distance constraints. If the benchmark uses idealized constraints that are not representative of experimental data, the reported performance may be overly optimistic. The paper's practical impact hinges on this point.</li>
+<li>
+<p><strong>Resolution test</strong> The authors must explicitly describe the constraint generation process in the main text. They should clarify whether the constraints are derived from the native structure and discuss the implications of this for practical use. Ideally, they would include a test case using experimentally-derived constraints (e.g., from XL-MS) to demonstrate real-world applicability.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-M4</p>
+</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> No</li>
+<li><strong>Axis</strong> Scientific importance</li>
+<li><strong>Claim pointer</strong> The manuscript claims the method "scales effectively to large assemblies, successfully modeling systems with up to 10 chains."</li>
+<li><strong>Evidence pointer</strong> Results, "Modeling large protein complexes" section, Figure 6, Supplementary Table 8</li>
+<li><strong>Concern</strong> The results for large complexes are presented as case studies (five examples). While these are valuable, the text does not provide a systematic evaluation of performance on large complexes. The claim of "scales effectively" is based on a small number of examples. The computational cost of the coarse-to-fine search, which involves an exhaustive rotational sweep, is likely to scale poorly with the number of chains. The text mentions that "Typically, 10³–10⁴ docking conformations are generated for a complex of two proteins," but does not state the number for a 10-chain complex. If the number of conformations grows combinatorially, the method may not be practical for very large assemblies.</li>
+<li><strong>Why it matters</strong> The scalability claim is a key differentiator for the method. If the computational cost is prohibitive for large complexes, the practical utility is limited. The current evidence is anecdotal and does not address the computational scaling.</li>
+<li>
+<p><strong>Resolution test</strong> The authors should provide a plot or table showing the number of starting conformations generated and the total computational time as a function of the number of chains. They should also discuss the scaling behavior of the algorithm and its practical limits.</p>
+</li>
+<li>
+<p><strong>Minor Comments</strong></p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m1</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Results, "Three-Phase Architecture of Distance-AF Multimer" section</li>
+<li><strong>Evidence pointer</strong> Equations 1 and 2 are referenced but not fully displayed in the text provided.</li>
+<li><strong>Issue</strong> The loss function equations are not fully presented in the text. The description is fragmented, making it difficult to follow the exact composition of the total loss.</li>
+<li>
+<p><strong>Required correction</strong> The full equations for the distance loss and the total loss function should be displayed prominently in the main text, with all terms clearly defined.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m2</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Affected element</strong> Results, "Model Selection Using Consensus-Based Scoring" section</li>
+<li><strong>Evidence pointer</strong> Figure 4, Supplementary Tables 5 and 6</li>
+<li><strong>Issue</strong> The consensus-based scoring method is introduced as a tool for model selection, but it is not clear if this is a novel contribution of the paper or an application of an existing method. The text mentions "VoroIF-jury in the FTDMP framework" and "LZerD ranksum scoring" but does not provide sufficient context for readers unfamiliar with these tools.</li>
+<li>
+<p><strong>Required correction</strong> Provide a brief description of the scoring functions used and clarify whether the modified VoroIF-jury is a new development or a re-implementation of an existing approach.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m3</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Results, "Modeling peptide-receptor docking" section</li>
+<li><strong>Evidence pointer</strong> Figure 5</li>
+<li><strong>Issue</strong> The text states that "D-AFM uses DistPepFold-derived weights in the peptide setting." This is an important detail, but it is not explained. What are these weights, and how do they differ from the standard weights?</li>
+<li>
+<p><strong>Required correction</strong> Briefly explain the origin and nature of the DistPepFold-derived weights and how they are integrated into the D-AFM framework.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m4</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Affected element</strong> Methods, "Data Availability Statement"</li>
+<li><strong>Evidence pointer</strong> Data Availability Statement</li>
+<li><strong>Issue</strong> The statement says the source code is available at a GitHub URL, but the specific version of the code used for the benchmark is not indicated. This makes it difficult to reproduce the exact results.</li>
+<li>
+<p><strong>Required correction</strong> Provide a version tag or commit hash for the code used in the study, or state that the code is available in a specific release.</p>
+</li>
+<li>
+<p><strong>Concern ID</strong> R1-m5</p>
+</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Readability</li>
+<li><strong>Affected element</strong> Introduction</li>
+<li><strong>Evidence pointer</strong> Introduction, paragraph 1</li>
+<li><strong>Issue</strong> The introduction cites several references (e.g., Lu et al., 2025; Kagaya et al., 2026) that appear to be from the future relative to the manuscript date. This is unusual and may be a typographical error or a preprint-specific issue.</li>
+<li><strong>Required correction</strong> Verify the publication years of all cited references and correct any errors.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of "competitive or superior performance" is not fully supported by the visible text, as the statistical significance and per-target data are not provided.</li>
+<li>The claim that the method "scales effectively" to 10-chain complexes is based on a small number of case studies and lacks a systematic analysis of computational cost scaling.</li>
+<li>The claim that the modified FAPE loss "prevents distortion" is not supported by a direct ablation study.</li>
+<li>The practical utility of the method is unclear because the source and nature of the "user-defined" distance constraints in a real-world scenario are not discussed.</li>
+<li>The claim that the method can "guide and refine" predictions is well-supported by the case studies, but the generalizability of this claim to a broader range of complexes is not established from the provided evidence.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

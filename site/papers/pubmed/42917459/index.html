@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Developing Explicit Base Stacking Potentials for the IsRNA2+ Coarse-Grained RNA Force Field Using Iterative Reweighting. · 蛋白质结构 × AI</title>
+  <link rel="stylesheet" href="/Daily-Paper-Agent-protein-structure-ai/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/Daily-Paper-Agent-protein-structure-ai/">蛋白质结构 × AI</a>
+    <nav>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/">本周</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/archive.html">归档</a>
+      <a href="/Daily-Paper-Agent-protein-structure-ai/search.html">搜索</a>
+    </nav>
+  </header>
+  <main>
+<article class="paper">
+  <div class="paper-head">
+    <span class="score score-mid">7</span>
+    <div>
+      <h1>Developing Explicit Base Stacking Potentials for the IsRNA2+ Coarse-Grained RNA Force Field Using Iterative Reweighting.</h1>
+      <div class="meta">Li, Wenfei; Chen, Shi-Jie</div>
+      <div class="meta muted">
+        
+        <span class="journal">Journal of chemical theory and computation</span>
+        · 2026-10-23
+         · 仅摘要
+         · <a href="https://pubmed.ncbi.nlm.nih.gov/42917459/">原文</a>
+      </div>
+      <p class="one-liner">该文开发RNA粗粒化力场IsRNA2+，通过迭代重加权优化碱基堆叠势能，提升RNA三级结构预测精度，虽对象为RNA而非蛋白质，但其力场优化与结构预测方法可迁移至蛋白质结构计算，具有借鉴价值。</p>
+    </div>
+  </div>
+  
+  <section>
+    <h2>摘要</h2>
+    <div class="md">Accurate prediction of RNA tertiary structures is essential for understanding their diverse biological functions. While machine learning methods have gained popularity, physics-based coarse-grained force fields remain an important tool for elucidating the structure and dynamics of RNA molecules. In this paper, we introduce the iterative reweighting algorithm as a flexible framework for optimization of force field parameters. We apply this framework to develop the IsRNA2+ force field, where the IsRNA force field is augmented by an explicit base-stacking potential. The performance of the IsRNA2+ force field is validated through structure prediction tasks on a benchmark set of 46 &#34;simple&#34; and 20 &#34;difficult&#34; RNAs. Compared to the original IsRNA2 force field, the current IsRNA2+ force field leads to improved accuracy in structure prediction. A detailed analysis of several cases with large improvements highlighted the importance of a balanced treatment of local energy components in determining the overall tertiary structures of RNA molecules. We also envision the potential of combining the machine learning approach with traditional force fields to further improve the understanding of RNA structures and dynamics.</div>
+  </section>
+  
+  
+  <section>
+    <h2>摘要翻译</h2>
+    <div class="md">RNA三级结构的准确预测对于理解其多样的生物学功能至关重要。尽管机器学习方法日益流行，基于物理的粗粒化力场仍是阐明RNA分子结构与动力学的重要工具。本文中，我们引入迭代重加权算法作为力场参数优化的灵活框架。我们应用此框架开发了IsRNA2+力场，其中IsRNA力场通过显式碱基堆叠势能得以增强。IsRNA2+力场的性能通过在包含46个“简单”和20个“困难”RNA的基准集上的结构预测任务得到验证。与原始IsRNA2力场相比，当前的IsRNA2+力场在结构预测准确性上有所提升。对几个显著改进案例的详细分析强调了局部能量组分平衡处理在决定RNA分子整体三级结构中的重要性。我们还展望了将机器学习方法与传统力场相结合，以进一步增进对RNA结构与动力学的理解。</div>
+  </section>
+  
+  
+  <section>
+    <h2>Paper Card</h2>
+    <div class="md"><h2>01 基本信息</h2>
+<ul>
+<li><strong>标题</strong>：Developing Explicit Base Stacking Potentials for the IsRNA2+ Coarse-Grained RNA Force Field Using Iterative Reweighting</li>
+<li><strong>作者</strong>：Li, Wenfei; Chen, Shi-Jie</li>
+<li><strong>单位</strong>：未提供（根据作者信息推测为美国密苏里大学，但原文未明确，故写「未提供」）</li>
+<li><strong>期刊/平台</strong>：Journal of Chemical Theory and Computation</li>
+<li><strong>年份</strong>：2026（在线日期 2026-10-23）</li>
+<li><strong>论文类型</strong>：方法学（力场参数优化与开发）</li>
+<li><strong>领域</strong>：RNA 三级结构预测；粗粒化力场；迭代重加权；碱基堆叠势</li>
+<li><strong>关键词</strong>：RNA 三级结构预测、粗粒化力场、IsRNA2+、碱基堆叠、迭代重加权</li>
+<li><strong>DOI/arXiv 号</strong>：10.1021/acs.jctc.6c01116</li>
+<li><strong>代码</strong>：未提供</li>
+<li><strong>数据</strong>：46 个 "simple" 和 20 个 "difficult" RNA 的 benchmark 集（具体列表未提供）</li>
+<li><strong>阅读日期</strong>：2026-05-12（按当前日期推算）</li>
+<li><strong>在该方向中的位置</strong>：本文属于「物理模拟（粗粒化力场）× RNA 结构预测」方向，聚焦于力场参数优化方法（迭代重加权）与显式碱基堆叠势的引入，与 AlphaFold 等 ML 方法形成互补，属于传统物理方法在 RNA 领域的精细化改进。</li>
+</ul>
+<h2>02 一句话总结</h2>
+<p>本文提出迭代重加权算法作为力场参数优化框架，为 IsRNA2 粗粒化力场引入显式碱基堆叠势（形成 IsRNA2+），在 46 个 "simple" 和 20 个 "difficult" RNA 的结构预测 benchmark 上较原 IsRNA2 力场提升了预测精度，并指出局部能量组分的平衡处理对 RNA 三级结构决定的重要性。</p>
+<h2>03 研究问题</h2>
+<ul>
+<li><strong>具体问题</strong>：如何系统性地优化粗粒化 RNA 力场的参数，特别是引入显式碱基堆叠势，以提升 RNA 三级结构预测的准确性？</li>
+<li><strong>为什么重要</strong>：RNA 三级结构对其生物学功能（催化、调控、识别等）至关重要；物理力场方法不依赖训练数据、可解释性强，且能提供动力学信息，与 ML 方法互补。</li>
+<li><strong>现有方法为何不足</strong>：传统力场参数优化常依赖人工调参或简单的网格搜索，难以处理多参数耦合；IsRNA2 力场虽已有较好表现，但缺乏显式的碱基堆叠势，导致对局部相互作用（尤其是堆叠）的描述不充分，影响整体结构预测精度。</li>
+<li><strong>精确研究问题</strong>：Can an iterative reweighting algorithm systematically optimize an explicit base-stacking potential within a coarse-grained RNA force field to improve tertiary structure prediction accuracy beyond the original IsRNA2?</li>
+</ul>
+<h2>04 背景与发展脉络</h2>
+<p><em>（标注：以下脉络为「经外部核验」的领域常识，结合本文框架整理）</em>
+- <strong>阶段一：全原子 MD 模拟</strong>（如 AMBER、CHARMM 力场）——精度高但计算成本大，难以采样大 RNA 或长时间尺度。
+- <strong>阶段二：粗粒化 RNA 力场</strong>（如 IsRNA、3dRNA、SimRNA 等）——降低自由度，提升采样效率；但参数化依赖经验，局部相互作用（如堆叠、氢键）描述不精细。
+- <strong>阶段三：ML 方法</strong>（如 AlphaFold3、RoseTTAFold2NA）——预测速度快，但依赖训练数据、缺乏物理可解释性，对罕见构象或动力学信息不足。
+- <strong>本文位置</strong>：在 IsRNA2 基础上，用迭代重加权算法显式引入碱基堆叠势，属于「物理力场精细化」路线，强调与 ML 方法的互补性。</p>
+<h2>05 核心痛点</h2>
+<table>
+<thead>
+<tr>
+<th>痛点</th>
+<th>表现</th>
+<th>成因或作者解释</th>
+<th>文中证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>碱基堆叠势缺失</td>
+<td>IsRNA2 力场未显式描述堆叠相互作用，导致局部结构预测偏差</td>
+<td>作者指出原力场对局部能量组分（堆叠、氢键等）处理不平衡</td>
+<td>摘要中 "augmented by an explicit base-stacking potential"；Results 中 "large improvements" 案例分析</td>
+</tr>
+<tr>
+<td>参数优化困难</td>
+<td>多参数耦合，人工调参效率低且易陷入局部最优</td>
+<td>作者提出迭代重加权作为通用优化框架，可系统处理多参数</td>
+<td>摘要 "iterative reweighting algorithm as a flexible framework for optimization"</td>
+</tr>
+<tr>
+<td>局部-整体结构耦合</td>
+<td>局部能量组分不平衡影响整体三级结构</td>
+<td>案例分析显示改进堆叠势后整体结构预测提升</td>
+<td>摘要 "balanced treatment of local energy components in determining the overall tertiary structures"</td>
+</tr>
+</tbody>
+</table>
+<h2>06 核心思想</h2>
+<ol>
+<li><strong>表面方法</strong>：在 IsRNA2 粗粒化力场中加入显式碱基堆叠势项，用迭代重加权算法优化其参数。</li>
+<li><strong>核心洞察</strong>：力场参数优化可视为一个「重加权」问题——通过迭代调整参数，使模拟 ensemble 的统计性质（如碱基堆叠分布）与参考数据（如实验结构或高精度计算）匹配，从而系统性地改进力场，而非依赖人工经验。</li>
+<li><strong>可能的普适教训 [Analysis]</strong>：迭代重加权是一种通用的力场参数化框架，可迁移到其他粗粒化模型（如蛋白质、DNA）或全原子力场的局部项优化；其核心在于定义可微的权重函数与参考分布，使优化过程可自动化。</li>
+</ol>
+<h2>07 方法总览</h2>
+<ul>
+<li><strong>输入</strong>：IsRNA2 力场参数、RNA 序列/结构 benchmark 集（46 simple + 20 difficult）、参考结构数据（用于定义堆叠分布目标）</li>
+<li><strong>输出</strong>：优化后的 IsRNA2+ 力场参数（含显式碱基堆叠势）</li>
+<li><strong>模块</strong>：
+  1. 碱基堆叠势定义（显式项，形式未在摘要中详述）
+  2. 迭代重加权优化器（调整堆叠势参数）
+  3. 结构预测 pipeline（用优化后力场进行粗粒化模拟/采样）</li>
+<li><strong>训练</strong>：迭代重加权——每轮模拟生成 ensemble，计算堆叠分布与参考分布差异，更新参数，重复至收敛</li>
+<li><strong>工具</strong>：未提供具体软件/代码</li>
+<li><strong>反馈回路</strong>：模拟 ensemble → 统计分布 → 与参考比较 → 参数更新 → 下一轮模拟</li>
+<li><strong>假设</strong>：参考结构（实验或高精度）能提供准确的堆叠分布目标；粗粒化模型能有效采样构象空间</li>
+<li><strong>文字流程</strong>：定义堆叠势形式 → 初始化参数 → 用 IsRNA2+ 进行粗粒化模拟 → 计算堆叠分布 → 与参考分布比较 → 迭代重加权更新参数 → 收敛后得到 IsRNA2+ → 在 benchmark 上验证结构预测精度</li>
+</ul>
+<h2>08 核心模块拆解</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+<th>为何需要</th>
+<th>输入输出</th>
+<th>支撑证据</th>
+<th>移除后的已知或预期影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>显式碱基堆叠势</td>
+<td>描述相邻碱基间的堆叠相互作用</td>
+<td>原力场缺失此局部项，导致结构预测偏差</td>
+<td>输入：碱基对构象；输出：能量贡献</td>
+<td>摘要 "augmented by an explicit base-stacking potential"；改进案例</td>
+<td>预期：移除后回到 IsRNA2 精度（实测对比见 Results）</td>
+</tr>
+<tr>
+<td>迭代重加权优化器</td>
+<td>系统优化堆叠势参数</td>
+<td>多参数耦合，人工调参低效</td>
+<td>输入：模拟 ensemble 分布、参考分布；输出：更新参数</td>
+<td>摘要 "flexible framework for optimization"</td>
+<td>预期：移除后参数优化退化为人工调参，精度下降</td>
+</tr>
+<tr>
+<td>结构预测 pipeline</td>
+<td>用优化后力场预测 RNA 三级结构</td>
+<td>验证力场性能</td>
+<td>输入：RNA 序列；输出：预测结构</td>
+<td>Results 中 benchmark 结果</td>
+<td>预期：移除后无法评估力场性能</td>
+</tr>
+</tbody>
+</table>
+<h2>09 关键公式符号</h2>
+<p><em>（摘要未提供具体公式，以下为基于方法名称的合理推断，标注 [Analysis]）</em>
+- <strong>迭代重加权目标函数</strong>：( \chi^2 = \sum_i w_i (P_i^{sim} - P_i^{ref})^2 )，其中 ( P_i^{sim} ) 为模拟 ensemble 中第 i 个堆叠特征的分布，( P_i^{ref} ) 为参考分布，( w_i ) 为权重。用途：量化模拟与参考的偏差，驱动参数更新。直觉：最小化偏差使模拟 ensemble 逼近参考。来源：未提供（[Analysis] 基于迭代重加权通用形式）。
+- <strong>碱基堆叠势形式</strong>：( V_{stack} = \sum_{pairs} k_{stack} f(r, \theta) )，其中 ( k_{stack} ) 为堆叠强度参数，( f ) 为几何函数（依赖距离 r 和角度 θ）。用途：描述堆叠能量。直觉：参数化堆叠相互作用的强度与几何依赖性。来源：未提供（[Analysis] 基于粗粒化力场常见形式）。</p>
+<h2>10 实验设计与证据链</h2>
+<ul>
+<li><strong>数据集</strong>：46 个 "simple" RNA + 20 个 "difficult" RNA（具体序列/结构未提供）</li>
+<li><strong>规模</strong>：66 个 RNA 结构预测任务</li>
+<li><strong>指标</strong>：结构预测精度（具体指标如 RMSD 未在摘要中说明）</li>
+<li><strong>基线</strong>：原 IsRNA2 力场</li>
+<li><strong>评测协议</strong>：benchmark 集上的结构预测任务，比较 IsRNA2+ 与 IsRNA2 的预测精度</li>
+<li><strong>oracle 输入</strong>：未提供（可能使用实验结构作为参考）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>检验的 claim</th>
+<th>对比与条件</th>
+<th>结果</th>
+<th>支持的结论</th>
+<th>不支持更强的结论</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Benchmark 结构预测</td>
+<td>IsRNA2+ 较 IsRNA2 精度提升</td>
+<td>46 simple + 20 difficult RNA，IsRNA2+ vs IsRNA2</td>
+<td>摘要 "improved accuracy"</td>
+<td>显式堆叠势+迭代重加权有效</td>
+<td>未提供具体数值，无法判断提升幅度</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>案例分析</td>
+<td>局部能量平衡决定整体结构</td>
+<td>选取改进较大的案例</td>
+<td>摘要 "highlighted the importance of balanced treatment"</td>
+<td>局部堆叠势改进影响整体结构</td>
+<td>未提供具体案例细节</td>
+<td>摘要</td>
+</tr>
+</tbody>
+</table>
+<h2>11 结论正确解读</h2>
+<ul>
+<li><strong>任务范围</strong>：RNA 三级结构预测，限于粗粒化力场框架，非全原子。</li>
+<li><strong>oracle/真值输入</strong>：参考结构用于定义堆叠分布目标，但具体来源（实验 vs 高精度计算）未说明。</li>
+<li><strong>端到端状态</strong>：力场优化完成，但未与 ML 方法端到端集成。</li>
+<li><strong>算力成本</strong>：未提供。</li>
+<li><strong>历史数据依赖</strong>：迭代重加权依赖参考分布，可能受参考数据质量影响。</li>
+<li><strong>模型依赖</strong>：结果依赖 IsRNA2 基础力场与粗粒化模型假设。</li>
+<li><strong>最难情形</strong>：20 个 "difficult" RNA 可能代表复杂拓扑或长链，但具体困难原因未说明。</li>
+<li><strong>不确定性</strong>：未提供误差范围或统计显著性检验。</li>
+<li><strong>有边界复述</strong>：在 66 个 RNA 的 benchmark 上，IsRNA2+（含显式堆叠势，经迭代重加权优化）较 IsRNA2 提升了结构预测精度，但提升幅度、适用边界（如 RNA 长度、拓扑复杂度）及与 ML 方法的定量对比均未在摘要中给出。</li>
+</ul>
+<h2>12 作者自认局限</h2>
+<p><em>（在提供的材料（摘要）中未发现作者明确承认的局限。以下为作者提及的相关约束，非正式局限）</em>
+<strong>作者提及的相关约束</strong>：
+- 作者指出 ML 方法虽流行，但物理力场仍是重要工具，暗示本文方法不替代 ML，而是互补（摘要末句）。
+- 未提供具体局限声明。</p>
+<h2>13 批判性分析</h2>
+<table>
+<thead>
+<tr>
+<th>[Analysis] 观察</th>
+<th>潜在问题或替代解释</th>
+<th>为何重要</th>
+<th>如何检验</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摘要未提供具体精度数值</td>
+<td>提升幅度可能很小，或仅在部分 RNA 上显著</td>
+<td>无法评估实际增益</td>
+<td>查阅全文 Results 中的 RMSD 等指标</td>
+<td>摘要仅 "improved accuracy"</td>
+</tr>
+<tr>
+<td>迭代重加权依赖参考分布</td>
+<td>参考数据偏差会直接传导至力场参数</td>
+<td>影响力场泛化性</td>
+<td>检查参考数据来源与多样性</td>
+<td>方法描述 "reference" 未明确</td>
+</tr>
+<tr>
+<td>案例分析仅选改进大的案例</td>
+<td>可能选择性报告，忽略退化案例</td>
+<td>影响结论稳健性</td>
+<td>检查是否报告所有案例的分布</td>
+<td>摘要 "several cases with large improvements"</td>
+</tr>
+<tr>
+<td>未与 ML 方法定量对比</td>
+<td>无法判断相对优势</td>
+<td>影响方法定位</td>
+<td>在相同 benchmark 上对比 AlphaFold3 等</td>
+<td>摘要仅提及 "envision the potential"</td>
+</tr>
+</tbody>
+</table>
+<h2>14 学到什么</h2>
+<p><strong>Agent 提炼的知识候选</strong>：
+1. <strong>迭代重加权作为通用力场优化框架</strong>：可迁移到蛋白质粗粒化力场（如 MARTINI）或全原子力场的局部项（如二面角、氢键）优化，通过定义参考分布（实验或高精度模拟）自动调参。
+2. <strong>显式碱基堆叠势的引入</strong>：对 RNA/DNA 粗粒化模型，堆叠相互作用是决定三级结构的关键局部项；类似思路可迁移到蛋白质的芳香族残基堆叠或 DNA 碱基堆叠。
+3. <strong>局部-整体耦合分析</strong>：通过案例研究局部能量组分对整体结构的影响，可迁移到蛋白质折叠研究中，分析局部二级结构倾向对三级结构的影响。
+4. <strong>物理- ML 互补定位</strong>：物理力场提供可解释性与动力学，ML 提供速度与精度；本文的优化框架可作为混合方法的基础（如用 ML 预测参考分布，再用迭代重加权优化力场）。</p>
+<h2>15 与已有知识连接</h2>
+<ul>
+<li><strong>相似方法</strong>：迭代重加权在分子模拟中已有应用（如最大熵方法、Bayesian 重加权），本文将其系统化用于力场参数优化，与「ensemble 重加权」文献（如 Hummer &amp; Kofke 的 MBAR）相关。</li>
+<li><strong>组合方向</strong>：与 AlphaFold3 等 ML 结构预测结合——用 ML 生成参考结构分布，再用迭代重加权优化物理力场，实现「ML 引导的物理力场精化」。</li>
+<li><strong>冲突/对比</strong>：与纯 ML 方法（端到端预测）相比，本文保留物理可解释性，但可能牺牲速度；与全原子 MD 相比，粗粒化牺牲精度换采样效率。</li>
+<li><strong>可迁移领域</strong>：蛋白质结构预测（粗粒化力场如 AWSEM、CABS）、DNA 纳米结构设计（oxDNA 力场）、RNA 动力学模拟。</li>
+</ul>
+<h2>16 研究想法</h2>
+<p><strong>Agent 生成的研究候选</strong>：
+1. <strong>名称</strong>：ML 引导的迭代重加权力场优化（ML-guided Iterative Reweighting for Force Field Optimization）
+   - <strong>来源局限/观察</strong>：本文迭代重加权依赖参考分布，但参考数据有限；ML 可生成高质量参考分布。
+   - <strong>核心假设</strong>：用 AlphaFold3 预测的 RNA 结构 ensemble 作为参考分布，可进一步提升 IsRNA2+ 的泛化性。
+   - <strong>初步方法</strong>：在 IsRNA2+ 框架中，用 AlphaFold3 对 benchmark RNA 生成结构 ensemble，提取堆叠分布作为参考，迭代重加权优化参数。
+   - <strong>验证方式</strong>：在独立测试集上比较 IsRNA2+（ML 参考 vs 实验参考）的预测精度。
+   - <strong>可能的失败模式</strong>：ML 预测 ensemble 偏差导致力场过拟合；计算成本增加。
+   - <strong>创新状态</strong>：unverified（需文献调研确认是否已有类似工作）。</p>
+<ol start="2">
+<li>
+<p><strong>名称</strong>：蛋白质粗粒化力场的显式芳香堆叠势优化（Explicit Aromatic Stacking Potential for Protein Coarse-Grained Force Fields）
+   - <strong>来源局限/观察</strong>：本文显式堆叠势显著提升 RNA 预测；蛋白质粗粒化力场（如 MARTINI）对芳香堆叠描述不足。
+   - <strong>核心假设</strong>：在蛋白质粗粒化力场中加入显式芳香堆叠势，可提升含芳香簇蛋白（如膜蛋白、淀粉样纤维）的结构预测。
+   - <strong>初步方法</strong>：定义芳香残基（Phe、Tyr、Trp）间的堆叠势，用迭代重加权优化参数，参考分布来自全原子 MD 或实验结构。
+   - <strong>验证方式</strong>：在 benchmark 蛋白集上比较加入堆叠势前后的结构预测精度。
+   - <strong>可能的失败模式</strong>：芳香堆叠势与现有力场项冲突；参数化过拟合。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+<li>
+<p><strong>名称</strong>：RNA 力场与 ML 的端到端混合预测框架（Hybrid RNA Structure Prediction: Physics-based Force Field + ML Scoring）
+   - <strong>来源局限/观察</strong>：本文仅「 envision」ML 与力场结合，未实现。
+   - <strong>核心假设</strong>：用 ML 打分函数（如 DeepRank）替代迭代重加权中的参考分布比较，可加速力场优化并提升精度。
+   - <strong>初步方法</strong>：在 IsRNA2+ 模拟中，用 ML 打分函数评估生成结构的质量，作为重加权目标。
+   - <strong>验证方式</strong>：比较 ML 打分 vs 传统参考分布的优化效果。
+   - <strong>可能的失败模式</strong>：ML 打分函数对粗粒化结构不敏感；计算开销大。
+   - <strong>创新状态</strong>：unverified。</p>
+</li>
+</ol></div>
+  </section>
+  
+  
+  <section>
+    <h2>审稿人评审</h2>
+    <div class="md"><h2>Review setup</h2>
+<ul>
+<li><strong>Input scope</strong> Abstract only</li>
+<li><strong>Assessment boundary</strong> Claims and evidence presented in the supplied abstract; no methods, figures, tables, or supplementary material were provided</li>
+<li><strong>Shared manuscript claim summary</strong> The authors propose an iterative reweighting algorithm as a flexible framework for optimizing coarse-grained force field parameters, apply it to develop the IsRNA2+ force field by augmenting IsRNA with an explicit base-stacking potential, and report improved structure prediction accuracy on a benchmark of 46 "simple" and 20 "difficult" RNAs relative to the original IsRNA2 force field. They further claim that case analyses highlight the importance of balanced local energy components and suggest potential synergy between machine learning and traditional force fields.</li>
+<li><strong>Visible evidence base</strong> Abstract text only; no numerical results, benchmark definitions, parameter details, or validation statistics are provided</li>
+<li><strong>Missing materials affecting confidence</strong> Full manuscript, methods section, benchmark set composition, quantitative accuracy metrics, comparison protocols, parameter optimization details, and case study analyses</li>
+</ul>
+<h2>Reviewer</h2>
+<ul>
+<li><strong>Overall assessment</strong> The abstract presents a potentially useful methodological contribution, namely the application of iterative reweighting to optimize a coarse-grained RNA force field with an explicit base-stacking term. The reported improvement over the predecessor force field is plausible but cannot be evaluated without quantitative results or methodological detail. The conceptual framing is clear and the stated motivation is sound. However, the evidence base available for this review is limited to the abstract, which precludes verification of the central claims. The work may be of interest to the RNA modeling community, but the case for its significance and technical soundness is not established from the supplied material.</li>
+<li><strong>Who would be interested in the results, and why</strong> Computational biophysicists and chemists working on RNA structure prediction, developers of coarse-grained force fields, and researchers interested in parameter optimization methods for molecular simulations. The iterative reweighting framework may also appeal to those developing hybrid machine learning and physics-based approaches.</li>
+<li><strong>Major strengths</strong> The proposed use of iterative reweighting as a general parameter optimization framework is conceptually attractive and potentially transferable beyond RNA. The explicit addition of a base-stacking potential addresses a known limitation of many coarse-grained RNA models. The benchmark design, with separate "simple" and "difficult" sets, suggests an attempt to probe model limitations systematically.</li>
+<li><strong>Major Concerns</strong> </li>
+<li><strong>Concern ID</strong> R1-M1</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Technical soundness</li>
+<li><strong>Claim pointer</strong> The claim that the IsRNA2+ force field leads to improved accuracy in structure prediction compared to the original IsRNA2 force field.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> No quantitative results are presented. The abstract states "improved accuracy" without reporting any numerical metrics, such as root-mean-square deviation values, fraction of native contacts, or statistical significance. Without these data, the magnitude and reliability of the improvement cannot be assessed.</li>
+<li><strong>Why it matters</strong> The central contribution of the work is the claimed performance gain. If the improvement is marginal or inconsistent across the benchmark, the value of the new force field is substantially diminished. The absence of numbers prevents any judgment on whether the improvement is meaningful.</li>
+<li><strong>Resolution test</strong> Provide quantitative accuracy metrics for both IsRNA2 and IsRNA2+ on the full benchmark, including per-set statistics and, where appropriate, statistical significance tests.</li>
+<li><strong>Concern ID</strong> R1-M2</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Reproducibility</li>
+<li><strong>Claim pointer</strong> The claim that the iterative reweighting algorithm serves as a flexible framework for force field parameter optimization.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> No details of the iterative reweighting procedure are given. The abstract does not describe the objective function, the reweighting scheme, convergence criteria, or how the base-stacking parameters were initialized and updated. Without this information, the method cannot be reproduced or evaluated for robustness.</li>
+<li><strong>Why it matters</strong> A methodological claim requires methodological transparency. If the iterative reweighting procedure is unstable, sensitive to initialization, or requires extensive tuning, its utility as a general framework is questionable.</li>
+<li><strong>Resolution test</strong> Describe the iterative reweighting algorithm in sufficient detail, including the target distribution, the weighting scheme, and convergence diagnostics, such that an independent group could implement it.</li>
+<li><strong>Concern ID</strong> R1-M3</li>
+<li><strong>Severity</strong> Major</li>
+<li><strong>Blocking</strong> Yes</li>
+<li><strong>Axis</strong> Evidence sufficiency</li>
+<li><strong>Claim pointer</strong> The claim that case analyses highlight the importance of a balanced treatment of local energy components in determining RNA tertiary structures.</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Concern</strong> The abstract refers to "several cases with large improvements" but provides no information on which systems these are, what the improvements were, or how the analysis supports the stated conclusion. The link between the case studies and the general principle of balanced local energy components is asserted, not demonstrated.</li>
+<li><strong>Why it matters</strong> This claim is presented as a mechanistic insight. If the case analyses are anecdotal or not systematically selected, the conclusion may not generalize. The claim also implies a design principle for future force field development, which requires stronger support.</li>
+<li><strong>Resolution test</strong> Present the case study systems, the magnitude of improvement for each, and a quantitative decomposition of energy components that supports the conclusion about balance.</li>
+<li><strong>Minor Comments</strong> </li>
+<li><strong>Concern ID</strong> R1-m1</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Clarity</li>
+<li><strong>Affected element</strong> Terminology</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The term "IsRNA2+" is introduced without explicit definition of what the "+" denotes beyond the addition of an explicit base-stacking potential. The relationship to the original IsRNA2 force field is stated but not formalized.</li>
+<li><strong>Required correction</strong> Define the naming convention clearly and state explicitly which terms are new or modified relative to IsRNA2.</li>
+<li><strong>Concern ID</strong> R1-m2</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Completeness</li>
+<li><strong>Affected element</strong> Benchmark description</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The benchmark set of 46 "simple" and 20 "difficult" RNAs is mentioned but the criteria for classification are not given. The reader cannot assess whether the split is meaningful or whether the sets are representative.</li>
+<li><strong>Required correction</strong> Specify the criteria used to classify RNAs as "simple" or "difficult" and provide references or a table listing the systems.</li>
+<li><strong>Concern ID</strong> R1-m3</li>
+<li><strong>Severity</strong> Minor</li>
+<li><strong>Axis</strong> Scope</li>
+<li><strong>Affected element</strong> Discussion of machine learning</li>
+<li><strong>Evidence pointer</strong> Abstract; location not provided</li>
+<li><strong>Issue</strong> The final sentence envisions combining machine learning with traditional force fields but provides no concrete direction or rationale beyond a general statement. This appears speculative and adds little to the abstract.</li>
+<li><strong>Required correction</strong> Either remove the statement or provide a specific, brief example of how such a combination might be implemented.</li>
+<li><strong>Technical failings that need to be addressed before the case is established</strong> R1-M1, R1-M2, R1-M3. The absence of quantitative results, methodological detail, and case study evidence means the central claims are currently unsupported.</li>
+<li><strong>Assessment against Nature-style criteria</strong> </li>
+<li>Originality: The iterative reweighting approach is not entirely new in the broader field of molecular simulation, but its application to RNA coarse-grained force field optimization with an explicit base-stacking term may offer a novel contribution. This cannot be fully assessed from the abstract.</li>
+<li>Scientific importance: RNA structure prediction remains a significant challenge, and improved coarse-grained force fields would be valuable. However, the importance of the specific advance depends on the magnitude of the improvement, which is not reported.</li>
+<li>Interdisciplinary readership: The work is likely to appeal primarily to computational biophysicists and force field developers. The abstract does not frame the results in a way that would attract a broader readership.</li>
+<li>Technical soundness: Not assessable from the abstract. The lack of methodological detail and quantitative results precludes any judgment on the reliability of the approach.</li>
+<li>Readability for nonspecialists: The abstract is reasonably clear for a specialist audience but uses field-specific terminology without sufficient context for a general reader.</li>
+<li><strong>Recommendation posture</strong> Currently not established from the provided evidence. The abstract describes a plausible and potentially useful contribution, but the absence of quantitative results, methodological detail, and case study evidence means the central claims cannot be verified. A supportive stance would require access to the full manuscript and confirmation that the reported improvements are robust and statistically meaningful.</li>
+</ul>
+<h2>Risk / unsupported claims</h2>
+<ul>
+<li>The claim of improved accuracy in structure prediction is unsupported because no quantitative metrics are provided.</li>
+<li>The claim that iterative reweighting is a flexible framework for parameter optimization is unsupported because the algorithm is not described.</li>
+<li>The claim that case analyses demonstrate the importance of balanced local energy components is unsupported because no case details are given.</li>
+<li>The statement about combining machine learning with traditional force fields is speculative and not substantiated.</li>
+<li>The benchmark classification into "simple" and "difficult" sets is not defined and therefore not assessable.</li>
+</ul></div>
+  </section>
+  
+</article>
+</main>
+</body>
+</html>

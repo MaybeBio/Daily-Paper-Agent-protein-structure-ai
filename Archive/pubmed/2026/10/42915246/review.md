@@ -1,0 +1,68 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no methods, figures, tables, or supplementary material were available for evaluation
+- **Shared manuscript claim summary** The authors report that conventional peptide-level hydrogen-deuterium exchange mass spectrometry (HDX-MS) workflows can identify productive T-cell receptor (TCR) engagement with cognate peptide-HLA (pHLA) complexes. They claim that TCRs binding centrally within the pHLA groove produce distinct deuterium uptake profiles compared with TCRs adopting alternative orientations, and that comparison with structure prediction data contextualizes these profiles for distinct binding modes. They conclude that existing HDX-MS workflows are rapid and accessible approaches for probing TCR-pHLA interactions, with implications for TCR-based biotherapeutics.
+- **Visible evidence base** Abstract text only; no experimental data, figures, tables, or methodological details were provided
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, statistical analyses, structural prediction details, and any validation experiments
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting application of an established biophysical technique to a question of immunological relevance. However, the claims as stated are broad and the evidence base is entirely inaccessible from the supplied material. The central assertion that peptide-level HDX-MS can distinguish TCR binding orientations is plausible but requires substantial experimental validation that cannot be assessed here. The abstract does not provide sufficient methodological detail to evaluate the robustness of the approach, and the comparison with structure prediction is described only superficially. The work may be of interest to the structural immunology and biotherapeutics communities, but the case is not established from the provided evidence.
+- **Who would be interested in the results, and why** Researchers in structural immunology, particularly those studying TCR-pHLA interactions and T-cell activation mechanisms. Developers of TCR-based therapeutics would also be interested, as the approach could offer a faster alternative to crystallography for screening TCR engagement. The HDX-MS community may find value in the extension of peptide-level workflows to a new class of protein-protein interactions.
+- **Major strengths** The application of an accessible and established technique to a problem traditionally requiring crystallography is conceptually appealing. The integration of experimental HDX data with computational structure prediction is a sensible strategy that could enhance interpretability. The potential practical implications for biotherapeutic development are clear and relevant.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that conventional peptide-level HDX-MS workflows can identify productive TCR engagement with cognate pHLAs and that TCRs binding centrally within the pHLA groove have distinct uptake profiles compared with those adopting alternative orientations.
+  - **Evidence pointer** Abstract only; no figures or tables provided
+  - **Concern** The abstract provides no quantitative data, no representative uptake profiles, no statistical comparisons, and no details on the number of TCR-pHLA pairs examined. The claim that distinct uptake profiles correlate with binding orientation is presented without any visible supporting evidence.
+  - **Why it matters** The central conclusion rests entirely on this correlation. Without access to the actual HDX data, including replicate measurements, deuterium uptake curves, and statistical significance testing, the claim cannot be evaluated. Peptide-level HDX-MS is known to have limited spatial resolution, and the ability to distinguish subtle orientational differences at this resolution is not self-evident.
+  - **Resolution test** Provide the full dataset including uptake plots for all TCR-pHLA complexes studied, statistical analyses demonstrating significant differences between central and alternative binding modes, and a clear description of how binding orientation was assigned independently of the HDX data.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Methodological clarity
+  - **Claim pointer** The authors state that comparison of uptake data with information from structure prediction further contextualized the HDX data for distinct TCR-pHLA binding modes.
+  - **Evidence pointer** Abstract only; methods not provided
+  - **Concern** The abstract does not specify which structure prediction method was used, how predictions were validated, or how the comparison with HDX data was performed. It is unclear whether the structure predictions were used to interpret the HDX data or to validate them, and whether the predictions were generated for the same TCR-pHLA complexes studied experimentally.
+  - **Why it matters** The integration of computational and experimental approaches is presented as a key feature of the work. Without details on the prediction method, its accuracy, and the nature of the comparison, the value of this integration cannot be assessed. If the structure predictions were used to assign binding modes that were then correlated with HDX profiles, circularity becomes a concern.
+  - **Resolution test** Describe the structure prediction method, its validation, and the specific procedure for comparing predicted structures with HDX uptake data. Clarify whether predictions were made blind to the experimental results.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Generalizability
+  - **Claim pointer** The authors conclude that existing HDX-MS workflows are rapid and accessible approaches for probing TCR-pHLA interactions.
+  - **Evidence pointer** Abstract only; no systematic variation described
+  - **Concern** The abstract does not indicate how many TCR-pHLA complexes were studied, whether different HLA alleles or peptide lengths were included, or whether the approach was tested on TCRs with known non-central binding modes beyond the examples implied. The generalizability of the approach across the diverse TCR-pHLA interaction space is therefore unsubstantiated.
+  - **Why it matters** The conclusion is framed as a general statement about the utility of HDX-MS for TCR-pHLA interactions. If only a small number of complexes were examined, or if the tested set was biased toward particular binding modes, the conclusion would be overreaching.
+  - **Resolution test** Provide the full panel of TCR-pHLA complexes studied, including details on HLA alleles, peptide sequences, and TCR affinities. Demonstrate that the approach works across a representative range of binding orientations and affinities.
+
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Terminology precision
+  - **Affected element** Use of the term "productive TCR engagement"
+  - **Evidence pointer** Abstract, first sentence of results description
+  - **Issue** The term "productive" is not defined. It could imply functional activation, binding affinity, or simply a detectable interaction. This ambiguity affects interpretation of the claims.
+  - **Required correction** Define "productive TCR engagement" explicitly, for example in terms of binding affinity thresholds or functional assays, and use the definition consistently throughout the manuscript.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Clarity of comparison
+  - **Affected element** Statement that centrally binding TCRs have "distinct uptake profiles compared with those adopting alternative orientations"
+  - **Evidence pointer** Abstract, results description
+  - **Issue** The abstract does not specify the direction or magnitude of the differences, nor whether the differences were consistent across all complexes tested. A reader cannot gauge the robustness of the observed effect.
+  - **Required correction** Include a brief quantitative summary of the observed differences, such as effect sizes or representative uptake differences, in the abstract or clearly reference a figure that displays these data.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Experimental replicates and statistical treatment
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** No mention is made of experimental replicates, technical variability, or statistical methods used to compare uptake profiles. This is essential for a technique like HDX-MS where variability can be substantial.
+  - **Required correction** State the number of replicates and the statistical tests used in the abstract or clearly reference the methods section where these are described.
+
+## Risk / unsupported claims
+- The claim that peptide-level HDX-MS can distinguish TCR binding orientations is unsupported from the abstract alone; no data are visible.
+- The claim that structure prediction contextualized the HDX data is unverifiable without details on the prediction method and comparison procedure.
+- The general conclusion that existing HDX-MS workflows are rapid and accessible approaches for probing TCR-pHLA interactions is not established from the provided evidence, as the scope of validation is unknown.
+- The term "productive TCR engagement" is used without definition, making the central claim ambiguous.

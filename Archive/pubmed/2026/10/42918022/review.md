@@ -1,0 +1,68 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors use well-tempered metadynamics simulations to show that single-chain polystyrene nanoparticles collapse into spherical globules in water with a scaling law Rg approximately N1/3, and that nanoparticle size critically determines the conformational fate of alpha-synuclein. They report a size-dependent transition regime around N = 75 to 80 (Rg = 1.14 to 1.16 nm), where nanoparticles transition from insufficient surface area to a threshold capable of encapsulating the alphaS chain, leading to stable intramolecular beta-sheet domains. For N >= 80 (Rg >= 1.16 nm), the hydrophobic surface is sufficiently large to completely encapsulate alphaS, suppressing beta-sheet nucleation. The authors conclude that smaller nanoplastics may promote protein misfolding and establish a quantitative, size-dependent hazard principle for nanoplastic neurotoxicity.
+- **Visible evidence base** Abstract text only; no simulation details, force field parameters, convergence criteria, free energy surfaces, or statistical analyses are provided
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, simulation parameters, convergence and error analysis, force field validation, and any experimental corroboration
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting computational study on the size-dependent interaction between polystyrene nanoparticles and alpha-synuclein. The central claim of a sharp transition regime around N = 75 to 80 is specific and testable, and the topic is of timely relevance given growing concerns about nanoplastic toxicity. However, the abstract alone provides insufficient evidence to evaluate the technical soundness of the simulations, the statistical robustness of the reported transition, or the biological relevance of the single-chain framework. The claim that smaller nanoplastics "may inadvertently promote protein misfolding, which may implicitly lower the likelihood of downstream intermolecular aggregation" is internally contradictory and not supported by the presented evidence. The broader conclusion of a "quantitative, size-dependent hazard principle" is premature given the limited scope of the simulations described.
+- **Who would be interested in the results, and why** Researchers in nanoplastic toxicology, protein misfolding and amyloid aggregation, computational biophysics, and molecular simulation of protein-nanoparticle interactions would be interested. The work could inform risk assessment frameworks for environmental nanoparticles and contribute to understanding the molecular origins of synucleinopathies, provided the computational claims are rigorously validated.
+- **Major strengths** The study addresses a timely and important question about the molecular mechanisms of nanoplastic toxicity. The specific prediction of a narrow size transition regime (N = 75 to 80) is a clear, falsifiable hypothesis. The use of well-tempered metadynamics is appropriate for exploring conformational free energy landscapes. The focus on single-chain nanoparticles provides a well-defined physical model system.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that single-chain PS nanoparticles collapse into spherical globules following a scaling law Rg approximately N1/3, and that a sharp size-dependent transition regime exists around N = 75 to 80.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract provides no information on the force field used, the simulation length, the number of independent replicas, the convergence criteria for the metadynamics simulations, or the statistical uncertainty in the reported Rg values and free energy estimates. Without this information, the reliability of the scaling law and the sharpness of the reported transition cannot be assessed.
+  - **Why it matters** The central conclusion of a size-dependent threshold effect depends entirely on the accuracy and convergence of the simulations. If the simulations are underconverged or the force field is inappropriate for polymer-protein interactions, the reported transition could be an artifact.
+  - **Resolution test** Provide full methods including force field parameters, simulation box sizes, total simulation times, number of replicas, convergence metrics (e.g., free energy error estimates, time evolution of collective variables), and validation of the scaling law against known polymer physics or experimental data.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim support
+  - **Claim pointer** The authors claim that for N >= 80, the nanoparticle surface is sufficiently large to completely encapsulate alphaS, suppressing intramolecular beta-sheet nucleation, and that this "effectively suppresses" aggregation.
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract states that complete encapsulation suppresses beta-sheet nucleation, but then concludes that smaller nanoplastics "may inadvertently promote protein misfolding, which may implicitly lower the likelihood of downstream intermolecular aggregation." This is internally inconsistent. If beta-sheet nucleation is the initial step toward amyloid aggregation, then promoting nucleation should increase, not lower, the likelihood of aggregation. The logical relationship between intramolecular beta-sheet formation and intermolecular aggregation is not clarified.
+  - **Why it matters** The biological interpretation and the proposed "hazard principle" depend on a coherent mechanistic model. The current abstract presents contradictory implications that undermine the clarity of the central message.
+  - **Resolution test** Clarify the mechanistic model. Specify whether intramolecular beta-sheet formation is proposed to be on-pathway or off-pathway to amyloid aggregation, and provide evidence (e.g., free energy barriers, oligomerization propensity) that supports the claimed relationship.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Generalizability
+  - **Claim pointer** The authors claim that their work establishes "a quantitative, size-dependent hazard principle for nanoplastic neurotoxicity."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The study is based on single-chain PS nanoparticles in implicit or explicit water with a single protein (alphaS). No experimental validation, no consideration of polydispersity, surface chemistry variations, protein concentration effects, or the presence of other biomolecules is presented. Extrapolating from a single-chain simulation to a general hazard principle for neurotoxicity is not justified.
+  - **Why it matters** The stated conclusion goes well beyond the evidence base. Overgeneralization could mislead risk assessment efforts and the broader community.
+  - **Resolution test** Restrict conclusions to the specific system studied, or provide additional simulations and experimental data that support generalizability across nanoparticle sizes, surface chemistries, and protein concentrations.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract wording
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The phrase "which may implicitly lower the likelihood of downstream intermolecular aggregation" is vague and appears to contradict the earlier statement that beta-sheet nucleation is the "initial nucleation step toward amyloid aggregation."
+  - **Required correction** Rewrite this sentence to clearly state the proposed relationship between intramolecular beta-sheet formation and intermolecular aggregation, or remove the speculative claim.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Precision
+  - **Affected element** Scaling law statement
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The scaling law Rg approximately N1/3 is stated without any numerical prefactor or uncertainty estimate. For a collapsed globule, this scaling is expected, but the abstract does not indicate how well the data fit this law or over what range of N it was tested.
+  - **Required correction** Provide the fitted prefactor, the range of N tested, and the goodness of fit or uncertainty in the exponent.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Terminology
+  - **Affected element** "Single-chain simulation framework"
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "single-chain simulation framework" is not standard and could be misinterpreted. It is unclear whether this refers to a single nanoparticle interacting with a single protein, or to simulations of an isolated polymer chain.
+  - **Required correction** Define the term explicitly in the methods or abstract.
+
+## Risk / unsupported claims
+- The claim of a sharp size-dependent transition regime around N = 75 to 80 is unsupported without convergence and statistical error analysis.
+- The claim that complete encapsulation "effectively suppresses" beta-sheet nucleation is unsupported without free energy profiles or comparative analysis of nucleation rates.
+- The claim that smaller nanoplastics "may inadvertently promote protein misfolding, which may implicitly lower the likelihood of downstream intermolecular aggregation" is logically inconsistent and unsupported.
+- The claim of establishing a "quantitative, size-dependent hazard principle for nanoplastic neurotoxicity" is unsupported given the single-system, simulation-only evidence base.
+- The scaling law Rg approximately N1/3 is plausible but not quantitatively assessable from the abstract alone.

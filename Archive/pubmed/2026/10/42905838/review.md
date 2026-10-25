@@ -1,0 +1,91 @@
+## Review setup
+- **Input scope** Full manuscript text including abstract, introduction, results, discussion, materials and methods, and supplementary materials description
+- **Assessment boundary** Scientific claims, methodological soundness, evidence quality, and alignment with stated conclusions. Editorial or stylistic issues are noted only where they affect scientific clarity.
+- **Shared manuscript claim summary** The authors use extensive all-atom molecular dynamics simulations with well-tempered metadynamics to characterize inorganic phosphate (Pi) release from actin filaments. They claim that the rate-limiting step is the dissociation of Pi from Mg2+ (CIP-to-SSIP transition), that this rate is modulated by the number of water molecules in the phosphate cavity, that egress through protein channels is not rate limiting, and that terminal subunits use alternative egress pathways. They also report that bound jasplakinolide slows Pi release by reducing cavity volume and stabilizing the N111-R177 gate.
+- **Visible evidence base** Simulation results including rate constants from resampled first-passage times, cavity volume measurements from PDB structures, normal mode analyses, egress pathway classifications from metadynamics simulations, and comparisons to published experimental rates. Supplementary figures and tables are referenced but not fully visible.
+- **Missing materials affecting confidence** Supplementary figures S1-S24 and tables S1 are referenced but not provided in the submitted material. Force field benchmarking details in section S1 are referenced but not visible. The machine learning model details (random forest regressor) are described but hyperparameters and feature importance values are not fully reported. Experimental rate constants used for comparison are cited but not tabulated in the visible text.
+
+## Reviewer
+- **Overall assessment** This manuscript addresses a significant and long-debated question in actin biology: the molecular mechanism underlying the slow, location-dependent release of inorganic phosphate from actin filaments. The authors combine extensive unbiased and biased all-atom simulations with careful statistical analysis to propose that the rate-limiting step is the dissociation of Pi from Mg2+, modulated by the local hydration environment. The work is technically ambitious and the central claim, that water availability in the phosphate cavity scales inversely with the CIP-to-SSSIP transition rate, is mechanistically plausible and supported by the presented data. However, several concerns regarding force field accuracy, the interpretation of relative versus absolute rates, and the generalizability of the egress pathway findings require careful consideration. The manuscript is well written and will be of interest to the actin cytoskeleton community and to computational biophysicists studying nucleotide release mechanisms in ATPases.
+- **Who would be interested in the results, and why** Researchers studying actin filament dynamics, nucleotide hydrolysis and phosphate release in ATPases, and computational biophysicists interested in ion-pair dissociation in confined protein environments. The findings have implications for understanding how actin-binding proteins and drugs like jasplakinolide modulate filament aging and stability.
+- **Major strengths** The study uses a large 13-mer filament model, which is more realistic than smaller oligomers used in prior work. The combination of unbiased simulations with well-tempered metadynamics and first-passage time analysis is methodologically rigorous. The correlation between cavity water count and relative rates across multiple subunit types provides a coherent mechanistic framework. The identification of alternative egress pathways in terminal subunits is a novel contribution.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that the CIP-to-SSSIP transition is the rate-limiting step for Pi release from actin filaments, and that the calculated relative rates correlate with experimental measurements.
+  - **Evidence pointer** Table 1, Figure 1C, Discussion section
+  - **Concern** The absolute rates calculated from simulations are stated to be slower than experimental measurements by several orders of magnitude (barriers 20-30% too high). The authors attribute this to force field overstabilization of the CIP state. While the relative rates across subunits are the primary comparison, the manuscript does not provide a quantitative assessment of whether the force field error is systematic or could vary across subunit environments. If the overstabilization is environment-dependent, the relative rates could be affected. The authors acknowledge this possibility but do not test it, for example by comparing with a polarizable force field in at least one subunit environment.
+  - **Why it matters** The central conclusion that relative rates are correctly captured depends on the assumption that force field errors are approximately uniform across subunit types. If the error varies with cavity hydration, the correlation between water count and rate could be an artifact of the force field rather than a physical property.
+  - **Resolution test** Perform at least one additional set of simulations with a polarizable force field (e.g., AMOEBA) for an interior subunit and a terminal subunit to test whether the relative rates and water count correlation are preserved. Alternatively, provide a quantitative analysis of how the overstabilization scales with cavity water count using the existing AMOEBA benchmarking data referenced in section S1.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that egress of Pi through protein channels is not rate limiting and that terminal subunits use alternative egress pathways, including a front-door pathway near K18.
+  - **Evidence pointer** Figure 4, Figure 5, "Phosphate egress pathways" section
+  - **Concern** The egress pathway analysis is based on a limited number of metadynamics simulations (eight per subunit for interior and terminal subunits, four for B-1 and B-2). The classification of pathways relies on visual inspection of trajectories and distance criteria. The front-door pathway near K18 is described as novel, but the manuscript does not provide a quantitative comparison of the free energy barriers for different egress pathways. The statement that egress is not rate limiting is based on estimated timescales that are acknowledged to be lower bounds.
+  - **Why it matters** The claim that egress is not rate limiting is important for the overall conclusion that CIP-to-SSSIP is the dominant barrier. If the egress barriers are underestimated due to the lower-bound nature of the estimates, the relative contribution of egress to the overall rate could be larger than stated.
+  - **Resolution test** Provide free energy profiles for the egress pathways (e.g., PMF along a reaction coordinate that captures the full egress process) and compare the barriers to the CIP-to-SSSIP barriers. If this is not computationally feasible, clearly state the limitations of the lower-bound estimates and discuss the potential impact on the conclusions.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Scientific importance
+  - **Claim pointer** The authors claim that the number of water molecules in the phosphate cavity is the key determinant of the Pi release rate, and that this "physical confinement" effect explains the range of rates across subunits.
+  - **Evidence pointer** Figure 2, Table 1, Discussion section
+  - **Concern** The correlation between water count and rate is demonstrated for five subunit types (interior, barbed end, pointed end, B-1, B-2) plus the jasplakinolide-bound state. However, the manuscript does not discuss whether other factors, such as specific protein-Pi interactions or conformational differences in the active site, could also contribute to the rate differences. The random forest model is used to predict cavity volume from structural parameters, but the model is not used to predict rates directly, and the relative importance of water count versus other features is not quantified.
+  - **Why it matters** The claim that water count is the primary determinant is strong and has implications for understanding how mutations and drugs modulate Pi release. If other factors are also important, the mechanistic picture is incomplete.
+  - **Resolution test** Use the random forest model or a similar approach to test whether water count alone can predict the relative rates, or whether additional features (e.g., specific hydrogen bonding patterns, electrostatic potential) improve the prediction. Alternatively, perform additional simulations with a mutant that alters cavity volume without changing water count to isolate the effect.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Technical soundness
+  - **Claim pointer** The authors claim that the N111S mutant has a similar CIP-to-SSSIP transition rate to wild-type, based on simulations described in section S7.
+  - **Evidence pointer** Section S7 (referenced, not visible)
+  - **Concern** The N111S mutant is associated with nemaline myopathy and increases Pi release rate by at least 15-fold in experiments. The authors state that their simulations show a similar rate to wild-type, which would contradict the experimental finding. The explanation provided in section S7 is not visible in the submitted material, making it impossible to assess the validity of this claim.
+  - **Why it matters** The N111S mutant is a clinically relevant variant, and the discrepancy between simulation and experiment for this mutant could indicate a limitation of the model or the simulation approach. If the simulations cannot capture the effect of this mutation, the generalizability of the conclusions to other mutants is questionable.
+  - **Resolution test** Provide the full content of section S7 in the revised manuscript or supplementary materials, including the simulation details and a quantitative comparison with experimental rates. If the discrepancy is due to limitations of the force field or sampling, discuss the implications for the overall conclusions.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Introduction, first paragraph
+  - **Evidence pointer** Introduction, paragraph 1
+  - **Issue** The introduction assumes familiarity with ATPase cycles and actin filament structure. A brief explanation of the biological significance of Pi release in the context of actin filament turnover would help nonspecialist readers.
+  - **Required correction** Add one or two sentences in the introduction explaining why Pi release is important for actin filament function, e.g., its role in filament aging, severing, and interaction with actin-binding proteins.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Methods, rate calculation section
+  - **Evidence pointer** "Rate calculations" subsection
+  - **Issue** The description of the Tiwary-Parrinello method is brief. The equation for the acceleration factor is given, but the statistical treatment of the resampled first-passage times (e.g., how many independent simulations, how the CDF is fit) could be clearer.
+  - **Required correction** Expand the methods section to include the number of independent simulations per subunit, the criteria for defining the CIP and SSSIP states, and the fitting procedure for the CDF.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Interdisciplinary readership
+  - **Affected element** Discussion, "Implications for other ATPases" section
+  - **Evidence pointer** Discussion, final subsection
+  - **Issue** The discussion of implications for other ATPases is brief and does not fully explore how the confinement mechanism might apply to ATPases with different active site geometries or nucleotide binding modes.
+  - **Required correction** Expand this section to discuss specific examples of other ATPases where the confinement mechanism might be relevant, and note any structural features that could modulate the effect.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Methods, force field section
+  - **Evidence pointer** "Force fields" subsection
+  - **Issue** The choice of CHARMM36m is justified by prior work, but the manuscript does not discuss potential limitations of this force field for modeling phosphate-Mg2+ interactions, which are central to the study.
+  - **Required correction** Add a brief discussion of the known limitations of nonpolarizable force fields for divalent cation-phosphate interactions and how the authors addressed these (e.g., through the AMOEBA benchmarking in section S1).
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Results, "Phosphate egress pathways" section
+  - **Evidence pointer** Figure 4, Figure 5
+  - **Issue** The description of egress pathways is detailed but may be difficult to follow without a clear visual representation of the channel locations relative to the actin filament structure.
+  - **Required correction** Consider adding a schematic figure or a more detailed figure legend that clearly labels the channel locations and the key residues involved in each pathway.
+
+## Risk / unsupported claims
+- The claim that the CIP-to-SSSIP transition is the rate-limiting step for Pi release from all actin subunits is supported for the specific conditions simulated, but the absolute rate discrepancy with experiments (several orders of magnitude) is not fully resolved. The authors correctly focus on relative rates, but the assumption of uniform force field error across subunit environments is not tested.
+- The claim that egress is not rate limiting is based on lower-bound estimates and should be treated with caution. The manuscript acknowledges this but could more explicitly discuss the potential impact on the conclusions.
+- The claim that the N111S mutant has a similar rate to wild-type contradicts experimental findings (15-fold increase). The explanation in section S7 is not visible, making this claim unverifiable from the submitted material.
+- The correlation between water count and rate is demonstrated for a limited number of subunit types. The claim that this is the primary determinant of rate differences is plausible but not definitively established, as other factors could also contribute.
+- The identification of a front-door egress pathway near K18 is novel but based on a small number of simulations. The generalizability of this finding to other filament states or conditions is unclear.

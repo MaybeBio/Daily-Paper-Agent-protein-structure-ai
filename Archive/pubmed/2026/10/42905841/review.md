@@ -1,0 +1,90 @@
+## Review setup
+- **Input scope** Full manuscript text, including abstract, introduction, results, discussion, materials and methods, and supplementary materials description.
+- **Assessment boundary** Scientific validity, technical soundness, and significance of the claims as presented in the provided text. No assessment of editorial fit or journal-specific policy.
+- **Shared manuscript claim summary** The authors report the discovery and characterization of two novel positive allosteric modulators (PAMs) of the dopamine D1 receptor (D1R), UNC9815 and UNC10062. Using cryo-electron microscopy, they identify two new allosteric binding sites at the TM1-TM7 interface, which can be simultaneously occupied along with a third site bound by the known PAM LY3154207. Functional assays demonstrate that concurrent engagement of all three sites synergistically enhances dopamine potency by over 1000-fold. Molecular dynamics simulations suggest that multisite binding stabilizes the receptor in an active conformation by restricting intracellular loop 3 dynamics and stabilizing the NPxxY motif.
+- **Visible evidence base** Abstract, Introduction, Results (including references to Figures 1-4 and Supplementary Figures/Tables), Discussion, Materials and Methods (including compound synthesis and MD simulation protocols), and Data Availability statements.
+- **Missing materials affecting confidence** The actual figures, supplementary figures, tables, and structural coordinates are not provided. Specific numerical data for functional assays (e.g., EC50 values, confidence intervals) and detailed cryo-EM validation metrics (e.g., map resolution, model statistics) are referenced but not visible. The companion study (reference 46) describing the inactive D1R structure is not available for comparison.
+
+## Reviewer
+- **Overall assessment** This manuscript presents a potentially significant advance in understanding multisite allosteric modulation of GPCRs. The combination of medicinal chemistry, structural biology, functional assays, and MD simulations is comprehensive and appropriate. The claim of synergistic enhancement through simultaneous occupation of three distinct allosteric sites is novel and of broad interest. However, the strength of the conclusions depends critically on data not visible in the provided text, particularly the quantitative functional data and structural validation. The mechanistic interpretations from MD simulations, while plausible, require careful scrutiny regarding sampling convergence and force field limitations.
+- **Who would be interested in the results, and why** Researchers in GPCR biology, structural pharmacology, and drug discovery would find this work of high interest. The demonstration of cooperative multisite allostery provides a new conceptual framework for developing GPCR-targeted therapeutics, particularly for receptors where single-site modulation has proven insufficient. The structural insights into TM1-TM7 interface binding may also inform studies of other GPCRs with similar allosteric sites.
+- **Major strengths**
+  - Novel concept of synergistic multisite allostery in a GPCR, supported by structural and functional evidence.
+  - High-quality cryo-EM structures at resolutions (2.44-2.65 Å) that allow unambiguous ligand placement.
+  - Comprehensive approach integrating medicinal chemistry, pharmacology, structural biology, and computational simulations.
+  - Clear demonstration of the functional significance of multisite binding through the >1000-fold potency enhancement.
+  - Identification of a potential lipid-mimetic role for the upper pocket ligands, linking to broader GPCR regulation mechanisms.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that concurrent engagement of all three allosteric sites produces a >1000-fold increase in dopamine potency.
+  - **Evidence pointer** Figure 1B-C, Table S2, location not provided
+  - **Concern** The quantitative functional data supporting the >1000-fold potency enhancement are not visible in the provided text. It is unclear whether this represents a true synergistic effect beyond additive contributions, and whether appropriate statistical analyses (e.g., comparison to expected additive effects) were performed. The text mentions "≥1000-fold shift" but does not provide the actual EC50 values, confidence intervals, or the number of independent experiments.
+  - **Why it matters** The central claim of the manuscript rests on this quantitative functional result. Without visible data demonstrating that the triple combination exceeds what would be expected from additive effects of individual PAMs, the conclusion of true synergy is not established.
+  - **Resolution test** Provide the full dose-response curves, calculated EC50 values with 95% confidence intervals, and a formal statistical test comparing observed triple-combination effects to predicted additive effects. Include the number of independent replicates and the analysis method used.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The claim that MD simulations reveal that multisite PAM engagement restricts intracellular loop 3 dynamics and stabilizes the TM7-NPxxY activation motif.
+  - **Evidence pointer** Figure 4C-H, Table S10, location not provided
+  - **Concern** The MD simulation results are presented as supporting the mechanistic model, but critical details are missing. The text states that 41 trajectories were generated with an aggregated simulation time of ~40 μs, but does not specify the length of individual trajectories, the number of replicates per condition, or the convergence criteria used. The claim that ICL3 dynamics are restricted and NPxxY is stabilized requires quantitative metrics (e.g., RMSF differences, free energy calculations) with appropriate error analysis. The removal of G protein from the simulations is a significant perturbation that may affect the interpretation.
+  - **Why it matters** The MD simulations are used to propose a mechanistic basis for the observed synergy. If the simulations are not adequately sampled or analyzed, the mechanistic conclusions are not robustly supported.
+  - **Resolution test** Provide details on individual trajectory lengths, number of replicates per condition, convergence assessment (e.g., block averaging, RMSD plateau), and quantitative metrics with error bars for the claimed differences in ICL3 dynamics and NPxxY stability. Discuss the limitations of the G protein-free simulations and how they might affect the conclusions.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that the upper pocket represents a preexisting lipid-accessible cavity, based on the observation of cholesterol at a similar site.
+  - **Evidence pointer** Figure 1E, Figure S5A, location not provided
+  - **Concern** The observation of cholesterol in one structure is used to suggest that the upper pocket is a lipid-accessible site. However, it is unclear whether this cholesterol is functionally relevant or merely a crystallization artifact. The text does not provide evidence that cholesterol itself modulates D1R activity through this site, nor does it discuss the occupancy or stability of cholesterol in the pocket across multiple structures or simulations.
+  - **Why it matters** The lipid-mimetic hypothesis is an interesting speculation but is presented as a supported finding. If not properly qualified, it could be misinterpreted as a demonstrated mechanism.
+  - **Resolution test** Clarify whether the cholesterol observation is from a single structure or multiple independent reconstructions. Provide additional evidence (e.g., MD simulations with cholesterol, mutagenesis of cholesterol contact residues, or functional assays with cholesterol depletion) to support or refute the functional relevance of this site.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract states that the two new allosteric sites are "vertically adjacent allosteric pockets organized in a spatially complementary manner." This phrasing is somewhat vague and could be more specific about the structural relationship between the sites.
+  - **Required correction** Consider rephrasing to describe the specific spatial arrangement, e.g., "stacked along the TM1-TM7 interface with direct contact between the bound ligands."
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Results section
+  - **Evidence pointer** "Mutual cooperativity of three distinct D1R PAM scaffolds", location not provided
+  - **Issue** The text mentions that the UNC compounds produced larger increases in Emax than BMS-A1, but the potential mechanistic implications of this difference are not discussed in the Results section.
+  - **Required correction** Add a brief comment on whether this Emax difference suggests distinct modes of allosteric modulation or could be related to the different binding sites.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Technical detail
+  - **Affected element** Materials and Methods, MD simulations
+  - **Evidence pointer** "MD simulations" section, location not provided
+  - **Issue** The text states that "most α-carbon restraints on the G protein were retained, except for Gα residues 303 to 351 and 383 to 394." The rationale for choosing these specific regions to unrestrain is not provided.
+  - **Required correction** Briefly explain why these specific Gα regions were chosen for unrestrained simulation.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Discussion
+  - **Evidence pointer** Discussion, location not provided
+  - **Issue** The discussion of the clinical implications of multisite modulation is somewhat speculative and does not address potential challenges, such as the difficulty of developing drugs that simultaneously occupy three distinct sites with appropriate pharmacokinetics.
+  - **Required correction** Add a brief consideration of the practical challenges and potential limitations of the multisite strategy for therapeutic development.
+- **Technical failings that need to be addressed before the case is established**
+  - R1-M1: Quantitative functional data for the synergistic effect must be visible and statistically robust.
+  - R1-M2: MD simulation details and quantitative metrics must be provided to support the mechanistic claims.
+- **Assessment against Nature-style criteria**
+  - **Originality** High. The concept of cooperative multisite allostery in a GPCR, with structural evidence for simultaneous occupation of three distinct sites, is novel and not previously demonstrated.
+  - **Scientific importance** High. The findings have implications for GPCR biology and drug discovery, potentially opening new avenues for therapeutic development.
+  - **Interdisciplinary readership** Moderate to high. The work bridges structural biology, pharmacology, and computational chemistry, and would appeal to a broad audience in these fields.
+  - **Technical soundness** The cryo-EM structures appear technically sound based on the described resolutions, but the functional and computational evidence requires additional scrutiny as detailed in the major concerns.
+  - **Readability for nonspecialists** The manuscript is generally well-written and accessible, though some sections (e.g., MD simulation details) may be challenging for nonspecialists. The abstract and introduction effectively convey the significance of the work.
+- **Recommendation posture** Supportive if technical concerns are resolved. The core finding of synergistic multisite allostery is potentially significant, but the evidence as presented is incomplete. The authors must provide the full functional data and more detailed MD simulation analysis to fully support their claims.
+
+## Risk / unsupported claims
+- The >1000-fold potency enhancement claim is not verifiable from the provided text.
+- The mechanistic interpretation of MD simulations (ICL3 restriction, NP67Y stabilization) is not quantitatively supported in the visible text.
+- The claim that the upper pocket is a "preexisting lipid-accessible cavity" is speculative and not fully supported.
+- The statement that the stacked arrangement of two PAMs is "a previously unknown allosteric binding configuration in other GPCRs" is a strong claim that requires a thorough literature comparison, which is not provided.
+- The assertion that the UNC compounds may mimic lipid-based regulatory mechanisms is an interesting hypothesis but is not directly tested.

@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The review argues that AlphaFold-based predicted structures have substantially expanded structure-based drug discovery (SBDD) capabilities across target identification, binding site prediction, docking, virtual screening, lead optimization, and SAR, while acknowledging persistent limitations in protein flexibility, ligand-induced conformational changes, affinity prediction, and the need for experimental validation. It proposes an evidence-graded decision framework for when predicted structures suffice for specific applications and cites two prospective examples (TAAR1 and CDK20) as evidence of utility.
+- **Visible evidence base** Abstract text only; two quantitative examples (TAAR1 hit rates, CDK20 IC50 and selectivity) are described but without methodological detail or source references
+- **Missing materials affecting confidence** Full manuscript, figures, tables, references, the evidence-graded decision framework details, and the primary data behind the two prospective examples
+
+## Reviewer
+- **Overall assessment** The abstract presents a timely and potentially useful review topic, but the claims of capability and the proposed decision framework cannot be adequately evaluated from the abstract alone. The two prospective examples are promising but lack sufficient context to assess their validity or generalizability. The review's value will depend heavily on the rigor of the full text, particularly the evidence grading methodology and the completeness of the limitations discussion.
+- **Who would be interested in the results, and why** Medicinal chemists and computational biologists engaged in structure-based drug design, particularly those considering whether to adopt AlphaFold models in their workflows. The review could also interest researchers in AI-driven drug discovery, structural biology, and translational pharmacology who need guidance on when predicted structures are reliable enough for specific applications.
+- **Major strengths** The abstract addresses a highly relevant and rapidly evolving area. It explicitly acknowledges the heterogeneity of prediction confidence across targets and regions, which is a critical nuance often missing in such reviews. The inclusion of an evidence-graded decision framework is a valuable conceptual contribution, and the two prospective examples provide concrete, quantitative illustrations of both success and remaining challenges.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The abstract claims that an evidence-graded decision framework specifies when predicted structures are likely to suffice for hit finding, SAR interpretation, selectivity optimization, fragment-based design, and degrader design.
+  - **Evidence pointer** Abstract text; framework details not provided
+  - **Concern** The decision framework is presented as a central deliverable, but the abstract provides no information on its criteria, evidence basis, or validation. It is unclear whether the framework is derived from systematic literature analysis, expert consensus, or quantitative benchmarking.
+  - **Why it matters** Without transparency on how the framework was constructed and validated, readers cannot assess its reliability or applicability to their own targets. A framework that is not evidence-graded itself would undermine the review's core value proposition.
+  - **Resolution test** The full text must describe the framework's development methodology, the evidence sources used, and any validation against independent datasets or prospective studies.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim substantiation
+  - **Claim pointer** The abstract states that docking to AlphaFold2 models gave a 60% hit rate versus 22% for a homology model in a prospective screen against TAAR1.
+  - **Evidence pointer** Abstract text; no source or methodological detail provided
+  - **Concern** The TAAR1 example is presented as a headline result, but the abstract does not specify the number of compounds screened, the docking protocol, the hit definition, or whether the comparison was performed under identical conditions. Without these details, the 60% versus 22% comparison cannot be interpreted.
+  - **Why it matters** The example is used to support the claim that AlphaFold models can outperform traditional homology models in prospective settings. If the comparison is not controlled or the sample size is small, the conclusion may be overstated.
+  - **Resolution test** The full text must provide the experimental design, compound counts, hit criteria, and statistical significance for the TAAR1 comparison.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Claim substantiation
+  - **Claim pointer** The abstract states that a workflow combining an AlphaFold model with generative chemistry against CDK20 yielded a compound with an IC50 of 33.4 nM and an approximately eightfold antiproliferative selectivity window between cell lines.
+  - **Evidence pointer** Abstract text; no source or methodological detail provided
+  - **Concern** The CDK20 example is presented as evidence of AlphaFold utility in generative workflows, but the abstract does not describe the generative chemistry method, the number of compounds generated and tested, the assay conditions, or the cell lines used for the selectivity measurement. The selectivity window is described as "approximately eightfold," which is imprecise.
+  - **Why it matters** The example is meant to illustrate the integration of AlphaFold with generative AI, a key claim of the review. Without methodological transparency, the result cannot be independently assessed, and the precision of the IC50 and selectivity values is unclear.
+  - **Resolution test** The full text must provide the generative workflow details, compound testing cascade, assay protocols, and exact selectivity data with error estimates.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Scope statement
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract lists "target identification, binding site prediction, molecular docking, virtual screening, lead optimization and structure-activity relationships (SAR)" as major drug discovery processes addressed, but the depth of coverage for each is not indicated.
+  - **Required correction** The full text should clearly delineate the depth of treatment for each process, perhaps with dedicated sections or subsections.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Precision
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract text
+  - **Issue** The phrase "high-confidence predicted structures" is used without defining the confidence metric (e.g., pLDDT, PAE) or the threshold considered "high."
+  - **Required correction** Define the confidence metrics and thresholds used throughout the review in the methods or introduction.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Limitations discussion
+  - **Evidence pointer** Abstract text
+  - **Issue** The abstract mentions "protein flexibility, conformational changes of proteins due to ligands, binding affinity prediction and biological complexity" as problems, but does not indicate whether the review discusses emerging solutions (e.g., ensemble docking, molecular dynamics refinement, or AlphaFold3-style approaches).
+  - **Required correction** The full text should address whether and how these limitations are being mitigated by current methods.
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3. The decision framework and both prospective examples are central to the review's claims but are not substantiated in the abstract. The full text must provide the missing methodological and quantitative details.
+- **Assessment against Nature-style criteria** Originality: The topic is timely but not novel in itself; the proposed evidence-graded framework could be original if properly developed. Scientific importance: High, given the widespread adoption of AlphaFold in drug discovery and the need for guidance on its limitations. Interdisciplinary readership: Potentially broad, spanning medicinal chemistry, structural biology, and computational science. Technical soundness: Cannot be assessed from the abstract; the two examples and framework require full methodological scrutiny. Readability for nonspecialists: The abstract is generally clear, but the technical terms and examples assume familiarity with SBDD and AI-based prediction.
+- **Recommendation posture** Supportive if technical concerns are resolved. The review addresses a significant need and the abstract suggests a well-structured approach, but the central claims require full-text verification. The decision framework and prospective examples must be rigorously documented to establish the review's credibility.
+
+## Risk / unsupported claims
+- The evidence-graded decision framework is described but its criteria, evidence basis, and validation are not provided in the abstract.
+- The TAAR1 hit rate comparison (60% versus 22%) is presented without experimental design details, compound counts, or statistical context.
+- The CDK20 example (IC50 of 33.4 nM, eightfold selectivity) is presented without methodological detail or assay specifics.
+- The claim that AlphaFold has "substantially advanced the field" is supported only by the two examples, which are not fully substantiated in the abstract.
+- The statement that prediction confidence and accuracy "vary considerably by target and by region within a target" is plausible but not quantified in the abstract.

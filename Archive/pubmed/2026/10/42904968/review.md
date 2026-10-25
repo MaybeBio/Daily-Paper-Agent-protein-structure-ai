@@ -1,0 +1,72 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no full manuscript, figures, tables, or supplementary materials were provided
+- **Shared manuscript claim summary** The authors report that a rationally designed variant of thaumatin II, R178H, derived from the high-yield parental variant M-882, exhibits improved thermostability, retaining 63% soluble protein after heating at 80 °C for 2 h versus 43% for M-882, with structural and molecular dynamics analyses supporting a mechanistic basis for the improvement
+- **Visible evidence base** Abstract text only; no experimental details, statistical analyses, or raw data are available
+- **Missing materials affecting confidence** Full methods, all figures and tables, statistical analysis details, sequence verification data, expression and purification data, raw fluorescence screening results, SDS-PAGE images, absolute quantification protocols, molecular dynamics simulation parameters and trajectories, and any replicate information
+
+## Reviewer
+- **Overall assessment** The abstract presents a plausible and potentially useful engineering effort to improve the thermostability of thaumatin II, a sweet protein of industrial relevance. The integrated rational design approach is reasonable, and the reported improvement in soluble protein retention after heat treatment is modest but potentially meaningful. However, the abstract alone provides insufficient evidence to evaluate the robustness of the claims. Key quantitative results are presented without measures of variability, replicates, or statistical testing. The structural and simulation-based interpretations are stated without supporting data. The case for a generalizable rational design strategy is not yet established from the supplied material.
+- **Who would be interested in the results, and why** Researchers and developers in food protein engineering, particularly those working on sweet proteins and other high-value food additives where thermal stability during processing is a limiting factor. The work may also interest computational protein design practitioners seeking case studies of integrated prediction and experimental validation, and food industry scientists concerned with formulation stability under heat treatment.
+- **Major strengths** The use of an integrated computational and experimental pipeline is methodologically sound in principle. The choice of a previously evolved high-yield variant as the parental scaffold is pragmatic and industrially relevant. The reported comparison between R178H and M-882 under a defined heat treatment condition provides a clear, if preliminary, performance metric. The proposed structural rationale, reduced steric hindrance and improved packing, is mechanistically plausible and testable.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The variant R178H retained 63% of its soluble protein fraction after heating at 80 °C for 2 h, compared with 43% for M-882
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The central quantitative claim is presented as a single pair of percentages with no indication of the number of independent experiments, the variability across replicates, or any statistical comparison. Without these, the reader cannot assess whether the observed difference is reproducible or significant.
+  - **Why it matters** The entire conclusion of improved thermostability rests on this single comparison. If the difference falls within experimental noise, the primary claim of the study is unsupported.
+  - **Resolution test** Provide mean and standard deviation or standard error from at least three independent replicates, with a statistical test (e.g., t-test or ANOVA) comparing R178H and M-882. The claim is established only if the difference is statistically significant and the effect size is reported.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Mechanistic evidence
+  - **Claim pointer** Structural analysis suggested that replacing Arg178 with histidine reduced local steric hindrance and improved packing interactions; molecular dynamics simulations indicated that R178H adopted a more compact and stable conformation
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The structural and simulation-based interpretations are stated as conclusions without any supporting data. No structural model, simulation trajectory, or quantitative metric (e.g., RMSD, RMSF, radius of gyration, interaction energy) is provided. The phrase "suggested" and "indicated" implies interpretation, but the evidence base is absent from the abstract.
+  - **Why it matters** The mechanistic explanation is a key part of the claimed contribution. Without data, the structural rationale is speculative and cannot be distinguished from post hoc rationalization.
+  - **Resolution test** Provide structural models or crystallographic data if available, and quantitative simulation results with clear metrics and comparison to the parental variant. The mechanistic claim is established only if the data show a consistent and interpretable difference between R178H and M-882.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Functional validation
+  - **Claim pointer** R178H showed the most favorable overall balance of structural compatibility and thermal resilience among candidate variants
+  - **Evidence pointer** Abstract, location not provided
+  - **Concern** The abstract does not report how many candidate variants were generated, how they were ranked, or what criteria defined "most favorable." The screening pipeline is mentioned but no results from the fluorescence screening, SDS-PAGE, or absolute quantification are shown for any variant other than R178H and M-882.
+  - **Why it matters** Without information on the candidate pool and selection criteria, the reader cannot judge whether R178H was selected on robust grounds or whether other variants might have performed similarly or better on different metrics.
+  - **Resolution test** Report the number of candidates, the distribution of screening results, and the explicit ranking criteria. Show data for at least the top candidates to demonstrate that R178H was a clear and justified choice.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Functional activity
+  - **Affected element** Sweetness or functional activity of R178H
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract reports improved thermostability but does not state whether the sweet taste or any functional property of thaumatin II is preserved in R178H. A variant that is more stable but loses sweetness would have limited practical value.
+  - **Required correction** Add a statement on whether sweetness or another functional assay was performed and whether R178H retains the key functional properties of thaumatin II.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Methodological clarity
+  - **Affected element** "Integrated rational design strategy"
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract lists HotSpot Wizard, FoldX, and PyRosetta as components of the design strategy but does not explain how each was used or how their outputs were integrated. The term "integrated" is asserted without methodological detail.
+  - **Required correction** Briefly describe the role of each tool and the integration logic, or refer to a methods section where this is fully explained.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Generalizability
+  - **Affected element** "Provide a rational strategy for engineering thermostable sweet proteins"
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The claim of a generalizable strategy is based on a single variant in a single protein. This is an overreach from the data presented.
+  - **Required correction** Soften the claim to indicate that the approach may be applicable to other sweet proteins, pending further validation, or provide evidence of application to at least one additional protein.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The central quantitative claim lacks statistical support, and the mechanistic interpretation lacks any visible data. R1-M3, while not blocking, weakens the selection rationale. These must be resolved before the case for improved thermostability and its structural basis can be considered established.
+- **Assessment against Nature-style criteria** Originality: The application of an integrated rational design approach to a sweet protein is not conceptually novel, but the specific target and variant may offer incremental value. Scientific importance: The work addresses a real industrial limitation, but the reported improvement is modest and the broader significance is not yet demonstrated. Interdisciplinary readership: The topic sits at the interface of food science, protein engineering, and computational biology, which could attract a cross-disciplinary audience if the evidence is robust. Technical soundness: The methodological approach is reasonable in principle, but the abstract provides insufficient data to assess technical rigor. Readability for nonspecialists: The abstract is clear and accessible, with technical terms used appropriately, though the mechanistic claims would benefit from more explicit data presentation.
+- **Recommendation posture** Currently not established from the provided evidence. The approach is promising and the direction is sensible, but the abstract alone does not provide sufficient statistical or mechanistic support for the central claims. A revised submission with full experimental detail, including replicates, statistical analysis, and simulation data, could change this assessment. I would be supportive if the technical concerns are resolved.
+
+## Risk / unsupported claims
+- The claim that R178H retains 63% soluble protein versus 43% for M-882 is unsupported without replicate data and statistical testing
+- The claim that reduced steric hindrance and improved packing explain the improved thermostability is unsupported without structural data
+- The claim that molecular dynamics simulations indicate a more compact and stable conformation is unsupported without simulation metrics or trajectories
+- The claim that R178H showed the "most favorable overall balance" among candidates is unsupported without data on the candidate pool and selection criteria
+- The claim that the work provides a generalizable rational strategy for engineering thermostable sweet proteins is an overreach from a single variant in a single protein
+- The preservation of sweetness or other functional properties in R178H is not addressed and cannot be assumed

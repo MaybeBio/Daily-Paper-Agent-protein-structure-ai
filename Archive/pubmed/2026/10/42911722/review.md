@@ -1,0 +1,75 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as stated in the abstract, without access to full methods, figures, or supplementary data
+- **Shared manuscript claim summary** The authors use 403 crystal structures of SARS-CoV-2 main protease from the COVID Moonshot project to assess how many reference crystal structures are needed for reliable pose prediction in structure-based drug discovery. They report that similar reference ligands improve pose prediction and that success plateaus at approximately five crystal structures per generic Bemis-Murcko scaffold, exceeding 95% for the campaign's lead series. They offer practical recommendations for resource allocation.
+- **Visible evidence base** Abstract text only. No methods, figures, tables, or supplementary materials were provided.
+- **Missing materials affecting confidence** Full methods, docking protocol details, pose prediction metrics, definition of "success," scaffold definitions, statistical analyses, comparison to alternative approaches, and all figures and tables.
+
+## Reviewer
+- **Overall assessment** The abstract addresses a practically important question in structure-based drug discovery, namely the marginal utility of additional crystal structures for pose prediction. The dataset from the COVID Moonshot project is substantial and well suited to this analysis. However, the abstract alone does not provide sufficient methodological detail to evaluate the robustness of the central claim that five structures per scaffold is sufficient. Key definitions and validation steps are absent, and the generalizability of the recommendation beyond this specific target and campaign remains unclear.
+- **Who would be interested in the results, and why** Computational chemists and structural biologists engaged in structure-based drug discovery campaigns, particularly those in academic and industrial settings where crystallography resources are limited. The work offers a data-driven heuristic for deciding when to stop collecting additional structures, which could inform project timelines and budgeting. Researchers working on SARS-CoV-2 antivirals and those developing docking or pose prediction methods would also find the benchmark dataset and analysis relevant.
+- **Major strengths** The question is well posed and of direct practical relevance. The dataset is large and derived from a real, open science campaign, which lends ecological validity. The observation that similar reference ligands improve pose prediction is consistent with domain knowledge and provides a useful confirmation. The proposed plateau at five structures per scaffold is a concrete, actionable number that could guide future campaigns.
+- **Major Concerns** 
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** The abstract claims that "success plateaus after approximately five crystal structures per generic Bemis-Murcko scaffold, exceeding 95% for the campaign's lead series."
+  - **Evidence pointer** Abstract only, location not provided
+  - **Concern** The central quantitative claim of a plateau at five structures is presented without any definition of "success" or the metric used to measure pose prediction accuracy. It is unclear whether success refers to a root-mean-square deviation threshold, a docking score cutoff, or a binary classification of acceptable versus unacceptable poses. Without this definition, the 95% figure cannot be interpreted or compared to other studies.
+  - **Why it matters** The practical recommendation to stop at five structures per scaffold depends entirely on the validity and meaning of the success metric. If the metric is lenient or target-specific, the recommendation may not transfer to other systems. The absence of this definition prevents the reader from assessing whether the plateau is a real phenomenon or an artifact of the chosen threshold.
+  - **Resolution test** Provide a clear definition of the success metric, including the exact threshold used, and show the sensitivity of the plateau location and the 95% value to reasonable variations in that threshold. If the plateau is robust across thresholds, the claim is strengthened.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Generalizability
+  - **Claim pointer** The abstract states that "this work provides practical recommendations for resource allocation in structure-enabled drug discovery campaigns."
+  - **Evidence pointer** Abstract only, location not provided
+  - **Concern** The recommendation is derived from a single target, SARS-CoV-2 main protease, and a single chemical series from one campaign. The abstract does not discuss how the number of required structures might vary with target flexibility, binding site plasticity, ligand chemotype diversity, or the docking method used. The claim of practical recommendations for campaigns in general is therefore not supported by the evidence presented.
+  - **Why it matters** If the five-structure rule is specific to this target or to the COVID Moonshot series, applying it broadly could lead to under-sampling in other projects. The abstract overreaches by implying general applicability without a comparative analysis across targets or methods.
+  - **Resolution test** Either temper the recommendation to be explicitly target- and method-specific, or provide additional analyses showing that the plateau behavior is consistent across multiple targets, docking programs, or ligand series. A discussion of expected variability would also help.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Statistical robustness
+  - **Claim pointer** The abstract implies a monotonic relationship between the number of reference structures and pose prediction success, with a plateau beyond five.
+  - **Evidence pointer** Abstract only, location not provided
+  - **Concern** The abstract does not report any statistical measures of uncertainty around the plateau estimate. It is unclear how many scaffolds were analyzed, how variable the success rates were across scaffolds, and whether the plateau at five is a central tendency or an upper bound. Without confidence intervals or a measure of spread, the reader cannot judge the reliability of the number.
+  - **Why it matters** A recommendation of "approximately five" is only useful if the variability around that number is small. If some scaffolds require ten structures and others only two, the practical guidance is less clear. The abstract should report the distribution of required structure counts across scaffolds.
+  - **Resolution test** Report the number of scaffolds analyzed, the distribution of success rates as a function of structure count, and confidence intervals or other measures of uncertainty around the plateau point. Show that the plateau is consistent across most scaffolds.
+- **Minor Comments** 
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Definition of "similar reference ligands"
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract states that "similar reference ligands enable superior pose prediction" but does not define similarity. It is unclear whether similarity is based on Bemis-Murcko scaffolds, 2D fingerprints, or 3D shape.
+  - **Required correction** Specify the similarity metric used to group ligands and justify its choice.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Reproducibility
+  - **Affected element** Docking protocol
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract does not mention which docking program or scoring function was used. Pose prediction accuracy is highly dependent on the docking tool, and the results may not transfer to other software.
+  - **Required correction** State the docking software and version, and note whether the conclusions are expected to hold across different docking tools.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Comparison to alternatives
+  - **Evidence pointer** Abstract, location not provided
+  - **Issue** The abstract does not compare the proposed approach to other strategies for selecting reference structures, such as maximal diversity selection or ensemble docking.
+  - **Required correction** Briefly mention how the proposed rule compares to alternative selection strategies, or state that such a comparison is outside the scope.
+- **Technical failings that need to be addressed before the case is established** R1-M1 and R1-M2 are blocking. The success metric must be defined and its sensitivity tested, and the generalizability claim must be either supported with additional data or appropriately qualified. R1-M3, while not blocking, should be addressed to strengthen the statistical basis of the recommendation.
+- **Assessment against Nature-style criteria** 
+  - Originality: The question of diminishing returns for crystal structure collection is not entirely new, but the scale of the dataset and the explicit focus on a per-scaffold plateau is a useful contribution. The originality is moderate.
+  - Scientific importance: The work has clear practical importance for drug discovery campaigns, but its significance is limited by the single-target focus. The importance would be higher if the findings were shown to generalize.
+  - Interdisciplinary readership: The topic sits at the interface of structural biology, computational chemistry, and medicinal chemistry. The abstract is accessible to these communities, but the lack of methodological detail limits broader appeal.
+  - Technical soundness: Cannot be fully assessed from the abstract. The central quantitative claim lacks a defined metric and uncertainty estimates, which is a significant gap.
+  - Readability for nonspecialists: The abstract is clearly written and the main message is easy to grasp. However, terms such as "Bemis-Murcko scaffold" and "pose prediction" are used without explanation, which may exclude readers outside computational chemistry.
+- **Recommendation posture** Supportive if technical concerns are resolved. The question is relevant and the dataset is valuable, but the abstract as presented does not establish the robustness or generalizability of the five-structure rule. The authors should provide a clear definition of the success metric, show sensitivity analyses, and either qualify or extend the generalizability claims.
+
+## Risk / unsupported claims
+- The claim that "success plateaus after approximately five crystal structures per generic Bemis-Murcko scaffold" is unsupported without a defined success metric and uncertainty estimates.
+- The claim that the work "provides practical recommendations for resource allocation in structure-based drug discovery campaigns" is unsupported beyond the specific target and series analyzed.
+- The claim that "similar reference ligands enable superior pose prediction" is plausible but not defined or quantified in the abstract.
+- The 95% success rate for the lead series cannot be evaluated without knowing the metric and the number of cases.

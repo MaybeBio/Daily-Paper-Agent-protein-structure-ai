@@ -1,0 +1,24 @@
+{
+  "source": "arxiv",
+  "id": "2610.28266v1",
+  "title": "VGL-stGen: Learning a shared multimodal model for lung histology and spatial transcriptomics",
+  "authors": "Haenara Shin; Dongjoo Lee; Sungwoo Bae; Kwon Joong Na; Daeseung Lee; Hongyoon Choi",
+  "journal": "",
+  "published_date": "2026-10-20",
+  "window": {
+    "start": "2026-10-18",
+    "end": "2026-10-24"
+  },
+  "score": 2,
+  "one_liner_zh": "该文开发多模态大语言模型整合肺组织H&E图像与空间转录组，核心是组织形态与分子状态的关联，不涉及蛋白质结构计算、构象采样或结构建模，与课题无关。",
+  "abstract": "VGL-stGen is a multimodal large language model adapted from a pretrained medical vision-language model using paired lung H&E and spatial transcriptomics with single-cell references. Training integrates image-expression and expression-cell-type pairs, and gene-conditioned pseudo-labels transfer transcriptomic cell-type supervision to histology images. One deployed checkpoint supports thirteen evaluated tasks spanning tissue and cell-type classification, gene prediction and conditional expression completion from combinations of histology, cell identity and observed gene expression. Task-specific decoding produces categorical labels, gene lists and structured expression levels. For conditional completion, fixing queried gene identities and predicting their levels autoregressively improves structured prediction. Controlled adaptation shows that restricting supervision to requested expression-level tokens can further improve image-conditioned completion. Image-permutation experiments indicate that correctly paired histology adds information beyond observed expression. External classification relies partly on computational references with shared annotation lineage, and some H&E sources were exposed during cancer training or model development. Within these conditions, VGL-stGen demonstrates how a medical vision-language backbone can learn from spatial transcriptomics and histology to connect tissue morphology and molecular states through shared generative modeling.",
+  "abstract_zh": "VGL-stGen是一种多模态大语言模型，由预训练的医学视觉-语言模型改编而来，使用配对的肺H&E和空间转录组学数据及单细胞参考。训练整合了图像-表达和表达-细胞类型配对，基因条件伪标签将转录组细胞类型监督转移到组织学图像。一个部署的检查点支持十三项评估任务，涵盖组织和细胞类型分类、基因预测以及基于组织学、细胞身份和观察到的基因表达组合的条件表达完成。任务特定解码生成类别标签、基因列表和结构化表达水平。对于条件完成，固定查询的基因身份并自回归预测其水平可改善结构化预测。受控适应表明，将监督限制在请求的表达水平标记上可进一步改善图像条件下的完成。图像置换实验表明，正确配对的组织学在观察到的表达之外增加了信息。外部分类部分依赖于具有共享注释谱系的计算参考，且某些H&E来源在癌症训练或模型开发期间已暴露。在这些条件下，VGL-stGen展示了医学视觉-语言骨干如何通过共享生成建模从空间转录组学和组织学中学习，以连接组织形态和分子状态。",
+  "has_fulltext": true,
+  "fulltext_source": "ar5iv",
+  "fulltext_path": "fulltext.md",
+  "paper_card_path": "",
+  "review_path": "",
+  "url": "https://arxiv.org/abs/2610.28266v1",
+  "source_url": "https://arxiv.org/abs/2610.28266v1",
+  "paper_page_path": "papers/arxiv/2610.28266v1/index.html"
+}

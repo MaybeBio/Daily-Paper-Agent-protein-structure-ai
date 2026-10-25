@@ -1,0 +1,77 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and conclusions as presented in the abstract; no access to full text, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors report that AaOSC-20433, an oxidosqualene cyclase from Artemisia argyi, exclusively produces dammara-20,24-dien-3beta-ol via deprotonation. Using multiscale QM/MM simulations and site-directed mutagenesis, they identify S411 as a general base for terminal deprotonation. They further report that F728A relaxes steric constraints to yield tricyclic and tetracyclic products, L259Y unlocks hydroxylation to form dammarenediol II and extends cyclization to lupeol, and the combination L259Y+F728S exhibits synergistic epistasis that diversifies hydroxylated products.
+- **Visible evidence base** Abstract text only; no kinetic data, structural coordinates, simulation parameters, mutagenesis validation, or product characterization data are provided
+- **Missing materials affecting confidence** Full manuscript, all figures and tables, computational methods and parameters, experimental protocols, product identification data (e.g., GC-MS or NMR), and statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a compelling and mechanistically rich hypothesis about how active site mutations in a rare OSC can reprogram product specificity. The central claims are plausible and potentially significant for the terpene biosynthesis community. However, the abstract alone provides insufficient evidence to evaluate the rigor of the simulations, the validity of the mutagenesis results, or the robustness of the epistasis conclusion. The case is intriguing but not established from the supplied material.
+- **Who would be interested in the results, and why** Enzymologists and computational chemists studying terpene cyclases and carbocation chemistry would find the mechanistic insights valuable. Synthetic biologists and metabolic engineers interested in triterpene diversification would also be interested in the demonstrated potential for mechanism-guided enzyme reprogramming. The work could inform future engineering of OSC variants for producing high-value triterpenoids.
+- **Major strengths** The study addresses a fundamental question in OSC catalysis, namely the control of quenching fate and cyclization depth. The contrast between AaOSC-20433 and PgDDS provides a natural comparative framework. The identification of specific residues (S411, F728, L259) with distinct functional roles offers a clear mechanistic narrative. The reported synergistic epistasis between steric and proton-transfer elements is conceptually novel and could have broad implications.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that S411 acts as a general base governing terminal deprotonation is presented as a simulation-derived finding.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract states that simulations revealed S411 as a general base, but no details are given on the QM/MM setup, the level of theory, the sampling strategy, or the energetic criteria used to assign this role. Without these details, the assignment of a specific residue as a general base cannot be critically evaluated.
+  - **Why it matters** The general base assignment is foundational to the entire mechanistic framework. If the simulation methodology is flawed or the energetic evidence is weak, the downstream interpretations of mutation effects would be compromised.
+  - **Resolution test** Provide the QM/MM methodology, including the QM region composition, basis sets, and free energy profiles for deprotonation versus alternative quenching pathways. Show that the barrier for S411-mediated deprotonation is clearly lower than competing pathways.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that F728A induces catalytic promiscuity to yield tricyclic and tetracyclic products is presented as a demonstrated outcome.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract reports product outcomes from mutagenesis but provides no experimental evidence such as product yields, product identities, or chromatographic data. The term "catalytic promiscuity" implies a quantitative shift in product distribution, but no numbers are given.
+  - **Why it matters** The central thesis is that mutations alter chemical trajectories. Without quantitative product profiles, the reader cannot assess the magnitude of the effect or whether the reported products are minor impurities rather than major outcomes.
+  - **Resolution test** Provide product distribution data (e.g., GC-MS or LC-MS chromatograms with peak assignments and relative abundances) for wild-type and mutant enzymes under identical assay conditions.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that L259Y unlocks hydroxylation to form dammarenediol II and extends cyclization depth to yield lupeol is presented as a dual functional effect.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The abstract attributes two distinct outcomes to a single mutation, namely a change in quenching fate and an extension of cyclization depth. The mechanistic link between these two effects is not explained. It is unclear whether L259Y directly alters the proton-transfer network, the steric environment, or both, and how these changes lead to the reported products.
+  - **Why it matters** The claim of a single mutation producing two mechanistically distinct outcomes is unusual and requires a coherent structural and energetic explanation. Without such an explanation, the result could be an artifact of the simulation or an uncharacterized experimental effect.
+  - **Resolution test** Provide free energy profiles for the full cyclization cascade in the L259Y variant, showing how the mutation lowers barriers for both hydroxylation and deeper cyclization. Include structural analysis of the mutant active site to explain the dual effect.
+  - **Concern ID** R1-M4
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The claim that L259Y+F728S exhibits synergistic epistasis driving competitive hydration events is presented as a key finding.
+  - **Evidence pointer** Abstract only; location not provided
+  - **Concern** The term "synergistic epistasis" implies that the combined effect of the two mutations is greater than the sum of their individual effects. The abstract provides no quantitative comparison of single versus double mutant product profiles, nor any statistical analysis to support the epistasis claim.
+  - **Why it matters** Epistasis is a strong claim that requires rigorous experimental demonstration. If the double mutant simply shows additive effects, the conclusion of synergy would be unsupported and potentially misleading.
+  - **Resolution test** Provide product distribution data for single mutants (L259Y, F728S) and the double mutant (L259Y+F728S) under identical conditions, with statistical comparisons to demonstrate non-additive effects.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Terminology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "quenching fate" is used without definition. It is not immediately clear whether this refers exclusively to the final deprotonation versus hydroxylation step or includes other possible termination mechanisms.
+  - **Required correction** Define "quenching fate" explicitly at first use, for example as the terminal step that determines whether the carbocation is neutralized by proton loss or water addition.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Experimental validation
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract mentions site-directed mutagenesis but does not state whether the mutations were experimentally characterized or only simulated. The phrase "our simulations revealed" suggests computational work, but the mutagenesis results are presented as if experimentally confirmed.
+  - **Required correction** Clarify which results are computational predictions and which are experimentally validated. If all mutagenesis results are from simulations, state this explicitly.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Context
+  - **Affected element** Comparative analysis
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract contrasts AaOSC-20433 with PgDDS but does not explain the structural or sequence basis for the different quenching preferences. This comparison is used to frame the study but is not developed.
+  - **Required correction** Provide a brief statement on the key structural differences between AaOSC-20433 and PgDDS that rationalize their divergent quenching fates, or indicate where this is addressed in the full text.
+
+## Risk / unsupported claims
+- The claim that S411 acts as a general base is unsupported without simulation details and energetic data.
+- The claim that F728A induces catalytic promiscuity is unsupported without quantitative product profiles.
+- The claim that L259Y unlocks hydroxylation and extends cyclization depth is unsupported without mechanistic and product data.
+- The claim of synergistic epistasis in L259Y+F728S is unsupported without single versus double mutant comparisons.
+- The overall conclusion that the study provides a "comprehensive mechanistic framework" is not assessable from the abstract alone.

@@ -1,0 +1,90 @@
+## Review setup
+- **Input scope** Full manuscript text, including abstract, introduction, methods, results, discussion, and conclusions. Figures and tables are referenced but not provided in full detail.
+- **Assessment boundary** Methodological soundness, validity of claims relative to presented evidence, and overall contribution to the field of computer-aided drug design. Experimental validation is outside the scope as this is a computational study.
+- **Shared manuscript claim summary** The authors present an enhanced SILCS-based computational workflow that separates neutral and charged probe molecules and optionally uses the Drude polarizable force field, applied to three type 2 diabetes-related enzymes. They claim this approach alleviates competitive exclusion effects in highly charged active sites, improves fragment diversity, and enables identification of candidate inhibitors through virtual screening and clustering analysis.
+- **Visible evidence base** Text descriptions of methods and results, convergence metrics (OC values) reported in text and supplementary tables, RMSD values for pose refinement, pharmacophore feature counts and FGFE values, virtual screening hit counts, and clustering outcomes. Specific figures and tables are referenced but not fully visible.
+- **Missing materials affecting confidence** Full figures and tables (especially FragMap visualizations, pharmacophore models, and clustering dendrograms), detailed virtual screening hit lists, and complete supplementary information. Without these, quantitative assessment of several claims is limited.
+
+## Reviewer
+- **Overall assessment** This manuscript addresses a relevant methodological gap in SILCS-based fragment mapping for highly charged enzyme active sites. The neutral-charged protocol is a logical extension of prior SILCS-RNA work, and the systematic comparison of additive versus polarizable force fields is valuable. The application to three diabetes-related enzymes provides practical context. However, several claims regarding the superiority of the Drude force field and the practical utility of identified hits are not fully supported by the presented evidence. The manuscript would benefit from clearer quantitative comparisons and a more critical discussion of limitations.
+- **Who would be interested in the results, and why** Computational chemists and structural biologists working on fragment-based drug design, particularly those applying SILCS or similar methods to challenging targets with charged binding sites. Researchers interested in polarizable force fields for drug discovery applications would also find the comparison relevant. The methodological framework could be adopted by groups studying other enzymes with highly charged active sites.
+- **Major strengths**
+  1. The neutral-charged SILCS protocol is a well-motivated methodological innovation that directly addresses a known limitation of conventional SILCS in charged systems.
+  2. The systematic comparison of additive (CHARMM) and polarizable (Drude) force fields within the same workflow provides useful guidance for practitioners.
+  3. The application to three clinically relevant enzymes (NtMGAM, CtMGAM, α-amylase) grounds the methodology in a real drug design context.
+  4. The integration of multiple computational tools (SILCS, pharmacophore modeling, virtual screening, clustering) into a coherent pipeline is commendable.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Evidence sufficiency
+  - **Claim pointer** The authors claim that "the Drude polarizable force field further enhanced resolution of electrostatic and hydrogen-bonding interactions" and that Drude-based pharmacophores led to "the best predicted inhibitors for CtMGAM and α-amylase."
+  - **Evidence pointer** Results and Discussion sections on affinity patterns and virtual screening; Tables S5-S7
+  - **Concern** The quantitative evidence supporting the superiority of Drude over CHARMM is not clearly presented. RMSD improvements are modest (e.g., 4.06 Å vs 3.95 Å for miglitol), and the claim that Drude-based pharmacophores produced better inhibitors relies on LE comparisons that are not shown in the main text. The authors state that Drude pharmacophores for α-amylase rely entirely on hydrogen-bond donors, but it is unclear whether this represents a genuine improvement or simply a different, potentially less validated, interaction profile.
+  - **Why it matters** The central methodological contribution is the comparison between force fields. Without clear, quantitative evidence that Drude provides meaningful advantages, the practical recommendation for adopting the more computationally expensive polarizable workflow is not established.
+  - **Resolution test** Provide a direct, quantitative comparison of pose prediction accuracy (e.g., RMSD distributions across multiple ligands), virtual screening enrichment factors or ROC curves, and a statistical analysis of whether observed differences between CHARMM and Drude are significant.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Validation adequacy
+  - **Claim pointer** The authors claim that the SILCS-Pharmacophore models "successfully captured dominant interaction motifs within each binding site" and that virtual screening hits "exhibit superior predicted binding energetics relative to known inhibitors."
+  - **Evidence pointer** Results and Discussion sections on pharmacophore modeling and virtual screening; Tables S5-S7
+  - **Concern** The validation of pharmacophore models and virtual screening hits is limited to comparison with known inhibitors (miglitol, acarbose, myricetin) and internal consistency checks. There is no experimental validation, no use of decoy sets to assess enrichment, and no comparison with alternative docking or screening methods. The claim that identified hits are "superior" is based solely on computed LE values, which may not translate to actual binding affinity.
+  - **Why it matters** Virtual screening is only useful if it can distinguish true binders from non-binders. Without external validation or benchmark comparisons, the practical utility of the proposed workflow for identifying viable drug candidates remains unproven.
+  - **Resolution test** Include a retrospective validation using known actives and decoys (e.g., DUD-E or similar) to compute enrichment factors. Alternatively, provide experimental binding data for a subset of top hits, or clearly state that such validation is planned as future work.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** No
+  - **Axis** Reproducibility
+  - **Claim pointer** The authors state that "the Drude polarizable SILCS workflow described below was implemented separately in this study and is not part of the standard SilcsBio 2023.1 protein workflow."
+  - **Evidence pointer** Methods section, Drude SILCS Workflow
+  - **Concern** The implementation details of the Drude SILCS workflow are not fully specified. Key parameters such as the Drude-2019 force field version, the exact protocol for adding lone pairs and Drude oscillators, the equilibration scheme, and the criteria for selecting snapshots for GCMC-MD are described but lack sufficient detail for reproduction. The custom Python script for coordinate conversion is mentioned but not provided or described in detail.
+  - **Why it matters** Reproducibility is a cornerstone of computational research. Without complete methodological details, other groups cannot implement or verify the proposed Drude SILCS workflow.
+  - **Resolution test** Provide a detailed step-by-step protocol, including all input files, parameter settings, and scripts, either in the main text or as supplementary material. Consider depositing the workflow in a public repository.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Clarity
+  - **Affected element** Abstract
+  - **Evidence pointer** Abstract, first sentence
+  - **Issue** The abstract states that "highly charged enzyme active sites present a challenge for conventional SILCS" but does not specify what the challenge is beyond "suppress sampling of neutral fragments." A brief explanation of the mechanism would help readers understand the motivation.
+  - **Required correction** Add a phrase such as "because strongly interacting charged probes can outcompete neutral fragments for binding site occupancy" to the abstract.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Completeness
+  - **Affected element** Methods, Protein Preparation
+  - **Evidence pointer** Methods section, Protein Preparation
+  - **Issue** The authors state that "all water molecules and ions were removed from the structures" but do not specify whether crystallographic ligands (e.g., inhibitors, cofactors) were also removed. This is important because retained ligands could bias subsequent fragment mapping.
+  - **Required correction** Clarify whether all non-protein entities, including ligands and cofactors, were removed during preparation.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Statistical rigor
+  - **Affected element** Results, Convergence of the SILCS Simulations
+  - **Evidence pointer** Results and Discussion, Convergence section
+  - **Issue** OC values are reported as single numbers without measures of variability. Given that ten independent simulations were performed, it would be informative to report mean and standard deviation or range.
+  - **Required correction** Report OC values as mean ± standard deviation across the ten independent simulations.
+  - **Concern ID** R1-m4
+  - **Severity** Minor
+  - **Axis** Interpretation
+  - **Affected element** Results, Virtual Screening
+  - **Evidence pointer** Results and Discussion, Virtual Screening sections
+  - **Issue** The authors report that "no overlap was identified between the Maybridge and ChemBridge hit sets" but do not discuss whether this is expected or concerning. Given that both libraries are diverse, some overlap might be anticipated if the pharmacophore models are capturing a conserved binding mode.
+  - **Required correction** Add a brief discussion of whether the lack of overlap is consistent with the chemical diversity of the two libraries and the specificity of the pharmacophore models.
+  - **Concern ID** R1-m5
+  - **Severity** Minor
+  - **Axis** Presentation
+  - **Affected element** Conclusions
+  - **Evidence pointer** Conclusions, final paragraph
+  - **Issue** The conclusion that "the neutral-charged SILCS protocol should be viewed as a targeted strategy for mitigating competitive exclusion rather than as a universal replacement" is well stated, but the practical guidance for when to use which protocol could be more explicit.
+  - **Required correction** Add a sentence summarizing the conditions under which the neutral-charged protocol is recommended (e.g., highly charged active sites) versus when the conventional protocol may suffice.
+- **Technical failings that need to be addressed before the case is established**
+  - R1-M1: Insufficient quantitative evidence for Drude superiority
+  - R1-M2: Lack of external validation for virtual screening results
+  - R1-M3: Incomplete methodological details for reproduction of the Drude workflow
+- **Assessment against Nature-style criteria**
+  - **Originality** The neutral-charged SILCS protocol is a novel adaptation of existing methodology, and the systematic comparison with a polarizable force field adds an original dimension. However, the core SILCS method is well established, and the innovation is incremental rather than paradigm-shifting.
+  - **Scientific importance** The work addresses a real limitation in fragment-based drug design for charged enzyme systems, which is relevant to many therapeutic targets. The methodological guidance on when to use neutral-charged versus conventional protocols is practically useful. However, the lack of experimental validation limits the immediate impact.
+  - **Interdisciplinary readership** The manuscript is primarily of interest to computational chemists and structural biologists. The clinical relevance to type 2 diabetes is mentioned but not developed in a way that would attract a broader biomedical audience.
+  - **Technical soundness** The computational methods are generally sound, and the convergence analysis is appropriate. However, the validation of virtual screening results is insufficient, and the statistical treatment of comparisons between force fields is lacking.
+  - **Readability for nonspecialists** The manuscript is clearly written for a specialist audience. The methods are described in sufficient detail for practitioners, but the significance of the findings may not be immediately apparent to readers outside the field. The abstract could be more accessible.
+- **Recommendation posture** Supportive if technical concerns are resolved. The methodological framework is promising and addresses a genuine need, but the current evidence does not fully establish the claimed advantages of the Drude force field or the practical utility of the identified hits. Addressing the major concerns through additional validation and clearer quantitative comparisons would significantly strengthen the manuscript.

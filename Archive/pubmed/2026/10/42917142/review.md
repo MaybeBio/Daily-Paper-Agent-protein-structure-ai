@@ -1,0 +1,71 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence as presented in the abstract; no access to full manuscript, figures, tables, or supplementary materials
+- **Shared manuscript claim summary** The authors use two-dimensional replica-exchange molecular dynamics simulations (total 600 microseconds) to compare binding pathways of PP1 (small, rigid) and dasatinib (larger, more flexible) to c-Src kinase. They report multiple binding pathways for both inhibitors, with PP1 remaining rigid and dasatinib undergoing substantial conformational changes, including a hidden intermediate that avoids trapping at a salt-bridge pair between the beta3 strand and alphaC-helix. They conclude that inhibitor size and flexibility affect binding mechanisms and kinetics.
+- **Visible evidence base** Abstract text only; no figures, tables, methods details, or statistical analyses provided
+- **Missing materials affecting confidence** Full manuscript, simulation protocols, force field parameters, convergence metrics, free-energy profiles, conformational analysis details, and any experimental validation
+
+## Reviewer
+- **Overall assessment** The abstract presents a potentially interesting computational study addressing an underexplored aspect of kinase inhibitor binding, namely the role of ligand flexibility. The use of 600 microseconds of replica-exchange MD is ambitious and, if properly converged, could provide valuable mechanistic insight. However, the abstract alone does not provide sufficient detail to evaluate the technical soundness of the simulations, the statistical robustness of the conclusions, or the biological significance of the proposed mechanism. The claim that inhibitor flexibility affects binding kinetics is plausible but not established from the supplied material.
+- **Who would be interested in the results, and why** Computational chemists and biophysicists studying protein-ligand binding mechanisms, medicinal chemists involved in kinase inhibitor design, and researchers interested in conformational dynamics of drug-like molecules. The work could inform rational design of inhibitors with tailored flexibility to optimize binding kinetics and selectivity.
+- **Major strengths** The study addresses a relevant and underexplored question about ligand flexibility in binding pathways. The use of enhanced sampling methods (2D replica-exchange MD) and the large cumulative simulation time (600 microseconds) suggest a serious effort to achieve statistical convergence. The identification of a hidden intermediate that avoids a known kinetic trap (salt-bridge pair) is a mechanistically interesting finding.
+- **Major Concerns**
+  - **Concern ID** R1-M1
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "Simulations totaling 600 mus revealed frequent binding and unbinding events, yielding statistically converged information about the binding pathways."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The claim of statistical convergence is central to the study's validity, but the abstract provides no quantitative evidence such as free-energy error bars, block averaging, or comparison of independent runs. The total simulation time is large, but convergence in replica-exchange MD depends on exchange rates, replica overlap, and sampling of relevant conformational states, none of which are described.
+  - **Why it matters** Without demonstrated convergence, the reported binding pathways and free-energy profiles could be artifacts of insufficient sampling, undermining the central mechanistic conclusions.
+  - **Resolution test** Provide convergence metrics in the full manuscript, such as time-dependent free-energy estimates, replica exchange statistics, and comparison of results from independent simulation sets. Show that the identified pathways and intermediate states are reproducible across multiple runs.
+  - **Concern ID** R1-M2
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Technical soundness
+  - **Claim pointer** "PP1 is rigid along the binding path, whereas dasatinib substantially changes its conformation at different stages in the pathway to the canonical pose."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract does not specify how ligand flexibility is quantified or how the "canonical pose" is defined. It is unclear whether the rigidity of PP1 and flexibility of dasatinib are assessed by dihedral angle distributions, principal component analysis, or other metrics. Without this information, the qualitative distinction between the two inhibitors cannot be evaluated.
+  - **Why it matters** The central conclusion depends on a reliable and consistent measure of ligand conformational change along the binding pathway. If the metric is not well defined or is biased by the choice of collective variables, the mechanistic interpretation may be misleading.
+  - **Resolution test** Define the conformational metrics used, show their distributions for both ligands at each binding stage, and demonstrate that the observed differences are statistically significant and not an artifact of the chosen reaction coordinates.
+  - **Concern ID** R1-M3
+  - **Severity** Major
+  - **Blocking** Yes
+  - **Axis** Scientific importance
+  - **Claim pointer** "These results, distinct from previous computational studies, demonstrate that inhibitor size and flexibility affect binding mechanisms and have implications on kinetics."
+  - **Evidence pointer** Abstract; location not provided
+  - **Concern** The abstract claims novelty relative to previous computational studies but does not specify which studies or how the present results differ. More importantly, the claim that flexibility affects binding kinetics is not supported by any kinetic data in the abstract. Binding pathways and free-energy profiles do not directly translate to kinetic rate constants without additional analysis such as transition state theory or Markov state models.
+  - **Why it matters** The broader significance of the work rests on the kinetic implications. If the authors cannot demonstrate a quantitative link between the observed conformational changes and binding or unbinding rates, the claim is overstated.
+  - **Resolution test** Provide kinetic estimates from the simulations, such as mean first-passage times or rate constants derived from transition path theory, and compare them for PP1 and dasatinib. Clearly state how the identified intermediate affects these rates.
+- **Minor Comments**
+  - **Concern ID** R1-m1
+  - **Severity** Minor
+  - **Axis** Readability for nonspecialists
+  - **Affected element** Abstract text
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The term "hidden intermediate" is introduced without definition or context. It is unclear whether this refers to a metastable conformational state of dasatinib, a binding pose, or a kinetic intermediate.
+  - **Required correction** Define "hidden intermediate" explicitly, for example as a metastable ligand conformation that is not observed in the unbound state or in the canonical bound pose, and explain its role in the binding pathway.
+  - **Concern ID** R1-m2
+  - **Severity** Minor
+  - **Axis** Technical soundness
+  - **Affected element** Simulation methodology
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract states "two-dimensional replica-exchange MD" but does not specify the two dimensions used for exchange. Common choices include temperature and a collective variable, but this is not stated.
+  - **Required correction** Specify the two exchange dimensions in the abstract or methods, as this affects the interpretation of the sampling efficiency and the validity of the free-energy profiles.
+  - **Concern ID** R1-m3
+  - **Severity** Minor
+  - **Axis** Scientific importance
+  - **Affected element** Biological relevance
+  - **Evidence pointer** Abstract; location not provided
+  - **Issue** The abstract does not discuss whether the salt-bridge pair between beta3 and alphaC-helix is a known regulatory element in c-Src kinase or whether its role in inhibitor binding has been previously characterized.
+  - **Required correction** Briefly contextualize the salt-bridge pair in the known biology of c-Src kinase to help readers assess the significance of the proposed avoidance mechanism.
+- **Technical failings that need to be addressed before the case is established** R1-M1 (convergence evidence), R1-M2 (definition and quantification of ligand flexibility), R1-M3 (kinetic implications not supported by data in the abstract)
+- **Assessment against Nature-style criteria** Originality: The focus on ligand flexibility as a determinant of binding pathways is a relatively fresh angle, though the concept is not entirely new. Scientific importance: Potentially relevant for kinase inhibitor design, but the kinetic implications are not yet established. Interdisciplinary readership: The work could appeal to computational chemists, biophysicists, and medicinal chemists, but the abstract is too technical for a broad audience. Technical soundness: Cannot be assessed from the abstract alone; the lack of methodological detail and convergence metrics is a major limitation. Readability for nonspecialists: The abstract is reasonably clear but uses jargon without sufficient explanation.
+- **Recommendation posture** Currently not established from the provided evidence. The study has potential merit, but the abstract does not provide enough detail to verify the central claims of convergence, the mechanistic distinction between the two inhibitors, or the kinetic implications. A full manuscript with detailed methods, convergence analysis, and quantitative kinetic data would be required to assess the case.
+
+## Risk / unsupported claims
+- The claim of "statistically converged information" is unsupported without convergence metrics.
+- The qualitative distinction between PP1 rigidity and dasatinib flexibility is not verifiable without defined conformational metrics.
+- The statement that inhibitor flexibility "affects binding mechanisms and has implications on kinetics" is not supported by kinetic data in the abstract.
+- The novelty claim relative to "previous computational studies" is unverifiable without citation or comparison.
+- The existence and functional role of the "hidden intermediate" cannot be evaluated from the abstract alone.

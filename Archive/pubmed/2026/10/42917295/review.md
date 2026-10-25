@@ -1,0 +1,98 @@
+## Review setup
+- **Input scope** Abstract only
+- **Assessment boundary** Claims and evidence presented in the abstract; no methods, figures, tables, or supplementary material were provided
+- **Shared manuscript claim summary** The authors propose a new metric, Bayes-optimal RMSD (BRMSD), that optimizes per-atom weights in structural comparison via Bayesian posterior maximization, controlled by a fluctuation parameter sigma. The framework is claimed to support alignment, clustering, and domain identification, and is implemented in an open-source Python package benchmarked on two MD systems.
+- **Visible evidence base** Abstract text only; no quantitative results, benchmark data, or implementation details are available
+- **Missing materials affecting confidence** Full manuscript, methods section, all figures and tables, benchmark protocols, code repository details, and any statistical analyses
+
+## Reviewer
+- **Overall assessment** The abstract presents a conceptually interesting idea that addresses a recognized limitation of RMSD in biomolecular simulations. However, the current evidence base is insufficient to evaluate the validity, novelty, or practical utility of the proposed method. The claims are broad and lack quantitative support in the abstract, and the relationship to existing weighted-RMSD approaches is not clarified. The manuscript may have merit, but the case is not established from the supplied material.
+- **Who would be interested in the results, and why** Computational biophysicists and chemists working on MD simulation analysis, structural bioinformaticians developing alignment and clustering tools, and method developers in Bayesian statistics applied to molecular systems. The potential to improve domain identification and focused alignment could appeal to researchers studying flexible proteins and conformational ensembles.
+- **Major strengths** The motivation is clear and addresses a real limitation of RMSD. The Bayesian formulation with a tunable parameter sigma provides a principled way to interpolate between global and core-focused metrics. The inclusion of multiple analysis modules in an open-source package suggests practical intent.
+- **Major Concerns**  
+  - **Concern ID** R1-M1  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The claim that BRMSD "optimizes per-atom weights jointly with structural averages by maximizing a Bayesian posterior"  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract does not describe the prior distributions, the likelihood model, or the optimization procedure. Without this information, it is impossible to assess whether the posterior is well-defined, whether the optimization is tractable, or whether the resulting weights are unique and interpretable.  
+  - **Why it matters** The core methodological contribution rests on this Bayesian formulation. If the priors or likelihood are ad hoc, the claimed optimality is not meaningful.  
+  - **Resolution test** Provide a complete mathematical specification of the model, including priors, likelihood, and optimization algorithm, and demonstrate convergence and uniqueness on test cases.  
+  - **Concern ID** R1-M2  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Scientific importance  
+  - **Claim pointer** The claim that BRMSD addresses the issue of flexible regions dominating global RMSD  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract does not provide any quantitative comparison with existing weighted-RMSD or core-focused alignment methods. It is unclear whether BRMSD offers a substantive advantage over established approaches such as GROMACS' fitting to a reference core or iterative weighted superposition methods.  
+  - **Why it matters** Without comparative benchmarks, the incremental contribution over existing tools cannot be evaluated.  
+  - **Resolution test** Include benchmark results comparing BRMSD to at least one established weighted-RMSD method on the two MD systems, reporting alignment accuracy, clustering quality, and computational cost.  
+  - **Concern ID** R1-M3  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Technical soundness  
+  - **Claim pointer** The claim that sigma controls the transition from classical RMSD (sigma to infinity) to a progressive focus on a rigid core (sigma to 0)  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract does not explain how sigma is chosen in practice or how sensitive the results are to this parameter. If sigma requires manual tuning per system, the method's practical utility is limited.  
+  - **Why it matters** A key selling point is the tunable behavior, but without guidance on parameter selection or robustness analysis, users cannot apply the method reliably.  
+  - **Resolution test** Provide a sensitivity analysis for sigma on both benchmark systems and a recommended selection criterion, such as cross-validation or a Bayesian model comparison.  
+  - **Concern ID** R1-M4  
+  - **Severity** Major  
+  - **Blocking** Yes  
+  - **Axis** Interdisciplinary readership  
+  - **Claim pointer** The claim that the framework supports "trajectory smoothing, soft K-means conformational clustering, and rigid-domain identification"  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract lists these modules but provides no description of how they are derived from the BRMSD metric or how they perform. No results are shown for any of these analyses.  
+  - **Why it matters** The breadth of claimed functionality is a major part of the paper's appeal, but without evidence of performance, these claims are unsupported.  
+  - **Resolution test** Present at least one representative result for each module on the benchmark systems, with appropriate validation metrics.  
+  - **Concern ID** R1-M5  
+  - **Severity** Major  
+  - **Blocking** No  
+  - **Axis** Originality  
+  - **Claim pointer** The claim that BRMSD is "Bayes-optimal"  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Concern** The abstract does not discuss prior work on Bayesian approaches to structural alignment or weighted RMSD. Without a literature context, the novelty of the Bayesian formulation cannot be assessed.  
+  - **Why it matters** If similar Bayesian weighting schemes exist, the contribution may be incremental.  
+  - **Resolution test** Include a literature review in the full manuscript that explicitly differentiates BRMSD from prior Bayesian or weighted-alignment methods.
+
+- **Minor Comments**  
+  - **Concern ID** R1-m1  
+  - **Severity** Minor  
+  - **Axis** Readability for nonspecialists  
+  - **Affected element** Abstract  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The abstract uses "Bayes-optimal" without defining what optimality means in this context.  
+  - **Required correction** Define the optimality criterion explicitly, such as maximum a posteriori or expected loss minimization.  
+  - **Concern ID** R1-m2  
+  - **Severity** Minor  
+  - **Axis** Technical soundness  
+  - **Affected element** Benchmark description  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The two benchmark systems are named but no rationale for their selection is given.  
+  - **Required correction** Briefly state why these systems are appropriate for testing the method, such as known flexible regions or functional relevance.  
+  - **Concern ID** R1-m3  
+  - **Severity** Minor  
+  - **Axis** Interdisciplinary readership  
+  - **Affected element** Software availability  
+  - **Evidence pointer** Abstract, location not provided  
+  - **Issue** The abstract mentions an open-source Python package but does not state the license or repository location.  
+  - **Required correction** Provide the repository URL and license type in the abstract or full manuscript.
+
+- **Technical failings that need to be addressed before the case is established** R1-M1, R1-M2, R1-M3, R1-M4. The core methodological specification, comparative benchmarks, parameter sensitivity, and module performance are all missing from the provided material.
+
+- **Assessment against Nature-style criteria**  
+  - **Originality** Not assessable from the abstract alone. The Bayesian weighting idea is plausible but prior art is not discussed.  
+  - **Scientific importance** Potentially high if the method demonstrably improves on existing approaches, but no evidence is provided.  
+  - **Interdisciplinary readership** The abstract is accessible to computational biophysicists but may be opaque to broader structural biologists without more context on the Bayesian framework.  
+  - **Technical soundness** Cannot be evaluated without the mathematical model and benchmark results.  
+  - **Readability for nonspecialists** The abstract is reasonably clear in motivation but lacks definitions of key terms such as "Bayes-optimal" and "position-fluctuation parameter."
+
+- **Recommendation posture** Currently not established from the provided evidence. The idea is interesting and worth pursuing, but the abstract alone does not support the claims. A full manuscript with methodological details, benchmarks, and comparisons is required for a fair assessment. I would be supportive if the technical concerns are resolved in the full paper.
+
+## Risk / unsupported claims
+- The claim that BRMSD is "Bayes-optimal" is unsupported without a formal definition of the posterior and optimality criterion.
+- The claim that sigma controls the transition from classical RMSD to rigid-core focus is unsupported without a mathematical derivation or illustrative example.
+- The claim that the framework supports the listed analysis modules is unsupported without any results or implementation details.
+- The claim that the method is benchmarked on two MD systems is unsupported without quantitative outcomes.
+- The claim that the package is open-source is unverifiable without a repository reference.
